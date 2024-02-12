@@ -7,7 +7,7 @@ description: "Presents the system requirements for using the Mendix Platform."
 tags: ["studio pro"]
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
-
+.
 ## 1 Introduction
 
 This document presents the system requirements for the various parts of the Mendix Platform.
