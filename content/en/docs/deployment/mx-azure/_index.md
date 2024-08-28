@@ -22,6 +22,8 @@ Mendix on Azure has the following features:
 
 ## Architecture
 
-The diagram in this section presents the high-level architecture of the Mendix for Azure solution. The architecture is different depending on whether you enabled the Auto Detect Mx Version build image setting.
+The diagram in this section presents the high-level architecture of the Mendix for Azure solution.
+
+{{< figure src="/attachments/deployment/mx-azure/architecture.png" class="no-border" >}}
 
 ## Read More
