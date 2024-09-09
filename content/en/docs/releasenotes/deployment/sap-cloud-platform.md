@@ -1,5 +1,6 @@
 ---
-title: "SAP BTP"
+title: "SAP BTP Release Notes"
+linktitle: "SAP BTP"
 url: /releasenotes/developer-portal/sap-cloud-platform/
 weight: 30
 description: "Release notes for deployment to SAP Business Technology Platform"
@@ -12,6 +13,22 @@ SAP Business Technology Platform deployments are also dependent on the latest ve
 For information on the current status of deployment to SAP BTP and any planned releases see [Mendix Status](https://status.mendix.com/).
 
 ## 2024
+
+### August 27, 2024
+
+#### Bug Fixes
+
+* Fixed updating the buildpack version to the latest while re-deploying the application on SAP BTP.
+
+### August 25, 2024
+
+#### Portal Improvements
+
+* Deployment package creation and deployment for Mendix version 7 and below is no longer supported.
+
+#### Bug Fixes
+
+* We have solved an issue where the tag description for a deployment package was missing.
 
 ### July 14, 2024
 
