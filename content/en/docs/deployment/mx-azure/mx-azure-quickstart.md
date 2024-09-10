@@ -50,16 +50,10 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
 
 8. After the preflight check completes, click **Next**.
 
-Select the service tier, Free is the default but any can be chosen, higher tier=higher cost
+9. Select the **AKS Service Tier**.
 
-Click Initialize, in about 15 minutes the resources are provided
+    You can choose any tier that suits your requirements. Higher tiers will incur higher costs.
 
-Creates a resource group in the managed app
+10. Click **Initialize**.
 
-Advanced Options
-
-Namespace and cluster automatically created in private cloud portal and you can create environments as usual
-
-you can't delete the cluster, only from the azure portal
-
-Clyde to share doc about limitations
+    The initialization process takes ca. 15 minutes. It creates a resource group in the managed app. It also automatically adds a namespace and cluster in Private Cloud portal, which you can use to create environments. For more information, see [Deploying a Mendix App to a Private Cloud Cluster](/developerportal/deploy/private-cloud-deploy/). The cluster cannot be deleted from the Private Cloud portal. If you want to remove it, you must delete it in the Microsoft Azure portal.
