@@ -18,7 +18,18 @@ Mendix on Azure has the following features:
 * You do not need to perform database scaling or software upgrades, as it is done for you.
 * The environment is set up in an opinionated way according to the architecture prepared by Mendix.
 
+## Typical Use Cases
+
+Mendix on Azure supports the following use cases:
+
+* Geographical data control - For organizations which must keep data within certain regions due to legal or contractual obligations.
+* Industry-specific compliance - For industries such as healthcare, finance, or government, which have strict regulatory compliance requirements.
+* App data sensitivity - For applications which deal with highly sensitive data or are subject to stringent security regulations.
+* Legacy systems integration - For integrating with existing legacy systems that are not easily migrated to a public cloud.
+
 ## Mendix on Azure and Mendix for Private Cloud
+
+Mendix on Azure is a new deployment option that makes use of some of the features of Mendix for Private Cloud, but does so in an opinionated way. Mendix for Private Cloud offers its users flexibility coupled with the ability to keep their deployment within their enterprise firewall, but requires more effort to configure and more time to value than deployments on Mendix Cloud. Mendix on Azure builds on that by providing an automated, preconfigured solution with access to private customer networks, which can be deployed in 30 minutes by a user without IT skills at no extra operational costs. The architecture, its maintenance, updates, and security hardening are all fully managed by Mendix.
 
 ## Architecture
 
