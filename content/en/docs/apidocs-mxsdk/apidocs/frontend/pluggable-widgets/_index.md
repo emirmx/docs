@@ -69,6 +69,7 @@ A widget package file is just a ZIP archive containing the following things:
     * *{widgetName}.tile.dark.png* sets the dark-mode equivalent to *{widgetName}.tile.png*
 * Optionally, some widget-related resources, preferably located next to the file which contains the client component
     * Note that all CSS files you add (except the one located in the **lib** sub-directory) will automatically be loaded in an app via the widget
+* Optionally, a *locales* folder.
 
 Naming your widget package file after the `widgetName` is best practice. Also, a widget package can include multiple widgets by putting several of the above items in the same widget package. However, creating such packages is *not recommended*. 
 
@@ -306,6 +307,20 @@ Here is how a caption and description look in Studio Pro:
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/pluggable-widgets/card-icon.png" alt="caption" class="no-border" >}}
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/pluggable-widgets/card-description.png" alt="description" class="no-border" >}}
+
+## Widget translations
+
+A pluggable widget can provide translations to be used within Studio Pro, matching a users preferred user interface language of Studio Pro. This includes translations for:
+
+* The name of the pluggable widget. For example, when it is viewed in the Toolbox.
+* The names of properties or values of properties. For example, in the Properties dialog.
+* Texts like labels used in the editor preview. For example, when editing a Page in Design Mode.
+
+These translations do not affect the behavior of the app once deployed.
+
+To support a translation for a specific language and locale, create a *locales/{language-code}/{widget ID}.json* or *locales/{language-code}/translate.json* file. The language code can be any of the user interface languages supported by Studio Pro, such as *de-DE*, *ja-JP*, *ko-KR* or *zh-CN*. Other files in the *locales* folder will be ignored. As a result, custom namespaces can't be used.
+
+These json files follow the format used by the I18next library, specifically v3. See https://www.i18next.com/misc/json-format for more information.
 
 ## Documents in this Section
 
