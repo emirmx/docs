@@ -310,17 +310,60 @@ Here is how a caption and description look in Studio Pro:
 
 ## Widget translations
 
-A pluggable widget can provide translations to be used within Studio Pro, matching a users preferred user interface language of Studio Pro. This includes translations for:
+A pluggable widget can provide translations to be used within Studio Pro, to match a users preferred user interface language of Studio Pro. This includes translations for:
 
-* The name of the pluggable widget. For example, when it is viewed in the Toolbox.
+* The name of the pluggable widget. For example, in the Toolbox.
 * The names of properties or values of properties. For example, in the Properties dialog.
 * Texts like labels used in the editor preview. For example, when editing a Page in Design Mode.
 
+If provided, the Studio Pro user interface automatically uses the translations for the name of the widget and any of its properties. However, texts shown in the pluggable widgets preview have to be translated by calling the *translate* function. The *preview* function in *{widgetName}.editorPreview.js* receives this *translate* function as a prop. It'll look up the provided translation for a given key, like so:
+
+```tsx
+export function preview(props) {
+    return (
+        <div>
+            {props.translate("Hello world")}
+        </div>
+    )
+}
+```
+
+Translations for a pluggable widget can be provided in two ways: either in the widget package itself, or in a module.
+
 These translations do not affect the behavior of the app once deployed.
 
-To support a translation for a specific language and locale, create a *locales/{language-code}/{widget ID}.json* or *locales/{language-code}/translate.json* file. The language code can be any of the user interface languages supported by Studio Pro, such as *de-DE*, *ja-JP*, *ko-KR* or *zh-CN*. Other files in the *locales* folder will be ignored. As a result, custom namespaces can't be used.
+If there's no translations available for a users preferred user interface language, English will be used as the fallback language.
 
-These json files follow the format used by the I18next library, specifically v3. See https://www.i18next.com/misc/json-format for more information.
+### Providing Translations in a Pluggable Widget Package
+
+To support a translation for a specific language and locale, create a *locales/{language-code}/{widget ID}.json* or *locales/{language-code}/translate.json* file. The language code can be any of the user interface languages supported by Studio Pro, such as *de-DE*, *en-US*, *ja-JP*, *ko-KR* or *zh-CN*. Other files in the *locales* folder will be ignored. As a result, custom namespaces can't be used.
+
+These json files follow the format used by the I18next library, specifically v3. See [their documentation on the format](https://www.i18next.com/misc/json-format) for more information. For example to translate a widget with the name *Text Box* with property *length*, the contents of *locales/de-DE/translate.json* might look something like this:
+
+```json
+{
+    "Text Box": "Textfeld",
+    "length": "Länge"
+}
+```
+
+### Providing Translations in a Module
+
+Translations for a pluggable widget can also be provided by a module. This can be useful when you would like to provide a module that has more than one pluggable widget, or if your pluggable widget uses one or more [/apidocs-mxsdk/apidocs/frontend/design-properties/](design properties).
+
+To achieve this: create a *locales/{language-code}/{widget ID}.json* file in the Styling folder of your module. In addition, create a *locales/metadata.json* file. The resulting structure could look like this:
+
+{{< figure src="attachments/apidocs-mxsdk/apidocs/pluggable-widgets/translations.png" alt="A metadata.json file in the Styling/locales folder and a translate.json file in the Styling/locales/de-DE folder" class="no-border" >}}
+
+The contents of *locales/metadata.json* should be:
+
+```json
+{
+    "widgetsToBeTranslated": []
+}
+```
+
+The value of *widgetsToBeTranslated* is a string array where each string must be a valid widget ID. If a .json file for a pluggable widget exists, but its widget ID is not included in this array, it will be ignored.
 
 ## Documents in this Section
 

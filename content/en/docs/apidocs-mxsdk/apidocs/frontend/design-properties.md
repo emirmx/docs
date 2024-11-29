@@ -742,6 +742,18 @@ In that situation, you can combine **Dropdown**, **Colorpicker**, **ToggleButton
 
 When the **Small** option is selected, the `borderRadiusSmall` class will be applied to the widget. On the other hand, when **Large** is selected, the `--radius-large` variable will be assigned to the `border-radius` property of the widget.
 
+## Translating design properties
+
+Design properties can be translated to match the users preferred user interface language. This includes the name of the design property and any of its options, if it has any, as shown in the styling properties panel. The provided translations do not affect the behavior of the design property.
+
+To provide translations for your design properties, create a file *locales/{language-code}/translate.json* in the Styling folder of your module. The language code can be any of the user interface languages supported by Studio Pro, such as *de-DE*, *en-US*, *ja-JP*, *ko-KR* or *zh-CN*. Other files in the *locales/{language-code}* folders will be ignored. As a result, custom namespaces can't be used. The resulting structure could look like this:
+
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/frontend/module-translation.png" alt="A translate.json file in the Styling/locales/de-DE folder" class="no-border" >}}
+
+These json files follow the format used by the I18next library, specifically v3. See [their documentation on the format](https://www.i18next.com/misc/json-format) for more information.
+
+All design properties and options with the same name will be translated the same way, even if they are defined in different modules. When two or more modules define a translation for the same design property or design property option, the one used is not guaranteed to be the same as the one outlined in [Extending or Overriding Design Properties of Other Modules](#extend-existing-design-properties). As a result, it is recommended to only translate design properties and design property options in the same module in which they are defined.
+
 ## Read More
 
 * [Native Styling](/refguide/mobile/designing-mobile-user-interfaces/native-styling/)
