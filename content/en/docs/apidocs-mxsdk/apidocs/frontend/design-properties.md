@@ -750,7 +750,17 @@ To provide translations for your design properties, create a file *locales/{lang
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/frontend/module-translation.png" alt="A translate.json file in the Styling/locales/de-DE folder" class="no-border" >}}
 
-These json files follow the format used by the I18next library, specifically v3. See [their documentation on the format](https://www.i18next.com/misc/json-format) for more information.
+These json files follow the format used by the I18next library, specifically v3. See [their documentation on the format](https://www.i18next.com/misc/json-format) for more information. For example to translate a design property with the name *Text align* with the options *left*, *center* and *right*, the contents of *locales/de-DE/translate.json* might look something like this:
+
+
+```json
+{
+    "Text algin": "Text ausrichten",
+    "left": "links",
+    "center": "zentrieren",
+    "right": "rechts"
+}
+```
 
 All design properties and options with the same name will be translated the same way, even if they are defined in different modules. When two or more modules define a translation for the same design property or design property option, the one used is not guaranteed to be the same as the one outlined in [Extending or Overriding Design Properties of Other Modules](#extend-existing-design-properties). As a result, it is recommended to only translate design properties and design property options in the same module in which they are defined.
 

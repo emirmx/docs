@@ -338,7 +338,7 @@ If there's no translations available for a users preferred user interface langua
 
 To support a translation for a specific language and locale, create a *locales/{language-code}/{widget ID}.json* or *locales/{language-code}/translate.json* file. The language code can be any of the user interface languages supported by Studio Pro, such as *de-DE*, *en-US*, *ja-JP*, *ko-KR* or *zh-CN*. Other files in the *locales* folder will be ignored. As a result, custom namespaces can't be used.
 
-These json files follow the format used by the I18next library, specifically v3. See [their documentation on the format](https://www.i18next.com/misc/json-format) for more information. For example to translate a widget with the name *Text Box* with property *length*, the contents of *locales/de-DE/translate.json* might look something like this:
+These json files follow the format used by the I18next library, specifically v3. See [their documentation on the format](https://www.i18next.com/misc/json-format) for more information. For example to translate a widget with the name *Text Box* that has a property *length*, the contents of *locales/de-DE/translate.json* might look something like this:
 
 ```json
 {
