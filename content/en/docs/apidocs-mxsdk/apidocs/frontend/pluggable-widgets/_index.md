@@ -336,7 +336,7 @@ If there's no translations available for a users preferred user interface langua
 
 ### Providing Translations in a Pluggable Widget Package
 
-To support a translation for a specific language and locale, create a *locales/{language-code}/{widget ID}.json* or *locales/{language-code}/translate.json* file. The language code can be any of the user interface languages supported by Studio Pro, such as *de-DE*, *en-US*, *ja-JP*, *ko-KR* or *zh-CN*. Other files in the *locales* folder will be ignored. As a result, custom namespaces can't be used.
+To support a translation for a specific language and locale, create a *locales/{language-code}/{widget ID}.json* or *locales/{language-code}/translate.json* file. The language code can be any of the user interface languages supported by Studio Pro, such as *de-DE*, *en-US*, *ja-JP*, *ko-KR* or *zh-CN*. Other files in the *locales* folder will be ignored. As a result, custom namespaces can't be used. It's advised to use *translate.json*, unless your mpk contains multiple pluggable widgets. Note that if you use the widget ID as the file name, you'll have to replace any spaces and illegal path characters (if there are any) with underscores. The file name should be all lower case. For example: if your widget ID is *%My Pluggable Widget%*, the name of the file should be *_my_pluggable_widget_.json*.
 
 These json files follow the format used by the I18next library, specifically v3. See [their documentation on the format](https://www.i18next.com/misc/json-format) for more information. For example to translate a widget with the name *Text Box* that has a property *length*, the contents of *locales/de-DE/translate.json* might look something like this:
 
@@ -351,9 +351,9 @@ These json files follow the format used by the I18next library, specifically v3.
 
 Translations for a pluggable widget can also be provided by a module. This can be useful when you would like to provide a module that has more than one pluggable widget, or if your pluggable widget uses one or more [/apidocs-mxsdk/apidocs/frontend/design-properties/](design properties).
 
-To achieve this: create a *locales/{language-code}/{widget ID}.json* file in the Styling folder of your module. In addition, create a *locales/metadata.json* file. The resulting structure could look like this:
+To achieve this: create a *locales/{language-code}/{widget ID}.json* file in the Styling folder of your module. You'll have to replace any spaces and illegal path characters (if there are any) with underscores. The file name should be all lower case. For example: if your widget ID is *%My Pluggable Widget%*, the name of the file should be *_my_pluggable_widget_.json*. In addition, create a *locales/metadata.json* file. The resulting structure could look like this:
 
-{{< figure src="attachments/apidocs-mxsdk/apidocs/pluggable-widgets/translations.png" alt="A metadata.json file in the Styling/locales folder and a translate.json file in the Styling/locales/de-DE folder" class="no-border" >}}
+{{< figure src="attachments/apidocs-mxsdk/apidocs/pluggable-widgets/translations.png" alt="A metadata.json file in the Styling/locales folder and a custom.widget.id.json file in the Styling/locales/de-DE folder" class="no-border" >}}
 
 The contents of *locales/metadata.json* should be:
 
