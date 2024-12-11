@@ -746,11 +746,11 @@ When the **Small** option is selected, the `borderRadiusSmall` class will be app
 
 Design properties can be translated to match the users preferred user interface language. This includes the name of the design property, its description and any of its options, if it has any, as shown in the styling properties panel. The provided translations do not affect the behavior of the design property.
 
-To provide translations for your design properties, create a file *locales/{language-code}/translate.json* in the Styling folder of your module. The language code can be any of the user interface languages supported by Studio Pro, such as *de-DE*, *en-US*, *ja-JP*, *ko-KR* or *zh-CN*. Other files in the *locales/{language-code}* folders will be ignored. As a result, custom namespaces can't be used. The resulting structure could look like this:
+To provide translations for your design properties, create a file *locales/{language-code}/translation.json* in the Styling folder of your module. The language code can be any of the user interface languages supported by Studio Pro, such as *de-DE*, *en-US*, *ja-JP*, *ko-KR* or *zh-CN*. Other files in the *locales/{language-code}* folders will be ignored. As a result, custom namespaces can't be used. The resulting structure could look like this:
 
-{{< figure src="/attachments/apidocs-mxsdk/apidocs/design-properties/translations.png" alt="A translate.json file in the Styling/locales/de-DE folder" class="no-border" >}}
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/design-properties/translations.png" alt="A translation.json file in the Styling/locales/de-DE folder" class="no-border" >}}
 
-These json files follow the format used by the I18next library, specifically v3. See [their documentation on the format](https://www.i18next.com/misc/json-format) for more information. For example to translate a design property with the name *Text align* with the options *left*, *center* and *right*, the contents of *locales/de-DE/translate.json* might look something like this:
+These json files follow the format used by the I18next library, specifically v3. See [their documentation on the format](https://www.i18next.com/misc/json-format) for more information. For example to translate a design property with the name *Text align* with the options *left*, *center* and *right*, the contents of *locales/de-DE/translation.json* might look something like this:
 
 
 ```json
@@ -764,7 +764,7 @@ These json files follow the format used by the I18next library, specifically v3.
 
 All design properties and options with the same name will be translated the same way, even if they are defined in different modules. When two or more modules define a translation for the same design property or design property option, the one used is not guaranteed to be the same as the one outlined in [Extending or Overriding Design Properties of Other Modules](#extend-existing-design-properties). As a result, it is recommended to only translate design properties and design property options in the same module in which they are defined.
 
-If a translation is not available, the names and descriptions as defined in the *design-properties.json* are used as a fallback instead. For example, the user changes their settings to work with Studio Pro in German, but the module does not have a *locales/de-DE/translate.json* file. This can also happen if the name of a design property, any of its options or descriptions are missing from the corresponding *translate.json* file.
+If a translation is not available, the names and descriptions as defined in the *design-properties.json* are used as a fallback instead. For example, the user changes their settings to work with Studio Pro in German, but the module does not have a *locales/de-DE/translation.json* file. This can also happen if the name of a design property, any of its options or descriptions are missing from the corresponding *translation.json* file.
 
 {{% alert color="warning" %}}
 When adding translations for existing design properties, do not change the name of existing design properties or their options as defined in *design-properties.json*. Those names cannot be changed easily when there are apps already using them. See the [Renaming Design Properties](#old-names) section.
