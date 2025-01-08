@@ -17,12 +17,14 @@ Microflow properties consist of the following sections:
 * [Usage](#usage)
 * [Security](#security)
 * [Concurrent execution](#concurrent)
+* [Expose as microflow action](#expose-as-microflow-action)
+* [Expose as workflow action](#expose-as-workflow-action)
 
 ### General Section {#general}
 
-#### Return Type {#returntype}
+#### Return Type {#return-type}
 
-The return type defines what information the microflow returns. The caller of the microflow will get a result of this type. See [Data Types](/refguide/data-types/) for the possible return types.
+The return type defines what information the microflow returns. The caller of the microflow gets a result of this type. For information on possible return types, see [Data Types](/refguide/data-types/).
 
 {{% alert color="info" %}}
 To indicate whether or not an object should be committed, you can use Boolean as the return type of the microflow.
@@ -59,9 +61,7 @@ URLs are not supported for microflows that have non-persistable entities or list
 #### Export Level 
 
 {{% alert color="info" %}}
-
 This property is only available for add-on and solution modules. For more information on types of modules, see the [Module Types](/refguide/modules/#module-types) section in *Modules*. 
-
 {{% /alert %}}
 
 **Export level** allows you to define access level to this document on the consumer (customer) side when developing an add-on module or a solution. 
@@ -89,15 +89,15 @@ Default: *disabled*
 
 #### Apply Entity Access
 
-**Apply entity access** indicates whether entity access based on the current user is applied when performing operations on objects. Setting this to yes limits the objects that are retrieved by the [retrieve action](/refguide/retrieve/) to only those that the current user is allowed to see. Similarly, when reading and writing attributes and associations the entity access of the current user is applied. Conversely, if entity access is not applied, all operations are allowed and all objects are retrieved.
+**Apply entity access** indicates whether entity access based on the current user is applied when performing operations on objects. Enabling this setting limits the objects that are retrieved by the [retrieve activity](/refguide/retrieve/) to only those that the current user is allowed to see. Similarly, when reading and writing attributes and associations, the entity access of the current user is applied. Conversely, if entity access is not applied, all operations are allowed and all objects are retrieved.
 
 | Option | Description |
 | --- | --- |
-| Yes | Entity access is applied to retrieving and manipulating objects. The rights of current user are taken into account. |
-| No  *(default)*  | Entity access is not applied. |
+| Disabled *(default)* | Entity access is not applied. |
+| Enabled | Entity access is applied to retrieving and manipulating objects. The rights of current user are taken into account. |
 
 {{% alert color="info" %}}
-By default entity access is not applied. Set **Apply entity access** to **Yes** if you want to perform some actions that respect the access rights of the current user.
+By default entity access is not applied. Enabling **Apply entity access** if you want to perform some actions that respect the access rights of the current user.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -124,8 +124,8 @@ Disallowing concurrent execution of a microflow can be useful if a microflow wou
 
 | Option | Description |
 | --- | --- |
-| No *(default)*  | It is possible to execute the microflow more than once concurrently. |
-| Yes | It is not possible to execute the microflow more than once concurrently; the user receives a message or another microflow is executed instead. |
+| Disabled *(default)*  | It is possible to execute the microflow more than once concurrently. |
+| Enabled | It is not possible to execute the microflow more than once concurrently; the user receives a message or another microflow is executed instead. |
 
 #### Error Message
 
@@ -135,7 +135,7 @@ Disallowing concurrent execution of a microflow can be useful if a microflow wou
 
 **Error microflow** defines another microflow to execute when concurrent execution is not allowed and the user tries to start the microflow while it is already being executed. When set, there will be no further message shown to the user.
 
-## Expose as Microflow Action {#expose-as-microflow}
+## Expose as Microflow Action {#expose-as-microflow-action}
 
 You can select this option by right-clicking in the microflow editor and selecting **Expose as action** > **Expose as microflow action**.
 
