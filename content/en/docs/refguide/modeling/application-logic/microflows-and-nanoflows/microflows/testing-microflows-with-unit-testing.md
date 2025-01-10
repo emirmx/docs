@@ -9,7 +9,7 @@ weight: 3
 
 Verify that your [microflow](/refguide/microflows/) works as expected by creating unit tests with the [Unit Testing](/appstore/modules/unit-testing/) module. 
 
-The Unit Testing module provides a user-friendly interface to manage and run unit tests that are created by using microflows, as well as unit tests that are by created using JUnit.
+The Unit Testing module provides a user-friendly interface to manage and run unit tests that are created by using microflows, as well as unit tests that are created using JUnit.
 
 This how-to teaches you how to do the following:
 

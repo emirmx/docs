@@ -36,7 +36,7 @@ It is important to know that when a microflow is started by an end-user (for exa
 
 In the following subsections, we introduce the functionality of each error handling option using simple examples.
 
-### Error Handling  - Default
+### Error Handling - Default
 
 In this example, the error handling in **Microflow 2** is the default: **Rollback**.
 
@@ -86,7 +86,7 @@ In this example, the error handling in **Microflow 2** is set to **Custom withou
 
 When **Microflow 1** starts with a button click, a savepoint is created at the very beginning of **Microflow 1**. Another savepoint is created right before **GenerateError** because the error handling is set to **Custom without rollback**. When an error occurs in **Microflow 2**, changes made in **Create Order** are kept because of the savepoint right before **GenerateError**. A custom error is logged using a **Log message** activity. **Microflow 1** does not receive the error and continues to its end. Changes made in **Create Customer** are kept.
 
-### Error Handling – Continue
+### Error Handling - Continue
 
 The **Continue** option can only be set on a microflow call or on a loop.
 
