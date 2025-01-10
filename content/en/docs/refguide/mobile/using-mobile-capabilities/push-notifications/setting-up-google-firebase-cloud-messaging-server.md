@@ -10,7 +10,9 @@ aliases:
 
 ## Introduction
 
-You can use Google's Firebase Cloud Messaging (FCM) service to send push notifications to both Android and iOS devices. To send push notifications using FCM from the Push Notifications Connector module, you must set up a Firebase account with FCM enabled. This guide teaches you how to register native or progressive web apps (PWAs) for FCM and configure the service in your app.
+This guide teaches you how to register native or progressive web apps (PWAs) for FCM and configure the service in your app.
+
+You can use Google's Firebase Cloud Messaging (FCM) service to send push notifications to both Android and iOS devices. To send push notifications using FCM from the Push Notifications Connector module, you must set up a Firebase account with FCM enabled.
 
 ## Prerequisites
 
