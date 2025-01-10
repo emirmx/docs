@@ -56,7 +56,7 @@ URLs are not supported for microflows that have non-persistable entities or list
 
 #### Name
 
-**Name** is the internal name of the microflow. When referring to the microflow in the app you will use this name. It must be unique within the module, but you can have two microflows with the same name in different modules. When referring to the microflow, you will normally prepend the name of the module to ensure uniqueness and allow you to use microflows in other modules.
+**Name** is the internal name of the microflow. You use this name to refer to the microflow in the app. It must be unique within the module, but you can have two microflows with the same name in different modules. When referring to the microflow, you normally prepend the name of the module to ensure uniqueness and allow you to use microflows in other modules.
 
 #### Export Level 
 
