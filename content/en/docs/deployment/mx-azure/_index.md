@@ -37,4 +37,12 @@ The diagram in this section presents the high-level architecture of the Mendix f
 
 {{< figure src="/attachments/deployment/mx-azure/architecture.png" class="no-border" >}}
 
+The architecture is assessed against the [Azure well-architected framework](https://learn.microsoft.com/en-us/azure/well-architected/) to ensure its reliability, accessibility, and performance.
+
+## Security
+
+How is Mendix access to the customer environment secured - Document private endpoints used (protocol, ports, authentication mechanism
+
+### SOC 2 exceptions
+
 ## Read More
