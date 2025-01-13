@@ -14,8 +14,7 @@ Mendix on Azure provides a simplified, integrated way to deploy Mendix applicati
 Mendix on Azure has the following features:
 
 * You can create the managed app in Azure and link it to your Mendix Private Cloud environment.
-* You are provided with a dedicated database and file storage for every app environment.
-* You do not need to perform database scaling or software upgrades, as it is done for you.
+* You do not need to perform software upgrades, as they are done for you.
 * The environment is set up in an opinionated way according to the architecture prepared by Mendix.
 
 ## Typical Use Cases
