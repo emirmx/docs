@@ -23,7 +23,7 @@ Mendix on Azure supports the following use cases:
 
 * Geographical data control - For organizations which must keep data within certain regions due to legal or contractual obligations.
 * Industry-specific compliance - For industries such as healthcare, finance, or government, which have strict regulatory compliance requirements.
-* App data sensitivity - For applications which deal with highly sensitive data or are subject to stringent security regulations.
+* App data sensitivity - For applications which deal with highly sensitive data or are subject to stringent security regulations, Mendix on Azure provides the option to keep this data within the organization's own security perimeter.
 * Legacy systems integration - For integrating with existing legacy systems that are not easily migrated to a public cloud.
 
 ## Mendix on Azure and Mendix for Private Cloud
