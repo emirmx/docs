@@ -9,6 +9,24 @@ description: "Mendix Native Mobile Builder release notes."
 
 The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Studio Pro, which helps you build your Mendix native mobile app. After the Mendix Native Mobile Builder simplifies your build process, you can do what you want most: test and publish your app. The Mendix Native Mobile Builder uses MxBuild, GitHub, and App Center to simplify the app building process and is directly accessible via Mendix Studio Pro. 
 
+## 2025
+
+### Release 1.0.132
+
+**Release date: January 7, 2025**
+
+#### App Center Deprecated March 2025
+
+* Building mobile apps with App Center is [deprecated](https://learn.microsoft.com/en-us/appcenter/retirement) and will be removed on March 2025. We now show the deprecation warning when the cloud build option is enabled.
+
+#### Fixes
+
+* We have resolved an issue where remote JavaScript debugging failed in custom-built Mendix Native Developer Apps. This happened in cases of improper initialization of Firebase services during the build process. Our fix ensures Firebase dependencies are only included when explicitly required by the application.
+  
+{{% alert color="warning" %}}
+Please note that this is a breaking change, and thus, requires a mandatory update. You must use the latest Native Template version to implement this fix, as older versions may cause errors in your application. Failure to update could lead to potential app instability and functionality issues.
+{{% /alert %}}
+
 ## 2024
 
 ### Release 1.0.131

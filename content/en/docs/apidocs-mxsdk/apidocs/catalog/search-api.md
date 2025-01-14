@@ -282,4 +282,4 @@ A successful `GET` call results in a `200` status code and a JSON response body 
 
 ## API Reference {#api-reference}
 
-{{< swaggerui src="/openapi-spec/catalog-registration_v5.yaml" >}}
+{{< swaggerui src="/openapi-spec/catalog-search_v5.yaml" >}}

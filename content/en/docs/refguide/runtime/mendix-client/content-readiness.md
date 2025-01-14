@@ -21,7 +21,7 @@ The following table shows which of the more popular platform-supported Marketpla
 | [Mx Model Reflection](https://marketplace.mendix.com/link/component/69) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [Excel Importer](https://marketplace.mendix.com/link/component/72) | {{< icon name="remove-circle-filled" color="red" >}} |
 | [Encryption](https://marketplace.mendix.com/link/component/1011) | {{< icon name="checkmark-circle-filled" color="green" >}} |
-| [SAML](https://marketplace.mendix.com/link/component/1174) | {{< icon name="remove-circle-filled" color="red" >}} |
+| [SAML](https://marketplace.mendix.com/link/component/1174) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [Excel Exporter](https://marketplace.mendix.com/link/component/726) | {{< icon name="remove-circle-filled" color="red" >}} |
 | [Deep Link Module](https://marketplace.mendix.com/link/component/43) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [Native Mobile Resources](https://marketplace.mendix.com/link/component/109513) | {{< icon name="checkmark-circle-filled" color="green" >}} |

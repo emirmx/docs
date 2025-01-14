@@ -58,7 +58,7 @@ The prerequisites are the following:
 
     | Studio Pro 10.0.0 - 10.10.0 | Studio Pro 10.11.0 and above |
     | --- | --- |
-    | [JDK 11 (x64)](https://adoptium.net/temurin/releases/?version=11) | [JDK 21 (x64)](https://adoptium.net/temurin/releases/?version=21) |
+    | [JDK 11 (x64)](https://adoptium.net/temurin/releases/?version=11) | [JDK 21 (x64 or ARM64)](https://adoptium.net/temurin/releases/?version=21) |
 
 * [Microsoft Visual C++ 2015 and 2019 Redistributable Package](https://aka.ms/vs/16/release/vc_redist.x64.exe)
 
@@ -104,8 +104,11 @@ It is possible to prepare the prerequisite installers beforehand so the setup pr
    2. Eclipse Temurin JDK (x64)
       * For Studio Pro versions 10.0.0 through 10.10.0, rename the Java Development Kit 11 (x64) *msi* 
         * For example, *OpenJDK11U-jdk_x64_windows_hotspot_11.0.20.1_1.msi* to *adoptiumjdk_11_x64.msi*
-      * For Studio Pro versions 10.11.0 and above, rename the Java Development Kit 21 (x64) *msi* 
+      * For Studio Pro versions 10.11.0 through 10.18.0, rename the Java Development Kit 21 (x64) *msi* 
         * For example, *OpenJDK21U-jdk_x64_windows_hotspot_21.0.4_7.msi* to *adoptiumjdk_21_x64.msi*
+      * For Studio Pro versions 10.12.11 and 10.18.1 and above, rename the Java Development Kit 21 *msi*
+        * On x64, rename *OpenJDK21U-jdk_x64_windows_hotspot_21.0.5_11.msi* to *adoptiumjdk_21_x64.msi*
+        * On ARM64, rename *OpenJDK21U-jdk_aarch64_windows_hotspot_21.0.5_11.msi* to *adoptiumjdk_21_arm64.msi*
    3. Visual C++ Redistributable for Visual Studio 2019 (x64)
       * Rename the executable 
         * For example, *VC_redist.x64.exe* to *vcredist2019_x64.exe*

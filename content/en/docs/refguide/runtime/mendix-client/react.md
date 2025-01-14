@@ -113,7 +113,7 @@ Because the reference set selector widget is technically a grid, while combo box
 
 The data grid widget is not supported in the React client. To leverage React, replace it with the [Data Grid 2](/appstore/modules/data-grid-2/) widget. The data grid 2 widget is part of the [Data Widgets Module](https://marketplace.mendix.com/link/component/116540) in the Mendix Marketplace.
 
-To automatically convert a data grid widget to a data grid 2, right-click the widget (or the error message) and select **Convert to Data Grid 2**.
+To convert a data grid widget to a data grid 2, right-click the widget (or the error message) and select **Convert to Data Grid 2**. This will attempt to automatically convert the widget. If a property of the data grid cannot be converted, a notification will give you the option to migrate the widget manually.
 
 #### Template Grid{#template-grid}
 

@@ -128,12 +128,12 @@ In this tab, you can configure whether contents that users publish to the privat
 
 You can populate your private Marketplace with contents by importing a zip file that contains the content packages along with a *package.json* file. You can upload the file from a Content Delivery Network, or manually from your local machine.
 
-#### Manully Importing Marketplace Content
+#### Manually Importing Marketplace Content
 
 To manually upload a content bundle from your own computer, perform the following steps:
 
 1. Download the Marketplace Bundle with contents available in a zip file. If you do not have access to the bundle, contact your Mendix point of contact.
-2. In the **Content Import** > **Upload Markeplace Bundle** tab, drag and drop the file that you want to upload.
+2. In the **Content Import** > **Upload Marketplace Bundle** tab, drag and drop the file that you want to upload.
 
     {{% alert color="info" %}}<ul><li>The file must be in *zip* format.</li><li>The file must not be larger than 2048 MB.</li><li>Your infrastructure must support the upload of large files (up to 2048MB).</li><li>You should also have at least 40 GB available disk space to account for temporary files.</li></ul>
     {{% /alert %}}
@@ -189,7 +189,7 @@ You can configure SSO authentication with the OIDC protocol. For more informatio
 
 ### IdP Integration (SAML)
 
-To configure SSO authentication with the SAML protocol, first [configure the service provider](/appstore/modules/saml/#configure-sp) in the **SP Configuration** tab, and then [create the IdP-specific settings](/appstore/modules/saml/#idp-specific-settings) in the **IdP Configuration** tab.
+To configure SSO authentication with the SAML protocol, first [Configure SAML Module](/appstore/modules/saml/#config) and then [Configure IdP Specific Settings](/appstore/modules/saml/#idp-specific-settings).
 
 To [debug the configuration](/appstore/modules/saml/#debugging-the-configuration), you can view the log files in the **Log** tab.
 

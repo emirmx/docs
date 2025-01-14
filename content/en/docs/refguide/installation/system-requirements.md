@@ -46,7 +46,7 @@ The following frameworks are required. They will be installed automatically by t
     | .NET 6 Desktop Runtime | .NET 8 Desktop Runtime |
     
 * Microsoft Visual C++ 2019 Redistributable Package (x64)
-* A Java Developer Kit (JDK) version 11, 17, or 21 - if not yet installed on your machine, Mendix will install 'Eclipse Temurin JDK 21 (x64)'
+* A Java Developer Kit (JDK) version 11, 17, or 21 - if not yet installed on your machine, Mendix will install 'Eclipse Temurin JDK 21 (x64 or ARM64)'
 * Gradle version 8.5 or above - if Gradle is not yet installed on your machine, Mendix will install Gradle version 8.5
 * Git for Windows (x64) version 2.41.0 or above (for more information, see the [Prerequisites](/refguide/install/#prerequisites) section in *Installing Mendix Studio Pro*)
 * Mendix Native Mobile Builder

@@ -49,8 +49,6 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
 6. To view the configuration status, click the **Authentication Configuration** tab.
 7. To set up authentication, click **Edit**, and then provide the required information based on the selected authentication type:
 
-    [//]: # (<!-- markdownlint-disable no-space-in-emphasis -->)
-
     * For basic authentication, enter the following information:
         * **Username** – A username for basic authentication into the OData resource in your Mendix application
         * **Password** – A password for basic authentication into the OData resource in your Mendix application
@@ -60,8 +58,6 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
         * **Token Endpoint** – An endpoint at which the token will be validated by your OAuth provider
         * **Allowed Scopes** – Allowed and custom scopes configured on the client from your OAuth provider
         * **Access Token Validity** – Duration (in seconds) for which the access token is valid
-
-    [//]: # (<!-- markdownlint-enable no-space-in-emphasis -->)
 
 8. Click **Generate Script**.
 9. Click **Back** to return to the **Details** page.
@@ -100,6 +96,47 @@ To view all ingestion jobs associated with a specific data source in Snowflake, 
 
 ```sql
 SELECT * FROM core.ingestion_job WHERE DATASOURCE_ID = '1234abcd' ORDER BY CREATED_DATE_TIME DESC;
+```
+
+## Programmatically Triggering an Ingestion Job From a Mendix App {#trigering-jobs}
+
+Programmatically triggering an ingestion job can meet data ingestion requirements where a scheduled task may not, for example in the following use cases:
+
+* Waiting for a last submission to be submitted to a Mendix app before data ingestion occurs.
+* Starting data ingestion when the load on the Mendix app is the lowest.
+
+### Prerequisites
+
+* A fully configured data source in the Mendix Data Loader
+* A Mendix app equipped with the Snowflake REST SQL connector
+* An authenticated user that is allowed to trigger stored procedures
+
+### Triggering the Ingestion
+
+To trigger an ingestion job programmatically, use the `ExecuteStatement` operation available in the [Snowflake REST SQL connector](/appstore/connectors/snowflake/snowflake-rest-sql/).
+
+1. Obtain the Snowflake data source ID by performing the following steps:
+
+    1. In the Snowflake environment, open the Mendix Data Loader by clicking **Data Products** > **Apps** > **Mendix Data Loader**.
+    2. Open the application by clicking the `MENDIX_DATA_LOADER` tab.
+    3. Click **View** by the configured data source.
+    4. Copy the value for the `ID` key.
+
+2. In the Snowflake REST SQL connector, use the `ExecuteStatement` operation to execute the following statement:
+
+```sql
+CALL {NAME_OF_THE_MENDIX_DATA_LOADER}.MX_FUNCTIONS.RUN_INGESTION_JOB('{DATASOURCE_ID}','');
+```
+
+where you must specify the following variables:
+
+* `{NAME_OF_THE_MENDIX_DATA_LOADER}` - The default name for the Mendix Data Loader is `MENDIX_DATA_LOADER`
+* `{DATASOURCE_ID}` - Required; the data source ID that you obtained in step 1
+
+For example, for a data source with the ID *40FJYP9D*, the resulting statement would be:
+
+```sql
+CALL MENDIX_DATA_LOADER.MX_FUNCTIONS.RUN_INGESTION_JOB('40FJYP9D','');
 ```
 
 ## Verifying the Access Token

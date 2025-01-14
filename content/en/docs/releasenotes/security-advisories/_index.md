@@ -20,6 +20,7 @@ Siemens publishes their common vulnerabilities and exposures (CVE) on the second
 
 | CVE ID | CVSS v3.1 Base Score | Siemens Security Advisory (SSA) Description | Notes |
 | --- | --- | ---  | --- |
+| CVE-2024-56841 | 7.4 | [LDAP Injection Vulnerability in Mendix LDAP Module](https://cert-portal.siemens.com/productcert/html/ssa-314390.html) | See the SSA description for remediation details. |
 |  <a id="39888"></a>CVE-2024-39888 | 7.5 | [Hard-coded Default Encryption Key in Mendix Encryption Module v10.0.0 and v10.0.1](https://cert-portal.siemens.com/productcert/html/ssa-998949.html)  | See the SSA description for remediation details. |
 |  <a id="33500"></a>CVE-2024-33500 | 5.9 | [Improper Privilege Management Vulnerability in Mendix Runtime](https://cert-portal.siemens.com/productcert/html/ssa-540640.html)  | See the SSA description for remediation details. |
 |  <a id="49069"></a>CVE-2023-49069 | 5.3 | [Usernames Disclosure Vulnerability in Mendix Runtime](https://cert-portal.siemens.com/productcert/html/ssa-097435.html)  | See the SSA description for remediation details. |

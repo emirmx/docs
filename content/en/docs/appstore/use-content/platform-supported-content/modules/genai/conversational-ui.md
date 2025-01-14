@@ -8,7 +8,7 @@ description: "Describes the Conversational UI marketplace module that assists de
 
 ## Introduction {#introduction}
 
-With the [Conversational UI module](https://marketplace.mendix.com/link/component/227931), you can create a GenAI-based chat user interface. It contains the needed data model, pages, snippets, and building blocks. You can integrate with any LLM and knowledge base to create your full-screen, sidebar, or modal chat. It integrates with the Atlas framework and is the basis for the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926). It is also included in the [Blank GenAI App](https://marketplace.mendix.com/link/component/227934) and the [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035).
+With the Conversational UI module (delivered as part of [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931)), you can create a GenAI-based chat user interface. It contains the needed data model, pages, snippets, and building blocks. You can integrate with any LLM and knowledge base to create your full-screen, sidebar, or modal chat. It integrates with the Atlas framework and is the basis for the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926). It is also included in the [Blank GenAI App](https://marketplace.mendix.com/link/component/227934), the [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035) and the [RFP Assistant Starter App](https://marketplace.mendix.com/link/component/235917).
 
 Mendix has produced a [Conversational AI Design Checklist](/howto/front-end/conversation-checklist/) which suggests some best practices for introducing conversational AI into your app.
 
@@ -19,7 +19,7 @@ Typical use cases for Conversational UI include the following:
 * Create a chat interface for users to chat with Large Language Models (LLM). 
 * Allow users to switch between different implementations by switching providers. 
 * Include advanced capabilities to control the model's behavior, for example, by setting the temperature parameter.
-* Easily extend the chat interface with advanced concepts, such as RAG or the ReAct pattern. For more information, see [Using Generative AI](/appstore/modules/genai/using-gen-ai/).
+* Easily extend the chat interface with advanced concepts, such as RAG or the ReAct pattern. For more information, see [Get Started with Generative AI](/appstore/modules/genai/get-started/).
 
 ### Features {#features}
 
@@ -33,7 +33,7 @@ The Conversational UI module provides the following functionalities:
     * Pages, snippets, and logic to display and export token usage data (if enabled in GenAI Commons and supported by the GenAI Connector of choice)
 * Operations to set up your context, interact with the model, and add the data to be displayed in the UI
 * Domain model to store the chat conversations and additional information
-* Integration with any model that is compatible with [GenAI Commons](https://marketplace.mendix.com/link/component/227933)
+* Integration with any model that is compatible with [GenAI Commons](/appstore/modules/genai/commons/)
 
 ### Limitations {#limitations}
 
@@ -43,15 +43,14 @@ This module is intended to enable chat interactions between a user and an AI mod
 
 To use the Conversational UI module, your Mendix Studio Pro version must be [9.24.2](/releasenotes/studio-pro/9.24/#9242) or higher.
 
-You must also ensure you have the prerequisite modules that Conversational UI requires. The modules are included by default in the [Blank GenAI App](https://marketplace.mendix.com/link/component/227934), the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926), and the [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035), otherwise you must install them yourself:
+You must also ensure you have the prerequisite modules that Conversational UI requires. The modules are included by default in the [Blank GenAI App](https://marketplace.mendix.com/link/component/227934), the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926), the [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035) and the [RFP Assistant Starter App](https://marketplace.mendix.com/link/component/235917), otherwise you must install them yourself:
 
 * [Atlas Core](https://marketplace.mendix.com/link/component/117187)
 * [Data Widgets](https://marketplace.mendix.com/link/component/116540) 
-* [GenAI Commons](https://marketplace.mendix.com/link/component/227933)
 * [Nanoflow Commons](https://marketplace.mendix.com/link/component/109515)
 * [Web Actions](https://marketplace.mendix.com/link/component/114337)
 
-Finally, you must also install and configure a connector that is compatible with GenAI Commons. Mendix provides platform-supported integration with either [(Azure) OpenAI](/appstore/modules/genai/openai/) or [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/). You can also integrate with custom models by making them compatible with the [GenAI Commons](/appstore/modules/genai/commons/) Request and Response.
+Finally, you must also install and configure a connector that is compatible with GenAI Commons. When downloaded from the [marketplace](https://marketplace.mendix.com/link/component/227931), [GenAI Commons](/appstore/modules/genai/commons/) and the [MxGenAI Connector](/appstore/modules/genai/MxGenAI/) are downloaded as well. Furthermore, Mendix provides platform-supported integration with either [(Azure) OpenAI](/appstore/modules/genai/openai/) or [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/). You can also integrate with custom models by making them compatible with the [GenAI Commons](/appstore/modules/genai/commons/) Request and Response.
 
 ## Installation {#installation}
 
@@ -139,15 +138,15 @@ If you need additional attributes or associations on the `ChatContext`, use a sp
 
 #### Chat Context Operations {#chat-context-operations}
 
-Depending on the implementation, you can create this entity using a microflow that opens the page or using a datasource microflow on the page itself. The following are the operations in the toolbox for creating the ChatContext:
+Depending on the implementation, you can create this object using a microflow that opens the page or using a datasource microflow on the page itself. The following are the operations in the toolbox for creating the ChatContext:
 
-* `New Chat` creates a new `ChatContext` and a new `ProviderConfig` (or specialization of such depending on the input). The `ProviderConfig` is added to the `ChatContext` and set to active. Additionally, the action microflow of the new `ProviderConfig` is set.
+* `New Chat` creates a new `ChatContext` and a new `ProviderConfig`. The `ProviderConfig` is added to the `ChatContext` and set to active. Additionally, the action microflow of the new `ProviderConfig` is set. A [DeployedModel](/appstore/modules/genai/commons/#deployed-model) needs to be passed in order to access the right model. Via the association `ProviderConfig_DeployedModel` the DeployedModel can be retrieved and used to pass to the [Chat Completions (with history)](/appstore/modules/genai/commons/#chat-completions-with-history) later in the Action Microflow.
 * `New Chat with Existing Config` creates a new `ChatContext` and sets a given `ProviderConfig` to active.
 * `New Chat with Additional Configs` creates a new `ChatContext`, adds a `ProviderConfig` to the `ChatContext`, and sets it to active. In addition, a list of `ProviderConfig` can be added to the `ChatContext` (non-active, but selectable in the UI).
 
 #### SuggestedUserPrompt {#suggested-user-prompt}
 
-It is possible to add suggested user prompts to a `ChatContext`. They appear as a button for new chats. When a user clicks the **Suggested User Prompt** that appears above the chat input box, the [action microflow](#action-microflow) sends the content of the prompt to the model and starts a predefined chat in the interface. New `SuggestedUserPrompts` can be created and added to a `ChatContext` with the **Add SuggestedUserPrompt** toolbox action.
+It is possible to add suggested user prompts to a `ChatContext`. They appear as a button for new chats. When a user clicks the **Suggested User Prompt** that appears above the chat input box, the [action microflow](#action-microflow) sends the content of the prompt to the model and starts a predefined chat in the interface. New `SuggestedUserPrompts` can be created and added to a `ChatContext` with the **Add Suggested User Prompt** toolbox action.
 
 ### Associating the ProviderConfig {#provider-config}
 
@@ -161,7 +160,7 @@ If the `ChatContext` however already exists and a new `ProviderConfig` needs to 
 
 ### Defining and Setting the Action Microflow {#action-microflow}
 
-The `Action Microflow` that is stored on a `ProviderConfig` is executed when the user clicks the **Send** button. This microflow handles the interaction between the LLM connectors and the Conversational UI entities. The **USE_ME** folder included in the Conversational UI module contains example action microflows for both [OpenAI](/appstore/modules/genai/openai/) and [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/). You can copy these microflows and modify them for your use cases, or use them directly for test purposes.
+The `Action Microflow` that is stored on a `ProviderConfig` is executed when the user clicks the **Send** button. This microflow handles the interaction between the LLM connectors and the Conversational UI entities. The **USE_ME** folder included in the Conversational UI module contains an example action microflow that is compatible with all connectors that follow GenAI Commons principles (such as [MxGenAI](/appstore/modules/genai/MxGenAI/), [OpenAI](/appstore/modules/genai/openai/) and [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/)). You can copy and modify the microflow or use it directly. The **Default Preprocessing** action can be used to set the topic of the chat context as well as creating a sample [Request](/appstore/modules/genai/commons/#request).
 
 Add the action microflow to an existing `ProviderConfig` by using the **Set Chat Action** toolbox action. Note that this action does not commit the object, so you must add a step to commit it afterward.
 
@@ -170,8 +169,7 @@ Add the action microflow to an existing `ProviderConfig` by using the **Set Chat
 A typical action microflow is responsible for the following:
 
 * Convert the `ChatContext` with user input to a `Request` structure for the chat completions operation.
-* Retrieve the connection details (i.e. credentials, configuration, etc.) for the operation.
-* Execute the chat completions operation for the LLM of choice.
+* Execute the [Chat Completions (with history)](/appstore/modules/genai/commons/#chat-completions-with-history) operations. To pass a [DeployedModel](/appstore/modules/genai/commons/#deployed-model), you can use the `ProviderConfig_DeployedModel` association.
 * Update the `ChatContext` structure based on the response so that the user can see the result in the UI.
 
 If you want to create your custom action microflow, keep the following considerations in mind:
@@ -185,14 +183,16 @@ If you want to create your custom action microflow, keep the following considera
 
 The following operations can be found in the toolbox for changing the [ChatContext](#chat-context) in a (custom) action microflow:
 
-* `Set ConversationID` sets the ConversationID on the `ChatContext`. Storing the ConversationID is needed for a chat with history within Retrieve and Generate with [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/).
 * `Set Topic` sets the `Topic` of the `ChatContext`. This attribute can be used in the **History** sidebar while making historical chats visible to users.
+* `Default Preprocessing` sets a default `Topic` for `ChatContext` and creates a sample [Request](/appstore/modules/genai/commons/#request).
+* `Set ConversationID` sets the ConversationID on the `ChatContext`. Storing the ConversationID is needed for a chat with history within [Retrieve and Generate with Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/#retrieve-and-generate).
+
 
 ##### Request Operations {#request-operations}
 
 The following operations are used in a (custom) action microflow:
 
-* `Create Request from ChatContext` creates a [Request](/appstore/modules/genai/commons/) object that is used as an input parameter in a `Chat with History` operation as part of the [action microflow](#action-microflow). For more information about the `Chat with History` operation, see [(Azure) OpenAI](/appstore/modules/genai/openai/#chatcompletions-with-with-history) or [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/).
+* `Create Request with Chat History` creates a [Request](/appstore/modules/genai/commons/) object that is used as an input parameter in a [Chat Completions (with history)](/appstore/modules/genai/commons/#chat-completions-with-history) operation as part of the [action microflow](#action-microflow).
 * `Get Current User Prompt` gets the current user prompt. It can be used in the [action microflow](#action-microflow) because the `CurrentUserPrompt` from the chat context is no longer available.
 * `Update Assistant Response` processes the response of the model and adds the new message and any sources to the UI. This is typically one of the last steps of the logic in an [action microflow](#action-microflow).
 

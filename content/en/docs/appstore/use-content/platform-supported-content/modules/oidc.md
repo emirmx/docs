@@ -40,6 +40,7 @@ Alternatives to using OIDC SSO for managing single sign-on are:
 * **Xcelerator apps:** Your Siemens Xcelerator app is designed to be integrated with Siemens' SAM IdP.  The Siemens SAM IdP supports the OIDC protocol and allows your app to delegate both authentication (login) and authorization (roles).
 * **Works with Responsive web app and PWA:** OIDC SSO module supports both responsive web apps and progressive web apps (PWA), ensuring seamless functionality in both offline and online modes for PWAs. If you are building a native mobile app, you need to use [Mobile SSO](https://marketplace.mendix.com/link/component/223516) module for your app. For more information, see [Building a Responsive Web App](/quickstarts/responsive-web-app/), [Progressive Web App](/refguide/mobile/introduction-to-mobile-technologies/progressive-web-app/), and [Native Mobile](/refguide/mobile/introduction-to-mobile-technologies/native-mobile/).
 * **API security:** If your app exposes APIs, such as an OData API, it is best security practice to use OAuth Access Tokens (also known as bearer tokens or JWT tokens) instead of Basic Authentication or API keys. You can use the OIDC SSO module to validate these Access Tokens and check if they have right authorization (i.e., the right OAuth scopes) for accessing your API endpoint. For example, you may want to allow a specific user or client to perform a GET (read) request but not a POST or PATCH (write) request. The OIDC module supports processing Access Tokens obtained via both SSO and the OAuth client credential grant.
+* **App-initiated logout at the IdP:** As a counterpart to logging in via SSO, it is possible to include a logout button in your app that also logs the end user out from the IdP.
 
 ### Features and Limitations
 
@@ -97,6 +98,7 @@ For readers with more knowledge of the OAuth and OIDC protocol:
 * Supports response_mode=query and response_mode=form_post
 * Helps you implement an OAuth Resource Server that receives an Access Token which is obtained by a client via either Authorization Code grant or Client Credential grant.
 * When the OIDC SSO module secures an API with the Client Credential grant, the `sub` as claim (which contains either user-id or client-id) should always be available in the access token as per [RFC 9068](https://datatracker.ietf.org/doc/html/rfc9068#name-data-structure).  If it is not included, the module will look for `client_id`. To be compliant with Microsoft's Entra ID and Okta, it will use `app_id` or `cid` as alternatives to `client_id`. Any of these client identifiers are used to create a user in the Mendix application, allowing the Mendix security model to apply not only to users (human identities) but also to clients (machine identities).
+* Supports [OpenID Connect RP-Initiated Logout 1.0](https://openid.net/specs/openid-connect-rpinitiated-1_0.html). When sending a logout request to the IdP's `end_session_endpoint`, the parameters `id_token_hint` and `post_logout_redirect_uri` are supported for the logout request.
 
 #### Limitations
 
@@ -242,7 +244,7 @@ If a single Identity Provider (IdP) is configured in the OIDC SSO module, end-us
 
 The OIDC SSO module works without a specified sign-in page. Therefore, in the navigation section of your app, set **Sign-in page** (in the **Authentication** section) to *none*.
 
-If you are configuring navigation for web/responsive apps and want to allow your end-users to choose from a number of different IdPs, or to have the option to sign in back into the app after they have signed out, set a **Role-based home page** for role **Anonymous** to **OIDC.Login_Web_Button**. When you configure navigation for PWA apps, set a **Role-based home page** for role **Anonymous** to **OIDC.Login_PWA_Button**. See [Role-Based Home Pages](/refguide/navigation/#role-based) in *Navigation* for more information.
+If you are configuring navigation for web/responsive apps and want to allow your end-users to choose from a number of different IdPs, or to have the option to sign in back into the app after they have signed out, set a **Role-based home page** for role **Anonymous** to **OIDC.Login_Web_Button**. When configuring navigation for PWA apps, set the **Role-based home page** for the **Anonymous** role to `OIDC.Login_PWA_Online_Button` for online apps and `Login_PWA_Offline_Button` for offline apps. See [Role-Based Home Pages](/refguide/navigation/#role-based) in *Navigation* for more information.
 
 In addition, administrators will need to have access to configure OIDC and also manage end-users. You can do this by including the pages `Administration.Account_Overview` and `OIDC.OIDC_Client_Overview` into the app navigation, or a separate administration page.
 
@@ -880,9 +882,9 @@ The Deep Link module does not have full support for multiple IdPs, so it can onl
 
 ### Logging Out
 
-A standard logout action will end an end-user's Mendix session, but will not end their SSO session. To perform an SSO logout, also known as Single Log Out (SLO), use the nanoflow `ACT_Logout`, which will redirect your user to the IdP's “end session endpoint” if configured.
+A standard log out action will end an end-user's Mendix session, but will not end their SSO session. If you want to allow your app's end-users to log out, you can add a menu item or button that call the nanoflow `ACT_Logout`. This nanoflow will end the local session in your app and, if applicable, request the connected IdP to terminate the user's session there as well.
 
-To do this, add a menu item or button for your end-users that calls the nanoflow `ACT_Logout`.
+During this process, the user's browser will be redirected to the IdP, logging them out of both your Mendix app and the IdP. Optionally, you can configure the IdP to redirect the user to the `post_logout_redirect_uri` after log out, allowing the user to return to your app. 
 
 ### Using ACR to Request Authentication Method
 

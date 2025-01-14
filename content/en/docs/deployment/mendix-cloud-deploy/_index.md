@@ -55,16 +55,16 @@ You can upgrade a Free App to a licensed app running on a node in Mendix Cloud. 
 
 #### Archiving of Free Apps {#free-apps-archival}
 
-If a Free App has been in sleep mode for three months or longer, it may be archived. For Free Apps that are going to be archived, the [Technical Contact](/developerportal/general/app-roles/#technical-contact) is informed two weeks beforehand. Upon archiving, the project and model are retained and will remain active and accessible, but the running app, database, files, and backups for the Free App are deleted.
+If a Free App has been in sleep mode for three months or longer, it may be archived. For Free Apps that are going to be archived, the [Technical Contact](/developerportal/general/app-roles/#technical-contact) is informed two weeks beforehand. Upon archiving, the project on the Mendix Platform and repository on the [Team Server](/developerportal/general/team-server/) are retained and will remain active and accessible, but the running app, database, files, and backups for the Free App are deleted.
 
 There are two ways to prevent your Free App from being archived:
 
 * Visit the Free App
 * Deploy a new version of your app to your Free App environment
 
-#### Deletion of Unused Free Apps
+#### Deletion of Unused Projects (#projects-deletion)
 
-If a Free App has never seen any activity since it was created, it is kept on the [Team Server](/developerportal/general/team-server/) for a maximum of one year. After this, the app, its repository, and any cloud resources will be permanently deleted.
+If a project has never seen any activity since it was created, it is kept on the Team Server for a maximum of one year. After this, the project on the Mendix Platform, its repository on the Team Server, and any Mendix Cloud resources will be permanently deleted.
 
 The system uses the following criteria when determining if an app is unused:
 
@@ -202,6 +202,10 @@ With a Premium plan, your app can be [horizontally scaled](/developerportal/depl
 Fallback ensures that the data in your database is automatically copied to a database in a second AZ. This ensures that all your data is still available to your app if there is an issue with the primary availability zone and app instances have to be started in the second AZ. 
 
 The connections between AZs are low latency. However, the implementation of these features means that your monitoring may indicate that apps deployed to Mendix Cloud under a Premium plan suffer an additional latency of a few milliseconds compared with apps deployed using a Standard plan. For a well-designed app, this difference is not noticeable to end-users. 
+
+#### Application Data Replication
+
+With a premium plan, you can replicate application data in Mendix Cloud to another region for security and disaster recovery purposes. For more information, see the [Application Data Replication](/control-center/security-settings/#application-data-replication) section in *Security Settings in Control Center*.
 
 #### Regional Fallback{#regional-fallback}
 

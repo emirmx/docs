@@ -16,7 +16,8 @@ paths:
       tags:
         - Projects
       summary: 'Get a list of company-owned projects'
-      description: 'Returns a list of projects owned by the company of the requesting user. Inactive projects are only returned if the requesting user is a Mendix Administrator.</br>Every request must be authenticated by a Personal Access Token containing the scope `mx:app:metadata:read`.'
+      deprecated: true
+      description: 'This operation has been deprecated. Clients are redirected to `GET /accounts/{account-id}/projects`.'
       operationId: get-projects
       parameters:
         - name: createdSince
@@ -27,14 +28,10 @@ paths:
         - $ref: '#components/parameters/limit'
         - $ref: '#components/parameters/offset'
       responses:
-        '200':
-          $ref: '#/components/responses/ProjectsResponse'
-        '400':
-          $ref: '#/components/responses/Http400'
+        '308':
+          $ref: '#/components/responses/Http308'
         '401':
           $ref: '#/components/responses/Http401'
-        '500':
-          $ref: '#/components/responses/Http500'
     post:
       tags:
         - Projects
@@ -266,6 +263,30 @@ paths:
           $ref: '#/components/responses/Http401'
         '404':
           $ref: '#/components/responses/Http404'
+        '500':
+          $ref: '#/components/responses/Http500'
+  '/accounts/{account-id}/projects':
+    get:
+      tags:
+        - Accounts
+      summary: 'Get a list of company-owned projects'
+      description: 'Returns a list of projects owned by the company of the requesting user. Inactive projects are only returned if the requesting user is a Mendix Administrator.</br>Every request must be authenticated by a Personal Access Token containing the scope `mx:app:metadata:read`.'
+      operationId: get-account-projects
+      parameters:
+        - name: createdSince
+          in: query
+          description: 'Retrieve all projects created after this date. Time is in UTC and must be provided in this format: 2020-01-16T05:53:28Z'
+          schema:
+            type: string
+        - $ref: '#components/parameters/limit'
+        - $ref: '#components/parameters/offset'
+      responses:
+        '200':
+          $ref: '#/components/responses/AccountProjectsResponse'
+        '400':
+          $ref: '#/components/responses/Http400'
+        '401':
+          $ref: '#/components/responses/Http401'
         '500':
           $ref: '#/components/responses/Http500'
   '/roles/{role-id}':
@@ -536,7 +557,7 @@ components:
       name: Authorization
       in: header
   responses:
-    ProjectsResponse:
+    AccountProjectsResponse:
       description: List of projects
       content:
         application/json:
@@ -841,6 +862,13 @@ components:
                     hasApiRights: false
     Http204:
       description: 'No Content'
+    Http308:
+      description: 'Permanent Redirect'
+      headers:
+        Location: 
+          description: 'The URL to which the client is redirected'
+          schema:
+            type: string
     Http400:
       description: 'Bad Request'
       content:

@@ -40,7 +40,7 @@ Fill in all the required details in the [Resize Environment](https://resize.mend
 Mendix Support will contact the [Technical Contact](/developerportal/general/app-roles/#technical-contact) for the app via a ticket in the [Mendix Support Portal](https://support.mendix.com) to discuss priority and timing.
 
 {{% alert color="warning" %}}
-Resizing operations will require your app to be restarted and it will be offline for a time while it is being resized.
+Resizing operations will require your app to be restarted and it will be offline for a time while it is being resized. The downtime usually lasts for approximately 30-120 minutes.
 {{% /alert %}}
 
 ## Offboarding an Environment{#offboard}

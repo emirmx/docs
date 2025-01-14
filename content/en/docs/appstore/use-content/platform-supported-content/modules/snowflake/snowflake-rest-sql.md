@@ -117,6 +117,10 @@ Your custom microflows should consist of the following:
 
 This approach allows you to achieve asynchronous behavior while leveraging the Snowflake REST SQL Connector.
 
+#### Programmatic Triggering of Ingestion Jobs
+
+The Snowflake REST SQL connector can be used to trigger data ingestion jobs with an SQL statement. For more information, see [Mendix Data Loader: Programmatically Triggering an Ingestion Job From a Mendix App](/appstore/modules/snowflake/mendix-data-loader/#trigering-jobs).
+
 ## Technical Reference
 
 To help you work with the Snowflake REST SQL connector, the following sections of this document list the available entities, enumerations, and activities that you can use in your application.

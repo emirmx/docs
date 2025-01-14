@@ -27,7 +27,7 @@ All performance issues are extremely context-sensitive, which means there is no 
 
 ## Slow UI
 
-If your user interface is slow, you will need to figure out whether this is due to slow microflows called by the page or to a large number of calls made by the UI. To determine this, you need to use a web browser with developer tools (a console, debugger, performance tools, etc.) like [Firefox Developer Edition](https://www.mozilla.org/nl/firefox/developer/).
+If your user interface is slow, you need to figure out whether this is due to slow microflows called by the page or due to a large number of calls made by the UI. To determine this, you need to use a web browser with developer tools: a console, debugger, network, performance tools, etc. Examples of such web browsers include [Google Chrome](https://www.google.com/chrome/), which features a comprehensive suite of [Chrome DevTool](https://developer.chrome.com/docs/devtools), and [Firefox Developer Edition](https://www.mozilla.org/nl/firefox/developer/).
 
 In an example scenario, you run tests on your app and find that you have 26 XPath retrieves for a single page load. You may be able to see the run times for each step and how long each step waited before starting. Some retrieves may take longer than others, but the fact that you have such a large amount of retrieves occurring is also a potential issue.
 
@@ -38,7 +38,7 @@ Once you have identified the cause for your slow UI—either [too many loads](#l
 If you have too many loads occurring on a single page, review the page structure in Studio Pro to determine if that number can be reduced. Here are a few common causes of large number of loads:
 
 * Many data grids
-* Many nested dataviews
+* Many nested data views
 * Many reference selectors
 * Many tabs
 * Widgets
@@ -55,7 +55,7 @@ If your data transfers are taking a long time for a small amount of data, you ma
 
 #### Retrieve Action
 
-If you find that a particular retrieve action is slow, you can work to simplify it. Review the following:
+If you find that a particular retrieve action is slow, you can simplify it. Review the following:
 
 * Complex XPath
 * Missing indexes
@@ -69,9 +69,9 @@ If your slow action occurs via microflow, see the [Slow Microflows](#slow-micro)
 
 If your performance issue is caused by a microflow, you need to find which microflow and which activities are the slowest in that microflow.
 
-Sometimes, identifying the slow activity and activities in your slow microflow will be obvious. You may have a single microflow with just a few steps, and one of them is egregiously slow. If this is the case, move on to the next section and focus on optimization. If not, continue on below.
+Sometimes, identifying the slow activity and activities in your slow microflow is obvious. You may have a single microflow with just a few steps, and one of them is egregiously slow. If this is the case, move on to the next section and focus on optimization. If not, continue with the sub-sections below.
 
-Tools you can use to identify your slow microflow and the specific slow activities in that microflow are described in the sections below.
+Tools you can use to identify your slow microflow and the specific slow activities in that microflow are described in the sub-sections below.
 
 ### Server Monitoring
 
@@ -85,7 +85,7 @@ Setting a breakpoint and stepping through these relevant microflows can often gi
 
 ### Microflow Time Stamps
 
-Times stamps can allow you to objectively identify slow microflows and activities by timing their execution. To do so, consider a simple microflow like this:
+Time stamps can allow you to objectively identify slow microflows and activities by timing their execution. To do so, consider a simple microflow like this:
 
 {{< figure src="/attachments/howto/monitoring-troubleshooting/detect-and-resolve-performance-issues/18580222.png" class="no-border" >}}
 
@@ -105,6 +105,10 @@ Here, you are calculating the number of milliseconds between when your microflow
 
 Add microflow timers until you find your culprit microflow, then add extra timers in that microflow to determine which activity is the slow one. When you find a slow activity, see the [Optimizing Microflow Activities](#optimizing) section below. These sections present details on how to optimize your microflow as a whole.
 
+{{% alert color="info" %}}
+Alternatively, you can also use the **TimeMeasureStart** and **TimeMeasureEnd** Java actions provided in the [Community Commons](/appstore/modules/community-commons-function-library/#logging) module. They function similarly to the microflow described in the current section. As an added benefit, they can be placed in sub-microflows in the same logic flow. Hence, you do not need to pass the start time from one microflow to another. Make sure to always have a **TimeMeasureStart** for a **TimeMeasureEnd**. Otherwise, a runtime error occurs.
+{{% /alert %}}
+
 ## Optimizing Microflow Activities {#optimizing}
 
 ### Slow Database Retrieves
@@ -118,6 +122,10 @@ Slow retrieves can occur for a number of different reasons, such as:
 * Large number of objects retrieved (see the [Batches](#batches) section below)
 
 Additionally, for details on how denormalization can improve your app performance in some cases, review [How to Denormalize Data to Improve Performance](/howto/data-models/denormalize-data-to-improve-performance/).
+
+{{% alert color="info" %}}
+You can set the [LogMinDurationQuery](/refguide/custom-settings/#LogMinDurationQuery) custom setting to debug slow database queries (OQL and XPath). For example, for debugging purposes, you could set the value to `500` milliseconds to see all the retrieves or commits that take longer than `500` milliseconds.
+{{% /alert %}}
 
 ### Slow Database Commits
 
@@ -133,11 +141,15 @@ Below is an example of how to retrieve in batches. You can do something quite si
 
 #### Refresh in Client {#refresh}
 
-The **Refresh in client** property of a change or commit activity is quite useful to provide updated information to your user. However, when committing large numbers of rows, this can slow you application down, as it attempts to update thousands of rows in your client's browser. Consider turning it off if possible.
+The **Refresh in client** property of a change or commit activity can provide updated information to your user. However, when committing large numbers of rows, this can slow your application down, as it attempts to update thousands of values in your client's browser. Also, refreshing one object might result in multiple refreshes down the line, for instance, if there are nested data views. Consider turning it off if possible.
 
 ### Slow Sub-Microflow
 
 If you find that you have a slow sub-microflow, begin the process of identifying the slow activity within the microflow, based on the [Slow Microflows](#slow-micro) section above.
+
+### Big Operations and Memory Issue
+
+If you notice that with bigger operations, a microflow becomes slower, it might be that there is something kept in memory. For instance, a commit list that grows to over 10k objects might affect the application's memory performance. To solve such issues, consider running the task asynchronously and adding batching.
 
 ### General Slow Microflow (No Specific Activity Identified)
 
