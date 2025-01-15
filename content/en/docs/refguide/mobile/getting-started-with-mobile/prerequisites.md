@@ -5,6 +5,7 @@ url: /refguide/mobile/getting-started-with-mobile/prerequisites/
 weight: 10
 description: Troubleshoot common issues associated with building and running native mobile apps.
 aliases:
+    - /refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-min-versions/
     - /refguide/getting-the-make-it-native-app/
     - /howto/mobile/common-issues/
 ---

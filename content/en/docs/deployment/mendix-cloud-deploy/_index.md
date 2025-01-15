@@ -62,7 +62,7 @@ There are two ways to prevent your Free App from being archived:
 * Visit the Free App
 * Deploy a new version of your app to your Free App environment
 
-#### Deletion of Unused Projects (#projects-deletion)
+#### Deletion of Unused Projects {#projects-deletion}
 
 If a project has never seen any activity since it was created, it is kept on the Team Server for a maximum of one year. After this, the project on the Mendix Platform, its repository on the Team Server, and any Mendix Cloud resources will be permanently deleted.
 
