@@ -28,6 +28,15 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2024
 
+### January ???, 2025
+
+#### Mendix Operator v2.21.0 {#2.21.0}
+
+* We have switched all system containers to use a read-only root filesystem, and added an option to run Mendix app containers with a read-only rootfs.
+* We have added a check in `mxpc-cli` to prevent CRD downgrades; starting from `mxpc-cli` version 2.21.0, the installation or upgrade process will keep cluster CRDs unchanged if the cluster has newer CRDs (compared to what is included with the installer).
+* We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
+* Upgrading to Mendix Operator v2.21.0 from a previous version will restart environments managed by that version of the Operator. Environments with 2 or more replicas and a **PreferRolling** update strategy will be restarted without downtime.
+
 ### December 16, 2024
 
 #### Mendix Operator v2.20.1 {#2.20.1}
@@ -38,7 +47,7 @@ For information on the current status of deployment to Mendix for Private Cloud 
 * We have updated a library used to validate licenses to the latest non-alpha version.
 * We have updated documentation that OpenShift 4.17 and Postgres 17 are supported by the Mendix Operator.
 * We have addressed a rare deadlock situation which could prevent a failing environment from restarting.
-* Upgrading to Mendix Operator v2.20.0 from a previous version will restart environments managed by that version of the Operator. Environments with 2 or more replicas and a **PreferRolling** update strategy will be restarted without downtime.
+* Upgrading to Mendix Operator v2.20.1 from a previous version will restart environments managed by that version of the Operator. Environments with 2 or more replicas and a **PreferRolling** update strategy will be restarted without downtime.
 
 #### Known Limitations
 

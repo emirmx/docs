@@ -173,6 +173,7 @@ spec:
     rollingUpdate:
       maxSurge: 0
       maxUnavailable: 50%
+  runtimeReadOnlyRootFilesystem: true # Optional: specify if the Mendix Runtime container should use a read-only root filesystem
 ```
 
 You need to make the following changes:
@@ -230,6 +231,7 @@ You need to make the following changes:
 * **customPodLabels** - specify additional pod labels (please avoid using labels that start with the `privatecloud.mendix.com/` prefix)
     * **general** - specify additional labels for all pods of the app
 * **deploymentStrategy** - specify parameters for the deployment strategy; for more information, see the reduced downtime deployment documentation.
+* **runtimeReadOnlyRootFilesystem** - specify if the Runtime container should mount the root filesystem in [read-only mode](/developerportal/deploy/private-cloud-cluster/#readonlyrootfs).
 
 #### Setting App Constants{#set-app-constants}
 

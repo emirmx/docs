@@ -938,6 +938,23 @@ In most cases, this option is only needed when an app is partially scaled down (
 Some container runtimes or network configurations prevent a terminating pod from receiving traffic or opening new connections. The Mendix Runtime can still use its existing database connections from the connection pool and keep processing any running microflows and requests, but uploading files or calling external REST services may fail.
 {{% /alert %}}
 
+### Read-only RootFS {#readonlyrootfs}
+
+Mendix app container images are locked down quite well out of the box - they run as a non-root user, cannot request elevated permissions, and file ownership make all system and non-critical paths read-only.
+
+Kubernetes allows to lock down containers even further, by mounting the container filesystem as read-only - if the container's security context specifies [readOnlyRootFilesystem: true](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/).
+With this option enabled, any files and paths from the container image are impossible to modify by any user.
+
+Starting from Mendix Operator version 2.21.0, all system containers and pods use `readOnlyRootFilesystem` by default, and it's possible to specify if an environment's app container should also have a read-only filesystem.
+
+For Mendix apps, the `readOnlyRootFilesystem` option is off by default, as some Java actions in marketplace modules might expect some paths to be writable.
+
+By enabling the `runtimeReadOnlyRootFilesystem` option in the MendixApp CRD (for standalone clusters) or in the Private Cloud Portal, the Mendix app container will also use a read-only root filesystem.
+As Mendix apps needs certain paths to be writable, an [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) will be used for writable paths.
+Each path is mounted as a separate `subPath` to keep data separated.
+The `emptyDir` size is set to the `ephemeral-storage` [resource limit](#advanced-resource-customization).
+In addition to internal Mendix Runtime paths, `/tmp` is mounted for any temporary files that might be created through Java actions; for Java actions to work correctly, please make sure they only create files in `/tmp`, for example by using `File.createTempFile` or `File.createTempDirectory` Java methods.
+
 ### GKE Autopilot Workarounds {#gke-autopilot-workarounds}
 
 In GKE Autopilot, one of the key features is its ability to automatically adjust resource settings based on the observed resource utilization of the containers. GKE Autopilot verifies the resource allocations and limits for all containers, and makes adjustments to deployments when the resources are not as per its requirements.
