@@ -955,6 +955,11 @@ Each path is mounted as a separate `subPath` to keep data separated.
 The `emptyDir` size is set to the `ephemeral-storage` [resource limit](#advanced-resource-customization).
 In addition to internal Mendix Runtime paths, `/tmp` is mounted for any temporary files that might be created through Java actions; for Java actions to work correctly, please make sure they only create files in `/tmp`, for example by using `File.createTempFile` or `File.createTempDirectory` Java methods.
 
+{{% alert color="info" %}}
+If your app works without issues when read-only root filesystem is enabled, it's best to enable it wherever possible.
+We recommend using a non-production environment to validate that your app keeps working correctly.
+{{% /alert %}}
+
 ### GKE Autopilot Workarounds {#gke-autopilot-workarounds}
 
 In GKE Autopilot, one of the key features is its ability to automatically adjust resource settings based on the observed resource utilization of the containers. GKE Autopilot verifies the resource allocations and limits for all containers, and makes adjustments to deployments when the resources are not as per its requirements.
