@@ -13,9 +13,10 @@ To get started with your Mendix on Azure deployment, you must first register you
 
 Before starting the installation and implementation process, make sure that you have all the necessary prerequisites:
 
-* Obtain and configure a Microsoft Azure account. For more information, refer the the Microsoft Azure documentation.
+* Obtain and configure a Microsoft Azure account. For more information, refer to the the Microsoft Azure documentation.
 * Purchase the Mendix on Azure offering in the [Azure Marketplace](https://azuremarketplace.microsoft.com/).
 * Familiarize yourself with the [Private Cloud](https://docs.mendix.com/developerportal/deploy/private-cloud/) concepts.
+* Ensure that your Mendix Studio Pro is in version 10.10 or newer.
 
 ## Creating an Azure Cluster
 

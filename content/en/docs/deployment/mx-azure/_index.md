@@ -38,10 +38,29 @@ The diagram in this section presents the high-level architecture of the Mendix f
 
 The architecture is assessed against the [Azure well-architected framework](https://learn.microsoft.com/en-us/azure/well-architected/) to ensure its reliability, accessibility, and performance.
 
+### Use of PostgreSQL over Azure SQL
+
+The Mendix on Azure solution uses PostgreSQL rather than Azure SQL.
+
 ## Security
 
-How is Mendix access to the customer environment secured - Document private endpoints used (protocol, ports, authentication mechanism
+Mendix access to customer environments uses private customer endpoints.
 
-### SOC 2 exceptions
+### SOC 2 Type 2 Compliance Exceptions
+
+The Azure Policy add-on is not enabled inside Mendix Azure clusters, because Mendix can control which workloads can access the cluster. Because of that, the following exceptions to the SOC 2 Type 2 policy are considered acceptable:
+
+* Azure Container Registry:
+    * Container registries should be encrypted with a customer-managed key
+* AKS - cluster resource:
+    * Azure Policy Add-on for Kubernetes service (AKS) should be installed and enabled on your clusters
+    * Azure Kubernetes Service clusters should have Defender profile enabled
+* AKS - cluster VNET:
+    * All Internet traffic should be routed via your deployed Azure Firewall
+    * Subnets should be associated with a Network Security Group
+* PostgreSQL:
+    * Subnets should be associated with a Network Security Group
+* Storage Account:
+    * Storage accounts should use customer-managed key for encryption
 
 ## Read More
