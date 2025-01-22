@@ -54,6 +54,10 @@ This is the directory where new apps are stored. It is used in the [App Settings
 
 ## Deployment Tab {#deployment}
 
+In the **Deployment** tab you can configure various settings related to application deployment.
+
+{{< figure src="/attachments/refguide/modeling/menus/edit-menu/preferences-dialog/preferences-deployment-tab.png" alt="Preferences" width="600" class="no-border" >}}
+
 ### JDK {#jdk}
 
 Here the directories of the Java Development Kit (JDK) for each supported Java version can be selected.
@@ -74,6 +78,18 @@ This setting is visible and effective when the React client is enabled. By defau
 
 ### Build
 
+#### Generate Full Debug Info {#debug-info}
+
+Enabling this option includes debug information about local variables in the Java actions when building them, which aids debugging from Eclipse. Without this option, only line numbers and source information will be included.
+
+#### Gradle Synchronization {#gradle-synchronization}
+
+{{% alert color="info" %}}
+This feature was introduced in Mendix versions 10.16.0, 10.12.7, and 10.6.17.
+{{% /alert %}}
+
+This option controls the synchronization of managed dependencies. For more information, see the [Offline Usage](/refguide/managed-dependencies/#disabling-synchronization) section in *Managed Dependencies*.
+
 #### Gradle Directory
 
 A directory where Gradle is located on the computer that you use to deploy the application. The correct directory is usually located automatically.
@@ -84,7 +100,9 @@ Enabling this option allows you to specify which repositories should be used by 
 
 #### Repositories
 
-Here you can specify which repositories to use for Gradle. The content of this field should be specified using Groovy syntax and is what is inside the `repositories { }` section in a Gradle build file. By default, this field contains: `mavenCentral()`.
+This option becomes available if **Use custom repositiories** is set to **Yes**. 
+
+You can specify which repositories to use for Gradle. The content of this field should be specified using Groovy syntax and is what is inside the `repositories { }` section in a Gradle build file. By default, this field contains: `mavenCentral()`. 
 
 ## Maia Tab
 
@@ -94,6 +112,7 @@ The **In-Editor Recommender** section contains the following settings:
 
 * **Enable for microflow, nanoflow, and rule editors** – this allows you to enable and disable [Logic Recommender](/refguide/logic-recommender/) in the microflow, nanoflow, and rule editors. 
 * **Enable for workflow editor** – this allows you to enable and disable [Workflow Recommender](/refguide/workflow-recommender/) in the workflow editor.
+* **Enable for page editor** - this allows you to enable and disable the [UI Recommendor](/refguide/ui-recommender/). This feature is enabled by default. 
 
 ### Best Practice Recommender
 
@@ -150,6 +169,10 @@ Specify your email for Git to use it in commit messages and make them more infor
 
 #### Clone {#clone}
 
+{{% alert color="info" %}}
+Different clone types are available in Studio Pro version 10.12.0 and above. 
+{{% /alert %}}
+
 Select a [Clone type](/refguide/clone-type/) to use for future clone operations, such as downloading an app or checking out another branch of an app you already downloaded. Changing this setting does not affect apps that you have already downloaded.
 
 #### Combine Local and Remote Changes
@@ -196,6 +219,20 @@ This option sets the default page editor mode that your page opens in: **Structu
 
 Hardware and driver issues may cause performance problems when running Studio Pro. These issues can appear in form of dialog boxes opening and closing much more slowly than expected, and general slowness of the UI. In case the hardware problems cannot be solved, it is possible to mitigate these issues by turning the **Enable software rendering mode** setting on. Enabling this setting requires a restart of Studio Pro to take effect. Running the application with this setting on may increase the CPU usage.
 
+### Language {#language}
+
+This beta feature is available from Studio Pro 10.17. 
+
+This option allows you to change the user interface language you work in while using Studio Pro. At this time, German, English, Japanese, Chinese, and Korean are supported. You must restart Studio Pro in order to use this feature.
+
+### Editor Tabs Closing Policy {#closing-policy}
+
+It is recommended to limit the number of open tabs (open documents) to improve the performance of Studio Pro. This option is enabled by default and set to a limit of 15 tabs. However, you can disable this behavior completely or change the limit value.
+
+{{% alert color="info" %}}
+The closing policy is not applied to tabs with unsaved changes.
+{{% /alert %}}
+
 ## Advanced Tab
 
 ### Proxy Server
@@ -224,6 +261,14 @@ In Studio Pro version 10.6 a new access rule editor was introduced in Beta. Enab
 
 For more information, see [Defining Access Rules Using the New Editor](/refguide/access-rules/#new-editor) section of *Access Rules*.
 
+### App Explorer
+
+Select this option to use the modernized version of the App Explorer. You must restart Studio Pro to use this feature.
+
+### Errors Pane
+
+Select this option to use the modernized version of the Errors Pane. You must restart Studio Pro to use this feature.
+
 ### Expression Editor
 
 The expression editor is modernized since Studio Pro 10.6. This setting is enabled by default. The editor allows the user to write rich text statements and get instant feedback on their validity. In Studio Pro, it is often used to write an expression for a decision or to write an XPath expression for data filtering.
@@ -246,11 +291,9 @@ In Studio Pro 10.12.0, Translation Generator was introduced as an experimental f
 
 This setting allows you to set the beta version as the default editor.
 
-### Page Editor
+### Navigation
 
-In Studio Pro version 10.9, X-ray mode was introduced to the page editor in beta. Enable this option to view your app in X-ray mode: a more detailed version of Design mode. 
-
-For more information, see [X-Ray Mode](/refguide/page/#x-ray-mode).
+This setting allows you to move forward and backward through your editing history to show the documents you have recently worked on. You must restart Studio Pro to use this feature.
 
 ### System Texts Editor
 

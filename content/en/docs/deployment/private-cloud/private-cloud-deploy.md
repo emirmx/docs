@@ -39,7 +39,7 @@ To deploy an app to your private cloud platform, you need the following:
 
 ### Selecting Mendix for Private Cloud
 
-When you first create your app, it will be set to deploy to the Mendix Cloud. You need to change the target to be private cloud.
+When you first [create your app](/developerportal/#create-app), it will be set to deploy to Mendix Cloud. You need to change the target to be private cloud.
 
 1. Open your app in [Apps](https://sprintr.home.mendix.com/).
 
@@ -57,6 +57,10 @@ Before you can create an environment, you will need to create a deployment packa
 
 {{% alert color="warning" %}}
 Deployment package creation for Mendix versions 7 and below is no longer supported. Upgrade to version 8 or above in order to build and deploy.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+The deployment package created with Java 17/21 support requires the Mendix Operator to be in version 2.15.0 or above.
 {{% /alert %}}
 
 1. Open your app in [Apps](https://sprintr.home.mendix.com/).
@@ -281,6 +285,7 @@ You can perform the following actions:
 * **Add Environment**
 * View **Details**
 * Perform **Actions**
+* Reorder **Environments**
 
 These are described in more detail, below.
 
@@ -350,21 +355,37 @@ This opens the **Environment Details** page which is described in more detail in
 
 This button contains a list of actions which you can perform quickly on the environment. Most of these actions will be disabled if the app is currently starting or stopping. These actions are:
 
-* **Start Application** (only shown if app is stopped) – allows you to start a stopped application
+* **Start Application** – allows you to start a stopped application
 * **Transport Package** – allows you to deploy the deployment package in the current environment to another environment within the app, or to redeploy it in the current environment
 * **Environment Logs** – takes you to the log page defined by the cluster manager when they registered the namespace
 * **Model Options** – allows you to change the running of scheduled events and the values of constants for your app by taking you to the **Model Options** tab of the **Environment Details** page
-* **Stop Application** (only shown if at least one replica is running) — stops the application by reducing the number of replicas to zero
-* **Delete Environment** – this deletes the environment (see [Current Limitations](#limitations), below, for additional details about what is deleted) — you will be asked to confirm this action
-* **Set as Studio Pro Deployment target** - this allows you to select the default target environment for Studio Pro deployment.
+* **Stop Application** — stops the application by reducing the number of replicas to zero; when you restart the application, the number of replicas set in the application will be started
+* **Delete Environment** – allows you to delete the environment (see [Current Limitations](#limitations) for additional details about what is deleted); if you select this action, you must confirm your choice before the environment is deleted
+* **Set as Studio Pro Deployment target** – allows you to select the default target environment for Studio Pro deployment
 
-### Activity
+### Activity Log
 
-This section shows all the activities, such as creating environments and deploying apps, which have taken place in this environment. You can sort the activities in either descending or ascending date and time order.
+This section shows all the activities which have taken place in this environment, for example, creating environments, changing the Technical Contact, or deploying apps. You can sort the activities in either descending or ascending date and time order.
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/image20.png" class="no-border" >}}
 
-## Managing Your Environments from the Environment Details Page{#environment-details}
+### Application Settings
+
+This section allows you to designate the Technical Contact for the application. The Technical Contact serves as the point of contact for any app-related inquiries and should have the capability to manage all environments within the app.
+
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/technicalContact.png" class="no-border" >}}
+
+For applications created before December 12, the Technical Contact field is empty by default. It can be set by a user with cloud access permissions for the application.
+
+{{% alert color="info" %}}  
+Once a Technical Contact is assigned, they automatically receive administrative permissions for all namespaces associated with environments in the application.
+{{% /alert %}}
+
+For applications created on or after December 12, the Technical Contact is automatically set to the application's creator. In such cases, whenever a new environment is added, the Technical Contact receives administrative permissions for the namespaces associated with that environment.
+
+The Technical Contact can be changed later, but only by the current Technical Contact.
+
+## Managing Your Environments from the Environment Details Page {#environment-details}
 
 Each environment you create has an **Environment Details** page which allows you to monitor and manage your environments. You can reach this by clicking the **Details** button next to the environment you want to manage.
 
@@ -418,9 +439,15 @@ This shows you the status of the environment and is the same as the status shown
 
 There are also buttons which allow you to perform various actions on your app and environment. These are described in the sections below.
 
+#### Reorder Environments > Environment Settings
+
+You can adjust the order of the environments on the **Environment Overview** page. To move the environments up or down, press the arrow. You can navigate to the ordering page by clicking the **Environment Settings** button next to **Create Environment** button.
+
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/RedorderEnvironment.png" class="no-border" >}}
+
 ##### Stop/Start Application
 
-If the app is not currently running (**Replicas Running** is set to *None*) you will see **Start** Application. Clicking this will immediately trigger the app to begin running by increasing the number of replicas.
+If the app is not currently running (**Replicas Running** is set to *None*), the **Start Application** option is available. Clicking this option starts the app by increasing the number of replicas.
 
 If the app is currently running, clicking **Stop Application** immediately stops the application by reducing the number of replicas to zero.
 
@@ -488,7 +515,7 @@ If any of these garbage collection steps fail, you will no longer see the enviro
 
 If you need to enter or change the subscription secret, then you can do that here.
 
-Subscription secrets are obtained from [Mendix support](https://support.mendix.com/).
+Subscription secrets are obtained from [Mendix support](https://support.mendix.com/). You can use subscription secrets in [standalone mode](/developerportal/deploy/private-cloud-technical-appendix-02/).
 
 We have also released an alternate way of licensing your apps in the Private Cloud by using PCLM. For more information, see [Private Cloud License Manager](/developerportal/deploy/private-cloud/private-cloud-license-manager/).
 
@@ -532,18 +559,18 @@ If you change the data type and value in the .mpr file, the changes are visible 
 
 ### Network Tab
 
-On the Network tab, you add client certificates (in the PKCS12 format) or certificate authorities (in the PEM format) for outgoing connections. These will be used when your application initiates SSL/TLS connections. This works in the same way as the Network tab for deployments to the Mendix Cloud. For more details on these, see the [Network Tab](/developerportal/deploy/environments-details/#network-tab) section of *Environment Details*.
+On the Network tab, you add client certificates (in the PKCS12 format) or certificate authorities (in the PEM format) for outgoing connections. These will be used when your application initiates SSL/TLS connections. This works in the same way as the Network tab for deployments to Mendix Cloud. For more details on these, see the [Network Tab](/developerportal/deploy/environments-details/#network-tab) section of *Environment Details*.
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/network-tab.png" class="no-border" >}}
 
 ### Runtime Tab {#runtime-tab}
 
-On the Runtime tab, you can change various runtime settings for your app environment. This works in the same way as the Runtime tab for deployments to the Mendix Cloud. For more details on these, see the [Runtime Tab](/developerportal/deploy/environments-details/#runtime-tab) section of *Environment Details*.
+On the Runtime tab, you can change various runtime settings for your app environment. This works in the same way as the Runtime tab for deployments to Mendix Cloud. For more details on these, see the [Runtime Tab](/developerportal/deploy/environments-details/#runtime-tab) section of *Environment Details*.
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/runtime-tab.png" class="no-border" >}}
 
 {{% alert color="info" %}}
-When you use some settings on the Runtime tab for Mendix for Private Cloud they may work differently from how they work in the Mendix Cloud.
+When you use some settings on the Runtime tab for Mendix for Private Cloud they may work differently from how they work in Mendix Cloud.
 {{% /alert %}}
 
 {{% alert color="info" %}}

@@ -52,12 +52,9 @@ For client certificates, only the Public-Key Cryptography Standard #12 (PKCS12) 
 
 Virtually all certificate formats can be converted to the PKCS12 format. For more information, see the following:
 
-* [Create a pkcs12 (.pfx or .p12) from OpenSSL files (.pem, .cer, .crt, ...)](https://www.tbs-certificates.co.uk/FAQ/en/288.html)
-* [openssl](https://www.openssl.org/docs/manmaster/man1/openssl.html)
-
-{{% alert color="warning" %}}
-Do not use OpenSSL version 3.x on Windows.<br><br>If you use OpenSSL version 3.x on Windows and you get the error "Could not open certificate container. Wrong password or corrupted file. Please try again.", use the latest patch release of version 1.x. You can download the release on [OpenSSL for Windows](https://slproweb.com/products/Win32OpenSSL.html).<br><br>Another option is to use OpenSSL from within the Windows Subsystem for Linux to generate the certificate. To set this up, use the instructions [Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install).
-{{% /alert %}}
+* [Create a PKCS12 (.pfx or .p12) from OpenSSL files (.pem, .cer, .crt, ...)](https://www.tbs-certificates.co.uk/FAQ/en/288.html)
+* [OpenSSL Documentation](https://www.openssl.org/docs/manmaster/man1/openssl.html)
+* [Download OpenSSL for Windows](https://slproweb.com/products/Win32OpenSSL.html)
 
 You can upload a PKCS12 file by following these steps:
 
@@ -68,21 +65,25 @@ You can upload a PKCS12 file by following these steps:
 
     {{< figure src="/attachments/deployment/mendix-cloud-deploy/certificates/certificate.png" class="no-border" >}}
 
-1. Upload the client certificate as a PKCS12 (pfx) container.
+1. Upload the client certificate as a PKCS12 (.pfx or .p12) container.
 1. Enter the password to unlock the certificate container.
-1. If you are using a custom certificate when setting your Client certificate in your [Call REST Service](/refguide/call-rest-action/#client-certificate) or [Call Web Service](/refguide/call-web-service-action/#client-certificate) action, set a **Web Service Call Name** and use it to pin the certificate by setting the call's **Client certificate identifier** to the **Web Service Call Name**.
+1. In the section **Use Client Certificate for specific services**, you can specify host names (for example, `hello-there.com`) or web service document names (for example, *MyFirstModule.ConsumedWebService*), indicating that this certificate should be used when contacting that host or calling that web service.
 
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/certificates/certificate-details.png" class="no-border" >}}
+    If you are using a custom certificate when setting your Client certificate in your [Call REST Service](/refguide/call-rest-action/#client-certificate) or [Call Web Service](/refguide/call-web-service-action/#client-certificate) action, you can set a **Web Service Call Name** and use it for the service by setting the **Web Service Call Name** to the call's **Client certificate identifier**.
+
+    {{< figure src="/attachments/deployment/mendix-cloud-deploy/certificates/certificate-details.png" >}}
 
 {{% alert color="info" %}}
-Changes to certificate settings do not go into effect until you restart the app.
+Changes to certificate settings only become active when you restart the app.
 {{% /alert %}}
-
-In the section **Pin Client Certificate to Web Services**, you can specify host names (for example, `hello-there.com`) or web service document names (for example, *MyFirstModule.ConsumedWebService*), indicating that this certificate should be used when contacting that host or calling that web service.
 
 ## Outgoing – Certificate Authorities
 
 Loading certificate authorities works much the same way, although they do not require authentication because they are public certificates.
+
+{{% alert color="info" %}}
+By default, Mendix Cloud trusts Certificate Authorities from the [Mozilla CA root bundle](https://wiki.mozilla.org/CA).
+{{% /alert %}}
 
 To upload a certificate authority, follow these steps:
 

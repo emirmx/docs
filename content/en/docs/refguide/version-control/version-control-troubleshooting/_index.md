@@ -49,9 +49,9 @@ The workaround corrects the issue for future commits. If you have other branches
 
 ### Proxy Servers Are Not Supported
 
-Studio Pro communicates with Git repositories by two means: the LibGit2 library and the Git command line interface (Git CLI). LibGit2 provides a nice and clean repository object model that is in intensive use during local repository operations. However, it is not performant enough when it comes to communication with remote Git servers. This is when the Git CLI is used and Studio Pro switches to this client while performing fetch, pull, and push operations (that is why the Git for Windows package, which ships Git CLI to your computer, is an integral part of the Studio Pro installation). Therefore, any operation that requires transferring data to or from remote Git repositories, uses the Git CLI client.
+Studio Pro communicates with version control Git repositories by two means: the LibGit2 library and the Git command line interface (Git CLI). LibGit2 provides a nice and clean repository object model that is in intensive use during local repository operations. However, it is not performant enough when it comes to communication with remote Git servers. This is when the Git CLI is used and Studio Pro switches to this client while performing fetch, pull, and push operations (that is why the Git for Windows package, which ships Git CLI to your computer, is an integral part of the Studio Pro installation). Therefore, any operation that requires transferring data to or from remote Git repositories, uses the Git CLI client.
 
-Unfortunately, Git for Windows is not synchronized with the system proxy settings by default, which means it may be tricky to integrate it into Studio Pro seamlessly. We are trying our best to provide integration as soon as possible but, as a workaround, you can configure the proxy settings directly by either overriding **http_proxy**, **https_proxy**, and **all_proxy** (for more information, see the [Git documentation](https://git-scm.com/docs/git-config#Documentation/git-config.txt-httpproxy)), or by setting the proxy URL in your local **.git/config** using the following commands:
+Unfortunately, Git for Windows is not synchronized with the system proxy settings by default, which means it may be tricky to integrate it into Studio Pro seamlessly. We are trying our best to provide integration as soon as possible but, as a workaround, you can configure the Git version control proxy settings directly by either overriding **http_proxy**, **https_proxy**, and **all_proxy** (for more information, see the [Git documentation](https://git-scm.com/docs/git-config#Documentation/git-config.txt-httpproxy)), or by setting the proxy URL in your local **.git/config** using the following commands:
 
 * Configure the proxy settings:
 
@@ -63,9 +63,9 @@ Unfortunately, Git for Windows is not synchronized with the system proxy setting
 
 You can also use the `--global` modifier to apply the changes system-wise, but this is not recommended if you are using Git for things other than Mendix development.
 
-### Getting an "Oops" Pop-Up Menu
+### Getting an Oops Pop-Up Menu
 
-You may get an "Oops" pop-up menu when setting a name and an email for Git in the **Preferences** dialog box or while committing. This problem might occur if there is no global Git config file on the PC yet. To fix this issue, you can use the Git command line client and do the following:
+You may get an **Oops** pop-up menu when setting a name and an email for Git in the **Preferences** dialog box or while committing. This problem might occur if there is no global Git config file on the PC yet. To fix this issue, you can use the Git command line client and do the following:
 
 * Specify the user name:
   `git config --global user.name "<Name>"`

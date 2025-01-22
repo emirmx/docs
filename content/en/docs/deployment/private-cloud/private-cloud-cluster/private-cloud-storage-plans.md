@@ -147,7 +147,7 @@ If the commands return a *not found* response, your environment database and blo
 
 ## Database Plans {#database}
 
-Every Mendix app needs a database to store persistent and non-persistent entities. A database plan tells the Mendix Operator how to provide a database to a new Mendix app environment.
+Every Mendix app needs a database to store persistable and non-persistable entities. A database plan tells the Mendix Operator how to provide a database to a new Mendix app environment.
 
 {{% alert color="warning" %}}
 The database plan does not include any functionality for backing up or restoring data on your database. It is your responsibility to ensure that appropriate planning is made for backing up and restoring your database using the tools provided by your database management system or cloud provider.
@@ -1221,12 +1221,14 @@ In the Amazon S3 plan configuration, enter the following details:
     * Mendix recommends using the same IAM role to manage Postgres databases and S3 buckets, as this would be easier to set up and maintain.
 * **K8s Service Account** - the Kubernetes Service Account to create and attach to the IAM role.
 
-  {{% alert color="warning" %}}
-  Do not use the name of an existing Service Account (environment name), or one of the reserved Kubernetes Service Account names:
-    * `mendix-operator`
-    * `mendix-agent`
-    * `mendix-storage-provisioner`
-  {{% /alert %}}
+{{% alert color="warning" %}}
+Do not use the name of an existing Service Account (environment name), or one of the reserved Kubernetes Service Account names:
+
+* `mendix-operator`
+* `mendix-agent`
+* `mendix-storage-provisioner`
+
+{{% /alert %}}
 
 AWS IRSA allows a Kubernetes Service Account to assume an IAM role. For this to work correctly, the IAM role's trust policy needs to trust the Kubernetes Service Account:
 
@@ -1236,10 +1238,10 @@ AWS IRSA allows a Kubernetes Service Account to assume an IAM role. For this to 
 
 2. For the second condition, copy and paste the `sts.amazonaws.com` line; replace `:aud` with `:sub` and set it to `system:serviceaccount:<Kubernetes namespace>:<Kubernetes serviceaccount name>`.
 
-    {{% alert color="info" %}}
-    For Global Operator installations, you must specify the managed namespace in the **Namespace** field. For more information, see [Amazon EKS Pod Identity Webhook – EKS Walkthrough](https://github.com/aws/amazon-eks-pod-identity-webhook#eks-walkthrough).
-    The role ARN is required. You can use the **Copy** button next to the ARN name in the role details.
-    {{% /alert %}}  
+{{% alert color="info" %}}
+For Global Operator installations, you must specify the managed namespace in the **Namespace** field. For more information, see [Amazon EKS Pod Identity Webhook – EKS Walkthrough](https://github.com/aws/amazon-eks-pod-identity-webhook#eks-walkthrough).
+The role ARN is required. You can use the **Copy** button next to the ARN name in the role details.
+{{% /alert %}}  
 
 #### Existing bucket and account {#s3-existing-bucket-account}
 

@@ -107,6 +107,10 @@ Contact [Mendix Support](https://support.mendix.com/) if you need further assist
 
 You may want to restore a backup that has been created on another platform (for example, an on-premises deployment). In this case, you will have to construct a backup file that Mendix Cloud will recognize. It is possible to upload a **Database Only** or **Full Snapshot** backup file.
 
+{{% alert color="warning" %}}
+Any local manipulation you perform after creating a backup is at your own risk. You may end up with a backup file which cannot be restored.
+{{% /alert %}}
+
 ### Database Only Format{#database-only}
 
 A **Database Only** backup file is a *.backup* file (for example, *database-fc9e126f-201811210121.backup*).
@@ -158,7 +162,7 @@ This folder contains the *db.backup* file, which is a PostgreSQL dump file creat
 {{% alert color="warning" %}}
 If the dump does not use the custom format, then the restore will fail.
 
-The dump must be created with `pg_dump` version 1.14 or below, which is currently bundled with PostgreSQL 12, 13, 14, and 15. If it is created with a later version, then the upload will fail.
+The dump must be created with `pg_dump` version 1.14 or below, which is currently bundled with PostgreSQL 13, 14, and 15. If it is created with a later version, then the upload will fail.
 {{% /alert %}}
 
 #### tree Folder{#tree-folder}

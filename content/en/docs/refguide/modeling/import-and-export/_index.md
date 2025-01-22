@@ -167,7 +167,7 @@ To import widgets, follow these steps:
 
 ### Importing Content from the Marketplace
 
-To learn more about importing content from the Marketplace, see [Using Marketplace Content](/appstore/use-content/).
+To learn more about importing content from the Marketplace, see [How to Use Marketplace Content](/appstore/use-content/).
 
 ## Exporting Various Elements
 

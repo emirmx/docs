@@ -240,7 +240,7 @@ For server-based installations, the following storage types mounted by the OS ar
 
 * Google Chrome (latest stable desktop and Android versions)
 * Mozilla Firefox (latest stable desktop version)
-* Apple Safari (latest stable desktop version and latest version for each [supported iOS](#mobileos) version)
+* Apple Safari (latest stable desktop version and latest version for each [supported iOS](#mobile) version)
 * Microsoft Edge (latest stable desktop version)
 
 {{% alert color="warning" %}}
@@ -251,7 +251,7 @@ As of Studio Pro 9, app end-users still using IE will be shown an **Unsupported 
 If you still need to support IE11, note that Studio Pro [8](/releasenotes/studio-pro/8.18/) will continue supporting IE11. Mendix recommends using Studio Pro 8 until your app end-users have upgraded their browsers.
 {{% /alert %}}
 
-## Mobile Operating Systems {#mobileos}
+## Mobile {#mobile}
 
 For native and hybrid apps built with Mendix, the following operating system versions are supported:
 
@@ -268,6 +268,8 @@ Mendix recommends the following minimum hardware requirements for all mobile dev
 * Memory: minimum 2 GB
 
 Depending on your app's complexity, these minimum hardware requirements might not be sufficient and should be adjusted.
+
+Developing native mobile apps with Mendix comes with special requirements explained in [Native App Prerequisites and Troubleshooting](/refguide/mobile/getting-started-with-mobile/prerequisites/).
 
 ### Hybrid Apps Preview
 

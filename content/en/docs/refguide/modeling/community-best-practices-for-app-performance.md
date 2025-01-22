@@ -53,10 +53,10 @@ If you made a simple and sound design of the app's domain models, consider the f
 Indexes is a topic with a long history of best practices from the database world. For Mendix apps, the following best practices apply:
 
 * Create as many indexes as needed. Although every index takes up space and the `insert`, `update`, and `delete` statements will be a bit slower, your queries will benefit a lot.
-* Since Mendix will retrieve the object for you with all of its columns, your index is needed for two reasons. The first reason is to get the unique internal Mendix IDs fast. The second reason is for sorting.
+* Since Mendix will retrieve the object for you with all of its attributes, your index is needed for two reasons. The first reason is to get the unique internal Mendix IDs fast. The second reason is for sorting.
 * You only need to cover your search clauses and sort clauses, preferably in one index.
 * Don't create different indexes that start with the same attributes.
-* As a rule of thumb, try to minimize the number of index columns. Stay below three, or use a maximum of five.
+* As a rule of thumb, try to minimize the number of index attributes. Stay below three, or use a maximum of five.
 * Start with the most selective attribute, although you need to consider that searches on single attribute can only use indexes that start with that attribute.
 * Indexes can be used best for equal searches, ranges searches for dates and numbers, and leading/`startsWith` searches on strings.
 * Index scans can be done to match more difficult clauses like `contains` or `endsWith`. These are still faster then full table scans.
@@ -78,6 +78,7 @@ Indexes is a topic with a long history of best practices from the database world
         * If needed, create a list named `<Entity>_CommitList` (or `<Entity>_DeleteList`) before the loop and collect the items to be committed (or deleted) there. 
     * For retrieves in a loop, consider retrieving all the data before the loop, and do finds on that list inside the loop.
     * If loops contain decisions, consider if the decision logic can be a query before the loop to minimize iterations.
+* When working with a large number of objects, consider working in batches. Committing or deleting items one by one can be slow, but these activities clean up memory. Doing this in batches ensures both good performance and low memory usage. For deletions, this is only possible in Studio Pro 10.17.0 and above. Create a [variable](/refguide/create-variable/) that is of data type Integer/Long and use it as a counter to decide in a loop when to perform the **Commit object(s)** or **Delete object(s)** activity on the list. Do not forget to use a **Change list** activity to do a **Clear** operation on the `<Entity>_CommitList` list after the **Commit object(s)** activity. The `<Entity>_DeleteList` list is cleared automatically during the **Delete object(s)** activity.
 * Prevent unnecessary retrieves if objects or lists can be passed as parameters.
 * Know and use the retrieve + aggregate optimization. If you retrieve a list and count the list, Mendix will optimize this to one query. If you need the list later in the microflow, after some decisions, it is wise to retrieve the list again so that you only retrieve the data when needed. This also works in batches where you can retrieve the total count optimized and retrieve chunks in a separate query.
 * Use retrieve over association if possible. This ensures that you have the latest version of your objects, including any changes which are not yet committed which the runtime will [take from memory](/refguide/mendix-client/#object-cache). If business logic requires the database value (because you want to ignore changes to the value over association), then you will need to make a database retrieve.

@@ -9,38 +9,26 @@ description: "Describes how to receive environment status alerts."
 
 You can receive alerts for Mendix application environments in two ways: via email or by using webhooks. You can find detailed information for both of these options below.
 
+Alerts are triggered by any of the following circumstances:
+
+* The app goes offline unexpectedly
+* The application logs a message with level **Critical**
+* The health check fails
+* An infrastructure problem occurs
+
 ## Email Alerts
 
-There are two ways to set up email alerts for an environment:
-
-* The Technical Contact can grant you the **Receive Alerts** permission in **Node Permissions**
-* You can select the **Email Alerts** checkbox yourself on the **Alerts** page
-
-Both options for setting up email alerts are described below.
-
-### Node Permissions  
-
-If you are the Technical Contact for an app, you can grant team members the **Receive Alerts** permission by following these steps:
-
-1. From [Apps](https://sprintr.home.mendix.com), go to the **Environments** page of your app.
-1. Click **Details** ({{% icon name="notes-paper-edit" %}}) for the environment for which you want to set up alerts. You can set alerts permissions separately for each environment.
-1. Switch to the **Permissions** tab.
-1. Select the checkbox below **Receive Alerts** for the user (or users) who should receive alerts. Your changes will save automatically.
-
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/monitoring-application-health/receive-alerts/receive-alerts.png" class="no-border" >}}
-
-### Alerts Page
-
-You can also manage the alerts by yourself. For this, you need an **Application Operator**, **Business Engineer**, or **Scrum Master** role. Or, if a [Mendix Admin](/control-center/members/) has defined a new team role for you, that role must have **Cloud Access**.
+You can select the **Email Alerts** checkbox on the **Alerts** page to set up email alerts for an environment. For this, you need an **Application Operator**, **Business Engineer**, or **Scrum Master** role. Or, if a [Mendix Admin](/control-center/members/) has defined a new team role for you, that role must have **Cloud Access**.
 
 To enable email alerts, follow these steps:
 
 1. From [Apps](https://sprintr.home.mendix.com), open your app.
 1. Click **Alerts** in the navigation pane.
 1. Select the environment for which you want to set the alerts from the drop-down list at the top of the page. It is possible to set this option separately for each environment.
-1. Select the **Email Alerts** checkbox.  Your changes will save automatically.
+1. Click **Settings** to open the **Settings** tab.
+1. Select (or clear) the **Email Alerts** checkbox.
 
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/monitoring-application-health/receive-alerts/email-alerts.png" alt="The Email Alerts checkbox" width="70%" class="no-border" >}}
+    {{< figure src="/attachments/deployment/mendix-cloud-deploy/monitoring-application-health/receive-alerts/email-alerts.png" >}}
 
 ## Alerts Using Webhooks 
 

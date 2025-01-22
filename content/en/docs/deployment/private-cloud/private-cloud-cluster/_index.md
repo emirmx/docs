@@ -206,7 +206,7 @@ At the moment, the `baseOSImageTagTemplate` can be set to one of the following v
 
 Future Studio Pro releases will have an option to use alternative (newer) LTS versions of Java, such as Java 17 or Java 21.
 
-If an app's MDA was built using a newer Java version, Mendix Operator 2.15.0 (and newer versions) will detect this and use a base image with the same major Java version that was used to build the MDA.
+If an app's MDA was built using a newer Java version, Mendix Operator 2.15.0 (and newer versions) will detect this and use a base image with the same major Java version that was used to build the MDA. Because of that, Java 17 or Java 21-based applications should use the Operator in version 2.15.0 or above.
 
 {{% /alert %}}
 
@@ -593,7 +593,7 @@ startupProbe:
 In this example, the application will have a maximum of 5 minutes (30 * 10 = 300s) to finish its startup. Once the startup probe has succeeded once, the liveness probe takes over to provide a fast response to container deadlocks. If the startup probe never succeeds, the container is killed after 300s and subject to the pod's [restartPolicy](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#restart-policy).
 
 {{% alert color="info" %}}
-If you misconfigure a startup probe, for example you don't allow enough time for the startup probe to succeed, the kubelet might restart the container prematurely. causing your container to continually restart.
+If you misconfigure a startup probe, for example you don't allow enough time for the startup probe to succeed, the kubelet might restart the container prematurely, causing your container to continually restart.
 
 Startup probes are available in the Mendix for Private Cloud Operator version 2.6.0 and above.
 {{% /alert %}}
@@ -805,9 +805,9 @@ Mendix recommends using horizontal pod autoscaling to adjust environments to mee
 Vertical pod autoscaling cannot be combined with horizontal pod autoscaling.
 {{% /alert %}}
 
-### Log format
+### Log Format
 
-#### Runtime log format{#runtime-log-format}
+#### Runtime Log Format {#runtime-log-format}
 
 Mendix Operator version 2.11.0 or above allows you to specify the log format used by Mendix apps.
 
@@ -842,9 +842,53 @@ In the `json` format, newline characters will be sent as `\n` (as specified in t
 For example, to correctly display newline characters in Grafana, use the [Escape newlines](https://github.com/grafana/grafana/pull/31352) button.
 {{% /alert %}}
 
-### Pod labels {#pod-labels}
+### Log Levels {#log-levels}
 
-#### General pod labels
+Mendix Operator version 2.19.0 and above allows you to configure the log levels for your Operator pods. 
+
+Following log levels can be configured:
+
+* `L0` : Fatal Log Level
+
+* `L1` : Error Log Level
+
+* `L2` : Warn Log Level
+
+* `L3` : Info Log Level
+
+* `L4` : Debug Log Level
+
+* `L5` : Trace Log Level
+
+The log level can be set in the mendix-operator deployment yaml:
+
+```yaml
+kind: Deployment
+apiVersion: apps/v1
+spec:
+  # ...
+  # Other configuration options values
+  # Optional: custom pod labels
+    spec:
+      containers:
+        - resources:
+          # ...
+          # Other configuration options values
+          name: mendix-operator
+          command:
+            - mendix-operator
+          env:
+            # ...
+            # Other configuration options values
+            - name: LOG_LEVEL
+              value: L1
+```
+
+By default, the log level value is set to L1 level for operator pods.
+
+### Pod Labels {#pod-labels}
+
+#### General Pod Labels
 
 Mendix Operator version 2.13.0 or above allows you to specify default pod labels for app-related pods: task pods (build and storage provisioners) and runtime (app) pods.
 
@@ -868,6 +912,30 @@ Alternatively, for Standalone clusters, pod labels can be specified in the `Mend
 
 {{% alert color="warning" %}}
 The Mendix Operator uses some labels for internal use. To avoid conflicts with these internal pod labels, please avoid using labels starting with the `privatecloud.mendix.com/` prefix.
+{{% /alert %}}
+
+### Delaying App Shutdown {#termination-delay}
+
+In some situations, shutting down a replica immediately can cause isses. For example, the [Azure Gateway Ingress Controller](https://azure.github.io/application-gateway-kubernetes-ingress/how-tos/minimize-downtime-during-deployments/) needs up to 90 seconds to remove a pod from its routing table. Stopping an app pod immediately would still send traffic to the pod for a few minutes, causing random 502 errors to appear in the client web browser.
+
+You can add or change the timeout by adding a `runtimeTerminationDelaySeconds` value to the `OperatorConfiguration` CR:
+
+```yaml
+apiVersion: privatecloud.mendix.com/v1alpha1
+kind: OperatorConfiguration
+# ...
+# omitted lines for brevity
+# ...
+spec:
+  runtimeTerminationDelaySeconds: 90
+```
+
+For example, if you set `runtimeTerminationDelaySeconds` to `90`, the app continues to run for 90 seconds after a pod receives a shutdown signal.
+
+In most cases, this option is only needed when an app is partially scaled down (for example, by a [Horizontal pod autoscaler](#horizontal-autoscaling)), and is still running.
+
+{{% alert color="warning" %}}
+Some container runtimes or network configurations prevent a terminating pod from receiving traffic or opening new connections. The Mendix Runtime can still use its existing database connections from the connection pool and keep processing any running microflows and requests, but uploading files or calling external REST services may fail.
 {{% /alert %}}
 
 ### GKE Autopilot Workarounds {#gke-autopilot-workarounds}
@@ -1101,6 +1169,8 @@ You can also see an activity log containing the following information for all na
 * When Runtime Metrics configurations are added, updated, or deleted
 * When developer mode is enabled in the namespace
 * When developer mode is disabled in the namespace
+* When deployment strategy is enabled for an environment in a namespace
+* When deployment strategy is disabled for an environment in a namespace
 
 #### Apps
 
@@ -1146,6 +1216,10 @@ This is addressed in Mendix Operator version 2.15.0; if you need to remove an in
 You can configure the runtime metrics for the environment in the **Runtime** section. For more information, see [Customize Runtime Metrics](#customize-runtime-metrics).
 
 You can also configure the pod labels for the environment in the **Labels** section. For more information, see [App Pod Labels](#pod-labels).
+
+Starting from Operator 2.20.0 onwards, it is now also possible to set the deployment strategy for an environment. This allows you to update an app with reduced downtime by performing a rolling update. To use this feature, you must enable the **Reduced App Downtime Strategy** option.  For more information, see [Deployment Strategy](/developerportal/deploy/private-cloud-reduced-downtime/)
+
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/deploymentStrategy.png" class="no-border" >}}
 
 #### Members
 

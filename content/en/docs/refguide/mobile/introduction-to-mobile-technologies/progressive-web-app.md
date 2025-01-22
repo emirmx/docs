@@ -34,12 +34,6 @@ As PWAs are basically web apps with additional features, Mendix offers these fea
 PWAs require a version of Atlas 2 or above.
 {{% /alert %}}
 
-{{% alert color="warning" %}}
-PWAs have the following limitation on iOS:
-
-* Offline data is not supported for PWAs on iOS
-{{% /alert %}}
-
 To create a full offline-first PWA, choose and add one of the following profiles (depending on which form factor you need): Responsive Web Offline, Phone Web Offline, or Tablet Web Offline. For more information about offline-first apps, see the [Offline-First Guide](/refguide/offline-first/).
 
 {{% alert color="info" %}}
@@ -108,7 +102,7 @@ For example, when a Phone Web Offline profile is configured and the app is opene
 | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Desktop browser          | Responsive Web profile is loaded                                                                                                                               |
 | Android - Chrome browser | Phone Web Offline profile is loaded                                                                                                                            |
-| iOS - Any browser        | If there is a Phone Web profile, this is loaded; otherwise, the Responsive Web profile is loaded. This is because offline PWAs are not (yet) supported on iOS. |
+| iOS - Any browser        | Phone Web Offline profile is loaded                                                                                                                            |
 
 Next to that, it is possible to force a profile by providing the profile name in the URL as a query parameter: for example `http://localhost:8080/?profile=PhoneOffline`. Possible profile values are as follows:
 

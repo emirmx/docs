@@ -31,14 +31,13 @@ The user interacts with the Mendix Client, which then makes requests, via the [r
 
 Passing state from the Runtime Server to the Mendix Client enables the Runtime Server to be stateless, which means that any Runtime Server instance can respond to a request from the Mendix Client. A load balancer decides which Runtime Server instance will respond to a request. When a user session ends, the Runtime Server removes references to that session.
 
-If there is more than one instance of an app, one of the instances is the *Cluster Leader*. The Runtime Server in that instance is responsible for a number of activities which cannot easily be distributed. These include:
+If there is more than one instance of an app, one of the instances is the *Cluster Leader*. This is responsible for Performing database synchronization tasks. It also schedules a number of cluster management activities which can then be picked up by any node. These include:
 
 * Session cleanup handling
 * Cluster node expiration handling
 * Background job expiration handling
 * Unblocking blocked users
 * Executing scheduled events
-* Performing database synchronization tasks
 * Clearing persistent sessions after a new deploy
 
 More information on multiple instances is in [Clustered Mendix Runtime](/refguide/clustered-mendix-runtime/).

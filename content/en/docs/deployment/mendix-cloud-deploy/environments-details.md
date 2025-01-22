@@ -81,21 +81,25 @@ The **Clear Environment** button lets you clear your environment so that you can
 
 {{% alert color="info" %}}
 You do not need to clear your environment if you are restoring an existing backup of the currently deployed app. The restoration process removes the current database and replaces it with the data from the backup.
+
+Clearing the database does not delete the database instance itself. Some disk usage, like logs and system data, will still remain.
 {{% /alert %}}
 
 To clear your environment, follow these steps:
 
 1. Click **Clear Environment**.
 2. Select one of the following options:
-    * **Only clear the database** – This empties all data from your database. After you confirm the deletion, the application is stopped, the existing database is deleted, a new database is created, and the application is restarted. Ensure you have a backup of any data that you want to keep.
+
+    * **Only clear the database** – This removes all data from your database tables. Ensure you have a backup of any data that you want to keep.
+
+        After you confirm the deletion, the application is stopped, the existing data is removed from the database, and the application is restarted. Note that the database retains some information, such as logs and system data.
+
     * **Clear the full environment (model and database)** – This clears all data from your database and file storage. It also removes your app from this environment. Clear the full environment if you want to deploy a different app to the environment.
+
 3. Confirm that you want to clear your environment by typing the indicated text (*clear database* or *clear model and database*, depending on which option you selected).
 4. Click **Clear Environment**.
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details/clear-environment.png"
-    alt="Clear Environment options and confirmation"
-    max-width=70%
-    >}}
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details/clear-environment.png" alt="Clear Environment options and confirmation" max-width=70% >}}
 
 ### Naming of Environments – Flexible Environments in Mendix Cloud {#naming}
 
@@ -365,7 +369,7 @@ IP addresses must be within the following ranges:
 
 You can restrict access to your application by means of Client Certificates or IP ranges.
 
-The top-level path (`/`) restricts access to the entire application. Settings for specific paths override the implicitly inherited profile for the top level.
+The root path (`/`) restricts access to the entire application. Settings for a specific path override the implicitly inherited profile from other non-root paths.
 
 Custom access restriction profiles are managed at the application level. They can be reused for all environments (acceptance, production, etc).
 
@@ -490,24 +494,40 @@ To support features that are in beta, click **Add** and select **Unsupported**. 
 
 ## The Maintenance Tab {#maintenance-tab}
 
-You can use the **Maintenance** tab to view information about planned maintenance. You can also configure your preferred maintenance window.
+You can use the **Maintenance** tab to view information about planned maintenance, as well as configure your preferred maintenance window.
 
 {{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details/maintenance.png" alt="Viewing the Maintenance tab" >}}   
 
 There are two types of maintenance:
 
-* Regular weekly maintenance does not affect your app. During regular weekly maintenance, you can change the preferred maintenance window.
-* Planned maintenance affects your app in some ways. You will automatically receive an email about any planned maintenance, and you can override the maintenance window if necessary.
-
-For more information about configuring maintenance windows, see the [Configuring Maintenance](/developerportal/deploy/maintenance-windows/) section of the *Maintenance Windows* page.
+* Regular weekly maintenance (which does not affect your app), during which you can change the preferred maintenance window
+* Planned maintenance (which affects your app in some ways), about which you will automatically receive an email
 
 ### Preferred Maintenance Window
 
-You can view and change your preferred maintenance window in this section.
+You can view and change the preferred maintenance. For more information about maintenance, see [Maintenance Windows: Configuration](/developerportal/deploy/maintenance-windows/).
 
 ### Planned Maintenance
 
-When a maintenance operation is planned, it appears under **Planned Maintenance**. By default, this is planned in your preferred maintenance window. To override the maintenance window of a specific maintenance operation, click **Override**.
+When a maintenance operation is planned, it appears under **Planned Maintenance**. Each task card will show the purpose of the maintenance, when it is scheduled and its status.
+
+{{% alert color="info" %}}
+Maintenance topics (for example, "PostgreSQL 14 Upgrade") have a predefined period (start date and deadline). Once the start date is reached, you will get the option to execute it immediately, regardless of the Maintenance Window configured for the environment, by clicking **Execute Now**.
+{{% /alert %}}
+
+The status of a maintenance task can be one of:
+
+* **Succeeded** – the maintenance task was successful
+* **Failed** – the maintenance task failed and the environment requires intervention
+    * Our engineering team should already have been notified about the failed task. If you are still experiencing issues, please create a support ticket with [Mendix Support](https://support.mendix.com/hc/en-us)
+* **Incomplete** – the maintenance task was unsuccessful and no changes were applied
+    * You can operate the environment as usual. Our engineering team should already have been alerted about the incomplete task and will take the appropriate action (which may involve rescheduling the task).
+* **Ineligible** – the maintenance task was unsuccessful because one or more starting criteria were not met
+    * You can operate the environment as usual. This can happen, for example, if the database of your environment was scheduled to be upgraded but it is already on the target version
+
+{{% alert color="info" %}}
+You will automatically receive email notifications about planned maintenance.
+{{% /alert %}}
 
 ## The Tags Tab{#tags}
 

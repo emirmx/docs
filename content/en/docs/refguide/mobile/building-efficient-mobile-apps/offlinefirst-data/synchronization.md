@@ -109,6 +109,8 @@ If you have custom widgets or JavaScript actions which use an entity that cannot
 
 {{< figure src="/attachments/refguide/mobile/offline-first/custom-synchronization-configs.png" alt="custom synchronization"   width="450"  class="no-border" >}}
 
+For each entity the **Synchronization mode** is shown. A default is automatically determined by analyzing the model, but can be overridden by the developer in which case the setting will appear in boldface. 
+
 ### Limitations
 
 Please be aware of the following limitation affecting synchronization: 

@@ -138,7 +138,9 @@ This deletes the profile. If [Menus and Navigation](/refguide9/menu-widgets/) ar
 
 Only available on profiles supporting offline synchronization.
 
-This opens the **Customize offline synchronization** dialog box that is used for overriding offline synchronization settings for specific entities. For each entity the download setting is shown. A default is automatically determined by analyzing the model, but can be overridden in which case the setting will appear in boldface. For more details on the settings and when to use them, see the [Offline-First Reference Guide](/refguide9/mobile/building-efficient-mobile-apps/offlinefirst-data/synchronization/#customizable-synchronization).
+This opens the **Customize offline synchronization** dialog box that is used for overriding offline synchronization settings for specific entities. For each entity the download setting is shown. A default is automatically determined by analyzing the model, but can be overridden by the developer in which case the setting will appear in boldface. 
+
+For more details on the settings and when to use them, see the [Offline-First Reference Guide](/refguide9/mobile/building-efficient-mobile-apps/offlinefirst-data/synchronization/#customizable-synchronization).
 
 {{< figure src="/attachments/refguide9/modeling/app-explorer/app/navigation/customize-offline-synchronization.png" class="no-border" >}}
 

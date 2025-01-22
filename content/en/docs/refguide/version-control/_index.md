@@ -94,11 +94,23 @@ A Tag is a way of identifying a commit in addition to the [revision](#revision) 
 
 The Repository Service manages communication between Studio Pro and other supporting services (for example, Team Server). The developer will not generally be aware that they are communicating via the Repository Service.
 
+### Mendix MPR Storage {#mpr-format}
+
+An app modeled in Mendix is stored in an *.mpr* file, a database that contains data on all documents, such as microflows, workflows, pages. Studio Pro or the [mx Command-Line Tool](/refguide/mx-command-line-tool/) is required to inspect changes in the *.mpr*.
+
+{{% alert color="info" %}}
+Studio Pro 10.18 introduced a public beta to convert *.mpr* to a new [MPRv2 storage format](/refguide/troubleshoot-repository-size/#mpr-format) to slow down the repository growth and to prevent degrading performance.
+{{% /alert %}}
+
+{{% alert color="warning" %}}
+Manually modifying files belonging to the *.mpr* storage format such as the *.mpr* file or the *mprcontents* directory (for example, when resolving file conflicts through third-party tooling), will lead to a corrupted state. To recover from a corrupted state a previous commit will need to be restored.
+{{% /alert %}}
+
 ## Branches {#branches}
 
-With more complex apps, you may want to manage your code in a more sophisticated way. For example, you may want to develop new features separately from the currently deployed version of your app so that you can fix any bugs without having to release all the new features.
+With more complex apps, you may want to manage your code in a more sophisticated way. For example, you may want to develop new features separately from the currently deployed version of your app so that you can fix any bugs without having to release all the new features. This is done using [Branch Lines](#branch-line).
 
-This is done using [Branch Lines](#branch-line).
+If you are already familiar with using branches, you can check the [Branching Best-Practices](/refguide/using-version-control-in-studio-pro/#branching-best-practices) section of *Using Version Control in Studio Pro* for advice on how to use branches when developing your Mendix app.
 
 ### Main Line
 

@@ -44,7 +44,7 @@ In the settings of the OData service, you can choose how associations are repres
 
 ### As a Link
 
-When you choose to represent associations as links, each object contains a link for each of its associations. The associated object(s) can be retrieved via those links.
+When you represent associations as links, the data of associated objects can be included in the response by using the `$expand` query parameter. For more information, see the [Retrieving Associated Objects](/refguide/supported-odata-operations/#retrieving-associated-objects) section of *Supported OData Operations*.
 
 This means that you can only expose an association when the entity on the other side is a resource of this service as well. This also means that you cannot publish the same entity more than once in the same service (because in that case, it would not be clear where the link should point to).
 

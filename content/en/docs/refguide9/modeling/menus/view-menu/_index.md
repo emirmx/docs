@@ -88,7 +88,7 @@ There are two **Find Results** panes. If you lock the results of the first pane,
 
 ### Marketplace
 
-For details on using Mendix Marketplace components in your app modeling, see [Using Marketplace Content](/appstore/use-content/).
+For details on using Mendix Marketplace components in your app modeling, see [How to Use Marketplace Content](/appstore/use-content/).
 
 ### MxAssist Performance Bot {#mx-bot}
 

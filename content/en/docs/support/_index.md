@@ -53,11 +53,11 @@ We expect that many questions and issues can be solved by reading the [Mendix Do
 
 ### Mendix Academy
 
-If you have questions about [Mendix Academy](https://academy.mendix.com/) these will normally be handled by the Academy team.
+[Mendix Academy](https://academy.mendix.com/) issues can also be raised with Mendix Support. This covers all aspects of Mendix Academy, for example technical issues or queries related to certifications. 
 
-You can contact Mendix Academy directly at [academy@mendix.com](mailto:academy@mendix.com). Mendix Academy may take 3-5 business days to reply to your inquiry.
-
+{{% alert color="info" %}}
 If you have passed a Mendix certification, Mendix Academy will need 3-5 business days to prepare your certificate. You do not need to raise a support ticket as it will only be forwarded to the Academy team.
+{{% /alert %}}
 
 ## Feature Requests
 
@@ -95,7 +95,7 @@ Reading these alerts carefully and acting upon them is important, as they can af
 
 ### Training
 
-We expect your support team to be trained and certified on Studio Pro and the Mendix Portal so that they can interpret and analyze alerts, graphs, and logs in the Mendix Portal. For more information, please check our available [classroom courses](https://academy.mendix.com/link/classroom) and [expert webinars](https://academy.mendix.com/link/webinar) or contact the Mendix Academy ([academy@mendix.com](mailto:academy@mendix.com)).
+We expect your support team to be trained and certified on Studio Pro and the Mendix Portal so that they can interpret and analyze alerts, graphs, and logs in the Mendix Portal. For more information, please check our available [classroom courses](https://academy.mendix.com/link/classroom) and [expert webinars](https://academy.mendix.com/link/webinar).
 
 ## Platform Status
 
@@ -133,6 +133,10 @@ If you want to perform penetration tests, your Customer Service Manager (CSM) ca
 
 If Mendix is not aware of your tests, you may find that they are interrupted if they cause unexpected alerts to be generated for our Cloud Operations or Security teams. You may also be breaking your agreement with Mendix.
 
+{{% alert color="info" %}}
+Mendix cannot change any standard settings for your environments to support your testing. For example, you cannot ask to have the Web Application Firewall (WAF) turned off during your testing.
+{{% /alert %}}
+
 ## Product Support Period
 
 Mendix supports the current major release and the two prior major releases (and we support each major release for a minimum of 24 months). Because of this, Mendix recommends upgrading your apps to the latest version of Studio Pro at least once a year. We will reach out to you in time if you are running on a version that will become unsupported so that you have ample time to perform an upgrade.
@@ -150,7 +154,7 @@ The full stack is depicted in the table below. This indicates which components a
 | **Commun&shy;ity Support&shy;ed Marketplace content** | | | | | | | | |
 | **Runtime** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner² | Mendix | Mendix | Mendix |
 | **Deploy&shy;ment Pipe&shy;line** | Mendix | Mendix | Mendix | | Certified Mendix Partner²  | | | |
-| **Logs/ Metrics** | Mendix | Mendix | | | Certified Mendix Partner² | Mendix Partner¹ | | |
+| **Backups/ Logs/ Metrics** | Mendix | Mendix | | | Certified Mendix Partner² | Mendix Partner¹ | | |
 | **Appli&shy;cation Opera&shy;tion** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner² | Mendix | Mendix | |
 | **Buildpack** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner² | Mendix | Mendix | Mendix |
 | **Contain&shy;er Platform/ OS/ Java/ Web Server** | Mendix | Mendix | | | Certified Mendix Partner² | Mendix Partner¹ | | |

@@ -8,7 +8,7 @@ description: "Presents an overview of all the elements that can be used in a nan
 
 ## Introduction
 
-Nanoflows are similar to [microflows](/refguide/microflows/), in that they allow you to express the logic of your application. However, they do have some specific benefits (for example, they run directly on the browser/device and can be used in an offline app). Furthermore, most of the actions run directly on the device, so there is also a speed benefit for logic which does not need access to the server.
+Nanoflows are similar to [microflows](/refguide/microflows/), in that they allow you to express the logic of your application. However, they do have some specific benefits. For example, they run directly on a browser/device and hence can be used in an offline app. Furthermore, since most of the activities run directly on the device, there is also a speed benefit for logic which does not need access to the server. For more information on how nanoflows and microflows differ, see the [Differences between Microflows and Nanoflows](/refguide/microflows-and-nanoflows/#differences) section in *Microflows and Nanoflows*.
 
 This page is an overview of all the elements that can be used in a nanoflow. For the properties of the nanoflow itself, see [Nanoflow Properties](/refguide/nanoflow/). 
 
@@ -18,28 +18,32 @@ For information on using nanoflows as data sources, see [Nanoflow Source](/refgu
 
 ### Offline Mobile Apps
 
-Nanoflows are designed with offline-first applications in mind, as they allow you to model application logic that works in offline apps. Since all database-related actions will be executed on the local offline database, nanoflows in offline apps will be fast.
+Nanoflows are designed with offline-first applications in mind, as they allow you to model application logic that works in offline apps. Since all database-related activities will be executed on the local offline database, nanoflows in offline apps will be fast.
 
 ### Logic Where No Connection Is Needed
 
-Nanoflows also offer great value to online applications (for example, for UI logic, validations, calculations, and navigation). However, please keep in mind that, when you perform database-related actions, each action will create a separate network request to the Mendix Runtime.
+Nanoflows also offer great value to online applications (for example, for UI logic, validations, calculations, and navigation). However, please keep in mind that, when you perform database-related activities, each activity creates a separate network request to the Mendix Runtime.
 
-The following actions interact with the database:
+The following activities interact with the database:
 
-* Create
-* Commit
-* Retrieve
-* Rollback
+* [Create object](/refguide/create-object/)
+* [Commit object(s)](/refguide/committing-objects/)
+* [Retrieve](/refguide/retrieve/)
+* [Rollback object](/refguide/rollback-object/)
 
-Therefore, the best practice is to use nanoflows in online applications when they do not contain the above actions.
+Therefore, the best practice is to use nanoflows in online applications when they do not contain the above activities.
 
 {{% alert color="info" %}}
-Changing objects without committing is not a database-related action, as changes are applied on the device or in the browser.
+An exception for the **Create object** activity is that you can use it to create a new [non-persistable entity](/refguide/persistability/#non-persistable), and this NPE has no error handlers, calculated attributes, or read-only attributes. In this case, no request is sent to the Mendix Runtime.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+Changing objects without committing is not a database-related activity, as changes are applied on the device or in the browser.
 {{% /alert %}}
 
 #### Other Cases
 
-Although nanoflows perform best in online applications when no database-related actions are used, and these are generally the best cases, nanoflows that contain at most one database-related action can also still perform well. Because such nanoflows only require one network call, they perform as well as a microflow. An example of such a use case is performing validation logic on an object and committing the object in the same nanoflow.
+Although nanoflows perform best in online applications when no database-related activities are used, and these are generally the best cases, nanoflows that contain at most one database-related activity can also still perform well. Because such nanoflows only require one network call, they perform as well as a microflow. An example of such a use case is performing validation logic on an object and committing the object in the same nanoflow.
 
 ## Notation and Categories
 
@@ -122,63 +126,7 @@ In the example below, the parameter **AccountPasswordData** is highlighted becau
 
 ## Keyboard Support
 
-### Studio Pro 10.6 and Above
-
-The tables in the following sub-sections present the shortcut keys that can be used for navigating and manipulating nanoflows in the nanoflow editor in Studio Pro 10.6 and above.
-
-#### Selection
-
-| Key | Effect |
-| --- | --- |
-| Arrow Keys | Select nearby element (activity, event, loop or parameter) in the direction of the arrow. |
-| <kbd>Home</kbd> | Select the start event. |
-| <kbd>End</kbd> | Select the first end event. |
-| <kbd>Ctrl</kbd> + <kbd>A</kbd> | Select all elements. |
-| <kbd>Ctrl</kbd> (in Studio Pro 10.12 and above) | When pressing <kbd>Ctrl</kbd>, you can select additional elements. Clicking a selected element or selecting it with a selection rectangle while holding <kbd>Ctrl</kbd> will deselect it. |
-| <kbd>Tab</kbd> | If a loop is selected, the first element inside the loop will be selected. |
-| <kbd>Shift</kbd> + <kbd>Tab</kbd> | If an element inside a loop is selected, the loop itself will be selected. |
-
-#### Navigation
-
-| Key | Effect |
-| --- | --- |
-| mouse scroll | Scroll up/down. |
-| <kbd>Shift</kbd> + mouse scroll | Scroll left/right. |
-| <kbd>Space</kbd> + mouse button | Drag screen.  |
-| <kbd>Ctrl</kbd> + <kbd>Plus&nbsp;sign</kbd>/<kbd>Minus&nbsp;sign</kbd> | Zoom in/out.  |
-| <kbd>Ctrl</kbd> + <kbd>0</kbd> | Reset zoom level to 100%. |
-| <kbd>Ctrl</kbd> + mouse scroll | Zoom in/out. |
-
-#### Element Manipulation
-
-| Key | Effect |
-| --- | --- |
-| <kbd>Enter</kbd> - on an element | If an element is selected, edit its properties. |
-| <kbd>Enter</kbd> - on a flow arrow | If a flow arrow is selected, open the Logic Recommender dialog box. |
-| <kbd>Enter</kbd> - on a Logic Recommender suggestion list item | The selected item is added on the flow arrow. The Logic Recommender dialog box is shown again for the next action to be added. |
-| <kbd>Shift</kbd> + <kbd>Enter</kbd> (or <kbd>Shift</kbd> + mouse click) - on a Logic Recommender suggestion list item| The selected item is added on the flow arrow. The element’s property dialog box is opened. |
-| <kbd>F2</kbd> | Rename the variable returned by the selected element. |
-| <kbd>Shift</kbd> + <kbd>F2</kbd> | Edit the caption of the selected element. |
-| Context-menu key | Open the context-menu for the currently selected element. |
-
-### Studio Pro 10.5 and Below
-
-The nanoflow editor offers keyboard support for navigating and manipulating nanoflows. The following table shows the shortcut keys that can be used in the nanoflow editor in Studio Pro 10.5 and below.
-
-| Key | Effect |
-| --- | --- |
-| Arrow keys | Move the selection box to the activity or element in the direction of the arrow key. For example, if currently a show page activity is selected and you press the right arrow key, the activity to the right of it becomes selected. |
-| <kbd>Enter</kbd> | Edit the properties of the selected element. |
-| <kbd>F2</kbd> | Edit the name of the return value of the selected activity. This shortcut only functions on activities that return a result. |
-| <kbd>Shift</kbd> + <kbd>F2</kbd> or just start typing | Edit the caption of the selected element. |
-| <kbd>Ctrl</kbd> + arrow keys | Move the selected element in the direction of the arrow. |
-| <kbd>Tab</kbd> | If a loop is selected, the first element inside the loop will be selected. |
-| <kbd>Shift</kbd> + <kbd>Tab</kbd> | If an element inside a loop is selected, the loop itself will be selected. |
-| <kbd>Home</kbd> | Select the start event. |
-| <kbd>End</kbd> | Cycle through the end events. |
-| <kbd>Shift</kbd> | By holding <kbd>Shift</kbd> when resizing an activity, it will stay centered at its current position and expand equally in all directions. |
-| <kbd>Ctrl</kbd> | When pressing the <kbd>Ctrl</kbd>, you can select additional elements. Clicking a selected element while holding <kbd>Ctrl</kbd> will deselect it. |
-| Context-menu key or <kbd>Shift</kbd> + <kbd>F10</kbd> | Open the context-menu for the currently selected element. |
+For an overview of the shortcut keys that are supported in the nanoflow editor, see the [Microflow, Nanoflow, and Rule Editor Shortcut Keys](/refguide/keyboard-shortcuts/#logic-editor-keyboard-support) section in *Keyboard Shortcuts*.
 
 ## Security {#security}
 
@@ -190,7 +138,7 @@ To convert a nanoflow to a microflow, you have two options. The first option is 
 
 {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/nanoflows/convert-to-microflow.PNG" alt="Convert to microflow" width="550px" class="no-border" >}}
 
-A new microflow is created and added to the same directory, and you can get consistency errors if there are actions that are not supported by microflows.
+A new microflow is created and added to the same directory, and you can get consistency errors if there are elements that are not supported by microflows.
 
 ## Canvas Interaction
 

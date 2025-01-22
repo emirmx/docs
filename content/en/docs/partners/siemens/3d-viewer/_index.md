@@ -236,7 +236,6 @@ On the **General** tab, the following options are available:
 * **Show search** – used to toggle a search bar that enables the end-user to enter a part name and search for the part in the widget
 * **Show search options** – determines whether to display all node search results in the drop-down list
   
-
 {{< figure src="/attachments/partners/siemens/3d-viewer/pstree-showsearchoptions.jpg" max-width=50% alt="show search options in PS Tree" >}}
 
 * **Show leaf structure** – determines if the sub-part data should be displayed in the widget
@@ -323,9 +322,9 @@ The **Toolbar** widgets do not require additional configuration. Simply place th
 
 You can deploy 3D Viewer locally or in a Mendix Free App for free. However, to deploy 3D Viewer on the cloud, it will need to be licensed, and you need to obtain a license token as described in [Obtaining a License Token](#obtain-license-token), above, and then configure it as follows:
 
-#### For an App Deployed in the Mendix Cloud
+#### For an App Deployed in Mendix Cloud
 
-If you deploy your app in the Mendix Cloud, configure the license token in the [Mendix Portal](/developerportal/deploy/environments-details/).
+If you deploy your app in Mendix Cloud, configure the license token in the [Mendix Portal](/developerportal/deploy/environments-details/).
 
 Before you deploy your app, configure the app **Constants** in the deployment package.
 
@@ -590,16 +589,6 @@ The sections below describe these tools.
 
 * **Delete** – select one measurement result, then click **Delete** and the selected measurement result will be removed from the scene
 * **Clear** – clear all the measurement results in the scene
-
-### Checking Statistics on the Usage Dashboard {#check-usage}
-
-The **Usage Dashboard** shows the real-time statistics about the usage of an app service. Perform the following steps to check the real-time statistics:
-
-1. Log into the Marketplace.
-2. Go to the Marketplace home page.
-3. On the left navigation menu, click [Company Subscriptions](https://marketplace.mendix.com/link/company/subscriptions). This page gives an overview of all the subscriptions of your organization.
-4. Find **3D Viewer** in the list.
-5. Click **Usage Dashboard** to show the usage details.
 
 ### Setting Preferences {#set-preferences}
 

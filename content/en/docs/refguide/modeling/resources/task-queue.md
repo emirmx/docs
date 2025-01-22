@@ -61,6 +61,7 @@ When choosing the number of threads for a task queue, use the following guidelin
 * If the tasks perform only calculations and perform no blocking calls, use no more threads than the available number of cores.
 * Only use more threads than the available number of cores if there are a lot of tasks and they perform blocking calls.
 * Keep in mind that using more threads than the number of cores will require additional scheduling and will not necessarily improve the queued task throughput.
+* Be aware that setting the total number of threads across all task queues to a number larger than the allowed number of database connections may cause a connection pool bottle-neck.
 
 ### Queueing Microflow Executions{#queuing}
 
@@ -256,7 +257,7 @@ You can use the [Task Queue Helpers](https://marketplace.mendix.com/link/compone
 Task queues have the following limitations:
 
 * Microflows or Java actions that are executed in the background execute as soon as possible in the order they were created, but possibly in parallel. They are consumed in FIFO order, but then executed in parallel in case of multiple threads. If you want to ensure that only a single microflow or action is executed at any point in time, you can do this by [creating a Tasks Queue](#create-queue) with a cluster wide scope and a single thread.
-* Microflows or Java actions that are executed in the background can *only* use the following types of parameters: Boolean, Integer/Long, Decimal, String, Date and time, Enumeration, committed Persistent Entity.
+* Microflows or Java actions that are executed in the background can *only* use the following types of parameters: Boolean, Integer/Long, Decimal, String, Date and time, Enumeration, committed Persistable Entity.
 * Background microflows or Java actions will start execution as soon as the transaction in which they are created is completed. This ensures that any data that is needed by the background microflow or Java action is committed as well. It is not possible to start a background microflow or Java action immediately, halfway during a transaction. Note that if the transaction is rolled back, the task is not executed at all.
 
 ### Behavior If App Stops Unexpectedly
@@ -273,7 +274,7 @@ The tasks are then consumed by executors that perform a `SELECT FOR UPDATE SKIP 
 
 After the task has been executed, it is moved to be an object of the `System.ProcessedQueueTask` entity with `Status` `Completed` or `Failed`. If the task failed with an exception, this is included in the `ErrorMessage` attribute.
 
-Arguments are stored in the `Arguments` attribute as JSON values. Arguments can be any primitive type ([variable](/refguide/variable-activities/)) or a committed persistent object, which is included in the `Arguments` field by its Mendix identifier. Upon execution of the task, the corresponding object is retrieved from the database using the Mendix identifier. For this reason the persistent object must be committed before the task executes, because otherwise a runtime exception will occur.
+Arguments are stored in the `Arguments` attribute as JSON values. Arguments can be any primitive type ([variable](/refguide/variable-activities/)) or a committed persistable object, which is included in the `Arguments` field by its Mendix identifier. Upon execution of the task, the corresponding object is retrieved from the database using the Mendix identifier. For this reason the persistable object must be committed before the task executes, because otherwise a runtime exception will occur.
 
 When a node crashes, this is eventually detected by another cluster node, because it no longer updates its heartbeat timestamp. At this point the other node will reset all tasks that were running on the crashed node. The reset performs the following actions:
 

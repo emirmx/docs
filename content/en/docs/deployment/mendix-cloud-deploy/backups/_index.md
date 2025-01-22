@@ -135,17 +135,29 @@ You can view details of a backup by clicking **More Options** ({{% icon name="th
 
 {{< figure src="/attachments/deployment/mendix-cloud-deploy/backups/backup-details.png" alt="Backup Details" max-width=60% class="no-border" >}}
 
+{{% alert color="info" %}}
+The size of the snapshot does not match the size of the actual database within the application. Snapshots do not contain a copy of the database but rather contain instructions on how to recreate the database.
+{{% /alert %}}
+
 ## Data Location {#data-location}
 
-Backups are always stored in at least one secondary location, separate from the primary hosting location. Each individual backup is immutable; in other words, once it has been written to Mendix’s storage location, it can no longer be modified or overwritten.
+Application data, including files and backups, is always replicated by default to a secondary region, separate from the primary region, for security and compliance reasons. Each individual backup is immutable; in other words, once it has been written to Mendix’s storage location, it can no longer be modified or overwritten.
 
-For some regions, data is always stored in the same political region. This applies to the following regions:
+Where possible, application data is replicated to a secondary region in the same political region. This is not possible in regions where there is only one region available in the political region, which has the following consequences:
 
-* Data in the EU, including backups, stays within the EU
-    * Data in the EU is not backed up in the UK
-    * Data in the UK is backed up in the EU
-* Data in the US, including backups, stays within the US
-* Data in Japan is backed up in Japan
+* Application data in the Bahrain region, including backups, is replicated to the Mumbai region
+* Application data in the Cape Town region, including backups, is replicated to the Frankfurt region
+* Application data in the Jakarta region, including backups, is replicated to the Singapore region
+* Application data in the São Paulo region, including backups, is replicated to the N. Virginia region
+* Application data in the Seoul region, including backups, is replicated to the Singapore region
+* Application data in the Singapore region, including backups, is replicated to the Sydney region
+* Application data in the UAE region, including backups, is replicated to the Mumbai region
+
+We will change the replication region for these regions if a new region is opened in the political region.
+
+### Application Data Replication {#application-data-replication}
+
+If you have a Premium platform subscription, you can opt out of application data replication for your licensed applications on Mendix Cloud. In that case, application data of licensed apps will not be replicated to a secondary region for any of your applications. Changing the application data replication setting only affects licensed applications and environments that have not yet been provisioned. This setting does not apply to applications with a Basic plan.
 
 ## Limitations
 
@@ -156,6 +168,22 @@ Mendix Cloud backups that contain a very large number of files (that is, greater
 ### Customizations {#limitations-customizations}
 
 Customization of the databases of apps in Mendix Cloud is not supported. This includes, but is not limited to, installing extensions and enabling or disabling specific features. Mendix does not support uploading and restoring backups of customized databases to Mendix Cloud. If you attempt to restore a backup of a customized database, the restore will likely fail. Note that customizing the database of an app in Mendix Cloud breaks the support and SLA for the app.
+
+## Troubleshooting
+
+This section lists possible solutions to known issues.
+
+### Snapshot Size Display
+
+The **Snapshot Size** field sometimes does not display the backup size correctly. The backup size is shown as 0.0 MB.
+
+#### Cause
+
+This issue happens when you upload a database backup only.
+
+#### Solution
+
+Proceed with the backup import. If required, verify the size of the snapshot by checking locally.
 
 ## Read More
 

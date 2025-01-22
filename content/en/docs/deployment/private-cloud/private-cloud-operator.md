@@ -167,6 +167,12 @@ spec:
     general: # Optional: general pod labels (applied to all app-related pods)
       azure.workload.identity/use: "true" # Example: enable Azure Workload Identity
   runtimeLicenseProduct: # Optional: Specify the type of product required for the Runtime License. This is applicable when PCLM is used for licensing. By default, the value is set to Standard, if left empty
+  deploymentStrategy: # Optional: Specify a deployment strategy to reduce app downtime
+    type: PreferRolling
+    switchoverThreshold: 50%
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 50%
 ```
 
 You need to make the following changes:
@@ -223,6 +229,7 @@ You need to make the following changes:
 * **runtimeLeaderSelection** – specify how the leader replica should be selected - valid options are `assigned` (default mode: the `master` deployment will run one leader replica) and `none` (do not run any leader replicas, `master` deployment is scaled down to zero; this mode requires a specific infrastructure configuration, please consult with Mendix Expert Services before using this feature)
 * **customPodLabels** - specify additional pod labels (please avoid using labels that start with the `privatecloud.mendix.com/` prefix)
     * **general** - specify additional labels for all pods of the app
+* **deploymentStrategy** - specify parameters for the deployment strategy; for more information, see the reduced downtime deployment documentation.
 
 #### Setting App Constants{#set-app-constants}
 

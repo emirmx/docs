@@ -21,6 +21,10 @@ All three modes perform synchronization in two phases: upload and download. For 
 
 {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/client-activities/synchronize/synchronize.png" alt="Synchronize"   width="200"  class="no-border" >}}
 
+{{% alert color="info" %}}
+**Synchronize everything** shown on the activity means the same as **Synchronize all objects**.
+{{% /alert %}}
+
 The **All objects** mode synchronizes the entire local database. The server database is updated with the changes from the local database. The local database is updated with the latest data from the server, including the file contents.
 
 The behavior of this mode can be configured through [synchronization configuration](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/synchronization/#customizable-synchronization).

@@ -15,7 +15,7 @@ With the CI/CD API, you can easily integrate ATS into your automated deployment 
 
 CI/CD Templates are predefined configurations for a remote job run. The remote job run is triggered via the run job web service. Every CI/CD Template consists of the job configuration, an associated test case or test suite, and a generated unique ID. This ID identifies the CI/CD template. An overview of all the existing CI/CD Templates is found on the **CI/CD Templates tab** on the Test Runs page.
 
-{{< figure src="/attachments/appstore/use-content/partner-solutions/ats/rg-ats/v2/rg-two-cicd-api/CICD_JobTemplateOverview.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/partner-solutions/ats/rg-ats/v2/rg-two-cicd-api/CICD_JobTemplateOverview.png" class="no-border" >}}
 
 | Name | Description |
 |------|-------------|
@@ -26,7 +26,7 @@ CI/CD Templates are predefined configurations for a remote job run. The remote j
 
 You can add new CI/CD Templates by clicking **Add Testcase** or **Add Testsuite**. A dialog box will open where you select the test case or test suite for the CI/CD Template. After that, the **New CI/CD Template** dialog box opens.
 
-{{< figure src="/attachments/appstore/use-content/partner-solutions/ats/rg-ats/v2/rg-two-cicd-api/CICD_JobTemplateNewEdit.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/partner-solutions/ats/rg-ats/v2/rg-two-cicd-api/CICD_JobTemplateNewEdit.png" class="no-border" >}}
 
 Configure the following options in the **New CI/CD Template** dialog box:
 
@@ -146,7 +146,7 @@ You must include the following information in the request:
 
 ¹ Optional. If left out, defaults to `false`.
 
-##### Example
+##### Example 1
 
 Basic example, only returns the status and result (and error message if there is one):
 
@@ -170,7 +170,7 @@ Basic example, only returns the status and result (and error message if there is
 </soap:Envelope>
 ```
 
-##### Example
+##### Example 2
 
 Example which also returns the number of passed/failed/not run test cases:
 
@@ -195,7 +195,7 @@ Example which also returns the number of passed/failed/not run test cases:
 </soap:Envelope>
 ```
 
-##### Example
+##### Example 3
 
 Example which returns the status of the execution flags and details for each test case.
 
@@ -237,7 +237,7 @@ The following table shows the data contained in the response of the **Get Job St
 ¹ Optional, only returned if the corresponding **Include** statement was set to true in the request.  
 ² Error messages are only included for not passed testcases where a simple and short error message can be generated.  
 
-##### Example
+##### Example 1
 
 Basic example, only returns the status and result (and error message if there is one):
 
@@ -255,7 +255,7 @@ Basic example, only returns the status and result (and error message if there is
 </soap:Envelope>
 ```
 
-##### Example
+##### Example 2
 
 Example which also returns the number of passed, failed, and not-executed test cases:
 
@@ -280,7 +280,7 @@ Example which also returns the number of passed, failed, and not-executed test c
 </soap:Envelope>
 ```
 
-##### Example
+##### Example 3
 
 Example which returns the status of the execution flags and details for each test case.
 

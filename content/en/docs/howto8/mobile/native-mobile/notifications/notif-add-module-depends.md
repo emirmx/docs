@@ -52,12 +52,16 @@ Skip this section if the [Native Mobile Resources](https://marketplace.mendix.co
 
 ## Implement the Atlas Core Module
 
+{{% alert color="warning" %}}
+The Atlas UI Resources module is deprecated, as is Atlas 2. If you are still using Atlas 2, Mendix recommends that you [migrate from Atlas 2 To Atlas 3](/refguide9/moving-from-atlas-2-to-3/).
+{{% /alert %}}
+
 Implement the Atlas Core module for apps in Mendix Studio Pro 9.0 and above. Skip this section if the [Atlas Core](https://marketplace.mendix.com/link/component/117187/Mendix/Atlas-Core) module is already implemented in your app. Implement this module by doing the following:
 
 1. Open up the Marketplace from Studio Pro.
 1. Search for *Atlas Core*.
 1. Open the [Atlas Core](https://marketplace.mendix.com/link/component/117187/Mendix/Atlas-Core) module.
 1. Click **Download**.
-1. No further installation is required. If you want to know more about the module visit the [Atlas UI marketplace guide](/appstore/modules/atlas-ui-resources/).
+1. No further installation is required. If you want to know more about the module visit the [Atlas UI marketplace guide](https://marketplace.mendix.com/link/component/104730).
 
 Now that you have installed the dependencies you need, you can move on to [Implement the Push Notifications Module](/howto8/mobile/notif-implement-module/).

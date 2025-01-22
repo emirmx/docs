@@ -73,3 +73,14 @@ You can also select **Can be empty**. If this checkbox is cleared, calls to the 
 {{% alert color="info" %}}
 Boolean and list parameters can never be empty.
 {{% /alert %}}
+
+## 4 Customizing the Outgoing HTTP Response
+
+It is possible to manipulate the response, which is produced as a result of an OData Action call. To do this, the published microflow must have a parameter with a [System.HttpResponse](/refguide/http-request-and-response-entities/) type.
+
+* If no changes were made to HttpResponse object, the actual response will not change.
+* If only headers of the HttpResponse were changed (for instance, a new header was added to the response), those headers are merged with default headers, which replaces values of the same name.
+* If the status code or content of the HttpResponse is changed, the actual response is produced exclusively from the HttpResponse parameter, including status code, headers, and response body. 
+* The ReasonPhrase field is ignored.
+* It is not possible to change values for `Transfer-Encoding` and `Date` headers.
+* When the status code is set to `204`, an empty response body is always produced.

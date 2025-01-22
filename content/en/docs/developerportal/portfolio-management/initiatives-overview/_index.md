@@ -11,7 +11,7 @@ In the Portfolio Management app, the term "Initiative" represents a business obj
 
 The **Initiatives Overview** page gives an overview of all the initiatives in this portfolio.
 
-{{< figure src="/attachments/developerportal/portfolio-management/initiatives-overview.png" >}}
+{{< figure src="/attachments/developerportal/portfolio-management/initiatives-overview/initiatives-overview.png" >}}
 
 In the search box on the top, you can search for an initiative by the initiative name.
 
@@ -67,7 +67,7 @@ To add general information to your initiative, follow these steps:
 
    3. Repeat the two steps above to link more apps if you want to link more than one app.
 
-6. Set the **Owner** for the initiative.
+6. Set the **Owners** for the initiative.
 
 7. Select the **Stage**, **Department**, **Location**, **Country**, and **Use Case** for the initiative.
 
@@ -113,7 +113,11 @@ To delete an existing tag, do as follows:
 Only Portfolio Managers and Contributors from the same company as the portfolio can link epics to an initiative. Viewers or external members cannot do this action.
 {{% /alert %}} 
 
-You can link any epic from [Epics](/developerportal/project-management/epics/) to an initiative. Follow the procedure below:
+Depending on which project management tool you use, you can link an epic from [Mendix Epics](/developerportal/project-management/epics/) or from [Jira](/developerportal/portfolio-management/integrate-with-jira/) to an initiative. 
+
+#### Linking an Epic from Mendix Epics
+
+To link an epic from the procedure below:
 
 1. Make sure the app to which the epics belong is already linked in the **Link Existing App** field. 
 
@@ -122,20 +126,44 @@ You can link any epic from [Epics](/developerportal/project-management/epics/) t
    {{% alert color="info" %}}For more information about the differences among initiatives, apps, and epics, read the [section](#differences-initiatives-apps-epics) below. {{% /alert %}} 
 
 2. At the bottom of the **Epics** section, click **+ Link Epics**. The **Link Epics** dialog window opens.
-
 3. Select the app to which the epics belong.
-
 4. Select the epics. You can search by the epic ID or name. 
-
 5. Click **Add** to link the selected epics to the initiative. 
-
 6. If you need to link epics belonging to other apps to this initiative, repeat the steps from 2 to 5, until you link all the epics.
 
-Once an epic is added, its ID, name, owner, and progress are displayed in this section. Users can go to the epic directly from here if they have rights to the app to which the epic belongs.
+Once an epic is added, its ID, name, owners, and progress are displayed in this section. Users can go to the epic directly from here if they have rights to the app to which the epic belongs.
 
 {{% alert color="info" %}}
 To remove an existing linked epic from the initiative, hover over the row where the epic is listed, and click the **Delete** button ({{% icon name="trash-can" %}}) that appears at the end of the row.
 {{% /alert %}}
+
+Now you can proceed to [add planning information](#add-planning-information).
+
+#### Linking an Epic from Your Jira Project {#link-epic-from-jira-project}
+
+{{% alert color="warning" %}}
+This feature is in beta. For more information, see [Beta Releases](/releasenotes/beta-features/).
+{{% /alert %}}
+
+{{% alert color="info" %}}
+Only Portfolio Managers and Contributors from the same company as the portfolio can link Jira epics to initiatives.
+{{% /alert %}}
+
+1. Make sure that [you have linked the Jira project to your portfolio](/developerportal/portfolio-management/integrate-with-jira/#link-jira-project).
+2. At the bottom of the **Epics** section, click **+ Add Jira Epics**.
+3. Select the Jira project to which the epics belong.
+4. Select the Jira epics. You can search by its full key or summary.
+5. Click **Add** to link the selected epics to the initiative. 
+6. If you need to link epics in other Jira projects to this initiative, repeat the steps from 2 to 5, until you link all the epics. You can link up to a maximum of 20 Jira epics per initiative.
+
+Once an epic is added, you can view the following details of the epics that you linked to the initiative:
+
+* Project icon – This is the icon of the Jira project that the epic belongs to.
+* **Key** – This is the key of the added Jira epic. Clicking it takes you to the Jira page of this epic.
+* **Summary** – This is the summary of the added Jira epic.
+* **Assignee** – This shows the avatar of the the epic assignee. Hovering over the avatar displays their user name.
+* **Progress** – This shows the progress of the epic by displaying total and completed Jira stories.
+* Unlink button (**⨉**) - By clicking **⨉**, you can unlink this Jira epic from your initiative.
 
 Now you can proceed to [add planning information](#add-planning-information).
 
@@ -240,7 +268,7 @@ Each initiative card shows the following information:
 
 7. Icon of the linked apps – If there is only one linked app, clicking the icon shows the information about the app. If there are multiple apps or no linked apps, the icon is not clickable.
 
-8. Avatar of the initiative owner – Hovering over the avatar shows the name of the initiative owner.
+8. Avatars of the initiative owners – Hovering over an avatar shows the name of the initiative owner.
 
 ### List View {#list-view}
 
@@ -270,7 +298,7 @@ The list contains the following information:
 
 * Icon of the linked apps – If there is only one linked app, clicking the icon shows the information about the app. If there are multiple apps or no linked apps, the icon is not clickable.
 
-* Avatar of the initiative owner – Hovering over the avatar shows the name of the initiative owner.
+* Avatars of the initiative owners – Hovering over an avatar shows the name of the initiative owner.
 
 * **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) – Clicking this button opens a menu that enables you to [edit](#edit-delete-initiative), [archive](#archive-initiative), or [delete](#edit-delete-initiative) the initiative.
 
@@ -308,7 +336,7 @@ The list contains the following information:
 
 * Icon of the linked apps – If there is only one linked app, clicking the icon shows the information about the app. If there are multiple apps or no linked apps, the icon is not clickable.
 
-* Avatar of the initiative owner – Hovering over the avatar shows the name of the initiative owner.
+* Avatars of the initiative owners – Hovering over an avatar shows the name of the initiative owner.
 
 * **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) – Clicking this button opens a menu that enables you to [edit](#edit-delete-initiative), [archive](#archive-initiative), or [delete](#edit-delete-initiative) the initiative.
 
@@ -346,7 +374,7 @@ The list contains the following information:
 
 * Icon of the linked apps – If there is only one linked app, clicking the icon shows the information about the app. If there are multiple apps or no linked apps, the icon is not clickable.
 
-* Avatar of the initiative owner – Hovering over the avatar shows the name of the initiative owner.
+* Avatars of the initiative owners – Hovering over an avatar shows the name of the initiative owner.
 
 * **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) – Clicking this button opens a menu that enables you to [edit](#edit-delete-initiative), [archive](#archive-initiative), or [delete](#edit-delete-initiative) the initiative.
 
@@ -363,7 +391,7 @@ The view contains the following information:
 * Initiative name – Clicking this opens a side pane that shows initiative details.
 * Initiative status – This shows the status of your initiative. It can be **On Track**, **At Risk**, or **Off Track**.
 * Icon of the linked apps – If there is only one linked app, clicking the icon shows the information about the app. If there are multiple apps or no linked apps, the icon is not clickable.
-* Avatar of the initiative owner – Hovering over the avatar shows the name of the initiative owner.
+* Avatars of the initiative owners – Hovering over an avatar shows the name of the initiative owner.
 * Timeline bar – The timeline bar indicates the start date and the go-live date of an initiative. The color shading of the bar reflects how much progress has been made for the initiative. The darker shade indicates the percentage completed, while the lighter shade shows the remaining unfinished portion. (In dark mode, the shading is reversed.) Hovering over the timeline bar shows the following information in a tooltip:
     * **Start date** – The start date is the date when the first actions are taken to start implementation.
     * **Go-Live** – The go-live date is the date when the initiative is expected to be delivered or implemented.

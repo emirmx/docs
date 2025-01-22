@@ -24,7 +24,7 @@ This document describes the options available to you when you create a published
 {{% alert color="info" %}}
 Published OData services deployed to the [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/) are automatically registered in the [Catalog](/catalog/).{{% /alert %}}
 
-If you want the published service to be a GraphQL service as well, you can indicate that it [supports GraphQL](#supports-graphql).
+If you want the published service to be a GraphQL service as well, you can indicate that it [supports GraphQL](#supports-graphql). Please fill out [this survey](https://survey.alchemer.eu/s3/90711630/Mendix-GraphQL-Beta-Feedback) to provide feedback about published GraphQL services. 
 
 ## General {#general}
 
@@ -197,11 +197,15 @@ xmlHttp.send(null);
 
 ##### Custom {#authentication-microflow}
 
-Specify which microflow to use for custom authentication.
+{{% alert color="info" %}}
+Support for using a list of `System.HttpHeader` in authentication microflows was introduced in [Studio Pro 10.18.0](/releasenotes/studio-pro/10.18/).
+{{% /alert %}}
 
-The microflow may take an [HttpRequest](/refguide/http-request-and-response-entities/#http-request) as a parameter, so it can inspect the incoming request.
+Specify which microflow to use for custom authentication. The microflow may take the following as a parameter:
 
-The microflow may also take an [HttpResponse](/refguide/http-request-and-response-entities/#http-response) as a parameter. When the microflow sets the status code of this response to something other then **200**, this value is returned and the operation will not be executed. Any headers set on the response are returned (except when the microflow returns an empty user).
+* A list of [HttpHeader](/refguide/http-request-and-response-entities/#http-header). This cannot be used in combination with [HttpRequest](/refguide/http-request-and-response-entities/#http-request) parameter.
+* [HttpResponse](/refguide/http-request-and-response-entities/#http-response). When the microflow sets the status code of this response to something other then **200**, this value is returned and the operation will not be executed. Any headers set on the response are returned (except when the microflow returns an empty user).
+* [HttpRequest](/refguide/http-request-and-response-entities/#http-request), so it can inspect the incoming request.
 
 The authentication microflow should return a User.
 

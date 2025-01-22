@@ -50,5 +50,5 @@ The module is deleted from your app.
 ## Read More
 
 * [IP Protection](/appstore/creating-content/sol-ip-protection/)
-* [Using Marketplace Content](/appstore/use-content/)
+* [How to Use Marketplace Content](/appstore/use-content/)
 * [Importing and Exporting Apps, Modules, Widgets, and Documents](/refguide/import-and-export/)

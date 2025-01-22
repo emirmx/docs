@@ -64,7 +64,7 @@ const app = client.getApp("33118fbf-7053-482a-8aff-7bf1c626a6d9");
 ```
 
 {{% alert color="info" %}}
-You can get the **App ID** in the app's [Settings](/developerportal/collaborate/general-settings/) page after opening your app in**Apps**.
+You can get the **App ID** (represented as **Project ID**) in the app's [Settings](/developerportal/collaborate/general-settings/) page after opening your app in **Apps**.
 {{% /alert %}}
 
 ## Getting Information About the Repository of the App {#getting}
@@ -96,6 +96,7 @@ const workingCopy = await app.createTemporaryWorkingCopy("main");
 ```
 
 You can pass the following options to `createTemporaryWorkingCopy`:
+
 | Name | Description |
 |--- | --- |
 | `commitId` | The ID of the commit on which the working copy should be based. If not passed, the working copy is created from the last commit in the specified branch. |

@@ -10,7 +10,7 @@ description: "Presents information on the component details page."
 
 Clicking the tile of a [Marketplace](https://marketplace.mendix.com/) component brings you to its details page with the sections described below.
 
-{{< figure src="/attachments/appstore/overview/component-details/component-details.png" >}}
+{{< figure src="/attachments/appstore/component-details/component-details.png" >}}
 
 ## Header {#header}
 
@@ -19,8 +19,6 @@ The header for a component presents the following details:
 * Labels (if there are any)
 
     * **Partner**: If the header contains this label, it means that the component is partner-supported.
-        * These components can have a **Contact Us** button for setting up your subscription with the partner.
-        * If you already have an active subscription or trial, click **View status** to go to the [Company Subscriptions](/appstore/overview/#company-subscriptions) page.
     * **Mendix**: If the header contains this label, it means that the component is platform-supported.
     * **Siemens**: If the header contains this label, it means that the component is Siemens-supported.
     * **Recommended**: If the header contains this label, it means that the component meets your company's policies and guidelines, and therefore is recommended by your Mendix Admins.
@@ -28,7 +26,7 @@ The header for a component presents the following details:
 * The name of the component
 * The review average (in stars) and the number of reviews
 * The number of times the component has been downloaded
-* <a id="saved"></a>**Save** – Click this to add the component to your [Saved Content](/appstore/overview/#personal) list.
+* <a id="saved"></a>**Save** – Click this to add the component to your [Saved Content](/appstore/home-page/#personal) list.
 * Depending on the content type:
 
     * **Use in Studio Pro** for modules and widgets – Click this to copy the content ID so that you can [search for and use the component in Studio Pro](/appstore/use-content/#current-sp).
@@ -40,7 +38,7 @@ The header for a component presents the following details:
 
 * The latest **Version** number of the component
 * The Studio Pro version that the component **Requires** to work
-* The type of [license](/appstore/sharing-content/#license) for the component
+* The type of [license](/appstore/submit-content/#license) for the component
 
 The **Publisher** section presents the name of the company who created the component as well as the **Date** when the component was first published.
 
@@ -63,6 +61,6 @@ The component details page also presents the following tabs:
     * You can select the **Only show my reviews** checkbox to check your own reviews.
     * You can click **Write Review** to open a section where you can add text, rate the component, and submit the review.
         * Before you write a review, you can first read the **Tips for Sharing Your Review**, which appears on the right. You can now rate a component four or five stars without leaving a review. For three-, two-, and one-star ratings, a review is mandatory.
-        * You can find all your reviews on your [My Reviews](/appstore/overview/#my-reviews) page in the Marketplace home page.
+        * You can find all your reviews on your [My Reviews](/appstore/home-page/#my-reviews) page in the Marketplace home page.
     * If you are a developer of the component, you can **Reply** to a review.
 * **Developers** – This tab shows the names of the developers who most recently updated the component, with links to their [Mendix Profile](/community-tools/mendix-profile/).

@@ -61,7 +61,7 @@ Implement the Atlas Core module for apps in Mendix Studio Pro 10.0 and above. Sk
 1. Search for *Atlas Core*.
 1. Open the [Atlas Core](https://marketplace.mendix.com/link/component/117187/Mendix/Atlas-Core) module.
 1. Click **Download**.
-1. No further installation is required. If you want to know more about the module visit the [Atlas UI marketplace guide](/appstore/modules/atlas-ui-resources/).
+1. No further installation is required. If you want to know more about the module visit the [Atlas Core Marketplace page](https://marketplace.mendix.com/link/component/117187/Mendix/Atlas-Core).
 
 ## Implementing the Data Widgets Module
 
@@ -82,5 +82,25 @@ Implement the Pop-Up Menu widget for apps in Mendix Studio Pro 10.0 and above. S
 1. Open the [Pop-Up Menu](https://marketplace.mendix.com/link/component/115826/Mendix/Pop-Up-Menu) widget.
 1. Click **Download**.
 1. No further installation is required. If you want to know more about the widget visit the [Pop-Up Menu marketplace guide](/appstore/widgets/popup-menu/).
+
+## Implementing the Combo Box Widget
+
+Implement the combo box widget for apps in Mendix Studio Pro 10.0 and above. Skip this section if the [Combo Box](https://marketplace.mendix.com/link/component/219304/Mendix/ComboBox) widget is already implemented in your app. Implement this widget by doing the following:
+
+1. Open up the Marketplace from Studio Pro.
+1. Search for *Combo Box*.
+1. Open the [Combo Box](https://marketplace.mendix.com/link/component/219304/Mendix/ComboBox) widget.
+1. Click **Download**.
+1. No further installation is required. If you want to know more about the widget visit the [Combo Box marketplace guide](/appstore/widgets/combobox/).
+
+## Implementing the Switch Widget
+
+Implement the Switch widget for apps in Mendix Studio Pro 10.0 and above. Skip this section if the [Switch](https://marketplace.mendix.com/link/component/50324/Mendix/Switch) widget is already implemented in your app. Implement this widget by doing the following:
+
+1. Open up the Marketplace from Studio Pro.
+1. Search for *Switch*.
+1. Open the [Switch](https://marketplace.mendix.com/link/component/50324/Mendix/Switch) widget.
+1. Click **Download**.
+1. No further installation is required. If you want to know more about the widget visit the [Switch marketplace guide](/appstore/widgets/switch/).
 
 Now that you have installed the dependencies you need, you can move on to the next section.

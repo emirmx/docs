@@ -2,7 +2,7 @@
 title: "Mendix 10 Feature Release Calendar"
 linktitle: "Mx10 Feature Release Calendar"
 url: /releasenotes/feature-release-calendar/
-weight: 4
+weight: 45
 #layout: wide
 ---
 
@@ -48,6 +48,7 @@ The new features were divided into these major themes, which are described in th
 | Maia Chat | Released for GA [Jun 25, 2024](/releasenotes/studio-pro/10.12/) |
 | Mixed online and offline data | GA: Q4 2024 |
 | Mac support | Released for public beta [Jan 30, 2024](/releasenotes/studio-pro/10.7/) <br>GA: TBD |
+| Frictionless module updates while retaining customizations | GA: Q2 2025 |
 
 ## Composability {#composability}
 
@@ -60,7 +61,7 @@ The new features were divided into these major themes, which are described in th
 | Mendix Connect – new database connector | Released for GA [Dec 21, 2023](/releasenotes/studio-pro/10.6/) |
 | Mendix Connect – consumed REST service | Released for public beta [Dec 21, 2023](/releasenotes/studio-pro/10.6/)<br>GA: TBD |
 | Solutions Kit – adaptation insights | Currently in private beta<br>GA: TBD |
-| Studio Pro extensibility | Currently in private beta (partners & ISVs)<br>GA: TBD |
+| Studio Pro extensibility | Released for public beta [Jun 25, 2024](/releasenotes/studio-pro/extensibility-api/) <br>GA: TBD |
 | Mendix Connect – external actions | GA: TBD |
 
 ## Multi-Cloud Deployment {#multi-cloud}
@@ -81,5 +82,5 @@ The new features were divided into these major themes, which are described in th
 | BYO IDP (Mendix Cloud, Cloud Dedicated) | Released for GA [May 16, 2023](/releasenotes/developer-portal/#byoidp) |
 | Landscape overview (Mendix Cloud, Cloud Dedicated) | Released for public beta [Aug 28, 2023](/releasenotes/control-center/#august-28-2023)<br>GA: TBD |
 | Cloud self-service (Mendix Cloud) | Currently in private beta<br>GA: TBD |
-| Software composition (Mendix Cloud, Cloud Dedicated) | Public beta: Q2 2024<br>GA: TBD |
+| Software composition (Mendix Cloud, Cloud Dedicated) | Released for public beta [Jun 14, 2024](/releasenotes/control-center/#june-14-2024)<br />GA: Q1 2025 |
 | Cloud self-service (Cloud Dedicated) | Private beta: Q2 2024<br>GA: TBD |
