@@ -27,9 +27,9 @@ The **Security Overview** summarizes the app's security for a selected user role
 The **Security Overview** page has the following tabs:
 
 * [Entity access](#entity-access)
-* **Page access**
-* **Microflow access**
-* **Nanoflow access**
+* [Page access](#page-access)
+* [Microflow access](#microflow-access)
+* [Nanoflow access](#nanoflow-access)
 
 {{% alert color="info" %}}
 In the beta release of the **Security Overview** page, only the **Entity access** tab is available. The other tabs will be available in future versions of Studio Pro.
@@ -46,7 +46,21 @@ Multiple columns are shown for entities with XPath constraints. Access rules wit
 
 When the selected user role has no access to an attribute or an association, it is not shown in the table. If the selected user role has no access to an entity at all, the entity is not shown in the **Security Overview**.
 
+### Page Access {#page-access}
+
+The **Page Access** tab lists the names of pages within the selected module that are visible to the selected user role.
+
+### Microflow Access {#microflow-access}
+
+The **Microflow Access** tab lists the names of microflows within the selected module that can be executed by the selected user role.
+
+### Nanoflow Access {#nanoflow-access}
+
+The **Nanoflow Access** tab lists the names of nanoflows within the selected module that can be executed by the selected user role.
+
+## Export To Excel
+
 ## Read More
 
 * [User Roles](/refguide/user-roles/)
-* [Access Rules](/refguide/access-rules/).
+* [Access Rules](/refguide/access-rules/)
