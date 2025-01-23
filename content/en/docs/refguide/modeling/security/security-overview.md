@@ -10,7 +10,7 @@ This feature is currently in beta. For more information, see [Beta and Experimen
 
 ## Introduction
 
-The **Security Overview** page provides you with an overview of your app's security. This overview can be used to review the security of your app. 
+The **Security Overview** page provides you with an overview of your app's security. This overview can be used to review the security of your app. You can export this information to an Excel file. See the [Export To Excel](#export-excel) section below for more information.
 
 ## Viewing the Security Overview
 
@@ -50,15 +50,45 @@ When the selected user role has no access to an attribute or an association, it 
 
 The **Page Access** tab lists the names of pages within the selected module that are visible to the selected user role.
 
+{{< figure src="/attachments/refguide/modeling/security/app-security/user-roles/page-security-overview.png" class="no-border" >}}
+
 ### Microflow Access {#microflow-access}
 
 The **Microflow Access** tab lists the names of microflows within the selected module that can be executed by the selected user role.
+
+{{< figure src="/attachments/refguide/modeling/security/app-security/user-roles/microflow-security-overview.png" class="no-border" >}}
 
 ### Nanoflow Access {#nanoflow-access}
 
 The **Nanoflow Access** tab lists the names of nanoflows within the selected module that can be executed by the selected user role.
 
-## Export To Excel
+{{< figure src="/attachments/refguide/modeling/security/app-security/user-roles/nanoflow-security-overview.png" class="no-border" >}}
+
+## Export To Excel {#export-excel}
+
+To export the Security Overview, click the Export to Excel button. This generates an Excel file in the selected directory, which contains the following three sheets:
+
+1. Entity Access: This sheet contains the entity access rules data, including:
+    1. User Role
+    2. Module: The module containing the entity.
+    3. Entity: The name of the entity.
+    4. Member: The attribute or association name.
+    5. Kind: Specifies whether the member is an association or an attribute.
+    6. Type: The type of the member.
+    7. XPath: The XPath constraint.
+    8. XPath Caption:  The XPath constraint caption if exists.
+    9. Access: The member access right (None, Read, ReadWrite).
+
+2. Document Access: This sheet includes the accessible pages, microflows and nanoflows, including:
+    1. Document type: The type of the accessible document (Page, Microflow, Nanoflow).
+    2. User Role
+    3. Module: The module containing the the page, nanoflow, or microflow.
+    4. Document: The name of the page, nanoflow, or microflow.
+
+3. Module Roles: This sheet provides the mappings between user roles and module roles in each module, including:
+    1. User Role
+    2. Module
+    3. Module Role
 
 ## Read More
 
