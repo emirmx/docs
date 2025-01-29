@@ -257,9 +257,7 @@ For Mendix versions 10.5.0 through 10.9.0, this option is on the **New Features*
 
 ### Access Rules Editor
 
-In Studio Pro version 10.6 a new access rule editor was introduced in Beta. Enable this option to use the new editor in the *Access rules* tab of the entity properties dialog.
-
-For more information, see [Defining Access Rules Using the New Editor](/refguide/access-rules/#new-editor) section of *Access Rules*.
+In Studio Pro version 10.20, the modernized access rule editor was made generally available and enabled by default. The old editor will be removed in 11.0.
 
 ### App Explorer
 
