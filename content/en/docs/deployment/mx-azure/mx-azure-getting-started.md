@@ -5,6 +5,8 @@ description: "Documents the pre-implementation tasks for Mendix on Azure."
 weight: 10
 ---
 
+{{% alert color="info" %}} This feature is currently available to participating customers. For more information, contact your Customer Service Manager. {{% /alert %}}
+
 ## Introduction
 
 Before you can deploy your Mendix app on Azure, you must plan and complete a number of pre-implementation tasks.
@@ -16,15 +18,45 @@ To adopt Mendix on Azure, you need to have the following:
 * A Mendix account; Mendix Studio Pro 10.10 or newer is required
 * An Azure account with the following permissions:
     * Permission to grant admin consent on the Mendix on Azure portal app registration
-    * Owner or Mendix on Azure Operator custom role assigned on the target subscription level
+    * Owner or Contributor role assigned on the target subscription level
+
+{{% alert color="info" %}} To comply with the principle of least privilege, you can also create a custom role for the Mendix Operator instead of assigning the Owner or Contributor role. For the required permissions, see below:
+
+```text
+{
+    "properties": {
+        "roleName": "Mendix on Azure Operator",
+        "description": "",
+        "assignableScopes": [
+            "/subscriptions/<yoursubscriptionid>"
+    ],
+    "permissions": [
+        {
+            "actions": [
+            "*/register/action",
+            "Microsoft.Solutions/applications/*",
+            "Microsoft.Solutions/locations/operationstatuses/*",
+            "Microsoft.Resources/subscriptions/resourceGroups/*",
+            "Microsoft.Resources/deployments/*",
+            "Microsoft.Monitor/accounts/*",
+            "Microsoft.Authorization/roleAssignments/write",
+            "Microsoft.Authorization/roleAssignments/read"
+        ],
+        "notActions": [],
+        "dataActions": [],
+        "notDataActions": []
+        }
+    ]
+     }
+}
+```
+{{% /alert %}}
 
 ## Licensing
 
-Mendix on Azure is available for purchase from the the [Azure Marketplace](https://azuremarketplace.microsoft.com/). Connecting to Azure services may also include additional cost in the form of Azure tokens. For more information, refer to Azure documentation.
+Mendix on Azure is available for purchase from the the [Azure Marketplace](https://azuremarketplace.microsoft.com/). Connecting to Azure services may also include additional cost. For more information, refer to Azure documentation.
 
-Depending on your use case, your deployment environment, and the type of app that you want to build, you may also need a license for your Mendix app. For more information, refer to [Licensing Apps](/developerportal/deploy/licensing-apps-outside-mxcloud/).
-
-In addition to the licenses for your apps, you will also need to license the Mendix Operator which helps deploy your app to a Mendix on Azure environment. For details on the Mendix Operator license, see [Licensing Mendix for Private Cloud](/developerportal/deploy/private-cloud/#licensing).
+For production environments, you also need a license for your Mendix app. For more information, refer to [Licensing Apps](/developerportal/deploy/licensing-apps-outside-mxcloud/).
 
 ## Shared Responsibility Model
 
@@ -67,7 +99,3 @@ Customers are responsible for developing, deploying, operating, integrating, and
 * Operating - Monitor app behavior and address deviations.
 * Integrating - Securely integrate apps with backend services and IAM.
 * Securing - Comply with Mendix best practices for secure apps.
-
-## Environment Planning
-
-When planning the implementation, keep in mind the following environment specifications.

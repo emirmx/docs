@@ -5,6 +5,8 @@ description: "Documents the initial configuration tasks for Mendix on Azure."
 weight: 20
 ---
 
+{{% alert color="info" %}} This feature is currently available to participating customers. For more information, contact your Customer Service Manager. {{% /alert %}}
+
 ## Introduction
 
 To get started with your Mendix on Azure deployment, you must first register your Microsoft Azure cloud cluster in the Mendix Portal. This will provide you with the resources required to deploy the Mendix Operator and host your Mendix app in an Azure deployment.
@@ -57,4 +59,8 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
 
 10. Click **Initialize**.
 
-    The initialization process takes ca. 15 minutes. It creates a resource group in the managed app. It also automatically adds a namespace and cluster in Private Cloud portal, which you can use to create environments. For more information, see [Deploying a Mendix App to a Private Cloud Cluster](/developerportal/deploy/private-cloud-deploy/). The cluster cannot be deleted from the Private Cloud portal. If you want to remove it, you must delete it in the Microsoft Azure portal.
+    The initialization process takes ca. 15 minutes. It creates a resource group in the managed app. It also automatically adds a namespace and cluster in Private Cloud portal, which you can use to create environments. The cluster cannot be deleted from the Private Cloud portal. If you want to remove it, you must delete it in the Microsoft Azure portal.
+
+## Deploying an App to an Azure Cluster
+
+After creating your cluster in Microsoft Azure, you can deploy now deploy your applications to the cluster. The deployment process is the same as with Mendix for Private Cloud. For more information, see [Deploying a Mendix App to a Private Cloud Cluster](/developerportal/deploy/private-cloud-deploy/).
