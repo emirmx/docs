@@ -76,8 +76,8 @@ To export the Security Overview, click the Export to Excel button. This generate
     5. Kind: Specifies whether the member is an association or an attribute.
     6. Type: The type of the member.
     7. XPath: The XPath constraint.
-    8. XPath Caption:  The XPath constraint caption if exists.
-    9. Access: The member access right (None, Read, ReadWrite).
+    8. XPath Caption:  The XPath constraint caption, when set.
+    9. Access: The access level (None, Read or ReadWrite).
 
 2. Document Access: This sheet includes the accessible pages, microflows and nanoflows, including:
     1. Document type: The type of the accessible document (Page, Microflow, Nanoflow).
@@ -85,7 +85,7 @@ To export the Security Overview, click the Export to Excel button. This generate
     3. Module: The module containing the the page, nanoflow, or microflow.
     4. Document: The name of the page, nanoflow, or microflow.
 
-3. Module Roles: This sheet provides the mappings between user roles and module roles in each module, including:
+3. Module Roles: This sheet provides the mappings between user roles and module roles, including:
     1. User Role
     2. Module
     3. Module Role
