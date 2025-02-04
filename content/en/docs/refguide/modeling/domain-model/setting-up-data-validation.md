@@ -13,7 +13,7 @@ This document explains how you can set up data validation with Mendix. Make sure
 
 ## Data Validation on Entity Level
 
-This section explains how you can add validation rules to the domain model of your module. Validation rules are always triggered when changes to an object are committed. 
+This section explains how you can add validation rules to the domain model of your module. Validation rules are triggered when changes are submitted, changed in microflows, and when new objects are committed with events. 
 
 {{% alert color="info" %}}
 Validation rules can only be applied on entities that are [persistable](/refguide/persistability/).

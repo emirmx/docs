@@ -51,6 +51,10 @@ Indicates whether or not to execute the commit event handlers of the objects.
 
 Default: **Yes**
 
+{{% alert color="warning" %}}
+Validations, except unique validations, are not performed when committing without events. See [data validation](/refguide/setting-up-data-validation/) for more information.
+{{% /alert %}}
+
 #### Events in Nanoflows
 
 Nanoflows do not have this property.
