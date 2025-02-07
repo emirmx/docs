@@ -11,6 +11,10 @@ description: "Describes the features in Translation Generator."
 Translation Generator is currently an experimental feature introduced in Studio Pro 10.12.0. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/).
 {{% /alert %}}
 
+{{% alert color="info" %}}
+To use Translation Generator, internet connection and signing in to Studio Pro are required.
+{{% /alert %}}
+
 Translation Generator is an AI-powered translation tool available in Mendix Studio Pro. You can use it for [batch translate](/refguide/batch-translate/). In Studio Pro 10.14.0 and above, you can also use it to translate [system texts](/refguide/system-texts/).
 
 For more information on how to enable and use it in Studio Pro, see the sections below.

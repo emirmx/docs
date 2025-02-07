@@ -12,6 +12,19 @@ SAP Business Technology Platform deployments also depend on the latest version o
 
 For information on the current status of deployment to SAP BTP and any planned releases, see [Mendix Status](https://status.mendix.com/).
 
+## 2025
+
+### February 02, 2025
+
+#### Portal Improvements
+
+* We integrated [Maia](/refguide/mendix-ai-assistance/), a built-in chat interface powered by Generative AI, into the SAP Deployment Portal.
+
+#### Bug Fixes
+
+* We fixed the MDA download issue in the SAP Deployment Portal.
+* We fixed an issue where the **Load more** button failed to load additional items in the Environment list.
+
 ## 2024
 
 ### August 27, 2024

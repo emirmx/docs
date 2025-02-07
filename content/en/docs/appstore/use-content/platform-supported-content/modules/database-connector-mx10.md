@@ -31,6 +31,12 @@ If you need to connect to other database types, check out the [Database Connecto
 
 ### Features {#features}
 
+{{% alert color="info" %}}
+
+From [Studio Pro 10.19](/releasenotes/studio-pro/10.19/), you can connect to any database by using the Java dependency specified by the user for the respective database. For more information, see the [Configure for Any Database](#byod) section below.
+
+{{</alert>}}
+
 This connector supports connections to the following database types:
 
 * Microsoft SQL
@@ -38,8 +44,6 @@ This connector supports connections to the following database types:
 * PostgreSQL - For certificate-based authentication (available from Studio Pro 10.16), see the [Use Certificate-Based Authentication for PostgreSQL Connections](#postgres-ssl) section below
 * Oracle
 * Snowflake – GA support from [Studio Pro 10.12](/releasenotes/studio-pro/10.12/) (Beta versions are available from [Studio Pro 10.10](/releasenotes/studio-pro/10.10/)). For more information, see [Configure the External Database Connector for Snowflake](/appstore/modules/snowflake/external-database-connector/)
-
-If you are looking for another database type, follow the prompt to request support your database when you open the database connection wizard.
 
 This connector supports the following statements:
 
@@ -210,3 +214,45 @@ To connect to PostgreSQL when the application is running in Mendix Cloud, follow
 1. To configure SSL-based authentication in Mendix Cloud, add a CA certificate and client certificate for server configuration and the selected SSL mode. For more details, see the [Running in the Cloud](/howto/integration/use-a-client-certificate/#running-in-the-cloud) section of *Use a Client Certificate*.
 2. After the client certificate has been added, double-click the client certificate and add the value `ClientCertificateIdentifier` to `Use Client Certificate for specific services`. This must match the value provided for the constant `ClientCertificateIdentifier`.
 3. Add the required values to the constants created for DBSource, DBUsername, DBPassword, and ClientCertificateIdentifier.
+
+## Configure for Any Database {#byod}
+
+### Prerequisites 
+
+* Ensure you have the appropriate Java Database Connectivity (JDBC) JAR file for the specific database.
+* Gather the external connection details, including login credentials and the JDBC connection string.
+
+### Connect to the Database
+
+1. Open the module settings and add the JDBC JAR File.
+   
+   * Alternatively, place the downloaded JAR file in the userlib folder of your application.
+
+2. Run the app with the latest version of the External Database Connector. 
+
+3. Create a New External Database Connection.
+4. Open the connection settings and under Database Type, select **Other**.
+5. Enter the login credentials and JDBC connection string.
+6. Click **Test Connection** to ensure the database connection is successful.
+7. Click **Save** to save the connection details. 
+
+### Configure Database Schema Information 
+
+The Browse Database Schema tab might not display a comprehensive overview of all available schemas for certain databases. You can customize this behavior using the Configure option. To do so, follow these steps:
+
+1. Open the **App** menu and select **Deploy for Eclipse**.
+2. Extend the class MxQueryBasedSchemaInfoProvider.
+3. Override the following methods based on your requirements:
+    * getTableMetaDataQuery
+    * getViewMetaDataQuery
+    * getProcedureMetaDataQuery
+    * getFunctionMetaDataQuery
+4. Use the provided example, MxDb2SchemaInfoProvider for IBM Db2, for a better understanding of how to customize the schema information.
+
+### Running Queries and Handling Query Responses
+
+Execute queries as you would with supported databases, and retrieve responses in the associated entity. Refer to the documentation of your specific JDBC library for detailed syntax and execution options.
+
+{{% alert color="info" %}}
+By default, autocommit is set to false for design time queries.
+{{% /alert %}}

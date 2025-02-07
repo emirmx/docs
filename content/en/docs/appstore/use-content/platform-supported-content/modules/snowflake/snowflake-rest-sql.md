@@ -14,11 +14,22 @@ The [Snowflake REST SQL connector](https://marketplace.mendix.com/link/component
 
 The Snowflake REST SQL connector provides a way to first setup key-pair authentication with an RSA key pair according to PKCS #8 standard, and then execute SQL statements on Snowflake via a REST call from within your Mendix application. These statements allow you to perform the following tasks:
 
-* Read data from Snowflake
-* Write data to Snowflake
-* Trigger [Snowflake Cortex ML functions](https://docs.snowflake.com/en/guides-overview-ml-functions)
-* Use [Snowflake Cortex LLM functions](https://docs.snowflake.com/en/user-guide/snowflake-cortex/llm-functions)
-* Use [Snowflake Cortex Analyst](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst)
+* Read data from Snowflake.
+* Write data to Snowflake.
+* Trigger [Snowflake Cortex ML functions](https://docs.snowflake.com/en/guides-overview-ml-functions):
+    * [Forecasting](https://docs.snowflake.com/en/user-guide/ml-functions/forecasting) - Predicts future metric values from past trends in time-series data.
+    * [Anomaly Detection](https://docs.snowflake.com/en/user-guide/ml-functions/anomaly-detection) - Flags metric values that differ from typical expectations.
+    * [CLASSIFY_TEXT](https://docs.snowflake.com/en/sql-reference/functions/classify_text-snowflake-cortex) - Given a piece of text, classifies it into one of the categories that you define.
+    * [EXTRACT_ANSWER](https://docs.snowflake.com/en/sql-reference/functions/extract_answer-snowflake-cortex) - Given a question and unstructured data, returns the answer to the question if it can be found in the data.
+    * [PARSE_DOCUMENT](https://docs.snowflake.com/en/sql-reference/functions/parse_document-snowflake-cortex) - Given an internal or external stage with documents, returns an object that contains extracted text content using OCR mode, or the extracted text and layout elements using LAYOUT mode.
+    * [SENTIMENT](https://docs.snowflake.com/en/sql-reference/functions/sentiment-snowflake-cortex) - Returns a sentiment score, from -1 to 1, representing the detected positive or negative sentiment of the given text.
+    * [SUMMARIZE](https://docs.snowflake.com/en/sql-reference/functions/summarize-snowflake-cortex) - Returns a summary of the given text.
+    * [TRANSLATE](https://docs.snowflake.com/en/sql-reference/functions/translate-snowflake-cortex) - Translates given text from any supported language to any other.
+    * [EMBED_TEXT_768](https://docs.snowflake.com/en/sql-reference/functions/embed_text-snowflake-cortex) - Given a piece of text, returns a vector embedding of 768 dimensions that represents that text.
+    * [EMBED_TEXT_1024](https://docs.snowflake.com/en/sql-reference/functions/embed_text_1024-snowflake-cortex) - Given a piece of text, returns a vector embedding of 1024 dimensions that represents that text. 
+* Use [Snowflake Cortex Analyst](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst) - This Snowflake Cortex feature is used to get information/insights out of structured data sets using natural language instead of sql.
+
+For more use cases and examples for [Snowflake Cortex LLM functions](https://docs.snowflake.com/en/user-guide/snowflake-cortex/llm-functions), written by the Head of Snowflake Tech Consulting, see [Karthik S Raman's Medium profile](https://medium.com/@karthiksraman).
 
 The current version of the connector supports the following:
 
@@ -36,7 +47,7 @@ To use the Snowflake REST SQL connector, you must also install and configure the
 
 * [Community Commons](https://marketplace.mendix.com/link/component/170) - This module is a required dependency for the Snowflake REST SQL connector.
 * [Encryption](https://marketplace.mendix.com/link/component/1011) - This module is a required dependency for the Snowflake REST SQL connector. The EncryptionKey constant must be set up in your application settings.
-* [GenAI Commons](https://marketplace.mendix.com/link/component/227933)- This module is a required dependency for the Snowflake Cortex Analyst.
+* GenAI Commons module from the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle - This module is a required dependency for the Snowflake Cortex Analyst.
 
 ### Licensing and Cost
 
@@ -127,7 +138,7 @@ To help you work with the Snowflake REST SQL connector, the following sections o
 
 ### Domain Model {#domain-model}
 
-The domain model is a data model that describes the information in your application domain in an abstract way. For more information, see [Domain Model](/refguide/domain-model/).
+The domain model is a data model that describes the information in your application domain in an abstract way. For more information, see [Data in the Domain Model](/refguide/domain-model/).
 
 #### ConnectionDetails {#connection-details}
 

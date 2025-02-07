@@ -32,7 +32,9 @@ Set the `EncryptionKey` constant in your application, which can be found in the 
 
 For versions below 2.2.0, ensure the key is 16 characters long to support the 128 bits key length.
 
-When running the application locally, set the **Value** for the `EncryptionKey` constant in the **App Settings** > **Configurations** tab.
+When running the application locally, add a random 32-character string **Value** for the `EncryptionKey` constant in the **App Settings** > **Configurations** tab. For more information, see the [Constants](/refguide/configuration/#constants) section of *Configurations*.
+
+{{< figure src="/attachments/appstore/platform-supported-content/modules/encryption/encryption-constant.png" class="no-border" >}}
 
 #### EncryptionPrefix Constant
 

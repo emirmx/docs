@@ -8,7 +8,7 @@ weight: 60
 
 ## Introduction
 
-The Mendix Cloud GenAI connector (delivered as part of [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931)) lets you utilize Mendix Cloud GenAI resource packs directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox.
+The Mendix Cloud GenAI connector (delivered as part of [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931)) lets you utilize Mendix Cloud GenAI resource packs directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox. Feel free to contact [genai-resource-packs@mendix.com](mailto:genai-resource-packs@mendix.com) to learn more.
 
 ### Typical Use Cases
 
@@ -74,7 +74,7 @@ To use this connector, you need configuration keys to authenticate to the Mendix
 
 ## Installation
 
-Add the [Dependencies](#dependencies) listed above from the Marketplace. On the Marketplace, the Mendix Cloud GenAI connector is bundled inside of [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931) which also contains GenAI commons operations and logic. To import this module into your app, follow the instructions in the [Use Marketplace Content](/appstore/use-content/).
+Add the [dependencies](#dependencies) listed above from the Marketplace. On the Marketplace, the Mendix Cloud GenAI connector is bundled inside of the [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931) which also contains GenAI commons operations and logic. To import this module into your app, follow the instructions in the [Use Marketplace Content](/appstore/use-content/).
 
 ## Configuration {#configuration}
 
@@ -253,6 +253,28 @@ The **Documentation** pane displays the documentation for the currently selected
 ## Implementing GenAI with the Showcase App
 
 For more inspiration or guidance on how to use microflows in your logic, Mendix recommends downloading the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of example use cases and applies almost all of the Mendix Cloud GenAI operations. The starter apps in the [Mendix Components](/appstore/modules/genai/#mendix-components) list can also be used as inspiration or simply adapted for a specific use case.
+
+## Troubleshooting {#troubleshooting}
+
+### Outdated JDK Version Causing Errors while Calling a REST API {#outdated-jdk-version}
+
+The Java Development Kit (JDK) is a framework needed by Mendix Studio Pro to deploy and run applications. For more information, see [Studio Pro System Requirements](/refguide/system-requirements/). Usually, the correct JDK version is installed during the installation of Studio Pro, but in some cases, it may be outdated. An outdated version can cause exceptions when calling REST-based services with large data volumes, like for example embeddings operations or chat completions with vision.
+
+Mendix has seen the following two exceptions when using JDK versions below `jdk-11.0.5.0-hotspot`:
+`java.net.SocketException - Connection reset` or
+`javax.net.ssl.SSLException - Received fatal alert: record_overflow`.
+
+To check your JDK version and update it if necessary, follow these steps:
+
+1. Check your JDK version – In Studio Pro, go to **Edit** > **Preferences** > **Deployment** > **JDK directory**. If the path points to a version below `jdk-11.0.5.0-hotspot`, you need to update the JDK by following the next steps.
+2. Go to [Eclipse Temurin JDK 11](https://adoptium.net/en-GB/temurin/releases/?variant=openjdk11&os=windows&package=jdk) and download the `.msi` file of the latest release of **JDK 11**.
+3. Open the downloaded file and follow the installation steps. Remember the installation path. Usually, this should be something like `C:/Program Files/Eclipse Adoptium/jdk-11.0.22.7-hotspot`.
+4. After the installation has finished, restart your computer if prompted.
+5. Open Studio Pro and go to **Edit** > **Preferences** > **Deployment** > **JDK directory**. Click **Browse** and select the folder with the new JDK version you just installed. This should be the folder containing the *bin* folder. Save your settings by clicking **OK**.
+6. Run the project and execute the action that threw the above-mentioned exception earlier.
+    1. You might get an error saying `FAILURE: Build failed with an exception. The supplied javaHome seems to be invalid. I cannot find the java executable.` In this case, verify that you have selected the correct JDK directory containing the updated JDK version.
+    2. You may also need to update Gradle. To do this, go to **Edit** > **Preferences** > **Deployment** > **Gradle directory**. Click **Browse** and select the appropriate Gradle version from the Mendix folder. For Mendix 10.10 and above, use Gradle 8.5. For Mendix 10 versions below 10.10, use Gradle 7.6.3. Then save your settings by clicking **OK**.
+    3. Rerun the project.
 
 ## Read More{#readmore}
 

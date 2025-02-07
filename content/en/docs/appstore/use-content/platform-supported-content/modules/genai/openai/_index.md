@@ -124,11 +124,11 @@ The following inputs are required for the Azure OpenAI configuration:
 
 | Parameter      | Value                                                        |
 | -------------- | ------------------------------------------------------------ |
-| Display name    | This is the name identifier of a configuration (for example, *MyConfiguration*). |
-| API type       | Select `AzureOpenAI`. |
-| Endpoint       | This is the API endpoint (for example, `https://your-resource-name.openai.azure.com/openai/deployments/`).<br />For details on how to obtain `your-resource-name`, see the [Obtaining Azure OpenAI Resource Name](#azure-resource-name) section below. |
-| Azure key type       | This is the type of token that is entered in the API key field. For Azure OpenAI, two types of keys are currently supported: Microsoft Entra token and API key. <br />For details on how to generate a Microsoft Entra access token, see [How to Configure Azure OpenAI Service with Managed Identities](https://learn.microsoft.com/en-gb/azure/ai-services/openai/how-to/managed-identity). Alternatively, if your organization allows it, you could use the Azure `api-key` authentication mechanism. For details on how to obtain an API key, see the [Obtaining Azure OpenAI API keys](#azure-api-keys) section below. For more information, see the [Technical Reference](#technical-reference) section. |
-| Token / API key        | This is the access token to authorize your API call.         |
+| Display name | This is the name identifier of a configuration (for example, *MyConfiguration*). |
+| API type | Select `AzureOpenAI`. |
+| Endpoint | This is the API endpoint (for example, `https://your-resource-name.openai.azure.com/openai/deployments/`).<br />For details on how to obtain `your-resource-name`, see the [Obtaining Azure OpenAI Resource Name](#azure-resource-name) section below. |
+| Azure key type | This is the type of token that is entered in the API key field. For Azure OpenAI, two types of keys are currently supported: Microsoft Entra token and API key. <br />For details on how to generate a Microsoft Entra access token, see [How to Configure Azure OpenAI Service with Managed Identities](https://learn.microsoft.com/en-gb/azure/ai-services/openai/how-to/managed-identity). Alternatively, if your organization allows it, you could use the Azure `api-key` authentication mechanism. For details on how to obtain an API key, see the [Obtaining Azure OpenAI API keys](#azure-api-keys) section below. For more information, see the [Technical Reference](#technical-reference) section. |
+| Token / API key | This is the access token to authorize your API call. |
 
 ##### Obtaining the Azure OpenAI Resource Name {#azure-resource-name}
 
@@ -153,12 +153,12 @@ A [Deployed Model](/appstore/modules/genai/commons/#deployed-model) represents a
 1. If needed, click the three dots for an OpenAI configuration to open the "Manage Deployed Models" pop-up.
 2. For every additional model, add a record. The following fields are required:
 
-| Field      | Description                                                        |
-| -------------- | ------------------------------------------------------------ |
-| Display name | This is the reference to the model for app users in case they have to select which one is to be used. |
-| Deployment name / Model name | This is the technical reference for the model. For OpenAI this is equal to the [model aliases](https://platform.openai.com/docs/models#current-model-aliases). For Azure OpenAI this is the deployment name from the [Azure Portal](https://oai.azure.com/resource/deployments).
-| Output modality| Describes what the output of the model is. This connector currently supports Text, Embedding, and Image.
-| Azure API version    | Azure OpenAI only. This is the API version to use for this operation. It follows the `yyyy-MM-dd` format. For supported versions, see [Azure OpenAI documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference). The supported versions can vary depending on the type of model, so make sure to look for the right section (such as Chat Completions, Image Generation, or Embeddings) on that page. |
+    | Field      | Description                                                        |
+    | -------------- | ------------------------------------------------------------ |
+    | Display name | This is the reference to the model for app users in case they have to select which one is to be used. |
+    | Deployment name / Model name | This is the technical reference for the model. For OpenAI this is equal to the [model aliases](https://platform.openai.com/docs/models#current-model-aliases). For Azure OpenAI this is the deployment name from the [Azure Portal](https://oai.azure.com/resource/deployments).
+    | Output modality| Describes what the output of the model is. This connector currently supports Text, Embedding, and Image.
+    | Azure API version    | Azure OpenAI only. This is the API version to use for this operation. It follows the `yyyy-MM-dd` format. For supported versions, see [Azure OpenAI documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference). The supported versions can vary depending on the type of model, so make sure to look for the right section (such as Chat Completions, Image Generation, or Embeddings) on that page. |
 
 3. Close the popup and test the configuration with the newly created deployed models.
 
@@ -172,12 +172,12 @@ For more inspiration or guidance on how to use the microflow actions in your log
 
 Operations for chat completions focus on the generation of text based on a certain input. In this context, system prompts and user prompts are two key components that help guide the language model in generating relevant and contextually appropriate responses. For more information on the type of prompts and message roles, see the [ENUM_MessageRole](/appstore/modules/genai/commons/#enum-messagerole) enumeration. To learn more about how to create the right prompts for your use case, see the prompt engineering links in the [Read More](#read-more) section.
 
-The `OpenAIDeployedModel` is compatible with the two [Chat Completions operations from GenAI Commons](/appstore/modules/genai/commons/#text-files-operations). While developing your custom microflow, you can drag and drop the following operations from the toolbox in Studio Pro, see category **GenAI (Generate)**: 
+The `OpenAIDeployedModel` is compatible with the two [Chat Completions operations from GenAI Commons](/appstore/modules/genai/commons/#genai-generate). While developing your custom microflow, you can drag and drop the following operations from the toolbox in Studio Pro, see category **GenAI (Generate)**: 
 
 * Chat Completions (with history) 
 * Chat Completions (without history)
 
-You can use the GenAI Commons toolbox actions to [create the required Request](/appstore/modules/genai/commons/#text-files-request) and [handle the Response](/appstore/modules/genai/commons/#text-files-response) for your use case. 
+You can use the GenAI Commons toolbox actions to [create the required Request](/appstore/modules/genai/commons/#genai-request-building) and [handle the Response](/appstore/modules/genai/commons/#genai-response-handling) for your use case. 
 
 The internal chat completion logic within the OpenAI connector supports [JSON mode](#chatcompletions-json-mode), [function calling](#chatcompletions-functioncalling), and [vision](#chatcompletions-vision). Make sure to check the actual compatibility of the available models with these functionalities, as this changes over time. Any specific OpenAI microflow actions from the toolbox are listed below.
 
@@ -235,7 +235,7 @@ A generated image needs to be stored in a custom entity that inherits from the `
 
 #### Embeddings Generation {#embeddings-configuration}
 
-OpenAI also provides vector embedding generation capabilities which can be invoked using this connector module. The `OpenAIDeployedModel` entity is compatible with the [embeddings generation operations from GenAI Commons](/appstore/modules/genai/commons/#knowledge-bases-embeddings-operations).
+OpenAI also provides vector embedding generation capabilities which can be invoked using this connector module. The `OpenAIDeployedModel` entity is compatible with the [knowledge base operations](/appstore/modules/genai/commons/#genai-knowledgebase-content) from the GenAI Commons.
 
 In order to implement embeddings generation into your Mendix application, you can use the Embedding generation microflow actions from GenAI Commons directly. When developing your microflow, you can drag and drop the one you need from the toolbox: find it under the **GenAI (Generate)** category in the **Toolbox** in Mendix Studio Pro:
 
@@ -253,7 +253,7 @@ Note that currently, the OpenAI connector does not support knowledge base intera
 
 ### Exposed Microflow Actions for (Azure) OpenAI {#exposed-microflows}
 
-OpenAI-specific exposed microflow actions to construct requests via drag-and-drop are listed below. These microflows can be found in the **Toolbox** in Studio Pro. Note that using these flows is only required if you need to add options to the request that are specific to OpenAI. For the generic part can use the GenAI Commons toolbox actions to [create the required Request](/appstore/modules/genai/commons/#text-files-request) and [handle the Response](/appstore/modules/genai/commons/#text-files-response), which can be found under the **GenAI (Request Building)** and **GenAI (Response Handling)** categories in the Toolbox.
+OpenAI-specific exposed microflow actions to construct requests via drag-and-drop are listed below. These microflows can be found in the **Toolbox** in Studio Pro. Note that using these flows is only required if you need to add options to the request that are specific to OpenAI. For the generic part can use the GenAI Commons toolbox actions to [create the required Request](/appstore/modules/genai/commons/#genai-request-building) and [handle the Response](/appstore/modules/genai/commons/#genai-response-handling), which can be found under the **GenAI (Request Building)** and **GenAI (Response Handling)** categories in the Toolbox.
 
 #### Set Response Format {#set-responseformat-chat}
 
@@ -292,25 +292,25 @@ Some examples demonstrate knowledge base interaction and require a connection to
 
 ## Troubleshooting {#troubleshooting}
 
-### Outdated JDK Version Causing Errors while Calling the Embeddings API {#outdated-jdk-version}
+### Outdated JDK Version Causing Errors while Calling a REST API {#outdated-jdk-version}
 
-The Java Development Kit (JDK) is a framework needed by Mendix Studio Pro to deploy and run applications. For more information, see [Studio Pro System Requirements](/refguide/system-requirements/). Usually, the correct JDK version is installed during the installation of Studio Pro, but in some cases, it may be outdated. An outdated version can cause exceptions when calling the Embeddings API or other REST-based services with large data volumes.
+The Java Development Kit (JDK) is a framework needed by Mendix Studio Pro to deploy and run applications. For more information, see [Studio Pro System Requirements](/refguide/system-requirements/). Usually, the correct JDK version is installed during the installation of Studio Pro, but in some cases, it may be outdated. An outdated version can cause exceptions when calling REST-based services with large data volumes, like for example embeddings operations or chat completions with vision.
 
-Mendix has seen the following two exceptions when using JDK version `jdk-11.0.3.7-hotspot`:
+Mendix has seen the following two exceptions when using JDK versions below `jdk-11.0.5.0-hotspot`:
 `java.net.SocketException - Connection reset` or
 `javax.net.ssl.SSLException - Received fatal alert: record_overflow`.
 
 To check your JDK version and update it if necessary, follow these steps:
 
-1. Check your JDK version – In Studio Pro, go to **Edit** > **Preferences** > **Deployment** > **JDK directory**. If the path points to `jdk-11.0.3.7-hotspot`, you need to update the JDK by following the next steps.
+1. Check your JDK version – In Studio Pro, go to **Edit** > **Preferences** > **Deployment** > **JDK directory**. If the path points to a version below `jdk-11.0.5.0-hotspot`, you need to update the JDK by following the next steps.
 2. Go to [Eclipse Temurin JDK 11](https://adoptium.net/en-GB/temurin/releases/?variant=openjdk11&os=windows&package=jdk) and download the `.msi` file of the latest release of **JDK 11**.
 3. Open the downloaded file and follow the installation steps. Remember the installation path. Usually, this should be something like `C:/Program Files/Eclipse Adoptium/jdk-11.0.22.7-hotspot`.
 4. After the installation has finished, restart your computer if prompted.
 5. Open Studio Pro and go to **Edit** > **Preferences** > **Deployment** > **JDK directory**. Click **Browse** and select the folder with the new JDK version you just installed. This should be the folder containing the *bin* folder. Save your settings by clicking **OK**.
 6. Run the project and execute the action that threw the above-mentioned exception earlier.
-    1. You might get an error saying `FAILURE: Build failed with an exception. The supplied javaHome seems to be invalid. I cannot find the java executable.`. In this case, verify that you have selected the correct JDK directory containing the updated JDK version.
-    1. You may also need to update Gradle. To do this, go to **Edit** > **Preferences** > **Deployment** > **Gradle directory**. Click **Browse** and select the appropriate Gradle version from the Mendix folder. For Mendix 10.10 and above, use Gradle 8.5. For Mendix 10 versions below 10.10, use Gradle 7.6.3. Then save your settings by clicking **OK**.
-    1. Rerun the project.
+    1. You might get an error saying `FAILURE: Build failed with an exception. The supplied javaHome seems to be invalid. I cannot find the java executable.` In this case, verify that you have selected the correct JDK directory containing the updated JDK version.
+    2. You may also need to update Gradle. To do this, go to **Edit** > **Preferences** > **Deployment** > **Gradle directory**. Click **Browse** and select the appropriate Gradle version from the Mendix folder. For Mendix 10.10 and above, use Gradle 8.5. For Mendix 10 versions below 10.10, use Gradle 7.6.3. Then save your settings by clicking **OK**.
+    3. Rerun the project.
 
 ### Chat Completions with Vision and JSON Mode (Azure OpenAI)
 
