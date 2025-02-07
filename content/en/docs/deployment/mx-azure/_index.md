@@ -40,11 +40,16 @@ The diagram in this section presents the high-level architecture of the Mendix f
 
 The architecture is assessed against the [Azure well-architected framework](https://learn.microsoft.com/en-us/azure/well-architected/) to ensure its reliability, accessibility, and performance.
 
-The Mendix on Azure solution uses PostgreSQL as the database.
+The Mendix on Azure solution uses PostgreSQL as the database. PostgreSQL is a cost-effective solution that can provide Mendix on Azure with all required functionalities. It is also the most common and thoroughly tested database option for Mendix in general.
 
 ## Security
 
-Mendix access to customer environments uses private customer endpoints.
+Mendix accesses customer environments in a secure, auditable way:
+
+* We use [cross-tenant access](https://learn.microsoft.com/en-us/entra/external-id/cross-tenant-access-overview), which is native to Azure and complies with Microsoft best practices.
+* Most access is performed programmatically, that is, by the system rather than manually by normal users. There is usually no human intervention into the customer environments.
+* In rare cases where human intervention is required, for example, because of a support request that requires access to the customer environment to resolve, the access is automated, auditable, and governed by Mendix support processes. The Mendix employee working on the support request receives temporary access which is then revoked.
+* The network connectivity is done using a private Azure link service, not through the public internet.
 
 ### SOC 2 Type 2 Compliance Exceptions
 
