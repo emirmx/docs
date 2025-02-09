@@ -38,7 +38,7 @@ You can give members of your team access to the tool by performing the following
 The Program Owner role grants users access to inviting other users. As a best practice, follow the principle of least privilege, and only assign this role to project leaders.
 {{% /alert %}}
 
-    You can invite users who are already a part of your organization, but also external users, for example, from partner organizations. Their invitations are displayed in the **Pending Invitations** tab until accepted.
+You can invite users who are already a part of your organization, but also external users, for example, from partner organizations. Their invitations are displayed in the **Pending Invitations** tab until accepted.
 
 {{< figure src="/attachments/developerportal/compass/invite.png" alt="A screenshot of the Invite Members window" >}}
   
