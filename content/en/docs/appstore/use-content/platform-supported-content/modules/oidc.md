@@ -496,13 +496,13 @@ The OIDC SSO module supports two methods for configuration of user provisioning:
 1. Deploy-time configuration: this approach allows fully automated configurations in your CI/CD pipeline. Mendix recommends this approach for customers with an ever-growing portfolio of Mendix applications.
 2. Runtime configuration: this approach may be the preferred method for configuration if you are not yet familiar with configuring various settings correctly. Additionally, this method is essential when connecting multiple IdPs to a single application.
 
-By default, end-users are provisioned using the `Account` object in the Administration module. If you need to use a custom user entity you can do this via [Runtime configuration of end-user on-boarding](#custom-provisioning-rt) or [End-user on-boarding at Deploy-time](#custom-provisioning-dep).
+By default, end-users are provisioned using the `Account` object in the Administration module. If you need to use a custom user entity you can do this via [Runtime configuration of end-user on-boarding](#custom-provisioning-rt) or [Deploy-time configuration of end-user on-boarding](#custom-provisioning-dep).
 
 ### Configuring User Provisioning for Version 3.0.0 and Above
 
 #### Deploy-time configuration of end-user on-boarding{#custom-provisioning-dep}
 
-You can set up custom user provisioning by setting constants when you deploy your app. This has the following limitations compared to setting up provisioning using a microflow or changing the settings at runtime:
+You can set up custom user provisioning by setting constants when you deploy your app. You do not need local MxAdmin user to do the necessary configurations. This is an automatable configuration in the CICD pipeline. However, the configuration has the following limitations compared to setting up provisioning using a microflow or changing the settings at runtime:
 
 * You need to restart your app to apply changes to the constants
 * You cannot set custom mapping of IdP claims to attributes of your custom user entity
@@ -541,7 +541,7 @@ Optionally, you can change the default **IdP Attribute** or the **Configured Ent
 
 If you want to use your custom user entity which is a specialization of the `System.User` entity to store user information, select it in the **Custom user Entity (extension of System.User)** field by replacing the `Administration.Account` entity.
 
-If you connect multiple IdPs to your Mendix app, you can use separate custom user entities for each IdP, each with its own attribute mapping. You can set up custom user provisioning as follows:
+You can set up custom user provisioning as follows:
 
 1. Set up the following fields:
 
@@ -612,7 +612,7 @@ Do not change the `UserProvisioning_StandardOIDC` microflow. This may cause prob
 #### User Provisioning Using a Microflow{#custom-provisioning-mf}
 
 {{% alert color="warning" %}}
-Since this feature is deprecated from version 3.0.0 of the module, you can do the custom user provisioning at runtime or deploy-time. For more information, see the [User Provisioning at Runtime](#custom-provisioning-rt) and [User Provisioning at Deploy-time](#custom-provisioning-dep) sections above.
+Since this feature is deprecated from version 3.0.0 of the module, you can do the custom user provisioning at runtime or deploy-time. For more information, see the [Runtime configuration of end-user on-boarding](#custom-provisioning-rt) and [Deploy-time configuration of end-user on-boarding](#custom-provisioning-dep) sections above.
 {{% /alert %}}
 
 Review the microflow `CUSTOM_UserProvisioning` in the **USE_ME** > **1. Configuration** folder of the OIDC module. This is where you can change the way that end-users are provisioned in your app. The OpenID token is passed to the microflow as a parameter. Use this object to find an existing, or create a new, `System.User` object for the end-user. This is set as the return value of the microflow. You can find examples included in the **USE_ME** > **1. Configuration** > **User Provisioning Examples** folder.
