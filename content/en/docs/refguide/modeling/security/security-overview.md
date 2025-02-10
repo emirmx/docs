@@ -35,8 +35,6 @@ The **Security Overview** page has the following tabs:
 In the beta release of the **Security Overview** page, only the **Entity access** tab is available. The other tabs will be available in future versions of Studio Pro.
 {{% /alert %}}
 
-{{< figure src="/attachments/refguide/modeling/security/app-security/user-roles/security-overview.png" class="no-border" >}}
-
 ### Entity Access {#entity-access}
 
 The **Entity Access** tab shows a summarized view of the permissions that are applied during runtime for all entities in the selected module for each user role. This helps developers and reviewers easily understand what an end user can or cannot access within the application.
@@ -45,6 +43,8 @@ The **Combined access rules** column aggregates all access rules applicable to t
 Multiple columns are shown for entities with XPath constraints. Access rules with the same XPath constraint are also combined here, so each XPath in this list is unique. 
 
 When the selected user role has no access to an attribute or an association, it is not shown in the table. If the selected user role has no access to an entity at all, the entity is not shown in the **Security Overview**.
+
+{{< figure src="/attachments/refguide/modeling/security/app-security/user-roles/entity-security-overview.png" class="no-border" >}}
 
 ### Page Access {#page-access}
 
