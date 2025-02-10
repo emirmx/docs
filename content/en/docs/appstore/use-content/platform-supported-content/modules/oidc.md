@@ -339,9 +339,9 @@ In this case, the OIDC client is the app you are making.
 
     | Default Microflow | Use |
     | --- | --- |
-    | OIDC_CustomUserParsing_Standard | It implements some standard OpenID claims to find/provision a user. |
-    | OIDC_CustomUserParsing_UserInfo | It is similar as standard OIDC user parsing flow, except it works with identity providers that use `opaque` tokens. |
-    | OIDC_CustomUserParsing_Salesforce | It offers an `id` endpoint that retrieves information about user. You can use OpenID token (`id_token`) to map user attributes. |
+    | OIDC_CustomUserParsing_Standard <br>(renamed from UserProvisioning_Standard) | It implements some standard OpenID claims to find/provision a user. |
+    | OIDC_CustomUserParsing_UserInfo <br>(renamed from UserProvisioning_UserInfo) | It is similar as standard OIDC user parsing flow, except it works with identity providers that use `opaque` tokens. |
+    | OIDC_CustomUserParsing_Salesforce <br>(renamed from UserProvisioning_Salesforce) | It offers an `id` endpoint that retrieves information about user. You can use OpenID token (`id_token`) to map user attributes. |
 
     In version below 3.0.0 of the OIDC SSO module, you can configure the timezone and language using the `OIDC_CustomUserParsing_Standard` and `OIDC_CustomUserParsing_UserInfo` microflow. However, in version 3.0.0 and above of the OIDC SSO module, you can set the timezone and language using any standard microflow.
 
@@ -667,7 +667,6 @@ By default, the `WellKnownendpoint` (Automatic configuration URL) does not inclu
 1. Go to **Attribute Mapping** and click **New**.
 2. Select **Search**  and click **New**.
 3. Create `oid` claim and map it to the Entity Attribute.
-
 
 ## API Authentication {#api-authentication}
 
