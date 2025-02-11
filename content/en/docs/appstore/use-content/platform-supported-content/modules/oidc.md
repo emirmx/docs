@@ -482,27 +482,27 @@ Example: `OIDC.Default_SAM_TokenProcessing_CustomATP`
 When the `IsClientGrantOnly` constant is set to *true*, the OIDC SSO module considers the configuration as Client Credential grant configuration.
 {{% /alert %}}
 
-## User Provisioning
+## User Provisioning (End-user Onboarding)
 
-Initially, your app will not have any end-users. You can on-board end-users into your app using one of the following mechanisms: 
+Initially, your app will not have any end-users. You can onboard end-users into your app using one of the following mechanisms: 
 
-1. An admin user can manually create users in your app. The Administration helps you to implement this.
-2. Use the SCIM protocol to let your IdP create and/or deactivate end-users. The SCIM module helps you implement mechanism. For more information, see [SCIM](/appstore/modules/scim/).
-3. In the Just-in-time user provisioning, users will be created when they successfully login via SSO. Both SAML and OIDC SSO support this mechanism. If you do not want JIT user provisioning, it is possible to disable it as described in the section [Runtime configuration of end-user on-boarding](#custom-provisioning-rt) below.
-4. Proprietary user provisioning. The Mendix Low-Code platform offers the flexibility to develop a customized user provisioning mechanism.
+1. Manual user creation: an admin user can manually create users in your app. The Administration helps you implement this mechanism.
+2. SCIM Protocol: use the SCIM protocol to let your IdP create and/or deactivate end-users. The SCIM module helps you implement the mechanism. For more information, see [SCIM](/appstore/modules/scim/).
+3. Just-in-Time (JIT) User Provisioning: in the JIT user provisioning, users will be created when they successfully log in via SSO. Both SAML and OIDC SSO support this mechanism. If you do not want JIT user provisioning, it is possible to disable it as described in the section [Runtime Configuration of End-user Onboarding](#custom-provisioning-rt) below.
+4. Proprietary user provisioning: The Mendix Low-Code platform offers the flexibility to develop a customized user provisioning mechanism.
 
 The OIDC SSO module supports two methods for configuration of user provisioning:
 
 1. Deploy-time configuration: this approach allows fully automated configurations in your CI/CD pipeline. Mendix recommends this approach for customers with an ever-growing portfolio of Mendix applications.
-2. Runtime configuration: this approach may be the preferred method for configuration if you are not yet familiar with configuring various settings correctly. Additionally, this method is essential when connecting multiple IdPs to a single application.
+2. Runtime configuration: this approach may be preferable if you are not yet familiar with configuring various settings correctly. Additionally, this method is essential when connecting multiple IdPs to a single application.
 
-By default, end-users are provisioned using the `Account` object in the Administration module. If you need to use a custom user entity you can do this via [Runtime configuration of end-user on-boarding](#custom-provisioning-rt) or [Deploy-time configuration of end-user on-boarding](#custom-provisioning-dep).
+By default, end-users are provisioned using the `Account` object in the Administration module. If you need to use a custom user entity you can do this via [Runtime Configuration of End-user Onboarding](#custom-provisioning-rt) or [Deploy-time Configuration of End-user Onboarding](#custom-provisioning-dep).
 
 ### Configuring User Provisioning for Version 3.0.0 and Above
 
-#### Deploy-time configuration of end-user on-boarding{#custom-provisioning-dep}
+#### Deploy-time Configuration of End-user Onboarding{#custom-provisioning-dep}
 
-You can set up custom user provisioning by setting constants when you deploy your app. You do not need local MxAdmin user to do the necessary configurations. This is an automatable configuration in the CICD pipeline. However, the configuration has the following limitations compared to setting up provisioning using a microflow or changing the settings at runtime:
+You can set up custom user provisioning by setting constants when you deploy your app. You do not need a local MxAdmin user to do the necessary configurations. This is an automatable configuration in the CICD pipeline. However, the configuration has the following limitations compared to setting up provisioning using a microflow or changing the settings at runtime:
 
 * You need to restart your app to apply changes to the constants
 * You cannot set custom mapping of IdP claims to attributes of your custom user entity
@@ -519,7 +519,7 @@ You can set up custom user provisioning by setting the following constants. You 
 | UserType | assigns user type to the created user | *optional* | `Internal` |
 | CustomUserProvisioning | a custom microflow to use for user provisioning | *optional* – in the form `modulename.microflowname` – the microflow name must begin with the string `UC_CustomProvisioning` | `Mymodule.UC_CustomProvisioning` |
 
-#### Runtime configuration of end-user on-boarding{#custom-provisioning-rt}
+#### Runtime Configuration of End-user Onboarding{#custom-provisioning-rt}
 
 You can set up just-in-time user provisioning as follows:
 
@@ -531,7 +531,7 @@ You can set up just-in-time user provisioning as follows:
 
 The User Provisioning configuration fields are available in the **UserProvisioning** tab. In default configuration, the custom user entity is set as `Administration.Account`, the principal attribute is set as `Name`, and the default attribute mapping is provided.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/default_provisioning.png" max-width=80% >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/default_provisioning.png" >}}
 
 ###### Modifying Default Attribute Mapping{#modify-default}
 
@@ -549,7 +549,7 @@ You can set up custom user provisioning as follows:
     * **The attribute where the user principal is stored** – unique identifier associated with an authenticated user.
     * **Allow the module to create users** – this enables the module to create users based on configurations of user provisioning and attribute mapping. When disabled, it will still update existing users. However, for new users, it will display an exception message stating that the login action was successful but no user has been configured.
         * By default, the value is set to ***Yes***.
-    * **User role** (optional) – the role which will be assigned to newly created users. This is optional and will be applied to all IdPs. You can select any one default user role or keep the field empty. If you need additional user roles, use Access Token Parsing microflow to assign multiple roles.
+    * **User role** (optional) – the role which will be assigned to newly created users. This is optional and will be applied to all IdPs. You can select any default user role or keep the field empty. If you need additional user roles, use Access Token Parsing microflow to assign multiple roles.
         * By default, the value is set to ***User***.
     * **User Type** – this allows you to configure end-users of your application as internal or external. It is created upon the creation of the user and updated each time the user logs in.
         * By default, the value is set to ***Internal***.
@@ -563,7 +563,7 @@ You can set up custom user provisioning as follows:
     * The **IdP Attribute** is one of the fixed claims supported by the OIDC SSO module.
     * IdP Attributes(Claims) cannot be of type enum, autonumber, or an association.
 
-3. Optionally, you can select the microflow in the **Custom UserProvisioning** field to use custom logic for user provisioning. For more information, see the [Customizing User Provisioning Using a Microflow at Runtime](#microflow-at-runtime) section below.
+3. Optionally, you can select the microflow in the **Custom UserProvisioning** field to use custom logic for user provisioning. For more information, see the [User Provisioning Using a Microflow at Runtime](#microflow-at-runtime) section below.
 
     {{% alert color="info" %}}
 If you are using module version 3.2.0 and below, you will need to refresh the module containing your microflow as described in the [Installing Mx Model Reflection](/appstore/modules/oidc/#mxmodelreflection) and select the microflow in the **Custom UserProvisioning** field.
@@ -571,7 +571,7 @@ If you are using module version 3.2.0 and below, you will need to refresh the mo
 
 4. Click **Save** to save the configuration.
 
-By default, users are provisioned by [Default User Provisioning Configuration](#default). Optionally, you can customize user provisioning by [Modifying default Attribute Mapping](#modify-default), [User Provisioning Using Your Custom User Entity](#custom_user_entity), or [User Provisioning Using a Microflow at Runtime](#microflow-at-runtime).
+By default, users are provisioned by [Default User Provisioning Configuration](#default). Optionally, you can customize user provisioning by [Modifying Default Attribute Mapping](#modify-default), [User Provisioning Using Your Custom User Entity](#custom_user_entity), or [User Provisioning Using a Microflow at Runtime](#microflow-at-runtime).
 
 {{% alert color="info" %}}
 If you connect multiple IdPs to your Mendix app, you can use separate custom user entities for each IdP, each with its own attribute mapping.
