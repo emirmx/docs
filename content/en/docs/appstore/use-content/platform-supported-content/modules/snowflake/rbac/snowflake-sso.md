@@ -152,4 +152,17 @@ To configure your Mendix application, perform the following steps:
 11. Configure the **UserProvisioning** tab as shown in the following figure:
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-sso/provisioning.png" >}}
-12. Run the application and log in with the user that you use in Snowflake and Azure. 
+    
+12. Go to Snowflake configuration page (of the Snowflake RestSQL connector) and add a new connection 
+13. Select OAUTH as an "Aythentication Type"
+    
+     {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-sso/provisioning.png" >}}
+  
+14. Please provide the following information to set up the connection:
+   
+*   **Connection Name:** Enter a descriptive name for this connection.
+*   **Snowflake Account URL:** Provide the URL for your Snowflake account. This can be found within the Snowflake application.
+*   **Snowflake Account Identifier:** Enter your Snowflake Account Identifier.
+*   **Resource Path:** You can use the default resource path or customize it as needed.
+    
+for more infromation check [Snowflake documentation](https://docs.snowflake.com/en/user-guide/key-pair-auth).
