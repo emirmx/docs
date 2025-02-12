@@ -12,6 +12,16 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2025
 
+### February 19, 2025
+
+#### Mendix Operator v2.21.0 {#2.21.0}
+
+* We have switched all system containers to use a read-only root filesystem, and added an option to run Mendix app containers with a read-only rootfs.
+* We have added a check in `mxpc-cli` to prevent CRD downgrades; starting from `mxpc-cli` version 2.21.0, the installation or upgrade process will keep cluster CRDs unchanged if the cluster has newer CRDs (compared to what is included with the installer).
+* We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
+* We have fixed a _Failed to determine if DDL migration needs approval_ error message that sometimes appeared when using a **Recreate** deployment strategy. This error message doesn't mean there's an issue and can be ignored.
+* Upgrading to Mendix Operator v2.21.0 from a previous version will restart environments managed by that version of the Operator. Environments with 2 or more replicas and a **PreferRolling** update strategy will be restarted without downtime.
+
 ### February 12, 2025
 
 #### Documentation Updates
@@ -27,15 +37,6 @@ For information on the current status of deployment to Mendix for Private Cloud 
 * We have improved the labels for Runtime and Operator licenses to clearly indicate which licenses are applied to the app.
 
 ## 2024
-
-### January ???, 2025
-
-#### Mendix Operator v2.21.0 {#2.21.0}
-
-* We have switched all system containers to use a read-only root filesystem, and added an option to run Mendix app containers with a read-only rootfs.
-* We have added a check in `mxpc-cli` to prevent CRD downgrades; starting from `mxpc-cli` version 2.21.0, the installation or upgrade process will keep cluster CRDs unchanged if the cluster has newer CRDs (compared to what is included with the installer).
-* We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
-* Upgrading to Mendix Operator v2.21.0 from a previous version will restart environments managed by that version of the Operator. Environments with 2 or more replicas and a **PreferRolling** update strategy will be restarted without downtime.
 
 ### December 16, 2024
 
