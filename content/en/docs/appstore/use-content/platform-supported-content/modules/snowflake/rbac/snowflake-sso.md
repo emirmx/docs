@@ -156,7 +156,7 @@ To configure your Mendix application, perform the following steps:
 12. Go to Snowflake configuration page (of the Snowflake RestSQL connector) and add a new connection 
 13. Select OAUTH as an "Aythentication Type"
     
-     {{< figure src=".." >}}
+     {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-sso/RestSQLOAuth.png" >}}
   
 14. Please provide the following information to set up the connection:
    
