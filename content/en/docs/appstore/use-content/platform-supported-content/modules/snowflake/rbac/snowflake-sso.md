@@ -166,3 +166,5 @@ To configure your Mendix application, perform the following steps:
 *   **Resource Path:** You can use the default resource path or customize it as needed.
     
 for more infromation check [Snowflake documentation](https://docs.snowflake.com/en/user-guide/key-pair-auth).
+
+15. Logout with the admin user and Login using the SSO 
