@@ -12,7 +12,12 @@ The [Snowflake REST SQL connector](https://marketplace.mendix.com/link/component
 
 ### Typical Use Cases
 
-The Snowflake REST SQL connector provides a way to first setup key-pair authentication with an RSA key pair according to PKCS #8 standard, and then execute SQL statements on Snowflake via a REST call from within your Mendix application. These statements allow you to perform the following tasks:
+The Snowflake REST SQL connector supports the following:
+
+1.  **Authentication:**
+    *   Key-pair authentication (using PKCS #8 standard RSA keys)
+    *   OAuth authentication
+2.  **Functionality:** Execute SQL statements on Snowflake via REST calls from your Mendix application.These statements allow you to perform the following tasks:
 
 * Read data from Snowflake.
 * Write data to Snowflake.
@@ -65,7 +70,7 @@ After you install the connector, you can find it in the **App Explorer**, in the
 
 ### Configuring Snowflake Authentication
 
-In order to use the capabilities of Snowflake in a Mendix app with the Snowflake REST SQL connector, an RSA key-pair authentication method must be used.
+In order to use the capabilities of Snowflake in a Mendix app with the Snowflake REST SQL connector, either an RSA key-pair authentication or OAUTH authentication method must be used.
 
 ### Configuring Key-pair Authentication in Snowflake {#setup-key-pair-snowflake}
 
