@@ -50,7 +50,13 @@ Selecting the infrastructure for integrating GenAI into your Mendix application 
 
 ### Getting Started
 
-Download the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926) from the Marketplace and configure the **encryption key** in the **App Settings**. Follow the steps below based on the infrastructure you chose.
+Follow the steps below to set up the app.
+
+1. Download the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926) from the Marketplace.
+
+2. Configure the `EncryptionKey` in the **App Settings** in Studio Pro. Make sure that it is 32 characters long. For more information, see the [EncryptionKey Constant](/appstore/modules/encryption/#encryptionkey-constant) section of *Encryption*. 
+
+Next, follow the steps below based on the infrastructure you chose.
 
 #### Mendix Cloud GenAI Configuration
 
