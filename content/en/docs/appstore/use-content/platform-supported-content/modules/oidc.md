@@ -349,7 +349,7 @@ In this case, the OIDC client is the app you are making.
 
     {{% alert color="info" %}}Starting from UserCommons version 2.0.0, If the IdP does not specify the timezone and language for newly created users, these settings will be set according to default **App Settings** of your app. If no default is available, they remain unset. Existing users retain their previously set values.{{% /alert %}}
 
-11. Optionally, you can select the `CustomAccessTokenParsing` microflow if you want to use additional information from the OIDC IdP. This can be used, for example, to assign end-user roles based on information from the IdP – see [Access Token Parsing](#access-token-parsing) for more information.
+11. Optionally, you can select the `CustomAccessTokenParsing` microflow if you want to use additional information from the OIDC IdP. This can be used, for example, to assign end-user roles based on information from the IdP – see [Dynamic Assignment of Userroles (Access Token Parsing)](#access-token-parsing) for more information.
 
     {{% alert color="info" %}}Starting from version 4.0.0 of the OIDC SSO, the default user roles in the UserProvisioning will be assigned alongside the roles parsed from the access token.{{% /alert %}}
 
@@ -365,7 +365,7 @@ See the section [Optional Features](#optional) information on additional optiona
     {{% alert color="info" %}}If the endpoint URL does not already end with `/.well-known/openid-configuration`, include it at the end. According to the specifications, the URL you need to enter typically ends with `/.well-known/openid-configuration`.{{% /alert %}}
 
     * If you do not have an automatic configuration URL, you can fill in the other endpoints manually.
-3. Optionally, you can select the `CustomAccessTokenParsing` microflow if you want to use additional information from the OIDC IdP. This can be used, for example, to assign end-user roles based on information from the IdP – see [Access Token Parsing](#access-token-parsing) for more information.
+3. Optionally, you can select the `CustomAccessTokenParsing` microflow if you want to use additional information from the OIDC IdP. This can be used, for example, to assign end-user roles based on information from the IdP – see [Dynamic Assignment of Userroles (Access Token Parsing)](#access-token-parsing) for more information.
 4. Click Save. Once you have completed these steps, the Client Credential Configuration is ready for testing.
 
 #### Microsoft Entra ID Client Configuration for APIs {#azure}
@@ -535,7 +535,7 @@ Below fields are available in the **UserProvisioning** tab for the User Provisio
 * **The attribute where the user principal is stored** – unique identifier associated with an authenticated user.
 * **Allow the module to create users** – this enables the module to create users based on configurations of JIT user provisioning and attribute mapping. When disabled, it will still update existing users. However, for new users, it will display an exception message in the log.
     * By default, the value is set to ***Yes***.
-* **User role** (optional) – the role which will be assigned to newly created users. This is optional and will be applied to all IdPs. You can select any user role as a default or keep the field empty. If you need additional user roles, use Access Token Parsing microflow to assign multiple roles.
+* **User role** (optional) – the role which will be assigned to newly created users. This is optional and will be applied to all IdPs. You can select any user role as a default or keep the field empty. User Provisioning does not allow you to assign user roles dynamically. It can only set a default role. If you need additional user roles, use Access Token Parsing microflow to assign multiple roles. For more information, see the [Dynamic Assignment of Userroles (Access Token Parsing)](#access-token-parsing) section below.
     * By default, the value is set to ***User***.
 * **User Type** – this allows you to configure end-users of your application as internal or external. It is created upon the creation of the user and updated each time the user logs in.
     * By default, the value is set to ***Internal***.
@@ -785,7 +785,7 @@ Takes as input:
 
 The microflow returns an object of type `System.HttpResponse`. This could indicate an error.
 
-### Access Token Parsing{#access-token-parsing}
+### Dynamic Assignment of Userroles (Access Token Parsing){#access-token-parsing}
 
 With the OAuth/OIDC protocol, access tokens can be opaque or can be a JSON Web Token (JWT).
 If you are just delegating authentication for your app to the IdP you will not need to know the contents of the access token.
@@ -1046,7 +1046,7 @@ Content - {"error":"invalid_client","error_description":"client authentication f
 
 ### Custom Microflow Implementation Should Be Required to Process Access_Token Roles
 
-If you get the error message “Custom microflow implementation should be required to process Access_token roles” in the Mendix Studio Pro console logs, this indicates you have not completely implemented your custom microflow for parsing access tokens (`CustomATP_…`). See the section on [Access Token Parsing](#access-token-parsing).
+If you get the error message “Custom microflow implementation should be required to process Access_token roles” in the Mendix Studio Pro console logs, this indicates you have not completely implemented your custom microflow for parsing access tokens (`CustomATP_…`). See the section on [Dynamic Assignment of Userroles (Access Token Parsing)](#access-token-parsing).
 
 ### End-Users of App Deployed On Premises Do Not Return to the App After Sign In
 
