@@ -102,7 +102,7 @@ Enabling this option allows you to specify which repositories should be used by 
 
 This option becomes available if **Use custom repositiories** is set to **Yes**. 
 
-You can specify which repositories to use for Gradle. The content of this field should be specified using Groovy syntax and is what is inside the `repositories { }` section in a Gradle build file. By default, this field contains: `mavenCentral()`. 
+You can specify which repositories to use for Gradle. The content of this field should be specified using Groovy syntax and is what is inside the `repositories { }` section in a Gradle build file. By default, this field contains: `mavenCentral()` and `gradlePluginPortal()`. 
 
 ## Maia Tab
 
