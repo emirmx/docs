@@ -14,25 +14,27 @@ The [Snowflake REST SQL connector](https://marketplace.mendix.com/link/component
 
 The Snowflake REST SQL connector supports the following:
 
-1.  **Authentication:**
-    *   Key-pair authentication (using PKCS #8 standard RSA keys)
-    *   OAuth authentication
-2.  **Functionality:** Execute SQL statements on Snowflake via REST calls from your Mendix application.These statements allow you to perform the following tasks:
+1. **Authentication:**
 
-* Read data from Snowflake.
-* Write data to Snowflake.
-* Trigger [Snowflake Cortex ML functions](https://docs.snowflake.com/en/guides-overview-ml-functions):
-    * [Forecasting](https://docs.snowflake.com/en/user-guide/ml-functions/forecasting) - Predicts future metric values from past trends in time-series data.
-    * [Anomaly Detection](https://docs.snowflake.com/en/user-guide/ml-functions/anomaly-detection) - Flags metric values that differ from typical expectations.
-    * [CLASSIFY_TEXT](https://docs.snowflake.com/en/sql-reference/functions/classify_text-snowflake-cortex) - Given a piece of text, classifies it into one of the categories that you define.
-    * [EXTRACT_ANSWER](https://docs.snowflake.com/en/sql-reference/functions/extract_answer-snowflake-cortex) - Given a question and unstructured data, returns the answer to the question if it can be found in the data.
-    * [PARSE_DOCUMENT](https://docs.snowflake.com/en/sql-reference/functions/parse_document-snowflake-cortex) - Given an internal or external stage with documents, returns an object that contains extracted text content using OCR mode, or the extracted text and layout elements using LAYOUT mode.
-    * [SENTIMENT](https://docs.snowflake.com/en/sql-reference/functions/sentiment-snowflake-cortex) - Returns a sentiment score, from -1 to 1, representing the detected positive or negative sentiment of the given text.
-    * [SUMMARIZE](https://docs.snowflake.com/en/sql-reference/functions/summarize-snowflake-cortex) - Returns a summary of the given text.
-    * [TRANSLATE](https://docs.snowflake.com/en/sql-reference/functions/translate-snowflake-cortex) - Translates given text from any supported language to any other.
-    * [EMBED_TEXT_768](https://docs.snowflake.com/en/sql-reference/functions/embed_text-snowflake-cortex) - Given a piece of text, returns a vector embedding of 768 dimensions that represents that text.
-    * [EMBED_TEXT_1024](https://docs.snowflake.com/en/sql-reference/functions/embed_text_1024-snowflake-cortex) - Given a piece of text, returns a vector embedding of 1024 dimensions that represents that text. 
-* Use [Snowflake Cortex Analyst](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst) - This Snowflake Cortex feature is used to get information/insights out of structured data sets using natural language instead of sql.
+    * Key-pair authentication (using PKCS #8 standard RSA keys)
+    * OAuth authentication
+
+2. **Functionality:** Execute SQL statements on Snowflake via REST calls from your Mendix application. These statements allow you to perform the following tasks:
+
+    * Read data from Snowflake.
+    * Write data to Snowflake.
+    * Trigger the following [Snowflake Cortex ML functions](https://docs.snowflake.com/en/guides-overview-ml-functions):
+        * [Forecasting](https://docs.snowflake.com/en/user-guide/ml-functions/forecasting) - Predicts future metric values from past trends in time-series data.
+        * [Anomaly Detection](https://docs.snowflake.com/en/user-guide/ml-functions/anomaly-detection) - Flags metric values that differ from typical expectations.
+        * [CLASSIFY_TEXT](https://docs.snowflake.com/en/sql-reference/functions/classify_text-snowflake-cortex) - Given a piece of text, classifies it into one of the categories that you define.
+        * [EXTRACT_ANSWER](https://docs.snowflake.com/en/sql-reference/functions/extract_answer-snowflake-cortex) - Given a question and unstructured data, returns the answer to the question if it can be found in the data.
+        * [PARSE_DOCUMENT](https://docs.snowflake.com/en/sql-reference/functions/parse_document-snowflake-cortex) - Given an internal or external stage with documents, returns an object that contains extracted text content using OCR mode, or the extracted text and layout elements using LAYOUT mode.
+        * [SENTIMENT](https://docs.snowflake.com/en/sql-reference/functions/sentiment-snowflake-cortex) - Returns a sentiment score, from -1 to 1, representing the detected positive or negative sentiment of the given text.
+        * [SUMMARIZE](https://docs.snowflake.com/en/sql-reference/functions/summarize-snowflake-cortex) - Returns a summary of the given text.
+        * [TRANSLATE](https://docs.snowflake.com/en/sql-reference/functions/translate-snowflake-cortex) - Translates given text from any supported language to any other.
+        * [EMBED_TEXT_768](https://docs.snowflake.com/en/sql-reference/functions/embed_text-snowflake-cortex) - Given a piece of text, returns a vector embedding of 768 dimensions that represents that text.
+        * [EMBED_TEXT_1024](https://docs.snowflake.com/en/sql-reference/functions/embed_text_1024-snowflake-cortex) - Given a piece of text, returns a vector embedding of 1024 dimensions that represents that text. 
+    * Use [Snowflake Cortex Analyst](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst) - This Snowflake Cortex feature is used to get information/insights out of structured data sets using natural language instead of sql.
 
 For more use cases and examples for [Snowflake Cortex LLM functions](https://docs.snowflake.com/en/user-guide/snowflake-cortex/llm-functions), written by the Head of Snowflake Tech Consulting, see [Karthik S Raman's Medium profile](https://medium.com/@karthiksraman).
 

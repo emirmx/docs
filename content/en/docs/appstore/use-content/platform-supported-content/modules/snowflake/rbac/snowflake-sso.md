@@ -152,15 +152,26 @@ To configure your Mendix application, perform the following steps:
 11. Configure the **UserProvisioning** tab as shown in the following figure:
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-sso/provisioning.png" >}}
+
+    * Custom user Entity (extension of System.User) – Administration.Account
+    * The attribute where the user principal is stored – Name
+    * Allow the module to create users – Yes
+    * Default Userrole – User
+    * User Type – Internal
+    * IdP Attributes to Configured Entity Attributes
+
+        * email – Email
+        * name – FullName
+        * preferred_username – Name
     
-12. Go to Snowflake configuration page (of the [Snowflake RestSQL connector](/appstore/connectors/snowflake/snowflake-rest-sql/)) and add a new connection.
-13. Select OAUTH as an "Authentication Type".
+12. Go to the configuration page of the [Snowflake RestSQL connector](/appstore/connectors/snowflake/snowflake-rest-sql/) and add a new connection.
+13. Select OAUTH as the "Authentication Type".
     
      {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-sso/RestSQLOAuth.png" >}}
   
 14. Please provide the following information to set up the connection:
    
-    * **Connection Name** A descriptive name for this connection.
+    * **Connection Name** – A descriptive name for this connection.
     * **Snowflake Account URL** – The URL for your Snowflake account. This can be found within the Snowflake application.
     * **Snowflake Account Identifier** – Your Snowflake Account Identifier.
     * **Resource Path** – Use the default resource path or customize it as needed.
