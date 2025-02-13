@@ -201,13 +201,41 @@ Select a revision to see additional details, such as related stories, changed do
 
 ## Reverting Changes {#revert-changes}
 
+In case you want to undo changes that have been made, it is important to understand the difference between uncommitted changes, and committed changes that have been pushed to the server. Uncommitted work can simply be reverted, while committed work requires a new **Reverse commit** to undo.
+
+### Revert Uncommitted Changes
+
 Changes that have not yet been committed can be reverted. Say, for example, that you have made a lot of changes to a page and you are not happy with the result. You can revert the page to the original state, that is, the state of the page before you started making changes.
 
-Deletes of documents, folders, and modules can also be reverted. This brings them back into the app. Note that you will get back the latest version you have committed. For example, if you commit, make some changes to a microflow, and then delete the microflow, reverting the delete gives you the microflow without the changes that you made.
+Deletes of documents, folders, and modules can also be reverted. This brings them back into the app. Note that you will get back the latest version you have committed. For example, if you commit, make some changes to a microflow, and then delete the microflow, reverting the delete restores the microflow without the changes that you made.
 
 You can revert changes in the **Changes** pane, from **Version Control** > **Revert All Changes**, or from the right-click menu on the document you want to revert.
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/revertx2.png" alt="Two ways of reverting" class="no-border" >}}
+
+{{% alert color="info" %}}
+You can also **Revert All Changes** while [merging](#merge). This will restore your app to the most recent, discarding changes creating by the merging process.
+{{% /alert %}}
+
+### Revert a Previous Commit
+
+Changes that have been committed and pushed to the server can never be deleted from the history. However, you can make another commit to revert the changes. This feature is called **Reverse commit** in Studio Pro.
+
+Choose the **Version Control** menu > **Revert a Commit...** to revert a commit. This will create the original changes 'in reverse', which you can commit and push to the server.
+
+{{% alert color="warning" %}}
+Reverting a commit creates a new set of changes to cancel out the changes from the commit. If you used Port Fix to put a commit from another branch on the current branch, and you revert that commit, the changes will not be applied again when eventually merging the entire branch.
+{{% /alert %}}
+
+Reverting changes is done with one commit at a time. If you want to revert multiple commits, you can do that by reverting the latest commit, then the previous one, only one by one.
+
+{{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/revert-changes-git.png" class="no-border" >}}
+
+#### Reverse Merge
+
+You can also choose to revert a commit in which another branch was merged into the current branch. If you revert the merge, the app will look like the changes never happened: if you reverse merge adding a new page, the page will be deleted locally. 
+
+Just like when you are doing a normal merge, conflicts can arise. For example, if later commits change the new page, the reverse merge will result in a conflict. After resolving the conflict, you can commit and push the results to the remote repository.
 
 ## Dealing With Conflicts {#conflicts}
 
@@ -275,18 +303,6 @@ If you have multiple development lines, you sometimes want to merge changes from
 Merging is always done while you have a working copy open. The merge will result in extra local changes in that working copy. It is advisable to commit local changes first before merging extra changes into a working copy. Otherwise, the uncommitted local changes and the changes caused by the merge will be combined and it is very hard to untangle them if you are unhappy with the merge. Studio Pro will warn you if you have uncommitted changes.
 
 Select **Version Control** > **Merge Changes Here**, after that you can select **Port fix** or **Merge feature branch** options. For more information on merge settings, see [Merge Dialog](/refguide/merge-dialog/).
-
-#### Reverting a Commit
-
-[Reverting changes](#revert-changes) works for changes that have not been committed yet. Changes that have been committed and pushed to the server can never be deleted from the history. However, you can make another commit to revert the changes. This feature is called **Reverse commit** in Studio Pro.
-
-Choose the **Version Control** menu > **Revert a Commit...** to revert a commit.
-
-Reverting changes is done with one commit at a time. If you want to revert multiple commits, you can do that by reverting the latest commit, then the previous one, only one by one.
-
-{{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/revert-changes-git.png" class="no-border" >}}
-
-After a reverse merge the app will look like the changes never happened; if you reverse merge adding a new page, the page will be deleted locally. Just like when you are doing a normal merge, conflicts can arise. For example, if later commits change the new page, the reverse merge will result in a conflict. After resolving the conflict, you can commit and push the results to the remote repository.
 
 #### Replacing the Main Line with a Branch Line
 
