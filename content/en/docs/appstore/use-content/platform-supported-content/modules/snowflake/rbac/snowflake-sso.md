@@ -19,9 +19,9 @@ You can integrate between Snowflake and Mendix applications by using OAUTH provi
 ### Prerequisites
 
 To enable SSO-based RBAC for your Mendix app, you must install and configure the following prerequisites:
+
 * [OIDC SSO module](/appstore/modules/oidc/).
 * [Snowflake REST SQL Connector](https://docs.mendix.com/appstore/connectors/snowflake/snowflake-rest-sql/)
-
 
 ## Configuring Azure Entra ID
 
@@ -153,18 +153,18 @@ To configure your Mendix application, perform the following steps:
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-sso/provisioning.png" >}}
     
-12. Go to Snowflake configuration page (of the Snowflake RestSQL connector) and add a new connection 
-13. Select OAUTH as an "Aythentication Type"
+12. Go to Snowflake configuration page (of the [Snowflake RestSQL connector](/appstore/connectors/snowflake/snowflake-rest-sql/)) and add a new connection.
+13. Select OAUTH as an "Authentication Type".
     
      {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-sso/RestSQLOAuth.png" >}}
   
 14. Please provide the following information to set up the connection:
    
-*   **Connection Name:** Enter a descriptive name for this connection.
-*   **Snowflake Account URL:** Provide the URL for your Snowflake account. This can be found within the Snowflake application.
-*   **Snowflake Account Identifier:** Enter your Snowflake Account Identifier.
-*   **Resource Path:** You can use the default resource path or customize it as needed.
-    
-for more infromation check [Snowflake documentation](https://docs.snowflake.com/en/user-guide/key-pair-auth).
+    * **Connection Name** A descriptive name for this connection.
+    * **Snowflake Account URL** – The URL for your Snowflake account. This can be found within the Snowflake application.
+    * **Snowflake Account Identifier** – Your Snowflake Account Identifier.
+    * **Resource Path** – Use the default resource path or customize it as needed.
 
-15. Logout with the admin user and Login using the SSO 
+    For more information see the [Snowflake documentation](https://docs.snowflake.com/en/user-guide/key-pair-auth).
+
+15. Logout from the admin user and sign in using SSO. 
