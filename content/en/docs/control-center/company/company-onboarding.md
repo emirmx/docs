@@ -11,7 +11,7 @@ The Company Onboarding page allows you to customize the Mendix experience for yo
 
 ## Landing Page Tab
 
-On the **Landing Page** tab of this page, you can customize your company's onboarding landing page and use that instead of the standard Mendix Platform onboarding page for new platform users from your company. This helps users to understand your company’s way of working on the Mendix Platform and enables them to get started more quickly. You can share your company’s best practices on Mendix Platform usage, and you can link to videos, company documentation, and other content.
+On the **Landing Page** tab of this page, you can customize your company's onboarding landing page. Once you publish it, a tile on the Mendix home page will link to your company onboarding page for all users in your company. This helps users to understand your company’s way of working on the Mendix Platform and enables them to get started more quickly. You can share your company’s best practices on Mendix Platform usage, and you can link to videos, company documentation, and other content.
 
 You can start configuring the sections and blocks of your landing page from a standard template or from scratch. You can work on drafts and preview how the page looks before publishing for your company's new platform users.
 
@@ -21,7 +21,9 @@ When you configure the landing page, if you turn on the **Include company logo**
 
 {{< figure src="/attachments/control-center/company/company-onboarding/update-company-branding.png" >}}
 
-Once you publish your landing page, this will be where new users land after signing up with your company's domains on Mendix. This page is also accessible via the **Getting Started with Mendix** link in the upper-right navigation menu. If you do not have a company onboarding landing page set up, this link will lead to the default Mendix onboarding page.
+Once you publish your landing page, it will be available to all Mendix users in your company. A tile which links to the page is added to the Mendix Home page in the **Get Started with Mendix** section. The tile is called **[Your Company Name] First Steps**.
+
+If you cannot see it, click **Customize home page** ({{% icon name="cog" %}}) on the Mendix Home page and make sure the **Get Started with Mendix** section has **Show on Home** checked.
 
 ## Onboarding Email Tab
 
