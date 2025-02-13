@@ -83,7 +83,7 @@ The migration mode will show deprecation warnings instead of errors for all inco
 
 Read further for guides that allow you convert your app so it is ready for the React client.
 
-### Custom Index.html{#index}
+### Custom `index.html`{#index}
 
 The structure of the `index.html` file is different for React and Dojo clients. To make sure your application will work correctly, follow these steps:
 
