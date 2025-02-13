@@ -11,7 +11,7 @@ description: "Describes the shortcut keys available in Studio Pro."
 
 This document summarizes the shortcut keys available in Studio Pro. This document is divided into sections which indicate where you can use the keys.
 
-You can also download the Windows shortcuts as a reference pdf in a [dark](https://www.mendix.com/wp-content/uploads/Windows-Keyboard-Shortcuts-dark-mode.pdf) or [light](https://www.mendix.com/wp-content/uploads/Windows-Keyboard-Shortcuts-light-mode.pdf) variant.
+The Windows shortcuts are available as a reference PDF in a [dark](https://www.mendix.com/wp-content/uploads/Windows-Keyboard-Shortcuts-dark-mode.pdf) or [light](https://www.mendix.com/wp-content/uploads/Windows-Keyboard-Shortcuts-light-mode.pdf) version.
 
 ## General Shortcut Keys
 
