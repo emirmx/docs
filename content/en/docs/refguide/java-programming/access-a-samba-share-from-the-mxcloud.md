@@ -1,7 +1,7 @@
 ---
 title: "Access a Samba Share"
 url: /howto/integration/access-a-samba-share-from-the-mxcloud/
-weight: 11
+weight: 43
 description: "Describes how to access a Samba share from the MxCloud and use a server name."
 ---
 
