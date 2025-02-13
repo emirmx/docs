@@ -486,12 +486,12 @@ When the `IsClientGrantOnly` constant is set to *true*, the OIDC SSO module cons
 
 Initially, your app will not have any end-users. You can onboard end-users into your app using one of the following mechanisms: 
 
-1. Manual user creation: an admin user can manually create users in your app. The Administration helps you implement this mechanism.
+1. Manual user creation: an admin user can manually create users in your app. The [Administration](/appstore/modules/administration/) module helps you implement this mechanism.
 2. SCIM Protocol: use the SCIM protocol to let your IdP create and/or deactivate end-users. The SCIM module helps you implement the mechanism. For more information, see [SCIM](/appstore/modules/scim/).
 3. Just-in-Time (JIT) User Provisioning: in the JIT user provisioning, users will be created when they successfully log in via SSO. Both SAML and OIDC SSO support this mechanism. If you do not want JIT user provisioning, it is possible to disable it as described in the section [Runtime Configuration of End-user Onboarding](#custom-provisioning-rt) below.
 4. Proprietary user provisioning: The Mendix Low-Code platform offers the flexibility to develop a customized user provisioning mechanism.
 
-The OIDC SSO module supports two methods for configuration of user provisioning:
+The OIDC SSO module supports two methods for configuration of JIT user provisioning:
 
 1. Deploy-time configuration: this approach allows fully automated configurations in your CI/CD pipeline. Mendix recommends this approach for customers with an ever-growing portfolio of Mendix applications.
 2. Runtime configuration: this approach may be preferable if you are not yet familiar with configuring various settings correctly. Additionally, this method is essential when connecting multiple IdPs to a single application.
@@ -541,15 +541,15 @@ Optionally, you can change the default **IdP Attribute** or the **Configured Ent
 
 If you want to use your custom user entity which is a specialization of the `System.User` entity to store user information, select it in the **Custom user Entity (extension of System.User)** field by replacing the `Administration.Account` entity.
 
-You can set up custom user provisioning as follows:
+You can set up custom JIT user provisioning as follows:
 
 1. Set up the following fields:
 
     * **Custom user Entity (extension of System.User)** – the Mendix entity where you will store and look up the user account. If you are using the [Administration module](https://marketplace.mendix.com/link/component/23513), this would be `Administration.Account`.
     * **The attribute where the user principal is stored** – unique identifier associated with an authenticated user.
-    * **Allow the module to create users** – this enables the module to create users based on configurations of user provisioning and attribute mapping. When disabled, it will still update existing users. However, for new users, it will display an exception message stating that the login action was successful but no user has been configured.
+    * **Allow the module to create users** – this enables the module to create users based on configurations of JIT user provisioning and attribute mapping. When disabled, it will still update existing users. However, for new users, it will display an exception message stating that the login action was successful but no user has been configured.
         * By default, the value is set to ***Yes***.
-    * **User role** (optional) – the role which will be assigned to newly created users. This is optional and will be applied to all IdPs. You can select any default user role or keep the field empty. If you need additional user roles, use Access Token Parsing microflow to assign multiple roles.
+    * **User role** (optional) – the role which will be assigned to newly created users. This is optional and will be applied to all IdPs. You can select any user role as a default or keep the field empty. If you need additional user roles, use Access Token Parsing microflow to assign multiple roles.
         * By default, the value is set to ***User***.
     * **User Type** – this allows you to configure end-users of your application as internal or external. It is created upon the creation of the user and updated each time the user logs in.
         * By default, the value is set to ***Internal***.
