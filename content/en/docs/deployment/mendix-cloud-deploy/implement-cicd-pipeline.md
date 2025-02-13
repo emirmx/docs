@@ -1,8 +1,11 @@
 ---
 title: "Implement a Simple CI/CD Pipeline with Mendix APIs"
 linktitle: "CI/CD Pipeline for Mendix Cloud"
-url: /howto/integration/implement-cicd-pipeline/
+url: /developerportal/deploy/implement-cicd-pipeline/
 description: "Describes how you can use the available Mendix APIs with any mainline orchestrators to build a simple CI/CD pipeline."
+weight: 85
+aliases:
+    - /howto/integration/implement-cicd-pipeline/
 ---
 
 ## Introduction
