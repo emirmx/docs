@@ -276,6 +276,10 @@ The settings below influence the behavior of the Mendix web client.
 | <a id="commendixwebuiCommittedObjectsThreshold" href="#commendixwebuiCommittedObjectsThreshold">com.<wbr>mendix.<wbr>webui.<wbr>CommittedObjectsThreshold</a> | The threshold controls how much data is sent back to the client after executing a microflow. By default, we send back full objects when they are changed or committed. When this threshold is reached, only object GUIDs are sent back instead so that the client knows about the changes while the amount of data sent over the network is reduced. The client will then retrieve the objects later on, if needed. | 100 |
 | <a id="MaxRetrieveSize" href="#MaxRetrieveSize">MaxRetrieveSize</a> | The maximum number of objects the client is allowed to retrieve in a single XAS request. This limit exists to prevent malicious actors from being able to overload the runtime by requesting a large number of objects in a single request. | 1000 |
 
+### Max Retrieve Size{#MaxRetrieveSize}
+
+The `MaxRetrieveSize` limits the amount of objects that the runtime will return in a single request. When requesting more objects then allowed with a `retrieve_by_ids` XAS request the runtime will throw an error: ``retrieve_by_ids action tried to retrieve more objects then allowed by the `MaxRetrieveSize`. Amount of guids requested: (...), max amount of objects allowed: (...)``. For `retrieve`, `retrieve_by_path` and `retrieve_by_xpath` XAS requests the runtime will enforce the `MaxRetrieveSize` by setting a limit on the query. Here a warning will be logged when more objects where requested then allowed by the `MaxRetrieveSize` setting: ``A retrieve action requested more objects then allowed by the `MaxRetrieveSize` runtime setting. Amount requested: (...), allowed: (...).``
+
 ## Metrics Settings{#metrics-settings}
 
 The settings below configure metrics through [micrometer](https://micrometer.io/docs). See [Metrics](/refguide/metrics/) for more information and the specification of the settings format. 
