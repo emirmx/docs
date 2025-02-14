@@ -17,7 +17,7 @@ You can start configuring the sections and blocks of your landing page from a st
 
 {{< figure src="/attachments/control-center/company/company-onboarding/onboarding-landing.png" >}}
 
-When you configure the landing page, if you turn on the **Include company logo** toggle and the **Include company header image** toggle on the left side, and then click the **Update Company Branding** button on the top, then the **Company Logo** and **Cover Image** currently set in the [Company Brand](#company-brand) page will be used on your landing page.
+When you configure the landing page, if you turn on the **Include company logo** toggle and the **Include company header image** toggle on the left side, and then click the **Update Company Branding** button on the top, then the **Company Logo** and **Cover Image** currently set in the [Company Brand](/control-center/company-brand/) page will be used on your landing page.
 
 {{< figure src="/attachments/control-center/company/company-onboarding/update-company-branding.png" >}}
 
