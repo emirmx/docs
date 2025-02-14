@@ -1,6 +1,6 @@
 ---
 title: "Authenticate with a Client Certificate"
-url: /developerportal/deploy/certificates/use-a-client-certificate/
+url: /developerportal/deploy/use-a-client-certificate/
 description: "Describes how to configure your app to authenticate using a client certificate."
 aliases:
     - /howto/integration/use-a-client-certificate/
