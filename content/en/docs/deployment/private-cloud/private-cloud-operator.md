@@ -79,9 +79,11 @@ spec:
     limits: # Upper limit - process will be stopped if it tries to use more
       cpu: 500m # 500 millicores - half of a vCPU
       memory: 512Mi # 512 megabytes - suitable for small-scale non-production apps
+      ephemeral-storage: 256Mi # 256 megabytes - for temporary files such as generated Excel documents
     requests: # Lower limit - needs at least these resources
       cpu: 250m
       memory: 256Mi
+      ephemeral-storage: 256Mi
   runtimeDeploymentPodAnnotations: # Optional, can be omitted : set custom annotations for Mendix Runtime Pods
     # example: inject the Linkerd proxy sidecar
     linkerd.io/inject: enabled
