@@ -72,13 +72,13 @@ After you install the connector, you can find it in the **App Explorer**, in the
 
 ### Configuring Snowflake Authentication
 
-To use the capabilities of Snowflake in a Mendix app with the Snowflake REST SQL connector, either an RSA key-pair authentication or OAUTH authentication method must be used.
+To use the capabilities of Snowflake in a Mendix app with the Snowflake REST SQL connector, you must use either OAUTH authentication or RSA key-pair authentication.
 
-### Configuring OAUTH Authentication {#setup-OAUTH-snowflake}
+#### Configuring OAUTH Authentication {#setup-OAUTH-snowflake}
 
 To find out how configure the OAUTH Authentication method, see [Role-based Access Control](/appstore/modules/snowflake/snowflake-rbac/).
 
-### Configuring Key-pair Authentication in Snowflake {#setup-key-pair-snowflake}
+#### Configuring Key-Pair Authentication in Snowflake {#setup-key-pair-snowflake}
 
 To configure RSA key-pair authentication for your account in Snowflake, perform the following steps:
 
@@ -88,7 +88,7 @@ To configure RSA key-pair authentication for your account in Snowflake, perform 
 
 For more details about each step, refer to the official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/key-pair-auth).
 
-### Setting up the Key-pair Authentication in a Mendix App {#setup-key-pair-mendix}
+#### Setting up the Key-Pair Authentication in a Mendix App {#setup-key-pair-mendix}
 
 To make it easier for users to configure the key-pair authentication in a Mendix app, the Snowflake REST SQL connector includes pages and microflows that you can simply drag and drop them into your own modules.
 
