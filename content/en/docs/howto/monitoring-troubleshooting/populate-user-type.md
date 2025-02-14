@@ -75,3 +75,9 @@ Therefore, the approach we take is to create a new non-persistable entity, `User
     {{< figure src="/attachments/howto/monitoring-troubleshooting/populate-user-type/user-type-report.png" class="no-border" >}}
 
 7. The report can be exported into an Excel file.
+
+### Assigning UserType for Existing Users of an IAM Modules
+
+When connecting your app with an IdP, the easiest way to set up the user type is through the capabilities of the OIDC SSO, SCIM, or SAML module. The user type is now configured in the User Commons, which is integrated into the OIDC SSO, SCIM, and SAML modules. This means you can directly configure end-users of your application as `internal` or `external` in the **User Provisioning** tab of your app. Based on this configuration, users are updated each time they log in.
+
+For more information, see the User Provisioning section of the [OIDC SSO](/appstore/modules/oidc/#custom-provisioning-rt), [SAML](/appstore/modules/saml/#custom-provisioning-rt) or [SCIM](/appstore/modules/scim/#user-provisioning) modules.
