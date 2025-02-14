@@ -26,7 +26,11 @@ The rows in the table are CDs. The type of the two rows is *CD* and this is the 
 
 ## Types of Entities {#entity-types}
 
-The entity type defines how the data is handled and there are three types:
+{{% alert color="info" %}}
+View entities were introduced in [Studio Pro 10.19](/releasenotes/studio-pro/10.19/) as a beta feature. 
+{{% /alert %}}
+
+The entity type defines how the data is handled and there are four types:
 
 * Persistable entity
     * When an entity is declared persistable, a database table is created for the entity. These type of entities are colored *blue* in the domain model.
@@ -34,12 +38,16 @@ The entity type defines how the data is handled and there are three types:
     * Non-persistable entities are stored in the runtime memory and never get committed to the database. These type of entities are colored *orange* in the domain model.
 * External entity
     * External entities represent the link to datasets that are made available through shared data sources registered in Mendix Catalog. These type of entities are colored *purple* in the domain model. 
+* View entity (beta)
+    * View entities represent the result sets of stored OQL queries on one or more entities, similar to database viewsn, and are read-only. These entities are colored *green* in the domain model.
 
-{{< figure src="/attachments/refguide/modeling/domain-model/entities/type-of-entities.jpg" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/entities/type-of-entities.jpg" class="no-border" width=="300" >}}
 
-The structure of Persistable and Non-persistable entities are defined within your app. This page describes how to add and update Persistable and Non-persistable entities. For more information on persistable entities, see [Persistability](/refguide/persistability/).
+The structure of persistable, non-persistable, and view entities are defined within your app. This page describes how to add and update persistable and non-persistable entities. For more information on persistable entities, see [Persistability](/refguide/persistability/). 
 
-The structure of an External entity is defined in the source system where the underlying data (objects) is stored. For more information on external entities and how to add them to your app, see [External Entities](/refguide/external-entities/).
+The structure of an external entity is defined in the source system where the underlying data (objects) is stored. For more information on external entities and how to add them to your app, see [External Entities](/refguide/external-entities/).
+
+View entities are defined by their underlying OQL queries, which run on one or more persistable entities or other view entities. For more information, see [View Entities](/refguide/view-entities/).
 
 ## Properties {#properties}
 

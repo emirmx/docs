@@ -10,6 +10,22 @@ These release notes cover changes to deployment to [Mendix for Private Cloud](/d
 
 For information on the current status of deployment to Mendix for Private Cloud and any planned releases, see [Mendix Status](https://status.mendix.com/).
 
+## 2025
+
+### February 12, 2025
+
+#### Documentation Updates
+
+* We have updated the [CSI Secrets Storage](/developerportal/deploy/secret-store-credentials/) documentation to include instructions on storing credentials and configuration in Google Cloud Secret Manager.
+
+### January 23, 2025
+
+#### Portal Improvements
+
+* We have fixed an issue where the technical contact could not be assigned to multiple applications at a time.
+* We have included a documentation link to the application creation process for Private Cloud applications on the **Application Overview** page.
+* We have improved the labels for Runtime and Operator licenses to clearly indicate which licenses are applied to the app.
+
 ## 2024
 
 ### December 16, 2024

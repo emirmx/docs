@@ -38,7 +38,7 @@ To start building your smart app with a blank GenAI App template, download the [
 
 ### Important Modules
 
-The [Blank GenAI App Template](https://marketplace.mendix.com/link/component/227934) includes an essential pre-installed bundle called the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931), which are beneficial to familiarize yourself with, as it includes:
+The [Blank GenAI App Template](https://marketplace.mendix.com/link/component/227934) includes an essential pre-installed bundle called [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931), which is beneficial to familiarize yourself with the GenAI functionalities Mendix can offer, as it includes:
 
 * The [GenAI Commons](/appstore/modules/genai/commons/) module: provides pre-built operations and data structures for seamless integration with platform-supported GenAI connectors, such as the Mendix Cloud GenAI, OpenAI, or Amazon Bedrock.
 
@@ -50,15 +50,14 @@ The [Blank GenAI App Template](https://marketplace.mendix.com/link/component/227
 
 Selecting the infrastructure for integrating GenAI into your Mendix application is the first step. Depending on your use case and preferences, you can choose from the following options:
 
-* [Mendix Cloud GenAI Resources Packs](/appstore/modules/genai/MxGenAI/): Part of the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931), integrates LLMs by dragging and dropping common operations from its toolbox in Studio Pro.
-
+* [Mendix Cloud GenAI Resources Packs](/appstore/modules/genai/MxGenAI/): Part of [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931), integrates LLMs by dragging and dropping common operations from its toolbox in Studio Pro.
 * [OpenAI](/appstore/modules/genai/openai/): The [OpenAI Connector](https://marketplace.mendix.com/link/component/220472) supports both OpenAI’s platform and Azure’s OpenAI service.
 
 {{% alert color="info" %}}
 To start, you can sign up for a free trial with OpenAI and receive credits valid for three months from the account creation date. For more details, see [OpenAI API reference](https://platform.openai.com/docs/api-reference/authentication).
 {{% /alert %}}
 
-* [Amazon Bedrock](/appstore/modules/genai/bedrock/): The [Bedrock Connector](https://marketplace.mendix.com/link/component/215042) allows you to leverage Amazon Bedrock’s fully managed service to integrate foundation models from Amazon and leading AI providers. 
+* [Amazon Bedrock](/appstore/modules/genai/bedrock/): The [Amazon Bedrock Connector](https://marketplace.mendix.com/link/component/215042) allows you to leverage Amazon Bedrock’s fully managed service to integrate foundation models from Amazon and leading AI providers. 
 
 * Your Own Connector: Optionally, if you prefer a custom connector, you can integrate your chosen infrastructure. However, this document focuses on the OpenAI and Bedrock connectors, as they offer comprehensive support and ease of use to get started.
 
@@ -68,7 +67,7 @@ In this section, you can set up a conversational interface for your application 
 
 #### Creating a Page
  
-Copy the `ConversationalUI_FullScreenChat` page from the **ConversationalUI > USE_ME > > Conversational UI > Pages** into your module, which can be named `MyFirstBot` module. Alternatively, if you do not plan to make any changes to the page, you can use it directly without copying.
+Copy the `ConversationalUI_FullScreenChat` page from the **ConversationalUI > USE_ME > Conversational UI > Pages** into your module, which can be named `MyFirstBot` module. Alternatively, if you do not plan to make any changes to the page, you can use it directly without copying.
 
 #### Configuring the Page Parameter and Chat Box Settings
 
@@ -81,16 +80,17 @@ Since the **ConversationalUI_FullScreenChat** page contains a **Data View** usin
 
 To tailor your application's behavior, you can customize the [System Prompt](/appstore/modules/genai/prompt-engineering/#system-prompt) to make it more specific to your use case:
 
-##### Changing the System Prompt
+##### Changing the System Prompt {#changing-system-prompt}
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-blankapp/blank_genai_mf.jpg" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-blankapp/blank_genai_systemprompt.png" >}}
 
 1. Open the copied `ACT_FullScreenChat_Open` microflow from your `MyFirstBot` module.
 2. Locate the **ChatContext** action.
-3. Inside this action, find the `System prompt` parameter, which has default an emprty value.
+3. Inside this action, find the `System prompt` parameter, which has default an empty value.
 4. Update the `System prompt` value to reflect your desired behavior. For example:
    * For a customer service chatbot: *'You are a helpful customer service assistant providing answers to common product questions.'*
    * For a travel advisor assistant: *'You are a travel advisor assistant providing travel tips and destination information.'*
+   * Or keep it simple with *'You are an assistant.'*
 5. Save the changes.
 
 #### Navigation Configuration
@@ -101,11 +101,11 @@ Click **Home** and select the `ACT_FullScreenChat_Open` microflow from your `MyF
 You may encounter an error about allowed roles. To resolve this, go to the page **Properties** and update the **Navigation > Visible for** setting to include the appropriate user roles.
 {{% /alert %}}
 
-### Infrastructure Configuration
+### Infrastructure Configuration {#config}
 
 #### Mendix Cloud GenAI Configuration
 
-Follow these steps to configure the Mendix Cloud GenAI Resources Packs for your application and more background information, look at the [Mendix Cloud GenAI Configuration](/appstore/modules/genai/MxGenAI/#configuration) documentation:
+Follow these steps to configure the Mendix Cloud GenAI Resources Packs for your application and more background information, look at the [Mendix Cloud GenAI Configuration](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#configuration) documentation:
 
 1. Run the application locally.
 
@@ -119,7 +119,7 @@ Follow these steps to configure the Mendix Cloud GenAI Resources Packs for your 
 
 #### OpenAI Configuration
 
-Follow the steps below to configure OpenAI for your application. For more information, see the [Configuration](/appstore/modules/genai/openai/#configuration) section of the *OpenAI*.
+Follow the steps below to configure OpenAI for your application. For more information, see the [Configuration](/appstore/modules/genai/reference-guide/external-connectors/openai/#configuration) section of the *OpenAI*.
 
 1. Run the application locally.
 
@@ -151,7 +151,7 @@ Follow the steps below to configure OpenAI for your application. For more inform
    * In the **Test configuration**, select the deployed model and press **Test**.
    * If an error occurs, check the **Mendix Console** for more details on resolving the issue.
 
-#### Bedrock Configuration
+#### Amazon Bedrock Configuration
 
 Follow the steps below to configure Amazon Bedrock for your application:
 

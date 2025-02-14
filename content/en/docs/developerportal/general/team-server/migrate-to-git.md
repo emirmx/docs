@@ -16,6 +16,10 @@ Git is a more modern version control system that has several advantages over SVN
 
 If your main line is Studio Pro version 9.24.28 or above and your team role is Scrum Master, you see a notification on a possible migration at the top of the **Team Server** page for your app. Click **Migrate to Git** to check for migration eligibility and to start the migration.
 
+## When to Migrate from SVN to Git
+
+Mendix recommends to combine a migration to Git with an upgrade to Mendix 10, as the advantages of Git in Mendix 9 are limited. For more details on this recommendation, see the [Recommendation on Avoiding Git Issues](/refguide/troubleshoot-repository-size/#recommendation) section in *Troubleshooting Repository Size*.
+
 ## Apps Eligible for Migration
 
 {{% alert type="info" %}}
@@ -89,6 +93,18 @@ Inform your team members that they should commit their changes and merge them to
 All work not merged to the main branch will not be migrated to your Git repository.
 
 {{% /alert %}}
+
+#### Using an SVN Backup
+
+All Scrum Masters receive an email with a link to download an SVN backup. This allows you to download a *[repository-id].dump* file to your local device and you can use this file to restore the repository locally.
+
+To set up your local SVN repository, follow these steps:
+
+1. Download and Install VisualSVN Server – Use [VisualSVN Server](https://www.visualsvn.com/server/download/) and import the existing repository from the *.dump* file. This will create a locally hosted SVN repository.
+
+2. Access the Repository – Use [TortoiseSVN](https://tortoisesvn.net/) to check the repository. This will allow you to inspect the *.mpr* file or any other files within the repository.
+
+    {{% alert color="info" %}}To inspect files from a historical revision, use **TortoiseSVN** and select **Update to revision** to check a specific revision.{{% /alert %}}
 
 ### Migrating With History {#with-history}
 

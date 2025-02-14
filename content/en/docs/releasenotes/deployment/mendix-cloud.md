@@ -14,6 +14,23 @@ There are separate release notes for other deployment targets; for more informat
 
 For information on the current status of deployment to Mendix Cloud and any planned releases, see [Mendix Status](https://status.mendix.com/).
 
+## 2025
+
+### February 2, 2025
+
+#### New Features
+
+* We have added a number of new features which are all available as part of the [new UI](/developerportal/deploy/environments-redesign/). These are:
+
+    * Redesigned the **Environment Details** page to improve functionality and enhance the user experience.
+    * Added staging support for apps in the deploy wizard.
+    * Added the ability to compare and edit model options across environments.
+    * Redesigned the **Environments** page for Free Apps.
+
+#### Improvements
+
+* Also as part of the new UI we made improved the experience of using the **Environments Overview** page for paid apps – this is based on your feedback, thanks.
+
 ## 2024
 
 ### December 12, 2024
