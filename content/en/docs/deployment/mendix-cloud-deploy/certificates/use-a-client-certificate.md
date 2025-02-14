@@ -1,5 +1,5 @@
 ---
-title: "Use a Client Certificate"
+title: "Authenticate with a Client Certificate"
 url: /developerportal/deploy/certificates/use-a-client-certificate/
 description: "Describes how to configure your app to authenticate using a client certificate."
 aliases:
