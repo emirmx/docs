@@ -145,7 +145,7 @@ To configure your Mendix application, perform the following steps:
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-sso/scope.png" >}}
 
-10. For **UserParsing**, select the default method.
+10. For **UserParsing**, select the default method, `OIDC.OIDC_CustomUserParsing_Standard`.
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-sso/parsing.png" >}}
 
