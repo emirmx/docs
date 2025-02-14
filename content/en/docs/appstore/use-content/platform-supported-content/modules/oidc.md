@@ -551,53 +551,34 @@ Note the following:
 
 Optionally, you can select the microflow in the **Custom UserProvisioning** field to use custom logic for user provisioning. For more information, see the [User Provisioning Using a Microflow at Runtime](#microflow-at-runtime) section below.
 
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/default_provisioning.png" >}}
+
 {{% alert color="info" %}}
 If you are using module version 3.2.0 and below, you will need to refresh the module containing your microflow as described in the [Installing Mx Model Reflection](/appstore/modules/oidc/#mxmodelreflection) and select the microflow in the **Custom UserProvisioning** field.
 {{% /alert %}}
 
 ##### Default User Provisioning Configuration{#default}
 
+If the standard configuration meets your needs and your application does not have special user management requirements, you can use the default User Provisioning.
+
 In default configuration, the custom user entity is set as `Administration.Account`, the principal attribute is set as `Name`, and the default attribute mapping is provided.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/default_provisioning.png" >}}
+|  IdP Attribute       | Configured Entity Attribute |
+| -------------------- | --------------------------- |
+| email                | Email                       |
+| name                 | FullName                    |
+| sub                  | Name                        |
 
-###### Modifying Default Attribute Mapping{#modify-default}
+##### Modifying Default Attribute Mapping{#modify-default}
 
-Optionally, you can change the default **IdP Attribute** or the **Configured Entity Attribute**, by editing the mapping in the **Attribute Mapping** section within the **UserProvisioning** tab.
+You may need a different or custom attribute mapping, for example, if you are configuring OIDC SSO and SCIM together and need a common identifier. In this case, you can modify the default attribute mapping.
+To do so, change the default **IdP Attribute** or the **Configured Entity Attribute**, by editing the mapping in the **Attribute Mapping** section within the **UserProvisioning** tab. 
 
 ##### User Provisioning Using Your Custom User Entity{#custom_user_entity}
 
 If you want to use your custom user entity which is a specialization of the `System.User` entity to store user information, select it in the **Custom user Entity (extension of System.User)** field by replacing the `Administration.Account` entity.
 
-You can set up custom JIT user provisioning as follows:
-
-1. Set up the following fields:
-
-    * **Custom user Entity (extension of System.User)** – the Mendix entity where you will store and look up the user account. If you are using the [Administration module](https://marketplace.mendix.com/link/component/23513), this would be `Administration.Account`.
-    * **The attribute where the user principal is stored** – unique identifier associated with an authenticated user.
-    * **Allow the module to create users** – this enables the module to create users based on configurations of JIT user provisioning and attribute mapping. When disabled, it will still update existing users. However, for new users, it will display an exception message in the log.
-        * By default, the value is set to ***Yes***.
-    * **User role** (optional) – the role which will be assigned to newly created users. This is optional and will be applied to all IdPs. You can select any user role as a default or keep the field empty. If you need additional user roles, use Access Token Parsing microflow to assign multiple roles.
-        * By default, the value is set to ***User***.
-    * **User Type** – this allows you to configure end-users of your application as internal or external. It is created upon the creation of the user and updated each time the user logs in.
-        * By default, the value is set to ***Internal***.
-
-2. Under **Attribute Mapping**, for each piece of information you want to add to your custom user entity, select an **IdP Attribute** (claim) and specify the **Configured Entity Attribute** where you want to store the information.
-
-    Note the following:
-
-    * You cannot use the IdP claim which is the primary attribute identifying the user and you cannot use the attribute you set in **The attribute where the user principal is stored**.
-    * You can map only one IdP claim to a Custom user Entity attribute.
-    * The **IdP Attribute** is one of the fixed claims supported by the OIDC SSO module.
-    * IdP Attributes(Claims) cannot be of type enum, autonumber, or an association.
-
-3. Optionally, you can select the microflow in the **Custom UserProvisioning** field to use custom logic for user provisioning. For more information, see the [User Provisioning Using a Microflow at Runtime](#microflow-at-runtime) section below.
-
-    {{% alert color="info" %}}
-If you are using module version 3.2.0 and below, you will need to refresh the module containing your microflow as described in the [Installing Mx Model Reflection](/appstore/modules/oidc/#mxmodelreflection) and select the microflow in the **Custom UserProvisioning** field.
-    {{% /alert %}}
-
-4. Click **Save** to save the configuration.
+To configure custom JIT user provisioning, set up the fields listed in the [Runtime Configuration of End-user Onboarding](#custom-provisioning-rt) section above and save the configuration.
 
 {{% alert color="info" %}}
 If you connect multiple IdPs to your Mendix app, you can use separate custom user entities for each IdP, each with its own attribute mapping.
