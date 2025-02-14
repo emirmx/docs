@@ -439,9 +439,11 @@ spec:
           limits:
             cpu: 1
             memory: 512Mi
+            ephemeral-storage: 4Mi
           requests:
             cpu: 100m
             memory: 512Mi
+            ephemeral-storage: 4Mi
 # ...
 # omitted lines for brevity
 # ...
@@ -462,30 +464,38 @@ spec:
     limits:
       cpu: 250m
       memory: 32Mi
+      ephemeral-storage: 4Mi
     requests:
       cpu: 100m
       memory: 16Mi
+      ephemeral-storage: 4Mi
   metricsSidecarResources:
     limits:
       cpu: 100m
       memory: 32Mi
+      ephemeral-storage: 4Mi
     requests:
       cpu: 100m
       memory: 16Mi
+      ephemeral-storage: 4Mi
   buildResources:
     limits:
       cpu: '1'
       memory: 256Mi
+      ephemeral-storage: 2Gi
     requests:
       cpu: 250m
       memory: 64Mi
+      ephemeral-storage: 2Gi
   runtimeResources:
     limits:
       cpu: 1000m
       memory: 512Mi
+      ephemeral-storage: 256Mi
     requests:
       cpu: 100m
       memory: 512Mi
+      ephemeral-storage: 256Mi
   runtimeLivenessProbe:
     initialDelaySeconds: 60
     periodSeconds: 15
@@ -629,9 +639,11 @@ resources:
   limits:
     cpu: 1
     memory: 512Mi
+    ephemeral-storage: 256Mi
   requests:
     cpu: 100m
     memory: 512Mi
+    ephemeral-storage: 256Mi
 ```
 
 This section allows the configuration of the lower and upper resource boundaries, the `requests` and `limits` respectively.
@@ -976,16 +988,20 @@ spec:
     limits:
       cpu: "1"
       memory: 256Mi
+      ephemeral-storage: 2Gi
     requests:
       cpu: "1"
       memory: 256Mi
+      ephemeral-storage: 2Gi
   metricsSidecarResources:
     limits:
       cpu: 100m
       memory: 32Mi
+      ephemeral-storage: 4Mi
     requests:
       cpu: 100m
       memory: 32Mi
+      ephemeral-storage: 4Mi
 ```
 
 Run the following command in order to update the core resources in the `OperatorConfiguration`:
