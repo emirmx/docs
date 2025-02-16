@@ -14,6 +14,17 @@ For information on the current status of deployment to SAP BTP and any planned r
 
 ## 2025
 
+### February 16, 2025
+
+#### Portal Improvements
+
+* We have implemented a default URL for redirection in compliance with SAP [mandates](https://help.sap.com/whats-new/cf0cb2cb149647329b5d02aa96303f56?locale=en-US&Component=Authorization+and+Trust+Management+Service).
+
+#### Bug Fixes
+
+* We fixed the issue where setting the environment constant to "empty" now correctly deletes the environment variable from the SAP BTP cockpit.
+* We fixed deployment package icon's size issue.
+  
 ### February 02, 2025
 
 #### Portal Improvements
