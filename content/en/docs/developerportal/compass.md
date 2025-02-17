@@ -35,7 +35,7 @@ You can give members of your team access to the tool by performing the following
 3. In the **Invite Members** window, enter the email address of the user that you want to invite, and specify their role in the project.
 
 {{% alert color="info" %}}
-The Program Owner role grants users access to inviting other users. As a best practice, follow the principle of least privilege, and only assign this role to project leaders.
+The Program Owner role grants users access to invite other users. As a best practice, follow the principle of least privilege, and only assign this role to team members who are leading the implementation.
 {{% /alert %}}
 
 You can invite users who are already a part of your organization, but also external users, for example, from partner organizations. Their invitations are displayed in the **Pending Invitations** tab until accepted.
