@@ -132,8 +132,6 @@ This setting defines the default response to the question whether to automatical
 
 ### General
 
-{{< figure src="/attachments/refguide/modeling/menus/edit-menu/preferences-dialog/preferences-vc-general-tab.png" alt="Preferences" width="600" class="no-border" >}}
-
 #### Executable
 
 This is the path and name of the program that is used to view the details of file changes in the [commit dialog box](/refguide/commit-dialog/).
@@ -157,11 +155,9 @@ Select **Show warning on updating marketplace modules** to display a warning mes
 
 ### Git{#git}
 
-{{< figure src="/attachments/refguide/modeling/menus/edit-menu/preferences-dialog/preferences-vc-git-tab.png" alt="Preferences" width="600" class="no-border" >}}
-
 #### Git Location {#git-location}
 
-This setting allows users to specify the path to the Git installation on their system. By default, StudioPro will automatically detect the installed Git, ensuring a hassle-free setup for most users. However, there may be instances where manually configuring the path is beneficial, such as when multiple versions of Git are installed or when the default detection does not align with specific project requirements.
+This setting allows users to specify a path for Git installation in their system. By default, Studio Pro automatically detects installed Git, ensuring a smooth setup for most users. However, there may be cases where manually configuring the path is beneficial, such as when multiple versions of Git are installed or when the default detection does not align with specific project requirements.
 
 #### Enable Private Version Control with Git {#enable-with-Git}
 
@@ -178,10 +174,10 @@ Specify your email for Git to use it in commit messages and make them more infor
 #### Enable Current Windows User Authentication {#enable-windows-authentication}
 
 {{% alert color="info" %}}
-This setting is available in Studio Pro version 10.20.0 and above and in MTS versions starting 10.6.21, 10.12.14 and 10.18.3.
+This setting is available in Studio Pro version 10.20.0 and above, and in MTS versions 10.6.21 and above, 10.12.14 and above, 10.18.3 and above.
 {{% /alert %}}
 
-When this option is selected, the application will automatically use the credentials of the currently logged-in Windows user to authenticate and connect to the on-premise Git server. This feature streamlines the authentication process by eliminating the need for users to manually enter their credentials, enhancing both security and user convenience. By leveraging Windows authentication, organizations can ensure that access to the Git server is seamlessly integrated with their existing IT infrastructure, providing a smooth and efficient workflow for development teams.
+When this option is selected, the application automatically uses credentials of the currently logged-in Windows user to authenticate and connect to the on-premises Git server. This feature streamlines the authentication process by eliminating the need for users to manually enter their credentials, enhancing both security and user convenience. By leveraging Windows authentication, organizations can ensure that access to the Git server is seamlessly integrated with their existing IT infrastructure, providing a smooth and efficient workflow for development teams.
 
 #### Clone {#clone}
 
