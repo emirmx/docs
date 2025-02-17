@@ -16,14 +16,15 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 #### Mendix Operator v2.21.0 {#2.21.0}
 
-* We have switched all system containers to use a read-only root filesystem, and added an option to run Mendix app containers with a read-only rootfs.
+* We have switched all system containers to use a read-only root filesystem. For Mendix app containers, we added an option to use a read-only rootfs, which is disabled by default.
 * We have added a default on ephemeral storage usage - to ensure that temporary file storage is reserved and is limited, so that a container gets a guaranteed amount of temporary file storage that cannot be exceeded.
 * We have added a check in `mxpc-cli` to prevent CRD downgrades; starting from `mxpc-cli` version 2.21.0, the installation or upgrade process will keep cluster CRDs unchanged if the cluster has newer CRDs (compared to what is included with the installer).
 * We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
-* We have fixed a _Failed to determine if DDL migration needs approval_ error message that sometimes appeared when using a **Recreate** deployment strategy. This error message doesn't mean there's an issue and can be ignored.
+* We have fixed a *Failed to determine if DDL migration needs approval* error message that sometimes appeared when using a **Recreate** deployment strategy. This error message doesn't mean there's an issue and can be ignored.
+* We have updated documentation that Kubernetes 1.32 is supported by the Mendix Operator.
 * Upgrading to Mendix Operator v2.21.0 from a previous version will restart environments managed by that version of the Operator. Environments with 2 or more replicas and a **PreferRolling** update strategy will be restarted without downtime.
 
-#### Known Issue
+#### Important note for upgrading
 
 With the introduction of ephemeral storage requests and limits, building an app requires at least 2GB of ephemeral storage available on the Kubernetes node.
 If your nodes don't have enough temporary storage, build pods won't be able to start and will stay in a `Pending` phase.
