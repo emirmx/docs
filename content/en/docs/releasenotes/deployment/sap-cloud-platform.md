@@ -22,8 +22,8 @@ For information on the current status of deployment to SAP BTP and any planned r
 
 #### Bug Fixes
 
-* We fixed the issue where setting the environment constant to "empty" now correctly deletes the environment variable from the SAP BTP cockpit.
-* We fixed deployment package icon's size issue.
+* We fixed an issue where setting an empty environment constant did not remove the environment variable from the SAP BTP cockpit.
+* We fixed an issue with the icon size for the deployment package.
   
 ### February 02, 2025
 
