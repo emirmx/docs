@@ -18,7 +18,7 @@ With the Compass tool, you can define your own vision of low-code and the apps t
 
 ## Getting Started with Compass
 
-To enable Compass for your Mendix implementation, contact your Mendix Customer Service Manager. 
+To enable Compass for your organization, contact your Mendix Customer Service Manager. 
 
 {{% alert color="info" %}}
 Compass is a tool intended for new users of Mendix who want to launch their first application. Many of the milestones and tasks are geared towards beginners, so teams which have already created one or more Mendix apps are less likely to find them useful.
