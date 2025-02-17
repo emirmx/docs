@@ -100,19 +100,19 @@ As a best practice, it can be helpful to organize a workshop with your team, so 
 
 ### Area of Focus
 
-The **Area of Focus** section lists several topics to plan for and consider as part of your goal-setting. The focus areas are defined by Mendix based on the [5 Ps of digital transformation](https://www.mendix.com/glossary/digital-execution/#what-are-the-5-ps-of-digital-transformation). You can define your own measurable key results for each of those areas.
+The **Area of Focus** section lists the following topics to plan for and consider as part of your goal-setting.
+
+* **People** - Goals associated with your team. For example, you may decide that you need to train five Mendix developers within the next three months.
+* **Platform** - Goals to integrate Mendix into your software development lifecycle.
+* **Portfolio** - The offerings where low-code can bring high value to your organization.
+* **Process** - Goals associated with your business processes. For example, you may decide to implement scrum.
+* **Promotion** - Goals to help you celebrate your successes and motivate your team to build with Mendix.
+
+These focus areas are based on the [5 Ps of digital transformation](https://www.mendix.com/glossary/digital-execution/#what-are-the-5-ps-of-digital-transformation). You can define your own measurable key results for each of those areas.
 
 {{% alert color="info" %}}
 As a best practice, key results should be granular and measurable in the short term.
 {{% /alert %}}
-
-The following focus areas are available:
-
-* **People** - Define goals associated with your team. For example, you may decide that you need to train five Mendix developers within the next three months.
-* **Platform** - Set goals to integrate Mendix into your software development lifecycle.
-* **Portfolio** - Select the offerings where low-code can bring high value to your organization.
-* **Process** - Define goals associated with your business processes. For example, you may decide to implement scrum.
-* **Promotion** - Define goals to help you celebrate your successes and motivate your team to build with Mendix.
 
 #### Managing your Key Results
 
