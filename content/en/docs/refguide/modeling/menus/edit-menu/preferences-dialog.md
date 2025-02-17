@@ -174,7 +174,7 @@ Specify your email for Git to use it in commit messages and make them more infor
 #### Enable Current Windows User Authentication {#enable-windows-authentication}
 
 {{% alert color="info" %}}
-This setting is available in Studio Pro version 10.20.0 and above, and in MTS versions 10.6.21 and above, 10.12.14 and above, 10.18.3 and above.
+This setting is available in Studio Pro MTS versions 10.6.21 and above, 10.12.14 and above, 10.18.3 and above.
 {{% /alert %}}
 
 When this option is selected, the application automatically uses credentials of the currently logged-in Windows user to authenticate and connect to the on-premises Git server. This feature streamlines the authentication process by eliminating the need for users to manually enter their credentials, enhancing both security and user convenience. By leveraging Windows authentication, organizations can ensure that access to the Git server is seamlessly integrated with their existing IT infrastructure, providing a smooth and efficient workflow for development teams.
