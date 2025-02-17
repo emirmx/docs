@@ -117,7 +117,7 @@ The microflow activity [Chat Completions (without history)](/appstore/modules/ge
 
 The microflow activity [Chat completions (with history)](/appstore/modules/genai/genai-for-mx/commons/#chat-completions-with-history) supports more complex use cases where a list of (historical) messages (for example, the conversation or context so far) is sent as part of the request to the LLM.
 
-#### Chat Completions (Retrieve & Generate)
+#### Retrieve & Generate {#retrieve-and-generate}
 
 To use retrieval and generation in a single operation, an internally predefined tool can be added to the [Request](/appstore/modules/genai/commons/#request) via the `Tools: Add Mendix Cloud Knowledge Base` action . The model can then decide whether to use the [knowledge base retrieval](/appstore/modules/genai/commons/#knowledge-base-retrieval) tool when handling the request. This functionality is supported in both with-history and without-history operations. Additionally, you may apply optional filters, such as `MaxNumberOfResults` or `MinimumSimilarity`, or pass a [MetadataCollection](/appstore/modules/genai/commons/#metadatacollection-entity). The optional `Description` can help the model understand the knowledge base content and decide whether it should be called in the current chat context.
 
