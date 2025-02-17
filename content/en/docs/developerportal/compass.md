@@ -46,7 +46,7 @@ You can invite users who are already a part of your organization, but also exter
 
 Milestones are key points in the implementation process that must be completed in order for the implementation to be successful. Each milestone consists of one or more action points which can be assigned to members of your team. For example, the **Introduction to Digital Execution with Mendix** milestone consists of action points such as exploring the Mendix Platform, or assigning the administrator of your Mendix app.
 
-{{< figure src="/attachments/developerportal/compass/invite.png" alt="A screenshot of the Introduction to Digital Execution with Mendix milestone with some action points completed and others in progress" >}}
+{{< figure src="/attachments/developerportal/compass/milestones.png" alt="A screenshot of the Introduction to Digital Execution with Mendix milestone with some action points completed and others in progress" >}}
 
 The milestones are defined for you by Mendix, based on our [Digital Execution](https://www.mendix.com/glossary/digital-execution/) framework. They do not keep track of development milestones - their role is to walk you through the steps which you must complete before development can start.
 
