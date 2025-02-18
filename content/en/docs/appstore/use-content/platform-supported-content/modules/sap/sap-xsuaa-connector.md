@@ -90,6 +90,10 @@ You can upload your own JSON configuration file, either created from the XSUAA C
 
 The configuration will be applied when your app is restarted.
 
+### Configure Default Redirect URL
+
+Customers using the **SAP XSUAA Connector** for SAP SSO login can now set a default redirect URL by adding **ApplicationRootUrl** in the runtime settings of environment from the portal. Ensure that url is included in Redirect URIs of xsuaa configuration.
+
 ## Usage
 
 When XSUAA is enabled on SAP BTP and the *XSUAA Connector for SAP Business Technology Platform* is part of the Mendix application, an IDP user automatically becomes a Mendix application user. They will be assigned to the roles in the Mendix application based on the scopes they have received from the XSUAA service. The scopes are defined by the mapping between the role templates and the role collections.
