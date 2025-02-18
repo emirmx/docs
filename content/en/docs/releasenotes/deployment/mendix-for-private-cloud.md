@@ -12,6 +12,14 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2025
 
+### February 20, 2025
+
+#### Portal Improvements
+
+* The character limit for application internal IDs has been extended from 8 to 35 characters.
+* Operator v2.21.0 introduces support for [read-only root filesystem](/developerportal/deploy/private-cloud-cluster/#readonlyrootfs/). This can be enabled for an environment by setting the `Read-Only Root Filesystem` field to `true` in the `Environment details` page.
+* Added support for creating custom roles for namespace members that can be applied uniformly across all namespaces within a cluster.
+
 ### January 23, 2025
 
 #### Portal Improvements
