@@ -199,10 +199,6 @@ When [combining changes](/refguide/merge-algorithm/), for example when doing a G
 
 Select **Do not show warning about Git version** to suppress a warning shown when Studio Pro starts.
 
-### Background Tasks
-
-{{< figure src="/attachments/refguide/modeling/menus/edit-menu/preferences-dialog/preferences-vc-background-tab.png" alt="Preferences" width="600" class="no-border" >}}
-
 #### Enable Automatic Fetching from a Remote Repository {#enable-auto-fetch}
 
 Select **Enable automatic fetching from a remote repository** to enable the [Automatic fetch mechanism](/refguide/auto-fetch/).
