@@ -224,7 +224,10 @@ Changes that have been committed and pushed to the server can never be deleted f
 Choose the **Version Control** menu > **Revert a Commit...** to revert a commit. This will create the original changes 'in reverse', which you can commit and push to the server.
 
 {{% alert color="warning" %}}
-Reverting a commit creates a new set of changes to cancel out the changes from the commit. If you used Port Fix to put a commit from another branch on the current branch, and you revert that commit, the changes will not be applied again when eventually merging the entire branch.
+Reverting a commit creates a new commit that undoes the changes introduced by the original commit. This may lead to unexpected results depending on the context of the original commit.
+
+* **Port fix and reverting:** If you used [Port Fix](/refguide/merge-dialog/#port-fix) to apply a commit from another branch to the current branch, and then you revert that commit, the changes from the cherry-pick will not be applied again if you later merge the entire branch. This is because the revert commit explicitly undoes the changes from the cherry-picked commit, and Git recognizes that these changes have already been handled.
+* **Merging and reverting:** If you [Merged another branch](/refguide/version-control/#merging-branches) into the current branch and then reverted the merge commit, the changes from the merge will not be reapplied if you merge the branch again. This is because the revert commit undoes the changes introduced by the merge commit, and Git recognizes that the changes have already been integrated and reverted.
 {{% /alert %}}
 
 Reverting changes is done with one commit at a time. If you want to revert multiple commits, you can do that by reverting the latest commit, then the previous one, only one by one.
