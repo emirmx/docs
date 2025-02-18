@@ -175,7 +175,7 @@ A tool of the type *function*. This is a specialization of [Tool](#tool) and rep
 
 | Attribute | Description |
 | --- | --- |
-| `MinimumSimilarity` | Specifies the minimum similarity score (usually 0,0 - 1,0) of the passed chunk and the knowledge chunks in the knowledge base. |
+| `MinimumSimilarity` | Specifies the minimum similarity score (usually 0-1) of the passed chunk and the knowledge chunks in the knowledge base. |
 | `MaxNumberOfResults` | Specifies the maximum number of results that should be retrieved from the knowledge base. |
 
 #### `StopSequence` {#stopsequence}
