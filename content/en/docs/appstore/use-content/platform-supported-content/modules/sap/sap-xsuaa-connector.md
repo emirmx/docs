@@ -90,9 +90,9 @@ You can upload your own JSON configuration file, either created from the XSUAA C
 
 The configuration will be applied when your app is restarted.
 
-### Configure Default Redirect URL
+### Configuring Default Redirect URL
 
-Customers using the **SAP XSUAA Connector** for SAP SSO login can now set a default redirect URL by adding **ApplicationRootUrl** in the runtime settings of environment from the portal. Ensure that url is included in Redirect URIs of xsuaa configuration.
+When using the SAP XSUAA Connector for SAP SSO login, you can now set a default redirect URL by adding **ApplicationRootUrl** in the **Runtime** settings of the environment from the portal. Ensure that the URL is included in the **Redirect URIs** of the XSUAA configuration.
 
 ## Usage
 
