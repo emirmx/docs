@@ -5,7 +5,8 @@ weight: 20
 ---
 
 {{% alert color="info" %}}
-Non-interrupting timer boundary events were in public beta in Studio Pro 10.15 and released in GA in Studio Pro 10.16.
+- Non-interrupting timer boundary events were in public beta in Studio Pro 10.15 and released in GA in Studio Pro 10.16.
+- Interrupting boundary events are as of 10.20 in an opt-in public beta. Please note that certain features or attributes may be subject to change and may contain bugs.
 {{% /alert %}}
 
 ## Introduction
@@ -16,7 +17,7 @@ There are two main types of boundary events:
 
 * Non-interrupting boundary events: These events do not interrupt the ongoing activity. When triggered, they allow the activity to continue while simultaneously starting a new path from the boundary event. As per BPMN 2.0 specification, non-interrupting boundary events are visualized as two dashed circles with an icon in the center.
 * Interrupting boundary events: When these events are triggered, they interrupt the normal path of the activity they are attached to. The activity stops and the process flow is redirected to the boundary event's outgoing sequence path. As per BPMN 2.0 specification, interrupting boundary events are visualized as two solid circles. 
-    {{% alert color="info" %}}Interrupting boundary events are not available yet in the current release.{{% /alert %}}
+    {{% alert color="info" %}}Interrupting boundary events are available as an opt-in public beta{{% /alert %}}
 
 Boundary Events are always displayed by 2 circles (either solid or dashed) and are linked by a dotted line to the parent activity. The icon inside the event indicates the type of event. For example, a clock indicates that it is a timer boundary event.
 
@@ -41,6 +42,15 @@ Studio Pro now supports the following boundary event:
 {{% alert color="info" %}}
 When a boundary event is added to an activity, this activity is also referred to as the parent activity of the boundary event.
 {{% /alert %}}
+
+### Enabling interrupting boundary events
+
+To get started with the new interrupting boundary events feature, these can be enabled by opening Studio Pro's settings and navigating to new features (this setting is only applicable during the beta).
+
+- Windows: Preferences -> New Features -> Enable interrupting timer boundary events (beta)
+- Mac (Beta): Preferences -> New Features -> Enable interrupting timer boundary events (beta)
+
+{{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-elements/boundary-events/experimental-features.png" alt="Experimental option" width="450" class="no-border">}}
 
 ### Adding Boundary Events
 
@@ -74,11 +84,21 @@ You can rearrange boundary events in the following ways:
 
     {{% alert color="info" %}}This does not change the order execution of the paths, as this is dependent on the expiration of the timer.{{% /alert %}}
 
+### Adding interrupting boundary events
+
+Interrupting boundary events can be added by going to the properties of a non-interrupting boundary event. Within the properties of a boundary event is a radio button which sets either the boundary event to interrupting or non-interrupting. The type change however is only fullfilled when the OK button is pressed.
+
+{{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-elements/boundary-events/radio-button.png" alt="Changing the type of boundary event" width="450" class="no-border">}}
+
 ## Execution
 
 Boundary events are initiated when their parent activity is initiated. For example, for a timer with a fixed duration, it will start its count down when the parent activity is initiated. When the parent activity is completed before any of the boundary events are triggered, none of the activities in the boundary event path will be executed and all timers will be cancelled.
 
-With non-interrupting boundary events, the parent activity remains active/in progress when a boundary event is triggered (which means that the parent activity is not interrupted). For example, when a timer boundary event on a user task is triggered after 2 days, this task will remain in progress and the path defined below the timer boundary event is executed. When the boundary event's path reaches the **End of boundary path**, the workflow will await the completion of the parent activity. 
+### Non-interrupting boundary events
+With non-interrupting boundary events the parent activity remains active/in progress when an event is triggered (i.e., the parent activity is not interrupted). For example, when a timer event on a user task is triggered after 2 days, this task will remain in progress and the path defined below the timer event is executed. When the boundary event path reaches the **End of Boundary Path** activity, the workflow will await the completion of the parent activity.
+
+### Interrupting boundary events
+However with interrupting boundary events, the parent activity as the name implies is interrupted. For example, when an interrupting timer boundary event is set on a user task and is also triggered after 2 days, this task will be cancelled, and the path defined below the timer event is now the only path which will be finished. Currently only **End Workflow** activities are allowed at the end of an interrupting boundary event. 
 
 ## Boundary Event Variables
 
@@ -93,11 +113,13 @@ The list of variables is described below:
 * `$ParentTask` – the parent user task of the attached boundary event
 * `$CalledWorkflowInstance` – the parent Call workflow activity of the attached boundary event
 
-## Current Limitation
+## Current Limitations
 
-The current release of boundary events has the following limitation which is actively being developed:
+The current release of boundary events has the following limitations which is actively being developed:
 
-* Non-interrupting timer boundary events currently have no recurrence. They are only executed once and will not repeat.
+* Interrupting boundary events, are not allowed to be nested.
+* Interrupting boundary events are not allowed to have an jump at the end of their flow, nor do they allow jumping outside of their flow.
+* Non-interrupting timer boundary events currently have no recurrence (they are only executed once and will not repeat).
 
 ## Read more
 
