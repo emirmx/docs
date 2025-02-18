@@ -140,6 +140,17 @@ To convert a nanoflow to a microflow, you have two options. The first option is 
 
 A new microflow is created and added to the same directory, and you can get consistency errors if there are elements that are not supported by microflows.
 
+Starting from Studio Pro 10.20, this feature offers two options for conversion:
+
+- Duplicate as Microflow: Creates a new microflow based on the original nanoflow, behaving the same as in previous versions.
+- Convert to Microflow: This option replaces the original nanoflow with a new microflow, updating all possible usages throughout your app and removing the original nanoflow.
+
+If some usages cannot be replaced because they are not allowing microflow, a warning dialog will appear. You can then choose to:
+
+- Convert: The original nanoflow will be removed, only replaceable usages will be updated, and any non-replaceable usages will remain as they are.
+- Cancel: The conversion will be cancelled, and no changes will be made.
+- Find usages: Finds usages of the original nanoflow.
+
 ## Canvas Interaction
 
 In the nanoflow editor from Studio Pro 10.6, you can use common patterns like unlimited canvas, enhanced zoom and scroll, and a snap-to-flow to make new activities from the toolbox and toolbar always well aligned in your flow.
