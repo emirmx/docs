@@ -312,7 +312,7 @@ This section applies only when your client is using the authorization code grant
 
 Choose one of the two options, below.
 
-Whichever option you choose, you will need to use [Custom User Provisioning](/appstore/modules/oidc/#custom-provisioning) in the OIDC SSO module of your client app to assign the correct user roles to the end-user.
+Whichever option you choose, you will need to use Custom User Provisioning in the OIDC SSO module of your client app to assign the correct user roles to the end-user. For more information, see the [Runtime Configuration of End-user Onboarding](/appstore/modules/oidc/#custom-provisioning-rt) section of *OIDC SSO*.
 
 ##### Configuration of the OIDC Provider for Centralized Authorization with Scopes{#configure-scopes}
 

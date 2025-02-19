@@ -439,9 +439,11 @@ spec:
           limits:
             cpu: 1
             memory: 512Mi
+            ephemeral-storage: 4Mi
           requests:
             cpu: 100m
             memory: 512Mi
+            ephemeral-storage: 4Mi
 # ...
 # omitted lines for brevity
 # ...
@@ -462,30 +464,38 @@ spec:
     limits:
       cpu: 250m
       memory: 32Mi
+      ephemeral-storage: 4Mi
     requests:
       cpu: 100m
       memory: 16Mi
+      ephemeral-storage: 4Mi
   metricsSidecarResources:
     limits:
       cpu: 100m
       memory: 32Mi
+      ephemeral-storage: 4Mi
     requests:
       cpu: 100m
       memory: 16Mi
+      ephemeral-storage: 4Mi
   buildResources:
     limits:
       cpu: '1'
       memory: 256Mi
+      ephemeral-storage: 2Gi
     requests:
       cpu: 250m
       memory: 64Mi
+      ephemeral-storage: 2Gi
   runtimeResources:
     limits:
       cpu: 1000m
       memory: 512Mi
+      ephemeral-storage: 256Mi
     requests:
       cpu: 100m
       memory: 512Mi
+      ephemeral-storage: 256Mi
   runtimeLivenessProbe:
     initialDelaySeconds: 60
     periodSeconds: 15
@@ -629,9 +639,11 @@ resources:
   limits:
     cpu: 1
     memory: 512Mi
+    ephemeral-storage: 256Mi
   requests:
     cpu: 100m
     memory: 512Mi
+    ephemeral-storage: 256Mi
 ```
 
 This section allows the configuration of the lower and upper resource boundaries, the `requests` and `limits` respectively.
@@ -938,6 +950,20 @@ In most cases, this option is only needed when an app is partially scaled down (
 Some container runtimes or network configurations prevent a terminating pod from receiving traffic or opening new connections. The Mendix Runtime can still use its existing database connections from the connection pool and keep processing any running microflows and requests, but uploading files or calling external REST services may fail.
 {{% /alert %}}
 
+### Read-only RootFS {#readonlyrootfs}
+
+Mendix app container images are locked down by default - they run as a non-root user, cannot request elevated permissions, and file ownership and permissions prevent modification of system and critical paths. Kubernetes allows you to lock down containers even further, by mounting the container filesystem as read-only if the container's security context specifies [readOnlyRootFilesystem: true](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/). With this option enabled, any files and paths from the container image cannot be modified by any user.
+
+Starting from Mendix Operator version 2.21.0, all system containers and pods use `readOnlyRootFilesystem` by default. It is possible to specify if an environment's app container should also have a read-only filesystem. For Mendix apps, the `readOnlyRootFilesystem` option is off by default, as some Java actions in marketplace modules might expect some paths to be writable.
+
+If you enable the `runtimeReadOnlyRootFilesystem` option in the MendixApp CRD (for standalone clusters) or in the Private Cloud Portal, the Mendix app container also uses a read-only root filesystem. As Mendix apps needs certain paths to be writable, an [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) is used for writable paths. Each path is mounted as a separate `subPath` to keep data separated. The `emptyDir` size is set to the `ephemeral-storage` [resource limit](#advanced-resource-customization).
+
+In addition to internal Mendix Runtime paths, `/tmp` is mounted for any temporary files that might be created through Java actions. For Java actions to work correctly, ensure that they only create files in `/tmp`, for example, by using the `File.createTempFile` or `File.createTempDirectory` Java methods.
+
+{{% alert color="info" %}}
+If your app works without issues when read-only root filesystem is enabled, it is best to enable it wherever possible. We recommend using a non-production environment to validate that your app keeps working correctly with a read-only RootFS.
+{{% /alert %}}
+
 ### GKE Autopilot Workarounds {#gke-autopilot-workarounds}
 
 In GKE Autopilot, one of the key features is its ability to automatically adjust resource settings based on the observed resource utilization of the containers. GKE Autopilot verifies the resource allocations and limits for all containers, and makes adjustments to deployments when the resources are not as per its requirements.
@@ -954,16 +980,20 @@ spec:
     limits:
       cpu: "1"
       memory: 256Mi
+      ephemeral-storage: 2Gi
     requests:
       cpu: "1"
       memory: 256Mi
+      ephemeral-storage: 2Gi
   metricsSidecarResources:
     limits:
       cpu: 100m
       memory: 32Mi
+      ephemeral-storage: 4Mi
     requests:
       cpu: 100m
       memory: 32Mi
+      ephemeral-storage: 4Mi
 ```
 
 Run the following command in order to update the core resources in the `OperatorConfiguration`:
