@@ -952,24 +952,16 @@ Some container runtimes or network configurations prevent a terminating pod from
 
 ### Read-only RootFS {#readonlyrootfs}
 
-Mendix app container images are locked down reasonably well out of the box - they run as a non-root user, cannot request elevated permissions, and file ownership and permissions prevent modification of system and critical paths.
+Mendix app container images are locked down by default - they run as a non-root user, cannot request elevated permissions, and file ownership and permissions prevent modification of system and critical paths. Kubernetes allows you to lock down containers even further, by mounting the container filesystem as read-only if the container's security context specifies [readOnlyRootFilesystem: true](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/). With this option enabled, any files and paths from the container image cannot be modified by any user.
 
-Kubernetes allows to lock down containers even further, by mounting the container filesystem as read-only - if the container's security context specifies [readOnlyRootFilesystem: true](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/).
-With this option enabled, any files and paths from the container image cannot be modified by any user.
+Starting from Mendix Operator version 2.21.0, all system containers and pods use `readOnlyRootFilesystem` by default. It is possible to specify if an environment's app container should also have a read-only filesystem. For Mendix apps, the `readOnlyRootFilesystem` option is off by default, as some Java actions in marketplace modules might expect some paths to be writable.
 
-Starting from Mendix Operator version 2.21.0, all system containers and pods use `readOnlyRootFilesystem` by default, and it's possible to specify if an environment's app container should also have a read-only filesystem.
+If you enable the `runtimeReadOnlyRootFilesystem` option in the MendixApp CRD (for standalone clusters) or in the Private Cloud Portal, the Mendix app container also uses a read-only root filesystem. As Mendix apps needs certain paths to be writable, an [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) is used for writable paths. Each path is mounted as a separate `subPath` to keep data separated. The `emptyDir` size is set to the `ephemeral-storage` [resource limit](#advanced-resource-customization).
 
-For Mendix apps, the `readOnlyRootFilesystem` option is off by default, as some Java actions in marketplace modules might expect some paths to be writable.
-
-By enabling the `runtimeReadOnlyRootFilesystem` option in the MendixApp CRD (for standalone clusters) or in the Private Cloud Portal, the Mendix app container will also use a read-only root filesystem.
-As Mendix apps needs certain paths to be writable, an [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) will be used for writable paths.
-Each path is mounted as a separate `subPath` to keep data separated.
-The `emptyDir` size is set to the `ephemeral-storage` [resource limit](#advanced-resource-customization).
-In addition to internal Mendix Runtime paths, `/tmp` is mounted for any temporary files that might be created through Java actions; for Java actions to work correctly, please make sure they only create files in `/tmp`, for example by using `File.createTempFile` or `File.createTempDirectory` Java methods.
+In addition to internal Mendix Runtime paths, `/tmp` is mounted for any temporary files that might be created through Java actions. For Java actions to work correctly, ensure that they only create files in `/tmp`, for example, by using the `File.createTempFile` or `File.createTempDirectory` Java methods.
 
 {{% alert color="info" %}}
-If your app works without issues when read-only root filesystem is enabled, it's best to enable it wherever possible.
-We recommend using a non-production environment to validate that your app keeps working correctly with a read-only RootFS.
+If your app works without issues when read-only root filesystem is enabled, it is best to enable it wherever possible. We recommend using a non-production environment to validate that your app keeps working correctly with a read-only RootFS.
 {{% /alert %}}
 
 ### GKE Autopilot Workarounds {#gke-autopilot-workarounds}
