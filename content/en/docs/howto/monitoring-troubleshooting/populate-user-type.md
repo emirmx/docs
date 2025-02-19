@@ -24,7 +24,25 @@ The *Mendix Metering* module relies on this attribute to ascertain the end-user 
 
 {{< figure src="/attachments/howto/monitoring-troubleshooting/populate-user-type/user-type-enumeration.png" class="no-border" >}}
 
-## Approach
+## Assigning UserType for Existing Users of IAM Modules
+
+The simplest method to set the user type is by using the Identity and Access Management (IAM) modules, which require only configuration without the need to develop a microflow. Mendix offers you the following IAM modules:
+
+* [OIDC](https://docs.mendix.com/appstore/modules/oidc/)
+* [SCIM](https://docs.mendix.com/appstore/modules/scim/)
+* [SAML](https://docs.mendix.com/appstore/modules/saml/)
+
+Alternatively, you can build a custom microflow as described in the [Populating UserType for Existing Users of an App](#using-microflow) section below.
+
+When connecting your app with an IdP, set up the user type through the capabilities of the OIDC SSO, SCIM, or SAML module. The user type is now configured in the User Provisioning, which is integrated into the OIDC SSO, SCIM, and SAML modules. This means you can directly configure end-users of your application as `internal` or `external` in the **User Provisioning** tab of your app. Based on this configuration, users are updated each time they log in. These modules allow you to set the user type per IdP as the source of your end-users, assuming that separate IdPs are used for `internal` and `external` users.
+
+For more information, refer to the User Provisioning section of the following modules:
+
+* [OIDC SSO](/appstore/modules/oidc/#custom-provisioning-rt)
+* [SCIM](/appstore/modules/scim/#user-provisioning)
+* [SAML](/appstore/modules/saml/#custom-provisioning-rt)
+
+## Assigning UserType Using a Microflow
 
 {{% alert color="info" %}}
 This approach is for end-users who are already set up in your app. For new end-users who onboard into your app, you can implement a similar logic to set the UserType attribute during initial end-user creation.
@@ -34,14 +52,14 @@ Outlined below is an example of a module that can be used to update UserType att
 
 ### Domain model
 
-In the example below, our aim is to update UserType attribute of UserReportInfo entity. However, the entity `UserReportInfo` is protected in the System module and has no access rules. As a result, it cannot be exposed directly in the UI pages. 
+In the example below, our aim is to update UserType attribute of `UserReportInfo` entity. However, the entity `UserReportInfo` is protected in the System module and has no access rules. As a result, it cannot be exposed directly in the UI pages. 
 Therefore, the approach we take is to create a new non-persistable entity, `UserTypeReport`, which we will populate based on the values of `UserReportInfo` to show in the UI.
 
 {{< figure src="/attachments/howto/monitoring-troubleshooting/populate-user-type/usertypereport.png" class="no-border" >}}
 
 {{< figure src="/attachments/howto/monitoring-troubleshooting/populate-user-type/usertypereport-properties.png" class="no-border" >}}
 
-### Populating **UserType** for Existing Users of an App
+### Populating **UserType** for Existing Users of an App {#using-microflow}
 
 1. Create a microflow `User_RetrieveOrCreateUserReportInfo` which will ensure that a `UserReportInfo` object exists for a given `User`.
 
