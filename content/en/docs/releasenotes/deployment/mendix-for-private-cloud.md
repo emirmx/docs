@@ -12,6 +12,28 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2025
 
+### February 19, 2025
+
+#### Mendix Operator v2.21.0 {#2.21.0}
+
+* We have switched all system containers to use a read-only root filesystem. For Mendix app containers, we added an option to use a read-only rootfs, which is disabled by default.
+* We have added a default on ephemeral storage usage to ensure that temporary file storage is reserved and is limited, so that a container gets a guaranteed amount of temporary file storage that cannot be exceeded.
+* We have added a check in `mxpc-cli` to prevent CRD downgrades; starting from `mxpc-cli` version 2.21.0, the installation or upgrade process will keep cluster CRDs unchanged if the cluster has newer CRDs than what is included with the installer.
+* We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
+* We have fixed a *Failed to determine if DDL migration needs approval* error message that sometimes appeared when using a **Recreate** deployment strategy. This error message does not mean that there is an issue, and can therefore be ignored.
+* We have updated documentation with information that Kubernetes 1.32 is supported by the Mendix Operator.
+* Upgrading to Mendix Operator v2.21.0 from a previous version will restart environments managed by that version of the Operator. Environments with 2 or more replicas and a **PreferRolling** update strategy will be restarted without downtime.
+
+#### Important Upgrade Information
+
+With the introduction of ephemeral storage requests and limits, building an app requires at least 2 GB of ephemeral storage available on the Kubernetes node. If your nodes do not have enough temporary storage, the build pods cannot start and their status remains **Pending**. To resolve this issue, you can lower the values for `ephemeral-storage` in the [buildResources](/developerportal/deploy/private-cloud-cluster/#resource-definition-ocm) configuration.
+
+### February 12, 2025
+
+#### Documentation Updates
+
+* We have updated the [CSI Secrets Storage](/developerportal/deploy/secret-store-credentials/) documentation to include instructions on storing credentials and configuration in Google Cloud Secret Manager.
+
 ### January 23, 2025
 
 #### Portal Improvements
@@ -32,7 +54,7 @@ For information on the current status of deployment to Mendix for Private Cloud 
 * We have updated a library used to validate licenses to the latest non-alpha version.
 * We have updated documentation that OpenShift 4.17 and Postgres 17 are supported by the Mendix Operator.
 * We have addressed a rare deadlock situation which could prevent a failing environment from restarting.
-* Upgrading to Mendix Operator v2.20.0 from a previous version will restart environments managed by that version of the Operator. Environments with 2 or more replicas and a **PreferRolling** update strategy will be restarted without downtime.
+* Upgrading to Mendix Operator v2.20.1 from a previous version will restart environments managed by that version of the Operator. Environments with 2 or more replicas and a **PreferRolling** update strategy will be restarted without downtime.
 
 #### Known Limitations
 
