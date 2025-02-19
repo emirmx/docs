@@ -16,6 +16,14 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
+### February 20, 2025
+
+#### Improvements
+
+* Updated the custom JMX metrics prefix from `jmx` to `mx`
+
+  * This change ensures that these metrics are not indexed as `custom metrics` in Datadog
+
 ### February 2, 2025
 
 #### New Features
