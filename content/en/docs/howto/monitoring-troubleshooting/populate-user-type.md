@@ -24,25 +24,31 @@ The *Mendix Metering* module relies on this attribute to ascertain the end-user 
 
 {{< figure src="/attachments/howto/monitoring-troubleshooting/populate-user-type/user-type-enumeration.png" class="no-border" >}}
 
-## Approach
+## Assigning UserType for Existing Users of IAM Modules
 
-{{% alert color="info" %}}
-This approach is for end-users who are already set up in your app. For new end-users who onboard into your app, you can implement a similar logic to set the UserType attribute during initial end-user creation.
-{{% /alert %}}
+The simplest method to set the user type is by using the Identity and Access Management (IAM) modules, which require only configuration without the need to develop a microflow. Mendix offers you the following IAM modules:
 
-Outlined below is an example of a module that can be used to update UserType attribute. You will need to adapt the module logic for classifying your own internal and external end-users. 
+* [OIDC](https://docs.mendix.com/appstore/modules/oidc/)
+* [SCIM](https://docs.mendix.com/appstore/modules/scim/)
+* [SAML](https://docs.mendix.com/appstore/modules/saml/)
 
-### Assigning UserType for Existing Users of IAM Modules
-
-The simplest method to set the user type is by using the IAM modules, which require only configuration without the need to develop a microflow. Alternatively, you can build a custom microflow as described in the [Populating UserType for Existing Users of an App](#using-microflow) section below.
+Alternatively, you can build a custom microflow as described in the [Populating UserType for Existing Users of an App](#using-microflow) section below.
 
 When connecting your app with an IdP, set up the user type through the capabilities of the OIDC SSO, SCIM, or SAML module. The user type is now configured in the User Provisioning, which is integrated into the OIDC SSO, SCIM, and SAML modules. This means you can directly configure end-users of your application as `internal` or `external` in the **User Provisioning** tab of your app. Based on this configuration, users are updated each time they log in. These modules allow you to set the user type per IdP as the source of your end-users, assuming that separate IdPs are used for `internal` and `external` users.
 
 For more information, refer to the User Provisioning section of the following modules:
 
 * [OIDC SSO](/appstore/modules/oidc/#custom-provisioning-rt)
-* [SAML](/appstore/modules/saml/#custom-provisioning-rt)
 * [SCIM](/appstore/modules/scim/#user-provisioning)
+* [SAML](/appstore/modules/saml/#custom-provisioning-rt)
+
+## Assigning UserType Using a Microflow
+
+{{% alert color="info" %}}
+This approach is for end-users who are already set up in your app. For new end-users who onboard into your app, you can implement a similar logic to set the UserType attribute during initial end-user creation.
+{{% /alert %}}
+
+Outlined below is an example of a module that can be used to update UserType attribute. You will need to adapt the module logic for classifying your own internal and external end-users. 
 
 ### Domain model
 
