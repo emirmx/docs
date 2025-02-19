@@ -65,7 +65,7 @@ To install the Mendix Operator, the cluster administrator will need permissions 
 * Create roles in the target namespace or project
 * Create role bindings in the target namespace or project
 
-The cluster should have at least 2 CPU cores, 2 GB memory and 3GB ephemeral-storage *available* on a Kubernetes node. This is enough to run one simple app - but does not include additional resources required by Kubernetes core components.
+The cluster should have at least 2 CPU cores, 2 GB memory and 3 GB ephemeral-storage available on a Kubernetes node. This is enough to run one simple app, but does not include additional resources required by Kubernetes core components.
 
 In OpenShift, the cluster administrator must have a `system:admin` role.
 
