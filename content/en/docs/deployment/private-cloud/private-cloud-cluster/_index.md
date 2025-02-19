@@ -1056,28 +1056,26 @@ The only limitations are that:
 When you delete a cluster, this removes the cluster from the Mendix Portal. However, it will not remove the associated namespace from your platform. You will need to explicitly delete the namespace using the tools provided by your platform.
 {{% /alert %}}
 
-#### Managing the Roles and Permissions {#rolesandpermissions}
+#### Managing Roles and Permissions {#rolesandpermissions}
 
-Its now possible to manage the Roles and Permissions for the namespace member by clicking **Roles and Permissions** available in the left side navigation. 
+It is now possible to manage the roles and permissions for the namespace member by clicking **Roles and Permissions** in the left navigation pane. 
 
-Below are the predefined roles with default permissions. These roles are built-in and cannot be edited.
+Below are the predefined roles with default permissions; these roles are built-in and cannot be edited:
 
-* **Administrator** - This role gives the cluster manager full access to the namespace, the permissions for which are listed in below screen.
-* **Developer** - This role gives the developer with the permission which are listed in below screen.
+* **Administrator** - This role gives the cluster manager full access to the namespace, the permissions for which are shown in the figure below.
+* **Developer** - This role gives the developer with the permission which are shown in the figure below.
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/RolesAndPermission.png" class="no-border" >}}
 
-In addition to the predefined roles, you can create a custom role.
+In addition to the predefined roles, you can create customised roles with the required permissions which you want to assign to the namespace member. Cluster managers can create a role once, and then reuse it across multiple namespaces. 
 
-Using this option, you can create the customised roles with the required permissions you want to assign to the namespace member. Cluster manager can create a role once and this can be reused across multiple namespaces. 
-
-A new role can be created by clicking **Create Role** in the top right.
+To create a role, click **Create Role** in the top right.
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/CreateRole.png" class="no-border" >}}
 
-This option will allow the cluster manager to create, edit, and delete roles and permissions. 
+This option allows the cluster manager to create, edit, and delete roles and permissions. 
 
-Once the role is created, it can be assigned to the namespace member by clicking **Invite Member** under **Members** section in Namespace Overview page. The role can be selected from the dropdown.
+Once a role is created, you can assign it to the namespace member by clicking **Invite Member** under **Members** section on the **Namespace Overview** page. You can select the role from the dropdown.
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/Invitemember.png" class="no-border" >}}
 
@@ -1086,7 +1084,7 @@ Once the role is assigned, it cannot be deleted until the role is removed from t
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/deleteRole.png" class="no-border" >}}
 
 {{% alert color="warning" %}}
-Until now, the existing namespace members who have been provided custom permissions, will still use those custom permissions. However, those custom permissions will no more be editable from now on. To update the permission, reassign an existing role or create a custom role on the Roles and Permissions page.
+Existing namespace members who have been given custom permissions will continue to use those custom permissions. However, those custom permissions will no longer be editable. To update a permission, reassign an existing role or create a custom role on the Roles and Permissions page.
 {{% /alert %}}
 
 ### Namespace Management
