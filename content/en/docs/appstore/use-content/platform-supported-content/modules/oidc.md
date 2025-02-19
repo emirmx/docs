@@ -571,7 +571,9 @@ In default configuration, the custom user entity is set as `Administration.Accou
 
 ##### Modifying Default Attribute Mapping{#modify-default}
 
-You may need a different or custom attribute mapping, for example, if you are configuring OIDC SSO and SCIM together and need a common identifier. In this case, you can modify the default attribute mapping.
+You may need a different or custom attribute mapping, for example, if you are configuring OIDC SSO and SCIM together and need a common identifier. For more information, see the [User Identifiers in the OIDC and SCIM Protocols](#user-identifiers-in-the-oidc-and-scim-protocols) section below.
+
+In this case, you can modify the default attribute mapping.
 To do so, change the default **IdP Attribute** or the **Configured Entity Attribute**, by editing the mapping in the **Attribute Mapping** section within the **UserProvisioning** tab. 
 
 ##### User Provisioning Using Your Custom User Entity{#custom_user_entity}
@@ -979,7 +981,7 @@ Your IdP may have different ways of handling requests to use a specific authenti
 * Your IdP may honor what is requested on a ‘best effort’ basis and indicate the actual authentication method used in the ID-token that is sent to your app.
 * Your IdP may send an error response to your app if the requested authentication method was not possible for the user that was asked to login, for whatever reason.
 
-When a user successfully signs in at your IdP, your IdP may or may not return an ACR claim in the ID-token. If your IdP returns the actual authentication method that was used in the ACR claim in the ID-token (and/or Access Token), you can create a [custom User Provisioning microflow](#custom-provisioning) (or [custom access token parsing microflow](#custom-parsing)) to grant or restrict access to specific resources or functionalities based on the level of authentication assurance.
+When a user successfully signs in at your IdP, your IdP may or may not return an ACR claim in the ID-token. If your IdP returns the actual authentication method that was used in the ACR claim in the ID-token (and/or Access Token), you can create a [custom User Provisioning microflow](#microflow-at-runtime) (or [custom access token parsing microflow](#custom-parsing)) to grant or restrict access to specific resources or functionalities based on the level of authentication assurance.
 
 ## Testing and Troubleshooting{#testing}
 
