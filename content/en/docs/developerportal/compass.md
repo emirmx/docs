@@ -10,7 +10,7 @@ description: "Describes the Compass tool."
 
 ## Introduction
 
-The [Compass](https://compass.home.mendix.com/) tool is available to teams who want to plan and streamline the implementation of their first Mendix app. It is part of an initiative to bring [Mendix Digital Execution](https://www.mendix.com/glossary/digital-execution/) to the Platform, and enables non-developer team members to help plan the milestones and goals of their Mendix implementation process. The Program Owner (that is, the team member leading the implementation) can then monitor the progress through an intuitive visual interface, with the goal of successfully launching their first Mendix application.
+The [Compass](https://compass.home.mendix.com/) tool is available to teams who want to plan and streamline the implementation of their first Mendix app. It is part of an initiative to bring [Mendix Digital Execution](https://www.mendix.com/glossary/digital-execution/) to the Platform, and enables non-developer team members to help plan the milestones and goals of their Mendix implementation process. Program Owners (that is, the team members leading the implementation) can then monitor the progress through an intuitive visual interface, with the goal of successfully launching their first Mendix application.
 
 {{< figure src="/attachments/developerportal/compass/compass-home.png" alt="The home page of the Compass tool" >}}
 
@@ -21,14 +21,16 @@ With the Compass tool, you can define your own vision of low-code and the apps t
 To enable Compass for your organization, contact your Mendix Customer Service Manager. 
 
 {{% alert color="info" %}}
-Compass is a tool intended for new users of Mendix who want to launch their first application. Many of the milestones and tasks are geared towards beginners, so teams which have already created one or more Mendix apps are less likely to find them useful.
+Compass is a tool intended for organizations that want to launch their first Mendix application. Many of the milestones and tasks are geared towards beginners, so teams which have already created one or more Mendix apps are less likely to find them useful.
 {{% /alert %}}
 
-After Compass has been enabled for your organization, the Program Owner can define the launch date and invite team members to participate.
+After Compass has been enabled for your organization, a user with the Program Owner role can define the launch date of your first app on the Compass home page, and invite team members to participate.
 
 ### Inviting Team Members
 
-You can give members of your team access to the tool by performing the following steps:
+The Compass team involved in your Mendix implementation should include everyone that will help get Mendix implemented in your organization. This team is not the same as the app project team which will build the app itself, although for example a lead developer might be present in both. You can find out more about the team scope and responsibilities by perusing the action points in Compass.
+
+You can give members of the team access to Compass by performing the following steps:
 
 1. Log in to [Compass](https://compass.home.mendix.com/) as a user with the Program Owner role.
 2. In the left navigation menu, click **Access Management**.
@@ -54,12 +56,11 @@ The milestones are defined for you by Mendix, based on our [Digital Execution](h
 
 You can view and manage milestones by performing the following steps:
 
-1. Log in to [Compass](https://compass.home.mendix.com/).
-2. In the **Program** section of the left navigation menu, click **Milestones**.
-3. Click on the milestone which you want to view.
-4. Click on an action point to view the details or assign an owner and deadline.
-5. If you are the owner of an action point, follow the on-screen instructions to complete it.
-6. To view all action points assigned to you, click **Program** > **My Action Points**.
+1. In the **Program** section of the left navigation menu, click **Milestones**.
+2. Click on the milestone which you want to view.
+3. Click on an action point to view the details or assign an owner and deadline.
+4. If you are the owner of an action point, follow the on-screen instructions to complete it.
+5. To view all action points assigned to you, click **Program** > **My Action Points**.
 
 {{< figure src="/attachments/developerportal/compass/action-point.png" alt="An action point with instructions on how to complete it" >}}
 
@@ -69,9 +70,8 @@ Milestones and action points are predefined by Mendix, but you can also add your
 
 You can view and manage tasks by performing the following steps:
 
-1. Log in to [Compass](https://compass.home.mendix.com/).
-2. In the **Program** section of the left navigation menu, click **Tasks**.
-3. To add a new task, click **Add Task**, and then provide the following information:
+1. In the **Program** section of the left navigation menu, click **Tasks**.
+2. To add a new task, click **Add Task**, and then provide the following information:
 
     * **Name** - Required. An identifying name for the task.
     * **Status** - By default, new tasks are created with the status **To do**, but you can also mark them as already done.
@@ -80,7 +80,7 @@ You can view and manage tasks by performing the following steps:
     * **Assigned to** - The team member who must complete the task.
     * **Milestone** - The milestone with which the task is associated.
 
-4. Click **Save**.
+3. Click **Save**.
 
 The new task is displayed on the **Tasks** page, as well as on the milestone with which it is associated.
 
