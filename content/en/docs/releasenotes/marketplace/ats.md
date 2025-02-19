@@ -7,6 +7,14 @@ weight: 15
 numberless_headings: true
 ---
 
+## 3.0.1
+
+**Release date: February 18, 2025**
+
+### Fixes
+
+* We fixed an issue with compatibility for [Data Widgets](https://marketplace.mendix.com/link/component/116540) 2.29.1.
+
 ## 3.0.0
 
 **Release date: September 24, 2024**
