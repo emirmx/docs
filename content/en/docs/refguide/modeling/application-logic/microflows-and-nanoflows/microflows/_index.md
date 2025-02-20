@@ -121,3 +121,13 @@ A new nanoflow is created and added to the same directory, and you can get consi
 ## Canvas Interaction {#canvas-interaction}
 
 In the microflow editor from Studio Pro 10.6, you can use common patterns like unlimited canvas, enhanced zoom and scroll, and a snap-to-flow to make new activities from the toolbox and toolbar always well aligned in your flow. 
+
+## Exporting a Microflow to an Image {#export-microflow}
+
+To export a microflow to an image, navigate to the [File menu](/refguide/file-menu/) in the Studio Pro top bar, and click **File** > **Export as image**.
+
+This opens an **Export to image** dialog box allowing you to choose a name and location for the exported image. After clicking **Save**, the **Export microflow model to image** dialog box is opened, where you can change parameters for your image export such as a transparent or opaque background and a relative size of the exported image by selecting a zoom level:
+
+{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/microflows/export-microflow-to-image.png" alt="Export microflow to image prompt" width="400" >}}
+
+The current document is exported as an image in the .png format.
