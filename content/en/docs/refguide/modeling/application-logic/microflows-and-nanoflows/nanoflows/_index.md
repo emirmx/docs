@@ -34,7 +34,13 @@ The following activities interact with the database:
 Therefore, the best practice is to use nanoflows in online applications when they do not contain the above activities.
 
 {{% alert color="info" %}}
-An exception for the **Create object** activity is that you can use it to create a new [non-persistable entity](/refguide/persistability/#non-persistable), and this NPE has no error handlers, calculated attributes, or read-only attributes. In this case, no request is sent to the Mendix Runtime.
+An exception is that you can use the **Create object** activity to create a [non-persistable entity](/refguide/persistability/#non-persistable) if this NPE:
+
+* does not have any event handlers attached
+* does not have any calculated attributes
+* does not have any read-only attributes
+
+In this case, the NPE is created on the client side and no request is sent to the Mendix Runtime.
 {{% /alert %}}
 
 {{% alert color="info" %}}
