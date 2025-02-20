@@ -17,7 +17,7 @@ Based on Business Process Model and Notation (BPMN) 2.0, boundary events are a t
 There are two main types of boundary events:
 
 * Non-interrupting boundary events: These events do not interrupt the ongoing activity. When triggered, they allow the activity to continue while simultaneously starting a new path from the boundary event. As per BPMN 2.0 specification, non-interrupting boundary events are visualized as two dashed circles with an icon in the center.
-* Interrupting boundary events (currently in beta): When these events are triggered, they interrupt the normal path of the activity they are attached to. The activity stops and the process flow is redirected to the boundary event's outgoing sequence path. As per BPMN 2.0 specification, interrupting boundary events are visualized as two solid circles.
+* Interrupting boundary events (currently in beta): When these events are triggered, they interrupt the activity they are attached to, meaning that the activity will be aborted. The process flow is redirected to the boundary event's outgoing sequence path. As per BPMN 2.0 specification, interrupting boundary events are visualized as two solid circles.
 
 Boundary Events are always displayed by 2 circles (either solid or dashed) and are linked by a dotted line to the parent activity. The icon inside the event indicates the type of event. For example, a clock indicates that it is a timer boundary event.
 
@@ -73,9 +73,18 @@ Interrupting boundary events are currently in beta. To enable this feature, go t
 
 After adding interrupting boundary events is enabled, the **Boundary properties** section shows up in the properties dialog box of a boundary event.
 
-By default, the **Interrupting** property is set to **No**, which means that it is by default adding a non-interrupting boundary event. To add an interrupting boundary event, set the **Interrupting** property to **Yes**. Click **OK** to save your configuration:
+By default, the **Interrupting** property is set to **No**, which means that the initially added event is a non-interrupting boundary event. To add an interrupting boundary event, set the **Interrupting** property to **Yes**. Click **OK** to save your configuration:
 
 {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/interrupting-property.png" alt="Changing the type of boundary event" width="450">}}
+
+#### Implications of changing boundary event type
+
+When you change a boundary event from non-interrupting to interrupting or vice versa, you will be presented with the following dialog.
+
+{{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/security-dialog.png" alt="Security Dialog when changing type" width="450">}}
+
+The boundary event will be re-created as the specified type meaning that it will also generate new Id's. The application runtime will use these new Id's to verify what part in the workflow has changed and how to resolve the conflicts.
+This will mean that active workflows with scheduled boundary events will become incompatible and need to be restarted.
 
 ### Rearranging Boundary Events
 
@@ -101,7 +110,10 @@ With non-interrupting boundary events the parent activity remains active/in prog
 
 ### Interrupting Boundary Events
 
-However with interrupting boundary events, the parent activity as the name implies is interrupted. For example, when an interrupting timer boundary event is set on a user task and is also triggered after 2 days, this task will be cancelled, and the path defined below the timer event is now the only path which will be finished. Currently only **End Workflow** activities are allowed at the end of an interrupting boundary event. 
+However with interrupting boundary events, the parent activity is interrupted. For example, when an interrupting timer boundary event is set on a user task and is triggered after 2 days, this task will be aborted, and the path defined below the timer event is now the active path. Currently only **End Workflow** activities are allowed at the end of an interrupting boundary event. Meaning that at the end of an interrupting boundary event the workflow will be ended.
+
+{{% alert color="info" %}}
+When there are non-interrupting boundary events specified for the parent activity, and the interrupting boundary event is executed. It will also cancel all the scheduled and running non-interrupting boundary events.{{% /alert %}}
 
 ## Boundary Event Variables
 
@@ -120,7 +132,7 @@ The list of variables is described below:
 
 The current release of boundary events has the following limitations which is actively being developed:
 
-* Interrupting boundary events, are not allowed to be nested.
+* Interrupting boundary events are not allowed to be nested in other boundary event paths, meaning that if an activity has a boundary event path (interrupting or non-interrupting), this activity cannot be placed in a boundary event path.
 * Interrupting boundary events are not allowed to have an jump at the end of their flow, nor do they allow jumping outside of their flow.
 * Non-interrupting timer boundary events currently have no recurrence (they are only executed once and will not repeat).
 
