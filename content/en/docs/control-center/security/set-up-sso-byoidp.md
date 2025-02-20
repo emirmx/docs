@@ -277,7 +277,7 @@ Without proper exchange of `client_id` and `client_secret` between the IdP and M
 
 If the wrong authentication method is configured for the Mendix Platform as a client to your IdP, login fails.
 
-Mendix supports two client authentication methods: `client_secret_post` (client credentials in the payload) or `client_secret_basic` (basic authentication; credentials in the HTTP authorization header). If the IdP indicates support for both methods at the well-known endpoint, Mendix uses `client_secret_post`. If the client configuration at your IdP for the Mendix Platform sets a different client authentication method, the IdP may reject Mendix to authenticate itself as a client to the `/token` endpoint, and the delegated login fails.
+Mendix supports three client authentication methods: `client_secret_post`, `client_secret_basic`, and `private_key_jwt`. If the IdP indicates support for both `client_secret_post` and `client_secret_basic` methods at the well-known endpoint, Mendix uses `client_secret_post`. If the client configuration at your IdP for the Mendix Platform sets a different client authentication method, the IdP may reject Mendix to authenticate itself as a client to the `/token` endpoint, and the delegated login fails.
 
 ### Incorrect Conditional Access Policies
 
