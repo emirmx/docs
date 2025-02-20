@@ -55,9 +55,9 @@ This connector supports the following statements:
 
 ### Limitations 
 
-* `SELECT` queries and `Stored Procedure` can be saved only if they are successfully executed and a response structure is created (no more limitation from Studio Pro 10.20 onwards)
+* `SELECT` queries and `Stored Procedure` can be saved only if they are successfully executed and a response structure is created (this is no longer a limitation as of Studio Pro 10.20)
 * The connector supports columns and stored procedure parameters with primitive data types only
-* If column names contain special characters, use an alias for the column name (no more limitation from Studio Pro 10.20 onwards)
+* If column names contain special characters, use an alias for the column name (this is no longer a limitation as of Studio Pro 10.20)
 * Parameters are only supported for filter values (prepared statements)
 * Certificate-based authentication for PostgreSQL is not supported on macOS
 
@@ -127,12 +127,12 @@ Then, use the parameter in the query:
 If you need to pass a list of values to a parameter, you can use the following approach:
 
 `WITH empids AS (
-  SELECT empid FROM json_table( {EmpIdList}, '$[*]' columns ( empid number path '$' )) 
+SELECT empid FROM json_table( {EmpIdList}, '$[*]' columns ( empid number path '$' )) 
 )
 SELECT *
 FROM emp WHERE empno IN (SELECT empid FROM empids);`
 
-where parameter `EmpIdList` is of type String with value  [1,7946,3,4,7942,7943,7945]
+where parameter `EmpIdList` is of type String with the value `[1,7946,3,4,7942,7943,7945]`.
  {{% /alert %}}
 
 ### Using Query Response {#use-query-response}
@@ -178,15 +178,13 @@ You can now use the microflow in your app. Below is an example of a configured m
 See the [Integration Activities](/refguide/integration-activities/) section of the *Studio Pro Guide* for further explanation of the properties in this activity.
 See the [Call Stored Procedure](/howto/integration/use-the-external-database-connector/) section of *Use the External Database Connector* for more information on how to call a stored procedure.
 
-### Saving Intermediate queries
+### Saving Intermediate Queries
 
-From Studio pro 10.20 onwards, it is possible to save queries at intermediate stages.
+As of Studio Pro 10.20, it is possible to save queries at intermediate stages.
 
-Mendix’s standard save behavior is implemented, including the dot indicator in the tab to signify unsaved changes.
+Studio Pro's standard save behavior is implemented, including the dot indicator in the tab to signify unsaved changes.
 
-Press Ctrl+S to store changes when switching to a different query or performing another action.
-
-Ensure not to use queries which are saved intermediately in the Query External Database Activity of microflow, as it might lead to runtime exception.
+Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to store changes when switching to a different query or performing another action. Make sure to not to use queries that are saved intermediately in the [Query External Database](/refguide/query-external-database/) activity of a microflow, as it might lead to runtime exception.
 
 ## Use Certificate-Based Authentication for PostgreSQL Connections {#postgres-ssl}
 
