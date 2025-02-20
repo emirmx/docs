@@ -496,9 +496,11 @@ The OIDC SSO module supports two methods for configuration of JIT user provision
 1. Deploy-time configuration: this approach allows fully automated configurations in your CI/CD pipeline. Mendix recommends this approach for customers with an ever-growing portfolio of Mendix applications.
 2. Runtime configuration: this approach may be preferable if you are not yet familiar with configuring various settings correctly. Additionally, this method is essential when connecting multiple IdPs to a single application.
 
-By default, end-users are provisioned using the `Account` object in the Administration module. If you need to use a custom user entity you can do this via [Runtime Configuration of End-user Onboarding](#custom-provisioning-rt) or [Deploy-time Configuration of End-user Onboarding](#custom-provisioning-dep).
-
 ### Configuring User Provisioning for Version 3.0.0 and Above
+
+From version 3.0.0 of the OIDC SSO module, you can configure user provisioning at both deploy-time and runtime. Deploy-time configuration allows you to define constants for user provisioning during deployment. Runtime configuration enables just-in-time (JIT) user provisioning via the application UI.
+
+By default, end-users are provisioned using the `Administration.Account` entity. To use a custom user entity, you can configure it through JIT onboarding via runtime settings or by defining constants in deploy-time configuration, as described below:
 
 #### Deploy-time Configuration of End-user Onboarding{#custom-provisioning-dep}
 
