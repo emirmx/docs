@@ -307,16 +307,16 @@ These are the return codes:
 ## mx sync-java-dependencies Command {#translate}
 
 {{% alert color="info" %}}
-This command is available from 10.20 onwards.
+This command is available as of [Studio Pro 10.20](/releasenotes/studio-pro/10.20/).
 {{% /alert %}}
 
 The `mx sync-java-dependencies` command synchronizes the managed Java dependencies that are configured in the modules of the project.
-This will result in the corresponding Jar files being added to the vendorlib directory in the project root.
+This results in the corresponding .*jar* files being added to the `vendorlib` directory in the project root.
 
-The input is a single MPR file.
+The input is a single .*mpr* file.
 
 {{% alert color="info" %}}
-The MPR file must be the same version as mx.
+The .*mpr* file must be the same version as mx.
 {{% /alert %}}
 
 ### Usage
@@ -329,7 +329,7 @@ For `INPUT`, enter an *.mpr* file.
 
 ### Examples
 
-Examples of commands are described in the table below:
+These are example commands:
 
 | Example | Result |
 | --- | --- |
@@ -337,9 +337,9 @@ Examples of commands are described in the table below:
 
 ### Return Codes
 
-Return codes are described in the table below:
+These are the return codes:
 
 | Return Code | Description |
 | --- | --- |
 | 0 | The command ran successfully. |
-| 1 | The command failed. For example because the *.mpr* file could not be found. |
+| 1 | The command failed. For example, because the *.mpr* file could not be found. |
