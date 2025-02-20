@@ -219,7 +219,7 @@ In the import mapping sidebar, you can configure which Teamcenter properties, re
 
 The sidebar shows all properties, references, and relations for the configured Teamcenter object. Depending on the use case, each one of them is accompanied with check boxes for reading ({{% icon name="view" %}}) and writing ({{% icon name="pencil" %}}) for you to configure what to include when retrieving data from or creating data in Teamcenter.
 
-{{% alert color="info" %}} The Teamcenter Extension currently does not display compound attributes from Teamcenter. A compound attribute refers to a property that can be displayed on one object, although it is defined and resides on a different object.{{% /alert %}}
+{{% alert color="info" %}} The Teamcenter Extension currently does not display compound attributes from Teamcenter. A compound attribute is a property defined on one object but displayed on a different object.{{% /alert %}}
 
 You often see that check boxes are selected by default or grayed out. In general, the following rules apply:
 
