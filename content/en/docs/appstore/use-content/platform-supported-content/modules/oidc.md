@@ -196,7 +196,7 @@ This section provides an overview of updates for the OIDC SSO module across diff
 | Mendix Version | OIDC SSO Module Version | Important Migration Changes | Additional Information|
 | --- | --- | --- | --- |
 | 10.12.10 and above | 4.0.0 | Set `OIDC.ASU_OIDC_Startup` microflow as part of the after-startup microflow | From UserCommons 2.0.0, new users without IdP-specified time zone or language will use default App settings; existing users retain their previously set values. |
-| | | | Deprecated Mx Model Reflection module; maintained for compatibility but will be removed in future versions. |
+| | | For module version 4.0.0 and above, use User Commons module version 2.0.0 and above, and vice versa. | Deprecated Mx Model Reflection module; maintained for compatibility but will be removed in future versions. |
 | | | | Default user roles in UserProvisioning will be assigned along with roles from the access token. |
 | | | | The `OIDC.ACT_Account_RetrieveAccount` microflow, located in the **USE_ME** folder, has been removed as it is no longer required. |
 | 9.24.18 and above | 3.2.0 | Select and refresh the Administration and System modules manually in the `MxModelReflection.MxObjects_Overview` page| Added a new heading for selected scopes: *Your app will request the following scopes at IdP*. |
@@ -496,9 +496,11 @@ The OIDC SSO module supports two methods for configuration of JIT user provision
 1. Deploy-time configuration: this approach allows fully automated configurations in your CI/CD pipeline. Mendix recommends this approach for customers with an ever-growing portfolio of Mendix applications.
 2. Runtime configuration: this approach may be preferable if you are not yet familiar with configuring various settings correctly. Additionally, this method is essential when connecting multiple IdPs to a single application.
 
-By default, end-users are provisioned using the `Account` object in the Administration module. If you need to use a custom user entity you can do this via [Runtime Configuration of End-user Onboarding](#custom-provisioning-rt) or [Deploy-time Configuration of End-user Onboarding](#custom-provisioning-dep).
-
 ### Configuring User Provisioning for Version 3.0.0 and Above
+
+From version 3.0.0 of the OIDC SSO module, you can configure user provisioning at both deploy-time and runtime. Deploy-time configuration allows you to define constants for user provisioning during deployment. Runtime configuration enables just-in-time (JIT) user provisioning via the application UI.
+
+By default, end-users are provisioned using the `Administration.Account` entity. To use a custom user entity, you can configure it through JIT onboarding via runtime settings or by defining constants in deploy-time configuration, as described below:
 
 #### Deploy-time Configuration of End-user Onboarding{#custom-provisioning-dep}
 
