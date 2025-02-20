@@ -303,3 +303,43 @@ These are the return codes:
 | `0` | No issues found. |
 | `100` | Validation error on the input. |
 | `300` | Exception, something went wrong. |
+
+## mx sync-java-dependencies Command {#translate}
+
+{{% alert color="info" %}}
+This command is available from 10.20 onwards.
+{{% /alert %}}
+
+The `mx sync-java-dependencies` command synchronizes the managed Java dependencies that are configured in the modules of the project.
+This will result in the corresponding Jar files being added to the vendorlib directory in the project root.
+
+The input is a single MPR file.
+
+{{% alert color="info" %}}
+The MPR file must be the same version as mx.
+{{% /alert %}}
+
+### Usage
+
+Use the following command pattern for `mx sync-java-dependencies`:
+
+`mx sync-java-dependencies INPUT`
+
+For `INPUT`, enter an *.mpr* file.
+
+### Examples
+
+Examples of commands are described in the table below:
+
+| Example | Result |
+| --- | --- |
+| `mx sync-java-dependencies C:\Mendix\App1\App1.mpr` | Synchronizes the managed Java dependencies of the project. |
+
+### Return Codes
+
+Return codes are described in the table below:
+
+| Return Code | Description |
+| --- | --- |
+| 0 | The command ran successfully. |
+| 1 | The command failed. For example because the *.mpr* file could not be found. |
