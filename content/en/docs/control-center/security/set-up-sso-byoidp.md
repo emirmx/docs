@@ -40,7 +40,7 @@ BYOIDP SSO has the following features:
 
 * BYOIDP is based on the OpenID Connect (OIDC) protocol which supports corporate IdPs such as Entra ID.
 * Mendix Platform services and Studio Pro delegate authentication of platform users to your IdP.
-* Authentication is delegated to any user that has an email address where the email domain is associated with your company. This includes service accounts (for example non-personal accounts used for consuming APIs) that may have been created on the Mendix Platform. 
+* Authentication is delegated for any user that has an email address where the email domain is associated with your company. This includes service accounts (for example non-personal accounts used for consuming APIs) that may have been created on the Mendix Platform. 
 * When you add a domain to your company account, it is automatically added to the active IdP configuration. 
 * External users (with domains that are not part of your company) are unaffected. They still have access based on the way they normally sign in to Mendix.
 * When BYOIDP is used, a session at Mendix is valid for one hour. After the session has expired, Mendix will request a new `ID_token` from your IdP. If the user still has a session at your IdP, the token will be issued without any user input and the platform user continues to have access to the Mendix Platform. The effect of this mechanism is that users have access to the Mendix Platform as long as the session at your IdP is valid.
@@ -91,7 +91,7 @@ As a Mendix Admin, you will find the IdP setup on the **Single Sign-On** tab of 
 
 Click **Configure Single Sign-On** to see an overview of your Single Sign-on configurations.
 
-In this overview, you will find your current IdP configurations, both draft versions and active ones. When you create a new configuration, a pop-up screen will inform you of known limitations.
+In this overview, you will find your current IdP configurations, both draft versions and the active one. When you create a new configuration, a pop-up screen will inform you of known limitations.
 
 From here you can do the following:
 
