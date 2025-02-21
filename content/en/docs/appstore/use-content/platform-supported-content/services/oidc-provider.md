@@ -40,7 +40,7 @@ For more information on how SSO brokering and SSO are implemented within a multi
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/oidc-provider/brokering.png" class="no-border" >}}
 
-The Mendix marketplace offers Single Sign-On (SSO) module, enabling your Mendix application to delegate end-user login to your Identity Providers (IdPs) such as Entra ID and Okta. However, for some organizations, implementing SSO for each Mendix application can cost more or slow down innovation. In such cases, an SSO broker between your IdP and your expanding portfolio of Mendix applications can offer an effective solution.
+The Mendix Marketplace offers Single Sign-On (SSO) module, enabling your Mendix application to delegate end-user login to your Identity Providers (IdPs) such as Entra ID and Okta. However, for some organizations, implementing SSO for each Mendix application can cost more or slow down innovation. In such cases, an SSO broker between your IdP and your expanding portfolio of Mendix applications can offer an effective solution.
 
 You can build a Mendix application that acts as a SSO Broker by using the OIDC SSO and the OIDC Provider modules. The OIDC SSO module authenticates end-users at your central IdP, while the OIDC Provider module enables your new app to act as an IdP (OpenID Provider) for your other Mendix applications. This means it is working as an SSO broker, catering for authentication and, optionally, for authorization. 
 
