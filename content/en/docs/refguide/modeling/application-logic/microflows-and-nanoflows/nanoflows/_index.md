@@ -153,7 +153,7 @@ Starting from Studio Pro 10.20, there are two options available:
     In the warning dialog, you have the following options:
 
     * **Convert**: The original nanoflow is removed, only replaceable usages are updated, and any non-replaceable usages remain as they are.
-    * **Find usages**: Finds usages of the original nanoflow.
+    * **Find usages**: Stops the conversion and finds usages of the original nanoflow.
     * **Cancel**: The conversion is cancelled and no changes are made.
 
 ## Canvas Interaction
