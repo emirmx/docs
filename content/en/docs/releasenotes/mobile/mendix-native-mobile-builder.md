@@ -11,6 +11,16 @@ The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Stu
 
 ## 2025
 
+### Release 1.0.134
+
+**Release date: February 20, 2025**
+
+#### Fixes
+
+* Fixed an issue where the Native Builder UI (NBUI) was not persisting selected permissions.
+* Resolved a problem where renaming the default configuration would break updates.
+* Fixed an issue where the Runtime URL in NBUI was not accepting URLs with subpaths.
+
 ### Release 1.0.133
 
 **Release date: January 7, 2025**
