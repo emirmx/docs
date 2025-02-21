@@ -134,7 +134,7 @@ Nanoflows are executed in the context of the current user. Any operation for whi
 
 ## Converting a Nanoflow to a Microflow {#convert-to-microflow}
 
-In Studio Pro 10.19 and below, you can use the **Convert to microflow** functionality to create a new nanoflow based on the original microflow. There are two ways to find this option:
+In Studio Pro 10.19 and below, you can use the **Convert to microflow** functionality to create a new microflow based on the original nanoflow. There are two ways to find this option:
 
 * Right-click anywhere in the nanoflow editor and click **Convert to microflow**. 
 * Alternatively, in the **App Explorer**, right-click on the name of the nanoflow you want to convert, and click **Convert to microflow**.
@@ -152,8 +152,8 @@ Starting from Studio Pro 10.20, there are two options available:
 
     In the warning dialog, you have the following options:
 
-    * **Convert**: The original microflow is removed, only replaceable usages are updated, and any non-replaceable usages remain as they are.
-    * **Find usages**: Finds usages of the original microflow.
+    * **Convert**: The original nanoflow is removed, only replaceable usages are updated, and any non-replaceable usages remain as they are.
+    * **Find usages**: Finds usages of the original nanoflow.
     * **Cancel**: The conversion is cancelled and no changes are made.
 
 ## Canvas Interaction
