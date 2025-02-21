@@ -117,7 +117,7 @@ In Studio Pro 10.19 and below, you can use the **Convert to nanoflow** functiona
 * Right-click anywhere in the microflow editor and click **Convert to nanoflow**. 
 * Alternatively, in the **App Explorer**, right-click on the name of the microflow you want to convert, and click **Convert to nanoflow**.
 
-{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/microflows/convert-to-nanoflow.PNG" alt="Convert to nanoflow" width="550px" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/microflows/convert-to-nanoflow.png" alt="Convert to nanoflow" width="550px" class="no-border" >}}
 
 Afterwards, a new nanoflow is created and added to the same directory, and you can get consistency errors if there are actions that are not supported by nanoflows.
 
@@ -126,7 +126,7 @@ Starting from Studio Pro 10.20, there are two options available:
 * **Duplicate as nanoflow**: This option creates a new nanoflow based on the original microflow. This works the same as the **Convert to nanoflow** functionality in Studio Pro 10.19 and below.
 * **Convert to nanoflow**: This option removes the original microflow and replaces it with a new nanoflow. All possible usages throughout your app are updated and any non-replaceable usages remain as they are. When some usages cannot be replaced because they are not allowing nanoflows, a warning dialog appears. See below as an example:
 
-    {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/microflows/warning-dialog.PNG" alt="Conversion warning dialog" width="550px" >}}
+    {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/microflows/warning-dialog.png" alt="Conversion warning dialog" width="550px" >}}
 
     In the warning dialog, you have the following options:
 
