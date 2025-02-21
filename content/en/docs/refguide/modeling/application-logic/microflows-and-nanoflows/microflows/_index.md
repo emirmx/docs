@@ -124,7 +124,6 @@ Afterwards, a new nanoflow is created and added to the same directory, and you c
 Starting from Studio Pro 10.20, there are two options available:
 
 * **Duplicate as nanoflow**: This option creates a new nanoflow based on the original microflow. This works the same as the **Convert to nanoflow** functionality in Studio Pro 10.19 and below.
-
 * **Convert to nanoflow**: This option removes the original microflow and replaces it with a new nanoflow. All possible usages throughout your app are updated and any non-replaceable usages remain as they are. When some usages cannot be replaced because they are not allowing nanoflows, a warning dialog appears. See below as an example:
 
     {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/microflows/warning-dialog.PNG" alt="Conversion warning dialog" width="550px">}}

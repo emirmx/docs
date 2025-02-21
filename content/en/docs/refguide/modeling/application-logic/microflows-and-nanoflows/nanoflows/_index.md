@@ -134,22 +134,27 @@ Nanoflows are executed in the context of the current user. Any operation for whi
 
 ## Converting a Nanoflow to a Microflow {#convert-to-microflow}
 
-To convert a nanoflow to a microflow, you have two options. The first option is to right-click anywhere in the nanoflow editor and select **Convert to microflow**. Alternatively, in the **App Explorer**, right-click on the name of the nanoflow you want to convert, and select **Convert to microflow**.
+In Studio Pro 10.19 and below, you can use the **Convert to microflow** functionality to create a new nanoflow based on the original microflow. There are two ways to find this option:
+
+* Right-click anywhere in the nanoflow editor and click **Convert to microflow**. 
+* Alternatively, in the **App Explorer**, right-click on the name of the nanoflow you want to convert, and click **Convert to microflow**.
 
 {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/nanoflows/convert-to-microflow.PNG" alt="Convert to microflow" width="550px" class="no-border" >}}
 
-A new microflow is created and added to the same directory, and you can get consistency errors if there are elements that are not supported by microflows.
+Afterwards, a new microflow is created and added to the same directory, and you can get consistency errors if there are elements that are not supported by microflows.
 
-Starting from Studio Pro 10.20, this feature offers two options for conversion:
+Starting from Studio Pro 10.20, there are two options available:
 
-- Duplicate as Microflow: Creates a new microflow based on the original nanoflow, behaving the same as in previous versions.
-- Convert to Microflow: This option replaces the original nanoflow with a new microflow, updating all possible usages throughout your app and removing the original nanoflow.
+* **Duplicate as microflow**: This option creates a new microflow based on the original nanoflow. This works the same as the **Convert to microflow** functionality in Studio Pro 10.19 and below.
+* **Convert to microflow**: This option removes the original nanoflow and replaces it with a new microflow. All possible usages throughout your app are updated and any non-replaceable usages remain as they are. When some usages cannot be replaced because they are not allowing microflows, a warning dialog appears. See below as an example:
 
-If some usages cannot be replaced because they are not allowing microflow, a warning dialog will appear. You can then choose to:
+    [ToDo] {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/nanoflows/warning-dialog.PNG" alt="Conversion warning dialog" width="550px">}}
 
-- Convert: The original nanoflow will be removed, only replaceable usages will be updated, and any non-replaceable usages will remain as they are.
-- Cancel: The conversion will be cancelled, and no changes will be made.
-- Find usages: Finds usages of the original nanoflow.
+    In the warning dialog, you have the following options:
+
+    * **Convert**: The original microflow is removed, only replaceable usages are updated, and any non-replaceable usages remain as they are.
+    * **Find usages**: Finds usages of the original microflow.
+    * **Cancel**: The conversion is cancelled and no changes are made.
 
 ## Canvas Interaction
 
