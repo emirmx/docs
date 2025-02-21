@@ -30,11 +30,11 @@ Certain OIDC Provider module versions are compatible with certain versions of St
 The OIDC Provider module excels at the following usage scenarios:
 
 * SSO brokering
-* SSO within multi-app Mendix solution
+* SSO within multi-app Mendix solutions
 * Non-user specific API consumption
 * Platform Extensions
 
-For more information on how SSO brokering and SSO are implemented within a multi-app Mendix solution, see the [End-User Account Creation in the OIDC Provider](#end-user-account) section below.
+For more information on how SSO brokering and SSO are implemented within a multi-app Mendix solution, see [End-User Account Creation in the OIDC Provider](#end-user-account) below.
 
 #### SSO Brokering for Rapid Innovation{#brokering}
 
