@@ -112,22 +112,22 @@ If you want to see what happens while a microflow is executing, you can use the 
 
 ## Converting a Microflow to a Nanoflow {#convert-to-nanoflow}
 
-To convert a microflow to a nanoflow, you have two options. The first option is to right-click anywhere in the microflow editor and select **Convert to nanoflow**. Alternatively, in the **App Explorer**, right-click on the name of the microflow you want to convert, and select **Convert to nanoflow**.
+In Studio Pro 10.19 and below, to convert a microflow to a nanoflow, right-click anywhere in the microflow editor and select **Convert to nanoflow**. Alternatively, in the **App Explorer**, right-click on the name of the microflow you want to convert, and select **Convert to nanoflow**.
 
 {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/microflows/convert-to-nanoflow.PNG" alt="Convert to nanoflow" width="550px" class="no-border" >}}
 
 A new nanoflow is created and added to the same directory, and you can get consistency errors if there are actions that are not supported by nanoflows.
 
-Starting from Studio Pro 10.20, this feature offers two options for conversion:
+Starting from Studio Pro 10.20, there are two options:
 
-- Duplicate as Nanoflow: Creates a new nanoflow based on the original microflow, behaving the same as in previous versions.
-- Convert to Nanoflow: This option replaces the original microflow with a new nanoflow, updating all possible usages throughout your app and removing the original microflow.
+* **Convert to nanoflow**: This option removes the original microflow and replaces it with a new nanoflow, updating all possible usages throughout your app.
+* **Duplicate as nanoflow**: This option creates a new nanoflow based on the original microflow, behaving the same as in previous versions.
 
-If some usages cannot be replaced because they are not allowing nanoflow, a warning dialog will appear. You can then choose to:
+If some usages cannot be replaced because they are not allowing nanoflow, a warning dialog appears. You can then choose to:
 
-- Convert: The original microflow will be removed, only replaceable usages will be updated, and any non-replaceable usages will remain as they are.
-- Cancel: The conversion will be cancelled, and no changes will be made.
-- Find usages: Finds usages of the original microflow.
+* Convert: The original microflow is removed, only replaceable usages are updated, and any non-replaceable usages remain as they are.
+* Cancel: The action is cancelled and no changes are made.
+* Find usages: Finds usages of the original microflow.
 
 ## Canvas Interaction {#canvas-interaction}
 
