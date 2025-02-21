@@ -10,14 +10,15 @@ aliases:
 
 ## Introduction
 
- The [OIDC Provider](https://marketplace.mendix.com/link/component/214681) module enables developers to build Mendix applications that issue security tokens to other applications. In IAM (Identity and Access Management) terminology, this module acts as an OpenID Provider and an OAuth Authorization Server. Therefore, let us refer to such an application as an access provider application.
+The [OIDC Provider](https://marketplace.mendix.com/link/component/214681) module lets developers build Mendix applications that issue security tokens to other applications. In IAM (Identity and Access Management) terminology, this module acts as an OpenID Provider and an OAuth Authorization Server. Therefore, this document will refer to such an application as an access-provider application.
 
-An access provider application can offer a Single Sign-On (SSO) experience for end-users of connected applications Additionally, it can issue Access Tokens for API consumption when APIs are secured with OAuth bearer tokens.
-The service supports responsive browser-based applications and has been tested with applications that use the OIDC SSO module.
+An access-provider application can offer a Single Sign-On (SSO) experience for end-users of connected applications. Additionally, it can issue Access Tokens for API consumption when APIs are secured with OAuth bearer tokens.
 
-For successful implementation of the OIDC Provider module, [Advanced](https://academy.mendix.com/link/certifications/6/advanced) or [Expert](https://academy.mendix.com/link/certifications/24/expert) Mendix certification is recommended. Customers with limited low-code experience may consider partnering with a Mendix Implementation Partner.
+The service supports responsive browser-based applications, and has been tested with applications that use the OIDC SSO module.
 
-There are below versions of the OIDC Provider module, compatible with Mendix versions.
+For successful implementation of the OIDC Provider module, we recommend you attain [Advanced](https://academy.mendix.com/link/certifications/6/advanced) or [Expert](https://academy.mendix.com/link/certifications/24/expert) Mendix certification. Customers with limited low-code experience may consider partnering with a Mendix Implementation Partner.
+
+Certain OIDC Provider module versions are compatible with certain versions of Studio Pro (shown below).
 
 | Mendix Version | OIDC Provider Version |
 | --- | --- |
