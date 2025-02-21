@@ -10,7 +10,7 @@ This feature is currently in beta. For more information, see [Beta and Experimen
 
 ## Introduction
 
-The **Security Overview** page provides you with an overview of your app's security. This overview can be used to review the security of your app. You can export this information to an Excel file. See the [Export To Excel](#export-excel) section below for more information.
+The **Security Overview** page provides you with an overview of your app's security. This overview can be used to review the security of your app. You can also export information from the page to an Excel file, for more details, see the [Export To Excel](#export-excel) section below.
 
 ## Viewing the Security Overview
 
@@ -30,10 +30,6 @@ The **Security Overview** page has the following tabs:
 * [Page access](#page-access)
 * [Microflow access](#microflow-access)
 * [Nanoflow access](#nanoflow-access)
-
-{{% alert color="info" %}}
-In the beta release of the **Security Overview** page, only the **Entity access** tab is available. The other tabs will be available in future versions of Studio Pro.
-{{% /alert %}}
 
 ### Entity Access {#entity-access}
 
@@ -66,29 +62,29 @@ The **Nanoflow Access** tab lists the names of nanoflows within the selected mod
 
 ## Export To Excel {#export-excel}
 
-To export the Security Overview, click the Export to Excel button. This generates an Excel file in the selected directory, which contains the following three sheets:
+To export the **Security Overview**, click the **Export to Excel** button. This generates an Excel file in the selected directory, which contains the following three sheets:
 
-1. Entity Access: This sheet contains the entity access rules data, including:
-    1. User Role
-    2. Module: The module containing the entity.
-    3. Entity: The name of the entity.
-    4. Member: The attribute or association name.
-    5. Kind: Specifies whether the member is an association or an attribute.
-    6. Type: The type of the member.
-    7. XPath: The XPath constraint.
-    8. XPath Caption:  The XPath constraint caption, when set.
-    9. Access: The access level (None, Read or ReadWrite).
+1. Entity Access -- This sheet contains the entity access rules data, including the following:
+    a. User Role
+    b. Module: The module containing the entity.
+    c. Entity: The name of the entity.
+    d. Member: The attribute or association name.
+    e. Kind: Specifies whether the member is an association or an attribute.
+    f. Type: The type of the member.
+    g. XPath: The XPath constraint.
+    h. XPath Caption:  The XPath constraint caption, when set.
+    i. Access: The access level (None, Read or ReadWrite).
 
-2. Document Access: This sheet includes the accessible pages, microflows and nanoflows, including:
-    1. Document type: The type of the accessible document (Page, Microflow, Nanoflow).
-    2. User Role
-    3. Module: The module containing the the page, nanoflow, or microflow.
-    4. Document: The name of the page, nanoflow, or microflow.
+2. Document Access -- This sheet includes the accessible pages, microflows and nanoflows, including the following:
+	a. Document type -- The type of the accessible document (page, microflow, nanoflow).
+	b. User Role
+	c. Module: The module containing the the page, nanoflow, or microflow.
+	d. Document: The name of the page, nanoflow, or microflow.
 
-3. Module Roles: This sheet provides the mappings between user roles and module roles, including:
-    1. User Role
-    2. Module
-    3. Module Role
+3. Module Roles -- this sheet provides the mappings between user roles and module roles, including the following:
+	a. User Role
+	b. Module
+	c. Module Role.
 
 ## Read More
 
