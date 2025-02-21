@@ -27,7 +27,7 @@ Certain OIDC Provider module versions are compatible with certain versions of St
 
 ### Typical Usage Scenarios
 
-The following are usage scenarios that would be achievable with the OIDC Provider module.
+The OIDC Provider module excels at the following usage scenarios:
 
 * SSO brokering
 * SSO within multi-app Mendix solution
