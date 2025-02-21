@@ -139,7 +139,7 @@ In Studio Pro 10.19 and below, you can use the **Convert to microflow** function
 * Right-click anywhere in the nanoflow editor and click **Convert to microflow**. 
 * Alternatively, in the **App Explorer**, right-click on the name of the nanoflow you want to convert, and click **Convert to microflow**.
 
-{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/nanoflows/convert-to-microflow.png" alt="Convert to microflow" width="550px" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/nanoflows/convert-to-microflow.PNG" alt="Convert to microflow" width="550px" class="no-border" >}}
 
 Afterwards, a new microflow is created and added to the same directory, and you can get consistency errors if there are elements that are not supported by microflows.
 
