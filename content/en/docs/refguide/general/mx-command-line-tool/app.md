@@ -304,7 +304,7 @@ These are the return codes:
 | `100` | Validation error on the input. |
 | `300` | Exception, something went wrong. |
 
-## mx sync-java-dependencies Command {#translate}
+## mx sync-java-dependencies Command {#java-dependencies}
 
 {{% alert color="info" %}}
 This command is available as of [Studio Pro 10.20](/releasenotes/studio-pro/10.20/).
