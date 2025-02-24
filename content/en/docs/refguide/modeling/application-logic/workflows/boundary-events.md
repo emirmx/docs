@@ -16,7 +16,7 @@ Based on Business Process Model and Notation (BPMN) 2.0, boundary events are a t
 
 There are two main types of boundary events:
 
-* Non-interrupting boundary events: These events do not interrupt the ongoing activity. When triggered, they allow the activity to continue while simultaneously starting a new path from the boundary event. Use non-interrupting boundary events when the parent activity should remain active, but you would like to do something in addition to the active activity/path. For example, after 2 days, a reminder should be sent to the assigned user. As per BPMN 2.0 specification, non-interrupting boundary events are visualized as two dashed circles with an icon in the center.
+* Non-interrupting boundary events: These events do not interrupt the ongoing activity. When triggered, they allow the activity to continue while simultaneously starting a new path from the boundary event. Use non-interrupting boundary events when the parent activity should remain active, but you would like to do something in parallel. For example, after 2 days, a reminder should be sent to the assigned user. As per BPMN 2.0 specification, non-interrupting boundary events are visualized as two dashed circles with an icon in the center.
 
 * Interrupting boundary events (currently in beta): When these events are triggered, they interrupt the activity they are attached to, meaning that this activity will be aborted. The process flow is redirected to the boundary event's outgoing sequence path. Use interrupting boundary event in situations where further execution of the activity (and other following activities) is not required and an alternative path should be taken. For example, use an interrupting boundary event to start an escalation or a fast-track path when an activity is not completed 2 days after the due date. Or when the assigned user does not make a decision within 5 days, you want to abort the user task and continue the process with a pre-set decision. As per BPMN 2.0 specification, interrupting boundary events are visualized as two solid circles.
 
@@ -90,8 +90,8 @@ For an existing boundary event, when you change its type from non-interrupting t
 
 After you confirm the change:
 
-* The boundary event is re-created as the specified type. As a result, new IDs are created. These IDs are used by the application's runtime for its conflict detection analysis.
-* Any scheduled boundary event which has been toggled becomes incompatible and needs to be restarted.
+* The boundary event is re-created as the specified type. As a result, new IDs are created. These IDs are used by the Mendix Runtime for conflict detection analysis.
+* The current activities on the boundary event path including the boundary event itself become incompatible and need to be restarted.
 
 ### Rearranging Boundary Events
 
@@ -124,7 +124,7 @@ Currently, due to its beta status, an interrupting boundary event must end with 
 {{% /alert %}}
 
 {{% alert color="info" %}}
-When there are non-interrupting boundary events specified for the parent activity, and the interrupting boundary event is executed, all the scheduled and running non-interrupting boundary events will be aborted.
+When there are multiple boundary events attached to an activity and an interrupting boundary event is executed, all the scheduled boundary events will be aborted and all the boundary events that have already started will continue to run until the entire workflow ends.
 {{% /alert %}}
 
 ## Boundary Event Variables
