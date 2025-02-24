@@ -113,11 +113,11 @@ Boundary events are initiated when their parent activity is initiated. For examp
 
 ### Non-Interrupting Boundary Events
 
-With non-interrupting boundary events, the parent activity remains active/in progress when an event is triggered (i.e., the parent activity is not interrupted). For example, when a non-interrupting timer boundary event is set on a user task and is triggered after 2 days, this user task will remain in progress and the path defined below the timer boundary event is executed. When the boundary event path reaches the **End of Boundary Path** activity, the workflow will await the completion of the parent activity.
+With non-interrupting boundary events, the parent activity remains active/in progress when an event is triggered (i.e., the parent activity is not interrupted). For example, when a non-interrupting timer boundary event is set on a user task and is triggered after 2 days, this user task will remain in progress and the path following the timer boundary event is executed. When the boundary event path reaches the **End of Boundary Path** activity, the workflow will await the completion of the parent activity.
 
 ### Interrupting Boundary Events
 
-However, with interrupting boundary events, the parent activity is aborted. For example, when an interrupting timer boundary event is set on a user task and is triggered after 2 days, this user task will be aborted, and the path following or from the timer boundary event will become the active path. 
+However, with interrupting boundary events, the parent activity is aborted. For example, when an interrupting timer boundary event is set on a user task and is triggered after 2 days, this user task will be aborted, and the path following the timer boundary event will become the active path. 
 
 {{% alert color="info" %}}
 Currently, due to its beta status, an interrupting boundary event must end with an **End** event. The option to allow jumping back to the path of the parent activity from the interrupting path will be added soon. For more limitations, see the [Current Limitations](#limitation) section below.
