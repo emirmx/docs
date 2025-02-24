@@ -43,7 +43,7 @@ The **Caption** describes what happens in this element. It is displayed under th
 {{% alert color="info" %}}
 This section is only applicable when **Timer** is used as a timer boundary event.
 
-This section is displayed if interrupting timer boundary events (beta) is enabled through Studio Pro **Preferences** -> **New features** -> **Workflow editor** > **Enable interrupting timer boundary events (beta)**.
+This section is displayed if interrupting timer boundary events (beta) are enabled through Studio Pro **Preferences** -> **New features** -> **Workflow editor** > **Enable interrupting timer boundary events (beta)**.
 {{% /alert %}}
 
 The **Interrupting** property sets the timer boundary event to be either interrupting or non-interrupting.
