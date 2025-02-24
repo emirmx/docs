@@ -1,5 +1,5 @@
 ---
-title: "Preparing to launch your First Mendix App with Compass"
+title: "Preparing to Launch your First Mendix App with Compass"
 linktitle: "Compass for Start"
 url: /developerportal/compass/
 weight: 25

@@ -93,4 +93,5 @@ Clicking a menu item opens the corresponding page:
 
 * [Application Portfolio Management with Low-Code](https://www.mendix.com/application-portfolio-management/)
 * [Make Strategic Decisions with Portfolio Management](https://academy.mendix.com/link/paths/145/Make-Strategic-Decisions-With-Portfolio-Management)
-* [Why Portfolio Management is Crucial to App Development at Scale](https://www.mendix.com/blog/why-portfolio-management-is-crucial-to-app-development-at-scale/)
+* [Why Portfolio Management is Crucial to App Development at Scale](https://www.mendix.com/blog/)
+* [Preparing to Launch your First Mendix App with Compass](/developerportal/compass/) - Another Digital Execution tool, geared towards planning and streamlining the implementation of your first Mendix app
