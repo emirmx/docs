@@ -13,7 +13,7 @@ With scheduled events you can make the runtime execute a microflow repeatedly at
 A scheduled event is added to your module as a document (right-click your module and you will find it listed under *Add other*).
 
 {{% alert color="warning" %}}
-Scheduled events can be tested locally, but they will not be run if your app is deployed as a Free App. See the Free App section of [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/#free-app) for more information on Free App limitations.
+Scheduled events can be tested locally, but they will not be run if your app is deployed as a Free App. For more information on Free App limitations, see the [Free App](/developerportal/deploy/mendix-cloud-deploy/#free-app) section of *Mendix Cloud*.
 {{% /alert %}}
 
 ## Common Properties
@@ -38,7 +38,7 @@ Scheduled events can be tested locally, but they will not be run if your app is 
 
 ### Yearly Properties {#yearly}
 
-Yearly events come in 2 flavors:
+Yearly events come in two flavors:
 
 * Execute on a specific date
 * Execute on a specific weekday
@@ -72,7 +72,7 @@ This allows you to run the event on a certain day of the week every year. For ex
 
 ### Monthly Properties {#monthly}
 
-Monthly events also come in 2 flavors:
+Monthly events also come in two flavors:
 
 * Execute on a specific day of the month
 * Execute on a specific weekday
@@ -165,7 +165,7 @@ If a repeated scheduled event takes longer than the interval, an overlap would o
 
     Should an event have drifted a long way from its intended schedule over time, the best way to remedy this is to delete the event and create a new one (with a longer interval).
 
-## Additional information
+## Additional Information
 
 ### Server Time{#server-time}
 
@@ -190,7 +190,7 @@ This limit cannot be overridden.
 
 ### Unsupported Intervals
 
-Hour- and minute-based intervals can only be integer divisors of 24 or 60, respectively. For example you cannot schedule an event to run every seven minutes as this does not divide precisely into sixty minutes. If it is absolutely critical that an unsupported interval is used, you should schedule the event with interval value of one (every hour or every minute) and decide within the microflow whether it should continue executing at that particular time.
+Hour- and minute-based intervals can only be integer divisors of 24 or 60, respectively. For example you cannot schedule an event to run every seven minutes as this does not divide precisely into 60 minutes. If it is absolutely critical that an unsupported interval is used, you should schedule the event with interval value of one (every hour or every minute) and decide within the microflow whether it should continue executing at that particular time.
 
 ### Cleaning Up Completed Runs of Scheduled Events
 
