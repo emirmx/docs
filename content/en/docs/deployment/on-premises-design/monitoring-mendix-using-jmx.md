@@ -142,7 +142,7 @@ import com.mendix.core.Core;
 
 Now you're able to see the result of the values exposed by this MBean in the JConsole:
 
-{{< figure src="/attachments/howto/monitoring-troubleshooting/monitoring-mendix-using-jmx/18580003.png" class="no-border" >}}
+{{< figure src="/attachments/deployment/on-premises-design/monitoring-mendix-using-jmx/18580003.png" class="no-border" >}}
 
 ## MBean Exposing App-Specific Statistics
 
