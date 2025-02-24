@@ -142,7 +142,11 @@ Data grids do not directly display this date.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-The 'changedDate' property is updated when a value is set. Setting an attribute to the value it already has and committing the entity updates the 'changedDate' without changing the attribute value.
+In Mendix 10.20 and above, the 'changedDate' property is updated when the entity is committed.
+
+In Mendix 10.19.x and below, the 'changedDate' property is updated whenever a value is set.
+
+Setting an attribute to the value it already has and committing the entity updates the 'changedDate' without changing the attribute value.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
@@ -173,6 +177,12 @@ This property defines whether the entity has the system association 'changedBy'.
 
 {{% alert color="info" %}}
 Data grids do not directly display the associated System.User entity or its specializations.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+In Mendix 10.20 and above, the 'changedBy' property is updated when the entity is committed.
+
+In Mendix 10.19.x and below, the 'changedBy' property is updated whenever a value is set.
 {{% /alert %}}
 
 ### Access Rules Section {#access-rules}
