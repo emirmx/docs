@@ -11,7 +11,7 @@ cascade:
 
 These release notes cover new features and improvements made to the [Compass](https://compass.home.mendix.com/) and [Portfolio Management](https://portfolio.mendix.com) tools.
 
-Compass and Portfolio Management are tools that can help you implement your Mendix Digital Execution strategy. For more information, see [Mendix Digital Execution](https://www.mendix.com/glossary/digital-execution/).
+Compass and Portfolio Management are tools that can help you implement your Mendix Digital Execution strategy. For more information, see [Digital Execution Practice](https://www.mendix.com/evaluation-guide/digital-execution-practice/).
 
 ## 2025
 
