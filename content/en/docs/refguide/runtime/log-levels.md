@@ -1,8 +1,9 @@
 ---
 title: "Set Log Levels"
-url: /howto/monitoring-troubleshooting/log-levels/
-weight: 9
+url: /refguide/log-levels/
 description: "Describes how to configure the log levels for the various occurrence of logging within your app."
+aliases:
+    - /howto/monitoring-troubleshooting/log-levels/
 ---
 
 ## Introduction

@@ -1,8 +1,9 @@
 ---
 title: "Monitor Mendix Using JMX"
-url: /howto/monitoring-troubleshooting/monitoring-mendix-using-jmx/
-weight: 10
+url: /developerportal/deploy/monitoring-mendix-using-jmx/
 description: "Describes how to start the Mendix Runtime with JMX, and expose management information and app-specific statistics with an MBean."
+aliases:
+    - /howto/monitoring-troubleshooting/monitoring-mendix-using-jmx/
 ---
 
 ## Introduction

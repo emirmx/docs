@@ -1,7 +1,9 @@
 ---
 title: "Populate User Types"
-url: /howto/monitoring-troubleshooting/populate-user-type/
+url: /developerportal/deploy/populate-user-type/
 description: "Describes how to classify existing app end-users as either internal or external."
+aliases:
+    - /howto/monitoring-troubleshooting/populate-user-type/
 ---
 
 ## Introduction
