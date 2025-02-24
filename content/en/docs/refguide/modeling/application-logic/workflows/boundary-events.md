@@ -84,7 +84,7 @@ When you change a boundary event from non-interrupting to interrupting or vice v
 {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/security-dialog.png" alt="Security Dialog when changing type" width="450">}}
 
 The boundary event will be re-created as the specified type. As a result, new IDs will be created. These IDs are used by the application's runtime for its conflict detection analysis.
-This will mean that active workflows with scheduled boundary events will become incompatible and need to be restarted.
+Any scheduled boundary event which has been toggled will become incompatible and needs to be restarted.
 
 ### Rearranging Boundary Events
 
