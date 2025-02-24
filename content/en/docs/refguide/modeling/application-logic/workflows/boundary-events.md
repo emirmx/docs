@@ -110,7 +110,7 @@ With non-interrupting boundary events the parent activity remains active/in prog
 
 ### Interrupting Boundary Events
 
-However with interrupting boundary events, the parent activity is interrupted. For example, when an interrupting timer boundary event is set on a user task and is triggered after 2 days, this task will be aborted, and the path defined below the timer event is now the active path. Currently only **End Workflow** activities are allowed at the end of an interrupting boundary event. Meaning that at the end of an interrupting boundary event the workflow will be ended.
+However with interrupting boundary events, the parent activity is interrupted. For example, when an interrupting timer boundary event is set on a user task and is triggered after 2 days, this task will be aborted, and the path defined below the timer event will become the active path. Currently only **End Workflow** activities are allowed at the end of an interrupting boundary event.
 
 {{% alert color="info" %}}
 When there are non-interrupting boundary events specified for the parent activity, and the interrupting boundary event is executed, all the scheduled and running non-interrupting boundary events will be aborted.{{% /alert %}}
