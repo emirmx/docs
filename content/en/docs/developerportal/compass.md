@@ -10,7 +10,7 @@ description: "Describes the Compass tool."
 
 ## Introduction
 
-The [Compass](https://compass.home.mendix.com/) tool is available to teams who want to plan and streamline the implementation of their first Mendix app. It is part of an initiative to bring [Mendix Digital Execution](https://www.mendix.com/glossary/digital-execution/) to the Platform, and enables non-developer team members to help plan the milestones and goals of their Mendix implementation process. Program Owners (that is, the team members leading the implementation) can then monitor the progress through an intuitive visual interface, with the goal of successfully launching their first Mendix application.
+The [Compass](https://compass.home.mendix.com/) tool is available to teams who want to plan and streamline the implementation of their first Mendix app. It is part of an initiative to bring [Mendix Digital Execution](https://www.mendix.com/glossary/digital-execution/) to the Platform and enables non-developer team members to help plan the milestones and goals of their Mendix implementation process. Program Owners (that is, the team members leading the implementation) can then monitor the progress through an intuitive visual interface, with the goal of successfully launching their first Mendix application.
 
 {{< figure src="/attachments/developerportal/compass/compass-home.png" alt="The home page of the Compass tool" >}}
 
@@ -28,7 +28,7 @@ After Compass has been enabled for your organization, a user with the Program Ow
 
 ### Inviting Team Members
 
-The Compass team involved in your Mendix implementation should include everyone that will help get Mendix implemented in your organization. This team is not the same as the app project team which will build the app itself, although for example a lead developer might be present in both. You can find out more about the team scope and responsibilities by perusing the action points in Compass.
+The Compass team involved in your Mendix implementation should include everyone that will help get Mendix implemented in your organization. This team is not the same as the app project team which will build the app itself, although for example, a lead developer might be present in both. You can find out more about the team's scope and responsibilities by perusing the action points in Compass.
 
 You can give members of the team access to Compass by performing the following steps:
 
