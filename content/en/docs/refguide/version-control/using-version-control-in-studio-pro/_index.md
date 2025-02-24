@@ -143,7 +143,7 @@ A tool you can consider using is TortoiseGitMerge, shipped as part of [TortoiseG
 Comparing files on disk with the original is currently not supported on macOS.
 {{% /alert %}}
 
-Committing is only allowed if your working copy is up to date with the repository. If someone else committed a change since the last time you pulled, you will have to pull first. This is because the revision you create with the commit should incorporate both your changes and the changes by the other person. Updating will combine the latest changes in the repository with your changes. After reviewing the result and fixing any conflicts, you can commit again.
+Committing is only allowed if your working copy is up to date with the repository. If someone else committed a change since the last time you pulled, you will have to pull first (this process is called **Commit and Combine** in the [Commit](/refguide/commit-dialog/#combine) dialog box). This is because the revision you create with the commit should incorporate both your changes and the changes by the other person. Updating will combine the latest changes in the repository with your changes. After reviewing the result and fixing any conflicts, you can commit again. 
 
 ### Pushing {#pushing}
 

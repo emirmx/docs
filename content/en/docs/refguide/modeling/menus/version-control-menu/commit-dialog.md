@@ -37,6 +37,22 @@ Tick the boxes next to the stories that are related to your commit. Mendix recom
 
 If there are changes in the model this tab shows a summary of those changes. For more information on how changes are reported in Studio Pro, see [Changes Pane](/refguide/changes-pane/).
 
+There are several scenarios and options that you can choose when committing. 
+
+#### Commit and Push
+
+Your changes are committed and pushed to the server.
+
+#### Commit Locally
+
+Changes are committed to your local working copy and are not pushed to the sever.
+
+#### Commit and Combine {#combine}
+
+If someone else committed a change since the last time you pulled your branch, you will have to pull first. This process is called **Commit and Combine** in the [Commit](/refguide/commit-dialog/) dialog box. **Commit and Combine** will update your local working copy. 
+
+After you reviewed the changes, you will need to push your changes, as **Commit and Combine** only updates your local copy and does not push your changes to the server. 
+
 ### Changes on Disk
 
 {{< figure src="/attachments/refguide/modeling/menus/version-control-menu/commit-dialog/commit-dialog-disk-changes.png" alt="Version Control Menu" class="no-border" width="400" >}}
