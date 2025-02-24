@@ -1,5 +1,5 @@
 ---
-title: "Preparing to launch your First Mendix App with Compass"
+title: "Preparing to Launch Your First Mendix App with Compass"
 linktitle: "Compass for Start"
 url: /developerportal/compass/
 weight: 25
@@ -114,7 +114,7 @@ These focus areas are based on the [5 Ps of digital transformation](https://www.
 As a best practice, key results should be granular and measurable in the short term.
 {{% /alert %}}
 
-#### Managing your Key Results
+#### Managing Your Key Results
 
 To give your team transparency into the progress of your Mendix implementation, make sure to track the progress of your key results. You can do this by editing the value in the **Progress** field of a key result.
 
