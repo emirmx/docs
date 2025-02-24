@@ -22,10 +22,15 @@ The Consumed REST Service document is released for general availability (GA) for
 
 Use the Consumed REST Service document to do the following:
 
-* Consume a REST Service
+* Consume a REST Service manually or from an OpenAPI/Swagger contract
 * Configure `GET`, `POST`, `PUT`, `PATCH`, and `DELETE` requests
 * Create entities directly in the domain model
 * Send REST requests through a microflow
+
+{{% alert color="info" %}}
+The ability to import an OpenAPI/Swagger contract was introduced as a beta feature in [Studio Pro 10.21](/releasenotes/studio-pro/10.21/).
+{{% /alert %}}
+
 
 ### Limitations
 
@@ -43,13 +48,24 @@ Download [Studio Pro](https://marketplace.mendix.com/link/studiopro/) and add th
 
 1. Right-click the module you want to add the Consumed REST Service document to.
 2. Select **Add other** > **Consumed REST service**. 
-3. Name the service and click **OK**.
+3. Name the service.
+4. Under **Add request(s)**, choose whether you want to add your request **Manually**, or **From OpenAPI/Swagger contract**.  
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/add-service.png" width="500" class="no-border" >}}
+    * To add a manual request:
+        1. Select **Manually**.
+        2. Click **OK**.
+    * To add a request from an OpenAPI or Swagger contract:
+        1. Select **URL** or **File** and paste the corresponding URL or select the desired file in the field below.
+        2. Click **OK**.
+        3. Select the requests you want to add to your document.
+        4. Click **OK**.
 
 ## Configuration {#configuration}
 
-Use the Consumed REST Service to configure a `GET`, `POST`, `PUT`, `PATCH`, or `DELETE` request for your app. 
+Use the Consumed REST Service to configure a `GET`, `POST`, `PUT`, `PATCH`, or `DELETE` request for your app. A request can be configured manually or by uploading an OpenAPI or Swagger contract.
+
+If you upload an OpenAPI URL or Swagger contract, the content of the URL or file will be automatically added to your consumed REST service document. You can still manually configure the request after upload, such as add new [parameters](#add-parameters), [headers](#add-headers), or create entities from the request/response.
+
 
 ### Basic Configuration {#configure-a-request}
 
