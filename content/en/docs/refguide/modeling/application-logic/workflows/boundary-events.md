@@ -7,7 +7,7 @@ weight: 20
 {{% alert color="info" %}}
 Non-interrupting timer boundary events were introduced in beta in Studio Pro 10.15 and released in GA in Studio Pro 10.16.
 
-Interrupting timer boundary events were introduced in Studio Pro 10.20 and is currently in beta. Certain features or attributes are subject to change and may contain bugs. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+Interrupting timer boundary events were introduced in Studio Pro 10.20 and are currently in beta. Certain features or attributes are subject to change and may contain bugs. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).
 {{% /alert %}}
 
 ## Introduction
@@ -21,7 +21,7 @@ There are two main types of boundary events:
 
 Boundary Events are always displayed by 2 circles (either solid or dashed) and are linked by a dotted line to the parent activity. The icon inside the event indicates the type of event. For example, a clock indicates that it is a timer boundary event.
 
-Below is an example of how a non-interrupting timer boundary event looks like:
+Below is an example of what a non-interrupting timer boundary event looks like:
 
 {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/drag-drop.png" alt="Adding boundary events through drag and drop" width="200" >}}
 
@@ -71,7 +71,7 @@ Interrupting boundary events are currently in beta. To enable this feature, go t
 
 {{< figure src="/attachments/refguide/modeling/application-logic/workflows/boundary-events/enable-interrupting-boundary-event.png" alt="Enable interrupting boundary event" width="450">}}
 
-After adding interrupting boundary events is enabled, the **Boundary properties** section shows up in the properties dialog box of a boundary event.
+After interrupting boundary events are enabled, the **Boundary properties** section shows up in the properties dialog box of a boundary event.
 
 By default, the **Interrupting** property is set to **No**, which means that the initially added event is a non-interrupting boundary event. To add an interrupting boundary event, set the **Interrupting** property to **Yes**. Click **OK** to save your configuration:
 
@@ -130,10 +130,10 @@ The list of variables is described below:
 
 ## Current Limitations
 
-The current release of boundary events has the following limitations which is actively being developed:
+The current release of boundary events is still under development and has the following limitations:
 
 * Interrupting boundary events are not allowed to be nested in other boundary event paths, meaning that if an activity has a boundary event path (interrupting or non-interrupting), this activity cannot be placed in a boundary event path.
-* Interrupting boundary events are not allowed to have an jump at the end of their flow, nor do they allow jumping outside of their flow.
+* Interrupting boundary events are not allowed to have a jump at the end of their flow, nor do they allow jumping outside of their flow.
 * Non-interrupting timer boundary events currently have no recurrence (they are only executed once and will not repeat).
 
 ## Read more
