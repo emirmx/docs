@@ -70,7 +70,7 @@ Milestones and action points are predefined by Mendix, but you can also add your
 
 You can view and manage tasks by performing the following steps:
 
-1. In the **Program** section of the left navigation menu, click **Tasks**.
+1. In the **Program** section, click **Tasks**.
 2. To add a new task, click **Add Task**, and then provide the following information:
 
     * **Name** - Required. An identifying name for the task.
