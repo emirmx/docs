@@ -237,7 +237,7 @@ Here is an example of a **Colorpicker** design property using classes:
 ```js
 {
     "name": "Background color",
-    "type": "Colorpicker",
+    "type": "ColorPicker",
     "description": "Description of Background color Property",
     "options": [
         {
@@ -261,7 +261,7 @@ Here is an example of a **Colorpicker** design property using CSS variables:
 ```js
 {
     "name": "Background color",
-    "type": "Dropdown",
+    "type": "ColorPicker",
     "property": "background-color",
     "description": "Description of Background Color Property",
     "options": [
@@ -281,7 +281,7 @@ Here is an example of a **Colorpicker** design property using CSS variables:
 }
 ```
 
-Note: if you can not provide a value for the preview, it is recommended to instead use a **Dropdown** design property. If at a later point in time you can provide the preview, you can always change the type from a **Dropdown** to a **Colorpicker**.
+Note: If you cannot provide a value for the preview, the CSS variable color will be used by default. This ensures that there is always a color displayed. You can always change the type from a **Colorpicker** to a **Dropdown** if needed.
 
 This is how the **Colorpicker** design property appears:
 
