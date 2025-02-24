@@ -24,7 +24,7 @@ Every Mendix app has a system module containing an entity `UserReportInfo`. This
 
 The *Mendix Metering* module relies on this attribute to ascertain the end-user type and report it back to us.
 
-{{< figure src="/attachments/howto/monitoring-troubleshooting/populate-user-type/user-type-enumeration.png" class="no-border" >}}
+{{< figure src="/attachments/deployment/general/populate-user-type/user-type-enumeration.png" class="no-border" >}}
 
 ## Assigning UserType for Existing Users of IAM Modules
 
@@ -59,7 +59,7 @@ Therefore, the approach we take is to create a new non-persistable entity, `User
 
 {{< figure src="/attachments/deployment/general/populate-user-type/usertypereport.png" class="no-border" >}}
 
-{{< figure src=/attachments/deployment/general/populate-user-type/usertypereport-properties.png" class="no-border" >}}
+{{< figure src="/attachments/deployment/general/populate-user-type/usertypereport-properties.png" class="no-border" >}}
 
 ### Populating **UserType** for Existing Users of an App {#using-microflow}
 
