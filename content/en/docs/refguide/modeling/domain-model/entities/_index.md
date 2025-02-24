@@ -142,15 +142,13 @@ Data grids do not directly display this date.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-In Mendix 10.20 and above, the 'changedDate' property is updated when the entity is committed.
+In Mendix 10.20 and above, the 'changedDate' attribute is updated when the changed object is committed.
 
-In Mendix 10.19.x and below, the 'changedDate' property is updated whenever a value is set.
-
-Setting an attribute to the value it already has and committing the entity updates the 'changedDate' without changing the attribute value.
+In Mendix 10.19.x and below, the 'changedDate' attribute is updated whenever a value is set for a member (attribute or association).
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-The `changedDate` value is not updated if you update the entity directly in Java using calls which resolve to use the [`com.mendix.systemwideinterfaces.core.IMendixObject.setValue​(IContext context, java.lang.String memberName, java.lang.Object value)`](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/systemwideinterfaces/core/IMendixObject.html#setValue(com.mendix.systemwideinterfaces.core.IContext,java.lang.String,java.lang.Object)) method (for example, `Entity.setValue(IContext, String)`). If you need `changedDate` to be updated when using Java, use the [`com.mendix.core.Core.change​(IContext context, IMendixObject object, java.util.Map<java.lang.String,​java.lang.String> changes)`](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/core/Core.html#change(com.mendix.systemwideinterfaces.core.IContext,com.mendix.systemwideinterfaces.core.IMendixObject,java.util.Map)) method.
+The `changedDate` value is not updated if you update the object directly in Java using calls which resolve to use the [`com.mendix.systemwideinterfaces.core.IMendixObject.setValue​(IContext context, java.lang.String memberName, java.lang.Object value)`](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/systemwideinterfaces/core/IMendixObject.html#setValue(com.mendix.systemwideinterfaces.core.IContext,java.lang.String,java.lang.Object)) method (for example, `Entity.setValue(IContext, String)`). If you need `changedDate` to be updated when using Java, use the [`com.mendix.core.Core.change​(IContext context, IMendixObject object, java.util.Map<java.lang.String,​java.lang.String> changes)`](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/core/Core.html#change(com.mendix.systemwideinterfaces.core.IContext,com.mendix.systemwideinterfaces.core.IMendixObject,java.util.Map)) method.
 {{% /alert %}}
 
 #### Store 'owner' {#store-owner}
@@ -180,9 +178,9 @@ Data grids do not directly display the associated System.User entity or its spec
 {{% /alert %}}
 
 {{% alert color="info" %}}
-In Mendix 10.20 and above, the 'changedBy' property is updated when the entity is committed.
+In Mendix 10.20 and above, the 'changedBy' property is updated when a changed object is committed.
 
-In Mendix 10.19.x and below, the 'changedBy' property is updated whenever a value is set.
+In Mendix 10.19.x and below, the 'changedBy' property is updated whenever a value is set for a member (attribute or association).
 {{% /alert %}}
 
 ### Access Rules Section {#access-rules}
