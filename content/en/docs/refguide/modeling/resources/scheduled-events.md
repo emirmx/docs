@@ -8,7 +8,7 @@ description: "Options for configuring scheduled events"
 
 ## Introduction
 
-With scheduled events you can make the runtime execute a microflow repeatedly at specific intervals. The microflow is run using the [task queue](/refguide/task-queue/) mechanism.
+With scheduled events, you can make the runtime execute a microflow repeatedly at specific intervals. The microflow is run using the [task queue](/refguide/task-queue/) mechanism.
 
 A scheduled event is added to your module as a document (right-click your module and you will find it listed under *Add other*).
 
@@ -20,21 +20,21 @@ Scheduled events can be tested locally, but they will not be run if your app is 
 
 | Property | Description |
 | --- | --- |
-| Name | The name of the scheduled event. This name is recorded in the `System.ProcessedQueueTask` objects at runtime, so that you can identify when this scheduled event has been processed. See [Task Queues](/refguide/task-queue/) for additional information about this object. ⚠ For compatibility with legacy scheduled events, it is also stored in the `ScheduledEventInformation` objects but this is deprecated and will be removed in Mendix 11. |
-| Documentation | This field is for documentation purposes in the app model only. Its value is not visible to end-users and doesn't influence the behavior of your application. |
+| Name | The name of the scheduled event. This name is recorded in the `System.ProcessedQueueTask` objects at runtime so you can identify when this scheduled event has been processed. See [Task Queues](/refguide/task-queue/) for additional information about this object. ⚠ For compatibility with legacy scheduled events, it is also stored in the `ScheduledEventInformation` objects but this is deprecated and will be removed in Mendix 11. |
+| Documentation | This field is for documentation purposes in the app model only. Its value is not visible to end-users and does not influence the behavior of your application. |
 
 ## Execution Properties
 
 | Property | Description |
 | --- | --- |
 | Microflow | The microflow that is executed when the scheduled event is executed. It should have no parameters and is run with all rights (see [Microflow](/refguide/microflow/)). |
-| Enabled | The microflow is only executed if the scheduled event is enabled. This setting only applies when running from Studio Pro or from Eclipse. On production environments, scheduled events are enabled/disabled via the platform tools (for example the Mendix Portal or Windows Service Console). |
+| Enabled | The microflow is only executed if the scheduled event is enabled. This setting only applies when running from Studio Pro or from Eclipse. On production environments, scheduled events are enabled/disabled via the platform tools (for example, the Mendix Portal or Windows Service Console). |
 
 ## Timing Properties
 
 | Property | Description |
 | --- | --- |
-| Interval type | The type of scheduled that should be executed. Valid values are [Yearly](#yearly), [Monthly](#monthly), [Weekly](#weekly), [Daily](#daily), [Hourly](#hourly) or [Minutes](#minutes). |
+| Interval type | The type of scheduled that should be executed. Valid values are [Yearly](#yearly), [Monthly](#monthly), [Weekly](#weekly), [Daily](#daily), [Hourly](#hourly), or [Minutes](#minutes). |
 
 ### Yearly Properties {#yearly}
 
@@ -51,11 +51,11 @@ This allows you to run the event on the same date every year (for example, April
 | --- | --- |
 | Date | The month and day on which to execute the event. |
 | Time | The time at which to execute the event. |
-| UTC/Server | Whether to use UTC or a local time set on the server. See [Server Time](#server-time), below, for more information. |
+| UTC/Server | Whether to use UTC or a local time set on the server. See [Server Time](#server-time) below for more information. |
 | On overlap | See explanation of options in [Long-Running Events](#long-events). |
 
 {{% alert color="warning" %}}
-It is possible to select the leap day (February 29). In non-leap years the event will then be executed on February 28th.
+It is possible to select the leap day (February 29). In non-leap years, the event will be executed on February 28th.
 {{% /alert %}}
 
 #### Specific Month and Weekday
@@ -67,7 +67,7 @@ This allows you to run the event on a certain day of the week every year. For ex
 | Month | The month in which to execute the event. |
 | Day | The day on which to execute the event. |
 | Time | The time at which to execute the event. |
-| UTC/Server | Whether to use UTC or a local time set on the server. See [Server Time](#server-time), below, for more information. |
+| UTC/Server | Whether to use UTC or a local time set on the server. See [Server Time](#server-time) below for more information. |
 | On overlap | See explanation of options in [Long-Running Events](#long-events). |
 
 ### Monthly Properties {#monthly}
@@ -87,11 +87,11 @@ This allows you to run the event on the same date every month, or number of mont
 | Months | The months in which the event will be executed; not visible when executing every month. |
 | Day | The day of the month on which to execute the event. |
 | Time | The time at which to execute the event. |
-| UTC/Server | Whether to use UTC or a local time set on the server. See [Server Time](#server-time), below, for more information. |
+| UTC/Server | Whether to use UTC or a local time set on the server. See [Server Time](#server-time) below for more information. |
 | On overlap | See explanation of options in [Long-Running Events](#long-events). |
 
 {{% alert color="warning" %}}
-The selected day might not exist in all selected months. In those months the event will be executed on the last day of the month.
+The selected day might not exist in all selected months. In those months, the event will be executed on the last day of the month.
 {{% /alert %}}
 
 #### Weekday
@@ -103,7 +103,7 @@ This allows you to run the event on a certain day of the week every month, or nu
 | Month | The month in which to execute the event. |
 | Day | The day on which to execute the event. |
 | Time | The time at which to execute the event. |
-| UTC/Server | Whether to use UTC or a local time set on the server. See [Server Time](#server-time), below, for more information. |
+| UTC/Server | Whether to use UTC or a local time set on the server. See [Server Time](#server-time) below for more information. |
 | On overlap | See explanation of options in [Long-Running Events](#long-events). |
 
 #### Weekly Properties {#weekly}
@@ -114,7 +114,7 @@ This allows you to run the event on certain days every week. For example every M
 | --- | --- |
 | Days | The days of the week on which to execute the event. |
 | Time | The time at which to execute the event. |
-| UTC/Server | Whether to use UTC or a local time set on the server. See [Server Time](#server-time), below, for more information. |
+| UTC/Server | Whether to use UTC or a local time set on the server. See [Server Time](#server-time) below for more information. |
 | On overlap | See explanation of options in [Long-Running Events](#long-events). |
 
 ### Daily Properties {#daily}
@@ -124,7 +124,7 @@ This allows you to run the event every day.
 | Property | Description |
 | --- | --- |
 | Time | The time at which to execute the event. |
-| UTC/Server | Whether to use UTC or a local time set on the server. See [Server Time](#server-time), below, for more information. |
+| UTC/Server | Whether to use UTC or a local time set on the server. See [Server Time](#server-time) below for more information. |
 | On overlap | See explanation of options in [Long-Running Events](#long-events). |
 
 ### Hourly Properties {#hourly}
@@ -135,7 +135,7 @@ This allows you to run the event every hour, or number of hours. It also allows 
 | --- | --- |
 | Interval | The number of hours in between executions of the event. This must be a divisor of 24. |
 | Offset (minutes) | The offset in minutes from the start time of an event period. For instance, set to 90 in order to execute halfway during a 3 hour interval. The offset must be shorter than the specified interval. |
-| UTC/Server | Whether to use UTC or a local time set on the server. See [Server Time](#server-time), below, for more information. |
+| UTC/Server | Whether to use UTC or a local time set on the server. See [Server Time](#server-time) below for more information. |
 | On overlap | See explanation of options in [Long-Running Events](#long-events). |
 
 Example times will be shown in the dialog to illustrate the effects of the offset.
