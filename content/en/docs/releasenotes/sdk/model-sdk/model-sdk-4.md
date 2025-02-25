@@ -4,6 +4,13 @@ url: /releasenotes/sdk/model-sdk-4/
 weight: 97
 ---
 
+## 4.96.0 {#496}
+
+**Release date: February 18th, 2025**
+
+* We added support for Mendix [10.20.0](../studio-pro/10).
+* We added support for Mendix Metamodel [10.20.0](metamodel-10.20).
+
 ## 4.95.0 {#495}
 
 **Release date: January 22nd, 2025**
