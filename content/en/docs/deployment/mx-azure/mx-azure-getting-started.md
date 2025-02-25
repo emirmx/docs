@@ -5,7 +5,7 @@ description: "Documents the pre-implementation tasks for Mendix on Azure."
 weight: 10
 ---
 
-{{% alert color="info" %}} This feature is currently available to participating customers. For more information, contact your Customer Service Manager. {{% /alert %}}
+{{% alert color="info" %}} This feature is currently available to participating customers. For more information, contact your Customer Success Manager. {{% /alert %}}
 
 ## Introduction
 
@@ -16,6 +16,7 @@ Before you can deploy your Mendix app on Azure, you must plan and complete a num
 To adopt Mendix on Azure, you need to have the following:
 
 * A Mendix account; Mendix Studio Pro 10.10 or newer is required
+* As an optional best practice, add multiple cluster manager to your clusters
 * An Azure account with the following permissions:
     * Permission to grant admin consent on the Mendix on Azure portal app registration
     * Owner or Contributor role assigned on the target subscription level
@@ -57,45 +58,3 @@ To adopt Mendix on Azure, you need to have the following:
 Mendix on Azure is available for purchase from the the [Azure Marketplace](https://azuremarketplace.microsoft.com/). Connecting to Azure services may also include additional cost. For more information, refer to Azure documentation.
 
 For production environments, you also need a license for your Mendix app. For more information, refer to [Licensing Apps](/developerportal/deploy/licensing-apps-outside-mxcloud/).
-
-## Shared Responsibility Model
-
-Under the shared responsibility model for Mendix on Azure deployments, Mendix, Microsoft, and customer organizations all have their own responsibilities in the deployment process and business-as-usual operations. Familiarize yourself with the responsibilities listed below:
-
-### Microsoft Responsibilities
-
-Microsoft is responsible for operating and securing the Azure services underlying the Mendix on Azure service. This includes the following services:
-
-* Compute
-    * Azure Kubernetes service
-* Storage
-    * Azure Blob Storage
-    * Azure Container Registry
-* Database
-    * PostgreSQL Flexible Server
-* Networking
-    * Virtual networks
-    * Load balancer
-    * Private endpoints
-* Monitoring
-    * Managed Grafana and Prometheus
-
-### Mendix Responsibilities
-
-Mendix is responsible for orchestrating, operating, maintaining, securing, and supporting the Mendix on Azure service. This includes the following tasks:
-
-* Orchestrating - Ensure that the underlying Azure services function together as one cohesive offering.
-* Operating - Resolve regressions in how the underlying Azure services come together as one service.
-* Maintaining - Ensure that the service absorbs changes in the underlying Azure services without impact on customers.
-* Securing - Ensure that the service remains compliant with relevant security best practices and frameworks.
-* Supporting - Reactively address customer issues with using the service.
-
-### Customer Responsibilities
-
-Customers are responsible for developing, deploying, operating, integrating, and securing apps on top of the Mendix on Azure service. This includes the following tasks:
-
-* Developing - Create apps that deliver business outcomes.
-* Deploying - Deploy apps.
-* Operating - Monitor app behavior and address deviations.
-* Integrating - Securely integrate apps with backend services and IAM.
-* Securing - Comply with Mendix best practices for secure apps.
