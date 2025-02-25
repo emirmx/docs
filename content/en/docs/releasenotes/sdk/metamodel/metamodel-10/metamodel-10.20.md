@@ -5,12 +5,7 @@ parent: "metamodel-10"
 
 ## 10.20.0
 
-### Security
-
-#### ModuleSecurity (ModelUnit)
-
-
-### Rest
+### REST
 
 #### ConstantValue (Element)
 * We made the `value` property optional.
