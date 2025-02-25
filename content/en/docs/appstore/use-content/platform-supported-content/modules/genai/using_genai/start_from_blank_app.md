@@ -32,7 +32,7 @@ By the end of this document, you will:
 
 ## Building Your Smart App
 
-To start building your smart app with a blank GenAI App template, download the [Blank GenAI App Template](https://marketplace.mendix.com/link/component/227934) from the Mendix Marketplace. This template provides a clean slate, enabling you to build your GenAI-powered application step by step. You can see the result in the image below.
+To start building your smart app with a blank GenAI App template, download the [Blank GenAI App Template](https://marketplace.mendix.com/link/component/227934) from the Mendix Marketplace. This template provides a clean slate, enabling you to build your GenAI-powered application step by step. Using this document, you can build a chatbot. The image below shows the final result.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-blankapp/blank_genai_interface.jpg" >}}
 

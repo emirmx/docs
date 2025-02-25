@@ -34,7 +34,13 @@ The following activities interact with the database:
 Therefore, the best practice is to use nanoflows in online applications when they do not contain the above activities.
 
 {{% alert color="info" %}}
-An exception for the **Create object** activity is that you can use it to create a new [non-persistable entity](/refguide/persistability/#non-persistable), and this NPE has no error handlers, calculated attributes, or read-only attributes. In this case, no request is sent to the Mendix Runtime.
+An exception is that you can use the **Create object** activity to create a [non-persistable entity](/refguide/persistability/#non-persistable) if this NPE:
+
+* does not have any event handlers attached
+* does not have any calculated attributes
+* does not have any read-only attributes
+
+In this case, the NPE is created on the client side and no request is sent to the Mendix Runtime.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -143,3 +149,11 @@ A new microflow is created and added to the same directory, and you can get cons
 ## Canvas Interaction
 
 In the nanoflow editor from Studio Pro 10.6, you can use common patterns like unlimited canvas, enhanced zoom and scroll, and a snap-to-flow to make new activities from the toolbox and toolbar always well aligned in your flow.
+
+## Exporting a Nanoflow to an Image {#export-nanoflow}
+
+To export a nanoflow to an image, navigate to the [File menu](/refguide/file-menu/) in the Studio Pro top bar, and click **File** > **Export as image**.
+
+This opens an **Export to image** dialog box allowing you to choose a name and location for the exported image. After clicking **Save**, another dialog box is opened, where you can change parameters for your image export such as a transparent or opaque background and a relative size of the exported image by selecting a zoom level.
+
+The current document is exported as an image in the .png format.
