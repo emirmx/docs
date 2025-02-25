@@ -88,7 +88,7 @@ During migration without history, only the last revision of the main branch is c
 
 The migration should take a few minutes to complete.
 
-After migration is completed a full backup of your SVN repository is created and made available to all Scrum Masters. They receive an email with information on how to download the backup that is available for three months. Several days before this backup expires all Scrum Masters on the app receive another email.
+After migration is completed a full backup of your SVN repository is created and made available to all Scrum Masters for a period of 90 days. They receive an email with information on how to download the backup. Several days before this backup expires all Scrum Masters on the app receive another email.
 
 {{% alert color="info" %}}
 
@@ -104,7 +104,15 @@ All work not merged to the main branch will not be migrated to your Git reposito
 
 #### Using an SVN Backup
 
-All Scrum Masters receive an email with a link to download an SVN backup. This allows you to download a *[repository-id].dump* file to your local device and you can use this file to restore the repository locally.
+All Scrum Masters receive an email with a link to download an SVN backup. The backup can also be accessed through `https://git-migration.home.mendix.com/p/view-backup/[repository-ID]`, where [repository-ID] has to be replaced.
+
+You can then download a *[repository-id].dump* file to your local device and you can use this file to restore the repository locally.
+
+{{% alert color="warning" %}}
+
+The SVN backup automatically expires after 90 days. After this time the SVN history is permanently deleted and can't be recovered.
+
+{{% /alert %}}
 
 To set up your local SVN repository, follow these steps:
 
