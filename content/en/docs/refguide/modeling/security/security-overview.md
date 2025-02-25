@@ -10,7 +10,11 @@ This feature is currently in beta. For more information, see [Beta and Experimen
 
 ## Introduction
 
-The **Security Overview** page provides you with an overview of your app's security. This overview can be used to review the security of your app. You can also export information from the page to an Excel file, for more details, see the [Export To Excel](#export-excel) section below.
+The **Security Overview** page provides you with an overview of your app's security. 
+
+{{< figure src="/attachments/refguide/modeling/security/security-overview/entity-security-overview.png" class="no-border" >}}
+
+This overview can be used to review the security of your app. You can also export information from the page to an Excel file, for more details, see the [Export To Excel](#export-excel) section below.
 
 ## Viewing the Security Overview
 
@@ -40,25 +44,17 @@ Multiple columns are shown for entities with XPath constraints. Access rules wit
 
 When the selected user role has no access to an attribute or an association, it is not shown in the table. If the selected user role has no access to an entity at all, the entity is not shown in the **Security Overview**.
 
-{{< figure src="/attachments/refguide/modeling/security/app-security/user-roles/entity-security-overview.png" class="no-border" >}}
-
 ### Page Access {#page-access}
 
 The **Page Access** tab lists the names of pages within the selected module that are visible to the selected user role.
-
-{{< figure src="/attachments/refguide/modeling/security/app-security/user-roles/page-security-overview.png" class="no-border" >}}
 
 ### Microflow Access {#microflow-access}
 
 The **Microflow Access** tab lists the names of microflows within the selected module that can be executed by the selected user role.
 
-{{< figure src="/attachments/refguide/modeling/security/app-security/user-roles/microflow-security-overview.png" class="no-border" >}}
-
 ### Nanoflow Access {#nanoflow-access}
 
 The **Nanoflow Access** tab lists the names of nanoflows within the selected module that can be executed by the selected user role.
-
-{{< figure src="/attachments/refguide/modeling/security/app-security/user-roles/nanoflow-security-overview.png" class="no-border" >}}
 
 ## Export To Excel {#export-excel}
 
