@@ -278,7 +278,8 @@ The settings below influence the behavior of the Mendix web client.
 
 ### Max Retrieve Size{#MaxRetrieveSize}
 
-The `MaxRetrieveSize` limits the amount of objects that the runtime will return in a single request. When requesting more objects then allowed with a `retrieve_by_ids` XAS request the runtime will throw an error: ``retrieve_by_ids action tried to retrieve more objects then allowed by the `MaxRetrieveSize`. Amount of guids requested: (...), max amount of objects allowed: (...)``. For `retrieve`, `retrieve_by_path` and `retrieve_by_xpath` XAS requests the runtime will enforce the `MaxRetrieveSize` by setting a limit on the query. Here a warning will be logged when more objects where requested then allowed by the `MaxRetrieveSize` setting: ``A retrieve action requested more objects then allowed by the `MaxRetrieveSize` runtime setting. Amount requested: (...), allowed: (...).``
+The `MaxRetrieveSize` limits the number of objects that the runtime will return in a single request. When requesting more objects than allowed with a `retrieve_by_ids` XAS request, the runtime will throw an error: ``retrieve_by_ids action tried to retrieve more objects than allowed by the `MaxRetrieveSize`. Amount of guids requested: (...), max amount of objects allowed: (...)``
+For `retrieve`, `retrieve_by_path`, and `retrieve_by_xpath` XAS requests, the runtime will enforce the `MaxRetrieveSize` by setting a limit on the query. A warning will be logged when more objects were requested than allowed by the `MaxRetrieveSize` setting: ``A retrieve action requested more objects than allowed by the `MaxRetrieveSize` runtime setting. Amount requested: (...), allowed: (...).``
 
 ## Metrics Settings{#metrics-settings}
 
