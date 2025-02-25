@@ -197,17 +197,17 @@ If you want the pipeline to run when there is a push to one specific branch, you
 
 Here are some examples of valid branch expressions:
 
-* `Main` – The branch named "Main"
+* `main` – The branch named "main"
 * `*` – All branches
-* `Main*` – All branches that start with "Main"
-* `*Main` – All branches that end with "Main" 
+* `main*` – All branches that start with "main"
+* `*main` – All branches that end with "main" 
 
 Keep the following in mind:
 
 * Branch expressions are case sensitive.
 * White spaces are allowed.
-* Do not use multiple asterisks in the branch expression. For example, `**Main` is an invalid expression.
-* Do not use the asterisk between two words. For example, `Main*Main` is an invalid expression.
+* Do not use multiple asterisks in the branch expression. For example, `**main` is an invalid expression.
+* Do not use the asterisk between two words. For example, `main*main` is an invalid expression.
 
 #### Pipeline Variables and Dependent Steps
 

@@ -11,7 +11,7 @@ cascade:
 
 These release notes cover new features and improvements made to the [Compass](https://compass.home.mendix.com/) and [Portfolio Management](https://portfolio.mendix.com) tools.
 
-Compass and Portfolio Management are tools that can help you implement your Mendix Digital Execution strategy. For more information, see [Mendix Digital Execution](https://www.mendix.com/glossary/digital-execution/).
+Compass and Portfolio Management are tools that can help you implement your Mendix Digital Execution strategy. For more information, see [Digital Execution Practice](https://www.mendix.com/evaluation-guide/digital-execution-practice/).
 
 ## 2025
 
@@ -23,7 +23,7 @@ Compass and Portfolio Management are tools that can help you implement your Mend
 
 The [Compass](https://compass.home.mendix.com/) tool is made available to teams who want to plan and streamline the implementation of their first Mendix app. With the Compass tool, you can define your own vision of low-code and the apps that you want to build with Mendix, and then simplify their implementation by following a number of predefined best-practice milestones and action points. For more information about the tool, see [Preparing to launch your First Mendix App with Compass](/developerportal/compass/).
 
-{{% alert color="info" %}} This feature is currently available to participating customers. For more information, contact your Customer Service Manager. {{% /alert %}}
+{{% alert color="info" %}} This feature is currently available to participating customers. For more information, contact your Customer Support Manager. {{% /alert %}}
 
 ### November 7, 2024
 

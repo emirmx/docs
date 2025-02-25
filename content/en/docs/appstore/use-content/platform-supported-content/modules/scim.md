@@ -352,4 +352,10 @@ Your app may have multiple tenants in the Entra ID. Users created from any of th
 
 ### Troubleshooting
 
+#### Modifying Default-time Configuration at Runtime
+
 Attempting to edit or delete the default deploy-time configuration at runtime will result in errors. These errors indicate that the SCIM configuration was created at runtime with possible deploy-time overrides, as explained in the [Deploy-time configuration](#deploy-time) section above. You cannot modify such configurations at runtime using the admin screens.
+
+#### SCIM User Deactivation Due to Missing `active` Attribute in the `PUT` Request
+
+The issue occurs when the `active` attribute is missing in the first `PUT` request, causing the user to become inactive (`"active": false`). Once the user is inactive, any further `PUT` updates fail with a **500 Internal Server Error**. To prevent this, always include `"active": true` in the PUT requests to keep the user active. 
