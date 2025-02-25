@@ -13,6 +13,7 @@ Mendix offers different features which allow you to interact with any REST API. 
 ## Documents in This Category
 
 * [Consumed REST Services (Beta)](/refguide/consumed-rest-services-beta/), an overview on how to Consume a REST Service 
+* [Import an OpenAPI/Swagger contract](/refguide/consumed-rest-services-beta/#installation), instructions on how to create a Consumed REST Service from an OpenAPI/Swagger contract
 * [Call REST Service](/refguide/call-rest-action/), a description of the microflow action
 * [Use Call REST Service Action in a Microflow](/refguide/integration/use-call-rest-action-in-microflow/), instructions on how to use the Call REST Service action in a microflow
 * [HttpRequest and HttpResponse System Entities](/refguide/http-request-and-response-entities/), an overview of these system entities in your domain model
