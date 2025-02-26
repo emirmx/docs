@@ -1,5 +1,6 @@
 ---
 title: "Mendix on Azure Release Notes"
+linktitle: "Mendix on Azure"
 url: /releasenotes/developer-portal/mendix-on-azure/
 description: "Release notes for Mendix on Azure"
 weight: 200
