@@ -49,7 +49,7 @@ The following steps present an example of how you can interact with Maia Chat by
  
 3. Click the thumbs up icon ({{% icon name="thumbs-up" %}}) or the thumbs down icon ({{% icon name="thumbs-down" %}}) to give your feedback on an answer.  
  
-4. Click the add feedback icon ({{% icon name="notes-paper-edit" %}}) to provide a more detailed feedback. A detailed **Feedback** section shows below the answer: 
+4. Click the add feedback icon ({{% icon name="notes-paper-edit" %}}) to provide more detailed feedback. A detailed **Feedback** section shows below the answer: 
  
     * You can rate the **correctness**, **completeness**, and **readability** of the provided answer. 
  
