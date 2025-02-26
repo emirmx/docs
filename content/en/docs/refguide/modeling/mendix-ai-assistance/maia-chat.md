@@ -38,7 +38,7 @@ The chat interface appears at the right side of Studio Pro under the **Maia** pa
  
 ### An Example of Interacting with Maia Chat 
  
-You can start using Maia Chat by clicking one of the demo questions. You can also start by asking your own question in the chatbox.  
+You can start using Maia Chat by clicking one of the demo questions. Alternatively, you can ask your own question in the chatbox.  
  
 The following steps present an example of how you can interact with Maia Chat by asking your own question: 
  
