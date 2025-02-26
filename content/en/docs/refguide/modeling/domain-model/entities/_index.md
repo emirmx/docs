@@ -39,7 +39,7 @@ The entity type defines how the data is handled and there are four types:
 * External entity
     * External entities represent the link to datasets that are made available through shared data sources registered in Mendix Catalog. These type of entities are colored *purple* in the domain model. 
 * View entity (beta)
-    * View entities represent the result sets of stored OQL queries on one or more entities, similar to database viewsn, and are read-only. These entities are colored *green* in the domain model.
+    * View entities represent the result sets of stored OQL queries on one or more entities, similar to database views, and are read-only. These entities are colored *green* in the domain model.
 
 {{< figure src="/attachments/refguide/modeling/domain-model/entities/type-of-entities.jpg" class="no-border" width=="300" >}}
 
