@@ -18,7 +18,7 @@ With the Compass tool, you can define your own vision of low-code and the apps t
 
 ## Getting Started with Compass
 
-To enable Compass for your organization, contact your Mendix Customer Support Manager. 
+To enable Compass for your organization, contact your Mendix Customer Success Manager (CSM). 
 
 {{% alert color="info" %}}
 Compass is a tool intended for organizations that want to launch their first Mendix application. Many of the milestones and tasks are geared towards beginners, so teams which have already created one or more Mendix apps are less likely to find them useful.
@@ -28,7 +28,7 @@ After Compass has been enabled for your organization, a user with the Program Ow
 
 ### Inviting Team Members
 
-The Compass team involved in your Mendix implementation should include everyone that will help get Mendix implemented in your organization. This team is not the same as the app project team which will build the app itself, although for example a lead developer might be present in both. You can find out more about the team scope and responsibilities by perusing the action points in Compass.
+The Compass team involved in your Mendix implementation should include everyone that will help get Mendix implemented in your organization. This team is not the same as the app project team which will build the app itself, although for example, a lead developer might be present in both. You can find out more about the team's scope and responsibilities by perusing the action points in Compass.
 
 You can give members of the team access to Compass by performing the following steps:
 
@@ -70,7 +70,7 @@ Milestones and action points are predefined by Mendix, but you can also add your
 
 You can view and manage tasks by performing the following steps:
 
-1. In the **Program** section of the left navigation menu, click **Tasks**.
+1. In the **Program** section, click **Tasks**.
 2. To add a new task, click **Add Task**, and then provide the following information:
 
     * **Name** - Required. An identifying name for the task.
@@ -114,7 +114,7 @@ These focus areas are based on the [5 Ps of digital transformation](https://www.
 As a best practice, key results should be granular and measurable in the short term.
 {{% /alert %}}
 
-#### Managing your Key Results
+#### Managing Your Key Results
 
 To give your team transparency into the progress of your Mendix implementation, make sure to track the progress of your key results. You can do this by editing the value in the **Progress** field of a key result.
 
