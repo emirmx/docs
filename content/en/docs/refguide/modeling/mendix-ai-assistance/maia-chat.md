@@ -71,7 +71,7 @@ Maia Chat in Studio Pro has additional features which are indicated by the follo
    
     {{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/maia-chat/maia-chat-example.png" width="350px" >}} 
      
-    {{% alert color="info" %}}In Studio Pro 10.7.0 and above, you can also see the Mendix version of the references, the level required if the reference comes from Mendix Academy, and the date and answer status if the reference comes from the Mendix Community.{{% /alert %}} 
+    {{% alert color="info" %}}In Studio Pro 10.7.0 and above, you can also see the Mendix version of the references, the level of the learning path if the reference comes from Mendix Academy, and the date and answer status if the reference comes from the Mendix Community.{{% /alert %}} 
  
 ### Asking Follow-Up Questions 
  
