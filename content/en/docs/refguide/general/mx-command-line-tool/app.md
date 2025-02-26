@@ -308,3 +308,43 @@ These are the return codes:
 | `0` | No issues found. |
 | `100` | Validation error on the input. |
 | `300` | Exception, something went wrong. |
+
+## mx sync-java-dependencies Command {#java-dependencies}
+
+{{% alert color="info" %}}
+This command is available as of [Studio Pro 10.20](/releasenotes/studio-pro/10.20/).
+{{% /alert %}}
+
+The `mx sync-java-dependencies` command synchronizes the managed Java dependencies that are configured in the modules of the project.
+This results in the corresponding .*jar* files being added to the `vendorlib` directory in the project root.
+
+The input is a single .*mpr* file.
+
+{{% alert color="info" %}}
+The .*mpr* file must be the same version as mx.
+{{% /alert %}}
+
+### Usage
+
+Use the following command pattern for `mx sync-java-dependencies`:
+
+`mx sync-java-dependencies INPUT`
+
+For `INPUT`, enter an *.mpr* file.
+
+### Examples
+
+These are example commands:
+
+| Example | Result |
+| --- | --- |
+| `mx sync-java-dependencies C:\Mendix\App1\App1.mpr` | Synchronizes the managed Java dependencies of the project. |
+
+### Return Codes
+
+These are the return codes:
+
+| Return Code | Description |
+| --- | --- |
+| 0 | The command ran successfully. |
+| 1 | The command failed. For example, because the *.mpr* file could not be found. |
