@@ -252,7 +252,7 @@ The `mx translate` command allows you to export and import all translatable text
 This command is currently in public beta.
 
 {{% alert color="warning" %}}
-The default behavior is to exclude Marketplace modules from the exported texts. When they are updated, the texts from a previous export will not be imported correctly. Your translations will also be lost when importing a new version of a Marketplace module. This is a known limitation.
+A limitation of this command is that the default behavior is to exclude Marketplace modules from the exported texts. When they are updated, the texts from a previous export will not be imported correctly. Your translations will also be lost when importing a new version of a Marketplace module.
 {{% /alert %}}
 
 {{% alert color="info" %}}
