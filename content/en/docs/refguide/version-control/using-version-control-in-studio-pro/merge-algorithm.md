@@ -13,15 +13,14 @@ aliases:
 
 ## Introduction
 
-While working on your changes you may find that your local copy of the app model doesn't have all the changes that other team members have [committed](/refguide/commit-dialog/) to the server (the [Mendix Team Server](/developerportal/general/team-server/), or an [on-premises server](/refguide/on-premises-git/)).
-In Git terminology this is called 'being behind'.
+While working on your changes you may find that your local copy of the app model does not have all the changes that other team members have [committed](/refguide/commit-dialog/) to the server (the [Mendix Team Server](/developerportal/general/team-server/), or an [on-premises server](/refguide/on-premises-git/)). In Git terminology this is called being behind.
 
 When this happens, Mendix Studio Pro offers two ways to combine your changes with changes from the server: [Rebase](#rebase) and [Merge commit](#merge). 
 
 Both options support the following features when it comes to [resolving the conflicts](#resolve):
 
-* **Fine-grained conflict resolution** – When there are conflicting changes in a document, you do not have to choose between whole documents, resolving a conflict using your change or using their change. Instead, you can resolve conflicts at the level of individual elements, such as widgets, entities, attributes, or microflow actions. All non-conflicting changes from both sides are accepted automatically.
-* **No conflicts on changes to lists of widgets** – When two developers make changes to widgets in the same document there is no conflict, the changes are combined. However, if the changes are made too close to the same place in the document, a **list order conflict** is reported that reminds the developer who is merging the changes to decide on the final order of the widgets in the list.
+* Fine-grained conflict resolution – When there are conflicting changes in a document, you do not have to choose between whole documents, resolving a conflict using your change or using their change. Instead, you can resolve conflicts at the level of individual elements, such as widgets, entities, attributes, or microflow actions. All non-conflicting changes from both sides are accepted automatically.
+* No conflicts on changes to lists of widgets – When two developers make changes to widgets in the same document there is no conflict, the changes are combined. However, if the changes are made too close to the same place in the document, a list order conflict is reported that reminds the developer who is merging the changes to decide on the final order of the widgets in the list.
 * Can be aborted at any time. Studio Pro will continue from your latest local commit.
 
 The differences between the two approaches are as follows:
