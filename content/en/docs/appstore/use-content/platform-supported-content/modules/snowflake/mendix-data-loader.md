@@ -139,14 +139,20 @@ For example, for a data source with the ID *40FJYP9D*, the resulting statement w
 CALL MENDIX_DATA_LOADER.MX_FUNCTIONS.RUN_INGESTION_JOB('40FJYP9D','');
 ```
 
-## Setting Up Mail Notification on Failed Task Execution
+## Setting Up Mail Notifications on Failed Task Execution
 
-Snowflake provides build in alert/notification functionality. This "ALERT" object holds a condition that you can specify and use to check if tasks have failed and send notifications based on your conditional expression. To use this you need to create a ["NOTIFICATION INTEGRATION"](https://docs.snowflake.com/en/sql-reference/sql/create-notification-integration-email) and ["ALERT"]() using the NOTIFICATION INTEGRATION and system function ["SYSTEM$SEND_EMAIL"](https://docs.snowflake.com/en/sql-reference/stored-procedures/system_send_email).
-For other options using external integrations for sending all sorts of notifications you can check out this [blog post](https://medium.com/snowflake/introduction-to-snowflakes-data-pipeline-alerts-notifications-9beac8d127cc).
+Snowflake provides a built-in functionality for alerts and notifications. This `ALERT` object lets you specify a conditional expression to check if tasks have failed and send notifications if required. 
 
-### SQL to Setup Mail Notification
+To use this functionality, perform the following steps:
 
-The following is a template you can execute in a worksheet after filling in the specifics:
+1. Create a [notifcation integration email](https://docs.snowflake.com/en/sql-reference/sql/create-notification-integration-email).
+2. Create an [ALERT](https://docs.snowflake.com/en/sql-reference/commands-alert) using the notification integration and the ["SYSTEM$SEND_EMAIL"](https://docs.snowflake.com/en/sql-reference/stored-procedures/system_send_email) system function.
+
+For more information about using external integrations for sending all types of notifications, see [Introduction to Snowflake's data pipeline alerts & notifications](https://medium.com/snowflake/introduction-to-snowflakes-data-pipeline-alerts-notifications-9beac8d127cc).
+
+### Sample SQL to Set up a Mail Notification
+
+The following is a sample SQL template which you can customize with your data and execute in a worksheet:
 
 ```sql
 CREATE DATABASE IF NOT EXISTS <db name>;
