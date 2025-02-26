@@ -41,64 +41,58 @@ You can now configure the queries that you need to run on your Databricks databa
 
 ## Configuring a Basic Query
 
-This section provides an example of a query that determines the average minimum, maximum, and average temperature for a given postal code for the next 10 calendar days, based on the climate data in the **CLIMATOLOGY_DAY** view.
+In this section we will show you a very basic example of how to use the database connector to execute a query on your Databricks data. To do this you can create some data in your Databricks workspace. Navigate to the SQL Editor in your workspace and run the folowing sql command:
 
-To execute and test the query in Studio Pro, follow these steps:
+```sql
+CREATE TABLE customerData (
+    name varchar(64),
+    address varchar(64),
+    postal_code varchar(6),
+    gender varchar(64)
+); 
+
+INSERT INTO customerData (name, address, postal_code, gender) VALUES 
+    ('Henk de Vries', 'Klaprooslaan 5, Bloemenstad', '1234AB', 'Male'),
+    ('Sanne Verbeek', 'Molendam 8, Waterveen', '2345CD', 'Female'),
+    ('Jan-Willem Bos', 'Zonstraat 22, Zomerhoven', '3456EF', 'Male'),
+    ('Marieke de Groot', 'Windmolenweg 33, Korenveld', '4567GH', 'Female'),
+    ('Bert van Dijk', 'Vlinderplein 15, Lenteveen', '5678JK', 'Male'),
+    ('Lotte van Dam', 'Regenboogpad 10, Kleurenburg', '6789LM', 'Female'),
+    ('Koen Smits', 'Eikenlaan 2, Bosrijk', '7890NO', 'Male'),
+    ('Emma Visser', 'Druppelweg 45, Regenstad', '8901QP', 'Female'),
+    ('Thomas Mulder', 'Sterrenhof 7, Hemelrijk', '9012RS', 'Male'),
+    ('Sophie Jansen', 'Kersenstraat 12, Fruitdorp', '0123TU', 'Female');
+```
+
+This should have created a table with some entries that can now be queried from your Mendix application.
 
 1. In your Mendix app, in the **App Explorer**, find and open the external connection document that you created with the Connect to Database wizard.
-2. In the **Name** field, enter a name for your query, for example, *ClimateForecastNext10DaysQuery*.
+2. In the **Name** field, enter a name for your query, for example, *CustomerData_Get*.
 3. Enter the following **SQL Query**:
 
     ```sql
-    select POSTAL_CODE                                                   as "PostalCode"
-        , COUNTRY                                                        as "Country"
-        , doy_std                                                        as "DayOfYearClimate"
-        , dayofyear(CURRENT_DATE)                                        as "DayOfYearToday"
-        , current_date + doy_std - dayofyear(CURRENT_DATE)               as "ClimateDate"
-        , round((AVG_OF__DAILY_AVG_TEMPERATURE_AIR_F - 32) * (5 / 9), 1) as "AvgAvgTempCelsius"
-        , round((AVG_OF__DAILY_MIN_TEMPERATURE_AIR_F - 32) * (5 / 9), 1) as "AvgMinTempCelsius"
-        , round((AVG_OF__DAILY_MAX_TEMPERATURE_AIR_F - 32) * (5 / 9), 1) as "AvgMaxTempCelsius"
-    from  CLIMATOLOGY_DAY
-    where postal_code = {postal_code} 
-    and   ((doy_std + 365) - dayofyear (current_date)) % 365 <=10
-    order by doy_std asc
-    limit 10
+    SELECT * FROM customerData;
     ```
 
 4. Click **Run Query**.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/external-database-connector/sample-snowflake-query-basic.png" >}}
-
-    {{% alert color="info" %}}As shown in the above example, if your input parameters do no exactly match what the database needs, or if the output of the query does not match what you need in Mendix, you can cast or transform your data in your query. You can also use column aliases to help generate entities with the required names.{{% /alert %}}
+    {{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/Query.png" >}}
 
 5. Verify that the results are correct, and then generate the required entity to collect the data in your Mendix application. For more information, see [External Database Connector: Creating an Entity from the Response](/appstore/modules/external-database-connector/#create-entity).
-6. Create a page with a gallery widget to show the results. Above the gallery widget you need form to allow the user to specify a postalcode. For this you need to create an NPE, e.g. name Filter, with one field, postalcode. The gallery widget will get its data from the Microflow in the next step. You can refresh this widget by using a nanoflow to trigger refresh of the entity shown in the Gallery widget.
-
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/external-database-connector/sample-snowflake-gallery-page.png" >}}
-
-7. Create a microflow that will run the query by doing the following steps:
+6. Create a microflow that will run the query by doing the following steps:
     1. In the **App Explorer**, right-click on the name of your module, and then click **Add microflow**.
-    2. Enter a name for your microflow, for example, *ACT_RetrieveWeatherData*, and then click **OK**.
-    3. Set the Filter NPE as input parameter for your microflow.
-    4. In your **Toolbox**, find the **Query External Database** activity and drag it onto the work area of your microflow.
-    5. Position the **Query External Database** activity between the start and end event of your microflow.
-    6. Double-click the **Query External Database** microflow activity to configure the required parameters.
-    7. In the **Database** section, select your Snowflake database.
-    8. In the **Query** list, select the query name that you entered in step 2.
-    9. In the **Parameters** section, add the following parameter:
-        * **Name** - *postal_code*
-        * **Type** - **String**
-        * **Value** - *$Filter/PostalCode*
+    2. Enter a name for your microflow, for example, *ACT_Customerdata_Get*, and then click **OK**.
+    3. In your **Toolbox**, find the **Query External Database** activity and drag it onto the work area of your microflow.
+    4. Position the **Query External Database** activity between the start and end event of your microflow.
+    5. Double-click the **Query External Database** microflow activity to configure the required parameters.
+    6. In the **Database** section, select your Databricks database.
+    7. In the **Query** list, select the query name that you entered in step 2.
     10. In the **Output** section, provide the following values:
-        * **Return type** - **List of *{your module name}*.CLIMATOLOGY_FORECAST**
+        * **Return type** - **List of *{your module name}*.customerdata**
         * **Use return value** - set to **Yes**
-        * **List name** - enter *CLIMATOLOGY_DAY*
+        * **List name** - enter *Customerdata_list*
     11. Click **OK**.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/external-database-connector/sample-snowflake-query-basic-flow.png" >}}
+    {{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/JA_Query.png" >}}
 
-8. Specify the microflow as the datasource for the gallery widget.
-9. Run the page, provide a valid postalcode, and validate the result of the page.
-
-7. Configure a method for triggering the **ACT_RetrieveSentiment** microflow. For example, you can trigger a microflow by associating it with a custom button on a page in your app. For an example of how this can be implemented, see [Creating a Custom Save Button with a Microflow](/refguide/creating-a-custom-save-button/).
-8. Run the **ACT_RetrieveSentiment** microflow and verify the results.
+7. Use the microflow behind a microflow button and use the debugger to test if the objects are properly returned (or build a quick interface).
