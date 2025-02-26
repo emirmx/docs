@@ -92,7 +92,7 @@ Click **Copy ID** ({{% icon name="copy" %}}) on a pipeline design to copy the de
 
 Click **More Options** ({{% icon name="three-dots-menu-horizontal-filled" %}}) > **Edit** on a pipeline design to go to its **Details** page. From there, you can view and edit the pipeline details, as described in the [Editing a Pipeline](#edit-pipeline) section below.
 
-Click **More Options** ({{% icon name="three-dots-menu-horizontal-filled" %}}) > **Delete** to delete a pipeline design. You cannot delete a pipeline design if it is used in any currently running pipelines. Instead, you must wait for the run to finish, or cancel it before you delete the design.
+Click **More Options** ({{% icon name="three-dots-menu-horizontal-filled" %}}) > **Delete** to delete a pipeline design. You cannot delete a pipeline design if it is used in any currently running pipelines. Instead, you must wait for the run to finish before you delete the design.
 
 {{% alert color="warning" %}}
 If you delete a pipeline design in the **Designs** tab, any run history associated with that pipeline design is deleted from the **Runs** tab.
