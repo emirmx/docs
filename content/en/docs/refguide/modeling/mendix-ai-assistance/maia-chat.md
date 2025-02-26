@@ -36,7 +36,9 @@ The chat interface appears at the right side of Studio Pro under the **Maia** pa
  
 {{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/maia-chat/maia-chat-interface.png" width="300px">}} 
  
-### An Example of Interacting with Maia Chat 
+Under the **Maia** pane, there is also a tab called **Learn**. For more information, see [Maia Learn](/refguide/maia-learn/).
+
+### An Example of Interacting with Maia Chat
  
 You can start using Maia Chat by clicking one of the demo questions. Alternatively, you can ask your own question.  
  
