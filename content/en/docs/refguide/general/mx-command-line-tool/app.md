@@ -251,6 +251,8 @@ For example:
 The `mx translate` command allows you to export and import all translatable texts included in your Mendix application.
 This command is currently in public beta.
 
+Important to note is that the default behaviour is to exlude Marketplace modules from the exported texts. When they are updated the texts from a previous export will not be imported correctly. Your translations will be lost when importing a new version of a Marketplace module as well. This is a known limitation.
+
 {{% alert color="info" %}}
 The *.mpr* file must be the same version as the mx tool.
 {{% /alert %}}
@@ -279,6 +281,7 @@ These are the `OPTIONS`:
 | --- | --- | --- |
 | `--force-import`  | `-f` | Accepts some warnings and errors and tries to continue the import process. |
 | `--loose-version-check`  | `-l` | Converts the project to the version of the mx.exe, if it is a different version. |
+| `--include-marketplace-modules` | `-m` | By default the export does not include Marketplace modules. Adding this option will include them in the output. |
 
 {{% alert color="info" %}}
 Errors in the *.mpr* are always reported.
