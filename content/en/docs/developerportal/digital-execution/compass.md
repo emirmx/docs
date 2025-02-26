@@ -6,7 +6,7 @@ weight: 25
 description: "Describes the Compass tool."
 ---
 
-{{% alert color="info" %}} This feature is currently available to participating customers. For more information, contact your Customer Support Manager. {{% /alert %}}
+{{% alert color="info" %}} This feature is currently available to participating customers. For more information, contact your Mendix Customer Success Manager (CSM). {{% /alert %}}
 
 ## Introduction
 
@@ -84,7 +84,7 @@ You can view and manage tasks by performing the following steps:
 
 The new task is displayed on the **Tasks** page, as well as on the milestone with which it is associated.
 
-## Defining your Vision and Goals
+## Defining Your Vision and Goals
 
 As you work on the initial tasks of your implementation, you and your team should develop a shared vision of what low-code with Mendix means for your organization. Compass helps you define and support that vision on the **Vision and Goals** page.
 
