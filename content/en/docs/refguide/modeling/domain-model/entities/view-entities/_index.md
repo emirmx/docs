@@ -29,13 +29,32 @@ Your app must use OQL version 2 to use view entities. You can change this settin
 
 ## Properties 
 
-After adding a view entity, you can specify the OQL query by double-clicking the entity to open the view entity properties dialog:
+Double-clicking a view entity to open its properties dialog box. An example of a view entity's properties dialog box is represented in the image below:
 
 {{< figure src="/attachments/refguide/modeling/domain-model/use-view-entities/customer-with-address.png" width="500" >}}
 
-### General
+View entity properties consist of the following sections:
 
-The **General** field contains the **OQL editor** and the **Preview data** table.
+* [General](#general)
+* [OQL editor](#oql-editor)
+* [Access rules](#access-rules)
+* [Documentation](#documentation)
+
+### General Section {#general}
+
+#### Name {#name}
+
+The name property defines the name of the view entity. This name is used to refer to the view entity in forms, microflows, queries, constraints, etc.
+
+The name has to be unique only within the domain model of a module. You can have two view entities with the same name, provided that they are in the domain models of different modules.
+
+#### Image {#image}
+
+The image property can be used to associate an image with a view entity. In the domain model, this image is shown in the top-left corner of the view entity. The image is also shown in other places where view entities are mentioned, such as the entity selection pop-up window when selecting an entity for a data view.
+
+### OQL Editor Section {#oql-editor}
+
+This section contains the **OQL editor** and the **Preview data** table.
 
 The **OQL editor** allows you to write the query that defines this view entity. While writing this query, the editor suggests names of the entities and attributes in your domain model, as well as allowed clauses, operators, and functions. If the query is not valid, a list of validation errors will be displayed underneath the editor with the line and column number of the place where the error was found.
 
@@ -45,7 +64,7 @@ The resulting names and types of the attributes will be displayed as column head
 The **Preview data** table tries to retrieve the data using your OQL query from the running app. This means if you have changed your domain model since you last started the app, you can run into errors when the OQL query uses attributes or entities that do not yet exist in the version of the app that is running.
 {{% /alert %}}
 
-### Access Rules
+### Access Rules {#access-rules}
 
 When the security level of the app is set to **Production**, the **Access rules** tab becomes available in the view entity properties.
 
@@ -53,7 +72,7 @@ Assigning write access to an attribute allows the selected module role to edit t
 
 Direct writing from the view entity to its source entities is not supported, but you can set up a microflow to retrieve and update the source entities to achieve this.
 
-### Documentation
+### Documentation {#documentation}
 
 You can add any local information about the view entity in this tab. This is also available to other users working on the app.
 
