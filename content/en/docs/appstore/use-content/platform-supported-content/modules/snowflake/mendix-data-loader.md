@@ -139,6 +139,49 @@ For example, for a data source with the ID *40FJYP9D*, the resulting statement w
 CALL MENDIX_DATA_LOADER.MX_FUNCTIONS.RUN_INGESTION_JOB('40FJYP9D','');
 ```
 
+## Setting Up Mail Notification on Failed Task Execution
+
+Snowflake provides build in alert/notification functionality. This "ALERT" object holds a condition that you can specify and use to check if tasks have failed and send notifications based on your conditional expression. To use this you need to create a ["NOTIFICATION INTEGRATION"](https://docs.snowflake.com/en/sql-reference/sql/create-notification-integration-email) and ["ALERT"]() using the NOTIFICATION INTEGRATION and system function ["SYSTEM$SEND_EMAIL"](https://docs.snowflake.com/en/sql-reference/stored-procedures/system_send_email).
+For other options using external integrations for sending all sorts of notifications you can check out this [blog post](https://medium.com/snowflake/introduction-to-snowflakes-data-pipeline-alerts-notifications-9beac8d127cc).
+
+### SQL to Setup Mail Notification
+
+The following is a template you can execute in a worksheet after filling in the specifics:
+
+```sql
+CREATE DATABASE IF NOT EXISTS <db name>;
+
+CREATE SCHEMA IF NOT <schema name>;
+
+USE SCHEMA <schema name>;
+
+CREATE OR REPLACE NOTIFICATION INTEGRATION <NOTIFICATION INTEGRATION name>
+  TYPE = EMAIL
+  ENABLED = TRUE
+  ALLOWED_RECIPIENTS = ('<mail1@company.com>', '<mail2@company.com>', ...);
+
+CREATE OR REPLACE ALERT <ALERT name>
+  WAREHOUSE = <warehouse name>
+  SCHEDULE = '<integer> MINUTE' -- Or use CRON e.g. 15 * * * * UTC
+  IF (
+    EXISTS (
+      SELECT 1
+      FROM SNOWFLAKE.ACCOUNT_USAGE.TASK_HISTORY
+      WHERE (STATE = 'FAILED' OR STATE = 'FAILED_AND_AUTO_SUSPENDED') AND NAME = '<task name>'
+        AND SCHEDULED_TIME >= CONVERT_TIMEZONE('UTC',DATEADD(MINUTE, -<integer>, CURRENT_TIMESTAMP()))
+    )
+  )
+  THEN CALL SYSTEM$SEND_EMAIL(
+    '<NOTIFICATION INTEGRATION name>',
+    ('<mail1@company.com>', '<mail5@company.com>', ...) --Subset of ALLOWED_RECIPIENTS in NOTIFICATION INTEGRATION. 
+    '<Mail subject>',
+    '<Mail Body>.'
+  );
+
+ALTER ALERT <ALERT name> RESUME; -- The ALERT has STATE Suspended when created and is started by this statement
+
+SHOW ALERTS;
+```
 ## Verifying the Access Token
 
 When using OAuth authentication with the Mendix Data Loader, it is crucial to verify the access token received by your Mendix application. This verification process ensures the token's authenticity and integrity, protecting your application from unauthorized access attempts.
