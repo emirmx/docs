@@ -76,6 +76,6 @@ Direct writing from the view entity to its source entities is not supported, but
 
 You can add any local information about the view entity in this tab. This is also available to other users working on the app.
 
-## Using a View Entity
+## Using a View Entity 
 
 After creating a view entity in the domain model, it can be used in microflows and pages like any other entity. For more information, see [Use View Entities](/refguide/use-view-entities/).
