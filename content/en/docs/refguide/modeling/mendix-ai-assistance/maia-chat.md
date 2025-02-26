@@ -12,7 +12,7 @@ aliases:
 ## Introduction  
  
 {{% alert color="info" %}} 
-MendixChat was rebranded to Maia Chat and released in GA in Studio Pro 10.12.0. It is also available in the Mendix Portal. 
+Maia Chat was released for GA in Studio Pro 10.12.0. From Studio Pro 10.6 to 10.11, it was available as a beta feature and called MendixChat. Maia Chat is also available in the Mendix Portal. 
 {{% /alert %}} 
  
 {{% alert color="info" %}} 
