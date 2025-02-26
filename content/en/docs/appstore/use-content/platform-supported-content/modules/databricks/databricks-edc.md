@@ -16,7 +16,7 @@ This how-to describes the steps required to enable your app to use the External 
 
 To connect your Mendix application to Databricks with the External Database connector, follow these steps:
 
-1. [Install the External Database connector](/appstore/modules/external-database-connector/#installation). If you are using Studio Pro 10.19, please make sure to use the latest version 5.2.0 [External Database Connector](https://marketplace.mendix.com/link/component/219862).
+1. [Install the External Database connector](/appstore/modules/external-database-connector/#installation). Please make sure to use the latest version 5.2.0 or higher [External Database Connector](https://marketplace.mendix.com/link/component/219862).
 2. Download the latest [JDBC driver](https://www.databricks.com/spark/jdbc-drivers-archive) that Databricks provides and put the .jar file in to the userlib of your Mendix project.
 3. Run the [Connect to Database wizard](/appstore/modules/external-database-connector/#configuration) and select **Other** as the database type.
 
@@ -27,7 +27,7 @@ To connect your Mendix application to Databricks with the External Database conn
 
 {{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/PAT.png" >}}
    
-7. In your Databricks account find the JDBC URL related to the SQL Warehouse or Cluster you are using and copy it into the JDBC URL field and add UID=token;PWD=<PAT> where <PAT> should be replaced with your actual PAT.
+7. In your Databricks account find the JDBC URL related to the SQL Warehouse or Cluster you are using and copy it into the JDBC URL field and add UID=token;PWD=**PAT** where **PAT** should be replaced with your actual PAT.
 
 {{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/JDBC_URL.png" >}}
   
@@ -37,7 +37,7 @@ Your Mendix app now connects to Databricks with the provided connection details.
 
 {{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/Database_structure.png" >}}
 
-You can now configure the queries that you need to run on your Databricks database. The following sections of this document provide examples of some common queries. For general information about creating queries, see [External Database Connector: Querying a Database](/appstore/modules/external-database-connector/#query-database) and [External Database Connector: Using Query Response](/appstore/modules/external-database-connector/#use-query-response).
+You can now configure the queries that you need to run on your Databricks database. The following section of this document provides an example of a common query. For general information about creating queries, see [External Database Connector: Querying a Database](/appstore/modules/external-database-connector/#query-database) and [External Database Connector: Using Query Response](/appstore/modules/external-database-connector/#use-query-response).
 
 ## Configuring a Basic Query
 
