@@ -44,7 +44,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Improvements
 
-* Based on user feedback, the [new UI](/developerportal/deploy/environments-redesign/) also contains UX improvements to the **Environments Overview** page for paid apps.
+* Based on user feedback, the [new UI](/developerportal/deploy/environments-redesign/) now also contains UX improvements to the **Environments Overview** page for paid apps.
 
 ## 2024
 
