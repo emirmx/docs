@@ -143,7 +143,7 @@ This is a mandatory step for each pipeline; you cannot delete this step. This st
 {{% alert color="info" %}}
 The Teamserver push (Git) command requires a Git repository. Customers using an SVN repository for their Mendix app cannot use this trigger.
 
-Ensure that you only create one pipeline per app with the Teamserver push (Git) trigger and the same [branch expression](#branch-expression). If you create multiple pipelines with the Teamserver push (Git) trigger and the same expression, only the first of those pipelines is executed.
+Ensure that you only create one pipeline per app with the Teamserver push (Git) trigger and the same [branch expression](#branch-expression). If you create multiple pipelines with the Teamserver push (Git) trigger and the same expression, only the pipeline that you created first is executed.
 {{% /alert %}}
 
 ##### Checkout
