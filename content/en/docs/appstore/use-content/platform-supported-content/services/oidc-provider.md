@@ -426,7 +426,7 @@ Some examples of existing claims are:
 
 This section applies only when your client is using the authorization code grant.
 
-#### OIDC Provider Acting as an Identity Provider (IdP)
+#### Provider App Acting as an Identity Provider (IdP)
 
 Consider a scenario, where you build an app using the [OIDC Provider](https://marketplace.mendix.com/link/component/214681) service. You can call this app an OIDC Provider app or Provider app. Other apps using the [OIDC SSO](https://marketplace.mendix.com/link/component/120371) module redirect end-users to your Provider app for authentication. You can choose how your Provider app handles the authentication process.
 The **LoginLocation** is a constant in the OIDC Provider service that controls where end-users are authenticated. The default value is a local sign in using a username and password as shown below:
