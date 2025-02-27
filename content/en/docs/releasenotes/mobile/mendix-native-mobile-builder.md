@@ -5,6 +5,7 @@ url: /releasenotes/mobile/mendix-native-mobile-builder/
 weight: 11
 description: "Mendix Native Mobile Builder release notes."
 #This document is mapped to the landing page, update the link there if renaming or moving the doc file.
+# KI: "Line endings": SOLP-1794
 ---
 
 The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Studio Pro, which helps you build your Mendix native mobile app. After the Mendix Native Mobile Builder simplifies your build process, you can do what you want most: test and publish your app. The Mendix Native Mobile Builder uses MxBuild, GitHub, and App Center to simplify the app building process and is directly accessible via Mendix Studio Pro. 
@@ -16,23 +17,29 @@ The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Stu
 **Release date: February 20, 2025**
 
 #### Fixes
+
 * We fixed an issue where the Native Builder UI (NBUI) was not persisting selected permissions.
 * We fixed an issue where the **Runtime URL** field in NBUI did not accept URLs with subpaths.
 * We resolved a problem where renaming the default configuration broke updates.
 
-#### Known issue
-There is an issue updating Native Mobile Builder to this version, as there is an issue with the signing certificate. Native Mobile Builder gets stuck on the loading screen, because the update fails.
-We are in the process of fixing the signing certificate, until this is resolved the following steps can be performed as a workaround:
-- Uninstall the current version: `C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe`
-- Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-Note: if Windows security policies prevent you from doing this you can do the following:
-  - Right-click the installer
-  - Select "Properties"
-  - Check "Unblock"
-  - Click "OK"
-Afterwards run the installer again.
+#### Known Issues
 
-When these steps are performed successfully you can start Studio Pro again and Native Mobile Builder should load correctly.
+A known issue affects updating your Native Mobile Builder to this version. Specifically, there is an issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+
+We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
+
+1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
+1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
+
+{{% alert color="info" %}}
+**Windows Security Note**: If Windows security policies prevent you from accomplishing the above, do the following:
+1. Right-click the installer.
+1. Click **Properties**.
+1. Select **Unblock**.
+1. Click **OK**.
+{{% /alert %}}
+
+After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
 
 ### Release 1.0.133
 
