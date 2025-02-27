@@ -16,6 +16,15 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
+### February 27, 2025
+
+#### Improvements
+
+* We have added a validation mechanism for pipeline designs, which prevents users from deleting a design if any pipelines using that design are currently running. For more information, see [Pipelines: Editing a Pipeline Design](/developerportal/deploy/pipelines/#edit-pipeline). 
+* You can now access the **Details** page of a pipeline at any point, also while the pipeline is running. For more information, see [Pipelines: Run Results](/developerportal/deploy/pipelines/#run-results).
+
+## 2025
+
 ### February 20, 2025
 
 #### Improvements
@@ -35,7 +44,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Improvements
 
-* Also as part of the new UI we made improved the experience of using the **Environments Overview** page for paid apps – this is based on your feedback, thanks.
+* Based on user feedback, the [new UI](/developerportal/deploy/environments-redesign/) now also contains UX improvements to the **Environments Overview** page for paid apps.
 
 ## 2024
 
