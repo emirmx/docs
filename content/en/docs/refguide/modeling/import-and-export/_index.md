@@ -72,13 +72,27 @@ To import module packages through the App Explorer in Studio Pro, follow these s
 
     {{< figure src="/attachments/refguide/modeling/import-and-export/import-module.png" class="no-border" >}}
 
-    {{% alert color="info" %}}If you replace the module with a new version, the existing user data will be retained based on the names of entities, attributes, and associations. If you delete a module and then add a newer version of it, all user data will be lost.{{% /alert %}}
+    {{% alert color="info" %}}
+    If you replace the module with a new version, the existing user data will be retained based on the names of entities, attributes, associations, microflows, workflows and workflow activities.
+    The following rules apply:
+    - Entities are matched by name; if the name changed in a new version of the module, the entities and all associated data is removed from the database. An empty table is created for the 'new' entity.
+    - Attributes are matched by name; if the name changed in a new version of the module, all attribute data is removed from the database. An attribute with the new name is added to the entity, with empty data.
+    - Associations are matched by name; if the name changed in a new version of the module, all association data is removed from the database. The associated entities are not deleted.
+    - Microflows are matched by name; if the name changed in a new version of the module, it can occur that clients experience errors when trying to invoke a microflow from a page.
+    - Workflows are matched by name; if the name changed in a new version of the module, all existing workflow instances will be aborted.
+    - Workflow activities are matched by their name property; if the name changed in a new version of the module, then existing workflow instances may become incompatible.
+    - The paths of parallel splits (in workflows) are matched by their position; if their order changed in a new version of the module, or paths were added or removed, then existing workflow instances may become incompatible.
+    - The outcomes of user tasks (in workflows) are matched by value; if the outcome value is changed in a new version of the module, then existing workflow instances may become incompatible.
+    - The boundary events of workflow activities are matched by their position; if their order changed in a new version of the module, or events were added or removed, then existing workflow instances may become incompatible.
+    {{% /alert %}}
+    
+    {{%alert color="info"}}If you delete a module and then add a newer version of it, all user data will be lost.{{% /alert %}}
 
-4. Click **Import**. You may see a **Warning** pop-up window that will inform you of any included module dependencies that will be overwritten in your app.
+5. Click **Import**. You may see a **Warning** pop-up window that will inform you of any included module dependencies that will be overwritten in your app.
 
     {{% alert color="info" %}}Widgets are only overwritten when an imported module contains a newer version of the widget.{{% /alert %}}
 
-5. Click **OK**. 
+6. Click **OK**. 
 
 If you are importing a module with the *.mxmodule* extension, a dialog informing you about the imported add-on module is displayed:
 {{< figure src="/attachments/refguide/modeling/import-and-export/mxmodule-notification.png" class="no-border" >}}
