@@ -18,11 +18,11 @@ The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Stu
 
 #### Fixes
 
-* We fixed an issue where the Native Builder UI (NBUI) was not persisting selected permissions.
-* We fixed an issue where the **Runtime URL** field in NBUI did not accept URLs with subpaths.
+* We fixed an issue where the Native Mobile Builder was not persisting selected permissions.
+* We fixed an issue where the **Runtime URL** field in the Native Mobile Builder did not accept URLs with subpaths.
 * We resolved a problem where renaming the default configuration broke updates.
 
-#### Known Issues {#updating-NBUI}
+#### Known Issues {#updating-your-native-mobile-builder}
 
 A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
 
