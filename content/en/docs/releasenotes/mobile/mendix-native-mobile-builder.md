@@ -11,6 +11,29 @@ The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Stu
 
 ## 2025
 
+### Release 1.0.134
+
+**Release date: February 20, 2025**
+
+#### Fixes
+* We fixed an issue where selected permissions would not be persisted.
+* We resolved an issue where renaming the default configuration would break updates.
+* We fixed an issue where the Runtime URL was not accepting URLs with subpaths.
+
+#### Known issue
+There is an issue updating Native Mobile Builder to this version, as there is an issue with the signing certificate. Native Mobile Builder gets stuck on the loading screen, because the update fails.
+We are in the process of fixing the signing certificate, until this is resolved the following steps can be performed as a workaround:
+- Uninstall the current version: `C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe`
+- Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
+Note: if Windows security policies prevent you from doing this you can do the following:
+  - Right-click the installer
+  - Select "Properties"
+  - Check "Unblock"
+  - Click "OK"
+Afterwards run the installer again.
+
+When these steps are performed successfully you can start Studio Pro again and Native Mobile Builder should load correctly.
+
 ### Release 1.0.133
 
 **Release date: January 7, 2025**
