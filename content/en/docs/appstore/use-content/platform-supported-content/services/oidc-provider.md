@@ -426,16 +426,24 @@ Some examples of existing claims are:
 
 This section applies only when your client is using the authorization code grant.
 
+#### OIDC Provider Acting as an Identity Provider (IdP)
+
 Consider a scenario, where you build an app using the [OIDC Provider](https://marketplace.mendix.com/link/component/214681) service. You can call this app an OIDC Provider app or Provider app. Other apps using the [OIDC SSO](https://marketplace.mendix.com/link/component/120371) module redirect end-users to your Provider app for authentication. You can choose how your Provider app handles the authentication process.
 The **LoginLocation** is a constant in the OIDC Provider service that controls where end-users are authenticated. The default value is a local sign in using a username and password as shown below:
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/oidc-provider/Basic_Username_Password.png" class="no-border" >}}
 
+#### Provider App Acting as an IAM Broker
+
 However, if you want the Provider app to act as an IAM broker, you need to redirect the authorization request within your Provider app to the endpoint of the local SSO module you choose to use. To do so, perform the steps below:
 
 1. Set the **LoginLocation** to the login URL of the SSO module.
-1. Include the return parameter name.
-For example, `SSO/Login?cont=` is the login URL and `cont` is the return parameter name.
+2. When you use the OIDC SSO as local SSO module in the provider application, set the **LoginLocation** value as `oauth/v2/login?cont=`.
+3. When you deployed your application on Mendix Cloud and linked to a licensed node, set the below values in the **Custom Runtime Settings**.
+
+| Setting type | Current value | New value |
+| --- | --- | --- |
+| com.mendix.core.SamSiteCookies | LAX | LAX |
 
 ## Configuring an OIDC Client
 
