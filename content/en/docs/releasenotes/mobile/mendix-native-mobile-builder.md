@@ -5,7 +5,7 @@ url: /releasenotes/mobile/mendix-native-mobile-builder/
 weight: 11
 description: "Mendix Native Mobile Builder release notes."
 #This document is mapped to the landing page, update the link there if renaming or moving the doc file.
-# KI: "Line endings": SOLP-1794
+# KI: "updating your Native Mobile Builder": MOO-1791
 ---
 
 The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Studio Pro, which helps you build your Mendix native mobile app. After the Mendix Native Mobile Builder simplifies your build process, you can do what you want most: test and publish your app. The Mendix Native Mobile Builder uses MxBuild, GitHub, and App Center to simplify the app building process and is directly accessible via Mendix Studio Pro. 
@@ -22,9 +22,9 @@ The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Stu
 * We fixed an issue where the **Runtime URL** field in NBUI did not accept URLs with subpaths.
 * We resolved a problem where renaming the default configuration broke updates.
 
-#### Known Issues
+#### Known Issues {#updating-NBUI}
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is an issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
