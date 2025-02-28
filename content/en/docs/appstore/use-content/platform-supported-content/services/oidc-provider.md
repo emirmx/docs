@@ -220,10 +220,10 @@ To check that this works, you will need a tool for testing APIs (such as [Postma
 1. Select **Automatic Registration**.
 1. Take a copy of the **Bearer Registration Access token** and the **Registration URI**.
 1. In your API testing tool, set up the following:
-    * a **POST** command to the **Registration URI** with the endpoint `/oidc/register`, for example, for a locally-deployed app, `http://localhost:8080/oidc/register`
-    * an HTTP header with **Key** = "Authorization" and **Value** = **Bearer Registration Access token**
-    * an HTTP request body with the following format (for a Client `ClientID` which is running on host and port `localhost:8081`):
-1. For the `grant_types`: `authorization_code` and `refresh token`
+    * A **POST** command to the **Registration URI** with the endpoint `/oidc/register`, for example, for a locally-deployed app, `http://localhost:8080/oidc/register`
+    * An HTTP header with **Key** = "Authorization" and **Value** = **Bearer Registration Access token**
+    * An HTTP request body with the following format (for a Client `ClientID` which is running on host and port `localhost:8081`)
+1. For the `grant_types`: `authorization_code` and `refresh token` properties:
 
     ```json
     {
@@ -253,7 +253,7 @@ To check that this works, you will need a tool for testing APIs (such as [Postma
     }
     ```
 
-1. For the `grant_types`: `client_credentials`
+1. For the `grant_types`: `client_credentials` properties:
 
     ```json
     {
@@ -281,43 +281,43 @@ To check that this works, you will need a tool for testing APIs (such as [Postma
 
 #### Manual Client Registration
 
-If you cannot use automatic registration, you can register the client manually.
+If you cannot use automatic registration, you can register the client manually:
 
 1. Select **Manual Registration**. There are below two options **To support different types of grant-type**.
 
     * Allow Client-Credentials grant type
     * Allow Authorization-Code grant type
 
-2. Select any option and add the following information:
+1. Select any option and add the following information:
 
     * **Client Name** – a name for this client so that it is easy to identify
     * **Client ID** – a unique string which identifies this client
     * **Alias** – usually the same as *Client Name* but can be different
     * **Client Secret** – the client password to allow the client to authenticate to the OIDC Provider service
 
-    Additionally, you need to add below information if you select **Allow Authorization-Code grant type**
+1. Additionally, you need to add below information if you select **Allow Authorization-Code grant type**:
 
     * **Post Logout redirect URI** – the fully qualified logout url, `<appurl>/logout` — for example, for testing a local OIDC SSO app on port `8081`, `http://localhost:8081/logout`
     * **Redirect URI** – Redirects support both URIs with and without a port. For example, `http://localhost/oauth/v2/callback` and `http://localhost:8081/oauth/v2/callback` for testing a local OIDC SSO app on port `8081`.
     * **Back channel logout session support**
     * **Front channel Logout URI**
 
-3. Select the **Allow Token Refresh grant type** option to enable refresh token generation. This option is visible only when the **Allow Authorization-Code grant type** is selected. When you want your provider app to generate refresh tokens to your client Mendix app, ensure the following:
+1. Select the **Allow Token Refresh grant type** option to enable refresh token generation. This option is visible only when the **Allow Authorization-Code grant type** is selected. When you want your provider app to generate refresh tokens to your client Mendix app, ensure the following:
 
     1. Both **Allow Token Refresh grant type** and **Allow Authorization-Code grant type** options are selected.
-    2. The `offline_access` scope is selected.
+    1. The `offline_access` scope is selected.
 
 #### Configuring Centralized Authorization{#configuring-authorization}
 
 This section applies only when your client is using the authorization code grant. There are two alternatives for [centralized authorization](#centralized-auth). You can use scopes, or a custom user claim.
 
-Choose one of the two options, below.
+Choose one of the two options in the subsections below.
 
 Whichever option you choose, you will need to use Custom User Provisioning in the OIDC SSO module of your client app to assign the correct user roles to the end-user. For more information, see the [Runtime Configuration of End-user Onboarding](/appstore/modules/oidc/#custom-provisioning-rt) section of *OIDC SSO*.
 
 ##### Configuration of the OIDC Provider for Centralized Authorization with Scopes{#configure-scopes}
 
- When you follow the recommended approach for [centralized authorization](#centralized-auth) using OAuth scopes, the OIDC Provider needs to know which user roles have been implemented in your Mendix apps, so the client can assign those user roles.
+ When you follow the recommended approach for [centralized authorization](#centralized-auth) using OAuth scopes, the OIDC Provider needs to know which user roles have been implemented in your Mendix apps so that the client can assign those user roles.
 
 The scope values (user roles) that you assign to the authenticated user in the OIDC Provider are sent to your app in both the ID-token and Access Token. Communicating authorization via Access Token is the standard approach when using OAuth. If your client app consumes APIs, it can forward the Access Token as a bearer token in the http authorization header in such API calls.
 
@@ -329,9 +329,10 @@ To return requested scopes to your client app, you need to perform the following
     1. Use the **Name** as the user role in your client app.
     1. From version 1.1.0 you can also use the UUID of the user role in your client app.
 
-        The benefit of this second approach is that it avoids ‘scope collision’. In other words, you avoid having confusion between user roles with the same name but in different apps.
+        The benefit of this second approach is that it avoids scope collision. This means you avoid multiple user roles with the same name located in different apps.
 
     If your client app consumes APIs and wants to get access using the Access Token from the OIDC Provider, you may want to configure additional scope values, as required by those APIs.
+
 {{% alert color="warning" %}}
 Do not create scopes with the same name as standard scopes (as defined in the [OIDC specs](https://openid.net/specs/openid-connect-core-1_0.html#ScopeClaims)), for example:
 
@@ -340,6 +341,7 @@ Do not create scopes with the same name as standard scopes (as defined in the [O
 * profile
 * phone
 {{% /alert %}}
+
 {{% alert color="info" %}}
 The scopes you configure are not added automatically to the "scopes_supported" attribute on the OIDC Provider’s well-known endpoint. You must manually configure the scope value in your client app to be able to request it.
 {{% /alert %}}
