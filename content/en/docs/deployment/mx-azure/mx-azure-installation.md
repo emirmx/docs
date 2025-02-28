@@ -62,6 +62,28 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
 
     The initialization process takes ca. 15 minutes. It creates a resource group in the managed app that you created in step 3 above. Once the cluster is initialized successfully, a corresponding cluster and namespace are created in the the Private Cloud portal. The namespace is also configured automatically, as described in [Standard Operator: Running the Tool](https://docs.mendix.com/developerportal/deploy/standard-operator/#running-the-tool). The cluster cannot be deleted from the Private Cloud portal. If you want to remove it, you must delete it in the Microsoft Azure portal.
 
+## Enabling Connections Between Different Azure Resource Groups
+
+If your Mendix managed app is in a different Azure resource group than the user machines which must connect to it, you may need to perform additional steps to enable connections between these resource groups.
+
+### Example Situation
+
+The following diagram shows two managed resource groups. One of them contains the Mendix managed app, and the other - a user machine that must access Mendix, along with a backend virtual machine that the Mendix app must access. Connections between the two resource groups are not enabled, resulting in access issues.
+
+{{< figure src="/attachments/deployment/mx-azure/separate-resource-groups.png" class="no-border" >}}
+
+#### Potential Solution 1: Virtual Network Peering
+
+The following diagram shows one potential solution to the access issue. Bi-directional [virtual network peering](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview) has been configured between the two resource groups.
+
+{{< figure src="/attachments/deployment/mx-azure/virtual-network-peerings.png" class="no-border" >}}
+
+#### Potential Solution 2: Private Endpoints
+
+Another possible solution can be achieved by using [private endpoints](https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview). In the following diagram, a private endpoint has been added to each resource group. The private endpoint connects to a private link in the other resource group, which in turn connects to an internal load balancer.
+
+{{< figure src="/attachments/deployment/mx-azure/private-endpoints.png" class="no-border" >}}
+
 ## Deploying an App to an Azure Cluster
 
 After creating your cluster in Microsoft Azure, you can deploy now deploy your applications to the cluster. The deployment process is the same as with Mendix for Private Cloud. For more information, see [Deploying a Mendix App to a Private Cloud Cluster](/developerportal/deploy/private-cloud-deploy/).
