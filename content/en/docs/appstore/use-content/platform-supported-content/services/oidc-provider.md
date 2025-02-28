@@ -62,7 +62,7 @@ Instead of using local credentials in the Central Portal App, you may want to in
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/oidc-provider/API_consumption.png" class="no-border" >}}
 
-For API security, it is a best practice to use OAuth-tokens rather than API-keys. OAuth tokens are also known as bearer tokens, access tokens, or simply JWTs. You have below two options for using OAuth tokens:
+For API security, it is a best practice to use OAuth-tokens rather than API-keys. OAuth tokens are also known as bearer tokens, access tokens, or simply JSON web tokens (JWTs). You have below two options for using OAuth tokens:
 
 * Use human identities: An end-user logs in via SSO, allowing the client application to consume the API on behalf of your end-user, using the OAuth access token which is received from the SSO process. 
 
