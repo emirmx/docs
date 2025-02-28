@@ -65,15 +65,3 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
 ## Deploying an App to an Azure Cluster
 
 After creating your cluster in Microsoft Azure, you can deploy now deploy your applications to the cluster. The deployment process is the same as with Mendix for Private Cloud. For more information, see [Deploying a Mendix App to a Private Cloud Cluster](/developerportal/deploy/private-cloud-deploy/).
-
-## Editing the Cluster in the Mendix on Azure Portal
-
-If required, you can change the following options for your cluster:
-
-* AKS service tier
-* AKS node size
-* VM type
-* Load balancer type
-* Postgres compute SKU
-*  Postgres performance tier for storage IOPS
-* Custom tags

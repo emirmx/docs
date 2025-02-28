@@ -85,9 +85,21 @@ This opens the **Support Tickets** page, which shows your current and past suppo
 By opening a support ticket, you consent to sharing the relevant logs with the Mendix Support team for the purpose of troubleshooting the reported issue.
 {{% /alert %}}
 
+When you create a support ticket in the Mendix on Azure portal, a Zendesk ticket is automatically created for you. To view it, click **Go to ticket**. You can then add additional comments on the Zendesk ticket if required.
+
+{{< figure src="/attachments/deployment/mx-azure/support-overview.png" class="no-border" >}}
+
+Your tickets can have the following statuses:
+
+* **On Hold**
+* **Awaiting your reply**
+* **Solved**
+
+The status is updated based on the current status of the ticket in the Zendesk. To see the latest status of the ticket, click the **Refresh** button.
+
 ### Automatic Support Tickets
 
-Mendix on Azure can also automatically create support tickets for you. If a cluster fails to initialize and rerunning it manually does not resolve the issue, a support request with relevant logs attached is automatically created in the Support Center. Mendix Support is notified about the issue through Zendesk. You can follow the link from the support ticket to Zendesk to view its status or add additional comments.
+Mendix on Azure can also automatically create support tickets for you. If a cluster fails to initialize and rerunning it manually does not resolve the issue, a support request is automatically created in the Support Center. Mendix Support is notified about the issue through Zendesk. You can follow the link from the support ticket to Zendesk to view its status or add additional comments.
 
 ## Service Updates and Releases
 
