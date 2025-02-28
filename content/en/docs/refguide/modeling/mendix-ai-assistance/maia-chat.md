@@ -1,14 +1,14 @@
---- 
-title: "Maia Chat" 
-linktitle: "Chat" 
-url: /refguide/maia-chat/ 
-weight: 5 
-description: "Describes the features in Maia Chat." 
-aliases: 
-    - /refguide/mendix-chat/ 
-#If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details. 
---- 
- 
+---
+title: "Maia Chat"
+linktitle: "Chat"
+url: /refguide/maia-chat/
+weight: 5
+description: "Describes the features in Maia Chat."
+aliases:
+    - /refguide/mendix-chat/
+#If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
+---
+
 ## Introduction
 
 {{% alert color="info" %}}
