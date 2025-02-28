@@ -69,17 +69,31 @@ Because the updates are automated for all Mendix on Azure customers, you cannot 
 
 Any customization beyond what is offered as self-service through the Mendix on Azure and Mendix Private Cloud portal is not possible.
 
-## Raising Support Tickets
+## Support Tickets
 
 Since your Mendix on Azure resources contain private and sensitive data, Mendix Support cannot access your resources. To be able to troubleshoot incidents on your behalf, the Mendix on Azure portal allows you to raise a support ticket that includes recent logs for your environment, as well as provide consent to Mendix personnel for accessing your resources temporarily while processing your support ticket.
 
-{{% alert color="info" %}}Mendix does not proactively monitor the state of the resources in the customer subscription, or the overall service availability. Because of that, any degradation in service will only reactively be addressed by Mendix after customer has notified Mendix of such degradation by filing a support ticket.{{% /alert %}}
+### Raising Support Tickets
+
+To raise a support ticket, press **Support Center** on the **Cluster Overview** page, as shown in the following figure:
+
+{{< figure src="/attachments/deployment/mx-azure/support-center-option.png" class="no-border" >}}
+
+This opens the **Support Tickets** page, which shows your current and past support issues. To open a new ticket, click **Open a Ticket** and fill out the required information.
+
+{{% alert color="info" %}}  
+By opening a support ticket, you consent to sharing the relevant logs with the Mendix Support team for the purpose of troubleshooting the reported issue.
+{{% /alert %}}
+
+### Automatic Support Tickets
+
+Mendix on Azure can also automatically create support tickets for you. If a cluster fails to initialize and rerunning it manually does not resolve the issue, a support request with relevant logs attached is automatically created in the Support Center. Mendix Support is notified about the issue through Zendesk. You can follow the link from the support ticket to Zendesk to view its status or add additional comments.
 
 ## Service Updates and Releases
 
 All components in Mendix on Azure are managed and are upgraded to newly available versions on a quarterly basis by Mendix and Microsoft. Mendix conducts pro-active regression testing to ensure the updated set of components keep working well together.
 
-All node-level OS components in Mendix on Azure receive weekly security patches (as per Microsoft’s NodeImage auto-upgrade Node OS upgrade channel). In case critical security patches are found in the Mendix components running in your cluster (i.e. Operator and Agent) these will be patched as soon as possible (but at the end of the quarter latest). 
+All node-level OS components in Mendix on Azure receive weekly security patches (as per Microsoft's NodeImage auto-upgrade Node OS upgrade channel). In case critical security patches are found in the Mendix components running in your cluster (i.e. Operator and Agent) these will be patched as soon as possible (but at the end of the quarter latest). 
 
 These quarterly and weekly upgrade cadences are fully automatic and cannot be influenced by the customer.
 
