@@ -62,13 +62,13 @@ Instead of using local credentials in the Central Portal App, you may want to in
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/oidc-provider/API_consumption.png" class="no-border" >}}
 
-For API security, it is a best practice to use OAuth-tokens rather than API-keys. OAuth tokens are also known as bearer tokens, access tokens, or simply JSON web tokens (JWTs). You have below two options for using OAuth tokens:
+For API security, it is a best practice to use OAuth-tokens rather than API-keys. OAuth tokens are also known as bearer tokens, access tokens, or simply JSON web tokens (JWTs). You have two options when using OAuth tokens:
 
-* Use human identities: An end-user logs in via SSO, allowing the client application to consume the API on behalf of your end-user, using the OAuth access token which is received from the SSO process. 
+* Use human identities: An end-user logs in via SSO (allowing the client application to consume the API on behalf of your end-user) using the OAuth access token which is received from the SSO process. 
 
-* Use a machine identity: Machine identities are also known as service accounts or application accounts. In this case, access tokens are used by the client application to consume the API on behalf of itself. In this scenario, the end-user is not relevant.
+* Use a machine identity: Machine identities are also known as service accounts or application accounts. In this case, the client application uses access tokens to consume the API on behalf of itself. In this scenario, the end-user is irrelevant.
 
-The OIDC Provider supports the so-called Client Credential grant. This means that, a client application can obtain a client access token by authenticating at the OIDC Provider and present that access token to the API it consumes. The OIDC SSO module (version 3.1.0 and above) helps you to implement security in your API. It validates the token either through token introspection at the OIDC Provider or by verifying its signature. Moreover, it creates a user that represents the client that is consuming the API.
+The OIDC Provider supports the [Client Credential grant](https://oauth.net/2/grant-types/client-credentials/). This means that a client application can obtain a client access token by authenticating at the OIDC Provider and presenting that access token to the API it consumes. The OIDC SSO module (version 3.1.0 and above) helps you implement security in your API. It validates the token either through token inspection at the OIDC Provider or by verifying its signature. Moreover, it creates a user that represents the client that is consuming the API.
 
 #### Platform Extensions
 
@@ -169,7 +169,7 @@ To configure the app security, do the following:
 
 ### Configure App Modules
 
-Every end-user that is known in Admin module also needs to be known in the OIDC Provider service. Access has to be given to allow an OIDCProvider.AccountDetail record to be created for every Administration.Account record when the end-user signs in. This can be achieved by the following steps:
+Every end-user that is known in **Admin** module also needs to be known in the OIDC Provider service. Access has to be given to allow an OIDCProvider.AccountDetail record to be created for every Administration.Account record when the end-user signs in. This can be achieved by the following steps:
 
 1. Open the **Domain model** of the **Administration** module.
 1. Edit the **Account** entity.
