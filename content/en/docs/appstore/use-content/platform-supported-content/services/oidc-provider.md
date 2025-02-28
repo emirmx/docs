@@ -204,12 +204,12 @@ Perform the rest of configuration through the app:
 1. Open the **Scopes** tab.
 1. For the authorization code grant, create **New** scopes, enter `openid` as the **Name**, and set the **Scope type** to **Standard**. You need to use your own value in the **Name** field for the client credential grant type.
 
-    This page sets up a single list of all the scopes that are known to the OIDC Provider service. For each client, you can then choose the scopes used by that specific client. See [Configuring Centralized Authorization](#configuring-authorization) for more information on what scopes you should set.
+    This page sets up a single list of all the scopes that are known to the OIDC Provider service. For each client, you can then choose the scopes used by that specific client. See [Configuring Centralized Authorization](#configuring-authorization) for more information on which scopes you should set.
 
 1. Open the **Clients** tab.
 1. Click **New Client Registration**.
 
-    You can register a new client (an app using the OIDC SSO module for sign in which identifies this app as its IdP) in one of two ways. Follow one of the sets of instructions below:
+    You can register a new client (an app using the OIDC SSO module for sign in which identifies this app as its IdP) in one of the two ways shown below in [Automatic Client Registration](#automatic-client-registration).
 
 #### Automatic Client Registration{#automatic-client-registration}
 
