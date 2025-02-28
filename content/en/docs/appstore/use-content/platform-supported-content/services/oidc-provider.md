@@ -473,7 +473,7 @@ You need to configure the OIDC SSO module in your app which is using the IAM bro
 1. Login by entering credentials of the user which you have created earlier on OIDC provider Accounts section.
     You should be able to login successfully and get into the index.html page
 
-## Token Formats for Non-custom Claims
+## Token Formats for Non-Custom Claims
 
 ### Non-custom Claims in Access Token
 
