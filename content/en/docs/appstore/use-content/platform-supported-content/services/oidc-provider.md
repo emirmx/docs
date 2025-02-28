@@ -184,7 +184,7 @@ Every end-user that is known in Admin module also needs to be known in the OIDC 
     | Accounts | Open page 'OpenIDConnectProvider.AccountDetail_Overview' | Administrator |
     | Active Sessions | Open page 'Administration.ActiveSessions' | Administrator |
     | Scheduled Events | Open page 'Administration.ScheduledEvents' | Administrator |
-    | Runtime Instances | Open page 'Administration.RunteimInstances' | Administrator |
+    | Runtime Instances | Open page 'Administration.RuntimeInstances' | Administrator |
     | My Account | Call microflow 'Administration.ManageMyAccount' | User |
     | OpenID Connect | Open page 'OpenIDConnectProvider.OpenIDConnect_Dashboard' | Administrator |
     | Mx Objects | Open page 'MxModelReflection.MxObjects_Overview' | Administrator |
