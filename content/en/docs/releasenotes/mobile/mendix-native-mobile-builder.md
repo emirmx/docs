@@ -5,11 +5,41 @@ url: /releasenotes/mobile/mendix-native-mobile-builder/
 weight: 11
 description: "Mendix Native Mobile Builder release notes."
 #This document is mapped to the landing page, update the link there if renaming or moving the doc file.
+# KI: "updating your Native Mobile Builder": MOO-1791
 ---
 
 The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Studio Pro, which helps you build your Mendix native mobile app. After the Mendix Native Mobile Builder simplifies your build process, you can do what you want most: test and publish your app. The Mendix Native Mobile Builder uses MxBuild, GitHub, and App Center to simplify the app building process and is directly accessible via Mendix Studio Pro. 
 
 ## 2025
+
+### Release 1.0.134
+
+**Release date: February 20, 2025**
+
+#### Fixes
+
+* We fixed an issue where the Native Mobile Builder was not persisting selected permissions.
+* We fixed an issue where the **Runtime URL** field in the Native Mobile Builder did not accept URLs with subpaths.
+* We resolved a problem where renaming the default configuration broke updates.
+
+#### Known Issues {#updating-your-native-mobile-builder}
+
+A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+
+We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
+
+1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
+1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
+
+{{% alert color="info" %}}
+**Windows Security Note**: If Windows security policies prevent you from accomplishing the above, do the following:
+1. Right-click the installer.
+1. Click **Properties**.
+1. Select **Unblock**.
+1. Click **OK**.
+{{% /alert %}}
+
+After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
 
 ### Release 1.0.133
 
