@@ -60,7 +60,19 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
 
 10. Click **Initialize**.
 
-    The initialization process takes ca. 15 minutes. It creates a resource group in the managed app that you created in step 3 above. Once the cluster is initialized successfully, a corresponding cluster and namespace are created in the the Private Cloud portal. The namespace is also configured automatically, as described in [Standard Operator: Running the Tool](https://docs.mendix.com/developerportal/deploy/standard-operator/#running-the-tool). The cluster cannot be deleted from the Private Cloud portal. If you want to remove it, you must delete it in the Microsoft Azure portal.
+    The initialization process takes approximately 15 minutes. It creates a resource group in the managed app that you created in step 3 above. Once the cluster is initialized successfully, a corresponding cluster and namespace are created in the the Private Cloud portal. The namespace is also configured automatically, as described in [Standard Operator: Running the Tool](https://docs.mendix.com/developerportal/deploy/standard-operator/#running-the-tool). The cluster cannot be deleted from the Private Cloud portal or the Mendix on Azure portal. If you want to remove it, you must delete it in the Microsoft Azure portal.
+    
+## Editing the Cluster in the Mendix on Azure Portal
+
+If required, you can change the following options for your cluster:
+
+* AKS service tier
+* AKS node size
+* VM type
+* Load balancer type
+* Postgres compute SKU
+*  Postgres performance tier for storage IOPS
+* Custom tags
 
 ## Enabling Connections Between Different Azure Resource Groups
 
@@ -99,7 +111,7 @@ To enable virtual network peering for your Mendix on Azure app, perform the foll
 8. If you want to enable connections from your Mendix app to a virtual back-end machine in the other network, perform the following additional steps:
     
     1. In the Azure portal, create another private DNS zone for the virtual machine, with auto-registration enabled.
-    2. In the **Environment Details** page of your Mendix environment, go to [Model Options](/developerportal/deploy/environments-details/#model-options).
+    2. In the Mendix portal, in the **Environment Details** page, go to [Model Options](/developerportal/deploy/environments-details/#model-options).
     3. In the [Constants](/developerportal/deploy/environments-details/#constants) section, find and edit the **RestClient.RestServiceUrl** constant.
     4. In the **New value** field, enter the URL and port of your back-end machine, and then click **Save and Apply**.
     5. In the Azure portal, configure the virtual network link to link the private DNS zone with the virtual network of your managed Mendix application.
@@ -152,13 +164,19 @@ To enable private endpoints for your Mendix on Azure app, perform the following 
     4. Create a private endpoint in your Mendix managed resource group.
     5. In the **Resource** tab, specify the following settings:
 
-    * **Resource type** - **privateLinkServices**
-    * **Resource** - the private link that you created in step 12-b above.
+        * **Resource type** - **privateLinkServices**
+        * **Resource** - the private link that you created in step 12-b above.
 
     6. In the **Virtual Network** tab, specify the following settings:
 
-    * **Virtual network** - the virtual network managed by Mendix
+        * **Virtual network** - the virtual network managed by Mendix
 
+    7. Create a [DNS record](https://learn.microsoft.com/en-us/azure/dns/dns-operations-recordsets-portal) for the IP address of the back-end service's private endpoint.
+    8. In the Mendix portal, in the **Environment Details** page, go to [Model Options](/developerportal/deploy/environments-details/#model-options).
+    9. In the [Constants](/developerportal/deploy/environments-details/#constants) section, find and edit the **RestClient.RestServiceUrl** constant.
+    10. In the **New value** field, enter the URL and port of your back-end machine, and then click **Save and Apply**.
+
+    Your Mendix app can now connect to a back-end server in the other virtual network.
 
 ## Deploying an App to an Azure Cluster
 
