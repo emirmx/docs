@@ -82,7 +82,7 @@ If your Mendix managed app is in a different Azure resource group than the user 
 
 The following diagram shows two managed resource groups. One of them contains the Mendix managed app, and the other - a user machine that must access Mendix, along with a backend virtual machine that the Mendix app must access. Connections between the two resource groups are not enabled, resulting in access issues.
 
-{{< figure src="/attachments/deployment/mx-azure/separate-resource-groups.png" class="no-border" >}}
+{{< figure src="/attachments/deployment/mx-azure/separate-access-groups.png" class="no-border" >}}
 
 #### Potential Solution 1: Virtual Network Peering
 
