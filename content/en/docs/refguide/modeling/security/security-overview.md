@@ -73,15 +73,15 @@ To export the **Security Overview**, click the **Export to Excel** button. This 
     i. Access: The access level (None, Read or ReadWrite).
 
 2. Document Access -- This sheet includes the accessible pages, microflows and nanoflows, including the following:
-	a. Document type -- The type of the accessible document (page, microflow, nanoflow).
-	b. User Role
-	c. Module: The module containing the the page, nanoflow, or microflow.
-	d. Document: The name of the page, nanoflow, or microflow.
+    a. Document type -- The type of the accessible document (page, microflow, nanoflow).
+    b. User Role
+    c. Module: The module containing the the page, nanoflow, or microflow.
+    d. Document: The name of the page, nanoflow, or microflow.
 
 3. Module Roles -- this sheet provides the mappings between user roles and module roles, including the following:
-	a. User Role
-	b. Module
-	c. Module Role.
+    a. User Role
+    b. Module
+    c. Module Role.
 
 ## Read More
 
