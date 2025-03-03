@@ -169,7 +169,7 @@ To configure the app security, do the following:
 
 ### Configure App Modules
 
-Every end-user that is known in **Administration module** module also needs to be known in the OIDC Provider service. Access has to be given to allow an OIDCProvider.AccountDetail record to be created for every Administration.Account record when the end-user signs in. This can be achieved by the following steps:
+Every end-user that is known in **Admin** module also needs to be known in the OIDC Provider service. Access has to be given to allow an OIDCProvider.AccountDetail record to be created for every Administration.Account record when the end-user signs in. This can be achieved by the following steps:
 
 1. Open the **Domain model** of the **Administration** module.
 1. Edit the **Account** entity.
@@ -555,7 +555,7 @@ In versions of the OIDC Provider above 2.0.0, the sub value was changed from an 
 The OIDC Provider service sets a cookie as a means to persist the session in the user’s browser. If the cookie is not properly set, this may lead to problems. For example, when the OIDC Provider service is used to build an IAM Broker, no session is established and the broker may initiate a new session at the upstream IdP, which results in an ‘infinite loop’ of redirects via the user’s browser.
 To ensure the cookie is properly set, the runtime setting com.mendix.core.SameSiteCookies must have value None. See [Environment Details](/developerportal/deploy/environments-details/#samesite) for more information how to set the correct value for SameSite runtime setting. Note that the default value for this setting changed in [Mendix 8.11](/releasenotes/studio-pro/8.11/).
 
-## About Authorization{#about-authorization}
+## Authorization{#authorization}
 
 When you are building Mendix apps you need to make two architectural decisions in the area of end-user access:
 
@@ -572,7 +572,7 @@ These two options are described below.
 
 ### Fully Decentralized Authorization
 
-With fully decentralized authorization, you will typically want to propagate the identity of the end-user to your app and the app can subsequently make an authorization decision using some logic in your app. The authorization business logic in your app may need information about the authenticated end-user. In a business application this could be end-user attributes like ‘department’ and/or ‘job title’.
+With fully decentralized authorization, you will typically want to propagate the identity of the end-user to your app and the app can subsequently make an authorization decision using some logic in your app. The authorization business logic in your app may need information about the authenticated end-user. In a business application this could be end-user attributes like ‘department’ or ‘job title’.
 
 The OIDC Provider service allows you to pass user attributes in the ID-tokens that are sent from the OIDC Provider to your app. You can define ‘custom’ claims, so the user attributes that can be communicated are not restricted to a pre-defined set.
 
@@ -582,8 +582,8 @@ With centralized authorization your app delegates authorization decisions to a c
 
 The OIDC Provider service is one such central component and you can communicate the authorization decision made by the OIDC Provider service in 2 ways:
 
-* using the concept of OAuth scopes (recommended)
-* using a custom user claim
+* Using the concept of OAuth scopes (recommended)
+* Using a custom user claim
 
 Using OAuth scopes is the recommended approach since it is the standard OAuth solution. With Mendix, we advise you to think of an app’s user roles as being the same as OAuth scope values.  By adhering to this logic, you can develop apps with any user roles without having to decide and agree on custom attributes. You can customize the OIDC SSO module with microflows which parse the tokens from the OIDC Provider service and apply user roles to enforce the authorization indicated in the token.
 
@@ -595,15 +595,15 @@ The OIDC Provider service adds the `AccountDetail` entity into your Provider app
 
 There are two ways in OIDC Provider to get create accounts:
 
-#### When Using IAM Brokering
+#### Using IAM Brokering
 
-In this case, accounts which can be used by OIDC provider are synced from your IdP directly into the IAM broker application. In this case, an `AccountDetail` object is created for every account object when the end-user tries to login. This is automatically handled by code without any configuration.
+When Using IAM Brokering, accounts which can be used by OIDC provider are synced from your IdP directly into the IAM broker application. In this case, an `AccountDetail` object is created for every account object when the end-user tries to login. This is automatically handled by code without any configuration.
 
 This means that the access token will contain a "sub" claim which gets value from the `MendixUserID` attribute of the `AccountDetail` entity.
 
 #### Using the AccountDetail Page of the OIDC Provider service
 
-This is the case where the OIDC Provider service can be used separately as an IDP without building an IAM structure.
+This method allows OIDC Provider service to be used separately as an IDP without building an IAM structure.
 
 Where there is no IAM brokering functionality, the administrator can create end-users (Accounts) using the AccountDetail page in the OIDC Provider service. This page creates `AccountDetail` objects which automatically create `Account` objects in the app to represent the AccountDetails as accounts.
 
