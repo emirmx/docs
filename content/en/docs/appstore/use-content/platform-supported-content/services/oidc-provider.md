@@ -475,7 +475,7 @@ You need to configure the OIDC SSO module in your app which is using the IAM bro
 
 ## Token Formats for Non-Custom Claims
 
-### Non-custom Claims in Access Token
+### Non-Custom Claims in Access Token
 
 The format of non-custom claims in the access token is as follows:
 
@@ -494,14 +494,14 @@ The format of non-custom claims in the access token is as follows:
 }
 ```
 
-In the version 3.0.0 and above of the OIDC Provider module, a new `client_id` attribute has been added.
+In version 3.0.0 and above of the OIDC Provider module, a new `client_id` attribute has been added.
 
 In the following versions of the OIDC Provider module, a new `jti` attribute has been added:
 
 * Version 4.1.0 for Mendix version 10.12.10 and above
 * Version 3.3.0 for Mendix version 9.24.18 and above
 
-### Non-custom Claims in ID-token
+### Non-Custom Claims in ID-token
 
 The format of non-custom claims in the ID-token is as follows:
 
@@ -546,7 +546,7 @@ In versions of the OIDC Provider above 2.0.0, the sub value was changed from an 
 
 ## Deleting Expired Access Tokens
 
-The `CleanupOldCodes` deletes expired access tokens from the database. The scheduler interval is set to one hour, and you can adjust it in the **USE_ME** folder of the **OpenIDConnectProvider** module according to your requirements. For more information, see [Scheduled Events](/refguide/scheduled-events/).
+`CleanupOldCodes` deletes expired access tokens from the database. The scheduler interval is set to one hour, and you can adjust it in the **USE_ME** folder of the **OpenIDConnectProvider** module according to your requirements. For more information, see [Scheduled Events](/refguide/scheduled-events/).
 
 ## Troubleshooting
 
