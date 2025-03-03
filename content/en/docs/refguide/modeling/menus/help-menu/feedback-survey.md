@@ -6,13 +6,13 @@ description: "Describes how to provide feedback on experience with Studio Pro."
 
 ## Introduction
 
-The **Help us improve** popup allows users to provide feedback on their experience with Studio Pro. This feedback is valuable for the Mendix team to understand user needs and improve the product.
+The **Help us improve** popup allows you to provide feedback on your experience with Studio Pro. This feedback is valuable for the Mendix team to understand user needs and improve the product.
 
 {{< figure src="/attachments/refguide/modeling/menus/help-menu/feedback-survey/feedback-survey.png" class="no-border" >}}
 
-The popup opens periodically for users to provide feedback. Users can rate their experience on a scale of -2 to 2, with -2 being the lowest score and 2 being the highest score.
+The popup opens periodically for you to provide feedback. You can rate your experience on a scale of -2–2, with -2 being the lowest score and 2 being the highest score.
 
-To disable the popup from opening periodically, go to the **Preference** > **Advanced** > **Feedback Survey** > **Show feedback survey periodically** and select the **No** option:
+To disable the popup from opening, open the **Edit** menu and click **Preferences** > **Advanced** > **Feedback Survey** > **Show feedback survey periodically** and select **No**:
 
 {{< figure src="/attachments/refguide/modeling/menus/help-menu/feedback-survey/disable-feedback-survey.png" class="no-border" >}}
 
@@ -22,5 +22,5 @@ The popup can be opened manually by clicking **Help** > **Submit Feedback**:
 
 ### Send Feedback
 
-The **Send Feedback** button is disabled until a score is selected. Once a score is specified, the button is enabled, allowing users to send their feedback. Additionally, users can provide a justification for their score, but this is optional.
+The **Send Feedback** button is disabled until a score is selected. Once a score is specified, the button is enabled, allowing you to send your feedback. You can provide justification for your score, but this is optional.
 
