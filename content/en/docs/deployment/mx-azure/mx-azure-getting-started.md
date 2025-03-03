@@ -51,6 +51,7 @@ To adopt Mendix on Azure, you need to have the following:
      }
 }
 ```
+
 {{% /alert %}}
 
 ## Licensing

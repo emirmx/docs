@@ -188,6 +188,7 @@ ALTER ALERT <ALERT name> RESUME; -- The ALERT has STATE Suspended when created a
 
 SHOW ALERTS;
 ```
+
 ## Verifying the Access Token
 
 When using OAuth authentication with the Mendix Data Loader, it is crucial to verify the access token received by your Mendix application. This verification process ensures the token's authenticity and integrity, protecting your application from unauthorized access attempts.
