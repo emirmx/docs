@@ -606,11 +606,11 @@ In this case, accounts which can be used by OIDC provider are synced from your I
 
 This means that the access token will contain a "sub" claim which gets value from the `MendixUserID` attribute of the `AccountDetail` entity.
 
-#### Using the AccountDetail Page of the OIDC Provider service
+#### Using the AccountDetail_Overview Page of the OIDC Provider service
 
-This is the case where the OIDC Provider service can be used separately as an IDP without building an IAM structure.
+This is the case where the OIDC Provider service can be used separately as an IdP without building an IAM structure.
 
-Where there is no IAM brokering functionality, the administrator can create end-users (Accounts) using the AccountDetail page in the OIDC Provider service. This page creates `AccountDetail` objects which automatically create `Account` objects in the app to represent the AccountDetails as accounts.
+Where there is no IAM brokering functionality, the administrator can create end-users (Accounts) using the `AccountDetail_Overview` page in the OIDC Provider service. This page creates `AccountDetail` objects which automatically create `Account` objects in the app to represent the AccountDetails as accounts. If you want the user to log in through the provider as an IdP, make sure that the user has been created via the `AccountDetail_Overview` page.
 
 ### Structure of ID and Access Tokens
 
