@@ -42,7 +42,7 @@ Version control systems like Git do not store a full copy of a document for ever
 
 #### MPRv2 Format {#mprv2}
 
-Studio Pro 10.18 introduced a public beta of the new version of the *.mpr* format: MPRv2. The key difference is that all documents, such as microflows, are no longer stored as part of the *.mpr* file but as separate files in the *mprcontents* directory. The *.mpr* file functions as an index file pointing to all the different files on disk. 
+MPRv2, a new version of the *.mpr* format, is currently in beta. The key difference is that all documents, such as microflows, are no longer stored as part of the *.mpr* file but as separate files in the *mprcontents* directory. The *.mpr* file functions as an index file pointing to all the different files on disk. 
 
 This means that when you change one document, for example, a page, only a small file representing that page will change on disk. This allows Git to calculate an efficient delta and results in a more appropriate repository growth compared to MPRv1. Functionally there is no differences between the split (v2) or the combined (v1) format inside Studio Pro. 
 
@@ -56,16 +56,16 @@ Merging using the command line with `git merge` or by using third-party tools is
 
 #### Converting MPR Storage Format {#convert}
 
-In Studio Pro 10.18 and above upgrading to the new format is optional and can be done per branch via the [File menu](/refguide/file-menu/). To upgrade to MPRv2, open your app and select **File > Upgrade app to split MPR format (v2)**. After a confirmation the app will be converted and you will be prompted to commit.
+Upgrading to the new format is optional and can be done per branch via the [File menu](/refguide/file-menu/). To upgrade to MPRv2, open your app and select **File > Upgrade app to split MPR format (v2)**. After a confirmation, the app will be converted and you will be prompted to commit.
 
 You can also downgrade branches that are already on MPRv2 to MPRv1 by selecting **File > Downgrade app to combined MPR format (v1)**.
 
 {{% alert color="info" %}}
-Before converting the MPR format it is recommended to commit your local work to ensure there is an isolated commit with the conversion step for debugging, in case conversion fails.
+Before converting the MPR format, it is recommended to commit your local work to ensure there is an isolated commit with the conversion step for debugging, in case conversion fails.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-In future versions of Studio Pro conversion to MPRv2 will happen automatically when opening a branch.
+In future versions of Studio Pro, conversion to MPRv2 will happen automatically when opening a branch.
 {{% /alert %}}
 
 ### Decreasing MPRv1 File Size
@@ -83,7 +83,7 @@ As the Mendix model is stored in a single file, this threshold can be exceeded b
 
 When cloning an app, the default behavior of Git is to download the full history. As Mendix uses different folders on disk for different branches, downloading full history is done for each branch. To mitigate that, Mendix uses local cloning for subsequent branch downloads. When cloning a new branch, data from a local branch you already have is used to reduce data that needs to be downloaded. 
 
-Starting from Studio Pro 10.12 it is possible to prevent downloading the full history, by changing the [Clone type](/refguide/clone-type/) to use partial clones. A partial clone downloads all data for a specific revision without downloading the contents of all historical commits.
+It is possible to prevent downloading the full history, by changing the [Clone type](/refguide/clone-type/) to use partial clones. A partial clone downloads all data for a specific revision without downloading the contents of all historical commits.
 
 ### Mitigating Large Repository Size
 
@@ -231,5 +231,5 @@ In case you are still deciding whether to migrate from SVN to Git, or you are al
 
 {{< figure src="/attachments/refguide/version-control/troubleshoot-version-control-issues/migration-advice-combined.png" class="no-border" >}}
 
-MPRv2  is in beta in Studio Pro 10.18 and above and you can manually convert branches. When this feature is GA, branch conversion will happen automatically. For more information on the format, see the [MPRv2 Format](#mprv2) section.
+MPRv2 is in beta and you can manually convert branches. When this feature is GA, branch conversion will happen automatically. For more information on the format, see the [MPRv2 Format](#mprv2) section.
 For more information on partial clone, see [Clone Type](/refguide/clone-type/).
