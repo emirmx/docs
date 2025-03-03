@@ -8,7 +8,7 @@ weight: 10
 
 ## Introduction
 
-The [External Database connector](/appstore/modules/external-database-connector/) allows you to connect to databases and select data to use in your app. You can use it to directly test connections and queries during configuration in Studio Pro (design time). For Mendix apps that use Databricks as their database, the External Database connector is the recommended integration option for Mendix 10.19.0 and up.
+The [External Database connector](/appstore/modules/external-database-connector/) allows you to connect to databases and select data to use in your app. You can use it to directly test connections and queries during configuration in Studio Pro (design time). For Mendix apps that use Databricks as their database, the External Database connector is the recommended integration option for Mendix 10.20.0 and up.
 
 This how-to describes the steps required to enable your app to use the External Database connector with Databricks.
 
@@ -16,7 +16,7 @@ This how-to describes the steps required to enable your app to use the External 
 
 To connect your Mendix application to Databricks with the External Database connector, follow these steps:
 
-1. [Install the External Database connector](/appstore/modules/external-database-connector/#installation). Please make sure to use the latest version 5.2.0 or higher [External Database Connector](https://marketplace.mendix.com/link/component/219862). As an additional resource on how to use bring your own JDBC driver with the external database connector you can view [this documentation](https://docs.mendix.com/appstore/modules/external-database-connector/#byod) although this explanation is more generic than what will follow in this documentation. 
+1. [Install the External Database connector](/appstore/modules/external-database-connector/#installation). Please make sure to use the latest version 5.1.1 or higher [External Database Connector](https://marketplace.mendix.com/link/component/219862). As an additional resource on how to use bring your own JDBC driver with the external database connector you can view [this documentation](https://docs.mendix.com/appstore/modules/external-database-connector/#byod) although this explanation is more generic than what will follow in this documentation. 
 2. In the **Settings** of you module you can add a **Java Dependency** of the needed Databricks JDBC Driver, this way the dependency will be downloaded on running your project. To enable this you will need the following:
    * **Group ID** - set to **com.databricks**
    * **Artifact ID** - set to **databricks-jdbc**
