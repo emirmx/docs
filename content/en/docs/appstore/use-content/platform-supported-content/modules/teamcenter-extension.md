@@ -23,6 +23,7 @@ Teamcenter Extension offers the following integration options:
 * Search datasets
 * Get datasets for item revision
 * Search workspace objects
+* Relate workspace objects
 * Get structures
 
 ### License {#license}
@@ -42,7 +43,7 @@ Compatibility among Teamcenter Extension, Teamcenter Connector, and Studio Pro i
 | ------------- | ------------- | ------------- |
 | 1.0.0 | 3.6.1, V 3.6.0, V 3.5.0 | 10.6.5 thru 10.7 |
 | 2.0.0 | 2406.0.0 | 10.12, patch versions 1 and above and 10.16.0 and above |
-| 3.0.0                        | 2406.3.0                     | 10.12 patch version 6 and above and 10.16.0 and above |
+| 3.0.0 and above | 2406.3.0 | 10.12 patch version 6 and above and 10.16.0 and above |
 
 {{% alert color="info" %}}
 Teamcenter Extension is not compatible with Studio Pro versions between 10.8 and 10.11, as well as 10.13.x, 10.14.x, and 10.15.x. If you use one of these Studio Pro versions, a possible workaround is to use Teamcenter Extension in one of the compatible versions of Studio Pro first, create the necessary artifacts, and then import them into your version. However, Mendix always recommends using the latest MTS or LTS Studio Pro version.
@@ -96,7 +97,11 @@ The 'Attach Datasets to Item Revision' action allows you to generate a domain mo
 
 The `Search Workspace Objects` action allows you to configure and generate the domain model and microflow to search for and retrieve Workspace Objects or their specialization from Teamcenter. This action implements the saved query `General..` from Teamcenter.
 
-#### Get Structures
+#### Relate Workspace Objects {#relateworkspaceobjects}
+
+The 'Relate Workspace Objects' allows you to generate the domain model and microflow to relate two workspace objects or their specialization from Teamcenter. The resulting microflow implements the Create relation action from TcConnector
+
+#### Get Structures {#getstructures}
 
 The `Get Structures` allows you to generate the domain model and microflows to configure a BOM window and retrieve structure data from Teamcenter. This feature supports the retrieval of structures with the following:
 
@@ -141,7 +146,7 @@ The landing page has with three tabs: **Menu**, **History**, and **Settings**.
 
 The **Menu** tab displays use cases or actions you can create artifacts for using Teamcenter Extension.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/teamcenter-extension/menu-tab.png" >}}
+![{F6498EBE-C8F0-4979-A54B-7747DB84D550}](https://github.com/user-attachments/assets/3def9a21-3226-42a2-9ba6-c0f752a0d5b3)
 
 #### History Tab
 
