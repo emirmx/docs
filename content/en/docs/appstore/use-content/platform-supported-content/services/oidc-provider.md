@@ -43,7 +43,7 @@ The Mendix marketplace offers Single Sign-On (SSO) module, enabling your Mendix 
 
 You can build a Mendix application that acts as a SSO Broker by using the OIDC SSO and the OIDC Provider modules. The OIDC SSO module authenticates end-users at your central IdP, while the OIDC Provider module enables your new app to act as an IdP (OpenID Provider) for your other Mendix applications. This means it is working as an SSO broker, catering for authentication and, optionally, for authorization. 
 
-For more information on the concepts behind authorization, see the [Authorization](#authorization) section below.
+For more information on the concepts behind authorization, see the [About Authorization](#about-authorization) section below.
 
 Your deployment pipeline (deployment agent) would be responsible for registering additional Mendix apps with the SSO broker. This process can be automated using client registration API provided by the OIDC Provider module.
 
