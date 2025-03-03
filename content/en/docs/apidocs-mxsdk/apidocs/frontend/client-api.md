@@ -15,6 +15,10 @@ The client API is compatible with both the React and the Dojo client.
 
 * [Mendix 10 Client API](https://apidocs.rnd.mendix.com/10/client-mx-api/index.html)
 
+{{% alert color="info" %}}
+The Mendix 10 Client API is available in Studio Pro 10.20.0 and newer. For earlier versions, please use the APIs listed below.
+{{% /alert %}}
+
 ## Legacy Client APIs
 
 * [Mendix 10 React Client API](https://apidocs.rnd.mendix.com/10/client-react/index.html)
