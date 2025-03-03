@@ -10,26 +10,33 @@ weight: 10
 
 The [External Database connector](/appstore/modules/external-database-connector/) allows you to connect to databases and select data to use in your app. You can use it to directly test connections and queries during configuration in Studio Pro (design time). For Mendix apps that use Databricks as their database, the External Database connector is the recommended integration option for Mendix 10.19.0 and up.
 
-This how-to describes the steps required to enable your app to use the External Database connector with Databricks, and to model several common use cases.
+This how-to describes the steps required to enable your app to use the External Database connector with Databricks.
 
 ## Configuring the Connection Between Your Mendix App and Databricks
 
 To connect your Mendix application to Databricks with the External Database connector, follow these steps:
 
-1. [Install the External Database connector](/appstore/modules/external-database-connector/#installation). Please make sure to use the latest version 5.2.0 or higher [External Database Connector](https://marketplace.mendix.com/link/component/219862). As an additional resource on how to use bring your own JDBC driver with the external database connector you can view [this documentation](https://docs.mendix.com/appstore/modules/external-database-connector/#byod) although this explanation is more generic than what will follow in this documentation.
-2. Download the latest [JDBC driver](https://www.databricks.com/spark/jdbc-drivers-archive) that Databricks provides and put the .jar file in to the userlib of your Mendix project.
-3. Run the [Connect to Database wizard](/appstore/modules/external-database-connector/#configuration) and select **Other** as the database type.
+1. [Install the External Database connector](/appstore/modules/external-database-connector/#installation). Please make sure to use the latest version 5.2.0 or higher [External Database Connector](https://marketplace.mendix.com/link/component/219862). As an additional resource on how to use bring your own JDBC driver with the external database connector you can view [this documentation](https://docs.mendix.com/appstore/modules/external-database-connector/#byod) although this explanation is more generic than what will follow in this documentation. 
+2. In the **Settings** of you module you can add a **Java Dependency** of the needed Databricks JDBC Driver, this way the dependency will be downloaded on running your project. To enable this you will need the following:
+   * **Group ID** - set to **com.databricks**
+   * **Artifact ID** - set to **databricks-jdbc**
+   * **Version** - set to **2.7.1**
+   
+   {{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/JavaDependency.png" >}}
+   
+   Or alternatively you can download version 2.7.1 of the [JDBC driver](https://www.databricks.com/spark/jdbc-drivers-archive) that Databricks provides and put the .jar file into the userlib of your Mendix project.
+3. Run you Mendix project and run the [Connect to Database wizard](/appstore/modules/external-database-connector/#configuration) and select **Other** as the database type.
 
-{{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/DatabricksConfig.png" >}}
+   {{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/DatabricksConfig.png" >}}
 
 4. Provide a name for the database connection document.
 5. As a username use "token" and as your password use the personal access token (PAT) you have created in your Databricks account.
 
-{{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/PAT.png" >}}
+   {{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/PAT.png" >}}
    
 7. In your Databricks account find the JDBC URL related to the SQL Warehouse or Cluster you are using and copy it into the JDBC URL field and add UID=token;PWD=**PAT** where **PAT** should be replaced with your actual PAT.
 
-{{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/JDBC_URL.png" >}}
+   {{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/JDBC_URL.png" >}}
   
 9. Click **Test Connection** to verify the connection details, and then click **Save**.
 
@@ -63,6 +70,8 @@ INSERT INTO customerData (name, address, postal_code, gender) VALUES
     ('Thomas Mulder', 'Sterrenhof 7, Hemelrijk', '9012RS', 'Male'),
     ('Sophie Jansen', 'Kersenstraat 12, Fruitdorp', '0123TU', 'Female');
 ```
+The following image shows where to find the SQL Editor in Databricks:
+{{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/SQL_Editor.png" >}}
 
 This should have created a table with some entries that can now be queried from your Mendix application.
 
@@ -71,7 +80,7 @@ This should have created a table with some entries that can now be queried from 
 3. Enter the following **SQL Query**:
 
     ```sql
-    SELECT * FROM customerData;
+    SELECT * FROM customerData
     ```
 
 4. Click **Run Query**.
