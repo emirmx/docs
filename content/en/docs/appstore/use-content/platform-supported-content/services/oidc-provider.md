@@ -169,7 +169,7 @@ To configure the app security, do the following:
 
 ### Configure App Modules
 
-Every end-user that is known in **Admin** module also needs to be known in the OIDC Provider service. Access has to be given to allow an OIDCProvider.AccountDetail record to be created for every Administration.Account record when the end-user signs in. This can be achieved by the following steps:
+Every end-user that is known in **Administration module** module also needs to be known in the OIDC Provider service. Access has to be given to allow an OIDCProvider.AccountDetail record to be created for every Administration.Account record when the end-user signs in. This can be achieved by the following steps:
 
 1. Open the **Domain model** of the **Administration** module.
 1. Edit the **Account** entity.
