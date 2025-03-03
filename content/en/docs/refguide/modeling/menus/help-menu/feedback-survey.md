@@ -1,7 +1,7 @@
 ---
 title: "Feedback Survey"
 url: /refguide/feedback-survey/
-description: "Describes how to provide feedback on experience with Studio Pro."
+description: "Describes how to provide feedback on your experience using Studio Pro."
 ---
 
 ## Introduction
