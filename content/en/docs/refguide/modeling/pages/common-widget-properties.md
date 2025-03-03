@@ -71,7 +71,7 @@ The style property allows you to specify additional CSS styling. If a class is a
 
 ### Dynamic Classes{#dynamicclasses}
 
-The dynamic classes property allows you to specify one or more cascading stylesheet (CSS) class like the class property, but based on an [expression](/refguide/expressions/). This allows you to dynamically construct classes based on data from an enclosing data container. The dynamic classes constructed in the expression are appended to the classes defined in the [`Class`](#class) property.
+The dynamic classes property allows you to specify one or more cascading stylesheet (CSS) class like the class property, but based on an [expression](/refguide/expressions/). This allows you to dynamically construct classes based on data from an enclosing data container or a variable on the page or snippet. The dynamic classes constructed in the expression are appended to the classes defined in the [`Class`](#class) property.
 
 {{< figure src="/attachments/refguide/modeling/pages/common-widget-properties/dynamic-classes.png" class="no-border" >}}
 
@@ -97,13 +97,13 @@ Some widgets, for example snippets and building blocks, have a **Documentation**
 
 {{< figure src="/attachments/refguide/modeling/pages/common-widget-properties/data-source-section.png" alt="Data Source Section" class="no-border" >}}
 
-### Attribute(Path)
+### Value
 
-This property identifies an attribute which is used in an input widget.
+This property identifies the value which is used in an input widget.
 
-#### Attribute Input Elements
+#### Input Elements
 
-With the following widgets, the Attribute (Path) specifies the attribute which is being changed (or displayed) by the widget:
+With the following widgets, the property specifies the value which is being changed (or displayed) by the widget:
 
 * [Text Box](/refguide/text-box/)
 * [Text Area](/refguide/text-area/)
@@ -112,19 +112,20 @@ With the following widgets, the Attribute (Path) specifies the attribute which i
 * [Radio Buttons](/refguide/radio-buttons/)
 * [Date Picker](/refguide/date-picker/)
 
-The attribute can be one of the following:
+The value can be one of the following:
 
 1. An attribute of the entity of the data container that contains the widget.
 2. An attribute of the entity of any enclosing data container that contains the widget. 
 3. An attribute of an entity associated with the data container entity by following one or more associations of type reference through the domain model.
+4. A variable defined on the page or snippet that contains the widget.
 
-In the first two cases we say the widget is connected to an **attribute** and in the third case to an **attribute path**.
+In the first two cases we say the widget is connected to an **attribute**, in the third case to an **attribute path**, and in the last case to a **variable**.
 
 You can edit attributes of any enclosing data container including grandparent data containers.
 
 #### Association Input Elements
 
-For widgets which manipulate associations, the Attribute (Path) specifies an attribute which is from an entity which is reachable from the current data container using an association. This applies to the following input elements:
+For widgets which manipulate associations, the value specifies an attribute which is from an entity which is reachable from the current data container using an association. This applies to the following input elements:
 
 * [Reference Selector](/refguide/reference-selector/)
 * [Reference Set Selector](/refguide/reference-set-selector/)
@@ -174,7 +175,7 @@ When selected, this enables the widget when a particular attribute has a certain
 
 #### Based on Expression
 
-When selected, this enables the widget when a provided [expression](/refguide/expressions/) evaluates to true. The object of the containing data container is available inside an expression as the `$currentObject` variable.
+When selected, this enables the widget when a provided [expression](/refguide/expressions/) evaluates to true. The object of the containing data container is available inside an expression as the `$currentObject` variable. Objects of all data containers surrounding the widget and variables on the page or snippet are available as well.
 
 The expression provided is evaluated in the browser and, currently, does not support all the functions that are available in microflows. The autocomplete function will only list those functions which are supported.
 
@@ -226,13 +227,13 @@ For each parameter in the template, you define an attribute of the context entit
 
 {{< figure src="/attachments/refguide/modeling/pages/common-widget-properties/numeric-formatting-section.png" alt="Numeric Formatting Section" class="no-border" >}}
 
-Formatting describes the way that numeric attributes are displayed. These are attributes of the following data types:
+Formatting describes the way that numeric values are displayed. These are attributes or variables of the following data types:
 
 * Decimal
 * Integer
 * Long
 
-When a widget contains a numeric attribute, the **Formatting** section allows you to change the way it is displayed.
+When a widget contains a numeric value, the **Formatting** section allows you to change the way it is displayed.
 
 There are three options, described below:
 
@@ -243,12 +244,12 @@ There are three options, described below:
 ### Decimal Mode{#decimal-mode}
 
 {{% alert color="info" %}}
-This mode only applies to attributes of type Decimal.
+This mode only applies to values of type Decimal.
 {{% /alert %}}
 
 If set to *Fixed*, the decimal part always will be displayed with the number of places specified in the [Decimal precision](#decimal-precision) property. The value will be rounded using the method defined in the [Rounding](/refguide/app-settings/#rounding) section of **App Settings**.
 
-If set to *Auto*, the whole decimal part of the attribute value will be displayed. No decimal part will be displayed if the attribute value is an integer.
+If set to *Auto*, the whole decimal part of the value will be displayed. No decimal part will be displayed if the value is an integer.
 
 Default: *Fixed*
 
@@ -267,7 +268,7 @@ Default: *Fixed*
 ### Decimal Precision{#decimal-precision}
 
 {{% alert color="info" %}}
-This only applies to attributes of type Decimal and is available only when the [Decimal mode](#decimal-mode) is set to **Fixed**.
+This only applies to values of type Decimal and is available only when the [Decimal mode](#decimal-mode) is set to **Fixed**.
 {{% /alert %}}
 
 The precision of a value describes the number of decimal places that are used to express that value. This property indicates the number of decimal places (the number of digits following the point).
@@ -329,7 +330,7 @@ There are a number of variables you can use in your expression:
 * `$value` – the current member (attribute or association) value
 
 {{% alert color="info" %}}
-The expression can access objects of **all** the data containers enclosing the input widget. The objects are given the name of the widget they originate from (for example, `$dataView1`).
+The expression can access objects of **all** the data containers enclosing the input widget and variables defined on the page or snippet. The objects are given the name of the widget they originate from (for example, `$dataView1`).
 {{% /alert %}}
 
 When a validation is set and it fails for this widget, the message you specify will be shown before the user can use the value in the app.
@@ -389,7 +390,7 @@ The visibility of the billing address depends whether the customer checks that t
 
 ##### Based on Expression{#visibility-based-on-expression}
 
-When selected, this shows the widget while a provided [expression](/refguide/expressions/) evaluates to true. The object of the containing data container is available inside an expression as a `$currentObject` variable. The expression can access objects of all the data containers enclosing that data container widget. These objects are available under the name of the widget they originate from (for example, `$dataView1`).
+When selected, this shows the widget while a provided [expression](/refguide/expressions/) evaluates to true. The object of the containing data container is available inside an expression as a `$currentObject` variable. The expression can access objects of all the data containers enclosing that data container widget and variables defined on the page or snippet. These objects are available under the name of the widget they originate from (for example, `$dataView1`).
 
 For example, you might want a button to only be visible if a condition is met. Assume the object has an attribute called `myAttribute`, and you want the button to be visible only if `myAttribute` actually has a value stored. To achieve this goal put this expression into the field: `$currentObject/myAttribute != empty`.
 

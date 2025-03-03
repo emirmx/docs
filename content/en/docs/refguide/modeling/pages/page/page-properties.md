@@ -97,6 +97,23 @@ A page parameter is an input that needs to be passed from the calling page, micr
 
 You can also use multiple page parameters. Multiple page parameters allow you to easily use multiple objects on a page that are not associated with each other. Using multiple page parameters, you can pass multiple arguments when opening a page, the same as with microflows and nanoflows.
 
+#### Variables {#variables}
+
+The list of variables defined on this page. The variables can be used by widgets directly without the need for a [data view](/refguide/data-view/).
+
+Variables represent non-persistant, primitive values that are available to widgets on a page. Widgets can read and write to them as they were attributes, supporting features like formatting and validation. Variables are also available in expressions, so you can use them for page logic, such as conditional visibility, editability, and as parameters to microflows and nanoflows.
+
+You can also define a default value for variables. The expression is used to instantiate the variable at runtime and can make use of page parameters. Note that the default value is only set once for the lifetime of the page: A variable using the attribute of a page parameter will not receive updates made to the attribute as long as the page is open.
+
+{{% alert color="info" %}}
+Variables for pages were introduced in Mendix Studio Pro 10.21.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+For apps with [React Client](/refguide/mendix-client/react) set to **Yes** or **Migration mode**, all widgets can use variables. When turned off, widgets built with Dojo cannot use variables.  
+Note that Dojo widgets may force neighboring widgets to be Dojo as well. To counteract this, a widget that normally accepts variables can be wrapped in a container.
+{{% /alert %}}
+
 ### Usage Section {#usage}
 
 #### Mark as Used
