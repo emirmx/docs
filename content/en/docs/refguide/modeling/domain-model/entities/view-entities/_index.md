@@ -23,13 +23,13 @@ View entities can also reference other view entities, allowing for more complex 
 View entities are read-only. To change the resulting data of a view entity retrieval, the source data should be modified. For this purpose, you can set up a microflow to map a view object to an object (or objects) of their corresponding source entity (or entities) and commit those.
 {{% /alert %}}
 
-## Enabling OQL Version 2 
+## Prerequisites
 
 Your app must use OQL version 2 to use view entities. You can change this setting by clicking **App 'APP_NAME'** > **Settings** > **Runtime** and setting [OQL version 2](/refguide/app-settings/#oql-version-2) to **Yes**. Alternatively, you can drag a new view entity from the toolbar or **Toolbox** to the domain model, which opens a dialog box where you can confirm upgrading to OQL version 2 if it has not been upgraded yet.
 
 ## Properties 
 
-Double-clicking a view entity to open its properties dialog box. An example of a view entity's properties dialog box is represented in the image below:
+Double-click a view entity to open its Properties dialog box. An example of a view entity's properties dialog box is represented in the image below:
 
 {{< figure src="/attachments/refguide/modeling/domain-model/use-view-entities/customer-with-address.png" width="500" >}}
 
@@ -46,7 +46,7 @@ View entity properties consist of the following sections:
 
 The name property defines the name of the view entity. This name is used to refer to the view entity in forms, microflows, queries, constraints, etc.
 
-The name has to be unique only within the domain model of a module. You can have two view entities with the same name, provided that they are in the domain models of different modules.
+The name has to be unique only within the domain model of a module. You can have two view entities with the same name, provided they are in the domain models of different modules.
 
 #### Image {#image}
 
@@ -78,4 +78,19 @@ You can add any local information about the view entity in this tab. This is als
 
 ## Using a View Entity 
 
-After creating a view entity in the domain model, it can be used in microflows and pages like any other entity. For more information, see [Use View Entities](/refguide/use-view-entities/).
+After creating a view entity in the domain model, it can be used in microflows and pages like any other entity. For more information, see [Use View Entities](/refguide/use-view-entities/) and [OQL]( /refguide/oql/).
+
+## Read More
+
+For specific use case scenarios, see the following:
+
+* [Creating Overview Pages](/refguide/view-entity-overview-pages/)
+* [Decoupling APIs](/refguide/decoupling-apis/)
+* [Charting with View Entities](/refguide/charting-with-view-entities/)
+* [Multilingual Apps and Translations](/refguide/multilingual-apps/)
+* [View Archived Data](/refguide/view-archived-data/)
+* [Create a Pivot Table with View Entities](/refguide/view-entity-pivot-table/)
+* [Data Versioning with View Entities](/refguide/view-entity-data-versioning/)
+* [Exporting Data with View Entities](/refguide/view-entity-expport-data/)
+* [Abstracting Data of Add-On Modules](/refguide/abstracting-view-entity-data/)
+* [Multitenant Applications](/refguide/view-entity-multitenant-apps/)
