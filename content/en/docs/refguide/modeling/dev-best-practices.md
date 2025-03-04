@@ -339,7 +339,7 @@ Mendix apps are best built in a way that they are easily scalable through a micr
 
 To ensure maintainability and performance, we recommend keeping your app within 3,000 microflows and 750 entities.
 
-Staying within these limits helps maintain optimal performance in both Studio Pro and your running application, while also ensuring your app remains manageable and scalable over time.
+Staying within these limits helps maintain optimal performance in both Studio Pro, while also ensuring your app remains manageable and scalable over time.
 If your app exceeds these limits, consider breaking your app into smaller services to improve maintainability and performance.
 
 Applications exceeding these guidelines may still function, depending on your system. However, we cannot provide support for performance issues in oversized projects.
