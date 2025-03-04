@@ -521,6 +521,8 @@ Page URLs and Microflow URLs are supported with SAML for Mendix version 10.6 and
     `window.location.href = 'sso/login' + (returnURL ? '?cont=link' + encodeURIComponent(returnURL) : '');` or, 
     * For manual redirection: add an onclick event to the button that manually triggers the SSO login.
     `this.href = 'sso/login' + (returnURL ? '?cont=link' + encodeURIComponent(returnURL) : '');`
+    * For multiple query parameters: `const returnURL = encodeURIComponent(window.location.search+window.location.hash);`
+    `self.location = '/SSO/login?cont='+returnURL;`
 4. To allow the end users to navigate to the desired page, URL can be formed as follows:
     * If a single IdP is configured, the URL will be the base URL of your application followed by `SSO/login?cont={page/Microflowurl}`.
     For example, `http://localhost:8080/SSO/login?cont=link/pagepath`.
