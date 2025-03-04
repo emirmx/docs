@@ -194,13 +194,13 @@ kind: OperatorConfiguration
 # omitted lines for brevity
 # ...
 spec:
-  baseOSImageTagTemplate: 'ubi8-1-jre{{.JavaVersion}}-entrypoint'
+  baseOSImageTagTemplate: 'ubi9-1-jre{{.JavaVersion}}-entrypoint'
 ```
 
 At the moment, the `baseOSImageTagTemplate` can be set to one of the following values:
 
-* `ubi8-1-jre{{.JavaVersion}}-entrypoint` - to use Red Hat UBI 8 Micro images; this is the default option.
-* `ubi9-1-jre{{.JavaVersion}}-entrypoint` - to use Red Hat UBI 9 Micro images; this option can be used to use a newer OS and improve security scores.
+* `ubi8-1-jre{{.JavaVersion}}-entrypoint` - to use Red Hat UBI 8 Micro images; this option can be used for some cases where backward compatibility is needed.
+* `ubi9-1-jre{{.JavaVersion}}-entrypoint` - to use Red Hat UBI 9 Micro images; this is the default option.
 
 {{% alert color="info" %}}
 
@@ -962,6 +962,10 @@ In addition to internal Mendix Runtime paths, `/tmp` is mounted for any temporar
 
 {{% alert color="info" %}}
 If your app works without issues when read-only root filesystem is enabled, it is best to enable it wherever possible. We recommend using a non-production environment to validate that your app keeps working correctly with a read-only RootFS.
+{{% /alert %}}
+
+{{% alert color="warning" %}}
+Enabling the `runtimeReadOnlyRootFilesystem` option will cause the `model/resources` directory to be empty. If your app (or Marketplace modules such as SAML) uses the `model/resources` directory for resources such as configuration data and other resources, consider moving those resources to another location (such as `model/userlib`) or loading them from FileDocument entities.
 {{% /alert %}}
 
 ### GKE Autopilot Workarounds {#gke-autopilot-workarounds}
