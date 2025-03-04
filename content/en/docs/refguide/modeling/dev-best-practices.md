@@ -337,7 +337,9 @@ You can define the [home pages](/refguide/show-home-page/) per device and role i
 
 Mendix apps are best built in a way that they are easily scalable through a microservice architecture.
 
-To ensure maintainability and performance, we recommend keeping your app within 3,000 microflows and 750 entities.
+To ensure maintainability and performance, we recommend keeping your app within: 
+- 3,000 microflows and 750 entities if using a high end machine.
+- 2,000 microflows and 500 entities on a lower specced machine. 
 
 Staying within these limits helps maintain optimal performance in both Studio Pro, while also ensuring your app remains manageable and scalable over time.
 If your app exceeds these limits, consider breaking your app into smaller services to improve maintainability and performance.
