@@ -30,7 +30,7 @@ To connect your Mendix application to Databricks with the External Database conn
    {{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/DatabricksConfig.png" >}}
 
 4. Provide a name for the database connection document.
-5. As a username use "token" and as your password use the personal access token (PAT) you have created in your Databricks account.
+5. As a username use "token" and as your password use the personal access token (PAT) that you can generate via the user settings in Databricks:
 
    {{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/PAT.png" >}}
    
