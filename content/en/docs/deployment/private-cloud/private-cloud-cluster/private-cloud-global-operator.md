@@ -119,6 +119,10 @@ You can convert a namespace which currently uses the standard operator to be a G
 Ensure that the namespace to be converted is in the same cluster as the main namespace. Additionally, ensure that both namespaces have the same operator version; otherwise, the conversion will not be performed.
 {{% /alert %}}
 
+{{% alert color="info" %}}
+Currently, there is no API support to convert a namespace from standard to global operator.
+{{% /alert %}}
+
 1. On the Cluster Overview page, click **Convert Namespace**.
 
    {{< figure src="/attachments/deployment/private-cloud/global-operator/convert-namespace.png" >}}
