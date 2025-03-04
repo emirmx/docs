@@ -16,7 +16,7 @@ An access-provider application can offer a Single Sign-On (SSO) experience for e
 
 The service supports responsive browser-based applications, and has been tested with applications that use the OIDC SSO module.
 
-For successful implementation of the OIDC Provider module, we recommend you attain [Advanced](https://academy.mendix.com/link/certifications/6/advanced) or [Expert](https://academy.mendix.com/link/certifications/24/expert) Mendix certification. Customers with limited low-code experience may consider partnering with a Mendix Implementation Partner.
+For successful implementation of the OIDC Provider module, Mendix recommends that you attain [Advanced](https://academy.mendix.com/link/certifications/6/advanced) or [Expert](https://academy.mendix.com/link/certifications/24/expert) Mendix certification. Customers with limited low-code experience may consider partnering with a Mendix Implementation Partner.
 
 Certain OIDC Provider module versions are compatible with certain versions of Studio Pro (shown below).
 
