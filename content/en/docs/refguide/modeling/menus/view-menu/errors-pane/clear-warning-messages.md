@@ -1,8 +1,10 @@
 ---
 title: "Clear Warning Messages"
-url: /howto/monitoring-troubleshooting/clear-warning-messages/
+url: /refguide/clear-warning-messages/
 weight: 1
 description: "Describes how to eliminate design-time warnings by viewing and clearing warning messages."
+aliases: 
+    - /howto/monitoring-troubleshooting/clear-warning-messages/
 ---
 
 ## Introduction
@@ -18,11 +20,11 @@ This how-to teaches you how to do the following:
 
 Warning messages can be seen in the **Error List** tab of Studio Pro (by default shown at the bottom of Studio Pro). Note that the **Warnings** box must be selected for them to display.
 
-{{< figure src="/attachments/howto/monitoring-troubleshooting/clear-warning-messages/18579992.png" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/menus/view-menu/errors-pane/clear-warning-messages/18579992.png" class="no-border" >}}
 
 If this tab is not visible, it can be displayed via the **View** menu by selecting the **Error List** option:
 
-{{< figure src="/attachments/howto/monitoring-troubleshooting/clear-warning-messages/18579991.png" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/menus/view-menu/errors-pane/clear-warning-messages/18579991.png" class="no-border" >}}
 
 To get more information, double-click or right-click the warning.
 

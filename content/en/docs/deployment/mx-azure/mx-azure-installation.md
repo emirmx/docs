@@ -89,7 +89,7 @@ If required, you can change the following options for your cluster:
 * VM type
 * Load balancer type
 * Postgres compute SKU
-*  Postgres performance tier for storage IOPS
+* Postgres performance tier for storage IOPS
 * Custom tags
 
 ## Enabling Connections Between Different Azure Resource Groups

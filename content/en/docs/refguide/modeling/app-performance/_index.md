@@ -1,6 +1,6 @@
 ---
 title: "Community Best Practices for App Performance"
-linktitle: "Best Practices for App Performance"
+linktitle: "App Performance"
 url: /refguide/community-best-practices-for-app-performance/
 weight: 15
 description: "Describes some best practices to apply during development to get a better performing app. This document is created by and for the Mendix community."
