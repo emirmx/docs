@@ -33,6 +33,7 @@ We are in the process of fixing the signing certificate. Until this is resolved,
 
 {{% alert color="info" %}}
 **Windows Security Note**: If Windows security policies prevent you from accomplishing the above, do the following:
+
 1. Right-click the installer.
 1. Click **Properties**.
 1. Select **Unblock**.

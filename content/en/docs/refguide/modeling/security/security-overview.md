@@ -62,26 +62,28 @@ The **Nanoflow Access** tab lists the names of nanoflows within the selected mod
 To export the **Security Overview**, click the **Export to Excel** button. This generates an Excel file in the selected directory, which contains the following three sheets:
 
 1. Entity Access -- This sheet contains the entity access rules data, including the following:
-    a. User Role
-    b. Module: The module containing the entity.
-    c. Entity: The name of the entity.
-    d. Member: The attribute or association name.
-    e. Kind: Specifies whether the member is an association or an attribute.
-    f. Type: The type of the member.
-    g. XPath: The XPath constraint.
-    h. XPath Caption:  The XPath constraint caption, when set.
-    i. Access: The access level (None, Read or ReadWrite).
+
+    1. User Role.
+    2. Module: The module containing the entity.
+    3. Entity: The name of the entity.
+    4. Member: The attribute or association name.
+    5. Kind: Specifies whether the member is an association or an attribute.
+    6. Type: The type of the member.
+    7. XPath: The XPath constraint.
+    8. XPath Caption:  The XPath constraint caption, when set.
+    9. Access: The access level (None, Read or ReadWrite).
 
 2. Document Access -- This sheet includes the accessible pages, microflows and nanoflows, including the following:
-	a. Document type -- The type of the accessible document (page, microflow, nanoflow).
-	b. User Role
-	c. Module: The module containing the the page, nanoflow, or microflow.
-	d. Document: The name of the page, nanoflow, or microflow.
 
-3. Module Roles -- this sheet provides the mappings between user roles and module roles, including the following:
-	a. User Role
-	b. Module
-	c. Module Role.
+    1. Document type -- The type of the accessible document (page, microflow, nanoflow).
+    2. User Role.
+    3. Module: The module containing the the page, nanoflow, or microflow.
+    4. Document: The name of the page, nanoflow, or microflow.
+
+4. Module Roles -- this sheet provides the mappings between user roles and module roles, including the following:
+    1. User Role.
+    2. Module.
+    3. Module Role.
 
 ## Read More
 
