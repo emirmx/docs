@@ -19,7 +19,7 @@ For information on what third-party services Maia uses and what data are sent to
 
 ## Maia Capabilities in Mendix Studio Pro 
 
-In addition to Maia Chat, Maia in Mendix Studio Pro has the following capabilities: 
+Maia in Mendix Studio Pro has the following capabilities: 
 
 Guidance:
 

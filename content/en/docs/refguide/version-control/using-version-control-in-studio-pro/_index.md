@@ -225,6 +225,7 @@ Select the **Version Control** menu > **Revert a Commit...** to revert a commit.
 
 {{% alert color="warning" %}}
 Reverting a commit creates a new commit that undoes the changes introduced by the original commit. This may lead to unexpected results depending on the context of the original commit.
+
 * **Port fix and reverting** – If you used [Port Fix](/refguide/merge-dialog/#port-fix) to apply a commit from another branch to the current branch, and then you revert that commit, the changes from the cherry-pick will not be reapplied when merging the full branch. This happens because the revert commit explicitly negates the cherry-picked changes, and Git recognizes them as already addressed.
 * **Merging and reverting** – If you [merged another branch](/refguide/version-control/#merging-branches) into the current branch and then reverted the merge commit, merging the same branch again will not reapply its changes. Git identifies that the merge was undone and prevents those changes from being reapplied.
 {{% /alert %}}

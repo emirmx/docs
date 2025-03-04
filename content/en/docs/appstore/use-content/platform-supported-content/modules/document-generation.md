@@ -376,7 +376,7 @@ If you encounter any issues while [registering your app environment](#register-a
 
 In general, we recommend that you perform the following steps if you get any issues during runtime:
 
-1. Temporarily set the log level of `DocumentGeneration` log node to [trace](/howto/monitoring-troubleshooting/log-levels/#level). This should give more insight at what stage the action fails.
+1. Temporarily set the log level of `DocumentGeneration` log node to [trace](/refguide/log-levels/#level). This should give more insight at what stage the action fails.
 2. Temporarily add the page microflow that is configured in the action to the app navigation, or make it accessible via a button. This can help to verify that the page itself loads correctly, and can for example outline misconfiguration of entity access, widgets, etc. Make sure that you access the page with the same user you provided to the `Generate as user` parameter in the action.
 
 #### Exceptions
@@ -445,7 +445,7 @@ com.mendix.modules.microflowengine.MicroflowException: com.mendix.systemwideinte
 	at DocumentGenerationTest.ACT_TestDocument_WrongLayout (JavaAction : 'Generate PDF from page')
 ```
 
-We recommend that you temporarily set the log level of the `DocumentGeneration` log node to [trace](/howto/monitoring-troubleshooting/log-levels/#level). This should give more insight at what stage the action fails.
+We recommend that you temporarily set the log level of the `DocumentGeneration` log node to [trace](/refguide/log-levels/#level). This should give more insight at what stage the action fails.
 
 #### Cloud Service Errors
 
