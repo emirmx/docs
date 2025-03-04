@@ -11,7 +11,9 @@ weight: 30
 
 This document describes the technical support policies and limitations for Mendix on Azure, based on the shared responsibility model underlying the offering.
 
-## Shared Responsibility Model
+{{% alert color="info" %}}Before you begin, familiarize yourself with the general Mendix support policies, as outlined in [Mendix Support](/support/).{{% /alert %}}
+
+## Shared Responsibility Model for Mendix on Azure
 
 Under the shared responsibility model for Mendix on Azure deployments, Mendix, Microsoft, and customer organizations all have their own responsibilities in the deployment process and business-as-usual operations. Familiarize yourself with the responsibilities listed below:
 
@@ -97,7 +99,11 @@ Your tickets can have the following statuses:
 
 The status is updated based on the current status of the ticket in the Zendesk. To see the latest status of the ticket, click the **Refresh** button.
 
-### Automatic Support Tickets
+{{% alert color="info" %}}  
+If you delete a cluster, all support tickets opened for that cluster are also deleted.
+{{% /alert %}}
+
+### Automatic Support Tickets {#tickets-automatic}
 
 Mendix on Azure can also automatically create support tickets for you. If a cluster fails to initialize and rerunning it manually does not resolve the issue, a support request is automatically created in the Support Center. Mendix Support is notified about the issue through Zendesk. You can follow the link from the support ticket to Zendesk to view its status or add additional comments.
 
@@ -150,3 +156,4 @@ The solution is being benchmarked against SOC2 Azure Policy Compliance controls.
 * Mendix on Azure only supports hosting apps on Mendix versions 10.10 or later. Any app on an earlier version will fail to deploy successfully.
 * Due to the managed nature of this product, not all Private Cloud APIs are available to the customer. Refer to the Build and Deploy API documentation to find out which API calls are out of scope for Mendix on Azure.
 * Currently, even after a cluster manager is deleted from the Private Cloud portal for a specific cluster, users can still access the cluster in the Mendix on Azure portal.
+* Because Mendix on Azure is directly dependent on Mendix for Private Cloud, issues that affect the Private Cloud may also affect Mendix on Azure deployments. For example, if the Private Cloud is down, it is not possible to create new Mendix on Azure clusters.
