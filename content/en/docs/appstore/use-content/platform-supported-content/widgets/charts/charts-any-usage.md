@@ -7,6 +7,13 @@ aliases:
     - /howto/front-end/charts-any-usage/
 ---
 
+{{% alert color="warning" %}}
+
+This widget will not be working with [react client](/refguide/mendix-client/react/). We have published a version of any chart that supports react client called **Custom Chart**.
+Please update to [Charts](https://marketplace.mendix.com/link/component/105695/) widget version 6.0 and above.
+
+{{% /alert %}}
+
 ## Introduction
 
 The basic charts provide a set of easy to configure charts such as line, bar, column, pie, and so forth. These charts can be fine tuned with the advanced options.

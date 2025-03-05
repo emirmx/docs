@@ -37,10 +37,12 @@ To create a custom layout, follow these steps:
 1. Open an app containing a chart.
 2. Open the page with the charts widget.
 3. Open the charts widget settings.
-4. Go to the tab **Advanced**.
-5. Set the **Mode** to **Developer**.
-    {{< figure src="/attachments/appstore/platform-supported-content/widgets/charts/charts-tutorials/charts-advanced-tuning/charts-widget-properties-advanced.png" alt="chart properties" class="no-border" >}}
-6. Run the app.
+4. Go to the tab **General**.
+5. Set the **Show playground slot** to **Yes**.
+6. See the widget **Playground slot** dropzone area is now visible in the chart.
+7. Find the **Chart playground** widget in the toolbox.
+8. Drag and drop the **Chart playground** widget to the available **Playground slot**.
+9. Run the app.
 7. In your browser, open the page with the chart.
 8. Click the button **Toggle Editor**.
 9. In the **Layout** section add the following **Custom setting**:
@@ -63,15 +65,9 @@ To create a custom layout, follow these steps:
 
     {{< figure src="/attachments/appstore/platform-supported-content/widgets/charts/charts-tutorials/charts-advanced-tuning/charts-toggle-editor-open.png" alt="chart editor" class="no-border" >}}
 
-11. Paste the new font settings into the **Layout options** property in the **Advanced** tab.
+11. Paste the new font settings into the **Custom layout** property in the **Advanced** tab
 
-    {{< figure src="/attachments/appstore/platform-supported-content/widgets/charts/charts-tutorials/charts-advanced-tuning/charts-widget-properties-advanced-layout.png" alt="chart editor" class="no-border" >}}
-
-12. Change the **Mode** back to **Advanced** in Studio Pro, this will remove the Toggle Editor button from the chart.  
-
-{{% alert color="warning" %}}
-Please note that the advanced settings only apply to the chart in Advanced or Developer mode.
-{{% /alert %}}
+12. Change the **Show playground slot** back to **No** in Studio Pro, this will remove the Toggle Editor button from the chart.  
 
 ## Changing the Chart Type
 
