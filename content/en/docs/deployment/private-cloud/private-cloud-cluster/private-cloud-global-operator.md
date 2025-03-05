@@ -74,23 +74,21 @@ To install and configure the Global Operator, perform the following steps:
 
     {{< figure src="/attachments/deployment/private-cloud/global-operator/global-operator8.png" >}}
 
-11. Once the Global Operator main namespace is connected, you can now install the managed namespace and **Convert Namespace** and **Add Managed Namespace** buttons are enabled.
-
-12. Install the managed namespace under the Global Operator namespace by clicking **Add Managed Namespace**.
+11. Once the Global Operator main namespace is connected, the **Convert Namespace** and **Add Managed Namespace** buttons are enabled and you can install the managed namespace under the Global Operator namespace by clicking **Add Managed Namespace**.
 
     {{< figure src="/attachments/deployment/private-cloud/global-operator/global-operator9.png" class="no-border" >}}
 
     {{% alert color="warning" %}}Ensure that you use the same name for the managed namespace in the Portal and in the cluster while running the command. Using different names may result in unwanted issues.{{% /alert %}}
 
-13. Provide the managed namespace name under which you want to deploy the mendix application and click **Done**. 
+12. Provide the managed namespace name under which you want to deploy the mendix application and click **Done**. 
 
     {{% alert color="warning" %}}Ensure that you do not use the name of a main namespace {{% /alert %}}
 
-14. On the **Configuration** page, select the **Operating system** and run the **Configuration** command under the **Configuration** section.
+13. On the **Configuration** page, select the **Operating system** and run the **Configuration** command under the **Configuration** section.
 
     {{% alert color="warning" %}}Ensure that you do not use a namespace that is already used as a Global Operator main namespace. The Global Operator namespace must be separate from managed namespaces, otherwise you may encounter unexpected results.{{% /alert %}}
 
-15. Click **Configure Namespace**. Under **Global Operator** section in the cli, provide the main namespace name and select the resources which need to be configured in the managed namespace. Follow [Configure the namespace](/developerportal/deploy/standard-operator/#configure-namespace) for more information. Once the information is provided, under **Review and Apply** section, click **Apply Configuration** 
+14. Click **Configure Namespace**. Under **Global Operator** section in the cli, provide the main namespace name and select the resources which need to be configured in the managed namespace. Follow [Configure the namespace](/developerportal/deploy/standard-operator/#configure-namespace) for more information. Once the information is provided, under **Review and Apply** section, click **Apply Configuration** 
 
 ### Results
 
