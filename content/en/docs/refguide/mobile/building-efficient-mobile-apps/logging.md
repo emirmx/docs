@@ -107,7 +107,7 @@ Example:
 ```
 ERROR - Client: [2024-11-20 12:55:44.313 ][5261732040035738] Performing simultaneous synchronizations is not supported. Please try again after the current synchronization is completed.
  ^          ^         ^                     ^                 ^
-Log Level  Log Node  Timestamp             Session ID        Log Message
+Log Level  Log Node  Time Stamp             Session ID        Log Message
 ```
 
 ## Extending Logging
