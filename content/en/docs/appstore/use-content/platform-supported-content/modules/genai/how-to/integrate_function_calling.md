@@ -8,7 +8,7 @@ description: "This document guides you through integrating and implementing func
 
 ## Introduction
 
-This document explains how to use function calling in your smart app. To do this, you can use your existing app or or follow the [Build a Smart App from a Blank GenAI App](/appstore/modules/genai/using-genai/blank-app/) guide to start from scratch, as demonstrated in the sections below.
+This document explains how to use function calling in your smart app. To do this, you can use your existing app or follow the [Build a Smart App from a Blank GenAI App](/appstore/modules/genai/using-genai/blank-app/) guide to start from scratch, as demonstrated in the sections below.
 
 Through this document, you will:
 
