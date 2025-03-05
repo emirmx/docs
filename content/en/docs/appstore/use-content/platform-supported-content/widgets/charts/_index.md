@@ -75,7 +75,7 @@ Beside the **General** tab you will find 3 more tabs in the **Edit Series** dial
 All changes made in the developer editor are temporary. To save your progress, copy the settings from the **Custom settings** area to the **Chart settings** in Studio Pro.
 {{% /alert %}}
 
-When set to **Yes** this property enables **Developer mode** for the selected chart. After enabling **Developer mode** you will see a **Toggle Editor** button. When clicked, this button opens the **Chart settings** panel:
+See [Fine-Tune chart](/appstore/widgets/chart-advanced-tuning/) documentation to enable this.
 
 {{< figure src="/attachments/appstore/platform-supported-content/widgets/charts/toggle-editor-button.png" width="350px" alt="Toggle Editor button in top right corner of the chart widget." class="no-border" >}}
 

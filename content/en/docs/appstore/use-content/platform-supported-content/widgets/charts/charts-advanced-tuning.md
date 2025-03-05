@@ -43,9 +43,9 @@ To create a custom layout, follow these steps:
 7. Find the **Chart playground** widget in the toolbox.
 8. Drag and drop the **Chart playground** widget to the available **Playground slot**.
 9. Run the app.
-7. In your browser, open the page with the chart.
-8. Click the button **Toggle Editor**.
-9. In the **Layout** section add the following **Custom setting**:
+10. In your browser, open the page with the chart.
+11. Click the button **Toggle Editor**.
+12. In the **Layout** section add the following **Custom setting**:
 
     ```json
     {
@@ -57,7 +57,7 @@ To create a custom layout, follow these steps:
     }
     ```
 
-10. Change the font settings till the chart shows the required font. Copy the font settings.
+13. Change the font settings till the chart shows the required font. Copy the font settings.
 
     {{% alert color="warning" %}}Please note that changes made in the editor will not persist unless they are stored in the advanced settings of the widget or in the theme.{{% /alert %}}
 
@@ -65,9 +65,9 @@ To create a custom layout, follow these steps:
 
     {{< figure src="/attachments/appstore/platform-supported-content/widgets/charts/charts-tutorials/charts-advanced-tuning/charts-toggle-editor-open.png" alt="chart editor" class="no-border" >}}
 
-11. Paste the new font settings into the **Custom layout** property in the **Advanced** tab
+14. Paste the new font settings into the **Custom layout** property in the **Advanced** tab
 
-12. Change the **Show playground slot** back to **No** in Studio Pro, this will remove the Toggle Editor button from the chart.  
+15. Change the **Show playground slot** back to **No** in Studio Pro, this will remove the Toggle Editor button from the chart.  
 
 ## Changing the Chart Type
 
@@ -77,7 +77,7 @@ This is what the chart looks like before making any changes:
 
 To create a custom configuration, follow these steps:
 
-1. Repeat steps 1 to 8 from the [layout instructions](#layout-changes).
+1. Repeat steps 1 to 11 from the [layout instructions](#layout-changes).
 2. Select the name of the series you want to display differently from the drop-down menu: in this case **Series 1**.
 3. Edit the **Custom settings**; change them to `{ "type": "line" }`.
     {{< figure src="/attachments/appstore/platform-supported-content/widgets/charts/charts-tutorials/charts-advanced-tuning/charts-widget-bar-line-combination.png" alt="chart editor" class="no-border" >}}
@@ -95,7 +95,7 @@ After the changes, the chart looks like this:
 
 To create custom a configuration, follow these steps:
 
-1. Repeat steps 1 to 8 from the [layout instructions](#layout-changes).
+1. Repeat steps 1 to 11 from the [layout instructions](#layout-changes).
 2. Select **Configuration** from the drop-down menu.
 3. Edit the **Custom settings**, change them to `{ "displayModeBar": true }`.
 4. Add more Custom settings as desired. See [here](https://plot.ly/javascript/configuration-options/) for more configuration settings.
