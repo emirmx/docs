@@ -149,7 +149,7 @@ Currently, there is no API support to convert a namespace from standard to globa
 6. Click **Done** to return to the Namespaces Overview page.
 
 {{% alert color="info" %}}
-Once the standard namespaces are converted to Global Operator Managed namespace, then the status of the Cluster in which the standard namespace was present before conversion would be changed to **Conversion Finalized**, otherwise it will show **Conversion in Progress** if not all the namespaces within that cluster are converted.
+After the standard namespaces are converted to Global Operator Managed namespace, the status of the cluster in which the standard namespace was present before conversion is changed to **Conversion Finalized**. If not all the namespaces within the cluster are converted yet, the status shows **Conversion in Progress**.
 {{% /alert %}}
 
 ## Licensing
@@ -159,7 +159,7 @@ Once the standard namespaces are converted to Global Operator Managed namespace,
 Configure Private Cloud License Management (PCLM) in the Global Operator namespace. For more information, see [Private Cloud License Manager](/developerportal/deploy/private-cloud/private-cloud-license-manager/).
 
 {{% alert color="info" %}}
-For Global Operator installations, execute the commands from PCLM section in both the Global Operator namespace and its managed namespaces where the license is intended to be applied. Make sure that identical PCLM license details are configured for both the Managed and Global Operator namespaces to avoid unexpected outcomes.
+For Global Operator installations, execute the commands from the PCLM section in both the Global Operator namespace and its managed namespaces where the license must be applied. Make sure that identical PCLM license details are configured for both the Managed and Global Operator namespaces to avoid unexpected outcomes.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
@@ -172,4 +172,4 @@ Claimed licenses are visible in the PCLM Statistics section of the Managed names
 
 ## Upgrading Managed Namespaces
 
-When you [upgrade](/developerportal/deploy/private-cloud-upgrade-guide/#upgrade-cluster) the Global Operator main namespace, the managed namespaces within the global operator namespace are also upgraded automatically along with the main namespace.
+When you [upgrade](/developerportal/deploy/private-cloud-upgrade-guide/#upgrade-cluster) the Global Operator main namespace, the managed namespaces within the global operator namespace are also automatically upgraded.
