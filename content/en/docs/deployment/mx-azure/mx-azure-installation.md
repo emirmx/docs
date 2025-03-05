@@ -50,13 +50,13 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
 
     The managed app that you created is now visible as a new initializable cluster.
 
-    {{< figure src="/attachments/deployment/mx-azure/initializable-clusters" class="no-border" >}}
+    {{< figure src="/attachments/deployment/mx-azure/initializable-clusters.png" class="no-border" >}}
 
 7. In the **Actions** column, click the icon, and then select **Initialize**. 
 
     The preflight check launches to verify that the required resources can be registered in the cluster. Mendix apps are hosted with virtual images, so the preflight check determines whether the cluster contains the required type of virtual image. To view a list of the required resource providers, hover your cursor over the **Information** icon. If required, you can register any missing providers in the **Resource providers** section of the Microsoft Azure portal.
 
-    {{< figure src="/attachments/deployment/mx-azure/preflight-check" class="no-border" >}}
+    {{< figure src="/attachments/deployment/mx-azure/preflight-check.png" class="no-border" >}}
 
 8. After the preflight check completes, click **Next**.
 
@@ -74,7 +74,7 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
 
 If a cluster fails for any reason, its status in the Mendix Portal changes to **Failed**. To view more information about the issue, click the icon in the **Actions** column, and then select **Details**.
 
-{{< figure src="/attachments/deployment/mx-azure/failed-cluster" class="no-border" >}}
+{{< figure src="/attachments/deployment/mx-azure/failed-cluster.png" class="no-border" >}}
 
 To fix the issue, you can click **Rerun** to manually re-run the cluster. If a cluster still fails after a manual rerun, a support ticket is automatically opened with Mendix Support. For more information, see [Support Policy for Mendix on Azure: Automatic Support Tickets](/developerportal/deploy/mendix-on-azure/support/#tickets-automatic).
 
