@@ -61,6 +61,9 @@ To use BAPI Connector for SAP Solutions in your Mendix application to call the B
 
 1. Set up the developer environment as described in [Setting Up the Developer Environment](#setup-environment).
 2. Test the connection to the SAP Backend [using the microflow `TestConnection`](#test-connection).
+
+    {{% alert color="info" %}}The `TestConnection` action works only when connection details are configured using [Direct Connections to the SAP Backend System](#sap-connection-details).{{% /alert %}}
+
 3. Add the microflow `Create_BAPIExplorer` to the navigation of your app to allow you to search for the BAPIs you need.
 
     {{% alert color="info" %}}Searching for BAPIs is provided as a microflow rather than a separate app so that you can set up the JCo destination securely. You should not give access to this microflow to any end-users of an app you build using the Mendix BAPI Connector.{{% /alert %}}

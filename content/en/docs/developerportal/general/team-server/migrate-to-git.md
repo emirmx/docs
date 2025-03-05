@@ -41,15 +41,13 @@ In addition to the hard criteria mentioned above, a check is performed to determ
 
 ### Eligibility Check Outcomes
 
-#### Not Eligible for Migration
+#### Eligible for Migrating With History
 
-If your app is not eligible for migration the reason(s) will be listed on the page. to continue with the migration, resolve these reasons and try again.
-
-In case there are reasons you cannot address, please reach out to Support or your Customer Success Manager to discuss the options.
+If your repository is eligible for migrating with full history, you can choose whether to retain your history during migration or not. For the smoothest experience after the migration, Mendix advises to migrate without history.
 
 #### Eligible for Migrating Without History
 
-If your app is eligible for migration, but the SVN repository size exceeds the threshold, you can only migrate the latest commit of the main branch. This limitation has been imposed to guarantee a smooth experience post-migration, as a [large Git Repository Size](/refguide/troubleshoot-repository-size/) can have a negative effect on the developer experience.
+If your app is eligible for migration, but the SVN repository size exceeds the threshold, you can only migrate the latest commit of the main branch. This limitation has been imposed to guarantee a smooth experience after the migration, as a [large Git Repository Size](/refguide/troubleshoot-repository-size/) can have a negative effect on the developer experience.
 
 {{% alert type="info" %}}
 
@@ -57,9 +55,19 @@ You will receive a full backup of your SVN repository after completing the migra
 
 {{% /alert %}}
 
-#### Eligible for Migrating With History
+#### Not Eligible for Migration
 
-If your repository is eligible for migrating with full history, you can choose whether to retain your history when migrating or not. For the smoothest experience post-migration we advise you to migrate without history.
+If your app is not eligible for migration the reason(s) will be listed on a page. To continue the process, resolve these reasons and try again.
+
+##### MPR File Size
+
+When the size of the *.mpr* file exceeds the threshold, migration is blocked to prevent rapid repository growth after migrating to Git. To get your app approved for migration, you have to agree on the following steps with Support or your Customer Success Manager:
+
+1. [Migrate without history](#without-history). This requires converging all branches which you want to retain.
+2. Update your app to Studio Pro version 10.18 or above, and convert to [MPRv2](/refguide/troubleshoot-repository-size/#mprv2).
+3. Execute a [Git cleanup](/refguide/troubleshoot-repository-size/#cleanup-tool).
+
+The first two steps need to be executed within a short timeframe. The last step is technically optional, but is strongly recommended for the best experience.
 
 ## How Migration Works
 
