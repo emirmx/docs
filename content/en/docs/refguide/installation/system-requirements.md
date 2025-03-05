@@ -230,7 +230,7 @@ When running Mendix on a server, you will need Java Runtime Environment (JRE). T
 * Mendix 10.24 LTS: Java 21
 
 {{% alert color="warning" %}}
-Mendix 10.21 and later (including 10.24 LTS) does not support Java 11. Please upgrade your application to Java 21 before migrating.
+Studio Pro 10.21 and later (including 10.24 LTS) does not support Java 11. Upgrade your application to Java 21 before migrating.
 {{% /alert %}}
 
 ## Databases {#databases}
