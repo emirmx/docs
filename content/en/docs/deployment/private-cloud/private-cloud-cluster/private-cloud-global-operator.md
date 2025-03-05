@@ -136,7 +136,7 @@ Currently, there is no API support to convert a namespace from standard to globa
 
     {{< figure src="/attachments/deployment/private-cloud/global-operator/convert-namespace-command.png" >}}
 
-4. Run the command and make sure that you are logged in the cluster where conversion needs to be done.
+4. Run the command and make sure that you are logged in to the cluster where the conversion must be done.
 
     Once the command has been run successfully, your namespace will be converted to managed namespace as part of Global Operator installation on the cluster side.
 
