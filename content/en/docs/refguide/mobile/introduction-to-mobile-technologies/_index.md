@@ -41,9 +41,8 @@ Building native mobile apps is inherently more complex than building web-based a
 For more information, see [Native Mobile](/refguide/mobile/introduction-to-mobile-technologies/native-mobile/).
 
 {{% alert color="info" %}}
-[What PWA Can Do Today](https://whatpwacando.today/) is a free service that allows you to try out PWA capabiliteis. Use it to check what is possible on your target devices. Be aware that not all capabilities are supported by Mendix.
+[What PWA Can Do Today](https://whatpwacando.today/) is a free service that lets you try out PWA capabilities on your devices of choice. Use it to determine which PWA features are possible on your app's target devices. Be aware that not all capabilities are supported by Mendix.
 {{% /alert %}}
-
 
 ## Deciding Between a PWA or Native Mobile App
 
