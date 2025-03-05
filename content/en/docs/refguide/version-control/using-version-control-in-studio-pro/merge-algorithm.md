@@ -13,32 +13,31 @@ aliases:
 
 ## Introduction
 
-While working on your changes you may find that your local copy of the app model doesn't have all the changes that other team members have [committed](/refguide/commit-dialog/) to the server (the [Mendix Team Server](/developerportal/general/team-server/), or an [on-premises server](/refguide/on-premises-git/)).
-In Git terminology this is called 'being behind'.
+While working on your changes you may find that your local copy of the app model does not have all the changes that other team members have [committed](/refguide/commit-dialog/) to the server (the [Mendix Team Server](/developerportal/general/team-server/), or an [on-premises server](/refguide/on-premises-git/)). In Git terminology this is called being behind.
 
 When this happens, Mendix Studio Pro offers two ways to combine your changes with changes from the server: [Rebase](#rebase) and [Merge commit](#merge). 
 
 Both options support the following features when it comes to [resolving the conflicts](#resolve):
 
-* **Fine-grained conflict resolution** – When there are conflicting changes in a document, you do not have to choose between whole documents, resolving a conflict using your change or using their change. Instead, you can resolve conflicts at the level of individual elements, such as widgets, entities, attributes, or microflow actions. All non-conflicting changes from both sides are accepted automatically.
-* **No conflicts on changes to lists of widgets** – When two developers make changes to widgets in the same document there is no conflict, the changes are combined. However, if the changes are made too close to the same place in the document, a **list order conflict** is reported that reminds the developer who is merging the changes to decide on the final order of the widgets in the list.
-* Can be aborted at any time. Studio Pro will continue from your latest local commit.
+* Fine-grained conflict resolution – When there are conflicting changes in a document, you do not have to choose between whole documents, resolving a conflict using your change or using their change. Instead, you can resolve conflicts at the level of individual elements, such as widgets, entities, attributes, or microflow actions. All non-conflicting changes from both sides are accepted automatically.
+* No conflicts on changes to lists of widgets – When two developers make changes to widgets in the same document there is no conflict, the changes are combined. However, if the changes are made too close to the same place in the document, a list order conflict is reported that reminds the developer who is merging the changes to decide on the final order of the widgets in the list.
+* They can be aborted at any time. Studio Pro will continue from your latest local commit.
 
 The differences between the two approaches are as follows:
 
-* Rebase (*default*): 
-    * Treats changes from the server as leading, by first retrieving the server state and then reapplying your work to it. 
+* Rebase (default): 
+    * Treats changes from the server as leading, by first retrieving the server state, and then reapplying your work to it. 
     * Results in a simple commit history.
-    * Resolves conflicts when reapplying your local commits. If you have 3 local commits, this could trigger conflict resolution 3 times.
+    * Resolves conflicts when reapplying your local commits. If you have three local commits, this could trigger conflict resolution three times.
 * Merge commit: 
-    * Treats local and remote changes equally, and combines them in a separate 'merge commit'.
+    * Treats local and remote changes equally, and combines them in a separate merge commit.
     * Results in a more complicated commit history with extra merge commits.
     * Resolves conflicts once, regardless of the number of local and remote commits being merged.
 
 {{% alert color="info" %}}
 In general, Mendix recommends using the Rebase strategy when combining changes, especially when actively collaborating on the same branch.
 
-In exceptional cases, for example when you have a lot of local commits where you expect conflicts, a merge commit might be the better choice. 
+In exceptional cases, for example when you have a lot of local commits where you expect conflicts, a merge commit may be the better choice. 
 {{% /alert %}}
 
 Both processes are guided by [notification controls](#notifications) showing the actual state and possible next steps.
@@ -49,33 +48,36 @@ The clearest way to explain and illustrate the differences between Rebase and Me
 
 ### Starting Point 
 
-There are two entities `User` and `Game` which you have added to the domain model of your project.
+To start this scenario, let us assume that you have added the following entities to the domain model of your project:
 
-The User entity includes string attributes `E_mail` and `Second_E_mail`.
+* `User`
+* `Game`
+
+The User entity includes the string attributes `E_mail` and `Second_E_mail`.
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/DomainModel/Starting_State.png"  >}} 
 
-### Local Changes, Your Work 
+### Your Local Changes 
 
-During your work you make two changes, each one in separate commit. 
+During your work you make the following changes, each one in separate commit:
 
-In the first commit you rename `E_mail` to `Email` 
+* Rename `E_mail` to `Email`.
 
-{{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/DomainModel/First_Local_Commit.png"  >}} 
+    {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/DomainModel/First_Local_Commit.png"  >}} 
 
-In the next commit you rename `Second_E_mail` to `Second_Email` to be consistent with previous change. 
+* Rename `Second_E_mail` to `Second_Email`. 
 
-{{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/DomainModel/Second_Local_Commit.png"  >}}   
+    {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/DomainModel/Second_Local_Commit.png"  >}}   
 
-### Server Changes
+### Another User's Changes
 
-In the meantime, your colleague also decided to make some changes to both email fields. They have renamed `E_mail` to `EmailAddress` and removed `Second_E_mail` entirely. These changes have been pushed to the server.
+In the meantime, your colleague also decided to make changes to both email fields. They have renamed `E_mail` to `EmailAddress` and removed `Second_E_mail` entirely. They have then pushed their changes to the server.
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/DomainModel/Remote_State.png" >}} 
 
 ### Summary 
 
-The current situation could be represent as shown below. 
+The current situation could be represented as shown below.
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/Steps/Rebase_Starting_state.png" alt="Team Server with three commits (1, 2, and 4), while in Studio Pro there are also three commits (1, 3, and 5)" width="525"  >}} 
 
