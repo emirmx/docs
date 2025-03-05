@@ -100,10 +100,12 @@ The Operator configuration for the managed namespace is created as well.
 
 After configuration, the status of managed namespace changes to **Configured**.
 
-Once the managed namespace is configured, you can find the list with all the namespaces managed by the globally installed operator in **Additional Information** section of the main namespace. The list will be shown under **Global Installation Managed Namespaces** section
+Once the managed namespace is configured, you can find the list with all the namespaces managed by the globally installed operator in **Additional Information** section of the main namespace. The list is displayed in the **Global Installation Managed Namespaces** section.
+
 {{% alert color="info" %}}
-If the managed namespaces are deleted from the portal, the namespaces will not be deleted from the cluster. The managed namespaces needs to be manually deleted from the cluster. Additionally, you also need to remove the managed namespace from the list of managed namespaces in the Operator configuration of the main namespace.
-Also, the main namespace cant be deleted from the portal until the managed namespaces are deleted from the cluster.
+If you delete the managed namespaces from the portal, they are not deleted from the cluster. You must delete them from the cluster manually. You must also remove the managed namespace from the list of managed namespaces in the Operator configuration of the main namespace.
+
+The main namespace cannot be deleted from the portal until the managed namespaces are deleted from the cluster.
 {{% /alert %}}
 
 ### Next Steps
