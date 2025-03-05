@@ -100,7 +100,15 @@ When the app goes to the background or closes, the native client will save buffe
 
 In this scenario, it will discard older messages so that it will not overflow with too many logs. An additional `info` log message will be added with the number of discarded logs and the timestamps of when these log messages were ignored.
 
-The body of the log message consists of the timestamp in which the message was logged (which differs from the timestamp that is normally shown in the Cloud Portal as that one refers to the timestamps the log messages were collected), a unique session id so that the log messages can be grouped by device or origin, and the main content of the log message itself. 
+The body of the log message consists of the timestamp in which the message was logged (which differs from the timestamp that is normally shown in the Cloud Portal as that one refers to the timestamps the log messages were collected), a unique session id so that the log messages can be grouped by device or origin, and the main content of the log message itself.
+
+Example:
+
+```
+ERROR - Client: [2024-11-20 12:55:44.313 ][5261732040035738] Performing simultaneous synchronizations is not supported. Please try again after the current synchronization is completed.
+ ^          ^         ^                     ^                 ^
+Log Level  Log Node  Timestamp             Session ID        Log Message
+```
 
 ## Extending Logging
 
