@@ -52,7 +52,7 @@ To install and configure the Global Operator, perform the following steps:
 
     {{< figure src="/attachments/deployment/private-cloud/global-operator/global-operator6.png" class="no-border" >}}
 
-    4. Its possible to apply the Custom TLS and proxy settings in the Global Operator main namespace by **just** selecting the **Custom TLS** and **Proxy** options in the Configuration Tool.
+    4. You can apply the custom TLS and proxy settings in the Global Operator main namespace by just selecting only the **Custom TLS** and **Proxy** options in the Configuration Tool.
 
 7. Verify that the installation was successful by using the following command: 
 
