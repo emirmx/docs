@@ -511,7 +511,7 @@ If any of these garbage collection steps fail, you will no longer see the enviro
 
 ##### Read-Only Root Filesystem
 
-[Readonly Root file system](/developerportal/deploy/private-cloud-cluster/#readonlyrootfs) can be enabled per environment. By default, this option is disabled. 
+[Read-only Root file system](/developerportal/deploy/private-cloud-cluster/#readonlyrootfs) can be enabled per environment. By default, this option is disabled. 
 
 ##### Deployment Strategy 
 
