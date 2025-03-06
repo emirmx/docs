@@ -3,7 +3,6 @@ title: "Configure the External Database Connector for Databricks"
 linktitle: "External Database Connector"
 url: /appstore/modules/databricks/external-database-connector/
 description: "Describes the steps required to use the Mendix External Database connector with Databricks."
-weight: 10
 ---
 
 ## Introduction
