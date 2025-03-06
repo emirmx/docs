@@ -362,15 +362,15 @@ To add attachments to the email message, do the following:
 
 2. Set the **Attachment_EmailMessage** association.
 
-#### In-line Attachment
+#### Inline Attachment
 
-To add in-line attachments to the email message, you can either use the Rich text editor to insert an image (or images) in the email body. You can also insert in-line attachments non-interactively using a microflow. To do this, follow these steps:
+To add inline attachments to the email message, you can either use the Rich text editor to insert an image (or images) in the email body. You can also insert inline attachments non-interactively using a microflow. To do this, follow these steps:
 
 1. Create an EmailMessage with the *Content* property set as seen below:  
 
-```
-'before inline image<br><img src="cid:mxcid:test.png" width="530" height="110"><br>after inline image'
-```
+    ```
+    'before inline image<br><img src="cid:mxcid:test.png" width="530" height="110"><br>after inline image'
+    ```
 
 2. Specify the image's tag source using the **cid:mxcid** prefix before the source file to have the image added as inline image.
 3. Create the attachment with the Position attribute set to **ENUM_AttachmentPosition.Inline**.
