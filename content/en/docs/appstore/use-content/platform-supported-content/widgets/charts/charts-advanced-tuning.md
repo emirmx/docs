@@ -1,5 +1,5 @@
 ---
-title: "Fine-Tune a Chart with Advanced Settings"
+title: "Fine-Tune a Chart with Chart Playground"
 linktitle: "Chart Advanced Tuning"
 url: /appstore/widgets/chart-advanced-tuning/
 weight: 30
@@ -10,7 +10,7 @@ aliases:
 
 ## Introduction
 
-The individual Charts widgets can be fine-tuned with advanced settings. The settings can affect the layout, configuration and data.
+The individual Charts widgets can be fine-tuned with chart playground. The settings can affect the layout, configuration and data.
 
 This how-to teaches you how to do the following:  
 
