@@ -352,6 +352,7 @@ Configuring local clients, such as [Papercut](https://github.com/ChangemakerStud
 
 ### Adding Attachments
 
+#### Normal Attachment
 To add attachments to the email message, do the following:
 
 1. Create an **Attachment** entity. The **Attachment** entity extends the **FileDocument** entity by making it usable in all the places where the **FileDocument** entity is required.
@@ -359,6 +360,13 @@ To add attachments to the email message, do the following:
     {{% alert color="info" %}}If you have a custom entity, you can extend it with the **Attachment** entity instead of **FileDocument**, or use the community commons **DuplicateFileDocument** function to create an **Attachment** from your custom entity.{{% /alert %}}
 
 2. Set the **Attachment_EmailMessage** association.
+
+#### In-line Attachment
+To add in-line attachments to the email message, you can either use the Rich text editor to insert image(s) in the email body. You can also insert in-line attachments non-interactively using a microflow. The steps are to first create an EmailMessage with *Content* property set as below..  
+```
+'before inline image<br><img src="cid:mxcid:test.png" width="530" height="110"><br>after inline image'
+```
+The img tag's source should be specified using **cid:mxcid** prefix before the source file to have this image added as inline image. Then create Attahcment with the Position attribute set to *ENUM_AttachmentPosition.Inline*. Associate the Attachment with EmailMessage and you should be able to send this email using *SUB_SendEmail* Microflow. 
 
 ### Page Styling
 
