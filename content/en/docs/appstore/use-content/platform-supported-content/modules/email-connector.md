@@ -374,7 +374,7 @@ To add inline attachments to an email message, you can use the Rich text editor 
 
 2. Specify the image's tag source using the **cid:mxcid** prefix before the source file to have the image added as inline image.
 3. Create the attachment with the Position attribute set to **ENUM_AttachmentPosition.Inline**.
-4. Associate the attachment with EmailMessage. You should then be able to send the email using the **SUB_SendEmail** microflow. 
+4. Associate the attachment with EmailMessage. You can then send the email using the **SUB_SendEmail** microflow. 
 
 ### Page Styling
 
