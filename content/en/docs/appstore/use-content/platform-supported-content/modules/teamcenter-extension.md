@@ -22,9 +22,10 @@ Teamcenter Extension offers the following integration options:
 * Revise item revision
 * Search datasets
 * Get datasets for item revision
+* Attach dataset to item revision
 * Search workspace objects
 * Relate workspace objects
-* Get structures
+* Get structure
 
 ### License {#license}
 
@@ -91,7 +92,7 @@ The `Get Datasets from Item Revision` action allows you to generate the domain m
 
 #### Attach Datasets to Item Revision {#attachdatasetstoitemrevision}
 
-The 'Attach Datasets to Item Revision' action allows you to generate a domain model and microflow which creates and attaches a Teamcenter dataset (or its specializations) with a file document to an Item Revision in Teamcenter. The resulting microflow implements the Upload file, Create relation, and Get properties actions from the `TcConnector` module.
+The 'Attach Datasets to Item Revision' action allows you to generate a domain model and microflow which creates and attaches a Teamcenter dataset (or its specializations) with a file document to an Item Revision in Teamcenter. The resulting microflow implements the `Upload file`, `Create relation`, and `Get properties` actions from the `TcConnector` module.
 
 #### Search Workspace Objects {#getworkspaceobjects}
 
@@ -99,11 +100,11 @@ The `Search Workspace Objects` action allows you to configure and generate the d
 
 #### Relate Workspace Objects {#relateworkspaceobjects}
 
-The 'Relate Workspace Objects' allows you to generate the domain model and microflow to relate two workspace objects or their specialization from Teamcenter. The resulting microflow implements the Create relation action from TcConnector
+The 'Relate Workspace Objects' action allows you to generate the domain model and microflow to relate two workspace objects or their specialization from Teamcenter. The resulting microflow implements the `Create relation` action from the `TcConnector` module.
 
-#### Get Structures {#getstructures}
+#### Get Structure {#getstructures}
 
-The `Get Structures` allows you to generate the domain model and microflows to configure a BOM window and retrieve structure data from Teamcenter. This feature supports the retrieval of structures with the following:
+The `Get Structure` action allows you to generate the domain model and microflows to configure a BOM window and retrieve structure data from Teamcenter. This feature supports the retrieval of structures with the following:
 
 * `RevisionRule` (or default `RevisionRule`)
 * `VariantRule`
@@ -146,7 +147,7 @@ The landing page has with three tabs: **Menu**, **History**, and **Settings**.
 
 The **Menu** tab displays use cases or actions you can create artifacts for using Teamcenter Extension.
 
-![{F6498EBE-C8F0-4979-A54B-7747DB84D550}](https://github.com/user-attachments/assets/3def9a21-3226-42a2-9ba6-c0f752a0d5b3)
+{{< figure src="/attachments/appstore/platform-supported-content/modules/teamcenter-extension/menu-tab.png" >}}
 
 #### History Tab
 
