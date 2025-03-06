@@ -12,6 +12,12 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2025
 
+### March 6, 2025
+
+#### General Availability Release
+
+* We have released the general availability (GA) version of Global Operator in the Private Cloud.
+
 ### February 19, 2025
 
 #### Mendix Operator v2.21.0 {#2.21.0}
