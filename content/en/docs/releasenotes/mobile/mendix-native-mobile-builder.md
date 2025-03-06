@@ -12,6 +12,14 @@ The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Stu
 
 ## 2025
 
+### Release 1.0.135
+
+**Release date: March 4, 2025**
+
+### Fixes
+
+- We've updated our signing mechanism so that you can use the app without receiving Microsoft Defender SmartScreen notifications.
+
 ### Release 1.0.134
 
 **Release date: February 20, 2025**
