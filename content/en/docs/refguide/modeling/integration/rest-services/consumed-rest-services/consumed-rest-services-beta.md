@@ -35,7 +35,6 @@ The ability to import an OpenAPI/Swagger contract was introduced as a beta featu
 ### Limitations
 
 * To use the request response to create a data structure automatically in your domain model, the response data should be in JSON format. It is possible to process other formats, such as XML or raw text, but you will need to extract the data you are looking for in a microflow.
-* For macOS, it is currently not possible to copy and paste in the URL or body fields. You may also experience issues while tabbing in the text field. 
 
 ### Prerequisites 
 
