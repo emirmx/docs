@@ -27,13 +27,13 @@ To connect your Mendix application to Databricks with the External Database conn
         * **Artifact ID** - set to **databricks-jdbc**
         * **Version** - set to **2.7.1**
    
-   {{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/JavaDependency.png" >}}
+   {{< figure src="/attachments/appstore/platform-supported-content/modules/databricks/JavaDependency.png" >}}
    
    * To install the dependency manually, download version 2.7.1 of the [JDBC driver](https://www.databricks.com/spark/jdbc-drivers-archive) that Databricks provides and put the .jar file into the *userlib* of your Mendix project.
 
 3. Run you Mendix project and run the [Connect to Database wizard](/appstore/modules/external-database-connector/#configuration), selecting **Other** as the database type.
 
-   {{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/DatabricksConfig.png" >}}
+   {{< figure src="/attachments/appstore/platform-supported-content/modules/databricks/DatabricksConfig.png" >}}
 
 4. Provide a name for the database connection document.
 5. Enter the following connection details:
@@ -41,18 +41,18 @@ To connect your Mendix application to Databricks with the External Database conn
     * **User name** - set to **token**
     * **Password** - set to the personal access token (PAT) that you can generate through the user settings in Databricks:
 
-   {{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/PAT.png" >}}
+   {{< figure src="/attachments/appstore/platform-supported-content/modules/databricks/PAT.png" >}}
    
 7. In your Databricks account find the JDBC URL related to the SQL warehouse or cluster which you are using.
 8. Copy the URL into the **JDBC URL** field and add *UID=token;PWD=`PAT`*, where `PAT` is your actual PAT.
 
-   {{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/JDBC_URL.png" >}}
+   {{< figure src="/attachments/appstore/platform-supported-content/modules/databricks/JDBC_URL.png" >}}
   
 9. Click **Test Connection** to verify the connection details, and then click **Save**.
 
 Your Mendix app now connects to Databricks with the provided connection details. When the connection is successful, you can see your Databricks tables in your Mendix app.
 
-{{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/Database_structure.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/databricks/Database_structure.png" >}}
 
 You can now configure the queries that you need to run on your Databricks database. The following section of this document provides an example of a common query. For general information about creating queries, see [External Database Connector: Querying a Database](/appstore/modules/external-database-connector/#query-database) and [External Database Connector: Using Query Response](/appstore/modules/external-database-connector/#use-query-response).
 
@@ -85,7 +85,7 @@ INSERT INTO customerData (name, address, postal_code, gender) VALUES
     ('Sophie Jansen', 'Kersenstraat 12, Fruitdorp', '0123TU', 'Female');
 ```
 
-{{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/SQL_Editor.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/databricks/SQL_Editor.png" >}}
 
 ### Querying the Data
 
@@ -101,7 +101,7 @@ After you have created a table with some entries, you can now be query from your
 
 4. Click **Run Query**.
 
-    {{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/Query.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/databricks/Query.png" >}}
 
 5. Verify that the results are correct, and then generate the required entity to collect the data in your Mendix application. For more information, see [External Database Connector: Creating an Entity from the Response](/appstore/modules/external-database-connector/#create-entity).
 6. Create a microflow that will run the query by doing the following steps:
@@ -118,6 +118,6 @@ After you have created a table with some entries, you can now be query from your
         * **List name** - enter *Customerdata_list*
     11. Click **OK**.
 
-    {{< figure src="static/attachments/appstore/platform-supported-content/modules/databricks/JA_Query.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/databricks/JA_Query.png" >}}
 
 7. Link the microflow to a microflow button and use the Debugger to test if the objects are properly returned.
