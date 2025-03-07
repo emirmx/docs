@@ -123,8 +123,7 @@ Then, use the parameter in the query:
 
 `select * from customers where contactFirstName like {paramFirstName}`
 
-{{% alert color="info" %}}
-If you need to pass a list of values to a parameter, you can use the following approach:
+To pass a list of values to a parameter, you can use the following approach:
 
 ```sql
 WITH empids AS (
@@ -138,8 +137,7 @@ WHERE empno IN
      FROM empids);
 ```
 
-Note : Here parameter `EmpIdList` is of type String with the  value `[1,7946,3,4,7942,7943,7945]`.
- {{% /alert %}}
+Here, the parameter `EmpIdList` is of type String with the  value `[1,7946,3,4,7942,7943,7945]`.
 
 ### Using Query Response {#use-query-response}
 
