@@ -99,7 +99,7 @@ Rebase is available only for Git version 2.41.0 and above.
 During the rebase process, there is a slight terminology change in Studio Pro compared to merge.
 {{% /alert %}}
 
-The rebase process is described below, starting with the state described in the [example scenario](#scenario), above.
+The following sections describe a possible rebase process for the [example scenario](#scenario).
 
 #### Rebase Started 
 
