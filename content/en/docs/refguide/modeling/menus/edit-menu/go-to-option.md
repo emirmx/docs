@@ -27,11 +27,11 @@ The examples of using the **Go to** option are described below:
 
 ## The Go to Dialog
 
-As mentioned in 'Menu Item Overview', this dialog can be accessed by both the 'Edit' menu or the <kbd>Ctrl</kbd> + <kbd>G</kbd> shortcut. The dialog allows a quick navigation to any document or domain model element in the app by typing a few letters and pressing <kbd>Enter</kbd>.
+The **Go to** dialog can be accessed by both the **Edit** menu or by using the <kbd>Ctrl</kbd> + <kbd>G</kbd> shortcut. The dialog allows quick navigation to any document or domain model element in the app by typing a few letters and pressing <kbd>Enter</kbd>.
 
-The typed letters or term are cached, so if the dialog is closed and re-opened, the input is not lost.
+The typed letters or term are cached, so if the dialog is closed and reopened, the input is not lost.
 
-This dialog also supports a filter option. The filter selection is saved, not only upon closing and re-opening the dialog, but also over different user sessions. In other words, the filter selection is saved even if you close Studio-Pro and re-open it.
+This dialog also supports a filter option. The filter selection is saved upon both closing and reopening the dialog, and over different user sessions. This means the filter selection is saved even if you close and reopen Studio Pro.
 
 ## Read More
 
