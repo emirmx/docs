@@ -8,7 +8,7 @@ description: "This document guides you through integrating and implementing func
 
 ## Introduction
 
-This document explains how to use function calling in your smart app. To do this, you can use your existing app or follow the [Build a Smart App from a Blank GenAI App](/appstore/modules/genai/using-genai/blank-app/) guide to start from scratch, as demonstrated in the sections below.
+This document explains how to use function calling in your smart app. To do this, you can use your existing app or follow the [Build a Smart App from a Blank GenAI App](/appstore/modules/genai/how-to/blank-app/) guide to start from scratch, as demonstrated in the sections below.
 
 Through this document, you will:
 
@@ -19,7 +19,7 @@ Through this document, you will:
 
 Before integrating function calling into your app, make sure you meet the following requirements:
 
-* An existing app: To simplify your first use case, start building from a preconfigured set up [Blank GenAI Starter App](https://marketplace.mendix.com/link/component/227934). For more information, see [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/using-genai/blank-app/). 
+* An existing app: To simplify your first use case, start building from a preconfigured set up [Blank GenAI Starter App](https://marketplace.mendix.com/link/component/227934). For more information, see [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/how-to/blank-app/). 
 
 * Installation: Install the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle from the Mendix marketplace. If you start with the Blank GenAI App, skip this installation.
 
@@ -139,7 +139,7 @@ As shown in the image, two key steps must be completed to enable the execution o
 
 ### Optional: Changing the System Prompt {#edit-systemprompt}
 
-Optionally, you can change the system prompt to provide the model additional instructions, for example, the tone of voice. Therefore, follow a similar approach described in the [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/using-genai/blank-app/#changing-system-prompt).
+Optionally, you can change the system prompt to provide the model additional instructions, for example, the tone of voice. Therefore, follow a similar approach described in the [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/how-to/blank-app/#changing-system-prompt).
 
 1. Open the copied `ACT_FullScreenChat_Open` microflow from your `MyFirstBot` module.
 2. Locate the **New Chat** action.
@@ -149,7 +149,7 @@ Optionally, you can change the system prompt to provide the model additional ins
 
 ## Testing and Troubleshooting {#testing-troubleshooting}
 
-Before testing, ensure that you have completed the Mendix Cloud GenAI, OpenAI, or Bedrock configuration as described in the [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/using-genai/blank-app/), particularly the [Infrastructure Configuration](/appstore/modules/genai/using-genai/blank-app/#config) section. 
+Before testing, ensure that you have completed the Mendix Cloud GenAI, OpenAI, or Bedrock configuration as described in the [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/how-to/blank-app/), particularly the [Infrastructure Configuration](/appstore/modules/genai/how-to/blank-app/#config) section. 
 
 To test the Chatbot, go to the **Home** icon to open the chatbot interface. Start interacting with your chatbot by typing in the chat box.
 For example, type—`Write a message to my colleague Max asking about a meeting to discuss the content for our next GenAI how-to.` or `How many bank holidays do I have in December?`
