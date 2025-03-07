@@ -113,7 +113,7 @@ Your work is now labelled *Theirs*, while the server changes are labelled *Mine*
 
 #### Resolving the First Conflict{#resolving-first-conflict}
 
-Git tries to apply your first commit (`#3`) to the tip of the rebasing branch ('Mine'). The commit will come after commit `#4`. 
+Git tries to apply your first commit (`#3`) to the tip of the rebasing branch (*Mine*). The commit will come after commit `#4`. 
 
 If there were no conflicts when comparing your commit (`#3`) with the latest state from the server (`#4`), Studio Pro automatically continues. A new commit would be created from your commit, shown as commit `#3'` in the image below. The process would then continue with the next commit (`#5`).
 
