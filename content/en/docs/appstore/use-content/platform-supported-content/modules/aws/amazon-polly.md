@@ -94,94 +94,34 @@ The **Documentation** pane displays the documentation for the currently selected
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" class="no-border" >}}
 
-For additional reference, you can also find the same information in the following sections of this document.
+For additional reference, the available entities, operations, and other items are listed in the following sections of this document.
 
-### Domain Model
+### Domain Model Entities
 
 The domain model is a data model that describes the information in your application domain in an abstract way. For more information, see [Domain Model](/refguide/domain-model/).
 
-#### AbstractVoice {#abstractvoice}
+The domain model of the Amazon Polly connector contains the following entities:
 
-The `AbstractVoice` entity is a representation of an Amazon Polly voice. It contains the unique identifier for a voice (`VoiceID`) that is required for `SynthesizeSpeech` activities. It also contains additional information on a voice like the name, language and gender.
-
-| Attribute | Description |
-| --- | --- |
-| `VoiceID` | ID assigned by Amazon Polly that is specified when calling the [SynthesizeSpeech](#synthesize-speech) action (string)|
-| `Name` | Name of the voice (string)|
-| `LanguageName` | Name of the language in English (string)|
-| `LanguageCode` | The language code of the voice (string)|
-| `Gender` | Gender of the voice. (string)|
-
-#### DescribeVoicesRequest
-
-The `DescribeVoicesRequest` is the request object used for the [DescribeVoices](#describe-voices) action. It inherits from the `AbstractRequest` entity (AWSAuthentication v.3.0.0).
-
-#### DescribeVoicesResponse
-
-The `DescribeVoicesResponse` entity is the response for the [DescribeVoices](#describe-voices) action. The action also returns a list of `DescribeVoice` objects associated with the `DescribeVoicesResponse` object. The `DescribeVoice` entity inherits from the voice entity and contains all its attributes.
-
-#### SynthesizeSpeechRequest
-
-The `SynthesizeSpeechRequest` entity is used when calling the [SynthesizeSpeech](#synthesize-speech) action. 
-
-| Attribute | Description |
-| --- | --- |
-| `Text` | Text to synthesize (string)|
-| `TextType` | It is used to specify whether the input text is plain text or SSML. If left empty, the default value is 'plain text' (enum)|
-| `OutputFormat` | The format that the output should be encoded (enum)|
-| `SampleRate` | The sample rate for speech synthesis (string)|
-| `Engine` | The engine that will be used during speech synthesis (enum)|
-| `VoiceID` | The ID of the voice (string)|
-| `LanguageCode` | The language code of the voice (string)|
+* `AbstractVoice` - A representation of an Amazon Polly voice.
+* The `DescribeVoicesRequest` - The request object used for the [DescribeVoices](#describe-voices) action.
+* `DescribeVoicesResponse` - The response for the [DescribeVoices](#describe-voices) action.
+* `SynthesizeSpeechRequest` - Used when calling the [SynthesizeSpeech](#synthesize-speech) action. 
 
 ### Enumerations
 
 An enumeration is a predefined list of values that an be used as an attribute type.
 
-#### `OutputFormat`
+The Amazon Polly connector contains the following enumerations:
 
-The format in which the returned output will be encoded. For audio streams, this must be MP3, OGG_VORBIS, or PCM. JSON is currently not supported.
-
-| Name | Caption |
-| --- | --- |
-| MP3        | MP3        |
-| OGG_VORBIS | OGG_VORBIS |
-| PCM        | PCM        |
-
-#### `Engine`
-
-Specifies the engines (standard or neural) that are supported by a given voice.
-
-| Name | Caption |
-| --- | --- |
-| STANDARD | STANDARD |
-| NEURAL | NEURAL |
-| UNKNOWN_TO_SDK_VERSION | UNKNOWN_TO_SDK_VERSION |
-
-#### `TextType`
-
-| Name | Caption |
-| --- | --- |
-| PlainText | PlainText |
-| SSML | SSML |
+* `OutputFormat` - The format in which the returned output will be encoded (MP3, OGG_VORBIS, or PCM).
+* `Engine` - Specifies the engines (standard or neural) that are supported by a given voice.
+* `TextType` - PlainText or SSML.
 
 ### Activities
 
 Activities define the actions that are executed in a microflow or a nanoflow.
 
-#### Synthesize Speech {#synthesize-speech}
+The Amazon Polly connector contains the following activities:
 
-The `SynthesizeSpeech` activity allows you to synthesize a string of text into an audio file. It requires a `Credentials` object, a `SynthesizeSpeechRequest` object containing the required information, and a `TargetFileDocument` (`System.FileDocument` or its specialization) to contain the response of the `SynthesizeSpeech` activity. It also requires the `AWS_Region` in which the Polly service should be called.
-
-The `SynthesizeSpeech` activity has no return value, instead the input parameter TargetFileDocument contains the synthesized speech.
-
-#### DescribeVoices {#describe-voices}
-
-The `DescribeVoices` activity returns the list of voices from the Amazon Polly service. It requires a `Credentials` object and an `AWS_Region` parameter to get the list of supported voices from the given AWS region.
-The voices can be used in the `Synthesize Speech` activity to synthesize a piece of text to speech with the right voice. 
-
-The `DescribeVoices` activity returns a `DescribeVoicesResponse` entity containing a list of `DescribeVoice` entities. Examples of the returned `DescribeVoice` objects can be seen below. 
-
- {{< figure src="/attachments/appstore/use-content/modules/aws-polly/polly-example-voices.png" alt="Examples of available voices for Amazon Polly" class="no-border" >}}
-
-For more Amazon Polly voices and their information, see [Voices in Amazon Polly](https://docs.aws.amazon.com/polly/latest/dg/voicelist.html).
+* `SynthesizeSpeech` - Allows you to synthesize a string of text into an audio file.
+* `DescribeVoices` - Returns the list of voices from the Amazon Polly service. For more Amazon Polly voices and their information, see [Voices in Amazon Polly](https://docs.aws.amazon.com/polly/latest/dg/voicelist.html).
