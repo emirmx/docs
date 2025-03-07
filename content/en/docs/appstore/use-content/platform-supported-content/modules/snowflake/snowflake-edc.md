@@ -165,6 +165,7 @@ To set the result format at the Snowflake session or user level, use the followi
 ```
 
 This approach ensures compatibility with JDK 16+.
+[For more details](https://community.snowflake.com/s/article/Getting-java-lang-NoClassDefFoundError-for-class-RootAllocator).
 
 ## Configuring a Query to Display Data as a Chart
 
