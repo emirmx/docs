@@ -103,10 +103,10 @@ The following sections describe a possible rebase process for the [example scena
 
 #### Rebase Started 
 
-After starting the rebase, your two commits (#3 and #5) are temporarily put aside, and Studio Pro shows the latest changes which were pulled from the server (which includes commits #2 and #4).
+After starting the rebase, your two commits (#3 and #5) are temporarily put aside. Studio Pro shows the latest changes which were pulled from the server, including commits #2 and #4.
 
-{{% alert color="warning" %}}
-Your work will be now referenced as 'Theirs', while the server changes will be 'Mine'. This is opposite to the way that the work is labelled for a merge commit.
+{{% alert color="info" %}}
+Your work is now labelled *Theirs*, while the server changes are labelled *Mine*. This is opposite to the way that the work is labelled for a merge commit.
 {{% /alert %}}
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/Steps/Rebase_Step_1.png" width="525"  >}} 
