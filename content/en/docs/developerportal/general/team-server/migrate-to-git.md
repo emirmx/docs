@@ -104,13 +104,13 @@ All work not merged to the main branch will not be migrated to your Git reposito
 
 #### Using an SVN Backup
 
-All Scrum Masters receive an email with a link to download an SVN backup. The backup can also be accessed through `https://git-migration.home.mendix.com/p/view-backup/[repository-ID]`, where [repository-ID] has to be replaced.
+All Scrum Masters receive an email with a link to download an SVN backup. The backup can also be accessed through `https://git-migration.home.mendix.com/p/view-backup/[repository-ID]`, where you need to fill in the *[repository-ID]*.
 
 You can then download a *[repository-id].dump* file to your local device and you can use this file to restore the repository locally.
 
 {{% alert color="warning" %}}
 
-The SVN backup automatically expires after 90 days. After this time the SVN history is permanently deleted and can't be recovered.
+The SVN backup automatically expires after 90 days. After this time the SVN history is permanently deleted and connot be recovered.
 
 {{% /alert %}}
 
