@@ -103,7 +103,7 @@ The domain model is a data model that describes the information in your applicat
 The domain model of the Amazon Polly connector contains the following entities:
 
 * `AbstractVoice` - A representation of an Amazon Polly voice.
-* The `DescribeVoicesRequest` - The request object used for the [DescribeVoices](#describe-voices) action.
+* `DescribeVoicesRequest` - The request object used for the [DescribeVoices](#describe-voices) action.
 * `DescribeVoicesResponse` - The response for the [DescribeVoices](#describe-voices) action.
 * `SynthesizeSpeechRequest` - Used when calling the [SynthesizeSpeech](#synthesize-speech) action. 
 
