@@ -31,7 +31,6 @@ Use the Consumed REST Service document to do the following:
 The ability to import an OpenAPI/Swagger contract was introduced as a beta feature in [Studio Pro 10.21](/releasenotes/studio-pro/10.21/).
 {{% /alert %}}
 
-
 ### Limitations
 
 * To use the request response to create a data structure automatically in your domain model, the response data should be in JSON format. It is possible to process other formats, such as XML or raw text, but you will need to extract the data you are looking for in a microflow.
@@ -59,12 +58,13 @@ Download [Studio Pro](https://marketplace.mendix.com/link/studiopro/) and add th
         3. Select the requests you want to add to your document.
         4. Click **OK**.
 
+For more information about importing from an OpenAPI/Swagger contract, see the [Import from OpenAPI/Swagger Contract](#open-api-import) section below.
+
 ## Configuration {#configuration}
 
 Use the Consumed REST Service to configure a `GET`, `POST`, `PUT`, `PATCH`, or `DELETE` request for your app. A request can be configured manually or by uploading an OpenAPI or Swagger contract.
 
 If you upload an OpenAPI URL or Swagger contract, the content of the URL or file will be automatically added to your consumed REST service document. You can still manually configure the request after upload, such as add new [parameters](#add-parameters), [headers](#add-headers), or create entities from the request/response.
-
 
 ### Basic Configuration {#configure-a-request}
 
@@ -90,6 +90,18 @@ Create a `GET`, `POST`, `PUT`, `PATCH`, or `DELETE` request to send data to your
 7. Click **Send**. 
 
 You can visualize your request in the **Response** tab, then use the response to [create an entity in the domain model](#create-entity). 
+
+### Import from OpenAPI/Swagger Contract {#open-api-import}
+
+Once the OpenAPI/Swagger contract has been imported, you see the following view:
+
+{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/xxx.png" class="no-border" >}}
+
+To add more requests from your existing contract, click **Add Request**, then select the additional requests you want to add to the document: 
+
+{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/xxx.png" class="no-border" >}}
+
+To create a new blank request, click **New Request**.
 
 ### Authentication Methods {#authentication}
 
