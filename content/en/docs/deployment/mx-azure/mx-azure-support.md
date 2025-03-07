@@ -154,6 +154,6 @@ The solution is being benchmarked against SOC2 Azure Policy Compliance controls.
 ## Known Limitations
 
 * Mendix on Azure only supports hosting apps on Mendix versions 10.10 or later. Any app on an earlier version will fail to deploy successfully.
-* Due to the managed nature of this product, not all Private Cloud APIs are available to the customer. Refer to the Build and Deploy API documentation to find out which API calls are out of scope for Mendix on Azure.
+* Due to the managed nature of this product, the following Private Cloud Deploy APIs are irrelevant and thus unavailable to customers: Create/Edit/Delete cluster and Create/Update/Delete namespace. All other build and deploy APIs are available and function as usual.
 * Currently, even after a cluster manager is deleted from the Private Cloud portal for a specific cluster, users can still access the cluster in the Mendix on Azure portal.
 * Because Mendix on Azure is directly dependent on Mendix for Private Cloud, issues that affect the Private Cloud may also affect Mendix on Azure deployments. For example, if the Private Cloud is down, it is not possible to create new Mendix on Azure clusters.
