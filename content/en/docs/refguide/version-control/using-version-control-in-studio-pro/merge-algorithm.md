@@ -83,16 +83,16 @@ The current situation could be represented as shown below.
 
 ## Combining Changes {#combine-changes}
 
-This section goes through the [example scenario](#scenario) with the two different approaches: [Rebase](#rebase) and [Merge commit](#merge). 
+This section outlines two possible approaches to the [example scenario](#scenario): [Rebase](#rebase) and [Merge commit](#merge). 
 
-Every time changes can be combined, for example when pulling changes from the server, you can choose the approach. The default can be changed by adjusting the [user preference](/refguide/preferences-dialog/#git).
+Every time changes can be combined, for example when pulling changes from the server, you can choose the approach. You can change the default approach for your user account by adjusting the [user preferences](/refguide/preferences-dialog/#git).
 
 ### Rebase {#rebase}
 
 Rebasing is the default way to integrate your work with the server changes. It moves your changes to the tip of the changes pulled from the server.
 
 {{% alert color="warning" %}}
-Rebase is available only for installed Git version 2.41.0 and above.
+Rebase is available only for Git version 2.41.0 and above.
 {{% /alert %}}
 
 {{% alert color="info" %}}
