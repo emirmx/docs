@@ -25,6 +25,14 @@ The examples of using the **Go to** option are described below:
 
     {{< figure src="/attachments/refguide/modeling/menus/edit-menu/go-to-option/go-to-entity.png" alt="Go to Entity" class="no-border" width="400" >}}
 
+## The Go to Dialog
+
+As mentioned in 'Menu Item Overview', this dialog can be accessed by both the 'Edit' menu or the <kbd>Ctrl</kbd> + <kbd>G</kbd> shortcut. The dialog allows a quick navigation to any document or domain model element in the app by typing a few letters and pressing <kbd>Enter</kbd>.
+
+The typed letters or term are cached, so if the dialog is closed and re-opened, the input is not lost.
+
+This dialog also supports a filter option. The filter selection is saved, not only upon closing and re-opening the dialog, but also over different user sessions. In other words, the filter selection is saved even if you close Studio-Pro and re-open it.
+
 ## Read More
 
 * [Find, Find Advanced, and Find Usages](/refguide/find-and-find-advanced/)
