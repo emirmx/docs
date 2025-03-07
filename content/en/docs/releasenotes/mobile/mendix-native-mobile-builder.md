@@ -18,7 +18,7 @@ The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Stu
 
 ### Fixes
 
-- We've updated our signing mechanism so that you can use the app without receiving Microsoft Defender SmartScreen notifications.
+- We updated our signing mechanism so you can use the app without receiving Microsoft Defender SmartScreen notifications.
 
 ### Release 1.0.134
 
