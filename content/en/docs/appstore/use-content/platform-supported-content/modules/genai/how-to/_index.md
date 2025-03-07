@@ -1,6 +1,6 @@
 ---
 title: "How to Build Smarter Apps Using GenAI"
-url: /appstore/modules/genai/using-genai/
+url: /appstore/modules/genai/how-to/
 linktitle: "How to Build Smarter Apps using GenAI"
 weight: 10
 description: "Tutorial on how to get started with GenAI for Smarter Apps"
@@ -27,7 +27,7 @@ Generative Artificial Intelligence (GenAI) transforms business applications, emp
 
 ### Additional Resources
 
-* Basic documentation on [Get Started with Generative AI](/appstore/modules/genai/get-started/) is an essential resource for anyone beginning their GenAI journey.
+* Basic documentation on [GenAI Concepts](/appstore/modules/genai/get-started/) is an essential resource for anyone beginning their GenAI journey.
 * The [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) is a bundle containing [GenAI Commons](/appstore/modules/genai/commons/), [Conversational UI](/appstore/modules/genai/conversational-ui/), and the [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/MxGenAI/) offering a comprehensive overview of the technical aspects.
 * The [OpenAI](/appstore/modules/genai/openai/) provides essential information about the OpenAI connector.
 * The [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/) provides key information about the AWS Bedrock connector.
