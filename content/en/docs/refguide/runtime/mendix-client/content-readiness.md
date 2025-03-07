@@ -15,10 +15,10 @@ If the Marketplace component you are interested in is not included on this list,
 
 The following table shows which of the more popular platform-supported Marketplace components are ready for the React client ({{< icon name="checkmark-circle-filled" color="green" >}}) or not ({{< icon name="remove-circle-filled" color="red" >}}). We will continuously update this table as we improve the compatibility of our Marketplace components.
 
-| Marketplace Component | React Client Ready |
-| --- | --- |
+| Marketplace Component | React Client Ready | Alternative |
+| --- | --- | --- |
 | [Administration Module](https://marketplace.mendix.com/link/component/23513) | {{< icon name="checkmark-circle-filled" color="green" >}} |
-| [AnyChart](https://marketplace.mendix.com/link/component/106517) | {{< icon name="remove-circle-filled" color="red" >}} |
+| [AnyChart](https://marketplace.mendix.com/link/component/106517) | {{< icon name="remove-circle-filled" color="red" >}} |  CustomChart from [Charts](https://marketplace.mendix.com/link/component/105695) |
 | [Atlas Core](https://marketplace.mendix.com/link/component/117187) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [Atlas Native Content](https://marketplace.mendix.com/link/component/117175) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [Atlas Web Content](https://marketplace.mendix.com/link/component/117183) | {{< icon name="checkmark-circle-filled" color="green" >}} |
