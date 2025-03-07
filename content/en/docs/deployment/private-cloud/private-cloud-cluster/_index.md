@@ -1056,6 +1056,37 @@ The only limitations are that:
 When you delete a cluster, this removes the cluster from the Mendix Portal. However, it will not remove the associated namespace from your platform. You will need to explicitly delete the namespace using the tools provided by your platform.
 {{% /alert %}}
 
+#### Managing Roles and Permissions {#rolesandpermissions}
+
+It is now possible to manage the roles and permissions for the namespace member by clicking **Roles and Permissions** in the left navigation pane. 
+
+Below are the predefined roles with default permissions; these roles are built-in and cannot be edited:
+
+* **Administrator** - This role gives the cluster manager full access to the namespace, the permissions for which are shown in the figure below.
+* **Developer** - This role gives the developer with the permission which are shown in the figure below.
+
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/RolesAndPermission.png" class="no-border" >}}
+
+In addition to the predefined roles, you can create customised roles with the required permissions which you want to assign to the namespace member. Cluster managers can create a role once, and then reuse it across multiple namespaces. 
+
+To create a role, click **Create Role** in the top right.
+
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/CreateRole.png" class="no-border" >}}
+
+This option allows the cluster manager to create, edit, and delete roles and permissions. 
+
+Once a role is created, you can assign it to the namespace member by clicking **Invite Member** under **Members** section on the **Namespace Overview** page. You can select the role from the dropdown.
+
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/Invitemember.png" class="no-border" >}}
+
+Once the role is assigned, it cannot be deleted until the role is removed from the assigned members.
+
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/deleteRole.png" class="no-border" >}}
+
+{{% alert color="warning" %}}
+Existing namespace members who have been given custom permissions will continue to use those custom permissions. However, those custom permissions will no longer be editable. To update a permission, reassign an existing role or create a custom role on the Roles and Permissions page.
+{{% /alert %}}
+
 ### Namespace Management
 
 If you are a member of a namespace, you can also manage a namespace in the cluster.
@@ -1307,10 +1338,16 @@ You can invite additional members to the namespace, and configure their role dep
 
     1. **Developer** – a standard set of rights needed by a developer, these are listed on the screen
     2. **Administrator** – a standard set of rights needed by an administrator, these are listed on the screen
-    3. **Custom** – you can select a custom set of rights by checking the box next to each role you want to give to this person
+    3. **Custom** – This option is now deprecated.
 
-    With custom permissions, we have now decoupled the permissions for Scale, Start and Stop operations. If an application is in the Stopped state, the scaling does not come into effect until the application is Started. This means that you have to click **Start application** in order for the changes to be sent to the cluster.
-    Along with this, we have also decoupled the permission for modifying the MxAdmin password and managing environments.
+{{% alert color="info" %}}
+The custom permission if needed to be edited, a role need to be assigned with appropriate permissions. See [Roles and Permissions](/developerportal/deploy/private-cloud-cluster/#rolesandpermissions) for more information.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+If an application is in the Stopped state, the scaling does not come into effect until the application is Started. This means that you have to click **Start application** in order for the changes to be sent to the cluster.
+Along with this, we have also decoupled the permission for modifying the MxAdmin password and managing environments.
+{{% /alert %}}
 
 6. Click **Send Invite** to send an invite to this person.
 

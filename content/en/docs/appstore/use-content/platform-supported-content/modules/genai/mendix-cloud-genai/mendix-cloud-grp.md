@@ -84,4 +84,4 @@ Data sent to the Knowledge Base (vectors, chunks) is stored in a logically isola
 ### Read More
 
 * [Enrich your Mendix app with GenAI capabilities](/appstore/modules/genai/)
-* [Build a Chatbot Using the AI Bot Starter App](/appstore/modules/genai/using-genai/starter-template/)
+* [Build a Chatbot Using the AI Bot Starter App](/appstore/modules/genai/how-to/starter-template/)
