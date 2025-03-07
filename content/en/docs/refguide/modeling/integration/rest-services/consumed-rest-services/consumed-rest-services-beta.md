@@ -97,11 +97,11 @@ Once the OpenAPI/Swagger contract has been imported, you see the following view:
 
 {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/xxx.png" class="no-border" >}}
 
-To add more requests from your existing contract, click **Add Request**, then select the additional requests you want to add to the document: 
+To add more requests from your existing contract, click **Add Request**. Select the additional requests you want to add to the document, then click **Add**.
+
+To create a new blank request, click **New**.
 
 {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/xxx.png" class="no-border" >}}
-
-To create a new blank request, click **New Request**.
 
 ### Authentication Methods {#authentication}
 
