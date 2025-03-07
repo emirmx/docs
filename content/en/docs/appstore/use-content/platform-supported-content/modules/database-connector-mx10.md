@@ -123,17 +123,21 @@ Then, use the parameter in the query:
 
 `select * from customers where contactFirstName like {paramFirstName}`
 
-{{% alert color="info" %}}
-If you need to pass a list of values to a parameter, you can use the following approach:
+To pass a list of values to a parameter, you can use the following approach:
 
-`WITH empids AS (
-SELECT empid FROM json_table( {EmpIdList}, '$[*]' columns ( empid number path '$' )) 
+```sql
+WITH empids AS (
+   SELECT empid
+   FROM json_table({EmpIdList}, '$[*]' columns (empid number PATH '$'))
 )
 SELECT *
-FROM emp WHERE empno IN (SELECT empid FROM empids);`
+FROM emp
+WHERE empno IN
+    (SELECT empid
+     FROM empids);
+```
 
-where parameter `EmpIdList` is of type String with the value `[1,7946,3,4,7942,7943,7945]`.
- {{% /alert %}}
+Here, the parameter `EmpIdList` is of type String with the  value `[1,7946,3,4,7942,7943,7945]`.
 
 ### Using Query Response {#use-query-response}
 
@@ -276,3 +280,31 @@ Execute queries as you would with supported databases, and retrieve responses in
 {{% alert color="info" %}}
 By default, autocommit is set to false for design time queries.
 {{% /alert %}}
+
+### Resolving Dependency Issues with Apache Arrow on JDK 17 or 21
+
+When using JDK versions 17 or 21 (or any version above 16), you may encounter compatibility issues if database you are connecting to has a dependency on Apache Arrow.
+
+#### To resolve Apache Arrow dependency issue in Snowflake:
+
+The Snowflake JDBC Driver uses Arrow as the default result format for query execution to improve performance. However, you can override this default setting by switching the result format to JSON.
+
+To set the result format at the Snowflake session or user level, use the following SQL statement:
+
+```sql
+**ALTER USER <user_name> SET JDBC_QUERY_RESULT_FORMAT='JSON';**
+```
+
+This approach ensures compatibility with JDK 16+.
+[For more details](https://community.snowflake.com/s/article/Getting-java-lang-NoClassDefFoundError-for-class-RootAllocator).
+
+#### To resolve Apache Arrow dependency issue in Databricks:
+
+The Databricks JDBC Driver uses Arrow for serialization as it improves performance.
+
+To override this setting add below parameter to JDBC URL
+
+```sql
+EnableArrow=0
+```
+[For more details](https://community.databricks.com/t5/data-engineering/java-21-support-with-databricks-jdbc-driver/td-p/49297)
