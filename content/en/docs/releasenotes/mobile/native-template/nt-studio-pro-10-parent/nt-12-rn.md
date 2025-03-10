@@ -15,6 +15,14 @@ You can find this option in the Navigation Tab of the Mobile Profile in Studio P
 
 To learn more about cookie encryption, refer to [the documentation for Cookie Encryption](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/local-data-security/#encrypting-session-cookies)
 
+## 12.0.1 {#1001}
+
+**Release date: March 10, 2025**
+
+### Fixes
+
+* We fixed an issue where changing the system font scale caused crashes on Android.
+
 ## 12.0.0 {#1000}
 
 **Release date: January 28, 2025**
@@ -23,7 +31,7 @@ To learn more about cookie encryption, refer to [the documentation for Cookie En
 
 #### Offline Database Backend Change - OP-Sqlite Support
 
-* We have changed the Offline Database Backend to OP-SQLite.
+* We changed the Offline Database Backend to OP-SQLite.
 
 #### Important Notes
 
