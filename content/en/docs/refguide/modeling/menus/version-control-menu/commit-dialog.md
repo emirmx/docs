@@ -37,6 +37,12 @@ There are several scenarios and options that you can choose when committing. Two
 
 #### Commit and Push
 
+{{% alert color="info" %}}
+
+**Commit and Push** is the recommended flow to stay in-sync with your team and avoid conflicts.
+
+{{% /alert %}}
+
 Your changes are committed and pushed to the server.
 
 #### Commit Locally
@@ -45,7 +51,8 @@ Changes are committed to your local working copy and are not pushed to the sever
 
 #### Commit and Combine {#combine}
 
-If someone else committed a change since the last time you pulled your branch, you will have to pull first. This process is called **Commit and Combine** in the [Commit](/refguide/commit-dialog/) dialog box. **Commit and Combine** will update your local working copy:
+If someone else committed a change since the last time you pulled your branch, you will have to pull and merge their changes before you can push to the server. This process is called **Commit and Combine** in the [Commit](/refguide/commit-dialog/) dialog box. **Commit and Combine** will first create a local commit and then automatically do a pull. After resolving any conflicts, you can push the combined version to the server.
+
 {{< figure src="/attachments/refguide/modeling/menus/version-control-menu/commit-dialog/commit-and-combine.jpg" alt="Commit and combine changes" >}}
 
 {{% alert color="warning" %}}
