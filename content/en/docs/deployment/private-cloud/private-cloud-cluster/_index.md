@@ -965,7 +965,7 @@ If your app works without issues when read-only root filesystem is enabled, it i
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Enabling the `runtimeReadOnlyRootFilesystem` option will cause the `model/resources` directory to be empty. If your app (or Marketplace modules such as SAML) uses the `model/resources` directory for resources such as configuration data and other resources, consider moving those resources to another location (such as `model/userlib`) or loading them from FileDocument entities.
+Enabling the `runtimeReadOnlyRootFilesystem` option causes the `model/resources` directory to be empty. If your app (or a Marketplace module such as SAML) uses the `model/resources` directory for resources such as configuration data, consider moving those resources to another location (for example, `model/userlib`) or loading them from FileDocument entities.
 {{% /alert %}}
 
 ### GKE Autopilot Workarounds {#gke-autopilot-workarounds}
