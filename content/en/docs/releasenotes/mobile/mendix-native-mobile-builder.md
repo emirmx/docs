@@ -24,7 +24,7 @@ The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Stu
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -58,7 +58,7 @@ Please note that this is a breaking change, and thus, requires a mandatory updat
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -86,7 +86,7 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -112,7 +112,7 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -142,7 +142,7 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -172,7 +172,7 @@ This release was previously labeled as 1.0.127. Its release number has been corr
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -212,7 +212,7 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -238,7 +238,7 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -264,7 +264,7 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -290,7 +290,7 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -312,7 +312,7 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -334,7 +334,7 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -388,7 +388,7 @@ Now, instead of accessing the first MPR file found in the directory, the tool wi
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -438,7 +438,7 @@ For more details, see [NSUserTrackingUsageDescription](https://developer.apple.c
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -472,7 +472,7 @@ If the dialog is accepted the App Center option will then be disabled as it is c
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -523,7 +523,7 @@ App Center's CodePush OTA page improvements:
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -550,7 +550,7 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -617,7 +617,7 @@ Every mobile app requires certain features, as well as certain permissions users
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -649,7 +649,7 @@ Research has shown that animal sounds can relieve stress. As we work to simplify
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -689,7 +689,7 @@ still fail if the keystore values are invalid.
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -719,7 +719,7 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -777,7 +777,7 @@ Dependency management and auto-linking are not included as part of the Native Mo
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -814,7 +814,7 @@ The Native Mobile Builder is now able to derive which files need to be kept or r
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -847,7 +847,7 @@ We were made aware of a change in App Center resulting in signed iOS builds fail
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -894,7 +894,7 @@ If you are working with multiple people on the same project please make sure the
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -936,7 +936,7 @@ This release focuses mainly on quality of life bug fixes and features.
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
@@ -978,7 +978,7 @@ The Mendix Native Mobile Builder supports background updates. That means it need
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
+A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
 
 We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
 
