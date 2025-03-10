@@ -5,6 +5,12 @@ weight: 5
 description: "Native Template 11 release notes."
 ---
 
+## 11.0.5 {#1003}
+
+**Release date: March 10, 2025**
+
+* We resolved an issue where changing the system font scale could cause crashes on Android. 
+
 ## 11.0.4 {#1003}
 
 **Release date: January 15, 2025**
