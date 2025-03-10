@@ -118,7 +118,8 @@ By properly configuring these attributes, your connector will be able to process
 Earlier, we introduced the Echo Connector, a simple example connector where the input text is returned as the output. Despite its simplicity, it serves as a great demonstration of how to structure a connector to work seamlessly with ConversationalUI. By following the same approach, any LLM provider's response can be formatted correctly for integration into our chat interface.
 
 To achieve this, we need to define a microflow that will handle the request and generate a response in the expected format. This microflow will be used as the Microflow attribute for the EchoDeployedModel objects, ensuring that when an Echo model is called, it follows the same structure required for chat interactions.
-The Microflow attribute in all our current connectors is set to the GenAICommons.Request_ExecuteFromConnector java action. This Java action automates key processes such as function calling and storing usage information out of the box.
+
+The Microflow attribute in all our current connectors is set to the GenAICommons.Request_ExecuteFromConnector java action. This Java action automates key processes such as function calling and storing usage information out of the box. To properly keep track of your consumption, the token-related attributes in the Response object need to be set correctly. Please keep this in mind when formulating the microflow to ensure accurate usage tracking and cost monitoring.
 
 One of its input parameters is CallModelMicroflow, which is where we define the actual logic for calling the LLM. This is the microflow that directly interacts with the provider’s API or SDK, sending requests and processing responses. By customizing CallModelMicroflow, you can integrate your specific model while still leveraging the standardized execution flow provided by GenAICommons.
 
