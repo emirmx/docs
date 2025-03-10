@@ -84,6 +84,7 @@ To set up an IdP configuration for the Mendix Platform and your Mendix app, you 
 * The URL for the so-called "well-known endpoint" of your IdP, where configuration details can be retrieved.
     * The IdP's well-known endpoint must have a URL for the JWKS endpoint.
 * The Mendix Portal needs to be registered as a client in your IdP, and you need to know the corresponding client ID and secret.
+* A [standard or premium](https://www.mendix.com/pricing/) platform license is required.
 
 ## Configuring Your BYOIDP Setup
 
