@@ -16,7 +16,7 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 #### License Manage CLI v0.10.1
 
-* TWe have updated this component to use the latest dependency versions in order to improve security score ratings for container images. This update will allow us to address CVE-2024-45337 and CVE-2024-45338.
+* We have updated this component to use the latest dependency versions in order to improve security score ratings for container images. This update will allow us to address CVE-2024-45337 and CVE-2024-45338.
 
 #### Mendix Operator v2.21.1 {#2.21.1}
 
