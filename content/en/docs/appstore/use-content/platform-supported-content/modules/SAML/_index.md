@@ -514,22 +514,33 @@ For more information on using the Deep Link module (with Mendix 8 and 9), see th
 Page URLs and Microflow URLs are supported with SAML for Mendix version 10.6 and above. To do this, follow the steps below:
 
 1. In the **Runtime** tab of the **App Settings**, configure the page **URL prefix** to **link** instead of the default **P** to maintain compatibility with existing URLs.
-2. Ensure to remove the Deep Link module from your app to start the app successfully.
-3. To implement the SSO redirection, add the following lines of code to your login page (for example, `login.html`):
+2. Ensure to remove the Deep Link module from your app to start the app successfully. For more information, see the [Migrating to Page and Microflow URLs](/appstore/modules/deep-link/#migrate-page-micro) section of the *Deep Link*.
+
+#### Steps for SAML Versions Below v3.6.15 and v4.0.0
+
+1. To implement the SSO redirection, add the following lines of code to your login page (for example, `login.html`):
     * Extract the return URL: `var returnURL = window.location.hash.substring(1) + window.location.search;`
     * For automatic redirection: use `window.onload` to automatically redirect users to the SSO login page.
     `window.location.href = 'sso/login' + (returnURL ? '?cont=link' + encodeURIComponent(returnURL) : '');` or, 
     * For manual redirection: add an onclick event to the button that manually triggers the SSO login.
     `this.href = 'sso/login' + (returnURL ? '?cont=link' + encodeURIComponent(returnURL) : '');`
-4. To allow the end users to navigate to the desired page, URL can be formed as follows:
+2. To allow the end users to navigate to the desired page, URL can be formed as follows:
     * If a single IdP is configured, the URL will be the base URL of your application followed by `SSO/login?cont={page/Microflowurl}`.
     For example, `http://localhost:8080/SSO/login?cont=link/pagepath`.
     * If Multiple IdPs are configured, you can specify which IdP should be used by adding the alias (MyIdPAlias) `SSO/login?_idp_id={MyIdPAlias}&cont={page/Microflowurl}`.
     For example, `http://localhost:8080/SSO/login?_idp_id=Okta&cont=link/pagepath`.
 
-Once the above changes are applied, end users can directly navigate to the desired page. If not logged in, they will be redirected to the IdP login page for authentication. After successful log in, they will be directed to the desired page using page and microflow URLs.
+#### Steps for SAML Versions above v3.6.17 and v4.0.1
 
-For more information, see the [Migrating to Page and Microflow URLs](/appstore/modules/deep-link/#migrate-page-micro) section of the *Deep Link*.
+1. To use the Page URL functionality, replace the content of *login.html* with the content of *login-with-mendixsso-automatically.html* (located in the **resources** > **mendixsso** > **templates** folder) without changing the file name. 
+2. To implement the SSO redirection, replace the code in the `<script>` tag your login page (for example, *login.html*) with the following code:
+    * For automatic redirection: use `window.onload` to automatically redirect users to the SSO login page.
+    `const returnURL = encodeURIComponent(window.location.search+window.location.hash);`
+     `self.location = '/SSO/login?cont='+returnURL;`
+    * For manual redirection: add an onclick event to the button that manually triggers the SSO login.
+    `window.location.href='/SSO/login?cont=' + encodeURIComponent(window.location.search + window.location.hash);`
+
+Once the above changes are applied, end users can directly navigate to the desired page. If not logged in, they will be redirected to the IdP login page for authentication. After successful log in, they will be directed to the desired page using page and microflow URLs.
 
 ### Using Deep Link Module{#using-deeplink}
 
@@ -558,6 +569,7 @@ When enabling the log node SSO to show trace messages, you can find detailed inf
 * **“MSIS7046: The SAML protocol parameter ‘RelayState’ was not found or not valid.”** – This error can be shown on the ADFS server, most likely when you are using Mac OSX and a Safari browser. Setting the `BindingURI_Redirect` constant to true might help resolve the issue. By default, Mendix favors the `Post` binding, as the maximum size exceeds that of a `Redirect` binding due to its use of cookies and post information instead of URL parameters. The size can be a factor when using encryption.
 * **"Unable to validate Response, see SAMLRequest overview for detailed response. Error: An error occurred while committing user: p:'johndoe@company.com'/u:'JoHnDoE@CoMpAnY.CoM'"** – All user names passing through the SAML module are converted to lower-case, so make sure all the existing user names and new user names are also converted to lower-case. This is because certain systems are not case-sensitive (for example, Active Directory).
 * **“Could not create a session for the provided user principal.”** – This error can be shown if the IdP configuration does not contain any application attributes for the entity where the user (and user principal) is to be found (and stored).
+* **"WARN org.apache.xml.security.signature.XMLSignature - Signature verification failed"** – This warning occurs when the signature validation process fails due to multiple certificates in the IdP metadata used for SSO. As the service provider attempts to verify the signature against each certificate, it logs **Signature verification failed** warnings for mismatched certificates. Separate messages are generated to specify the exact issue: **The response is not signed correctly** if the response signature fails, and **The assertion is not signed correctly** if the assertion signature fails. These messages also include the identifier of the key used during verification, providing more clarity on the cause of the failure.
 
 ### Troubleshooting an Endless Redirect Loop in Mendix 9 and 10
 

@@ -509,6 +509,14 @@ Images are not deleted from the container registry. You should delete those imag
 If any of these garbage collection steps fail, you will no longer see the environment in the Mendix Portal, and will have to [delete the storage instances](#delete-storage) manually.
 {{% /alert %}}
 
+##### Read-Only Root Filesystem
+
+[Read-only Root file system](/developerportal/deploy/private-cloud-cluster/#readonlyrootfs) can be enabled per environment. By default, this option is disabled. 
+
+##### Deployment Strategy 
+
+Starting from Operator 2.20.0 onwards, it is now also possible to set the deployment strategy for an environment on the cluster details page. This stategy can be enabled by the cluster manager. This feature allows to update an app with reduced downtime by performing a rolling update. By default, it is set to Recreate strategy.
+
 ##### License Mendix{#license-mendix}
 
 If you need to enter or change the subscription secret, then you can do that here.

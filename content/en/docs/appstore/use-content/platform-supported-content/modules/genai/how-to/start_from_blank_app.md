@@ -1,6 +1,6 @@
 ---
 title: "Build a Chatbot from Scratch Using the Blank GenAI App"
-url: /appstore/modules/genai/using-genai/blank-app
+url: /appstore/modules/genai/how-to/blank-app
 linktitle: "Build a Chatbot Using the Blank GenAI App"
 weight: 20
 description: "A tutorial that describes how to get started building a smart app from a Blank GenAI App"
@@ -8,7 +8,7 @@ description: "A tutorial that describes how to get started building a smart app 
 
 ## Introduction
 
-This document guides you on building a smart app from scratch using a blank GenAI app template. Alternatively, you can use a starter app template to begin your build. For more details, see [Build a Smart App Using a Starter Template](/appstore/modules/genai/using-genai/starter-template/).
+This document guides you on building a smart app from scratch using a blank GenAI app template. Alternatively, you can use a starter app template to begin your build. For more details, see [Build a Smart App Using a Starter Template](/appstore/modules/genai/how-to/starter-template/).
 
 ### Prerequisites
 
