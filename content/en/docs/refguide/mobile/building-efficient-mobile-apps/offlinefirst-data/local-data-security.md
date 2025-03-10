@@ -154,3 +154,35 @@ You can enable file encryption for both new and existing apps. Once the users up
 ### Disabling Local File Encryption
 
 Disabling local file encryption is not supported and may cause unexpected behaviors for end-users with encrypted files on their devices. You can disable the encryption if you have not released the encrypted version of your app to your users.
+
+## Encrypting Session Cookies {#encrypting-session-cookies}
+
+{{% alert color="info" %}}
+In order to use this feature, [Native Template Version 12.1.0](/releasenotes/mobile/nt-12-rn#1001/) or higher is required with Studio Pro 10.21 or higher.
+{{% /alert %}}
+
+You can now enable cookie encryption for both new and existing Android apps. When enabled, the cookies stored in the device are encrypted using the AES encryption algorithm instead of being stored as is. 
+
+{{% alert color="warning" %}}
+This feature was enabled by default in Mendix applications before Studio Pro 10.21. Within 10.21, the option by default is disabled.
+{{% /alert %}}
+
+### What is Cookie Encryption
+
+Cookie encryption is a security feature that encrypts the cookies stored on the Android devices. Cookie information is stored in the device's local storage and can be accessed by other applications or users if the device is compromised. By encrypting the cookies, you add an extra layer of security to the data stored on the Android device.
+
+{{% alert color="info" %}}
+This feature is only applicable to Android and does nothing to an iOS App. On iOS, cookies are stored in the Keychain, which is already encrypted by the OS.
+{{% /alert %}}
+
+### Risks of not Encypting the Cookies
+
+Next to zero. The cookies which are stored in the device can only be accessed through a rooted device, or if your app has `android:debuggable` option set to true.
+
+{{% alert color="warning" %}}
+Note that `android:debuggable` option should never be set to true in production app.
+{{% /alert %}}
+
+### Downsizes of Encryption
+
+Main downsize is performance. Since the cookies need to be decrypted and encrypted on each request, this operation will be demanding on the device and make the app slower during downloads, especially if your targeted devices are on the lower end.

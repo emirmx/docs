@@ -5,6 +5,16 @@ weight: 5
 description: "Native Template 12 release notes."
 ---
 
+## 12.1.0 {#1001}
+
+**Release date: ______**
+
+We have added the option to optionally enable or disable cookie encryption for Android devices. This option was introduced in Studio Pro 9.8 and was enabled by default until Studio Pro Version 10.21.
+
+You can find this option in the Navigation Tab of the Mobile Profile in Studio Pro.
+
+To learn more about cookie encryption, refer to [the documentation for Cookie Encryption](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/local-data-security/#encrypting-session-cookies)
+
 ## 12.0.0 {#1000}
 
 **Release date: January 28, 2025**
