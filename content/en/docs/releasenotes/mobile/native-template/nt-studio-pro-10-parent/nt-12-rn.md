@@ -7,9 +7,11 @@ description: "Native Template 12 release notes."
 
 ## 12.0.1 {#1001}
 
+### Fixes
+
 **Release date: March 10, 2025**
 
-* We resolved an issue where changing the system font scale could cause crashes on Android.
+* We fixed an issue where changing the system font scale caused crashes on Android.
 
 ## 12.0.0 {#1000}
 
