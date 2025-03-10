@@ -94,32 +94,11 @@ The **Documentation** pane displays the documentation for the currently selected
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" class="no-border" >}}
 
-For additional reference, the available entities, operations, and other items are listed in the following sections of this document.
-
-### Domain Model Entities
-
-The domain model is a data model that describes the information in your application domain in an abstract way. For more information, see [Domain Model](/refguide/domain-model/).
-
-The domain model of the Amazon Polly connector contains the following entities:
-
-* `AbstractVoice` - A representation of an Amazon Polly voice.
-* `DescribeVoicesRequest` - The request object used for the [DescribeVoices](#describe-voices) action.
-* `DescribeVoicesResponse` - The response for the [DescribeVoices](#describe-voices) action.
-* `SynthesizeSpeechRequest` - Used when calling the [SynthesizeSpeech](#synthesize-speech) action. 
-
-### Enumerations
-
-An enumeration is a predefined list of values that an be used as an attribute type.
-
-The Amazon Polly connector contains the following enumerations:
-
-* `OutputFormat` - The format in which the returned output will be encoded (MP3, OGG_VORBIS, or PCM).
-* `Engine` - Specifies the engines (standard or neural) that are supported by a given voice.
-* `TextType` - PlainText or SSML.
+For additional reference, the available activities are listed below.
 
 ### Activities
 
-Activities define the actions that are executed in a microflow or a nanoflow.
+[Activities](/refguide/activities/) define the actions that are executed in a microflow or a nanoflow.
 
 The Amazon Polly connector contains the following activities:
 
