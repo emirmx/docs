@@ -142,7 +142,7 @@ If LDAP is enabled for this connection (**LDAP enabled** is checked), you must f
 
 * **Map users to** – This specifies which entity type objects should be created when creating new end-users. You can choose from all the specializations of **System.User**. For example, you may want to use the `Administration.Account` entity if you are using the Administration module.
 * **Domain prefix** – This is a concatenation of the LDAP root directory fields. It is used to authenticate users and will be concatenated to the Mendix user name to form the LDAP user name. For example, `Org\`.
-* **Domain suffix** – Similarly, the domain suffix is derived from LDAP root directory fields and serves the same authentication purpose by appending to the Mendix username. For example, `@mendixdomain.local`.
+* **Domain suffix** – Similarly, the domain suffix is derived from LDAP root directory fields and serves the same authentication purpose. It will be concatenated to the Mendix user name to form the LDAP user name. For example, `@mendixdomain.local`.
 * **User roles WITHOUT LDAP authentication** – This property identifies which user roles are not authenticated against LDAP. End-users that have at least one of these roles will not be authenticated against LDAP, but will instead use their Mendix app password to sign in. Note that end-users with the **Administrator** user role will never be authenticated against LDAP.
 
 #### LDAP Type Configurations{#ldap-type-configurations}
