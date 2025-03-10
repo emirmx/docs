@@ -5,7 +5,7 @@ weight: 5
 description: "Native Template 11 release notes."
 ---
 
-## 11.0.5 {#1003}
+## 11.0.5 {#1004}
 
 **Release date: March 10, 2025**
 
