@@ -59,7 +59,7 @@ While data in non-persistable and external entities is maintained in the memory 
 
 In the database, every entity is stored in a separate table and has columns for the attributes defined in Studio Pro (except those which are calculated) and the system attributes. Each row of the table contains the data for an object of this particular entity type, and every entity table contains a column holding a unique identifier for the object. If an entity has specializations there is also a column indicating which specialization the object belongs to.
 
-Associations are stored in junction tables with columns holding the identifiers (ID) of both associated objects. This allows for more flexibility when creating your domain model.
+Associations are stored in association tables with columns holding the identifiers (ID) of both associated objects. This allows for more flexibility when creating your domain model. In Mendix 10.21 and above, you can also choose to store direct associations for one-to-one and one-to-many associations. For more information, see [Association Storage Options](/refguide/association-storage/).
 
 {{% alert color="info" %}}
 Mendix apps cannot share data by sharing the same database. If you want two apps to share the same database, then you need to share the data from one app to the other using APIs. In Mendix, these are supported by external entities or the REST and OData services described in the [Integration](/refguide/integration/) section of the Studio Pro Guide. This is referred to as a microservices architecture.
@@ -68,6 +68,8 @@ For more information on how the underlying database behaves and why data cannot 
 {{% /alert %}}
 
 ### Implementation Example
+
+{{% todo %}}Add an OrderLine-Order association which is a direct association{{% /todo %}}
 
 Take a look at the following domain model.
 
@@ -84,7 +86,7 @@ Objects of the entity `Customer` are stored in the table `module$customer` which
 
 #### Order_Customer Association
 
-The association `Order_Customer` is stored in the table `module$order_customer` which is shown below. Both columns contain IDs of the associated objects.
+The association `Order_Customer` is implemented through an association table and is stored in the table `module$order_customer` which is shown below. Both columns contain IDs of the associated objects.
 
 | module$orderid | module$customerid |
 | --- | --- |
