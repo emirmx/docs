@@ -12,14 +12,14 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2025
 
-### March ???, 2025
+### March 10, 2025
 
 #### Mendix Operator v2.21.1 {#2.21.1}
 
 * We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
-* For new installations, the Operator will now use ubi9 as the base image for Mendix apps. Existing installations will keep their configuration and stay on ubi8. For more information on base image versions, see the [Runtime Base Image](/developerportal/deploy/private-cloud-cluster/#runtime-base-image) section.
-* We've fixed a regression that caused the `model/resources` directory to appear empty, and caused problems with some Marketplace modules such as SAML (Ticket 242648).
-* Upgrading to Mendix Operator v2.21.0 from a previous version will restart environments managed by that version of the Operator. Environments with 2 or more replicas and a **PreferRolling** update strategy will be restarted without downtime.
+* For new installations, the Operator now uses ubi9 as the base image for Mendix apps. Existing installations will keep their configuration and stay on ubi8. For more information on base image versions, see the [Runtime Base Image](/developerportal/deploy/private-cloud-cluster/#runtime-base-image) section.
+* We have fixed a regression that caused the `model/resources` directory to appear empty and caused problems with some Marketplace modules, such as SAML (Ticket 242648).
+* Upgrading to Mendix Operator v2.21.0 from a previous version now restarts environments managed by that version of the Operator. Environments with 2 or more replicas and a **PreferRolling** update strategy are restarted without downtime.
 
 ### March 6, 2025
 
