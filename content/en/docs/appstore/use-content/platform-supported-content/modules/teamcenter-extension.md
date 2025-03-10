@@ -22,8 +22,10 @@ Teamcenter Extension offers the following integration options:
 * Revise item revision
 * Search datasets
 * Get datasets for item revision
+* Attach dataset to item revision
 * Search workspace objects
-* Get structures
+* Relate workspace objects
+* Get structure
 
 ### License {#license}
 
@@ -42,7 +44,7 @@ Compatibility among Teamcenter Extension, Teamcenter Connector, and Studio Pro i
 | ------------- | ------------- | ------------- |
 | 1.0.0 | 3.6.1, V 3.6.0, V 3.5.0 | 10.6.5 thru 10.7 |
 | 2.0.0 | 2406.0.0 | 10.12, patch versions 1 and above and 10.16.0 and above |
-| 3.0.0                        | 2406.3.0                     | 10.12 patch version 6 and above and 10.16.0 and above |
+| 3.0.0 and above | 2406.3.0 | 10.12 patch version 6 and above and 10.16.0 and above |
 
 {{% alert color="info" %}}
 Teamcenter Extension is not compatible with Studio Pro versions between 10.8 and 10.11, as well as 10.13.x, 10.14.x, and 10.15.x. If you use one of these Studio Pro versions, a possible workaround is to use Teamcenter Extension in one of the compatible versions of Studio Pro first, create the necessary artifacts, and then import them into your version. However, Mendix always recommends using the latest MTS or LTS Studio Pro version.
@@ -90,15 +92,19 @@ The `Get Datasets from Item Revision` action allows you to generate the domain m
 
 #### Attach Datasets to Item Revision {#attachdatasetstoitemrevision}
 
-The 'Attach Datasets to Item Revision' action allows you to generate a domain model and microflow which creates and attaches a Teamcenter dataset (or its specializations) with a file document to an Item Revision in Teamcenter. The resulting microflow implements the Upload file, Create relation, and Get properties actions from the `TcConnector` module.
+The 'Attach Datasets to Item Revision' action allows you to generate a domain model and microflow which creates and attaches a Teamcenter dataset (or its specializations) with a file document to an Item Revision in Teamcenter. The resulting microflow implements the `Upload file`, `Create relation`, and `Get properties` actions from the `TcConnector` module.
 
 #### Search Workspace Objects {#getworkspaceobjects}
 
 The `Search Workspace Objects` action allows you to configure and generate the domain model and microflow to search for and retrieve Workspace Objects or their specialization from Teamcenter. This action implements the saved query `General..` from Teamcenter.
 
-#### Get Structures
+#### Relate Workspace Objects {#relateworkspaceobjects}
 
-The `Get Structures` allows you to generate the domain model and microflows to configure a BOM window and retrieve structure data from Teamcenter. This feature supports the retrieval of structures with the following:
+The 'Relate Workspace Objects' action allows you to generate the domain model and microflow to relate two workspace objects or their specialization from Teamcenter. The resulting microflow implements the `Create relation` action from the `TcConnector` module.
+
+#### Get Structure {#getstructures}
+
+The `Get Structure` action allows you to generate the domain model and microflows to configure a BOM window and retrieve structure data from Teamcenter. This feature supports the retrieval of structures with the following:
 
 * `RevisionRule` (or default `RevisionRule`)
 * `VariantRule`
