@@ -5,32 +5,24 @@ url: /releasenotes/mobile/mendix-native-mobile-builder/
 weight: 11
 description: "Mendix Native Mobile Builder release notes."
 #This document is mapped to the landing page, update the link there if renaming or moving the doc file.
-# KI: "updating your Native Mobile Builder": MOO-1791
 ---
 
-The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Studio Pro, which helps you build your Mendix native mobile app. After the Mendix Native Mobile Builder simplifies your build process, you can do what you want most: test and publish your app. The Mendix Native Mobile Builder uses MxBuild, GitHub, and App Center to simplify the app building process and is directly accessible via Mendix Studio Pro. 
+The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Studio Pro, which helps you build your Mendix native mobile app. After the Mendix Native Mobile Builder simplifies your build process, you can do what you want most: test and publish your app. 
 
-## 2025
+The Mendix Native Mobile Builder uses MxBuild, GitHub, and App Center to simplify the app building process and is directly accessible via Mendix Studio Pro. For best results, we recommend using the latest version of the Native Mobile Builder.
 
-### Release 1.0.135
+## Release 1.0.135 {#10135}
 
 **Release date: March 4, 2025**
 
-### Fixes
+### Fix: Certificate Known Issue {#ki-certificate-signing}
 
-- We updated our signing mechanism so you can use the app without receiving Microsoft Defender SmartScreen notifications.
-
-#### Known Issues 
-
-A known issue affects updating your Native Mobile Builder to this version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen.
-
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
+* We fixed a known issue where auto-upgrading your Native Mobile Builder caused the process to hang during certificate signature. To fix the issue, you must follow the process below once:
+    1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
+    1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
 
 {{% alert color="info" %}}
-**Windows Security Note**: If Windows security policies prevent you from accomplishing the above, do the following:
+Windows Security Note: If Windows security policies prevent you from accomplishing the above, do the following:
 
 1. Right-click the installer.
 1. Click **Properties**.
@@ -40,7 +32,11 @@ We are in the process of fixing the signing certificate. Until this is resolved,
 
 After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
 
-### Release 1.0.134
+### Fixes
+
+* We updated our signing mechanism so you can use the app without receiving Microsoft Defender SmartScreen notifications.
+
+## Release 1.0.134 
 
 **Release date: February 20, 2025**
 
@@ -52,23 +48,10 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release 1.0.133
+## Release 1.0.133
 
 **Release date: January 7, 2025**
 
@@ -86,25 +69,10 @@ Please note that this is a breaking change, and thus, requires a mandatory updat
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-## 2024
-
-### Release 1.0.131
+## Release 1.0.131
 
 **Release date: February 19, 2024**
 
@@ -114,23 +82,10 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release 1.0.130 {#10130}
+## Release 1.0.130 {#10130}
 
 **Release date: February 13, 2024**
 
@@ -140,23 +95,10 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release 1.0.129
+## Release 1.0.129
 
 **Release date: January 29, 2024**
 
@@ -170,25 +112,10 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-## 2022
-
-### Release 1.0.128
+## Release 1.0.128
 
 **Release date: October 6, 2022**
 
@@ -200,23 +127,10 @@ This release was previously labeled as 1.0.127. Its release number has been corr
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release 1.0.126
+## Release 1.0.126
 
 **Release date: September 19, 2022**
 
@@ -238,25 +152,7 @@ After these steps, run the installer again. You can start Studio Pro again, and 
     * SimpleLineIcons
     * Zocial
 
-#### Known Issues
-
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
-
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release 1.0.125
+## Release 1.0.125
 
 **Release date: September 8, 2022**
 
@@ -266,23 +162,10 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release 1.0.123
+## Release 1.0.123
 
 **Release date: August 29, 2022**
 
@@ -292,23 +175,10 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release 1.0.121
+## Release 1.0.121
 
 **Release date: July 21, 2022**
 
@@ -318,43 +188,12 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release 1.0.120
+## Release 1.0.120
 
 **Release date: May 25, 2022**
-
-#### Known Issues
-
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
-
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
 
 #### Fixes
 
@@ -362,23 +201,10 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release 1.0.113
+## Release 1.0.113
 
 **Release date: March 18, 2022**
 
@@ -416,25 +242,10 @@ Now, instead of accessing the first MPR file found in the directory, the tool wi
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-## 2021
-
-### Release 1.0.111
+## Release 1.0.111
 
 **Release date: December 21, 2021**
 
@@ -466,29 +277,16 @@ For more details, see [NSUserTrackingUsageDescription](https://developer.apple.c
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release 1.0.109
+## Release 1.0.109
 
 **Release date: October 25, 2021**
 
 #### Improvements
 
-##### Support for  Mendix Over the Air Updates
+##### Support for new Mendix over the air updates
 
 Added support for the new Mendix over the air updates (OTA) feature released with Mendix Studio Pro 9.7.
 The UI is able to identify when both App Center OTA and Mendix OTA are enabled and prompt the user to disable App Center OTA updates.
@@ -500,23 +298,10 @@ If the dialog is accepted the App Center option will then be disabled as it is c
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release 1.0.107
+## Release 1.0.107
 
 **Release date: July 26, 2021**
 
@@ -525,7 +310,12 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 * We fixed an issue with deleted files not being removed correctly during a native template upgrade operation.
 * We fixed an issue where Google API changes introduced problems for Android native app builds. For more information, see [Update Needed for Android Native Mobile Apps](https://www.mendix.com/blog/update-needed-for-android-native-mobile-apps/). 
 
-### Release 1.0.105
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
+
+## Release 1.0.105
 
 **Release date: July 16, 2021**
 
@@ -551,23 +341,10 @@ App Center's CodePush OTA page improvements:
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release 1.0.90
+## Release 1.0.90
 
 **Release date: June 22, 2021**
 
@@ -578,23 +355,10 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release 1.0.89
+## Release 1.0.89
 
 **Release date: May 28, 2021**
 
@@ -645,23 +409,10 @@ Every mobile app requires certain features, as well as certain permissions users
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release 1.0.86
+## Release 1.0.86
 
 **Release date: April 1, 2021**
 
@@ -677,23 +428,10 @@ Research has shown that animal sounds can relieve stress. As we work to simplify
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release 1.0.84
+## Release 1.0.84
 
 **Release date: March 17, 2021**
 
@@ -717,23 +455,10 @@ still fail if the keystore values are invalid.
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release v1.0.81
+## Release v1.0.81
 
 **Release date: March 2, 2021**
 
@@ -745,25 +470,7 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 * We fixed an issue with Android certificates not being verified correctly.
 
-#### Known Issues
-
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
-
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release v1.0.80
+## Release v1.0.80
 
 **Release date: February 25, 2021**
 
@@ -805,23 +512,10 @@ Dependency management and auto-linking are not included as part of the Native Mo
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release v1.0.79
+## Release v1.0.79
 
 **Release date: February 12, 2021**
 
@@ -842,25 +536,10 @@ The Native Mobile Builder is now able to derive which files need to be kept or r
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-## 2020
-
-### Release v1.0.74
+## Release v1.0.74
 
 **Release date: December 30, 2020**
 
@@ -875,23 +554,10 @@ We were made aware of a change in App Center resulting in signed iOS builds fail
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release v1.0.71
+## Release v1.0.71
 
 **Release date: December 23, 2020**
 
@@ -903,9 +569,9 @@ Imagine you would like a new configuration to target your staging environment. Y
 
 Now every time you need to build against your staging environment it is as simple as selecting your staging configuration from the configuration drop-down menu.
 
-#### Breaking Change
+#### Breaking Changes
 
-The new support for multiple configurations will convert your Mendix Native Mobile Builder *config* file, which is not supported by previous versions. 
+The new support for multiple configurations will convert your Mendix Native Mobile Builder *config* file, which is unsupported by previous versions. 
 
 The projects converted to the new version of the Native Mobile Builder UI when opened in the older builder versions will be seen as **not configured**.
 
@@ -922,23 +588,10 @@ If you are working with multiple people on the same project please make sure the
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release v1.0.51 
+## Release v1.0.51 
 
 **Release date: December 10, 2020**
 
@@ -951,7 +604,7 @@ This release focuses mainly on quality of life bug fixes and features.
 * We introduced the option to simply commit your changes to your repository without initiating a build. To allow this, the build button is now a combination button that allows you to choose between **build** or **configure**.
 * When a build fails you will now see a button pointing to the application logs. This allows for easy access to application logs.
 * We made the custom developer app push notification configuration optional. Instead, a warning is shown if the configuration is missing for custom developer apps.
-
+  
 #### Fixes
 
 * Capabilities should be enabled correctly if a compatible Native Template is found.
@@ -964,23 +617,10 @@ This release focuses mainly on quality of life bug fixes and features.
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
-
-### Release v1.0.49
+## Release v1.0.49
 
 **Release date: October 27, 2020**
 
@@ -1006,18 +646,5 @@ The Mendix Native Mobile Builder supports background updates. That means it need
 
 #### Known Issues
 
-A known issue affects updating your Native Mobile Builder to any version. Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen and hangs there.
-
-We are in the process of fixing the signing certificate. Until this is resolved, perform the following steps as a workaround:
-
-1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
-1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
-Additionally, if Windows security policies prevent you from accomplishing the above, do the following:
-
-1. Right-click the installer.
-1. Click **Properties**.
-1. Select **Unblock**.
-1. Click **OK**.
-
-After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
