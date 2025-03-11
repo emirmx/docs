@@ -17,21 +17,24 @@ Prior to Mendix 10.21, all associations were stored in association tables. This 
 
 In Mendix 10.21 you can choose to implement some associations as direct associations. This means that the ID of the **Child** object is stored as a foreign key column of the **Parent** object (for example the "many" side of the association) in the underlying database table, thus removing the need for a association table.
 
+XPath and OQL queries work identically for both association tables and direct associations. You do not have to change anything or learn different flavors of these languages to work with them.
+
 ## Advantages of Direct Associations
 
-	Speed up queries and statements
+Because they don't have association tables, using direct associations can bring the following advantages:
 
-	Reduce space use in db
-
-    Existing XPath and OQL queries continue to work without change.
+* In many cases, using direct associations can speed up queries and statements
+* They use less space in the database
+* You can choose to implement direct associations for some of your associations, while leaving others as association tables
 
 ## Limitations of Direct Associations
 
-	Only for 1-* associations
+You cannot replace association tables with direct associations for all types of association in your app. Direct associations have the following limitations: 
 
-	For both and default ownership
+* You can only use direct associations for one-to-many (1-*, default owner) and one-to-one (1-1, owner both) associations – you cannot use it for many-many associations.
+* You can only use direct associations between persistable and remote entities. You cannot use them on view entities or non-persistable entities.
 
-	Only persistent entities and remote-persistent
+{{% todo %}}Originally said "remote persistent" - I don't think we document two different types of remote entity?{{% /todo %}}
 
 ## Enabling Direct Associations
 
