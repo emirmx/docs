@@ -69,6 +69,11 @@ Please note that this is a breaking change, and thus, requires a mandatory updat
 
 * We fixed a build regression introduced in [1.0.130](#10130).
 
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
+
 ### Release 1.0.130 {#10130}
 
 **Release date: February 13, 2024**
@@ -76,6 +81,11 @@ Please note that this is a breaking change, and thus, requires a mandatory updat
 #### Fixes
 
 * We fixed an issue where the namespace in the `native-template` Gradle file was not updating correctly when building an application using Native Builder UI.
+
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
 
 ### Release 1.0.129
 
@@ -89,6 +99,11 @@ Please note that this is a breaking change, and thus, requires a mandatory updat
 
 * We fixed an issue where iOS apps were containing push notifications entitlement code even after notifications were disabled in the Native Builder (Ticket #167685).
 
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
+
 ## 2022
 
 ### Release 1.0.128
@@ -100,6 +115,11 @@ This release was previously labeled as 1.0.127. Its release number has been corr
 #### Fixes
 
 * We removed the default permissions for read and write external storage from Android applications. (Ticket 152467)
+
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
 
 ### Release 1.0.126
 
@@ -131,6 +151,11 @@ This release was previously labeled as 1.0.127. Its release number has been corr
 
 * We enabled compatibility with Android 12 and higher.
 
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
+
 ### Release 1.0.123
 
 **Release date: August 29, 2022**
@@ -138,6 +163,11 @@ This release was previously labeled as 1.0.127. Its release number has been corr
 #### Fixes
 
 * We fixed an issue where some font styles were not supported as custom fonts. (Ticket #163323)
+
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
 
 ### Release 1.0.121
 
@@ -147,6 +177,11 @@ This release was previously labeled as 1.0.127. Its release number has been corr
 
 * We fixed an issue with App Center not accepting periods in app names. (Ticket 153722, 154433, 154489, 154814)
 
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
+
 ### Release 1.0.120
 
 **Release date: May 25, 2022**
@@ -154,6 +189,11 @@ This release was previously labeled as 1.0.127. Its release number has been corr
 #### Fixes
 
 * We fixed a bug affecting updating data on the capabilities details screen.
+
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
 
 ### Release 1.0.113
 
@@ -191,6 +231,11 @@ Now, instead of accessing the first MPR file found in the directory, the tool wi
 * We fixed a bug with fatal exceptions not being caught correctly at the start of the app. This could result in a blank screen at startup. Now a dialog box is shown correctly.
 * We fixed an issue with compatibility checks where the tool would incorrectly warn that a compatible Native Template is incompatible with Mendix Native OTA. Any Native Template from version 6.2.7 or newer is compatible.
 
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
+
 ## 2021
 
 ### Release 1.0.111
@@ -223,6 +268,11 @@ For more details, see [NSUserTrackingUsageDescription](https://developer.apple.c
 
 * We fixed an issue in native apps with push notifications being triggered twice for apps built with earlier versions of Native Mobile Builder. You will need to rebuild your app with this version to fix the issue.
 
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
+
 ### Release 1.0.109
 
 **Release date: October 25, 2021**
@@ -239,6 +289,11 @@ If the dialog is accepted the App Center option will then be disabled as it is c
 
 * We fixed various bugs and performance issues.
 
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
+
 ### Release 1.0.107
 
 **Release date: July 26, 2021**
@@ -247,6 +302,11 @@ If the dialog is accepted the App Center option will then be disabled as it is c
 
 * We fixed an issue with deleted files not being removed correctly during a native template upgrade operation.
 * We fixed an issue where Google API changes introduced problems for Android native app builds. For more information, see [Update Needed for Android Native Mobile Apps](https://www.mendix.com/blog/update-needed-for-android-native-mobile-apps/). 
+
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
 
 ### Release 1.0.105
 
@@ -272,6 +332,11 @@ App Center's CodePush OTA page improvements:
 * We fixed an issue with missing asset files for newly created GitHub projects when building in **Advanced** mode.
 * We identified and fixed a bug with Firebase configuration's validation when changes are made to the **App Identifier**.
 
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
+
 ### Release 1.0.90
 
 **Release date: June 22, 2021**
@@ -280,6 +345,11 @@ App Center's CodePush OTA page improvements:
 
 * We fixed an issue with how file copying operations are handled by the Native Mobile Toolkit when files are still in use by other processes on the machine.
 * We fixed a behavior in the Native Mobile Toolkit that persisted Firebase-related configurations even after the Firebase capability was disabled.
+
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
 
 ### Release 1.0.89
 
@@ -330,6 +400,11 @@ Every mobile app requires certain features, as well as certain permissions users
 * We fixed typos and wrongly defined info boxes.
 * We made general bugfixes.
 
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
+
 ### Release 1.0.86
 
 **Release date: April 1, 2021**
@@ -343,6 +418,11 @@ Research has shown that animal sounds can relieve stress. As we work to simplify
 #### Fixes 
 
 * We fixed an issue with build exception resulting in an abstract error popup instead of a readable message.
+
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
 
 ### Release 1.0.84
 
@@ -365,6 +445,11 @@ still fail if the keystore values are invalid.
 
 * We fixed an issue with Android certificates not being verified correctly.
 * We fixed a bug where Native Mobile Builder might try to configure the wrong app on App Center. 
+
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
 
 ### Release v1.0.81
 
@@ -418,6 +503,11 @@ Dependency management and auto-linking are not included as part of the Native Mo
 
 * We fixed an issue with the validity of the fonts configuration, even when it is empty.
 
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
+
 ### Release v1.0.79
 
 **Release date: February 12, 2021**
@@ -437,6 +527,11 @@ The Native Mobile Builder is now able to derive which files need to be kept or r
 
 * We fixed an issue with App Center build configuration not being updated with template upgrades.
 
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
+
 ## 2020
 
 ### Release v1.0.74
@@ -451,6 +546,11 @@ We were made aware of a change in App Center resulting in signed iOS builds fail
 
 * It should once again be possible to sign your apps using the Mendix Native Mobile Builder.
 * We fixed an issue with the **Build** button continuously preserving only the **Only apply configuration to the source code** state.
+
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
 
 ### Release v1.0.71
 
@@ -481,6 +581,11 @@ If you are working with multiple people on the same project please make sure the
 
 * We fixed an issue with iOS certificates not being saved correctly.
 
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
+
 ### Release v1.0.51 
 
 **Release date: December 10, 2020**
@@ -505,6 +610,11 @@ This release focuses mainly on quality of life bug fixes and features.
 * Fonts should now correctly be applied throughout the app.
 * Removed the **Skip** buttons from the wizard to avoid confusion.
 
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
+
 ### Release v1.0.49
 
 **Release date: October 27, 2020**
@@ -528,3 +638,8 @@ We are working on more features internally, so stay tuned.
 #### Background Updates
 
 The Mendix Native Mobile Builder supports background updates. That means it needs to be installed once and it will update itself as soon as there is a newer version. This auto-update functionality allows us to push a new version as soon as new features are ready to be shipped.
+
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
