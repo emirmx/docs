@@ -34,11 +34,11 @@ Make sure you have completed the following prerequisites:
 
 ## Supported Authentication Mechanisms
 
-Currently, Mendix only supports HTTP Basic authentication and Windows Authentication for Git service providers. 
+Currently, Mendix only supports [HTTP Basic authentication](#http) and [Windows Authentication](#windows) for Git service providers. 
 
-### HTTP Basic Authentication
+### HTTP Basic Authentication {#http}
 
-With most providers, this takes the form of using of personal access tokens (PATs).
+With most providers, HTTP basic authentication takes the form of using of personal access tokens (PATs).
 
 To use PAT (or another equivalent), you need to specify it in the **Password** field when Studio Pro requests credentials for the version control server:
 
@@ -49,7 +49,7 @@ Currently Mendix keeps PAT using operating system supported solutions:
 * For Windows, Mendix uses a credential locker mechanism, accessible to users by using Credential Manager.
 * For MacOs, Mendix uses keychains, accessible to users by using Keychain Access.
 
-### Windows Authentication
+### Windows Authentication {#windows}
 
 Studio Pro can use Windows Authentication for Git service providers that support it. When you use Windows Authentication, you do not need to provide a password. 
 
