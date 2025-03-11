@@ -86,8 +86,8 @@ Please note that this is a breaking change, and thus, requires a mandatory updat
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release 1.0.130 {#10130}
 
@@ -99,8 +99,8 @@ Please note that this is a breaking change, and thus, requires a mandatory updat
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release 1.0.129
 
@@ -116,8 +116,8 @@ Please note that this is a breaking change, and thus, requires a mandatory updat
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ## 2022
 
@@ -133,8 +133,8 @@ This release was previously labeled as 1.0.127. Its release number has been corr
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release 1.0.126
 
@@ -168,8 +168,8 @@ This release was previously labeled as 1.0.127. Its release number has been corr
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release 1.0.123
 
@@ -181,8 +181,8 @@ This release was previously labeled as 1.0.127. Its release number has been corr
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release 1.0.121
 
@@ -194,8 +194,8 @@ This release was previously labeled as 1.0.127. Its release number has been corr
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release 1.0.120
 
@@ -207,8 +207,8 @@ This release was previously labeled as 1.0.127. Its release number has been corr
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release 1.0.113
 
@@ -248,8 +248,8 @@ Now, instead of accessing the first MPR file found in the directory, the tool wi
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ## 2021
 
@@ -285,8 +285,8 @@ For more details, see [NSUserTrackingUsageDescription](https://developer.apple.c
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release 1.0.109
 
@@ -306,8 +306,8 @@ If the dialog is accepted the App Center option will then be disabled as it is c
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release 1.0.107
 
@@ -320,8 +320,8 @@ If the dialog is accepted the App Center option will then be disabled as it is c
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release 1.0.105
 
@@ -349,8 +349,8 @@ App Center's CodePush OTA page improvements:
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release 1.0.90
 
@@ -363,8 +363,8 @@ App Center's CodePush OTA page improvements:
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release 1.0.89
 
@@ -417,8 +417,8 @@ Every mobile app requires certain features, as well as certain permissions users
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release 1.0.86
 
@@ -436,8 +436,8 @@ Research has shown that animal sounds can relieve stress. As we work to simplify
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release 1.0.84
 
@@ -463,8 +463,8 @@ still fail if the keystore values are invalid.
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release v1.0.81
 
@@ -520,8 +520,8 @@ Dependency management and auto-linking are not included as part of the Native Mo
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release v1.0.79
 
@@ -544,8 +544,8 @@ The Native Mobile Builder is now able to derive which files need to be kept or r
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ## 2020
 
@@ -564,8 +564,8 @@ We were made aware of a change in App Center resulting in signed iOS builds fail
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release v1.0.71
 
@@ -598,8 +598,8 @@ If you are working with multiple people on the same project please make sure the
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release v1.0.51 
 
@@ -627,8 +627,8 @@ This release focuses mainly on quality of life bug fixes and features.
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release v1.0.49
 
@@ -656,5 +656,5 @@ The Mendix Native Mobile Builder supports background updates. That means it need
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
