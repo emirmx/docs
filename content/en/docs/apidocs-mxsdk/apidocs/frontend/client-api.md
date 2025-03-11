@@ -7,7 +7,11 @@ weight: 30
 
 ## Introduction
 
-Enrich the user interface of your applications by building on top of our web client APIs. Use standard web technology in combination with our powerful APIs to build any widget you want.
+Use our powerful APIs to build any JavaScript action you want.
+
+{{% alert color="warning" %}}
+Client API is not supported in widgets. For widget development please use our [Pluggable Widgets API](/apidocs-mxsdk/apidocs/pluggable-widgets/)
+{{% /alert %}}
 
 ## Client API
 
