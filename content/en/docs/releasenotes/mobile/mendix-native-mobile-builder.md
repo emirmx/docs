@@ -13,7 +13,7 @@ The Mendix Native Mobile Builder uses MxBuild, GitHub, and App Center to simplif
 
 ## 2025
 
-## Release 1.0.135
+## Release 1.0.135 {#10135}
 
 **Release date: March 4, 2025**
 
@@ -38,17 +38,20 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 
 * We updated our signing mechanism so you can use the app without receiving Microsoft Defender SmartScreen notifications.
 
-### Release 1.0.134 {##10134}
+### Release 1.0.134 
 
 **Release date: February 20, 2025**
-
-
 
 #### Fixes
 
 * We fixed an issue where the Native Mobile Builder was not persisting selected permissions.
 * We fixed an issue where the **Runtime URL** field in the Native Mobile Builder did not accept URLs with subpaths.
 * We resolved a problem where renaming the default configuration broke updates.
+
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ### Release 1.0.133
 
@@ -68,8 +71,8 @@ Please note that this is a breaking change, and thus, requires a mandatory updat
 
 #### Known Issues
 
-* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
-    * Fixed in [1.0.134](#ki-certificate-signing)
+* A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.135](#ki-certificate-signing)
 
 ## 2024
 
