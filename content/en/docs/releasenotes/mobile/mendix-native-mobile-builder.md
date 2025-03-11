@@ -19,7 +19,7 @@ The Mendix Native Mobile Builder uses MxBuild, GitHub, and App Center to simplif
 
 #### Fix: Certificate Known Issue {#ki-certificate-signing}
 
-* We fixed a known issue where auto-upgrading your Native Mobile Builder cased the process to hang during certificate signature. To fix the issue, you must follow the process below once:
+* We fixed a known issue where auto-upgrading your Native Mobile Builder caused the process to hang during certificate signature. To fix the issue, you must follow the process below once:
     1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
     1. Install the latest version using the [Mendix Native Mobile one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
 
