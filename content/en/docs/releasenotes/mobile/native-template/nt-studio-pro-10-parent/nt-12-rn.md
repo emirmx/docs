@@ -5,6 +5,14 @@ weight: 5
 description: "Native Template 12 release notes."
 ---
 
+## 12.0.1 {#1001}
+
+**Release date: March 10, 2025**
+
+### Fixes
+
+* We fixed an issue where changing the system font scale caused crashes on Android.
+
 ## 12.0.0 {#1000}
 
 **Release date: January 28, 2025**
@@ -13,7 +21,7 @@ description: "Native Template 12 release notes."
 
 #### Offline Database Backend Change - OP-Sqlite Support
 
-* We have changed the Offline Database Backend to OP-SQLite.
+* We changed the Offline Database Backend to OP-SQLite.
 
 #### Important Notes
 
