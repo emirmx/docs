@@ -13,9 +13,9 @@ The Mendix Native Mobile Builder uses MxBuild, GitHub, and App Center to simplif
 
 ## 2025
 
-### Release 1.0.134 {##10134}
+## Release 1.0.135
 
-**Release date: February 20, 2025**
+**Release date: March 4, 2025**
 
 #### Fix: Certificate Known Issue {#ki-certificate-signing}
 
@@ -33,6 +33,16 @@ Windows Security Note: If Windows security policies prevent you from accomplishi
 {{% /alert %}}
 
 After these steps, run the installer again. You can start Studio Pro again, and Native Mobile Builder will load correctly.
+
+### Fixes
+
+* We updated our signing mechanism so you can use the app without receiving Microsoft Defender SmartScreen notifications.
+
+### Release 1.0.134 {##10134}
+
+**Release date: February 20, 2025**
+
+
 
 #### Fixes
 
