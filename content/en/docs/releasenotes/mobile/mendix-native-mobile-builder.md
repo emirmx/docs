@@ -11,11 +11,11 @@ The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Stu
 
 ## 2025
 
-### Release 1.0.134
+### Release 1.0.134 {##10134}
 
 **Release date: February 20, 2025**
 
-#### Fix: Certificate Issue {#ki-certificate-signing}
+#### Fix: Certificate Known Issue {#ki-certificate-signing}
 
 * We fixed a known issue where auto-upgrading your Native Mobile Builder cased the process to hang during certificate signature. To fix the issue, you must follow the process below once:
     1. Uninstall the current version: **C:\Users\[%USER_NAME%]\AppData\Local\Mendix Builder\Uninstall Builder.exe**
@@ -53,6 +53,11 @@ After these steps, run the installer again. You can start Studio Pro again, and 
 {{% alert color="warning" %}}
 Please note that this is a breaking change, and thus, requires a mandatory update. You must use the latest Native Template version to implement this fix, as older versions may cause errors in your application. Failure to update could lead to potential app instability and functionality issues.
 {{% /alert %}}
+
+#### Known Issues
+
+* A known issue affects all versions of Native Mobile Builder below [1.0.134](#10134). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
+    * Fixed in [1.0.134](#ki-certificate-signing)
 
 ## 2024
 
