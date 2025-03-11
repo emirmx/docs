@@ -11,8 +11,6 @@ The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Stu
 
 The Mendix Native Mobile Builder uses MxBuild, GitHub, and App Center to simplify the app building process and is directly accessible via Mendix Studio Pro. For best results, we recommend using the latest version of the Native Mobile Builder.
 
-## 2025
-
 ## Release 1.0.135 {#10135}
 
 **Release date: March 4, 2025**
@@ -74,8 +72,6 @@ Please note that this is a breaking change, and thus, requires a mandatory updat
 * A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
     * Fixed in [1.0.135](#ki-certificate-signing)
 
-## 2024
-
 ### Release 1.0.131
 
 **Release date: February 19, 2024**
@@ -118,8 +114,6 @@ Please note that this is a breaking change, and thus, requires a mandatory updat
 
 * A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
     * Fixed in [1.0.135](#ki-certificate-signing)
-
-## 2022
 
 ### Release 1.0.128
 
@@ -250,8 +244,6 @@ Now, instead of accessing the first MPR file found in the directory, the tool wi
 
 * A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
     * Fixed in [1.0.135](#ki-certificate-signing)
-
-## 2021
 
 ### Release 1.0.111
 
@@ -546,8 +538,6 @@ The Native Mobile Builder is now able to derive which files need to be kept or r
 
 * A known issue affects all versions of Native Mobile Builder below [1.0.135](#10135). Specifically, there is a known issue with the signing certificate. Because the update fails at the certificate step, the Native Mobile Builder gets stuck on its loading screen. See the link below for instructions on how to implement a first-time workaround:
     * Fixed in [1.0.135](#ki-certificate-signing)
-
-## 2020
 
 ### Release v1.0.74
 
