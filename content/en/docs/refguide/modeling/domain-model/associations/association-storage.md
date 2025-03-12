@@ -47,8 +47,6 @@ You cannot replace association tables with direct associations for all types of 
 * You can only use direct associations for one-to-many (1-*, default owner) and one-to-one (1-1, owner both) associations – you cannot use it for many-many associations.
 * Direct associations are only allowed between persistable entities or between a persistable entity and a persistable external entity. You cannot use them on view entities, non-persistable entities, or between external entities.
 
-{{% todo %}}Originally said "remote persistent" - I don't think we document two different types of remote entity?{{% /todo %}}
-
 ## Enabling Direct Associations
 
 Enabling direct associations is simple, and has the following features:
