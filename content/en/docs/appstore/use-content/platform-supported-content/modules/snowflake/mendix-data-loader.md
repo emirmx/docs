@@ -228,11 +228,11 @@ The *cloud_region_id* and the *cloud* in the URL depend on the configurations of
 
 ## Using Mendix Data Loader with a Private Link
 
-If you want to connect the Mendix Data Loader to your Mendix apps running on  on AWS or Azure (including also ), you must set up their respective private link functionality for your cloud.  
+If you do not want the connection between the Mendix Data Loader and your Mendix apps to run through the public internet (for example, due to regulations or internal policies), you can configure a private link functionality for your cloud.
 
-A private link is required for any deployment type running on AWS or Azure cloud. This may include apps on [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/) (which runs on AWS), [Mendix on Azure](/developerportal/deploy/mendix-on-azure/), and [Mendix for Private Cloud](/developerportal/deploy/private-cloud/) (if running on Azure or AWS).
+{{% alert color="info" %}}This section describes how you can set up a private link for any deployment type running on AWS or Azure cloud. This may include apps on [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/) (which runs on AWS), [Mendix on Azure](/developerportal/deploy/mendix-on-azure/), and [Mendix for Private Cloud](/developerportal/deploy/private-cloud/) (if running on Azure or AWS).
 
-{{% alert color="info" %}}This section describes the process for setting up a private link within the same cloud provider. Private links between different cloud providers, for example, Azure and AWS, require special measures such as an S2S VPN to link the two VNets.{{% /alert %}}
+The process applies to setting up a private link within the same cloud provider. Private links between different cloud providers, for example, Azure and AWS, require special measures such as an S2S VPN to link the two VNets.{{% /alert %}}
 
 To implement the connection between Mendix Data Loader and your Private Cloud app, perform the following steps:
 
