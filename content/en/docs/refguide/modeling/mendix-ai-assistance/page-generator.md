@@ -31,7 +31,8 @@ After clicking **Generate Page**, a dedicated chat interface will appear at the 
 
 Describe your page or its main goals in the chatbox. Maia will use this information to add relevant widgets to the page and configure them for you. When generating a page, Maia knows about the domain model of the module you're currently working on. For example, it might include a [Data View](/refguide/data-view) with some [Text Box](/refguide/text-box) widgets for an attribute of an Entity.
 
-In addition to a text message, you can also select an image. Maia will use the image to understand your request better, for example it can recognize the layout of a page and replicate it. The image can be a screenshot or wireframe. You can also provide a screenshot and describe difference, an example of this kind of message could look like "Generate a page based on this image, but change the header to Welcome."
+In addition to a text message, you can also select an image. Maia will use the image to understand your request better, for example it can recognize the layout of a page and replicate it. The image can be a screenshot, wireframe, a drawing or a similar image.
+You can also provide an image and describe differences. An example of this kind of message could be "Generate a page based on this image, but change the header to Welcome."
 
 {{% alert color="info" %}}
 In this dedicated chat, only requests related to Page Generation will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide/maia-chat/) interface.
@@ -64,7 +65,18 @@ The experimental version of Page Generator released in 10.21 is intended to be u
 
 ### Supported widgets
 
-In the experimental version of Page Generator release in 10.21, not all widgets are supported. 
+In the experimental version of Page Generator release in 10.21, not all widgets are supported. Initially the following widgets are supported:
+
+* [Container](/refguide/container)
+* [Layout Grid](/refguide/layout-grid)
+* [Data View](/refguide/data-view)
+* [Text](/refguide/text)
+* [Button](/refguide/button-widgets)
+* [Text Box](/refguide/text-box)
+* [Text Area](/refguide/text-area)
+* [Checkbox](/refguide/checkbox)
+* [Radio Buttons](/refguide/radio-buttons)
+* [Date Picker](/refguide/date-picker)
 
 ## Read More
 
