@@ -19,6 +19,12 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
+### March 13, 2025
+
+#### Fixes
+
+* We fixed an issue in MiniSurveys where xls exports included empty responses.
+
 ### February 6, 2025
 
 #### New Features
