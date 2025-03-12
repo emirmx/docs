@@ -62,8 +62,6 @@ As an experimental feature, Page Generator has some limitations.
 
 The experimental version of Page Generator released in 10.21 is intended to be used with empty pages. Any widgets already on the page will be removed.
 
-This includes widgets added by Maia based on an earlier chat message. Sending two messages in a row will cause these widgets to be deleted.
-
 ### Supported widgets
 
 In the experimental version of Page Generator release in 10.21, not all widgets are supported. 
