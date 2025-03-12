@@ -226,6 +226,27 @@ https://apps-api.c1.<cloud_region_id>.<cloud>.app.snowflake.com/oauth/complete-s
 
 The *cloud_region_id* and the *cloud* in the URL depend on the configurations of your Snowflake account. See [Supported Cloud Regions](https://docs.snowflake.com/en/user-guide/intro-regions) and [Supported Cloud Platforms](https://docs.snowflake.com/en/user-guide/intro-cloud-platforms) for more information on what these values are according to the region and cloud platform your account is in.
 
+## Using Mendix Data Loader with a Private Link
+
+If you want to connect the Mendix Data Loader to your Mendix apps running on [Private Cloud](/developerportal/deploy/private-cloud/) on AWS, or [Mendix on Azure](/developerportal/deploy/mendix-on-azure/), you must set up their respective private link functionality for your cloud. 
+
+{{% alert color="info" %}}This section describes the process for setting up a private link within the same cloud provider. Private links between different cloud providers, for example, Azure and AWS, require special measures such as an S2S VPN to link the two VNets.{{% /alert %}}
+
+To implement the connection between Mendix Data Loader and your Private Cloud or Mendix on Azure app, perform the following steps:
+
+1. Obtain the necessary information from your Mendix Platform owner (for example, your system administrator, or a partner who implemented the Platform for you).
+
+    You must know where in the Virtual Private Cloud your app is running, so you can set up a private link tunnel to the location.
+
+2. Configure the private link as described in the following documents:
+
+    * For Private Cloud on AWS - [Get started with AWS PrivateLink](https://docs.aws.amazon.com/vpc/latest/privatelink/getting-started.html)
+    * For Mendix on Azure - [Quickstart: Create a Private Link service by using the Azure portal](https://learn.microsoft.com/en-us/azure/private-link/create-private-link-service-portal)
+
+3. In Mendix Data Loader, create a new data source and enter the private link URL in the **API Endpoint** field, as in the following figure:
+
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-data-loader/private-link.png" >}}
+
 ## Current Limitations
 
 * Exposing an association in an OData service as a link is not supported yet by the Mendix Data Loader. Instead, choose the **As an associated object id** option in your OData settings. This option stores the associated object ID in the table, but not explicitly as foreign key.
