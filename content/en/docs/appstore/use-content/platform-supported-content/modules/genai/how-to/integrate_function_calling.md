@@ -4,6 +4,8 @@ url: /appstore/modules/genai/how-to/howto-functioncalling/
 linktitle: "Integrating Function Calling"
 weight: 30
 description: "This document guides you through integrating and implementing function calling in your Mendix application to enhance functionality."
+aliases:
+    - /appstore/modules/genai/using-genai/howto-functioncalling/
 ---
 
 ## Introduction
