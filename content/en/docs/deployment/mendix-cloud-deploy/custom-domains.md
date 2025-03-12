@@ -201,6 +201,10 @@ You can also edit an existing custom domain certificate.
 For this, you need access to the certificate request that you created for the current certificate.
 {{% /alert %}}
 
+{{% alert color="warning" %}}
+To edit an existing custom domain certificate, you must have [transport rights](/developerportal/deploy/node-permissions/#transport-rights) permission enabled for all environments of an application
+{{% /alert %}}
+
 ## Configuring a Custom Domain {#Configuring}
 
 Once a custom domain certificate has been uploaded, you can configure a custom domain for one of your application environments.
