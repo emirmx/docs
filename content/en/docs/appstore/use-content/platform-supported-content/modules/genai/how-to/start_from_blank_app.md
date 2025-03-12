@@ -5,7 +5,7 @@ linktitle: "Build a Chatbot Using the Blank GenAI App"
 weight: 20
 description: "A tutorial that describes how to get started building a smart app from a Blank GenAI App"
 aliases:
-    - /appstore/modules/genai/using-genai/blank-app
+    - /appstore/modules/genai/using-genai/blank-app/
 ---
 
 ## Introduction

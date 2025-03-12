@@ -5,7 +5,7 @@ linktitle: "Build a Chatbot Using the AI Bot Starter App"
 weight: 10
 description: "A tutorial that describes how to get started building a smart app with a starter template"
 aliases:
-    - /appstore/modules/genai/using-genai/starter-template
+    - /appstore/modules/genai/using-genai/starter-template/
 ---
 
 ## Introduction
