@@ -26,10 +26,10 @@ In Mendix 10.20 and below associations are always implemented as association tab
 In Mendix 10.21 and above, the following defaults apply:
 
 * **New projects** – one-to-many and one-to-one associations are implemented as direct associations
-* **Upgraded projects** – for projects which are upgraded from an older version of Mendix, all new associations acontinue to be implemented as association tables
+* **Upgraded projects** – for projects which are upgraded from an older version of Mendix, all new associations continue to be implemented as association tables
 
 {{% alert color="info" %}}
-In your app settings you can [change the default](/brokenlink) for all new associations.
+In your app settings you can [change the default](/refguide/app-settings/#miscellaneous) for all new associations.
 {{% /alert %}}
 
 ## Advantages of Direct Associations
@@ -53,7 +53,7 @@ Enabling direct associations is simple, and has the following features:
 
 * The choice is reversible – you can decide to revert to using association tables (but see things to think about [before switching to direct associations](#before))
 * Direct associations are available in Mendix versions 10.21 and above
-* You can decide whether to enable it for a specific association, or [change the default](/brokenlink) for all new associations
+* You can decide whether to enable it for a specific association, or [change the default](/refguide/app-settings/#miscellaneous) for all new associations
 
 For more information, see the [Association Storage](/refguide/association-properties/#storage) section of *Association Properties*.
 
