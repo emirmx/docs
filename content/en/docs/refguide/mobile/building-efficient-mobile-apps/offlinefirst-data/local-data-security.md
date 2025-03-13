@@ -165,6 +165,8 @@ You can now enable cookie encryption for both new and existing Android apps. Whe
 
 {{% alert color="warning" %}}
 This feature was enabled by default in Mendix applications before Studio Pro 10.21. Within 10.21, the option by default is disabled.
+
+If your app both has File Encryption and Database Encryption enabled, the cookie encryption will also be enabled upon upgrading the project to version 10.12 or above.
 {{% /alert %}}
 
 ### What is Cookie Encryption
