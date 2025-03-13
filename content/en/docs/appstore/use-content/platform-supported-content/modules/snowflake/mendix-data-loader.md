@@ -230,11 +230,11 @@ The *cloud_region_id* and the *cloud* in the URL depend on the configurations of
 
 If you do not want the connection between the Mendix Data Loader and your Mendix apps to run through the public internet (for example, due to regulations or internal policies), you can configure a private link functionality for your cloud. This section outlines a sample high-level process that your company can implement to enable private links.
 
-{{% alert color="info" %}}This functionality is available for [Mendix for Private Cloud](/developerportal/deploy/private-cloud/) apps running on AWS or Azure cloud.
+{{% alert color="info" %}}Creating private endpoints is not available on [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/).
 
-The process applies to setting up a private link within the same cloud provider. Private links between different cloud providers, for example, Azure and AWS, require special measures such as an S2S VPN to link the two VNets.{{% /alert %}}
+The process described in this section applies to setting up a private link within the same cloud provider. Private links between different cloud providers, for example, Azure and AWS, require special measures such as an S2S VPN to link the two VNets.{{% /alert %}}
 
-To implement the connection between Mendix Data Loader and your Private Cloud app, perform the following steps:
+To implement the connection between Mendix Data Loader and your app, perform the following steps:
 
 1. Obtain the necessary information from your Mendix Platform owner (for example, your system administrator, or a partner who implemented the Platform for you).
 
@@ -244,10 +244,6 @@ To implement the connection between Mendix Data Loader and your Private Cloud ap
 
     * For AWS - [Get started with AWS PrivateLink](https://docs.aws.amazon.com/vpc/latest/privatelink/getting-started.html) and [Manage private connectivity endpoints: AWS](https://docs.snowflake.com/en/user-guide/private-manage-endpoints-aws)
     * For Azure - [Quickstart: Create a Private Link service by using the Azure portal](https://learn.microsoft.com/en-us/azure/private-link/create-private-link-service-portal) and [Manage private connectivity endpoints: Azure](https://docs.snowflake.com/en/user-guide/private-manage-endpoints-azure)
-
-3. In Mendix Data Loader, create a new data source and enter the private link URL in the **API Endpoint** field, as in the following figure:
-
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-data-loader/private-link.png" >}}
 
 ## Current Limitations
 
