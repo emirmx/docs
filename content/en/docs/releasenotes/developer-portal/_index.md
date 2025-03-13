@@ -23,7 +23,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 #### Fixes
 
-* We fixed an issue in MiniSurveys where xls exports included empty responses.
+* We fixed an issue in [Mini Surveys](/developerportal/app-insights/mini-surveys/#view-export-responses) where XLSX exports included empty responses.
 
 ### February 6, 2025
 
