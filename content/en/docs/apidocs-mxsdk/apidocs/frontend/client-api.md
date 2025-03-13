@@ -9,15 +9,15 @@ weight: 30
 
 Use our powerful APIs to build any JavaScript action you want.
 
-{{% alert color="warning" %}}
-Client API is not supported in widgets. For widget development please use our [Pluggable Widgets API](/apidocs-mxsdk/apidocs/pluggable-widgets/)
-{{% /alert %}}
-
 ## Client API
 
 The client API is compatible with both the React and the Dojo client.
 
 * [Mendix 10 Client API](https://apidocs.rnd.mendix.com/10/client-mx-api/index.html)
+
+{{% alert color="warning" %}}
+Client API is not supported in widgets. For widget development please use our [Pluggable Widgets API](/apidocs-mxsdk/apidocs/pluggable-widgets/)
+{{% /alert %}}
 
 ## Legacy Client APIs
 
