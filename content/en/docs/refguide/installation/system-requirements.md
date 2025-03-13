@@ -298,7 +298,7 @@ Developing native mobile apps with Mendix comes with special requirements explai
 MxBuild is a Windows and Linux command-line tool that can be used to build a Mendix Deployment Package. For more information, see [MxBuild](/refguide/mxbuild/).
 
 * .NET 8
-* JDK 11
+* JDK 21
 
 ## mx Command-Line Tool {#mxtool}
 
