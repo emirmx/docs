@@ -125,7 +125,7 @@ You can edit attributes of any enclosing data container including grandparent da
 
 #### Association Input Elements
 
-For widgets which manipulate associations, the value specifies an attribute which is from an entity which is reachable from the current data container using an association. This applies to the following input elements:
+For widgets which manipulate associations, the value specifies an attribute that is reachable from an enclosing data container using one or more associations. This applies to the following input elements:
 
 * [Reference Selector](/refguide/reference-selector/)
 * [Reference Set Selector](/refguide/reference-set-selector/)
