@@ -169,13 +169,17 @@ If the editable property is set to **Conditionally**, the widget is made editabl
 
 For example, imagine you are creating a personal details form in which the end-user must enter their marital status. In this case, you might wish to disable the input of a marriage date until the end-user indicates that they are married.
 
-#### Based on Attribute Value
+#### Based on Value
 
-When selected, this enables the widget when a particular attribute has a certain value. Only Boolean and enumeration attributes can be used for this purpose.
+When selected, this enables the widget while a chosen value matches specific values. The source of the value can be an attribute of an enclosing data container, or a [variable](/refguide/page-properties/#variables) defined on the page or snippet.
 
 #### Based on Expression
 
-When selected, this enables the widget when a provided [expression](/refguide/expressions/) evaluates to true. The object of the containing data container is available inside an expression as the `$currentObject` variable. Objects of all data containers surrounding the widget and variables on the page or snippet are available as well.
+When selected, this enables the widget while a provided [expression](/refguide/expressions/) evaluates to true. The expression may use the variables listed in the expression editor, including:
+
+- `$currentObject`, representing the object of the closest enclosing data container.
+- The objects of any enclosing data container, available under the name of the widget that exposes them (for example `$dataView1`).
+- [Parameters](/refguide/page-properties/#parameters) and [variables](/refguide/page-properties/#variables) defined on the page or snippet.
 
 The expression provided is evaluated in the browser and, currently, does not support all the functions that are available in microflows. The autocomplete function will only list those functions which are supported.
 
@@ -221,7 +225,21 @@ The template for the label can contain parameters that are written as a number b
 
 #### Parameters
 
-For each parameter in the template, you define an attribute of the context entity or an associated entity. The value of this attribute will be inserted at the position of the parameter.
+For each parameter in the template, you define a source for the value. The value of the parameter will be inserted at the position of the parameter placeholder.
+
+##### Value Parameter Type
+
+When selected, the chosen value is used as the value of the parameter. The source of the value can be an attribute of an enclosing data container, or a [variable](/refguide/page-properties/#variables) defined on the page or snippet. Number and Date Time value types offer formatting options.
+
+##### Expression Parameter Type
+
+When selected, the result of the given [expression](/refguide/expressions/) is used as the value of the parameter. The expression may use the variables listed in the expression editor, including:
+
+- `$currentObject`, representing the object of the closest enclosing data container.
+- The objects of any enclosing data container, available under the name of the widget that exposes them (for example `$dataView1`).
+- [Parameters](/refguide/page-properties/#parameters) and [variables](/refguide/page-properties/#variables) defined on the page or snippet.
+
+The expression provided is evaluated in the browser and, currently, does not support all the functions that are available in microflows. The autocomplete function will only list those functions which are supported.
 
 ## Formatting Section{#numeric-formatting}
 
@@ -367,9 +385,9 @@ The widget can be made visible only if the object of the data container that con
 
 A practical example would be a web shop in which the user must submit both billing and delivery information. In this case, you might not wish to bother the user with a second set of address input fields unless they indicate that the billing address and delivery address are not the same. You can accomplish this by making the delivery address fields conditionally visible based on the Boolean attribute `SameBillingAndDeliveryAddress`.
 
-##### Based on Attribute Value{#visibility-based-on-attribute-value}
+##### Based on Value {#visibility-based-on-attribute-value}
 
-When selected, this shows the widget while a particular attribute has a certain value. 
+When selected, this shows the widget while a chosen value matches specific values. The source of the value can be an attribute of an enclosing data container, or a [variable](/refguide/page-properties/#variables) defined on the page or snippet.
 
 {{% alert color="info" %}}
 Visibility based on an attribute value can be set only for widgets that are inside data containers (a data view, list view, or data grid). 
@@ -390,7 +408,11 @@ The visibility of the billing address depends whether the customer checks that t
 
 ##### Based on Expression{#visibility-based-on-expression}
 
-When selected, this shows the widget while a provided [expression](/refguide/expressions/) evaluates to true. The object of the containing data container is available inside an expression as a `$currentObject` variable. The expression can access objects of all the data containers enclosing that data container widget and variables defined on the page or snippet. These objects are available under the name of the widget they originate from (for example, `$dataView1`).
+When selected, this shows the widget while a provided [expression](/refguide/expressions/) evaluates to true. The expression may use the variables listed in the expression editor, including:
+
+- `$currentObject`, representing the object of the closest enclosing data container.
+- The objects of any enclosing data container, available under the name of the widget that exposes them (for example `$dataView1`).
+- [Parameters](/refguide/page-properties/#parameters) and [variables](/refguide/page-properties/#variables) defined on the page or snippet.
 
 For example, you might want a button to only be visible if a condition is met. Assume the object has an attribute called `myAttribute`, and you want the button to be visible only if `myAttribute` actually has a value stored. To achieve this goal put this expression into the field: `$currentObject/myAttribute != empty`.
 
