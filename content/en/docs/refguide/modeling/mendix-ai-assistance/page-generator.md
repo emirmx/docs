@@ -12,27 +12,30 @@ Page Generator is currently an experimental feature introduced in Studio Pro 10.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-To use Page Generator, internet connection and signing in to Studio Pro are required.
+To use Page Generator, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-Maia Page Generator is an AI-powered tool that you can use for generating a [page](/refguide/page/). It helps you by adding and configuring widgets. In Studio Pro 10.21 and above, you can use Page Generator on existing pages. As an experimental feature, Page Generator still has several limitations. For more information, see the [Limitations](#limitation) section below.
+Maia Page Generator is an AI-powered tool that you can use for generating a [page](/refguide/page/). It helps you add and configure widgets based on a text input and an optional image. As an experimental feature, Page Generator has certain limitations. For example, it is currently intended only for use with empty pages, and any existing widgets on a page will be removed. For more details, see the [Limitations](#limitation) section below.
 
 ## Using Page Generator
 
-In Studio Pro 10.21 and above, Page Generator is disabled by default. If you want to enable or disable this feature, go to **Edit** > **Preferences** > the **New Features** tab > the **Maia** section.
+To enable Page Generator, go to **Edit** > **Preferences** > the **New Features** tab > the **Maia** section.
 
-You can find it in the the toolbar of a page:
+Once enabled, you can find it in the the toolbar of a page:
 
 {{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/page-generator/page-generator.png" max-width=80% >}}
 
-After clicking **Generate Page**, a dedicated chat interface will appear at the right side of Studio Pro under the **Maia** tab:
+{{% alert color="info" %}}
+Page Generator is available in both the **Structure mode** and **Design mode**.
+{{% /alert %}}
+
+After clicking **Generate page**, a dedicated chat interface appears at the right side of Studio Pro under the **Maia** tab:
 
 {{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/page-generator/chat-interface.png" max-width=42% >}}
 
-Describe your page or its main goals in the chatbox. Maia will use this information to add relevant widgets to the page and configure them for you. When generating a page, Maia knows about the domain model of the module you're currently working on. For example, it might include a [Data View](/refguide/data-view) with some [Text Box](/refguide/text-box) widgets for an attribute of an Entity.
+Describe your page or its main goals in the chat. Maia uses this information to add relevant widgets to the page and configure them for you. When generating a page, Maia knows about the domain model of the module you are currently working on. For example, it might include a [Data View](/refguide/data-view/) with some [Text Box](/refguide/text-box/) widgets for an attribute of an entity.
 
-In addition to a text message, you can also select an image. Maia will use the image to understand your request better, for example it can recognize the layout of a page and replicate it. The image can be a screenshot, wireframe, a drawing or a similar image.
-You can also provide an image and describe differences. An example of this kind of message could be "Generate a page based on this image, but change the header to Welcome."
+You can also supplement text input with an image. Maia uses the image to interpret your request better. For example, it can recognize the layout of a page from the image and replicate it. The image can be a screenshot, wireframe, or drawing. With text input, you can also specify differences between the provided image and how you would like the generated page to appear. For example, you might write: *Generate a page based on this image, but change the header to Welcome.*
 
 {{% alert color="info" %}}
 In this dedicated chat, only requests related to Page Generation will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide/maia-chat/) interface.
@@ -49,34 +52,34 @@ Below are some examples you can use as a starting point:
 * Create a page like the image.
 * Base the page on the image, but change ... to ...
 
-### Best Practices for Image input
+### Best Practices for Image Input
 
-The image is limited to at most 512 kb in size. Make sure to select a clear image, so that Maia has the best idea of what you're trying to achieve. For example, a screenshot, a design mock-up or a close-up picture of a drawing. Avoid heavily compressed images or low quality images, because those might cause important details to be lost.
+The image size is limited to 512 KB. Make sure to select a clear image to help Maia better understand your request. For example, you can provide a screenshot, a design mock-up, or a close-up picture of a drawing. Avoid heavily compressed or low quality images, as these may result in the loss of important details.
 
-Keep in mind that Maia only analyzes the structure of the screenshot. The theming of your app, such as the color scheme, will not be changed. This can cause some differences between the selected image and the generated page.
+Keep in mind that Maia analyzes only the structure of the image. The theming of your app, such as the color scheme, will not be changed. This can cause some differences between the provided image and the generated page.
 
 ## Limitations {#limitation}
 
 As an experimental feature, Page Generator has some limitations.
 
-### Empty pages only
+### Empty Pages Only
 
-The experimental version of Page Generator released in 10.21 is intended to be used with empty pages. Any widgets already on the page will be removed.
+Page Generator is currently intended only for use with empty pages. Any existing widgets on a page will be removed.
 
-### Supported widgets
+### Supported Widgets
 
-In the experimental version of Page Generator release in 10.21, not all widgets are supported. Initially the following widgets are supported:
+Not all widgets are supported. Currently the following widgets are supported:
 
-* [Container](/refguide/container)
-* [Layout Grid](/refguide/layout-grid)
-* [Data View](/refguide/data-view)
-* [Text](/refguide/text)
-* [Button](/refguide/button-widgets)
-* [Text Box](/refguide/text-box)
-* [Text Area](/refguide/text-area)
-* [Checkbox](/refguide/checkbox)
-* [Radio Buttons](/refguide/radio-buttons)
-* [Date Picker](/refguide/date-picker)
+* [Container](/refguide/container/)
+* [Layout Grid](/refguide/layout-grid/)
+* [Data View](/refguide/data-view/)
+* [Text](/refguide/text/)
+* [Button](/refguide/button-widgets/)
+* [Text Box](/refguide/text-box/)
+* [Text Area](/refguide/text-area/)
+* [Checkbox](/refguide/checkbox/)
+* [Radio Buttons](/refguide/radio-buttons/)
+* [Date Picker](/refguide/date-picker/)
 
 ## Read More
 
