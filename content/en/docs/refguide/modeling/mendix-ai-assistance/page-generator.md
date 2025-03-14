@@ -1,7 +1,7 @@
 ---
 title: "Page Generator"
 url: /refguide/page-generator/
-weight: 20
+weight: 60
 description: "Describes the features in Page Generator."
 ---
 
