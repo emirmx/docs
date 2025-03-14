@@ -257,7 +257,7 @@ For Mendix versions 10.5.0 through 10.9.0, this option is on the **New Features*
 
 ### Access Rules Editor
 
-In Studio Pro version 10.20, the modernized access rule editor was made generally available and enabled by default. The old editor will be removed in 11.0.
+In Studio Pro version 10.21, the modernized access rule editor was made generally available and enabled by default. The old editor will be removed in 11.0.
 
 ### App Explorer
 
