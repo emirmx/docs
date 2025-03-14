@@ -100,7 +100,7 @@ The 'Conditionally' option was introduced in Mendix 10.7.0.
 
 ### Condition
 
-If the editable property is set to **Conditionally**, the widgets inside the data view are made editable only if the object of the data view satisfies the specified criteria.
+If the editable property is set to **Conditionally**, the widgets inside the data view are made editable only if the editability expression satisfies the specified criteria.
 
 #### Based on Attribute Value
 
@@ -108,7 +108,7 @@ When selected, this enables the widgets in the data view when a particular attri
 
 #### Based on Expression
 
-When selected, this enables the widget when a provided [expression](/refguide/expressions/) evaluates to true. The object of the data view is available inside an expression as the `$currentObject` variable.
+When selected, this enables the widget when a provided [expression](/refguide/expressions/) evaluates to true. The object of the data view is available inside an expression as the `$currentObject` variable as well as any variables and parameters inside a page or snippet.
 
 The expression provided is evaluated in the browser. Currently it does not support all the functions that are available in microflows. The autocomplete function will only list those functions which are supported.
 

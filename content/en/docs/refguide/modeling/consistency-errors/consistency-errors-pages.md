@@ -341,23 +341,22 @@ The best way to fix this error is to either change the microflow to accept *Phot
 The most common errors for input elements, their causes, and ways to fix them are described in the following sub-sections. For more information on input elements, see [Input Elements](/refguide/input-widgets/). 
 
 ### Error Code: CE0544
+CE0544 error message: *This widget can only function inside a data context — like a data view, list view, or a {document type} with variables.*
 
-CE0544 error message: *This widget can only function inside a data container. Move it into a data view, list view or template grid.*
+You get CE0544 if you have added an input widget to a page or a snippet but it is not inside a data container or the page or snippet does not define any variables. Input elements either need to refer to a variable or an attribute of a specific entity type. 
 
-You get CE0544 if you have added an input widget to a page but it is not inside a data container. Input elements need to refer to an attribute of a specific entity type and entities are only available via data containers. 
-
-To fix CE0544, place this widget into a data container: a data view, list view, or template grid.
+To fix CE0544, place this widget into a data container such as a data view, list view, or use variables in the page or snippet that contains the widget.
 
 ### Error Code: CE0545
 
-CE0545 error message: *Select an attribute for this {widget name}.*
+CE0545 error message: *Select a value for this {widget name}.*
 
-You get CE0545 if you have added an input widget and it is inside a data container, but an attribute is not selected for it.
+You get CE0545 if you have added an input widget inside a data context, but haven't selected an attribute or a variable for it.
 
 To fix CE0545, do one of the following:
 
-* Right-click the widget, click **Select Attribute** in the drop-down list, and set an attribute. 
-* Or open widget's properties > the **Data source** section, and set an attribute in the **Attribute (path)** field.
+* Right-click the widget, click **Select Value** in the drop-down list, and set an attribute or a variable.
+* Or open widget's properties > the **Data source** section, and set an attribute or a variable in the **Value** field.
 
 ### Incorrect Multiplicity for a Reference Selector {#incorrect-multiplicity-reference}
 
