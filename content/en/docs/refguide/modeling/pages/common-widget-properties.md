@@ -171,7 +171,9 @@ For example, imagine you are creating a personal details form in which the end-u
 
 #### Based on Value
 
-When selected, this enables the widget while a chosen value matches specific values. The source of the value can be an attribute of an enclosing data container, or a [variable](/refguide/page-properties/#variables) defined on the page or snippet.
+When selected, this enables the widget while a chosen value matches specific options. The source of the value can be an attribute of an enclosing data container. Using the checkboxes you can choose what options enable the widget.
+
+Only Boolean and enumeration attributes can be used for this purpose.
 
 #### Based on Expression
 
@@ -229,7 +231,7 @@ For each parameter in the template, you define a source for the value. The value
 
 ##### Value Parameter Type
 
-When selected, the chosen value is used as the value of the parameter. The source of the value can be an attribute of an enclosing data container, or a [variable](/refguide/page-properties/#variables) defined on the page or snippet. Number and Date Time value types offer formatting options.
+When selected, the chosen value is used as the value of the parameter. The source of the value can be an attribute of an enclosing data container. Number and Date Time value types offer formatting options.
 
 ##### Expression Parameter Type
 
@@ -387,7 +389,7 @@ A practical example would be a web shop in which the user must submit both billi
 
 ##### Based on Value {#visibility-based-on-attribute-value}
 
-When selected, this shows the widget while a chosen value matches specific values. The source of the value can be an attribute of an enclosing data container, or a [variable](/refguide/page-properties/#variables) defined on the page or snippet.
+When selected, this shows the widget while a chosen value matches specific options. The source of the value can be an attribute of an enclosing data container. Using the checkboxes you can choose what options show the widget.
 
 {{% alert color="info" %}}
 Visibility based on an attribute value can be set only for widgets that are inside data containers (a data view, list view, or data grid). 
