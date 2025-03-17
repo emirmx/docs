@@ -241,7 +241,7 @@ For the conflict, you can inspect the changes and decide which version to apply.
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/Conflicts/Interactive_Merge.png" >}}
 
-You the document updates immediately after you click the button. If you are not satisfied with your choice, you can use **Undo** to go back and try another option. 
+The document updates immediately after you click the button. If you are not satisfied with your choice, you can use **Undo** to go back and try another option. 
 
 {{% alert color="info" %}}
 You must click the document to bring it into focus before you can use the keyboard shortcuts <kbd>Ctrl</kbd> + <kbd>Z</kbd> and <kbd>Ctrl</kbd> + <kbd>Y</kbd> to undo or redo your choice.
