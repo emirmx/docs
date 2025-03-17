@@ -169,7 +169,9 @@ Specify your name and email for Git to use it in commit messages and make them m
 
 {{% alert color="warning" %}}
 
-The name and email settings are not used for authenticating on the version control server and can be changed freely by the user. 
+The name and email settings are not used for authenticating with the version control server and can be changed freely by the user.
+
+The commit is made on the workstation of the user, and as such does not need authentication. When the user pushes to the version control server it is expected that they understand what they push to the version control server. The push itself can only be made by authorized users.
 
 {{% /alert %}}
 
