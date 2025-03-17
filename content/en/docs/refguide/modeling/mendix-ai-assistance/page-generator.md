@@ -35,7 +35,7 @@ After clicking **Generate page**, a dedicated chat interface appears at the righ
 
 Describe your page or its main goals in the chat. Maia uses this information to add relevant widgets to the page and configure them for you. When generating a page, Maia knows about the domain model of the module you are currently working on. For example, it might include a [Data View](/refguide/data-view/) with some [Text Box](/refguide/text-box/) widgets for an attribute of an entity.
 
-You can also supplement text input with an image. Maia uses the image to interpret your request better. For example, it can recognize the layout of a page from the image and replicate it. The image can be a screenshot, wireframe, or drawing. With text input, you can also specify differences between the provided image and how you would like the generated page to appear. For example, you might write: *Generate a page based on this image, but change the header to Welcome.*
+You can also supplement text input with an image. Maia uses the image to interpret your request better. For example, it can recognize the layout of a page from the image and replicate it. The image can be a screenshot, photo, wireframe, or drawing. With text input, you can also specify differences between the provided image and how you would like the generated page to appear. For example, you might write: *Generate a page based on this image, but change the header to Welcome.*
 
 {{% alert color="info" %}}
 In this dedicated chat, only requests related to Page Generation will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide/maia-chat/) interface.
@@ -54,7 +54,7 @@ Below are some examples you can use as a starting point:
 
 ### Best Practices for Image Input
 
-The image size is limited to 512 KB. Make sure to select a clear image to help Maia better understand your request. For example, you can provide a screenshot, a design mock-up, or a close-up picture of a drawing. Avoid heavily compressed or low quality images, as these may result in the loss of important details.
+The image size is limited to 512 KB. Make sure to select a clear image to help Maia better understand your request. For example, you can provide a screenshot, a photo, a design mock-up, or a close-up picture of a drawing. Avoid heavily compressed or low quality images, as these may result in the loss of important details.
 
 Keep in mind that Maia analyzes only the structure of the image. The theming of your app, such as the color scheme, will not be changed. This can cause some differences between the provided image and the generated page.
 
