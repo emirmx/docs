@@ -5,6 +5,8 @@ linktitle: "How to Build Smarter Apps using GenAI"
 weight: 10
 description: "Tutorial on how to get started with GenAI for Smarter Apps"
 no_list: false
+aliases:
+    - /appstore/modules/genai/using-genai/
 ---
 
 ## Introduction

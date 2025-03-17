@@ -10,6 +10,10 @@ The Mendix Object Query Language (OQL) is a relational query language inspired b
 
 In addition, OQL can use predefined relations (associations) to easily join objects without having to calculate which columns should be coupled. Despite these differences, many SQL keywords also work in OQL.
 
+{{% alert color="info" %}}
+OQL can only be used on persistable and view entities and the associations between them. It cannot be used with non-persistable or external [entities](/refguide/entities/). 
+{{% /alert %}}
+
 Some examples of OQL queries are:
 
 * `SELECT LastName FROM Sales.Customer` – retrieves the family names of all customers
