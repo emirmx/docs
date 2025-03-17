@@ -24,7 +24,7 @@ The **Security Overview** summarizes the app's security for a selected user role
 1. Access the **Security Overview** page by opening the **App** menu, and then clicking **Show Security Overview (Beta)**.
 2. In the **Show access for user role** list, select the user role for which you want to view the security summary.
 
-    The anonymous and administrator user roles are marked with respectivly `(Anonymous)` and `(Administrator)`.
+    The anonymous and administrator user roles are marked with respectively `(Anonymous)` and `(Administrator)`.
 3. Optionally, select a module in the sidebar of the overview.
 
     Selecting a module filters the content in the **Entity access**, **Page access**, **Microflow access**, and **Nanoflow access** tabs. The list of modules does not show the System module or any protected modules.
@@ -65,7 +65,7 @@ The **Nanoflow Access** tab lists the names of nanoflows within the selected mod
 
 To export the **Security Overview**, click the **Export to Excel** button. This generates an Excel file in the selected directory, which contains the following three sheets:
 
-1. Members Access -- This sheet contains the entity access rules data, including the following:
+1. Members Access -- This sheet contains the members access rules data, including the following:
 
     1. User Role.
     2. Module: The module containing the entity.
