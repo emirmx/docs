@@ -50,10 +50,10 @@ The clearest way to explain and illustrate the differences between Rebase and Me
 
 To start this scenario, let us assume that you have added the following entities to the domain model of your project:
 
-* `User`
-* `Game`
+* User
+* Game
 
-The User entity includes the string attributes `E_mail` and `Second_E_mail`.
+The User entity includes the string attributes **E_mail** and **Second_E_mail**.
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/DomainModel/Starting_State.png"  >}} 
 
@@ -61,17 +61,17 @@ The User entity includes the string attributes `E_mail` and `Second_E_mail`.
 
 During your work you make the following changes, each one in separate commit:
 
-* Rename `E_mail` to `Email`.
+* Rename *E_mail* to *Email*.
 
     {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/DomainModel/First_Local_Commit.png"  >}} 
 
-* Rename `Second_E_mail` to `Second_Email`. 
+* Rename *Second_E_mail* to *Second_Email*. 
 
     {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/DomainModel/Second_Local_Commit.png"  >}}   
 
 ### Another User's Changes
 
-In the meantime, your colleague also decided to make changes to both email fields. They have renamed `E_mail` to `EmailAddress` and removed `Second_E_mail` entirely. They have then pushed their changes to the server.
+In the meantime, your colleague also decided to make changes to both email fields. They have renamed *E_mail* to *EmailAddress* and removed *Second_E_mail* entirely. They have then pushed their changes to the server.
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/DomainModel/Remote_State.png" >}} 
 
@@ -85,11 +85,11 @@ The current situation could be represented as shown below.
 
 This section outlines two possible approaches to the [example scenario](#scenario): [Rebase](#rebase) and [Merge commit](#merge). 
 
-Every time changes can be combined, for example when pulling changes from the server, you can choose the approach. You can change the default approach for your user account by adjusting the [user preferences](/refguide/preferences-dialog/#git).
+Every time changes can be combined, for example when pulling changes from the server, you can choose the approach. You can change the default approach for your user account by adjusting the [Preferences](/refguide/preferences-dialog/#git).
 
 ### Rebase {#rebase}
 
-Rebasing is the default way to integrate your work with the server changes. It moves your changes to the tip of the changes pulled from the server.
+Rebasing is the default way to integrate your work with the server changes. It moves your changes to the top of the changes from the server.
 
 {{% alert color="warning" %}}
 Rebase is available only for Git version 2.41.0 and above.
@@ -103,7 +103,7 @@ The following sections describe a possible rebase process for the [example scena
 
 #### Rebase Started 
 
-After starting the rebase, your two commits (#3 and #5) are temporarily put aside. Studio Pro shows the latest changes which were pulled from the server, including commits #2 and #4.
+After starting the rebase, your two commits (`#3` and `#5`) are temporarily put aside. Studio Pro shows the latest changes which were pulled from the server, including commits `#2` and `#4`.
 
 {{% alert color="info" %}}
 Your work is now labelled *Theirs*, while the server changes are labelled *Mine*. This is opposite to the way that the work is labelled for a merge commit.
@@ -113,31 +113,31 @@ Your work is now labelled *Theirs*, while the server changes are labelled *Mine*
 
 #### Resolving the First Conflict{#resolving-first-conflict}
 
-Git tries to apply your first commit (`#3`) to the tip of the rebasing branch (*Mine*). The commit will come after commit `#4`. 
+Git tries to apply your first commit (`#3`) to the top of the rebasing branch (*Mine*). The commit will come after commit `#4`. 
 
-If there are no conflicts when comparing your commit (`#3`) with the latest state from the server (`#4`), Studio Pro automatically continues. A new commit is then created from your commit, shown as commit `#3'` in the image below. The process then continues with the next commit (`#5`).
+If there are no conflicts when comparing your commit (`#3`) with the latest state from the server (`#4`), Studio Pro automatically continues. A new commit is then created from your commit, shown as commit `#3` in the image below. The process then continues with the next commit (`#5`).
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/Steps/Rebase_Step_2.png" width="525"  >}} 
 
-In our example, however, there is a conflict because the `E_mail` attribute was renamed both on the server, and in your local work.
+In the example, however, there is a conflict because the **E_mail** attribute was renamed both on the server, and in your local work.
 
 In the **Changes** pane, you can see your change in the **Theirs** column, and your colleague's work in the **Mine** column. 
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/Conflicts/Rebase_First.png" >}} 
 
-You must [resolve the conflict](#resolve) to proceed with the rebasing process. After resolving the conflict you can amend the current commit message. Commit `#3'` is then created. 
+You must [resolve the conflict](#resolve) to proceed with the rebasing process. After resolving the conflict you can amend the current commit message. Commit `#3` is then created. 
 
 Studio Pro can now continue with rebasing the next local commit (`#5`).
 
 #### Resolving the Second Conflict 
 
-While rebasing the next commit (`#5`), another conflict is detected. You can choose to resolve this conflict by using either *Theirs* or *Mine*, or by reverting to the original.
+While rebasing the next commit (#5), another conflict is detected. You can choose to resolve this conflict by using either *Theirs* or *Mine*, or by reverting to the original.
 
-You can also make additional changes which are added to the same commit. For example, you can add a `Login` attribute to the `User` entity. These changes are represented as *Mine*, together with changes that were taken from the server. 
+You can also make additional changes which are added to the same commit. For example, you can add a **Login** attribute to the **User** entity. These changes are represented as *Mine*, together with changes that were taken from the server. 
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/Conflicts/Rebase_Mine_Change.png"  >}} 
 
-Once the conflict is resolved and you continue the rebase, a new commit (`#5'`) is created from your commit (`#5`), and you can optionally amend the commit message. 
+Once the conflict is resolved and you continue the rebase, a new commit (`#5`) is created from your commit (`#5`), and you can optionally amend the commit message. 
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/Steps/Rebase_Step_3.png" width="525"  >}} 
 
@@ -145,7 +145,7 @@ As this was the last local commit to reapply, the rebasing can now be completed.
 
 #### Testing Changes 
 
-Once the rebase process is completed, the original commits (`#3` and `#5`) that were put aside are now removed. The final state of the branch has the commits `#1`, `#2`, `#4`, `#3'`, and `#5'`, while the server still only has commits `#1`, `#2`, and `#4`.
+Once the rebase process is completed, the original commits (#3 and #5) that were put aside are now removed. The final state of the branch has the commits `#1`, `#2`, `#4`, `#3`, and `#5'`, while the server still only has commits `#1`, `#2`, and `#4`.
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/Steps/Rebase_Step_4.png" width="525"  >}}
 
@@ -187,15 +187,15 @@ If conflicts arise between any local and remote commits, you must resolve them b
 
 ##### Handling the Renaming of the E_mail attribute
 
-As the `E_mail` attribute was renamed on both the server and in your local work, you must decide which changes to retain. Alternatively, you can make yet another change to the attribute. In the **Changes** pane, you can see your change in the **Mine** column, and your colleagues' work in the **Theirs** column. 
+As the **E_mail** attribute was renamed on both the server and in your local work, you must decide which changes to retain. Alternatively, you can make yet another change to the attribute. In the **Changes** pane, you can see your change in the **Mine** column, and your colleagues' work in the **Theirs** column. 
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/Conflicts/Merge_First.png"  >}} 
 
 ##### Handling the Removal of the Second_E_mail Attribute
 
-Because your colleague removed the `Second_E_mail` attribute on the server, while you renamed it in your local work, there is another conflict which you must resolve.
+Because your colleague removed the **Second_E_mail** attribute on the server, while you renamed it in your local work, there is another conflict which you must resolve.
 
-You can also make additional changes which are added to the same commit. For example, you can add a `Login` attribute to the `User` entity.
+You can also make additional changes which are added to the same commit. For example, you can add a **Login** attribute to the **User** entity.
 
 After resolving all conflicts you can proceed with testing the app.
 
