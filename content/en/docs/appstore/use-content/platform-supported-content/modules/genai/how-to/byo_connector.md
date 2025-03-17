@@ -43,7 +43,7 @@ If the provider's API is the same or very similar to OpenAI's, this might be a g
 - Small changes in the request/response payload (e.g., extra or fewer fields, slightly different JSON structure). 
 - Modifying the base URL to match the provider's endpoint structure. 
 - Adding additional query parameters in the URL or payload. 
-- Adapting the authentication mechanism, for example, switching from Bearer Token or API key headers to OAuth. 
+- Adapting the authentication mechanism, for example, switching from API Key to OAuth. 
 
 This approach allows you to reuse a well-structured connector, minimizing development effort while ensuring compatibility with ConversationalUI.
 
