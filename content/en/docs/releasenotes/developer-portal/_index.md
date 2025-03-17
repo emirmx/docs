@@ -25,6 +25,12 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 * Software Composition is now generally available. It helps you easily manage security risk by providing visibility and insights into the dependencies of each application across your application landscape. You can access the feature in [Control Center](/control-center/software-composition/) and [Apps navigation pane](/developerportal/deploy/software-composition/).
 
+### March 13, 2025
+
+#### Fixes
+
+* We fixed an issue in [Mini Surveys](/developerportal/app-insights/mini-surveys/#view-export-responses) where XLSX exports included empty responses.
+
 ### February 6, 2025
 
 #### New Features
