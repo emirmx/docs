@@ -4,13 +4,7 @@ linktitle: "Software Composition"
 url: /control-center/software-composition/
 description: "Describes the Software Composition page in the Mendix Control Center."
 weight: 20
-status: "Public Beta"
-beta: true
 ---
-
-{{% alert color="warning" %}}
-This feature is in beta. For more information, see [Beta Releases](/releasenotes/beta-features/). 
-{{% /alert %}}
 
 ## Introduction
 
