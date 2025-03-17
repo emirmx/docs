@@ -163,13 +163,21 @@ This setting allows users to specify a path for Git installation in their system
 
 Select this option when you want to work on an app that is not stored in [Mendix Team Server](/developerportal/general/team-server/), but in a private Git server, which you have access to. This allows you to specify the location of the app on the Git server when opening, downloading, or uploading the app. With this setting you also need to specify [name](#name) and [email](#email) that will be used to identify your commits with Git.
 
-#### Name {#name}
+#### Name and Email {#name}
 
-Specify your name for Git to use it in commit messages and make them more informative.
+Specify your name and email for Git to use it in commit messages and make them more informative. These values are stored in the global Git configuration, which can also be used by other applications.
 
-#### Email {#email}
+{{% alert color="warning" %}}
 
-Specify your email for Git to use it in commit messages and make them more informative.
+The name and email settings are not used for authenticating on the version control server and can be changed freely by the user. 
+
+{{% /alert %}}
+
+{{% alert color="info" %}}
+
+Changing these values from another application will also affect the commits made from Studio Pro. If you see a suspicious value in the commit history, it is most likely a private email address set through another tool in the global Git configuration.
+
+{{% /alert %}}
 
 #### Enable Current Windows User Authentication {#enable-windows-authentication}
 
