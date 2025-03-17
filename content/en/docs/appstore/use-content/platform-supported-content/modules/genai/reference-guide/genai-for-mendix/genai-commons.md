@@ -821,7 +821,7 @@ This microflow creates a new [MetadataCollection](#metadatacollection-entity) an
 | `Text` | **Text** | The model supports text. |
 | `Embeddings` | **Embeddings** | The model supports embeddings. |
 | `Image` | **Image** | The model supports image. |
-| `File` | **File** | The model supports file. |
+| `Document` | **Document** | The model supports document. |
 | `Audio` | **Audio** | The model supports audio. |
 | `Video` | **Video** | The model supports video. |
 | `Other` | **Other** | The model supports another modality. |
