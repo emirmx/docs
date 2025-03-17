@@ -77,7 +77,7 @@ Not all widgets are supported. Currently the following widgets are supported:
 * [Button](/refguide/button-widgets/)
 * [Text Box](/refguide/text-box/)
 * [Text Area](/refguide/text-area/)
-* [Checkbox](/refguide/checkbox/)
+* [Checkbox](/refguide/check-box/)
 * [Radio Buttons](/refguide/radio-buttons/)
 * [Date Picker](/refguide/date-picker/)
 
