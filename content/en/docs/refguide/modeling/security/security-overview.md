@@ -61,7 +61,7 @@ The **Nanoflow Access** tab lists the names of nanoflows within the selected mod
 
 To export the **Security Overview**, click the **Export to Excel** button. This generates an Excel file in the selected directory, which contains the following three sheets:
 
-1. Entity Access -- This sheet contains the entity access rules data, including the following:
+1. Members Access -- This sheet contains the entity access rules data, including the following:
 
     1. User Role.
     2. Module: The module containing the entity.
@@ -72,18 +72,36 @@ To export the **Security Overview**, click the **Export to Excel** button. This 
     7. XPath: The XPath constraint.
     8. XPath Caption:  The XPath constraint caption, when set.
     9. Access: The access level (None, Read or ReadWrite).
+    10. Anonymous role: Specifies whether this access is connected to the anonymous user role
+    11. Administrator role: Specifies whether this access is connected to the administrator user role
 
-2. Document Access -- This sheet includes the accessible pages, microflows and nanoflows, including the following:
+2. Entity Access -- This sheet contains the entity access rules data, including the following:
+
+    1. User Role.
+    2. Module: The module containing the entity.
+    3. Entity: The name of the entity.
+    4. Can create:  Specifies wether create access has been granted
+    4. Can delete:  Specifies wether delete access has been granted
+    5. XPath: The XPath constraint.
+    6. XPath Caption:  The XPath constraint caption, when set.
+    7. Access: The access level (None, Read or ReadWrite).
+    8. Anonymous role: Specifies whether this access is connected to the anonymous user role
+
+3. Document Access -- This sheet includes the accessible pages, microflows and nanoflows, including the following:
 
     1. Document type -- The type of the accessible document (page, microflow, nanoflow).
     2. User Role.
     3. Module: The module containing the the page, nanoflow, or microflow.
     4. Document: The name of the page, nanoflow, or microflow.
+    5. Anonymous role: Specifies whether this access is connected to the anonymous user role
+    6. Administrator role: Specifies whether this access is connected to the administrator user role
 
 4. Module Roles -- this sheet provides the mappings between user roles and module roles, including the following:
     1. User Role.
     2. Module.
     3. Module Role.
+    4. Anonymous role: Specifies whether this user roles is the anonymous user role
+    5. Administrator role: Specifies whether this user role is the administrator user role
 
 ## Read More
 
