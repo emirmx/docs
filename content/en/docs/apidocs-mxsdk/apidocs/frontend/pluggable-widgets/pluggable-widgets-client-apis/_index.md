@@ -74,6 +74,28 @@ Note that `isExecuting` indicates only whether the current action is running. It
 
 The method `execute` triggers the action. It returns nothing and does not guarantee that the action will be started synchronously. But when the action does start, the component will receive a new prop with the `isExecuting` flag set.
 
+When the action property [defines action variables](/apidocs-mxsdk/apidocs/pluggable-widgets-property-types/#action-xml-elements), the `execute()` method expects an object map containing a property for each variable. The variables may be undefined. Given an action property with variables as defined below, `execute()` accepts the following input:
+
+```xml
+<actionVariables>
+    <actionVariable key="lat" type="Decimal" caption="Latitude of selected location" />
+    <actionVariable key="long" type="Decimal" caption="Longitude of selected location" />
+    <actionVariable key="label" type="String" caption="Label of the selected location" />
+</actionVariables>
+```
+
+```ts
+interface MapWidgetProps {
+    onClick: ActionValue<{ lat: Option<number>, long: Option<number>, label: Option<string> }>
+}
+
+onClick.execute({
+    lat: 51.907,
+    long: 4.488,
+    label: undefined
+});
+```
+
 ### DynamicValue {#dynamic-value}
 
 `DynamicValue` is used to represent values that can change over time and is used by many property types. It is defined as follows:

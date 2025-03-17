@@ -487,7 +487,7 @@ When a `dataSource` attribute is specified and configured by the user, it is pas
 | `defaultValue` | No       | String         | Default value for the property, the format should be `<ModuleId>.<DocumentId>`                          |
 | `defaultType`  | No       | String         | Default type for the property, supported values are `None`, `OpenPage`, `CallNanoflow`, `CallMicroflow` |
 
-#### XML Elements
+#### XML Elements {#action-xml-elements}
 
 `<actionVariables>` — Defines variables a widget provides when calling [`execute()` on an ActionValue](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#413-execute). The variables are made available in Studio Pro when configuring [Call a Microflow](/refguide/on-click-event/#call-microflow) and [Call a Nanoflow](/refguide/on-click-event/#call-nanoflow) actions.
 
