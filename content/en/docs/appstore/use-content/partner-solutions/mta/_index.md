@@ -25,7 +25,7 @@ When purchased via Mendix, MTA can be used with any Mendix cloud hosting option,
 * The application model being tested must be stored in the Mendix Team Server repository.
 * The MTA application and the application under test must be able to establish network connectivity with the Mendix platform APIs, including the Mendix Team Server and Project APIs.
 
-For UI testing, MTA requires Playwright. The supported options are self-hosted Playwright and BrowserStack SaaS instances.
+For UI testing, MTA requires Playwright. The supported options are self-hosted Playwright or BrowserStack SaaS instances.
 
 Currently, MTA cannot be used for apps using an on-premises Git repository or running in a fully air-gapped scenario.
 
