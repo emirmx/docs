@@ -158,7 +158,7 @@ Disabling local file encryption is not supported and may cause unexpected behavi
 ## Encrypting Session Cookies {#encrypting-session-cookies}
 
 {{% alert color="info" %}}
-In order to use this feature, [Native Template Version 12.1.0](/releasenotes/mobile/nt-12-rn#1001/) or higher is required with Studio Pro 10.21 or higher.
+In order to use this feature, [Native Template Version 13.0.0](/releasenotes/mobile/nt-13-rn#1000/) or higher is required with Studio Pro 10.21 or higher.
 {{% /alert %}}
 
 You can now enable cookie encryption for both new and existing Android apps. When enabled, the cookies stored in the device are encrypted using the AES encryption algorithm instead of being stored as is. 
