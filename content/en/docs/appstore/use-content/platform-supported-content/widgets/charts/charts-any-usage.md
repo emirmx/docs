@@ -8,10 +8,7 @@ aliases:
 ---
 
 {{% alert color="warning" %}}
-
-This widget will not be working with [react client](/refguide/mendix-client/react/). We have published a version of any chart that supports react client called **Custom Chart**.
-Please update to [Charts](https://marketplace.mendix.com/link/component/105695/) widget version 6.0 and above.
-
+This widget is not compatible with the [Mendix React Client](/refguide/mendix-client/react/). We have published a version of Any Chart that supports the React client called Custom Chart. Update your [Charts](/appstore/widgets/charts/) widget (to version 6.0 or above) to use the Custom Chart feature.
 {{% /alert %}}
 
 ## Introduction
