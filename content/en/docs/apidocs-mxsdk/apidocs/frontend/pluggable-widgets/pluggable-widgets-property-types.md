@@ -499,8 +499,8 @@ When a `dataSource` attribute is specified and configured by the user, it is pas
 | Action Variable Type | Client Type  |
 | -------------------- | --------- |
 | `String`             | `string`  |
-| `Integer`            | `number`  |
-| `Decimal`            | `number`  |
+| `Integer`            | `Big`  |
+| `Decimal`            | `Big`  |
 | `DateTime`           | `Date`    |
 | `Boolean`            | `boolean` |
 

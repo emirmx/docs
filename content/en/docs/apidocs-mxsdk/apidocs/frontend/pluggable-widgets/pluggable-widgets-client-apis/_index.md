@@ -86,12 +86,12 @@ When the action property [defines action variables](/apidocs-mxsdk/apidocs/plugg
 
 ```ts
 interface MapWidgetProps {
-    onClick: ActionValue<{ lat: Option<number>, long: Option<number>, label: Option<string> }>
+    onClick: ActionValue<{ lat: Option<Big>, long: Option<Big>, label: Option<string> }>
 }
 
 onClick.execute({
-    lat: 51.907,
-    long: 4.488,
+    lat: new Big(51.907),
+    long: new Big(4.488),
     label: undefined
 });
 ```
