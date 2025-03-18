@@ -113,7 +113,7 @@ When saving sensitive data for the authetication method, please do not forget to
 
 #### Microflow
 
-The `Microflow` attribute, which exists in the generic DeployedModel entity, needs to be set when creating EchoDeployedModel objects. This attribute is crucial because it determines which microflow will be executed when invoking the model. In the `ChatCompletions_WithHistory` microflow, the Java action `ChatCompletions_WithHistory` executes the correct microflow based on the DeployedModel type and its Microflow attribute. This design ensures that the action remains provider-agnostic, allowing different models to be integrated as long as they adhere to the same request-in and response-out interface. 
+The `Microflow` attribute, which exists in the generic DeployedModel entity, needs to be set when creating EchoDeployedModel objects. This attribute is crucial because it determines which microflow will be executed when invoking the model. The `ChatCompletions_WithHistory` microflow executes the correct microflow based on the DeployedModel type and its Microflow attribute. This design ensures that the action remains provider-agnostic, allowing different models to be integrated as long as they adhere to the same request-in and response-out interface. 
 
 When creating your specialized EchoDeployedModel objects, you need to set the Microflow attribute to point to the correct microflow that will handle requests for your model (in this case, the Echo model’s implementation). To set the Microflow attribute you can use the `DeployedModel_Create` or `DeployedModel_SetMicroflow` java actions in the GenAICommons module.
 
@@ -142,6 +142,10 @@ So, I have created the microflow below to be used as the Microflow attribute for
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-byo/EchoDeployedModel_CallLLM.png" >}}
 
 As the microflow returns a Response object, it is fully compatible with the reusable components from the GenAICommons and ConversationalUI modules. This ensures that the response can be seamlessly processed and displayed in the existing chat interfaces, without requiring any additional customization on the UI side.
+
+{{% alert color="info" %}}
+If you would like to track the usage of your models, please look into the `GenAICommons.Usage_Create_TextAndFiles` microflow and related [documentation](/appstore/modules/genai/genai-for-mx/commons/#token-usage).
+{{% /alert %}}
 
 ### Testing the echo connector
 
