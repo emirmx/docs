@@ -10,7 +10,7 @@ description_list: true
 {{% alert color="warning" %}} This feature is in beta. For more information, see [Beta Releases](/releasenotes/beta-features/). {{% /alert %}}
 
 {{% alert color="info" %}} For information on new releases of the Extensibility API see:
-* [C# Extensibility API Release Notes](/releasenotes/studio-pro/csharp-extensibility-api/). {{% /alert %}}
+* [C# Extensibility API Release Notes](/releasenotes/studio-pro/csharp-extensibility-api/). 
 * [Web Extensibility API Release Notes](/releasenotes/studio-pro/web-extensibility-api/). {{% /alert %}}
 
 ## Introduction
