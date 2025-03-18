@@ -35,17 +35,17 @@ This is what the original chart looks like:
 To create a custom layout, follow these steps:
 
 1. Open an app containing a chart.
-2. Open the page with the charts widget.
-3. Open the charts widget settings.
-4. Go to the tab **General**.
-5. Set the **Show playground slot** to **Yes**.
-6. See the widget **Playground slot** dropzone area is now visible in the chart.
-7. Find the **Chart playground** widget in the toolbox.
-8. Drag and drop the **Chart playground** widget to the available **Playground slot**.
-9. Run the app.
-10. In your browser, open the page with the chart.
-11. Click the button **Toggle Editor**.
-12. In the **Layout** section add the following **Custom setting**:
+1. Open the page with the charts widget.
+1. Open the charts widget's settings.
+1. Click the **General** tab.
+1. Set **Show playground slot** to **Yes**.
+1. See the widget **Playground slot** drop zone area is now visible in the chart.
+1. Find the **Chart playground** widget in the **Toolbox**.
+1. Drag and drop the **Chart playground** widget to the available **Playground slot**.
+1. Run the app.
+1. In your browser, open the page with the chart.
+1. Click the button **Toggle Editor**.
+1. In the **Layout** section add the following **Custom setting**:
 
     ```json
     {
@@ -57,7 +57,7 @@ To create a custom layout, follow these steps:
     }
     ```
 
-13. Change the font settings till the chart shows the required font. Copy the font settings.
+1. Change the font settings until the chart shows the required font. Copy the font settings:
 
     {{% alert color="warning" %}}Please note that changes made in the editor will not persist unless they are stored in the advanced settings of the widget or in the theme.{{% /alert %}}
 
@@ -65,9 +65,8 @@ To create a custom layout, follow these steps:
 
     {{< figure src="/attachments/appstore/platform-supported-content/widgets/charts/charts-tutorials/charts-advanced-tuning/charts-toggle-editor-open.png" alt="chart editor" class="no-border" >}}
 
-14. Paste the new font settings into the **Custom layout** property in the **Advanced** tab
-
-15. Change the **Show playground slot** back to **No** in Studio Pro, this will remove the Toggle Editor button from the chart.  
+1. Paste the new font settings into the **Custom layout** property in the **Advanced** tab.
+1. Change the **Show playground slot** back to **No** in Studio Pro, this will remove the Toggle Editor button from the chart.  
 
 ## Changing the Chart Type
 
