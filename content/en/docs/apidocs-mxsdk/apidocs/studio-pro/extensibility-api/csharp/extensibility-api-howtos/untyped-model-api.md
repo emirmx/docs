@@ -1,6 +1,6 @@
 ---
 title: "Use the Untyped Model Access API"
-url: /apidocs-mxsdk/apidocs/extensibility-api/extensibility-api-howtos/untyped-model-access-api/
+url: /apidocs-mxsdk/apidocs/extensibility-api/csharp/extensibility-api-howtos/untyped-model-access-api/
 weight: 24
 ---
 

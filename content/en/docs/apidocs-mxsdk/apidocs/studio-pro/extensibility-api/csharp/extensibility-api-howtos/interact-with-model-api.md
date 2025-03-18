@@ -1,6 +1,6 @@
 ---
 title: "Interact with the Model API"
-url: /apidocs-mxsdk/apidocs/extensibility-api/interact-with-model-api/
+url: /apidocs-mxsdk/apidocs/extensibility-api/csharp/interact-with-model-api/
 weight: 11
 ---
 

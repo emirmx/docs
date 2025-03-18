@@ -1,18 +1,18 @@
 ---
 title: "Add a Menu to Studio Pro"
-url: /apidocs-mxsdk/apidocs/extensibility-api/add-menu/
+url: /apidocs-mxsdk/apidocs/extensibility-api/csharp/add-menu/
 weight: 15
 ---
 
 ## Introduction
 
-This how-to describes how you can add a menu that contains submenus, some of which also contain submenus of their own. Before you start this how-to, it is recommended to [create a menu extension](/apidocs-mxsdk/apidocs/extensibility-api/create-menu-extension/) first.
+This how-to describes how you can add a menu that contains submenus, some of which also contain submenus of their own. Before you start this how-to, it is recommended to [create a menu extension](/apidocs-mxsdk/apidocs/extensibility-api/csharp/create-menu-extension/) first.
 
 You can download the example in this how-to in [this GitHub repository](https://github.com/mendix/ExtensionAPI-Samples).
 
 ## Creating Menu Extension Class
 
-1. Open the project that you previously created when you [created the menu extension](/apidocs-mxsdk/apidocs/extensibility-api/create-menu-extension/).
+1. Open the project that you previously created when you [created the menu extension](/apidocs-mxsdk/apidocs/extensibility-api/csharp/create-menu-extension/).
 2. Add a new class to the project and name it `MyMenuExtension.cs`.
 3. Replace the code in the file with the following code:
 

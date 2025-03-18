@@ -1,6 +1,6 @@
 ---
 title: "Create a Web View Hosted Inside a Modal Dialog"
-url: /apidocs-mxsdk/apidocs/extensibility-api/create-modal-web-view/
+url: /apidocs-mxsdk/apidocs/extensibility-api/csharp/create-modal-web-view/
 weight: 7
 ---
 

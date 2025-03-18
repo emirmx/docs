@@ -1,6 +1,6 @@
 ---
 title: "Studio Pro Services"
-url: /apidocs-mxsdk/apidocs/extensibility-api/introductions/services/
+url: /apidocs-mxsdk/apidocs/extensibility-api/csharp/introductions/services/
 weight: 10
 ---
 

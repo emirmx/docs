@@ -1,7 +1,7 @@
 ---
 title: "Get Started with the Extensibility API"
 linktitle: "Get Started"
-url: /apidocs-mxsdk/apidocs/extensibility-api/getting-started/
+url: /apidocs-mxsdk/apidocs/extensibility-api/csharp/getting-started/
 weight: 2
 ---
 
