@@ -163,7 +163,7 @@ This setting allows users to specify a path for Git installation in their system
 
 Select this option when you want to work on an app that is not stored in [Mendix Team Server](/developerportal/general/team-server/), but in a private Git server, which you have access to. This allows you to specify the location of the app on the Git server when opening, downloading, or uploading the app. With this setting you also need to specify [name](#name) and [email](#email) that will be used to identify your commits with Git.
 
-#### Name and Email {#name} {#email}
+#### Name and Email {#name}
 
 Specify your name and email for Git to use in commit messages and make them more informative. These values are stored in the global Git configuration, which can also be used for other applications.
 
