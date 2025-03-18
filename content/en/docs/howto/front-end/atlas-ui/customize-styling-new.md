@@ -576,7 +576,7 @@ Mendix is able to add the `?638184496048312490` query parameter because of the u
 ```
 
 {{% alert color="info" %}}
-When the [Mendix React Rlient](https://docs.mendix.com/refguide/mendix-client/react/) is enabled, the line in */deployment/web/index.html* is as follows:
+When the [Mendix React Client](/refguide/mendix-client/react/) is enabled, the line in */deployment/web/index.html* is as follows:
 ```
 <script src="dist/index.js?{{cachebust}}" type="module"></script>
 ```
