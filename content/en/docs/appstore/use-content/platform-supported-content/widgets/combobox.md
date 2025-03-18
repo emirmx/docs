@@ -146,7 +146,7 @@ Using lazy loading with microflow or nanoflow data sources can result in perform
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Using **caption type** expression is currently disabling lazy load due to technical limitation on filtering the content. The workaround is to use **custom content** and choose **caption type** as attribute.
+Using a **caption type** expression disables lazy load due to a technical limitation on filtering the content. The workaround for this is to use **custom content**, and then choose **caption type** as the attribute.
 {{% /alert %}}
 
 * **Multiple selection**
