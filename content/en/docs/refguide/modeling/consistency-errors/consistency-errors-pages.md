@@ -341,11 +341,16 @@ The best way to fix this error is to either change the microflow to accept *Phot
 The most common errors for input elements, their causes, and ways to fix them are described in the following sub-sections. For more information on input elements, see [Input Elements](/refguide/input-widgets/). 
 
 ### Error Code: CE0544
+
 CE0544 error message: *This widget can only function inside a data context — like a data view, list view, or a {document type} with variables.*
 
-You get CE0544 if you have added an input widget to a page or a snippet but it is not inside a data container or the page or snippet does not define any variables. Input elements either need to refer to a variable or an attribute of a specific entity type. 
+You get CE0544 if you have added an input widget but it is not inside a data container or the page or snippet does not define any variables. Input elements either need to refer to a variable or an attribute of a specific entity type. 
 
 To fix CE0544, place this widget into a data container such as a data view, list view, or use variables in the page or snippet that contains the widget.
+
+{{% alert color="info" %}}
+Input widgets can directly use the snippet parameters without the need of a data container widget.
+{{% /alert %}}
 
 ### Error Code: CE0545
 

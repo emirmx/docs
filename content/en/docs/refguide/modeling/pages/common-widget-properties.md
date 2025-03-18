@@ -135,6 +135,8 @@ For these widgets, only an **Attribute path** can be selected. In other words, t
 
 {{% alert color="info" %}}
 For these widgets you are selecting an association to another object. The attribute should therefore indicate uniquely to the end-user which object is being selected.
+
+Since the attribute needs to be on an entity reached over an association, variables cannot be used by association input elements.
 {{% /alert %}}
 
 The attribute can be of one of the following [data types](/refguide/data-types/):
@@ -155,13 +157,13 @@ The attribute can be of one of the following [data types](/refguide/data-types/)
 
 The editable property indicates whether the end-user will be able to change the value displayed by the widget. The possible values are:
 
-| Value | Description  |
-|--------|------------|
-| Default      | The value is editable if the containing data container is editable and if security allows it. For example, if the user that is signed in has write access to the selected attribute (the default value for widgets outside a snippet). |
-| Inherited from snippet call    | Set to **Default** or **Never** by the containing data container of the snippet call (default value for widgets inside a snippet).                                                                                           |
-| Never     | The value is never editable.    |
-| Conditionally  | The value is editable if the specified condition holds (see below).  |
-| Conditionally (combined with inherited condition) | The value is editable if the specified condition holds and the conditions for all conditional editable data containers also hold.  |
+| Value                                             | Description                                                                                                                                                                                                                            |
+|---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Default                                           | The value is editable if the containing data container is editable and if security allows it. For example, if the user that is signed in has write access to the selected attribute (the default value for widgets outside a snippet). |
+| Inherited from snippet call                       | Set to **Default** or **Never** by the containing data container of the snippet call (default value for widgets inside a snippet).                                                                                                     |
+| Never                                             | The value is never editable.                                                                                                                                                                                                           |
+| Conditionally                                     | The value is editable if the specified condition holds (see below).                                                                                                                                                                    |
+| Conditionally (combined with inherited condition) | The value is editable if the specified condition holds and the conditions for all conditional editable data containers also hold.                                                                                                      |
 
 ### Condition
 
@@ -193,13 +195,13 @@ As the expression is evaluated in the browser, we advise against using secret va
 
 This property determines how the widget is rendered if it is read-only. 
 
-| Value                       | Description |
-|-----------------------------|-------------|
-| Based on data view          | Set to `Control` or `Text` by the containing data container. *(Default value for widgets inside a data container)*
-| Not enclosed by a data container | Defaults to `Text`. *(Default value for widgets outside a data container)*
-| Inherited from snippet call | Set to `Control` or `Text` by the containing data container of the snippet call, or `Text` when the snippet call is not enclosed by a data container. *(Default value for widgets outside a data container inside a snippet)*
-| Control                     | Widget is displayed but disabled so the value cannot be modified.
-| Text                        | Widget is replaced by a textual representation of the value.
+| Value                            | Description                                                                                                                                                                                                                   |
+|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Based on data view               | Set to `Control` or `Text` by the containing data container. *(Default value for widgets inside a data container)*                                                                                                            |
+| Not enclosed by a data container | Defaults to `Text`. *(Default value for widgets outside a data container)*                                                                                                                                                    |
+| Inherited from snippet call      | Set to `Control` or `Text` by the containing data container of the snippet call, or `Text` when the snippet call is not enclosed by a data container. *(Default value for widgets outside a data container inside a snippet)* |
+| Control                          | Widget is displayed but disabled so the value cannot be modified.                                                                                                                                                             |
+| Text                             | Widget is replaced by a textual representation of the value.                                                                                                                                                                  |
 
 {{% alert color="info" %}}Read-only style is not supported on native mobile pages.{{% /alert %}}
 
@@ -275,13 +277,13 @@ Default: *Fixed*
 
 **Examples**
 
-| Value    | Fixed (2)  | Fixed (4)    | Auto     |
-| -------- | ---------- | ------------ | -------- |
-| 19.0     | 19.00      | 19.0000      | 19       |
-| 19.99    | 19.99      | 19.9900      | 19.99    |
-| 19.9944  | 19.99¹ | 19.9944      | 19.9944  |
-| 19.9999  | 20.00¹ | 19.9999      | 19.9999  |
-| 19.99999 | 20.00¹ | 20.0000¹ | 19.99999 |
+| Value    | Fixed (2) | Fixed (4) | Auto     |
+|----------|-----------|-----------|----------|
+| 19.0     | 19.00     | 19.0000   | 19       |
+| 19.99    | 19.99     | 19.9900   | 19.99    |
+| 19.9944  | 19.99¹    | 19.9944   | 19.9944  |
+| 19.9999  | 20.00¹    | 19.9999   | 19.9999  |
+| 19.99999 | 20.00¹    | 20.0000¹  | 19.99999 |
 
 <small>¹ The value is rounded to the nearest decimal with the defined number of decimal places.</small>
 
@@ -334,11 +336,11 @@ This property indicates whether this widget value should be validated and, if so
 
 The possible values of a predefined validation are the following:
 
-* **Required** – can be used for attributes of *all* data types
-* **E-mail** – applies to *String* attributes
-* **Positive number** – applies to *Decimal*, *Integer*, and *Long* attributes
-* **Date in the future** – applies to *Date and time* attributes — compares the date *and time* to `[%CurrentDateTime%]`
-* **Date in the past** – applies to *Date and time* attributes — compares the date *and time* to `[%CurrentDateTime%]`
+* **Required** – can be used for values of *all* data types
+* **E-mail** – applies to *String* values
+* **Positive number** – applies to *Decimal*, *Integer*, and *Long* values
+* **Date in the future** – applies to *Date and time* values — compares the date *and time* to `[%CurrentDateTime%]`
+* **Date in the past** – applies to *Date and time* values — compares the date *and time* to `[%CurrentDateTime%]`
 
 #### Custom Validation{#custom-validation}
 
@@ -347,7 +349,7 @@ Custom validation is an expression that follows the [Microflow expression](/refg
 There are a number of variables you can use in your expression:
 
 * `$currentObject` – the current object
-* `$value` – the current member (attribute or association) value
+* `$value` – variable or the current member (attribute or association) value
 
 {{% alert color="info" %}}
 The expression can access objects of **all** the data containers enclosing the input widget and variables defined on the page or snippet. The objects are given the name of the widget they originate from (for example, `$dataView1`).
@@ -430,8 +432,8 @@ In Studio Pro 10.15 and above, dynamic classes do not require a data container.
 
 The widget can be made visible to a specific of the user roles available in your application. When activated, this setting will render the widget invisible to all users that are not linked to one of the selected user roles.
 
-| Value             | Description                                                  |
-| ----------------- | ------------------------------------------------------------ |
-| Applicable roles  | The widget is visible if access rules allow it (for example if the user that is signed in has a role for which the target is set to be visible/accessible). |
-| All roles         | The widget is always visible. |
-| Selected roles    | This setting will render the widget as invisible to all users that are not linked to one of the selected user roles. |
+| Value            | Description                                                                                                                                                 |
+|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Applicable roles | The widget is visible if access rules allow it (for example if the user that is signed in has a role for which the target is set to be visible/accessible). |
+| All roles        | The widget is always visible.                                                                                                                               |
+| Selected roles   | This setting will render the widget as invisible to all users that are not linked to one of the selected user roles.                                        |
