@@ -54,9 +54,9 @@ The prerequisites are the following:
     | --- | --- |
     | [.NET Desktop Runtime 6.0.x (x64 or ARM64)](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) <br/> Mendix recommends using version 6.0.35 or above | [.NET Desktop Runtime 8.0.x (x64 or ARM64)](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) <br/> Mendix recommends using version 8.0.10 or above |
 
-* Eclipse Temurin JDK (x64) (see [JDK Installation](/refguide/jdk-installation/) if you want to install another version of the JDK). Mendix version 10.8.0 and 10.0.9 supports JDK 11 and 17. Mendix version 10.10.0 supports JDK 11, 17, and 21, but installer still installs JDK 11.
+* Eclipse Temurin JDK (x64) (see [JDK Installation](/refguide/jdk-installation/) if you want to install another version of the JDK). Mendix version 10.8.0 and 10.0.9 supports JDK 11 and 17. Mendix version 10.6.9 and 10.10.0 supports JDK 11, 17, and 21, but the installer still installs JDK 11.
 
-    | Studio Pro 10.0.0 - 10.10.0 | Studio Pro 10.11.0 and above |
+    | Studio Pro 10.0.0 - 10.6.21 (MTS), 10.10.0 | Studio Pro 10.6.22 (MTS), 10.11.0 and above |
     | --- | --- |
     | [JDK 11 (x64)](https://adoptium.net/temurin/releases/?version=11) | [JDK 21 (x64 or ARM64)](https://adoptium.net/temurin/releases/?version=21) |
 
@@ -75,7 +75,7 @@ The prerequisites are the following:
 * [Microsoft Edge WebView2 Evergreen Runtime (x64 or ARM64) (Evergreen Standalone Installer version)](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)
 * One of the following versions of [Gradle](https://gradle.org/install/#manually) with Gradle extracted to the parent directory of the folder where Studio Pro is installed (usually `C:\Program Files\Mendix`) instead of `C:\Gradle`.
 
-    | Studio Pro 10.0.0 - 10.9.0 | Studio Pro 10.10.0 and above |
+    | Studio Pro 10.0.0 - 10.6.9 (MTS), 10.9.0 | Studio Pro 10.6.10 (MTS), 10.10.0 and above |
     | --- | --- |
     | Gradle 7.6.3 or above | Gradle 8.5  |
 
@@ -102,11 +102,11 @@ It is possible to prepare the prerequisite installers beforehand so the setup pr
         * On x64, rename *windowsdesktop-runtime-8.0.10-win-x64.exe* to *windowsdesktop-runtime-8.0-x64.exe*
         * On ARM64, rename *windowsdesktop-runtime-8.0.10-win-arm64.exe* to *windowsdesktop-runtime-8.0-arm64.exe*
    2. Eclipse Temurin JDK (x64)
-      * For Studio Pro versions 10.0.0 through 10.10.0, rename the Java Development Kit 11 (x64) *msi* 
+      * For Studio Pro versions 10.0.0 through 10.6.21 (MTS), 10.10.0, rename the Java Development Kit 11 (x64) *msi* 
         * For example, *OpenJDK11U-jdk_x64_windows_hotspot_11.0.20.1_1.msi* to *adoptiumjdk_11_x64.msi*
       * For Studio Pro versions 10.11.0 through 10.18.0, rename the Java Development Kit 21 (x64) *msi* 
         * For example, *OpenJDK21U-jdk_x64_windows_hotspot_21.0.4_7.msi* to *adoptiumjdk_21_x64.msi*
-      * For Studio Pro versions 10.12.11 and 10.18.1 and above, rename the Java Development Kit 21 *msi*
+      * For Studio Pro versions 10.6.22 (MTS), 10.12.11 and 10.18.1 and above, rename the Java Development Kit 21 *msi*
         * On x64, rename *OpenJDK21U-jdk_x64_windows_hotspot_21.0.5_11.msi* to *adoptiumjdk_21_x64.msi*
         * On ARM64, rename *OpenJDK21U-jdk_aarch64_windows_hotspot_21.0.5_11.msi* to *adoptiumjdk_21_arm64.msi*
    3. Visual C++ Redistributable for Visual Studio 2019 (x64)
