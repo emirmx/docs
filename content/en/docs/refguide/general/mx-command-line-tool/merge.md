@@ -232,8 +232,8 @@ Normally, when you are merging branches with Git, it compares the changes in fil
 However, if the files in conflict are Mendix apps the conflict is in two *.mpr* files, both the files and the conflict are more complex, which is why we need Studio Pro to resolve the conflicts. For such cases, Git has an option to delegate conflict resolution for a certain file type to an external tool. The `mx git-merge` command is compatible with this mechanism and allows Git to try to merge the *.mpr* files as if Studio Pro did it. Then, if there are still conflicts, you can open Studio Pro and resolve those manually.
 
 {{% alert color="warning" %}}
-Currently `mx git-merge` supports merging MPRv2 with MPRv2 and MPRv1 with MPRv1. Merging MPRv2 with MPRv1 or MPRv1 with MPRv2
-{{% /alert %}} should be performed in Studio Pro
+Currently `mx git-merge` supports merging MPRv2 with MPRv2 and MPRv1 with MPRv1. Merging MPRv2 with MPRv1 or MPRv1 with MPRv2 should be performed within Studio Pro.
+{{% /alert %}} 
 
 ### config File {#git-merge-config}
 
