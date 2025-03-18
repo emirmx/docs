@@ -102,5 +102,5 @@ To view the chart, follow these steps:
 ## Read More
 
 * [Create a Basic Chart](/appstore/widgets/charts-basic-create/)
-* [Fine-Tune a Chart with Advance Settings](/appstore/widgets/chart-advanced-tuning/)
+* [Fine-Tune a Chart with Chart Playground](/appstore/widgets/chart-advanced-tuning/)
 * [Use Any Chart](/appstore/widgets/charts-any-usage/)
