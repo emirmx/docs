@@ -14,6 +14,8 @@ This document guides on building a smart app using a starter template. Alternati
 
 Before starting this guide, make sure you have completed the following prerequisites:
 
+* Be on Mendix Studio Pro 10.12.4 or higher.
+
 * Intermediate knowledge of the Mendix platform: Familiarity with Mendix Studio Pro, microflows, and modules is required.
 
 * Basic understanding of GenAI concepts: Review the [Enrich Your Mendix App with GenAI Capabilities](/appstore/modules/genai/) page to gain foundational knowledge and become familiar with the key [concepts](/appstore/modules/genai/get-started/).

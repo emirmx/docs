@@ -14,6 +14,8 @@ This document guides you on building a smart app from scratch using a blank GenA
 
 Before starting this guide, make sure you have completed the following prerequisites:
 
+* Be on **Mendix Studio Pro 10.12.4 or higher**
+
 * Intermediate knowledge of the Mendix platform: Familiarity with Mendix Studio Pro, microflows, and modules is required.
 
 * Basic understanding of GenAI concepts: Review the [Enrich Your Mendix App with GenAI Capabilities](/appstore/modules/genai/) page to gain foundational knowledge and become familiar with the key [concepts](/appstore/modules/genai/get-started/).
@@ -52,10 +54,6 @@ Selecting the infrastructure for integrating GenAI into your Mendix application 
 
 * [Mendix Cloud GenAI Resources Packs](/appstore/modules/genai/MxGenAI/): Part of [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931), integrates LLMs by dragging and dropping common operations from its toolbox in Studio Pro.
 * [OpenAI](/appstore/modules/genai/openai/): The [OpenAI Connector](https://marketplace.mendix.com/link/component/220472) supports both OpenAI’s platform and Azure’s OpenAI service.
-
-{{% alert color="info" %}}
-To start, you can sign up for a free trial with OpenAI and receive credits valid for three months from the account creation date. For more details, see [OpenAI API reference](https://platform.openai.com/docs/api-reference/authentication).
-{{% /alert %}}
 
 * [Amazon Bedrock](/appstore/modules/genai/bedrock/): The [Amazon Bedrock Connector](https://marketplace.mendix.com/link/component/215042) allows you to leverage Amazon Bedrock’s fully managed service to integrate foundation models from Amazon and leading AI providers. 
 
