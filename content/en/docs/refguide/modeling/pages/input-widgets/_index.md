@@ -14,14 +14,6 @@ In order to function, input elements need to be linked to a value, either a vari
 * A snippet containing one or more [parameters](/refguide/page-properties/#parameters)
 * A page or a snippet containing one or more [variables](/refguide/page-properties/#variables)
 
-While all input widgets are able to use attributes, the following can be configured with variables as well:
-* Text Box
-* Text Area
-* Drop-Down
-* Checkbox
-* Radio Buttons
-* Date Picker
-
 For example, the input elements can be placed inside a [data view](/refguide/data-view/):
 
 {{< figure src="/attachments/refguide/modeling/pages/input-widgets/data-view.png" alt="Data view containing widgets" class="no-border" >}}
