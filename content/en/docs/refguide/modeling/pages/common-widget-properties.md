@@ -103,7 +103,7 @@ This property identifies the value which is used in an input widget.
 
 #### Input Elements
 
-With the following widgets, the property specifies the value which is being changed (or displayed) by the widget:
+In the following widgets, this property specifies the value which is being changed (or displayed) by the widget:
 
 * [Text Box](/refguide/text-box/)
 * [Text Area](/refguide/text-area/)
@@ -114,14 +114,14 @@ With the following widgets, the property specifies the value which is being chan
 
 The value can be one of the following:
 
-1. An attribute of the entity of the data container that contains the widget.
-2. An attribute of the entity of any enclosing data container that contains the widget. 
-3. An attribute of an entity associated with the data container entity by following one or more associations of type reference through the domain model.
-4. A variable defined on the page or snippet that contains the widget.
+* An attribute of the entity of the data container that contains the widget.
+* An attribute of the entity of any enclosing data container that contains the widget. 
+* An attribute of an entity associated with the data container entity by following one or more associations of type reference through the domain model.
+* A variable defined on the page or snippet that contains the widget.
 
-In the first two cases we say the widget is connected to an **attribute**, in the third case to an **attribute path**, and in the last case to a **variable**.
+In the first two cases the widget is connected to an **attribute**, in the third case to an **attribute path**, and in the last case to a **variable**.
 
-You can edit attributes of any enclosing data container including grandparent data containers.
+You can edit attributes of any enclosing data container (including grandparent data containers).
 
 #### Association Input Elements
 
@@ -179,14 +179,14 @@ Only Boolean and enumeration attributes can be used for this purpose.
 
 When selected, this enables the widget while a provided [expression](/refguide/expressions/) evaluates to true. The expression may use the variables listed in the expression editor, including:
 
-- `$currentObject`, representing the object of the closest enclosing data container.
-- The objects of any enclosing data container, available under the name of the widget that exposes them (for example `$dataView1`).
-- [Parameters](/refguide/page-properties/#parameters) and [variables](/refguide/page-properties/#variables) defined on the page or snippet.
+* `$currentObject`, representing the object of the closest enclosing data container.
+* The objects of any enclosing data container, available under the name of the widget that exposes them (for example `$dataView1`).
+* [Parameters](/refguide/page-properties/#parameters) and [variables](/refguide/page-properties/#variables) defined on the page or snippet.
 
-The expression provided is evaluated in the browser and, currently, does not support all the functions that are available in microflows. The autocomplete function will only list those functions which are supported.
+The expression provided is evaluated in the browser but does not support all the functions that are available in microflows. The autocomplete function will only list those functions which are supported.
 
 {{% alert color="info" %}}
-As the expression is evaluated in the browser, we advise against using "secret" values (like access keys) in it. In particular, we disallow usages of [constants](/refguide/constants/).
+As the expression is evaluated in the browser, we advise against using secret values (like access keys) in it. In particular, we disallow usages of [constants](/refguide/constants/).
 {{% /alert %}}
 
 ### Read-Only Style
@@ -231,15 +231,15 @@ For each parameter in the template, you define a source for the value. The value
 
 ##### Value Parameter Type
 
-When selected, the chosen value is used as the value of the parameter. The source of the value can be an attribute of an enclosing data container. Number and Date Time value types offer formatting options.
+When selected, the chosen value is used as the value of the parameter. The source of the value can be an attribute of an enclosing data container. Number and DateTime value types offer formatting options.
 
 ##### Expression Parameter Type
 
 When selected, the result of the given [expression](/refguide/expressions/) is used as the value of the parameter. The expression may use the variables listed in the expression editor, including:
 
-- `$currentObject`, representing the object of the closest enclosing data container.
-- The objects of any enclosing data container, available under the name of the widget that exposes them (for example `$dataView1`).
-- [Parameters](/refguide/page-properties/#parameters) and [variables](/refguide/page-properties/#variables) defined on the page or snippet.
+* `$currentObject`, representing the object of the closest enclosing data container.
+* The objects of any enclosing data container, available under the name of the widget that exposes them (for example `$dataView1`).
+* [Parameters](/refguide/page-properties/#parameters) and [variables](/refguide/page-properties/#variables) defined on the page or snippet.
 
 The expression provided is evaluated in the browser and, currently, does not support all the functions that are available in microflows. The autocomplete function will only list those functions which are supported.
 
