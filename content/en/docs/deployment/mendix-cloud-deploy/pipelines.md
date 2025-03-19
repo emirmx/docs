@@ -3,12 +3,7 @@ title: "Pipelines"
 url: /developerportal/deploy/pipelines/
 weight: 8
 description: "Describes how to design, implement, and review pipelines using the Pipelines feature in the Mendix Portal"
-beta: true
 ---
-
-{{% alert color="warning" %}}
-Mendix Pipelines is in [public beta](/releasenotes/beta-features/). It is currently available for unlimited use with all licensed Mendix Cloud apps. Limitations may be put on its use in the future.
-{{% /alert %}}
 
 ## Introduction
 
@@ -330,11 +325,11 @@ To trigger pipelines based on Teamserver push (Git), Mendix automatically create
 
 ### Known Issues and Limitations
 
-Pipelines is in public beta and is undergoing optimizations. Initial stages may involve occasional slowness, leading to pipeline failures. Mendix is committed to resolving these issues swiftly and appreciates your understanding.
-
-Pipeline runs will not be picked up and executed if Pipelines is undergoing maintenance.
+Pipeline runs are not picked up and executed if the Pipelines functionality is undergoing maintenance.
 
 It is not currently possible to add the same pipeline step more than once in a pipeline. This will be improved in the future.
+
+In case of a system outage, pipelines triggered during that time are not executed.
 
 ## Read More
 
