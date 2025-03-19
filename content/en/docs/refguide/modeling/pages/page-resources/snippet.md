@@ -53,11 +53,11 @@ The values for the platform property are:
 The list of **Variables** defined on the snippet. Variables are non-persistent, primitive values that can be used as attributes by widgets in the snippet. They behave the same as [variables on pages](/refguide/page-properties/#variables), with the exception that default values cannot reference snippet parameters.
 
 {{% alert color="info" %}}
-[Snippet extraction](#extract-snippet) does not automatically recreate variables in the resulting snippet. Missing variables need to be added manually.
+[Snippet extraction](#extract-snippet) does not automatically recreate variables in the resulting snippet. Missing variables mut be added manually.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-[Inlining a snippet](https://docs.mendix.com/refguide/snippet-call/#inline-snippet) does not automatically create variables on a page. Missing variables need to be added manually. If the snippet and the page have identically named variables, references will automatically carry over.
+[Inlining a snippet](/refguide/snippet-call/#inline-snippet) does not automatically create variables on a page. Missing variables must be added manually. If the snippet and the page have identically named variables, then references will automatically carry over.
 {{% /alert %}}
 
 ### Designer Section {#designer}

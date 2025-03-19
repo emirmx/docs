@@ -171,7 +171,7 @@ For example, imagine you are creating a personal details form in which the end-u
 
 #### Based on Value
 
-When selected, this enables the widget while a chosen value matches specific options. The source of the value can be an attribute of an enclosing data container. Using the checkboxes you can choose what options enable the widget.
+When selected, this enables the widget while a chosen value matches specific options. The source of the value can be an attribute of an enclosing data container. Using the checkboxes you can select which options enable the widget.
 
 Only Boolean and enumeration attributes can be used for this purpose.
 
@@ -267,9 +267,9 @@ There are three options, described below:
 This mode only applies to values of type Decimal.
 {{% /alert %}}
 
-If set to *Fixed*, the decimal part always will be displayed with the number of places specified in the [Decimal precision](#decimal-precision) property. The value will be rounded using the method defined in the [Rounding](/refguide/app-settings/#rounding) section of **App Settings**.
+If set to **Fixed**, the decimal part always will be displayed with the number of places specified in the [Decimal precision](#decimal-precision) property. The value will be rounded using the method defined in the [Rounding](/refguide/app-settings/#rounding) section of **App Settings**.
 
-If set to *Auto*, the whole decimal part of the value will be displayed. No decimal part will be displayed if the value is an integer.
+If set to **Auto**, the whole decimal part of the value will be displayed. No decimal part will be displayed if the value is an integer.
 
 Default: *Fixed*
 
@@ -389,7 +389,7 @@ A practical example would be a web shop in which the user must submit both billi
 
 ##### Based on Value {#visibility-based-on-attribute-value}
 
-When selected, this shows the widget while a chosen value matches specific options. The source of the value can be an attribute of an enclosing data container. Using the checkboxes you can choose what options show the widget.
+When selected, this shows the widget while a chosen value matches specific options. The source of the value can be an attribute of an enclosing data container. Using the checkboxes you can select which options show the widget.
 
 {{% alert color="info" %}}
 Visibility based on an attribute value can be set only for widgets that are inside data containers (a data view, list view, or data grid). 

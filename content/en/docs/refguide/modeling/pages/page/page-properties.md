@@ -101,9 +101,11 @@ You can also use multiple page parameters. Multiple page parameters allow you to
 
 The list of variables defined on this page. The variables can be used by widgets directly without the need for a [data view](/refguide/data-view/).
 
-Variables represent non-persistant, primitive values that are available to widgets on a page. Widgets can read and write to them as they were attributes, supporting features like formatting and validation. Variables are also available in expressions, so you can use them for page logic, such as conditional visibility, editability, text template parameters, and as arguments to microflows and nanoflows.
+Variables represent non-persistent, primitive values that are available to widgets on a page. Widgets can read and write to them as they were attributes, supporting features like formatting and validation. Variables are also available in expressions, so you can use them for page logic, such as conditional visibility, editability, text template parameters, and as arguments to microflows and nanoflows.
 
-You can also define a default value for variables. The expression is used to instantiate the variable at runtime and can make use of page parameters. Note that the default value is only set once for the lifetime of the page: A variable using the attribute of a page parameter will not receive updates made to the attribute as long as the page is open.
+You can also define a default value for variables. The expression is used to instantiate the variable at runtime and can make use of page parameters. 
+
+Note that the default value is only set once for the lifetime of the page. Thus, a variable using the attribute of a page parameter will not receive updates made to the attribute as long as the page is open.
 
 {{% alert color="info" %}}
 Variables for pages were introduced in Mendix Studio Pro 10.21.
