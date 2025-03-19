@@ -91,10 +91,10 @@ If you are importing a module with the *.mxmodule* extension, a dialog informing
 ##### Rules for Replacing an Existing Module {#replace-existing-modules}
 
 {{% alert color="warning" %}}
-If you delete a module and then add a newer version of it, all user data will be lost.
+If you delete a module and then add a newer version of it, all the existing data in the module will be lost.
 {{% /alert %}}
 
-If you replace a module with a newer version, the existing user data are retained based on the names of entities, attributes, associations, microflows, workflows, and workflow activities. The following rules apply:
+If you replace a module with a newer version, the existing data in the module are retained based on the names of entities, attributes, associations, microflows, workflows, and workflow activities. The following rules apply:
 
 * Entities are matched by name; if the name changes in a newer version of the module, the entities and all associated data are removed from the database. An empty table is created for the 'new' entity.
 * Attributes are matched by name; if the name changes in a newer version of the module, all attribute data is removed from the database. An attribute with the new name is added to the entity, with empty data.
