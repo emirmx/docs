@@ -17,7 +17,7 @@ Before starting the installation and implementation process, make sure that you 
 
 * Obtain and configure a Microsoft Azure account. For more information, refer to the the Microsoft Azure documentation.
 * Purchase the Mendix on Azure offering in the [Azure Marketplace](https://azuremarketplace.microsoft.com/).
-* The Azure account used to purchasing the offering **must** also be used to sign-in to Mendix on Azure portal. Otherwise the cluster will not be visible for initialization.
+* You must sign in to the Mendix on Azure portal with the same Azure account that was used to purchasing the offering. If you sign in with another account, the cluster is not visible for initialization.
 
 {{< figure src="/attachments/deployment/mx-azure/coadmin-permission.png" class="no-border" >}}
 
