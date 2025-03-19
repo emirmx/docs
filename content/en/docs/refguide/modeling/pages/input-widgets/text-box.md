@@ -22,15 +22,11 @@ A text box must be placed within a data context to display or edit the intended 
 * A snippet containing one or more [parameters](/refguide/page-properties/#parameters)
 * A page or a snippet containing one or more [variables](/refguide/page-properties/#variables)
 
-The name of the configured value is shown inside the text box widget, between square brackets, and colored blue.
+The name of the configured value is shown inside the text box widget, between square brackets, and colored blue in the structure mode and black in design mode.
 
-For example, the following text box allows the end-user to see, and set, the **Name** of a customer.
+For example, here are two text boxes shown in design mode that allow the end-user to see, and set, the **Name** of a customer. The difference is that the top text box in this example is configured with an attribute while the bottom uses a variable defined on the page.
 
 {{< figure src="/attachments/refguide/modeling/pages/input-widgets/text-box/text-box.png" class="no-border" >}}
-
-Alternatively, the text box can be used with a variable defined on a page or snippet.
-
-{{< figure src="/attachments/refguide/modeling/pages/input-widgets/text-box/text-box-variable.png" class="no-border" >}}
 
 ## Properties Pane
 
