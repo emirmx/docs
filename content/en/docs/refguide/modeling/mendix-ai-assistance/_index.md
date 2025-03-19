@@ -49,9 +49,9 @@ The table below presents all the third-party services each Maia capability uses 
 
 | Maia | Third-Party Service | Data Sent to Third-Party Service |
 | --- | --- | --- |
-| Maia Chat | [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/) hosted in Mendix AWS environment | User prompts and the generated answers |
+| Maia Chat | [Llama 3.1 8B](https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md) hosted in Mendix AWS environment | User prompts and the generated answers |
 | Maia Learn | No third-party services used | N/A |
-| Maia Explain | Any third-party services used? | Project context to fulfill user prompt request? |
+| Maia Explain | [Llama 3.1 8B](https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md) hosted in Mendix AWS environment | Project context to fulfill user prompt request |
 | Best Practice Recommender | No third-party services used | N/A |
 | Logic Recommender | No third-party services used | N/A |
 | UI Recommender | No third-party services used | N/A |
