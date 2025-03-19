@@ -169,10 +169,6 @@ Specify your email for Git to use it in commit messages and make them more infor
 
 #### Enable Current Windows User Authentication {#enable-windows-authentication}
 
-{{% alert color="info" %}}
-This setting is available in Studio Pro MTS versions 10.6.21 and above, 10.12.14 and above, 10.18.3 and above.
-{{% /alert %}}
-
 When this option is selected, the application automatically uses credentials of the currently logged-in Windows user to authenticate and connect to the on-premises Git server. This feature streamlines the authentication process by eliminating the need for users to manually enter their credentials, enhancing both security and user convenience. By leveraging Windows authentication, organizations can ensure that access to the Git server is seamlessly integrated with their existing IT infrastructure, providing a smooth and efficient workflow for development teams.
 
 #### Clone {#clone}
@@ -248,12 +244,6 @@ When the **Send Studio Pro usage data to Mendix** setting is enabled, Studio Pro
 **Visual Builder** is the default way to construct XPath constraints, but you can change the default by clearing **Enable the XPath Builder as the default XPath constraint editor**.
 
 ## New Features Tab {#new-features}
-
-### Access Rules Editor
-
-In Studio Pro version 10.6 a new access rule editor was introduced in Beta. Enable this option to use the new editor in the *Access rules* tab of the entity properties dialog.
-
-For more information, see [Defining Access Rules Using the New Editor](/refguide/access-rules/#new-editor) section of *Access Rules*.
 
 ### App Explorer
 
