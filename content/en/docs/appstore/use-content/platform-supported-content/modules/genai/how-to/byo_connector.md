@@ -12,6 +12,8 @@ If you would like to create your own connection to the LLM model of your choice 
 
 The practical advantages of building your own GenAI Commons connector are numerous. First, you can reuse all of our ConversationalUI components, allowing you to use the already existing chat interface and related functionalities. Second, starting from our starter apps is straightforward, allowing you to quickly set up and begin using the functionalities our different starter apps provide. These advantages not only save you valuable development time but also provide more time to customize the already existing functionalities. This guide will walk you through the process, ensuring you can seamlessly integrate your preferred LLM while leveraging our robust and user-friendly chat interface components. By following the steps outlined here, you’ll be able to create a custom connector that fits your specific needs, all while maintaining the high-quality user experience provided by our platform.
 
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-byo/byo_connector.jpg" >}}
+
 ### Prerequisites
 
 Before starting this guide, make sure you have completed the following prerequisites:
