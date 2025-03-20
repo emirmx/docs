@@ -66,9 +66,9 @@ Use the [`WHERE` clause]( /refguide/oql-expressions/) of a view entity to ensure
 
 Persistable entity access rules are not applied when using view entities. Instead, you must specify the access rules. You can define what users have access to while still allowing access to aggregated data. For example, you may want to know how many employees are part of each department of a company. However, you should not be able to see the detailed information of each employee. View entities allow you to give a user access to specific employee data without revealing sensitive information. 
 
-### Multi-Tenant Security 
+### Multitenant Security 
 
-In the following example, a view entity is used to implement multi-tenant security. The view entity *CustomersVE* only returns the customers that belong to the tenant of the current user. Any additional view entity that uses *CustomersVE* instead of the persistable entity *Customer* will only get data belonging to the tenant of the user. 
+In the following example, a view entity is used to implement multitenant security. The view entity *CustomersVE* only returns the customers that belong to the tenant of the current user. Any additional view entity that uses *CustomersVE* instead of the persistable entity *Customer* will only get data belonging to the tenant of the user. 
 
 {{< figure src="/attachments/refguide/modeling/domain-model/use-view-entities/active-tenant.png" width="500" >}}
 

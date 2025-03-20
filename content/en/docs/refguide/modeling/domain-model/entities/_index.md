@@ -32,16 +32,16 @@ View entities were introduced in [Studio Pro 10.19](/releasenotes/studio-pro/10.
 
 The entity type defines how the data is handled and there are four types:
 
-* Persistable entity
+1. Persistable entity
     * When an entity is declared persistable, a database table is created for the entity. These type of entities are colored *blue* in the domain model.
-* Non-persistable entity
+2. Non-persistable entity
     * Non-persistable entities are stored in the runtime memory and never get committed to the database. These type of entities are colored *orange* in the domain model.
-* External entity
+3. External entity
     * External entities represent the link to datasets that are made available through shared data sources registered in Mendix Catalog. These type of entities are colored *purple* in the domain model. 
-* View entity (beta)
-    * View entities represent the result sets of stored OQL queries on one or more entities, similar to database viewsn, and are read-only. These entities are colored *green* in the domain model.
+4. View entity (beta)
+    * View entities represent the result sets of stored OQL queries on one or more entities, similar to database views, and are read-only. These entities are colored *green* in the domain model.
 
-{{< figure src="/attachments/refguide/modeling/domain-model/entities/type-of-entities.jpg" class="no-border" width=="300" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/entities/type-of-entities.png" width=="300" >}}
 
 The structure of persistable, non-persistable, and view entities are defined within your app. This page describes how to add and update persistable and non-persistable entities. For more information on persistable entities, see [Persistability](/refguide/persistability/). 
 
@@ -142,11 +142,13 @@ Data grids do not directly display this date.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-The 'changedDate' property is updated when a value is set. Setting an attribute to the value it already has and committing the entity updates the 'changedDate' without changing the attribute value.
+In Mendix 10.20 and above, the 'changedDate' attribute is updated when the changed object is committed.
+
+In Mendix 10.19.x and below, the 'changedDate' attribute is updated whenever a value is set for a member (attribute or association).
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-The `changedDate` value is not updated if you update the entity directly in Java using calls which resolve to use the [`com.mendix.systemwideinterfaces.core.IMendixObject.setValue​(IContext context, java.lang.String memberName, java.lang.Object value)`](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/systemwideinterfaces/core/IMendixObject.html#setValue(com.mendix.systemwideinterfaces.core.IContext,java.lang.String,java.lang.Object)) method (for example, `Entity.setValue(IContext, String)`). If you need `changedDate` to be updated when using Java, use the [`com.mendix.core.Core.change​(IContext context, IMendixObject object, java.util.Map<java.lang.String,​java.lang.String> changes)`](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/core/Core.html#change(com.mendix.systemwideinterfaces.core.IContext,com.mendix.systemwideinterfaces.core.IMendixObject,java.util.Map)) method.
+The `changedDate` value is not updated if you update the object directly in Java using calls which resolve to use the [`com.mendix.systemwideinterfaces.core.IMendixObject.setValue​(IContext context, java.lang.String memberName, java.lang.Object value)`](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/systemwideinterfaces/core/IMendixObject.html#setValue(com.mendix.systemwideinterfaces.core.IContext,java.lang.String,java.lang.Object)) method (for example, `Entity.setValue(IContext, String)`). If you need `changedDate` to be updated when using Java, use the [`com.mendix.core.Core.change​(IContext context, IMendixObject object, java.util.Map<java.lang.String,​java.lang.String> changes)`](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/core/Core.html#change(com.mendix.systemwideinterfaces.core.IContext,com.mendix.systemwideinterfaces.core.IMendixObject,java.util.Map)) method.
 {{% /alert %}}
 
 #### Store 'owner' {#store-owner}
@@ -173,6 +175,12 @@ This property defines whether the entity has the system association 'changedBy'.
 
 {{% alert color="info" %}}
 Data grids do not directly display the associated System.User entity or its specializations.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+In Mendix 10.20 and above, the 'changedBy' property is updated when a changed object is committed.
+
+In Mendix 10.19.x and below, the 'changedBy' property is updated whenever a value is set for a member (attribute or association).
 {{% /alert %}}
 
 ### Access Rules Section {#access-rules}

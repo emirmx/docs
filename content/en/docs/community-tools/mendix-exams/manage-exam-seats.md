@@ -55,11 +55,11 @@ In the **Invited Students** section, you can check the status of the invitations
 
 An invitation can have one of the following statuses:
 
-- **NOT ACCEPTED YET**: The student has not accepted the invitation. You can still [remind the student](#remind-student) or [withdraw the invitation](#withdraw-invitation).
-- **REGISTERED**: The student has registered but has not yet completed the exam.
-- **UNDISCLOSED**: The student has taken the exam but has not shared the result. A student can choose not to share the result with the exam admin when they register for the exam.
-- **CERTIFIED**: The student has passed the exam and is certified.
-- **FAILED**: The student has taken the exam and failed. 
+* **NOT ACCEPTED YET**: The student has not accepted the invitation. You can still [remind the student](#remind-student) or [withdraw the invitation](#withdraw-invitation).
+* **REGISTERED**: The student has registered but has not yet completed the exam.
+* **UNDISCLOSED**: The student has taken the exam but has not shared the result. A student can choose not to share the result with the exam admin when they register for the exam.
+* **CERTIFIED**: The student has passed the exam and is certified.
+* **FAILED**: The student has taken the exam and failed. 
 
 ### Reminding Students to Accept an Invitation {#remind-student}
 

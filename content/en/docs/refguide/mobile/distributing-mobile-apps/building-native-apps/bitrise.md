@@ -9,6 +9,12 @@ description: Describes how to integrate with Bitrise to build a Mendix native ap
 
 This guide helps you set up [Bitrise](https://bitrise.io) to automate building a Mendix native app in the cloud. Bitrise is a popular continuous integration service optimized for mobile apps.
 
+{{% alert color="info" %}}
+The React Native version used in Studio Pro versions 10.11-10.16 includes Bitcode, which is not longer supported by Xcode 16 and above. This means that native mobile iOS applications created by customers **cannot be submitted to the App Store**. 
+
+For more information and workarounds, see [Bitcode Deprecation](/refguide/mobile/introduction-to-mobile-technologies/native-mobile/#bitcode-deprecation).
+{{% /alert %}} 
+
 ## Prerequisites {#prerequisites}
 
 Before starting this guide, make sure you have completed the following prerequisites:
@@ -79,6 +85,7 @@ Any additional workflows that may have been created can be removed. Select the w
 
 {{% alert color="info" %}}
 Building native mobile apps for Mendix 9.24 requires Node v16 (no longer included by default in Bitrise). Follow these steps to install it:
+
 1. Add a new step before the step "Run npm command".
 1. Choose **Node Version Manager (NVM)** from the list of steps.
 1. Set the **Node Version** property to 16 (leave the NVM version blank).

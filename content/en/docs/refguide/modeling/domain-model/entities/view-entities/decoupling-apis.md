@@ -40,7 +40,6 @@ Create a single view entity and expose it as an OData resource. To do this, foll
 
      {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/decoupling-apis/key-attribute.png" >}}
 
-
 5. In the **Entity** field, double-click the **ProductId** attribute. 
 6. Uncheck the box **Can be empty**, then click **OK**. 
    

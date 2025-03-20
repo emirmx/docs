@@ -139,6 +139,56 @@ For example, for a data source with the ID *40FJYP9D*, the resulting statement w
 CALL MENDIX_DATA_LOADER.MX_FUNCTIONS.RUN_INGESTION_JOB('40FJYP9D','');
 ```
 
+## Setting Up Mail Notifications on Failed Task Execution
+
+Snowflake provides a built-in functionality for alerts and notifications. This `ALERT` object lets you specify a conditional expression to check if tasks have failed and send notifications if required. 
+
+To use this functionality, perform the following steps:
+
+1. Create a [notifcation integration email](https://docs.snowflake.com/en/sql-reference/sql/create-notification-integration-email).
+2. Create an [ALERT](https://docs.snowflake.com/en/sql-reference/commands-alert) using the notification integration and the ["SYSTEM$SEND_EMAIL"](https://docs.snowflake.com/en/sql-reference/stored-procedures/system_send_email) system function.
+
+For more information about using external integrations for sending all types of notifications, see [Introduction to Snowflake's data pipeline alerts & notifications](https://medium.com/snowflake/introduction-to-snowflakes-data-pipeline-alerts-notifications-9beac8d127cc).
+
+### Sample SQL to Set up a Mail Notification
+
+The following is a sample SQL template which you can customize with your data and execute in a worksheet:
+
+```sql
+CREATE DATABASE IF NOT EXISTS <db name>;
+
+CREATE SCHEMA IF NOT <schema name>;
+
+USE SCHEMA <schema name>;
+
+CREATE OR REPLACE NOTIFICATION INTEGRATION <NOTIFICATION INTEGRATION name>
+  TYPE = EMAIL
+  ENABLED = TRUE
+  ALLOWED_RECIPIENTS = ('<mail1@company.com>', '<mail2@company.com>', ...);
+
+CREATE OR REPLACE ALERT <ALERT name>
+  WAREHOUSE = <warehouse name>
+  SCHEDULE = '<integer> MINUTE' -- Or use CRON e.g. 15 * * * * UTC
+  IF (
+    EXISTS (
+      SELECT 1
+      FROM SNOWFLAKE.ACCOUNT_USAGE.TASK_HISTORY
+      WHERE (STATE = 'FAILED' OR STATE = 'FAILED_AND_AUTO_SUSPENDED') AND NAME = '<task name>'
+        AND SCHEDULED_TIME >= CONVERT_TIMEZONE('UTC',DATEADD(MINUTE, -<integer>, CURRENT_TIMESTAMP()))
+    )
+  )
+  THEN CALL SYSTEM$SEND_EMAIL(
+    '<NOTIFICATION INTEGRATION name>',
+    ('<mail1@company.com>', '<mail5@company.com>', ...) --Subset of ALLOWED_RECIPIENTS in NOTIFICATION INTEGRATION. 
+    '<Mail subject>',
+    '<Mail Body>.'
+  );
+
+ALTER ALERT <ALERT name> RESUME; -- The ALERT has STATE Suspended when created and is started by this statement
+
+SHOW ALERTS;
+```
+
 ## Verifying the Access Token
 
 When using OAuth authentication with the Mendix Data Loader, it is crucial to verify the access token received by your Mendix application. This verification process ensures the token's authenticity and integrity, protecting your application from unauthorized access attempts.
@@ -175,6 +225,25 @@ https://apps-api.c1.<cloud_region_id>.<cloud>.app.snowflake.com/oauth/complete-s
 ```
 
 The *cloud_region_id* and the *cloud* in the URL depend on the configurations of your Snowflake account. See [Supported Cloud Regions](https://docs.snowflake.com/en/user-guide/intro-regions) and [Supported Cloud Platforms](https://docs.snowflake.com/en/user-guide/intro-cloud-platforms) for more information on what these values are according to the region and cloud platform your account is in.
+
+## Using Mendix Data Loader with a Private Link
+
+If you do not want the connection between the Mendix Data Loader and your Mendix apps to run through the public internet (for example, due to regulations or internal policies), you can configure a private link functionality for your cloud. This section outlines a sample high-level process that your company can implement to enable private links.
+
+{{% alert color="info" %}}Creating private endpoints is not available on [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/).
+
+The process described in this section applies to setting up a private link within the same cloud provider. Private links between different cloud providers, for example, Azure and AWS, require special measures such as an S2S VPN to link the two VNets.{{% /alert %}}
+
+To implement the connection between Mendix Data Loader and your app, perform the following steps:
+
+1. Obtain the necessary information from your Mendix Platform owner (for example, your system administrator, or a partner who implemented the Platform for you).
+
+    You must know in which cluster your app is running, so you can set up a private link tunnel to the location.
+
+2. Configure the private link as described in the following documents:
+
+    * For AWS - [Get started with AWS PrivateLink](https://docs.aws.amazon.com/vpc/latest/privatelink/getting-started.html) and [Manage private connectivity endpoints: AWS](https://docs.snowflake.com/en/user-guide/private-manage-endpoints-aws)
+    * For Azure - [Quickstart: Create a Private Link service by using the Azure portal](https://learn.microsoft.com/en-us/azure/private-link/create-private-link-service-portal) and [Manage private connectivity endpoints: Azure](https://docs.snowflake.com/en/user-guide/private-manage-endpoints-azure)
 
 ## Current Limitations
 

@@ -19,6 +19,30 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
+### March 18, 2025
+
+#### New Features
+
+* Software Composition is now generally available. It helps you easily manage security risk by providing visibility and insights into the dependencies of each application across your application landscape. You can access the feature in [Control Center](/control-center/software-composition/) and [Apps navigation pane](/developerportal/deploy/software-composition/).
+
+### March 13, 2025
+
+#### Fixes
+
+* We fixed an issue in [Mini Surveys](/developerportal/app-insights/mini-surveys/#view-export-responses) where XLSX exports included empty responses.
+
+### February 6, 2025
+
+#### New Features
+
+* [Mendix AI Assistance Chat (Maia Chat)](/developerportal/global-navigation/#maia-chat), previously available in Studio Pro, is now accessible in Mendix Portal.
+
+### January 29, 2025
+
+#### Fixes
+
+* We fixed an issue where, after updating a role, some companies could not edit the role further.
+
 ### January 26, 2025
 
 #### New Features

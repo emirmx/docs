@@ -231,12 +231,13 @@ SELECT
 FROM Sales.Customer
 WHERE Sales.Customer/LastName = 'Doe'
 ```
+
 | CustomerName | RequestNumber | OrthogonalRequestNumber |
 | ------------ | ------------- | ----------------------- |
-| Doe          | 1 		       | 1                       |
-| Doe          | 1 		       | 2                       |
-| Doe          | 2 		       | 1                       |
-| Doe          | 2 		       | 2                       |
+| Doe          | 1                | 1                       |
+| Doe          | 1                | 2                       |
+| Doe          | 2                | 1                       |
+| Doe          | 2                | 2                       |
 
 ## `FROM` Clause {#from}
 
@@ -1077,14 +1078,14 @@ The syntax is as follows:
 ### Result data type {#oql-union-type}
 
 The data types used in `select_query` statements are considered when determining the final return type of the `UNION` clause. All data types used in `select_query` statements must be compatible. All data types are compatible with themselves. Differing types are only compatible in these cases:
-- `UNION` of numeric types `INTEGER`, `LONG` and `DECIMAL`. The return type is the numeric type found in the `select_query` statements with the highest precedence (see [Type Precedence](/refguide/oql-expression-syntax/#type-coercion) for more information). 
-- `UNION` of limited and unlimited `STRING`. The return type is determined by the largest length of `STRING` attributes in the `select_query` statements.
-- `UNION` of any known type and a `NULL` literal. The result type is the known type.
+
+* `UNION` of numeric types `INTEGER`, `LONG` and `DECIMAL`. The return type is the numeric type found in the `select_query` statements with the highest precedence (see [Type Precedence](/refguide/oql-expression-syntax/#type-coercion) for more information). 
+* `UNION` of limited and unlimited `STRING`. The return type is determined by the largest length of `STRING` attributes in the `select_query` statements.
+* `UNION` of any known type and a `NULL` literal. The result type is the known type.
 
 {{% alert color="warning" %}}
 Oracle Database and SAP HANA databases do not support `UNION` containing unlimited `STRING`
 {{% /alert %}}
-
 
 ### Examples
 
@@ -1210,6 +1211,7 @@ FROM Sales.Sales
 | 15.5  |
 
 Performing a `UNION` of the entities will result in a column of type `DECIMAL`:
+
 ```sql
 SELECT Sale as CombinedSale FROM Sales.BulkSales
 UNION
@@ -1222,7 +1224,6 @@ SELECT Sale FROM Sales.Sales
 | 200          |
 | 42.25        |
 | 15.5         |
-
 
 #### Union of associations
 
