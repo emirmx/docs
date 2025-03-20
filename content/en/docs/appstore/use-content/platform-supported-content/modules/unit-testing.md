@@ -9,7 +9,12 @@ description: "Describes the configuration and usage of the Unit Testing module, 
 
 The [Unit Testing](https://marketplace.mendix.com/link/component/390/) module enables developers to implement, run and manage unit tests within Mendix applications. Test your microflows, Java actions, and other logic by implementing test microflows and JUnit (Java) tests. Use the module to automate testing, detect issues early, and improve code quality. 
 
+### Limitations
+
+* The Unit Testing module does not prevent multiple users to run unit tests in parallel. Ensure that only a single unit test run is executed at a given time to prevent inconsistent results.
+
 ### Dependencies
+#### Marketplace dependencies
 
 * [Accordion](https://marketplace.mendix.com/link/component/117895/)
 * [Atlas Core](https://marketplace.mendix.com/link/component/117187/)
