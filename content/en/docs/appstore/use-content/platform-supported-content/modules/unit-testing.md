@@ -43,7 +43,7 @@ The following Java dependencies are shipped with the module. For Mendix versions
 
 1. Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the Unit Testing module into your app.
 
-## Configuration
+## Configuration {#configuration}
 1. Add the module role **TestRunner** from the module to all app user roles that should be able to run and view unit tests.
 1. In the runtime settings of your app, configure the **Startup** microflow for the after startup property. If there is already an after startup microflow set, add the **Startup** microflow as an action in the existing microflow.
 1. Add the **UnitTestOverview** microflow to your navigation structure, or include the **UnitTestOverview** snippet on a custom page.
@@ -63,9 +63,9 @@ When using the snippet in your own page, the snippet should be placed on the top
 ## Usage
 
 ### Implementation
-#### Creating Microflow Unit Tests
-
-To create a new microflow test in a module, add a microflow with a name that starts with **TEST_** or **UT_** (case insensitive). Configure the test microflow as follows:
+#### Creating Unit Tests for Microflows {#creating-microflow-unit-tests}
+To test a specific microflow, you can build microflow-based unit tests that call this microflow under test and assert the outcomes.
+To create a new microflow-based unit test in a module, add a microflow with a name that starts with **UT_** or **TEST_** (case insensitive). Configure the test microflow as follows:
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/unit-testing/unit-test-example.png" alt="architecture-overview-diagram" >}}
 
@@ -85,12 +85,12 @@ To create a new microflow test in a module, add a microflow with a name that sta
     * When you add a microflow with the exact name **Setup** to your module, this will be invoked before each test run.
     * When you add a microflow with the exact name **TearDown** to your module, this will be invoked after each test run.
 
-#### Creating Java Unit Tests (with JUnit)
+#### Creating Unit Tests for Java code (with JUnit) {#creating-a-java-unit-tests-with-junit}
 
 The Java unit test runner is driven by [JUnit](https://junit.org/junit5/) res a general understanding of JUnit version 4. A JUnit test method is run if it exists somewhere in the module namespace (that is, it is part of a Java class that lives somewhere in the javasource/yourmodulename folder). A Java function is recognized as a test if it is public, non-static, parameter-less, and annotated with the `org.junit.Test` annotation. Multiple tests can exists in a single class, but JUnit does not guarantee the execution order of the tests.
 
 {{% alert color="info" %}}
-For examples of Java unit tests, see javasource/unittesting/JUnitExample1.java and javasource/unittesting/JUnitExample2.java in your app directory.
+For examples of unit tests for Java code, see javasource/unittesting/JUnitExample1.java and javasource/unittesting/JUnitExample2.java in your app directory.
 {{% /alert %}}
 
 Configure a Java test class as follows:
@@ -104,7 +104,7 @@ Configure a Java test class as follows:
 * You can base unit test classes on the **AbstractUnitTest** class. This class provides some time measurement functions and direct access to the **reportStep** function.
 
 ### Navigation
-To view and run unit tests, open the unit testing overview from your navigation. The overview consists of two parts:
+To run unit tests and view the test report, open the unit testing overview from your navigation. The overview consists of two parts:
 * On the left side, you can find a list of all modules with unit tests.
     * Expand a module to view the unit tests for that module
     * Use the buttons on top to:
@@ -132,7 +132,7 @@ By default, all changes that are made when running a microflow test (committing 
 If the checkbox is cleared, all changes made by the microflows that you test are saved to the database. This can result in populating the database with unwanted test data. As a best practice, do not clear the checkbox unless it is required by your specific use case.
 {{% /alert %}}
 
-### Using the Remote API
+### Using the Remote API {#using-the-remote-api}
 The module includes a remote API for running unit tests. The API supports starting a new unit test run and verifying the status. 
 
 {{% alert color="info" %}}

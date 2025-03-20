@@ -7,14 +7,13 @@ weight: 3
 
 ## Introduction
 
-Verify that your [microflow](/refguide/microflows/) works as expected by creating unit tests with the [Unit Testing](/appstore/modules/unit-testing/) module. 
-
+The [Unit Testing](/appstore/modules/unit-testing/) module provides the capabilities to verify if your [microflow](/refguide/microflows/) logic and your custom Java code works as expected.  
 The Unit Testing module provides a user-friendly interface to manage and run unit tests that are created by using microflows, as well as unit tests that are by created using JUnit.
 
 This how-to teaches you how to do the following:
 
 * Set up the Unit Testing module
-* Unit-test a microflow
+* How to unit-test a microflow
 
 ## Prerequisites
 
@@ -104,9 +103,9 @@ To create a sample microflow for testing, follow these steps:
 
     {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/microflows/testing/promote-microflow.png" alt="A view of the sample Promote microflow" max-width=80% >}}
 
-### Creating a Unit Test Microflow
+### Creating a Unit Test
 
-This section describes how to create a microflow test for the sample microflow described in the [Creating a Sample Microflow for Testing](#sample-microflow) section above. In a real-life scenario, the steps below may be different, depending on the microflow that you want to test. For guidelines on creating unit test microflows, see [Creating Microflow Unit Tests](/appstore/modules/unit-testing/#creating-microflow-unit-tests).
+This section describes how to create a microflow-based unit test for a sample microflow described in the [Creating a Sample Microflow for Testing](#sample-microflow) section above. In a real-life scenario, the steps below may be different, depending on the microflow that you want to test. For guidelines on creating unit test microflows, see [Creating Unit Tests for Microflows](/appstore/modules/unit-testing/#creating-microflow-unit-tests).
 
 {{% alert color="info" %}}As a best practice, do not test every microflow in your application. Instead, test your most essential microflows.{{% /alert %}}
 
