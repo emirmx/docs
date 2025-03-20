@@ -11,9 +11,10 @@ The [Unit Testing](https://marketplace.mendix.com/link/component/390/) module en
 
 ### Dependencies
 
-[Atlas Core](https://marketplace.mendix.com/link/component/117187/)
-[Atlas Web Content](https://marketplace.mendix.com/link/component/117183/)
-[Data Widgets](https://marketplace.mendix.com/link/component/116540/)
+* [Accordion](https://marketplace.mendix.com/link/component/117895/)
+* [Atlas Core](https://marketplace.mendix.com/link/component/117187/)
+* [Atlas Web Content](https://marketplace.mendix.com/link/component/117183/)
+* [Data Widgets](https://marketplace.mendix.com/link/component/116540/)
 
 {{% alert color="info" %}}
 For module version 9.1.0, the [Community Commons](/appstore/modules/community-commons-function-library/) module is required as a dependency. This dependency has been removed in module version 9.2.0.
