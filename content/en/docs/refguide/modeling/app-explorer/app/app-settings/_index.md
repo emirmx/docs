@@ -243,7 +243,7 @@ Default: *depends on the version of Mendix used to create the app:*
 
 ### SSL Certificate Algorithm
 
-Choose whether to use **PKIX (recommended)** or **SunX509 (for backwards compatibility)** as the Java validator and trust manager. According to [this JDK issue](https://bugs.openjdk.org/browse/JDK-8169745), the PKIX validator/trust manager supports richer extensions and features, and the use of SunX509 is discouraged.
+Choose between **PKIX (recommended)** and **SunX509 (for backwards compatibility)** as the Java validator and trust manager. According to [this JDK issue](https://bugs.openjdk.org/browse/JDK-8169745), the PKIX validator/trust manager supports richer extensions and features, and the use of SunX509 is discouraged.
 
 {{% alert color="info" %}}
 This option was added in Mendix version 10.21.0.
