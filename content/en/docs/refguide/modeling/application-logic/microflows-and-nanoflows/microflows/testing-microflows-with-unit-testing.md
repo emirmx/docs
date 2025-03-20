@@ -25,7 +25,7 @@ Before starting this how-to, make sure you have completed the following prerequi
 
     | Component | Version Used in This How-to |
     | --- | --- |
-    | [Unit Testing](/appstore/modules/unit-testing/) | 9.5.1 |
+    | [Unit Testing](/appstore/modules/unit-testing/) | 9.6.0 |
 
     {{% alert color="info" %}}All the images, names, and steps in this how-to are based on the Marketplace component versions listed above. When using later versions of this content, images or names on your screen may be different than shown in this how-to.{{% /alert %}}
 
@@ -52,16 +52,16 @@ To set up the unit testing module and run the example tests, follow these steps:
 
     {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/microflows/testing/select-UnitTestOverview-microflow.png" alt="Selecting the UnitTestOverview microflow" max-width=60% >}}
 
-11. Click **OK**.
+11. Click **Select**.
 12. Run the app locally.
 13. Go to `http://localhost:8080/index.html`.
 14. In the navigation pane, click **UnitTestOverview**.
 
     The app shows the **UnitTesting** page, as in the following image:
 
-    {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/microflows/testing/UnitTesting-page.png" alt="A view of the UnitTesting page and default tests" max-width=100% >}}
+    {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/microflows/testing/unit-testing-overview.png" alt="A view of the UnitTesting page and default tests" max-width=100% >}}
 
-    You can use this page to execute unit tests, or to reset the test status back to not executed. Use the left-side navigation pane to select a module that contains unit tests. In this scenario, **UnitTesting** is the only module that contains unit tests. 
+    You can use this page to execute unit tests, or to reset the test status back to not executed. Use the left-side navigation pane to select a module that contains unit tests. In this scenario, **UnitTesting** is the only module that contains unit tests.
 
 15. Ensure that the **Rollback microflow tests after execution** checkbox is selected.
 
@@ -106,15 +106,9 @@ To create a sample microflow for testing, follow these steps:
 
 ### Creating a Unit Test Microflow
 
-This section describes how to create a microflow test for the sample microflow described in the [Creating a Sample Microflow for Testing](#sample-microflow) section above. In a real-life scenario, the steps below may be different, depending on the microflow that you want to test. If you need to adapt the microflow test to your requirements, bear in mind the following considerations:
+This section describes how to create a microflow test for the sample microflow described in the [Creating a Sample Microflow for Testing](#sample-microflow) section above. In a real-life scenario, the steps below may be different, depending on the microflow that you want to test. For guidelines on creating unit test microflows, see [Creating Microflow Unit Tests](/appstore/modules/unit-testing/#creating-microflow-unit-tests).
 
-* The test microflow name must start with *Test_* or *UT_* (case-insensitive), for example *Test_RegisterTrainee*.
-* The microflow should have no input arguments.
-* The result type must be set to one of the following types:
-    * **Boolean** – For this result type, a *true* result means that the test succeeded, while a *false* result means that the test failed.
-    * **String** – For this result type, any non-empty string indicates a failed test.
-* As a best practice, do not test every microflow in your application. Instead, test the most used or most complex microflows.
-* You can create a Setup and TearDown microflow in each module. The Setup microflow is invoked once before each test run, and the TearDown microflow is invoked once after each test run, regardless of whether the test run consists of one or multiple unit tests.
+{{% alert color="info" %}}As a best practice, do not test every microflow in your application. Instead, test your most essential microflows.{{% /alert %}}
 
 To create a sample test microflow, follow these steps:
 
@@ -137,19 +131,23 @@ To create a sample test microflow, follow these steps:
 
     {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/microflows/testing/call-promote-microflow.png" alt="A microflow call activity with Employee as the parameter" max-width=70% >}}
 
-10. To test if the employee is promoted to the right level, add a **Microflow Call** activity with the following properties:
-    * **Microflow** – **UnitTesting.AssertTrue1**
-    * **Parameter** – **ValueToAssert**
-    * **Argument** –*$NewEmployee/Level = MyFirstModule.Level.Medior*
-11. Right-click the **AssertTrue1** activity that you created. 
+10. To test if the employee is promoted to the right level, add an **Assert using expression** activity with the following properties:
+    * **Name** – *‘Promoted to Medior?’*
+    * **Expression** – *$NewEmployee/Level = MyFirstModule.Level.Medior*
+    * **FailureMessage** – *'Expected employee level to be Medior. Actual value: ' + getCaption($NewEmployee/Level)*
+    * **StopOnFailure** - *False*
+
+    {{% alert color="warning" %}}The **StopOnFailure** option determines if the test should stop or continue in case the assertion fails. This gives you the option to still verify other assertions. Note that a failed assertion will always result in a failed test.{{% /alert %}}
+
+11. Right-click the **Assert using expression** activity that you created. 
 12. Select **Edit caption**, and then enter *Promoted to Medior?* for the new caption.
-13. To provide more information about test results for failed tests, call the **ReportStep** microflow by doing the following steps:
-    1. Add a new **Microflow call** activity between **Create Employee** and **Promote**
-    2. Select **UnitTesting.ReportStep** as the microflow.
-    3. Set the argument of the **Message** parameter to string *'Employee created'*.
-    4. Add a new **Microflow call** activity between **Promote** and **Promoted to Medior?**.
-    5. Select **UnitTesting.ReportStep** as the microflow.
-    6. Set the argument of the **Message** parameter to string *'Employee promoted'*.
+13. To provide more information about test results for failed tests, add a **Report step** activity by doing the following steps:
+    1. Add a new **Report step** activity between **Create Employee** and **Promote**
+    2. Set the argument of the **Message** parameter to string ‘Employee created’.
+    3. Right-click the activity, select **Edit caption**, and then enter Employee created for the new caption.
+    4. Add a new **Report step** activity between **Promote** and **Promoted to Medior?**.
+    5. Set the argument of the **Message** parameter to string ‘Employee promoted’.
+    6. Right-click the activity, select **Edit caption**, and then enter ‘Employee promoted’ for the new caption.
 14. Connect the activities, as shown in the following figure:
 
     {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/microflows/testing/promote-to-medior.png" alt="A view of the sample unit test microflow" max-width=100% >}}
@@ -160,13 +158,15 @@ To create a sample test microflow, follow these steps:
 16. In each of the new microflows, make edits to reflect the employee level for that microflow. In the **Test_PromoteEmployeeToSenior** microflow:
     * Set the value of the **Level** member to *MyFirstModule.Level.Medior* for the **Create Employee** activity.
     * Set the following values for the **Promoted to Medior?** activity: 
-        * **Caption** – *Promoted to Senior?*
-        * **Argument** – *$NewEmployee/Level = MyFirstModule.Level.Senior*
+        * **Name** – *Promoted to Senior?*
+        * **Expression** – *$NewEmployee/Level = MyFirstModule.Level.Senior*
+        * **FailureMessage** – *'Expected employee level to be Senior. Actual value: ' + getCaption($NewEmployee/Level)*
 17. In the **Test_EmployeeStillSenior** microflow:
     * Set the value of the **Level** member to *MyFirstModule.Level.Senior* for the **Create Employee** activity.
     * Set the following values for the **Promoted to Medior?** activity: 
-        * **Caption** – *Employee still Senior?*
-        * **Argument** – *$NewEmployee/Level = MyFirstModule.Level.Senior*
+        * **Name** – *Employee still Senior?*
+        * **Expression** – *$NewEmployee/Level = MyFirstModule.Level.Senior*
+        * **FailureMessage** - *'Expected employee level to be Senior. Actual value: ' + getCaption($NewEmployee/Level)*
 18. Run the app locally and view it. 
 19. In the left-side navigation pane, click **UnitTestOverview > MyFirstModule**.
 20. Verify that the **Rollback microflow tests after execution** checkbox is selected.
