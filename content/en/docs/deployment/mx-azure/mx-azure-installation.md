@@ -60,7 +60,7 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
 
 8. After the preflight check completes, click **Next**.
 
-9. In the **Provision** screen, add the custom tags if required and review the information in the **Advanced Settings** section, and adjust any settings as needed. Note that selecting higher service tiers will incur higher costs. The **Postgress Compute SKU** and **Postgress Storage Performance Tier for IOPS** cannot currently be adjusted.
+9. In the **Provision** screen, add the custom tags if required and review the information in the **Advanced Settings** section, and adjust any settings as needed. Note that selecting higher service tiers will incur higher costs.
 
     {{% alert color="info" %}}If you plan to use [virtual network peering](#network-peering), you must set the **Load Balancer Type** to **Private (Internal)**.{{% /alert %}}
 
