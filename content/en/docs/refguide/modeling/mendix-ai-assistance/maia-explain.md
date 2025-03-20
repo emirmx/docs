@@ -20,9 +20,9 @@ Maia Explain is an AI-powered tool that helps you easily understand a microflow 
 
 ## Using Maia Learn
 
-To enable Maia Explain, go to **Edit** > **Preferences** > **New Features** and select **Enable Maia Explain (experimental)**.
+Maia Explain is enabled by default. If you want to diable this feature, go to **Edit** > **Preferences** > **New Features** and clear the **Enable Maia Explain (experimental)** checkbox.
 
-Once enabled, there are two ways to access Maia Explain:
+There are two ways to launch Maia Explain:
 
 * In the toolbar of the microflow or nanoflow editor, click **Explain**.
 * In the App Explorer, right-click a microflow or a nanoflow to open its context menu, and click **Explain**.
