@@ -16,6 +16,7 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 
 * We have introduced a Custom Tags option in the Initialization flow.
 * We have resolved an issue where a deleted cluster manager could still access the cluster in the Mendix on Azure portal after being removed from the Private Cloud portal for a specific cluster.
+* The Postgress Compute SKU and Postgress Storage Performance Tier for IOPS can now be configured in the Initialization flow.
 
 ### Release date: March 3, 2025
 
