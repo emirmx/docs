@@ -14,6 +14,12 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 ## 2025
 
+### March 18, 2025
+
+#### New Features
+
+* Software Composition is now generally available. It helps you easily manage security risk by providing visibility and insights into the dependencies of each application across your application landscape. You can access the feature in [Control Center](/control-center/software-composition/) and [Apps navigation pane](/developerportal/deploy/software-composition/).
+
 ### February 13, 2025
 
 #### New Features
