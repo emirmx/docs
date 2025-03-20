@@ -16,7 +16,7 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 #### Portal Improvements
 
-* We have added an option which allows a Technical Contact to set the [Environment purpose](developerportal/deploy/private-cloud-deploy/#environment-purpose) of the environments. Setting the purpose of your environment does not affect its operational state. We strongly recommend setting this field, as future features may be tailored to specific environment purposes.
+* We have added an option which allows a Technical Contact to set the [environment purpose](/developerportal/deploy/private-cloud-deploy/#environment-purpose). Setting the purpose of your environment does not affect its operational state. We strongly recommend setting this field, as future features may be tailored to specific environment purposes.
 * We have renamed **Development mode** to **Development DTAP mode** in the UI.
 
 #### Deploy API
