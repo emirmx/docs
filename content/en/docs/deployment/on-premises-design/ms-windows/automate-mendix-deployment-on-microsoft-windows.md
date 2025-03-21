@@ -169,6 +169,17 @@ $level = 'Log level which needs to be assigned'
 Set-MxLogLevel $appName -SubscriberName $subscriberName -Level $level
 ```
 
+### Sample Script - Create a Windows Service for Mendix app
+
+The following script example demonstrates how to create a Windows service for a Mendix app.
+
+```text
+$appName = 'Name of Mendix app'
+
+# Create new Windows service
+Install-MxService $appName
+```
+
 ## Troubleshooting
 
 If you encounter any issues while automating Mendix deployment on Windows using cmdlets, use the following troubleshooting tips to help you solve them.
