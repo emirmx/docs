@@ -45,7 +45,7 @@ Because they don't have association tables, using direct associations can bring 
 You cannot replace association tables with direct associations for all types of association in your app. Direct associations have the following limitations: 
 
 * You can only use direct associations for one-to-many (1-*, default owner) and one-to-one (1-1, owner both) associations – you cannot use it for many-many associations.
-* Direct associations are only allowed between persistable entities or between a persistable entity and a persistable external entity. You cannot use them on view entities, non-persistable entities, or between external entities.
+* Association storage only applies to associations stored in the local database, that is associations between persistable entities or between a persistable entity and a persistable external entity. Associations from view entities, non-persistable entities, or external entities are not stored in the local database, so they do not have an association storage option.
 
 ## Enabling Direct Associations
 
