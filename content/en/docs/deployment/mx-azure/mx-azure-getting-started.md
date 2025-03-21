@@ -19,7 +19,7 @@ To adopt Mendix on Azure, you need to have the following:
 * As an optional best practice, add multiple cluster manager to your clusters
 * An Azure account with the following permissions:
     * Permission to grant admin consent on the Mendix on Azure portal app registration
-    * Owner or Contributor role assigned on the target subscription level
+    * Owner role assigned on the target subscription
 
 {{% alert color="info" %}} To comply with the principle of least privilege, you can also create a custom role for the Mendix Operator instead of assigning the Owner or Contributor role. For the required permissions, see below:
 

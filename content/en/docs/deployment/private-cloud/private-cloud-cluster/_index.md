@@ -194,13 +194,13 @@ kind: OperatorConfiguration
 # omitted lines for brevity
 # ...
 spec:
-  baseOSImageTagTemplate: 'ubi8-1-jre{{.JavaVersion}}-entrypoint'
+  baseOSImageTagTemplate: 'ubi9-1-jre{{.JavaVersion}}-entrypoint'
 ```
 
 At the moment, the `baseOSImageTagTemplate` can be set to one of the following values:
 
-* `ubi8-1-jre{{.JavaVersion}}-entrypoint` - to use Red Hat UBI 8 Micro images; this is the default option.
-* `ubi9-1-jre{{.JavaVersion}}-entrypoint` - to use Red Hat UBI 9 Micro images; this option can be used to use a newer OS and improve security scores.
+* `ubi8-1-jre{{.JavaVersion}}-entrypoint` - to use Red Hat UBI 8 Micro images; this option can be used for some cases where backward compatibility is needed.
+* `ubi9-1-jre{{.JavaVersion}}-entrypoint` - to use Red Hat UBI 9 Micro images; this is the default option.
 
 {{% alert color="info" %}}
 
@@ -964,6 +964,10 @@ In addition to internal Mendix Runtime paths, `/tmp` is mounted for any temporar
 If your app works without issues when read-only root filesystem is enabled, it is best to enable it wherever possible. We recommend using a non-production environment to validate that your app keeps working correctly with a read-only RootFS.
 {{% /alert %}}
 
+{{% alert color="warning" %}}
+Enabling the `runtimeReadOnlyRootFilesystem` option causes the `model/resources` directory to be empty. If your app (or a Marketplace module such as SAML) uses the `model/resources` directory for resources such as configuration data, consider moving those resources to another location (for example, `model/userlib`) or loading them from FileDocument entities.
+{{% /alert %}}
+
 ### GKE Autopilot Workarounds {#gke-autopilot-workarounds}
 
 In GKE Autopilot, one of the key features is its ability to automatically adjust resource settings based on the observed resource utilization of the containers. GKE Autopilot verifies the resource allocations and limits for all containers, and makes adjustments to deployments when the resources are not as per its requirements.
@@ -1477,7 +1481,7 @@ Enabling the **External Secrets Store** option allows users to retrieve the foll
 If you want to use the secret store for custom runtime settings or MxApp constants, the Mendix Operator must be in version 2.10.0 or later. Database plan, storage plan, and MxAdmin password are available from version 2.9.0 onwards.
 {{% /alert %}}
 
-Enabling the Development Mode option will allow users to change the type of an environment to Development.
+Enabling the Development DTAP Mode option allows users to change the type of an environment to Development. By default, the DTAP mode is set to Production mode. If this option is enabled, the type of an environment can be changed to Development mode on the **Environment Details** page.
 
 If PCLM is configured, the default product type for Runtime licenses is set to **standard**. However, if the product type for PCLM Runtime licenses in the license server differs from **Standard**, you can customize it here. To check the product type of the Runtime license, navigate to the **PCLM Statistics** page, and then select **Runtime** in the **Select type** field.
 

@@ -12,6 +12,31 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2025
 
+### March 20, 2025
+
+#### Portal Improvements
+
+* We have added an option which allows a Technical Contact to set the [environment purpose](/developerportal/deploy/private-cloud-deploy/#environment-purpose). Setting the purpose of your environment does not affect its operational state. We strongly recommend setting this field, as future features may be tailored to specific environment purposes.
+* We have renamed **Development mode** to **Development DTAP mode** in the UI.
+
+#### Deploy API
+
+* We have fixed an issue where users with the Technical Contact role could not create or manage environments through API.
+* We have fixed an issue where it was not possible to retrieve the environments with the *Get multiple environment manifest* API if the environment internal ID was longer than 8 characters.
+
+### March 10, 2025
+
+#### License Manage CLI v0.10.1
+
+* We have updated this component to use the latest dependency versions in order to improve security score ratings for container images. This update will allow us to address CVE-2024-45337 and CVE-2024-45338.
+
+#### Mendix Operator v2.21.1 {#2.21.1}
+
+* We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
+* For new installations, the Operator now uses ubi9 as the base image for Mendix apps. Existing installations will keep their configuration and stay on ubi8. For more information on base image versions, see the [Runtime Base Image](/developerportal/deploy/private-cloud-cluster/#runtime-base-image) section.
+* We have fixed a regression that caused the `model/resources` directory to appear empty and caused problems with some Marketplace modules, such as SAML (Ticket 242648).
+* Upgrading to Mendix Operator v2.21.0 from a previous version now restarts environments managed by that version of the Operator. Environments with 2 or more replicas and a **PreferRolling** update strategy are restarted without downtime.
+
 ### March 6, 2025
 
 #### Portal Improvements
@@ -39,6 +64,12 @@ For information on the current status of deployment to Mendix for Private Cloud 
 #### Important Upgrade Information
 
 With the introduction of ephemeral storage requests and limits, building an app requires at least 2 GB of ephemeral storage available on the Kubernetes node. If your nodes do not have enough temporary storage, the build pods cannot start and their status remains **Pending**. To resolve this issue, you can lower the values for `ephemeral-storage` in the [buildResources](/developerportal/deploy/private-cloud-cluster/#resource-definition-ocm) configuration.
+
+#### Known Issue
+
+This issue has been fixed in Mendix Operator [version 2.21.1](#2.21.1).
+
+* The `model/resources` directory is empty when starting the app, causing issues with some Marketplace modules (such as SAML) that use that location to store configuration data and other resources.
 
 ### February 12, 2025
 
