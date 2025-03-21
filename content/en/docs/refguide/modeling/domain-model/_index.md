@@ -77,10 +77,10 @@ Take a look at the following domain model.
 
 #### Customer Entity
 
-Objects of the entity `Customer` are stored in the table `module$customer` which is shown below. The `system$owner` and `system$changedby` columns are added to tables when indicated in the entity definition and contain the IDs of objects from the `System.User` entity (the `User` entity in the `System` module domain model). This indicates the end-user who owns, and the one which last changed, each object.
+Objects of the entity `Customer` are stored in the table `module$customer` which is shown below. The `system$owner` and `system$changedby` columns are added to tables when indicated in the entity definition and contain the IDs of objects from the `System.User` entity (the `User` entity in the `System` module domain model). This indicates the end-user who owns, and the one which last changed, each object. The `NameLength` attribute is calculated and is not stored in the table.
 
 | id | createddate | changeddate | system$owner | system$changedby | fullname |
-| --- | --- | --- | --- | --- | --- |
+| --: | --- | --- | --: | --: | --- |
 | 1 | 2006-10-24 08:10:45.053 | 2009-11-27 09:56:45.099 | 66 | 29 | Steve Jobs |
 | 3 | 2007-09-30 09:56:45.099 | 2008-04-01 08:10:45.053 | 66 | 34 | Bill Gates |
 
@@ -89,7 +89,7 @@ Objects of the entity `Customer` are stored in the table `module$customer` which
 The association `Order_Customer` is implemented through an association table and is stored in the table `module$order_customer` which is shown below. Both columns contain IDs of the associated objects.
 
 | module$orderid | module$customerid |
-| --- | --- |
+| --: | --: |
 | 8 | 1 |
 | 5 | 3 |
 
@@ -98,9 +98,24 @@ The association `Order_Customer` is implemented through an association table and
 The entity `Order` is stored in the table `module$order` which is shown below. It is similar to the table of the entity `Customer`. However no system attributes have been defined in the domain model and so they are not stored in the table.
 
 | id | number | date |
-| --- | --- | --- |
+| --: | --: | --- |
 | 5 | 5 | 2009-11-27 09:56:45.099 |
 | 8 | 8 | 2008-04-01 08:10:45.053 |
+
+#### OrderLine Entity
+
+{{% alert color="info" %}}
+The description of the `OrderLine` includes direct associations, which were introduced in Mendix 10.21.0. See [Association Storage Options](/refguide/association-storage/) for more information.
+{{% /alert %}}
+
+The entity `OrderLine` is stored in the table `module$orderline` which is shown below. It is similar to the table of the entity `Order`. `Orderline` also has an association, `OrderLine_Order` associating each order line with the order it belongs to. This is implemented as a direct association, so the information is stored in the `module$orderline` table, as shown below.
+
+| id | module$orderline_order | productid | quantity |
+| --: | --: | --- | --: |
+| 22 | 5 | X23592 | 1 |
+| 23 | 5 | X23613 | 7 |
+| 55 | 8 | Z97D22 | 2 |
+| 57 | 8 | A49TS3 | 2 |
 
 ## Read More
 
