@@ -102,11 +102,11 @@ It is possible to prepare the prerequisite installers beforehand, so that the Me
 5. Rename the following dependencies:
     * Microsoft .NET Desktop Runtime
         * For Studio Pro versions 9.0.0 through 9.24.33, rename the Microsoft .NET Desktop Runtime 6.0.x
-            * On x64, rename *windowsdesktop-runtime-6.0.35-win-x64.exe* to *windowsdesktop-runtime-6.  0-x64.exe*
-            * On ARM64, rename *windowsdesktop-runtime-6.0.35-win-arm64.exe* to *windowsdesktop-runtime-6.  0-arm64.exe*
+            * On x64, rename *windowsdesktop-runtime-6.0.35-win-x64.exe* to *windowsdesktop-runtime-6.0-x64.exe*
+            * On ARM64, rename *windowsdesktop-runtime-6.0.35-win-arm64.exe* to *windowsdesktop-runtime-6.0-arm64.exe*
         * For Studio Pro versions 9.24.34 and above, rename the Microsoft .NET Desktop Runtime 8.0.x
-            * On x64, rename *windowsdesktop-runtime-8.0.14-win-x64.exe* to *windowsdesktop-runtime-8.  0-x64.exe*
-            * On ARM64, rename *windowsdesktop-runtime-8.0.14-win-arm64.exe* to *windowsdesktop-runtime-8.  0-arm64.exe*
+            * On x64, rename *windowsdesktop-runtime-8.0.14-win-x64.exe* to *windowsdesktop-runtime-8.0-x64.exe*
+            * On ARM64, rename *windowsdesktop-runtime-8.0.14-win-arm64.exe* to *windowsdesktop-runtime-8.0-arm64.exe*
     * The Java Development Kit 11 or 17 (x64) *msi* (for example, *OpenJDK17U-jdk_x64_windows_hotspot_17.0.10_7.msi*) to one of the following, depending on the Studio Pro version:
         * *adoptiumjdk_17_x64.msi* – for versions 9.24.16 and above
         * *adoptiumjdk_11_x64.msi* – for versions between 9.14.0 and 9.24.15 
