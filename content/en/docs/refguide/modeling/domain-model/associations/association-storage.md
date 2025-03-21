@@ -57,8 +57,6 @@ Enabling direct associations is simple, and has the following features:
 
 For more information, see the [Association Storage](/refguide/association-properties/#storage) section of *Association Properties*.
 
-{{% todo %}}Do we want to say this without a firm timeline?{{% /todo %}}
-
 ## Before Switching to Direct Associations{#before}
 
 Before deciding to switch from an association table to a direct association, bear the following in mind:
