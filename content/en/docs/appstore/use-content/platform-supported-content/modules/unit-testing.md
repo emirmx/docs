@@ -32,7 +32,7 @@ For module versions below 9.1.0, the [Object Handling](/appstore/modules/object-
 
 #### Java dependencies
 
-The following Java dependencies are shipped with the module. For Mendix versions above 10.3.0, these dependencies are obtained and managed using [Managed Dependencies](/refguide/managed-dependencies/).
+The following Java dependencies are shipped with the module. For Mendix versions 10.3.0 and above, these dependencies are obtained and managed using [Managed Dependencies](/refguide/managed-dependencies/).
 
 * *junit-4.13.1.jar*
 * *commons-io-2.11.0.jar*
