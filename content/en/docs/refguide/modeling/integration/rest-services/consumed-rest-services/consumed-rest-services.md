@@ -1,8 +1,10 @@
 ---
-title: "Consumed REST Services"
-url: /refguide/consumed-rest-services/
+title: "Consumed REST Service"
+url: /refguide/consumed-rest-service/
 description: "Describes the configuration and usage of the new Consumed REST service document."
 weight: 5
+aliases:
+    - /refguide/consumed-rest-services-beta
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details. 
 ---
 
@@ -46,6 +48,7 @@ Download [Studio Pro](https://marketplace.mendix.com/link/studiopro/) and add th
 
 1. Right-click the module you want to add the Consumed REST Service document to.
 2. Select **Add other** > **Consumed REST service**. 
+    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/add-consumed-rest-service.png" width="500" class="no-border" >}}
 3. Name the service.
 4. Under **Add request(s)**, choose whether you want to add your request **Manually**, or **From OpenAPI/Swagger contract**.  
 
@@ -93,15 +96,11 @@ You can visualize your request in the **Response** tab, then use the response to
 
 ### Import from OpenAPI/Swagger Contract {#open-api-import}
 
-Once the OpenAPI/Swagger contract has been imported, you see the following view:
-
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/xxx.png" class="no-border" >}}
-
 To add more requests from your existing contract, click **Add Request**. Select the additional requests you want to add to the document, then click **Add**.
 
-To create a new blank request, click **New**.
+{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/add-request.png" class="no-border" >}}
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/xxx.png" class="no-border" >}}
+To create a new blank request, click **New**.
 
 ### Authentication Methods {#authentication}
 
