@@ -19,6 +19,36 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
+### March 18, 2025
+
+#### New Features
+
+* Software Composition is now generally available. It helps you easily manage security risk by providing visibility and insights into the dependencies of each application across your application landscape. You can access the feature in [Control Center](/control-center/software-composition/) and [Apps navigation pane](/developerportal/deploy/software-composition/).
+
+### March 13, 2025
+
+#### Fixes
+
+* We fixed an issue in [Mini Surveys](/developerportal/app-insights/mini-surveys/#view-export-responses) where XLSX exports included empty responses.
+
+### February 6, 2025
+
+#### New Features
+
+* [Mendix AI Assistance Chat (Maia Chat)](/developerportal/global-navigation/#maia-chat), previously available in Studio Pro, is now accessible in Mendix Portal.
+
+### January 29, 2025
+
+#### Fixes
+
+* We fixed an issue where, after updating a role, some companies could not edit the role further.
+
+### January 26, 2025
+
+#### New Features
+
+* We have migrated all companies to use [Centralized Roles](/control-center/roles-and-permissions/#centralized-project-roles). 
+
 ### January 5, 2025
 
 #### Deprecations
@@ -92,7 +122,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 #### Improvements
 
-* We centralized the management of team project roles in Control Center. This improves access governance across all Mendix projects and streamlines the setup process for app access. You can [migrate your project roles](/control-center/roles-and-permissions/#migrate-centralized-roles) to the centralized company-level project roles to benefit from this improvement. We expect you to complete the migration by January 1, 2025.
+* We centralized the management of team project roles in Control Center. This improves access governance across all Mendix projects and streamlines the setup process for app access. You can migrate your project roles to the centralized company-level project roles to benefit from this improvement. We expect you to complete the migration by January 1, 2025.
 * We made it possible for you to add external team members to your app via the [Projects API](https://docs.mendix.com/apidocs-mxsdk/apidocs/projects-api/). This mimics the functionality that is already in place through the user interface.
 
 #### Fixes
