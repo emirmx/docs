@@ -10,15 +10,13 @@ description: "A tutorial that describes how to build your own GenAI connector"
 
 If you would like to create your own connection to the LLM model of your choice but would like to use the chat UI capabilities we have developed in our [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/) module using the entities in [GenAICommons](/appstore/modules/genai/genai-for-mx/commons/), then you are at the right document to find out how you can get started with building your own GenAI Commons connector.
 
-The practical advantages of building your own GenAI Commons connector are numerous. First, you can reuse all of our ConversationalUI components, allowing you to use the already existing chat interface and related functionalities. Second, starting from our starter apps is straightforward, allowing you to quickly set up and begin using the functionalities our different starter apps provide. These advantages not only save you valuable development time but also provide more time to customize the already existing functionalities. This guide will walk you through the process, ensuring you can seamlessly integrate your preferred LLM while leveraging our robust and user-friendly chat interface components. By following the steps outlined here, you’ll be able to create a custom connector that fits your specific needs, all while maintaining the high-quality user experience provided by our platform.
+The practical advantages of building your own GenAI Commons connector are numerous. First, you can reuse all of our ConversationalUI components, allowing you to use the already existing chat interface and related functionalities. Second, starting from our starter apps is straightforward, allowing you to quickly set up and begin using the functionalities our different starter apps provide. Third, switching providers in your existing apps can be done very easily. These advantages not only save you valuable development time but also provide more time to customize the already existing functionalities. This guide will walk you through the process, ensuring you can seamlessly integrate your preferred LLM while leveraging our robust and user-friendly chat interface components. By following the steps outlined here, you’ll be able to create a custom connector that fits your specific needs, all while maintaining the high-quality user experience provided by our platform.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-byo/byo_connector.jpg" >}}
 
 ### Prerequisites
 
 Before starting this guide, make sure you have completed the following prerequisites:
-
-* Intermediate knowledge of the Mendix platform: Familiarity with Mendix Studio Pro, microflows, and modules is required.
 
 * Basic understanding of GenAI concepts: Review the [Enrich Your Mendix App with GenAI Capabilities](/appstore/modules/genai/) page to gain foundational knowledge and become familiar with the key [concepts](/appstore/modules/genai/get-started/).
 
@@ -37,8 +35,6 @@ When developing your own GenAI Connector, there are two possible approaches:
 1. Starting from an existing connector (e.g., [OpenAIConnector](https://marketplace.mendix.com/link/component/220472)) 
 2. Building from scratch (starting from the Echo Connector) 
 
-Choosing the right approach depends on how similar your target provider's API is to OpenAI's. The best way to determine this is to inspect the API of the provider/model and compare it to OpenAI's API structure.
-
 ### Starting from the OpenAIConnector
 
 If the provider's API is the same or very similar to OpenAI's, this might be a good indicator that you can duplicate the OpenAIConnector module and make the necessary adjustments. Some logical modifications include:
@@ -47,34 +43,33 @@ If the provider's API is the same or very similar to OpenAI's, this might be a g
 - Adding additional query parameters in the URL or payload. 
 - Adapting the authentication mechanism, for example, switching from API Key to OAuth. 
 
-This approach allows you to reuse a well-structured connector, minimizing development effort while ensuring compatibility with ConversationalUI.
+This approach allows you to reuse a well-structured connector, minimizing development effort while ensuring compatibility with ConversationalUI / GenAICommons.
 
 ### Building from scratch
 
-If the provider's API differs significantly from OpenAI's, it's best to start from scratch (or from the Echo Connector found in the GenAI Showcase app). This ensures that the input and output structures are properly aligned with GenAICommons, making integration with ConversationalUI straightforward.
-A reason to take this approach might be if the provider requires a different protocol. This often means the communication structure and authentication methods will differ significantly, making it easier to build the connector from scratch rather than modifying an existing REST-based connector.
+If the provider's API differs significantly from OpenAI's, it's best to start from scratch (or from the Echo Connector found in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475)). A reason to take this approach might be if the provider requires a different protocol. This often means the communication structure and authentication methods will differ significantly, making it easier to build the connector from scratch rather than modifying an existing REST-based connector.
 
 Additionally, refer to [GenAI Commons](/appstore/modules/genai/genai-for-mx/commons/), to explore what is available out of the box, which can help you accelerate development. Pay close attention to:
 - The domain model (data structure) to see how existing entities can be reused. 
-- The "connector building" folders, which contain useful microflows and helper activities for working with different providers. 
+- The "connector building" folders, which contain useful microflows and helper activities for working the provided entities.
 
-If you would like to look inside of the GenAICommons module, you can inspect this [public repository](https://github.com/mendix/genai-showcase-app). This structured approach ensures that you can build your GenAI Connector efficiently while taking full advantage of the existing Mendix functionalities. 
+If you would like to look inside of the GenAICommons module, you can inspect this [public repository](https://github.com/mendix/genai-showcase-app).
 
 ## Build your own connector
 
 {{% alert color="info" %}}
-The echo connector is a module in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) and can be used as a starting point to build your own connector.
+The echo connector is a module in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) and can be used as a starting point to build your own connector. It contains a few example pages to configure access and models at runtime and also lays the foundation to be compatible with GenAICommons and ConversationalUI.
 {{% /alert %}}
 
 ### Chat Completions: With History
 
-In this guide, we will focus on implementing chat completions, a fundamental capability supported by most LLMs.  To make the process more practical, we will develop an example connector—an Echo Connector. This simple connector will return the same text as output that was given in the input, but it will be fully compatible with the chat capabilities of GenAICommons and ConversationalUI. During development, we will focus on the important topics that you need to pay attention to while creating your own connector. After reading along, you can startt from scratch and create your own connector or find the finished result in the GenAI Showcase app and modify it to fit your use case. 
+In this guide, we will focus on implementing chat completions, a fundamental capability supported by most LLMs.  To make the process more practical, we will develop an example connector—an Echo Connector. This simple connector will return the same text as output that was given in the input, but it will be fully compatible with the chat capabilities of GenAICommons and ConversationalUI. During development, we will focus on the important topics that you need to pay attention to while creating your own connector. After reading along, you can start from scratch and create your own connector or find the finished result in the GenAI Showcase app and modify it to fit your use case. 
 
-To enable chat completion, the key microflow to understand is `ChatCompletions_WithHistory` that is in the GenAICommons module. 
+To enable chat completion, the key microflow to understand is `ChatCompletions_WithHistory` that is in the GenAICommons module. As this module is protected, you cannot see the inner logic:
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-byo/ChatCompletions_WithHistory.png" >}}
 
-This microflow plays a crucial role because it is the core process used across all our connectors and the ConversationalUI-based chat interface makes use of it. To properly integrate with it, the microflow needs to supply two essential input objects:
+This microflow plays a crucial role because it derives and calls the microflow from the passed DeployedModel and ensures that the module is not dependent on the individual connectors. This is especially important for modules like ConversationalUI which should work with any connector that applies the same principles. To properly integrate with it, the microflow needs to supply two essential input objects:
 - [DeployedModel](/appstore/modules/genai/genai-for-mx/commons/#deployed-model) - Represents the specific model being used and determines which connector (microflow) is being called
 - [Request](/appstore/modules/genai/genai-for-mx/commons/#request) - Contains the details of the user's input and conversation history as well as other configurations.
 
@@ -91,23 +86,23 @@ The Response entity includes key attributes such as:
 - Messages - A single message that the model generated. 
 - Tool Call - A request from the model to call one or multiple tool(s), for example a microflow. Available tools are defined in the request via the [ToolCollection](/appstore/modules/genai/genai-for-mx/commons/#toolcollection).
 
-Since different providers return responses in different formats, when implementing a new connector, the focus should be on mapping the provider’s response to match the Response entity’s structure. 
+Since different providers return responses in different formats, when implementing a new connector, the focus should be on mapping the provider’s response to match the Response entity’s structure. If it is required to have additional attributes on the Request or Response entity, we recommend to extend those entites in your own connector by either creating an association or a specialization. For examples, you can find both patterns being applied in the OpenAIConnector (association to Request) and AmazonBedrockConnector (specialiation of Response).
 
 ### Deployed Model
 
 #### Specialization
 
-The Request and Response objects are crucial for utilizing the chat functionalities provided to users in ConversationalUI. However, in order to correctly call and interact with an LLM model, we also need to configure the model we want to communicate with properly. This is where the DeployedModel entity comes into play. It represents a GenAI model that can be invoked by the Mendix application, ensuring that the connector knows which microflow to call and how to communicate with the model. Additionally, it includes a set of generic attributes that are commonly found across different LLM providers. However, since each provider may have additional model-specific details, DeployedModel does not cover all necessary attributes. To accommodate this, you will need to create a new entity within your connector that inherits from the GenAICommons.DeployedModel entity. This allows you to extend it with any provider-specific attributes required for your integration.
+The Request and Response objects are crucial for utilizing the chat functionalities provided to users in ConversationalUI. However, in order to correctly call and interact with an LLM, we also need to configure the model we want to communicate with properly. This is where the DeployedModel entity comes into play. It represents a GenAI model that can be invoked by the Mendix application, ensuring that the connector knows which microflow to call and how to communicate with the model. Additionally, it includes a set of generic attributes that are commonly found across different LLM providers. However, since each provider may have additional model-specific details, DeployedModel does not cover all necessary attributes. To accommodate this, you will need to create a new entity within your connector that inherits from the GenAICommons.DeployedModel entity. This allows you to extend it with any provider-specific attributes required for your integration.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-byo/DeployedModel_Entity.png" >}}
 
-For our Echo Connector, we create a specialization from DeployedModel to ensure it includes any additional attributes needed to function properly. 
+For our Echo Connector, we create a specialization from DeployedModel to ensure it includes any additional attributes needed to function properly (see below).
 
 #### Authentication
 
 Your model will require an authentication method based on your provider’s requirements. Since authentication mechanisms vary between providers, you need to ensure your connector properly handles credentials and access tokens. This might involve API keys, OAuth tokens, or other authentication strategies depending on the provider you are integrating with.
 
-To facilitate seamless model invocation, it's best to create an entity to store authentication details. We associated a Configuration entity with the specialized EchoDeployedModel, allowing users to manage credentials separately from the deployed model itself. The specific attributes needed in this Configuration entity will depend on the requirements of your model and its authentication method. A basic example can look like this:
+To facilitate seamless model invocation, it's best to create an entity to store authentication details. We associated a Configuration entity with the specialized `EchoDeployedModel`, allowing users to manage credentials separately from the deployed model itself. The specific attributes needed in this Configuration entity will depend on the requirements of your model and its authentication method. A basic example can look like this:
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-byo/EchoConnector_DomainModel.png" >}}
 
@@ -115,9 +110,9 @@ When saving sensitive data for the authetication method, please do not forget to
 
 #### Microflow
 
-The `Microflow` attribute, which exists in the generic DeployedModel entity, needs to be set when creating EchoDeployedModel objects. This attribute is crucial because it determines which microflow will be executed when invoking the model. The `ChatCompletions_WithHistory` microflow executes the correct microflow based on the DeployedModel type and its Microflow attribute. This design ensures that the action remains provider-agnostic, allowing different models to be integrated as long as they adhere to the same request-in and response-out interface. 
+The `Microflow` attribute, which exists in the generic DeployedModel entity, needs to be set when creating (or alternatively saving) DeployedModel objects. This attribute is crucial because it determines which microflow will be executed when invoking the `ChatCompletions_WithHistory` microflow because it executes the correct microflow based on this attribute. This design ensures that the action remains provider-agnostic, allowing different models to be integrated as long as they adhere to the same request-in and response-out interface. 
 
-When creating your specialized EchoDeployedModel objects, you need to set the Microflow attribute to point to the correct microflow that will handle requests for your model (in this case, the Echo model’s implementation). To set the Microflow attribute you can use the `DeployedModel_Create` or `DeployedModel_SetMicroflow` java actions in the GenAICommons module.
+When creating your specialized DeployedModel objects, you need to set the Microflow attribute to point to the correct microflow that will handle requests for your model (in this case, the Echo model’s implementation). To set the Microflow attribute you can use the `DeployedModel_Create` or `DeployedModel_SetMicroflow` java actions in the GenAICommons module.
 
 DeployedModel_Create       |  DeployedModel_SetMicroflow
 :-------------------------:|:-------------------------:
@@ -125,37 +120,23 @@ DeployedModel_Create       |  DeployedModel_SetMicroflow
 
 We need to define a microflow that will handle the request and generate a response in the expected format. This microflow will be used as the Microflow attribute for the EchoDeployedModel objects, ensuring that when an Echo model is called, it follows the same structure required for chat interactions.
 
-<!---
-The Microflow attribute in all our current connectors is set to the `GenAICommons.Request_ExecuteFromConnector` java action. This Java action automates key processes such as function calling and storing usage information out of the box. To properly keep track of your consumption, the token-related attributes in the Response object need to be set correctly. Please keep this in mind when formulating the microflow to ensure accurate usage tracking and cost monitoring.
-
-One of its input parameters is CallModelMicroflow, which is where we define the actual logic for calling the LLM. This is the microflow that directly interacts with the provider’s API or SDK, sending requests and processing responses. By customizing CallModelMicroflow, you can integrate your specific model while still leveraging the standardized execution flow provided by GenAICommons.
-
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-byo/Request_ExecuteFromConnector.png" >}}
-
-So, I have created the microflow below to be used as the Microflow attribute for the EchoDeployedModel objects.
-
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-byo/ChatCompletions_CallLLM.png" >}}
-
-And I have created the microflow below to be used as the CallModelMicroflow input parameter for the `GenAICommons.Request_ExecuteFromConnector` java action.
---->
-
-So, I have created the microflow below to be used as the Microflow attribute for the EchoDeployedModel objects. 
+The following microflow was created to be used as the Microflow attribute for the EchoDeployedModel objects: 
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-byo/EchoDeployedModel_CallLLM.png" >}}
 
-As the microflow returns a Response object, it is fully compatible with the reusable components from the GenAICommons and ConversationalUI modules. This ensures that the response can be seamlessly processed and displayed in the existing chat interfaces, without requiring any additional customization on the UI side.
+As stated above, in the EchoConnector the microflow just returns what the user had passed. In that case, we need to get the latest user message from the Request and create a Response and an assistant's message. As the microflow has the same input parameters and returns a Response object, it is fully compatible with the reusable components from the GenAICommons and ConversationalUI modules. This ensures that the response can be seamlessly processed and displayed in the existing chat interfaces, without requiring any additional customization on the UI side.
 
 {{% alert color="info" %}}
-If you would like to track the usage of your models, please look into the `GenAICommons.Usage_Create_TextAndFiles` microflow and related [documentation](/appstore/modules/genai/genai-for-mx/commons/#token-usage).
+If you would like to track the consumption usage of tokens of your models, please look into the `GenAICommons.Usage_Create_TextAndFiles` microflow and related [documentation](/appstore/modules/genai/genai-for-mx/commons/#token-usage). This microflow can be added at the end of your microflow.
 {{% /alert %}}
 
 ### Testing the echo connector
 
-To be able to test the connector you have newly created in the GenAI Showcase App, you need to first set up the configuration and your deployed models. How you decide to set this up is completely up to you, however to be able to test the Echo Connector, we have set up some UI components that let's you to set up a configuration and creates example EchoDeployedModel objects that will be selectable in the Chat UI examples of the GenAI Showcase App.
+To be able to test the connector, you need to first set up the configuration and your deployed models. How you decide to set this up is completely up to you, however to be able to test the Echo Connector, we have set up some UI components that let's you to set up a configuration and creates example EchoDeployedModel objects that will be selectable in the Chat UI examples of the GenAI Showcase App.
 
 To set this up:
 1. Find "Echo Configurations" in the *Management* section of the homepage. This will lead you to the page where the configuration can be set up for the Echo Connector.
-2. Click on "New" and fill out the boxes before clicking on "Save" (for this example case, the boxes can be left empty).
-When you click on "Save", two deployed models will be created for the new configuration you created. As the echo connector only gives the content of the request as the response, these two are just random EchoDeployedModel objects we create to be able to select and test in the Chat UI examples. When implementing this part in your own connector, you might import the models that are available to the configuration you set up or not import anything and create the models manually.
+2. Click on "New" and fill out the boxes before clicking on "Save". For this example case, the input can be left empty and no real credentials are needed.
+When you click on "Save", two deployed models will be created for the new configuration you created. As the echo connector only returns the content of the request as the response, these two are just example EchoDeployedModel objects we create to be able to select and test in the Chat UI examples. When implementing this part in your own connector, you might import the models that are available to the configuration you set up or not import anything and let the admin create the models manually.
 3. After the configuration and the models have been created, go back to the homepage and open one of the showcases in the *Conversational UI* section.
 4. In the Model dropdown, select one of the models that were created by the Echo Connector and start chatting.
