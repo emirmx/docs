@@ -29,7 +29,7 @@ In Mendix 10.21 and above, the following defaults apply:
 * **Upgraded projects** – for projects which are upgraded from an older version of Mendix, all new associations continue to be implemented as association tables
 
 {{% alert color="info" %}}
-In your app settings you can [change the default](/refguide/app-settings/#miscellaneous) for all new associations.
+In your app settings you can [change the default](/refguide/app-settings/#miscellaneous) for all new associations. This does not affect existing associations.
 {{% /alert %}}
 
 ## Advantages of Direct Associations
@@ -59,12 +59,10 @@ For more information, see the [Association Storage](/refguide/association-proper
 
 {{% todo %}}Do we want to say this without a firm timeline?{{% /todo %}}
 
-The development pipeline includes plans to bulk migrate the database to avoid long downtime for large databases.
-
 ## Before Switching to Direct Associations{#before}
 
 Before deciding to switch from an association table to a direct association, bear the following in mind:
 
 * Associations have to be rewritten to the database so migration can take a long time, especially where you have a large amount of data already stored in your database 
 * Queries are not always faster, and might not be faster in your use case
-* If you have written any custom SQL that accesses Mendix tables directly, this might break – existing XPaths and OQL queries will not be affected
+* If you have written any custom SQL that accesses Mendix tables directly, this might break, but existing XPaths and OQL queries will not be affected

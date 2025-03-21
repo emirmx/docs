@@ -132,7 +132,7 @@ In Mendix 10.20 and below, associations are always stored in association tables.
 
 | Association storage | Description | Notes |
 | --- | --- | --- |
-| Direct associations | The associations to other entities are stored as hidden attributes of the owner entity | Mendix 10.21 and above<br />Not available for many-to-many associations |
+| Direct associations | The associations to other entities are stored as columns in the table of the owner entity | Mendix 10.21 and above<br />Not available for many-to-many associations |
 | Association tables | Associations are stored in separate association tables | *Default*
 
 ## Read More
