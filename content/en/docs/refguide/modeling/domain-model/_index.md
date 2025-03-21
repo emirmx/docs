@@ -69,8 +69,6 @@ For more information on how the underlying database behaves and why data cannot 
 
 ### Implementation Example
 
-{{% todo %}}Add an OrderLine-Order association which is a direct association{{% /todo %}}
-
 Take a look at the following domain model.
 
 {{< figure src="/attachments/refguide/modeling/domain-model/customer-order.png" >}}
