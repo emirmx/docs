@@ -75,18 +75,43 @@ Update-MxApp $appName -LiteralPath $literalPath
 Start-MxApp $appName -SynchronizeDatabase
 ```
 
-{{% alert color="info" %}}
+{{% alert color="warning" %}}
+Stopping your app before you update it is a necessary part of the process. Do not attempt to extract the deployment package into your app while the app is running.
+{{% /alert %}}
+
+You can find the parameters for `Start-MxApp` cmdlet in the sections below:
+
+#### `NoService`
+
 To start your app as a local process instead of a service, add a `-NoService` argument to the `Start-MxApp` cmdlet, as in the following example:
 
 ```
 Start-MxApp $appName -NoService -SynchronizeDatabase 
 ```
 
-{{% /alert %}}
+#### `EnableDebugger`
 
-{{% alert color="warning" %}}
-Stopping your app before you update it is a necessary part of the process. Do not attempt to extract the deployment package into your app while the app is running.
-{{% /alert %}}
+`EnableDebugger` allows Studio Pro to connect to a Mendix app for debugging.
+
+```
+Start-MxApp $appName -EnableDebugger "Abcd@1234"
+```
+
+#### `LicenseKey`
+
+The `LicenseKey` parameter to the `Start-MxApp` cmdlet allows you to activate a license for a Mendix app.
+
+```
+Start-MxApp $appName -LicenseKey "Abcd@1234"
+```
+
+#### `AdminPassword`
+
+the `AdminPassword` parameter to the Start-MxApp cmdlet sets the administrator password for a Mendix app.
+
+```
+Start-MxApp $appName -AdminPassword "Abcd@1234"
+```
 
 ### Sample Script - Determine the Mendix Runtime Version
 
