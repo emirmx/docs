@@ -139,12 +139,13 @@ To replace a template grid widget, follow these steps:
 
 #### Feedback Widget
 
-The deprecated feedback widget is not supported in the React client. It should be replaced with the [Mendix Feedback Module](https://marketplace.mendix.com/link/component/205506). This module requires some additional configfuration to work with the react client:
+The deprecated feedback widget is not supported in the React client. It should be replaced with the [Mendix Feedback Module](https://marketplace.mendix.com/link/component/205506). This module requires some additional configuration to work with the React client:
 
 1. Install the latest version of the Feedback Module.
 1. Replace the widget or snippet on your main layout(s) with the snippet `FeedbackModule.FeedbackWidget`.
-1. Edit the properties of the widget inside above snippet (use the Page Explorer or Structure Mode to see it).
-1. Set the **Modal pop-up type** to **Custom** and the **On click action** to **Show a page** (`FeedbackModule.ShareFeedback`).
+1. Edit the properties of the widget inside the `FeedbackWidget` snippet (use the Page Explorer or Structure Mode to see it).
+1. Set the **Modal pop-up type** to **Custom**.
+1. Set the **On click action** to **Show a page** and choose the page `FeedbackModule.ShareFeedback`.
 
 #### Custom Widgets{#custom-widgets}
 
