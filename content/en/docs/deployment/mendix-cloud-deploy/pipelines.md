@@ -165,7 +165,7 @@ Evaluate results of the [Maia Best Practice Recommender](/refguide/best-practice
 * Import the [Unit Testing](https://marketplace.mendix.com/link/component/390) module into your Mendix application from the Marketplace.
 * The environment in which Unit Testing needs to happen should be in a running state.
 
-Since a remote API password is required to trigger Unit Tests and it is not advisable to have sensitive credential information in the pipeline definition, use variables within pipelines. These variables can then be easily referenced in the pipeline design. For more information, see the [Running Unit Tests Through the Remote API](/appstore/modules/unit-testing/#running-unit-tests-through-the-remote-api) section of *Unit Testing*.
+Since a remote API password is required to trigger Unit Tests and it is not advisable to have sensitive credential information in the pipeline definition, use variables within pipelines. These variables can then be easily referenced in the pipeline design. For more information, see the [Running Unit Tests Through the Remote API](/appstore/modules/unit-testing/#using-the-remote-api) section of *Unit Testing*.
 
 Using **Timeout (in seconds)** field, users can restrict the execution time of unit tests. If the tests exceed the predefined duration or timeout, the test step fails. It helps to avoid unnecessary waiting if tests are stuck in a loop.
 
