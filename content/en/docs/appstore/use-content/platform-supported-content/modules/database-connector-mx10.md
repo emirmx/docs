@@ -285,7 +285,7 @@ By default, autocommit is set to false for design time queries.
 
 When using JDK versions 17 or 21 (or any version above 16), you may encounter compatibility issues if database you are connecting to has a dependency on Apache Arrow.
 
-#### To resolve Apache Arrow dependency issue in Snowflake:
+#### Resolving Apache Arrow Dependency Issues in Snowflake
 
 The Snowflake JDBC Driver uses Arrow as the default result format for query execution to improve performance. However, you can override this default setting by switching the result format to JSON.
 
@@ -296,9 +296,9 @@ To set the result format at the Snowflake session or user level, use the followi
 ```
 
 This approach ensures compatibility with JDK 16+.
-[For more details](https://community.snowflake.com/s/article/Getting-java-lang-NoClassDefFoundError-for-class-RootAllocator).
+For more information, see [Getting Java Lang NoClassDefFoundError](https://community.snowflake.com/s/article/Getting-java-lang-NoClassDefFoundError-for-class-RootAllocator) in Snowflake documentation.
 
-#### To resolve Apache Arrow dependency issue in Databricks:
+#### Resolve Apache Arrow Dependency Issues in Databricks {#apache-arrow-databricks}
 
 The Databricks JDBC Driver uses Arrow for serialization as it improves performance.
 
@@ -307,4 +307,7 @@ To override this setting add below parameter to JDBC URL
 ```sql
 EnableArrow=0
 ```
-[For more details](https://community.databricks.com/t5/data-engineering/java-21-support-with-databricks-jdbc-driver/td-p/49297)
+For more information, see:
+
+* [Java 21 Support with Databricks](https://community.databricks.com/t5/data-engineering/java-21-support-with-databricks-jdbc-driver/td-p/49297) in Databricks documentation
+* [Configure the External Database Connector for Databricks](/appstore/modules/databricks/external-database-connector/)
