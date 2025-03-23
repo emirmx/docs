@@ -39,6 +39,8 @@ Before implementing this capability into your app, make sure you meet the follow
 
 Since this tutorial is focused on the [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/), make sure to have the [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/) that is part of the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle on the marketplace.
 
+To use the functionalities of this tutorials, follow the [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/) instructions to collect the resources keys.
+
 ### Creation of Domain Model Entity {#domainmodel}
 
 Considering that your application should be able to store the information, you will need to create attributes for the knowledge you want to save there. For this example, based on the below-mentioned [demo data](/appstore/modules/genai/how-to/howto-groundllm/#demodata), we create one `Description` attribute with type `String`. 

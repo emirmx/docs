@@ -109,7 +109,7 @@ Follow these steps to configure the Mendix Cloud GenAI Resources Packs for your 
 
 2. Configure the Mendix Cloud GenAI Settings:
    * In the chatbot-like application interface, go to **Administration** icon, and find the **Mendix Cloud GenAI Configuration**.
-   * Select **Import key** and paste the key from the Mendix Portal given to you.
+   * Select **Import key** and paste the key from the Mendix Portal given to you. For more information about this step, follow the [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/) instructions.
 
 3. Test the Configuration:
    * Find the configuration you created, and select **Test Key** on the right side of the row.
