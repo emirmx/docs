@@ -36,7 +36,7 @@ In your app settings you can [change the default](/refguide/app-settings/#miscel
 
 Because they don't have association tables, using direct associations can bring the following advantages:
 
-* In many cases, using direct associations can speed up queries and statements
+* In many cases, using direct associations can speed up data retrieval and modification
 * They use less space in the database
 * You can choose to implement direct associations for some of your associations, while leaving others as association tables
 
