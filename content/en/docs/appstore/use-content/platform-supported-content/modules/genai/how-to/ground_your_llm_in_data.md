@@ -8,26 +8,26 @@ description: "This document guides you to ground your large language model in da
 
 ## Introduction
 
-This document explains how to add data into your smart app to be included when interacting with a Large Language Model (LLM). To do this, you can use your existing app or follow the [Build a Smart App from a Blank GenAI App](/appstore/modules/genai/how-to/blank-app/) guide to start from scratch.
+This document explains how to add data to your smart app to integrate with a Large Language Model (LLM). To do this, you can use your existing app or follow the [Build a Smart App from a Blank GenAI App](/appstore/modules/genai/how-to/blank-app/) guide to start from scratch.
 
-Through this document, you will:
+In this document, you will:
 
-* Understand how to ground your LLM in data within your Mendix application using the [Mendix Cloud GenAI Resource Packs](appstore/modules/genai/mx-cloud-genai/resource-packs/).
-* Learn to integrate GenAI capabilities to address specific business requirements effectively using a knowledge base.
+* Learn how to ground your LLM in data within your Mendix application using the [Mendix Cloud GenAI Resource Packs](appstore/modules/genai/mx-cloud-genai/resource-packs/).
+* Discover how to integrate GenAI capabilities with a knowledge base to effectively address specific business requirements.
 
 ### Prerequisites {#prerequisites}
 
 Before implementing this capability into your app, make sure you meet the following requirements:
 
-* Start from scratch: To simplify your first use case, start building from a preconfigured setup [Blank GenAI Starter App](https://marketplace.mendix.com/link/component/227934). For more information, see [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/how-to/blank-app/). 
+* Start from scratch: to simplify your first use case, start building from a preconfigured setup [Blank GenAI Starter App](https://marketplace.mendix.com/link/component/227934). For more information, see [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/how-to/blank-app/). 
 
-* Install the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle (version **2.2.0 or higher**) from the Mendix marketplace. If you start with the Blank GenAI App, you can skip this installation.
+* Install the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle (version 2.2.0 and above) from the Mendix marketplace. If you start with the Blank GenAI App, you can skip this installation.
 
-* Have a Knowledge Base resource within the [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/). 
+* Set up a Knowledge Base resource within the [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/). 
 
-* Have data to be added into your LLM. For this example, we will be using a modified and streamlined version of the demo data found in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), in the `ExampleMicroflows` module > `Ground in data - Mendix Cloud` > `Example data set`. If you need to create the demo data yourself, you should be familar with import mappings and JSON structures.
+* Set up data to add into your LLM. In this example, we will be using a modified and streamlined version of the demo data available in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), located in the **ExampleMicroflows** module > **Ground in data - Mendix Cloud** > **Example data set**. If you need to create the demo data yourself, a basic understanding of import mappings and JSON structures is required.
 
-* Intermediate understanding of GenAI concepts: Review the [Enrich Your Mendix App with GenAI Capabilities](/appstore/modules/genai/) page for foundational knowledge and familiarize yourself with the [concepts](/appstore/modules/genai/using-gen-ai/).
+* Intermediate understanding of GenAI concepts: See the [Enrich Your Mendix App with GenAI Capabilities](/appstore/modules/genai/) page for foundational knowledge and familiarize yourself with the [concepts](/appstore/modules/genai/using-gen-ai/).
 
 * Basic understanding of [Prompt Engineering](/appstore/modules/genai/get-started/#prompt-engineering).
 
