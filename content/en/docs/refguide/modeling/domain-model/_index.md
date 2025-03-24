@@ -37,10 +37,9 @@ Below is a domain model that describes customers and orders. The names of the en
 | Element | Displays |
 | --- | --- |
 | Annotation | A comment explaining an aspect of the domain model |
-| Entity Name | How the [entity](/refguide/entities/) will be referred to in the database |
 | Generalization | Indicates that this entity is based on another entity (see [generalization](/refguide/entities/#generalization) in *Entities*) and will include that entity's attributes and behavior |
-| Event Handler | An indication that one or more [event handlers](/refguide/event-handlers/) have been set up for this entity |
 | Image | An image which helps to identify the entity |
+| Event Handler | An indication that one or more [event handlers](/refguide/event-handlers/) have been set up for this entity |
 | Validation Rule | An indication that one or more [validation rules](/refguide/validation-rules/) have been set up for this attribute, the attribute *"FullName"* |
 | Calculated Value | An indication that the value of this attribute (*"NameLength"*) is calculated |
 | Persistable Entity | This is an entity stored permanently in a database |
@@ -48,9 +47,12 @@ Below is a domain model that describes customers and orders. The names of the en
 | Association Name | How the [association](/refguide/associations/) will be referred to in the database |
 | Many | Indicates that many of these entities relate to the quantity of the entity at the other end of the association |
 | Association Owner | An end of an association without an arrow indicates that this entity owns the association (it is also possible for both entities to own the association, see [ownership](/refguide/associations/#ownership) in *Associations* for more information) |
+| Entity Name | How the [entity](/refguide/entities/) will be referred to in the database, *Order* |
 | Attribute Name | How this [attribute](/refguide/attributes/) will be referred to in the database, *"Number"* |
 | Attribute Type | The [type](/refguide/attributes/#type) (*Autonumber*) of data stored in this attribute |
+| Service Name | The service which provides the data for this external entity |
 | Non-persistable Entity | This is an entity which is not stored in a database but only stored temporarily within the app |
+| View Entity | This is an entity which is the result set of a stored OQL query |
 | External Entity | This is an entity which represents a link to an external data source |
 
 ## Implementation of Persistable Entities {#implementation}
