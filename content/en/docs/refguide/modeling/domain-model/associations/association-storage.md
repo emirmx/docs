@@ -13,7 +13,7 @@ Association storage options were introduced in Mendix 10.21 to give you more con
 
 <!--- Everything except simple associations is in tables – what do you mean "except simple associations?" --->
 
-Prior to Mendix 10.21, all associations were stored in association tables. This had the advantage that you didn't have to worry about the [multiplicity](/refguide/association-properties/#multiplicity) or [navigability](/refguide/association-properties/#navigability) of the associations. You could change things as your domain model evolved.
+Prior to Mendix 10.21, all associations (except the system associations `owner` and `changedby`, where selected) were stored in association tables. This had the advantage that you didn't have to worry about the [multiplicity](/refguide/association-properties/#multiplicity) or [navigability](/refguide/association-properties/#navigability) of the associations. You could change things as your domain model evolved.
 
 In Mendix 10.21 you can choose to implement some associations as direct associations. This means that the ID of the **Child** object is stored as a foreign key column of the **Parent** object (for example the "many" side of the association) in the underlying database table, thus removing the need for a association table.
 
