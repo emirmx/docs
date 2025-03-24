@@ -224,3 +224,9 @@ export default defineConfig({
 ```
 
 After building and installing the extension in our Studio Pro app, each tab will display the content they specify in their own individual index files.
+
+# Extensibility Feedback
+
+ If youd like to provide us with some additional feedback you can complete a small [Survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback)
+
+ Any feedback is much appreciated.
