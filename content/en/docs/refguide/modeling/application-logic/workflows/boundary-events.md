@@ -120,7 +120,7 @@ With non-interrupting boundary events, the parent activity remains active/in pro
 However, with interrupting boundary events, the parent activity is aborted. For example, when an interrupting timer boundary event is set on a user task and is triggered after 2 days, this user task will be aborted, and the path following the timer boundary event will become the active path. 
 
 {{% alert color="info" %}}
-An interrupting boundary event must end with an **End** event or a **Jump** activity. The option to allow jumping back to the path of the parent activity from the interrupting path was added in Studio Pro 10.21.0.
+An interrupting boundary event path must end with an **End** event or a **Jump** activity. The option to allow jumping back to the path of the parent activity from the interrupting path was added in Studio Pro 10.21.0.
 {{% /alert %}}
 
 {{% alert color="info" %}}
