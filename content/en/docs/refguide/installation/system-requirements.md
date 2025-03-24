@@ -320,7 +320,7 @@ MxBuild is a Windows and Linux command-line tool that can be used to build a Men
     | --- | --- |
     | .NET 6 | .NET 8 |
 
-* JDK 11
+* The appropriate JDK, 11, 17, or 21, see [Java](#java), above for more information.
 
 ## mx Command-Line Tool {#mxtool}
 
