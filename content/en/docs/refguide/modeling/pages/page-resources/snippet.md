@@ -53,7 +53,7 @@ The values for the platform property are:
 The list of **Variables** defined on the snippet. Variables are non-persistent, primitive values that can be used as attributes by widgets in the snippet. They behave the same as [variables on pages](/refguide/page-properties/#variables), with the exception that default values cannot reference snippet parameters.
 
 {{% alert color="info" %}}
-[Snippet extraction](#extract-snippet) does not automatically recreate variables in the resulting snippet. Missing variables mut be added manually.
+[Snippet extraction](#extract-snippet) does not automatically recreate variables in the resulting snippet. Missing variables must be added manually.
 {{% /alert %}}
 
 {{% alert color="info" %}}
