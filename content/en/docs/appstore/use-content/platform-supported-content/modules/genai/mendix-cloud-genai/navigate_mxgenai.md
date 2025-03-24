@@ -23,15 +23,15 @@ GenAI resource packs accelerate the delivery of complete Generative AI solutions
 
 The **Settings** tab contains the details of a GenAI resource. Here is more information:
 
-* **Display Name**: indicates the name of the resource
-* **ID**: indicates the resource ID
-* **Region**: The region where the resource is hosted
-* **Cloud provider**: indicates the cloud provider, for example, AWS
+* **Display Name**: indicates the name of the resource.
+* **ID**: indicates the resource ID.
+* **Region**: the region where the resource is hosted.
+* **Cloud provider**: indicates the cloud provider, for example, AWS.
 * **Type**: this is the type of resource, for example, Text Generation, Embedding, Knowledge Base, etc.
-* **Model**: indicates which model is used, for example, Anthropic Claude Sonnet 3.5
-* **Plan**: 
-* **Environment**: shows which environment is used, for example, test, acceptance, or production
-* Associated resources, including embedding resources for knowledge bases and vice versa. To learn more about embeddings, see [Embedding vector] (https://docs.mendix.com/appstore/modules/genai/rag/#embedding-vector).
+* **Model**: indicates which model is used, for example, Anthropic Claude Sonnet 3.5.
+* **Plan**: indicates the subscription plan used for compute resources (for example, embedding or text generation resources).
+* **Environment**: shows which environment is used, for example, test, acceptance, or production.
+* Additionally when you are looking at the knowledge base resource settings, you will see details of the associated embeddings resource and vice versa. To learn more about embeddings,  see [Embedding vector] (https://docs.mendix.com/appstore/modules/genai/rag/#embedding-vector).
 
 ### Team
 
@@ -55,21 +55,23 @@ Once created, the key can be used in the Mendix application via the Mendix Cloud
 
 ### Content (Only for Knowledge Bases)
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIResource_Content.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIResource_content.png" >}}
 
-On the Content page, you can find information on adding knowledge to your Knowledge Base resource and managing its content.
+{{% alert color="info" %}} The **Content** tab is available only for Knowledge Bases.{{% /alert %}} 
+
+On the **Content** page, you can find information on adding knowledge to your Knowledge Base resource and managing its content.
 
 Currently, you have the following options for adding data to a Knowledge Base:
 
-1. Add files (for example, *.TXT* or *.PDF*)
+1. Add files (for example, TXT or PDF)
 
 2. Add data from a Mendix application
 
 #### Add Files 
 
-When you select this option, you can upload documents directly to the GenAI portal. Before uploading, you also have the option to add metadata. For more information, see the [metadata](#metadata) section below.
+When you select **Add Files Like .TXT or .PDF** option, you can upload documents directly to the GenAI portal. Before uploading, you also have the option to add metadata. For more information, see the [metadata](#metadata) section below.
 
-{{% alert color="info" %}} Only *.TXT* and *.PDF* files are supported. {{% /alert %}} 
+{{% alert color="info" %}} Only TXT and PDF files are supported. {{% /alert %}} 
 
 ##### Metadata {#metadata}
 
