@@ -137,13 +137,13 @@ This table shows the return codes and their description:
 Studio Pro configures the merge driver for an app with the name **studiopro** when opening it in Studio Pro.
 {{% /alert %}}
 
-This section describes the configuration you need to do in order to enable using the [mx merge](#merge) command as a merge driver in Git. With this configuration, you can merge one branch into another using third-party version control tools and the Git command line.
+This section outlines the necessary configuration to enable the [mx merge](#merge) command as a merge driver in Git. With this configuration, you can merge one branch into another using third-party version control tools and the Git command line.
 
 Normally, when you are merging branches with Git, it compares the file changes in both branches. If a certain file has been changed in both branches, this triggers a conflict. If conflicting files are text files, Git attempts to resolve it automatically (very often successfully). 
 
 However, if the conflicting files are Mendix apps, the conflict occurs in two .mpr files. Both the files and the conflict itself are more complex, which is why Studio Pro is needed to resolve them. 
 
-For such cases, Git has an option to delegate conflict resolution for a certain file type to an external tool. The `mx merge` command is compatible with this mechanismб allowing Git to attempt merging the *.mpr* files as Studio Pro would. If conflicts remain, you can open Studio Pro and resolve them manually.
+For such cases, Git provides an option to delegate conflict resolution for specific file types to an external tool. The `mx merge` command is designed to work with this mechanism, allowing Git to attempt merging the *.mpr* files as Studio Pro would. If conflicts remain, you can open Studio Pro and resolve them manually.
 
 ### config File {#merge-config}
 
@@ -227,13 +227,13 @@ The input is three *.mpr* files: `BASE`, `MINE`, `THEIRS`, and three labels: `BA
 Studio Pro configures the merge driver for an app with the name **studiopro** when  opening it in Studio Pro.
 {{% /alert %}}
 
-This section outlines the necessary configuration to enable the **mx git-merge** command as a merge driver in Git. With this configuration, you can merge one branch into another using third-party version control tools and the Git command line.
+This section outlines the necessary configuration to enable the `mx git-merge` command as a merge driver in Git. With this configuration, you can merge one branch into another using third-party version control tools and the Git command line.
 
 Normally, when you are merging branches with Git, it compares the file changes in both branches. If a certain file has been changed in both branches, this triggers a conflict. If conflicting files are text files, Git attempts to resolve it automatically (very often successfully). 
 
 However, if the conflicting files are Mendix apps, the conflict occurs in two *.mpr* files. Both the files and the conflict itself are more complex, which is why Studio Pro is needed to resolve them.
 
-For such cases, Git provides an option to delegate conflict resolution for specific file types to an external tool. The **mx git-merge** command is designed to work with this mechanism, allowing Git to attempt merging the *.mpr* files as Studio Pro would. If conflicts remain, you can open Studio Pro and resolve them manually.
+For such cases, Git provides an option to delegate conflict resolution for specific file types to an external tool. The `mx git-merge` command is designed to work with this mechanism, allowing Git to attempt merging the *.mpr* files as Studio Pro would. If conflicts remain, you can open Studio Pro and resolve them manually.
 
 {{% alert color="warning" %}}
 Currently `mx git-merge` supports merging MPRv2 with MPRv2 and MPRv1 with MPRv1. Merging MPRv2 with MPRv1 or MPRv1 with MPRv2 should be done in Studio Pro.
