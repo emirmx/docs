@@ -96,11 +96,17 @@ You can visualize your request in the **Response** tab, then use the response to
 
 ### Import from OpenAPI/Swagger Contract {#open-api-import}
 
-To add more requests from your existing contract, click **Add Request**. Select the additional requests you want to add to the document, then click **Add**.
+To add more requests from your existing contract, do the following:
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/add-request.png" class="no-border" >}}
+1. In the **Request** field, click **Add Request**:
 
-To create a new blank request, click **New**.
+    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/add-request-button.png" class="no-border" >}}
+
+2. In the **Add Request(s)** dialog box, select the additional requests you want to add to the document, then click **Add**.
+
+    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/add-request.png" class="no-border" >}}
+
+To create a new blank request, click **New** in the **Add Request(s)** dialog box.
 
 ### Authentication Methods {#authentication}
 
