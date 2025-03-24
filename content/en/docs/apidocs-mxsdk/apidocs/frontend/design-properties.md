@@ -283,7 +283,7 @@ Here is an example of a **Colorpicker** design property using CSS variables:
 
 If no preview is specified, the value of the CSS variable will be used by default. Therefore, you can omit the preview property if your design property is based on CSS variables. However, if your design property is based on classes, it is recommended to provide a preview.
 
-Note: You can always change the type from a **Colorpicker** to a **Dropdown** if needed.
+You can always change the type from a **Colorpicker** to a **Dropdown** if needed.
 
 This is how the **Colorpicker** design property appears:
 
