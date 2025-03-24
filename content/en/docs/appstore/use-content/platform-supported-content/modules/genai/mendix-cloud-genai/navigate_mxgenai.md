@@ -31,7 +31,7 @@ The **Settings** tab contains the details of a GenAI resource. Here is more info
 * **Model**: indicates which model is used, for example, Anthropic Claude Sonnet 3.5.
 * **Plan**: indicates the subscription plan used for compute resources (for example, embedding or text generation resources).
 * **Environment**: shows which environment is used, for example, test, acceptance, or production.
-* Additionally when you are looking at the knowledge base resource settings, you will see details of the associated embeddings resource and vice versa. To learn more about embeddings,  see [Embedding vector] (https://docs.mendix.com/appstore/modules/genai/rag/#embedding-vector).
+* Additionally when you are looking at the knowledge base resource settings, you will see details of the associated embeddings resource and vice versa. To learn more about embeddings,  see [Embedding vector](https://docs.mendix.com/appstore/modules/genai/rag/#embedding-vector).
 
 ### Team
 
