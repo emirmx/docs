@@ -53,7 +53,8 @@ Enabling direct associations is simple, and has the following features:
 
 * The choice is reversible – you can decide to revert to using association tables (but see things to think about [before switching to direct associations](#before))
 * Direct associations are available in Mendix versions 10.21 and above
-* You can decide whether to enable it for a specific association, or [change the default](/refguide/app-settings/#miscellaneous) for all new associations
+* You can [change the default](/refguide/app-settings/#miscellaneous) for all new associations
+* You can enable it for specific associations
 
 For more information, see the [Association Storage](/refguide/association-properties/#storage) section of *Association Properties*.
 
