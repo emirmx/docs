@@ -123,7 +123,11 @@ Using this guide we have:
 - 3. We built the extension and installed it within our App
 - 4. We tested our extension from within Studio Pro.
 
+# Extensibility Feedback
 
+ If youd like to provide us with some additional feedback you can complete a small [Survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback)
+
+ Any feedback is much appreciated.
 
 
 

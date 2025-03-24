@@ -296,3 +296,8 @@ Our loaded method should now look like this:
 You should now have a new dockable pane with its own user interface which you can modify as you like.
 You can also open and close the dockable pane from a menu.
 
+# Extensibility Feedback
+
+ If youd like to provide us with some additional feedback you can complete a small [Survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback)
+
+ Any feedback is much appreciated.

@@ -102,4 +102,8 @@ The App files api allows you to modify files within your applications folder. It
 
 You should now be able to save, load and delete files from within the app folder using an extension.
 
+# Extensibility Feedback
 
+ If youd like to provide us with some additional feedback you can complete a small [Survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback)
+
+ Any feedback is much appreciated.

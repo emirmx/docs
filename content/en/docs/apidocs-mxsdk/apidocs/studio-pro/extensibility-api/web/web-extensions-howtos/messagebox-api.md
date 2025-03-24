@@ -81,3 +81,9 @@ As you can see below, you can add extra information which will show up in the ex
 ![Error](/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/messageBoxes/error.png)
 
 ![Warning](/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/messageBoxes/warning.png)
+
+# Extensibility Feedback
+
+ If youd like to provide us with some additional feedback you can complete a small [Survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback)
+
+ Any feedback is much appreciated.

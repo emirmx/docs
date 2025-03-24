@@ -160,3 +160,9 @@ export class MyComponent implements IComponent {
 You can see here that the state of the menu is now disabled and its caption has also been updated. Only caption and enabled state are currently supported for updating.
 
 ![Disabled Menu](/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/menus/disabled_menu.png)
+
+# Extensibility Feedback
+
+ If youd like to provide us with some additional feedback you can complete a small [Survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback)
+
+ Any feedback is much appreciated.
