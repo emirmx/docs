@@ -224,7 +224,3 @@ export default defineConfig({
 ```
 
 After building and installing the extension in our Studio Pro app, each tab will display the content they specify in their own individual index files.
-
-![tab1](/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/tabs/tab1.png)
-![tab2](/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/tabs/tab2.png)
-![tab3](/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/tabs/tab3.png)
