@@ -13,9 +13,9 @@ description: "Native Template 13 release notes."
 
 We have added the option to optionally enable or disable cookie encryption for Android devices. This option was introduced in Studio Pro 9.8 and was enabled by default until Studio Pro Version 10.21.
 
-You can find this option in the Navigation Tab of the Mobile Profile in Studio Pro.
+You can find this option in the Navigation Tab of the **Mobile** profile in Studio Pro.
 
-To learn more about cookie encryption, refer to [the documentation for Cookie Encryption](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/local-data-security/#encrypting-session-cookies)
+For more information on cookie encryption, see [Encrypting Session Cookies](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/local-data-security/#encrypting-session-cookies) in *Offline Data Security*. 
 
 #### Important Notes
 
@@ -29,7 +29,7 @@ To learn more about cookie encryption, refer to [the documentation for Cookie En
 * **react-native-image-picker:** 7.2.3
 * **@react-native-community/netinfo:** 11.4.1
 
-- We've changed the bottom sheet library to **@gorhom/bottom-sheet**
+- We changed the bottom sheet library to **@gorhom/bottom-sheet**
 
 ### Upgrade Instructions {#upgrade-instructions}
 
