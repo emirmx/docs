@@ -48,6 +48,18 @@ The values for the platform property are:
 
 **Snippet Parameters** works the same way as [Page Parameter](/refguide/page-properties/#parameters) with the difference that a snippet's parameter can be accessed at the top level, for example when creating expressions or selecting attributes.
 
+#### Variables {#variables}
+
+The list of **Variables** defined on the snippet. Variables are non-persistent, primitive values that can be used as attributes by widgets in the snippet. They behave the same as [variables on pages](/refguide/page-properties/#variables), with the exception that default values cannot reference snippet parameters.
+
+{{% alert color="info" %}}
+[Snippet extraction](#extract-snippet) does not automatically recreate variables in the resulting snippet. Missing variables must be added manually.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+[Inlining a snippet](/refguide/snippet-call/#inline-snippet) does not automatically create variables on a page. Missing variables must be added manually. If the snippet and the page have identically named variables, then references will automatically carry over.
+{{% /alert %}}
+
 ### Designer Section {#designer}
 
 #### Canvas Width
