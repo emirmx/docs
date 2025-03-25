@@ -24,7 +24,7 @@ Before starting the installation process, make sure that you have all the necess
 * A domain.
 * For the PCLM component:
 
-    * Mendix Operator in version 2.11.0 or above
+    * Mendix Operator in version 2.21.0 or above
     * A dedicated Postgres or SQLServer database server with public accessibility set to **Yes**.
 
 * Optionally, if your Private Mendix Platform app requires its own certificate: a TLS certificate with HTTPS support.
