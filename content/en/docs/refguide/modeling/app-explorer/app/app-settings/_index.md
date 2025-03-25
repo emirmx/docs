@@ -241,6 +241,16 @@ Default: *depends on the version of Mendix used to create the app:*
 * *Yes* for apps created with Mendix versions 10.6.0 and above
 * *No* for apps created with Mendix versions below 10.6
 
+### SSL Certificate Algorithm
+
+Choose between **PKIX (recommended)** and **SunX509 (for backwards compatibility)** as the Java validator and trust manager. According to [this JDK issue](https://bugs.openjdk.org/browse/JDK-8169745), the PKIX validator/trust manager supports richer extensions and features, and the use of SunX509 is discouraged.
+
+{{% alert color="info" %}}
+This option was added in Mendix version 10.21.0.
+{{% /alert %}}
+
+Default: **SunX509 (for backwards compatibility)**
+
 ## Languages Tab {#languages-tab}
 
 For more information about using different languages in your app, see [Language Menu](/refguide/translatable-texts/).
