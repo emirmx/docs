@@ -160,7 +160,7 @@ At the end of the file, add a `[merge "custom"]` block like this:
 Replace `[MX.EXE_PATH]` with a full path to your *mx.exe* file in the Unix format (for example, `'/C/Program Files/Mendix/10.0.0.8753/modeler/mx.exe'`).
 
 {{% alert color="info" %}}
-The *.git* folder is a hidden folder in a computer file management system. You can view it when hidden items are visible.
+The *.git* folder is a hidden folder in your computer file management system. You can view it when hidden items are visible.
 {{% /alert %}}
 
 ### attributes File
