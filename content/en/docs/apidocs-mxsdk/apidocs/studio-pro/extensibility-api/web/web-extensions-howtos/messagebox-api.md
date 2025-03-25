@@ -4,42 +4,23 @@ url: /apidocs-mxsdk/apidocs/extensibility-api/web/messagebox-api/
 weight: 7
 ---
 
+# Prerequisites
+
+This guide builds on top of the [getting started guide](/apidocs-mxsdk/apidocs/extensibility-api/web/getting-started/). Please complete that guide before starting this one.
+
 # Showing a message box
 
 In this example we'll learn how to show a message box to the Studio Pro user.
 
-Create a new class `MyComponent.ts` that implements the Mendix's extensibility api `IComponent`.
+Inside the `loaded` event in `Main`, we will create a small menu which will display a dialog with text.
 
-```typescript
-import { studioPro, IComponent } from "@mendix/extensions-api";
+First we need to import the `menuApi` and also the `messageBoxApi` to show our dialog. To see how to create menus, please see the menu api tutorial [here].
 
-export class MyComponent implements IComponent {
-  async loaded() {
-    console.log("my extension was loaded");
-  }
-}
-```
-
-In your `main.ts` file, make sure the component is exported.
-
-```typescript
-import { IComponent } from "@mendix/component-framework";
-
-import { MyComponent } from "./MyComponent";
-
-export const myComponent: IComponent = new MyComponent();
-```
-
-Now, inside the `loaded` event in `MyComponent`, we will create a small menu which will display a dialog with text.
-
-First we need to import the `menuApi` from the mendix `ide-foundation` package, and also the `messageBoxApi` to show our dialog. To see how to create menus, please see the menu api tutorial [here].
-
-The class `MyComponent` should now look like below.
+The class `Main` should now look like below.
 
 ```typescript
 import { IComponent, Menu, studioPro } from "@mendix/extensions-api";
-
-const messageBoxApi = studio.ui.messageBoxes;
+const messageBoxApi = studioPro.ui.messageBoxes;
 const menuApi = studioPro.ui.extensionsMenu;
 
 const show_info_menu_id = "show-info-id";
@@ -59,7 +40,7 @@ menuApi.addEventListener("menuItemActivated", (args) => {
     );
 });
 
-export class MyComponent implements IComponent {
+class Main implements IComponent {
   async loaded() {
     const infoMenu: Menu = {
       caption: "Show Info",
@@ -81,6 +62,8 @@ export class MyComponent implements IComponent {
     await menuApi.add(warningMenu);
   }
 }
+
+export const component: IComponent = new Main();
 ```
 
 As you can see below, you can add extra information which will show up in the expandable area shown by the `Details` button in the dialog. This is optional, and collapsed by default.

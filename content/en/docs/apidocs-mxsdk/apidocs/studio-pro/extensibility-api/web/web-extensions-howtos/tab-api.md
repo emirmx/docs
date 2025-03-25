@@ -6,42 +6,21 @@ weight: 8
 
 # Prerequisites
 
-This guide builds ontop of the getting started guide. Please complete that guide before starting this one. You should also be familiar with creating menus.
+This guide builds ontop of the [getting started guide](/apidocs-mxsdk/apidocs/extensibility-api/web/getting-started/). Please complete that guide before starting this one. You should also be familiar with creating menus.
 
 # Opening a tab
 
-In this example we'll learn how to open a tab in Studio Pro from an extension. This tab will contain your web content.
-Create a new class `MyComponent.ts` that implements the Mendix's extensibility api `IComponent`.
+In this example we'll learn how to open a tab in Studio Pro from an extension. This tab will contain your web content.<br />
 
-```typescript
-import { IComponent } from "@mendix/extensions-api";
-
-export class MyComponent implements IComponent {
-  async loaded() {
-    console.log("my extension was loaded");
-  }
-}
-```
-
-In your `main.ts` file, make sure the component is exported.
-
-```typescript
-import { IComponent } from "@mendix/extensions-api";
-
-import { MyComponent } from "./MyComponent";
-
-export const myComponent: IComponent = new MyComponent();
-```
-
-Now, inside the `loaded` event in `MyComponent`, we will create a menu to open this tab. This will create a menu, place it under `Extensions` in Studio Pro, and once clicked it will open your tab.
-First we need to import the `menuApi` from the mendix `extensibility-api` package.
-Inside the `menuItemActivated` event, we will call the tabs api in order to open our tab.
-The class `MyComponent` should now look like below.
+Inside the `loaded` event in `Main`, we will create a menu to open this tab. This will create a menu, place it under `Extensions` in Studio Pro, and once clicked it will open your tab.<br />
+First we need to import the `menuApi` from the mendix `extensibility-api` package.<br />
+Inside the `menuItemActivated` event, we will call the tabs api in order to open our tab.<br />
+The class `Main` should now look like below.
 
 ```typescript
 import { IComponent, studioPro, TabHandle } from "@mendix/extensions-api";
 
-class MyComponent implements IComponent {
+class Main implements IComponent {
   tabs: { [menuId: string]: Promise<TabHandle> } = {};
   async loaded() {
     // Add menu items to the Extensions menu to open and close our tab
@@ -50,7 +29,10 @@ class MyComponent implements IComponent {
       caption: "MyExtension Menu",
       subMenus: [
         { menuId: "myextension.ShowTabMenuItem", caption: "Show tab" },
-        { menuId: "myextension.CloseTabMenuItem", caption: "Close tab" },
+        {
+          menuId: "myextension.CloseTabMenuItem",
+          caption: "Close tab",
+        },
       ],
     });
 
@@ -82,7 +64,7 @@ class MyComponent implements IComponent {
   }
 }
 
-export const component: Main = new Main();
+export const component: IComponent = new Main();
 ```
 
 It is important that whenever the tabs api `open` method is called, the `TabHandle` returned is tracked by the extension, so that it can be closed later by calling the `close` method. In this example, we have a dictionary that uses the parent menu id as the key in order to track the open `TabHandle`.
@@ -98,13 +80,13 @@ The `TabInfo` object requires the `title` of the tab, which will be shown in the
 ### UISpec
 
 The `UISpec` has two required properties, the `componentName` and the `uiEntryPoint`. The `componentName` has to match the name of the extension, but also must be prefixed with "extension/". So the `componentName` will look like "extension/myextension" in your example shown above.
-The `uiEntryPoint` property must match the name mapped from the manifest.json file. Keep reading below for samples with multiple tabs to see a clearer example.
+The `uiEntryPoint` property must match the name mapped from the `manifest.json` file. Keep reading below for samples with multiple tabs to see a clearer example.
 
 # Content of the tabs
 
 You might have noticed the `uiEntryPoint` value "tab" in the `UISpec` object above. This value must match the one from the manifest. If you wanted to have more than one tab in your extension, you need to structure the folders in a particular way. You also need to set up the manifest file in the correct way.
 
-In the sample code, add a new methoe `createTabSpec` in your `MyComponentClass`. This will allow us to have multiple tabs for the same extension.
+In the sample code, add a new method `createTabSpec` in your `Main` class. This will allow us to have multiple tabs for the same extension.
 
 ```typescript
 createTabSpec(tab: string, title: string): { info: TabInfo, ui: UISpec} {
@@ -135,12 +117,12 @@ createRoot(document.getElementById("root")!).render(
 );
 ```
 
-Our `MyComponent` class should now look like below. It will contain 3 submenus for each tab we want to open.
+Our `Main` class should now look like below. It will contain 3 submenus for each tab we want to open.
 
 ```typescript
 import { IComponent, studioPro, TabInfo, UISpec } from "@mendix/extensions-api";
 
-class MyComponent implements IComponent {
+class Main implements IComponent {
   async loaded() {
     // Add a menu item to the Extensions menu
     await studioPro.ui.extensionsMenu.add({
@@ -184,7 +166,7 @@ class MyComponent implements IComponent {
   }
 }
 
-export const component: MyComponent = new MyComponent();
+export const component: IComponent = new Main();
 ```
 
 Our `manifest.json` file will now look like below. Notice each of the tabs under the `ui` entry.
