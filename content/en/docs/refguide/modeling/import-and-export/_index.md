@@ -100,7 +100,7 @@ If you replace a module with a newer version, the existing data in the module ar
 * Attributes are matched by name; if the name changes in a newer version of the module, all attribute data is removed from the database. An attribute with the new name is added to the entity, with empty data.
 * Associations are matched by name; if the name changes in a newer version of the module, all association data is removed from the database. The associated entities are not deleted.
 * Microflows are matched by name; if the name changes in a newer version of the module, clients may experience errors when trying to trigger a microflow from a page.
-* Workflows are matched by name; if the name changes in a newer version of the module, all existing workflow instances will be aborted.
+* Workflows are matched by name; if the name changes in a newer version of the module, all existing workflow instances will become incompatible.
 * Workflow activities are matched by name; if the name changes in a newer version of the module, existing workflow instances may become incompatible.
 * The paths of parallel splits (in workflows) are matched by their position; if their order changes in a newer version of the module, or paths are added or removed, existing workflow instances may become incompatible.
 * The outcomes of user tasks (in workflows) are matched by value; if the outcome value changes in a newer version of the module, existing workflow instances may become incompatible.
