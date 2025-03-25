@@ -231,7 +231,7 @@ For each parameter in the template, you define a source for the value. The value
 
 ##### Value Parameter Type
 
-When selected, the chosen value is used as the value of the parameter. The source of the value can be an attribute of an enclosing data container. Number and DateTime value types offer formatting options.
+When selected, the chosen value is used as the value of the parameter. The source of the value can be an attribute of an enclosing data container. Number and date value types offer formatting options.
 
 ##### Expression Parameter Type
 
