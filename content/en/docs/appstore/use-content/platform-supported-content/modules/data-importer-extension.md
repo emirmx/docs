@@ -22,13 +22,15 @@ The Data Importer document as a source for import mapping is available from [Stu
 
 ### Typical Use Cases
 
-The Data Importer extension allows you to import data from Excel and CSV files directly into your app. You can create a Data Importer document to define which columns to import and an NPE to hold the imported data, along with source-to-target mapping. 
+The Data Importer extension allows you to import data from Excel and CSV files directly into your app. You can create a Data Importer document to define which columns to import and an NPE to hold the imported data, along with source-to-target mapping.
+Data Importer document can also be used as a source for creating Import Mapping and you can leverage the capabilities provided by Import Mapping to import data into existing Entity.
 
 ### Features {#features}
 
 This extension supports following source files:
 
 * Microsoft Excel (*.xls, .xlsx, .csv*)
+* Mapping Parameter support is extended for Data Importer document with Import Mapping.
 
 ### Limitations
 
@@ -265,6 +267,24 @@ The instructions below show how to import data from an Excel (or CSV) file.
 6. In the **Output** section, you can choose **Store in variable**, then click **OK**.
    
     {{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/import-with-mapping-params.png" class="no-border" width="500" >}}
+
+### Support for Mapping Parameter in Import Mapping {#mapping-param-import-mapping}
+
+Mapping Parameter (https://docs.mendix.com/refguide/import-mappings/#mapping-parameter) is now supported by Data Importer starting with Mx 10.21. Mapping Parameter can be used to create associations with imported data. Primitive types are not supported but any Mx object type can now be passed as *Mapping Parameter*.
+
+The instructions below show how to define *Import Mapping* with mapping parameters. 
+
+1. In your **Import Mapping**, drag an Entity from the *Connector* tab and drop into the target object placeholder. Click **Cancel** on the **Map entity...** dialog as we will fill in the details later.
+2. Similarly, drag another Entity from the *Connector* tab which you intend to pass as a parameter & drop into parameter placeholder.
+3. **Double Click** on source or target object to open the **Map entity...** dialog.
+4. Select **Call a microflow** to **Obtain Mendix Object** for your Import Mapping.
+5. If not already present, create a *Microflow* which will create an Object of target Entity and set association with the passed parameter.
+6. In your **Import Mapping** you can choose the **Set association** to **Yes** and select a valid *Association* from the dropdown.
+7. Click on **Map attributes** to map the source schema value elements to target Entity attribute.
+
+The resultant Import Mapping should look like below.
+
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/IM-with-mapping-param-association.png" class="no-border" width="500" >}}
 
 ### Before Running Your App {#data-import-with-mapping-app}
 
