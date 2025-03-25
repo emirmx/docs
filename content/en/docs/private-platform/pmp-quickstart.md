@@ -11,6 +11,12 @@ aliases:
 
 This document provides a comprehensive guide for installing Private Mendix Platform, along with its optional components, in your own Kubernetes environment.
 
+We provide installer to integrated with AWS Secret manager , users can store some configuration at aws secret manager without set up storageplan/database plan/ pclm admin and mxadmin info  in installer : Refer Kubernetes Secrets Store CSI Driver  to install  AWS  provider at your cluster;  
+ 
+{{% alert color="info" %}}
+Using a secret storage incorrectly may reduce the security of your app. Consult with your secrets store provider to ensure that it is set up securely for your production environment.  
+{{% /alert %}}
+
 ### Prerequisites {#prerequisites}
 
 Private Mendix Platform depends on Mendix for Private Cloud for the installation and deployment of Mendix apps.
