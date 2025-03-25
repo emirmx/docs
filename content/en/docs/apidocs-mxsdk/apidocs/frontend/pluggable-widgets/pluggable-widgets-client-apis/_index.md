@@ -56,7 +56,7 @@ export interface ActionValue {
 }
 ```
 
-#### canExecute {#execute}
+#### canExecute {#canexecute}
 
 The flag `canExecute` indicates if an action can be run under current conditions. This prevents executing actions that are not allowed by the app's security settings. User roles can be set in the microflows and nanoflows, allowing users to call them. For more information on user roles and security, see the [Module Security Reference Guide](/refguide/module-security/).
 
@@ -64,15 +64,31 @@ You can also employ this flag when using a **Call microflow** action triggering 
 
 The exception to this behavior is when the `ActionValue` is returned by [`ListActionValue.get()`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listactionvalue). In this case, the flag will be true when not all arguments have been loaded. Calling `execute()` for an action with loading arguments will run the action as soon as all arguments become available. While waiting, `isExecuting` will be set to `true` and subsequent calls to `execute()` are ignored. If any arguments become unavailable after loading, the action will not run and a debug-level warning message will be logged.
 
-#### isExecuting
+#### isExecuting {#isexecuting}
 
 The flag `isExecuting` indicates whether an action is currently running. A long-running action can take seconds to complete. Your component might use this information to render an inline loading indicator which lets users track loading progress. Often it is not desirable to allow a user to trigger multiple actions in parallel. Therefore, a component (maybe based on a configuration) can decide to skip triggering an action while a previous execution is still in progress.
 
 Note that `isExecuting` indicates only whether the current action is running. It does not indicate whether a target nanoflow, microflow, or object operation is running due to another action.
 
-#### execute
+#### execute {#execute}
 
 The method `execute` triggers the action. It returns nothing and does not guarantee that the action will be started synchronously. But when the action does start, the component will receive a new prop with the `isExecuting` flag set.
+
+When the action property [defines action variables](/apidocs-mxsdk/apidocs/pluggable-widgets-property-types/#action-xml-elements), the `execute()` method expects an object map containing a property for each variable. The variables may be passed as undefined, but need to be set explicitly.
+
+Given an action property that defines two `Decimal` variables `lat` and `long`, and a `String` variable named `label`, its `execute()` method accepts the following input:
+
+```ts
+interface MapWidgetProps {
+    onClick: ActionValue<{ lat: Option<Big>, long: Option<Big>, label: Option<string> }>
+}
+
+onClick.execute({
+    lat: new Big(51.907),
+    long: new Big(4.488),
+    label: undefined
+});
+```
 
 ### DynamicValue {#dynamic-value}
 
