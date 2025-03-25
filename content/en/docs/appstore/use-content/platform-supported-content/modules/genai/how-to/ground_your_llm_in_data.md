@@ -106,39 +106,39 @@ To start, create a microflows that allows you to upload data into your knowledge
     * Decision Type: `Expression`
     * Expression: `$IsSuccess`
 
-    1. If the decision is `true`, an `End event` action can be added where a microflow return value to `true`. You may add a message to inform the end user that the insertion was successful.
+    If the decision is `true`, an `End event` action can be added where a microflow return value to `true`. You may add a message to inform the end user that the insertion was successful.
 
-    2. If the decision is `false`, an `End event` action can be added where a microflow return value to `false`. You may add a message to inform the end user that the insertion was failed.
+    If the decision is `false`, an `End event` action can be added where a microflow return value to `false`. You may add a message to inform the end user that the insertion was failed.
 
-You have successfully implemented the knowledge base insertion microflowIf you do not have any data available in your app yet, you need to create a microflow to generate the dataset, as described in the [Data set Microflow](#dataset) section below.
+You have successfully implemented the knowledge base insertion microflow! If you do not have any data available in your app yet, you need to create a microflow to generate the dataset, as described in the [Data set Microflow](#dataset) section below.
 
 #### Data set Microflow {#dataset}
 
-This microflow first checks if there is already a list of tickets in the database. If that is not the case, it imports a JSON string as described in [demo data section](/appstore/modules/genai/how-to/howto-groundllm/#demodata).
+This microflow first checks whether a list of tickets already exists in the database. If not, it imports a `JSON` string as described in the [demo data](#demodata) section above.
 
-9. Create a new microflow, for example `Tickets_CreateDataset`.
+1. Create a new microflow, for example `Tickets_CreateDataset`.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/loaddataintokb_example2.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/loaddataintokb_example2.png" >}}
 
-10. Add a `Retrieve` action:
+2. Add a `Retrieve` action:
     
     * Source: `From database`
-    * Entity: Select the entity that contains your knowledge, which in this example would be the `MyFirstModule.Ticket`
+    * Entity: Select the entity that contains your knowledge, which in this example is `MyFirstModule.Ticket`
     * Range: `First`
     * Object name: `Ticket`
 
-11. Next, include a decision where:
+3. Include a decision where:
     * Caption: `Tickets?`
     * Decision Type: `Expression`
     * Expression: `$Ticket = empty`
 
-    1. If the decision is `false`, an End event is added because we do not need to import any tickets.
+    If the decision is `false`, an `End event` is added, as importing tickets is not required.
 
-    2. If the decision is `true`,  continue to the next step.
+    If the decision is `true`,  continue to the next step.
 
-12. In the `true` path, add the `Create Variable` action, where the `String `value includes the JSON text mentioned in the [demo data](/appstore/modules/genai/how-to/howto-groundllm/#demodata). Use `TicketJSON` as the variable's name.
+4. In the `true` path, add the `Create Variable` action, where the `String` value includes the JSON text mentioned in the [demo data](#demodata). Use `TicketJSON` as the variable name.
 
-13. Next, add the `Import With Mapping` action with the following configurations:
+5. Next, add the `Import With Mapping` action with the following configurations:
 
     * Variable: `TicketJSON` created in the previous step
     * Mapping: Use the mapping mentioned in the [demo data section](/appstore/modules/genai/how-to/howto-groundllm/#demodata)
@@ -147,19 +147,19 @@ This microflow first checks if there is already a list of tickets in the databas
     * Store in variable: `No` (optional, not needed here)
     * Variable name: (optional) only when stored in variable
 
-Now that both microflows are created, you need to combine and add them to the homepage for the knowledge base to be populated.
+With both microflows created, they must be combined and added to the homepage to populate the knowledge base.
 
 #### Joining the Microflows {#joining-microflows}
 
-14. Create a new microflow `ACT_TicketList_CreateData_InsertIntoKnowledgeBase`.
+1. Create a new microflow `ACT_TicketList_CreateData_InsertIntoKnowledgeBase`.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/loaddataintokb_example3.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/loaddataintokb_example3.png" >}}
 
-15. Add a `Call Microflow` action where you call the `MyFirstModule.Tickets_CreateDataset` microflow created above. 
+2. Add a `Call Microflow` action where you call the `MyFirstModule.Tickets_CreateDataset` microflow created above. 
 
-16. Next, add a `Call Microflow` action where you call the `MyFirstModule.ACT_TicketList_LoadAllIntoKnowledgeBase` microflow created above. For the *Use return variable*, you select `No`.
+3. Next, add a `Call Microflow` action where you call the `MyFirstModule.ACT_TicketList_LoadAllIntoKnowledgeBase` microflow created above. For the **Use return variable**, select *No*.
 
-You sucessfully added the logic to insert data into the knowledge base!
+You have successfully added the logic to insert data into the knowledge base!
 
 ### Chat Setup {#chatbotmicroflows}
 
@@ -167,59 +167,58 @@ To use the knowledge in a chat interface, create and adjust certain microflows a
 
 1. Search for the pre-built microflow `ChatContext_ChatWithHistory_ActionMicroflow` in the **ConversationalUI** > **USE_ME** > **Conversational UI** > **Action microflow examples** folder and copy it into your `MyFirstBot` module.
 
-2. Search for the pre-built microflow `ACT_FullScreenChat_Open` in **ConversationalUI > USE_ME > ConversationalUI > Pages**. Copy the microflow into your `MyFirstBot` module and afterwards select **Include in project** on the copied microflow.
+2. Search for the pre-built microflow `ACT_FullScreenChat_Open` in **ConversationalUI > USE_ME > ConversationalUI > Pages**. Copy the microflow into your `MyFirstBot` module and select **Include in project** on the copied microflow.
 
 3. Change the parameters of the `New Chat` action in the `ACT_FullScreenChat_Open` microflow:
 
     * The `Action microflow` input parameter to your new `MyFirstBot.ChatContext_ChatWithHistory_ActionMicroflow` from your `MyFirstBot` module.
 
-    * The `System prompt` input parameter to a prompt that fits your use case. For example, `'You are a helpful assistant supporting the IT department with employees requests. Use the knowledge base and previous support tickets as a database to find a solution to the users request without disclosing sensitive details or data from previous tickets.'`.
+    * The `System prompt` input parameter to a prompt that fits your use case. For example, *You are a helpful assistant supporting the IT department with employees requests. Use the knowledge base and previous support tickets as a database to find a solution to the users request without disclosing sensitive details or data from previous tickets.*
 
-    * The `Provider name` input parameter can be changed to a text fitting the purpose better. For example, `My GenAI provider configuration`.
+    * The `Provider name` input parameter can be modified to a more purpose-specific text, such as `My GenAI Provider Configuration`.
 
-Now that we have the `MyFirstBot.ACT_FullScreenChat_Open` microflow configured, we can adjust the `MyFirstBot.ChatContext_ChatWithHistory_ActionMicroflow` which is called when a user submits a message in the chat interface.
+    With the `MyFirstBot.ACT_FullScreenChat_Open microflow` configured, the `MyFirstBot.ChatContext_ChatWithHistory_ActionMicroflow` can now be adjusted to handle user-submitted messages in the chat interface.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/chatcontext_microflow_example.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/chatcontext_microflow_example.png" >}}
 
-1. Open your `MyFirstBot.ChatContext_ChatWithHistory_ActionMicroflow` microflow in your `MyFirstBot` module.
+4. Open your `MyFirstBot.ChatContext_ChatWithHistory_ActionMicroflow` microflow in your `MyFirstBot` module.
 
-2. After the `Request found` decision, add a `Retrieve` action. In this example we use the first that is found in the database as we did in the insertion microflow:
+5. After the `Request found` decision, add a `Retrieve` action. In this example, the first entry found in the database is used, just as in the insertion microflow.
     
     * Source: `From database`
     * Entity: `MxGenAIConnector.MxCloudKnowledgeBase`
     * Range: `First`
     * Object name: `MxCloudKnowledgeBase`
 
-3. Add the `Tools: Add Mendix Cloud Knowledge Base` action with settings as showed in the picture below:
+6. Add the `Tools: Add Mendix Cloud Knowledge Base` action with the settings shown in the image below:
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/tool_mendixcloudgenai_example_action.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/tool_mendixcloudgenai_example_action.png" >}}
 
- The rest of the action can remain the same as they are currently set. Now that we implement everything we need, we can test the chat with enriched knowledge.
+The rest of the actions can remain as they are currently set. Now that everything is implemented, the chat can be tested with enriched knowledge.
 
 ### Navigation Setup
 
-For your application to run as expected, you need to make sure that you can call the following microflows from your navigation or home page: 
+For the application to function as expected, ensure that the following microflows can be called from the navigation menu or homepage:
 
-* Chatbot: Add the `MyFirstModule.ACT_FullScreenChat_Open` microflow created in the [Customizing Chatbot Microflows section](/appstore/modules/genai/how-to/howto-groundllm/#chatbotmicroflows).
+* Chatbot: Add the `MyFirstModule.ACT_FullScreenChat_Open` microflow created in the [Customizing Chatbot Microflows section](#chatbotmicroflows).
 
-* Create Demo Data and Populate KB: Add the `MyFirstModule.ACT_TicketList_CreateData_InsertIntoKnowledgeBase` created in the [Joining the Microflows section](/appstore/modules/genai/how-to/howto-groundllm/#joining-microflows).
+* Create Demo Data and Populate KB: Add the `MyFirstModule.ACT_TicketList_CreateData_InsertIntoKnowledgeBase` created in the [Joining the Microflows section](#joining-microflows).
 
 * Mendix Cloud Configuration: If you started from a Blank GenAI App, the configuration page should already be included. In case you started from your application, add the `MxGenAIConnector.NAV_ConfigurationOverview_Open` microflow.
 
-* Ensure that your admin role has the following module roles assigned: MxGenAIConnector.Administrator, ConversationalUI.User, MyFirstModule.Administrator
-
+* Ensure that your admin role has the following module roles assigned: MxGenAIConnector.Administrator, ConversationalUI.User, and MyFirstModule.Administrator.
 
 ## Testing and Troubleshooting {#testing-troubleshooting}
 
 Before testing, ensure that you have completed the Mendix Cloud GenAI configuration as described in the [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/how-to/blank-app/), particularly the [Mendix Cloud GenAI Configuration](/appstore/modules/genai/how-to/blank-app/#mendix-cloud-genai-configuration) section. 
 
-To test the Chatbot, first ensure you click on the **Create Demo Data and Populate KB** icon/text to populate the knowledge base. Then, go to the **Chatbot** icon to open the chatbot interface. Start interacting with your chatbot by typing in the chat box something related to your knowledge base.
-For this example, it would be `My computer crashes every time, what can I do?`.
+To test the Chatbot, click on the **Create Demo Data and Populate KB** option to populate the knowledge base and go to the **Chatbot** icon to open the chatbot interface. Start interacting with your chatbot by typing in the chat box something related to your knowledge base.
+For example, *My computer crashes every time, what can I do?*.
 
 Congratulations! You grounded your LLM in data and your chatbot is now ready to use.
 
 {{% alert color="info" %}}
-In case you get stuck in the microflows, you can find them in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), under the ExampleMicroflows module > Ground in data - Mendix Cloud.
+In case you get stuck in the microflows, you can find them in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), under the **ExampleMicroflows** module > **Ground in data - Mendix Cloud**.
 {{% /alert %}}
 
 If an error occurs, check the **Console** in Studio Pro for detailed information to assist in resolving the issue.
