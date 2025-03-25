@@ -111,6 +111,8 @@ Clicking **OK** will create the new snippet and replace the extracted widget in 
 Not every widget can be successfully extracted to a snippet if the result requires multiple snippet parameters. For example, a Data view with an *Association* data source must be surrounded by a single context object, which is not the case in a snippet with multiple parameters. 
 
 This can be fixed after the extraction by manually wrapping the widget in a Data view with a *Context* data source pointing to the correct snippet parameter.
+
+Widgets that are configured with variables cannot be successfully extracted.
 {{% /alert %}}
 
 ## Read More
