@@ -14,7 +14,7 @@ This guide builds ontop of the [getting started guide](/apidocs-mxsdk/apidocs/ex
 
 # Adding some interactivity
 
-Open src/ui/tabindex.tsx
+Open src/ui/index.tsx
 
 replace the contents of the file with the following code:
 
@@ -23,20 +23,20 @@ import { studioPro } from "@mendix/extensions-api";
 import { StrictMode, useCallback } from "react";
 import { createRoot } from "react-dom/client";
 
-const saveFile = useCallback(async () => {
-    await studioPro.app.files.putFile("HelloWorld.txt","Hello World from a File!");
-    studioPro.ui.messageBoxes.show("info", "Saved HelloWorld.txt");
-}, []);
+const saveFile = async () => {
+        await studioPro.app.files.putFile("HelloWorld.txt", "Hello world from a file!");
+        studioPro.ui.messageBoxes.show("info", "Saving HelloWorld.txt");
+    };
 
-const loadFile = useCallback(async () => {
-    const content = await studioPro.app.files.getFile("HelloWorld.txt");
-    studioPro.ui.messageBoxes.show("info", `Loaded HelloWorld.txt with message: ${content}`);
-}, []);
+const loadFile = async () => {
+        const message = await studioPro.app.files.getFile("HelloWorld.txt");
+        studioPro.ui.messageBoxes.show("info", `Loaded HelloWorld.txt it contained: ${message}`);
+    };
 
-const deleteFile = useCallback(async () => {
-    await studioPro.app.files.deleteFile("HelloWorld.txt");
-    studioPro.ui.messageBoxes.show("info", "Deleted HelloWorld.txt");
-}, []);
+const deleteFile = async () => { 
+        await studioPro.app.files.deleteFile("HelloWorld.txt");
+        studioPro.ui.messageBoxes.show("info", "Deleted HelloWorld.txt");
+    };
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
@@ -56,26 +56,26 @@ This code adds 3 new buttons to the tab. We also add 3 new event handlers for sa
 Lets have a look at all the changes:
 
 ```typescript
-const saveFile = useCallback(async () => {
-    await studioPro.app.files.putFile("HelloWorld.txt","Hello World from a File!");
-    studioPro.ui.messageBoxes.show("info", "Saved HelloWorld.txt");
-}, []);
+const saveFile = async () => {
+        await studioPro.app.files.putFile("HelloWorld.txt", "Hello world from a file!");
+        studioPro.ui.messageBoxes.show("info", "Saving HelloWorld.txt");
+    };
 ```
 The saveFile callback calls the putFile api setting the filename to `HelloWorld.txt` and containing `Hello World from a File!`
 
 ```typescript
-const loadFile = useCallback(async () => {
-    const content = await studioPro.app.files.getFile("HelloWorld.txt");
-    studioPro.ui.messageBoxes.show("info", `Loaded HelloWorld.txt with message: ${content}`);
-}, []);
+const loadFile = async () => {
+        const message = await studioPro.app.files.getFile("HelloWorld.txt");
+        studioPro.ui.messageBoxes.show("info", `Loaded HelloWorld.txt it contained: ${message}`);
+    };
 ```
 The loadFile callback calls the getFile api requesting to load `HelloWorld.txt`
 
 ```typescript
-const deleteFile = useCallback(async () => {
-    await studioPro.app.files.deleteFile("HelloWorld.txt");
-    studioPro.ui.messageBoxes.show("info", "Deleted HelloWorld.txt");
-}, []);
+const deleteFile = async () => { 
+        await studioPro.app.files.deleteFile("HelloWorld.txt");
+        studioPro.ui.messageBoxes.show("info", "Deleted HelloWorld.txt");
+    };
 ```
 The deleteFile callback calls the deleteFile api requesting to delete `HelloWorld.txt`
 
