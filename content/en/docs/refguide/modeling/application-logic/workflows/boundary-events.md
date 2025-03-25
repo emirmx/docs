@@ -140,11 +140,10 @@ The list of variables is described below:
 * `$ParentTask` – the parent user task of the attached boundary event
 * `$CalledWorkflowInstance` – the parent Call workflow activity of the attached boundary event
 
-## Current Limitations {#limitation}
+## Current Limitation {#limitation}
 
-The current release of boundary events is still under development and has the following limitations:
+The current release of boundary events is still under development and has the following limitation:
 
-* Interrupting boundary events are not allowed to be nested in other boundary event paths, meaning that if an activity has a boundary event path (interrupting or non-interrupting), this activity cannot be placed in a boundary event path.
 * Non-interrupting timer boundary events currently have no recurrence (they are only executed once and will not repeat).
 
 ## Read more
