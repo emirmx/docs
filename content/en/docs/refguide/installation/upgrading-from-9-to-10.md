@@ -138,6 +138,10 @@ If your application is currently using the Atlas theme, this is easily solved by
 
 In Studio Pro 10, published OData, REST, and Web services use sessions that do not communicate with the database. This also means these services ignore [customized login behavior using a LoginAction](/refguide/login-behavior/#customizing-login-behavior). When upgrading an app that uses these features to Studio Pro 10, you need to reimplement the login behavior in an authentication microflow. For more information, see [OData authentication  microflow](/refguide/published-odata-services/#authentication-microflow), [REST authentication microflow](/refguide/published-rest-service/#authentication-microflow), or [Web service authentication](/refguide/integration/expose-a-web-service/#authentication-and-users).
 
+### Java Version
+
+Studio Pro 10.21 and above requires your application to use Java 21. The Java version of an application can be configured in the runtime settings. Java 21 is available in 9.24.23 and above. Please consider the [Java Version Migration](https://docs.mendix.com/refguide/java-version-migration/) guide for a list of changes between Java versions. For on-premises deployments, ensure that JDK 21 is installed in the environments where Mendix 10 applications are deployed.
+
 ## Read More
 
 * [Studio Pro 10 Release Notes](/releasenotes/studio-pro/10.0/)
