@@ -25,63 +25,62 @@ Before implementing this capability into your app, make sure you meet the follow
 
 * Set up a Knowledge Base resource within the [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/). 
 
-* Set up data to add into your LLM. In this example, we will be using a modified and streamlined version of the demo data available in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), located in the **ExampleMicroflows** module > **Ground in data - Mendix Cloud** > **Example data set**. If you need to create the demo data yourself, a basic understanding of import mappings and JSON structures is required.
+* Set up data to add into your LLM. In this example, a modified and streamlined version of the demo data is used. This data is available in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) and located in the **ExampleMicroflows** module > **Ground in data - Mendix Cloud** > **Example data set**. If you need to create the demo data yourself, a basic understanding of import mappings and JSON structures is required.
 
 * Intermediate understanding of GenAI concepts: See the [Enrich Your Mendix App with GenAI Capabilities](/appstore/modules/genai/) page for foundational knowledge and familiarize yourself with the [concepts](/appstore/modules/genai/using-gen-ai/).
 
 * Basic understanding of [Prompt Engineering](/appstore/modules/genai/get-started/#prompt-engineering).
 
-## Ground you LLM in Data Use Case {#use-case}
+## Ground your LLM in a Data Use Case {#use-case}
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/diagram.png" >}}
 
 ### Choosing the Infrastructure {#infrastructure}
 
-Since this tutorial is focused on the [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/), make sure to have the [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/) that is part of the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle on the marketplace.
+Since this document focuses on the [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/), ensure that you have the [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/), which is part of the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle on the Marketplace.
 
-To use the functionalities of this tutorials, follow the [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/) instructions to collect the resources keys.
+Follow the [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/) instructions to collect the resources keys.
 
-### Creation of Domain Model Entity {#domainmodel}
+### Creating Domain Model Entity {#domainmodel}
 
-Considering that your application should be able to store the information, you will need to create attributes for the knowledge you want to save there. For this example, based on the below-mentioned [demo data](/appstore/modules/genai/how-to/howto-groundllm/#demodata), we create one `Description` attribute with type `String`. 
+Since your application needs to store information, you must create attributes for the knowledge you want to save. In this example, based on the [demo data](/appstore/modules/genai/how-to/howto-groundllm/#demodata) mentioned below, a `Description` attribute of type `String` is created.
 
 ### Demo Data {#demodata}
 
-You can use your own data to be uploaded into the knowledge base. However, for this example and as previously mentioned, we use a modified and streamlined version of the demo data found in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), in the `ExampleMicroflows` module > `Ground in data - Mendix Cloud` > `Example data set`. This demo data contains the attribute `Description` that provides information on how to solve basic IT support issues. For this information, the following is provided: 
+You can upload your custom data into the knowledge base. However, for this example, a modified and streamlined version of the demo data from the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) is used. This demo data includes a `Description` attribute that provides information on resolving basic IT support issues. The following details are provided:
 
-* A `JSON File` with examples about IT support solutions, such as *'If the software crashes every time you try to save your document, first ensure you have the latest updates installed. Try...'*.
+* A JSON file containing examples of IT support solutions, such as *"If the software crashes every time you try to save your document, first ensure you have the latest updates installed. Try..."*
+* An **Import Mapping** that maps the `JsonObject` into the corresponding domain model entity.
 
-* An `Import Mapping` where the JsonObject is mapped into the domain model entity. 
+### Loading Data into the Knowledge Base {#kb}
 
-### Load data into Knowledge Base {#kb}
-
-To start, you need to create microflows that allow you to upload data into your knowledge base.
+To start, create a microflows that allows you to upload data into your knowledge base.
 
 #### Loading Microflow {#loadkingkb}
 
-1. Create a new microflow called, for example, `ACT_TicketList_LoadAllIntoKnowledgeBase`.
+1. Create a new microflow, for example, `ACT_TicketList_LoadAllIntoKnowledgeBase`.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/loaddataintokb_example.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/loaddataintokb_example.png" >}}
 
-2. Add the `Retrieve Objects` action. Here you can configure it as follow:
+2. Add the `Retrieve Objects` action. You can configure it as follows:
     
     * Source: `From database`
     * Entity: Select the entity that contains your knowledge, which in this example would be the `MyFirstModule.Ticket`
     * Range: `All`
     * Object name: `TicketList`
 
-3. Next, add the `Chunks: Initialize ChunkCollection` action. You can keep the *Use return variable* as Yes and object name `ChunkCollection`.
+3. Next, add the `Chunks: Initialize ChunkCollection` action. You can keep the **Use return variable** as *Yes* and object name `ChunkCollection`.
 
-4. Next, as seen in the image above, we include a `Loop` where the Iterator has as *Loop type* `For each (item in the list)`, the *Iterate over* is the List retrieved in step 2, which in this case is named `TicketList`, and lastly, you can add a *Loop object name*, such as `IteratorTicket`. After saving those settings, add a `Chunks: Add KnowledgeBaseChunk to ChunkCollection` action inside the loop. Here you can configure it as follow:
+4. As shown in the image above, include a loop where the iterator has **Loop type** `For each (item in the list)`, the **Iterate over** is the List retrieved in the above step, which in this case is named `TicketList`, and lastly, you can add a **Loop object name**, as `IteratorTicket`. After saving these settings, add a `Chunks: Add KnowledgeBaseChunk to ChunkCollection` action inside the loop. Here you can configure it as follows:
 
-    * Chunk collection: `$ChunkCollection` from step 3
-    * Input Text: Edit the expression and use the iterator object from the loop with the desired attribute, which in this case is `$IteratorTicket/Description`
-    * Human readable ID: `empty` (as this is an optional value)
+    * Chunk collection: `$ChunkCollection`
+    * Input Text: edit the expression to use the iterator object from the loop with the desired attribute, which in this case is `$IteratorTicket/Description`
+    * Human readable ID: `empty` (this is an optional value)
     * Mx object: Select the loop's iterator, such as `$IteratorTicket`
     * Use return value: No
-    * Metadata collection: `empty` (as this is an optional value)
+    * Metadata collection: `empty` (this is an optional value)
 
-5. Right after the loop, add an `Retrieve` action to retrieve a `MxCloudKnowledgeBase`. In this example we use the first that is found in the database:
+5. After the loop, add an `Retrieve` action to retrieve a `MxCloudKnowledgeBase`. In this example, the first entry found in the database is used.
     
     * Source: `From database`
     * Entity: `MxGenAIConnector.MxCloudKnowledgeBase`
@@ -90,30 +89,31 @@ To start, you need to create microflows that allow you to upload data into your 
 
 6. Next, add the `Connection: Get` action from the `Mendix Cloud Knowledge Base` category:
 
-    * MxCloudKnowledgeBase | Type: `Variable` | Variable: `MxCloudKnowledgeBase` (as retrieved in step 5)
+    * MxCloudKnowledgeBase | Type: `Variable` | Variable: `MxCloudKnowledgeBase`
     * CollectionName | Type: `Expression` | Expression: `'TicketSolutions'`
 
-You can keep the *Use return variable* as Yes and object name `MxKnowledgeBaseConnection`.
+    You can keep the **Use return variable** as *Yes* and object name `MxKnowledgeBaseConnection`.
 
-7. Next, add the `Embed & Repopulate Collection` action to insert your knowledge into the knowledge base:
+7. Add the `Embed & Repopulate Collection` action to insert your knowledge into the knowledge base:
 
-    * Connection | Type: `Variable` | Variable: `MxKnowledgeBaseConnection` (as retrieved in step 6)
-    * ChunkCollection | Type: `Variable` | Variable: `GenAICommons.ChunkCollection` (as created in step 3)
+    * Connection | Type: `Variable` | Variable: `MxKnowledgeBaseConnection`
+    * ChunkCollection | Type: `Variable` | Variable: `GenAICommons.ChunkCollection`
 
-You can keep the *Use return variable* as Yes and variable name `IsSuccess`.
+    You can keep the **Use return variable** as *Yes* and variable name `IsSuccess`.
 
 8. Next (optional), include a decision:
     * Caption: for example, `Replace Success`
     * Decision Type: `Expression`
     * Expression: `$IsSuccess`
 
-    1. If the decision is `true`, an `End event` action can be added where a microflow return value can be set to `true`. You may add an end-user facing message to explain that the insertion was successful.
+    1. If the decision is `true`, an `End event` action can be added where a microflow return value to `true`. You may add a message to inform the end user that the insertion was successful.
 
-    2. If the decision is `false`, an `End event` action can be added where a microflow return value can be set to `false`. You may add an end-user facing message to explain that the insertion has failed.
+    2. If the decision is `false`, an `End event` action can be added where a microflow return value to `false`. You may add a message to inform the end user that the insertion was failed.
 
-You successfully implemented the knowledge base insertion microflow! In the case that you do not have any data available in your app yet, you need to create a microflow for the creation of the dataset as described in the next section.
+You have successfully implemented the knowledge base insertion microflowIf you do not have any data available in your app yet, you need to create a microflow to generate the dataset, as described in the [Data set Microflow](#dataset) section below.
 
 #### Data set Microflow {#dataset}
+
 This microflow first checks if there is already a list of tickets in the database. If that is not the case, it imports a JSON string as described in [demo data section](/appstore/modules/genai/how-to/howto-groundllm/#demodata).
 
 9. Create a new microflow, for example `Tickets_CreateDataset`.
