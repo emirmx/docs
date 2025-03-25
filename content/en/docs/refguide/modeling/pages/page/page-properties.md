@@ -112,7 +112,7 @@ Variables for pages were introduced in Mendix Studio Pro 10.21.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-For apps with [React Client](/refguide/mendix-client/react) set to **Yes** or **Migration mode**, all widgets can use variables. When set to **No**, widgets built with Dojo cannot use variables. If present, unsupported widgets will be listed on the variables dialog.  
+For apps with [React Client](/refguide/mendix-client/react/) set to **Yes** or **Migration mode**, all widgets can use variables. When set to **No**, widgets built with Dojo cannot use variables. If present, unsupported widgets will be listed on the variables dialog.  
 
 Note that Dojo widgets may affect neighboring widgets as well. For example, they may lose their ability to use variables in conditional visibility expressions. To counteract this, the affected widget can be wrapped in a container.
 {{% /alert %}}
