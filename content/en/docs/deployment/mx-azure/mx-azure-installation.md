@@ -60,7 +60,7 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
 
 8. After the preflight check completes, click **Next**.
 
-9. In the **Provision** screen, review the information in the **Advanced Settings** section, and adjust any settings as needed. Note that selecting higher service tiers will incur higher costs. The **Postgress Compute SKU** and **Postgress Storage Performance Tier for IOPS** cannot currently be adjusted.
+9. In the **Provision** screen, add the custom tags if required and review the information in the **Advanced Settings** section, and adjust any settings as needed. Note that selecting higher service tiers will incur higher costs.
 
     {{% alert color="info" %}}If you plan to use [virtual network peering](#network-peering), you must set the **Load Balancer Type** to **Private (Internal)**.{{% /alert %}}
 
@@ -199,3 +199,11 @@ To enable private endpoints for your Mendix on Azure app, perform the following 
 ## Deploying an App to an Azure Cluster
 
 After creating your cluster in Microsoft Azure, you can deploy now deploy your applications to the cluster. The deployment process is the same as with Mendix for Private Cloud. For more information, see [Deploying a Mendix App to a Private Cloud Cluster](/developerportal/deploy/private-cloud-deploy/).
+
+## Adding a New Cluster Manager
+
+Once the cluster is successfully created and initialized in the Mendix on the Azure portal, you can [add additional cluster managers](/developerportal/deploy/private-cloud-cluster/#managing-the-cluster). 
+
+After being added, the new cluster manager has the ability to view and manage the cluster within the Mendix on the Azure portal. They can also access and update the support ticket associated with the cluster in the Mendix on Azure portal. However, the newly added cluster manager does not have access to the Zendesk ticket linked to the cluster's support ticket.  
+
+If a cluster manager is deleted, they can no longer view the associated cluster or its support ticket in the Mendix on Azure portal.

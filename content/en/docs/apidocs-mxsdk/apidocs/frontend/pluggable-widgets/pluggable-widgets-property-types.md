@@ -134,7 +134,7 @@ Then the Studio Pro UI for the property appears like this:
 
 Integer is represented as a number input in Studio Pro. It is passed as a `number` prop to a client component.
 
-#### XML Attributes
+#### XML Attributes 
 
 | Attribute      | Required | Attribute Type | Description                    |
 |----------------|----------|----------------|--------------------------------|
@@ -477,7 +477,7 @@ If a `dataSource` attribute is not specified, the client will receive an `Action
 
 When a `dataSource` attribute is specified and configured by the user, it is passed as a [`ListActionValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listactionvalue). For more information, see the [Datasource](#datasource) section below.
 
-#### XML Attributes
+#### XML Attributes {#xml-attributes}
 
 | Attribute      | Required | Attribute Type | Description                                                                                             |
 |----------------|----------|----------------|---------------------------------------------------------------------------------------------------------|
