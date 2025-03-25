@@ -5,7 +5,7 @@ weight: 5
 description: "Native Template 13 release notes."
 ---
 
-## 13.0.0 {#1000}
+## 13.0.0 {#1300}
 
 **Release date: March 21, 2025**
 
