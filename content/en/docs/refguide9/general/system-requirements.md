@@ -40,9 +40,9 @@ The following frameworks are required. They will be installed automatically by t
 
 If you are running Studio Pro on an ARM64 device (for example, an M1 Mac), you need the following version of .NET in addition to the x64 version listed above:
 
-* | Studio Pro 9.0.0 - 9.24.33 | Studio Pro 9.24.34 and above |
-  | --- | --- |
-  | .NET 6 Desktop Runtime (arm64) | .NET 8 Desktop Runtime (arm64) |
+| Studio Pro 9.0.0 - 9.24.33 | Studio Pro 9.24.34 and above |
+| --- | --- |
+| .NET 6 Desktop Runtime (arm64) | .NET 8 Desktop Runtime (arm64) |
 
 {{% alert color="info" %}}
 You can choose which JDK is used for building and running locally via the **Edit** > **Preferences** menu item in Studio Pro.
