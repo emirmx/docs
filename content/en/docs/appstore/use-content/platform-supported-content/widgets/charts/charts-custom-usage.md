@@ -76,7 +76,7 @@ To generate JSON data for the Charts widget, follow these steps:
 
 1. Add a **Data** string (unlimited length) attribute to the Chart (context) entity.
 2. In the widget, set the **Source attribute** field in the **Data** tab.
-    {{< figure src="/attachments/appstore/platform-supported-content/widgets/charts/charts-tutorials/charts-any-usage/custom-chart-configuration-attribute.png" alt="Select data attribute" class="no-border" >}}MISSING
+    {{< figure src="/attachments/appstore/platform-supported-content/widgets/charts/charts-tutorials/charts-any-usage/custom-chart-configuration-attribute.png" alt="Select data attribute" class="no-border" >}}
 3. Create a **JSON Structure** and use the **Sample data** as the snippet.
     {{< figure src="/attachments/appstore/platform-supported-content/widgets/charts/charts-tutorials/charts-any-usage/any-chart-json-structure-line-chart-data.png" alt="Create export mapping" class="no-border" >}}
 4. Create an **Export Mapping** with the **JSON Structure**.
