@@ -70,11 +70,12 @@ The prerequisites are the following:
     | --- | --- | --- | --- |
     | [2.37.1](https://github.com/git-for-windows/git/releases/tag/v2.37.1.windows.1) | [2.41.0](https://github.com/git-for-windows/git/releases/tag/v2.41.0.windows.3) | [2.43.0](https://github.com/git-for-windows/git/releases/tag/v2.43.0.windows.1)|[2.48.1](https://github.com/git-for-windows/git/releases/download/v2.48.1.windows.1/Git-2.48.1-64-bit.exe)|
 
-    {{% alert color="warning" %}}Mendix recommends installing Git for all versions of Studio Pro to ensure optimal performance and full feature availability.
-      * Studio Pro versions below 10.21.0 can work without Git, but some operations may experience reduced performance, and advanced features—such as [rebase](/refguide/merge-algorithm/#rebase)—will not be available.
-      * Starting from Studio Pro 10.21.0, Git version 2.48.1 or above is required. This version is automatically installed during Studio Pro installation. However, for [non-administrative installation](#offline) you must install Git manually.{{% /alert %}}
+{{% alert color="warning" %}}  Mendix recommends installing Git for all versions of Studio Pro to ensure optimal performance and full feature availability.
+* Studio Pro versions below 10.21.0 can work without Git, but some operations may experience reduced performance, and advanced features—such as [rebase](/refguide/merge-algorithm/#rebase)—will not be available.
+* Starting from Studio Pro 10.21.0, Git version 2.48.1 or above is required. This version is automatically installed during Studio Pro installation. However, for [non-administrative installation](#offline) you must install Git manually.{{% /alert %}}
 
 * [Microsoft Edge WebView2 Evergreen Runtime (x64 or ARM64) (Evergreen Standalone Installer version)](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)
+
 * One of the following versions of [Gradle](https://gradle.org/install/#manually) with Gradle extracted to the parent directory of the folder where Studio Pro is installed (usually `C:\Program Files\Mendix`) instead of `C:\Gradle`.
 
     | Studio Pro 10.0.0 - 10.9.0 | Studio Pro 10.10.0 and above |
