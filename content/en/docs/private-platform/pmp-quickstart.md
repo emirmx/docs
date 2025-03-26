@@ -11,7 +11,7 @@ aliases:
 
 This document provides a comprehensive guide for installing Private Mendix Platform, along with its optional components, in your own Kubernetes environment.
 
-The installer is integrated with the AWS Secrets Manager , users can store some configuration at aws secret manager without set up storageplan/database plan/ pclm admin and mxadmin info  in installer : Refer Kubernetes Secrets Store CSI Driver  to install  AWS  provider at your cluster;  
+The installer is integrated with the AWS Secrets Manager. If required, you can store some configuration in the the AWS Secrets Manager without setting up a storage plan, database plan, PCLM admin and Mendix admin info in the Private Mendix Platform installer.
  
 {{% alert color="info" %}}
 Using a secret storage incorrectly may reduce the security of your app. Consult with your secrets store provider to ensure that it is set up securely for your production environment.  
@@ -46,7 +46,9 @@ Before starting the installation process, make sure that you have all the necess
     * An existing PostgreSQL database instance.
     * An optional Redis server version 6.2.0 or higher, for the task queue and cache. Using Redis is recommended for high availability, where you expect a high volume of webhook calls, or if you have multiple Svix servers. As a best practice, enable persistence in Redis so that tasks are persisted across Redis server restarts and upgrades.
 
-## Installing and Configuring the Mendix Operator
+* If you plan to use the AWS Secret Manager, install an AWS provider at your cluster, as described in [Kubernetes Secrets Store CSI Driver](https://secrets-store-csi-driver.sigs.k8s.io/).
+
+## Installing and Configuring the Mendix Operator {#install-operator}
 
 To install and configure the Mendix Operator, perform the following steps:
 
@@ -231,7 +233,8 @@ Install the Private Mendix Platform by doing the following steps:
 3. Click **Configure**, and then specify the following parameters:
 
     * **AppName** - The default app name is `mxplatform`. You can change it as required.
-    * **DatabasePlan/Storageplan** - The name of the plan that you created previously.
+    * **DatabasePlan** - If you want to use AWS Secret Manager, select **USE-Secret-Provider**; the installer then uses the database configuration set in AWS Secret Manager. Otherwise, enter the name of the database plan that you created in [Installing and Configuring the Mendix Operator](#install-operator).
+    * **Storageplan** - If you want to use AWS Secret Manager, select **USE-Secret-Provider**; the installer then uses the storage configuration set in AWS Secret Manager. Otherwise, enter the name of the storage plan that you created in [Installing and Configuring the Mendix Operator](#install-operator).
     * **AppUrl** - The endpoint where you can connect to your running app. It must be a URL which is supported by your platform. If you leave it blank, Mendix Operator will create it.
     * **EnableTLS** - Allows you to enable or disable TLS for the Mendix app's Ingress or OpenShift Router. The default value is use the default settings.
     * **TLS option** - Allows you to use an existing `kubernetes.io/tls` secret containing the TLS certificate, or to provide the `tls.crt` and `tls.key` values directly.
