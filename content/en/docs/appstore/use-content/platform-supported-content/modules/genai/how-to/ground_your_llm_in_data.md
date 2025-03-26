@@ -12,7 +12,7 @@ This document explains how to add data to your smart app to integrate with a Lar
 
 In this document, you will:
 
-* Learn how to ground your LLM in data within your Mendix application using the [Mendix Cloud GenAI Resource Packs](appstore/modules/genai/mx-cloud-genai/resource-packs/).
+* Learn how to ground your LLM in data within your Mendix application using the [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/).
 * Discover how to integrate GenAI capabilities with a knowledge base to effectively address specific business requirements.
 
 ### Prerequisites

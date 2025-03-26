@@ -55,7 +55,7 @@ Once created, the key can be used in the Mendix application via the Mendix Cloud
 
 ### Content (Only for Knowledge Bases)
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIResource_content.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIResource_Content.png" >}}
 
 {{% alert color="info" %}} The **Content** tab is available only for Knowledge Bases.{{% /alert %}} 
 
