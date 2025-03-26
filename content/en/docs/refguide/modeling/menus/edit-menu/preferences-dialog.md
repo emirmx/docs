@@ -253,6 +253,10 @@ When the **Send Studio Pro usage data to Mendix** setting is enabled, Studio Pro
 
 **Visual Builder** is the default way to construct XPath constraints, but you can change the default by clearing **Enable the XPath Builder as the default XPath constraint editor**.
 
+### Feedback Survey
+
+When the **Show feedback survey periodically** setting is enabled, Studio Pro will periodically display a feedback survey to gather input on your experience. This helps Mendix improve the product based on user feedback. For more information, see [Feedback Survey](/refguide/feedback-survey/).
+
 ## New Features Tab {#new-features}
 
 ### App Explorer

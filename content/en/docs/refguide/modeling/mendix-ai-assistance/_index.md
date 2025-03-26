@@ -25,6 +25,7 @@ Guidance:
 
 * **Maia Chat** – a built-in chat interface powered by Generative AI in Studio Pro. It answers questions about app development in Mendix, including how to apply concepts, best practices, and development patterns. For more information, see [Maia Chat](/refguide/maia-chat/). 
 * **Maia Learn** – helps you to quickly learn Mendix core concepts and get started with Studio Pro. For more information, see [Maia Learn](/refguide/maia-learn/).
+* **Maia Explain** (currently an [experimental feature](/releasenotes/beta-features/)) – an AI-powered tool that helps you easily understand a microflow or a nanoflow. It explains the general purpose of the logic and highlights specific technical details to help you understand the logic further. For more information, see [Maia Explain](/refguide/maia-explain/).
 
 Recommenders:
 
@@ -36,6 +37,7 @@ Recommenders:
 Generators:
 
 * **Domain Model Generator** (currently an [experimental feature](/releasenotes/beta-features/)) - an AI-powered tool that you can use for generating a [domain model](/refguide/domain-model/). It helps you to generate entities and associations based on text input. It currently only works for empty domain models. For more information, see [Domain Model Generator](/refguide/domain-model-generator/).
+* **Page Generator** (currently an [experimental feature](/releasenotes/beta-features/)) - an AI-powered tool that lets you generate a [page](/refguide/page/). It helps you add and configure widgets based on a text input and an optional image. For more information, see [Page Generator](/refguide/page-generator/).
 * **Translation Generator** (currently an [experimental feature](/releasenotes/beta-features/)) - an AI-powered translation tool available in Mendix Studio Pro. Currently, it can be used for [batch translate](/refguide/translation-generator/#batch-translate) and [translating system texts](/refguide/translation-generator/#translate-system-text) in the system texts editor. For more information, see [Translation Generator](/refguide/translation-generator/).
 
 ## Maia in Mendix Portal
@@ -48,12 +50,15 @@ The table below presents all the third-party services each Maia capability uses 
 
 | Maia | Third-Party Service | Data Sent to Third-Party Service |
 | --- | --- | --- |
-| Maia Chat | [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/) hosted in Mendix AWS environment | User prompts and the generated answers |
+| Maia Chat | [Llama 3.1 8B](https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md) hosted in Mendix AWS environment | User prompts and the generated answers |
+| Maia Learn | No third-party services used | N/A |
+| Maia Explain | [Llama 3.1 8B](https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md) hosted in Mendix AWS environment | Project context to fulfill user prompt request |
 | Best Practice Recommender | No third-party services used | N/A |
 | Logic Recommender | No third-party services used | N/A |
 | UI Recommender | No third-party services used | N/A |
 | Workflow Recommender | No third-party services used | N/A |
-| Domain Model Generator | [Claude in Amazon Bedrock](https://aws.amazon.com/bedrock/claude/) | User prompts and the generated content |
+| Domain Model Generator | [Claude in Amazon Bedrock](https://aws.amazon.com/bedrock/claude/) | Project context to fulfill user prompt request |
+| Page Generator | [Claude in Amazon Bedrock](https://aws.amazon.com/bedrock/claude/) | Project context to fulfill user prompt request |
 | Translation Generator | [Amazon Translate](https://aws.amazon.com/translate/) | All translatable texts in the application, for example, labels, button names, and menu items |
 | Maia Rewrite | [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/) hosted in Mendix AWS environment | The draft question description from users |
 | Maia Summarize | [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/) hosted in Mendix AWS environment | [Community](https://community.mendix.com/p/community) threads |

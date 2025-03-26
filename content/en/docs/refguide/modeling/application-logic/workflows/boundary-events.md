@@ -118,7 +118,7 @@ With non-interrupting boundary events, the parent activity remains active/in pro
 However, with interrupting boundary events, the parent activity is aborted. For example, when an interrupting timer boundary event is set on a user task and is triggered after 2 days, this user task will be aborted, and the path following the timer boundary event will become the active path. 
 
 {{% alert color="info" %}}
-Currently, due to its beta status, an interrupting boundary event must end with an **End** event. The option to allow jumping back to the path of the parent activity from the interrupting path will be added soon. For more limitations, see the [Current Limitations](#limitation) section below.
+An interrupting boundary event path must end with an **End** event or a **Jump** activity. The option to allow jumping back to the path of the parent activity from the interrupting path was added in Studio Pro 10.21.0.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -134,12 +134,10 @@ The list of variables is described below:
 * `$ParentTask` – the parent user task of the attached boundary event
 * `$CalledWorkflowInstance` – the parent Call workflow activity of the attached boundary event
 
-## Current Limitations {#limitation}
+## Current Limitation {#limitation}
 
-The current release of boundary events is still under development and has the following limitations:
+The current release of boundary events is still under development and has the following limitation:
 
-* Interrupting boundary events are not allowed to be nested in other boundary event paths, meaning that if an activity has a boundary event path (interrupting or non-interrupting), this activity cannot be placed in a boundary event path.
-* Interrupting boundary events are not allowed to have a jump at the end of their flow, nor do they allow jumping inside or outside of their flow.
 * Non-interrupting timer boundary events currently have no recurrence (they are only executed once and will not repeat).
 
 ## Read more
