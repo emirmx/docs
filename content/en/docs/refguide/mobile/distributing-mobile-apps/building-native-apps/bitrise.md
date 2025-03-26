@@ -92,7 +92,7 @@ Older versions of Mendix might require an older version of Node than is supporte
 1. Save changes.
 {{% /alert %}}
 
-You can find the required Node version in the package.json of the generated native template for your application (look for `"node": ">=[VERSION]"`).
+You can find the required Node version in the **package.json** file of your app's generated native template (look for `"node": ">=[VERSION]"`).
 
 ### Add Missing npm Command
 
