@@ -37,6 +37,35 @@ For information on the current status of deployment to Mendix for Private Cloud 
 * We have fixed a regression that caused the `model/resources` directory to appear empty and caused problems with some Marketplace modules, such as SAML (Ticket 242648).
 * Upgrading to Mendix Operator v2.21.0 from a previous version now restarts environments managed by that version of the Operator. Environments with 2 or more replicas and a **PreferRolling** update strategy are restarted without downtime.
 
+##### Known Issues
+
+After completing the base installation, the Operator pod may enter a crash loop, reporting a missing endpoint.
+
+For the Standard Operator, you can safely ignore this message. Simply configure the namespace with the required ingress type, and restart the Operator pod.
+
+For the Global Operator, follow these steps to resolve the issue:
+
+1. Edit the operator configuration using the following command: 
+
+    ```shell
+    kubectl -n {namespace} edit operatorconfiguration mendix-operator-configuration
+    ```
+
+2. Modify the endpoint section by setting type: service as shown below, then restart the operator pod:
+
+    ```yaml
+    apiVersion: privatecloud.mendix.com/v1alpha1
+    kind: OperatorConfiguration
+    # ...
+    # omitted lines for brevity
+    # ...
+    spec:
+      endpoint:
+        type: service
+    ```  
+
+We are working on a patch which will resolve the crash loop issue.
+
 ### March 6, 2025
 
 #### Portal Improvements

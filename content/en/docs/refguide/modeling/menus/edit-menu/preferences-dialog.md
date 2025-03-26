@@ -275,11 +275,17 @@ From Mendix version 10.10, Builder is the default way to construct XPath constra
 For Mendix versions 10.5.0 through 10.9.0, this option is on the **New Features** tab.
 {{% /alert %}}
 
+### Feedback Survey
+
+When the **Show feedback survey periodically** setting is enabled, Studio Pro will periodically display a feedback survey to gather input on your experience. This helps Mendix improve the product based on user feedback. For more information, see [Feedback Survey](/refguide/feedback-survey/).
+
 ## New Features Tab {#new-features}
 
 ### Access Rules Editor
 
-In Studio Pro version 10.6 a new access rule editor was introduced in Beta. Enable this option to use the new editor in the *Access rules* tab of the entity properties dialog.
+In Studio Pro version 10.21, the modernized access rule editor was made generally available and enabled by default. It was introduced as a Beta option in Studio Pro version 10.6. The old editor is deprecated and will be removed in 11.0.
+
+This option allows you to enable and disable the new editor in the *Access rules* tab of the entity properties dialog.
 
 For more information, see [Defining Access Rules Using the New Editor](/refguide/access-rules/#new-editor) section of *Access Rules*.
 

@@ -3,7 +3,7 @@ title: "Mendix on Azure Release Notes"
 linktitle: "Mendix on Azure"
 url: /releasenotes/developer-portal/mendix-on-azure/
 description: "Release notes for Mendix on Azure"
-weight: 200
+weight: 25
 ---
 
 {{% alert color="info" %}} This feature is currently available to participating customers. For more information, contact your Customer Success Manager. {{% /alert %}}
