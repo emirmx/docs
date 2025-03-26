@@ -21,7 +21,7 @@ Before implementing this capability into your app, make sure you meet the follow
 
 * Start from scratch: to simplify your first use case, start building from a preconfigured setup [Blank GenAI Starter App](https://marketplace.mendix.com/link/component/227934). For more information, see [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/how-to/blank-app/). 
 
-* Install the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle (version 2.2.0 and above) from the Mendix marketplace. If you start with the Blank GenAI App, you can skip this installation.
+* Install the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle (version 2.2.0 and above) from the Mendix Marketplace. If you start with the Blank GenAI App, you can skip this installation.
 
 * Set up a Knowledge Base resource within the [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/). 
 
@@ -54,7 +54,7 @@ You can upload your custom data into the knowledge base. However, for this examp
 
 ### Loading Data into the Knowledge Base {#kb}
 
-To start, create a microflows that allows you to upload data into your knowledge base.
+To start, create a microflow that allows you to upload data into your knowledge base.
 
 #### Loading Microflow {#loadkingkb}
 
@@ -112,7 +112,7 @@ To start, create a microflows that allows you to upload data into your knowledge
 
 You have successfully implemented the knowledge base insertion microflow! If you do not have any data available in your app yet, you need to create a microflow to generate the dataset, as described in the [Data set Microflow](#dataset) section below.
 
-#### Data set Microflow {#dataset}
+#### Data Set Microflow {#dataset}
 
 This microflow first checks whether a list of tickets already exists in the database. If not, it imports a `JSON` string as described in the [demo data](#demodata) section above.
 
@@ -194,7 +194,7 @@ To use the knowledge in a chat interface, create and adjust certain microflows a
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/tool_mendixcloudgenai_example_action.png" >}}
 
-The rest of the actions can remain as they are currently set. Now that everything is implemented, the chat can be tested with enriched knowledge.
+The rest of the actions can remain as they are currently set. Now that everything is implemented, you can test the chat with enriched knowledge.
 
 ### Navigation Setup
 
