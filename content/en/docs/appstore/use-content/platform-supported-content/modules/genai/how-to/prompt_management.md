@@ -67,25 +67,25 @@ You will now create your first prompt in the user interface. The final prompt wi
 
 3. You are asked to provide a **title** and **description** for your prompt. For title you can use `Product Description Generator` and optionally for description `How-To example to let the model generate a product description based on user's input`.
 
-4. You can now choose a *Usage type* to either create a `Single-Call` or `Conversational` prompt. The main difference between those two is that *Conversational* prompts are meant to be used in chats which contain the whole conversation and no predefined-user prompt, while the *Single-Call* is meant for a single interaction between the user and the LLM. In this example we use the `Single-Call` type. Save the prompt.
+4. You can now choose a *Usage type* to either create a `Single-Call` or `Conversational` prompt. The main difference between those two is that *Conversational* prompts are meant to be used in chats which contain the whole conversation and no predefined-user prompt, while the *Single-Call* is meant for a single interaction between the user and the LLM. In this example use the `Single-Call` type. **Save** the prompt.
 
 5. You are now navigated to the prompt's details page which allows you to prompt engineer at runtime. Add to the **User Prompt** field the following prompt: `Generate a short product description for a chair.`. The user prompt is typically what the enduser writes, even though it can be prefilled by our own instructions.
 
 6. You can now hit **Run** in the top-right corner to see the model's response. However, because you have not selected a model yet, you are asked to do so before running the test. If there are no models to select from, you first need to configure a model (for MxCloud you need to import a key on the configuration page that you have added in the previous section). You can later change the model by clicking the *Cog* icon left to the *Run* button.
 
-7. Below you can observe the outcome. This is already sufficient for the first try. You can now save this version of the prompt by hitting the **Save As** button in the *prompt card*. For title use `Simple product description prompt` and save it. The prompt cannot be edited anymore.
+7. In the outcome card you can observe the model's response. This is already sufficient for the first try. You can now save this version of the prompt by hitting the **Save As** button in the *prompt card*. For title use `Simple product description prompt` and save it. The prompt cannot be edited anymore.
 
 ### Iterate and First Test Case
 
-8. To further improve your prompt and the user experience for the end users, you can now add some placeholder variables. Next to the version's dropdown you can click the icon-button with the plus to create a new draft version. Change the *User Prompt* to `Generate a short product description for a {{ProductName}}. The description should not be longer than {{NumberOfWords}} words. `. 
+8. To further improve your prompt and the user experience for the end users, you can now add some placeholder variables. Next to the version's dropdown you can click the icon-button with the plus to create a new draft version. Change the *User Prompt* to `Generate a short product description for a {{ProductName}}. The description should not be longer than {{NumberOfWords}} words. `
 
-9. Notice that two variables were created in the right card. Those can later be used in your application to let users flexibly change the user prompt without even knowing what a prompt is and without the application to be changed nor restarted. You can now enter two values for the variables: `30` for **NumberOfWords** and `chair` for **ProductName**. Hit **Run** to see how the model changed the output considering a different prompt.
+9. Notice that two variables were created in the right *test case card*. Those can later be used in your application to let users flexibly change the user prompt without even knowing what a prompt is and without the application to be changed nor restarted. You can now enter two values for the variables: `30` for **NumberOfWords** and `chair` for **ProductName**. Hit **Run** to see how the model changed the output considering a different prompt.
 
 10. The values that you entered for the variables are only available in the prompt management capability, but not for your use case. You can now **Save As** the test case which makes it available for later test runs. Use `Chair 30 words` as title. 
 
 ### System Prompt and Multiple Test Cases
 
-11. Save the prompt's version one more time as you did in *step 7*. Enter `Added user input` as title. For the final version, we can now add additional instructions to the *system prompt*. Enter `You are a sales assistant that can write engaging and inspiring product descriptions for our online marketplace. The user asks you to create a description for various products. You should always respond in {{Language}}.` and notice that the *Language* variable was created.
+11. Save the prompt's version one more time as you did in *step 7*. Enter `Added user input` as title. For the final version, additional instructions can now be added as part of the *system prompt*. Enter `You are a sales assistant that can write engaging and inspiring product descriptions for our online marketplace. The user asks you to create a description for various products. You should always respond in {{Language}}.` and notice that the *Language* variable was created.
 
 12. Add a new test case by clicking the `+` icon next to the test case drop down. For *Language* you can enter any language (preferably not English to test it properly), in this example `German` is used. The other two variables can be the same values as above: `30` and `chair`. **Run** the test case. Save the test case with the title `Chair 30 words German`.
 
@@ -104,9 +104,9 @@ In order to connect a prompt with the rest of your application, it is helpful to
 
 2. Add the following attributes:
     * **ProductName** as *String*
-    * **NumberOfWords** as *Integer
+    * **NumberOfWords** as *Integer*
     * **Language** as *String*
-    * **ProductDescription** as *String* and unlimited length.
+    * **ProductDescription** as *String* and set length to unlimited
 
 3. Change the **Access rules** of the entity to grant *read-write* access for *ProductName*, *NumberOfWords* and *ProductDescription* to your **User** and **Administrator** role. Give the roles permission for `Allow creating new objects`. Save the entity.
 
@@ -126,9 +126,11 @@ Now a user can create a new product in the UI, but the process was not yet enhan
 
 ## Connect your Prompt with your App {#connect-prompt-with-app}
 
-In this section, the prompt that we had already created needs to be connected with our user interface to let an LLM create the product description for us.
+In this section, the prompt that was already created needs to be connected with our user interface to let an LLM create the product description for us.
 
 ### Finalize Your Prompt {#finalize-prompt}
+
+You first need to configure some additional settings for the prompt before it can be used in your app.
 
 1. Run the app. Navigate to your prompt.
 
@@ -138,11 +140,11 @@ In this section, the prompt that we had already created needs to be connected wi
 
 4. Navigate back to the Prompt Overview (via the breadcrumb `Overview`).
 
-5. Hover over the *Ellipsis* (three horizontal dots) in the rows of your prompt and click the **Select Prompt in use** button. On this page, you need to select a version that you want to set to `In Use` which means it is selected for production and later selected in your microflow logic. Select the latest version `Added system prompt and language` and click **Select**.
+5. Hover over the *Ellipsis* icon (three horizontal dots) in the row of your prompt and click the **Select Prompt in use** button. On this page, you need to select a version that you want to set to `In Use` which means it is selected for production and later selected in your microflow logic. Select the latest version `Added system prompt and language` and click **Select**.
 
 ### Enable Generation Microflow {#generation-microflow}
 
-The microflow can also be found in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) in **ExampleMicroflows** > **Programmatic Prompt** > **ACT_Product_GenerateProductDescription** and will look like this:
+Now you will create the microflow that is called when a user hits the button. This microflow execute a call to the LLM and sets the *ProductDescription* attribute's value to the model's response. The microflow can also be found in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) in **ExampleMicroflows** > **Programmatic Prompt** > **ACT_Product_GenerateProductDescription** and will look like this:
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-prompt-management/prompt_microflow.png" >}}
 
@@ -150,7 +152,7 @@ The microflow can also be found in the [GenAI Showcase App](https://marketplace.
 
 7. Open the newly created microflow. First you need to grant the module roles access. Change the `Allowed roles` selection under the *Security* category and add both roles.
 
-8. Add a `Change object` action to change the **Language** attribute:
+8. As a first action in the microflow, add a `Change object` action to change the **Language** attribute:
     * Object: `Product` (input parameter)
     * Member: `Language`
     * Value: `English` (you can use whatever language. This is just an example to show that you can have input for the prompt that is not defined by your users)
@@ -187,13 +189,13 @@ The microflow can also be found in the [GenAI Showcase App](https://marketplace.
     * Value: `$Response/ResponseText` (expression)
 
 
-You now successfully implemented prompt management and connected it to an example use case, so that users can now let the model generate a product description based on two input fields and the prompt that was previously created.
+You now successfully implemented prompt management and connected it to an example use case, so that users can now let the model generate a product description based on two input fields and the prompt that was previously created. When you run the app once more, you can test the use case yourself!
 
-## Testing and Troubleshooting {#testing-troubleshooting}
+## Troubleshooting {#troubleshooting}
 
 ### Model selection is empty {#empty-model-selection}
 
-When you want to run your prompt from the prompt management page, you need to select a model. If the list is empty, you likely have not configured a model yet using one of the platform-supported (or other GenAICommons compatible) connectors. Also make sure to have the model supports `SystemPrompt` as well as `Text` as output modality.
+When you want to run your prompt from the prompt management page, you need to select a model. If the list is empty, you likely have not configured a model yet using one of the platform-supported (or other GenAICommons compatible) connectors. Also make sure that the model support `SystemPrompt` as well as `Text` as output modality.
 
 ### Context Entity issues {#context-entity-issues}
 
