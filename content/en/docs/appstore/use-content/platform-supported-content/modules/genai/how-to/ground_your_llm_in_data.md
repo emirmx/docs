@@ -31,7 +31,7 @@ Before implementing this capability into your app, make sure you meet the follow
 
 * Basic understanding of [Prompt Engineering](/appstore/modules/genai/get-started/#prompt-engineering).
 
-## Ground your LLM in a Data Use Case
+## Grounding Your LLM in a Data Use Case
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/diagram.png" >}}
 
@@ -52,7 +52,7 @@ You can upload your custom data into the knowledge base. However, for this examp
 * A JSON file containing examples of IT support solutions, such as *"If the software crashes every time you try to save your document, first ensure you have the latest updates installed. Try..."*
 * An **Import Mapping** that maps the `JsonObject` into the corresponding domain model entity.
 
-### Loading Data into the Knowledge Base
+### Loading Data Into the Knowledge Base
 
 To start, create a microflow that allows you to upload data into your knowledge base.
 
@@ -161,7 +161,7 @@ With both microflows created, they must be combined and added to the homepage to
 
 You have successfully added the logic to insert data into the knowledge base!
 
-### Chat Setup {#chatbotmicroflows}
+### Chat Setup
 
 To use the knowledge in a chat interface, create and adjust certain microflows as shown below. 
 
@@ -208,7 +208,7 @@ For the application to function as expected, ensure that the following microflow
 
 * Ensure that your admin role has the following module roles assigned: MxGenAIConnector.Administrator, ConversationalUI.User, and MyFirstModule.Administrator.
 
-## Testing and Troubleshooting {#testing-troubleshooting}
+## Testing and Troubleshooting
 
 Before testing, ensure that you have completed the Mendix Cloud GenAI configuration as described in the [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/how-to/blank-app/), particularly the [Mendix Cloud GenAI Configuration](/appstore/modules/genai/how-to/blank-app/#mendix-cloud-genai-configuration) section. 
 
