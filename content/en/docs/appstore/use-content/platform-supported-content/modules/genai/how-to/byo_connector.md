@@ -1,14 +1,14 @@
 ---
-title: "Build your own GenAI connector"
+title: Build Your Own GenAI Connector"
 url: /appstore/modules/genai/how-to/byo-connector
-linktitle: "Build your own GenAI connector"
+linktitle: "Build Your Own GenAI connector"
 weight: 20
 description: "A tutorial that describes how to build your own GenAI connector"
 ---
 
 ## Introduction
 
-If you would like to create your own connection to the LLM model of your choice but would like to use the chat UI capabilities we have developed in our [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/) module using the entities in [GenAICommons](/appstore/modules/genai/genai-for-mx/commons/), then you are at the right document to find out how you can get started with building your own GenAI Commons connector.
+If you want to create your own connection to the LLM model of your choice while leveraging the chat UI capabilities of the [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/) module, which is built using entities from [GenAICommons](/appstore/modules/genai/genai-for-mx/commons/), then this document will guide you on how to get started with building your own GenAI Commons connector.
 
 The practical advantages of building your own GenAI Commons connector are numerous. First, you can reuse all of our ConversationalUI components, allowing you to use the already existing chat interface and related functionalities. Second, starting from our starter apps is straightforward, allowing you to quickly set up and begin using the functionalities our different starter apps provide. Third, switching providers in your existing apps can be done very easily. These advantages not only save you valuable development time but also provide more time to customize the already existing functionalities. This guide will walk you through the process, ensuring you can seamlessly integrate your preferred LLM while leveraging our robust and user-friendly chat interface components. By following the steps outlined here, you’ll be able to create a custom connector that fits your specific needs, all while maintaining the high-quality user experience provided by our platform.
 
