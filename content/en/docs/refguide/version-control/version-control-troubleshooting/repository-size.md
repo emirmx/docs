@@ -54,6 +54,10 @@ In Studio Pro 10.18 MPRv2 was released as [Public Beta](/releasenotes/beta-featu
 Collaborating within one app on MPRv1 and MPRv2 branches is possible. To limit repository growth as much as possible, Mendix recommends migrating the most active branches to MPRv2 the first.
 {{% /alert %}}
 
+{{% alert color="warning" %}}
+Merging MPRv2 apps using the command line with `git merge` or by using third-party tools is only supported from Studio Pro 10.21. Hybrid merges, with both MPRv1 and MPRv2 formats, are not supported at all.
+{{% /alert %}}
+
 #### Converting MPR Storage Format {#convert}
 
 In Studio Pro 10.18 and above upgrading to the new format is optional and can be done per branch via the [File menu](/refguide/file-menu/). To upgrade to MPRv2, open your app and select **File > Upgrade app to split MPR format (v2)**. After a confirmation the app will be converted and you will be prompted to commit.
