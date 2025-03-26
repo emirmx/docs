@@ -1,9 +1,9 @@
 ---
-title: "Ground your Large Language Model in Data - Mendix Cloud GenAI"
+title: "Grounding Your Large Language Model in Data – Mendix Cloud GenAI"
 url: /appstore/modules/genai/how-to/howto-groundllm/
-linktitle: "Ground your LLM in data - Mendix Cloud GenAI"
+linktitle: "Grounding Your LLM in Data"
 weight: 40
-description: "This document guides you to ground your large language model in data in your Mendix application to enhance functionality."
+description: "This document guides you on grounding your large language model in data within your Mendix application to enhance its functionality."
 ---
 
 ## Introduction
@@ -15,7 +15,7 @@ In this document, you will:
 * Learn how to ground your LLM in data within your Mendix application using the [Mendix Cloud GenAI Resource Packs](appstore/modules/genai/mx-cloud-genai/resource-packs/).
 * Discover how to integrate GenAI capabilities with a knowledge base to effectively address specific business requirements.
 
-### Prerequisites {#prerequisites}
+### Prerequisites
 
 Before implementing this capability into your app, make sure you meet the following requirements:
 
@@ -31,11 +31,11 @@ Before implementing this capability into your app, make sure you meet the follow
 
 * Basic understanding of [Prompt Engineering](/appstore/modules/genai/get-started/#prompt-engineering).
 
-## Ground your LLM in a Data Use Case {#use-case}
+## Ground your LLM in a Data Use Case
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/diagram.png" >}}
 
-### Choosing the Infrastructure {#infrastructure}
+### Choosing the Infrastructure
 
 Since this document focuses on the [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/), ensure that you have the [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/), which is part of the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle on the Marketplace.
 
@@ -52,11 +52,11 @@ You can upload your custom data into the knowledge base. However, for this examp
 * A JSON file containing examples of IT support solutions, such as *"If the software crashes every time you try to save your document, first ensure you have the latest updates installed. Try..."*
 * An **Import Mapping** that maps the `JsonObject` into the corresponding domain model entity.
 
-### Loading Data into the Knowledge Base {#kb}
+### Loading Data into the Knowledge Base
 
 To start, create a microflow that allows you to upload data into your knowledge base.
 
-#### Loading Microflow {#loadkingkb}
+#### Loading Microflow
 
 1. Create a new microflow, for example, `ACT_TicketList_LoadAllIntoKnowledgeBase`.
 
@@ -71,40 +71,39 @@ To start, create a microflow that allows you to upload data into your knowledge 
 
 3. Next, add the `Chunks: Initialize ChunkCollection` action. You can keep the **Use return variable** as *Yes* and object name `ChunkCollection`.
 
-4. As shown in the image above, include a loop where the iterator has **Loop type** `For each (item in the list)`, the **Iterate over** is the List retrieved in the above step, which in this case is named `TicketList`, and lastly, you can add a **Loop object name**, as `IteratorTicket`. After saving these settings, add a `Chunks: Add KnowledgeBaseChunk to ChunkCollection` action inside the loop. Here you can configure it as follows:
+4. As shown in the image above, include a loop where the iterator has **Loop type** `For each (item in the list)`, the **Iterate over** is the List retrieved in the above step, which in this case is named `TicketList (List of MyFirstModule.Tickets)`, and lastly, you can add a **Loop object name** as `IteratorTicket`. After saving these settings, add a `Chunks: Add KnowledgeBaseChunk to ChunkCollection` action inside the loop. Here you can configure it as follows:
 
-    * Chunk collection: `$ChunkCollection`
-    * Input Text: edit the expression to use the iterator object from the loop with the desired attribute, which in this case is `$IteratorTicket/Description`
-    * Human readable ID: `empty` (this is an optional value)
-    * Mx object: Select the loop's iterator, such as `$IteratorTicket`
+    * **Chunk collection**: `$ChunkCollection`
+    * **Input text**: edit the expression to use the iterator object from the loop with the desired attribute, which in this case is `$IteratorTicket/Description`
+    * **Human readable ID**: `empty` (optional)
+    * **Mx object**: Select the loop's iterator, such as `$IteratorTicket`
     * Use return value: No
-    * Metadata collection: `empty` (this is an optional value)
+    * Metadata collection: `empty` (optional)
 
 5. After the loop, add an `Retrieve` action to retrieve a `MxCloudKnowledgeBase`. In this example, the first entry found in the database is used.
     
-    * Source: `From database`
-    * Entity: `MxGenAIConnector.MxCloudKnowledgeBase`
-    * Range: `First`
-    * Object name: `MxCloudKnowledgeBase`
+    * **Source**: `From database`
+    * **Entity**: `MxGenAIConnector.MxCloudKnowledgeBase`
+    * **Range**: `First`
+    * **Object name**: `MxCloudKnowledgeBase`
 
 6. Next, add the `Connection: Get` action from the `Mendix Cloud Knowledge Base` category:
 
-    * MxCloudKnowledgeBase | Type: `Variable` | Variable: `MxCloudKnowledgeBase`
-    * CollectionName | Type: `Expression` | Expression: `'TicketSolutions'`
+    To edit the parameter value for `MxCloudKnowledgeBase`, double-click its type, select `Variable`, and assign it the value `MxCloudKnowledgeBase`. Similarly, for `CollectionName`, double-click its type, select `Expression`, and assign it the value `TicketSolutions`.
 
     You can keep the **Use return variable** as *Yes* and object name `MxKnowledgeBaseConnection`.
 
 7. Add the `Embed & Repopulate Collection` action to insert your knowledge into the knowledge base:
 
-    * Connection | Type: `Variable` | Variable: `MxKnowledgeBaseConnection`
-    * ChunkCollection | Type: `Variable` | Variable: `GenAICommons.ChunkCollection`
+    To edit the parameter value for `Connection`, double-click its type, select `Variable`, and assign it the value `MxKnowledgeBaseConnection`. Similarly, for `ChunkCollection`, double-click its type, select `Variable`, and assign it the value `GenAICommons.ChunkCollection`.
 
     You can keep the **Use return variable** as *Yes* and variable name `IsSuccess`.
 
 8. Next (optional), include a decision:
-    * Caption: for example, `Replace Success`
-    * Decision Type: `Expression`
-    * Expression: `$IsSuccess`
+
+    * **Caption**: for example, `Replace Success`
+    * **Decision Type**: `Expression`
+    * **Expression**: `$IsSuccess`
 
     If the decision is `true`, an `End event` action can be added where a microflow return value to `true`. You may add a message to inform the end user that the insertion was successful.
 
@@ -122,15 +121,16 @@ This microflow first checks whether a list of tickets already exists in the data
 
 2. Add a `Retrieve` action:
     
-    * Source: `From database`
-    * Entity: Select the entity that contains your knowledge, which in this example is `MyFirstModule.Ticket`
-    * Range: `First`
-    * Object name: `Ticket`
+    * **Source**: `From database`
+    * **Entity**: Select the entity that contains your knowledge, which in this example is `MyFirstModule.Ticket`
+    * **Range**: `First`
+    * **Object name**: `Ticket`
 
 3. Include a decision where:
-    * Caption: `Tickets?`
-    * Decision Type: `Expression`
-    * Expression: `$Ticket = empty`
+
+    * **Caption**: `Tickets?`
+    * **Decision Type**: `Expression`
+    * **Expression**: `$Ticket = empty`
 
     If the decision is `false`, an `End event` is added, as importing tickets is not required.
 
@@ -140,12 +140,12 @@ This microflow first checks whether a list of tickets already exists in the data
 
 5. Next, add the `Import With Mapping` action with the following configurations:
 
-    * Variable: `TicketJSON` created in the previous step
-    * Mapping: Use the mapping mentioned in the [demo data section](/appstore/modules/genai/how-to/howto-groundllm/#demodata)
-    * Range: `All`
-    * Commit: `Yes without events`
-    * Store in variable: `No` (optional, not needed here)
-    * Variable name: (optional) only when stored in variable
+    * **Variable****: `TicketJSON` created in the previous step
+    * **Mapping**: Use the mapping mentioned in the [demo data section](/appstore/modules/genai/how-to/howto-groundllm/#demodata)
+    * **Range**: `All`
+    * **Commit**: `Yes without events`
+    * **Store in variable**: `No` (optional, not needed here)
+    * **Variable name**: (optional) only when stored in variable
 
 With both microflows created, they must be combined and added to the homepage to populate the knowledge base.
 
@@ -165,30 +165,30 @@ You have successfully added the logic to insert data into the knowledge base!
 
 To use the knowledge in a chat interface, create and adjust certain microflows as shown below. 
 
-1. Search for the pre-built microflow `ChatContext_ChatWithHistory_ActionMicroflow` in the **ConversationalUI** > **USE_ME** > **Conversational UI** > **Action microflow examples** folder and copy it into your `MyFirstBot` module.
+1. Search for the pre-built microflow `ChatContext_ChatWithHistory_ActionMicroflow` in the **ConversationalUI** > **USE_ME** > **Conversational UI** > **Action microflow examples** folder and copy it into your **MyFirstBot** module.
 
-2. Search for the pre-built microflow `ACT_FullScreenChat_Open` in **ConversationalUI > USE_ME > ConversationalUI > Pages**. Copy the microflow into your `MyFirstBot` module and select **Include in project** on the copied microflow.
+2. Search for the pre-built microflow `ACT_FullScreenChat_Open` in the **ConversationalUI > USE_ME > ConversationalUI > Pages** folder. Copy the microflow into your **MyFirstBot** module.  Right-click on the copied microflow and select **Include in project**.
 
-3. Change the parameters of the `New Chat` action in the `ACT_FullScreenChat_Open` microflow:
+3. In the `ACT_FullScreenChat_Open` microflow, change the parameters of the `New Chat` action:
 
-    * The `Action microflow` input parameter to your new `MyFirstBot.ChatContext_ChatWithHistory_ActionMicroflow` from your `MyFirstBot` module.
+    * Set the **Action microflow** input parameter as your new `MyFirstBot.ChatContext_ChatWithHistory_ActionMicroflow` from your **MyFirstBot** module.
 
-    * The `System prompt` input parameter to a prompt that fits your use case. For example, *You are a helpful assistant supporting the IT department with employees requests. Use the knowledge base and previous support tickets as a database to find a solution to the users request without disclosing sensitive details or data from previous tickets.*
+    * Set the **System prompt** input parameter as a prompt that fits your use case. For example, *You are a helpful assistant supporting the IT department with employees requests. Use the knowledge base and previous support tickets as a database to find a solution to the users request without disclosing sensitive details or data from previous tickets.*
 
-    * The `Provider name` input parameter can be modified to a more purpose-specific text, such as `My GenAI Provider Configuration`.
+    * The **Provider name** input parameter can be modified to a more purpose-specific text, such as `My GenAI Provider Configuration`.
 
     With the `MyFirstBot.ACT_FullScreenChat_Open microflow` configured, the `MyFirstBot.ChatContext_ChatWithHistory_ActionMicroflow` can now be adjusted to handle user-submitted messages in the chat interface.
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/chatcontext_microflow_example.png" >}}
 
-4. Open your `MyFirstBot.ChatContext_ChatWithHistory_ActionMicroflow` microflow in your `MyFirstBot` module.
+4. Open your `MyFirstBot.ChatContext_ChatWithHistory_ActionMicroflow` microflow in your **MyFirstBot** module.
 
 5. After the `Request found` decision, add a `Retrieve` action. In this example, the first entry found in the database is used, just as in the insertion microflow.
     
-    * Source: `From database`
-    * Entity: `MxGenAIConnector.MxCloudKnowledgeBase`
-    * Range: `First`
-    * Object name: `MxCloudKnowledgeBase`
+    * **Source**: `From database`
+    * **Entity**: `MxGenAIConnector.MxCloudKnowledgeBase`
+    * **Range**: `First`
+    * **Object name**: `MxCloudKnowledgeBase`
 
 6. Add the `Tools: Add Mendix Cloud Knowledge Base` action with the settings shown in the image below:
 
