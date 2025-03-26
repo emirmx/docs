@@ -42,8 +42,9 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
 4. Click **Create** to create a new data source.
     1. Enter a **Name** for your data source within the Data Loader.
     2. Enter an **API endpoint** – that is, the base endpoint for the OData resource in your Mendix application, for example, `https://yourmendixapp.mendixcloud.com/odata/snowflakedata/v1/`.
-    3. Click **Save**.
-    4. Grant the application **CREATE DATABASE** and **EXECUTE TASK** privileges. This step is necessary for the application to create the staging database for data ingestion and to execute tasks.
+    3. Use the radio button **Use Delta Ingestion** to specify if you want to ingest all exposed data with every ingestion, or if you want to ingest only data that was newly created or changed since the last ingestion for this data source.
+    4. Click **Save**.
+    5. Grant the application **CREATE DATABASE** and **EXECUTE TASK** privileges. This step is necessary for the application to create the staging database for data ingestion and to execute tasks.
 
 5. To view the status of your data source, check the **Details**.
 6. To view the configuration status, click the **Authentication Configuration** tab.
@@ -83,6 +84,26 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
 19. To view the ingested data, access the schema specified in the target database within your Snowflake environment.
 
 The ingested data is stored in the target schema of the specified target database, created by the Mendix Data Loader application. This target schema serves as a staging area. After each ingestion, copy the tables from the target schema to the desired database and schema that you want to use to store the ingested data.
+
+## Using Delta Ingestion Setting
+
+If you do not want to ingest all exposed data from the published OData of your Mendix application, you can enable the **Use Delta Ingestion** setting on your data source when creating or editing the data source in the Mendix Data Loader.
+
+The first ingestion performed for the data source with this setting enabled ingests all data exposed by your OData endpoint. Subsequent ingestions ingest only the data with a **changedDate** later than the date of the last ingestion.
+
+### Enabling ChangedDate for Delta Ingestion
+
+To use delta ingestion, you must enable the **changedDate** system member on the exposed entities. To do this, perform the following steps:
+
+1. Navigate to the entities in your domain model.
+2. In their properties, select the **Store 'changedDate'** radio button.
+3. Navigate to your OData resource and expose the **changedDate** attribute.
+
+### Handling Deleted Objects
+
+Deleted objects are not automatically handled on the Snowflake side. To properly manage deletions, we recommend adding a boolean field to your exposed entities, for example, **IsSoftDeleted**. You can then set the field to **true** when an object needs to be deleted.
+
+After these objects are ingested into the staging area in Snowflake, you can process them accordingly during further data processing. After ingesting a soft-deleted object, you can delete it from the database of your Mendix application. 
 
 ## Using Unique Schemas to Avoid Ingestion Job Conflicts
 
@@ -248,7 +269,7 @@ To implement the connection between Mendix Data Loader and your app, perform the
 ## Current Limitations
 
 * Exposing an association in an OData service as a link is not supported yet by the Mendix Data Loader. Instead, choose the **As an associated object id** option in your OData settings. This option stores the associated object ID in the table, but not explicitly as foreign key.
-* The Mendix Data Loader always ingests all data exposed by the OData published by your Mendix application. If you do not want to use everything within the exposed entities, you must apply further filtering on the Snowflake side. Enabling filtering on the Mendix side is currently on the roadmap.
+* The Mendix Data Loader always ingests all data exposed by the OData published by your Mendix application (or all data created and created data since the last ingestion, if you use the **Use Delta Ingestion** setting on the data source). If you do not want to use everything within the exposed entities, you must apply further filtering on the Mendix OData side.
 * The Mendix Data Loader does not support custom domains for Mendix applications when using pagination in published OData services. This is because the OData response always returns the base domain's root URL, regardless of the custom domain being used. As a result, the call for the next page fails because the returned root URL does not have a corresponding network rule in Snowflake.
 * Loading deltas is not yet supported on the OData side.
 
@@ -292,6 +313,18 @@ A bug in the published OData service resource in Mendix Studio Pro 10.10 where t
 #### Solution
 
 This issue is resolved in Mendix Studio Pro version 10.12 and newer. For information about using OData pagination, see [Published OData Entity: Use Paging](/refguide/published-odata-entity/#paging).
+
+### Error Using Delta Ingestion: Could Not Map 'ChangedDate' to Attribute or Association
+
+When ingesting data using the **Use Delta Ingestion** setting, the stacktrace shows the error code 400 with the message `Could not map 'changedDate' to attribute or association.`.
+
+#### Cause 
+
+The **ChangedDate** system member on the exposed entity is not enabled or is not exposed in the OData endpoint.
+
+#### Solution
+
+Enable the **changedDate** system member on the exposed entity and expose it on the published OData resource.
 
 ## Contact Information
 
