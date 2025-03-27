@@ -19,6 +19,14 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
+### March 30, 2025
+
+#### New Features
+
+* We added a new endpoint to the [Projects API](/apidocs-mxsdk/apidocs/projects-api/) which allows clients to retrieve full details of a project and its team
+* We have implemented all logic for the cleanup of unused projects and will start marking projects for deletion anytime soon. Once a project is marked, you get a notice on the MyApps page. There you can filter the page to see which projects are marked. Once marked, you have two calendar weeks to get it unmarked. The easiest way to do this is by pinning the project. For more information see [this documentation](/developerportal/deploy/mendix-cloud-deploy/#projects-deletion)
+
+
 ### March 18, 2025
 
 #### New Features
