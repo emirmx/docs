@@ -107,7 +107,6 @@ For readers with more knowledge of the OAuth and OIDC protocol:
 The OIDC SSO module does not yet support the following:
 
 * Requesting claims via the 'claims' query parameter, as per OIDC specs
-* Other client authentication methods such as using asymmetric keys (“private_key_jwt”)
 * Delegating authorization using OAuth-scopes; this currently requires a custom microflow for parsing of Access Tokens
 * Mobile apps
 * Controlling the configuration using constants requires an app restart
@@ -326,7 +325,8 @@ In this case, the OIDC client is the app you are making.
         * **Key Pair Expiration Days**: (default `90`)
         * **JWT ALG(Signing Algorithm)**: (default `RS256`)
  
-    Once you **Save** the configuration, a key pair is automatically generated.
+    Once you **Save** the configuration, a key pair is automatically generated. Before you set up the private key
+authentication in your Mendix App, complete the JWKS configuration at your IdP, for example, Okta. For more information, see the [Configuring JWKS at Your IdP (Okta)](#jwks-okta}) section.
 
     {{% alert color="warning" %}} The JWKS expires in one minute, which results in the deletion of all previous
 keys, retaining only the latest key. Ensure that your application is configured to use the most recent key to
@@ -394,7 +394,7 @@ Now, you can acquire tokens which can be validated using JWKS URI.
 
 For more information about configuring your app for OIDC with Amazon Cognito, see [Amazon Cognito: Configuring the Required Settings in Your Mendix App](/appstore/modules/aws/amazon-cognito/#cognito).
 
-### Deploytime Configuration of Your IdP at Your App{#deploytime-idp-configuration}
+### Deploy-time Configuration of Your IdP at Your App{#deploytime-idp-configuration}
 
 #### Automated Deploy-time SSO Configuration{#deploy-time}
 
@@ -1008,15 +1008,16 @@ Your IdP may have different ways of handling requests to use a specific authenti
 
 When a user successfully signs in at your IdP, your IdP may or may not return an ACR claim in the ID-token. If your IdP returns the actual authentication method that was used in the ACR claim in the ID-token (and/or Access Token), you can create a [custom User Provisioning microflow](#microflow-at-runtime) (or [custom access token parsing microflow](#custom-parsing)) to grant or restrict access to specific resources or functionalities based on the level of authentication assurance.
 
-### Configuring JWKS at Your IdP (For Okta)
+### Configuring JWKS at Your IdP (Okta) {#jwks-okta}
 
-Follow the steps below to configure the JWKS in Okta.
+Follow the steps below to configure the JWKS in Okta before you set up the private key
+authentication in your Mendix App.
 
 1. Go to the OIDC application in Okta.
 2. Navigate to the **General** tab and click **Edit** in the Client Credentials section.
 3. For **Client authentication**, select **Public Key / Private Key**.
 4. In the **PUBLIC KEYS** section, go to the **Configuration** and choose **Use a URL to fetch keys dynamically**.
-5. In the **Url** field, enter the location where your public key is stored. The following is the new endpoint in OIDC SSO to fetch public keys based on the configured alias For example, `https://`<base_url>`/oauth/v2/jwks/{Alias}`. Here, `{Alias}` is the client alias configured in the OIDC application. For example, Okta.
+5. In the **Url** field, enter the location where your public key is stored. The following is the new endpoint in the OIDC SSO to fetch public keys based on the configured alias For example, `https:/`*`BASE_URL`*`/oauth/v2/jwks/`*`ALIAS`*. Here, *`ALIAS`* is the client alias configured in the OIDC application. For example, Okta.
 6. **Save** the configuration.
 
 ## Testing and Troubleshooting{#testing}
