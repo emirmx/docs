@@ -5,7 +5,6 @@ type: swagger
 description: "The Projects API manages your projects and their teams."
 weight: 100
 restapi: true
-beta: false
 ---
 
 ## Introduction
