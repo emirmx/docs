@@ -326,9 +326,9 @@ In this case, the OIDC client is the app you are making.
         * **Key Pair Expiration Days**: (default `90`)
         * **JWT ALG(Signing Algorithm)**: (default `RS256`)
  
-        Once you **Save** the configuration, a key pair is automatically generated.
+    Once you **Save** the configuration, a key pair is automatically generated.
 
-        {{% alert color="warning" %}} The JWKS expires in one minute, which results in the deletion of all previous
+    {{% alert color="warning" %}} The JWKS expires in one minute, which results in the deletion of all previous
 keys, retaining only the latest key. Ensure that your application is configured to use the most recent key to
 avoid authentication failures. {{% /alert %}}
 
