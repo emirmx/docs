@@ -200,7 +200,7 @@ The table below provides a detailed comparison between the Advanced Audit Trail 
 
 ## Search Criteria and Advanced Filtering
 
-The updated search functionality now supports both **exact matches** and **flexible filtering** based on field type:
+The updated search functionality now enforces both **exact matches** and **flexible filtering** based on field type:
 
 **Exact Match Fields**
 
