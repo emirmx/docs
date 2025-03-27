@@ -193,4 +193,4 @@ Furthermore, external entities cannot be committed. Use the [Send External Objec
 * On pages, the [Save button](/refguide/button-widgets/) and the [Save Changes event](/refguide/on-click-event/#save-changes) do not work when the page contains widgets that update external entities. Call a microflow that persists the changes using **Send External Object** instead.
 * When synchronizing remote entities to an offline-first client while the remote service is offline, the synchronization will fail and users will see an error.
 
-For more details on consuming services and published entities, including operations that can be performed on external entities, see [Consume Registered Assets](/catalog/consume/) in the *Data Hub Guide*.
+For more details on consuming services and published entities, including operations that can be performed on external entities, see the [Consume Registered Assets](/catalog/consume/) in the *Catalog Guide*.
