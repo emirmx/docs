@@ -320,6 +320,7 @@ In this case, the OIDC client is the app you are making.
     The options are:
     * `client_secret_basic`: Your app will use the HTTP Basic Authentication scheme to authenticate itself at your IdP. (Default – for security reasons this should be your preferred choice)
     * `client_secret_post`: Your app will authenticate itself by including its `client_id` and `client_secret` in the payload of token requests. (Older versions of the OIDC SSO module used this method).
+    * `private_key`: This method uses asymmetric key cryptography (algorithm) for authentication instead of a shared `client secret`.
 
 5. Add the **Client Secret**.
 6. If you have the **Automatic Configuration URL** (also known as the *well-known endpoint*), enter it and click **Import Configuration** to automatically fill the other endpoints.
@@ -434,7 +435,19 @@ The following constants are optional:
 
 * **ClientAuthenticationMethod** (*default: client_secret_basic*) – the client authentication method — the caption of OIDC.ENU_ClientAuthenticationMethod
 
-    Examples: `client_secret_post` or `client_secret_basic`
+    Examples: `client_secret_post`, `client_secret_basic`, or `private_key`
+
+{{% alert color="info" %}}
+when you set **ClientAuthenticationMethod** as `private_key`, you do not need to set **ClientSecret** constant.
+{{% /alert %}}
+
+* **JWT_ALG** (*default: RS256*) – JWT signing algorithm
+
+    Example: `ES256`, `ES384`, `ES512`, `PS256`, `PS384`, `PS512`, `RS256`,`RS384`, and `RS512`
+
+* **KeyPair_ExpirationDays** (*default: 90*) – Expiration time of key pair
+
+    Example: `30`
 
 * **CallbackResponseMode** (*default: Query*) – : the callback response mode — the caption of OIDC.ENU_ResponseMode
 
