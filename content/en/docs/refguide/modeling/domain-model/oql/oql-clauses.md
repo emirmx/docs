@@ -1078,6 +1078,7 @@ The syntax is as follows:
 ### Result data type {#oql-union-type}
 
 The data types used in `select_query` statements are considered when determining the final return type of the `UNION` clause. All data types used in `select_query` statements must be compatible. All data types are compatible with themselves. Differing types are only compatible in these cases:
+
 * `UNION` of numeric types `INTEGER`, `LONG` and `DECIMAL`. The return type is the numeric type found in the `select_query` statements with the highest precedence (see [Type Precedence](/refguide/oql-expression-syntax/#type-coercion) for more information). 
 * `UNION` of limited and unlimited `STRING`. The return type is determined by the largest length of `STRING` attributes in the `select_query` statements.
 * `UNION` of any known type and a `NULL` literal. The result type is the known type.

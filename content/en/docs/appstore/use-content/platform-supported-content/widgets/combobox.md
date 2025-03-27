@@ -145,6 +145,10 @@ Lazy loading always fetches 100 data items for each request. Pagination is trigg
 Using lazy loading with microflow or nanoflow data sources can result in performance issues if the microflow retrieves more than 100 items. Because of that, it is not currently recommended to use lazy loading with microflow or nanoflow data sources. This issue will be fixed in a future release.
 {{% /alert %}}
 
+{{% alert color="warning" %}}
+Using a **caption type** expression disables lazy load due to a technical limitation on filtering the content. The workaround for this is to use **custom content**, and then choose **caption type** as the attribute.
+{{% /alert %}}
+
 * **Multiple selection**
     This setting is only applicable for combo boxes with multiple item selections.
 

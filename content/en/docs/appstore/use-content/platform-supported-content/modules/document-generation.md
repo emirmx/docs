@@ -26,6 +26,7 @@ The [PDF Document Generation](https://marketplace.mendix.com/link/component/2115
 
 * The maximum file size is 25 MB per document. If your document exceeds this limit, the action will result in an exception. We recommend compressing high-resolution images to reduce their file size.
 * If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using client certificates, our cloud service will not be able to reach your app and the module will not work properly.
+* If your app uses a custom domain, you must configure a custom SSL/TLS domain certificate signed by a trusted public authority, including all intermediate certificates if applicable. Self-signed certificates will cause the service to fail. For more information, see [Obtaining a new signed certificate](/developerportal/deploy/custom-domains/#obtaining-a-new-signed-certificate).
 * We use a fixed 30 second timeout for the page to finish loading and rendering. A timeout exception is thrown if the page content did not finish loading within 30 seconds.
 * Widgets or add-ons for your `index.html` file that perform long polling network requests are not supported. The document generation service waits until there are no more pending network requests.
 * Some widgets, such as the [Charts](/appstore/widgets/charts/) widget, might be rendered inconsistently in the generated PDF due to factors like animation.
@@ -193,10 +194,6 @@ Rule | Name | Pattern | Rewrite URL
 2 | docgen | `^(docgen/)(.*)` | `http://localhost:8080/{R:1}{R:2}`
 
 {{% alert color="info" %}}Rule 1 is based on the default URL prefix (`p`) for page/microflow URLs. If you configured a different prefix in the runtime settings of your app, adjust the rule accordingly.{{% /alert %}}
-
-#### Allowing the Document Generation Service IP Addresses
-
-If you have set up inbound or outbound IP restriction rules, you must allow the [IP addresses of the DocGen service.](/developerportal/deploy/mendix-ip-addresses/#global-platform-ips)
 
 ## Usage
 
@@ -376,7 +373,7 @@ If you encounter any issues while [registering your app environment](#register-a
 
 In general, we recommend that you perform the following steps if you get any issues during runtime:
 
-1. Temporarily set the log level of `DocumentGeneration` log node to [trace](/howto/monitoring-troubleshooting/log-levels/#level). This should give more insight at what stage the action fails.
+1. Temporarily set the log level of `DocumentGeneration` log node to [trace](/refguide/log-levels/#level). This should give more insight at what stage the action fails.
 2. Temporarily add the page microflow that is configured in the action to the app navigation, or make it accessible via a button. This can help to verify that the page itself loads correctly, and can for example outline misconfiguration of entity access, widgets, etc. Make sure that you access the page with the same user you provided to the `Generate as user` parameter in the action.
 
 #### Exceptions
@@ -445,7 +442,7 @@ com.mendix.modules.microflowengine.MicroflowException: com.mendix.systemwideinte
 	at DocumentGenerationTest.ACT_TestDocument_WrongLayout (JavaAction : 'Generate PDF from page')
 ```
 
-We recommend that you temporarily set the log level of the `DocumentGeneration` log node to [trace](/howto/monitoring-troubleshooting/log-levels/#level). This should give more insight at what stage the action fails.
+We recommend that you temporarily set the log level of the `DocumentGeneration` log node to [trace](/refguide/log-levels/#level). This should give more insight at what stage the action fails.
 
 #### Cloud Service Errors
 
