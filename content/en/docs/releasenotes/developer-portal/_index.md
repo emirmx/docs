@@ -26,6 +26,18 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 * We have added a new endpoint to the [Projects API](/apidocs-mxsdk/apidocs/projects-api/). The endpoint allows clients to retrieve full details of a project and its team.
 * We have implemented all logic for the cleanup of unused projects and will soon start marking projects for deletion. Once a project is marked, you get a notice on the MyApps page. There you can filter the page to see which projects are marked. Once marked, you have two calendar weeks to get it unmarked. The easiest way to do this is by pinning the project. For more information, see [Deletion of Unused Projects](/developerportal/deploy/mendix-cloud-deploy/#projects-deletion).
 
+### March 20, 2025
+
+#### New Features
+
+* We introduced a new beta feature for Mendix AI Assistance (Maia) in Epics: **Maia Create User Story**. It helps you to easily create stories. You can access it on the [Board](/developerportal/project-management/epics/board/) or the [Planning](/developerportal/project-management/epics/planning/) page under **Project Management**.
+
+It is turned off by default. Scrum Master can switch it on in the Project Management settings.
+
+#### Improvements
+
+* We have redesigned the story creation page from a popup to a full page.
+
 ### March 18, 2025
 
 #### New Features

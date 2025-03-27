@@ -92,7 +92,8 @@ The OIDC Provider has the following features and limitations:
 * It supports responsive web applications, using the common OAuth Authorization Code grant.
 * Your apps can be registered as an OIDC client with the OIDC Provider using the client registration API or client configuration screen. The client registration API allows you to register your client automatically when using a CI/CD deployment pipeline.
 * It publishes a well-known endpoint to communicate endpoints and other IdP characteristics to client applications. Mendix apps using the OIDC SSO module will consume this endpoint to perform actions like retrieving the keys needed to validate ID-tokens that they receive.
-* It supports the OIDC ‘nonce’ parameter, PKCE, and multiple client authentication methods ( client_secret_post, client_secret_basic) as security features.
+* It supports the OIDC ‘nonce’ parameter, PKCE, and multiple client authentication methods (client_secret_post, client_secret_basic) as security features.
+* The module connects mobile apps easily, just like web apps.
 
 #### Limitations
 
@@ -429,16 +430,24 @@ Some examples of existing claims are:
 
 This section applies only when your client is using the authorization code grant.
 
+#### Provider App Acting as an Identity Provider (IdP)
+
 Consider a scenario, where you build an app using the [OIDC Provider](https://marketplace.mendix.com/link/component/214681) service. You can call this app an OIDC Provider app or Provider app. Other apps using the [OIDC SSO](https://marketplace.mendix.com/link/component/120371) module redirect end-users to your Provider app for authentication. You can choose how your Provider app handles the authentication process.
 The **LoginLocation** is a constant in the OIDC Provider service that controls where end-users are authenticated. The default value is a local sign in using a username and password as shown below:
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/oidc-provider/Basic_Username_Password.png" class="no-border" >}}
 
+#### Provider App Acting as an IAM Broker
+
 However, if you want the Provider app to act as an IAM broker, you need to redirect the authorization request within your Provider app to the endpoint of the local SSO module you choose to use. To do so, perform the steps below:
 
 1. Set the **LoginLocation** to the login URL of the SSO module.
-1. Include the return parameter name.
-For example, `SSO/Login?cont=` is the login URL and `cont` is the return parameter name.
+2. When you use the OIDC SSO as local SSO module in the provider application, set the **LoginLocation** value as `oauth/v2/login?cont=`.
+3. When you deployed your application on Mendix Cloud and linked to a licensed node, set the below values in the **Custom Runtime Settings**.
+
+| Setting type | Current value | New value |
+| --- | --- | --- |
+| com.mendix.core.SamSiteCookies | LAX | LAX |
 
 ## Configuring an OIDC Client
 
@@ -601,11 +610,11 @@ When Using IAM Brokering, accounts which can be used by OIDC provider are synced
 
 This means that the access token will contain a "sub" claim which gets value from the `MendixUserID` attribute of the `AccountDetail` entity.
 
-#### Using the AccountDetail Page of the OIDC Provider service
+#### Using the AccountDetail_Overview Page of the OIDC Provider service
 
-This method allows OIDC Provider service to be used separately as an IDP without building an IAM structure.
+This method allows OIDC Provider service to be used separately as an IdP without building an IAM structure.
 
-Where there is no IAM brokering functionality, the administrator can create end-users (Accounts) using the AccountDetail page in the OIDC Provider service. This page creates `AccountDetail` objects which automatically create `Account` objects in the app to represent the AccountDetails as accounts.
+When there is no IAM brokering functionality, the administrator can create end-users (Accounts) using the `AccountDetail_Overview` page in the OIDC Provider service. This page creates `AccountDetail` objects which automatically create `Account` objects in the app to represent the AccountDetails as accounts. If you want the user to log in through the provider as an IdP, make sure that the user has been created via the `AccountDetail_Overview` page.
 
 ### Structure of ID and Access Tokens
 

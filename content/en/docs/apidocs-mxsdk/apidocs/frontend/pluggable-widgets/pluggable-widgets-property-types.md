@@ -487,6 +487,23 @@ When a `dataSource` attribute is specified and configured by the user, it is pas
 | `defaultValue` | No       | String         | Default value for the property, the format should be `<ModuleId>.<DocumentId>`                          |
 | `defaultType`  | No       | String         | Default type for the property, supported values are `None`, `OpenPage`, `CallNanoflow`, `CallMicroflow` |
 
+#### XML Elements {#action-xml-elements}
+
+`<actionVariables>` — Defines variables a widget provides when calling [execute() on an ActionValue](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#execute). The variables are made available in Studio Pro when configuring [Call a Microflow](/refguide/on-click-event/#call-microflow) and [Call a Nanoflow](/refguide/on-click-event/#call-nanoflow) actions.
+
+`<actionVariable>` (required one or more) — Represents a primitive value provided by the widget as an argument when calling `ActionValue.execute()`. The variable is defined by the following attributes:
+* `key` (required) — The identifier of the variable used in Studio Pro and the Pluggable Widgets API.
+* `type` (required) — The type of the value that the variable represents. Supported types and their corresponding Typescript type are listed in the table below.
+* `caption` (required) — A short description of the variable that is displayed in Studio Pro.
+
+| Action Variable Type | Client Type  |
+| -------------------- | --------- |
+| `String`             | `string`  |
+| `Integer`            | `Big`  |
+| `Decimal`            | `Big`  |
+| `DateTime`           | `Date`    |
+| `Boolean`            | `boolean` |
+
 #### Studio Pro UI
 
 When the property is defined as follows:
@@ -501,6 +518,22 @@ When the property is defined as follows:
 Then the Studio Pro UI for the property appears like this:
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/pluggable-widgets/pluggable-widgets-property-types/action.png" class="no-border" >}}
+
+When the action exposes variables with the following XML:
+
+```xml
+<property key="actionWithVariable" type="action">
+	<caption>On click</caption>
+	<description>Action to be performed when button is clicked</description>
+	<actionVariables>
+		<actionVariable key="random" type="Decimal" caption="Random number between 0 and 1" />
+	</actionVariables>
+</property>
+```
+
+The variable appears in the UI like this:
+
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/pluggable-widgets/pluggable-widgets-property-types/action-variable.png" class="no-border" >}}
 
 ### Attribute {#attribute}
 
