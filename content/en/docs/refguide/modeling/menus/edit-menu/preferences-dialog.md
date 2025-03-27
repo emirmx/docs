@@ -161,15 +161,25 @@ This setting allows users to specify a path for Git installation in their system
 
 #### Enable Private Version Control with Git {#enable-with-Git}
 
-Select this option when you want to work on an app that is not stored in [Mendix Team Server](/developerportal/general/team-server/), but in a private Git server, which you have access to. This allows you to specify the location of the app on the Git server when opening, downloading, or uploading the app. With this setting you also need to specify [name](#name) and [email](#email) that will be used to identify your commits with Git.
+Select this option when you want to work on an app that is not stored in [Mendix Team Server](/developerportal/general/team-server/), but in a private Git server, which you have access to. This allows you to specify the location of the app on the Git server when opening, downloading, or uploading the app. With this setting you also need to specify [name and email](#name) that will be used to identify your commits with Git.
 
-#### Name {#name}
+#### Name and Email {#name}
 
-Specify your name for Git to use it in commit messages and make them more informative.
+Specify your name and email for Git to use in commit messages and make them more informative. These values are stored in the global Git configuration, which can also be used for other applications.
 
-#### Email {#email}
+{{% alert color="warning" %}}
 
-Specify your email for Git to use it in commit messages and make them more informative.
+**Name** and **Email** settings are not used for authenticating with the version control server and can be changed freely by the user.
+
+The commit is made on the user's workstation, so no authentication is required at that stage. However, when pushing changes to the version control server, it is expected that the user is fully aware of the content they are pushing. Pushes to the server are only allowed for authorized users.
+
+{{% /alert %}}
+
+{{% alert color="info" %}}
+
+Changing these values for another application will also affect the commits made from Studio Pro. If you notice a suspicious value in the commit history, it is likely a private email address set through another tool in the global Git configuration.
+
+{{% /alert %}}
 
 #### Enable Current Windows User Authentication {#enable-windows-authentication}
 
@@ -265,11 +275,17 @@ From Mendix version 10.10, Builder is the default way to construct XPath constra
 For Mendix versions 10.5.0 through 10.9.0, this option is on the **New Features** tab.
 {{% /alert %}}
 
+### Feedback Survey
+
+When the **Show feedback survey periodically** setting is enabled, Studio Pro will periodically display a feedback survey to gather input on your experience. This helps Mendix improve the product based on user feedback. For more information, see [Feedback Survey](/refguide/feedback-survey/).
+
 ## New Features Tab {#new-features}
 
 ### Access Rules Editor
 
-In Studio Pro version 10.6 a new access rule editor was introduced in Beta. Enable this option to use the new editor in the *Access rules* tab of the entity properties dialog.
+In Studio Pro version 10.21, the modernized access rule editor was made generally available and enabled by default. It was introduced as a Beta option in Studio Pro version 10.6. The old editor is deprecated and will be removed in 11.0.
+
+This option allows you to enable and disable the new editor in the *Access rules* tab of the entity properties dialog.
 
 For more information, see [Defining Access Rules Using the New Editor](/refguide/access-rules/#new-editor) section of *Access Rules*.
 

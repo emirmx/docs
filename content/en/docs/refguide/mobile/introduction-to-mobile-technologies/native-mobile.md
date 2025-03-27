@@ -66,4 +66,3 @@ bitcode_strip_path = `xcrun --find bitcode_strip`.chop!
      strip_bitcode_from_framework(bitcode_strip_path, framework_relative_path)
    end
 ```
-

@@ -133,7 +133,7 @@ Function calling enables LLMs to connect with external tools to gather informati
 
 The model does not call the function but rather returns a tool called JSON structure that is used to build the input of the function (or functions) so that they can be executed as part of the chat completions operation. Functions in Mendix are essentially microflows that can be registered within the request to the LLM​. The connector takes care of handling the tool call response and executing the function microflows until the API returns the assistant's final response.
 
-Function microflows take a single input parameter of type string or no input parameter and must return a string. Currently, adding a [ToolChoice](/appstore/modules/genai/genai-for-mx/commons/#set-toolchoice) for function calling is not supported by the Mendix Cloud GenAI Connector.
+Function microflows take a single input parameter of type string and optionally a Request and/or Tool object or no input parameter at all and return a string. Currently, adding a [ToolChoice](/appstore/modules/genai/genai-for-mx/commons/#set-toolchoice) for function calling is not supported by the Mendix Cloud GenAI Connector.
 
 {{% alert color="warning" %}}
 Function calling is a highly effective capability and should be used with caution. Function microflows run in the context of the current user, without enforcing entity access. You can use `$currentUser` in XPath queries to ensure that you retrieve and return only information that the end-user is allowed to view; otherwise, confidential information may become visible to the current end-user in the assistant's response.
@@ -176,6 +176,10 @@ Dealing with knowledge bases involves two main stages:
 2. [Retrieval of knowledge (Nearest neighbor)](#knowledge-base-retrieval)
 
 You do not need to manually add embeddings to a chunk, as the connector handles this internally. To see all existing knowledge bases for a configuration, go to the **Knowledge Base** tab on the [Mendix Cloud GenAI Configuration](#configuration) page and refresh the view on the right. Alternatively, use the `Get Collections` action to retrieve a synchronized list of collections inside of your knowledge base resource to include in your module. Lastly, you can delete a collection using the `Delete Collection` action.
+
+{{% alert color="warning" %}}
+The knowledge chunks are stored in an AWS OpenSearch Serverless database to ensure scalable and high-performance vector calculations—for example, retrieving the nearest neighbors of a given input. Inserted or modified chunks are only available for read operations (retrieval) in the knowledge base within 60-120 seconds. For more information, see [AWS documentation](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vector-search.html#serverless-vector-limitations).
+{{% /alert %}}
 
 #### Knowledge Base Insertion{#knowledge-base-insertion}
 

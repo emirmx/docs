@@ -42,7 +42,11 @@ Version control systems like Git do not store a full copy of a document for ever
 
 #### MPRv2 Format {#mprv2}
 
-Studio Pro 10.18 introduced a public beta of the new version of the *.mpr* format: MPRv2. The key difference is that all documents, such as microflows, are no longer stored as part of the *.mpr* file but as separate files in the *mprcontents* directory. The *.mpr* file functions as an index file pointing to all the different files on disk. 
+{{% alert color="info" %}}
+MPRv2 was released in Studio Pro 10.18.0 as [Public Beta](/releasenotes/beta-features/). In Studio Pro 10.21.0, MPRv2 was released for General Availability (GA) and is automatically used for new apps.
+{{% /alert %}}
+
+Studio Pro 10.18 introduced a new version of the *.mpr* format: MPRv2. The key difference is that all documents, such as microflows, are no longer stored as part of the *.mpr* file but as separate files in the *mprcontents* directory. The *.mpr* file functions as an index file pointing to all the different files on disk. 
 
 This means that when you change one document, for example, a page, only a small file representing that page will change on disk. This allows Git to calculate an efficient delta and results in a more appropriate repository growth compared to MPRv1. Functionally there is no differences between the split (v2) or the combined (v1) format inside Studio Pro. 
 
@@ -51,7 +55,7 @@ Collaborating within one app on MPRv1 and MPRv2 branches is possible. To limit r
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Merging using the command line with `git merge` or by using third-party tools is not yet supported for MPRv2.
+Merging MPRv2 apps using the command line with `git merge` or using third-party tools is only supported from Studio Pro 10.21.0 and above. Hybrid merges involving both MPRv1 and MPRv2 formats are not supported.
 {{% /alert %}}
 
 #### Converting MPR Storage Format {#convert}
@@ -231,5 +235,5 @@ In case you are still deciding whether to migrate from SVN to Git, or you are al
 
 {{< figure src="/attachments/refguide/version-control/troubleshoot-version-control-issues/migration-advice-combined.png" class="no-border" >}}
 
-MPRv2  is in beta in Studio Pro 10.18 and above and you can manually convert branches. When this feature is GA, branch conversion will happen automatically. For more information on the format, see the [MPRv2 Format](#mprv2) section.
+In Studio Pro 10.18 and above, you can manually convert branches to MPRv2. In future versions, branch conversion will happen automatically. For more information on the format, see the [MPRv2 Format](#mprv2) section.
 For more information on partial clone, see [Clone Type](/refguide/clone-type/).

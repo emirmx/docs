@@ -27,7 +27,7 @@ To familiarize yourself with the GenAI capabilities of Mendix, explore the secti
 
 #### Familiar with GenAI
 
-If you are already familiar with GenAI and want to start building, refer to [How to Build Smarter Apps Using GenAI](/appstore/modules/genai/using-genai/) guide to start building your first GenAI-powered application and access further supportive resources.
+If you are already familiar with GenAI and want to start building, refer to [How to Build Smarter Apps Using GenAI](/appstore/modules/genai/how-to/) guide to start building your first GenAI-powered application and access further supportive resources.
 
 #### New to GenAI
 
