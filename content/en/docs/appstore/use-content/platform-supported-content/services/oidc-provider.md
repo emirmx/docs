@@ -92,7 +92,7 @@ The OIDC Provider has the following features and limitations:
 * It supports responsive web applications, using the common OAuth Authorization Code grant.
 * Your apps can be registered as an OIDC client with the OIDC Provider using the client registration API or client configuration screen. The client registration API allows you to register your client automatically when using a CI/CD deployment pipeline.
 * It publishes a well-known endpoint to communicate endpoints and other IdP characteristics to client applications. Mendix apps using the OIDC SSO module will consume this endpoint to perform actions like retrieving the keys needed to validate ID-tokens that they receive.
-* It supports the OIDC ‘nonce’ parameter, PKCE, and multiple client authentication methods ( client_secret_post, client_secret_basic) as security features.
+* It supports the OIDC ‘nonce’ parameter, PKCE, and multiple client authentication methods (client_secret_post, client_secret_basic) as security features.
 * The module connects mobile apps easily, just like web apps.
 
 #### Limitations
