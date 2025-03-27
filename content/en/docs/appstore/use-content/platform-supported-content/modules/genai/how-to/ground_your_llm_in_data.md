@@ -161,7 +161,7 @@ With both microflows created, they must be combined and added to the homepage to
 
 You have successfully added the logic to insert data into the knowledge base!
 
-### Chat Setup
+### Chat Setup {#chatsetup}
 
 To use the knowledge in a chat interface, create and adjust certain microflows as shown below. 
 
@@ -200,7 +200,7 @@ The rest of the actions can remain as they are currently set. Now that everythin
 
 For the application to function as expected, ensure that the following microflows can be called from the navigation menu or homepage:
 
-* Chatbot: Add the `MyFirstModule.ACT_FullScreenChat_Open` microflow which was created in the [Customizing Chatbot Microflows section](#chatbotmicroflows).
+* Chatbot: Add the `MyFirstModule.ACT_FullScreenChat_Open` microflow which was created in the [Chat Setup](#chatsetup) section.
 
 * Create Demo Data and Populate KB: Add the `MyFirstModule.ACT_TicketList_CreateData_InsertIntoKnowledgeBase` which was created in the [Joining the Microflows section](#joining-microflows).
 
