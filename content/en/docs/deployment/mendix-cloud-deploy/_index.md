@@ -75,7 +75,7 @@ The system uses the following criteria when determining if an app is unused:
 * The app was created more than a year ago
 * No commits since the app was created
 
-Once a project is marked for deletion, you have 14 calendar days before it is permanently deleted.
+Once a project is marked for deletion, the system uses a grace period of 14 calendar days before it is permanently deleted.
 
 You can prevent this clean up by performing one of the following actions:
 
