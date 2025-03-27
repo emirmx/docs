@@ -611,7 +611,7 @@ This means that the access token will contain a "sub" claim which gets value fro
 
 This is the case where the OIDC Provider service can be used separately as an IdP without building an IAM structure.
 
-Where there is no IAM brokering functionality, the administrator can create end-users (Accounts) using the `AccountDetail_Overview` page in the OIDC Provider service. This page creates `AccountDetail` objects which automatically create `Account` objects in the app to represent the AccountDetails as accounts. If you want the user to log in through the provider as an IdP, make sure that the user has been created via the `AccountDetail_Overview` page.
+When there is no IAM brokering functionality, the administrator can create end-users (Accounts) using the `AccountDetail_Overview` page in the OIDC Provider service. This page creates `AccountDetail` objects which automatically create `Account` objects in the app to represent the AccountDetails as accounts. If you want the user to log in through the provider as an IdP, make sure that the user has been created via the `AccountDetail_Overview` page.
 
 ### Structure of ID and Access Tokens
 
