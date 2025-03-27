@@ -324,7 +324,13 @@ In this case, the OIDC client is the app you are making.
     * `client_secret_post`: Your app will authenticate itself by including its `client_id` and `client_secret` in the payload of token requests. (Older versions of the OIDC SSO module used this method).
     * `private_key`: This method uses asymmetric key cryptography (algorithm) for authentication. When you select `private key` option, you can configure below fields:
         * **Key Pair Expiration Days**: (default `90`)
-        * **JWT ALG(Signing Algorithm)**: (default `RS256`) 
+        * **JWT ALG(Signing Algorithm)**: (default `RS256`)
+ 
+        Once you **Save** the configuration, a key pair is automatically generated.
+
+        {{% alert color="warning" %}} The JWKS expires in one minute, which results in the deletion of all previous
+keys, retaining only the latest key. Ensure that your application is configured to use the most recent key to
+avoid authentication failures. {{% /alert %}}
 
 5. Add the **Client Secret**.
 6. If you have the **Automatic Configuration URL** (also known as the *well-known endpoint*), enter it and click **Import Configuration** to automatically fill the other endpoints.
@@ -1001,6 +1007,18 @@ Your IdP may have different ways of handling requests to use a specific authenti
 * Your IdP may send an error response to your app if the requested authentication method was not possible for the user that was asked to login, for whatever reason.
 
 When a user successfully signs in at your IdP, your IdP may or may not return an ACR claim in the ID-token. If your IdP returns the actual authentication method that was used in the ACR claim in the ID-token (and/or Access Token), you can create a [custom User Provisioning microflow](#microflow-at-runtime) (or [custom access token parsing microflow](#custom-parsing)) to grant or restrict access to specific resources or functionalities based on the level of authentication assurance.
+
+### Configuring JWKS at Your IdP (For Okta)
+
+Follow the steps below to configure the JWKS in Okta.
+
+1. Go to the OIDC application in Okta.
+2. Navigate to the General tab and click Edit in the Client Credentials section.
+3. For Client authentication, select Public Key / Private Key.
+4. In the PUBLIC KEYS section, go to the Configuration and choose Use a URL to fetch keys
+dynamically.
+5. In the Url field, enter the location where your public key is stored. The following is the new endpoint in OIDC SSO to fetch public keys based on the configured alias For example, `https://`<base_url>`/oauth/v2/jwks/{Alias}`. Here, `{Alias}` is the client alias configured in the OIDC application. For example, Okta.
+6. Save the configuration.
 
 ## Testing and Troubleshooting{#testing}
 
