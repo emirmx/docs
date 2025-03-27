@@ -54,7 +54,7 @@ paths:
       tags:
         - Projects
       summary: 'Get project details'
-      description: 'Returns a list of project details.</br>Every request must be authenticated by a Personal Access Token containing the scope `mx:app:metadata:read`. Deactivated projects will only be returned for Mendix Administrators, all others will recieve a 404.'
+      description: 'Returns full details of a single project.</br>Every request must be authenticated by a Personal Access Token containing the scope `mx:app:metadata:read`. Deactivated projects will only be returned for Mendix Administrators.'
       operationId: get-project
       parameters:
         - $ref: '#/components/parameters/project-id'
