@@ -1013,12 +1013,11 @@ When a user successfully signs in at your IdP, your IdP may or may not return an
 Follow the steps below to configure the JWKS in Okta.
 
 1. Go to the OIDC application in Okta.
-2. Navigate to the General tab and click Edit in the Client Credentials section.
-3. For Client authentication, select Public Key / Private Key.
-4. In the PUBLIC KEYS section, go to the Configuration and choose Use a URL to fetch keys
-dynamically.
-5. In the Url field, enter the location where your public key is stored. The following is the new endpoint in OIDC SSO to fetch public keys based on the configured alias For example, `https://`<base_url>`/oauth/v2/jwks/{Alias}`. Here, `{Alias}` is the client alias configured in the OIDC application. For example, Okta.
-6. Save the configuration.
+2. Navigate to the **General** tab and click **Edit** in the Client Credentials section.
+3. For **Client authentication**, select **Public Key / Private Key**.
+4. In the **PUBLIC KEYS** section, go to the **Configuration** and choose **Use a URL to fetch keys dynamically**.
+5. In the **Url** field, enter the location where your public key is stored. The following is the new endpoint in OIDC SSO to fetch public keys based on the configured alias For example, `https://`<base_url>`/oauth/v2/jwks/{Alias}`. Here, `{Alias}` is the client alias configured in the OIDC application. For example, Okta.
+6. **Save** the configuration.
 
 ## Testing and Troubleshooting{#testing}
 
