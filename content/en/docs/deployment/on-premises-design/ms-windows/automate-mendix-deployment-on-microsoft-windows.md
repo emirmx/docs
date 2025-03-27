@@ -76,7 +76,7 @@ Start-MxApp $appName -SynchronizeDatabase
 ```
 
 {{% alert color="warning" %}}
-Stopping your app before you update it is a necessary part of the process. Do not attempt to extract the deployment package from your app while the it is running.
+Stopping your app before you update it is a necessary part of the process. Do not attempt to extract the deployment package from your app while it is running.
 {{% /alert %}}
 
 You can find the parameters for `Start-MxApp` cmdlet in the sections below:
