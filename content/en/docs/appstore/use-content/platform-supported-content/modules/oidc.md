@@ -326,7 +326,7 @@ In this case, the OIDC client is the app you are making.
         * **JWT ALG(Signing Algorithm)**: (default `RS256`)
  
     Once you **Save** the configuration, a key pair is automatically generated. Before you set up the private key
-authentication in your Mendix App, complete the JWKS configuration at your IdP, for example, Okta. For more information, see the [Configuring JWKS at Your IdP (Okta)](#jwks-okta}) section.
+authentication in your Mendix App, complete the JWKS configuration at your IdP, for example, Okta. For more information, see the [Configuring JWKS at Your IdP (Okta)](#jwks-okta) section. 
 
     {{% alert color="warning" %}} The JWKS expires in one minute, which results in the deletion of all previous
 keys, retaining only the latest key. Ensure that your application is configured to use the most recent key to
