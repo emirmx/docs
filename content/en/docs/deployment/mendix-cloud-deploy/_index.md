@@ -83,7 +83,7 @@ You can prevent this clean up by performing one of the following actions:
 * [Pin your app](/developerportal/#app-tiles)
 * [Invite someone](/developerportal/general/team/#inviting) to collaborate with you on your app
 
-Pinning a project that has been marked for deletion will unmark it immediately. Changes to the other criteria will not effect the mark-for-deletion immediately, but will be verified before the actual deletion.
+Pinning a project that has been marked for deletion unmarks it immediately. Changes to the other criteria do not effect the mark-for-deletion immediately, but are verified before the actual deletion.
 
 ### Licensed App
 
