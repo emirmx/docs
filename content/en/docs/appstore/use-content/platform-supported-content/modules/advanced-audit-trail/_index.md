@@ -198,6 +198,22 @@ The table below provides a detailed comparison between the Advanced Audit Trail 
 | Additional custom data can be added to an audit trail snapshot (e.g. "on behalf of" in case of REST service)| Yes | No |
 | Built-in features for username and hash (e.g. password) scrambling| Yes | No |
 
+## Search Criteria and Advanced Filtering
+
+The updated search functionality now supports both **exact matches** and **flexible filtering** based on field type:
+
+**Exact Match Fields**
+
+* **Execution ID, Transaction ID, Object Code, and GUID** – Use exact values for these fields to ensure precise results.
+* **Environment and Limit** – Specify the target environment and set the maximum number of results.
+* **Time Window** – Define a start and end time with an option to sort results (ascending/descending).
+* **Object Creation/Deletion Status** – Include or exclude records based on their created or deleted state using Boolean fields.
+
+**Flexible Match Fields**
+
+* **Entity, Username, and Role** – Search using partial matches for entity types, usernames, and user roles.
+* **Additional Information and Stack Trace** – Include supplementary data to refine your search.
+
 ## Read More
 
 [Consuming Add-on Modules and Solutions](/refguide/consume-add-on-modules-and-solutions/)
