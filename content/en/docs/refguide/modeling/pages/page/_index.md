@@ -70,7 +70,7 @@ The selected page is deleted.
 ### Adding Elements on a Page {#add-elements}
 
 {{% alert color="info" %}}
-In Studio Pro 10.18 and above, you can also add elements through Maia UI Recommender in **Design mode**. It allows you to easily add new widgets to a page without losing the context of what you are currently working on. For more information, see [UI Recommender](/refguide/ui-recommender/).
+You can also add elements through UI Recommender in **Design mode**. It allows you to easily add new widgets to a page without losing the context of what you are currently working on. For more information, see [UI Recommender](/refguide/ui-recommender/).
 {{% /alert %}}
 
 The way you can add an element on a page depends on a mode you are editing your page in. For more information on modes, see the [Page Editor Modes](#page-editor-modes) section.
