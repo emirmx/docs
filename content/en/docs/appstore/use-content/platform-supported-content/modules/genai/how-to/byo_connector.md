@@ -10,7 +10,7 @@ description: "A tutorial that describes how to build your own GenAI connector"
 
 If you want to create your own connection to the LLM model of your choice while leveraging the chat UI capabilities of the [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/) module, which is built using entities from [GenAICommons](/appstore/modules/genai/genai-for-mx/commons/), then this document will guide you on how to get started with building your own GenAI Commons connector.
 
-The practical advantages of building your own GenAI Commons connector are numerous. First, you can reuse all of our ConversationalUI components, allowing you to use the already existing chat interface and related functionalities. Second, starting from our starter apps is straightforward, allowing you to quickly set up and begin using the functionalities our different starter apps provide. Third, switching providers in your existing apps can be done very easily. These advantages not only save you valuable development time but also provide more time to customize the already existing functionalities. This guide will walk you through the process, ensuring you can seamlessly integrate your preferred LLM while leveraging our robust and user-friendly chat interface components. By following the steps outlined here, you’ll be able to create a custom connector that fits your specific needs, all while maintaining the high-quality user experience provided by our platform.
+Building your own GenAI Commons connector offers several practical benefits that streamline development and enhance flexibility. You can reuse our [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/) components, quickly set up with [starter apps](/appstore/modules/genai/how-to/starter-template/), and switch providers effortlessly. This guide will help you integrate your preferred LLM while maintaining a seamless and user-friendly chat experience.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-byo/byo_connector.jpg" >}}
 
@@ -24,36 +24,38 @@ Before starting this guide, make sure you have completed the following prerequis
 
 ### GenAI For Mendix
 
-Before diving into building your own connector, first assess whether you actually need to start from scratch. If your provider follows a similar API structure to an existing connector, it is probably wise to take the existing connector's code as a basis for your module and modify what is needed. E.g., if your provider's API is REST-based with JSON payloads that look like OpenAI's JSON snippets, it is likely you can reuse a lot of the microflows and logic from the OpenAIConnector. Additionally, you might have a use case where you are running your own custom model on a private server or another cloud environment and want to connect to it, rather than relying on existing connectors. Even in such cases, the OpenAIConnector can still serve as a solid starting point, allowing you to adapt and extend it to fit your specific needs. We published a blog on [How to Run Open-Source LLMs Locally with the OpenAI Connector and Ollama](https://www.mendix.com/blog/how-to-run-open-source-llms-locally-with-the-openai-connector-and-ollama/), which might help you already.
+Before building your own connector, determine whether starting from scratch is necessary. If your provider’s API structure is similar to an existing connector, it’s often best to use that connector’s code as a foundation and modify it as needed. For example, if your provider’s REST-based API uses JSON payloads similar to OpenAI’s, you can likely reuse much of the microflows and logic from the OpenAIConnector. Even if you are running a custom model on a private server or another cloud environment, the OpenAIConnector can still serve as a strong starting point, allowing you to adapt and extend it to meet your specific needs. See the blog on [How to Run Open-Source LLMs Locally with the OpenAI Connector and Ollama](https://www.mendix.com/blog/how-to-run-open-source-llms-locally-with-the-openai-connector-and-ollama/), which may be helpful.
 
-However, if your provider has a different authentication mechanism, uses an SDK (like Bedrock's Java SDK), or requires a different request-response format, creating a new connector may be necessary. If that's the case, this guide will walk you through the process of integrating your provider while ensuring full compatibility with our ConversationalUI module.
+However, if your provider uses a different authentication mechanism, requires an SDK (such as Bedrock’s Java SDK), or follows a unique request-response format, you may need to create a new connector. In that case, this document will guide you through the integration process while ensuring full compatibility with the ConversationalUI module.
 
-## How to Determine the Right Approach When Building Your Own Connector?
+## Determining the Right Approach for Building Your Own Connector
 
 When developing your own GenAI Connector, there are two possible approaches:
 
-1. Starting from an existing connector (e.g., [OpenAIConnector](https://marketplace.mendix.com/link/component/220472)) 
+1. Starting from an existing connector (for example, [OpenAIConnector](https://marketplace.mendix.com/link/component/220472)) 
 2. Building from scratch (starting from the Echo Connector) 
 
 ### Starting from the OpenAIConnector
 
-If the provider's API is the same or very similar to OpenAI's, this might be a good indicator that you can duplicate the OpenAIConnector module and make the necessary adjustments. Some logical modifications include:
-- Small changes in the request/response payload (e.g., extra or fewer fields, slightly different JSON structure). 
-- Modifying the base URL to match the provider's endpoint structure. 
-- Adding additional query parameters in the URL or payload. 
-- Adapting the authentication mechanism, for example, switching from API Key to OAuth. 
+If your provider's API is identical or very similar to OpenAI's, it may be good indication that you can duplicate the [OpenAIConnector](https://marketplace.mendix.com/link/component/220472) module and make the necessary adjustments. Some key modifications might include:
 
-This approach allows you to reuse a well-structured connector, minimizing development effort while ensuring compatibility with ConversationalUI / GenAICommons.
+* Small changes in the request/response payload (for example, extra or fewer fields, slightly different JSON structure). 
+* Modifying the base URL to align with the provider's endpoint structure. 
+* Adding additional query parameters in the URL or payload. 
+* Adapting the authentication mechanism, for example, switching from API Key to OAuth. 
 
-### Building from scratch
+This approach allows you to reuse a well-structured connector, minimizing development effort while ensuring compatibility with [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/) / [GenAICommons](/appstore/modules/genai/genai-for-mx/commons/).
 
-If the provider's API differs significantly from OpenAI's, it's best to start from scratch (or from the Echo Connector found in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475)). A reason to take this approach might be if the provider requires a different protocol. This often means the communication structure and authentication methods will differ significantly, making it easier to build the connector from scratch rather than modifying an existing REST-based connector.
+### Building from Scratch
 
-Additionally, refer to [GenAI Commons](/appstore/modules/genai/genai-for-mx/commons/), to explore what is available out of the box, which can help you accelerate development. Pay close attention to:
-- The domain model (data structure) to see how existing entities can be reused. 
-- The "connector building" folders, which contain useful microflows and helper activities for working the provided entities.
+If your provider's API differs significantly from OpenAI's, it is best to start from scratch or use the Echo Connector found in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475). This approach is recommended if the provider requires a different protocol, as it often results in substantial differences in communication structure and authentication methods. In such cases, building a new connector from the ground up is typically more efficient than modifying an existing REST-based connector.
 
-If you would like to look inside of the GenAICommons module, you can inspect this [public repository](https://github.com/mendix/genai-showcase-app).
+Additionally, refer to [GenAI Commons](/appstore/modules/genai/genai-for-mx/commons/) to explore available out-of-the-box components that can help accelerate development. Pay close attention to:
+
+* The domain model (data structure) to see how existing entities can be reused. 
+* The **connector building** folders, which contain useful microflows and helper activities for working the provided entities.
+
+If you would like to explore the [GenAICommons](https://marketplace.mendix.com/link/component/227933) module, check-out the [public repository](https://github.com/mendix/genai-showcase-app).
 
 ## Build your own connector
 
