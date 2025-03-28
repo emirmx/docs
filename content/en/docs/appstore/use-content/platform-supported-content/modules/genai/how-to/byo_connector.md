@@ -22,7 +22,7 @@ Before starting this guide, make sure you have completed the following prerequis
 
 * Understanding Large Language Models (LLMs) and Prompt Engineering: Learn about [LLMs](/appstore/modules/genai/get-started/#llm) and [prompt engineering](/appstore/modules/genai/get-started/#prompt-engineering) to effectively use these within the Mendix ecosystem.
 
-### GenAI For Mendix
+### GenAI for Mendix
 
 Before building your own connector, determine whether starting from scratch is necessary. If your provider’s API structure is similar to an existing connector, it is often best to use that connector’s code as a foundation and modify it as needed. For example, if your provider’s REST-based API uses JSON payloads similar to OpenAI’s, you can likely reuse much of the microflows and logic from the OpenAIConnector. Even if you are running a custom model on a private server or another cloud environment, the OpenAIConnector can still serve as a strong starting point, allowing you to adapt and extend it to meet your specific needs. See the blog on [How to Run Open-Source LLMs Locally with the OpenAI Connector and Ollama](https://www.mendix.com/blog/how-to-run-open-source-llms-locally-with-the-openai-connector-and-ollama/), which may be helpful.
 
