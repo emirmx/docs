@@ -93,7 +93,7 @@ For readers with more knowledge of the OAuth and OIDC protocol:
     For signing into the app, the OIDC SSO module will not use token introspection and will always validate against the published `jwks` endpoint.
 
 * Stores an access token for each end-user that can be used to make API calls on their behalf
-* Can be configured to use either `client_secret_post`, `client_secret_basic`, or `private_key` as the client authentication method. Both `client_secret_post` and `client_secret_basic` make use of the `client-id` and `client-secret` as configured at the IdP. The `private_key` makes use of the `client-id`, **KeyPair Expiration Days**, and **JWT ALG(Signing Algorithm)** as configured at the IdP.
+* Can be configured to use either `client_secret_post`, `client_secret_basic`, or `private_key_jwt` as the client authentication method. Both `client_secret_post` and `client_secret_basic` make use of the `client-id` and `client-secret` as configured at the IdP. The `private_key_jwt` makes use of the `client-id`, **KeyPair Expiration Days**, and **JWT ALG(Signing Algorithm)** as configured at the IdP.
     * OIDC SSO now supports Private Key JWT authentication, generating a key pair based on the selected signing algorithm and JWKS expiry duration. 
     * It supports nine signing algorithms (ES256, ES384, ES512, PS256, PS384, PS512, RS256, RS384, RS512) and automatically regenerates a new key pair upon expiry.
 * Supports ACR in authorization requests. The ACR in OIDC protocol is used to indicate the desired level of assurance or strength of authentication during the authentication process. It allows the relying party (your application) to request a specific level of authentication assurance from the identity provider (IdP) (version 2.3.0 and above)
@@ -321,7 +321,7 @@ In this case, the OIDC client is the app you are making.
     The options are:
     * `client_secret_basic`: Your app will use the HTTP Basic Authentication scheme to authenticate itself at your IdP. (Default – for security reasons this should be your preferred choice)
     * `client_secret_post`: Your app will authenticate itself by including its `client_id` and `client_secret` in the payload of token requests. (Older versions of the OIDC SSO module used this method).
-    * `private_key`: This method uses asymmetric key cryptography (algorithm) for authentication. When you select `private key` option, you can configure below fields:
+    * `private_key_jwt`: This method uses asymmetric key cryptography (algorithm) for authentication. When you select `private key` option, you can configure below fields:
         * **Key Pair Expiration Days**: (default `90`)
         * **JWT ALG(Signing Algorithm)**: (default `RS256`)
  
@@ -445,10 +445,10 @@ The following constants are optional:
 
 * **ClientAuthenticationMethod** (*default: client_secret_basic*) – the client authentication method — the caption of OIDC.ENU_ClientAuthenticationMethod
 
-    Examples: `client_secret_post`, `client_secret_basic`, or `private_key`
+    Examples: `client_secret_post`, `client_secret_basic`, or `private_key_jwt`
 
 {{% alert color="info" %}}
-when you set **ClientAuthenticationMethod** as `private_key`, you do not need to set **ClientSecret** constant.
+when you set **ClientAuthenticationMethod** as `private_key_jwt`, you do not need to set **ClientSecret** constant.
 {{% /alert %}}
 
 * **JWT_ALG** (*default: RS256*) – JWT signing algorithm
