@@ -1,25 +1,25 @@
 ---
-title: "Domain Model Generator"
-url: /refguide/domain-model-generator/
+title: "Maia for Domain Model"
+url: /refguide/maia-for-domain-model/
 weight: 50
-description: "Describes the features in Domain Model Generator."
+description: "Describes the features in Maia for Domain Model."
 ---
 
 ## Introduction
 
 {{% alert color="info" %}}
-Domain Model Generator is currently an experimental feature introduced in Studio Pro 10.13.0. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+Maia for Domain Model is currently an experimental feature introduced in Studio Pro 10.13.0. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/).
 {{% /alert %}}
 
 {{% alert color="info" %}}
-To use Domain Model Generator, internet connection and signing in to Studio Pro are required.
+To use Maia for Domain Model, internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-Maia Domain Model Generator is an AI-powered tool that you can use for generating a [domain model](/refguide/domain-model/). It helps you to generate entities and associations based on text input. In Studio Pro 10.18 and above, you can also use Domain Model Generator in existing domain models. As an experimental feature, Domain Model Generator still have several limitations. For more information, see the [Limitations](#limitation) section below.
+Maia for Domain Model is an AI-powered tool that you can use for generating a [domain model](/refguide/domain-model/). It helps you to generate entities and associations based on text input. In Studio Pro 10.18 and above, you can also use Maia for Domain Model in existing domain models. As an experimental feature, Maia for Domain Model still has several limitations. For more information, see the [Limitations](#limitation) section below.
 
-## Using Domain Model Generator
+## Using Maia for Domain Model
 
-In Studio Pro 10.18 and above, Domain Model Generator is enabled by default.
+In Studio Pro 10.18 and above, Maia for Domain Model is enabled by default.
 
 You can find it in the the toolbar of a domain model:
 
@@ -27,18 +27,18 @@ You can find it in the the toolbar of a domain model:
 
 If you want to disable this feature, go to **Edit** > **Preferences** > the **New Features** tab > the **Maia** section.
 
-After clicking **Generate Domain Model**, a dedicated chat interface will appear at the right side of Studio Pro under the **Maia** tab:
+After clicking **Maia for Domain Model**, a dedicated chat interface will appear at the right side of Studio Pro under the **Maia** tab:
 
 {{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/domain-model-generator/chat-interface.png" max-width=42% >}}
 
 Describe your application or its main goals in the chatbox. Maia will use this information to generate a relevant domain model for you! After a domain model is generated and if the dedicated chat is still active, you can still ask Maia to add more entities and associations to the generated domain model. In Studio Pro 10.17 and above, it also supports adding more attributes to an existing entity in the generated domain model. Give it a try!
 
 {{% alert color="info" %}}
-In this dedicated chat, only requests related to domain model generation will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide/maia-chat/) interface.
+In this dedicated chat, only requests related to domain model will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide/maia-chat/) interface.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-Domain Model Generator does not support deleting items in the domain model. You can always delete them manually. 
+Maia for Domain Model does not support deleting items in the domain model. You can always delete them manually. 
 {{% /alert %}}
  
 ### Best Practices for Text Input
@@ -56,7 +56,7 @@ Below are some examples you can use as a starting point:
 
 ## Limitations {#limitation}
 
-As an experimental feature, Domain Model Generator has some limitations.
+As an experimental feature, Maia for Domain Model has some limitations.
 
 ### Enumeration Generation
 
