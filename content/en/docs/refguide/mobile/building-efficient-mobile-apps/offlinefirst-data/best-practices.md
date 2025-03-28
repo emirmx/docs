@@ -102,6 +102,9 @@ Many-to-many associations are not supported. A common alternative is to introduc
 
 ### Inheritance {#inheritance}
 
+> [!NOTE]
+> From Mendix 10.21 onwards, there is no limitation to the use of inheritance in offline apps anymore and inheritance is fully supported for offline apps.
+> 
 It is not possible to use more than one entity from a generalization or specialization relation. For example if you have an `Animal` entity and a `Dog` specialization, you can use either use `Animal` or `Dog`, but not both from your offline profile. An alternative pattern is to use composition (for example, object associations).
 
 ### System Members {#system-members}
