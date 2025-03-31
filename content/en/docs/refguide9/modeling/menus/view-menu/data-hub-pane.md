@@ -81,7 +81,7 @@ The search results and **User in your App** section show the following informati
         {{< figure src="/attachments/refguide9/modeling/menus/view-menu/data-hub-pane/data-hub-pane-menu.png" alt="info on a Service" class="no-border" >}}
 
 * **Gray shield icon** shows if the service or entity is validated in the Catalog
-* **Update icon** is a blue arrow icon that indicates that there is another version of the consumed service available in the the Catalog. Click to update the service that is consumed in the app to the contract that is now available:
+* **Update icon** is a blue arrow icon that indicates that there is another version of the consumed service available in the Catalog. Click to update the service that is consumed in the app to the contract that is now available:
 
     {{< figure src="/attachments/refguide9/modeling/menus/view-menu/data-hub-pane/update-available.png" alt="Data Hub Pane update" class="no-border" >}}
 

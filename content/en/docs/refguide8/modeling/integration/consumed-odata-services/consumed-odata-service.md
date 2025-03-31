@@ -204,7 +204,7 @@ When you click **Update** on the **Consumed OData Service** document or the upda
 
 {{< figure src="/attachments/refguide8/modeling/integration/consumed-odata-services/consumed-odata-service/update-service-dialog-box.png" alt="update service dhpane" class="no-border" >}}
 
-The consumed OData service that is currently consumed in the project (**1.0.0**) is shown on the left, and you can click **Update** to retrieve the new contract from the the Catalog (**2.0.0**).
+The consumed OData service that is currently consumed in the project (**1.0.0**) is shown on the left, and you can click **Update** to retrieve the new contract from the Catalog (**2.0.0**).
 
 #### Switch
 

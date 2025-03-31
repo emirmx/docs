@@ -90,7 +90,7 @@ The search results and Project pane will show the following at a service level:
     * **View in Catalog** – click this to go to the **Data Source Details** page in the Catalog
     * **Go to connection settings** – click this to open the [consumed OData service](/refguide8/consumed-odata-service/) document
 
-* **Blue** **Update Service** icon to indicate that there is another version of the consumed service available in the the Catalog. Click to update the service that is consumed in the project to the contract that is now available:
+* **Blue** **Update Service** icon to indicate that there is another version of the consumed service available in the Catalog. Click to update the service that is consumed in the project to the contract that is now available:
 
     {{< figure src="/attachments/refguide8/modeling/integration/consumed-odata-services/data-hub-pane-update.png" alt="Data Hub Pane update" class="no-border" >}}
 

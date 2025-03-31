@@ -205,7 +205,7 @@ In the **Data Hub** pane, in search results and in the **Used in your App** sect
 
 * The service version that is *currently consumed* is shown (in this example **1.0.0**)
 * Blue **Update** - click to open the **Update Service** box and update the contract to the new one. Studio Pro will retrieve the new contract at the Catalog endpoint and this will be loaded in the app.
-* The list of entities in this new version in the the Catalog are shown, including the locally consumed entities which are marked with a green check-mark. These entities are, however, greyed out to indicate that they cannot be dragged into the domain model as the contract for the previous version is currently being consumed. The only option is to click **Update** to retrieve the updated OData Service.
+* The list of entities in this new version in the Catalog are shown, including the locally consumed entities which are marked with a green check-mark. These entities are, however, greyed out to indicate that they cannot be dragged into the domain model as the contract for the previous version is currently being consumed. The only option is to click **Update** to retrieve the updated OData Service.
 
 ##### Update Service Dialog Box
 
