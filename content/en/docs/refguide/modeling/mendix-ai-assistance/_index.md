@@ -36,8 +36,8 @@ Recommenders:
 
 Generators:
 
-* **Maia for Domain Model** (currently an [experimental feature](/releasenotes/beta-features/) introduced in Studio Pro 10.13.0) - an AI-powered tool that you can use for generating a [domain model](/refguide/domain-model/). It helps you to generate entities and associations based on text input. It currently only works for empty domain models. For more information, see [Maia for Domain Model](/refguide/domain-model-generator/).
-* **Maia for Pages** (currently an [experimental feature](/releasenotes/beta-features/) introduced in Studio Pro 10.21.0) - an AI-powered tool that lets you generate a [page](/refguide/page/). It helps you add and configure widgets based on a text input and an optional image. For more information, see [Maia for Pages](/refguide/page-generator/).
+* **Maia for Domain Model** (currently an [experimental feature](/releasenotes/beta-features/) introduced in Studio Pro 10.13.0) - an AI-powered tool that you can use for generating a [domain model](/refguide/domain-model/). It helps you to generate entities and associations based on text input. It currently only works for empty domain models. For more information, see [Maia for Domain Model](/refguide/maia-for-domain-model/).
+* **Maia for Pages** (currently an [experimental feature](/releasenotes/beta-features/) introduced in Studio Pro 10.21.0) - an AI-powered tool that lets you generate a [page](/refguide/page/). It helps you add and configure widgets based on a text input and an optional image. For more information, see [Maia for Pages](/refguide/maia-for-pages/).
 * **Translation Generator** (currently an [experimental feature](/releasenotes/beta-features/) introduced in Studio Pro 10.12.0) - an AI-powered translation tool available in Mendix Studio Pro. Currently, it can be used for [batch translate](/refguide/translation-generator/#batch-translate) and [translating system texts](/refguide/translation-generator/#translate-system-text) in the new web-based system texts editor (in Studio Pro 10.14.0 and above). For more information, see [Translation Generator](/refguide/translation-generator/).
 
 ## Maia in Mendix Portal
