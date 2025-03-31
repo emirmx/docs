@@ -13,7 +13,7 @@ This means that several properties of the external entities are determined in th
 
 External entities are added to the domain model through the [Data Hub pane](/refguide8/data-hub-pane/) and are displayed as *purple* entity containers in the domain model. 
 
-For more information on adding external entities from the **Data Hub** pane see [Adding External Entities](#adding-external-entities).
+For more information on adding external entities from the **Data Hub** pane, see [Adding External Entities](#adding-external-entities).
 
 ## Adding an External Entity to a Project {#adding-external-entities}
 
@@ -43,7 +43,7 @@ If there is a newer version of a consumed service becomes available in the Catal
 
 You can make local changes to the properties of external entities that only affect how the data is used and presented in the consuming app. All other properties are defined in the source application and cannot be changed. When multiple external entities from the same OData service are used in a module or app, associations between the entities (made in the source app) will automatically be made in the local module.
 
-For more information on using published OData services and entities through the Catalog, see [How to Consume Registered Assets](/catalog/consume/) in the *Catalog Guide*.
+For more information on using published OData services and entities through the Catalog, see [Consume Services](/catalog/consume/).
 
 ## Properties of External Entities {#properties}
 
@@ -138,4 +138,4 @@ You can add any local information about the external entity in this tab.
 
 External entities are the endpoints that are defined in the published OData service from the originating app. The consumed OData service document displays the values from the service metadata when the external entity is used through the **Data Hub** pane. The limitation on external entities is that they are consume-only entities. The datasets associated with the entities are maintained in the originating apps.
 
-For more details on consuming services and exposed entities, including operations that can be performed on external entities, see [How to Consume Registered Assets](/catalog/consume/) in the *Catalog Guide*.
+For more details on consuming services and exposed entities, including operations that can be performed on external entities, see [Consume Services](/catalog/consume/).
