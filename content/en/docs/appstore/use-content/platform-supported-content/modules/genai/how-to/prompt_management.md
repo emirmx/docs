@@ -9,7 +9,7 @@ aliases:
 
 ## Introduction
 
-This document explains how to integrate the [Prompt Management](/appstore/modules/genai/genai-for-mx/prompt-management/) capabilities of the ConversationalUI module in your smart app. This how-to rebuilds a simplified version of an example that is implemented in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475). To follow along,you can use your existing app or start from scratch as described in the [Build a Smart App from a Blank GenAI App](/appstore/modules/genai/how-to/blank-app/) guide.
+This document explains how to integrate the [Prompt Management](/appstore/modules/genai/genai-for-mx/prompt-management/) capabilities of the ConversationalUI module in your smart app. This how-to rebuilds a simplified version of an example that is implemented in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475). To follow along, you can use your existing app or start from scratch as described in the [Build a Smart App from a Blank GenAI App](/appstore/modules/genai/how-to/blank-app/) guide.
 
 Through this document, you will:
 
