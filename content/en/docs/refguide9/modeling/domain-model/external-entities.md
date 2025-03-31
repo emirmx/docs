@@ -50,7 +50,7 @@ You can make local changes to the properties of external entities that only affe
 If you delete an external entity from the Domain Model, the service documents remain in the App Explorer list and the service continues to be listed in the Data Hub App pane. You can delete the two service documents if you are no longer going to be using any entities from the Consumed service.
 {{% /alert %}}
 
-For more information on using published OData services and entities through the Catalog, see [How to Consume Registered Assets](/catalog/consume/) in the *Catalog Guide*.
+For more information on using published OData services and entities through the Catalog, see [Consume Services](/catalog/consume/).
 
 ## Properties of External Entities {#properties}
 
@@ -189,4 +189,4 @@ Furthermore, external entities cannot be committed. Use the [Send External Objec
 * The **Commit** activity does not work. Use **Send External Object** instead.
 * On pages, the [Save button](/refguide9/button-widgets/) and the [Save Changes event](/refguide9/on-click-event/#save-changes) do not work when the page contains widgets that update external entities. Call a microflow that persists the changes using **Send External Object** instead.
 
-For more details on consuming services and exposed entities, including operations that can be performed on external entities, see [Consume Registered Assets](/catalog/consume/) in the *Catalog Guide*.
+For more details on consuming services and exposed entities, including operations that can be performed on external entities, see [Consume Services](/catalog/consume/).
