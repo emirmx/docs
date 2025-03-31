@@ -121,11 +121,11 @@ To install and configure the Mendix Operator, perform the following steps:
 5. Configure the namespace by doing the following steps:
 
     1. Click **Configure Namespace**.
-    2. Click **Database Plan** and fill out the required information.
+    2. Optional: If you are not using the AWS Secret Manager, click **Database Plan** and fill out the required information.
         
         {{< figure src="/attachments/private-platform/pmp-install2.png" class="no-border" >}}
 
-    3. Click **Storage Plan** and fill out the required information.
+    3. Optional: If you are not using the AWS Secret Manager, click **Storage Plan** and fill out the required information.
     4. Click **Ingress** and fill out the required information.
         
         {{< figure src="/attachments/private-platform/pmp-install3.png" class="no-border" >}}
@@ -247,11 +247,13 @@ Install the Private Mendix Platform by doing the following steps:
 
 4. Click **Runtime**, and then specify the following parameters:
 
-    * **MxAdminPassword** - The password for the admin user. It must have at least one number, one upper case letter, one lower case letter and one symbol, with a minimum length of 12 characters.
+    * **MxAdminPassword** - Optional. The password for the admin user, required if you are not planning to use the AWS Secret Manager. It must have at least one number, one upper case letter, one lower case letter and one symbol, with a minimum length of 12 characters.
     * **dtapmode** - For production deployments, leave this value set to **P**. For the development of the app, for example acceptance testing, set the value to **D**.
     * **ApplicationRootUrl** - Optional. Manually specify the URL of your Private Mendix Platform, for example, for use with SSO or when sending emails. For more information about this functionality, see [ApplicationRootUrl Needs to be Set Manually](/developerportal/deploy/private-cloud-operator/#applicationrooturl-needs-to-be-set-manually).
-
-    {{< figure src="/attachments/private-platform/pmp-install8.png" class="no-border" >}}
+    * **Use Secret Provider** - Optional. Select this option to use the AWS Secret Manager. Selecting this option enables the following additional fields:
+        * **Secret Provider** - Set to **AWS** by default.
+        * **AWS-Role-ARN** - An [AWS role ARN](https://docs.mendix.com/developerportal/deploy/secret-store-credentials/#aws-secrets-manager) which can access the specified Secret Manager.
+        * **AWS SecretManager Name** - The AWS Secret Manager name where the sensitive data is stored.
 
 5. In the **Enabled Functions** section, select or clear the functions that you want to enable or disable:
  
