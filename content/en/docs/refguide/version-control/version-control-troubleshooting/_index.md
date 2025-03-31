@@ -156,3 +156,7 @@ You can download and install a recent version of Git from [here](https://git-scm
 
 Sometimes the Git process may crash while performing any operation on the repository. The reason for this can be a dead battery, a blue screen on Windows, or any other unexpected shutdown. As a result, there is a leftover *index.lock* file, which blocks other Git operations.
 To fix this, go to `<directory of your app>/.git/` and delete the *index.lock* file.
+
+### Unknown Author Shown In Version Control History
+
+The name and email can be configured in the [Studio Pro preferences](/refguide/preferences-dialog/#name)
