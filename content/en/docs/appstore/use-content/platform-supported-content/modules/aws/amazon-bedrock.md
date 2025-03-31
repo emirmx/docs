@@ -542,7 +542,7 @@ The input and output for this service are shown in the table below:
 
 #### CreateDataSource {#create-data-source}
 
-The `CreateDataSource` action allows you to connect a knowledge base to a data source. It requires `ENUM_Region`, `Credentials` and `CreateDataSourceRequest` as input parameters.
+The `CreateDataSource` action allows you to connect a knowledge base to a data source. This action is currently supported for datasource types S3 and Confluence. It requires `ENUM_Region`, `Credentials` and `CreateDataSourceRequest` as input parameters.
 
 To use this activity, you must set up a knowledge base in your Amazon Bedrock Environment. 
 
