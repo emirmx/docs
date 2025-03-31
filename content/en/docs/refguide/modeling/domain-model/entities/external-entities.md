@@ -7,7 +7,7 @@ weight: 15
 ---
 ## Introduction
 
-External entities can be added to the domain model through the [Integration pane](/refguide/integration-pane/). They are displayed as purple entity containers in the domain model. External entities represent the link to the entities that are made available through OData services registered in [Mendix Catalog](/catalog/).
+External entities can be added to the domain model through the [Integration pane](/refguide/integration-pane/). They are displayed as purple entity containers in the domain model. External entities represent the link to the entities that are made available through OData services registered in the [Catalog](/catalog/).
 
 The published entities are maintained and updated in the originating app. You can consume these through external entities in your app development. When the app uses the data, it retrieves it from the originating app.
 
@@ -194,4 +194,4 @@ Furthermore, external entities cannot be committed. Use the [Send External Objec
 * On pages, the [Save button](/refguide/button-widgets/) and the [Save Changes event](/refguide/on-click-event/#save-changes) do not work when the page contains widgets that update external entities. Call a microflow that persists the changes using **Send External Object** instead.
 * When synchronizing remote entities to an offline-first client while the remote service is offline, the synchronization will fail and users will see an error.
 
-For more details on consuming services and published entities, including operations that can be performed on external entities, see the [Consume Registered Assets](/catalog/consume/) in the *Catalog Guide*.
+For more details on consuming services and published entities, including operations that can be performed on external entities, see [Consume Services](/catalog/consume/).
