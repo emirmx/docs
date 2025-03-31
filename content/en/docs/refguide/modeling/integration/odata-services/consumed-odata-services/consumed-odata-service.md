@@ -222,7 +222,7 @@ In the [Integration pane](/refguide/integration-pane/), search results, and in t
 
 * The service version that is currently consumed is shown (in this example **1.2.0**).
 * Blue **Update** - click to open the **Update Service** box and update the contract. Studio Pro will retrieve the new contract at the Catalog endpoint, which will be loaded in the app.
-* When the Integration pane is not showing search results, it shows the elements available for the currently consumed version of the service. When it is showing search results, the displayed elements represent the assets available in the new version of the service that is found in the Catalog.
+* When the Integration pane is showing search results, the displayed elements represent the assets available in the new version of the service that is found in the Catalog. When it is not showing search results, it shows the elements available for the currently consumed version of the service. 
 
 ##### Update Service Dialog Box
 
