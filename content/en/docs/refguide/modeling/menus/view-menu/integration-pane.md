@@ -32,7 +32,7 @@ The following functionality is available in the pane:
 
 When you do not enter search text in the Integration pane, then the **Used in this app** section is displayed. This shows the consumed services and the related external entities, actions and events used in the current app. The list of entities, associations, attributes, actions and events for the consumed services are shown as for the search results:
 
-{{< figure src="/attachments/refguide/modeling/menus/view-menu/integration-pane/used-in-your-app.png" alt="User in Your App Section" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/menus/view-menu/integration-pane/used-in-your-app.png" alt="User in Your App Section" class="no-border" width="300" >}}
 
 For more information on how to add entities and actions to your app, see [Adding an External Entity to an App](/refguide/external-entities/#adding-external-entities) section in *External Entities* or [Call external action](/refguide/call-external-action/). For working with business events, see [Using Business Events](/appstore/services/business-events/#two-way-be).
 
@@ -77,17 +77,17 @@ The search results and **Used in this app** section show the following informati
 
     {{% alert color="info" %}}Only the names of non-production environments are displayed. Services in a **Production** environment do not show an environment name. {{% /alert %}}
 
-* **Green check-mark** if the service or a service's asset is consumed in the app. If you right-click a consumed service, you can do the following:
+* **Green checkmark** if the service or a service's asset is consumed in the app. If you right-click a consumed service, you can do the following:
 
     * **View in Catalog** – click this to go to the [data source details](/catalog/manage/search/#service-details) page in the Catalog
     * **Go to ...** – click this to open the corresponding document in this app
 
-        {{< figure src="/attachments/refguide/modeling/menus/view-menu/integration-pane/integration-pane-menu.png" alt="info on a Service" class="no-border" >}}
+        {{< figure src="/attachments/refguide/modeling/menus/view-menu/integration-pane/integration-pane-menu.png" alt="info on a Service" class="no-border" width="300" >}}
 
 * **Gray shield icon** shows if the service or entity is validated in the Catalog
 * **Update icon** is a blue arrow icon that indicates that there is another version of the consumed service available in the Catalog. Click to update the service that is consumed in the app to the contract that is now available:
 
-    {{< figure src="/attachments/refguide/modeling/menus/view-menu/integration-pane/update-available.png" alt="Integration pane update" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/menus/view-menu/integration-pane/update-available.png" alt="Integration pane update" class="no-border" width="300" >}}
 
     {{% alert color="info" %}}The update feature is currently only available for OData services. {{% /alert %}}
 
@@ -95,7 +95,7 @@ The search results and **Used in this app** section show the following informati
 
 * **Information icon** allows you to view further details for the service and a link to go directly to the [Service Details](/catalog/manage/search/#search-details) screen in the Catalog:
 
-    {{< figure src="/attachments/refguide/modeling/menus/view-menu/integration-pane/integration-pane-info.png" alt="Integration pane Information" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/menus/view-menu/integration-pane/integration-pane-info.png" alt="Integration pane Information" class="no-border" width="300" >}}
 
 ### External Entities, Attributes, and Associations {#association-attributes}
 
@@ -103,7 +103,7 @@ External entities are grouped in the **Entities** folder, under the service name
 
 In the search results, the visible elements are not all available elements in the service, but just the selection that matches the search term. For any service in the list, you can click **Show details** to see the full list of the exposed entities, associations, and attributes for that service.
 
-{{< figure src="/attachments/refguide/modeling/menus/view-menu/integration-pane/expand-service-list.png" alt="Integration pane Information" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/menus/view-menu/integration-pane/expand-service-list.png" alt="Integration pane Information" class="no-border" width="300" >}}
 
 {{% alert color="info" %}}The entities, associations and attributes that are not supported in your Mendix app are shown as non-selectable (gray) and will not be included when you drag them into the domain model.{{% /alert %}}
 
@@ -125,7 +125,7 @@ The associations that are exposed in the services are listed after the attribute
 
 Unsupported associations are greyed out.
 
-{{< figure src="/attachments/refguide/modeling/menus/view-menu/integration-pane/unsupported-elements.png" alt="Integration pane greys out unsupported elements" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/menus/view-menu/integration-pane/unsupported-elements.png" alt="Integration pane greys out unsupported elements" class="no-border" width="300" >}} 
 
 ### Actions {#actions}
 

@@ -13,7 +13,7 @@ A consumed OData service contains the connection information for OData external 
 
 You can create a consumed OData service and specify its metadata in a file or a URL. Alternatively, you can search using the [Integration pane](/refguide/integration-pane/) and drag an entity to the domain model to have Studio Pro create a consumed OData service for you.
 
-## Consumed OData Service screen
+## Consumed OData Service Screen
 
 The **Consumed OData Service** document contains the following information:
 
@@ -218,7 +218,7 @@ See the [Limitations](/refguide/consumed-odata-services/#consumed-odata-service-
 
 In the [Integration pane](/refguide/integration-pane/), search results, and in the **Used in this app** section, an update arrow indicates if there is a different contract at the Catalog endpoint.
 
-{{< figure src="/attachments/refguide/modeling/menus/view-menu/integration-pane/update-available.png" alt="Integration pane update" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/menus/view-menu/integration-pane/update-available.png" alt="Integration pane update" class="no-border" width="300" >}}
 
 * The service version that is currently consumed is shown (in this example **1.2.0**).
 * Blue **Update** - click to open the **Update Service** box and update the contract. Studio Pro will retrieve the new contract at the Catalog endpoint, which will be loaded in the app.
@@ -244,7 +244,7 @@ A published OData service that is deployed to multiple environments or is publis
 
 In the following example, the consumed **SalesOrders** service version **1.0.0** deployed to **Acceptance** environment is consumed in the app. However, the same service is deployed to the **Production** environment:
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-odata-services/consumed-odata-service/switching-consumed-services.png" alt="major change environment" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/integration/consumed-odata-services/consumed-odata-service/switching-consumed-services.png" alt="major change environment" class="no-border" width="300" >}}
 
 To consume the service deployed to the **Acceptance environment**, follow these steps:
 
