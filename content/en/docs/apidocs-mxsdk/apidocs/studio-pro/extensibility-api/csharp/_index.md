@@ -1,15 +1,19 @@
 ---
-title: "C# Extensibility API"
+title: "Extensibility API for C# Developers"
 url: /apidocs-mxsdk/apidocs/extensibility-api/csharp/
-description: "The Extensibility API allows your custom Studio Pro extensions to interact with some internal services of Studio Pro."
-weight: 57
+description: "The C# extensibility API allows your custom Studio Pro extensions developed in C# to interact with some internal services of Studio Pro."
+weight: 10
 no_list: false
 description_list: true
 ---
 
-{{% alert color="warning" %}} This feature is in beta. For more information, see [Beta Releases](/releasenotes/beta-features/). {{% /alert %}}
+{{% alert color="warning" %}}
+This feature is in beta. For more information, see [Beta Releases](/releasenotes/beta-features/).
+{{% /alert %}}
 
-{{% alert color="info" %}} For information on new releases of the Extensibility API, see [Extensibility API Release Notes](/releasenotes/studio-pro/csharp-extensibility-api/). {{% /alert %}}
+{{% alert color="info" %}}
+For information on new releases of the Extensibility API, see [Extensibility: C# API Release Notes](/releasenotes/studio-pro/csharp-extensibility-api/).
+{{% /alert %}}
 
 ## Introduction
 

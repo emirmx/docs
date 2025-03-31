@@ -1,12 +1,12 @@
 ---
-title: "Extensibility API Release Notes"
-linktitle: "Extensibility API"
-url: /releasenotes/studio-pro/extensibility-api/
+title: "Extensibility: C# API Release Notes"
+linktitle: "Extensibility: C# API"
+url: /releasenotes/studio-pro/csharp-extensibility-api/
 weight: 45
 numberless_headings: true
 ---
 
-These release notes cover changes to the [Extensibility API](/apidocs-mxsdk/apidocs/extensibility-api/).
+These release notes cover changes to the [Extensibility API for C# Developers](/apidocs-mxsdk/apidocs/extensibility-api/csharp/).
 
 ## Version 10.15.0
 
