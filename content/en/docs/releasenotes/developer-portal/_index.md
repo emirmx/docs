@@ -359,7 +359,7 @@ It is turned off by default. Scrum Master can switch it on in the Project Manage
 
 #### Improvements
 
-* [Epics](/developerportal/project-management/epics/), our new agile planning tool has [replaced Mendix Stories](#stories-deprecation). We have added the option to export data from the [Story Archive](/developerportal/collaborate/general-settings/#story-archive) in batches, for those of you who had a lot of stories to export.
+* [Epics](/developerportal/project-management/epics/), our new agile planning tool has [replaced Mendix Stories](#stories-deprecation). We have added the option to export data from the Story Archive in batches, for those of you who had a lot of stories to export.
 
   You will need to export everything you want to keep before 1 October, 2024. After that, old data will be deleted.
 
@@ -469,7 +469,7 @@ We have made the following improvements to the **Access Management** page in Por
 
 #### Improvements
 
-* We improved the Sprint filter in [Story Archive](/developerportal/collaborate/general-settings/#story-archive) so that you can now type the Sprint name in a text box.
+* We improved the Sprint filter in Story Archive so that you can now type the Sprint name in a text box.
 
 #### Fixes
 
@@ -623,7 +623,7 @@ We have made the following improvements to the **Access Management** page in Por
 
 #### New Features
 
-* With both Epics and Jira connector as new options to plan your work, we are getting ready to say goodbye to Mendix Stories on October 1, 2023. As of today, once you switch to [Epics](/developerportal/project-management/epics/) or [Jira](/developerportal/project-management/jira-connector/), we will [archive all your work in Mendix Stories](/developerportal/collaborate/general-settings/#story-archive) and you will not be able to switch back to Mendix Stories anymore. The Scrum Master of your team can choose the right project management tool for you on the [Project Management](/developerportal/collaborate/general-settings/#project-management) tab on the **General Settings** page.
+* With both Epics and Jira connector as new options to plan your work, we are getting ready to say goodbye to Mendix Stories on October 1, 2023. As of today, once you switch to [Epics](/developerportal/project-management/epics/) or [Jira](/developerportal/project-management/jira-connector/), we will archive all your work in Mendix Stories and you will not be able to switch back to Mendix Stories anymore. The Scrum Master of your team can choose the right project management tool for you on the [Project Management](/developerportal/collaborate/general-settings/#project-management) tab on the **General Settings** page.
 * To highlight the story tool you choose for your app, we gave it its own section in the navigation, called [Project Management](/developerportal/project-management/).
 * With these changes, navigation in Epics works a bit differently than before: the navigation items are on a pane on the left now instead of at the top, so it is easier for you to get from one part of the Developer Portal to another. (If you need more space on the screen, you can always collapse the navigation pane.)
 * Speaking of Epics, we have released the new public API. You can find all the information in our [documentation](/apidocs-mxsdk/apidocs/epics-api/).
