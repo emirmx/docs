@@ -40,7 +40,8 @@ Features of Advanced Audit Trail include the following:
 * Supports decoupling—when the external system cannot be reached, the snapshots will be stored in the local database, thus ensuring that the main system will keep on working without a dependency on the external database
 * Offers auditor interface to search through the external database (across entities)
 * Supports full-text search on data and search on changed data
-* supports configuring different permissions for audit data for different users
+* Supports configuring different permissions for audit data for different users
+* Provides support for advanced filtering in search criteria
 
 ### Limitations
 
@@ -200,19 +201,19 @@ The table below provides a detailed comparison between the Advanced Audit Trail 
 
 ## Search Criteria and Advanced Filtering
 
-The updated search functionality now enforces both **exact matches** and **flexible filtering** based on field type:
+The updated search functionality supports both exact matches and flexible filtering based on field type:
 
-**Exact Match Fields**
+* Exact Match Fields
 
-* **Execution ID, Transaction ID, Object Code, and GUID** – Use exact values for these fields to ensure precise results.
-* **Environment and Limit** – Specify the target environment and set the maximum number of results.
-* **Time Window** – Define a start and end time with an option to sort results (ascending/descending).
-* **Object Creation/Deletion Status** – Include or exclude records based on their created or deleted state using Boolean fields.
+    * **Execution-ID**, **Transaction-ID**, Search for object **By code**, and **By GUID** – Use exact values for these fields to ensure precise results.
+    * **Environment to search in** and **Limit** – Specify the target environment and set the maximum number of results.
+    * **Time window** – Define a **Start** and **End** time with an option to **Sort by timestamp** (*Ascending* or *Descending*).
+    * **Object is created** and **Object is deleted** – Include or exclude records based on their created or deleted state using Boolean fields.
 
-**Flexible Match Fields**
+* Flexible Match Fields
 
-* **Entity, Username, and Role** – Search using partial matches for entity types, usernames, and user roles.
-* **Additional Information and Stack Trace** – Include supplementary data to refine your search.
+    * Search for object **By entity**, **Username**, and **Role** – Search using partial matches for entity types, usernames, and user roles.
+    * **Additional information** and **Stack trace** – Include supplementary data to refine your search.
 
 ## Read More
 
