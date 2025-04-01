@@ -52,7 +52,7 @@ To set up your build project, do the following:
 1. Select the `master` branch and let Bitrise auto-detect the configuration.
 
    {{% alert color="warning" %}}
-   XCode 16.3 and later are not supported. Please select XCode 16.2 or earlier in the Build Stack when targeting iOS.
+   Versions of Xcode 16.3 and above are not supported. Select XCode 16.2 or below in the **Build Stack** when targeting iOS. For more information, see see [Bitcode Deprecation](/refguide/mobile/introduction-to-mobile-technologies/native-mobile/#bitcode-deprecation)
    {{% /alert %}} 
 
 1. Confirm that the correct configuration has been detected:
