@@ -93,9 +93,8 @@ For readers with more knowledge of the OAuth and OIDC protocol:
     For signing into the app, the OIDC SSO module will not use token introspection and will always validate against the published `jwks` endpoint.
 
 * Stores an access token for each end-user that can be used to make API calls on their behalf
-* Can be configured to use either `client_secret_post`, `client_secret_basic`, or `private_key_jwt` as the client authentication method. Both `client_secret_post` and `client_secret_basic` make use of the `client-id` and `client-secret` as configured at the IdP. The `private_key_jwt` makes use of the `client-id`, **KeyPair Expiration Days**, and **JWT ALG(Signing Algorithm)** as configured at the IdP.
-    * OIDC SSO now supports Private Key JWT authentication, generating a key pair based on the selected signing algorithm and JWKS expiry duration. 
-    * It supports nine signing algorithms (ES256, ES384, ES512, PS256, PS384, PS512, RS256, RS384, RS512) and automatically regenerates a new key pair upon expiry.
+* Can be configured to use either `client_secret_post`, `client_secret_basic`, or `private_key_jwt` as the client authentication method.
+* It supports nine signing algorithms (ES256, ES384, ES512, PS256, PS384, PS512, RS256, RS384, RS512) and automatically regenerates a new key pair upon expiry.
 * Supports ACR in authorization requests. The ACR in OIDC protocol is used to indicate the desired level of assurance or strength of authentication during the authentication process. It allows the relying party (your application) to request a specific level of authentication assurance from the identity provider (IdP) (version 2.3.0 and above)
 * Supports response_mode=query and response_mode=form_post
 * Helps you implement an OAuth Resource Server that receives an Access Token which is obtained by a client via either Authorization Code grant or Client Credential grant.
@@ -327,10 +326,6 @@ In this case, the OIDC client is the app you are making.
  
     Once you **Save** the configuration, a key pair is automatically generated. Before you set up the private key
 authentication in your Mendix App, complete the JWKS configuration at your IdP, for example, Okta. For more information, see the [Configuring JWKS at Your IdP (Okta)](#jwks-okta) section. 
-
-    {{% alert color="warning" %}} The JWKS expires in one minute, which results in the deletion of all previous
-keys, retaining only the latest key. Ensure that your application is configured to use the most recent key to
-avoid authentication failures. {{% /alert %}}
 
 5. Add the **Client Secret**.
 6. If you have the **Automatic Configuration URL** (also known as the *well-known endpoint*), enter it and click **Import Configuration** to automatically fill the other endpoints.
