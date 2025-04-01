@@ -23,6 +23,8 @@ Before integrating function calling into your app, make sure you meet the follow
 
 * An existing app: To simplify your first use case, start building from a preconfigured set up [Blank GenAI Starter App](https://marketplace.mendix.com/link/component/227934). For more information, see [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/how-to/blank-app/). 
 
+* Be on Mendix Studio Pro 10.12.4 or higher.
+
 * Installation: Install the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle from the Mendix marketplace. If you start with the Blank GenAI App, skip this installation.
 
 * Intermediate knowledge of the Mendix platform: Familiarity with Mendix Studio Pro, microflows, and modules.
@@ -62,7 +64,9 @@ To make the functions work, create and adjust certain microflows as shown below.
 
 1. Locate the pre-built microflow `ChatContext_ChatWithHistory_ActionMicroflow` in the **ConversationalUI** > **USE_ME** > **Conversational UI** > **Action microflow examples** folder and copy it into your `MyFirstBot` module.
 
-2. Locate the `New Chat` action in the `ACT_FullScreenChat_Open` microflow. Inside this action, change the `Action microflow` input parameter to your new `MyFirstBot.ChatContext_ChatWithHistory_ActionMicroflow` from your `MyFirstBot` module.
+2. Locate the pre-built microflow `ACT_FullScreenChat_Open` in **ConversationalUI > USE_ME > Pages**. Right-click on the microflow and select **Include in project**.
+
+3. Locate the `New Chat` action in the `ACT_FullScreenChat_Open` microflow. Inside this action, change the `Action microflow` input parameter to your new `MyFirstBot.ChatContext_ChatWithHistory_ActionMicroflow` from your `MyFirstBot` module.
 
 To call a function, create a microflow per function to extract the necessary information.
 
