@@ -27,5 +27,3 @@ To disable the dialog box from opening, open the **Edit** menu and click **Prefe
 The dialog box can be opened manually by clicking **Help** > **Submit Feedback**:
 
 {{< figure src="/attachments/refguide/modeling/menus/help-menu/feedback-survey/submit-feedback.png" class="no-border" >}}
-
-
