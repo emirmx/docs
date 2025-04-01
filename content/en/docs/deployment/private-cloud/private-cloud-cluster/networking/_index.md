@@ -1,5 +1,6 @@
 ---
 title: "Network Ingress Settings in Mendix for Private Cloud"
+linktitle: "Network Ingress Settings"
 url: /developerportal/deploy/private-cloud-cluster/private-cloud-ingress-settings/
 description: "Describes how to set up and configure various ingress options in Mendix for Private Cloud."
 weight: 10
