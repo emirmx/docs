@@ -1,6 +1,6 @@
 ---
 title: "Extension Points"
-url: /apidocs-mxsdk/apidocs/extensibility-api/csharp/extensionpoints_intro/
+url: /apidocs-mxsdk/apidocs/csharp-extensibility-api-extension-points/
 weight: 9
 ---
 

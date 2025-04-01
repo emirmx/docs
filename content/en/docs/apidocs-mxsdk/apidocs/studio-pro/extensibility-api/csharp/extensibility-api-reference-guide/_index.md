@@ -1,6 +1,6 @@
 ---
 title: "Reference Guide"
-url: /apidocs-mxsdk/apidocs/extensibility-api/csharp/reference-guide/
+url: /apidocs-mxsdk/apidocs/csharp-extensibility-api-refguide/
 weight: 2
 no_list: false
 description_list: true

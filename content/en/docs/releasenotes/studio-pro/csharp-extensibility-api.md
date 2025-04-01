@@ -6,7 +6,7 @@ weight: 45
 numberless_headings: true
 ---
 
-These release notes cover changes to the [Extensibility API for C# Developers](/apidocs-mxsdk/apidocs/extensibility-api/csharp/).
+These release notes cover changes to the [Extensibility API for C# Developers](/apidocs-mxsdk/apidocs/csharp-extensibility-api/).
 
 ## Version 10.15.0
 
