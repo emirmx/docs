@@ -1,6 +1,6 @@
 ---
 title: "Create a Menu Extension"
-url: /apidocs-mxsdk/apidocs/extensibility-api/csharp/create-menu-extension/
+url: /apidocs-mxsdk/apidocs/csharp-extensibility-api-create-menu-extension/
 weight: 4
 ---
 

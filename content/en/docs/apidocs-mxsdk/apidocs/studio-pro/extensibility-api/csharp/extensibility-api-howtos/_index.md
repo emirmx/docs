@@ -1,6 +1,6 @@
 ---
 title: "How-tos"
-url: /apidocs-mxsdk/apidocs/extensibility-api/csharp/how-tos/
+url: /apidocs-mxsdk/apidocs/csharp-extensibility-api-how-tos/
 weight: 3
 no_list: false
 description_list: true
