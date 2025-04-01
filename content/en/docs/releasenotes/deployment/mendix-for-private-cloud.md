@@ -17,7 +17,7 @@ For information on the current status of deployment to Mendix for Private Cloud 
 #### Mendix Operator v2.21.2 {#2.21.2}
 
 * We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
-* We have fixed a regression that caused the `mendix-operator` pod to crashloop after running the base installation in a new namespace.
+* We have fixed a regression that caused the `mendix-operator` pod to crashloop after running the base installation in a new namespace (Ticket 244619).
 * We have fixed an issue in the connection retry mechanism for the image builder and storage provisioners: when a retryable action failed for 63 times in a row, any following retry attempts would no longer wait for a delay. In this update, all retry attempts will wait for a variable, random delay regardless of the number of retry attempts.
 * Upgrading to Mendix Operator v2.21.2 from a previous version now restarts environments managed by that version of the Operator. Environments with 2 or more replicas and a **PreferRolling** update strategy are restarted without downtime.
 
