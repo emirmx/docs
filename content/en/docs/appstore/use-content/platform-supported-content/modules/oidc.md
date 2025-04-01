@@ -318,7 +318,7 @@ In this case, the OIDC client is the app you are making.
 4. Choose the **Client authentication method** — make sure that you select a method that is supported by your IdP. You can normally check this via the `token_endpoint_auth_methods_supported` setting on the IdP’s well-known endpoint. Also ensure that the correct client authentication method is configured at the IdP when you register the client.
 
     The options are:
-    * `client_secret_basic`: Your app will use the HTTP Basic Authentication scheme to authenticate itself at your IdP. (Default – for security reasons this should be your preferred choice)
+    * `client_secret_basic`: Your app will use the HTTP Basic Authentication scheme to authenticate itself at your IdP. (Default – for security reasons this should be your preferred choice.) The `client_secret_basic` makes use of the `client-id` and `client-secret`.
     * `client_secret_post`: Your app will authenticate itself by including its `client_id` and `client_secret` in the payload of token requests. (Older versions of the OIDC SSO module used this method).
     * `private_key_jwt`: This method uses asymmetric key cryptography (algorithm) for authentication. When you select `private key` option, you can configure below fields:
         * **Key Pair Expiration Days**: (default `90`)
