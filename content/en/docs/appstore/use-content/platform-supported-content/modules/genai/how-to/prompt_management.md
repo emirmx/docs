@@ -1,7 +1,7 @@
 ---
-title: "Integrate Prompt Management into your app"
+title: "Integrate Prompt Management into your Mendix App"
 url: /appstore/modules/genai/how-to/howto-prompt-management/
-linktitle: "Integrate Prompt Management"
+linktitle: "Integrating Prompt Management"
 weight: 30
 description: "This document guides you through integrating prompt management in your Mendix application to enable users to prompt engineer at runtime."
 aliases:
@@ -41,17 +41,17 @@ This use case is a simplified version of the *Generate Product Description (Prom
 
 Prompt Management is a capability of the ConversationalUI module that is part of the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle. It enables users to create and engineer prompts at runtime. The following steps describe how you can add the capabilities to your app and navigation:
 
-1. Open the [Security settings](/refguide/security/#user-role) of your project and edit the user role that should later be able to create prompts at runtime. This is typically some sort of admin role, but this depends on your use case.
+1. Open the [Security settings](/refguide/security/#user-role) of your project and edit the user role that should later be able to create prompts at runtime. This is typically some sort of admin role, but this depends on your use case:
 
-2. Search for the **ConversationalUI** module and select at least the module roles **PromptAdmin** and **User**.
+    * Search for the **ConversationalUI** module and select at least the module roles **PromptAdmin** and **User**.
+    * Search for the **MxGenAIConnector** module and select the module role **Administrator**.
+    * Save the security settings.
 
-3. Search for the **MxGenAIConnector** module and select the module role **Administrator**. Save the security settings.
+2. Go to Navigation and add a new item "Prompt Management" to the menu, choose a suitable icon (for example `notes-paper-text` from the *Atlas* category) and use the `Show Page` On-Click event. Search for and select `Prompt_Overview` which is located in **ConversationalUI** > **USE_ME** > **Prompt Management**. Alternatively, you can add a button to a page and connect to the same page.
 
-4. Go to Navigation and add a new item "Prompt Management" to the menu, choose a suitable icon (for example `notes-paper-text` from the *Atlas* category) and use the `Show Page` On-Click event. Search for and select `Prompt_Overview` which is located in **ConversationalUI** > **USE_ME** > **Prompt Management**. Alternatively, you can add a button to a page and connect to the same page.
+3. If you haven't started from a GenAI Starter App, you also need to add a navigation item that calls the **NAV_ConfigurationOverview_Open** microflow of the **MxGenAIConnector** (see [Configuration](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#configuration) for more details).
 
-5. If you haven't started from a GenAI Starter App, you also need to add a navigation item that calls the **NAV_ConfigurationOverview_Open** microflow of the **MxGenAIConnector** (see [Configuration](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#configuration) for more details).
-
-You can now run the app, login as administrator and test if you can navigate to the Prompt_Overview and MxCloud Configuration pages. If you already have a key for a **Text Generation** resource, you might import it now (for more details see [Mendix Cloud GenAI](/appstore/modules/genai/mx-cloud-genai/)).
+You can now run the app, login as administrator and test if you can navigate to the Prompt_Overview and MxCloud Configuration pages. If you already have a key for a **Text Generation** resource, you might import it now (for more details see [Mendix Cloud GenAI](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI)).
 
 ## Create Your First Prompt {#reate-prompt}
 
@@ -65,13 +65,13 @@ You will now create your first prompt in the user interface. The final prompt wi
 
 2. Click the **New Prompt** button in the top-right corner.
 
-3. You are asked to provide a **title** and **description** for your prompt. For title you can use `Product Description Generator` and optionally for description `How-To example to let the model generate a product description based on user's input`.
+3. You are asked to provide a **title** and **description** for your prompt. For title you can use `Product Description Generator` and optionally for description `Mendix How-To example: let the model generate a product description based on user's input`.
 
 4. You can now choose a *Usage type* to either create a `Single-Call` or `Conversational` prompt. The main difference between those two is that *Conversational* prompts are meant to be used in chats which contain the whole conversation and no predefined-user prompt, while the *Single-Call* is meant for a single interaction between the user and the LLM. In this example use the `Single-Call` type. **Save** the prompt.
 
-5. You are now navigated to the prompt's details page which allows you to prompt engineer at runtime. Add to the **User Prompt** field the following prompt: `Generate a short product description for a chair.`. The user prompt is typically what the enduser writes, even though it can be prefilled by our own instructions.
+5. You are now navigated to the prompt's details page which allows you to prompt engineer at runtime. Add to the [User Prompt](/appstore/modules/genai/prompt-engineering/#user-prompt) field the following prompt: `Generate a short product description for a chair.`. The user prompt is typically what the enduser writes, even though it can be prefilled by our own instructions.
 
-6. You can now hit **Run** in the top-right corner to see the model's response. However, because you have not selected a model yet, you are asked to do so before running the test. If there are no models to select from, you first need to configure a model (for MxCloud you need to import a key on the configuration page that you have added in the previous section). You can later change the model by clicking the *Cog* icon left to the *Run* button.
+6. You can now hit **Run** in the top-right corner to see the model's response. However, because you have not selected a model yet, you are asked to do so before running the test. If there are no models to select from, you first need to configure a model (for MxCloud you need to import a key on the configuration page that you have added in the previous section). You can later change the model by clicking the **Configuration** ({{% icon name="cog" %}}) icon left to the *Run* button.
 
 7. In the outcome card you can observe the model's response. This is already sufficient for the first try. You can now save this version of the prompt by hitting the **Save As** button in the *prompt card*. For title use `Simple product description prompt` and save it. The prompt cannot be edited anymore.
 
@@ -85,7 +85,7 @@ You will now create your first prompt in the user interface. The final prompt wi
 
 ### System Prompt and Multiple Test Cases
 
-11. Save the prompt's version one more time as you did in *step 7*. Enter `Added user input` as title. For the final version, additional instructions can now be added as part of the *system prompt*. Enter `You are a sales assistant that can write engaging and inspiring product descriptions for our online marketplace. The user asks you to create a description for various products. You should always respond in {{Language}}.` and notice that the *Language* variable was created.
+11. Save the prompt's version one more time as you did in *step 7*. Enter `Added user input` as title. For the final version, additional instructions can now be added as part of the [System Prompt](/appstore/modules/genai/prompt-engineering/#system-prompt). Enter `You are a sales assistant that can write engaging and inspiring product descriptions for our online marketplace. The user asks you to create a description for various products. You should always respond in {{Language}}.` and notice that the *Language* variable was created.
 
 12. Add a new test case by clicking the `+` icon next to the test case drop down. For *Language* you can enter any language (preferably not English to test it properly), in this example `German` is used. The other two variables can be the same values as above: `30` and `chair`. **Run** the test case. Save the test case with the title `Chair 30 words German`.
 
@@ -134,13 +134,13 @@ You first need to configure some additional settings for the prompt before it ca
 
 1. Run the app. Navigate to your prompt.
 
-2. Click the **microflow** icon with the `X` left to the *Run* button. A pop-up is opened where you can select the context entity. Search for **Product** and select the entity that was created in the previous section. When starting from the Blank GenAI App, this should be **MyFirstModule.Product**. Click **Save**.
+2. Click the **Prompt Context Settings** icon ({{% icon name="MF_not_in_use" %}}) left to the *Run* button. A pop-up is opened where you can select the context entity. Search for **Product** and select the entity that was created in the previous section. When starting from the Blank GenAI App, this should be **MyFirstModule.Product**. Click **Save**.
 
-3. Notice that the *Microflow* icon changed to indicate that the context entity was selected correctly. In the background it was checked if all variables can be found in the attributes of the selected entity. If the variables were spelled differently than the attribute names, you should see a warning sign in the icon and a helpful text when you click on it. Below the three variables an info text appears indicating that you have not used all attributes as variables. This is nothing to worry about, just a helpful hint in the case that you missed a variable. In our example, the `ProductDescription` attribute is a placeholder for the model's response and thus not part of the user or system prompt.
+3. Notice that the *Prompt Context Settings* icon changed (from {{% icon name="MF_not_in_use" %}} to {{% icon name="MF_in_use" %}}) to indicate that the context entity was selected correctly. In the background it was checked if all variables can be found in the attributes of the selected entity. If the variables were spelled differently than the attribute names, you should see a warning sign in the icon and a helpful text when you click on it. Below the three variables an info text appears indicating that you have not used all attributes as variables. This is nothing to worry about, just a helpful hint in the case that you missed a variable. In our example, the `ProductDescription` attribute is a placeholder for the model's response and thus not part of the user or system prompt.
 
 4. Navigate back to the Prompt Overview (via the breadcrumb `Overview`).
 
-5. Hover over the *Ellipsis* icon (three horizontal dots) in the row of your prompt and click the **Select Prompt in use** button. On this page, you need to select a version that you want to set to `In Use` which means it is selected for production and later selected in your microflow logic. Select the latest version `Added system prompt and language` and click **Select**.
+5. Hover over the *Ellipsis* ({{% icon name="ellipsis" %}}) icon in the row of your prompt and click the **Select Prompt in use** button. On this page, you need to select a version that you want to set to `In Use` which means it is selected for production and later selected in your microflow logic. Select the latest version `Added system prompt and language` and click **Select**.
 
 ### Enable Generation Microflow {#generation-microflow}
 
@@ -193,6 +193,10 @@ You now successfully implemented prompt management and connected it to an exampl
 
 ## Troubleshooting {#troubleshooting}
 
+{{% alert color="info" %}}
+If you seek more technical details, you can learn more on the [Prompt Management](/appstore/modules/genai/genai-for-mx/prompt-management/) documentation page. Furthermore, there is a more advanced prompt management example in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) called *Generate Product Description (Prompt Management)* which you can easily follow after completing this how-to.
+{{% /alert %}}
+
 ### Model selection is empty {#empty-model-selection}
 
 When you want to run your prompt from the prompt management page, you need to select a model. If the list is empty, you likely have not configured a model yet using one of the platform-supported (or other GenAICommons compatible) connectors. Also make sure that the model support `SystemPrompt` as well as `Text` as output modality.
@@ -206,8 +210,3 @@ If the attributes do not match the variables, for example you noticed a warning 
 ### "Owner" of Prompt is empty {#owner-is-empty}
 
 If the `Owner` field on the `Prompt_Overview` page is empty, you are likely logged in as `MxAdmin` which doesn't have a name linked to it. For other users, the *Owner* field should be populated. This should not change the behavior of this how-to.
-
-## Read More {#read-more}
-* If you seek more technical documentation and details, you can learn more on the [Prompt Management](/appstore/modules/genai/genai-for-mx/prompt-management/) documentation page. 
-
-* As already mentioned, there is a more advanced prompt management example in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) called *Generate Product Description (Prompt Management)* which you can easily follow after completing this how-to.
