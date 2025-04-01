@@ -105,10 +105,6 @@ To unlink a Free App, do the following:
 
 1. From [Apps](https://sprintr.home.mendix.com), go to the [Environments](/developerportal/deploy/environments/) page of the app you want to unlink.
 
-1. If the page shows the following message, then your app is not currently linked to a node. In that case, you can go straight to the [Connecting Your App to a Licensed Node](#connect-app) section.
-
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/licensing-apps/link-node.png" >}}
-   
 1. Click **Unlink your app**.
 
     {{< figure src="/attachments/deployment/mendix-cloud-deploy/licensing-apps/unlink-free-app.png" >}}
@@ -156,6 +152,10 @@ To connect your app to a licensed node, do the following:
     {{< figure src="/attachments/deployment/mendix-cloud-deploy/licensing-apps/choose-node.png" class="no-border" >}}
 
 1. If there is already an app linked to the node, you will be prompted to confirm that you want to replace it. Click **Continue** to confirm.
+
+{{% alert color="warning" %}}
+Linking a new project to a node removes all existing team members and resets node permissions. The technical contact must re-add everyone to the project, and reconfigure any necessary settings.
+{{% /alert %}}
 
     {{< figure src="/attachments/deployment/mendix-cloud-deploy/licensing-apps/confirm-replace.png" max-width=70% class="no-border" >}}
 
