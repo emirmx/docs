@@ -1,14 +1,15 @@
 ---
-title: "Tab Api"
-url: /apidocs-mxsdk/apidocs/extensibility-api/web/tab-api/
-weight: 8
+title: "Open a Tab Using Web API"
+linktitle: "Open a Tab"
+url: /apidocs-mxsdk/apidocs/web-extensibility-api/tab-api/
+weight: 60
 ---
 
-# Prerequisites
+## Prerequisites
 
-This guide builds ontop of the [getting started guide](/apidocs-mxsdk/apidocs/extensibility-api/web/getting-started/). Please complete that guide before starting this one. You should also be familiar with creating menus.
+This guide builds ontop of the [getting started guide](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that guide before starting this one. You should also be familiar with creating menus.
 
-# Opening a tab
+## Opening a tab
 
 In this example we'll learn how to open a tab in Studio Pro from an extension. This tab will contain your web content.<br />
 
@@ -69,20 +70,20 @@ export const component: IComponent = new Main();
 
 It is important that whenever the tabs api `open` method is called, the `TabHandle` returned is tracked by the extension, so that it can be closed later by calling the `close` method. In this example, we have a dictionary that uses the parent menu id as the key in order to track the open `TabHandle`.
 
-## TabInfo and UISpec parameters
+### TabInfo and UISpec parameters
 
 The parameters passed to the `open` method are a `TabInfo` object and a `UISpec` object.
 
-### TabInfo
+#### TabInfo
 
 The `TabInfo` object requires the `title` of the tab, which will be shown in the title bar of your tab in Studio Pro.
 
-### UISpec
+#### UISpec
 
 The `UISpec` has two required properties, the `componentName` and the `uiEntryPoint`. The `componentName` has to match the name of the extension, but also must be prefixed with "extension/". So the `componentName` will look like "extension/myextension" in your example shown above.
 The `uiEntryPoint` property must match the name mapped from the `manifest.json` file. Keep reading below for samples with multiple tabs to see a clearer example.
 
-# Content of the tabs
+## Content of the tabs
 
 You might have noticed the `uiEntryPoint` value "tab" in the `UISpec` object above. This value must match the one from the manifest. If you wanted to have more than one tab in your extension, you need to structure the folders in a particular way. You also need to set up the manifest file in the correct way.
 
@@ -102,7 +103,7 @@ createTabSpec(tab: string, title: string): { info: TabInfo, ui: UISpec} {
 
 Inside the `ui` folder, add 3 separate folders, one for each tab you want to display contents for. Each subfolder for each tab should contain its own index file. In this example, we'll add 3 tabs.
 
-![ui Folder Structure](/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/tabs/ui_folder_structure.png)
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/tabs/ui_folder_structure.png" >}}
 
 All our index files for this example look the same except for the header tag identifying our tab. Below is the index file for tab 3.
 
@@ -212,7 +213,7 @@ export default defineConfig({
 
 After building and installing the extension in our Studio Pro app, each tab will display the content they specify in their own individual index files.
 
-# Extensibility Feedback
+## Extensibility Feedback
 
 If you would like to provide us with some additional feedback you can complete a small [Survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback)
 

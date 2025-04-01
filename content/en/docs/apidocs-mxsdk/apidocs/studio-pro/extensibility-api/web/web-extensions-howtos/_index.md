@@ -1,6 +1,6 @@
 ---
 title: "How-tos"
-url: /apidocs-mxsdk/apidocs/extensibility-api/web/how-tos/
+url: /apidocs-mxsdk/apidocs/web-extensibility-api/how-tos/
 weight: 3
 no_list: false
 description_list: true

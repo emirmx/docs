@@ -1,18 +1,19 @@
 ---
-title: "Local App Files Api"
-url: /apidocs-mxsdk/apidocs/extensibility-api/web/local-app-files-api/
-weight: 5
+title: "Interact With Local App Files Using Web API"
+linktitle: "Local Files"
+url: /apidocs-mxsdk/apidocs/web-extensibility-api/local-app-files-api/
+weight: 20
 ---
 
-# Introduction
+## Introduction
 
 This guide will show you how to interact with the local application files from within an extension
 
-# Prerequisites
+## Prerequisites
 
-This guide builds ontop of the [getting started guide](/apidocs-mxsdk/apidocs/extensibility-api/web/getting-started/). Please complete that guide before starting this one.
+This guide builds on top of the [getting started guide](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that guide before starting this one.
 
-# Adding some interactivity
+## Adding some interactivity
 
 Open `src/ui/index.tsx`
 
@@ -110,15 +111,15 @@ createRoot(document.getElementById("root")!).render(
 
 The final part of our changes adds 3 new buttons which call the callbacks we defined at the top of the file when clicked.
 
-## Some restrictions
+### Some restrictions
 
 The App files api allows you to modify files within your applications folder. It will not serve restricted files such as the mpr file or contents of some folders like `.git` folder. Additionally it will not files outside of the app folder.
 
-# Conclusion
+## Conclusion
 
 You should now be able to save, load and delete files from within the app folder using an extension.
 
-# Extensibility Feedback
+## Extensibility Feedback
 
 If you would like to provide us with some additional feedback you can complete a small [Survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback)
 

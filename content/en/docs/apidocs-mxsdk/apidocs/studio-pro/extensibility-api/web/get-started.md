@@ -1,7 +1,7 @@
 ---
 title: "Get Started with the Web Extensibility API"
 linktitle: "Get Started"
-url: /apidocs-mxsdk/apidocs/extensibility-api/web/getting-started/
+url: /apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/
 weight: 2
 ---
 

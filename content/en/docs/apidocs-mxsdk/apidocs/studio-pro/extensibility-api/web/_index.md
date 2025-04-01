@@ -1,11 +1,9 @@
 ---
 title: "Extensibility API for Web Developers"
 linktitle: "Web Extensibility API"
-url: /apidocs-mxsdk/apidocs/extensibility-api/web
-description: "The web extensibility API allows your custom Studio Pro extensions developed using Javascript to interact with some internal services of Studio Pro."
+url: /apidocs-mxsdk/apidocs/web-extensibility-api
+description: "The web extensibility API allows your custom Studio Pro extensions developed using JavaScript to interact with some internal services of Studio Pro."
 weight: 20
-no_list: false
-description_list: true
 ---
 
 {{% alert color="warning" %}} This feature is in beta. For more information, see [Beta Releases](/releasenotes/beta-features/). {{% /alert %}}
@@ -15,9 +13,7 @@ description_list: true
 
 ## Introduction
 
-Extensions are self-contained modules which users can add to Studio Pro. This means that with extensibility you can add new features and functionality to Studio Pro. The Extensibility API is an API that allows developers to interact with a curated list of internal systems of Studio Pro. This documentation provides guides and reference documentation for the Extensibility API.
-
-If you need to add your own custom UI to Studio Pro, you can achieve this using web technology. Your web-based UI will be rendered in Studio Pro using a hosted web view, the API provides communication functionality between your web UI and the C# extension logic.
+Extensions can be written in Typescript or other web languages, described here, or using a C# API which is documented separately in [Extensibility API for C# Developers](/apidocs-mxsdk/apidocs/csharp-extensibility-api).
 
 ## Prerequisites
 
@@ -29,36 +25,15 @@ If you need to add your own custom UI to Studio Pro, you can achieve this using 
 
 ## Getting Started
 
-For detailed explanation on how to get started with extensions, check out [Get Started with the Extensibility API](/apidocs-mxsdk/apidocs/extensibility-api/csharp/getting-started/).
-
-You can also check out our examples and [API reference documentation](https://github.com/mendix/ExtensionAPI-Samples).
+For detailed explanation on how to get started with extensions, check out [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/).
 
 ## How-tos
 
 Here is a list of how-tos for you to begin with:
 
-* [How to create a menu extension](/apidocs-mxsdk/apidocs/extensibility-api/csharp/create-menu-extension/)
-* [How to create a dockable pane](/apidocs-mxsdk/apidocs/extensibility-api/csharp/create-dockable-pane-extension/)
-* [How to add a context menu to an entity](/apidocs-mxsdk/apidocs/extensibility-api/csharp/create-context-menu/)
-* [How to host some web content inside a modal dialog using a modal web view](/apidocs-mxsdk/apidocs/extensibility-api/csharp/create-modal-web-view/)
-* [How to create microflows for calculations](/apidocs-mxsdk/apidocs/extensibility-api/csharp/create-microflows-for-calculations/)
-
-## Advanced APIs
-
-APIs for the Mendix platform's advanced users:
-
-* [Untyped Model Access API](/apidocs-mxsdk/apidocs/extensibility-api/csharp/extensibility-api-howtos/untyped-model-access-api/)
-
-## Learn More
-
-You can dive into the following topics in depth:
-
-* [What are the extension points](/apidocs-mxsdk/apidocs/extensibility-api/csharp/extensionpoints_intro/)
-* [What are the Extensibility API services](/apidocs-mxsdk/apidocs/extensibility-api/csharp/introductions/services/)
-* [How to access the Studio Pro from the Model API](/apidocs-mxsdk/apidocs/extensibility-api/csharp/interact-with-model-api/)
-* [How to host web content via a web view wrapper](/apidocs-mxsdk/apidocs/extensibility-api/csharp/introductions/web-views/)
-* [How to build a Todo example extension](/apidocs-mxsdk/apidocs/extensibility-api/csharp/extensibility-api-howtos/build-todo-example-extension/)
-* [What are extension points](/apidocs-mxsdk/apidocs/extensibility-api/csharp/extensionpoints_intro/)
-
-## Documentation in This Category
-
+* [How to Create a Dockable Pane Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api/dockable-pane-api/)
+* [How to Interact With Local App Files Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api/local-app-files-api/)
+* [How to Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api/menu-api/)
+* [How to Show a Message Box Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api/messagebox-api/)
+* [How to Access a Mendix Model Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api/model-api/)
+* [How to Open a Tab Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api/tab-api/)

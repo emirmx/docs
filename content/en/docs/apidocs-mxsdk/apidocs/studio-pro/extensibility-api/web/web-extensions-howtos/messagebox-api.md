@@ -1,14 +1,15 @@
 ---
-title: "Message Box Api"
-url: /apidocs-mxsdk/apidocs/extensibility-api/web/messagebox-api/
-weight: 7
+title: "Show a Message Box Using Web API"
+linktitle: "Message Box"
+url: /apidocs-mxsdk/apidocs/web-extensibility-api/messagebox-api/
+weight: 50
 ---
 
-# Prerequisites
+## Prerequisites
 
-This guide builds on top of the [getting started guide](/apidocs-mxsdk/apidocs/extensibility-api/web/getting-started/). Please complete that guide before starting this one.
+This guide builds on top of the [getting started guide](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that guide before starting this one.
 
-# Showing a message box
+## Showing a message box
 
 In this example we'll learn how to show a message box to the Studio Pro user.
 
@@ -68,13 +69,13 @@ export const component: IComponent = new Main();
 
 As you can see below, you can add extra information which will show up in the expandable area shown by the `Details` button in the dialog. This is optional, and collapsed by default.
 
-![Info](/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/messageBoxes/info.png)
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/messageBoxes/info.png" >}}
 
-![Error](/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/messageBoxes/error.png)
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/messageBoxes/error.png" >}}
 
-![Warning](/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/messageBoxes/warning.png)
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/messageBoxes/warning.png" >}}
 
-# Extensibility Feedback
+## Extensibility Feedback
 
 If you would like to provide us with some additional feedback you can complete a small [Survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback)
 

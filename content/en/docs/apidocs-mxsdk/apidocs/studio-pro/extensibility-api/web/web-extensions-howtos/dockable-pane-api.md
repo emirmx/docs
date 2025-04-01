@@ -1,23 +1,24 @@
 ---
-title: "Dockable Pane Api"
-url: /apidocs-mxsdk/apidocs/extensibility-api/web/dockable-pane-api/
-weight: 4
+title: "Create a Dockable Pane Using Web API"
+linktitle: "Dockable Pane"
+url: /apidocs-mxsdk/apidocs/web-extensibility-api/dockable-pane-api/
+weight: 10
 ---
 
-# Introduction
+## Introduction
 
 This guide will show you how to create and manage a dockable pane within the web extensions api. a Dockable pane allows you to create a webview that can be docked and moved within the Studio Pro user interface. Other examples of dockable panes are:
 
-- The marketplace
-- The errors pane
-- The stories pane
-- The toolbox
+* The marketplace
+* The errors pane
+* The stories pane
+* The toolbox
 
-# Prerequisites
+## Prerequisites
 
-This guide builds ontop of the [getting started guide](/apidocs-mxsdk/apidocs/extensibility-api/web/getting-started/). Please complete that guide before starting this one.
+This guide builds ontop of the [getting started guide](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that guide before starting this one.
 
-# Creating a dockable pane.
+## Creating a dockable pane.
 
 In order to open a dockable pane you must first register the dockable pane handle with the api. To do this we will add a call to register the pane to the extension loaded method in the `src/main/index.ts`.
 
@@ -79,7 +80,7 @@ After adding this call you should now have a loaded method that looks like this:
     }
 ```
 
-# Adding a Menu and then opening the dockable pane
+## Adding a Menu and then opening the dockable pane
 
 Next we will add a menu that will open the pane when we select it.
 We will add a new submenu to the existing add menu method on line 10.
@@ -164,19 +165,19 @@ Your loaded method should now look like this:
     }
 ```
 
-# Specifying a webview endpoint
+## Specifying a webview endpoint
 
-## Adding new endpoint handlers
+### Adding new endpoint handlers
 
 Next we will create a new webview endpoint where we can define what user interface we would like to render within our pane.
 To do this let's first rename some the existing tab endpoint to something for appropriate.
 
-- Lets rename `ui/index.tsx` to `ui/tab.tsx`
-- Now lets add the new endpoint file as `ui/dockablepane.tsx` and for the content use the `ui/tab.tsx` as a guide.
+* Lets rename `ui/index.tsx` to `ui/tab.tsx`
+* Now lets add the new endpoint file as `ui/dockablepane.tsx` and for the content use the `ui/tab.tsx` as a guide.
 
 We will also need to alter the `vite.config.ts` and `manifest.json` files to bind to the correct endpoint
 
-## Altering vite.config.js
+### Altering vite.config.js
 
 From your `vite.config.js` lets replace the entry section with the following:
 
@@ -213,7 +214,7 @@ export default defineConfig({
 } satisfies UserConfig);
 ```
 
-# Altering public/manifest.json
+## Altering public/manifest.json
 
 We will also need to instruct Studio Pro to load the endpoint that we just created. To do this we will need to modify the `manifest.json` file which is located in `public/manifest.json`
 
@@ -242,7 +243,7 @@ Our `manifest.json file` should now look like this:
 }
 ```
 
-# Closing the dockable pane
+## Closing the dockable pane
 
 Now that we can register a pane and open it would also be a good idea to close it.
 To close your pane we will again add a menu item that closes the pane. As before let's first
@@ -326,12 +327,12 @@ Our loaded method should now look like this:
     }
 ```
 
-# Conclusion
+## Conclusion
 
 You should now have a new dockable pane with its own user interface which you can modify as you like.
 You can also open and close the dockable pane from a menu.
 
-# Extensibility Feedback
+## Extensibility Feedback
 
 If you would like to provide us with some additional feedback you can complete a small [Survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback)
 
