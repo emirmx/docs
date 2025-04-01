@@ -139,7 +139,43 @@ To install and configure the Mendix Operator, perform the following steps:
     8. Click **Exit Installer** > **OK**.
     
         {{< figure src="/attachments/private-platform/pmp-install5.png" class="no-border" >}}
-    
+
+## Optional: Configuring the AWS Secret Manager
+
+To use the secret provider option for your database plan or storage plan, configure the following keys in your AWS Secret Manager:
+
+### Database Plan Keys
+
+| Data Type | Key | Example Value |
+| --- | --- | --- |
+| Database type (for example, PostgreSQL) | **database-type** | `PostgreSQL` |
+| Database Jdbc Url	| **database-jdbc-url**	| `jdbc:postgresql://pg.example.com:5432/my-app-1?sslmode=prefer` |
+| Database host | **database-host**	| `pg.example.com:5432` |
+| Database name	| **database-name** | `my-app-1` |
+| Database user name | **database-username** | `my-app-user-1` |
+| Database password | **database-password**	|  |
+
+### Storage Plan Keys
+
+| Data Type | Key | Example Value |
+| --- | --- | --- |
+| Storage service name | **storage-service-name** | `com.mendix.storage.s3` |
+| S3 Storage endpoint | **storage-endpoint** | `https://my-app-bucket.s3.eu-west-1.amazonaws.com` |
+| S3 Storage access key id | **storage-access-key-id** | `AKIA################` |
+| S3 Storage secret access key | **storage-secret-access-key** | `A###################################` |
+| S3 subdirectory (or bucket name for S3-like storage systems) | **storage-bucket-name** | `subdirectory` |
+
+{{% alert color="info" %}}
+Currently, only AWS S3 or S3-compatible providers are supported.  
+{{% /alert %}}
+
+### Administrator Passwords
+
+| Data Type | Key |
+| --- | --- |
+| PCLM admin password | **pclm-admin-password** |
+| Private Mendix Platform admin password | **mx-admin-password** |
+
 ### Installing Private Cloud License Manager {#install-pclm}
 
 Private Cloud License Manager is a required component of Private Mendix Platform. Before you install the Platform, install PCLM by doing the following steps:
