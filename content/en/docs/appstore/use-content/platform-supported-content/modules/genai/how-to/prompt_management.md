@@ -77,21 +77,21 @@ You will now create your first prompt in the user interface. The final prompt wi
 
 ### Iterate and First Test Case
 
-8. To further improve your prompt and the user experience for the end users, you can now add some placeholder variables. Next to the version's dropdown you can click the icon-button with the plus to create a new draft version. Change the *User Prompt* to `Generate a short product description for a {{ProductName}}. The description should not be longer than {{NumberOfWords}} words. `
+1. To further improve your prompt and the user experience for the end users, you can now add some placeholder variables. Next to the version's dropdown you can click the icon-button with the plus to create a new draft version. Change the *User Prompt* to `Generate a short product description for a {{ProductName}}. The description should not be longer than {{NumberOfWords}} words. `
 
-9. Notice that two variables were created in the right *test case card*. Those can later be used in your application to let users flexibly change the user prompt without even knowing what a prompt is and without the application to be changed nor restarted. You can now enter two values for the variables: `30` for **NumberOfWords** and `chair` for **ProductName**. Hit **Run** to see how the model changed the output considering a different prompt.
+2. Notice that two variables were created in the right *test case card*. Those can later be used in your application to let users flexibly change the user prompt without even knowing what a prompt is and without the application to be changed nor restarted. You can now enter two values for the variables: `30` for **NumberOfWords** and `chair` for **ProductName**. Hit **Run** to see how the model changed the output considering a different prompt.
 
-10. The values that you entered for the variables are only available in the prompt management capability, but not for your use case. You can now **Save As** the test case which makes it available for later test runs. Use `Chair 30 words` as title. 
+3. The values that you entered for the variables are only available in the prompt management capability, but not for your use case. You can now **Save As** the test case which makes it available for later test runs. Use `Chair 30 words` as title. 
 
 ### System Prompt and Multiple Test Cases
 
-11. Save the prompt's version one more time as you did in *step 7*. Enter `Added user input` as title. For the final version, additional instructions can now be added as part of the [System Prompt](/appstore/modules/genai/prompt-engineering/#system-prompt). Enter `You are a sales assistant that can write engaging and inspiring product descriptions for our online marketplace. The user asks you to create a description for various products. You should always respond in {{Language}}.` and notice that the *Language* variable was created.
+1. Save the prompt's version one more time as you did in *step 7*. Enter `Added user input` as title. For the final version, additional instructions can now be added as part of the [System Prompt](/appstore/modules/genai/prompt-engineering/#system-prompt). Enter `You are a sales assistant that can write engaging and inspiring product descriptions for our online marketplace. The user asks you to create a description for various products. You should always respond in {{Language}}.` and notice that the *Language* variable was created.
 
-12. Add a new test case by clicking the `+` icon next to the test case drop down. For *Language* you can enter any language (preferably not English to test it properly), in this example `German` is used. The other two variables can be the same values as above: `30` and `chair`. **Run** the test case. Save the test case with the title `Chair 30 words German`.
+2. Add a new test case by clicking the `+` icon next to the test case drop down. For *Language* you can enter any language (preferably not English to test it properly), in this example `German` is used. The other two variables can be the same values as above: `30` and `chair`. **Run** the test case. Save the test case with the title `Chair 30 words German`.
 
-13. Now that you saved at least two test cases, you can click the arrow next to the *Run* button to open a dropdown and click **Run All**. Both test cases are executed and you can compare the different input values. Note that the language variable was not filled for the first test case because it did not exist, so it might either be in English or a random language.
+3. Now that you saved at least two test cases, you can click the arrow next to the *Run* button to open a dropdown and click **Run All**. Both test cases are executed and you can compare the different input values. Note that the language variable was not filled for the first test case because it did not exist, so it might either be in English or a random language.
 
-14. Once you are satisfied with your prompt, you can now save the version one more time with the title `Added system prompt and language`.
+4. Once you are satisfied with your prompt, you can now save the version one more time with the title `Added system prompt and language`.
 
 You now successfully created your first prompt. There are a few configurations that are still needed which will be explained later in this how-to.
 
@@ -148,42 +148,42 @@ Now you will create the microflow that is called when a user hits the button. Th
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-prompt-management/prompt_microflow.png" >}}
 
-6. In Studio Pro, go to the `Product_NewEdit` page. Open the button and change the *On click* event to `Call a microflow`. Click *New* to create a new microflow called `ACT_Product_GenerateProductDescription`. Click **Ok** to close the button's propteries.
+1. In Studio Pro, go to the `Product_NewEdit` page. Open the button and change the *On click* event to `Call a microflow`. Click *New* to create a new microflow called `ACT_Product_GenerateProductDescription`. Click **Ok** to close the button's propteries.
 
-7. Open the newly created microflow. First you need to grant the module roles access. Change the `Allowed roles` selection under the *Security* category and add both roles.
+2. Open the newly created microflow. First you need to grant the module roles access. Change the `Allowed roles` selection under the *Security* category and add both roles.
 
-8. As a first action in the microflow, add a `Change object` action to change the **Language** attribute:
+3. As a first action in the microflow, add a `Change object` action to change the **Language** attribute:
     * Object: `Product` (input parameter)
     * Member: `Language`
     * Value: `English` (you can use whatever language. This is just an example to show that you can have input for the prompt that is not defined by your users)
 
-9. Add a `Retrieve` action to the microflow to retrieve the Prompt that you created in the UI:
+4. Add a `Retrieve` action to the microflow to retrieve the Prompt that you created in the UI:
     * Source: `From database`
     * Entity: `ConversationalUI.Prompt` (search for *Prompt*)
     * XPath constraint: `[Title = 'Product Description Generator']`
     * Range: `First`
     * Object name: `Prompt` (default)
 
-10. Add the `Get Prompt For Context Object` action from the toolbox to get the `PromptToUse` object that has the variables replaced by the user's input:
-    * Prompt: `Prompt` (the object that was previously retrieved in step 6)
+5. Add the `Get Prompt For Context Object` action from the toolbox to get the `PromptToUse` object that has the variables replaced by the user's input:
+    * Prompt: `Prompt` (the object that was previously retrieved in step 4)
     * Context object: `Product` (input parameter)
     * Object name: `PromptToUse` (default)
 
-11. Add the `Create Request` action to set the system prompt:
+6. Add the `Create Request` action to set the system prompt:
     * System Prompt: `$PromptToUse/SystemPrompt` (expression)
     * Temperature: empty (expression; optional)
     * MaxTokens: empty (expression; optional)
     * TopP: empty (expression; optional)
     * Object name: `Request` (default)
 
-12. Add the `Chat Completions (without history)` action to call the model:
+7. Add the `Chat Completions (without history)` action to call the model:
     * DeployedModel: `$Prompt/ConversationalUI.Prompt_DeployedModel/GenAICommons.DeployedModel` (expression)
     * UserPrompt: `$PromptToUse/UserPrompt` (expression)
     * OptionalFileCollection: empty (expression)
-    * OptionalRequest: `Request` (the object that was previously retrieved in step 8)
+    * OptionalRequest: `Request` (the object that was previously created in step 6)
     * Obect name: `Response` (default)
 
-13. Lastly, add a `Change object` action to change the **ProductDescription** attribute:
+8. Lastly, add a `Change object` action to change the **ProductDescription** attribute:
     * Object: `Product` (input parameter)
     * Member: `ProductDescription`
     * Value: `$Response/ResponseText` (expression)
