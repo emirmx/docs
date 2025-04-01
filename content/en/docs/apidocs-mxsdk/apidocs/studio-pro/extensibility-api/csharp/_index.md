@@ -17,7 +17,7 @@ For information on new releases of the Extensibility API, see [Extensibility: C#
 
 ## Introduction
 
-Extensions are self-contained modules which users can add to Studio Pro. This means that with extensibility you can add new features and functionality to Studio Pro. The Extensibility API is an API that allows developers to interact with a curated list of internal systems of Studio Pro. This documentation provides guides and reference documentation for the Extensibility API.
+Extensions can be written in C#, described here, or using a web API which is documented separately in [Extensibility API for Web Developers](/apidocs-mxsdk/apidocs/extensibility-api/web).
 
 If you need to add your own custom UI to Studio Pro, you can achieve this using web technology. Your web-based UI will be rendered in Studio Pro using a hosted web view, the API provides communication functionality between your web UI and the C# extension logic.
 
