@@ -22,7 +22,7 @@ Mendix for Private Cloud supports the following network configurations:
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/private-cloud-networking/k8s-ingress.png" class="no-border" >}}
 
-* OpenShift Routes - The OpenShift-native method for exposing services externally provides a more streamlined setup, though it offers less flexibility compared to Kubernetes Ingress.
+* [OpenShift Routes](/developerportal/deploy/private-cloud-cluster/private-cloud-ingress-settings/openshift/) - The OpenShift-native method for exposing services externally provides a more streamlined setup, though it offers less flexibility compared to Kubernetes Ingress.
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/private-cloud-networking/openshift-routes.png" class="no-border" >}}
 
