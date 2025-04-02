@@ -26,7 +26,7 @@ Mendix for Private Cloud supports the following network configurations:
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/private-cloud-networking/openshift-routes.png" class="no-border" >}}
 
-* Service-Only - This approach involves creating only a Kubernetes Service, without an Ingress or OpenShift Route, allowing for greater control over the upstream networking configuration. This option enables the use of a Load Balancer without an Ingress Controller, or the manual creation and management of an Ingress object that is not managed by Mendix for Private Cloud.
+* [Service Only](/developerportal/deploy/private-cloud-cluster/private-cloud-ingress-settings/services-only/) - This approach involves creating only a Kubernetes Service, without an Ingress or OpenShift Route, allowing for greater control over the upstream networking configuration. This option enables the use of a Load Balancer without an Ingress Controller, or the manual creation and management of an Ingress object that is not managed by Mendix for Private Cloud.
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/private-cloud-networking/service-only.png" class="no-border" >}}
 
