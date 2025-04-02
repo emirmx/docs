@@ -482,6 +482,18 @@ You need to configure the OIDC SSO module in your app which is using the IAM bro
 1. Login by entering credentials of the user which you have created earlier on OIDC provider Accounts section.
     You should be able to login successfully and get into the index.html page
 
+## Using `CustomRedirectLogicMicroflow` Microflow
+
+Use the constant `CustomRedirectLogicMicroflow` to specify which microflow determines where the user should be directed. This microflow has the following signatures:
+
+ **Input Parameter**: `username` (String) – The username of the user logging in.
+
+**Return Value**: `Boolean` – Indicates whether the user should be sent to the client application or to the SSO provider application.
+
+**True**: Direct the user to the client application (their original destination).
+
+**False**: Direct the user to the SSO provider application.
+
 ## Token Formats for Non-Custom Claims
 
 ### Non-Custom Claims in Access Token
