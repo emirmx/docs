@@ -37,6 +37,6 @@ Generative Artificial Intelligence (GenAI) transforms business applications, emp
 * The [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/) provides key information about the AWS Bedrock connector.
 * The [PGVector Knowledge Base](/appstore/modules/genai/pgvector/) offers the option for a private knowledge base outside of the LLM infrastructure.
 
-For any additional feedback, send a message in the #genai-connectors channel on the Mendix Community Slack. You can sign up for the Mendix Community [here](https://mendixcommunity.slack.com/join/shared_invite/zt-270ys3pwi-kgWhJUwWrKMEMuQln4bqrQ#/shared-invite/email).
+For any additional feedback, send a message in the [#genai-connectors](https://mendixcommunity.slack.com/archives/C07P8NRBLN9) channel on the Mendix Community Slack. You can sign up for the Mendix Community [here](https://mendixcommunity.slack.com/join/shared_invite/zt-270ys3pwi-kgWhJUwWrKMEMuQln4bqrQ#/shared-invite/email).
 
 ## Documents in this Category
