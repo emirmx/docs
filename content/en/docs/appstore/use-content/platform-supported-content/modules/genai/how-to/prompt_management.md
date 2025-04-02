@@ -23,7 +23,7 @@ Before integrating prompt management into your app, make sure you meet the follo
 
 * An existing app: either an app that you've already built or you can also start from scratch using the [Blank GenAI App](https://marketplace.mendix.com/link/component/227934).
 
-* Installation: If not done already, install the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle from the Mendix marketplace.
+* Installation: If not done already, install the [ConversationalUI](https://marketplace.mendix.com/link/component/239450) and [GenAICommons](https://marketplace.mendix.com/link/component/239448) modules from the Mendix marketplace.
 
 * Access to an LLM of your choice. In this how-to the [Mendix Cloud GenAI Resources Packs](/appstore/modules/genai/MxGenAI/) are used, but you can use any provider with a connector that is compatible with [GenAICommons](/appstore/modules/genai/genai-for-mx/commons/) (such as [OpenAI](/appstore/modules/genai/reference-guide/external-connectors/openai/) or [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/)). 
 
@@ -39,7 +39,7 @@ This use case is a simplified version of the *Generate Product Description (Prom
 
 ## Integrate Prompt Management {#integrate-prompt-management}
 
-Prompt Management is a capability of the ConversationalUI module that is part of the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle. It enables users to create and engineer prompts at runtime. The following steps describe how you can add the capabilities to your app and navigation:
+Prompt Management is a capability of the ConversationalUI module. It enables users to create and engineer prompts at runtime. The following steps describe how you can add the capabilities to your app and navigation:
 
 1. Open the [Security settings](/refguide/security/#user-role) of your project and edit the user role that should later be able to create prompts at runtime. This is typically some sort of admin role, but this depends on your use case:
 
