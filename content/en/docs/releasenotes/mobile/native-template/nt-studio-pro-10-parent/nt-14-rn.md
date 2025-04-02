@@ -2,7 +2,7 @@
 title: "Native Template 14"
 url: /releasenotes/mobile/nt-14-rn/
 weight: 6
-description: "Native Template 14 release notes."
+description: "Native Template 14"
 ---
 
 ## 14.0.0 {#1400}
@@ -11,7 +11,7 @@ description: "Native Template 14 release notes."
 
 ### Improvements
 
-- We upgraded our React Native version to 0.77.1. This update brings latest security and performance improvements.
+- We upgraded our React Native version to 0.77.1. This update brings significant security and performance improvements.
 
 #### Library Updates and Improvements
 
