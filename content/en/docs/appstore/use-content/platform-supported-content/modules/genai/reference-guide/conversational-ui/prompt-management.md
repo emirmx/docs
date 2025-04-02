@@ -1,9 +1,11 @@
 ---
 title: "Prompt Management"
-url: /appstore/modules/genai/genai-for-mx/prompt-management/
+url: /appstore/modules/genai/conversational-ui/prompt-management/
 linktitle: "Prompt Management"
 weight: 20
 description: "Describes the Prompt Management functionality that assists developers and data scientists in implementing prompts in their GenAI Mendix applications use cases."
+aliases:
+   - /appstore/modules/genai/genai-for-mx/prompt-management/
 ---
 
 ## Introduction
