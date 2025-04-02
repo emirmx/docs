@@ -895,22 +895,9 @@ For more information on using Deep Link module (with Mendix 8 and 9), see the [U
 Page URLs and Microflow URLs are supported with OIDC SSO for Mendix version 10.6 and above. To do this, follow the steps below:
 
 1. In the **Runtime** tab of the **App Settings**, configure the page **URL prefix** to **link** instead of the default **P** to maintain compatibility with existing URLs, and ensure to remove the Deep Link module from your app to start the app successfully.
-1. Configure **OIDC.Login_Web_Button** as the **Sign-in page** in the **Authentication** section of the app **Navigation**.
-1. The user is redirected to the OIDC login page for authentication.
-1. After successful log in, the user is directed to the desired page using page URLs and microflow URLs within the application.
-
-If you are building a new app using the OIDC SSO module (Mendix version 10.6 and above) and you are using Page URLs and Microflow URLs, follow the same steps as above.
-
-To allow the end users to navigate to the desired page:
-
-* If single IdP configured, URL will be the base URL of your application followed by `oauth/v2/login?cont={page/Microflowurl}`
-
-    For example, `http://localhost:8080/oauth/v2/login?cont=link/pagepath`
-
-* If multiple IdPs configured, you can specify which IdP should be used by adding the alias (MyIdPAlias)
-`oauth/v2/login?idp={MyIdPAlias}&cont={page/Microflowurl}`
-
-    For example, `http://localhost:8080/oauth/v2/login?idp=Okta&cont=link/pagepath`
+2. Configure **OIDC.Login_Web_Button** as the **Sign-in page** in the **Authentication** section of the app **Navigation**.
+3. The user is redirected to the OIDC login page for authentication.
+4. After successful log in, the user is directed to the desired page using page URLs and microflow URLs within the application.
 
 The Page and Microflow URLs fully support multiple IdPs, allowing users to trigger the login and choose the IdP on the OIDC login page.
 For more information, see the [Migrating to Page and Microflow URLs](/appstore/modules/deep-link/#migrate-page-micro) section of the *Deep Link*.
