@@ -7,7 +7,7 @@ weight: 10
 
 ## Introduction
 
-This guide will show you how to create and manage a dockable pane within the web extensions api. a Dockable pane allows you to create a webview that can be docked and moved within the Studio Pro user interface. Other examples of dockable panes are:
+This guide will show you how to create and manage a dockable pane within the web extensions API. a Dockable pane allows you to create a web view that can be docked and moved within the Studio Pro user interface. Other examples of dockable panes are:
 
 * The marketplace
 * The errors pane
@@ -16,11 +16,11 @@ This guide will show you how to create and manage a dockable pane within the web
 
 ## Prerequisites
 
-This guide builds ontop of the [getting started guide](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that guide before starting this one.
+This guide builds on top of the [getting started guide](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that guide before starting this one.
 
 ## Creating a dockable pane.
 
-In order to open a dockable pane you must first register the dockable pane handle with the api. To do this we will add a call to register the pane to the extension loaded method in the `src/main/index.ts`.
+In order to open a dockable pane you must first register the dockable pane handle with the API. To do this we will add a call to register the pane to the extension loaded method in the `src/main/index.ts`.
 
 ```typescript
 const paneHandle = await studioPro.ui.panes.register(
@@ -165,11 +165,11 @@ Your loaded method should now look like this:
     }
 ```
 
-## Specifying a webview endpoint
+## Specifying a Web View Endpoint
 
 ### Adding new endpoint handlers
 
-Next we will create a new webview endpoint where we can define what user interface we would like to render within our pane.
+Next we will create a new web view endpoint where we can define what user interface we would like to render within our pane.
 To do this let's first rename some the existing tab endpoint to something for appropriate.
 
 * Lets rename `ui/index.tsx` to `ui/tab.tsx`
@@ -218,7 +218,7 @@ export default defineConfig({
 
 We will also need to instruct Studio Pro to load the endpoint that we just created. To do this we will need to modify the `manifest.json` file which is located in `public/manifest.json`
 
-We will alter the ui section by changing the `tab` endpoint and adding the `dockablepane` endpoint.
+We will alter the "ui" section by changing the `tab` endpoint and adding the `dockablepane` endpoint.
 
 ```typescript
       "ui": {

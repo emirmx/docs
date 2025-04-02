@@ -21,8 +21,6 @@ Extensions can be written in Typescript or other web languages, described here, 
 * You need some understanding of the Mendix Model.
 * You need to have some TypeScript development experience.
 
-{{% todo %}}Put in correct files and links to Web development{{% /todo %}}
-
 ## Getting Started
 
 For detailed explanation on how to get started with extensions, check out [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/).

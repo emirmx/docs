@@ -52,7 +52,7 @@ export const component: IComponent = new Main();
 ```
 
 In the above `index.ts` file, a menu is created and once clicked it will show a dialog.<br />
-We need to import the `menuApi` from the mendix `extension-api` package, and also the `messageBoxApi` to show our dialog.<br />
+We need to import the `menuApi` from the Mendix`extension-api` package, and also the `messageBoxApi` to show our dialog.<br />
 We also need to start listening to the `menuItemActivated` which will notify our extension that our menu was clicked. This is where we can handle the actual function of the menu. In this example below, it calls the `messageBoxApi` to show an information dialog.<br />
 An important detail to notice is that the menuId in the if statement matches the menuId that was used when creating the menu item. In this example it is `"my-menu-unique-id"`.<br />
 

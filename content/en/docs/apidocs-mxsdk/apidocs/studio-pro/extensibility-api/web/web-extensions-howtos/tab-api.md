@@ -14,7 +14,7 @@ This guide builds ontop of the [getting started guide](/apidocs-mxsdk/apidocs/we
 In this example we'll learn how to open a tab in Studio Pro from an extension. This tab will contain your web content.<br />
 
 Inside the `loaded` event in `Main`, we will create a menu to open this tab. This will create a menu, place it under `Extensions` in Studio Pro, and once clicked it will open your tab.<br />
-First we need to import the `menuApi` from the mendix `extensibility-api` package.<br />
+First we need to import the `menuApi` from the Mendix`extensibility-api` package.<br />
 Inside the `menuItemActivated` event, we will call the tabs api in order to open our tab.<br />
 The class `Main` should now look like below.
 

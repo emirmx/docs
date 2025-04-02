@@ -72,7 +72,7 @@ const saveFile = async () => {
 };
 ```
 
-The saveFile callback calls the putFile api setting the filename to `HelloWorld.txt` and containing `Hello World from a File!`
+The saveFile callback calls the putFile API setting the filename to `HelloWorld.txt` and containing `Hello World from a File!`
 
 ```typescript
 const loadFile = async () => {
@@ -84,7 +84,7 @@ const loadFile = async () => {
 };
 ```
 
-The loadFile callback calls the getFile api requesting to load `HelloWorld.txt`
+The loadFile callback calls the getFile API requesting to load `HelloWorld.txt`
 
 ```typescript
 const deleteFile = async () => {
@@ -93,7 +93,7 @@ const deleteFile = async () => {
 };
 ```
 
-The deleteFile callback calls the deleteFile api requesting to delete `HelloWorld.txt`
+The deleteFile callback calls the deleteFile API requesting to delete `HelloWorld.txt`
 
 ```typescript
 createRoot(document.getElementById("root")!).render(
@@ -113,7 +113,7 @@ The final part of our changes adds 3 new buttons which call the callbacks we def
 
 ### Some restrictions
 
-The App files api allows you to modify files within your applications folder. It will not serve restricted files such as the mpr file or contents of some folders like `.git` folder. Additionally it will not files outside of the app folder.
+The App files API allows you to modify files within your applications folder. It will not serve restricted files such as the .mpr file or contents of some folders like `.git` folder. Additionally it will not files outside of the app folder.
 
 ## Conclusion
 
