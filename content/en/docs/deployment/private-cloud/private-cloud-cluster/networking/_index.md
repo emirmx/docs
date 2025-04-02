@@ -18,7 +18,7 @@ Ensure that you are familiar with the networking concepts applicable to Kubernet
 
 Mendix for Private Cloud supports the following network configurations:
 
-* Kubernetes Ingress - The standard Kubernetes way of managing external traffic seamlessly integrates with a cloud provider's load balancer, offering a rich feature set to route and secure application traffic effectively.
+* [Kubernetes Ingress](/developerportal/deploy/private-cloud-cluster/private-cloud-ingress-settings/controllers/) - The standard Kubernetes way of managing external traffic seamlessly integrates with a cloud provider's load balancer, offering a rich feature set to route and secure application traffic effectively.
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/private-cloud-networking/k8s-ingress.png" class="no-border" >}}
 

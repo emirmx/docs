@@ -8,253 +8,231 @@ weight: 10
 
 ## Introduction
 
-Ingress is a Kubernetes resource that defines rules for routing external HTTP(S) traffic to services within a cluster. Instead of exposing services individually using LoadBalancers or NodePorts, Ingress provides a centralized way to manage external access efficiently.
+Ingress is a Kubernetes resource that defines rules for routing external HTTP and HTTPS traffic to services within a cluster. Instead of exposing services individually using load balancers or NodePorts, Ingress provides a centralized way to manage external access efficiently.
+
+## What is Kubernetes Ingress?
 
 In a Mendix environment, the Mendix Operator automatically creates both the Service and Ingress resources based on the app environment's configuration. The Service defines how traffic is routed to application pods within the cluster, while the Ingress manages external access.
 
-However, an Ingress resource alone is just a set of rules—it requires an Ingress Controller (e.g., NGINX) to function. The Ingress Controller continuously monitors Ingress resources and updates the underlying reverse proxy to enforce the specified routing rules.
+However, an Ingress resource alone is just a set of rules - it requires an Ingress Controller (for example, NGINX) to function. The Ingress Controller continuously monitors Ingress resources and updates the underlying reverse proxy to enforce the specified routing rules.
 
-For each app environment, the URL is automatically generated based on the domain name. For example, if the domain name is set to mendix.example.com, apps will have URLs such as myapp1-dev.mendix.example.com, myapp1-prod.mendix.example.com, and so on.
+For each app environment, the URL is automatically generated based on the domain name. For example, if the domain name is set to `mendix.example.com`, the apps have URLs such as `myapp1-dev.mendix.example.com`, `myapp1-prod.mendix.example.com`, and so on.
 
-To ensure proper routing, the DNS server must be configured to direct all subdomains (*.mendix.example.com) to the Ingress Controller or Load Balancer - this option is easy to configure, and adding new apps or changing domain names works instantly. Alternatively, Kubernetes External DNS can be used to manage DNS records.
+To ensure proper routing, the DNS server must be configured to direct all subdomains (`*.mendix.example.com`) to the Ingress Controller or Load Balancer. This option is easy to configure, and adding new apps or changing domain names works instantly. Alternatively, you can manage DNS records with Kubernetes External DNS.
 
 ## Basic Installation and Configuration
 
-NGINX Ingress Controller 
+The following sections described the installation and configuration of various supported Ingress Controllers.
+
+### NGINX Ingress Controller
+
+The [NGINX Ingress Controller](https://docs.nginx.com/nginx-ingress-controller/) is an open-source solution that leverages NGINX as a reverse proxy and load balancer to manage Kubernetes Ingress resources.
 
 {{% alert color="info" %}}
-For Operator version 2.19.0 and Mendix version 10.3.0 onwards, NGINX path based routing is supported. A new option /(.*) in the ingress path is provided which sets the path prefix to support this feature. To support this feature, NGINX Ingress uses nginx.ingress.kubernetes.io/rewrite-target/(.*)
+NGINX path based routing is supported for Operator version 2.19.0 and newer, and Mendix version 10.3.0 and newer. To support this feature, NGINX Ingress uses `nginx.ingress.kubernetes.io/rewrite-target/(.*)` in the ingress path.
 {{% /alert %}}
 
-The NGINX Ingress Controller is an open-source solution that leverages NGINX as a reverse proxy and load balancer to manage Kubernetes Ingress resources. Helm is the recommended way to installing NGINX. You can download it from here
+#### Installing NGINX
 
-Official procedure to install nginx with manifest is published here and with helm here.
+The recommended way to install NGINX is [Helm](https://docs.nginx.com/nginx-ingress-controller/installation/installing-nic/installation-with-helm/). Alternatively, you can also install NGINX with a [manifest](https://kubernetes.github.io/ingress-nginx/deploy/).
 
-Configuring NGINX in mxpc-cli:
+##### Configuring NGINX in the Mxpc-cli Tool
 
-Open image-20250212-142207.png
-image-20250212-142207.png
-{{< figure src="/attachments/deployment/private-cloud/private-cloud-ingress/nginx-configuration.png" class="no-border" >}}
-Select Ingress Type as kubernetes-ingress. kubernetes-ingress will configure ingress according to the additional domain name you supply. 
+To configure NGINX for Mendix for Private Cloud, set up the following settings:
 
-Ingress Domain Name - provide the domain name which you want to set for the Ingress resource file
+* **Ingress Type** - Select **kubernetes-ingress**; this option configures the Ingress according to the additional domain name you supply. 
+* **Ingress Domain Name** - Provide the domain name which you want to set for the Ingress resource file.
+* **Ingress Path** - Optional. You can use this option to specify the Ingress path. The default value is `/`.
+* **Enable TLS** - Enable or disable TLS for your app's Ingress.
+* **Custom Ingress Class** - Set to **enabled**.
+* **Ingress Class Name** - Enter **nginx**. This setting requires Custom Ingress Class to be enabled.
+* **Set Ingress Class as Annotation** - Set to **disabled**. This option adds the legacy `kubernetes.io/ingress.class` annotation to set the Ingress class, instead of using the Ingress class name.
 
-Ingress Path -  its optional, which can be used to specify the Ingress path; default value is /
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/private-cloud-networking/configure-nginx.png" class="no-border" >}}
 
-Enable TLS - allows you to enable or disable TLS for the Mendix App’s Ingress
+### AWS Load Balancer Ingress Controller
 
-Custom Ingress Class - enable this option for providing the ingress class name.
+[AWS Load Balancer Controller](https://kubernetes-sigs.github.io/aws-load-balancer-controller/latest/) is the AWS-recommended way to provide ingress capability on EKS.
 
-Ingress Class Name - provide nginx as the ingress class name 
-
-Set Ingress Class as Annotation - Unselect this option. This option adds the legacy kubernetes.io/ingress.class annotation to set the ingress class, instead of using the ingress class name.
-
-AWS Load Balancer Ingress Controller
+The AWS Load Balancer Ingress Controller integrates with AWS Application Load Balancer (ALB) or Network Load Balancer (NLB) to provide ingress capabilities. It is designed specifically for AWS EKS but can be configured for any Kubernetes cluster running in AWS. 
 
 {{% alert color="info" %}}
-AWS Load Balancer Controller is the AWS-recommended way to provide ingress capability on EKS.
+To properly configure the AWS Application Load Balancer Controller, you must manually modify the OperatorConfiguration object.
+
+In addition, ALB does not support certain functionalities (such as adding or modifying HTTP headers). To implement them, you must implement [Amazon CloudFront](https://aws.amazon.com/cloudfront/) in front of AWS Load Balancer.
 {{% /alert %}}
 
-{{% alert color="warning" %}}
+#### Installing AWS Load Balancer Ingress Controller
 
-To properly configure the AWS Application Load Balancer Controller, manual modifications to the OperatorConfiguration object are necessary.
+AWS Load Balancer Ingress Controller must be deployed on your EKS cluster and at least two subnets in different Availability Zones (more details here). For more information, see [Route application and HTTP traffic with Application Load Balancers](https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html#_prerequisites). 
 
-In addition, some functionality (such as adding or modifying HTTP headers) is not supported by ALB. This can only be done by putting cloud front in front of ALB.
-{{% /alert %}}
+For more information about the recommended installation process, see [Install AWS Load Balancer Controller with Helm](https://docs.aws.amazon.com/eks/latest/userguide/lbc-helm.html).
 
-The AWS Load Balancer Ingress Controller integrates with Amazon’s Application Load Balancer (ALB) or Network Load Balancer (NLB) to provide ingress capabilities. It is designed specifically for AWS EKS but can be configured for any Kubernetes cluster running in AWS. 
+##### Configuring AWS Load Balancer in the Mxpc-cli Tool
 
-AWS Load Balancer Ingress Controller must be deployed on your EKS cluster and at least two subnets in different Availability Zones (more details here). The recommended way to install it is using Helm following official documentation.
+To configure the AWS Load Balancer for Mendix for Private Cloud, perform the following steps:
 
-Configuring AWS LB in mxpc-cli:
+1. Set up the following settings:
 
-Open image-20250212-145202.png
-image-20250212-145202.png
-Select Ingress Type as kubernetes-ingress. kubernetes-ingress will configure ingress according to the additional domain name you supply. 
+    * **Ingress Type** - Select **kubernetes-ingress**; this option configures the Ingress according to the additional domain name you supply. 
+    * **Ingress Domain Name** - Provide the domain name which which was registered for AWS Load Balancer.
+    * **Ingress Path** - Set to `/*`. 
+    * **Enable TLS** -  Set to **disabled**. In AWS Load Balancer, TLS is enabled through annotations.
+    * **Custom Ingress Class** - Set to **enabled**.
+    * **Ingress Class Name** - Enter **alb**. This setting requires Custom Ingress Class to be enabled.
+    * **Set Ingress Class as Annotation** - Set to **disabled**. This option adds the legacy `kubernetes.io/ingress.class` annotation to set the Ingress class, instead of using the Ingress class name.
 
-Ingress Domain Name - provide the domain name which was registered for ALB
+    {{< figure src="/attachments/deployment/private-cloud/private-cloud-ingress/configure-alb.png" class="no-border" >}}
 
-Ingress Path -  Set it to /*
+2. Update the Operator configuration by choosing one of the following options:
 
-Enable TLS - keep this option unchecked (TLS is enabled in ALB through annotations).
+    * To update the settings for a specific app environment, use the Mendix Platform GUI:
 
-Custom Ingress Class - enable this option for providing the ingress class name.
+        1. In the **Global Navigation** top bar, click **Deployment** > **Private Cloud**.
+        2. Select your cluster and namespace.
+        3. In the **Apps** section, click the **Configure App** icon.
 
-Ingress Class Name - provide alb as the ingress class name 
+    * To update the settings for all apps hosted within a specific namespace, directly edit the OperatorConfiguration object using the Kubectl command-line tool at the namespace level.
 
-Set Ingress Class as Annotation - Unselect this option. This option adds the legacy kubernetes.io/ingress.class annotation to set the ingress class, instead of using the ingress class name.
+3. Add ALB-specific annotations to the **Ingress** section of your configuration. The following section shows example annotations. Adjust them as needed based on your specific requirements.
 
-{{< figure src="/attachments/deployment/private-cloud/private-cloud-ingress/alb-configuration.png" class="no-border" >}}
+    ```text
+    apiVersion: privatecloud.mendix.com/v1alpha1
+    kind: OperatorConfiguration
+    # ...
+    # omitted lines for brevity
+    # ...
+    spec:
+      # Endpoint (Network) configuration
+      endpoint:
+        type: ingress
+        ingress:
+          annotations:
+            # Allow access from the public internet
+            alb.ingress.kubernetes.io/scheme: internet-facing
+            # 'ip' mode will route traffic directly to the pod IP
+            alb.ingress.kubernetes.io/target-type: ip
+            # List all subnets which the EKS cluster is attached to
+            alb.ingress.kubernetes.io/subnets: subnet-value1, subnet-value2
+            # To enable TLS, specify the certificate ARN here
+            alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-1:1111111111:certificate/111aaaaa-1111-1aa1-11a1-111aaaa1b1a1
+            # Add this to automatically redirect HTTP traffic to HTTPS
+            alb.ingress.kubernetes.io/ssl-redirect: "443"
+            # Listen on standard HTTP and HTTPS ports
+            alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+          # The following parameters are already configured by mxpc-cli
+          domain: mendix.example.com
+          enableTLS: false
+          ingressClassName: alb
+          path: "/*"
+          pathType: ImplementationSpecific
+    # ...
+    # omitted lines for brevity
+    # ...
+    ```
 
-Choose one of the following methods to update the Operator configuration, noting that your choice will determine whether the changes affect a specific app environment or all environments within a namespace:
+    {{< figure src="/attachments/deployment/private-cloud/private-cloud-ingress/alb-annotations.png" class="no-border" >}}
 
-Mendix Platform GUI per app environment:
+For more details, see [Ingress annotations](https://kubernetes-sigs.github.io/aws-load-balancer-controller/latest/guide/ingress/annotations/).
 
-Navigate to the Global Navigation top bar
+### Azure Application Gateway Ingress Controller (AGIC)
 
-Go to Deployment > Private Cloud
-
-Select your Cluster
-
-Choose the appropriate Namespace
-
-In the Apps section, click “Configure App Cog icon”
-
-Kubectl command-line tool at the namespace level, ensuring the changes affect all hosted app environments within that namespace:
-
-Directly edit the OperatorConfiguration object using kubectl
-
-Whichever method you choose, add the following ALB-specific annotations to the Ingress section of your configuration. Note that this is an example and should be customized to your specific requirements:
-
-
-Open image-20250305-135015.png
-image-20250305-135015.png
-Mendix Platform GUI
-
-
-apiVersion: privatecloud.mendix.com/v1alpha1
-kind: OperatorConfiguration
-# ...
-# omitted lines for brevity
-# ...
-spec:
-  # Endpoint (Network) configuration
-  endpoint:
-    type: ingress
-    ingress:
-      annotations:
-        # Allow access from the public internet
-        alb.ingress.kubernetes.io/scheme: internet-facing
-        # 'ip' mode will route traffic directly to the pod IP
-        alb.ingress.kubernetes.io/target-type: ip
-        # List all subnets which the EKS cluster is attached to
-        alb.ingress.kubernetes.io/subnets: subnet-value1, subnet-value2
-        # To enable TLS, specify the certificate ARN here
-        alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-1:1111111111:certificate/111aaaaa-1111-1aa1-11a1-111aaaa1b1a1
-        # Add this to automatically redirect HTTP traffic to HTTPS
-        alb.ingress.kubernetes.io/ssl-redirect: "443"
-        # Listen on standard HTTP and HTTPS ports
-        alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
-      # The following parameters are already configured by mxpc-cli
-      domain: mendix.example.com
-      enableTLS: false
-      ingressClassName: alb
-      path: "/*"
-      pathType: ImplementationSpecific
-# ...
-# omitted lines for brevity
-# ...
-For more details, see the AWS Load Balancer Controller documentation.
-
-Azure Application Gateway Ingress Controller (AGIC)
-
-{{% alert color="warning" %}}
-
-To properly configure the Azure Application Gateway Ingress Controller (AGIC), manual modifications to the OperatorConfiguration object are necessary. 
-
-{{% /alert %}}
-
-The Azure Application Gateway Ingress Controller (AGIC) is a specialized ingress controller for Azure Kubernetes Service (AKS) that uses Azure Application Gateway (a Layer 7 load balancer) to manage HTTP/HTTPS traffic. It continuously monitors Kubernetes resources and updates the Application Gateway to expose selected services to the Internet.
-
-Running as a pod within the AKS cluster, AGIC translates the cluster’s state into Application Gateway configurations and applies them via Azure Resource Manager (ARM), providing seamless Azure-native ingress management. Refer this document to install AKS Application Gateway Ingress Controller.
+The Azure Application Gateway Ingress Controller (AGIC) is a specialized ingress controller for Azure Kubernetes Service (AKS) that uses Azure Application Gateway (a Layer-7 load balancer) to manage HTTP and HTTPS traffic. It continuously monitors Kubernetes resources and updates the Application Gateway to expose selected services to the Internet. Running as a pod within the AKS cluster, AGIC translates the cluster's state into Application Gateway configurations and applies them by using Azure Resource Manager (ARM), providing seamless Azure-native ingress management.
 
 {{% alert color="info" %}}
-Azure Gateway Ingress Controller needs up to 90 seconds to remove a pod from its routing table. Stopping an app pod immediately would still send traffic to the pod for a few minutes, causing random 502 errors to appear in the client web browser. Hence, its recommended to add runtimeTerminationDelaySeconds value to the OperatorConfiguration CR.
+To properly configure the Azure Application Gateway Ingress Controller (AGIC), you must manually modify the OperatorConfiguration object.
 {{% /alert %}}
 
-Configuring AGIC in mxpc-cli:
+#### Installing AGIC
 
-Open image-20250212-150224.png
-image-20250212-150224.png
-{{< figure src="/attachments/deployment/private-cloud/private-cloud-ingress/agic-configuration.png" class="no-border" >}}
-Select Ingress Type as kubernetes-ingress. kubernetes-ingress will configure ingress according to the additional domain name you supply. 
+For information about installing the AKS Application Gateway Ingress Controller, see [Enable the AGIC add-on in existing AKS cluster through Azure CLI](https://learn.microsoft.com/en-us/azure/application-gateway/tutorial-ingress-controller-add-on-existing#enable-the-agic-add-on-in-existing-aks-cluster-through-azure-cli).
 
-Ingress Domain Name - provide the domain name which was registered for AGIC
-
-Ingress Path -  Set it to /
-
-Enable TLS - allows you to enable or disable TLS for the Mendix App’s ingress.
-
-Custom Ingress Class - enable this option for providing the ingress class name.
-
-Ingress Class Name - provide azure/application-gateway as the ingress class name 
-
-Set Ingress Class as Annotation - Select this option. This option adds the kubernetes.io/ingress.class annotation to set the ingress class.border" >}}
-
-Choose one of the following methods to update the Operator configuration, noting that your choice will determine whether the changes affect a specific app environment or all environments within a namespace:
-
-Mendix Platform GUI per app environment:
-
-Navigate to the Global Navigation top bar
-
-Go to Deployment > Private Cloud
-
-Select your Cluster
-
-Choose the appropriate Namespace
-
-In the Apps section, click “Configure App Cog icon”
-
-Kubectl command-line tool at the namespace level, ensuring the changes affect all hosted app environments within that namespace:
-
-Directly edit the OperatorConfiguration object using kubectl
-
-Open image-20250305-135015.png
-image-20250305-135015.png
-Mendix Platform GUI option
-
-
-apiVersion: privatecloud.mendix.com/v1alpha1
-kind: OperatorConfiguration
-# ...
-# omitted lines for brevity
-# ...
-spec:
-  # Endpoint (Network) configuration
-  endpoint:
-    type: ingress
-    ingress:
-      annotations:
-        # Specify the name of a Listener TLS Certificate to use
-        appgw.ingress.kubernetes.io/appgw-ssl-certificate: agic-tls
-        # Add this to automatically redirect HTTP traffic to HTTPS
-        appgw.ingress.kubernetes.io/ssl-redirect: true
-        # Ingress class, this is automatically set by mxpc-cli
-        kubernetes.io/ingress.class: azure/application-gateway
-      # The following parameters are already configured by mxpc-cli
-      domain: mendix.example.com
-      enableTLS: true
-      path: "/"
-      pathType: ImplementationSpecific
-# ...
-# omitted lines for brevity
-# ...
-If you would also like to set up TLS certificates, kindly follow SSL certificate documentation which explains how to make AGIC load a cert from KeyVault.
-
-Traefik Ingress Controller
-
-Traefik is a cloud-native reverse proxy and a load balancer. When deployed as an ingress controller in Kubernetes, it manages HTTP and HTTPS traffic to services running within the cluster. It automatically discovers services using Kubernetes' native APIs, based on Kubernetes Ingress resources and other configurations. One of the main advantages of using Traefik is its built in Let's Encrypt support
-
-Official documentation to install is provided here
-
-{{% alert color="warning" %}}
-Traefik uses 2 types of providers: CRDs or Kubernetes Ingress. Please make sure you install Kubernetes Ingress one as it’s the only one supported.
+{{% alert color="info" %}}
+Azure Gateway Ingress Controller needs up to 90 seconds to remove a pod from its routing table. Stopping an app pod immediately would still send traffic to the pod for a few minutes, causing random 502 errors to appear in the client web browser. Because of that, it is recommended to add the `runtimeTerminationDelaySeconds` value to the OperatorConfiguration CR.
 {{% /alert %}}
 
-Configuring Traefik in mxpc-cli:
+#### Configuring AGIC in the Mxpc-cli Tool
 
-Open image-20250213-084933.png
-image-20250213-084933.png
-Select Ingress Type as kubernetes-ingress. kubernetes-ingress will configure ingress according to the additional domain name you supply. 
+To configure AGIC for Mendix for Private Cloud, perform the following steps:
 
-Ingress Domain Name - provide the domain name which was registered for ALB
+1. Set up the following settings:
 
-Ingress Path -  Set it to /
+    * **Ingress Type** - Select **kubernetes-ingress**; this option configures the Ingress according to the additional domain name you supply. 
+    * **Ingress Domain Name** - Provide the domain name which which was registered for AGIS.
+    * **Ingress Path** - Set to `/*`. 
+    * **Enable TLS** -  Enable or disable TLS for your app's Ingress.
+    * **Custom Ingress Class** - Set to **enabled**.
+    * **Ingress Class Name** - Enter **azure/application-gateway**. This setting requires Custom Ingress Class to be enabled.
+    * **Set Ingress Class as Annotation** - Set to **disabled**. This option adds the legacy `kubernetes.io/ingress.class` annotation to set the Ingress class, instead of using the Ingress class name.
 
-Enable TLS - allows you to enable or disable TLS for the Mendix App’s ingress.
+    {{< figure src="/attachments/deployment/private-cloud/private-cloud-ingress/configure-agis.png" class="no-border" >}}
 
-Custom Ingress Class - enable this option for providing the ingress class name.
+2. Update the Operator configuration by choosing one of the following options:
 
-Ingress Class Name - provide traefik as the ingress class name 
+    * To update the settings for a specific app environment, use the Mendix Platform GUI:
 
-Set Ingress Class as Annotation -  Unselect this option. This option adds the legacy kubernetes.io/ingress.class annotation to set the ingress class, instead of using the ingress class name.
+        1. In the **Global Navigation** top bar, click **Deployment** > **Private Cloud**.
+        2. Select your cluster and namespace.
+        3. In the **Apps** section, click the **Configure App** icon.
+
+    * To update the settings for all apps hosted within a specific namespace, directly edit the OperatorConfiguration object using the Kubectl command-line tool at the namespace level.
+
+3. Add AGIC-specific annotations to the **Ingress** section of your configuration. The following section shows example annotations. Adjust them as needed based on your specific requirements.
+
+    ```text
+    apiVersion: privatecloud.mendix.com/v1alpha1
+    kind: OperatorConfiguration
+    # ...
+    # omitted lines for brevity
+    # ...
+    spec:
+      # Endpoint (Network) configuration
+      endpoint:
+        type: ingress
+        ingress:
+          annotations:
+            # Specify the name of a Listener TLS Certificate to use
+            appgw.ingress.kubernetes.io/appgw-ssl-certificate: agic-tls
+            # Add this to automatically redirect HTTP traffic to HTTPS
+            appgw.ingress.kubernetes.io/ssl-redirect: true
+            # Ingress class, this is automatically set by mxpc-cli
+            kubernetes.io/ingress.class: azure/application-gateway
+          # The following parameters are already configured by mxpc-cli
+          domain: mendix.example.com
+          enableTLS: true
+          path: "/"
+          pathType: ImplementationSpecific
+    # ...
+    # omitted lines for brevity
+    # ...
+    ```
+
+    {{< figure src="/attachments/deployment/private-cloud/private-cloud-ingress/agis-annotations.png" class="no-border" >}}
+
+4. Optional: To set up TLS certificates, see [Appgw ssl certificate](https://azure.github.io/application-gateway-kubernetes-ingress/features/appgw-ssl-certificate/).
+
+### Traefik Ingress Controller
+
+Traefik is a cloud-native reverse proxy and a load balancer. When deployed as an Ingress Controller in Kubernetes, it manages HTTP and HTTPS traffic to services running within the cluster. It automatically discovers services using Kubernetes' native APIs, based on Kubernetes Ingress resources and other configurations. One of the main advantages of using Traefik is its built-in [Let's Encrypt](https://doc.traefik.io/traefik/https/acme/) support.
+
+#### Installing Traefik
+
+For information about installing the Traefik Ingress Controller, see [Traefik & Kubernetes](https://doc.traefik.io/traefik/providers/kubernetes-ingress/).
+
+{{% alert color="info" %}}
+Traefik uses 2 types of providers: CRDs or Kubernetes Ingress. Ensure that you install Kubernetes Ingress one, as it is the only one supported by Mendix for Private Cloud.
+{{% /alert %}}
+
+#### Configuring Traefik in the Mxpc-cli Tool
+
+To configure Traefik for Mendix for Private Cloud, set up the following settings:
+
+* **Ingress Type** - Select **kubernetes-ingress**; this option configures the Ingress according to the additional domain name you supply. 
+* **Ingress Domain Name** - Provide the domain name which was registered for Traefik
+* **Ingress Path** - Set to `/*`. 
+* **Enable TLS** - Enable or disable TLS for your app's Ingress.
+* **Custom Ingress Class** - Set to **enabled**.
+* **Ingress Class Name** - Enter **traefik**. This setting requires Custom Ingress Class to be enabled.
+* **Set Ingress Class as Annotation** - Set to **disabled**. This option adds the legacy `kubernetes.io/ingress.class` annotation to set the Ingress class, instead of using the Ingress class name.
+
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/private-cloud-networking/configure-traefik.png" class="no-border" >}}
