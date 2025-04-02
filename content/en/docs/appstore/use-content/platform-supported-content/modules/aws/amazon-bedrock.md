@@ -528,6 +528,67 @@ The input and output for this service are shown in the table below:
 | --- | --- |
 | `ENUM_Region (enumeration)`, `Credentials (object)`, `GetIngestionJobRequest (object)` | `GetIngestionJobResponse (object)` |
 
+#### ListIngestionJobs {#list-ingestion-jobs}
+
+The `ListIngestionJobs` action allows you to retrieve a list of the data ingestion jobs for a data source. It requires `ENUM_Region`, `Credentials` and `ListIngestionJobsRequest` as input parameters.
+
+To use this activity, you must set up a knowledge base and a data source in your Amazon Bedrock Environment. 
+
+The input and output for this service are shown in the table below:
+
+| Input | Output |
+| --- | --- |
+| `ENUM_Region (enumeration)`, `Credentials (object)`, `ListIngestionJobsRequest (object)` | `ListIngestionJobsResponse (object)` |
+
+#### CreateDataSource {#create-data-source}
+
+The `CreateDataSource` action allows you to connect a knowledge base to a data source. This action is currently supported for datasource types S3 and Confluence. It requires `ENUM_Region`, `Credentials` and `CreateDataSourceRequest` as input parameters.
+
+To use this activity, you must set up a knowledge base in your Amazon Bedrock Environment. 
+
+The input and output for this service are shown in the table below:
+
+| Input | Output |
+| --- | --- |
+| `ENUM_Region (enumeration)`, `Credentials (object)`, `CreateDataSourceRequest (object)` | `CreateDataSourceResponse (object)` |
+
+#### DeleteDataSource {#delete-data-source}
+
+The `DeleteDataSource` action allows you to delete a data source from a knowledge base. It requires `ENUM_Region`, `Credentials` and `DeleteDataSourceRequest` as input parameters.
+
+To use this activity, you must set up a knowledge base and a datasource in your Amazon Bedrock Environment. 
+
+The input and output for this service are shown in the table below:
+
+| Input | Output |
+| --- | --- |
+| `ENUM_Region (enumeration)`, `Credentials (object)`, `DeleteDataSourceRequest (object)` | `DeleteDataSourceResponse (object)` |
+
+#### GetDataSource {#get-data-source}
+
+The `GetDataSource` action allows you to get information about a data source. It requires `ENUM_Region`, `Credentials` and `GetDataSourceRequest` as input parameters.
+
+To use this activity, you must set up a knowledge base and a datasource in your Amazon Bedrock Environment. 
+
+The input and output for this service are shown in the table below:
+
+| Input | Output |
+| --- | --- |
+| `ENUM_Region (enumeration)`, `Credentials (object)`, `GetDataSourceRequest (object)` | `GetDataSourceResponse (object)` |
+
+#### ListDataSources {#list-data-sources}
+
+The `ListDataSources` action allows you to list the data sources in a knowledge base and get information about each of them. It requires `ENUM_Region`, `Credentials` and `ListDataSourcesRequest` as input parameters.
+
+To use this activity, you must set up a knowledge base in your Amazon Bedrock Environment. 
+
+The input and output for this service are shown in the table below:
+
+| Input | Output |
+| --- | --- |
+| `ENUM_Region (enumeration)`, `Credentials (object)`, `ListDataSourcesRequest (object)` | `ListDataSourcesResponse (object)` |
+
+
 #### InvokeAgent {#invoke-agent}
 
 The `InvokeAgent` activity allows you to invoke an agent from Amazon Bedrock, so that you can orchestrate tasks involving foundation models and enrich the process with organizational data and user input. It requires `ENUM_Region`, `Credentials`, `InvokeAgentRequest`, a `ResponseHandlerMicroflow` and a `ErrorHandlerMicroflow` as input parameters. The microflow parameters are necessary since `InvokeAgent` is an asynchronous operation. The `ResponseHandlerMicroflow` is required to have exactly one input parameter of the `InvokeAgentResponse` entity type. It is called in a background threat once the response is available. The `ErrorHandlerMicroflow` is required to have exactly one input parameter of type String. It will be called when there is an error during the asynchronous process and the error type will be passed to it's string parameter. The Amazon Bedrock Connector includes sample response handler and error handler microflows to help you set up handlers for your implementation.
