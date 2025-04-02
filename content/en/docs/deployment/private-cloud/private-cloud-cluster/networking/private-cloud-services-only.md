@@ -3,7 +3,7 @@ title: "Service without Ingress in Mendix for Private Cloud"
 linktitle: "Service Only"
 url: /developerportal/deploy/private-cloud-cluster/private-cloud-ingress-settings/services-only/
 description: "Describes how to configure Mendix for Private Cloud to create services without an Ingress."
-weight: 20
+weight: 30
 ---
 
 ## Introduction

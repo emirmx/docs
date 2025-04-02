@@ -22,7 +22,7 @@ To ensure proper routing, the DNS server must be configured to direct all subdom
 
 ## Basic Installation and Configuration
 
-The following sections described the installation and configuration of various supported Ingress Controllers.
+The following sections describe the installation and configuration of various supported Ingress Controllers.
 
 ### NGINX Ingress Controller
 
