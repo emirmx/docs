@@ -1,7 +1,7 @@
 ---
 title: "Native Template 13"
 url: /releasenotes/mobile/nt-13-rn/
-weight: 5
+weight: 30
 description: "Native Template 13 release notes."
 ---
 
