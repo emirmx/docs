@@ -3,6 +3,9 @@ title: "Maia for Domain Model"
 url: /refguide/maia-for-domain-model/
 weight: 50
 description: "Describes the features in Maia for Domain Model."
+aliases:
+    - /refguide/domain-model-generator/
+#If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
@@ -31,7 +34,7 @@ After clicking **Maia for Domain Model**, a dedicated chat interface will appear
 
 {{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/domain-model-generator/chat-interface.png" max-width=42% >}}
 
-Describe your application or its main goals in the chatbox. Maia will use this information to generate a relevant domain model for you! After a domain model is generated and if the dedicated chat is still active, you can still ask Maia to add more entities and associations to the generated domain model. In Studio Pro 10.17 and above, it also supports adding more attributes to an existing entity in the generated domain model. Give it a try!
+Describe your application or its main goals in the chat. Maia will use this information to generate a relevant domain model for you! After a domain model is generated and if the dedicated chat is still active, you can still ask Maia to add more entities and associations to the generated domain model. In Studio Pro 10.17 and above, it also supports adding more attributes to an existing entity in the generated domain model. Give it a try!
 
 {{% alert color="info" %}}
 In this dedicated chat, only requests related to domain model will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide/maia-chat/) interface.

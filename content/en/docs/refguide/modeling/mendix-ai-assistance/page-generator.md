@@ -3,6 +3,9 @@ title: "Maia for Pages"
 url: /refguide/maia-for-pages/
 weight: 60
 description: "Describes the features in Maia for Pages."
+aliases:
+    - /refguide/page-generator/
+#If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
