@@ -77,7 +77,7 @@ You will now create your first prompt in the user interface. The final prompt wi
 
 ### Iterate and First Test Case
 
-1. To further improve your prompt and the user experience for the end users, you can now add some placeholder variables. Next to the version's dropdown you can click the icon-button with the plus to create a new draft version. Change the *User Prompt* to `Generate a short product description for a {{ProductName}}. The description should not be longer than {{NumberOfWords}} words. `
+1. To further improve your prompt and the user experience for the end users, you can now add some placeholder variables. Next to the version's dropdown you can click *New Prompt Version* icon ({{% icon name="copy-add-plus"%}}) to create a new draft version. Change the *User Prompt* to `Generate a short product description for a {{ProductName}}. The description should not be longer than {{NumberOfWords}} words. `
 
 2. Notice that two variables were created in the right *test case card*. Those can later be used in your application to let users flexibly change the user prompt without even knowing what a prompt is and without the application to be changed nor restarted. You can now enter two values for the variables: `30` for **NumberOfWords** and `chair` for **ProductName**. Hit **Run** to see how the model changed the output considering a different prompt.
 
@@ -87,7 +87,7 @@ You will now create your first prompt in the user interface. The final prompt wi
 
 1. Save the prompt's version one more time as you did in *step 7*. Enter `Added user input` as title. For the final version, additional instructions can now be added as part of the [System Prompt](/appstore/modules/genai/prompt-engineering/#system-prompt). Enter `You are a sales assistant that can write engaging and inspiring product descriptions for our online marketplace. The user asks you to create a description for various products. You should always respond in {{Language}}.` and notice that the *Language* variable was created.
 
-2. Add a new test case by clicking the `+` icon next to the test case drop down. For *Language* you can enter any language (preferably not English to test it properly), in this example `German` is used. The other two variables can be the same values as above: `30` and `chair`. **Run** the test case. Save the test case with the title `Chair 30 words German`.
+2. Add a new test case by clicking the `New Test Case` icon ({{% icon name="add"%}}) next to the test case drop down. For *Language* you can enter any language (preferably not English to test it properly), in this example `German` is used. The other two variables can be the same values as above: `30` and `chair`. **Run** the test case. Save the test case with the title `Chair 30 words German`.
 
 3. Now that you saved at least two test cases, you can click the arrow next to the *Run* button to open a dropdown and click **Run All**. Both test cases are executed and you can compare the different input values. Note that the language variable was not filled for the first test case because it did not exist, so it might either be in English or a random language.
 
@@ -134,13 +134,13 @@ You first need to configure some additional settings for the prompt before it ca
 
 1. Run the app. Navigate to your prompt.
 
-2. Click the **Prompt Context Settings** icon ({{% icon name="MF_not_in_use" %}}) left to the *Run* button. A pop-up is opened where you can select the context entity. Search for **Product** and select the entity that was created in the previous section. When starting from the Blank GenAI App, this should be **MyFirstModule.Product**. Click **Save**.
+2. Click the **Prompt Context Settings** icon ({{% icon name="microflow-disconnected"%}}) left to the *Run* button. A pop-up is opened where you can select the context entity. Search for **Product** and select the entity that was created in the previous section. When starting from the Blank GenAI App, this should be **MyFirstModule.Product**. Click **Save**.
 
-3. Notice that the *Prompt Context Settings* icon changed (from {{% icon name="MF_not_in_use" %}} to {{% icon name="MF_in_use" %}}) to indicate that the context entity was selected correctly. In the background it was checked if all variables can be found in the attributes of the selected entity. If the variables were spelled differently than the attribute names, you should see a warning sign in the icon and a helpful text when you click on it. Below the three variables an info text appears indicating that you have not used all attributes as variables. This is nothing to worry about, just a helpful hint in the case that you missed a variable. In our example, the `ProductDescription` attribute is a placeholder for the model's response and thus not part of the user or system prompt.
+3. Notice that the *Prompt Context Settings* icon changed (from {{% icon name="microflow-disconnected" %}} to {{% icon name="microflow-connected" %}}) to indicate that the context entity was selected correctly. In the background it was checked if all variables can be found in the attributes of the selected entity. If the variables were spelled differently than the attribute names, you should see a warning sign in the icon and a helpful text when you click on it. Below the three variables an info text appears indicating that you have not used all attributes as variables. This is nothing to worry about, just a helpful hint in the case that you missed a variable. In our example, the `ProductDescription` attribute is a placeholder for the model's response and thus not part of the user or system prompt.
 
 4. Navigate back to the Prompt Overview (via the breadcrumb `Overview`).
 
-5. Hover over the *Ellipsis* ({{% icon name="ellipsis" %}}) icon in the row of your prompt and click the **Select Prompt in use** button. On this page, you need to select a version that you want to set to `In Use` which means it is selected for production and later selected in your microflow logic. Select the latest version `Added system prompt and language` and click **Select**.
+5. Hover over the *Ellipsis* ({{% icon name="three-dots-menu-horizontal-small" %}}) icon in the row of your prompt and click the **Select Prompt in use** button. On this page, you need to select a version that you want to set to `In Use` which means it is selected for production and later selected in your microflow logic. Select the latest version `Added system prompt and language` and click **Select**.
 
 ### Enable Generation Microflow {#generation-microflow}
 
