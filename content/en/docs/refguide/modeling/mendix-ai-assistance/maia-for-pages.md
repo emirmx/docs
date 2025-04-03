@@ -26,7 +26,7 @@ To enable Maia for Pages, go to **Edit** > **Preferences** > the **New Features*
 
 Once enabled, you can find it in the the toolbar of a page:
 
-{{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/page-generator/page-generator.png" max-width=80% >}}
+{{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/maia-for-pages/maia-for-pages.png" max-width=80% >}}
 
 {{% alert color="info" %}}
 Maia for Pages is available in both the **Structure mode** and **Design mode**.
