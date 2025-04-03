@@ -97,29 +97,7 @@ For more details on downloading a backup, see [Download a Backup](/developerport
 
 ### Unlinking From Current Environment{#unlink}
 
-Before you can link an app to a new environment, you need to unlink it from its current environment. By default, all apps are created as Free Apps the first time they are deployed. So, in most cases, you must unlink them.
-
-#### Unlinking a Free App{#unlink-free}
-
-To unlink a Free App, do the following:
-
-1. From [Apps](https://sprintr.home.mendix.com), go to the [Environments](/developerportal/deploy/environments/) page of the app you want to unlink.
-
-1. Click **Unlink your app**.
-
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/licensing-apps/unlink-free-app.png" >}}
-
-1. Click **Yes, delete all data and unlink this app** to confirm.
-
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/licensing-apps/confirm-unlink.png" max-width=70% class="no-border" >}}
-
-1. If prompted, authenticate yourself with [two-factor authentication](/developerportal/deploy/two-factor-authentication/).
-
-Your app has now been unlinked from the Free App environment.
-
-#### Unlinking a Licensed App{#unlink-licensed}
-
-It is not possible to unlink an app from a licensed node. The only way to do this is to connect another app to the licensed node; this automatically unlinks the existing app.
+It is not necessary to unlink an app from a node before linking it to a new node. Instead, you can [connect another app to the node](#connect-app); this automatically unlinks the existing app.
 
 The [Exchanging Linked Apps Between Nodes](#exchange-apps) section provides an example of how you can use this behavior.
 
