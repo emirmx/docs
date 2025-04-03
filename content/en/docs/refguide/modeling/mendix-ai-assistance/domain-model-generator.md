@@ -11,7 +11,7 @@ aliases:
 ## Introduction
 
 {{% alert color="info" %}}
-Maia for Domain Model is currently an experimental feature introduced in Studio Pro 10.13.0. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+Maia for Domain Model is currently an experimental feature introduced in Studio Pro 10.13.0. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/). From Studio Pro 10.13 to 10.21, it was called Domain Model Generator.
 {{% /alert %}}
 
 {{% alert color="info" %}}

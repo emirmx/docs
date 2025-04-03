@@ -11,7 +11,7 @@ aliases:
 ## Introduction
 
 {{% alert color="info" %}}
-Maia for Pages is currently an experimental feature introduced in Studio Pro 10.21.0. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+Maia for Pages is currently an experimental feature introduced in Studio Pro 10.21.0. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/). In Studio Pro 10.21, it was called Page Generator.
 {{% /alert %}}
 
 {{% alert color="info" %}}
