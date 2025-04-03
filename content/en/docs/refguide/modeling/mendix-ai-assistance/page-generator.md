@@ -18,7 +18,7 @@ Maia for Pages is currently an experimental feature introduced in Studio Pro 10.
 To use Maia for Pages, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-Maia for Pages is an AI-powered tool that you can use for generating a [page](/refguide/page/). It helps you add and configure widgets based on a text input and an optional image. As an experimental feature, Maia for Pages has certain limitations. For example, it is currently intended only for use with empty pages, and any existing widgets on a page will be removed. For more details, see the [Limitations](#limitation) section below.
+Maia for Pages is an AI-powered tool that you can use for generating a [page](/refguide/page/). It helps you add and configure widgets based on text input and optional image input. As an experimental feature, Maia for Pages has certain limitations. For example, it is currently intended only for use with empty pages, and any existing widgets on a page will be removed. For more details, see the [Limitations](#limitation) section below.
 
 ## Using Maia for Pages
 
