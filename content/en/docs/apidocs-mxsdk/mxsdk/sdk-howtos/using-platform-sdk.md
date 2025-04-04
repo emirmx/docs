@@ -22,6 +22,8 @@ This how-to provides guidance on using the Platform SDK to do the following:
 The entry point for the Mendix Platform SDK is `MendixPlatformClient`. In most cases, you will need to instantiate a new object from this class:
 
 ```ts
+import { MendixPlatformClient } from "mendixplatformsdk";
+
 const client = new MendixPlatformClient();
 ```
 
@@ -31,6 +33,8 @@ The platform client allows you to create a new Mendix app by simply passing the 
 
 ```ts
 const app = await client.createNewApp("My new App");
+
+console.log(`App created with ID: ${app.appId}`);
 ```
 
 You can pass the following options to `createNewApp`:
@@ -70,7 +74,13 @@ You can get the **App ID** (represented as **Project ID**) in the app's [Setting
 From the app object, you can get some information about its repository (such as the repository type, URL, and default branch name):
 
 ```ts
-const repositoryInfo = app.getRepositoryInfo();
+const repository = app.getRepository();
+    
+const repositoryInfo = await repository.getInfo();
+console.log("Repository Info: ", repositoryInfo);
+
+const commitsIDs = (await repository.getBranchCommits("main")).items.map(commit => commit.id);
+console.log("Repository commits IDs: ", commitsIDs);
 ```
 
 ## Deleting an App {#deleting}
@@ -91,7 +101,13 @@ To change your app, you need to create a temporary working copy of a particular 
 
 ```ts
 const workingCopy = await app.createTemporaryWorkingCopy("main");
+
+console.log(`Working ID: ${workingCopy.workingCopyId}`);
 ```
+
+{{% alert color="warning" %}}
+Working copy creation a resource intensive process, consider reusing previously created ones by invoking `app.getOnlineWorkingCopy(workingCopy.workingCopyId)`. All working copies are automatically deleted after 24 hours.
+{{% /alert %}}
 
 You can pass the following options to `createTemporaryWorkingCopy`:
 
