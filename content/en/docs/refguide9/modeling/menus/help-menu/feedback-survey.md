@@ -6,20 +6,30 @@ description: "Describes how to provide feedback on your experience using Studio 
 
 ## Introduction
 
-The **Help us improve** popup allows you to provide feedback on your experience with Studio Pro. This feedback is valuable for the Mendix team to understand user needs and improve the product.
+The **Help us improve** dialog box allows you to provide feedback on your experience with Studio Pro. Your feedback helps the Mendix team understand user needs and improve the product.
 
 {{< figure src="/attachments/refguide9/modeling/menus/feedback-survey/feedback-survey.png" >}}
 
-The popup opens periodically for you to provide feedback. You can rate your experience on a scale of -2–2, with -2 being the lowest score and 2 being the highest score.
+## Feedback Survey Overview
 
-To disable the popup from opening, open the **Edit** menu and click **Preferences** > **Advanced** > **Feedback Survey** > **Show feedback survey periodically** and select **No**:
+The **Help us improve** dialog box opens periodically for you to provide feedback. You can rate your experience on a scale from -2 to 2, with -2 being the lowest score and 2 being the highest score.
+
+### Disabling the Feedback Survey
+
+To disable the dialog box from opening, follow the steps below:
+
+1. Open the **Edit** menu.
+2. Click **Preferences** > **Advanced** > **Feedback Survey**. 
+3. Set **Show feedback survey periodically** to **No**.
 
 {{< figure src="/attachments/refguide9/modeling/menus/feedback-survey/disable-feedback-survey.png"  >}}
 
-The popup can be opened manually by clicking **Help** > **Submit Feedback**:
+### Submitting Feedback Manually
+
+The dialog box can be opened manually by clicking **Help** > **Submit Feedback**:
 
 {{< figure src="/attachments/refguide9/modeling/menus/feedback-survey/submit-feedback.png"  >}}
 
-### Send Feedback
+### Send Feedback Button
 
-The **Send Feedback** button is disabled until a score is selected. Once a score is specified, the button is enabled, allowing you to send your feedback. You can provide justification for your score, but this is optional.
+The **Send Feedback** button is disabled until a score is selected. Once you choose a score, the button is enabled, allowing you to submit your feedback. You can provide justification for your score, but this is optional.
