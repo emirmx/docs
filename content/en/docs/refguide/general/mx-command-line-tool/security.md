@@ -22,7 +22,7 @@ These are the `OPTIONS`:
 | Option                    | Value             | Result 
 |---------------------------|-------------------|----------
 | `-t, --export-format`     | `json` or `xlsx`  | The format to export to
-| `-t, --exclude-appstore`  | *-*               | When set, exclude marketplace modules
+| `-e, --exclude-appstore`  | *-*               | When set, exclude marketplace modules
 | `-o, --output-file`       | file path         | The path to the output file
 
 ### Examples
