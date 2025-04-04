@@ -7,7 +7,7 @@ weight: 30
 
 ## Introduction
 
-This guide will show you how to create a simple menu and submenus with the web extension api.
+This guide will show you how to create a simple menu and submenus with the web extension API.
 
 ## Prerequisites
 
@@ -128,7 +128,7 @@ The menu hierarchy will then be displayed like this:
 
 ## Updating a menu
 
-Sometimes you might want to disable a menu or update its caption depending on a condition. You can do so by calling the menu api's `updateMenu` method.
+Sometimes you might want to disable a menu or update its caption depending on a condition. You can do so by calling the menu API's `updateMenu` method.
 
 If you replace your `src/main/index.ts` with the code below, you'll see how you can disable a menu after it gets clicked, as well as updating its caption.
 

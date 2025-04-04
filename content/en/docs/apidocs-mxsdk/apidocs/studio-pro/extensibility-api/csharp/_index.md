@@ -32,7 +32,7 @@ If you need to add your own custom UI to Studio Pro, you can achieve this using 
 
 ## Getting Started
 
-For detailed explanation on how to get started with extensions, check out [Get Started with the Extensibility API](/apidocs-mxsdk/apidocs/csharp-extensibility-api-get-started/).
+For detailed explanation on how to get started with extensions, check out [Get Started with the Extensibility API](/apidocs-mxsdk/apidocs/csharp-extensibility-api/get-started/).
 
 You can also check out our examples and [API reference documentation](https://github.com/mendix/ExtensionAPI-Samples).
 
@@ -40,26 +40,26 @@ You can also check out our examples and [API reference documentation](https://gi
 
 Here is a list of how-tos for you to begin with:
 
-* [How to create a menu extension](/apidocs-mxsdk/apidocs/csharp-extensibility-api-create-menu-extension/)
-* [How to create a dockable pane](/apidocs-mxsdk/apidocs/csharp-extensibility-api-create-dockable-pane-extension/)
-* [How to add a context menu to an entity](/apidocs-mxsdk/apidocs/csharp-extensibility-api-create-context-menu/)
-* [How to host some web content inside a modal dialog using a modal web view](/apidocs-mxsdk/apidocs/csharp-extensibility-api-create-modal-web-view/)
-* [How to create microflows for calculations](/apidocs-mxsdk/apidocs/csharp-extensibility-api-create-microflows-for-calculations/)
+* [How to Create a Menu Extension Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api/create-menu-extension/)
+* [How to Create a Dockable Pane Extension Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api/create-dockable-pane-extension/)
+* [How to Create a Context Menu Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api/create-context-menu/)
+* [How to Create a Web View Hosted Inside a Modal Dialog Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api/create-modal-web-view/)
+* [How to Create Microflows for Calculations Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api/create-microflows-for-calculations/)
 
 ## Advanced APIs
 
 APIs for the Mendix platform's advanced users:
 
-* [Untyped Model Access API](/apidocs-mxsdk/apidocs/untyped-model-access-api/)
+* [Use the Untyped Model Access API Using C#](/apidocs-mxsdk/apidocs/untyped-model-access-api/)
 
 ## Learn More
 
 You can dive into the following topics in depth:
 
-* [What are extension points](/apidocs-mxsdk/apidocs/csharp-extensibility-api-extension-points/)
-* [What are the Extensibility API services](/apidocs-mxsdk/apidocs/csharp-extensibility-api-services/)
-* [How to access the Studio Pro from the Model API](/apidocs-mxsdk/apidocs/interact-with-model-api/)
-* [How to host web content via a web view wrapper](/apidocs-mxsdk/apidocs/csharp-extensibility-api-web-views/)
-* [How to build a Todo example extension](/apidocs-mxsdk/apidocs/csharp-extensibility-api-build-todo-example-extension/)
+* [What are extension points](/apidocs-mxsdk/apidocs/csharp-extensibility-api/extension-points/)
+* [What are the Extensibility API services](/apidocs-mxsdk/apidocs/csharp-extensibility-api/services/)
+* [How to Interact with the Model API Using C#](/apidocs-mxsdk/apidocs/interact-with-model-api/)
+* [How to host web content via a web view wrapper](/apidocs-mxsdk/apidocs/csharp-extensibility-api/web-views/)
+* [How to Build a Todo Example Extension Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api/build-todo-example-extension/)
 
 ## Documentation in This Category

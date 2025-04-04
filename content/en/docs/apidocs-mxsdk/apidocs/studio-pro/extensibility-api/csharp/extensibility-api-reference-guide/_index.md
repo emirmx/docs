@@ -1,6 +1,7 @@
 ---
-title: "Reference Guide"
-url: /apidocs-mxsdk/apidocs/csharp-extensibility-api-refguide/
+title: "Reference Guide for the C# Extensibility API"
+linktitle: "Reference Guide"
+url: /apidocs-mxsdk/apidocs/csharp-extensibility-api/refguide/
 weight: 2
 no_list: false
 description_list: true

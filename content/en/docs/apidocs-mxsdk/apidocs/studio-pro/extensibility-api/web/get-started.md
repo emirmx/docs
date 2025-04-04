@@ -22,99 +22,99 @@ You will need the following prerequisites:
 Extensions can be built on any operating system as the underlying framework is cross-platform.
 {{% /alert %}}
 
+## Creating Your First Extension
+
+This section will show you how to build and test an extension.
+
 ### Create a Test App
 
-We recommend you create a test app in Mendix where you will develop your extension. For this example we will create an app using the blank app template in Studio Pro.
+1. Create a new app using the **Blank Web App** template.
+1. Install the [Studio Pro Web Extension Template](https://github.com/mendix/web-extension-template) from GitHub using the instructions in the repository.
 
-From the App Selector click `Create New App` or alternatively from inside Studio Pro select `File -> New App` from the menu. <br />
-From the template selection screen select blank app. Once asked to confirm select use template.
-
-### Create a development extension
-
-The simplest way to get started is to use our [Web extension template](https://github.com/mendix/web-extension-template).
-
-Once installed or extracted to a folder of your choosing you now have a starter extension that you can use as a starting point.
-
-### Building your extension
+### Building the Extension
 
 From within Visual Studio Code:
 
-* Select File -> Open Folder
-* Navigate to the folder you just extracted your extension source code in.
-* Click Select Folder
-* You might get prompted that you trust this folder. Select Yes that you do trust it.
-* Now open a Terminal by selecting Terminal -> New Terminal from the top menu.
-* From the Terminal type `npm install`. This will install all dependencies for the extension
-* Once completed you should now be able to build your extension. From the terminal type `npm run build`.
+1. Select **File** -> **Open Folder**
+1. Navigate to the folder you just extracted your extension source code to.
+1. Click **Select Folder**.
+1. Select **Yes** if you are asked whether you trust this folder.
+1. Now open a Terminal by selecting **Terminal** -> **New Terminal** from the top menu.
+1. From the Terminal type `npm install`. This installs all dependencies for the extension
+1. Build your extension using the command `npm run build` in the terminal.
 
 Once completed you should now have a build artifact which we can deploy to your Mendix app.
-Before we start with that step though it might be worth while to explore our extension a bit more to understand what it will do
-when it is installed.
 
-* From the Explorer window navigate to `src/main/index.ts` select it to open the file.
+You can explore the extension a bit more to understand what it will do when it is installed. Do the following:
 
-Reading through the source code you should see the following:
+1. From the Explorer window navigate to `src/main/index.ts` select it to open the file.
 
-* We are adding a menu on line 7
+    Reading through the source code you should see the following:
 
-```typescript
-await studioPro.ui.extensionsMenu.add({
-  menuId: "myextension.MainMenu",
-  caption: "MyExtension Menu",
-  subMenus: [{ menuId: "myextension.ShowTabMenuItem", caption: "Show tab" }],
-});
-```
+1. Line 7 adds a menu
 
-* We are opening a tab on line 14
+    ```typescript
+    await studioPro.ui.extensionsMenu.add({
+    menuId: "myextension.MainMenu",
+    caption: "MyExtension Menu",
+    subMenus: [{ menuId: "myextension.ShowTabMenuItem", caption: "Show tab" }],
+    });
+    ```
 
-```typescript
-// Open a tab when the menu item is clicked
-studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", (args) => {
-  if (args.menuId === "myextension.ShowTabMenuItem") {
-    studioPro.ui.tabs.open(
-      {
-        title: "My Extension Tab",
-      },
-      {
-        componentName: "extension/myextension",
-        uiEntrypoint: "tab",
+1. Line 14 opens a tab
+
+    ```typescript
+    // Open a tab when the menu item is clicked
+    studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", (args) => {
+      if (args.menuId === "myextension.ShowTabMenuItem") {
+        studioPro.ui.tabs.open(
+          {
+            title: "My Extension Tab",
+          },
+          {
+            componentName: "extension/myextension",
+            uiEntrypoint: "tab",
+          }
+        );
       }
-    );
-  }
-});
-```
+    });
+    ```
 
-This means that when we install our extension we expect to see a new menu item within Studio Pro.
+When you install the extension you will see a new menu item within Studio Pro.
 
-### Testing your extension
+### Testing the Extension
 
-From within your file explorer.
+To test the extension, do the following in File Explorer.
 
-* Navigate to the folder where we extracted your extension source code into.
-* Open the dist folder
-* Copy the myextension folder
-* Navigate to the folder where you created your app in step 1.
-* Create a new folder. Call it `webextensions`.
-* Paste the myextension folder into the webextensions folder you just created.
+1. Navigate to the folder where you extracted the extension source code.
+1. Open the `dist` folder.
+1. Copy the `myextension` folder.
+1. Navigate to the folder where you created your app.
+1. Create a new folder called `webextensions`.
+1. Paste the `myextension` folder into the `webextensions` folder you just created.
 
-The App now has the needed files to load the extension however because this extension is being executed from a folder we will need to start Studio Pro with some special command line parameters.
+    The extension files have now been added to the app.
+    
+1. Start Studio Pro with the following command line parameters to tell it to use the extensions in the folder.
 
-Run Studio Pro withe following command line parameters `--enable-extension-development --enable-webview-debugging`
+    `--enable-extension-development --enable-webview-debugging`
 
-These flags will instruct Studio Pro to do the following:
+    These flags instruct Studio Pro to do the following:
 
-* Load extensions from the webextensions folder
-* Enable web debugging tools which will be useful when developing your extension
+    * Load extensions from the webextensions folder
+    * Enable web debugging tools which will be useful when developing your extension
 
-Once Studio Pro has loaded open the app that we created in Step 1. If you followed the Guide correctly you should now see a new `Extensions` item in the Top Menu.
+1. In Studio Pro, open the new app. 
+
+    You will see a new `Extensions` item in the top menu.
 
 ## Conclusion
 
 Using this guide we have:
 
-* Created a New App where we will develop an extension
-* Created a new extension using the starter sample [Web extension template](https://github.com/mendix/web-extension-template)
-* Built the extension and installed it within our App
+* Created a new app
+* Downloaded a new extension from GitHub
+* Built the extension and installed it in our app
 * Tested our extension from within Studio Pro.
 
 ## Extensibility Feedback

@@ -7,7 +7,7 @@ weight: 60
 
 ## Prerequisites
 
-This guide builds ontop of the [getting started guide](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that guide before starting this one. You should also be familiar with creating menus.
+This guide builds on top of the [getting started guide](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that guide before starting this one. You should also be familiar with creating menus.
 
 ## Opening a tab
 
@@ -15,7 +15,7 @@ In this example we'll learn how to open a tab in Studio Pro from an extension. T
 
 Inside the `loaded` event in `Main`, we will create a menu to open this tab. This will create a menu, place it under `Extensions` in Studio Pro, and once clicked it will open your tab.<br />
 First we need to import the `menuApi` from the Mendix`extensibility-api` package.<br />
-Inside the `menuItemActivated` event, we will call the tabs api in order to open our tab.<br />
+Inside the `menuItemActivated` event, we will call the tabs API in order to open our tab.<br />
 The class `Main` should now look like below.
 
 ```typescript
@@ -68,7 +68,7 @@ class Main implements IComponent {
 export const component: IComponent = new Main();
 ```
 
-It is important that whenever the tabs api `open` method is called, the `TabHandle` returned is tracked by the extension, so that it can be closed later by calling the `close` method. In this example, we have a dictionary that uses the parent menu id as the key in order to track the open `TabHandle`.
+It is important that whenever the tabs API `open` method is called, the `TabHandle` returned is tracked by the extension, so that it can be closed later by calling the `close` method. In this example, we have a dictionary that uses the parent menu id as the key in order to track the open `TabHandle`.
 
 ### TabInfo and UISpec parameters
 

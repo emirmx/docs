@@ -15,7 +15,7 @@ In this example we'll learn how to show a message box to the Studio Pro user.
 
 Inside the `loaded` event in `Main`, we will create a small menu which will display a dialog with text.
 
-First we need to import the `menuApi` and also the `messageBoxApi` to show our dialog. To see how to create menus, please see the menu api tutorial [here].
+First we need to import the `menuApi` and also the `messageBoxApi` to show our dialog. To see how to create menus, please see the menu API tutorial [here].
 
 The class `Main` should now look like below.
 

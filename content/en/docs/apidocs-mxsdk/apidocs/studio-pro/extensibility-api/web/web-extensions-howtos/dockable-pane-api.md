@@ -7,20 +7,20 @@ weight: 10
 
 ## Introduction
 
-This guide will show you how to create and manage a dockable pane within the web extensions API. a Dockable pane allows you to create a web view that can be docked and moved within the Studio Pro user interface. Other examples of dockable panes are:
+This guide explains how to create and manage a dockable pane using the web extensions API. A Dockable pane allows you to create a web view that can be docked and moved within the Studio Pro user interface. Examples of dockable panes in Studio Pro are:
 
-* The marketplace
-* The errors pane
-* The stories pane
-* The toolbox
+* Marketplace
+* Errors 
+* Stories
+* Toolbox
 
 ## Prerequisites
 
-This guide builds on top of the [getting started guide](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that guide before starting this one.
+This guide uses the app created in [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that guide before starting this one.
 
-## Creating a dockable pane.
+## Creating a Dockable Pane
 
-In order to open a dockable pane you must first register the dockable pane handle with the API. To do this we will add a call to register the pane to the extension loaded method in the `src/main/index.ts`.
+To open a dockable pane you must first register the dockable pane handle with the API. To do this, add a call to register the pane to the extension loaded method in the `src/main/index.ts`.
 
 ```typescript
 const paneHandle = await studioPro.ui.panes.register(
@@ -35,11 +35,11 @@ const paneHandle = await studioPro.ui.panes.register(
 );
 ```
 
-Whenever you need to interact with the dockable pane you will need the paneHandle that we just registered.
+Use the 'paneHandle' you registered to interact with the dockable pane.
 
-After adding this call you should now have a loaded method that looks like this:
+After adding this call the `loaded()` method looks like this:
 
-```typescript
+```typescript {hl_lines=["11-19"]}
     async loaded() {
         // Add a menu item to the Extensions menu
         await studioPro.ui.extensionsMenu.add({
@@ -80,47 +80,48 @@ After adding this call you should now have a loaded method that looks like this:
     }
 ```
 
-## Adding a Menu and then opening the dockable pane
+## Adding a Menu To Open the Dockable Pane
 
-Next we will add a menu that will open the pane when we select it.
-We will add a new submenu to the existing add menu method on line 10.
+You will now add a menu that will open the pane when it is selected.
 
-```typescript
-// Add a menu item to the Extensions menu
-await studioPro.ui.extensionsMenu.add({
-  menuId: "myextension.MainMenu",
-  caption: "MyExtension Menu",
-  subMenus: [
-    { menuId: "myextension.ShowTabMenuItem", caption: "Show tab" },
-    { menuId: "myextension.ShowDockMenuItem", caption: "Show dock pane" },
-  ],
-});
-```
+1. Add a new submenu to the existing `extensionsMenu.add()` method on line 10.
 
-We will also need to alter the addEventListener call to also handle opening the dockable pane once the menu has been selected. Lets add that to the end of the loaded method
+    ```typescript {linenos=table linenostart=10}
+    // Add a menu item to the Extensions menu
+    await studioPro.ui.extensionsMenu.add({
+      menuId: "myextension.MainMenu",
+      caption: "MyExtension Menu",
+      subMenus: [
+        { menuId: "myextension.ShowTabMenuItem", caption: "Show tab" },
+        { menuId: "myextension.ShowDockMenuItem", caption: "Show dock pane" },
+      ],
+    });
+    ```
 
-```typescript
-// Open a tab when the menu item is clicked
-studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", (args) => {
-  if (args.menuId === "myextension.ShowTabMenuItem") {
-    studioPro.ui.tabs.open(
-      {
-        title: "My Extension Tab",
-      },
-      {
-        componentName: "extension/myextension",
-        uiEntrypoint: "tab",
+1. Add lines to the `addEventListener()` call to handle opening the dockable pane once the menu has been selected, as follows:
+
+    ```typescript
+    // Open a tab when the menu item is clicked
+    studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", (args) => {
+      if (args.menuId === "myextension.ShowTabMenuItem") {
+        studioPro.ui.tabs.open(
+          {
+            title: "My Extension Tab",
+          },
+          {
+            componentName: "extension/myextension",
+            uiEntrypoint: "tab",
+          }
+        );
+      } else if (args.menuId === "myextension.ShowDockMenuItem") {
+        studioPro.ui.panes.open(paneHandle);
       }
-    );
-  } else if (args.menuId === "myextension.ShowDockMenuItem") {
-    studioPro.ui.panes.open(paneHandle);
-  }
-});
-```
+    });
+    ```
 
-Your loaded method should now look like this:
+Your `loaded()` method should now look like this:
 
-```typescript
+```typescript {hl_lines=["3-10","22-41"]}
     async loaded() {
         // Add a menu item to the Extensions menu
         await studioPro.ui.extensionsMenu.add({
@@ -167,58 +168,57 @@ Your loaded method should now look like this:
 
 ## Specifying a Web View Endpoint
 
-### Adding new endpoint handlers
+### Adding New Endpoint Handlers
 
-Next we will create a new web view endpoint where we can define what user interface we would like to render within our pane.
-To do this let's first rename some the existing tab endpoint to something for appropriate.
+You must now create a new web view endpoint where the user interface to be rendered within the pane is defined. You can use the existing endpoint and rename it to something more appropriate.
 
-* Lets rename `ui/index.tsx` to `ui/tab.tsx`
-* Now lets add the new endpoint file as `ui/dockablepane.tsx` and for the content use the `ui/tab.tsx` as a guide.
+1. Rename `ui/index.tsx` to `ui/tab.tsx`
+1. Add the new endpoint file, `ui/dockablepane.tsx` by copying `ui/tab.tsx`.
 
-We will also need to alter the `vite.config.ts` and `manifest.json` files to bind to the correct endpoint
+You must also alter the `vite.config.ts` and `manifest.json` files to bind to the correct endpoint, as described in the following sections:
 
-### Altering vite.config.js
+### Altering `vite.config.js`
 
-From your `vite.config.js` lets replace the entry section with the following:
+Replace the entry section of `vite.config.js` with the following:
 
 ```typescript
-            entry: {
-                main: "src/main/index.ts",
-                tab: "src/ui/tab.tsx",
-                dockablepane: "src/ui/dockablepane.tsx"
-            }
+        entry: {
+            main: "src/main/index.ts",
+            tab: "src/ui/tab.tsx",
+            dockablepane: "src/ui/dockablepane.tsx"
+        }
 ```
 
-this instructs vite that we have the tab endpoint connected to `src/ui/tab.tsx` and the dockable pane endpoint connected to `src/ui/dockablepane.tsx`
+This instructs vite that the tab endpoint is connected to `src/ui/tab.tsx` and the dockable pane endpoint is connected to `src/ui/dockablepane.tsx`.
 
-The `vite.config.js` file should now look like this
+`vite.config.js` should now look like this:
 
-```typescript
+```typescript {hl_lines=["7-11"]}
 import { defineConfig, ResolvedConfig, UserConfig } from "vite";
 
 export default defineConfig({
   build: {
     lib: {
-      formats: ["es"],
-      entry: {
-        main: "src/main/index.ts",
-        tab: "src/ui/tab.tsx",
-        dockablepane: "src/ui/dockablepane.tsx",
-      },
+        formats: ["es"],
+        entry: {
+            main: "src/main/index.ts",
+            tab: "src/ui/tab.tsx",
+            dockablepane: "src/ui/dockablepane.tsx",
+        },
     },
     rollupOptions: {
-      external: ["@mendix/component-framework", "@mendix/model-access-sdk"],
+        external: ["@mendix/component-framework", "@mendix/model-access-sdk"],
     },
     outDir: "./dist/myextension",
   },
 } satisfies UserConfig);
 ```
 
-## Altering public/manifest.json
+### Altering `public/manifest.json`
 
-We will also need to instruct Studio Pro to load the endpoint that we just created. To do this we will need to modify the `manifest.json` file which is located in `public/manifest.json`
+You also need to instruct Studio Pro to load the endpoint that you just created. To do this, modify the manifest file `public/manifest.json`.
 
-We will alter the "ui" section by changing the `tab` endpoint and adding the `dockablepane` endpoint.
+Alter the "ui" section by changing the `tab` endpoint and adding the `dockablepane` endpoint.
 
 ```typescript
       "ui": {
@@ -227,9 +227,9 @@ We will alter the "ui" section by changing the `tab` endpoint and adding the `do
       }
 ```
 
-Our `manifest.json file` should now look like this:
+The `manifest.json file` should now look like this:
 
-```typescript
+```typescript {hl_lines=["5-8"]}
 {
   "mendixComponent": {
     "entryPoints": {
@@ -243,42 +243,44 @@ Our `manifest.json file` should now look like this:
 }
 ```
 
-## Closing the dockable pane
+## Closing the Dockable Pane
 
-Now that we can register a pane and open it would also be a good idea to close it.
-To close your pane we will again add a menu item that closes the pane. As before let's first
-add a new sub menu item to the menu on line 11.
+Now that you have registered a pane and can open, it would also be a good idea to close it.
 
-```typescript
+You will close your pane using a new menu item.
+
+First add a new sub menu item to the menu on line 11.
+
+```typescript {linenos=table linenostart=11}
                 { menuId: "myextension.HideDockMenuItem", caption: "Hide dock pane" },
 ```
 
-We will also need to alter the event handler for the new menu at the end of the loaded method:
+You must also alter the event handler for the new menu at the end of the loaded method:
 
 ```typescript
-// Open a tab when the menu item is clicked
-studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", (args) => {
-  if (args.menuId === "myextension.ShowTabMenuItem") {
-    studioPro.ui.tabs.open(
-      {
-        title: "My Extension Tab",
-      },
-      {
-        componentName: "extension/myextension",
-        uiEntrypoint: "tab",
-      }
-    );
-  } else if (args.menuId === "myextension.ShowDockMenuItem") {
-    studioPro.ui.panes.open(paneHandle);
-  } else if (args.menuId === "myextension.HideDockMenuItem") {
-    studioPro.ui.panes.close(paneHandle);
-  }
-});
+        // Open a tab when the menu item is clicked
+        studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", (args) => {
+          if (args.menuId === "myextension.ShowTabMenuItem") {
+            studioPro.ui.tabs.open(
+              {
+                title: "My Extension Tab",
+              },
+              {
+                componentName: "extension/myextension",
+                uiEntrypoint: "tab",
+              }
+            );
+          } else if (args.menuId === "myextension.ShowDockMenuItem") {
+            studioPro.ui.panes.open(paneHandle);
+          } else if (args.menuId === "myextension.HideDockMenuItem") {
+            studioPro.ui.panes.close(paneHandle);
+          }
+        });
 ```
 
-Our loaded method should now look like this:
+The loaded method should now look like this:
 
-```typescript
+```typescript {hl_lines=["9","24-45"]}
     async loaded() {
         // Add a menu item to the Extensions menu
         await studioPro.ui.extensionsMenu.add({
@@ -329,7 +331,7 @@ Our loaded method should now look like this:
 
 ## Conclusion
 
-You should now have a new dockable pane with its own user interface which you can modify as you like.
+You now have a new dockable pane with its own user interface which you can modify as you like.
 You can also open and close the dockable pane from a menu.
 
 ## Extensibility Feedback

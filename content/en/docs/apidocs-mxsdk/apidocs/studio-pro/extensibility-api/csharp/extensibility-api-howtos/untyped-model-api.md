@@ -1,5 +1,6 @@
 ---
-title: "Use the Untyped Model Access API"
+title: "Use the Untyped Model Access API Using C#"
+linktitle: "Untyped Model API"
 url: /apidocs-mxsdk/apidocs/untyped-model-access-api/
 weight: 24
 ---

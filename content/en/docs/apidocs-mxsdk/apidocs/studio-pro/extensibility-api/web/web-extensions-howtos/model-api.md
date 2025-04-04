@@ -19,6 +19,7 @@ This how-to provides guidance on using the Model Access API:
 The Model Access API allow access to the Mendix model.
 
 The model is split in several components exposed via `studioPro.app.model` object. Currently supported components are:
+
 * BuildingBlocks
 * DomainModels
 * Enumerations
@@ -36,6 +37,7 @@ An element is part of a Mendix model and all elements together form the logic of
 Each component (e.g. `studioPro.app.model.pages` and `studioPro.app.model.domainModels`) exposes the units info of the units it is responsible for. The full unit content can be accessed only after loading the unit.
 
 The unit info, described by the `UnitInfo` interface, contains the the following fields:
+
 | Name | Description | Example value |
 | --- | --- | --- |
 | `$ID` | The unique id of the unit | `077d1338-a548-49a9-baee-c291e93d19af` |
@@ -60,11 +62,13 @@ Loading units is a resource intensive process. Only load the minimum number of u
 ```ts
 const [domainModel] = await domainModels.loadAll((info: Primitives.UnitInfo) => info.moduleName === 'MyFirstModule');
 ```
-The followind snippet loads the Page named `Home_Web` inside the module named `MyFirstModule`:
+
+The following snippet loads the Page named `Home_Web` inside the module named `MyFirstModule`:
 
 ```ts
 const [page] = await pages.loadAll((info: Primitives.UnitInfo) => info.moduleName === 'MyFirstModule' && info.name === 'Home_Web')
 ```
+
 ## Reading the unit content {#read}
 
 Elements contained inside units can be accessed using the `get<ElementName>` helper methods.
@@ -82,7 +86,7 @@ The Mendix model can be modified by leveraging the `add<ElementName>` helper met
 The following snippet will create a new Entity inside the previously loaded DomainModel unit:
 
 {{% alert color="warning" %}}
-Do not forget to invoke the `component.save(unit)` method after making changes to your unit. The method must be invoked for each modified unit, so changes on multiple units need to be saved separetely.
+Do not forget to invoke the `component.save(unit)` method after making changes to your unit. The method must be invoked for each modified unit, so changes on multiple units need to be saved separately.
 {{% /alert %}}
 
 ```ts
@@ -92,4 +96,3 @@ newEntity.documentation = "New documentation";
 
 await domainModels.save(domainModel);
 ```
-

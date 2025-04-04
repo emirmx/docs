@@ -1,6 +1,7 @@
 ---
-title: "Web Views"
-url: /apidocs-mxsdk/apidocs/csharp-extensibility-api-web-views/
+title: "Extensibility Web Views in C#"
+linktitle: "Web Views"
+url: /apidocs-mxsdk/apidocs/csharp-extensibility-api/web-views/
 weight: 12
 ---
 
