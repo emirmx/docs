@@ -204,7 +204,7 @@ For the application to function as expected, ensure that the following microflow
 
 * Create Demo Data and Populate KB: Add the `MyFirstModule.ACT_TicketList_CreateData_InsertIntoKnowledgeBase` which was created in the [Joining the Microflows section](#joining-microflows).
 
-* Mendix Cloud Configuration: If you started from a Blank GenAI App, the configuration page should already be included. In case you started from your application, add the `MxGenAIConnector.NAV_ConfigurationOverview_Open` microflow.
+* Mendix Cloud Configuration: If you started from a Blank GenAI App, the configuration page should already be included. In case you started from your application, add the `Configuration_Overview` page.
 
 * Ensure that your admin role has the following module roles assigned: MxGenAIConnector.Administrator, ConversationalUI.User, and MyFirstModule.Administrator.
 
