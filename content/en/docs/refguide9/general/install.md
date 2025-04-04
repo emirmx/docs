@@ -61,7 +61,11 @@ Sometimes you can run into problems when installing Studio Pro. One work-around 
 
 The prerequisites are the following:
 
-* [Microsoft .NET Desktop Runtime 6.0.x](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) – Mendix recommends using version 6.0.6 or above
+* | Studio Pro 9.0.0 - 9.24.33 | Studio Pro 9.24.34 and above |
+    | --- | --- |
+    |  [Microsoft .NET Desktop Runtime 6.0.x](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) – Mendix recommends using version 6.0.6 or above | [Microsoft .NET Desktop Runtime 8.0.x](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) – Mendix recommends using version 8.0.14 or above |
+    
+   
 * Java JDK
 
     * For Mendix Studio Pro 9.24.34 and above - [Eclipse Temurin JDK 21 (x64)](https://github.com/adoptium/temurin21-binaries/releases)
@@ -79,7 +83,6 @@ The prerequisites are the following:
 
 * [Microsoft Edge WebView2 Evergreen Runtime (x64 or ARM64) (Evergreen Standalone Installer version)](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)
 * Mendix Studio Pro version 9.24.0 and above require the following versions of [Gradle](https://gradle.org/install/#manually) with Gradle extracted to the parent directory of the folder where Studio Pro is installed (usually `C:\Program Files\Mendix`) instead of `C:\Gradle`.
-
     * Mendix Studio Pro version 9.24.34 and above require Gradle version 8.5 or above
     * Mendix Studio Pro version 9.24.11 and above require Gradle version 7.6.3 or above
     * Mendix Studio Pro versions 9.24.0 to 9.24.10 require Gradle version 7.6 or above
