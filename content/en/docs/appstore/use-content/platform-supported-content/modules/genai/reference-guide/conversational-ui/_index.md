@@ -1,6 +1,6 @@
 ---
-title: "Conversational UI"
-url: /appstore/modules/genai/conversational-ui/
+title: "Conversational UI Module"
+url: /appstore/modules/genai/conversational-ui-module/
 linktitle: "Conversational UI Module"
 weight: 20
 description: "Provides information on the ConversationalUI Module."
@@ -11,7 +11,7 @@ aliases:
 
 ## Introduction {#introduction}
 
-The [ConversationalUI](https://marketplace.mendix.com/link/component/239450) module provides page snippets to easily facilate a GenAI use case. 
+The [ConversationalUI](https://marketplace.mendix.com/link/component/239450) module provides page snippets to easily facilitate a GenAI use case. 
 
 By leveraging the tools and features provided in this module, you can:
 

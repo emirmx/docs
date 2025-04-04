@@ -30,7 +30,7 @@ Generative Artificial Intelligence (GenAI) transforms business applications, emp
 ### Additional Resources
 
 * Basic documentation on [GenAI Concepts](/appstore/modules/genai/get-started/) is an essential resource for anyone beginning their GenAI journey.
-* The [GenAICommons](/appstore/modules/genai/commons/) module as a prerequisite for all GenAI components.
+* The [GenAICommons](/appstore/modules/genai/genai-for-mx/commons/) module as a prerequisite for all GenAI components.
 * The [ConversationalUI](/appstore/modules/genai/conversational-ui/) module that offers UI snippets for chat, token consumption monitoring and prompt management.
 * The [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/MxGenAI/) to learn how to quickly access GenAI capabilities from a Mendix app.
 * The [OpenAI](/appstore/modules/genai/openai/) provides essential information about the OpenAI connector.

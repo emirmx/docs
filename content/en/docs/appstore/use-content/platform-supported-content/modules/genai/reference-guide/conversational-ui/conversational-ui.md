@@ -1,11 +1,12 @@
 ---
 title: "Conversational UI"
-url: /appstore/modules/genai/conversational-ui/conversational-ui/
+url: /appstore/modules/genai/conversational-ui-module/conversational-ui/
 linktitle: "Conversational UI"
 weight: 20
 description: "Describes the Conversational UI marketplace module that assists developers in implementing conversational use cases such as an AI Bot."
 aliases:
    - /appstore/modules/genai/genai-for-mx/conversational-ui/
+   - /appstore/modules/genai/conversational-ui/
 ---
 
 ## Introduction {#introduction}
