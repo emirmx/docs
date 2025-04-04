@@ -8,17 +8,17 @@ description: "Describes how to provide feedback on your experience using Studio 
 
 The **Help us improve** popup allows you to provide feedback on your experience with Studio Pro. This feedback is valuable for the Mendix team to understand user needs and improve the product.
 
-{{< figure src="/attachments/refguide9/modeling/menus/help-menu/feedback-survey/feedback-survey.png" class="no-border" >}}
+{{< figure src="/attachments/refguide9/modeling/menus/feedback-survey/feedback-survey.png" >}}
 
 The popup opens periodically for you to provide feedback. You can rate your experience on a scale of -2–2, with -2 being the lowest score and 2 being the highest score.
 
 To disable the popup from opening, open the **Edit** menu and click **Preferences** > **Advanced** > **Feedback Survey** > **Show feedback survey periodically** and select **No**:
 
-{{< figure src="/attachments/refguide9/modeling/menus/help-menu/feedback-survey/disable-feedback-survey.png" class="no-border" >}}
+{{< figure src="/attachments/refguide9/modeling/menus/feedback-survey/disable-feedback-survey.png"  >}}
 
 The popup can be opened manually by clicking **Help** > **Submit Feedback**:
 
-{{< figure src="/attachments/refguide9/modeling/menus/help-menu/feedback-survey/submit-feedback.png" class="no-border" >}}
+{{< figure src="/attachments/refguide9/modeling/menus/feedback-survey/submit-feedback.png"  >}}
 
 ### Send Feedback
 
