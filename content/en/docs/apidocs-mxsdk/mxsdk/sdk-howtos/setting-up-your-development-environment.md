@@ -34,7 +34,7 @@ To set up your development tools, follow these steps:
 
     ```bash
     $ node --version
-    v14.15.0
+    v18.20.8
     ```
 
     For Debian-based Linux distributions such as Ubuntu, please refer to [NodeSource Node.js Binary Distributions](https://github.com/nodesource/distributions#user-content-installation-instructions) to properly set up your apt-get sources.
