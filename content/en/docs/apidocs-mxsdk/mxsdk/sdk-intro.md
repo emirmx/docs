@@ -58,7 +58,7 @@ To set up the Mendix Platform and Model SDKs, perform the following steps using 
 
 1. `npm init --yes`
 2. `npm install -g typescript`
-3. `npm install mendixmodelsdk mendixplatformsdk when @types/when --save`
+3. `npm install mendixmodelsdk mendixplatformsdk --save`
 4. `tsc --init`
 
 ### Detailed Resources
