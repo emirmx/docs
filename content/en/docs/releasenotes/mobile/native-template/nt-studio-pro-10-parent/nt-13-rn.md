@@ -29,7 +29,7 @@ For more information on cookie encryption, see [Encrypting Session Cookies](/ref
 * **react-native-image-picker:** 7.2.3
 * **@react-native-community/netinfo:** 11.4.1
 
-- We changed the bottom sheet library to **@gorhom/bottom-sheet**
+* We changed the bottom sheet library to **@gorhom/bottom-sheet**
 
 ### Upgrade Instructions {#upgrade-instructions}
 
