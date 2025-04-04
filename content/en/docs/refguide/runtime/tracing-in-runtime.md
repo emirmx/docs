@@ -25,8 +25,6 @@ In Mendix 10.18.0 and above, the runtime generates spans for:
 
 ## Configuration
 
-Since Mendix 10.19.0, 
-
 ### Minimal Configuration {#min-configuration}
 
 #### Mendix 10.19.0 and Above
