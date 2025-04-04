@@ -30,6 +30,6 @@ The dialog box can be opened manually by clicking **Help** > **Submit Feedback**
 
 {{< figure src="/attachments/refguide/modeling/menus/help-menu/feedback-survey/submit-feedback.png" class="no-border" >}}
 
-### Sending Feedback
+### Send Feedback Button
 
 The **Send Feedback** button is disabled until a score is selected. Once you choose a score, the button is enabled, allowing you to submit your feedback. You can provide justification for your score, but this is optional.
