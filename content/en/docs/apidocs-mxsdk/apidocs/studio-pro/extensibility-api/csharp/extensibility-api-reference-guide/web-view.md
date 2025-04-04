@@ -39,7 +39,7 @@ In addition, the view model class can be used to house the logic for communicati
 
 ## Serving Content to the Web View
 
-For serving content to the web view and communicating both ways with it, see [Build a Todo Example Extension](/apidocs-mxsdk/apidocs/extensibility-api/extensibility-api-howtos/build-todo-example-extension/).
+For serving content to the web view and communicating both ways with it, see [Build a Todo Example Extension](/apidocs-mxsdk/apidocs/csharp-extensibility-api/build-todo-example-extension/).
 
 {{% alert color="warning" %}}
 {{% snippet file="/static/_includes/apidocs-mxsdk/warning-wwwroot.md" %}}

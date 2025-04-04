@@ -59,8 +59,8 @@ export const component: IComponent = new Main();
 
 The code imports the following:
 
-* `menuApi` from the Mendix`extension-api` package to allow you to use the menu API
-* `messageBoxApi` to show a dialog.
+* `menuApi` from `studioPro.ui.extensionsMenu` to allow you to use the menu API
+* `messageBoxApi` from `studioPro.ui.messageBoxes` to show a dialog.
 
 It starts listening to the `menuItemActivated` endpoint which will notify the extension when **My First Menu** is clicked.
 
@@ -88,7 +88,7 @@ The menu has the following properties:
 
 You can also have a number of submenus that branch out your menu.
 
-To do so, add additional menus and add these to the `subMenus` array in your menu. These child menus can in turn have their own submenus, and so on. Only parent menus (menus that are not sub menus to any others) should be added through the `menuApi`, as shown in the code sample below.
+To do so, add additional menu items to your code and add these to the `subMenus` array for the relevant menu item. These child menus can in turn have their own submenus, and so on. Only parent menus (menus that are not sub menus to any others) should be added through the `await menuApi.add()` call, as shown in the code sample below.
 
 {{% alert color="info" %}}
 Parent menus (with `subMenus`) do not create `menuItemActivated` events. These only get sent when a leaf menu (a menu that does not have any submenus) is clicked.

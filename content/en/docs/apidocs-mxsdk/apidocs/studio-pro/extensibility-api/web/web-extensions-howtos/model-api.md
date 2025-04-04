@@ -7,34 +7,34 @@ weight: 40
 
 ## Introduction 
 
-This how-to provides guidance on using the Model Access API:
+The Model Access API allow access to the Mendix model. This how-to provides guidance on using the Model Access API. It is split into the following sections:
 
 * [Using the Model Access API](#using-api)
-* [Reading the units info and loading units](#units-info-load)
-* [Reading the unit content](#read)
-* [Modifying the unit content](#modify)
+* [Reading the Units Info and Loading Units](#units-info-load)
+* [Reading the Unit Content](#read)
+* [Modifying the Unit Content](#modify)
 
 ## Using the Model Access API {#using-api}
 
-The Model Access API allow access to the Mendix model.
-
 The model is split in several components exposed via `studioPro.app.model` object. Currently supported components are:
 
-* BuildingBlocks
-* DomainModels
-* Enumerations
-* Pages
-* Snippets
+* buildingBlocks
+* domainModels
+* enumerations
+* pages
+* snippets
+
+You can include these components using syntax as shown below, which includes pages and domain models.
 
 ```ts
 const { pages, domainModels } = studioPro.app.model;
 ```
 
-## Reading the units info and loading units {#units-info-load}
+## Reading the Units Info and Loading Units {#units-info-load}
 
-An element is part of a Mendix model and all elements together form the logic of the model. Elements may contain other elements. An element always has a container element, which is its parent. The root of an element tree is always a unit.
+A unit is a Mendix document (for example, a page or a domain model) containing elements. Each element is within a container element and may contain other elements. An element is part of a Mendix model and all elements together form the logic of the model. For more information see [Mendix Metamodel](/apidocs-mxsdk/mxsdk/mendix-metamodel/).
 
-Each component (e.g. `studioPro.app.model.pages` and `studioPro.app.model.domainModels`) exposes the units info of the units it is responsible for. The full unit content can be accessed only after loading the unit.
+Each component, for example pages (`studioPro.app.model.pages`) exposes the units it is responsible for. You can only access all the content of a unit once you have loaded the unit info for that unit.
 
 The unit info, described by the `UnitInfo` interface, contains the the following fields:
 
@@ -45,49 +45,49 @@ The unit info, described by the `UnitInfo` interface, contains the the following
 | `moduleName` | (Optional) The name of the module containing the unit | `MyFirstModule` | 
 | `name` | (Optional) The name of the unit | `ExamplePage` |
 
-All the units managed by the DomainModels component can be retrieved by:
+For example, you can retrieve all the units managed by the `domainModels` component using the following code:
 
 ```ts
 const unitsInfo: Primitives.UnitInfo[] = await domainModels.getUnitsInfo()
 ```
 
-Units can be loaded by supplying a function to `component.loadAll(fn)` to execute for each unit. The function `fn` should return a truthy value to load the specified unit.
-
-The followind snippet loads the DomainModel for the module named `MyFirstModule`:
+A unit can be loaded by supplying a function, `fn` to `component.loadAll(fn)`. The function `fn` should return a truthy value to load a specified unit.
 
 {{% alert color="warning" %}}
-Loading units is a resource intensive process. Only load the minimum number of units you need when you need them.
+Loading units is a resource intensive process. Only load units when you need them.
 {{% /alert %}}
+
+For example, the following snippet loads the `domainModel` for the module named `MyFirstModule`:
 
 ```ts
 const [domainModel] = await domainModels.loadAll((info: Primitives.UnitInfo) => info.moduleName === 'MyFirstModule');
 ```
 
-The following snippet loads the Page named `Home_Web` inside the module named `MyFirstModule`:
+And this example snippet loads the page named `Home_Web` in the module named `MyFirstModule`:
 
 ```ts
 const [page] = await pages.loadAll((info: Primitives.UnitInfo) => info.moduleName === 'MyFirstModule' && info.name === 'Home_Web')
 ```
 
-## Reading the unit content {#read}
+## Reading the Unit Content {#read}
 
-Elements contained inside units can be accessed using the `get<ElementName>` helper methods.
+Elements within units can be accessed using the `get<ElementName>` helper methods.
 
-The following snippet will get the Entity named `MyEntity` from the previously loaded DomainModel unit:
+For example, the following snippet will get the entity named `MyEntity` from the previously loaded `DomainModels` unit:
 
 ```ts
 const entity: DomainModels.Entity = domainModel.getEntity("MyEntity");
 ```
 
-## Modifying the unit content {#modify}
+## Modifying the Unit Content {#modify}
 
-The Mendix model can be modified by leveraging the `add<ElementName>` helper methods.
-
-The following snippet will create a new Entity inside the previously loaded DomainModel unit:
+You can modify a Mendix model by leveraging the `add<ElementName>` helper methods.
 
 {{% alert color="warning" %}}
-Do not forget to invoke the `component.save(unit)` method after making changes to your unit. The method must be invoked for each modified unit, so changes on multiple units need to be saved separately.
+Always invoke the `component.save(unit)` method after making changes to your unit. This method must be invoked for each modified unit, so changes to multiple units need to be saved separately.
 {{% /alert %}}
+
+The following snippet creates a new entity inside the previously loaded `DomainModels` unit:
 
 ```ts
 const newEntity: DomainModels.Entity = await domainModel.addEntity({ name: "NewEntity", attributes: [{ name: "MyAttribute", type: "AutoNumber" }]});
@@ -96,3 +96,13 @@ newEntity.documentation = "New documentation";
 
 await domainModels.save(domainModel);
 ```
+
+## Conclusion
+
+You now know how to interact with units and elements in the Mendix model.
+
+## Extensibility Feedback
+
+If you would like to provide us with some additional feedback you can complete a small [Survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback)
+
+Any feedback is much appreciated.
