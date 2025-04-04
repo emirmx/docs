@@ -7,7 +7,7 @@ weight: 60
 
 ## Prerequisites
 
-This guide builds on top of the [getting started guide](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that guide before starting this one. You should also be familiar with creating menus.
+This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that how-to before starting this one. You should also be familiar with creating menus.
 
 ## Opening a tab
 

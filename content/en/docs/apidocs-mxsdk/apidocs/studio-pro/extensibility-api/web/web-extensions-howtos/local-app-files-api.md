@@ -7,17 +7,18 @@ weight: 20
 
 ## Introduction
 
-This guide will show you how to interact with the local application files from within an extension
+This how-to shows you how to interact with local application files from within an extension. It adds three new buttons to the tab and three new event handlers for saving, loading, and deleting a file called `HelloWorld.txt`.
 
 ## Prerequisites
 
-This guide builds on top of the [getting started guide](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that guide before starting this one.
+This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that how-to before starting this one.
 
-## Adding some interactivity
+## Adding Some Interactivity
 
-Open `src/ui/index.tsx`
+First, you will add all the code. The changes will then be explained so that you can understand what the code does.
 
-replace the contents of the file with the following code:
+1. Open `src/ui/index.tsx`.
+1. Replace the contents of the file with the following code:
 
 ```typescript
 import { studioPro } from "@mendix/extensions-api";
@@ -58,9 +59,13 @@ createRoot(document.getElementById("root")!).render(
 );
 ```
 
-This code adds 3 new buttons to the tab. We also add 3 new event handlers for saving, loading and deleting a file called `HelloWorld.txt`
+## What Does the Code Do?
 
-Lets have a look at all the changes:
+The following sections explain the various parts of the code.
+
+### saveFile
+
+The `saveFile` callback calls the `putFile` API setting the filename to `HelloWorld.txt` and the content to `Hello world from a file!`.
 
 ```typescript
 const saveFile = async () => {
@@ -72,7 +77,9 @@ const saveFile = async () => {
 };
 ```
 
-The saveFile callback calls the putFile API setting the filename to `HelloWorld.txt` and containing `Hello World from a File!`
+### loadFile
+
+The loadFile callback calls the getFile API requesting to load `HelloWorld.txt`. It then shows message box displaying the content of the file.
 
 ```typescript
 const loadFile = async () => {
@@ -84,7 +91,9 @@ const loadFile = async () => {
 };
 ```
 
-The loadFile callback calls the getFile API requesting to load `HelloWorld.txt`
+### deleteFile
+
+The deleteFile callback calls the deleteFile API requesting to delete `HelloWorld.txt`
 
 ```typescript
 const deleteFile = async () => {
@@ -93,7 +102,9 @@ const deleteFile = async () => {
 };
 ```
 
-The deleteFile callback calls the deleteFile API requesting to delete `HelloWorld.txt`
+### Adding the Buttons
+
+The final part of the code adds three new buttons which, when clicked, call the callbacks described above.
 
 ```typescript
 createRoot(document.getElementById("root")!).render(
@@ -109,15 +120,16 @@ createRoot(document.getElementById("root")!).render(
 );
 ```
 
-The final part of our changes adds 3 new buttons which call the callbacks we defined at the top of the file when clicked.
+## Some Restrictions
 
-### Some restrictions
+The App files API allows you to modify files within your application's folder. It will not:
 
-The App files API allows you to modify files within your applications folder. It will not serve restricted files such as the .mpr file or contents of some folders like `.git` folder. Additionally it will not files outside of the app folder.
+* serve restricted files such as the `.mpr` file or the contents of some folders such as the `.git` folder.
+* allow access to files outside of the app folder.
 
 ## Conclusion
 
-You should now be able to save, load and delete files from within the app folder using an extension.
+You can now create and extension which save, load, and delete files within the app folder.
 
 ## Extensibility Feedback
 

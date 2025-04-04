@@ -7,15 +7,21 @@ weight: 30
 
 ## Introduction
 
-This guide will show you how to create a simple menu and submenus with the web extension API.
+This how-to shows you how to create both a simple menu item and a menu item with subsidiary items beneath it using the web extension API.
 
 ## Prerequisites
 
-This guide builds ontop of the [getting started guide](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that guide before starting this one.
+This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that how-to before starting this one.
 
-## Creating a menu
+## Creating a Simple Menu
 
-In this example we'll learn how to add a menu to your extension.<br />
+In this section, you will add a simple menu to your extension.
+
+The code below will:
+
+* create a menu item under the menu that was added in [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/)
+* show a dialog when the menu is clicked
+
 Replace your `src/main/index.ts` file with the following:
 
 ```typescript
@@ -51,10 +57,14 @@ class Main implements IComponent {
 export const component: IComponent = new Main();
 ```
 
-In the above `index.ts` file, a menu is created and once clicked it will show a dialog.<br />
-We need to import the `menuApi` from the Mendix`extension-api` package, and also the `messageBoxApi` to show our dialog.<br />
-We also need to start listening to the `menuItemActivated` which will notify our extension that our menu was clicked. This is where we can handle the actual function of the menu. In this example below, it calls the `messageBoxApi` to show an information dialog.<br />
-An important detail to notice is that the menuId in the if statement matches the menuId that was used when creating the menu item. In this example it is `"my-menu-unique-id"`.<br />
+The code imports the following:
+
+* `menuApi` from the Mendix`extension-api` package to allow you to use the menu API
+* `messageBoxApi` to show a dialog.
+
+It starts listening to the `menuItemActivated` endpoint which will notify the extension when **My First Menu** is clicked.
+
+The `menuItemActivated` listener event handles the actual function of the menu. The arguments `args` contain the data returned by Studio Pro to the extension, notifying it which menu item was activated (clicked). This is passed as the `menuId` that was used when creating the menu item and the `menuId` in the `if` statement is used to identify this. In this example it is `"my-menu-unique-id"` and the handler calls the `messageBoxApi` to show an information dialog.
 
 Your extensions should now appear like this:
 
@@ -62,17 +72,29 @@ Your extensions should now appear like this:
 
 ## Menu Properties
 
-For the menu properties it is not necessary to set `enabled` to true as it will be enabled by default. It is also not necessary to set `hasSeparatorBefore` and `hasSeparatorAfter`, as they will be set to false by default. They are used to add a visual separator between single or groups of menus.
+The menu has the following properties:
+
+* `caption` – the text of the menu item
+* `menuId` – a unique id for the menu item
+* `subMenus` – a list of menus subsidiary to this menu item
+* `hasSeparatorBefore` (default: `false`) – shows a visual separator before this menu item
+* `hasSeparatorAfter` (default: `false`) – shows a visual separator after this menu item
+* `enabled` (default: `true`) – indicates that this menu item notifies the listener when clicked
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/menus/grouped_menus.png" >}}
 
-The arguments `args` in the `menuItemActivated` event represents the data returned by Studio Pro to the extension, notifying it that the menu id contained in the arguments has been activated (clicked). So it is up to the extension developer to keep track of each menu and their id so that they can perform an action when Studio Pro lets them know it has been clicked.
 
-## Creating a menu with submenus
+## Creating a Menu with Submenus
 
-You can also have a number of submenus that branch out your menu. To do so, add another menu (or more) to the `subMenus` array in your menu. These child menus can in turn have their own submenus, and so on. Only parent menus (menus that are not sub menus to any others) should be added through the `menuApi`, as shown in the code sample below. Also keep in mind that the `menuItemActivated` only gets sent when a leaf menu (a menu that does not have any submenus) gets clicked.<br />
+You can also have a number of submenus that branch out your menu.
 
-Replace your `src/main/index.ts` file with the following:
+To do so, add additional menus and add these to the `subMenus` array in your menu. These child menus can in turn have their own submenus, and so on. Only parent menus (menus that are not sub menus to any others) should be added through the `menuApi`, as shown in the code sample below.
+
+{{% alert color="info" %}}
+Parent menus (with `subMenus`) do not create `menuItemActivated` events. These only get sent when a leaf menu (a menu that does not have any submenus) is clicked.
+{{% /alert %}}
+
+The following `src/main/index.ts` generates one menu item with sub menus and one menu item without sub menus.
 
 ```typescript
 import { IComponent, Menu, studioPro } from "@mendix/extensions-api";
@@ -130,7 +152,13 @@ The menu hierarchy will then be displayed like this:
 
 Sometimes you might want to disable a menu or update its caption depending on a condition. You can do so by calling the menu API's `updateMenu` method.
 
-If you replace your `src/main/index.ts` with the code below, you'll see how you can disable a menu after it gets clicked, as well as updating its caption.
+An example is shown in the code below. If you click on the menu item, it will be disabled and its caption will be updated.
+
+{{% alert color="info" %}}
+Only `caption` and `enabled` can be updated.
+{{% /alert %}}
+
+You can test it by the following code as the contents of  `src/main/index.ts`.
 
 ```typescript
 import { IComponent, Menu, studioPro } from "@mendix/extensions-api";
@@ -165,9 +193,14 @@ class Main implements IComponent {
 export const component: IComponent = new Main();
 ```
 
-You can see here that the state of the menu is now disabled and its caption has also been updated. Only caption and enabled state are currently supported for updating.
+The disabled state is shown in the image below.
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/menus/disabled_menu.png" >}}
+
+## Conclusion
+
+You have seen how to create simple menu items and menu items with sub menus.
+You can also dynamically change the enabled status and caption of a menu item.
 
 ## Extensibility Feedback
 
