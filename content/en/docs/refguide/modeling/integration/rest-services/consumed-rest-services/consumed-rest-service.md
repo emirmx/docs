@@ -4,7 +4,7 @@ url: /refguide/consumed-rest-service/
 description: "Describes the configuration and usage of the new Consumed REST service document."
 weight: 5
 aliases:
-    - /refguide/consumed-rest-services-beta
+    - /refguide/consumed-rest-services-beta/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details. 
 ---
 
@@ -95,11 +95,11 @@ To add more requests from your existing contract, do the following:
 
 1. In the **Request** field, click **Add Request**:
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/add-request-button.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/add-request-button.png" class="no-border" width="400" >}}
 
 2. In the **Add Request(s)** dialog box, select the additional requests you want to add to the document, then click **Add**.
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/add-request.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/add-request.png" class="no-border" width="400" >}}
 
 To create a new blank request, click **New** in the **Add Request(s)** dialog box.
 
