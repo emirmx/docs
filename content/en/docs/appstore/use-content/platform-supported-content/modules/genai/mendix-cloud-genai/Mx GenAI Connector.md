@@ -279,6 +279,17 @@ To check your JDK version and update it if necessary, follow these steps:
     1. You might get an error saying `FAILURE: Build failed with an exception. The supplied javaHome seems to be invalid. I cannot find the java executable.` In this case, verify that you have selected the correct JDK directory containing the updated JDK version.
     2. You may also need to update Gradle. To do this, go to **Edit** > **Preferences** > **Deployment** > **Gradle directory**. Click **Browse** and select the appropriate Gradle version from the Mendix folder. For Mendix 10.10 and above, use Gradle 8.5. For Mendix 10 versions below 10.10, use Gradle 7.6.3. Then save your settings by clicking **OK**.
     3. Rerun the project.
+  
+### Migration from Add-On module to App module
+As the module has been changed from an add-on to an app module, if you are updating the module the install from marketplace will need a migration to work properly with your application.
+The process may look like this:
+1. Backup of data; either as database backup or individual:
+    - Keys to MxCloud GenAI Resource Packs can be reimported afterwards
+    - Incoming associations to protected module’s entities will be deleted
+2. Delete Add-On module: MxGenAIConnector
+3. Download module from the marketplace; note that the module is from now on located under the “Marketplace modules” category in the app explorer.
+4. Test your application locally and verify that everything works as before.
+5. Restore lost data on deployed environments. Usually keys and incoming associations to the protected modules need to be reset.
 
 ## Read More{#readmore}
 
