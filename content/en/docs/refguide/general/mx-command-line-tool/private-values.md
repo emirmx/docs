@@ -21,6 +21,10 @@ Make sure you exit all instances of Studio Pro before using these commands, beca
 
 The `mx show-private-values` produces a list of paths, versions and keys of all private values stored in the current user's local app data. It does not show the (encrypted) value.
 
+{{% alert color="info" %}}
+This feature was introduced in Mendix 10.22.0.
+{{% /alert %}}
+
 ### Usage
 
 Use the following command pattern: `mx show-private-values`
@@ -52,6 +56,10 @@ The `mx delete-private-values` deletes private values from the current user's lo
 When used with `-f` (`--force`) it deletes private values and displays the number of private values it has deleted. When used with `-n` (`--dry-run`) it does not actually delete anything, but shows which private values would be deleted.
 
 When you delete a private value that is needed by an app, next time you open that app in Studio Pro it will produce a consistency error indicating that you have to type the value again.
+
+{{% alert color="info" %}}
+This feature was introduced in Mendix 10.22.0.
+{{% /alert %}}
 
 ### Usage
 
