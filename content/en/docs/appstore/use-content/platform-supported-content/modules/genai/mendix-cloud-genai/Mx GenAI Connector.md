@@ -282,6 +282,7 @@ To check your JDK version and update it if necessary, follow these steps:
   
 ### Migration from Add-On module to App module
 As the module has been changed from an add-on to an app module, if you are updating the module the install from marketplace will need a migration to work properly with your application.
+
 The process may look like this:
 1. Backup of data; either as database backup or individual:
     - Keys to MxCloud GenAI Resource Packs can be reimported afterwards
