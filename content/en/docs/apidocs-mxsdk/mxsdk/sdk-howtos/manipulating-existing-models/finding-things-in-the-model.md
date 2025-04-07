@@ -53,7 +53,7 @@ For more information, see [How to Load Units and Elements](/apidocs-mxsdk/mxsdk/
 Implement this snippet to fetch information on all the Marketplace modules used in your app:
 
 ```js
-const model = workingCopy.openModel();
+const model = await workingCopy.openModel();
 model.allModules()
 	.filter(module => module.fromAppStore === true)
 	.forEach(module =>

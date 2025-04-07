@@ -79,8 +79,8 @@ const repository = app.getRepository();
 const repositoryInfo = await repository.getInfo();
 console.log("Repository Info: ", repositoryInfo);
 
-const commitsIDs = (await repository.getBranchCommits("main")).items.map(commit => commit.id);
-console.log("Repository commits IDs: ", commitsIDs);
+const commitMessages = (await repository.getBranchCommits("main")).items.map(commit => commit.message);
+console.log("Commit messages: ", commitMessages);
 ```
 
 ## Deleting an App {#deleting}
@@ -106,7 +106,7 @@ console.log(`Working ID: ${workingCopy.workingCopyId}`);
 ```
 
 {{% alert color="warning" %}}
-Working copy creation a resource intensive process, consider reusing previously created ones by invoking `app.getOnlineWorkingCopy(workingCopy.workingCopyId)`. All working copies are automatically deleted after 24 hours.
+Working copy creation a resource intensive process, consider reusing previously created ones by invoking `app.getOnlineWorkingCopy(workingCopyId)`. All working copies are automatically deleted after 24 hours.
 {{% /alert %}}
 
 You can pass the following options to `createTemporaryWorkingCopy`:
