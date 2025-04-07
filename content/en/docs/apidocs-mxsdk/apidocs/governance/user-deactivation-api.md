@@ -49,28 +49,30 @@ To authenticate calls when using the Open API specification below, click **Autho
 
 ## Prerequisites
 
+You must have the UserID of the user you want to deactivate. Follow the steps below to retrieve the UUID of the user:
+
+1. The Mendix Administrator creates a Personal Access Token (PAT) via the Developer Portal, with the following scope:
+`mx:mxid3:user-identifiers:uuid:read`
+2. Invoke the User Identifier API to fetch the UUID based on the user's email address, using the PAT generated in the above step.
+
 ## Examples
 
-### Using the API to Retrieve User UUIDs
+### Using the API to Deactivate User
 
-{{% alert color="info" %}}Only Mendix Admins from the company have the authority to retrieve user UUIDs.{{% /alert %}}
+{{% alert color="info" %}}Only Mendix Admins from the company have the authority to deactivate user.{{% /alert %}}
 
-The following steps lead to retrieval of user's UUIDs of the email addresses provided in {emailAddresses}.
+The following steps lead to deactivate the user based on UUID provided as in {UUID}:
 
 1. Set up your authentication PAT. You must be a Mendix Admin.
-1. Create a request body containing the email addresses under `emailAddresses`. For example, to get user UUIDs of `jane.doe@domain.tld` and `john.doe@domain.tld`, provide a body like this:
+1. Create a request body containing the active status, provide a body like this:
 
     ```json
     {
-      "emailAddresses":[
-          { "emailAddress":"jane.doe@domain.tld" },
-          { "emailAddress":"john.doe@domain.tld" }
-      ]
+     "active" : false
     }
     ```
 
-1. Call `GET /api/user-identifiers/v1/uuids` to get the UUIDs of the provided email addresses.
+1. Call `GET /v1/platform-users/user-status/{UUID}` to deactivate the User with the provided {UUID}.
 
 ## API Reference
 
-{{< swaggerui src="/openapi-spec/user-identifier-api.yaml"  >}}
