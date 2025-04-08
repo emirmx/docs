@@ -1,15 +1,17 @@
 ---
 title: "Prompt Management"
-url: /appstore/modules/genai/genai-for-mx/prompt-management/
+url: /appstore/modules/genai/conversational-ui/prompt-management/
 linktitle: "Prompt Management"
 weight: 20
 description: "Describes the Prompt Management functionality that assists developers and data scientists in implementing prompts in their GenAI Mendix applications use cases."
+aliases:
+   - /appstore/modules/genai/genai-for-mx/prompt-management/
 ---
 
 ## Introduction
 
 Prompt management allows users to develop, test, and optimize their GenAI use cases by creating effective prompts to interact with large language models (LLM). 
-Using the Conversational UI module (available as part of [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931)), you can use the prompt management interface in your app to define prompts at runtime and manage multiple versions over time. It also supports defining variables that serve as placeholders for data from the app session context which are replaced by actual values when the end user interacts with the app. The module contains the necessary data model, pages, and snippets to include a prompt management interface to your app and get started.
+Using the [Conversational UI](https://marketplace.mendix.com/link/component/239450) module you can use the prompt management interface in your app to define prompts at runtime and manage multiple versions over time. It also supports defining variables that serve as placeholders for data from the app session context which are replaced by actual values when the end user interacts with the app. The module contains the necessary data model, pages, and snippets to include a prompt management interface to your app and get started.
 
 ### Typical Use Cases
 
@@ -32,7 +34,7 @@ The Prompt Management functionality provides the following:
 
 ### Prerequisites
 
-The prerequisites of the [Conversational UI module](/appstore/modules/genai/genai-for-mx/conversational-ui/#prerequisites) apply here.
+The prerequisites of the [Conversational UI module](/appstore/modules/genai/conversational-ui-module/conversational-ui/#prerequisites) apply here.
 
 ## Installation
 
@@ -69,7 +71,7 @@ For example, download and run the [GenAI Showcase App](https://marketplace.mendi
 
 You need at least one GenAI connector that follows the principles of GenAI commons to interact with LLMs from the Prompt Management logic. To test a prompt, you must configure at least one Deployed Model for your chosen connector. Refer to the specific connector’s documentation for detailed setup instructions on configuring the Deployed Model.
 
-* For [Mendix Cloud GenAI](https://marketplace.mendix.com/link/component/227931), included by default, importing the **Key** from the Mendix portal automatically creates a MxCloud Deployed Model. This is part of the [configuration](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#configuration).
+* For [Mendix Cloud GenAI](https://marketplace.mendix.com/link/component/239449) importing the **Key** from the Mendix portal automatically creates a MxCloud Deployed Model. This is part of the [configuration](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#configuration).
 * For [Amazon Bedrock](https://marketplace.mendix.com/link/component/215042), the creation of Bedrock Deployed Models is part of the [model synchronization mechanism](/appstore/modules/aws/amazon-bedrock/#sync-models).
 * For [OpenAI](https://marketplace.mendix.com/link/component/220472), the configuration of OpenAI Deployed Models is part of the [configuration](/appstore/modules/genai/reference-guide/external-connectors/openai/#general-configuration).
 
@@ -95,7 +97,7 @@ New prompts will be created in the draft status by default, meaning  they are st
 
 For a Single-Call type prompt, use `Get Prompt for Context Object`, which can be found in the **Toolbox** in Studio Pro while editing a microflow, under the category **GenAI (Request Building)**. This operation returns both a system prompt and a user prompt strings, on a combined `PromptToUse` object. These string attributes can be passed to the chat completions operation. Retrieve the prompt (e.g. by name) and pass it with your custom context object to the operation. For an example of this pattern, see the product description generation example in the [GenAI Showcase app](https://marketplace.mendix.com/link/component/220475). 
 
-For a conversational prompt, the chat context can be created based on the prompt in one operation. Use the `New Chat for Prompt` operation from the **Toolbox** under the **Conversational UI** category. Retrieve the prompt (e.g. by name) and pass it with your custom context object to the operation. Note that this sets the system prompt for the chat context, making it applicable to the entire (future) conversation. Similar to other chat context operations, an [action microflow needs to be selected](/appstore/modules/genai/genai-for-mx/conversational-ui/#action-microflow) for this microflow action.
+For a conversational prompt, the chat context can be created based on the prompt in one operation. Use the `New Chat for Prompt` operation from the **Toolbox** under the **Conversational UI** category. Retrieve the prompt (e.g. by name) and pass it with your custom context object to the operation. Note that this sets the system prompt for the chat context, making it applicable to the entire (future) conversation. Similar to other chat context operations, an [action microflow needs to be selected](/appstore/modules/genai/conversational-ui-module/conversational-ui/#action-microflow) for this microflow action.
 
 With this microflow logic, the prompt version is ready to be tested from the end-user flow (in a local or test environment). The prompt can be exported/imported for transport to other environments if needed.
 

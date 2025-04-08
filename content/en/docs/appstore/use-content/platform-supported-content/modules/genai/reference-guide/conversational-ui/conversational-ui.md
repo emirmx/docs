@@ -1,16 +1,17 @@
 ---
 title: "Conversational UI"
-url: /appstore/modules/genai/genai-for-mx/conversational-ui/
+url: /appstore/modules/genai/conversational-ui-module/conversational-ui/
 linktitle: "Conversational UI"
 weight: 20
 description: "Describes the Conversational UI marketplace module that assists developers in implementing conversational use cases such as an AI Bot."
 aliases:
+   - /appstore/modules/genai/genai-for-mx/conversational-ui/
    - /appstore/modules/genai/conversational-ui/
 ---
 
 ## Introduction {#introduction}
 
-With the Conversational UI module (available as part of [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931)), you can create a GenAI-based chat user interface. It contains the needed data model, pages, snippets, and building blocks. You can integrate with any LLM and knowledge base to create your full-screen, sidebar, or modal chat. It integrates with the Atlas framework and is the basis for the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926). It is also included in the [Blank GenAI App](https://marketplace.mendix.com/link/component/227934), the [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035), and the [RFP Assistant Starter App](https://marketplace.mendix.com/link/component/235917).
+With the [Conversational UI](https://marketplace.mendix.com/link/component/239450) module you can create a GenAI-based chat user interface. It contains the needed data model, pages, snippets, and building blocks. You can integrate with any LLM and knowledge base to create your full-screen, sidebar, or modal chat. It integrates with the Atlas framework and is the basis for the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926). It is also included in the [Blank GenAI App](https://marketplace.mendix.com/link/component/227934), the [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035), and the [RFP Assistant Starter App](https://marketplace.mendix.com/link/component/235917).
 
 Mendix has produced a [Conversational AI Design Checklist](/howto/front-end/conversation-checklist/) with some best practices for introducing conversational AI into your app.
 
@@ -47,16 +48,15 @@ This module is intended to enable building chat interactions between a human use
 
 To use the Conversational UI module, your Mendix Studio Pro version must be [9.24.2](/releasenotes/studio-pro/9.24/#9242) or higher.
 
-When you download [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931) from the marketplace, [GenAI Commons](/appstore/modules/genai/commons/) and the [Mendix Cloud GenAI Connector](/appstore/modules/genai/MxGenAI/) are already included.
-
 You must also ensure you have the other prerequisite modules that Conversational UI requires. These modules are included by default in the [Blank GenAI App](https://marketplace.mendix.com/link/component/227934), the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926), the [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035), and the [RFP Assistant Starter App](https://marketplace.mendix.com/link/component/235917). If not, you need to install them manually.
 
+* [GenAI Commons](https://marketplace.mendix.com/link/239448)
 * [Atlas Core](https://marketplace.mendix.com/link/component/117187)
 * [Data Widgets](https://marketplace.mendix.com/link/component/116540) 
 * [Nanoflow Commons](https://marketplace.mendix.com/link/component/109515)
 * [Web Actions](https://marketplace.mendix.com/link/component/114337)
 
-Finally, you must also set up a connector that is compatible with [GenAI Commons](/appstore/modules/genai/commons/). One option is to use the Mendix Cloud GenAI connector, which is part of the above Marketplace listing package. For more information on how to configure this connector, see the [Configuration](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#configuration) section of *Mendix Cloud GenAI connector*. Additionally, Mendix offers platform-supported integration with [(Azure) OpenAI](/appstore/modules/genai/openai/) and [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/). If desired, you need to download these integrations manually from the Marketplace. Alternatively, you can integrate with custom models by creating your own connector and making its operations and object structure compatible with the [GenAI Commons](/appstore/modules/genai/commons/) `Request` and `Response`.
+Finally, you must also set up a connector that is compatible with [GenAI Commons](/appstore/modules/genai/commons/). One option is to use the [Mendix Cloud GenAI connector](https://marketplace.mendix.com/link/component/239449). For more information on how to configure this connector, see the [Configuration](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#configuration) section of *Mendix Cloud GenAI connector*. Additionally, Mendix offers platform-supported integration with [(Azure) OpenAI](/appstore/modules/genai/openai/) and [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/). If desired, you need to download these integrations manually from the Marketplace. Alternatively, you can integrate with custom models by creating your own connector and making its operations and object structure compatible with the [GenAI Commons](/appstore/modules/genai/commons/) `Request` and `Response`.
 
 ## Installation {#installation}
 
