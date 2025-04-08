@@ -185,6 +185,37 @@ Now, the user can ask the model questions and will see a response. However, this
 
 In this section you will enable the model to call two microflows as functions and additionally a tool for knowledge base retrieval.
 
+1. Add the `Tools: Add Function to Request` action right after the *Request* creation microflow.
+    * Request: `Request` (object created in previous action)
+    * Tool name: `RetrieveNumberOfTicketsInStatus` (expression)
+    * Tool description: `Get number of tickets in a certain status. Only the following values for status are available: [''Open'', ''In Progress'', ''Closed'']` (expression)
+    * Function microflow: create a new microflow called `Ticket_GetNumberOfTicketsInStatus`
+    * Use return value: `no`
+
+2. Open the newly created microflow **Ticket_GetNumberOfTicketsInStatus**. Add a *String* input parameter called `TicketStatus`.
+
+3. The model can now pass a status string to the microflow, but we first need to convert this into an Enumeration. To achieve this, add a `Microflow call` action and create a new microflow named `Ticket_ParseStatus`. The input should be the same (*String* input *TicketStatus*).
+
+4. Add a decision for each enumeration value and return the Enumeration value in the *End event*. For example the *Closed* value can be checked like this:
+
+    ```text
+    toLowerCase(trim($TicketStatus)) = toLowerCase(getCaption(MyFirstModule.ENUM_Ticket_Status.Closed))
+    or toLowerCase(trim($TicketStatus)) = toLowerCase(getKey(MyFirstModule.ENUM_Ticket_Status.Closed))
+
+5. Return `empty` if none of the decisions return true. This might be important if the model passes an invalid status value. Make sure that the calling microflow passes the string parameter and uses the return enumeration named as `ENMUM_TicketStatus`.
+
+6. In **Ticket_GetNumberOfTicketsInStatus**, add a `Retrieve` action to retrieve the tickets in the given status:
+    * Source: `From database`
+    * Entity: `MyFirstModule.Ticket` (search for *Ticket*)
+    * XPath constraint: `[Status = $ENUM_TicketStatus]`
+    * Range: `All`
+    * Object name: `TicketList` (default)
+
+7. After the retrieve add the `Aggregate list` action to count the *TicketList*. 
+
+8. Lastly, in the *End event* return `toString($Count)` as *String*
+
+You now successfully added your first function microflow. If the users now asked how many tickets are in status *Closed*, the model can call the exposed function microflow and base the final answer on your Mendix database. When you restart the app and ask the agent `How many tickets are open?` a log in your Studio Pro console should appear indicating that your microflow was executed.
 
 
 
