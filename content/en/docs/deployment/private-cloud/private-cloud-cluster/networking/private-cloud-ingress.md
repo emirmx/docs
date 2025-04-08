@@ -82,7 +82,7 @@ To configure the AWS Load Balancer for Mendix for Private Cloud, perform the fol
     * **Ingress Class Name** - Enter **alb**. This setting requires Custom Ingress Class to be enabled.
     * **Set Ingress Class as Annotation** - Set to **disabled**. This option adds the legacy `kubernetes.io/ingress.class` annotation to set the Ingress class, instead of using the Ingress class name.
 
-    {{< figure src="/attachments/deployment/private-cloud/private-cloud-ingress/configure-alb.png" class="no-border" >}}
+    {{< figure src="/attachments/deployment/private-cloud/private-cloud-networking/configure-alb.png" class="no-border" >}}
 
 2. Update the Operator configuration by choosing one of the following options:
 
@@ -131,7 +131,7 @@ To configure the AWS Load Balancer for Mendix for Private Cloud, perform the fol
     # ...
     ```
 
-    {{< figure src="/attachments/deployment/private-cloud/private-cloud-ingress/alb-annotations.png" class="no-border" >}}
+    {{< figure src="/attachments/deployment/private-cloud/private-cloud-networking/alb-annotations.png" class="no-border" >}}
 
 For more details, see [Ingress annotations](https://kubernetes-sigs.github.io/aws-load-balancer-controller/latest/guide/ingress/annotations/).
 
@@ -165,7 +165,7 @@ To configure AGIC for Mendix for Private Cloud, perform the following steps:
     * **Ingress Class Name** - Enter **azure/application-gateway**. This setting requires Custom Ingress Class to be enabled.
     * **Set Ingress Class as Annotation** - Set to **disabled**. This option adds the legacy `kubernetes.io/ingress.class` annotation to set the Ingress class, instead of using the Ingress class name.
 
-    {{< figure src="/attachments/deployment/private-cloud/private-cloud-ingress/configure-agis.png" class="no-border" >}}
+    {{< figure src="/attachments/deployment/private-cloud/private-cloud-networking/configure-agis.png" class="no-border" >}}
 
 2. Update the Operator configuration by choosing one of the following options:
 
@@ -207,7 +207,7 @@ To configure AGIC for Mendix for Private Cloud, perform the following steps:
     # ...
     ```
 
-    {{< figure src="/attachments/deployment/private-cloud/private-cloud-ingress/agis-annotations.png" class="no-border" >}}
+    {{< figure src="/attachments/deployment/private-cloud/private-cloud-networking/agis-annotations.png" class="no-border" >}}
 
 4. Optional: To set up TLS certificates, see [Appgw ssl certificate](https://azure.github.io/application-gateway-kubernetes-ingress/features/appgw-ssl-certificate/).
 
