@@ -17,10 +17,6 @@ Studio Pro stores private values, such as values for [private constants](/refgui
 
 Make sure to exit all instances of Studio Pro before using these commands, as Studio Pro keeps a cache of private values.
 
-{{% alert color="info" %}}
-This feature was introduced in [Studio Pro 10.22](/releasenotes/studio-pro/10.22/).
-{{% /alert %}}
-
 ## mx show-private-values Command {#show-private-values}
 
 The `mx show-private-values` command produces a list of paths, versions, and keys of all private values stored in the current user's local app data. It does not show the (encrypted) value.
