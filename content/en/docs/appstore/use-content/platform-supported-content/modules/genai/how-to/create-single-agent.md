@@ -55,7 +55,7 @@ Furthermore, add the `Prompt_Overview` page to your navigation,  which is locate
 ## Create Your Prompt{#create-prompt}
 First, a prompt needs to be created that can be sent to the LLM. The [Prompt Management](tbd) capabilities of the ConversationalUI module enable admins to prompt engineer at runtime. It is recommended to first follow the [How-to integrate prompt management into a Mendix App](tbd) before continuing.
 
-1. After running the app, navigate to the `Prompt_Overview` page to create a new prompt titled `IT-Ticket Solver` as `Single-Call` type. The *description* field can be left empty. **Save** the prompt.
+1. After running the app, navigate to the `Prompt_Overview` page to create a new prompt titled `IT-Ticket Helper` as `Single-Call` type. The *description* field can be left empty. **Save** the prompt.
 
 2. You are now navigated to the prompt's details page which allows you to prompt engineer at runtime. Add to the [System Prompt](/appstore/modules/genai/prompt-engineering/#system-prompt) field the following prompt:
     ```txt
@@ -113,15 +113,78 @@ When the microflow is called, the demo data is created and ingested into the kno
 
 ## Create Agent {#create-agent}
 
+Now that the basics are setup, the agent can be implemented. First, a simple user interface needs to be created which then allows the user to trigger the agent from a button.
+
 ### Create a user interface {#user-interface}
-UI Page (simple input -> output with a button)
+
+1. In the domain model, add a new entity `TicketHelper` as non-persistent. Add the following attributes:
+    * `UserInput` as *String*, length unlimited
+    * `ModelResponse` as *String*, length unlimited
+
+2. Grant your module role **read** access for both and **write** access for the *UserInput* attribute. Also grant the user entity rights to `Create objects`.
+
+3. Create a new, blank and responsive page `TicketHelper_Agent`.
+
+4. On the page, add a **dataview**. Change the `Form orientation` to `Vertical` and set the `Show footer` to `No`. For `Data source` select the *TicketHelper* entity as context object. Click ok and automatically fill the contents.
+
+5. Remove the buttons. Add a new button with the caption `Ask the agent` below the *User input* textfield.
+
+6. In the page properties, add your user and/or admin role to the `Visible for` selection.
+
+7. Add to your navigation or homepage a button with the caption `Show agent`. For the `On click` event select `Create object`, select the *TicketHelper* entity and the newly created page *TicketHelper_Agent*.
+
+8. Run the app and go to the *Prompt_Overview* page to open your prompt. Click the **Prompt Context Settings** icon ({{% icon name="microflow-disconnected"%}}) left to the *Run* button. A pop-up is opened where you can select the context entity. Search for **TicketHelper** and select the entity that was created in step 1. When starting from the Blank GenAI App, this should be **MyFirstModule.TicketHelper**. Click **Save**.
+
+You now successfully added a page for the user to ask questions to an agent. You can now verify in the running app that you can open the page and enter text into the *User input* field. In the next section you will add logic to a microflow behind the button.
 
 ### Generate a Response {#generate-response}
-Microflow that executes agent (step-by-step) without any tools, but Prompt
 
-### Add Tools {#add-tools}
+The button correctly does not perform any actions, in this section a microflow to call the agent is created.
 
-Add 2 function microflows and one KB retrieval
+IMAGE PLACEHOLDER
+Refer to showcase somewhere
+
+1. On the page *TicketHelper_Agent* edit the button's `On click` event to call a microflow. Click **New** to create a microflow named `ACT_TicketHelper_CallAgent`.
+
+2. Grant your module roles access in the microflow properties under *Security* and `Allowed roles`.
+
+3. Add a `Retrieve` action to the microflow to retrieve the Prompt that you created in the UI:
+    * Source: `From database`
+    * Entity: `ConversationalUI.Prompt` (search for *Prompt*)
+    * XPath constraint: `[Title = 'IT-Ticket Helper']`
+    * Range: `First`
+    * Object name: `Prompt` (default)
+
+4. Add the `Get Prompt For Context Object` action from the toolbox to get the `PromptToUse` object that contains the variable replaced by the user's input:
+    * Prompt: `Prompt` (the object that was previously retrieved in step 4)
+    * Context object: `TicketHelper` (input parameter)
+    * Object name: `PromptToUse` (default)
+
+5. Add the `Create Request` action to set the system prompt:
+    * System Prompt: `$PromptToUse/SystemPrompt` (expression)
+    * Temperature: empty (expression; optional)
+    * MaxTokens: empty (expression; optional)
+    * TopP: empty (expression; optional)
+    * Object name: `Request` (default)
+
+6. Add the `Chat Completions (without history)` action to call the model:
+    * DeployedModel: `$Prompt/ConversationalUI.Prompt_DeployedModel/GenAICommons.DeployedModel` (expression)
+    * UserPrompt: `$PromptToUse/UserPrompt` (expression)
+    * OptionalFileCollection: empty (expression)
+    * OptionalRequest: `Request` (the object that was previously created in step 6)
+    * Obect name: `Response` (default)
+
+7. Lastly, add a `Change object` action to change the **ModelResponse** attribute:
+    * Object: `TicketHelper` (input parameter)
+    * Member: `ModelResponse`
+    * Value: `$Response/ResponseText` (expression)
+
+Now, the user can ask the model questions and will see a response. However, this interaction can hardly be called an "agent" as there are not any more complex tools involved yet. 
+
+### Empower the Agent {#empower-agent}
+
+In this section you will enable the model to call two microflows as functions and additionally a tool for knowledge base retrieval.
+
 
 
 
