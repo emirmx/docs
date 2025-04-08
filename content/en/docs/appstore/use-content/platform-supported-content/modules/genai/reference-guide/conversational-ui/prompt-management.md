@@ -34,7 +34,7 @@ The Prompt Management functionality provides the following:
 
 ### Prerequisites
 
-The prerequisites of the [Conversational UI module](/appstore/modules/genai/genai-for-mx/conversational-ui/#prerequisites) apply here.
+The prerequisites of the [Conversational UI module](/appstore/modules/genai/conversational-ui-module/conversational-ui/#prerequisites) apply here.
 
 ## Installation
 
@@ -97,7 +97,7 @@ New prompts will be created in the draft status by default, meaning  they are st
 
 For a Single-Call type prompt, use `Get Prompt for Context Object`, which can be found in the **Toolbox** in Studio Pro while editing a microflow, under the category **GenAI (Request Building)**. This operation returns both a system prompt and a user prompt strings, on a combined `PromptToUse` object. These string attributes can be passed to the chat completions operation. Retrieve the prompt (e.g. by name) and pass it with your custom context object to the operation. For an example of this pattern, see the product description generation example in the [GenAI Showcase app](https://marketplace.mendix.com/link/component/220475). 
 
-For a conversational prompt, the chat context can be created based on the prompt in one operation. Use the `New Chat for Prompt` operation from the **Toolbox** under the **Conversational UI** category. Retrieve the prompt (e.g. by name) and pass it with your custom context object to the operation. Note that this sets the system prompt for the chat context, making it applicable to the entire (future) conversation. Similar to other chat context operations, an [action microflow needs to be selected](/appstore/modules/genai/genai-for-mx/conversational-ui/#action-microflow) for this microflow action.
+For a conversational prompt, the chat context can be created based on the prompt in one operation. Use the `New Chat for Prompt` operation from the **Toolbox** under the **Conversational UI** category. Retrieve the prompt (e.g. by name) and pass it with your custom context object to the operation. Note that this sets the system prompt for the chat context, making it applicable to the entire (future) conversation. Similar to other chat context operations, an [action microflow needs to be selected](/appstore/modules/genai/conversational-ui-module/conversational-ui/#action-microflow) for this microflow action.
 
 With this microflow logic, the prompt version is ready to be tested from the end-user flow (in a local or test environment). The prompt can be exported/imported for transport to other environments if needed.
 

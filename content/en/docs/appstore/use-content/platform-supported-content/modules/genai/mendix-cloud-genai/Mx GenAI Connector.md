@@ -295,7 +295,7 @@ To do this, follow the steps below:
 4. Test your application locally to ensure everything functions as expected.
 5. Restore any lost data in deployed environments. Typically, keys and incoming associations to the protected module need to be reset.
 
-## Read More
+## Read More {#readmore}
 
 For Anthropic Claude-specific documentation, refer to:
 

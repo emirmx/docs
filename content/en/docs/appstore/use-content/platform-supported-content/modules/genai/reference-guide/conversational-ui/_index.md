@@ -15,8 +15,8 @@ The [ConversationalUI](https://marketplace.mendix.com/link/component/239450) mod
 
 By leveraging the tools and features provided in this module, you can:
 
-* Create a [Conversational UI](/appstore/modules/genai/conversational-ui/conversational-ui) with prebuilt pages and snippets to facilitate user-friendly chat interactions.
+* Create a [Conversational UI](/appstore/modules/genai/conversational-ui-module/conversational-ui/) with prebuilt pages and snippets to facilitate user-friendly chat interactions.
 * Perform [Prompt Engineering](/appstore/modules/genai/prompt-engineering/) at runtime to optimize your AI-generated results via [Prompt Management](/appstore/modules/genai/conversational-ui/prompt-management/).
-* Monitor your token consumption with the [Token Consumption Monitor](/appstore/modules/genai/conversational-ui/conversational-ui/#snippet-token-monitor), ensuring efficient use of resources.
+* Monitor your token consumption with the [Token Consumption Monitor](/appstore/modules/genai/conversational-ui-module/conversational-ui/#snippet-token-monitor), ensuring efficient use of resources.
 
 ## Documents in This Category
