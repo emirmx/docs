@@ -1,6 +1,6 @@
 ---
 title: "Private Values Commands"
-url: /refguide/mx-command-line-tool/private-values
+url: /refguide/mx-command-line-tool/private-values/
 weight: 10
 description: "Describes the commands related to private values for the mx command-line tool."
 ---

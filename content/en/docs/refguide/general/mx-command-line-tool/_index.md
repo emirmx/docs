@@ -73,6 +73,8 @@ These are the available [merging and diffing commands](/refguide/mx-command-line
 
 ### Private Values Commands
 
+These are the available [private value commands](/refguide/mx-command-line-tool/private-values/):
+
 |   Command | Description |
 | --- | --- |
 | [show-private-values](/refguide/mx-command-line-tool/private-values/#show-private-values) | Shows private values. |
