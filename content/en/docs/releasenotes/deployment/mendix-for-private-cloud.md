@@ -39,7 +39,7 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ### March 10, 2025
 
-#### License Manager CLI v0.10.1
+#### License Manager CLI v0.10.1 {#license-manage-cli-v0101}
 
 * We have updated this component to use the latest dependency versions in order to improve security score ratings for container images. This update will allow us to address CVE-2024-45337 and CVE-2024-45338.
 
