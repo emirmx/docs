@@ -31,8 +31,8 @@ Generative Artificial Intelligence (GenAI) transforms business applications, emp
 
 * Basic documentation on [GenAI Concepts](/appstore/modules/genai/get-started/) is an essential resource for anyone beginning their GenAI journey.
 * The [GenAICommons](/appstore/modules/genai/genai-for-mx/commons/) module as a prerequisite for all GenAI components.
-* The [ConversationalUI](/appstore/modules/genai/conversational-ui/) module that offers UI snippets for chat, token consumption monitoring and prompt management.
-* The [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/MxGenAI/) to learn how to quickly access GenAI capabilities from a Mendix app.
+* The [ConversationalUI](/appstore/modules/genai/conversational-ui-module/conversational-ui/) module that offers UI snippets for chat, token consumption monitoring and prompt management.
+* The [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/) to learn how to quickly access GenAI capabilities from a Mendix app.
 * The [OpenAI](/appstore/modules/genai/openai/) provides essential information about the OpenAI connector.
 * The [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/) provides key information about the AWS Bedrock connector.
 * The [PGVector Knowledge Base](/appstore/modules/genai/pgvector/) offers the option for a private knowledge base outside of the LLM infrastructure.
