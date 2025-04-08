@@ -11,25 +11,25 @@ The commands in this group are related to showing and deleting private values.
 
 Studio Pro stores private values, such as values for [private constants](/refguide/configuration/#constants) in an encrypted way in the user's local app data. These private values are defined by:
 
-1. The **path** of the `.mpr` file of the app.
-2. The **version** of Studio Pro
-3. A **key**, such as `StudioPro.Settings.Configuration.ConstantValue.MyFirstModule.MyConstant` for the configured constant value for constant `MyFirstModule.MyConstant`.
+* The path of the `.mpr` file of the app
+* The version of Studio Pro
+* A key, such as `StudioPro.Settings.Configuration.ConstantValue.MyFirstModule.MyConstant` for the configured constant value for constant `MyFirstModule.MyConstant`
 
-Make sure you exit all instances of Studio Pro before using these commands, because Studio Pro keeps a cache of private values.
+Make sure to exit all instances of Studio Pro before using these commands, as Studio Pro keeps a cache of private values.
+
+{{% alert color="info" %}}
+This feature was introduced in [Studio Pro 10.22](/releasenotes/studio-pro/10.22/).
+{{% /alert %}}
 
 ## mx show-private-values Command {#show-private-values}
 
-The `mx show-private-values` produces a list of paths, versions and keys of all private values stored in the current user's local app data. It does not show the (encrypted) value.
-
-{{% alert color="info" %}}
-This feature was introduced in Mendix 10.22.0.
-{{% /alert %}}
+The `mx show-private-values` command produces a list of paths, versions, and keys of all private values stored in the current user's local app data. It does not show the (encrypted) value.
 
 ### Usage
 
 Use the following command pattern: `mx show-private-values`
 
-The tool will output one line for each private value, with on that line the path, version and key, separated by the `tab` character.
+The tool will output one line for each private value, with the path, version, and key, separated by the `tab` character.
 
 ### Examples
 
@@ -47,19 +47,15 @@ These are the return codes:
 
 | Return Code | Description |
 | --- | --- |
-| `0` | The command ran succesfully. |
+| `0` | The command ran successfully. |
 
 ## mx delete-private-values Command {#delete-private-values}
 
-The `mx delete-private-values` deletes private values from the current user's local app data.
+The `mx delete-private-values` command deletes private values from the current user's local app data.
 
-When used with `-f` (`--force`) it deletes private values and displays the number of private values it has deleted. When used with `-n` (`--dry-run`) it does not actually delete anything, but shows which private values would be deleted.
+When used with `-f` (`--force`), it deletes private values and displays the number of private values it has deleted. When used with `-n` (`--dry-run`), it shows which private values would be deleted, but does not actually delete anything.
 
-When you delete a private value that is needed by an app, next time you open that app in Studio Pro it will produce a consistency error indicating that you have to type the value again.
-
-{{% alert color="info" %}}
-This feature was introduced in Mendix 10.22.0.
-{{% /alert %}}
+When you delete a private value that is needed by an app, the next time you open that app in Studio Pro, it will produce a consistency error indicating that you have to type the value again.
 
 ### Usage
 
@@ -69,7 +65,7 @@ These are the required parameters:
 
 | Option | Shortcut | Result |
 | --- | --- | --- |
-| `--dry-run` | `-n` | Don't actually delete anything, just show which private values would be deleted. |
+| `--dry-run` | `-n` | Shows which private values would be deleted, but does not actually delete anything. |
 | `--force` | `-f` | Deletes private values. |
 
 Either `-n` or `-f` must be specified.
@@ -84,7 +80,7 @@ When used without options, the command deletes all private values. The options f
 | `--path`        | Deletes only private values for the given path. |
 | `--version`     | Deletes only private values of the given Studio Pro version. |
 | `--key`         | Deletes only private values with the given key. |
-| `--item`        | Specifies the path, version and key, separated by whitespace, of a specific private value to be deleted. |
+| `--item`        | Specifies the path, version, and key, separated by whitespace, of a specific private value to be deleted. |
 
 ### Examples
 
@@ -102,5 +98,5 @@ These are the return codes:
 
 | Return Code | Description |
 | --- | --- |
-| `0` | The command ran succesfully. |
+| `0` | The command ran successfully. |
 | `2` | There is something wrong with the command-line options. |
