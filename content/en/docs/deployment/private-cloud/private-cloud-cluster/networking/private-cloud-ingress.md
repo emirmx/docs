@@ -82,7 +82,7 @@ To configure the AWS Load Balancer for Mendix for Private Cloud, perform the fol
     * **Ingress Class Name** - Enter **alb**. This setting requires Custom Ingress Class to be enabled.
     * **Set Ingress Class as Annotation** - Set to **disabled**. This option adds the legacy `kubernetes.io/ingress.class` annotation to set the Ingress class, instead of using the Ingress class name.
 
-    {{< figure src="/attachments/deployment/private-cloud-cluster/private-cloud-networking/configure-alb.png" class="no-border" >}}
+    {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/private-cloud-networking/configure-alb.png" class="no-border" >}}
 
 2. Update the Operator configuration by choosing one of the following options:
 
