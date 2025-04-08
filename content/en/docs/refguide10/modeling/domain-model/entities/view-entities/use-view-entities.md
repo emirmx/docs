@@ -80,7 +80,7 @@ Instead of joining with the `[%CurrentUser%]` expression, this example joins wit
 
 When working with large amounts of data, using the database optimizer to get required information from your database is usually faster than processing in the application itself. A database knows the data’s characteristics, and therefore can find the fastest path to access the data. It can also aggregate data in the database, minimizing unnecessary data movement. 
 
-In the example above where customers are counted in age brackets, the query result contains approximately 10 objects. To determine these 10 objects, the database may need to process thousands or even millions of objects. A database can do this more efficiently if all objects are read into a Mendix Runtime for aggregation.
+In the example above where customers are counted in age brackets, the query result contains approximately 10 objects. To determine these 10 objects, the database may need to process thousands or even millions of objects. A database can do this more efficiently than if all objects are read into a Mendix Runtime for aggregation.
 
 ## Understanding Query Plans
 
