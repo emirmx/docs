@@ -80,7 +80,7 @@ Add the [dependencies](#dependencies) listed above from the Marketplace. To impo
 
 ## Configuration {#configuration}
 
-After installing the Mendix Cloud GenAI connector, you can find it in the **App Explorer** inside of the **Add-ons** section. The connector includes a domain model and several activities to help integrate your app with the Mendix Cloud GenAI service. To implement the connector, simply use its actions in a microflow. You can find the Mendix GenAI actions in the microflow toolbox.
+After installing the Mendix Cloud GenAI connector, you can find it in the **App Explorer** inside of the **Marketplace modules** section. The connector includes a domain model and several activities to help integrate your app with the Mendix Cloud GenAI service. To implement the connector, simply use its actions in a microflow. You can find the Mendix GenAI actions in the microflow toolbox.
 
 Follow the steps below to get started:
 
