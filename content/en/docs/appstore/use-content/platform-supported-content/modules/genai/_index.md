@@ -52,7 +52,7 @@ To help you get started, the following sections list the available GenAI compone
 | [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035) | Learn how to combine common GenAI patterns, such as function calling and RAG to build your support assistant. Connect it to a model like Anthropic Claude via Mendix Cloud GenAI or Amazon Bedrock or use an (Azure) OpenAI subscription.  | Starter App | 10.21 |
 | [GenAI Commons](/appstore/modules/genai/commons/) | Common capabilities that allow all GenAI connectors to be integrated with the other modules. You can also implement your own connector based on this. | Common Module | 10.21 |
 | [Conversational UI](/appstore/modules/genai/conversational-ui/) | Create a Conversational UI, manage prompts or monitor token consumption in your app. | UI Module | 10.21 |
-| [Mendix Cloud GenAI Connector](/appstore/modules/genai/MxGenAI/) | Connect to Mendix Cloud and utilize Mendix Cloud GenAI resource packs directly within your Mendix application. | Connector Module | 10.21 |
+| [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/) | Connect to Mendix Cloud and utilize Mendix Cloud GenAI resource packs directly within your Mendix application. | Connector Module | 10.21 |
 | [OpenAI Connector](/appstore/modules/genai/openai/) | Connect to (Azure) OpenAI. | Connector Module | 10.21 |
 | [Amazon Bedrock Connector](/appstore/modules/aws/amazon-bedrock/) | Connect to Amazon Bedrock. Use Retrieve and Generate or Bedrock agents. | Connector Module | 10.21 |
 | [PgVector Knowledge Base](/appstore/modules/genai/pgvector/) | Manage and interact with a PostgreSQL *pgvector* Knowledge Base. | Connector Module | 10.21 |

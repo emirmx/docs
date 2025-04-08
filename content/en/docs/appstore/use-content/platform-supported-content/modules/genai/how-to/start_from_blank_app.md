@@ -48,13 +48,13 @@ The [Blank GenAI App Template](https://marketplace.mendix.com/link/component/227
 
 * The [Conversational UI](/appstore/modules/genai/conversational-ui/) module: offers UI elements for chat interfaces and usage data monitoring.
 
-* The [Mendix Cloud GenAI Resources Packs](/appstore/modules/genai/MxGenAI/) connector: supports the usage of LLMs in your applications.
+* The [Mendix Cloud GenAI Resources Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/) connector: supports the usage of LLMs in your applications.
 
 ### Choosing the Infrastructure
 
 Selecting the infrastructure for integrating GenAI into your Mendix application is the first step. Depending on your use case and preferences, you can choose from the following options:
 
-* [Mendix Cloud GenAI Resources Packs](/appstore/modules/genai/MxGenAI/): The [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449) integrates LLMs by dragging and dropping common operations from its toolbox in Studio Pro.
+* [Mendix Cloud GenAI Resources Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/): The [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449) integrates LLMs by dragging and dropping common operations from its toolbox in Studio Pro.
 * [OpenAI](/appstore/modules/genai/openai/): The [OpenAI Connector](https://marketplace.mendix.com/link/component/220472) supports both OpenAI’s platform and Azure’s OpenAI service.
 
 * [Amazon Bedrock](/appstore/modules/genai/bedrock/): The [Amazon Bedrock Connector](https://marketplace.mendix.com/link/component/215042) allows you to leverage Amazon Bedrock’s fully managed service to integrate foundation models from Amazon and leading AI providers. 

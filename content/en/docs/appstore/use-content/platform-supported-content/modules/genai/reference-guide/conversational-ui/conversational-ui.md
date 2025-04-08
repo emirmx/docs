@@ -169,7 +169,7 @@ If the `ChatContext`, however, already exists and a new `ProviderConfig` needs t
 
 ### Defining and Setting the Action Microflow {#action-microflow}
 
-The `Action Microflow` stored on a `ProviderConfig` is executed when the user clicks the **Send** button. This microflow handles the interaction between the LLM connectors and the Conversational UI entities. The **USE_ME > ConversationalUI > Action microflow examples** folder included in the Conversational UI module contains an example action microflow that is compatible with all connectors that follow GenAI Commons principles (such as [MxGenAI](/appstore/modules/genai/MxGenAI/), [OpenAI](/appstore/modules/genai/openai/), and [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/)). You can copy and modify the microflow or use it directly. 
+The `Action Microflow` stored on a `ProviderConfig` is executed when the user clicks the **Send** button. This microflow handles the interaction between the LLM connectors and the Conversational UI entities. The **USE_ME > ConversationalUI > Action microflow examples** folder included in the Conversational UI module contains an example action microflow that is compatible with all connectors that follow GenAI Commons principles (such as [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/), [OpenAI](/appstore/modules/genai/reference-guide/external-connectors/openai/), and [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/)). You can copy and modify the microflow or use it directly. 
 
 Add the action microflow to an existing `ProviderConfig` by using the **Set Chat Action** toolbox action. Note that this action does not commit the object, so you must add a step to commit it afterward.
 
