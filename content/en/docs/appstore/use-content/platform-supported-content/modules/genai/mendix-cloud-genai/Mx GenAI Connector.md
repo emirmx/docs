@@ -280,19 +280,22 @@ To check your JDK version and update it if necessary, follow these steps:
     2. You may also need to update Gradle. To do this, go to **Edit** > **Preferences** > **Deployment** > **Gradle directory**. Click **Browse** and select the appropriate Gradle version from the Mendix folder. For Mendix 10.10 and above, use Gradle 8.5. For Mendix 10 versions below 10.10, use Gradle 7.6.3. Then save your settings by clicking **OK**.
     3. Rerun the project.
   
-### Migration from Add-On module to App module
-As the module has been changed from an add-on to an app module, if you are updating the module the install from marketplace will need a migration to work properly with your application.
+### Migrating From Add-on Module to App Module
 
-The process may look like this:
-1. Backup of data; either as database backup or individual:
-    - Keys to MxCloud GenAI Resource Packs can be reimported afterwards
-    - Incoming associations to protected module’s entities will be deleted
-2. Delete Add-On module: MxGenAIConnector
-3. Download module from the marketplace; note that the module is from now on located under the “Marketplace modules” category in the app explorer.
-4. Test your application locally and verify that everything works as before.
-5. Restore lost data on deployed environments. Usually keys and incoming associations to the protected modules need to be reset.
+Since the module has been changed from an add-on to an app module, updating it via the marketplace will require a migration to ensure it works properly with your application.
 
-## Read More{#readmore}
+To do this, follow the steps below:
+
+1. Back up your data — either as a full database backup or by exporting individual components:
+
+    * Keys for MxCloud GenAI Resource Packs can be reimported later.
+    * Incoming associations to the protected module’s entities will be deleted.
+2. Delete the add-on module: MxGenAIConnector.
+3. Download the updated module from the Marketplace. Note that the module is now listed under the **Marketplace modules** category in the **App Explorer**.
+4. Test your application locally to ensure everything functions as expected.
+5. Restore any lost data in deployed environments. Typically, keys and incoming associations to the protected module need to be reset.
+
+## Read More
 
 For Anthropic Claude-specific documentation, refer to:
 
