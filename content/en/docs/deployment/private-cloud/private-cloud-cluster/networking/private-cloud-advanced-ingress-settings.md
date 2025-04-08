@@ -138,7 +138,7 @@ To install Linkerd, perform the following steps:
 3. Annotate the namespace where your application is deployed with the following command:
 
     ```text
-    kubectl annotate namespace linkerd.io/inject=enabled
+    kubectl annotate {namespace} linkerd.io/inject=enabled
     ```
 
 #### Configuring Linkerd Ingress in the Mxpc-cli Tool
