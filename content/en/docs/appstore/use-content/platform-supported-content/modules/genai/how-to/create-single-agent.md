@@ -7,32 +7,32 @@ description: "This document guides you through creating an agent by integrating 
 ---
 
 ## Introduction
-TBD
 
-This document explains how to use function calling in your smart app. To do this, you can use your existing app or follow the [Build a Smart App from a Blank GenAI App](/appstore/modules/genai/how-to/blank-app/) guide to start from scratch, as demonstrated in the sections below.
+This document explains how to use create a single-agent in your smart app. The agent combines powerful GenAI capabilities such as [knowledge base retrieval (RAG)](/appstore/modules/genai/rag/), [function calling](/appstore/modules/genai/function-calling/) and [prompt management](/appstore/modules/genai/genai-for-mx/prompt-management/) to facilitate an AI-enriched use case. To do this, you can use your existing app or follow the [Build a Smart App from a Blank GenAI App](/appstore/modules/genai/how-to/blank-app/) guide to start from scratch, as demonstrated in the sections below.
 
 Through this document, you will:
 
-* Understand how to implement function calling within your Mendix application.
-* Learn to integrate GenAI capabilities to address specific business requirements effectively.
+* Learn how to integrate runtime prompt management into your Mendix application
+* Understand how to enrich your use case with function calling.
+* Ingest your Mendix data into a knowledge base and enable the model of your choice to use it.
 
 ### Prerequisites {#prerequisites}
 
-TBD
-
-Before integrating function calling into your app, make sure you meet the following requirements:
+Before building a single agent in your app, make sure you meet the following requirements:
 
 * An existing app: To simplify your first use case, start building from a preconfigured set up [Blank GenAI Starter App](https://marketplace.mendix.com/link/component/227934). For more information, see [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/how-to/blank-app/). 
 
-* Be on Mendix Studio Pro 10.12.4 or higher.
+* Be on Mendix Studio Pro 10.21.0 or higher (the how-to can also be followed from 9.24.2 or higher in your own application with older module versions).
 
-* Installation: Install the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle from the Mendix marketplace. If you start with the Blank GenAI App, skip this installation.
+* Installation: Install the [GenAI Commons](https://marketplace.mendix.com/link/component/239448), [MxGenAI Connector](https://marketplace.mendix.com/link/component/239449) and [ConversationalUI](https://marketplace.mendix.com/link/component/239450) bundle from the Mendix marketplace. If you start with the Blank GenAI App, skip this installation.
 
-* Intermediate knowledge of the Mendix platform: Familiarity with Mendix Studio Pro, microflows, and modules.
+* Intermediate understanding of Mendix: knowledgeable of simple page building, microflow modelling, domain model creation and import mappings (everything is explained below).
+
+* It is highly recommend to first follow the other how-tos if you are not familar with the GenAI modules yet: [Grounding Your Large Language Model in Data](/appstore/modules/genai/how-to/howto-groundllm/), [Integrate Prompt Management into your Mendix App](/appstore/modules/genai/how-to/howto-prompt-management/) and [Integrate Function Calling into Your Mendix App](/appstore/modules/genai/how-to/howto-functioncalling/).
 
 * Basic understanding of GenAI concepts: Review the [Enrich Your Mendix App with GenAI Capabilities](/appstore/modules/genai/) page for foundational knowledge and familiarize yourself with the [concepts](/appstore/modules/genai/using-gen-ai/).
 
-* Understanding Function Calling and Prompt Engineering: Learn about [Function Calling](/appstore/modules/genai/function-calling/) and [Prompt Engineering](/appstore/modules/genai/get-started/#prompt-engineering) to use them within the Mendix ecosystem.
+* Basic understanding Function Calling and Prompt Engineering: Learn about [Function Calling](/appstore/modules/genai/function-calling/) and [Prompt Engineering](/appstore/modules/genai/get-started/#prompt-engineering) to use them within the Mendix ecosystem.
 
 ## Single Agent Use Case {#use-case}
 
@@ -53,7 +53,7 @@ Before you can start creating your first agent, you need to setup your applicati
 Furthermore, add the `Prompt_Overview` page to your navigation,  which is located in **ConversationalUI** > **USE_ME** > **Prompt Management**. Also make sure to add the `PromptAdmin` module role to your admin role. After starting the app, the admin user should be able to configure GenAI resources and navigate to the *Prompt Overview* page.
 
 ## Create Your Prompt{#create-prompt}
-First, we need to create a prompt that can be sent to the LLM. The [Prompt Management](tbd) capabilities of the ConversationalUI module enable admins to prompt engineer at runtime. It is recommended to first follow the [How-to integrate prompt management into a Mendix App](tbd) before continuing.
+First, a prompt needs to be created that can be sent to the LLM. The [Prompt Management](tbd) capabilities of the ConversationalUI module enable admins to prompt engineer at runtime. It is recommended to first follow the [How-to integrate prompt management into a Mendix App](tbd) before continuing.
 
 1. After running the app, navigate to the `Prompt_Overview` page to create a new prompt titled `IT-Ticket Solver` as `Single-Call` type. The *description* field can be left empty. **Save** the prompt.
 
@@ -78,10 +78,11 @@ First, we need to create a prompt that can be sent to the LLM. The [Prompt Manag
 
 6. Go back to the *Prompt Overview* page. Hover over the *Ellipsis* ({{% icon name="three-dots-menu-horizontal-small" %}}) icon in the row of your prompt and click the **Select Prompt in use** button. On this page, you need to select a version that you want to set to `In Use` which means it is selected for production and later selected in your microflow logic. Select the *Initial prompt* version and click **Select**.
 
+Your prompt is now (almost) ready to be used in your application. If you like you can now iterate over the prompt until you are satisfied.
 
 ## Ingest Data into Knowledge Base{#ingest-knowledge-base}
 
-Second, we need to ingest our Mendix ticket data into the knowledge base. A detailed step-by-step guide can be found in the [How-to ground your LLM in data](/appstore/modules/genai/how-to/howto-groundllm/#demodata). The following steps explain the process at a higher level by modifying logic imported from the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475):
+Second, Mendix ticket data needs to be ingested into the knowledge base. A detailed step-by-step guide can be found in the [How-to ground your LLM in data](/appstore/modules/genai/how-to/howto-groundllm/#demodata). The following steps explain the process at a higher level by modifying logic imported from the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475):
 
 1. In you domain model, create an entity `Ticket` with the attributes:
     * `Subject` as *String*
