@@ -192,6 +192,10 @@ Furthermore, external entities cannot be committed. Use the [Send External Objec
 
 * The **Commit** activity does not work. Use **Send External Object** instead.
 * On pages, the [Save button](/refguide/button-widgets/) and the [Save Changes event](/refguide/on-click-event/#save-changes) do not work when the page contains widgets that update external entities. Call a microflow that persists the changes using **Send External Object** instead.
+<<<<<<< Updated upstream
 * When synchronizing remote entities to an offline-first client while the remote service is offline, the synchronization will fail and users will see an error.
+=======
+* Deleting an object of a published entity (which may be consumed as an **External Entity**) on the Publishing side and re-creating it with the same OData key, can lead to discrepencies. 
+>>>>>>> Stashed changes
 
 For more details on consuming services and published entities, including operations that can be performed on external entities, see [Consume Services](/catalog/consume/).

@@ -188,5 +188,6 @@ Furthermore, external entities cannot be committed. Use the [Send External Objec
 
 * The **Commit** activity does not work. Use **Send External Object** instead.
 * On pages, the [Save button](/refguide9/button-widgets/) and the [Save Changes event](/refguide9/on-click-event/#save-changes) do not work when the page contains widgets that update external entities. Call a microflow that persists the changes using **Send External Object** instead.
+* Deleting an object of a published entity (which may be consumed as an **External Entity**) on the Publishing side and re-creating it with the same OData key, can lead to discrepencies.
 
 For more details on consuming services and exposed entities, including operations that can be performed on external entities, see [Consume Services](/catalog/consume/).
