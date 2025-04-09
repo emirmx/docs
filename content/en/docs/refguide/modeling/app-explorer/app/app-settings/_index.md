@@ -28,7 +28,7 @@ These settings influence the behavior of the Runtime when running your applicati
 
 ### Use React Client {#react-client}
 
-This setting enables the new React version of the Mendix Client. This React client was released into beta in [Mendix 10.7](/releasenotes/studio-pro/10.7/#react-client). As of [Mendix 10.18](/releasenotes/studio-pro/10.18/), it is in GA. There are three options:
+This setting enables the new React version of the Mendix Client. There are three options:
 
 * **No**: Do not use the React client (default).
 * **Yes**: Use the React client. In this mode, you will get consistency errors for incompatible widgets.
@@ -73,9 +73,7 @@ If the URL prefix breaks any of the rules mentioned above, then you will get a c
 Here you can select which Java version to use for you application.
 
 {{% alert color="info" %}}
-
-For Studio Pro versions 10.6.7 and 10.8.0 and above, you can choose Java 17.
-
+For Studio Pro 11, you should choose Java 21.
 {{% /alert %}}
 
 For local development the Java version configured here needs to have a corresponding JDK configured in the [Studio Pro preferences](/refguide/preferences-dialog/#jdk).
@@ -232,14 +230,7 @@ Default: *Yes*
 
 If this option is enabled, database [foreign key constraints](/refguide/data-storage/#fkc) will be used. An attempt to commit a dangling reference will throw a runtime exception.
 
-{{% alert color="info" %}}
-This option was added in Mendix version 10.10.
-{{% /alert %}}
-
-Default: *depends on the version of Mendix used to create the app:*
-
-* *Yes* for apps created with Mendix versions 10.6.0 and above
-* *No* for apps created with Mendix versions below 10.6
+Default: *Yes*
 
 ### SSL Certificate Algorithm
 
@@ -411,10 +402,6 @@ A microflow selected for this setting will start every time a workflow changes i
 A microflow selected for this setting will start every time a user task changes its state, for example, when a user task is completed or paused. This setting is app-wide; you can override it by setting a workflow-specific microflow in [workflow properties](/refguide/workflow-properties/#events).
 
 ## Dependencies Tab {#deployment}
-
-{{% alert color="info" %}}
-The Deployment tab was renamed to **Dependencies** in Studio Pro 10.12.0.
-{{% /alert %}}
 
 This tab can be used to view the managed dependencies in your app in one place and to manage the dependencies in the userlib directory. It contains three tabbed sections.
 
