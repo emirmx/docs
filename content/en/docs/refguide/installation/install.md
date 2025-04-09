@@ -51,16 +51,11 @@ The prerequisites are the following:
 * [Microsoft Visual C++ 2015 and 2019 Redistributable Package](https://aka.ms/vs/16/release/vc_redist.x64.exe)
 * [Mendix Native Mobile Builder one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
 
-* [Git for Windows (x64)](https://git-scm.com/download/win) using the versions described below. These are the versions of Git that Studio Pro installs if the Git version installed on the system is below the suggested one.
+* [Git for Windows (x64)](https://git-scm.com/download/win) (Git version [2.48.1](https://github.com/git-for-windows/git/releases/download/v2.48.1.windows.1/Git-2.48.1-64-bit.exe) or above is required)
 
-    | Studio Pro 10.0.0 - 10.1.0 | Studio Pro 10.2.0 - 10.9 | Studio Pro 10.6.10 (MTS), 10.10 to 10.20 | Studio Pro 10.21.0 and above |
-    | --- | --- | --- | --- |
-    | [2.37.1](https://github.com/git-for-windows/git/releases/tag/v2.37.1.windows.1) | [2.41.0](https://github.com/git-for-windows/git/releases/tag/v2.41.0.windows.3) | [2.43.0](https://github.com/git-for-windows/git/releases/tag/v2.43.0.windows.1)|[2.48.1](https://github.com/git-for-windows/git/releases/download/v2.48.1.windows.1/Git-2.48.1-64-bit.exe)|
-
-{{% alert color="warning" %}}  Mendix recommends installing Git for all versions of Studio Pro to ensure optimal performance and full feature availability.
-
-* Studio Pro versions below 10.21.0 can work without Git, but some operations may experience reduced performance, and advanced features—such as [rebase](/refguide/merge-algorithm/#rebase)—will not be available.
-* Starting from Studio Pro 10.21.0, Git version 2.48.1 or above is required. This version is automatically installed during Studio Pro installation. However, for [non-administrative installation](#offline) you must install Git manually.{{% /alert %}}
+{{% alert color="warning" %}} 
+Git version 2.48.1 is automatically installed during Studio Pro installation. However, for [non-administrative installation](#offline), you must install Git manually.
+{{% /alert %}}
 
 * [Microsoft Edge WebView2 Evergreen Runtime (x64 or ARM64) (Evergreen Standalone Installer version)](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)
 * [Gradle 8.5](https://gradle.org/install/#manually) with Gradle extracted to the parent directory of the folder where Studio Pro is installed (usually `C:\Program Files\Mendix`) instead of `C:\Gradle`.

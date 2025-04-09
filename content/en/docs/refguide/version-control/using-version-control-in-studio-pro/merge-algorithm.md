@@ -95,6 +95,8 @@ Rebasing is the default way to integrate your work with the server changes. It m
 Rebase is available only for Git version 2.41.0 and above.
 {{% /alert %}}
 
+{{% todo %}} Do we still need the above warning if Git version 2.48.1 or above is required for SP 11? {{% /todo %}}
+
 {{% alert color="info" %}}
 During the rebase process, there is a slight terminology change in Studio Pro compared to merge.
 {{% /alert %}}
