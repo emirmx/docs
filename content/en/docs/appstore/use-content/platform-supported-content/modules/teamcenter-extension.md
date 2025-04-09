@@ -182,11 +182,42 @@ If you select an item in the **Action** list, Teamcenter Extension performs a va
 
 The **Settings** tab displays the Teamcenter configuration page. 
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/teamcenter-extension/settings-tab.png" >}}
+![{483447ED-1F35-42E5-B854-096430B32F9A}](https://github.com/user-attachments/assets/77faeeed-d19d-4cb5-a04b-45f2ee87f19b)
 
-On the **Settings** tab, you can provide your Teamcenter Instance details to connect to, while building your app and using Teamcenter Extension. Click **Edit** to open a panel to enter details. The certificate path should be relative to the app directly.
+On the **Settings** tab, you need to provide your Teamcenter Instance details to connect to, while building your app and using Teamcenter Extension. 
 
-Teamcenter Extension supports both HTTP and HTTPS connections. Additionally, it supports certificates that have *.crt* and *.pfx* file extensions.
+Click **Edit** to open a panel to enter details. 
+
+![{8C69026E-A617-467F-9DB8-502F0058769C}](https://github.com/user-attachments/assets/5a95d20a-a9b8-4635-85c0-fa658455844c)
+
+1. The TC URL is the URL to which calls will be made to Login and retrieve data. Teamcenter Extension supports both HTTP and HTTPS connections. Additionally, it supports certificates that have .crt and .pfx file extensions.
+2. The certificate path you provide should be relative to the app directory.
+3. Under Authentication you can select the method to login. The extension supports credentials-based login as well as SSO (see below).
+4. The Mendix module selects the module where all the Entities and Microflows will be created. We recommend creating a new empty module to select here.
+
+##### Login using credentials
+Choose this option if your Teamcenter instance supports logging in using provided credentials. Provide the username and password (and group and role if required).
+Save your configuration and press Sign In.
+
+You'll see new popup asking you to enter your credentials. This method prevents sharing of credentials among developers through versioning.
+
+![{26693343-F17D-4804-B6CA-8DAB93E58F60}](https://github.com/user-attachments/assets/39252ca2-3954-490b-b9f4-7314ba8f01d3)
+
+##### Login using SSO
+Choose this option if your Teamcenter instance is configured to use SSO. Please work with your Teamcenter administrator to fill out these settings.
+
+![{B9EBC79B-CD99-4752-AE26-8742E972B599}](https://github.com/user-attachments/assets/282e4288-f1f8-4797-8b03-8d38f71fe93d)
+
+1. SSO Login Server URL- This is the endpoint where your authentication request is sent. It acts as the main entry point for users trying to log in using SSO. This URL is typically associated with the Identity Provider (IdP) and is responsible for handling login requests and directing users through the authentication process
+2. SSO Identity Server URL - This is the URL of the Identity Server where the Teamcenter Extension application should be registered
+3. Teamcenter Application ID: This is the existing Teamcenter Application ID obtained from the Teamcenter Security Services Identity Service configuration.
+4. Mendix Application ID This is the registered ID of the Teamcenter Extension at the Identity Server.
+5. Callback Port: The port of the callback URL. See below
+
+Users who have utilized the Teamcenter Connector will notice that the settings in this dialog generally align with those required to log in using SSO with the Teamcenter Connector in your Mendix application. The first three settings are usually the same as those used in the Teamcenter Configuration within the Mendix application. However, the last two settings depend on the application registration with your Identity Server. We recommend having a separate registration for the Teamcenter Extension on your Identity Server, distinct from your Mendix application’s registration. Otherwise, conflicts might arise if your Mendix application is running. 
+
+For the registration, the callback URL should be set to http://localhost:[PortNumber]/, for example, http://localhost:12345/.
+Save your configuration and press Login to login using SSO.
 
 ### Import Mapping {#importmapping}
 
