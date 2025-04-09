@@ -185,6 +185,8 @@ Now, the user can ask the model questions and will see a response. However, this
 
 In this section you will enable the model to call two microflows as functions and additionally a tool for knowledge base retrieval.
 
+#### Function: Number of Tickets in Status {#function-number-of-tickets}
+
 1. Add the `Tools: Add Function to Request` action right after the *Request* creation microflow.
     * Request: `Request` (object created in previous action)
     * Tool name: `RetrieveNumberOfTicketsInStatus` (expression)
@@ -216,6 +218,11 @@ In this section you will enable the model to call two microflows as functions an
 8. Lastly, in the *End event* return `toString($Count)` as *String*
 
 You now successfully added your first function microflow. If the users now asked how many tickets are in status *Closed*, the model can call the exposed function microflow and base the final answer on your Mendix database. When you restart the app and ask the agent `How many tickets are open?` a log in your Studio Pro console should appear indicating that your microflow was executed.
+
+#### Function: Ticket by Identifier {#function-ticket-identifier}
+
+
+#### Knowledge Base Retrieval: Similar Tickets {#knowledge-base-retrieval}
 
 
 
