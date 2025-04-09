@@ -110,6 +110,8 @@ To run a Mendix app, Mendix Studio Pro uses the following ports by default. If y
 
 For more information on ports and modifying Studio Pro's default ports, see [Configurations](/refguide/configuration/) and the [Troubleshooting Common Mobile Issues](/refguide/mobile/getting-started-with-mobile/prerequisites/#troubleshooting) section of *Native App Prerequisites and Troubleshooting*.
 
+For information on how to ensure the smooth operation of Mendix AI Assistance (Maia), see the [Network Configuration Requirements](/refguide/mendix-ai-assistance/#maia-network-requirement) section in *Mendix AI Assistance (Maia)*.
+
 ### File Comparison
 
 {{% alert color="info" %}}
