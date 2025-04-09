@@ -239,6 +239,10 @@ It is recommended to limit the number of open tabs (open documents) to improve t
 The closing policy is not applied to tabs with unsaved changes.
 {{% /alert %}}
 
+### Navigation
+
+This setting allows you to move forward and backward through your editing history to show the documents you have recently worked on. You must restart Studio Pro to use this feature.
+
 ## Advanced Tab
 
 ### Proxy Server
@@ -289,9 +293,6 @@ Translation Generator is currenlty an experimental feature. Enable this option t
 
 This setting allows you to set the beta version as the default editor.
 
-### Navigation
-
-This setting allows you to move forward and backward through your editing history to show the documents you have recently worked on. You must restart Studio Pro to use this feature.
 
 ### Online Synchronization Mode
 
