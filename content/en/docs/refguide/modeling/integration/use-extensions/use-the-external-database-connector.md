@@ -46,6 +46,8 @@ If additional connection properties are required to connect, you can alternative
 
 ### For Studio Pro 10.19 and above {#enable-live-preview}
 
+In Studio Pro 10.19 and above, the External Database Connector uses a different approach to connect to databases during design time. This functionality enhances consistency between design time and runtime environments.
+
 {{% alert color="info" %}}
 This feature is available for Studio Pro 10.18 using the flag: `--enable-live-preview`
 {{% /alert %}}
