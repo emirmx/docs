@@ -72,7 +72,7 @@ The following steps lead to deactivate the user based on UUID provided as in {UU
     }
     ```
 
-1. Call `GET /v1/platform-users/user-status/{UUID}` to deactivate the User with the provided {UUID}.
+1. Call `PATCH /v1/platform-users/user-status/{UUID}` to deactivate the User with the provided {UUID}.
 
 ## API Reference
 
