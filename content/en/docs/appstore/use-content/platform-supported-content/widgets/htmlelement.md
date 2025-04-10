@@ -64,8 +64,8 @@ Sets the events for the created HTML element.
     * **Name** - Sets the event type that will be applied to the HTML element. The choices are based on standard browser events.
     * **Action** - Sets the  [Event Actions](/refguide/on-click-event/#actions) for the selected event type.
 * **Advanced**
-    * **Stop propagation** - If yes, the event will be prevented from being called further up in the DOM tree. see [Event: stopPropagation()](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation).
-    * **Prevent default** - If yes, it will cancel the default events. see [Event: preventDefault()](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault)
+    * **Stop propagation** - If yes, the event will be prevented from being called further up in the DOM tree. For more information, see [Event: stopPropagation()](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation).
+    * **Prevent default** - If yes, will cancel the default events. For more informaion, see [Event: preventDefault()](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault)
 
 ### Common Tab
 
