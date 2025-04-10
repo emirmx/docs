@@ -3,7 +3,7 @@ title: "GenAI Commons"
 url: /appstore/modules/genai/genai-for-mx/commons/
 linktitle: "GenAI Commons"
 description: "Describes the purpose, configuration and usage of the GenAI Commons module from the Mendix Marketplace that allows developers to integrate GenAI common principles and patterns into their Mendix app."
-weight: 50
+weight: 10
 aliases:
     - /appstore/modules/genai-commons/
     - /appstore/modules/genai/commons/
@@ -11,7 +11,7 @@ aliases:
 
 ## Introduction {#introduction}
 
-The GenAI Commons module, included in the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle, combines common generative AI patterns found across various models on the market. Platform-supported GenAI-connectors use the underlying data structures and their operations. This makes it easier to develop vendor-agnostic AI-enhanced apps with Mendix, for example by using one of the connectors or the [Conversational UI](/appstore/modules/genai/conversational-ui/) module.
+The [GenAI Commons](https://marketplace.mendix.com/link/component/239448) module combines common generative AI patterns found across various models on the market. Platform-supported GenAI-connectors use the underlying data structures and their operations. This makes it easier to develop vendor-agnostic AI-enhanced apps with Mendix, for example by using one of the connectors or the [Conversational UI](/appstore/modules/genai/conversational-ui/) module.
 
 If two different connectors both adhere to the GenAI Commons module, they can be easily swapped, which reduces dependency on the model providers. In addition, the initial implementation of AI capabilities using the connectors becomes a drag-and-drop experience, so that developers can quickly get started. The module exposes useful operations which developers can use to build a request to a large language model (LLM) and to handle the response.
 
@@ -31,15 +31,13 @@ You must also download the [Community Commons](/appstore/modules/community-commo
 
 If you are starting from the [Blank GenAI app](https://marketplace.mendix.com/link/component/227934), or the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926), the GenAI Commons module is already included and does not need to be downloaded manually.
 
-If you start from a blank app, or have an existing project where you want to include a connector for which the GenAI Commons module is required, you must install GenAI Commons manually. First, install the [Community Commons](/appstore/modules/community-commons-function-library/) module, and then follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to install the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle that includes the GenAI Commons, Conversational UI and Mendix Cloud GenAI Connector modules.
+If you start from a blank app, or have an existing project where you want to include a connector for which the GenAI Commons module is required, you must install GenAI Commons manually. First, install the [Community Commons](/appstore/modules/community-commons-function-library/) module, and then follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to install the [GenAI Commons](https://marketplace.mendix.com/link/component/239448) module.
 
 ## Implementation {#implementation}
 
-GenAI Commons is the foundation of large language model implementations within the [Mendix Cloud GenAI Connector](/appstore/modules/genai/MxGenAI/),  [OpenAI connector](/appstore/modules/genai/openai/), and the [Amazon Bedrock connector](/appstore/modules/genai/bedrock/), but may also be used to build other GenAI service implementations on top of it by reusing the provided domain model and exposed actions.
+GenAI Commons is the foundation of large language model implementations within the [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/), [OpenAI connector](/appstore/modules/genai/reference-guide/external-connectors/openai/), and the [Amazon Bedrock connector](/appstore/modules/genai/bedrock/), but may also be used to build other GenAI service implementations on top of it by reusing the provided domain model and exposed actions.
 
 Although GenAI Commons technically defines additional capabilities typically found in chat completion APIs, such as image processing (vision) and tools (function calling), it depends on the connector module of choice for whether these are actually implemented and supported by the LLM. To learn which additional capabilities a connector supports and for which models these can be used, refer to the documentation of that connector.
-
-The GenAI Commons module is [protected](/refguide/consume-add-on-modules-and-solutions/), which means that it cannot be changed and the logic of the microflows is not visible. For information about what each exposed operation does, see [Microflows](#microflows), or refer to the documentation inside the module.
 
 ### Token Usage
 
@@ -840,18 +838,6 @@ This microflow creates a new [MetadataCollection](#metadatacollection-entity) an
 
 This section lists possible solutions to known issues.
 
-### Internal Errors in Hidden Documents
-
-Adding the GenAI Commons module to an existing project causes internal errors in hidden documents in Studio Pro.
-
-#### Cause
-
-The Java actions from the [CommunityCommons](https://marketplace.mendix.com/link/component/170) module are not compatible with the current version of the GenAI Commons module.
-
-#### Solution
-
-Update the [CommunityCommons](https://marketplace.mendix.com/link/component/170) module to the latest version.
-
 ### Outdated JDK Version Causing Errors while Calling a REST API {#outdated-jdk-version}
 
 The Java Development Kit (JDK) is a framework needed by Mendix Studio Pro to deploy and run applications. For more information, see [Studio Pro System Requirements](/refguide/system-requirements/). Usually, the correct JDK version is installed during the installation of Studio Pro, but in some cases, it may be outdated. An outdated version can cause exceptions when calling REST-based services with large data volumes, like for example embeddings operations or chat completions with vision.
@@ -871,4 +857,16 @@ To check your JDK version and update it if necessary, follow these steps:
     1. You might get an error saying `FAILURE: Build failed with an exception. The supplied javaHome seems to be invalid. I cannot find the java executable.` In this case, verify that you have selected the correct JDK directory containing the updated JDK version.
     2. You may also need to update Gradle. To do this, go to **Edit** > **Preferences** > **Deployment** > **Gradle directory**. Click **Browse** and select the appropriate Gradle version from the Mendix folder. For Mendix 10.10 and above, use Gradle 8.5. For Mendix 10 versions below 10.10, use Gradle 7.6.3. Then save your settings by clicking **OK**.
     3. Rerun the project.
+  
+### Migration from Add-On module to App module
+As the module has been changed from an add-on to an app module, if you are updating the module the install from marketplace will need a migration to work properly with your application.
+
+The process may look like this:
+1. Backup of data; either as database backup or individual:
+    - Incoming associations to protected module’s entities will be deleted
+    - Usage data will be lost but can be exported in the ConversationalUI module via the Token Consumption Monitor snippets
+2. Delete Add-On module: GenAICommons
+3. Download the module from the marketplace; note that the module is from now on located under the “Marketplace modules” category in the app explorer.
+4. Test your application locally and verify that everything works as before.
+5. Restore lost data on deployed environments. Usually incoming associations to the protected modules need to be reset.
     
