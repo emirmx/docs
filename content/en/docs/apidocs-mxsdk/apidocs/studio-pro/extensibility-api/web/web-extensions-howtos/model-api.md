@@ -51,7 +51,7 @@ For example, you can retrieve all the units managed by the `domainModels` compon
 const unitsInfo: Primitives.UnitInfo[] = await domainModels.getUnitsInfo()
 ```
 
-A unit can be loaded by supplying a function, `fn` to `component.loadAll(fn)`. The function `fn` should return a truthy value to load a specified unit.
+A unit can be loaded by supplying a function, `fn` to `component.loadAll(fn)`. The function `fn` should return `true`  to load a specified unit.
 
 {{% alert color="warning" %}}
 Loading units is a resource intensive process. Only load units when you need them.

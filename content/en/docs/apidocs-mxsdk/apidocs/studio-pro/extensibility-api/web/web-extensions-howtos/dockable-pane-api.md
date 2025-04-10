@@ -23,16 +23,15 @@ This guide uses the app created in [Get Started with the Web Extensibility API](
 To open a dockable pane you must first register the dockable pane handle with the API. To do this, add a call to register the pane to the extension loaded method in the `src/main/index.ts`.
 
 ```typescript
-const paneHandle = await studioPro.ui.panes.register(
-  {
-    title: "My Extension Pane",
-    initialPosition: "right",
-  },
-  {
-    componentName: "extension/myextension",
-    uiEntrypoint: "dockablepane",
-  }
-);
+        const paneHandle = await studioPro.ui.panes.register(
+            {
+                title: "My Extension Pane",
+                initialPosition: "right",
+            },
+            {
+                componentName: "extension/myextension",
+                uiEntrypoint: "dockablepane",
+            });
 ```
 
 Use the 'paneHandle' you registered to interact with the dockable pane.
@@ -101,22 +100,26 @@ You will now add a menu that will open the pane when it is selected.
 1. Add lines to the `addEventListener()` call to handle opening the dockable pane once the menu has been selected, as follows:
 
     ```typescript
-    // Open a tab when the menu item is clicked
-    studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", (args) => {
-      if (args.menuId === "myextension.ShowTabMenuItem") {
-        studioPro.ui.tabs.open(
-          {
-            title: "My Extension Tab",
-          },
-          {
-            componentName: "extension/myextension",
-            uiEntrypoint: "tab",
-          }
+        // Open a tab when the menu item is clicked
+        studioPro.ui.extensionsMenu.addEventListener(
+            "menuItemActivated",
+            (args) => {
+                if (args.menuId === "myextension.ShowTabMenuItem") {
+                    studioPro.ui.tabs.open(
+                        {
+                            title: "My Extension Tab",
+                        },
+                        {
+                            componentName: "extension/myextension",
+                            uiEntrypoint: "tab",
+                        }
+                    );
+                }
+                else if (args.menuId === "myextension.ShowDockMenuItem") {
+                    studioPro.ui.panes.open(paneHandle);
+                }
+            }
         );
-      } else if (args.menuId === "myextension.ShowDockMenuItem") {
-        studioPro.ui.panes.open(paneHandle);
-      }
-    });
     ```
 
 Your `loaded()` method should now look like this:
@@ -185,7 +188,7 @@ Replace the entry section of `vite.config.js` with the following:
         entry: {
             main: "src/main/index.ts",
             tab: "src/ui/tab.tsx",
-            dockablepane: "src/ui/dockablepane.tsx"
+            dockablepane: "src/ui/dockablepane.tsx",
         }
 ```
 
@@ -259,23 +262,28 @@ You must also alter the event handler for the new menu at the end of the loaded 
 
 ```typescript
         // Open a tab when the menu item is clicked
-        studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", (args) => {
-          if (args.menuId === "myextension.ShowTabMenuItem") {
-            studioPro.ui.tabs.open(
-              {
-                title: "My Extension Tab",
-              },
-              {
-                componentName: "extension/myextension",
-                uiEntrypoint: "tab",
-              }
-            );
-          } else if (args.menuId === "myextension.ShowDockMenuItem") {
-            studioPro.ui.panes.open(paneHandle);
-          } else if (args.menuId === "myextension.HideDockMenuItem") {
-            studioPro.ui.panes.close(paneHandle);
-          }
-        });
+        studioPro.ui.extensionsMenu.addEventListener(
+            "menuItemActivated",
+            (args) => {
+                if (args.menuId === "myextension.ShowTabMenuItem") {
+                    studioPro.ui.tabs.open(
+                        {
+                            title: "My Extension Tab",
+                        },
+                        {
+                            componentName: "extension/myextension",
+                            uiEntrypoint: "tab",
+                        }
+                    );
+                }
+                else if (args.menuId === "myextension.ShowDockMenuItem") {
+                    studioPro.ui.panes.open(paneHandle);
+                }
+                else if (args.menuId === "myextension.HideDockMenuItem") {
+                    studioPro.ui.panes.close(paneHandle);
+                }
+            }
+        );
 ```
 
 The loaded method should now look like this:
