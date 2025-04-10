@@ -93,7 +93,11 @@ The first ingestion performed for the data source with this setting enabled inge
 
 ### Enabling ChangedDate for Delta Ingestion
 
-To use delta ingestion, you must expose a "Date and time" attribute under the name **changedDate** in your OData resource. This attribute will be used to track changes.
+To use delta ingestion, you must expose a "Date and time" attribute under the name **changedDate** in your OData resource. This attribute will be used to track changes and must follow the format:
+
+**`yyyy-MM-dd'T'HH:mm:ss.SSS`**
+
+> This format should be the default for date attributes in Mendix when exposed via OData.
 
 You have two options for providing this date:
 
