@@ -70,7 +70,7 @@ First, a prompt needs to be created that can be sent to the LLM. The [Prompt Man
 
 3. Add to the [User Prompt](/appstore/modules/genai/prompt-engineering/#user-prompt) field the following prompt: `{{UserInput}}`. The user prompt is typically what the enduser writes, even though it can be prefilled by your own instructions. In this example, the prompt only contains a placeholder variable for the actual input of the user.
 
-4. Testing TBD: two example user prompts. Check if it still hallucinates after emily is done.
+4. By adding a value in the *UserInput* variable field, you can test the current prompt, for example `How can I implement an agent in my Mendix app?`. Ideally, the model will not try to answer your request because it was restricted to only help for IT-related tickets or provide information about the ticket data. If you were to ask a question that needs the (not yet implemented) tools, the model might hallucinate and pretend it used the tools.
 
 5. Save the prompt's version via the `Save as` button titled as `Initial prompt`.
 
