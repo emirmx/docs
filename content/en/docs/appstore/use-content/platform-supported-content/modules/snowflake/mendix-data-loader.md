@@ -93,7 +93,7 @@ The first ingestion performed for the data source with this setting enabled inge
 
 ### Enabling ChangedDate for Delta Ingestion
 
-To use delta ingestion, you must expose a date attribute under the name **changedDate** in your OData resource. This attribute will be used to track changes.
+To use delta ingestion, you must expose a "Date and time" attribute under the name **changedDate** in your OData resource. This attribute will be used to track changes.
 
 You have two options for providing this date:
 
@@ -103,7 +103,7 @@ You have two options for providing this date:
    - This will automatically track when each object is modified.
 
 2. **Use any custom date attribute:**  
-   - You can use any date attribute from your domain model, with any name you choose.  
+   - You can use any "Date and time" attribute from your domain model, with any name you choose.  
    - Just make sure to expose it in OData under the name **changedDate**.
 
 In both cases, make sure the **changedDate** attribute is exposed in your OData resource so it can be used during delta ingestion.
