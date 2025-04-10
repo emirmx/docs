@@ -15,10 +15,10 @@ Maia for Domain Model is currently an experimental feature introduced in Studio 
 {{% /alert %}}
 
 {{% alert color="info" %}}
-To use Maia for Domain Model, internet connection and signing in to Studio Pro are required.
+To use Maia for Domain Model, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-Maia for Domain Model is an AI-powered tool that you can use for generating a [domain model](/refguide/domain-model/). It helps you to generate entities and associations based on text input. In Studio Pro 10.18 and above, you can also use Maia for Domain Model in existing domain models. As an experimental feature, Maia for Domain Model still has several limitations. For more information, see the [Limitations](#limitation) section below.
+Maia for Domain Model is an AI-powered tool that you can use for generating new [domain model](/refguide/domain-model/) as well as analyzing, explaining, and providing improvements for existing domain models. Accessing Maia for Domain Model directly in existing domain models is supported in Studio Pro 10.18 and above. As an experimental feature, Maia for Domain Model still has several limitations. For more information, see the [Limitations](#limitation) section below.
 
 ## Using Maia for Domain Model
 
@@ -34,21 +34,23 @@ After clicking **Maia for Domain Model**, a dedicated chat interface will appear
 
 {{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/maia-for-domain-model/chat-interface.png" max-width=42% >}}
 
-Describe your application or its main goals in the chat. Maia will use this information to generate a relevant domain model for you! After a domain model is generated and if the dedicated chat is still active, you can still ask Maia to add more entities and associations to the generated domain model. In Studio Pro 10.17 and above, it also supports adding more attributes to an existing entity in the generated domain model. Give it a try!
+Describe your application or its main goals in the chat. Maia will use this information to generate a relevant domain model for you. After a domain model is generated and if the dedicated chat is still active, you can continue asking Maia to add more entities and associations to the generated domain model. You can also ask Maia to explain or improve the generated domain model through further requests.
 
-{{% alert color="info" %}}
-In this dedicated chat, only requests related to domain model will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide/maia-chat/) interface.
-{{% /alert %}}
+In Studio Pro 10.17 and above, it also supports adding more attributes to an existing entity in the generated domain model. In Studio Pro 10.18 and above, you can access Maia for Domain Model directly in existing domain models.
 
 {{% alert color="info" %}}
 Maia for Domain Model does not support deleting items in the domain model. You can always delete them manually. 
+{{% /alert %}}
+
+{{% alert color="info" %}}
+In this dedicated chat, only requests related to domain model will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide/maia-chat/) interface.
 {{% /alert %}}
  
 ### Best Practices for Text Input
 
 To achieve optimal results, provide context about your application by describing its main use cases, customer needs, or other relevant details. The more Maia knows about your application, the more tailored and accurate the generated domain model will be.
 
-Below are some examples you can use as a starting point:
+Below are some examples of prompts you can use as a starting point:
 
 * The app will help users ...
 * This module handles ...
@@ -57,13 +59,20 @@ Below are some examples you can use as a starting point:
 * The app will analyze and report on ...
 * This feature allows users to ...
 
+Below are examples of prompts you can use to ask Maia for explanations or suggestions to improve a domain model:
+
+* Can you explain the function and purpose of this domain model?
+* I want to add an attribute `ATTRIBUTE_NAME` to the entity `ENTITY_NAME`.
+* I want to make the domain model more efficient. Can you suggest optimizations?
+* Could you identify any potential issues with this domain model and recommend solutions?
+
 ## Limitations {#limitation}
 
 As an experimental feature, Maia for Domain Model has some limitations.
 
 ### Enumeration Generation
 
-In Studio Pro 10.17 and below, it is not possible to generate [enumerations](/refguide/enumerations/). In Studio Pro 10.18, it can generate an attribute of type Enumeration if there is an existing enumeration in the module to refer to.
+In Studio Pro 10.17 and below, it is not possible to generate [enumerations](/refguide/enumerations/). In Studio Pro 10.18 and above, it can generate an attribute of type Enumeration if there is an existing enumeration in the module to refer to.
 
 ### Generalization Not Supported
 
