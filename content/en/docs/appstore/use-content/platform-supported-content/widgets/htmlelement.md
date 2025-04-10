@@ -58,7 +58,14 @@ To configure this widget, follow these steps:
 
 ### Events Tab
 
-{{% alert color="info" %}}For more information, see [Event Actions](/refguide/on-click-event/#actions) in *Properties Common in the Page Editor*.{{% /alert %}}
+Sets the events for the created HTML element.
+
+* **Event**
+    * **Name** - sets the event type that will be applied to the HTML element. The choices are based on standard browser events.
+    * **Action** - sets the  [Event Actions](/refguide/on-click-event/#actions) for the selected event type.
+* **Advanced**
+    * **Stop propagation** - if yes, the event will be prevented from being called further up in the DOM tree. see [Event: stopPropagation()](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation).
+    * **Prevent default** - if yes, it will cancel the default events. see [Event: preventDefault()](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault)
 
 ### Common Tab
 
