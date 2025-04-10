@@ -59,12 +59,12 @@ You must have the UserID of the user you want to deactivate. Follow the steps be
 
 ### Using the API to Deactivate User
 
-{{% alert color="info" %}}Only Mendix Admins from the company have the authority to deactivate user.{{% /alert %}}
+{{% alert color="info" %}}Only Mendix Admins from the company have the authority to deactivate users.{{% /alert %}}
 
-The following steps lead to deactivate the user based on UUID provided as in {UUID}:
+The following steps lead to deactivating the user based on the UUID provided as in {UUID}:
 
 1. Set up your authentication PAT. You must be a Mendix Admin.
-1. Create a request body containing the active status, provide a body like this:
+1. Create a request body containing the active status, and provide a body like this:
 
     ```json
     {

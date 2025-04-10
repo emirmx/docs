@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   version: 1.0.0
   title: User Deactivation API
-  description: The API allows a Mendix Admin to deactivate user of company by providing UUID of the user.
+  description: The API allows a Mendix Admin to deactivate users of company by providing UUID of the users.
   termsOfService: 'https://www.mendix.com/terms-of-use/'
   contact:
     name: Mendix Support
@@ -16,7 +16,7 @@ paths:
       tags:
         - user-deactivation-api
       summary: Deactivate the user based on UUID provided.
-      description: This API deactivates user of the company based on the UUID provided as parameter
+      description: This API deactivates users of the company based on the UUID provided as parameter.
       operationId: user-deactivation-api
       parameters:
         - name: uuid
@@ -31,8 +31,8 @@ paths:
             example: c5f3afba-cc28-4f56-b922-1e606807bed4
       requestBody:
         description: |-
-          Request payload containing the Active attribute. It should be false to deactivate the user
-          Note: The API only allows 'false' as value
+          Request payload containing the Active attribute. It should be false to deactivate the user.
+          Note: The API only allows 'false' as value.
         content:
           application/json:
             schema:
@@ -64,7 +64,7 @@ paths:
                   value:
                     error:
                       code: '400'
-                      message: 'Error parsing JSON. com.mendix.systemwideinterfaces.core.UserException: A problem occurred parsing attribute ''Active'' of object of type ''CompanyService.PatchUserRequest''. The value was ''fal''. This isn''t allowed by the schema.'
+                      message: 'Error parsing JSON. com.mendix.systemwideinterfaces.core.UserException: A problem occurred parsing attribute ''Active'' of the object of type ''CompanyService.PatchUserRequest''. The value was ''fal''. This isn''t allowed by the schema.'
                 invalidPayload:
                   value:
                     error:
