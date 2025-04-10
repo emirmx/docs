@@ -180,44 +180,46 @@ If you select an item in the **Action** list, Teamcenter Extension performs a va
 
 #### Settings Tab
 
-The **Settings** tab displays the Teamcenter configuration page. 
+The **Settings** tab allows you to change the **Teamcenter configuration**. 
 
-![{483447ED-1F35-42E5-B854-096430B32F9A}](https://github.com/user-attachments/assets/77faeeed-d19d-4cb5-a04b-45f2ee87f19b)
+{{< figure src="/attachments/appstore/platform-supported-content/modules/teamcenter-extension/teamcenter-configuration.png" >}}
 
-On the **Settings** tab, you need to provide your Teamcenter Instance details to connect to, while building your app and using Teamcenter Extension. 
+Click **Edit** to open a panel to change the settings.
 
-Click **Edit** to open a panel to enter details. 
+{{< figure src="/attachments/appstore/platform-supported-content/modules/teamcenter-extension/edit-configuration.png" >}}
 
-![{8C69026E-A617-467F-9DB8-502F0058769C}](https://github.com/user-attachments/assets/5a95d20a-a9b8-4635-85c0-fa658455844c)
+You can set up the following information. It will be saved when you click **Save**: 
 
-1. The TC URL is the URL to which calls will be made to Login and retrieve data. Teamcenter Extension supports both HTTP and HTTPS connections. Additionally, it supports certificates that have .crt and .pfx file extensions.
-2. The certificate path you provide should be relative to the app directory.
-3. Under Authentication you can select the method to login. The extension supports credentials-based login as well as SSO (see below).
-4. The Mendix module selects the module where all the Entities and Microflows will be created. We recommend creating a new empty module to select here.
+##### Teamcenter Instance
 
-##### Login using credentials
-Choose this option if your Teamcenter instance supports logging in using provided credentials. Provide the username and password (and group and role if required).
-Save your configuration and press Sign In.
+While building your app and using Teamcenter Extension you need to provide the details of the Teamcenter instance to connect to. To do this provide the following information under **Teamserver instance**:
 
-You'll see new popup asking you to enter your credentials. This method prevents sharing of credentials among developers through versioning.
+* **TC URL** –the URL to which calls will be made to sign in and retrieve data. Teamcenter Extension supports both HTTP and HTTPS connections.
+* **Certificate Path** – the path to certificates that have .crt and .pfx file extensions. The path should be relative to the app directory.
 
-![{26693343-F17D-4804-B6CA-8DAB93E58F60}](https://github.com/user-attachments/assets/39252ca2-3954-490b-b9f4-7314ba8f01d3)
+##### Signin Configuration
 
-##### Login using SSO
-Choose this option if your Teamcenter instance is configured to use SSO. Please work with your Teamcenter administrator to fill out these settings.
+Set **Authentication** to one of the following methods.
 
-![{B9EBC79B-CD99-4752-AE26-8742E972B599}](https://github.com/user-attachments/assets/282e4288-f1f8-4797-8b03-8d38f71fe93d)
+* **Credentials** – if your Teamcenter instance supports logging in using provided credentials. You will be prompted for your Teamcenter credentials when you save the configuration. This method prevents sharing of credentials among developers through versioning.
 
-1. SSO Login Server URL- This is the endpoint where your authentication request is sent. It acts as the main entry point for users trying to log in using SSO. This URL is typically associated with the Identity Provider (IdP) and is responsible for handling login requests and directing users through the authentication process
-2. SSO Identity Server URL - This is the URL of the Identity Server where the Teamcenter Extension application should be registered
-3. Teamcenter Application ID: This is the existing Teamcenter Application ID obtained from the Teamcenter Security Services Identity Service configuration.
-4. Mendix Application ID This is the registered ID of the Teamcenter Extension at the Identity Server.
-5. Callback Port: The port of the callback URL. See below
+* **Teamcenter SSO** – allows you to use SSO if your Teamcenter instance is configured to use it. You can get these settings from your Teamcenter administrator.
 
-Users who have utilized the Teamcenter Connector will notice that the settings in this dialog generally align with those required to log in using SSO with the Teamcenter Connector in your Mendix application. The first three settings are usually the same as those used in the Teamcenter Configuration within the Mendix application. However, the last two settings depend on the application registration with your Identity Server. We recommend having a separate registration for the Teamcenter Extension on your Identity Server, distinct from your Mendix application’s registration. Otherwise, conflicts might arise if your Mendix application is running. 
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/teamcenter-extension/teamcenter-sso.png" >}}
 
-For the registration, the callback URL should be set to http://localhost:[PortNumber]/, for example, http://localhost:12345/.
-Save your configuration and press Login to login using SSO.
+    You need to fill in the following:
+
+    * **SSO Login Server URL** – the endpoint where your authentication request is sent. It acts as the main entry point for users trying to log in using SSO. This URL is typically associated with the Identity Provider (IdP) and is responsible for handling login requests and directing users through the authentication process
+    * **SSO Identity Server URL** – the URL of the Identity Server where the Teamcenter Extension application should be registered
+    * **Teamcenter Application ID** – the existing Teamcenter Application ID obtained from the Teamcenter Security Services Identity Service configuration.
+    * **Studio Pro Application ID** – the registered ID of the Teamcenter Extension at the Identity Server.
+    * **Callback Port**: The port of the callback URL. For the registration, the callback URL should be set to http://localhost:[PortNumber]/, for example, http://localhost:12345/.
+
+    {{% alert color="info" %}}Although these settings generally align with those required to log in using SSO with the Teamcenter Connector in your Mendix application, the last two settings depend on the application registration with your Identity Server. Mendix recommends having a separate registration for the Teamcenter Extension on your Identity Server, distinct from your Mendix application’s registration. If you do not do this, conflicts might arise if your Mendix application is running.{{% /alert %}} 
+
+##### Mendix Module
+
+**Mendix module** selects the module where the Entities and Microflows will be created. We recommend that this is a module which is initially empty.
 
 ### Import Mapping {#importmapping}
 
