@@ -14,8 +14,8 @@ paths:
   '/platform-users/user-status/{uuid}':
     patch:
       tags:
-        - user-deactivation
-      summary: User Deactivation API
+        - user-deactivation-api
+      summary: Deactivate the user based on UUID provided.
       description: This API deactivates user of the company based on the UUID provided as parameter
       operationId: user-deactivation-api
       parameters:
@@ -166,8 +166,6 @@ paths:
       servers:
         - url: 'https://users-status-api.home.mendix.com/v1'
           description: ''
-tags:
-  - name: user-deactivation-api
 components:
   securitySchemes:
     PersonalAccessToken:
