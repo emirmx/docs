@@ -12,9 +12,34 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2025
 
+### April 03, 2025
+
+#### Mendix Operator v2.21.2 {#2.21.2}
+
+* We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
+* We have fixed a regression that caused the `mendix-operator` pod to enter a crash loop after running the base installation in a new namespace (Ticket 244619).
+* We have fixed an issue in the connection retry mechanism for the image builder and storage provisioners. Previously, when a retryable action failed for 63 times in a row, any following retry attempts would no longer wait for a delay. In this update, all retry attempts will wait for a variable, random delay regardless of the number of retry attempts.
+* Upgrading to Mendix Operator v2.21.2 from a previous version now restarts environments managed by that version of the Operator. Environments with two or more replicas and a **PreferRolling** update strategy are restarted without downtime.
+
+#### License Manager CLI v0.10.2
+
+* We have updated this component to use the latest dependency versions in order to improve security score ratings for container images.
+
+### March 20, 2025
+
+#### Portal Improvements
+
+* We have added an option which allows a Technical Contact to set the [environment purpose](/developerportal/deploy/private-cloud-deploy/#environment-purpose). Setting the purpose of your environment does not affect its operational state. We strongly recommend setting this field, as future features may be tailored to specific environment purposes.
+* We have renamed **Development mode** to **Development DTAP mode** in the UI.
+
+#### Deploy API
+
+* We have fixed an issue where users with the Technical Contact role could not create or manage environments through API.
+* We have fixed an issue where it was not possible to retrieve the environments with the *Get multiple environment manifest* API if the environment internal ID was longer than 8 characters.
+
 ### March 10, 2025
 
-#### License Manage CLI v0.10.1
+#### License Manager CLI v0.10.1 {#license-manage-cli-v0101}
 
 * We have updated this component to use the latest dependency versions in order to improve security score ratings for container images. This update will allow us to address CVE-2024-45337 and CVE-2024-45338.
 
@@ -23,7 +48,36 @@ For information on the current status of deployment to Mendix for Private Cloud 
 * We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
 * For new installations, the Operator now uses ubi9 as the base image for Mendix apps. Existing installations will keep their configuration and stay on ubi8. For more information on base image versions, see the [Runtime Base Image](/developerportal/deploy/private-cloud-cluster/#runtime-base-image) section.
 * We have fixed a regression that caused the `model/resources` directory to appear empty and caused problems with some Marketplace modules, such as SAML (Ticket 242648).
-* Upgrading to Mendix Operator v2.21.0 from a previous version now restarts environments managed by that version of the Operator. Environments with 2 or more replicas and a **PreferRolling** update strategy are restarted without downtime.
+* Upgrading to Mendix Operator v2.21.1 from a previous version now restarts environments managed by that version of the Operator. Environments with 2 or more replicas and a **PreferRolling** update strategy are restarted without downtime.
+
+##### Known Issue
+
+After completing the base installation, the Operator pod may enter a crash loop, reporting a missing endpoint.
+
+For the Standard Operator, you can safely ignore this message. Simply configure the namespace with the required ingress type, and restart the Operator pod.
+
+For the Global Operator, follow these steps to resolve the issue:
+
+1. Edit the operator configuration using the following command: 
+
+    ```shell
+    kubectl -n {namespace} edit operatorconfiguration mendix-operator-configuration
+    ```
+
+2. Modify the endpoint section by setting type: service as shown below, then restart the operator pod:
+
+    ```yaml
+    apiVersion: privatecloud.mendix.com/v1alpha1
+    kind: OperatorConfiguration
+    # ...
+    # omitted lines for brevity
+    # ...
+    spec:
+      endpoint:
+        type: service
+    ```  
+
+This issue is addressed in Mendix Operator version 2.21.2.
 
 ### March 6, 2025
 

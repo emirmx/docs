@@ -16,6 +16,8 @@ This document guides you on building a smart app from scratch using a blank GenA
 
 Before starting this guide, make sure you have completed the following prerequisites:
 
+* Be on **Mendix Studio Pro 10.12.4 or higher**
+
 * Intermediate knowledge of the Mendix platform: Familiarity with Mendix Studio Pro, microflows, and modules is required.
 
 * Basic understanding of GenAI concepts: Review the [Enrich Your Mendix App with GenAI Capabilities](/appstore/modules/genai/) page to gain foundational knowledge and become familiar with the key [concepts](/appstore/modules/genai/get-started/).
@@ -40,24 +42,20 @@ To start building your smart app with a blank GenAI App template, download the [
 
 ### Important Modules
 
-The [Blank GenAI App Template](https://marketplace.mendix.com/link/component/227934) includes an essential pre-installed bundle called [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931), which is beneficial to familiarize yourself with the GenAI functionalities Mendix can offer, as it includes:
+The [Blank GenAI App Template](https://marketplace.mendix.com/link/component/227934) has the essential GenAI modules pre-installed, which is beneficial to familiarize yourself with the GenAI functionalities Mendix can offer, as it includes:
 
 * The [GenAI Commons](/appstore/modules/genai/commons/) module: provides pre-built operations and data structures for seamless integration with platform-supported GenAI connectors, such as the Mendix Cloud GenAI, OpenAI, or Amazon Bedrock.
 
 * The [Conversational UI](/appstore/modules/genai/conversational-ui/) module: offers UI elements for chat interfaces and usage data monitoring.
 
-* The [Mendix Cloud GenAI Resources Packs](/appstore/modules/genai/MxGenAI/) connector: supports the usage of LLMs in your applications.
+* The [Mendix Cloud GenAI Resources Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/) connector: supports the usage of LLMs in your applications.
 
 ### Choosing the Infrastructure
 
 Selecting the infrastructure for integrating GenAI into your Mendix application is the first step. Depending on your use case and preferences, you can choose from the following options:
 
-* [Mendix Cloud GenAI Resources Packs](/appstore/modules/genai/MxGenAI/): Part of [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931), integrates LLMs by dragging and dropping common operations from its toolbox in Studio Pro.
+* [Mendix Cloud GenAI Resources Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/): The [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449) integrates LLMs by dragging and dropping common operations from its toolbox in Studio Pro.
 * [OpenAI](/appstore/modules/genai/openai/): The [OpenAI Connector](https://marketplace.mendix.com/link/component/220472) supports both OpenAI’s platform and Azure’s OpenAI service.
-
-{{% alert color="info" %}}
-To start, you can sign up for a free trial with OpenAI and receive credits valid for three months from the account creation date. For more details, see [OpenAI API reference](https://platform.openai.com/docs/api-reference/authentication).
-{{% /alert %}}
 
 * [Amazon Bedrock](/appstore/modules/genai/bedrock/): The [Amazon Bedrock Connector](https://marketplace.mendix.com/link/component/215042) allows you to leverage Amazon Bedrock’s fully managed service to integrate foundation models from Amazon and leading AI providers. 
 
@@ -113,7 +111,7 @@ Follow these steps to configure the Mendix Cloud GenAI Resources Packs for your 
 
 2. Configure the Mendix Cloud GenAI Settings:
    * In the chatbot-like application interface, go to **Administration** icon, and find the **Mendix Cloud GenAI Configuration**.
-   * Select **Import key** and paste the key from the Mendix Portal given to you.
+   * Select **Import key** and paste the key from the Mendix Portal given to you. For more information about this step, follow the [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/) instructions.
 
 3. Test the Configuration:
    * Find the configuration you created, and select **Test Key** on the right side of the row.

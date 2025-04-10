@@ -110,6 +110,8 @@ To run a Mendix app, Mendix Studio Pro uses the following ports by default. If y
 
 For more information on ports and modifying Studio Pro's default ports, see [Configurations](/refguide/configuration/) and the [Troubleshooting Common Mobile Issues](/refguide/mobile/getting-started-with-mobile/prerequisites/#troubleshooting) section of *Native App Prerequisites and Troubleshooting*.
 
+For information on how to ensure the smooth operation of Mendix AI Assistance (Maia), see the [Network Configuration Requirements](/refguide/mendix-ai-assistance/#maia-network-requirement) section in *Mendix AI Assistance (Maia)*.
+
 ### File Comparison
 
 {{% alert color="info" %}}
@@ -224,10 +226,13 @@ The Mendix Docker buildpack supports the following Kubernetes versions:
 
 ### Java {#java}
 
-When running Mendix on a server, you will need Java Runtime Environment (JRE) 11, 17, or 21. To download an Eclipse Temurin OpenJDK distribution from Adoptium, see [Eclipse Temurin™ Latest Releases](https://adoptium.net/temurin/releases). To download a commercial Oracle distribution, see [Java SE Downloads](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
+When running Mendix on a server, you need Java Runtime Environment (JRE). To download an Eclipse Temurin OpenJDK distribution from Adoptium, see [Eclipse Temurin™ Latest Releases](https://adoptium.net/temurin/releases). To download a commercial Oracle distribution, see [Java SE Downloads](https://www.oracle.com/technetwork/java/javase/downloads/index.html). The following list explains which version to use:
+
+* Mendix 9.24 LTS: Java 11, optionally use Java 21 in 9.24.23 and later
+* (Future) Mendix 10.24 LTS: Java 21
 
 {{% alert color="warning" %}}
-Compatibility with JDK 17 has been released with Studio Pro version 10.8. Java 21 is compatible with Studio Pro 9.24 LTS from 9.24.3, Studio Pro 10.6 MTS from 10.6.9, and Studio Pro 10.11 and above. Mendix recommends switching to a Studio Pro version compatible with Java 21.
+Studio Pro 10.21 and above (including the future 10.24 LTS) does not support Java 11. Upgrade your application to Java 21 before migrating.
 {{% /alert %}}
 
 ## Databases {#databases}
@@ -247,7 +252,7 @@ Current support:
 {{% alert color="warning" %}}
 Each app must have its own database. Mendix apps cannot share data by sharing the same database.
 
-If you want two apps to share the same database, then you need to share the data from one app to the other using APIs. In Mendix, these are supported by [Data Hub](/data-hub/share-data/) or the REST and OData services described in the [Integration](/refguide/integration/) section of the *Studio Pro Guide*. This is referred to as a microservices architecture.
+If you want two apps to share the same database, then you need to share the data from one app to the other using APIs. In Mendix, these are supported by the [Catalog](/refguide/share-data/) or the REST and OData services described in the [Integration](/refguide/integration/) section of the *Studio Pro Guide*. This is referred to as a microservices architecture.
 
 For more information on why data cannot be shared between apps see [Data Storage](/refguide/data-storage/#databases). Use the [Database Replication](/appstore/modules/database-replication/) module if you need to copy the data from one app to another.
 {{% /alert %}}
@@ -320,7 +325,7 @@ MxBuild is a Windows and Linux command-line tool that can be used to build a Men
     | --- | --- |
     | .NET 6 | .NET 8 |
 
-* JDK 11
+* The appropriate JDK, 11, 17, or 21, see [Java](#java), above for more information.
 
 ## mx Command-Line Tool {#mxtool}
 

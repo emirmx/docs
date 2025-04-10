@@ -22,15 +22,15 @@ Available scenarios are described in sections below.
 
 This scenario allows you to move a fix from a maintenance branch line to the main line. If you just want to redo a small fix, a single commit is often enough.
 
-Port fix transports the actual commit from one branch and directly applies it, including author and commit text to another branch. This means you do not need to explicitly commit your change.
+Port fix adds changes from the selected commit to your branch line. You will need to explicitly commit these changes after performing the port fix.
 
 ### Branch Line
 
 Choose the branch line from which you want to merge the fix.
 
-### One Revision/Multiple Revisions
+### Revision
 
-Choose whether you want to merge just a single commit or a whole range of commits from the maintenance branch line. In the latter case both the start and end revisions must be selected. The start revision is the revision with the lowest number and the end revision is the revision with the highest number. Note that all revisions that are contained within the specified range are merged.
+Choose a revision that you would like to port fix.
 
 ## Merge Feature Branch
 

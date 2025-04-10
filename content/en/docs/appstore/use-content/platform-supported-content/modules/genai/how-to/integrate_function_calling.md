@@ -23,7 +23,9 @@ Before integrating function calling into your app, make sure you meet the follow
 
 * An existing app: To simplify your first use case, start building from a preconfigured set up [Blank GenAI Starter App](https://marketplace.mendix.com/link/component/227934). For more information, see [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/how-to/blank-app/). 
 
-* Installation: Install the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle from the Mendix marketplace. If you start with the Blank GenAI App, skip this installation.
+* Be on Mendix Studio Pro 10.12.4 or higher.
+
+* Install the [Mendix GenAI Connector](https://marketplace.mendix.com/link/component/239449) and [GenAICommons](https://marketplace.mendix.com/link/component/239448) modules (version 2.2.0 and above) from the Mendix Marketplace. If you start with the Blank GenAI App, you can skip this installation.
 
 * Intermediate knowledge of the Mendix platform: Familiarity with Mendix Studio Pro, microflows, and modules.
 
@@ -44,7 +46,7 @@ In this example, two functions will be implemented with the following purposes:
 
 Selecting the infrastructure for integrating GenAI into your Mendix application is the first step. Depending on your use case and preferences, you can choose from the following options:
 
-* [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/MxGenAI/): The Mendix Cloud GenAI Connector is part of the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle on the marketplace, allowing you to utilize Mendix Cloud GenAI Resource Packs directly within your Mendix application.
+* [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/): The [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449) allows you to utilize Mendix Cloud GenAI Resource Packs directly within your Mendix application.
 
 * [OpenAI](/appstore/modules/genai/openai/): The [OpenAI Connector](https://marketplace.mendix.com/link/component/220472) supports both OpenAI’s platform and Azure’s OpenAI service.
 
@@ -62,7 +64,9 @@ To make the functions work, create and adjust certain microflows as shown below.
 
 1. Locate the pre-built microflow `ChatContext_ChatWithHistory_ActionMicroflow` in the **ConversationalUI** > **USE_ME** > **Conversational UI** > **Action microflow examples** folder and copy it into your `MyFirstBot` module.
 
-2. Locate the `New Chat` action in the `ACT_FullScreenChat_Open` microflow. Inside this action, change the `Action microflow` input parameter to your new `MyFirstBot.ChatContext_ChatWithHistory_ActionMicroflow` from your `MyFirstBot` module.
+2. Locate the pre-built microflow `ACT_FullScreenChat_Open` in **ConversationalUI > USE_ME > Pages**. Right-click on the microflow and select **Include in project**.
+
+3. Locate the `New Chat` action in the `ACT_FullScreenChat_Open` microflow. Inside this action, change the `Action microflow` input parameter to your new `MyFirstBot.ChatContext_ChatWithHistory_ActionMicroflow` from your `MyFirstBot` module.
 
 To call a function, create a microflow per function to extract the necessary information.
 

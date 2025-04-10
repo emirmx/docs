@@ -121,3 +121,7 @@ After you have created a table with some entries, you can now be query from your
     {{< figure src="/attachments/appstore/platform-supported-content/modules/databricks/JA_Query.png" >}}
 
 7. Link the microflow to a microflow button and use the Debugger to test if the objects are properly returned.
+
+## Read More
+
+* [External Database Connector: Resolving Apache Arrow dependency issue in Databricks](/appstore/modules/external-database-connector/#apache-arrow-databricks)
