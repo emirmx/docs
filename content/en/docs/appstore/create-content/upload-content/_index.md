@@ -217,8 +217,8 @@ To update content that has already been published, follow these steps:
 3. You can edit all component details, as described in the [Adding New Marketplace Content](#adding) section above.
 4. In the **Version** section of the **Package** page, update the **Major**, **Minor**, and **Patch** numbers so that the component is saved as a new version:
 
-    * **Major update** – a change that break compatibility with earlier versions.
-    * **Minor update** – a new features that do not break existing usage.
-    * **Patch** – a small change that fix bugs or security issues.
+    * **Major update** – changes that break compatibility with earlier versions.
+    * **Minor update** – new features that do not break existing usage.
+    * **Patch** – a small change that fixes bugs or security issues.
 
 5. On the **Publish** page, you can review all the details of your component you entered so far and edit as necessary (via the **Edit Section** button) before clicking **Publish Content**.
