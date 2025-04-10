@@ -76,3 +76,4 @@ The following steps lead to deactivate the user based on UUID provided as in {UU
 
 ## API Reference
 
+{{< swaggerui src="/openapi-spec/user-deactivation-api.yaml" >}}
