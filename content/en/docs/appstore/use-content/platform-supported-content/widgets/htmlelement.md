@@ -43,14 +43,14 @@ To configure this widget, follow these steps:
 
 #### HTML Element Section
 
-* **Tag name** – sets the type of the element (such as div, span, or img). If you would like to add a custom name for the element, select **Use custom name** in the drop-down menu.
+* **Tag name** – Sets the type of the element (such as div, span, or img). If you would like to add a custom name for the element, select **Use custom name** in the drop-down menu.
 * **Repeat element**
-    * **Yes** – if selected, repeats the element for each item in the data source assigned.
-    * **No** (default) – if selected, the element is rendered once. 
+    * **Yes** – If selected, repeats the element for each item in the data source assigned.
+    * **No** (default) – If selected, the element is rendered once. 
 * **Content**
-    * **Container for widgets** (default) – if selected, the widget acts as a container for other widgets.
-    * **HTML** – if selected, uses custom HTML markup as defined in the HTML settings. 
-* **HTML** (Visible if **Content** option is set to **HTML**) – can be either an expression or a text template. This defines custom HTML markup for the widget, therefore the value should be valid HTML as it will be inserted as HTML element content.
+    * **Container for widgets** (default) – If selected, the widget acts as a container for other widgets.
+    * **HTML** – If selected, uses custom HTML markup as defined in the HTML settings. 
+* **HTML** (Visible if **Content** option is set to **HTML**) – Can be either an expression or a text template. This defines custom HTML markup for the widget, therefore the value should be valid HTML as it will be inserted as HTML element content.
 
 #### HTML Attributes Section
 
@@ -61,11 +61,11 @@ To configure this widget, follow these steps:
 Sets the events for the created HTML element.
 
 * **Event**
-    * **Name** - sets the event type that will be applied to the HTML element. The choices are based on standard browser events.
-    * **Action** - sets the  [Event Actions](/refguide/on-click-event/#actions) for the selected event type.
+    * **Name** - Sets the event type that will be applied to the HTML element. The choices are based on standard browser events.
+    * **Action** - Sets the  [Event Actions](/refguide/on-click-event/#actions) for the selected event type.
 * **Advanced**
-    * **Stop propagation** - if yes, the event will be prevented from being called further up in the DOM tree. see [Event: stopPropagation()](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation).
-    * **Prevent default** - if yes, it will cancel the default events. see [Event: preventDefault()](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault)
+    * **Stop propagation** - If yes, the event will be prevented from being called further up in the DOM tree. see [Event: stopPropagation()](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation).
+    * **Prevent default** - If yes, it will cancel the default events. see [Event: preventDefault()](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault)
 
 ### Common Tab
 
