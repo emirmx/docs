@@ -481,6 +481,6 @@ This table allows you to select a default color for each microflow activity type
 
 ### Automatically Encode Parameter Values in Send REST Request Microflow Activities
 
-For Studio Pro 10.21 and above, you can choose to disable the encoding of the URL parameters for the Send REST Request microflow activity. This allows parameter values to be used as provided.
+For Studio Pro 10.21 and above, you can disable the encoding of the URL parameters for the Send REST Request microflow activity. This allows parameter values to be used as provided.
 
-tWhen enabled, the behavior will be inconsistent with the Consumed REST service.
+When enabled, the behavior will be inconsistent with the Consumed REST service.
