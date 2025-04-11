@@ -5,12 +5,12 @@ weight: 9
 description: "Native Template 7 release notes."
 ---
 
-## 7.0.25 {#724}
+## 7.0.25 {#725}
 
 **Release date: January 30, 2025**
 
-* We have upgraded Node.js version to v20.
-* [Android] We have replaced the MaxPermSize JVM parameter with MaxMetaspaceSize, as MaxPermSize is no longer available since Java 8.
+* We upgraded Node.js version to v20.
+* We replaced the MaxPermSize JVM parameter with MaxMetaspaceSize on Android, as MaxPermSize is not available since Java 8.
 
 ## 7.0.24 {#724}
 
