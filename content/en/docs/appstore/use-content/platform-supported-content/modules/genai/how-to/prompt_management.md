@@ -110,61 +110,69 @@ You have now successfully created your first prompt. A few additional configurat
 
 ## Create User Interface {#context-entity}
 
-In order to connect a prompt with the rest of your application, it is helpful to create an entity which contains attributes to use user's input to fill the prompt variables. In this section you will both create the entity and user interface. The final page will look like this:
+To connect a prompt with the rest of your application, it is helpful to create an entity that contains attributes for capturing user input, which will then be used to fill the prompt variables.
+
+In this section, you will create both the entity and the user interface. The final page will look like this:
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-prompt-management/prompt_user_interface.png" >}}
 
-1. In Studio Pro, go to your module's domain model (for new apps *MyFirstModule*). Create an entity with the name `Product`.
+1. In Studio Pro, go to your module's domain model (for new apps, **MyFirstModule**). Create an entity with the name `Product`.
 
 2. Add the following attributes:
-    * **ProductName** as *String*
-    * **NumberOfWords** as *Integer*
-    * **Language** as *String*
-    * **ProductDescription** as *String* and set length to unlimited
+    * `ProductName` as *String*
+    * `NumberOfWords` as *Integer*
+    * `Language` as *String*
+    * `ProductDescription` as *String* and set length to `unlimited`
 
-3. Change the **Access rules** of the entity to grant *read-write* access for *ProductName*, *NumberOfWords* and *ProductDescription* to your **User** and **Administrator** role. Give the roles permission for `Allow creating new objects`. Save the entity.
+3. Change the **Access rules** of the entity to grant read-write access for `ProductName`, `NumberOfWords` and `ProductDescription` to your **User** and **Administrator** role. Give the roles permission for `Allow creating new objects`. Save the entity.
 
-4. Create a blank responsive web page called **Product_NewEdit** with `Atlas_Default` as layout.
+4. Create a blank responsive web page called **Product_NewEdit**, and set the layout to **Atlas_Default**.
 
-5. Add a dataview to the page. Set the *Form orientation* to `Vertical`. Select your newly created entity `Product` as data source *Context*. Click **OK**. Let Studio Pro automatically fill the content of the data view.
+5. Add a data view to the page. Set the **Form orientation** to `Vertical`. Select your newly created entity `Product` as data source **Context**. Click **OK**. Let Studio Pro automatically fill the content of the data view.
 
-6. Remove the `Language` input box, because this will not be filled by users.
+6. Remove the `Language` input field, as this will not be provided by users.
 
-7. Grant access rights to the page for both roles by changing `Visible for` in the *navigation* category of the page's properties.
+7. Grant access to the page for both the **User** and **Administrator** roles by updating the Visible for property in the **Navigation** category of the page properties.
 
 8. Add a button `Generate product description`, which will later execute the prompt. Place the button right before the `Product Description` input field.
 
-9. Go to your app's navigation. Add a new item called `Add product` which should *On click* `Create object` of entity `Product` and open the `Product_NewEdit` page.  For icon you may choose `add` from the *Atlas* category. Alternatively, you can add a button to a page and connect to the same page via the create object event. 
+9. Open your app’s navigation and add a new menu item called **Add product**. 
+
+    * Set the **On click** action to **Create object** of the `Product` entity.
+    * Then, open the `Product_NewEdit` page.
+    * For the icon, you can use `add` from the Atlas icon category.
+
+Alternatively, you can add a button to a page and connect to the same page via the **Create object** event. 
 
 Now a user can create a new product in the UI, but the process was not yet enhanced with any AI.
 
-## Connect your Prompt with your App {#connect-prompt-with-app}
+## Connect Your Prompt with Your App {#connect-prompt-with-app}
 
-In this section, the prompt that was already created needs to be connected with our user interface to let an LLM create the product description for us.
+In this section, you can connect the prompt that was already created with your user interface to let an LLM create the product description.
 
-### Finalize Your Prompt {#finalize-prompt}
+### Finalize Your Prompt
 
 You first need to configure some additional settings for the prompt before it can be used in your app.
 
-1. Run the app. Navigate to your prompt.
+1. Run the app and navigate to your prompt.
 
-2. Click the **Prompt Context Settings** icon ({{% icon name="microflow-disconnected"%}}) left to the *Run* button. A pop-up is opened where you can select the context entity. Search for **Product** and select the entity that was created in the previous section. When starting from the Blank GenAI App, this should be **MyFirstModule.Product**. Click **Save**.
+2. Click the **Prompt Context Settings** icon ({{% icon name="microflow-disconnected"%}}). A pop-up will open where you can select the context entity. Search for **Product** and select the entity that was created in the previous section. When starting from the Blank GenAI App, this should be **MyFirstModule.Product**. Click **Save**.
 
-3. Notice that the *Prompt Context Settings* icon changed (from {{% icon name="microflow-disconnected" %}} to {{% icon name="microflow-connected" %}}) to indicate that the context entity was selected correctly. In the background it was checked if all variables can be found in the attributes of the selected entity. If the variables were spelled differently than the attribute names, you should see a warning sign in the icon and a helpful text when you click on it. Below the three variables an info text appears indicating that you have not used all attributes as variables. This is nothing to worry about, just a helpful hint in the case that you missed a variable. In our example, the `ProductDescription` attribute is a placeholder for the model's response and thus not part of the user or system prompt.
+3. Notice that the **Prompt Context Settings** icon has changed from {{% icon name="microflow-disconnected" %}} to {{% icon name="microflow-connected" %}} indicating that the context entity has been correctly selected. In the background, the system checks whether all prompt variables can be matched to attributes in the selected entity. If any variable names do not match the attribute names exactly, a warning icon will appear, and clicking it will display a helpful message. Below the list of variables, you may see an informational message indicating that not all attributes are being used as variables. This is simply a helpful reminder in case you unintentionally missed a variable. In this example, the `ProductDescription` attribute is a placeholder for the model's response and thus not part of the user or system prompt.
 
 4. Navigate back to the Prompt Overview (via the breadcrumb `Overview`).
 
-5. Hover over the *Ellipsis* ({{% icon name="three-dots-menu-horizontal-small" %}}) icon in the row of your prompt and click the **Select Prompt in use** button. On this page, you need to select a version that you want to set to `In Use` which means it is selected for production and later selected in your microflow logic. Select the latest version `Added system prompt and language` and click **Select**.
+5. Hover over the *Ellipsis* ({{% icon name="three-dots-menu-horizontal-small" %}}) icon in the row of your prompt and click **Select Prompt in use**. On this page, select a version that you want to set to `In Use` which means it is selected for production and later selected in your microflow logic. Select the latest version `Added system prompt and language` and click **Select**.
 
 ### Enable Generation Microflow {#generation-microflow}
 
-Now you will create the microflow that is called when a user hits the button. This microflow execute a call to the LLM and sets the *ProductDescription* attribute's value to the model's response. The microflow can also be found in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) in **ExampleMicroflows** > **Programmatic Prompt** > **ACT_Product_GenerateProductDescription** and will look like this:
+Now you will create the microflow that is called when a user hits the button. This microflow execute a call to the LLM and sets the `ProductDescription` attribute value to the model's response. The microflow can also be found in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) in **ExampleMicroflows** > **Programmatic Prompt** > **ACT_Product_GenerateProductDescription** and will look like this:
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-prompt-management/prompt_microflow.png" >}}
 
-1. In Studio Pro, go to the `Product_NewEdit` page. Open the button and change the *On click* event to `Call a microflow`. Click *New* to create a new microflow called `ACT_Product_GenerateProductDescription`. Click **Ok** to close the button's propteries.
+1. In Studio Pro, go to the `Product_NewEdit` page. Open the button and change the **On click** event to `Call a microflow`. Click **New** to create a new microflow called `ACT_Product_GenerateProductDescription`. Click **Ok** to close the button properties.
 
-2. Open the newly created microflow. First you need to grant the module roles access. Change the `Allowed roles` selection under the *Security* category and add both roles.
+2. Open the newly created microflow. First, grant the module roles access. Change the `Allowed roles` selection under the **Security** category and add both roles.
 
 3. As a first action in the microflow, add a `Change object` action to change the **Language** attribute:
     * Object: `Product` (input parameter)
@@ -202,25 +210,24 @@ Now you will create the microflow that is called when a user hits the button. Th
     * Member: `ProductDescription`
     * Value: `$Response/ResponseText` (expression)
 
-
-You now successfully implemented prompt management and connected it to an example use case, so that users can now let the model generate a product description based on two input fields and the prompt that was previously created. When you run the app once more, you can test the use case yourself!
+You habe now successfully implemented prompt management and connected it to a sample use case. Users can now generate a product description using the model, based on two input fields and the prompt you previously created. Run the app again and you can test the use case by yourself!
 
 ## Troubleshooting {#troubleshooting}
 
 {{% alert color="info" %}}
-If you seek more technical details, you can learn more on the [Prompt Management](/appstore/modules/genai/genai-for-mx/prompt-management/) documentation page. Furthermore, there is a more advanced prompt management example in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) called *Generate Product Description (Prompt Management)* which you can easily follow after completing this how-to.
+If you seek more technical details, you can learn more on the [Prompt Management](/appstore/modules/genai/genai-for-mx/prompt-management/) documentation page. Furthermore, there is a more advanced prompt management example in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) called *Generate Product Description (Prompt Management)*.
 {{% /alert %}}
 
-### Model selection is empty {#empty-model-selection}
+### Model Selection Is Empty {#empty-model-selection}
 
 When you want to run your prompt from the prompt management page, you need to select a model. If the list is empty, you likely have not configured a model yet using one of the platform-supported (or other GenAICommons compatible) connectors. Also make sure that the model support `SystemPrompt` as well as `Text` as output modality.
 
-### Context Entity issues {#context-entity-issues}
+### Context Entity Issues {#context-entity-issues}
 
-When you are to select the `Context entity` in the UI but cannot find the one you're are seeking, you might need to restart your application after the entity was added to your domain model.
+When you select the `Context entity` in the UI but cannot find the one you are are seeking, you might need to restart your application after the entity was added to your domain model.
 
-If the attributes do not match the variables, for example you noticed a warning in the UI or Console of your running app, you might have used inconsistent names for the `{{variables}}` inside of your prompts compared to the attribute names. Double check if they are exactly the same (no whitespace or other characters).
+If the attributes do not match the variables, for example, you noticed a warning in the UI or Console of your running app, you might have used inconsistent names for the `{{variables}}` inside of your prompts compared to the attribute names. Double check if they are exactly the same (no whitespace or other characters).
 
-### "Owner" of Prompt is empty {#owner-is-empty}
+### “Owner” of Prompt Is Empty {#owner-is-empty}
 
-If the `Owner` field on the `Prompt_Overview` page is empty, you are likely logged in as `MxAdmin` which doesn't have a name linked to it. For other users, the *Owner* field should be populated. This should not change the behavior of this how-to.
+If the `Owner` field on the `Prompt_Overview` page is empty, you are likely logged in as `MxAdmin` which does not have a name linked to it. For other users, the `Owner` field should be populated. This should not change the behavior of this document.
