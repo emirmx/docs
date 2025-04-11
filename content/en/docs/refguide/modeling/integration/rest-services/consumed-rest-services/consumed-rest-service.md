@@ -165,8 +165,6 @@ You can add a header for any HTTP request you have specified in your document. T
 
 2. In the **Key** field, click the drop-down and choose from the list of the most commonly used HTTP headers. You can also create a custom header by typing directly in the key field and adding a value in the **Value** field.
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/accept-header.png" class="no-border"  width="500" >}}
-
 3. Click **OK**. To test the header, click **Send**.
 
 You can also add a parameter as the test value of a header, as seen below. For example, you can define an Authorization header where the authentication token is dynamic.
