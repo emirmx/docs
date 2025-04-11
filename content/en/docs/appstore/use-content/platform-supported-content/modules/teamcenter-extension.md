@@ -62,47 +62,45 @@ To see Teamcenter Extension in action, download and play with the [Teamcenter Ex
 
 Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import Teamcenter Extension into your app.
 
-## Usage
+## Actions
 
-### Actions
-
-#### Search Item Revisions {#getitemrevision}
+### Search Item Revisions {#getitemrevision}
 
 The `Search Item Revisions` action allows you to generate the domain model and microflow to search for and retrieve `ItemRevisions` or its specialization. The resulting microflow implements the saved query `Item Revision...` from Teamcenter.
 
-#### Create Item With Item Revision {#createitem-and-itemrevision}
+### Create Item With Item Revision {#createitem-and-itemrevision}
 
 The `Create Item and Item Revision` action allows you to configure and generate the domain model and microflow to create an Item with `ItemRevision` or its specializations in Teamcenter. The resulting microflow implements the `Create Object and Update Properties` actions from the Teamcenter Connector. With the `Create Object` action, the `Item` and `ItemRevision` get created in Teamcenter, setting the Teamcenter properties that need to be set upon creation. With the `Update Properties` action, the remaining properties are updated in Teamcenter.
 
-#### Update Item With Item Revision {#updateitem-and-itemrevision}
+### Update Item With Item Revision {#updateitem-and-itemrevision}
 
 The `Update Item and Item Revision` action allows you to generate the domain model and microflow to update an `Item` with `ItemRevision` or their specializations in Teamcenter. The resulting microflows implements the `Update Properties` action from the Teamcenter Connector. 
 
-#### Revise Item Revision {#reviseitem-and-itemrevision}
+### Revise Item Revision {#reviseitem-and-itemrevision}
 
 The `Revise Item and Item Revision` allows you to generate the domain model and microflow to revise an `ItemRevision` or its specializations in Teamcenter. The resulting microflow implements the `Revise Object and Update Properties` actions from the Teamcenter Connector. With the `Revise Object` action, a new `ItemRevision` is created, setting the Teamcenter properties that need to be set upon revising. With the `Update Properties` action, the remaining properties are updated in Teamcenter.
 
-#### Search Datasets {#getdatasets}
+### Search Datasets {#getdatasets}
 
 The `Search Datasets` allows you to generate the domain model and microflow to search for and retrieve `Datasets` or its specialization. The resulting microflow implements the saved query `Datasets` from Teamcenter.
 
-#### Get Datasets for Item Revision {#getdatasetsfromitemrevision}
+### Get Datasets for Item Revision {#getdatasetsfromitemrevision}
 
 The `Get Datasets from Item Revision` action allows you to generate the domain model and microflow to retrieve datasets for an Item Revision and subsequently download files inside the dataset.
 
-#### Attach Datasets to Item Revision {#attachdatasetstoitemrevision}
+### Attach Datasets to Item Revision {#attachdatasetstoitemrevision}
 
 The 'Attach Datasets to Item Revision' action allows you to generate a domain model and microflow which creates and attaches a Teamcenter dataset (or its specializations) with a file document to an Item Revision in Teamcenter. The resulting microflow implements the `Upload file`, `Create relation`, and `Get properties` actions from the `TcConnector` module.
 
-#### Search Workspace Objects {#getworkspaceobjects}
+### Search Workspace Objects {#getworkspaceobjects}
 
 The `Search Workspace Objects` action allows you to configure and generate the domain model and microflow to search for and retrieve Workspace Objects or their specialization from Teamcenter. This action implements the saved query `General..` from Teamcenter.
 
-#### Relate Workspace Objects {#relateworkspaceobjects}
+### Relate Workspace Objects {#relateworkspaceobjects}
 
 The 'Relate Workspace Objects' action allows you to generate the domain model and microflow to relate two workspace objects or their specialization from Teamcenter. The resulting microflow implements the `Create relation` action from the `TcConnector` module.
 
-#### Get Structure {#getstructures}
+### Get Structure {#getstructures}
 
 The `Get Structure` action allows you to generate the domain model and microflows to configure a BOM window and retrieve structure data from Teamcenter. This feature supports the retrieval of structures with the following:
 
@@ -133,7 +131,7 @@ This feature is designed specifically for generating microflows and domain model
 | Author BOMs                                              | Use Active Workspace           |
 | Create BOM configurations                                | Use Active Workspace           |
 
-### Landing Page {#homepage}
+## Landing Page {#homepage}
 
 To open Teamcenter Extension in Studio Pro, go to **Extensions** > **Teamcenter Extension** > **Teamcenter Extension**. If you use Studio Pro versions 10.7 or lower, Teamcenter Extension is available under **View** > **Teamcenter Extension**.
 
@@ -143,13 +141,13 @@ For details on the version dependencies between Studio Pro and Teamcenter Extens
 
 The landing page has with three tabs: **Menu**, **History**, and **Settings**.
 
-#### Menu Tab
+### Menu Tab
 
 The **Menu** tab displays use cases or actions you can create artifacts for using Teamcenter Extension.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/teamcenter-extension/menu-tab.png" >}}
 
-#### History Tab
+### History Tab
 
 The **History** tab displays the history of all actions (also referred as integrations) carried out in Teamcenter Extension.
 
@@ -178,13 +176,22 @@ However, you can make the following adjustments outside Teamcenter Extension:
 
 If you select an item in the **Action** list, Teamcenter Extension performs a validation check to see if the Teamcenter objects, entities, and microflows still exist and are valid. The results are reported in the **Validation** section.
 
-#### Settings Tab
+### Settings Tab
 
 The **Settings** tab allows you to change the **Teamcenter configuration**. 
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/teamcenter-extension/teamcenter-configuration.png" >}}
 
-Click **Edit** to open a panel to change the settings.
+The tab indicates whether you currently have an active Teamcenter session, or whether the session is inactive.
+
+There are two buttons:
+
+* **Edit** – allows you to change the settings
+* **Sign in** – signs you in to Teamcenter if **Authentication** is set to *Credentials* (see [Signin Configuration](#signin-configuration), below)
+
+#### Editing Settings
+
+Click **Edit** to change the settings.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/teamcenter-extension/edit-configuration.png" >}}
 
@@ -192,16 +199,16 @@ You can set up the following information. It will be saved when you click **Save
 
 ##### Teamcenter Instance
 
-While building your app and using Teamcenter Extension you need to provide the details of the Teamcenter instance to connect to. To do this provide the following information under **Teamserver instance**:
+While building your app and using Teamcenter Extension you need to provide the details of the Teamcenter instance to connect to. To do this provide the following information under **Teamcenter instance**:
 
 * **TC URL** –the URL to which calls will be made to sign in and retrieve data. Teamcenter Extension supports both HTTP and HTTPS connections.
 * **Certificate Path** – the path to certificates that have .crt and .pfx file extensions. The path should be relative to the app directory.
 
-##### Signin Configuration
+##### Signin Configuration {#signin-configuration}
 
 Set **Authentication** to one of the following methods.
 
-* **Credentials** – if your Teamcenter instance supports logging in using provided credentials. You will be prompted for your Teamcenter credentials when you save the configuration. This method prevents sharing of credentials among developers through versioning.
+* **Credentials** – if your Teamcenter instance supports logging in using provided credentials. You will be prompted for your Teamcenter credentials when you click the **Sign in** button in the **Settings** tab. This method prevents sharing of credentials among developers through versioning.
 
 * **Teamcenter SSO** – allows you to use SSO if your Teamcenter instance is configured to use it. You can get these settings from your Teamcenter administrator.
 
@@ -221,7 +228,7 @@ Set **Authentication** to one of the following methods.
 
 **Mendix module** selects the module where the Entities and Microflows will be created. We recommend that this is a module which is initially empty.
 
-### Import Mapping {#importmapping}
+## Import Mapping {#importmapping}
 
 Clicking any one of the actions opens an empty [import mapping](/refguide/import-mappings/) page. Here you can define what data you want to retrieve from Teamcenter and how to handle this data in Mendix. Depending on the action, the import mapping page starts with one or multiple entities or objects to configure, one per business object that needs to be configured. 
 
@@ -234,7 +241,7 @@ In Teamcenter Extension, the import mapping consists of the following steps:
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/teamcenter-extension/domain-model.png" max-width=80% >}}
 
-#### Object Mapping {#objectmapping}
+### Object Mapping {#objectmapping}
 
 Clicking any one of the empty boxes in the import mapping page opens the object mapping dialog. On the left side of the dialog, a tree with all relevant business objects available from the configured Teamcenter instance is displayed. If you have created any custom business objects in Teamcenter BMIDE, those objects will be shown as well. The right side shows a tree of all relevant entities in your Mendix app.
 
@@ -252,7 +259,7 @@ It is also possible to create new entities for your integrations. This new entit
 
 Once you click **OK**, you will return to the import mapping tab with a sidebar open for you to configure which Teamcenter properties, references, and relations to include when retrieving data for this business object.
 
-#### Teamcenter Properties, References, and Relations {#tcprop}
+### Teamcenter Properties, References, and Relations {#tcprop}
 
 In the import mapping sidebar, you can configure which Teamcenter properties, references, and relations to include when retrieving data from Teamcenter. The import mapping sidebar is launched automatically after the completion of object mapping. When you are on the import mapping page and the sidebar is closed, you can double-click a previously configured entity to open the sidebar for that entity.
 
