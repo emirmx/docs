@@ -132,7 +132,7 @@ To connect your app to a licensed node, do the following:
 1. If there is already an app linked to the node, you will be prompted to confirm that you want to replace it. Click **Proceed** to confirm.
 
 {{% alert color="warning" %}}
-Unlinking the app cannot be undone. All data in the app is deleted. Before you proceed, make sure to download a backup of the app that you want to replace.
+Unlinking a sandbox app cannot be undone. All data in the app is deleted. Before you proceed, make sure to download a backup of the app that you want to replace.
 
 Linking a new project to a node removes all existing team members and resets node permissions. The technical contact must re-add everyone to the project, and reconfigure any necessary settings.
 {{% /alert %}}
