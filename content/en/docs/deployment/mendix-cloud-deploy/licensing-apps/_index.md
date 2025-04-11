@@ -123,6 +123,8 @@ To connect your app to a licensed node, do the following:
 
 1. Click **Select Licensed Node**.
 
+    {{< figure src="/attachments/deployment/mendix-cloud-deploy/licensing-apps/link-node.png" >}}
+
 1. If prompted, authenticate yourself with [two-factor authentication](/developerportal/deploy/two-factor-authentication/).
 
 1. In the list of your cloud nodes, click **Use this Node** by the node that you want to connect to your app.
