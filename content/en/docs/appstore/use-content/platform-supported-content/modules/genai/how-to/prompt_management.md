@@ -124,7 +124,7 @@ In this section, you will create both the entity and the user interface. The fin
     * `Language` as *String*
     * `ProductDescription` as *String* and set length to `unlimited`
 
-3. Change the **Access rules** of the entity to grant read-write access for `ProductName`, `NumberOfWords` and `ProductDescription` to your **User** and **Administrator** role. Give the roles permission for `Allow creating new objects`. Save the entity.
+3. Update the **Access rules** of the entity to grant read-write access to the attributes `ProductName`, `NumberOfWords`, and `ProductDescription` for both the **User** and **Administrator** roles. Also, ensure that both roles have the **Allow creating new objects** permission enabled. Save the entity to apply the changes.
 
 4. Create a blank responsive web page called **Product_NewEdit**, and set the layout to **Atlas_Default**.
 
