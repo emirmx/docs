@@ -5,7 +5,7 @@ url: /refguide10/workflow-how-to-configure/
 description: "Describes how to configure a workflow in Mendix Studio Pro."
 weight: 80
 aliases:
-    - /howto/logic-business-rules/workflow-how-to-configure/
+    - /howto10/logic-business-rules/workflow-how-to-configure/
 ---
 
 ## Introduction 
@@ -59,7 +59,7 @@ Before starting this how-to, make sure you have completed the following prerequi
 
         {{< figure src="/attachments/refguide10/modeling/application-logic/workflows/workflow-how-to-configure/enumeration-laptop-model.png" width="500" >}}
 
-* Make sure you have an **EmployeesOnboarding_NewEdit** pop-up page that can be used to add a new **EmployeeOnboarding** object. For more information on how to create an entity detail page, see [Create Overview and Detail pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/)
+* Make sure you have an **EmployeesOnboarding_NewEdit** pop-up page that can be used to add a new **EmployeeOnboarding** object. For more information on how to create an entity detail page, see [Create Overview and Detail pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/)
 
 * Make sure you have an **EmployeesToOnboard** page that looks like the following:
 

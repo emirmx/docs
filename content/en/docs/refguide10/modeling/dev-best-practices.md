@@ -5,7 +5,7 @@ url: /refguide10/dev-best-practices/
 weight: 12
 description: "Describes Mendix best practices for developing Mendix applications."
 aliases:
-    - /howto/general/dev-best-practices/
+    - /howto10/general/dev-best-practices/
 #Academy are SMEs for verification, they use/link to this doc in training; microflow prefix naming convention from ES and Academy
 ---
 
@@ -276,7 +276,7 @@ Guidelines below can help you choose a short yet meaningful name for your workfl
 
 Pages use a **suffix** to indicate their use.
 
-Pages that show an [overview](/howto/front-end/create-your-first-two-overview-and-detail-pages/) of a single entity should have a suffix of **_Overview**.
+Pages that show an [overview](/howto10/front-end/create-your-first-two-overview-and-detail-pages/) of a single entity should have a suffix of **_Overview**.
 
 Pages that are to create, edit, or view entity data, and that are not part of a process, should have the suffix **_New**, **_Edit**, **_NewEdit**, or **_View**.
 
@@ -458,7 +458,7 @@ Unused and excluded documents should be removed from the model when they are no 
 
 ### Security
 
-The [security](/howto/security/) overview in Studio Pro must not show any incomplete (yellow) parts. All entity, microflow, and page access must be configured completely.
+The [security](/howto10/security/) overview in Studio Pro must not show any incomplete (yellow) parts. All entity, microflow, and page access must be configured completely.
 
 Assigning default rights to new members when defining entity access is NOT recommended. This will ensure that access is only granted after a conscious decision.
 

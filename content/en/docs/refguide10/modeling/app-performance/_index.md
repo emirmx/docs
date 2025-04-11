@@ -7,7 +7,7 @@ description: "Describes some best practices to apply during development to get a
 aliases:
     - /howtogeneral/bestpractices/best-practices-for-app-performance-in-mendix-7.html
     - /howtogeneral/bestpractices/best-practices-for-app-performance-in-mendix-7
-    - /howto/general/community-best-practices-for-app-performance/
+    - /howto10/general/community-best-practices-for-app-performance/
 ---
 
 ## Introduction

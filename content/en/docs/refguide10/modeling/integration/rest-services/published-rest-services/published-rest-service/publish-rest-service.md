@@ -4,7 +4,7 @@ url: /refguide10/publish-a-rest-service/
 weight: 10
 description: "Describes how to create a published REST service and return the results in JSON or XML."
 aliases:
-    - /howto/integration/publish-rest-service/
+    - /howto10/integration/publish-rest-service/
 ---
 
 ## Introduction
@@ -21,7 +21,7 @@ To set up the example app you will use in the next sections, follow these steps:
 
     {{< figure src="/attachments/refguide10/modeling/integration/publish-rest-service/domainmodel.png" alt="Many-to-one association from OrderItem to Order" class="no-border" >}}
 
-4. [Generate overview and detail pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/#create-automatically) for the **Order** and **OrderItem** entities.
+4. [Generate overview and detail pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/#create-automatically) for the **Order** and **OrderItem** entities.
 5. [Add a data grid](/refguide10/data-grid/) to the **Order_NewEdit** page. Set it to display the **OrderItem** objects from the database over an association:
     
     {{< figure src="/attachments/refguide10/modeling/integration/publish-rest-service/DataGridSettings.png" alt="Data grid settings for the Order_NewEdit page" class="no-border" >}}

@@ -4,7 +4,7 @@ url: /refguide10/translatable-validation-messages/
 weight: 140
 description: "Describes how to use translatable validation messages."
 aliases:
-    - /howto/logic-business-rules/translatable-validation-messages/
+    - /howto10/logic-business-rules/translatable-validation-messages/
 ---
 
 ## Introduction

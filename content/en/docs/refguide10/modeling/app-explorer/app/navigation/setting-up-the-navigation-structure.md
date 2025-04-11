@@ -4,7 +4,7 @@ linktitle: "Set Up Navigation"
 url: /refguide10/setting-up-the-navigation-structure/
 description: "Describes how to configure the navigation structure in Studio Pro."
 aliases:
-    - /howto/general/setting-up-the-navigation-structure/
+    - /howto10/general/setting-up-the-navigation-structure/
 ---
 ## Introduction
 
@@ -130,9 +130,9 @@ Now that you have created a menu structure, it is time to start using it on page
 
 The menu widget is now showing the navigation items created in the navigation editor.
 
-To avoid adding the menu widget on every page in your app, you can use a layout. With layouts you can define a structure for pages in your app. You can define where the menu should be rendered and you can simply reuse that layout for all or several pages. For more information on how to use layouts, see [How to Use Layouts and Snippets](/howto/front-end/layouts-and-snippets/).
+To avoid adding the menu widget on every page in your app, you can use a layout. With layouts you can define a structure for pages in your app. You can define where the menu should be rendered and you can simply reuse that layout for all or several pages. For more information on how to use layouts, see [How to Use Layouts and Snippets](/howto10/front-end/layouts-and-snippets/).
 
 ## Read More
 
-* [Atlas UI](/howto/front-end/atlas-ui/)
-* [Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/)
+* [Atlas UI](/howto10/front-end/atlas-ui/)
+* [Create Your First Two Overview and Detail Pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/)

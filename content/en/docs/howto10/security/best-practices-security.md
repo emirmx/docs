@@ -1,7 +1,7 @@
 ---
 title: "Implement Best Practices for App Security"
 linktitle: "Best Practices for App Security"
-url: /howto/security/best-practices-security/
+url: /howto10/security/best-practices-security/
 weight: 20
 description: "Describes the common aspects you should consider when delivering an application within Mendix Cloud."
 aliases:
@@ -22,7 +22,7 @@ The Mendix architecture includes the Mendix Client, which can compose its own qu
 
 {{< figure src="/attachments/howto10/security/best-practices-security/mendix-runtime-architecture.png" alt="Mendix Runtime Architecture"   width="500"  class="no-border" >}}
 
-When designing an application, you can specify access rules on an entity (for more information, see [How to Create A Secure App](/howto/security/create-a-secure-app/)). These access rules are applied whenever a query (received from a client) should be executed, thus they constrain the data returned to the client. For example, users with the "Customer" role can only view orders that are associated to the customer of which this user is part.
+When designing an application, you can specify access rules on an entity (for more information, see [How to Create A Secure App](/howto10/security/create-a-secure-app/)). These access rules are applied whenever a query (received from a client) should be executed, thus they constrain the data returned to the client. For example, users with the "Customer" role can only view orders that are associated to the customer of which this user is part.
 
 While the data that should be viewable and editable in which role is application-specific, the following best practices are key:
 

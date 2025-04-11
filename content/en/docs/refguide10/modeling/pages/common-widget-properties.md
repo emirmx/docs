@@ -39,7 +39,7 @@ The **Screen reader caption** property can be set on the following widgets:
 
 ### Name{#name}
 
-The internal name of the widget. You can use this to give sensible names to widgets. The name property also appears in the generated HTML: the widget DOM element automatically includes the class `mx-name-{NAME}`, which can be useful for [Selenium testing](/howto/integration/selenium-support/).
+The internal name of the widget. You can use this to give sensible names to widgets. The name property also appears in the generated HTML: the widget DOM element automatically includes the class `mx-name-{NAME}`, which can be useful for [Selenium testing](/howto10/integration/selenium-support/).
 
 ### Tab Index{#tab-index}
 

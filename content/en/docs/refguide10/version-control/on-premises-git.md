@@ -5,7 +5,7 @@ url: /refguide10/on-premises-git/
 weight: 60
 description: "Introduces how to work with Git on-premises version control server."
 aliases:
-    - /howto/collaboration-requirements-management/on-premises-git-howto/
+    - /howto10/collaboration-requirements-management/on-premises-git-howto/
 ---
 
 ## Introduction {#intro}

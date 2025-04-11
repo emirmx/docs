@@ -4,7 +4,7 @@ url: /refguide10/integration/consume-a-complex-web-service/
 weight: 8
 description: "Describes how to import a web service both directly and using the wizard as well as how to configure a web service call."
 aliases:
-    - /howto/integration/consume-a-complex-web-service/
+    - /howto10/integration/consume-a-complex-web-service/
 ---
 
 ## Introduction
@@ -79,11 +79,11 @@ Your imported web service is now ready to be used in your application.
 
 ## Read More
 
-* [Consume a Simple Web Service](/howto/integration/consume-a-simple-web-service/)
-* [Export XML Documents](/howto/integration/export-xml-documents/)
-* [Import Excel Documents](/howto/integration/importing-excel-documents/)
-* [Expose a Web Service](/howto/integration/expose-a-web-service/)
-* [Use Selenium Support](/howto/integration/selenium-support/)
-* [Import XML Documents](/howto/integration/importing-xml-documents/)
-* [Consume a REST Service](/howto/integration/consume-a-rest-service/)
-* [Expose Data to BI tools Using OData](/howto/integration/exposing-data-to-bi-tools-using-odata/)
+* [Consume a Simple Web Service](/howto10/integration/consume-a-simple-web-service/)
+* [Export XML Documents](/howto10/integration/export-xml-documents/)
+* [Import Excel Documents](/howto10/integration/importing-excel-documents/)
+* [Expose a Web Service](/howto10/integration/expose-a-web-service/)
+* [Use Selenium Support](/howto10/integration/selenium-support/)
+* [Import XML Documents](/howto10/integration/importing-xml-documents/)
+* [Consume a REST Service](/howto10/integration/consume-a-rest-service/)
+* [Expose Data to BI tools Using OData](/howto10/integration/exposing-data-to-bi-tools-using-odata/)

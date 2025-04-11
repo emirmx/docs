@@ -1,6 +1,6 @@
 ---
 title: "Test Mendix Apps Using Selenium IDE"
-url: /howto/testing/testing-mendix-applications-using-selenium-ide/
+url: /howto10/testing/testing-mendix-applications-using-selenium-ide/
 weight: 40
 description: "Describes how to download and install Selenium IDE as a Mozilla Firefox plugin."
 ---
@@ -127,10 +127,10 @@ In this example scenario, you need to do the following:
 
 ## Read More
 
-* [Find the Root Cause of Runtime Errors](/howto/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
-* [Clear Warning Messages in Mendix](/howto/monitoring-troubleshooting/clear-warning-messages/)
-* [Test Web Services Using SoapUI](/howto/testing/testing-web-services-using-soapui/)
-* [Monitor Mendix Using JMX](/howto/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
+* [Find the Root Cause of Runtime Errors](/howto10/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
+* [Clear Warning Messages in Mendix](/howto10/monitoring-troubleshooting/clear-warning-messages/)
+* [Test Web Services Using SoapUI](/howto10/testing/testing-web-services-using-soapui/)
+* [Monitor Mendix Using JMX](/howto10/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
 
 Learn more about this topic using the following helpful link:
 

@@ -4,12 +4,12 @@ url: /refguide10/mobile/using-mobile-capabilities/local-notifications/
 weight: 50
 description: Tutorials for setting up local push notifications which do not use an internet connection.
 aliases:
-    - /howto/mobile/local-notif-parent/
-    - /howto/mobile/native-local-notifications/
-    - /howto/mobile/local-notif-badges/
-    - /howto/mobile/local-notif-action/
-    - /howto/mobile/local-notif-data/
-    - /howto/mobile/local-notif-schedule-cancel/
+    - /howto10/mobile/local-notif-parent/
+    - /howto10/mobile/native-local-notifications/
+    - /howto10/mobile/local-notif-badges/
+    - /howto10/mobile/local-notif-action/
+    - /howto10/mobile/local-notif-data/
+    - /howto10/mobile/local-notif-schedule-cancel/
 ---
 
 These step-by-step guides teach you how to build local notifications for native mobile applications. Local notifications will only allow you to schedule and send notifications confined to one mobile device. These notifications do not use an internet connection. One use of a local notification might be an alarm app which sends a notification after an amount of time has elapsed.

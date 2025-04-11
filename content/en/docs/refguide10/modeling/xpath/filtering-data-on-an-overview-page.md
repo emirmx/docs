@@ -5,7 +5,7 @@ url: /refguide10/filtering-data-on-an-overview-page/
 weight: 5
 description: "Describes how to filter data using different XPath constraints."
 aliases:
-    - /howto/logic-business-rules/filtering-data-on-an-overview-page/
+    - /howto10/logic-business-rules/filtering-data-on-an-overview-page/
 ---
 
 {{% alert color="info" %}}
@@ -36,7 +36,7 @@ For this how-to, it is necessary that you set up a test app with test data. To d
 
     {{< figure src="/attachments/refguide10/modeling/xpath/define-access-rules-using-xpath/18581378.png" class="no-border" >}}
 
-2. [Create overview and detail pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/) to manage the **Customer** and the **Order** entities and their objects.
+2. [Create overview and detail pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/) to manage the **Customer** and the **Order** entities and their objects.
 3. [Create menu items](/refguide10/setting-up-the-navigation-structure/#menu-items) to access the **Customer** and the **Order** overview pages.
 4. Add the following customer data to your app:
 

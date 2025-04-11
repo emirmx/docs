@@ -1,7 +1,7 @@
 ---
 title: "Build a Pluggable Web Widget: Part 1"
 linktitle: "1. Build Pluggable Web Widget"
-url: /howto/extensibility/create-a-pluggable-widget-one/
+url: /howto10/extensibility/create-a-pluggable-widget-one/
 weight: 10
 description: "This how-to teaches you how to create a pluggable web widget."
 ---
@@ -357,7 +357,7 @@ Continue with the next tutorial to learn how to add validation feedback, custom 
 
 ## Read More
 
-* [Build a Pluggable Web Widget: Part 2 (Advanced)](/howto/extensibility/create-a-pluggable-widget-two/)
+* [Build a Pluggable Web Widget: Part 2 (Advanced)](/howto10/extensibility/create-a-pluggable-widget-two/)
 * [Pluggable Widgets API](/apidocs-mxsdk/apidocs/pluggable-widgets/)
 * [Client APIs Available to Pluggable Widgets](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/)
 * [Pluggable Widget Property Types](/apidocs-mxsdk/apidocs/pluggable-widgets-property-types/)

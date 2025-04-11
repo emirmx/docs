@@ -5,8 +5,8 @@ url: /refguide10/mobile/using-mobile-capabilities/push-notifications/notif-imple
 weight: 60
 description: Tutorial for implementing push notifications in a native app.
 aliases:
-    - /howto/mobile/notif-implement-native/
-    - /howto/mobile/notif-build-native/
+    - /howto10/mobile/notif-implement-native/
+    - /howto10/mobile/notif-build-native/
     - /refguide10/mobile/using-mobile-capabilities/push-notifications/notif-build-native/
 ---
 

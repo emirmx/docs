@@ -1,7 +1,7 @@
 ---
 title: "Implement Best Practices for JavaScript Actions"
 linktitle: "JavaScript Actions Best Practices"
-url: /howto/extensibility/best-practices-javascript-actions/
+url: /howto10/extensibility/best-practices-javascript-actions/
 weight: 60
 description: "Describes how to create high-quality JavaScript actions, use common implementation patterns, design better APIs, and use JavaScript actions in nanoflows."
 ---
@@ -348,7 +348,7 @@ Explaining the Fetch API code:
 
 * As this is an async function, error handling at all three steps: fetch, parse JSON, and accessing the data can be done inside a single `try...catch` block (for a more detailed explanation, see the [MDN documentation for error handling with async/await](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await#adding_error_handling)).
 
-* For more information on building a JavaScript action rest consume function, see [Build JavaScript Actions: Part 2 (Advanced)](/howto/extensibility/write-javascript-github/).
+* For more information on building a JavaScript action rest consume function, see [Build JavaScript Actions: Part 2 (Advanced)](/howto10/extensibility/write-javascript-github/).
 
 #### Understanding Common Promise Functions
 
@@ -474,7 +474,7 @@ Not all capabilities are recommended for use. Consider the side effects that an 
 
 ## Read More
 
-* [Build JavaScript Actions](/howto/extensibility/build-javascript-actions/)
+* [Build JavaScript Actions](/howto10/extensibility/build-javascript-actions/)
 * [JavaScript Actions](/refguide10/javascript-actions/)
 * [Mendix Client API](/apidocs-mxsdk/apidocs/client-api/)
 * JavaScript basics:

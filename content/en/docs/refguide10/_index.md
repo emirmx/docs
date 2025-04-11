@@ -22,7 +22,7 @@ If you have been using Studio Pro version 9, Mendix recommends reading [Upgradin
 
 If you are looking to build your first app, check out the [Quick Starts](/quickstarts/).
 
-If you are looking for step-by-step guides on performing various Mendix actions, browse the [Studio Pro 10 How-tos](/howto/).
+If you are looking for step-by-step guides on performing various Mendix actions, browse the [Studio Pro 10 How-tos](/howto10/).
 
 ## Studio Pro Functionality
 
@@ -34,7 +34,7 @@ Modeling an app is the process of creating an app and involves creating pages, a
 
 ### Testing 
 
-When it comes to testing your application, you first need to decide what you are going to test: integration with external services, app logic (microflows), etc. For more information on how to test your application, see [Testing](/howto/testing/). 
+When it comes to testing your application, you first need to decide what you are going to test: integration with external services, app logic (microflows), etc. For more information on how to test your application, see [Testing](/howto10/testing/). 
 
 ### Deploying 
 

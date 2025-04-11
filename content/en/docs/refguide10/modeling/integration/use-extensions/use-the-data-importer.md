@@ -4,7 +4,7 @@ url: /refguide10/use-the-data-importer/
 weight: 21
 description: "Overview of the Data Importer in Studio Pro"
 aliases: 
-   - /howto/integration/use-the-data-importer/
+   - /howto10/integration/use-the-data-importer/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 

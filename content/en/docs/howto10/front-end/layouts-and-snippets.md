@@ -1,6 +1,6 @@
 ---
 title: "Use Layouts and Snippets"
-url: /howto/front-end/layouts-and-snippets/
+url: /howto10/front-end/layouts-and-snippets/
 weight: 30
 description: "Describes how to create pages using layouts and snippets."
 ---
@@ -203,8 +203,8 @@ In addition, a snippet can define an entity that serves as a context for the wid
 
 ## Read More
 
-* [Atlas UI](/howto/front-end/atlas-ui/)
-* [Use Layouts and Snippets](/howto/front-end/layouts-and-snippets/)
+* [Atlas UI](/howto10/front-end/atlas-ui/)
+* [Use Layouts and Snippets](/howto10/front-end/layouts-and-snippets/)
 * [Setting Up Navigation](/refguide10/setting-up-the-navigation-structure/)
-* [Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/)
-* [Find the Root Cause of Runtime Errors](/howto/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
+* [Create Your First Two Overview and Detail Pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/)
+* [Find the Root Cause of Runtime Errors](/howto10/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)

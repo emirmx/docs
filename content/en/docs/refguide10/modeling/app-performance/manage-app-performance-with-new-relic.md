@@ -3,7 +3,7 @@ title: "Manage App Performance with New Relic"
 url: /refguide10/manage-app-performance-with-new-relic/
 weight: 2
 aliases:
-    - /howto/monitoring-troubleshooting/manage-app-performance-with-new-relic/
+    - /howto10/monitoring-troubleshooting/manage-app-performance-with-new-relic/
 ---
 
 ## Introduction
@@ -96,8 +96,8 @@ For more information on New Relic, see the [New Relic documentation](https://doc
 
 ## Read More
 
-* [Find the Root Cause of Runtime Errors](/howto/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
-* [Clear Warning Messages in Mendix](/howto/monitoring-troubleshooting/clear-warning-messages/)
-* [Monitor Mendix Using JMX](/howto/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
-* [Debug Java Actions Remotely](/howto/monitoring-troubleshooting/debug-java-actions-remotely/)
+* [Find the Root Cause of Runtime Errors](/howto10/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
+* [Clear Warning Messages in Mendix](/howto10/monitoring-troubleshooting/clear-warning-messages/)
+* [Monitor Mendix Using JMX](/howto10/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
+* [Debug Java Actions Remotely](/howto10/monitoring-troubleshooting/debug-java-actions-remotely/)
 * [Telemetry Configuration](https://github.com/mendix/cf-mendix-buildpack#telemetry-configuration) in the *cf-mendix-buildpack* repo on GitHub

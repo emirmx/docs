@@ -4,7 +4,7 @@ url: /refguide10/mobile/distributing-mobile-apps/testing-mobile-apps/
 weight: 50
 description: This guide teaches you how to write end-to-end tests once and run them on both platforms using Appium.
 aliases:
-    - /howto/mobile/testing-mendix-native-apps-using-appium/
+    - /howto10/mobile/testing-mendix-native-apps-using-appium/
 ---
 
 ## Introduction

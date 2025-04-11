@@ -18,7 +18,7 @@ This how-to teaches you how to do the following:
 Before starting this how-to, make sure you have completed the following prerequisites:
 
 * Read [Configuring a Domain Model](/refguide10/configuring-a-domain-model/)
-* Read [How to Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/)
+* Read [How to Create Your First Two Overview and Detail Pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/)
 
 ## Debugging Overview
 

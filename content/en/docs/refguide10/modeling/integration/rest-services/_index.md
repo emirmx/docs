@@ -47,7 +47,7 @@ REST calls that output JSON need to declare the [content type](#content-types) a
 To publish REST services, see:
 
 * [Published REST Services](/refguide10/published-rest-services/), an overview in the Studio Pro guide
-* [Publish a REST Service](/howto/integration/publish-rest-service/) for step-by-step instructions
+* [Publish a REST Service](/howto10/integration/publish-rest-service/) for step-by-step instructions
 * [HttpRequest and HttpResponse System Entities](/refguide10/http-request-and-response-entities/), an overview of these system entities in your domain model
 
 To consume REST services, see:

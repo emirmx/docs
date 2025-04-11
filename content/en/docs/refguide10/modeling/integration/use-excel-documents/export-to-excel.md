@@ -3,7 +3,7 @@ title: "Export to Excel"
 url: /refguide10/using-the-excel-exporter/
 weight: 20
 description: "Describes how to create custom Excel documents from your app based on configurable templates."
-aliases: /howto/integration/using-the-excel-exporter/
+aliases: /howto10/integration/using-the-excel-exporter/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details. 
 ---
 
@@ -284,4 +284,4 @@ If the microflow that calls the Java action *XLSReport.GenerateExcelDoc* has **A
 
 ## Read More
 
-* [Import Excel Documents](/howto/integration/importing-excel-documents/)
+* [Import Excel Documents](/howto10/integration/importing-excel-documents/)

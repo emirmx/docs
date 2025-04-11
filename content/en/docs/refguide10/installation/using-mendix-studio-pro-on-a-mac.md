@@ -5,7 +5,7 @@ linktitle: "Configuring Parallels"
 weight: 40
 description: "Describes how to start making Mendix apps on your Mac device."
 aliases:
-    - /howto/general/using-mendix-studio-pro-on-a-mac/
+    - /howto10/general/using-mendix-studio-pro-on-a-mac/
 ---
 
 ## Introduction

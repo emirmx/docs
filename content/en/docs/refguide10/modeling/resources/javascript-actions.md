@@ -22,7 +22,7 @@ The skeletons of these *.js* files are generated automatically when you save an 
 
 {{% /alert %}}
 
-To learn how to create, configure, and use a JavaScript action, see these [Build JavaScript Actions](/howto/extensibility/build-javascript-actions/) how-tos.
+To learn how to create, configure, and use a JavaScript action, see these [Build JavaScript Actions](/howto10/extensibility/build-javascript-actions/) how-tos.
 
 ## General Settings
 
@@ -203,6 +203,6 @@ export async function Hello(message) {
 
 * [JavaScript Action Call](/refguide10/javascript-action-call/)
 * [Nanoflows](/refguide10/nanoflows/)
-* [Build JavaScript Actions](/howto/extensibility/build-javascript-actions/)
+* [Build JavaScript Actions](/howto10/extensibility/build-javascript-actions/)
 * [Java Action Call](/refguide10/java-action-call/)
 * [Microflow Call](/refguide10/microflow-call/)

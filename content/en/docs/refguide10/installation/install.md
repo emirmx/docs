@@ -5,7 +5,7 @@ linktitle: "Installing Studio Pro"
 weight: 10
 description: "Describes how to install Mendix Studio Pro."
 aliases:
-    - /howto/general/install/
+    - /howto10/general/install/
 ---
 
 {{% button color="info" href="https://marketplace.mendix.com/link/studiopro/" text="Go to Marketplace" title="Download Studio Pro from the Marketplace" %}}

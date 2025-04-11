@@ -1,14 +1,14 @@
 ---
 title: "Build JavaScript Actions: Part 2 (Advanced)"
 linktitle: "2. Build JavaScript Actions"
-url: /howto/extensibility/write-javascript-github/
+url: /howto10/extensibility/write-javascript-github/
 weight: 20
 description: "This advanced how-to teaches you to make a JavaScript action which can search for GitHub users."
 ---
 
 ## Introduction
 
-Nanoflows are even more powerful with pluggable nanoflow actions — called JavaScript actions. [How to Build JavaScript Actions: Part 1 (Basic)](/howto/extensibility/write-javascript-actions/) shows you how to create a JavaScript TextToSpeech action, expose it as a nanoflow action, and then use it in a demo. In this advanced how-to you will learn to call a REST service, use a generic return type, and make an API to enhance the power of your JavaScript actions.
+Nanoflows are even more powerful with pluggable nanoflow actions — called JavaScript actions. [How to Build JavaScript Actions: Part 1 (Basic)](/howto10/extensibility/write-javascript-actions/) shows you how to create a JavaScript TextToSpeech action, expose it as a nanoflow action, and then use it in a demo. In this advanced how-to you will learn to call a REST service, use a generic return type, and make an API to enhance the power of your JavaScript actions.
 
 This how-to teaches you how to do the following:
 
@@ -301,7 +301,7 @@ Congratulations! Using the power of JavaScript actions, your app can search for 
 
 ## Read More
 
-* [Build JavaScript Actions: Part 1 (Basic)](/howto/extensibility/write-javascript-actions/)
+* [Build JavaScript Actions: Part 1 (Basic)](/howto10/extensibility/write-javascript-actions/)
 * [Mendix Client API](https://apidocs.rnd.mendix.com/10/client/index.html)
 * [JavaScript Actions](/refguide10/javascript-actions/)
 * JavaScript Resources

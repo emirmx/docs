@@ -1,6 +1,6 @@
 ---
 title: "Denormalize Data to Improve Performance"
-url: /howto/data-models/denormalize-data-to-improve-performance/
+url: /howto10/data-models/denormalize-data-to-improve-performance/
 weight: 6
 description: "Describes how to denormalize data and keep denormalized data in sync in Studio Pro."
 ---
@@ -145,7 +145,7 @@ Now the application is ready to store redundant data, but you still need to keep
 
 * [Configuring a Domain Model](/refguide10/configuring-a-domain-model/)
 * [Setting Up Data Validation](/refguide10/setting-up-data-validation/)
-* [Find the Root Cause of Runtime Errors](/howto/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
+* [Find the Root Cause of Runtime Errors](/howto10/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
 * [Epics](/developerportal/project-management/epics/)
 * [Defining Access Rules Using XPath](/refguide10/define-access-rules-using-xpath/)
 * [Attributes](/refguide10/attributes/)

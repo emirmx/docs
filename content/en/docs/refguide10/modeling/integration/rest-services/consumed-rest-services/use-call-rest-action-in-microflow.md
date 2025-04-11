@@ -5,7 +5,7 @@ weight: 15
 description: "Describes how to integrate an existing system or a legacy system into a Mendix app by calling a REST service in a microflow."
 description: "Describes how to get information from a REST service."
 aliases:
-    - /howto/integration/consume-a-rest-service/
+    - /howto10/integration/consume-a-rest-service/
 ---
 
 ## Introduction
@@ -157,11 +157,11 @@ You can now start your app and get summaries from Wikipedia.
 
 ## Read More
 
-* [Consume a Complex Web Service](/howto/integration/consume-a-complex-web-service/)
-* [Consume a Simple Web Service](/howto/integration/consume-a-simple-web-service/)
-* [Export XML Documents](/howto/integration/export-xml-documents/)
-* [Import XML Documents](/howto/integration/importing-xml-documents/)
-* [Import Excel Documents](/howto/integration/importing-excel-documents/)
-* [Expose a Web Service](/howto/integration/expose-a-web-service/)
-* [Expose Data to BI Tools Using OData](/howto/integration/exposing-data-to-bi-tools-using-odata/)
+* [Consume a Complex Web Service](/howto10/integration/consume-a-complex-web-service/)
+* [Consume a Simple Web Service](/howto10/integration/consume-a-simple-web-service/)
+* [Export XML Documents](/howto10/integration/export-xml-documents/)
+* [Import XML Documents](/howto10/integration/importing-xml-documents/)
+* [Import Excel Documents](/howto10/integration/importing-excel-documents/)
+* [Expose a Web Service](/howto10/integration/expose-a-web-service/)
+* [Expose Data to BI Tools Using OData](/howto10/integration/exposing-data-to-bi-tools-using-odata/)
 * [Security Considerations](/refguide10/call-rest-action/#security)

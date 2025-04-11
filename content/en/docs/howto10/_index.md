@@ -1,6 +1,6 @@
 ---
 title: "Studio Pro 10 How-tos"
-url: /howto/
+url: /howto10/
 description: "Step-by-step guides on various Mendix topics that teach you how to build and customize apps."
 weight: 15
 no_list: false

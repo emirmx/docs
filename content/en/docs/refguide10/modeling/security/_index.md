@@ -15,7 +15,7 @@ Secondly, you will want to control who can access your app once it is running. Y
 There are different ways in which you can set up app authentication, including local authentication and using a federated IdP to provide single sign-on (SSO). For more information, see the [App Authentication](#authentication) section below. 
 
 {{% alert color="info" %}}
-Security in Mendix apps does not include scanning files that end-users upload or download from your application for viruses and malware. For more information, see the [Scanning Uploaded Files for Malicious Content](/howto/security/best-practices-security/#scanning-for-malicious-content) section in *How to Implement Best Practices for App Security*. 
+Security in Mendix apps does not include scanning files that end-users upload or download from your application for viruses and malware. For more information, see the [Scanning Uploaded Files for Malicious Content](/howto10/security/best-practices-security/#scanning-for-malicious-content) section in *How to Implement Best Practices for App Security*. 
 {{% /alert %}}
 
 ## App Security Set Up in Studio Pro {#security-in-studio-pro}

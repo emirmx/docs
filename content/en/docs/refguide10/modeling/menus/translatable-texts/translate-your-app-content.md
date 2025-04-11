@@ -3,7 +3,7 @@ title: "Translating Your App Content"
 url: /refguide10/translate-your-app-content/
 weight: 50
 aliases:
-  - /howto/collaboration-requirements-management/translate-your-app-content/
+  - /howto10/collaboration-requirements-management/translate-your-app-content/
 ---
 
 ## Introduction

@@ -4,7 +4,7 @@ url: /refguide10/mobile/distributing-mobile-apps/building-native-apps/
 weight: 20
 description: Learn the different ways of building native apps in Mendix.
 aliases:
-    - /howto/mobile/build-native-apps/
+    - /howto10/mobile/build-native-apps/
 ---
 
 These step-by-step guides teach you how to build native mobile applications and more. 

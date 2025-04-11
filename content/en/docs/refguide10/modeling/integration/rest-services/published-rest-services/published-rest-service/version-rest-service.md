@@ -4,7 +4,7 @@ url: /refguide10/version-rest-service/
 weight: 10
 description: "Describes the best practices for versioning REST services in Mendix."
 aliases:
-    - /howto/integration/version-rest-service/
+    - /howto10/integration/version-rest-service/
 ---
 
 ## Introduction

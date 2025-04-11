@@ -4,7 +4,7 @@ url: /refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/local-d
 weight: 85
 description: "This documentation describes best practices to keep your offline data secure."
 aliases:
-    - /howto/mobile/encryption-database/
+    - /howto10/mobile/encryption-database/
 ---
 
 ## Introduction

@@ -1,6 +1,6 @@
 ---
 title: "Create a Secure App"
-url: /howto/security/create-a-secure-app/
+url: /howto10/security/create-a-secure-app/
 weight: 10
 description: "Describes how to turn your application security on and how to configure it to secure the data."
 ---
@@ -21,7 +21,7 @@ This how-to teaches you how to do the following:
 Before starting with this how-to, make sure you have completed the following prerequisites:
 
 * Know how to create a domain model (for details, see [Creating a Basic Data Layer](/refguide10/configuring-a-domain-model/))
-* Know how to create overview and detail pages (for details, see [How to Create Your First Two Overview and Details Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/))
+* Know how to create overview and detail pages (for details, see [How to Create Your First Two Overview and Details Pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/))
 * Know how to create menu items (for details, see [Setting Up Navigation](/refguide10/setting-up-the-navigation-structure/))
 * Know how to add action buttons (for details, see [Buttons](/refguide10/button-widgets/))
 
@@ -283,4 +283,4 @@ An XPath constraint can be used to constrain the set of objects to which the acc
 
 ## Read More
 
-* [Set Up Anonymous User Security](/howto/security/set-up-anonymous-user-security/)
+* [Set Up Anonymous User Security](/howto10/security/set-up-anonymous-user-security/)

@@ -6,14 +6,14 @@ weight: 20
 aliases:
     - /data-hub/write-data/
     - /catalog/write-data/
-    - /howto/integration/write-data/
+    - /howto10/integration/write-data/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 # SB: The images on this page are created using the Lato-LandscapeDemoApp (https://sprintr.home.mendix.com/link/project/1b515494-d818-4358-8c91-6c3d54e9cae5)
 ---
 
 ## Introduction
 
-This how-to builds on the information provided in [Share Data Between Apps](/howto/integration/share-data/) and shows how OData annotations give you the power to create, update, and delete data.
+This how-to builds on the information provided in [Share Data Between Apps](/howto10/integration/share-data/) and shows how OData annotations give you the power to create, update, and delete data.
 
 This how-to teaches you how to do the following:
 
@@ -37,7 +37,7 @@ Note the following terminology differences described in the table below:
 Before starting this how-to, make sure you have completed the following prerequisites:
 
 * Install the most recent version of [Studio Pro](https://marketplace.mendix.com/link/studiopro/)
-* Understand how read-only external entities behave by reading [Share Data Between Apps](/howto/integration/share-data/)
+* Understand how read-only external entities behave by reading [Share Data Between Apps](/howto10/integration/share-data/)
 
 ## Exposing OData Contracts in Mendix Studio Pro
 

@@ -4,7 +4,7 @@ url: /refguide10/setting-up-data-validation/
 weight: 70
 description: "Describes how to set up both required and advanced data validation with Studio Pro."
 aliases:
-    - /howto/data-models/setting-up-data-validation/
+    - /howto10/data-models/setting-up-data-validation/
 ---
 
 ## Introduction
@@ -47,7 +47,7 @@ For more information on adding validation rules on entity level, see [Validation
 
 ## Required Validation on Inputs, Reference Selectors, and Drop-downs
 
-The page editor of Studio Pro allows you to configure mandatory inputs and add error messages shown to end-users if the inputs are empty. To do so, you first need to have a detail page. For more information on how to create a detail page, see [How to Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/).
+The page editor of Studio Pro allows you to configure mandatory inputs and add error messages shown to end-users if the inputs are empty. To do so, you first need to have a detail page. For more information on how to create a detail page, see [How to Create Your First Two Overview and Detail Pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/).
 
 To set required validation on input elements through the page editor, follow the steps below:
 
@@ -93,7 +93,7 @@ For more information on working with microflows, see [Microflows](/refguide10/mi
 
 ## Advanced Validation with a Custom Save Button {#custom-validation-save-button}
 
-Validating user input can also be achieved by overriding the default **Save** button on a detail page. For more information on how to create a detail page, see [How to Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/).
+Validating user input can also be achieved by overriding the default **Save** button on a detail page. For more information on how to create a detail page, see [How to Create Your First Two Overview and Detail Pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/).
 
 There are two ways to configure a custom **Save** button for data validation. 
 
@@ -151,4 +151,4 @@ If you want to validate multiple attributes, it is best to do this in a sub-micr
 
 ## Read More
 
-* [Denormalize Data to Improve Performance](/howto/data-models/denormalize-data-to-improve-performance/)
+* [Denormalize Data to Improve Performance](/howto10/data-models/denormalize-data-to-improve-performance/)

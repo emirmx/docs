@@ -5,7 +5,7 @@ url: /refguide10/mobile/distributing-mobile-apps/
 weight: 50
 description: "Distribute native mobile apps."
 aliases:
-    - /howto/mobile/distribution/
+    - /howto10/mobile/distribution/
 ---
 
 ## Introduction

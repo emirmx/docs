@@ -4,7 +4,7 @@ url: /refguide10/debug-java-actions/
 weight: 4
 description: "Describes how to set breakpoints and debug Java actions in Eclipse."
 aliases:
-    - /howto/monitoring-troubleshooting/debug-java-actions/
+    - /howto10/monitoring-troubleshooting/debug-java-actions/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the Evaluation Guide. See Mapping to Products for more details.
 # Linked from https://www.mendix.com/evaluation-guide/enterprise-capabilities/extensibility/
 ---
@@ -68,12 +68,12 @@ There is the following limitation:
 
 ## Read More
 
-* [Find the Root Cause of Runtime Errors](/howto/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
-* [Clear Warning Messages in Mendix](/howto/monitoring-troubleshooting/clear-warning-messages/)
-* [Test Web Services Using SoapUI](/howto/testing/testing-web-services-using-soapui/)
-* [Monitor Mendix Using JMX](/howto/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
-* [Debug Java Actions Remotely](/howto/monitoring-troubleshooting/debug-java-actions-remotely/)
-* [Log Levels](/howto/monitoring-troubleshooting/log-levels/)
+* [Find the Root Cause of Runtime Errors](/howto10/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
+* [Clear Warning Messages in Mendix](/howto10/monitoring-troubleshooting/clear-warning-messages/)
+* [Test Web Services Using SoapUI](/howto10/testing/testing-web-services-using-soapui/)
+* [Monitor Mendix Using JMX](/howto10/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
+* [Debug Java Actions Remotely](/howto10/monitoring-troubleshooting/debug-java-actions-remotely/)
+* [Log Levels](/howto10/monitoring-troubleshooting/log-levels/)
 * [Debugging Microflows and Nanoflows](/refguide10/debug-microflows-and-nanoflows/)
 * [Debugging Microflows Remotely](/refguide10/debug-microflows-remotely/)
 * [Java Actions](/refguide10/java-actions/)

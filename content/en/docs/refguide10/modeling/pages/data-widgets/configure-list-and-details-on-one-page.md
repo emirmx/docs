@@ -102,5 +102,5 @@ You can now preview your app and test your page.
 ## Read More
 
 * [Page](/refguide10/page/)
-* [Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/)
+* [Create Your First Two Overview and Detail Pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/)
 * [Configuring a Domain Model](/refguide10/configuring-a-domain-model/)

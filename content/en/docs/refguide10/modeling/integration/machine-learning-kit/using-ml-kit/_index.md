@@ -302,7 +302,7 @@ A similar log message can also be placed after pre-processing actions to observe
 
 In general, the transformation of the multidimensional arrays is subject to Java Actions. Exploiting debugging tools or using logging mechanisms inside the Java Actions will help you debug the state of the variables. 
 
-For more information, see [Debug Java Actions](/howto/monitoring-troubleshooting/debug-java-actions/).
+For more information, see [Debug Java Actions](/howto10/monitoring-troubleshooting/debug-java-actions/).
  
 ## Known Issues {#known-issues}
 

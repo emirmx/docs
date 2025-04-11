@@ -2,7 +2,7 @@
 title: Use Extensions 
 url: /refguide10/use-extensions/
 aliases: 
-   - /howto/integration/use-extensions/
+   - /howto10/integration/use-extensions/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team (buildpack) know they should update the URL in the product. See Mapping to Products for more details.
 ---
 

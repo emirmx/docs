@@ -2,7 +2,7 @@
 title: "Debug Java Actions Remotely"
 url: /refguide10/debug-java-actions-remotely/
 aliases:
-    - /howto/monitoring-troubleshooting/debug-java-actions-remotely/
+    - /howto10/monitoring-troubleshooting/debug-java-actions-remotely/
 ---
 
 ## Introduction
@@ -50,8 +50,8 @@ To configure Eclipse, follow these steps:
 
 ## Read More
 
-* [Find the Root Cause of Runtime Errors](/howto/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
-* [Clear Warning Messages in Mendix](/howto/monitoring-troubleshooting/clear-warning-messages/)
-* [Test Web Services Using SoapUI](/howto/testing/testing-web-services-using-soapui/)
-* [Monitor Mendix Using JMX](/howto/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
-* [Debug Java Actions](/howto/monitoring-troubleshooting/debug-java-actions/)
+* [Find the Root Cause of Runtime Errors](/howto10/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
+* [Clear Warning Messages in Mendix](/howto10/monitoring-troubleshooting/clear-warning-messages/)
+* [Test Web Services Using SoapUI](/howto10/testing/testing-web-services-using-soapui/)
+* [Monitor Mendix Using JMX](/howto10/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
+* [Debug Java Actions](/howto10/monitoring-troubleshooting/debug-java-actions/)

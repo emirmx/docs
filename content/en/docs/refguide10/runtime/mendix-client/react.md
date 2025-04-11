@@ -141,7 +141,7 @@ To replace a template grid widget, follow these steps:
 
 Dojo widgets are no longer supported in the React client. They should be replaced with a pluggable widget based on React. 
 
-Converting a Dojo widget to a React widget requires JavaScript programming. Follow [Build a Pluggable Web Widget: Part 1](/howto/extensibility/create-a-pluggable-widget-one/).
+Converting a Dojo widget to a React widget requires JavaScript programming. Follow [Build a Pluggable Web Widget: Part 1](/howto10/extensibility/create-a-pluggable-widget-one/).
 
 Pluggable widgets must be built with `pluggable-widget-tools` version 9.4.1 or higher. Follow these steps to update `pluggable-widget-tools` and rebuild your widget:
 

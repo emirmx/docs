@@ -5,7 +5,7 @@ url: /refguide10/add-action-to-workflow-toolbox/
 description: "Describes how to expose a microflow as a workflow action in Mendix Studio Pro."
 weight: 100
 aliases:
-    - /howto/logic-business-rules/add-action-to-workflow-toolbox/
+    - /howto10/logic-business-rules/add-action-to-workflow-toolbox/
 ---
 
 ## Introduction 

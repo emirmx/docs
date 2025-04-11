@@ -3,7 +3,7 @@ title: "Error Handling in Microflows"
 url: /refguide10/error-handling-in-microflows/
 weight: 4
 aliases:
-    - /howto/logic-business-rules/set-up-error-handling
+    - /howto10/logic-business-rules/set-up-error-handling
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 

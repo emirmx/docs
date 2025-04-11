@@ -4,7 +4,7 @@ url: /refguide10/access-a-samba-share/
 weight: 43
 description: "Describes how to access a Samba share from the MxCloud and use a server name."
 aliases:
-    - /howto/integration/access-a-samba-share-from-the-mxcloud/
+    - /howto10/integration/access-a-samba-share-from-the-mxcloud/
 ---
 
 ## Introduction

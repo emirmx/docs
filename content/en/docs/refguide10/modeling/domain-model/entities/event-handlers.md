@@ -97,5 +97,5 @@ Default: *Yes*
 
 ## Read More
 
-* [How to Denormalize Data to Improve Performance](/howto/data-models/denormalize-data-to-improve-performance/)
+* [How to Denormalize Data to Improve Performance](/howto10/data-models/denormalize-data-to-improve-performance/)
 * [Setting Up Data Validation](/refguide10/setting-up-data-validation/)

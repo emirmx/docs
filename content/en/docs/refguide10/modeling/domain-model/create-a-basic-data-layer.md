@@ -4,7 +4,7 @@ url: /refguide10/configuring-a-domain-model/
 weight: 60
 description: "Describes how to create entities and attributes, add enumerations, create associations, and configure the delete behavior for associations with Studio Pro."
 aliases:
-    - /howto/data-models/create-a-basic-data-layer/
+    - /howto10/data-models/create-a-basic-data-layer/
     - /refguide10/create-a-basic-data-layer/
 ---
 
@@ -203,5 +203,5 @@ The following explains how each entity is associated for the online shopping app
 
 ## Read More
 
-* [Denormalize Data to Improve Performance](/howto/data-models/denormalize-data-to-improve-performance/)
+* [Denormalize Data to Improve Performance](/howto10/data-models/denormalize-data-to-improve-performance/)
 * [Setting Up Data Validation](/refguide10/setting-up-data-validation/)

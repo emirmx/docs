@@ -4,7 +4,7 @@ url: /refguide10/mobile/using-mobile-capabilities/
 weight: 40
 description: Implement native mobile features in Mendix Studio Pro.
 aliases:
-    - /howto/mobile/implementation/
+    - /howto10/mobile/implementation/
 ---
 
 ## Introduction

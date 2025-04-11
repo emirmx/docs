@@ -5,7 +5,7 @@ url: /refguide10/mobile/using-mobile-capabilities/push-notifications/notif-add-m
 weight: 20
 description: Tutorial for adding push notification module dependencies.
 aliases:
-    - /howto/mobile/notif-add-module-depends/
+    - /howto10/mobile/notif-add-module-depends/
 ---
 
 ## Introduction

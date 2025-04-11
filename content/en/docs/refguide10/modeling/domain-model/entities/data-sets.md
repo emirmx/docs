@@ -9,7 +9,7 @@ weight: 80
 
 A dataset is defined using either an [OQL query](/refguide10/oql/) or a custom [Java action](/refguide10/java-actions/). To constrain a dataset, parameters can be defined which can be used in the OQL query or Java action.
 
-For one use of a dataset, see [Retrieving Objects Using OQL Specified in a Dataset](/howto/extensibility/howto-datastorage-api/#retrieving-objects-using-oql-specified-in-a-dataset) in *How to Use Mendix Data Storage APIs to Build Reusable Microflow Actions*.
+For one use of a dataset, see [Retrieving Objects Using OQL Specified in a Dataset](/howto10/extensibility/howto-datastorage-api/#retrieving-objects-using-oql-specified-in-a-dataset) in *How to Use Mendix Data Storage APIs to Build Reusable Microflow Actions*.
 
 ## General
 

@@ -4,7 +4,7 @@ url: /refguide10/extracting-and-using-sub-microflows/
 weight: 5
 description: "Describes how to break down a large microflow into more manageable parts."
 aliases:
-    - /howto/logic-business-rules/extract-and-use-sub-microflows/
+    - /howto10/logic-business-rules/extract-and-use-sub-microflows/
 ---
 
 ## Introduction

@@ -4,14 +4,14 @@ url: /refguide10/integration/consume-a-simple-web-service/
 weight: 7
 description: "Describes how to import a WSDL and create logic to call the web service."
 aliases:
-    - /howto/integration/consume-a-simple-web-service/
+    - /howto10/integration/consume-a-simple-web-service/
 ---
 
 ## Introduction
 
 Mendix is the app platform for the enterprise, and in enterprise software, it is not likely that you work in a [greenfield project](https://en.wikipedia.org/wiki/Greenfield_project). In almost every situation, you will need to integrate with existing systems. This how-to focuses on how you can consume web services with Studio Pro.
 
-In this how-to, you will use an example web service from [W3Schools](https://www.w3schools.com/). This is a very simple web service that converts temperatures from Celsius to Fahrenheit and vice versa. The converted temperature will be returned as a string value that can be stored in a variable directly. If you want to invoke a web service that returns a complex XML message, you can use the XML-to-domain mappings described in [How to Import XML Documents](/howto/integration/importing-xml-documents/).
+In this how-to, you will use an example web service from [W3Schools](https://www.w3schools.com/). This is a very simple web service that converts temperatures from Celsius to Fahrenheit and vice versa. The converted temperature will be returned as a string value that can be stored in a variable directly. If you want to invoke a web service that returns a complex XML message, you can use the XML-to-domain mappings described in [How to Import XML Documents](/howto10/integration/importing-xml-documents/).
 
 This how-to teaches you how to do the following:
 
@@ -98,9 +98,9 @@ To create logic to call the web service, follow these steps:
 
 ## Read More
 
-* [Create a Secure App](/howto/security/create-a-secure-app/)
-* [Consume a Complex Web Service](/howto/integration/consume-a-complex-web-service/)
-* [Export XML Documents](/howto/integration/export-xml-documents/)
-* [Import Excel Documents](/howto/integration/importing-excel-documents/)
-* [Expose a Web Service](/howto/integration/expose-a-web-service/)
-* [Use Selenium Support](/howto/integration/selenium-support/)
+* [Create a Secure App](/howto10/security/create-a-secure-app/)
+* [Consume a Complex Web Service](/howto10/integration/consume-a-complex-web-service/)
+* [Export XML Documents](/howto10/integration/export-xml-documents/)
+* [Import Excel Documents](/howto10/integration/importing-excel-documents/)
+* [Expose a Web Service](/howto10/integration/expose-a-web-service/)
+* [Use Selenium Support](/howto10/integration/selenium-support/)

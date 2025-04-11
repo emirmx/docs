@@ -4,7 +4,7 @@ url: /refguide10/exposing-data-to-bi-tools-using-odata/
 weight: 13
 description: "Describes how to create a published OData service with resources, add the OData server to Tableau and Excel, combine resources in Tableau, and create custom queries."
 aliases:
-    - /howto/integration/exposing-data-to-bi-tools-using-odata/
+    - /howto10/integration/exposing-data-to-bi-tools-using-odata/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -148,8 +148,8 @@ These are some other query examples:
 
 ## Read More
 
-* [Consume a Complex Web Service](/howto/integration/consume-a-complex-web-service/)
-* [Consume a Simple Web Service](/howto/integration/consume-a-simple-web-service/)
-* [Export XML Documents](/howto/integration/export-xml-documents/)
-* [Import Excel Documents](/howto/integration/importing-excel-documents/)
-* [Expose a Web Service](/howto/integration/expose-a-web-service/)
+* [Consume a Complex Web Service](/howto10/integration/consume-a-complex-web-service/)
+* [Consume a Simple Web Service](/howto10/integration/consume-a-simple-web-service/)
+* [Export XML Documents](/howto10/integration/export-xml-documents/)
+* [Import Excel Documents](/howto10/integration/importing-excel-documents/)
+* [Expose a Web Service](/howto10/integration/expose-a-web-service/)

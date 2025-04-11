@@ -4,7 +4,7 @@ url: /refguide10/integration/expose-a-web-service/
 weight: 12
 description: "Describes how Mendix supports exposing the functionality and data of your app using web services."
 aliases:
-    - /howto/integration/expose-a-web-service/
+    - /howto10/integration/expose-a-web-service/
 ---
 
 ## Introduction
@@ -32,7 +32,7 @@ This how-to was written based on Studio Pro 9.24. All the images, names, and ste
 
     {{< figure src="/attachments/refguide10/modeling/integration/expose-a-web-service/8945665.png" class="no-border" >}}
 
-2. Create overview and detail pages to manage objects of the **Customer** type (for details on how to create overview and detail pages, see [How to Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/)).
+2. Create overview and detail pages to manage objects of the **Customer** type (for details on how to create overview and detail pages, see [How to Create Your First Two Overview and Detail Pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/)).
 3. Create a menu item to access the customer overview page (for details on how to create menu items, see [Setting Up Navigation](/refguide10/setting-up-the-navigation-structure/)).
 4. Run the application and add some data to expose in the web service.
 
@@ -139,11 +139,11 @@ When exposing a web service, consider the following things:
 
 ## Read More
 
-* [Consume a Complex Web Service](/howto/integration/consume-a-complex-web-service/)
-* [Consume a Simple Web Service](/howto/integration/consume-a-simple-web-service/)
-* [Export XML Documents](/howto/integration/export-xml-documents/)
-* [Import Excel Documents](/howto/integration/importing-excel-documents/)
-* [Enable Selenium Support](/howto/integration/selenium-support/)
-* [Import XML Documents](/howto/integration/importing-xml-documents/)
-* [Consume a REST Service](/howto/integration/consume-a-rest-service/)
-* [Expose Data to BI Tools Using OData](/howto/integration/exposing-data-to-bi-tools-using-odata/)
+* [Consume a Complex Web Service](/howto10/integration/consume-a-complex-web-service/)
+* [Consume a Simple Web Service](/howto10/integration/consume-a-simple-web-service/)
+* [Export XML Documents](/howto10/integration/export-xml-documents/)
+* [Import Excel Documents](/howto10/integration/importing-excel-documents/)
+* [Enable Selenium Support](/howto10/integration/selenium-support/)
+* [Import XML Documents](/howto10/integration/importing-xml-documents/)
+* [Consume a REST Service](/howto10/integration/consume-a-rest-service/)
+* [Expose Data to BI Tools Using OData](/howto10/integration/exposing-data-to-bi-tools-using-odata/)

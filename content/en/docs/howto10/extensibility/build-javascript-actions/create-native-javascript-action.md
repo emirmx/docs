@@ -1,6 +1,6 @@
 ---
 title: "Build JavaScript Actions for Native Mobile"
-url: /howto/extensibility/create-native-javascript-action/
+url: /howto10/extensibility/create-native-javascript-action/
 weight: 30
 description: "This how-to teaches you how to build a JavaScript action for native mobile apps."
 ---
@@ -321,6 +321,6 @@ For the full explanation on how to build, sign, and distribute your app to an ap
 
 * [How to Build a Mendix Native App in the Cloud](/refguide10/mobile/distributing-mobile-apps/building-native-apps/deploying-native-app/)
 * [JavaScript Actions Reference Guide](/refguide10/javascript-actions/)
-* [How To Build JavaScript actions](/howto/extensibility/build-javascript-actions/)
+* [How To Build JavaScript actions](/howto10/extensibility/build-javascript-actions/)
 * [Declaring Native Dependencies](/apidocs-mxsdk/apidocs/pluggable-widgets-native-dependencies/)
 * GitHub's [NFC React Native Library](https://github.com/whitedogg13/react-native-nfc-manager)

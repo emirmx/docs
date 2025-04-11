@@ -1,7 +1,7 @@
 ---
 title: "Build JavaScript Actions: Part 1 (Basic)"
 linktitle: "1. Build JavaScript Actions"
-url: /howto/extensibility/write-javascript-actions/
+url: /howto10/extensibility/write-javascript-actions/
 weight: 10
 description: "This how-to teaches you how to create a JavaScript action."
 ---
@@ -140,8 +140,8 @@ To create a JavaScript action that can synthesize text to speech, follow these s
 
 ## Read More{#read-more}
 
-* [Build JavaScript Actions: Part 2 (Advanced)](/howto/extensibility/write-javascript-github/)
-* [Implement Best Practices for JavaScript Actions](/howto/extensibility/best-practices-javascript-actions/)
+* [Build JavaScript Actions: Part 2 (Advanced)](/howto10/extensibility/write-javascript-github/)
+* [Implement Best Practices for JavaScript Actions](/howto10/extensibility/best-practices-javascript-actions/)
 * [JavaScript Actions](/refguide10/javascript-actions/)
 * [Mendix Client API](/apidocs-mxsdk/apidocs/client-api/) 
 * JavaScript Resources:

@@ -1,10 +1,10 @@
 ---
 title: "Content Security Policy"
-url: /howto/security/csp/
+url: /howto10/security/csp/
 weight: 80
 description: By employing a content security policy (CSP) in your app, you can protect it from malicious content which might try to take advantage of the app's trusted web page context.
 aliases:
-    - /howto/security/using-mobile-capabilities/csp/
+    - /howto10/security/using-mobile-capabilities/csp/
 ---
 
 ## Introduction
@@ -67,7 +67,7 @@ if (typeof Symbol !== "function") {
 }
 ```
 
-Finally, the *theme/web/index.html* file needs to be changed to use these files directly. If you lack this file, please follow the [Customizing index.html (Web)](/howto/front-end/customize-styling-new/#custom-web) section of *Customize Styling*.
+Finally, the *theme/web/index.html* file needs to be changed to use these files directly. If you lack this file, please follow the [Customizing index.html (Web)](/howto10/front-end/customize-styling-new/#custom-web) section of *Customize Styling*.
 
 In *theme/web/index.html* do the following:
 

@@ -5,7 +5,7 @@ url: /refguide10/execute-an-sql-statement-on-an-external-database/
 weight: 50
 description: "Describes how to execute an SQL statement on relational external databases using Database Connector."
 aliases: 
-    - /howto/integration/execute-an-sql-statement-on-an-external-database/
+    - /howto10/integration/execute-an-sql-statement-on-an-external-database/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team (buildpack) know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
