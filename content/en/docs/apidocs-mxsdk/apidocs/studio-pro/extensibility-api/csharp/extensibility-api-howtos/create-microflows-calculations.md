@@ -1,6 +1,7 @@
 ---
-title: "Create Microflows for Calculations"
-url: /apidocs-mxsdk/apidocs/extensibility-api/create-microflows-for-calculations/
+title: "Create Microflows for Calculations Using C#"
+linktitle: "Calculation Microflows"
+url: /apidocs-mxsdk/apidocs/csharp-extensibility-api/create-microflows-for-calculations/
 weight: 8
 ---
 
@@ -12,7 +13,7 @@ You can download the example in this how-to in [this GitHub repository](https://
 
 ## Creating an Extension Class that Creates Microflows
 
-1. Open the project that you previously created when you [created a menu extension](/apidocs-mxsdk/apidocs/extensibility-api/create-menu-extension/).
+1. Open the project that you previously created when you [created a menu extension](/apidocs-mxsdk/apidocs/csharp-extensibility-api/create-menu-extension/).
 2. Add a new folder *MicroflowTutorial* to your solution.
 3. Create a `MenuExtension` class.
 4. Add a new class to the project and call it `CreateMicroflowsMenu.cs`.
@@ -83,9 +84,9 @@ public void CreateMicroflows(IModel currentApp)
 }
 ```
 
-As you can see, the `CreateMicroflows` method starts a new transaction, by calling `currentApp.StartTransaction`, which is the only way an extension can modify the model of the app. If your class tried to create microflows outside of a transaction, an error will be thrown. For more information, see [Interact with the Model API](/apidocs-mxsdk/apidocs/extensibility-api/interact-with-model-api/).
+As you can see, the `CreateMicroflows` method starts a new transaction, by calling `currentApp.StartTransaction`, which is the only way an extension can modify the model of the app. If your class tried to create microflows outside of a transaction, an error will be thrown. For more information, see [Interact with the Model API Using C#](/apidocs-mxsdk/apidocs/interact-with-model-api/).
 
- `IMicroflowService` enables creating microflows. For details, see [Create a Microflow and Add Activities](/apidocs-mxsdk/apidocs/extensibility-api/create-microflow-add-activities/). It requires the current model (`IModel`), the containing module or folder inside a module (`IFolderBase`), a name, and an optional `MicroflowReturnValue`. The return value is actually used in the example, so you will see how to create one as well.
+ `IMicroflowService` enables creating microflows. For details, see [Create a Microflow and Add Activities Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api/create-microflow-add-activities/). It requires the current model (`IModel`), the containing module or folder inside a module (`IFolderBase`), a name, and an optional `MicroflowReturnValue`. The return value is actually used in the example, so you will see how to create one as well.
 
 A microflow returns a value with `IMicroflowExpression`. This can be achieved by using your `IMicroflowExpressionService`, which returns an expression from a String input, and set that expression as the microflow's return value.
 
