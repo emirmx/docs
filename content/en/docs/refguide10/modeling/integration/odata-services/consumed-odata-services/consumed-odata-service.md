@@ -218,7 +218,7 @@ See the [Limitations](/refguide10/consumed-odata-services/#consumed-odata-servic
 
 In the [Integration pane](/refguide10/integration-pane/), search results, and in the **Used in this app** section, an update arrow indicates if there is a different contract at the Catalog endpoint.
 
-{{< figure src="/attachments/refguide/modeling/menus/view-menu/integration-pane/update-available.png" alt="Integration pane update" class="no-border" width="300" >}}
+{{< figure src="/attachments/refguide10/modeling/menus/view-menu/integration-pane/update-available.png" alt="Integration pane update" class="no-border" width="300" >}}
 
 * The service version that is currently consumed is shown (in this example **1.2.0**).
 * Blue **Update** - click to open the **Update Service** box and update the contract. Studio Pro will retrieve the new contract at the Catalog endpoint, which will be loaded in the app.
@@ -250,7 +250,7 @@ To consume the service deployed to the **Acceptance environment**, follow these 
 
 1. Click  **Update** > **Switch** on the **Consumed OData Service** document:
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-odata-services/consumed-odata-service/salesorders-header.png" alt="major change environment" class="no-border" >}}
+    {{< figure src="/attachments/refguide10/modeling/integration/consumed-odata-services/consumed-odata-service/salesorders-header.png" alt="major change environment" class="no-border" >}}
 
 2. On the **Switch** dialog box, from the drop-down list, select the service you want to consume from and click **Switch**:
 
