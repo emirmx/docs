@@ -1,6 +1,6 @@
 ---
 title: "JDK Installation"
-url: /refguide/jdk-installation/
+url: /refguide10/jdk-installation/
 weight: 45
 description: "Describes how to install the JDK for Studio Pro."
 ---
@@ -23,4 +23,4 @@ After downloading execute the downloaded installation executable and follow the 
 
 ## Configuring Studio Pro
 
-After the JDK is installed you can configure it in Studio Pro in the [Preferences](/refguide/preferences-dialog/#jdk).
+After the JDK is installed you can configure it in Studio Pro in the [Preferences](/refguide10/preferences-dialog/#jdk).

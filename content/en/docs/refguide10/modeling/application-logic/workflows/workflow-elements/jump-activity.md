@@ -1,6 +1,6 @@
 ---
 title: "Jump Activity"
-url: /refguide/jump-activity/
+url: /refguide10/jump-activity/
 weight: 50
 ---
 
@@ -28,7 +28,7 @@ The **Caption** describes what happens in this element. It is displayed under th
 **Target** is the activity that the workflow process will jump to during execution. You can select the activity you would like to go to from the drop-down menu. 
 
 {{% alert color="warning" %}}
-You cannot use the **Jump** activity as the final step in a [Parallel split](/refguide/parallel-split/) path, a [Boundary Event](/refguide/workflow-boundary-events/) path, or the main workflow path without providing an alternative route. Doing so prevents the path from reaching its endpoint.
+You cannot use the **Jump** activity as the final step in a [Parallel split](/refguide10/parallel-split/) path, a [Boundary Event](/refguide10/workflow-boundary-events/) path, or the main workflow path without providing an alternative route. Doing so prevents the path from reaching its endpoint.
 {{% /alert %}}
 
 ### Common Section {#common}
@@ -37,4 +37,4 @@ You cannot use the **Jump** activity as the final step in a [Parallel split](/re
 
 ## Read More
 
-* [Workflow Properties](/refguide/workflow-properties/)
+* [Workflow Properties](/refguide10/workflow-properties/)

@@ -1,13 +1,13 @@
 ---
 title: "Data Grid"
-url: /refguide/data-grid/
+url: /refguide10/data-grid/
 weight: 10
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 {{% alert color="warning" %}}The data grid widget is not supported on native mobile pages.{{% /alert %}}
 
-{{% alert color="warning" %}}The data grid widget is not supported when using the [React client](/refguide/mendix-client/react/). Please use the [data grid 2 widget](/appstore/modules/data-grid-2/) instead. It is possible to convert existing data grid widgets to data grid 2 as explained in the [React Migration Guide](/refguide/mendix-client/react/#data-grid){{% /alert %}}
+{{% alert color="warning" %}}The data grid widget is not supported when using the [React client](/refguide10/mendix-client/react/). Please use the [data grid 2 widget](/appstore/modules/data-grid-2/) instead. It is possible to convert existing data grid widgets to data grid 2 as explained in the [React Migration Guide](/refguide10/mendix-client/react/#data-grid){{% /alert %}}
 
 ## Introduction
 
@@ -16,15 +16,15 @@ A data grid shows a list of objects in a table format. For example, a data grid 
 {{< figure src="/attachments/refguide10/modeling/pages/data-widgets/grids/data-grid/data-grid.png" class="no-border" >}}
 Using controls provided by the data grid you can browse, search, and edit those objects.
 
-Any changes made to an object are visible in all widgets. This is because changes are stored globally in the client. See [Object Activities](/refguide/object-activities/) for more information.
+Any changes made to an object are visible in all widgets. This is because changes are stored globally in the client. See [Object Activities](/refguide10/object-activities/) for more information.
 
 ## Components
 
 A data grid contains the following components: 
 
-1. [Search bar](/refguide/search-bar/) – allows end-users to search for objects in the data grid
-2. [Control bar](/refguide/control-bar/) – allows you to control the objects displayed in the data grid by means of buttons
-3. [Grid Columns](/refguide/columns/) – allows end-users to set properties for a data grid column
+1. [Search bar](/refguide10/search-bar/) – allows end-users to search for objects in the data grid
+2. [Control bar](/refguide10/control-bar/) – allows you to control the objects displayed in the data grid by means of buttons
+3. [Grid Columns](/refguide10/columns/) – allows end-users to set properties for a data grid column
     {{< figure src="/attachments/refguide10/modeling/pages/data-widgets/grids/data-grid/data-grid-components.png" class="no-border" >}}
 
 ## Properties
@@ -43,29 +43,29 @@ Data grid properties consist of the following sections:
 
 ### Common Section {#common}
 
-The rows of the data grid can be sorted using the `Sort order` property. It is only available for **Database** [data sources](#data-source). For more information on sorting, see [Sort Order](/refguide/sort-order/).
+The rows of the data grid can be sorted using the `Sort order` property. It is only available for **Database** [data sources](#data-source). For more information on sorting, see [Sort Order](/refguide10/sort-order/).
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### Data Source Section {#data-source}
 
-The data source determines which objects will be shown in a data grid. For general information on data sources, see [Data Sources](/refguide/data-sources/).
+The data source determines which objects will be shown in a data grid. For general information on data sources, see [Data Sources](/refguide10/data-sources/).
 
 #### Type
 
 The data grid supports the following types of data sources: 
 
-* [Database source](/refguide/database-source/) – objects are retrieved directly from the database. The database source can be used in [offline](/refguide/offline-first/) applications. 
-* [XPath source](/refguide/xpath-source/) – objects are retrieved directly from the database
+* [Database source](/refguide10/database-source/) – objects are retrieved directly from the database. The database source can be used in [offline](/refguide10/offline-first/) applications. 
+* [XPath source](/refguide10/xpath-source/) – objects are retrieved directly from the database
     {{% alert color="info" %}}From Mendix version 10.5, the data grid widget does not have a separate XPath source, you can apply XPath constraints to the **Database** source.{{% /alert %}}
-* [Microflow source](/refguide/microflow-source/) – calculates the list of objects by executing a microflow
-* [Association source](/refguide/association-source/) – follows an association to get to objects
+* [Microflow source](/refguide10/microflow-source/) – calculates the list of objects by executing a microflow
+* [Association source](/refguide10/association-source/) – follows an association to get to objects
 
 The database and, below version 10.5, XPath sources retrieve objects from the database and supports searching and sorting. 
 
 ### Design Properties Section {#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### General Section {#general}
 
@@ -74,7 +74,7 @@ The database and, below version 10.5, XPath sources retrieve objects from the da
 This property indicates whether the control bar buttons will be visible in the end-user interface.
 
 {{% alert color="warning" %}}
-Even if the control bar buttons are invisible, there can still be a default button that is triggered by (double) clicking a row. For more information, see the property [Default Button Trigger](#default-button-trigger) and [Control Bar](/refguide/control-bar/).
+Even if the control bar buttons are invisible, there can still be a default button that is triggered by (double) clicking a row. For more information, see the property [Default Button Trigger](#default-button-trigger) and [Control Bar](/refguide10/control-bar/).
 {{% /alert %}}
 
 Default: *True*
@@ -142,11 +142,11 @@ Default: *0*
 
 #### Tooltip Page {#tooltip-page}
 
-A tooltip page is a page that appears when you hover your mouse over a row. The tooltip page should consist of a data view on the same entity as the data grid. Besides creating and connecting a tooltip page you also have to specify on which columns the tooltip will appear. See the property 'Show tooltip' of [data grid columns](/refguide/columns/).
+A tooltip page is a page that appears when you hover your mouse over a row. The tooltip page should consist of a data view on the same entity as the data grid. Besides creating and connecting a tooltip page you also have to specify on which columns the tooltip will appear. See the property 'Show tooltip' of [data grid columns](/refguide10/columns/).
 
 ### Visibility Section {#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ## Performing Specific Actions
 
@@ -158,8 +158,8 @@ To perform actions on a data grid, select it on a page and right-click it. The l
 
 ## Read More
 
-* [Page](/refguide/page/)
-* [Data Containers](/refguide/data-widgets/)
-* [Data Sources](/refguide/data-sources/)
-* [Properties Common in the Page Editor](/refguide/common-widget-properties/)
-* [Grid Columns](/refguide/columns/) 
+* [Page](/refguide10/page/)
+* [Data Containers](/refguide10/data-widgets/)
+* [Data Sources](/refguide10/data-sources/)
+* [Properties Common in the Page Editor](/refguide10/common-widget-properties/)
+* [Grid Columns](/refguide10/columns/) 

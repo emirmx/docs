@@ -1,12 +1,12 @@
 ---
 title: "Microflow Properties"
-url: /refguide/microflow/
+url: /refguide10/microflow/
 weight: 1
 ---
 
 ## Introduction
 
-This document describes the properties of a microflow. If you want to see what microflows are for and what kind of elements they contain, you can check [Microflows](/refguide/microflows/). If you want to know about the settings of the **Call a microflow** event action, you can check [Microflow Settings](/refguide/on-click-event/#microflow-settings).
+This document describes the properties of a microflow. If you want to see what microflows are for and what kind of elements they contain, you can check [Microflows](/refguide10/microflows/). If you want to know about the settings of the **Call a microflow** event action, you can check [Microflow Settings](/refguide10/on-click-event/#microflow-settings).
 
 ## Properties
 
@@ -24,7 +24,7 @@ Microflow properties consist of the following sections:
 
 #### Return Type {#return-type}
 
-The return type defines what information the microflow returns. The caller of the microflow gets a result of this type. For information on possible return types, see [Data Types](/refguide/data-types/).
+The return type defines what information the microflow returns. The caller of the microflow gets a result of this type. For information on possible return types, see [Data Types](/refguide10/data-types/).
 
 {{% alert color="info" %}}
 To indicate whether or not an object should be committed, you can use Boolean as the return type of the microflow.
@@ -32,7 +32,7 @@ To indicate whether or not an object should be committed, you can use Boolean as
 
 #### URL {#url}
 
-Microflow URLs allow you to execute a microflow when the end-user navigates to a specific URL within your application. The microflow is executed during the client startup, just before the home page is shown. When the microflow executes a [Show page](/refguide/on-click-event/#show-page) activity, its page is the first page shown to the end-user. The microflow's full URL starts with the base URL of your application, followed by `/p/`, and then by the microflow's configured URL. For example, `http://example.mendixcloud.com/p/microflow` is the full URL for the microflow's configured URL `microflow`.
+Microflow URLs allow you to execute a microflow when the end-user navigates to a specific URL within your application. The microflow is executed during the client startup, just before the home page is shown. When the microflow executes a [Show page](/refguide10/on-click-event/#show-page) activity, its page is the first page shown to the end-user. The microflow's full URL starts with the base URL of your application, followed by `/p/`, and then by the microflow's configured URL. For example, `http://example.mendixcloud.com/p/microflow` is the full URL for the microflow's configured URL `microflow`.
 
 Microflows with parameters can also have URLs. Such cases require that all parameters are present in the URL. You should include the parameters in the URL by writing their names between brackets, for example, `my-microflow/{Name}` where `Name` is the parameter's name. 
 
@@ -61,7 +61,7 @@ URLs are not supported for microflows that have non-persistable entities or list
 #### Export Level 
 
 {{% alert color="info" %}}
-This property is only available for add-on and solution modules. For more information on types of modules, see the [Module Types](/refguide/modules/#module-types) section in *Modules*. 
+This property is only available for add-on and solution modules. For more information on types of modules, see the [Module Types](/refguide10/modules/#module-types) section in *Modules*. 
 {{% /alert %}}
 
 **Export level** allows you to define access level to this document on the consumer (customer) side when developing an add-on module or a solution. 
@@ -89,7 +89,7 @@ Default: *disabled*
 
 #### Apply Entity Access
 
-**Apply entity access** indicates whether entity access based on the current user is applied when performing operations on objects. Enabling this setting limits the objects that are retrieved by the [retrieve activity](/refguide/retrieve/) to only those that the current user is allowed to see. Similarly, when reading and writing attributes and associations, the entity access of the current user is applied. Conversely, if entity access is not applied, all operations are allowed and all objects are retrieved.
+**Apply entity access** indicates whether entity access based on the current user is applied when performing operations on objects. Enabling this setting limits the objects that are retrieved by the [retrieve activity](/refguide10/retrieve/) to only those that the current user is allowed to see. Similarly, when reading and writing attributes and associations, the entity access of the current user is applied. Conversely, if entity access is not applied, all operations are allowed and all objects are retrieved.
 
 | Option | Description |
 | --- | --- |
@@ -106,13 +106,13 @@ Microflows that apply entity access have an **Entity Access** tag in the editor.
 
 #### Allowed Roles
 
-**Allowed roles** defines which [module role](/refguide/module-security/#module-role) the user must have to be able to execute the microflow.
+**Allowed roles** defines which [module role](/refguide10/module-security/#module-role) the user must have to be able to execute the microflow.
 
 {{% alert color="warning" %}}
 These roles are only checked when the microflow is executed from the client. A microflow is always allowed to call another microflow, and these roles are not checked then.
 {{% /alert %}}
 
-For more information, see [Module Security](/refguide/module-security/).
+For more information, see [Module Security](/refguide10/module-security/).
 
 ### Concurrent Execution Section {#concurrent}
 
@@ -145,11 +145,11 @@ It is also accessible by right-clicking in the microflow editor and selecting **
 
 By selecting the **Expose as microflow action**  option, you can expose the microflow as a microflow action and use the return type of the microflow to generate outcomes / paths in the workflow. Exposing the microflow will make it appear in the **Toolbox** when you are editing a microflow in the category of your choice. When this action is used in a microflow, it will show the provided caption and icon.
 
-The **Caption** and **Category** of the workflow action are required, but the **Icon** and **Image** are optional. The image in the **Icon** property is used for the list view of the **Toolbox**, and the image in the **Image** property – for the toolbox tile view. For more information, see the [Toolbox](/refguide/view-menu/#toolbox) section in the **View Menu**.
+The **Caption** and **Category** of the workflow action are required, but the **Icon** and **Image** are optional. The image in the **Icon** property is used for the list view of the **Toolbox**, and the image in the **Image** property – for the toolbox tile view. For more information, see the [Toolbox](/refguide10/view-menu/#toolbox) section in the **View Menu**.
 
 The required size for the icon is 64x64 pixels, and 256x192 pixels for the image; the required image format for both is PNG. 
 
-A separate icon and image can be provided for the [dark mode](/refguide/preferences-dialog/#studio-pro-theme) of Studio Pro to fit its color scheme.
+A separate icon and image can be provided for the [dark mode](/refguide10/preferences-dialog/#studio-pro-theme) of Studio Pro to fit its color scheme.
 
 {{% alert type="info" %}}
 When no icon and no image are selected, the default microflow call action icon and image are used.
@@ -165,13 +165,13 @@ It is also accessible by right-clicking in the microflow editor and selecting **
 
 {{< figure src="/attachments/refguide10/modeling/application-logic/microflows-and-nanoflows/microflows/microflow/workflow-expose.jpg" alt="Expose As Workflow Action" width="550" class="no-border" >}}
 
-By selecting the **Expose as workflow action** option, you can expose the microflow as a [workflow](/refguide/workflows/) action. Exposing the workflow makes it appear in the **Toolbox** of a [workflow editor](/refguide/workflows/) in the category of your choice. When this action is used in a workflow, it shows the provided caption and icon.
+By selecting the **Expose as workflow action** option, you can expose the microflow as a [workflow](/refguide10/workflows/) action. Exposing the workflow makes it appear in the **Toolbox** of a [workflow editor](/refguide10/workflows/) in the category of your choice. When this action is used in a workflow, it shows the provided caption and icon.
 
-The **Caption** and **Category** of the workflow action are required, but the **Icon** and **Image** are optional. The image in the **Icon** property is used for the list view of the **Toolbox**, and the image in the **Image** property – for the toolbox tile view. For more information, see the [Toolbox](/refguide/view-menu/#toolbox) section in the *View Menu*.
+The **Caption** and **Category** of the workflow action are required, but the **Icon** and **Image** are optional. The image in the **Icon** property is used for the list view of the **Toolbox**, and the image in the **Image** property – for the toolbox tile view. For more information, see the [Toolbox](/refguide10/view-menu/#toolbox) section in the *View Menu*.
 
 The required size for the icon is 64x64 pixels, and 256x192 pixels for the image; the required image format for both is PNG. 
 
-A separate icon and image can be provided for the [dark mode](/refguide/preferences-dialog/#studio-pro-theme) of Studio Pro to fit its color scheme.
+A separate icon and image can be provided for the [dark mode](/refguide10/preferences-dialog/#studio-pro-theme) of Studio Pro to fit its color scheme.
 
 {{% alert type="info" %}}
 When no icon and no image are selected, the default workflow call action icon and image are used.

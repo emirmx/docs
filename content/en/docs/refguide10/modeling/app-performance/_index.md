@@ -1,7 +1,7 @@
 ---
 title: "Community Best Practices for App Performance"
 linktitle: "App Performance"
-url: /refguide/community-best-practices-for-app-performance/
+url: /refguide10/community-best-practices-for-app-performance/
 weight: 15
 description: "Describes some best practices to apply during development to get a better performing app. This document is created by and for the Mendix community."
 aliases:
@@ -46,7 +46,7 @@ If you made a simple and sound design of the app's domain models, consider the f
     * Add separate entities for specializations with a one-to-one relation. Depending on UI needs, this one-to-one relation might be a normal reference from specialization to generalization to save prefetching time.
     * Add a non-persistable layer with inheritance that is populated by your business logic.
 * Do not use temporary associations on persistable entities. Use a non-persistable entity for your screen/UI logic here.
-* Avoid using more than one [association](/refguide/associations/) between entities, especially if such associations give different access levels. Instead, use [enumerations](/refguide/enumerations/) within one of the entities, or add an intermediary entity between the entities that contains an enumeration with the association type. For example, if different user types are accessing a document, do not create the associations **Document_Owner**, **Document_Editor**, **Document_Viewer**, etc. Instead, add an intermediary entity named **DocumentAccess** between the entities that contains an enumeration named **AccessType**, with the possible values of **Owner**, **Editor**, and **Viewer**.
+* Avoid using more than one [association](/refguide10/associations/) between entities, especially if such associations give different access levels. Instead, use [enumerations](/refguide10/enumerations/) within one of the entities, or add an intermediary entity between the entities that contains an enumeration with the association type. For example, if different user types are accessing a document, do not create the associations **Document_Owner**, **Document_Editor**, **Document_Viewer**, etc. Instead, add an intermediary entity named **DocumentAccess** between the entities that contains an enumeration named **AccessType**, with the possible values of **Owner**, **Editor**, and **Viewer**.
 
 ## Index
 
@@ -68,8 +68,8 @@ Indexes is a topic with a long history of best practices from the database world
 * Try to prevent multiple identical data sources, since they load the object multiple times.
 * Minimize conditional visibility.
 * Give the user feedback. If this takes more than a few seconds, provide a progress indication.
-* Do work asynchronously if the user does not have to wait for the result. For example, sending mails or updating other apps over an interface should never be something the user is waiting on in the UI. For running work asynchronously, there are options in the [Community Commons Function Library](/appstore/modules/community-commons-function-library/) in the Mendix Marketplace to run microflows in the background or have a [task queue](/refguide/task-queue/) to control the load and prevent peaks in background work.
-* When using a filter via an attribute from an associated entity in a data grid, restricting possible options is suggested in the drop-down search field so that only objects that have an association to the entity in the grid are fetched. For example scenario, you have a grid for the **Order** entity where you want to add a drop-down search field to filter by **Order_Customer/Customer/Name**. It would be beneficial to add the following [XPath](/refguide/xpath/) constraint to the drop-down search field: `[Order_Customer/Order]`. That way only **Customer**s with **Order**s will be available in the drop-down search. This is necessary because in some databases, filtering by non-existing criteria is slow, even if all indices are in place.
+* Do work asynchronously if the user does not have to wait for the result. For example, sending mails or updating other apps over an interface should never be something the user is waiting on in the UI. For running work asynchronously, there are options in the [Community Commons Function Library](/appstore/modules/community-commons-function-library/) in the Mendix Marketplace to run microflows in the background or have a [task queue](/refguide10/task-queue/) to control the load and prevent peaks in background work.
+* When using a filter via an attribute from an associated entity in a data grid, restricting possible options is suggested in the drop-down search field so that only objects that have an association to the entity in the grid are fetched. For example scenario, you have a grid for the **Order** entity where you want to add a drop-down search field to filter by **Order_Customer/Customer/Name**. It would be beneficial to add the following [XPath](/refguide10/xpath/) constraint to the drop-down search field: `[Order_Customer/Order]`. That way only **Customer**s with **Order**s will be available in the drop-down search. This is necessary because in some databases, filtering by non-existing criteria is slow, even if all indices are in place.
 
 ## Microflows {#microflow-community-best-practices}
 
@@ -78,10 +78,10 @@ Indexes is a topic with a long history of best practices from the database world
         * If needed, create a list named `<Entity>_CommitList` (or `<Entity>_DeleteList`) before the loop and collect the items to be committed (or deleted) there. 
     * For retrieves in a loop, consider retrieving all the data before the loop, and do finds on that list inside the loop.
     * If loops contain decisions, consider if the decision logic can be a query before the loop to minimize iterations.
-* When working with a large number of objects, consider working in batches. Committing or deleting items one by one can be slow, but these activities clean up memory. Doing this in batches ensures both good performance and low memory usage. For deletions, this is only possible in Studio Pro 10.17.0 and above. Create a [variable](/refguide/create-variable/) that is of data type Integer/Long and use it as a counter to decide in a loop when to perform the **Commit object(s)** or **Delete object(s)** activity on the list. Do not forget to use a **Change list** activity to do a **Clear** operation on the `<Entity>_CommitList` list after the **Commit object(s)** activity. The `<Entity>_DeleteList` list is cleared automatically during the **Delete object(s)** activity.
+* When working with a large number of objects, consider working in batches. Committing or deleting items one by one can be slow, but these activities clean up memory. Doing this in batches ensures both good performance and low memory usage. For deletions, this is only possible in Studio Pro 10.17.0 and above. Create a [variable](/refguide10/create-variable/) that is of data type Integer/Long and use it as a counter to decide in a loop when to perform the **Commit object(s)** or **Delete object(s)** activity on the list. Do not forget to use a **Change list** activity to do a **Clear** operation on the `<Entity>_CommitList` list after the **Commit object(s)** activity. The `<Entity>_DeleteList` list is cleared automatically during the **Delete object(s)** activity.
 * Prevent unnecessary retrieves if objects or lists can be passed as parameters.
 * Know and use the retrieve + aggregate optimization. If you retrieve a list and count the list, Mendix will optimize this to one query. If you need the list later in the microflow, after some decisions, it is wise to retrieve the list again so that you only retrieve the data when needed. This also works in batches where you can retrieve the total count optimized and retrieve chunks in a separate query.
-* Use retrieve over association if possible. This ensures that you have the latest version of your objects, including any changes which are not yet committed which the runtime will [take from memory](/refguide/mendix-client/#object-cache). If business logic requires the database value (because you want to ignore changes to the value over association), then you will need to make a database retrieve.
+* Use retrieve over association if possible. This ensures that you have the latest version of your objects, including any changes which are not yet committed which the runtime will [take from memory](/refguide10/mendix-client/#object-cache). If business logic requires the database value (because you want to ignore changes to the value over association), then you will need to make a database retrieve.
 * Commit as late as possible. A commit locks that record (or list of records). This means that any other user/logic that wants to commit the same object has to wait until the first transaction is finished.
 * To prevent locking, do scheduled events that commit data in small chunks. This is so the data does not get locked over a longer period of time.
 
@@ -101,7 +101,7 @@ For OQL, many of the same best practices apply as for XPath.
 
 ## Web Services and XML 
 
-* Use SSHA256 instead of BCrypt (except for [password hashing](/refguide/app-settings/#hash-algorithm)).
+* Use SSHA256 instead of BCrypt (except for [password hashing](/refguide10/app-settings/#hash-algorithm)).
 * Validating against schema slows down the processing.
 * Using sub-transactions for microflows slows down processing.
 
@@ -112,6 +112,6 @@ For OQL, many of the same best practices apply as for XPath.
 
 ## Best Practice Recommender
 
-[Best Practice Recommender](/refguide/best-practice-recommender/) can help you find potential improvements to your app in general, such as performance, security, naming conventions, and so on. It can be accessed via **View** > **Best Practice Recommender**.
+[Best Practice Recommender](/refguide10/best-practice-recommender/) can help you find potential improvements to your app in general, such as performance, security, naming conventions, and so on. It can be accessed via **View** > **Best Practice Recommender**.
 
-For more information on best practices, see [Recommendations from Best Practice Recommender](/refguide/performance-best-practices/).
+For more information on best practices, see [Recommendations from Best Practice Recommender](/refguide10/performance-best-practices/).

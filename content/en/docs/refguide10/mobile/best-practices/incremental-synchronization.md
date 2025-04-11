@@ -1,6 +1,6 @@
 ---
 title: "Incremental Synchronization"
-url: /refguide/mobile/best-practices/incremental-synchronization
+url: /refguide10/mobile/best-practices/incremental-synchronization
 weight: 20
 description: "This pattern makes it possible to incrementally sync objects from the server to the device based on changed dates."
 ---
@@ -25,7 +25,7 @@ Incremental synchronization lets you speed up synchronization by transmitting on
 
 To implement this pattern, do the following:
 
-1. Implement the [Deleted Flag](/refguide/mobile/best-practices/deleted-flag/) best practice for the target entity.
+1. Implement the [Deleted Flag](/refguide10/mobile/best-practices/deleted-flag/) best practice for the target entity.
 1. Enable **Store changedDate** for the target entity.
 1. Add a new entity with an attribute to store the last synchronization date (for example, **SyncHelper/LastSyncDate**).
 1. Set the default value for the synchronization date attribute to **1970-01-01**.
@@ -63,4 +63,4 @@ To improve your apps further, consult the following recommendations:
 
 ## Read More
 
-* To increase the clarity, organization, and documentation of your apps, see [Mendix Best Practices for Development](/refguide/dev-best-practices/)
+* To increase the clarity, organization, and documentation of your apps, see [Mendix Best Practices for Development](/refguide10/dev-best-practices/)

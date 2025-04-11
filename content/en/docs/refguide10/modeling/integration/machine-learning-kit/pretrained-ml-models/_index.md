@@ -1,6 +1,6 @@
 ---
 title: "Pre-Trained ML Models"
-url: /refguide/machine-learning-kit/pretrained-ml-models/
+url: /refguide10/machine-learning-kit/pretrained-ml-models/
 weight: 20
 ---
 
@@ -42,4 +42,4 @@ To integrate a pre-built (propriety or public) ML model into a Mendix app, consi
 * Compatibility of the model internal representation (IR) version with the *ML Kit*
 * Compatibility of the model OpSets with the *ML Kit*
 
-Then, follow the instructions to [import an ML model and create the ML mapping document](/refguide/machine-learning-kit/using-ml-kit/#import-model) in the *Using ML Kit* document.For details on versioning schemes, see the [Versioning](/refguide/machine-learning-kit/using-ml-kit/#versioning) section of *Using ML Kit*.
+Then, follow the instructions to [import an ML model and create the ML mapping document](/refguide10/machine-learning-kit/using-ml-kit/#import-model) in the *Using ML Kit* document.For details on versioning schemes, see the [Versioning](/refguide10/machine-learning-kit/using-ml-kit/#versioning) section of *Using ML Kit*.

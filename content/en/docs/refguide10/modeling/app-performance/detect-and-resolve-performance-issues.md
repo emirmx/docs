@@ -1,6 +1,6 @@
 ---
 title: "Detect and Resolve Performance Issues"
-url: /refguide/detect-and-resolve-performance-issues/
+url: /refguide10/detect-and-resolve-performance-issues/
 description: "Describes possible performance issues with root causes and resolutions."
 aliases:
     - /howto/monitoring-troubleshooting/detect-and-resolve-performance-issues/
@@ -83,7 +83,7 @@ The Mendix Server and [Apps](/developerportal/) offer a number of performance gr
 
 Once you have identified a slow page, it is easy to identify which microflows are executed on that page. Make sure you look at directly referenced microflows (such as data sources), and also at sub-microflows, on-change event handlers, and domain model event handlers that could be called by your page.
 
-Setting a breakpoint and stepping through these relevant microflows can often give you a quick (although subjective) way to find a slow action (for details, see [Debugging Microflows and Nanoflows](/refguide/debug-microflows-and-nanoflows/)). If you cannot subjectively identify your slow process, move on to the next step.
+Setting a breakpoint and stepping through these relevant microflows can often give you a quick (although subjective) way to find a slow action (for details, see [Debugging Microflows and Nanoflows](/refguide10/debug-microflows-and-nanoflows/)). If you cannot subjectively identify your slow process, move on to the next step.
 
 ### Microflow Time Stamps
 
@@ -126,7 +126,7 @@ Slow retrieves can occur for a number of different reasons, such as:
 Additionally, for details on how denormalization can improve your app performance in some cases, review [How to Denormalize Data to Improve Performance](/howto/data-models/denormalize-data-to-improve-performance/).
 
 {{% alert color="info" %}}
-You can set the [LogMinDurationQuery](/refguide/custom-settings/#LogMinDurationQuery) custom setting to debug slow database queries (OQL and XPath). For example, for debugging purposes, you could set the value to `500` milliseconds to see all the retrieves or commits that take longer than `500` milliseconds.
+You can set the [LogMinDurationQuery](/refguide10/custom-settings/#LogMinDurationQuery) custom setting to debug slow database queries (OQL and XPath). For example, for debugging purposes, you could set the value to `500` milliseconds to see all the retrieves or commits that take longer than `500` milliseconds.
 {{% /alert %}}
 
 ### Slow Database Commits
@@ -183,9 +183,9 @@ As always, make sure you look at the retrieves and commits performed in your loo
 
 ## Using Best Practice Recommender
 
-[Best Practice Recommender](/refguide/best-practice-recommender/) can help you find potential improvements to your app in general, such as performance, security, naming conventions, and so on. It can be accessed via **View** > **Best Practice Recommender**.
+[Best Practice Recommender](/refguide10/best-practice-recommender/) can help you find potential improvements to your app in general, such as performance, security, naming conventions, and so on. It can be accessed via **View** > **Best Practice Recommender**.
 
-For more information on best practices, see [Recommendations from Best Practice Recommender](/refguide/performance-best-practices/).
+For more information on best practices, see [Recommendations from Best Practice Recommender](/refguide10/performance-best-practices/).
 
 ## Read More
 

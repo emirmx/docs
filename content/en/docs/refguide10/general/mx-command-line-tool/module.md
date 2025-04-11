@@ -1,6 +1,6 @@
 ---
 title: "Module Commands"
-url: /refguide/mx-command-line-tool/module
+url: /refguide10/mx-command-line-tool/module
 weight: 30
 description: "Describes the module-related commands for the mx command-line tool."
 ---

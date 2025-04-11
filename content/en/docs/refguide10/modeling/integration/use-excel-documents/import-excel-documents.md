@@ -1,6 +1,6 @@
 ---
 title: "Import Excel Documents"
-url: /refguide/importing-excel-documents/
+url: /refguide10/importing-excel-documents/
 weight: 1
 description: "Describes how to set up import templates and import data into your app using the Excel Importer module."
 aliases: /howto/integration/importing-excel-documents/
@@ -15,10 +15,10 @@ Adding large amounts of data to your application (for example, reference data or
 
 Before starting this how-to, make sure you know how to do the following:
 
-* Create domain models (see [Configuring a Domain Model](/refguide/configuring-a-domain-model/))
+* Create domain models (see [Configuring a Domain Model](/refguide10/configuring-a-domain-model/))
 * Create overview and detail pages (see [How to Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/))
-* Create menu items (see [Setting Up Navigation](/refguide/setting-up-the-navigation-structure/))
-* Create microflows (see [Triggering a Microflow From a Menu Item](/refguide/triggering-microflow-from-menu-item/)
+* Create menu items (see [Setting Up Navigation](/refguide10/setting-up-the-navigation-structure/))
+* Create microflows (see [Triggering a Microflow From a Menu Item](/refguide10/triggering-microflow-from-menu-item/)
 * Add Marketplace content to your app (see [How to Use Marketplace Content](/appstore/use-content/))
 * Secure your applications (see [How to Create a Secure App](/howto/security/create-a-secure-app/))
 

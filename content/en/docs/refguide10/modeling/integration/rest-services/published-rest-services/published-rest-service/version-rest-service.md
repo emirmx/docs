@@ -1,6 +1,6 @@
 ---
 title: "Version a REST Service"
-url: /refguide/version-rest-service/
+url: /refguide10/version-rest-service/
 weight: 10
 description: "Describes the best practices for versioning REST services in Mendix."
 aliases:

@@ -1,7 +1,7 @@
 ---
 title: "Adding a Custom Action to the Workflow Toolbox"
 linktitle: "Add Custom Action to Workflow Toolbox"
-url: /refguide/add-action-to-workflow-toolbox/
+url: /refguide10/add-action-to-workflow-toolbox/
 description: "Describes how to expose a microflow as a workflow action in Mendix Studio Pro."
 weight: 100
 aliases:
@@ -10,7 +10,7 @@ aliases:
 
 ## Introduction 
 
-You can expose a microflow as a workflow action and add it to the workflow toolbox. This is particularly useful if you plan to reuse the microflow logic several times, turning it into a custom workflow action is a good alternative to using the [Call microflow](/refguide/call-microflow/) action. There are the following advantages to having the custom workflow action: 
+You can expose a microflow as a workflow action and add it to the workflow toolbox. This is particularly useful if you plan to reuse the microflow logic several times, turning it into a custom workflow action is a good alternative to using the [Call microflow](/refguide10/call-microflow/) action. There are the following advantages to having the custom workflow action: 
 
 * It makes logic more reusable.
 * The workflow process is more visualized and understandable.
@@ -26,9 +26,9 @@ This how-to teaches you how to do the following:
 
 Before starting this how-to, make sure you have completed the following prerequisites:
 
-* Familiarize yourself with workflow terms. For more information, see [Workflows](/refguide/workflows/). 
+* Familiarize yourself with workflow terms. For more information, see [Workflows](/refguide10/workflows/). 
 * Install Atlas 3 from the Mendix Marketplace. As a result of installing Atlas 3, your app should contain the following modules that Workflow Commons depends on: Atlas_Core, Atlas_Web_Content, and DataGrid.
-* Your app has the following optional modules [Workflow Commons](https://marketplace.mendix.com/link/component/117066) and [Mendix SSO](https://marketplace.mendix.com/link/component/111349) modules for better developer experience. For more information on how to set up Workflow Commons in an existing app, see [Adding a Workflow to an Existing App: Using Workflow Commons](/refguide/workflow-setting-up-app/).
+* Your app has the following optional modules [Workflow Commons](https://marketplace.mendix.com/link/component/117066) and [Mendix SSO](https://marketplace.mendix.com/link/component/111349) modules for better developer experience. For more information on how to set up Workflow Commons in an existing app, see [Adding a Workflow to an Existing App: Using Workflow Commons](/refguide10/workflow-setting-up-app/).
 
 ## Exposing the Microflow as the Workflow Action
 
@@ -63,7 +63,7 @@ To create the calling microflow and add it as the custom action to the workflow 
 
     2. Set **Category** to **Integration**.
 
-    3. Select an icon and a toolbox image from a disk for **Icon** and **Image** properties. For more information on properties, see the [Expose as Workflow Action](/refguide/microflow/#expose-as-workflow-action) section in *Microflow Properties*.
+    3. Select an icon and a toolbox image from a disk for **Icon** and **Image** properties. For more information on properties, see the [Expose as Workflow Action](/refguide10/microflow/#expose-as-workflow-action) section in *Microflow Properties*.
 
         {{< figure src="/attachments/refguide10/modeling/application-logic/workflows/add-action-to-workflow-toolbox/expose-as-workflow-action-properties.png" alt="Expose as Workflow Action Settings" class="no-border" >}}
 
@@ -86,5 +86,5 @@ Congratulations! You have turned the microflow into the custom workflow action a
 
 ## Read More
 
-* [Microflow Properties](/refguide/microflow/)
-* [Adding a Workflow to an Existing App: Using Workflow Commons](/refguide/workflow-setting-up-app/)
+* [Microflow Properties](/refguide10/microflow/)
+* [Adding a Workflow to an Existing App: Using Workflow Commons](/refguide10/workflow-setting-up-app/)

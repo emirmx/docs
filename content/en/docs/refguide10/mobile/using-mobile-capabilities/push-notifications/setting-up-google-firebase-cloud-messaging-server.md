@@ -1,7 +1,7 @@
 ---
 title: "Part 3: Set Up the Google Firebase Cloud Messaging Server"
 linktitle: "3. Set Up Firebase Cloud Messaging"
-url: /refguide/mobile/using-mobile-capabilities/push-notifications/setting-up-google-firebase-cloud-messaging-server/
+url: /refguide10/mobile/using-mobile-capabilities/push-notifications/setting-up-google-firebase-cloud-messaging-server/
 weight: 40
 description: Tutorial for configuring push notifications.
 aliases:
@@ -67,7 +67,7 @@ For a native mobile app, your bundle ID will be what you specify for the **App i
 * For iOS, open *ios/Config/config.xcconfig* and consult **BUNDLE_IDENTIFIER** to find your ID
 
 {{% alert color="info" %}}
-If you also want to support a [custom developer app](/refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/), repeat the above steps and append `.developerapp` to the IDs.
+If you also want to support a [custom developer app](/refguide10/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/), repeat the above steps and append `.developerapp` to the IDs.
 {{% /alert %}}
 
 Click **Deploy**, then **Mobile App**. Your ID is listed as **App Identifier**:

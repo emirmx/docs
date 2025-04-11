@@ -1,6 +1,6 @@
 ---
 title: "Monitoring Mendix Runtime"
-url: /refguide/monitoring-mendix-runtime/
+url: /refguide10/monitoring-mendix-runtime/
 description: "Describes the supported Mendix Runtime monitoring actions."
 #The anchor request-handlers below is mapped, so it should not be removed or changed.
 ---
@@ -496,7 +496,7 @@ This information can be used to track what state the Mendix Runtime is in when t
 
 ### Return Values
 
-In Mendix Studio Pro, a [health check microflow](/refguide/app-settings/) can be configured. This microflow can report on the functional status of the application; does the general functionality of the application work, and are the necessary remote services available?
+In Mendix Studio Pro, a [health check microflow](/refguide10/app-settings/) can be configured. This microflow can report on the functional status of the application; does the general functionality of the application work, and are the necessary remote services available?
 
 If a health check microflow has been configured, this request will report on the current health status. The "health" value can be one of "healthy", "sick", or "unknown" (when no health microflow was configured). For the value "sick," the "diagnosis" value will give the reason the application is not healthy. This reason is the return value of the health check microflow.
 

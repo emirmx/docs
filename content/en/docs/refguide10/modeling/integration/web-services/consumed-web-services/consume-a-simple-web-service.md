@@ -1,6 +1,6 @@
 ---
 title: "Consume a Simple Web Service"
-url: /refguide/integration/consume-a-simple-web-service/
+url: /refguide10/integration/consume-a-simple-web-service/
 weight: 7
 description: "Describes how to import a WSDL and create logic to call the web service."
 aliases:
@@ -92,7 +92,7 @@ To create logic to call the web service, follow these steps:
 
     {{< figure src="/attachments/refguide10/modeling/integration/consume-a-simple-web-service/completed-microflow.png" class="no-border" >}}
 
-20. Create a menu item that triggers this microflow. For details on how to create a menu item, see [Setting Up Navigation](/refguide/setting-up-the-navigation-structure/).
+20. Create a menu item that triggers this microflow. For details on how to create a menu item, see [Setting Up Navigation](/refguide10/setting-up-the-navigation-structure/).
 
 21. Deploy the application and trigger the microflow to call the web service operation. You should see a message with the converted temperature.
 

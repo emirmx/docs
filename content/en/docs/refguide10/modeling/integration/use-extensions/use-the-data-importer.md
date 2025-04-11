@@ -1,6 +1,6 @@
 ---
 title: "Use the Data Importer"
-url: /refguide/use-the-data-importer/
+url: /refguide10/use-the-data-importer/
 weight: 21
 description: "Overview of the Data Importer in Studio Pro"
 aliases: 
@@ -23,13 +23,13 @@ This how-to teaches you to do the following:
 Download the [Data Importer extension](https://marketplace.mendix.com/link/component/219833) from the Marketplace and [add it into your app](/appstore/use-content/#install). This module also requires:
 
 * Studio Pro [10.4](/releasenotes/studio-pro/10.4/) or above
-* A file document (for more information, see [File Manager](/refguide/file-manager/))
+* A file document (for more information, see [File Manager](/refguide10/file-manager/))
 
 ## Data Importer Document
 
 The Data Importer extension allows you to import data from Excel and CSV files directly into your app. Create a Data Importer document to define which columns to import and a non-persistable entity (NPE) to hold the imported data, along with source-to-target mapping. During the Data Importer document creation, you can preview the data and choose which columns you want to import and edit the name of resulting entity.
 
-The Data Importer document can be used along with the [Import data from file](/refguide/import-data-from-file/) custom activity. Use this activity in a microflow to import data from an Excel or CSV file.
+The Data Importer document can be used along with the [Import data from file](/refguide10/import-data-from-file/) custom activity. Use this activity in a microflow to import data from an Excel or CSV file.
 
 ### Creating a Data Importer Document
 

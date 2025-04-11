@@ -19,7 +19,7 @@ After completing this how-to, you will know how to do the following:
 * Migrate a PostgreSQL database to a non-PostgreSQL database, including migrating a PostgreSQL database to SAP HANA
 
 {{% alert color="warning" %}}
-You cannot use these methods to transfer data from one app to another. This is because each app labels the entities uniquely, even if the name in the domain model is the same. For more information, see [Data Storage](/refguide/data-storage/).
+You cannot use these methods to transfer data from one app to another. This is because each app labels the entities uniquely, even if the name in the domain model is the same. For more information, see [Data Storage](/refguide10/data-storage/).
 
 If you want to copy data to another app, Mendix recommends using the [Database Replication](/appstore/modules/database-replication/) module.
 {{% /alert %}}
@@ -38,7 +38,7 @@ These are the most commonly used custom settings for database migration:
 * SourceDatabaseUserName
 * SourceDatabasePassword
 
-For more information and the full list of available settings, see [Runtime Customization](/refguide/custom-settings/).
+For more information and the full list of available settings, see [Runtime Customization](/refguide10/custom-settings/).
 
 These settings can be configured as follows:
 

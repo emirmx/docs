@@ -109,8 +109,8 @@ Choosing *Yes* comes with the benefits of having the time zone and language sett
 
 APIs that do require authentication have either two or three options to fulfill that requirement, based on whether they are Published Web Services or OData/REST endpoints.
 
-All these authentication options will later be combined with the API's [Allowed Roles](/refguide/published-rest-service/#allowed-roles) configuration.
-Allowed roles can be any of the roles you have defined in [User Roles](/refguide/user-roles/), including the role assigned to Anonymous users.
+All these authentication options will later be combined with the API's [Allowed Roles](/refguide10/published-rest-service/#allowed-roles) configuration.
+Allowed roles can be any of the roles you have defined in [User Roles](/refguide10/user-roles/), including the role assigned to Anonymous users.
 
 {{% alert color="warning" %}}
 Assigning an Anonymous user role as one of the API's allowed roles is similar as choosing *No* at **Requires authentication**.
@@ -134,7 +134,7 @@ Credentials provided in the basic auth header will be checked as follows:
 #### Authentication Option 2, Active Session{#active}
 
 {{% alert color="info" %}}
-This authentication option is not available for Published Web Services and can only be used in apps which are not [Offline-First](/refguide/offline-first/). 
+This authentication option is not available for Published Web Services and can only be used in apps which are not [Offline-First](/refguide10/offline-first/). 
 {{% /alert %}}
 
 If you choose this option, the API will expect a "X-Csrf-Token" HTTP request header to be set on each incoming request. This authentication option is particularly interesting for custom JavaScript and widget implementations.
@@ -147,9 +147,9 @@ If you choose this option, the API passes the HttpRequest including all the atta
 
 This functionality allows you, for example, to contact an external Identity Provider or verify the access to the API endpoint and resource based on scopes and claims encoded in a JWT token.
 
-After the request has been authenticated, the role-based security model of Mendix will be applied to the microflows that are executed as the result of the API endpoint, resources, and paths that have been configured. If [Apply entity access](/refguide/microflow/#security) has been turned on, the API call will also check for read/write access to the requested entities and attributes before returning any data. 
+After the request has been authenticated, the role-based security model of Mendix will be applied to the microflows that are executed as the result of the API endpoint, resources, and paths that have been configured. If [Apply entity access](/refguide10/microflow/#security) has been turned on, the API call will also check for read/write access to the requested entities and attributes before returning any data. 
 
-To understand the full authentication flow, take a closer look at [Published REST Request Routing](/refguide/published-rest-routing/).
+To understand the full authentication flow, take a closer look at [Published REST Request Routing](/refguide10/published-rest-routing/).
 
 ### Limiting API Access through IP Restrictions and Certificates
 
@@ -168,10 +168,10 @@ This data is defined within the domain model and stored within the database of y
 
 You may need to store sensitive information, such as credentials, in your app. To limit access to this sensitive information, Mendix recommends the following:
 
-* Credentials are recorded in [constants](/refguide/constants/) which can be set when your app is deployed—in the [Mendix Portal](/developerportal/deploy/environments-details/#constants), for example, if you are deploying to Mendix Cloud.
+* Credentials are recorded in [constants](/refguide10/constants/) which can be set when your app is deployed—in the [Mendix Portal](/developerportal/deploy/environments-details/#constants), for example, if you are deploying to Mendix Cloud.
 * The constants should be blank by default (not populated with the credentials) in the app.
 
-    * Values for the constants can be provided during testing by creating a [configuration](/refguide/configuration/#constants).
+    * Values for the constants can be provided during testing by creating a [configuration](/refguide10/configuration/#constants).
 
 * Only authorized people should be given access to set the constants when the app is deployed. This is done through the [app roles](/developerportal/general/app-roles/) and (for Mendix Cloud) the [node permissions](/developerportal/deploy/node-permissions/).
 
@@ -197,7 +197,7 @@ By default, Mendix forces a strong password policy. The same password policy tha
 
 It is very tempting to simplify the password constraints for development purposes (for example, making it possible to use a single character to login). However, Mendix recommends avoiding this approach so that deployments will continue to force a strong password policy.
 
-The password policy can be set by via the guidelines described in [Password Policy](/refguide/password-policy/).
+The password policy can be set by via the guidelines described in [Password Policy](/refguide10/password-policy/).
 
 ## Renaming the Administrator User
 
@@ -268,5 +268,5 @@ Security in Mendix does not include scanning files that end-users upload or down
 
 To scan uploaded files for malicious content, do one of the following:
 
-* Create a custom module and configure the functionality yourself, for example, by using a [before a commit event](/refguide/setting-up-data-validation/#validation-before-commit-event).
+* Create a custom module and configure the functionality yourself, for example, by using a [before a commit event](/refguide10/setting-up-data-validation/#validation-before-commit-event).
 * Check available modules in the [Mendix Marketplace](https://marketplace.mendix.com/). For more information on how to use the Mendix Marketplace content, see [How to Use Marketplace Content](/appstore/use-content/).

@@ -1,13 +1,13 @@
 ---
 title: "Advanced Inference Design Patterns"
-url: /refguide/machine-learning-kit/design-patterns/advanced-inference/
+url: /refguide10/machine-learning-kit/design-patterns/advanced-inference/
 weight: 35
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-The [Integrating Models with Pre-processors and Post-processors](/refguide/machine-learning-kit/using-ml-kit/#pre-post-processors) section of *Integrate Machine Learning Models* outlines considerations when importing a machine learning model with advanced processing needs. What are the standards for these models, and what do they look like? 
+The [Integrating Models with Pre-processors and Post-processors](/refguide10/machine-learning-kit/using-ml-kit/#pre-post-processors) section of *Integrate Machine Learning Models* outlines considerations when importing a machine learning model with advanced processing needs. What are the standards for these models, and what do they look like? 
 
 This document explores four common advanced inference design patterns for machine learning models. These include the following:
 
@@ -48,7 +48,7 @@ A model pre-processor makes some data available for the first model, and the out
 
 ### Machine Learning MaaS (Model as a Service) {#maas}
 
-A common pattern in machine learning deployment is using a microservice or a service. While Studio Pro supports monolith applications with its security and speed advantages, creating a microservice is possible by servers [publishing a REST service](/howto/integration/publish-rest-service/) and clients [calling the service](/refguide/call-rest-action/). 
+A common pattern in machine learning deployment is using a microservice or a service. While Studio Pro supports monolith applications with its security and speed advantages, creating a microservice is possible by servers [publishing a REST service](/howto/integration/publish-rest-service/) and clients [calling the service](/refguide10/call-rest-action/). 
 
 In this way, the AI-powered smart app can be split into two Mendix apps: one to host the ML model, and one to process and use the predictions. This is a good approach for use cases where the ML model is complex and requires heavy computing power, or when the ML model is owned and maintained by another team. Another advantage is that you can update the ML model without the need for deploying the Mendix client app.
 
@@ -58,7 +58,7 @@ Below is an example of such deployment. Instead of actually storing the variable
 
 ### Batch Inference {#batch-inference}
 
-A common pattern for machine learning applications is the ability to run multiple inferences with a single request for the model, or batch inference. This is just a special case of [Dynamic Shapes](/refguide/machine-learning-kit/using-ml-kit/#dynamic-shapes), in which the first dimension is dynamic:
+A common pattern for machine learning applications is the ability to run multiple inferences with a single request for the model, or batch inference. This is just a special case of [Dynamic Shapes](/refguide10/machine-learning-kit/using-ml-kit/#dynamic-shapes), in which the first dimension is dynamic:
 
 {{< figure src="/attachments/refguide10/modeling/integration/ml-kit/design-patterns/advanced-inference-patterns/resnet50-dynamic-parameter.png" alt="Mapping of a ResNet50 with first parameter dynamic." class="no-border" >}}
 

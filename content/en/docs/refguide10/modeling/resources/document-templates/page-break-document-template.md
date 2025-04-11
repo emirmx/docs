@@ -1,11 +1,11 @@
 ---
 title: "Page Break (Document Template)"
-url: /refguide/page-break-document-template/
+url: /refguide10/page-break-document-template/
 aliases:
-    - /refguide/Page+Break+(document+template).html
-    - /refguide/page-break-(document-template).html
-    - /refguide/Page+Break+(document+template)
-    - /refguide/page-break-(document-template)
+    - /refguide10/Page+Break+(document+template).html
+    - /refguide10/page-break-(document-template).html
+    - /refguide10/Page+Break+(document+template)
+    - /refguide10/page-break-(document-template)
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -23,4 +23,4 @@ A page break.
 
 ## Common Properties
 
-{{% snippet file="/static/_includes/refguide/name-property.md" %}}
+{{% snippet file="/static/_includes/refguide10/name-property.md" %}}

@@ -1,6 +1,6 @@
 ---
 title: "Cast Object"
-url: /refguide/cast-object/
+url: /refguide10/cast-object/
 weight: 10
 ---
 
@@ -10,9 +10,9 @@ This activity can be used in both microflows and nanoflows.
 
 ## Introduction
 
-The **Cast object** activity is used after an [object type decision](/refguide/object-type-decision/) to change the type of object from the generalized object type to the specialized object type of the path out of the object type decision.
+The **Cast object** activity is used after an [object type decision](/refguide10/object-type-decision/) to change the type of object from the generalized object type to the specialized object type of the path out of the object type decision.
 
-For more information about specialization and generalization, see [Entities](/refguide/entities/).
+For more information about specialization and generalization, see [Entities](/refguide10/entities/).
 
 ## Properties
 
@@ -41,7 +41,7 @@ This is the name for the result of the cast. It can be used by all activities th
 
 ## Common Section{#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}
 
 ## Example
 

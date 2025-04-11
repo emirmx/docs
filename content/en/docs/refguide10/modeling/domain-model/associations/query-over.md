@@ -1,6 +1,6 @@
 ---
 title: "Querying Over Self-References"
-url: /refguide/query-over/
+url: /refguide10/query-over/
 weight: 20
 ---
 
@@ -42,7 +42,7 @@ There are six folders in the example above, and the database is structured and t
 
 {{< figure src="/attachments/refguide10/modeling/domain-model/associations/query-over/query-over-example-database.png" class="no-border" >}}
 
-For more information on how domain models are implemented in databases, see the [Implementation](/refguide/domain-model/#implementation) section of *Domain Model*.
+For more information on how domain models are implemented in databases, see the [Implementation](/refguide10/domain-model/#implementation) section of *Domain Model*.
 
 ### Retrieving the SubFolder (or SubFolders) (Children) from a Folder (Parent)
 
@@ -98,7 +98,7 @@ If the $ChosenFolder object is `SubFolder2`, you will retrieve all the **File** 
 
 ## Associations to Specializations
 
-In the special case of self-reference when a one-to-many association is with a specialization of itself, you cannot retrieve [by association](/refguide/retrieve/#source).
+In the special case of self-reference when a one-to-many association is with a specialization of itself, you cannot retrieve [by association](/refguide10/retrieve/#source).
 
 Here is an example inheritance:
 

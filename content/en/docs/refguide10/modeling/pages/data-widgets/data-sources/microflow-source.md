@@ -1,12 +1,12 @@
 ---
 title: "Microflow Source"
-url: /refguide/microflow-source/
+url: /refguide10/microflow-source/
 weight: 40
 ---
 
 ## Introduction
 
-In most cases, you use the **Database**, **XPath**, or **Association** data sources to fill a [data widget](/refguide/data-widgets/). For example, if the properties of a data grid require an object of an entity selected in the data grid, the data grid gets its objects from a database query. Another example is that a nested template grid can retrieve its objects over an association. However, sometimes the target objects need to adhere to very specific criteria, or different objects are shown under different circumstances that cannot be handled by an [XPath](/refguide/xpath-constraints/). In these situations a **Microflow** data source may be required.
+In most cases, you use the **Database**, **XPath**, or **Association** data sources to fill a [data widget](/refguide10/data-widgets/). For example, if the properties of a data grid require an object of an entity selected in the data grid, the data grid gets its objects from a database query. Another example is that a nested template grid can retrieve its objects over an association. However, sometimes the target objects need to adhere to very specific criteria, or different objects are shown under different circumstances that cannot be handled by an [XPath](/refguide10/xpath-constraints/). In these situations a **Microflow** data source may be required.
 
 When a data widget with a microflow data source is displayed in the browser or refreshed, it runs the designated microflow and displays the return value. The manner in which the objects are acquired in the microflow is entirely up to you, which allows for unlimited control over what objects to return.
 
@@ -58,4 +58,4 @@ This duplicates the [Microflow](#microflow) specified above.
 
 ## Read More
 
-* [Data Containers](/refguide/data-widgets/)
+* [Data Containers](/refguide10/data-widgets/)

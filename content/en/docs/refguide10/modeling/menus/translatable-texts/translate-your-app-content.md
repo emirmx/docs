@@ -1,6 +1,6 @@
 ---
 title: "Translating Your App Content"
-url: /refguide/translate-your-app-content/
+url: /refguide10/translate-your-app-content/
 weight: 50
 aliases:
   - /howto/collaboration-requirements-management/translate-your-app-content/
@@ -228,7 +228,7 @@ To set up the completeness check, do the following:
 4. Click **OK** to close the **Edit Language** dialog box. 
 5. In the **App Settings** dialog box, click **OK** to save the changes and close the dialog box. You then receive warnings about all text which has not been translated into that language. There is always a completeness check for the default language.
 
-For more information, see [Advanced Language Settings](/refguide/language-settings/#advanced) in the *Language Settings* reference guide.
+For more information, see [Advanced Language Settings](/refguide10/language-settings/#advanced) in the *Language Settings* reference guide.
 
 ### Sharing Translations With Other Apps
 
@@ -238,8 +238,8 @@ What if you have several apps and want to add Chinese to all of them? Maybe you 
 
 Mendix allows you to export a translation to an Excel file, either for the whole app or selected modules. You can then import this translation to another app and have your translation available to you.
 
-For more information, see [Exporting and Importing Text](/refguide/batch-translate/#export-import) in the *Batch Translate* reference guide.
+For more information, see [Exporting and Importing Text](/refguide10/batch-translate/#export-import) in the *Batch Translate* reference guide.
 
 ## Read More
 
-* [Language Menu](/refguide/translatable-texts/)
+* [Language Menu](/refguide10/translatable-texts/)

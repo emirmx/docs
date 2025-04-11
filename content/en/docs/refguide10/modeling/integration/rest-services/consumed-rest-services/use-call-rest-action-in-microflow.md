@@ -1,6 +1,6 @@
 ---
 title: "Use Call REST Service Action in a Microflow"
-url: /refguide/integration/use-call-rest-action-in-microflow/
+url: /refguide10/integration/use-call-rest-action-in-microflow/
 weight: 15
 description: "Describes how to integrate an existing system or a legacy system into a Mendix app by calling a REST service in a microflow."
 description: "Describes how to get information from a REST service."
@@ -25,7 +25,7 @@ The steps below use Studio Pro as an example of what the REST service returns:
 1. Open your browser and go to [https://en.wikipedia.org/api/rest_v1/page/summary/Tahiti](https://en.wikipedia.org/api/rest_v1/page/summary/Tahiti). This calls the REST service with a `GET` request. The result is the summary of the [Tahiti page on Wikipedia](https://en.wikipedia.org/wiki/Tahiti) in JSON format.
 2. Copy the whole JSON snippet.
 3. Create a module and name it *RESTconsume*. 
-4. Add the new [JSON structure](/refguide/json-structures/) to your module by right-clicking the module in the **App Explorer** and selecting **Add other** > **JSON structure**. 
+4. Add the new [JSON structure](/refguide10/json-structures/) to your module by right-clicking the module in the **App Explorer** and selecting **Add other** > **JSON structure**. 
 5. Enter *JSON_structure* in the **Name** field and click **OK**.
 6. In the **JSON Structure** dialog box, paste the JSON snippet in the **General** tab and click **Refresh** in the **Structure** section. This analyzes the structure of the JSON snippet and provides a representation of it.
 
@@ -35,7 +35,7 @@ The steps below use Studio Pro as an example of what the REST service returns:
 
 ## Creating an Import Mapping {#create-import-mapping}
 
-An [import mapping](/refguide/import-mappings/) specifies how the JSON relates to [entities](/refguide/entities/). You can map the JSON to any entity you like. The following steps describe how to generate the entities and create an import mapping:
+An [import mapping](/refguide10/import-mappings/) specifies how the JSON relates to [entities](/refguide10/entities/). You can map the JSON to any entity you like. The following steps describe how to generate the entities and create an import mapping:
 
 1. Right-click the module in the **App Explorer** and select **Add other** > **Import Mapping**.
 2. Enter *Import_mapping* in the **Name** field and click **OK**.
@@ -78,7 +78,7 @@ To add an input entity to the domain model, follow these steps:
 
 ## Calling the REST Service in a Microflow {#call-microflow}
 
-You will now call the REST service in a [microflow](/refguide/microflows/) to build the integration with Wikipedia. The input parameter for the microflow is **Input**, which is associated with **Summary**.
+You will now call the REST service in a [microflow](/refguide10/microflows/) to build the integration with Wikipedia. The input parameter for the microflow is **Input**, which is associated with **Summary**.
 
 To call the REST service in a microflow, follow these steps:
 
@@ -164,4 +164,4 @@ You can now start your app and get summaries from Wikipedia.
 * [Import Excel Documents](/howto/integration/importing-excel-documents/)
 * [Expose a Web Service](/howto/integration/expose-a-web-service/)
 * [Expose Data to BI Tools Using OData](/howto/integration/exposing-data-to-bi-tools-using-odata/)
-* [Security Considerations](/refguide/call-rest-action/#security)
+* [Security Considerations](/refguide10/call-rest-action/#security)

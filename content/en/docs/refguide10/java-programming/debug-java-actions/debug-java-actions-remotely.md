@@ -1,6 +1,6 @@
 ---
 title: "Debug Java Actions Remotely"
-url: /refguide/debug-java-actions-remotely/
+url: /refguide10/debug-java-actions-remotely/
 aliases:
     - /howto/monitoring-troubleshooting/debug-java-actions-remotely/
 ---
@@ -22,7 +22,7 @@ This how-to teaches you how to do the following:
 
 To edit the server configuration with extra JVM parameters, follow these steps:
 
-1. Open the [App Settings](/refguide/app-settings/).
+1. Open the [App Settings](/refguide10/app-settings/).
 2. Edit the configuration on the **Configurations** tab.
 3. Go to the **Server** tab of the configuration, add the following line to the **Extra JVM parameters** field:
 

@@ -1,7 +1,7 @@
 ---
 title: "Configuring a Workflow in Studio Pro for the Employee Onboarding Process"
 linktitle: "Workflow for Employee Onboarding"
-url: /refguide/workflow-how-to-configure/
+url: /refguide10/workflow-how-to-configure/
 description: "Describes how to configure a workflow in Mendix Studio Pro."
 weight: 80
 aliases:
@@ -32,7 +32,7 @@ You would like to build an employee onboarding process. At first, an HR speciali
 
 Before starting this how-to, make sure you have completed the following prerequisites:
 
-* Your app includes the [Workflow Commons](https://marketplace.mendix.com/link/component/117066) module. For more information on how to set up Workflow Commons in an existing app, see [Adding a Workflow to an Existing App: Using Workflow Commons](/refguide/workflow-setting-up-app/). 
+* Your app includes the [Workflow Commons](https://marketplace.mendix.com/link/component/117066) module. For more information on how to set up Workflow Commons in an existing app, see [Adding a Workflow to an Existing App: Using Workflow Commons](/refguide10/workflow-setting-up-app/). 
 
 * Dashboards and metrics in Workflow Commons v2.1.0 and above depend on state change microflows. Make sure to do the following:
 
@@ -41,9 +41,9 @@ Before starting this how-to, make sure you have completed the following prerequi
 
 * Make sure your app has Atlas 3. As a result of installing Atlas 3, your app should contain the following modules that Workflow Commons depends on: Atlas_Core, Atlas_Web_Content, and DataWidgets.
 
-* Familiarize yourself with workflow terms. For more information, see [Workflows](/refguide/workflows/). 
+* Familiarize yourself with workflow terms. For more information, see [Workflows](/refguide10/workflows/). 
 
-* Make sure that the **User entity** is set to *Administration.Account* in your [App Settings](/refguide/app-settings/#workflows) > **Workflows** tab. 
+* Make sure that the **User entity** is set to *Administration.Account* in your [App Settings](/refguide10/app-settings/#workflows) > **Workflows** tab. 
 
 * Make sure that the domain model of the module you are working in looks the following way:
 
@@ -128,7 +128,7 @@ You need to create demo users for the newly created app roles to be able to test
 1. In the App Explorer, open **App** > **Security** > the **Demo users** tab. 
 2. Click **New**.
 3. In the **Add Demo User** dialog box, set the **User name** to **demo_facilities**.
-4. Set the same entity you selected for the **User entity** setting in [App Settings](/refguide/app-settings/#workflows) > **Workflows** tab: set **Entity** to **Administration.Account**.
+4. Set the same entity you selected for the **User entity** setting in [App Settings](/refguide10/app-settings/#workflows) > **Workflows** tab: set **Entity** to **Administration.Account**.
 5. Assign the corresponding user role in the **User roles** section: select the **Facilities** role and click **OK**.
 6. Repeat steps 2-5 to add the **demo_manager** demo user.
 7. Repeat steps 2-5 to add the **demo_hr** demo user.
@@ -137,7 +137,7 @@ You have configured demo users for your app.
 
 ### Configuring Entity Access
 
-The next step in setting up security is to configure the entity access otherwise you might run into consistency errors and the users of your app may see too much or too little information. For more information on what the entity access is, see the [Entity Access](/refguide/module-security/#entity-access) section in *Module Security*. Follow the steps below:
+The next step in setting up security is to configure the entity access otherwise you might run into consistency errors and the users of your app may see too much or too little information. For more information on what the entity access is, see the [Entity Access](/refguide10/module-security/#entity-access) section in *Module Security*. Follow the steps below:
 
 1. Open the domain model.
 2. Double-click the **EmployeeOnboarding** entity to open its properties.
@@ -196,7 +196,7 @@ To create a workflow that you will add activities to and create pages for, do th
 
 2. In the **Add Workflow** dialog box, do the following:
     1. Type *Employee_Onboarding* as the **Name** of the workflow.
-    2. In the Workflow context section, click **Select** to select an entity. This entity will be used by the [Workflow Context parameter](/refguide/workflow-parameters/) to carry the business data that is added during the execution of the workflow. 
+    2. In the Workflow context section, click **Select** to select an entity. This entity will be used by the [Workflow Context parameter](/refguide10/workflow-parameters/) to carry the business data that is added during the execution of the workflow. 
 3. In the **Select Entity** dialog box, select the **EmployeeOnboarding** entity and click **Select**.
 
 Good job! You have created a workflow and configured the Workflow Context parameter. 
@@ -289,7 +289,7 @@ Depending on whether the new hire is working from the office or home, there are 
 Do the following:
 
 1. Open the workflow editor > **Toolbox** and drag the **Decision** activity after the **Manager: Specify Device and Location** user task.
-2. Decision means that the workflow path can split and follow one of the outcomes depending on the condition of the decision. For more information, see [Decision in Workflows](/refguide/decision-in-workflows/). Open the decision properties and do the following:
+2. Decision means that the workflow path can split and follow one of the outcomes depending on the condition of the decision. For more information, see [Decision in Workflows](/refguide10/decision-in-workflows/). Open the decision properties and do the following:
 
     1. Set the **Caption** to **WFH?**.
     2. Click the ellipsis icon in the **Condition** property.
@@ -348,7 +348,7 @@ To call a microflow in your workflow, do the following:
 
     {{< figure src="/attachments/refguide10/modeling/application-logic/workflows/workflow-how-to-configure/microflow-example.png" alt="Microflow Example" class="no-border" >}}
 
-You can now add the actual desk assignment logic to the microflow, which falls outside the scope of this how-to. For more information on microflows and their properties, see [Microflows](/refguide/microflows/) and [Microflow Properties](/refguide/microflow/).
+You can now add the actual desk assignment logic to the microflow, which falls outside the scope of this how-to. For more information on microflows and their properties, see [Microflows](/refguide10/microflows/) and [Microflow Properties](/refguide10/microflow/).
 Now if the manager indicates that the new employee works from home, the desk prepared by the Facilities department will be assigned to the new employee and will be shown in the system. 
 
 Congratulations! The onboarding workflow is completed, and you can test it with different roles by running your application locally. 
@@ -388,7 +388,7 @@ To test your workflow, you need to switch between different user roles. Follow t
 
         {{< figure src="/attachments/refguide10/modeling/application-logic/workflows/workflow-how-to-configure/demo_hr.png" alt="EmployeeToOnboard Example" class="no-border" >}}
 
-        {{% alert color="info" %}}Now HR can start the onboarding process for the same employee more than once, which is okay for testing purposes, but it is not ideal in reality. A good solution is to add an OnboardingStatus attribute to the **EmployeeOnboarding** entity and configure the **Start Onboarding** button to trigger a microflow that updates the OnboardingStatus and then starts the workflow. Also, add conditional visibility for the **Start Onboarding** button so that it is not visible anymore after the OnboardingStatus is updated after the HR presses the button. For information on how to add conditional visibility for a button, see the [Visibility Section](/refguide/common-widget-properties/#visibility-properties) in *Properties Common in the Page Editor*. This solution, however, falls outside of the scope of the current how-to. {{% /alert %}}
+        {{% alert color="info" %}}Now HR can start the onboarding process for the same employee more than once, which is okay for testing purposes, but it is not ideal in reality. A good solution is to add an OnboardingStatus attribute to the **EmployeeOnboarding** entity and configure the **Start Onboarding** button to trigger a microflow that updates the OnboardingStatus and then starts the workflow. Also, add conditional visibility for the **Start Onboarding** button so that it is not visible anymore after the OnboardingStatus is updated after the HR presses the button. For information on how to add conditional visibility for a button, see the [Visibility Section](/refguide10/common-widget-properties/#visibility-properties) in *Properties Common in the Page Editor*. This solution, however, falls outside of the scope of the current how-to. {{% /alert %}}
 
     2. Test the process: switch users, view inbox for each user, complete tasks, see how new inbox items are created for the user roles you configured at the next task in the process. 
     3. Open the Workflow Admin Center.
@@ -398,4 +398,4 @@ Great job! You have deployed your app locally and tested your workflow from the 
 
 ## Read More
 
-* [Adding a Workflow to an Existing App: Using Workflow Commons](/refguide/workflow-setting-up-app/)
+* [Adding a Workflow to an Existing App: Using Workflow Commons](/refguide10/workflow-setting-up-app/)

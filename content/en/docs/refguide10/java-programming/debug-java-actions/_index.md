@@ -1,6 +1,6 @@
 ---
 title: "Debug Java Actions"
-url: /refguide/debug-java-actions/
+url: /refguide10/debug-java-actions/
 weight: 4
 description: "Describes how to set breakpoints and debug Java actions in Eclipse."
 aliases:
@@ -24,7 +24,7 @@ Before starting this how-to, make sure you have completed the following prerequi
 
 * Install [Eclipse](https://eclipse.org/)
 * Add a Java action and open the app in Eclipse
-* Read [Extending Your Application with Custom Java](/refguide/extending-your-application-with-custom-java/)
+* Read [Extending Your Application with Custom Java](/refguide10/extending-your-application-with-custom-java/)
 * Deploy the application for Eclipse by selecting **Deploy for Eclipse** from the app menu in Studio Pro (you should redo this every time you make changes in Studio Pro):
     {{< figure src="/attachments/refguide10/java-programming/debug-java-actions/18581045.png" class="no-border" >}}
 
@@ -74,6 +74,6 @@ There is the following limitation:
 * [Monitor Mendix Using JMX](/howto/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
 * [Debug Java Actions Remotely](/howto/monitoring-troubleshooting/debug-java-actions-remotely/)
 * [Log Levels](/howto/monitoring-troubleshooting/log-levels/)
-* [Debugging Microflows and Nanoflows](/refguide/debug-microflows-and-nanoflows/)
-* [Debugging Microflows Remotely](/refguide/debug-microflows-remotely/)
-* [Java Actions](/refguide/java-actions/)
+* [Debugging Microflows and Nanoflows](/refguide10/debug-microflows-and-nanoflows/)
+* [Debugging Microflows Remotely](/refguide10/debug-microflows-remotely/)
+* [Java Actions](/refguide10/java-actions/)

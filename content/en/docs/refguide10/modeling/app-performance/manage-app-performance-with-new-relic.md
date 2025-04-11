@@ -1,6 +1,6 @@
 ---
 title: "Manage App Performance with New Relic"
-url: /refguide/manage-app-performance-with-new-relic/
+url: /refguide10/manage-app-performance-with-new-relic/
 weight: 2
 aliases:
     - /howto/monitoring-troubleshooting/manage-app-performance-with-new-relic/

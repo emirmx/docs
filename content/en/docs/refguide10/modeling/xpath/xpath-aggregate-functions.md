@@ -1,6 +1,6 @@
 ---
 title: "XPath Aggregate Functions"
-url: /refguide/xpath-aggregate-functions/
+url: /refguide10/xpath-aggregate-functions/
 weight: 1
 ---
 

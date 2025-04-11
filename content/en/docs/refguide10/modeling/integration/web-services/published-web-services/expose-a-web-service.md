@@ -1,6 +1,6 @@
 ---
 title: "Expose a Web Service"
-url: /refguide/integration/expose-a-web-service/
+url: /refguide10/integration/expose-a-web-service/
 weight: 12
 description: "Describes how Mendix supports exposing the functionality and data of your app using web services."
 aliases:
@@ -28,12 +28,12 @@ This how-to was written based on Studio Pro 9.24. All the images, names, and ste
 
 ## Data Structure and GUI
 
-1. Create the following **Customer** entity in your domain model (for details on how to create an entity, see [Configuring a Domain Model](/refguide/configuring-a-domain-model/)):
+1. Create the following **Customer** entity in your domain model (for details on how to create an entity, see [Configuring a Domain Model](/refguide10/configuring-a-domain-model/)):
 
     {{< figure src="/attachments/refguide10/modeling/integration/expose-a-web-service/8945665.png" class="no-border" >}}
 
 2. Create overview and detail pages to manage objects of the **Customer** type (for details on how to create overview and detail pages, see [How to Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/)).
-3. Create a menu item to access the customer overview page (for details on how to create menu items, see [Setting Up Navigation](/refguide/setting-up-the-navigation-structure/)).
+3. Create a menu item to access the customer overview page (for details on how to create menu items, see [Setting Up Navigation](/refguide10/setting-up-the-navigation-structure/)).
 4. Run the application and add some data to expose in the web service.
 
 ## Creating a Published Web Service{#create-published-web-service}
@@ -51,7 +51,7 @@ To create a published web service, follow these steps:
 
         {{< figure src="/attachments/refguide10/modeling/integration/expose-a-web-service/18581713.png" class="no-border" >}}
 
-    * On the **Settings** tab, you can configure the other settings. Do change them before publishing your web service, especially the **Target namespace** (for details on these settings, see [Published Web Service](/refguide/published-web-service/)):
+    * On the **Settings** tab, you can configure the other settings. Do change them before publishing your web service, especially the **Target namespace** (for details on these settings, see [Published Web Service](/refguide10/published-web-service/)):
 
         {{< figure src="/attachments/refguide10/modeling/integration/expose-a-web-service/18581712.png" class="no-border" >}}
 
@@ -61,7 +61,7 @@ To create a published web service, follow these steps:
 
 To create the functionality to expose, follow these steps:
 
-1. Create a microflow that retrieves and returns a list of customers from the database (for details on how to create a microflow, see [Triggering a Microflow From a Menu Item](/refguide/triggering-microflow-from-menu-item/)).
+1. Create a microflow that retrieves and returns a list of customers from the database (for details on how to create a microflow, see [Triggering a Microflow From a Menu Item](/refguide10/triggering-microflow-from-menu-item/)).
 2. Add two input parameters to dynamically set the range settings of the retrieve action. Configure the range options of the retrieve action like this:
 
     {{< figure src="/attachments/refguide10/modeling/integration/expose-a-web-service/18581709.png" class="no-border" >}}
@@ -87,7 +87,7 @@ To publish a microflow, follow these steps:
 3. You should now see the **Operation Operation** properties editor. Take note of the following tab details:
 
     * On the **General** tab, you can change the **Name** and **Documentation**.
-    * On the **Parameters** tab, you can mark the input parameters as **Optional** and **Nillable** (needed when adding [parameters](/refguide/parameter/) during the [creating the functionality to expose](#expose) step)
+    * On the **Parameters** tab, you can mark the input parameters as **Optional** and **Nillable** (needed when adding [parameters](/refguide10/parameter/) during the [creating the functionality to expose](#expose) step)
     * On the **Return type** tab, you can configure the return type.
 
 4. Click **Select...** to select which attributes and associations of the return object **Customer** you want to expose:

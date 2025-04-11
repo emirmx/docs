@@ -1,6 +1,6 @@
 ---
 title: "Configuring File Upload and Download"
-url: /refguide/configure-files/
+url: /refguide10/configure-files/
 linktitle: "Configure File Upload and Download"
 weight: 70
 description: "Describes how to configure file manager in Mendix Studio Pro."
@@ -8,7 +8,7 @@ description: "Describes how to configure file manager in Mendix Studio Pro."
 
 ## Introduction 
 
-This how-to explains how you can enable your end-users to attach and download files, such as PDF files or Microsoft Word documents, by configuring a [file manager](/refguide/file-manager/) widget. Your users will be able to attach files from different devices: phone, tablet, or desktop; as well as download attached files from a list.
+This how-to explains how you can enable your end-users to attach and download files, such as PDF files or Microsoft Word documents, by configuring a [file manager](/refguide10/file-manager/) widget. Your users will be able to attach files from different devices: phone, tablet, or desktop; as well as download attached files from a list.
 
 This how-to teaches you how to do the following:
 
@@ -29,9 +29,9 @@ You also would like to enable IT administrators to download the attached file fr
 
 Before starting this how-to, make sure you have completed the following prerequisites:
 
-* Familiarize yourself with page terms and how to perform basic functions on pages. For more information, see [Page](/refguide/page/). 
+* Familiarize yourself with page terms and how to perform basic functions on pages. For more information, see [Page](/refguide10/page/). 
 
-* Familiarize yourself with the domain model terms and learn how to perform basic functions. For more information, see [Data in the Domain Model](/refguide/domain-model/).
+* Familiarize yourself with the domain model terms and learn how to perform basic functions. For more information, see [Data in the Domain Model](/refguide10/domain-model/).
 
 * Make sure your domain model is configured the following way:
 
@@ -43,7 +43,7 @@ Before starting this how-to, make sure you have completed the following prerequi
 
 ## Creating a Specialization of System.File
 
-First of all, to be able to attach and/or download files you need to add an entity that is a specialization of the System.File entity. For more information, see the [Generalization](/refguide/entities/#generalization) section in *Entities*. 
+First of all, to be able to attach and/or download files you need to add an entity that is a specialization of the System.File entity. For more information, see the [Generalization](/refguide10/entities/#generalization) section in *Entities*. 
 
 Do the following:
 

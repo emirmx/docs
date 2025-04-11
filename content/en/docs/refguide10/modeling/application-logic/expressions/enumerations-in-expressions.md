@@ -1,6 +1,6 @@
 ---
 title: "Enumerations in Expressions"
-url: /refguide/enumerations-in-expressions/
+url: /refguide10/enumerations-in-expressions/
 weight: 170
 ---
 
@@ -66,7 +66,7 @@ Gouden
 
 ## getKey {#getKey}
 
-The `getKey` function takes an enumeration value and returns the key (called *Name* in Studio Pro) of this value. The key is the technical name for the enumeration value and is language independent. For more information, see [Enumerations](/refguide/enumerations/).
+The `getKey` function takes an enumeration value and returns the key (called *Name* in Studio Pro) of this value. The key is the technical name for the enumeration value and is language independent. For more information, see [Enumerations](/refguide10/enumerations/).
 
 ### Input Parameters
 
@@ -96,4 +96,4 @@ Golden
 
 ## Read More
 
-* [Enumerations](/refguide/enumerations/)
+* [Enumerations](/refguide10/enumerations/)

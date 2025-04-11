@@ -1377,6 +1377,6 @@ The developer needs to have the class names memorized to apply a certain group b
 ## Read More
 
 * [Pluggable Widgets API Documentation](/apidocs-mxsdk/apidocs/pluggable-widgets/)
-* [Designing Mobile User Interfaces](/refguide/mobile/designing-mobile-user-interfaces/)
-* [Native Mobile Styling Reference Guide](/refguide/native-styling-refguide/)
+* [Designing Mobile User Interfaces](/refguide10/mobile/designing-mobile-user-interfaces/)
+* [Native Mobile Styling Reference Guide](/refguide10/native-styling-refguide/)
 * [How to Build Pluggable Widgets](/howto/extensibility/pluggable-widgets/)

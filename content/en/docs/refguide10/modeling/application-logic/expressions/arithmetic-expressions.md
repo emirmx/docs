@@ -1,6 +1,6 @@
 ---
 title: "Arithmetic Expressions"
-url: /refguide/arithmetic-expressions/
+url: /refguide10/arithmetic-expressions/
 weight: 20
 ---
 
@@ -165,7 +165,7 @@ the output is:
 
 Adds two numbers.
 
-For the use of the addition symbol for string concatenation, see [String function calls](/refguide/string-function-calls/).
+For the use of the addition symbol for string concatenation, see [String function calls](/refguide10/string-function-calls/).
 
 ### Input Parameters
 

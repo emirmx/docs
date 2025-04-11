@@ -1,11 +1,11 @@
 ---
 title: "Data Grid (Document Template)"
-url: /refguide/data-grid-document-template/
+url: /refguide10/data-grid-document-template/
 aliases:
-    - /refguide/Data+Grid+(document+template).html
-    - /refguide/data-grid-(document-template).html
-    - /refguide/Data+Grid+(document+template)
-    - /refguide/data-grid-(document-template)
+    - /refguide10/Data+Grid+(document+template).html
+    - /refguide10/data-grid-(document-template).html
+    - /refguide10/Data+Grid+(document+template)
+    - /refguide10/data-grid-(document-template)
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -25,7 +25,7 @@ A data grid showing a list of orders with a description and the referenced custo
 
 ### Columns
 
-See [Columns (document template)](/refguide/columns-document-template/).
+See [Columns (document template)](/refguide10/columns-document-template/).
 
 ## Appearance Properties
 
@@ -51,7 +51,7 @@ With striping enabled you can set the properties of even and uneven data grid ro
 
 ### Style
 
-See [Style](/refguide/style/)
+See [Style](/refguide10/style/)
 
 ## Common Properties
 

@@ -125,4 +125,4 @@ If you want to keep a copy of your existing data before using the data from the 
 
 ## Read More
 
-* [Version Control](/refguide/version-control/)
+* [Version Control](/refguide10/version-control/)

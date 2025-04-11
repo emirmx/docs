@@ -1,17 +1,17 @@
 ---
 title: "Integration Pane"
-url: /refguide/integration-pane/
+url: /refguide10/integration-pane/
 weight: 30
 description: "Describes the Integration Pane in Mendix Studio Pro."
 aliases:
-    - /refguide/data-hub-pane/
+    - /refguide10/data-hub-pane/
 ---
 
 ## Introduction
 
 Use the Integration pane in Studio Pro to use available data sources from the different applications in an organization into your Mendix apps. New apps can be created using shared datasets that are registered in the [Catalog](/catalog/). In Studio Pro, this is possible using the integrated functionality of Catalog through the **Integration** pane.
 
-You can search in the Catalog through the Integration pane to discover data sources that you can use in your app. Via this pane you can add the entities that are published in the registered OData services into your app's domain model. These entities are called [external entities](/refguide/external-entities/) and are different because they enable the connection to the data associated with the entities in the originating app.
+You can search in the Catalog through the Integration pane to discover data sources that you can use in your app. Via this pane you can add the entities that are published in the registered OData services into your app's domain model. These entities are called [external entities](/refguide10/external-entities/) and are different because they enable the connection to the data associated with the entities in the originating app.
 
 Besides external entities, OData services can expose actions that can be called from within microflows, and can define non-persistable entities that can be used as parameters or return types of these actions. From this pane you can drag these actions onto a microflow, where they will appear as a **Call external action** activity. In this activity you can configure the parameters and result variable. If a parameter or result has an external or non-persistable entity as its type, it will add those to the domain model for you when you add the action to your microflow.
 
@@ -38,13 +38,13 @@ When you do not enter search text in the Integration pane, then the **Used in yo
 
 {{< figure src="/attachments/refguide10/modeling/menus/view-menu/data-hub-pane/used-in-your-app.png" alt="User in Your App Section" class="no-border" >}}
 
-For more information on how to add entities and actions to your app, see [Adding an External Entity to an App](/refguide/external-entities/#adding-external-entities) section in *External Entities* or [Call external action](/refguide/call-external-action/).
+For more information on how to add entities and actions to your app, see [Adding an External Entity to an App](/refguide10/external-entities/#adding-external-entities) section in *External Entities* or [Call external action](/refguide10/call-external-action/).
 
 ## Searching Catalog Sources {#search}
 
 As you enter a search term, all the items in the Catalog satisfying the search string are listed in the search results. This includes words in the service, entity and attribute descriptions, which are not displayed in the Integration pane. For more information, see the [Selected Asset Details](/catalog/manage/search/#search-details) section in *Search in the Catalog*.
 
-You can drag the entity from the search results into your domain model and it will be added to your app and displayed as an [external entity](/refguide/external-entities/).
+You can drag the entity from the search results into your domain model and it will be added to your app and displayed as an [external entity](/refguide10/external-entities/).
 
 {{% alert color="info" %}}Services that are set to **not-Discoverable** in the Catalog are not be included in the search results for *any* user including owners of the service. To consume entities from these services owners must ensure that they are [Discoverable](/catalog/manage/curate/#discoverability).{{% /alert %}}
 
@@ -68,7 +68,7 @@ When the **Show development environments** is checked, all subsequent searches r
 
 ## Integration Pane Information {#viewing}
 
-The information that is displayed in the [Integration pane](/refguide//) either when you enter a search term or when you open the **Used in your App** section is described in the sections below. 
+The information that is displayed in the [Integration pane](/refguide10//) either when you enter a search term or when you open the **Used in your App** section is described in the sections below. 
 
 ### Services
 
@@ -84,7 +84,7 @@ The search results and **User in your App** section show the following informati
 * **Green check-mark** if the service or entity is consumed in the app. If you right-click a consumed service, you can do the following:
 
     * **View in Catalog** – click this to go to the [data source details](/catalog/manage/search/#service-details) page in the Catalog
-    * **Go to connection settings** – click this to open the [consumed OData service](/refguide/consumed-odata-service/) document
+    * **Go to connection settings** – click this to open the [consumed OData service](/refguide10/consumed-odata-service/) document
 
         {{< figure src="/attachments/refguide10/modeling/menus/view-menu/data-hub-pane/integration-pane-menu.png" alt="info on a Service" class="no-border" >}}
 
@@ -148,11 +148,11 @@ By clicking the expand button next to the action, the parameters and return type
 
 {{< figure src="/attachments/refguide10/modeling/menus/view-menu/data-hub-pane/actions.png" alt="integration pane actions" width="400" class="no-border" >}}
 
-{{% alert color="info" %}}Actions that [are not supported](/refguide/consumed-odata-service-requirements/#actions) in your Mendix app are shown as non-selectable (gray) and cannot be dragged into a microflow.{{% /alert %}}
+{{% alert color="info" %}}Actions that [are not supported](/refguide10/consumed-odata-service-requirements/#actions) in your Mendix app are shown as non-selectable (gray) and cannot be dragged into a microflow.{{% /alert %}}
 
 ## Read More
 
 * [Catalog](/catalog/)
-* [External Entities](/refguide/external-entities/)
-* [Consumed OData Service](/refguide/consumed-odata-service/)
+* [External Entities](/refguide10/external-entities/)
+* [Consumed OData Service](/refguide10/consumed-odata-service/)
 * [How to Consume Registered Assets](/catalog/consume/)

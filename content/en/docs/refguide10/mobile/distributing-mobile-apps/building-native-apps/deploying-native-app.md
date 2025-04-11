@@ -1,7 +1,7 @@
 ---
 title: "Build a Mendix Native App in the Cloud"
 linktitle: "Deploy Mendix Native Mobile App"
-url: /refguide/mobile/distributing-mobile-apps/building-native-apps/deploying-native-app/
+url: /refguide10/mobile/distributing-mobile-apps/building-native-apps/deploying-native-app/
 weight: 30
 description: Describes how to Build a Mendix native app in the cloud with the Mendix Native Mobile Builder.
 aliases:
@@ -13,7 +13,7 @@ aliases:
 {{% alert color="warning" %}}
 Microsoft announced that Visual Studio App Center will be retired on March 31, 2025 ([Find the announcement here](https://learn.microsoft.com/en-us/appcenter/retirement)). This guide relies on App Center to build the Mendix native app in the cloud and will no longer work after that date.
 
-If you are looking for a drop-in replacement of App Center, please consult the guide to [Build a Mendix Native App with Bitrise](/refguide/mobile/distributing-mobile-apps/building-native-apps/bitrise/)
+If you are looking for a drop-in replacement of App Center, please consult the guide to [Build a Mendix Native App with Bitrise](/refguide10/mobile/distributing-mobile-apps/building-native-apps/bitrise/)
 {{% /alert %}}
 
 This guide teaches you how to go from a blank slate to an app running on a device.
@@ -29,7 +29,7 @@ The Mendix Native Mobile Builder does not currently support connections behind p
 Before starting this guide, make sure you have completed the following prerequisites:
 
 * Install the [latest MTS version](/releasenotes/studio-pro/lts-mts/#mts) of Mendix Studio Pro using the online installer. The offline installer does not include the Mendix Native Mobile Builder dependency.
-* Read [Get Started with Native Mobile](/refguide/mobile/getting-started-with-mobile/) to see how to create, style and debug an application with Mendix Studio Pro
+* Read [Get Started with Native Mobile](/refguide10/mobile/getting-started-with-mobile/) to see how to create, style and debug an application with Mendix Studio Pro
 * Deploy your native mobile app to the cloud via Studio Pro and have the cloud address of your deployed application available
 * A [GitHub](https://github.com/) account.
 * An [App Center](https://appcenter.ms/) account. Mendix recommends a paid account if you will be building and deploying regularly.
@@ -136,7 +136,7 @@ Next, do the following:
 
 ## Signing Your Apps {#signing-a-build}
 
-By default, App Center builds are unsigned and cannot be released on the Google Play Store or the Apple App Store. To release your apps, you must provide your signature keys to Mendix Native Mobile Builder. Signature keys prove the authenticity of your app and prevent forgeries. For more information to how to acquire these keys, see the [Managing App Signing Keys Guide](/refguide/managing-app-signing-keys/).
+By default, App Center builds are unsigned and cannot be released on the Google Play Store or the Apple App Store. To release your apps, you must provide your signature keys to Mendix Native Mobile Builder. Signature keys prove the authenticity of your app and prevent forgeries. For more information to how to acquire these keys, see the [Managing App Signing Keys Guide](/refguide10/managing-app-signing-keys/).
 
 ### Setting Up Signing for iOS {#signing-for-ios}
 
@@ -248,4 +248,4 @@ A signed Android APK can be uploaded to Google Play store directly. For more inf
 
 ## Read More
 
-* [Get Started with Native Mobile](/refguide/mobile/getting-started-with-mobile/)
+* [Get Started with Native Mobile](/refguide10/mobile/getting-started-with-mobile/)

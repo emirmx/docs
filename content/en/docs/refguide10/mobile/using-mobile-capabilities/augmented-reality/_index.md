@@ -1,6 +1,6 @@
 ---
 title: "Augmented Reality"
-url: /refguide/mobile/using-mobile-capabilities/augmented-reality/
+url: /refguide10/mobile/using-mobile-capabilities/augmented-reality/
 weight: 60
 description: Tutorials for setting up and using AR in Mendix Studio Pro.
 aliases:
@@ -11,5 +11,5 @@ These step-by-step guides teach you how to set up and use augmented reality (AR)
 
 The following guides are available here:
 
-* [Get Started with AR](/refguide/mobile/using-mobile-capabilities/augmented-reality/how-to-ar-simple-cube/)
-* [Create an AR Business Card](/refguide/mobile/using-mobile-capabilities/augmented-reality/how-to-ar-business-card/)
+* [Get Started with AR](/refguide10/mobile/using-mobile-capabilities/augmented-reality/how-to-ar-simple-cube/)
+* [Create an AR Business Card](/refguide10/mobile/using-mobile-capabilities/augmented-reality/how-to-ar-business-card/)

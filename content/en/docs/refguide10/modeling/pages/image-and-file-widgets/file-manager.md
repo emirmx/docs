@@ -1,6 +1,6 @@
 ---
 title: "File Manager"
-url: /refguide/file-manager/
+url: /refguide10/file-manager/
 weight: 40
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -13,7 +13,7 @@ A file manager is used to upload and/or download files.
 
 {{< figure src="/attachments/refguide10/modeling/pages/image-and-file-widgets/file-manager/file-manager.png" alt="File Manager" class="no-border" >}}
 
-A file manager must be placed inside a data view connected to the entity that is either a **System.FileDocument** (or a specialization) or an [external entity](/refguide/external-entities/) with a `Contents` binary attribute.
+A file manager must be placed inside a data view connected to the entity that is either a **System.FileDocument** (or a specialization) or an [external entity](/refguide10/external-entities/) with a `Contents` binary attribute.
 
 {{% alert color="info" %}}
 For an external entity to be used as a file source, it must be defined as a media element in the corresponding OData service. Such an element can be recognized by setting the `HasStream` attribute to `true` in its metadata.  
@@ -47,15 +47,15 @@ File manager properties consist of the following sections:
 
 ### Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### Design Properties Section {#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### Editability Section {#editability}
 
-{{% snippet file="/static/_includes/refguide/editability-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/editability-section-link.md" %}}
 
 ### General Section {#general}
 
@@ -83,7 +83,7 @@ This value cannot be set arbitrarily high as the platform to which the app is de
 
 You can specify file extensions that users are allowed to upload. If no extension is specified, all file extensions are allowed. Separate multiple extensions by a semi-colon, for example, `txt;doc`
 
-If a file with an extension that is not allowed is selected, a [system text](/refguide/system-texts/) for **File manager/dynamic image** > **Error: incorrect file extension** will be shown below the file manager.
+If a file with an extension that is not allowed is selected, a [system text](/refguide10/system-texts/) for **File manager/dynamic image** > **Error: incorrect file extension** will be shown below the file manager.
 
 {{% alert color="warning" %}}
 The feature to allow extensions is not meant as a security feature, as the file manager widget does not check the contents of a file to see if they match the provided extension. For more information, see the [Scanning Uploaded Files for Malicious Content](/howto/security/best-practices-security/#scanning-for-malicious-content) section of *How to Implement Best Practices for App Security*.
@@ -97,11 +97,11 @@ Default: *False*
 
 ### Label Section {#label}
 
-{{% snippet file="/static/_includes/refguide/label-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/label-section-link.md" %}}
 
 ### Visibility Section {#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ## Example of File Manager Usage
 
@@ -133,7 +133,7 @@ Do the following:
 
 ## Read More
 
-* [Page](/refguide/page/)
-* [Images, Videos, and Files](/refguide/image-and-file-widgets/)
-* [Properties Common in the Page Editor](/refguide/common-widget-properties/)
-* [System Texts](/refguide/system-texts/)
+* [Page](/refguide10/page/)
+* [Images, Videos, and Files](/refguide10/image-and-file-widgets/)
+* [Properties Common in the Page Editor](/refguide10/common-widget-properties/)
+* [System Texts](/refguide10/system-texts/)

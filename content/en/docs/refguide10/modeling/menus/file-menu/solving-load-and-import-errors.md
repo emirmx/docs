@@ -1,6 +1,6 @@
 ---
 title: "Solve Load and Import Errors"
-url: /refguide/solving-load-and-import-errors/
+url: /refguide10/solving-load-and-import-errors/
 weight: 11
 description: "Describes how to solve problems that may occur when opening an app."
 aliases:
@@ -38,7 +38,7 @@ Before trying to solve the problems, it is useful to discover the origin of the 
 
 ### Is This a Team Server App?
 
-If your app is a [Team Server](/developerportal/general/team-server/) app, and you just did a [download or update](/refguide/using-version-control-in-studio-pro/) from the server, the problem may have been added in a revision that was recently committed to the Team Server. You can check who made the most recent commit on the [Team Server](/developerportal/general/team-server/) page of your app in [Apps](https://sprintr.home.mendix.com).
+If your app is a [Team Server](/developerportal/general/team-server/) app, and you just did a [download or update](/refguide10/using-version-control-in-studio-pro/) from the server, the problem may have been added in a revision that was recently committed to the Team Server. You can check who made the most recent commit on the [Team Server](/developerportal/general/team-server/) page of your app in [Apps](https://sprintr.home.mendix.com).
 
 If the latest change on your branch line was committed by someone other than yourself, please inform the person about the problem.
 
@@ -61,8 +61,8 @@ The most likely cause for these kinds of errors is a faulty script that was run 
 * [Clearing Warning Messages in Mendix](/howto/monitoring-troubleshooting/clear-warning-messages/)
 * [Debugging Java Actions](/howto/monitoring-troubleshooting/debug-java-actions/)
 * [Debugging Java actions remotely](/howto/monitoring-troubleshooting/debug-java-actions-remotely/)
-* [Debugging Microflows and Nanoflows](/refguide/debug-microflows-and-nanoflows/)
-* [Debugging Microflows Remotely](/refguide/debug-microflows-remotely/)
+* [Debugging Microflows and Nanoflows](/refguide10/debug-microflows-and-nanoflows/)
+* [Debugging Microflows Remotely](/refguide10/debug-microflows-remotely/)
 * [Finding the Root Cause of Runtime Errors](/howto/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
 * [Log Levels](/howto/monitoring-troubleshooting/log-levels/)
 * [Monitoring Mendix using JMX](/howto/monitoring-troubleshooting/monitoring-mendix-using-jmx/)

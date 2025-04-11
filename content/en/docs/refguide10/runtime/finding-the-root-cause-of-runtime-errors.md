@@ -1,6 +1,6 @@
 ---
 title: "Find the Root Cause of Runtime Errors"
-url: /refguide/find-the-root-cause-of-runtime-errors/
+url: /refguide10/find-the-root-cause-of-runtime-errors/
 description: "Describes how to find the root cause of runtime errors via Studio Pro and via the application logs."
 aliases:
     - /howto/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/
@@ -57,7 +57,7 @@ With these three pieces of information, you should be able to find the cause of 
 * [Monitor Mendix Using JMX](/howto/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
 * [Debug Java Actions Remotely](/howto/monitoring-troubleshooting/debug-java-actions-remotely/)
 * [Log Levels](/howto/monitoring-troubleshooting/log-levels/)
-* [Debugging Microflows and Nanoflows](/refguide/debug-microflows-and-nanoflows/)
-* [Debugging Microflows Remotely](/refguide/debug-microflows-remotely/)
+* [Debugging Microflows and Nanoflows](/refguide10/debug-microflows-and-nanoflows/)
+* [Debugging Microflows Remotely](/refguide10/debug-microflows-remotely/)
 * [Debug Java Actions](/howto/monitoring-troubleshooting/debug-java-actions/)
 * [The Root Cause of Runtime Errors and Resolving the 2 Most Common Issues](https://www.mendix.com/blog/the-root-cause-of-runtime-errors-and-resolving-the-2-most-common-issues/)

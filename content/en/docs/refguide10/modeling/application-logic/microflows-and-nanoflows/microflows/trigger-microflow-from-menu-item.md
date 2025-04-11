@@ -1,13 +1,13 @@
 ---
 title: "Triggering a Microflow From a Menu Item"
-url: /refguide/triggering-microflow-from-menu-item/
+url: /refguide10/triggering-microflow-from-menu-item/
 weight: 2
 description: "Describes how to create a simple microflow that will define the logic of your application."
 ---
 
 ## Introduction
 
-Mendix uses visual models called [microflows](/refguide/microflows/) to define the logic of your application. Microflows are visual ways of expressing what traditionally would be written in code. This document explains how you can create a very simple "Hello World" microflow and trigger it from a [menu item](/refguide/menu/#menu-item).
+Mendix uses visual models called [microflows](/refguide10/microflows/) to define the logic of your application. Microflows are visual ways of expressing what traditionally would be written in code. This document explains how you can create a very simple "Hello World" microflow and trigger it from a [menu item](/refguide10/menu/#menu-item).
 
 This document teaches you how to do the following:
 
@@ -80,7 +80,7 @@ Congratulations! You have created a menu item that triggers a microflow and show
 
 ## Read More
 
-* [Navigation](/refguide/navigation/)
-* [Menu Item](/refguide/menu/#menu-item)
-* [Creating a Custom Save Button with a Microflow](/refguide/creating-a-custom-save-button/)
-* [Working with Lists in a Microflow](/refguide/working-with-lists-in-a-microflow/)
+* [Navigation](/refguide10/navigation/)
+* [Menu Item](/refguide10/menu/#menu-item)
+* [Creating a Custom Save Button with a Microflow](/refguide10/creating-a-custom-save-button/)
+* [Working with Lists in a Microflow](/refguide10/working-with-lists-in-a-microflow/)

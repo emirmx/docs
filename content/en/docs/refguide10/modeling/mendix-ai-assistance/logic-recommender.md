@@ -1,16 +1,16 @@
 ---
 title: "Logic Recommender"
-url: /refguide/logic-recommender/
+url: /refguide10/logic-recommender/
 weight: 20
 description: "Describes Logic Recommender in Mendix Studio Pro."
 aliases:
-    - /refguide/mx-assist-logic-bot/
+    - /refguide10/mx-assist-logic-bot/
 ---
 
 ## Introduction 
 
 {{% alert color="info" %}}
-Logic Bot was rebranded to Logic Recommender in Studio Pro 10.12.0. It is also available for [rules](/refguide/rules/) in Studio Pro 10.6 and above.
+Logic Bot was rebranded to Logic Recommender in Studio Pro 10.12.0. It is also available for [rules](/refguide10/rules/) in Studio Pro 10.6 and above.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -86,4 +86,4 @@ If you do not see the desired activity or element in the top-five recommendation
 
 ## Read More
 
-* [Microflows and Nanoflows](/refguide/microflows-and-nanoflows/)
+* [Microflows and Nanoflows](/refguide10/microflows-and-nanoflows/)

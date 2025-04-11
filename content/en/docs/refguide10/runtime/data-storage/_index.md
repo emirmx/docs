@@ -1,6 +1,6 @@
 ---
 title: "Data Storage"
-url: /refguide/data-storage/
+url: /refguide10/data-storage/
 description: "Introduces data storage, which is the data foundation of the Mendix Runtime."
 ---
 
@@ -14,7 +14,7 @@ Data storage is the data foundation of the Mendix Runtime. Data storage does the
 * Handles security transparently and effectively
 
 {{% alert color="warning" %}}
-Each app has its own database which cannot be shared directly with other apps. If you want to share data with another app, you must publish an API using the [Catalog](/data-hub/share-data/) or the [REST and OData](/refguide/integration/) capabilities of Mendix.
+Each app has its own database which cannot be shared directly with other apps. If you want to share data with another app, you must publish an API using the [Catalog](/data-hub/share-data/) or the [REST and OData](/refguide10/integration/) capabilities of Mendix.
 
 See [Databases and Apps](#databases), below, for an overview of this.
 {{% /alert %}}
@@ -24,7 +24,7 @@ See [Databases and Apps](#databases), below, for an overview of this.
 For apps deployed to Mendix Cloud, Mendix uses a PostgreSQL database for storing the data defined in the app domain model (or models).
 
 If you are deploying to a different infrastructure, you will need to provide your own database.
-See [System Requirements](/refguide/system-requirements/#databases) for the list of supported databases.
+See [System Requirements](/refguide10/system-requirements/#databases) for the list of supported databases.
 
 ## Databases and Apps{#databases}
 
@@ -50,7 +50,7 @@ You now try to deploy `Order Viewer` to use the same database as `Order Processi
 
 ### How to Share Data
 
-If you want to share data between apps, you should set up a *microservices* architecture. In short, identify one app which you want to use to store the data. This app will now do all the creating, reading, updating, and deleting of the data. It will publish an API to allow other apps to access the data using, for example, [OData](/refguide/published-odata-services/) or the [Catalog](/data-hub/share-data/). Other apps can then consume this API to use the data. This ensures that there is only one source for the data and that it is kept consistent.
+If you want to share data between apps, you should set up a *microservices* architecture. In short, identify one app which you want to use to store the data. This app will now do all the creating, reading, updating, and deleting of the data. It will publish an API to allow other apps to access the data using, for example, [OData](/refguide10/published-odata-services/) or the [Catalog](/data-hub/share-data/). Other apps can then consume this API to use the data. This ensures that there is only one source for the data and that it is kept consistent.
 
 An alternative is to copy the data to another app, for example using the [Database Replication](/appstore/modules/database-replication/) module. This however, will be a snapshot of your data at the time you replicate it and changes to the data made in the original app will not be reflected in your new app.
 
@@ -60,7 +60,7 @@ An alternative is to copy the data to another app, for example using the [Databa
 
 Mendix does not use read locks on the database. Therefore, object reads can always be performed. A database write lock is put in place for the first object commit. If there are overlapping update transactions on the same object, the first update transaction puts a write lock on the database object. The next update transaction waits until the first one finishes before executing. However, if the first update process takes an inordinate amount of time, it may cause a timeout.
 
-When users or microflows make changes to database records, all changes will execute in a transaction. Write locks are placed on individual records the moment they are committed. Until this point no locks will be placed on the data. For more information on the differences between transaction commits and object commits, see the [How Commits Work](/refguide/committing-objects/#how-commits-work) section in *Commit Object(s)*.
+When users or microflows make changes to database records, all changes will execute in a transaction. Write locks are placed on individual records the moment they are committed. Until this point no locks will be placed on the data. For more information on the differences between transaction commits and object commits, see the [How Commits Work](/refguide10/committing-objects/#how-commits-work) section in *Commit Object(s)*.
 
 When the record gets locked, as long as the transaction is executing, no other users or processes are able to change the data. The uncommitted information is not visible for others. The changed data becomes available for other users to read only after the transaction completes. While the transaction is running, other users are able to read and change the previously persisted version of the data. Any changes from other processes will be applied when the transaction completes and the initial write lock is lifted, overwriting the previous changes.
 
@@ -95,7 +95,7 @@ With this feature, if the app is going to create a dangling reference, a runtime
 Foreign Key Constraints are enabled for new projects in version 10.6.0 and above. This applies to:
 
 * Projects created from scratch using a starter app
-* Projects created using [Import app package](/refguide/import-app-package-dialog/)
+* Projects created using [Import app package](/refguide10/import-app-package-dialog/)
 
 Apps created before 10.6 are not affected. This means that if your app is created in a version of Studio Pro below 10.6.0 and then upgraded to version 10.6.0 or above, FKCs do not get enabled for it.
 
@@ -103,7 +103,7 @@ When a new app is created from a Starter App or an app package, it may already c
 
 ### Setting Foreign Key Constraints On and Off
 
-In Mendix version 10.10.0 and above, it is possible to set Foreign Key Constraints for existing projects on or off regardless of which version the project was originally created in by toggling the option in the app's [runtime settings](/refguide/app-settings/#database-fkc).
+In Mendix version 10.10.0 and above, it is possible to set Foreign Key Constraints for existing projects on or off regardless of which version the project was originally created in by toggling the option in the app's [runtime settings](/refguide10/app-settings/#database-fkc).
 
 {{% alert color="info" %}}
 Deploying an existing application after enabling or disabling FKC will cause a synchronization step to be executed.

@@ -1,13 +1,13 @@
 ---
 title: "Part 5: Implement Push Notifications in Your Native App"
 linktitle: "5. Push Notifications in Native App"
-url: /refguide/mobile/using-mobile-capabilities/push-notifications/notif-implement-native/
+url: /refguide10/mobile/using-mobile-capabilities/push-notifications/notif-implement-native/
 weight: 60
 description: Tutorial for implementing push notifications in a native app.
 aliases:
     - /howto/mobile/notif-implement-native/
     - /howto/mobile/notif-build-native/
-    - /refguide/mobile/using-mobile-capabilities/push-notifications/notif-build-native/
+    - /refguide10/mobile/using-mobile-capabilities/push-notifications/notif-build-native/
 ---
 
 ## Introduction
@@ -41,7 +41,7 @@ If you already had an **App events** widget on your home page, follow these step
 
 The snippet also adds the **Notifications** widget which lets users interact with the notifications the app receives.
 
-By default this widget is configured with an **Example** action. It uses a non-persistable entity ([NPE](/refguide/persistability/#non-persistable)) that stores data received from the notifications. It then uses that data in the nanoflow upon receiving or opening the notification. Use this example to make your own actions. 
+By default this widget is configured with an **Example** action. It uses a non-persistable entity ([NPE](/refguide10/persistability/#non-persistable)) that stores data received from the notifications. It then uses that data in the nanoflow upon receiving or opening the notification. Use this example to make your own actions. 
 
 ## Customizing Offline Synchronization
 
@@ -60,7 +60,7 @@ This will ensure that the correct objects are synchronized to your native apps.
 Now that you have everything set up, it is time to deploy your native app:
 
 1. In Studio Pro top bar navigation, click **App** > **Build Native Mobile App**: </br>
-    * If you are building your native app for the first time, click [here](/refguide/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/) for instructions.</br>
+    * If you are building your native app for the first time, click [here](/refguide10/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/) for instructions.</br>
 1. After choosing the type of build (local development or distribution) go to **App capabilities**.</br>
 1. Under **Firebase configuration** switch **Push notifications** to **On**.</br>
 1. Scroll down and upload the Firebase configurations:</br>
@@ -78,4 +78,4 @@ Now that you have everything set up, it is time to deploy your native app:
 
 When building for local development, keep in mind that Mendix's Make It Native app does not support push notifications. In order to use and test push notifications, you will have to build your own native app as described above and distribute it to an emulator (Android only) or test device.
 
-Now you are able to build, the next step is to run your app in an emulator or test device. Proceed to [part 7](/refguide/mobile/using-mobile-capabilities/push-notifications/notif-send-test/) to send your first push notifications or continue with the next section to set up push notifications for progressive web apps.
+Now you are able to build, the next step is to run your app in an emulator or test device. Proceed to [part 7](/refguide10/mobile/using-mobile-capabilities/push-notifications/notif-send-test/) to send your first push notifications or continue with the next section to set up push notifications for progressive web apps.

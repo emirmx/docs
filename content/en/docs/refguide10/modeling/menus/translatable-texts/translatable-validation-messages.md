@@ -1,6 +1,6 @@
 ---
 title: "Using Translatable Validation Messages"
-url: /refguide/translatable-validation-messages/
+url: /refguide10/translatable-validation-messages/
 weight: 140
 description: "Describes how to use translatable validation messages."
 aliases:
@@ -9,7 +9,7 @@ aliases:
 
 ## Introduction
 
-Setting up validation rules should be relatively straightforward. For each object or process, you want to have a single microflow that is in charge of the validation. That microflow has the required input parameters and validates all values. If a value is invalid, the microflow will execute the [Validation feedback activity](/refguide/validation-feedback/). When completing the microflow, it will return a Boolean value (true/false) depending on whether the object has been successfully validated.
+Setting up validation rules should be relatively straightforward. For each object or process, you want to have a single microflow that is in charge of the validation. That microflow has the required input parameters and validates all values. If a value is invalid, the microflow will execute the [Validation feedback activity](/refguide10/validation-feedback/). When completing the microflow, it will return a Boolean value (true/false) depending on whether the object has been successfully validated.
 
 These types of validation actions should be used throughout your app. 
 

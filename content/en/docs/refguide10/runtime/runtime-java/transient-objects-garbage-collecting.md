@@ -1,6 +1,6 @@
 ---
 title: "Non-Persistable Objects and Garbage Collecting"
-url: /refguide/transient-objects-garbage-collecting/
+url: /refguide10/transient-objects-garbage-collecting/
 weight: 1
 description: "This page will explain the lifecycle of both persistable and non-persistable objects, and how they flow through the platform memory."
 ---
@@ -15,7 +15,7 @@ This page explains the lifecycle of both persistable and non-persistable objects
 
 ## Behavior
 
-Non-persistable objects in Mendix are not kept in the [Runtime Server](/refguide/runtime-server/), but maintained in the [Mendix Client](/refguide/mendix-client/). This means there is no server-side garbage collection. This simplifies the handling of objects on the server side because an object will not be garbage collected while it exists on the server.
+Non-persistable objects in Mendix are not kept in the [Runtime Server](/refguide10/runtime-server/), but maintained in the [Mendix Client](/refguide10/mendix-client/). This means there is no server-side garbage collection. This simplifies the handling of objects on the server side because an object will not be garbage collected while it exists on the server.
 
 Objects will be returned to the client together with the response to a request. Objects created outside the context of a request (like Scheduled Event execution) will automatically be discarded when the scheduled event has finished.
 
@@ -73,7 +73,7 @@ WARNING: Request state size of 551 objects exceeds the threshold of 500 objects.
  * AnotherModule.SomeEntity: 130 objects
 ```
 
-This threshold can be configured with the custom setting `com.mendix.webui.StateSizeWarningThreshold`. See [com.mendix.webui.StateSizeWarningThreshold](/refguide/custom-settings/#commendixwebuiStateSizeWarningThreshold) in *Runtime Customization* for more information.
+This threshold can be configured with the custom setting `com.mendix.webui.StateSizeWarningThreshold`. See [com.mendix.webui.StateSizeWarningThreshold](/refguide10/custom-settings/#commendixwebuiStateSizeWarningThreshold) in *Runtime Customization* for more information.
 
 #### Choosing a Correct Threshold Level
 
@@ -96,4 +96,4 @@ For every request to the Mendix Runtime — be it from the client or via web ser
 ## Read More
 
 * Mendix blog [The art of state, Part 1: Introduction to the client state](https://www.mendix.com/blog/the-art-of-state-part-1-introduction-to-the-client-state/)
-* [Java Memory Usage](/refguide/java-memory-usage/)
+* [Java Memory Usage](/refguide10/java-memory-usage/)

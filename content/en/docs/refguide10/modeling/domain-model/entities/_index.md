@@ -1,6 +1,6 @@
 ---
 title: "Entities"
-url: /refguide/entities/
+url: /refguide10/entities/
 weight: 10
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -13,7 +13,7 @@ For example, the object representing the CD 'Exodus' could be an instance of the
 
 {{< figure src="/attachments/refguide10/modeling/domain-model/entities/example-entity.png" alt="Example of a CD entity" width="650px" class="no-border" >}} 
 
-The properties or features of an entity are described using [attributes](/refguide/attributes/). An attribute represents a small piece of information about an entity, such as the name or birth date of a person.
+The properties or features of an entity are described using [attributes](/refguide10/attributes/). An attribute represents a small piece of information about an entity, such as the name or birth date of a person.
 
 For example, you have a collection of CDs like the one in the table below:
 
@@ -43,11 +43,11 @@ The entity type defines how the data is handled and there are four types:
 
 {{< figure src="/attachments/refguide10/modeling/domain-model/entities/type-of-entities.png" width=="300" >}}
 
-The structure of persistable, non-persistable, and view entities are defined within your app. This page describes how to add and update persistable and non-persistable entities. For more information on persistable entities, see [Persistability](/refguide/persistability/). 
+The structure of persistable, non-persistable, and view entities are defined within your app. This page describes how to add and update persistable and non-persistable entities. For more information on persistable entities, see [Persistability](/refguide10/persistability/). 
 
-The structure of an external entity is defined in the source system where the underlying data (objects) is stored. For more information on external entities and how to add them to your app, see [External Entities](/refguide/external-entities/).
+The structure of an external entity is defined in the source system where the underlying data (objects) is stored. For more information on external entities and how to add them to your app, see [External Entities](/refguide10/external-entities/).
 
-View entities are defined by their underlying OQL queries, which run on one or more persistable entities or other view entities. For more information, see [View Entities](/refguide/view-entities/).
+View entities are defined by their underlying OQL queries, which run on one or more persistable entities or other view entities. For more information, see [View Entities](/refguide10/view-entities/).
 
 ## Properties {#properties}
 
@@ -63,7 +63,7 @@ Entity properties consist of the following sections:
 * [Documentation](#documentation)
 
 {{% alert color="info" %}}
-For more information on how these properties relate to external entities, see the [Properties](/refguide/external-entities/#properties) section of *External Entities*.
+For more information on how these properties relate to external entities, see the [Properties](/refguide10/external-entities/#properties) section of *External Entities*.
 {{% /alert %}}
 
 ### General Section {#entities-general-properties}
@@ -84,7 +84,7 @@ The name has to be unique only within the domain model of a module. You can have
 | Usable             | Consumers can see the entity in the domain model and use it in their app. |
 
 {{% alert color="info" %}}
-**Export level** is only available for add-on and solution modules. For more information on types of modules, see the [Module Types](/refguide/modules/#module-types) section in *Modules*. 
+**Export level** is only available for add-on and solution modules. For more information on types of modules, see the [Module Types](/refguide10/modules/#module-types) section in *Modules*. 
 
 If the entity is set to **Hidden**, all attributes will be hidden automatically and cannot be set to **Usable**.
 {{% /alert %}}
@@ -103,7 +103,7 @@ An example of generalization is a situation where you have entities, say a **Stu
 
 {{< figure src="/attachments/refguide10/modeling/domain-model/entities/917900.png" class="no-border" >}}
 
-For more information, and a discussion on the relative merits of using generalization or associations, see [Generalization vs 1-1 Associations](/refguide/generalization-and-association/).
+For more information, and a discussion on the relative merits of using generalization or associations, see [Generalization vs 1-1 Associations](/refguide10/generalization-and-association/).
 
 #### Image {#image}
 
@@ -111,7 +111,7 @@ The image property can be used to associate an image with the entity. In the dom
 
 #### Persistable
 
-Define whether instances of this entity can be stored in the database. For more information, see [Persistability](/refguide/persistability/).
+Define whether instances of this entity can be stored in the database. For more information, see [Persistability](/refguide10/persistability/).
 
 ### System Members Properties{#system-members}
 
@@ -187,7 +187,7 @@ In Mendix 10.19.x and below, the 'changedBy' property is updated whenever a valu
 
 #### Access Rules
 
-For more information on access rules, see [Access Rules](/refguide/access-rules/).
+For more information on access rules, see [Access Rules](/refguide10/access-rules/).
 
 ### Documentation Section {#documentation}
 
@@ -203,12 +203,12 @@ You can also edit an entity by opening the entity properties dialog box.
 
 In addition to the properties described above, there are also tabs which allow you to edit the following:
 
-* [Attributes](/refguide/attributes/)
-* [Associations](/refguide/associations/)
-* [Validation Rules](/refguide/validation-rules/)
-* [Event Handlers](/refguide/event-handlers/)
-* [Indexes](/refguide/indexes/)
-* [Access Rules](/refguide/access-rules/)
+* [Attributes](/refguide10/attributes/)
+* [Associations](/refguide10/associations/)
+* [Validation Rules](/refguide10/validation-rules/)
+* [Event Handlers](/refguide10/event-handlers/)
+* [Indexes](/refguide10/indexes/)
+* [Access Rules](/refguide10/access-rules/)
 * [Documentation](#documentation-property)
 
 See the detailed pages for each of these tabs for more information.

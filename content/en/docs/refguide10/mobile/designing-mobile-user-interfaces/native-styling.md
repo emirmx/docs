@@ -1,6 +1,6 @@
 ---
 title: "Native Styling"
-url: /refguide/mobile/designing-mobile-user-interfaces/native-styling/
+url: /refguide10/mobile/designing-mobile-user-interfaces/native-styling/
 weight: 40
 description: "General information for native styling in Mendix."
 aliases:
@@ -52,13 +52,13 @@ Design properties are an easier way to apply classes. Atlas already offers sever
 
 ## Using Native Styling {#using-styling}
 
-You have the capacity to alter design properties with Mendix Studio Pro. Furthermore, because all native mobile styling is written in JavaScript, you have new ways of applying your styling customizations. For more details on native styling, class names, and widget styling, see the [Widget Styling Guide](/refguide/mobile/designing-mobile-user-interfaces/widget-styling-guide/).
+You have the capacity to alter design properties with Mendix Studio Pro. Furthermore, because all native mobile styling is written in JavaScript, you have new ways of applying your styling customizations. For more details on native styling, class names, and widget styling, see the [Widget Styling Guide](/refguide10/mobile/designing-mobile-user-interfaces/widget-styling-guide/).
 
 ### Prerequisites 
 
 * Install an integrated development environment (IDE) of your choice (Mendix recommends [Microsoft Visual Studio Code](https://code.visualstudio.com/))
-* Create a Mendix app based on the Blank Native Mobile App template by following the [Creating a New App Based on the Quickstarter App](/refguide/mobile/getting-started-with-mobile/#quickstartapp) section of *Get Started with Native Mobile*
-* Download the Make It Native App on your mobile device. Depending on the Mendix version your app is developed in and the device you want to run on, you need a different Make It Native app. For more information on how to download the correct version, see the [Getting the Make It Native App](/refguide/mobile/getting-started-with-mobile/prerequisites/#get-min-app) section in *Native App Prerequisites and Troubleshooting*.
+* Create a Mendix app based on the Blank Native Mobile App template by following the [Creating a New App Based on the Quickstarter App](/refguide10/mobile/getting-started-with-mobile/#quickstartapp) section of *Get Started with Native Mobile*
+* Download the Make It Native App on your mobile device. Depending on the Mendix version your app is developed in and the device you want to run on, you need a different Make It Native app. For more information on how to download the correct version, see the [Getting the Make It Native App](/refguide10/mobile/getting-started-with-mobile/prerequisites/#get-min-app) section in *Native App Prerequisites and Troubleshooting*.
 
 ### Customizing the Quickstarter App
 
@@ -153,7 +153,7 @@ When you have specific design requirements, you will need to build custom classe
     }
     ```
     
-    To alter a class on your own, consult the [Native Mobile Styling Guide](/refguide/native-styling-refguide/) to understand widget structures.
+    To alter a class on your own, consult the [Native Mobile Styling Guide](/refguide10/native-styling-refguide/) to understand widget structures.
 
 6. Now you will edit the code you pasted. Apply a transparent background color to customize the default button widget:
 

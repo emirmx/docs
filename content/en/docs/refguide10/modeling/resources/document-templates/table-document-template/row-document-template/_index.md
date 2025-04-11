@@ -1,11 +1,11 @@
 ---
 title: "Row (Document Template)"
-url: /refguide/row-document-template/
+url: /refguide10/row-document-template/
 aliases:
-    - /refguide/row-(document-template).html
-    - /refguide/Row+(document+template).html
-    - /refguide/row-(document-template)
-    - /refguide/Row+(document+template)
+    - /refguide10/row-(document-template).html
+    - /refguide10/Row+(document+template).html
+    - /refguide10/row-(document-template)
+    - /refguide10/Row+(document+template)
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -17,7 +17,7 @@ Rows are part of a table. They contain cells which in turn can contain other wid
 
 ### Cell
 
-A cell of a row. For more information, see [Cell (Document Template)](/refguide/cell-document-template/).
+A cell of a row. For more information, see [Cell (Document Template)](/refguide10/cell-document-template/).
 
 ## Appearance Properties
 

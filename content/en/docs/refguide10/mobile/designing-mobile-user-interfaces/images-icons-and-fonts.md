@@ -1,10 +1,10 @@
 ---
 title: "Images, Icons, and Fonts"
-url: /refguide/mobile/designing-mobile-user-interfaces/images-icons-and-fonts/
+url: /refguide10/mobile/designing-mobile-user-interfaces/images-icons-and-fonts/
 weight: 30
 description: "This tutorial teaches you how to enrich the design of your native mobile app with images and custom fonts."
 aliases:
-    - /refguide/native-svg/
+    - /refguide10/native-svg/
     - /howto/mobile/native-custom-fonts/
 ---
 
@@ -63,7 +63,7 @@ You can check the list of allowed style properties at the [react-native-svg](htt
 
 #### Coloring SVG Icons
 
-Icons can only be set for buttons and bottom bar items. When you integrate an SVG icon into a button or bottom bar item, you will have to set the SVG's color yourself. When using an app which employs Atlas UI, by default the colors are all white. For more information on styling, see the [Native Mobile Styling Guide](/refguide/native-styling-refguide/).
+Icons can only be set for buttons and bottom bar items. When you integrate an SVG icon into a button or bottom bar item, you will have to set the SVG's color yourself. When using an app which employs Atlas UI, by default the colors are all white. For more information on styling, see the [Native Mobile Styling Guide](/refguide10/native-styling-refguide/).
 
 For example, the following code:
 
@@ -235,7 +235,7 @@ To use the new fonts to style your content, follow these instructions:
 
     {{< figure src="/attachments/howto/mobile/native-mobile/implementation/native-custom-fonts/advanced-fonts4.png" alt="Custom fonts screen code snippet"   width="400"  class="no-border" >}}
 
-1. Open your styles *js* file and paste the snippet there. For this example, the *custom-variables.js* file is being used. For more information on styling your app, see [Native Styling](/refguide/mobile/designing-mobile-user-interfaces/native-styling/):
+1. Open your styles *js* file and paste the snippet there. For this example, the *custom-variables.js* file is being used. For more information on styling your app, see [Native Styling](/refguide10/mobile/designing-mobile-user-interfaces/native-styling/):
 
     {{< figure src="/attachments/howto/mobile/native-mobile/implementation/native-custom-fonts/custom-variables.png" alt="Custom variables file"   width="400"  class="no-border" >}}
 

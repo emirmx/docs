@@ -1,6 +1,6 @@
 ---
 title: "Configuring Security for a Workflow Process"
-url: /refguide/workflow-security/
+url: /refguide10/workflow-security/
 linktitle: "Configure Workflow Security"
 description: "Describes how to configure security for a workflow in Mendix Studio Pro."
 weight: 110
@@ -20,7 +20,7 @@ A combination of entity access, page access, and targeted users help you make su
 
 If a user does not have an access to an entity, this means they have no access to entity data. You can allow users to **Create**, **Read**, **Write** and/or **Delete** objects of the entity. If a user should be able to only view the page with user tasks assigned to them without making any changes, the **Read** access is sufficient. If a user needs to add, change, and/or delete data, you should allow **Create**, **Write**, and **Delete** objects for the corresponding user role. You can also configure an XPath for detailed access rules. 
 
-For more information on the entity access, see the [Entity Access vs. Page Access](/refguide/security/#entity-vs-page-access) section in *Security* and the [Entity Access](/refguide/module-security/#entity-access) section in *Module Security*.
+For more information on the entity access, see the [Entity Access vs. Page Access](/refguide10/security/#entity-vs-page-access) section in *Security* and the [Entity Access](/refguide10/module-security/#entity-access) section in *Module Security*.
 
 ## Configuring Page Access {#page-access}
 
@@ -28,7 +28,7 @@ For each user task you set a dedicated page where users can view their **Task in
 
 The combination of entity access and page access makes sure that only dedicated users can open a user task page and view its data. 
 
-For more information on the page access, see the [Page Access](/refguide/module-security/#page-access) section in *Module Security*.
+For more information on the page access, see the [Page Access](/refguide10/module-security/#page-access) section in *Module Security*.
 
 ## Configuring Targeted Users {#target-users}
 
@@ -48,7 +48,7 @@ This means that the currently logged in user can see WorkflowUserTask data only 
 
 In the user task properties, you specify what user is targeted for the task (i.e. what user will see the task in the inbox) by writing an XPath expression or a microflow. You can set filters there and specify that only a certain user role can receive a task in their inbox, for example, only users from an IT department. However, the conditions for the **System.WorkflowUserTask** entity mentioned above should be met for the user to see the task. 
 
-For more information on user assignment, see the [Targeted Users Section](/refguide/user-task/#users) section in *User Task*.
+For more information on user assignment, see the [Targeted Users Section](/refguide10/user-task/#users) section in *User Task*.
 
 ## Why the User Does Not See the User Task
 

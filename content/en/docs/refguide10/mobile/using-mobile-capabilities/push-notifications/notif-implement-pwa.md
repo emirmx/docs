@@ -1,7 +1,7 @@
 ---
 title: "Part 6: Implement Push Notifications in Your Progressive Web App"
 linktitle: "6. Push Notifications in Progressive Web App"
-url: /refguide/mobile/using-mobile-capabilities/push-notifications/notif-implement-pwa/
+url: /refguide10/mobile/using-mobile-capabilities/push-notifications/notif-implement-pwa/
 weight: 70
 description: Tutorial for implementing push notifications in a progressive web app.
 ---
@@ -16,7 +16,7 @@ Push notifications in progressive web apps require Firebase to be set up as earl
 
 1. Create a custom `index.html` in your `theme\web` folder by following [this guide](/howto/front-end/customize-styling-new/#custom-web).
 1. Edit the created `index.html` file in your favorite text editor.
-1. Add below text before the line `<script src="mxclientsystem/mxui/mxui.js?{{cachebust}}"></script>` (replace `firebaseConfig` with your configuration from [part 3](/refguide/mobile/using-mobile-capabilities/push-notifications/setting-up-google-firebase-cloud-messaging-server/#copy-pwa-config)):
+1. Add below text before the line `<script src="mxclientsystem/mxui/mxui.js?{{cachebust}}"></script>` (replace `firebaseConfig` with your configuration from [part 3](/refguide10/mobile/using-mobile-capabilities/push-notifications/setting-up-google-firebase-cloud-messaging-server/#copy-pwa-config)):
 
     ```html
     <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
@@ -34,7 +34,7 @@ Push notifications in progressive web apps require Firebase to be set up as earl
     </script>
     ```
 
-1. Create the file `theme\web\firebase-messaging-sw.js` with the following content (replace `firebaseConfig` with your configuration from [part 3](/refguide/mobile/using-mobile-capabilities/push-notifications/setting-up-google-firebase-cloud-messaging-server/#copy-pwa-config)):
+1. Create the file `theme\web\firebase-messaging-sw.js` with the following content (replace `firebaseConfig` with your configuration from [part 3](/refguide10/mobile/using-mobile-capabilities/push-notifications/setting-up-google-firebase-cloud-messaging-server/#copy-pwa-config)):
 
     ```js
     importScripts('https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js');
@@ -51,7 +51,7 @@ Push notifications in progressive web apps require Firebase to be set up as earl
     const messaging = firebase.messaging();
     ```
 
-1. Back in Studio Pro, set the constant `WebPushVapidKey` found in `_USE ME/Web/` in the Push Notifications module to the public key of the Web Push certificate you created in [part 3](/refguide/mobile/using-mobile-capabilities/push-notifications/setting-up-google-firebase-cloud-messaging-server/#set-web-push).
+1. Back in Studio Pro, set the constant `WebPushVapidKey` found in `_USE ME/Web/` in the Push Notifications module to the public key of the Web Push certificate you created in [part 3](/refguide10/mobile/using-mobile-capabilities/push-notifications/setting-up-google-firebase-cloud-messaging-server/#set-web-push).
 
     {{< figure src="/attachments/howto/mobile/native-mobile/implementation/notifications/notif-implement-pwa/vapid-idwizard.png" alt="VAPID Constant"   width="400"  class="no-border" >}}
 

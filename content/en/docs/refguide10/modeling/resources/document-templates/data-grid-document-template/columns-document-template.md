@@ -1,11 +1,11 @@
 ---
 title: "Columns (Document Template)"
-url: /refguide/columns-document-template/
+url: /refguide10/columns-document-template/
 aliases:
-    - /refguide/columns-(document-template).html
-    - /refguide/Columns+(document+template).html
-    - /refguide/columns-(document-template)
-    - /refguide/Columns+(document+template)
+    - /refguide10/columns-(document-template).html
+    - /refguide10/Columns+(document+template).html
+    - /refguide10/columns-(document-template)
+    - /refguide10/Columns+(document+template)
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -13,7 +13,7 @@ aliases:
 
 ### Caption
 
-The caption of a column is the text that appears as a header above the rows. This is a translatable text. See [Internationalization](/refguide/translatable-texts/).
+The caption of a column is the text that appears as a header above the rows. This is a translatable text. See [Internationalization](/refguide10/translatable-texts/).
 
 ### Enumeration Format (Only for Attributes of the Enumeration Type)
 
@@ -51,7 +51,7 @@ These are the possible values:
 
 If you choose **Custom** as the date format (see above), this property determines how the attribute value is formatted. The custom date format is a string that allows for any combination of symbols found in the table below. Any punctuation will be rendered literally.
 
-{{% snippet file="/static/_includes/refguide/custom-date-format-tokens.md" %}}
+{{% snippet file="/static/_includes/refguide10/custom-date-format-tokens.md" %}}
 
 ## Data Source Properties
 

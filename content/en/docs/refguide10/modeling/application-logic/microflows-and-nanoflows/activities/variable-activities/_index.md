@@ -1,6 +1,6 @@
 ---
 title: "Variable Activities"
-url: /refguide/variable-activities/
+url: /refguide10/variable-activities/
 weight: 40
 ---
 
@@ -13,5 +13,5 @@ The activities described in this document are in the **Variable Activities** sec
 
 The following are the variable activities you can use in your microflow or nanoflow:
 
-* [Create Variable](/refguide/create-variable/) – allows you to create a new variable and assign a value to it
-* [Change Variable](/refguide/change-variable/) – allows you to change the value of an existing variable 
+* [Create Variable](/refguide10/create-variable/) – allows you to create a new variable and assign a value to it
+* [Change Variable](/refguide10/change-variable/) – allows you to change the value of an existing variable 

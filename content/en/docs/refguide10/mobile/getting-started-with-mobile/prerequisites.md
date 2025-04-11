@@ -1,12 +1,12 @@
 ---
 title: "Native App Prerequisites and Troubleshooting" 
 linktitle: "Prerequisites and Troubleshooting"
-url: /refguide/mobile/getting-started-with-mobile/prerequisites/
+url: /refguide10/mobile/getting-started-with-mobile/prerequisites/
 weight: 10
 description: Troubleshoot common issues associated with building and running native mobile apps.
 aliases:
-    - /refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-min-versions/
-    - /refguide/getting-the-make-it-native-app/
+    - /refguide10/mobile/distributing-mobile-apps/building-native-apps/how-to-min-versions/
+    - /refguide10/getting-the-make-it-native-app/
     - /howto/mobile/common-issues/
 ---
 
@@ -28,11 +28,11 @@ There are no special requirements for developing, deploying, and accessing Progr
 
 Native mobile apps are not run in the device browser like web-based Mendix apps. Instead, a native app is built for each mobile operating system it should run on resulting in an APK or IPA file, which are then installed on the device. This introduces several special considerations:
 
-* **Developer Preview**: When developing a native mobile app, a special app called [Make It Native](/refguide/mobile/getting-started-with-mobile/prerequisites/) is required to preview the app. It is not possible to preview it in the browser or directly in Studio Pro using Design Mode.
+* **Developer Preview**: When developing a native mobile app, a special app called [Make It Native](/refguide10/mobile/getting-started-with-mobile/prerequisites/) is required to preview the app. It is not possible to preview it in the browser or directly in Studio Pro using Design Mode.
 * **Build Native App**: For building native apps, we provide a tool called Build Native App. This tool must be configured and run each time a new build is created. Build Native App is not supported on Studio Pro for Mac. Build Native App updates itself automatically by downloading new versions from AWS.
 * **Native Template**: Build Native App needs to download the Native Template from [GitHub](https://github.com/mendix/native-template). This template contains the React Native project that is used to build the native app for iOS and Android.
 * **Dependencies**: The Native Template makes use of several open-source projects, including React Native. These must be downloaded from several external services including npm, gradle, and Cocoapods.
-* **Building**: Once prepared using Build Native App, the Native Template can be built for each target mobile operating system. Building can be done [locally](/refguide/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/) by downloading the mobile operating system's IDE or [remotely](/refguide/mobile/distributing-mobile-apps/building-native-apps/deploying-native-app/) using a third-party continuous integration and delivery (CI/CD) platform. For building remotely, a [GitHub account](https://github.com/) and an [App Center account](https://appcenter.ms/) is required.
+* **Building**: Once prepared using Build Native App, the Native Template can be built for each target mobile operating system. Building can be done [locally](/refguide10/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/) by downloading the mobile operating system's IDE or [remotely](/refguide10/mobile/distributing-mobile-apps/building-native-apps/deploying-native-app/) using a third-party continuous integration and delivery (CI/CD) platform. For building remotely, a [GitHub account](https://github.com/) and an [App Center account](https://appcenter.ms/) is required.
 * **Deploying**: Most mobile devices refuse to install APK/IPA files without additional steps. At minimum, the file must be signed to identify its developer and prevent manipulation. Furthermore, for iOS and recent versions of Android, the app must be published via the official mobile operating system's store or a mobile device management (MDM) system.
 * **Connectivity**: When running a Mendix native mobile app, it must connect to the Mendix Runtime at least once during startup. If no connection can be established, an error is shown. Connectivity is also needed to run microflows and to synchronize data.
 
@@ -67,12 +67,12 @@ Depending on the Mendix version used to build your app, you have to use a differ
 * **Latest Mendix Version** - Latest version of Make It Native 10 ([Android](https://play.google.com/apps/testing/com.mendix.developerapp.mx10), [iOS](https://testflight.apple.com/join/bQfLf27w))
     * Please note that the latest version of Make It Native 10 is offered in online stores' beta version programs. Simply follow the instructions on those sites to download and install the latest version of MIN 10.
 * **10.18.x** – Make It Native 10 MTS ([Android](https://play.google.com/store/apps/details?id=com.mendix.developerapp.mx10), [iOS](https://apps.apple.com/app/make-it-native-10/id6450037464))
-* **10.6.x to 10.17.x** – These versions are no longer supported by Make It Native. Please use MIN 9 LTS (below) or 10 MTS (above) instead, or make your own [custom MIN app](/refguide/mobile/distributing-mobile-apps/use-min-older-sp/) from open source.
+* **10.6.x to 10.17.x** – These versions are no longer supported by Make It Native. Please use MIN 9 LTS (below) or 10 MTS (above) instead, or make your own [custom MIN app](/refguide10/mobile/distributing-mobile-apps/use-min-older-sp/) from open source.
 * **9.24.0 to 10.5.x** – Make It Native 9 LTS ([Android](https://play.google.com/store/apps/details?id=com.mendix.developerapp.mx9), [iOS](https://apps.apple.com/app/make-it-native-9/id1542182000))
 * **8.18.x** – Make It Native 8 LTS ([iOS](https://apps.apple.com/app/make-it-native-8/id1334081181))
-* **Other** – [Creating a Custom Developer App](/refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/) or [Building Your Own Make It Native App](https://github.com/mendix/make-it-native)
+* **Other** – [Creating a Custom Developer App](/refguide10/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/) or [Building Your Own Make It Native App](https://github.com/mendix/make-it-native)
 
-For information on which mobile operating systems are supported by the Mendix native mobile apps, see the [Mobile Operating Systems](/refguide/system-requirements/#mobile) section of *System Requirements*.
+For information on which mobile operating systems are supported by the Mendix native mobile apps, see the [Mobile Operating Systems](/refguide10/system-requirements/#mobile) section of *System Requirements*.
 
 ### Direct Download Links {#direct-links}
 
@@ -106,7 +106,7 @@ When working with applications on a Mid-Term Support (MTS) version, it is import
 
 Only use the latest version of Mendix if you are prepared to update your application every month. The latest version of Make It Native only supports the latest version of Mendix and is updated monthly.
 
-If you want to use a custom version of Mendix you can always [create a Custom Developer App](/refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/) or [build your own Make It Native App](https://github.com/mendix/make-it-native) for that version of Mendix.
+If you want to use a custom version of Mendix you can always [create a Custom Developer App](/refguide10/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/) or [build your own Make It Native App](https://github.com/mendix/make-it-native) for that version of Mendix.
 
 ## Troubleshooting Common Mobile Issues {#troubleshooting}
 
@@ -118,7 +118,7 @@ To troubleshoot issues related to the Make it Native app, see the sections below
 
 #### Port Issues
 
-Mendix recommends keeping the **Runtime port** in your [configuration](/refguide/configuration/#server) on **8080**. If you change it, do not change it to **8083**, because that is designated for app packaging.
+Mendix recommends keeping the **Runtime port** in your [configuration](/refguide10/configuration/#server) on **8080**. If you change it, do not change it to **8083**, because that is designated for app packaging.
 
 #### Wifi Network Settings
 
@@ -171,11 +171,11 @@ If your company has strict network policies which do not allow you to open the p
 
 ### Use Make It Native 9 with an Older Version of Mendix 9 {#use-MIN-older}
 
-The latest version of Make It Native 9 is only compatible with versions of Mendix 9.24.0 and above. To develop with older versions of Mendix 9, you can create a custom developer app by following [this guide](/refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/). Note that a custom developer app can be used to develop multiple older Mendix apps as long as no custom dependencies are introduced.
+The latest version of Make It Native 9 is only compatible with versions of Mendix 9.24.0 and above. To develop with older versions of Mendix 9, you can create a custom developer app by following [this guide](/refguide10/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/). Note that a custom developer app can be used to develop multiple older Mendix apps as long as no custom dependencies are introduced.
 
 ### Configure Parallels
 
-To use Studio Pro on a Mac device, you will first need to install and configure Parallels. For more information, see [Configuring Parallels](/refguide/using-mendix-studio-pro-on-a-mac/).
+To use Studio Pro on a Mac device, you will first need to install and configure Parallels. For more information, see [Configuring Parallels](/refguide10/using-mendix-studio-pro-on-a-mac/).
 
 ### Avoid Network or Cloud Folders
 

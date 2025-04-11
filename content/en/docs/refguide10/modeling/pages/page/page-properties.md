@@ -1,12 +1,12 @@
 ---
 title: "Page Properties"
-url: /refguide/page-properties/
+url: /refguide10/page-properties/
 weight: 10
 ---
 
 ## Introduction
 
-This document describes page properties. For details on what pages are for and what kind of widgets can be placed on them, see [Pages](/refguide/pages/).
+This document describes page properties. For details on what pages are for and what kind of widgets can be placed on them, see [Pages](/refguide10/pages/).
 
 ## Properties Pane {#properties-pane}
 
@@ -51,13 +51,13 @@ The **Layout type**, determines the purpose of the page and how it is opened.
 
 #### Layout
 
-The [layout](/refguide/layout/) on which this page is based.
+The [layout](/refguide10/layout/) on which this page is based.
 
 #### Title {#title}
 
-The title of the page that is shown using the [page title widget](/refguide/page-title/). If the page is shown in a pop-up window, the title appears in the title bar of the pop-up. 
+The title of the page that is shown using the [page title widget](/refguide10/page-title/). If the page is shown in a pop-up window, the title appears in the title bar of the pop-up. 
 
-The title can be overridden. For example, the [Create button](/refguide/control-bar/) and the [Edit button](/refguide/control-bar/) of a data grid can refer to the same page, but they override the titles to **New** and **Edit**, respectively.
+The title can be overridden. For example, the [Create button](/refguide10/control-bar/) and the [Edit button](/refguide10/control-bar/) of a data grid can refer to the same page, but they override the titles to **New** and **Edit**, respectively.
 
 #### URL {#url}
 
@@ -85,13 +85,13 @@ In simple e-commerce applications, the URLs can be configured as follows:
 
 ### Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### Data Section {#data}
 
 #### Parameters {#parameters}
 
-The list of parameters that this page expects. These parameters can be used by [data views](/refguide/data-view/) with a page parameter data source.
+The list of parameters that this page expects. These parameters can be used by [data views](/refguide10/data-view/) with a page parameter data source.
 
 A page parameter is an input that needs to be passed from the calling page, microflow, or nanoflow to the current page. Page parameters determine information that can be reused on the page. For example, if you want to build an **Employee_Details_Edit** page, the page will have a parameter **Employee**. Thus when this page is called an Employee object needs to be passed to it to show the corresponding Employee data.
 
@@ -99,7 +99,7 @@ You can also use multiple page parameters. Multiple page parameters allow you to
 
 #### Variables {#variables}
 
-The list of variables defined on this page. The variables can be used by widgets directly without the need for a [data view](/refguide/data-view/).
+The list of variables defined on this page. The variables can be used by widgets directly without the need for a [data view](/refguide10/data-view/).
 
 Variables represent non-persistent, primitive values that are available to widgets on a page. Widgets can read and write to them as they were attributes, supporting features like formatting and validation. Variables are also available in expressions, so you can use them for page logic, such as conditional visibility, editability, text template parameters, and as arguments to microflows and nanoflows.
 
@@ -112,7 +112,7 @@ Variables for pages were introduced in Mendix Studio Pro 10.21.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-For apps with [React Client](/refguide/mendix-client/react/) set to **Yes** or **Migration mode**, all widgets can use variables. When set to **No**, widgets built with Dojo cannot use variables. If present, unsupported widgets will be listed on the variables dialog.  
+For apps with [React Client](/refguide10/mendix-client/react/) set to **Yes** or **Migration mode**, all widgets can use variables. When set to **No**, widgets built with Dojo cannot use variables. If present, unsupported widgets will be listed on the variables dialog.  
 
 Note that Dojo widgets may affect neighboring widgets as well. For example, they may lose their ability to use variables in conditional visibility expressions. To counteract this, the affected widget can be wrapped in a container.
 {{% /alert %}}
@@ -129,15 +129,15 @@ By setting the property **Mark as used** to *Yes*, you specify that the document
 
 ### Designer Section {#designer}
 
-{{% snippet file="/static/_includes/refguide/designer-properties.md" %}}
+{{% snippet file="/static/_includes/refguide10/designer-properties.md" %}}
 
 ### Navigation Section {#navigation}
 
 #### Visible For
 
-This property defines for what module roles the page is visible. This has an effect on [menus and navigation widgets](/refguide/menu-widgets/) and on buttons that are visible only if allowed (for example, an [action button](/refguide/button-widgets/) for editing).
+This property defines for what module roles the page is visible. This has an effect on [menus and navigation widgets](/refguide10/menu-widgets/) and on buttons that are visible only if allowed (for example, an [action button](/refguide10/button-widgets/) for editing).
 
-For more information, see [Module Security](/refguide/module-security/).
+For more information, see [Module Security](/refguide10/module-security/).
 
 ### Pop-Up Section {#pop-up}
 
@@ -173,4 +173,4 @@ Default: *Default (cancel)*
 
 ### Common Section {#common-styling}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}

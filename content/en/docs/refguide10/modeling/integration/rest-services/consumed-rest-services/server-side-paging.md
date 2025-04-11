@@ -1,7 +1,7 @@
 ---
 title: "Server-Side Paging and Sorting for a Microflow Data Source"
 linktitle: "Server-Side Paging and Sorting"
-url: /refguide/server-side-paging/
+url: /refguide10/server-side-paging/
 weight: 30
 description: "Describes how to create a data grid with a microflow data source which retrieves data from a REST service, and then add server-side paging and sorting to it."
 aliases:
@@ -218,7 +218,7 @@ Deploy your app again and navigate to the page with your data grid. Enter a valu
 
 ## Read More
 
-* [REST Services](/refguide/integration/rest-services/)
-* [JSON Structures Guide](/refguide/json-structures/)
-* [Consumed REST Service](/refguide/consumed-rest-service/)
-* [Use Call REST Service Action in a Microflow](/refguide/integration/use-call-rest-action-in-microflow/)
+* [REST Services](/refguide10/integration/rest-services/)
+* [JSON Structures Guide](/refguide10/json-structures/)
+* [Consumed REST Service](/refguide10/consumed-rest-service/)
+* [Use Call REST Service Action in a Microflow](/refguide10/integration/use-call-rest-action-in-microflow/)

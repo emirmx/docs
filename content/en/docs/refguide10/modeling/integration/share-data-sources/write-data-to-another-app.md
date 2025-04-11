@@ -1,6 +1,6 @@
 ---
 title: "Write Data to Another App"
-url: /refguide/write-data/
+url: /refguide10/write-data/
 description: "Describes how to add annotations to an OData service in Mendix Studio Pro, see external entities with these features in the Catalog, and use them to build your app."
 weight: 20
 aliases:
@@ -52,14 +52,14 @@ The updatable OData capability relates to the data in your app. The Catalog prov
 
 To see the capabilities of a particular OData entity, do the following: 
 
-1. Go to the [Catalog](https://catalog.mendix.com/) and search for the name of an exposed OData service endpoint, entity, attribute, or association. For more information, see the [Using the Catalog and Curating Your Own Service](/refguide/share-data/#use-and-curate) section in *Share Data Between Apps*.
+1. Go to the [Catalog](https://catalog.mendix.com/) and search for the name of an exposed OData service endpoint, entity, attribute, or association. For more information, see the [Using the Catalog and Curating Your Own Service](/refguide10/share-data/#use-and-curate) section in *Share Data Between Apps*.
 2. Select your entity from the left-side search results pane. If you do not see many results, try removing the **Production** filter on your search.
 
 Notice the highlighted **CRUD** letters next to the entity name in the search panel and in the detailed information in the center. The purple letters indicate which operations are supported, and the gray letters indicate which are not. Hover over the letters to see which operations are supported. You will also see any OData restrictions here.
 
 ## Consuming OData Resources in Your Mendix App
 
-Just like in the Catalog, you can see the **CRUD** capabilities of entities, attributes, and associations inside the [Integration pane](/refguide/integration-pane/) of Studio Pro.
+Just like in the Catalog, you can see the **CRUD** capabilities of entities, attributes, and associations inside the [Integration pane](/refguide10/integration-pane/) of Studio Pro.
 
 {{< figure src="/attachments/refguide10/modeling/integration/write-data/crud-capabilities.png" alt="crud capabilities" class="no-border" >}}
 
@@ -69,13 +69,13 @@ To consume an OData entity, do the following:
 2. Select your entity from the **Integration** pane. By default, the pane only shows results published to the production environment. If you also want to see results from other environments, click the filter icon and select the **Show development environments** checkbox.
 3. Drag the entity into the domain model.
 
-Now you have an external entity in your domain model. Depending on the capabilities, you can use external entities to model your app as you normally would, although there are some limitations. For more information on limitations, see the [External Entities Limitations](/refguide/external-entities/#limitations) section in *External Entities*. 
+Now you have an external entity in your domain model. Depending on the capabilities, you can use external entities to model your app as you normally would, although there are some limitations. For more information on limitations, see the [External Entities Limitations](/refguide10/external-entities/#limitations) section in *External Entities*. 
 
 ## Validating Data and Error Handling {#data-validation}
 
-You can [set up data validation](/refguide/setting-up-data-validation/) to check on inserted or updated data between your apps. An insert validation microflow in the domain model of the client application can check on the data that is inserted or updated.
+You can [set up data validation](/refguide10/setting-up-data-validation/) to check on inserted or updated data between your apps. An insert validation microflow in the domain model of the client application can check on the data that is inserted or updated.
 
-How does the published service know that an insert fails? In the publishing app, you can use a validation message action to report the error. The client app can include a custom error handler on the [Send External Object](/refguide/send-external-object/) activity to handle the error.
+How does the published service know that an insert fails? In the publishing app, you can use a validation message action to report the error. The client app can include a custom error handler on the [Send External Object](/refguide10/send-external-object/) activity to handle the error.
 
 The domain model for the publishing app's validation message looks like this:
 

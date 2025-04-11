@@ -102,7 +102,7 @@ Lastly, ensure you are not using any external fonts by checking your theme's sty
 
 #### Testing Your Changes Locally
 
-To check that your changes are working locally, you can add a custom `Content-Security-Policy` header in your [configuration](/refguide/configuration/#headers).
+To check that your changes are working locally, you can add a custom `Content-Security-Policy` header in your [configuration](/refguide10/configuration/#headers).
 
 After redeploying your app locally, it should function as normal. If your app does not load or if there are errors, check that you have completed all steps listed above.
 

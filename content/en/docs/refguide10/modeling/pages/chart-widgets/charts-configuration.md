@@ -1,6 +1,6 @@
 ---
 title: "Chart Configuration"
-url: /refguide/charts-configuration/
+url: /refguide10/charts-configuration/
 weight: 10
 ---
 
@@ -20,7 +20,7 @@ This guide covers the following widgets:
 * Time series
     * Note that some apps may have two *Time series* widgets. This document refers to the one with this icon: {{< figure src="/attachments/refguide10/modeling/pages/chart-widgets/charts-configuration/time-series-icon.png" alt="Image of correct Time series widget" class="no-border" >}}
 
-The configuration of *Any chart* widgets is in another document, here: [Any Chart Widgets](/refguide/charts-any-configuration/).
+The configuration of *Any chart* widgets is in another document, here: [Any Chart Widgets](/refguide10/charts-any-configuration/).
 
 ## Common configuration
 
@@ -176,17 +176,17 @@ See the following link for more information about plotly.js and the options: htt
     {{< figure src="/attachments/refguide10/modeling/pages/chart-widgets/charts-configuration/toggle-editor.png" class="no-border" >}}
 
 * **Layout options**: The JSON containing the Plotly layout options
-    * [Samples](/refguide/charts-advanced-cheat-sheet/#layout-all)
+    * [Samples](/refguide10/charts-advanced-cheat-sheet/#layout-all)
     * [Full reference](https://plot.ly/javascript/reference/#layout)
 
 * **Configuration options**: The JSON containing the Plotly configuration options
-    * [Samples](/refguide/charts-advanced-cheat-sheet/#config-options)
+    * [Samples](/refguide10/charts-advanced-cheat-sheet/#config-options)
     * [Documentation](https://plot.ly/javascript/configuration-options/)
     * [Full reference](https://github.com/plotly/plotly.js/blob/master/src/plot_api/plot_config.js)
 
 #### Common
 
-These are properties which are common to many widgets. For information see [Properties Common in the Page Editor](/refguide/common-widget-properties/#common-properties).
+These are properties which are common to many widgets. For information see [Properties Common in the Page Editor](/refguide10/common-widget-properties/#common-properties).
 
 ## Configuration by Chart Type {#configuration-by-chart-type}
 

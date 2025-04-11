@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with Mobile"
-url: /refguide/mobile/getting-started-with-mobile/
+url: /refguide10/mobile/getting-started-with-mobile/
 weight: 10
 description: Create a native mobile Mendix app and view it on a mobile device using the Make It Native test app.
 aliases:
@@ -26,11 +26,11 @@ The Blank Native Mobile App also includes six modules:
 Before starting this guide, make sure you have completed the following prerequisites:
 
 * Have a mobile device to test your native mobile app 
-* For information on device requirements, see [System Requirements](/refguide/system-requirements/)
+* For information on device requirements, see [System Requirements](/refguide10/system-requirements/)
 * If you wish to use an emulator for Android mobile testing, install a product such as [Bluestacks](https://www.bluestacks.com/nl/index.html) or [Genymotion](https://www.genymotion.com/) (your emulator must have Google Play services supported)
 
 {{% alert color="warning" %}}
-Android devices running MIUI (Xiaomi/Redmi devices) are not supported as Mendix test devices. They can run a production version of your Mendix app, but not the development version based on the [Make It Native App](/releasenotes/mobile/make-it-native-9/) or a [custom developer app](/refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/).
+Android devices running MIUI (Xiaomi/Redmi devices) are not supported as Mendix test devices. They can run a production version of your Mendix app, but not the development version based on the [Make It Native App](/releasenotes/mobile/make-it-native-9/) or a [custom developer app](/refguide10/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/).
 {{% /alert %}}
 
 ## Creating a New App Based on the Quickstarter App {#quickstartapp}
@@ -52,7 +52,7 @@ At this point you have a running native mobile app. To view your app on a mobile
 
 ### Downloading and Installing the Make It Native App {#download-min}
 
-Depending on the Mendix version your app is developed in and the device you want to run on, you need a different Make It Native app. For more information on how to download the correct version, see the [Getting the Make It Native App](/refguide/mobile/getting-started-with-mobile/prerequisites/#get-min-app) section in *Native App Prerequisites and Troubleshooting*.
+Depending on the Mendix version your app is developed in and the device you want to run on, you need a different Make It Native app. For more information on how to download the correct version, see the [Getting the Make It Native App](/refguide10/mobile/getting-started-with-mobile/prerequisites/#get-min-app) section in *Native App Prerequisites and Troubleshooting*.
 
 ### Viewing Your App on Your Testing Device
 
@@ -96,7 +96,7 @@ For more detailed instructions on debugging a native mobile app, see [Debug Nati
 
 ## Read More
 
-* [Native App Prerequisites and Troubleshooting](/refguide/mobile/getting-started-with-mobile/prerequisites/)
+* [Native App Prerequisites and Troubleshooting](/refguide10/mobile/getting-started-with-mobile/prerequisites/)
 * [How to Build Pluggable Widgets](/howto/extensibility/pluggable-widgets/)
-* [Native Mobile Styling Guide](/refguide/native-styling-refguide/)
+* [Native Mobile Styling Guide](/refguide10/native-styling-refguide/)
 * [How to Debug Native Mobile Apps (Advanced)](/howto/mobile/native-debug/)

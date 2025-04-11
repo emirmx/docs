@@ -1,11 +1,11 @@
 ---
 title: "Navigation In Native Mobile Apps"
 linktitle: "Navigation"
-url: /refguide/mobile/designing-mobile-user-interfaces/navigation/
+url: /refguide10/mobile/designing-mobile-user-interfaces/navigation/
 weight: 20
 description: "General information for native navigation in Mendix."
 aliases:
-    - /refguide/native-navigation/
+    - /refguide10/native-navigation/
 ---
 
 ## Introduction
@@ -134,7 +134,7 @@ In addition, you can configure the Open page action to **Clear history** when na
 
 In order to add more flexibility and customization to mobile apps, Mendix offers different options for how an app's opening screen or popup animation can look.
 
-You can find and customize these options in [Navigation Profile](/refguide/navigation/):
+You can find and customize these options in [Navigation Profile](/refguide10/navigation/):
 
 {{< figure src="/attachments/refguide10/mobile/native-mobile/native-navigation/navigationtransition.png" >}}
 
@@ -176,10 +176,10 @@ The Open page action's **Clear history** option can be used to model out complex
 
 ## Customization
 
-Out of the box, the bottom bar and top bar have a default styling. To change this styling, see the [Pages](/refguide/mobile/designing-mobile-user-interfaces/widget-styling-guide/#pages) section of the *Widget Styling Guide*. However, if you want to further customize the styling to match your design, you can create pluggable widgets to replace some of the default navigation components. For more information, see the [Pluggable Widgets API Documentation](/apidocs-mxsdk/apidocs/pluggable-widgets/)
+Out of the box, the bottom bar and top bar have a default styling. To change this styling, see the [Pages](/refguide10/mobile/designing-mobile-user-interfaces/widget-styling-guide/#pages) section of the *Widget Styling Guide*. However, if you want to further customize the styling to match your design, you can create pluggable widgets to replace some of the default navigation components. For more information, see the [Pluggable Widgets API Documentation](/apidocs-mxsdk/apidocs/pluggable-widgets/)
 
 ## Read More
 
-* [Show Page Guide](/refguide/show-page/)
-* [Close Page Guide](/refguide/close-page/)
-* [Navigation Widget](/refguide/mobile/designing-mobile-user-interfaces/widget-styling-guide/#navigation-widget) section of the *Widget Styling Guide*
+* [Show Page Guide](/refguide10/show-page/)
+* [Close Page Guide](/refguide10/close-page/)
+* [Navigation Widget](/refguide10/mobile/designing-mobile-user-interfaces/widget-styling-guide/#navigation-widget) section of the *Widget Styling Guide*

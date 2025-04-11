@@ -1,6 +1,6 @@
 ---
 title: "Unlimited String Behavior"
-url: /refguide/unlimited-string-behavior/
+url: /refguide10/unlimited-string-behavior/
 weight: 20
 ---
 

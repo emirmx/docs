@@ -1,6 +1,6 @@
 ---
 title: "Design Principles"
-url: /refguide/mobile/designing-mobile-user-interfaces/design-principles/
+url: /refguide10/mobile/designing-mobile-user-interfaces/design-principles/
 weight: 10
 description: "This document teaches you how to build a native mobile app's UI."
 aliases:
@@ -134,5 +134,5 @@ It is a common pitfall to keep adding classes to a single file. However, this wi
 
 ## Read More
 
-* [Native Mobile Styling Guide](/refguide/native-styling-refguide/)
-* [How to Style Your Mendix Native Mobile App](/refguide/mobile/designing-mobile-user-interfaces/native-styling/)
+* [Native Mobile Styling Guide](/refguide10/native-styling-refguide/)
+* [How to Style Your Mendix Native Mobile App](/refguide10/mobile/designing-mobile-user-interfaces/native-styling/)

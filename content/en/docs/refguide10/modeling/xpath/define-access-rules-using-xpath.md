@@ -1,7 +1,7 @@
 ---
 title: "Defining Access Rules Using XPath"
 linktitle: "Define Access Rules Using XPath"
-url: /refguide/define-access-rules-using-xpath/
+url: /refguide10/define-access-rules-using-xpath/
 weight: 4
 description: "Describes how to define access rules for an entity using an XPath constraint."
 aliases:
@@ -9,12 +9,12 @@ aliases:
 ---
 
 {{% alert color="info" %}}
-This example is using a version of Mendix below 10.5. In Mendix version 10.5 and above, the [XPath Constraints](/refguide/xpath-constraints/) dialog has a different UX which makes it easier to build XPath constraints. However, the concepts and XPath examples can still be used in Mendix version 10.5 and above.
+This example is using a version of Mendix below 10.5. In Mendix version 10.5 and above, the [XPath Constraints](/refguide10/xpath-constraints/) dialog has a different UX which makes it easier to build XPath constraints. However, the concepts and XPath examples can still be used in Mendix version 10.5 and above.
 {{% /alert %}}
 
 ## Introduction
 
-The access rules of an entity define what a user is allowed to do with the objects of the entity. Users can be allowed to create and/or delete objects and to view and/or edit member values. A member is an attribute or an association of an entity. Furthermore, the set of objects available for viewing, editing, and removing can be limited by means of an XPath constraint (for details, see [XPath Constraints](/refguide/xpath-constraints/) in the *Studio Pro Guide*). For more information on access rules, see [Access Rules](/refguide/access-rules/) in the *Studio Pro Guide*.
+The access rules of an entity define what a user is allowed to do with the objects of the entity. Users can be allowed to create and/or delete objects and to view and/or edit member values. A member is an attribute or an association of an entity. Furthermore, the set of objects available for viewing, editing, and removing can be limited by means of an XPath constraint (for details, see [XPath Constraints](/refguide10/xpath-constraints/) in the *Studio Pro Guide*). For more information on access rules, see [Access Rules](/refguide10/access-rules/) in the *Studio Pro Guide*.
 
 In this how-to, you will prepare a data structure (including security), a GUI, and some example data for customers, orders, and a financial administrator account. After this preparation, you will define the access rules for the **Order** entity using XPath on the payment status. The XPath will constrain the order so that it can only be seen by a financial administrator when the payment status of the order is set to **paid**.
 
@@ -32,9 +32,9 @@ To prepare the data structure, GUI, and example data, follow these steps:
 
     {{< figure src="/attachments/refguide10/modeling/xpath/define-access-rules-using-xpath/18581378.png" class="no-border" >}}
 
-    For more information on creating a domain model, see [Configuring a Domain Model](/refguide/configuring-a-domain-model/).
+    For more information on creating a domain model, see [Configuring a Domain Model](/refguide10/configuring-a-domain-model/).
 2. Create overview and detail pages to manage the **Customer** and **Order** objects (for more information on creating these pages, see [How to Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/)).
-3. Create menu items to access the **Order** and **Customer** overview pages (for more information on creating menu items, see [Setting Up Navigation](/refguide/setting-up-the-navigation-structure/)).
+3. Create menu items to access the **Order** and **Customer** overview pages (for more information on creating menu items, see [Setting Up Navigation](/refguide10/setting-up-the-navigation-structure/)).
 4. Set the **Security level** of you application to **Production** (for more information, see [How to Create a Secure App](/howto/security/create-a-secure-app/)).
 
     {{< figure src="/attachments/refguide10/modeling/xpath/define-access-rules-using-xpath/18581008.png" class="no-border" >}}
@@ -86,4 +86,4 @@ To define the access rules on the **Order** entity using XPath, follow these ste
 
 ## Read More
 
-* [Filtering Data on an Overview Page Using XPath](/refguide/filtering-data-on-an-overview-page/)
+* [Filtering Data on an Overview Page Using XPath](/refguide10/filtering-data-on-an-overview-page/)

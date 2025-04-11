@@ -1,12 +1,12 @@
 ---
 title: "New App"
-url: /refguide/new-app/
+url: /refguide10/new-app/
 weight: 10
 description: "This document describes the New App flow and the App Settings dialog box."
 aliases:
-    - /refguide/app-settings-dialog.html
-    - /refguide/app-settings-dialog
-    - /refguide/new-project/
+    - /refguide10/app-settings-dialog.html
+    - /refguide10/app-settings-dialog
+    - /refguide10/new-project/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -38,7 +38,7 @@ The name of your new app. This name is used as the name of the app directory and
 
 ### Enable Online Services
 
-The Mendix Platform offers online services such as [version control](/refguide/version-control/) and [cloud deployment](/deployment/). When enabled, this will create an app in [Apps](https://sprintr.home.mendix.com/) in the Mendix Portal and a corresponding version control repository.
+The Mendix Platform offers online services such as [version control](/refguide10/version-control/) and [cloud deployment](/deployment/). When enabled, this will create an app in [Apps](https://sprintr.home.mendix.com/) in the Mendix Portal and a corresponding version control repository.
 
 If you choose *No*, you will create an app that is only stored on your local disk. At a later point you can still decide to upload this local app to a version control server and enjoy the benefits of version control.
 
@@ -50,11 +50,11 @@ The default language is the language of the user interface of your app. Choose t
 
 Specify the directory in which the files for your app are stored.
 
-If you enable the online services for the new app, you will see that the suffix *-main* has been added to the directory name automatically. It is used to indicate that the directory contains the main branch line of your app. While working on your app, you can create new branches and download them to other directories. For more information on the branch line management, see [Branch Line Manager](/refguide/branch-line-manager-dialog/).
+If you enable the online services for the new app, you will see that the suffix *-main* has been added to the directory name automatically. It is used to indicate that the directory contains the main branch line of your app. While working on your app, you can create new branches and download them to other directories. For more information on the branch line management, see [Branch Line Manager](/refguide10/branch-line-manager-dialog/).
 
-The default directory in which new apps are stored can be changed in the [Preferences](/refguide/preferences-dialog/#default-directory) dialog box.
+The default directory in which new apps are stored can be changed in the [Preferences](/refguide10/preferences-dialog/#default-directory) dialog box.
 
 ## Read More
 
-* [Version Control](/refguide/version-control/)
-* [Open App](/refguide/open-app-dialog/)
+* [Version Control](/refguide10/version-control/)
+* [Open App](/refguide10/open-app-dialog/)

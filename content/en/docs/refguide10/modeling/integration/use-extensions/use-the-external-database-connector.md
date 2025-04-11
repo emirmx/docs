@@ -1,6 +1,6 @@
 ---
 title: "Use the External Database Connector"
-url: /refguide/use-the-external-database-connector/
+url: /refguide10/use-the-external-database-connector/
 weight: 40
 description: "Overview of the External Database Connector in Studio Pro"
 aliases: 
@@ -30,7 +30,7 @@ This document teaches you how to do the following:
 * Create and validate SQL queries
 * Use created queries in the **Query External Database** activity
 
-For information on how to configure the connector, see [External Database Connector](/appstore/modules/external-database-connector/). For information on the database wizard and how to connect using the External Database Connection document, see [External Database Connection](/refguide/external-database-connection/). 
+For information on how to configure the connector, see [External Database Connector](/appstore/modules/external-database-connector/). For information on the database wizard and how to connect using the External Database Connection document, see [External Database Connection](/refguide10/external-database-connection/). 
 
 ## Prerequisites
 
@@ -74,7 +74,7 @@ For example: `*Database*_DBsource.`
 
 {{% alert color="info" %}} Values for these constants are stored in the active configuration of the user. The password is stored as a private value.
 
-Constants are an environment variable whose values can differ per environment, When you deploy an app on Mendix Cloud, values for constants are not added. For more information, see [Constants](https://docs.mendix.com/refguide/configuration/#constants){{% /alert %}}
+Constants are an environment variable whose values can differ per environment, When you deploy an app on Mendix Cloud, values for constants are not added. For more information, see [Constants](https://docs.mendix.com/refguide10/configuration/#constants){{% /alert %}}
 
 {{% alert color="info" %}}
 For free apps, make sure to add the default values to the constant in Studio Pro. For more information, see the [Deploying a Free App](https://docs.mendix.com/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/#deploy-free-app) section below. {{% /alert %}}

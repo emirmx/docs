@@ -1,6 +1,6 @@
 ---
 title: "View Entities"
-url: /refguide/view-entities/
+url: /refguide10/view-entities/
 weight: 17
 cascade:
     - beta: true
@@ -13,7 +13,7 @@ This feature was introduced in Studio Pro 10.19 and is currently in beta. For mo
 
 ## Introduction
 
-A view entity represents the result set of a stored [OQL query](/refguide/oql/) and can be used similarly to a [persistable entity](/refguide/persistability/#persistable). This concept is similar to the function of views in general database technology. Whenever a view entity is retrieved via a page or a microflow, the corresponding OQL query runs and fetches the relevant data. Consequently, the result set of a view entity is not stored as a separate table in the database (like a materialized view). Instead, the query runs each time the view entity is accessed, dynamically retrieving the data.
+A view entity represents the result set of a stored [OQL query](/refguide10/oql/) and can be used similarly to a [persistable entity](/refguide10/persistability/#persistable). This concept is similar to the function of views in general database technology. Whenever a view entity is retrieved via a page or a microflow, the corresponding OQL query runs and fetches the relevant data. Consequently, the result set of a view entity is not stored as a separate table in the database (like a materialized view). Instead, the query runs each time the view entity is accessed, dynamically retrieving the data.
 
 During modeling, changes to the underlying entities used in the OQL query affect the options available within the query. At runtime, any changes to the data in the underlying entities immediately impact the data available through the view entity.
 
@@ -25,7 +25,7 @@ View entities are read-only. To change the resulting data of a view entity retri
 
 ## Prerequisites
 
-Your app must use OQL version 2 to use view entities. You can change this setting by clicking **App 'APP_NAME'** > **Settings** > **Runtime** and setting [OQL version 2](/refguide/app-settings/#oql-version-2) to **Yes**. Alternatively, you can drag a new view entity from the toolbar or **Toolbox** to the domain model, which opens a dialog box where you can confirm upgrading to OQL version 2 if it has not been upgraded yet.
+Your app must use OQL version 2 to use view entities. You can change this setting by clicking **App 'APP_NAME'** > **Settings** > **Runtime** and setting [OQL version 2](/refguide10/app-settings/#oql-version-2) to **Yes**. Alternatively, you can drag a new view entity from the toolbar or **Toolbox** to the domain model, which opens a dialog box where you can confirm upgrading to OQL version 2 if it has not been upgraded yet.
 
 ## Properties 
 
@@ -78,19 +78,19 @@ You can add any local information about the view entity in this tab. This is als
 
 ## Using a View Entity 
 
-After creating a view entity in the domain model, it can be used in microflows and pages like any other entity. For more information, see [Use View Entities](/refguide/use-view-entities/) and [OQL]( /refguide/oql/).
+After creating a view entity in the domain model, it can be used in microflows and pages like any other entity. For more information, see [Use View Entities](/refguide10/use-view-entities/) and [OQL]( /refguide10/oql/).
 
 ## Read More
 
 For specific use case scenarios, see the following:
 
-* [Creating Overview Pages](/refguide/view-entity-overview-pages/)
-* [Decoupling APIs](/refguide/decoupling-apis/)
-* [Charting with View Entities](/refguide/charting-with-view-entities/)
-* [Multilingual Apps and Translations](/refguide/multilingual-apps/)
-* [View Archived Data](/refguide/view-archived-data/)
-* [Create a Pivot Table with View Entities](/refguide/view-entity-pivot-table/)
-* [Data Versioning with View Entities](/refguide/view-entity-data-versioning/)
-* [Exporting Data with View Entities](/refguide/view-entity-expport-data/)
-* [Abstracting Data of Add-On Modules](/refguide/abstracting-view-entity-data/)
-* [Multitenant Applications](/refguide/view-entity-multitenant-apps/)
+* [Creating Overview Pages](/refguide10/view-entity-overview-pages/)
+* [Decoupling APIs](/refguide10/decoupling-apis/)
+* [Charting with View Entities](/refguide10/charting-with-view-entities/)
+* [Multilingual Apps and Translations](/refguide10/multilingual-apps/)
+* [View Archived Data](/refguide10/view-archived-data/)
+* [Create a Pivot Table with View Entities](/refguide10/view-entity-pivot-table/)
+* [Data Versioning with View Entities](/refguide10/view-entity-data-versioning/)
+* [Exporting Data with View Entities](/refguide10/view-entity-expport-data/)
+* [Abstracting Data of Add-On Modules](/refguide10/abstracting-view-entity-data/)
+* [Multitenant Applications](/refguide10/view-entity-multitenant-apps/)

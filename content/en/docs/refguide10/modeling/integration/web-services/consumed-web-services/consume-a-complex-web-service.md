@@ -1,6 +1,6 @@
 ---
 title: "Consume a Complex Web Service"
-url: /refguide/integration/consume-a-complex-web-service/
+url: /refguide10/integration/consume-a-complex-web-service/
 weight: 8
 description: "Describes how to import a web service both directly and using the wizard as well as how to configure a web service call."
 aliases:
@@ -18,7 +18,7 @@ This how-to teaches you how to do the following:
 
 ## Importing a Web Service
 
-You can import a web service document into your app. For more information, see [Consumed Web Services](/refguide/consumed-web-services/).
+You can import a web service document into your app. For more information, see [Consumed Web Services](/refguide10/consumed-web-services/).
 
 To import a web service directly, follow these steps:
 
@@ -44,7 +44,7 @@ To configure the web service call, follow these steps:
 
     {{% alert color="info" %}}Make sure the microflow either creates the variables required as arguments for the web service call or has them passed to it.{{% /alert %}}
 
-2. If you are creating your own microflow, add the [Call web service](/refguide/call-web-service-action/) activity to the microflow. For details on how to add activities to a microflow, see [Activities](/refguide/activities/).
+2. If you are creating your own microflow, add the [Call web service](/refguide10/call-web-service-action/) activity to the microflow. For details on how to add activities to a microflow, see [Activities](/refguide10/activities/).
 3. Double-click the activity to open the **Call Web Service** properties editor and in the **Operation** field, click **Select**.
 4. In the **Select Web Service Operation** dialog box, you can select the operation for this web service call:
 

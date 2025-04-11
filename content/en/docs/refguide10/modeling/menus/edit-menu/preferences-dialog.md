@@ -1,6 +1,6 @@
 ---
 title: "Preferences"
-url: /refguide/preferences-dialog/
+url: /refguide10/preferences-dialog/
 weight: 50
 ---
 
@@ -50,7 +50,7 @@ When **Highlight shown errors and warnings in the editor** is checked, the error
 
 #### Default App Directory {#default-directory}
 
-This is the directory where new apps are stored. It is used in the [App Settings](/refguide/new-app/#app-settings) dialog box when you create a new app. If a different directory is selected in the **App Settings** dialog box, that directory is stored as the new default app directory.
+This is the directory where new apps are stored. It is used in the [App Settings](/refguide10/new-app/#app-settings) dialog box when you create a new app. If a different directory is selected in the **App Settings** dialog box, that directory is stored as the new default app directory.
 
 ## Deployment Tab {#deployment}
 
@@ -88,7 +88,7 @@ Enabling this option includes debug information about local variables in the Jav
 This feature was introduced in Mendix versions 10.16.0, 10.12.7, and 10.6.17.
 {{% /alert %}}
 
-This option controls the synchronization of managed dependencies. For more information, see the [Offline Usage](/refguide/managed-dependencies/#disabling-synchronization) section in *Managed Dependencies*.
+This option controls the synchronization of managed dependencies. For more information, see the [Offline Usage](/refguide10/managed-dependencies/#disabling-synchronization) section in *Managed Dependencies*.
 
 #### Gradle Directory
 
@@ -96,7 +96,7 @@ A directory where Gradle is located on the computer that you use to deploy the a
 
 #### Use Custom Repositories
 
-Enabling this option allows you to specify which repositories should be used by Gradle. For more information, see the [Custom Repositories](/refguide/managed-dependencies/#custom-repos) section in *Managed Dependencies*.
+Enabling this option allows you to specify which repositories should be used by Gradle. For more information, see the [Custom Repositories](/refguide10/managed-dependencies/#custom-repos) section in *Managed Dependencies*.
 
 #### Repositories
 
@@ -110,17 +110,17 @@ You can specify which repositories to use for Gradle. The content of this field 
 
 The **In-Editor Recommender** section contains the following settings:
 
-* **Enable for microflow, nanoflow, and rule editors** – this allows you to enable and disable [Logic Recommender](/refguide/logic-recommender/) in the microflow, nanoflow, and rule editors. 
-* **Enable for workflow editor** – this allows you to enable and disable [Workflow Recommender](/refguide/workflow-recommender/) in the workflow editor.
-* **Enable for page editor** - this allows you to enable and disable the [UI Recommendor](/refguide/ui-recommender/). This feature is enabled by default. 
+* **Enable for microflow, nanoflow, and rule editors** – this allows you to enable and disable [Logic Recommender](/refguide10/logic-recommender/) in the microflow, nanoflow, and rule editors. 
+* **Enable for workflow editor** – this allows you to enable and disable [Workflow Recommender](/refguide10/workflow-recommender/) in the workflow editor.
+* **Enable for page editor** - this allows you to enable and disable the [UI Recommendor](/refguide10/ui-recommender/). This feature is enabled by default. 
 
 ### Best Practice Recommender
 
 The **Best Practice Recommender** section contains the following settings:
 
-* **Show recommendation in editors** – when enabled, [Best Practice Recommender](/refguide/best-practice-recommender/) highlights elements that contain anti-patterns in visual editors.
+* **Show recommendation in editors** – when enabled, [Best Practice Recommender](/refguide10/best-practice-recommender/) highlights elements that contain anti-patterns in visual editors.
 
-* **Automatically run an inspection after opening an app** – when enabled, [Best Practice Recommender](/refguide/best-practice-recommender/) automatically runs an inspection when an app is opened. If the app contains errors, the inspection will not run.
+* **Automatically run an inspection after opening an app** – when enabled, [Best Practice Recommender](/refguide10/best-practice-recommender/) automatically runs an inspection when an app is opened. If the app contains errors, the inspection will not run.
 
 ## Model Tab
 
@@ -134,7 +134,7 @@ This setting defines the default response to the question whether to automatical
 
 #### Executable
 
-This is the path and name of the program that is used to view the details of file changes in the [commit dialog box](/refguide/commit-dialog/).
+This is the path and name of the program that is used to view the details of file changes in the [commit dialog box](/refguide10/commit-dialog/).
 
 For example, you can see how to set up file comparison for Visual Studio Code below: 
 
@@ -195,7 +195,7 @@ When this option is selected, the application automatically uses credentials of 
 Different clone types are available in Studio Pro version 10.12.0 and above. 
 {{% /alert %}}
 
-Select a [Clone type](/refguide/clone-type/) to use for future clone operations, such as downloading an app or checking out another branch of an app you already downloaded. Changing this setting does not affect apps that you have already downloaded.
+Select a [Clone type](/refguide10/clone-type/) to use for future clone operations, such as downloading an app or checking out another branch of an app you already downloaded. Changing this setting does not affect apps that you have already downloaded.
 
 #### Combine Local and Remote Changes
 
@@ -203,7 +203,7 @@ Select a [Clone type](/refguide/clone-type/) to use for future clone operations,
 This setting was introduced in Mendix version 10.5.
 {{% /alert %}}
 
-When [combining changes](/refguide/merge-algorithm/), for example when doing a Git pull, the user can choose between **Rebase** and **Merge** as the default action. This preference can be overridden for each merge which contains conflicts.
+When [combining changes](/refguide10/merge-algorithm/), for example when doing a Git pull, the user can choose between **Rebase** and **Merge** as the default action. This preference can be overridden for each merge which contains conflicts.
 
 #### Git Version Warning
 
@@ -213,7 +213,7 @@ Select **Do not show warning about Git version** to suppress a warning shown whe
 
 #### Enable Automatic Fetching from a Remote Repository {#enable-auto-fetch}
 
-Select **Enable automatic fetching from a remote repository** to enable the [Automatic fetch mechanism](/refguide/auto-fetch/).
+Select **Enable automatic fetching from a remote repository** to enable the [Automatic fetch mechanism](/refguide10/auto-fetch/).
 
 #### Fetch Interval, Minutes
 
@@ -225,7 +225,7 @@ Select **Enable automatic repository optimization** to run Git repository optimi
 
 #### Number of Commits
 
-This option is available when the [Enable automatic repository optimization](#optimization) setting is on. Studio Pro keeps track of the number of commits made in the local repository. You can manually specify the minimum number of commits needed to start the background optimization. For more information, see [Git Storage Optimization](/refguide/git-storage-optimization-dialog/).
+This option is available when the [Enable automatic repository optimization](#optimization) setting is on. Studio Pro keeps track of the number of commits made in the local repository. You can manually specify the minimum number of commits needed to start the background optimization. For more information, see [Git Storage Optimization](/refguide10/git-storage-optimization-dialog/).
 
 ## Work Environment Tab
 
@@ -235,7 +235,7 @@ This option allows user to choose between Studio Pro themes: **Auto (System them
 
 ### Default Page Editor {#default-page-editor}
 
-This option sets the default page editor mode that your page opens in: **Structure mode** (the default) or **Design mode**. For more information on page editor modes, see the [Page Editor Modes](/refguide/page/#page-editor-modes) section in *Page*.
+This option sets the default page editor mode that your page opens in: **Structure mode** (the default) or **Design mode**. For more information on page editor modes, see the [Page Editor Modes](/refguide10/page/#page-editor-modes) section in *Page*.
 
 ### Rendering {#rendering}
 
@@ -277,7 +277,7 @@ For Mendix versions 10.5.0 through 10.9.0, this option is on the **New Features*
 
 ### Feedback Survey
 
-When the **Show feedback survey periodically** setting is enabled, Studio Pro will periodically display a feedback survey to gather input on your experience. This helps Mendix improve the product based on user feedback. For more information, see [Feedback Survey](/refguide/feedback-survey/).
+When the **Show feedback survey periodically** setting is enabled, Studio Pro will periodically display a feedback survey to gather input on your experience. This helps Mendix improve the product based on user feedback. For more information, see [Feedback Survey](/refguide10/feedback-survey/).
 
 ## New Features Tab {#new-features}
 
@@ -287,7 +287,7 @@ In Studio Pro version 10.21, the modernized access rule editor was made generall
 
 This option allows you to enable and disable the new editor in the *Access rules* tab of the entity properties dialog.
 
-For more information, see [Defining Access Rules Using the New Editor](/refguide/access-rules/#new-editor) section of *Access Rules*.
+For more information, see [Defining Access Rules Using the New Editor](/refguide10/access-rules/#new-editor) section of *Access Rules*.
 
 ### App Explorer
 
@@ -303,17 +303,17 @@ The expression editor is modernized since Studio Pro 10.6. This setting is enabl
 
 ### GraphQL {#graphql}
 
-Publishing data as a GraphQL service is available as of Studio Pro 10.14. When you enable this feature, you can indicate that a published OData service [also supports GraphQL](/refguide/published-odata-services/#supports-graphql).
+Publishing data as a GraphQL service is available as of Studio Pro 10.14. When you enable this feature, you can indicate that a published OData service [also supports GraphQL](/refguide10/published-odata-services/#supports-graphql).
 
 ### Maia
 
 #### Enable Domain Model Generator (Experimental)
 
-In Studio Pro 10.13.0, Domain Model Generator was introduced as an experimental feature. Enable this option to help you generate entities and associations for empty domain models. For more information on how to use this feature, see [Domain Model Generator](/refguide/domain-model-generator/).
+In Studio Pro 10.13.0, Domain Model Generator was introduced as an experimental feature. Enable this option to help you generate entities and associations for empty domain models. For more information on how to use this feature, see [Domain Model Generator](/refguide10/domain-model-generator/).
 
 #### Enable Translation Generator (Experimental)
 
-In Studio Pro 10.12.0, Translation Generator was introduced as an experimental feature. Enable this option to help you translate your model to different languages through **Batch translate** under the **Language** menu. For more information, see [Translation Generator](/refguide/translation-generator/).
+In Studio Pro 10.12.0, Translation Generator was introduced as an experimental feature. Enable this option to help you translate your model to different languages through **Batch translate** under the **Language** menu. For more information, see [Translation Generator](/refguide10/translation-generator/).
 
 ### Mapping Editor
 
@@ -325,13 +325,13 @@ This setting allows you to move forward and backward through your editing histor
 
 ### Online Synchronization Mode
 
-This setting, introduced in 10.19 and currently in beta, allows entities to be used in offline navigation profiles without requiring data synchronization. This enables app developers to use entity data on pages without synchronizing the data of those entities to the offline database. This mode requires an available connection to the server. For more details, see [Online Synchronization Mode](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/online-sync-mode/).
+This setting, introduced in 10.19 and currently in beta, allows entities to be used in offline navigation profiles without requiring data synchronization. This enables app developers to use entity data on pages without synchronizing the data of those entities to the offline database. This mode requires an available connection to the server. For more details, see [Online Synchronization Mode](/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/online-sync-mode/).
 
 ### System Texts Editor
 
 In Studio Pro 10.14.0, the web version of the system texts editor was released as an experimental feature. Enable this option to use the web version of the editor. 
 
-If Translation Generator is also enabled, you can use it in this editor as well. For more information, see the [Generating Translation for System Texts](/refguide/translation-generator/#translate-system-text) section in *Translation Generator*.
+If Translation Generator is also enabled, you can use it in this editor as well. For more information, see the [Generating Translation for System Texts](/refguide10/translation-generator/#translate-system-text) section in *Translation Generator*.
 
 ### Toolbox
 
@@ -339,4 +339,4 @@ Enable this setting to use the modernized toolbox. This requires restart of Stud
 
 ## Read More
 
-* [Upload to Version Control Server](/refguide/upload-to-version-control-dialog/)
+* [Upload to Version Control Server](/refguide10/upload-to-version-control-dialog/)

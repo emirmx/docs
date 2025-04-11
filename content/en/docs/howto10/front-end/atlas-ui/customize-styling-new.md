@@ -27,7 +27,7 @@ The styling editor is based on the editor that powers Visual Studio Code and is 
 
 {{< figure src="/attachments/howto10/front-end/atlas-ui/customize-styling-new/styling-editor.png" alt="styling editor" class="no-border" >}}
 
-By default, Studio Pro shows styling files on the app level and from UI resources modules, such as **Atlas_Core**. This can be changed in [preferences](/refguide/preferences-dialog/) (Edit > **Preferences** > **General** > **Interface**) or by simply right-clicking **Styling** in the App Explorer:
+By default, Studio Pro shows styling files on the app level and from UI resources modules, such as **Atlas_Core**. This can be changed in [preferences](/refguide10/preferences-dialog/) (Edit > **Preferences** > **General** > **Interface**) or by simply right-clicking **Styling** in the App Explorer:
 
 {{< figure src="/attachments/howto10/front-end/atlas-ui/customize-styling-new/styling-editor-settings.png" alt="styling editor settings" class="no-border" >}}
 
@@ -265,7 +265,7 @@ Mendix monitors the file system in the **theme** and **themesource** folders for
 
 If **Enable developer mode** is enabled, and changes are made in the JavaScript styling files, the app automatically reloads with the new styling. 
 
-For more information, see the Getting the [Make It Native App Reference Guide](/refguide/getting-the-make-it-native-app/).
+For more information, see the Getting the [Make It Native App Reference Guide](/refguide10/getting-the-make-it-native-app/).
 
 ## File and Folder Structure {#file-and-folder}
 
@@ -342,7 +342,7 @@ For native mobile apps the React Native framework is used to combine all the Jav
 
 If there are errors during the bundling, these will be shown in Studio Pro and the Make it Native app. For details on the error, it can be helpful to look at the native packager logs in *{Mendix app directory}/deployment/log/native_packager_log.txt*.
 
-For more details on styling native mobile apps see the [Native Mobile Styling](/refguide/native-styling-refguide/) Reference Guide.
+For more details on styling native mobile apps see the [Native Mobile Styling](/refguide10/native-styling-refguide/) Reference Guide.
 
 ## Disabling default styling from Atlas Core {#disable-default}
 
@@ -576,7 +576,7 @@ Mendix is able to add the `?638184496048312490` query parameter because of the u
 ```
 
 {{% alert color="info" %}}
-When the [Mendix React Client](/refguide/mendix-client/react/) is enabled, the line in */deployment/web/index.html* is as follows:
+When the [Mendix React Client](/refguide10/mendix-client/react/) is enabled, the line in */deployment/web/index.html* is as follows:
 ```
 <script src="dist/index.js?{{cachebust}}" type="module"></script>
 ```

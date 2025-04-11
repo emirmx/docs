@@ -8,7 +8,7 @@ description: "Describes how to create a custom error page for a more tailored us
 {{% alert color="info" %}}
 This document explains how to make custom error pages for web pages. Native mobile does not use custom error pages, as users cannot enter URLs which lead to them.
 
-To create customized error information for native pages, please create custom [system texts](/refguide/system-texts/).
+To create customized error information for native pages, please create custom [system texts](/refguide10/system-texts/).
 {{% /alert %}}
 
 ## Introduction

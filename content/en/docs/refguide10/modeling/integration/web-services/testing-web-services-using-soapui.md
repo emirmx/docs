@@ -1,6 +1,6 @@
 ---
 title: "Test Web Services Using SoapUI"
-url: /refguide/integration/testing-web-services-using-soapui/
+url: /refguide10/integration/testing-web-services-using-soapui/
 weight: 30
 description: "Describes how to create a SOAP project with SoapUI, create assertions in SoapUI, and build an automated test using SoapUI."
 aliases: 
@@ -224,8 +224,8 @@ Congratulations! You have created your first automated test with SoapUI.
 * [Debugging Java actions remotely](/howto/monitoring-troubleshooting/debug-java-actions-remotely/)
 * [Log Levels](/howto/monitoring-troubleshooting/log-levels/)
 * [Debugging Java Actions](/howto/monitoring-troubleshooting/debug-java-actions/)
-* [Debugging Microflows and Nanoflows](/refguide/debug-microflows-and-nanoflows/)
-* [Debugging Microflows Remotely](/refguide/debug-microflows-remotely/)
+* [Debugging Microflows and Nanoflows](/refguide10/debug-microflows-and-nanoflows/)
+* [Debugging Microflows Remotely](/refguide10/debug-microflows-remotely/)
 
 Learn more about this topic using the following helpful links:
 

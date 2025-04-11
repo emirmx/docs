@@ -1,6 +1,6 @@
 ---
 title: "Translation Generator"
-url: /refguide/translation-generator/
+url: /refguide10/translation-generator/
 weight: 80
 description: "Describes the features in Translation Generator."
 ---
@@ -15,7 +15,7 @@ Translation Generator, an AI translation tool, is currently an experimental feat
 To use Translation Generator, internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-Maia Translation Generator is a translation tool powered by AI in Mendix Studio Pro. You can use this AI tool in Studio Pro to [batch translate](/refguide/batch-translate/) your Mendix app into a different language. In Studio Pro 10.14.0 and above, you can also use it to translate [system texts](/refguide/system-texts/).
+Maia Translation Generator is a translation tool powered by AI in Mendix Studio Pro. You can use this AI tool in Studio Pro to [batch translate](/refguide10/batch-translate/) your Mendix app into a different language. In Studio Pro 10.14.0 and above, you can also use it to translate [system texts](/refguide10/system-texts/).
 
 For more information on how to enable and use this AI translation tool in Studio Pro, see the sections below.
 
@@ -49,7 +49,7 @@ Currently, if you encounter an error after clicking **Generate Translations...**
 
 ### Generating Translation for System Texts {#translate-system-text}
 
-In Studio Pro 10.14.0 and above, you can also use Translation Generator in the web version of the [system texts](/refguide/system-texts/) editor. 
+In Studio Pro 10.14.0 and above, you can also use Translation Generator in the web version of the [system texts](/refguide10/system-texts/) editor. 
 
 The web-based system texts editor was released in Studio Pro 10.14.0 as an experimental feature. You can enable it via **Preferences** > the **New Features** tab > the **System Texts Editor** section.
 
@@ -57,10 +57,10 @@ After enabling the new editor and Translation Generator, make sure to restart St
 
 {{< figure src="/attachments/refguide10/modeling/mendix-ai-assistance/translation-generator/translate-system-text.png" max-width=80% >}}
 
-It generates translation for the system texts based on what the [current language](/refguide/translatable-texts/#current-language) is for app end-users. 
+It generates translation for the system texts based on what the [current language](/refguide10/translatable-texts/#current-language) is for app end-users. 
 
 ## Read More
 
-* [Batch Translate](/refguide/batch-translate/)
-* [System Texts](/refguide/system-texts/)
-* [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/)
+* [Batch Translate](/refguide10/batch-translate/)
+* [System Texts](/refguide10/system-texts/)
+* [Mendix AI Assistance (Maia)](/refguide10/mendix-ai-assistance/)
