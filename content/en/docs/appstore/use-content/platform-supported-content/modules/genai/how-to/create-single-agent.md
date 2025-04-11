@@ -20,11 +20,11 @@ Through this document, you will:
 
 Before building a single agent in your app, make sure you meet the following requirements:
 
-* An existing app: To simplify your first use case, start building from a preconfigured set up [Blank GenAI Starter App](https://marketplace.mendix.com/link/component/227934). For more information, see [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/how-to/blank-app/). 
+* An existing app: Either from your existing app or start building from a preconfigured set up [Blank GenAI Starter App](https://marketplace.mendix.com/link/component/227934) where the marketplace modules are already installed.
 
-* Be on Mendix Studio Pro 10.21.0 or higher (the how-to can also be followed from 9.24.2 or higher in your own application with older module versions).
+* We recommend to start in Mendix Studio Pro 10.21.0 or higher to use the latest versions of the GenAI modules.
 
-* Installation: Install the [GenAI Commons](https://marketplace.mendix.com/link/component/239448), [MxGenAI Connector](https://marketplace.mendix.com/link/component/239449) and [ConversationalUI](https://marketplace.mendix.com/link/component/239450) modules from the Mendix marketplace. If you start with the Blank GenAI App, skip this installation.
+* Installation: Install the [GenAI Commons](https://marketplace.mendix.com/link/component/239448), [MxGenAI Connector](https://marketplace.mendix.com/link/component/239449) and [ConversationalUI](https://marketplace.mendix.com/link/component/239450) modules from the Mendix marketplace. If you start from the Blank GenAI App, skip this installation.
 
 * Intermediate understanding of Mendix: knowledgeable of simple page building, microflow modelling, domain model creation and import/export mappings (everything is explained below).
 
@@ -50,7 +50,7 @@ This how-to will guide you through the following steps:
 Before you can start creating your first agent, you need to setup your application. If you have not started from the Blank GenAI App, you first need to install the modules listed in the [Prerequisites](#prerequisites), connect the module roles with your user roles and add the configuration pages to your navigation. Furthermore, add the `Prompt_Overview` page to your navigation,  which is located in **ConversationalUI** > **USE_ME** > **Prompt Management**. Also make sure to add the `PromptAdmin` module role to your admin role. After starting the app, the admin user should be able to configure Mendix GenAI resources and navigate to the *Prompt Overview* page.
 
 ## Create Your Prompt
-First, a prompt needs to be created that can be sent to the LLM. The [Prompt Management](/appstore/modules/genai/conversational-ui/prompt-management/) capabilities of the ConversationalUI module enable admins to prompt engineer at runtime. It is recommended to first follow the [How-to integrate prompt management into a Mendix App](/appstore/modules/genai/how-to/howto-prompt-management/) before continuing.
+First, a prompt needs to be created that can be sent to the LLM. The [Prompt Management](/appstore/modules/genai/conversational-ui/prompt-management/) capabilities of the ConversationalUI module enable admins to prompt engineer at runtime. It is recommended to first follow the [How-to integrate prompt management into a Mendix App](/appstore/modules/genai/how-to/howto-prompt-management/) before continuing if you are not familar with Prompt Management or anything is unclear.
 
 1. After running the app, navigate to the `Prompt_Overview` page to create a new prompt titled `IT-Ticket Helper` as `Single-Call` type. The *description* field can be left empty. **Save** the prompt.
 
@@ -79,7 +79,7 @@ Your prompt is now (almost) ready to be used in your application. If you like yo
 
 ## Ingest Data into Knowledge Base{#ingest-knowledge-base}
 
-Second, Mendix ticket data needs to be ingested into the knowledge base. A detailed step-by-step guide can be found in the [How-to ground your LLM in data](/appstore/modules/genai/how-to/howto-groundllm/#demodata). The following steps explain the process at a higher level by modifying logic imported from the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475):
+Second, Mendix ticket data needs to be ingested into the knowledge base. A detailed step-by-step guide can be found in the [How-to ground your LLM in data](/appstore/modules/genai/how-to/howto-groundllm/#demodata). The following steps explain the process at a higher level by modifying logic imported from the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475). The sample data that is used in this how-to can be found in the GenAI Showcase App, but you are of course free to use your own data.
 
 1. In you domain model, create an entity `Ticket` with the attributes:
     * `Identifier` as *String*
@@ -120,7 +120,7 @@ Now that the basics are setup, the agent can be implemented. First, a simple use
 
 First, a simple user interface needs to be created, so that the agent can be tested and used properly.
 
-1. In the domain model, add a new entity `TicketHelper` as non-persistent. Add the following attributes:
+1. In your domain model (*MyFirstModule* for Blank GenAI Apps), add a new entity `TicketHelper` as **non-persistent**. Add the following attributes:
     * `UserInput` as *String*, length unlimited
     * `ModelResponse` as *String*, length unlimited
 
@@ -185,7 +185,7 @@ Now, the user can ask the model questions and will see a response. However, this
 
 ### Empower the Agent
 
-In this section you will enable the agent to call two microflows as functions and additionally a tool for knowledge base retrieval. It is highly recommend to first follow the [Integrate Function Calling into Your Mendix App](/appstore/modules/genai/how-to/howto-functioncalling/) and [Grounding Your Large Language Model in Data – Mendix Cloud GenAI](http://localhost:1313/appstore/modules/genai/how-to/howto-groundllm/#chatsetup) how-tos which teach the basics for this section. All components that are used in this how-to  can be found in the *ExampleMicroflows* folder in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) for reference. In this example, only retrieval functions are shown. However, you can also expose functions that perform actions on behalf of the user, for example creating a new ticket as shown in the [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035).
+In this section you will enable the agent to call two microflows as functions and additionally a tool for knowledge base retrieval. It is highly recommend to first follow the [Integrate Function Calling into Your Mendix App](/appstore/modules/genai/how-to/howto-functioncalling/) and [Grounding Your Large Language Model in Data – Mendix Cloud GenAI](http://localhost:1313/appstore/modules/genai/how-to/howto-groundllm/#chatsetup) how-tos which teach the basics for this section if you are not familar with either function calling or MxCloud GenAI knowledge base retrieval respectively. All components that are used in this how-to can be found in the *ExampleMicroflows* folder in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) for reference. In this example, only retrieval functions are shown. However, you can also expose functions that perform actions on behalf of the user, for example creating a new ticket as shown in the [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035).
 
 #### Function: Number of Tickets in Status
 
