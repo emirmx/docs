@@ -53,7 +53,7 @@ Review the prerequisites below that your application must fulfill before it can 
 
 The React client was introduced in Mendix 10.7.0 as a [beta feature](/releasenotes/beta-features/). It became general availability in [Mendix 10.18](/releasenotes/studio-pro/10.18/) as an opt-in feature.
 
-### Widgets{#widgets}
+### Widgets{#widgets-prerequisites}
 
 Widgets must fulfill the following requirements to be compatible with apps leveraging the React client:
 
@@ -99,7 +99,7 @@ Not all Mendix Marketplace components are ready for the React client. Refer to [
 
 Mendix recommends refreshing all Marketplace components in your app before enabling the React client.
 
-### Widgets{#widgets}
+### Widgets{#supported-widgets}
 
 Not all widgets are supported by the React client. Mendix recommends migrating widgets in apps below [10.18](/releasenotes/studio-pro/10.18/) using the automatic conversion capabilities in Studio Pro (right-click a widget and select **Convert in-place**). For a list of configuration options unsupported by automatic conversions, see [Widget Conversion Limitations](/refguide/mendix-client/widget-conversion-limitations/).
 
