@@ -115,7 +115,7 @@ You can configure basic authentication to use for all requests in your document.
 1. Click **Authentication**.
 2. In the **Authentication method** field, click the drop-down and select **Basic authentication**. 
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/authentication-setup.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/authentication-setup.png" >}}
 
 3. Select a constant or create a new one for your username and password. To create a new constant, follow these steps:
    1. Next to **Username** or **Password**, click **Select** > **New**.
