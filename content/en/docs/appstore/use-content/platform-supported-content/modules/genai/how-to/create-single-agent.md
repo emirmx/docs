@@ -34,7 +34,7 @@ Before building a single agent in your app, make sure you meet the following req
 
 * Basic understanding Function Calling and Prompt Engineering: Learn about [Function Calling](/appstore/modules/genai/function-calling/) and [Prompt Engineering](/appstore/modules/genai/get-started/#prompt-engineering) to use them within the Mendix ecosystem.
 
-## Single Agent Use Case {#use-case}
+## Single Agent Use Case
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-singleagent/structure_singleagent.jpg" >}}
 
@@ -45,11 +45,11 @@ This how-to will guide you through the following steps:
 2. Create ticket data and ingest the historical information into a knowledge base.
 3. Build a simple page for user interaction and add a powerful single-agent to generate a response for a given user input.
 
-## Setup your Application {#setup}
+## Setup your Application
 
 Before you can start creating your first agent, you need to setup your application. If you have not started from the Blank GenAI App, you first need to install the modules listed in the [Prerequisites](#prerequisites), connect the module roles with your user roles and add the configuration pages to your navigation. Furthermore, add the `Prompt_Overview` page to your navigation,  which is located in **ConversationalUI** > **USE_ME** > **Prompt Management**. Also make sure to add the `PromptAdmin` module role to your admin role. After starting the app, the admin user should be able to configure Mendix GenAI resources and navigate to the *Prompt Overview* page.
 
-## Create Your Prompt{#create-prompt}
+## Create Your Prompt
 First, a prompt needs to be created that can be sent to the LLM. The [Prompt Management](/appstore/modules/genai/conversational-ui/prompt-management/) capabilities of the ConversationalUI module enable admins to prompt engineer at runtime. It is recommended to first follow the [How-to integrate prompt management into a Mendix App](/appstore/modules/genai/how-to/howto-prompt-management/) before continuing.
 
 1. After running the app, navigate to the `Prompt_Overview` page to create a new prompt titled `IT-Ticket Helper` as `Single-Call` type. The *description* field can be left empty. **Save** the prompt.
@@ -112,11 +112,11 @@ Second, Mendix ticket data needs to be ingested into the knowledge base. A detai
 
 When the microflow is called, the demo data is created and ingested into the knowledge base for later use. This needs to be called only once at the beginning. Make sure to first add a knowledge base resource (see [Configuration](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#configuration)).
 
-## Create an Agent {#create-agent}
+## Create an Agent
 
 Now that the basics are setup, the agent can be implemented. First, a simple user interface needs to be created which then allows the user to trigger the agent from a button.
 
-### Create a user interface {#user-interface}
+### Create a user interface
 
 First, a simple user interface needs to be created, so that the agent can be tested and used properly.
 
@@ -142,7 +142,7 @@ First, a simple user interface needs to be created, so that the agent can be tes
 
 You now successfully added a page for the user to ask questions to an agent. You can now verify in the running app that you can open the page and enter text into the *User input* field. In the next section you will add logic to a microflow behind the button.
 
-### Generate a Response {#generate-response}
+### Generate a Response
 
 The button currently does not perform any actions, so in this section a microflow to call the agent is created.
 
@@ -183,11 +183,11 @@ The button currently does not perform any actions, so in this section a microflo
 
 Now, the user can ask the model questions and will see a response. However, this interaction can hardly be called an "agent" as there are not any more complex tools involved yet. 
 
-### Empower the Agent {#empower-agent}
+### Empower the Agent
 
 In this section you will enable the agent to call two microflows as functions and additionally a tool for knowledge base retrieval. It is highly recommend to first follow the [Integrate Function Calling into Your Mendix App](/appstore/modules/genai/how-to/howto-functioncalling/) and [Grounding Your Large Language Model in Data – Mendix Cloud GenAI](http://localhost:1313/appstore/modules/genai/how-to/howto-groundllm/#chatsetup) how-tos which teach the basics for this section. All components that are used in this how-to  can be found in the *ExampleMicroflows* folder in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) for reference. In this example, only retrieval functions are shown. However, you can also expose functions that perform actions on behalf of the user, for example creating a new ticket as shown in the [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035).
 
-#### Function: Number of Tickets in Status {#function-number-of-tickets}
+#### Function: Number of Tickets in Status
 
 The first function allows the user to ask questions about the ticket dataset, in this case: how many tickets are in a certain status. No LLM can know this answer without having access to your specific application, because this is private data, so the model is agent to call a specific microflow in your application. For more information, see [Function Calling](/appstore/modules/genai/function-calling/).
 
@@ -223,7 +223,7 @@ The first function allows the user to ask questions about the ticket dataset, in
 
 You now successfully added your first function microflow. If the users now asked how many tickets are in status *Open*, the model can call the exposed function microflow and base the final answer on your Mendix database. When you restart the app and ask the agent `How many tickets are open?` a log in your Studio Pro console should appear indicating that your microflow was executed.
 
-#### Function: Ticket by Identifier {#function-ticket-identifier}
+#### Function: Ticket by Identifier
 
 As a second function, the model can pass an identifier if the user asked for details of a specific ticket and the function returns the whole object as JSON to the model.
 
@@ -252,7 +252,7 @@ As a second function, the model can pass an identifier if the user asked for det
 
 Users can now ask for information for a specific ticket by providing a ticket identifier, for example by asking `What is ticket 42 about?`.
 
-#### Knowledge Base Retrieval: Similar Tickets {#knowledge-base-retrieval}
+#### Knowledge Base Retrieval: Similar Tickets
 
 Finally, a tool for knowledge base retrieval will be added. This allows the agent to query the knowledge base for similar tickets and thus tailor a response to the user based on private knowledge. Note that the knowledge base retrieval is only supported for [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs).
 
@@ -276,7 +276,7 @@ Finally, a tool for knowledge base retrieval will be added. This allows the agen
 You successfully integrated a knowledge base into your agent-interaction. When a user now sends the request `My VPN crashes all the time which I need to work on important documents.`, the agent will search the knowledge base, find similar tickets and provide a solution.
 
 
-## Testing and Troubleshooting {#testing-troubleshooting}
+## Testing and Troubleshooting
 
 {{% alert color="info" %}}
 If you seek more technical details and an example implementation, you can check out the [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035) which demonstrates some extra built-in features. Furthermore, the *ExampleMicroflows* folder in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) contains all components that are used in this how-to including the final use case. Other examples of the app might also be useful to check out.
