@@ -36,6 +36,8 @@ Before building a single agent in your app, make sure you meet the following req
 
 ## Single Agent Use Case {#use-case}
 
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-singleagent/structure_singleagent.jpg" >}}
+
 The single agent combines multiple, powerful capabilities of the Mendix GenAI suite. In this example, the user can ask IT-related questions to the model which helps solving problems. The model has access to a knowledge base that contains historical, solved tickets which can be helpful to find a suitable solution. Furthermore, function microflows are available to enrich the context with information about the tickets, for example how many tickets are currenlty open or what is the status of a certain ticket.
 
 This how-to will guide you through the following steps:
@@ -43,12 +45,9 @@ This how-to will guide you through the following steps:
 2. Create ticket data and ingest the historical information into a knowledge base.
 3. Build a simple page for user interaction and add a powerful single-agent to generate a response for a given user input.
 
-
-IMAGE PLACEHOLDER
-
 ## Setup your Application {#setup}
 
-Before you can start creating your first agent, you need to setup your application. If you have not started from the Blank GenAI App, your first need to install the modules listed in the [Prerequisites](#prerequisites), connect the module roles with your user roles and add the configuration pages to your navigation. Furthermore, add the `Prompt_Overview` page to your navigation,  which is located in **ConversationalUI** > **USE_ME** > **Prompt Management**. Also make sure to add the `PromptAdmin` module role to your admin role. After starting the app, the admin user should be able to configure Mendix GenAI resources and navigate to the *Prompt Overview* page.
+Before you can start creating your first agent, you need to setup your application. If you have not started from the Blank GenAI App, you first need to install the modules listed in the [Prerequisites](#prerequisites), connect the module roles with your user roles and add the configuration pages to your navigation. Furthermore, add the `Prompt_Overview` page to your navigation,  which is located in **ConversationalUI** > **USE_ME** > **Prompt Management**. Also make sure to add the `PromptAdmin` module role to your admin role. After starting the app, the admin user should be able to configure Mendix GenAI resources and navigate to the *Prompt Overview* page.
 
 ## Create Your Prompt{#create-prompt}
 First, a prompt needs to be created that can be sent to the LLM. The [Prompt Management](/appstore/modules/genai/conversational-ui/prompt-management/) capabilities of the ConversationalUI module enable admins to prompt engineer at runtime. It is recommended to first follow the [How-to integrate prompt management into a Mendix App](/appstore/modules/genai/how-to/howto-prompt-management/) before continuing.
