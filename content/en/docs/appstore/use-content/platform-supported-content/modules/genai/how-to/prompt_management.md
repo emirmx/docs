@@ -50,7 +50,7 @@ Prompt Management is a capability of the ConversationalUI module. It enables use
 
 3. If you have not started from a GenAI Starter App, you also need to add a navigation item that calls the `NAV_ConfigurationOverview_Open` microflow of the **MxGenAIConnector**. For more details, see [Configuration](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#configuration).
 
-You can now run the app, login as administrator, and verify that you can navigate to the **Prompt_Overview** and **MxCloud Configuration** pages. If you already have a key for a **Text Generation** resource, you can import at this stage. For more details, see [Mendix Cloud GenAI](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI).
+You can now run the app, login as administrator, and verify that you can navigate to the **Prompt_Overview** and **MxCloud Configuration** pages. If you already have a key for a **Text Generation** resource, you can import at this stage. For more details, see [Mendix Cloud GenAI](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/).
 
 ## Create Your First Prompt {#create-prompt}
 
