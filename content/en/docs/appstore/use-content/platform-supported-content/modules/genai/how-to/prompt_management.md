@@ -76,13 +76,13 @@ You can now create your first prompt in the user interface. The final prompt wil
 
 6. Click **Run** in the top-right corner to view the model's response. However, since no model has been selected yet, you will be prompted to choose one before running the test. If no models are available to select, you first need to configure one (for MxCloud, you need to import a key on the configuration page you added in the previous section). You can later change the selected model by clicking the **Configuration** ({{% icon name="cog" %}}) icon located to the left of the **Run** button.
 
-7. In the outcome card, you can observe the response from the model. This is already sufficient for the first try. Click **Save As** button in the **prompt card** to save this version of the prompt. For the title, use `Simple product description prompt` and save it. The prompt cannot be edited anymore.
+7. In the **Output card**, you can observe the response from the model. This is already sufficient for the first try. Click **Save As** button in the **Prompt card** to save this version of the prompt. For the title, use `Simple product description prompt` and save it. The prompt cannot be edited anymore.
 
 ### Iterate and First Test Case
 
 1. To further improve your prompt and the user experience for the end users, you can now add some placeholder variables. Next to the version's dropdown you can click **New Prompt Version** icon ({{% icon name="copy-add-plus"%}}) to create a new draft version. Change the **User Prompt** to `Generate a short product description for a {{ProductName}}. The description should not be longer than {{NumberOfWords}} words.`
 
-2. Notice that two variables have been created in the **test case card** on the right. These variables can later be used in your application to allow users to dynamically modify the user prompt without needing to understand what a prompt is, and without requiring any changes or restarts to the application. You can now enter the following values for the variables:
+2. Notice that two variables have been created in the **Test Case card** on the right. These variables can later be used in your application to allow users to dynamically modify the user prompt without needing to understand what a prompt is, and without requiring any changes or restarts to the application. You can now enter the following values for the variables:
 
     * `30` for **NumberOfWords**
 
@@ -160,7 +160,7 @@ You first need to configure some additional settings for the prompt before it ca
 
 3. Notice that the **Prompt Context Settings** icon has changed from {{% icon name="microflow-disconnected" %}} to {{% icon name="microflow-connected" %}} indicating that the context entity has been correctly selected. In the background, the system checks whether all prompt variables can be matched to attributes in the selected entity. If any variable names do not match the attribute names exactly, a warning icon will appear, and clicking it will display a helpful message. Below the list of variables, you may see an informational message indicating that not all attributes are being used as variables. This is simply a helpful reminder in case you unintentionally missed a variable. In this example, the `ProductDescription` attribute is a placeholder for the model's response and thus not part of the user or system prompt.
 
-4. Navigate back to the Prompt Overview (via the breadcrumb `Overview`).
+4. Navigate back to the **Prompt Overview** (via the breadcrumb `Overview`).
 
 5. Hover over the *Ellipsis* ({{% icon name="three-dots-menu-horizontal-small" %}}) icon in the row of your prompt and click **Select Prompt in use**. On this page, select a version that you want to set to `In Use` which means it is selected for production and later selected in your microflow logic. Select the latest version `Added system prompt and language` and click **Select**.
 
@@ -230,4 +230,4 @@ If the attributes do not match the variables, for example, you noticed a warning
 
 ### “Owner” of Prompt Is Empty {#owner-is-empty}
 
-If the `Owner` field on the `Prompt_Overview` page is empty, you are likely logged in as `MxAdmin` which does not have a name linked to it. For other users, the `Owner` field should be populated. This should not change the behavior of this document.
+If the `Owner` field on the **Prompt Overview** page is empty, you are likely logged in as `MxAdmin` which does not have a name linked to it. For other users, the `Owner` field should be populated. This should not change the behavior of this document.
