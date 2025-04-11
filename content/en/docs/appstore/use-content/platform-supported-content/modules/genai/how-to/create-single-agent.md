@@ -12,7 +12,7 @@ This document explains how to create a single-agent in your smart app. The agent
 
 Through this document, you will:
 
-* Learn how to integrate runtime prompt management into your Mendix application
+* Learn how to integrate runtime prompt management into your Mendix application.
 * Understand how to enrich your use case with function calling.
 * Ingest your Mendix data into a knowledge base and enable the model of your choice to use it.
 
