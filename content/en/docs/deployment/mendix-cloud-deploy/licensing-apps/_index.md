@@ -97,7 +97,7 @@ For more details on downloading a backup, see [Download a Backup](/developerport
 
 ### Unlinking From Current Environment{#unlink}
 
-It is not necessary to unlink an app from a node before linking it to a new node. Instead, you can [connect another app to the node](#connect-app); this automatically unlinks the existing app.
+It is not necessary to unlink an app from its current environment before linking it to a new node. Instead, you can [connect another app to the node](#connect-app); this automatically unlinks the existing app.
 
 The [Exchanging Linked Apps Between Nodes](#exchange-apps) section provides an example of how you can use this behavior.
 
@@ -121,23 +121,19 @@ To connect your app to a licensed node, do the following:
 
 1. From [Apps](https://sprintr.home.mendix.com), go to the [Environments](/developerportal/deploy/environments/) page of the app you want to unlink.
 
-1. Click **Select a node**.
-
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/licensing-apps/link-node.png" >}}
-
-1. Click **Use this Node**.
-
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/licensing-apps/choose-node.png" class="no-border" >}}
-
-1. If there is already an app linked to the node, you will be prompted to confirm that you want to replace it. Click **Continue** to confirm.
-
-{{% alert color="warning" %}}
-Linking a new project to a node removes all existing team members and resets node permissions. The technical contact must re-add everyone to the project, and reconfigure any necessary settings.
-{{% /alert %}}
-
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/licensing-apps/confirm-replace.png" max-width=70% class="no-border" >}}
+1. Click **Select Licensed Node**.
 
 1. If prompted, authenticate yourself with [two-factor authentication](/developerportal/deploy/two-factor-authentication/).
+
+1. In the list of your cloud nodes, click **Use this Node** by the node that you want to connect to your app.
+
+1. If there is already an app linked to the node, you will be prompted to confirm that you want to replace it. Click **Proceed** to confirm.
+
+{{% alert color="warning" %}}
+Unlinking the app cannot be undone. All data in the app is deleted. Before you proceed, make sure to download a backup of the app that you want to replace.
+
+Linking a new project to a node removes all existing team members and resets node permissions. The technical contact must re-add everyone to the project, and reconfigure any necessary settings.
+{{% /alert %}}
 
 Your app is now connected to this node.
 
