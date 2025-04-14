@@ -298,4 +298,4 @@ If the IdP's well-known endpoint does not have a URL for the JWKS endpoint, Mend
 
 ### Mendix Platform Does Not Accept the IdP Client Secrets
 
-If authentication fails and all other configurations are correct, check the client secret used in your Identity Provider (IdP) configuration. The issue may be caused by special characters in the client secret. Try using a client secret that contains only alphanumeric characters.
+If client authentication at your IdP/token endpoint fails, check the client secret used in your Identity Provider (IdP) configuration. The issue may be caused by special characters in the client secret. Try using a client secret that contains only alphanumeric characters.
