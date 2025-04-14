@@ -67,7 +67,8 @@ The prerequisites are the following:
     
    
 * Java JDK
-     * For Mendix Studio Pro 9.24.34 and above - [Eclipse Temurin JDK 21 (x64)](https://github.com/adoptium/temurin21-binaries/releases)
+
+    * For Mendix Studio Pro 9.24.34 and above - [Eclipse Temurin JDK 21 (x64)](https://github.com/adoptium/temurin21-binaries/releases)
     * For Mendix Studio Pro 9.24.16 and above – [Eclipse Temurin JDK 17 (x64)](https://github.com/adoptium/temurin17-binaries/releases)
     * For Mendix Studio Pro 9.18.0 and 9.24.15 – [Eclipse Temurin JDK 11 (x64)](https://github.com/adoptium/temurin11-binaries/releases)
     * For Mendix Studio Pro 9.14 to 9.17 – [Adoptium Temurin Java SDK](https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jdk_x64_windows_hotspot_11.0.14.1_1.msi)
@@ -101,14 +102,8 @@ It is possible to prepare the prerequisite installers beforehand, so that the Me
 3. Create a folder with the name **Dependencies** in the same location where the Mendix Studio Pro installer was placed.
 4. Download the prerequisites listed in the [Troubleshooting](#troubleshooting) section above and move them into the **Dependencies** folder.
 5. Rename the following dependencies:
-    * Microsoft .NET Desktop Runtime
-        * For Studio Pro versions 9.0.0 through 9.24.33, rename the Microsoft .NET Desktop Runtime 6.0.x
-            * On x64, rename *windowsdesktop-runtime-6.0.35-win-x64.exe* to *windowsdesktop-runtime-6.0-x64.exe*
-            * On ARM64, rename *windowsdesktop-runtime-6.0.35-win-arm64.exe* to *windowsdesktop-runtime-6.0-arm64.exe*
-        * For Studio Pro versions 9.24.34 and above, rename the Microsoft .NET Desktop Runtime 8.0.x
-            * On x64, rename *windowsdesktop-runtime-8.0.14-win-x64.exe* to *windowsdesktop-runtime-8.0-x64.exe*
-            * On ARM64, rename *windowsdesktop-runtime-8.0.14-win-arm64.exe* to *windowsdesktop-runtime-8.0-arm64.exe*
-    * The Java Development Kit 11, 17, or 21 (x64) *msi* (for example, *OpenJDK17U-jdk_x64_windows_hotspot_17.0.10_7.msi*) to one of the following, depending on the Studio Pro version:
+    * The Microsoft .NET Desktop Runtime 6.0.x executable (*dotnet.exe*) to *windowsdesktop-runtime-6.0-x64.exe*
+    * The Java Development Kit 11, 17 or 21 (x64) *msi* (for example, *OpenJDK17U-jdk_x64_windows_hotspot_17.0.10_7.msi*) to one of the following, depending on the Studio Pro version:
         * *adoptiumjdk_21_x64.msi* – for versions 9.24.34 and above
         * *adoptiumjdk_17_x64.msi* – for versions 9.24.16 and above
         * *adoptiumjdk_11_x64.msi* – for versions between 9.14.0 and 9.24.15 
