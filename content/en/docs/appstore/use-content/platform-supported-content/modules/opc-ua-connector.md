@@ -252,7 +252,7 @@ The Write action allows you to write to specific attributes on a node. The reque
 
 The `WriteNode` objects describe how and what to write to a node. 
 
-The `Write node` action returns a `WriteNodeResponse` object. The object contains a list of `WriteNodeStatusCode` that contains the statuses of the written attributes in the same order as the request. Check the statuses to see whether the action succeeded. Each `WriteNodeStatusCode` has a `WriteResponseWriteValue` object attached that allows you to match the resulting status code with the requested write action.
+The `Write node` action returns a `WriteNodeResponse` object. This object has associations with a list of `WriteNodeStatusCode` objects that contains the statuses of the written attributes. Each `WriteNodeStatusCode` has a 1-1 association with a `WriteResponseWriteValue` object that allows you to match the resulting status code with the requested write action. Check the statuses to see whether the action succeeded. 
 
 To write the `VALUE` attribute on a `VariableNode`, set the `NodeId` on your `WriteNode` to the right node ID, the `AttributeId` to *ENUM_AttributeId.VALUE*, and the `Payload` to one based on the table above in the [Read Action](#read-action) section and the `VariantType` to the correct type.
 
