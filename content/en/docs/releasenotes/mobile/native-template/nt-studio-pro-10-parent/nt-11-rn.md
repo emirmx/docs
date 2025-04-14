@@ -17,6 +17,8 @@ description: "Native Template 11 release notes."
 
 **Release date: January 15, 2025**
 
+* We fixed a problem where the image that is not png was breaking the app because the current react-native version was missing a patch.
+
 ### Fixes
 
 * We fixed an issue with the bundle identifier in Xcode's **Dev** scheme.
