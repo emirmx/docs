@@ -159,4 +159,8 @@ To fix this, go to `<directory of your app>/.git/` and delete the *index.lock* f
 
 ### Unknown Author Shown In Version Control History
 
-The name and email can be configured in the [Studio Pro preferences](/refguide/preferences-dialog/#name)
+In case of a configuration error, a seemingly unknown author may show up in the commit history for one or multiple commits. The values used for commit messages originate from the Git configuration. This information is not used for authenticating on Team Server, and can be adjusted in the [Studio Pro preferences](/refguide/preferences-dialog/#name) at will.
+
+Other tools on your machine that use the Git configuration, like a traditional IDE, are typically also capable of changing this Git configuration. If you have chosen a name and email for a hobby project in another IDE, that information can also show up in commits made from Studio Pro.
+
+To fix the issue going forward, please ensure that the responsible users change their Git config in the [Studio Pro preferences](/refguide/preferences-dialog/#name). Changing historical commits is not possible within Studio Pro. 
