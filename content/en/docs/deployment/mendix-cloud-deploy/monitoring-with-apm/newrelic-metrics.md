@@ -50,6 +50,8 @@ To send your runtime information to New Relic, you must provide the New Relic AP
     | `NEW_RELIC_METRICS_URI` | URI for the New Relic's Metrics API. For more information, consult [New Relic Regions](#uri-regions). Example: `https://metric-api.eu.newrelic.com/metric/v1`. |
     | `NEW_RELIC_APP_NAME` (optional) | Mendix Application name shown on New Relic's APM & Services. Default: Domain host name. |
     | `LOGS_REDACTION` (optional) | Email addresses are automatically redacted before log entries are sent to New Relic. To disable this redaction, set `LOGS_REDACTION` to `false`. Default: `true`. |
+    | `FLUENTBIT_LOGS_BUFFER_SIZE` | Sets the maximum amount of data (in KB) that the TCP input plugin reads from the socket per read operation. Increasing of this value can help to get rid of data flow delay, and errors related to queue buffer overflow.  | `128` |
+    | `FLUENTBIT_LOGS_MEM_BUF_LIMIT` | Defines the maximum total memory an input plugin can use for buffering log records before they're processed or flushed to storage/output. Limits memory which can be consumed by Fluentbit agent | `50MB` |  
 
 1. Return to the **Environments** page for your app and **Deploy** or **Transport** your app into the selected environment.
 
