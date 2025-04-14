@@ -295,3 +295,7 @@ Versions of Studio Pro below 9.18 use an embedded browser for login. This may no
 ### IdP Does Not Have JWKS Endpoint
 
 If the IdP's well-known endpoint does not have a URL for the JWKS endpoint, Mendix cannot validate the signature on the received ID-token, and the delegated authentication fails.
+
+### Mendix Platform Does Not Accept the IdP Client Secrets
+
+If authentication fails and all other configurations are correct, check the client secret used in your Identity Provider (IdP) configuration. The issue may be caused by special characters in the client secret. Try using a client secret that contains only alphanumeric characters.
