@@ -42,7 +42,8 @@ To send your runtime information to Splunk Cloud Platform, you need to set it up
     | `SPLUNK_PORT` | The HTTP (or HTTPS) port of the Splunk Cloud Platform Controller. | `8088` |
     | `SPLUNK_TOKEN` | An access token to the Splunk Cloud Platform. To create a new token on the Splunk Cloud dashboard, open the Splunk Cloud dashboard in a browser, go to **Settings** > **Data Input** > **HTTP Event Collector**, and click **New Token** (on the upper-right corner of the page). | |
     | `LOGS_REDACTION` | Email addresses are automatically redacted before log entries are sent to Splunk Cloud Platform. To disable this redaction, set `LOGS_REDACTION` to `false`. The environment variable `SPLUNK_LOGS_REDACTION` is still supported, but it is now deprecated and will be removed in a later version. Its use is not recommended. | `true` |
-
+    | `FLUENTBIT_LOGS_BUFFER_SIZE` | Sets the maximum amount of data (in KB) that the TCP input plugin reads from the socket per read operation. Increasing of this value can help to get rid of data flow delay, and errors related to queue buffer overflow.  | `128` |
+    | `FLUENTBIT_LOGS_MEM_BUF_LIMIT` | Defines the maximum total memory an input plugin can use for buffering log records before they're processed or flushed to storage/output. Limits memory which can be consumed by Fluentbit agent | `50MB` |   
 1. Return to the **Environments** page for your app and **Deploy** or **Transport** your app into the selected environment.
 
     {{% alert color="warning" %}}The first time you set up the Splunk Cloud Platform integration, you must redeploy your app and then restart it. Just restarting the app is not sufficient because additional dependencies need to be included.{{% /alert %}}
