@@ -93,22 +93,19 @@ The first ingestion performed for the data source with this setting enabled inge
 
 ### Enabling ChangedDate for Delta Ingestion
 
-To use delta ingestion, you must expose a "Date and time" attribute under the name **changedDate** in your OData resource. This attribute will be used to track changes and must follow the format:
+To use delta ingestion, you must expose a Date and Time attribute with the name **changedDate** in your OData resource. This attribute is used to track changes and must follow the `yyyy-MM-dd'T'HH:mm:ss.SSS` format.
 
-**`yyyy-MM-dd'T'HH:mm:ss.SSS`**
+{{% alert color="info" %}}This format should be the default for date attributes in Mendix when exposed through OData.{{% /alert %}}
 
-> This format should be the default for date attributes in Mendix when exposed via OData.
+To provide this date choose one of the following options:
 
-You have two options for providing this date:
+* Use the **changedDate** system member:
 
-1. **Use the system member changedDate:**  
-   - Navigate to the entities in your domain model.  
-   - In their properties, select the **Store 'changedDate'** check box.  
-   - This will automatically track when each object is modified.
+    1. Navigate to the entities in your domain model.
+    2. In their properties, select the **Store changedDate** check box.
+        This option automatically tracks when each object is modified.
 
-2. **Use any custom date attribute:**  
-   - You can use any "Date and time" attribute from your domain model, with any name you choose.  
-   - Just make sure to expose it in OData under the name **changedDate**.
+* Use any custom date attribute - Use any Date and Time attribute from your domain model, with any name you choose. Make sure to expose it in OData under the name **changedDate**.
 
 In both cases, make sure the **changedDate** attribute is exposed in your OData resource so it can be used during delta ingestion.
 
