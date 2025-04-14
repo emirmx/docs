@@ -14,8 +14,9 @@ git:
 env:
   global:
 # Global variables can go here, for example HUGO_VERSION if we were using Netlify to publish.
-# Stalled npm install - does this fix it (https://docs.travis-ci.com/user/common-build-problems/#node-npm-or-yarn-connect-enetunreach-error)
-    - NODE_OPTIONS="--dns-result-order=ipv4first"
+
+#add group: previous to see if this fixes the stalled npm build - 2025-04-14
+group: previous
 
 branches:
 # build only development and production
