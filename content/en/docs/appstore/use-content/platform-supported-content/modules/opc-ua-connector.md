@@ -221,7 +221,7 @@ For more advanced cases, use the [read action](#read-action) as described below.
 
 The read action allows you to read specific attributes of a node. The request object for the action is `ReadNodeRequest`, which contains a list of `ReadNodeReadValueIDs`.
 
-Each `ReadNodeReadValueID` object specifies the attributes of the nodes you want to read. Upon executing the read action, a `ReadNodeResponse` object is returned which contains a list of `ReadNodeResponseResults`, each having a `ReadNodeResponseReadValueId` attached to it so you can match the requested attributes with the results.
+Each `ReadNodeReadValueID` object specifies the attributes of the nodes you want to read. Upon executing the read action, a `ReadNodeResponse` object is returned which has associations with a list of `ReadNodeResponseResults` objects. Each `ReadNodeResponseResults` object has a 1-1 association with a `ReadNodeResponseReadValueId` object so you can match the requested attributes with the results.
 
 Each `ReadNodeResponseResult` object contains a `DataValue` attribute. This is the raw payload returned from the OPC-UA Server. 
 
