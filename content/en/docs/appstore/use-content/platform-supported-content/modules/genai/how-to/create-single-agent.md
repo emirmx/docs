@@ -1,5 +1,5 @@
 ---
-title: "Create a single agent"
+title: "Create a Single Agent"
 url: /appstore/modules/genai/how-to/howto-single-agent/
 linktitle: "Creating A Single Agent"
 weight: 60
@@ -54,7 +54,7 @@ Before you can start creating your first agent, you need to setup your applicati
 
 Create a prompt that can be sent to the LLM. The [Prompt Management](/appstore/modules/genai/conversational-ui/prompt-management/) capabilities of the ConversationalUI module allow administrators to perform prompt engineering at runtime. If you are not familiar with Prompt Management or if anything is unclear, it is recommended to follow the [How-to integrate prompt management into a Mendix App](/appstore/modules/genai/how-to/howto-prompt-management/) before continuing.
 
-1. After running the app, navigate to the **Prompt_Overview** page to create a new prompt titled `IT-Ticket Helper` with the type set to `Single-Call`. You can leave the **Description** field empty. Click **Save** to create the prompt.
+1. After running the app, navigate to the **Prompt_Overview** page to create a new prompt titled `IT-Ticket Helper` with the type set to **Single-Call**. You can leave the **Description** field empty. Click **Save** to create the prompt.
 
 2. You are now navigated to the prompt's details page, which allows you to perform prompt engineering at runtime. In the [System Prompt](/appstore/modules/genai/prompt-engineering/#system-prompt) field, add the following prompt:
 
@@ -78,17 +78,18 @@ Create a prompt that can be sent to the LLM. The [Prompt Management](/appstore/m
 
 4. By adding a value in the **UserInput** variable field, you can test the current prompt, for example, `How can I implement an agent in my Mendix app?`. Ideally, the model will not attempt to answer requests that fall outside its scope, as it is restricted to handling IT-related issues and providing information about ticket data. However, if you ask a question that would require tools that are not yet implemented, the model might hallucinate and generate a response as if it had used those tools.
 
-5. Save the prompt version using **Save as** button and enter *Initial prompt* as the title.
+5. Save the prompt version using **Save As** button and enter *Initial prompt* as the title.
 
 6. Go back to the **Prompt Overview** page. Hover over the *Ellipsis* ({{% icon name="three-dots-menu-horizontal-small" %}}) icon in the row of your prompt and click **Select Prompt in use** button. On this page, choose the version you want to set as `In Use`, which means, it is selected for production and makes it selectable in your microflow logic. Select the *Initial prompt* version and click **Select**.
 
 Your prompt is now almost ready to be used in your application. You can now iterate on it until you are satisfied with the results.
 
-## Ingest Data into Knowledge Base{#ingest-knowledge-base}
+## Ingest Data Into Knowledge Base{#ingest-knowledge-base}
 
 Mendix ticket data needs to be ingested into the knowledge base. You can find a detailed guide in the [How-to ground your LLM in data](/appstore/modules/genai/how-to/howto-groundllm/#demodata). The following steps explain the process at a higher level by modifying logic imported from the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475). You can find the sample data that is used in this document in the GenAI Showcase App, but you can also use your own data.
 
 1. In your domain model, create an entity `Ticket` with the attributes:
+
     * `Identifier` as *String*
     * `Subject` as *String*
     * `Description` as *String*, length 2000
@@ -97,6 +98,7 @@ Mendix ticket data needs to be ingested into the knowledge base. You can find a 
     * `Status` as *Enumeration*, create a new Enumeration `ENUM_Ticket_Status` with *Open*, *In Progress*, and *Closed* as values.
 
 2. From the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), extract the following microflows from the `ExampleMicroflows` module and import them into your app:
+
     * `ACT_TicketList_LoadAllIntoKnowledgeBase`
     * `Tickets_CreateDataset`
     * `IM_Ticket`
@@ -115,7 +117,7 @@ Mendix ticket data needs to be ingested into the knowledge base. You can find a 
     * In the last action of the loop `Chunks: Add KnowledgeBaseChunk to ChunkCollection` keep the **Human readable ID** field empty.
     * Near the end of the microflow, edit the action `Connection: Get` to change the collection name from *example* to `HistoricalTickets`
 
-7. Finally, create a microflow `ACT_CreateDemoData_IngestIntoKnowledgeBase` that first calls the **Tickets_CreateDataset** microflow, followed by the **ACT_TicketList_LoadAllIntoKnowledgeBase** microflow. Add this new microflow to your navigation or homepage and ensure that it is accessible to admins (add the admin role under **Allowed Roles** in the microflow properties).
+7. Finally, create a microflow `ACT_CreateDemoData_IngestIntoKnowledgeBase` that first calls the `Tickets_CreateDataset` microflow, followed by the `ACT_TicketList_LoadAllIntoKnowledgeBase` microflow. Add this `ACT_CreateDemoData_IngestIntoKnowledgeBase` new microflow to your navigation or homepage and ensure that it is accessible to admins (add the admin role under **Allowed Roles** in the microflow properties).
 
 When the microflow is called, the demo data is created and ingested into the knowledge base for later use. This needs to be called only once at the beginning. Make sure to first add a knowledge base resource. For more details, see [Configuration](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#configuration).
 
@@ -123,9 +125,9 @@ When the microflow is called, the demo data is created and ingested into the kno
 
 Now that the basics are setup, you can implement the agent. Create a simple user interface which allows the user to trigger the agent from a button.
 
-### Create a user interface
+### Create a User Interface
 
-First, create a user interface to test and user the agent properly.
+First, create a user interface to test and use the agent properly.
 
 1. In your domain model (**MyFirstModule** for Blank GenAI Apps), add a new entity `TicketHelper` as **non-persistent**. Add the following attributes:
 
@@ -141,7 +143,7 @@ First, create a user interface to test and user the agent properly.
 
 3. Create a new, blank, and responsive page **TicketHelper_Agent**.
 
-4. On the page, add a **dataview**. Change the **Form orientation** to `Vertical` and set the **Show footer** to `No`. For **Data source**, select the `TicketHelper` entity as context object. Click **Ok** and automatically fill the content.
+4. On the page, add a data view. Change the **Form orientation** to `Vertical` and set the **Show footer** to `No`. For **Data source**, select the `TicketHelper` entity as context object. Click **Ok** and automatically fill the content.
 
 5. Remove the **Save** and **Cancel** buttons. Add a new button with the caption *Ask the agent* below the **User input** text field.
 
@@ -206,7 +208,7 @@ In this section, you will enable the agent to call two microflows as functions, 
 
 All components used in this document can be found in the **ExampleMicroflows** folder of the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) for reference. This example focuses only on retrieval functions, but you can also expose functions that perform actions on behalf of the user—for example, creating a new ticket, as demonstrated in the [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035).
 
-#### Function: Number of Tickets in Status
+#### Function: Get Number of Tickets by Status
 
 The first function enables the user to ask questions about the ticket dataset, for example, how many tickets are in a specific status. Since this is private data specific to your application, an LLM cannot answer such questions on its own. Instead, the model acts as an agent by calling a designated microflow within your application to retrieve the information. For more information, see [Function Calling](/appstore/modules/genai/function-calling/).
 
@@ -244,7 +246,7 @@ The first function enables the user to ask questions about the ticket dataset, f
 
 You have now successfully added your first function microflow. If users ask how many tickets are in the *Open* status, the model can call the exposed function microflow and base the final answer on your Mendix database. When you restart the app and ask the agent, 'How many tickets are open?', a log should appear in your Studio Pro console indicating that your microflow was executed.
 
-#### Function: Ticket by Identifier
+#### Function: Get Tickets by Identifier
 
 As a second function, the model can pass an identifier if the user asked for details of a specific ticket and the function returns the whole object as JSON to the model.
 
