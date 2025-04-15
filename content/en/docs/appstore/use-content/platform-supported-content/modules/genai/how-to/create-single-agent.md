@@ -1,7 +1,7 @@
 ---
 title: "Create a Single Agent"
 url: /appstore/modules/genai/how-to/howto-single-agent/
-linktitle: "Creating A Single Agent"
+linktitle: "Creating a Single Agent"
 weight: 60
 description: "This document guides you through creating an agent by integrating knowledge bases, function calling, and prompt management in your Mendix application to build powerful GenAI use cases."
 ---
