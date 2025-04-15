@@ -51,7 +51,7 @@ Collaborating within one app on MPRv1 and MPRv2 branches is possible. To limit r
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Merging MPRv2 apps using the command line with `git merge` or using third-party tools is  supported. Hybrid merges involving both MPRv1 and MPRv2 formats are not supported.
+Merging MPRv2 apps using the command line with `git merge` or using third-party tools is supported. Hybrid merges involving both MPRv1 and MPRv2 formats are not supported.
 {{% /alert %}}
 
 #### Converting MPR Storage Format {#convert}
