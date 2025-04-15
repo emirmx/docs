@@ -169,12 +169,12 @@ The next step is to verify whether you are behind a VPN, Proxy or Zscaler.
 
 * **Why:** Git uses the CURL library to do network operations over HTTP or HTTPS. If CURL does not work the network infrastructure may be interfering.  
 * **How:** 
-    * Check whether you are behind a VPN or proxy. Reach out to your internal IT department if you're not sure. Alternatively you can try a website to detect a VPN, such as [this one](https://ip.teoh.io/vpn-detection).
+    * Check whether you are behind a VPN or proxy. Reach out to your internal IT department if you're not sure. Alternatively you can try a website to detect a VPN.
     * Perform the following line on `cmd` and store the output: ```netsh.exe winhttp show proxy```
 * **Validate the output:** 
     * A system with no proxy should show the following:
     ```
-    C:\Users\RobertVermeulen>netsh.exe winhttp show proxy
+    C:\Users\UserName>netsh.exe winhttp show proxy
     Current WinHTTP proxy settings:
     Direct access (no proxy server).
     ```
@@ -184,7 +184,7 @@ The next step is to verify whether you are behind a VPN, Proxy or Zscaler.
         * Setup the proxy in Git according to [Troubleshooting Version Control](/refguide/troubleshoot-version-control-issues/#proxy-servers-are-not-supported).
         A proper example command would look like this: ```git config --global http.proxy https://username:mypassword@someproxyurl.com:123123```
         Take note; if the username or password contains a `:` or a `@` it might not work.
-    * In case ```netsh.exe winhttp show proxy``` gives an output that implies there is no proxy active, keep this information in mind. If the Git CLI **is** able to work with Git, but Studio Pro **is not**, then you can ask try ```netsh.exe winhttp reset proxy```, to reset your local proxy setting. Also see this [knowledge base article](https://support.mendix.com/hc/en-us/articles/15995279037468-Error-LibGit2Sharp-LibGit2SharpException-failed-to-send-request-The-server-name-or-server-address-could-not-be-processed).
+    * In case ```netsh.exe winhttp show proxy``` gives an output that implies there is no proxy active, keep this information in mind. If the Git CLI **is** able to work with Git, but Studio Pro **is not**, then you can ask try ```netsh.exe winhttp reset proxy```, to reset your local proxy setting.
 
 ##### Validate network speed
 
@@ -230,7 +230,7 @@ The troubleshooting commands should be executed in `cmd` or `command prompt` in 
 ##### Verify Git Config
 * **Why:** Various config lines in the config could influence the connection, such as the SSL config or proxy settings.
 * **How:** Perform the following command in `cmd` and store the output for contacting Support: `git config --list --show-origin`
-* **Validate the output:** @ROBERT, should we elaborate on this? Use to identify lines and how they could explain the behaviour.Git config evaluation  
+* **Validate the output:** Please be on the lookout for values `http.proxy` containing incorrect values.
 * **Actions to take if something is wrong:** Update the config file where needed: `git config --global [key] "[value]"`.
 
 ##### Verify Full Clone Through Git CLI:
@@ -242,9 +242,9 @@ set GIT_TRACE=1
 set GIT_CURL_VERBOSE=1
 git clone https://git.api.mendix.com/[PROJECT_ID].git 
 ```
-* **Validate the output:** As reference an expected git clone output is available here: @ROBERT, should we elaborate on this? Expected git clone output 
+* **Validate the output:** 
 If this succeeded, please continue with troubleshooting the [Studio Pro connectivity](#studio-pro-connectivity).
-* **Actions to take if something is wrong:** Try the next step, a shallow clone.
+* **Actions to take if something is wrong:** Save the output and try the next step, a shallow clone.
 
 
 ##### Verify Shallow Clone Through Git CLI:
@@ -256,9 +256,9 @@ set GIT_TRACE=1
 set GIT_CURL_VERBOSE=1
 git clone --depth 1 https://git.api.mendix.com/[PROJECT_ID].git 
 ```
-* **Validate the output:** As reference an expected git clone output is available here: @ROBERT, should we elaborate on this? Expected git clone output 
+* **Validate the output:** 
 If this succeeded there is a connectivity issue causing a full clone to fail. Contact your internal IT department to discuss the situation.
-* **Actions to take if something is wrong:** Try the next step, a shallow clone without using HTTPS.
+* **Actions to take if something is wrong:** Save the output and try the next step, a shallow clone without using HTTPS.
 
 ##### Verify Shallow Clone Through Git CLI Without HTTPS:
 * **Why:** If a shallow clone fails it could still be that the SSL handling is failing. This could be due to a proxy, ZScaler or a VPN.
@@ -269,21 +269,23 @@ set GIT_TRACE=1
 set GIT_CURL_VERBOSE=1
 git -c http.sslVerify=false clone --depth 1 https://git.api.mendix.com/[PROJECT_ID].git 
 ```
-* **Validate the output:** As reference, The expected git clone output is available here: @ROBERT, should we elaborate on this? Expected git clone output 
-If this succeeded, there is an issue with SSL handling. Please look at the git config evaluation @ROBERT, should we elaborate here? and your config and see if there are any settings that could interfere.
-    * If you are using a proxy: setting up a `http.proxy`` in the git config might address this issue.
+* **Validate the output:**
+If this succeeded, there is an issue with SSL handling. Please take a look at your git config 
+    * If you are using a proxy: setting up a `http.proxy` in the git config might address this issue.
+    * If you are seeing a warning on SSL on windows: setting the `http.sslbackend` to `schannel` by running the following command might improve your experience. `git config --global http.sslbackend schannel`
     * If you are using a VPN: try again without VPN
     * If Zscaler or any other network filtering/security tool is active: check whether SSL inspection is enabled. Try disabling SSL inspection or adding an exception for git.api.mendix.com.
-* **Actions to take if something is wrong:** Reach out to Mendix Support with all information that you've gathered to discuss the situation.
+    *
+* **Actions to take if something is wrong:** Save the output and reach out to Mendix Support with all information that you've gathered to discuss the situation.
 
 #### Studio Pro Connectivity {#studio-pro-connectivity}
 {{% alert color="info" %}}
 When reaching this step in the diagnosis, you should have already seen a Git clone working outside Studio Pro. If this is not the case, please first read through the previous chapters.
 {{% /alert %}}
 
-From this point onward the actions taken in Studio Pro should be done with debug level logs. [This page](https://support.mendix.com/hc/en-us/articles/9634287106204-How-to-enable-extra-logs-e-g-Debug-Logs-in-Studio-Pro) describes how to enable that.
+From this point onward the actions taken in Studio Pro should be done with debug level logs. To achieve this start Studio Pro the commandline running the following command adjusting the version to match your project: ```C:\Program Files\Mendix\9.24.4.11007\modeler>studiopro.exe --log-level=debug```
 
-At the end all files from the log folder should be shared with Mendix in a Support ticket.
+At the end all files from the log folder should be shared with Mendix in a Support ticket. Go to Help-> Open Log File directory to easily access the logfolder.
 
 **Why are we doing this:** Given that the commands through Git CLI succeeded, we need to find out what is the problem with Studio Pro.
 
