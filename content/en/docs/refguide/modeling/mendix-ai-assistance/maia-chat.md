@@ -27,12 +27,12 @@ Maia Chat is a built-in chat interface in the Mendix Platform powered by generat
 
 See below a list of Maia Chat's data sources:
 
-* [Mendix Docs](/) (added in Studio Pro 10.6.0)
-* [Mendix Community](https://community.mendix.com/) (added in Studio Pro 10.6.0)
-* [Mendix Academy](https://academy.mendix.com/) (added in Studio Pro 10.6.0)
-* [Mendix Blog](https://www.mendix.com/blog/) (added in Studio Pro 10.17.0)
-* [Mendix Medium](https://medium.com/mendix) (added in Studio Pro 10.17.0)
-* [Mendix Evaluation Guide](https://www.mendix.com/evaluation-guide/) (added in Studio Pro 10.21.0)
+* [Mendix Docs](/)
+* [Mendix Community](https://community.mendix.com/)
+* [Mendix Academy](https://academy.mendix.com/)
+* [Mendix Blog](https://www.mendix.com/blog/)
+* [Mendix Medium](https://medium.com/mendix)
+* [Mendix Evaluation Guide](https://www.mendix.com/evaluation-guide/)
  
 ## Using Maia Chat in Studio Pro
 

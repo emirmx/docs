@@ -8,7 +8,7 @@ description: "Describes the features in Page Generator."
 ## Introduction
 
 {{% alert color="info" %}}
-Page Generator is currently an experimental feature introduced in Studio Pro 10.21.0. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+Page Generator is currently an experimental feature. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/).
 {{% /alert %}}
 
 {{% alert color="info" %}}
