@@ -449,7 +449,7 @@ See the list below for detailed information on which widgets are generated in va
 
 ### Default Association Storage
 
-In Mendix 10.21 and above, you can decide how associations are stored in the database.
+You can decide how associations are stored in the database.
 
 This option allows you to change the default for new associations. The initial defaults will be as follows:
 

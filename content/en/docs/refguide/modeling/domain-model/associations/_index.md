@@ -94,7 +94,7 @@ In all cases, you should change how you access data, using the new association n
 {{< figure src="/attachments/refguide/modeling/domain-model/associations/reverse-association-direction.png" class="no-border" >}}
 
 {{% alert color="info" %}}
-In Mendix 10.21 and above, it is possible to have direct associations. If you reverse these, the new associations will be created using association tables.
+It is possible to have direct associations. If you reverse these, the new associations will be created using association tables.
 {{% /alert %}}
 
 ## Association Examples {#examples}

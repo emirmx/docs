@@ -49,10 +49,6 @@ Finally, the React client allows Mendix to clean up our client and remove many l
 
 Review the prerequisites below that your application must fulfill before it can leverage the React client.
 
-### Mendix Version{#mendix-version}
-
-The React client was introduced in Mendix 10.7.0 as a [beta feature](/releasenotes/beta-features/). It became general availability in [Mendix 10.18](/releasenotes/studio-pro/10.18/) as an opt-in feature.
-
 ### Widgets{#widgets-prerequisites}
 
 Widgets must fulfill the following requirements to be compatible with apps leveraging the React client:
