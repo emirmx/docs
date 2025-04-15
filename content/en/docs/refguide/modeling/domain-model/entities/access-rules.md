@@ -135,12 +135,6 @@ You cannot set *Write* access to attributes which are calculated. This includes 
 
 See [Attribute Changes and Security Constraints](#attribute-changes), below, for important considerations about giving access to attributes.
 
-### Access Rule Normalization{#normalization}
-
-Older beta versions of the new access rule editor, those in Studio Pro versions 10.6 through 10.16, worked with normalized access rules. A normalized access rule is an access rule that has exactly one module role attached to it. This change was made because the editor used to work with a table where the entity members make use of the rows and module roles (optionally with XPaths) use the columns.
-
-In those versions, access rules were automatically normalized when first using the new editor for an entity. Alternatively, all access rules in a project could be normalized at once by going to *App* *Tools* > *Normalize access rules*.
-
 ## Access Rule Evaluation
 
 Access rules are defined as part of application development. This section describes the effects access rules have at runtime, under the assumption that the **App Security** is set to **Production**.
