@@ -11,6 +11,13 @@ The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Stu
 
 The Mendix Native Mobile Builder uses MxBuild, GitHub, and App Center to simplify the app building process and is directly accessible via Mendix Studio Pro. For best results, we recommend using the latest version of the Native Mobile Builder.
 
+## Release 1.0.136 {#10135}
+
+**Release date: April 1, 2025**
+
+#### Breaking Changes
+Building mobile apps with App Center(cloud build option) is removed. The customers previously used Cloud Build will be able to select local build.
+
 ## Release 1.0.135 {#10135}
 
 **Release date: March 4, 2025**
