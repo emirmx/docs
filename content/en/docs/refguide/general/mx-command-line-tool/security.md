@@ -29,7 +29,7 @@ These are the `OPTIONS`:
 
 This is an example:
 
-`mx export-security-overview -t json -t -o C:\MyApp\export.json C:\MyApp\MyApp.mpr`
+`mx export-security-overview -t json -e -o C:\MyApp\export.json C:\MyApp\MyApp.mpr`
 
 ### Return Codes
 
