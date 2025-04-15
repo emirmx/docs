@@ -63,6 +63,7 @@ These are the `OPTIONS`:
 | `-l, --filter-required-libs` | Includes all the files except the userlibs that do not have an accompanying `[ModuleName].RequiredLib` file. | 
 | `-e, --exclude-files` | Excludes all the files that match the given regular expression. |
 | `-d, --package-dir` | Exports the module package to the directory. |
+| `-m, --exclude-managed-dependencies` | Excludes managed dependencies from synchronization and the exported module package. Note that this will prevent the module from being used if Gradle synchronization is disabled in Studio Pro. Available in 10.23 and later. In versions before 10.23 managed dependencies are not synchronized when using this command. |
 | `--help` | Displays the help screen. |
 
 For `TARGET-FILE`, specify the *.mpr* app you want to export.
