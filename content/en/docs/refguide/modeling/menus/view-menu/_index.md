@@ -92,7 +92,7 @@ The [Integration pane](/refguide/integration-pane/) enables you to browse the [C
 
 ### OpenAPI Documentation
 
-The **OpenAPI Documentation** pane displays the auto-generated OpenAPI documentation for the currently opened [Published OData service](/refguide/published-odata-services/). This allows you to preview the REST operations that will be available once your app is published.
+The **OpenAPI Documentation** pane displays the auto-generated OpenAPI documentation for the currently opened [Published OData service](/refguide/published-odata-services/) or [Published REST service](/refguide/published-rest-service/). This allows you to preview the REST operations that will be available once your app is published.
 
 ### Maia
 
