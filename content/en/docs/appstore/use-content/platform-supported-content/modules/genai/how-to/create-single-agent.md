@@ -80,7 +80,7 @@ Create a prompt that can be sent to the LLM. The [Prompt Management](/appstore/m
 
 5. Save the prompt version using **Save As** button and enter *Initial prompt* as the title.
 
-6. Go back to the **Prompt Overview** page. Hover over the *Ellipsis* ({{% icon name="three-dots-menu-horizontal-small" %}}) icon in the row of your prompt and click **Select Prompt in use** button. On this page, choose the version you want to set as `In Use`, which means, it is selected for production and makes it selectable in your microflow logic. Select the *Initial prompt* version and click **Select**.
+6. Go back to the **Prompt Overview** page. Hover over the Ellipsis ({{% icon name="three-dots-menu-horizontal-small" %}}) icon in the row of your prompt and click **Select Prompt in use** button. On this page, choose the version you want to set as `In Use`, which means, it is selected for production and makes it selectable in your microflow logic. Select the *Initial prompt* version and click **Select**.
 
 Your prompt is now almost ready to be used in your application. You can now iterate on it until you are satisfied with the results.
 
@@ -280,7 +280,7 @@ Users can now ask for information for a specific ticket by providing a ticket id
 
 #### Knowledge Base Retrieval: Similar Tickets
 
-Finally, you can add a tool for knowledge base retrieval. This allows the agent to query the knowledge base for similar tickets and thus tailor a response to the user based on private knowledge. Note that the knowledge base retrieval is only supported for [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs).
+Finally, you can add a tool for knowledge base retrieval. This allows the agent to query the knowledge base for similar tickets and thus tailor a response to the user based on private knowledge. Note that the knowledge base retrieval is only supported for [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/).
 
 1. In the microflow `ACT_TicketHelper_CallAgent`, add a `Retrieve` action, before the request is created, to retrieve a **Mendix Cloud Knowledge Base** object:
 
