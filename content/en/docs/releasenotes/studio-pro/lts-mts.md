@@ -23,9 +23,6 @@ For Mendix 10 and 11, we are planning to follow this release timeline:
 | Release | Date |
 | --- | --- |
 | 9.24 LTS | March 2023 |
-| 10 Public Beta 1 | April 2023 |
-| 10 Public Beta 2 | May 2023 |
-| 10.0 GA | June 2023 |
 | 10.6 MTS | December 2023 |
 | 10.12 MTS | June 2024 |
 | 10.18 MTS | December 2024 |
