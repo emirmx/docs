@@ -22,6 +22,7 @@ Certain OIDC Provider module versions are compatible with certain versions of St
 
 | Mendix Version | OIDC Provider Version |
 | --- | --- |
+| 10.21.01 and above | 4.2.0 and above |
 | 10.12.10 and above | 4.0.0 and above |
 | 9.24.18 and above | 3.2.0 and above |
 
