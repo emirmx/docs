@@ -16,7 +16,8 @@ The Mendix Native Mobile Builder uses MxBuild, GitHub, and App Center to simplif
 **Release date: April 1, 2025**
 
 #### Breaking Changes
-Building mobile apps with App Center(cloud build option) is removed. The customers previously used Cloud Build will be able to select local build.
+
+* Building mobile apps with App Center (the **Cloud Build** option) has been removed. Customers who previously used **Cloud Build** will be able to select **Local Build**.
 
 ## Release 1.0.135 {#10135}
 
