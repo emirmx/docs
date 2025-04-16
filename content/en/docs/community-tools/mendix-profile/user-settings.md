@@ -209,6 +209,7 @@ The following Mendix services support usage of PATs:
 * [Catalog API](/apidocs-mxsdk/apidocs/catalog-apis/)
 * [App Repository API](/apidocs-mxsdk/apidocs/app-repository-api/)
 * [Projects API](/apidocs-mxsdk/apidocs/projects-api/)
+* [User Deactivation API](/apidocs-mxsdk/apidocs/user-deactivation-api/)
 
 #### Creating a PAT {#create-pat}
 

@@ -14,7 +14,7 @@ The User Deactivation API is available for Mendix Admins.
 
 ## Introduction
 
-The User Deactivation API allows Mendix admins to deactivate users within their company on the Mendix Platform. You can use this API to automate the Joiner, Mover, and Leaver (JML) processes. It can help manage access by revoking it for certain 'movers' and 'leavers' from the Mendix platform. Using this API may also help your company to contribute to compliance with its policies.
+The User Deactivation API allows Mendix admins to deactivate users within their company on the Mendix Platform. You can use this API as part of your implementation of Joiner, Mover, and Leaver (JML) processes, for example, deactivation of users can be used to revoke access to the Mendix platform for certain 'movers' and for 'leavers'. In this way the API may help your company to comply with its access policies.
 
 Note that this API only manages access to Mendix as a development platform. If you need to implement JML processes for end-users in your Mendix apps, it is recommended to add the [SCIM](/appstore/modules/scim/) module to your applications.
 
@@ -41,7 +41,7 @@ Store the generated value `{GENERATED_PAT}` somewhere safe so you can use it to 
 Each request must contain an `Authorization` header with the value `MxToken {GENERATED_PAT}`. Here is an example:
 
 ```http
-PATCH /v1/platform-users/user-status/{uuid} HTTP/1.1
+PATCH /v1/platform-users/{uuid} HTTP/1.1
 Authorization: MxToken EKNJ…vk
 ```
 
@@ -72,7 +72,7 @@ The following steps lead to deactivating the user based on the UUID provided as 
     }
     ```
 
-1. Call `PATCH /v1/platform-users/user-status/{UUID}` to deactivate the User with the provided {UUID}.
+1. Call `PATCH /v1/platform-users/{UUID}` to deactivate the User with the provided {UUID}.
 
 ## API Reference
 
