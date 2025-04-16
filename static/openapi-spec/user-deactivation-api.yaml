@@ -2,21 +2,21 @@ openapi: 3.0.0
 info:
   version: 1.0.0
   title: User Deactivation API
-  description: The API allows a Mendix Admin to deactivate users of company by providing UUID of the users.
+  description: The API allows a Mendix Admin to deactivate user of company by providing UUID of the user.
   termsOfService: 'https://www.mendix.com/terms-of-use/'
   contact:
     name: Mendix Support
     url: 'https://support.mendix.com'
     email: support@mendix.com
 servers:
-  - url: 'https://users-status-api.home.mendix.com/v1'
+  - url: 'https://users-status-api.home-test.mendix.com/v1'
 paths:
-  '/platform-users/user-status/{uuid}':
+  '/platform-users/{uuid}':
     patch:
       tags:
-        - user-deactivation-api
-      summary: Deactivate the user based on UUID provided.
-      description: This API deactivates users of the company based on the UUID provided as parameter.
+        - User Deactivation API
+      summary: Deactivate the user based on UUID provided
+      description: This API deactivates user of the company based on the UUID provided as parameter
       operationId: user-deactivation-api
       parameters:
         - name: uuid
@@ -31,8 +31,8 @@ paths:
             example: c5f3afba-cc28-4f56-b922-1e606807bed4
       requestBody:
         description: |-
-          Request payload containing the Active attribute. It should be false to deactivate the user.
-          Note: The API only allows 'false' as value.
+          Request payload containing the Active attribute. It should be false to deactivate the user
+          Note: The API only allows 'false' as value
         content:
           application/json:
             schema:
@@ -49,22 +49,13 @@ paths:
           content:
             application/json:
               schema:
-                oneOf:
-                  - $ref: '#/components/schemas/error'
-                  - $ref: '#/components/schemas/wrongPayloadResponse'
-                x-examples:
-                  Example 1:
-                    error:
-                      message: The request data did not validate
-                      detail: Request payload is invalid.
-                      code: 400
-                      instance: 'urn:uuid:1266dcea-445b-4699-a1d4-36af114961c3'
+                $ref: '#/components/schemas/error'
               examples:
                 payloadNotJSON:
                   value:
                     error:
-                      code: '400'
-                      message: 'Error parsing JSON. com.mendix.systemwideinterfaces.core.UserException: A problem occurred parsing attribute ''Active'' of the object of type ''CompanyService.PatchUserRequest''. The value was ''fal''. This isn''t allowed by the schema.'
+                      code: 400
+                      message: 'Error parsing JSON. com.mendix.systemwideinterfaces.core.UserException: A problem occurred parsing attribute ''Active'' of object of type ''CompanyService.PatchUserRequest''. The value was ''fal''. This isn''t allowed by the schema.'
                 invalidPayload:
                   value:
                     error:
@@ -150,7 +141,7 @@ paths:
                 properties:
                   message:
                     type: string
-                  request_id:
+                  requestId:
                     type: string
                 x-examples:
                   Example 1:
@@ -164,7 +155,7 @@ paths:
       security:
         - PersonalAccessToken: []
       servers:
-        - url: 'https://users-status-api.home.mendix.com/v1'
+        - url: 'https://users-status-api.home-test.mendix.com/v1'
           description: ''
 components:
   securitySchemes:
@@ -204,23 +195,10 @@ components:
             detail: Access token is non-existent or expired.
             code: 401
             instance: 'urn:uuid:766f0ee2-e9a2-445b-bbc5-93dfdc5b5d22'
-    wrongPayloadResponse:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-            message:
-              type: string
-      x-examples:
-        Example 1:
-          error:
-            code: '400'
-            message: 'Error parsing JSON. com.mendix.systemwideinterfaces.core.UserException: A problem occurred parsing attribute ''Active'' of object of type ''CompanyService.PatchUserRequest''. The value was ''fal''. This isn''t allowed by the schema.'
     patError:
       type: string
       title: patError
+      x-examples:
+        WrongPATToken: Supplied personal access token is invalid.
 security:
   - PersonalAccessToken: []
