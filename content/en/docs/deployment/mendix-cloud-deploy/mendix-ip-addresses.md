@@ -64,17 +64,17 @@ key can be used in a policy to allow principals (Mendix apps and end-users) to m
 
 If you apply IP restrictions to your AWS IAM user or role, you must ensure that the following IP ranges for API requests are allowed in your policy:
 
-For the Mendix apps deployed to the Cloud Foundry infrastructure:
+For Mendix apps deployed to the Cloud Foundry infrastructure:
 * `10.10.128.0/21`
 * `10.10.136.0/21`
 * `10.10.144.0/21`
 
-For the Mendix apps deployed to the Kubernetes infrastructure:
+For Mendix apps deployed to the Kubernetes infrastructure:
 * `10.11.64.0/18`
 * `10.11.128.0/18`
 * `10.11.192.0/18`
 
-> To find the Mendix application infrastructure, go to [Apps](https://sprintr.home.mendix.com/link/myapps) and check the Infrastructure label on your environment. The label will contain either Cloud Foundry or Kubernetes.
+To find whether your app uses Kubernetes or Cloud Foundry, go to [Apps](https://sprintr.home.mendix.com/link/myapps) and check the **Infrastructure** label for your environment.
 
 ### Global Platform {#global-platform-ips}
 
