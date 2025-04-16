@@ -245,7 +245,7 @@ Hardware and driver issues may cause performance problems when running Studio Pr
 
 This beta feature is available from Studio Pro 10.17. 
 
-This option allows you to change the user interface language you work in while using Studio Pro. At this time, German, English, Japanese, Chinese, and Korean are supported. You must restart Studio Pro in order to use this feature.
+This option allows you to change the user interface language you work in while using Studio Pro. At this time, German (available only in Studio Pro 10.17-10.20), English, Japanese, Chinese, and Korean are supported. You must restart Studio Pro in order to use this feature.
 
 ### Editor Tabs Closing Policy {#closing-policy}
 
