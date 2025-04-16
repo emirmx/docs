@@ -440,12 +440,12 @@ You can set up custom user provisioning by setting the following constants. You 
 | IdPAttribute | the IdP claim which is the unique identifier of an authenticated user | *Default* | `NameId` |
 | AllowcreateUsers | allows to create users in the application | *Optional* | `True` |
 | Userrole | the role which will be assigned to newly created users | *Optional* | `User` |
-| UserType | assigns user type to the created user | *0ptional* | `Internal` |
-| CustomUserProvisioning | a custom microflow to use for user provisioning | *0ptional* – in the form `modulename.microflowname` – the microflow name must begin with the string `CustomUserProvisioning` | `Mymodule.CustomUserProvisioningEntra` |
-| DisableMxAdmin | deactivates Mx admin | *0ptional* | `False` |
+| UserType | assigns user type to the created user | *Optional* | `Internal` |
+| CustomUserProvisioning | a custom microflow to use for user provisioning | *Optional* – in the form `modulename.microflowname` – the microflow name must begin with the string `CustomUserProvisioning` | `Mymodule.CustomUserProvisioningEntra` |
+| DisableMxAdmin | deactivates Mx admin | *Optional* | `True` |
 
 {{% alert color="info" %}}
-From version 2.1.0 of the UserCommons module, if the flag is set to `True` for the `DisableMxAdmin` constant, MxAdmin will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
+From version 2.1.0 of the UserCommons module, if the flag is set to `False` for the `DisableMxAdmin` constant, MxAdmin will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
 {{% /alert %}}
 
 ### Custom User Provisioning at Runtime{#custom-provisioning-rt}

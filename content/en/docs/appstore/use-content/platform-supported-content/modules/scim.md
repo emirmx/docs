@@ -298,10 +298,10 @@ The table below lists all supported constants. Mandatory constants must be set a
 | `Default_UserNameMapping` | sets the mapping entity attribute to the Identity provider attribute |  Optional | No default Value |
 | `Default_UserRole` | sets the mapping entity attribute to the Identity provider attribute | Optional | `User` |
 | `Default_UserType` | sets the mapping entity attribute to the Identity provider attribute | Optional | `Internal` |
-| `DisableMxAdmin` | deactivates Mx admin | Optional | `False` |
+| `DisableMxAdmin` | deactivates Mx admin | Optional | `True` |
 
 {{% alert color="info" %}}
-From version 2.1.0 of the UserCommons module, if the flag is set to `True` for the `DisableMxAdmin` constant, MxAdmin will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
+From version 2.1.0 of the UserCommons module, if the flag is set to `False` for the `DisableMxAdmin` constant, MxAdmin will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
 {{% /alert %}}
 
 #### Configuration with Entra ID

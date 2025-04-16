@@ -520,10 +520,10 @@ You can set up custom user provisioning by setting the following constants. You 
 | `Userrole` | the role that will be assigned to newly created users | *optional* - Default Userrole is assigned only at user creation <br> - User updates do not change the default role <br> - No bulk update for existing users when the default userrole changes | `User` |
 | `UserType` | assigns user type to the created user | *optional* | `Internal` |
 | `CustomUserProvisioning` | a custom microflow to use for user provisioning | *optional* – in the form `modulename.microflowname` – the microflow name must begin with the string `UC_CustomProvisioning` | `Mymodule.UC_CustomProvisioning` |
-| `DisableMxAdmin` | deactivates Mx admin | *optional* | `False` |
+| `DisableMxAdmin` | deactivates Mx admin | *optional* | `True` |
 
 {{% alert color="info" %}}
-From version 2.1.0 of the UserCommons module, if the flag is set to `True` for the `DisableMxAdmin` constant, MxAdmin will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
+From version 2.1.0 of the UserCommons module, if the flag is set to `False` for the `DisableMxAdmin` constant, MxAdmin will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
 {{% /alert %}}
 
 #### Runtime Configuration of End-user Onboarding{#custom-provisioning-rt}
