@@ -445,7 +445,7 @@ You can set up custom user provisioning by setting the following constants. You 
 | DisableMxAdmin | deactivates Mx admin | *Optional* | `True` |
 
 {{% alert color="info" %}}
-From version 2.1.0 of the UserCommons module, if the flag is set to `False` for the `DisableMxAdmin` constant, MxAdmin will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
+From version 2.1.0 of the UserCommons module, if the flag is set to `True` for the `DisableMxAdmin` constant, MxAdmin will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
 {{% /alert %}}
 
 ### Custom User Provisioning at Runtime{#custom-provisioning-rt}

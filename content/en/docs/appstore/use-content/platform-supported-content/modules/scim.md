@@ -301,7 +301,7 @@ The table below lists all supported constants. Mandatory constants must be set a
 | `DisableMxAdmin` | deactivates Mx admin | Optional | `True` |
 
 {{% alert color="info" %}}
-From version 2.1.0 of the UserCommons module, if the flag is set to `False` for the `DisableMxAdmin` constant, MxAdmin will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
+From version 2.1.0 of the UserCommons module, if the flag is set to `True` for the `DisableMxAdmin` constant, MxAdmin will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
 {{% /alert %}}
 
 #### Configuration with Entra ID
