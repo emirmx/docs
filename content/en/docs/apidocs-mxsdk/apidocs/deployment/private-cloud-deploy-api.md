@@ -1,20 +1,16 @@
 ---
-title: "Mendix for Private Cloud Deploy API"
+title: "Mendix on Kubernetes Deploy API"
 url: /apidocs-mxsdk/apidocs/private-cloud-deploy-api/
 type: swagger
-description: "The Private Cloud Deploy API manages application environments deployed to your private cloud using the Mendix Operator."
+description: "The Mendix on Kubernetes Deploy API manages application environments deployed to your Mendix on Kubernetes using the Mendix Operator."
 restapi: true
 weight: 72
-linktitle: "Private Cloud Deploy API"
+linktitle: "Kubernetes Deploy API"
 ---
-
-{{% alert color="info" %}}
-This document is about [Private Cloud](/developerportal/deploy/private-cloud/) API. For [Private Mendix Platform](/private-mendix-platform/) API, see [Private Mendix Platform API Documentation](/apidocs-mxsdk/apidocs/private-platform/).
-{{% /alert %}}
 
 ## Introduction
 
-The Mendix for Private Cloud Deploy API allows you to manage application environments deployed to your private cloud using the Mendix Operator. You can use the API to do the following:
+The Mendix on Kubernetes Deploy API allows you to manage application environments deployed to your Mendix on Kubernetes using the Mendix Operator. You can use the API to do the following:
 
 * Download the configuration tool, mxpc-cli, for your operating system
 * Get the manifest file of one or more clusters
