@@ -235,5 +235,5 @@ In case you are still deciding whether to migrate from SVN to Git, or you are al
 
 {{< figure src="/attachments/refguide/version-control/troubleshoot-version-control-issues/migration-advice-combined.png" class="no-border" >}}
 
-In Studio Pro 10.18 and above, you can manually convert branches to MPRv2. In Studio Pro 11.0 and above, branch conversion will happen automatically. For more information on the format, see the [MPRv2 Format](#mprv2) section.
+In Studio Pro 10.18 and above, you can manually convert branches to MPRv2. In Studio Pro 11.0 and above, branch conversion happens automatically. For more information on the format, see the [MPRv2 Format](#mprv2) section.
 For more information on partial clone, see [Clone Type](/refguide/clone-type/).
