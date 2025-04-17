@@ -1,7 +1,7 @@
 ---
 title: "Communication Patterns in the Mendix Runtime"
 linktitle: "Communication Patterns"
-url: /refguide/communication-patterns/
+url: /refguide10/communication-patterns/
 weight: 50
 description: "Outlines the communication patterns used by the Mendix Runtime environment for some typical application use cases."
 ---
@@ -24,14 +24,14 @@ The Mendix Platform consists of the following components:
 * Marketplace – a portal with hundreds of publicly-available building blocks to speed up app development
 * Mendix Studio Pro – the modeling studio of the Mendix platform
 * Team Server – a central repository for managing application model versions
-* Mendix Runtime – runs applications using a server part (the [Runtime Server](/refguide/runtime-server/)) and a client part ([Mendix Client](/refguide/mendix-client/))
+* Mendix Runtime – runs applications using a server part (the [Runtime Server](/refguide10/runtime-server/)) and a client part ([Mendix Client](/refguide10/mendix-client/))
 * Build – a process which creates deployment packages from artifacts such as models, style sheets, and custom Java classes
 * MxID – a user management and provisioning service that applies the OpenID standard
 
 The focus of this document is on the Mendix Runtime, more specifically the collaboration between the following parts:
 
-* [Mendix Client](/refguide/mendix-client/) – a React, React Native, or JavaScript client running on the device of a user
-* [Runtime Server](/refguide/runtime-server/) – a Java/Scala runtime running on a server, responsible for executing microflow logic, business rules, and persisting objects
+* [Mendix Client](/refguide10/mendix-client/) – a React, React Native, or JavaScript client running on the device of a user
+* [Runtime Server](/refguide10/runtime-server/) – a Java/Scala runtime running on a server, responsible for executing microflow logic, business rules, and persisting objects
 * database – where the data is persisted
 
 Communication between these components operates as follows:
@@ -44,7 +44,7 @@ Communication between these components operates as follows:
 
 ## Runtime Operations {#RO}
 
-Data-related communication between the Mendix Client and the Runtime Server is controlled by Runtime Operations over a REST-like protocol. This uses the `/xas` [request handler](/refguide/request-handlers/) of the app's runtime server.
+Data-related communication between the Mendix Client and the Runtime Server is controlled by Runtime Operations over a REST-like protocol. This uses the `/xas` [request handler](/refguide10/request-handlers/) of the app's runtime server.
 
 For every data-related Client action, there is a corresponding Runtime Operation type:
 

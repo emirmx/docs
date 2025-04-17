@@ -1,6 +1,6 @@
 ---
 title: "Persistability"
-url: /refguide/persistability/
+url: /refguide10/persistability/
 weight: 20
 ---
 
@@ -22,11 +22,11 @@ Committing an object of this entity type results in a row being inserted into th
 
 Usually, a rollback reverts changes in memory since the last commit.
 
-However, performing a rollback on persistable autocommitted objects or objects with the state "NEW" deletes the row corresponding with this object from the database table for the associated entity. See [Object Activities](/refguide/object-activities/) for more information about autocommitted objects.
+However, performing a rollback on persistable autocommitted objects or objects with the state "NEW" deletes the row corresponding with this object from the database table for the associated entity. See [Object Activities](/refguide10/object-activities/) for more information about autocommitted objects.
 
 ## Non-Persistable Entities {#non-persistable}
 
-Non-persistable entities are stored in the runtime memory and never get committed to the database. Therefore, they have no table in the database and the only way to retrieve them is [over associations](/refguide/retrieve/#association).
+Non-persistable entities are stored in the runtime memory and never get committed to the database. Therefore, they have no table in the database and the only way to retrieve them is [over associations](/refguide10/retrieve/#association).
 
 Committing non-persistable entities records the current attribute values and association values in memory, allowing a rollback to revert to these values.
 

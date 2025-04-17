@@ -1,6 +1,6 @@
 ---
 title: "System Texts"
-url: /refguide/system-texts/
+url: /refguide10/system-texts/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -9,7 +9,7 @@ url: /refguide/system-texts/
 {{% alert color="info" %}}
 In Studio Pro 10.14.0, the web version of the system texts editor was released as an [experimental](/releasenotes/beta-features/) feature. You can enable it via **Preferences** > **New Features**. 
 
-If Translation Generator is also enabled, you can use this AI-powered translation tool in the new editor to translate the system texts. For more information, see the [Generating Translation for System Texts](/refguide/translation-generator/#translate-system-text) section in *Translation Generator*.
+If Translation Generator is also enabled, you can use this AI-powered translation tool in the new editor to translate the system texts. For more information, see the [Generating Translation for System Texts](/refguide10/translation-generator/#translate-system-text) section in *Translation Generator*.
 {{% /alert %}}
 
 System texts are texts that are shown automatically to end-users by the server or the client. 
@@ -25,7 +25,7 @@ You can change the system texts in the following way:
 
 ## Languages
 
-In the [App Settings](/refguide/project-settings/), you can manage the available languages of your application. For each language, you can specify the translation of the system texts. If you do not provide a translation, the text will be shown in the default language.
+In the [App Settings](/refguide10/project-settings/), you can manage the available languages of your application. For each language, you can specify the translation of the system texts. If you do not provide a translation, the text will be shown in the default language.
 
 ## Parameters
 

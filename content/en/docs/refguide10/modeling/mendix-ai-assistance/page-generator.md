@@ -1,6 +1,6 @@
 ---
 title: "Page Generator"
-url: /refguide/page-generator/
+url: /refguide10/page-generator/
 weight: 60
 description: "Describes the features in Page Generator."
 ---
@@ -15,7 +15,7 @@ Page Generator is currently an experimental feature introduced in Studio Pro 10.
 To use Page Generator, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-Maia Page Generator is an AI-powered tool that you can use for generating a [page](/refguide/page/). It helps you add and configure widgets based on a text input and an optional image. As an experimental feature, Page Generator has certain limitations. For example, it is currently intended only for use with empty pages, and any existing widgets on a page will be removed. For more details, see the [Limitations](#limitation) section below.
+Maia Page Generator is an AI-powered tool that you can use for generating a [page](/refguide10/page/). It helps you add and configure widgets based on a text input and an optional image. As an experimental feature, Page Generator has certain limitations. For example, it is currently intended only for use with empty pages, and any existing widgets on a page will be removed. For more details, see the [Limitations](#limitation) section below.
 
 ## Using Page Generator
 
@@ -33,12 +33,12 @@ After clicking **Generate page**, a dedicated chat interface appears at the righ
 
 {{< figure src="/attachments/refguide10/modeling/mendix-ai-assistance/page-generator/chat-interface.png" max-width=42% >}}
 
-Describe your page or its main goals in the chat. Maia uses this information to add relevant widgets to the page and configure them for you. When generating a page, Maia knows about the domain model of the module you are currently working on. For example, it might include a [Data View](/refguide/data-view/) with some [Text Box](/refguide/text-box/) widgets for an attribute of an entity.
+Describe your page or its main goals in the chat. Maia uses this information to add relevant widgets to the page and configure them for you. When generating a page, Maia knows about the domain model of the module you are currently working on. For example, it might include a [Data View](/refguide10/data-view/) with some [Text Box](/refguide10/text-box/) widgets for an attribute of an entity.
 
 You can also supplement text input with an image. Maia uses the image to interpret your request better. For example, it can recognize the layout of a page from the image and replicate it. The image can be a screenshot, photo, wireframe, or drawing. With text input, you can also specify differences between the provided image and how you would like the generated page to appear. For example, you might write: *Generate a page based on this image, but change the header to Welcome.*
 
 {{% alert color="info" %}}
-In this dedicated chat, only requests related to Page Generation will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide/maia-chat/) interface.
+In this dedicated chat, only requests related to Page Generation will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide10/maia-chat/) interface.
 {{% /alert %}}
 
 ### Best Practices for Text Input
@@ -70,19 +70,19 @@ Page Generator is currently intended only for use with empty pages. Any existing
 
 Not all widgets are supported. Currently the following widgets are supported:
 
-* [Container](/refguide/container/)
-* [Layout Grid](/refguide/layout-grid/)
-* [Data View](/refguide/data-view/)
-* [Text](/refguide/text/)
-* [Button](/refguide/button-widgets/)
-* [Text Box](/refguide/text-box/)
-* [Text Area](/refguide/text-area/)
-* [Checkbox](/refguide/check-box/)
-* [Radio Buttons](/refguide/radio-buttons/)
-* [Date Picker](/refguide/date-picker/)
+* [Container](/refguide10/container/)
+* [Layout Grid](/refguide10/layout-grid/)
+* [Data View](/refguide10/data-view/)
+* [Text](/refguide10/text/)
+* [Button](/refguide10/button-widgets/)
+* [Text Box](/refguide10/text-box/)
+* [Text Area](/refguide10/text-area/)
+* [Checkbox](/refguide10/check-box/)
+* [Radio Buttons](/refguide10/radio-buttons/)
+* [Date Picker](/refguide10/date-picker/)
 
 ## Read More
 
-* [Pages](/refguide/page/)
-* [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/)
-* [Maia Chat](/refguide/maia-chat/)
+* [Pages](/refguide10/page/)
+* [Mendix AI Assistance (Maia)](/refguide10/mendix-ai-assistance/)
+* [Maia Chat](/refguide10/maia-chat/)

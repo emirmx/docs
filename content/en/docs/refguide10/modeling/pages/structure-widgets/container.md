@@ -1,6 +1,6 @@
 ---
 title: "Container"
-url: /refguide/container/
+url: /refguide10/container/
 weight: 20
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -55,7 +55,7 @@ The **Render mode** determines which HTML5 tag will be used to show the containe
 
 ### Visibility Section {#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ### Events Section {#events}    
 
@@ -63,11 +63,11 @@ The **Render mode** determines which HTML5 tag will be used to show the containe
 
 The **On-click** property specifies the action that will be executed when the user clicks the container (either with their mouse pointer or by pressing the <kbd>Enter</kbd> or <kbd>Space</kbd> keys when the container is in focus).
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 ### Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### Accessibility Section {#accessibility}
 
@@ -82,14 +82,14 @@ This property specifies whether to hide the container from screen readers or not
 
 ### Design Properties Section{#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### Common Section {#common-styling}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Read More
 
-* [Page](/refguide/page/)
-* [Structure](/refguide/structure-widgets/)
-* [Properties Common in the Page Editor](/refguide/common-widget-properties/)
+* [Page](/refguide10/page/)
+* [Structure](/refguide10/structure-widgets/)
+* [Properties Common in the Page Editor](/refguide10/common-widget-properties/)

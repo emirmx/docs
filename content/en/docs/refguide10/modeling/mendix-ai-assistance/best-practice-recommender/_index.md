@@ -1,10 +1,10 @@
 ---
 title: "Best Practice Recommender"
-url: /refguide/best-practice-recommender/
+url: /refguide10/best-practice-recommender/
 weight: 10
 description: "Describes Best Practice Recommender in Mendix Studio Pro."
 aliases:
-    - /refguide/mx-assist-performance-bot/
+    - /refguide10/mx-assist-performance-bot/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -30,7 +30,7 @@ It consists of a three-level assistance:
 
 ## Best Practice Recommender Pane
 
-To access settings of Best Practice Recommender, open **Edit** > **Preferences** > the **Maia** tab > **Best Practice Recommender** section. For more information, see [Preferences](/refguide/preferences-dialog/).
+To access settings of Best Practice Recommender, open **Edit** > **Preferences** > the **Maia** tab > **Best Practice Recommender** section. For more information, see [Preferences](/refguide10/preferences-dialog/).
 
 Best Practice Recommender is enabled by default and is designed as a pane. To access the **Best Practice Recommender** pane, click **View** > **Best Practice Recommender**.
 
@@ -102,7 +102,7 @@ The recommender will detect anti-patterns and list them in the pane under the as
 To view the element or the document where the anti-pattern is located, double-click the message line or right-click the message line and choose **Go to Cause** or **Go to Usage** in the drop-down menu.
 
 {{% alert color="info" %}}
-Best Practice Recommender only detects a subset of the [documented best practices](/refguide/performance-best-practices/). This is to avoid any false positives and to maximize the quality rather than the quantity of the recommendations.
+Best Practice Recommender only detects a subset of the [documented best practices](/refguide10/performance-best-practices/). This is to avoid any false positives and to maximize the quality rather than the quantity of the recommendations.
 {{% /alert %}}
 
 ### Recommending a Fix {#recommending}
@@ -137,10 +137,10 @@ After the issue is auto-fixed, a pop-up window listing the changes appears. You 
 
 ## Best Practice Recommender from the Command Line
 
-Best Practice Recommender may also be executed from the command line, via the [mx Command-Line Tool](/refguide/mx-command-line-tool/app/#check).
+Best Practice Recommender may also be executed from the command line, via the [mx Command-Line Tool](/refguide10/mx-command-line-tool/app/#check).
 
 ## Read More
 
-* [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/)
-* [Logic Recommender](/refguide/logic-recommender//)
-* [Mendix Best Practices for Development](/refguide/dev-best-practices/)
+* [Mendix AI Assistance (Maia)](/refguide10/mendix-ai-assistance/)
+* [Logic Recommender](/refguide10/logic-recommender//)
+* [Mendix Best Practices for Development](/refguide10/dev-best-practices/)

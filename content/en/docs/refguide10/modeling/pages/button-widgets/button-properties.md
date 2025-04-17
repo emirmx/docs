@@ -1,6 +1,6 @@
 ---
 title: "Button Properties"
-url: /refguide/button-properties/
+url: /refguide10/button-properties/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -47,15 +47,15 @@ The **Role type** property determines the `aria-role` attribute value that will 
 
 ### Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### Design Properties Section {#design}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### Events Section {#events}
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 ### General Section {#general}
 
@@ -86,7 +86,7 @@ Parameters have the following settings:
 
 To add parameters, do the following:
 
-1. Place the **Button** widget in the context of an entity, as in, inside a [data container](/refguide/data-widgets/).
+1. Place the **Button** widget in the context of an entity, as in, inside a [data container](/refguide10/data-widgets/).
 2. Double-click the **Caption** setting in the button widget properties.
 3. In the **Edit Caption** dialog box > **Parameters** section click **New**:
 
@@ -110,7 +110,7 @@ In addition to adding new parameters, you can perform the following actions on p
 
 #### Tooltip
 
-The **Tooltip** property determines a text end-users will see in the tooltip that appears when they hover over the button. The tooltip text is translatable. For more information on translatable texts, see [Language Menu](/refguide/translatable-texts/). If the tooltip is not specified, no tooltip will be shown when hovering over the button.
+The **Tooltip** property determines a text end-users will see in the tooltip that appears when they hover over the button. The tooltip text is translatable. For more information on translatable texts, see [Language Menu](/refguide10/translatable-texts/). If the tooltip is not specified, no tooltip will be shown when hovering over the button.
 
 #### Icon {#icon}
 
@@ -145,7 +145,7 @@ The **Button style** property applies a predefined styling to the button. Possib
 
 #### Disabled During Action
 
-This property is only shown when **Call a microflow** or **Call a nanoflow** is selected as the [on-click event](/refguide/on-click-event/). Selecting **Disabled during action** disables the button until the action is completed or failed.
+This property is only shown when **Call a microflow** or **Call a nanoflow** is selected as the [on-click event](/refguide10/on-click-event/). Selecting **Disabled during action** disables the button until the action is completed or failed.
 
 Default: *true*
 
@@ -155,18 +155,18 @@ Default: *true*
 The **Items** section is only shown for drop-down buttons. 
 {{% /alert %}}
 
-When an end-user clicks a drop-down button, a pop-up window with a list of items opens. Each item performs an event when an end-user clicks this item. Different items can perform different events. For more information on events that can be assigned, see [On Click Event and Events Section](/refguide/on-click-event/).
+When an end-user clicks a drop-down button, a pop-up window with a list of items opens. Each item performs an event when an end-user clicks this item. Different items can perform different events. For more information on events that can be assigned, see [On Click Event and Events Section](/refguide10/on-click-event/).
 
 {{% alert color="info" %}}
 
-* Items with the **Create object** event are only shown when you have sufficient permissions on. For more information, see [Security](/refguide/security/). 
-* Items with the **Sign out** event are not shown for anonymous users. For more information on different security levels and anonymous users, see [App Security](/refguide/app-security/) and [Anonymous Users](/refguide/anonymous-users/). 
+* Items with the **Create object** event are only shown when you have sufficient permissions on. For more information, see [Security](/refguide10/security/). 
+* Items with the **Sign out** event are not shown for anonymous users. For more information on different security levels and anonymous users, see [App Security](/refguide10/app-security/) and [Anonymous Users](/refguide10/anonymous-users/). 
 {{% /alert %}}
 
 Each item has the following properties:
 
 * **Caption** – defines a caption of the item
-* **Action** – defines an on-click event performed when the item is clicked (for more information on-click events, see [On Click Event and Events Section](/refguide/on-click-event/))
+* **Action** – defines an on-click event performed when the item is clicked (for more information on-click events, see [On Click Event and Events Section](/refguide10/on-click-event/))
 
     {{< figure src="/attachments/refguide10/modeling/pages/button-widgets/button-properties/items-properties.png" alt="Properties of Items" class="no-border" >}}
 
@@ -188,11 +188,11 @@ To add items to a drop-down buttons, do the following:
 
 ### Visibility Section {#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ## Read More
 
-* [Page](/refguide/page/)
-* [Buttons](/refguide/button-widgets/)
-* [Properties Common in the Page Editor](/refguide/common-widget-properties/)
-* [On Click Event and Events Section](/refguide/on-click-event/)
+* [Page](/refguide10/page/)
+* [Buttons](/refguide10/button-widgets/)
+* [Properties Common in the Page Editor](/refguide10/common-widget-properties/)
+* [On Click Event and Events Section](/refguide10/on-click-event/)

@@ -1,13 +1,13 @@
 ---
 title: "Break Event"
-url: /refguide/break-event/
+url: /refguide10/break-event/
 weight: 5
 ---
 
 ## Introduction
 
 {{% alert color="warning" %}}
-Break events can only be used inside [loops](/refguide/loop/).
+Break events can only be used inside [loops](/refguide10/loop/).
 {{% /alert %}}
 
 A break event is used to stop iterating over the list of objects and continue with the rest of the flow. Without a break event, the loop will continue with the iteration of the next object.
@@ -18,5 +18,5 @@ For example, if you want to notify the user of any unpaid order lines you can us
 
 ## Read More
 
-* [Loop](/refguide/loop/)
-* [Continue Event](/refguide/continue-event/)
+* [Loop](/refguide10/loop/)
+* [Continue Event](/refguide10/continue-event/)

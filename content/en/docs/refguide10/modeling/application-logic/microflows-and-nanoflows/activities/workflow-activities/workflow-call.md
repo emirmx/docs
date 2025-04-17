@@ -1,6 +1,6 @@
 ---
 title: "Call Workflow"
-url: /refguide/workflow-call/
+url: /refguide10/workflow-call/
 weight: 10
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -10,12 +10,12 @@ This activity can only be used in microflows.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-This page describes the **Call workflow** activity you can use in your [microflow](/refguide/workflow-activities/). Looking for information on the **Call workflow** activity for [workflows](/refguide/workflow-elements/) instead? See [Call workflow](/refguide/call-workflow/).
+This page describes the **Call workflow** activity you can use in your [microflow](/refguide10/workflow-activities/). Looking for information on the **Call workflow** activity for [workflows](/refguide10/workflow-elements/) instead? See [Call workflow](/refguide10/call-workflow/).
 {{% /alert %}}
 
 ## Introduction
 
-The **Call workflow** activity in microflows can be used to call and trigger a [workflow](/refguide/workflows/). 
+The **Call workflow** activity in microflows can be used to call and trigger a [workflow](/refguide10/workflows/). 
 
 ## Properties
 
@@ -48,7 +48,7 @@ The object which you want to use as a context. It should be of the entity type s
 
 ### Use Return Value 
 
-This property determines if the returned value from the called workflow should be available in the rest of the current microflow. If **Use return value** is set to **Yes**, you will need to fill in the [variable name](/refguide/microflow-call/#name) of the workflow object returned by the activity.
+This property determines if the returned value from the called workflow should be available in the rest of the current microflow. If **Use return value** is set to **Yes**, you will need to fill in the [variable name](/refguide10/microflow-call/#name) of the workflow object returned by the activity.
 
 ### Variable Name {#name}
 
@@ -56,4 +56,4 @@ The name of the variable returned by the activity.
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}

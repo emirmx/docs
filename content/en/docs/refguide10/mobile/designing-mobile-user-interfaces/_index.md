@@ -1,6 +1,6 @@
 ---
 title: "Designing Mobile User Interfaces"
-url: /refguide/mobile/designing-mobile-user-interfaces/
+url: /refguide10/mobile/designing-mobile-user-interfaces/
 weight: 30
 description: "These documents explain best practices for designing mobile UI with Mendix."
 ---
@@ -15,8 +15,8 @@ Mobile applications have unique properties that must be taken into consideration
 
 These documents guide you through the process of shaping great mobile user experiences both from a design and an implementation perspective:
 
-* [Design Principles](/refguide/mobile/designing-mobile-user-interfaces/design-principles/) – This guide teaches you how to build a native mobile app's UI.
-* [Navigation In Native Mobile Apps](/refguide/mobile/designing-mobile-user-interfaces/navigation/) – This guide gives general information for native navigation in Mendix test.
-* [Images, Icons, and Fonts](/refguide/mobile/designing-mobile-user-interfaces/images-icons-and-fonts/) – This guide helps you enrich your native mobile app's design with images and custom fonts.
-* [Native Styling](/refguide/mobile/designing-mobile-user-interfaces/native-styling/) – This guide gives general information for native styling in Mendix.
-* [Widget Styling Guide](/refguide/mobile/designing-mobile-user-interfaces/widget-styling-guide/) – This guide contextualizes the style elements Mendix uses in native mobile apps and explains the classes and style properties of Mendix’s widgets.
+* [Design Principles](/refguide10/mobile/designing-mobile-user-interfaces/design-principles/) – This guide teaches you how to build a native mobile app's UI.
+* [Navigation In Native Mobile Apps](/refguide10/mobile/designing-mobile-user-interfaces/navigation/) – This guide gives general information for native navigation in Mendix test.
+* [Images, Icons, and Fonts](/refguide10/mobile/designing-mobile-user-interfaces/images-icons-and-fonts/) – This guide helps you enrich your native mobile app's design with images and custom fonts.
+* [Native Styling](/refguide10/mobile/designing-mobile-user-interfaces/native-styling/) – This guide gives general information for native styling in Mendix.
+* [Widget Styling Guide](/refguide10/mobile/designing-mobile-user-interfaces/widget-styling-guide/) – This guide contextualizes the style elements Mendix uses in native mobile apps and explains the classes and style properties of Mendix’s widgets.

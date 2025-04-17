@@ -1,13 +1,13 @@
 ---
 title: "Workflows"
-url: /refguide/workflows/
+url: /refguide10/workflows/
 weight: 20
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-This document provides a general introduction to workflows, including the reasons why organizations adopt workflow processes, when and when not to use workflows, and a few Mendix workflow business use cases. For instructions on how to perform Mendix workflow basic functions, see [Performing Workflow Basic Functions](/refguide/perform-workflow-basic-functions/).
+This document provides a general introduction to workflows, including the reasons why organizations adopt workflow processes, when and when not to use workflows, and a few Mendix workflow business use cases. For instructions on how to perform Mendix workflow basic functions, see [Performing Workflow Basic Functions](/refguide10/perform-workflow-basic-functions/).
 
 Workflow is a visual language that allows you to build extendable processes. In Mendix Studio Pro, it is fully integrated with other visual editors, such as the microflow editor and page editor. Implementing workflow processes is beneficial for organizations that would like to enhance operational efficiency, ensure compliance with regulations, and mitigate risks. 
 
@@ -71,11 +71,11 @@ The table below presents a few use cases that are a good fit for Mendix workflow
 | Dynamic business process support for a new product launch | For companies needing rapid application development to support end-to-end business processes for new product launches, Mendix workflows can be integrated for the subsequent legal and financial review and approval. |
 | Automated customer onboarding process | Organizations that need to streamline customer onboarding can use Mendix workflows to automate the process across multiple systems and involve user intervention for invalid situations. This ensures a smooth onboarding experience. |
 
-For more information on a concrete use case, see [Configuring a Workflow in Studio Pro for the Employee Onboarding Process](/refguide/workflow-how-to-configure/).
+For more information on a concrete use case, see [Configuring a Workflow in Studio Pro for the Employee Onboarding Process](/refguide10/workflow-how-to-configure/).
 
 ## Workflow Elements
 
-A workflow is composed of elements that you can use in the workflow editor: you can either see them in the working area (start and end events, a parameter), or drag them from **Toolbox** to the flow. For more information, see [Workflow Elements](/refguide/workflow-elements/). 
+A workflow is composed of elements that you can use in the workflow editor: you can either see them in the working area (start and end events, a parameter), or drag them from **Toolbox** to the flow. For more information, see [Workflow Elements](/refguide10/workflow-elements/). 
 
 ## Workflow Variables
 
@@ -84,34 +84,34 @@ Workflows have dedicated variables that can be used in an XPath and Expressions 
 The list of variables is described below: 
 
 * `$WorkflowContext` – an instance of the business-related entity that travels through the workflow
-* `$WorkflowInstance` – an instance of a currently running workflow ([System.Workflow](/refguide/workflow-engine/#system-workflow))
+* `$WorkflowInstance` – an instance of a currently running workflow ([System.Workflow](/refguide10/workflow-engine/#system-workflow))
 
-For example, you can use these variables as parameters in the **Task name** and **Task description** properties of a user task. For more information, see [User Task](/refguide/user-task/). 
+For example, you can use these variables as parameters in the **Task name** and **Task description** properties of a user task. For more information, see [User Task](/refguide10/user-task/). 
 
 ## Workflow-Specific Activities in Microflows
 
-You can add workflow-related activities to your microflows. For more information on these activities, see [Workflow Activities](/refguide/workflow-activities/). 
+You can add workflow-related activities to your microflows. For more information on these activities, see [Workflow Activities](/refguide10/workflow-activities/). 
 
 ## Workflow-Specific On-Click Events on Pages
 
-You can trigger workflows or user tasks from pages via specific on-click events configured on widgets. For more details, see [On Click Event and Events Section](/refguide/on-click-event/).
+You can trigger workflows or user tasks from pages via specific on-click events configured on widgets. For more details, see [On Click Event and Events Section](/refguide10/on-click-event/).
 
 ## Workflow Commons Module
 
 The [Workflow Commons](/appstore/modules/workflow-commons/) module is a workflow specific module that has preconfigured page templates, pages, dashboards, etc. It can save you a lot of time during development. You can either download it from the Marketplace or use one of the app templates when creating a new app in [Apps](https://sprintr.home.mendix.com/). These templates already contain the **Workflows Commons** module.
 
-For more information on how to configure the **Workflow Commons** in an existing app, see [Adding a Workflow to an Existing App with Workflow Commons](/refguide/workflow-setting-up-app/).
+For more information on how to configure the **Workflow Commons** in an existing app, see [Adding a Workflow to an Existing App with Workflow Commons](/refguide10/workflow-setting-up-app/).
 
 ## Workflow Engine
 
-The Workflow Engine is the Mendix Runtime engine for executing workflows. For information on how the engine works, how you can interact with the engine, and what information it stores, see [Workflow Engine](/refguide/workflow-engine/).
+The Workflow Engine is the Mendix Runtime engine for executing workflows. For information on how the engine works, how you can interact with the engine, and what information it stores, see [Workflow Engine](/refguide10/workflow-engine/).
 
 ## Keyboard Support
 
-For information on the supported shortcut keys in the workflow editor, see the [Workflow Editor Shortcut Keys](/refguide/keyboard-shortcuts/#workflow-editor-shortcut-keys) and the [Editors Only](/refguide/keyboard-shortcuts/#editors-only)  sections in *Keyboard Shortcuts*.
+For information on the supported shortcut keys in the workflow editor, see the [Workflow Editor Shortcut Keys](/refguide10/keyboard-shortcuts/#workflow-editor-shortcut-keys) and the [Editors Only](/refguide10/keyboard-shortcuts/#editors-only)  sections in *Keyboard Shortcuts*.
 
 ## Read More
 
-* [Performing Workflow Basic Functions](/refguide/perform-workflow-basic-functions/)
-* [Configuring a Workflow in Studio Pro for the Employee Onboarding Process](/refguide/workflow-how-to-configure/)
-* [Configuring Security for a Workflow Process](/refguide/workflow-security/)
+* [Performing Workflow Basic Functions](/refguide10/perform-workflow-basic-functions/)
+* [Configuring a Workflow in Studio Pro for the Employee Onboarding Process](/refguide10/workflow-how-to-configure/)
+* [Configuring Security for a Workflow Process](/refguide10/workflow-security/)

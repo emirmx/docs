@@ -1,6 +1,6 @@
 ---
 title: "Merging and Diffing Commands"
-url: /refguide/mx-command-line-tool/merge
+url: /refguide10/mx-command-line-tool/merge
 weight: 50
 description: "Describes the commands related to merging and diffing apps for the mx command-line tool."
 ---
@@ -86,7 +86,7 @@ In the diagram, note the following:
 * <span style="color:orange">**B'**</span> is `THEIRS`, which is the last commit on a branch you want to merge changes from
 * <span style="color:red">**A**</span> is `BASE`, which is the common commit where the branches diverged
 
-In order to merge changes correctly, Studio Pro has to compare both **A"** and **B'** against **A** to see what has been changed on each branch. During the merge, the [merge algorithm](/refguide/merge-algorithm/) will try to automatically merge the changes.
+In order to merge changes correctly, Studio Pro has to compare both **A"** and **B'** against **A** to see what has been changed on each branch. During the merge, the [merge algorithm](/refguide10/merge-algorithm/) will try to automatically merge the changes.
 
 This command works for any three *.mpr* files. This means you can try to merge different apps at your own risk.
 
@@ -95,7 +95,7 @@ This command works differently than the normal version-controlled merges you can
 
 ### Conflicts
 
-If there are conflicts during the merge, resolve them by opening the app in Studio Pro and selecting **Version Control** > [Merge Changes Here](/refguide/version-control-menu/#merge-changes-here). 
+If there are conflicts during the merge, resolve them by opening the app in Studio Pro and selecting **Version Control** > [Merge Changes Here](/refguide10/version-control-menu/#merge-changes-here). 
 
 The reason for this is that conflict resolution is a complex process that has two requirements:
 
@@ -107,7 +107,7 @@ This merge state is needed for Studio Pro to know what your current branch is an
 So, if you run this command from the command line specifying the three *.mpr* files but the result has conflicts, you will not be able to resolve the conflicts in the `MINE` app using the `THEIRS` documents by just opening the app in Studio Pro. Instead, you need to configure Git to use `mx merge` as a [merge driver](#merge-git-driver) for the *.mpr* files and trigger the merge from the Git command line (so the repository is put in the merge state for Studio Pro to be able to pick it up after the command is complete).
 
 {{% alert color="warning" %}}
-`mx merge` as a [merge driver](#merge-git-driver) is suitable only for [MPRv1 Format](/refguide/troubleshoot-repository-size/#mpr-format)
+`mx merge` as a [merge driver](#merge-git-driver) is suitable only for [MPRv1 Format](/refguide10/troubleshoot-repository-size/#mpr-format)
 {{% /alert %}}
 
 ### Examples
@@ -130,7 +130,7 @@ This table shows the return codes and their description:
 ## mx merge as Git Merge Driver {#merge-git-driver}
 
 {{% alert color="warning" %}}
-`mx merge` as a [merge driver](#merge-git-driver) is suitable only for [MPRv1 Format](/refguide/troubleshoot-repository-size/#mpr-format)
+`mx merge` as a [merge driver](#merge-git-driver) is suitable only for [MPRv1 Format](/refguide10/troubleshoot-repository-size/#mpr-format)
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -213,7 +213,7 @@ When you get a different output, the custom merge drive is not configured correc
 ## mx git-merge Command {#git-merge}
 
 The `mx git-merge` command performs a three-way merge of two *.mpr* files by  considering their common ancestor (base).
-The command is suitable for both [MPRv2 Format](/refguide/troubleshoot-repository-size/#mpr-format) and the [MPRv1 Format](/refguide/troubleshoot-repository-size/#mpr-format).  
+The command is suitable for both [MPRv2 Format](/refguide10/troubleshoot-repository-size/#mpr-format) and the [MPRv1 Format](/refguide10/troubleshoot-repository-size/#mpr-format).  
 
 {{% alert color="warning" %}}
 The command should be used as a **merge driver** and not as a standalone command like [mx merge](#merge).

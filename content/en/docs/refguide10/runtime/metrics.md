@@ -1,6 +1,6 @@
 ---
 title: "Metrics"
-url: /refguide/metrics/
+url: /refguide10/metrics/
 description: "Describes how to configure and report metrics in Mendix."
 ---
 
@@ -18,7 +18,7 @@ The Metrics can be configured in the following ways:
 
 ## Metrics Registries Configuration {#registries-configuration}
 
-Micrometer can send metrics to multiple registries. To configure micrometer for a specific registry, use the following syntax in `runtime settings` with the custom runtime setting name `Metrics.Registries`. See [Runtime Customization](/refguide/custom-settings/#metrics-settings) for more information. The setting is in JSON format.
+Micrometer can send metrics to multiple registries. To configure micrometer for a specific registry, use the following syntax in `runtime settings` with the custom runtime setting name `Metrics.Registries`. See [Runtime Customization](/refguide10/custom-settings/#metrics-settings) for more information. The setting is in JSON format.
 
 * Custom Runtime Setting – **Name**: `Metrics.Registries`
 
@@ -372,7 +372,7 @@ Common tags which should be reported by every metric can be specified using the 
 
 ## Microflow Activities {#microflow-activities}
 
-You can use activities to provide custom metrics from your app. See [Metrics Activities](/refguide/metrics-activities/) for information about these activities .
+You can use activities to provide custom metrics from your app. See [Metrics Activities](/refguide10/metrics-activities/) for information about these activities .
 
 ## Java API {#java-api}
 
@@ -444,14 +444,14 @@ The Runtime Server produces the following metrics out-of-the-box:
 | **mx.<wbr>runtime.<wbr>stats.<wbr>connectionbus.<wbr>inserts** | counter | `XASId` | The total number of `INSERT` statements that were executed on the database by a node (`XASId`) since it was started. |
 | **mx.<wbr>runtime.<wbr>stats.<wbr>connectionbus.<wbr>updates** | counter | `XASId` | The total number of `UPDATE` statements that were executed on the database by a node (`XASId`) since it was started. |
 | **mx.<wbr>runtime.<wbr>stats.<wbr>connectionbus.<wbr>deletes** | counter | `XASId` | The total number of `DELETE` statements that were executed on the database by a node (`XASId`) since it was started. |
-| **mx.<wbr>odata.<wbr>consume.<wbr>created** | counter | `entity` | The total number of objects of a certain entity type (`entity`) that were created using the [Send External Object activity](/refguide/send-external-object/). |
-| **mx.<wbr>odata.<wbr>consume.<wbr>updated** | counter | `entity` | The total number of objects of a certain entity type (`entity`) that were updated using the [Send External Object activity](/refguide/send-external-object/). |
-| **mx.<wbr>odata.<wbr>consume.<wbr>deleted** | counter | `entity` | The total number of objects of a certain entity type (`entity`) that were created using the [Delete External Object activity](/refguide/delete-external-object/). |
-| **mx.<wbr>odata.<wbr>publish.<wbr>objects** | counter | `entity` | The total number of objects that were served for a particular type of object (`entity`) by a [published OData/GraphQL service](/refguide/published-odata-services/). |
-| **mx.<wbr>odata.<wbr>publish.<wbr>created** | counter | `entity` | The total number of objects of a certain entity type (`entity`) that were created due to client requests to a [published OData service](/refguide/published-odata-services/). |
-| **mx.<wbr>odata.<wbr>publish.<wbr>updated** | counter | `entity` | The total number of objects of a certain entity type (`entity`) that were updated due to client requests to a [published OData service](/refguide/published-odata-services/). |
-| **mx.<wbr>odata.<wbr>publish.<wbr>deleted** | counter | `entity` | The total number of objects of a certain entity type (`entity`) that were deleted due to client requests to a [published OData service](/refguide/published-odata-services/). |
-| **mx.<wbr>odata.<wbr>retrieve** | counter | `entity` | The total number of objects of a certain entity type (`entity`) that were retrieved from an [OData service](/refguide/consumed-odata-service/). |
+| **mx.<wbr>odata.<wbr>consume.<wbr>created** | counter | `entity` | The total number of objects of a certain entity type (`entity`) that were created using the [Send External Object activity](/refguide10/send-external-object/). |
+| **mx.<wbr>odata.<wbr>consume.<wbr>updated** | counter | `entity` | The total number of objects of a certain entity type (`entity`) that were updated using the [Send External Object activity](/refguide10/send-external-object/). |
+| **mx.<wbr>odata.<wbr>consume.<wbr>deleted** | counter | `entity` | The total number of objects of a certain entity type (`entity`) that were created using the [Delete External Object activity](/refguide10/delete-external-object/). |
+| **mx.<wbr>odata.<wbr>publish.<wbr>objects** | counter | `entity` | The total number of objects that were served for a particular type of object (`entity`) by a [published OData/GraphQL service](/refguide10/published-odata-services/). |
+| **mx.<wbr>odata.<wbr>publish.<wbr>created** | counter | `entity` | The total number of objects of a certain entity type (`entity`) that were created due to client requests to a [published OData service](/refguide10/published-odata-services/). |
+| **mx.<wbr>odata.<wbr>publish.<wbr>updated** | counter | `entity` | The total number of objects of a certain entity type (`entity`) that were updated due to client requests to a [published OData service](/refguide10/published-odata-services/). |
+| **mx.<wbr>odata.<wbr>publish.<wbr>deleted** | counter | `entity` | The total number of objects of a certain entity type (`entity`) that were deleted due to client requests to a [published OData service](/refguide10/published-odata-services/). |
+| **mx.<wbr>odata.<wbr>retrieve** | counter | `entity` | The total number of objects of a certain entity type (`entity`) that were retrieved from an [OData service](/refguide10/consumed-odata-service/). |
 
 {{% alert color="info" %}}
 Note that the actual name may vary slightly depending on the back end (for example, Prometheus replaces dots by underscores).

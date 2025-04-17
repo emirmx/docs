@@ -1,12 +1,12 @@
 ---
 title: "Nanoflow Properties"
-url: /refguide/nanoflow/
+url: /refguide10/nanoflow/
 weight: 20
 ---
 
 ## Introduction
 
-This page describes the properties of nanoflows. For details on using nanoflows and nanoflow elements, see [Nanoflows](/refguide/nanoflows/).
+This page describes the properties of nanoflows. For details on using nanoflows and nanoflow elements, see [Nanoflows](/refguide10/nanoflows/).
 
 ## Properties
 
@@ -21,7 +21,7 @@ Nanoflow properties consist of the following sections:
 
 #### Return Type
 
-The return type defines what information the nanoflow returns. The caller of the nanoflow gets a result of this type. For information on possible return types, see [Data Types](/refguide/data-types/).
+The return type defines what information the nanoflow returns. The caller of the nanoflow gets a result of this type. For information on possible return types, see [Data Types](/refguide10/data-types/).
 
 ### Common Section {#common}
 
@@ -47,6 +47,6 @@ Default: *disabled*
 
 #### Allowed Roles
 
-These are the [module roles](/refguide/module-security/#module-role) the user must have to be able to execute the nanoflow.
+These are the [module roles](/refguide10/module-security/#module-role) the user must have to be able to execute the nanoflow.
 
-For more information, see [Module Security](/refguide/module-security/).
+For more information, see [Module Security](/refguide10/module-security/).

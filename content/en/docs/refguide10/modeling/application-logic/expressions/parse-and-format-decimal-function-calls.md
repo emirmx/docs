@@ -1,6 +1,6 @@
 ---
 title: "Parse and Format Decimal Function Calls"
-url: /refguide/parse-and-format-decimal-function-calls/
+url: /refguide10/parse-and-format-decimal-function-calls/
 weight: 150
 ---
 

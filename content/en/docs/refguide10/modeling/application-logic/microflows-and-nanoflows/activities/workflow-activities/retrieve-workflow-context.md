@@ -1,6 +1,6 @@
 ---
 title: "Retrieve Workflow Context"
-url: /refguide/retrieve-workflow-context/
+url: /refguide10/retrieve-workflow-context/
 weight: 40
 ---
 
@@ -10,7 +10,7 @@ This activity can only be used in microflows.
 
 ## Introduction
 
-A **Retrieve workflow context** activity can be used to retrieve the selected [workflow context entity](/refguide/workflow-parameters/#entity).
+A **Retrieve workflow context** activity can be used to retrieve the selected [workflow context entity](/refguide10/workflow-parameters/#entity).
 
 It needs the **System.Workflow** entity as its input. The action determines the return type based on the selected workflow (the configured Context entity of that workflow). A Runtime error occurs if the passed workflow object is not of the right type.
 
@@ -49,4 +49,4 @@ The name of the variable returned by the activity.
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}

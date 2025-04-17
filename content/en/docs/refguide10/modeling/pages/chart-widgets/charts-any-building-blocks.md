@@ -1,6 +1,6 @@
 ---
 title: "Any Chart Building Blocks"
-url: /refguide/charts-any-building-blocks/
+url: /refguide10/charts-any-building-blocks/
 description: "A reference for the Any Chart building blocks which are provided as part of the Any Chart widget"
 weight: 40
 ---
@@ -54,5 +54,5 @@ The attribute layout will merge and overwrite static layout options.
 Layout options for preview. It will be merged with the 'Static' in Studio or at runtime when no 'Source attribute' is selected.
 
 {{% alert color="info" %}}
-For more a detailed description of Any Chart configuration, see [Any Chart Widgets](/refguide/charts-any-configuration/)
+For more a detailed description of Any Chart configuration, see [Any Chart Widgets](/refguide10/charts-any-configuration/)
 {{% /alert %}}

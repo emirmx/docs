@@ -1,6 +1,6 @@
 ---
 title: "Customize Styling"
-url: /howto/front-end/customize-styling-new/
+url: /howto10/front-end/customize-styling-new/
 weight: 20
 description: "This describes how developers can change apps styling and create re-usable styling."
 ---
@@ -27,7 +27,7 @@ The styling editor is based on the editor that powers Visual Studio Code and is 
 
 {{< figure src="/attachments/howto10/front-end/atlas-ui/customize-styling-new/styling-editor.png" alt="styling editor" class="no-border" >}}
 
-By default, Studio Pro shows styling files on the app level and from UI resources modules, such as **Atlas_Core**. This can be changed in [preferences](/refguide/preferences-dialog/) (Edit > **Preferences** > **General** > **Interface**) or by simply right-clicking **Styling** in the App Explorer:
+By default, Studio Pro shows styling files on the app level and from UI resources modules, such as **Atlas_Core**. This can be changed in [preferences](/refguide10/preferences-dialog/) (Edit > **Preferences** > **General** > **Interface**) or by simply right-clicking **Styling** in the App Explorer:
 
 {{< figure src="/attachments/howto10/front-end/atlas-ui/customize-styling-new/styling-editor-settings.png" alt="styling editor settings" class="no-border" >}}
 
@@ -107,17 +107,17 @@ See the following fragment as an example of how additional CSS can be added to y
 
 ## Creating Re-Usable Styling
 
-The previous section describes how developers can customize the styling of an app. Next to that it is possible to place styling inside modules, which then can be re-used in other apps. This can be used to [create a theme module](#create-theme-mod) or a [company design system](/howto/front-end/create-a-company-design-system/).
+The previous section describes how developers can customize the styling of an app. Next to that it is possible to place styling inside modules, which then can be re-used in other apps. This can be used to [create a theme module](#create-theme-mod) or a [company design system](/howto10/front-end/create-a-company-design-system/).
 
 Adding styling to a module is similar to adding styling to an app, except that styling resources are placed in the **themesource** folder as explained in the [File and Folder Structure](#file-and-folder) section below.
 
-For classes that are generic or that should be easily discovered, a developer can consider creating design properties for this. For more information, see [How to Extend Design Properties](/howto/front-end/extend-design-properties/).
+For classes that are generic or that should be easily discovered, a developer can consider creating design properties for this. For more information, see [How to Extend Design Properties](/howto10/front-end/extend-design-properties/).
 
 ## Creating a Theme Module {#create-theme-mod}
 
 A theme module is useful for styling which can be easily re-used through modules across apps. By default, the theme settings like color, font, spacing, and more are in the **theme** folder, which is specific per app. However, often these settings should be re-used to create a consistent look and feel across apps.
 
-This can be done by creating a theme module and making the *custom-variables* file in the **theme** folder point to the custom variables file in your theme module. For creating a full design system see [How to Create a Company Design System](/howto/front-end/create-a-company-design-system/).
+This can be done by creating a theme module and making the *custom-variables* file in the **theme** folder point to the custom variables file in your theme module. For creating a full design system see [How to Create a Company Design System](/howto10/front-end/create-a-company-design-system/).
 
 See the examples below for more information on creating a re-usable theme module.
 
@@ -185,7 +185,7 @@ $brand-danger: #e33f4e;
 
 You can now export the **mytheme** module from Studio Pro to re-use in your apps. Note that you need to add the `@import …` line to *theme/web/custom-variables.scss* for every app that imports the module. Therefore, Mendix recommends creating a company starter app containing this change.
 
-To test the theme for all the widgets, page templates, and building blocks it can be helpful to use the Atlas Design System app as discussed in [Create a Company Design System](/howto/front-end/create-a-company-design-system/).
+To test the theme for all the widgets, page templates, and building blocks it can be helpful to use the Atlas Design System app as discussed in [Create a Company Design System](/howto10/front-end/create-a-company-design-system/).
 
 #### Native Mobile
 
@@ -265,7 +265,7 @@ Mendix monitors the file system in the **theme** and **themesource** folders for
 
 If **Enable developer mode** is enabled, and changes are made in the JavaScript styling files, the app automatically reloads with the new styling. 
 
-For more information, see the Getting the [Make It Native App Reference Guide](/refguide/getting-the-make-it-native-app/).
+For more information, see the Getting the [Make It Native App Reference Guide](/refguide10/getting-the-make-it-native-app/).
 
 ## File and Folder Structure {#file-and-folder}
 
@@ -342,7 +342,7 @@ For native mobile apps the React Native framework is used to combine all the Jav
 
 If there are errors during the bundling, these will be shown in Studio Pro and the Make it Native app. For details on the error, it can be helpful to look at the native packager logs in *{Mendix app directory}/deployment/log/native_packager_log.txt*.
 
-For more details on styling native mobile apps see the [Native Mobile Styling](/refguide/native-styling-refguide/) Reference Guide.
+For more details on styling native mobile apps see the [Native Mobile Styling](/refguide10/native-styling-refguide/) Reference Guide.
 
 ## Disabling default styling from Atlas Core {#disable-default}
 
@@ -576,7 +576,7 @@ Mendix is able to add the `?638184496048312490` query parameter because of the u
 ```
 
 {{% alert color="info" %}}
-When the [Mendix React Client](/refguide/mendix-client/react/) is enabled, the line in */deployment/web/index.html* is as follows:
+When the [Mendix React Client](/refguide10/mendix-client/react/) is enabled, the line in */deployment/web/index.html* is as follows:
 ```
 <script src="dist/index.js?{{cachebust}}" type="module"></script>
 ```
@@ -592,7 +592,7 @@ When an end-user opens a Mendix app in an unsupported browser, a page is shown t
 
 By default, Atlas uses the font Open Sans, and the font files are loaded from the Google Fonts Content Delivery Network (CDN). While the Google Fonts CDN is convenient, you might need to change your font file service location.
 
-For example, you may need to change your font file service location in order to comply with stricter [CSP](/howto/security/csp/) policies, or if you cannot use Google Fonts CDN due to business requirements. Fortunately, you can serve fonts from your own local server instead of using the Google Fonts CDN using the sections below.
+For example, you may need to change your font file service location in order to comply with stricter [CSP](/howto10/security/csp/) policies, or if you cannot use Google Fonts CDN due to business requirements. Fortunately, you can serve fonts from your own local server instead of using the Google Fonts CDN using the sections below.
 
 ### Downloading Font Files
 

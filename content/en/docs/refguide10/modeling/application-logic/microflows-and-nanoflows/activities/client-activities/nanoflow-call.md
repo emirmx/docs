@@ -1,6 +1,6 @@
 ---
 title: "Call Nanoflow"
-url: /refguide/nanoflow-call/
+url: /refguide10/nanoflow-call/
 weight: 2
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -11,7 +11,7 @@ This activity can only be used in nanoflows.
 
 ## Introduction
 
-The **Call nanoflow** activity can be used to call another [nanoflow](/refguide/nanoflows/). Arguments can be passed to the nanoflow and the result can be stored in a variable.
+The **Call nanoflow** activity can be used to call another [nanoflow](/refguide10/nanoflows/). Arguments can be passed to the nanoflow and the result can be stored in a variable.
 
 ## Properties
 
@@ -46,11 +46,11 @@ The name of the parameter that is read-only.
 
 #### Type
 
-The type of the parameter that is read-only. For more information on possible types of parameters, see [Data Types](/refguide/data-types/).
+The type of the parameter that is read-only. For more information on possible types of parameters, see [Data Types](/refguide10/data-types/).
 
 #### Argument {#argument}
 
-The **Edit parameter value** button allows you to edit the argument value. For each parameter of the nanoflow, you have to supply an argument of the same type. The values of the arguments are expressed using [expressions](/refguide/expressions/).
+The **Edit parameter value** button allows you to edit the argument value. For each parameter of the nanoflow, you have to supply an argument of the same type. The values of the arguments are expressed using [expressions](/refguide10/expressions/).
 
 ### Return Type
 
@@ -68,4 +68,4 @@ If you specify a name for the returned value in the called nanoflow's end event,
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}

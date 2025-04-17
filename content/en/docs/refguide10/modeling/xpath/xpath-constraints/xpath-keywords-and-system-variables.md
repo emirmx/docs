@@ -1,6 +1,6 @@
 ---
 title: "XPath Keywords and System Variables"
-url: /refguide/xpath-keywords-and-system-variables/
+url: /refguide10/xpath-keywords-and-system-variables/
 ---
 
 ## Overview
@@ -28,8 +28,8 @@ This query returns all the customers whose name is not known to the system:
     {{% /tab %}}
 {{< /tabpane >}}
 
-These keywords can only be used in conjunction with attributes. The existence of associations cannot be confirmed in this manner. For more information on how to constrain on associations, see [XPath Constraint Functions](/refguide/xpath-constraint-functions/).
-See also [Empty values](/refguide/xpath-expressions/#empty-values) for the behavior of expressions when empty values are involved.
+These keywords can only be used in conjunction with attributes. The existence of associations cannot be confirmed in this manner. For more information on how to constrain on associations, see [XPath Constraint Functions](/refguide10/xpath-constraint-functions/).
+See also [Empty values](/refguide10/xpath-expressions/#empty-values) for the behavior of expressions when empty values are involved.
 
 ## System Variables {#system-variables}
 

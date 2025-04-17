@@ -1,21 +1,21 @@
 ---
 title: "Select Elements"
-url: /refguide/select--elements/
+url: /refguide10/select--elements/
 aliases:
-    - /refguide/Select++Elements.html
-    - /refguide/Select++Elements
+    - /refguide10/Select++Elements.html
+    - /refguide10/Select++Elements
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-For both [import](/refguide/import-mappings/) and [export mappings](/refguide/export-mappings/), you need to specify the elements structure you want to map. You do this in the **Select schema elements** window. An example of this screen is shown below:
+For both [import](/refguide10/import-mappings/) and [export mappings](/refguide10/export-mappings/), you need to specify the elements structure you want to map. You do this in the **Select schema elements** window. An example of this screen is shown below:
 
 {{< figure src="/attachments/refguide10/modeling/integration/mapping-documents/select--elements/19399143.png" class="no-border" >}}
 
 Perform the following steps in the **Select schema elements** window:
 
-1. Depending on whether you want to make a mapping for an [XML schema](/refguide/xml-schemas/), a [Consumed web service](/refguide/consumed-web-services/), or a [JSON structure](/refguide/json-structures/) document, you need to select an **XML schema**, **Web service operation**, or **JSON structure** as the source.
+1. Depending on whether you want to make a mapping for an [XML schema](/refguide10/xml-schemas/), a [Consumed web service](/refguide10/consumed-web-services/), or a [JSON structure](/refguide10/json-structures/) document, you need to select an **XML schema**, **Web service operation**, or **JSON structure** as the source.
 2. If source is XML schema, select the root element of the mapping. This is done by selecting the **Start at** element for the XML schema or the **Request part** for the web service operation. **Start at** lists the root elements in an XML schema. You can select one root element to base your mapping on. If source is Web service operation, **Request part** lists the header and body element of the request part of an operation. If an operation has multiple parameters, these are listed in the **Request part** as well. **Request part** is only applicable to export mappings.
 3. Select specific elements in the tree explorer below. Typically you do not need to map an entire source, since they can be quite large.
 

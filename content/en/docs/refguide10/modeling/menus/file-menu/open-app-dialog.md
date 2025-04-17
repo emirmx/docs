@@ -1,11 +1,11 @@
 ---
 title: "Open App"
-url: /refguide/open-app-dialog/
+url: /refguide10/open-app-dialog/
 weight: 20
 description: "Describes the Open App flow and the Open App dialog box"
 aliases:
-    - /refguide/open-project-dialog.html
-    - /refguide/open-project-dialog
+    - /refguide10/open-project-dialog.html
+    - /refguide10/open-project-dialog
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -26,7 +26,7 @@ Apps can be located on the Team Server, on another Git server, or on the local d
 
 ### Selecting an App {#select-app}
 
-You can select an app from the list of your apps. Once you have selected an app, you can either choose a [branch line](/refguide/version-control/#branches) that you would like to open or click **Open in Studio Pro** and the branch that is indicated in the **Current Branch** column will open:
+You can select an app from the list of your apps. Once you have selected an app, you can either choose a [branch line](/refguide10/version-control/#branches) that you would like to open or click **Open in Studio Pro** and the branch that is indicated in the **Current Branch** column will open:
 
 {{< figure src="/attachments/refguide10/modeling/menus/file-menu/open-app-dialog/select-app.png" class="no-border" width="700" >}}
 
@@ -36,21 +36,21 @@ For opening an app you already have on disk, click **Open App Locally** in the l
 
 ### Opening a Private App {#open-private}
 
-For opening an app you already have in a [Git On-Premises Version Control Server](/refguide/on-premises-git/), click **Open Private App** in the left sidebar. You will need to enter the **App repository address**, credentials for the repository, choose the **Development line** (branch) and indicate where you want to store it on the disk.
+For opening an app you already have in a [Git On-Premises Version Control Server](/refguide10/on-premises-git/), click **Open Private App** in the left sidebar. You will need to enter the **App repository address**, credentials for the repository, choose the **Development line** (branch) and indicate where you want to store it on the disk.
 
 ### Importing App Package {#import-app}
 
-You can also import an app package and open it. Click **Import App Package** in the left sidebar. For more information on how to import an app package, see [Import App Package](/refguide/import-app-package-dialog/).
+You can also import an app package and open it. Click **Import App Package** in the left sidebar. For more information on how to import an app package, see [Import App Package](/refguide10/import-app-package-dialog/).
 
 ### Preferences
 
-Clicking **Preferences** opens a dialog box with a subset of the preferences you can set in [Preferences](/refguide/preferences-dialog/). The preferences you can change are as follows:
+Clicking **Preferences** opens a dialog box with a subset of the preferences you can set in [Preferences](/refguide10/preferences-dialog/). The preferences you can change are as follows:
 
 * Studio Pro Theme
 * Default Page Editor
 * Rendering
-* [Clone type](/refguide/preferences-dialog/#clone)
+* [Clone type](/refguide10/preferences-dialog/#clone)
 
 ## Read More
 
-* [Import App Package](/refguide/import-app-package-dialog/)
+* [Import App Package](/refguide10/import-app-package-dialog/)

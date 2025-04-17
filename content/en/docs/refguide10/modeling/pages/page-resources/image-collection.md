@@ -1,6 +1,6 @@
 ---
 title: "Image Collection"
-url: /refguide/image-collection/
+url: /refguide10/image-collection/
 weight: 1
 description: "Why and how to create an image collection"
 ---
@@ -9,12 +9,12 @@ description: "Why and how to create an image collection"
 
 If you want to use your own static images within an application, for example for branding or to give your buttons a unique feel, you will need to store them in your app. To do this, you create an **image collection** where you can store your images.
 
-For information on how to use images in your app, see [Images](/refguide/images/).
+For information on how to use images in your app, see [Images](/refguide10/images/).
 
-Remember that, if you want to use the same set of custom images in several apps, you can export and import complete image collections, with their images. For more information, see [Importing and Exporting Apps, Modules, Widgets, and Documents](/refguide/import-and-export/).
+Remember that, if you want to use the same set of custom images in several apps, you can export and import complete image collections, with their images. For more information, see [Importing and Exporting Apps, Modules, Widgets, and Documents](/refguide10/import-and-export/).
 
 {{% alert color="warning" %}}
-Too many large static images in your app can lead to performance issues. If you need a lot of large images, you can store them in your database (see [Dynamic Image](/refguide/image-viewer/) for more information).
+Too many large static images in your app can lead to performance issues. If you need a lot of large images, you can store them in your database (see [Dynamic Image](/refguide10/image-viewer/) for more information).
 {{% /alert %}}
 
 ## Adding an Image Collection

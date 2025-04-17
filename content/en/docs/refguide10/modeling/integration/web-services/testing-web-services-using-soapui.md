@@ -1,10 +1,10 @@
 ---
 title: "Test Web Services Using SoapUI"
-url: /refguide/integration/testing-web-services-using-soapui/
+url: /refguide10/integration/testing-web-services-using-soapui/
 weight: 30
 description: "Describes how to create a SOAP project with SoapUI, create assertions in SoapUI, and build an automated test using SoapUI."
 aliases: 
-    - /howto/testing/testing-web-services-using-soapui/
+    - /howto10/testing/testing-web-services-using-soapui/
 ---
 
 ## Introduction
@@ -22,7 +22,7 @@ This how-to teaches you how to do the following:
 Before you start this how-to, make sure you have completed the following prerequisites.
 
 * Download and install [SoapUI](https://www.soapui.org/downloads/soapui.html)
-* Complete the how-to [Expose a web service](/howto/integration/expose-a-web-service/)
+* Complete the how-to [Expose a web service](/howto10/integration/expose-a-web-service/)
 
 | Software | Version used in this how-to |
 | --- | --- |
@@ -34,9 +34,9 @@ All images, names, and steps in this how-to are based on Studio Pro 9.24. When u
 
 ## Publishing More Microflows as Web Service Operation
 
-In [Expose a Web Service](/howto/integration/expose-a-web-service/), you published the microflow *GetCustomers* as web service operation. In this document, you will create two more microflows and publish them as web service operations.
+In [Expose a Web Service](/howto10/integration/expose-a-web-service/), you published the microflow *GetCustomers* as web service operation. In this document, you will create two more microflows and publish them as web service operations.
 
-1. Open the app you created in [How to Expose a Web Service](/howto/integration/expose-a-web-service/).
+1. Open the app you created in [How to Expose a Web Service](/howto10/integration/expose-a-web-service/).
 2. Create a microflow that creates a customer and returns a Boolean:
 
     {{< figure src="/attachments/refguide10/modeling/integration/testing-web-services-using-soapui/model1.jpg" class="no-border" >}}
@@ -45,7 +45,7 @@ In [Expose a Web Service](/howto/integration/expose-a-web-service/), you publish
 
     {{< figure src="/attachments/refguide10/modeling/integration/testing-web-services-using-soapui/model2.jpg" class="no-border" >}}
 
-4. Publish both microflows as web service operations of the **CustomerWebService** as described in [How to Expose a Web Service](/howto/integration/expose-a-web-service/).
+4. Publish both microflows as web service operations of the **CustomerWebService** as described in [How to Expose a Web Service](/howto10/integration/expose-a-web-service/).
 
 ## Creating a New SOAP Project
 
@@ -217,15 +217,15 @@ Congratulations! You have created your first automated test with SoapUI.
 
 ## Read More
 
-* [Finding the Root Cause of Runtime Errors](/howto/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
-* [Clearing Warning Messages in Mendix](/howto/monitoring-troubleshooting/clear-warning-messages/)
-* [Testing web services using SoapUI](/howto/testing/testing-web-services-using-soapui/)
-* [Monitoring Mendix using JMX](/howto/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
-* [Debugging Java actions remotely](/howto/monitoring-troubleshooting/debug-java-actions-remotely/)
-* [Log Levels](/howto/monitoring-troubleshooting/log-levels/)
-* [Debugging Java Actions](/howto/monitoring-troubleshooting/debug-java-actions/)
-* [Debugging Microflows and Nanoflows](/refguide/debug-microflows-and-nanoflows/)
-* [Debugging Microflows Remotely](/refguide/debug-microflows-remotely/)
+* [Finding the Root Cause of Runtime Errors](/howto10/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
+* [Clearing Warning Messages in Mendix](/howto10/monitoring-troubleshooting/clear-warning-messages/)
+* [Testing web services using SoapUI](/howto10/testing/testing-web-services-using-soapui/)
+* [Monitoring Mendix using JMX](/howto10/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
+* [Debugging Java actions remotely](/howto10/monitoring-troubleshooting/debug-java-actions-remotely/)
+* [Log Levels](/howto10/monitoring-troubleshooting/log-levels/)
+* [Debugging Java Actions](/howto10/monitoring-troubleshooting/debug-java-actions/)
+* [Debugging Microflows and Nanoflows](/refguide10/debug-microflows-and-nanoflows/)
+* [Debugging Microflows Remotely](/refguide10/debug-microflows-remotely/)
 
 Learn more about this topic using the following helpful links:
 

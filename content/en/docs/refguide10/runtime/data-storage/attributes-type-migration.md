@@ -1,6 +1,6 @@
 ---
 title: "Attribute Type Migration"
-url: /refguide/attributes-type-migration/
+url: /refguide10/attributes-type-migration/
 weight: 10
 ---
 

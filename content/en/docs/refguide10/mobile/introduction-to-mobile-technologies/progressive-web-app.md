@@ -1,9 +1,9 @@
 ---
 title: "Progressive Web App"
-url: /refguide/mobile/introduction-to-mobile-technologies/progressive-web-app/
+url: /refguide10/mobile/introduction-to-mobile-technologies/progressive-web-app/
 weight: 20
 aliases:
-    - /refguide/progressive-web-app/
+    - /refguide10/progressive-web-app/
 ---
 
 ## Introduction
@@ -34,10 +34,10 @@ As PWAs are basically web apps with additional features, Mendix offers these fea
 PWAs require a version of Atlas 2 or above.
 {{% /alert %}}
 
-To create a full offline-first PWA, choose and add one of the following profiles (depending on which form factor you need): Responsive Web Offline, Phone Web Offline, or Tablet Web Offline. For more information about offline-first apps, see the [Offline-First Guide](/refguide/offline-first/).
+To create a full offline-first PWA, choose and add one of the following profiles (depending on which form factor you need): Responsive Web Offline, Phone Web Offline, or Tablet Web Offline. For more information about offline-first apps, see the [Offline-First Guide](/refguide10/offline-first/).
 
 {{% alert color="info" %}}
-Offline-first progressive web apps have some restrictions to make sure they can fully work offline. For more information, see [Offline Best Practices](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/).
+Offline-first progressive web apps have some restrictions to make sure they can fully work offline. For more information, see [Offline Best Practices](/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/).
 {{% /alert %}}
 
 Within the navigation profiles the following PWA features can be configured:
@@ -72,7 +72,7 @@ You can also open PWA profiles on your device via the **View on your device** op
 
 {{< figure src="/attachments/refguide10/mobile/progressive-web-app/view-dialog.png" alt="View menu"   width="350"  class="no-border" >}}
 
-Note that if you are running on a Mac with Parallels, make sure that port 8080 (or whichever port you have configured for your app) is forwarded and that you use your Mac IP instead of the Virtual Machine’s IP. For more information on Mendix and Parallels, see [Configuring Parallels](/refguide/using-mendix-studio-pro-on-a-mac/).
+Note that if you are running on a Mac with Parallels, make sure that port 8080 (or whichever port you have configured for your app) is forwarded and that you use your Mac IP instead of the Virtual Machine’s IP. For more information on Mendix and Parallels, see [Configuring Parallels](/refguide10/using-mendix-studio-pro-on-a-mac/).
 
 {{% alert color="info" %}}
 When previewing or testing an offline-first PWA locally, an internet connection is always required to load the app. After initial loading, the app behaves fully offline, but it can not be reloaded without a connection. Once the app is deployed to the cloud, end-users can always load it without a connection after the first visit.
@@ -140,17 +140,17 @@ For more information on the available properties in the web app manifest, read t
 
 Offline-first PWAs use an authentication token by default to keep the session active while users are not actively working in the app.
 
-For more information on the session and authentication tokens, see [Session Management](/refguide/session-management/)
+For more information on the session and authentication tokens, see [Session Management](/refguide10/session-management/)
 
 #### Mendix Versions Below 10.9.0
 
-Offline-first PWAs use long-lived sessions, which keep users logged in for a longer period even after their apps are closed. By default, users will be logged out after 7 days of inactivity. This can be customized using the [LongLivedSessionTimeout](/refguide/custom-settings/#LongLivedSessionTimeout) runtime setting.
+Offline-first PWAs use long-lived sessions, which keep users logged in for a longer period even after their apps are closed. By default, users will be logged out after 7 days of inactivity. This can be customized using the [LongLivedSessionTimeout](/refguide10/custom-settings/#LongLivedSessionTimeout) runtime setting.
 
-For more information on sessions and how to customize the timeout, see the [Session Duration](/refguide/tricky-custom-runtime-settings/#session-duration) section of the *Advanced Custom Settings in Mendix Runtime Reference Guide*.
+For more information on sessions and how to customize the timeout, see the [Session Duration](/refguide10/tricky-custom-runtime-settings/#session-duration) section of the *Advanced Custom Settings in Mendix Runtime Reference Guide*.
 
 ## Accessing Device Features
 
-Browsers offer access to device features through APIs that can be leveraged in PWAs. These device features can be used by available widgets and nanoflow actions. It is also possible to leverage additional device features by extending the platform using [JavaScript Actions](/refguide/javascript-actions/) or [Pluggable Widgets](/howto/extensibility/pluggable-widgets/).
+Browsers offer access to device features through APIs that can be leveraged in PWAs. These device features can be used by available widgets and nanoflow actions. It is also possible to leverage additional device features by extending the platform using [JavaScript Actions](/refguide10/javascript-actions/) or [Pluggable Widgets](/howto10/extensibility/pluggable-widgets/).
 
 This table lists the most used device features and APIs, and also documents their compatibility with common browsers:
 

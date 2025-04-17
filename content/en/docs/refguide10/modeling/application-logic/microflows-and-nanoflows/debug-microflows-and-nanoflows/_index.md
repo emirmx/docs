@@ -1,6 +1,6 @@
 ---
 title: "Debugging Microflows and Nanoflows"
-url: /refguide/debug-microflows-and-nanoflows//
+url: /refguide10/debug-microflows-and-nanoflows//
 weight: 120
 ---
 
@@ -17,8 +17,8 @@ This how-to teaches you how to do the following:
 
 Before starting this how-to, make sure you have completed the following prerequisites:
 
-* Read [Configuring a Domain Model](/refguide/configuring-a-domain-model/)
-* Read [How to Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/)
+* Read [Configuring a Domain Model](/refguide10/configuring-a-domain-model/)
+* Read [How to Create Your First Two Overview and Detail Pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/)
 
 ## Debugging Overview
 
@@ -86,7 +86,7 @@ Breakpoints are points in a microflow/nanoflow where the application will halt e
 
 To debug a microflow from a nanoflow you need to add a separate breakpoint to the microflow. Stepping into the microflow won't work in this situation.
 
-For details on available shortcut keys, see the [Debugger Shortcut Keys](/refguide/keyboard-shortcuts/#debugger-shortcuts) section of *Keyboard Shortcuts*.
+For details on available shortcut keys, see the [Debugger Shortcut Keys](/refguide10/keyboard-shortcuts/#debugger-shortcuts) section of *Keyboard Shortcuts*.
 
 ## Variables Viewer
 
@@ -121,5 +121,5 @@ To use breakpoint conditions, follow these steps:
 
 ## Read More
 
-* [Debugging Microflows Remotely](/refguide/debug-microflows-remotely/)
-* [Common Properties](/refguide/microflow-element-common-properties/)
+* [Debugging Microflows Remotely](/refguide10/debug-microflows-remotely/)
+* [Common Properties](/refguide10/microflow-element-common-properties/)

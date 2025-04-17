@@ -1,10 +1,10 @@
 ---
 title: "Clear Warning Messages"
-url: /refguide/clear-warning-messages/
+url: /refguide10/clear-warning-messages/
 weight: 1
 description: "Describes how to eliminate design-time warnings by viewing and clearing warning messages."
 aliases: 
-    - /howto/monitoring-troubleshooting/clear-warning-messages/
+    - /howto10/monitoring-troubleshooting/clear-warning-messages/
 ---
 
 ## Introduction
@@ -167,13 +167,13 @@ Variable ‘Variable’ is never used.
 
 ## Read More
 
-* [Find the Root Cause of Runtime Errors](/howto/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
-* [Test Web Services Using SoapUI](/howto/testing/testing-web-services-using-soapui/)
-* [Monitor Mendix Using JMX](/howto/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
-* [Debug Java Actions Remotely](/howto/monitoring-troubleshooting/debug-java-actions-remotely/)
-* [Configure Log Levels](/howto/monitoring-troubleshooting/log-levels/)
-* [Debugging Microflows and Nanoflows](/refguide/debug-microflows-and-nanoflows/)
-* [Debug Java Actions](/howto/monitoring-troubleshooting/debug-java-actions/)
-* [Debugging Microflows Remotely](/refguide/debug-microflows-remotely/)
+* [Find the Root Cause of Runtime Errors](/howto10/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
+* [Test Web Services Using SoapUI](/howto10/testing/testing-web-services-using-soapui/)
+* [Monitor Mendix Using JMX](/howto10/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
+* [Debug Java Actions Remotely](/howto10/monitoring-troubleshooting/debug-java-actions-remotely/)
+* [Configure Log Levels](/howto10/monitoring-troubleshooting/log-levels/)
+* [Debugging Microflows and Nanoflows](/refguide10/debug-microflows-and-nanoflows/)
+* [Debug Java Actions](/howto10/monitoring-troubleshooting/debug-java-actions/)
+* [Debugging Microflows Remotely](/refguide10/debug-microflows-remotely/)
 
-Several warnings relate to improper security. For more information on this, see [App Security](/refguide/app-security/) in the *Studio Pro Guide*.
+Several warnings relate to improper security. For more information on this, see [App Security](/refguide10/app-security/) in the *Studio Pro Guide*.

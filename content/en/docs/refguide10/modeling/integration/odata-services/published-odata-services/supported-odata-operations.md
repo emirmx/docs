@@ -1,10 +1,10 @@
 ---
 title: "Supported OData Operations"
-url: /refguide/supported-odata-operations/
+url: /refguide10/supported-odata-operations/
 description: "Lists the supported operations for published OData services."
 weight: 40
 aliases:
-  - /refguide/odata-query-options/ 
+  - /refguide10/odata-query-options/ 
 ---
 
 ## Introduction
@@ -15,9 +15,9 @@ This is a list of supported operations for OData services.
 Mendix currently supports only the operations described here.
 {{% /alert %}}
 
-A published OData service is automatically documented. Studio Pro allows you to [export the OpenAPI specification](/refguide/published-odata-services/#openapi), which is a machine-readable file that is supported by most API tools, like Swagger UI and Postman.
+A published OData service is automatically documented. Studio Pro allows you to [export the OpenAPI specification](/refguide10/published-odata-services/#openapi), which is a machine-readable file that is supported by most API tools, like Swagger UI and Postman.
 
-When running your app, you can [use Swagger UI](/refguide/build-odata-apis/#contract-and-test) to read this documentation and test your service. 
+When running your app, you can [use Swagger UI](/refguide10/build-odata-apis/#contract-and-test) to read this documentation and test your service. 
 
 Below is a more descriptive explanation of the operations that a published OData service supports.
 
@@ -120,7 +120,7 @@ You can filter on the attributes of an associated entity. The syntax depends on 
 | Filter on an associated object | `People?$filter=BirthPlace/CityName eq 'Rotterdam'`   |
 | Filter on an associated list   | `City?$filter=BornIn/any(person:person/Year le 1919)` |
 
-Filtering on an associated object or list in this way is possible only when you [expose associations as a link](/refguide/odata-representation/#associations). It is not possible when you expose associations as an associated object ID.
+Filtering on an associated object or list in this way is possible only when you [expose associations as a link](/refguide10/odata-representation/#associations). It is not possible when you expose associations as an associated object ID.
 
 ##### Arithmetic Operators
 
@@ -174,7 +174,7 @@ The request body must adhere to URL encoding principles; that means that everyth
 
 ### Updating Attributes
 
-When a published entity has the [Updatable](/refguide/published-odata-entity/#updatable) capability, you can update attributes and associations by sending a `PATCH` request to the URL of the object. Here is an example: `PATCH /odata/myservice/v1/Employees(8444249301330581)`.
+When a published entity has the [Updatable](/refguide10/published-odata-entity/#updatable) capability, you can update attributes and associations by sending a `PATCH` request to the URL of the object. Here is an example: `PATCH /odata/myservice/v1/Employees(8444249301330581)`.
 
 Specify new values for attributes in the body of the request. Here is an example:
 
@@ -232,12 +232,12 @@ When the association refers to multiple objects, use the `@delta` syntax to add 
 ```
 
 {{% alert color="info" %}}
-You can update an association only from the entity that is the [owner](/refguide/associations/#ownership).
+You can update an association only from the entity that is the [owner](/refguide10/associations/#ownership).
 {{% /alert %}}
 
 ## Inserting Objects {#inserting-objects}
 
-When a published entity has the [Insertable](/refguide/published-odata-entity/#capabilities) capability, you can create new objects by sending a `POST` request to the URL of the entity set. Here is an example: `POST /odata/myservice/v1/Employees`.
+When a published entity has the [Insertable](/refguide10/published-odata-entity/#capabilities) capability, you can create new objects by sending a `POST` request to the URL of the entity set. Here is an example: `POST /odata/myservice/v1/Employees`.
 
 The body of the request may specify attribute and association values, just as with updates. However, unlike with updates, the `@delta` syntax is not used to specify objects, even when the association refers to multiple objects. Here is an example:
 
@@ -250,11 +250,11 @@ The body of the request may specify attribute and association values, just as wi
 }
 ```
 
-You can set values for an association only from the entity that is the [owner](/refguide/associations/#ownership).
+You can set values for an association only from the entity that is the [owner](/refguide10/associations/#ownership).
 
 ## Deleting Objects {#deleting-objects}
 
-When a published entity has the [Deletable](/refguide/published-odata-entity/#deletable) capability, you can delete an object by sending a `DELETE` request to the URL of the object (for example, `PATCH /odata/myservice/v1/Employees(8444249301330581)`).
+When a published entity has the [Deletable](/refguide10/published-odata-entity/#deletable) capability, you can delete an object by sending a `DELETE` request to the URL of the object (for example, `PATCH /odata/myservice/v1/Employees(8444249301330581)`).
 
 ## Calling Microflows {#actions}
 
@@ -262,7 +262,7 @@ When a published entity has the [Deletable](/refguide/published-odata-entity/#de
 
 To call microflows that are published in your OData service, send a `POST` request to the action's endpoint URL (for example, `POST /odata/myservice/v1/OnboardNewEmployee`).
 
-The endpoint URL is defined by the base URL of the OData service and the exposed name of the microflow. To find an example URL, you can open the [Edit published microflow](/refguide/published-odata-microflow/#edit-microflow) dialog box and look at the **Example of location** property.
+The endpoint URL is defined by the base URL of the OData service and the exposed name of the microflow. To find an example URL, you can open the [Edit published microflow](/refguide10/published-odata-microflow/#edit-microflow) dialog box and look at the **Example of location** property.
 
 ### Passing Arguments in the Request Body
 
@@ -341,7 +341,7 @@ If the return value is an entity or a list of entities, it is possible to retrie
 For example, imagine your microflow **FindEmployee** returning an entity **Employee**, that has an association to **Address**. You could retrieve the associated Address object by passing `/odata/myservice/v1/FindEmployee?$expand=Address`.
 
 {{% alert type="info" %}}
-The functionality for [publishing microflows in your OData service](/refguide/published-odata-microflow/) was introduced in Studio Pro [10.2.0](/releasenotes/studio-pro/10.2/).
+The functionality for [publishing microflows in your OData service](/refguide10/published-odata-microflow/) was introduced in Studio Pro [10.2.0](/releasenotes/studio-pro/10.2/).
 Support for publishing entities without the **Readable** capability was introduced in Studio Pro [10.8.0](/releasenotes/studio-pro/10.8/).
 Retrieving associated objects using the `$expand` query parameter is supported in Studio Pro [10.12.0](/releasenotes/studio-pro/10.12/) and later.
 {{% /alert %}}

@@ -1,15 +1,15 @@
 ---
 title: "Consumed OData Service Requirements"
-url: /refguide/consumed-odata-service-requirements/
+url: /refguide10/consumed-odata-service-requirements/
 weight: 20
 description: "Requirements on OData services consumed in Mendix."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 {{% alert color="warning" %}}
-The OData implementation in Mendix does not support all features of the OData specification, nor do we have any plans to provide a full implementation of the entire specification. The supported capabilities of OData are focused on providing a simple and productive way to share data and logic between Mendix apps. Although OData [external entities](/refguide/external-entities/) may also work for third-party OData APIs, their use is not tested nor guaranteed.
+The OData implementation in Mendix does not support all features of the OData specification, nor do we have any plans to provide a full implementation of the entire specification. The supported capabilities of OData are focused on providing a simple and productive way to share data and logic between Mendix apps. Although OData [external entities](/refguide10/external-entities/) may also work for third-party OData APIs, their use is not tested nor guaranteed.
 
-When using third-party APIs, it is advised you to make a proof of concept to ensure the functionality provided in Mendix matches the requirements of your third-party APIs. If external entities do not work with your OData APIs, you can use the Mendix [REST](/refguide/consumed-rest-services/) functionality instead.
+When using third-party APIs, it is advised you to make a proof of concept to ensure the functionality provided in Mendix matches the requirements of your third-party APIs. If external entities do not work with your OData APIs, you can use the Mendix [REST](/refguide10/consumed-rest-services/) functionality instead.
 {{% /alert %}}
 
 ## Introduction
@@ -41,9 +41,9 @@ Vocabulary annotations can be used in a service to indicate features that are no
 * **Filterable** – an entity set marked as `Filterable="false"` sets all properties as non-filterable.
 * **Sortable** – an entity set marked as `Sortable="false"` sets all properties as non-sortable.
 * Marking an entity set as `Filterable="false"` and `Sortable="false"` sets all properties as non-filterable and non-sortable. Marking properties with the `NonFilterableProperties` annotation or the `NonSortableProperties` annotation sets specific attributes as non-filterable or non-sortable.
-* **Insertable** – an entity marked as `Insertable="true"` will make the entity creatable in the domain model. That means, for example, that you can model pages that create new objects, and that you can use the entity in the [Create Object](/refguide/create-object/) activity. For insertable entities, the annotations `NonInsertableProperties` and `NonInsertableNavigationProperties` list the (navigation) properties that cannot be passed to the service in the [Send External Object](/refguide/send-external-object/) activity.
-* **Updatable** – an entity marked as `Updatable="true"` with `DeltaUpdateSupported="true"` and `UpdateMethod="2"` will make the entity updatable in the domain model. That means, for example, that you can model pages that change attributes values and associated objects, and that you can use the entity in the [Change Object](/refguide/change-object/) activity. For updatable entities, the annotations `NonUpdatableProperties` and `NonUpdatableNavigationProperties` list the (navigation) properties that cannot be updated.
-* **Deletable** - an entity marked as `Deletable="true"` can be used in the [Delete External Object](/refguide/delete-external-object/) activity.
+* **Insertable** – an entity marked as `Insertable="true"` will make the entity creatable in the domain model. That means, for example, that you can model pages that create new objects, and that you can use the entity in the [Create Object](/refguide10/create-object/) activity. For insertable entities, the annotations `NonInsertableProperties` and `NonInsertableNavigationProperties` list the (navigation) properties that cannot be passed to the service in the [Send External Object](/refguide10/send-external-object/) activity.
+* **Updatable** – an entity marked as `Updatable="true"` with `DeltaUpdateSupported="true"` and `UpdateMethod="2"` will make the entity updatable in the domain model. That means, for example, that you can model pages that change attributes values and associated objects, and that you can use the entity in the [Change Object](/refguide10/change-object/) activity. For updatable entities, the annotations `NonUpdatableProperties` and `NonUpdatableNavigationProperties` list the (navigation) properties that cannot be updated.
+* **Deletable** - an entity marked as `Deletable="true"` can be used in the [Delete External Object](/refguide10/delete-external-object/) activity.
 
 An entity can only be used as an external entity when it is accessible through an entity set, and when it is uniquely identifiable with a key. 
 The key can consist of one or more properties, as long as the following conditions are met:
@@ -66,7 +66,7 @@ The key can consist of one or more properties, as long as the following conditio
 The list above for supported key fields does not include `Date` or `DateTime` data types.
 {{% /alert %}}
 
-Entities that are not accessible through an entity set can be used as a [non-persistable entity](/refguide/consumed-odata-services/#external-non-persistable-entities).
+Entities that are not accessible through an entity set can be used as a [non-persistable entity](/refguide10/consumed-odata-services/#external-non-persistable-entities).
 
 ### Attributes
 
@@ -92,7 +92,7 @@ The most commonly used attribute types can be used in your app. The types of the
 
 ¹ In Studio Pro, Booleans cannot be null. If the service returns null, the app will use the value `false`.
 
-² Decimal values outside of the range of a [Mendix Decimal](/refguide/attributes/#type) are currently not supported. If the service returns a value outside of the range, there will be an error.
+² Decimal values outside of the range of a [Mendix Decimal](/refguide10/attributes/#type) are currently not supported. If the service returns a value outside of the range, there will be an error.
 
 #### Attributes of Complex Types
 
@@ -136,7 +136,7 @@ When you publish a self-referencing association, you can only publish one side o
 
 ### Enumerations
 
-In Studio Pro 10.11 and earlier, enumeration types that have one or more members with a name that is not a valid [enumeration value name](/refguide/enumerations/#name) are not supported.
+In Studio Pro 10.11 and earlier, enumeration types that have one or more members with a name that is not a valid [enumeration value name](/refguide10/enumerations/#name) are not supported.
 
 {{% alert color="info" %}}
 As of Mendix 10.12, the original enumeration member value is stored separately from the enumeration member name and caption in the app model. This enables Studio Pro to consume enumerations that have special characters or reserved keywords as enumeration values. By default, the caption will be equal to the remote value; the name will be equal to the remote value, with any unsupported characters replaced by underscores. 
@@ -144,7 +144,7 @@ As of Mendix 10.12, the original enumeration member value is stored separately f
 
 ## Requirements on Actions {#actions}
 
-The [Call External Action](/refguide/call-external-action/) activity calls actions. It cannot call
+The [Call External Action](/refguide10/call-external-action/) activity calls actions. It cannot call
 
 * Bound actions
 * Actions that take an unsupported type as parameter
@@ -167,10 +167,10 @@ Note that the only supported Collection type is a Collection of Entities, and th
 
 ¹ In Mendix, Booleans cannot be null. If the action returns null, the value will be false in Mendix.
 
-² Decimal values outside of the range of a Mendix [Decimal](/refguide/attributes/#type) are currently not supported. If the action returns a value outside of the range, the action will return an error.
+² Decimal values outside of the range of a Mendix [Decimal](/refguide10/attributes/#type) are currently not supported. If the action returns a value outside of the range, the action will return an error.
 
 ³ Objects that contain attributes of complex types are not currently supported in actions.
 
 {{% alert color="warning" %}}
-When the OData endpoint contains functions, these are not imported in the consumed OData service. You can use a [Call REST service](/refguide/call-rest-action/) activity to call these functions.
+When the OData endpoint contains functions, these are not imported in the consumed OData service. You can use a [Call REST service](/refguide10/call-rest-action/) activity to call these functions.
 {{% /alert %}}

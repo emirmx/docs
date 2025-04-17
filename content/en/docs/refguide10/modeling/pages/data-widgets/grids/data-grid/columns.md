@@ -1,11 +1,11 @@
 ---
 title: "Grid Columns"
-url: /refguide/columns/
+url: /refguide10/columns/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 ## Introduction
 
-Grid columns allow you to set properties for a [data grid](/refguide/data-grid/) or [reference set selector](/refguide/reference-set-selector/) column. 
+Grid columns allow you to set properties for a [data grid](/refguide10/data-grid/) or [reference set selector](/refguide10/reference-set-selector/) column. 
 
 ## Properties
 
@@ -22,7 +22,7 @@ Grid column properties consist of the following sections:
 
 ### Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 {{% alert color="info" %}}
 Dynamic classes specified on grid columns will only be applied on the table columns (`col` elements), not on individual table cells (`td` elements).
@@ -70,13 +70,13 @@ These are the possible values:
 
 If you choose **Custom** as the date format (see above), this property determines how the attribute value is formatted. The custom date format is a string that allows for any combination of symbols found in the table below. Any punctuation will be rendered literally.
 
-{{% snippet file="/static/_includes/refguide/custom-date-format-tokens.md" %}}
+{{% snippet file="/static/_includes/refguide10/custom-date-format-tokens.md" %}}
 
 ### General Section {#general}
 
 #### Caption
 
-The caption of a column is the text that appears as a header above the rows. This is a translatable text. See [Language Menu](/refguide/translatable-texts/).
+The caption of a column is the text that appears as a header above the rows. This is a translatable text. See [Language Menu](/refguide10/translatable-texts/).
 
 #### Editable
 
@@ -101,7 +101,7 @@ Note that all objects will be taken into account, and not just the ones on the c
 
 #### Aggregate Caption
 
-The aggregate caption is the text that appears in front of the computed value. This is a translatable text. See [Language Menu](/refguide/translatable-texts/).
+The aggregate caption is the text that appears in front of the computed value. This is a translatable text. See [Language Menu](/refguide10/translatable-texts/).
 
 {{% alert color="info" %}}
 'Total' could be an aggregate caption for a column that shows the sum of the values.
@@ -109,11 +109,11 @@ The aggregate caption is the text that appears in front of the computed value. T
 
 #### Show Tooltip
 
-This property determines whether the tooltip page is shown as the mouse is hovered over this column. The tooltip page can be configured on the [Data grid](/refguide/data-grid/).
+This property determines whether the tooltip page is shown as the mouse is hovered over this column. The tooltip page can be configured on the [Data grid](/refguide10/data-grid/).
 
 Default: *False*
 
 ## Read More
 
-* [Data Grid](/refguide/data-grid/)
-* [Template Grid](/refguide/template-grid/)
+* [Data Grid](/refguide10/data-grid/)
+* [Template Grid](/refguide10/template-grid/)

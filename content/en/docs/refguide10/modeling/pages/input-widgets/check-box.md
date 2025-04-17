@@ -1,20 +1,20 @@
 ---
 title: "Check Box"
-url: /refguide/check-box/
+url: /refguide10/check-box/
 weight: 40
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-A **Check box** widget is used to display and, optionally, allow the end-user to edit the value of an attribute or variable of [data type](/refguide/data-types/) *Boolean*. It displays a tick if the value is true and remain empty if it is false. 
+A **Check box** widget is used to display and, optionally, allow the end-user to edit the value of an attribute or variable of [data type](/refguide10/data-types/) *Boolean*. It displays a tick if the value is true and remain empty if it is false. 
 
 {{% alert color="info" %}}In native mobile applications, the checkbox widget can be rendered as either a switch (default) or a checkbox. If checkbox, it displays a tick if the value is true and remains empty if it is false. If switch, it displays a track with right-positioned thumb button if the value is true and a left-positioned thumb button if it is false.{{% /alert %}}
 
 A checkbox must be placed within a data context to display or edit the intended value:
-* A [data container](/refguide/data-widgets/) widget containing an object
-* A snippet containing one or more [parameters](/refguide/page-properties/#parameters)
-* A page or a snippet containing one or more [variables](/refguide/page-properties/#variables)
+* A [data container](/refguide10/data-widgets/) widget containing an object
+* A snippet containing one or more [parameters](/refguide10/page-properties/#parameters)
+* A page or a snippet containing one or more [variables](/refguide10/page-properties/#variables)
 
 The name of the configured value is shown inside the checkbox widget, between square brackets, and colored blue.
 
@@ -48,23 +48,23 @@ Miscellaneous:
 
 ### Data Source Section{#data-source}
 
-{{% snippet file="/static/_includes/refguide/data-source-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/data-source-section-link.md" %}}
 
 ### Label Section{#label}
 
-{{% snippet file="/static/_includes/refguide/label-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/label-section-link.md" %}}
 
 ### Editability Section{#editability}
 
-{{% snippet file="/static/_includes/refguide/editability-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/editability-section-link.md" %}}
 
 ### Visibility Section{#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ### Common Section{#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### Events Section{#events}
 
@@ -72,13 +72,13 @@ Miscellaneous:
 
 The on-change property specifies an action that will be executed when leaving the widget, either by using the <kbd>Tab</kbd> key or by clicking another widget, after the value has been changed.
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 #### On Enter
 
 The on-enter property specifies an action that will be executed when the widget is entered, either by using the <kbd>Tab</kbd> key or by clicking it with the mouse.
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 #### On Leave
 
@@ -86,17 +86,17 @@ The on-leave property specifies an action that will be executed when leaving the
 
 This differs from the [On change](#on-change) property in that the event will always be triggered, even if the value has not been changed.
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 ## Styling
 
 ### Design Properties Section{#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### Common Section{#common-styling}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Miscellaneous 
 
@@ -106,6 +106,6 @@ The render mode property determines whether the widget renders as a switch or a 
 
 ## Read More
 
-* [Data View](/refguide/data-view/)
-* [Attributes](/refguide/attributes/)
-* [Variables](/refguide/page-properties/#variables)
+* [Data View](/refguide10/data-view/)
+* [Attributes](/refguide10/attributes/)
+* [Variables](/refguide10/page-properties/#variables)

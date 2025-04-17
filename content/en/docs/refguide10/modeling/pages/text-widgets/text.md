@@ -1,15 +1,15 @@
 ---
 title: "Text"
-url: /refguide/text/
+url: /refguide10/text/
 weight: 10
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-The text widget displays a text which can optionally contain parameters. A parameter can be an attribute of a context object or an [expression](/refguide/expressions/) which also has access to the surrounding context objects and their attributes. When used with parameters, every parameter placeholder in the text (which may appear as {0}, {1}, or {2} for example) is replaced with the value of its corresponding attribute or expression. 
+The text widget displays a text which can optionally contain parameters. A parameter can be an attribute of a context object or an [expression](/refguide10/expressions/) which also has access to the surrounding context objects and their attributes. When used with parameters, every parameter placeholder in the text (which may appear as {0}, {1}, or {2} for example) is replaced with the value of its corresponding attribute or expression. 
 
-For example, if you want to build a page that shows some detailed information about books, you can configure a [data grid](/refguide/data-grid/) to retrieve the whole list of **Book** objects from the database. Then, you can place a text widget inside a [data view](/refguide/data-view/) that is configured to listen to this data grid (for more information, see [Listen to Widget Source](/refguide/listen-to-grid-source/)). Finally, you can add parameters for your text widget to display information about the selected book from the data grid.
+For example, if you want to build a page that shows some detailed information about books, you can configure a [data grid](/refguide10/data-grid/) to retrieve the whole list of **Book** objects from the database. Then, you can place a text widget inside a [data view](/refguide10/data-view/) that is configured to listen to this data grid (for more information, see [Listen to Widget Source](/refguide10/listen-to-grid-source/)). Finally, you can add parameters for your text widget to display information about the selected book from the data grid.
 
 {{< figure src="/attachments/refguide10/modeling/pages/text-widgets/text/text.png" alt="Text Widget"  class="no-border" >}}
 
@@ -60,14 +60,14 @@ Parameters have the following settings:
     {{< figure src="/attachments/refguide10/modeling/pages/text-widgets/text/parameter-settings.png" alt="Parameter Settings"   width="450" class="no-border" >}}
 
 {{% alert color="info" %}}
-You can use the formatter functions in the expression editor when using expressions. For more information, see [this list](/refguide/expressions/#expressions-formatter-functions).
+You can use the formatter functions in the expression editor when using expressions. For more information, see [this list](/refguide10/expressions/#expressions-formatter-functions).
 {{% /alert %}}
 
 ##### Adding New Parameters
 
 To use parameters, do the following:
 
-1. Place the **Text** widget in a context of an entity, as in, inside a [data container](/refguide/data-widgets/).
+1. Place the **Text** widget in a context of an entity, as in, inside a [data container](/refguide10/data-widgets/).
 2. Double-click the **Caption** setting in the text widget properties.
 3. In the **Edit Caption** dialog box > **Parameters** section click **New**:
 
@@ -105,24 +105,24 @@ The render mode determines how the text will be displayed.
 
 ### Visibility Section {#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ### Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Styling
 
 ### Design Properties Section {#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### Common Section {#common-styling}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Read More
 
-* [Page](/refguide/page/)
-* [Text Widgets](/refguide/text-widgets/)
-* [Properties Common in the Page Editor](/refguide/common-widget-properties/)
+* [Page](/refguide10/page/)
+* [Text Widgets](/refguide10/text-widgets/)
+* [Properties Common in the Page Editor](/refguide10/common-widget-properties/)

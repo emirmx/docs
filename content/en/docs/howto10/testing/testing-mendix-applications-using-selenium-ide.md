@@ -1,6 +1,6 @@
 ---
 title: "Test Mendix Apps Using Selenium IDE"
-url: /howto/testing/testing-mendix-applications-using-selenium-ide/
+url: /howto10/testing/testing-mendix-applications-using-selenium-ide/
 weight: 40
 description: "Describes how to download and install Selenium IDE as a Mozilla Firefox plugin."
 ---
@@ -69,7 +69,7 @@ To create an automated test by using the record button in Selenium IDE, follow t
 
 3. Enter a name for your new Selenium project (for example, *CompanyExpenses*).
 4. Enter the URL for your Company Expenses app's login screen (`http://localhost:8080/login.html`), then click **START RECORDING**. This will open up your app in a new browser window. The Selenium IDE is now recording.
-5. Sign in with default [administrator credentials](/refguide/administrator/#administrator-properties): 
+5. Sign in with default [administrator credentials](/refguide10/administrator/#administrator-properties): 
     * **User name**: MxAdmin
     * **Password**: 1
 
@@ -127,10 +127,10 @@ In this example scenario, you need to do the following:
 
 ## Read More
 
-* [Find the Root Cause of Runtime Errors](/howto/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
-* [Clear Warning Messages in Mendix](/howto/monitoring-troubleshooting/clear-warning-messages/)
-* [Test Web Services Using SoapUI](/howto/testing/testing-web-services-using-soapui/)
-* [Monitor Mendix Using JMX](/howto/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
+* [Find the Root Cause of Runtime Errors](/howto10/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
+* [Clear Warning Messages in Mendix](/howto10/monitoring-troubleshooting/clear-warning-messages/)
+* [Test Web Services Using SoapUI](/howto10/testing/testing-web-services-using-soapui/)
+* [Monitor Mendix Using JMX](/howto10/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
 
 Learn more about this topic using the following helpful link:
 

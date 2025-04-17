@@ -1,6 +1,6 @@
 ---
 title: "Integration"
-url: /refguide/integration/
+url: /refguide10/integration/
 weight: 110
 no_list: false
 description_list: true
@@ -17,11 +17,11 @@ Data integration capabilities in Studio Pro is part of [Mendix Connect](#integra
 
 [Mendix Connect](https://www.mendix.com/data-hub/) is a collection of functionalities available in the Mendix Platform that allows people in your organization to discover, understand, connect, and govern data securely. The following published and consumed integration services in Studio Pro allow you connect and share data between and among apps using APIs:
 
-* [OData services](/refguide/integration/odata-services/) (view and manage in your company's [Catalog](/catalog/))
-* [REST services](/refguide/integration/rest-services/)
-* [Web services](/refguide/integration/web-services/)
-* [Business Event services](/refguide/business-event-services/)
-* [Published GraphQL services](/refguide/published-odata-services/) (experimental)
+* [OData services](/refguide10/integration/odata-services/) (view and manage in your company's [Catalog](/catalog/))
+* [REST services](/refguide10/integration/rest-services/)
+* [Web services](/refguide10/integration/web-services/)
+* [Business Event services](/refguide10/business-event-services/)
+* [Published GraphQL services](/refguide10/published-odata-services/) (experimental)
 
 In addition to integration capabilities in Studio Pro [10](/releasenotes/studio-pro/10/), Mendix Connect functionalities include:
 

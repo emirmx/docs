@@ -1,6 +1,6 @@
 ---
 title: "Clear from Device"
-url: /refguide/clear-from-device/
+url: /refguide10/clear-from-device/
 weight: 70
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -8,19 +8,19 @@ weight: 70
 {{% alert color="info" %}}
 This activity can only be used in Nanoflows that run in an offline-first app (a native or offline PWA app).
 
-This activity can only be used with offline [persistable entities](/refguide/persistability/).
+This activity can only be used with offline [persistable entities](/refguide10/persistability/).
 {{% /alert %}}
 
 ## Introduction
 
-The **Clear from device** activity can be used to clear all objects of a [persistable entity](/refguide/persistability/) only from the local database of a device but these objects are not going to be deleted from the server after synchronization.
+The **Clear from device** activity can be used to clear all objects of a [persistable entity](/refguide10/persistability/) only from the local database of a device but these objects are not going to be deleted from the server after synchronization.
 
 {{% alert color="info" %}}
 If the entity is synchronized after clearing, the objects are downloaded from the Mendix Runtime again.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Objects with unsynchronized changes are also removed without synchronizing them. To avoid data loss, it is recommended to run [Synchronize unsynchronized objects](/refguide/synchronize/#unsynchronized-objects) before running this activity.
+Objects with unsynchronized changes are also removed without synchronizing them. To avoid data loss, it is recommended to run [Synchronize unsynchronized objects](/refguide10/synchronize/#unsynchronized-objects) before running this activity.
 {{% /alert %}}
 
 ## Properties
@@ -48,7 +48,7 @@ The entity that you want to clear all its objects from the local database of the
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}
 
 ## Limitations
 

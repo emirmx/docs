@@ -1,10 +1,10 @@
 ---
 title: "Upload to Version Control Server"
-url: /refguide/upload-to-version-control-dialog/
+url: /refguide10/upload-to-version-control-dialog/
 weight: 70
 aliases:
-    - /refguide/upload-to-team-server-dialog.html
-    - /refguide/upload-to-team-server-dialog
+    - /refguide10/upload-to-team-server-dialog.html
+    - /refguide10/upload-to-team-server-dialog
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -40,7 +40,7 @@ You can only upload to an existing repository if the repository is currently emp
 
 ### Private Server
 
-This option is only available when support for other servers is enabled in **Edit** > **Preferences** > **Advanced** > [Enable private version control](/refguide/preferences-dialog/#enable-with-Git)).
+This option is only available when support for other servers is enabled in **Edit** > **Preferences** > **Advanced** > [Enable private version control](/refguide10/preferences-dialog/#enable-with-Git)).
 
 {{< figure src="/attachments/refguide10/modeling/menus/version-control-menu/upload-to-version-control-dialog/enable-private-version-control.png" alt="Enable private version control in advanced preferences" class="no-border" width="600" >}}
 
@@ -50,4 +50,4 @@ If you select **Private server**, enter the address of the repository to which y
 
 ## Read More
 
-* [How to Work with an On-Premises Git Version Control Server](/refguide/on-premises-git/)
+* [How to Work with an On-Premises Git Version Control Server](/refguide10/on-premises-git/)

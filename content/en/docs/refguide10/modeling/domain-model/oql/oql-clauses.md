@@ -1,15 +1,15 @@
 ---
 title: "OQL Clauses"
-url: /refguide/oql-clauses/
+url: /refguide10/oql-clauses/
 weight: 10
 aliases:
-    - /refguide/oql-from-clause/
-    - /refguide/oql-group-by-clause/
-    - /refguide/oql-limit-clause/
-    - /refguide/oql-order-by-clause/
-    - /refguide/oql-select-clause/
-    - /refguide/oql-subqueries/
-    - /refguide/oql-where-clause/
+    - /refguide10/oql-from-clause/
+    - /refguide10/oql-group-by-clause/
+    - /refguide10/oql-limit-clause/
+    - /refguide10/oql-order-by-clause/
+    - /refguide10/oql-select-clause/
+    - /refguide10/oql-subqueries/
+    - /refguide10/oql-where-clause/
 ---
 
 ## Introduction
@@ -45,7 +45,7 @@ The `SELECT` clause specifies which entity attributes or other specified data mu
 The `SELECT` clause consists of the term `SELECT` and one or more column definitions. Each column definition must be separated by a comma. Each column definition defines a column or a set of columns in the result. Each single value column definition can have an alias, which will be the name of the column in the result.
 
 {{% alert color="info" %}}
-We use terms "attributes" and "columns" for data in different contexts. Attributes are the [entity attributes](/refguide/attributes/). If data belongs to objects of an entity, we refer to that data as attributes of those objects. While columns contain the same data, they are not tied to a particular entity. In the general case, OQL does not result in an entity, and so results on an OQL query are columns. When it comes to [view entities](/refguide/view-entities/), OQL columns are mapped to attributes of a view entity, and then we can speak of attributes again.
+We use terms "attributes" and "columns" for data in different contexts. Attributes are the [entity attributes](/refguide10/attributes/). If data belongs to objects of an entity, we refer to that data as attributes of those objects. While columns contain the same data, they are not tied to a particular entity. In the general case, OQL does not result in an entity, and so results on an OQL query are columns. When it comes to [view entities](/refguide10/view-entities/), OQL columns are mapped to attributes of a view entity, and then we can speak of attributes again.
 
 Similarly, we use term "objects" when referring to objects of an entity, but for results of an OQL query, we use "rows" because the results are not necessarily mapped to objects of a particular entity.
 {{% /alert %}}
@@ -91,7 +91,7 @@ Using `*` (asterisk) in the SELECT clause specifies that the values of all attri
 
 Specifying `entity_name/*` and `from_alias/*` specify that the values of all attributes of the specified entity or expression of the `FROM` clause should be returned.
 
-`entity_name` can optionally be put in double quotes. If the entity name is a [reserved OQL word](/refguide/oql/#reserved-oql-words) (like `Order` or `Group`), double quotes are mandatory.
+`entity_name` can optionally be put in double quotes. If the entity name is a [reserved OQL word](/refguide10/oql/#reserved-oql-words) (like `Order` or `Group`), double quotes are mandatory.
 
 {{% alert color="info" %}}
 Specifying all attributes will also return attributes which are normally hidden in the Domain Model, such as the `ID` of each object.
@@ -106,7 +106,7 @@ SELECT *
 FROM Sales.Customer
 ```
 
-The following query returns all attributes of objects of `Sales.Request` that are associated with `Sales.Customer` objects (see [Select from Multiple Tables using `JOIN`](/refguide/oql-clauses/#join))
+The following query returns all attributes of objects of `Sales.Request` that are associated with `Sales.Customer` objects (see [Select from Multiple Tables using `JOIN`](/refguide10/oql-clauses/#join))
 
 ```
 SELECT Sales.Request/*
@@ -195,9 +195,9 @@ returns
 
 ### Expressions
 
-It is possible to use more complex expressions in `SELECT`. This is explained in detail in [OQL Expressions](/refguide/oql-expressions/).
+It is possible to use more complex expressions in `SELECT`. This is explained in detail in [OQL Expressions](/refguide10/oql-expressions/).
 
-It is also possible to use a subquery. See [Subquery in `SELECT`](/refguide/oql-clauses/#subquery-in-select) for more details.
+It is also possible to use a subquery. See [Subquery in `SELECT`](/refguide10/oql-clauses/#subquery-in-select) for more details.
 
 ### Selecting Attributes over Associations
 
@@ -219,7 +219,7 @@ SELECT
 FROM Sales.Customer
 ```
 
-In the case when the association [multiplicity type](/refguide/association-properties/#multiplicity) is one-to-many or many-to-many, every attribute over association may result in multiple results per object. If there are multiple attributes over association in the `FROM` clause, the result will be a cartesian product of associated objects meaning that there will be a row for every combination of associated objects. If you want to avoid that effect, consider rewriting the query using [`JOIN`](/refguide/oql-clauses/#join).
+In the case when the association [multiplicity type](/refguide10/association-properties/#multiplicity) is one-to-many or many-to-many, every attribute over association may result in multiple results per object. If there are multiple attributes over association in the `FROM` clause, the result will be a cartesian product of associated objects meaning that there will be a row for every combination of associated objects. If you want to avoid that effect, consider rewriting the query using [`JOIN`](/refguide10/oql-clauses/#join).
 
 For example, when a `Sales.Customer` with `LastName` "Doe" has two associated  `Sales.Request` objects with a `Number` attribute with values 1 and 2, the following query will return 4 rows:
 
@@ -547,7 +547,7 @@ FULL OUTER JOIN Cust/Sales.Request_Customer/Sales.Request Req
 
 ### Select from a Subquery
 
-See [Subquery in `FROM`](/refguide/oql-clauses/#subquery-in-from) for details.
+See [Subquery in `FROM`](/refguide10/oql-clauses/#subquery-in-from) for details.
 
 ## `WHERE` Clause {#where}
 
@@ -563,7 +563,7 @@ WHERE <constraint>
 
 `<constraint>` is an expression of type BOOLEAN. Expressions can consist of simple comparisons using operators, functions, keywords, parameters, and system variables. If the result of the expression is `True` for a particular row, that row is included in the result. Rows that do not match the expression are not included in the result.
 
-For more information, see [OQL Expressions](/refguide/oql-expressions/).
+For more information, see [OQL Expressions](/refguide10/oql-expressions/).
 
 ### Examples
 
@@ -622,7 +622,7 @@ WHERE
 | ------------ | ------ |
 | Caribou      | -1     |
 
-You can also use a subquery in `WHERE`. See [Subquery in `WHERE`](/refguide/oql-clauses/#subquery-in-where) for examples.
+You can also use a subquery in `WHERE`. See [Subquery in `WHERE`](/refguide10/oql-clauses/#subquery-in-where) for examples.
 
 #### Entities over Associations in `WHERE` Clause
 
@@ -670,7 +670,7 @@ GROUP BY
 ```
 
 {{% alert color="info" %}}
-The `GROUP BY` clause is usually used in combination with [aggregations](/refguide/oql-expressions/#aggregates): `AVG`, `COUNT`, `MAX`, `MIN`, `SUM`.
+The `GROUP BY` clause is usually used in combination with [aggregations](/refguide10/oql-expressions/#aggregates): `AVG`, `COUNT`, `MAX`, `MIN`, `SUM`.
 {{% /alert %}}
 
 ### Using `GROUP BY`
@@ -785,7 +785,7 @@ GROUP BY LENGTH(Brand)
 
 It is recommended not to use the following functionality to avoid potential migration problems.
 
-1. Aliases in `GROUP BY`. [Supported](/refguide/system-requirements/#databases) database vendors that allow do allow aliases in `GROUP BY` are HSQLDB, PostgreSQL, MariaDB, and MySQL.
+1. Aliases in `GROUP BY`. [Supported](/refguide10/system-requirements/#databases) database vendors that allow do allow aliases in `GROUP BY` are HSQLDB, PostgreSQL, MariaDB, and MySQL.
 2. Subqueries in `GROUP BY`. Supported database vendors which do allow subqueries in `GROUP BY` are PostgreSQL, MariaDB, and MySQL.
 {{% /alert %}}
 
@@ -822,7 +822,7 @@ HAVING COUNT(*) > 1 AND SUM(Stock) < 20
 | ------ |
 | Rekall |
 
-You can also use [more complex expressions](/refguide/oql-expression-syntax/) such as subqueries and functions in `HAVING`:
+You can also use [more complex expressions](/refguide10/oql-expression-syntax/) such as subqueries and functions in `HAVING`:
 
 ```sql
 SELECT Brand
@@ -878,7 +878,7 @@ ORDER BY LastName
 | Jane      | Moose    |
 
 {{% alert color="info" %}}
-For information on the default ordering behavior of NULL values, see the [NULL Values Order Behavior](/refguide/ordering-behavior/#null-ordering-behavior) section of *Order By Behavior*.
+For information on the default ordering behavior of NULL values, see the [NULL Values Order Behavior](/refguide10/ordering-behavior/#null-ordering-behavior) section of *Order By Behavior*.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -966,7 +966,7 @@ ORDER BY LastName DESC, FirstName ASC
 OQL allows you to specify paths to attributes of associated entities in the `ORDER BY` clause.
 
 {{% alert color="info" %}}
-In the example below `Sales.Customer` object for Jim Elk does not have any associated objects of the `Sales.Request` entity. Depending on the database, that object will end up either at the beginning or the end of the ordered result. See [NULL Values Order Behavior](/refguide/ordering-behavior/#null-ordering-behavior) for more information.
+In the example below `Sales.Customer` object for Jim Elk does not have any associated objects of the `Sales.Request` entity. Depending on the database, that object will end up either at the beginning or the end of the ordered result. See [NULL Values Order Behavior](/refguide10/ordering-behavior/#null-ordering-behavior) for more information.
 {{% /alert %}}
 
 ```sql
@@ -1079,7 +1079,7 @@ The syntax is as follows:
 
 The data types used in `select_query` statements are considered when determining the final return type of the `UNION` clause. All data types used in `select_query` statements must be compatible. All data types are compatible with themselves. Differing types are only compatible in these cases:
 
-* `UNION` of numeric types `INTEGER`, `LONG` and `DECIMAL`. The return type is the numeric type found in the `select_query` statements with the highest precedence (see [Type Precedence](/refguide/oql-expression-syntax/#type-coercion) for more information). 
+* `UNION` of numeric types `INTEGER`, `LONG` and `DECIMAL`. The return type is the numeric type found in the `select_query` statements with the highest precedence (see [Type Precedence](/refguide10/oql-expression-syntax/#type-coercion) for more information). 
 * `UNION` of limited and unlimited `STRING`. The return type is determined by the largest length of `STRING` attributes in the `select_query` statements.
 * `UNION` of any known type and a `NULL` literal. The result type is the known type.
 

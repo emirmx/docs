@@ -1,9 +1,9 @@
 ---
 title: "Set Log Levels"
-url: /refguide/log-levels/
+url: /refguide10/log-levels/
 description: "Describes how to configure the log levels for the various occurrence of logging within your app."
 aliases:
-    - /howto/monitoring-troubleshooting/log-levels/
+    - /howto10/monitoring-troubleshooting/log-levels/
 ---
 
 ## Introduction
@@ -118,8 +118,8 @@ To set the level of custom log messages that you have created via a microflow, f
 
 ## Read More
 
-* [Find the Root Cause of Runtime Errors](/howto/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
-* [Clear Warning Messages in Mendix](/howto/monitoring-troubleshooting/clear-warning-messages/)
-* [Monitor Mendix Using JMX](/howto/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
-* [Debugging Microflows and Nanoflows](/refguide/debug-microflows-and-nanoflows/)
-* [Debug Java Actions](/howto/monitoring-troubleshooting/debug-java-actions/)
+* [Find the Root Cause of Runtime Errors](/howto10/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
+* [Clear Warning Messages in Mendix](/howto10/monitoring-troubleshooting/clear-warning-messages/)
+* [Monitor Mendix Using JMX](/howto10/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
+* [Debugging Microflows and Nanoflows](/refguide10/debug-microflows-and-nanoflows/)
+* [Debug Java Actions](/howto10/monitoring-troubleshooting/debug-java-actions/)

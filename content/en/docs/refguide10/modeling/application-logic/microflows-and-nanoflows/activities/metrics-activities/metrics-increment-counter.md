@@ -1,6 +1,6 @@
 ---
 title: "Increment Counter"
-url: /refguide/metrics-increment-counter/
+url: /refguide10/metrics-increment-counter/
 weight: 30
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -53,10 +53,10 @@ You can specify a list of tags to enrich the counter name with key/value pairs. 
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}
 
 ## Read More
 
-* [Metric Configuration](/refguide/metrics/)
-* [Metrics Activities](/refguide/metrics-activities/)
+* [Metric Configuration](/refguide10/metrics/)
+* [Metrics Activities](/refguide10/metrics-activities/)
 * [Meter Concepts](https://micrometer.io/docs/concepts)

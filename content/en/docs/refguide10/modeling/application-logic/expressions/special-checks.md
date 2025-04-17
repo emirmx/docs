@@ -1,6 +1,6 @@
 ---
 title: "Special Checks"
-url: /refguide/special-checks/
+url: /refguide10/special-checks/
 weight: 40
 description: "Describes special checks in expressions in Mendix."
 ---
@@ -106,7 +106,7 @@ isNew($object1)
 
 ## Checking Whether an Object Is Synced {#synced}
 
-This function is available only in expressions for [conditional visibility or editability](/refguide/common-widget-properties/) and [nanoflows](/refguide/nanoflows/), as they are only evaluated on client side.
+This function is available only in expressions for [conditional visibility or editability](/refguide10/common-widget-properties/) and [nanoflows](/refguide10/nanoflows/), as they are only evaluated on client side.
 
 ### Input Parameters
 
@@ -122,7 +122,7 @@ The output is described in the table below:
 
 | Value                                                        | Type    |
 | ------------------------------------------------------------ | ------- |
-| Returns whether the changes done to the object [offline](/refguide/offline-first/) have been synchronized to the runtime database. In web profiles without offline support, this always returns `true`. | Boolean |
+| Returns whether the changes done to the object [offline](/refguide10/offline-first/) have been synchronized to the runtime database. In web profiles without offline support, this always returns `true`. | Boolean |
 
 ### Example
 
@@ -134,7 +134,7 @@ isSynced($currentObject)
 
 ## Checking If a Synchronization Is Running {#is-syncing}
 
-This function is available only in client-side expressions (expressions in [nanoflows](/refguide/nanoflows/) and [pages](/refguide/pages/)).
+This function is available only in client-side expressions (expressions in [nanoflows](/refguide10/nanoflows/) and [pages](/refguide10/pages/)).
 
 ### Input Parameters
 
@@ -146,7 +146,7 @@ The output is described in the table below:
 
 | Value                                                        | Type    |
 | ------------------------------------------------------------ | ------- |
-| Returns `true` when there is a [synchronization](/refguide/synchronize/) process running, otherwise it returns `false`.| Boolean |
+| Returns `true` when there is a [synchronization](/refguide10/synchronize/) process running, otherwise it returns `false`.| Boolean |
 
 ### Example
 

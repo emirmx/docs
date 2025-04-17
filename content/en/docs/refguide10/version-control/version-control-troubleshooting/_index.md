@@ -1,11 +1,11 @@
 ---
 title: "Troubleshooting Version Control"
-url: /refguide/troubleshoot-version-control-issues/
+url: /refguide10/troubleshoot-version-control-issues/
 linktitle: "Troubleshoot Version Control"
 weight: 20
 description: "Presents a list of problems and fixes for version control issues."
 aliases:
-    - /howto/collaboration-requirements-management/troubleshoot-version-control-issues/
+    - /howto10/collaboration-requirements-management/troubleshoot-version-control-issues/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 #The anchor #cannot-create-package below is mapped from Studio Pro, so it should not be removed or changed.
 ---
@@ -16,8 +16,8 @@ Mendix Studio Pro contains a version control system that supports collaborating 
 
 For more information and general help on version control, see the following documents:
 
-* [Version Control](/refguide/version-control/)
-* [Using Version Control in Studio Pro](/refguide/using-version-control-in-studio-pro/)
+* [Version Control](/refguide10/version-control/)
+* [Using Version Control in Studio Pro](/refguide10/using-version-control-in-studio-pro/)
 
 ## Troubleshooting {#troubleshooting}
 
@@ -148,7 +148,7 @@ This will recreate the metadata and you should now be able to create a deploymen
 
 ### Installed Git Version Does Not Meet Studio Pro's Requirement
 
-Studio Pro requires a specific minimum version of Git (for more information, see [System Requirements](/refguide/system-requirements/)). If this version is not installed on your device, Studio Pro will show a message during a start-up indicating that certain features will not be available.
+Studio Pro requires a specific minimum version of Git (for more information, see [System Requirements](/refguide10/system-requirements/)). If this version is not installed on your device, Studio Pro will show a message during a start-up indicating that certain features will not be available.
 
 You can download and install a recent version of Git from [here](https://git-scm.com/downloads). 
 

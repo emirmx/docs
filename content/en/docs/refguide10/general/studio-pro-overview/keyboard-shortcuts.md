@@ -1,6 +1,6 @@
 ---
 title: "Keyboard Shortcuts"
-url: /refguide/keyboard-shortcuts/
+url: /refguide10/keyboard-shortcuts/
 weight: 12
 description: "Describes the shortcut keys available in Studio Pro."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
@@ -34,7 +34,7 @@ There are alternative ways to navigate between tabs within panes:
 | <kbd>Ctrl</kbd> + <kbd>1</kbd> - <kbd>0</kbd> | Not available | Switch to tab at selected tab position in the current window. |
 | <kbd>Ctrl</kbd> + <kbd>Page&nbsp;up</kbd> / <kbd>Page&nbsp;down</kbd> | Not available | Switch to next/previous tab in active pane. |
 
-Most menu items also have shortcut keys assigned to them that can be used in all panes. These are shown in the menus, listed in the [Menu Shortcut Keys](#menu-shortcuts) section, below, and are listed on the documentation page for each menu under [Menus](/refguide/menus/).
+Most menu items also have shortcut keys assigned to them that can be used in all panes. These are shown in the menus, listed in the [Menu Shortcut Keys](#menu-shortcuts) section, below, and are listed on the documentation page for each menu under [Menus](/refguide10/menus/).
 
 #### Editors Only {#editors-only}
 
@@ -177,7 +177,7 @@ The following shortcut keys are available in the workflow editor:
 |<kbd>Ctrl</kbd> + Mouse scroll wheel<br>(in Studio Pro 10.15.0 and above) | <kbd>Command</kbd> + Mouse scroll wheel<br>(in Studio Pro 10.15.0 and above) | Zoom in or out. |
 | <kbd>Ctrl</kbd> + <kbd>Plus&nbsp;sign</kbd>/<kbd>Minus&nbsp;sign</kbd> | <kbd>Command</kbd> + <kbd>Plus&nbsp;sign</kbd>/<kbd>Minus&nbsp;sign</kbd> | Zoom in or out.  |
 | <kbd>Ctrl</kbd> + <kbd>0</kbd> | <kbd>Command</kbd> + <kbd>0</kbd> | Reset zoom level to 100%. |
-| <kbd>Ctrl</kbd> + Left/Right arrow<br>(in Studio Pro 10.15.0 and above) | <kbd>Command</kbd> + Left/Right arrow<br>(in Studio Pro 10.15.0 and above) | Move a [boundary event](/refguide/workflow-boundary-events/) left or right. |
+| <kbd>Ctrl</kbd> + Left/Right arrow<br>(in Studio Pro 10.15.0 and above) | <kbd>Command</kbd> + Left/Right arrow<br>(in Studio Pro 10.15.0 and above) | Move a [boundary event](/refguide10/workflow-boundary-events/) left or right. |
 
 ## Debugger Shortcut Keys {#debugger-shortcuts}
 
@@ -193,7 +193,7 @@ The following shortcut keys are available for the debugger:
 
 ## Menu Shortcut Keys {#menu-shortcuts}
 
-The following shortcut keys are assigned to menu actions that can be used in all panes. These are also shown in the menus and listed on the documentation page for each menu under [Menus](/refguide/menus/).
+The following shortcut keys are assigned to menu actions that can be used in all panes. These are also shown in the menus and listed on the documentation page for each menu under [Menus](/refguide10/menus/).
 
 | Windows | Mac | Description |
 | --- | --- | --- |
@@ -230,7 +230,7 @@ The following shortcut keys are assigned to menu actions that can be used in all
 
 ## Maia Chat Shortcut Keys {#maia-chat-shortcuts}
 
-You can use the following shortcut keys in [Maia Chat](/refguide/maia-chat/), including on the feedback page:
+You can use the following shortcut keys in [Maia Chat](/refguide10/maia-chat/), including on the feedback page:
 
 | Windows | Mac | Description |
 | --- | --- | --- |
@@ -251,7 +251,7 @@ In Studio Pro 10.6, <kbd>Enter</kbd> can only be used to add a new line, not to 
 
 ## Read More
 
-* [App Explorer](/refguide/app-explorer/)
-* [Menus](/refguide/menus/)
-* [Best Practices for Development](/refguide/dev-best-practices/)
-* [Best Practices for App Performance](/refguide/community-best-practices-for-app-performance/)
+* [App Explorer](/refguide10/app-explorer/)
+* [Menus](/refguide10/menus/)
+* [Best Practices for Development](/refguide10/dev-best-practices/)
+* [Best Practices for App Performance](/refguide10/community-best-practices-for-app-performance/)

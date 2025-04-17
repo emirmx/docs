@@ -1,6 +1,6 @@
 ---
 title: "Runtime Deployment"
-url: /refguide/runtime-deployment/
+url: /refguide10/runtime-deployment/
 description: "Describes how the Mendix Runtime is deployed."
 weight: 30
 ---
@@ -67,4 +67,4 @@ It starts the Runtime Server by starting a Java RE and pointing it at the releva
 
 ### Runtime Server
 
-This is the interpreter which runs the app. For more information see [Runtime Server](/refguide/runtime-server/).
+This is the interpreter which runs the app. For more information see [Runtime Server](/refguide10/runtime-server/).

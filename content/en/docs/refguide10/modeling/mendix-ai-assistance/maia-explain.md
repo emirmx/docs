@@ -1,7 +1,7 @@
 ---
 title: "Maia Explain"
 linktitle: "Explain"
-url: /refguide/maia-explain/
+url: /refguide10/maia-explain/
 weight: 10
 description: "Describes the features in Maia Explain."
 ---
@@ -43,9 +43,9 @@ Maia Explain supports follow-up questions. You can modify the tone of the answer
 * *What are your suggestions to improve this microflow?"*
 
 {{% alert color="info" %}}
-In this dedicated chat, only requests related to Maia Explain will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide/maia-chat/) interface.
+In this dedicated chat, only requests related to Maia Explain will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide10/maia-chat/) interface.
 {{% /alert %}}
 
 ## Read More
 
-* [Maia Chat](/refguide/maia-chat/)
+* [Maia Chat](/refguide10/maia-chat/)

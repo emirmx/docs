@@ -1,6 +1,6 @@
 ---
 title: "View Menu"
-url: /refguide/view-menu/
+url: /refguide10/view-menu/
 description: "Describes the View Menu in Studio Pro."
 weight: 20
 ---
@@ -18,7 +18,7 @@ Via this menu you can also enable or disable the [full screen mode](#full-screen
 You can change the default layout of panes and arrange them in the layout you like.
 
 {{% alert color="info" %}}
-Note that this section describes the behavior of panes, not the behavior of documents in the working area. For more information on the behavior of documents open in the working area, see the [Document Tabs](/refguide/studio-pro-overview/#documents) section in *Studio Pro Overview*.
+Note that this section describes the behavior of panes, not the behavior of documents in the working area. For more information on the behavior of documents open in the working area, see the [Document Tabs](/refguide10/studio-pro-overview/#documents) section in *Studio Pro Overview*.
 {{% /alert %}}
 
 When you drag a pane, you can see arrows that indicate where you can position this pane. You can position the pane either inside the current pane (arrows grouped together) or make it full-window height or width (individual arrows on the borders). Each position is labelled and explained below:
@@ -50,15 +50,15 @@ Menu items of the **View** menu are described in sections below.
 
 ### App Explorer
 
-The [App Explorer](/refguide/app-explorer/) pane displays the complete structure of your app, including all the documents inside the modules. By default, the active document is always selected, so you can quickly see where the document you are editing is in the tree. You can change this behavior in **Edit** > [Preferences](/refguide/preferences-dialog/). 
+The [App Explorer](/refguide10/app-explorer/) pane displays the complete structure of your app, including all the documents inside the modules. By default, the active document is always selected, so you can quickly see where the document you are editing is in the tree. You can change this behavior in **Edit** > [Preferences](/refguide10/preferences-dialog/). 
 
 ### Best Practice Recommender {#best-practice-recommender}
 
-For details on this virtual AI assistant, see [Best Practice Recommender](/refguide/best-practice-recommender/).
+For details on this virtual AI assistant, see [Best Practice Recommender](/refguide10/best-practice-recommender/).
 
 ### Changes
 
-For version control-enabled apps (meaning, those with [Team Server](/developerportal/general/team-server/) or other Git servers), the [Changes pane](/refguide/changes-pane/) shows the local changes to the app since the last commit. You can commit changes, update to the latest revision, and view the history from here. 
+For version control-enabled apps (meaning, those with [Team Server](/developerportal/general/team-server/) or other Git servers), the [Changes pane](/refguide10/changes-pane/) shows the local changes to the app since the last commit. You can commit changes, update to the latest revision, and view the history from here. 
 
 This pane has two levels, so when you zoom into a changed document, you can review all the changes within that document without going back and forth between levels. The zoomed-in level of the pane is split into two grids, with elements on the left and properties on the right. Selecting an element on the left presents the changed properties on the right:
 
@@ -70,7 +70,7 @@ The **Connector** pane displays elements that can be connected to the currently 
 
 ### Console {#console}
 
-The **Console** pane displays the output of the [Mendix Runtime](/refguide/runtime/) while running an application.
+The **Console** pane displays the output of the [Mendix Runtime](/refguide10/runtime/) while running an application.
 
 ### Documentation
 
@@ -78,7 +78,7 @@ The **Documentation** pane displays the documentation for the currently selected
 
 ### Error List
 
-The [Errors pane](/refguide/errors-pane/) displays the [errors](/refguide/consistency-errors/), warnings, and deprecations that exist in your app.
+The [Errors pane](/refguide10/errors-pane/) displays the [errors](/refguide10/consistency-errors/), warnings, and deprecations that exist in your app.
 
 ### Find Results
 
@@ -88,15 +88,15 @@ There are two **Find Results** panes. If you lock the results of the first pane,
 
 ### Integration {#data-hub}
 
-The [Integration pane](/refguide/integration-pane/) enables you to browse the [Catalog](/catalog/) and use registered data sources that are available for your organization in your app development. You can add [external entities](/refguide/external-entities/) and [external actions](/refguide/call-external-action/) to your app via this pane and see entities and data sources already consumed in your app. 
+The [Integration pane](/refguide10/integration-pane/) enables you to browse the [Catalog](/catalog/) and use registered data sources that are available for your organization in your app development. You can add [external entities](/refguide10/external-entities/) and [external actions](/refguide10/call-external-action/) to your app via this pane and see entities and data sources already consumed in your app. 
 
 ### OpenAPI Documentation
 
-The **OpenAPI Documentation** pane displays the auto-generated OpenAPI documentation for the currently opened [Published OData service](/refguide/published-odata-services/). This allows you to preview the REST operations that will be available once your app is published.
+The **OpenAPI Documentation** pane displays the auto-generated OpenAPI documentation for the currently opened [Published OData service](/refguide10/published-odata-services/). This allows you to preview the REST operations that will be available once your app is published.
 
 ### Maia
 
-The **Maia** pane displays the Maia Chat interface where you can ask questions about app development in Mendix, including how to apply concepts, best practices, and development patterns. For more information, see [Maia Chat](/refguide/maia-chat/).
+The **Maia** pane displays the Maia Chat interface where you can ask questions about app development in Mendix, including how to apply concepts, best practices, and development patterns. For more information, see [Maia Chat](/refguide10/maia-chat/).
 
 ### Marketplace
 
@@ -104,7 +104,7 @@ For details on using Mendix Marketplace components in your app modeling, see [Ho
 
 ### Page Explorer
 
-[Page Explorer](/refguide/page-explorer/) gives a quick overview of the page layout and allows you to view and edit nested containers in the [Design mode](/refguide/page/#design-mode).
+[Page Explorer](/refguide10/page-explorer/) gives a quick overview of the page layout and allows you to view and edit nested containers in the [Design mode](/refguide10/page/#design-mode).
 
 ### Properties {#properties}
 
@@ -112,11 +112,11 @@ The **Properties** pane displays the properties of the currently selected elemen
 
 ### Stories
 
-For [Team Server](/developerportal/general/team-server/) app, the **Stories** pane shows the [stories](/developerportal/project-management/epics/planning/) of the current [Sprint](/developerportal/project-management/epics/planning/). For more information on the **Stories** pane and how to interact with it, see [Stories Pane](/refguide/stories-pane/). 
+For [Team Server](/developerportal/general/team-server/) app, the **Stories** pane shows the [stories](/developerportal/project-management/epics/planning/) of the current [Sprint](/developerportal/project-management/epics/planning/). For more information on the **Stories** pane and how to interact with it, see [Stories Pane](/refguide10/stories-pane/). 
 
 ### Toolbox {#toolbox}
 
-The **Toolbox** pane displays the tools that can be used in the current editor. For example, in a page you can insert all kinds of widgets (for example, [data containers](/refguide/data-widgets/)) by dragging them from the **Toolbox** onto your page.
+The **Toolbox** pane displays the tools that can be used in the current editor. For example, in a page you can insert all kinds of widgets (for example, [data containers](/refguide10/data-widgets/)) by dragging them from the **Toolbox** onto your page.
 
 The **Toolbox** has a tile view showing larger icons and a list view showing a list of elements. You can switch between the tile and list view modes at the lower-right corner of the **Toolbox**. 
 
@@ -126,7 +126,7 @@ This console helps you debug the configuration code of your widget that is respo
 
 ### Debug Windows
 
-For more information on debugging, see [Debugging Microflows and Nanoflows](/refguide/debug-microflows-and-nanoflows/).
+For more information on debugging, see [Debugging Microflows and Nanoflows](/refguide10/debug-microflows-and-nanoflows/).
 
 #### Breakpoints
 
@@ -158,7 +158,7 @@ Resets the layout of dockable window panes to factory defaults.
 
 ## Read More
 
-* [Changes Pane](/refguide/changes-pane/)
-* [Errors Pane](/refguide/errors-pane/)
-* [App Explorer](/refguide/app-explorer/)
-* [Studio Pro Overview](/refguide/studio-pro-overview/)
+* [Changes Pane](/refguide10/changes-pane/)
+* [Errors Pane](/refguide10/errors-pane/)
+* [App Explorer](/refguide10/app-explorer/)
+* [Studio Pro Overview](/refguide10/studio-pro-overview/)

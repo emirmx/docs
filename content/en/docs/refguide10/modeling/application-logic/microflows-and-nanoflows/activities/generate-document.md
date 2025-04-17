@@ -1,6 +1,6 @@
 ---
 title: "Generate Document"
-url: /refguide/generate-document/
+url: /refguide10/generate-document/
 weight: 80
 description: "Describes generating documents from a microflow. "
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
@@ -12,7 +12,7 @@ This activity can only be used in microflows.
 
 ## Introduction
 
-The **Generate document** activity is used to write a document to a file, based on a [document template](/refguide/document-templates/). 
+The **Generate document** activity is used to write a document to a file, based on a [document template](/refguide10/document-templates/). 
 
 For more information on which types of documents can be created, see [Document Type](#document-type).
 
@@ -46,7 +46,7 @@ The language in which the titles and labels of the document should appear is des
 | Option | Description |
 | --- | --- |
 | Current user *(default)*  | Use the language of the current user. |
-| Project default | Use the default language that is specified in the [App Settings](/refguide/app-settings/). |
+| Project default | Use the default language that is specified in the [App Settings](/refguide10/app-settings/). |
 | Variable | Use the language stored in the selected object, which must be of type *System.Language*. |
 
 ### Document Type{#document-type}
@@ -68,7 +68,7 @@ The document type specifies the type of the generated document.
 
 ### Template
 
-Template defines which [document template](/refguide/document-templates/) is used to generate the file. Depending on the selected document template one or more [arguments](#argument) need to be specified. 
+Template defines which [document template](/refguide10/document-templates/) is used to generate the file. Depending on the selected document template one or more [arguments](#argument) need to be specified. 
 
 ### Arguments
 
@@ -84,8 +84,8 @@ The type of the argument used in the document template that is read-only.
 
 #### Argument {#argument}
 
-The **Edit argument** button allows you to edit the argument value.  An argument is the input data that you are passing to the document template. For each document template parameter (for each non-nested data view and data grid), you must supply an argument of the same type. The values of the arguments are expressed using [expressions](/refguide/expressions/).
+The **Edit argument** button allows you to edit the argument value.  An argument is the input data that you are passing to the document template. For each document template parameter (for each non-nested data view and data grid), you must supply an argument of the same type. The values of the arguments are expressed using [expressions](/refguide10/expressions/).
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}

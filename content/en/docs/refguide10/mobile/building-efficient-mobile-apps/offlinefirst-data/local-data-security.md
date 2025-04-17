@@ -1,10 +1,10 @@
 ---
 title: "Offline Data Security"
-url: /refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/local-data-security/
+url: /refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/local-data-security/
 weight: 85
 description: "This documentation describes best practices to keep your offline data secure."
 aliases:
-    - /howto/mobile/encryption-database/
+    - /howto10/mobile/encryption-database/
 ---
 
 ## Introduction
@@ -27,13 +27,13 @@ It is a best practice to synchronize as little data as possible to the device an
 
 The Mendix Client only stores objects and attributes that the current user has read access to. Incomplete or misconfigured access rules on the domain model may cause too much data to be synchronized to the device databases.
 
-To learn more about configuring access rules, see [Access Rules](/refguide/access-rules/).
+To learn more about configuring access rules, see [Access Rules](/refguide10/access-rules/).
 
 ### Limiting Data with XPath Constraints
 
 In apps where you want to grant end-users working with objects access to the responsive profile, but you do not wish to grant them access to an offline-first navigation profile, it is possible to limit the amount of data by an XPath constraint using the **Configure Synchronization** screen.
 
-To learn more about customizing the synchronization behavior, see [Customizable Synchronization](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/synchronization/#customizable-synchronization).
+To learn more about customizing the synchronization behavior, see [Customizable Synchronization](/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/synchronization/#customizable-synchronization).
 
 ### Using Non-Persistable Entities
 
@@ -45,7 +45,7 @@ The app keeps the non-persistable objects only in the memory and removes them wh
 
 Suppose you have to store sensitive data on a device and cannot control the operating system your app is running on. In that case, you should enable database encryption for your app. This ensures that all data in the local database is encrypted before storing it on the device. Note that encryption will impact your app's performance. Full synchronization of all clients is required to enable it.
 
-To learn more, see [Encrypting Local Databases](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/local-data-security/#encrypting-local-databases)
+To learn more, see [Encrypting Local Databases](/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/local-data-security/#encrypting-local-databases)
 
 ### Encrypting User Files and Images {#encrypting-files-images}
 
@@ -79,7 +79,7 @@ Encrypting the existing database is not possible. Therefore, the Mendix Client n
 
 Enabling database encryption and deploying a new version of the Mendix app to the cloud does not affect the existing devices. This setting takes effect once users update their apps, either through OTA or an app update. After the app is updated on the device, it will sign out the current user and start with an empty database. This step may cause unsynchronized data to be lost. 
 
-Consider the [prerequisites above](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/local-data-security/#encryption-prerequisites) before enabling database encryption, especially for existing apps
+Consider the [prerequisites above](/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/local-data-security/#encryption-prerequisites) before enabling database encryption, especially for existing apps
 
 ### Disabling Database Encryption
 

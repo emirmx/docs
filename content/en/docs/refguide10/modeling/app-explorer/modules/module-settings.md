@@ -1,6 +1,6 @@
 ---
 title: "Module Settings"
-url: /refguide/module-settings/
+url: /refguide10/module-settings/
 weight: 10
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -23,7 +23,7 @@ To open module settings, double-click **Settings** in the required module.
 Java managed dependencies are available in Studio Pro 10.3.0 and above.
 {{% /alert %}}
 
-You can add managed dependencies for each module on the **Java Dependencies** tab. For more information, see [Managed Dependencies](/refguide/managed-dependencies/).
+You can add managed dependencies for each module on the **Java Dependencies** tab. For more information, see [Managed Dependencies](/refguide10/managed-dependencies/).
 
 {{< figure src="/attachments/refguide10/modeling/app-explorer/modules/module-settings/module-settings-java-dependencies.png" class="no-border" >}}
 
@@ -55,7 +55,7 @@ An app module is exported as a package file (*.mpk* ) that includes the full sou
 
 An add-on module is a standalone module that is not dependent on other modules. It is used as a separate element (for example, as a connector). 
 
-An add-on module is exported as a module file (*.mxmodule*) that only exposes the elements with the **Usable** export level. For more information on export levels, see [Configuring Add-on and Solution Modules for Publishing](/refguide/configure-add-on-and-solution-modules/). Its source cannot be inspected by the consumer of the module.
+An add-on module is exported as a module file (*.mxmodule*) that only exposes the elements with the **Usable** export level. For more information on export levels, see [Configuring Add-on and Solution Modules for Publishing](/refguide10/configure-add-on-and-solution-modules/). Its source cannot be inspected by the consumer of the module.
 
 If you are creating functionality that can be exported and used by other users separately and independently of the rest of the app, you can set your module to an add-on type.
 
@@ -79,7 +79,7 @@ Mendix recommends setting a new version every time changes are made to the modul
 
 ## Read More
 
-* [Modules](/refguide/modules/)
-* [Configure Add-on and Solution Modules for Publishing](/refguide/configure-add-on-and-solution-modules/)
+* [Modules](/refguide10/modules/)
+* [Configure Add-on and Solution Modules for Publishing](/refguide10/configure-add-on-and-solution-modules/)
 * [IP Protection](/appstore/creating-content/sol-ip-protection/)
 * [Create Solutions](/appstore/creating-content/sol-solutions-guide/)

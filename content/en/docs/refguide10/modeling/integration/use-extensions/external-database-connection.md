@@ -1,6 +1,6 @@
 ---
 title: "External Database Connection"
-url: /refguide/external-database-connection/
+url: /refguide10/external-database-connection/
 weight: 30
 description: "Overview of the [External Database Connection document](https://marketplace.mendix.com/link/component/219862) in Studio Pro, downloaded from the Mendix Marketplace."
 ---
@@ -9,7 +9,7 @@ description: "Overview of the [External Database Connection document](https://ma
 
 The [External Database Connector](/appstore/modules/external-database-connector/) integrates with Studio Pro with an **External database connection** service document. Use this document to connect to external databases in Studio Pro.
 
-This page references the External Database Connection document in Studio Pro. For information on how to configure the connector, see [External Database Connector](/appstore/modules/external-database-connector/). For information on how to create and validate SQL queries, see [Use the External Database Connector](/refguide/use-the-external-database-connector/).
+This page references the External Database Connection document in Studio Pro. For information on how to configure the connector, see [External Database Connector](/appstore/modules/external-database-connector/). For information on how to create and validate SQL queries, see [Use the External Database Connector](/refguide10/use-the-external-database-connector/).
 
 {{% alert color="info" %}}
 You must have the [External Database Connector](https://marketplace.mendix.com/link/component/219862) installed for external database connections to work properly while running your app. For instructions on adding modules or connectors to your app, see [Use Marketplace Content in Studio Pro](/appstore/use-content/).
@@ -18,7 +18,7 @@ You must have the [External Database Connector](https://marketplace.mendix.com/l
 {{% alert color="info" %}}
 For Studio Pro 10.18, the External Database Connector uses a different approach to connect to databases during design time. This functionality enhances consistency between design time and runtime environments. To enable this beta feature, use the flag: `--enable-live-preview`
 
-For information on how to connect using the External Database Connection document with a feature flag, see [External Database Connection](/refguide/use-the-external-database-connector/#enable-live-preview).
+For information on how to connect using the External Database Connection document with a feature flag, see [External Database Connection](/refguide10/use-the-external-database-connector/#enable-live-preview).
 
 This feature flag is only for Studio Pro 10.18. The feature is GA for Studio Pro 10.19 and above.
 {{% /alert %}}
@@ -104,4 +104,4 @@ The **Response Structure** tab displays a preview of an entity that can be creat
 
 ## Read More
 
-To learn about how to use the data in a microflow, see the [Query External Database](/refguide/query-external-database/) activity. 
+To learn about how to use the data in a microflow, see the [Query External Database](/refguide10/query-external-database/) activity. 

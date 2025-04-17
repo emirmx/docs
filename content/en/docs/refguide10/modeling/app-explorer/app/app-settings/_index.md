@@ -1,10 +1,10 @@
 ---
 title: "App Settings"
-url: /refguide/app-settings/
+url: /refguide10/app-settings/
 weight: 10
 description: "Settings which apply to the app as a whole."
 aliases:
-    - /refguide/project-settings/
+    - /refguide10/project-settings/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -20,7 +20,7 @@ The categories described below are available.
 
 A configuration is a group of settings. You can define any number of configurations. The active configuration (meaning, the one that will be used when running your application) is determined by the drop-down menu in the toolbar of Studio Pro.
 
-For more information on settings in a configuration, see [Configuration](/refguide/configuration/).
+For more information on settings in a configuration, see [Configuration](/refguide10/configuration/).
 
 ## Runtime Tab
 
@@ -78,7 +78,7 @@ For Studio Pro versions 10.6.7 and 10.8.0 and above, you can choose Java 17.
 
 {{% /alert %}}
 
-For local development the Java version configured here needs to have a corresponding JDK configured in the [Studio Pro preferences](/refguide/preferences-dialog/#jdk).
+For local development the Java version configured here needs to have a corresponding JDK configured in the [Studio Pro preferences](/refguide10/preferences-dialog/#jdk).
 
 Applications deployed to the cloud will use this setting to select which Java version to use.
 
@@ -102,7 +102,7 @@ Here you can select a microflow which performs the checks on a running app that 
 
 The result of each check is returned as a string, which is displayed in the [Mendix Portal](/developerportal/deploy/environments/). When the microflow returns an empty string, the application is healthy; otherwise, the string presents an explanation of why the application is not healthy.
 
-This microflow gets called every 10 seconds to check if the app is still healthy. This is done by executing it using m2ee on the admin port of your app. For more information, see the section [Health Check](/refguide/monitoring-mendix-runtime/#check-health) in *Monitoring Mendix Runtime*.
+This microflow gets called every 10 seconds to check if the app is still healthy. This is done by executing it using m2ee on the admin port of your app. For more information, see the section [Health Check](/refguide10/monitoring-mendix-runtime/#check-health) in *Monitoring Mendix Runtime*.
 
 {{% alert color="info" %}}
 
@@ -206,9 +206,9 @@ This table presents the results of rounding the input to one digit with the give
 
 ### OQL version 2 {#oql-version-2}
 
-If this option is set to **Yes**, your app will use version 2 of the OQL syntax. This setting must be enabled to use [view entities](/refguide/view-entities/). Make sure your app is ready to use the new syntax before making the switch. 
+If this option is set to **Yes**, your app will use version 2 of the OQL syntax. This setting must be enabled to use [view entities](/refguide10/view-entities/). Make sure your app is ready to use the new syntax before making the switch. 
 
-For more information about the differences, see [OQL Version 2 Features](/refguide/oql-v2/).
+For more information about the differences, see [OQL Version 2 Features](/refguide10/oql-v2/).
 
 Default: *No*
 
@@ -230,7 +230,7 @@ Default: *Yes*
 
 ### Foreign Key Constraints {#database-fkc}
 
-If this option is enabled, database [foreign key constraints](/refguide/data-storage/#fkc) will be used. An attempt to commit a dangling reference will throw a runtime exception.
+If this option is enabled, database [foreign key constraints](/refguide10/data-storage/#fkc) will be used. An attempt to commit a dangling reference will throw a runtime exception.
 
 {{% alert color="info" %}}
 This option was added in Mendix version 10.10.
@@ -253,7 +253,7 @@ Default: **SunX509 (for backwards compatibility)**
 
 ## Languages Tab {#languages-tab}
 
-For more information about using different languages in your app, see [Language Menu](/refguide/translatable-texts/).
+For more information about using different languages in your app, see [Language Menu](/refguide10/translatable-texts/).
 
 ### Default Language
 
@@ -274,7 +274,7 @@ Certificates are used to connect to web services over HTTPS when the following r
 
 These certificates can be imported into Studio Pro using the **Import** button. Certificate authority files usually have a *.crt* extension, and client certificates usually have a *.p12* or *.pfx* extension. After importing, use **View details** to acquire more information concerning the certificate.
 
-Client certificates added here will be used whenever a server accepts a client certificate. If you upload more than one client certificate, one of them will be chosen based on the requirements of the server. If you need more control over client certificates, you should not upload the certificates here, but use the [Runtime customization](/refguide/custom-settings/) *ClientCertificates*, *ClientCertificatePasswords*, and *ClientCertificateUsages* settings.
+Client certificates added here will be used whenever a server accepts a client certificate. If you upload more than one client certificate, one of them will be chosen based on the requirements of the server. If you need more control over client certificates, you should not upload the certificates here, but use the [Runtime customization](/refguide10/custom-settings/) *ClientCertificates*, *ClientCertificatePasswords*, and *ClientCertificateUsages* settings.
 
 {{% alert color="warning" %}}
 
@@ -311,12 +311,12 @@ For background information, see [Transport Layer Security (TLS) Renegotiation Is
 
 ### UI Resources Package
 
-The look and feel of a Mendix application is governed by the [UI resources package](/refguide/ui-resources-package/). This package supplies the app with all the required theme information accompanied by matching page templates and building blocks. The module which is designated as the UI resources package is governed by the **UI resources package** setting. Generally, this is automatically updated when a new UI resources package is imported. However, with this setting, the desired module can also be set manually.
+The look and feel of a Mendix application is governed by the [UI resources package](/refguide10/ui-resources-package/). This package supplies the app with all the required theme information accompanied by matching page templates and building blocks. The module which is designated as the UI resources package is governed by the **UI resources package** setting. Generally, this is automatically updated when a new UI resources package is imported. However, with this setting, the desired module can also be set manually.
 
 ### ⚠ Theme ZIP File
 
 {{% alert color="warning" %}}
-The use of a ZIP file to configure an app's theme is deprecated. A [UI resources package](/refguide/ui-resources-package/) is the preferred method of sharing themes.
+The use of a ZIP file to configure an app's theme is deprecated. A [UI resources package](/refguide10/ui-resources-package/) is the preferred method of sharing themes.
 {{% /alert %}}
 
 Older apps may still use a theme ZIP file as the basis for their theme. In this situation, the **Theme ZIP file** setting can be used to switch between any ZIP files found in the **theme** folder. 
@@ -351,7 +351,7 @@ You can set an explicit order in the theme settings (**App Settings** > **Theme*
 
 ### User Entity
 
-**User entity** defines the entity which is used in [target-users-using](/refguide/user-task/#target-users). If you assign a user task using an XPath, you can use attributes of this entity. If you are using a microflow, the entity defines the return type the microflows expects. For more information, see the [Targeted Users Section](/refguide/user-task/#users) section in *User Task*.
+**User entity** defines the entity which is used in [target-users-using](/refguide10/user-task/#target-users). If you assign a user task using an XPath, you can use attributes of this entity. If you are using a microflow, the entity defines the return type the microflows expects. For more information, see the [Targeted Users Section](/refguide10/user-task/#users) section in *User Task*.
 
 ### Optimization
 
@@ -379,18 +379,18 @@ Defines the maximum number of workflow-initiated microflows that the Runtime exe
 
 ### Event Handlers {#event-handlers}
 
-An event handler allows you to specify a microflow which is triggered when the subscribed event (or events) occur. Each event handler can subscribe to multiple events and there can be multiple event handlers. An event is triggered when the workflow or its activity goes through transitions which warrant the event. This setting is app-wide; you can override it by setting workflow-specific event handlers in [workflow properties](/refguide/workflow-properties/#event-handlers).
+An event handler allows you to specify a microflow which is triggered when the subscribed event (or events) occur. Each event handler can subscribe to multiple events and there can be multiple event handlers. An event is triggered when the workflow or its activity goes through transitions which warrant the event. This setting is app-wide; you can override it by setting workflow-specific event handlers in [workflow properties](/refguide10/workflow-properties/#event-handlers).
 
 An event handler has the following configuration:
 
 * **Name** – describes the event handler
 * **Documentation** – provides more information regarding the usage of the event handler
-* **When** – allows you to select the [workflow event types](/refguide/workflow-events/#workflow-event-types), for which the handler should be triggered
+* **When** – allows you to select the [workflow event types](/refguide10/workflow-events/#workflow-event-types), for which the handler should be triggered
 * **Microflow** – allows you to select a microflow that should be triggered for each of the above selected workflow event types
 
 You can use the data from the event handler microflow to build audit trails or for logging purposes. For example, you can define an event handler that only collects data from user task events.
 
-For more information on workflow events, see [Workflow Events](/refguide/workflow-events/).
+For more information on workflow events, see [Workflow Events](/refguide10/workflow-events/).
 
 ### ⚠ Events (Deprecated) {#events} 
 
@@ -404,11 +404,11 @@ Security settings of workflows and user tasks allow you to access workflow or us
 
 #### Workflow State Change {#workflow-state-change}
 
-A microflow selected for this setting will start every time a workflow changes its state, for example, when the workflow is completed or has failed. This setting is app-wide; you can override it by setting a workflow-specific microflow in [workflow properties](/refguide/workflow-properties/#events).
+A microflow selected for this setting will start every time a workflow changes its state, for example, when the workflow is completed or has failed. This setting is app-wide; you can override it by setting a workflow-specific microflow in [workflow properties](/refguide10/workflow-properties/#events).
 
 #### User Task State Change {#user-task-state-change}
 
-A microflow selected for this setting will start every time a user task changes its state, for example, when a user task is completed or paused. This setting is app-wide; you can override it by setting a workflow-specific microflow in [workflow properties](/refguide/workflow-properties/#events).
+A microflow selected for this setting will start every time a user task changes its state, for example, when a user task is completed or paused. This setting is app-wide; you can override it by setting a workflow-specific microflow in [workflow properties](/refguide10/workflow-properties/#events).
 
 ## Dependencies Tab {#deployment}
 
@@ -469,7 +469,7 @@ This option allows you to change the default for new associations. The initial d
 * **New projects** – one-to-many and one-to-one associations are implemented as direct associations
 * **Upgraded projects** – for projects which are upgraded from an older version of Mendix, all new associations continue to be implemented as association tables
 
-For more information, including which types of association this applies to, see [Association Storage Options](/refguide/association-storage/).
+For more information, including which types of association this applies to, see [Association Storage Options](/refguide10/association-storage/).
 
 ### Suggest Lower-Case Variable Names in Microflows
 
