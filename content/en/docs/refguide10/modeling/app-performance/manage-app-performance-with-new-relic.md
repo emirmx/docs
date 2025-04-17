@@ -98,6 +98,6 @@ For more information on New Relic, see the [New Relic documentation](https://doc
 
 * [Find the Root Cause of Runtime Errors](/howto10/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
 * [Clear Warning Messages in Mendix](/howto10/monitoring-troubleshooting/clear-warning-messages/)
-* [Monitor Mendix Using JMX](/howto10/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
+* [Monitor Mendix Using JMX](/developerportal/deploy/monitoring-mendix-using-jmx/)
 * [Debug Java Actions Remotely](/howto10/monitoring-troubleshooting/debug-java-actions-remotely/)
 * [Telemetry Configuration](https://github.com/mendix/cf-mendix-buildpack#telemetry-configuration) in the *cf-mendix-buildpack* repo on GitHub

@@ -130,7 +130,7 @@ In this example scenario, you need to do the following:
 * [Find the Root Cause of Runtime Errors](/howto10/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
 * [Clear Warning Messages in Mendix](/howto10/monitoring-troubleshooting/clear-warning-messages/)
 * [Test Web Services Using SoapUI](/howto10/testing/testing-web-services-using-soapui/)
-* [Monitor Mendix Using JMX](/howto10/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
+* [Monitor Mendix Using JMX](/developerportal/deploy/monitoring-mendix-using-jmx/)
 
 Learn more about this topic using the following helpful link:
 

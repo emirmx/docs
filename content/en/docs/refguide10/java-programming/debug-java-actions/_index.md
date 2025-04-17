@@ -71,7 +71,7 @@ There is the following limitation:
 * [Find the Root Cause of Runtime Errors](/howto10/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
 * [Clear Warning Messages in Mendix](/howto10/monitoring-troubleshooting/clear-warning-messages/)
 * [Test Web Services Using SoapUI](/howto10/testing/testing-web-services-using-soapui/)
-* [Monitor Mendix Using JMX](/howto10/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
+* [Monitor Mendix Using JMX](/developerportal/deploy/monitoring-mendix-using-jmx/)
 * [Debug Java Actions Remotely](/howto10/monitoring-troubleshooting/debug-java-actions-remotely/)
 * [Log Levels](/howto10/monitoring-troubleshooting/log-levels/)
 * [Debugging Microflows and Nanoflows](/refguide10/debug-microflows-and-nanoflows/)

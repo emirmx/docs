@@ -169,7 +169,7 @@ Variable ‘Variable’ is never used.
 
 * [Find the Root Cause of Runtime Errors](/howto10/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
 * [Test Web Services Using SoapUI](/howto10/testing/testing-web-services-using-soapui/)
-* [Monitor Mendix Using JMX](/howto10/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
+* [Monitor Mendix Using JMX](/developerportal/deploy/monitoring-mendix-using-jmx/)
 * [Debug Java Actions Remotely](/howto10/monitoring-troubleshooting/debug-java-actions-remotely/)
 * [Configure Log Levels](/howto10/monitoring-troubleshooting/log-levels/)
 * [Debugging Microflows and Nanoflows](/refguide10/debug-microflows-and-nanoflows/)

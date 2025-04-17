@@ -220,7 +220,7 @@ Congratulations! You have created your first automated test with SoapUI.
 * [Finding the Root Cause of Runtime Errors](/howto10/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
 * [Clearing Warning Messages in Mendix](/howto10/monitoring-troubleshooting/clear-warning-messages/)
 * [Testing web services using SoapUI](/howto10/testing/testing-web-services-using-soapui/)
-* [Monitoring Mendix using JMX](/howto10/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
+* [Monitoring Mendix using JMX](/developerportal/deploy/monitoring-mendix-using-jmx/)
 * [Debugging Java actions remotely](/howto10/monitoring-troubleshooting/debug-java-actions-remotely/)
 * [Log Levels](/howto10/monitoring-troubleshooting/log-levels/)
 * [Debugging Java Actions](/howto10/monitoring-troubleshooting/debug-java-actions/)

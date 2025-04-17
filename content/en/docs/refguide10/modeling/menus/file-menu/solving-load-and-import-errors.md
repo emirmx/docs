@@ -65,4 +65,4 @@ The most likely cause for these kinds of errors is a faulty script that was run 
 * [Debugging Microflows Remotely](/refguide10/debug-microflows-remotely/)
 * [Finding the Root Cause of Runtime Errors](/howto10/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
 * [Log Levels](/howto10/monitoring-troubleshooting/log-levels/)
-* [Monitoring Mendix using JMX](/howto10/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
+* [Monitoring Mendix using JMX](/developerportal/deploy/monitoring-mendix-using-jmx/)

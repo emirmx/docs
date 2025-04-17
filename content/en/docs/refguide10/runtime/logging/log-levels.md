@@ -120,6 +120,6 @@ To set the level of custom log messages that you have created via a microflow, f
 
 * [Find the Root Cause of Runtime Errors](/howto10/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
 * [Clear Warning Messages in Mendix](/howto10/monitoring-troubleshooting/clear-warning-messages/)
-* [Monitor Mendix Using JMX](/howto10/monitoring-troubleshooting/monitoring-mendix-using-jmx/)
+* [Monitor Mendix Using JMX](/developerportal/deploy/monitoring-mendix-using-jmx/)
 * [Debugging Microflows and Nanoflows](/refguide10/debug-microflows-and-nanoflows/)
 * [Debug Java Actions](/howto10/monitoring-troubleshooting/debug-java-actions/)
