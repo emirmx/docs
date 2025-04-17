@@ -99,6 +99,8 @@ Examples of the second case are OData contracts, sending mails to your organizat
 
 #### Multiple External Domains
 
+{{% todo %}} Please evaluate this section for MX 11 {{% /todo %}}
+
 Mendix systems like OData that generate content based on a http request to the server, will use the headers passed (for example, by a proxy) to generate content. These headers are `X-Forwarded-Proto`, `X-Forwarded-Scheme`, `X-Forwarded-Host`, `X-Forwarded-Port`, `X-Forwarded-Prefix` and `Host`. For Mendix 10 and above, `ApplicationRootUrl` will take precedence over these headers. If you host a single application on two or more domains, you will have to choose one of the domains to represent the public-facing URL.
 
 ## Log File Settings

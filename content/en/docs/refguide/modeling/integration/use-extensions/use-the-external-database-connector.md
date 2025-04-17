@@ -30,25 +30,19 @@ For information on how to configure the connector, see [External Database Connec
 
 ## Prerequisites
 
-* Make sure to use the latest version 3.0.0 [External Database Connector](https://marketplace.mendix.com/link/component/219862).
+Download the [External Database Connector](https://marketplace.mendix.com/link/component/219862) into your app. Make sure you have the following details for your external connection:  
 
-* Download the [External Database Connector](https://marketplace.mendix.com/link/component/219862) into your app. Make sure you have the following details for your external connection:  
+* Username
+* Password
+* Host
+* Port
+* Database name
 
-    * Username
-    * Password
-    * Host
-    * Port
-    * Database name
+If additional connection properties are required to connect, you can alternatively use **JDBC Connection String**.
 
-    {{% alert color="info" %}}If additional connection properties are required to connect, you can alternatively use **JDBC Connection String**.{{% /alert %}}
+If certificate-based authentication is required for PostgreSQL connections, ensure that all necessary certificates are added before running the app.
 
-### Prerequisites (available via the feature flag: `--enable-live-preview`) {#enable-live-preview}
-
-{{% todo %}} Check if this is still behind feature flag in Studio Pro 11. Also, why is there a Prerequisites section within a Prerequisites section? {{% /todo %}}
-
-* Download the latest [External Database Connector](https://marketplace.mendix.com/link/component/219862).
-* If certificate-based authentication is required for PostgreSQL connections, ensure that all necessary certificates are added before running the app.
-* To test the connection and execute queries during design time, ensure to run your app locally.
+To test the connection and execute queries during design time, ensure to run your app locally.
 
 ## Connect to the External Database
 
