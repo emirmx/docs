@@ -49,7 +49,7 @@ You can pass the following options to `createNewApp`:
 
 If both `templateDownloadURL` and `templateId` are left blank, the app will be created using the standard blank app template in the latest Mendix version.
 
-Here is an example for creating a Mendix app based on the [Blank GenAI App](https://marketplace.mendix.com/link/component/227934) template:
+Here is an example for creating a Mendix app based on version 2.1.0 of the [Blank GenAI App](https://marketplace.mendix.com/link/component/227934) template:
 
 ```ts
 const app = await client.createNewApp("My GenAI App", {
