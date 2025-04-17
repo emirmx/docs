@@ -86,7 +86,7 @@ On a DataGrid column, a dynamic class is only applied to the `<col>` element, no
 {{% /alert %}}
 
 {{% alert color="info" %}}
-In Studio Pro 10.15 and above, dynamic classes do not require a data container.
+Dynamic classes do not require a data container.
 {{% /alert %}}
 
 ### Documentation{#documentation}
@@ -414,9 +414,9 @@ The visibility of the billing address depends whether the customer checks that t
 
 When selected, this shows the widget while a provided [expression](/refguide/expressions/) evaluates to true. The expression may use the variables listed in the expression editor, including:
 
-- `$currentObject`, representing the object of the closest enclosing data container.
-- The objects of any enclosing data container, available under the name of the widget that exposes them (for example `$dataView1`).
-- [Parameters](/refguide/page-properties/#parameters) and [variables](/refguide/page-properties/#variables) defined on the page or snippet.
+* `$currentObject`, representing the object of the closest enclosing data container.
+* The objects of any enclosing data container, available under the name of the widget that exposes them (for example `$dataView1`).
+* [Parameters](/refguide/page-properties/#parameters) and [variables](/refguide/page-properties/#variables) defined on the page or snippet.
 
 For example, you might want a button to only be visible if a condition is met. Assume the object has an attribute called `myAttribute`, and you want the button to be visible only if `myAttribute` actually has a value stored. To achieve this goal put this expression into the field: `$currentObject/myAttribute != empty`.
 
@@ -425,7 +425,7 @@ For example, you might want a button to only be visible if a condition is met. A
 Note that the expression is evaluated in the browser, and hence, we advise against using "secret" values (like access keys) in it. In particular, we disallow usages of [constants](/refguide/constants/). Also, client-side expressions currently do not support all the functions that are available in the microflows. Please refer to an autocomplete list to know what functions are supported in your version.
 
 {{% alert color="info" %}}
-In Studio Pro 10.15 and above, dynamic classes do not require a data container.
+Dynamic classes do not require a data container.
 {{% /alert %}}
 
 #### Module Roles

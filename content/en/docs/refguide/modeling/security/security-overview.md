@@ -6,7 +6,7 @@ beta: true
 ---
 
 {{% alert color="info" %}}
-This feature was introduced in Mendix 10.18 and is currently in beta. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+This feature is currently in beta. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).
 {{% /alert %}}
 
 ## Introduction
@@ -25,8 +25,6 @@ The **Security Overview** summarizes the app's security for a selected user role
 2. In the **Show access for user role** list, select the user role for which you want to view the security summary.  (The anonymous and administrator user roles are marked with  `(Anonymous)` and `(Administrator)` respectively).
 3. Optionally, select a module in the sidebar of the overview.
     Selecting a module filters the content in the **Entity access**, **Page access**, **Microflow access**, and **Nanoflow access** tabs. The list of modules does not show the System module or any protected modules.
-
-
 
 ## Security Overview Contents
 

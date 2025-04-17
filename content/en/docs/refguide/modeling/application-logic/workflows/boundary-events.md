@@ -5,9 +5,7 @@ weight: 20
 ---
 
 {{% alert color="info" %}}
-Non-interrupting timer boundary events were introduced in beta in Studio Pro 10.15 and released in GA in Studio Pro 10.16.
-
-Interrupting timer boundary events were introduced in Studio Pro 10.20 and are currently in beta. Certain features or attributes are subject to change and may contain bugs. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+Interrupting timer boundary events are currently in beta. Certain features or attributes are subject to change and may contain bugs. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).
 {{% /alert %}}
 
 ## Introduction
@@ -128,10 +126,6 @@ When there are multiple boundary events attached to an activity and an interrupt
 {{% /alert %}}
 
 ## Boundary Event Variables
-
-{{% alert color="info" %}}
-Boundary event variables are available starting from Studio Pro version 10.16.
-{{% /alert %}}
 
 Boundary events have dedicated variables that can be used to get direct access to the values of the parent activity if it is either a user task or Call workflow activity. You can get information such as the parent activity's `DueDate`, which can be used in the boundary event flow and its expressions. For instance, you can use the expression `addDays($ParentTask/DueDate, -2)` to configure a timer boundary event so that it is triggered two days before the due date of its parent user task.
 

@@ -18,23 +18,27 @@ To access the **Merge** dialog box, open [Version Control](/refguide/version-con
 
 Available scenarios are described in sections below.
 
-## Port Fix
+## Cherry Pick
 
 This scenario allows you to move a fix from a maintenance branch line to the main line. If you just want to redo a small fix, a single commit is often enough.
 
-Port fix transports the actual commit from one branch and directly applies it, including author and commit text to another branch. This means you do not need to explicitly commit your change.
+Port fix adds changes from the selected commit to your branch line. You will need to explicitly commit these changes after performing the port fix.
 
 ### Branch Line
 
 Choose the branch line from which you want to merge the fix.
 
+{{< figure src="/attachments/refguide/modeling/menus/version-control-menu/merge-dialog/cherry-pick-details.png" alt="Cherry Pick Details" class="no-border" >}}
+
 ### Revision
 
-Choose a revision that you would like to port fix.
+Choose a revision that you would like to cherry pick.
 
 ## Merge Feature Branch
 
 This merge scenario allows you to merge a complete feature branch line to the main line.
+
+{{< figure src="/attachments/refguide/modeling/menus/version-control-menu/merge-dialog/merge-details.png" alt="Merge Details" class="no-border" >}}
 
 To merge the whole branch back to the main line to integrate a new feature there, do the following:
 

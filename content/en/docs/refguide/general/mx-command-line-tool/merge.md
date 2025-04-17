@@ -157,6 +157,8 @@ At the end of the file, add a `[merge "custom"]` block like this:
     driver = [MX.EXE_PATH] merge %O %A %B
 ```
 
+{{% todo %}}Should we put a Mx 11 example here?{{% /todo %}}
+
 Replace `[MX.EXE_PATH]` with a full path to your *mx.exe* file in the Unix format (for example, `'/C/Program Files/Mendix/10.0.0.8753/modeler/mx.exe'`).
 
 {{% alert color="info" %}}
