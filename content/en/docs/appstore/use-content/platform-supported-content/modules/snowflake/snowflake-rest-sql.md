@@ -149,7 +149,13 @@ When executing SQL statements from Mendix into Snowflake, **binding variables** 
 
 ### What Is Variable Binding?
 
-Instead of directly inserting values into an SQL statement, you use **placeholders (`?`)** and **bind the values separately**. This process is known as *binding*. It separates the SQL logic from the data, much like using parameters in a Mendix microflow.
+Instead of putting values directly into your SQL, you can use **`?` placeholders** and provide the values separately. This is called *binding*. It works a lot like using parameters in a Mendix microflow—it keeps your logic and data separate.
+
+In Mendix, you do this by creating a `Statement` entity with a SQL query that includes `?`. Then, you add `Binding` entities to provide the values for those placeholders.
+
+Each `Binding` is linked to the `Statement`. The **order** of the bindings matters—the **first** binding fills the **first `?`**, the **second** fills the **second `?`**, and so on.
+
+Make sure the number of bindings matches the number of ? in your SQL. Otherwise, the execution will fail due to mismatched parameters.
 
 ### Why Use Binding?
 
