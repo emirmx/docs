@@ -85,7 +85,7 @@ And one output object:
 
 Since this structure is already standardized, no modifications are needed for the `Request` entity. Instead, when implementing a new connector, map the request data from the existing `Request` object to the format required by the specific provider—in this case, the Echo Connector.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-byo/GenAICommons_DomainModel.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-byo/GenAICommons_TextFiles_DomainModel.png" >}}
 
 Just as the `Request` entity structures input for the LLM, the Response entity defines how the model's output must be formatted for proper display in the chat interface. When an LLM returns a result, it must be converted into the `Response` entity’s format to ensure compatibility with GenAICommons and ConversationalUI.
 
@@ -106,7 +106,7 @@ The `DeployedModel` represents a GenAI model that the Mendix application can inv
 
 To accommodate this, you will need to create a new entity within your connector that inherits from `GenAICommons.DeployedModel`. This allows you to extend it with any provider-specific attributes required for your integration.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-byo/DeployedModel_Entity.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-byo/GenAICommons_DeployedModel_DM.png" >}}
 
 For the Echo Connector, a specialization of `DeployedModel` is created to include any additional attributes required for proper functionality.
 
