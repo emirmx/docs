@@ -1,56 +1,72 @@
 ---
-title: "Page Generator"
-url: /refguide/page-generator/
+title: "Maia for Pages"
+url: /refguide/maia-for-pages/
 weight: 60
-description: "Describes the features in Page Generator."
+description: "Describes the features in Maia for Pages."
+aliases:
+    - /refguide/page-generator/
+#If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
 {{% alert color="info" %}}
-Page Generator is currently an experimental feature introduced in Studio Pro 10.21.0. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+Maia for Pages is currently an experimental feature introduced in Studio Pro 10.21.0. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/). In Studio Pro 10.21, it was called Page Generator.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-To use Page Generator, an internet connection and signing in to Studio Pro are required.
+To use Maia for Pages, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-Maia Page Generator is an AI-powered tool that you can use for generating a [page](/refguide/page/). It helps you add and configure widgets based on a text input and an optional image. As an experimental feature, Page Generator has certain limitations. For example, it is currently intended only for use with empty pages, and any existing widgets on a page will be removed. For more details, see the [Limitations](#limitation) section below.
+Maia for Pages is an AI-powered tool that you can use for generating a [page](/refguide/page/) as well as explaining and providing further improvements. It helps you add and configure widgets based on text input and optional image input. After a page is generated, you can continue in the same session to ask Maia for further improvements and explanations. As an experimental feature, Maia for Pages has certain limitations. For example, Maia for Pages is currently intended only for use with empty pages. Using it on an existing page results in the removal of all existing widgets on that page. For more details, see the [Limitations](#limitation) section below.
 
-## Using Page Generator
+## Using Maia for Pages
 
-To enable Page Generator, go to **Edit** > **Preferences** > the **New Features** tab > the **Maia** section.
+To enable Maia for Pages, go to **Edit** > **Preferences** > the **New Features** tab > the **Maia** section.
 
 Once enabled, you can find it in the the toolbar of a page:
 
-{{< figure src="/attachments/refguide10/modeling/mendix-ai-assistance/page-generator/page-generator.png" max-width=80% >}}
+{{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/maia-for-pages/maia-for-pages.png" max-width=80% >}}
 
 {{% alert color="info" %}}
-Page Generator is available in both the **Structure mode** and **Design mode**.
+Maia for Pages is available in both the **Structure mode** and **Design mode**.
 {{% /alert %}}
 
-After clicking **Generate page**, a dedicated chat interface appears at the right side of Studio Pro under the **Maia** tab:
+After clicking **Maia for Pages**, a dedicated chat interface appears at the right side of Studio Pro under the **Maia** tab:
 
-{{< figure src="/attachments/refguide10/modeling/mendix-ai-assistance/page-generator/chat-interface.png" max-width=42% >}}
+{{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/maia-for-pages/chat-interface.png" max-width=42% >}}
 
 Describe your page or its main goals in the chat. Maia uses this information to add relevant widgets to the page and configure them for you. When generating a page, Maia knows about the domain model of the module you are currently working on. For example, it might include a [Data View](/refguide/data-view/) with some [Text Box](/refguide/text-box/) widgets for an attribute of an entity.
 
 You can also supplement text input with an image. Maia uses the image to interpret your request better. For example, it can recognize the layout of a page from the image and replicate it. The image can be a screenshot, photo, wireframe, or drawing. With text input, you can also specify differences between the provided image and how you would like the generated page to appear. For example, you might write: *Generate a page based on this image, but change the header to Welcome.*
 
+After a page is generated, you can continue asking Maia in the same session to further improve the page and provide explanations.
+
 {{% alert color="info" %}}
-In this dedicated chat, only requests related to Page Generation will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide/maia-chat/) interface.
+In this dedicated chat, only requests related to Pages will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide/maia-chat/) interface.
 {{% /alert %}}
 
 ### Best Practices for Text Input
 
 To achieve optimal results, provide context about your page by describing its main use cases, customer needs, or other relevant details. The more Maia knows about your page, the more tailored and accurate the generated page will be.
 
-Below are some examples you can use as a starting point:
+Below are some examples of prompts you can use as a starting point:
 
 * The page will be used to ...
 * I need a page to be able to edit my entity ...
 * Create a page like the image.
 * Base the page on the image, but change ... to ...
+
+Below are some examples of prompts you can use to ask Maia for further explanations or suggestions to improve the generated page:
+
+* Can you add a button called `BUTTON_NAME` to the page?
+* I want an area on the page where users can ...
+* How can I make this page more user-friendly or visually appealing?
+* Could you suggest ways to optimize the performance of this page?
+
+{{% alert color="warning" %}}
+Requests for improvements or explanations currently only work within the same session where the page is generated. If you close the session and start a new session on that page, any attempts to make changes to the page will result in the removal of existing widgets.
+{{% /alert %}}
 
 ### Best Practices for Image Input
 
@@ -60,11 +76,13 @@ Keep in mind that Maia analyzes only the structure of the image. The theming of 
 
 ## Limitations {#limitation}
 
-As an experimental feature, Page Generator has some limitations.
+As an experimental feature, Maia for Pages has some limitations.
 
 ### Empty Pages Only
 
-Page Generator is currently intended only for use with empty pages. Any existing widgets on a page will be removed.
+Maia for Pages is currently intended only for use with empty pages. Using it on an existing page results in the removal of all existing widgets on that page. 
+
+Requests for improvements and explanations currently only work within the same session where a page has been generated. Once the session is closed, Maia for Pages loses the context. Any attempts to make changes to that page in a new session will also result in the removal of all existing widgets.
 
 ### Supported Widgets
 
