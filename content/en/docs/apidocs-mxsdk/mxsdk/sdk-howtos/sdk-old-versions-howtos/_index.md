@@ -13,4 +13,3 @@ The following how-tos present details for Mendix Platform SDK versions below 5.0
 
 * [Set Up Your Development Environment (Old Versions)](/apidocs-mxsdk/mxsdk/old-setting-up-your-development-environment/)
 * [Create Your First Script (Old Versions)](/apidocs-mxsdk/mxsdk/old-creating-your-first-script/)
-* [How to Close the Server Connection (Old Versions)](/apidocs-mxsdk/mxsdk/old-closing-the-server-connection/)
