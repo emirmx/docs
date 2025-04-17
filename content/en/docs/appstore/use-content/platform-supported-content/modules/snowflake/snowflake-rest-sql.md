@@ -246,6 +246,14 @@ The domain model is a data model that describes the information in your applicat
 | `Warehouse` | The warehouse to use for computations. |
 | `Role` | The role to use to execute the SQL statement. The role sufficient permissions to execute the statement. |
 
+#### Binding {#binding}
+
+| **Attribute**   | **Description**                                                       |
+|----------------|------------------------------------------------------------------------|
+| `createdDate`  | The timestamp when this binding was generated.                         |
+| `_type`        | The Snowflake data type used in binding (e.g., `FIXED`, `TEXT`).       |
+| `value`        | The actual value passed into the query for that position.              |
+
 #### ResultSet {#result-set}
 
 | Name | Description |
