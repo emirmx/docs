@@ -10,10 +10,9 @@ tags: ["native", "mobile", "ota", "native-builder", "over the air", "update"]
 ## 1 Introduction
 
 {{% alert color="warning" %}}
+In Studio Pro 10.6 and above, Mendix has discontinued support for CodePush. If your app relies on CodePush for over-the-air updates, please note that it will no longer be available.
 
-Starting from version 10.6, Mendix has discontinued support for CodePush. If your app relies on CodePush for over-the-air updates, please note that it will no longer be available.
-
-We recommend migrating your app to Mendix OTA for managing over-the-air updates.
+We recommend migrating your app to a higher version that supports [Mendix OTA](/refguide/mobile/distributing-mobile-apps/overtheair-updates/) for managing over-the-air updates.
 {{% /alert %}}
 
 Using Native Mobile Builder and Mendix Studio Pro, you can update your Mendix Native Apps over the air (OTA). OTA updates are a fast and painless way of updating things like layouts, pages, assets, or even you app's business logic (such as nanoflows and JavaScript actions).
