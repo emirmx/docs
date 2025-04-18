@@ -11,7 +11,7 @@ tags: ["native", "mobile", "ota", "native-builder", "over the air", "update"]
 
 {{% alert color="warning" %}}
 
-Starting from version 10.6, Mendix has discontinued support for CodePush. If your project relies on CodePush for over-the-air updates, please note that it will no longer be available.
+Starting from version 10.6, Mendix has discontinued support for CodePush. If your app relies on CodePush for over-the-air updates, please note that it will no longer be available.
 
 We recommend migrating your project to Mendix OTA for managing over-the-air updates.
 {{% /alert %}}
