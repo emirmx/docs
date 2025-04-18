@@ -8,7 +8,7 @@ description: "Describes the features in Translation Generator."
 ## Introduction 
 
 {{% alert color="info" %}}
-Translation Generator, an AI translation tool, is currently an experimental feature introduced in Studio Pro 10.12.0. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+Maia Translation Generator, an AI translation tool, was introduced in Studio Pro 10.12.0.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -51,7 +51,7 @@ Currently, if you encounter an error after clicking **Generate Translations...**
 
 In Studio Pro 10.14.0 and above, you can also use Translation Generator in the web version of the [system texts](/refguide/system-texts/) editor. 
 
-The web-based system texts editor was released in Studio Pro 10.14.0 as an experimental feature. You can enable it via **Preferences** > the **New Features** tab > the **System Texts Editor** section.
+The web-based system texts editor was released in Studio Pro 10.14.0. You can enable it via **Preferences** > the **New Features** tab > the **System Texts Editor** section.
 
 After enabling the new editor and Translation Generator, make sure to restart Studio Pro. You will then see the **Generate translation** option from **App Explorer** > **App '*APP_NAME*'** > **System texts**.
 

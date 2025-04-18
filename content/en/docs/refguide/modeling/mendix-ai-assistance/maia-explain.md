@@ -9,7 +9,7 @@ description: "Describes the features in Maia Explain."
 ## Introduction 
 
 {{% alert color="info" %}}
-Maia Explain is currently an experimental feature introduced in Studio Pro 10.21.0. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+Maia Explain was introduced in Studio Pro 10.21.0.
 {{% /alert %}}
 
 {{% alert color="info" %}}
