@@ -19,7 +19,7 @@ For more information about content support, see [Marketplace Content Support](/a
 
 ## Introduction
 
-The [Mendix Marketplace](https://marketplace.mendix.com/) provides access to complete sample apps that can be used right away, as well as to various components, such as connectors, modules, and widgets, that can be used to build your apps more quickly. In the Marketplace, you can browse available content, retrieve the components that interest you, and share the content you have created.
+The [Mendix Marketplace](https://marketplace.mendix.com/) provides access to ready-to-use sample apps, as well as to various components, such as connectors, modules, and widgets, that can be used to build your apps more quickly. In the Marketplace, you can browse available content, retrieve the components that interest you, and share the content you have created.
 
 This document describes the different sections of the Marketplace home page, which is your entry point to the various parts of the Mendix Marketplace.
 
@@ -62,7 +62,7 @@ You can also find details on how many total drafts you have, which drafts are re
 These are the possible **Status** entries for each item:
 
 * **Incomplete draft** – The draft is incomplete and requires additional information before you can submit it.
-* **Ready to publish** – The draft of the new version of the component is ready to be published to the Mendix Marketplace.
+* **Ready to publish** – The draft is ready to be published to the Mendix Marketplace.
 * **Waiting for approval** – The component is [under review by Mendix](/appstore/submit-content/governance-process/). 
 * **Declined** – The draft was declined after review by Mendix. You can find specific feedback in the email notification and on the draft edit page.
 
@@ -113,12 +113,12 @@ Click the context menu to access various options for managing this component:
 
 {{< figure src="/attachments/appstore/marketplace-home-page/saved.png"  width="400"  class="no-border" >}}
 
-* **Receive/Stop Email Notifications** – Start receiving email notifications, or stop the notifications if you already have them enabled.
+* **Receive/Stop Email Notifications** – Start receiving email notifications, or stop the notifications if they are enabled.
 * **Unsave** – Remove the component from your saved content.
 
 ### My Reviews {#my-reviews}
 
-This page contains reviews of [My Content](#my-content) by other users, as well as **My reviews** that you have written of other content.
+This page contains reviews of [My Content](#my-content) by other users, as well as **My reviews** that you have written for other content.
 
 ## Company {#company}
 
@@ -154,7 +154,7 @@ This table breaks down the roles and permissions for content groups:
 
 #### Content Tab {#group-content}
 
-On this tab, you can assign content that can only be managed by members of this group. To assign a component to a content group, click **Assign Content**, and select a company Marketplace component from the dialog box:
+On this tab, you can assign content that can only be managed by members of this group. To assign a component to a content group, click **Assign Content**, and select a Marketplace component from the dialog box:
 
 {{< figure src="/attachments/appstore/marketplace-home-page/group-content.png"  width="400"  class="no-border" >}}
 
