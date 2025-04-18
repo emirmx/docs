@@ -10,7 +10,7 @@ description: "Frequently asked questions about Mendix Cloud"
 
 Mendix Cloud is where licensed Mendix applications are deployed to a scalable, enterprise-grade cloud platform.
 
-Apps deployed to Mendix Cloud run on Cloud Foundry clusters that are hosted on highly available Amazon Web Services (AWS) regions. You can deploy apps to many regions around the world from Mendix Studio Pro, Mendix Portal or via [Mendix APIs](/apidocs-mxsdk/apidocs/deploy-api/).
+Apps deployed to Mendix Cloud run in Cloud Foundry clusters that are hosted on highly available Amazon Web Services (AWS) regions. You can deploy apps to many regions around the world from Mendix Studio Pro, Mendix Portal or via [Mendix APIs](/apidocs-mxsdk/apidocs/deploy-api/).
 
 ## Where Is Data Hosted?{#cloud-data-regions}
 
@@ -40,7 +40,7 @@ No, it does not. The Cloud Foundry API does not map one-to-one to Mendix's deplo
 
 ## How Do You Access the Underlying AWS Resources?
 
-Mendix Cloud runs in Mendix's own AWS account; you cannot interact with the AWS APIs directly via Mendix credentials. Mendix does not offer [VPC peering](https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/Welcome.html) or VPC connections. All access to Mendix-hosted AWS resources (such as EC2, RDS, and S3) is done via Mendix APIs, such as the [Database API](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/core/Core.html#createXPathQuery(java.lang.String)) and [FileDocument API](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/core/Core.html#storeFileDocumentContent(com.mendix.systemwideinterfaces.core.IContext,com.mendix.systemwideinterfaces.core.IMendixObject,java.io.InputStream)) in Runtime and the [Deploy API](/apidocs-mxsdk/apidocs/deploy-api/) for cloud resources. However, when you launch your services on your own AWS account, you can access those services via connectors in your app.
+Mendix Cloud runs in Mendix's own AWS account; you cannot interact with the AWS APIs directly via Mendix credentials. Mendix does not offer [VPC peering](https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/Welcome.html) or VPC connections. All access to Mendix-hosted AWS resources (such as EC2, RDS, and S3) is done via Mendix APIs, such as the [Database API](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/core/Core.html#createXPathQuery(java.lang.String)) and [FileDocument API](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/core/Core.html#storeFileDocumentContent(com.mendix.systemwideinterfaces.core.IContext,com.mendix.systemwideinterfaces.core.IMendixObject,java.io.InputStream)) in Runtime and the [Deploy API](/apidocs-mxsdk/apidocs/deploy-api/) for cloud resources. However, when you launch your services in your own AWS account, you can access those services via connectors in your app.
 
 ## How Can You Deploy to Your AWS Account?
 
