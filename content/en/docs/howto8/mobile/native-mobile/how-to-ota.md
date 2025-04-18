@@ -10,7 +10,6 @@ tags: ["native", "mobile", "ota", "native-builder", "over the air", "update"]
 ## 1 Introduction
 
 {{% alert color="warning" %}}
-**Important Update: CodePush Support Removal**
 
 Starting from version 10.6, Mendix has discontinued support for CodePush. If your project relies on CodePush for over-the-air updates, please note that it will no longer be available.
 
