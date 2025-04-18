@@ -1,13 +1,13 @@
 ---
 title: "Show a Popup Notification Using Web API"
-linktitle: "Show Notifications"
+linktitle: "Show Notification"
 url: /apidocs-mxsdk/apidocs/web-extensibility-api/notifications-api/
 weight: 30
 ---
 
 ## Introduction
 
-This how-to shows you how to show a simple popup notification in Studio Pro using the web extension API.
+This how-to shows you how to show a simple popup notification in Studio Pro using the notificationsAPI from the web extension API.
 
 ## Prerequisites
 
@@ -15,64 +15,76 @@ This how-to uses the results of [Get Started with the Web Extensibility API](/ap
 
 ## Showing a Notification
 
-In this section, you will show a popup notification when your extension gets loaded. It will disappear after 5 seconds.
+This how-to explains how to show a popup notification when your extension gets loaded. The notification will disappear after 5 seconds.
 
-Before we begin, find an icon of your choosing and copy it inside your extension solution. We recommend creating an `assets` folder under your `src` folder.
-You will then need to create an `Icons.ts` file inside that same `assets` folder, which will look like below (the png image used in this example is called `check.png`):
+1. Create an `assets` folder under your `src` folder.
+2. Find an icon you want to use in your notification and copy it into the `assets` folder. (This example uses the file `check.png`)
+3. Create an `Icons.ts` file inside that same `assets`.
+4. Add the following code to the `Icons.ts` file, replacing `check.png` with the name of your icon and using an appropriate name in the `import`, `IIcons`, and `export` statements.
 
-```typescript
-import Check from "./check.png";
+    ```typescript
+    import Check from "./check.png";
 
-interface IIcons {
-    Check: string;
-}
-
-export default { Check } as IIcons;
-```
-
-In order for this code to compile, you will need another file, `images.d.ts`. The `d` file extension means this is a `declaration` file, and the `declare module "*.png";` line of code tells TypeScript that any import ending in `.png` should be treated as a module. This helps TypeScript understand how to handle PNG files when you import them in your code.
-
-Now we are able to use images in our extensions. Replace your `src/main/index.ts` file with the following:
-
-```typescript
-import { IComponent, studioPro } from "@mendix/extensions-api";
-import Icons from "../assets/Icons";
-
-const notificationsApi = studioPro.ui.notifications;
-
-class Main implements IComponent {
-    async loaded() {
-        await notificationsApi.show({
-            title: "Extension Loaded",
-            message: "The extension was successfully loaded",
-            displayDurationInSeconds: 5,
-            icon: Icons.Check
-        });
+    interface IIcons {
+        Check: string;
     }
-}
 
-export const component: IComponent = new Main();
-```
+    export default { Check } as IIcons;
+    ```
 
-The code imports the `notificationsApi` from `studioPro.ui.notifications` to allow you to use the notifications API.
-Inside the `loaded` event, it calls the `show` method to show a popup notification with the title `Extension Loaded`, a message, and the `check.png` icon you set up earlier. The `displayDurationInSeconds` means that the popup will go away after 5 seconds. If no duration is provided, the popup will remain indefinitely until the user removes it themselves.
+5. Create an `images.d.ts` files.
 
-Now, when the extension loads, the notification will show in the top right corner of the Studio Pro app, as shown below.
+    This is a `declaration` file, as indicated by the `d` file extension.
+    
+6. Add the line `declare module "*.png";` to the `images.d.ts` file.
+
+    This tells TypeScript that any import ending in `.png` should be treated as a module. This enables TypeScript to handle PNG files correctly when you import them in your code.
+
+    Now you can use images in your extensions. 
+
+7. Replace your `src/main/index.ts` file with the following, again using the appropriate icon name in place of `Check`:
+
+    ```typescript
+    import { IComponent, studioPro } from "@mendix/extensions-api";
+    import Icons from "../assets/Icons";
+
+    const notificationsApi = studioPro.ui.notifications;
+
+    class Main implements IComponent {
+        async loaded() {
+            await notificationsApi.show({
+                title: "Extension Loaded",
+                message: "The extension was successfully loaded",
+                displayDurationInSeconds: 5,
+                icon: Icons.Check
+            });
+        }
+    }
+
+    export const component: IComponent = new Main();
+    ```
+
+    This code does the following:
+    
+    * Imports the `notificationsApi` from `studioPro.ui.notifications` to allow you to use the notifications API.
+    * Implements a `loaded` event which calls the `show` method to show a popup notification for five seconds with the title `Extension Loaded`, a message, and the `check.png` icon you set up earlier. See [Full Reference for Show Method](#reference), below for more information.
+
+Now, when the extension loads, your notification will show in the top right corner of Studio Pro:
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/notifications/notification.png" >}}
 
-## Notification Api Show Method
+## Full Reference for Show Method {#reference}
 
 The show method has the following parameters:
 
 * `title` – the title of the notification
 * `message` – the text content of the notification
-* `displayDurationInSeconds` – an optional duration in seconds for the notification to remain visible
-* `icon` – an optional icon inside the notification
+* `displayDurationInSeconds` – an optional duration in seconds for the notification to remain visible. If no duration is provided, the popup will remain indefinitely until the user removes it themselves.
+* `icon` – an optional icon which is displayed inside the notification
 
 ## Conclusion
 
-You have seen how to show a notification inside a Studio Pro app.
+You have seen how to use your app to show a notification inside Studio Pro.
 
 ## Extensibility Feedback
 
