@@ -3,13 +3,12 @@ title: "Configuring a Domain Model"
 url: /refguide/configuring-a-domain-model/
 weight: 60
 description: "Describes how to create entities and attributes, add enumerations, create associations, and configure the delete behavior for associations with Studio Pro."
-tags: ["data layer", "domain model", "entities", "enumerations", "associations"]
 aliases:
     - /howto/data-models/create-a-basic-data-layer/
     - /refguide/create-a-basic-data-layer/
 ---
 
-## 1 Introduction
+## Introduction
 
 This document explains how you can configure a domain model for your application with Mendix. Each application can have multiple [modules](/refguide/modules/), and each module has its own domain model. All the domain models together define the data layer of the application. 
 
@@ -26,36 +25,42 @@ This document teaches you how to do the following:
 
 This document also presents [an example for defining the domain model](#example-domain-model) for an online shopping shop.
 
-## 2 Creating Entities and Attributes {#create-entity}
+## Creating Entities and Attributes {#create-entity}
 
-To create entities and their attributes, follow these steps:
+To create entities and their attributes, follow the steps below.
+
+{{% alert color="info" %}}
+If you are using Mendix version 10.13.0 or above, you can use the Maia domain model generator to create a domain model based on a description of your requirements. For more information, see [Maia Domain Model Generator](/refguide/domain-model-generator/).
+
+The domain model generator is currently an experimental feature. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/). 
+{{% /alert %}}
 
 1. Open your [domain model](/refguide/domain-model/).
 2. Go to **Toolbox** and drag **Entity** into your domain model.
 
-    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/toolbox-entity.png" width="300px" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/toolbox-entity.png" width="300px" class="no-border" >}}
 
     By default, Studio Pro creates a persistable entity, which means that the app's database is able to store objects of this type of entity.
 
 3. Start typing directly to change the name of the entity to *Customer*, or you can go to **Properties** and enter *Customer* for the **Name**:
 
-    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/customer-name.png" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/customer-name.png" class="no-border" >}}
 
 4. Double-click the **Customer** entity and go to **Attributes**.
 5. Click **New** to add an attribute to the **Customer** entity.
 6. Enter *Name* for the **Name** of the new attribute, and select **String** as the data **Type**:
 
-    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/add-attribute.png" width="350px" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/add-attribute.png" width="350px" class="no-border" >}}
 
 7. Refer to steps 4-6 to create a **Customer** entity that looks like this:
 
-    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/customer-entity.png" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/customer-entity.png" class="no-border" >}}
 
 8. Refer to steps 1-6 to create a second entity **Order** that looks like this:
 
-    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/order-entity-one.png" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/order-entity-one.png" class="no-border" >}}
 
-## 3 Adding Enumerations {#add-enumeration}
+## Adding Enumerations {#add-enumeration}
 
 An [enumeration](/refguide/enumerations/) is a predefined list of values that can be used as an attribute type. This allows end-users to select any of the predefined values for this attribute. A good example of an enumeration is order status (with values open, processing, and complete).
 
@@ -66,11 +71,11 @@ To extend the **Order** entity with an enumeration value-based attribute, follow
 3. Click **New** to add an enumeration value.
 4. Enter *Open* for the **Caption** and click **OK**.
 
-    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/add-enum-value.png" width="350px" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/add-enum-value.png" width="350px" class="no-border" >}}
 
 5. Refer to steps 3 and 4 to add the **Processing** and **Complete** values. You should then have the following configured values:
 
-    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/enum-order-status.png" width="400px" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/enum-order-status.png" width="400px" class="no-border" >}}
 
     Click **OK** to save the enumeration. Now you need to add an enumeration value-based attribute to the **Order** entity and select the **OrderStatus** enumeration there. 
 
@@ -80,21 +85,21 @@ To extend the **Order** entity with an enumeration value-based attribute, follow
 9. Select the **OrderStatus** enumeration and click **Select**.
 10. Select **Open** for **Default value**:
 
-    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/add-order-status-attribute.png" width="450px" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/add-order-status-attribute.png" width="450px" class="no-border" >}}
 
 11. Click **OK** to save the new attribute. Now the **Order** entity should look like this:
 
-    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/order-entity-two.png" width="160px" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/order-entity-two.png" width="160px" class="no-border" >}}
 
-## 4 Creating Associations
+## Creating Associations
 
 After you created the entities, you can create associations for the entities. For more information, see [Associations](/refguide/associations/).
 
 To create an association, draw a line from the border of one entity to the border of the other entity. Always start with the entity that can have more instances in the system than the other one. In this case, draw an association from **Order** to **Customer**, because one customer can have multiple orders.
 
-{{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/customer-order-association.png" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/customer-order-association.png" class="no-border" >}}
 
-## 5 Multiplicity
+## Multiplicity
 
 This section explains how to change the [multiplicity](/refguide/association-properties/#multiplicity) of associations. 
 
@@ -104,15 +109,15 @@ If you want to change the multiplicity, double-click the **Order_Customer** asso
 
 * To change the association to a one-to-one multiplicity, select the **[1 – 1]** option in the **Multiplicity** section; this means that a customer can only have one order and vice versa:
 
-    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/one-to-one.png" width="500px" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/one-to-one.png" width="500px" class="no-border" >}}
 
 * To change the association to a many-to-many multiplicity, select the **[* – *]** option in the **Multiplicity** section; this means that a customer can have multiple orders, and an order can have multiple customers:
 
-    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/many-to-many.png" width="500px" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/many-to-many.png" width="500px" class="no-border" >}}
 
     When the association is set to a many-to-many multiplicity, the **Navigability** property is also activated. For further details, see the [Navigability](/refguide/association-properties/#navigability) section in *Association Properties*.
 
-## 6 Delete Behavior {#delete-behavior}
+## Delete Behavior {#delete-behavior}
 
 You can configure the [on delete behavior](/refguide/association-properties/#delete-behavior) for both sides of an association.
 
@@ -120,21 +125,21 @@ To configure the delete behavior, double-click the **Order_Customer** associatio
 
 * To configure cascading delete, select the **Delete 'Order' object(s) as well** option in the **On delete of 'Customer' object** section; this means that all the orders of a customer are removed if the customer is deleted:
 
-    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/cascading-delete.png" width="500px" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/cascading-delete.png" width="500px" class="no-border" >}}
 
 * To configure prevention of delete, select the **Delete 'Customer' object only if it is not associated with 'Order' object(s)** in the **On delete of 'Customer' object** section; this means that a customer can only be deleted if no orders refer to this customer, and the **Error message** is shown to the end-user who tries to delete a customer that has orders:
 
-    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/delete-prevention.png" width="500px" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/delete-prevention.png" width="500px" class="no-border" >}}
 
 {{% alert color="info" %}}
 Delete behavior includes objects which are in memory. This means that cascading delete or prevention of delete applies, even if the associated object has not been committed.
 {{% /alert %}}
 
-## 7 An Example of Defining a Domain Model {#example-domain-model}
+## An Example of Defining a Domain Model {#example-domain-model}
 
 In the above sections, you learn the basics of how to configure a domain model. In this section, we present an example for how you can define the domain model for an online shopping app.
 
-### 7.1 Defining What Data to Include
+### Defining What Data to Include
 
 Understanding the typical process helps you define what data to include to your domain model. The workflow for new customers of the online shopping app looks the following way:
 
@@ -165,9 +170,9 @@ The following sections show how to represent the data you want to include in you
 
 An example of the domain model for the online shopping app is shown below:
 
-{{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/domain-model-online-shop.png" alt="Domain Model online shopping app" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/create-a-basic-data-layer/domain-model-online-shop.png" alt="Domain Model online shopping app" class="no-border" >}}
 
-### 7.2 Defining Entities
+### Defining Entities
 
  The following shows what entities you should create in your domain model for the online shopping app:
 
@@ -186,7 +191,7 @@ An example of the domain model for the online shopping app is shown below:
     * **Order_line** – items ordered, their quantity and price
     * **Order_confirmation** – confirmation that is sent to the customer that the order is placed
 
-### 7.3 Defining Associations
+### Defining Associations
 
 The following explains how each entity is associated for the online shopping app:
 
@@ -196,7 +201,7 @@ The following explains how each entity is associated for the online shopping app
 * **Order** and **Order_Line** have a one-to-many association – One order can contain multiple items (order lines) in it.
 * **Order** and **Order_Confirmation** have a one-to-one association – One order confirmation is issued per order.
 
-## 8 Read More
+## Read More
 
 * [Denormalize Data to Improve Performance](/howto/data-models/denormalize-data-to-improve-performance/)
 * [Setting Up Data Validation](/refguide/setting-up-data-validation/)

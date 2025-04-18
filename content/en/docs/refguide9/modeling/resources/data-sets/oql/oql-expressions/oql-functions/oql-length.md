@@ -1,14 +1,13 @@
 ---
 title: "OQL LENGTH"
 url: /refguide9/oql-length/
-tags: ["studio pro"]
 ---
 
-## 1 Description
+## Description
 
 The `LENGTH` function returns the length of a string value.
 
-## 2 Syntax
+## Syntax
 
 The syntax is as follows:
 

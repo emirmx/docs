@@ -3,16 +3,15 @@ title: "Run Menu"
 url: /refguide9/run-menu/
 description: "Describes the Run menu in Mendix Studio Pro."
 weight: 35
-tags: ["Studio Pro", "run", "run menu"]
 ---
 
-## 1 Introduction
+## Introduction
 
 The **Run** menu allows you to deploy and monitor your app:
 
-{{< figure src="/attachments/refguide9/modeling/menus/run-menu/run-menu.png" alt="Run Menu" >}}
+{{< figure src="/attachments/refguide9/modeling/menus/run-menu/run-menu.png" alt="Run Menu" class="no-border" >}}
 
-## 2 Menu Items Overview 
+## Menu Items Overview 
 
 The **Run** menu items are described in the table below:
 
@@ -31,6 +30,6 @@ The **Run** menu items are described in the table below:
 | **Phone Web** | Shows the mobile client for the currently running app in the browser. | <kbd>Ctrl</kbd> + <kbd>F9</kbd> |
 | **View on your device** | Provides a link to allow you to view the app. | |
 
-## 3 Read More
+## Read More
 
 * [Studio Pro Overview](/refguide9/studio-pro-overview/)

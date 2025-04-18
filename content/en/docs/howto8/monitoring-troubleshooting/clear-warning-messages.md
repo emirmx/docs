@@ -1,12 +1,10 @@
 ---
 title: "Clear Warning Messages"
 url: /howto8/monitoring-troubleshooting/clear-warning-messages/
-category: "Monitoring and Troubleshooting"
 weight: 1
-tags: ["monitoring", "troubleshooting", "warning", "error", "warning message"]
 ---
 
-## 1 Introduction
+## Introduction
 
 This how-to explains how to eliminate design time warnings. While these warnings will not cause the application to break, it is important to fix them to keep a clean app.
 
@@ -15,19 +13,19 @@ This how-to teaches you how to do the following:
 * View warning messages
 * Clear warning messages
 
-## 2 Viewing Warning Messages
+## Viewing Warning Messages
 
 Warning messages can be seen in the **Error List** tab of Studio Pro (by default shown at the bottom of Studio Pro). Note that the **Warnings** box must be selected for them to display.
 
-{{< figure src="/attachments/howto8/monitoring-troubleshooting/clear-warning-messages/18579992.png" >}}
+{{< figure src="/attachments/howto8/monitoring-troubleshooting/clear-warning-messages/18579992.png" class="no-border" >}}
 
 If this tab is not visible, it can be displayed via the **View** menu by selecting the **Error List** option:
 
-{{< figure src="/attachments/howto8/monitoring-troubleshooting/clear-warning-messages/18579991.png" >}}
+{{< figure src="/attachments/howto8/monitoring-troubleshooting/clear-warning-messages/18579991.png" class="no-border" >}}
 
 To get more information, double-click or right-click the warning.
 
-## 3 Common Warnings
+## Common Warnings
 
 {{% alert color="warning" %}}
 
@@ -168,7 +166,7 @@ Variable ‘Variable’ is never used.
 * There are multiple potential causes here
 * The solution involves removing the variable from the microflow, which could mean deleting the retrieve activity or electing to not use the return value of a microflow call
 
-## 4 Read More
+## Read More
 
 * [Find the Root Cause of Runtime Errors](/howto8/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
 * [Test Web Services Using SoapUI](/howto8/integration/testing-web-services-using-soapui/)

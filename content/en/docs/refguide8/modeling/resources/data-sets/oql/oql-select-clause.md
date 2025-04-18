@@ -1,7 +1,6 @@
 ---
 title: "OQL Select Clause"
 url: /refguide8/oql-select-clause/
-tags: ["studio pro"]
 ---
 
 The SELECT clause specifies which entity attributes or other specified data must be retrieved. The `SELECT` clause consists of the term `SELECT` and one or more expressions. These expressions must be separated by a comma. Each expression defines a column in the result.
@@ -26,15 +25,15 @@ SELECT [ DISTINCT ]
 
 {{% alert color="info" %}}
 
-```sql {linenos=false}
+```sql
 SELECT Sales.Customer.* FROM Sales.Customer
 ```
 
-```sql {linenos=false}
+```sql
 SELECT Person.* FROM Sales.Customer AS Person
 ```
 
-```sql {linenos=false}
+```sql
 SELECT "Sales.Order".* FROM "Sales.Order"
 ```
 
@@ -46,7 +45,7 @@ Is either a constant, a function or any combination of attribute names, constant
 
 {{% alert color="info" %}}
 
-```sql {linenos=false}
+```sql
 SELECT Name AS CustomerName, LastName AS CustomerLastName, Birthday, Category FROM Sales.Customer
 ```
 
@@ -54,16 +53,16 @@ SELECT Name AS CustomerName, LastName AS CustomerLastName, Birthday, Category FR
 
 See [this page](/refguide8/oql-expressions/) for more information.
 
-`column_alias` – is an alternative name to replace the column name in the result. When the attribute Name is retrieved, the result column is 'Name'. With an alias, you can specify another result column name, like 'Customer Name'. An alias can contain spaces.
+`column_alias` – is an alternative name to replace the column name in the result. When the attribute Name is retrieved, the result column is 'Name'. With an alias, you can specify another result column name, like "Customer_Name". An alias cannot contain spaces.
 
 {{% alert color="info" %}}
 
-```sql {linenos=false}
+```sql
 SELECT Sales.Customer.Name AS CustomerName FROM Sales.Customer
 ```
 
-```sql {linenos=false}
-SELECT Sales.Customer.Name AS 'Customer Name' FROM Sales.Customer
+```sql
+SELECT Sales.Customer.Name AS "Customer_Name" FROM Sales.Customer
 ```
 
 {{% /alert %}}

@@ -1,13 +1,11 @@
 ---
 title: "Beta and Experimental Releases"
 url: /releasenotes/beta-features/
-tags: ["beta", "experimental", "GA", "general availability", "feature", "feature flag", "product"]
 weight: 55
-#notoc: true
 #layout: wide
 ---
 
-## 1 Introduction
+## Introduction
 
 Some Mendix Platform releases contain beta or experimental features or products that can be used and evaluated by early-adopter developers. 
 
@@ -31,7 +29,9 @@ An example is a new major version of Mendix Studio Pro. We release this product 
 
 The availability of beta/experimental features and products is documented in the release notes for the release. Other documentation may be provided by Mendix. Please consult the release notes and the documentation for details on how to enable and use these features and products.
 
-## 2 Testing Beta Releases
+In the docs, pages about beta features are marked with a beta badge (<text class="badge badge-pill badge-beta" style="margin-left:0px">BETA</text>) on the left sidebar.
+
+## Testing Beta Releases
 
 If you would like to test a beta feature or product, consider the following:
 
@@ -42,7 +42,7 @@ If you would like to test a beta feature or product, consider the following:
 * Feedback on the quality of the beta feature or product will be evaluated by the PM
 * When there is a strong desire to take a beta feature or product into production, please contact your CSM to see if special arrangements are possible
 
-## 3 Limitations of Beta and Experimental Releases
+## Limitations of Beta and Experimental Releases
 
 Please take note of the following limitations regarding beta/experimental features and products:
 
@@ -57,4 +57,5 @@ Please take note of the following limitations regarding beta/experimental featur
 * Beta/experimental features and products may change in future releases, depending on the feedback
 * Beta/experimental features and products may be incomplete
     * Future releases may include more functionality to complete the feature or product
- 
+* Experimental features and products may be made available to a limited group of users
+* Experimental features and products may be removed at any time from existing and future releases

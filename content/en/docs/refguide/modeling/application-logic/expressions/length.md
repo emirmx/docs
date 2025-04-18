@@ -2,18 +2,17 @@
 title: "Length"
 url: /refguide/length/
 weight: 135
-tags: ["studio pro", "length", "expression", "expressions"]
 ---
 
-## 1 Introduction
+## Introduction
 
 Basic function to determine the length of a string or a list.
 
-## 2 length
+## length
 
 Determines the length of a string or a list and outputs the value as an integer.
 
-### 2.1 Input Parameters
+### Input Parameters
 
 The input parameters are described in the table below:
 
@@ -22,7 +21,7 @@ The input parameters are described in the table below:
 | String to find length of   | String |
 | List to find the length of | List   |
 
-### 2.2 Output
+### Output
 
 The output is described in the table below:
 
@@ -31,7 +30,7 @@ The output is described in the table below:
 | Length of the string | Integer |
 | Length of the list   | Integer |
 
-### 2.3 Examples
+### Examples
 
 | Input | Output |
 | --- | --- |

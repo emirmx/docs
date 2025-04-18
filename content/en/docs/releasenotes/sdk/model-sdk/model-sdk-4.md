@@ -2,8 +2,98 @@
 title: "4"
 url: /releasenotes/sdk/model-sdk-4/
 weight: 97
-#When updating, remember to update the Latest Mendix Releases file
 ---
+
+## 4.97.0 {#497}
+
+**Release date: March 18th, 2025**
+
+* We added support for Mendix [10.21.0](/releasenotes/studio-pro/10.21/).
+* We added support for Mendix Metamodel [10.21.0](/releasenotes/sdk/metamodel-10.21/).
+
+## 4.96.0 {#496}
+
+**Release date: February 18th, 2025**
+
+* We added support for Mendix [10.20.0](/releasenotes/studio-pro/10.20/).
+* We added support for Mendix Metamodel [10.20.0](/releasenotes/sdk/metamodel-10.20/).
+
+## 4.95.0 {#495}
+
+**Release date: January 22nd, 2025**
+
+* We added support for Mendix [10.19.0](/releasenotes/studio-pro/10.19/).
+* We added support for Mendix Metamodel [10.19.0](/releasenotes/sdk/metamodel-10.19/).
+
+## 4.94.0 {#494}
+
+**Release date: December 17th, 2024**
+
+* We added support for Mendix [10.18.0](/releasenotes/studio-pro/10.18/).
+* We added support for Mendix Metamodel [10.18.0](/releasenotes/sdk/metamodel-10.18/).
+
+## 4.93.0 {#493}
+
+**Release date: November 25th, 2024**
+
+* We added support for Mendix [10.17.0](/releasenotes/studio-pro/10.17/).
+* We added support for Mendix Metamodel [10.17.0](/releasenotes/sdk/metamodel-10.17/).
+
+## 4.92.0 {#492}
+
+**Release date: October 23rd, 2024**
+
+* We added support for Mendix [10.16.0](/releasenotes/studio-pro/10.16/).
+* We added support for Mendix Metamodel [10.16.0](/releasenotes/sdk/metamodel-10.15/).
+
+## 4.91.0 {#491}
+
+**Release date: September 18th, 2024**
+
+* We added support for Mendix [10.15.0](/releasenotes/studio-pro/10.15/).
+* We added support for Mendix Metamodel [10.15.0](/releasenotes/sdk/metamodel-10.15/).
+
+## 4.90.0 {#490}
+
+**Release date: August 22nd, 2024**
+
+* We added support for Mendix [10.14.0](/releasenotes/studio-pro/10.14/).
+* We added support for Mendix Metamodel [10.14.0](/releasenotes/sdk/metamodel-10.14/).
+
+## 4.89.0 {#489}
+
+**Release date: July 16th, 2024**
+
+* We added support for Mendix [10.13.0](/releasenotes/studio-pro/10.13/).
+* We added support for Mendix Metamodel [10.13.0](/releasenotes/sdk/metamodel-10.13/).
+
+## 4.88.0 {#488}
+
+**Release date: June 20th, 2024**
+
+* We added support for Mendix [10.12.0](/releasenotes/studio-pro/10.12/).
+* We added support for Mendix Metamodel [10.12.0](/releasenotes/sdk/metamodel-10.12/).
+
+## 4.87.0 {#487}
+
+**Release date: May 28th, 2024**
+
+* We added support for Mendix [10.11.0](/releasenotes/studio-pro/10.11/).
+* We added support for Mendix Metamodel [10.11.0](/releasenotes/sdk/metamodel-10.11/).
+
+## 4.86.0 {#486}
+
+**Release date: April 24th, 2024**
+
+* We added support for Mendix [10.10.0](/releasenotes/studio-pro/10.10/).
+* We added support for Mendix Metamodel [10.10.0](/releasenotes/studio-pro/10.10/).
+
+## 4.85.0 {#485}
+
+**Release date: March 21st, 2024**
+
+* We added support for Mendix [10.9.0](/releasenotes/studio-pro/10.9/).
+* We added support for Mendix Metamodel [10.9.0](/releasenotes/sdk/metamodel-10.9/).
 
 ## 4.84.0 {#484}
 
@@ -231,7 +321,7 @@ weight: 97
 * We added support for Mendix Metamodel [9.4.0](/releasenotes/sdk/metamodel-9.4/).
 * We improved the performance of by-name references.
 * We improved the `getFile` documentation in the Model SDK.
-* We removed usage of NodeJS's `util` library.
+* We removed usage of Node.js's `util` library.
 
 ## 4.52.0 {#452}
 
@@ -424,7 +514,7 @@ weight: 97
 
 **Release date: February 8, 2019**
 
-* We added support for [Mendix 7.23.0](/releasenotes/studio-pro/7.23/).
+* We added support for Mendix 7.23.0.
 * It is now possible to perform operations (such as **delete working copy**) on working copies that have a newer Metamodel version than the one this Model SDK supports. This was not possible before, as we checked the Mendix Metamodel version for every operation. Now, we only check the Mendix Metamodel version when actually opening a working copy.
 
 ## 4.18.0 {#418}
@@ -445,7 +535,7 @@ weight: 97
 * We added support for Mendix 7.21.0.
 * We added new working copy lock type `commit`.
 * We fixed the duplicate processing of events.
-* We upgraded to Node.JS version 10.
+* We upgraded to Node.js version 10.
 
 ## 4.16.0
 
@@ -560,7 +650,7 @@ weight: 97
 
 | Story | Impact | Description |
 |------|-----|---|
-| MS-461 | Medium | Defined the new Metamodel for DataType. From Mendix [7.9.0](/releasenotes/studio-pro/7/) onwards, the new properties of the DataType type should be used instead of the old properties of the String type. |
+| MS-461 | Medium | Defined the new Metamodel for DataType. From Mendix 7.9.0 onwards, the new properties of the DataType type should be used instead of the old properties of the String type. |
 | MS-328 | None | Defined the new Metamodel for microflow expressions (experimental). |
 
 ## 4.4.0

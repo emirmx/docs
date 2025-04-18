@@ -1,14 +1,13 @@
 ---
 title: Using Mobile Capabilities
 url: /refguide9/mobile/using-mobile-capabilities/
-category: Mobile
 weight: 40
 description: Implement native mobile features in Mendix Studio Pro.
 aliases:
     - /howto9/mobile/implementation/
 ---
 
-## 1 Introduction
+## Introduction
 
 Guides in this section will help you implement key features of native apps and/or progressive web apps (PWAs).
 

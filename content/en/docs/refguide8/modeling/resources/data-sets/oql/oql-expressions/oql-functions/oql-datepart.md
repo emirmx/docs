@@ -1,14 +1,13 @@
 ---
 title: "OQL DATEPART"
 url: /refguide8/oql-datepart/
-tags: ["studio pro"]
 ---
 
 The DATEPART function retrieves a specified element from a date/time values. This element is of type integer.
 
 The syntax is as follows:
 
-```sql {linenos=false}
+```sql
 DATEPART ( datepart , date_expression )
 ```
 

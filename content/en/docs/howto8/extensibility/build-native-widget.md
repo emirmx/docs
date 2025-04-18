@@ -1,14 +1,12 @@
 ---
 title: "Build a Pluggable Native Widget"
 url: /howto8/extensibility/build-native-widget/
-category: "Extensibility"
 description: "Describes building a native widget, configuring it, and styling it in a Mendix app."
 weight: 10
-tags: ["native","widget","pluggable","react native","extensibility"]
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
-## 1 Introduction
+## Introduction
 
 Pluggable widgets, introduced in Mendix 8, enable developers to create new widgets beyond the core widgets shipped with Mendix Studio Pro. The pluggable widgets API works for both web and native mobile, offering you unique power and flexibility. For the web platform, the rendering is based on React and the React DOM. For mobile, the rendering uses the React Native framework.
 
@@ -18,7 +16,7 @@ This how-to teaches you core widget concepts by having you build configure, and 
 
 A group box can be used to visually group related widgets together. Group boxes are displayed as a frame around nested widgets with an optional header. Group boxes can be configured to collapse and expand dynamically, and look like this:
 
-{{< figure src="/attachments/howto8/extensibility/build-native-widget/group-box-tease.png" alt="final widget" >}}
+{{< figure src="/attachments/howto8/extensibility/build-native-widget/group-box-tease.png" alt="final widget" class="no-border" >}}
 
 This how-to teaches you how to do the following:
 
@@ -30,7 +28,7 @@ This how-to teaches you how to do the following:
 
 Clone this [code sample](https://github.com/mendix/native-group-box-pluggable-widget-sample) from GitHub with all group box features from this how-to already implemented.
 
-## 2 Prerequisites
+## Prerequisites
 
 Before starting this how-to, make sure you have completed the following prerequisites:
 
@@ -39,13 +37,13 @@ Before starting this how-to, make sure you have completed the following prerequi
 * Install [Node.js](https://nodejs.org) v16.
 * Install the latest [Yeoman](https://yeoman.io/) with the following command:
 
-    ```shell {linenos=false}
+    ```shell
     npm install -g yo
     ```
 
 * Install the latest Mendix Pluggable Widget Generator for Yeoman for Mendix 8 with the following command:
 
-    ```shell {linenos=false}
+    ```shell
     npm install -g @mendix/generator-widget@"<9"
     ```
 
@@ -55,7 +53,7 @@ Before starting this how-to, make sure you have completed the following prerequi
     * [TypeScript](https://www.typescriptlang.org/)
     * [React](https://reactjs.org)
 
-## 3 Building a Native Group Box Widget
+## Building a Native Group Box Widget
 
 To build a group box widget for native mobile, you will follow these steps:
 
@@ -65,7 +63,7 @@ To build a group box widget for native mobile, you will follow these steps:
 
 The following subsections will elaborate on each of these steps.
 
-### 3.1 Scaffolding a Pluggable Widget Project
+### Scaffolding a Pluggable Widget Project
 
 The Pluggable Widget Generator is the quickest way to start developing a pluggable widget. When you run this generator with Yeoman, Yeoman will scaffold your project folder with a folder structure and certain files recommended by Mendix.
 
@@ -79,7 +77,7 @@ To scaffold your project folder for the group box widget, follow these steps:
 
 3. Start the generator by executing the following command:
 
-    ```shell {linenos=false}
+    ```shell
     yo @mendix/widget GroupBox
     ```
 
@@ -98,7 +96,7 @@ To scaffold your project folder for the group box widget, follow these steps:
     * Widget template: {**Empty widget (recommended for more experienced developers)**}
     * Unit tests: {**No**}
 
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/pluggable-widget-generator-input.png" alt="Pluggable Widget Generator input" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/pluggable-widget-generator-input.png" alt="Pluggable Widget Generator input" class="no-border" >}}
 
 5. Your widget will build. If your project has been scaffolded correctly, you will see the following message:
 
@@ -106,7 +104,7 @@ To scaffold your project folder for the group box widget, follow these steps:
 
 Note that whenever it is required to reinstall NPM package dependencies inside the scaffolded widget development project with an NPM version of 7 or higher, make sure to run the installation script with an extra flag: `npm install --legacy-peer-deps`.
 
-### 3.2 Creating a Mendix Test Project
+### Creating a Mendix Test Project
 
 In order to test your group box widget, you will a Mendix application that uses this widget in various ways. Create a Mendix project for this application by following these steps:
 
@@ -134,10 +132,10 @@ Create a test case by following these steps:
 6. Open **Home_Native** page.
 7. Delete all widgets from the page.
 8. Edit the page properties and set all Spacing properties to Inner medium.
-9. Search in Toolbox for the **Group Box** widget. If you cannot find it press **F4** to refresh the project widgets.
+9. Search in Toolbox for the **Group Box** widget. If you cannot find it, press <kbd>F4</kbd> to refresh the project widgets.
 . Drag the widget into the empty container:
 
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/initial-widget.png" alt="initial widget" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/initial-widget.png" alt="initial widget" class="no-border" >}}
 
 10. Double-click the widget, fill in your name as the **Default value**, and click **OK**.
 
@@ -147,9 +145,9 @@ You have set up your test project. To verify that your Mendix test project is se
 2. Use the Make It Native app to open your new app.
 3. Verify that your app's home page contains the yellow text **Hello {your name}**.
 
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/1-yellow-text-mobile.png" alt="hello user" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/1-yellow-text-mobile.png" alt="hello user" class="no-border" >}}
 
-### 3.3 Building the Group Box Widget
+### Building the Group Box Widget
 
 Now that your widget sample code is running, it is time to transform your sample widget into an actual group box widget. To do so, you will follow these steps:
 
@@ -163,7 +161,7 @@ Now that your widget sample code is running, it is time to transform your sample
 
 The following paragraphs will elaborate on each of these steps. Open up your group box widget project folder in your IDE of choice. From now on, all file references will be relative to this project folder.
 
-#### 3.3.1 Creating a Static UI
+#### Creating a Static UI
 
 Define the structure and default style of the group box widget with these steps:
 
@@ -195,7 +193,7 @@ Define the structure and default style of the group box widget with these steps:
 4. Change the current working directory to your project folder.
 5. Execute the following command to bundle your widget and update the widget bundle in your Mendix test project:
 
-    ```shell {linenos=false}
+    ```shell
     npm start
     ```
 
@@ -205,9 +203,9 @@ Define the structure and default style of the group box widget with these steps:
 7. Run the project locally.
 8. Verify with the Make It Native app that your app looks like the image below:
 
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/2-header-caption-mobile.png" alt="basic app" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/2-header-caption-mobile.png" alt="basic app" class="no-border" >}}
 
-    {{% alert color="info" %}}If you encounter an error with the widget in Studio Pro, you might have to update the widget by right clicking on it or synchronize the project directory by pressing F4 to fix it.
+    {{% alert color="info" %}}If you encounter an error with the widget in Studio Pro, you might have to update the widget by right clicking on it or synchronize the project directory by pressing <kbd>F4</kbd> to fix it.
     {{% /alert %}}
 
 The UI of your widget does not look like a group box yet. Apply a default style to make it look like one with the following steps:
@@ -266,7 +264,7 @@ The UI of your widget does not look like a group box yet. Apply a default style 
 4. Refresh the Mendix app inside the Make It Native app.
 5. Verify that the group box widget looks like the image below:
 
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/3-bw-header.png" alt="black white widget" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/3-bw-header.png" alt="black white widget" class="no-border" >}}
 
 When you build a widget for native mobile, keep in mind that the widget can be used on both iOS and Android. Both platforms have their own design language, and you should adhere as much as possible to both languages. To do this, you will sometimes need to define platform-specific styling or use platform-specific React Native components.
 
@@ -274,13 +272,13 @@ For the group box widget it would be nice to have square corners on Android devi
 
 1. In **src/components/HelloWorldSample.tsx** you must adjust the import statement in order to use the **Platform** detection feature. Change the import from this:
 
-    ```tsx {linenos=false}
+    ```tsx
     import { Text, View } from "react-native";
     ```
 
     to this:
 
-    ```tsx {linenos=false}
+    ```tsx
     import { Text, View, Platform } from "react-native";
     ```
 
@@ -321,7 +319,7 @@ For the group box widget it would be nice to have square corners on Android devi
 4. Refresh the Mendix app inside the Make It Native app.
 5. Verify that the group box widget looks like the image below (if you are using an Android test device, your border will look a little different):
 
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/3a-bw-header.png" alt="black white widget" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/3a-bw-header.png" alt="black white widget" class="no-border" >}}
 
 As you might have noticed, the display component is still called **HelloWorldSample**. Next you will introduce the term "GroupBox" in your code:
 
@@ -330,7 +328,7 @@ As you might have noticed, the display component is still called **HelloWorldSam
 3. Rename the **HelloWorldSampleProps** interface to *GroupBoxProps*.
 4. Change the **GroupBox** class declaration to the following:
 
-    ```tsx {linenos=false}
+    ```tsx
     export class GroupBox extends Component<GroupBoxProps>
     ```
 
@@ -341,13 +339,13 @@ To fix the errors in the container component, use these steps:
 1. Open *src/GroupBox.tsx*.
 2. Replace the following import:
 
-    ```tsx {linenos=false}
+    ```tsx
     import { HelloWorldSample } from "./components/HelloWorldSample";
     ```
 
     with this:
 
-    ```tsx {linenos=false}
+    ```tsx
     import { GroupBox as WrappedGroupBox } from "./components/GroupBox";
     ```
 
@@ -402,13 +400,13 @@ You are not using the **label** property of the **defaultStyle** constant anymor
 6. Refresh the Mendix app inside the Make It Native app.
 7. Verify that the group box widget still looks the same after the refactoring:
 
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/3-bw-header.png" alt="black white widget" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/3-bw-header.png" alt="black white widget" class="no-border" >}}
 
-#### 3.3.2 Adding Widget Properties
+#### Adding Widget Properties
 
 Now that you have a basic group box, give the Mendix developer the possibility to customize it with the help of widget properties: a header caption and a content property.
 
-#### 3.3.3 Header Caption Property
+#### Header Caption Property
 
 Next you will allow the Mendix developer to alter the header caption of your widget. You can reuse the code and configuration of the default value property you used earlier to alter the **Hello World** output of the sample widget. 
 
@@ -476,9 +474,9 @@ Do these final steps to sync and run your app:
 3. Double-click the same widget and you will now see your new property. 
 4. Fill in some caption text, click **OK**, and rerun your app locally to see your caption text in the app:
 
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/4-this-is-my-text.png" alt="sample text mobile" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/4-this-is-my-text.png" alt="sample text mobile" class="no-border" >}}
 
-#### 3.3.4 Content Property
+#### Content Property
 
 You will also want Mendix developers to be able to fill content in the group box like building blocks, snippets, and other widgets. To enable this, do the following:
 
@@ -553,7 +551,7 @@ Verify that the new content property works:
 2. Press <kbd>F4</kbd> or select **Project > Synchronize Project Directory** to bring your application in sync with the changes to the **src/GroupBox.xml** file.
 3. Update the group box widget again. A content area will appear in the page editor:
 
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/content-area.png" alt="content area" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/content-area.png" alt="content area" class="no-border" >}}
 
 4. Drag a **Call nanoflow button** widget into the content area.
 5. Click **New** and a new nanoflow *ACT_ShowMessage*.
@@ -564,7 +562,7 @@ Verify that the new content property works:
 10. Rerun the app locally.
 11. With the Make It Native app, verify that your button is inside the group box and is triggering a message popup saying **Hello World!**.
 
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/5-hello-world.png" alt="hello world" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/5-hello-world.png" alt="hello world" class="no-border" >}}
 
 It would be nice to hide the content area of the group box completely when there is no content added to the group box in Mendix Studio Pro:
 
@@ -604,11 +602,11 @@ It would be nice to hide the content area of the group box completely when there
 
 4. To see your changes, drag a new **Group box** widget onto your home page. Run your project and check to see that your new group box with no content shows no empty white box:
 
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/6-button-inside.png" alt="new group box" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/6-button-inside.png" alt="new group box" class="no-border" >}}
 
 5. Delete the empty **Group box** widget you created in the previous step, then rerun your app to save your changes.
 
-#### 3.3.5 Making the Widget Collapsible
+#### Making the Widget Collapsible
 
 Now that your widget can contain content, the next challenge is to hide this content by making the group box Collapsible.
 
@@ -617,7 +615,7 @@ To start, make the complete header clickable:
 1. Navigate to the display component (**src/components/GroupBox.tsx**).
 2. Import the React component **ComponentClass** so that your React imports look like this:
 
-    ```tsx {linenos=false}
+    ```tsx
     import { Children, Component, ReactNode, createElement, ComponentClass } from "react";
     ```
 
@@ -676,7 +674,7 @@ Now make it possible to expand or collapse the group box:
 
 3. Change the class definition to give our component a state to keep track on whether it is collapsed or not:
 
-    ```tsx {linenos=false}
+    ```tsx
     export class GroupBox extends Component<GroupBoxProps, GroupBoxState>
     ```
 
@@ -727,7 +725,7 @@ Now make it possible to expand or collapse the group box:
 
 8. Verify in the Make it Native app that you can expand and collapse the group box by tapping your widget's header.
 
-#### 3.3.6 Adding an Expand and Collapse Icon Property
+#### Adding an Expand and Collapse Icon Property
 
 The next step is to allow a Mendix developer to use a custom icon in the clickable header. First, define the properties and adjust the display component so that it can render icons:
 
@@ -921,13 +919,13 @@ Fix your icon issue by introducing a default style for your container component:
 
 2. Import the `mergeNativeStyles` function:
 
-    ```tsx {linenos=false}
+    ```tsx
     import { Style, mergeNativeStyles } from "@mendix/pluggable-widgets-tools";
     ```
 
 3. Add the following private attribute to the container component class:
 
-    ```tsx {linenos=false}
+    ```tsx
     private readonly styles = mergeNativeStyles(defaultStyle, this.props.style);
     ```
 
@@ -950,11 +948,11 @@ Fix your icon issue by introducing a default style for your container component:
 
 5. Refresh the app in the Make It Native app. You should see the white icons in the correct size:
 
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/7-better-button-inside.png" alt="better button" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/7-better-button-inside.png" alt="better button" class="no-border" >}}
     
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/8-collapsed-w-euro-sign.png" alt="collapsed with euro" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/8-collapsed-w-euro-sign.png" alt="collapsed with euro" class="no-border" >}}
 
-#### 3.3.7 Adding a Collapsible Property {#adding-a-collapsible-property}
+#### Adding a Collapsible Property {#adding-a-collapsible-property}
 
 You are close to completing your group box widget. There are two more features essential for a Mendix developer: setting if the group box should be collapsible and setting the initial state of being collapsed or not.
 
@@ -1061,7 +1059,7 @@ First change the widget property configuration:
 
     1. Download this image:
 
-        {{< figure src="/attachments/howto8/extensibility/build-native-widget/group-box.png" alt="Group box icon" >}}
+        {{< figure src="/attachments/howto8/extensibility/build-native-widget/group-box.png" alt="Group box icon" class="no-border" >}}
 
     2. Generate a Base64 representation of the *.png* file:
 
@@ -1071,7 +1069,7 @@ First change the widget property configuration:
         2. Change your current working directory to the folder where *GroupBox.png* is stored.<br />
         3. Execute the following command to generate the Base64 representation:<br />
 
-        ```shell {linenos=false}
+        ```shell
         certutil -encode GroupBox.png data.b64
         ```
 
@@ -1083,7 +1081,7 @@ First change the widget property configuration:
         2. Change the current working directory to the folder where the "GroupBox.png" is stored.<br />
         3. Execute the following command to generate the Base64 representation:<br />
 
-        ```shell {linenos=false}
+        ```shell
         base64 -i GroupBox.png -o data.b64
         ```
 
@@ -1282,13 +1280,13 @@ The last thing to do is change the container component so that the properties ge
 4. Press <kbd>F4</kbd> or select **Project > Synchronize Project Directory** to bring your application in sync with the changes you made to the **src/GroupBox.xml** file.
 5. Update the group box widget. Notice that now your widget has the icon you loaded into its *xml*:
 
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/groupbox-64-icon.png" alt="groupbox 64" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/groupbox-64-icon.png" alt="groupbox 64" class="no-border" >}}
 
 6. Verify that the collapsible property options behave correctly by double-clicking your widget and testing each collapsible property option on your test device:
 
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/collapsible-properties.png" alt="collapsible properties" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/collapsible-properties.png" alt="collapsible properties" class="no-border" >}}
 
-#### 3.3.8 Adding a Custom Default Style
+#### Adding a Custom Default Style
 
 Although you have an extensively featured group box widget, you can still improve its styling. Currently, the widget receives basic styling which has been baked its code. You can make the Mendix Client override this default styling by defining a custom default style for the widget in Atlas UI. To define a custom default style, follow these steps:
 
@@ -1317,9 +1315,9 @@ Although you have an extensively featured group box widget, you can still improv
 
 3. Save the file and refresh the your app in the Make It Native app to see your new default style. On Android, note the ripple effect on the header that was previously not visible:
 
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/9-default-styling.png" alt="default styling" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/9-default-styling.png" alt="default styling" class="no-border" >}}
 
-#### 3.3.9 Adding a Design Property
+#### Adding a Design Property
 
 It would be nice to provide the developer with some pre-defined styles that can be used for the group box. Create three style classes for the group box based on the brand colors success, warning, and danger:
 
@@ -1368,7 +1366,7 @@ It would be nice to provide the developer with some pre-defined styles that can 
 4. In the **Class** field, fill in *groupBoxWarning* to apply the warning style to the group box.
 5. Click **OK** and rerun the app locally to see the warning style:
 
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/10-warning-styling.png" alt="warning styling" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/10-warning-styling.png" alt="warning styling" class="no-border" >}}
 
 Defining all the different styles inside **test/MxTestProject/theme/styles/native/app/custom.js** can make your code less readable. To prevent this, extract the styles specifically for the group box widget and store them in a separate file:
 
@@ -1376,13 +1374,13 @@ Defining all the different styles inside **test/MxTestProject/theme/styles/nativ
 2. Move all the code from **test/MxTestProject/theme/styles/native/app/custom.js** into the new file.
 3. Add the following import to **test/MxTestProject/theme/styles/native/app/custom.js**:
 
-    ```javascript {linenos=false}
+    ```javascript
     export * from "./group-box";
     ```
 
 4. Refresh your app in the Make It Native app to verify the custom warning style is still being applied to the group box widget.
 
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/10-warning-styling.png" alt="warning styling" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/10-warning-styling.png" alt="warning styling" class="no-border" >}}
 
 The developer needs to have the class names memorized to apply a certain group box style. By using a design property this will no longer be necessary:
 
@@ -1415,7 +1413,7 @@ The developer needs to have the class names memorized to apply a certain group b
 
     Note that the property name must be the same as the widget ID. This will ensure this design property can be configured for your group box widget in Studio Pro.
 
-3. In Studio Pro click <kbd>F4</kbd> or select **Project > Synchronize Project Directory** to bring your application in sync with the changes you made to the previous two files.
+3. In Studio Pro, press <kbd>F4</kbd> or select **Project > Synchronize Project Directory** to bring your application in sync with the changes you made to the previous two files.
 
 4. Double-click the group box widget and navigate to the **Appearance** tab.
 
@@ -1423,13 +1421,13 @@ The developer needs to have the class names memorized to apply a certain group b
 
 6. Select the **Success** style and click **OK**:
 
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/success-design-property.png" alt="success style" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/success-design-property.png" alt="success style" class="no-border" >}}
 
 7. Rerun the app locally and verify the new success style in the Make It Native App:
 
-    {{< figure src="/attachments/howto8/extensibility/build-native-widget/11-success.png" alt="mobile success" >}}
+    {{< figure src="/attachments/howto8/extensibility/build-native-widget/11-success.png" alt="mobile success" class="no-border" >}}
 
-## 4 Read More
+## Read More
 
 * [Pluggable Widgets API Documentation](/apidocs-mxsdk/apidocs/pluggable-widgets/)
 * [How to Implement Native Mobile Styling](/howto8/mobile/native-styling/)

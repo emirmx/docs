@@ -2,10 +2,9 @@
 title: "Workflow Activities"
 url: /refguide9/workflow-activities/
 weight: 90
-tags: ["studio pro", "microflow", "workflow", "workflow activities"]
 ---
 
-## 1 Introduction
+## Introduction
 
 The activities described in this document are in the **Workflow Activities** section of the **Toolbox**.
 
@@ -22,6 +21,6 @@ The following are the workflow activities you can use in your microflow:
 * [Lock workflow](/refguide9/lock-workflow/) – locks the selected workflow
 * [Unlock workflow](/refguide9/unlock-workflow/) – unlocks the selected workflow
 
-## 2 Read More
+## Read More
 
 * [Activities](/refguide9/activities/)

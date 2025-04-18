@@ -1,11 +1,10 @@
 ---
 title: "XPath Source"
 url: /refguide9/xpath-source/
-tags: ["studio pro", "xpath", "xpath source", "data source", "data filter"]
 weight: 20
 ---
 
-## 1 Introduction
+## Introduction
 
 If **XPath** is selected as the data source for a widget then the object or objects shown are retrieved directly from the database with a query. You can filter data with an [XPath constraint](#xpath-constraints).  
 
@@ -18,19 +17,19 @@ The data retrieved can also be limited by the following factors:
 
 If you want to restrict data not for a single widget, but for several, you may want to apply [access rules](/refguide9/access-rules/) for entities instead of XPath constraints. This way you know that the objects will always be constrained by these rules. Access rules will also be applied when executing microflows which saves you from repeating constraints.
 
-## 2 Properties
+## Properties
 
-### 2.1 Entity (Path) {#entity-path}
+### Entity (Path) {#entity-path}
 
 The **Entity (path)** property specifies the target of the database query. If you have a top-level data widget, **Entity (path)** will get objects of the selected entity directly. If you have a nested data widget, you can also select an entity of a parent data container. In this case objects are retrieved following the association path and the association is parsed as an extra constraint in the database query. 
 
-{{< figure src="/attachments/refguide9/modeling/pages/data-widgets/data-sources/database-source/data-source-example.png" alt="Data Source Example"   width="400"  >}}
+{{< figure src="/attachments/refguide9/modeling/pages/data-widgets/data-sources/database-source/data-source-example.png" alt="Data Source Example"   width="400"  class="no-border" >}}
 
 {{% alert color="info" %}}
 This differs from the [association data source](/refguide9/association-source/) when objects are retrieved from the memory, not database.
 {{% /alert %}}
 
-### 2.2 Show Search Bar {#show-search-bar}
+### Show Search Bar {#show-search-bar}
 
 **Show search bar** is only available for data grids. You can select if and when the **[Search bar](/refguide9/search-bar/)** of the data grid is shown.
 
@@ -41,7 +40,7 @@ This differs from the [association data source](/refguide9/association-source/) 
 | With button (initially closed)  *(default)* | The user can open and close the search bar using the search button; the search bar is initially closed. |
 | Always                         | The search bar is always visible and cannot be close, nor is there a search button. |
 
-### 2.3 Wait for Search
+### Wait for Search
 
 The **Wait for search** property is available if **[Show search bar](#show-search-bar)** is set to *With button (initially open)* or to *Always*. 
 
@@ -49,7 +48,7 @@ When **Wait for search** is set to *Yes*, the grid will remain empty of contents
 
 Default: *false*
 
-### 2.4 XPath Constraint {#xpath-constraints}
+### XPath Constraint {#xpath-constraints}
 
 The [XPath constraint](/refguide9/xpath-constraints/) allows for custom, hard-coded limitations on the data displayed. This constraint will be appended to the constraints (if any) already applied through security and context.
 
@@ -59,7 +58,7 @@ XPath constraints are applied equally to all users and only apply to the data di
 
 XPath constraints for data sources have access to objects and attributes from all surrounding data containers. To refer to the immediately surrounding data widget, use `$currentObject`. You can refer to other surrounding data containers by adding a `$` to their name:
 
-{{< figure src="/attachments/refguide9/modeling/pages/data-widgets/data-sources/xpath-source/xpath-variable-constraint.png" alt="xpath variable constraint"   width="500"  >}}
+{{< figure src="/attachments/refguide9/modeling/pages/data-widgets/data-sources/xpath-source/xpath-variable-constraint.png" alt="xpath variable constraint"   width="500"  class="no-border" >}}
 
 For example `$customer/Name` would refer to the `Name` attribute of the surrounding data widget with the name `customer`.
 
@@ -73,11 +72,11 @@ The feature to use objects and attributes from surrounding data containers was i
 The feature to use objects and attributes can be used for [List view](/refguide9/list-view/) widgets, [Data Grid 2](/appstore/modules/data-grid-2/) modules, and many other widgets. However, it **cannot be used** for [Data Grid](/refguide9/data-grid/) and [Template Grid](/refguide9/template-grid/) containers.
 {{% /alert %}}
 
-#### 2.4.1 Known Errors
+#### Known Errors
 
 Currently, Studio Pro does not support database retrievals using XPath constraints that walk through both regular databases and [external entities](/refguide9/external-entities/). This results in the `Mixed source retrieval is currently not supported` error. If you experience this error, use Data Grid 2 instead of Data Grid, then disable sorting and remove the option to search on external entity attributes.
 
-## 3 Read More
+## Read More
 
 * [Data Containers](/refguide9/data-widgets/)
 * [Data Grid](/refguide9/data-grid/)

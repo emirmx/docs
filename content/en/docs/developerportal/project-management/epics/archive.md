@@ -1,11 +1,11 @@
 ---
-title: "Archive"
+title: "Archive Stories"
+linktitle: "Archive"
 url: /developerportal/project-management/epics/archive/
 weight: 40
 description: "Describes the Archive page in Epics."
-tags: ["Project Management", "Epics", "Sprint", "Archive", "Stories", "Developer Portal"]
 ---
-## 1 Introduction
+## Introduction
 
 Every time you complete a Sprint, all the stories that are **Done** are archived automatically. You can also archive a story and a swimlane manually by doing the following:
 
@@ -14,7 +14,7 @@ Every time you complete a Sprint, all the stories that are **Done** are archived
 
 All the archived stories are moved to the **Archived** page.
 
-## 2 Archived Stories
+## Archived Stories
 
 The **Archive** page shows all the archived stories.
 
@@ -28,13 +28,13 @@ The **Archive** page shows all the archived stories.
 
 If a feedback item was linked to your archived story, you will see it with a purple icon:
 
-{{< figure src="/attachments/developerportal/project-management/epics/archive/archive.png" >}}
+{{< figure src="/attachments/developerportal/project-management/epics/archive/archive.png" class="no-border" >}}
 
 On the top of the page, you can search a story in the search box, based on story title, tags, epic name, and story ID.
 
 You can click **Export to Excel** on the upper-right corner of the page to [export all the archived stories](#export-archived-stories) to an Excel file.
 
-## 3 Archived Sprint Details {#archived-sprint-details}
+## Archived Sprint Details {#archived-sprint-details}
 
 When you click the Sprint name in a row of an archived story on the **Archived** page, you can see the following details of this Sprint:
 
@@ -51,7 +51,7 @@ When you click the Sprint name in a row of an archived story on the **Archived**
 * Stories that were completed (shown under **Completed Stories**)
 * Stories that were not completed (shown under **Incomplete Stories**)
 
-## 4 Exporting Archived Stories {#export-archived-stories}
+## Exporting Archived Stories {#export-archived-stories}
 
 On the upper-right corner of the **Archive** page, you can find the **Export to Excel** button. This allows you to export all the archived stories to an Excel file.
 

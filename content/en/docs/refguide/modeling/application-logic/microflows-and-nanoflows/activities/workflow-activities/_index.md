@@ -2,14 +2,13 @@
 title: "Workflow Activities"
 url: /refguide/workflow-activities/
 weight: 85
-tags: ["studio pro", "microflow", "workflow", "workflow activities"]
 ---
 
 {{% alert color="info" %}}
 These activities can only be used in microflows.
 {{% /alert %}}
 
-## 1 Introduction
+## Introduction
 
 The activities described in this document are in the **Workflow Activities** section of the **Toolbox**.
 
@@ -27,8 +26,8 @@ The following are the workflow activities you can use in your microflow:
 * [Show workflow admin page](/refguide/show-workflow-page/) – opens a workflow overview page
 * [Lock workflow](/refguide/lock-workflow/) – locks the selected workflow
 * [Unlock workflow](/refguide/unlock-workflow/) – unlocks the selected workflow
-* [Notify workflow](/refguide/notify-workflow/) – notifies the  workflow that is suspended on the [Wait for notification](/refguide/wait-for-notification/) activity
+* [Notify workflow](/refguide/notify-workflow/) – notifies the workflow that is suspended on the [Wait for notification](/refguide/wait-for-notification/) activity
 
-## 2 Read More
+## Read More
 
 * [Activities](/refguide/activities/)

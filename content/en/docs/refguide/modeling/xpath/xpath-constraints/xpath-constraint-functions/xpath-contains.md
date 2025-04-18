@@ -2,14 +2,13 @@
 title: "XPath contains"
 url: /refguide/xpath-contains/
 weight: 16
-tags: ["studio pro"]
 ---
 
-## 1 Overview
+## Overview
 
 The `contains()` function tests whether a string attribute contains a specific string (case-insensitive) as a sub-string.
 
-## 2 Example
+## Example
 
 This query returns all the customers from which the name contains the string `an`:
 

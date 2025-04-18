@@ -6,8 +6,8 @@ weight: 55
 no_list: false
 description_list: true
 cascade:
-    - space: "APIs and SDK"
+    - content_type: "APIs and SDK"
     - mendix_version: 10
 ---
 
-The *APIs and SDK* are divided into the following categories:
+The *APIs and SDK* documentation is divided into the following categories:

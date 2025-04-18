@@ -4,10 +4,9 @@ url: /refguide9/workflow-security/
 linktitle: "Configure Workflow Security"
 description: "Describes how to configure security for a workflow in Mendix Studio Pro."
 weight: 30
-tags: ["studio pro", "workflow", "task", "security", "workflow security"]
 ---
 
-## 1 Introduction 
+## Introduction 
 
 When configuring security for workflows, you need to set up the following:
 
@@ -17,13 +16,13 @@ When configuring security for workflows, you need to set up the following:
 
 A combination of entity access, page access, and the User Assignment property help you make sure that targeted users will be able to view user tasks and their data.
 
-## 2 Configuring Entity Access {#entity-access}
+## Configuring Entity Access {#entity-access}
 
 If a user does not have an access to an entity, this means they have no access to entity data. You can allow users to **Create**, **Read**, **Write** and/or **Delete** objects of the entity. If a user should be able to only view the page with user tasks assigned to them without making any changes, the **Read** access is sufficient. If a user needs to add, change, and/or delete data, you should allow **Create**, **Write**, and **Delete** objects for the corresponding user role. You can also configure an XPath for detailed access rules. 
 
 For more information on the entity access, see the [Entity Access vs. Page Access](/refguide9/security/#entity-vs-page-access) section in *Security* and the [Entity Access](/refguide9/module-security/#entity-access) section in *Module Security*.
 
-## 3 Configuring Page Access {#page-access}
+## Configuring Page Access {#page-access}
 
 For each user task you set a dedicated page where users can view their **Task inbox** and interact with tasks. These task pages are called from the **Task inbox**, which should be added to the menu bar. You need to set the proper access to the task inbox pages and all the task pages.
 
@@ -31,11 +30,11 @@ The combination of entity access and page access makes sure that only dedicated 
 
 For more information on the page access, see the [Page Access](/refguide9/module-security/#page-access) section in *Module Security*.
 
-## 4 Configuring User Assignment {#user-assignment}
+## Configuring User Assignment {#user-assignment}
 
 The **System.WorkflowUserTask** entity is used in the inbox and task pages and has two similar XPath constraints for User and Administrator roles. To view these constraints, open the **System** module > domain model > **System.WorkflowUserTask** entity properties > **Access rules** tab > **XPath constraint** tab:
 
-{{< figure src="/attachments/refguide9/modeling/application-logic/workflows/workflow-security/system-workflow-user-task.png" alt="XPath for the Workflow User Task Entity in the System Module"  width="650">}}
+{{< figure src="/attachments/refguide9/modeling/application-logic/workflows/workflow-security/system-workflow-user-task.png" alt="XPath for the Workflow User Task Entity in the System Module"  width="650" class="no-border" >}}
 
 Below is an XPath example for the user role:
 
@@ -51,7 +50,7 @@ In the user task properties, you specify what user is targeted for the task (i.e
 
 For more information on user assignment, see the [User Assignment](/refguide9/user-task/#user-assignment) section in *User Task*.
 
-## 5 Why the User Does Not See the User Task
+## Why the User Does Not See the User Task
 
 If the user does not see the user task, check the following:
 

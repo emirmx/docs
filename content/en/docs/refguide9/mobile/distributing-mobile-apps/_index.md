@@ -2,15 +2,13 @@
 title: "Building, Testing, and Distributing Apps"
 linktitle: "Build, Test, Distribute Apps"
 url: /refguide9/mobile/distributing-mobile-apps/
-category: Mobile
 weight: 50
 description: "Distribute native mobile apps."
-tags: ["distribution", "native", "app stores", "ios", "android"]
 aliases:
     - /howto9/mobile/distribution/
 ---
 
-## 1 Introduction
+## Introduction
 
 Guides in this section will help you build, test and distribute mobile apps. While web-based applications, including Progressive Web Apps, can be distributed using our built-in publishing process, distributing a Native App requires a few additional steps. Therefore, the guides in this section focus on Native Apps.
 

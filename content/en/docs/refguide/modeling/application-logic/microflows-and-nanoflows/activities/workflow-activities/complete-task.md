@@ -2,7 +2,6 @@
 title: "Complete User Task"
 url: /refguide/complete-user-task/
 weight: 30
-tags: ["studio pro", "user task", "workflow", "task outcome", "complete task", "complete user task"]
 aliases:
     - /refguide/complete-task/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
@@ -12,15 +11,15 @@ aliases:
 This activity can only be used in microflows.
 {{% /alert %}}
 
-## 1 Introduction
+## Introduction
 
 The **Complete user task** activity can be used to define which outcome the [user task](/refguide/user-task/) should follow. 
 
-## 2 Properties
+## Properties
 
 An example of complete user task properties is represented in the image below:
 
-{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/workflow-activities/complete-task/complete-task-properties.jpg" alt="Complete Task Properties" max-width=100% class="image-border" >}}
+{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/workflow-activities/complete-task/complete-task-properties.jpg" alt="Complete Task Properties" max-width=100% >}}
 
 There are two sets of properties for this activity, those in the dialog box on the left, and those in the properties pane on the right.
 
@@ -29,7 +28,7 @@ The **Complete user task** properties pane consists of the following sections:
 * [Action](#action)
 * [Common](#common)
 
-## 3 Action Section {#action}
+## Action Section {#action}
 
 The **Action** section of the properties pane shows the action associated with this activity.
 
@@ -37,18 +36,18 @@ You can open a dialog box to configure this action by clicking the ellipsis (**â
 
 You can also open the dialog box by double-clicking the activity, or right-clicking the activity and selecting **Properties**.
 
-### 3.1 User Task Object
+### User Task Object
 
 The user task object of the **System.WorkflowUserTask** entity available from the microflow parameters.
 
-### 3.2 User Task
+### User Task
 
 The user task for which you want to set an outcome. 
 
-### 3.3 Outcome
+### Outcome
 
 Gives you a list of available outcomes for the selected user task. The user task will follow the selected outcome. If there is only one outcome available, the value is set to *Default* and is not editable.
 
-## 4 Common Section {#common}
+## Common Section {#common}
 
 {{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}

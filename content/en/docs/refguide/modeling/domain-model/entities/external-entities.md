@@ -2,33 +2,34 @@
 title: "External Entities"
 url: /refguide/external-entities/
 weight: 15
-tags: ["domain model", "entity", "entities", "attribute", "external entities", "event handler", "access rule", "studio pro", "consumed OData Service"]
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
+# SB: The images on this page are created using the Lato-LandscapeDemoApp (https://sprintr.home.mendix.com/link/project/1b515494-d818-4358-8c91-6c3d54e9cae5)
 ---
-## 1 Introduction
+## Introduction
 
-External entities can be added to the domain model through the [Integration pane](/refguide/integration-pane/). They are displayed as purple entity containers in the domain model. External entities represent the link to the datasets that are made available through the shared data sources registered in [Mendix Catalog](/catalog/). Data sources are collections of entity sets (that are referred to as datasets) in published OData services. 
+External entities can be added to the domain model through the [Integration pane](/refguide/integration-pane/). They are displayed as purple entity containers in the domain model. External entities represent the link to the entities that are made available through OData services registered in the [Catalog](/catalog/).
 
-Datasets are maintained and updated in the originating app. You can consume these datasets through external entities in your app development. When the app uses the data, it retrieves it from the originating app.
+The published entities are maintained and updated in the originating app. You can consume these through external entities in your app development. When the app uses the data, it retrieves it from the originating app.
 
-External entities can be used like local entities. However, as the datasets are maintained in the originating apps, not all properties can be changed in the consuming app.
+External entities can be used like local entities. However, as the entities are maintained in the originating apps, not all properties can be changed in the consuming app.
 
-## 2 Adding an External Entity to an App {#adding-external-entities}
+## Adding an External Entity to an App {#adding-external-entities}
 
 To add an external entity to your app model, follow these steps:
 
-1. In the domain model of your app, use the Integration pane to search for the entity or data source you want to use. 
+1. In your app, open the domain model of the module you want to add an external entity to, and use the Integration pane to search for the entity you want to use. 
 
-    {{% alert color="info" %}}In the [Catalog](/catalog/search/), an OData service may be registered multiple times with different version numbers or deployed to different environments, all publishing the entity (dataset) that you may want to use. Search the Catalog first and find the one most relevant to the requirements for your app.{{% /alert %}}
+    {{% alert color="info" %}}In the [Catalog](/catalog/search/), an OData service may be registered multiple times with different version numbers or deployed to different environments, all publishing the entity that you may want to use. Search the Catalog first and find the one most relevant to the requirements for your app.{{% /alert %}}
 
 2. Drag the entity into the domain model. 
 
-The entity and its attributes are then added to your app and two documents are added in the **App Explorer**: 
+The entity and its attributes are then added to your app and some documents are added in the **App Explorer**: 
 
 * A [Consumed OData Service](/refguide/consumed-odata-service/) document that contains details of the OData service and the metadata. The logo displayed identifies the originating app of the service.
 * A **Location** constant that specifies the URL of the service.
+* Any enumeration that is used as the type for any of the attributes of the entity.
 
-{{< figure src="/attachments/refguide/modeling/domain-model/external-entities/consumed-service-docs.png" alt=" Virtual Entity and OData Service files" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/external-entities/consumed-service-docs.png" alt="External Entity and OData Service files" class="no-border" >}}
 
 {{% alert color="info" %}}
 When you drag an entity that is associated with an entity from the same service already in your domain model, the association will be displayed and established between the entities. For more information on associations between external entities, see [Associations](#properties).
@@ -36,9 +37,9 @@ When you drag an entity that is associated with an entity from the same service 
 
 For more information, see [Consumed OData Service](/refguide/consumed-odata-service/).
 
-The consumed entities of the current app are listed in the **Used in your App** section of the Integration pane:
+The consumed entities of the current app are listed in the **Used in this app** section of the Integration pane:
 
-{{< figure src="/attachments/refguide/modeling/domain-model/external-entities/data-hub-app.png" alt=" Virtual Entity and OData Service files" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/external-entities/data-hub-app.png" alt=" Virtual Entity and OData Service files" class="no-border" >}}
 
 {{% alert color="info" %}}
 When a new version of a consumed service becomes available in the Catalog, this will be indicated in the Integration pane by an update arrow next to the service name. For more information, see the [Updating or Switching a Consumed OData Service](/refguide/consumed-odata-service/#updating) section in *Consumed OData Service*.
@@ -52,7 +53,7 @@ If you delete an external entity from the domain model, the service documents re
 
 For more information on using published OData services and entities through the Catalog, see [Consume Registered Assets](/catalog/consume/consume-registered-assets/).
 
-## 3 Properties of External Entities {#properties}
+## Properties of External Entities {#properties}
 
 Compared to local entities, external entities have a limited number of properties that can be changed. The rest of the properties are defined in the originating app and are, therefore, read-only.
 
@@ -60,11 +61,11 @@ Compared to local entities, external entities have a limited number of propertie
 Changes that are made to the properties of external entities are made only in the consuming app. The originating app will not be affected by the changes.
 {{% /alert %}}
 
-### 3.1 General
+### General
 
 This group displays the general properties of the external entity. These values are defined in the originating app, so you cannot edit them. The values that you can edit will only apply to the local app:
 
-{{< figure src="/attachments/refguide/modeling/domain-model/external-entities/external-entity-properties.png" alt="External Entity Properties" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/external-entities/external-entity-properties.png" alt="External Entity Properties" class="no-border" >}}
 
 * **Name** – the name of the entity in the local app
 * **From service** – shows the service from which this entity originates
@@ -74,7 +75,7 @@ This group displays the general properties of the external entity. These values 
 * **Persistable** – indicates if this a persistable external entity, which means the originating app allows retrieving (reading) objects
 * **Summary** – shows the description for the entity in the originating app (shown only when there is a description)
 
-### 3.2 Attributes {#attributes}
+### Attributes {#attributes}
 
 The [attributes](/refguide/attributes/) that have been published in the OData service for the external entity are listed here. You can choose to remove attributes that the app does not need. All changes that are made to the attributes and the attribute list are applied to the local instance of the entity. As they are consumed, the changes will not affect the metadata of the consumed service that the entity is published in or the attributes of the entity in the originating app.
 
@@ -86,11 +87,11 @@ The following operations can be done on the attribute list:
 * **Edit** – edit the selected attribute from the [Edit Attribute](#edit-attribute) dialog
 * **Remove** – remove an attribute from the list
 
-#### 3.2.1 Edit Attribute {#edit-attribute}
+#### Edit Attribute {#edit-attribute}
 
 The **Edit Attribute** dialog can be used to specify a local name and add a local description.
 
-{{< figure src="/attachments/refguide/modeling/domain-model/external-entities/edit-attributes.png" alt="Edit attributes" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/external-entities/edit-attributes.png" alt="Edit attributes" class="no-border" >}}
 
 * **General**
     * **Name** – a local name for the attribute
@@ -102,13 +103,13 @@ The **Edit Attribute** dialog can be used to specify a local name and add a loca
 
 ¹ For attributes that represent a property of a complex attribute, a forward slash (`/`) separates the name of the attribute of the entity and the name of the property of the complex type.
 
-### 3.3 Associations {#associations}
+### Associations {#associations}
 
 This tab displays the associations the external entity has with other entities that are published in the same service, and any associations that have been made with local entities. For more information on association properties in Studio Pro, see [Association Tab Properties](/refguide/association-member-properties/).
 
 If the entity contains [one-way navigable associations](/refguide/association-properties/#one-way-navigable), there is a note at the top of the dialog box. 
 
-{{< figure src="/attachments/refguide/modeling/domain-model/external-entities/external-entity-associations.png" alt="Edit attributes" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/external-entities/external-entity-associations.png" alt="Edit attributes" class="no-border" >}}
 
 The following apply for all associations with the external entity:
 
@@ -131,11 +132,11 @@ It is possible to **Remove** an association between two external entities in the
 You cannot connect two external entities that are not connected in the originating app, as the relationship to the data cannot be influenced locally. However, consider adding a local entity and connect this local entity with both external entities. In this case, the local entity must be the owner of both associations.
 {{% /alert %}}
 
-### 3.3.1 Association Properties
+### Association Properties
 
 When you **Edit** an association that is included in two entities exposed in the same OData service, the following properties are displayed and the only local change that can be made is the local name:
 
-{{< figure src="/attachments/refguide/modeling/domain-model/external-entities/association-properties.png" alt="Edit external associations" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/external-entities/association-properties.png" alt="Edit external associations" class="no-border" >}}
 
 * **Name** – local name of the association
 * **Original Name** – read-only name of the association given in the originating app
@@ -145,17 +146,17 @@ When you **Edit** an association that is included in two entities exposed in the
 
 If the association is [one-way navigable](/refguide/association-properties/#one-way-navigable), there is a note at the top of the dialog box.
 
-{{< figure src="/attachments/refguide/modeling/domain-model/external-entities/association-properties-one-way-navigable.png" alt="Edit external associations one-way navigable" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/external-entities/association-properties-one-way-navigable.png" alt="Edit external associations one-way navigable" class="no-border" >}}
 
-### 3.4 Documentation {#documentation}
+### Documentation {#documentation}
 
 You can add any local information about the external entity in this tab.
 
-## 4 Authentication {#authentication}
+## Authentication {#authentication}
 
 Using external entities in production environments requires both publishers and consumers of OData services to set the correct authentication method.
 
-### 4.1 Publishers: Setting Authentication Method
+### Publishers: Setting Authentication Method
 
 Publishers of an OData service set the type of authentication needed for it to be consumed. The following authentication methods are available:
 
@@ -167,7 +168,7 @@ Publishers of an OData service set the type of authentication needed for it to b
 
 For details on the types of authentication methods and how to set them up, see the [Security](/refguide/published-odata-services/#security) section of *Published OData Services*. 
 
-### 4.2 Consuming External Entities with Authentication
+### Consuming External Entities with Authentication
 
 When an external entity is used in an app module through the Integration pane, a [consumed OData service](/refguide/consumed-odata-service/) document is added specifying the details of the consumed service. This is the API to the publishing app and the data associated with the entity.
 
@@ -179,7 +180,7 @@ Learn more about adding authentication information to a consumed OData service:
 * Using [HTTP headers](/refguide/consumed-odata-service/#http-headers) for consuming custom authentication methods
 * Consuming a service that uses [Mendix SSO](/refguide/consumed-odata-service/#authenticate-mendix-sso)
 
-## 5 External Entity Limitations {#limitations}
+## External Entity Limitations {#limitations}
 
 External entities are the endpoints that are defined in the published OData service from the originating app. The consumed OData service document displays the values from the service metadata when the external entity is used through the Integration pane. The datasets associated with the entities are maintained in the originating apps.
 
@@ -191,5 +192,6 @@ Furthermore, external entities cannot be committed. Use the [Send External Objec
 
 * The **Commit** activity does not work. Use **Send External Object** instead.
 * On pages, the [Save button](/refguide/button-widgets/) and the [Save Changes event](/refguide/on-click-event/#save-changes) do not work when the page contains widgets that update external entities. Call a microflow that persists the changes using **Send External Object** instead.
+* When synchronizing remote entities to an offline-first client while the remote service is offline, the synchronization will fail and users will see an error.
 
-For more details on consuming services and published entities, including operations that can be performed on external entities, see [Consume Registered Assets](/catalog/consume/) in the *Data Hub Guide*.
+For more details on consuming services and published entities, including operations that can be performed on external entities, see [Consume Services](/catalog/consume/).

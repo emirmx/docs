@@ -3,13 +3,11 @@ title: "Extending Your Application with Custom Java"
 linktitle: "Extending App with Custom Java"
 url: /refguide/extending-your-application-with-custom-java/
 weight: 30
-category: "Java Programming"
 description: "Describes how to extend your application with custom Java code."
-tags: ["microflow", "logic", "java", "extend", "jdk", "custom", "UnsupportedClassVersionError"]
 # Linked from https://www.mendix.com/blog/easy-xpath-retrieval-in-java/ - please ask for this to be changed and redirect if moved
 ---
 
-## 1 Introduction
+## Introduction
 
 Most application logic can be developed using [microflows](/refguide/microflows/) and [nanoflows](/refguide/nanoflows/). These are very powerful and contain most of the features you need in every application. However, If there is a feature missing you can extend Mendix microflows with the use of Java actions. 
 
@@ -18,7 +16,7 @@ This document teaches you how to do the following:
 * Extend your application with custom Java code you can call from a microflow
 * Use the [Mendix Runtime API](/apidocs-mxsdk/apidocs/runtime-api/) to retrieve data from the database using an XPath in a Java action
 
-## 2 Prerequisites {#prerequisites}
+## Prerequisites {#prerequisites}
 
 This how-to assumes that you are familiar with using Studio Pro to create a simple app with a Domain Model, Pages, and Microflows.
 
@@ -28,7 +26,7 @@ Before starting this how-to, Mendix recommends that you install Eclipse. Eclipse
 Mendix recommends using Eclipse to edit your Java code, although you can use any text editor. Studio Pro contains a [Deploy for Eclipse](/refguide/app-menu/#eclipse) feature which automatically configures everything so you only have to import the app into your Eclipse working environment.
 {{% /alert %}}
 
-## 3 Setting Up a Simple App{#simple-app}
+## Setting Up a Simple App{#simple-app}
 
 Before you start, you need to create a simple app in which to create and use your Java actions. The app will store a number of products, each of which is assigned to a category. Each product has an indication as to whether it is available or not.
 
@@ -51,7 +49,7 @@ To create the app, follow these steps:
 
     The Domain Model should look like this:
 
-    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/domain-model.png" alt="description" class="image-border" >}}
+    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/domain-model.png" alt="description" >}}
 
 4. Right-click one of the entities and **Generate overview pages** for all three entities.
 5. Add the `Product_Overview` page to the navigation or home page.
@@ -63,11 +61,11 @@ Now you have some data to use when building your app.
 The examples below use categories which include "book" and products with the name "The Lord of the Rings".
 {{% /alert %}}
 
-## 4 Adding a Java Action to Reverse a Product Name
+## Adding a Java Action to Reverse a Product Name
 
 To demonstrate how to add a Java action, you will use Java to reverse the name of a product and display it.
 
-### 4.1 Adding a Java Action to the Products Module{#add-java-action}
+### Adding a Java Action to the Products Module{#add-java-action}
 
 In this section, you will create a new Java action and deploy the app for Eclipse, which creates a file containing the Java class for the action.
 
@@ -80,12 +78,12 @@ In this section, you will create a new Java action and deploy the app for Eclips
     3. Click **Select** for **Entity** and select **Products.Product** as the object type.</br>
     4. Click **OK**.</br>
 
-    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/add.png" width="500" >}}
+    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/add.png" width="500" class="no-border" >}}
 
 4. Change the **Type** in the **Return** section of the Java action to **String**, change the **Variable name** to *ReversedName*.
-5. Click <kbd>ctrl</kbd> + <kbd>s</kbd> to save the Java action.
+5. Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save the Java action.
 
-    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/return.png" width="500" class="image-border" >}}
+    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/return.png" width="500" >}}
 
 6. Select **App** > **Deploy for Eclipse** from the Studio Pro menu.
 
@@ -97,7 +95,7 @@ By deploying for Eclipse, Studio Pro generates Java code for all your Java actio
 
 Any other changes you make will be overwritten when you deploy your app.
 
-### 4.2 Editing the Java Action in Eclipse
+### Editing the Java Action in Eclipse
 
 To edit the Java action in Eclipse, open Eclipse and follow these steps:
 
@@ -106,17 +104,17 @@ To edit the Java action in Eclipse, open Eclipse and follow these steps:
 3. In **Select root directory** browse to the root directory of your app.
 4. Click **Finish**.
 
-    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/import3.png" width="400" >}}
+    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/import3.png" width="400" class="no-border" >}}
 
     {{% alert color="info" %}}If you don't know what the app directory is, select **App** > **Show App Directory in Explorer** in Studio Pro.{{% /alert %}}
 
 5. Search in Eclipse for **ReverseProductName.java** and open it. You can also find it in the **Package Explorer** pane.
 
-    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/searchjavaclass.png" class="image-border" >}}
+    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/searchjavaclass.png" >}}
 
     In the Java code, there is some placeholder code between the `//BEGIN USER CODE` and `//END USER CODE` comment statements. This is where you can add your own Java code.
 
-    ```java {linenos = table,hl_lines=["4-6"],linenostart=33}
+    ```java {hl_lines="4-6"}
     	@java.lang.Override
     	public java.lang.String executeAction() throws Exception
     	{
@@ -130,7 +128,7 @@ To edit the Java action in Eclipse, open Eclipse and follow these steps:
 
 6. Replace the existing line `throw new com.mendix.systemwideinterfaces.MendixRuntimeException("Java action was not implemented");` between `//BEGIN USER CODE` and `//END USER CODE`, with the code:
 
-    ```java {linenos = false}
+    ```java
     String productName = this.productParameter.getName(this.getContext());
     return new StringBuilder(productName).reverse().toString();
     ```
@@ -139,7 +137,7 @@ To edit the Java action in Eclipse, open Eclipse and follow these steps:
 
 7. Select **File** > **Save** to save the Java action in Eclipse.
 
-### 4.3 Calling the Java Action from a Microflow
+### Calling the Java Action from a Microflow
 
 Now you will add a button to the Product_NewEdit page which uses a microflow to display the product name backwards when pressed.
 
@@ -150,7 +148,7 @@ Now you will add a button to the Product_NewEdit page which uses a microflow to 
 5. Drag the **ReverseProductName** Java action from the **App Explorer** into the microflow.
 6. In the **Call Java Action** properties editor, select **$Product** from the **Product parameter** drop-down.
 
-    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/product-parameter.png" >}}
+    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/product-parameter.png" class="no-border" >}}
 
 7. Click **OK** to save the properties. 
 8. Drag a **Show message** activity into the microflow.
@@ -158,13 +156,13 @@ Now you will add a button to the Product_NewEdit page which uses a microflow to 
 10. In the **Parameters** section, add a **New** parameter with the value **$ReversedName**. This is the output variable of the Java action.
 11. Click **OK** to save the parameter. The **Show Message** properties should now look like this:
 
-    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/show-message.png" >}}
+    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/show-message.png" class="no-border" >}}
 
-12. Click **OK** to save the **Show message** activity. The microflow will be similar to this this:
+12. Click **OK** to save the **Show message** activity. The microflow will be similar to this:
 
-    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/microflow4.png"  class="image-border" >}}
+    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/microflow4.png"  >}}
 
-### 4.4 Deploying and Seeing the Results
+### Deploying and Seeing the Results
 
 1. Click **Run Locally** ({{% icon name="controls-play" %}}) to deploy the application locally, and click **View App** to open the application in your browser.
 2. Navigate to the **Product overview**, and add a new Product, or edit an existing one.
@@ -172,9 +170,9 @@ Now you will add a button to the Product_NewEdit page which uses a microflow to 
 
     You will see the name of the product in the dialog box, but displayed in reverse.
 
-    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/app2.png" width="400" >}}
+    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/app2.png" width="400" class="no-border" >}}
 
-## 5 XPath Retrieval in Java {#xpath}
+## XPath Retrieval in Java {#xpath}
 
 Using the [Mendix Runtime API](/apidocs-mxsdk/apidocs/runtime-api/), your Java actions can interact with many parts of your app. One thing that many developers want to do is to retrieve a list of objects using an [XPath Constraint](/refguide/xpath-constraints/). This section describes how to implement an XPath retrieval in a Java action.
 
@@ -186,7 +184,7 @@ Using the Domain Model you set up in [Setting Up a Simple App](#simple-app), abo
 
 The example skips many features you would want to add to a real app, but is designed for simplicity.
 
-### 5.1 XPath in Microflow
+### XPath in Microflow
 
 Firstly, a reminder of how this XPath could be implemented in a Retrieve activity. You can use this XPath in a Retrieve activity in a microflow using the following steps:
 
@@ -208,7 +206,7 @@ Firstly, a reminder of how this XPath could be implemented in a Retrieve activit
     * Entity: Products.Product
     * XPath constraint:
 
-        ```xpath {linenos = false}
+        ```xpath
         [Products.Product_ProductState/Products.ProductState[
         Available = true ()
         ]]
@@ -233,7 +231,7 @@ Firstly, a reminder of how this XPath could be implemented in a Retrieve activit
 
     Clicking the **Microflow product list** button will display all Products named "The Lord of the Rings" with the Category "Book" which are `Available`. You may have to add some examples using the **Product Overview** if none are displayed.
 
-### 5.2 XPath in a Java Action
+### XPath in a Java Action
 
 To use this same XPath in a Java action called from a microflow, perform the following steps:
 
@@ -245,7 +243,7 @@ To use this same XPath in a Java action called from a microflow, perform the fol
         * category -  an **Object** of type **Products.Category**
     * Return > Type – **List** of **Products.Product** with the **Variable name** *ProductList*
 
-    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/java-action-2.png" width="400" >}}
+    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/java-action-2.png" width="400" class="no-border" >}}
 
 2. Deploy the app for Eclipse using the menu item **App** > **Deploy for Eclipse**.
 3. Search in Eclipse for **findProductByNameAndCategory.java** and open it. If the package was already open in Eclipse, you may need to refresh the editor using <kbd>F5</kbd>.
@@ -258,7 +256,7 @@ To use this same XPath in a Java action called from a microflow, perform the fol
 
 4. Add the following `import` statements after the generated import statements in the Java file:
 
-    ```java {linenos = false}
+    ```java
     import java.util.List;
     import com.mendix.core.Core;
     import products.proxies.Product;
@@ -270,7 +268,7 @@ To use this same XPath in a Java action called from a microflow, perform the fol
 
 5. Add the following instructions between `//BEGIN USER CODE` and `//END USER CODE` to build the XPath and execute it. This replaces the placeholder command to throw a runtime exception.
 
-    ```java {linenos = false}
+    ```java
    	//create the xpath
 	String xpath = String.format("//%s[%s/%s[%s = true()]][%s = $Category][%s = '%s']",
 			Product.entityName,
@@ -298,7 +296,7 @@ To use this same XPath in a Java action called from a microflow, perform the fol
     * Name: a product name which exists in your data, for example 'The Lord of the Rings'
     * Category: $Category
 
-    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/call-java-action.png" width="400" >}}
+    {{< figure src="/attachments/refguide/java-programming/extending-your-application-with-custom-java/call-java-action.png" width="400" class="no-border" >}}
 12. **Duplicate** the **MicroflowProductList** page and **Rename** it *JavaActionProductList*.
 13. Open the **JavaActionProductList** page.
 14. Set the **Data source** for the data grid to be to be the Microflow **Products.ListWithJavaAction**.
@@ -307,24 +305,24 @@ To use this same XPath in a Java action called from a microflow, perform the fol
 
     Clicking the **Java action product list** button will display all Products named "The Lord of the Rings" with the Category "Book" which are Available. You may have to add some examples using the **Product Overview** if none are displayed.
 
-## 6 Troubleshooting {#troubleshooting}
+## Troubleshooting {#troubleshooting}
 
-### 6.1 Unsupported Class Version Error
+### Unsupported Class Version Error
 
 If you get an `UnsupportedClassVersionError` when running your app, follow these steps:
 
 1. Clean your app's **deployment** folder by selecting **App** > **Clean Deployment Directory**.
 2. Add the same JDK version to Eclipse as that which you are using in Studio Pro (this is the recommended version correlation). For details on JDK requirements, see the [Mendix Studio Pro](/refguide/system-requirements/#sp) section of *System Requirements*.
 
-### 6.2 Compile Errors
+### Compile Errors
 
 When you deploy your app, Studio Pro will compile all the Java actions. If you have made a mistake in the Java, the action will not compile and you will be shown the error which you will need to correct using Eclipse.
 
-### 6.3 Runtime Errors
+### Runtime Errors
 
 When you use your app, you may encounter an error. You can look in the Studio Pro console to see if this is caused by an error in your Java.
 
-## 7 Read More
+## Read More
 
 * [Using Eclipse](/refguide/using-eclipse/)
 * [Using the Java API](/refguide/java-api-tutorial/)

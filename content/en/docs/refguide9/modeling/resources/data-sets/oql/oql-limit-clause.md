@@ -1,30 +1,29 @@
 ---
 title: "OQL Limit Clause"
 url: /refguide9/oql-limit-clause/
-tags: ["studio pro"]
 ---
 
-## 1 Description
+## Description
 
 With the `LIMIT` clause a portion of the result of a query can be returned.
 
-## 2 Syntax
+## Syntax
 
 The syntax is as follows:
 
-```sql {linenos=false}
+```sql
 [ LIMIT number ] [ OFFSET number ]
 ```
 
-### 2.1 LIMIT
+### LIMIT
 
 `LIMIT` specifies how many rows must be returned.
 
-### 2.2 OFFSET
+### OFFSET
 
 `OFFSET` specifies how many rows must be skipped before returning the result rows.
 
-## 3 Examples
+## Examples
 
 This query retrieves the first ten customers, sorted by their last name:
 

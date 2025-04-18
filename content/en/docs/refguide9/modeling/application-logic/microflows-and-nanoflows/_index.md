@@ -3,10 +3,9 @@ title: "Microflows and Nanoflows"
 url: /refguide9/microflows-and-nanoflows/
 weight: 10
 description: "Presents an overview of microflows and nanoflows."
-tags: ["studio pro", "microflow", "nanoflow"]
 ---
 
-## 1 Introduction
+## Introduction
 
 Microflows and nanoflows allow you to express the logic of your application. They can perform actions such as creating and updating objects, showing pages, and making choices. It is a visual way of expressing what traditionally ends up in textual program code.
 

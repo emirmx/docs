@@ -2,14 +2,13 @@
 title: "Commit Object(s)"
 url: /refguide/committing-objects/
 weight: 30
-tags: ["studio pro", "commit object", "activity"]
 ---
 
 {{% alert color="info" %}}
 This activity can be used in both microflows and nanoflows.
 {{% /alert %}}
 
-## 1 Introduction
+## Introduction
 
 The **Commit object(s)** activity works on one or more objects. For persistable entities, committing an object stores it in the database. Committing non-persistable entities stores the current attribute values and association values in memory. This allows a rollback to revert to those values. See also [Persistability](/refguide/persistability/). External objects cannot be committed. To store changed values of external objects, use the [Send External Object](/refguide/send-external-object/) activity.
 
@@ -17,11 +16,11 @@ The **Commit object(s)** activity works on one or more objects. For persistable 
 A Mendix commit does not always behave like a database commit. See [How Commits Work](#how-commits-work), below, for more information.
 {{% /alert %}}
 
-## 2 Properties
+## Properties
 
 An example of **Commit object(s)** properties is represented in the image below:
 
-{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/object-activities/committing-objects/commit-properties.png" alt="commit object(s) properties" width="650px" >}}
+{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/object-activities/committing-objects/commit-properties.png" alt="commit object(s) properties" width="650px" class="no-border" >}}
 
 There are two sets of properties for this activity, those in the dialog box on the left, and those in the properties pane on the right.
 
@@ -30,7 +29,7 @@ The **Commit object(s)** properties pane consists of the following sections:
 * [Action](#action)
 * [Common](#common)
 
-## 3 Action Section{#action}
+## Action Section{#action}
 
 The **Action** section of the properties pane shows the action associated with this activity.
 
@@ -38,11 +37,11 @@ You can open a dialog box to configure this action by clicking the ellipsis (**â
 
 You can also open the dialog box by double-clicking the activity, or right-clicking the activity and selecting **Properties**.
 
-### 3.1 Object or List
+### Object or List
 
 The object or list of objects that you want to commit.
 
-### 3.2 With Events
+### With Events{#with-events}
 
 {{% alert color="info" %}}
 This property is for microflows only.
@@ -52,7 +51,11 @@ Indicates whether or not to execute the commit event handlers of the objects.
 
 Default: **Yes**
 
-#### 3.2.1 Events in Nanoflows
+{{% alert color="warning" %}}
+Most validation rules are not triggered if you do a commit and **With events** is set to *No*. In most cases, validation rules will have been triggered when members (for example, an attribute) are changed, but Mendix advises that you set **With events** to *Yes* if you want to ensure that validations are always carried out. See [data validation](/refguide/setting-up-data-validation/) for more information.
+{{% /alert %}}
+
+#### Events in Nanoflows
 
 Nanoflows do not have this property.
 
@@ -60,7 +63,7 @@ If the **Commit object(s)** activity is used in an online app, it sends a commit
 
 If the **Commit object(s)** activity is used in an offline app, the changes are committed to the offline database, and event handlers are run when the offline app synchronizes.
 
-### 3.3 Refresh in Client{#refresh-in-client}
+### Refresh in Client{#refresh-in-client}
 
 This setting defines how changes are reflected in the pages presented to the end-user.
 
@@ -78,29 +81,29 @@ When testing your app, ensure that the desired data is being displayed by the wi
 When committing a large number of objects, Mendix recommends not enabling **Refresh in client**, because it can slow things down.
 {{% /alert %}}
 
-#### 3.3.1 Microflow is Called from the Client in an Online App
+#### Microflow is Called from the Client in an Online App
 
 If **Refresh in client** is set to **No**, the change is not reflected in the client.
 
 If set to **Yes**, the object is refreshed across the client, which includes reloading the relevant [data sources](/refguide/data-sources/).
 
-#### 3.3.2 Microflow is Called in an Offline or Native App
+#### Microflow is Called in an Offline or Native App
 
 When inside a microflow that is called from an offline or native app, the **Refresh in client** option is ignored and functions as if it was set to **No**.
 
 For more information, see the [Microflows](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/#microflows) section of Offline-First Data.
 
-#### 3.3.3 Action is in a Nanoflow
+#### Action is in a Nanoflow
 
 When inside a [nanoflow](/refguide/nanoflows/), the object is refreshed across the client as if **Refresh in client** was set to **Yes**.
 
-## 4 Common Section{#common}
+## Common Section{#common}
 
 {{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
 
-## 5 How Commits Work{#how-commits-work}
+## How Commits Work{#how-commits-work}
 
-### 5.1 Committing Objects
+### Committing Objects
 
 When you commit an object, the current value is saved. This means that you cannot roll back to the previous values of the object using the rollback object activity of a microflow.
 
@@ -108,7 +111,7 @@ However, a Mendix commit is not the same as a database commit. For an object of 
 
 Mendix mimics this behavior for non-persistable entities. Committing a non-persistable entity means that you cannot use a rollback object activity to go back to the previous values, although the rollback error handling in a microflow rolls back to the original values.
 
-### 5.2 Autocommit and Associated Objects {#autocommit-and-associated-objects}
+### Autocommit and Associated Objects {#autocommit-and-associated-objects}
 
 When an object is committed through a default **Save** button, a commit activity, or web services, it always triggers the commit events. The platform also evaluates all associated objects. To guarantee data consistency, the platform may also autocommit associated objects.
 
@@ -116,6 +119,8 @@ An autocommit is an automatic commit from the platform, which is done to keep th
 
 {{% alert color="warning" %}}
 An autocommit is not the same as an explicit commit!
+
+When objects are autocommitted, all changed member values, including associations, are saved in the database as well. These members are still marked as changed until these objects are explicitly committed. As a consequence, association rows for these objects are deleted and reinserted in the database when these objects are explicitly committed.
 
 If a rollback is triggered for any reason (for example, if the user session is terminated by the user closing the browser), then autocommitted objects are deleted from the database. For more information about how Mendix handles persistable objects, see [Persistability](/refguide/persistability/).
 {{% /alert %}}
@@ -135,4 +140,4 @@ During commits, the following occurs:
 * Result:
     * An object with the state **Instantiated** is inserted into the database, and an object with any other state is updated
 
-{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/object-activities/committing-objects/during-commits.png" >}}
+{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/object-activities/committing-objects/during-commits.png" class="no-border" >}}

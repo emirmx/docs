@@ -1,10 +1,9 @@
 ---
-title: "Mendix Cloud"
+title: "Mendix Cloud Release Notes"
+linktitle: "Mendix Cloud"
 url: /releasenotes/developer-portal/mendix-cloud/
-category: "Deployment"
 weight: 10
 description: "Release notes for deployment to Mendix Cloud"
-tags: ["release notes", "deployment", "cloud environment", "Mendix Cloud", "free app"]
 ---
 
 These release notes cover changes to deployment to [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/).
@@ -15,15 +14,226 @@ There are separate release notes for other deployment targets; for more informat
 
 For information on the current status of deployment to Mendix Cloud and any planned releases, see [Mendix Status](https://status.mendix.com/).
 
+## 2025
+
+### April 17, 2025
+
+#### Improvements
+
+* We have added new environment variables which allow you to control the buffer size and buffer memory for the Fluentbit agent for Splunk and New Relic.
+
+### February 27, 2025
+
+#### Improvements
+
+* We have added a validation mechanism for pipeline designs, which prevents users from deleting a design if any pipelines using that design are currently running. For more information, see [Pipelines: Editing a Pipeline Design](/developerportal/deploy/pipelines/#edit-pipeline). 
+* You can now access the **Details** page of a pipeline at any point, also while the pipeline is running. For more information, see [Pipelines: Run Results](/developerportal/deploy/pipelines/#run-results).
+
+## 2025
+
+### February 20, 2025
+
+#### Improvements
+
+* We have updated the custom JMX metrics prefix from `jmx` to `mx`. This change ensures that these metrics are not indexed as `custom metrics` in Datadog.
+
+### February 2, 2025
+
+#### New Features
+
+* We have added a number of new features which are all available as part of the [new UI](/developerportal/deploy/environments-redesign/). These are:
+
+    * Redesigned the **Environment Details** page to improve functionality and enhance the user experience.
+    * Added staging support for apps in the deploy wizard.
+    * Added the ability to compare and edit model options across environments.
+    * Redesigned the **Environments** page for Free Apps.
+
+#### Improvements
+
+* Based on user feedback, the [new UI](/developerportal/deploy/environments-redesign/) now also contains UX improvements to the **Environments Overview** page for paid apps.
+
 ## 2024
+
+### December 12, 2024
+
+#### Improvements
+
+* We improved the layout and display of the Alerts page. The new layout allows sorting and filtering of alerts based on the severity and date together with a free text search. 
+* You can now subscribe to alerts emails in the settings tab. For more information, see [Alerts](/developerportal/operate/monitoring-application-health/).
+
+### December 5, 2024
+
+#### Improvements
+
+* We introduced cloud tokens for your cloud resource pack purchases! Starting now, you will use [cloud tokens](/control-center/entitlements/#cloud-tokens) instead of cloud credits to complete your cloud resource purchases. With the transitioning from cloud credits to cloud tokens, Mendix is paving the way for a more streamlined and flexible approach to purchasing and switching between Mendix Cloud products.
+
+### December 1, 2024
+
+#### API Retirement
+
+* We retired the Team Server API. You will now have to use the [App Repository API](/apidocs-mxsdk/apidocs/app-repository-api/) instead.
+
+### November 29, 2024
+
+#### New Features
+
+* We enhanced Software Composition to include marketplace-related metadata. You can now view this additional information on both the [All Components](/developerportal/deploy/software-composition/#all-components) tab and the [Company Summary](/developerportal/deploy/software-composition/#component-summary) page for a more comprehensive overview of your components.
+
+### November 17, 2024
+
+#### Deployment Portal Fixes
+
+* We fixed a bug in the [Permissions tab of the legacy UI](/developerportal/deploy/environments/#permissions), where changing an application's technical contact resulted in a blank page.
+* We fixed a bug in the [new UI](/developerportal/deploy/environments-redesign/), where the **scalable** tag was displayed for environments that were not scalable.
+* We fixed a number of other bugs related to dark mode.
+
+### November 14, 2024
+
+#### Pipelines New Features
+
+* We added a new **Variables** tab that allows you to create user-defined pipeline variables. For more information, see [The Variables Tab](/developerportal/deploy/pipelines/#variable-tab) in the *Pipelines* documentation.
+* We added a new pipeline step: [Unit Testing](/developerportal/deploy/pipelines/#unit-testing). This step executes the Unit Testing module in a running environment to perform a regression testing and marks the pipeline as failed if any tests fail, providing the failure count and details.
+
+### November 6, 2024
+
+#### New Features
+
+* Cloud permissions are now included in project roles.
+* You can now manage all project roles centrally, on a company level, if you have switched to using company-level roles.
+
+#### Improvements
+
+* We have made improvements to the [permissions tab](/developerportal/deploy/node-permissions/#permissions-tab). The **Receive alerts** permission has also been removed from the permissions tab. You can subscribe to alerts using the **Email Alerts** option on the **Alerts** page.
+
+### October 17, 2024
+
+#### Improvements
+
+* We have made performance improvements to [Software Composition](/developerportal/deploy/software-composition/). Software Bills of Materials (SBOMs) generated automatically upon the creation of deployment packages now show up on the **Software Composition** page within minutes.
+
+### September 19, 2024
+
+#### Pipelines New Features
+
+* We released an API that lets you start a new pipeline run for a saved and activated pipeline design and retrieve the status of a pipeline run. For more information, see [Pipelines API](/apidocs-mxsdk/apidocs/pipelines-api/).
+* We added a new pipeline step: [Best Practice Recommender](/developerportal/deploy/pipelines/#recommender) Check. This step lets you evaluate results of the Maia Best Practice Recommender within your pipeline.
+
+### September 5, 2024
+
+#### New Features
+
+* Deep links have been added to the [Software Composition](/developerportal/deploy/software-composition/) page to enable unique identification and easy shareability.
+
+### September 3, 2024
+
+#### Improvements
+
+* Recently, performance issues were identified in the Software Bill of Materials (SBOM) generation process, which occurs during deployment package creation. Mendix has resolved these issues, ensuring that SBOM generation and the associated Software Composition capabilities are now fully compatible with the following versions of Studio Pro: 9.24.26 and above, 10.6.12 and above, 10.12.3 and above.
+  
+    Previously supported Studio Pro versions (9.24.22 to 9.24.25, 10.6.9 to 10.6.11, 10.10.0 to 10.12.2, and 10.13) will no longer result in SBOM generation and visibility in [Software Composition](/developerportal/deploy/software-composition/). To continue using Software Composition, upgrade to a compatible Studio Pro version. Any historical data within Software Composition remains accessible regardless of the upgrade.
+
+* Deployment packages generated via Mendix Pipelines now generate a Software Bill of Material (SBOM) under the hood; this is visible in Software Composition for Studio Pro LTS and MTS versions 9.24.26 and above, 10.6.12 and above, and 10.12.3 and above.
+
+### August 22, 2024
+
+#### Fixes
+
+* We fixed a bug that had been causing an incorrect pipeline run status to display for the first few seconds on manually triggered pipelines.
+
+#### Improvements
+
+* In the **Pipelines** page's **Runs** tab, we changed a column name from **Last Run** to **Run** because this more accurately reflects what the column shows: it indicates when a pipeline run occurred.
+
+### August 15, 2024
+
+#### Improvements
+
+* We added a Pipeline ID column to the **Designs** tab of the **Pipelines** page.
+
+### July 16, 2024
+
+#### Improvements
+
+* We changed the [Database Freeable Memory alert thresholds](/developerportal/operate/monitoring-application-health/#dbase-freeable-memory) for the following cloud resource packs:
+    * XS21: The critical alert threshold changed from 10% to 5% freeable memory.
+    * XS20 (Legacy): The critical alert threshold changed from 10% to 5% freeable memory.
+    * S (Legacy): The critical alert threshold changed from 10% to 5% freeable memory.
+    * Strato (Legacy): The critical alert threshold changed from 10% to 5% freeable memory.
+
+### July 4, 2024
+
+#### Pipelines New Features
+
+* We added two new pipeline steps:
+    * You can use the Start Environment step to start a selected environment.
+    * You can use the Promote Package step to move a deployment package from a specified source environment to a specified target environment.
+* It is now possible to trigger pipelines manually. To use this new trigger type in your pipeline, select **Manual** as the **Trigger** in the Start Pipeline step of your pipeline design.
+* We will be launching a mini survey for Pipelines soon, asking you some questions about what you like and dislike.
+
+#### Pipelines Improvements
+
+* Pipeline names are no longer editable while a pipeline is active. If you want to edit a pipeline name, deactivate the pipeline first.
+* We implemented deep links for all three tabs on the Pipelines page. This facilitates easy sharing of record-specific details on the **Runs**, **Designs**, and **Settings** tabs; you can simply copy and paste the URL.
+
+### May 14, 2024
+
+#### New Features
+
+* We now use Arm-based AWS Graviton 2 processors for databases of new environments on all plans in Mendix Public Cloud for best performance. Graviton 2 processors can provide significant performance improvements over previous generation instances. For database operations, this means faster processing of queries and better handling of concurrent requests.
+
+    Existing environments will not automatically use Graviton 2 processors for their databases. Graviton 2 processors will be used for new environments and those which are cleared, downsized, or resized.
+
+### May 9, 2024
+
+#### Pipelines Improvements
+
+* We added a Feedback Widget to the Pipelines pages so that customers can directly provide feedback, enhancement requests, and other ideas.
+* We improved the performance of the **Runs** page's search and filtering.
+* We added a column selector to the table on the **Runs** page, so it is now possible to customize which columns appear in the table. We also added a new column: Pipeline ID.
+
+### April 25, 2024
+
+#### Metrics Improvements
+
+* Previously, the **Metrics** page displayed the **Day** period and the **Application** group of metrics when first opened. Now, the page opens to the last metrics period (**Day**, **Week**, **Month**, or **Quarter**) and group (**Application**, **Database**, or **All**) that the user selected. Note that the display depends on the user history, not the environment or app history. As before, the user can switch between the metrics periods and groups via the **Period** and **Group** drop-down menus on the **Metrics** page.
+* On the **Metrics** page, we now load each graph asynchronously instead of loading the entire page at once. This improves the user experience through faster page loading time.
+* We added a way to quickly scroll to the top of the **Metrics** page. Each graph now has a **Scroll to top** button ({{% icon name="arrow-circle-up" %}}) next to it, which the user can click to directly reach the top of the page.
+
+### Deprecations
+
+* We stopped supporting the *Application Container CPU Percentage* alert, because it triggered too often to be useful. The CPU usage data can still be seen on the **Metrics** page.
+
+### April 4, 2024
+
+#### Pipelines Fixes
+
+* We fixed an issue that was causing pipelines to fail at the Checkout step for selected pipeline runs. (Ticket 211117)
+* We fixed an issue preventing user settings from saving for select users.
+* We fixed an issue where the branches were not being fetched for the Checkout step when designing a pipeline. We also fixed an issue where the Checkout step was not dynamically changing upon the change of the trigger.
+
+#### Pipelines Improvements
+
+* We made a variety of user experience improvements, including improving the styling and implementing a pipeline name character limit of 40 characters.
+
+### March 26, 2024
+
+#### Improvements
+
+* All databases of environments on eligible plans in Mendix Cloud (as specified in the table below) have been migrated to gp3 storage instances. Compared to gp2, gp3 provides higher baseline storage performance. For more information, see [Database IOPS Burst Balance](/developerportal/operate/metrics/#Trends-dbmxdatabaseburstbalance) in the *Metrics* documentation.
+
+    | Storage Size           | Storage Instance Type | Baseline Storage Performance      | Provisioned IOPS Range | Provisioned Throughput Range |
+    | ---------------------- | --------------------- | --------------------------------- | ---------------------- | ---------------------------- |
+    | Less than 20 GiB       | gp2                   | 100 IOPS (3000 Burst) / 125 MiB/s | 100 - 1197 IOPS        | 128-250 MiB/s                |
+    | Between 20 and 400 GiB | gp3                   | 3000 IOPS / 125 MiB/s             | N/A                    | N/A                          |
+    | 400 GiB and higher     | gp3                   | 12000 IOPS / 500 MiB/s            | 12000 - 64000 IOPS     | 500 - 4000 MiB/s             |
 
 ### March 7, 2024
 
 #### Bug Fixes
 
 * We corrected some rendering issues in the **Metrics** graphs: 
-     * When there were some missing data points, all the existing data points used to shift to the left of the graph. Now all the data points display where they are supposed to.
-     * The scale of the graphs used to change when there were missing data points. The scale is fixed now.
+    * When there were some missing data points, all the existing data points used to shift to the left of the graph. Now all the data points display where they are supposed to.
+    * The scale of the graphs used to change when there were missing data points. The scale is fixed now.
 
 #### Improvements
 
@@ -115,11 +325,11 @@ For information on the current status of deployment to Mendix Cloud and any plan
 * We added support for gp3 storage instances for databases; this provides higher baseline storage performance compared to gp2. IOPS and throughput performance will be upgraded according to the table below.
 
     * From October 25 onwards, when a customer creates a new DB instance, it is provisioned with a gp3 storage instance if it has a storage size of at least 20 GiB (as specified in the table below). This also occurs when the customer's database is recreated.
-    | Mendix Plans      | Storage Instance Type | Storage Size         | Baseline Storage Performance | Provisioned IOPS Range | Provisioned Throughput Range |
-    |-------------------|-----------------------|----------------------|------------------------------|------------------------|------------------------------|
-    | S and M           | gp2                   | Less than 20 GiB     | 100IOPS (3000 Burst)         | 100 - 1197 IOPS        | 128-250 MiB/s                |
-    | L, XL, XXL, and XXXL | gp3                   | Between 20 and 400 GiB | 3000 IOPS / 125 MiB/s        | N/A                    | N/A                          |
-    | XXXL              | gp3                   | 400 GiB and higher   | 12000 IOPS / 500 MiB/s       | 12000 - 64000 IOPS     | 500 - 4000 MiB/s             |
+    | Storage Size           | Storage Instance Type | Baseline Storage Performance      | Provisioned IOPS Range | Provisioned Throughput Range |
+    | ---------------------- | --------------------- | --------------------------------- | ---------------------- | ---------------------------- |
+    | Less than 20 GiB       | gp2                   | 100 IOPS (3000 Burst) / 125 MiB/s | 100 - 1197 IOPS        | 128-250 MiB/s                |
+    | Between 20 and 400 GiB | gp3                   | 3000 IOPS / 125 MiB/s             | N/A                    | N/A                          |
+    | 400 GiB and higher     | gp3                   | 12000 IOPS / 500 MiB/s            | 12000 - 64000 IOPS     | 500 - 4000 MiB/s             |
 
     * Existing databases eligible for this upgrade will be migrated later. More details will follow.
 
@@ -181,7 +391,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Portal Enhancements
 
-* The webhooks feature is now released for GA. Webhooks can trigger endpoints when changes are committed to a Team Server Git repository, or when a new deployment package is available for deployment to the Mendix Cloud. For more information, see [Webhooks](/developerportal/deploy/webhooks/).
+* The webhooks feature is now released for GA. Webhooks can trigger endpoints when changes are committed to a Team Server Git repository, or when a new deployment package is available for deployment to Mendix Cloud. For more information, see [Webhooks](/developerportal/deploy/webhooks/).
 
 #### Improvements
 
@@ -655,7 +865,7 @@ In connected environments, this usage information will be sent back to Mendix au
 
 ### March 3, 2021
 
-* We updated the [deploy API](/apidocs-mxsdk/apidocs/deploy-api/), [Build API](/apidocs-mxsdk/apidocs/build-api/), [Team Server API](/apidocs-mxsdk/apidocs/team-server-api/), [Backups API v2](/apidocs-mxsdk/apidocs/backups-api/), and [Backups API v1](/apidocs-mxsdk/apidocs/backups-api-v1/) to:
+* We updated the [deploy API](/apidocs-mxsdk/apidocs/deploy-api/), [Build API](/apidocs-mxsdk/apidocs/build-api/), Team Server API, [Backups API v2](/apidocs-mxsdk/apidocs/backups-api/), and [Backups API v1](/apidocs-mxsdk/apidocs/backups-api-v1/) to:
     * add json validation
     * add stricter API path validation (for example, a trailing `/` on the API path will result in `API not found`)
     * return differently formatted error messages for unhandled or unexpected errors
@@ -881,7 +1091,7 @@ This value is displayed in the following graphs in Metrics for Mendix Cloud v4:
 
 {{% alert color="info" %}}This change will take effect the next time you deploy your application.{{% /alert %}}
 
-{{% alert color="warning" %}}You may see a large increase in the size of the unused java heap metric when this change is applied. This is a consequence of the new calculation and not a change in the memory usage of your app.{{% /alert %}}
+{{% alert color="warning" %}}You may see a large increase in the size of the unused Java heap metric when this change is applied. This is a consequence of the new calculation and not a change in the memory usage of your app.{{% /alert %}}
 
 ### June 17, 2020
 
@@ -1134,7 +1344,7 @@ If you run services that connect to a `*.mendixcloud.com` endpoint AND use a sta
     * The Technical Contact can re-order the environments
 * As part of support for Flexible Environments, we have made the following changes:
     * When deploying your application via the Developer Portal, you can choose the destination environment
-    * When viewing metrics, logs, backups, etc. you will have to choose the environment using a drop-down rather than clicking directly on the environment you want
+    * When viewing metrics, logs, backups, etc., you will have to choose the environment using a drop-down rather than clicking directly on the environment you want
 
 #### Other Improvements
 
@@ -1154,7 +1364,7 @@ If you run services that connect to a `*.mendixcloud.com` endpoint AND use a sta
 #### Fixes
 
 * We addressed and fixed an issue that caused some Mendix Cloud v4 backups to be duplicated.
-* We fixed a problem on Mendix Cloud v3 thath prevented Path-based Access Restrictions from working with multiple TLS certificate authorities. (Ticket 77282)
+* We fixed a problem on Mendix Cloud v3 that prevented Path-based Access Restrictions from working with multiple TLS certificate authorities. (Ticket 77282)
 * We fixed the problem which prevented users in the Pacific Time Zone from being able to download the current day's logs. (Tickets 78325, 78586, 79119, 79162, 79427)
 * We addressed and solved a problem that meant that some sandboxes could not be resumed after getting stopped.
 * We have fixed the issue that prevented apps with ACS (AppCloudServices) from being deployed using the Web Modeler. (Ticket 76888)
@@ -1316,7 +1526,7 @@ In some cases, you may still experience false positives for the runtime heartbea
 * We have introduced scaling via API for Mendix Cloud v4. It is now possible to scale Mendix Cloud v4 applications via the Deploy API. For instructions, see the [Deploy API](/apidocs-mxsdk/apidocs/deploy-api/).
 * We have aggregated the health icons for the acceptance and test environments in the **Nodes** dashboard and **Company Admin** screen.
 
-    {{< figure src="/attachments/releasenotes/deployment/mendix-cloud/CPHealthIcon.png"   width="300"  >}}
+    {{< figure src="/attachments/releasenotes/deployment/mendix-cloud/CPHealthIcon.png"   width="300"  class="no-border" >}}
 
 * The health icon will display the health status of the environment that is in the worst condition. This is to prepare for an upcoming release that will support more than three environments per application.
 
