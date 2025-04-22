@@ -20,7 +20,7 @@ Maia Explain is an AI-powered tool that helps you easily understand a microflow 
 
 ## Using Maia Learn
 
-Maia Explain is enabled by default. If you want to disable this feature, go to **Edit** > **Preferences** > **New Features** and clear the **Enable Maia Explain (experimental)** checkbox.
+Maia Explain is enabled by default. If you want to disable this feature, go to **Edit** > **Preferences** > **New Features** and clear the **Enable Maia Explain** checkbox.
 
 There are two ways to launch Maia Explain:
 
