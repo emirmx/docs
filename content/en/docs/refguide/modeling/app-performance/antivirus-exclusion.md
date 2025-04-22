@@ -24,20 +24,12 @@ This operation must be performed with administrator privileges.
 
 To exclude the app folder, click **Exclude Folder** in the notification.
 
-After completion, a confirmation pop-up appears:
-
-{{< figure src="/attachments/refguide/modeling/app-performance/exclude-folder-success.png" class="no-border" width="300" >}}
-
-If the operation fails, a failure pop-up appears:
-
-{{< figure src="/attachments/refguide/modeling/app-performance/exclude-folder-failure.png" class="no-border"  width="300" >}}
+After completion, a confirmation pop-up appears. If the operation fails, a failure pop-up is displayed instead.
 
 ### Disabling the Antivirus Exclusion Notification
 
 Studio Pro displays a notification when an app is loaded, prompting you to exclude the app folder. To disable the notification, follow the steps below:
 
-1. Open the **Edit** menu
-2. Click **Preferences** > **Advanced**  
-3. Check **Antivirus exclusion** > **Do not show antivirus exclusion notifications**
-
-{{< figure src="/attachments/refguide/modeling/app-performance/disable-antivirus-exclusion.png" class="no-border"  width="500" >}}
+1. Open the **Edit** menu.
+2. Click **Preferences** > **Advanced**.
+3. Check **Antivirus exclusion** > **Do not show antivirus exclusion notifications**.
