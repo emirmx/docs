@@ -288,7 +288,7 @@ To do this, follow the steps below:
 
 1. Back up your data — either as a full database backup or by exporting individual components:
 
-    * Keys for MxCloud GenAI Resource Packs can be reimported later.
+    * Keys for the Mendix Cloud GenAI Resource Packs can be reimported later.
     * Incoming associations to the protected module’s entities will be deleted.
 2. Delete the add-on module: MxGenAIConnector.
 3. Download the updated module from the Marketplace. Note that the module is now listed under the **Marketplace modules** category in the **App Explorer**.
