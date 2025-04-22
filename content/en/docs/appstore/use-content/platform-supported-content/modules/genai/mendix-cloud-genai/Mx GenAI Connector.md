@@ -168,7 +168,7 @@ Note that the model uses the file name when analyzing documents, which could mak
 
 ### Knowledge Base Operations
 
-To implement knowledge base logic into your Mendix application, you can use the actions in the **USE_ME** > **Knowledge Base** folder or under the **GenAI Knowledge Base (Content)** or **Mendix Cloud Knowledge Base** categories in the **Toolbox**. These actions require a specialized [Connection](/appstore/modules/genai/genai-for-mx/commons/#connection) of type `MxKnowledgeBaseConnection` that determines the model and endpoint to use. Additionally, the collection name must be passed when creating the object and it must be associated with a `Configuration` object. Please note that for Mendix Cloud a knowledge base resource may contain several collections (tables). 
+To implement knowledge base logic into your Mendix application, you can use the actions in the **USE_ME** > **Knowledge Base** folder or under the **GenAI Knowledge Base (Content)** or **Mendix Cloud Knowledge Base** categories in the **Toolbox**. These actions require a specialized [Connection](/appstore/modules/genai/genai-for-mx/commons/#connection) of type `MxKnowledgeBaseConnection` that determines the model and endpoint to use. Additionally, the collection name must be passed when creating the object and it must be associated with a `Configuration` object. Please note that for Mendix Cloud GenAI a knowledge base resource may contain several collections (tables). 
 
 Dealing with knowledge bases involves two main stages:
 
