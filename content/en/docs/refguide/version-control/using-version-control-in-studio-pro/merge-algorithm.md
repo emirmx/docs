@@ -111,6 +111,12 @@ Your work is now labelled *Theirs*, while the server changes are labelled *Mine*
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/merge-algorithm/Steps/Rebase_Step_1.png" width="525"  >}} 
 
+When conflicts arise during merges and are automatically resolved, Studio Pro adds a #Conflicts tag to the commit message. The #Conflicts tag in Studio Pro serves as a smart indicator, highlighting files that encountered conflicts during the rebase process. This feature is particularly valuable as it maintains a record of auto-merged conflicts, providing developers with a clear audit trail of changes.
+Key benefits of this approach include:
+* Transparency: Developers can easily identify which files required conflict resolution.
+* Efficiency: Auto-merging saves time while still flagging potential areas for review.
+* Traceability: The preserved conflict information aids in code review and troubleshooting.
+
 #### Resolving the First Conflict{#resolving-first-conflict}
 
 Git tries to apply your first commit (`#3`) to the top of the rebasing branch (*Mine*). The commit will come after commit `#4`. 
