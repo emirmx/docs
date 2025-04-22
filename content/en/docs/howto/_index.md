@@ -5,6 +5,7 @@ description: "Step-by-step guides on various Mendix topics that teach you how to
 weight: 15
 no_list: false
 description_list: true
+beta: true
 cascade:
     - content_type: "Studio Pro 11"
     - mendix_version: 11
