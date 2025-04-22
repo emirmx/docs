@@ -8,7 +8,7 @@ description: "Describes the features in Translation Generator."
 ## Introduction 
 
 {{% alert color="info" %}}
-Translation Generator, an AI translation tool, is currently an experimental feature. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+Maia Translation Generator, an AI translation tool, was introduced in Studio Pro 10.12.0.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -22,8 +22,6 @@ For more information on how to enable and use this AI translation tool in Studio
 ## Modeling Using Translation Generator
 
 To enable Translation Generator, go to **Preferences** > the **New Features** tab > the **Maia** section.
-
-{{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/translation-generator/enable-translation-generator.png" max-width=100% >}}
 
 ### Generating Translation for Batch Translate {#batch-translate}
 
@@ -39,8 +37,6 @@ Translation Generator only translates the texts that do not have a translation y
 
 After clicking **Generate Translations...**, you will be asked to confirm your choice and be advised to review the generated translations.
 
-{{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/translation-generator/confirmation.png" max-width=80% >}}
-
 Once translations are generated, you need to Click **Translate** to save the changes. You can then go to the next language to translate further.
 
 {{% alert color="warning" %}}
@@ -51,7 +47,7 @@ Currently, if you encounter an error after clicking **Generate Translations...**
 
 You can also use Translation Generator in the web version of the [system texts](/refguide/system-texts/) editor. 
 
-The web-based system texts editor is currently an experimental feature. You can enable it via **Preferences** > the **New Features** tab > the **System Texts Editor** section.
+The web-based system texts editor was released in Studio Pro 10.14.0. You can enable it via **Preferences** > the **New Features** tab > the **System Texts Editor** section.
 
 After enabling the new editor and Translation Generator, make sure to restart Studio Pro. You will then see the **Generate translation** option from **App Explorer** > **App '*APP_NAME*'** > **System texts**.
 

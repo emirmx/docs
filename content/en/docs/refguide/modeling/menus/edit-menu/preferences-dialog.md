@@ -229,7 +229,7 @@ Hardware and driver issues may cause performance problems when running Studio Pr
 
 This feature is currently in beta.
 
-This option allows you to change the user interface language you work in while using Studio Pro. At this time, German, English, Japanese, Chinese, and Korean are supported. You must restart Studio Pro in order to use this feature.
+This option allows you to change the user interface language you work in while using Studio Pro. At this time, German (available only in Studio Pro 10.17-10.20), English, Japanese, Chinese, and Korean are supported. You must restart Studio Pro in order to use this feature.
 
 ### Editor Tabs Closing Policy {#closing-policy}
 
@@ -277,13 +277,13 @@ You can publish data as a GraphQL service. When you enable this feature, you can
 
 ### Maia
 
-#### Enable Domain Model Generator (Experimental)
+#### Enable Domain Model Generator
 
-Domain Model Generator is currently an experimental feature. Enable this option to help you generate entities and associations for empty domain models. For more information on how to use this feature, see [Domain Model Generator](/refguide/domain-model-generator/).
+Maia Domain Model Generator was introduced in Studio Pro 10.13.0. Enable this option to help you generate entities and associations for empty domain models. For more information on how to use this feature, see [Domain Model Generator](/refguide/domain-model-generator/).
 
-#### Enable Translation Generator (Experimental)
+#### Enable Translation Generator
 
-Translation Generator is currenlty an experimental feature. Enable this option to help you translate your model to different languages through **Batch translate** under the **Language** menu. For more information, see [Translation Generator](/refguide/translation-generator/).
+Maia Translation Generator was introduced in Studio Pro 10.12.0. Enable this option to help you translate your model to different languages through **Batch translate** under the **Language** menu. For more information, see [Translation Generator](/refguide/translation-generator/).
 
 ### Mapping Editor
 
