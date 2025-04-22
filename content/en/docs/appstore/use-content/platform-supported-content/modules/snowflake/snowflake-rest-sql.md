@@ -257,7 +257,7 @@ The domain model is a data model that describes the information in your applicat
 | **Attribute**   | **Description**                                                       |
 |----------------|------------------------------------------------------------------------|
 | `createdDate`  | The timestamp when this binding was generated.                         |
-| `_type`        | The Snowflake data type used in binding (e.g., `FIXED`, `TEXT`).       |
+| `BindingType`  | The Snowflake data type used in binding (e.g., `FIXED`, `TEXT`).       |
 | `value`        | The actual value passed into the query for that position.              |
 
 #### ResultSet {#result-set}
