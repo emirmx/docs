@@ -8,11 +8,7 @@ description: "Describes the features in Translation Generator."
 ## Introduction 
 
 {{% alert color="info" %}}
-Maia Translation Generator, an AI translation tool, was introduced in Studio Pro 10.12.0.
-{{% /alert %}}
-
-{{% alert color="info" %}}
-To use Translation Generator, internet connection and signing in to Studio Pro are required.
+To use Translation Generator, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
 Maia Translation Generator is a translation tool powered by AI in Mendix Studio Pro. You can use this AI tool in Studio Pro to [batch translate](/refguide/batch-translate/) your Mendix app into a different language. You can also use it to translate [system texts](/refguide/system-texts/).
@@ -47,7 +43,7 @@ Currently, if you encounter an error after clicking **Generate Translations...**
 
 You can also use Translation Generator in the web version of the [system texts](/refguide/system-texts/) editor. 
 
-The web-based system texts editor was released in Studio Pro 10.14.0. You can enable it via **Preferences** > the **New Features** tab > the **System Texts Editor** section.
+The web-based system texts editor is currently an experimental feature. You can enable it via **Preferences** > the **New Features** tab > the **System Texts Editor** section.
 
 After enabling the new editor and Translation Generator, make sure to restart Studio Pro. You will then see the **Generate translation** option from **App Explorer** > **App '*APP_NAME*'** > **System texts**.
 

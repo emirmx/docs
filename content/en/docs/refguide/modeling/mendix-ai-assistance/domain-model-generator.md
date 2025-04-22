@@ -8,14 +8,10 @@ description: "Describes the features in Domain Model Generator."
 ## Introduction
 
 {{% alert color="info" %}}
-Maia Domain Model Generator was introduced in Studio Pro 10.13.0.
-{{% /alert %}}
-
-{{% alert color="info" %}}
 To use Maia Domain Model Generator, internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-Maia Domain Model Generator is an AI-powered tool that you can use for generating a [domain model](/refguide/domain-model/). It helps you to generate entities and associations based on text input. In Studio Pro 10.18 and above, you can also use Domain Model Generator in existing domain models.The Domain Model Generator has several limitations. For more information, see the [Limitations](#limitation) section below.
+Maia Domain Model Generator is an AI-powered tool that you can use for generating a [domain model](/refguide/domain-model/). It helps you to generate entities and associations based on text input. You can also use Domain Model Generator in existing domain models. Domain Model Generator has several limitations. For more information, see the [Limitations](#limitation) section below.
 
 ## Using Domain Model Generator
 
