@@ -8,34 +8,38 @@ tags: ["marketplace", "content creation", "guidelines"]
 
 ## Introduction
 
-When you prepare a product and submit it to the public Marketplace, follow the guidelines in this document.
+The guidelines in this document ensure that the content you submit to the public Marketplace content is secure, user friendly, and compliant with legal and data privacy standards. They help maintain consistency, protect intellectual property, and ensure the discoverability of your content.
 
-### General Guidelines{#general}
+## General Guidelines {#general}
 
-Below are the general guidelines for creating new Marketplace content:
+These are the general guidelines for creating new Marketplace content:
 
 * Set up a separate app to build and maintain your Marketplace component.
-* Use the latests MTS or LTS of any major Studio Pro version when creating the item. If that is not possible, then use the earliest version of any major Studio Pro version.
-* Ensure that any latest version of your product supports at least one Mendix LTS versions or Mendix MTS versions.
-* Your products must be complete and fully functional, as advertised upon submission.
-* In Mendix 10.21.0 and above, do not use direct associations in your module as this can cause issues when it is imported.
+* Use the latest MTS or LTS of any major Studio Pro version when creating the item. If that is not possible, then use the earliest version of any major Studio Pro version.
+* Ensure that the latest version of your product supports at least one Mendix LTS or MTS version.
+* Your product must be complete and fully functional, as advertised upon submission.
+* In Mendix 10.21.0 and above, do not use direct associations in your module, as this can cause issues when it is imported.
 
-When adding the content to the Marketplace, add information the end-user should know to the component [documentation](/appstore/submit-content/#doc).
+When you add content to the Marketplace, include in the component [documentation](/appstore/submit-content/#doc) any information that the end-user should know.
 
-### Using a GitHub Repo {#github}
+## Using a GitHub Repo {#github}
 
-You can set up a GitHub repository to contain the development content for your Marketplace component, and you can share this repo URL as the component source on the [Package](/appstore/submit-content/#package) page in the submission process.
+You can set up a GitHub repository which will contain the development content for your Marketplace component. You can then share this repo URL as the component source on the [Package](/appstore/submit-content/#package) page during the submission process.
+
+### GitHub Repo Guidelines
 
 When setting up the GitHub repo for your component, follow these guidelines:
 
 * Make sure the repo name matches the name that will be used for the published Marketplace component.
-* Use upper camel case to replace the spaces in the name, for example, *MyFirstApp*.
-* Make sure the repo description states what the component does. You can also use this description in the Mendix Marketplace.
+* Use upper camel case to replace any spaces in the repo name. Example: *MyFirstApp*.
+* Make sure the repo description states what the component does. You can use the same description in the Mendix Marketplace.
 * Add a *.gitignore* file to keep your repo clean.
+
+### Creating a Component Release
 
 To create a new component release for the Mendix Marketplace, follow these steps:
 
-1. Create a new tag on the appropriate commit on the production or release branch in your GitHub repo.
+1. Create a new tag on the appropriate commit, on the production or release branch in your GitHub repo.
 
 2. From this tag, create a [new release in GitHub](https://help.github.com/articles/creating-releases). 
 
@@ -45,7 +49,7 @@ To create a new component release for the Mendix Marketplace, follow these steps
 
    {{< figure src="/attachments/appstore/submit-content/github-releases.png" >}}
 
-5. Link this GitHub release to the upcoming Mendix Marketplace release by mentioning the GitHub release number in the description. For more details, see the [Package](/appstore/submit-content/#package) and [Updating Existing Marketplace Content](/appstore/submit-content/#updating) sections in *How to Submit Marketplace Content*.
+5. Link this GitHub release to the upcoming Mendix Marketplace release by mentioning the GitHub release number in the description. For more details, see the [Package](/appstore/submit-content/#package) and [Updating Existing Marketplace Content](/appstore/submit-content/#updating) sections in *Upload to the Marketplace*.
 
 ## Preparing Your Submission
 
@@ -65,7 +69,7 @@ Your products must comply with the [Acceptable Use Policy](https://www.sw.siemen
 
 When considering intellectual property (IP) in the Mendix Marketplace, follow these guidelines:
 
-* Do not copy any text, names, or other data from other components published in the Marketplace, since you do not own the copyright. Do not create unnecessary ambiguity or confusion that would mislead users of Marketplace components.
+* Do not copy any text, names, or other data from other components published in the Marketplace, since you do not own the copyright. Doing so might create unnecessary ambiguity or confusion that would mislead users of Marketplace components.
 * Do not mention components published by others within your content on the Marketplace. 
 * Make sure your component documentation only includes intellectual property that you have created. Your component should not include information or content published by others on the Marketplace, as this may lead to removing your component from the Marketplace. This also means other components can also be removed if they are using your component information or content. 
 * If you come across instances of intellectual property abuse, contact support.
@@ -74,65 +78,78 @@ For more information, see [Apply IP Protection](/appstore/creating-content/sol-i
 
 #### End-User License
 
-You must declare whether your product includes, uses, depends on, or distributes third-party software of any kind from sources other than you or Mendix. Third-party software means any and all files, including, but not limited to, APIs, content, source code, or compiled libraries. As part of your submission, you are required to include licensing and copyright information as part of your product description and to include *licensing.txt*, dependencies, and an OSS Readme at the root directory level of the *.mpk* file.
+You must declare whether your product includes, uses, depends on, or distributes third-party software of any kind from sources other than you or Mendix. Third-party software means any and all files, including, but not limited to, APIs, content, source code, or compiled libraries. 
 
-You must not use any restrictive or copyleft licenses such as GNU GPLv2, v3, as these limit the ability to sell commercially without disclosing source code or place restrictions on its usage. 
+You must include the following:
+* In the product description:
+  * Licensing information
+  * Copyright information
+* At the root directory level of the *.mpk* file:
+  * The *licensing.txt* file
+  * Any dependencies
+  * An OSS Readme file
 
-If you have a content which has open-source license such as MIT or Apache, check if the third-party libraries being used are compatible with the license. 
+You must not use any restrictive or copyleft licenses, such as GNU GPL v2 or v3, as they limit the ability to sell commercially without disclosing source code, or place restrictions on code usage. 
+
+If you have content which has an open-source license, such as MIT or Apache, check if the third-party libraries being used are compatible with the license. 
 
 If you are using any [open-source licenses](https://opensource.org/licenses-old/category), make sure you have the code hosted on a public repository.  
 
-Marketplace content governance team will check these cases once content is  submitted and get back to you if they find such issues. It is recommended that you do the check yourself beforehand to avoid delay in the listing.
+The Marketplace content governance team will check these cases once content is  submitted, and get back to you if they find issues. It is recommended that you do the check yourself beforehand to avoid any delays in the listing of your content.
 
-If you have created own product specific terms and conditions, you must host them, for example, on your web page, and share the URL with the Mendix Marketplace team so they could be attached to the product listing page.
+If you have created your own product specific terms and conditions, you must host them on your web page, and share the URL with the Mendix Marketplace team. The team will then attach the terms and conditions to the product listing page.
 
-If your product is not licensed as an open-source component and you would like to specify certain licensing terms and conditions or end-user license agreements, Mendix recommends creating a document that covers the following topics:
+If your product is not licensed as an open-source component, and you would like to specify certain licensing terms and conditions or end-user license agreements, Mendix recommends creating a document that covers the following topics:
 
 * Copyright information and license conditions
 
-* IP usage, which covers a list of OSS/commercial licenses used
+* IP usage, which includes a list of OSS/commercial licenses used
 
-  Below is a declaration template you can use for terms & conditions.
+  Below is a declaration template that you can use for terms and conditions.
 
 | Software Name and Version | Software URL | What does the Software do? Why is it needed? | License |
 | ------------------------- | ------------ | -------------------------------------------- | ------- |
 | Pro Secure Net 5.0 | https://example.com/prosecurenet/9f86d081884c7d659a2feaa0c55ad915 | A network security software that protects systems from unauthorized access and cyber threats. The software is needed to ensure the safety and integrity of network data. | MIT |
 
 * Export control
-* Data Privacy, including data processing agreement, as necessary 
+* Data Privacy, including a data processing agreement, as necessary 
 * Customer Service Level Agreement (SLA)
 
 #### Data Privacy
 
-Mendix wants to make sure that key data privacy principles are complied with at any time. 
+Mendix wants to make sure that Marketplace content complies with key data privacy principles at all times. This means that you must abide by the following guidelines: 
 
-* Create transparency on all personal data processing activities. 
-* Give users the choice to configure or influence the data collection, processing, and deletion wherever possible and useful. 
+* Create transparency around activities that process personal data. 
+* Give users the choice to configure or influence data collection, processing, and deletion wherever possible and useful. 
 * Collect only personal data that is necessary for the provision of the application’s services and functions. 
-* Delete personal data once no longer needed for the purpose of the collection. 
-* Integrate the [Privacy by Design](https://gdpr-info.eu/issues/privacy-by-design/) principles by default into your application. 
-* Conclude appropriate data processing agreements with your suppliers and subcontractors and give the customer full transparency and control over all recipients of their personal data.  
-* Ensure that technical and organizational measures to protect data are in place.
+* Delete personal data once it is no longer needed. 
+* Integrate the [Privacy by Design](https://gdpr-info.eu/issues/privacy-by-design/) principles into your application by default. 
+* Conclude appropriate data processing agreements with your suppliers and subcontractors, and give the customer full transparency and control over all recipients of their personal data.  
+* Ensure that technical and organizational data protection measures are in place.
 
-Declare to the Marketplace team which applies to your product:
+Let the Marketplace team know which of these options applies to your product:
 
 * Personal data is not collected: the developer does not collect any data with the product.
 * Personal data is collected, but not shared: the developer collects data with the product, but does not share it with any third-party.
-* Personal data is collected and shared: the developer collects data with the product, and share it with third-parties.
+* Personal data is collected and shared: the developer collects data with the product, and shares it with third-parties.
 
 #### Export Control
 
-Export Control is about following rules and regulations, mandated by countries in context of developing, sharing, delivering product, and handling different areas and departments where information and goods transfer can happen cross-border. 
+Export control covers the rules and regulations mandated by different countries around developing, sharing, and delivering products. It also covers different areas and departments where the transfer of information and goods can happen across borders. 
 
-It is imperative to understand main pillars on which the control system is placed. 
+It is imperative to understand the main pillars that support the control system. 
 
-##### Country-based Sanctions 
+##### Sanctioned Countries 
 
-Do not get confused with the word "Sanction". It has got exactly two opposite meanings. For export control, sanctioned countries mostly mean the ones which you are not allowed to do business with. An embargo is a government order that restricts or limits commerce with a specified country or the exchange of specific goods. An embargo is usually created as a result of unfavorable political or economic circumstances between nations. Country-specific embargoes are a list of countries to be prohibited for doing any economic activity. Currently, they are Cuba, North Korea, Iran, Syria, and Crimea region of Ukraine. Note that Russia and Belarus are not embargoed but very critical at the moment. 
+In the context of export control, sanctioned countries are the ones that you are not allowed to do business with.   
+
+An embargo is a government order that restricts or limits commerce or the exchange of specific goods with a specified country. An embargo is usually created as a result of unfavorable political or economic circumstances between nations.  
+
+Country-specific embargoes, which dictate the prohibition of any economic activity, are currently in place for Cuba, North Korea, Iran, Syria, and the Crimea region of Ukraine. Russia and Belarus are not embargoed, but are very critical at the moment. 
 
 ##### Sanctioned Parties 
 
-Sanctioned parties are individuals, companies, institutions, vessels, banks, etc., with whom either business is prohibited or possible, only after obtaining authorization from relevant government authorities. Sanctioned parties are published by US, EU, and other national authorities. 
+Sanctioned parties are individuals, companies, institutions, vessels, banks, etc., with whom business is either prohibited or possible, only after obtaining authorization from relevant government authorities. Sanctioned parties are published by the USA, the EU, and other national authorities. 
 
 ### Technical Guidelines
 
