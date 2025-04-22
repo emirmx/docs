@@ -12,15 +12,15 @@ When you prepare a product and submit it to the public Marketplace, follow the g
 
 ### General Guidelines{#general}
 
-Below are the general guidelines for creating new Marketplace content:
+These are the general guidelines for creating new Marketplace content:
 
 * Set up a separate app to build and maintain your Marketplace component.
-* Use the latests MTS or LTS of any major Studio Pro version when creating the item. If that is not possible, then use the earliest version of any major Studio Pro version.
-* Ensure that any latest version of your product supports at least one Mendix LTS versions or Mendix MTS versions.
-* Your products must be complete and fully functional, as advertised upon submission.
-* In Mendix 10.21.0 and above, do not use direct associations in your module as this can cause issues when it is imported.
+* Use the latest MTS or LTS of any major Studio Pro version when creating the item. If that is not possible, then use the earliest version of any major Studio Pro version.
+* Ensure that the latest version of your product supports at least one Mendix LTS version or Mendix MTS version.
+* Your product must be complete and fully functional, as advertised upon submission.
+* In Mendix 10.21.0 and above, do not use direct associations in your module, as this can cause issues when it is imported.
 
-When adding the content to the Marketplace, add information the end-user should know to the component [documentation](/appstore/submit-content/#doc).
+When you add content to the Marketplace, include in the component [documentation](/appstore/submit-content/#doc) any information that the end-user should know.
 
 ### Using a GitHub Repo {#github}
 

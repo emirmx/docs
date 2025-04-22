@@ -19,33 +19,36 @@ For more information about content support, see [Marketplace Content Support](/a
 
 ## Introduction
 
-The [Mendix Marketplace](https://marketplace.mendix.com/) provides access to ready-to-use sample apps, as well as to various components, such as connectors, modules, and widgets, that can be used to build your apps more quickly. In the Marketplace, you can browse available content, retrieve the components that interest you, and share the content you have created.
+The [Mendix Marketplace](https://marketplace.mendix.com/) provides access to ready-to-use sample apps, as well as to various components, such as connectors, modules, and widgets, that you can use to build your own apps more quickly. The Marketplace also allows you to share the content you have created.
 
 This document describes the different sections of the Marketplace home page, which is your entry point to the various parts of the Mendix Marketplace.
 
-## Search
+## Explore {#explore}
 
 The search box at the top of the page allows you to explore the Mendix Marketplace. 
 You can refine search results using the following filters:
 
-* **Support** – the support categories (for details, see the [Marketplace Content Support](/appstore/marketplace-content-support/))
-* **Visibility** – [Public](/appstore/submit-content/#public) or [Private](/appstore/submit-content/#private) content
-* **Content Types** – the types of content (for details, see the [Types of Marketplace Components](/appstore/#components-type) section in *Marketplace*)
-* **Category** – for specific domains in which components or services share characteristics, functions, or purposes
-* **Industry** – for specific sectors or business domains in which components or services are used
-* **Compatibility** – for Studio Pro major versions
-* **Rating** – how the components have been rated in user [reviews](#my-reviews)
+* **Support** – Select between the available support categories. For details, see the [Marketplace Content Support](/appstore/marketplace-content-support/).
+* **Visibility** – Choose whether you want to display [public](/appstore/submit-content/#public) or [private](/appstore/submit-content/#private) content.
+* **Content Types** – Choose the type of content to display. For details, see the [Types of Marketplace Components](/appstore/#components-type) section in *Marketplace*.
+* **Category** – Select specific domains in which components or services share characteristics, functions, or purposes.
+* **Industry** – Select specific sectors or business domains in which components or services are used.
+* **Compatibility** – Choose between Studio Pro major versions.
+* **Rating** – Display components based on their ratings in user [reviews](#my-reviews).
 
 {{% alert color="info" %}}
-For details on finding and installing Marketplace content in Studio Pro, see the [Finding and Downloading Content in Studio Pro](/appstore/use-content/#downloading) section of *Using Marketplace Content*.
+For details on finding and installing Marketplace content in Studio Pro, see the [Finding and Downloading Content in Studio Pro](/appstore/use-content/#downloading) section of *Use Marketplace Content*.
 {{% /alert %}}
 
-## Explore {#explore}
+## Add Content
 
-The **Explore** category contains the following items:
+Share new Marketplace content you have developed.
 
-* Create Content: [Share new Marketplace content](/appstore/submit-content/) you have developed.
-* Get Studio Pro: Get the latest version of [Studio Pro](/releasenotes/studio-pro/).
+For details, see [Upload to the Marketplace](/appstore/submit-content/).
+
+## Get Studio Pro
+
+Get the latest version of [Studio Pro](/releasenotes/studio-pro/).
 
 ## Personal {#personal}
 
@@ -70,7 +73,7 @@ Click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) on a com
 
 * **Edit Draft** – Access the component's draft page, where you can continue editing the component details.
 * **Submit Draft** – If your component is ready to be submitted and has no errors, submit it for review.
-* **Withdraw Draft** – Withdraw content from the review process after you have submitted it for approval. This returns the content to the draft state.
+* **Withdraw Draft** – Withdraw content from the review process after you have submitted it for approval. This returns the content to draft state.
 * **Delete** – Delete the draft.
 
 ### My Content {#my-content}
@@ -79,23 +82,23 @@ On this page, you can see the Marketplace content for which you have created at 
 
 Click the name of the component to access its [details page](/appstore/component-details/).
 
-Click the context menu to access various options for managing your content:
+Click the context menu to access options for managing your content:
 
 {{< figure src="/attachments/appstore/marketplace-home-page/my-content.png"  width="400"  class="no-border" >}}
 
 * **Manage Drafts** – Manage the drafts of the component.
     * Only one draft version of a component can exist at a time, so when one draft version is in progress, you cannot initiate another.
     * If there is a draft version in progress, you can edit or delete it.
-    * If there is a draft version in progress and it is assigned to another user, you can reassign it to to yourself. 
+    * If there is a draft version in progress, and it is assigned to another user, you can reassign it to to yourself. 
 
-    For more information on creating a draft version, see the [Updating Existing Marketplace Content](/appstore/submit-content/#updating) section of *How to Share Marketplace Content*.
-* **Edit a Version** – Edit the component. For details on editing, see the [Adding New Marketplace Content](/appstore/submit-content/#adding) section of [Upload to the Marketplace](/appstore/submit-content/).
+    For more information on creating a draft version, see the [Updating Existing Marketplace Content](/appstore/submit-content/#updating) section of *Upload to the Marketplace*.
+* **Edit a Version** – Edit the component. For details on editing, see the [Adding New Marketplace Content](/appstore/submit-content/#adding) section of *Upload to the Marketplace*.
 * **Unpublish a Version** – Remove one or all versions of the component.
-    * If the component is the [protected content](#group-content) of a [content group](#content-groups), a [group member](#members) can unpublish any version.
-    * If the component is not the protected content of a content group, you can only unpublish a version that you have published yourself.
+    * If the component is [protected](#group-content) within a [content group](#content-groups), a [group member](#members) can unpublish any version.
+    * If the component is not protected within a content group, you can only unpublish a version that you have published yourself.
     * Select **Unpublish All My Versions** to remove all your versions of the component.
 
-A **Private** label on a component means the component is your company's private Marketplace content. For details on how this is configured, see the [Adding New Marketplace Content](/appstore/submit-content/#private) section of [Upload to the Marketplace](/appstore/submit-content/). This content can be shared with [guests](#guests).
+A **Private** label on a component means the component is your company's private Marketplace content. For details on how this is configured, see the [Adding New Marketplace Content](/appstore/submit-content/#adding) section of *Upload to the Marketplace*. This content can be shared with [guests](#guests).
 
 A component assigned as [group content](#group-content) will have a label for the [content group](#content-groups) to which it is assigned.
 
@@ -109,7 +112,7 @@ This page presents the Marketplace content you have [saved](/appstore/component-
 
 Click the name of the component to access its [details page](/appstore/component-details/).
 
-Click the context menu to access various options for managing this component:
+Click the context menu to access options for managing this component:
 
 {{< figure src="/attachments/appstore/marketplace-home-page/saved.png"  width="400"  class="no-border" >}}
 
@@ -130,7 +133,7 @@ On this page, you can see all the content your company has published to the Mark
 
 Click the name of the component to access its [details page](/appstore/component-details/).
 
-Click the context menu to access various options for managing this content:
+Click the context menu to access options for managing this content:
 
 {{< figure src="/attachments/appstore/marketplace-home-page/company-content.png"  width="400"  class="no-border" >}}
 
@@ -162,7 +165,7 @@ On this tab, you can assign content that can only be managed by members of this 
 A component can only be assigned to one content group at a time. If a component is already assigned to another content group, it will not be displayed in this dialog box.
 {{% /alert %}}
 
-Click the context menu to access various options for managing this content:
+Click the context menu to access options for managing this content:
 
 {{< figure src="/attachments/appstore/marketplace-home-page/group-content-context.png" width="400" class="no-border" >}}
 
@@ -178,9 +181,11 @@ To remove a member, click **Remove** next to their name.
 
 #### Guests Tab {#guests}
 
-A guest is a Mendix Platform user from outside your organization who can download the selected private [content](#group-content) of this group. To add a guest, enter their email address in the box and click **Add Guest**.
+A guest is a Mendix Platform user from outside your organization who can download the selected private [content](#group-content) of this group. 
 
-The guest will receive an email notifying them of access to the private content. They can then see all the private Marketplace content shared with them on their [Shared with Me](#shared-with-me) page.
+To add a guest, enter their email address in the box and click **Add Guest**. They will receive an email notifying them of access to the private content. 
+
+The guest can then see all the private Marketplace content shared with them on their [Shared with Me](#shared-with-me) page.
 
 {{% alert color="info" %}}
 The guest must be a registered Mendix Platform user. Otherwise, they will not be able to access the shared content.

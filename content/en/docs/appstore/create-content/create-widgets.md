@@ -6,7 +6,7 @@ weight: 2
 tags: ["marketplace", "content creation", "guidelines", "widgets"]
 ---
 
-## 1 Introduction
+## Introduction
 
 The guidelines to develop widgets submit them to the Marketplace as as follows:
 
