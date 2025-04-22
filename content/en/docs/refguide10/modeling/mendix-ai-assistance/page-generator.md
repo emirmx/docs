@@ -8,14 +8,14 @@ description: "Describes the features in Page Generator."
 ## Introduction
 
 {{% alert color="info" %}}
-Page Generator is currently an experimental feature introduced in Studio Pro 10.21.0. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+Page Generator was introduced in Studio Pro 10.21.0.
 {{% /alert %}}
 
 {{% alert color="info" %}}
 To use Page Generator, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-Maia Page Generator is an AI-powered tool that you can use for generating a [page](/refguide10/page/). It helps you add and configure widgets based on a text input and an optional image. As an experimental feature, Page Generator has certain limitations. For example, it is currently intended only for use with empty pages, and any existing widgets on a page will be removed. For more details, see the [Limitations](#limitation) section below.
+Maia Page Generator is an AI-powered tool that you can use for generating a [page](/refguide10/page/). It helps you add and configure widgets based on a text input and an optional image. Page Generator has some limitations. For example, it is currently intended only for use with empty pages, and any existing widgets on a page will be removed. For more details, see the [Limitations](#limitation) section below.
 
 ## Using Page Generator
 
@@ -60,7 +60,7 @@ Keep in mind that Maia analyzes only the structure of the image. The theming of 
 
 ## Limitations {#limitation}
 
-As an experimental feature, Page Generator has some limitations.
+Page Generator has some limitations.
 
 ### Empty Pages Only
 
