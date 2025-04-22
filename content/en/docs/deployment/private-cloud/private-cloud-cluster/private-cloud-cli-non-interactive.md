@@ -42,12 +42,18 @@ The namespace-id and namespace-secret are only required when using Mendix for Pr
 
 ### Global Operator Namespace - Base installation
 
-For Global Operator, the base installation should only be applied to the Global Operator namespace and not to the managed namespace. For more information, see [Global Operator](/developerportal/deploy/global-operator/).
+For Global Operator, the base installation should only be applied to the Global Operator main namespace and not to the managed namespace. For more information, see [Global Operator](/developerportal/deploy/global-operator/).
 
 For the Global Operator main namespace, use the following command for the base installation:
 
 ```shell
 ./mxpc-cli base-install --namespace <namespace> -i <namespace-id> -s <namespace-secret> --clusterMode <cluster-mode> --clusterType <cluster-type> --global
+```
+
+In case of Standalone mode, use below command:
+
+```shell
+./mxpc-cli base-install --namespace <namespace> --clusterMode <cluster-mode> --clusterType <cluster-type> --global
 ```
 
 ## Apply Configuration
@@ -58,13 +64,13 @@ To [configure a standard namespace](/developerportal/deploy/standard-operator/#c
 ./mxpc-cli apply-config -i <namespace-id> -s <namespace-secret> --file <config-file>
 ```
 
-For namespaces managed by a global operator, apply the following command for the managed namespace – the command is not needed in the main namespace:
+The namespace-id and namespace-secret are only required when using Mendix for Private Cloud in connected mode. 
+
+In case of standalone mode, the namespace-id and namespace-secret are not required, use the following command:
 
 ```shell
-./mxpc-cli apply-config -i <namespace-id> -s <namespace-secret> --file <config-file> --global
+./mxpc-cli apply-config --file <config-file>
 ```
-
-The namespace-id and namespace-secret are only required when using Mendix for Private Cloud in connected mode.
 
 To generate the config file, follow the instructions described in [Creating a Private Cloud Cluster](/developerportal/deploy/private-cloud-cluster/). The **mx_config_cli.yaml** file is generated when you click **Write YAML** during the [Review and Apply](/developerportal/deploy/standard-operator/#review-apply) phase of configuring your namespace interactively.
 
@@ -103,6 +109,11 @@ For managed namespace configuration, apply the following command:
 
 ```shell
 ./mxpc-cli apply-config -i <namespace-id> -s <namespace-secret> --file <config-file>
+```
+In case of standalone mode, use the following command:
+
+```shell
+./mxpc-cli apply-config --file <config-file>
 ```
 
 Below you can find an example config file for the managed namespace configuration.
@@ -145,4 +156,17 @@ To [upgrade the versions of Mendix components in your namespace](/developerporta
 
 {{% alert color="info" %}}
 In case of Global Namespace installation, the upgrade procedure is not applicable for the managed namespace.
+{{% /alert %}}
+
+## Converting a Standard Namespace to Global Operator Namespace
+
+To convert a standard namespace to a global operator namespace, perform the following steps:
+
+```shell
+./mxpc-cli global-operator convert-namespace -g <global-operator-main-namespace> -t <target-namespace>
+
+```
+
+{{% alert color="info" %}}
+Once the conversion is complete, the managed namespace cant be reverted back to standard operator namespace.
 {{% /alert %}}
