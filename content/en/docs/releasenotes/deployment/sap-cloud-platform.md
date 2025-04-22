@@ -18,8 +18,8 @@ For information on the current status of deployment to SAP BTP and any planned r
 
 #### Portal Improvements
 
-* We have updated portal configuration, for XSUAA service, to include a default wildcard (*) in the redirect URL. This enables flexible pattern matching for dynamic endpoints, as per SAP [mandates](https://help.sap.com/whats-new/cf0cb2cb149647329b5d02aa96303f56?locale=en-US&Component=Authorization+and+Trust+Management+Service).
-* We have removed the 'xsenablesyncservice' property from the XSUAA service configuration, as mandated by SAP.
+* We updated the portal configuration for the XSUAA service to include a default wildcard (`*`) in the redirect URL. This enables flexible pattern matching to support dynamic endpoints, as per SAP [mandates](https://help.sap.com/whats-new/cf0cb2cb149647329b5d02aa96303f56?locale=en-US&Component=Authorization+and+Trust+Management+Service).
+* We removed the `xsenablesyncservice` property from the XSUAA service configuration, as per SAP mandates.
 
 ### February 16, 2025
 
