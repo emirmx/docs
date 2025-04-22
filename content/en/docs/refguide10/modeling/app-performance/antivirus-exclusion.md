@@ -14,7 +14,7 @@ This document describes how to set up Microsoft Defender exclusions to ensure op
 
 If you are using Microsoft Defender, it is recommended to add the app folder to the Microsoft Defender exclusions after loading an app:
 
-{{< figure src="/attachments/refguide10/modeling/app-performance/exclude-folder.png" class="no-border" width="300" >}}
+{{< figure src="/attachments/refguide/modeling/app-performance/exclude-folder.png" class="no-border" width="300" >}}
 
 ### Excluding the App Folder
 
