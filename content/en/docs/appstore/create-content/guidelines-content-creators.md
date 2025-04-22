@@ -155,31 +155,24 @@ Sanctioned parties are individuals, companies, institutions, vessels, banks, etc
 
 #### Security Requirements 
 
-Content security is an important pillar for the Mendix Marketplace. The following sections details the security requirements necessary for modules, widgets, and connectors packaged into an *.mph* file format. Fulfill the following requirements for all Mendix Marketplace content (*.mpk* files) onboarded to Mendix  Marketplace.
+Content security is an important pillar for the Mendix Marketplace. The following sections detail the security requirements necessary for modules, widgets, and connectors packaged into an *.mph* file format.  
+You must abide by the following requirements for all content (*.mpk* files) published to the Mendix  Marketplace.
 
 ##### Virus and Malware Scan for Files
 
-During the governance check, performed by the Marketplace team, it is checked  whether the file contains viruses. Mendix expects that the product that you submit is without any malware. Therefore, Mendix recommends completing a full virus and malware scan using [VirusTotal](https://www.virustotal.com/gui/home/upload) prior to your submission. You can also provide a “clean” report during onboarding of your *.mpk*  file to Mendix Marketplace onboarding team.
-
-VirusTotal scans the file for traces of virus, and malware against 70+ virus engines and provides a report. This ensures that the uploaded file to the Marketplace is free from any viruses and malware.  
-
+The governance check performed by the Marketplace team includes a virus and malware scan. This means that Mendix expects that the product you submit be virus- and malware-free. Therefore, we recommend completing a full scan using [VirusTotal](https://www.virustotal.com/gui/home/upload) prior to your submission. VirusTotal checks the file for traces of virus and malware against more than 70 virus engines, and provides a report. This ensures that you can provide the Mendix Marketplace team with a clean report while uploading your *.mpk* file.
+  
 ##### File Integrity Check
 
-You must generate and provides a SHA-2 compatible hash (>=SHA256) of the file being uploaded to Mendix Marketplace. This way, Mendix Marketplace onboarding team can verify the integrity of the file being sent and that files are not corrupted or have been tampered with.  
+You must generate and provide an SHA-2 compatible hash (>=SHA256) of the file you upload to the Mendix Marketplace. This way, the Mendix Marketplace onboarding team can verify that the file is complete, not corrupted, and has not been tampered with.  
 
-More information of how to generate a hash can be found here:  
-
-* [Windows](https://www.howtohaven.com/system/how-to-hash-file-on-windows.shtml)
-
-* [Linux](https://www.techengineer.one/how-to-hash-files-in-linux/)
-
-Essentially, you can use any inbuilt utility for your operating system to generate the hash and provide it to Mendix Marketplace onboarding team for verification of integrity of your artifact.  
-
+You can generate the hash using any inbuilt utility. Find out more about how to generate a hash for [Windows](https://www.howtohaven.com/system/how-to-hash-file-on-windows.shtml) or [Linux](https://www.techengineer.one/how-to-hash-files-in-linux/).
+ 
 ##### Vulnerability Check 
 
-To ensure that the uploaded artifact is free from any critical and high vulnerabilities, you must ensure that you have scanned all 3rd party libraries and dependencies distributed with the artifact (the *.mpk* file). Normally they are in the **userlib** or  **widgets** folder inside the *.mpk*.  
+To ensure that the uploaded artifact is free from any critical and high vulnerabilities, you must ensure that you have scanned all third party libraries and dependencies distributed with the *.mpk* file. These libraries and dependencies can be found in the **userlib** or  **widgets** folder within the *.mpk*.  
 
-You must ensure that the CVSS 3.0 score is less than 7.0 to pass the onboarding  criteria as per the [NIST NVD specification](https://nvd.nist.gov/vuln-metrics/cvss).  
+You must ensure that the CVSS 3.0 score is less than 7.0 to pass the onboarding  criteria, per the [NIST NVD specification](https://nvd.nist.gov/vuln-metrics/cvss).  
 
 A report supporting the above scan indicating libraries free of vulnerabilities can also be provided by to the Menidx Marketplace onboarding team during onboarding. Mendix recommends [Snyk Open Source](https://snyk.io/product/open-source-security-management/) solution to scan the third-party dependencies for vulnerabilities. This is required for all new and subsequent versions of the component uploaded to Mendix Marketplace. 
 
