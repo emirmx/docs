@@ -23,8 +23,6 @@ For more information on how to enable and use this AI translation tool in Studio
 
 To enable Translation Generator, go to **Preferences** > the **New Features** tab > the **Maia** section.
 
-{{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/translation-generator/enable-translation-generator.png" max-width=100% >}}
-
 ### Generating Translation for Batch Translate {#batch-translate}
 
 Once enabled, you will find the **Generate Translations...** option in **Language** > **Batch translate**. 
@@ -38,8 +36,6 @@ Translation Generator only translates the texts that do not have a translation y
 {{% /alert %}}
 
 After clicking **Generate Translations...**, you will be asked to confirm your choice and be advised to review the generated translations.
-
-{{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/translation-generator/confirmation.png" max-width=80% >}}
 
 Once translations are generated, you need to Click **Translate** to save the changes. You can then go to the next language to translate further.
 
