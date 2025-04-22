@@ -26,7 +26,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 * We have made improvements to the feedback management page
     * DataGrid 2 allows users to customize what they see on their feedback overview
     * Improved performance for large sets of feedback
-    * Added communications section and moved contact reporter tab there
+    * Added communications section on feedback detail page and moved contact reporter tab there
 
 ### March 30, 2025
 
