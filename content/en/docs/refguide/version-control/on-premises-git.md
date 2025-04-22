@@ -223,6 +223,14 @@ Note that your previous app still exists, **Studio Pro** will simply make an unv
 
 {{< figure src="/attachments/refguide/version-control/on-premises-git/recent-apps.png" alt="Recent Apps form" class="no-border" >}}
 
+### Moving from Team Server to a Private Git Server
+
+To migrate from Mendix Team Server to a private Git server, follow your Git provider's documentation for uploading a full repository clone to their platform.
+
+After migration, download a fresh clone in Studio Pro from your private Git server.
+
+{{% alert color="warning" %}} When redirecting an existing clone by modifying the config file in the git folder, ensure you remove the sprintr-project-id setting to avoid Studio Pro errors. {{% /alert %}}
+
 ## Read More
 
 * [Version Control Reference Guide](/refguide/version-control/)
