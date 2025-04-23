@@ -8,8 +8,6 @@ description: "This document guides you on grounding your large language model in
 
 ## Introduction
 
-{{% icon name="pencil" height=150 %}}
-
 This document explains how to add data to your smart app to integrate with a Large Language Model (LLM). To do this, you can use your existing app or follow the [Build a Smart App from a Blank GenAI App](/appstore/modules/genai/how-to/blank-app/) guide to start from scratch.
 
 In this document, you will:
