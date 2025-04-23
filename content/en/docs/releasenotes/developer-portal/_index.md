@@ -29,8 +29,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
     * DataGrid 2 now allows users to customize what they see on their feedback overview
     * We have improved performance for large sets of feedback
-    * We have added a communications section to the feedback detail page and moved the **Contact Reporter** tab there
-
+    
 ### March 30, 2025
 
 #### New Features
