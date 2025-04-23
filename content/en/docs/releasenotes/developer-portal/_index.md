@@ -6,7 +6,8 @@ description: "Release notes for app management and other parts of Apps"
 weight: 20
 cascade:
     - numberless_headings: true
-#This document is mapped to the landing page, update the link there if renaming or moving the doc file.
+# This document is mapped to the landing page, update the link there if renaming or moving the doc file.
+# This file is in 
 ---
 
 These release notes cover changes to the app management functionality and other features of the [Apps](/developerportal/).
@@ -17,16 +18,19 @@ For release notes on Mendix Cloud and deployment options, see [Deployment](/rele
 
 To see the current status of the Mendix Portal, see [Mendix Status](https://status.mendix.com/). Here you can also see planned maintenance and past incidents.
 
+[//]: # (The latest release date of this file is on the landing page - update latest-releases.html)
+
 ## 2025
 
 ### April 24, 2025
 
 #### Improvements 
 
-* We have made improvements to the feedback management page
-    * DataGrid 2 allows users to customize what they see on their feedback overview
-    * Improved performance for large sets of feedback
-    * Added communications section on feedback detail page and moved contact reporter tab there
+* We have made the following improvements to the feedback management page:
+
+    * DataGrid 2 now allows users to customize what they see on their feedback overview
+    * We have improved performance for large sets of feedback
+    * We have added a communications section to the feedback detail page and moved the **Contact Reporter** tab there
 
 ### March 30, 2025
 
