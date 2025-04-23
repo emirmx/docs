@@ -99,13 +99,13 @@ To use the operations, either a `DeployedModel` (text, embeddings) or a `MxKnowl
 
 ### Chat Completions Operation
 
-After following the general setup above, you are ready to use the chat completions microflows in the GenAICommons and MxGenAIConnector modules. You can find `Chat Completions (without history)` and `Chat Completions (with history)` in the **Text & Files** folder of the GenAICommons and `Retrieve and Generate (MxCloud, without history)` inside of the **USE_ME > RetrieveAndGenerate** folder of the MxGenAIConnector module. The chat completions microflows are also exposed as microflow actions under the **GenAI (Generate)** category inside of the **Toolbox**.
+After following the general setup above, you are ready to use the chat completions microflows in the GenAICommons and MxGenAIConnector modules. You can find `Chat Completions (without history)` and `Chat Completions (with history)` in the **Text & Files** folder of the GenAICommons. The chat completions microflows are also exposed as microflow actions under the **GenAI (Generate)** category inside of the **Toolbox**.
 
 These microflows expect a `DeployedModel` as input to determine the connection details. 
 
 In chat completions, system prompts and user prompts are two key components that help guide the language model in generating relevant and contextually appropriate responses. For more information on prompt engineering, see the [Read More](#readmore) section. Different exposed microflow activities may require different prompts and logic for how the prompts must be passed, as described in the following sections. For more information on message roles, see the [ENUM_MessageRole](/appstore/modules/genai/genai-for-mx/commons/#enum-messagerole) enumeration in *GenAI Commons*.
 
-Apart from `Retrieve and Generate (MxCloud, without history)`, the chat completion operations support [Function Calling](#function-calling), [Vision](#vision), and [Document Chat](#document-chat).
+The chat completion operations support [Function Calling](#function-calling), [Vision](#vision), and [Document Chat](#document-chat).
 
 For more inspiration or guidance on how to use the above-mentioned microflows in your logic, Mendix recommends downloading the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of examples.
 
