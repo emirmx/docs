@@ -18,7 +18,7 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 * We have resolved an issue with the Get Environment Manifest where the environment's updated status was not properly reflected in the response.
 * The Deploy API now supports setting the Environment Purpose (for Create Environment, Update Environment, and Get Environment Manifest).
-* We have increased the error message limit to unlimited under the Additional Runtime Information section. This makes it easier for users to understand the cause of the error.
+* We have increased the error message limit when retrieving the latest feedback from the cluster (Ticket 245648).
 
 ### April 10, 2025
 
