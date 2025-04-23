@@ -70,7 +70,7 @@ If the URL prefix breaks any of the rules mentioned above, then you will get a c
 
 ### Java Version{#java-version}
 
-Here you can select which Java version to use for you application.
+Here you can select which Java version to use for you application. Click [here](/refguide/java-version-migration/) to see how the version of Java can influence the behavior of an application.
 
 {{% alert color="info" %}}
 
