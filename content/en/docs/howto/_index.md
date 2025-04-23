@@ -14,6 +14,10 @@ cascade:
 #This document is mapped to the landing page, update the link there if renaming or moving the doc file.
 ---
 
+{{% alert color="warning" %}}
+Mendix 11 is currently in Beta. For more information about Beta releases and features, see [Beta Releases](/releasenotes/beta-features/).
+{{% /alert %}}
+
 ## Introduction
 
 Browse the *Studio Pro 11 How-tos* to find step-by-step guides that teach you how to build and customize apps with Mendix.
