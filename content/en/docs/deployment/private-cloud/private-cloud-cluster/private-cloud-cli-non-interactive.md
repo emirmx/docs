@@ -17,6 +17,8 @@ Please see [Download the Configuration Tool](/developerportal/deploy/standard-op
 
 {{% alert color="info" %}} Use "./mxpc-cli <command> --help" for more information about a given command. {{% /alert %}}
 
+{{% alert color="info" %}} Non-interactive mode is not currently supported for Global operator{{% /alert %}}
+
 The following parameters may be used in the commands:
   
 * `--namespace` – a cluster namespace.
@@ -39,22 +41,6 @@ To perform the [base installation](/developerportal/deploy/standard-operator/#ba
 ```
 
 The namespace-id and namespace-secret are only required when using Mendix for Private Cloud in connected mode.
-
-### Global Operator Namespace - Base installation
-
-For Global Operator, the base installation should only be applied to the Global Operator main namespace and not to the managed namespace. For more information, see [Global Operator](/developerportal/deploy/global-operator/).
-
-For the Global Operator main namespace, use the following command for the base installation:
-
-```shell
-./mxpc-cli base-install --namespace <namespace> -i <namespace-id> -s <namespace-secret> --clusterMode <cluster-mode> --clusterType <cluster-type> --global
-```
-
-In case of Standalone mode, use below command:
-
-```shell
-./mxpc-cli base-install --namespace <namespace> --clusterMode <cluster-mode> --clusterType <cluster-type> --global
-```
 
 ## Apply Configuration
 
@@ -99,50 +85,6 @@ ingress:
   service: null
 registry:
   type: openshift4
-```
-
-### Global Operator - Managed Namespace 
-
-To configure a managed namespace inside a Global Operator, the namespace configuration should only be applied on managed namespace and not Global Operator namespace. For more information, check Global Operator documentation.
-
-For managed namespace configuration, apply the following command:
-
-```shell
-./mxpc-cli apply-config -i <namespace-id> -s <namespace-secret> --file <config-file>
-```
-In case of standalone mode, use the following command:
-
-```shell
-./mxpc-cli apply-config --file <config-file>
-```
-
-Below you can find an example config file for the managed namespace configuration.
-
-```yaml
-namespace: managedNamespace
-cluster_mode: connected
-mask:
-  database_plan: true
-  storage_plan: true
-  ingress: true
-  registry: true
-  proxy: false
-  custom_tls: false
-database_plan:
-  name: ephemeral-database
-  type: ephemeral
-storage_plan:
-  name: ephemeral-storage
-  type: ephemeral
-ingress:
-  type: openshift-route
-  enable_tls: false
-  k8s_ingress: null
-  service: null
-registry:
-  type: openshift4
-global_operator:
-  operator_namespace: <globalOperatorMainNamespace>
 ```
 
 ## Upgrade Mendix Operator and Mendix Gateway Agent
