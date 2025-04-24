@@ -1,7 +1,7 @@
 ---
 title: "Import and Export Apps, Modules, Widgets, and Documents"
 linktitle: "Importing and Exporting Elements"
-url: /refguide/import-and-export/
+url: /refguide10/import-and-export/
 weight: 18
 description: "Gives an overview of the import and export functions in Studio Pro."
 ---
@@ -64,7 +64,7 @@ The app is imported.
 Importing a module containing workflows is supported from Studio Pro 10.21.0 and above. In Studio Pro 10.20 and below, importing a module containing workflows will make all running workflow instances incompatible.
 {{% /alert %}}
 
-Mendix modules can either be stored in a Mendix package (*.mpk*) file or have an *.mxmodule* extension if they are [add-on or solution modules](/refguide/configure-add-on-and-solution-modules/). 
+Mendix modules can either be stored in a Mendix package (*.mpk*) file or have an *.mxmodule* extension if they are [add-on or solution modules](/refguide10/configure-add-on-and-solution-modules/). 
 
 #### Importing a Module Package Through the App Explorer
 
@@ -204,7 +204,7 @@ To export an app, follow these steps:
 
     {{< figure src="/attachments/refguide10/modeling/import-and-export/export-app-package.png" class="no-border" >}}
 
-    For more information on types of packages, see [Export App Package](/refguide/export-app-package-dialog/).
+    For more information on types of packages, see [Export App Package](/refguide10/export-app-package-dialog/).
 
     The **Existing snapshot** option will only be available when a data snapshot was created earlier using the **Add snapshot of data** menu option from the **Team** menu. It is also possible to include a new snapshot based on the current state of the local database. This option is only available after the app has been started at least once.
 
@@ -240,5 +240,5 @@ Mendix module documents can be exported as a Mendix package (*.mpk*) file.
 
 ## Read More
 
-* [Modules](/refguide/modules/)
-* [App](/refguide/app/)
+* [Modules](/refguide10/modules/)
+* [App](/refguide10/app/)

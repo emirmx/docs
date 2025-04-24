@@ -1,16 +1,16 @@
 ---
 title: "Synchronization & Auto-Committed Objects"
-url: /refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/auto-committed-objects/
+url: /refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/auto-committed-objects/
 weight: 40
 description: "Describes when offline sync can create auto-committed objects and what to do when that occurs."
 aliases:
-    - /refguide/mobile/using-mobile-capabilities/offlinefirst-data/auto-committed-objects/
+    - /refguide10/mobile/using-mobile-capabilities/offlinefirst-data/auto-committed-objects/
 # If moving or renaming this doc file, implement a permanent redirect and let the respective team (R&D/AppDev/Frontend/Mobile Offline Team) update the URL in the product.
 ---
 
 ## Introduction
 
-Auto-committed objects are Mendix objects committed to the database automatically because the app commits another object that references the auto-committed object. To learn more about auto-committed objects, see the [Autocommit and Associated Objects](/refguide/committing-objects/#autocommit-and-associated-objects) section of *Commit Object(s)*.
+Auto-committed objects are Mendix objects committed to the database automatically because the app commits another object that references the auto-committed object. To learn more about auto-committed objects, see the [Autocommit and Associated Objects](/refguide10/committing-objects/#autocommit-and-associated-objects) section of *Commit Object(s)*.
 
 ## Offline-First Apps and Auto-Commit Logic
 
@@ -26,7 +26,7 @@ To continue the example, here is the related nanoflow:
 
 The example above saves the `$NewOrder` object to the local database, including the association value referencing the uncommitted `$NewCustomer` object. Since the `$NewCustomer` is not yet committed, however, the reference is invalid. To solve this issue, the nanoflow must commit the `$NewCustomer` object.
 
-Assume a user closes the app right after the example nanoflow has run. Since the `$NewCustomer` object is stored only in memory, it will be gone. The `$NewOrder` object references a customer object which no longer exists. When you try to synchronize `$NewOrder` later, it will fail due to the dangling reference error. You must set the reference to `empty` to successfully synchronize this object. To learn more about dangling references, see the [Dangling References](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/synchronization/#dangling-references) section of *Offline Synchronization*.
+Assume a user closes the app right after the example nanoflow has run. Since the `$NewCustomer` object is stored only in memory, it will be gone. The `$NewOrder` object references a customer object which no longer exists. When you try to synchronize `$NewOrder` later, it will fail due to the dangling reference error. You must set the reference to `empty` to successfully synchronize this object. To learn more about dangling references, see the [Dangling References](/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/synchronization/#dangling-references) section of *Offline Synchronization*.
 
 It is true that an offline-first app *can* create auto-committed objects on the runtime database. However, although auto-committed objects help ensure database consistency in web applications, creating auto-committed objects in offline-first apps is *not recommended*.
 
@@ -34,13 +34,13 @@ It is true that an offline-first app *can* create auto-committed objects on the 
 
 Auto-committed objects live until the user's session expires. When the user's session expires, the Mendix Runtime deletes any auto-committed objects created in that session. This logic works well for web applications, but is not a good fit for offline-first apps for the following reasons:
 
-* **Session expiration** – offline apps use regular sessions that expire according to the [`SessionTimeout` runtime setting](/refguide/tricky-custom-runtime-settings/#general-settings). A session on the server may expire as the user uses the app. The server will remove any auto-committed objects, even if the end-user is still interacting with the app.This can cause unexpected behaviors. For example, suppose the user changes the auto-committed object and attempts to synchronize. The Mendix Runtime will not be able to do that, because the runtime database no longer has this object.
+* **Session expiration** – offline apps use regular sessions that expire according to the [`SessionTimeout` runtime setting](/refguide10/tricky-custom-runtime-settings/#general-settings). A session on the server may expire as the user uses the app. The server will remove any auto-committed objects, even if the end-user is still interacting with the app.This can cause unexpected behaviors. For example, suppose the user changes the auto-committed object and attempts to synchronize. The Mendix Runtime will not be able to do that, because the runtime database no longer has this object.
     * It is useful to keep in mind that a session may expire on the server if the end-user uses the app while there is no network connection. When this happens, the Mendix Client attempts to create a new session automatically when the device sends a request to the Mendix Runtime.
 * **Auto-committed objects as regular objects** – auto-committed objects can be synchronized to other users' local databases and treated as regular objects, which may cause the following problems:
     * The Mendix Runtime does not run any validations or event handler microflows while auto-committing an object. Therefore, auto-committed objects synchronized to local databases may be invalid or incomplete. This may lead to bugs in the app model (nanoflows, UI, or other areas) if the app model is not resistant to invalid objects.
     * The synchronization may fail if a user changes and synchronizes an invalid auto-committed object.
-* **Delete behavior issues** – the Mendix Runtime may delete other associated objects while deleting the auto-committed objects at the end of a session. This can happen if the association's [on delete behavior](/refguide/association-properties/#delete-behavior) is set to deleting associated objects.
-* **Long-lived sessions** – In Mendix versions below 10.9.0, offline-first progressive web apps use [long-lived sessions](/refguide/mobile/introduction-to-mobile-technologies/progressive-web-app/#sessions) with longer session timeout by default. This causes auto-committed objects to remain on the server database as long as a session is active. Other PWA users can synchronize the auto-committed objects to their local databases. For example, a user changes and attempts to synchronize an auto-committed object with validation problems. In that case the server may fail to synchronize it. This is not the case for apps created in Mendix version 10.9.0 and above, as a new [session management](/refguide/session-management/) using authentication tokens was introduced in that version.
+* **Delete behavior issues** – the Mendix Runtime may delete other associated objects while deleting the auto-committed objects at the end of a session. This can happen if the association's [on delete behavior](/refguide10/association-properties/#delete-behavior) is set to deleting associated objects.
+* **Long-lived sessions** – In Mendix versions below 10.9.0, offline-first progressive web apps use [long-lived sessions](/refguide10/mobile/introduction-to-mobile-technologies/progressive-web-app/#sessions) with longer session timeout by default. This causes auto-committed objects to remain on the server database as long as a session is active. Other PWA users can synchronize the auto-committed objects to their local databases. For example, a user changes and attempts to synchronize an auto-committed object with validation problems. In that case the server may fail to synchronize it. This is not the case for apps created in Mendix version 10.9.0 and above, as a new [session management](/refguide10/session-management/) using authentication tokens was introduced in that version.
 
 ## How Offline-First Apps Create Auto-Committed Objects
 
@@ -102,7 +102,7 @@ The offline synchronization detected {count} auto-committed objects during synch
 - {EntityN}: {count} object(s) - ({guid1}, {guid2}, ... {guidN})
 
 Please refer to the documentation to learn more about this issue and how to solve it:
-https://docs.mendix.com/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/auto-committed-objects/
+https://docs.mendix.com/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/auto-committed-objects/
 ```
 
 #### Created While Executing a Microflow
@@ -121,7 +121,7 @@ The offline synchronization detected {count} auto-committed objects during synch
 - {EntityN}: {count} object(s) - ({guid1}, {guid2}, ... {guidN})
 
 Please refer to the documentation to learn more about this issue and how to solve it:
-https://docs.mendix.com/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/auto-committed-objects/
+https://docs.mendix.com/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/auto-committed-objects/
 ```
 
 Auto-committed objects created inside microflows that are called from a nanoflow will remain on the database.
@@ -130,4 +130,4 @@ Auto-committed objects created inside microflows that are called from a nanoflow
 
 A custom runtime setting (`com.mendix.offline.DeleteAutoCommittedObjectsAfterSync`) is available to disable deleting the auto-committed objects created during synchronization. This setting can be used in apps from Mendix Studio Pro 9.18 and above.
 
-This setting is intended for offline-first apps created in Mendix 9.17 and below to keep the previous behavior. Disabling this setting for new applications is not recommended. For details on changing this setting, see [Advanced Custom Settings in Mendix Runtime](/refguide/tricky-custom-runtime-settings/#general-settings)
+This setting is intended for offline-first apps created in Mendix 9.17 and below to keep the previous behavior. Disabling this setting for new applications is not recommended. For details on changing this setting, see [Advanced Custom Settings in Mendix Runtime](/refguide10/tricky-custom-runtime-settings/#general-settings)

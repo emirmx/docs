@@ -1,6 +1,6 @@
 ---
 title: "Batch Replace"
-url: /refguide/batch-replace/
+url: /refguide10/batch-replace/
 weight: 20
 ---
 
@@ -18,7 +18,7 @@ There are a number of reasons that you may wish to do this:
 
 ## Using Batch Replace
 
-Batch replace works on the currently selected language, so first you should select the language you want to work on. For more information, see the [Working in the Currently Selected Language](/refguide/translatable-texts/#selected-language) section in *Language Menu*.
+Batch replace works on the currently selected language, so first you should select the language you want to work on. For more information, see the [Working in the Currently Selected Language](/refguide10/translatable-texts/#selected-language) section in *Language Menu*.
 
 ### Documents/modules
 

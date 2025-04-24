@@ -1,6 +1,6 @@
 ---
 title: "Attributes"
-url: /refguide/attributes/
+url: /refguide10/attributes/
 weight: 30
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -21,15 +21,15 @@ The domain model editor uses the following symbols to help visualize attribute p
 | {{< figure src="/attachments/refguide10/modeling/domain-model/entities/attributes/917592.png" class="no-border" >}} | This attribute has a microflow that calculates the value of the attribute. |
 
 {{% alert color="info" %}}
-Attributes for external entities are specified in the **External Entity Properties**. These attributes are defined in the originating app and the only local changes that can be applied to these entities is a local name and description. For further information see the [Attributes](/refguide/external-entities/#attributes) section of *External Entities*.
+Attributes for external entities are specified in the **External Entity Properties**. These attributes are defined in the originating app and the only local changes that can be applied to these entities is a local name and description. For further information see the [Attributes](/refguide10/external-entities/#attributes) section of *External Entities*.
 {{% /alert %}}
 
 ## Properties
 
-You can add attributes to an entity from the [entity properties dialog box](/refguide/entities/#dialog-box). You can also edit them from this dialog box, or by double-clicking the attribute name in the domain model.
+You can add attributes to an entity from the [entity properties dialog box](/refguide10/entities/#dialog-box). You can also edit them from this dialog box, or by double-clicking the attribute name in the domain model.
 
 {{% alert color="info" %}}
-You can **Add** new attributes to [external entities](/refguide/external-entities/#attributes), **Edit** some of the attribute properties, or **Delete** them. However, the changes will only apply locally, and the values in the originating app will not be affected. For more information on operations on attributes of external entities, see the [Attributes](/refguide/external-entities/#attributes) section of *External Entities*.
+You can **Add** new attributes to [external entities](/refguide10/external-entities/#attributes), **Edit** some of the attribute properties, or **Delete** them. However, the changes will only apply locally, and the values in the originating app will not be affected. For more information on operations on attributes of external entities, see the [Attributes](/refguide10/external-entities/#attributes) section of *External Entities*.
 {{% /alert %}}
 
 An example of the attribute properties is represented in the image below:
@@ -57,7 +57,7 @@ If you delete an attribute in your entity and then create a new attribute with t
 
 {{% alert color="info" %}}
 
-This property is only available for add-on and solution modules. For more information on types of modules, see the [Module Types](/refguide/modules/#module-types) section in *Modules*. 
+This property is only available for add-on and solution modules. For more information on types of modules, see the [Module Types](/refguide10/modules/#module-types) section in *Modules*. 
 
 This property will not be shown for attributes if the entity is set to **Hidden**, all attributes will be hidden automatically and cannot be set to **Usable**.
 
@@ -78,10 +78,10 @@ This allows you to describe aspects of the entity which may be useful to you or 
 
 #### Type
 
-The type property defines the type of data that can be stored in the attribute. These are related to the data types described in [Data Types](/refguide/data-types/), but there is not a one-to-one mapping.
+The type property defines the type of data that can be stored in the attribute. These are related to the data types described in [Data Types](/refguide10/data-types/), but there is not a one-to-one mapping.
 
 {{% alert color="warning" %}}
-Mendix allows you to change attribute and association types on existing domain models. While some attributes can easily be converted, there are limitations and consequences of converting between some types. For more information, see [Attributes Type Migration](/refguide/attributes-type-migration/).
+Mendix allows you to change attribute and association types on existing domain models. While some attributes can easily be converted, there are limitations and consequences of converting between some types. For more information, see [Attributes Type Migration](/refguide10/attributes-type-migration/).
 {{% /alert %}}
 
 An attribute has one of the following types:
@@ -93,8 +93,8 @@ Binary¹ | Binary data. Can only be used for persistable entities as the data is
 Boolean | True or false. | Boolean | 
 Date and time | A point in time consisting of a date and a time component accurate up to milliseconds. | Date and time |
 Decimal | A positive or negative number that can have digits after the decimal point. The Decimal type can be used for high-precision calculations. Use this type to represent amounts of money for example. When a Decimal type attribute is persisted in the database its value is validated against 2 conditions. In case the number of digits of the integral part (before the decimal separator) is more than 20, an exception is thrown. In case the number of digits of the fractional part (after the decimal separator) is more than 8, the fractional value is automatically rounded according to [the round half to even rule (also known as bankers' rounding)](https://en.wikipedia.org/wiki/Rounding#Round_half_to_even). Therefore, the maximum allowable value for the Decimal type is 99999999999999999999.99999999. | Decimal |
-Enumeration | A list of predefined attributes. For more information, see [Enumerations](/refguide/enumerations/). | Enumeration |
-Hashed string | A string which is hashed using the algorithm specified in the [app settings](/refguide/app-settings/#hash-algorithm). This can be used to store password hashes, for example, so that the original password is not recorded in the database.  | String |
+Enumeration | A list of predefined attributes. For more information, see [Enumerations](/refguide10/enumerations/). | Enumeration |
+Hashed string | A string which is hashed using the algorithm specified in the [app settings](/refguide10/app-settings/#hash-algorithm). This can be used to store password hashes, for example, so that the original password is not recorded in the database.  | String |
 Integer | A whole number that can be positive (maximum 2³¹-1, thus 2147483647), negative (minimum -2³¹, thus -2147483648), or zero. | Integer/Long² |
 Long | A whole number that can be positive (maximum 2⁶³-1), negative (minimum -2⁶³), or zero. | Integer/Long |
 String *(default)* | A text containing letters, spaces, numbers and other characters. | String |
@@ -131,7 +131,7 @@ This property is shown if **Type** is set to **Date and time**.
 
 This property indicates whether the date and time should be localized when displaying (or picking) their value. By default localization is enabled. If you are NOT interested in the time component of a date and you want the date to be exactly the same all over the world (for example, a birthday), you should toggle this property off. Otherwise, the date can change because of time zone differences: a date and time early in the morning on April 2 in Europe will be on April 1 in the U.S.A.
 
-In technical terms, this property indicates whether the client assumes that the date and time are in a local time zone (enabled) or in UTC (disabled). In the former case, the date is first converted to UTC before being sent to the server and converted from UTC before being displayed. To avoid this time zone conversion from happening twice, UTC functions and tokens like [dateTimeUTC](/refguide/date-creation/) should not be used in client-side expressions to assign values to **Date and time** attributes where localization is disabled.
+In technical terms, this property indicates whether the client assumes that the date and time are in a local time zone (enabled) or in UTC (disabled). In the former case, the date is first converted to UTC before being sent to the server and converted from UTC before being displayed. To avoid this time zone conversion from happening twice, UTC functions and tokens like [dateTimeUTC](/refguide10/date-creation/) should not be used in client-side expressions to assign values to **Date and time** attributes where localization is disabled.
 
 Default: *enabled*
 

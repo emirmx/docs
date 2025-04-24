@@ -1,6 +1,6 @@
 ---
 title: "SQL Server"
-url: /refguide/sqlserver/
+url: /refguide10/sqlserver/
 weight: 80
 ---
 
@@ -12,7 +12,7 @@ See also [Microsoft SQL Server](/developerportal/deploy/mendix-on-windows-micros
 
 ## Behavior of Uniqueness Constraint with Nulls
 
-When an attribute has a [validation rule of **Type** *Unique*](/refguide/validation-rules/#uniqueness), the Mendix runtime creates a uniqueness constraint in the database for the corresponding database column.
+When an attribute has a [validation rule of **Type** *Unique*](/refguide10/validation-rules/#uniqueness), the Mendix runtime creates a uniqueness constraint in the database for the corresponding database column.
 
 If two different objects have a value of `null` for that attribute, SQL Server will treat them as equal and raise a unique constraint violation, causing an error.
 

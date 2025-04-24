@@ -1,6 +1,6 @@
 ---
 title: "Automatic Fetching"
-url: /refguide/auto-fetch/
+url: /refguide10/auto-fetch/
 weight: 20
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -29,4 +29,4 @@ This indicator shows the following:
 
 ## Configuration
 
-You can enable or disable automatic fetching, and configure the fetch interval, on the [Version Control Tab of the Preferences dialog](/refguide/preferences-dialog/#enable-auto-fetch).
+You can enable or disable automatic fetching, and configure the fetch interval, on the [Version Control Tab of the Preferences dialog](/refguide10/preferences-dialog/#enable-auto-fetch).

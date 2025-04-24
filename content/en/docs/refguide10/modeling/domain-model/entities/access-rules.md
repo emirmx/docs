@@ -1,6 +1,6 @@
 ---
 title: "Access Rules"
-url: /refguide/access-rules/
+url: /refguide10/access-rules/
 weight: 70
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -16,12 +16,12 @@ The access rules of an entity define what an end-user is allowed to do with obje
 
 A member is an attribute or an association of an entity.
 
-You can also limit the set of objects available for viewing, editing, and removing using an [XPath constraint](/refguide/xpath-constraints/).
+You can also limit the set of objects available for viewing, editing, and removing using an [XPath constraint](/refguide10/xpath-constraints/).
 
-Every entity can have multiple access rules which are applicable to one or more [module roles](/refguide/module-security/#module-role). Each access rule grants certain access rights to those roles. Rules are additive, which means that if multiple access rules apply to the same module role, all access rights of those rules are combined for that module role.
+Every entity can have multiple access rules which are applicable to one or more [module roles](/refguide10/module-security/#module-role). Each access rule grants certain access rights to those roles. Rules are additive, which means that if multiple access rules apply to the same module role, all access rights of those rules are combined for that module role.
 
 {{% alert color="info" %}}
-Access rules are not inherited from an entity's [generalization](/refguide/entities/#generalization), because the security for every entity is specified explicitly. So when adding an access rule to an entity, always make sure that all required XPath constraints are applied. If the entity has a generalization with access rules defining XPath constraints, these will not apply to its specializations and will therefore not limit its visibility.
+Access rules are not inherited from an entity's [generalization](/refguide10/entities/#generalization), because the security for every entity is specified explicitly. So when adding an access rule to an entity, always make sure that all required XPath constraints are applied. If the entity has a generalization with access rules defining XPath constraints, these will not apply to its specializations and will therefore not limit its visibility.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
@@ -31,7 +31,7 @@ The **System.User** entity has inbuilt access rules where access is given to its
 ## Defining Access Rules {#new-editor}
 
 {{% alert color="warning" %}}
-The modernized access rule editor was made generally available in Studio Pro version 10.21.0, replacing the old editor. It was also available from Studio Pro version 10.6.0, as a [beta](/releasenotes/beta-features/). The old editor is deprecated and will be removed in Studio Pro version 11.0.0, but you can revert to the old editor in the [Preferences Dialog](/refguide/preferences-dialog/#new-features)
+The modernized access rule editor was made generally available in Studio Pro version 10.21.0, replacing the old editor. It was also available from Studio Pro version 10.6.0, as a [beta](/releasenotes/beta-features/). The old editor is deprecated and will be removed in Studio Pro version 11.0.0, but you can revert to the old editor in the [Preferences Dialog](/refguide10/preferences-dialog/#new-features)
 
 For guidance on using the old editor, see [Defining Access Rules Using the Old Editor](#old-editor), below.
 {{% /alert %}}
@@ -47,7 +47,7 @@ For Studio Pro versions 10.6.0 through 10.16.0, the modernized access rule edito
 You can view access rules in the **Access rules** tab of the entity properties dialog. Open this by double clicking on an entity in the domain model.
 
 {{% alert color="info" %}}
-The **Access rules** section is only visible if the [App Security](/refguide/app-security/) is set to **Production**.
+The **Access rules** section is only visible if the [App Security](/refguide10/app-security/) is set to **Production**.
 {{% /alert %}}
 
 ### Editor Layout
@@ -106,7 +106,7 @@ The **Owner** button adds an XPath constraint so the access rule is only applied
 [System.owner='[%CurrentUser%]']
 ```
 
-This constraint is only valid when the [Store 'owner'](/refguide/entities/#store-owner) checkbox in the **System members** section of the entity properties is checked.
+This constraint is only valid when the [Store 'owner'](/refguide10/entities/#store-owner) checkbox in the **System members** section of the entity properties is checked.
 
 ##### Path to User
 
@@ -169,7 +169,7 @@ If an end-user cannot view the value of an attribute because of security constra
 Because Mendix is stateless, this can lead to unexpected results (for example, loss of changes) if changes to the attribute in a microflow are not committed immediately.
 {{% /alert %}}
 
-See [Basic CRUD Communication Pattern](/refguide/communication-patterns/#crud) in *Communication Patterns in the Mendix Runtime* for more information on how data is passed between the Runtime Server and the Mendix Client and what cases may lead to a loss of changes.
+See [Basic CRUD Communication Pattern](/refguide10/communication-patterns/#crud) in *Communication Patterns in the Mendix Runtime* for more information on how data is passed between the Runtime Server and the Mendix Client and what cases may lead to a loss of changes.
 
 ### New Objects
 
@@ -188,7 +188,7 @@ Non-persistable objects cannot have XPath constraints.
 ## Defining Access Rules using the Old Editor {#old-editor}
 
 {{% alert color="warning" %}}
-The old editor is the only one available in versions of Studio Pro below 10.6. From Studio Pro 10.21 it is deprecated and it will be removed in 11.0.0. In the meantime it can still be used by disabling the modern editor in the [Preferences Dialog](/refguide/preferences-dialog/#new-features).
+The old editor is the only one available in versions of Studio Pro below 10.6. From Studio Pro 10.21 it is deprecated and it will be removed in 11.0.0. In the meantime it can still be used by disabling the modern editor in the [Preferences Dialog](/refguide10/preferences-dialog/#new-features).
 {{% /alert %}}
 
 An example of the access rules properties is represented in the image below:
@@ -242,7 +242,7 @@ The set of objects that can be deleted can be limited by using an [XPath constra
 
 #### Member Read and Write Rights Section {#member-access}
 
-**Member read and write rights** define the access rights for every member ([attribute](/refguide/attributes/) or [association](/refguide/associations/)) of the entity. These access rights indicate whether end-users are allowed to view and/or edit the member's value. The set of objects to which these rights apply can be limited by using an [XPath constraint](#xpath-constraint).
+**Member read and write rights** define the access rights for every member ([attribute](/refguide10/attributes/) or [association](/refguide10/associations/)) of the entity. These access rights indicate whether end-users are allowed to view and/or edit the member's value. The set of objects to which these rights apply can be limited by using an [XPath constraint](#xpath-constraint).
 
 | Value | Description |
 | --- | --- |
@@ -266,7 +266,7 @@ See [Attribute Changes and Security Constraints](#attribute-changes), below, for
 
 #### XPath Constraint {#xpath-constraint}
 
-An [XPath constraint](/refguide/xpath-constraints/) can be used to constrain the set of objects to which the access rule applies. If the constraint rule is true, the rule applies to that object. If the XPath constraint is empty, the rule applies to all objects of the entity.
+An [XPath constraint](/refguide10/xpath-constraints/) can be used to constrain the set of objects to which the access rule applies. If the constraint rule is true, the rule applies to that object. If the XPath constraint is empty, the rule applies to all objects of the entity.
 
 Click **Edit…** to edit the XPath constraint.
 
@@ -286,7 +286,7 @@ The **Owner** button adds an XPath constraint so the access rule is only applied
 [System.owner='[%CurrentUser%]']
 ```
 
-This constraint is only valid when the [Store 'owner'](/refguide/entities/#store-owner) checkbox in the **System members** section of the entity properties is checked.
+This constraint is only valid when the [Store 'owner'](/refguide10/entities/#store-owner) checkbox in the **System members** section of the entity properties is checked.
 
 ##### Path to User
 

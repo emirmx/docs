@@ -1,13 +1,13 @@
 ---
 title: "Snippet Call"
-url: /refguide/snippet-call/
+url: /refguide10/snippet-call/
 weight: 40
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-The **Snippet call** widget allows you to use a [snippet](/refguide/snippet/) on a [page](/refguide/page/), a [layout](/refguide/layout/), or another snippet:
+The **Snippet call** widget allows you to use a [snippet](/refguide10/snippet/) on a [page](/refguide10/page/), a [layout](/refguide10/layout/), or another snippet:
 
 {{< figure src="/attachments/refguide10/modeling/pages/structure-widgets/snippet-call/snippet-call-example.png" alt="Snippet Call Example" class="no-border" >}}
 
@@ -39,17 +39,17 @@ The **Snippet settings** property opens a dialog box that shows a list of parame
 
 ### Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Styling
 
 ### Design Properties Section {#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Performing Specific Actions
 
@@ -65,7 +65,7 @@ When you select **Inline snippet**, Studio Pro will analyze the snippet call to 
 * The snippet call will be replaced by the contents of the snippet
 * All references to the snippet parameters will be rewritten to refer to the objects to which they are mapped in the **Snippet settings** of the snippet call 
 
-This is basically the inverse operation of [Extract Snippet](/refguide/snippet/#extract-snippet). 
+This is basically the inverse operation of [Extract Snippet](/refguide10/snippet/#extract-snippet). 
 
 {{% alert color="info" %}}
 After clicking **Inline snippet**, note that the snippet is not automatically deleted — even if the inlined snippet call was the last remaining usage of the snippet.
@@ -87,7 +87,7 @@ In such cases, the inlined content needs to be fixed manually by adding or remov
 
 ## Read More
 
-* [Snippet](/refguide/snippet/)
-* [Page](/refguide/page/)
-* [Structure Widgets](/refguide/structure-widgets/)
-* [Properties Common in the Page Editor](/refguide/common-widget-properties/)
+* [Snippet](/refguide10/snippet/)
+* [Page](/refguide10/page/)
+* [Structure Widgets](/refguide10/structure-widgets/)
+* [Properties Common in the Page Editor](/refguide10/common-widget-properties/)

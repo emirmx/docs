@@ -1,6 +1,6 @@
 ---
 title: "Version Control Menu"
-url: /refguide/version-control-menu/
+url: /refguide10/version-control-menu/
 description: "Describes the Version Control menu in Studio Pro."
 weight: 40
 ---
@@ -17,11 +17,11 @@ The **Pull** option updates the local app to the latest revision that was commit
 
 ## Commit
 
-The **Commit** option commits all local changes made to the app since the previous commit to the version control server. For more information, see [Commit](/refguide/commit-dialog/).
+The **Commit** option commits all local changes made to the app since the previous commit to the version control server. For more information, see [Commit](/refguide10/commit-dialog/).
 
 ## Push{#push}
 
-The **Push** option sends your local changes to the version control server. For more information, see the [Commit/Push](/refguide/version-control/#commit) section in *Version Control*.
+The **Push** option sends your local changes to the version control server. For more information, see the [Commit/Push](/refguide10/version-control/#commit) section in *Version Control*.
 
 ## Show Changes on Disk {#show-changes}
 
@@ -29,19 +29,19 @@ The **Push** option sends your local changes to the version control server. For 
 
 ## History
 
-The **History** option shows the history of committed revisions of the app. For more information on what is displayed in **History**, see [History](/refguide/history-dialog/).
+The **History** option shows the history of committed revisions of the app. For more information on what is displayed in **History**, see [History](/refguide10/history-dialog/).
 
 ## Download from Version Control Server
 
-The **Download from Version Control Server** option downloads an app from the Team Server or another private server. This creates a local working copy of the app for development. For more information on what settings are displayed in the **Download from Version Control Server** dialog box, see [Download from Version Control Server](/refguide/download-from-version-control-dialog/).
+The **Download from Version Control Server** option downloads an app from the Team Server or another private server. This creates a local working copy of the app for development. For more information on what settings are displayed in the **Download from Version Control Server** dialog box, see [Download from Version Control Server](/refguide10/download-from-version-control-dialog/).
 
 ## Upload to Version Control Server
 
-The **Upload to Version Control Server** option uploads a local app to a new or existing Team Server repository, or to another private server. This is only possible if the app is not yet version controlled. For more information on what settings are displayed in the **Upload to Version Control Server** dialog box, see [Upload to Version Control Server](/refguide/upload-to-version-control-dialog/).
+The **Upload to Version Control Server** option uploads a local app to a new or existing Team Server repository, or to another private server. This is only possible if the app is not yet version controlled. For more information on what settings are displayed in the **Upload to Version Control Server** dialog box, see [Upload to Version Control Server](/refguide10/upload-to-version-control-dialog/).
 
 ## Manage Branch Lines
 
-The **Manage Branch Lines** option allows you to manage branch lines on the version control server that can be used to develop functionality separately from the main line. For more information on the Branch Line Manager and creating a new branch line, see [Branch Line Manager](/refguide/branch-line-manager-dialog/) and [Create Branch Line](/refguide/create-branch-line-dialog/). 
+The **Manage Branch Lines** option allows you to manage branch lines on the version control server that can be used to develop functionality separately from the main line. For more information on the Branch Line Manager and creating a new branch line, see [Branch Line Manager](/refguide10/branch-line-manager-dialog/) and [Create Branch Line](/refguide10/create-branch-line-dialog/). 
 
 ## Merge Changes Here {#merge-changes-here}
 
@@ -49,11 +49,11 @@ The **Merge Changes Here** option allows you to merge changes that were committe
 
 ## Revert a Commit
 
-The **Reverse Merge Changes** option allows you to locally [roll back changes](/refguide/using-version-control-in-studio-pro/#revert-changes) that were committed to the version control repository. These local changes can then be committed as a new revision.
+The **Reverse Merge Changes** option allows you to locally [roll back changes](/refguide10/using-version-control-in-studio-pro/#revert-changes) that were committed to the version control repository. These local changes can then be committed as a new revision.
 
 ## Revert All Changes {#revert-all-changes}
 
-The **Revert All Changes** option allows you to [roll back all local changes](/refguide/using-version-control-in-studio-pro/#revert-changes), both in the project and in files on disk, that have been introduced since the last commit.
+The **Revert All Changes** option allows you to [roll back all local changes](/refguide10/using-version-control-in-studio-pro/#revert-changes), both in the project and in files on disk, that have been introduced since the last commit.
 
 ## Optimize Storage Repository {#optimize-storage}
 
@@ -64,7 +64,7 @@ The **Optimize Repository Storage…** option is only available in Git.
 {{% /alert %}}
 
 The **Optimize Repository Storage…** option allows you to perform a number of housekeeping tasks in the current Git repository. Git repositories can accumulate various types of garbage over the time, which may lead to possible performance bottlenecks when using version control features.
-When you optimize the repository storage, the file revisions are compressed to reduce disk space and increase performance and unreachable Git storage objects are removed. For more information on storage optimization, see [Git Storage Optimization](/refguide/git-storage-optimization-dialog/).
+When you optimize the repository storage, the file revisions are compressed to reduce disk space and increase performance and unreachable Git storage objects are removed. For more information on storage optimization, see [Git Storage Optimization](/refguide10/git-storage-optimization-dialog/).
 
 {{% alert color="info" %}}
 
@@ -78,5 +78,5 @@ The **Add Snapshot of Data** option creates a snapshot of the built-in database 
 
 ## Read More
 
-* [Studio Pro Overview](/refguide/studio-pro-overview/)
-* [Version Control](/refguide/version-control/)
+* [Studio Pro Overview](/refguide10/studio-pro-overview/)
+* [Version Control](/refguide10/version-control/)

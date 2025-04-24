@@ -1,7 +1,7 @@
 ---
 title: "Publishing a Microflow as a REST Operation"
 linktitle: "Publish Microflow as REST Operation"
-url: /refguide/publish-microflow-as-rest-operation/
+url: /refguide10/publish-microflow-as-rest-operation/
 weight: 30
 description: "How to publish a Microflow as a REST Operation"
 # If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.

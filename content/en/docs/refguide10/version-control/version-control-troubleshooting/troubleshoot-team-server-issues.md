@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting Team Server Issues"
-url: /refguide/troubleshoot-team-server-issues/
+url: /refguide10/troubleshoot-team-server-issues/
 linktitle: "Team Server Issues"
 weight: 30
 description: "Presents a list of problems and fixes for Team Server issues."
@@ -35,4 +35,4 @@ Contact your network administrator and give them this information to allow them 
 
 ## Read More
 
-* [Version Control FAQ](/refguide/version-control-faq/)
+* [Version Control FAQ](/refguide10/version-control-faq/)

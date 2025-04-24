@@ -1,6 +1,6 @@
 ---
 title: "XPath starts-with"
-url: /refguide/xpath-starts-with/
+url: /refguide10/xpath-starts-with/
 weight: 17
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Parse and Format Date Function Calls"
-url: /refguide/parse-and-format-date-function-calls/
+url: /refguide10/parse-and-format-date-function-calls/
 weight: 160
 description: "Describes the functions for parsing Date and time values from strings using a specified pattern or producing a string from a Date and time value in Mendix."
 ---
@@ -129,7 +129,7 @@ The examples below illustrate which value the expression returns:
 
 ## formatDateTime[UTC] {#formatDateTime}
 
-Converts the Date and time value to a string, formatted according to the format parameter. Without the format parameter, a standard format is used, which depends on the [Java version](/refguide/java-version-migration/#date-locale-dutch) and user locale. The function `formatDateTime` uses the users calendar and `formatDateTimeUTC` uses the UTC calendar.
+Converts the Date and time value to a string, formatted according to the format parameter. Without the format parameter, a standard format is used, which depends on the [Java version](/refguide10/java-version-migration/#date-locale-dutch) and user locale. The function `formatDateTime` uses the users calendar and `formatDateTimeUTC` uses the UTC calendar.
 
 ### Input Parameters
 
@@ -204,7 +204,7 @@ the output is:
 
 ## formatDate[UTC] {#formatDate}
 
-Converts the date part of Date and time value to a string in a standard format, which depends on the [Java version](/refguide/java-version-migration/#date-locale-dutch) and user locale. `formatDate` uses the users calendar and `formatDateUTC` uses the UTC calendar.
+Converts the date part of Date and time value to a string in a standard format, which depends on the [Java version](/refguide10/java-version-migration/#date-locale-dutch) and user locale. `formatDate` uses the users calendar and `formatDateUTC` uses the UTC calendar.
 
 ### Input Parameters
 

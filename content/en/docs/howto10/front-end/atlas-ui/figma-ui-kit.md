@@ -1,6 +1,6 @@
 ---
 title: "Atlas UI Kit for Figma"
-url: /howto/front-end/figma-ui-kit/
+url: /howto10/front-end/figma-ui-kit/
 weight: 70
 description: "Learn how to set up and use the Atlas UI Kit for Figma."
 ---
@@ -41,6 +41,6 @@ The following practices are *not* recommended:
 
 ## Read More
 
-* [Customize Styling](/howto/front-end/customize-styling-new/)
-* [Implement Best Practices for UX Design](/howto/front-end/ux-best-practices/)
-* [Configure Your Theme](/howto/front-end/configuring-your-theme/)
+* [Customize Styling](/howto10/front-end/customize-styling-new/)
+* [Implement Best Practices for UX Design](/howto10/front-end/ux-best-practices/)
+* [Configure Your Theme](/howto10/front-end/configuring-your-theme/)

@@ -1,6 +1,6 @@
 ---
 title: "Find, Find Advanced, and Find Usages"
-url: /refguide/find-and-find-advanced/
+url: /refguide10/find-and-find-advanced/
 description: "Describes Find, Find Advanced, and Find Usages in Mendix Studio Pro."
 weight: 10
 ---
@@ -97,4 +97,4 @@ Click **Lock results** in the **Find Results** pane. Now if you click **Find Usa
 
 ## Read More
 
-* [Go to Option](/refguide/go-to-option/)
+* [Go to Option](/refguide10/go-to-option/)

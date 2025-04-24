@@ -1,10 +1,10 @@
 ---
 title: "Import App Package"
-url: /refguide/import-app-package-dialog/
+url: /refguide10/import-app-package-dialog/
 weight: 40
 description: "Describes the Import App Package process and Import App Package dialog box."
 aliases:
-    - /refguide/import-project-package-dialog/
+    - /refguide10/import-project-package-dialog/
 ---
 ## Introduction
 
@@ -18,7 +18,7 @@ To import an app package, do the following:
 
     {{< figure src="/attachments/refguide10/modeling/menus/file-menu/import-app-package-dialog/import-app-package.png" alt="Import App Package Dialog Window" class="no-border" width="600" >}}
 
-App packages can be created using [Export App Package](/refguide/export-app-package-dialog/).
+App packages can be created using [Export App Package](/refguide10/export-app-package-dialog/).
 
 ## Where Should We Store Your App?
 
@@ -57,4 +57,4 @@ Use this field to choose the directory where the app files of the app will be st
 ## Read More
 
 * [Team Server](/developerportal/general/team-server/)
-* [Export App Package](/refguide/export-project-package-dialog/)
+* [Export App Package](/refguide10/export-project-package-dialog/)

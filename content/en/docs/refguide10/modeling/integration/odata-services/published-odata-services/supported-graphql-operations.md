@@ -1,6 +1,6 @@
 ---
 title: "Supported GraphQL Operations"
-url: /refguide/supported-graphql-operations/
+url: /refguide10/supported-graphql-operations/
 description: "Lists the supported operations for published GraphQL services."
 weight: 50
 ---
@@ -13,7 +13,7 @@ This is a list of supported operations for GraphQL services.
 Mendix currently only supports the operations described in this document.
 {{% /alert %}}
 
-A client can request an operation of a GraphQL service by sending a `POST` request to the [location](/refguide/published-odata-services/#location) of the service. The service supports request content types `application/graphql` and `application/json`. In this document, `application/graphql` are the examples used.
+A client can request an operation of a GraphQL service by sending a `POST` request to the [location](/refguide10/published-odata-services/#location) of the service. The service supports request content types `application/graphql` and `application/json`. In this document, `application/graphql` are the examples used.
 
 For each published entity, Studio Pro publishes two queries: one to retrieve all objects, and the other to retrieve a single object by key. Note that GraphQL exposed names are the same as the OData exposed names, but use a lowercase first character.
 
@@ -32,7 +32,7 @@ This retrieves the names and dates of birth of all employees:
 }
 ```
 
-Here, `employees` is the entity's [exposed set name](/refguide/published-odata-entity/#exposed-data) and `name` is the [exposed attribute name](/refguide/published-odata-attribute/#exposed-name), both with a lowercase first character.
+Here, `employees` is the entity's [exposed set name](/refguide10/published-odata-entity/#exposed-data) and `name` is the [exposed attribute name](/refguide10/published-odata-attribute/#exposed-name), both with a lowercase first character.
 
 ### Ordering
 
@@ -88,7 +88,7 @@ This retrieves the name of the employee whose **userName** is **jdoe**:
 }
 ```
 
-Here, `employee` is the entity's [exposed name](/refguide/published-odata-entity/#exposed-data), `name` is the [exposed attribute name](/refguide/published-odata-attribute/#exposed-name), and `userName` is the entity's string [key](/refguide/published-odata-entity/#key), all with a lowercase first character.
+Here, `employee` is the entity's [exposed name](/refguide10/published-odata-entity/#exposed-data), `name` is the [exposed attribute name](/refguide10/published-odata-attribute/#exposed-name), and `userName` is the entity's string [key](/refguide10/published-odata-entity/#key), all with a lowercase first character.
 
 ## Retrieving Associated Objects
 

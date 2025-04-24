@@ -1,6 +1,6 @@
 ---
 title: "Mendix Client"
-url: /refguide/mendix-client/
+url: /refguide10/mendix-client/
 description: "Describes the Mendix Client part of the Mendix Runtime and how it functions."
 weight: 20
 ---
@@ -12,11 +12,11 @@ The Mendix Client runs on the end-user's device and serves as the interface betw
 The above description of the Mendix Client is based on using the Runtime Server of an app running in the cloud. You can also run Mendix locally for testing, which works in a conceptually similar way.
 
 {{% alert color="info" %}}
-In Studio Pro versions 10.7.0 and above, there is an alternative version of the Mendix Client written in React. This is currently a [beta](/releasenotes/beta-features/). You can enable this React client in [App Settings](/refguide/app-settings/#react-client).
+In Studio Pro versions 10.7.0 and above, there is an alternative version of the Mendix Client written in React. This is currently a [beta](/releasenotes/beta-features/). You can enable this React client in [App Settings](/refguide10/app-settings/#react-client).
 
 The React client replaces [Dojo](https://dojotoolkit.org/) with [React](https://react.dev/) for the view layer. This means that widgets based on Dojo will no longer work. You will get consistency errors if your app contains Dojo widgets, or you can choose **Migration mode** which will allow you to build your app but will replace incompatible widgets with a placeholder.
 
-Other components of the Mendix Client are the same in both the React and Dojo client. See [Mendix React Client](/refguide/mendix-client/react/) for more information.
+Other components of the Mendix Client are the same in both the React and Dojo client. See [Mendix React Client](/refguide10/mendix-client/react/) for more information.
 {{% /alert %}}
 
 ## Description {#description}
@@ -33,11 +33,11 @@ For **mobile applications**, the Mendix Client acts as a React Native applicatio
 
 The three supported types of wrappers for mobile applications are as follows:
 
-* [Make It Native app](/refguide/getting-the-make-it-native-app/)
-* [Custom developer apps](/refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/)
-* [Native apps](/refguide/mobile/introduction-to-mobile-technologies/native-mobile/)
+* [Make It Native app](/refguide10/getting-the-make-it-native-app/)
+* [Custom developer apps](/refguide10/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/)
+* [Native apps](/refguide10/mobile/introduction-to-mobile-technologies/native-mobile/)
 
-The first two of these load a bundle dynamically, while the last one includes a pre-packaged bundle that can be [updated](/refguide/mobile/distributing-mobile-apps/overtheair-updates/) later.
+The first two of these load a bundle dynamically, while the last one includes a pre-packaged bundle that can be [updated](/refguide10/mobile/distributing-mobile-apps/overtheair-updates/) later.
 
 Here is a chart showing the components of the Mendix Client (for more information on the components, see the sections written beneath the chart):
 
@@ -101,9 +101,9 @@ Offline Storage is permanent storage (usually on a mobile device) where data can
 
 State, Synchronization, and Session handling manages requests to the Runtime Server. Note that some actions in the Mendix Client will not require access to the Runtime Server. For example, if the Object Cache already has access to the required data in the temporary object storage, or if the app is offline-first. 
 
-For more information on offline-first app types, see [Introduction to Mobile Technologies](/refguide/mobile/introduction-to-mobile-technologies/).
+For more information on offline-first app types, see [Introduction to Mobile Technologies](/refguide10/mobile/introduction-to-mobile-technologies/).
 
-For more information about the communication between the Mendix Client and the Runtime Server, see [Communication Patterns in the Mendix Runtime](/refguide/communication-patterns/).
+For more information about the communication between the Mendix Client and the Runtime Server, see [Communication Patterns in the Mendix Runtime](/refguide10/communication-patterns/).
 
 The three functions (state, sync, and session) are described separately, below.
 
@@ -129,23 +129,23 @@ State handling is also responsible for garbage collection. If you want to know m
 
 #### Synchronization
 
-If an app is offline-first, data created and changed in the app is stored locally until it is synchronized with the Runtime Server. This job is carried out by the synchronization process. This synchronizes the offline storage and object cache with the Runtime Server. For more information on offline-first apps and synchronization, see [Offline-First](/refguide/offline-first/).
+If an app is offline-first, data created and changed in the app is stored locally until it is synchronized with the Runtime Server. This job is carried out by the synchronization process. This synchronizes the offline storage and object cache with the Runtime Server. For more information on offline-first apps and synchronization, see [Offline-First](/refguide10/offline-first/).
 
 #### Session
 
 Session management ensures that any session with the runtime is kept alive and restored if necessary. It also acts as the authentication for all communications with the runtime which require it.
 
-For a description of the session and authentication tokens, see [Session Management](/refguide/session-management/).
+For a description of the session and authentication tokens, see [Session Management](/refguide10/session-management/).
 
 ### Runtime Server
 
-The Runtime Server waits for requests from the Mendix Client, processes the request, and returns the requested data (plus any additional state information where appropriate). This is done using a number of [request handlers](/refguide/request-handlers/) called over a private API. One of these, for example, is called xas.
+The Runtime Server waits for requests from the Mendix Client, processes the request, and returns the requested data (plus any additional state information where appropriate). This is done using a number of [request handlers](/refguide10/request-handlers/) called over a private API. One of these, for example, is called xas.
 
 It will also notify the Mendix Client when changes are made to the app, and allows developers to connect a debugger to the client to debug nanoflows.
 
 Because all information is sent to the Mendix Client to build pages, everything in the Mendix Client is visible to the end-user. Security is carried out in the Runtime Server, which will only send information to the Mendix Client which the user is allowed to see.
 
-For a description of the Runtime Server, see [Runtime Server](/refguide/runtime-server/).
+For a description of the Runtime Server, see [Runtime Server](/refguide10/runtime-server/).
 
 ## Widgets{#widgets}
 
@@ -256,8 +256,8 @@ When the Mendix client is running, it sets a number of technical cookies to reco
 | **mx-cookie-test** | Client | Tests whether the browser supports cookies | `/` | deleted immediately after setting it | `false` |
 | **OfflineLogout** | Client | Used in offline applications when there is no connection and tells the runtime to logout on the next request | `/` | 1 year for offline sessions¹ |  `false` | 
 | **originURI** | index.html | Tells the client where to redirect to if a user is required to log in | `/` | until user closes their browser (session cookie) |  `false` | 
-| **DeviceType** | Runtime | Holds the type of the device used for the session | `/` | until user closes their browser (session cookie) |  `true` | 
-| **Profile** | Runtime | Holds the navigation profile that is being accessed within the session | `/` | until user closes their browser (session cookie) |  `true` | 
+| **DeviceType** | Runtime | Holds the type of the device used for the session | `/` | 1 year |  `true` |
+| **Profile** | Runtime | Holds the navigation profile that is being accessed within the session | `/` | 1 year |  `true` |
 | **SessionTimeZoneOffset** | Runtime | Holds the time zone offset for the session | `/` | until user closes their browser (session cookie) |  `true` | 
 | **xasid** | Runtime | Used for multi-instance fail-over | `/` | until user closes their browser (session cookie) |  `true` | 
 | **reloginReason** | Runtime | Used to let the client know that a relogin reason should be displayed on the sign in page—*not used by apps created in Mendix version 10.9.0 and above* | `/` | until user closes their browser (session cookie) |  `true` | 
@@ -266,25 +266,25 @@ When the Mendix client is running, it sets a number of technical cookies to reco
 | **authtoken** | Runtime | Used to hold the authentication token—*introduced for apps created in Mendix version 10.9.0 and above* | `/` | until the authentication token expires |  `true` | 
 | **clear_cache** | Runtime | Instructs the client to clear the cached session data whenever a new end-user signs in to an offline application. If the client is not directly used for the sign-in functionality, you can use the newly added Java API, [addSessionCookies](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/m2ee/api/IMxRuntimeResponse.html#addSessionCookies), which sets all necessary cookies related to the session.—*introduced for apps created in Mendix version 10.13.0 and above* | `/` | until client starts or end-user closes their browser | `false`³ | 
 
-¹*Offline sessions* are sessions created for users using an offline or native mobile [navigation profile](/refguide/navigation/#profiles).
+¹*Offline sessions* are sessions created for users using an offline or native mobile [navigation profile](/refguide10/navigation/#profiles).
 
-²The name of the **XASSESSIONID** can be changed by changing the value of the **com.mendix.core.SessionIdCookieName** [custom setting](/refguide/custom-settings/).
+²The name of the **XASSESSIONID** can be changed by changing the value of the **com.mendix.core.SessionIdCookieName** [custom setting](/refguide10/custom-settings/).
 
 ³The **clear_cache** cookie does not contain any sensitive information and always has value of 1. Therefore, there is no need for this cookie to be marked as **Secure** or **HttpOnly**.
 
 ### Launching Native Mendix Client
 
-The flow when launching a native mobile app is different from launching in a browser. More information is stored locally as part of the app, and a native mobile app can even be designed to run [offline-first](/refguide/offline-first/), which means that it can still be run without any connection to the Runtime Server.
+The flow when launching a native mobile app is different from launching in a browser. More information is stored locally as part of the app, and a native mobile app can even be designed to run [offline-first](/refguide10/offline-first/), which means that it can still be run without any connection to the Runtime Server.
 
 The flow described below applies to production apps. During development, the flow is not the same. This enables you to do faster deployments and online debugging.
 
 When launching a native mobile app in production, the following occurs:
 
 1. The end-user opens the app on their device. This is a project specific shell app, which runs natively on iOS or Android. It is released to the app store appropriate for the device. If a new version of the app is downloaded to the device, the app will behave as if the end-user has opened it for the first time, even if it was already open on their device.
-1. The app displays the splash screen defined in the [build process](/refguide/mobile/distributing-mobile-apps/building-native-apps/).
+1. The app displays the splash screen defined in the [build process](/refguide10/mobile/distributing-mobile-apps/building-native-apps/).
 1. The shell app loads a native bundle. This is the equivalent of the Mendix Client resources used by the Mendix Client running in a browser. It contains, for example, the Mendix Client code and page definitions. However, it is held locally on the device rather than centrally with the Runtime Server.
 1. If there is not a valid authentication token on the device, the Mendix Client contacts the Runtime Server and authenticates the end-user and gets any additional configuration required from the Runtime Server.
 1. If this is the first time the app has been started, or the first time after an update to the app, the Mendix Client performs a synchronization with the Runtime Server.
-1. If enabled, the Mendix Client checks if an updated bundle is available on the runtime. If it is, the updated bundle is downloaded and stored, and the app is restarted. This enables the app to keep up-to-date without needing to download new versions of the app from the app store. Please consider the limitations listed in the [When to Use OTA Updates](/refguide/mobile/distributing-mobile-apps/overtheair-updates/#when-to-use-ota) section of *Updating Native Apps* when updating native apps this way.
+1. If enabled, the Mendix Client checks if an updated bundle is available on the runtime. If it is, the updated bundle is downloaded and stored, and the app is restarted. This enables the app to keep up-to-date without needing to download new versions of the app from the app store. Please consider the limitations listed in the [When to Use OTA Updates](/refguide10/mobile/distributing-mobile-apps/overtheair-updates/#when-to-use-ota) section of *Updating Native Apps* when updating native apps this way.
 
 *The Mendix Client is now ready to display the home screen and respond to user input.*

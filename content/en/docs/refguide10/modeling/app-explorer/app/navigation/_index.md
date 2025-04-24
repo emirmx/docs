@@ -1,6 +1,6 @@
 ---
 title: "Navigation"
-url: /refguide/navigation/
+url: /refguide10/navigation/
 weight: 20
 description: "Describes the concept of navigation in apps and the properties of a profile."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
@@ -8,11 +8,11 @@ description: "Describes the concept of navigation in apps and the properties of 
 
 ## Introduction
 
-This document describes the concept of navigation in Mendix applications and the properties of a profile. The **Navigation** document can be found by expanding the **App** node in the **App Explorer**. It defines the navigation structure of the application for users. It also allows you to set the home page of your application and to define the menu structures that can be used in [Menus and Navigation](/refguide/menu-widgets/). 
+This document describes the concept of navigation in Mendix applications and the properties of a profile. The **Navigation** document can be found by expanding the **App** node in the **App Explorer**. It defines the navigation structure of the application for users. It also allows you to set the home page of your application and to define the menu structures that can be used in [Menus and Navigation](/refguide10/menu-widgets/). 
 
 {{< figure src="/attachments/refguide10/modeling/app-explorer/app/navigation/navigation-profile-properties.png" class="no-border" >}}
 
-A user's home page can vary based on their [user roles](/refguide/user-roles/).
+A user's home page can vary based on their [user roles](/refguide10/user-roles/).
 
 ## Profiles {#profiles}
 
@@ -28,7 +28,7 @@ The core of Mendix's navigation model is founded on the following profiles:
 
 Users that access the app via a particular device type are automatically redirected to the homepage of the appropriate profile based on the profile type (for details, see the [Redirection to Profiles](#redirection) section below).
 
-The device type of the currently logged-in user is available in [microflows](/refguide/microflows/) as the `$currentDeviceType` variable. The type of this variable is the [enumeration](/refguide/enumerations/) `System.DeviceType`, which has the values `Phone`, `Tablet`, and `Desktop`. You can use `$currentDeviceType` to perform different actions based on the device type. A typical example is to show different pages based on the device type.
+The device type of the currently logged-in user is available in [microflows](/refguide10/microflows/) as the `$currentDeviceType` variable. The type of this variable is the [enumeration](/refguide10/enumerations/) `System.DeviceType`, which has the values `Phone`, `Tablet`, and `Desktop`. You can use `$currentDeviceType` to perform different actions based on the device type. A typical example is to show different pages based on the device type.
 
 ### Responsive web
 
@@ -50,7 +50,7 @@ A Mendix app can be installed on a phone as a native application which offers se
 * **Access to Device Features** — Native apps can harness the full potential of a phone's hardware features, such as GPS, camera, and push notifications, enhancing the user experience.
 * **Offline Functionality** — Native apps store data locally on the phone, ensuring that users can access content even without an internet connection. 
 
-The Mendix app will run in [offline-first](/refguide/offline-first/) mode. This means that all the data is stored on the phone and only synchronized with the server on request.
+The Mendix app will run in [offline-first](/refguide10/offline-first/) mode. This means that all the data is stored on the phone and only synchronized with the server on request.
 
 {{% alert color="info" %}}
 You are required to enable anonymous users in your app's security settings and include anonymous user roles on native login pages. This is because there is no built-in login screen in the native profile; login pages are modeled as regular native pages. 
@@ -66,7 +66,7 @@ Mendix Runtime automatically redirects users to the home page of the appropriate
 | Android&#124;iPad | Tablet |
 | *(other)* | Responsive |
 
-To configure the regular expressions used to match phone or tablet users, see [Runtime Customization](/refguide/custom-settings/).
+To configure the regular expressions used to match phone or tablet users, see [Runtime Customization](/refguide10/custom-settings/).
 
 It is also possible to force the client to use a specific profile by adding a `profile` query string parameter to the URL when visiting a Mendix application. The possible values are the names of the profiles, which are Responsive, Tablet, and Phone. For example:
 
@@ -92,7 +92,7 @@ This specifies the application icon. This icon is shown as favicon in the title 
 
 #### Default Home Page {#default-home-page}
 
-The default home page indicates which [page](/refguide/page/) or [microflow](/refguide/microflow/) is opened after a user signs in. If role-based home pages (see below) are specified for one of the [user roles](/refguide/user-roles/) of the user, then that home page will be used instead.
+The default home page indicates which [page](/refguide10/page/) or [microflow](/refguide10/microflow/) is opened after a user signs in. If role-based home pages (see below) are specified for one of the [user roles](/refguide10/user-roles/) of the user, then that home page will be used instead.
 
 {{% alert color="info" %}}
 The default home page is visible to all unauthenticated users.
@@ -106,27 +106,27 @@ For each role-based home page, you can specify the user role it applies to and t
 
 ### Authentication {#authentication}
 
-If an [anonymous user](/refguide/anonymous-users/) tries to access a resource to which the user has no access, the configured [sign-in page](/refguide/authentication-widgets/) will be displayed, prompting the user to sign in.
+If an [anonymous user](/refguide10/anonymous-users/) tries to access a resource to which the user has no access, the configured [sign-in page](/refguide10/authentication-widgets/) will be displayed, prompting the user to sign in.
 
 If the sign-in page is set to none, a built-in pop-up window will appear instead. The page title is translatable and may be overridden.
 
 ### Menu
 
-Each device type contains a default menu. You can use these menus in [Menus and Navigation](/refguide/menu-widgets/). Defining the menu for a device type works the same as when editing a menu document. For more details, see [Menu](/refguide/menu/).
+Each device type contains a default menu. You can use these menus in [Menus and Navigation](/refguide10/menu-widgets/). Defining the menu for a device type works the same as when editing a menu document. For more details, see [Menu](/refguide10/menu/).
 
 {{% alert color="warning" %}}
-If [security](/refguide/app-security/) is enabled, the menu will only show the items to which the user has access.
+If [security](/refguide10/app-security/) is enabled, the menu will only show the items to which the user has access.
 {{% /alert %}}
 
 ### Profile Buttons
 
 #### Change Profile Type
 
-Allows for changing the [profile type](/refguide/navigation/).
+Allows for changing the [profile type](/refguide10/navigation/).
 
 #### Delete
 
-This deletes the profile. If [Menus and Navigation](/refguide/menu-widgets/) are still referring to the profile, errors will appear. It is possible to undo the deletion of a profile.
+This deletes the profile. If [Menus and Navigation](/refguide10/menu-widgets/) are still referring to the profile, errors will appear. It is possible to undo the deletion of a profile.
 
 #### Synchronization Configuration {#customize}
 
@@ -134,11 +134,11 @@ Only available on profiles supporting offline synchronization.
 
 This opens the **Customize offline synchronization** dialog box that is used for overriding offline synchronization settings for specific entities. For each entity the download setting is shown. A default is automatically determined by analyzing the model, but can be overridden by the developer in which case the setting will appear in boldface. 
 
-For more details on the settings and when to use them, see the [Offline-First Reference Guide](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/synchronization/#customizable-synchronization).
+For more details on the settings and when to use them, see the [Offline-First Reference Guide](/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/synchronization/#customizable-synchronization).
 
 {{< figure src="/attachments/refguide10/modeling/app-explorer/app/navigation/customize-offline-synchronization.png" class="no-border" >}}
 
 ## Read More
 
-* [App Explorer](/refguide/app-explorer/)
-* [Navigation Tree](/refguide/navigation-tree/)
+* [App Explorer](/refguide10/app-explorer/)
+* [Navigation Tree](/refguide10/navigation-tree/)

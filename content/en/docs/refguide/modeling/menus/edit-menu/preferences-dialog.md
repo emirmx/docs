@@ -277,13 +277,13 @@ You can publish data as a GraphQL service. When you enable this feature, you can
 
 ### Maia
 
-#### Enable Domain Model Generator (Experimental)
+#### Enable Domain Model Generator
 
-Domain Model Generator is currently an experimental feature. Enable this option to help you generate entities and associations for empty domain models. For more information on how to use this feature, see [Domain Model Generator](/refguide/domain-model-generator/).
+Enable this option to help you generate entities and associations for empty domain models. For more information on how to use this feature, see [Domain Model Generator](/refguide/domain-model-generator/).
 
-#### Enable Translation Generator (Experimental)
+#### Enable Translation Generator
 
-Translation Generator is currenlty an experimental feature. Enable this option to help you translate your model to different languages through **Batch translate** under the **Language** menu. For more information, see [Translation Generator](/refguide/translation-generator/).
+Enable this option to help you translate your model to different languages through **Batch translate** under the **Language** menu. For more information, see [Translation Generator](/refguide/translation-generator/).
 
 ### Mapping Editor
 

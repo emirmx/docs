@@ -1,20 +1,20 @@
 ---
 title: "Search Bar"
-url: /refguide/search-bar/
+url: /refguide10/search-bar/
 weight: 40
 aliases:
-    - /refguide/comparison-search-field.html
-    - /refguide/drop-down-search-field.html
-    - /refguide/range-search-field.html
-    - /refguide/comparison-search-field
-    - /refguide/drop-down-search-field
-    - /refguide/range-search-field
+    - /refguide10/comparison-search-field.html
+    - /refguide10/drop-down-search-field.html
+    - /refguide10/range-search-field.html
+    - /refguide10/comparison-search-field
+    - /refguide10/drop-down-search-field
+    - /refguide10/range-search-field
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-The search bar contains search fields that allow the end-user to quickly find the information they need in a [data grid](/refguide/data-grid/) or [template grid](/refguide/template-grid/).
+The search bar contains search fields that allow the end-user to quickly find the information they need in a [data grid](/refguide10/data-grid/) or [template grid](/refguide10/template-grid/).
 
 To add a search field to the search bar, right-click within the search bar in your data grid and choose **Add search field** > [Type of the search field](#search-field-type). 
 
@@ -51,7 +51,7 @@ Search field properties consist of the following sections:
 
 ### Common Section {#common}
 
-Properties as **Name**, **Caption**, and **Type** are common for most of the widgets. {{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+Properties as **Name**, **Caption**, and **Type** are common for most of the widgets. {{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 However, there are additional properties that are described in the sections below.
 
@@ -63,7 +63,7 @@ However, there are additional properties that are described in the sections belo
 Search input formatting must be an exact day. Custom date formatting is not limited.
 {{% /alert %}}
 
-{{% snippet file="/static/_includes/refguide/custom-date-format-tokens.md" %}}
+{{% snippet file="/static/_includes/refguide10/custom-date-format-tokens.md" %}}
 
 #### Placeholder Text
 
@@ -192,5 +192,5 @@ Default: *Smaller*
 
 ## Read More
 
-* [Data Grid](/refguide/data-grid/)
-* [Template Grid](/refguide/template-grid/)
+* [Data Grid](/refguide10/data-grid/)
+* [Template Grid](/refguide10/template-grid/)

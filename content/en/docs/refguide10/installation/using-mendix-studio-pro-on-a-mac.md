@@ -1,11 +1,11 @@
 ---
 title: "Configuring Parallels"
-url: /refguide/using-mendix-studio-pro-on-a-mac/
+url: /refguide10/using-mendix-studio-pro-on-a-mac/
 linktitle: "Configuring Parallels"
 weight: 40
 description: "Describes how to start making Mendix apps on your Mac device."
 aliases:
-    - /howto/general/using-mendix-studio-pro-on-a-mac/
+    - /howto10/general/using-mendix-studio-pro-on-a-mac/
 ---
 
 ## Introduction
@@ -120,12 +120,12 @@ Instead, you must enter your Mac's IP address into your Make It Native app. To r
 Congratulations! You have successfully viewed your app on a test device.
 
 {{% alert color="info" %}}
-If you experience issues connecting with the Make It Native app, make sure your firewall is not preventing a connection. For information on resolving Windows Defender and other firewall-related issues, see the [Error: Unable to Load Script](/refguide/mobile/getting-started-with-mobile/prerequisites/#unable-load-script) section of *Prerequisites*
+If you experience issues connecting with the Make It Native app, make sure your firewall is not preventing a connection. For information on resolving Windows Defender and other firewall-related issues, see the [Error: Unable to Load Script](/refguide10/mobile/getting-started-with-mobile/prerequisites/#unable-load-script) section of *Prerequisites*
 {{% /alert %}}
 
 ## Viewing Changes to Your App on Your Testing Device
 
-For information on how to change to your app and then see the change on your device, see the [Viewing Changes to Your App on Your Testing Device](/refguide/mobile/getting-started-with-mobile/#viewingchanges) section in *Getting Started with Mobile*.
+For information on how to change to your app and then see the change on your device, see the [Viewing Changes to Your App on Your Testing Device](/refguide10/mobile/getting-started-with-mobile/#viewingchanges) section in *Getting Started with Mobile*.
 
 ## Improving Performance {#performance}
 
@@ -147,4 +147,4 @@ For more information, see [Parallels Forum](https://forum.parallels.com/threads/
 
 ## Read More
 
-* [Getting Started with Mobile](/refguide/mobile/getting-started-with-mobile/)
+* [Getting Started with Mobile](/refguide10/mobile/getting-started-with-mobile/)

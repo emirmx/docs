@@ -1,6 +1,6 @@
 ---
 title: "XPath not"
-url: /refguide/xpath-not/
+url: /refguide10/xpath-not/
 weight: 3
 ---
 

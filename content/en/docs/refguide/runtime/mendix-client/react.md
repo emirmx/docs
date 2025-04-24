@@ -49,7 +49,7 @@ Finally, the React client allows Mendix to clean up our client and remove many l
 
 Review the prerequisites below that your application must fulfill before it can leverage the React client.
 
-### Widgets{#widgets}
+### Widgets{#widgets-prerequisites}
 
 Widgets must fulfill the following requirements to be compatible with apps leveraging the React client:
 
@@ -67,7 +67,7 @@ JavaScript actions must not use any of the following client APIs:
 
 These APIs are related to Dojo and are no longer needed. For opening pages, please use the nanoflow [Show Page](/refguide/show-page/) action instead.
 
-Fore more information on React and APIs in Mendix, see our [Mendix 10 React Client API](https://apidocs.rnd.mendix.com/10/client-react/index.html) documentation {{% todo %}} Do we need a Mendix 11 version here?{{% /todo %}}.
+Fore more information on React and APIs in Mendix, see our [Mendix 10 React Client API](https://apidocs.rnd.mendix.com/10/client-react/index.html) documentation.
 
 ### Enable React Client{#enable-react}
 
@@ -95,9 +95,7 @@ Not all Mendix Marketplace components are ready for the React client. Refer to [
 
 Mendix recommends refreshing all Marketplace components in your app before enabling the React client.
 
-### Widgets{#widgets}
-
-{{% todo %}}I think this is unclear to start with and should be made clearer in Mx11. Do we mean that in 10.18 and above we can do an automatic conversion? If so, we can remove all the version stuff.{{% /todo %}}
+### Widgets{#supported-widgets}
 
 Not all widgets are supported by the React client. Mendix recommends migrating widgets in apps below [10.18](/releasenotes/studio-pro/10.18/) using the automatic conversion capabilities in Studio Pro (right-click a widget and select **Convert in-place**). For a list of configuration options unsupported by automatic conversions, see [Widget Conversion Limitations](/refguide/mendix-client/widget-conversion-limitations/).
 

@@ -1,6 +1,6 @@
 ---
 title: "Create a Company Design System"
-url: /howto/front-end/create-a-company-design-system/
+url: /howto10/front-end/create-a-company-design-system/
 weight: 45
 ---
 
@@ -24,14 +24,14 @@ For advice on how to design an app, consult the [Atlas Design System](https://at
 
 ## Adding a Company Theme Module
 
-Add a new company theme module as described in the [Create a Theme Module](/howto/front-end/customize-styling-new/#create-theme-mod) section of *How to Customize Styling*. You can give this a name to your liking, for example MyCompany Theme. This is the module that can be used in the other apps, and/or be part of your company starter apps.
+Add a new company theme module as described in the [Create a Theme Module](/howto10/front-end/customize-styling-new/#create-theme-mod) section of *How to Customize Styling*. You can give this a name to your liking, for example MyCompany Theme. This is the module that can be used in the other apps, and/or be part of your company starter apps.
 
 ## Customizing the Company Theme Module
 
 There are several things you can do to customize your company theme module:
 
-* Customize the styling as described in the [Create a Theme Module](/howto/front-end/customize-styling-new/#create-theme-mod) section of *How to Customize Styling*
-* Based on new styling, you can [add design properties](/howto/front-end/extend-design-properties/)
+* Customize the styling as described in the [Create a Theme Module](/howto10/front-end/customize-styling-new/#create-theme-mod) section of *How to Customize Styling*
+* Based on new styling, you can [add design properties](/howto10/front-end/extend-design-properties/)
 * Add your own layouts, page templates, building blocks — or change the existing ones
 
 ## Extending and Previewing

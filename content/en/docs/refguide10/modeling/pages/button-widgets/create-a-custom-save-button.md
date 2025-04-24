@@ -1,25 +1,25 @@
 ---
 title: "Creating a Custom Save Button with a Microflow"
 linktitle: "Creating a Custom Save Button"
-url: /refguide/creating-a-custom-save-button/
+url: /refguide10/creating-a-custom-save-button/
 description: "Describes how to create a custom save button by utilizing microflows."
 aliases:
-    - /howto/logic-business-rules/create-a-custom-save-button/
+    - /howto10/logic-business-rules/create-a-custom-save-button/
 ---
 
 ## Introduction
 
-Mendix uses visual models called microflows to define the logic of your application. A [microflow](/refguide/microflows/) is a visual way of expressing what traditionally would be written in code. 
+Mendix uses visual models called microflows to define the logic of your application. A [microflow](/refguide10/microflows/) is a visual way of expressing what traditionally would be written in code. 
 
 This document explains how you can create a custom **Save** button on a detail page using a microflow. You need to replace the default **Save** button with a **Save** button that shows a custom message to end-users after they click it. 
 
 Before you continue, make sure you have completed the following:
 
-1. Create a **Customer** entity with the attribute **Name** in your domain model (for more information, see [Configuring a Domain Model](/refguide/configuring-a-domain-model/)).
+1. Create a **Customer** entity with the attribute **Name** in your domain model (for more information, see [Configuring a Domain Model](/refguide10/configuring-a-domain-model/)).
 
     {{< figure src="/attachments/refguide10/modeling/pages/button-widgets/create-a-custom-save-button/entity-customer.png" width="200px" class="no-border" >}}
 
-2. Create a **Customer_Detail** page for the **Customer** entity (for more information, see [Create overview and detail pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/)).
+2. Create a **Customer_Detail** page for the **Customer** entity (for more information, see [Create overview and detail pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/)).
 
     {{< figure src="/attachments/refguide10/modeling/pages/button-widgets/create-a-custom-save-button/detail-page-customer.png" width="400px" class="no-border" >}}
 
@@ -84,6 +84,6 @@ Congratulations! You have customized the **Save** button using a microflow:
 
 ## Read More
 
-* [Microflows](/refguide/microflows/)
-* [Advanced Validation with a Custom Save Button](/refguide/setting-up-data-validation/#custom-validation-save-button)
-* [Using Validation Assist to Build Data Validations](/refguide/validation-assist/#data-validations)
+* [Microflows](/refguide10/microflows/)
+* [Advanced Validation with a Custom Save Button](/refguide10/setting-up-data-validation/#custom-validation-save-button)
+* [Using Validation Assist to Build Data Validations](/refguide10/validation-assist/#data-validations)

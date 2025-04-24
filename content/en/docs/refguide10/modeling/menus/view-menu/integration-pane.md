@@ -1,10 +1,10 @@
 ---
 title: "Integration Pane"
-url: /refguide/integration-pane/
+url: /refguide10/integration-pane/
 weight: 30
 description: "Describes the Integration Pane in Mendix Studio Pro."
 aliases:
-    - /refguide/data-hub-pane/
+    - /refguide10/data-hub-pane/
 # SB: The images on this page are created using the Lato-LandscapeDemoApp (https://sprintr.home.mendix.com/link/project/1b515494-d818-4358-8c91-6c3d54e9cae5)
 ---
 
@@ -12,7 +12,7 @@ aliases:
 
 Use the Integration pane in Studio Pro to use available assets from the different applications in an organization into your Mendix apps. New apps can be created using shared entities, actions and events that are registered in the [Catalog](/catalog/). In Studio Pro, this is possible using the integrated functionality of Catalog through the **Integration** pane.
 
-You can search in the Catalog through the Integration pane to discover assets that you can use in your app. You can connect to services in your landscape by dragging elements from this pane into your app. For example, you can add the entities that are published in the registered OData services to your app's domain model. These entities are called [external entities](/refguide/external-entities/) and are different because they enable the connection to the data associated with the entities in the originating app. Besides external entities, OData services can expose actions that can be called from within microflows, and can define non-persistable entities that can be used as parameters or return types of these actions. You can also connect with [business event services](/refguide/business-event-services/) by dragging an event unto your app's domain model. 
+You can search in the Catalog through the Integration pane to discover assets that you can use in your app. You can connect to services in your landscape by dragging elements from this pane into your app. For example, you can add the entities that are published in the registered OData services to your app's domain model. These entities are called [external entities](/refguide10/external-entities/) and are different because they enable the connection to the data associated with the entities in the originating app. Besides external entities, OData services can expose actions that can be called from within microflows, and can define non-persistable entities that can be used as parameters or return types of these actions. You can also connect with [business event services](/refguide10/business-event-services/) by dragging an event unto your app's domain model. 
 To display the Integration pane, click **View** > **Integration**.
 
 {{% alert color="info" %}}
@@ -34,13 +34,13 @@ When you do not enter search text in the Integration pane, then the **Used in th
 
 {{< figure src="/attachments/refguide10/modeling/menus/view-menu/integration-pane/used-in-your-app.png" alt="User in Your App Section" class="no-border" width="300" >}}
 
-For more information on how to add entities and actions to your app, see [Adding an External Entity to an App](/refguide/external-entities/#adding-external-entities) section in *External Entities* or [Call external action](/refguide/call-external-action/). For working with business events, see [Using Business Events](/appstore/services/business-events/#two-way-be).
+For more information on how to add entities and actions to your app, see [Adding an External Entity to an App](/refguide10/external-entities/#adding-external-entities) section in *External Entities* or [Call external action](/refguide10/call-external-action/). For working with business events, see [Using Business Events](/appstore/services/business-events/#two-way-be).
 
 ## Searching Catalog Sources {#search}
 
 As you enter a search term, all the items in the Catalog satisfying the search string are listed in the search results. This includes words in the service, entity, attribute, action or event descriptions, which are not displayed in the Integration pane. For more information, see the [Selected Asset Details](/catalog/manage/search/#search-details) section in *Search in the Catalog*.
 
-You can drag an external entitiy or a business event from the search results into your domain model and it will be added to your app and displayed as an [external entity](/refguide/external-entities/) or a specialization of the BusinessEvents.ConsumedBusinessEvent or BusinessEvents.PulbishedBusinessEvent entity, respectively.
+You can drag an external entity or a business event from the search results into your domain model and it will be added to your app and displayed as an [external entity](/refguide10/external-entities/) or a specialization of the BusinessEvents.ConsumedBusinessEvent or BusinessEvents.PulbishedBusinessEvent entity, respectively.
 
 {{% alert color="info" %}}Services that are set to **Not discoverable** in the Catalog are not be included in the search results for *any* user including owners of the service. To consume entities from these services owners must ensure that they are [Discoverable](/catalog/manage/curate/#discoverability).{{% /alert %}}
 
@@ -64,7 +64,7 @@ When the **Show development environments** is checked, all subsequent searches r
 
 ## Integration Pane Information {#viewing}
 
-The information that is displayed in the [Integration pane](/refguide//) either when you enter a search term or when you open the **Used in this app** section is described in the sections below. 
+The information that is displayed in the [Integration pane](/refguide10//) either when you enter a search term or when you open the **Used in this app** section is described in the sections below. 
 
 ### Services
 
@@ -135,7 +135,7 @@ By clicking the expand button next to the action, the parameters and return type
 
 {{< figure src="/attachments/refguide10/modeling/menus/view-menu/integration-pane/actions.png" alt="integration pane actions" width="400" class="no-border" >}}
 
-{{% alert color="info" %}}Actions that [are not supported](/refguide/consumed-odata-service-requirements/#actions) in your Mendix app are shown as non-selectable (gray) and cannot be dragged into a microflow.{{% /alert %}}
+{{% alert color="info" %}}Actions that [are not supported](/refguide10/consumed-odata-service-requirements/#actions) in your Mendix app are shown as non-selectable (gray) and cannot be dragged into a microflow.{{% /alert %}}
 
 ### Business Events {#business-events}
 
@@ -154,8 +154,8 @@ A business event can be **Pub**lished or **Sub**scribed to, or both.
 ## Read More
 
 * [Catalog](/catalog/)
-* [External Entities](/refguide/external-entities/)
-* [Consumed OData Service](/refguide/consumed-odata-service/)
-* [Business Event Services](/refguide/business-event-services/)
+* [External Entities](/refguide10/external-entities/)
+* [Consumed OData Service](/refguide10/consumed-odata-service/)
+* [Business Event Services](/refguide10/business-event-services/)
 * [Using Business Events](/appstore/services/business-events/#two-way-be)
 * [How to Consume Registered Assets](/catalog/consume/)

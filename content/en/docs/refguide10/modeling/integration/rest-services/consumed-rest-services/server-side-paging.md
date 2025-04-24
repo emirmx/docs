@@ -1,11 +1,11 @@
 ---
 title: "Server-Side Paging and Sorting for a Microflow Data Source"
 linktitle: "Server-Side Paging and Sorting"
-url: /refguide/server-side-paging/
+url: /refguide10/server-side-paging/
 weight: 30
 description: "Describes how to create a data grid with a microflow data source which retrieves data from a REST service, and then add server-side paging and sorting to it."
 aliases:
-    - /howto/logic-business-rules/server-side-paging/
+    - /howto10/logic-business-rules/server-side-paging/
 ---
 
 ## Introduction
@@ -22,11 +22,11 @@ This how-to teaches you how to do the following:
 Before starting this how-to, make sure you have completed the following prerequisites:
 
 * Install Studio Pro [8.2.0 or above](https://marketplace.mendix.com/link/studiopro/)
-* If you are not familiar with using data from REST services, read [Consume a REST Service](/howto/integration/consume-a-rest-service/)
+* If you are not familiar with using data from REST services, read [Consume a REST Service](/howto10/integration/consume-a-rest-service/)
 
 ## Creating a Microflow Data Source
 
-In this section, you will create a JSON structure and import mapping for a REST service. To do this, complete the first four sections of [Consume a REST Service](/howto/integration/consume-a-rest-service/) — (until **Adding an Input Entity to the Domain Model** is done). 
+In this section, you will create a JSON structure and import mapping for a REST service. To do this, complete the first four sections of [Consume a REST Service](/howto10/integration/consume-a-rest-service/) — (until **Adding an Input Entity to the Domain Model** is done). 
 
 Complete these steps with one crucial change: you must use this REST service URL for your JSON snippet: `https://my-json-server.typicode.com/mendix/howto-api-data/airports`.
 
@@ -218,7 +218,7 @@ Deploy your app again and navigate to the page with your data grid. Enter a valu
 
 ## Read More
 
-* [REST Services](/refguide/integration/rest-services/)
-* [JSON Structures Guide](/refguide/json-structures/)
-* [Consumed REST Service](/refguide/consumed-rest-service/)
-* [Use Call REST Service Action in a Microflow](/refguide/integration/use-call-rest-action-in-microflow/)
+* [REST Services](/refguide10/integration/rest-services/)
+* [JSON Structures Guide](/refguide10/json-structures/)
+* [Consumed REST Service](/refguide10/consumed-rest-service/)
+* [Use Call REST Service Action in a Microflow](/refguide10/integration/use-call-rest-action-in-microflow/)

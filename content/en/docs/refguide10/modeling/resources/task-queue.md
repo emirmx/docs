@@ -1,6 +1,6 @@
 ---
 title: "Task Queue"
-url: /refguide/task-queue/
+url: /refguide10/task-queue/
 weight: 85
 description: "Concepts and usage of the task queue"
 ---
@@ -67,7 +67,7 @@ When choosing the number of threads for a task queue, use the following guidelin
 
 #### In Studio Pro {#sp}
 
-In Studio Pro, a [Call Microflow](/refguide/microflow-call/) activity can start a microflow in a Task Queue.
+In Studio Pro, a [Call Microflow](/refguide10/microflow-call/) activity can start a microflow in a Task Queue.
 
 1. Edit the **Call Microflow** activity.
 2. Check the box **Execute this Microflow in a Task Queue**.
@@ -93,7 +93,7 @@ The method `executeInBackground` takes two parameters: a context and a queue nam
 
 #### In Studio Pro
 
-In Studio Pro, a [Call Java action](/refguide/microflow-call/) activity can start a Java action in a Task Queue.
+In Studio Pro, a [Call Java action](/refguide10/microflow-call/) activity can start a Java action in a Task Queue.
 
 1. Edit the **Call Java Action** activity.
 2. Check the box **Execute this Java action in a Task Queue**.
@@ -153,7 +153,7 @@ Retries can also be combined with [scheduling](#scheduling) using the API.
 
 ### Configuration Options {#configuration}
 
-The period for a graceful shutdown of queues can be configured as a [custom runtime](/refguide/custom-settings/) setting in Studio Pro. 
+The period for a graceful shutdown of queues can be configured as a [custom runtime](/refguide10/custom-settings/) setting in Studio Pro. 
 
 | Configuration option                       | Example value | Explanation                                                                             |
 |--------------------------------------------|---------------|-----------------------------------------------------------------------------------------|
@@ -225,7 +225,7 @@ Interrupting task threads may cause them to fail. These tasks will be marked as 
 
 The execution of a task produces a `System.ProcessedQueueTask` object in the database. Over time these accumulate and the table can grow large.
 
-The `System.ProcessedQueueTask` can be cleaned up automatically by specifying the [`com.mendix.core.ProcessedTasksCleanupAge`](/refguide/custom-settings/#commendixcoreProcessedTasksCleanupAge) runtime setting. This setting specifies (in milliseconds) how old objects in the table have to be before they are automatically cleaned up. Only objects with the "Completed" status are cleaned up.  The cleanup action will be run every [`ClusterManagerActionInterval`](/refguide/custom-settings/#general), and does not produce any log messages. The cleanup action will remove 10000 objects each time it runs. In Mendix 10.9.0 and later, this can be configured with the [`com.mendix.core.ProcessedTasksCleanupBatchSize`](/refguide/custom-settings/#commendixcoreProcessedTasksCleanupBatchSize) runtime setting.
+The `System.ProcessedQueueTask` can be cleaned up automatically by specifying the [`com.mendix.core.ProcessedTasksCleanupAge`](/refguide10/custom-settings/#commendixcoreProcessedTasksCleanupAge) runtime setting. This setting specifies (in milliseconds) how old objects in the table have to be before they are automatically cleaned up. Only objects with the "Completed" status are cleaned up.  The cleanup action will be run every [`ClusterManagerActionInterval`](/refguide10/custom-settings/#general), and does not produce any log messages. The cleanup action will remove 10000 objects each time it runs. In Mendix 10.9.0 and later, this can be configured with the [`com.mendix.core.ProcessedTasksCleanupBatchSize`](/refguide10/custom-settings/#commendixcoreProcessedTasksCleanupBatchSize) runtime setting.
 
 {{% alert color="info" %}}
 When turning on the automatic cleanup after having used tasks for a long time, there might be many objects to clean up, which will be initiated when the runtime starts. This may cause additional load on the database, but will not block the startup. It is recommended not to do this during a busy period.
@@ -235,7 +235,7 @@ When turning on the automatic cleanup after having used tasks for a long time, t
 
 ### Logging
 
-A [Log Node](/refguide/logging/#mendix-nodes) named `Queue` exists specifically for all actions related to Task Queues.
+A [Log Node](/refguide10/logging/#mendix-nodes) named `Queue` exists specifically for all actions related to Task Queues.
 
 ## Other
 
@@ -274,7 +274,7 @@ The tasks are then consumed by executors that perform a `SELECT FOR UPDATE SKIP 
 
 After the task has been executed, it is moved to be an object of the `System.ProcessedQueueTask` entity with `Status` `Completed` or `Failed`. If the task failed with an exception, this is included in the `ErrorMessage` attribute.
 
-Arguments are stored in the `Arguments` attribute as JSON values. Arguments can be any primitive type ([variable](/refguide/variable-activities/)) or a committed persistable object, which is included in the `Arguments` field by its Mendix identifier. Upon execution of the task, the corresponding object is retrieved from the database using the Mendix identifier. For this reason the persistable object must be committed before the task executes, because otherwise a runtime exception will occur.
+Arguments are stored in the `Arguments` attribute as JSON values. Arguments can be any primitive type ([variable](/refguide10/variable-activities/)) or a committed persistable object, which is included in the `Arguments` field by its Mendix identifier. Upon execution of the task, the corresponding object is retrieved from the database using the Mendix identifier. For this reason the persistable object must be committed before the task executes, because otherwise a runtime exception will occur.
 
 When a node crashes, this is eventually detected by another cluster node, because it no longer updates its heartbeat timestamp. At this point the other node will reset all tasks that were running on the crashed node. The reset performs the following actions:
 

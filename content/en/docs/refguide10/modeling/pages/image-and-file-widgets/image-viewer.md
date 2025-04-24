@@ -1,13 +1,13 @@
 ---
 title: "Dynamic Image"
-url: /refguide/image-viewer/
+url: /refguide10/image-viewer/
 weight: 30
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 {{% alert color="warning" %}}The Dynamic Image widget, which is not supported by the React client added to Mendix in [10.7](/releasenotes/studio-pro/10.7/#react-client), can be converted to an [Image widget](/appstore/widgets/image/) through the context menu of the widget when the React client is enabled.
 
-For more information, see the Mendix React Client's [Migration Guide](/refguide/mendix-client/react/#migration-guide).{{% /alert %}}
+For more information, see the Mendix React Client's [Migration Guide](/refguide10/mendix-client/react/#migration-guide).{{% /alert %}}
 
 ## Introduction
 
@@ -62,11 +62,11 @@ Dynamic image properties consist of the following sections:
 
 ### Common Section{#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### Design Properties Section {#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### Data Source Section {#data-source}
 
@@ -76,7 +76,7 @@ The **Entity (path)** property specifies which object will be shown in the dynam
 
 ### Events Section {#events}
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 ### General Section{#general}
 
@@ -136,10 +136,10 @@ Default: *Thumbnail*
 
 ### Visibility Properties{#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ## Read More
 
-* [Page](/refguide/page/)
-* [Images, Videos, and Files](/refguide/image-and-file-widgets/)
-* [Properties Common in the Page Editor](/refguide/common-widget-properties/)
+* [Page](/refguide10/page/)
+* [Images, Videos, and Files](/refguide10/image-and-file-widgets/)
+* [Properties Common in the Page Editor](/refguide10/common-widget-properties/)

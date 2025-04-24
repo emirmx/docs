@@ -1,6 +1,6 @@
 ---
 title: "Java Version Migration"
-url: /refguide/java-version-migration/
+url: /refguide10/java-version-migration/
 weight: 45
 description: "Describes consequences for a Mendix app when migrating from one Java version to another."
 ---
@@ -17,7 +17,7 @@ The following changes in behavior have been noticed when migrating from Java ver
 
 ### Changes in Date Formatting When Locale Is Dutch {#date-locale-dutch}
 
-[Locale data was updated in Java version 13](https://www.oracle.com/java/technologies/javase/13-relnote-issues.html#JDK-8221432) in such a way that [date formatting microflow expressions](/refguide/parse-and-format-date-function-calls/) have changed what they produce when the locale is Dutch and no format argument is given.
+[Locale data was updated in Java version 13](https://www.oracle.com/java/technologies/javase/13-relnote-issues.html#JDK-8221432) in such a way that [date formatting microflow expressions](/refguide10/parse-and-format-date-function-calls/) have changed what they produce when the locale is Dutch and no format argument is given.
 
 #### Dutch, Belgium (nl_BE)
 
@@ -39,6 +39,6 @@ The following changes in behavior have been noticed when migrating from Java ver
 
 ### Changes in Date Formatting {#date-formatting-21}
 
-[Locale data updates in Java version 20](https://www.oracle.com/java/technologies/javase/20-relnote-issues.html#JDK-8284840) mean that [date formatting microflow expressions](/refguide/parse-and-format-date-function-calls/#formatDateTime) return a different result when the format string contains AM or PM.
+[Locale data updates in Java version 20](https://www.oracle.com/java/technologies/javase/20-relnote-issues.html#JDK-8284840) mean that [date formatting microflow expressions](/refguide10/parse-and-format-date-function-calls/#formatDateTime) return a different result when the format string contains AM or PM.
 
 In Java versions below 20, a space would be included before the AM/PM, but now it will be a Unicode non-breaking space (NBSP or NNBSP, \u202f). In a microflow expression, this non-breaking space can be included in a string using `urlDecode('%E2%80%AF')`—for example `'8:24' + urlDecode('%E2%80%AF') + 'AM'`.

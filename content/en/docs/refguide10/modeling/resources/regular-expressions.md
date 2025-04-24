@@ -1,13 +1,13 @@
 ---
 title: "Regular Expressions"
-url: /refguide/regular-expressions/
+url: /refguide10/regular-expressions/
 weight: 70
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-A regular expression resource document is used in the [validation rules](/refguide/validation-rules/) of an entity to describe a set of criteria that a string must match.
+A regular expression resource document is used in the [validation rules](/refguide10/validation-rules/) of an entity to describe a set of criteria that a string must match.
 
 A regular expression has the properties described below.
 
@@ -15,7 +15,7 @@ A regular expression has the properties described below.
 
 ### Name
 
-The name can be used to refer to the regular expression from a [validation rule](/refguide/validation-rules/) of an entity.
+The name can be used to refer to the regular expression from a [validation rule](/refguide10/validation-rules/) of an entity.
 
 ### Documentation
 

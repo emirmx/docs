@@ -1,6 +1,6 @@
 ---
 title: "Export Package Commands"
-url: /refguide/mx-command-line-tool/export
+url: /refguide10/mx-command-line-tool/export
 weight: 40
 description: "Describes the commands related to package export for the mx command-line tool."
 ---
@@ -11,7 +11,7 @@ The commands in this group enable exporting different kids of packages from your
 
 ## mx create-project-package Command {#create-project-package}
 
-The `mx create-project-package` command exports the app as a [source app package](/refguide/export-app-package-dialog/).
+The `mx create-project-package` command exports the app as a [source app package](/refguide10/export-app-package-dialog/).
 
 ### Usage
 
@@ -89,7 +89,7 @@ This table shows the return codes and their description:
 
 ## mx create-solution-package Command {#create-solution-package}
 
-The `mx create-solution-package` command exports the app as a [solution package](/refguide/export-app-package-dialog/).
+The `mx create-solution-package` command exports the app as a [solution package](/refguide10/export-app-package-dialog/).
 
 ### Usage
 

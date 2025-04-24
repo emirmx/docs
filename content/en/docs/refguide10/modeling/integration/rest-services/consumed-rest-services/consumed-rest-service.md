@@ -1,10 +1,10 @@
 ---
 title: "Consumed REST Service"
-url: /refguide/consumed-rest-service/
+url: /refguide10/consumed-rest-service/
 description: "Describes the configuration and usage of the new Consumed REST service document."
 weight: 5
 aliases:
-    - /refguide/consumed-rest-services-beta
+    - /refguide10/consumed-rest-services-beta
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details. 
 ---
 
@@ -115,7 +115,7 @@ You can configure basic authentication to use for all requests in your document.
 1. Click **Authentication**.
 2. In the **Authentication method** field, click the drop-down and select **Basic authentication**. 
 
-    {{< figure src="/attachments/refguide10/modeling/integration/consumed-rest-service/authentication-setup.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide10/modeling/integration/consumed-rest-service/authentication-setup.png" >}}
 
 3. Select a constant or create a new one for your username and password. To create a new constant, follow these steps:
    1. Next to **Username** or **Password**, click **Select** > **New**.
@@ -153,7 +153,7 @@ You can add a Base URL as a parameter. To do this, follow these steps:
 
 {{< figure src="/attachments/refguide10/modeling/integration/consumed-rest-service/dynamic-base-url.png" class="no-border" width="600" >}}
 
-Your base URL is now considered as a parameter. You can change its value in the [Send REST Request](/refguide/send-rest-request/) microflow activity. 
+Your base URL is now considered as a parameter. You can change its value in the [Send REST Request](/refguide10/send-rest-request/) microflow activity. 
 
 ### Adding Headers {#add-headers}
 
@@ -164,8 +164,6 @@ You can add a header for any HTTP request you have specified in your document. T
     {{< figure src="/attachments/refguide10/modeling/integration/consumed-rest-service/header-example.png" class="no-border"  width="300" >}}
 
 2. In the **Key** field, click the drop-down and choose from the list of the most commonly used HTTP headers. You can also create a custom header by typing directly in the key field and adding a value in the **Value** field.
-
-    {{< figure src="/attachments/refguide10/modeling/integration/consumed-rest-service/accept-header.png" class="no-border"  width="500" >}}
 
 3. Click **OK**. To test the header, click **Send**.
 
@@ -234,7 +232,7 @@ You can choose to flatten and simplify the structure of your response. Enable th
 
 When the response is not in JSON format, it cannot be converted automatically into entities. Instead, you can extract the data in a microflow.
 
-When the [Send REST request](/refguide/send-rest-request/) action is executed in a microflow, it places the result into the variable `latestHttpResponse`. In `latestHttpResponse`, you can find the `StatusCode` and `Content` of the request that was made. From here, you can use microflow logic to extract the information. For example, if the response has XML formatting, you can use [Import Mapping](/refguide/import-mappings/) to read the data.
+When the [Send REST request](/refguide10/send-rest-request/) action is executed in a microflow, it places the result into the variable `latestHttpResponse`. In `latestHttpResponse`, you can find the `StatusCode` and `Content` of the request that was made. From here, you can use microflow logic to extract the information. For example, if the response has XML formatting, you can use [Import Mapping](/refguide10/import-mappings/) to read the data.
 
 ### Simplifying and Flattening Response Data {#simplify-and-flatten}
 
@@ -248,7 +246,7 @@ By default, simplification and flattening is enabled. To change this, uncheck th
 
 To select a request in the microflow, complete the following steps:
 
-1. Create a new microflow and drag the [Send REST request](/refguide/send-rest-request/) activity into it.
+1. Create a new microflow and drag the [Send REST request](/refguide10/send-rest-request/) activity into it.
 2. Double-click the activity and click **Select** to choose the request you want to add, then click **Select** > **OK**.
 
     {{< figure src="/attachments/refguide10/modeling/integration/consumed-rest-service/send-request-activity.png" class="no-border" width="500" >}}

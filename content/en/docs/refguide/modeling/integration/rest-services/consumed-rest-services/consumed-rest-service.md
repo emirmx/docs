@@ -26,7 +26,7 @@ Use the Consumed REST Service document to do the following:
 * Send REST requests through a microflow
 
 {{% alert color="info" %}}
-The ability to import an OpenAPI/Swagger contract was introduced as a beta feature in [Studio Pro 10.21](/releasenotes/studio-pro/10.21/).
+The ability to import an OpenAPI/Swagger contract is currently in beta.
 {{% /alert %}}
 
 ### Limitations
@@ -110,7 +110,7 @@ You can configure basic authentication to use for all requests in your document.
 1. Click **Authentication**.
 2. In the **Authentication method** field, click the drop-down and select **Basic authentication**. 
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/authentication-setup.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/authentication-setup.png" >}}
 
 3. Select a constant or create a new one for your username and password. To create a new constant, follow these steps:
    1. Next to **Username** or **Password**, click **Select** > **New**.
@@ -159,8 +159,6 @@ You can add a header for any HTTP request you have specified in your document. T
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/header-example.png" class="no-border"  width="300" >}}
 
 2. In the **Key** field, click the drop-down and choose from the list of the most commonly used HTTP headers. You can also create a custom header by typing directly in the key field and adding a value in the **Value** field.
-
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/accept-header.png" class="no-border"  width="500" >}}
 
 3. Click **OK**. To test the header, click **Send**.
 

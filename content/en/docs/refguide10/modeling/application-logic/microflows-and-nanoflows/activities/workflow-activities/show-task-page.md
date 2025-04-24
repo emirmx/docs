@@ -1,6 +1,6 @@
 ---
 title: "Show User Task Page"
-url: /refguide/show-task-page/
+url: /refguide10/show-task-page/
 weight: 50
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -42,9 +42,9 @@ The user task object of the System.WorkflowUserTask entity available from the mi
 
 With this option, you can automatically assign the user task to the user who has opened the task page.
 
-For a [single user task](/refguide/user-task/), the auto assignment happens only if the user task has not been assigned to anyone yet.
+For a [single user task](/refguide10/user-task/), the auto assignment happens only if the user task has not been assigned to anyone yet.
 
-For a [multi-user task](/refguide/multi-user-task/), the auto assignment happens irrespective of whether the task was assigned before (to another user) or not.
+For a [multi-user task](/refguide10/multi-user-task/), the auto assignment happens irrespective of whether the task was assigned before (to another user) or not.
 
 This option is enabled by default.
 
@@ -67,4 +67,4 @@ For a multi-user task, this setting has no effect if the [Auto-Assign](#auto-ass
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}
