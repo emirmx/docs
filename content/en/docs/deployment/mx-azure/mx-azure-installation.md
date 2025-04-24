@@ -107,7 +107,7 @@ To fix the issue, you can click **Rerun** to manually re-run the cluster. If a c
     
 ## Editing the Cluster in the Mendix on Azure Portal
 
-If required, you can change the following options for your cluster. The Edit page might take few second to open.
+If required, you can change the following options for your cluster. The **Edit** page might take few second to open.
 
 * AKS service tier
 * AKS node size
