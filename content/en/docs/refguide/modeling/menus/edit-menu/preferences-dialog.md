@@ -307,17 +307,13 @@ Publishing data as a GraphQL service is available as of Studio Pro 10.14. When y
 
 ### Maia
 
-#### Enable Maia for Domain Model (Experimental)
+#### Enable Maia for Domain Model
 
-In Studio Pro 10.13.0, Maia for Domain Model was introduced as an experimental feature. Enable this option to help you generate entities and associations for your domain models. For more information on how to use this feature, see [Maia for Domain Model](/refguide/maia-for-domain-model/).
+Maia for Domain Model was introduced in Studio Pro 10.13.0. Enable this option to help you generate entities and associations for empty domain models. For more information on how to use this feature, see [Domain Model Generator](/refguide/domain-model-generator/).
 
-#### Enable Maia for Pages (Experimental)
+#### Enable Translation Generator
 
-In Studio Pro 10.21.0, Maia for Pages was introduced as an experimental feature. Enable this option to help you generate pages by adding and configuring widgets based on text input and an optional image.
-
-#### Enable Translation Generator (Experimental)
-
-In Studio Pro 10.12.0, Translation Generator was introduced as an experimental feature. Enable this option to help you translate your model to different languages through **Batch translate** under the **Language** menu. For more information, see [Translation Generator](/refguide/translation-generator/).
+Maia Translation Generator was introduced in Studio Pro 10.12.0. Enable this option to help you translate your model to different languages through **Batch translate** under the **Language** menu. For more information, see [Translation Generator](/refguide/translation-generator/).
 
 ### Mapping Editor
 
