@@ -124,7 +124,7 @@ All environments are defined as production environments, which means that [secur
 
 6. Select the **Environment Purpose** to select the purpose of the environment.
 
-    {{% alert color="info" %}} Currently, its only possible to set the Environment Purpose in the portal {{% /alert %}}
+    {{% alert color="info" %}} Currently, it is only possible to set the Environment Purpose in the portal. {{% /alert %}}
 
 7. Enter a **Subscription Secret** if you want your app to run as a licensed app. Without a license, your app will be subjected to restrictions very similar to those listed in the [Free Apps](/developerportal/deploy/mendix-cloud-deploy/#free-app) section of *Mendix Cloud*.
 
