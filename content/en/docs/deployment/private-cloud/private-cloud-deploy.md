@@ -407,7 +407,7 @@ The Technical Contact can be changed later, but only by the current Technical Co
 
 This section allows you to edit the Environment Purpose for the environments within the application. Setting the purpose of your environment does not affect its operational state. However, it helps ensure the environment is used as intended, providing clarity for both you and us. We strongly recommend setting this field, as future features may be tailored to specific environment purposes. For applications where the Technical Contact is not set, this section is not visible.
 
-When creating a new environment, the Technical Contact can set the environment purpose. The field will not be visible when some one else other than Technical contact is creating the environment. Its also possible to change the purpose in Application Settings after environment creation. However, the purpose can only be edited by the Technical Contact.
+When creating a new environment, the Technical Contact can set the environment purpose. The field is not visible when some one else other than the Technical Contact is creating the environment. It is also possible to change the purpose in **Application Settings** after environment creation. However, the purpose can only be edited by the Technical Contact.
 
 ## Managing Your Environments from the Environment Details Page {#environment-details}
 
