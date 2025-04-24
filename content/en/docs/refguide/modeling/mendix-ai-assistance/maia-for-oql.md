@@ -8,14 +8,14 @@ description: "Describes the features in Maia for OQL Generation."
 ## Introduction
 
 {{% alert color="info" %}}
-Maia for OQL is currently an experimental feature. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+Maia for OQL was introduced in Studio Pro 11 beta 1.
 {{% /alert %}}
 
 {{% alert color="info" %}}
 An internet connection and signing in to Studio Pro are required to use Maia for OQL.
 {{% /alert %}}
 
-Maia for OQL is a powerful feature that enables you to generate and manage OQL (Object Query Language) queries through an intuitive interface. It is designed to simplify query creation and reduce manual effort. As this feature is experimental, it currently includes some limitations. For more details, refer to the [Limitations](#limitations) section below.
+Maia for OQL is a powerful feature that enables you to generate and manage OQL (Object Query Language) queries through an intuitive interface. It is designed to simplify query creation and reduce manual effort. Currently it has some limitations. For more details, see the [Limitations](#limitations) section below.
 
 ## Using Maia for OQL
 
