@@ -1,7 +1,7 @@
 ---
 title: "Implement Best Practices for JavaScript Actions"
 linktitle: "JavaScript Actions Best Practices"
-url: /howto/extensibility/best-practices-javascript-actions/
+url: /howto10/extensibility/best-practices-javascript-actions/
 weight: 60
 description: "Describes how to create high-quality JavaScript actions, use common implementation patterns, design better APIs, and use JavaScript actions in nanoflows."
 ---
@@ -148,7 +148,7 @@ function CameraStart(targetSize, pictureSource, correctOrientation, waterMark) {
 }
 ```
 
-For more detail on input types, see [JavaScript Actions](/refguide/javascript-actions/). For more information on choosing correct input types, see the [Better APIs](#betterapis) section below.
+For more detail on input types, see [JavaScript Actions](/refguide10/javascript-actions/). For more information on choosing correct input types, see the [Better APIs](#betterapis) section below.
 
 ### Coding the Actions
 
@@ -253,7 +253,7 @@ Below is an example of using an external dependency based on [pdf-lib](https://g
 
 ### Understanding Returns
 
-The JavaScript action can specify a return type such as Integer, DateTime, Object, List of object, and Generics. For more information on returns, see [JavaScript Actions](/refguide/javascript-actions/).
+The JavaScript action can specify a return type such as Integer, DateTime, Object, List of object, and Generics. For more information on returns, see [JavaScript Actions](/refguide10/javascript-actions/).
 
 Actions can be synchronous or asynchronous. Synchronous actions will directly return the value and finish executing. An asynchronous action will return a promise, and will continue to execute and finish at a later time. The nanoflow will continue to execute when the promise is resolved.
 
@@ -348,7 +348,7 @@ Explaining the Fetch API code:
 
 * As this is an async function, error handling at all three steps: fetch, parse JSON, and accessing the data can be done inside a single `try...catch` block (for a more detailed explanation, see the [MDN documentation for error handling with async/await](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await#adding_error_handling)).
 
-* For more information on building a JavaScript action rest consume function, see [Build JavaScript Actions: Part 2 (Advanced)](/howto/extensibility/write-javascript-github/).
+* For more information on building a JavaScript action rest consume function, see [Build JavaScript Actions: Part 2 (Advanced)](/howto10/extensibility/write-javascript-github/).
 
 #### Understanding Common Promise Functions
 
@@ -448,7 +448,7 @@ Well-documented actions are easier to reuse. Consider the following when documen
 
 An extensive test app can help make a JavaScript action more robust. Within a test app, try to create all possible variations of the input, accounting for empty inputs and error cases that should be handled.
 
-When testing, make sure you to check all compatible platforms (web and native). The web should handle the Mendix browser compatibility. For further information about compatibility, see the [Browsers](/refguide/system-requirements/#browsers) section of *System Requirements*. 
+When testing, make sure you to check all compatible platforms (web and native). The web should handle the Mendix browser compatibility. For further information about compatibility, see the [Browsers](/refguide10/system-requirements/#browsers) section of *System Requirements*. 
 
 When an action is not compatible with the platform, make sure it can be checked with an additional action before running into an error. For example, employ a `CheckCameraSupport` action before starting a camera. When an action is called but not compatible, it should fail gracefully or display a clear error message. 
 
@@ -474,8 +474,8 @@ Not all capabilities are recommended for use. Consider the side effects that an 
 
 ## Read More
 
-* [Build JavaScript Actions](/howto/extensibility/build-javascript-actions/)
-* [JavaScript Actions](/refguide/javascript-actions/)
+* [Build JavaScript Actions](/howto10/extensibility/build-javascript-actions/)
+* [JavaScript Actions](/refguide10/javascript-actions/)
 * [Mendix Client API](/apidocs-mxsdk/apidocs/client-api/)
 * JavaScript basics:
     * [Mozilla JavaScript Basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)

@@ -1,6 +1,6 @@
 ---
 title: "Update Pluggable Widgets Tools"
-url: /howto/extensibility/update-pluggable-widgets-tools/
+url: /howto10/extensibility/update-pluggable-widgets-tools/
 description: "Follow this guide to update the Pluggable Widgets Tools package used by your pluggable widget to a newer version.
 "
 weight: 10
@@ -31,5 +31,5 @@ If you see type or package errors with TypeScript, you might need to close and r
 
 ## Read More
 
-* [Build a Pluggable Native Widget](/howto/extensibility/build-native-widget/)
-* [Build Pluggable Web Widgets](/howto/extensibility/pluggable-widgets/)
+* [Build a Pluggable Native Widget](/howto10/extensibility/build-native-widget/)
+* [Build Pluggable Web Widgets](/howto10/extensibility/pluggable-widgets/)

@@ -1,6 +1,6 @@
 ---
 title: "Navigation Consistency Errors"
-url: /refguide/consistency-errors-navigation/
+url: /refguide10/consistency-errors-navigation/
 description: "Describes consistency errors in Mendix Studio Pro and the way to fix them."
 #To update screenshots in this document, use the Consistency Errors app.
 ---
@@ -31,7 +31,7 @@ To fix CE1568, pass an object to the page by changing the **On click** property 
 
 When you set a page with a data view as a menu item, you get a consistency error, because the page expects an object to be passed to it. 
 
-For example, you have created a menu item called **Program** for a **Responsive** [profile](/refguide/navigation/#profiles). This menu item opens the **Program** page. However, the **Program** page has a data view on it and expects a *ProgramItem* object to be passed to it, so that it can show the program details of a specific *ProgramItem* on the page. As a result, you get a consistency error, as no object is passed to this page from the navigation.
+For example, you have created a menu item called **Program** for a **Responsive** [profile](/refguide10/navigation/#profiles). This menu item opens the **Program** page. However, the **Program** page has a data view on it and expects a *ProgramItem* object to be passed to it, so that it can show the program details of a specific *ProgramItem* on the page. As a result, you get a consistency error, as no object is passed to this page from the navigation.
 
 {{< figure src="/attachments/refguide10/modeling/consistency-errors/consistency-errors-navigation/page-expects-an-object-error.png" alt="Scheme Showing the Menu Item Error" class="no-border" >}}
 
@@ -54,7 +54,7 @@ To fix CE0529, you can use a microflow as the home page that opens the preferred
 
 #### Error Fix Example for CE0529 {#home-page-expects-an-object}
 
-If you set a page that expects an object to be passed to it as a home page for a [navigation profile](/refguide/navigation/#properties), you will get a consistency error.
+If you set a page that expects an object to be passed to it as a home page for a [navigation profile](/refguide10/navigation/#properties), you will get a consistency error.
 
 For example, you have added a data view that expects an object of type *Customer* to the home page of the responsive profile, and you get a consistency error. 
 
@@ -87,12 +87,12 @@ Now the new object of type *Customer* will be created and passed to the home pag
 
 CE0548 error message: *Items with subitems cannot have an action themselves.*
 
-You get CE0548 if you have assigned an [on-click event](/refguide/on-click-event/) to a menu item that has a sub-item, when menu items with have sub-items cannot have on-click events assigned to them.
+You get CE0548 if you have assigned an [on-click event](/refguide10/on-click-event/) to a menu item that has a sub-item, when menu items with have sub-items cannot have on-click events assigned to them.
 
 To fix CE0548, you need to either set the on-click event of the menu item to *Nothing*, or delete/move the sub-item.
 
 ## Read More
 
-* [Navigation](/refguide/navigation/)
-* [Microflows](/refguide/microflows/)
-* [Microflow Properties](/refguide/microflow/)
+* [Navigation](/refguide10/navigation/)
+* [Microflows](/refguide10/microflows/)
+* [Microflow Properties](/refguide10/microflow/)

@@ -1,6 +1,6 @@
 ---
 title: "Using the Mendix Runtime Java API"
-url: /refguide/java-api-tutorial/
+url: /refguide10/java-api-tutorial/
 weight: 40
 description: "Describes how to add a Java action, edit it in Eclipse, and call it from a microflow."
 ---
@@ -120,4 +120,4 @@ After this, all `Attachments` belonging to one `GenericObject` are copied to ano
 
 ## Read More
 
-* [Extending Your Application with Custom Java](/refguide/extending-your-application-with-custom-java/)
+* [Extending Your Application with Custom Java](/refguide10/extending-your-application-with-custom-java/)

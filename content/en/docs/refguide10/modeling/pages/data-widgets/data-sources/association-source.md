@@ -1,12 +1,12 @@
 ---
 title: "Association Source"
-url: /refguide/association-source/
+url: /refguide10/association-source/
 weight: 60
 ---
 
 ## Introduction
 
-The **Association** source is a data source available to nested [data grids](/refguide/data-grid/), [template grids](/refguide/template-grid/), and [list views](/refguide/list-view/). 
+The **Association** source is a data source available to nested [data grids](/refguide10/data-grid/), [template grids](/refguide10/template-grid/), and [list views](/refguide10/list-view/). 
 
 {{% alert color="warning" %}}
 The **Association** source retrieves objects from memory, not from the database. 
@@ -14,7 +14,7 @@ The **Association** source retrieves objects from memory, not from the database.
 
 An **Association** data source fills the widget with objects linked to another object by an association. To provide the context, the data container needs to be nested within another data container.
 
-Data containers that can have other data containers inside them are the [template grid](/refguide/template-grid/), [list view](/refguide/list-view/), and [data view](/refguide/data-view/).
+Data containers that can have other data containers inside them are the [template grid](/refguide10/template-grid/), [list view](/refguide10/list-view/), and [data view](/refguide10/data-view/).
 
 {{% alert color="warning" %}}
 Sorting columns and searching is not possible in data containers with an association data source. This is because these features require a database call to function, which an association data source does not necessarily initiate.
@@ -28,5 +28,5 @@ The **Entity (path)** property specifies the association by which the widget is 
 
 ## Read More
 
-* [Associations](/refguide/associations/)
-* [Data Containers](/refguide/data-widgets/)
+* [Associations](/refguide10/associations/)
+* [Data Containers](/refguide10/data-widgets/)

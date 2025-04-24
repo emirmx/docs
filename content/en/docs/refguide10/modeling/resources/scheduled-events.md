@@ -1,6 +1,6 @@
 ---
 title: "Scheduled Events"
-url: /refguide/scheduled-events/
+url: /refguide10/scheduled-events/
 weight: 80
 description: "Options for configuring scheduled events"
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
@@ -8,7 +8,7 @@ description: "Options for configuring scheduled events"
 
 ## Introduction
 
-With scheduled events you can make the runtime execute a microflow repeatedly at specific intervals. The microflow is run using the [task queue](/refguide/task-queue/) mechanism.
+With scheduled events you can make the runtime execute a microflow repeatedly at specific intervals. The microflow is run using the [task queue](/refguide10/task-queue/) mechanism.
 
 A scheduled event is added to your module as a document (right-click your module and you will find it listed under *Add other*).
 
@@ -20,14 +20,14 @@ Scheduled events can be tested locally, but they will not be run if your app is 
 
 | Property | Description |
 | --- | --- |
-| Name | The name of the scheduled event. This name is recorded in the `System.ProcessedQueueTask` objects at runtime, so that you can identify when this scheduled event has been processed. See [Task Queues](/refguide/task-queue/) for additional information about this object. ⚠ For compatibility with legacy scheduled events, it is also stored in the `ScheduledEventInformation` objects but this is deprecated and will be removed in Mendix 11. |
+| Name | The name of the scheduled event. This name is recorded in the `System.ProcessedQueueTask` objects at runtime, so that you can identify when this scheduled event has been processed. See [Task Queues](/refguide10/task-queue/) for additional information about this object. ⚠ For compatibility with legacy scheduled events, it is also stored in the `ScheduledEventInformation` objects but this is deprecated and will be removed in Mendix 11. |
 | Documentation | This field is for documentation purposes in the app model only. Its value is not visible to end-users and doesn't influence the behavior of your application. |
 
 ## Execution Properties
 
 | Property | Description |
 | --- | --- |
-| Microflow | The microflow that is executed when the scheduled event is executed. It should have no parameters and is run with all rights (see [Microflow](/refguide/microflow/)). |
+| Microflow | The microflow that is executed when the scheduled event is executed. It should have no parameters and is run with all rights (see [Microflow](/refguide10/microflow/)). |
 | Enabled | The microflow is only executed if the scheduled event is enabled. This setting only applies when running from Studio Pro or from Eclipse. On production environments, scheduled events are enabled/disabled via the platform tools (for example the Mendix Portal or Windows Service Console). |
 
 ## Timing Properties
@@ -194,7 +194,7 @@ Hour- and minute-based intervals can only be integer divisors of 24 or 60, respe
 
 ### Cleaning Up Completed Runs of Scheduled Events
 
-Every time a scheduled event is run it produces an entry in the `System.ProcessedQueueTask` table in the database. Over time these accumulate and the table can grow large. Refer to the documentation on [Cleaning Up Old Processed Tasks](/refguide/task-queue/#cleanup) in *Task Queue* to learn how to remove processed entries.
+Every time a scheduled event is run it produces an entry in the `System.ProcessedQueueTask` table in the database. Over time these accumulate and the table can grow large. Refer to the documentation on [Cleaning Up Old Processed Tasks](/refguide10/task-queue/#cleanup) in *Task Queue* to learn how to remove processed entries.
 
 ### One Session for All Scheduled Events
 

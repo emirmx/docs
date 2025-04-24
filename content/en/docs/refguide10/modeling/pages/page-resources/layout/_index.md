@@ -1,17 +1,17 @@
 ---
 title: "Layout"
-url: /refguide/layout/
+url: /refguide10/layout/
 weight: 2
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-Layouts specify what comes where. Each [page](/refguide/page/) is based on a layout. The layout contains widgets and structures that return on every page based on that layout. For example, it is common to put a menu bar widget in a layout so that the menu is visible on all pages.
+Layouts specify what comes where. Each [page](/refguide10/page/) is based on a layout. The layout contains widgets and structures that return on every page based on that layout. For example, it is common to put a menu bar widget in a layout so that the menu is visible on all pages.
 
 {{< figure src="/attachments/refguide10/modeling/pages/page-resources/layout/layout-example.png"   width="400"  class="no-border" >}}
 
-A layout consists of content and [placeholders](/refguide/placeholder/). The content is everything that should be present in every page that uses the layout, from navigation bars to sign-out buttons. Placeholders are empty areas that later form the canvas for any pages that make use of the layout. The layout content remains the same in every page, but the placeholders cover what is unique to every individual page. 
+A layout consists of content and [placeholders](/refguide10/placeholder/). The content is everything that should be present in every page that uses the layout, from navigation bars to sign-out buttons. Placeholders are empty areas that later form the canvas for any pages that make use of the layout. The layout content remains the same in every page, but the placeholders cover what is unique to every individual page. 
 
 Layouts can be based on other layouts, in which case the generic layout is referred to as the primary layout. If a layout has a primary layout, it can use the placeholders defined in the primary layout to create a more specialized configuration. If a page is based on this specialized layout, it makes use of the placeholders defined in the new layout, ignoring those of the primary layout. This chain can be as long as is necessary, with a generic layout used throughout the app as a primary layout for a more specific data input layout which is, in turn, used as a primary layout for a specialized edit user layout. 
 
@@ -54,7 +54,7 @@ For existing layouts, the value is read-only.
 
 #### Master Layout {#master-layout}
 
-**Master layout** specifies a layout on which this layout is based. If no primary layout is specified, the layout contains a single widget (for example, a [scroll container](/refguide/scroll-container/)) that defines the structure of pages based on this layout. If a primary layout is specified, this layout fills the gaps defined by the primary layout. You can introduce new gaps in this layout by using [placeholders](/refguide/placeholder/).
+**Master layout** specifies a layout on which this layout is based. If no primary layout is specified, the layout contains a single widget (for example, a [scroll container](/refguide10/scroll-container/)) that defines the structure of pages based on this layout. If a primary layout is specified, this layout fills the gaps defined by the primary layout. You can introduce new gaps in this layout by using [placeholders](/refguide10/placeholder/).
 
 #### Layout Type {#layout-type}
 
@@ -79,7 +79,7 @@ The **layout type**, determines the purpose of the layout and how a page using t
 
 ### Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### Designer Section {#designer}
 
@@ -99,16 +99,16 @@ Default value: *600*
 
 ### Common Section {#common-styling}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Layout Widgets
 
 Layouts can contain the following widgets:
 
-* [Layout grid](/refguide/layout-grid/)
-* [Scroll container](/refguide/scroll-container/)
-* [Placeholder](/refguide/placeholder/)
-* [Header](/refguide/header/)
-* [Sidebar toggle](/refguide/sidebar-toggle-button/)
+* [Layout grid](/refguide10/layout-grid/)
+* [Scroll container](/refguide10/scroll-container/)
+* [Placeholder](/refguide10/placeholder/)
+* [Header](/refguide10/header/)
+* [Sidebar toggle](/refguide10/sidebar-toggle-button/)
 
 Placeholder, header, and sidebar toggle are unique to layouts, whilst Layout grids and scroll containers can also be used on pages.

@@ -1,6 +1,6 @@
 ---
 title: "Multilingual Apps and Translations"
-url: /refguide/multilingual-apps/
+url: /refguide10/multilingual-apps/
 weight: 50
 ---
 

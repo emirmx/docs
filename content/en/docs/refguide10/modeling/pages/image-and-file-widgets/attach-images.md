@@ -1,6 +1,6 @@
 ---
 title: "Enabling End-Users to Attach Images"
-url: /refguide/attach-images/
+url: /refguide10/attach-images/
 linktitle: "Enable End-Users to Attach Images"
 description: "Describes how to configure image uploader in Mendix Studio Pro."
 weight: 60
@@ -28,7 +28,7 @@ You also would like to display attached images in a list below the report and to
 
 Before starting this how-to, make sure you have completed the following prerequisites:
 
-* Familiarize yourself with page terms and how to perform basic functions on pages. For more information, see [Page](/refguide/page/). 
+* Familiarize yourself with page terms and how to perform basic functions on pages. For more information, see [Page](/refguide10/page/). 
 
 * Familiarize yourself with the domain model terms and learn how to perform basic functions. For more information, see [Domain Model].
 
@@ -42,7 +42,7 @@ Before starting this how-to, make sure you have completed the following prerequi
 
 ## Creating a Specialization of System.Image
 
-First of all, to be able to attach and upload images you need to add an entity that is a specialization of the System.Image entity. For more information, see the [Generalization](/refguide/entities/#generalization) section in *Entities*.
+First of all, to be able to attach and upload images you need to add an entity that is a specialization of the System.Image entity. For more information, see the [Generalization](/refguide10/entities/#generalization) section in *Entities*.
 
 Do the following:
 

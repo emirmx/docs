@@ -1,6 +1,6 @@
 ---
 title: "GitHub-Flavored Markdown"
-url: /refguide/gfm-syntax/
+url: /refguide10/gfm-syntax/
 weight: 70
 description: "Link to GitHub Guide to Mastering Markdown"
 # If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.

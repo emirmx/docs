@@ -1,9 +1,9 @@
 ---
 title: "Published OData Entity"
-url: /refguide/published-odata-entity/
+url: /refguide10/published-odata-entity/
 weight: 10
 alias:
-    - /refguide/published-odata-services/
+    - /refguide10/published-odata-services/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details. 
 ---
 
@@ -11,7 +11,7 @@ alias:
 
 This document describes the properties of an entity published in an OData service. 
 
-For an overview of OData/GraphQL services, see [Published OData/GraphQL Services](/refguide/published-odata-services/).
+For an overview of OData/GraphQL services, see [Published OData/GraphQL Services](/refguide10/published-odata-services/).
 
 ## Adding or Editing an Entity
 
@@ -61,7 +61,7 @@ Use **Exposed entity name** in the **Edit published entity** window to customize
 
 {{% alert color="info" %}}
 
-Location URIs must be unique. Publishing two different entities at the same location will result in a [consistency error](/refguide/consistency-errors/).
+Location URIs must be unique. Publishing two different entities at the same location will result in a [consistency error](/refguide10/consistency-errors/).
 
 {{% /alert %}}
 
@@ -87,9 +87,9 @@ Select a combination of attributes with the following constraints:
 * Required – If one of the key attribute values is empty, you cannot find an object with it anymore.
 * Stable over time – The attribute values used for the key should not change so you can find it again later.
 
-Having an [index](/refguide/indexes/) for the key attribute (or attributes) makes retrieving objects by key perform better.
+Having an [index](/refguide10/indexes/) for the key attribute (or attributes) makes retrieving objects by key perform better.
 
-You can set unique and required constraints using [validation rules](/refguide/validation-rules/).
+You can set unique and required constraints using [validation rules](/refguide10/validation-rules/).
 
 Selecting a key is required when the **Readable** capability is enabled.
 
@@ -97,7 +97,7 @@ Selecting a key is required when the **Readable** capability is enabled.
 Selecting more than one attribute as the key is only available for published OData services that use OData v4.
 {{% /alert %}}
 
-Mendix recommends that you do not use the entity [ID](/refguide/odata-representation/#id-representation) as a key as it has no meaning outside the Mendix app. 
+Mendix recommends that you do not use the entity [ID](/refguide10/odata-representation/#id-representation) as a key as it has no meaning outside the Mendix app. 
 
 ## Capabilities {#capabilities}
 
@@ -116,9 +116,9 @@ When the app receives a request to insert a new object, it does the following:
 
 This is the behavior when you choose the action **Write to database**.
 
-You can also choose the **Call a microflow** action to use your own logic. Specify a microflow that takes the entity as a parameter, and optionally a [System.HttpRequest](/refguide/http-request-and-response-entities/) and/or a [System.HttpResponse](/refguide/http-request-and-response-entities/) parameter. In the microflow, you can use the [Commit](/refguide/committing-objects/) activity to commit the changes to the database. See [Customizing the Outgoing HTTP Response](#custom-http-response) below for more information.
+You can also choose the **Call a microflow** action to use your own logic. Specify a microflow that takes the entity as a parameter, and optionally a [System.HttpRequest](/refguide10/http-request-and-response-entities/) and/or a [System.HttpResponse](/refguide10/http-request-and-response-entities/) parameter. In the microflow, you can use the [Commit](/refguide10/committing-objects/) activity to commit the changes to the database. See [Customizing the Outgoing HTTP Response](#custom-http-response) below for more information.
 
-In the publishing app, you can use a validation message action to report a validation error. The client app can include a custom error handler on the [Send External Object](/refguide/send-external-object/) activity to handle the error. If the microflow reports [validation feedback](/refguide/validation-feedback/), the runtime informs the client that the request has failed. For more information, see [Supported OData Operations](/refguide/supported-odata-operations/#updating-objects).
+In the publishing app, you can use a validation message action to report a validation error. The client app can include a custom error handler on the [Send External Object](/refguide10/send-external-object/) activity to handle the error. If the microflow reports [validation feedback](/refguide10/validation-feedback/), the runtime informs the client that the request has failed. For more information, see [Supported OData Operations](/refguide10/supported-odata-operations/#updating-objects).
 
 ### Readable {#readable}
 
@@ -161,17 +161,17 @@ When the app receives a request to change values, it does the following:
 
 This is the behavior when you choose the action **Write to database**.
 
-You can also choose the **Call a microflow** action to use your own logic. Specify a microflow that takes the entity as a parameter, and optionally a [System.HttpRequest](/refguide/http-request-and-response-entities/) and/or a [System.HttpResponse](/refguide/http-request-and-response-entities/) parameter. In the microflow, you can use the [Commit](/refguide/committing-objects/) activity to commit the changes to the database. See [Customizing the Outgoing HTTP Response](#custom-http-response) below for more information.
+You can also choose the **Call a microflow** action to use your own logic. Specify a microflow that takes the entity as a parameter, and optionally a [System.HttpRequest](/refguide10/http-request-and-response-entities/) and/or a [System.HttpResponse](/refguide10/http-request-and-response-entities/) parameter. In the microflow, you can use the [Commit](/refguide10/committing-objects/) activity to commit the changes to the database. See [Customizing the Outgoing HTTP Response](#custom-http-response) below for more information.
 
-In the publishing app, you can use a validation message action to report a validation error. The client app can include a custom error handler on the [Send External Object](/refguide/send-external-object/) activity to handle the error. If the microflow reports [validation feedback](/refguide/validation-feedback/), the runtime informs the client that the request has failed. For more information, see [Supported OData Operations](/refguide/supported-odata-operations/#updating-objects).
+In the publishing app, you can use a validation message action to report a validation error. The client app can include a custom error handler on the [Send External Object](/refguide10/send-external-object/) activity to handle the error. If the microflow reports [validation feedback](/refguide10/validation-feedback/), the runtime informs the client that the request has failed. For more information, see [Supported OData Operations](/refguide10/supported-odata-operations/#updating-objects).
 
 ### Deletable {#deletable}
 
 Select the checkbox for **Deletable** to indicate that clients can delete the values of attributes and associations.
 
-Choose whether the object should be deleted from the database directly, or whether to call a microflow. Specify a microflow that takes the entity as a parameter, and optionally a [System.HttpRequest](/refguide/http-request-and-response-entities/) and/or a [System.HttpResponse](/refguide/http-request-and-response-entities/) parameter. In the microflow, you can use the [Delete](/refguide/deleting-objects/) activity to delete the object from the database. See [Customizing the Outgoing HTTP Response](#custom-http-response) below for more information.
+Choose whether the object should be deleted from the database directly, or whether to call a microflow. Specify a microflow that takes the entity as a parameter, and optionally a [System.HttpRequest](/refguide10/http-request-and-response-entities/) and/or a [System.HttpResponse](/refguide10/http-request-and-response-entities/) parameter. In the microflow, you can use the [Delete](/refguide10/deleting-objects/) activity to delete the object from the database. See [Customizing the Outgoing HTTP Response](#custom-http-response) below for more information.
 
-You can use a validation message to report a validation error if you are performing, for example, a soft delete. If the microflow reports [validation feedback](/refguide/validation-feedback/), the runtime informs the client that the request has failed.
+You can use a validation message to report a validation error if you are performing, for example, a soft delete. If the microflow reports [validation feedback](/refguide10/validation-feedback/), the runtime informs the client that the request has failed.
 
 ## Exposed Data {#exposed-data}
 
@@ -205,7 +205,7 @@ Default: **10000**
 
 ## 8 Customizing the Outgoing HTTP Response {#custom-http-response}
 
-When using **Call a microflow** for any of these capabilities, the selected microflow can take a [System.HttpResponse](/refguide/http-request-and-response-entities/) parameter.
+When using **Call a microflow** for any of these capabilities, the selected microflow can take a [System.HttpResponse](/refguide10/http-request-and-response-entities/) parameter.
 
 You can use this parameter to affect the HTTP response:
 

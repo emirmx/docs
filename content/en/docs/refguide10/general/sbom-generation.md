@@ -1,6 +1,6 @@
 ---
 title: "SBOM Generation"
-url: /refguide/sbom-generation/
+url: /refguide10/sbom-generation/
 weight: 60
 description: "Describes how to create an SBOM from Studio Pro."
 ---
@@ -13,7 +13,7 @@ When building a Mendix app, you use many reusable components such as Widgets and
 
 You can generate an SBOM by using either of the following options:
 
-1. [MxBuild](/refguide/mxbuild/).
+1. [MxBuild](/refguide10/mxbuild/).
 
     ```bat
    mxbuild --java-home="C:\Program Files\Eclipse Adoptium\jdk-11.0.16.101-hotspot" --java-exe-path="C:\Program Files\Eclipse Adoptium\jdk-11.0.16.101-hotspot\bin\java.exe" --generate-sbom  "C:\Mendix\MyApp\MyApp.mpr"
@@ -83,9 +83,9 @@ The table below describes what components are currently covered in the generated
 | Feature | Description | Version
 | --- | --- | --- |
 | Mendix Modules | `9.24.14`, `10.4.0` | Mendix Modules imported from the Marketplace. This does not include Add-on Modules, Solutions, Extensions, or manually imported modules. |
-| [Java Dependencies](/refguide/managed-dependencies/) | `9.24.14`, `10.4.0` | Java libraries imported into your project using [Managed Dependencies](/refguide/managed-dependencies/), or those manually added in the `userlib` folder. Libraries added through managed dependencies will have access to information of the package manager and will include more details, such as the used license. |
+| [Java Dependencies](/refguide10/managed-dependencies/) | `9.24.14`, `10.4.0` | Java libraries imported into your project using [Managed Dependencies](/refguide10/managed-dependencies/), or those manually added in the `userlib` folder. Libraries added through managed dependencies will have access to information of the package manager and will include more details, such as the used license. |
 | [Widgets](/appstore/widgets/) | `10.9.0`, `10.6.6`, `10.10.0`, `9.24.18` | User interface elements downloaded from the Marketplace, such as drop-downs or buttons. |
-| JavaScript Actions(/refguide/javascript-actions/) | `10.10` | npm libraries that are used in your JavaScript actions. |
+| JavaScript Actions(/refguide10/javascript-actions/) | `10.10` | npm libraries that are used in your JavaScript actions. |
 
 ## Read More
 

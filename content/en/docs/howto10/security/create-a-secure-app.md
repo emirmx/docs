@@ -1,6 +1,6 @@
 ---
 title: "Create a Secure App"
-url: /howto/security/create-a-secure-app/
+url: /howto10/security/create-a-secure-app/
 weight: 10
 description: "Describes how to turn your application security on and how to configure it to secure the data."
 ---
@@ -20,10 +20,10 @@ This how-to teaches you how to do the following:
 
 Before starting with this how-to, make sure you have completed the following prerequisites:
 
-* Know how to create a domain model (for details, see [Creating a Basic Data Layer](/refguide/configuring-a-domain-model/))
-* Know how to create overview and detail pages (for details, see [How to Create Your First Two Overview and Details Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/))
-* Know how to create menu items (for details, see [Setting Up Navigation](/refguide/setting-up-the-navigation-structure/))
-* Know how to add action buttons (for details, see [Buttons](/refguide/button-widgets/))
+* Know how to create a domain model (for details, see [Creating a Basic Data Layer](/refguide10/configuring-a-domain-model/))
+* Know how to create overview and detail pages (for details, see [How to Create Your First Two Overview and Details Pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/))
+* Know how to create menu items (for details, see [Setting Up Navigation](/refguide10/setting-up-the-navigation-structure/))
+* Know how to add action buttons (for details, see [Buttons](/refguide10/button-widgets/))
 
 ## Preparing the Data Structure, GUI, and Example Data
 
@@ -214,7 +214,7 @@ To create access roles for the User module role, follow these steps:
     * **Allow deleting existing objects**: false
     * **Default rights for new members**: **Read**
 
-    {{% alert color="warning" %}}Be careful when setting default rights. If a new attribute or association is added, it will automatically have the designated access, which may not be what you want. See the [Access Rights](/refguide/access-rules/#access-rights) section of *Access Rules* for more details.{{% /alert %}}
+    {{% alert color="warning" %}}Be careful when setting default rights. If a new attribute or association is added, it will automatically have the designated access, which may not be what you want. See the [Access Rights](/refguide10/access-rules/#access-rights) section of *Access Rules* for more details.{{% /alert %}}
 
     {{< figure src="/attachments/howto10/security/create-a-secure-app/18581535.png" class="no-border" >}}
 
@@ -236,7 +236,7 @@ To create access roles for the User module role, follow these steps:
 
 In the previous section you set some access rules on your domain model. In this section you will define the access rules on the Order entity so that orders can only be viewed by a user if the payment status of the order is set to open. You will do this by adding an XPath constraint to the Order entity for the User module role. 
 
-An XPath constraint can be used to constrain the set of objects to which the access rule applies. If the XPath constraint is empty, the rule applies to all the objects of the entity. For more information, see [XPath Constraints](/refguide/xpath-constraints/) in the *Studio Pro Guide*.
+An XPath constraint can be used to constrain the set of objects to which the access rule applies. If the XPath constraint is empty, the rule applies to all the objects of the entity. For more information, see [XPath Constraints](/refguide10/xpath-constraints/) in the *Studio Pro Guide*.
 
 ### Adding an Account with the User User Role
 
@@ -283,4 +283,4 @@ An XPath constraint can be used to constrain the set of objects to which the acc
 
 ## Read More
 
-* [Set Up Anonymous User Security](/howto/security/set-up-anonymous-user-security/)
+* [Set Up Anonymous User Security](/howto10/security/set-up-anonymous-user-security/)

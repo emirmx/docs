@@ -2,9 +2,10 @@
 title: "Studio Pro 11 How-tos"
 url: /howto/
 description: "Step-by-step guides on various Mendix topics that teach you how to build and customize apps."
-weight: 15
+weight: 12
 no_list: false
 description_list: true
+beta: true
 cascade:
     - content_type: "Studio Pro 11"
     - mendix_version: 11
@@ -12,6 +13,10 @@ cascade:
         priority: 0.7
 #This document is mapped to the landing page, update the link there if renaming or moving the doc file.
 ---
+
+{{% alert color="warning" %}}
+Mendix 11 is currently in Beta. For more information about Beta releases and features, see [Beta Releases](/releasenotes/beta-features/).
+{{% /alert %}}
 
 ## Introduction
 

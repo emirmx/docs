@@ -1,7 +1,7 @@
 ---
 title: "Use Mendix Data Storage APIs to Build Reusable Microflow Actions"
 linktitle: "Data Storage APIs for Reusable Microflows"
-url: /howto/extensibility/howto-datastorage-api/
+url: /howto10/extensibility/howto-datastorage-api/
 weight: 90
 description: "Describes how to create custom microflow actions using Data Storage APIs."
 ---
@@ -24,9 +24,9 @@ This how to describes how you can build the following microflow actions:
 * Create first Monday of month list - returns a list of dates of the first Monday of every month in a specified range
 * Register global entity listeners - run custom Java code for every object change
 
-For more information on Java programming for Mendix, see [Java Programming](/refguide/java-programming/).
+For more information on Java programming for Mendix, see [Java Programming](/refguide10/java-programming/).
 
-For more information on calling Java actions from a microflow, see [Java Actions](/refguide/java-actions/).
+For more information on calling Java actions from a microflow, see [Java Actions](/refguide10/java-actions/).
 
 ## Retrieving Objects Using Advanced XPath
 

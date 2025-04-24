@@ -1,6 +1,6 @@
 ---
 title: "Security"
-url: /refguide/security/
+url: /refguide10/security/
 weight: 49
 ---
 
@@ -15,7 +15,7 @@ Secondly, you will want to control who can access your app once it is running. Y
 There are different ways in which you can set up app authentication, including local authentication and using a federated IdP to provide single sign-on (SSO). For more information, see the [App Authentication](#authentication) section below. 
 
 {{% alert color="info" %}}
-Security in Mendix apps does not include scanning files that end-users upload or download from your application for viruses and malware. For more information, see the [Scanning Uploaded Files for Malicious Content](/howto/security/best-practices-security/#scanning-for-malicious-content) section in *How to Implement Best Practices for App Security*. 
+Security in Mendix apps does not include scanning files that end-users upload or download from your application for viruses and malware. For more information, see the [Scanning Uploaded Files for Malicious Content](/howto10/security/best-practices-security/#scanning-for-malicious-content) section in *How to Implement Best Practices for App Security*. 
 {{% /alert %}}
 
 ## App Security Set Up in Studio Pro {#security-in-studio-pro}
@@ -24,19 +24,19 @@ Security in Mendix apps does not include scanning files that end-users upload or
 
 If you want your app to be fully secure, you need to explicitly give access to forms, entities, microflows, and workflows before end-users can access them. When you turn production security on, the default is that no one can access anything. To make it easier to create prototypes and demos there are security levels that require less security than are needed for a production system.
 
-For a description of the security levels, see [App Security](/refguide/app-security/).
+For a description of the security levels, see [App Security](/refguide10/app-security/).
 
 ### App vs. Module Security
 
-At the level of an app some global settings can be specified: the security level, the administrator account, and whether or not to allow anonymous access. For more information, see [App Security](/refguide/app-security/).
+At the level of an app some global settings can be specified: the security level, the administrator account, and whether or not to allow anonymous access. For more information, see [App Security](/refguide10/app-security/).
 
-Most of the security settings take place at the module level. This has the advantage that a module can specify its own security and can be distributed and reused in other apps. Access to forms, entities, microflows, workflows, and datasets can be configured. For more information, see [Module Security](/refguide/module-security/).
+Most of the security settings take place at the module level. This has the advantage that a module can specify its own security and can be distributed and reused in other apps. Access to forms, entities, microflows, workflows, and datasets can be configured. For more information, see [Module Security](/refguide10/module-security/).
 
 ### User Roles vs. Module Roles {#user-role}
 
-An end-user in a Mendix application has one or more user roles. These roles can be assigned from within the client when creating or editing an end-user. User roles are at the level of an app and can be edited in [App Security](/refguide/app-security/). For more information, see [User Roles](/refguide/user-roles/).
+An end-user in a Mendix application has one or more user roles. These roles can be assigned from within the client when creating or editing an end-user. User roles are at the level of an app and can be edited in [App Security](/refguide10/app-security/). For more information, see [User Roles](/refguide10/user-roles/).
 
-Next to this, each module defines its own set of module roles and you only have to specify security within a module in terms of those module roles. An email module maybe has two module roles, one for normal user and one for an administrator; other modules may have just one or more than two module roles depending on the requirements for those modules. For more information, see [Module Role](/refguide/module-security/#module-role).
+Next to this, each module defines its own set of module roles and you only have to specify security within a module in terms of those module roles. An email module maybe has two module roles, one for normal user and one for an administrator; other modules may have just one or more than two module roles depending on the requirements for those modules. For more information, see [Module Role](/refguide10/module-security/#module-role).
 
 A user role is a combination of module roles. An end-user that signs into the system gets the access rights of all of their user roles and indirectly to the module roles that are configured for those user roles.
 
@@ -51,7 +51,7 @@ Say, for example, you have an app with two modules: ProjectManagement and System
 
 ### Entity Access vs. Document Access {#entity-vs-page-access}
 
-You can specify for each entity who can read or write which members (attributes and associations) under what circumstances. Using XPath constraints you can express powerful security behavior (for example, "an employee can only see orders created by the department they are a part of"). Furthermore, you can express more advanced security through [entity access](/refguide/module-security/#entity-access).
+You can specify for each entity who can read or write which members (attributes and associations) under what circumstances. Using XPath constraints you can express powerful security behavior (for example, "an employee can only see orders created by the department they are a part of"). Furthermore, you can express more advanced security through [entity access](/refguide10/module-security/#entity-access).
 
 You can also configure additional access rules per document (such as a page, microflow, OData), for example, you can specify who can access it. 
 
@@ -85,7 +85,7 @@ If you want to invite your colleagues to build your app, you can manage the **Te
 
 ## The Security Overview (Beta)
 
-The [Security Overview (Beta)](/refguide/security-overview/) provides you with an overview of your app's security. To access the overview, open the **App** menu, and then click **Show Security Overview (Beta)**. 
+The [Security Overview (Beta)](/refguide10/security-overview/) provides you with an overview of your app's security. To access the overview, open the **App** menu, and then click **Show Security Overview (Beta)**. 
 
 {{% alert color="info" %}}
 This feature is currently in beta. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).

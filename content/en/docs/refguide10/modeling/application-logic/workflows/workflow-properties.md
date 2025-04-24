@@ -1,12 +1,12 @@
 ---
 title: "Workflow Properties"
-url: /refguide/workflow-properties/
+url: /refguide10/workflow-properties/
 weight: 25
 ---
 
 ## Introduction
 
-This document describes workflow properties. For details on what workflows are for and what kind of elements you can use there, see [Workflows](/refguide/workflows/).
+This document describes workflow properties. For details on what workflows are for and what kind of elements you can use there, see [Workflows](/refguide10/workflows/).
 
 ## Workflow Properties
 
@@ -38,16 +38,16 @@ The **Due date** section properties are described in the table below:
 
 ### Event Handlers {#event-handlers}
 
-**Event Handlers** section allows you to override the app-wide event handlers in the **App Settings** and to set workflow-specific event handlers that will be triggered when the workflow or its activities go through the transitions which warrant those workflow events. For more information on app-wide event handlers, see the [Events Handlers](/refguide/app-settings/#event-handlers) section in *App Settings*.
+**Event Handlers** section allows you to override the app-wide event handlers in the **App Settings** and to set workflow-specific event handlers that will be triggered when the workflow or its activities go through the transitions which warrant those workflow events. For more information on app-wide event handlers, see the [Events Handlers](/refguide10/app-settings/#event-handlers) section in *App Settings*.
 
 An event handler has the following configuration:
 
 * **Name** – describes the event handler
 * **Documentation** – provides more information regarding the usage of the event handler
-* **When** – allows you to select the [workflow event types](/refguide/workflow-events/#workflow-event-types), for which the handler should be triggered
+* **When** – allows you to select the [workflow event types](/refguide10/workflow-events/#workflow-event-types), for which the handler should be triggered
 * **Microflow** – allows you to select a microflow that should be triggered for each of the above selected workflow event types
 
-For more information on workflow events, see [Workflow Events](/refguide/workflow-events/).
+For more information on workflow events, see [Workflow Events](/refguide10/workflow-events/).
 
 {{% alert color="info"%}}
 You can define multiple workflow-specific event handlers. Even if a single event handler is defined for a specific workflow definition, it overrides all available app-wide event handlers for the workflow instances belonging to that definition.
@@ -59,12 +59,12 @@ You can define multiple workflow-specific event handlers. Even if a single event
 State-change events are deprecated and replaced with the new [event handlers](#event-handlers) above that also contain events for state changes. It is suggested to migrate the microflows to the new event handlers.
 {{% /alert %}}
 
-**Events** section properties allow you to override app-wide events in the **App Settings** and to set a workflow-specific microflow that will be triggered on a state change of the current workflow and its user tasks. For more information on app-wide events, see the [Events](/refguide/app-settings/#events) section in *App Settings*.
+**Events** section properties allow you to override app-wide events in the **App Settings** and to set a workflow-specific microflow that will be triggered on a state change of the current workflow and its user tasks. For more information on app-wide events, see the [Events](/refguide10/app-settings/#events) section in *App Settings*.
 
 #### Workflow State Change {#workflow-state-change}
 
 {{% alert color="info" %}}
-This setting overrides the app-wide setting in the **App Settings**. For more information see the [Workflow State Change](/refguide/app-settings/#workflow-state-change) section in *App Settings*.
+This setting overrides the app-wide setting in the **App Settings**. For more information see the [Workflow State Change](/refguide10/app-settings/#workflow-state-change) section in *App Settings*.
 {{% /alert %}}
 
 **Workflow state change** allows you to select a microflow that is triggered when the state of the current workflow has changed, for example, when the workflow is in progress or completed.
@@ -72,14 +72,14 @@ This setting overrides the app-wide setting in the **App Settings**. For more in
 #### User Task State Change {#user-task-state-change}
 
 {{% alert color="info" %}}
-This setting overrides the app-wide setting in the **App Settings**. For more information see the [User Task State Change](/refguide/app-settings/#user-task-state-change) section in *App Settings*.
+This setting overrides the app-wide setting in the **App Settings**. For more information see the [User Task State Change](/refguide10/app-settings/#user-task-state-change) section in *App Settings*.
 {{% /alert %}}
 
 **User task state change** allows you to select a microflow that is triggered when the state of a user task in the current workflow has changed, for example, when the a user task is completed or has failed.
 
 ### Admin Page Section {#admin-page}
 
-**Override admin page** is an optional page used for displaying an instance of the workflow to the workflow admin. This overrides a generic page used to display any workflow instances in the app, for example, when you have a **Show workflow admin page** set as an [on-click event](/refguide/on-click-event/#show-workflow-page) or as a [microflow action](/refguide/show-workflow-page/) and would like to override the page selected for this event/action. 
+**Override admin page** is an optional page used for displaying an instance of the workflow to the workflow admin. This overrides a generic page used to display any workflow instances in the app, for example, when you have a **Show workflow admin page** set as an [on-click event](/refguide10/on-click-event/#show-workflow-page) or as a [microflow action](/refguide10/show-workflow-page/) and would like to override the page selected for this event/action. 
 
 If you generate the page using the templates in **Workflows Commons** module, these templates contain necessary data containers and associated context entity.
 
@@ -151,4 +151,4 @@ You cannot change the **Name** of the workflow but you can change the [Caption](
 
 ## Read More
 
-* [Workflows](/refguide/workflows/)
+* [Workflows](/refguide10/workflows/)

@@ -1,7 +1,7 @@
 ---
 title: "Create Your First Two Overview and Detail Pages"
 linktitle: "Create Overview and Detail Pages"
-url: /howto/front-end/create-your-first-two-overview-and-detail-pages/
+url: /howto10/front-end/create-your-first-two-overview-and-detail-pages/
 weight: 25
 description: "Describes how to create overview and detail pages, and how to configure navigation and security."
 ---
@@ -19,7 +19,7 @@ This how-to teaches you how to do the following:
 
 Before starting with this how-to, make sure you have completed the following prerequisite:
 
-* Create a domain model by following [Configuring a Domain Model](/refguide/configuring-a-domain-model/):
+* Create a domain model by following [Configuring a Domain Model](/refguide10/configuring-a-domain-model/):
 
     {{< figure src="/attachments/howto10/front-end/create-your-first-two-overview-and-detail-pages/18582175.png" class="no-border" >}}
 
@@ -94,14 +94,14 @@ To create a new detail page manually, follow these steps:
 
 ## Navigation and Security
 
-Now create a navigation item for your overview page to start using it. For details on Setting Up Navigation, see [Setting Up Navigation](/refguide/setting-up-the-navigation-structure/).
+Now create a navigation item for your overview page to start using it. For details on Setting Up Navigation, see [Setting Up Navigation](/refguide10/setting-up-the-navigation-structure/).
 
-If you switched on security for this application, you also need to configure page access on both the overview and detail pages. For more information, see [How to Create a Secure App](/howto/security/create-a-secure-app/).
+If you switched on security for this application, you also need to configure page access on both the overview and detail pages. For more information, see [How to Create a Secure App](/howto10/security/create-a-secure-app/).
 
 ## Read More
 
-* [UI Design](/howto/front-end/atlas-ui/)
-* [Use Layouts and Snippets](/howto/front-end/layouts-and-snippets/)
-* [Setting Up Navigation](/refguide/setting-up-the-navigation-structure/)
-* [Find the Root Cause of Runtime Errors](/howto/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
-* [Page](/refguide/page/)
+* [UI Design](/howto10/front-end/atlas-ui/)
+* [Use Layouts and Snippets](/howto10/front-end/layouts-and-snippets/)
+* [Setting Up Navigation](/refguide10/setting-up-the-navigation-structure/)
+* [Find the Root Cause of Runtime Errors](/howto10/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
+* [Page](/refguide10/page/)

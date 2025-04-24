@@ -1,6 +1,6 @@
 ---
 title: "Change Variable"
-url: /refguide/change-variable/
+url: /refguide10/change-variable/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -33,12 +33,12 @@ The variable which you want to change the value of.
 
 ### Value
 
-The new value for the variable. The value is entered using an [expression](/refguide/expressions/). The type of the expression must be the same as the type of the selected variable.
+The new value for the variable. The value is entered using an [expression](/refguide10/expressions/). The type of the expression must be the same as the type of the selected variable.
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}
 
 ## Read More
 
-* [Activities](/refguide/activities/)
+* [Activities](/refguide10/activities/)

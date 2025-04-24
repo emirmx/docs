@@ -1,6 +1,6 @@
 ---
 title: "XPath length"
-url: /refguide/xpath-length/
+url: /refguide10/xpath-length/
 weight: 4
 ---
 

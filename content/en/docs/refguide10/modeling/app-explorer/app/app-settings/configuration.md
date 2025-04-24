@@ -1,6 +1,6 @@
 ---
 title: "Configurations"
-url: /refguide/configuration/
+url: /refguide10/configuration/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -76,7 +76,7 @@ Only use this functionality if you know what you are doing. Wrong values can pre
 
 Each custom setting consists of a name and a value. For example, to set the hash algorithm to BCRYPT you add a custom setting with name `HashAlgorithm` and value `BCRYPT`.
 
-For settings overview, see [Runtime Customization](/refguide/custom-settings/).
+For settings overview, see [Runtime Customization](/refguide10/custom-settings/).
 
 ### Headers {#headers}
 
@@ -119,4 +119,4 @@ You can select which configuration is active using **Make active**.
 
 ## Read More
 
-* [App Settings](/refguide/app-settings/)
+* [App Settings](/refguide10/app-settings/)

@@ -1,6 +1,6 @@
 ---
 title: "Set Up Anonymous User Security"
-url: /howto/security/set-up-anonymous-user-security/
+url: /howto10/security/set-up-anonymous-user-security/
 weight: 30
 description: "Describes how to set access to a non-persistable object and give anonymous users read and write access."
 ---
@@ -52,4 +52,4 @@ Limiting the navigation or page display is not the same thing as security. All d
 
 ## Read More
 
-* [Creating a Secure App](/howto/security/create-a-secure-app/)
+* [Creating a Secure App](/howto10/security/create-a-secure-app/)

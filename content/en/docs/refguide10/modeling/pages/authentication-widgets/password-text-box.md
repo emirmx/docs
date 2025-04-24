@@ -1,6 +1,6 @@
 ---
 title: "Password Text Box"
-url: /refguide/password-text-box/
+url: /refguide10/password-text-box/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -12,7 +12,7 @@ The **Password text box** is a widget that provides a password for authenticatio
 
 {{< figure src="/attachments/refguide10/modeling/pages/authentication-widgets/password-text-box/password-text-box.png" alt="Password Text Box" class="no-border" >}}
 
-The **Password text box** should be placed on a page together with a [Login ID text box](/refguide/login-id-text-box/) and a [Sign-in button](/refguide/sign-in-button/).
+The **Password text box** should be placed on a page together with a [Login ID text box](/refguide10/login-id-text-box/) and a [Sign-in button](/refguide10/sign-in-button/).
 
 ## Properties
 
@@ -29,11 +29,11 @@ Password text box properties consist of the following sections:
 
 ### Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### Design Properties Section {#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}}
 
 ### General Section {#general}
 
@@ -43,10 +43,10 @@ A **Placeholder** shows a text when an end-user has not entered any text yet. It
 
 ### Label Section {#label}
 
-{{% snippet file="/static/_includes/refguide/label-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/label-section-link.md" %}}
 
 ## Read More
 
-* [Page](/refguide/page/)
-* [Login ID Text Box](/refguide/login-id-text-box/)
-* [Sign-In Button](/refguide/sign-in-button/)
+* [Page](/refguide10/page/)
+* [Login ID Text Box](/refguide10/login-id-text-box/)
+* [Sign-In Button](/refguide10/sign-in-button/)

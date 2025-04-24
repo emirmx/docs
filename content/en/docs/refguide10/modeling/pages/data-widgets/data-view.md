@@ -1,6 +1,6 @@
 ---
 title: "Data View"
-url: /refguide/data-view/
+url: /refguide10/data-view/
 weight: 10
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -11,7 +11,7 @@ The data view is a starting point for showing the contents of exactly one object
 
 {{< figure src="/attachments/refguide10/modeling/pages/data-widgets/data-view/data-view-example-structure-mode.png"    width="350"   class="no-border" >}}
 
-In a more complex example, a data view can contain customer information and [tab containers](/refguide/tab-container/) per specific topic (for example, addresses and payment information) with nested data grids for related objects:
+In a more complex example, a data view can contain customer information and [tab containers](/refguide10/tab-container/) per specific topic (for example, addresses and payment information) with nested data grids for related objects:
 
 {{< figure src="/attachments/refguide10/modeling/pages/data-widgets/data-view/data-view-complex-example.png"    width="350"   class="no-border" >}}
 
@@ -50,7 +50,7 @@ Default: *Horizontal*
 
 #### Label Width (Weight)
 
-If the form orientation is set to horizontal, this property can be used to specify the width of the input widget labels inside the data view. The width is specified using column weights from the [Bootstrap grid system](https://getbootstrap.com/css/#grid). For more details, see [Layout Grid](/refguide/layout-grid/).
+If the form orientation is set to horizontal, this property can be used to specify the width of the input widget labels inside the data view. The width is specified using column weights from the [Bootstrap grid system](https://getbootstrap.com/css/#grid). For more details, see [Layout Grid](/refguide10/layout-grid/).
 
 Default: *3*
 
@@ -62,7 +62,7 @@ Default: *True*
 
 #### Empty Entity Message
 
-If this message is specified, a data view that receives no source data will show this message instead of its content. Otherwise, the data view will show its static content and disabled input elements. This property is a translatable text. For more details, see [Language Menu](/refguide/translatable-texts/).
+If this message is specified, a data view that receives no source data will show this message instead of its content. Otherwise, the data view will show its static content and disabled input elements. This property is a translatable text. For more details, see [Language Menu](/refguide10/translatable-texts/).
 
 There are a number of ways a data view can end up without source data. For instance, a data view with a **Listen to widget** data source will remain empty until an object is selected in the target grid. In this scenario, **Empty entity message** can be used to guide the user to select an item from the grid.
 
@@ -70,16 +70,16 @@ Default: *empty*
 
 ### Data Source Section {#data-source}
 
-The data source determines which object will be shown in the data view. For more information on data sources, see [Data Sources](/refguide/data-sources/).
+The data source determines which object will be shown in the data view. For more information on data sources, see [Data Sources](/refguide10/data-sources/).
 
 The data view supports the following types of data source: context, microflow, nanoflow, and listen to widget. 
 
 | Data Source Type | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Context          | A data source that uses a context object which is already available, such as a page parameter, snippet parameter or the object of a surrounding data container. Page parameters are passed to the page from another document, such as an [Show Page action](/refguide/on-click-event/#show-page) in another page or a [Show Page activity](/refguide/show-page/) in a microflow or nanoflow. In the case of a snippet parameter the data will come from a [Snippet Call](/refguide/snippet-call/) in a [page](/refguide/page/), [layout](/refguide/layout/), or another [snippet](/refguide/snippet/). If the context object comes from a data container, you must specify an entity path that starts in the context object and follows one or more associations. For more information on the context source, see [Context Source](/refguide/context-source/). |
-| Microflow        | A data source that runs a selected microflow and displays a return value. For more information on the microflow source, see [Microflow Source](/refguide/microflow-source/).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| Nanoflow         | A data source that runs a selected nanoflow and displays a return value. For more information on the nanoflow source, see [Nanoflow Source](/refguide/nanoflow-source/).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| Listen to widget | A data source that allows a data view to display detailed information on an object in the list widget on the same page. For more information on listen to widget source, see [Listen To Widget Source](/refguide/listen-to-grid-source/).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Context          | A data source that uses a context object which is already available, such as a page parameter, snippet parameter or the object of a surrounding data container. Page parameters are passed to the page from another document, such as an [Show Page action](/refguide10/on-click-event/#show-page) in another page or a [Show Page activity](/refguide10/show-page/) in a microflow or nanoflow. In the case of a snippet parameter the data will come from a [Snippet Call](/refguide10/snippet-call/) in a [page](/refguide10/page/), [layout](/refguide10/layout/), or another [snippet](/refguide10/snippet/). If the context object comes from a data container, you must specify an entity path that starts in the context object and follows one or more associations. For more information on the context source, see [Context Source](/refguide10/context-source/). |
+| Microflow        | A data source that runs a selected microflow and displays a return value. For more information on the microflow source, see [Microflow Source](/refguide10/microflow-source/).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Nanoflow         | A data source that runs a selected nanoflow and displays a return value. For more information on the nanoflow source, see [Nanoflow Source](/refguide10/nanoflow-source/).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| Listen to widget | A data source that allows a data view to display detailed information on an object in the list widget on the same page. For more information on listen to widget source, see [Listen To Widget Source](/refguide10/listen-to-grid-source/).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 ### Editability Section {#editability}
 
@@ -108,7 +108,7 @@ When selected, this enables the widgets in the data view when a particular attri
 
 #### Based on Expression
 
-When selected, this enables the widget when a provided [expression](/refguide/expressions/) evaluates to true. The object of the data view is available inside an expression as the `$currentObject` variable as well as any variables and parameters inside a page or snippet.
+When selected, this enables the widget when a provided [expression](/refguide10/expressions/) evaluates to true. The object of the data view is available inside an expression as the `$currentObject` variable as well as any variables and parameters inside a page or snippet.
 
 The expression provided is evaluated in the browser. Currently it does not support all the functions that are available in microflows. The autocomplete function will only list those functions which are supported.
 
@@ -125,21 +125,21 @@ This property determines how input elements are rendered if they are read-only.
 
 ### Visibility Section {#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ### Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Styling
 
 ### Design Properties Section {#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### Common Section {#common-styling}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Performing Specific Actions
 
@@ -151,8 +151,8 @@ To perform actions on a data view, select it on a page and right-click it. The l
 
 ## Read More
 
-* [Page](/refguide/page/)
-* [Snippet](/refguide/snippet/)
-* [Data Containers](/refguide/data-widgets/)
-* [Data Sources](/refguide/data-sources/)
-* [Properties Common in the Page Editor](/refguide/common-widget-properties/)
+* [Page](/refguide10/page/)
+* [Snippet](/refguide10/snippet/)
+* [Data Containers](/refguide10/data-widgets/)
+* [Data Sources](/refguide10/data-sources/)
+* [Properties Common in the Page Editor](/refguide10/common-widget-properties/)

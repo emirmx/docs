@@ -1,6 +1,6 @@
 ---
 title: "Managed Dependencies"
-url: /refguide/managed-dependencies/
+url: /refguide10/managed-dependencies/
 weight: 50
 description: "Describes how to use the managed dependencies feature in Studio Pro"
 ---
@@ -17,7 +17,7 @@ In versions of Mendix below 10.3.0, Java dependencies were put into the `userlib
 
 ## Adding or Updating Managed Dependencies{#add-dependency}
 
-You can specify Java dependencies through the module settings of each module. For each module, you can configure your dependencies on the **Java Dependencies** tab of [Module settings](/refguide/module-settings/).
+You can specify Java dependencies through the module settings of each module. For each module, you can configure your dependencies on the **Java Dependencies** tab of [Module settings](/refguide10/module-settings/).
 
 {{< figure src="/attachments/refguide10/java-programming/managed-dependencies/module-settings.png" class="no-border" >}}
 
@@ -90,7 +90,7 @@ Platform-supported Marketplace modules created by Mendix have been updated with 
 
 By default, dependencies are downloaded from the [Maven Central](https://central.sonatype.com/) repository. In some scenarios, you may want to specify a custom location. For example, if your organization has its own repository to cache downloads or as an alternative if internet access is restricted in an air-gapped setup.
 
-Custom repositories are configured in the **Repositories** setting of the **Deployment** tab in the [Preferences](/refguide/preferences-dialog/) dialog box. This setting uses the same syntax as Gradle. For internal usage of the platform, some dependencies are required which are also resolved using the configured repositories. For example:
+Custom repositories are configured in the **Repositories** setting of the **Deployment** tab in the [Preferences](/refguide10/preferences-dialog/) dialog box. This setting uses the same syntax as Gradle. For internal usage of the platform, some dependencies are required which are also resolved using the configured repositories. For example:
 
 ```groovy
 maven {
@@ -205,7 +205,7 @@ If you have an issue with the managed dependencies of a Marketplace module, you 
 This feature was introduced in Mendix versions 10.16.0, 10.12.7, and 10.6.17.
 {{% /alert %}}
 
-In the Deployment tab of the Studio Pro preferences [Gradle synchronization](/refguide/preferences-dialog/#gradle-synchronization) can be disabled.
+In the Deployment tab of the Studio Pro preferences [Gradle synchronization](/refguide10/preferences-dialog/#gradle-synchronization) can be disabled.
 This means that applications can be started even if Studio Pro is offline or in an air gapped environment.
 
 {{% alert color="info" %}}

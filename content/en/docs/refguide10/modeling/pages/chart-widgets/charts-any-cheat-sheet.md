@@ -1,6 +1,6 @@
 ---
 title: "Any Chart Cheat Sheet"
-url: /refguide/charts-any-cheat-sheet/
+url: /refguide10/charts-any-cheat-sheet/
 description: "Shows, with examples, how the most common types of chart can be configured using the Any Chart Widget"
 weight: 50
 ---
@@ -370,5 +370,5 @@ This *cheat sheet* lists the most common chart types, together with a visual sam
 ## Read More
 
 * Full chart documentation is here: [https://plot.ly/javascript/](https://plot.ly/javascript/)
-* [Any Chart Widget](/refguide/charts-any-configuration/)
+* [Any Chart Widget](/refguide10/charts-any-configuration/)
 * [How to Use Any Chart](/appstore/widgets/charts-any-usage/)

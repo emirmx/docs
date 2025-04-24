@@ -1,6 +1,6 @@
 ---
 title: "Go to Option"
-url: /refguide/go-to-option/
+url: /refguide10/go-to-option/
 description: "Describes the Go to option in Mendix Studio Pro."
 weight: 40
 ---
@@ -35,8 +35,8 @@ This dialog also supports a filter option. The filter selection is saved upon bo
 
 ## Read More
 
-* [Find, Find Advanced, and Find Usages](/refguide/find-and-find-advanced/)
-* [Navigation](/refguide/navigation/)
-* [Pages](/refguide/pages/)
-* [Microflows](/refguide/microflows/)
-* [Data in the Domain Model](/refguide/domain-model/)
+* [Find, Find Advanced, and Find Usages](/refguide10/find-and-find-advanced/)
+* [Navigation](/refguide10/navigation/)
+* [Pages](/refguide10/pages/)
+* [Microflows](/refguide10/microflows/)
+* [Data in the Domain Model](/refguide10/domain-model/)

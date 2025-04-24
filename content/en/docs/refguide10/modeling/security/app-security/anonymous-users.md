@@ -1,6 +1,6 @@
 ---
 title: "Anonymous Users"
-url: /refguide/anonymous-users/
+url: /refguide10/anonymous-users/
 weight: 40
 ---
 
@@ -23,8 +23,8 @@ The properties of anonymous users are described in the table below:
 
 ## Read More
 
-* [App Security](/refguide/app-security/)
-* [User Roles](/refguide/user-roles/)
-* [Administrator](/refguide/administrator/)
-* [Demo Users](/refguide/demo-users/)
-* [Password Policy](/refguide/password-policy/)
+* [App Security](/refguide10/app-security/)
+* [User Roles](/refguide10/user-roles/)
+* [Administrator](/refguide10/administrator/)
+* [Demo Users](/refguide10/demo-users/)
+* [Password Policy](/refguide10/password-policy/)

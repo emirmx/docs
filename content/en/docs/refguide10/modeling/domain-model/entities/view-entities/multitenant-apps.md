@@ -1,6 +1,6 @@
 ---
 title: "Multitenant Applications"
-url: /refguide/view-entity-multitenant-apps/
+url: /refguide10/view-entity-multitenant-apps/
 weight: 110
 ---
 

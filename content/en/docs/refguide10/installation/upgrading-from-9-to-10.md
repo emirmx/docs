@@ -1,6 +1,6 @@
 ---
 title: "Upgrading from Mendix Studio Pro 9 to 10"
-url: /refguide/upgrading-from-9-to-10/
+url: /refguide10/upgrading-from-9-to-10/
 linktitle: "Upgrading from Studio Pro 9 to 10"
 weight: 30
 description: "Provides details on upgrading your app from Studio Pro 9 to Studio Pro 10, including sections on converting your app and deprecated features."
@@ -14,7 +14,7 @@ Mendix Studio Pro 10 is a [major version](/releasenotes/studio-pro/lts-mts/#majo
 
 The sections below describe how to upgrade from Studio Pro 9 to Studio Pro 10.
 
-Mendix recommends reviewing the [Breaking Changes](/releasenotes/studio-pro/10.0/#breaking-changes) section of the *Studio Pro 10.0* release notes as well as the updated [System Requirements](/refguide/system-requirements/).
+Mendix recommends reviewing the [Breaking Changes](/releasenotes/studio-pro/10.0/#breaking-changes) section of the *Studio Pro 10.0* release notes as well as the updated [System Requirements](/refguide10/system-requirements/).
 
 Before upgrading your app to Mendix 10, ensure the app is successfully [migrated from your Team Server to Git](/developerportal/general/migrate-to-git/). Starting from Mendix 10, Git is the only supported Team Server. Mendix 10 will neither recognize nor open apps hosted on SVN Team Servers.
 
@@ -112,7 +112,7 @@ As of Studio Pro 10, the tautology range functions are no longer removed, but ar
 
 ### Workflow Domain Model Changes
 
-In Studio Pro 10, we added a new feature called [multi-user tasks](/refguide/multi-user-task/). This feature makes it possible for a user task to have multiple assignees. For that to be possible, we renamed the `WorkflowUserTask_Assignee` association to `WorkflowUserTask_Assignees` to suggest that there can be multiple assignees now. This association will now be a reference set.
+In Studio Pro 10, we added a new feature called [multi-user tasks](/refguide10/multi-user-task/). This feature makes it possible for a user task to have multiple assignees. For that to be possible, we renamed the `WorkflowUserTask_Assignee` association to `WorkflowUserTask_Assignees` to suggest that there can be multiple assignees now. This association will now be a reference set.
 
 If you use the [Workflow Commons](/appstore/modules/workflow-commons/) module in your project, you will have to upgrade the module to v3.0.0 or later due to this change. In addition, you need to execute the migration microflow `ACT_Assignee_Migration` (available from the `WorkflowAdminCenter` page) or add the `ASu_Assignee_Migrate` microflow to the after startup microflow of your project.
 
@@ -136,11 +136,11 @@ If your application is currently using the Atlas theme, this is easily solved by
 
 ### Custom Login for Published Services
 
-In Studio Pro 10, published OData, REST, and Web services use sessions that do not communicate with the database. This also means these services ignore [customized login behavior using a LoginAction](/refguide/login-behavior/#customizing-login-behavior). When upgrading an app that uses these features to Studio Pro 10, you need to reimplement the login behavior in an authentication microflow. For more information, see [OData authentication  microflow](/refguide/published-odata-services/#authentication-microflow), [REST authentication microflow](/refguide/published-rest-service/#authentication-microflow), or [Web service authentication](/refguide/integration/expose-a-web-service/#authentication-and-users).
+In Studio Pro 10, published OData, REST, and Web services use sessions that do not communicate with the database. This also means these services ignore [customized login behavior using a LoginAction](/refguide10/login-behavior/#customizing-login-behavior). When upgrading an app that uses these features to Studio Pro 10, you need to reimplement the login behavior in an authentication microflow. For more information, see [OData authentication  microflow](/refguide10/published-odata-services/#authentication-microflow), [REST authentication microflow](/refguide10/published-rest-service/#authentication-microflow), or [Web service authentication](/refguide10/integration/expose-a-web-service/#authentication-and-users).
 
 ### Java Version
 
-Studio Pro 10.21 and above requires your application to use Java 21. The Java version of an application can be configured in the runtime settings. Java 21 is available in 9.24.23 and above. Please consider the [Java Version Migration](https://docs.mendix.com/refguide/java-version-migration/) guide for a list of changes between Java versions. For on-premises deployments, ensure that JDK 21 is installed in the environments where Mendix 10 applications are deployed.
+Studio Pro 10.21 and above requires your application to use Java 21. The Java version of an application can be configured in the runtime settings. Java 21 is available in 9.24.23 and above. Please consider the [Java Version Migration](https://docs.mendix.com/refguide10/java-version-migration/) guide for a list of changes between Java versions. For on-premises deployments, ensure that JDK 21 is installed in the environments where Mendix 10 applications are deployed.
 
 ## Read More
 

@@ -1,12 +1,12 @@
 ---
 title: "Create Branch Line"
-url: /refguide/create-branch-line-dialog/
+url: /refguide10/create-branch-line-dialog/
 weight: 10
 ---
 
 ## Introduction
 
-Use the **Create Branch Line** dialog box to create a new [branch line](/refguide/version-control/#branches) via the **Branch Line Manager**:
+Use the **Create Branch Line** dialog box to create a new [branch line](/refguide10/version-control/#branches) via the **Branch Line Manager**:
 
 {{< figure src="/attachments/refguide10/modeling/menus/version-control-menu/branch-line-manager-dialog/create-branch-line-dialog/create-branch-line.png" class="no-border" width="550" >}}
 
@@ -20,7 +20,7 @@ To view the **Create Branch Line** dialog box, do the following:
 
 The **Create Branch Line** dialog box is displayed.
 
-For more information on how to manage branch lines, see [Branch Line Manager](/refguide/branch-line-manager-dialog/). For information on the version control, see [Version Control](/refguide/version-control/). 
+For more information on how to manage branch lines, see [Branch Line Manager](/refguide10/branch-line-manager-dialog/). For information on the version control, see [Version Control](/refguide10/version-control/). 
 
 ## Create Branch From
 
@@ -60,4 +60,4 @@ Since branch line names must be unique, this option shows the existing branch li
 
 ## Read More
 
-* [Version Control](/refguide/version-control/)
+* [Version Control](/refguide10/version-control/)

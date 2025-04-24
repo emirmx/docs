@@ -1,6 +1,6 @@
 ---
 title: "Add Date Function Calls"
-url: /refguide/add-date-function-calls/
+url: /refguide10/add-date-function-calls/
 weight: 110
 ---
 
@@ -8,9 +8,9 @@ weight: 110
 
 Add date function calls add a time period to a date and time and return the modified value. 
 
-The first parameter can be an attribute of a domain model entity of type **Date and time**, a variable of type **Date and time**, or a **Date and time** value created using a [Date Creation](/refguide/date-creation/) function. The second parameter specifies the time period to be added. 
+The first parameter can be an attribute of a domain model entity of type **Date and time**, a variable of type **Date and time**, or a **Date and time** value created using a [Date Creation](/refguide10/date-creation/) function. The second parameter specifies the time period to be added. 
 
-You can also subtract a time period from the specified date. For more information, see [Subtract Date Function Calls](/refguide/subtract-date-function-calls/).
+You can also subtract a time period from the specified date. For more information, see [Subtract Date Function Calls](/refguide10/subtract-date-function-calls/).
 
 ## addMilliseconds {#addMilliseconds}
 

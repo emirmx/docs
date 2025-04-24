@@ -1,18 +1,18 @@
 ---
 title: "Association Properties"
-url: /refguide/association-properties/
+url: /refguide10/association-properties/
 weight: 10
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-There are two ways to edit the properties of an [association](/refguide/associations/). This page describes the properties you can edit in the properties pane of the association in the domain model, or from opening the association properties dialog directly from the association or the association tab in the entity properties.
+There are two ways to edit the properties of an [association](/refguide10/associations/). This page describes the properties you can edit in the properties pane of the association in the domain model, or from opening the association properties dialog directly from the association or the association tab in the entity properties.
 
-You can also edit an association directly within the association tab in the entity properties. For more information see [Association Tab Properties](/refguide/association-member-properties/).
+You can also edit an association directly within the association tab in the entity properties. For more information see [Association Tab Properties](/refguide10/association-member-properties/).
 
 {{% alert color="info" %}}
-Attributes properties for associated external entities are defined in the originating app and the only local changes that can be applied to these entities is a local name and description. For further information, see the [Attributes](/refguide/external-entities/#attributes) section of *External Entities*.
+Attributes properties for associated external entities are defined in the originating app and the only local changes that can be applied to these entities is a local name and description. For further information, see the [Attributes](/refguide10/external-entities/#attributes) section of *External Entities*.
 {{% /alert %}}
 
 ## Association Properties
@@ -38,7 +38,7 @@ The name used to refer to the association. For example, in forms or microflows.
 
 {{% alert color="info" %}}
 
-This property is only available for add-on and solution modules. For more information on types of modules, see the [Module Types](/refguide/modules/#module-types) section in *Modules*. 
+This property is only available for add-on and solution modules. For more information on types of modules, see the [Module Types](/refguide10/modules/#module-types) section in *Modules*. 
 
 {{% /alert %}}
 
@@ -63,7 +63,7 @@ Multiplicity can be of the following types:
 | One-to-many *(default)*| One X object is associated with multiple Y object | An association of type **Reference** with owner set to **Default** |
 | Many-to-many | Multiple X objects are associated with multiple Y objects |  An association of type **Reference set** – in this case ownership is set by the **Navigability** property |
 
-For more information about association types, see the [Type](/refguide/association-member-properties/#type) section in *Association Tab Properties*, and for information on ownership, see the [Owner](/refguide/association-member-properties/#owner) section in *Association Tab Properties*.
+For more information about association types, see the [Type](/refguide10/association-member-properties/#type) section in *Association Tab Properties*, and for information on ownership, see the [Owner](/refguide10/association-member-properties/#owner) section in *Association Tab Properties*.
 
 ### Navigability {#navigability}
 
@@ -72,13 +72,13 @@ For more information about association types, see the [Type](/refguide/associati
 | X objects refer to Y objects *(default)* | The owner of the association is X | An association of type **Reference set** with owner set to **Default** |
 | X and Y objects refer to each other | Both entities are owners | An association of type **Reference set** with owner set to **Both** |
 
-This corresponds to the **Owner** property for **Reference sets**. See the [Owner](/refguide/association-member-properties/#owner) section of *Association Tab Properties* for a more detailed discussion of the impact of changing navigability.
+This corresponds to the **Owner** property for **Reference sets**. See the [Owner](/refguide10/association-member-properties/#owner) section of *Association Tab Properties* for a more detailed discussion of the impact of changing navigability.
 
 Despite its name, navigability is usually only important when adding or changing associations. Making one object owner of an association does not prevent you reading the association from the non-owner end.
 
 #### One-Way Navigable Associations {#one-way-navigable}
 
-One-way navigable associations are associations that allow navigation to associated entities only in a single direction: from [parent to child](/refguide/association-member-properties/#parent-child). These associations are typically introduced by integration using [external entities](/refguide/external-entities/#associations). The major implications of one-way navigability are related to XPath use cases such as constraints and queries.
+One-way navigable associations are associations that allow navigation to associated entities only in a single direction: from [parent to child](/refguide10/association-member-properties/#parent-child). These associations are typically introduced by integration using [external entities](/refguide10/external-entities/#associations). The major implications of one-way navigability are related to XPath use cases such as constraints and queries.
 
 You can retrieve data from all other domain model associations in both directions.
 
@@ -119,7 +119,7 @@ This delete behavior is used, for example, if you want to be able to delete a **
 {{< figure src="/attachments/refguide10/modeling/domain-model/associations/association-properties/association-prevent-delete.png" >}}
 
 {{% alert color="info" %}}
-This option is not available for an external entity that is the [child](/refguide/association-member-properties/#parent-child) of an association to a local entity.
+This option is not available for an external entity that is the [child](/refguide10/association-member-properties/#parent-child) of an association to a local entity.
 {{% /alert %}}
 
 ### Association Storage{#storage}
@@ -128,7 +128,7 @@ This option is not available for an external entity that is the [child](/refguid
 Association storage was introduced in Mendix 10.21.
 {{% /alert %}}
 
-In Mendix 10.20 and below, associations are always stored in association tables. This enables you to change the multiplicity easily if your design changed. In Mendix 10.21 and above, you can choose to store associations directly in the owning entity, thus removing the need for an extra association table. For more information, see [Association Storage Options](/refguide/association-storage/).
+In Mendix 10.20 and below, associations are always stored in association tables. This enables you to change the multiplicity easily if your design changed. In Mendix 10.21 and above, you can choose to store associations directly in the owning entity, thus removing the need for an extra association table. For more information, see [Association Storage Options](/refguide10/association-storage/).
 
 | Association storage | Description | Notes |
 | --- | --- | --- |
@@ -137,4 +137,4 @@ In Mendix 10.20 and below, associations are always stored in association tables.
 
 ## Read More
 
-* [Associations](/refguide/associations/)
+* [Associations](/refguide10/associations/)

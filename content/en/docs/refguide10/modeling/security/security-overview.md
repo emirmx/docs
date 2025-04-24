@@ -1,6 +1,6 @@
 ---
 title: "Security Overview"
-url: /refguide/security-overview/
+url: /refguide10/security-overview/
 weight: 20
 beta: true
 ---
@@ -101,5 +101,5 @@ To export the **Security Overview**, click the **Export to Excel** button. This 
 
 ## Read More
 
-* [User Roles](/refguide/user-roles/)
-* [Access Rules](/refguide/access-rules/)
+* [User Roles](/refguide10/user-roles/)
+* [Access Rules](/refguide10/access-rules/)

@@ -1,9 +1,9 @@
 ---
 title: "Call REST Service"
-url: /refguide/call-rest-action/
+url: /refguide10/call-rest-action/
 weight: 10
 aliases:
-    - /refguide/using-a-proxy-to-call-a-rest-service/
+    - /refguide10/using-a-proxy-to-call-a-rest-service/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -59,7 +59,7 @@ The template for the location can contain parameters that are written as a numbe
 
 #### Parameters
 
-For each parameter in the template, you can specify its value using a [microflow expression](/refguide/expressions/) resulting in a string value. This value will be inserted at the position of the parameter.
+For each parameter in the template, you can specify its value using a [microflow expression](/refguide10/expressions/) resulting in a string value. This value will be inserted at the position of the parameter.
 
 ### HTTP Method
 
@@ -83,7 +83,7 @@ Default value: *300 seconds*
 
 ### Proxy Configuration
 
-In almost all cases, you can ignore this setting. **Use app settings** is a good default value. For more information about app settings, see the *Proxy Settings* section of [Runtime Customization](/refguide/custom-settings/#proxy-settings).
+In almost all cases, you can ignore this setting. **Use app settings** is a good default value. For more information about app settings, see the *Proxy Settings* section of [Runtime Customization](/refguide10/custom-settings/#proxy-settings).
 
 If desired, you can configure whether to use a proxy for the request. These are the choices:
 
@@ -107,7 +107,7 @@ The options are:
 When you select **Override**, you can configure which client certificate will be used. Click **Edit** to specify the **Client certificate identifier**. This identifier can be set in different places, depending on where you deploy the app:
 
 * When you deploy the app in Mendix Cloud, set the **Client certificate identifier** in the app and the  **Web Service Call name** [in Mendix Cloud](/developerportal/deploy/certificates/#outgoing-client-certificates) to the same value to use a specific client certificate for this REST call.
-* When you deploy the app elsewhere, the identifier is set in the custom setting [ClientCertificateUsages](/refguide/custom-settings/#CACertificates). For testing locally, this can be set as a custom server setting in a [Configuration](/refguide/configuration/#custom).
+* When you deploy the app elsewhere, the identifier is set in the custom setting [ClientCertificateUsages](/refguide10/custom-settings/#CACertificates). For testing locally, this can be set as a custom server setting in a [Configuration](/refguide10/configuration/#custom).
 
 When this identifier is not set for the environment where your app is deployed (either not pinned or not present in *ClientCertificateUsages*), the default settings will be used (as if **Use app settings** were selected).
 
@@ -121,11 +121,11 @@ The **Use HTTP authentication** checkbox defines whether basic authentication (u
 
 ### User Name
 
-The **User name** property defines the user name that will be used to authenticate over HTTP. The user name needs to be entered using [microflow Expressions](/refguide/expressions/). The microflow expression should result in a string.
+The **User name** property defines the user name that will be used to authenticate over HTTP. The user name needs to be entered using [microflow Expressions](/refguide10/expressions/). The microflow expression should result in a string.
 
 ### Password
 
-The **Password** property defines the password that will be used to authenticate over HTTP. The password needs to be entered using [expressions](/refguide/expressions/). The microflow expression should result in a string.
+The **Password** property defines the password that will be used to authenticate over HTTP. The password needs to be entered using [expressions](/refguide10/expressions/). The microflow expression should result in a string.
 
 ### Custom HTTP Headers {#custom-http-headers}
 
@@ -147,7 +147,7 @@ Requests can only be generated for HTTP methods POST, PUT, PATCH, and OPTIONS.
 
 ### Export Mapping for the Entire Request
 
-This option allows you to use a single [export mapping](/refguide/export-mappings/) for the body of the request. 
+This option allows you to use a single [export mapping](/refguide10/export-mappings/) for the body of the request. 
 
 #### Mapping
 
@@ -155,15 +155,15 @@ Select the mapping that you want to apply.
 
 #### Parameter Type
 
-If the [export mapping](/refguide/export-mappings/) requires an input, this field shows the type of the input.
+If the [export mapping](/refguide10/export-mappings/) requires an input, this field shows the type of the input.
 
 #### Parameter
 
-If the [export mapping](/refguide/export-mappings/) requires an input, you can select a parameter of the correct type.
+If the [export mapping](/refguide10/export-mappings/) requires an input, you can select a parameter of the correct type.
 
 #### Content Type
 
-If the [export mapping](/refguide/export-mappings/) is based on a message definition, it can export either XML or JSON. Choose the type of output you want.
+If the [export mapping](/refguide10/export-mappings/) is based on a message definition, it can export either XML or JSON. Choose the type of output you want.
 
 {{% alert color="info" %}}
 **Content-Type header** is not set by default. To set it, use the **Custom HTTP Headers** tab.
@@ -171,7 +171,7 @@ If the [export mapping](/refguide/export-mappings/) is based on a message defini
 
 ### Binary for the Entire Request
 
-This option allows you to send binary data (for example, the contents of a FileDocument). See [Images and Files with REST](/refguide/send-receive-files-rest/) for detailed information working with files with REST).
+This option allows you to send binary data (for example, the contents of a FileDocument). See [Images and Files with REST](/refguide10/send-receive-files-rest/) for detailed information working with files with REST).
 
 ### Form-Data
 
@@ -201,9 +201,9 @@ See [String Template](#string-template), above, for more information on construc
 
 These are the options in the drop-down menu for handling the response:
 
-* **Apply import mapping** – if the response is JSON or XML, it can be transformed directly into objects using an [import mapping](/refguide/import-mappings/); the fields that you can choose here are described in the [Import Mapping action](/refguide/import-mapping-action/)
-* **Store in an HTTP response** – any successful HTTP response can be stored directly in an [HttpResponse](/refguide/http-request-and-response-entities/#http-response) object, and the [$latestHttpResponse](#latesthttpresponse) variable is also updated
-* **Store in a file document** – if the response contains binary content (for example, a PDF), it can be stored in an object of an entity type which inherits from `System.FileDocument` (see [Images and Files with REST](/refguide/send-receive-files-rest/)) for detailed information working with files with REST)
+* **Apply import mapping** – if the response is JSON or XML, it can be transformed directly into objects using an [import mapping](/refguide10/import-mappings/); the fields that you can choose here are described in the [Import Mapping action](/refguide10/import-mapping-action/)
+* **Store in an HTTP response** – any successful HTTP response can be stored directly in an [HttpResponse](/refguide10/http-request-and-response-entities/#http-response) object, and the [$latestHttpResponse](#latesthttpresponse) variable is also updated
+* **Store in a file document** – if the response contains binary content (for example, a PDF), it can be stored in an object of an entity type which inherits from `System.FileDocument` (see [Images and Files with REST](/refguide10/send-receive-files-rest/)) for detailed information working with files with REST)
 * **Store in a string** – if the response is a string (for example, CSV), it can be stored directly in a string variable
 * **Do not store in a variable** - use this option when the call does not return anything useful
 
@@ -217,7 +217,7 @@ The **Variable** field defines the name for the result of the operation.
 
 #### $latestHttpResponse Variable
 
-The `$latestHttpResponse` variable is of the [HttpResponse](/refguide/http-request-and-response-entities/#http-response) type. It is available after a **Call REST service** activity. This variable can only be accessed in the microflow where the **Call REST service** activity is used.
+The `$latestHttpResponse` variable is of the [HttpResponse](/refguide10/http-request-and-response-entities/#http-response) type. It is available after a **Call REST service** activity. This variable can only be accessed in the microflow where the **Call REST service** activity is used.
 
 However, its `Content` attribute will be left empty in most cases to minimize memory usage.
 
@@ -228,15 +228,15 @@ This attribute is filled when one of the following scenarios occur:
 
 #### Store Message Body in $latestHttpResponse Variable {#latesthttpresponse}
 
-If HTTP response status code is not successful (for example, `[4xx]` or `[5xx]`), the flow will continue in an [error handler](/refguide/error-handling-in-microflows/#errorhandlers).
+If HTTP response status code is not successful (for example, `[4xx]` or `[5xx]`), the flow will continue in an [error handler](/refguide10/error-handling-in-microflows/#errorhandlers).
 
 {{% alert color="warning" %}}
-You should always add an error handler for a [Call REST service](/refguide/call-rest-action/) action.
+You should always add an error handler for a [Call REST service](/refguide10/call-rest-action/) action.
 {{% /alert %}}
 
 ## Common Section{#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}
 
 ## Troubleshooting{#troubleshooting}
 
@@ -246,7 +246,7 @@ This error occurs when your app's infrastructure closes the connection because i
 
 There are two ways to resolve this:
 
-1. Alter the value of the `http.client.CleanupAfterSeconds` [runtime setting](/refguide/custom-settings/) to be less than the connection timeout. This will ensure that the your app client will create a new HTTP client for the request.
+1. Alter the value of the `http.client.CleanupAfterSeconds` [runtime setting](/refguide10/custom-settings/) to be less than the connection timeout. This will ensure that the your app client will create a new HTTP client for the request.
 2. Handle the error in your microflow and retry a number of times before returning the error. Your flow might look similar to the one below.
 
     {{< figure src="/attachments/refguide10/modeling/application-logic/microflows-and-nanoflows/activities/integration-activities/call-rest-action/retry-rest-connection-timeout.png" class="no-border" >}}
@@ -271,4 +271,4 @@ If that is not possible:
 
 * Always validate and sanitize the user inputs
 * Maintain a safe list of the domains that should be accessible and use it to validate URLs
-* Do not allow the user to access an unprocessed response from the call (note that it might not be sufficient to make secret information invisible on a page. See also the section on [Communication Patterns](/refguide/communication-patterns/#security))
+* Do not allow the user to access an unprocessed response from the call (note that it might not be sufficient to make secret information invisible on a page. See also the section on [Communication Patterns](/refguide10/communication-patterns/#security))

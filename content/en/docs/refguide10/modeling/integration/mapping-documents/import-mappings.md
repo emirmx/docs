@@ -1,10 +1,10 @@
 ---
 title: "Import Mappings"
-url: /refguide/import-mappings/
+url: /refguide10/import-mappings/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
-Please refer to [Mapping Documents](/refguide/mapping-documents/) for an introduction.
+Please refer to [Mapping Documents](/refguide10/mapping-documents/) for an introduction.
 
 ## Obtaining Objects in Import Mappings
 
@@ -26,11 +26,11 @@ For each XML or JSON object, a Mendix object needs to be obtained. You can creat
 
 #### Obtain Mendix Object Methods{#obtain-object}
 
-This is what will happen when you use an [Import with Mapping](/refguide/import-mapping-action/) action in your microflow.
+This is what will happen when you use an [Import with Mapping](/refguide10/import-mapping-action/) action in your microflow.
 
 | Property | Description |
 | --- | --- |
-| **Create an object** | Creates a new object.<br/>An error can be thrown if there are any [Before Create](/refguide/event-handlers/#when) microflows that fail. |
+| **Create an object** | Creates a new object.<br/>An error can be thrown if there are any [Before Create](/refguide10/event-handlers/#when) microflows that fail. |
 | **Find an object (by key)** | Searches for an object using keys defined in the attributes list. The runtime searches for the object by taking all attributes marked as **Key** (in the **Value element to attribute mapping** section below) and converting them to an XPath query.<br/>If more than one object is returned by the XPath query, an error will be thrown. |
 | **Call a microflow** | Calls a microflow to obtain an object and return it. If the microflow expects any parameters, these need to be specified in the **Select...** window. Possible parameters are the input parameter (see above), any parent entity in the mapping and any attributes in the current XML element. The microflow must return an object of the correct entity type. If it returns a null object, the selected **If no object was found** action will be performed. |
 
@@ -50,7 +50,7 @@ This is the action that the runtime will perform when an error occurred in the s
 | **Ignore** | Do not map this element and continue parsing the rest of the XML. |
 | **Error** | Explicitly stop parsing the XML and throw an error. This error needs to be handled in the calling microflow. |
 
-If this is the top level of the mapping, you can check **Decide this at the place where the mapping gets used**. If this is checked, the option **If no object was found** can be set whenever you use the mapping, for instance in an [import mapping action](/refguide/import-mapping-action/) or a [call REST service action](/refguide/call-rest-action/).
+If this is the top level of the mapping, you can check **Decide this at the place where the mapping gets used**. If this is checked, the option **If no object was found** can be set whenever you use the mapping, for instance in an [import mapping action](/refguide10/import-mapping-action/) or a [call REST service action](/refguide10/call-rest-action/).
 
 ### Setting Associations
 
@@ -89,7 +89,7 @@ Having defined the mappings for the attributes, these mappings are also shown in
 
 ## Mapping Parameter
 
-Import mappings have the additional option to receive an incoming parameter. The parameter can be passed by the calling microflow when the microflow uses the [import from mapping](/refguide/import-mapping-action/) action.
+Import mappings have the additional option to receive an incoming parameter. The parameter can be passed by the calling microflow when the microflow uses the [import from mapping](/refguide10/import-mapping-action/) action.
 
 To define a parameter for your mapping, click the parameter box and select the data type. You can also drag an entity into the parameter box. 
 
@@ -103,6 +103,6 @@ If you are importing a very long JSON string, the underlying conversion library 
 
 Mendix uses the Jackson Core XML library when performing the import mapping and this [has a limit of 20 million](https://javadoc.io/static/com.fasterxml.jackson.core/jackson-core/2.15.1/com/fasterxml/jackson/core/StreamReadConstraints.html#DEFAULT_MAX_STRING_LEN) characters (in earlier versions 5 million) in the JSON string.
 
-In Mendix version 10.9.0 and above and Mendix MTS version 10.6, patch releases 10.6.5 and above, you can override this using the [mapping.import.MaxJsonReadingLength](/refguide/custom-settings/#mapping.import.MaxJsonReadingLength) custom setting.
+In Mendix version 10.9.0 and above and Mendix MTS version 10.6, patch releases 10.6.5 and above, you can override this using the [mapping.import.MaxJsonReadingLength](/refguide10/custom-settings/#mapping.import.MaxJsonReadingLength) custom setting.
 
 Mendix recommends that you only add this setting if you will be getting very long JSON strings as it may result in more memory usage.
