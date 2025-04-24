@@ -41,9 +41,6 @@ Valid examples are given below:
 * `mx analyze-mpr temp.mpr > analysis.txt`, to output to a text file
 
 An example of the output is presented below:
-
-{{% todo %}}Should we use an Mx 11 example here?{{% /todo %}}
-
 <details>
 
 <summary>Expand for code sample</summary>
