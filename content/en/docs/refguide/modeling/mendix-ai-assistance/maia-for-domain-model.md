@@ -11,7 +11,7 @@ aliases:
 ## Introduction
 
 {{% alert color="info" %}}
-Maia for Domain Model was introduced in Studio Pro 10.13.0. From Studio Pro 10.13 to 10.21, it was called Domain Model Generator.
+Maia for Domain Model was introduced in Studio Pro 10.13.0.
 {{% /alert %}}
 
 {{% alert color="info" %}}

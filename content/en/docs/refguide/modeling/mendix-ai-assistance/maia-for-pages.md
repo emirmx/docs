@@ -11,7 +11,7 @@ aliases:
 ## Introduction
 
 {{% alert color="info" %}}
-Maia for Pages was introduced in Studio Pro 10.21.0. In Studio Pro 10.21, it was called Page Generator.
+Maia for Pages was introduced in Studio Pro 10.21.0.
 {{% /alert %}}
 
 {{% alert color="info" %}}
