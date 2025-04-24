@@ -103,7 +103,7 @@ The Marketplace content governance team will check these cases once content is  
 
 If you have created your own product specific terms and conditions, you must host them on your web page, and share the URL with the Mendix Marketplace team. The team will then attach the terms and conditions to the product listing page.
 
-If your product is not licensed as an open-source component, and you would like to specify certain licensing terms and conditions or end-user license agreements, Mendix recommends creating a document that covers the following topics:
+If your product is not licensed as an open-source component, and you would like to specify certain licensing terms and conditions or end-user license agreements, we recommend creating a document that covers the following topics:
 
 * Copyright information and license conditions
 
@@ -245,7 +245,7 @@ Check the copyright branding guidelines of other companies if you use their logo
 
 The thumbnail is visible on the Mendix Marketplace homepage. It is the same image as the cover image within the listing itself.
 
-It is important to carefully think about the thumbnail image, since it is the first item that draws the attention of potential customers. Therefore, Mendix recommends not using personal photos, but rather an image that clearly represents your offering.
+It is important to carefully think about the thumbnail image, since it is the first item that draws the attention of potential customers. Therefore, we recommend not using personal photos, but rather an image that clearly represents your offering.
 
 ### Product Name Taxonomy
 
