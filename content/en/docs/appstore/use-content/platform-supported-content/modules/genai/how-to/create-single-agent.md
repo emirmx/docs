@@ -16,7 +16,7 @@ Through this document, you will:
 * Understand how to enrich your use case with function calling.
 * Ingest your Mendix data into a knowledge base and enable the model of your choice to use it.
 
-The type of agent you can build is a **single-turn** agent, which means that:
+The type of agent you can build is a single-turn agent, which means that:
 
 * It is a one-shot interactions (single question-answer pair).
 * No conversation memory is needed.
