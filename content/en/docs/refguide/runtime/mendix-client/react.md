@@ -49,10 +49,6 @@ Finally, the React client allows Mendix to clean up our client and remove many l
 
 Review the prerequisites below that your application must fulfill before it can leverage the React client.
 
-### Mendix Version{#mendix-version}
-
-The React client was introduced in Mendix 10.7.0 as a [beta feature](/releasenotes/beta-features/). It became general availability in [Mendix 10.18](/releasenotes/studio-pro/10.18/) as an opt-in feature.
-
 ### Widgets{#widgets-prerequisites}
 
 Widgets must fulfill the following requirements to be compatible with apps leveraging the React client:
@@ -71,7 +67,7 @@ JavaScript actions must not use any of the following client APIs:
 
 These APIs are related to Dojo and are no longer needed. For opening pages, please use the nanoflow [Show Page](/refguide/show-page/) action instead.
 
-Fore more information on React and APIs in Mendix, see our [Mendix 10 React Client API](https://apidocs.rnd.mendix.com/10/client-react/index.html) documentation {{% todo %}} Do we need a Mendix 11 version here?{{% /todo %}}.
+Fore more information on React and APIs in Mendix, see our [Mendix 10 React Client API](https://apidocs.rnd.mendix.com/10/client-react/index.html) documentation.
 
 ### Enable React Client{#enable-react}
 

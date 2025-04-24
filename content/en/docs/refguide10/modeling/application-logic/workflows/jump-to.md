@@ -1,22 +1,22 @@
 ---
 title: "Jumping to Different Activities in a Workflow"
-url: /refguide/jump-to/
+url: /refguide10/jump-to/
 linktitle: "Jump to Different Activities"
 weight: 60
 ---
 ## Introduction
 
-Running workflow instances can be manually changed while they are in progress. This means that you can manually select what activity the workflow will continue from. This can be useful to correct wrong decisions or to continue a workflow when it is in incompatible state. You can use the [Generate Jump-to Option](/refguide/generate-jump-to-options/) microflow action to generate a list of activities the workflow can jump to and the [Apply Jump-To Option](/refguide/apply-jump-to-option/) microflow action to apply the desired changes to the workflow instance. The information is captured in a set of non-persistable entities.
+Running workflow instances can be manually changed while they are in progress. This means that you can manually select what activity the workflow will continue from. This can be useful to correct wrong decisions or to continue a workflow when it is in incompatible state. You can use the [Generate Jump-to Option](/refguide10/generate-jump-to-options/) microflow action to generate a list of activities the workflow can jump to and the [Apply Jump-To Option](/refguide10/apply-jump-to-option/) microflow action to apply the desired changes to the workflow instance. The information is captured in a set of non-persistable entities.
 
 {{% alert color="info" %}}
 
-This functionality is different from the [Jump activity](/refguide/jump-activity/) in workflows, which you can add from the **Toolbox** when you configure the workflow. The jumping to different activities functionality is something that you configure via microflow activities. 
+This functionality is different from the [Jump activity](/refguide10/jump-activity/) in workflows, which you can add from the **Toolbox** when you configure the workflow. The jumping to different activities functionality is something that you configure via microflow activities. 
 
 {{% /alert %}}
 
 ## Related System Entities and Associations
 
-The [Generate Jump-to Option](/refguide/generate-jump-to-options/) microflow action generates a **System.WorkflowJumpToDetails** object with associated **System.WorkflowCurrentActivity** and **System.WorkflowActivityDetails** objects. The entity structure is shown in the image of the System domain model below:
+The [Generate Jump-to Option](/refguide10/generate-jump-to-options/) microflow action generates a **System.WorkflowJumpToDetails** object with associated **System.WorkflowCurrentActivity** and **System.WorkflowActivityDetails** objects. The entity structure is shown in the image of the System domain model below:
 
 {{< figure src="/attachments/refguide10/modeling/application-logic/workflows/jump-to/jump-to-entities.jpg" class="no-border" >}}
 
@@ -38,7 +38,7 @@ The **Action** attribute on the **System.WorkflowCurrentActivity** object is an 
 
 When the **Action** attribute is set to *JumpTo*, the **System.WorkflowCurrentActivity_JumpToTarget** association should refer to one of the **System.WorkflowActivityDetails** objects that are associated through the **System.WorkflowCurrentActivity_ApplicableTargets**. This ensures you select an applicable target. Referring to other **System.WorkflowActivityDetails** objects will lead to errors.
 
-After setting the objects, changes can be applied by calling a microflow containing the [Apply jump-to option](/refguide/apply-jump-to-option/). This will change the current activities of the associated workflow instance and queue the workflow for execution (as this happens asynchronously, execution may not happen instantly). If the workflow was in incompatible state because of versioning conflicts, the workflow is set to its previous state (for example *In Progress* or *Paused*).
+After setting the objects, changes can be applied by calling a microflow containing the [Apply jump-to option](/refguide10/apply-jump-to-option/). This will change the current activities of the associated workflow instance and queue the workflow for execution (as this happens asynchronously, execution may not happen instantly). If the workflow was in incompatible state because of versioning conflicts, the workflow is set to its previous state (for example *In Progress* or *Paused*).
 
 ## Jumping to Other Activities in Parallel Splits or in Boundary Event Paths
 
@@ -48,5 +48,5 @@ For interrupting boundary event paths, in Studio Pro 10.21.0 and above, it is po
 
 ## Read More
 
-* [Generate Jump-To Options](/refguide/generate-jump-to-options/)
-* [Apply Jump-To Option](/refguide/apply-jump-to-option/)
+* [Generate Jump-To Options](/refguide10/generate-jump-to-options/)
+* [Apply Jump-To Option](/refguide10/apply-jump-to-option/)

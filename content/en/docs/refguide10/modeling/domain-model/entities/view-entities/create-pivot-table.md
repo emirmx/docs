@@ -1,6 +1,6 @@
 ---
 title: "Create a Pivot Table with View Entities"
-url: /refguide/view-entity-pivot-table/
+url: /refguide10/view-entity-pivot-table/
 weight: 70
 ---
 
@@ -53,7 +53,7 @@ Create a view entity that shows each order together with its total value, calcul
 
 {{% alert color="info" %}}
 
-With view entities, you can take the relevant component of `DateTime` as a column using the `DATEPART` function. For more information, see the [`DATEPART` and `DATEDIFF`](/refguide/oql-v2/#date-validations) section of *OQL Version 2 Features*.
+With view entities, you can take the relevant component of `DateTime` as a column using the `DATEPART` function. For more information, see the [`DATEPART` and `DATEDIFF`](/refguide10/oql-v2/#date-validations) section of *OQL Version 2 Features*.
 
 {{% /alert %}}
 

@@ -1,10 +1,10 @@
 ---
 title: "Share the Development Database"
-url: /howto/data-models/sharing-the-development-database/
+url: /howto10/data-models/sharing-the-development-database/
 weight: 9
 description: "Describes how to open and manage the data stored inside the built-in database that is supplied with Studio Pro."
 aliases:
-  - /howto/collaboration-requirements-management/sharing-the-development-database/
+  - /howto10/collaboration-requirements-management/sharing-the-development-database/
 ---
 
 ## Introduction
@@ -125,4 +125,4 @@ If you want to keep a copy of your existing data before using the data from the 
 
 ## Read More
 
-* [Version Control](/refguide/version-control/)
+* [Version Control](/refguide10/version-control/)

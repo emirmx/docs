@@ -1,10 +1,10 @@
 ---
 title: "Deep Links"
-url: /refguide/mobile/using-mobile-capabilities/deep-links/
+url: /refguide10/mobile/using-mobile-capabilities/deep-links/
 weight: 20
 description: Connect URLs to your native mobile app by adding a deep link.
 aliases:
-    - /howto/mobile/native-deep-link/
+    - /howto10/mobile/native-deep-link/
 ---
 
 ## Introduction
@@ -15,7 +15,7 @@ Deep links are always called or triggered within the schema that they define. Fo
 
 A URL is constructed of these parts (everything after **path** is defined as a detail):
 
-{{< figure src="/attachments/howto/mobile/native-mobile/implementation/native-deep-link/url-parts.png" alt="url details" class="no-border" >}}
+{{< figure src="/attachments/howto10/mobile/native-mobile/implementation/native-deep-link/url-parts.png" alt="url details" class="no-border" >}}
 
 You can also register the handling of a normal weblink beginning with `http://` or `https://`. However this requires some more work for iOS, and is not covered in this tutorial. For iOS see [Universal Links: Make the Connection](https://www.raywenderlich.com/6080-universal-links-make-the-connection) by Owen L. Brown. Android does allow for both types of weblink handling out of the box. 
 
@@ -25,15 +25,15 @@ Deep link registrations persist after the app is closed. Specifically, deep link
 
 ### Testing With the Make It Native App
 
-For this tutorial, Mendix recommends running your app from source against a local instance of Mendix Studio Pro. This will save you time when rebuilding and redeploying your app. To do this, follow the steps in [Build a Mendix Native App Locally](/refguide/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/) to make an app and link it to the Make It Native mobile testing app.
+For this tutorial, Mendix recommends running your app from source against a local instance of Mendix Studio Pro. This will save you time when rebuilding and redeploying your app. To do this, follow the steps in [Build a Mendix Native App Locally](/refguide10/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/) to make an app and link it to the Make It Native mobile testing app.
 
-Please note that the Make It Native app has already the registered schema `makeitnative://` and can be used out of the box. To use the Make It Native app with that schema, see the [Using Deep Linking in Your App](#using-deep-linking) section below. If you want to change this schema, see [How to Create a Custom Developer App](/refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/) to build your own custom developer app and then use the [Setting up App Deep Linking](#set-up) section below to change its schema.
+Please note that the Make It Native app has already the registered schema `makeitnative://` and can be used out of the box. To use the Make It Native app with that schema, see the [Using Deep Linking in Your App](#using-deep-linking) section below. If you want to change this schema, see [How to Create a Custom Developer App](/refguide10/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/) to build your own custom developer app and then use the [Setting up App Deep Linking](#set-up) section below to change its schema.
 
 ## Prerequisites
 
 Before starting this guide, make sure you have completed the following prerequisites:
 
-* Complete the [Prerequisites](/refguide/mobile/distributing-mobile-apps/building-native-apps/deploying-native-app/#prerequisites) section of *Build a Mendix Native App in the Cloud*
+* Complete the [Prerequisites](/refguide10/mobile/distributing-mobile-apps/building-native-apps/deploying-native-app/#prerequisites) section of *Build a Mendix Native App in the Cloud*
 * Make sure your [Native Mobile Resources](/appstore/modules/native-mobile-resources/) module is up to date
 * Install Git [command line](https://git-scm.com/downloads) tool for working with the Native Mobile App Builder CLI
 * Install Mendix Studio Pro v 8.15.0 or above in order to use the Native Mobile App Builder
@@ -46,17 +46,17 @@ If you do not already have a native template for your app, you can create one by
 
 Set up a native template with the **Native Mobile App Builder** by following these instructions:
 
-1. Launch the Native Mobile App Builder from the **App** menu. Walk through the wizard and configure the app's details and tokens (for more information, see [Build a Mendix Native App Locally](/refguide/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/)):
+1. Launch the Native Mobile App Builder from the **App** menu. Walk through the wizard and configure the app's details and tokens (for more information, see [Build a Mendix Native App Locally](/refguide10/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/)):
 
-    {{< figure src="/attachments/howto/mobile/native-mobile/implementation/native-deep-link/launch-native-mobile-app-builder.png" alt="launch native mobile builder"   width="400"  class="no-border" >}}
+    {{< figure src="/attachments/howto10/mobile/native-mobile/implementation/native-deep-link/launch-native-mobile-app-builder.png" alt="launch native mobile builder"   width="400"  class="no-border" >}}
 
 2. Once done with the wizard you will enable deep linking capabilities. First, select the **Capabilities** menu item:
 
-    {{< figure src="/attachments/howto/mobile/native-mobile/implementation/native-deep-link/capability-menu-option.png" alt="capability menu option"   width="400"  class="no-border" >}}
+    {{< figure src="/attachments/howto10/mobile/native-mobile/implementation/native-deep-link/capability-menu-option.png" alt="capability menu option"   width="400"  class="no-border" >}}
 
 3. Enter the `schema` name without the appending `://`:
 
-    {{< figure src="/attachments/howto/mobile/native-mobile/implementation/native-deep-link/deep-link-input-field.png" alt="deep link input field"   width="400" >}}
+    {{< figure src="/attachments/howto10/mobile/native-mobile/implementation/native-deep-link/deep-link-input-field.png" alt="deep link input field"   width="400" >}}
 
 4. Click the **Save** button. 
 5. Navigate to the build page and click **Build**.
@@ -113,13 +113,13 @@ Now that the **Native Deep Link** nanoflow actions are available in Studio Pro, 
 1. In your app add the **App events** widget, which is also part of the Native Mobile Resource module, on your home page.
 1. Double-click the **App events** widget. In **App events** tab, select **Page load** > **On load** > **Call a nanoflow**, and create a new nanoflow named *OL_RegisterDeepLink*:
 
-    {{< figure src="/attachments/howto/mobile/native-mobile/implementation/native-deep-link/app-events-register-deep-link.png" alt="app event register deeplink" class="no-border" >}}
+    {{< figure src="/attachments/howto10/mobile/native-mobile/implementation/native-deep-link/app-events-register-deep-link.png" alt="app event register deeplink" class="no-border" >}}
 
     This nanoflow will be called only once when the app is started.
 
 1. In the **OL_RegisterDeepLink** nanoflow, add the action **Register Deep Link**, and in that action's **Url handler** create an nanoflow named *DL_ShowUrlDetails*:
 
-    {{< figure src="/attachments/howto/mobile/native-mobile/implementation/native-deep-link/nanoflow-register-deep-link.png" alt="nanoflow register deeplink" class="no-border" >}}
+    {{< figure src="/attachments/howto10/mobile/native-mobile/implementation/native-deep-link/nanoflow-register-deep-link.png" alt="nanoflow register deeplink" class="no-border" >}}
 
     This nanoflow will be called every time the app is opened using a URL.
 
@@ -127,7 +127,7 @@ Now that the **Native Deep Link** nanoflow actions are available in Studio Pro, 
 
     If you use query strings or more, you can copy the **DeepLinkParameter** entity to your own module. The image below shows you an example. The attributes are all optional and you should only add the attributes your implementation requires. Besides the standard list of possible URL parts, you can also add the query string's keys (for example `?name=Jhon&title=sir`). The attributes are not case sensitive. You can add attributes for path segments of the URL which will be split into `Path0` , `Path1`, and more:
     
-    {{< figure src="/attachments/howto/mobile/native-mobile/implementation/native-deep-link/entity-parameter.png" alt="parameter entity" class="no-border" >}}
+    {{< figure src="/attachments/howto10/mobile/native-mobile/implementation/native-deep-link/entity-parameter.png" alt="parameter entity" class="no-border" >}}
 
 Next you will implement the deep link handler nanoflow **DL_ShowUrlDetails** so that it can pass URL data:
 
@@ -135,7 +135,7 @@ Next you will implement the deep link handler nanoflow **DL_ShowUrlDetails** so 
 1. Double-click the parameter, give it the name *URL* (which is case sensitive) and the type **String**.
 1. Add a **Parse URL to Object** activity to your nanoflow. Double-click it and configure it like this:
 
-    {{< figure src="/attachments/howto/mobile/native-mobile/implementation/native-deep-link/parse-url.png" alt="parse url" class="no-border" >}}
+    {{< figure src="/attachments/howto10/mobile/native-mobile/implementation/native-deep-link/parse-url.png" alt="parse url" class="no-border" >}}
 
 1. Add a **Show message** activity to the right of your **Parse URL to Object** activity.
 1. Double-click the **Show message** activity.
@@ -146,7 +146,7 @@ Next you will implement the deep link handler nanoflow **DL_ShowUrlDetails** so 
 1. Drop an **End event** below your **Parse URL to Object** activity. Drag a line from **Parse URL to Object** down to the end event, right click it, and click **Set as error handler**.
 1. Add a **Show message** activity to this line. Set it as type **Error**, and into template type *Failed to parse deep link data.*. Your finished nanoflow will look like this:
 
-    {{< figure src="/attachments/howto/mobile/native-mobile/implementation/native-deep-link/deep-link-nano-full.png" alt="full nanoflow" class="no-border" >}}
+    {{< figure src="/attachments/howto10/mobile/native-mobile/implementation/native-deep-link/deep-link-nano-full.png" alt="full nanoflow" class="no-border" >}}
 
 ### Testing Deep Linking
 
@@ -154,7 +154,7 @@ Add a few test link buttons, for example {app://myapp/task/123} or {makeitnative
 
 ## Read more
 
-* [Build a Mendix Native App Locally](/refguide/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/)
+* [Build a Mendix Native App Locally](/refguide10/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/)
 * [React Native Linking](https://facebook.github.io/react-native/docs/linking)
 * [Deep Linking Android](https://developer.android.com/training/app-links/deep-linking)
 * [Deep Linking iOS](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app)

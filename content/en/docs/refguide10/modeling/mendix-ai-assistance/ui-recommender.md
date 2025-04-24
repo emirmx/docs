@@ -1,6 +1,6 @@
 ---
 title: "UI Recommender"
-url: /refguide/ui-recommender/
+url: /refguide10/ui-recommender/
 weight: 20
 description: "Describes UI Recommender in Mendix Studio Pro."
 ---
@@ -55,5 +55,5 @@ UI Recommender is displayed as a small blue plus sign in the page editor. It is 
 
 ## Read More
 
-* [Adding Elements on a Page](/refguide/page/#add-elements)
-* [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/)
+* [Adding Elements on a Page](/refguide10/page/#add-elements)
+* [Mendix AI Assistance (Maia)](/refguide10/mendix-ai-assistance/)

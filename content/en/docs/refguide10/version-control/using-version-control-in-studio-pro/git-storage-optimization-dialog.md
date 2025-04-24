@@ -1,6 +1,6 @@
 ---
 title: "Git Storage Optimization"
-url: /refguide/git-storage-optimization-dialog/
+url: /refguide10/git-storage-optimization-dialog/
 weight: 30
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -23,7 +23,7 @@ Make sure that you are not performing any commands through Git command line on t
 
 To optimize Git repository storage manually, do the following:
 
-1. Open the **Version Control** menu > **Optimize Repository Storage...**. (For more information on the menu option, see the [Optimize Storage Repository](/refguide/version-control-menu/#optimize-storage) section in Version Control Menu).
+1. Open the **Version Control** menu > **Optimize Repository Storage...**. (For more information on the menu option, see the [Optimize Storage Repository](/refguide10/version-control-menu/#optimize-storage) section in Version Control Menu).
 2. In the **Optimize Repository Storage** pop-up window, press the **Optimize** button.
 
 The optimization process starts. The status of the running process is displayed in the progress bar of the pop-up window and the at the bottom right of Studio Pro. The operation might take some time. You can close the pop-up window and continue working on the app as usual, however, while optimization is in progress, most of version control commands, such as committing and updating, are disabled. 
@@ -40,7 +40,7 @@ To optimize Git repository storage automatically and regularly, do the following
 
 1. Open the **Edit** menu > **Preferences** > **Version Control** tab. 
 2. In the **Git** section, toggle the **Enable automatic repository optimization** option.
-3. In the **Number of commits**, specify the minimum number of commits that should be reached to start an optimization process in background (for more information, see [Preferences](/refguide/preferences-dialog/).)
+3. In the **Number of commits**, specify the minimum number of commits that should be reached to start an optimization process in background (for more information, see [Preferences](/refguide10/preferences-dialog/).)
 4. Click **OK**.
 5. Studio Pro keeps track of user's activities now, however, reaching or overcoming the limit does not mean the process starts immediately. To trigger the process, either push (**Version Control** > **Push**) or commit (**Version Control** > **Commit** with **Also push changes to the remote server** option on).
 

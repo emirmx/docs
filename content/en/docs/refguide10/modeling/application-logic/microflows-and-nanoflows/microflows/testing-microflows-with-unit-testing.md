@@ -1,13 +1,13 @@
 ---
 title: "Testing Microflows with the Unit Testing Module"
 linktitle: "Testing Microflows with Unit Test Module"
-url: /refguide/testing-microflows-with-unit-testing-module/
+url: /refguide10/testing-microflows-with-unit-testing-module/
 weight: 3
 ---
 
 ## Introduction
 
-The [Unit Testing](/appstore/modules/unit-testing/) module provides the capabilities to verify if your [microflow](/refguide/microflows/) logic and your custom Java code works as expected. It provides a user-friendly interface to manage and run unit tests that are created by using microflows, as well as unit tests that are by created using JUnit.
+The [Unit Testing](/appstore/modules/unit-testing/) module provides the capabilities to verify if your [microflow](/refguide10/microflows/) logic and your custom Java code works as expected. It provides a user-friendly interface to manage and run unit tests that are created by using microflows, as well as unit tests that are by created using JUnit.
 
 This how-to teaches you how to do the following:
 
@@ -31,7 +31,7 @@ Before starting this how-to, make sure you have completed the following prerequi
 
 To set up the unit testing module and run the example tests, follow these steps:
 
-1. Create a [new app](/refguide/new-app/).
+1. Create a [new app](/refguide10/new-app/).
 2. Download and install the [Unit Testing](https://marketplace.mendix.com/link/component/390) module. 
 
     For more information, see [How to Use Marketplace Content](/appstore/use-content/).
@@ -83,14 +83,14 @@ For the purpose of this how-to, create a sample microflow that you can then test
 
 To create a sample microflow for testing, follow these steps:
 
-1. Create a new [enumeration](/refguide/configuring-a-domain-model/#add-enumeration) with the following properties:
+1. Create a new [enumeration](/refguide10/configuring-a-domain-model/#add-enumeration) with the following properties:
     * **Name** – *Level*
     * **Enumeration values** **Caption** and **Name** – *Junior*, *Medior*, and *Senior*.
 
     {{< figure src="/attachments/refguide10/modeling/application-logic/microflows-and-nanoflows/microflows/testing/create-level-enumeration.png" alt="Enumeration with three values" max-width=70% >}}
 
 2. Open the domain model of **MyFirstModule**.
-3. Create a new [entity](/refguide/configuring-a-domain-model/#create-entity) with the following properties:
+3. Create a new [entity](/refguide10/configuring-a-domain-model/#create-entity) with the following properties:
     * **Name** – *Employee*
     * **Attributes** – *Name* (of the **String** type) and *Level* ( of the  **Enumeration** > **Level** type).
 

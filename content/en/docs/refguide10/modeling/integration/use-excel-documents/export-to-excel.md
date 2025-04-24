@@ -1,9 +1,9 @@
 ---
 title: "Export to Excel"
-url: /refguide/using-the-excel-exporter/
+url: /refguide10/using-the-excel-exporter/
 weight: 20
 description: "Describes how to create custom Excel documents from your app based on configurable templates."
-aliases: /howto/integration/using-the-excel-exporter/
+aliases: /howto10/integration/using-the-excel-exporter/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details. 
 ---
 
@@ -44,7 +44,7 @@ Depending on the layout selected when the app was created, errors in Studio Pro 
 
 In this section, you will learn how to add the required pages in the app's **Navigation** that are needed to configure both the Mx Model Reflection and the Excel Export templates that will be used within the app.
 
-1. In the [App Explorer](/refguide/app-explorer/), go to **Navigation**.
+1. In the [App Explorer](/refguide10/app-explorer/), go to **Navigation**.
 2. Add a **New item** to the navigation to open the page **MxModelReflection.MxObjects_Overview**:
 
     {{< figure src="/attachments/refguide10/modeling/integration/using-the-excel-exporter/new-menu-item-mxreflection.png" alt="new-menu-item-mxreflection" class="no-border" >}}
@@ -284,4 +284,4 @@ If the microflow that calls the Java action *XLSReport.GenerateExcelDoc* has **A
 
 ## Read More
 
-* [Import Excel Documents](/howto/integration/importing-excel-documents/)
+* [Import Excel Documents](/howto10/integration/importing-excel-documents/)

@@ -1,6 +1,6 @@
 ---
 title: "CORS Settings for Published REST Services"
-url: /refguide/cors-settings/
+url: /refguide10/cors-settings/
 weight: 60
 description: "Additional options for controlling access to a published REST service"
 # If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
@@ -11,7 +11,7 @@ description: "Additional options for controlling access to a published REST serv
 
 Cross-Origin Resource Sharing (CORS) uses additional HTTP headers to tell a browser to give access to selected resources from a server in a different origin (domain).
 
-When you enable CORS in a [published REST service](/refguide/published-rest-service/), you can specify which servers are allowed to access your service.
+When you enable CORS in a [published REST service](/refguide10/published-rest-service/), you can specify which servers are allowed to access your service.
 
 ## Allowed Origins
 

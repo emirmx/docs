@@ -1,6 +1,6 @@
 ---
 title: "XPath minutes-from-dateTime"
-url: /refguide/xpath-minutes-from-datetime/
+url: /refguide10/xpath-minutes-from-datetime/
 weight: 10
 ---
 

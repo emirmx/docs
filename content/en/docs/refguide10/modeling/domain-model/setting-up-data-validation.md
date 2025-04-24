@@ -1,33 +1,33 @@
 ---
 title: "Setting Up Data Validation"
-url: /refguide/setting-up-data-validation/
+url: /refguide10/setting-up-data-validation/
 weight: 70
 description: "Describes how to set up both required and advanced data validation with Studio Pro."
 aliases:
-    - /howto/data-models/setting-up-data-validation/
+    - /howto10/data-models/setting-up-data-validation/
 ---
 
 ## Introduction
 
-This document explains how you can set up data validation with Mendix. Make sure you have set up a basic data structure, otherwise there is no data to validate. For more information on how to set up a basic data structure, see [Configuring a Domain Model](/refguide/configuring-a-domain-model/).
+This document explains how you can set up data validation with Mendix. Make sure you have set up a basic data structure, otherwise there is no data to validate. For more information on how to set up a basic data structure, see [Configuring a Domain Model](/refguide10/configuring-a-domain-model/).
 
 ## Data Validation on Entity Level
 
 This section explains how you can add validation rules to the domain model of your module.
 
 {{% alert color="info" %}}
-Validation rules can only be applied on entities that are [persistable](/refguide/persistability/).
+Validation rules can only be applied on entities that are [persistable](/refguide10/persistability/).
 {{% /alert %}}
 
 Validation rules are generally triggered for each member of the entity (for example, an attribute) whenever changes are made to it.
 
 {{% alert color="warning" %}}
-Some validation rules are not triggered if you do a commit and [With events](/refguide/committing-objects/#with-events) is set to *No*. This mainly affects attributes in new objects and attributes which are modified using the `setValue` Java method. In most other cases, validation rules will have been triggered when members are changed. Mendix advises that you set **With events** to *Yes* if you want to ensure that validations are always carried out.
+Some validation rules are not triggered if you do a commit and [With events](/refguide10/committing-objects/#with-events) is set to *No*. This mainly affects attributes in new objects and attributes which are modified using the `setValue` Java method. In most other cases, validation rules will have been triggered when members are changed. Mendix advises that you set **With events** to *Yes* if you want to ensure that validations are always carried out.
 {{% /alert %}}
 
 To add validation rules on entity level, follow the steps below:
 
-1. Open your [domain model](/refguide/configuring-a-domain-model/) in Studio Pro.
+1. Open your [domain model](/refguide10/configuring-a-domain-model/) in Studio Pro.
 2. Double-click a persistable entity to open its properties.
 3. Go to the **Validation rules** tab.
 
@@ -43,11 +43,11 @@ An example of an already-configured validation rule is shown below:
 
 {{< figure src="/attachments/refguide10/modeling/domain-model/setting-up-data-validation/validation-rule-example.png" width="500px" class="no-border" >}}
 
-For more information on adding validation rules on entity level, see [Validation Rules](/refguide/validation-rules/). 
+For more information on adding validation rules on entity level, see [Validation Rules](/refguide10/validation-rules/). 
 
 ## Required Validation on Inputs, Reference Selectors, and Drop-downs
 
-The page editor of Studio Pro allows you to configure mandatory inputs and add error messages shown to end-users if the inputs are empty. To do so, you first need to have a detail page. For more information on how to create a detail page, see [How to Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/).
+The page editor of Studio Pro allows you to configure mandatory inputs and add error messages shown to end-users if the inputs are empty. To do so, you first need to have a detail page. For more information on how to create a detail page, see [How to Create Your First Two Overview and Detail Pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/).
 
 To set required validation on input elements through the page editor, follow the steps below:
 
@@ -64,7 +64,7 @@ An example of checking the input for the **Name** attribute of a **Customer** en
 **Required** validation on **Input elements** in a page editor is always checked before the validation rule on the entity level. This means that if you set both as **Required** and have different error messages, the page error message is shown to the end-user.  
 {{% /alert %}}
 
-For more information on input widget validation, see the [Validation](/refguide/common-widget-properties/#validation) section in *Properties Common in the Page Editor*. 
+For more information on input widget validation, see the [Validation](/refguide10/common-widget-properties/#validation) section in *Properties Common in the Page Editor*. 
 
 ## Advanced Data Validation with the Before Commit Event {#validation-before-commit-event}
 
@@ -72,7 +72,7 @@ Validation rules are great for simple validations, but Mendix also offers ways t
 
 This section explains how you can validate data using the **Before Commit** event. To do so, follow these steps:
 
-1. Open your [domain model](/refguide/configuring-a-domain-model/) in Studio Pro.
+1. Open your [domain model](/refguide10/configuring-a-domain-model/) in Studio Pro.
 2. Double-click an entity to open its properties.
 3. Go to the **Event handlers** tab.
 4. Click **New** to start configuring a new event handler for this entity.
@@ -89,16 +89,16 @@ This section explains how you can validate data using the **Before Commit** even
 
 As long as this microflow returns a Boolean value, you are free to add any logic to determine whether the data is valid or not. If the microflow returns `false`, the commit is cancelled. Returning `true` commits the object. 
 
-For more information on working with microflows, see [Microflows](/refguide/microflows/).
+For more information on working with microflows, see [Microflows](/refguide10/microflows/).
 
 ## Advanced Validation with a Custom Save Button {#custom-validation-save-button}
 
-Validating user input can also be achieved by overriding the default **Save** button on a detail page. For more information on how to create a detail page, see [How to Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/).
+Validating user input can also be achieved by overriding the default **Save** button on a detail page. For more information on how to create a detail page, see [How to Create Your First Two Overview and Detail Pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/).
 
 There are two ways to configure a custom **Save** button for data validation. 
 
 {{% alert color="info" %}}
-You can do this with the help of [Validation Assist](/refguide/validation-assist/). With Validation Assist, you can build validation microflows automatically by using pre-built expressions. For more information on how to use the Validation Assist, see the [Using Validation Assist to Build Data Validations](/refguide/validation-assist/#data-validations) section in *Validation Assist*. 
+You can do this with the help of [Validation Assist](/refguide10/validation-assist/). With Validation Assist, you can build validation microflows automatically by using pre-built expressions. For more information on how to use the Validation Assist, see the [Using Validation Assist to Build Data Validations](/refguide10/validation-assist/#data-validations) section in *Validation Assist*. 
 {{% /alert %}}
 
 You can also configure a custom **Save** button manually. To do so, follow these steps:
@@ -147,8 +147,8 @@ If you want to validate multiple attributes, it is best to do this in a sub-micr
 2. Create your validations as described in the above section.
 3. Configure the sub-microflow to change the Boolean variable to `false` after the validation feedback or error message. Connect this flow back to the main sequence flow using a merge, and continue with the next validation.
 4. At the end of the sub-microflow, the variable should be `true` if it successfully passed all validations, and `false` when one or more validations have failed. 
-5. Add a [decision](/refguide/decision/) that checks the return value and only allows the microflow to continue to the **Commit** event if all validations have passed. In this way, you can keep the logic while performing all necessary validations at once.
+5. Add a [decision](/refguide10/decision/) that checks the return value and only allows the microflow to continue to the **Commit** event if all validations have passed. In this way, you can keep the logic while performing all necessary validations at once.
 
 ## Read More
 
-* [Denormalize Data to Improve Performance](/howto/data-models/denormalize-data-to-improve-performance/)
+* [Denormalize Data to Improve Performance](/howto10/data-models/denormalize-data-to-improve-performance/)

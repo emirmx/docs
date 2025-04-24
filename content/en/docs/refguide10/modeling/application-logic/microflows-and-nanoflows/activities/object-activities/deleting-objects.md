@@ -1,6 +1,6 @@
 ---
 title: "Delete Object(s)"
-url: /refguide/deleting-objects/
+url: /refguide10/deleting-objects/
 weight: 50
 ---
 
@@ -18,7 +18,7 @@ An example of delete object properties is represented in the image below:
 
 {{< figure src="/attachments/refguide10/modeling/application-logic/microflows-and-nanoflows/activities/object-activities/deleting-objects/delete-properties.png" alt="delete object properties" width="650px" class="no-border" >}}
 
-This activity cannot be used to delete [external objects](/refguide/external-entities/). Use the [Delete External Object](/refguide/delete-external-object/) activity to delete external objects.
+This activity cannot be used to delete [external objects](/refguide10/external-entities/). Use the [Delete External Object](/refguide10/delete-external-object/) activity to delete external objects.
 
 There are two sets of properties for this activity, those in the dialog box on the left, and those in the properties pane on the right.
 
@@ -48,7 +48,7 @@ Default: **No**
 {{% alert color="info" %}}
 To make pages of a Mendix app efficient, many widgets display values from an attribute of an object which is cached on the page. Attributes in widgets which use cached data are always reflected in the client even if they are not committed and irrespective of the value of **Refresh in client**. When an object is deleted, it will display any attributes as null, but the object will still be displayed (for example, there will be a blank entry for the deleted object in a list view).
 
-If **Refresh in client** is set to **Yes**, then all widgets are updated, including those which are only updated when a [data source](/refguide/data-sources/) is loaded. 
+If **Refresh in client** is set to **Yes**, then all widgets are updated, including those which are only updated when a [data source](/refguide10/data-sources/) is loaded. 
 
 When testing your app, ensure that the desired data is being displayed by the widgets you have chosen.
 {{% /alert %}}
@@ -57,13 +57,13 @@ When testing your app, ensure that the desired data is being displayed by the wi
 
 If **Refresh in client** is set to **No**, the data sources are not rerun, and widgets which need to reload data will still display the object (or objects).
 
-If set to **Yes**, the deletion is reflected across the client, which includes reloading the relevant [data sources](/refguide/data-sources/).
+If set to **Yes**, the deletion is reflected across the client, which includes reloading the relevant [data sources](/refguide10/data-sources/).
 
 #### Activity Used in a Microflow Called in an Offline-First App
 
 When inside a microflow that is called from an offline or native app, the **Refresh in client** option is ignored and functions as if it was set to **No**.
 
-For more information, see the [Microflows](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/#microflows) section of Offline-First Data.
+For more information, see the [Microflows](/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/#microflows) section of Offline-First Data.
 
 #### Activity Used in a Nanoflow {#delete-in-nano}
 
@@ -83,7 +83,7 @@ When using the activity in a nanoflow accessible from an offline profile, please
 * When you create an object in the client and optionally commit it, it does not exist in the runtime database until you synchronize it
     * Deleting such an object removes it from the device and does not require synchronization, and therefore the before and after events of the corresponding entity will not be triggered
 
-For more information on associations' delete behavior, see the [On Delete Behavior](/refguide/association-properties/#delete-behavior) section of Association Properties.
+For more information on associations' delete behavior, see the [On Delete Behavior](/refguide10/association-properties/#delete-behavior) section of Association Properties.
 
 ### Example {#delete-example}
 
@@ -97,7 +97,7 @@ The **On delete of 'Customer' object** option below should be set to **Keep 'Ord
 
 ## Common Section{#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}
 
 ## What Happens During a Delete? 
 
@@ -116,7 +116,7 @@ The **Committing** state of the **IMendixObject** is deprecated.
 {{% alert color="warning" %}}
 The **Delete object(s)** activity also removes the object or list reference from the microflow. Be careful not to use the object or list anymore after using it in a **Delete object(s)** activity.
 
-Since Mendix 10.17 there is an exception to this in the case of lists in loops. In Mendix 10.17.0 and above, when **Delete object(s)** is used on a list in a loop, the reference is not removed, but is changed to an empty list. This means that you can add new objects to the list within the loop and the following activities can act on the objects in these lists. You can temporarily revert to the earlier behavior using the [Microflows.<wbr>RemoveVariableOnDeleteObjectsActivity](/refguide/custom-settings/#MicroflowsRemoveVariableOnDeleteObjectsActivity) runtime setting.
+Since Mendix 10.17 there is an exception to this in the case of lists in loops. In Mendix 10.17.0 and above, when **Delete object(s)** is used on a list in a loop, the reference is not removed, but is changed to an empty list. This means that you can add new objects to the list within the loop and the following activities can act on the objects in these lists. You can temporarily revert to the earlier behavior using the [Microflows.<wbr>RemoveVariableOnDeleteObjectsActivity](/refguide10/custom-settings/#MicroflowsRemoveVariableOnDeleteObjectsActivity) runtime setting.
 {{% /alert %}}
 
 * Events:
@@ -158,7 +158,7 @@ No before or after delete events will be executed in this case.
 1. Searches the device database for all objects that reference the deleted object.
 1. Clears all references to the deleted object from all objects found previously.
 1. Deletes the object from the device database.
-1. Marks the object as deleted in the offline database, which makes it possible to synchronize the deletion with the server using [Synchronize unsynchronized objects](/refguide/synchronize/#unsynchronized-objects) or [Synchronize all objects](/refguide/synchronize/#all-objects).
+1. Marks the object as deleted in the offline database, which makes it possible to synchronize the deletion with the server using [Synchronize unsynchronized objects](/refguide10/synchronize/#unsynchronized-objects) or [Synchronize all objects](/refguide10/synchronize/#all-objects).
 
 Before and after events for the deleted object will be executed upon synchronization.
 

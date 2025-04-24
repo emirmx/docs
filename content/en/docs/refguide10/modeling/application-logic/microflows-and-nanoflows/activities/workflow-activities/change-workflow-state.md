@@ -1,6 +1,6 @@
 ---
 title: "Change Workflow State"
-url: /refguide/change-workflow-state/
+url: /refguide10/change-workflow-state/
 weight: 20
 ---
 
@@ -49,12 +49,12 @@ You can select the following operations that represent the new state of the work
 
 * **Retry workflow** – This operation allows you to retry the failed workflow. **Retry workflow** differs from **Restart workflow** – **Restart workflow** starts the same workflow from the beginning, while **Retry workflow** retries the failed activity to see whether the workflow can get back into the in-progress state. There can be the following use cases:
     * If the failed activity is a user task activity, **Retry workflow** attempts to get the user task back to the state it had before it failed. 
-    * If the user task failed due to an execution error in the event handling microflow (for more information, see the [Events Section](/refguide/user-task/#events) in *User Task* and the [User Task State Change](/refguide/workflow-properties/#user-task-state-change) section in *Workflow Properties*), the failed microflow is re-executed. 
-    * If the user task failed because no users were targeted by a microflow or XPath expression (for more information, see the [Target Users Using](/refguide/user-task/#target-users) section in *User Task*), there are two ways to fix this:
+    * If the user task failed due to an execution error in the event handling microflow (for more information, see the [Events Section](/refguide10/user-task/#events) in *User Task* and the [User Task State Change](/refguide10/workflow-properties/#user-task-state-change) section in *Workflow Properties*), the failed microflow is re-executed. 
+    * If the user task failed because no users were targeted by a microflow or XPath expression (for more information, see the [Target Users Using](/refguide10/user-task/#target-users) section in *User Task*), there are two ways to fix this:
         * Change the data that is used by the targeting microflow or the XPath expression so that it results in one or more users (for example, making sure each role has at least one user). After that the **Retry workflow** will re-execute the targeting microflow or XPath expression.
         * Add targeted users to the **System.WorkflowUserTask_TargetUsers** association (for example, from the **DefaultWorkflowAdmin** page in the [Workflow Commons](/appstore/modules/workflow-commons/) module or from your own functionality). In this case the **Retry workflow** puts the workflow into the in-progress state and does not execute the targeting microflow or XPath expression again.
     * If the multi-user task failed because too few users were targeted by a microflow or XPath expression, there are three ways to fix this:
-        * Change the completion condition so that the number of (already) targeted users satisfies the condition (for more information, see the [Participant Input](/refguide/multi-user-task/#participant-input) section in *Multi-User Task*).
+        * Change the completion condition so that the number of (already) targeted users satisfies the condition (for more information, see the [Participant Input](/refguide10/multi-user-task/#participant-input) section in *Multi-User Task*).
         * Add targeted users to the **System.WorkflowUserTask_TargetUsers** association, so that the completion condition is satisfied. Note that the user-targeting microflow or XPath expression is not re-executed. This is to prevent overwriting the added targeted users. If re-execution of the user targeting is desired, use the option provided in the next bullet point.
         * Remove all targeted users from the **System.WorkflowUserTask_TargetUsers** association, which will re-execute the user-targeting microflow or XPath expression. In addition, other changes, like the ones mentioned in the above bullet points, must be made as well. Otherwise, the user targeting will fail again like before.
 
@@ -72,4 +72,4 @@ The **Reason** property is only used when **Abort workflow** is selected in the 
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}

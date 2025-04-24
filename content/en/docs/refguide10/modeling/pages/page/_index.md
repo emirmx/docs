@@ -1,6 +1,6 @@
 ---
 title: "Page"
-url: /refguide/page/
+url: /refguide10/page/
 weight: 10
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -8,10 +8,10 @@ weight: 10
 ## Introduction
 
 {{% alert color="info" %}}
-This document describes basic functions you can perform in the page editor and its modes. For details on what pages are for and what kind of widgets can be placed on them, see [Pages](/refguide/pages/).
+This document describes basic functions you can perform in the page editor and its modes. For details on what pages are for and what kind of widgets can be placed on them, see [Pages](/refguide10/pages/).
 {{% /alert %}}
 
-Pages define the end-user interface of a Mendix application. Every page is based on a [layout](/refguide/layout/). A page fills the "gaps" defined by a layout with widgets such as the [data view](/refguide/data-view/) and [data grid](/refguide/data-grid/).
+Pages define the end-user interface of a Mendix application. Every page is based on a [layout](/refguide10/layout/). A page fills the "gaps" defined by a layout with widgets such as the [data view](/refguide10/data-view/) and [data grid](/refguide10/data-grid/).
 
 ## Performing Basic Functions
 
@@ -29,7 +29,7 @@ You can perform the following basic functions when working in the page editor:
 
 To open a page in Studio Pro, do the following:
 
-1. In the [App Explorer](/refguide/app-explorer/), open a module where this page is located. 
+1. In the [App Explorer](/refguide10/app-explorer/), open a module where this page is located. 
 2. Navigate to the page's location inside the module. A page can be listed as an individual element or be included in the **Pages** folder:
 
     {{< figure src="/attachments/refguide10/modeling/pages/page/app-explorer-pages.png" class="no-border" >}}
@@ -41,12 +41,12 @@ The selected page is opened.
 ### Creating a Page
 
 {{% alert color="info" %}}
-In Studio Pro 10.21 and above, you can use Maia for Pages, an AI-powered tool, to create pages by providing a description of your requirements and optional images. For more information, see [Maia for Pages](/refguide/maia-for-pages/).
+In Studio Pro 10.21 and above, you can use Maia for Pages, an AI-powered tool, to create pages by providing a description of your requirements and optional images. For more information, see [Maia for Pages](/refguide10/maia-for-pages/).
 {{% /alert %}}
 
 To create a new page, do the following:
 
-1. In the [App Explorer](/refguide/app-explorer/), right-click the module or a folder you want to create a page in and select **Add page**:
+1. In the [App Explorer](/refguide10/app-explorer/), right-click the module or a folder you want to create a page in and select **Add page**:
 
     {{< figure src="/attachments/refguide10/modeling/pages/page/add-page.png" class="no-border" >}}
 
@@ -62,7 +62,7 @@ A new page is created.
 
 To delete a page, do the following:
 
-1. In the [App Explorer](/refguide/app-explorer/), select a page you would like to delete and right-click it.
+1. In the [App Explorer](/refguide10/app-explorer/), select a page you would like to delete and right-click it.
 2. In the displayed list, select **Delete** and confirm your choice by clicking **Delete** in the pop-up dialog.
 
 The selected page is deleted. 
@@ -70,7 +70,7 @@ The selected page is deleted.
 ### Adding Elements on a Page {#add-elements}
 
 {{% alert color="info" %}}
-In Studio Pro 10.18 and above, you can also add elements through Maia UI Recommender in **Design mode**. It allows you to easily add new widgets to a page without losing the context of what you are currently working on. For more information, see [UI Recommender](/refguide/ui-recommender/).
+In Studio Pro 10.18 and above, you can also add elements through Maia UI Recommender in **Design mode**. It allows you to easily add new widgets to a page without losing the context of what you are currently working on. For more information, see [UI Recommender](/refguide10/ui-recommender/).
 {{% /alert %}}
 
 The way you can add an element on a page depends on a mode you are editing your page in. For more information on modes, see the [Page Editor Modes](#page-editor-modes) section.
@@ -133,7 +133,7 @@ To delete an element from a page, select this element and press <kbd>Delete</kbd
 The top bar of the Page Editor features both the **Parameters** and **Variables** buttons. These allow you to change the parameters or variables for a page. Both buttons display the current number of parameters or variables in their caption. Additionally, the tooltip of the parameters button will list all parameters and their type, while the tooltip of the variables button lists each variable and its type.
 
 
-For more information about page parameters and variables, see the [Data](/refguide/page-properties/#data) section in *Page Properties*.
+For more information about page parameters and variables, see the [Data](/refguide10/page-properties/#data) section in *Page Properties*.
 
 ## Page Editor Modes {#page-editor-modes}
 
@@ -146,7 +146,7 @@ You can toggle between the modes by clicking the **Design mode** or **Structure 
 
 {{< figure src="/attachments/refguide10/modeling/pages/page/design-mode.png" alt="Design mode and Structure mode buttons" width="250" class="no-border" >}}
 
-By default, pages open in **Design mode**, but if you prefer **Structure mode**, this can be set as default in the **Preferences** (**Edit > Preferences > Work Environment > Default Page Editor**). For more information, see the [Default Page Editor](/refguide/preferences-dialog/#default-page-editor) section in *Preferences*.
+By default, pages open in **Design mode**, but if you prefer **Structure mode**, this can be set as default in the **Preferences** (**Edit > Preferences > Work Environment > Default Page Editor**). For more information, see the [Default Page Editor](/refguide10/preferences-dialog/#default-page-editor) section in *Preferences*.
 
 Both modes allow you to edit your page by doing the following:
 
@@ -155,7 +155,7 @@ Both modes allow you to edit your page by doing the following:
 * Viewing and editing properties of each widget in the **Properties** pane
 * Opening a **Properties** dialog box from the menu you get when you right-click the widget
 
-Additionally, the [Page Explorer](/refguide/page-explorer/) can be used in combination with **Structure mode** or **Design mode**, which shows a tree view of your page structure and contains the same editing capabilities.
+Additionally, the [Page Explorer](/refguide10/page-explorer/) can be used in combination with **Structure mode** or **Design mode**, which shows a tree view of your page structure and contains the same editing capabilities.
 
 ### Structure Mode {#structure-mode}
 
@@ -181,7 +181,7 @@ In **Structure mode**, the page widgets are laid out so that it is easy to see t
 In **Design mode**, the page is laid out as it will appear when published so that it is easy to see the spatial relationship between the elements. 
 
 {{% alert color="info" %}}
-It is recommended to use it in combination with the [Page Explorer](/refguide/page-explorer/), which allows to see and select structural elements that are hidden in **Design mode** due to styling.
+It is recommended to use it in combination with the [Page Explorer](/refguide10/page-explorer/), which allows to see and select structural elements that are hidden in **Design mode** due to styling.
 {{% /alert %}}
 
 For example, the example page shown in [Structure mode](#structure-mode), above, will look like this in **Design mode** for a desktop:
@@ -225,7 +225,7 @@ Here is the same page with **X-ray mode** enabled:
 
 ## Read More
 
-* [Pages](/refguide/pages/)
-* [Page Properties](/refguide/page-properties/)
-* [Page Explorer](/refguide/page-explorer/)
-* [UI Recommender](/refguide/ui-recommender/)
+* [Pages](/refguide10/pages/)
+* [Page Properties](/refguide10/page-properties/)
+* [Page Explorer](/refguide10/page-explorer/)
+* [UI Recommender](/refguide10/ui-recommender/)

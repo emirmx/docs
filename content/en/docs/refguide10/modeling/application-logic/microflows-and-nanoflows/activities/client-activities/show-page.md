@@ -1,10 +1,10 @@
 ---
 title: "Show Page"
-url: /refguide/show-page/
+url: /refguide10/show-page/
 weight: 50
 aliases:
-    - /refguide/Show+Page.html
-    - /refguide/Show+Page
+    - /refguide10/Show+Page.html
+    - /refguide10/Show+Page
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -13,7 +13,7 @@ This activity can be used in both microflows and nanoflows.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-This action is ignored and does not work when a microflow is called from an offline or native app. For more information, see the [Microflows](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/#microflows) section of *Offline-First Data*.
+This action is ignored and does not work when a microflow is called from an offline or native app. For more information, see the [Microflows](/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/#microflows) section of *Offline-First Data*.
 {{% /alert %}}
 
 ## Introduction
@@ -45,7 +45,7 @@ You can also open the dialog box by double-clicking the activity, or right-click
 
 ### Page
 
-The [page](/refguide/page/) that is displayed to an end-user. If the page has parameters, the [Parameters](#parameters) section allows you to specify the which objects should be passed to the page.
+The [page](/refguide10/page/) that is displayed to an end-user. If the page has parameters, the [Parameters](#parameters) section allows you to specify the which objects should be passed to the page.
 
 To create a new page that **Show page** activity will show, click the **Select** button > **New**. Studio Pro will ask you whether you want to pass a variable as an argument to the new page. If you select a variable to pass, Studio Pro will automatically create a page parameter of that type and a data view to edit that object.
 
@@ -53,7 +53,7 @@ To create a new page that **Show page** activity will show, click the **Select**
 
 By default the title of the page is determined by the page title property of the page. You can replace this title with a custom title if necessary.
 
-This feature allows you to re-use the same page for the **New** and **Edit** buttons of a [data grid](/refguide/data-grid/). By simply setting the titles to, for example, *New Customer* and *Edit Customer*, you can save yourself the trouble of duplicating pages.
+This feature allows you to re-use the same page for the **New** and **Edit** buttons of a [data grid](/refguide10/data-grid/). By simply setting the titles to, for example, *New Customer* and *Edit Customer*, you can save yourself the trouble of duplicating pages.
 
 ### Close Pages {#close-pages}
 
@@ -72,13 +72,13 @@ Often you need to have control of page history, for example to show the correct 
 
 ### Parameters Section {#parameters}
 
-Depending on the selected page, you will see a list of its parameters. For each parameter, you can configure a variable or expression to specify which object should be passed to it. These objects are used by [data views](/refguide/data-view/) with a page parameter data source. If only one variable of the expected type for a certain parameter is available, that variable is automatically filled in.
+Depending on the selected page, you will see a list of its parameters. For each parameter, you can configure a variable or expression to specify which object should be passed to it. These objects are used by [data views](/refguide10/data-view/) with a page parameter data source. If only one variable of the expected type for a certain parameter is available, that variable is automatically filled in.
 
 ## Common Section{#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}
 
 ## Read More
 
-* [Activities](/refguide/activities/)
-* [Native Navigation](/refguide/native-navigation/)
+* [Activities](/refguide10/activities/)
+* [Native Navigation](/refguide10/native-navigation/)

@@ -1,10 +1,10 @@
 ---
 title: "Download File"
-url: /refguide/download-file/
+url: /refguide10/download-file/
 weight: 20
 aliases:
-    - /refguide/Download+File.html
-    - /refguide/Download+File
+    - /refguide10/Download+File.html
+    - /refguide10/Download+File
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -13,7 +13,7 @@ This activity can only be used in microflows.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-This action is ignored and does not work when a microflow is called from an offline or native app. For more information, see the [Microflows](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/#microflows) section of *Offline-First Data*.
+This action is ignored and does not work when a microflow is called from an offline or native app. For more information, see the [Microflows](/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/#microflows) section of *Offline-First Data*.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
@@ -64,4 +64,4 @@ Many browsers implement pop-up window blockers preventing them from being opened
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}

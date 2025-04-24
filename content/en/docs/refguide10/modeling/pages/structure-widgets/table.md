@@ -1,6 +1,6 @@
 ---
 title: "Table"
-url: /refguide/table/
+url: /refguide10/table/
 weight: 60
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -10,7 +10,7 @@ weight: 60
 
 ## Introduction
 
-Tables can be used to give structure to a page. They contain [rows](/refguide/table/#rows), columns, and [cells](/refguide/table/#cells). Each cell can contain widgets. 
+Tables can be used to give structure to a page. They contain [rows](/refguide10/table/#rows), columns, and [cells](/refguide10/table/#cells). Each cell can contain widgets. 
 
 For example, you can create a table with text widgets, a logo, and a data view information as a customer report:
 
@@ -30,7 +30,7 @@ A row has the following properties:
 * **Style** – allows you to specify additional CSS styling
 * **Visible** – allows you to hide an element from a page
 
-For more information on properties listed above, see [Properties Common in the Page Editor](/refguide/common-widget-properties/).
+For more information on properties listed above, see [Properties Common in the Page Editor](/refguide10/common-widget-properties/).
 
 ### Cells and Their Properties {#cells}
 
@@ -38,9 +38,9 @@ Each section of a table row or column is called a cell. Cells can contain widget
 
 A cell has the following properties:
 
-* **Class** – allows you to specify one or more cascading style sheet (CSS) classes (for more information on this property, see [Properties Common in the Page Editor](/refguide/common-widget-properties/))
+* **Class** – allows you to specify one or more cascading style sheet (CSS) classes (for more information on this property, see [Properties Common in the Page Editor](/refguide10/common-widget-properties/))
 
-* **Style** – allows you to specify additional CSS styling (for more information on this property, see [Properties Common in the Page Editor](/refguide/common-widget-properties/))
+* **Style** – allows you to specify additional CSS styling (for more information on this property, see [Properties Common in the Page Editor](/refguide10/common-widget-properties/))
 
 * **Cell type** – indicates the type of the cell, the following options are possible:
 
@@ -136,24 +136,24 @@ For example, you can you can have three columns of which the first is 200 pixels
 
 ### Visibility Section {#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ### Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Styling
 
 ### Design Properties Section {#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### Common Section {#common-styling}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Read More
 
-* [Page](/refguide/page/)
-* [Structure](/refguide/structure-widgets/)
-* [Properties Common in the Page Editor](/refguide/common-widget-properties/)
+* [Page](/refguide10/page/)
+* [Structure](/refguide10/structure-widgets/)
+* [Properties Common in the Page Editor](/refguide10/common-widget-properties/)

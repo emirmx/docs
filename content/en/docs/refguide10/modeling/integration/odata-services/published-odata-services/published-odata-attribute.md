@@ -1,6 +1,6 @@
 ---
 title: "Published OData Attribute"
-url: /refguide/published-odata-attribute/
+url: /refguide10/published-odata-attribute/
 weight: 30
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -19,7 +19,7 @@ The exposed name is the name of the attribute as it appears to clients of the se
 
 ### Can Be Empty
 
-Select this box if there is a possibility for this attribute the have an empty value. One way to make sure no empty values are created in the database is to add a required [validation rule](/refguide/validation-rules/).
+Select this box if there is a possibility for this attribute the have an empty value. One way to make sure no empty values are created in the database is to add a required [validation rule](/refguide10/validation-rules/).
 
 For attributes that are part of the key of the entity, this box must be unselected.
 

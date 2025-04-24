@@ -1,6 +1,6 @@
 ---
 title: "Case-Sensitive Database Behavior"
-url: /refguide/case-sensitive-database-behavior/
+url: /refguide10/case-sensitive-database-behavior/
 weight: 20
 ---
 
@@ -17,7 +17,7 @@ For the purposes of this document we can divide case sensitive operations into t
 
 * Sorting: Indicates the order in which you want objects to be retrieved (alphabetically ascending or descending).
 * Comparing: These are operations that involve equality or other comparisons directly in queries (for instance, in the query `\\Entity[Attribute = 'a']`)
-* String functions: These are the [contains](/refguide/xpath-contains/), [starts-with](/refguide/xpath-starts-with/), and [ends-with](/refguide/xpath-ends-with/) functions of an XPath.
+* String functions: These are the [contains](/refguide10/xpath-contains/), [starts-with](/refguide10/xpath-starts-with/), and [ends-with](/refguide10/xpath-ends-with/) functions of an XPath.
 
 Unless otherwise indicated below, sorting and comparing strings is case sensitive whereas string functions are case insensitive.
 This is affected by the database, table, or column collation, and sometimes by other database specific options.

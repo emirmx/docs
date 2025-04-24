@@ -1,6 +1,6 @@
 ---
 title: "View Entities Feedback"
-url: /refguide/view-entities-feedback/
+url: /refguide10/view-entities-feedback/
 toc_hide: true
 hide_summary: true
 # This doc is hidden as part of the View Entities survey request. 

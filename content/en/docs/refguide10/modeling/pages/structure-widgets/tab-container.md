@@ -1,10 +1,10 @@
 ---
 title: "Tab Container"
-url: /refguide/tab-container/
+url: /refguide10/tab-container/
 weight: 40
 aliases:
-    - /refguide/tab-page.html
-    - /refguide/tab-page
+    - /refguide10/tab-page.html
+    - /refguide10/tab-page
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 #The anchor <tab-page> below is mapped, so it should not be removed or changed.
 ---
@@ -49,21 +49,21 @@ The **On change** action can be used to run an action when the user selects a ta
 
 ### Visibility Section {#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ### Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Styling
 
 ### Design Properties Section {#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### Common Section {#common-styling}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Tab Page {#tab-page}
 
@@ -101,6 +101,6 @@ To enable scrollable behavior within a specific tab, place the **Tab Content** i
 
 ## Read More
 
-* [Page](/refguide/page/)
-* [Structure](/refguide/structure-widgets/)
-* [Properties Common in the Page Editor](/refguide/common-widget-properties/)
+* [Page](/refguide10/page/)
+* [Structure](/refguide10/structure-widgets/)
+* [Properties Common in the Page Editor](/refguide10/common-widget-properties/)

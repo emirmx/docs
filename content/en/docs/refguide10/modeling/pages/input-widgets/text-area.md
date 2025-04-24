@@ -1,18 +1,18 @@
 ---
 title: "Text Area"
-url: /refguide/text-area/
+url: /refguide10/text-area/
 weight: 20
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-A **text area** is used to display and, optionally, allow the end-user to edit the value of an attribute or variable of [data type](/refguide/data-types/) *String*. It differs from a [text box](/refguide/text-box/) In that the value can be displayed over several lines.
+A **text area** is used to display and, optionally, allow the end-user to edit the value of an attribute or variable of [data type](/refguide10/data-types/) *String*. It differs from a [text box](/refguide10/text-box/) In that the value can be displayed over several lines.
 
 A text area must be placed within a data context to display or edit the intended value:
-* A [data container](/refguide/data-widgets/) widget containing an object
-* A snippet containing one or more [parameters](/refguide/page-properties/#parameters)
-* A page or a snippet containing one or more [variables](/refguide/page-properties/#variables)
+* A [data container](/refguide10/data-widgets/) widget containing an object
+* A snippet containing one or more [parameters](/refguide10/page-properties/#parameters)
+* A page or a snippet containing one or more [variables](/refguide10/page-properties/#variables)
 
 The name of the configured value is shown inside the text area widget, between square brackets, and colored blue.
 
@@ -65,7 +65,7 @@ Default: *5*
 
 {{% alert color="info" %}}Counter message is not supported on native mobile pages.{{% /alert %}}
 
-This is the text displayed when typing in the text area. This text has two [parameters](/refguide/text/#parameters). The first parameter contains the number of characters already typed and the second parameter contains the maximum number of characters.
+This is the text displayed when typing in the text area. This text has two [parameters](/refguide10/text/#parameters). The first parameter contains the number of characters already typed and the second parameter contains the maximum number of characters.
 
 For example, if you use the counter message `You've used {1} characters of the {2} characters that are allowed.` for your text area, the end-user will see this message displayed below the text area widget:
 
@@ -116,23 +116,23 @@ This option is only available in native pages.
 
 ### Data Source Section{#data-source}
 
-{{% snippet file="/static/_includes/refguide/data-source-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/data-source-section-link.md" %}}
 
 ### Label Section{#label}
 
-{{% snippet file="/static/_includes/refguide/label-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/label-section-link.md" %}}
 
 ### Editability Section{#editability}
 
-{{% snippet file="/static/_includes/refguide/editability-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/editability-section-link.md" %}}
 
 ### Visibility Section{#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ### Validation Section{#validation}
 
-{{% snippet file="/static/_includes/refguide/widget-validation-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/widget-validation-link.md" %}}
 
 ### Accessibility Section{#accessibility}
 
@@ -142,7 +142,7 @@ In a text area widget, when **Aria required** is set to **Yes** then assistive t
 
 ### Common Section{#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### Events Section{#events}
 
@@ -150,13 +150,13 @@ In a text area widget, when **Aria required** is set to **Yes** then assistive t
 
 The on change property specifies an action that will be executed when leaving the widget, either by using the <kbd>Tab</kbd> key or by clicking another widget after the value has been changed.
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 #### On Enter
 
 The on enter property specifies an action that will be executed when the widget is entered, either by using the <kbd>Tab</kbd> key or by clicking it.
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 #### On Leave
 
@@ -164,7 +164,7 @@ The on leave property specifies an action that will be executed when leaving the
 
 This differs from the [on change](#on-change) property in that the event will always be triggered, even if the value has not been changed.
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 ### On Change Behavior {#on-change-behavior}
 
@@ -188,20 +188,20 @@ This option allows makes it so users trigger an on change event while they are t
 
 With **While user is entering data**, users now can adjust one more property called **Apply after (ms)** (described above). This will reduce the amount of the calls made for an on change event, thus improving app performance.
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 ## Styling
 
 ### Design Properties Section{#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### Common Section{#common-styling}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Read More
 
-* [Data view](/refguide/data-view/)
-* [Attributes](/refguide/attributes/)
-* [Variables](/refguide/page-properties/#variables)
+* [Data view](/refguide10/data-view/)
+* [Attributes](/refguide10/attributes/)
+* [Variables](/refguide10/page-properties/#variables)

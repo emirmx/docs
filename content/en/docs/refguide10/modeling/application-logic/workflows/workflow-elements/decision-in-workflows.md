@@ -1,6 +1,6 @@
 ---
 title: "Decision in Workflows"
-url: /refguide/decision-in-workflows/
+url: /refguide10/decision-in-workflows/
 weight: 30
 ---
 
@@ -26,7 +26,7 @@ The **Caption** describes what happens in this element. It is displayed under th
 
 #### Condition
 
-**Condition** is configured based on an [expression](/refguide/expressions/). The expression should result in a Boolean or an enumeration.
+**Condition** is configured based on an [expression](/refguide10/expressions/). The expression should result in a Boolean or an enumeration.
 
 For the expression resulting in a Boolean, two paths are possible: **true** and **false**. For example, you can use the expression resulting in a Boolean to follow different paths whether a new employee is working from home or from the office (and either send their devices to the home address or set up a workstation in the office).
 
@@ -42,4 +42,4 @@ The number of conditions available for the enumeration type depends on the corre
 
 ## Read More
 
-* [Parallel Split](/refguide/parallel-split/)
+* [Parallel Split](/refguide10/parallel-split/)

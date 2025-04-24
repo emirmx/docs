@@ -1,6 +1,6 @@
 ---
 title: GraphQL Representation
-url: /refguide/graphql-feedback/
+url: /refguide10/graphql-feedback/
 toc_hide: true
 hide_summary: true
 # This doc is hidden as part of the GraphQL survey request. 

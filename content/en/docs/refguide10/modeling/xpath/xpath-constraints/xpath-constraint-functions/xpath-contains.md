@@ -1,6 +1,6 @@
 ---
 title: "XPath contains"
-url: /refguide/xpath-contains/
+url: /refguide10/xpath-contains/
 weight: 16
 ---
 

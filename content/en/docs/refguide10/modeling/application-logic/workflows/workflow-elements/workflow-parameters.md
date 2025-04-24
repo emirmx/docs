@@ -1,6 +1,6 @@
 ---
 title: "Workflow Parameters"
-url: /refguide/workflow-parameters/
+url: /refguide10/workflow-parameters/
 weight: 20
 ---
 

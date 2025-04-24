@@ -1,6 +1,6 @@
 ---
 title: "JSON Structures"
-url: /refguide/json-structures/
+url: /refguide10/json-structures/
 weight: 10
 description: "Describes how to use a JSON structure document that can be used in import and export mappings."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
@@ -8,7 +8,7 @@ description: "Describes how to use a JSON structure document that can be used in
 
 ## General
 
-A JSON structure document stores a JSON snippet and converts it into a schema structure that can be used in [Import Mappings](/refguide/import-mappings/) and [Export Mappings](/refguide/export-mappings/) to convert JSON content to Mendix objects and vice versa. 
+A JSON structure document stores a JSON snippet and converts it into a schema structure that can be used in [Import Mappings](/refguide10/import-mappings/) and [Export Mappings](/refguide10/export-mappings/) to convert JSON content to Mendix objects and vice versa. 
 
 {{< figure src="/attachments/refguide10/modeling/integration/json-structures/sample-structure.png" class="no-border" width="600" >}}
 

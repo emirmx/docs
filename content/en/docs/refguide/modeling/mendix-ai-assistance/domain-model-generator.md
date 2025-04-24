@@ -8,14 +8,10 @@ description: "Describes the features in Domain Model Generator."
 ## Introduction
 
 {{% alert color="info" %}}
-Domain Model Generator is currently an experimental feature. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+To use Maia Domain Model Generator, internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-{{% alert color="info" %}}
-To use Domain Model Generator, internet connection and signing in to Studio Pro are required.
-{{% /alert %}}
-
-Maia Domain Model Generator is an AI-powered tool that you can use for generating a [domain model](/refguide/domain-model/). It helps you to generate entities and associations based on text input. You can also use Domain Model Generator in existing domain models. As an experimental feature, Domain Model Generator still have several limitations. For more information, see the [Limitations](#limitation) section below.
+Maia Domain Model Generator is an AI-powered tool that you can use for generating a [domain model](/refguide/domain-model/). It helps you to generate entities and associations based on text input. You can also use Domain Model Generator in existing domain models. Domain Model Generator has several limitations. For more information, see the [Limitations](#limitation) section below.
 
 ## Using Domain Model Generator
 
@@ -56,7 +52,7 @@ Below are some examples you can use as a starting point:
 
 ## Limitations {#limitation}
 
-As an experimental feature, Domain Model Generator has some limitations.
+The Domain Model Generator has some limitations.
 
 ### Enumeration Generation
 

@@ -1,6 +1,6 @@
 ---
 title: "Administrator"
-url: /refguide/administrator/
+url: /refguide10/administrator/
 weight: 20
 ---
 
@@ -67,7 +67,7 @@ Alternatively you can log in as an administrator to a Free App deployed to the c
 
 ### User Role {#user-role}
 
-The user role assigned to the Administrator. For more information, see [User Roles](/refguide/user-roles/). 
+The user role assigned to the Administrator. For more information, see [User Roles](/refguide10/user-roles/). 
 
 Default: *Administrator*
 
@@ -85,8 +85,8 @@ When your app is not deployed locally, for example to Mendix Cloud, changes to t
 
 ## Read More
 
-* [App Security](/refguide/app-security/)
-* [User Roles](/refguide/user-roles/)
-* [Demo Users](/refguide/demo-users/)
-* [Anonymous Users](/refguide/anonymous-users/)
-* [Password Policy](/refguide/password-policy/)
+* [App Security](/refguide10/app-security/)
+* [User Roles](/refguide10/user-roles/)
+* [Demo Users](/refguide10/demo-users/)
+* [Anonymous Users](/refguide10/anonymous-users/)
+* [Password Policy](/refguide10/password-policy/)
