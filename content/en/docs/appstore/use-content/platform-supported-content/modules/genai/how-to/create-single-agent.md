@@ -8,7 +8,7 @@ description: "This document guides you through creating your first agent by inte
 
 ## Introduction
 
-This document explains how to create your an agent in your Mendix app. The agent combines powerful GenAI capabilities such as [knowledge base retrieval (RAG)](/appstore/modules/genai/rag/), [function calling](/appstore/modules/genai/function-calling/), and [prompt management](/appstore/modules/genai/genai-for-mx/prompt-management/) to facilitate an AI-enriched use case. To do this, you can use your existing app or follow the [Build a Smart App from a Blank GenAI App](/appstore/modules/genai/how-to/blank-app/) guide to start from scratch, as demonstrated in the sections below.
+This document explains how to create your agent in your Mendix app. The agent combines powerful GenAI capabilities such as [knowledge base retrieval (RAG)](/appstore/modules/genai/rag/), [function calling](/appstore/modules/genai/function-calling/), and [prompt management](/appstore/modules/genai/genai-for-mx/prompt-management/) to facilitate an AI-enriched use case. To do this, you can use your existing app or follow the [Build a Smart App from a Blank GenAI App](/appstore/modules/genai/how-to/blank-app/) guide to start from scratch, as demonstrated in the sections below.
 
 Through this document, you will:
 
@@ -16,9 +16,9 @@ Through this document, you will:
 * Understand how to enrich your use case with function calling.
 * Ingest your Mendix data into a knowledge base and enable the model of your choice to use it.
 
-The type of agent you will build, is a **single-turn** agent, which means that:
+The type of agent you can build is a **single-turn** agent, which means that:
 
-* It is a one-shot interactions (single question-answer pairs).
+* It is a one-shot interactions (single question-answer pair).
 * No conversation memory is needed.
 * It is focused on specific task completion. 
 * Uses knowledge base and function calling.
