@@ -45,16 +45,8 @@ The following pattern letters can be used to parse and format Date and time valu
 Prior to Mendix 11, the `MMM` and `MMMM` tokens were not properly supported in nanoflows for some languages.
 {{% /alert %}}
 
-The following pattern letters are only available for microflows:
-
-| Letter | Date or Time Component                    | Examples                              |
-| ------ | ----------------------------------------- | ------------------------------------- |
-| z      | Time zone                                 | Pacific Standard Time; PST; GMT-08:00 |
-| Z      | Time zone                                 | -0800                                 |
-| X      | Time zone                                 | -08; -0800; -08:00                    |
-
 {{% alert color="info" %}}
-See below some examples of using `LLLL`, `MMMM`, `LLL`, and `MMM` in languages that support the genitive case:
+Here are some examples of using `LLLL`, `MMMM`, `LLL`, and `MMM` in languages that support the genitive case:
 
 * Ukrainian:
     * `LLLL` returns `квітень`
@@ -67,6 +59,14 @@ See below some examples of using `LLLL`, `MMMM`, `LLL`, and `MMM` in languages t
     * `LLL` returns `kwi`
     * `MMM` returns `kwi`
 {{% /alert %}}
+
+The following pattern letters are only available for microflows:
+
+| Letter | Date or Time Component                    | Examples                              |
+| ------ | ----------------------------------------- | ------------------------------------- |
+| z      | Time zone                                 | Pacific Standard Time; PST; GMT-08:00 |
+| Z      | Time zone                                 | -0800                                 |
+| X      | Time zone                                 | -08; -0800; -08:00                    |
 
 {{% alert color="info" %}}
 For some parse and format functions, there are UTC variants. Do not use these UTC variants (for example, `parseDateTimeUTC`) in client-side expressions if you want to assign the output to (or compare the output with) an attribute of type **Date and time** where **Localize** is disabled. In the client, the localization functionality is built into the attribute type itself, and using UTC functions causes the time zone conversion to be handled twice.
