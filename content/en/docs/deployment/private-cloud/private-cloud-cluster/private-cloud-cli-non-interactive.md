@@ -52,7 +52,7 @@ To [configure a standard namespace](/developerportal/deploy/standard-operator/#c
 
 The namespace-id and namespace-secret are only required when using Mendix for Private Cloud in connected mode. 
 
-In case of standalone mode, the namespace-id and namespace-secret are not required, use the following command:
+In case of standalone mode, the namespace-id and namespace-secret are not required. Instead, use the following command:
 
 ```shell
 ./mxpc-cli apply-config --file <config-file>
