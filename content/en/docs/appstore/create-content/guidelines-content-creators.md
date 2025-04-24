@@ -8,44 +8,45 @@ tags: ["marketplace", "content creation", "guidelines"]
 
 ## Introduction
 
-The guidelines in this document ensure that the content you submit to the public Marketplace content is secure, user friendly, and compliant with legal and data privacy standards. They help maintain consistency, protect intellectual property, and ensure the discoverability of your content.
+This document provides guidelines and best practices to follow before you submit content to the public Mendix Marketplace. They ensure that your content is secure, compliant with legal and data privacy standards, user friendly, consistent, and discoverable.
 
 ## General Guidelines {#general}
 
-These are the general guidelines for creating new Marketplace content:
+These are some general guidelines to help you get started on creating Marketplace content:
 
-* Set up a separate app to build and maintain your Marketplace component.
+* Set up a separate app to build and maintain your Marketplace content.
 * Use the latest MTS or LTS of any major Studio Pro version when creating the item. If that is not possible, then use the earliest version of any major Studio Pro version.
 * Ensure that the latest version of your product supports at least one Mendix LTS or MTS version.
 * Your product must be complete and fully functional, as advertised upon submission.
-* In Mendix 10.21.0 and above, do not use direct associations in your module, as this can cause issues when it is imported.
+* In Mendix 10.21.0 and above, do not use direct associations in your module, as this can cause issues upon import.
 
 When you add content to the Marketplace, include in the component [documentation](/appstore/submit-content/#doc) any information that the end-user should know.
 
-## Using a GitHub Repo {#github}
+## Using a GitHub Repository {#github}
 
-You can set up a GitHub repository which will contain the development content for your Marketplace component. You can then share this repo URL as the component source on the [Package](/appstore/submit-content/#package) page during the submission process.
+You can set up a GitHub repository to house the development content for your Marketplace component. During the submission process, you can share the repository URL as the component source on the [Package](/appstore/submit-content/#package) page.
 
-### GitHub Repo Guidelines
+### GitHub Repository Guidelines
 
-When setting up the GitHub repo for your component, follow these guidelines:
+When setting up the GitHub repository for your component, follow these guidelines:
 
-* Make sure the repo name matches the name that will be used for the published Marketplace component.
-* Use upper camel case to replace any spaces in the repo name. Example: *MyFirstApp*.
-* Make sure the repo description states what the component does. You can use the same description in the Mendix Marketplace.
-* Add a *.gitignore* file to keep your repo clean.
+* Make sure the repository name matches the name that will be used for the published Marketplace component.
+* Use upper camel case to replace any spaces in the repository name. Example: *MyFirstApp*.
+* Make sure the repository description states what the component does. You can use the same description in the Mendix Marketplace.
+* Add a *.gitignore* file to keep your repository clean.
 
 ### Creating a Component Release
 
 To create a new component release for the Mendix Marketplace, follow these steps:
 
-1. Create a new tag on the appropriate commit, on the production or release branch in your GitHub repo.
+1. Create a new tag on the appropriate commit, on the production or the release branch in your GitHub repository.
 
 2. From this tag, create a [new release in GitHub](https://help.github.com/articles/creating-releases). 
 
-3. In this GitHub release, provide an official name and write the release notes. You can use these for the Marketplace release as well.
+3. In this GitHub release, provide an official name and write the release notes.  
+   You can use these for the Marketplace release as well.
 
-4. If you add the *.mpk* file as a binary file to the release tag, the Mendix Marketplace automatically syncs the *.mpk* to your new draft:
+4. If you add the *.mpk* file as a binary to the release tag, the Mendix Marketplace automatically syncs the *.mpk* to your new draft:
 
    {{< figure src="/attachments/appstore/submit-content/github-releases.png" >}}
 
@@ -59,7 +60,7 @@ If you are not a [component partner](/appstore/partner-program/), you can skip t
 
 ### Legal and Compliance Guidelines
 
-This section covers the legal and compliance guidelines.
+This section covers the legal and compliance guidelines needed to ensure that your content abides by intellectual property, licensing, privacy, and export control regulations.
 
 #### Acceptable Use Policy
 
@@ -69,16 +70,19 @@ Your products must comply with the [Acceptable Use Policy](https://www.sw.siemen
 
 When considering intellectual property (IP) in the Mendix Marketplace, follow these guidelines:
 
-* Do not copy any text, names, or other data from other components published in the Marketplace, since you do not own the copyright. Doing so might create unnecessary ambiguity or confusion that would mislead users of Marketplace components.
-* Do not mention components published by others within your content on the Marketplace. 
-* Make sure your component documentation only includes intellectual property that you have created. Your component should not include information or content published by others on the Marketplace, as this may lead to removing your component from the Marketplace. This also means other components can also be removed if they are using your component information or content. 
-* If you come across instances of intellectual property abuse, contact support.
+* Do not copy any text, names, or other data from Marketplace components for which you do not own the copyright.  
+  Doing so might create unnecessary ambiguity or confusion that could mislead users of those Marketplace components.
+* Do not mention components published by others within your content. 
+* Make sure your component documentation only includes intellectual property that you have created.  
+  Including information or content published by others on the Marketplace could lead to your component being removed from the Marketplace.  
+  This also means other components can be removed if they are using your component information or content. 
+* If you come across instances of intellectual property abuse, contact the support team.
 
 For more information, see [Apply IP Protection](/appstore/creating-content/sol-ip-protection/).
 
 #### End-User License
 
-You must declare whether your product includes, uses, depends on, or distributes third-party software of any kind from sources other than you or Mendix. Third-party software means any and all files, including, but not limited to, APIs, content, source code, or compiled libraries. 
+You must declare whether your product includes, uses, depends on, or distributes third-party software of any kind from sources other than you or Mendix. Third-party software means any and all files, such as APIs, content, source code, or compiled libraries. 
 
 You must include the following:
 * In the product description:
@@ -93,7 +97,7 @@ You must not use any restrictive or copyleft licenses, such as GNU GPL v2 or v3,
 
 If you have content which has an open-source license, such as MIT or Apache, check if the third-party libraries being used are compatible with the license. 
 
-If you are using any [open-source licenses](https://opensource.org/licenses-old/category), make sure you have the code hosted on a public repository.  
+If you are using any [open-source licenses](https://opensource.org/licenses-old/category), make sure you have the code hosted in a public repository.  
 
 The Marketplace content governance team will check these cases once content is  submitted, and get back to you if they find issues. It is recommended that you do the check yourself beforehand to avoid any delays in the listing of your content.
 
