@@ -59,24 +59,25 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
 
     {{< figure src="/attachments/deployment/mx-azure/preflight-check.png" class="no-border" >}}
 
-8. In the Preflight Check screen, click **Next** and you will be redirected to the **Provision** screen. When all Preflight checks are passed, you will see the status as **Done** in the **Preflight Check** section as shown below
+8. In the **Preflight Check** screen, click **Next** to be redirected to the **Provision** screen. When all preflight checks are passed, the status is displayed as **Done** in the **Preflight Check** section, as in the following figure:
 
     {{< figure src="/attachments/deployment/mx-azure/preflight-check-successful.png" class="no-border" >}}
 
-9. In the **Provision** screen, add the custom tags if required and review the information in the **Advanced Options** section, and adjust any settings as needed. Note that selecting higher service tiers will also incur higher costs. 
-Its possible to update the below settings in Advanced option:
-1. AKS Service Tier
-2. AKS Node Size
-3. VM Type
-4. Load Balancer Type
-5. Postgres Flexible Server - Under this, you can update Compute Tier, Compute Size and Storage Performance Tier.
-6. AKS Node IP Address 
+9. In the **Provision** screen, add the custom tags if required and review the information in the **Advanced Options** section. If required, adjust any settings as needed. Note that selecting higher service tiers will also incur higher costs.
+   
+    You can update the following advanced options:
+        * AKS Service Tier
+        * AKS Node Size
+        * VM Type
+        * Load Balancer Type
+        * Postgres Flexible Server - Under this, you can update Compute Tier, Compute Size and Storage Performance Tier.
+        * AKS Node IP Address 
 
     {{% alert color="info" %}}If you plan to use [virtual network peering](#network-peering), you must set the **Load Balancer Type** to **Private (Internal)**.{{% /alert %}}
 
     {{< figure src="/attachments/deployment/mx-azure/provision-additional-option.png" class="no-border" >}}
 
-10. In the **Review & Initialize** screen, review the information and click **Initialize**.
+11. In the **Review & Initialize** screen, review the information and click **Initialize**.
 
     {{< figure src="/attachments/deployment/mx-azure/initializeCluster.png" class="no-border" >}}
 
@@ -84,13 +85,13 @@ Its possible to update the below settings in Advanced option:
 
     {{< figure src="/attachments/deployment/mx-azure/resourceGroup.png" class="no-border" >}}
 
-11. Once the cluster is initialized successfully, a corresponding cluster and a namespace within it is created in the the Private Cloud portal. The namespace is configured automatically, as described in [Standard Operator: Running the Tool](https://docs.mendix.com/developerportal/deploy/standard-operator/#running-the-tool). 
+12. Once the cluster is initialized successfully, a corresponding cluster and a namespace within it is created in the the Private Cloud portal. The namespace is configured automatically, as described in [Standard Operator: Running the Tool](https://docs.mendix.com/developerportal/deploy/standard-operator/#running-the-tool). 
 
     {{% alert color="info" %}}You cannot create additional namespaces for a Mendix on Azure cluster. You also cannot use APIs to create or modify the cluster. Also, the cluster cannot be deleted from the Private Cloud portal or the Mendix on Azure portal. If you want to remove it, you must delete the Managed application (created in Step 3) in the Microsoft Azure portal.{{% /alert %}}
 
-12. Once the cluster is initialized successfully, the status of the cluster in the Portal changes to **INITIALIZED**.
+13. Once the cluster is initialized successfully, the status of the cluster in the Portal changes to **INITIALIZED**.
 
-13. The Infrastructure details of the cluster can be seen in the **Details** option visible under **Actions** column.
+14. The Infrastructure details of the cluster can be seen in the **Details** option visible under **Actions** column.
 
     {{< figure src="/attachments/deployment/mx-azure/infrastructure-details.png" class="no-border" >}}
 
