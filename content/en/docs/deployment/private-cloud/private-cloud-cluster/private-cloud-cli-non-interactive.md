@@ -17,7 +17,7 @@ Please see [Download the Configuration Tool](/developerportal/deploy/standard-op
 
 {{% alert color="info" %}} Use "./mxpc-cli <command> --help" for more information about a given command. {{% /alert %}}
 
-{{% alert color="info" %}} Non-interactive mode is not currently supported for Global operator{{% /alert %}}
+{{% alert color="info" %}} Non-interactive mode is not currently supported for Global Operator.{{% /alert %}}
 
 The following parameters may be used in the commands:
   
