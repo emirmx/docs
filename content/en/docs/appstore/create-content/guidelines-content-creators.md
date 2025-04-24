@@ -155,16 +155,19 @@ Country-specific embargoes, which dictate the prohibition of any economic activi
 
 Sanctioned parties are individuals, companies, institutions, vessels, banks, etc., with whom business is either prohibited or possible, only after obtaining authorization from relevant government authorities. Sanctioned parties are published by the USA, the EU, and other national authorities. 
 
-### Technical Guidelines
+### Technical Guidelines  
+
+This section covers the technical guidelines needed to ensure that your content is free of viruses, malware, and security vulnerabilities.
 
 #### Security Requirements 
-
-Content security is an important pillar for the Mendix Marketplace. The following sections detail the security requirements necessary for modules, widgets, and connectors packaged into an *.mph* file format.  
-You must abide by the following requirements for all content (*.mpk* files) published to the Mendix  Marketplace.
+ 
+You must abide by the following requirements for all modules, widgets, and connectors packaged into an *.mpk* file and published to the Mendix  Marketplace.
 
 ##### Virus and Malware Scan for Files
 
-The governance check performed by the Marketplace team includes a virus and malware scan. This means that Mendix expects that the product you submit be virus- and malware-free. Therefore, we recommend completing a full scan using [VirusTotal](https://www.virustotal.com/gui/home/upload) prior to your submission. VirusTotal checks the file for traces of virus and malware against more than 70 virus engines, and provides a report. This ensures that you can provide the Mendix Marketplace team with a clean report while uploading your *.mpk* file.
+The governance check performed by the Marketplace team includes a virus and malware scan. This means that Mendix expects that the product you submit be virus- and malware-free.  
+
+We recommend completing a full scan using [VirusTotal](https://www.virustotal.com/gui/home/upload) prior to your submission. VirusTotal checks the file for traces of virus and malware against more than 70 virus engines, and provides a report. This ensures that you can provide the Mendix Marketplace team with a clean report while uploading your *.mpk* file.
   
 ##### File Integrity Check
 
@@ -178,13 +181,13 @@ To ensure that the uploaded artifact is free of any critical and high vulnerabil
 
 You must ensure that the CVSS 3.0 score is less than 7.0 to pass the onboarding  criteria, per the [NIST NVD specification](https://nvd.nist.gov/vuln-metrics/cvss).  
 
-While uploading your file, you can provide the Mendix Marketplace team with a report proving the completion of the vulnerability scan and indicating that libraries are free of vulnerabilities. Mendix recommends the [Snyk Open Source](https://snyk.io/product/open-source-security-management/) solution for scanning third-party dependencies for vulnerabilities. This is required for all new and subsequent versions of any component uploaded to the Mendix Marketplace. 
+While uploading your file, you can provide the Mendix Marketplace team with a report proving the completion of the vulnerability scan and indicating that libraries are free of vulnerabilities. We recommend the [Snyk Open Source](https://snyk.io/product/open-source-security-management/) solution for scanning third-party dependencies for vulnerabilities. This is required for all new and subsequent versions of any component uploaded to the Mendix Marketplace. 
 
 ##### SAST Scan for OWASP top 10 vulnerabilities
 
 You must ensure that there are no [OWASP Top 10 vulnerabilities](https://owasp.org/www-project-top-ten/) in the code.  
 
-Traditional code based SAST scanners cannot properlu detect security issues in low-code applications. They also cannot point out security misconfigurations, if any. We recommend that you use a tool which can take into consideration the security best  practices outlined in [Implementing Best Practices for App Security](/howto/security/best-practices-security/) and point out any security misconfigurations and bad practices.  
+Traditional code based SAST scanners cannot properly detect security issues in low-code applications. They also cannot point out any security misconfigurations. We recommend that you use a tool which can take into consideration the security best  practices outlined in [Implementing Best Practices for App Security](/howto/security/best-practices-security/), and point out security misconfigurations and bad practices.  
 
 The Mendix Marketplace contains the following products that you can use to inspect and correct your product before uploading it:  
 
@@ -195,16 +198,19 @@ The Mendix Marketplace contains the following products that you can use to inspe
 
 #### Architectural Best Practices
 
-As the supplier ecosystem evolves, different types of services emerge. This section shares the best practice relevant for each type of offering in respect to access management and service reliability. 
+As the supplier ecosystem evolves, different types of services emerge. This section shares the best practices relevant for each type of offering in respect to access management and service reliability. 
 
 ##### Access Management
 
 Follow these best practices with regards to access management:
 
 * Issue one set of keys for each service instance.  
-* Ensure that the keys provide minimal access rights for the application to perform operations on the service instance. The service can choose the access level according to the service instance configuration. 
-* Mendix does not store the keys which are issued to the service consumer. If the consumer loses the keys, they will likely generate multiple binding keys for the same instances. Hence, ensure that the number of binding keys per service instance is not a limiting factor. 
-* When the binding is deleted, make sure to delete the corresponding keys. Do not reuse the keys for any other binding key request. 
+* Ensure that the keys provide minimal access rights for the application to perform operations on the service instance.  
+  The service can choose the access level according to the service instance configuration. 
+* Mendix does not store the keys which are issued to the service consumer.  
+  If the consumer loses the keys, they will likely generate multiple binding keys for the same instances. Hence, ensure that the number of binding keys per service instance is not a limiting factor. 
+* When the binding is deleted, make sure to delete the corresponding keys.  
+  Do not reuse the keys for any other binding key request. 
 * Log any operation with binding keys for auditing purposes.
 * Return a 404 error code for both of the following scenarios, thus ensuring that hackers do not get any clues:
    * Absence of a resource (service instance)
@@ -218,7 +224,8 @@ Follow these best practices with regards to service reliability:
 * Throttle requests to avoid noisy neighborhood issues. 
 * Respond with a 4XX error code for invalid inputs and unmet preconditions. 
 * Use an idempotent endpoint for retries in case of server errors, where the consuming app may retry invoking the service multiple times.
-* Choose an appropriate scaling mechanism to handle varying loads. Horizontal scaling is preferred to vertical scaling.
+* Choose an appropriate scaling mechanism to handle varying loads.  
+  Horizontal scaling is preferred to vertical scaling.
 * Set up appropriate tools that can monitor the service workload and raise notifications.
 * Have a disaster recovery plan for your service.
 * Broadcast the availability of your service and the scheduled maintenance window.
@@ -246,10 +253,11 @@ The product name is just as important as the logo. As such, follow these rules t
 
 * Use a maximum of 30 - 32 characters to ensure the name fits within the thumbnail.
 
-* Use an English name to ensure global exposure. Currently, the Mendix Marketplace is international, with no option to switch languages.
+* Use an English name to ensure global exposure.  
+  Currently, the Mendix Marketplace is international, with no option to switch languages.
 
-* Do not include the content type or standard platform terms in the name. The Mendix Marketplace classifies products by content types and categories, which helps customers filter and search.
-
+* Do not include the content type or standard platform terms in the name.  
+  The Mendix Marketplace already classifies products by content types and categories, which helps customers filter and search.  
   Instead, focus on the main product features and benefits. For example, “Widget” can be substituted with “3D Viewer”.
 
 * Avoid using abbreviations that are not commonly known.  
@@ -266,21 +274,24 @@ These are some tips to help you write a proper product description:
 
 * Include answers to key questions that developers have when they look for content.
 
-* Cover the entire range of product benefits, and focus on how your product can improve customers' app development or work life in general. 
-  A good practice is to outline the features and benefits of your product before describing them. For every feature you list, think about how it will directly benefit customers.
+* Cover the entire range of product benefits, and focus on how your product can improve customers' app development or work life in general.  
+  A good practice is to outline the features and benefits of your product before describing them.  
+  For every feature you list, think about how it will directly benefit customers.  
   Consider including technical aspects on the **Documentation** tab.
 
-* Know your target audience, and try to understand why they need your product, and what features or benefits are of interest to them. That way, you can focus on the right aspects.
-* Use friendly and easy to understand language, ensuring that customers can connect to the product 
+* Know your target audience, and try to understand why they need your product, and what features or benefits are of interest to them.
+* Use friendly and easy to understand language, ensuring that customers can connect to the product.   
   A good practice is to read the description aloud and assess whether it sounds natural. 
 
-* Support your description with a good layout including bullet points, short paragraphs, and different sized fonts. This will help customers skim your text faster and focus on the most important parts of the text.
+* Support your description with a good layout including bullet points, short paragraphs, and different sized fonts.   
+  This will help customers skim your text faster and focus on the most important parts of the text.
 
-* Add keywords to optimize the content for search engines. That way, if a potential customer searches using a certain word, your product may come up in the search results.
+* Add keywords to optimize the content for search engines.  
+  That way, if a potential customer searches using a certain word, your product may come up in the search results.
 
 ### Screenshots and Assets
 
-You can share up to 10 screenshots of your offering so that future users know what to expect. You can also upload asset links like white papers, eBooks, and testimonials.  
+You can share up to 10 screenshots of your offering so that potential customers know what to expect. You can also upload asset links like white papers, eBooks, and testimonials.  
 
 The maximum file size is 1 MB.
 
@@ -294,41 +305,42 @@ After Mendix reviews and approves your offering, the Mendix Marketplace team mak
 
 You can work with the Mendix Marketplace team to define joint customer value propositions, marketing messages, and campaigns to further strengthen your offering. In addition to that, you can collaborate with the team on integrated end-to-end solutions that contain offerings from both you and Mendix.
 
-Once everything is ready, the offering is marked for production and will be published on the Mendix Marketplace during the next scheduled release.
+Once everything is ready, the offering is marked for production and is published to the Mendix Marketplace during the next scheduled release.
 
-## Managing the Lifecycle
+## Managing the Product Lifecycle
 
 ### Product Support
 
 Our goal is to ensure that users and customers of the Mendix Marketplace have the most up-to-date information about offerings. You must therefore manage the accuracy of your own offering on the Marketplace, making sure that it is kept up to date with new features or releases.
 
-If users or customers have additional questions about your product, or if they want to engage to discuss a challenge, they should always be able to contact you.  This can be done through the **Contact Us** form on the Mendix website, or by clicking the link to your webpage available on your product offering page. If they use the **Contact Us**, you are notified, and are expected to respond in a timely manner.  
+If users or customers have additional questions about your product, or if they want to engage to discuss a challenge, they should always be able to contact you.  This can be done through the **Contact Us** form on the Mendix website, or by clicking the link to your webpage available on your product offering page. If they use the **Contact Us** form, you are notified, and are expected to respond in a timely manner.  
+
+#### Product Support Requirements
 
 All products listed on the Mendix Marketplace must meet the following requirements: 
 
-* Customers must be able to submit issues to you through a customer support portal or using a dedicated email address. You must provide a link to either of these in the product listing. 
-* You must support customers under an Enterprise Service Level Agreement. A Service Level Agreement (SLA) report must be made available to Mendix upon request. It must include proof of a customer satisfaction survey with a CSAT score of at least 97% for product issues. 
-* Mendix reserves the right to run customer satisfaction surveys for your products. If the CSAT score is lower than 97%, then Mendix reserves the right to delist the product.
-* Critical issues, like security vulnerabilities or data loss problems, must be fixed according to a responsible disclosure policy. If an issue is already published, then it must be resolved within 48 hours of it being disclosed.  
+* Customers must be able to submit issues to you through a customer support portal or using a dedicated email address.  
+  You must provide a link to either of these in the product listing. 
+* You must support customers under an Enterprise Service Level Agreement.  
+  A Service Level Agreement (SLA) report must be made available to Mendix upon request. It must include proof of a customer satisfaction survey with a CSAT score of at least 97% for product issues. 
+* Mendix reserves the right to run customer satisfaction surveys for your products.  
+  If the CSAT score is lower than 97%, Mendix reserves the right to delist the product.
+* Critical issues, like security vulnerabilities or data loss problems, must be fixed according to a responsible disclosure policy.  
+  If an issue is already published, it must be resolved within 48 hours of it being disclosed.  
   Mendix reserves the right to notify any customers who are in any way using a product with such a critical issue. 
 * You must provide a list of known issues to customers and to Mendix Customer Support. 
 * For services or APIs, you must provide a well-known information point on service status to customers and to Mendix Customer Support.
-
-To provide the best level of support to customers of the product, Mendix recommends the following:
-
-* Set up a Service Level Agreement (SLA). You can use the Mendix SLA as an example.
-* Provide customers with global non-stop support, ideally, through a dedicated support team. 
+* Provide customers with global non-stop support, ideally through a dedicated support team.  
   Customers should be able to easily identify which team or contact person  provides them support.  
-  Ensure the support team has proper Mendix training. We recommend the Mendix Advanced Certification for this purpose.
-* The support team should have a direct line of communication with the engineering team delivering the product as second- or third-line support.
+* Ensure the support team has proper Mendix training. We recommend the Mendix Advanced Certification for this purpose.
+* The support team should have a direct line of communication with the engineering team delivering the product, as second- or third-line support.
 * Continuously monitor customer satisfaction with both the product itself, and the support you are providing.
 * Put internal procedures in place to manage changes, incidents, and escalations.
-* Make a status page (like status.mendix.com) available for all customers.
 
 {{% alert color="info" %}}
 Mendix reserves the right to temporarily delist any products that do not adhere to these requirements until resolved.  
 
-In principle, you will be notified in advance. For critical issues, though, the notification can be sent at the same time as the delisting and the customer notifications.
+In principle, you are notified in advance. For critical issues, though, the notification can be sent at the same time as the delisting and the customer notifications.
 {{% /alert %}}
 
 ## Mendix Partner Program
@@ -339,4 +351,4 @@ For more information on what this program offers, see [Mendix Component Partner 
 
 * [Community Best Practices for App Performance](/refguide/community-best-practices-for-app-performance/)
 * [Mendix Best Practices for Development](/refguide/dev-best-practices/)
-* [Best Practices for Building Connectors](/appstore/creating-content/connector-guide-best-practices/)
+* [Best Practices for Creating Connectors](/appstore/creating-content/connector-guide-best-practices/)
