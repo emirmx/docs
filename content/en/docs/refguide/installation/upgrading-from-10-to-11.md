@@ -64,7 +64,6 @@ Your app is now ready to be upgraded to Mendix 11. You can now close the app in 
 
 Open your app in Studio Pro 11 and allow Studio Pro to update and convert your app to version 11. Mendix will update your app automatically.
 
-
 ## Notable and Breaking Changes
 
 * Studio Pro 10.21 and above requires your application to use Java 21. The Java version of an application can be configured in the runtime settings. Java 21 is available in 9.24.23 and above. Please consider the Java Version Migration guide for a list of changes between Java versions. For on-premises deployments, ensure that JDK 21 is installed in the environments where Mendix 10 applications are deployed.
