@@ -29,6 +29,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
     * DataGrid 2 now allows users to customize what they see on their feedback overview
     * We have improved performance for large sets of feedback
+    * The date filters have been reset and the 6 month restriction has been removed
     
 ### March 30, 2025
 
