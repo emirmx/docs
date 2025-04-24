@@ -11,14 +11,14 @@ aliases:
 ## Introduction
 
 {{% alert color="info" %}}
-Maia for Domain Model is currently an experimental feature introduced in Studio Pro 10.13.0. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/). From Studio Pro 10.13 to 10.21, it was called Domain Model Generator.
+Maia for Domain Model was introduced in Studio Pro 10.13.0.
 {{% /alert %}}
 
 {{% alert color="info" %}}
 To use Maia for Domain Model, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-Maia for Domain Model is an AI-powered tool that you can use for generating new [domain model](/refguide/domain-model/) as well as explaining and providing suggestions for existing domain models. Accessing Maia for Domain Model directly in existing domain models is supported in Studio Pro 10.18 and above. As an experimental feature, Maia for Domain Model still has several limitations. For more information, see the [Limitations](#limitation) section below.
+Maia for Domain Model is an AI-powered tool that you can use for generating new [domain model](/refguide/domain-model/) as well as explaining and providing suggestions for existing domain models. Accessing Maia for Domain Model directly in existing domain models is supported in Studio Pro 10.18 and above. Maia for Domain Model still has several limitations. For more information, see the [Limitations](#limitation) section below.
 
 ## Using Maia for Domain Model
 
@@ -68,7 +68,7 @@ Below are examples of prompts you can use to ask Maia for explanations or sugges
 
 ## Limitations {#limitation}
 
-As an experimental feature, Maia for Domain Model has some limitations.
+Maia for Domain Model has some limitations.
 
 ### Enumeration Generation
 
