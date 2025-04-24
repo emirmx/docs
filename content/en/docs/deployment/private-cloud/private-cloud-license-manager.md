@@ -558,7 +558,7 @@ This will indicate that licenses have been applied to the operator and apps in t
 
 To upgrade the PCLM server, update the image tag in the PCLM server deployment and restart it.
 
-Its also possible to upgrade the PCLM server using following command:
+It is also possible to upgrade the PCLM server using following command:
 
 ```bash
 mx-pclm-cli server-upgrade \
