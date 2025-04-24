@@ -241,7 +241,7 @@ The closing policy is not applied to tabs with unsaved changes.
 
 ### Navigation
 
-This setting allows you to move forward and backward through your editing history to show the documents you have recently worked on. You must restart Studio Pro to use this feature.
+This setting allows you to move forward and backward through your editing history to show the documents you have recently worked on. This feature is enabled by default. 
 
 ## Advanced Tab
 
