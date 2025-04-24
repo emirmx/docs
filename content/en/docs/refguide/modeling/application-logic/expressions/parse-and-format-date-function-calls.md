@@ -15,16 +15,16 @@ The following pattern letters can be used to parse and format Date and time valu
 | ------ | ------------------------------------------------ | ------------------------- |
 | M      | Month in year, digit                             | 1                         |
 | MM     | Month in year, digit with leading zero           | 01                        |
-| MMM    | Month in year, abbriviated (context sensitive)   | Nov                       |
+| MMM    | Month in year, abbreviated (context sensitive)   | Nov                       |
 | MMMM   | Month in year (context sensitive)                | November                  |
 | L      | Month in year, digit (standalone), digit         | 1                         |
 | LL     | Month in year, digit with leading zero           | 01                        |
-| LLL    | Month in year, abbriviated (standalone)          | Nov                       |
+| LLL    | Month in year, abbreviated (standalone)          | Nov                       |
 | LLLL   | Month in year (standalone)                       | November                  |
 | yy     | Year, two digits                                 | 01                        |
 | yyyy   | Year, four digits                                | 2001                      |
 | G      | Era designator                                   | AD                        |
-| E      | Day name in week, abbriviated                    | Tue                       |
+| E      | Day name in week, abbreviated                    | Tue                       |
 | EEEE   | Day name in week                                 | Tuesday                   |
 | u      | Day of week (1 = Monday, ..., 7 = Sunday)        | 5                         |
 | w      | Week in year                                     | 11                        |
@@ -42,7 +42,7 @@ The following pattern letters can be used to parse and format Date and time valu
 | S      | Millisecond                                      | 201                       |
 
 {{% alert color="info" %}}
-Prior to Mendix 11 the `MMM` and `MMM` tokens where not properly supported in nanoflows for some languages.
+Prior to Mendix 11, the `MMM` and `MMM` tokens where not properly supported in nanoflows for some languages.
 {{% /alert %}}
 
 The following pattern letters are only available for microflows:
