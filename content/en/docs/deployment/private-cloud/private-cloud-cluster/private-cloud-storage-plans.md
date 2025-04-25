@@ -777,7 +777,7 @@ When an existing environment is deleted, the Mendix Operator performs the follow
 In the Dedicated JDBC plan configuration, enter the following details:
 
 * **Database type** - The database type, one of the supported [DatabaseType](/refguide/custom-settings/#DatabaseType) values such as `PostgreSQL`.
-* **Host** - The database hostname, for example `postgres-shared-postgresql.privatecloud-storage.svc.cluster.local:5432` - specifies the value of [DatabaseHost](/refguide/custom-settings/#DatabaseType).
+* **Host** - The database hostname, for example `postgres-shared-postgresql.privatecloud-storage.svc.cluster.local` - specifies the value of [DatabaseHost](/refguide/custom-settings/#DatabaseType).
 * **Database name** - The name of the database or schema used by the Mendix app, for example `postgres` - specifies the value of [DatabaseName](/refguide/custom-settings/#DatabaseName).
 * **JDBC URL** - The JDBC URL used to connect to the database, for example `jdbc:postgresql://postgres-shared-postgresql.privatecloud-storage.svc.cluster.local:5432/myappdb?sslmode=prefer`.
 * **User** - Specifies the username to be used by the Mendix app environment to connect to the database.
