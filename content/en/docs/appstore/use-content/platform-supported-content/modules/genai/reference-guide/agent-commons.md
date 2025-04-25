@@ -60,19 +60,6 @@ Download the [Agent Builder Starter App](https://marketplace.mendix.com/link/com
 {{% /alert %}}
 
 
-
-GenAI Commons is the foundation of large language model implementations within the [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/), [OpenAI connector](/appstore/modules/genai/reference-guide/external-connectors/openai/), and the [Amazon Bedrock connector](/appstore/modules/genai/bedrock/), but may also be used to build other GenAI service implementations on top of it by reusing the provided domain model and exposed actions.
-
-Although GenAI Commons technically defines additional capabilities typically found in chat completion APIs, such as image processing (vision) and tools (function calling), it depends on the connector module of choice for whether these are actually implemented and supported by the LLM. To learn which additional capabilities a connector supports and for which models these can be used, refer to the documentation of that connector.
-
-### Token Usage
-
-GenAI Commons can help store usage data which allows admins to understand the token usage. Usage data is only persisted if the constant `StoreUsageMetrics` is set to `true` and the GenAI connector of choice has implemented the operation to store token usage. In general, this is only supported for chat completions and embedding operations.
-
-To clean up usage data in a deployed app, you can enable the daily scheduled event `ScE_Usage_Cleanup` in the Mendix Cloud Portal. Use the `Usage_CleanUpAfterDays` constant to control for how long token usage data should be persisted. 
-
-Lastly, the [Conversational UI module](/appstore/modules/genai/conversational-ui/) provides pages, snippets, and logic to display and export token usage information. For this to work, the module roles `UsageMonitoring` from both Conversational UI as well as GenAI Commons need to be assigned to the applicable project roles.
-
 ## Technical Reference {#technical-reference}
 
 The technical purpose of the GenAI Commons module is to define a common domain model for generative AI use cases in Mendix applications. To help you work with the **GenAI Commons** module, the following sections list the available [entities](#domain-model), [enumerations](#enumerations), and [microflows](#microflows) to use in your application. 
