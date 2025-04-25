@@ -2,11 +2,10 @@
 title: "Security Overview"
 url: /refguide/security-overview/
 weight: 20
-beta: true
 ---
 
 {{% alert color="info" %}}
-This feature was introduced in Mendix 10.18 and is currently in beta. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+The security overview became generally available in Mendix version 10.21.0. It was previously available as a beta starting from version 10.18.
 {{% /alert %}}
 
 ## Introduction
