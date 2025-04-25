@@ -1,7 +1,7 @@
 ---
 title: "Show a Popup Notification Using Web API"
 linktitle: "Show Notification"
-url: /apidocs-mxsdk/apidocs/web-extensibility-api/notifications-api/
+url: /apidocs-mxsdk/apidocs/web-extensibility-api/notification-api/
 weight: 30
 ---
 
@@ -84,7 +84,7 @@ The show method has the following parameters:
 
 ## Conclusion
 
-You have seen how to use your app to show a notification inside Studio Pro.
+You have seen how to use your extension to show a notification inside Studio Pro.
 
 ## Extensibility Feedback
 
