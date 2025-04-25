@@ -229,7 +229,7 @@ To migrate from Mendix Team Server to a private Git server, follow your Git prov
 
 After migration, download a fresh clone in Studio Pro from your private Git server.
 
-{{% alert color="warning" %}} When redirecting an existing clone by modifying the `config` file in the `.git` folder, ensure you remove the `sprintr-project-id` setting to avoid Studio Pro errors. {{% /alert %}}
+{{% alert color="warning" %}} When redirecting an existing clone by updating the `config` file in the `.git` folder, make sure you remove the `sprintr-project-id` setting to prevent errors in Studio Pro. {{% /alert %}}
 
 ## Read More
 
