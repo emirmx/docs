@@ -2,7 +2,7 @@
 title: "Agent Commons"
 url: /appstore/modules/genai/genai-for-mx/agent-commons/
 linktitle: "Agent Commons"
-description: "Describes the purpose, configuration and usage of the GenAI Commons module from the Mendix Marketplace that allows developers to integrate GenAI common principles and patterns into their Mendix app."
+description: "Describes the purpose, configuration and usage of the Agents Commons module from the Mendix Marketplace that allows developers to build, define and refine Agents, to integrate GenAI principles and Agentic patterns into their Mendix app."
 weight: 20
 
 ---
@@ -23,15 +23,43 @@ The current scope of the module is focused on text and image generation, as well
 
 The GenAI Commons module requires Mendix Studio Pro version [9.24.2](/releasenotes/studio-pro/9.24/#9242) or above.
 
-You must also download the [Community Commons](/appstore/modules/community-commons-function-library/) module.
+You must also download the [Community Commons](/appstore/modules/community-commons-function-library/) module, the [GenAI Commons](https://marketplace.mendix.com/link/component/239448) module and the [Conversational UI](https://marketplace.mendix.com/link/component/239450).
 
 ## Installation {#installation}
 
-If you are starting from the [Blank GenAI app](https://marketplace.mendix.com/link/component/227934), or the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926), the GenAI Commons module is already included and does not need to be downloaded manually.
+If you start from a blank app, or have an existing project where you want to include the agent building functionalities from Agent Commons, you must install the module manually from the Mendix Marketplace. First, make sure your project contains the latest versions of the following dependencies:
 
-If you start from a blank app, or have an existing project where you want to include a connector for which the GenAI Commons module is required, you must install GenAI Commons manually. First, install the [Community Commons](/appstore/modules/community-commons-function-library/) module, and then follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to install the [GenAI Commons](https://marketplace.mendix.com/link/component/239448) module.
+- [Community Commons](/appstore/modules/community-commons-function-library/) 
+- [GenAI Commons](https://marketplace.mendix.com/link/component/239448)
+- [Conversational UI](https://marketplace.mendix.com/link/component/239450)
+
+ Then follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to install the [Agent Commons](https://marketplace.mendix.com/link/component/240371) module.
 
 ## Implementation {#implementation}
+
+### General Project Setup
+1. In the project security of your app, add the module role **AgentCommons.AgentAdmin** to the user roles that are intended to define and refine Agents.
+1. Add the **Agent_Overview** page (USE_ME > Agent Builder) to your Navigation or add the **Snippet_Agent_Overview** to a page that is already part of your Navigation. Now the Agents can be defined at runtime.
+
+### Define Agents
+1. Run the app (locally or in the cloud).
+1. Create and edit agents at runtime using the Agent overview. For an agent, write the prompts, use variable placeholders, add microflows as tools and connect knowledge bases to define the tasks and cabapilities of the agents.
+1. Configure the deployed model (LLM) that the agent should use, and connect the agent to it.
+1. Create various versions of the agents and test in an isolated setup to rapidly iterate, compare and evaluate the agentic behavior
+1. From the Agent overview, set a version as *in use* to allow it to be called from the actual logic in the app.
+
+### Call an Agent form the app logic
+
+1. In the microflow where the Agent needs to be called, make sure the Agent object is available, e.g. retrieve from database by name.
+1. Create a Request object using the [GenAI Commons operation](/appstore/modules/genai/genai-for-mx/commons/#chat-create-request) or use [Default Preprocessing from ConversationalUI](/appstore/modules/genai/conversational-ui-module/conversational-ui/chatcontext-operations) in case of a conversational interface.
+1. Use toolbox operations **Call Agent** from this module to use an agent in the microflow and make it part of your app logic. 
+1. Optionally see **Create Chat for Agent** to initiate a Chat Context for a Conversational Interface.
+
+{{% alert color="info" %}}
+Download the [Agent Builder Starter App](https://marketplace.mendix.com/link/component/240369) from the Marketplace for a detailed example of how to use the **Call Agent** activity in an action microflow of a chat interface.
+{{% /alert %}}
+
+
 
 GenAI Commons is the foundation of large language model implementations within the [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/), [OpenAI connector](/appstore/modules/genai/reference-guide/external-connectors/openai/), and the [Amazon Bedrock connector](/appstore/modules/genai/bedrock/), but may also be used to build other GenAI service implementations on top of it by reusing the provided domain model and exposed actions.
 
