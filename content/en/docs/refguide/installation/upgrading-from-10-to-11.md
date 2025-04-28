@@ -14,10 +14,11 @@ Mendix Studio Pro 11 is a [major version](/releasenotes/studio-pro/lts-mts/#majo
 
 ### Upgrading from Below 10
 
-If your app is on a Studio Pro version below 10, you must upgrade in order of version. 
+If your app is on a Studio Pro version below 10, you must upgrade in order of version: 
 
-Moving from Mendix Studio Pro 8 to 9
-Upgrading from Mendix Studio Pro 9 to 10
+* [Moving from Mendix Studio Pro 8 to 9](/refguide9/upgrading-from-8-to-9/)
+* [Upgrading from Mendix Studio Pro 9 to 10](/refguide10/upgrading-from-9-to-10/)
+
 If your app is running on Mendix Cloud, you can check what version the app is currently on by referring to the Control Center dashboard. Alternatively, contact your Customer Success Manager to find out how to check the Mendix version of your app.
 
 ### Steps Required for Upgrade
@@ -54,10 +55,9 @@ In general, you should not remove and re-import modules unless this is recommend
 
 After the upgrade of your marketplace content, take the next steps:
 
-1. Fix any deprecation warnings you see in development in Studio Pro, as well as in the Mendix.
-1. Runtime using your console and browser console.
-1. Review the major changes in the sections below
-1. Run your app, test all functionality, and ensure it works without error
+1. Fix any deprecation warnings you see in development in Studio Pro, as well as in the Mendix Runtime using your console and browser console.
+1. Review the major changes in the sections below.
+1. Run your app, test all functionality, and ensure it works without error.
 1. Back up or commit your Mendix 10 app so you can return to it if necessary.
 
 Your app is now ready to be upgraded to Mendix 11. You can now close the app in Studio Pro 10.
