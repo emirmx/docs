@@ -38,7 +38,7 @@ The **Estimated Duration** indicates the period during which backups are expecte
 | Region      | Replication Region | Start Time (UTC) | Local Time | Estimated Duration |
 | ----------- | ------------------ | ---------------- | ---------- | ------------------ |
 | Bahrain     | Mumbai             | 03:00            | 06:00      | 1 hour             |
-| Canada      | Canada West        | 05:00            | 00:00      | 1 hour             |
+| Canada      | Canada West        | 07:00            | 02:00      | 1 hour             |
 | Cape Town   | Frankfurt          | 02:00            | 04:00      | 1 hour             |
 | Dublin      | Frankfurt          | 23:00            | 00:00      | 3 hours            |
 | Frankfurt   | Dublin             | 00:00            | 01:00      | 3 hours            |
@@ -58,6 +58,8 @@ The **Estimated Duration** indicates the period during which backups are expecte
 Nightly backups start once an app has been successfully deployed to and started in the environment.
 
 If a nightly backup fails, it is retried two more times.
+
+**Note:** The nightly start time for a [free app](https://docs.mendix.com/developerportal/deploy/mendix-cloud-deploy/#free-app) is `19:00 UTC` despite it being in `Dublin` region.
 
 ### Notes on Retention
 
