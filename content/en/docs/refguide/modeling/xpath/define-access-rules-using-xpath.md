@@ -8,12 +8,6 @@ aliases:
     - /howto/logic-business-rules/define-access-rules-using-xpath/
 ---
 
-{{% todo %}}This should be rewritten using the new XPath mechanism?{{% /todo %}}
-
-{{% alert color="info" %}}
-This example is using a version of Mendix below 10.5. In Mendix version 10.5 and above, the [XPath Constraints](/refguide/xpath-constraints/) dialog has a different UX which makes it easier to build XPath constraints. However, the concepts and XPath examples can still be used in Mendix version 10.5 and above.
-{{% /alert %}}
-
 ## Introduction
 
 The access rules of an entity define what a user is allowed to do with the objects of the entity. Users can be allowed to create and/or delete objects and to view and/or edit member values. A member is an attribute or an association of an entity. Furthermore, the set of objects available for viewing, editing, and removing can be limited by means of an XPath constraint (for details, see [XPath Constraints](/refguide/xpath-constraints/) in the *Studio Pro Guide*). For more information on access rules, see [Access Rules](/refguide/access-rules/) in the *Studio Pro Guide*.
@@ -32,24 +26,24 @@ To prepare the data structure, GUI, and example data, follow these steps:
 
 1. Create the following domain model:
 
-    {{< figure src="/attachments/refguide/modeling/xpath/define-access-rules-using-xpath/18581378.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/xpath/define-access-rules-using-xpath/domain-model.png" >}}
 
     For more information on creating a domain model, see [Configuring a Domain Model](/refguide/configuring-a-domain-model/).
 2. Create overview and detail pages to manage the **Customer** and **Order** objects (for more information on creating these pages, see [How to Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/)).
 3. Create menu items to access the **Order** and **Customer** overview pages (for more information on creating menu items, see [Setting Up Navigation](/refguide/setting-up-the-navigation-structure/)).
 4. Set the **Security level** of you application to **Production** (for more information, see [How to Create a Secure App](/howto/security/create-a-secure-app/)).
 
-    {{< figure src="/attachments/refguide/modeling/xpath/define-access-rules-using-xpath/18581008.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/xpath/define-access-rules-using-xpath/app-security.png"  >}}
 
 5. Enter *FinancialAdministrator* for the **Name** of the new user role on the **User roles** tab (for more information on adding roles, see [How to Create a Secure App](/howto/security/create-a-secure-app/):
 
-    {{< figure src="/attachments/refguide/modeling/xpath/define-access-rules-using-xpath/18581005.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/xpath/define-access-rules-using-xpath/add-user-role.png" class="no-border" >}}
 
 6. Give both module roles access to all your created pages, and create separate read and write access rights to all your created entities (for more information on how to set the entity access, see [How to Create a Secure App](/howto/security/create-a-secure-app/)):
 
-    {{< figure src="/attachments/refguide/modeling/xpath/define-access-rules-using-xpath/18580997.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/xpath/define-access-rules-using-xpath/new-access-rule.png" >}}
 
-    {{< figure src="/attachments/refguide/modeling/xpath/define-access-rules-using-xpath/18581003.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/xpath/define-access-rules-using-xpath/page-security.png" class="no-border" >}}
 
 7. Add the following customer data to your app:
 
