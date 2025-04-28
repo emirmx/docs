@@ -47,9 +47,25 @@ To prepare the data structure, GUI, and example data, follow these steps:
 
 7. Add the following customer data to your app:
 
+    | Name | Address | Zip code | City |
+    | --- | --- | --- | --- |
+    | Olav | Gedempte Zalmhaven 34 | 3050 TE | Rotterdam |
+    | Tim | Kornoeljestraat 14 | 2514 RT | Den Haag |
+    | Peter | Meloenstraat 123 | 2565 PE | Den Haag |
+    | Harry | Emmerreklaan 25 | 1458 PE | Utrecht |
+
     {{< figure src="/attachments/refguide/modeling/xpath/define-access-rules-using-xpath/18581374.png" class="no-border" >}}
 
 8. Add the following order data to your app:
+
+    | Number | Customer | Date | Total price | Order status
+    | --- | --- | --- | --- | --- |
+    | 1 | Harry | 28-01-2025 | 345.00 | Open |
+    | 2 | Olav | 30-12-2024 | 1234.60 | Processing |
+    | 3 | Peter | 05-01-2025 | 23.60 | Open |
+    | 4 | Tim | 04-01-2025 | 586.90 | Complete |
+    | 5 | Olav | 21-01-2025 | 25.60 | Open |
+    | 6 | Peter | 16-01-2025 | 154.00 | Complete |
 
     {{< figure src="/attachments/refguide/modeling/xpath/define-access-rules-using-xpath/18581373.png" class="no-border" >}}
 
