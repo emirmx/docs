@@ -23,8 +23,8 @@ If your app is running on Mendix Cloud, you can check what version the app is cu
 We recommend to follow the following steps during your upgrade:
 
 1. Back up your app.
-1. Upgrade to the latest patch of Studio Pro 10.24.
-1. Upgrade Widgets, Modules, Marketplace Components, Templates, Connectors.
+1. Upgrade to the latest patch of Studio Pro.
+1. Upgrade widgets, modules, Marketplace components, templates, and connectors.
 1. Fix deprecations and test your app.
 1. Upgrade app to Mendix 11.
 
@@ -32,19 +32,19 @@ We recommend to follow the following steps during your upgrade:
 
 Make sure you have either committed your latest changes to Team Server, or created a backup of your local app before you start the conversion.
 
-## Preparing Your App in Studio Pro 10.24
+## Preparing Your App in Studio Pro 
 
-It is recommended that you first upgrade your app in Studio Pro 10.24, so you can upgrade to Mendix 11.
+We recommend you first upgrade your app in the latest Studio Pro so that you can upgrade to Mendix 11.
 
-To prepare your app in Studio Pro 10.24, follow these steps:
+To prepare your app in the latest Studio Pro, follow these steps:
 
-1. Download the latest patch release of Studio Pro 10.24.
-1. Open your app in Studio Pro 10.24.
-1. Allow Studio Pro to update and convert the app.
+1. Download the latest patch release of the latest Studio Pro.
+1. Open your app in Studio Pro.
+1. Allow Studio Pro to update and convert your app.
 
 ## Upgrading Widgets, Modules, and Marketplace Components {#upgrade-widgets}
 
-Now that your app is upgraded, you are ready to use the modules, widget and marketplace components. To minimize the chance of problems, it is recommended to upgrade to the versions that are compatible with the 10.24 LTS, and the next major version.
+Now that your app is upgraded, you are ready to use the modules, widget and marketplace components. To minimize the chance of problems, we recommended you upgrade to versions compatible with the the latest version of Studio Pro 10, as well as the versions compatible with the latest version of Mendix 11.
 
 In general, you should not remove and re-import modules unless this is recommended in the component’s release notes. If you do remove and re-import a component, you may lose data or configuration related to the component.
 
@@ -56,7 +56,7 @@ After the upgrade of your marketplace content, take the next steps:
 1. Runtime using your console and browser console.
 1. Review the major changes in the sections below
 1. Run your app, test all functionality, and ensure it works without error
-1. Back up or commit your 10.24 app so you can return to it if necessary.
+1. Back up or commit your Mendix 10 app so you can return to it if necessary.
 
 Your app is now ready to be upgraded to Mendix 11. You can now close the app in Studio Pro 10.
 
