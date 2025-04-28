@@ -16,7 +16,7 @@ There are several options for deployment with Mendix Cloud:
 
 * [Mendix Free](https://www.mendix.com/pricing/start-for-free/) – If you are new to the Mendix community and want to create, deploy, and share your own app, you can do so for free using Mendix's limited Free App environment. Note that Free Apps do not support complex or large applications, only run for a couple of hours before shutting down, cannot be scaled, and provide limited operational information.
 * [Mendix Cloud with licensed nodes](https://www.mendix.com/evaluation-guide/app-lifecycle/mendix-cloud-features/) – With a license, you can take advantage of Mendix Cloud's full features, including deep insights, alerting, high availability, and backups.
-* [Mendix Cloud Dedicated](https://www.mendix.com/evaluation-guide/app-lifecycle/mendix-cloud-overview/#mendix-cloud-vpc) – Organizations can have their own Mendix Cloud through Mendix Cloud Dedicated, a single-tenant instance of the public Mendix Cloud that runs only the organization's applications.
+* [Mendix Cloud Dedicated](https://www.mendix.com/evaluation-guide/app-lifecycle/mendix-cloud-overview/#mendix-cloud-vpc) – Organizations can have their own Mendix Cloud through Mendix Cloud Dedicated, a single-tenant instance of the public Mendix Cloud that runs only that organization's applications.
 
 ### Free App {#free-app}
 
@@ -64,7 +64,7 @@ There are two ways to prevent your Free App from being archived:
 
 #### Deletion of Unused Projects {#projects-deletion}
 
-If a project has never seen any activity since it was created, it is kept on the Team Server for a maximum of one year. After this, the project on the Mendix Platform, its repository on the Team Server, and any Mendix Cloud resources associated to the project will be permanently deleted.
+If a project has never seen any activity since it was created, it is kept on the Team Server for a maximum of one year. After this, the project on the Mendix Platform, its repository on the Team Server, and any Mendix Cloud resources associated with the project will be permanently deleted.
 
 The system uses the following criteria when determining if an app is unused:
 
