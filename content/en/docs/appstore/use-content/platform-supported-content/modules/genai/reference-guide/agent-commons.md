@@ -9,7 +9,7 @@ weight: 20
 
 ## Introduction
 
-The Agent Commons principles and module allow users to develop, test, and optimize their GenAI use cases by creating effective agents that interact with large language models (LLM). 
+The Agent Commons functionalities allows users to develop, test, and optimize their GenAI use cases by creating effective agents that interact with large language models (LLM). 
 Using the [Agent Commons](https://marketplace.mendix.com/link/component/239450) module you can use the Agent Management interface in your app to define agents at runtime and manage multiple versions over time.  It also supports defining variables that serve as placeholders for data from the app session context which are replaced by actual values when the end user interacts with the app. The module contains the necessary data model, pages, and snippets to include a prompt management interface to your app and get started.
 
 ### Typical Use Cases
