@@ -309,7 +309,7 @@ Once everything is ready, the offering is marked for production and is published
 
 Our goal is to ensure that users and customers of the Mendix Marketplace have the most up-to-date information about offerings. You must therefore manage the accuracy of your own offering on the Marketplace, making sure that it is kept up to date with new features or releases.
 
-If users or customers have additional questions about your product, or if they want to engage to discuss a challenge, they should always be able to contact you.  This can be done through the **Contact Us** form on the Mendix website, or by clicking the link to your webpage available on your product offering page. If they use the **Contact Us** form, you are notified, and are expected to respond in a timely manner.  
+If users or customers have additional questions about your product, or if they want to engage to discuss a challenge, they should always be able to contact you.  This can be done by clicking the link to your website available on your product offering page. For solutions, users can also get in touch with you through the **Contact Us** form on your solution page. If they do, you are notified, and are expected to respond in a timely manner.  
 
 #### Product Support Requirements
 
