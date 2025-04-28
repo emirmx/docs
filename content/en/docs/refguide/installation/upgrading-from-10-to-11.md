@@ -16,7 +16,7 @@ Mendix Studio Pro 11 is a [major version](/releasenotes/studio-pro/lts-mts/#majo
 
 If your app is on a Studio Pro version below 10, you must upgrade in order of version: 
 
-* [Moving from Mendix Studio Pro 8 to 9](/refguide9/upgrading-from-8-to-9/)
+* [Moving from Mendix Studio Pro 8 to 9](/refguide9/moving-from-8-to-9/)
 * [Upgrading from Mendix Studio Pro 9 to 10](/refguide10/upgrading-from-9-to-10/)
 
 If your app is running on Mendix Cloud, you can check what version the app is currently on by referring to the Control Center dashboard. Alternatively, contact your Customer Success Manager to find out how to check the Mendix version of your app.
