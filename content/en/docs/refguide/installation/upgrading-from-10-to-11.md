@@ -23,7 +23,7 @@ If your app is running on Mendix Cloud, you can check what version the app is cu
 
 ### Steps Required for Upgrade
 
-Regardless of which major version you are upgrading from, We recommend to follow the following steps during your upgrade:
+Regardless of which major version you are upgrading from, we recommend you upgrade in the following way:
 
 1. Back up your app.
 1. Upgrade to the latest patch of Studio Pro.
