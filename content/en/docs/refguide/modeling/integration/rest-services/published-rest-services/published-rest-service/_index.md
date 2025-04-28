@@ -47,7 +47,7 @@ The public documentation is used in the service's [OpenAPI (Swagger) Documentati
 
 ## OpenAPI Documentation
 
-In the **OpenAPI Documentation** pane, you can preview the API documentation for the published REST service. It displays the available operations and schemas that will become accessible when you run the app. This is similar to the [Swagger UI page](#api-documentation) that is available after publishing your app, except the preview is not interactive. 
+In the **OpenAPI Documentation** pane, you can preview the API documentation for the published REST service. It displays the available operations and schemas that will become accessible when you run the app. This is similar to the [Swagger UI page](/refguide/view-menu/#api-documentation) that is available after publishing your app, except the preview is not interactive. 
 
 ### Export OpenAPI Documentation {#export-openapi-documentation}
 
