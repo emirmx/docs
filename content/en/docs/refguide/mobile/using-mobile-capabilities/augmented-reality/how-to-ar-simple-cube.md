@@ -8,7 +8,7 @@ aliases:
 ---
 
 {{% alert color="warning" %}}
-Augmented Reality on Mendix Native Mobile apps is no longer supported and will not work in Mendix 10.18 and above. If you plan to use augmented reality in a Mendix app, please build a [progressive web app](/refguide/mobile/introduction-to-mobile-technologies/progressive-web-app/) and use [WebXR](/refguide/mobile/using-mobile-capabilities/augmented-reality/get-started-with-web-xr/) instead.
+Augmented Reality on Mendix Native Mobile apps is no longer supported and does not work in Mendix 10.18 and above. If you plan to use augmented reality in a Mendix app, please build a [progressive web app](/refguide/mobile/introduction-to-mobile-technologies/progressive-web-app/) and use [WebXR](/refguide/mobile/using-mobile-capabilities/augmented-reality/get-started-with-web-xr/) instead.
 {{% /alert %}}
 
 ## Introduction
