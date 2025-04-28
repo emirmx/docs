@@ -10,7 +10,9 @@ description: "Provides details on upgrading your app from Studio Pro 10 to Studi
 
 Mendix Studio Pro 11 is a [major version](/releasenotes/studio-pro/lts-mts/#major-version) release that provides powerful tools for building your apps and brings a host of improvements and fixes. For the full list of changes, see the [Studio Pro 11 release notes](/releasenotes/studio-pro/11.0/).
 
-### Upgrading from Older version to Studio Pro
+## Getting Ready to Upgrade
+
+### Upgrading from Below 10
 
 If your app is on a Studio Pro version below 10, you must upgrade in order of version. 
 
@@ -20,7 +22,7 @@ If your app is running on Mendix Cloud, you can check what version the app is cu
 
 ### Steps Required for Upgrade
 
-We recommend to follow the following steps during your upgrade:
+Regardless of which major version you are upgrading from, We recommend to follow the following steps during your upgrade:
 
 1. Back up your app.
 1. Upgrade to the latest patch of Studio Pro.
