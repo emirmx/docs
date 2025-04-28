@@ -7,35 +7,52 @@ weight: 20
 
 ---
 
-## Introduction {#introduction}
+## Introduction
 
-The [GenAI Commons](https://marketplace.mendix.com/link/component/239448) module combines common generative AI patterns found across various models on the market. Platform-supported GenAI-connectors use the underlying data structures and their operations. This makes it easier to develop vendor-agnostic AI-enhanced apps with Mendix, for example by using one of the connectors or the [Conversational UI](/appstore/modules/genai/conversational-ui/) module.
+The Agent Commons principles and module allow users to develop, test, and optimize their GenAI use cases by creating effective agents that interact with large language models (LLM). 
+Using the [Agent Commons](https://marketplace.mendix.com/link/component/239450) module you can use the Agent Management interface in your app to define agents at runtime and manage multiple versions over time.  It also supports defining variables that serve as placeholders for data from the app session context which are replaced by actual values when the end user interacts with the app. The module contains the necessary data model, pages, and snippets to include a prompt management interface to your app and get started.
 
-If two different connectors both adhere to the GenAI Commons module, they can be easily swapped, which reduces dependency on the model providers. In addition, the initial implementation of AI capabilities using the connectors becomes a drag-and-drop experience, so that developers can quickly get started. The module exposes useful operations which developers can use to build a request to a large language model (LLM) and to handle the response.
+### Typical Use Cases
 
-Developers who want to connect to another LLM provider or their own service are advised to use the GenAI Commons module as well. This speeds up the development and ensures that common principles are taken into account. Lastly, other developers or consumers of the connector can adapt to it more quickly.
+Typical use cases for prompt management include the following:
 
-### Limitations {#limitations}
+* The app includes one or more agentic patterns that include interactions with an LLM. 
+* The prompts for agents to do the LLM interaction need to be updated or improved without changing the code of the LLM interaction. This enables people outside the development team to change prompts (for example, data scientists).
+* The use case benefits from rapid iterations on prompts, microflows as tools, knowledge bases, models, and variable placeholders in a playground set-up, separately from app logic.
 
-The current scope of the module is focused on text and image generation, as well as embeddings and knowledge base use cases.
+### Features
+
+The Agent Commons functionality provides the following:
+
+* UI components and a data structure to manage, store, and rapidly iterate on agent  versions at runtime—without requiring app deployment to change the agent.
+* Support for both single-call and conversational agents.
+* Includes placeholders in prompts of the agents. The values will be populated in the running app based on a user/context object.
+* Logic to define and execute tests individually or in bulk, with result comparison.
+* Export/import functionality for transporting agents across different app environments (local, acceptance, and production).
+* The ability to manage the active agent version used by the running app's logic.
+
+### Limitations 
+
+The current scope of the module is focused on prompts with placeholders (variables), adding microflows with a single parameter as tools in a [Function Calling](/appstore/modules/genai/function-calling/) setup, and providing your agents access to knowledge bases provided by [Mendix Cloud GenAI Resources](/appstore/modules/genai/mx-cloud-genai/resource-packs/#knowledge-bases).
 
 ### Dependencies {#dependencies}
 
-The GenAI Commons module requires Mendix Studio Pro version [9.24.2](/releasenotes/studio-pro/9.24/#9242) or above.
+The Agent Commons module requires Mendix Studio Pro version [9.24.2](/releasenotes/studio-pro/9.24/#9242) or above.
 
-You must also download the [Community Commons](/appstore/modules/community-commons-function-library/) module, the [GenAI Commons](https://marketplace.mendix.com/link/component/239448) module and the [Conversational UI](https://marketplace.mendix.com/link/component/239450).
+You must also download the [Community Commons](/appstore/modules/community-commons-function-library/) module, the [GenAI Commons](https://marketplace.mendix.com/link/component/239448) module, the [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449) and the [Conversational UI](https://marketplace.mendix.com/link/component/239450).
 
-## Installation {#installation}
+## Installation
 
 If you start from a blank app, or have an existing project where you want to include the agent building functionalities from Agent Commons, you must install the module manually from the Mendix Marketplace. First, make sure your project contains the latest versions of the following dependencies:
 
 - [Community Commons](/appstore/modules/community-commons-function-library/) 
 - [GenAI Commons](https://marketplace.mendix.com/link/component/239448)
 - [Conversational UI](https://marketplace.mendix.com/link/component/239450)
+- [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449)
 
  Then follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to install the [Agent Commons](https://marketplace.mendix.com/link/component/240371) module.
 
-## Implementation {#implementation}
+## Configuration
 
 ### General Project Setup
 1. In the project security of your app, add the module role **AgentCommons.AgentAdmin** to the user roles that are intended to define and refine Agents.
