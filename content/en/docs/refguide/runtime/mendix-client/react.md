@@ -119,6 +119,13 @@ To automatically convert a reference selector widget or a drop-down to a combo b
 Because the reference set selector widget is technically a grid, while combo box is a drop-down, only the applicable configuration options will be transferred to the resulting combo box during conversion.
 {{% /alert %}}
 
+#### HTML / JavaScript Snippet
+
+The [HTML/Javascript snippet](/appstore/widgets/html-javascript-snippet/) is not supported in the React Client. To leverage React, this widget can be replaced using [HTML Element](/appstore/widgets/htmlelement/) widget or [Javascript actions](/refguide/javascript-actions/).
+
+1.  For **Content Type** HTML, the HTML Element can be downloaded [here](https://marketplace.mendix.com/link/component/204843).
+2.  For **Content Type** javascript, writing the code inside the supported javascript actions is the way forward. If user has the needs to execute the code in a certain way, calling the javascript action via nanoflow that triggers by [Events](/appstore/widgets/events/) widget is recommended.
+
 #### Data Grid{#data-grid}
 
 The data grid widget is not supported in the React client. To leverage React, replace it with the [Data Grid 2](/appstore/modules/data-grid-2/) widget. The data grid 2 widget is part of the [Data Widgets Module](https://marketplace.mendix.com/link/component/116540) in the Mendix Marketplace.
