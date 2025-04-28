@@ -75,15 +75,14 @@ Open your app in Studio Pro 11 and allow Studio Pro to update and convert your a
 * The JVM parameters `-Djava.security.manager` and `-Djava.security.policyare` no longer supported, as the Java Security Manager is deprecated and non-functional in Java 21.
 * The Task Queue setting `System context tasks` (**Runtime** tab in App Settings) is removed. This setting was deprecated in Mendix 9.6. Queued tasks are now always executed in a context equivalent to the one in which they were created. If an app still has this setting enabled, this results in a consistency check error. There is a quick fix option available in the error's context menu to disable the setting and resolve the error.
 * The `Core.getRuntimeVersion()` no longer contains the build number:
-    * The format used to be <major>.<minor>.<patch>.<build>
-    * The current format is <major>.<minor>.<patch>. 
-* The type parameter for `EventActionInfoclass` has been removed, as it was superfluous. This means `EventActionInfo<..>` info = new EventActionInfo<..>(..) will not compile anymore. To fix this, remove the `<..>` code.
+    * The format used to be `<major>.<minor>.<patch>.<build>`
+    * The current format is `<major>.<minor>.<patch>`. 
+* The type parameter for `EventActionInfoclass` has been removed, as it was superfluous. This means `EventActionInfo<..> info = new EventActionInfo<..>(..)` will no longer compile. To fix this, remove the `<..>` code.
 * String concatenation in expressions for empty/null values has changed. These values are no longer concatenated as 'null', instead they are omitted from the string. The old behavior can be achieved by using an if-else expression (for example 'Value: ' + (if $value != empty then $value else 'null') instead of 'Value: ' + $value).
 * The default value of the custom runtime setting **DataStorage.OptimizeSecurityColumns** was changed to true.
-* XPath API now uses limited XPath by default. We added a setting to make it not limited ("limited" means that arithmetic operators are not allowed as those are unsafe)
-* Following the MariaDB JDBC driver default, if you use MariaDB or MySQL with a DatabaseJdbcUrl we no longer accept jdbc:mysql: as a protocol. Use jdbc:mariadb: instead.
+* XPath API now uses limited XPath by default. We added a setting to make it not limited ("limited" means that arithmetic operators are not allowed as those are unsafe).
+* Following the MariaDB JDBC driver default, if you use MariaDB or MySQL with a DatabaseJdbcUrl   we no longer accept `jdbc:mysql:` as a protocol. Use `jdbc:mariadb:` instead.
 * For MariaDB and MySQL, we no longer set the sql_mode driver parameter. Unless overridden in DatabaseJdbcUrl, the database default will be used.
-* SELECT * in combination with UNION and ORDER BY is no longer allowed in runtime, as it leads to queries that are not accepted by most database engines
-OR (if we fix the issue DAT-4032)
-* We fixed the issue where SELECT * in combination with UNION and ORDER BY would fail on most database engines
+* SELECT * in combination with UNION and ORDER BY is no longer allowed in runtime, as it leads to queries that are not accepted by most database engines.
+* We fixed the issue where SELECT * in combination with UNION and ORDER BY would fail on most database engines.
 * When COALESCE function in OQL has attributes of different numeric types, the result type is defined according to type precedence. Before, the result type would match the type of the first argument.
