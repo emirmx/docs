@@ -145,19 +145,19 @@ The Snowflake REST SQL connector can be used to trigger data ingestion jobs with
 
 ## Binding Variables in Snowflake using the Snowflake REST SQL Connector
 
-When executing SQL statements from Mendix into Snowflake, **binding variables** is a critical concept that improves **security**, **performance**, and **maintainability** of your database interactions.
+When executing SQL statements from Mendix into Snowflake, *binding variables* is a critical concept that improves security, performance, and maintainability of your database interactions.
 
 ### What Is Variable Binding?
 
-Instead of putting values directly into your SQL, you can use **`?` placeholders** and provide the values separately. This is called *binding*. It works a lot like using parameters in a Mendix microflow—it keeps your logic and data separate.
+Instead of putting values directly into your SQL, you can use `?` placeholders and provide the values separately. This is called *binding*. It works in a similar way to using parameters in a Mendix microflow, that is, it keeps your logic and data separate.
 
 In Mendix, you do this by creating a `Statement` entity with a SQL query that includes `?`. Then, you add `Binding` entities to provide the values for those placeholders.
 
-Each `Binding` is linked to the `Statement`. The **order** of the bindings matters—the **first** binding fills the **first `?`**, the **second** fills the **second `?`**, and so on.
+Each `Binding` is linked to the `Statement`. The order of the bindings matters — the first binding fills the first `?`, the second fills the second `?`, and so on.
 
-Make sure the number of bindings matches the number of ? in your SQL. Otherwise, the execution will fail due to mismatched parameters.
+Make sure the number of bindings matches the number of `?` placeholders in your SQL. Otherwise, the execution will fail due to mismatched parameters.
 
-### Why Use Binding?
+### Use Cases
 
 | **Benefit**    | **Explanation**                                                                 |
 |----------------|----------------------------------------------------------------------------------|
