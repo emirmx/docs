@@ -64,7 +64,7 @@ When the **Show development environments** is checked, all subsequent searches r
 
 ## Integration Pane Information {#viewing}
 
-The information that is displayed in the [Integration pane](/refguide10//) either when you enter a search term or when you open the **Used in this app** section is described in the sections below. 
+The information that is displayed in the Integration pane either when you enter a search term or when you open the **Used in this app** section is described in the sections below. 
 
 ### Services
 
