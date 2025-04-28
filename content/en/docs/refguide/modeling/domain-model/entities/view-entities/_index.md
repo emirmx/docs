@@ -31,19 +31,19 @@ Your app must use OQL version 2 to use view entities. You can change this settin
 
 Double-click a view entity to open its Properties dialog box. An example of a view entity's properties dialog box is represented in the image below:
 
-{{< figure src="/attachments/refguide/modeling/domain-model/use-view-entities/view-entity.png" width="500" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/use-view-entities/view-entity.png" width="200" >}}
 
 An example of a view entity's properties dialog is represented in the image below:
 
 {{< figure src="/attachments/refguide/modeling/domain-model/use-view-entities/view-entity-dialog.png" width="500" >}}
 
-To open the oql query, click the **Show** button in the view entity dialog:
+To open the OQL query, click the **Show** button in the view entity dialog:
 
 {{< figure src="/attachments/refguide/modeling/domain-model/use-view-entities/view-entity-document.png" width="500" >}}
 
-Alternatively, you can right-click the entity and click **Go to oql query** from the context menu:
+Alternatively, you can right-click the entity and click **Go to OQL query** from the context menu:
 
-{{< figure src="/attachments/refguide/modeling/domain-model/use-view-entities/view-entity-contextual-menu.png" width="500" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/use-view-entities/view-entity-contextual-menu.png" width="300" >}}
 
 View entity properties consist of the following sections:
 
@@ -56,7 +56,7 @@ View entity properties consist of the following sections:
 
 #### Name {#name}
 
-The name property defines the name of the view entity and oql query document. This name is used to refer to the view entity in forms, microflows, queries, constraints, etc.
+The name property defines the name of the view entity and OQL query document. This name is used to refer to the view entity in forms, microflows, queries, constraints, etc.
 
 The name has to be unique only within the domain model of a module. You can have two view entities with the same name, provided they are in the domain models of different modules.
 
@@ -80,7 +80,7 @@ You can add any local information about the view entity in this tab. This is als
 
 This section contains the **OQL editor** and the **Preview data** table.
 
-The **OQL editor**  runs in the oql query tab, where interaction with various UI components in Studio Pro is possible, such as the Properties pane and a real-time view to preview your data.
+The **OQL editor** runs in the OQL query tab, where you can interact with various UI components in Studio Pro, such as the Properties pane and a real-time view to preview your data.
 
 The **OQL editor** allows you to write the query that defines this view entity. While writing the query, the editor suggests names of the entities and attributes in your domain model, as well as allowed clauses, operators, and functions. If the query is not valid, a list of validation errors are displayed underneath the editor with the line and column number of the place where the error was found.
 

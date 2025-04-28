@@ -28,8 +28,8 @@ An advantage of separating *OrderUpdate* from *OrderLine* is that it is easier t
 To view the latest status of an order, follow the steps below:
 
 1. Open your domain model and add a view entity named *LatestOrderStatusVE*.
-2. Click **Show** to open the oql query.
-3. Add the following query to the oql query to OQL editor:
+2. Click **Show** to open the OQL query.
+3. Add the following OQL query to the OQL editor:
 
     ```sql
     SELECT
@@ -59,18 +59,18 @@ For more information on different OQL clauses, see [OQL Version 2 Features](/ref
 The final result is a list with only the latest update of each order: 
 
 ```sql
-     SELECT o.OrderId AS OrderId,
-         o.RequiredDate AS RequiredDate,
-         u.OrderStatus AS OrderStatus,
-         u.UpdateDate AS UpdateDate
-     FROM Shop.OrderInfo o
-     JOIN O / Shop.OrderUpdate_Order Info / Shop.OrderUpdate u
-     JOIN 
-     ( SELECT u.OrderId AS OrderId,
-             MAX (u.UpdateDate) AS UpdateDate
-         FROM Shop.OrderUpdate u
-         GROUP  BY u.OrderId) latest ON (latest.OrderIdo.OrderId
-                                     AND latest.UpdateDate u.UpdateDate)
+SELECT o.OrderId AS OrderId,
+    o.RequiredDate AS RequiredDate,
+    u.OrderStatus AS OrderStatus,
+    u.UpdateDate AS UpdateDate
+FROM Shop.OrderInfo o
+JOIN O / Shop.OrderUpdate_Order Info / Shop.OrderUpdate u
+JOIN 
+( SELECT u.OrderId AS OrderId,
+        MAX (u.UpdateDate) AS UpdateDate
+    FROM Shop.OrderUpdate u
+    GROUP  BY u.OrderId) latest ON (latest.OrderIdo.OrderId
+                                AND latest.UpdateDate u.UpdateDate)
 ```
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-data-versioning/data-grid.png" width="500" >}}
@@ -86,20 +86,20 @@ WHERE u.UpdateDate < CAST('1997/08/17' as DATETIME)
 This addition retrieves the order status for one specific date:
 
 ```sql
-     SELECT o.OrderId AS OrderId,
-         o.RequiredDate AS RequiredDate,
-         u.OrderStatus AS OrderStatus,
-         u.UpdateDate AS UpdateDate
-     FROM Shop.ORDER
-     Info o
-     JOIN O / Shop.OrderUpdate_Order Info / Shop.OrderUpdate u
-     JOIN 
-     ( SELECT u.OrderId AS OrderId,
-             MAX (u.UpdateDate) AS UpdateDate
-         FROM Shop.OrderUpdate u
-         GROUP  BY u.OrderId) latest ON (latest.OrderId = o.OrderId
-                                     AND latest.UpdateDate u.UpdateDate)
-     WHERE u.UpdateDate <  CAST ( '1997/08/17'  AS DATETIME)
+SELECT o.OrderId AS OrderId,
+    o.RequiredDate AS RequiredDate,
+    u.OrderStatus AS OrderStatus,
+    u.UpdateDate AS UpdateDate
+FROM Shop.ORDER
+Info o
+JOIN O / Shop.OrderUpdate_Order Info / Shop.OrderUpdate u
+JOIN 
+( SELECT u.OrderId AS OrderId,
+        MAX (u.UpdateDate) AS UpdateDate
+    FROM Shop.OrderUpdate u
+    GROUP  BY u.OrderId) latest ON (latest.OrderId = o.OrderId
+                                AND latest.UpdateDate u.UpdateDate)
+WHERE u.UpdateDate <  CAST ( '1997/08/17'  AS DATETIME)
 ```
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-data-versioning/data-grid-2.png" width="500" >}}
