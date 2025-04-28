@@ -271,6 +271,8 @@ The instructions below show how to import data from an Excel (or CSV) file.
 
 ### Support for Mapping Parameter in Import Mapping {#mapping-param-import-mapping}
 
+{{% alert color="warning" %}} To support this feature, the compatible version of DataImporter runtime module is 1.5.0 and above. {{% /alert %}}
+
 The [Mapping Parameter](/refguide/import-mappings/#mapping-parameter) is supported by Data Importer starting from Mendix 10.21. The Mapping Parameter can be used to create associations with imported data. Primitive types that are not supported but any Mendix object type can be passed as the **Mapping Parameter**.
 
 Follow the instructions below to define an **Import Mapping** with mapping parameters. 
@@ -329,3 +331,8 @@ You can now update the domain model entities, microflows, pages, and any other d
 ### Unchecked Columns
 
 It is not possible to rename an attribute or change a data type if there are unchecked columns. To avoid this issue, format your Excel or CSV file in a way that does not require you to uncheck any columns after inputting to Studio Pro. 
+
+### "No suitable constructors found" error in Studio Pro version < 10.21.0 with Data Importer module version 1.4.0
+
+While using DataImporter document with ImportMapping capability; we identified an issue where runtime module throws an error with message "No suitable constructors found for action class 'DataImportMapping'." this is due to non-compatible DataImporter module on marketplace. If you face this issue then (re)import latest version of DataImporter module from marketplace. We have republished DataImporter module version 1.4.0 to solve this issue.
+
