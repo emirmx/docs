@@ -97,6 +97,10 @@ To export the **Security Overview**, click the **Export to Excel** button. This 
     4. Anonymous role: Specifies whether this user roles is an anonymous user role.
     5. Administrator role: Specifies whether this user role is the administrator user role.
 
+## CLI export
+
+The security overview can be exported to a JSON or xlsx file with the `mx` command line tool. See the [export-security-overview](/refguide/mx-command-line-tool/security/#export-security-overview) command.
+
 ## Read More
 
 * [User Roles](/refguide/user-roles/)

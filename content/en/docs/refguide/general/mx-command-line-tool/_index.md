@@ -72,6 +72,10 @@ These are the available [merging and diffing commands](/refguide/mx-command-line
 | [diff](/refguide/mx-command-line-tool/merge/#diff) | Shows the diff of the *.mpr* files. |
 | [dump-mpr](/refguide/mx-command-line-tool/dump-mpr/) | Create a JSON description of the model of a Mendix App |
 
+### Security Overview Command
+
+The available `export-security-overview` exports the [Security Overview](/refguide/security-overview/). For more information, see [Security Overview Command](/refguide/mx-command-line-tool/security/#export-security-overview).
+
 ## Undocumented Options
 
 The mx tool contains options that are not described in this document. These options are for internal Mendix usage and are not officially supported. This might change in the future, but these options are used at your own risk.
