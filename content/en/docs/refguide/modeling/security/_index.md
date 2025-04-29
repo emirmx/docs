@@ -88,5 +88,5 @@ If you want to invite your colleagues to build your app, you can manage the **Te
 The [Security Overview](/refguide/security-overview/) provides you with an overview of your app's security. To access the overview, open the **App** menu, and then click **Show Security Overview**. 
 
 {{% alert color="info" %}}
-The security overview became generally available in Mendix version 10.21.0. It was previously available as a beta starting from version 10.18.
+The security overview became generally available in Studio Pro version 10.21.0. It was previously in beta starting from version 10.18.
 {{% /alert %}}
