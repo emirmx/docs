@@ -5,7 +5,7 @@ weight: 20
 ---
 
 {{% alert color="info" %}}
-The security overview became generally available in Mendix version 10.21.0. It was previously available as a beta starting from version 10.18.
+The security overview became generally available in Studio Pro version 10.21.0. It was previously in beta starting from version 10.18.
 {{% /alert %}}
 
 ## Introduction
