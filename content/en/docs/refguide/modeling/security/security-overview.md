@@ -4,10 +4,6 @@ url: /refguide/security-overview/
 weight: 20
 ---
 
-{{% alert color="info" %}}
-The security overview became generally available in Studio Pro version 10.21.0. It was previously in beta starting from version 10.18.
-{{% /alert %}}
-
 ## Introduction
 
 The **Security Overview** page provides you with an overview of your app's security. 
