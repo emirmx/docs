@@ -59,7 +59,9 @@ Nightly backups start once an app has been successfully deployed to and started 
 
 If a nightly backup fails, it is retried two more times.
 
-**Note:** The nightly start time for a [free app](https://docs.mendix.com/developerportal/deploy/mendix-cloud-deploy/#free-app) is `19:00 UTC` despite it being in `Dublin` region.
+{{% alert color="info" %}}
+Although they are hosted in the Dublin region, the start time for nightly backups of [free apps](/developerportal/deploy/mendix-cloud-deploy/#free-app) is 19:00 UTC.
+{{% /alert %}}
 
 ### Notes on Retention
 
