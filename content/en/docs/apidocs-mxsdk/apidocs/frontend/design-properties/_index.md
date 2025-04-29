@@ -61,7 +61,7 @@ Here is a simplified example of a design properties file:
             "name": "My Toggle Property",
             "type": "Toggle",
             "description": "Description of My Toggle Design Property",
-            "category": "Best place for this toggle property"
+            "category": "Best place for this toggle property",
             "class": "hereMyClass"
         },
         {
