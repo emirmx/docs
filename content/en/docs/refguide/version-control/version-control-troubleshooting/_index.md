@@ -156,3 +156,11 @@ You can download and install a recent version of Git from [here](https://git-scm
 
 Sometimes the Git process may crash while performing any operation on the repository. The reason for this can be a dead battery, a blue screen on Windows, or any other unexpected shutdown. As a result, there is a leftover *index.lock* file, which blocks other Git operations.
 To fix this, go to `<directory of your app>/.git/` and delete the *index.lock* file.
+
+### Unknown Author Shown in Version Control History
+
+In case of a configuration error, an unknown author may appear in the commit history for one or more commits. The values used for commit messages originate from the Git configuration. This information is not used for authentication on Team Server and can be adjusted in [Preferences](/refguide/preferences-dialog/#name).
+
+Other tools on your machine that use the Git configuration, such as a traditional IDE, are typically also capable of changing this Git configuration. If you have chosen a name and email for a hobby project in another IDE, that information may also appear in commits made from Studio Pro.
+
+To fix the issue, ensure that responsible users change their Git configuration in [Preferences](/refguide/preferences-dialog/#name). Changing historical commits is not possible within Studio Pro. 
