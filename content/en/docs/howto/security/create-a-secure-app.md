@@ -258,13 +258,20 @@ An XPath constraint can be used to constrain the set of objects to which the acc
 
 1. Double-click the **Order** entity:
 
-    {{< figure src="/attachments/howto/security/create-a-secure-app/18581527.png" class="no-border" >}}
+    {{< figure src="/attachments/howto/security/create-a-secure-app/order-entity.png" class="no-border" >}}
 
 2. On the **Properties of Entity 'MyFirstModule.Order'** editor, open the **Access rules** tab:
 
-    {{< figure src="/attachments/howto/security/create-a-secure-app/18581525.png" class="no-border" >}}
+    {{< figure src="/attachments/howto/security/create-a-secure-app/access-rules.png" class="no-border" >}}
 
-3. Double-click the **User** module role to open the **Edit Access Rule of Entity 'MyFirstModule.Order'** editor and select the **XPath constraint** tab:
+3. Double-click the column containing the **User** module role to open the **Edit Access Rule of Entity 'MyFirstModule.Order'** editor, or click **New** to create a new module role if the **User** module role does not yet exist.
+
+4. Set up the **User** role as follows:
+
+    * **Rule applies to the following module roles** – **User**
+    * **Entity rights** – **Create objects** and **Delete objects**
+
+4. Click **Edit…** next to **XPath constraint**
 
     {{< figure src="/attachments/howto/security/create-a-secure-app/18581523.png" class="no-border" >}}
 
