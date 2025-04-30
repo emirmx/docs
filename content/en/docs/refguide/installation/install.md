@@ -52,7 +52,6 @@ The prerequisites are the following:
 
 * [Microsoft Visual C++ 2015 and 2019 Redistributable Package](https://aka.ms/vs/16/release/vc_redist.x64.exe)
 * [Mendix Native Mobile Builder one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
-
 * [Git for Windows (x64)](https://git-scm.com/download/win) (Git version [2.48.1](https://github.com/git-for-windows/git/releases/download/v2.48.1.windows.1/Git-2.48.1-64-bit.exe) or above is required)
 
 {{% alert color="warning" %}} 

@@ -119,7 +119,7 @@ XPath constraints are not applied to create operations, meaning that if you enab
 
 XPath constraints are applied to delete operations, unlike create operations.
 
-#### Default rights for new members
+#### Default Rights for New Members{#default-rights}
 
 Specifies the rights which are applied to new attributes or associations of this entity. This option was absent from the new Access Rule Editor before version 10.19 and in these versions the rights always defaulted to no access for any module roles.
 
