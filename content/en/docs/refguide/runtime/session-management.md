@@ -18,7 +18,7 @@ This approach provides a unified solution for session management, allowing long-
 Authentication tokens allow users to stay logged in for long periods of time. They store the credentials of the user on the user's device and use that to automatically create a new session when the previous session is expired.
 
 {{% alert color="warning" %}}
-Authentication tokens cannot be used with a login processing relying on `login.html`. To make use of authentication tokens, [create a modeled sign-in page](/refguide/mobile/using-mobile-capabilities/auth-users/#model-the-sign-in-page) that uses the Sign in Nanoflow action or the `login2` client API.
+Authentication tokens cannot be used with a login processing relying on `login.html`. To make use of authentication tokens, [create a modeled sign-in page](/refguide/mobile/using-mobile-capabilities/auth-users/#model-the-sign-in-page) that uses the Sign in Nanoflow action or the [Mendix 11 Client API](/apidocs-mxsdk/apidocs/client-api/#client-api).
 {{% /alert %}}
 
 ### Authentication Token Generation
@@ -29,16 +29,11 @@ This approach enhances security, as these cookies are inaccessible to anything o
 
 ### Enable Authentication Token
 
-If you want to generate authentication tokens in your online app, you have to use the client API `login2`. 
+If you want to generate authentication tokens in your online app, you have to use the [Mendix 11 Client API](/apidocs-mxsdk/apidocs/client-api/#client-api). 
 
-The `login2` API allows you to pass the parameter `useAuthToken`. The value `true` enables the authentication token, `false` disables it. If the login action passes `true` to the runtime, the runtime adds an HttpOnly cookie `useAuthToken` indicating that an authentication token should be generated during the client startup. 
+The `login` method of this API allows you to pass the parameter `useAuthToken`. The value `true` enables the authentication token, `false` disables it. If the login action passes `true` to the runtime, the runtime adds an HttpOnly cookie `useAuthToken` indicating that an authentication token should be generated during the client startup. 
 
 You can also model your login page to provide end-users with a "remember me" option so they can decide whether they want to be remembered or not.
-
-Follow the links below to find the `login2` API specifications for the following:
-
-* [React](https://apidocs.rnd.mendix.com/10/client-react/mx.html#.login2)
-* [Non-react (Dojo)](https://apidocs.rnd.mendix.com/10/client/mx.html#.login2)  
 
 ### Authentication Token Expiry
 
@@ -50,13 +45,19 @@ There is a custom runtime setting, [`com.mendix.webui.HybridAppLoginTimeOut`](/r
 
 This feature maintains backward compatibility, If end-users haven't updated their apps on their devices, but the runtime is a newer version, it still functions correctly to support the previous session management methods.
 
-Upgraded offline-first applications use the new authentication token system by default as calls to the login API are redirected to the login2 API and enable the authentication token system.
+Upgraded offline-first applications use the new authentication token system by default as calls to the login API enable the authentication token system.
 
-If you do not want your offline-first app to create an authentication token, you can disable the use of authentication tokens by writing your own flow using the new API, `login2`, but setting the `useAuthToken` parameter to `false`.
+If you do not want your offline-first app to create an authentication token, you can disable the use of authentication tokens by writing your own flow using the `login` method of the `mx-api` module in the [Mendix 11 Client API](/apidocs-mxsdk/apidocs/client-api/#client-api) but setting the `useAuthToken` parameter to `false`.
 
 ### Online Applications
 
-By default, authentication tokens will not be used in online Mendix apps. However, you can use them to remember the end-user by writing your own flow using the new API, `login2`, and setting the `useAuthToken` parameter to `true`.
+By default, authentication tokens will not be used in online Mendix apps. However, you can use them to remember the end-user by:
+
+* using the Sign in activity from the Nanoflow Commons module with the `useAuthToken` parameter set to `true`. This is the recommended and easiest method.
+* writing your own flow using the `login` method of the `mx-api` module in the [Mendix 11 Client API](/apidocs-mxsdk/apidocs/client-api/#client-api) but setting the `useAuthToken` parameter to `true`.
+* writing a Java action using the `addMendixCookies` method of the [Runtime API](/apidocs/runtime-api/), and setting the `useAuthToken` parameter to `true`.
+
+By default, authentication tokens will not be used in online Mendix apps. However, you can use them to remember the end-user by 
 
 Online apps still utilize the [EnableKeepAlive](/refguide/tricky-custom-runtime-settings/#session-duration) setting to maintain uncommitted data which changes during the session. If that setting is disabled and `useAuthToken` is set to `true`, uncommitted changes will be lost if an action is performed after the session expires, which occurs after the [SessionTimeout](https://github.com/refguide/custom-settings/#SessionTimeout). In this case, the authentication token is used to reinitialize the session to keep user signed in, after which the application is reloaded.
 
