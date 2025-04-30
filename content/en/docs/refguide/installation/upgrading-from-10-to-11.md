@@ -97,3 +97,5 @@ For optimal implementation, ensure all UI modules either use CSS variables or ha
 * SELECT * in combination with UNION and ORDER BY is no longer allowed in runtime, as it leads to queries that are not accepted by most database engines.
 * We fixed the issue where SELECT * in combination with UNION and ORDER BY would fail on most database engines.
 * When COALESCE function in OQL has attributes of different numeric types, the result type is defined according to type precedence. Before, the result type would match the type of the first argument.
+* Client API `mx.logger` is no longer supported. All calls to it should be replaced with standard `console.log`, `console.warn`, and other such standard calls. All widgets that use the `mx.logger` need to be updated. 
+* We no longer convert `empty` values sent to the client into empty strings. All client side expressions must be adjusted accordingly.
