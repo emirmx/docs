@@ -68,8 +68,19 @@ Open your app in Studio Pro 11 and allow Studio Pro to update and convert your a
 
 ## Notable and Breaking Changes
 
+### Migrating From Atlas 3 to 4 (optional)
+
+Upgrading from Atlas 3 to Atlas 4 in Mendix 11 is an optional process, with the main structural change being the transition from SASS to CSS variables. The new system is backwards compatible with apps using SASS variables, and includes a mapping mechanism to ensure old SASS variables are mapped to CSS variable usages. 
+
+If you wish to opt-in, start by downloading the Atlas 4 module from the Marketplace into your app.
+
+We recommend you also upgrade Atlas Web Content if it is in your app. 
+
+For optimal implementation, ensure all UI modules either use CSS variables or have their variables defined within the module. If an app uses CSS variables inside **theme/web/custom-variables.scss** while some UI modules still rely on old Atlas SASS variables, those usages will fallback to Atlas default values. Therefore, we recommend you to transition to CSS variables only after confirming that all company design modules no longer depend on Atlas SASS variables.
+
+### Other
+
 * Studio Pro 10.21 and above requires your application to use Java 21. The Java version of an application can be configured in the runtime settings. Java 21 is available in 9.24.23 and above. Please consider the Java Version Migration guide for a list of changes between Java versions. For on-premises deployments, ensure that JDK 21 is installed in the environments where Mendix 10 applications are deployed.
-* If you opt-in to upgrade from Atlas 3 to Atlas 4, there will be some manual troubleshooting involved for your styling. Consult the warnings and resolve them before saving and running your app.
 * In a published REST operation where the **Accept** header is sent as generic */* or application/* then XML would be returned instead of the intended JSON.  This has been changed to always send JSON.
 * Consumed REST Service: removed app setting 'Automatically encode parameter values in Send REST request microflow activities' In 10.20 and below, Consumed REST Services would not encode parameters while modeling, but parameters would be encoded when used from a Send REST request activity. This was confusing, so in version 10.21 we introduced a setting to enable or disable this behavior. This setting has been removed in Mendix 11. Consistency parameters are now never automatically encoded both from the consumed REST Service and the Send REST Request activity. If you require encoding for parameters, you must add that yourself. Legacy migration of **System.Imagethumbnail** files has been removed. This was introduced in Mendix 6. If you are migrating from a Mendix 6 application, then first migrate to Mendix 10 and run the application in production to finish migration before migrating further to Mendix 11.
 * The JVM parameters `-Djava.security.manager` and `-Djava.security.policyare` no longer supported, as the Java Security Manager is deprecated and non-functional in Java 21.
