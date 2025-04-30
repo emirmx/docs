@@ -53,7 +53,7 @@ If you do not want your offline-first app to create an authentication token, you
 
 By default, authentication tokens will not be used in online Mendix apps. However, you can use them to remember the end-user by:
 
-* using the Sign in activity from the Nanoflow Commons module with the `useAuthToken` parameter set to `true`. This is the recommended and easiest method.
+* using the **SignIn** activity from the **NanoflowCommons** module with the `useAuthToken` parameter set to `true`. This is the recommended and easiest method.
 * writing your own flow using the `login` method of the `mx-api` module in the [Mendix 11 Client API](/apidocs-mxsdk/apidocs/client-api/#client-api) but setting the `useAuthToken` parameter to `true`.
 * writing a Java action using the `addMendixCookies` method of the [Runtime API](/apidocs/runtime-api/), and setting the `useAuthToken` parameter to `true`.
 
