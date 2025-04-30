@@ -51,13 +51,11 @@ If you do not want your offline-first app to create an authentication token, you
 
 ### Online Applications
 
-By default, authentication tokens will not be used in online Mendix apps. However, you can use them to remember the end-user by:
+By default, authentication tokens will not be used in online Mendix apps. However, you can use them in both online and offline apps to remember the end-user by:
 
-* using the **SignIn** activity from the **NanoflowCommons** module with the `useAuthToken` parameter set to `true`. This is the recommended and easiest method.
-* writing your own flow using the `login` method of the `mx-api` module in the [Mendix 11 Client API](/apidocs-mxsdk/apidocs/client-api/#client-api) but setting the `useAuthToken` parameter to `true`.
+* using the **SignIn** activity from the **NanoflowCommons** module (version 6.0.0 or above) with the `useAuthToken` parameter set to `true`. This is the recommended and easiest method.
+* writing your own nanoflow using the `login` method of the `mx-api` module in the [Mendix 11 Client API](/apidocs-mxsdk/apidocs/client-api/#client-api) but setting the `useAuthToken` parameter to `true`.
 * writing a Java action using the `addMendixCookies` method of the [Runtime API](/apidocs/runtime-api/), and setting the `useAuthToken` parameter to `true`.
-
-By default, authentication tokens will not be used in online Mendix apps. However, you can use them to remember the end-user by 
 
 Online apps still utilize the [EnableKeepAlive](/refguide/tricky-custom-runtime-settings/#session-duration) setting to maintain uncommitted data which changes during the session. If that setting is disabled and `useAuthToken` is set to `true`, uncommitted changes will be lost if an action is performed after the session expires, which occurs after the [SessionTimeout](https://github.com/refguide/custom-settings/#SessionTimeout). In this case, the authentication token is used to reinitialize the session to keep user signed in, after which the application is reloaded.
 
