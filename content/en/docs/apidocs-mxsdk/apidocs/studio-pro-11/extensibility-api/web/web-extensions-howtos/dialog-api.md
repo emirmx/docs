@@ -49,7 +49,7 @@ class Main implements IComponent {
     studioPro.ui.extensionsMenu.addEventListener(
       "menuItemActivated",
       async (args) => {
-        if (args.menuId === menuId) {
+        if (args.menuId === this.menuId) {
           const result = await studioPro.ui.dialogs.showModal(
             {
               title: "Modal Dialog",
@@ -85,7 +85,7 @@ In the previous example, the `uiEntryPoint` property of the `<uispec>` object ha
     "entryPoints": {
       "main": "main.js",
       "ui": {
-        "dialog": "assets/dialog.js"
+        "dialog": "dialog.js"
       }
     }
   }
