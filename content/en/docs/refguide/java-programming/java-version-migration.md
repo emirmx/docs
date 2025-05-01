@@ -9,6 +9,10 @@ description: "Describes consequences for a Mendix app when migrating from one Ja
 
 Mendix applications run in a Java Virtual Machine (JVM). The version of Java can influence the behavior of an application. It is important to know how application behavior can change when you migrate an application to a higher Java version. This page shows known implications of Java version migrations.
 
+Migration to a higher version can be required when you upgrade your application to a higher version of Studio Pro. An error is shown when this is needed. You can right-click that error and choose to set the correct Java version.  
+
+You can always configure your application to run another Java version if the Studio Pro version in use supports multiple Java versions. You can do this through the **Runtime** tab in the **App Settings** dialog box. For more instructions, see the [Java Version](/refguide/app-settings/#java-version) section in **App Settings**.
+
 New information will be added to this page as it is reported. Feel free to update it yourself, or raise an issue if you identify a change in behavior.
 
 ## From Java 11 to 17
