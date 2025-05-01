@@ -15,10 +15,10 @@ This approach provides a unified solution for session management, allowing long-
 
 ## Authentication Token
 
-Authentication tokens allow users to stay logged in for long periods of time. They store the credentials of the user on the user's device and use that to automatically create a new session when the previous session is expired.
+Authentication tokens allow users to stay logged in for long periods of time. They store the authentication data of the user on the user's device and use that to automatically create a new session when the previous session is expired.
 
 {{% alert color="warning" %}}
-Authentication tokens cannot be used with a login processing relying on `login.html`. To make use of authentication tokens, [create a modeled sign-in page](/refguide/mobile/using-mobile-capabilities/auth-users/#model-the-sign-in-page) that uses the Sign in Nanoflow action or the [Mendix 11 Client API](/apidocs-mxsdk/apidocs/client-api/#client-api).
+Authentication tokens cannot be used with a login processing relying on `login.html`. To make use of authentication tokens, [create a modeled sign-in page](/refguide/mobile/using-mobile-capabilities/auth-users/#model-the-sign-in-page) that uses the **Sign in** Nanoflow action or the [Mendix 11 Client API](/apidocs-mxsdk/apidocs/client-api/#client-api). For more information see [Working with Authentication Tokens](#work-with), below.
 {{% /alert %}}
 
 ### Authentication Token Generation
