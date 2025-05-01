@@ -14,7 +14,7 @@ Using the [Agent Commons](https://marketplace.mendix.com/link/component/239450) 
 
 ### Typical Use Cases
 
-Typical use cases for prompt management include the following:
+Typical use cases for Agent Commons include the following:
 
 * The app includes one or more agentic patterns that include interactions with an LLM. 
 * The prompts for agents to do the LLM interaction need to be updated or improved without changing the code of the LLM interaction. This enables people outside the development team to change prompts (for example, data scientists).
@@ -24,12 +24,12 @@ Typical use cases for prompt management include the following:
 
 The Agent Commons functionality provides the following:
 
-* UI components and a data structure to manage, store, and rapidly iterate on agent  versions at runtime—without requiring app deployment to change the agent.
-* Support for both single-call and conversational agents.
+* Agent Builder UI components and a data structure to manage, store, and rapidly iterate on agent  versions at runtime—without requiring app deployment to change the agent.
+* Support for calling both single-call and conversational agents from microflows and workflows.
 * Includes placeholders in prompts of the agents. The values will be populated in the running app based on a user/context object.
 * Logic to define and execute tests individually or in bulk, with result comparison.
 * Export/import functionality for transporting agents across different app environments (local, acceptance, and production).
-* The ability to manage the active agent version used by the running app's logic.
+* The ability to manage the active agent version used by the logic in the running app.
 
 ### Limitations 
 
@@ -54,19 +54,19 @@ If you start from a blank app, or have an existing project where you want to inc
 
 ## Configuration
 
-To use the Prompt Management functionality in your app, you must perform the following tasks in Studio Pro:
+To use the Agent Commons functionalities in your app, you must perform the following tasks in Studio Pro:
 
 1. Add the relevant [module roles](#module-roles) to the applicable user roles in the project security.
-2. Add the [UI to your app](#ui-components) by using the pages and snippets as a basis.
-3. Make sure to have a [deployed model](#deployed-models) configured.
-4. Define and test the [agent](#define-agent).
-5. Add the agent to the [logic](#app-logic) of the actual use case.
-6. Improve and [iterate on agent versions](#improve-agent).
+1. Add the [Agent Builder UI to your app](#ui-components) by using the pages and snippets as a basis.
+1. Make sure to have a [deployed model](#deployed-models) configured.
+1. [Define](#define-prompt), the prompts, add functions, knowledge bases and test the agent.
+1. Add the agent to the [logic](#app-logic) of the actual use case.
+1. Improve and [iterate on agent versions](#improve-agent).
 
 ### Configuring the Roles {#module-roles}
 In the project security of your app, add the module role **AgentCommons.AgentAdmin** to the user roles that are intended to define and refine Agents. They also decide which version is used in the running app environment.
 
-### Adding the UI to Your App {#ui-components} 
+### Adding the Agent Builder UI to Your App {#ui-components} 
 
 The module includes a set of reusable pages, layouts, and snippets, allowing you to add the conversational UI to your app. 
 
@@ -86,19 +86,27 @@ You need at least one GenAI connector that follows the principles of GenAI commo
 * For [Amazon Bedrock](https://marketplace.mendix.com/link/component/215042), the creation of Bedrock Deployed Models is part of the [model synchronization mechanism](/appstore/modules/aws/amazon-bedrock/#sync-models).
 * For [OpenAI](https://marketplace.mendix.com/link/component/220472), the configuration of OpenAI Deployed Models is part of the [configuration](/appstore/modules/genai/reference-guide/external-connectors/openai/#general-configuration).
 
-### Define the Agent {#define-agent}
+### Define the Agent {#define-prompt}
 
 When the app is running, a user with the `AgentAdmin` role can set up an agent, write the prompts, link microflows as tools and give it access to knowledge bases. When the agent is associated to a deployed model, it can be tested in an isolated set-up separate from the rest of the app's logic, to properly validate the behavior.
-The user can create either a Conversational agent, intended for scenarios where the end-user interacts through a chat interface, or a Single-Call agent, designed for isolated agentic patterns that work in background processes or do not require a conversational interface with historical messages. 
-
-#### Define, Test and Refine the Prompt
-
-While writing the system prompt (for both conversational and single-call types) or the user prompt (only for the single-call type), the prompt engineer can include variables by enclosing them in double braces, for example, `{{variable}}`. The actual values of these placeholders are typically known at runtime based on the user's page context. 
-To test the behavior of the prompts, a test can be executed. The prompt engineer must provide test values for all variables defined in the prompts. Additionally, multiple sets of test values for the variables can be defined and run in bulk. Based on the test results, the prompt engineer can add, remove, or rephrase certain parts of the prompt.
+The user can create either a Conversational agent, intended for scenarios where the end-user interacts through a chat interface or the agent is called in a conversational style by another agent, as opposed to a Single-Call agent, designed for isolated agentic patterns, like agents that work in background processes, subagents that are part of an Agent-as-Tool pattern, or otherwise agentic patterns do not require a conversational interface with historical messages. 
 
 #### Define Context Object
 
-If a prompt text of your agent contains variables, your app must have an entity with attributes that match the variable names. An object of this entity functions as the context object, containing the context data and being passed when the call agent operation is triggered. For more details, see the [Use the agent in the app logic section below](#app-logic). This object contains the actual values that will be inserted into the prompt text(s) where the variables were defined. This entity needs to be linked to the agent in the Agent Commons UI. If you create a new entity, run the app locally first to ensure it appears in the selection list. The `AgentAdmin` will see warnings on the Agent Version details page if the attributes and variables do not match or if no entity has been selected for the prompt. Make sure that the attribute length of the context object is large enough to accommodate the actual values when logic is executed in the running app.
+If a prompt text of your agent contains variables, your app must have an entity with attributes that match the variable names. An object of this entity functions as the context object, containing the context data and being passed when the **call agent** operation is triggered. For more details, see the [Use the agent in the app logic section below](#app-logic). This object contains the actual values that will be inserted into the prompt text(s) where the variables were defined. This entity needs to be linked to the agent in the Agent Commons UI. If you create a new entity, run the app locally first to ensure it appears in the selection list. The `AgentAdmin` will see warnings on the Agent Version details page if the attributes and variables do not match or if no entity has been selected for the prompt. Make sure that the attribute length of the context object is large enough to accommodate the actual values when logic is executed in the running app.
+
+#### Add Microflows as Tools
+
+To allow your agent to perform actions dynamically and autonomously, or to give it access to specific data based on its autonomously suggested function input, microflows can be added as tools. Invoking the agent will then make use of the function calling pattern to execute the required microflows with the input as specified in the model's response. See [Function Calling](/appstore/modules/genai/function-calling/) for more technical information.
+
+#### Add Knowledge Bases
+
+For supported knowledge bases that are registered in the app, you can connect the agent to allow it to do specified retrievals autonomously. Refer to the documentation of the connector of the knowledge base provider of choice to set up the connetion from your app to the knowledge base. To allow the agent to perform semantic searches in the knowledge base, add the knowledge base to the agent definition and specify the parameters that determine how a retrieve should happen (e.g. metadata, desired number of chunks retrieved, threshold similarity).
+
+#### Test and Refine the Agent
+
+While writing the system prompt (for both conversational and single-call types) or the user prompt (only for the single-call type), the prompt engineer can include variables by enclosing them in double braces, for example, `{{variable}}`. The actual values of these placeholders are typically known at runtime based on the user's page context. 
+To test the behavior of the prompts, a test can be executed. The prompt engineer must provide test values for all variables defined in the prompts. Additionally, multiple sets of test values for the variables can be defined and run in bulk. Based on the test results, the prompt engineer can add, remove, or rephrase certain parts of the prompt.
 
 ### Use the Agent in the App Logic {#app-logic}
 
@@ -122,11 +130,15 @@ For, more specific use cases, where a context object needs to be included for va
 
 For a conversational agent, the chat context can be created based on the agent in one convenient operation. Use the `New Chat for Agent` operation from the **Toolbox** under the **Agents Kit** category. Retrieve the agent (e.g. by name) and pass it with your custom context object to the operation. Note that this sets the system prompt for the chat context, making it applicable to the entire (future) conversation. Similar to other chat context operations, an [action microflow needs to be selected](/appstore/modules/genai/conversational-ui-module/conversational-ui/#action-microflow) for this microflow action.
 
-With the above microflow logic, the agent version is ready to be tested from the end-user flow (in a local or test environment). The agent can also be exported/imported for transport to other environments if needed.
+
 
 {{% alert color="info" %}}
 Download the [Agent Builder Starter App](https://marketplace.mendix.com/link/component/240369) from the Marketplace for a detailed example of how to use the **Call Agent** activity in an action microflow of a chat interface.
 {{% /alert %}}
+
+#### Transport the agent to other environments
+With the above microflow logic, the agent version is ready to be tested from the end-user flow (in a local or test environment). The agent can also be exported/imported for transport to other environments if needed. Use the export button on the page where the agent is edited, or use the export and import buttons on the overview page. 
+In cases where context objects or functions have changed, make sure the right version of the project is deployed before importing the new agent definition, so that the domain model and microflows match with the new agent version. 
 
 ### Improve the Agent {#improve-agent}
 
@@ -139,8 +151,6 @@ The new draft version will initially have the same prompt texts, tools and linke
 #### Manage In-use Version per Environment
 
 Each time a new version of the agent is created, a decision needs to be made regarding which version to use in the end-user logic. Mendix recommends evaluating the in-use version as part of the test and release process. When importing the new agents into other environments, selecting the in-use version is always a manual step and, therefore, a conscious decision.
-
-
 
 
 ## Technical Reference {#technical-reference}
