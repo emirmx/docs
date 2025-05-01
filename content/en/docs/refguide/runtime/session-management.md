@@ -40,8 +40,8 @@ You can also model your login page to provide end-users with a "remember me" opt
 You can use authentication in both online and offline apps to remember the end-user. There are three ways Mendix suggests to do this:
 
 * Use the **SignIn** activity from the **NanoflowCommons** module (version 5.0.0 or above) with the `useAuthToken` parameter set to `true`. This is the recommended and easiest method.
-* Write your own nanoflow using the `login` method of the `mx-api` module in the [Mendix 11 Client API](/apidocs-mxsdk/apidocs/client-api/#client-api) but setting the `useAuthToken` parameter to `true`.
-* Write  a Java action using the `addMendixCookies` method of the [Runtime API](/apidocs/runtime-api/), and setting the `useAuthToken` parameter to `true`.
+* Write your own [JavaScript action](/refguide/javascript-actions/) using the `login` method of the `mx-api` module in the [Mendix 11 Client API](/apidocs-mxsdk/apidocs/client-api/#client-api) and setting the `useAuthToken` parameter to `true`.
+* Write a Java action using the `addMendixCookies` method of the [Runtime API](/apidocs/runtime-api/), and setting the `useAuthToken` parameter to `true`.
 
 ### Authentication Token Expiry
 
