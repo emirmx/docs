@@ -1,7 +1,7 @@
 ---
 title: "Interact With Local App Files Using Web API"
 linktitle: "Local Files"
-url: /apidocs-mxsdk/apidocs/web-extensibility-api/local-app-files-api/
+url: /apidocs-mxsdk/apidocs/web-extensibility-api-9/local-app-files-api/
 weight: 20
 ---
 

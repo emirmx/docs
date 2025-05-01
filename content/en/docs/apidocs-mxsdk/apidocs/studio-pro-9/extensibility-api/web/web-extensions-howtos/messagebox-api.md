@@ -1,7 +1,7 @@
 ---
 title: "Show a Message Box Using Web API"
 linktitle: "Message Box"
-url: /apidocs-mxsdk/apidocs/web-extensibility-api/messagebox-api/
+url: /apidocs-mxsdk/apidocs/web-extensibility-api-9/messagebox-api/
 weight: 50
 ---
 
