@@ -1,8 +1,8 @@
 ---
 title: "Extensibility API for Web Developers"
 linktitle: "Web Extensibility API"
-url: /apidocs-mxsdk/apidocs/web-extensibility-api
-description: "The web extensibility API allows your custom Studio Pro extensions developed using JavaScript to interact with some internal services of Studio Pro."
+url: /apidocs-mxsdk/apidocs/web-extensibility-api-10/
+description: "The web extensibility API allows your custom Studio Pro 10 extensions developed using JavaScript to interact with some internal services of Studio Pro."
 weight: 20
 ---
 
