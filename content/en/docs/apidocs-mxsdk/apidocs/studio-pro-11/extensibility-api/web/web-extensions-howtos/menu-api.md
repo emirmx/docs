@@ -1,7 +1,7 @@
 ---
 title: "Create a Menu Using Web API"
 linktitle: "Create Menu"
-url: /apidocs-mxsdk/apidocs/web-extensibility-api/menu-api/
+url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/
 weight: 30
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Export a C# Extension"
 linktitle: "Export Extension"
-url: /apidocs-mxsdk/apidocs/csharp-extensibility-api/export-an-extension/
+url: /apidocs-mxsdk/apidocs/csharp-extensibility-api-11/export-an-extension/
 weight: 99
 ---
 

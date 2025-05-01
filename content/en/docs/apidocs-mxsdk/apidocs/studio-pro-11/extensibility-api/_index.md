@@ -1,6 +1,6 @@
 ---
 title: "Extensibility API"
-url: /apidocs-mxsdk/apidocs/extensibility-api/
+url: /apidocs-mxsdk/apidocs/extensibility-api-11/
 description: "The Extensibility API allows you to extend Studio Pro by adding custom functionality."
 weight: 57
 no_list: false

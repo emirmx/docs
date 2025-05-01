@@ -1,7 +1,7 @@
 ---
 title: "Open a Tab Using Web API"
 linktitle: "Open a Tab"
-url: /apidocs-mxsdk/apidocs/web-extensibility-api/tab-api/
+url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/tab-api/
 weight: 60
 ---
 

@@ -1,13 +1,13 @@
 ---
 title: "Mendix Runtime API"
-url: /apidocs-mxsdk/apidocs/runtime-api/
-description: "The Mendix Runtime API provides all the functionality and information from both the application model and Mendix Runtime."
+url: /apidocs-mxsdk/apidocs/runtime-api-11/
+description: "The Mendix 11 Runtime API provides all the functionality and information from both the application model and Mendix Runtime."
 weight: 75
 ---
 
 ## Introduction
 
-Extend your application model using Java. All functionality and information from both the application model and Mendix Runtime is accessible via the Mendix Runtime API.
+Extend your application model using Java. All functionality and information from both the application model and Mendix Runtime is accessible via the Mendix 11 Runtime API.
 
 ## Mendix Runtime API
 

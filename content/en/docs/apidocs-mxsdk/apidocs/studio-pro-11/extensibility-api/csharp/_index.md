@@ -1,7 +1,7 @@
 ---
 title: "Extensibility API for C# Developers"
 linktitle: "C# Extensibility API"
-url: /apidocs-mxsdk/apidocs/csharp-extensibility-api/
+url: /apidocs-mxsdk/apidocs/csharp-extensibility-api-11/
 description: "The C# extensibility API allows your custom Studio Pro extensions developed in C# to interact with some internal services of Studio Pro."
 weight: 10
 no_list: false

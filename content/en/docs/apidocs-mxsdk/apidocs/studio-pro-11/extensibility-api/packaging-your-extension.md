@@ -1,6 +1,6 @@
 ---
 title: "Packaging Your Extension"
-url: /apidocs-mxsdk/apidocs/extensibility-api/packaging-your-extension
+url: /apidocs-mxsdk/apidocs/extensibility-api-11/packaging-your-extension
 weight: 30
 ---
 

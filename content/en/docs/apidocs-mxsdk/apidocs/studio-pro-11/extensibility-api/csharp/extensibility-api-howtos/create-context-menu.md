@@ -1,7 +1,7 @@
 ---
 title: "Create a Context Menu Using C#"
 linktitle: "Context Menu"
-url: /apidocs-mxsdk/apidocs/csharp-extensibility-api/create-context-menu/
+url: /apidocs-mxsdk/apidocs/csharp-extensibility-api-11/create-context-menu/
 weight: 6
 ---
 
