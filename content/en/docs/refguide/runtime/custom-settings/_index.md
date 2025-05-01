@@ -15,7 +15,7 @@ Only use this functionality if you know exactly what you are doing. Incorrect va
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-In a multi-node setup use the same values for all settings (except `com.mendix.core.isClusterSlave`). Otherwise Mendix Runtime may not behave correctly.
+In a multi-node setup, use the same values for all settings (except `com.mendix.core.isClusterSlave`). If you do not, Mendix Runtime may behave incorrectly.
 {{% /alert %}}
 
 Each custom setting consists of a name and a value. For example, to set the hash algorithm to BCRYPT you add a custom setting with name `HashAlgorithm` and value `BCRYPT`. For a more detailed list of settings and example values, consult [full-documented-m2ee.yaml](https://github.com/mendix/m2ee-tools/blob/master/examples/full-documented-m2ee.yaml).
