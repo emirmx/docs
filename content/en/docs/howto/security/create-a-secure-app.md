@@ -256,35 +256,38 @@ An XPath constraint can be used to constrain the set of objects to which the acc
 
 ### Set the Entity Access to Open Order Status
 
+1. Open the domain model.
+
 1. Double-click the **Order** entity:
 
-    {{< figure src="/attachments/howto/security/create-a-secure-app/order-entity.png" class="no-border" >}}
-
-2. On the **Properties of Entity 'MyFirstModule.Order'** editor, open the **Access rules** tab:
+1. On the **Properties of Entity 'MyFirstModule.Order'** editor, open the **Access rules** tab:
 
     {{< figure src="/attachments/howto/security/create-a-secure-app/access-rules.png" class="no-border" >}}
 
-3. Double-click the column containing the **User** module role to open the **Edit Access Rule of Entity 'MyFirstModule.Order'** editor, or click **New** to create a new module role if the **User** module role does not yet exist.
+1. Double-click the column containing the **User** module role to open the **Edit Access Rule of Entity 'MyFirstModule.Order'** editor, or click **New** to create a new module role if the **User** module role does not yet exist.
 
-4. Set up the **User** role as follows:
+1. Set up the **User** role as follows:
 
     * **Rule applies to the following module roles** – **User**
     * **Entity rights** – **Create objects** and **Delete objects**
+    * **Default rights for new members** – **Read, Write**
+    * **Set all to** – **Read** and **Write** to set access to all members (attributes and associations)
 
-4. Click **Edit…** next to **XPath constraint**
+1. Click **Edit…** next to **XPath constraint**
 
-    {{< figure src="/attachments/howto/security/create-a-secure-app/18581523.png" class="no-border" >}}
+    {{< figure src="/attachments/howto/security/create-a-secure-app/order-access.png" class="no-border" >}}
 
-4. To constrain the access of the financial administrator to only the open orders, add the following XPath statement:
+1. Add the following XPath expression to constrain the access of the user module role to only the open orders:
 
-    {{< figure src="/attachments/howto/security/create-a-secure-app/18581522.png" class="no-border" >}}
+    ```json
+    [( OrderStatus = 'Open' )]
+    ```
 
-5. Click **OK**. The properties editor of your Order entity should look like this:
+    {{< figure src="/attachments/howto/security/create-a-secure-app/order-xpath.png" class="no-border" >}}
 
-    {{< figure src="/attachments/howto/security/create-a-secure-app/18581521.png" class="no-border" >}}
-
-6. Re-deploy your application.
-7. If you sign in with the Test User account, you will see that only orders with the **Order status** of **Open** are shown in the overview:
+1. Save your changes.
+1. Re-deploy your application.
+1. If you sign in with the Test User account, you will see that only orders with the **Order status** of **Open** are shown in the overview:
 
     {{< figure src="/attachments/howto/security/create-a-secure-app/18581520.png" class="no-border" >}}
 
