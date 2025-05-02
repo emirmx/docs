@@ -16,7 +16,7 @@ This guide explains how to create and manage a dockable pane using the web exten
 
 ## Prerequisites
 
-This guide uses the app created in [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that how-to before starting this one.
+This guide uses the app created in [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-9/getting-started/). Please complete that how-to before starting this one.
 
 ## Creating a Dockable Pane
 
