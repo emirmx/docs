@@ -23,7 +23,7 @@ Before starting the installation and implementation process, make sure that you 
 {{< figure src="/attachments/deployment/mx-azure/coadmin-permission.png" class="no-border" >}}
 
 * Familiarize yourself with the [Private Cloud](https://docs.mendix.com/developerportal/deploy/private-cloud/) concepts.
-* Ensure that your Mendix Studio Pro is in version 10.10 or newer.
+* Ensure that your Mendix Studio Pro is in version 10.10 or above.
 * As an optional best practice, add multiple cluster manager to your clusters.
 
 ## Creating an Azure Cluster
@@ -138,7 +138,7 @@ The following diagram shows one potential solution to the access issue. Bi-direc
 
 To enable virtual network peering for your Mendix on Azure app, perform the following steps:
 
-1. In the Microsoft Azure portal, add a new bi-directional virtual peering.
+1. In the Microsoft Azure portal, [add a new bi-directional virtual peering](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering?tabs=peering-portal).
 
     {{< figure src="/attachments/deployment/mx-azure/virtual-network-peerings-add.png" class="no-border" >}}
 

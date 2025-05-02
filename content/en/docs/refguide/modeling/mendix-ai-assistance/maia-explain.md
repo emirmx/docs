@@ -9,10 +9,6 @@ description: "Describes the features in Maia Explain."
 ## Introduction 
 
 {{% alert color="info" %}}
-Maia Explain was introduced in Studio Pro 10.21.0.
-{{% /alert %}}
-
-{{% alert color="info" %}}
 To use Maia Explain, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
