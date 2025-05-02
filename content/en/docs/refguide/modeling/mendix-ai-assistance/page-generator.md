@@ -8,10 +8,6 @@ description: "Describes the features in Page Generator."
 ## Introduction
 
 {{% alert color="info" %}}
-Page Generator was introduced in Studio Pro 10.21.0.
-{{% /alert %}}
-
-{{% alert color="info" %}}
 To use Page Generator, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 

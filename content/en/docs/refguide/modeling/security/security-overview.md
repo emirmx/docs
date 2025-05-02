@@ -4,10 +4,6 @@ url: /refguide/security-overview/
 weight: 20
 ---
 
-{{% alert color="info" %}}
-The security overview became generally available in Studio Pro version 10.21.0. It was previously in beta starting from version 10.18.
-{{% /alert %}}
-
 ## Introduction
 
 The **Security Overview** page provides you with an overview of your app's security. 
@@ -95,6 +91,10 @@ To export the **Security Overview**, click the **Export to Excel** button. This 
     3. Module Role.
     4. Anonymous role: Specifies whether this user roles is an anonymous user role.
     5. Administrator role: Specifies whether this user role is the administrator user role.
+
+## CLI export
+
+The security overview can be exported to a JSON or xlsx file with the `mx` command line tool. See the [export-security-overview](/refguide/mx-command-line-tool/security/#export-security-overview) command.
 
 ## Read More
 
