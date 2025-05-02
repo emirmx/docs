@@ -88,7 +88,7 @@ In this more advanced example, you will see the `IMicroflowExpressionService.Cre
  }
 ```
 
-The `IMicroflowService.CreateMicroflow` method is a bit easier to use than the `IMicroflowService.Initialize` method because it doesn't require manually creating the microflow with `IModel.Create<IMicroflow>` and then manually adding it to the `IFolderBase` container. It can do everything behind the scenes as long as everything is supplied to it. For a comprehensive example on how to create microflows, see [Create Microflows for Calculations Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api/create-microflows-for-calculations/).
+The `IMicroflowService.CreateMicroflow` method is a bit easier to use than the `IMicroflowService.Initialize` method because it doesn't require manually creating the microflow with `IModel.Create<IMicroflow>` and then manually adding it to the `IFolderBase` container. It can do everything behind the scenes as long as everything is supplied to it. For a comprehensive example on how to create microflows, see [Create Microflows for Calculations Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api-10/create-microflows-for-calculations/).
 
 ## `TryInsertAfterStart` and `TryInsertBeforeActivity`
 

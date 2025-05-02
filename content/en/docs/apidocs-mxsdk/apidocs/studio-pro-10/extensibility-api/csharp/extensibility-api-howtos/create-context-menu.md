@@ -9,13 +9,13 @@ weight: 6
 
 It is possible to add a context menu to an `IEntity` in Studio Pro or to a `IDocument`, such as microflows and pages, etc. Context menus will be placed under a menu named after the extension that contains them (e.g. `MyExtension`) and context menus can modify those items they relate to. You can achieve this simple by specifying the type when creating the extension.
 
-This how-to describes how you can add a context menu to an entity. Before you start this how-to, it is recommended to [Create a Menu Extension Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api/create-menu-extension/) first.
+This how-to describes how you can add a context menu to an entity. Before you start this how-to, it is recommended to [Create a Menu Extension Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api-10/create-menu-extension/) first.
 
 You can download the example in this how-to in [this GitHub repository](https://github.com/mendix/ExtensionAPI-Samples).
 
 ## Creating an Entity Context Menu Extension Class
 
-1. Open the project that you previously created when you followed [Create a Menu Extension Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api/create-menu-extension/).
+1. Open the project that you previously created when you followed [Create a Menu Extension Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api-10/create-menu-extension/).
 2. Add a new class to the project and name it `MyEntityContextMenuExtension.cs`.
 3. Replace the code in the file with the following code:
 
@@ -90,7 +90,7 @@ You can download the example in this how-to in [this GitHub repository](https://
     }
     ```
 
-The code above creates a series of context menu items for any entity. It is important to note the type `IEntity` is passed in so that the context menu will only apply to entities. It adds menus using the same logic as `MenuExtension.cs`. For more examples, see [Create a Menu Extension Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api/create-menu-extension/).
+The code above creates a series of context menu items for any entity. It is important to note the type `IEntity` is passed in so that the context menu will only apply to entities. It adds menus using the same logic as `MenuExtension.cs`. For more examples, see [Create a Menu Extension Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api-10/create-menu-extension/).
 
 In the code above, you can see a few context menus that can perform changes on the entity they belong to. In The entity's location on the canvas can be changed, it can be renamed, and some of its information is shown in a message box. 
 

@@ -11,7 +11,7 @@ This how-to shows you how to interact with local application files from within a
 
 ## Prerequisites
 
-This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that how-to before starting this one.
+This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-10/getting-started/). Please complete that how-to before starting this one.
 
 ## Adding Some Interactivity
 

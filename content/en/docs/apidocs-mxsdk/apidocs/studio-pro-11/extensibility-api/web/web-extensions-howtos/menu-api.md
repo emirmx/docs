@@ -11,7 +11,7 @@ This how-to shows you how to create both a simple menu item and a menu item with
 
 ## Prerequisites
 
-This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that how-to before starting this one.
+This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Please complete that how-to before starting this one.
 
 ## Creating a Simple Menu
 
@@ -19,7 +19,7 @@ In this section, you will add a simple menu to your extension.
 
 The code below will:
 
-* create a menu item under the menu that was added in [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/)
+* create a menu item under the menu that was added in [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/)
 * show a dialog when the menu is clicked
 
 Replace your `src/main/index.ts` file with the following:

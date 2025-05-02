@@ -13,7 +13,7 @@ weight: 20
 
 ## Introduction
 
-Extensions can be written in Typescript or other web languages, described here, or using a C# API which is documented separately in [Extensibility API for C# Developers](/apidocs-mxsdk/apidocs/csharp-extensibility-api/).
+Extensions can be written in Typescript or other web languages, described here, or using a C# API which is documented separately in [Extensibility API for C# Developers](/apidocs-mxsdk/apidocs/csharp-extensibility-api-10/).
 
 ## Prerequisites
 
