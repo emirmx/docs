@@ -1,7 +1,7 @@
 ---
 title: "Interact with the Model API Using C#"
 linktitle: "Model Interaction"
-url: /apidocs-mxsdk/apidocs/interact-with-model-api/
+url: /apidocs-mxsdk/apidocs/interact-with-model-api-9/
 weight: 11
 ---
 
