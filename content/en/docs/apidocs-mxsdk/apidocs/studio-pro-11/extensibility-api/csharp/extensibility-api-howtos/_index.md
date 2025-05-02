@@ -1,7 +1,7 @@
 ---
 title: "C# Extensibility API How-tos"
 linktitle: "How-tos"
-url: /apidocs-mxsdk/apidocs/csharp-extensibility-api/how-tos/
+url: /apidocs-mxsdk/apidocs/csharp-extensibility-api-11/how-tos/
 weight: 3
 no_list: false
 description_list: true

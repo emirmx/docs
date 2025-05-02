@@ -1,7 +1,7 @@
 ---
 title: "Create a Web View Hosted Inside a Modal Dialog Using C#"
 linktitle: "Modal Web View"
-url: /apidocs-mxsdk/apidocs/csharp-extensibility-api/create-modal-web-view/
+url: /apidocs-mxsdk/apidocs/csharp-extensibility-api-10/create-modal-web-view/
 weight: 7
 ---
 

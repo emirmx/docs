@@ -1,7 +1,7 @@
 ---
 title: "Web Extensibility API How-tos"
 linktitle: "How-tos"
-url: /apidocs-mxsdk/apidocs/web-extensibility-api/how-tos/
+url: /apidocs-mxsdk/apidocs/web-extensibility-api-9/how-tos/
 weight: 3
 no_list: false
 description_list: true

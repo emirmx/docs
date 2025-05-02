@@ -1,7 +1,7 @@
 ---
 title: "Open a Tab Using Web API"
 linktitle: "Open a Tab"
-url: /apidocs-mxsdk/apidocs/web-extensibility-api/tab-api/
+url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/tab-api/
 weight: 60
 ---
 
@@ -11,11 +11,11 @@ This how-to shows you how to open a tab in Studio Pro from an extension. This ta
 
 ## Prerequisites
 
-This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that how-to before starting this one. You should also be familiar with creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api/menu-api/).
+This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Please complete that how-to before starting this one. You should also be familiar with creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
 
 ## Opening a Tab
 
-Firstly, create a menu item to open the tab. This is done inside the `loaded` event in `Main`. For more information see [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api/menu-api/).
+Firstly, create a menu item to open the tab. This is done inside the `loaded` event in `Main`. For more information see [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
 
 In a listener event called `menuItemActivated` the `studioPro.ui.tabs.open(<tabinfo>, <uispec>)` call opens a new tab where:
 

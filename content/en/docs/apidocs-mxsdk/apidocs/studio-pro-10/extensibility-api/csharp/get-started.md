@@ -1,7 +1,7 @@
 ---
 title: "Get Started with the C# Extensibility API"
 linktitle: "Get Started"
-url: /apidocs-mxsdk/apidocs/csharp-extensibility-api/get-started/
+url: /apidocs-mxsdk/apidocs/csharp-extensibility-api-10/get-started/
 weight: 2
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Show User's Preferences Using Web API"
 linktitle: "Show User's Preferences"
-url: /apidocs-mxsdk/apidocs/web-extensibility-api/preference-api/
+url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/preference-api/
 weight: 30
 ---
 
@@ -13,8 +13,8 @@ This how-to shows you how to create a simple menu that shows the users Preferenc
 
 Before starting this how-to, ensure you have:
 
-1. Completed the [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api/v11/getting-started/).
-2. You should also be familiar with creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api/v11/menu-api/) and message boxes as described in [Show a Message Box Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api/v11/messagebox-api/).
+1. Completed the [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/v11/getting-started/).
+2. You should also be familiar with creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/v11/menu-api/) and message boxes as described in [Show a Message Box Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/v11/messagebox-api/).
 
 ## Steps
 
@@ -22,7 +22,7 @@ Before starting this how-to, ensure you have:
 
 Firstly, you need to create a menu which will display a dialog with text. This is done in the `loaded` event in `Main`.
 
-You can learn how to do that in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api/v11/menu-api/).
+You can learn how to do that in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/v11/menu-api/).
 
 In this example you create one menu item that will show a message box.
 

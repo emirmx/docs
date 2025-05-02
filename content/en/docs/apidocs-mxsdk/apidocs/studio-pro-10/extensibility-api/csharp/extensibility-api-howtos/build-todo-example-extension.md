@@ -1,7 +1,7 @@
 ---
 title: "Build a Todo Example Extension Using C#"
 linktitle: "ToDo Example"
-url: /apidocs-mxsdk/apidocs/csharp-extensibility-api/build-todo-example-extension/
+url: /apidocs-mxsdk/apidocs/csharp-extensibility-api-10/build-todo-example-extension/
 weight: 20
 ---
 

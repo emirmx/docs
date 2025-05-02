@@ -1,7 +1,7 @@
 ---
 title: "Show a Popup Notification Using Web API"
 linktitle: "Show Notification"
-url: /apidocs-mxsdk/apidocs/web-extensibility-api/notification-api/
+url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/notification-api/
 weight: 30
 ---
 
@@ -11,7 +11,7 @@ This how-to shows you how to show a simple popup notification in Studio Pro usin
 
 ## Prerequisites
 
-This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that how-to before starting this one.
+This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Please complete that how-to before starting this one.
 
 ## Showing a Notification
 

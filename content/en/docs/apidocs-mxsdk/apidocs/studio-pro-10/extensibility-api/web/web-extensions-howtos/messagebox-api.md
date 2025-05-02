@@ -1,7 +1,7 @@
 ---
 title: "Show a Message Box Using Web API"
 linktitle: "Message Box"
-url: /apidocs-mxsdk/apidocs/web-extensibility-api/messagebox-api/
+url: /apidocs-mxsdk/apidocs/web-extensibility-api-10/messagebox-api/
 weight: 50
 ---
 
@@ -11,13 +11,13 @@ This how-to shows you how to show a message box to the Studio Pro user.
 
 ## Prerequisites
 
-This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/). Please complete that how-to before starting this one.
+This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-10/getting-started/). Please complete that how-to before starting this one.
 
 ## Showing a Message Box
 
 Firstly, you need to create a menu which will display a dialog with text. This is done in the `loaded` event in `Main`.
 
-You can learn how to do that in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api/menu-api/).
+You can learn how to do that in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-10/menu-api/).
 
 In this example you create three menu items:
 
