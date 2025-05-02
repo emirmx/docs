@@ -259,6 +259,16 @@ When the **Show feedback survey periodically** setting is enabled, Studio Pro wi
 
 ## New Features Tab {#new-features}
 
+### Access Rules Editor
+
+This option allows you to disable the new editor in the *Access rules* tab of the entity properties dialog and return to the version which was available in Studio Pro 10 or enable the new editor if it has been disabled.
+
+{{% alert color="warning" %}}
+This option will be removed before the GA version of Mendix 11.0.
+{{% /alert %}}
+
+For more information, see [Defining Access Rules Using the New Editor](/refguide10/access-rules/#new-editor) section of the Mendix 10 documentation *Access Rules*.
+
 ### App Explorer
 
 Select this option to use the modernized version of the App Explorer. You must restart Studio Pro to use this feature.
