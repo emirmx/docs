@@ -2,7 +2,7 @@
 title: "Build Your Own GenAI Connector"
 url: /appstore/modules/genai/how-to/byo-connector
 linktitle: "Build Your Own GenAI connector"
-weight: 20
+weight: 70
 description: "A tutorial that describes how to build your own GenAI connector"
 ---
 
