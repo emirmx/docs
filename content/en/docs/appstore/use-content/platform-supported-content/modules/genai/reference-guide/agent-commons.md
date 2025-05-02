@@ -10,14 +10,14 @@ weight: 20
 ## Introduction
 
 The Agent Commons functionalities allows users to develop, test, and optimize their GenAI use cases by creating effective agents that interact with large language models (LLM). 
-Using the [Agent Commons](https://marketplace.mendix.com/link/component/239450) module you can use the Agent Management interface in your app to define agents at runtime and manage multiple versions over time.  It also supports defining variables that serve as placeholders for data from the app session context which are replaced by actual values when the end user interacts with the app. The module contains the necessary data model, pages, and snippets to include a prompt management interface to your app and get started.
+Using the [Agent Commons](https://marketplace.mendix.com/link/component/239450) module you can use the Agent Builder interface in your app to define agents at runtime and manage multiple versions over time. Wire up prompts, microflows as tools, knowledge bases together with large language models to build agentic patterns to support your business logic. Agent Builder also supports defining variables that serve as placeholders for data from the app session context which are replaced by actual values when the end user interacts with the app. The Agent Commons module contains the necessary data model, pages, and snippets to include an agent builder interface to your app and get started using Agents from your app logic.
 
 ### Typical Use Cases
 
 Typical use cases for Agent Commons include the following:
 
-* The app includes one or more agentic patterns that include interactions with an LLM. 
-* The prompts for agents to do the LLM interaction need to be updated or improved without changing the code of the LLM interaction. This enables people outside the development team to change prompts (for example, data scientists).
+* The app includes one or more agentic patterns that include interactions with an LLM. These patterns may include additionally microflows as tools, knowledge bases and guardrails.
+* The prompts for agents to do the LLM interaction need to be updated or improved, often without changing the code of the LLM interaction or the traditional low-code app logic that calls the agents. This enables people outside the development team (for example, data scientists) to change prompts and iterate on agent configurations .
 * The use case benefits from rapid iterations on prompts, microflows as tools, knowledge bases, models, and variable placeholders in a playground set-up, separately from app logic.
 
 ### Features
@@ -25,15 +25,15 @@ Typical use cases for Agent Commons include the following:
 The Agent Commons functionality provides the following:
 
 * Agent Builder UI components and a data structure to manage, store, and rapidly iterate on agent  versions at runtime—without requiring app deployment to change the agent.
-* Support for calling both single-call and conversational agents from microflows and workflows.
-* Includes placeholders in prompts of the agents. The values will be populated in the running app based on a user/context object.
+* Drag-and-drop operations for calling both single-call and conversational agents from microflows and workflows.
+* Support for placeholders in prompts of the agents. The values will be populated in the running app based on a user/context object.
 * Logic to define and execute tests individually or in bulk, with result comparison.
 * Export/import functionality for transporting agents across different app environments (local, acceptance, and production).
-* The ability to manage the active agent version used by the logic in the running app.
+* The ability to manage the active agent version used by the logic in the running app, in the app environment itself without the need to re-deploy.
 
 ### Limitations 
 
-The current scope of the module is focused on prompts with placeholders (variables), adding microflows with a single parameter as tools in a [Function Calling](/appstore/modules/genai/function-calling/) setup, and providing your agents access to knowledge bases provided by [Mendix Cloud GenAI Resources](/appstore/modules/genai/mx-cloud-genai/resource-packs/#knowledge-bases).
+The current scope of the module is focused on LLM invocations with a variety of prompts, optionally with placeholders (variables). The agents can be enriched by adding microflows with a single parameter as tools in a [Function Calling](/appstore/modules/genai/function-calling/) setup, and providing access to knowledge bases provided by [Mendix Cloud GenAI Resources](/appstore/modules/genai/mx-cloud-genai/resource-packs/#knowledge-bases).
 
 ### Dependencies {#dependencies}
 
@@ -126,7 +126,7 @@ For most use cases, the `Call Agent` microflow activity can be used. This operat
 
 This action calls the Agent with the specified request. It executes a Chat Completions (With History) operation based on the defined Agent. All agent configurations, such as the selected model, system prompt, tools, knowledge base or model parameter settings are used. A Response is returned that contains the final assistant's message, in the same fashion as the chat completions operations from GenAI Commons.
 
-For, more specific use cases, where a context object needs to be included for variable replacement, or when using a Single-Call type agent, use `Get Prompt for Context Object`, which can also be found in the **Toolbox** in Studio Pro while editing a microflow, under the category **Agents Kit**. This operation returns both a system prompt and a user prompt strings, on a combined `PromptToUse` object. These string attributes can be passed to the chat completions operation. Once more, retrieve the Agent (e.g. by name) and pass it with your custom context object to the operation. In a similar way as the Call Agent activity works, you can use microflow `Request_AddAgentCapabilities` to make all the agent's properties have effect on the request that will be executed. Just place the required Chat Completions operation (with or without history) after it to call the agent in this case.
+For more specific use cases, where a context object needs to be included for variable replacement, use `Get Prompt for Context Object`, which can also be found in the **Toolbox** in Studio Pro while editing a microflow, under the category **Agents Kit**. This operation returns both a system prompt and a user prompt strings, on a combined `PromptToUse` object. These string attributes can be passed to the chat completions operation. Once more, retrieve the Agent (e.g. by name) and pass it with your custom context object to the operation. In a similar way as the Call Agent activity works, you can use microflow `Request_AddAgentCapabilities` to make all the agent's properties have effect on the request that will be executed. Just place the required Chat Completions operation (with or without history) after it to call the agent in this case.
 
 For a conversational agent, the chat context can be created based on the agent in one convenient operation. Use the `New Chat for Agent` operation from the **Toolbox** under the **Agents Kit** category. Retrieve the agent (e.g. by name) and pass it with your custom context object to the operation. Note that this sets the system prompt for the chat context, making it applicable to the entire (future) conversation. Similar to other chat context operations, an [action microflow needs to be selected](/appstore/modules/genai/conversational-ui-module/conversational-ui/#action-microflow) for this microflow action.
 
@@ -155,11 +155,12 @@ Each time a new version of the agent is created, a decision needs to be made reg
 
 ## Technical Reference {#technical-reference}
 
-The technical purpose of the GenAI Commons module is to define a common domain model for generative AI use cases in Mendix applications. To help you work with the **GenAI Commons** module, the following sections list the available [entities](#domain-model), [enumerations](#enumerations), and [microflows](#microflows) to use in your application. 
+The technical purpose of the Agent Commons module is to define a common domain model for defining, testing, storing and refining Agents in Mendix applications.
+For documentation on entities and microflow activities, please see the documentation fields in Studio Pro for the respective microflows and entities.
 
 ### Domain Model {#domain-model} 
 
-The domain model in Mendix is a data model that describes the information in your application domain in an abstract way. For more general information, see the [Data in the Domain Model](/refguide/domain-model/) documentation. To learn about where the entities from the domain model are used and relevant during implementation, see the [Microflows](#microflows) section below.
+The domain model in Mendix is a data model that describes the information in your application domain in an abstract way. For more general information, see the [Data in the Domain Model](/refguide/domain-model/) documentation. To learn about where the entities from the domain model are used and relevant during implementation, please refer to the documentation fields in Studio Pro for microflows and entities.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genaicommons/demain-model.png" alt="" >}}
     
