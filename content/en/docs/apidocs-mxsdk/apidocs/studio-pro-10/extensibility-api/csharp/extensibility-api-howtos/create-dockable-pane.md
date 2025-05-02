@@ -1,7 +1,7 @@
 ---
 title: "Create a Dockable Pane Extension Using C#"
 linktitle: "Dockable Pane"
-url: /apidocs-mxsdk/apidocs/csharp-extensibility-api/create-dockable-pane-extension/
+url: /apidocs-mxsdk/apidocs/csharp-extensibility-api-10/create-dockable-pane-extension/
 weight: 5
 ---
 

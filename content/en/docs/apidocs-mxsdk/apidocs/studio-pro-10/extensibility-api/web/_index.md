@@ -23,15 +23,15 @@ Extensions can be written in Typescript or other web languages, described here, 
 
 ## Getting Started
 
-For detailed explanation on how to get started with extensions, check out [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api/getting-started/).
+For detailed explanation on how to get started with extensions, check out [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-10/getting-started/).
 
 ## How-tos
 
 Here is a list of how-tos for you to begin with:
 
-* [How to Create a Dockable Pane Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api/dockable-pane-api/)
-* [How to Interact With Local App Files Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api/local-app-files-api/)
-* [How to Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api/menu-api/)
-* [How to Show a Message Box Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api/messagebox-api/)
-* [How to Access a Mendix Model Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api/model-api/)
-* [How to Open a Tab Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api/tab-api/)
+* [How to Create a Dockable Pane Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-10/dockable-pane-api/)
+* [How to Interact With Local App Files Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-10/local-app-files-api/)
+* [How to Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-10/menu-api/)
+* [How to Show a Message Box Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-10/messagebox-api/)
+* [How to Access a Mendix Model Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-10/model-api/)
+* [How to Open a Tab Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-10/tab-api/)

@@ -1,7 +1,7 @@
 ---
 title: "Add Menus and Submenus to Studio Pro Using C#"
 linktitle: "Structured Menus"
-url: /apidocs-mxsdk/apidocs/csharp-extensibility-api/add-menu/
+url: /apidocs-mxsdk/apidocs/csharp-extensibility-api-10/add-menu/
 weight: 15
 ---
 

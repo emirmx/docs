@@ -1,7 +1,7 @@
 ---
 title: "Extensibility API for C# Developers"
 linktitle: "C# Extensibility API"
-url: /apidocs-mxsdk/apidocs/csharp-extensibility-api/
+url: /apidocs-mxsdk/apidocs/csharp-extensibility-api-10/
 description: "The C# extensibility API allows your custom Studio Pro extensions developed in C# to interact with some internal services of Studio Pro."
 weight: 10
 no_list: false
@@ -20,7 +20,7 @@ For information on new releases of the Extensibility API, see [Extensibility: C#
 
 ## Introduction
 
-Extensions can be written in C#, described here, or using a web API which is documented separately in [Extensibility API for Web Developers](/apidocs-mxsdk/apidocs/web-extensibility-api/).
+Extensions can be written in C#, described here, or using a web API which is documented separately in [Extensibility API for Web Developers](/apidocs-mxsdk/apidocs/web-extensibility-api-10/).
 
 If you need to add your own custom UI to Studio Pro, you can achieve this using web technology. Your web-based UI will be rendered in Studio Pro using a hosted web view, the API provides communication functionality between your web UI and the C# extension logic.
 
