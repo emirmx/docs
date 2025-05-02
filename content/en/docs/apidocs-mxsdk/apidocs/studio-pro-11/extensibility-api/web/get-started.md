@@ -90,8 +90,8 @@ To test the extension, do the following in File Explorer.
 1. Open the `dist` folder.
 1. Copy the `myextension` folder.
 1. Navigate to the folder where you created your app.
-1. Create a new folder called `webextensions`.
-1. Paste the `myextension` folder into the `webextensions` folder you just created.
+1. Create a new folder called `extensions`.
+1. Paste the `myextension` folder into the `extensions` folder you just created.
 
     The extension files have now been added to the app.
     
@@ -101,7 +101,7 @@ To test the extension, do the following in File Explorer.
 
     These flags instruct Studio Pro to do the following:
 
-    * Load extensions from the webextensions folder
+    * Load extensions from the `extensions` folder
     * Enable web debugging tools which will be useful when developing your extension
 
 1. In Studio Pro, open the new app. 
