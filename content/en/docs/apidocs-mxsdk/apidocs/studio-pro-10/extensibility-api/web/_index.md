@@ -35,4 +35,3 @@ Here is a list of how-tos for you to begin with:
 * [How to Show a Message Box Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-10/messagebox-api/)
 * [How to Access a Mendix Model Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-10/model-api/)
 * [How to Open a Tab Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-10/tab-api/)
-* [How to Show a Popup Notification Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-10/notifications-api/)
