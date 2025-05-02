@@ -138,7 +138,7 @@ The following diagram shows one potential solution to the access issue. Bi-direc
 
 To enable virtual network peering for your Mendix on Azure app, perform the following steps:
 
-1. In the Microsoft Azure portal, add a new bi-directional virtual peering.
+1. In the Microsoft Azure portal, [add a new bi-directional virtual peering](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering?tabs=peering-portal).
 
     {{< figure src="/attachments/deployment/mx-azure/virtual-network-peerings-add.png" class="no-border" >}}
 
