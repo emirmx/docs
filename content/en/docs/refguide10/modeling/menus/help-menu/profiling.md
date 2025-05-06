@@ -1,6 +1,6 @@
 ---
 title: "Profiling"
-url: /refguide/profiling/
+url: /refguide10/profiling/
 description: "Describes how to run a performance profiler session on the local machine from within Studio-Pro."
 ---
 

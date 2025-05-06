@@ -1,6 +1,6 @@
 ---
 title: "Notify Workflow"
-url: /refguide/notify-workflow/
+url: /refguide10/notify-workflow/
 weight: 90
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -11,12 +11,12 @@ This activity can only be used in microflows.
 
 ## Introduction {#introduction}
 
-The **Notify workflow** activity can be used to notify a [workflow](/refguide/workflows/) that is suspended on the [Wait for notification](/refguide/wait-for-notification/) workflow activity.
+The **Notify workflow** activity can be used to notify a [workflow](/refguide10/workflows/) that is suspended on the [Wait for notification](/refguide10/wait-for-notification/) workflow activity.
 
 If the workflow is suspended on the specified wait for notification activity, then this activity will return `true` and the workflow execution will continue further. Otherwise, it will simply return `false`.
 
 {{% alert color="warning" %}}
-When you try to notify a workflow which is already `Completed` or `Aborted`, it will result in a Runtime error. For information on how to handle the error, see [Error Handling in Microflows](/refguide/error-handling-in-microflows/).
+When you try to notify a workflow which is already `Completed` or `Aborted`, it will result in a Runtime error. For information on how to handle the error, see [Error Handling in Microflows](/refguide10/error-handling-in-microflows/).
 {{% /alert %}}
 
 ## Properties
@@ -46,7 +46,7 @@ The workflow instance that will be notified by this activity.
 
 ### Activity
 
-The ([caption](/refguide/wait-for-notification/#general) of the) [wait for notification](/refguide/wait-for-notification/) workflow activity that suspends the workflow instance. This wait for notification workflow activity needs to be notified so that the workflow can continue.
+The ([caption](/refguide10/wait-for-notification/#general) of the) [wait for notification](/refguide10/wait-for-notification/) workflow activity that suspends the workflow instance. This wait for notification workflow activity needs to be notified so that the workflow can continue.
 
 ### Variable Name
 
@@ -56,4 +56,4 @@ For more information on the return values, see the [Introduction](#introduction)
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}

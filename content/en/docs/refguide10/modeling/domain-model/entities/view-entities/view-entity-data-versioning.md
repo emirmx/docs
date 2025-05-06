@@ -1,6 +1,6 @@
 ---
 title: "Data Versioning with View Entities"
-url: /refguide/view-entity-data-versioning/
+url: /refguide10/view-entity-data-versioning/
 weight: 80
 ---
 
@@ -51,7 +51,7 @@ To view the latest status of an order, follow the steps below:
 
 The above query is a nested query. It retrieves information from the *OrderInfo* table, then joins it with the *OrderUpdate* table. The result is a table with every update of every order. If you are only interested in the latest update of each table, retrieve the latest date an order is updated using `MAX(u.UpdateDate)` and combine it with the previous `JOIN`.
 
-For more information on different OQL clauses, see [OQL Version 2 Features](/refguide/oql-v2/).
+For more information on different OQL clauses, see [OQL Version 2 Features](/refguide10/oql-v2/).
 
 {{% /alert %}}
 

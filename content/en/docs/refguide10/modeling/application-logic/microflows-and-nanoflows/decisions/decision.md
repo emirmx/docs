@@ -1,10 +1,10 @@
 ---
 title: "Decision"
-url: /refguide/decision/
+url: /refguide10/decision/
 weight: 1
 aliases:
-    - /refguide/exclusive-split.html
-    - /refguide/exclusive-split
+    - /refguide10/exclusive-split.html
+    - /refguide10/exclusive-split
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -28,7 +28,7 @@ The decision properties pane consists of the following sections:
 
 ### Caption
 
-For more information, see the [Caption](/refguide/microflow-element-common-properties/#caption) section in *Common Properties*.
+For more information, see the [Caption](/refguide10/microflow-element-common-properties/#caption) section in *Common Properties*.
 
 ### Decision Type {#decision-type}
 
@@ -41,13 +41,13 @@ For more information, see the [Caption](/refguide/microflow-element-common-prope
 
 ### Error Handling Type
 
-For more information, see the [Error Handling Type](/refguide/microflow-element-common-properties/#error-handling) section in *Common Properties*.
+For more information, see the [Error Handling Type](/refguide10/microflow-element-common-properties/#error-handling) section in *Common Properties*.
 
 ## Expression Section {#expression}
 
-The **Expression** section is shown in the decision properties pane if the [Decision Type](#decision-type) property is set to **Expression**. The expression entered here is used to define the condition of the decision. For more information on expressions, see [Microflow Expressions](/refguide/expressions/).
+The **Expression** section is shown in the decision properties pane if the [Decision Type](#decision-type) property is set to **Expression**. The expression entered here is used to define the condition of the decision. For more information on expressions, see [Microflow Expressions](/refguide10/expressions/).
 
-The expression should result in a Boolean or an [enumeration](/refguide/enumerations/). 
+The expression should result in a Boolean or an [enumeration](/refguide10/enumerations/). 
 
 ### Boolean Result
 
@@ -67,11 +67,11 @@ In the example below, the microflow parameter is *MeetingRegistration*. Dependin
 
 Since you want to go in a different direction for each value of the enumeration, you only need to use the attribute containing the enumeration. So the expression in this example is `$MeetingRegistration/WorkingLocation`. 
     
-Afterwards, you can merge the three flows followed by a meeting URL into one flow (for more information, see [Merge](/refguide/merge/)). Then you only need to [commit](/refguide/committing-objects/) the registration once and have one [Close page](/refguide/committing-objects/) activity after the merge. 
+Afterwards, you can merge the three flows followed by a meeting URL into one flow (for more information, see [Merge](/refguide10/merge/)). Then you only need to [commit](/refguide10/committing-objects/) the registration once and have one [Close page](/refguide10/committing-objects/) activity after the merge. 
 
 ## Rule Section {#rule}
 
-The **Rule** section is shown in the decision properties pane if the [Decision Type](#decision-type) property is set to **Rule**. A [rule](/refguide/rules/) can be selected to define the condition of the decision. You can use the outcome of the rule for the decision instead of calling a sub-microflow and using the returned variable of that sub-microflow.
+The **Rule** section is shown in the decision properties pane if the [Decision Type](#decision-type) property is set to **Rule**. A [rule](/refguide10/rules/) can be selected to define the condition of the decision. You can use the outcome of the rule for the decision instead of calling a sub-microflow and using the returned variable of that sub-microflow.
 
 {{< figure src="/attachments/refguide10/modeling/application-logic/microflows-and-nanoflows/decisions/decision/rule-properties.png"   width="350"  class="no-border" >}}
 
@@ -79,4 +79,4 @@ The properties of the **Rule** decision type are the following ones:
 
 * **Rule** – allows you to select a rule.
 
-* **Parameter** – for each parameter of the rule an argument needs to be specified using [expressions](/refguide/expressions/). For example, a rule that determines whether a customer deserves a certain status will have a customer object as a parameter.
+* **Parameter** – for each parameter of the rule an argument needs to be specified using [expressions](/refguide10/expressions/). For example, a rule that determines whether a customer deserves a certain status will have a customer object as a parameter.

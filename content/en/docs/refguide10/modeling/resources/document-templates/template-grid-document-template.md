@@ -1,11 +1,11 @@
 ---
 title: "Template Grid (Document Template)"
-url: /refguide/template-grid-document-template/
+url: /refguide10/template-grid-document-template/
 aliases:
-    - /refguide/Template+Grid+(document+template).html
-    - /refguide/template-grid-(document-template).html
-    - /refguide/Template+Grid+(document+template)
-    - /refguide/template-grid-(document-template)
+    - /refguide10/Template+Grid+(document+template).html
+    - /refguide10/template-grid-(document-template).html
+    - /refguide10/Template+Grid+(document+template)
+    - /refguide10/template-grid-(document-template)
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -33,7 +33,7 @@ This defines the amount of columns the template grid will contain.
 
 ## Common Properties
 
-{{% snippet file="/static/_includes/refguide/name-property.md" %}}
+{{% snippet file="/static/_includes/refguide10/name-property.md" %}}
 
 ## Data Source Properties
 

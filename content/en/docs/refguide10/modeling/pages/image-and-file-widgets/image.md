@@ -1,16 +1,16 @@
 ---
 title: "Static Image"
-url: /refguide/image/
+url: /refguide10/image/
 weight: 20
 aliases:
-    - /refguide/image-property.html
-    - /refguide/image-property
+    - /refguide10/image-property.html
+    - /refguide10/image-property
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 {{% alert color="warning" %}}The Static Image widget, which is not supported by the React client added to Mendix in [10.7](/releasenotes/studio-pro/10.7/#react-client), can be converted to an [Image widget](/appstore/widgets/image/) through the context menu of the widget when the React client is enabled.
 
-For more information, see the Mendix React Client's [Migration Guide](/refguide/mendix-client/react/#migration-guide).
+For more information, see the Mendix React Client's [Migration Guide](/refguide10/mendix-client/react/#migration-guide).
 {{% /alert %}}
 
 ## Introduction
@@ -22,7 +22,7 @@ For example, you can configure an image clicking which a page with customer deta
 {{< figure src="/attachments/refguide10/modeling/pages/image-and-file-widgets/image/image-example.png" alt="Image Example" class="no-border" >}}
 
 {{% alert color="info" %}}
-If you want to dynamically show different images based on data, you need to add [dynamic image](/refguide/image-viewer/) on your page.
+If you want to dynamically show different images based on data, you need to add [dynamic image](/refguide10/image-viewer/) on your page.
 {{% /alert %}}
 
 ## Properties
@@ -35,27 +35,27 @@ Static image properties consist of the following sections:
 
 * [Common](#common)
 * [Design Properties](#design-properties)
-* [Events](/refguide/events/)
+* [Events](/refguide10/events/)
 * [General](#general)
 * [Visibility](#visibility)
 
 ### Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### Design Properties Section {#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### Events Section {#events}
 
-For information on the Events section and its properties, see [On Click Event and Events Section](/refguide/on-click-event/). 
+For information on the Events section and its properties, see [On Click Event and Events Section](/refguide10/on-click-event/). 
 
 ### General Section {#general}
 
 #### Image
 
-The file name that this widget shows. For more information on when to use images and supported formats, see [Images](/refguide/images/).
+The file name that this widget shows. For more information on when to use images and supported formats, see [Images](/refguide10/images/).
 
 #### Width Unit
 
@@ -103,11 +103,11 @@ Default: *Yes*
 
 ### Visibility Section {#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ## Converting to a Dynamic Image
 
-You can convert a static image to a dynamic image that allows you to display dynamic data. For more information on dynamic image and its properties, see [Dynamic Image](/refguide/image-viewer/). 
+You can convert a static image to a dynamic image that allows you to display dynamic data. For more information on dynamic image and its properties, see [Dynamic Image](/refguide10/image-viewer/). 
 
 To convert an image widget into a dynamic image, do the following:
 
@@ -118,6 +118,6 @@ The **Static image** widget is converted to the dynamic image and you can config
 
 ## Read More
 
-* [Page](/refguide/page/)
-* [Images, Videos, and Files](/refguide/image-and-file-widgets/)
-* [Properties Common in the Page Editor](/refguide/common-widget-properties/)
+* [Page](/refguide10/page/)
+* [Images, Videos, and Files](/refguide10/image-and-file-widgets/)
+* [Properties Common in the Page Editor](/refguide10/common-widget-properties/)

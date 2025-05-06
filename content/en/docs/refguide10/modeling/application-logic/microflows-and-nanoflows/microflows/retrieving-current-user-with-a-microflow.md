@@ -1,7 +1,7 @@
 ---
 title: "Retrieving the Current User with a Microflow"
 linktitle: "Retrieving Current User with a Microflow"
-url: /refguide/retrieving-current-user-with-a-microflow/
+url: /refguide10/retrieving-current-user-with-a-microflow/
 weight: 6
 description: "Describes how to retrieve the current user of your application in Studio Pro with a microflow."
 ---
@@ -10,7 +10,7 @@ description: "Describes how to retrieve the current user of your application in 
 
 In order to implement a certain logic, you often need to identify the user who is currently logged in. The following are facts about user management in a Mendix app:
 
-* The currently logged-in user is always available in [microflow calls](/refguide/microflows/) and [XPath constraints](/refguide/xpath-constraints/), and it can be retrieved in a microflow for subsequent querying or manipulation.
+* The currently logged-in user is always available in [microflow calls](/refguide10/microflows/) and [XPath constraints](/refguide10/xpath-constraints/), and it can be retrieved in a microflow for subsequent querying or manipulation.
 * All application users/accounts are a specialization of `System.User`, and very often and by default, it is `Administration.Account`.
 * In Studio Pro, the [Administration](/appstore/modules/administration/) module is added by default. It allows you to manage local accounts and view app statistics.
 
@@ -24,7 +24,7 @@ Before you continue, make sure you have completed the following:
 
 * Install the latest version of Studio Pro
 * Read about the [Administration](/appstore/modules/administration/) module in the *Studio Pro Guide*
-* Understand the basics about [microflows](/refguide/microflows/)
+* Understand the basics about [microflows](/refguide10/microflows/)
 
 ## Retrieving the Current User
 
@@ -48,5 +48,5 @@ Now you have the microflow that retrieves the current user!
 
 ## Read More
 
-* [XPath Constraints](/refguide/xpath-constraints/)
-* [XPath Keywords and System Variables](/refguide/xpath-keywords-and-system-variables/)
+* [XPath Constraints](/refguide10/xpath-constraints/)
+* [XPath Keywords and System Variables](/refguide10/xpath-keywords-and-system-variables/)

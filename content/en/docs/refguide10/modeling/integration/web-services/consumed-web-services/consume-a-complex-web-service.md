@@ -1,10 +1,10 @@
 ---
 title: "Consume a Complex Web Service"
-url: /refguide/integration/consume-a-complex-web-service/
+url: /refguide10/integration/consume-a-complex-web-service/
 weight: 8
 description: "Describes how to import a web service both directly and using the wizard as well as how to configure a web service call."
 aliases:
-    - /howto/integration/consume-a-complex-web-service/
+    - /howto10/integration/consume-a-complex-web-service/
 ---
 
 ## Introduction
@@ -18,7 +18,7 @@ This how-to teaches you how to do the following:
 
 ## Importing a Web Service
 
-You can import a web service document into your app. For more information, see [Consumed Web Services](/refguide/consumed-web-services/).
+You can import a web service document into your app. For more information, see [Consumed Web Services](/refguide10/consumed-web-services/).
 
 To import a web service directly, follow these steps:
 
@@ -44,7 +44,7 @@ To configure the web service call, follow these steps:
 
     {{% alert color="info" %}}Make sure the microflow either creates the variables required as arguments for the web service call or has them passed to it.{{% /alert %}}
 
-2. If you are creating your own microflow, add the [Call web service](/refguide/call-web-service-action/) activity to the microflow. For details on how to add activities to a microflow, see [Activities](/refguide/activities/).
+2. If you are creating your own microflow, add the [Call web service](/refguide10/call-web-service-action/) activity to the microflow. For details on how to add activities to a microflow, see [Activities](/refguide10/activities/).
 3. Double-click the activity to open the **Call Web Service** properties editor and in the **Operation** field, click **Select**.
 4. In the **Select Web Service Operation** dialog box, you can select the operation for this web service call:
 
@@ -79,11 +79,11 @@ Your imported web service is now ready to be used in your application.
 
 ## Read More
 
-* [Consume a Simple Web Service](/howto/integration/consume-a-simple-web-service/)
-* [Export XML Documents](/howto/integration/export-xml-documents/)
-* [Import Excel Documents](/howto/integration/importing-excel-documents/)
-* [Expose a Web Service](/howto/integration/expose-a-web-service/)
-* [Use Selenium Support](/howto/integration/selenium-support/)
-* [Import XML Documents](/howto/integration/importing-xml-documents/)
-* [Consume a REST Service](/howto/integration/consume-a-rest-service/)
-* [Expose Data to BI tools Using OData](/howto/integration/exposing-data-to-bi-tools-using-odata/)
+* [Consume a Simple Web Service](/howto10/integration/consume-a-simple-web-service/)
+* [Export XML Documents](/howto10/integration/export-xml-documents/)
+* [Import Excel Documents](/howto10/integration/importing-excel-documents/)
+* [Expose a Web Service](/howto10/integration/expose-a-web-service/)
+* [Use Selenium Support](/howto10/integration/selenium-support/)
+* [Import XML Documents](/howto10/integration/importing-xml-documents/)
+* [Consume a REST Service](/howto10/integration/consume-a-rest-service/)
+* [Expose Data to BI tools Using OData](/howto10/integration/exposing-data-to-bi-tools-using-odata/)

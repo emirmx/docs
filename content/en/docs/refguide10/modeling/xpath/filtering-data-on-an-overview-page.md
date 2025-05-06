@@ -1,15 +1,15 @@
 ---
 title: "Filtering Data on an Overview Page Using XPath"
 linktitle: "Filter Data Using XPath"
-url: /refguide/filtering-data-on-an-overview-page/
+url: /refguide10/filtering-data-on-an-overview-page/
 weight: 5
 description: "Describes how to filter data using different XPath constraints."
 aliases:
-    - /howto/logic-business-rules/filtering-data-on-an-overview-page/
+    - /howto10/logic-business-rules/filtering-data-on-an-overview-page/
 ---
 
 {{% alert color="info" %}}
-This example is using a version of Mendix below 10.5. In Mendix version 10.5 and above, the [XPath Constraints](/refguide/xpath-constraints/) dialog has a different UX which makes it easier to build XPath constraints. However, the concepts and XPath examples can still be used in Mendix version 10.5 and above.
+This example is using a version of Mendix below 10.5. In Mendix version 10.5 and above, the [XPath Constraints](/refguide10/xpath-constraints/) dialog has a different UX which makes it easier to build XPath constraints. However, the concepts and XPath examples can still be used in Mendix version 10.5 and above.
 {{% /alert %}}
 
 ## Introduction
@@ -32,12 +32,12 @@ This how-to teaches you how to do the following:
 
 For this how-to, it is necessary that you set up a test app with test data. To do so, follow these steps:
 
-1. Follow the guide [Configuring a Domain Model](/refguide/configuring-a-domain-model/) and create the following domain model:
+1. Follow the guide [Configuring a Domain Model](/refguide10/configuring-a-domain-model/) and create the following domain model:
 
     {{< figure src="/attachments/refguide10/modeling/xpath/define-access-rules-using-xpath/18581378.png" class="no-border" >}}
 
-2. [Create overview and detail pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/) to manage the **Customer** and the **Order** entities and their objects.
-3. [Create menu items](/refguide/setting-up-the-navigation-structure/#menu-items) to access the **Customer** and the **Order** overview pages.
+2. [Create overview and detail pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/) to manage the **Customer** and the **Order** entities and their objects.
+3. [Create menu items](/refguide10/setting-up-the-navigation-structure/#menu-items) to access the **Customer** and the **Order** overview pages.
 4. Add the following customer data to your app:
 
     {{< figure src="/attachments/refguide10/modeling/xpath/filtering-data-on-an-overview-page/example-customers-data.png" width="500px" class="no-border" >}}
@@ -80,7 +80,7 @@ In the previous section, you set up a basic data structure and created some samp
 
 ## Filtering the Orders List by Order Status Using XPath 
 
-In the previous section, you used the search bar to filter data on the **Orders** overview page. In this section, you add an XPath constraint on the **Orders** data grid. With an XPath constraint on a data grid you can filter (in a hard-coded way) the objects shown in the list. Mendix XPath is one of the Mendix query languages designed to retrieve data. XPath uses path expressions to select data of Mendix objects and their attributes or associations. To learn more about XPath, see [XPath Constraints](/refguide/xpath-constraints/). In the following example, you constrain the data grid using XPath so that the data grid only displays orders with the status **Open**. 
+In the previous section, you used the search bar to filter data on the **Orders** overview page. In this section, you add an XPath constraint on the **Orders** data grid. With an XPath constraint on a data grid you can filter (in a hard-coded way) the objects shown in the list. Mendix XPath is one of the Mendix query languages designed to retrieve data. XPath uses path expressions to select data of Mendix objects and their attributes or associations. To learn more about XPath, see [XPath Constraints](/refguide10/xpath-constraints/). In the following example, you constrain the data grid using XPath so that the data grid only displays orders with the status **Open**. 
 
 1. Select the **Orders** data grid and go to its **Properties** pane.
 2. Choose **XPath** for **Data source** > **Type** and then click in the **XPath Constraint** field:
@@ -142,4 +142,4 @@ In the previous section, you constrained the data grid on attributes of the same
 
 ## Read More
 
-* [Defining Access Rules Using XPath](/refguide/define-access-rules-using-xpath/)
+* [Defining Access Rules Using XPath](/refguide10/define-access-rules-using-xpath/)

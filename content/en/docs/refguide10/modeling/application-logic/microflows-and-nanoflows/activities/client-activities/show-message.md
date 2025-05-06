@@ -1,10 +1,10 @@
 ---
 title: "Show Message"
-url: /refguide/show-message/
+url: /refguide10/show-message/
 weight: 4
 aliases:
-    - /refguide/Show+Message.html
-    - /refguide/Show+Message
+    - /refguide10/Show+Message.html
+    - /refguide10/Show+Message
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -13,7 +13,7 @@ This activity can be used in both microflows and nanoflows.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-This action is ignored and does not work when a microflow is called from an offline or native app. For more information, see the [Microflows](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/#microflows) section of *Offline-First Data*.
+This action is ignored and does not work when a microflow is called from an offline or native app. For more information, see the [Microflows](/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/#microflows) section of *Offline-First Data*.
 {{% /alert %}}
 
 ## Introduction
@@ -57,7 +57,7 @@ There are three message options:
 
 ### Parameters
 
-For each parameter in the template, you define an attribute of the context entity or an associated entity. The value of this attribute will be inserted at the position of the parameter. Parameters should be entered using [expressions](/refguide/expressions/) resulting in a string.
+For each parameter in the template, you define an attribute of the context entity or an associated entity. The value of this attribute will be inserted at the position of the parameter. Parameters should be entered using [expressions](/refguide10/expressions/) resulting in a string.
 
 With parameters you can customize your message with data specific to the situation. For example, the message "An email has been sent to customer {1}." with parameter `$customer/FullName` will show the full name of the customer who an email has been sent to.
 
@@ -72,8 +72,8 @@ The **Blocking** property defines whether the message shown to the end-user is b
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}
 
 ## Read More
 
-* [Activities](/refguide/activities/)
+* [Activities](/refguide10/activities/)

@@ -1,13 +1,14 @@
 ---
 title: "Studio Pro 10 How-tos"
-url: /howto/
+url: /howto10/
 description: "Step-by-step guides on various Mendix topics that teach you how to build and customize apps."
-weight: 15
+weight: 17
 no_list: false
 description_list: true
 cascade:
     - content_type: "Studio Pro 10"
     - mendix_version: 10
+    - notsitemap: true
     - sitemap:
         priority: 0.7
 #This document is mapped to the landing page, update the link there if renaming or moving the doc file.

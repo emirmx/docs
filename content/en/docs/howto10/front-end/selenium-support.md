@@ -1,10 +1,10 @@
 ---
 title: "Configure Selenium Support"
-url: /howto/front-end/selenium-support/
+url: /howto10/front-end/selenium-support/
 weight: 16
 description: "Describes Selenium best practices, including advice on naming conventions."
 aliases:
-    - /howto/integration/selenium-support/
+    - /howto10/integration/selenium-support/
 ---
 
 ## Introduction
@@ -58,10 +58,10 @@ Note that the fourth row in a grid has an index of `3`.
 
 ## Read More
 
-* [Test Mendix Applications Using Selenium IDE](/howto/testing/testing-mendix-applications-using-selenium-ide/)
-* [Consume a Complex Web Service](/howto/integration/consume-a-complex-web-service/)
-* [Consume a Simple Web Service](/howto/integration/consume-a-simple-web-service/)
-* [Import Excel Documents](/howto/integration/importing-excel-documents/)
-* [Export XML Documents](/howto/integration/export-xml-documents/)
-* [Expose a Web Service](/howto/integration/expose-a-web-service/)
-* [Import XML Documents](/howto/integration/importing-xml-documents/)
+* [Test Mendix Applications Using Selenium IDE](/howto10/testing/testing-mendix-applications-using-selenium-ide/)
+* [Consume a Complex Web Service](/howto10/integration/consume-a-complex-web-service/)
+* [Consume a Simple Web Service](/howto10/integration/consume-a-simple-web-service/)
+* [Import Excel Documents](/howto10/integration/importing-excel-documents/)
+* [Export XML Documents](/howto10/integration/export-xml-documents/)
+* [Expose a Web Service](/howto10/integration/expose-a-web-service/)
+* [Import XML Documents](/howto10/integration/importing-xml-documents/)

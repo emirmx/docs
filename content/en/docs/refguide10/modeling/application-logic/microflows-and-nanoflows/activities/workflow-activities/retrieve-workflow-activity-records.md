@@ -1,6 +1,6 @@
 ---
 title: "Retrieve Workflow Activity Records"
-url: /refguide/retrieve-workflow-activity-records/
+url: /refguide10/retrieve-workflow-activity-records/
 weight: 40
 ---
 
@@ -51,4 +51,4 @@ The name of the list variable returned by the activity.
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}

@@ -1,6 +1,6 @@
 ---
 title: "Help Menu"
-url: /refguide/help-menu/
+url: /refguide10/help-menu/
 description: "Describes the Help Menu in Studio-Pro."
 ---
 

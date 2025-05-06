@@ -1,11 +1,11 @@
 ---
 title: "Static Image (Document Template)"
-url: /refguide/static-image-document-template/
+url: /refguide10/static-image-document-template/
 aliases:
-    - /refguide/Static+Image+(document+template).html
-    - /refguide/static-image-(document-template).html
-    - /refguide/Static+Image+(document+template)
-    - /refguide/static-image-(document-template)
+    - /refguide10/Static+Image+(document+template).html
+    - /refguide10/static-image-(document-template).html
+    - /refguide10/Static+Image+(document+template)
+    - /refguide10/static-image-(document-template)
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -37,4 +37,4 @@ The height defines the height of the image in the document. This is set in pixel
 
 ## Common Properties
 
-{{% snippet file="/static/_includes/refguide/name-property.md" %}}
+{{% snippet file="/static/_includes/refguide10/name-property.md" %}}

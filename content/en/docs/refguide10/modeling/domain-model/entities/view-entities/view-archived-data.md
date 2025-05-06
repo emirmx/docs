@@ -1,6 +1,6 @@
 ---
 title: "View Archived Data"
-url: /refguide/view-archived-data/
+url: /refguide10/view-archived-data/
 weight: 60
 ---
 

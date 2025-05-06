@@ -1,6 +1,6 @@
 ---
 title: "Counter"
-url: /refguide/metrics-counter/
+url: /refguide10/metrics-counter/
 weight: 10
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -49,7 +49,7 @@ It is recommended to use a common prefix that uniquely defines your organization
 
 ### Value
 
-The value used to increment the counter's value. Values are specified with [expressions](/refguide/expressions/) and should be of type Integer/Long. It is only possible to increment the counter, so values cannot be negative.
+The value used to increment the counter's value. Values are specified with [expressions](/refguide10/expressions/) and should be of type Integer/Long. It is only possible to increment the counter, so values cannot be negative.
 
 ### Tags
 
@@ -57,10 +57,10 @@ You can specify a list of tags to enrich the counter name with key/value pairs. 
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}
 
 ## Read More
 
-* [Metric Configuration](/refguide/metrics/)
-* [Metrics Activities](/refguide/metrics-activities/)
+* [Metric Configuration](/refguide10/metrics/)
+* [Metrics Activities](/refguide10/metrics-activities/)
 * [Meter Concepts](https://micrometer.io/docs/concepts)

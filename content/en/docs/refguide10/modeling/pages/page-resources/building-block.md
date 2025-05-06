@@ -1,6 +1,6 @@
 ---
 title: "Building Block"
-url: /refguide/building-block/
+url: /refguide10/building-block/
 weight: 5
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -9,7 +9,7 @@ weight: 5
 
 Building blocks are components that can be re-used to streamline the page creation process. By pre-configuring and styling building blocks, users can easily click together interfaces without having to worry about the details of styling guidelines or user experience. 
 
-Building blocks are stored in the app's [UI resources package](/refguide/ui-resources-package/). This keeps them in sync with the app theme, and provides a handy place to consolidate all design-related data. 
+Building blocks are stored in the app's [UI resources package](/refguide10/ui-resources-package/). This keeps them in sync with the app theme, and provides a handy place to consolidate all design-related data. 
 
 To create a building block, simply right-click a widget anywhere in your app in Studio Pro and select **Create building block**. The widget along with its contents will be added as a new building block. The building block will now automatically appear in the **Building blocks** tab of the **Toolbox**. 
 
@@ -47,8 +47,8 @@ The documentation URL can be used to link to a documentation page for the buildi
 
 ## Common Properties
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Designer Properties
 
-{{% snippet file="/static/_includes/refguide/designer-properties.md" %}}
+{{% snippet file="/static/_includes/refguide10/designer-properties.md" %}}

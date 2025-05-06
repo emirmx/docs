@@ -1,6 +1,6 @@
 ---
 title: "Workflow Recommender"
-url: /refguide/workflow-recommender/
+url: /refguide10/workflow-recommender/
 weight: 30
 description: "Describes Workflow Recommender in Mendix Studio Pro."
 ---
@@ -45,6 +45,6 @@ To open the properties dialog box after adding a suggested element, accept the s
 
 ## Read More
 
-* [Workflows](/refguide/workflows/)
-* [Logic Recommender](/refguide/logic-recommender/)
-* [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/)
+* [Workflows](/refguide10/workflows/)
+* [Logic Recommender](/refguide10/logic-recommender/)
+* [Mendix AI Assistance (Maia)](/refguide10/mendix-ai-assistance/)

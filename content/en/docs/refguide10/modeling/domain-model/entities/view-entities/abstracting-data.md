@@ -1,6 +1,6 @@
 ---
 title: "Abstracting Data of Add-On Modules"
-url: /refguide/abstracting-view-entity-data/
+url: /refguide10/abstracting-view-entity-data/
 weight: 100
 ---
 

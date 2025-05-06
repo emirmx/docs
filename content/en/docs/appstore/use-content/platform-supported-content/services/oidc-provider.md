@@ -22,6 +22,7 @@ Certain OIDC Provider module versions are compatible with certain versions of St
 
 | Mendix Version | OIDC Provider Version |
 | --- | --- |
+| 10.21.01 and above | 4.2.0 and above |
 | 10.12.10 and above | 4.0.0 and above |
 | 9.24.18 and above | 3.2.0 and above |
 
@@ -100,7 +101,6 @@ The OIDC Provider has the following features and limitations:
 * The hybrid resource owner password credential is not supported, although the OIDC Provider may contain some (rudimentary) implementation to support it.
 * The OIDC Provider service ignores "email", "phone" and "profile" scope values (as specified by OIDC specs) when the client includes these in an authentication request. Instead, the OIDC Provider service will include user claims in an ID-token based on a custom microflow, regardless of the scopes in the request.
 * Front channel and back-channel logout are implemented as alpha features.
-* The module does not support `CustomRedirectLogicMicroflow` constant.
 
 ### Dependencies
 
@@ -481,6 +481,18 @@ You need to configure the OIDC SSO module in your app which is using the IAM bro
 1. Sign back in to the app using the OIDC SSO client alias you have just configured.
 1. Login by entering credentials of the user which you have created earlier on OIDC provider Accounts section.
     You should be able to login successfully and get into the index.html page
+
+## Using `CustomRedirectLogicMicroflow` Microflow
+
+Use the constant `CustomRedirectLogicMicroflow` to specify which microflow determines where the user should be directed. This microflow has the following signatures:
+
+ **Input Parameter**: `username` (String) – The username of the user logging in.
+
+**Return Value**: `Boolean` – Indicates whether the user should be sent to the client application or to the SSO provider application.
+
+**True**: Direct the user to the client application (their original destination).
+
+**False**: Direct the user to the SSO provider application.
 
 ## Token Formats for Non-Custom Claims
 

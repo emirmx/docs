@@ -1,12 +1,12 @@
 ---
 title: "Offline-First Data"
-url: /refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/
+url: /refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/
 no_list: false
 description_list: true 
 weight: 20
 aliases:
-    - /refguide/offline-first/
-    - /refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/
+    - /refguide10/offline-first/
+    - /refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/
 ---
 
 ## Introduction
@@ -19,19 +19,19 @@ Offline-first applications work regardless of the connection to provide a contin
 It is essential to understand that offline-first is an architectural concept and not an approach based on the device's network state. Offline-first apps do not rely on a connection. Still, they can use network connections (for example, you can call microflows, use a Google Maps widget, or use push notifications).
 {{% /alert %}}
 
-Mendix supports building offline-first applications for [native mobile](/refguide/native-mobile/) and [progressive web apps](/refguide/mobile/introduction-to-mobile-technologies/progressive-web-app/). Both native and progressive web apps (PWAs) share the same core, giving them the same offline-first capabilities. Native mobile apps are always offline-first, but for progressive web apps this is optional. You can configure your PWA to be offline-first by adding an offline-first PWA navigation profile to your app. For more information, see [Progressive Web Apps](/refguide/mobile/introduction-to-mobile-technologies/progressive-web-app/).
+Mendix supports building offline-first applications for [native mobile](/refguide10/native-mobile/) and [progressive web apps](/refguide10/mobile/introduction-to-mobile-technologies/progressive-web-app/). Both native and progressive web apps (PWAs) share the same core, giving them the same offline-first capabilities. Native mobile apps are always offline-first, but for progressive web apps this is optional. You can configure your PWA to be offline-first by adding an offline-first PWA navigation profile to your app. For more information, see [Progressive Web Apps](/refguide10/mobile/introduction-to-mobile-technologies/progressive-web-app/).
 
 {{% alert color="info" %}}
 **Online Synchronization Mode (Introduced in Mendix 10.19)**
 
 Mendix 10.19 introduces a new way to sync an app's data: online synchronization mode. This mode allows app developers to use entity data on pages without synchronizing the data of those entities to the offline database. Using this mode requires an available connection to the server. 
 
-For more details, see [Online Synchronization Mode](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/online-sync-mode/).
+For more details, see [Online Synchronization Mode](/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/online-sync-mode/).
 {{% /alert %}}
 
 ## Synchronization
 
-Synchronization is the process of copying data and files from the app's server to the device and updating the server with the changes made on the local device. The local database is populated when the app starts for the first time. After this initial synchronization, data will remain available in the app so that it can work without an internet connection. You can model when and how to perform the subsequent synchronizations. In some cases, the Mendix Client may perform a synchronization automatically. Designing an efficient synchronization strategy is crucial for a high-performance app and a smooth UX. For more information, see the [Synchronization Guide](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/synchronization/).
+Synchronization is the process of copying data and files from the app's server to the device and updating the server with the changes made on the local device. The local database is populated when the app starts for the first time. After this initial synchronization, data will remain available in the app so that it can work without an internet connection. You can model when and how to perform the subsequent synchronizations. In some cases, the Mendix Client may perform a synchronization automatically. Designing an efficient synchronization strategy is crucial for a high-performance app and a smooth UX. For more information, see the [Synchronization Guide](/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/synchronization/).
 
 ## Modeling Offline-First Apps
 
@@ -51,13 +51,13 @@ Imagine that you have deployed the first version of your native mobile app, your
 
 A similar issue may occur regarding changes to other app elements, including microflows and constants available to the client. For example, if your new deployment renames a microflow or modifies its parameters, users who have not updated their apps will be working with the previous model of the app where it references the microflow with the old name. 
 
-For more information on offline-first app design, see [Offline Best Practices](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/).
+For more information on offline-first app design, see [Offline Best Practices](/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/).
 
 ## Distributing Mobile Apps 
 
-When you model a web app and deploy it to production, all users immediately have access to it. However, this is often not the case with offline-first apps. The apps installed on your users' devices do not immediately update (especially true for native mobile apps). Typically, you create and distribute a new release of your app in the Google Play store and Apple App Store, which may take some time. Alternatively, Mendix provides an over-the-air (OTA) update mechanism to update your apps without going through the release process. For more information, see [Updating Native Apps](/refguide/mobile/distributing-mobile-apps/overtheair-updates/).
+When you model a web app and deploy it to production, all users immediately have access to it. However, this is often not the case with offline-first apps. The apps installed on your users' devices do not immediately update (especially true for native mobile apps). Typically, you create and distribute a new release of your app in the Google Play store and Apple App Store, which may take some time. Alternatively, Mendix provides an over-the-air (OTA) update mechanism to update your apps without going through the release process. For more information, see [Updating Native Apps](/refguide10/mobile/distributing-mobile-apps/overtheair-updates/).
 
-For information on safely updating your offline-first apps, see [Building, Testing, and Distributing Apps](/refguide/mobile/distributing-mobile-apps/).
+For information on safely updating your offline-first apps, see [Building, Testing, and Distributing Apps](/refguide10/mobile/distributing-mobile-apps/).
 
 ## Session Management 
 

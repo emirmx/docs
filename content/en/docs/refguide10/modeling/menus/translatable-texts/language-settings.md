@@ -1,6 +1,6 @@
 ---
 title: "Language Settings"
-url: /refguide/language-settings/
+url: /refguide10/language-settings/
 weight: 50
 ---
 
@@ -13,7 +13,7 @@ Mendix is designed to be used by users in multiple languages. The **Languages** 
 You can reach this tab in two ways:
 
 1. Select the menu option **Language > Language Settings…**.
-2. Open the **App{Name} > Settings** dialog box from the [App Explorer](/refguide/app-explorer/) and select the **Language** tab.
+2. Open the **App{Name} > Settings** dialog box from the [App Explorer](/refguide10/app-explorer/) and select the **Language** tab.
 
 ## Setting Default Language
 
@@ -42,7 +42,7 @@ You can set each language in your app to have additional settings.
 
 ### Check Completeness
 
-If you check the **Check completeness** box, you will get a warning (or error) message in the [Errors pane](/refguide/errors-pane/) for every text which has no entry in this language's dictionary.
+If you check the **Check completeness** box, you will get a warning (or error) message in the [Errors pane](/refguide10/errors-pane/) for every text which has no entry in this language's dictionary.
 
 If this is the default language, the **Check completeness** box will be checked and you will not be able to uncheck it.
 

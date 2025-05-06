@@ -1,7 +1,7 @@
 ---
 title: "Configuring a List and Viewing List Item Details on One Page"
 linktitle: "Configure List and View Details on 1 Page"
-url: /refguide/configure-list-and-details-on-one-page/
+url: /refguide10/configure-list-and-details-on-one-page/
 description: "Describes how to configure a list and view list item details on one page in Mendix Studio Pro."
 weight: 60
 ---
@@ -26,7 +26,7 @@ Sales Representatives in your company want to view a list of opportunity contact
 
 Before starting this how-to, make sure you have completed the following prerequisites:
 
-* Familiarize yourself with the domain model terms and learn how to perform basic functions. For more information, see [Data in the Domain Model](/refguide/domain-model/).
+* Familiarize yourself with the domain model terms and learn how to perform basic functions. For more information, see [Data in the Domain Model](/refguide10/domain-model/).
 * Make sure your domain model is configured in the following way:
 
     {{< figure src="/attachments/refguide10/modeling/pages/data-widgets/configure-list-and-details-on-one-page/domain-model.png" width="200px" class="no-border" >}}
@@ -101,6 +101,6 @@ You can now preview your app and test your page.
 
 ## Read More
 
-* [Page](/refguide/page/)
-* [Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/)
-* [Configuring a Domain Model](/refguide/configuring-a-domain-model/)
+* [Page](/refguide10/page/)
+* [Create Your First Two Overview and Detail Pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/)
+* [Configuring a Domain Model](/refguide10/configuring-a-domain-model/)

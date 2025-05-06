@@ -1,9 +1,9 @@
 ---
 title: "Call Web Service"
-url: /refguide/call-web-service-action/
+url: /refguide10/call-web-service-action/
 weight: 20
 aliases:
-    - /refguide/using-a-proxy-to-call-a-webservice/
+    - /refguide10/using-a-proxy-to-call-a-webservice/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -13,7 +13,7 @@ This activity can only be used in microflows.
 
 ## Introduction
 
-The **Call web service** activity can be used to call one of the [imported web service](/refguide/consumed-web-services/) operations. You can specify whether or not to use authentication, what the request should look like and how the response of the web service should be handled.
+The **Call web service** activity can be used to call one of the [imported web service](/refguide10/consumed-web-services/) operations. You can specify whether or not to use authentication, what the request should look like and how the response of the web service should be handled.
 
 ## Properties
 
@@ -66,7 +66,7 @@ When calling a web service using a call web service activity, the location of th
 
 ### Location
 
-**Location** defines the address of the web service if you override the location. The location needs to be entered using an [expression](/refguide/expressions/) which results in a valid URL string.
+**Location** defines the address of the web service if you override the location. The location needs to be entered using an [expression](/refguide10/expressions/) which results in a valid URL string.
 
 ### Use Timeout on Request
 
@@ -96,13 +96,13 @@ Setting this setting to yes can greatly decrease performance!
 When consuming a WSDL that uses encoding, turning on validation will lead to a consistency error, because it is not WS-I compliant.
 {{% /alert %}}
 
-Schema validation is not supported when you configure the [consumed web service](/refguide/consumed-web-service/) to send binary data as attachments.
+Schema validation is not supported when you configure the [consumed web service](/refguide10/consumed-web-service/) to send binary data as attachments.
 
 Default: *No*
 
 ### Proxy Configuration
 
-In almost all cases, you can ignore this setting. **Use app settings** is a good default value. For more information about app settings, see the *Proxy Settings* section of [Runtime Customization](/refguide/custom-settings/#proxy-settings).
+In almost all cases, you can ignore this setting. **Use app settings** is a good default value. For more information about app settings, see the *Proxy Settings* section of [Runtime Customization](/refguide10/custom-settings/#proxy-settings).
 
 If desired, you can configure whether to use a proxy for the request. These are the choices:
 
@@ -126,7 +126,7 @@ The options are:
 When you select **Override**, you can configure which client certificate will be used. Click **Edit** to specify the **Client certificate identifier**. This identifier can be set in different places, depending on where you deploy the app:
 
 * When you deploy the app in Mendix Cloud, set the **Client certificate identifier** in the app and the  **Web Service Call name** [in Mendix Cloud](/developerportal/deploy/certificates/#outgoing-client-certificates) to the same value to use a specific client certificate for this web service.
-* When you deploy the app elsewhere, the identifier is set in the custom setting [ClientCertificateUsages](/refguide/custom-settings/#CACertificates). For testing locally, this can be set as a custom server setting in a [Configuration](/refguide/configuration/#custom).
+* When you deploy the app elsewhere, the identifier is set in the custom setting [ClientCertificateUsages](/refguide10/custom-settings/#CACertificates). For testing locally, this can be set as a custom server setting in a [Configuration](/refguide10/configuration/#custom).
 
 When this identifier is not set for the environment where your app is deployed (either not pinned or not present in *ClientCertificateUsages*), the default settings will be used (as if **Use app settings** were selected).
 
@@ -140,11 +140,11 @@ Use HTTP authentication defines whether the basic authentication should be used.
 
 ### User Name
 
-User name defines the user name that will be used to authenticate over HTTP. The user name needs to be entered using [expressions](/refguide/expressions/). The microflow expression should result in a string.
+User name defines the user name that will be used to authenticate over HTTP. The user name needs to be entered using [expressions](/refguide10/expressions/). The microflow expression should result in a string.
 
 ### Password
 
-Password defines the password that will be used to authenticate over HTTP. The password needs to be entered using [expressions](/refguide/expressions/). The microflow expression should result in a string.
+Password defines the password that will be used to authenticate over HTTP. The password needs to be entered using [expressions](/refguide10/expressions/). The microflow expression should result in a string.
 
 ### Custom HTTP Headers
 
@@ -162,13 +162,13 @@ The XML for the request parts (header and body) can be generated in several ways
 
 ### Export Mapping for Entire Request
 
-Using this option, a single [Export Mapping](/refguide/export-mappings/) can be used to generate the XML for the request part. You can choose the export mapping to use for the request part and, if applicable, the object or list that you want to use as parameter for the mapping.
+Using this option, a single [Export Mapping](/refguide10/export-mappings/) can be used to generate the XML for the request part. You can choose the export mapping to use for the request part and, if applicable, the object or list that you want to use as parameter for the mapping.
 
 ### Simple Expressions for Each Request Parameter
 
 This option for request parts can be used when all children of the XML element of the request part occur at most once and are primitive values. If that is not the case, this option is disabled and cannot be used.
 
-Using this option you need to supply an argument value for all elements of a primitive type (parameters). Argument values need to be entered using [expressions](/refguide/expressions/) resulting in the same data type as the parameter.
+Using this option you need to supply an argument value for all elements of a primitive type (parameters). Argument values need to be entered using [expressions](/refguide10/expressions/) resulting in the same data type as the parameter.
 
 {{< figure src="/attachments/refguide10/modeling/application-logic/microflows-and-nanoflows/activities/integration-activities/call-web-service-action/req-param.png" class="no-border" >}}
 
@@ -194,17 +194,17 @@ The template for the XML request can contain parameters that are written as a nu
 
 #### Parameters
 
-For each parameter in the template, you can specify its value using a [microflow expression](/refguide/expressions/) resulting in a string value. This value will be inserted at the position of the parameter.
+For each parameter in the template, you can specify its value using a [microflow expression](/refguide10/expressions/) resulting in a string value. This value will be inserted at the position of the parameter.
 
 ## SOAP Response Tab{#response}
 
 {{< figure src="/attachments/refguide10/modeling/application-logic/microflows-and-nanoflows/activities/integration-activities/call-web-service-action/soap-response-tab.png" class="no-border" >}}
 
-If the data type is a complex XML structure it can be mapped to entities using a [Import Mapping](/refguide/import-mappings/). If it is primitive data, it can be stored in a variable immediately. The response does not have to be used though; it can also be ignored if you are not interested in it.
+If the data type is a complex XML structure it can be mapped to entities using a [Import Mapping](/refguide10/import-mappings/). If it is primitive data, it can be stored in a variable immediately. The response does not have to be used though; it can also be ignored if you are not interested in it.
 
 ### Mapping
 
-If you are using complex XML structures you can choose the [Import Mapping](/refguide/import-mappings/) that will be used to transform the XML into objects.
+If you are using complex XML structures you can choose the [Import Mapping](/refguide10/import-mappings/) that will be used to transform the XML into objects.
 
 ### If No Object Was Found
 
@@ -220,9 +220,9 @@ Indicates whether the resulting objects should be committed to the database, and
 
 | Option | Description |
 | --- | --- |
-| Yes | The objects are saved in the database and the [event handlers](/refguide/event-handlers/) are triggered. |
-| Yes without events | The objects are saved in the database, but the [event handlers](/refguide/event-handlers/) are not triggered (default). |
-| No | The objects are created without being saved in the database. You will need a [commit action](/refguide/committing-objects/) to save them. |
+| Yes | The objects are saved in the database and the [event handlers](/refguide10/event-handlers/) are triggered. |
+| Yes without events | The objects are saved in the database, but the [event handlers](/refguide10/event-handlers/) are not triggered (default). |
+| No | The objects are created without being saved in the database. You will need a [commit action](/refguide10/committing-objects/) to save them. |
 
 ### Range (If the Mapping Returns a List)
 
@@ -248,4 +248,4 @@ The name for the output that will hold the result of the operation.
 
 ## Common Section{#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}

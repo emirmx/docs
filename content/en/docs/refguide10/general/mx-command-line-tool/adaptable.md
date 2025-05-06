@@ -1,6 +1,6 @@
 ---
 title: "Adaptable Solution Commands"
-url: /refguide/mx-command-line-tool/adaptable
+url: /refguide10/mx-command-line-tool/adaptable
 weight: 20
 description: "Describes the adaptable solution-related commands for the mx command-line tool."
 ---

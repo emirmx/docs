@@ -1,11 +1,11 @@
 ---
 title: "Updating Native Apps"
-url: /refguide/mobile/distributing-mobile-apps/overtheair-updates/
+url: /refguide10/mobile/distributing-mobile-apps/overtheair-updates/
 weight: 30
 description: "Describes enabling over the air updates using built-in functionality."
 aliases:
-    - /howto/mobile/how-to-ota/
-    - /howto/mobile/how-to-ota-appcenter/
+    - /howto10/mobile/how-to-ota/
+    - /howto10/mobile/how-to-ota-appcenter/
 ---
 ## Introduction
 
@@ -48,9 +48,9 @@ With these shortcomings in mind, we developed a Mendix OTA update mechanism whic
 Before starting this guide, make sure you have completed the following prerequisites:
 
 * Use Mendix Studio Pro.
-* Deploy your app by completing [Build a Mendix Native App Locally](/refguide/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/).
+* Deploy your app by completing [Build a Mendix Native App Locally](/refguide10/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/).
 * Install your app on a test device or emulator.
-* Read the [Offline-First](/refguide/offline-first/) guide. Understand this document before issuing OTA updates or releasing new versions.
+* Read the [Offline-First](/refguide10/offline-first/) guide. Understand this document before issuing OTA updates or releasing new versions.
 
 ## When to Use OTA Updates{#when-to-use-ota}
 
@@ -66,16 +66,16 @@ OTA updates are useful in the following app development cases:
 * Widgets added or removed
 * You added a new custom JavaScript-only widget or module 
 * You added a page with no additional logic
-* Non-destructive model changes (for more information, see [Offline-First](/refguide/offline-first/))
+* Non-destructive model changes (for more information, see [Offline-First](/refguide10/offline-first/))
 
 ### When a Full Release Is Required
 
 If you have made any changes directly to your iOS or Android app, you will have to fully redeploy your app to the app stores for the changes to take effect. OTA updates do not suffice and a full release is required in the following cases:
 
 * The initial release of your app
-* A Studio Pro version upgrade that requires a new [Native Template](/refguide/native-template/) version
+* A Studio Pro version upgrade that requires a new [Native Template](/refguide10/native-template/) version
 * You fundamentally changed your app's functionality (this is an Apple App Store limitation, and will require a re-release and re-review of your app by Apple—your app might be removed if you do not comply)
-* A new native module has been added (such as the [Native Mobile AR](https://marketplace.mendix.com/link/component/117209) module — for more information see [Modules](/refguide/modules/)
+* A new native module has been added (such as the [Native Mobile AR](https://marketplace.mendix.com/link/component/117209) module — for more information see [Modules](/refguide10/modules/)
 * The app has been renamed
 * You added a new microflow or nanoflow
 * The app's launcher icons have been changed
@@ -90,7 +90,7 @@ By default OTA updates are disabled for your Native Mobile Profile. To enable th
 1. Navigate to the Native Mobile Profile.
 1. Select **Enable over-the-air updates**: 
 
-    {{< figure src="/attachments/howto/mobile/native-mobile/distribution/how-to-ota/ota-profile-screen.png" alt="Startup option ota checkbox"   width="400"  class="no-border" >}}
+    {{< figure src="/attachments/howto10/mobile/native-mobile/distribution/how-to-ota/ota-profile-screen.png" alt="Startup option ota checkbox"   width="400"  class="no-border" >}}
 
 1. Deploy your app to the cloud.
 
@@ -105,7 +105,7 @@ To make the OTA update functionality available to your users, release the new bi
 
 OTA updates let you correct mistakes in your published apps without issuing a new release. For example, imagine you issued a new release and later found a spelling mistake on your welcome screen:
 
-{{< figure src="/attachments/howto/mobile/native-mobile/distribution/how-to-ota-appcenter/phone-error-text.png" alt="Typo in welcome screen"   width="300"  class="no-border" >}}
+{{< figure src="/attachments/howto10/mobile/native-mobile/distribution/how-to-ota-appcenter/phone-error-text.png" alt="Typo in welcome screen"   width="300"  class="no-border" >}}
 
 Before OTA updates, you would have to make a new release and configure it in the app stores. But OTA updates make fixing such a mistake easy.
 

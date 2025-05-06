@@ -1,10 +1,10 @@
 ---
 title: "Setting Up Navigation"
 linktitle: "Set Up Navigation"
-url: /refguide/setting-up-the-navigation-structure/
+url: /refguide10/setting-up-the-navigation-structure/
 description: "Describes how to configure the navigation structure in Studio Pro."
 aliases:
-    - /howto/general/setting-up-the-navigation-structure/
+    - /howto10/general/setting-up-the-navigation-structure/
 ---
 ## Introduction
 
@@ -70,11 +70,11 @@ Now every time a user with the **Administrator** user signs in to the applicatio
 
 ## Setting a Fallback Page {#fallback}
 
-The fallback page is a page or microflow that can be used to customize the application's behavior when trying to access a [microflow](/refguide/microflow/#url) or [page](/refguide/page-properties/#url) URL that does not exist. When configured, the default pop-up stating "The page you requested was not found. You are redirected to the home page" is replaced by the fallback microflow or the page. Fallback pages are not available for offline profiles.
+The fallback page is a page or microflow that can be used to customize the application's behavior when trying to access a [microflow](/refguide10/microflow/#url) or [page](/refguide10/page-properties/#url) URL that does not exist. When configured, the default pop-up stating "The page you requested was not found. You are redirected to the home page" is replaced by the fallback microflow or the page. Fallback pages are not available for offline profiles.
 
 If a microflow is used as a fallback, it can have only one String parameter named 'Path', which will contain the URL that could not be found.
 
-The fallback page will only be used for URLs that start with a [URL Prefix](/refguide/app-settings/#url-prefix).
+The fallback page will only be used for URLs that start with a [URL Prefix](/refguide10/app-settings/#url-prefix).
 
 ## Setting a Nanoflow as a Home Page {#nanoflow-home-page}
 
@@ -104,7 +104,7 @@ You can create menu items for your navigation. Do the following:
 
 6. Click **OK** to save the menu item.
 
-In the overview of menu items you can see the name of the menu item, the target page/microflow, and the user role are the necessary settings to be configured for the menu item. The user roles are derived from the [page and microflow access settings](/refguide/module-security/). 
+In the overview of menu items you can see the name of the menu item, the target page/microflow, and the user role are the necessary settings to be configured for the menu item. The user roles are derived from the [page and microflow access settings](/refguide10/module-security/). 
 
 You can restructure the menu by dragging and dropping menu items.
 
@@ -130,9 +130,9 @@ Now that you have created a menu structure, it is time to start using it on page
 
 The menu widget is now showing the navigation items created in the navigation editor.
 
-To avoid adding the menu widget on every page in your app, you can use a layout. With layouts you can define a structure for pages in your app. You can define where the menu should be rendered and you can simply reuse that layout for all or several pages. For more information on how to use layouts, see [How to Use Layouts and Snippets](/howto/front-end/layouts-and-snippets/).
+To avoid adding the menu widget on every page in your app, you can use a layout. With layouts you can define a structure for pages in your app. You can define where the menu should be rendered and you can simply reuse that layout for all or several pages. For more information on how to use layouts, see [How to Use Layouts and Snippets](/howto10/front-end/layouts-and-snippets/).
 
 ## Read More
 
-* [Atlas UI](/howto/front-end/atlas-ui/)
-* [Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/)
+* [Atlas UI](/howto10/front-end/atlas-ui/)
+* [Create Your First Two Overview and Detail Pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/)

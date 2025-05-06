@@ -1,11 +1,11 @@
 ---
 title: "Static Label (Document Template)"
-url: /refguide/static-label-document-template/
+url: /refguide10/static-label-document-template/
 aliases:
-    - /refguide/Static+label+(document+template).html
-    - /refguide/static-label-(document-template).html
-    - /refguide/Static+label+(document+template)
-    - /refguide/static-label-(document-template)
+    - /refguide10/Static+label+(document+template).html
+    - /refguide10/static-label-(document-template).html
+    - /refguide10/Static+label+(document+template)
+    - /refguide10/static-label-(document-template)
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -23,7 +23,7 @@ For example, static label content `Page [%pageNumber%] of [%totalPageCount%]` wi
 
 ## Common Properties
 
-{{% snippet file="/static/_includes/refguide/name-property.md" %}}
+{{% snippet file="/static/_includes/refguide10/name-property.md" %}}
 
 ## Appearance Properties
 
@@ -33,4 +33,4 @@ This is the value that will be displayed in the document.
 
 ### Style
 
-For details, see [Style](/refguide/style/).
+For details, see [Style](/refguide10/style/).

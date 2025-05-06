@@ -1,6 +1,6 @@
 ---
 title: "Parameter"
-url: /refguide/parameter/
+url: /refguide10/parameter/
 weight: 70
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -21,7 +21,7 @@ The **Documentation** property can be used to store developer documentation. Thi
 
 ### Data Type
 
-The data type of a parameter defines the type of the value that it expects. See [Data Types](/refguide/data-types/) for the possible data types.
+The data type of a parameter defines the type of the value that it expects. See [Data Types](/refguide10/data-types/) for the possible data types.
 
 Default: *Object*
 
@@ -49,7 +49,7 @@ When an argument is set to **optional**, a default value can be set:
 
 ## Setting an Input Parameter as the Return Value
 
-To set a parameter as the [return value](/refguide/end-event/#return-value) of your microflow, right-click the parameter and select **Set $Parameter as return value** via the context menu:
+To set a parameter as the [return value](/refguide10/end-event/#return-value) of your microflow, right-click the parameter and select **Set $Parameter as return value** via the context menu:
 
 {{< figure src="/attachments/refguide10/modeling/application-logic/microflows-and-nanoflows/parameter/set-parameter-as-return-value.png" width="300px" class="no-border" >}}
 

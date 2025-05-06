@@ -1,20 +1,20 @@
 ---
 title: "Configuring a Domain Model"
-url: /refguide/configuring-a-domain-model/
+url: /refguide10/configuring-a-domain-model/
 weight: 60
 description: "Describes how to create entities and attributes, add enumerations, create associations, and configure the delete behavior for associations with Studio Pro."
 aliases:
-    - /howto/data-models/create-a-basic-data-layer/
-    - /refguide/create-a-basic-data-layer/
+    - /howto10/data-models/create-a-basic-data-layer/
+    - /refguide10/create-a-basic-data-layer/
 ---
 
 ## Introduction
 
-This document explains how you can configure a domain model for your application with Mendix. Each application can have multiple [modules](/refguide/modules/), and each module has its own domain model. All the domain models together define the data layer of the application. 
+This document explains how you can configure a domain model for your application with Mendix. Each application can have multiple [modules](/refguide10/modules/), and each module has its own domain model. All the domain models together define the data layer of the application. 
 
-A [domain model](/refguide/domain-model/) consists of entities and associations. An entity is the blueprint for an object in your application, like the **Customer** and **Order** entities mentioned in the following sections. 
+A [domain model](/refguide10/domain-model/) consists of entities and associations. An entity is the blueprint for an object in your application, like the **Customer** and **Order** entities mentioned in the following sections. 
 
-[Associations](/refguide/associations/) define the relation between two entities. As soon as you deploy the application, Mendix takes care of the underlying database for you. This means that you do not have to create tables and write queries yourself.
+[Associations](/refguide10/associations/) define the relation between two entities. As soon as you deploy the application, Mendix takes care of the underlying database for you. This means that you do not have to create tables and write queries yourself.
 
 This document teaches you how to do the following:
 
@@ -30,12 +30,10 @@ This document also presents [an example for defining the domain model](#example-
 To create entities and their attributes, follow the steps below.
 
 {{% alert color="info" %}}
-If you are using Mendix version 10.13.0 or above, you can use the Maia domain model generator to create a domain model based on a description of your requirements. For more information, see [Maia Domain Model Generator](/refguide/domain-model-generator/).
-
-The domain model generator is currently an experimental feature. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/). 
+If you are using Mendix version 10.13.0 or above, you can use Maia for Domain Model to create a domain model based on a description of your requirements. For more information, see [Maia for Domain Model](/refguide10/maia-for-domain-model/).
 {{% /alert %}}
 
-1. Open your [domain model](/refguide/domain-model/).
+1. Open your [domain model](/refguide10/domain-model/).
 2. Go to **Toolbox** and drag **Entity** into your domain model.
 
     {{< figure src="/attachments/refguide10/modeling/domain-model/create-a-basic-data-layer/toolbox-entity.png" width="300px" class="no-border" >}}
@@ -62,7 +60,7 @@ The domain model generator is currently an experimental feature. For more inform
 
 ## Adding Enumerations {#add-enumeration}
 
-An [enumeration](/refguide/enumerations/) is a predefined list of values that can be used as an attribute type. This allows end-users to select any of the predefined values for this attribute. A good example of an enumeration is order status (with values open, processing, and complete).
+An [enumeration](/refguide10/enumerations/) is a predefined list of values that can be used as an attribute type. This allows end-users to select any of the predefined values for this attribute. A good example of an enumeration is order status (with values open, processing, and complete).
 
 To extend the **Order** entity with an enumeration value-based attribute, follow these steps:
 
@@ -93,7 +91,7 @@ To extend the **Order** entity with an enumeration value-based attribute, follow
 
 ## Creating Associations
 
-After you created the entities, you can create associations for the entities. For more information, see [Associations](/refguide/associations/).
+After you created the entities, you can create associations for the entities. For more information, see [Associations](/refguide10/associations/).
 
 To create an association, draw a line from the border of one entity to the border of the other entity. Always start with the entity that can have more instances in the system than the other one. In this case, draw an association from **Order** to **Customer**, because one customer can have multiple orders.
 
@@ -101,7 +99,7 @@ To create an association, draw a line from the border of one entity to the borde
 
 ## Multiplicity
 
-This section explains how to change the [multiplicity](/refguide/association-properties/#multiplicity) of associations. 
+This section explains how to change the [multiplicity](/refguide10/association-properties/#multiplicity) of associations. 
 
 By default, the domain model editor creates an association with a one-to-many multiplicity. In the above case, a customer can have multiple orders, and an order can only have one customer.
 
@@ -115,11 +113,11 @@ If you want to change the multiplicity, double-click the **Order_Customer** asso
 
     {{< figure src="/attachments/refguide10/modeling/domain-model/create-a-basic-data-layer/many-to-many.png" width="500px" class="no-border" >}}
 
-    When the association is set to a many-to-many multiplicity, the **Navigability** property is also activated. For further details, see the [Navigability](/refguide/association-properties/#navigability) section in *Association Properties*.
+    When the association is set to a many-to-many multiplicity, the **Navigability** property is also activated. For further details, see the [Navigability](/refguide10/association-properties/#navigability) section in *Association Properties*.
 
 ## Delete Behavior {#delete-behavior}
 
-You can configure the [on delete behavior](/refguide/association-properties/#delete-behavior) for both sides of an association.
+You can configure the [on delete behavior](/refguide10/association-properties/#delete-behavior) for both sides of an association.
 
 To configure the delete behavior, double-click the **Order_Customer** association to open its **Properties** dialog box:
 
@@ -183,7 +181,7 @@ An example of the domain model for the online shopping app is shown below:
 * The product information should be divided into the following entities:
 
     * **Product** – general information about the product, such as its name, description, and price
-    * **Product_Image** – each product has an image, but you do not create it as an attribute. You need to create an entity that is a specialization of the **System.Image** entity to allow you to store images. For an example on how to use the specialization of the **System.Image** entity to display images on a page, see [Image Uploader](/refguide/image-uploader/)
+    * **Product_Image** – each product has an image, but you do not create it as an attribute. You need to create an entity that is a specialization of the **System.Image** entity to allow you to store images. For an example on how to use the specialization of the **System.Image** entity to display images on a page, see [Image Uploader](/refguide10/image-uploader/)
 
 * The order information should be divided into the following entities:
 
@@ -203,5 +201,5 @@ The following explains how each entity is associated for the online shopping app
 
 ## Read More
 
-* [Denormalize Data to Improve Performance](/howto/data-models/denormalize-data-to-improve-performance/)
-* [Setting Up Data Validation](/refguide/setting-up-data-validation/)
+* [Denormalize Data to Improve Performance](/howto10/data-models/denormalize-data-to-improve-performance/)
+* [Setting Up Data Validation](/refguide10/setting-up-data-validation/)

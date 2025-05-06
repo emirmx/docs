@@ -1,6 +1,6 @@
 ---
 title: "Suppression Rules"
-url: /refguide/suppression-rules/
+url: /refguide10/suppression-rules/
 weight: 10
 description: "Describes suppression rules for warnings in Studio Pro."
 ---
@@ -169,5 +169,5 @@ The table below describes the available settings:
 
 ## Read More {#read-more}
 
-* [Errors Pane](/refguide/errors-pane/)
-* [Consistency Errors](/refguide/consistency-errors/)
+* [Errors Pane](/refguide10/errors-pane/)
+* [Consistency Errors](/refguide10/consistency-errors/)

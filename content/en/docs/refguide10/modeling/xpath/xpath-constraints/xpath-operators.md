@@ -1,6 +1,6 @@
 ---
 title: "XPath Operators"
-url: /refguide/xpath-operators/
+url: /refguide10/xpath-operators/
 ---
 
 ## For XPath Query Constraints
