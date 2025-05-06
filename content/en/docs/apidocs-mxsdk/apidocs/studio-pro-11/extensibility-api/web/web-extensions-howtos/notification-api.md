@@ -7,7 +7,7 @@ weight: 30
 
 ## Introduction
 
-This how-to describes how to show a simple pop-up notification in Studio Pro using the Notifications API from the web extension API.
+This how-to describes how to show a simple pop-up notification in Studio Pro.
 
 ## Prerequisites
 
@@ -15,7 +15,7 @@ This guide uses the results of [Get Started with the Web Extensibility API](/api
 
 ## Showing a Notification
 
-With the Notifications API, you can show a popup notification when your extension loads. The notification will disappear after 5 seconds. To do this, follow the steps below:
+With the Notifications API, you can show a pop-up notification when your extension loads. The notification will disappear after five seconds. To do this, follow the steps below:
 
 1. Create an `assets` folder under your `src` folder.
 2. Find an icon you want to use in your notification and copy it into the `assets` folder. This example uses the file `check.png`.
@@ -33,9 +33,7 @@ With the Notifications API, you can show a popup notification when your extensio
     ```
 
 5. Create an `images.d.ts` file. This is a `declaration` file, as indicated by the `d` file extension.
-    
-6. Add the line `declare module "*.png";` to the `images.d.ts` file. This tells TypeScript that any import ending in *.png* should be treated as a module. This enables TypeScript to handle *.png* files correctly when you import them in your code, and allows you to use images in your extensions.
-
+6. Add the line `declare module "*.png";` to the `images.d.ts` file. This tells TypeScript that any import ending in *.png* should be treated as a module. This enables TypeScript to handle *.png* files correctly when you import them in your code and allows you to use images in your extensions.
 7. Replace your `src/main/index.ts` file with the following, using the appropriate icon name in place of `Check`:
 
     ```typescript
@@ -60,10 +58,10 @@ With the Notifications API, you can show a popup notification when your extensio
 
     This code does the following:
     
-    * Imports the `notificationsApi` from `studioPro.ui.notifications` to allow you to use the notifications API.
-    * Implements a `loaded` event which calls the `show` method to show a popup notification for five seconds with the title `Extension Loaded`, a message, and the `check.png` icon you set up earlier. See [Full Reference for Show Method](#reference), below for more information.
+    * It imports the `notificationsApi` from `studioPro.ui.notifications` to allow you to use the notifications API.
+    * It implements a `loaded` event, which calls the `show` method to show a pop-up notification for five seconds with the title `Extension Loaded`, a message, and the `check.png` icon you set up earlier. For more information, see the [Full Reference for Show Method](#reference) section below.
 
-Now, when the extension loads, your notification will show in the top right corner of Studio Pro:
+Now, when the extension loads, your notification will show in the top-right corner of Studio Pro:
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/notifications/notification.png" >}}
 
@@ -73,15 +71,11 @@ The show method has the following parameters:
 
 * `title` – the title of the notification
 * `message` – the text content of the notification
-* `displayDurationInSeconds` – an optional duration in seconds for the notification to remain visible. If no duration is provided, the popup will remain indefinitely until the user removes it themselves.
-* `icon` – an optional icon which is displayed inside the notification
-
-## Conclusion
-
-You have seen how to use your extension to show a notification inside Studio Pro.
+* `displayDurationInSeconds` – an optional duration in seconds for the notification to remain visible; if no duration is provided, the pop-up will remain indefinitely until the user removes it themselves
+* `icon` – an optional icon that is displayed inside the notification
 
 ## Extensibility Feedback
 
-If you would like to provide us with some additional feedback you can complete a small [Survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback)
+If you would like to provide us additional feedback, you can complete a small [survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback).
 
-Any feedback is much appreciated.
+Any feedback is appreciated.
