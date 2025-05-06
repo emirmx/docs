@@ -1,10 +1,10 @@
 ---
 title: "Hermes Engine"
-url: /refguide/mobile/building-efficient-mobile-apps/hermes-engine/
+url: /refguide10/mobile/building-efficient-mobile-apps/hermes-engine/
 weight: 15
 description: "Hermes is a JavaScript engine optimized for React Native, enhancing app performance and efficiency."
 aliases:
-    - /refguide/mobile/hermes
+    - /refguide10/mobile/hermes
 ---
 
 ## Introduction
@@ -34,5 +34,5 @@ The Hermes engine generally does not require any modifications to your existing 
 
 ## Read More
 
-* [Optimizing Native Startup](/refguide/mobile/building-efficient-mobile-apps/native-startup/)
-* [Testing Native Apps](/refguide/mobile/distributing-mobile-apps/testing-mobile-apps/)
+* [Optimizing Native Startup](/refguide10/mobile/building-efficient-mobile-apps/native-startup/)
+* [Testing Native Apps](/refguide10/mobile/distributing-mobile-apps/testing-mobile-apps/)

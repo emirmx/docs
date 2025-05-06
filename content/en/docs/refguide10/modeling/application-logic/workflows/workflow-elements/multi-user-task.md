@@ -1,6 +1,6 @@
 ---
 title: "Multi-User Task"
-url: /refguide/multi-user-task/
+url: /refguide10/multi-user-task/
 weight: 80
 ---
 
@@ -54,15 +54,15 @@ Possible options of this property are described in the table below:
 
 | Option | Description |
 | --- | --- |
-| XPath | Allows you to filter users who should be assigned to the multi-user task. For example, you can assign a certain task only to users with the Manager user role. You can use attributes of the **User Entity** set in [App Settings](/refguide/app-settings/#workflows). |
-| Microflow | Allows you to assign the multi-user task to certain users. Using microflow you can check, for example, which users have the right to approve multi-user tasks and are currently not on vacation and assign the task only to users who passed the check.<br><br>The return type of the microflow should be the **User Entity** set in [App Settings](/refguide/app-settings/#workflows). |
+| XPath | Allows you to filter users who should be assigned to the multi-user task. For example, you can assign a certain task only to users with the Manager user role. You can use attributes of the **User Entity** set in [App Settings](/refguide10/app-settings/#workflows). |
+| Microflow | Allows you to assign the multi-user task to certain users. Using microflow you can check, for example, which users have the right to approve multi-user tasks and are currently not on vacation and assign the task only to users who passed the check.<br><br>The return type of the microflow should be the **User Entity** set in [App Settings](/refguide10/app-settings/#workflows). |
 | No assignment | Allows you to not assign the multi-user task to certain users immediately. This can be useful when you, for example, want the multi-user task to be created but have an administrator assign it to certain users later. |
 
-In case **Target users using** (an XPath or a microflow) results in an empty list of users (0 users), the workflow fails. For more information on how to handle this kind of issues, see the [Operation](/refguide/change-workflow-state/#operation) section in *Change Workflow State*.
+In case **Target users using** (an XPath or a microflow) results in an empty list of users (0 users), the workflow fails. For more information on how to handle this kind of issues, see the [Operation](/refguide10/change-workflow-state/#operation) section in *Change Workflow State*.
 
 #### XPath Constraint
 
-Specifies the expression used to assign the multi-user task. This option is displayed only when the [Target users using](#target-users) is set to **XPath**. Click **Edit** to edit the [XPath constraint](/refguide/xpath-constraints/).
+Specifies the expression used to assign the multi-user task. This option is displayed only when the [Target users using](#target-users) is set to **XPath**. Click **Edit** to edit the [XPath constraint](/refguide10/xpath-constraints/).
 
 #### Microflow
 
@@ -276,7 +276,7 @@ Through the **Decision microflow** setting, you can provide your own microflow. 
 | List of `System.WorkflowUserTaskOutcome` | All outcomes that have been selected so far. These outcomes are ordered in the order in which they occurred, earliest first. |
 | `System.WorkflowUserTask`                | The multi-user task for which the decision must be made. |
 | `System.Workflow`                        | The workflow instance that contains the multi-user task. |
-| workflow context                         | The [workflow parameter](/refguide/workflow-parameters/) variable. |
+| workflow context                         | The [workflow parameter](/refguide10/workflow-parameters/) variable. |
 
 The provided microflow should return a value of type **String**, containing the final outcome of the multi-user task. 
 If no decision can be taken yet based on the selected outcomes, the microflow should return `empty` (or an empty string).
@@ -293,7 +293,7 @@ When a value is returned that is not defined in the [Outcomes](#outcomes), the m
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-If the microflow is changed in between deployments, it might return a different result after the deployment from during the previous deployment, for user tasks that are in progress. This cannot be detected during [workflow versioning conflict detection](/refguide/workflow-versioning/) because the microflow cannot be called at that point. As a result, it will not cause a conflict and behaves like when the workflow is marked as resolved.
+If the microflow is changed in between deployments, it might return a different result after the deployment from during the previous deployment, for user tasks that are in progress. This cannot be detected during [workflow versioning conflict detection](/refguide10/workflow-versioning/) because the microflow cannot be called at that point. As a result, it will not cause a conflict and behaves like when the workflow is marked as resolved.
 {{% /alert %}}
 
 ###### Example
@@ -400,7 +400,7 @@ In addition to adding new parameters, you can perform the following actions on p
 
 ### Boundary Events Section {#boundary-events}
 
-For more information, see [Boundary Events](/refguide/workflow-boundary-events/).
+For more information, see [Boundary Events](/refguide10/workflow-boundary-events/).
 
 ### Common Section {#common}
 
@@ -408,5 +408,5 @@ For more information, see [Boundary Events](/refguide/workflow-boundary-events/)
 
 ## Read More
 
-* [Workflows](/refguide/workflows/)
-* [User Task](/refguide/user-task/)
+* [Workflows](/refguide10/workflows/)
+* [User Task](/refguide10/user-task/)

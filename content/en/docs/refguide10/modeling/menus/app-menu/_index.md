@@ -1,6 +1,6 @@
 ---
 title: "App Menu"
-url: /refguide/app-menu/
+url: /refguide10/app-menu/
 description: "Describes the App Menu in Studio Pro."
 weight: 30
 ---
@@ -33,11 +33,11 @@ The **Update Widgets** option presents the current versions of the widgets you a
 
 ### Convert Classes to Design Properties
 
-The **Convert classes to design properties** option allows you to convert classes in widgets into design properties to assist in changing the widget styling. See [Native Styling](/refguide/mobile/designing-mobile-user-interfaces/native-styling/) for more information.
+The **Convert classes to design properties** option allows you to convert classes in widgets into design properties to assist in changing the widget styling. See [Native Styling](/refguide10/mobile/designing-mobile-user-interfaces/native-styling/) for more information.
 
 ### Generate Bill of Materials {#generate-bill-of-materials}
 
-The **Generate Bill of Materials** option allows you to generate a bill of materials for the current project. See [SBOM Generation](/refguide/sbom-generation/) for more information.
+The **Generate Bill of Materials** option allows you to generate a bill of materials for the current project. See [SBOM Generation](/refguide10/sbom-generation/) for more information.
 
 ## Synchronize App Directory {#synchronize}
 
@@ -61,7 +61,7 @@ The **Deploy for Eclipse** option deploys the app to the deployment directory. T
 
 Shortcut key: <kbd>F6</kbd>
 
-For more information on how write Java actions from Eclipse, see [Using Eclipse](/refguide/using-eclipse/).
+For more information on how write Java actions from Eclipse, see [Using Eclipse](/refguide10/using-eclipse/).
 
 ## Create Deployment Package{#create-package}
 
@@ -69,7 +69,7 @@ The **Create Deployment Package** option creates a Mendix Deployment Archive pac
 
 Shortcut key:  <kbd>F7</kbd>
 
-For more information on settings displayed on the Create Deployment Package dialog box, see [Create Deployment Package](/refguide/create-deployment-package-dialog/).
+For more information on settings displayed on the Create Deployment Package dialog box, see [Create Deployment Package](/refguide10/create-deployment-package-dialog/).
 
 ## Clean Deployment Directory {#clean-deployment-directory}
 
@@ -85,14 +85,13 @@ Shortcut key:  <kbd>Ctrl</kbd> + <kbd>F5</kbd>
 The [Mendix Studios Target](/developerportal/deploy/studio-deployment-settings/#target) needs to be set and the deploying user needs to have transport rights to the set target.
 {{% /alert %}}
 
-For more information on using this option, see [Deploy to the Cloud](/refguide/deploy-to-the-cloud-dialog/).
+For more information on using this option, see [Deploy to the Cloud](/refguide10/deploy-to-the-cloud-dialog/).
 
 ## Build Native Mobile App
 
-If you have an app with a [native profile](/refguide/navigation/#native-phone), this option launches the [Mendix Native Mobile Builder](/releasenotes/mobile/mendix-native-mobile-builder/). This wizard will guide you through the required steps for configuring and publishing your app. 
+If you have an app with a [native profile](/refguide10/navigation/#native-phone), this option launches the [Mendix Native Mobile Builder](/releasenotes/mobile/mendix-native-mobile-builder/). This wizard will guide you through the required steps for configuring and publishing your app. 
 
-For the first step in your native mobile journey, see [Build a Mendix Native App Locally
-](/refguide/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/).
+For the first step in your native mobile journey, see [Build a Mendix Native App Locally](/refguide10/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/).
 
 ## Synchronize Dependencies 
 
@@ -100,13 +99,13 @@ Dependency synchronization is automatically triggered to run in the background w
 
 You can trigger manual synchronization by opening the **App** menu and selecting **Synchronize Dependencies**. 
 
-For more information, see the [Dependency Sychronization](/refguide/managed-dependencies/#dependency-synchronization) section of *Managed Dependencies*.
+For more information, see the [Dependency Sychronization](/refguide10/managed-dependencies/#dependency-synchronization) section of *Managed Dependencies*.
 
-## Show Security Overview (Beta)
+## Show Security Overview
 
-The **Show Security Overview (Beta)** option opens the [Security Overview](/refguide/security-overview/), where you can view a unified overview of your app's security. 
+The **Show Security Overview** option opens the [Security Overview](/refguide10/security-overview/), where you can view a unified overview of your app's security. 
 
 ## Read More
 
-* [Studio Pro Overview](/refguide/studio-pro-overview/)
+* [Studio Pro Overview](/refguide10/studio-pro-overview/)
 * [Deploying Apps](/deployment/)

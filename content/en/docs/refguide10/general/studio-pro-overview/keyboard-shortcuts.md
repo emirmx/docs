@@ -1,6 +1,6 @@
 ---
 title: "Keyboard Shortcuts"
-url: /refguide/keyboard-shortcuts/
+url: /refguide10/keyboard-shortcuts/
 weight: 12
 description: "Describes the shortcut keys available in Studio Pro."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
@@ -34,7 +34,7 @@ There are alternative ways to navigate between tabs within panes:
 | <kbd>Ctrl</kbd> + <kbd>1</kbd> - <kbd>0</kbd> | Not available | Switch to tab at selected tab position in the current window. |
 | <kbd>Ctrl</kbd> + <kbd>Page&nbsp;up</kbd> / <kbd>Page&nbsp;down</kbd> | Not available | Switch to next/previous tab in active pane. |
 
-Most menu items also have shortcut keys assigned to them that can be used in all panes. These are shown in the menus, listed in the [Menu Shortcut Keys](#menu-shortcuts) section, below, and are listed on the documentation page for each menu under [Menus](/refguide/menus/).
+Most menu items also have shortcut keys assigned to them that can be used in all panes. These are shown in the menus, listed in the [Menu Shortcut Keys](#menu-shortcuts) section, below, and are listed on the documentation page for each menu under [Menus](/refguide10/menus/).
 
 #### Editors Only {#editors-only}
 
@@ -119,7 +119,7 @@ The tables in the following sub-sections present the shortcut keys that can be u
 | --- | --- | --- |
 | Arrow Keys | Arrow Keys | Select nearby element (activity, event, loop or parameter) in the direction of the arrow. |
 | <kbd>Home</kbd> | <kbd>Fn</kbd> + Left arrow | Select the start event. |
-| <kbd>End</kbd> | <kbd>Fn</kbd> + Right arrow | Select the first end event. |
+| <kbd>End</kbd> | <kbd>Fn</kbd> + Right arrow | Cycle through the end events. In Studio Pro 10.21 and below, pressing <kbd>End</kbd> only selects the first end event. |
 | <kbd>Ctrl</kbd> + <kbd>A</kbd> | <kbd>Command</kbd> + <kbd>A</kbd> | Select all elements. |
 | <kbd>Ctrl</kbd> (in Studio Pro 10.12 and above) | <kbd>Command</kbd> | When pressing <kbd>Ctrl</kbd>/<kbd>Command</kbd>, you can select additional elements. Clicking a selected element or selecting it with a selection rectangle while holding <kbd>Ctrl</kbd>/<kbd>Command</kbd> will deselect it. |
 | <kbd>Tab</kbd> | <kbd>Tab</kbd> | If a loop is selected, the first element inside the loop will be selected. |
@@ -144,8 +144,8 @@ The tables in the following sub-sections present the shortcut keys that can be u
 | <kbd>Enter</kbd> - on a Logic Recommender suggestion list item | <kbd>Enter</kbd> - on a Logic Recommender suggestion list item | The selected item is added on the sequence flow. The Logic Recommender dialog box is shown again for the next action to be added. |
 | <kbd>Shift</kbd> + <kbd>Enter</kbd> (or <kbd>Shift</kbd> + Mouse button) - on a Logic Recommender suggestion list item| <kbd>Shift</kbd> + <kbd>Enter</kbd> (or <kbd>Shift</kbd> + Mouse button) - on a Logic Recommender suggestion list item | The selected item is added on the sequence flow. The element’s property dialog box is opened. |
 | <kbd>F2</kbd> | <kbd>Fn</kbd> + <kbd>F2</kbd> | Rename the variable returned by the selected element. |
-| <kbd>Shift</kbd> + <kbd>F2</kbd> | <kbd>Shift</kbd> + <kbd>Fn</kbd> + <kbd>F2</kbd> | Edit the caption of the selected element. |
-| Context-menu key | Not available | Open the context-menu for the currently selected element. |
+| <kbd>Shift</kbd> + <kbd>F2</kbd> (or just start typing: in Studio Pro 10.22 and above) | <kbd>Shift</kbd> + <kbd>Fn</kbd> + <kbd>F2</kbd> (or just start typing: in Studio Pro 10.22 and above) | Open the **Properties** pane and edit the caption of the selected element. |
+| Context-menu key (or <kbd>Shift</kbd> + <kbd>F10</kbd>: in Studio Pro 10.22 and above)  | <kbd>Shift</kbd> + <kbd>Fn</kbd> + <kbd>F10</kbd> (in Studio Pro 10.22 and above) | Open the context-menu for the currently selected element. |
 
 ### Studio Pro 10.5 and Below
 
@@ -177,7 +177,7 @@ The following shortcut keys are available in the workflow editor:
 |<kbd>Ctrl</kbd> + Mouse scroll wheel<br>(in Studio Pro 10.15.0 and above) | <kbd>Command</kbd> + Mouse scroll wheel<br>(in Studio Pro 10.15.0 and above) | Zoom in or out. |
 | <kbd>Ctrl</kbd> + <kbd>Plus&nbsp;sign</kbd>/<kbd>Minus&nbsp;sign</kbd> | <kbd>Command</kbd> + <kbd>Plus&nbsp;sign</kbd>/<kbd>Minus&nbsp;sign</kbd> | Zoom in or out.  |
 | <kbd>Ctrl</kbd> + <kbd>0</kbd> | <kbd>Command</kbd> + <kbd>0</kbd> | Reset zoom level to 100%. |
-| <kbd>Ctrl</kbd> + Left/Right arrow<br>(in Studio Pro 10.15.0 and above) | <kbd>Command</kbd> + Left/Right arrow<br>(in Studio Pro 10.15.0 and above) | Move a [boundary event](/refguide/workflow-boundary-events/) left or right. |
+| <kbd>Ctrl</kbd> + Left/Right arrow<br>(in Studio Pro 10.15.0 and above) | <kbd>Command</kbd> + Left/Right arrow<br>(in Studio Pro 10.15.0 and above) | Move a [boundary event](/refguide10/workflow-boundary-events/) left or right. |
 
 ## Debugger Shortcut Keys {#debugger-shortcuts}
 
@@ -193,7 +193,7 @@ The following shortcut keys are available for the debugger:
 
 ## Menu Shortcut Keys {#menu-shortcuts}
 
-The following shortcut keys are assigned to menu actions that can be used in all panes. These are also shown in the menus and listed on the documentation page for each menu under [Menus](/refguide/menus/).
+The following shortcut keys are assigned to menu actions that can be used in all panes. These are also shown in the menus and listed on the documentation page for each menu under [Menus](/refguide10/menus/).
 
 | Windows | Mac | Description |
 | --- | --- | --- |
@@ -230,7 +230,7 @@ The following shortcut keys are assigned to menu actions that can be used in all
 
 ## Maia Chat Shortcut Keys {#maia-chat-shortcuts}
 
-You can use the following shortcut keys in [Maia Chat](/refguide/maia-chat/), including on the feedback page:
+You can use the following shortcut keys in [Maia Chat](/refguide10/maia-chat/), including on the feedback page:
 
 | Windows | Mac | Description |
 | --- | --- | --- |
@@ -251,7 +251,7 @@ In Studio Pro 10.6, <kbd>Enter</kbd> can only be used to add a new line, not to 
 
 ## Read More
 
-* [App Explorer](/refguide/app-explorer/)
-* [Menus](/refguide/menus/)
-* [Best Practices for Development](/refguide/dev-best-practices/)
-* [Best Practices for App Performance](/refguide/community-best-practices-for-app-performance/)
+* [App Explorer](/refguide10/app-explorer/)
+* [Menus](/refguide10/menus/)
+* [Best Practices for Development](/refguide10/dev-best-practices/)
+* [Best Practices for App Performance](/refguide10/community-best-practices-for-app-performance/)

@@ -1,17 +1,17 @@
 ---
 title: "Reference Selector"
-url: /refguide/reference-selector/
+url: /refguide10/reference-selector/
 weight: 70
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
-{{% alert color="warning" %}}The **reference selector** widget is not supported by React. To upgrade it to a React-compliant widget, see the Mendix React Client's [Migration Guide](/refguide/mendix-client/react/#migration-guide).{{% /alert %}}
+{{% alert color="warning" %}}The **reference selector** widget is not supported by React. To upgrade it to a React-compliant widget, see the Mendix React Client's [Migration Guide](/refguide10/mendix-client/react/#migration-guide).{{% /alert %}}
 
 ## Introduction
 
-A **reference selector** is used to display and, optionally, allow the end-user to select the value of a one-to-one or one-to-many [association](/refguide/associations/) by selecting the associated object.
+A **reference selector** is used to display and, optionally, allow the end-user to select the value of a one-to-one or one-to-many [association](/refguide10/associations/) by selecting the associated object.
 
-A reference selector must be placed in a [data container](/refguide/data-widgets/). The object (or objects) retrieved by this container must be at the *many* end of a one-to-many association, or at either end of a one-to-one association.
+A reference selector must be placed in a [data container](/refguide10/data-widgets/). The object (or objects) retrieved by this container must be at the *many* end of a one-to-many association, or at either end of a one-to-one association.
 
 For example, if you have an employee they will work for one company. A company can have many employees. The entities **Employee** and **Company** have a one-to-many association, **Employee_Company**, which you can select by choosing a Company from the Employee through the reference selector.  
 
@@ -24,7 +24,7 @@ For example, the following reference allows the end-user to see, and set, the as
 {{< figure src="/attachments/refguide10/modeling/pages/input-widgets/reference-selector/reference-selector.png" class="no-border" >}}
 
 {{% alert color="info" %}}
-If you only want to *display* information, you can also use a [text box](/refguide/text-box/). This has the added advantage that you can choose an attribute from an object which is linked via several association steps.
+If you only want to *display* information, you can also use a [text box](/refguide10/text-box/). This has the added advantage that you can choose an attribute from an object which is linked via several association steps.
 {{% /alert %}}
 
 ## Properties Pane
@@ -73,7 +73,7 @@ There is a small difference in functionality between a **Drop-down** reference s
 
 #### Drop-Down {#drop-down}
 
-The drop-down reference selector is similar to a [drop-down](/refguide/drop-down/) for an enumeration, except that it allows users to choose from a list of objects which can be associated with the current object, rather than a list of values from an enumeration.
+The drop-down reference selector is similar to a [drop-down](/refguide10/drop-down/) for an enumeration, except that it allows users to choose from a list of objects which can be associated with the current object, rather than a list of values from an enumeration.
 
 The reference selector displays an attribute from the objects which can be linked to the current entity via an association. The chosen attribute should be unique for each object which can be associated, otherwise the end-user will have difficulty choosing the correct one. For example, you should display a company *name* (which will hopefully be unique) rather than the company *region* (which will probably not be unique to a company).
 
@@ -87,7 +87,7 @@ Select using a page, links a button to the right of the widget with a pop-up pag
 This is only displayed if [Select using](#select-using) is set to **Drop-down**.
 {{% /alert %}}
 
-This property specifies the caption for the empty option in the drop-down reference selector shown to the end-user. This is a [translatable text](/refguide/translatable-texts/).
+This property specifies the caption for the empty option in the drop-down reference selector shown to the end-user. This is a [translatable text](/refguide10/translatable-texts/).
 
 Filling out the caption for an empty option improves the user experience of your application. It also helps end-users using screen-reader to operate the application easily.
 
@@ -105,7 +105,7 @@ It is recommended that you generate a new page to show by right-clicking the wid
 
 {{< figure src="/attachments/refguide10/modeling/pages/input-widgets/reference-selector/generate-select-page.png" alt="Generate a select page by right-clicking the widget" class="no-border" >}}
 
-See the [Show a Page](/refguide/on-click-event/#show-page) section of *On Click Event and Events Section*. Note that select pages must have a [pop-up layout](/refguide/layout/#layout-type).
+See the [Show a Page](/refguide10/on-click-event/#show-page) section of *On Click Event and Events Section*. Note that select pages must have a [pop-up layout](/refguide10/layout/#layout-type).
 
 **Page title**
 
@@ -139,39 +139,39 @@ This is activated by checking the **Override page title** checkbox.
 
 ### Data Source Section{#data-source}
 
-{{% snippet file="/static/_includes/refguide/data-source-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/data-source-section-link.md" %}}
 
 The attribute path specifies which attribute of an associated entity is shown in the reference selector. The path must follow one association of type reference starting in the entity of the data view.
 
 ### Label Section{#label}
 
-{{% snippet file="/static/_includes/refguide/label-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/label-section-link.md" %}}
 
 ### Editability Section{#editability}
 
-{{% snippet file="/static/_includes/refguide/editability-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/editability-section-link.md" %}}
 
 ### Visibility Section{#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ### Validation Section{#validation}
 
-{{% snippet file="/static/_includes/refguide/widget-validation-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/widget-validation-link.md" %}}
 
 ### Events Section{#events}
 
 The on-change property specifies an action that will be executed when leaving the widget, either by using the <kbd>Tab</kbd> key or by clicking another widget, after the value has been changed.
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 ### Accessibility{#accessibility}
 
-The native version of this widget has multiple accessibility properties. For more information on the **Accessible**, **Screen Reader Caption**, and **Screen Reader Hint** properties, see [Mobile Accessibility](/refguide/mobile/using-mobile-capabilities/mobile-accessibility/). That document also contains more details on how Mendix widgets can work with screen readers, as well as details on special use cases.
+The native version of this widget has multiple accessibility properties. For more information on the **Accessible**, **Screen Reader Caption**, and **Screen Reader Hint** properties, see [Mobile Accessibility](/refguide10/mobile/using-mobile-capabilities/mobile-accessibility/). That document also contains more details on how Mendix widgets can work with screen readers, as well as details on special use cases.
 
 ### Common Section{#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### Selectable Objects Section{#selectable-objects}
 
@@ -190,13 +190,13 @@ The **Source** property sets which of the three ways to define the selectable ob
 
 ##### XPath Constraint
 
-The XPath constraint limits the list of objects that can be selected. See the [constraints](/refguide/database-source/#constraints) section of *Database Source* for more information.
+The XPath constraint limits the list of objects that can be selected. See the [constraints](/refguide10/database-source/#constraints) section of *Database Source* for more information.
 
-From Mendix version 10.5, click **Edit** to edit the [XPath constraint](/refguide/xpath-constraints/). In Mendix versions below this, there is a separate **XPath** source.
+From Mendix version 10.5, click **Edit** to edit the [XPath constraint](/refguide10/xpath-constraints/). In Mendix versions below this, there is a separate **XPath** source.
 
 For example, the XPath constraint `[InStock = true()]` on a reference selector for products will ensure that only products that are in stock are selectable.
 
-See [XPath Constraints](/refguide/xpath-constraints/) for more information on XPath constraints.
+See [XPath Constraints](/refguide10/xpath-constraints/) for more information on XPath constraints.
 
 ##### Constrained By
 
@@ -259,7 +259,7 @@ In microflow settings you can specify what parameters are passed to the microflo
 
 #### XPath{#xpath-constraints}
 
-In Mendix versions below 10.5, there is a separate **XPath** source. Use this if you need to enter an XPath. See [XPath Constraints](/refguide/xpath-constraints/) for more information.
+In Mendix versions below 10.5, there is a separate **XPath** source. Use this if you need to enter an XPath. See [XPath Constraints](/refguide10/xpath-constraints/) for more information.
 
 If the source is XPath, the list of objects is taken from the database, but the objects which are displayed are chosen by an XPath Constraint.
 
@@ -267,14 +267,14 @@ If the source is XPath, the list of objects is taken from the database, but the 
 
 ### Design Properties Section{#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### Common Section{#common-styling}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Read More
 
-* [Data view](/refguide/data-view/)
-* [Entities](/refguide/entities/)
-* [Associations](/refguide/associations/)
+* [Data view](/refguide10/data-view/)
+* [Entities](/refguide10/entities/)
+* [Associations](/refguide10/associations/)

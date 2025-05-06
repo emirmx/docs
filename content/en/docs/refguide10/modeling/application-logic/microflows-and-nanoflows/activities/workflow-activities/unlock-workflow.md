@@ -1,6 +1,6 @@
 ---
 title: "Unlock Workflow"
-url: /refguide/unlock-workflow/
+url: /refguide10/unlock-workflow/
 weight: 80
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -11,16 +11,16 @@ This activity can only be used in microflows.
 
 ## Introduction
 
-The **Unlock workflow** activity can be used to unlock a [workflow](/refguide/workflows/), i.e. a workflow definition. 
+The **Unlock workflow** activity can be used to unlock a [workflow](/refguide10/workflows/), i.e. a workflow definition. 
 If the workflow is unlocked, new instances of the workflow can be created.
 
 {{% alert color="warning" %}} 
 
-When you try to unlock the workflow which is not locked, it will result in a Runtime error. For information on how to handle the error, see [Error Handling in Microflows](/refguide/error-handling-in-microflows/).
+When you try to unlock the workflow which is not locked, it will result in a Runtime error. For information on how to handle the error, see [Error Handling in Microflows](/refguide10/error-handling-in-microflows/).
 
 {{% /alert %}}
 
-For information on locking the workflow, see the [Lock Workflow](/refguide/lock-workflow/).
+For information on locking the workflow, see the [Lock Workflow](/refguide10/lock-workflow/).
 
 ## Properties
 
@@ -54,10 +54,10 @@ The workflow that is unlocked by this activity.
 ### Unpause Instances {#workflow}
 
 With this option, all paused running workflow instances are reverted to their previous state. Workflow instances that are not currently paused are not impacted.
-For more information on workflow state transitions, see the [Workflow State Transitions Upon Locking and Unlocking](/refguide/lock-workflow/#workflow-state-transitions) section in *Lock Workflow*.
+For more information on workflow state transitions, see the [Workflow State Transitions Upon Locking and Unlocking](/refguide10/lock-workflow/#workflow-state-transitions) section in *Lock Workflow*.
 
 This option is enabled by default.
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}

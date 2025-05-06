@@ -1,6 +1,6 @@
 ---
 title: "OData Representation"
-url: /refguide/odata-representation/
+url: /refguide10/odata-representation/
 weight: 60
 ---
 
@@ -45,7 +45,7 @@ In the settings of the OData service, you can choose how associations are repres
 
 ### As a Link
 
-When you represent associations as links, the data of associated objects can be included in the response by using the `$expand` query parameter. For more information, see the [Retrieving Associated Objects](/refguide/supported-odata-operations/#retrieving-associated-objects) section of *Supported OData Operations*.
+When you represent associations as links, the data of associated objects can be included in the response by using the `$expand` query parameter. For more information, see the [Retrieving Associated Objects](/refguide10/supported-odata-operations/#retrieving-associated-objects) section of *Supported OData Operations*.
 
 This means you can only publish an association when the entity on the other side is published in this service as well. This also means that you cannot publish the same entity more than once in the same service (because in that case, it would not be clear where the link should point to).
 

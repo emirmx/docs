@@ -1,10 +1,10 @@
 ---
 title: "Validation Feedback"
-url: /refguide/validation-feedback/
+url: /refguide10/validation-feedback/
 weight: 70
 aliases:
-    - /refguide/Validation+Feedback.html
-    - /refguide/Validation+Feedback
+    - /refguide10/Validation+Feedback.html
+    - /refguide10/Validation+Feedback
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -13,7 +13,7 @@ This activity can be used in both microflows and nanoflows.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-This action is ignored and does not work when a microflow is called from an offline or native app. For more information, see the [Microflows](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/#microflows) section of *Offline-First Data*.
+This action is ignored and does not work when a microflow is called from an offline or native app. For more information, see the [Microflows](/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/#microflows) section of *Offline-First Data*.
 {{% /alert %}}
 
 ## Introduction
@@ -47,7 +47,7 @@ You can also open the dialog box by double-clicking the activity, or right-click
 
 ### Member
 
-**Member** defines for which attribute or association the message will be shown. In you have a [reference selector](/refguide/reference-selector/) or [reference set selector](/refguide/reference-set-selector/), you should select the association that is edited with these widgets.
+**Member** defines for which attribute or association the message will be shown. In you have a [reference selector](/refguide10/reference-selector/) or [reference set selector](/refguide10/reference-set-selector/), you should select the association that is edited with these widgets.
 
 ### Template
 
@@ -61,12 +61,12 @@ Nanoflows do not support text templates in validation feedback. Only a static me
 
 ### Parameters
 
-Parameters are attributes the value of which will be displayed. Parameters need to be entered using [expressions](/refguide/expressions/) resulting in a string.
+Parameters are attributes the value of which will be displayed. Parameters need to be entered using [expressions](/refguide10/expressions/) resulting in a string.
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}
 
 ## Read More
 
-* [Activities](/refguide/activities/)
+* [Activities](/refguide10/activities/)

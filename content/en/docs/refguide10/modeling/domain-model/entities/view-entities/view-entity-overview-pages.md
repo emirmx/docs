@@ -1,6 +1,6 @@
 ---
 title: "Creating Overview Pages"
-url: /refguide/view-entity-overview-pages/
+url: /refguide10/view-entity-overview-pages/
 weight: 20
 ---
 
@@ -45,7 +45,7 @@ Create a view entity that combines only the relevant attributes of the entities 
 
 {{% alert color="info" %}}
 
-This query uses OQL to take the four attributes of each product and combines them with the associated supplier and category. If there is no supplier or category, the product will not be included. For more information, see [OQL Expressions](/refguide/oql-expressions/).
+This query uses OQL to take the four attributes of each product and combines them with the associated supplier and category. If there is no supplier or category, the product will not be included. For more information, see [OQL Expressions](/refguide10/oql-expressions/).
 
 {{% /alert %}}
 
@@ -137,7 +137,7 @@ On the Product overview page above, there is no button to add or modify a produc
 
 1. Create a microflow and name it *ACT_UpdateProduct*. 
 2. Add a parameter and in the entity field and select **ProductOverviewVE**.
-3. Add a [retrieve](/refguide/retrieve/) activity. In this activity, retrieve a *Product* object from the database. Configure the activity with the following details: 
+3. Add a [retrieve](/refguide10/retrieve/) activity. In this activity, retrieve a *Product* object from the database. Configure the activity with the following details: 
 
     * Use the following XPath constraint:
 
@@ -147,7 +147,7 @@ On the Product overview page above, there is no button to add or modify a produc
 
     * In the Options field, set Range to **First** 
   
-4. Add a [Change Object]( /refguide/change-object/) activity. Configure the activity by adding the attributes of `Product` to reflect those of `ProductOverviewVE` 
+4. Add a [Change Object]( /refguide10/change-object/) activity. Configure the activity by adding the attributes of `Product` to reflect those of `ProductOverviewVE` 
 
     {{< figure src="/attachments/refguide10/modeling/domain-model/view-entities/create-overview-pages/change-object.png" >}}
 

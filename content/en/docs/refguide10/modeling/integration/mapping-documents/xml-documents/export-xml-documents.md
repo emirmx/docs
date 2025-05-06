@@ -1,9 +1,9 @@
 ---
 title: "Export XML Documents"
-url: /refguide/export-xml-documents/
+url: /refguide10/export-xml-documents/
 weight: 4
 description: "Describes how to add an XML schema, create domain-to-XML mapping, and export logic."
-aliases: /howto/integration/export-xml-documents/
+aliases: /howto10/integration/export-xml-documents/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -20,10 +20,10 @@ This how-to teaches you how to do the following:
 
 Before you can start exporting XML documents, you need data in your application that is used during the export. You first need to set up the data structure and GUI to maintain the customer data. Then, you'll create the actual export logic and the corresponding export mapping. To do this, you need to know how to do the following:
 
-* Create a domain model (for more information, see [Configuring a Domain Model](/refguide/configuring-a-domain-model/))
-* Create a custom file document (for more information, see [File Manager](/refguide/file-manager/))
-* Create overview and detail pages (for more information, see [How to Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/))
-* Create menu items, (for more information, see [Setting Up Navigation](/refguide/setting-up-the-navigation-structure/))
+* Create a domain model (for more information, see [Configuring a Domain Model](/refguide10/configuring-a-domain-model/))
+* Create a custom file document (for more information, see [File Manager](/refguide10/file-manager/))
+* Create overview and detail pages (for more information, see [How to Create Your First Two Overview and Detail Pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/))
+* Create menu items, (for more information, see [Setting Up Navigation](/refguide10/setting-up-the-navigation-structure/))
 
 Before starting this how-to, make sure you have completed the following prerequisites:
 
@@ -183,11 +183,11 @@ To create the export logic, follow these steps:
 
 ## Read More
 
-* [Consume a Complex Web Service](/howto/integration/consume-a-complex-web-service/)
-* [Consume a Simple Web Service](/howto/integration/consume-a-simple-web-service/)
-* [Import Excel Documents](/howto/integration/importing-excel-documents/)
-* [Expose a Web Service](/howto/integration/expose-a-web-service/)
-* [Enable Selenium Support](/howto/integration/selenium-support/)
-* [Import XML Documents](/howto/integration/importing-xml-documents/)
-* [Consume a REST Service](/howto/integration/consume-a-rest-service/)
-* [Expose Data to BI Tools Using OData](/howto/integration/exposing-data-to-bi-tools-using-odata/)
+* [Consume a Complex Web Service](/howto10/integration/consume-a-complex-web-service/)
+* [Consume a Simple Web Service](/howto10/integration/consume-a-simple-web-service/)
+* [Import Excel Documents](/howto10/integration/importing-excel-documents/)
+* [Expose a Web Service](/howto10/integration/expose-a-web-service/)
+* [Enable Selenium Support](/howto10/integration/selenium-support/)
+* [Import XML Documents](/howto10/integration/importing-xml-documents/)
+* [Consume a REST Service](/howto10/integration/consume-a-rest-service/)
+* [Expose Data to BI Tools Using OData](/howto10/integration/exposing-data-to-bi-tools-using-odata/)

@@ -1,13 +1,13 @@
 ---
 title: "OQL Version 2 Features"
 linktitle: "Switching to OQL Version 2"
-url: /refguide/oql-v2/
+url: /refguide10/oql-v2/
 weight: 100
 ---
 
 ## Introduction
 
-In Studio Pro version 10.19, we introduced OQL v2. It can be enabled by setting the [OQL version 2](/refguide/app-settings/#oql-version-2) app setting to *Yes*. You will have to switch to OQL v2 in order to enable [View entities](/refguide/view-entities/).
+In Studio Pro version 10.19, we introduced OQL v2. It can be enabled by setting the [OQL version 2](/refguide10/app-settings/#oql-version-2) app setting to *Yes*. You will have to switch to OQL v2 in order to enable [View entities](/refguide10/view-entities/).
 
 OQL v2 syntax is the same as OQL. However, there are a few differences in the handling of specific, mostly not very common, cases.
 
@@ -44,29 +44,29 @@ OQL v2 has more strict data type validation of some functions and other expressi
 
 #### `CASE` {#case-validations}
 
-In OQL v2, all result expressions of a [CASE](/refguide/oql-expression-syntax/#case-expression) expression should have matching types or be Null. In OQL v1, there was no such validation, and handling of different types was delegated to the database, which made the behavior database-specific and unreliable.
+In OQL v2, all result expressions of a [CASE](/refguide10/oql-expression-syntax/#case-expression) expression should have matching types or be Null. In OQL v1, there was no such validation, and handling of different types was delegated to the database, which made the behavior database-specific and unreliable.
 
 Also, in OQL v2 it is no longer possible to have Null as the result of all result expressions of CASE. In OQL v1, that was allowed, but would lead to database-level exceptions for some database vendors.
 
-Numeric types Integer, Long and Decimal are considered matching. See [examples](/refguide/oql-expression-syntax/#case-expression-examples) of `CASE` expressions for details on how different numeric types are combined.
+Numeric types Integer, Long and Decimal are considered matching. See [examples](/refguide10/oql-expression-syntax/#case-expression-examples) of `CASE` expressions for details on how different numeric types are combined.
 
 #### `COALESCE` {#coalesce-validations}
 
-Data type validation of [COALESCE](/refguide/oql-expression-syntax/#coalesce-expression) follows the same logic as CASE.
+Data type validation of [COALESCE](/refguide10/oql-expression-syntax/#coalesce-expression) follows the same logic as CASE.
 
-In OQL v2, all arguments of a [COALESCE](/refguide/oql-expression-syntax/#coalesce-expression) expression should have matching types or be Null. In OQL v1, there was no such validation, and handling of different types was delegated to the database, which made the behavior database-specific and unreliable.
+In OQL v2, all arguments of a [COALESCE](/refguide10/oql-expression-syntax/#coalesce-expression) expression should have matching types or be Null. In OQL v1, there was no such validation, and handling of different types was delegated to the database, which made the behavior database-specific and unreliable.
 
 Also, in OQL v2 it is no longer possible to have a COALESCE expression where all arguments are Null literals. In OQL v1, that was allowed, but would lead to database-level exceptions for some database vendors.
 
-Numeric types Integer, Long and Decimal are considered matching. See [examples](/refguide/oql-expression-syntax/#coalesce-expression-examples) of `COALESCE` for details on how different numeric types are combined.
+Numeric types Integer, Long and Decimal are considered matching. See [examples](/refguide10/oql-expression-syntax/#coalesce-expression-examples) of `COALESCE` for details on how different numeric types are combined.
 
 #### `LENGTH` {#length-validations}
 
-In OQL v2, the argument of [LENGTH](/refguide/oql-expression-syntax/#length-function) function can only be of type String. Note that values of Enumerations are also treated as Strings. In OQL v1, there was no such validation, and handling of other types was delegated to the database.
+In OQL v2, the argument of [LENGTH](/refguide10/oql-expression-syntax/#length-function) function can only be of type String. Note that values of Enumerations are also treated as Strings. In OQL v1, there was no such validation, and handling of other types was delegated to the database.
 
 #### `DATEPART` and `DATEDIFF` {#date-validations}
 
-In OQL v2, the date arguments of functions [DATEPART](/refguide/oql-expression-syntax/#datepart-function) and [DATEDIFF](/refguide/oql-expression-syntax/#datediff-function) can be only of one of the following types:
+In OQL v2, the date arguments of functions [DATEPART](/refguide10/oql-expression-syntax/#datepart-function) and [DATEDIFF](/refguide10/oql-expression-syntax/#datediff-function) can be only of one of the following types:
 
 * Date and time
 * String. In this case, Runtime will implicitly attempt conversion of the string to a Date and time.
@@ -214,7 +214,7 @@ FROM (
 
 ### `ORDER BY` in View Entities
 
-For [view entities](/refguide/view-entities/), you must now have a `LIMIT` and `OFFSET` in all `ORDER BY` clauses, even for the top level query.
+For [view entities](/refguide10/view-entities/), you must now have a `LIMIT` and `OFFSET` in all `ORDER BY` clauses, even for the top level query.
 
 This is because view entity results are not accessed directly. In the Runtime, a view entity is wrapped inside another `SELECT` query as a subquery, which allows further filtering and ordering. This makes it similar to the Subquery case, above.
 
@@ -237,7 +237,7 @@ When handling numeric types in OQL v2 (Integer, Long, and Decimal), the result o
 * Long
 * Integer
 
-If any side of the operation is of a non-numeric type, no casting is performed, and the result is handled by the database, as in OQL v1. See [Expression syntax](/refguide/oql-expression-syntax/#type-coercion) for more information.
+If any side of the operation is of a non-numeric type, no casting is performed, and the result is handled by the database, as in OQL v1. See [Expression syntax](/refguide10/oql-expression-syntax/#type-coercion) for more information.
 
 ### The Result Type of `ROUND` Is Now `Decimal`
 
@@ -291,6 +291,6 @@ UNION
 SELECT DecimalAttribute FROM Module.Entity
 ```
 
-In OQL v2 support of different data types is consistent across databases and is more limited. The result data type is determined by all `UNION` queries, merged according to precedence. See [UNION documentation](/refguide/oql-clauses/#oql-union-type) for data type specifics. 
+In OQL v2 support of different data types is consistent across databases and is more limited. The result data type is determined by all `UNION` queries, merged according to precedence. See [UNION documentation](/refguide10/oql-clauses/#oql-union-type) for data type specifics. 
 
 The example query above now returns a result of type `DECIMAL`, as it has higher precedence than `INTEGER`.

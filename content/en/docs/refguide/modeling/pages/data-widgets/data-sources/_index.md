@@ -31,10 +31,6 @@ The **Microflow** source is not supported in offline applications because it imp
 Data grids, template grids, and list views are list widgets. Also, some [pluggable widgets](/apidocs-mxsdk/apidocs/pluggable-widgets/) may behave as list widgets and use data sources. Supported data sources are listed below:
 
 * [Database](/refguide/database-source/) – objects are retrieved from the database; database constraints can be used to limit which objects are shown. 
-* [XPath](/refguide/xpath-source/) – objects are retrieved from the database; an XPath constraint can be used to constrain which objects are shown.
-{{% alert color="info" %}}
-Most widgets do not have a separate XPath source, you can apply XPath constraints to the **Database** source.
-{{% /alert %}}
 * [Microflow](/refguide/microflow-source/) – objects retrieved are determined by the result of calling the selected microflow. The microflow can take primitives or objects in the context as parameter and needs to return a list of objects.
 * [Nanoflow](/refguide/nanoflow-source/) – objects retrieved are determined by the result of calling the selected nanoflow. The nanoflow can take primitives or objects in the context as a parameter and needs to return a list of objects. Nanoflow data source is only available for data views and list views. 
 * [Association](/refguide/association-source/) – the objects are retrieved from memory by following an association from the object in the context. Thus, this data source is only available when a widget is nested in another data container. 

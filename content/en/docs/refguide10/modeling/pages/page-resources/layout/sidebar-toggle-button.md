@@ -1,6 +1,6 @@
 ---
 title: "Sidebar Toggle"
-url: /refguide/sidebar-toggle-button/
+url: /refguide10/sidebar-toggle-button/
 weight: 30
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -9,10 +9,10 @@ weight: 30
 
 {{% alert color="info" %}}Sidebar toggles are not supported on native mobile pages, as scroll container regions are not supported.{{% /alert %}}
 
-A **sidebar toggle** is a button that when pressed will make either a left or a right region of a [scroll container](/refguide/scroll-container/) appear or disappear. This makes it possible to create a sidebar that is hidden by default and can be shown by clicking the button.
+A **sidebar toggle** is a button that when pressed will make either a left or a right region of a [scroll container](/refguide10/scroll-container/) appear or disappear. This makes it possible to create a sidebar that is hidden by default and can be shown by clicking the button.
 
 {{% alert color="info" %}}
-You can only have one sidebar toggle in a scroll container, and the behavior of the sidebar toggle is configured in the [scroll container region](/refguide/scroll-container/#region) properties.
+You can only have one sidebar toggle in a scroll container, and the behavior of the sidebar toggle is configured in the [scroll container region](/refguide10/scroll-container/#region) properties.
 {{% /alert %}}
 
 For example, the image below shows for an example layout that uses the sidebar toggle to hide and make visible the **Left** region of the **Scroll Container**. 
@@ -44,7 +44,7 @@ The **Caption** property defines a text that will be shown on the sidebar toggle
 
 #### Tooltip
 
-The **Tooltip** property determines a text end-users will see in the tooltip that appears when they hover over the sidebar toggle. The tooltip text is translatable. For more information on translatable texts, see [Language Menu](/refguide/translatable-texts/). If the tooltip is not specified, no tooltip will be shown when hovering over the sidebar toggle.
+The **Tooltip** property determines a text end-users will see in the tooltip that appears when they hover over the sidebar toggle. The tooltip text is translatable. For more information on translatable texts, see [Language Menu](/refguide10/translatable-texts/). If the tooltip is not specified, no tooltip will be shown when hovering over the sidebar toggle.
 
 #### Icon {#icon}
 
@@ -79,18 +79,18 @@ The **Button style** property applies a predefined styling to the sidebar toggle
 
 ### Visibility Section {#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ### Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Styling
 
 ### Design Properties Section {#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}}
 
 ### Common Section {#common-styling}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}

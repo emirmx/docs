@@ -1,6 +1,6 @@
 ---
 title: "Mendix Runtime"
-url: /refguide/runtime/
+url: /refguide10/runtime/
 weight: 40
 description: "Gives an overview of the Mendix Runtime."
 no_list: false
@@ -15,7 +15,7 @@ Each [patch version](/releasenotes/studio-pro/lts-mts/) of Mendix comes with its
 
 ## Runtime Overview
 
-The Mendix Runtime consists of two parts: the [Runtime Server](/refguide/runtime-server/) and the [Mendix Client](/refguide/mendix-client/). The relationship between the two is shown in the diagram below.
+The Mendix Runtime consists of two parts: the [Runtime Server](/refguide10/runtime-server/) and the [Mendix Client](/refguide10/mendix-client/). The relationship between the two is shown in the diagram below.
 
 {{< figure src="/attachments/refguide10/runtime/runtime-overview.png" alt="An overview of the Mendix Runtime" class="no-border" >}}
 
@@ -23,11 +23,11 @@ Each of the components of Mendix Runtime is described below.
 
 ### Runtime Server and Mendix Client
 
-The *Runtime Server* is launched on a cloud platform. It executes microflows, and connects to files, the relational database, and any other required services. It waits to be contacted by the Mendix Client. The Runtime Server is described in more detail in [Runtime Server](/refguide/runtime-server/).
+The *Runtime Server* is launched on a cloud platform. It executes microflows, and connects to files, the relational database, and any other required services. It waits to be contacted by the Mendix Client. The Runtime Server is described in more detail in [Runtime Server](/refguide10/runtime-server/).
 
-The *Mendix Client* is started by the user, either within a web browser, or on another supported device. If it is in online mode, it starts a session with the Runtime Server which may or may not require authentication. The Runtime Server records the session details in the database, so that the Mendix Client can make requests. The Mendix Client is described in more detail in [Mendix Client](/refguide/mendix-client/).
+The *Mendix Client* is started by the user, either within a web browser, or on another supported device. If it is in online mode, it starts a session with the Runtime Server which may or may not require authentication. The Runtime Server records the session details in the database, so that the Mendix Client can make requests. The Mendix Client is described in more detail in [Mendix Client](/refguide10/mendix-client/).
 
-The user interacts with the Mendix Client, which then makes requests, via the [request handlers](/refguide/request-handlers/), to the Runtime Server to process data or perform server-side functions (for example, to run microflows). At the end of the request, all state (including uncommitted data) is passed back to the Mendix Client. You can find more details of how this communication takes place in [Communication Patterns in the Mendix Runtime](/refguide/communication-patterns/).
+The user interacts with the Mendix Client, which then makes requests, via the [request handlers](/refguide10/request-handlers/), to the Runtime Server to process data or perform server-side functions (for example, to run microflows). At the end of the request, all state (including uncommitted data) is passed back to the Mendix Client. You can find more details of how this communication takes place in [Communication Patterns in the Mendix Runtime](/refguide10/communication-patterns/).
 
 Passing state from the Runtime Server to the Mendix Client enables the Runtime Server to be stateless, which means that any Runtime Server instance can respond to a request from the Mendix Client. A load balancer decides which Runtime Server instance will respond to a request. When a user session ends, the Runtime Server removes references to that session.
 
@@ -40,7 +40,7 @@ If there is more than one instance of an app, one of the instances is the *Clust
 * Executing scheduled events
 * Clearing persistent sessions after a new deploy
 
-More information on multiple instances is in [Clustered Mendix Runtime](/refguide/clustered-mendix-runtime/).
+More information on multiple instances is in [Clustered Mendix Runtime](/refguide10/clustered-mendix-runtime/).
 
 ### External Services
 
@@ -85,7 +85,7 @@ You need a license to run an application in production mode. Without a license, 
 You can extend the functionality of the Runtime Server by writing Java actions. For more information, see the [Mendix Runtime API](/apidocs-mxsdk/apidocs/runtime-api/).
 
 {{% alert color="info" %}}
-If the app contains published services, links to available API documentation such as [OpenAPI documentation](/refguide/open-api/) for [published REST services](/refguide/published-rest-services/), links to [published OData/GraphQL services](/refguide/published-odata-services/), and WSDLs for [published web services](/refguide/published-web-services/), are available on the URL path `/api-doc` (for example: `https://myapp.mendixcloud.com/api-doc/`).
+If the app contains published services, links to available API documentation such as [OpenAPI documentation](/refguide10/open-api/) for [published REST services](/refguide10/published-rest-services/), links to [published OData/GraphQL services](/refguide10/published-odata-services/), and WSDLs for [published web services](/refguide10/published-web-services/), are available on the URL path `/api-doc` (for example: `https://myapp.mendixcloud.com/api-doc/`).
 {{% /alert %}}
 
 ## Documents in This Category

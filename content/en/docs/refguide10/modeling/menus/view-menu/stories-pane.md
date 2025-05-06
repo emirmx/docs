@@ -1,6 +1,6 @@
 ---
 title: "Stories Pane"
-url: /refguide/stories-pane/
+url: /refguide10/stories-pane/
 weight: 60
 description: "Describes the Stories pane in Mendix Studio Pro."
 ---
@@ -70,4 +70,4 @@ To change the status of a task, select or clear the checkbox in the **Status** c
 
 * [Epics](/developerportal/project-management/epics/)
 * [Jira Connector](/developerportal/project-management/jira-connector/)
-* [View Menu](/refguide/view-menu/)
+* [View Menu](/refguide10/view-menu/)

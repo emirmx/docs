@@ -1,22 +1,22 @@
 ---
 title: "OQL Expression Syntax"
-url: /refguide/oql-expression-syntax/
+url: /refguide10/oql-expression-syntax/
 weight: 30
 aliases:
-    - /refguide/oql-case-expression/
-    - /refguide/oql-cast/
-    - /refguide/oql-coalesce/
-    - /refguide/oql-datediff/
-    - /refguide/oql-datepart/
-    - /refguide/oql-functions/
-    - /refguide/oql-length/
-    - /refguide/oql-lower/
-    - /refguide/oql-operators/
-    - /refguide/oql-rangebegin/
-    - /refguide/oql-rangeend/
-    - /refguide/oql-replace/
-    - /refguide/oql-round/
-    - /refguide/oql-upper/
+    - /refguide10/oql-case-expression/
+    - /refguide10/oql-cast/
+    - /refguide10/oql-coalesce/
+    - /refguide10/oql-datediff/
+    - /refguide10/oql-datepart/
+    - /refguide10/oql-functions/
+    - /refguide10/oql-length/
+    - /refguide10/oql-lower/
+    - /refguide10/oql-operators/
+    - /refguide10/oql-rangebegin/
+    - /refguide10/oql-rangeend/
+    - /refguide10/oql-replace/
+    - /refguide10/oql-round/
+    - /refguide10/oql-upper/
 ---
 
 ## Introduction
@@ -27,7 +27,7 @@ This document details the use and syntax of expressions in an OQL query.
 
 ## Data Types
 
-OQL supports a set of data types that differ slightly from [Mendix data types](/refguide/data-types/). The supported data types are:
+OQL supports a set of data types that differ slightly from [Mendix data types](/refguide10/data-types/). The supported data types are:
 
 | Data Type  | Mendix Data type | Example               | Description                                |
 |------------|------------------|-----------------------|--------------------------------------------|
@@ -58,7 +58,7 @@ There is no direct support for `DATETIME` literals. For functions that take `DAT
 
 ## System Variables
 
-Most XPath [system variables](/refguide/xpath-keywords-and-system-variables/#system-variables) can be used in OQL with the format:
+Most XPath [system variables](/refguide10/xpath-keywords-and-system-variables/#system-variables) can be used in OQL with the format:
 
 ```sql
 '[%SystemVariable%]'
@@ -100,7 +100,7 @@ WHERE
 
 ### Time-Related Variables
 
-All time-related variables and expressions that are supported in XPath are also supported in OQL. See section [Time-Related](/refguide/xpath-keywords-and-system-variables/#time-related) of *XPath Keywords and System Variables*.
+All time-related variables and expressions that are supported in XPath are also supported in OQL. See section [Time-Related](/refguide10/xpath-keywords-and-system-variables/#time-related) of *XPath Keywords and System Variables*.
 
 The return type of all time-related variables and expressions is Date and time. They can be used the same way as values of type Date and time.
 
@@ -555,7 +555,7 @@ The `IS` operator can be used to filter out rows with values that are NULL. For 
 
 The `CASE` expression is a conditional expression, similar to if/else statements in other programming languages. If the result of a following `WHEN` condition is `TRUE`, the value of the `CASE` expression is the result that follows the condition and the remainder of the `CASE` expression is not processed. If the result is not `TRUE`, any subsequent `WHEN` clauses are examined in the same manner. If no `WHEN` condition yields `TRUE`, the value of the `CASE` expression is the result of the `ELSE` clause. If the `ELSE` clause is omitted and no condition is `TRUE`, the result is null.
 
-If [OQL v2](/refguide/oql-v2/) is enabled, additional data type validations apply to result expressions of `CASE`. See the corresponding [page](/refguide/oql-v2/#case-validations) for details.
+If [OQL v2](/refguide10/oql-v2/) is enabled, additional data type validations apply to result expressions of `CASE`. See the corresponding [page](/refguide10/oql-v2/#case-validations) for details.
 
 #### Syntax
 
@@ -760,7 +760,7 @@ SELECT (Number : 2) as Normal, (Cast(Number AS DECIMAL) : 2) as Casted FROM Sale
 
 Returns the value of the first `expression` that is not NULL. Can be used with columns.
 
-If [OQL v2](/refguide/oql-v2/) is enabled, additional data type validations apply to arguments of `COALESCE`. See the corresponding [page](/refguide/oql-v2/#coalesce-validations) for details.
+If [OQL v2](/refguide10/oql-v2/) is enabled, additional data type validations apply to arguments of `COALESCE`. See the corresponding [page](/refguide10/oql-v2/#coalesce-validations) for details.
 
 #### Syntax
 
@@ -814,7 +814,7 @@ FROM Sales.Customer
 
 The `DATEDIFF` function returns the difference between two given `DATETIME` expressions. The difference is given in the specified unit.
 
-If [OQL v2](/refguide/oql-v2/) is enabled, additional data type validations apply to the arguments of `DATEDIFF`. See the corresponding [page](/refguide/oql-v2/#date-validations) for details.
+If [OQL v2](/refguide10/oql-v2/) is enabled, additional data type validations apply to the arguments of `DATEDIFF`. See the corresponding [page](/refguide10/oql-v2/#date-validations) for details.
 
 #### Syntax
 
@@ -895,7 +895,7 @@ The way the difference is calculated depends on the database. The `YEAR` differe
 
 The `DATEPART` function retrieves a specified element from `DATETIME` values. The return type is `INTEGER`.
 
-If [OQL v2](/refguide/oql-v2/) is enabled, additional data type validations apply to the arguments of `DATEPART`. See the corresponding [page](/refguide/oql-v2/#date-validations) for details.
+If [OQL v2](/refguide10/oql-v2/) is enabled, additional data type validations apply to the arguments of `DATEPART`. See the corresponding [page](/refguide10/oql-v2/#date-validations) for details.
 
 #### Syntax
 
@@ -949,7 +949,7 @@ SELECT End FROM Sales.Period WHERE DATEPART(YEAR, End) = 2025
 
 The `LENGTH` function returns the length in characters of the result of a string expression.
 
-If [OQL v2](/refguide/oql-v2/) is enabled, additional data type validations apply. See the corresponding [page](/refguide/oql-v2/#length-validations) for details.
+If [OQL v2](/refguide10/oql-v2/) is enabled, additional data type validations apply. See the corresponding [page](/refguide10/oql-v2/#length-validations) for details.
 
 #### Syntax
 
@@ -1028,10 +1028,10 @@ This query can no longer take advantage of an index for `LastName` for compariso
 ### Ranges in Datasets
 
 {{% alert color="info" %}}
-Range parameters are defined only in [datasets](/refguide/data-sets/).
+Range parameters are defined only in [datasets](/refguide10/data-sets/).
 {{% /alert %}}
 
-`RANGEBEGIN` and `RANGEEND` can only be used with a [parameter](/refguide/data-sets/#parameters) as input.
+`RANGEBEGIN` and `RANGEEND` can only be used with a [parameter](/refguide10/data-sets/#parameters) as input.
 
 #### RANGEBEGIN
 

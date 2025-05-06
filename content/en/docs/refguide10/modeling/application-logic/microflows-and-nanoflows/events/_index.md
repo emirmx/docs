@@ -1,6 +1,6 @@
 ---
 title: "Events"
-url: /refguide/events/
+url: /refguide10/events/
 weight: 90
 ---
 
@@ -14,8 +14,8 @@ For example, they are used to start or end your microflow, to break an iteration
 
 You can add the following events to your flow:
 
-* [Start Event](/refguide/start-event/) – indicates the beginning of your microflow or nanoflow 
-* [End Event](/refguide/end-event/) – defines where the flow stops
-* [Error Event](/refguide/error-event/) – defines where the microflow will stop and throw an error
-* [Continue Event](/refguide/continue-event/) – used in loops to stop the current iteration and start the iteration of the next object
-* [Break Event](/refguide/break-event/) – used in loops to exit the loop and continue with the rest of the flow
+* [Start Event](/refguide10/start-event/) – indicates the beginning of your microflow or nanoflow 
+* [End Event](/refguide10/end-event/) – defines where the flow stops
+* [Error Event](/refguide10/error-event/) – defines where the microflow will stop and throw an error
+* [Continue Event](/refguide10/continue-event/) – used in loops to stop the current iteration and start the iteration of the next object
+* [Break Event](/refguide10/break-event/) – used in loops to exit the loop and continue with the rest of the flow

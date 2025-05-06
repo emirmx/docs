@@ -1,6 +1,6 @@
 ---
 title: "Java Programming"
-url: /refguide/java-programming/
+url: /refguide10/java-programming/
 description: "Describes how to use the Mendix Java library and use Eclipse as an environment to write your Mendix Java Actions."
 weight: 60
 no_list: false
@@ -11,7 +11,7 @@ description_list: true
 
 With Java actions, you can extend the functionality of your application in situations where it would be hard to implement this functionality in microflows.
 
-For information about Java actions in Studio Pro, see [Java Actions](/refguide/java-actions/).
+For information about Java actions in Studio Pro, see [Java Actions](/refguide10/java-actions/).
 
 ## Writing Code in .java Files of Your Java Actions
 
@@ -73,7 +73,7 @@ You can find the Javadoc at [Mendix Runtime API](/apidocs-mxsdk/apidocs/runtime-
 
 This library is automatically added to your libraries when you import your app into Eclipse, it is called *mxruntime.jar*.
 
-For details on usage and examples, see [Using the Java API](/refguide/java-api-tutorial/).
+For details on usage and examples, see [Using the Java API](/refguide10/java-api-tutorial/).
 
 ## Opening HTTP Connections
 
@@ -83,6 +83,6 @@ You should therefore ensure that you always set a timeout for any connections yo
 
 ## Using Eclipse as an Environment to Write Your Mendix Java Actions
 
-For details on this topic, see [Using Eclipse](/refguide/using-eclipse/).
+For details on this topic, see [Using Eclipse](/refguide10/using-eclipse/).
 
 ## Documents in This Category

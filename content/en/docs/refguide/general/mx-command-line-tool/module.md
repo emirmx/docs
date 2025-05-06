@@ -133,8 +133,6 @@ Exit code 111
 
 or
 
-{{% todo %}}Should we use an Mx 11 example here?{{% /todo %}}
-
 ```bash
 > mx.exe module-import Module.mpk App.mpr
 The mpr file version is '10.3.0-dev'.

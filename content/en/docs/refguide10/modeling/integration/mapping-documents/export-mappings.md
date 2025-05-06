@@ -1,16 +1,16 @@
 ---
 title: "Export Mappings"
-url: /refguide/export-mappings/
+url: /refguide10/export-mappings/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-For an introduction to export mappings, refer to [Mapping Documents](/refguide/mapping-documents/).
+For an introduction to export mappings, refer to [Mapping Documents](/refguide10/mapping-documents/).
 
 ## Obtaining Objects in Export Mappings
 
-Figure 1 shows an example of an Export Mapping document in which two elements from a schema have been selected using the [Select Elements](/refguide/select--elements/) dialog. The entity Cheesecake (on the left) was dragged into the mapping to map to the Cheesecake element (on the right). The entity Topping was mapped to the Topping element.
+Figure 1 shows an example of an Export Mapping document in which two elements from a schema have been selected using the [Select Elements](/refguide10/select--elements/) dialog. The entity Cheesecake (on the left) was dragged into the mapping to map to the Cheesecake element (on the right). The entity Topping was mapped to the Topping element.
 
 {{< figure src="/attachments/refguide10/modeling/integration/mapping-documents/export-mappings/16843939.png" class="no-border" >}}
 

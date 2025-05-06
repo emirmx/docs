@@ -1,6 +1,6 @@
 ---
 title: "Batch Translate"
-url: /refguide/batch-translate/
+url: /refguide10/batch-translate/
 weight: 30
 ---
 
@@ -48,14 +48,14 @@ Tip: move the dialog box to one side to get a better look at the document.
 ### Translation
 
 {{% alert color="info" %}}
-Alternatively, you can use the AI-powered translation tool [Translation Generator](/refguide/translation-generator/) to generate translations for you. It is currently an experimental feature introduced in Studio Pro 10.12. You can enable it via **Preferences** > the **New Features** tab > the **Maia** section.
+Alternatively, you can use the AI-powered translation tool [Translation Generator](/refguide10/translation-generator/) to generate translations for you. This was introduced in Studio Pro 10.12. You can enable it via **Preferences** > the **New Features** tab > the **Maia** section.
 {{% /alert %}}
 
 In **Translation**, type new text that you want to use instead of the existing text. Click **Translate** to confirm the replacement.
 
 {{< figure src="/attachments/refguide10/modeling/menus/translatable-texts/batch-translate/batch-translate-translate.png" width="600" >}}
 
-If you have two texts which are identical in the source language but different in the translation language, you will have to review and change these individually. This is not very common but imagine, for example, you have used `Order Lines` to both *describe the lines on an order* and to *label a button which sorts some lines*. See [Working in the Currently Selected Language](/refguide/translatable-texts/#selected-language) in *Language Menu* to find how to change individual texts.
+If you have two texts which are identical in the source language but different in the translation language, you will have to review and change these individually. This is not very common but imagine, for example, you have used `Order Lines` to both *describe the lines on an order* and to *label a button which sorts some lines*. See [Working in the Currently Selected Language](/refguide10/translatable-texts/#selected-language) in *Language Menu* to find how to change individual texts.
 
 ## Exporting and Importing Text {#export-import}
 
@@ -98,5 +98,5 @@ The formats of the Excel files for batch translate and batch replace are similar
 
 ## Read More
 
-* [Translation Generator](/refguide/translation-generator/)
-* [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/)
+* [Translation Generator](/refguide10/translation-generator/)
+* [Mendix AI Assistance (Maia)](/refguide10/mendix-ai-assistance/)

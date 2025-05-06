@@ -1,17 +1,17 @@
 ---
 title: "Snippet"
-url: /refguide/snippet/
+url: /refguide10/snippet/
 weight: 4
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-Snippets define reusable interface parts. They can be used on [pages](/refguide/page/), [layouts](/refguide/layout/) and even other snippets. By using snippets, you can make changes in fewer places when you modify the interface. For example, you can have a snippet that is used both in the contents area of a template grid and in a data view. If you change something in the snippet, that change will show up in both places.
+Snippets define reusable interface parts. They can be used on [pages](/refguide10/page/), [layouts](/refguide10/layout/) and even other snippets. By using snippets, you can make changes in fewer places when you modify the interface. For example, you can have a snippet that is used both in the contents area of a template grid and in a data view. If you change something in the snippet, that change will show up in both places.
 
 There are two ways to create a snippet:
 
-* You can add a new empty snippet (see [Page Resources](/refguide/page-resources/)).
+* You can add a new empty snippet (see [Page Resources](/refguide10/page-resources/)).
 * You can extract a snippet from a widget on an existing document (see [Extract Snippet](#extract-snippet)).
 
 A snippet expects zero or more parameters. To change the parameters of the snippet, click the **Parameters** button in the top bar. This opens a dialog box which allows you to add, modify, and remove parameters. The **Parameters** button shows the current number of parameters in its caption, while its tooltip shows the name and type of each parameter. For more information about snippet parameters, see the [Parameters](#parameters) section in snippet properties.
@@ -40,24 +40,24 @@ The values for the platform property are:
 
 ### Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### Data Section {#data}
 
 #### Parameters {#parameters}
 
-**Snippet Parameters** works the same way as [Page Parameter](/refguide/page-properties/#parameters) with the difference that a snippet's parameter can be accessed at the top level, for example when creating expressions or selecting attributes.
+**Snippet Parameters** works the same way as [Page Parameter](/refguide10/page-properties/#parameters) with the difference that a snippet's parameter can be accessed at the top level, for example when creating expressions or selecting attributes.
 
 #### Variables {#variables}
 
-The list of **Variables** defined on the snippet. Variables are non-persistent, primitive values that can be used as attributes by widgets in the snippet. They behave the same as [variables on pages](/refguide/page-properties/#variables), with the exception that default values cannot reference snippet parameters.
+The list of **Variables** defined on the snippet. Variables are non-persistent, primitive values that can be used as attributes by widgets in the snippet. They behave the same as [variables on pages](/refguide10/page-properties/#variables), with the exception that default values cannot reference snippet parameters.
 
 {{% alert color="info" %}}
 [Snippet extraction](#extract-snippet) does not automatically recreate variables in the resulting snippet. Missing variables must be added manually.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-[Inlining a snippet](/refguide/snippet-call/#inline-snippet) does not automatically create variables on a page. Missing variables must be added manually. If the snippet and the page have identically named variables, then references will automatically carry over.
+[Inlining a snippet](/refguide10/snippet-call/#inline-snippet) does not automatically create variables on a page. Missing variables must be added manually. If the snippet and the page have identically named variables, then references will automatically carry over.
 {{% /alert %}}
 
 ### Designer Section {#designer}
@@ -117,4 +117,4 @@ Widgets that are configured with variables cannot be successfully extracted.
 
 ## Read More
 
-* [Snippet Call](/refguide/snippet-call/)
+* [Snippet Call](/refguide10/snippet-call/)

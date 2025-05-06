@@ -1,6 +1,6 @@
 ---
 title: "Trim to Date"
-url: /refguide/trim-to-date/
+url: /refguide10/trim-to-date/
 weight: 120
 ---
 

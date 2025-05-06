@@ -229,7 +229,7 @@ Hardware and driver issues may cause performance problems when running Studio Pr
 
 This feature is currently in beta.
 
-This option allows you to change the user interface language you work in while using Studio Pro. At this time, German, English, Japanese, Chinese, and Korean are supported. You must restart Studio Pro in order to use this feature.
+This option allows you to change the user interface language you work in while using Studio Pro. At this time, English, Japanese, Chinese, and Korean are supported. You must restart Studio Pro in order to use this feature.
 
 ### Editor Tabs Closing Policy {#closing-policy}
 
@@ -238,6 +238,10 @@ It is recommended to limit the number of open tabs (open documents) to improve t
 {{% alert color="info" %}}
 The closing policy is not applied to tabs with unsaved changes.
 {{% /alert %}}
+
+### Navigation
+
+This setting allows you to move forward and backward through your editing history to show the documents you have recently worked on. This feature is enabled by default. 
 
 ## Advanced Tab
 
@@ -257,7 +261,21 @@ When the **Send Studio Pro usage data to Mendix** setting is enabled, Studio Pro
 
 When the **Show feedback survey periodically** setting is enabled, Studio Pro will periodically display a feedback survey to gather input on your experience. This helps Mendix improve the product based on user feedback. For more information, see [Feedback Survey](/refguide/feedback-survey/).
 
+### Antivirus Exclusion
+
+When the **Do not show antivirus exclusion notifications** setting is enabled, Studio Pro will not display notifications related to antivirus exclusions. For more information, see [Antivirus Exclusion](/refguide/antivirus-exclusion/).
+
 ## New Features Tab {#new-features}
+
+### Access Rules Editor
+
+This option allows you to disable the new editor in the *Access rules* tab of the entity properties dialog and return to the version which was available in Studio Pro 10 or enable the new editor if it has been disabled.
+
+{{% alert color="warning" %}}
+This option will be removed before the GA version of Mendix 11.0.
+{{% /alert %}}
+
+For more information, see [Defining Access Rules Using the New Editor](/refguide10/access-rules/#new-editor) section of the Mendix 10 documentation *Access Rules*.
 
 ### App Explorer
 
@@ -277,21 +295,18 @@ You can publish data as a GraphQL service. When you enable this feature, you can
 
 ### Maia
 
-#### Enable Domain Model Generator (Experimental)
+#### Enable Maia for Domain Model
 
-Domain Model Generator is currently an experimental feature. Enable this option to help you generate entities and associations for empty domain models. For more information on how to use this feature, see [Domain Model Generator](/refguide/domain-model-generator/).
+Maia for Domain Model was introduced in Studio Pro 10.13.0. Enable this option to help you generate entities and associations for empty domain models. For more information on how to use this feature, see [Domain Model Generator](/refguide/domain-model-generator/).
 
-#### Enable Translation Generator (Experimental)
+#### Enable Translation Generator
 
-Translation Generator is currenlty an experimental feature. Enable this option to help you translate your model to different languages through **Batch translate** under the **Language** menu. For more information, see [Translation Generator](/refguide/translation-generator/).
+Enable this option to help you translate your model to different languages through **Batch translate** under the **Language** menu. For more information, see [Translation Generator](/refguide/translation-generator/).
 
 ### Mapping Editor
 
 This setting allows you to set the beta version as the default editor.
 
-### Navigation
-
-This setting allows you to move forward and backward through your editing history to show the documents you have recently worked on. You must restart Studio Pro to use this feature.
 
 ### Online Synchronization Mode
 

@@ -1,18 +1,18 @@
 ---
 title: "Object Type Decision"
-url: /refguide/object-type-decision/
+url: /refguide10/object-type-decision/
 weight: 2
 aliases:
-    - /refguide/inheritance-split.html
-    - /refguide/inheritance-split
+    - /refguide10/inheritance-split.html
+    - /refguide10/inheritance-split
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-An object type decision is an element that makes a choice based on the type of an object of a generalized entity. The output of the object type decision are the specialized entities that inherit from the generalized entity. For more information on specialization and generalization, see [Entities](/refguide/entities/).
+An object type decision is an element that makes a choice based on the type of an object of a generalized entity. The output of the object type decision are the specialized entities that inherit from the generalized entity. For more information on specialization and generalization, see [Entities](/refguide10/entities/).
 
-If you want to use the specialized type in the rest of the microflow or nanoflow, you can use a [Cast object](/refguide/cast-object/) activity.
+If you want to use the specialized type in the rest of the microflow or nanoflow, you can use a [Cast object](/refguide10/cast-object/) activity.
 
 ## Properties
 
@@ -29,7 +29,7 @@ The object type decision properties consists of the following sections:
 
 #### Caption
 
-For more information, see the [Caption](/refguide/microflow-element-common-properties/#caption) section in *Common Properties*.
+For more information, see the [Caption](/refguide10/microflow-element-common-properties/#caption) section in *Common Properties*.
 
 ### Input Section {#input}
 

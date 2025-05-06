@@ -1,6 +1,6 @@
 ---
 title: "Between Date Function Calls"
-url: /refguide/between-date-function-calls/
+url: /refguide10/between-date-function-calls/
 weight: 100
 ---
 

@@ -1,12 +1,12 @@
 ---
 title: "Scroll Container"
-url: /refguide/scroll-container/
+url: /refguide10/scroll-container/
 weight: 50
 aliases:
-    - /refguide/horizontal-split-pane.html
-    - /refguide/vertical-split-pane.html
-    - /refguide/horizontal-split-pane
-    - /refguide/vertical-split-pane
+    - /refguide10/horizontal-split-pane.html
+    - /refguide10/vertical-split-pane.html
+    - /refguide10/horizontal-split-pane
+    - /refguide10/vertical-split-pane
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -87,7 +87,7 @@ Default: *Center*
 
 ### Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### Regions Section {#region}
 
@@ -96,7 +96,7 @@ Default: *Center*
 Regions define the content area of a scroll container. For more information see the [Scroll Container Region](#scroll-container-region) section.
 
 {{% alert color="info" %}}
-If you add regions in a [layout](/refguide/layout/), they will automatically be filled with [placeholders](/refguide/placeholder/).
+If you add regions in a [layout](/refguide10/layout/), they will automatically be filled with [placeholders](/refguide10/placeholder/).
 {{% /alert %}}
 
 #### Enable Top
@@ -119,11 +119,11 @@ Determines whether the scroll container should contain a right region.
 
 ### Design Properties Section {#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### Common Section {#common-styling}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Miscellaneous
 
@@ -141,6 +141,6 @@ You can add and remove all the regions listed above except the center one.
 
 ## Read More
 
-* [Page](/refguide/page/)
-* [Structure](/refguide/structure-widgets/)
-* [Properties Common in the Page Editor](/refguide/common-widget-properties/)
+* [Page](/refguide10/page/)
+* [Structure](/refguide10/structure-widgets/)
+* [Properties Common in the Page Editor](/refguide10/common-widget-properties/)

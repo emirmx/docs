@@ -7,6 +7,10 @@ aliases:
     - /howto/mobile/how-to-ar-simple-cube/
 ---
 
+{{% alert color="warning" %}}
+Augmented Reality on Mendix Native Mobile apps is no longer supported and does not work in Mendix 10.18 and above. If you plan to use augmented reality in a Mendix app, please build a [progressive web app](/refguide/mobile/introduction-to-mobile-technologies/progressive-web-app/) and use [WebXR](/refguide/mobile/using-mobile-capabilities/augmented-reality/get-started-with-web-xr/) instead.
+{{% /alert %}}
+
 ## Introduction
 
 Working with augmented reality (AR) is not all that different from implementing any other piece of Native functionality. Using just a few widgets, you can add two-or-three dimensional AR to your native mobile application. In this guide you will make a 3D cube by dragging and dropping widgets into your Mendix app and then configuring them.

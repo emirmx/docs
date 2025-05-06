@@ -1,6 +1,6 @@
 ---
 title: "Style"
-url: /refguide/style/
+url: /refguide10/style/
 ---
 
 ## Introduction

@@ -1,6 +1,6 @@
 ---
 title: GraphQL Representation
-url: /refguide/graphql-representation/
+url: /refguide10/graphql-representation/
 weight: 70
 ---
 

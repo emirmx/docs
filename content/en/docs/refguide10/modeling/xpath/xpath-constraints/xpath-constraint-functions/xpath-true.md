@@ -1,6 +1,6 @@
 ---
 title: "XPath true"
-url: /refguide/xpath-true/
+url: /refguide10/xpath-true/
 weight: 1
 ---
 

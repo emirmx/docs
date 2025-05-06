@@ -1,12 +1,12 @@
 ---
 title: "Call Microflow"
-url: /refguide/call-microflow/
+url: /refguide10/call-microflow/
 weight: 95
 ---
 
 ## Introduction
 
-**Call microflow** is used to call a selected [microflow](/refguide/microflow/). 
+**Call microflow** is used to call a selected [microflow](/refguide10/microflow/). 
 
 {{< figure src="/attachments/refguide10/modeling/application-logic/workflows/workflow-elements/call-microflow/call-microflow-example.jpg" alt="Call Microflow Example" width="250" class="no-border" >}}
 
@@ -40,7 +40,7 @@ Parameters of the selected microflow. Depending on the selected microflow, you w
 
 ### Boundary Events Section {#boundary-events}
 
-For more information, see [Boundary Events](/refguide/workflow-boundary-events/).
+For more information, see [Boundary Events](/refguide10/workflow-boundary-events/).
 
 ### Common Section {#common}
 
@@ -48,4 +48,4 @@ For more information, see [Boundary Events](/refguide/workflow-boundary-events/)
 
 ## Read More
 
-* [Workflow Properties](/refguide/workflow-properties/)
+* [Workflow Properties](/refguide10/workflow-properties/)

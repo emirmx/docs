@@ -1,6 +1,6 @@
 ---
 title: "Icon Collection"
-url: /refguide/icon-collection/
+url: /refguide10/icon-collection/
 weight: 7
 description: "This guide shows you why and how to create an icon collection."
 ---
@@ -9,7 +9,7 @@ description: "This guide shows you why and how to create an icon collection."
 
 You can create an icon collection to manage the icons you can use in your app. This is useful if you have a collection of your own brand's icons, as well as if your app uses third-party icons. Icon collections are created from a font.
 
-If you want to use the same set of icons across several apps, you can export and import complete icon collections. For more information, see [Importing and Exporting Apps, Modules, Widgets, and Documents](/refguide/import-and-export/).
+If you want to use the same set of icons across several apps, you can export and import complete icon collections. For more information, see [Importing and Exporting Apps, Modules, Widgets, and Documents](/refguide10/import-and-export/).
 
 ## Adding an Icon Collection
 

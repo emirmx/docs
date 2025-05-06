@@ -1,13 +1,13 @@
 ---
 title: "Published REST Request Routing"
-url: /refguide/published-rest-routing/
+url: /refguide10/published-rest-routing/
 weight: 10
 description: "A flow chart which shows how an example request is processed, what security is applied, and what is returned by the service."
 ---
 
 ## Introduction
 
-When a REST HTTP request arrives at the server, the server needs to determine which [operation](/refguide/published-rest-operation/) to run and what security to apply.
+When a REST HTTP request arrives at the server, the server needs to determine which [operation](/refguide10/published-rest-operation/) to run and what security to apply.
 
 This flow chart shows an example request, how it is processed, and what will be returned by the service under different circumstances.
 

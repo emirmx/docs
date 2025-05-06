@@ -1,6 +1,6 @@
 ---
 title: "Share Data Between Apps"
-url: /refguide/share-data/
+url: /refguide10/share-data/
 description: "Describes how to publish and register a simple data asset to the Catalog from Studio Pro and create a new app that consumes this asset."
 weight: 10
 aliases:
@@ -11,7 +11,7 @@ aliases:
     - /catalog/#share-data
     - /data-hub/data-hub-catalog/share-data/
     - /catalog/share-data/
-    - /howto/integration/share-data/
+    - /howto10/integration/share-data/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -65,7 +65,7 @@ Customize the home page further by changing the banner text.
 
 ## Publishing to the Catalog {#publishing}
 
-You need to register the **Customer** entity in the Catalog to use this entity in other apps. To do this, expose the **Customer** entity in a [Published OData service](/refguide/published-odata-services/) in Studio Pro. OData v3 and OData v4 are REST-based protocols and standard formats for registering services in the Catalog. 
+You need to register the **Customer** entity in the Catalog to use this entity in other apps. To do this, expose the **Customer** entity in a [Published OData service](/refguide10/published-odata-services/) in Studio Pro. OData v3 and OData v4 are REST-based protocols and standard formats for registering services in the Catalog. 
 
 Do the following:
 
@@ -137,7 +137,7 @@ You are going to create a second app and consume the **Customer** dataset from t
 To do this, follow the steps below:
 
 1. In Mendix Studio Pro, create a new app using the **Blank** app template and call it *{yourname}CustomerActionsApp*.
-2. Go to the domain model > [Integration pane](/refguide/integration-pane/) (if you do not see the Integration pane, click **View** > **Integration** to display it).
+2. Go to the domain model > [Integration pane](/refguide10/integration-pane/) (if you do not see the Integration pane, click **View** > **Integration** to display it).
 3. In the Integration pane, enter the search string *{yourname}*.
 4. By default, search in the Integration pane only shows services in **Production** environments. Your app was deployed as a **Sandbox** app. Click the **Filter** icon next to the search and check **Show development environments**.
 
@@ -146,7 +146,7 @@ To do this, follow the steps below:
     The search results now include **{yourname}CustomerOData_service** from your Mendix Cloud **Sandbox** environment.
 
 5. From **{yourname}CustomerODataService**, drag the **Customer** entity into the domain model. The consumed service and entity have green check marks in the Integration pane now.
-6. This entity is different from the blue entity container from the first app. This purple colored entity is called an [external entity](/refguide/external-entities/). The name of the OData service it is exposed in is displayed above it. Click the information icon for the consumed service in the Integration pane to see further information about the service, and follow the link to **View in Catalog**.
+6. This entity is different from the blue entity container from the first app. This purple colored entity is called an [external entity](/refguide10/external-entities/). The name of the OData service it is exposed in is displayed above it. Click the information icon for the consumed service in the Integration pane to see further information about the service, and follow the link to **View in Catalog**.
 7. In the **App Explorer**, notice the service and location documents for your external entity. These documents specify the metadata for the service and provide the links for connecting to the shared data.
 8. Right-click the entity and select **Generate overview pages** for this entity. In the **Generate pages** dialog box, for **Content layout** select **Atlas_Default(Atlas_Core)** and click **OK**. Accept the **Information** box by clicking **Close**. Overview pages for the new entity are added in the **OverviewPages** folder of **MyFirstModule**.
 9. From the **App Explorer**, open **Home_Web** and drag **Customer_Overview** into the empty Auto-fill container.

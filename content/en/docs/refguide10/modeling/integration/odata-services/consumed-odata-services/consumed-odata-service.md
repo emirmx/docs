@@ -1,9 +1,9 @@
 ---
 title: "Consumed OData Service"
-url: /refguide/consumed-odata-service/
+url: /refguide10/consumed-odata-service/
 weight: 10
 aliases:
-    - /refguide/consumed-odata-service-properties
+    - /refguide10/consumed-odata-service-properties/
 # SB: The images on this page are created using the Lato-LandscapeDemoApp (https://sprintr.home.mendix.com/link/project/1b515494-d818-4358-8c91-6c3d54e9cae5)
 ---
 
@@ -11,7 +11,7 @@ aliases:
 
 A consumed OData service contains the connection information for OData external entities and actions.
 
-You can create a consumed OData service and specify its metadata in a file or a URL. Alternatively, you can search using the [Integration pane](/refguide/integration-pane/) and drag an entity to the domain model to have Studio Pro create a consumed OData service for you.
+You can create a consumed OData service and specify its metadata in a file or a URL. Alternatively, you can search using the [Integration pane](/refguide10/integration-pane/) and drag an entity to the domain model to have Studio Pro create a consumed OData service for you.
 
 ## Consumed OData Service Screen
 
@@ -28,7 +28,7 @@ The **Consumed OData Service** document contains the following information:
 
     {{% alert color="info" %}} Studio Pro will always show the **Update** option for the **Consumed OData Service** where you can check if an update is available. In the Catalog search and **App** pane, when a different contract is detected at the service endpoint, it will be indicated with an update arrow for the service. For more information on updating and switching services, see the [Updating or Switching a Consumed OData service](#updating) section of this document. {{% /alert %}}
 
-    {{% alert color="info" %}}In the [Integration pane](/refguide/integration-pane/), consumed services display an **Update** icon (a blue arrow) if there is an update available.{{% /alert %}}
+    {{% alert color="info" %}}In the [Integration pane](/refguide10/integration-pane/), consumed services display an **Update** icon (a blue arrow) if there is an update available.{{% /alert %}}
 
 ### Configuration
 
@@ -48,31 +48,31 @@ Choose a microflow that returns one of the following options:
 This microflow may take a parameter of type **System.HttpResponse**. The microflow is called every time a request is made. Initially, the HTTP response parameter will be empty. If the service responds with `401 Unauthorized`, the microflow is called with that HTTP response and another call is made with the new HTTP headers.
 
 {{% alert color="info" %}}
-Custom authentication can be done with the microflow where the authentication value is retrieved (such as SSO). For more information on access and authentication, see [Using Custom HTTP Header Validation for Published Entities](/refguide/security-shared-datasets/#http-header-validation) in *Security and Shared Datasets*.
+Custom authentication can be done with the microflow where the authentication value is retrieved (such as SSO). For more information on access and authentication, see [Using Custom HTTP Header Validation for Published Entities](/refguide10/security-shared-datasets/#http-header-validation) in *Security and Shared Datasets*.
 {{% /alert %}}
 
 #### Authenticating with Mendix SSO {#authenticate-mendix-sso}
 
-Publishers can set up [custom authentication](/refguide/published-odata-services/#authentication-microflow) using [Mendix SSO](/appstore/modules/mendix-sso/) module. For more information, see the [Mendix SSO](/refguide/published-odata-services/#authentication-mendix-sso) section of *Published OData Services*. 
+Publishers can set up [custom authentication](/refguide10/published-odata-services/#authentication-microflow) using [Mendix SSO](/appstore/modules/mendix-sso/) module. For more information, see the [Mendix SSO](/refguide10/published-odata-services/#authentication-mendix-sso) section of *Published OData Services*. 
 
 Consumers of an OData service that is set up with Mendix SSO authentication can use the **CreateAccessTokenAuthorizationHeaderList**.
 
-To learn more about how to publish an OData service with authentication (Mendix SSO, or other methods), see the [Authentication Methods](/refguide/published-odata-services/#authentication-methods) section of *Published OData Services*. 
+To learn more about how to publish an OData service with authentication (Mendix SSO, or other methods), see the [Authentication Methods](/refguide10/published-odata-services/#authentication-methods) section of *Published OData Services*. 
 
-To learn more about using external entities with security enabled (in production environments), see the [Authentication](/refguide/external-entities/#authentication) section of *External Entities*.
+To learn more about using external entities with security enabled (in production environments), see the [Authentication](/refguide10/external-entities/#authentication) section of *External Entities*.
 
 ### Service URL {#service-url}
 
 The **Service URL** displays constant that specifies the URL of the service endpoint:
 
-* Click **Select** to choose another [constant](/refguide/constants/) for the service
+* Click **Select** to choose another [constant](/refguide10/constants/) for the service
 * Click **Show** to open the **Constant** dialog box displaying the service URL or endpoint:
 
     {{< figure src="/attachments/refguide10/modeling/integration/consumed-odata-services/consumed-odata-service/service-url.png" class="no-border" >}}
 
 ### Timeout
 
-**Timeout** is the response time for fetching data from the service endpoint. If the endpoint has not responded after the number of seconds in **Timeout (s)**, an exception will occur. If this happens during a microflow activity, the microflow will roll back or go into your custom [error handling](/refguide/error-handling-in-microflows/).
+**Timeout** is the response time for fetching data from the service endpoint. If the endpoint has not responded after the number of seconds in **Timeout (s)**, an exception will occur. If this happens during a microflow activity, the microflow will roll back or go into your custom [error handling](/refguide10/error-handling-in-microflows/).
 
 Default value: 300 seconds
 
@@ -107,7 +107,7 @@ If the service uses a configuration microflow or a headers microflow that specif
 
 ### Error Handling Microflow
 
-When a call to the OData service fails, users see a generic error message. Create an [error-handling microflow](/refguide/error-handling-in-microflows/) to change this message.
+When a call to the OData service fails, users see a generic error message. Create an [error-handling microflow](/refguide10/error-handling-in-microflows/) to change this message.
 
 When the service responds with an unsuccessful status code (not in the 2xx range), or does not return a response at all, this microflow decides which message to show to the user.
 
@@ -139,7 +139,7 @@ When downloading the metadata from a URL, the server may request a user name and
 This information is not stored, so if you download the metadata from the same server again, you will have to re-enter your user name and password.
 {{% /alert %}}
 
-When you import the metadata, you can add external entities and actions from the consumed OData service in the [Integration pane](/refguide/integration-pane/).
+When you import the metadata, you can add external entities and actions from the consumed OData service in the [Integration pane](/refguide10/integration-pane/).
 
 ### Properties
 
@@ -212,13 +212,13 @@ When a change in the contract at a consumed endpoint is detected (possibly due t
 
 The **Update** option is available when Studio Pro detects that the contract at the Catalog endpoint is different than the one currently consumed in the app. If **Update** is selected, the new contract will be loaded in the app.
 
-See the [Limitations](/refguide/consumed-odata-services/#consumed-odata-service-limitations) section of *Consumed OData Services* to read about known update limitations.
+See the [Limitations](/refguide10/consumed-odata-services/#consumed-odata-service-limitations) section of *Consumed OData Services* to read about known update limitations.
 
 ##### Integration Pane
 
-In the [Integration pane](/refguide/integration-pane/), search results, and in the **Used in this app** section, an update arrow indicates if there is a different contract at the Catalog endpoint.
+In the [Integration pane](/refguide10/integration-pane/), search results, and in the **Used in this app** section, an update arrow indicates if there is a different contract at the Catalog endpoint.
 
-{{< figure src="/attachments/refguide/modeling/menus/view-menu/integration-pane/update-available.png" alt="Integration pane update" class="no-border" width="300" >}}
+{{< figure src="/attachments/refguide10/modeling/menus/view-menu/integration-pane/update-available.png" alt="Integration pane update" class="no-border" width="300" >}}
 
 * The service version that is currently consumed is shown (in this example **1.2.0**).
 * Blue **Update** - click to open the **Update Service** box and update the contract. Studio Pro will retrieve the new contract at the Catalog endpoint, which will be loaded in the app.
@@ -240,7 +240,7 @@ In the example in the [Consuming from Service Endpoints](#consume-service-endpoi
 
 #### Switching Consumed Services
 
-A published OData service that is deployed to multiple environments or is published with major service updates (and therefore deployed to a different endpoint) is shown as separate items in the search results of the [Integration pane](/refguide/integration-pane/).
+A published OData service that is deployed to multiple environments or is published with major service updates (and therefore deployed to a different endpoint) is shown as separate items in the search results of the [Integration pane](/refguide10/integration-pane/).
 
 In the following example, the consumed **SalesOrders** service version **1.0.0** deployed to **Acceptance** environment is consumed in the app. However, the same service is deployed to the **Production** environment:
 
@@ -250,17 +250,17 @@ To consume the service deployed to the **Acceptance environment**, follow these 
 
 1. Click  **Update** > **Switch** on the **Consumed OData Service** document:
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-odata-services/consumed-odata-service/salesorders-header.png" alt="major change environment" class="no-border" >}}
+    {{< figure src="/attachments/refguide10/modeling/integration/consumed-odata-services/consumed-odata-service/salesorders-header.png" alt="major change environment" class="no-border" >}}
 
 2. On the **Switch** dialog box, from the drop-down list, select the service you want to consume from and click **Switch**:
 
     {{< figure src="/attachments/refguide10/modeling/integration/consumed-odata-services/consumed-odata-service/switch-dialog-box.png" alt="major change environment" width="700" class="no-border" >}}
 
-3. The consumed service is be consumed from the new selected environment. The information on the **Consumed OData Service** document displays the changed service details and the [Integration pane](/refguide/integration-pane/) will display that you are consuming from the selected environment:
+3. The consumed service is be consumed from the new selected environment. The information on the **Consumed OData Service** document displays the changed service details and the [Integration pane](/refguide10/integration-pane/) will display that you are consuming from the selected environment:
 
     {{< figure src="/attachments/refguide10/modeling/integration/consumed-odata-services/consumed-odata-service/integration-pane-2.png" width="350" class="no-border" >}}
 
 ## Read More
 
-* [Integration Pane](/refguide/integration-pane/)
-* [Consumed OData Services](/refguide/consumed-odata-services/)
+* [Integration Pane](/refguide10/integration-pane/)
+* [Consumed OData Services](/refguide10/consumed-odata-services/)

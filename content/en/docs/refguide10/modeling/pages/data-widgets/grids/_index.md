@@ -1,20 +1,20 @@
 ---
 title: "Grids"
-url: /refguide/grids/
+url: /refguide10/grids/
 weight: 20
 ---
 
 ## Introduction
 
-Grids show a list of objects and include a [data grid](/refguide/data-grid/) and a [template grid](/refguide/template-grid/). The main difference between these grids is the way the list of objects is displayed: a data grid shows it in columns, while a template grid shows it in tiles.
+Grids show a list of objects and include a [data grid](/refguide10/data-grid/) and a [template grid](/refguide10/template-grid/). The main difference between these grids is the way the list of objects is displayed: a data grid shows it in columns, while a template grid shows it in tiles.
 
 [Data grid 2](/appstore/modules/data-grid-2/) is a special type of grid, available as part of the [Data Widgets](https://marketplace.mendix.com/link/component/116540) Marketplace module.
 
 Grids have the following components in common:
 
-* [Search bar](/refguide/search-bar/) – allows end-users to search for objects in the grid 
-* [Sort bar](/refguide/sort-order/#sort-bar) – allows end-users to sort items in the grid 
-* [Control bar](/refguide/control-bar/) – allows end-users to control the objects displayed in the grid by means of buttons 
+* [Search bar](/refguide10/search-bar/) – allows end-users to search for objects in the grid 
+* [Sort bar](/refguide10/sort-order/#sort-bar) – allows end-users to sort items in the grid 
+* [Control bar](/refguide10/control-bar/) – allows end-users to control the objects displayed in the grid by means of buttons 
 
 ## Choosing a Grid
 
@@ -22,7 +22,7 @@ If your app needs to display data on a page, different widgets suit different us
 
 ### Data Grid
 
-The [data grid](/refguide/data-grid/) widget is well suited for these cases:
+The [data grid](/refguide10/data-grid/) widget is well suited for these cases:
 
 * Displaying data as a table
 * Employing several rows and columns
@@ -30,7 +30,7 @@ The [data grid](/refguide/data-grid/) widget is well suited for these cases:
 
 ### Template Grid
 
-The [template grid](/refguide/template-grid/) widget is well suited for these cases:
+The [template grid](/refguide10/template-grid/) widget is well suited for these cases:
 
 * Displaying tiles with each list item
 * Showing an image
@@ -48,8 +48,8 @@ The [data grid 2](/appstore/modules/data-grid-2/) widget is an expanded version 
 
 ## Read More
 
-* [Data Grid](/refguide/data-grid/)
-* [Template Grid](/refguide/template-grid/)
+* [Data Grid](/refguide10/data-grid/)
+* [Template Grid](/refguide10/template-grid/)
 * [Data Grid 2](/appstore/modules/data-grid-2/)
-* [Data Containers](/refguide/data-widgets/)
-* [Properties Common in the Page Editor](/refguide/common-widget-properties/)
+* [Data Containers](/refguide10/data-widgets/)
+* [Properties Common in the Page Editor](/refguide10/common-widget-properties/)

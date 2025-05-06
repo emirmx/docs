@@ -1,6 +1,6 @@
 ---
 title: "Internationalize Mobile Apps"
-url: /refguide/mobile/using-mobile-capabilities/native-language-change
+url: /refguide10/mobile/using-mobile-capabilities/native-language-change
 weight: 30
 description: "This guide allows your end-user to change the interface language on their mobile device within a Mendix mobile app."
 ---
@@ -12,17 +12,17 @@ This internationalization guide explains how to give your end-user an easy way t
 
 This guide shows one of the ways to change the language on a *native* app. You can also apply this guide's mechanism to *all offline PWA profiles*. Please note that this guide's mechanism does not change the localization of an application because it depends on the settings of the device.
 
-While this guide gives your end-user the ability to switch their app's language, translation is a different issue. Translating native apps and PWAs actually works the same as it does for web apps. To learn more about app translation, see [Translating Your App Content](/refguide/translate-your-app-content/).
+While this guide gives your end-user the ability to switch their app's language, translation is a different issue. Translating native apps and PWAs actually works the same as it does for web apps. To learn more about app translation, see [Translating Your App Content](/refguide10/translate-your-app-content/).
 
 ## Prerequisites
 
 Before starting this guide, make sure you have completed the following prerequisites:
 
 * Install Mendix Studio Pro version [9.14.0](/releasenotes/studio-pro/9.14/) or above
-* Complete the [Prerequisites](/refguide/mobile/distributing-mobile-apps/building-native-apps/deploying-native-app/#prerequisites) section of *Build a Mendix Native App in the Cloud*
+* Complete the [Prerequisites](/refguide10/mobile/distributing-mobile-apps/building-native-apps/deploying-native-app/#prerequisites) section of *Build a Mendix Native App in the Cloud*
 * Make sure your [Nanoflow Commons](/appstore/modules/nanoflow-commons/) module is up to date
-* Read the [Language Menu](/refguide/translatable-texts/) guide to understand the basics of the Mendix Language menu
-* Set up the required [languages](/refguide/language-settings/) in Studio Pro—this tutorial has been configured with three languages as below:
+* Read the [Language Menu](/refguide10/translatable-texts/) guide to understand the basics of the Mendix Language menu
+* Set up the required [languages](/refguide10/language-settings/) in Studio Pro—this tutorial has been configured with three languages as below:
 
     {{< figure src="/attachments/refguide10/mobile/native-mobile/native-language-change/language-settings.png" alt="language settings"  width= "450" class="no-border" >}}
 
@@ -105,7 +105,7 @@ Now it is time to see the app in action. If you are using a PWA, you can simply 
 
 To test your native app, locally deploy and view the app on the **Make It Native 9** app:
 
-1. Follow the steps in [Downloading and Installing the Make It Native App](/refguide/mobile/getting-started-with-mobile/#download-min) to view your app in Mendix's Make It Native testing app. 
+1. Follow the steps in [Downloading and Installing the Make It Native App](/refguide10/mobile/getting-started-with-mobile/#download-min) to view your app in Mendix's Make It Native testing app. 
 1. Once the app is running, you should be able to see the native **Language_Overview** page:
 
     {{< figure src="/attachments/refguide10/mobile/native-mobile/native-language-change/device-language-overview-en.png"  alt="language overview english" width= "250" class="no-border" >}}
@@ -121,7 +121,7 @@ Congratulations, you just implemented internationalization in your native app! Y
 
 ## Read More
 
-* [Using Translatable Validation Messages](/refguide/translatable-validation-messages/)
-* [Language Menu](/refguide/translatable-texts/): gives more information on translating the languages of different Mendix UI elements
+* [Using Translatable Validation Messages](/refguide10/translatable-validation-messages/)
+* [Language Menu](/refguide10/translatable-texts/): gives more information on translating the languages of different Mendix UI elements
 * [Change Language by Clicking a Link](https://community.mendix.com/link/questions/91821): explanations and ideas in the Mendix Community for refreshing the page when the language is changed
 * [Anonymous User Journey](https://community.mendix.com/link/questions/91676): a discussion in the Mendix Community about switching languages for anonymous end-users

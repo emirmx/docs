@@ -1,6 +1,6 @@
 ---
 title: "Deploy to the Cloud"
-url: /refguide/deploy-to-the-cloud-dialog/
+url: /refguide10/deploy-to-the-cloud-dialog/
 ---
 
 ## Introduction

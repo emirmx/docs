@@ -1,6 +1,6 @@
 ---
 title: "XPath ends-with"
-url: /refguide/xpath-ends-with/
+url: /refguide10/xpath-ends-with/
 weight: 18
 ---
 

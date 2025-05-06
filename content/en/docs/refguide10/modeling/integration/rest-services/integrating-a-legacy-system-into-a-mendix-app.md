@@ -1,11 +1,11 @@
 ---
 title: "Integrate a Legacy System into a Mendix App"
 linktitle: "Integrate Legacy System"
-url: /refguide/integrate-a-legacy-system/
+url: /refguide10/integrate-a-legacy-system/
 weight: 50
 description: "Describes how to assess potential options for integrating an existing system with a Mendix app and how to integrate with a legacy system using REST."
 aliases: 
-    - /howto/integration/integrating-a-legacy-system-into-a-mendix-app/
+    - /howto10/integration/integrating-a-legacy-system-into-a-mendix-app/
 ---
 
 ## Introduction
@@ -21,10 +21,10 @@ This how-to teaches you how to do the following:
 
 Before starting this how-to, make sure you have completed the following prerequisites:
 
-* Know how to create domain models (for details, see [Configuring a Domain Model](/refguide/configuring-a-domain-model/))
-* Know how to create overview and detail pages (for details, see [How to Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/))
-* Know how to create microflows (for details, see [How to Build Your First Microflow: Hello world!](/refguide/triggering-microflow-from-menu-item/))
-* Understand the concepts behind REST and web services (for more information, see [How to Consume a Complex Web Service](/howto/integration/consume-a-complex-web-service/))
+* Know how to create domain models (for details, see [Configuring a Domain Model](/refguide10/configuring-a-domain-model/))
+* Know how to create overview and detail pages (for details, see [How to Create Your First Two Overview and Detail Pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/))
+* Know how to create microflows (for details, see [How to Build Your First Microflow: Hello world!](/refguide10/triggering-microflow-from-menu-item/))
+* Understand the concepts behind REST and web services (for more information, see [How to Consume a Complex Web Service](/howto10/integration/consume-a-complex-web-service/))
     * Creating an exposed REST service on top of your legacy system is beyond the scope of this tutorial; for instructions on how to accomplish this, refer to the configuration of your non-Mendix Platform
 
 ## Interacting with a Legacy System Using REST
@@ -42,7 +42,7 @@ For this how-to, we will use the publicly available Google Books API (for detail
 
 1. Construct the appropriate data model for this JSON.
 
-    {{% alert color="warning" %}}Every REST service will have a different specific JSON structure. For details on how to build JSON data structures in Mendix, see [JSON Structures](/refguide/json-structures/).{{% /alert %}}
+    {{% alert color="warning" %}}Every REST service will have a different specific JSON structure. For details on how to build JSON data structures in Mendix, see [JSON Structures](/refguide10/json-structures/).{{% /alert %}}
 
 2. Create a non-persistable search entity called **BookSearch** that allows the user to enter an author and title. This should be linked to a second object:
 
@@ -88,7 +88,7 @@ For further documentation and to see the GitHub project for REST services, see t
 
 ## Read More
 
-* [Consume a REST Service](/howto/integration/consume-a-rest-service/)
-* [Consume a Complex Web Service](/howto/integration/consume-a-complex-web-service/)
-* [Consume a Simple Web Service](/howto/integration/consume-a-simple-web-service/)
-* [Expose a Web Service](/howto/integration/expose-a-web-service/)
+* [Consume a REST Service](/howto10/integration/consume-a-rest-service/)
+* [Consume a Complex Web Service](/howto10/integration/consume-a-complex-web-service/)
+* [Consume a Simple Web Service](/howto10/integration/consume-a-simple-web-service/)
+* [Expose a Web Service](/howto10/integration/expose-a-web-service/)

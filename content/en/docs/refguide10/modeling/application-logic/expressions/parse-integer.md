@@ -1,13 +1,13 @@
 ---
 title: "Parse Integer"
-url: /refguide/parse-integer/
+url: /refguide10/parse-integer/
 weight: 140
 description: "Describes the function for parsing integer from strings in Mendix."
 ---
 
 ## Introduction
 
-This document describes the function that converts a string to a value that is of data type [Integer/Long](/refguide/data-types/#integer-long).
+This document describes the function that converts a string to a value that is of data type [Integer/Long](/refguide10/data-types/#integer-long).
 
 ## parseInteger
 
@@ -23,7 +23,7 @@ The input parameters are described in the table below:
 | Default value **(optional)** | Integer/Long |
 
 {{% alert color="info" %}}
-A default value can be specified to handle parsing errors. If no default value is provided, an error will occur if the string is not a number or if the parsed value is not within the range of valid values for an Integer/Long. The range of valid values for an Integer/Long can be found in this [table of supported data types](/refguide/data-types/#supported-data-types).
+A default value can be specified to handle parsing errors. If no default value is provided, an error will occur if the string is not a number or if the parsed value is not within the range of valid values for an Integer/Long. The range of valid values for an Integer/Long can be found in this [table of supported data types](/refguide10/data-types/#supported-data-types).
 {{% /alert %}}
 
 ### Output
