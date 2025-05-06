@@ -62,24 +62,6 @@ Choose a suggestion and click it to accept it. You can also choose a suggestion 
 
 To open the properties dialog box after adding a suggested element, accept the suggestion with <kbd>Shift</kbd> + <kbd>Enter</kbd> (or <kbd>Shift</kbd> + mouse click). After closing the properties dialog box, the Recommender will open on the next flow.
 
-### Studio Pro 10.5 and Below {#older-version}
-
-In Studio Pro 10.5 and below, an older version of Logic Recommender is available. It is enabled by default. You can switch it on and off using the **On-Off** toggle in the top right corner of the editor. You can also enable or disable it through the **Enable MxAssist Logic Bot** setting under the **Mendix Assist** tab in Studio Pro Preferences.
-
-To use this older version of Logic Recommender, do the following:
-
-1. Click the icon to see the next best action recommendations:
-
-    {{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/logic-recommender/mx-assist-recommendations.png" alt="Logic Bot Recommendations" class="no-border" >}}
-
-2. Click one of the recommended activities to insert it into a microflow.
-
-3. In the **Properties** dialog box, configure the selected activity/event.
-
-The activity/event is added to your microflow.
-
-If you do not see the desired activity or element in the top-five recommendation list, you can click **Add other element** and choose an activity, loop, decision, merge, or object type decision.
-
 ## Read More
 
 * [Microflows and Nanoflows](/refguide/microflows-and-nanoflows/)

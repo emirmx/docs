@@ -297,7 +297,15 @@ You can publish data as a GraphQL service. When you enable this feature, you can
 
 #### Enable Maia for Domain Model
 
-Maia for Domain Model was introduced in Studio Pro 10.13.0. Enable this option to help you generate entities and associations for empty domain models. For more information on how to use this feature, see [Domain Model Generator](/refguide/domain-model-generator/).
+Enable this option to help you generate entities and associations for your domain models. For more information on how to use this feature, see [Maia for Domain Model](/refguide/maia-for-domain-model/).
+
+#### Enable Maia for Pages
+
+Enable this option to help you generate pages by adding and configuring widgets based on text input and an optional image. For more information on how to use this feature, see [Maia for Pages](/refguide/maia-for-pages/).
+
+#### Enable Maia for OQL
+
+Enable this option to help you generate and manage OQL (Object Query Language) queries through an intuitive interface. For more information on how to use this feature, see [Maia for OQL](/refguide/maia-for-oql/).
 
 #### Enable Translation Generator
 
@@ -306,7 +314,6 @@ Enable this option to help you translate your model to different languages throu
 ### Mapping Editor
 
 This setting allows you to set the beta version as the default editor.
-
 
 ### Online Synchronization Mode
 
