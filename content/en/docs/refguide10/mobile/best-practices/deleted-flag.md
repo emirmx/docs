@@ -1,13 +1,13 @@
 ---
 title: "Deleted Flag"
-url: /refguide/mobile/best-practices/deleted-flag
+url: /refguide10/mobile/best-practices/deleted-flag
 weight: 10
 description: "This pattern lets you remove deleted objects from the offline database via Sync-to-device."
 ---
 
 ## Introduction
 
-This pattern lets you remove deleted objects from the offline database via the [Synchronize to Device](/refguide/synchronize-to-device/) action.
+This pattern lets you remove deleted objects from the offline database via the [Synchronize to Device](/refguide10/synchronize-to-device/) action.
 
 ## Challenge
 
@@ -36,4 +36,4 @@ To improve your apps further, consult the following recommendations:
 
 ## Read More
 
-* To increase the clarity, organization, and documentation of your apps, see [Mendix Best Practices for Development](/refguide/dev-best-practices/)
+* To increase the clarity, organization, and documentation of your apps, see [Mendix Best Practices for Development](/refguide10/dev-best-practices/)

@@ -1,6 +1,6 @@
 ---
 title: "Group Box"
-url: /refguide/group-box/
+url: /refguide10/group-box/
 weight: 30
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -56,24 +56,24 @@ Possible values of this property are the following:
 
 ### Visibility Section {#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ### Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Styling
 
 ### Design Properties Section {#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### Common Section {#common-styling}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Read More
 
-* [Page](/refguide/page/)
-* [Structure](/refguide/structure-widgets/)
-* [Properties Common in the Page Editor](/refguide/common-widget-properties/)
+* [Page](/refguide10/page/)
+* [Structure](/refguide10/structure-widgets/)
+* [Properties Common in the Page Editor](/refguide10/common-widget-properties/)

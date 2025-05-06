@@ -1,7 +1,7 @@
 ---
 title: "Maia Explain"
 linktitle: "Explain"
-url: /refguide/maia-explain/
+url: /refguide10/maia-explain/
 weight: 10
 description: "Describes the features in Maia Explain."
 ---
@@ -9,7 +9,7 @@ description: "Describes the features in Maia Explain."
 ## Introduction 
 
 {{% alert color="info" %}}
-Maia Explain is currently an experimental feature introduced in Studio Pro 10.21.0. For more information on experimental features, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+Maia Explain was introduced in Studio Pro 10.21.0.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -20,7 +20,7 @@ Maia Explain is an AI-powered tool that helps you easily understand a microflow 
 
 ## Using Maia Learn
 
-Maia Explain is enabled by default. If you want to disable this feature, go to **Edit** > **Preferences** > **New Features** and clear the **Enable Maia Explain (experimental)** checkbox.
+Maia Explain is enabled by default. If you want to disable this feature, go to **Edit** > **Preferences** > **New Features** and clear the **Enable Maia Explain** checkbox.
 
 There are two ways to launch Maia Explain:
 
@@ -43,9 +43,9 @@ Maia Explain supports follow-up questions. You can modify the tone of the answer
 * *What are your suggestions to improve this microflow?"*
 
 {{% alert color="info" %}}
-In this dedicated chat, only requests related to Maia Explain will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide/maia-chat/) interface.
+In this dedicated chat, only requests related to Maia Explain will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide10/maia-chat/) interface.
 {{% /alert %}}
 
 ## Read More
 
-* [Maia Chat](/refguide/maia-chat/)
+* [Maia Chat](/refguide10/maia-chat/)

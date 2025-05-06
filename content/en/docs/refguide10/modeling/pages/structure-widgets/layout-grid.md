@@ -1,6 +1,6 @@
 ---
 title: "Layout Grid"
-url: /refguide/layout-grid/
+url: /refguide10/layout-grid/
 weight: 10
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -53,7 +53,7 @@ As the layout grid responds to the viewport width, and not to the width of its c
 
 ### Common Section {#common-styling}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Rows and Their Properties {#rows}
 
@@ -71,7 +71,7 @@ Row properties consist of the following sections:
 
 ### Common Section {#row-common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### General Section {#row-general}
 
@@ -92,7 +92,7 @@ The **General** section of a row contains the following properties:
 
 ### Visibility Section {#row-visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ## Columns and Their Properties {#columns}
 
@@ -109,7 +109,7 @@ Layout grid column properties consist of the following sections:
 
 ### Common Section {#column-common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### General Section {#column-general}
 
@@ -196,6 +196,6 @@ In adding to inserting a new column, you can perform the following actions when 
 
 ## Read More
 
-* [Page](/refguide/page/)
-* [Structure](/refguide/structure-widgets/)
-* [Properties Common for Widgets](/refguide/common-widget-properties/)
+* [Page](/refguide10/page/)
+* [Structure](/refguide10/structure-widgets/)
+* [Properties Common for Widgets](/refguide10/common-widget-properties/)

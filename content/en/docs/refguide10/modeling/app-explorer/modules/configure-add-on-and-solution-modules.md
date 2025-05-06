@@ -1,7 +1,7 @@
 ---
 title: "Configuring Add-on and Solution Modules for Publishing"
 linktitle: "Publish Add-on and Solution Modules"
-url: /refguide/configure-add-on-and-solution-modules/
+url: /refguide10/configure-add-on-and-solution-modules/
 weight: 20
 ---
 
@@ -65,7 +65,7 @@ Pages cannot be made **Usable**. Instead, a navigation microflow that opens the 
 ## Exporting Add-on Modules and Solutions {#export}
 
 {{% alert color="info" %}}
-Before exporting an add-on module or a solution to customers, note that only English (US) is shipped by default. This may be important if your app is in another language (meaning, not English (US)) and your customers decide to translate the consumed solution or add-on to other languages. To avoid confusion, open [Language](/refguide/translatable-texts/) > **Language Operations** and select the **Delete** operation for English (US). For details on performing a certain operation, see [Language Operations](/refguide/language-operations/).
+Before exporting an add-on module or a solution to customers, note that only English (US) is shipped by default. This may be important if your app is in another language (meaning, not English (US)) and your customers decide to translate the consumed solution or add-on to other languages. To avoid confusion, open [Language](/refguide10/translatable-texts/) > **Language Operations** and select the **Delete** operation for English (US). For details on performing a certain operation, see [Language Operations](/refguide10/language-operations/).
 {{% /alert %}}
 
 ### Exporting Add-on Module Package
@@ -88,7 +88,7 @@ The add-on module gets an *.mxmodule* extension.
 
 A solution package is an app package that can be sold as an out-of-the-box solution and can be used by multiple customers. It has a solution core that consists of solution modules. It can also consists of app modules and add-on modules. For more information, see [How to Create Solutions](/appstore/creating-content/sol-solutions-guide/) in the *Marketplace Guide*.
 
-To export the solution package, right-click the name of the app in the **App Explorer** and select **Export app package**, or open **File** > **Export App Package**. For more information, see [Export App Package](/refguide/export-app-package-dialog/).
+To export the solution package, right-click the name of the app in the **App Explorer** and select **Export app package**, or open **File** > **Export App Package**. For more information, see [Export App Package](/refguide10/export-app-package-dialog/).
 
 The solution package gets an *.mxsolution* extension.
 
@@ -105,4 +105,4 @@ If for some reason you switch the add-on and solution module to an app module (f
 * [Create Solutions](/appstore/creating-content/sol-solutions-guide/)
 * [IP Protection](/appstore/creating-content/sol-ip-protection/)
 * [How to Use Marketplace Content](/appstore/use-content/)
-* [Import and Export Apps, Modules, Widgets, and Documents](/refguide/import-and-export/)
+* [Import and Export Apps, Modules, Widgets, and Documents](/refguide10/import-and-export/)

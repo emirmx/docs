@@ -1,11 +1,11 @@
 ---
 title: "Troubleshooting Version Control"
-url: /refguide/troubleshoot-version-control-issues/
+url: /refguide10/troubleshoot-version-control-issues/
 linktitle: "Troubleshoot Version Control"
 weight: 20
 description: "Presents a list of problems and fixes for version control issues."
 aliases:
-    - /howto/collaboration-requirements-management/troubleshoot-version-control-issues/
+    - /howto10/collaboration-requirements-management/troubleshoot-version-control-issues/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 #The anchor #cannot-create-package below is mapped from Studio Pro, so it should not be removed or changed.
 ---
@@ -16,8 +16,8 @@ Mendix Studio Pro contains a version control system that supports collaborating 
 
 For more information and general help on version control, see the following documents:
 
-* [Version Control](/refguide/version-control/)
-* [Using Version Control in Studio Pro](/refguide/using-version-control-in-studio-pro/)
+* [Version Control](/refguide10/version-control/)
+* [Using Version Control in Studio Pro](/refguide10/using-version-control-in-studio-pro/)
 
 ## Troubleshooting {#troubleshooting}
 
@@ -148,7 +148,7 @@ This will recreate the metadata and you should now be able to create a deploymen
 
 ### Installed Git Version Does Not Meet Studio Pro's Requirement
 
-Studio Pro requires a specific minimum version of Git (for more information, see [System Requirements](/refguide/system-requirements/)). If this version is not installed on your device, Studio Pro will show a message during a start-up indicating that certain features will not be available.
+Studio Pro requires a specific minimum version of Git (for more information, see [System Requirements](/refguide10/system-requirements/)). If this version is not installed on your device, Studio Pro will show a message during a start-up indicating that certain features will not be available.
 
 You can download and install a recent version of Git from [here](https://git-scm.com/downloads). 
 
@@ -156,3 +156,11 @@ You can download and install a recent version of Git from [here](https://git-scm
 
 Sometimes the Git process may crash while performing any operation on the repository. The reason for this can be a dead battery, a blue screen on Windows, or any other unexpected shutdown. As a result, there is a leftover *index.lock* file, which blocks other Git operations.
 To fix this, go to `<directory of your app>/.git/` and delete the *index.lock* file.
+
+### Unknown Author Shown in Version Control History
+
+In case of a configuration error, an unknown author may appear in the commit history for one or more commits. The values used for commit messages originate from the Git configuration. This information is not used for authentication on Team Server and can be adjusted in [Preferences](/refguide/preferences-dialog/#name).
+
+Other tools on your machine that use the Git configuration, such as a traditional IDE, are typically also capable of changing this Git configuration. If you have chosen a name and email for a hobby project in another IDE, that information may also appear in commits made from Studio Pro.
+
+To fix the issue, ensure that responsible users change their Git configuration in [Preferences](/refguide/preferences-dialog/#name). Changing historical commits is not possible within Studio Pro. 

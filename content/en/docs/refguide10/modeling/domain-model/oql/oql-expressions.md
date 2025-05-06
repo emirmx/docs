@@ -1,10 +1,10 @@
 ---
 title: "OQL Expressions"
 weight: 20
-url: /refguide/oql-expressions/
+url: /refguide10/oql-expressions/
 aliases:
-    - /refguide/oql-aggregation/
-    - /refguide/oql-parameters/
+    - /refguide10/oql-aggregation/
+    - /refguide10/oql-parameters/
 
 ---
 
@@ -18,7 +18,7 @@ An OQL expression is a query building block that returns a value or a list of va
 * a subquery
 * a combination of attribute names, constants, system variables, functions, and subqueries connected by operators
 
-OQL expressions can be used in `WHERE`, `SELECT`, `GROUP BY`, `UNION`, `HAVING`, and `ON` conditions of `JOIN` clauses. For more information, see [OQL clauses](/refguide/oql-clauses/).
+OQL expressions can be used in `WHERE`, `SELECT`, `GROUP BY`, `UNION`, `HAVING`, and `ON` conditions of `JOIN` clauses. For more information, see [OQL clauses](/refguide10/oql-clauses/).
 
 ## Aggregations{#aggregates}
 
@@ -126,7 +126,7 @@ SELECT COUNT(Stock) AS StockEntryCount FROM Sales.Product
 |:---------------:|
 |        4        |
 
-You can count just unique names with [`DISTINCT`](/refguide/oql-clauses/#distinct):
+You can count just unique names with [`DISTINCT`](/refguide10/oql-clauses/#distinct):
 
 ```sql
 SELECT COUNT(DISTINCT Name) AS DistinctNameEntryCount FROM Sales.Product
@@ -221,7 +221,7 @@ Parameters are external variables that are referenced to by name in an OQL query
 
 If you use undefined in `IN` and `LIKE` comparison expressions, the condition always returns `true`. In other cases, undefined parameters cause an exception.
 
-{{% alert color="warning" %}} Parameters are only supported within OQL queries defined in [data sets](/refguide/data-sets/) or inside Java actions using the [Mendix Runtime API](/apidocs-mxsdk/apidocs/runtime-api/). They can not be used in [view entities](/refguide/view-entities/).{{% /alert %}}
+{{% alert color="warning" %}} Parameters are only supported within OQL queries defined in [data sets](/refguide10/data-sets/) or inside Java actions using the [Mendix Runtime API](/apidocs-mxsdk/apidocs/runtime-api/). They can not be used in [view entities](/refguide10/view-entities/).{{% /alert %}}
 
 ### Examples
 

@@ -1,6 +1,6 @@
 ---
 title: "Aggregate List"
-url: /refguide/aggregate-list/
+url: /refguide10/aggregate-list/
 weight: 1
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 #To update screenshots of these microflows in Studio Pro, use the Microflow Screenshots app.
@@ -99,11 +99,11 @@ The name of the variable in which the result of the aggregation is stored. The v
 
 ## Common Section{#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}
 
 ## Optimizing Aggregate Activities
 
-In some apps, it is necessary to evaluate large datasets in a microflow (for example, for reporting purposes). If there are a lot of [retrieves](/refguide/retrieve/) and aggregates on large datasets in a microflow, it is easy to run into performance or memory problems.
+In some apps, it is necessary to evaluate large datasets in a microflow (for example, for reporting purposes). If there are a lot of [retrieves](/refguide10/retrieve/) and aggregates on large datasets in a microflow, it is easy to run into performance or memory problems.
 
 This section describes how Mendix Runtime optimizes **Aggregate list** activities with large datasets and some recommended approaches for optimization.
 
@@ -135,4 +135,4 @@ Since the Mendix Runtime merges list retrieve and aggregate activities, you do n
 
 ## Read More
 
-* [Retrieve Activities](/refguide/retrieve/)
+* [Retrieve Activities](/refguide10/retrieve/)

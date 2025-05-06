@@ -1,6 +1,6 @@
 ---
 title: "SAP HANA"
-url: /refguide/saphana/
+url: /refguide10/saphana/
 weight: 70
 ---
 
@@ -14,7 +14,7 @@ The behavior of Mendix using an SAP HANA database has some minor differences whe
 
 SAP HANA does not support unlimited strings or strings with a specified length greater than 5000 characters when using the equal (`=`) or not equal (`!=`) operators in XPath constraints. However, it does support functions including `contains()`, `starts-with()`, and `ends-with()`.
 
-See also [Case-Sensitive Database Behavior](/refguide/case-sensitive-database-behavior/).
+See also [Case-Sensitive Database Behavior](/refguide10/case-sensitive-database-behavior/).
 
 ### Sorting, Grouping, and Aggregating
 

@@ -1,15 +1,15 @@
 ---
 title: "Error Handling in Microflows"
-url: /refguide/error-handling-in-microflows/
+url: /refguide10/error-handling-in-microflows/
 weight: 4
 aliases:
-    - /howto/logic-business-rules/set-up-error-handling
+    - /howto10/logic-business-rules/set-up-error-handling
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-In a [microflow](/refguide/microflows/), microflow elements ([activities](/refguide/activities/), [decisions](/refguide/decisions/), or [loops](/refguide/loop/)) can sometimes fail and produce an error. If you do nothing, Mendix reports the error with a system error message and roll back all the changes. However, you can also change this behavior and handle errors yourself.
+In a [microflow](/refguide10/microflows/), microflow elements ([activities](/refguide10/activities/), [decisions](/refguide10/decisions/), or [loops](/refguide10/loop/)) can sometimes fail and produce an error. If you do nothing, Mendix reports the error with a system error message and roll back all the changes. However, you can also change this behavior and handle errors yourself.
 
 This document introduces different error handling options in microflows and explains how they work using simple examples. An example of how combined custom error handling works is also given in [An Example of Combined Error Handling](#example).
 
@@ -24,12 +24,12 @@ There are four error handling options:
 * **Custom without rollback**
 * **Continue**
 
-Except for the **Rollback** option, which is the default, the other three are all custom error handling options. For **Custom with rollback** and **Custom without rollback**, you can create an additional flow from the microflow elements (activities or decisions) from which the error is returned and mark this flow as an error handling flow. You can end this flow with an [error event](/refguide/error-event/) or an [end event](/refguide/end-event/). Hence, we introduce these two custom error handling options based on what event terminates the error handling flow.
+Except for the **Rollback** option, which is the default, the other three are all custom error handling options. For **Custom with rollback** and **Custom without rollback**, you can create an additional flow from the microflow elements (activities or decisions) from which the error is returned and mark this flow as an error handling flow. You can end this flow with an [error event](/refguide10/error-event/) or an [end event](/refguide10/end-event/). Hence, we introduce these two custom error handling options based on what event terminates the error handling flow.
 
 {{% alert color="info" %}}
 In the error handling flow, you can include activities that update the database. Custom error handling does not affect newly created objects there, but if you try to update the status of an existing object that was created outside of this flow and that was rolled back because of custom error handling, then an error will occur.
 
-You can also include decisions in the error handling flow based on what you want. It is recommended to put a [Log message activity](/refguide/log-message/) in the error handling flow to log the error and present a custom error message to the end-user.
+You can also include decisions in the error handling flow based on what you want. It is recommended to put a [Log message activity](/refguide10/log-message/) in the error handling flow to log the error and present a custom error message to the end-user.
 {{% /alert %}}
 
 It is important to know that when a microflow is started by an end-user (for example, by clicking a button), a savepoint is always created at the very beginning of the microflow. This is the case for **Microflow 1** in all the following examples. Knowing how savepoints are created and function is key to understanding how error handling works.
@@ -64,7 +64,7 @@ When **Microflow 1** starts with a button click, a savepoint is created at the v
 
 ### Error Handling - Custom without Rollback
 
-Setting **Custom without rollback** will not stop data changes within the activity which failed from being rolled back. For example, if a [Call REST Service](/refguide/call-rest-action/) returns an error, any data the REST call retrieved will not be kept.
+Setting **Custom without rollback** will not stop data changes within the activity which failed from being rolled back. For example, if a [Call REST Service](/refguide10/call-rest-action/) returns an error, any data the REST call retrieved will not be kept.
 
 #### Error Handling Which Ends with an Error Event
 
@@ -96,7 +96,7 @@ In this example, the error handling in **Microflow 2** is set to **Continue**.
 
 When **Microflow 1** starts with a button click, a savepoint is created at the very beginning of **Microflow 1**. Another savepoint is created right before **GenerateError** because the error handling is set to **Continue**. When the error in **Microflow 2** occurs, the microflow continues as if nothing happened. Changes made in **Create Customer** and **Create Order** are both kept. No error message is logged and no message is displayed to the end-user.
 
-Data changes within the activity which returns an error (for example, within an iteration of a [loop](/refguide/loop/)) will always be rolled back. It is only data changes outside the activity returning the error which will be kept.
+Data changes within the activity which returns an error (for example, within an iteration of a [loop](/refguide10/loop/)) will always be rolled back. It is only data changes outside the activity returning the error which will be kept.
 
 {{% alert color="warning" %}}
 You should be very careful with using the **Continue** option since it can make it very difficult to understand when something goes wrong. Where possible, try to use **Custom without rollback** instead and log the error message.
@@ -134,7 +134,7 @@ The `$latestError` variable is a special variable that does not behave like norm
 
 ### Inspecting REST Errors
 
-If the error is a REST fault (an error that occurs as a result of a REST call), the result of the call will be stored in the `$latestHttpResponse` variable which is an object of type `HttpResponse`.  This object is available in your custom error flows and you can use it to write more focused messages to the log or to make other decisions within the error flow. For more information, see the [Response Tab](/refguide/call-rest-action/#response) section in *Call REST Service*.
+If the error is a REST fault (an error that occurs as a result of a REST call), the result of the call will be stored in the `$latestHttpResponse` variable which is an object of type `HttpResponse`.  This object is available in your custom error flows and you can use it to write more focused messages to the log or to make other decisions within the error flow. For more information, see the [Response Tab](/refguide10/call-rest-action/#response) section in *Call REST Service*.
 
 {{% alert color="warning" %}}
 The `$latestHttpResponse` variable is a special variable that does not behave like normal variables. This variable should not be returned as the result of a microflow to a nanoflow, page, or widget that calls it. Doing so will result in unexpected behavior.
@@ -175,4 +175,4 @@ Consider the following best practices for error handling:
 
 ## Read More
 
-* [Error Handling in Nanoflows](/refguide/error-handling-in-nanoflows/)
+* [Error Handling in Nanoflows](/refguide10/error-handling-in-nanoflows/)

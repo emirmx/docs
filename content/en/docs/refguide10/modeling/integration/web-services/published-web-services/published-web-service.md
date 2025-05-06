@@ -1,17 +1,17 @@
 ---
 title: "Published Web Service"
-url: /refguide/published-web-service/
+url: /refguide10/published-web-service/
 ---
 
 ## Introduction
 
-This document describes the properties of a published web service. If you want a general overview of how Mendix publishes microflows as web services, see [Published Web Services](/refguide/published-web-services/).
+This document describes the properties of a published web service. If you want a general overview of how Mendix publishes microflows as web services, see [Published Web Services](/refguide10/published-web-services/).
 
 ## Operations
 
 {{< figure src="/attachments/refguide10/modeling/integration/published-web-services/published-web-service/16843888.png" class="no-border" >}}
 
-Provide the actual [operations](/refguide/operations/) of which the web service is composed. Each of these operations is a microflow.
+Provide the actual [operations](/refguide10/operations/) of which the web service is composed. Each of these operations is a microflow.
 
 ## Settings
 

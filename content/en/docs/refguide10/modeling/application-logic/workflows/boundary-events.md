@@ -1,6 +1,6 @@
 ---
 title: "Boundary Events"
-url: /refguide/workflow-boundary-events/
+url: /refguide10/workflow-boundary-events/
 weight: 20
 ---
 
@@ -28,17 +28,17 @@ Below is an example of what a non-interrupting timer boundary event looks like:
 
 Studio Pro now supports the following boundary event:
 
-* [Timer](/refguide/timer/)
+* [Timer](/refguide10/timer/)
 
 ## Getting started
 
 <a id="supported-activities"></a>You can add boundary events to the following activities:
 
-* [Wait for notification](/refguide/wait-for-notification/)
-* [User task](/refguide/user-task/) 
-* [Multi-user task](/refguide/multi-user-task/)
-* [Call microflow](/refguide/call-microflow/)
-* [Call workflow](/refguide/call-workflow/)
+* [Wait for notification](/refguide10/wait-for-notification/)
+* [User task](/refguide10/user-task/) 
+* [Multi-user task](/refguide10/multi-user-task/)
+* [Call microflow](/refguide10/call-microflow/)
+* [Call workflow](/refguide10/call-workflow/)
 
 {{% alert color="info" %}}
 When a boundary event is added to an activity, this activity is also referred to as the parent activity of the boundary event.
@@ -64,7 +64,7 @@ To add a boundary event to the [above-listed activities](#supported-activities),
 
     {{< figure src="/attachments/refguide10/modeling/application-logic/workflows/boundary-events/edit-dialog.png" alt="Adding boundary events through edit dialog" width="450" >}}
 
-To configure the properties of a boundary event, double-click the event to open its properties dialog box. For more information on how to configure the properties of a timer boundary event, see the [Properties](/refguide/timer/#properties) section in *Timer*.
+To configure the properties of a boundary event, double-click the event to open its properties dialog box. For more information on how to configure the properties of a timer boundary event, see the [Properties](/refguide10/timer/#properties) section in *Timer*.
 
 #### Enabling and Adding Interrupting Boundary Events (Beta)
 
@@ -148,7 +148,7 @@ The current release of boundary events is still under development and has the fo
 
 ## Read more
 
-* [Workflows](/refguide/workflows/)
-* [Add Date Function Calls](/refguide/add-date-function-calls/)
-* [Parse and Format Date Function Calls](/refguide/parse-and-format-date-function-calls/)
-* [Workflow Versioning and Conflict Mitigation](/refguide/workflow-versioning/)
+* [Workflows](/refguide10/workflows/)
+* [Add Date Function Calls](/refguide10/add-date-function-calls/)
+* [Parse and Format Date Function Calls](/refguide10/parse-and-format-date-function-calls/)
+* [Workflow Versioning and Conflict Mitigation](/refguide10/workflow-versioning/)

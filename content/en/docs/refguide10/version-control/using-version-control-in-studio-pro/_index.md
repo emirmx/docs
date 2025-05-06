@@ -1,6 +1,6 @@
 ---
 title: "Using Version Control in Studio Pro"
-url: /refguide/using-version-control-in-studio-pro/
+url: /refguide10/using-version-control-in-studio-pro/
 linktitle: "Using Version Control"
 weight: 10
 description: "Describes how to work with version control and how to resolve some issues which may arise."
@@ -11,7 +11,7 @@ description: "Describes how to work with version control and how to resolve some
 
 This document describes how to use version control in Mendix Studio Pro. 
 
-For more information on related concepts and the theory behind how version control works in Mendix, see [Version Control](/refguide/version-control/).
+For more information on related concepts and the theory behind how version control works in Mendix, see [Version Control](/refguide10/version-control/).
 
 ## Starting an App with Version Control
 
@@ -71,7 +71,7 @@ In the **App Explorer**, there is only room for one icon for each item. If an it
 
 For example, the microflow **ChangePassword** has been modified. Also a new folder called **Flows** was added and all microflows, including the modified microflow, were moved into this folder. The new folder gets a green icon, and the module containing those changes is depicted with a yellow icon. The microflows which were moved but had not been modified get a blue icon. The modified microflow **ChangePassword** gets a yellow icon. This helps you to quickly see where in the app the changes are.
 
-In the **Changes** pane, you can find more detailed information. There is an entry for each change to an item. If a document is both modified and moved, there are two lines for that document. The pane also shows items that were deleted, something the app explorer cannot do. For more information, see [Changes Pane](/refguide/changes-pane/).
+In the **Changes** pane, you can find more detailed information. There is an entry for each change to an item. If a document is both modified and moved, there are two lines for that document. The pane also shows items that were deleted, something the app explorer cannot do. For more information, see [Changes Pane](/refguide10/changes-pane/).
 
 {{< figure src="/attachments/refguide10/version-control/using-version-control-in-studio-pro/changes-pane.png" max-width=80% >}}
 
@@ -118,7 +118,7 @@ In general, it is a good idea to commit after implementing one feature or fixing
 Committing results in a new revision in the repository. You can add the following information in Studio Pro when you perform a commit, and this will be attached to the newly created revision:
 
 * A textual message – this should be a summary of the changes you made.
-* A list of stories that relate to the commit; for more information, see [Stories Pane](/refguide/stories-pane/).
+* A list of stories that relate to the commit; for more information, see [Stories Pane](/refguide10/stories-pane/).
 
 {{< figure src="/attachments/refguide10/version-control/using-version-control-in-studio-pro/commit-dialog.png" >}}
 
@@ -143,7 +143,7 @@ A tool you can consider using is TortoiseGitMerge, shipped as part of [TortoiseG
 Comparing files on disk with the original is currently not supported on macOS.
 {{% /alert %}}
 
-Committing is only allowed if your working copy is up to date with the repository. If someone else committed a change since the last time you pulled, you will have to pull first (this process is called **Commit and Combine** in the [Commit](/refguide/commit-dialog/#combine) dialog box). This is because the revision you create with the commit should incorporate both your changes and the changes by the other person. Updating will combine the latest changes in the repository with your changes. After reviewing the result and fixing any conflicts, you can commit again. 
+Committing is only allowed if your working copy is up to date with the repository. If someone else committed a change since the last time you pulled, you will have to pull first (this process is called **Commit and Combine** in the [Commit](/refguide10/commit-dialog/#combine) dialog box). This is because the revision you create with the commit should incorporate both your changes and the changes by the other person. Updating will combine the latest changes in the repository with your changes. After reviewing the result and fixing any conflicts, you can commit again. 
 
 ### Pushing {#pushing}
 
@@ -157,7 +157,7 @@ To push changes, select **Version Control** > **Push** or simply use the **Commi
 
 While you were working on your branch, somebody may have pushed their changes to the same branch on the server already. In this case, pushing is not possible and you will need to take further action first.
 
-In Studio Pro, [automatic fetching](/refguide/auto-fetch/) can be used to discover changes on the server. If at the moment when you click **Commit** Studio Pro knows that there are remote changes, the commit dialog will contain a note about this, and the **Commit and Push** button will be replaced by **Commit and combine**. 
+In Studio Pro, [automatic fetching](/refguide10/auto-fetch/) can be used to discover changes on the server. If at the moment when you click **Commit** Studio Pro knows that there are remote changes, the commit dialog will contain a note about this, and the **Commit and Push** button will be replaced by **Commit and combine**. 
 
 {{< figure src="/attachments/refguide10/version-control/using-version-control-in-studio-pro/commit-dialog-incoming.png" >}}
 
@@ -169,7 +169,7 @@ Git prevents you from pushing your changes if it sees your changes and the remot
 
 {{< figure src="/attachments/refguide10/version-control/using-version-control-in-studio-pro/server-your-work.png" alt="The local changes consist of commits 1, 3, while the remote server has commits 1, 2, and 4 on the same branch." class="no-border" >}} 
 
-There are two ways for Studio Pro to combine the commits: **Rebase** (default) and **Merge**. For more information, see [Combining Changes and Conflict Resolution](/refguide/merge-algorithm/#combine-changes).
+There are two ways for Studio Pro to combine the commits: **Rebase** (default) and **Merge**. For more information, see [Combining Changes and Conflict Resolution](/refguide10/merge-algorithm/#combine-changes).
 
 ### Pulling
 
@@ -183,7 +183,7 @@ Changes you receive from the remote repository when pulling are combined with th
 
 For example, if the last time you pulled you received all changes up to and including revision N, this means that the original for your working copy is revision N. Since you started making changes to your working copy, other people on your team have made another three commits (X, Y, and Z). If you now pull, you will receive those changes and Z will be the new *original* to which your changes are compared.
 
-Usually, combining your changes with the latest revision from the repository is done automatically. For example, one person may add a page while you are changing a microflow. If the changes are too close, however, a conflict can arise. For example, if one of your team has changed the properties of the same data view that you have also changed, you will have to resolve such conflicts before you can commit. For information on how to do this, see [Combining Changes and Conflict Resolution](/refguide/merge-algorithm/).
+Usually, combining your changes with the latest revision from the repository is done automatically. For example, one person may add a page while you are changing a microflow. If the changes are too close, however, a conflict can arise. For example, if one of your team has changed the properties of the same data view that you have also changed, you will have to resolve such conflicts before you can commit. For information on how to do this, see [Combining Changes and Conflict Resolution](/refguide10/merge-algorithm/).
 
 If your team is committing often, you then should pull often. Frequent pulling has the benefit that you receive fewer changes with each pull so that integrating those changes with your work is easier.
 
@@ -197,7 +197,7 @@ For Git-based applications, revisions are sorted according to the commit history
 
 {{% alert color="warning" %}}
 
-The [Name and Email settings](/refguide/preferences-dialog/#name) can be adjusted by the user and are not used for authenticating with the version control server. If you notice a suspicious value in the commit history, it is likely a private email address set through another tool in the global Git configuration, but the user has been authenticated as usual.
+The [Name and Email settings](/refguide10/preferences-dialog/#name) can be adjusted by the user and are not used for authenticating with the version control server. If you notice a suspicious value in the commit history, it is likely a private email address set through another tool in the global Git configuration, but the user has been authenticated as usual.
 
 {{% /alert %}}
 
@@ -232,8 +232,8 @@ Select the **Version Control** menu > **Revert a Commit...** to revert a commit.
 {{% alert color="warning" %}}
 Reverting a commit creates a new commit that undoes the changes introduced by the original commit. This may lead to unexpected results depending on the context of the original commit.
 
-* **Port fix and reverting** – If you used [Port Fix](/refguide/merge-dialog/#port-fix) to apply a commit from another branch to the current branch, and then you revert that commit, the changes from the cherry-pick will not be reapplied when merging the full branch. This happens because the revert commit explicitly negates the cherry-picked changes, and Git recognizes them as already addressed.
-* **Merging and reverting** – If you [merged another branch](/refguide/version-control/#merging-branches) into the current branch and then reverted the merge commit, merging the same branch again will not reapply its changes. Git identifies that the merge was undone and prevents those changes from being reapplied.
+* **Port fix and reverting** – If you used [Port Fix](/refguide10/merge-dialog/#port-fix) to apply a commit from another branch to the current branch, and then you revert that commit, the changes from the cherry-pick will not be reapplied when merging the full branch. This happens because the revert commit explicitly negates the cherry-picked changes, and Git recognizes them as already addressed.
+* **Merging and reverting** – If you [merged another branch](/refguide10/version-control/#merging-branches) into the current branch and then reverted the merge commit, merging the same branch again will not reapply its changes. Git identifies that the merge was undone and prevents those changes from being reapplied.
 {{% /alert %}}
 
 Reverting changes is done with one commit at a time. If you want to revert multiple commits, you can do that by reverting the latest commit, then the previous one, etc, one by one.
@@ -250,7 +250,7 @@ Just like with a normal merge, conflicts can occur when reverting a merge. For e
 
 If you update/pull your app and the changes cannot be merged automatically, you will receive a message telling you that there are conflicts. A conflict arises when two changes cannot be combined.
 
-For more information, see [Combining Changes and Conflict Resolution](/refguide/merge-algorithm/).
+For more information, see [Combining Changes and Conflict Resolution](/refguide10/merge-algorithm/).
 
 ## Using Branches
 
@@ -258,7 +258,7 @@ A repository (remote or local) can contain a number of development lines. Each d
 
 {{< figure src="/attachments/refguide10/version-control/using-version-control-in-studio-pro/main-branch-line.png" class="no-border" >}}
 
-It is often convenient to have more than one development line. For example, one development line is for fixing bugs in the currently deployed version of your app and another line is where you develop new functionality. If you then find a bug in the deployed version, you can fix it in the corresponding development line irrespective of the state of the development line where new functionality is developed. For more information about branches, see the [Branches](/refguide/version-control/#branches) section in *Version Control*. 
+It is often convenient to have more than one development line. For example, one development line is for fixing bugs in the currently deployed version of your app and another line is where you develop new functionality. If you then find a bug in the deployed version, you can fix it in the corresponding development line irrespective of the state of the development line where new functionality is developed. For more information about branches, see the [Branches](/refguide10/version-control/#branches) section in *Version Control*. 
 
 ### Working with Branches in Studio Pro
 
@@ -311,7 +311,7 @@ If you have multiple development lines, you sometimes want to merge changes from
 
 Merging is always done while you have a working copy open. The merge will result in extra local changes in that working copy. It is advisable to commit local changes first before merging extra changes into a working copy. Otherwise, the uncommitted local changes and the changes caused by the merge will be combined and it is very hard to untangle them if you are unhappy with the merge. Studio Pro will warn you if you have uncommitted changes.
 
-Select **Version Control** > **Merge Changes Here**, after that you can select **Port fix** or **Merge feature branch** options. For more information on merge settings, see [Merge Dialog](/refguide/merge-dialog/).
+Select **Version Control** > **Merge Changes Here**, after that you can select **Port fix** or **Merge feature branch** options. For more information on merge settings, see [Merge Dialog](/refguide10/merge-dialog/).
 
 #### Replacing the Main Line with a Branch Line
 
@@ -497,7 +497,7 @@ Studio Pro adds metadata on the Mendix version of your app to each revision when
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Manually modifying files belonging to the  [*.mpr* storage format](/refguide/version-control/#mpr-format) such as the *.mpr* file or the *mprcontents* directory (for example, when resolving file conflicts through third-party tooling), will lead to a corrupted state. To recover from a corrupted state a previous commit will need to be restored.
+Manually modifying files belonging to the  [*.mpr* storage format](/refguide10/version-control/#mpr-format) such as the *.mpr* file or the *mprcontents* directory (for example, when resolving file conflicts through third-party tooling), will lead to a corrupted state. To recover from a corrupted state a previous commit will need to be restored.
 {{% /alert %}}
 
 {{% alert color="warning" %}}

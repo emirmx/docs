@@ -1,11 +1,11 @@
 ---
 title: "Cell (Document Template)"
-url: /refguide/cell-document-template/
+url: /refguide10/cell-document-template/
 aliases:
-    - /refguide/cell-(document-template).html
-    - /refguide/Cell+(document+template).html
-    - /refguide/cell-(document-template)
-    - /refguide/Cell+(document+template)
+    - /refguide10/cell-(document-template).html
+    - /refguide10/Cell+(document+template).html
+    - /refguide10/cell-(document-template)
+    - /refguide10/Cell+(document+template)
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -17,4 +17,4 @@ Cells are part of a table. They can contain other widgets.
 
 ### Style
 
-For details, see [Style](/refguide/style/).
+For details, see [Style](/refguide10/style/).

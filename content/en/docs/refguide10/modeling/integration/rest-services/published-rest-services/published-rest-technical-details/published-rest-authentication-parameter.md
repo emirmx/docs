@@ -1,6 +1,6 @@
 ---
 title: "Custom Authentication Microflow Parameters"
-url: /refguide/published-rest-authentication-parameter/
+url: /refguide10/published-rest-authentication-parameter/
 weight: 40
 description: "The parameters which are passed to the custom authentication microflow for a published REST service"
 ---
@@ -21,7 +21,7 @@ Make sure that you add all microflow parameters here.
 
 Specify where the parameter comes from. Possible values are:
 
-* **Query** – when the request contains a query string such as `?name=John&age=42`, you can pass these to the microflow by adding query parameters. For more information, see [Published REST Query Parameters](/refguide/published-rest-query-parameters/).
+* **Query** – when the request contains a query string such as `?name=John&age=42`, you can pass these to the microflow by adding query parameters. For more information, see [Published REST Query Parameters](/refguide10/published-rest-query-parameters/).
 
 * **Header** – the value of a header parameter is taken from the (first) request header with that name.
 

@@ -1,13 +1,13 @@
 ---
 title: "Online Synchronization Mode"
-url: /refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/online-sync-mode/
+url: /refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/online-sync-mode/
 description: "Describes the online sync mode, which allows entities to be used in offline navigation profiles without requiring data. synchronization"
 no_list: false
 description_list: true 
 weight: 20
 beta: true
 aliases:
-    - /refguide/mobile/using-mobile-capabilities/offlinefirst-data/online-sync-mode/
+    - /refguide10/mobile/using-mobile-capabilities/offlinefirst-data/online-sync-mode/
 ---
 
 ## Introduction
@@ -30,7 +30,7 @@ It requires to be explicitly enabled via the "Edit" menu -> "Preferences" item -
 
 Do the following to properly configure entities:
 
-1. Go to the [Navigation](/refguide/navigation/) tree item Studio Pro's App Explorer. 
+1. Go to the [Navigation](/refguide10/navigation/) tree item Studio Pro's App Explorer. 
 1. Go to the offline navigation profile on which you want to enable the online synchronization mode. This can be the **Native mobile (tablet & phone)**, or the **Response web offline** profile. 
 1. In that tab, click **Configure synchronization**. 
 

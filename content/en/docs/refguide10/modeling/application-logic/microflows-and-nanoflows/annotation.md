@@ -1,10 +1,10 @@
 ---
 title: "Annotation"
-url: /refguide/annotation/
+url: /refguide10/annotation/
 weight: 60
 aliases:
-    - /refguide/annotation-flow.html
-    - /refguide/annotation-flow
+    - /refguide10/annotation-flow.html
+    - /refguide10/annotation-flow
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -20,7 +20,7 @@ In the example below, you use a **Show message** activity to warn end-users abou
 
 ### Caption
 
-For details, see [Common Properties](/refguide/microflow-element-common-properties/).
+For details, see [Common Properties](/refguide10/microflow-element-common-properties/).
 
 ## Annotation Flow {#annotation-flow}
 

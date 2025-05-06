@@ -1,6 +1,6 @@
 ---
 title: "Text Box"
-url: /refguide/text-box/
+url: /refguide10/text-box/
 description: "A text box is used to display and, optionally, allow the end-user to edit the value of an attribute from an object in a textual form."
 weight: 10
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
@@ -8,7 +8,7 @@ weight: 10
 
 ## Introduction
 
-A text box is used to display and, optionally, allow the end-user to edit the value of a variable or an attribute from an object in a textual form. It can be used to display variables or attributes of the following [data types](/refguide/data-types/):
+A text box is used to display and, optionally, allow the end-user to edit the value of a variable or an attribute from an object in a textual form. It can be used to display variables or attributes of the following [data types](/refguide10/data-types/):
 
 * Autonumber
 * Decimal
@@ -18,9 +18,9 @@ A text box is used to display and, optionally, allow the end-user to edit the va
 * String
 
 A text box must be placed within a data context to display or edit the intended value:
-* A [data container](/refguide/data-widgets/) widget containing an object
-* A snippet containing one or more [parameters](/refguide/page-properties/#parameters)
-* A page or a snippet containing one or more [variables](/refguide/page-properties/#variables)
+* A [data container](/refguide10/data-widgets/) widget containing an object
+* A snippet containing one or more [parameters](/refguide10/page-properties/#parameters)
+* A page or a snippet containing one or more [variables](/refguide10/page-properties/#variables)
 
 The name of the configured value is shown inside the text box widget, between square brackets, and colored blue in the structure mode and black in design mode.
 
@@ -119,23 +119,23 @@ This option is only available in native pages.
 
 ### Data Source Section{#data-source}
 
-{{% snippet file="/static/_includes/refguide/data-source-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/data-source-section-link.md" %}}
 
 ### Label Section{#label}
 
-{{% snippet file="/static/_includes/refguide/label-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/label-section-link.md" %}}
 
 ### Editability Section{#editability}
 
-{{% snippet file="/static/_includes/refguide/editability-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/editability-section-link.md" %}}
 
 ### Visibility Section{#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ### Validation Section{#validation}
 
-{{% snippet file="/static/_includes/refguide/widget-validation-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/widget-validation-link.md" %}}
 
 ### Accessibility Section{#accessibility}
 
@@ -149,7 +149,7 @@ The autocomplete property specifies if a text box should have autocomplete enabl
 
 ### Common Section{#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### Events Section{#events}
 
@@ -157,13 +157,13 @@ The autocomplete property specifies if a text box should have autocomplete enabl
 
 The on change event property specifies an action that will be executed when the value has been changed and gets submitted. A value will be submitted when pressing the <kbd>Enter</kbd> key or leaving the widget, either by using the <kbd>Tab</kbd> key or by clicking another widget.
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 #### On Enter Event
 
 The on enter event property specifies an action that will be executed when the widget is entered, either by using the <kbd>Tab</kbd> key or by clicking it with the mouse.
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 #### On Leave Event
 
@@ -171,13 +171,13 @@ The on leave event property specifies an action that will be executed when leavi
 
 This differs from the [On change](#on-change) property in that the event will always be triggered, even if the value has not been changed.
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 #### On Enter Key Press Event
 
 The on enter key press event property specifies an action that will be executed when the focus is inside the widget and the <kbd>Enter</kbd> key is pressed. In a web application the widget will keep focus after the action gets executed.
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 ### On Change Behavior {#on-change-behavior}
 
@@ -201,17 +201,17 @@ This option allows makes it so users trigger an on change event while they are t
 
 With **While user is entering data**, users now can adjust one more property called **Apply after (ms)** (described above). This will reduce the amount of the calls made for an on change event, thus improving app performance.
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 ## Styling
 
 ### Design Properties Section{#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### Common Section{#common-styling}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Miscellaneous
 
@@ -223,11 +223,11 @@ The formatting section applies only to the way that numeric attributes or variab
 * Integer
 * Long
 
-{{% snippet file="/static/_includes/refguide/numeric-formatting-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/numeric-formatting-link.md" %}}
 
 ## Read More
 
-* [Data Types](/refguide/data-types/)  
-* [Data View](/refguide/data-view/)
-* [Attributes](/refguide/attributes/)
-* [Variables](/refguide/page-properties/#variables)
+* [Data Types](/refguide10/data-types/)  
+* [Data View](/refguide10/data-view/)
+* [Attributes](/refguide10/attributes/)
+* [Variables](/refguide10/page-properties/#variables)

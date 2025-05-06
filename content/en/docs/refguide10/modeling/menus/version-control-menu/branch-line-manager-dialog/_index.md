@@ -1,12 +1,12 @@
 ---
 title: "Branch Line Manager"
-url: /refguide/branch-line-manager-dialog/
+url: /refguide10/branch-line-manager-dialog/
 weight: 80
 ---
 
 ## Introduction
 
-The **Branch Line Manager** is used to manage the [branch lines](/refguide/version-control/#branches) of an app that are stored on a version control server. You can create or delete branch lines for your app, and you can change the branch line that you are working on.
+The **Branch Line Manager** is used to manage the [branch lines](/refguide10/version-control/#branches) of an app that are stored on a version control server. You can create or delete branch lines for your app, and you can change the branch line that you are working on.
 
 To view the **Branch Line Manager** dialog box, open **Version Control** > **Manage Branch Lines**.
 
@@ -22,7 +22,7 @@ To switch to a branch line you have created, either double-click the branch you 
 ## Location
 
 {{% alert color="warning" %}}
-This option is only available when support for private Git servers is enabled in [Preferences](/refguide/preferences-dialog/).
+This option is only available when support for private Git servers is enabled in [Preferences](/refguide10/preferences-dialog/).
 {{% /alert %}}
 
 Use this setting to select the location where your app is stored. This can be either the [Team Server](#team-server-app) or a [private Git repository](#byo-server-app).
@@ -39,4 +39,4 @@ In the **App repository address** field, enter the address of the app you want t
 
 ## Read More
 
-* [Version Control](/refguide/version-control/)
+* [Version Control](/refguide10/version-control/)

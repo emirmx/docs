@@ -1,6 +1,6 @@
 ---
 title: "Operations"
-url: /refguide/operations/
+url: /refguide10/operations/
 ---
 
 ## Introduction

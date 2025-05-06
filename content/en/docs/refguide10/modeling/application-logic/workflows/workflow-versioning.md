@@ -1,6 +1,6 @@
 ---
 title: "Workflow Versioning and Conflict Mitigation"
-url: /refguide/workflow-versioning/
+url: /refguide10/workflow-versioning/
 weight: 120
 ---
 
@@ -39,7 +39,7 @@ Any of the following changes are interpreted as non-conflicting:
     * Changing due dates of a user task
     * Changing the **Targeted users** settings or the **Completion condition** settings of a multi-user task, resulting in a different number of required participants
     * Changing the type of decision method in a multi-user task
-    * changing the settings of a decision method in a multi-user task, resulting in a different final outcome than before (except when the [Microflow decision method](/refguide/multi-user-task/#microflow) is chosen, becasue then we cannot detect a conflict)
+    * changing the settings of a decision method in a multi-user task, resulting in a different final outcome than before (except when the [Microflow decision method](/refguide10/multi-user-task/#microflow) is chosen, becasue then we cannot detect a conflict)
 
         {{% alert color="info" %}} For the changes mentioned above that relate to a multi-user task, they only apply if the multi-user task already has at least one selected outcome. If not, anything can be changed without a conflicting resulting. {{% /alert %}}
 
@@ -100,7 +100,7 @@ You can do one of the following:
     // END USER CODE
     ``` 
 
-    For more information on Java actions, see [Extending Your Application with Custom Java](/refguide/extending-your-application-with-custom-java/).
+    For more information on Java actions, see [Extending Your Application with Custom Java](/refguide10/extending-your-application-with-custom-java/).
 * The app developer can revert changes to the original **Workflow** **Context** entity and deploy this change.
 
 To prevent this issue, you need to make sure that context objects cannot be deleted while they are still being used in running workflow instances.
@@ -116,7 +116,7 @@ This conflict may occur even without deploying a new app version.
 You can do one of the following:
 
 * The workflow can be aborted, for example, by using the **DefaultWorkflowAdmin** page in the Workflow Commons.
-* The app developer can create a Java action that uses the `void setWorkflowObject(contextObject: IMendixObject)` method on the `com.mendix.workflows.Workflow` interface to manually set the context object of the workflow parameter context for the right entity. For more information on Java actions, see [Extending Your Application with Custom Java](/refguide/extending-your-application-with-custom-java/).
+* The app developer can create a Java action that uses the `void setWorkflowObject(contextObject: IMendixObject)` method on the `com.mendix.workflows.Workflow` interface to manually set the context object of the workflow parameter context for the right entity. For more information on Java actions, see [Extending Your Application with Custom Java](/refguide10/extending-your-application-with-custom-java/).
 
 #### Workflow Definition Deleted
 
@@ -135,7 +135,7 @@ You can do one of the following:
 
 * The workflow can be aborted, for example, by using the **DefaultWorkflowAdmin** page in the Workflow Commons.
 * The workflow can be restarted, for example, by using the **DefaultWorkflowAdmin** page in the Workflow Commons.
-* The Administrator can apply jumping to different activities. The Workflow Commons module has pages where the Administrator can decide which activity in the workflow to continue from (which activity to jump to). As a developer, you can also use microflow activities [Generate jump-to options](/refguide/generate-jump-to-options/) and [Apply jump-to option](/refguide/apply-jump-to-option/) to build custom pages and logic to migrate running workflow instances.
+* The Administrator can apply jumping to different activities. The Workflow Commons module has pages where the Administrator can decide which activity in the workflow to continue from (which activity to jump to). As a developer, you can also use microflow activities [Generate jump-to options](/refguide10/generate-jump-to-options/) and [Apply jump-to option](/refguide10/apply-jump-to-option/) to build custom pages and logic to migrate running workflow instances.
 * The app developer can revert the change (which adds the activities back) and deploy this version.
 
 #### Current Parallel Split Removed

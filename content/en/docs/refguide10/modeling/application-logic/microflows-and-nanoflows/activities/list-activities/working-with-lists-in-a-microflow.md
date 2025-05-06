@@ -1,6 +1,6 @@
 ---
 title: "Working with Lists in a Microflow"
-url: /refguide/working-with-lists-in-a-microflow/
+url: /refguide10/working-with-lists-in-a-microflow/
 weight: 60
 description: "Describes how to work with a list of objects in a microflow as well retrieve a filtered list of objects from the database."
 ---
@@ -19,7 +19,7 @@ This document teaches you how to do the following:
 
 Before you continue, you should first set up a test app, and populate it with test data. To do so, follow these steps:
 
-1. Create a [domain model](/refguide/configuring-a-domain-model/) with the following entities:
+1. Create a [domain model](/refguide10/configuring-a-domain-model/) with the following entities:
     * **Customer**
 
         | Attribute name | Attribute type |
@@ -43,8 +43,8 @@ Before you continue, you should first set up a test app, and populate it with te
 
     {{< figure src="/attachments/refguide10/modeling/xpath/define-access-rules-using-xpath/18581378.png" alt="Customer and Order entities with one-to-many association" class="no-border" >}}
 
-2. Create [overview and detail pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/) to manage the **Customer** and **Order** objects.
-3. Create [menu items](/refguide/setting-up-the-navigation-structure/#menu-items) to access the **Customer** and **Order** overview pages.
+2. Create [overview and detail pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/) to manage the **Customer** and **Order** objects.
+3. Create [menu items](/refguide10/setting-up-the-navigation-structure/#menu-items) to access the **Customer** and **Order** overview pages.
 4. Add the following **Customer** data to your app:
 
     | Name | Address | Zip code | City |
@@ -67,7 +67,7 @@ Before you continue, you should first set up a test app, and populate it with te
 
 ## Retrieving and Filtering a List of Objects from the Database
 
-Use a microflow with a [Retrieve](/refguide/retrieve/) activity to retrieve a list of objects, and then filter that list by applying an [XPath constraint](/refguide/xpath-constraints/). For example, the microflow can retrieve all orders from the database, and then filter that list to only the orders with the **Processing** status.
+Use a microflow with a [Retrieve](/refguide10/retrieve/) activity to retrieve a list of objects, and then filter that list by applying an [XPath constraint](/refguide10/xpath-constraints/). For example, the microflow can retrieve all orders from the database, and then filter that list to only the orders with the **Processing** status.
 
 1. Create a new microflow by right-clicking your module and selecting **Add** > **Microflow**.
 2. In the **Add Microflow** dialog box, in the **Name** field, enter *IVK_SetOrderToComplete*, and then click **OK**.
@@ -98,7 +98,7 @@ Apart from filtering the list of orders by an attribute of the Order entity itse
 
 ## Updating Multiple Objects by Iterating over a List
 
-After retrieving a list of orders with the status **Processing**, use a [loop](/refguide/loop/) to iterate over this list and change the status of each object to **Complete**.
+After retrieving a list of orders with the status **Processing**, use a [loop](/refguide10/loop/) to iterate over this list and change the status of each object to **Complete**.
 
 1. Open the **IVK_SetOrderToComplete** microflow that you created in the previous section.
 2. Drag a **Loop** activity from the **Toolbox**, and place it between the **OrderProcessingList** activity and the end event of the microflow.
@@ -182,7 +182,7 @@ To calculate the total sum of all your orders via a loop, create a variable whic
 
 ## Calculating the Total List Value by Using an Aggregate Function
 
-Instead of a loop, you can also calculate the total price by using the [aggregate list](/refguide/aggregate-list/) function. Use the aggregate list to calculate values such as the maximum, minimum, sum, average, and total number of objects over a list of objects.
+Instead of a loop, you can also calculate the total price by using the [aggregate list](/refguide10/aggregate-list/) function. Use the aggregate list to calculate values such as the maximum, minimum, sum, average, and total number of objects over a list of objects.
 
 1. In the **IVK_CalculateTotalPriceOrders** microflow, remove the loop and the **CalculatedTotalPrice** variable.
 2. Add an **Aggregate list** activity after the **OrderList**.
@@ -211,6 +211,6 @@ Instead of a loop, you can also calculate the total price by using the [aggregat
 
 ## Read More
 
-* [Microflows](/refguide/microflows/)
-* [Object Activities](/refguide/object-activities/)
-* [List Activities](/refguide/list-activities/)
+* [Microflows](/refguide10/microflows/)
+* [Object Activities](/refguide10/object-activities/)
+* [List Activities](/refguide10/list-activities/)

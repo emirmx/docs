@@ -1,18 +1,18 @@
 ---
 title: "Working with Git On-Premises Version Control Server"
 linktitle: "Git On-Premises Version Control Server"
-url: /refguide/on-premises-git/
+url: /refguide10/on-premises-git/
 weight: 60
 description: "Introduces how to work with Git on-premises version control server."
 aliases:
-    - /howto/collaboration-requirements-management/on-premises-git-howto/
+    - /howto10/collaboration-requirements-management/on-premises-git-howto/
 ---
 
 ## Introduction {#intro}
 
-When developing Mendix applications, changes to these applications are stored in a version control system. This system is called [Team Server](/developerportal/general/team-server/) and is part of the Mendix Platform. This means that the application's files are stored in the Mendix online environment. For more information, see the [Version Control Reference Guide](/refguide/version-control/).
+When developing Mendix applications, changes to these applications are stored in a version control system. This system is called [Team Server](/developerportal/general/team-server/) and is part of the Mendix Platform. This means that the application's files are stored in the Mendix online environment. For more information, see the [Version Control Reference Guide](/refguide10/version-control/).
 
-While using Team Server is the recommended for most Mendix developers, you may prefer to store your application's files in a system controlled by your own organization. For version control, Mendix uses [Git](/refguide/on-premises-git/). This document describes how to work with Git version control system.
+While using Team Server is the recommended for most Mendix developers, you may prefer to store your application's files in a system controlled by your own organization. For version control, Mendix uses [Git](/refguide10/on-premises-git/). This document describes how to work with Git version control system.
 
 {{% alert color="info" %}}
 This document does not describe how to set up a Git server from scratch; typically, this will be taken care of by the IT department of your organization.
@@ -53,7 +53,7 @@ Currently Mendix keeps PAT using operating system supported solutions:
 
 Studio Pro can use Windows Authentication for Git service providers that support it. When you use Windows Authentication, you do not need to provide a password. 
 
-You can enable Windows Authentication in [Git Preferences settings](/refguide/preferences-dialog/#enable-windows-authentication).
+You can enable Windows Authentication in [Git Preferences settings](/refguide10/preferences-dialog/#enable-windows-authentication).
 
 
 ## Setting Up the Environment
@@ -62,7 +62,7 @@ This section describes how to configure a Git versioned app in Studio Pro. You n
 
 ### Preparing Your Repository {#preparing-your-repo}
 
-Mendix supports multiple Git service providers that are listed below. For more information on a specific provider and requirements for it, see [System Requirements](/refguide/system-requirements/). 
+Mendix supports multiple Git service providers that are listed below. For more information on a specific provider and requirements for it, see [System Requirements](/refguide10/system-requirements/). 
 
 Studio Pro is able to use the following Git server providers:
 
@@ -224,8 +224,16 @@ Note that your previous app still exists, **Studio Pro** will simply make an unv
 
 {{< figure src="/attachments/refguide10/version-control/on-premises-git/recent-apps.png" alt="Recent Apps form" class="no-border" >}}
 
+### Moving from Team Server to a Private Git Server
+
+To migrate from Mendix Team Server to a private Git server, follow your Git provider's documentation for uploading a full repository clone to their platform.
+
+After migration, download a fresh clone in Studio Pro from your private Git server.
+
+{{% alert color="warning" %}} When redirecting an existing clone by updating the `config` file in the `.git` folder, make sure you remove the `sprintr-project-id` setting to prevent errors in Studio Pro. {{% /alert %}}
+
 ## Read More
 
-* [Version Control Reference Guide](/refguide/version-control/)
+* [Version Control Reference Guide](/refguide10/version-control/)
 * [Team Server](/developerportal/general/team-server/)
-* [Upload to Version Control Server Reference Guide](/refguide/upload-to-version-control-dialog/)
+* [Upload to Version Control Server Reference Guide](/refguide10/upload-to-version-control-dialog/)

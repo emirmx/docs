@@ -1,12 +1,12 @@
 ---
 title: "Use View Entities"
-url: /refguide/use-view-entities/
+url: /refguide10/use-view-entities/
 weight: 10
 ---
 
 ## Introduction
 
-View entities allow you to retrieve, transform, and aggregate your data. They represent a set of stored OQL queries that can be used similarly to [persistable entities]( /refguide/persistability/#persistable). The data that view entities contain is determined when you retrieve the data.
+View entities allow you to retrieve, transform, and aggregate your data. They represent a set of stored OQL queries that can be used similarly to [persistable entities]( /refguide10/persistability/#persistable). The data that view entities contain is determined when you retrieve the data.
 
 You can perform operations such as sorting, paging, and filtering using view entities. The entire query is executed by the database, often resulting in faster performance compared to executing multiple independent retrieves. A view entity fetches the data you need from the database and allows data transformation and aggregation. With view entities, you can:
 
@@ -24,11 +24,11 @@ When you need data from multiple entities in your widgets, view entities make it
 
 ### Charting
 
-View entities can execute aggregation and calculations required for charts, dashboards, and KPIs within the database, providing the necessary data for your widgets. For more information, see [Charting with View Entities](/refguide/charting-with-view-entities/).
+View entities can execute aggregation and calculations required for charts, dashboards, and KPIs within the database, providing the necessary data for your widgets. For more information, see [Charting with View Entities](/refguide10/charting-with-view-entities/).
 
 ### API Stability 
 
-To decouple data usage from data storage, especially for APIs, view entities allow you to expose data while keeping your domain model flexible. This ensures API stability for external applications and allows you to change your domain model as needed without affecting the API. For more information, see [Decoupling APIs](/refguide/decoupling-apis/).
+To decouple data usage from data storage, especially for APIs, view entities allow you to expose data while keeping your domain model flexible. This ensures API stability for external applications and allows you to change your domain model as needed without affecting the API. For more information, see [Decoupling APIs](/refguide10/decoupling-apis/).
 
 ## Creating Maintainable View Entities Using Composability
 
@@ -58,11 +58,11 @@ Alternatively, you can store the parameter value in the database, then use that 
 
 This is done by joining an entity that has all the necessary translations and filtering it by the language of the current user. Coalesce is used to return the default language in case there is no translation is available.
 
-This approach can also be useful for multitenant applications. If you have a multitenant system where every user has a tenant ID, you can ensure through view entities that any data that is tenant-specific will only return data for the tenant of the current user. For more information, see [Multitenant Applications](/refguide/view-entity-multitenant-apps/).
+This approach can also be useful for multitenant applications. If you have a multitenant system where every user has a tenant ID, you can ensure through view entities that any data that is tenant-specific will only return data for the tenant of the current user. For more information, see [Multitenant Applications](/refguide10/view-entity-multitenant-apps/).
 
 ## Data Security 
 
-Use the [`WHERE` clause]( /refguide/oql-expressions/) of a view entity to ensure only data that should be available to the user is returned. This is an alternative to the access rules you can have on both persistable entities and view entities.
+Use the [`WHERE` clause]( /refguide10/oql-expressions/) of a view entity to ensure only data that should be available to the user is returned. This is an alternative to the access rules you can have on both persistable entities and view entities.
 
 Persistable entity access rules are not applied when using view entities. Instead, you must specify the access rules. You can define what users have access to while still allowing access to aggregated data. For example, you may want to know how many employees are part of each department of a company. However, you should not be able to see the detailed information of each employee. View entities allow you to give a user access to specific employee data without revealing sensitive information. 
 
@@ -109,17 +109,17 @@ If you set the `DataStorage_QueryPlan` log node to Trace, you see the query plan
 
 ## Read More
 
-For more information on how to enable view entities in your app, see [View Entities]( /refguide/view-entities/) and [OQL]( /refguide/oql/).
+For more information on how to enable view entities in your app, see [View Entities]( /refguide10/view-entities/) and [OQL]( /refguide10/oql/).
 
 For specific use case scenarios, see the following:
 
-* [Creating Overview Pages](/refguide/view-entity-overview-pages/)
-* [Decoupling APIs](/refguide/decoupling-apis/)
-* [Charting with View Entities](/refguide/charting-with-view-entities/)
-* [Multilingual Apps and Translations](/refguide/multilingual-apps/)
-* [View Archived Data](/refguide/view-archived-data/)
-* [Create a Pivot Table with View Entities](/refguide/view-entity-pivot-table/)
-* [Data Versioning with View Entities](/refguide/view-entity-data-versioning/)
-* [Exporting Data with View Entities](/refguide/view-entity-expport-data/)
-* [Abstracting Data of Add-On Modules](/refguide/abstracting-view-entity-data/)
-* [Multitenant Applications](/refguide/view-entity-multitenant-apps/)
+* [Creating Overview Pages](/refguide10/view-entity-overview-pages/)
+* [Decoupling APIs](/refguide10/decoupling-apis/)
+* [Charting with View Entities](/refguide10/charting-with-view-entities/)
+* [Multilingual Apps and Translations](/refguide10/multilingual-apps/)
+* [View Archived Data](/refguide10/view-archived-data/)
+* [Create a Pivot Table with View Entities](/refguide10/view-entity-pivot-table/)
+* [Data Versioning with View Entities](/refguide10/view-entity-data-versioning/)
+* [Exporting Data with View Entities](/refguide10/view-entity-expport-data/)
+* [Abstracting Data of Add-On Modules](/refguide10/abstracting-view-entity-data/)
+* [Multitenant Applications](/refguide10/view-entity-multitenant-apps/)

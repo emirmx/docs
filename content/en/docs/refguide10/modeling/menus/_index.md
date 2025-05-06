@@ -1,6 +1,6 @@
 ---
 title: "Menus"
-url: /refguide/menus/
+url: /refguide10/menus/
 description: "Describes Studio Pro menus."
 weight: 20
 ---
@@ -27,36 +27,36 @@ The **Global Navigation Menu** menu is located at the upper left of Studio Pro a
 
 ## File Menu {#file}
 
-Via the **File** menu you can manage documents and apps. For more information on the **File** menu, see [File Menu](/refguide/file-menu/).
+Via the **File** menu you can manage documents and apps. For more information on the **File** menu, see [File Menu](/refguide10/file-menu/).
 
 ## Edit Menu {#edit}
 
-The **Edit** menu allows you to perform editing functions, such as cut/copy/paste. You can also set [preferences](/refguide/preferences-dialog/) via this menu. For more information on the **Edit** menu, see [Edit Menu](/refguide/edit-menu/).
+The **Edit** menu allows you to perform editing functions, such as cut/copy/paste. You can also set [preferences](/refguide10/preferences-dialog/) via this menu. For more information on the **Edit** menu, see [Edit Menu](/refguide10/edit-menu/).
 
 ## View Menu {#view}
 
-The **View** menu allows you to view dockable panes, to enable the full screen mode, and reset the project layout. For more information on the **View** menu and its items, see [View Menu](/refguide/view-menu/).
+The **View** menu allows you to view dockable panes, to enable the full screen mode, and reset the project layout. For more information on the **View** menu and its items, see [View Menu](/refguide10/view-menu/).
 
 ## App Menu {#app}
 
-In the **App** menu, you can view and/or manipulate settings that are connected to your app and deployment. For more information on the **App** menu, see [App Menu](/refguide/app-menu/).
+In the **App** menu, you can view and/or manipulate settings that are connected to your app and deployment. For more information on the **App** menu, see [App Menu](/refguide10/app-menu/).
 
 ## Run Menu {#run}
 
-The **Run** menu contains actions for deploying and monitoring your app, such as **Publish**, **Run Locally**, or **Debugger**. For more information on the **Run** menu, see [Run Menu](/refguide/run-menu/). 
+The **Run** menu contains actions for deploying and monitoring your app, such as **Publish**, **Run Locally**, or **Debugger**. For more information on the **Run** menu, see [Run Menu](/refguide10/run-menu/). 
 
 ## Version Control Menu {#version-control}
 
-In the **Version Control** menu, you can view and/or manipulate settings on the version control. For more information on the **Version Control** menu, see [Version Control Menu](/refguide/version-control-menu/).
+In the **Version Control** menu, you can view and/or manipulate settings on the version control. For more information on the **Version Control** menu, see [Version Control Menu](/refguide10/version-control-menu/).
 
 ## Language Menu {#language}
 
-In the **Language** menu, you can add alternative languages to your app so that end-users can see the app in their preferred language. You can also make batch changes to identical texts, even if you are only working in one language. For more information on the **Language** menu, see [Language Menu](/refguide/translatable-texts/).
+In the **Language** menu, you can add alternative languages to your app so that end-users can see the app in their preferred language. You can also make batch changes to identical texts, even if you are only working in one language. For more information on the **Language** menu, see [Language Menu](/refguide10/translatable-texts/).
 
 ## Help Menu {#help}
 
-In the **Help** menu, you can ask questions and find answers to common problems you may experience while using Studio Pro. For more information on the **Help** menu, see [Help Menu](/refguide/help-menu/).
+In the **Help** menu, you can ask questions and find answers to common problems you may experience while using Studio Pro. For more information on the **Help** menu, see [Help Menu](/refguide10/help-menu/).
 
 ## Read More
 
-* [Studio Pro Overview](/refguide/studio-pro-overview/)
+* [Studio Pro Overview](/refguide10/studio-pro-overview/)

@@ -1,8 +1,8 @@
 ---
 title: "Debugging Microflows Remotely"
-url: /refguide/debug-microflows-remotely/
+url: /refguide10/debug-microflows-remotely/
 aliases:
-    - /howto/monitoring-troubleshooting/debug-microflows-remotely
+    - /howto10/monitoring-troubleshooting/debug-microflows-remotely
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 #The anchor <enable-cloud-debugging> below is mapped, so it should not be removed or changed.
 ---
@@ -152,5 +152,5 @@ The debugger is now connected to your app running in the cloud.
 
 ## Read More
 
-* [Debugging Microflows and Nanoflows](/refguide/debug-microflows-and-nanoflows/)
+* [Debugging Microflows and Nanoflows](/refguide10/debug-microflows-and-nanoflows/)
 * [The Ultimate Debugger](https://www.mendix.com/tech-blog/the-ultimate-debugger/) 

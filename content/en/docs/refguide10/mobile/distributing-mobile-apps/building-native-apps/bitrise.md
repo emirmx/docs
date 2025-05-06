@@ -1,6 +1,6 @@
 ---
 title: "Build a Mendix Native App with Bitrise"
-url: /refguide/mobile/distributing-mobile-apps/building-native-apps/bitrise/
+url: /refguide10/mobile/distributing-mobile-apps/building-native-apps/bitrise/
 weight: 60
 description: Describes how to integrate with Bitrise to build a Mendix native app in the cloud.
 ---
@@ -12,7 +12,7 @@ This guide helps you set up [Bitrise](https://bitrise.io) to automate building a
 {{% alert color="info" %}}
 The React Native version used in Studio Pro versions 10.11-10.16 includes Bitcode, which is not longer supported by Xcode 16 and above. This means that native mobile iOS applications created by customers **cannot be submitted to the App Store**. 
 
-For more information and workarounds, see [Bitcode Deprecation](/refguide/mobile/introduction-to-mobile-technologies/native-mobile/#bitcode-deprecation).
+For more information and workarounds, see [Bitcode Deprecation](/refguide10/mobile/introduction-to-mobile-technologies/native-mobile/#bitcode-deprecation).
 {{% /alert %}} 
 
 ## Prerequisites {#prerequisites}
@@ -24,7 +24,7 @@ Before starting this guide, make sure you have completed the following prerequis
 * Read the [Getting Starting guide from Bitrise](https://devcenter.bitrise.io/en/getting-started.html) and understand the key concepts of Bitrise
 * Have access to a Mendix application project with a native mobile profile as a developer
     * The Mendix application is deployed
-* Have created the native template project for your app by following [Using Mendix Native Mobile Builder to Set Up Your Local App](/refguide/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/#using-mendix-native-mobile-builder-to-set-up-your-local-app). Make sure to set the GitHub token to also create a GitHub repository.
+* Have created the native template project for your app by following [Using Mendix Native Mobile Builder to Set Up Your Local App](/refguide10/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/#using-mendix-native-mobile-builder-to-set-up-your-local-app). Make sure to set the GitHub token to also create a GitHub repository.
 * Fulfilled the prerequisites below for all operating systems you want to target:
 
 ### Prerequisites for iOS {#prerecs-ios}

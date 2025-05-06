@@ -1,6 +1,6 @@
 ---
 title: "Language Menu"
-url: /refguide/translatable-texts/
+url: /refguide10/translatable-texts/
 weight: 50
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -11,12 +11,12 @@ Mendix is designed so that it is easy to present the same information to users w
 
 These *translatable texts* include the following:
 
-* [button](/refguide/button-widgets/) captions
-* [data grid](/refguide/data-grid/) columns
-* [labels](/refguide/label/)
-* [menu items](/refguide/menu/#menu-item)
-* [messages](/refguide/show-message/) that are sent from a [microflow](/refguide/microflows/)
-* [text](/refguide/text/)
+* [button](/refguide10/button-widgets/) captions
+* [data grid](/refguide10/data-grid/) columns
+* [labels](/refguide10/label/)
+* [menu items](/refguide10/menu/#menu-item)
+* [messages](/refguide10/show-message/) that are sent from a [microflow](/refguide10/microflows/)
+* [text](/refguide10/text/)
 
 ## Working in the Currently Selected Language{#selected-language}
 
@@ -36,9 +36,9 @@ If you edit your app to add new widgets while not in the default language, any n
 
 All untranslated texts will be displayed in the default language when you run the application.
 
-English (US) and Dutch translations are added by default even if you do not use these languages in your app. When you add a new element (for example, a button), it will get an English and Dutch translation in the system, but you will not see it until you add those languages. You may want to delete all English and Dutch translations if you do not plan to have your app in these languages. Before deleting English (US), make sure you have another default language set up. For more information on how to delete translations, see the [Delete](/refguide/language-operations/#delete) section in *Language Operations*.  
+English (US) and Dutch translations are added by default even if you do not use these languages in your app. When you add a new element (for example, a button), it will get an English and Dutch translation in the system, but you will not see it until you add those languages. You may want to delete all English and Dutch translations if you do not plan to have your app in these languages. Before deleting English (US), make sure you have another default language set up. For more information on how to delete translations, see the [Delete](/refguide10/language-operations/#delete) section in *Language Operations*.  
 
-If you plan to export your module/app as an add-on/solution, the best practice is to remove default Dutch translations to avoid confusion for your customers in case they plan to translate their app to Dutch. For more information, see the [Exporting Add-on Modules and Solutions](/refguide/configure-add-on-and-solution-modules/#export) section in *Configuring Add-on and Solution Modules for Publishing*.  
+If you plan to export your module/app as an add-on/solution, the best practice is to remove default Dutch translations to avoid confusion for your customers in case they plan to translate their app to Dutch. For more information, see the [Exporting Add-on Modules and Solutions](/refguide10/configure-add-on-and-solution-modules/#export) section in *Configuring Add-on and Solution Modules for Publishing*.  
 
 {{% alert color="info" %}}
 If there is no text in the default language, the end-user will see `[no translation]`. If you want the text to be blank, set the default language text to be a space rather than empty.
@@ -59,10 +59,10 @@ The **Language** menu items are described in the table below:
 | <a id="current-language"></a>**Current Language** | Choose the current language from one of the languages set up in **Language Settings…**. | *None* |
 | **Select Previous Language** | Choose the previous language in the list of languages chosen in **Language Settings…**. | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd> |
 | **Select Next Language** | Choose the next language in the list of languages chosen in **Language Settings…**. | <kbd>Ctrl</kbd> + <kbd>L</kbd> |
-| [Language Settings…](/refguide/language-settings/) | Choose which languages are supported by the app and configure date and time settings. | *None* |
-| [Batch Replace…](/refguide/batch-replace/) | Change all occurrences of chosen translatable texts in the current language where they are identical. | *None* |
-| [Batch Translate…](/refguide/batch-translate/) | Add and edit translations from a selected source language to a selected target language | *None* |
-| [Language Operations…](/refguide/language-operations/) | Manipulate (for example, copy) translations between languages. | *None* |
+| [Language Settings…](/refguide10/language-settings/) | Choose which languages are supported by the app and configure date and time settings. | *None* |
+| [Batch Replace…](/refguide10/batch-replace/) | Change all occurrences of chosen translatable texts in the current language where they are identical. | *None* |
+| [Batch Translate…](/refguide10/batch-translate/) | Add and edit translations from a selected source language to a selected target language | *None* |
+| [Language Operations…](/refguide10/language-operations/) | Manipulate (for example, copy) translations between languages. | *None* |
 
 ## Setting the End-User's Language
 
@@ -101,7 +101,7 @@ The above only applies to pages *within* your Mendix application (meaning, pages
 
 ## Read More
 
-* [Translating Your App Content](/refguide/translate-your-app-content/) – a worked example of adding a translation 
-* [Using Translatable Validation Messages](/refguide/translatable-validation-messages/)
+* [Translating Your App Content](/refguide10/translate-your-app-content/) – a worked example of adding a translation 
+* [Using Translatable Validation Messages](/refguide10/translatable-validation-messages/)
 * [Change language by clicking a link](https://community.mendix.com/link/questions/91821) – explanations and ideas in the Mendix Community for refreshing the page when the language is changed
 * [Anonymous User Journey](https://community.mendix.com/link/questions/91676) – a discussion in the Mendix Community about switching languages for anonymous end-users

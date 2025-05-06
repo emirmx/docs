@@ -1,13 +1,13 @@
 ---
 title: "Session Management"
-url: /refguide/session-management/
+url: /refguide10/session-management/
 description: "Describes how sessions are established and managed."
 weight: 35
 ---
 
 ## Introduction 
 
-When an end-user signs in to an application, the Mendix Runtime establishes a session that persists as long as the end-user remains active within the application. The session expires after a certain amount of inactivity, determined by the time elapsed since the last runtime request and the [session timeout](/refguide/custom-settings/#SessionTimeout).
+When an end-user signs in to an application, the Mendix Runtime establishes a session that persists as long as the end-user remains active within the application. The session expires after a certain amount of inactivity, determined by the time elapsed since the last runtime request and the [session timeout](/refguide10/custom-settings/#SessionTimeout).
 
 Mendix versions 10.9.0 and above can use authentication tokens to keep a session active while users are not actively working in the app. For offline-first apps, this replaces earlier approaches for long-lived sessions, improving security.
 
@@ -15,16 +15,16 @@ This approach provides a more unified solution for session management, allowing 
 
 If you create a new app in Mendix version 10.9.0 or above, session management will work as described below.
 
-If you are using an app created in a version below 10.9.0, then long-lived sessions will be used for offline-first apps. See the [Sessions](/refguide/mobile/introduction-to-mobile-technologies/progressive-web-app/#sessions) section of *Progressive Web App* for more information.
+If you are using an app created in a version below 10.9.0, then long-lived sessions will be used for offline-first apps. See the [Sessions](/refguide10/mobile/introduction-to-mobile-technologies/progressive-web-app/#sessions) section of *Progressive Web App* for more information.
 
-Online apps in Mendix versions below 10.9.0 have a different approach, using the [EnableKeepAlive](/refguide/tricky-custom-runtime-settings/#session-duration) setting to send keep alive requests from the client.
+Online apps in Mendix versions below 10.9.0 have a different approach, using the [EnableKeepAlive](/refguide10/tricky-custom-runtime-settings/#session-duration) setting to send keep alive requests from the client.
 
 ## Authentication Token
 
 Authentication tokens allow users to stay logged in for long periods of time. They store the credentials of the user on the user's device and use that to automatically create a new session when the previous session is expired. They are enabled by default for offline-first applications.
 
 {{% alert color="warning" %}}
-Authentication tokens cannot be used with a login processing relying on `login.html`. To make use of authentication tokens, [create a modeled sign-in page](/refguide/mobile/using-mobile-capabilities/auth-users/#model-the-sign-in-page) that uses the Sign in Nanoflow action or the `login2` client API.
+Authentication tokens cannot be used with a login processing relying on `login.html`. To make use of authentication tokens, [create a modeled sign-in page](/refguide10/mobile/using-mobile-capabilities/auth-users/#model-the-sign-in-page) that uses the Sign in Nanoflow action or the `login2` client API.
 {{% /alert %}}
 
 ### Authentication Token Generation
@@ -50,7 +50,7 @@ Follow the links below to find the `login2` API specifications for the following
 
 ### Authentication Token Expiry
 
-There is a custom runtime setting, [`com.mendix.webui.HybridAppLoginTimeOut`](/refguide/custom-settings/#commendixwebuiHybridAppLoginTimeOut) that determines how long the authentication token is valid for. If no value is set, the token remains valid for one year.
+There is a custom runtime setting, [`com.mendix.webui.HybridAppLoginTimeOut`](/refguide10/custom-settings/#commendixwebuiHybridAppLoginTimeOut) that determines how long the authentication token is valid for. If no value is set, the token remains valid for one year.
 
 ## Application Behavior
 
@@ -74,7 +74,7 @@ Below Mendix version 10.9.0, there is no support for authentication tokens.
 
 By default, authentication tokens will not be used in online Mendix apps version 10.9.0 and above. However, you can use them to remember the end-user by writing your own flow using the new API, `login2`, and setting the `useAuthToken` parameter to `true`.
 
-Online apps still utilize the [EnableKeepAlive](/refguide/tricky-custom-runtime-settings/#session-duration) setting to maintain uncommitted data which changes during the session. If that setting is disabled, in Mendix apps version 10.9.0 and above where `useAuthToken` is set to `true`, uncommitted changes will be lost if an action is performed after the session expires, which occurs after the [SessionTimeout](https://github.com/refguide/custom-settings/#SessionTimeout). In this case, the authentication token is used to reinitialize the session to keep user signed in, after which the application is reloaded.
+Online apps still utilize the [EnableKeepAlive](/refguide10/tricky-custom-runtime-settings/#session-duration) setting to maintain uncommitted data which changes during the session. If that setting is disabled, in Mendix apps version 10.9.0 and above where `useAuthToken` is set to `true`, uncommitted changes will be lost if an action is performed after the session expires, which occurs after the [SessionTimeout](https://github.com/refguide10/custom-settings/#SessionTimeout). In this case, the authentication token is used to reinitialize the session to keep user signed in, after which the application is reloaded.
 
 ### Client-Runtime Session Management Flow
 
@@ -93,8 +93,8 @@ Sessions are deleted under two circumstances:
 * When there is a database upgrade on application startup ‒ for example if there is a model change or if the database is new.
 * During periodic cleanup of expired sessions.
 
-    You can configure how often expired sessions are cleaned up using the [ClusterManagerActionInterval](/refguide/custom-settings/#ClusterManagerActionInterval) runtime setting.
+    You can configure how often expired sessions are cleaned up using the [ClusterManagerActionInterval](/refguide10/custom-settings/#ClusterManagerActionInterval) runtime setting.
 
-    You can configure when a session is considered expired using the [SessionTimeout](/refguide/custom-settings/#SessionTimeout) runtime setting.
+    You can configure when a session is considered expired using the [SessionTimeout](/refguide10/custom-settings/#SessionTimeout) runtime setting.
 
 When an anonymous session is deleted the associated anonymous user is deleted as well.
