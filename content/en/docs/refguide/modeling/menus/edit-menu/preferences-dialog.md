@@ -239,15 +239,15 @@ It is recommended to limit the number of open tabs (open documents) to improve t
 The closing policy is not applied to tabs with unsaved changes.
 {{% /alert %}}
 
-### Navigation
-
-This setting allows you to move forward and backward through your editing history to show the documents you have recently worked on. This feature is enabled by default. 
-
 ## Advanced Tab
 
 ### Proxy Server
 
 Sometimes the computer running Studio Pro cannot access the internet directly, but has to connect to a proxy server that requires authentication. If this is the case, then these settings can be used to specify the user name and password to connect to the proxy server.
+
+### Navigation
+
+This setting allows you to move forward and backward through your editing history to show the documents you have recently worked on. This feature is enabled by default. 
 
 ### Usage Data {#usage-data}
 
