@@ -255,6 +255,10 @@ It is recommended to limit the number of open tabs (open documents) to improve t
 The closing policy is not applied to tabs with unsaved changes.
 {{% /alert %}}
 
+### Navigation
+
+This setting allows you to move forward and backward through your editing history to show the documents you have recently worked on. This feature is enabled by default. 
+
 ## Advanced Tab
 
 ### Proxy Server
@@ -278,6 +282,10 @@ For Mendix versions 10.5.0 through 10.9.0, this option is on the **New Features*
 ### Feedback Survey
 
 When the **Show feedback survey periodically** setting is enabled, Studio Pro will periodically display a feedback survey to gather input on your experience. This helps Mendix improve the product based on user feedback. For more information, see [Feedback Survey](/refguide10/feedback-survey/).
+
+### Antivirus Exclusion
+
+When the **Do not show antivirus exclusion notifications** setting is enabled, Studio Pro will not display notifications related to antivirus exclusions. For more information, see [Antivirus Exclusion](/refguide10/antivirus-exclusion/).
 
 ## New Features Tab {#new-features}
 
@@ -307,9 +315,13 @@ Publishing data as a GraphQL service is available as of Studio Pro 10.14. When y
 
 ### Maia
 
-#### Enable Domain Model Generator
+#### Enable Maia for Domain Model
 
-Maia Domain Model Generator was introduced in Studio Pro 10.13.0. Enable this option to help you generate entities and associations for empty domain models. For more information on how to use this feature, see [Domain Model Generator](/refguide10/domain-model-generator/).
+Maia for Domain Model was introduced in Studio Pro 10.13.0. Enable this option to help you generate entities and associations for your domain models. For more information on how to use this feature, see [Maia for Domain Model](/refguide10/maia-for-domain-model/).
+
+#### Enable Maia for Pages
+
+Maia for Pages was introduced In Studio Pro 10.21.0. Enable this option to help you generate pages by adding and configuring widgets based on text input and an optional image. For more information on how to use this feature, see [Maia for Pages](/refguide10/maia-for-pages/).
 
 #### Enable Translation Generator
 
@@ -318,10 +330,6 @@ Maia Translation Generator was introduced in Studio Pro 10.12.0. Enable this opt
 ### Mapping Editor
 
 This setting allows you to set the beta version as the default editor.
-
-### Navigation
-
-This setting allows you to move forward and backward through your editing history to show the documents you have recently worked on. You must restart Studio Pro to use this feature.
 
 ### Online Synchronization Mode
 

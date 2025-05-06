@@ -30,7 +30,7 @@ This document also presents [an example for defining the domain model](#example-
 To create entities and their attributes, follow the steps below.
 
 {{% alert color="info" %}}
-If you are using Mendix version 10.13.0 or above, you can use the Maia domain model generator to create a domain model based on a description of your requirements. For more information, see [Maia Domain Model Generator](/refguide10/domain-model-generator/).
+If you are using Mendix version 10.13.0 or above, you can use Maia for Domain Model to create a domain model based on a description of your requirements. For more information, see [Maia for Domain Model](/refguide10/maia-for-domain-model/).
 {{% /alert %}}
 
 1. Open your [domain model](/refguide10/domain-model/).

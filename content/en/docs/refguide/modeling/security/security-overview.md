@@ -2,12 +2,7 @@
 title: "Security Overview"
 url: /refguide/security-overview/
 weight: 20
-beta: true
 ---
-
-{{% alert color="info" %}}
-This feature is currently in beta. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).
-{{% /alert %}}
 
 ## Introduction
 
