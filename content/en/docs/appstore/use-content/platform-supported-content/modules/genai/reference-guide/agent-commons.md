@@ -154,12 +154,11 @@ Each time a new version of the agent is created, a decision needs to be made reg
 
 ## Technical Reference {#technical-reference}
 
-The technical purpose of the Agent Commons module is to define a common domain model for defining, testing, storing and refining Agents in Mendix applications.
-For documentation on entities and microflow activities, please see the documentation fields in Studio Pro for the respective microflows and entities.
+The module includes technical reference documentation for the available entities, enumerations, activities, and other items that you can use in your application. You can view the information about each object in context by using the **Documentation** pane in Studio Pro.
 
-### Domain Model {#domain-model} 
+The **Documentation** pane displays the documentation for the currently selected element. To view it, perform the following steps:
 
-The domain model in Mendix is a data model that describes the information in your application domain in an abstract way. For more general information, see the [Data in the Domain Model](/refguide/domain-model/) documentation. To learn about where the entities from the domain model are used and relevant during implementation, please refer to the documentation fields in Studio Pro for microflows and entities.
+1. In the [View menu](/refguide/view-menu/) of Studio Pro, select **Documentation**.
+2. Click the element for which you want to view the documentation.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genaicommons/demain-model.png" alt="" >}}
-    
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" >}}
