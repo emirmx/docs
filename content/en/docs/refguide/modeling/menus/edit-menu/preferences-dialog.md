@@ -239,6 +239,10 @@ It is recommended to limit the number of open tabs (open documents) to improve t
 The closing policy is not applied to tabs with unsaved changes.
 {{% /alert %}}
 
+### Navigation
+
+This setting allows you to move forward and backward through your editing history to show the documents you have recently worked on. This feature is enabled by default. 
+
 ## Advanced Tab
 
 ### Proxy Server
@@ -256,6 +260,10 @@ When the **Send Studio Pro usage data to Mendix** setting is enabled, Studio Pro
 ### Feedback Survey
 
 When the **Show feedback survey periodically** setting is enabled, Studio Pro will periodically display a feedback survey to gather input on your experience. This helps Mendix improve the product based on user feedback. For more information, see [Feedback Survey](/refguide/feedback-survey/).
+
+### Antivirus Exclusion
+
+When the **Do not show antivirus exclusion notifications** setting is enabled, Studio Pro will not display notifications related to antivirus exclusions. For more information, see [Antivirus Exclusion](/refguide/antivirus-exclusion/).
 
 ## New Features Tab {#new-features}
 
@@ -287,9 +295,9 @@ You can publish data as a GraphQL service. When you enable this feature, you can
 
 ### Maia
 
-#### Enable Domain Model Generator
+#### Enable Maia for Domain Model
 
-Enable this option to help you generate entities and associations for empty domain models. For more information on how to use this feature, see [Domain Model Generator](/refguide/domain-model-generator/).
+Maia for Domain Model was introduced in Studio Pro 10.13.0. Enable this option to help you generate entities and associations for empty domain models. For more information on how to use this feature, see [Domain Model Generator](/refguide/domain-model-generator/).
 
 #### Enable Translation Generator
 
@@ -299,9 +307,6 @@ Enable this option to help you translate your model to different languages throu
 
 This setting allows you to set the beta version as the default editor.
 
-### Navigation
-
-This setting allows you to move forward and backward through your editing history to show the documents you have recently worked on. You must restart Studio Pro to use this feature.
 
 ### Online Synchronization Mode
 
