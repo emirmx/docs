@@ -70,7 +70,7 @@ In the project security of your app, add the module role **AgentCommons.AgentAdm
 
 The module includes a set of reusable pages, layouts, and snippets, allowing you to add the agent builder to your app. 
 
-#### Pages and Layouts {#pages-and-layouts}
+#### Pages and Layouts
 
 Add the **Agent_Overview** page (USE_ME > Agent Builder) to your Navigation or add the **Snippet_Agent_Overview** to a page that is already part of your Navigation. Now the Agents can be defined at runtime. From this overview, the user can reach the **Version_Details** page to edit the prompt and execute tests. If customization is needed, its contents can be found in **Snippet_Agent_Details**.
 If you need to change the layout or apply other customizations, Mendix recommends copying the page to your own module and modifying it to match your app styling or use case. 
@@ -152,7 +152,7 @@ The new draft version will initially have the same prompt texts, tools and linke
 Each time a new version of the agent is created, a decision needs to be made regarding which version to use in the end-user logic. Mendix recommends evaluating the in-use version as part of the test and release process. When importing the new agents into other environments, selecting the in-use version is always a manual step and, therefore, a conscious decision.
 
 
-## Technical Reference {#technical-reference}
+## Technical Reference
 
 The module includes technical reference documentation for the available entities, enumerations, activities, and other items that you can use in your application. You can view the information about each object in context by using the **Documentation** pane in Studio Pro.
 
