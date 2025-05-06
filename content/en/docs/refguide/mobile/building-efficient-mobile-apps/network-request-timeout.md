@@ -9,7 +9,7 @@ aliases:
 
 ## Introduction
 
-Network request timeout is a crucial configuration parameter for mobile applications that helps handle slow or unreliable network conditions. Setting appropriate timeout values ensures:
+Network request timeout is a crucial configuration parameter for mobile applications that helps handle slow or unreliable network conditions. Setting appropriate timeout values ensures the following:
 
 * Better app responsiveness
 * Enhanced user experience
@@ -21,14 +21,9 @@ The default timeout value for network requests in Mendix mobile applications is 
 
 ## Excluded Network Requests
 
+Exclusions ensure that complex operations (like data synchronization and server-side processing) can complete without interference from the general timeout settings.
+
 The following operations are excluded from the configured timeout settings:
 
-* **Data Synchronization Operations** 
-    * All `synchronize_objects` calls
-
-* **Microflow Runtime Operations**
-    * All `runtimeOperation` calls
-
-{{% alert type="info" %}}
-These exclusions ensure that complex operations like data synchronization and server-side processing can complete without interference from the general timeout settings.
-{{% /alert %}}
+* **Data Synchronization Operations** — all `synchronize_objects` calls
+* **Microflow Runtime Operations** — all `runtimeOperation` calls
