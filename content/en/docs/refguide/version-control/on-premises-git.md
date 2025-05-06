@@ -44,6 +44,8 @@ To use PAT (or another equivalent), you need to specify it in the **Password** f
 
 {{< figure src="/attachments/refguide/version-control/on-premises-git/sign-in-dialog.png" alt="Sign In dialog" class="no-border" >}}
 
+{{% alert color="info" %}}When using a PAT for the Mendix platform, fill in your email in the username field. [Read here](/community-tools/mendix-profile/user-settings/#pat) how to create a PAT for the Mendix platform.{{% /alert %}}
+
 Currently Mendix keeps PAT using operating system supported solutions:
 
 * For Windows, Mendix uses a credential locker mechanism, accessible to users by using Credential Manager.
