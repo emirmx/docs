@@ -37,9 +37,9 @@ The current scope of the module is focused on LLM invocations with a variety of 
 
 ### Dependencies {#dependencies}
 
-The Agent Commons module requires Mendix Studio Pro version [9.24.2](/releasenotes/studio-pro/9.24/#9242) or above.
+The Agent Commons module requires Mendix Studio Pro version [10.21.0](/releasenotes/studio-pro/10.21/#10210) or above.
 
-You must also download the [Community Commons](/appstore/modules/community-commons-function-library/) module, the [GenAI Commons](https://marketplace.mendix.com/link/component/239448) module, the [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449) and the [Conversational UI](https://marketplace.mendix.com/link/component/239450).
+You must also download the [Community Commons](/appstore/modules/community-commons-function-library/) module, the [GenAI Commons](https://marketplace.mendix.com/link/component/239448), the [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449) and the [Conversational UI](https://marketplace.mendix.com/link/component/239450) modules.
 
 ## Installation
 
@@ -68,19 +68,18 @@ In the project security of your app, add the module role **AgentCommons.AgentAdm
 
 ### Adding the Agent Builder UI to Your App {#ui-components} 
 
-The module includes a set of reusable pages, layouts, and snippets, allowing you to add the conversational UI to your app. 
+The module includes a set of reusable pages, layouts, and snippets, allowing you to add the agent builder to your app. 
 
 #### Pages and Layouts {#pages-and-layouts}
 
-Add the **Agent_Overview** page (USE_ME > Agent Builder) to your Navigation or add the **Snippet_Agent_Overview** to a page that is already part of your Navigation. Now the Agents can be defined at runtime.
-If you need to change the layout or apply other customizations, Mendix recommends copying the page to your own module and modifying it to match your app styling or use case. The **Snippet_Agent_Overview** snippet includes the content of the same page.
-From this overview, the user can reach the **Version_Details** page to edit the prompt and execute tests. If customization is needed, its contents can be found in **Snippet_Agent_Details**.
+Add the **Agent_Overview** page (USE_ME > Agent Builder) to your Navigation or add the **Snippet_Agent_Overview** to a page that is already part of your Navigation. Now the Agents can be defined at runtime. From this overview, the user can reach the **Version_Details** page to edit the prompt and execute tests. If customization is needed, its contents can be found in **Snippet_Agent_Details**.
+If you need to change the layout or apply other customizations, Mendix recommends copying the page to your own module and modifying it to match your app styling or use case. 
 
 For example, download and run the [Agent Builder Starter App](https://marketplace.mendix.com/link/component/240369) to see the pages in action.
 
 ### Configure Deployed Models {#deployed-models}
 
-You need at least one GenAI connector that follows the principles of GenAI commons to interact with LLMs from the Aggent Commons logic. To test the behavior of an agent, you must configure at least one Deployed Model for your chosen connector. Refer to the specific connector’s documentation for detailed setup instructions on configuring the Deployed Model.
+You need at least one GenAI connector that follows the principles of GenAI commons to interact with LLMs from the Agent Commons logic. To test the behavior of an agent, you must configure at least one [Deployed Model](/appstore/modules/genai/genai-for-mx/commons/#deployed-model) for your chosen connector. Refer to the specific connector’s documentation for detailed setup instructions on configuring the Deployed Model.
 
 * For [Mendix Cloud GenAI](https://marketplace.mendix.com/link/component/239449) importing the **Key** from the Mendix portal automatically creates a MxCloud Deployed Model. This is part of the [configuration](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#configuration).
 * For [Amazon Bedrock](https://marketplace.mendix.com/link/component/215042), the creation of Bedrock Deployed Models is part of the [model synchronization mechanism](/appstore/modules/aws/amazon-bedrock/#sync-models).
@@ -89,7 +88,7 @@ You need at least one GenAI connector that follows the principles of GenAI commo
 ### Define the Agent {#define-prompt}
 
 When the app is running, a user with the `AgentAdmin` role can set up an agent, write the prompts, link microflows as tools and give it access to knowledge bases. When the agent is associated to a deployed model, it can be tested in an isolated set-up separate from the rest of the app's logic, to properly validate the behavior.
-The user can create either a Conversational agent, intended for scenarios where the end-user interacts through a chat interface or the agent is called in a conversational style by another agent, as opposed to a Single-Call agent, designed for isolated agentic patterns, like agents that work in background processes, subagents that are part of an Agent-as-Tool pattern, or otherwise agentic patterns do not require a conversational interface with historical messages. 
+The user can create either a Conversational agent, intended for scenarios where the end-user interacts through a chat interface or the agent is called in a conversational style by another agent, as opposed to a Single-Call agent, designed for isolated agentic patterns, like agents that work in background processes, subagents that are part of an Agent-as-Tool pattern, or otherwise agentic patterns that do not require a conversational interface with historical messages. 
 
 #### Define Context Object
 
@@ -101,7 +100,7 @@ To allow your agent to perform actions dynamically and autonomously, or to give 
 
 #### Add Knowledge Bases
 
-For supported knowledge bases that are registered in the app, you can connect the agent to allow it to do specified retrievals autonomously. Refer to the documentation of the connector of the knowledge base provider of choice to set up the connetion from your app to the knowledge base. To allow the agent to perform semantic searches in the knowledge base, add the knowledge base to the agent definition and specify the parameters that determine how a retrieve should happen (e.g. metadata, desired number of chunks retrieved, threshold similarity).
+For supported knowledge bases that are registered in the app, you can connect the agent to allow it to do specified retrievals autonomously. Refer to the documentation of the connector of the knowledge base provider of choice to set up the connection from your app to the knowledge base. To allow the agent to perform semantic searches in the knowledge base, add the knowledge base to the agent definition and specify the parameters that determine how a retrieve should happen (e.g. metadata, desired number of chunks retrieved, threshold similarity).
 
 #### Test and Refine the Agent
 
@@ -118,7 +117,7 @@ New agents will be created in the draft status by default, meaning they are stil
 
 #### Call the Agent from a Microflow
 
-For most use cases, the `Call Agent` microflow activity can be used. This operation which can be found in the **Toolbox** in Studio Pro while editing a microflow, under the category **Agents Kit**. 
+For most use cases, the `Call Agent` microflow activity can be used. This operation can be found in the **Toolbox** in Studio Pro while editing a microflow, under the category **Agents Kit**. 
 
 1. Create a Request object using the [GenAI Commons operation](/appstore/modules/genai/genai-for-mx/commons/#chat-create-request) or use [Default Preprocessing from ConversationalUI](/appstore/modules/genai/conversational-ui-module/).  
 1. Make sure the Agent object is in scope in your microflow: e.g. retrieve your Agent object from database based on name.
