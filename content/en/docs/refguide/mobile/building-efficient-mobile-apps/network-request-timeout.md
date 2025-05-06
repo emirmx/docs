@@ -1,7 +1,7 @@
 ---
 title: "Network Timeout"
 url: /refguide/mobile/building-efficient-mobile-apps/network-timeout/
-weight: 15
+weight: 81
 description: "Configure network request timeouts in your Mendix mobile apps to handle slow network conditions."
 aliases:
     - /refguide/mobile/network-timeout/
