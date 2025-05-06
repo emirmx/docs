@@ -7,7 +7,7 @@ weight: 60
 
 ## Introduction
 
-This how-to shows you how to open a modal dialog in Studio Pro from an extension. This dialog will contain your web content.
+This how-to describes how to open a modal dialog in Studio Pro from an extension. This dialog will contain your web content.
 
 ## Prerequisites
 
@@ -15,22 +15,24 @@ This how-to uses the results of [Get Started with the Web Extensibility API](/ap
 
 ## Opening a Modal Dialog
 
-Firstly, create a menu item to open the dialog. This is done inside the `loaded` event in `Main`. For more information see [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
+Create a menu item to open the dialog. This is done inside the `loaded` event in `Main`. For more information, see [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
 
-In a listener event called `menuItemActivated` the `studioPro.ui.dialogs.showModal(<dialogInfo>, <uiSpec>)` call opens a new tab where:
+In a listener event called `menuItemActivated`, the `studioPro.ui.dialogs.showModal(<dialogInfo>, <uiSpec>)` call opens a new tab where:
 
-- `<dialogInfo>` is an object containing the `title` of the dialog, which will be shown in the title bar of your dialog in Studio Pro. It also contains `contentSize` object where `height` and `width` dimensions for the dialog can be provided.
-- `<uiSpec>` is an object containing two required properties and one optional:
+* `<dialogInfo>` is an object containing the `title` of the dialog, which is shown in the title bar of your dialog in Studio Pro. It also contains the `contentSize` object, where `height` and `width` dimensions for the dialog can be provided.
+* `<uiSpec>` is an object containing two required properties and one optional property:
 
-  - `componentName` which is the name of the extension prefixed with "extension/". For example "extension/myextension" in the following example.
-  - `uiEntryPoint` which is the name mapped from the `manifest.json` file.
-  - `queryParams` (optional) is a key-value pair object for passing data to your web content inside the dialog.
+    * `componentName` — the name of the extension prefixed with `extension/`; for example, `extension/myextension`.
+    * `uiEntryPoint` —  the name mapped from the `manifest.json` file
+    * `queryParams` (optional) — a key-value pair object for passing data to your web content inside the dialog
 
 {{% alert color="info" %}}
-Whenever the dialogs API `showModal` method is called, a `Promise` of `unknown` or `null` is returned. This return value represents anything that the web content determines should be returned when the dialog gets closed. It is currently unknown by the api, since it can be anything. In this example the dialog will contain a form where an object is modified, and it is then returned at closing time.
+When the dialogs API `showModal` method is called, a `Promise` of `unknown` or `null` is returned. This return value represents anything the web content determines should be returned when the dialog gets closed. It is currently unknown by the API, since it can be anything. 
+
+In the example below, the dialog will contain a form where an object is modified, then returned at closing time.
 {{% /alert %}}
 
-An example of the class `Main` to open a modal dialog called **My Extension Dialog** looks similar to the following:
+An example of the class `Main` to open a modal dialog called *My Extension Dialog* looks similar to the following:
 
 ```typescript
 import { IComponent, studioPro, TabHandle } from "@mendix/extensions-api";
@@ -77,7 +79,7 @@ export const component: IComponent = new Main();
 
 ## Filling the Dialog With Content
 
-In the previous example, the `uiEntryPoint` property of the `<uispec>` object had the value "dialog". This value must match the one from the manifest. Here is an example of the dialog under the `ui` property.
+In the previous example, the `uiEntryPoint` property of the `<uispec>` object had the value `dialog`. This value must match the one from the manifest. Below is an example of the dialog under the `ui` property.
 
 ```json
 {
@@ -114,66 +116,67 @@ In the previous example, the `uiEntryPoint` property of the `<uispec>` object ha
    } satisfies UserConfig);
    ```
 
-2. Add the `dialog.tsx` file for the web content
+2. Add the `dialog.tsx` file for the web content:
 
-```typescript
-import { studioPro } from "@mendix/extensions-api";
-import { FormEvent, StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+    ```typescript
+    import { studioPro } from "@mendix/extensions-api";
+    import { FormEvent, StrictMode } from "react";
+    import { createRoot } from "react-dom/client";
 
-const dialogId = new URLSearchParams(location.search).get("dialogId")!;
-const person: { firstName?: string; lastName?: string } = {
-  firstName: undefined,
-  lastName: undefined,
-};
+    const dialogId = new URLSearchParams(location.search).get("dialogId")!;
+    const person: { firstName?: string; lastName?: string } = {
+      firstName: undefined,
+      lastName: undefined,
+    };
 
-const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  studioPro.ui.dialogs.closeWithResult(dialogId, JSON.stringify(person));
-};
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      studioPro.ui.dialogs.closeWithResult(dialogId, JSON.stringify(person));
+    };
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <form onSubmit={handleSubmit}>
-      <p>
-        {" "}
-        <input
-          placeholder="First Name"
-          value={person.firstName}
-          onChange={(e) => (person.firstName = e.target.value)}
-        />
-      </p>
-      <p>
-        {" "}
-        <input
-          placeholder="Surname"
-          value={person.lastName}
-          onChange={(e) => (person.lastName = e.target.value)}
-        />
-      </p>
-      <p>
-        <button type="submit">Submit</button>
-        <button
-          type="button"
-          onClick={(_) => studioPro.ui.dialogs.close(dialogId)}
-        >
-          Cancel
-        </button>
-      </p>
-    </form>
-  </StrictMode>
-);
-```
+    createRoot(document.getElementById("root")!).render(
+      <StrictMode>
+        <form onSubmit={handleSubmit}>
+          <p>
+            {" "}
+            <input
+              placeholder="First Name"
+              value={person.firstName}
+              onChange={(e) => (person.firstName = e.target.value)}
+            />
+          </p>
+          <p>
+            {" "}
+            <input
+              placeholder="Surname"
+              value={person.lastName}
+              onChange={(e) => (person.lastName = e.target.value)}
+            />
+          </p>
+          <p>
+            <button type="submit">Submit</button>
+            <button
+              type="button"
+              onClick={(_) => studioPro.ui.dialogs.close(dialogId)}
+            >
+              Cancel
+            </button>
+          </p>
+        </form>
+      </StrictMode>
+    );
+    ```
 
-Notice the `dialogId` property retrieved from the query parameters of the web page. This value is generated once the dialog api is first called and it is then passed back to the web content so that the `close` or `closeWithResult` methods can be called successfully. The dialogs api needs this id in order to close the correct dialog.
-This simple form contains two textboxes for a `firstName` and `lastName` and on submitting of the form, it will then close the dialog by passing along the content of the object modified by the form.
-It also contains a simple `Close` button which calls the api's `close` method, without any extra data apart from the required `dialogId`.
+Notice the `dialogId` property retrieved from the query parameters of the web page. This value is generated once the dialog API is first called. It is then passed back to the web content so the `close` or `closeWithResult` methods can be called successfully. The dialog's API needs this Id to close the correct dialog.
 
-After building and installing the extension in our Studio Pro app, the dialog will open once the menu is clicked and display the web content from the `dialog.tsx` file.
+This simple form contains two text boxes for `firstName` and `lastName`. When submitting the form, it closes the dialog by passing along the content of the object modified by the form.
+It also contains a simple `Close` button, which calls the API's `close` method without any extra data, apart from the required `dialogId`.
+
+After building and installing the extension in Studio Pro, the dialog opens when the menu is clicked and will display the web content from the `dialog.tsx` file.
 
 ## Modifying a Modal Dialog
 
-We can also modify the dimensions of a dialog, using the dialog api's `update` method. Add a button to the form contained in `dialog.tsx` file, as follows:
+You can also modify the dimensions of a dialog using the dialog API's `update` method. To do this, add a button to the form contained in `dialog.tsx` file, as follows:
 
 ```typescript
 <button
@@ -189,12 +192,10 @@ We can also modify the dimensions of a dialog, using the dialog api's `update` m
 </button>
 ```
 
-## Conclusion
-
-You now know how to create dialogs and populate them with content and handle their result once closed. You can also modify the dialog's dimensions while it is open.
+ You can also modify the dialog's dimensions while it is open.
 
 ## Extensibility Feedback
 
-If you would like to provide us with some additional feedback you can complete a small [Survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback)
+If you would like to provide us with additional feedback, you can complete a small [survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback).
 
-Any feedback is much appreciated.
+Any feedback is appreciated.
