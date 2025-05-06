@@ -1,6 +1,6 @@
 ---
 title: "Tracing"
-url: /refguide/tracing-in-runtime/
+url: /refguide10/tracing-in-runtime/
 beta: true
 description: "Describes how to setup and use tracing in the Mendix Runtime."
 ---
@@ -34,7 +34,7 @@ Since Mendix 10.19.0,
 In Mendix 10.19 and above, tracing configuration is handled through the [OpenTelemetry Java Agent](https://opentelemetry.io/docs/zero-code/java/agent/). Use the following steps to set up a minimal tracing configuration:
 
 1. Download [opentelemetry-javaagent.jar](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar) from the [OpenTelemetry Java Instrumentation release page](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases).
-1. In the [Server settings](/refguide/configuration/#server) of Studio Pro, locate the field **Extra JVM parameters** and add the following:
+1. In the [Server settings](/refguide10/configuration/#server) of Studio Pro, locate the field **Extra JVM parameters** and add the following:
 
     ```
     -javaagent:{/path/to/opentelemetry-javaagent.jar} -Dotel.instrumentation.common.default-enabled=false -Dotel.instrumentation.opentelemetry-api.enabled=true -Dotel.service.name="{My App}"
@@ -49,7 +49,7 @@ This will enable Mendix related tracing, while silencing the tracing of internal
 
 In Mendix 10.18, the minimal configuration to enable tracing is:
 
-* Set the `OpenTelemetry.Enabled` [runtime setting](/refguide/custom-settings/) to `true`
+* Set the `OpenTelemetry.Enabled` [runtime setting](/refguide10/custom-settings/) to `true`
 * Set the `otel.service.name` runtime setting to a service name
 
 This will enable tracing. The traces will be sent to http://localhost:4317 using the `grpc` protocol by default.

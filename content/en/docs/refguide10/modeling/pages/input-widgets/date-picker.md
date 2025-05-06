@@ -1,18 +1,18 @@
 ---
 title: "Date Picker"
-url: /refguide/date-picker/
+url: /refguide10/date-picker/
 weight: 60
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-A **date picker** is used to display and, optionally, allow the end-user to edit the value of an attribute or a variable of [data type](/refguide/data-types/) *Date and Time*. It uses the values set in the **Languages** tab of **App Settings** to display a correctly localized value to the end-user, using the **Language** object associated with the end-user.
+A **date picker** is used to display and, optionally, allow the end-user to edit the value of an attribute or a variable of [data type](/refguide10/data-types/) *Date and Time*. It uses the values set in the **Languages** tab of **App Settings** to display a correctly localized value to the end-user, using the **Language** object associated with the end-user.
 
 A date picker must be placed within a data context to display or edit the intended value:
-* A [data container](/refguide/data-widgets/) widget containing an object
-* A snippet containing one or more [parameters](/refguide/page-properties/#parameters)
-* A page or a snippet containing one or more [variables](/refguide/page-properties/#variables)
+* A [data container](/refguide10/data-widgets/) widget containing an object
+* A snippet containing one or more [parameters](/refguide10/page-properties/#parameters)
+* A page or a snippet containing one or more [variables](/refguide10/page-properties/#variables)
 
 The name of the configured value is shown inside the date picker widget, between square brackets, and colored blue.
 
@@ -69,7 +69,7 @@ When using `yyyy` custom format and typing `yy` in the date picker widget, the c
 * `75` {{< icon name="arrow-narrow-right" >}} `1975`
 {{% /alert %}}
 
-{{% snippet file="/static/_includes/refguide/custom-date-format-tokens.md" %}}
+{{% snippet file="/static/_includes/refguide10/custom-date-format-tokens.md" %}}
 
 {{% alert color="info" %}}
 Even though a date picker with a custom date format is editable, the calendar drop-down button will only be shown if the custom format represents a full date (that is, the year [`y`-`yyyy`], month [`M`-`MMMM`], and day of month [`d`-`dd`] tokens are all present in the custom format).
@@ -85,23 +85,23 @@ Placeholder text will not be displayed if a native date picker is available (tha
 
 ### Data Source Section{#data-source}
 
-{{% snippet file="/static/_includes/refguide/data-source-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/data-source-section-link.md" %}}
 
 ### Label Section{#label}
 
-{{% snippet file="/static/_includes/refguide/label-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/label-section-link.md" %}}
 
 ### Editability Section{#editability}
 
-{{% snippet file="/static/_includes/refguide/editability-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/editability-section-link.md" %}}
 
 ### Visibility Section{#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ### Validation Section{#validation}
 
-{{% snippet file="/static/_includes/refguide/widget-validation-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/widget-validation-link.md" %}}
 
 ### Accessibility Section{#accessibility}
 
@@ -111,7 +111,7 @@ In a text area widget, when **Aria required** is set to **Yes** then assistive t
 
 ### Common Section{#common}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### Events Section{#events}
 
@@ -119,13 +119,13 @@ In a text area widget, when **Aria required** is set to **Yes** then assistive t
 
 The on-change property specifies an action that will be executed when leaving the widget, either by using the <kbd>Tab</kbd> key or by clicking another widget, after the value has been changed.
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 #### On Enter
 
 The on-enter property specifies an action that will be executed when the widget is entered, either by using the <kbd>Tab</kbd> key or by clicking it with the mouse.
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 #### On Leave
 
@@ -133,20 +133,20 @@ The on-leave property specifies an action that will be executed when leaving the
 
 This differs from the [On change](#on-change) property in that the event will always be triggered, even if the value has not been changed.
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 ## Styling
 
 ### Design Properties Section{#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### Common Section{#common-styling}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Read More
 
-* [Data View](/refguide/data-view/)
-* [Attributes](/refguide/attributes/)
-* [Variables](/refguide/page-properties/#variables)
+* [Data View](/refguide10/data-view/)
+* [Attributes](/refguide10/attributes/)
+* [Variables](/refguide10/page-properties/#variables)

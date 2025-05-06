@@ -1,6 +1,6 @@
 ---
 title: "Sequence Flow"
-url: /refguide/sequence-flow/
+url: /refguide10/sequence-flow/
 weight: 30
 ---
 
@@ -14,4 +14,4 @@ When you have two activities that you want to link together a sequence flow is u
 
 ## Condition Value
 
-The **Condition value** describes which direction should be followed based on the outcome of a [decision](/refguide/decision/) or an [object type decision](/refguide/object-type-decision/).
+The **Condition value** describes which direction should be followed based on the outcome of a [decision](/refguide10/decision/) or an [object type decision](/refguide10/object-type-decision/).

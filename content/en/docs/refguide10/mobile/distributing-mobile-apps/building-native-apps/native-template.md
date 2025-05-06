@@ -1,10 +1,10 @@
 ---
 title: "Native Template"
-url: /refguide/mobile/distributing-mobile-apps/building-native-apps/native-template
+url: /refguide10/mobile/distributing-mobile-apps/building-native-apps/native-template
 weight: 50
 description: Description of the native template.
 aliases:
-    - /refguide/native-template/
+    - /refguide10/native-template/
 ---
 
 ## Introduction
@@ -13,7 +13,7 @@ A template is required when you build a Mendix native app: specifically the Nati
 
 The template also includes tooling to help put everything together. Specifically, the Native Template uses the React Native and Mendix auto-linking capabilities to link the native dependencies to platform-specific apps, and uses the Native Mobile toolkit which configures the platform-specific app with version numbers, app names, splash screens, and more. 
 
-In addition, the Native Template helps create custom developer apps. These are apps that act like the Make It Native app but are tailored your app's specific needs. If you would like to build an app that uses bespoke functionality like custom native widgets see [Create a Custom Developer App](/refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/). 
+In addition, the Native Template helps create custom developer apps. These are apps that act like the Make It Native app but are tailored your app's specific needs. If you would like to build an app that uses bespoke functionality like custom native widgets see [Create a Custom Developer App](/refguide10/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/). 
 
 ## Location
 
@@ -580,7 +580,7 @@ native-mobile-toolkit configure --config-path='./<name of the configuration>.jso
 
 Mendix Native apps are based on React Native. When building your Mendix app using the Mendix Native Mobile Builder, your app is first compiled to JavaScript code and static assets. Using React Native's Metro Bundler, the client code and assets are then compiled to platform specific React Native Bundles. These are finally moved to the correct location in Native Template before compiling the final apps.
 
-This whole process is unified using a tool called MxBuild that is included with every installation of Mendix Studio Pro. For more information, see the [MxBuild Reference Guide](/refguide/mxbuild/).
+This whole process is unified using a tool called MxBuild that is included with every installation of Mendix Studio Pro. For more information, see the [MxBuild Reference Guide](/refguide10/mxbuild/).
 
 ### Using MxBuild to Build your Native App
 
@@ -655,4 +655,4 @@ solutions, on premise or as a service, that can be used for this purpose. We do 
 
 ## Read More
 
-* [Offline First Guide](/refguide/offline-first/)
+* [Offline First Guide](/refguide10/offline-first/)

@@ -1,6 +1,6 @@
 ---
 title: "System Requirements"
-url: /refguide/system-requirements/
+url: /refguide10/system-requirements/
 weight: 20
 description: "Presents the system requirements for using the Mendix Platform."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
@@ -16,7 +16,7 @@ Mendix Studio Pro has the requirements listed in the following sections.
 
 ### Software Specifications {#software}
 
-[Mendix Studio Pro](/refguide/modeling/) 10 is supported on 64-bit versions of Windows 10 release 1809 and above; this also includes Windows 11. 
+[Mendix Studio Pro](/refguide10/modeling/) 10 is supported on 64-bit versions of Windows 10 release 1809 and above; this also includes Windows 11. 
 We support running on Windows locally, or locally virtualized.
 
 Studio Pro 10.7 and above can run in beta mode on an ARM Mac and Intel Mac running macOS Sonoma 14.0 and above. For information on known limitation, see the [Known Limitations for Mac](#mac-limitations) section below. 
@@ -29,7 +29,7 @@ While Studio Pro on Mac is in [public beta](/releasenotes/beta-features/), Mendi
 Administrator rights are required to install Mendix Studio Pro on Mac (Beta).
 {{% /alert %}}
 
-Studio Pro versions 10.0 and above can run on the M series Apple Silicon Mac using [Parallels 17](https://www.parallels.com/) and Windows 11. Earlier versions of Studio Pro can run on Apple Mac [using Parallels](/refguide/using-mendix-studio-pro-on-a-mac/). 
+Studio Pro versions 10.0 and above can run on the M series Apple Silicon Mac using [Parallels 17](https://www.parallels.com/) and Windows 11. Earlier versions of Studio Pro can run on Apple Mac [using Parallels](/refguide10/using-mendix-studio-pro-on-a-mac/). 
 
 {{% alert color="info" %}}
 
@@ -48,7 +48,7 @@ The following frameworks are required. They will be installed automatically by t
 * Microsoft Visual C++ 2019 Redistributable Package (x64)
 * A Java Developer Kit (JDK) version 11, 17, or 21 - if not yet installed on your machine, Mendix will install 'Eclipse Temurin JDK 21 (x64 or ARM64)'
 * Gradle version 8.5 or above - if Gradle is not yet installed on your machine, Mendix will install Gradle version 8.5
-* Git for Windows (x64) version 2.41.0 or above (for more information, see the [Prerequisites](/refguide/install/#prerequisites) section in *Installing Mendix Studio Pro*)
+* Git for Windows (x64) version 2.41.0 or above (for more information, see the [Prerequisites](/refguide10/install/#prerequisites) section in *Installing Mendix Studio Pro*)
 * Mendix Native Mobile Builder
 * Microsoft Edge WebView2 Evergreen Runtime (x64)
 
@@ -67,7 +67,7 @@ You can choose which JDK is used for building and running locally via the **Edit
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Please note the limitation that the database viewer built into Studio Pro (as described in [How to Share the Development Database](/howto/data-models/sharing-the-development-database/)) does not work with JDK 11.06 or 11.07.
+Please note the limitation that the database viewer built into Studio Pro (as described in [How to Share the Development Database](/howto10/data-models/sharing-the-development-database/)) does not work with JDK 11.06 or 11.07.
 {{% /alert %}}
 
 #### Known Limitations for Mac {#mac-limitations}
@@ -99,7 +99,7 @@ Studio Pro needs access to the following URLs in order to work. If your firewall
 * `*.teamserver.sprintr.com`
 * `*.api.mendix.com`
 
-If you have set up managed dependencies and are working behind a firewall or using a proxy, see the [Proxy Settings](/refguide/managed-dependencies/#proxy-settings) section of *Managed Dependencies* for advice on what you need to do to allow the managed dependencies to work.
+If you have set up managed dependencies and are working behind a firewall or using a proxy, see the [Proxy Settings](/refguide10/managed-dependencies/#proxy-settings) section of *Managed Dependencies* for advice on what you need to do to allow the managed dependencies to work.
 
 To run a Mendix app, Mendix Studio Pro uses the following ports by default. If your firewall is blocking these, you will need to open them:
 
@@ -108,7 +108,7 @@ To run a Mendix app, Mendix Studio Pro uses the following ports by default. If y
 * 8090 – admin port
 * 8100 – sign-in port
 
-For more information on ports and modifying Studio Pro's default ports, see [Configurations](/refguide/configuration/) and the [Troubleshooting Common Mobile Issues](/refguide/mobile/getting-started-with-mobile/prerequisites/#troubleshooting) section of *Native App Prerequisites and Troubleshooting*.
+For more information on ports and modifying Studio Pro's default ports, see [Configurations](/refguide10/configuration/) and the [Troubleshooting Common Mobile Issues](/refguide10/mobile/getting-started-with-mobile/prerequisites/#troubleshooting) section of *Native App Prerequisites and Troubleshooting*.
 
 For information on how to ensure the smooth operation of Mendix AI Assistance (Maia), see the [Network Configuration Requirements](/refguide10/mendix-ai-assistance/#maia-network-requirement) section in *Mendix AI Assistance (Maia)*.
 
@@ -215,8 +215,7 @@ The Mendix Docker buildpack supports the following Kubernetes versions:
 ### Operating System {#server-os}
 
 * Microsoft Windows Server 2012 and above
-* The following Unix-like operating systems:
-    * [Debian OldOldStable (LTS)](https://wiki.debian.org/DebianOldOldStable), [Debian OldStable, Debian Stable](https://wiki.debian.org/DebianReleases#Current_Releases.2FRepositories)
+* Linux: [Debian 10 (Buster)](https://www.debian.org/releases/buster/)
 
 ### Web Server
 
@@ -241,20 +240,20 @@ Mendix tries to support the most recent and patched database server versions fro
 
 Current support:
 
-* [MariaDB](/refguide/mysql/): 10.4, 10.5, 10.6, 10.11, 11.4
+* [MariaDB](/refguide10/mysql/): 10.4, 10.5, 10.6, 10.11, 11.4
 * [Microsoft SQL Server](/developerportal/deploy/mendix-on-windows-microsoft-sql-server/): 2019, 2022
 * [Azure SQL](https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-compatibility-level?view=sql-server-2017): v12 compatibility mode 140 or higher
-* [MySQL](/refguide/mysql/): 8.0, 8.4
-* [Oracle Database](/refguide/oracle/): 19, 21c
+* [MySQL](/refguide10/mysql/): 8.0, 8.4
+* [Oracle Database](/refguide10/oracle/): 19, 21c
 * PostgreSQL: 12, 13, 14, 15, 16, 17
-* [SAP HANA](/refguide/saphana/): 2.00.076.00.1705400033
+* [SAP HANA](/refguide10/saphana/): 2.00.076.00.1705400033
 
 {{% alert color="warning" %}}
 Each app must have its own database. Mendix apps cannot share data by sharing the same database.
 
-If you want two apps to share the same database, then you need to share the data from one app to the other using APIs. In Mendix, these are supported by the [Catalog](/refguide/share-data/) or the REST and OData services described in the [Integration](/refguide/integration/) section of the *Studio Pro Guide*. This is referred to as a microservices architecture.
+If you want two apps to share the same database, then you need to share the data from one app to the other using APIs. In Mendix, these are supported by the [Catalog](/refguide10/share-data/) or the REST and OData services described in the [Integration](/refguide10/integration/) section of the *Studio Pro Guide*. This is referred to as a microservices architecture.
 
-For more information on why data cannot be shared between apps see [Data Storage](/refguide/data-storage/#databases). Use the [Database Replication](/appstore/modules/database-replication/) module if you need to copy the data from one app to another.
+For more information on why data cannot be shared between apps see [Data Storage](/refguide10/data-storage/#databases). Use the [Database Replication](/appstore/modules/database-replication/) module if you need to copy the data from one app to another.
 {{% /alert %}}
 
 ## File Storage {#file-storage}
@@ -313,11 +312,11 @@ Mendix recommends the following minimum hardware requirements for all mobile dev
 
 Depending on your app's complexity, these minimum hardware requirements might not be sufficient and should be adjusted.
 
-Developing native mobile apps with Mendix comes with special requirements explained in [Native App Prerequisites and Troubleshooting](/refguide/mobile/getting-started-with-mobile/prerequisites/).
+Developing native mobile apps with Mendix comes with special requirements explained in [Native App Prerequisites and Troubleshooting](/refguide10/mobile/getting-started-with-mobile/prerequisites/).
 
 ## MxBuild {#mxbuild}
 
-MxBuild is a Windows and Linux command-line tool that can be used to build a Mendix Deployment Package. For more information, see [MxBuild](/refguide/mxbuild/).
+MxBuild is a Windows and Linux command-line tool that can be used to build a Mendix Deployment Package. For more information, see [MxBuild](/refguide10/mxbuild/).
 
 * .NET
 
@@ -329,6 +328,6 @@ MxBuild is a Windows and Linux command-line tool that can be used to build a Men
 
 ## mx Command-Line Tool {#mxtool}
 
-The **mx** command-line tool is a Windows and Linux command-line tool that can be used to do useful things with your Mendix app. For more information, see [mx Command-Line Tool](/refguide/mx-command-line-tool/).
+The **mx** command-line tool is a Windows and Linux command-line tool that can be used to do useful things with your Mendix app. For more information, see [mx Command-Line Tool](/refguide10/mx-command-line-tool/).
 
 * Mono v5.20.x or .NET v4.7.2

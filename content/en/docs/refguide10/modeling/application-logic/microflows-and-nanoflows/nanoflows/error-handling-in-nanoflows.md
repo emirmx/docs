@@ -1,6 +1,6 @@
 ---
 title: "Error Handling in Nanoflows"
-url: /refguide/error-handling-in-nanoflows/
+url: /refguide10/error-handling-in-nanoflows/
 weight: 30
 ---
 
@@ -21,10 +21,10 @@ With the **Custom without rollback** option, you can draw an additional flow fro
 
 ## Error Inspection
 
-In a custom error handler executed after an error occurs, the `$latestError` variable is set to show error message. The `$latestError` variable type is **String**, unlike in [microflows](/refguide/microflows/) where `$latestError` is an object of entity type **System.Error**.
+In a custom error handler executed after an error occurs, the `$latestError` variable is set to show error message. The `$latestError` variable type is **String**, unlike in [microflows](/refguide10/microflows/) where `$latestError` is an object of entity type **System.Error**.
 
 The `$latestSoapFault` variable is not available in nanoflows.
 
 ## Read More
 
-* [Error Handling in Microflows](/refguide/error-handling-in-microflows/)
+* [Error Handling in Microflows](/refguide10/error-handling-in-microflows/)

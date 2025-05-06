@@ -1,6 +1,6 @@
 ---
 title: "List View"
-url: /refguide/list-view/
+url: /refguide10/list-view/
 weight: 30
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -36,28 +36,28 @@ List view properties consist of the following sections:
 
 ### Common Section {#common}
 
-The rows of the list view can be sorted using the `Sort order` property. It is only available for **Database** [data sources](#data-source). For more information on sorting, see [Sort Order](/refguide/sort-order/).
+The rows of the list view can be sorted using the `Sort order` property. It is only available for **Database** [data sources](#data-source). For more information on sorting, see [Sort Order](/refguide10/sort-order/).
 
 To specify which attributes to use when searching, configure the search attributes property. It is only available for **Database** [data sources](#data-source).
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### Data Source Section {#data-source}
 
-The data source determines which objects will be shown in a list view. For general information on data sources, see [Data Sources](/refguide/data-sources/).
+The data source determines which objects will be shown in a list view. For general information on data sources, see [Data Sources](/refguide10/data-sources/).
 
 #### Type
 
 The list view supports the following types of data sources: 
 
-* [Database source](/refguide/database-source/) – objects are retrieved directly form the database. The database source can be used in [offline](/refguide/offline-first/) applications. 
-* [XPath source](/refguide/xpath-source/) – objects are retrieved directly form the database
+* [Database source](/refguide10/database-source/) – objects are retrieved directly form the database. The database source can be used in [offline](/refguide10/offline-first/) applications. 
+* [XPath source](/refguide10/xpath-source/) – objects are retrieved directly form the database
 {{% alert color="info" %}}
 From Mendix version 10.5, the list view does not have a separate XPath source, you can apply XPath constraints to the **Database** source.
 {{% /alert %}}
-* [Microflow source](/refguide/microflow-source/) – calculates the list of objects by executing a microflow
-* [Nanoflow source](/refguide/nanoflow-source/) – calculates the list of objects by executing a nanoflow
-* [Association source](/refguide/association-source/) – follows an association to get to objects
+* [Microflow source](/refguide10/microflow-source/) – calculates the list of objects by executing a microflow
+* [Nanoflow source](/refguide10/nanoflow-source/) – calculates the list of objects by executing a nanoflow
+* [Association source](/refguide10/association-source/) – follows an association to get to objects
 
 The database and, below version 10.5, XPath sources retrieve objects from the database and supports searching and sorting. 
 
@@ -65,7 +65,7 @@ The database and, below version 10.5, XPath sources retrieve objects from the da
 
 ### Design Properties Section{#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### General Section {#general}
 
@@ -75,7 +75,7 @@ If this property is set to *Yes*, items in the list view can be edited. The chan
 
 #### On Click {#on-click}
 
-An on-click event defines what action is performed when a user clicks a list view row. For more information on on-click events, see [On Click Event](/refguide/on-click-event/). 
+An on-click event defines what action is performed when a user clicks a list view row. For more information on on-click events, see [On Click Event](/refguide10/on-click-event/). 
 
 #### Page Size {#page-size}
 
@@ -117,7 +117,7 @@ Now if there is a row of type Bicycle the template specific for bicycles will be
 
 ### Visibility Section {#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ## Performing Specific Actions
 
@@ -129,7 +129,7 @@ To perform actions on a list view, select it on a page and right-click it. The l
 
 ## Read More
 
-* [Page](/refguide/page/)
-* [Data Containers](/refguide/data-widgets/)
-* [Data Sources](/refguide/data-sources/)
-* [Properties Common in the Page Editor](/refguide/common-widget-properties/)
+* [Page](/refguide10/page/)
+* [Data Containers](/refguide10/data-widgets/)
+* [Data Sources](/refguide10/data-sources/)
+* [Properties Common in the Page Editor](/refguide10/common-widget-properties/)

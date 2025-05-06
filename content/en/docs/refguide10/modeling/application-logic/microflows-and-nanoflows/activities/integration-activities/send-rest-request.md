@@ -1,12 +1,12 @@
 ---
 title: "Send REST Request"
-url: /refguide/send-rest-request/
+url: /refguide10/send-rest-request/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-The **Send REST request** activity allows you to send a REST request, which is configured in a [Consumed REST Service](/refguide/consumed-rest-service/) document.
+The **Send REST request** activity allows you to send a REST request, which is configured in a [Consumed REST Service](/refguide10/consumed-rest-service/) document.
 
 {{< figure src="/attachments/refguide10/modeling/application-logic/microflows-and-nanoflows/activities/integration-activities/send-rest-request/rest-microflow.png" class="no-border" >}}
 

@@ -1,6 +1,6 @@
 ---
 title: "End-of Date Function Calls"
-url: /refguide/end-of-date-function-calls/
+url: /refguide10/end-of-date-function-calls/
 weight: 98
 description: Describes end-of date function calls in Studio Pro expressions.
 ---
@@ -9,9 +9,9 @@ description: Describes end-of date function calls in Studio Pro expressions.
 
 End-of date function calls calculate the end of the day, week, month, or year and return the value.
 
-The first parameter can be an attribute of an entity of type **Date and time**, a variable of type **Date and time**, or a **Date and time** value created using a [Date Creation](/refguide/date-creation/) function.
+The first parameter can be an attribute of an entity of type **Date and time**, a variable of type **Date and time**, or a **Date and time** value created using a [Date Creation](/refguide10/date-creation/) function.
 
-You can also calculate the end of a time period from the specified date. For more information, see [Begin-of Date Function Calls](/refguide/begin-of-date-function-calls/).
+You can also calculate the end of a time period from the specified date. For more information, see [Begin-of Date Function Calls](/refguide10/begin-of-date-function-calls/).
 
 ## endOfDay {#endOfDay}
 
@@ -143,5 +143,5 @@ The output is:
 
 ## Read More
 
-* [Date Creation](/refguide/date-creation/)
-* [Begin-of Date Function Calls](/refguide/begin-of-date-function-calls/)
+* [Date Creation](/refguide10/date-creation/)
+* [Begin-of Date Function Calls](/refguide10/begin-of-date-function-calls/)

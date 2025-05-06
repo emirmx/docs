@@ -1,6 +1,6 @@
 ---
 title: "Denormalize Data to Improve Performance"
-url: /howto/data-models/denormalize-data-to-improve-performance/
+url: /howto10/data-models/denormalize-data-to-improve-performance/
 weight: 6
 description: "Describes how to denormalize data and keep denormalized data in sync in Studio Pro."
 ---
@@ -18,7 +18,7 @@ This how-to teaches you how to do the following:
 
 Before starting this how-to, make sure you have completed the following prerequisites:
 
-* [Configure a domain model](/refguide/configuring-a-domain-model/)
+* [Configure a domain model](/refguide10/configuring-a-domain-model/)
 
 ## Denormalization
 
@@ -29,7 +29,7 @@ To show the total order amount, there are two options:
 * First option: create a calculated attribute in the Customer entity to compute the total order amount
     * The drawback of this option is that the calculated attributes bring down the performance of overview pages
 * Second option: create a persistable attribute in the Customer entity that stores the total order amount in the database – this is called denormalization
-    * The drawback of this option is that the redundant data needs to be kept in sync (but this is easy with Mendix [event handlers](/refguide/event-handlers/))
+    * The drawback of this option is that the redundant data needs to be kept in sync (but this is easy with Mendix [event handlers](/refguide10/event-handlers/))
 
 To enable denormalization, follow these steps:
 
@@ -143,10 +143,10 @@ Now the application is ready to store redundant data, but you still need to keep
 
 ## Read More
 
-* [Configuring a Domain Model](/refguide/configuring-a-domain-model/)
-* [Setting Up Data Validation](/refguide/setting-up-data-validation/)
-* [Find the Root Cause of Runtime Errors](/howto/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
+* [Configuring a Domain Model](/refguide10/configuring-a-domain-model/)
+* [Setting Up Data Validation](/refguide10/setting-up-data-validation/)
+* [Find the Root Cause of Runtime Errors](/howto10/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
 * [Epics](/developerportal/project-management/epics/)
-* [Defining Access Rules Using XPath](/refguide/define-access-rules-using-xpath/)
-* [Attributes](/refguide/attributes/)
-* [Event Handlers](/refguide/event-handlers/)
+* [Defining Access Rules Using XPath](/refguide10/define-access-rules-using-xpath/)
+* [Attributes](/refguide10/attributes/)
+* [Event Handlers](/refguide10/event-handlers/)

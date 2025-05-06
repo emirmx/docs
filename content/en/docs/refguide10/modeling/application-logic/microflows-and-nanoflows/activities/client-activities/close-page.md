@@ -1,12 +1,12 @@
 ---
 title: "Close Page"
-url: /refguide/close-page/
+url: /refguide10/close-page/
 weight: 10
 aliases:
-    - /refguide/Close+Form.html
-    - /refguide/close-form.html
-    - /refguide/Close+Form
-    - /refguide/close-form
+    - /refguide10/Close+Form.html
+    - /refguide10/close-form.html
+    - /refguide10/Close+Form
+    - /refguide10/close-form
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -15,7 +15,7 @@ This activity can be used in both microflows and nanoflows.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-This action is ignored and does not work when a microflow is called from an offline or native app. For more information, see the [Microflows](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/#microflows) section of *Offline Best Practices*.
+This action is ignored and does not work when a microflow is called from an offline or native app. For more information, see the [Microflows](/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/#microflows) section of *Offline Best Practices*.
 {{% /alert %}}
 
 ## Introduction
@@ -50,9 +50,9 @@ This property allows you to control how many pages should be closed.
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}
 
 ## Read More
 
-* [Show Page](/refguide/show-page/)
-* [Native Navigation](/refguide/native-navigation/)
+* [Show Page](/refguide10/show-page/)
+* [Native Navigation](/refguide10/native-navigation/)

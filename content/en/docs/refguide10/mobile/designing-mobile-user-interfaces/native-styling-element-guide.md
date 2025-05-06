@@ -1,17 +1,17 @@
 ---
 title: "Widget Styling Guide"
-url: /refguide/mobile/designing-mobile-user-interfaces/widget-styling-guide/
+url: /refguide10/mobile/designing-mobile-user-interfaces/widget-styling-guide/
 weight: 45
 description: "This guide will contextualize the style elements Mendix uses in native mobile apps, as well as explain the classes and style properties of Mendix’s widgets."
 aliases:
-    - /refguide/native-styling-refguide/
+    - /refguide10/native-styling-refguide/
 ---
 
 ## Introduction {#native-mobile-styling}
 
-This guide will contextualize the style elements Mendix uses in native mobile apps, as well as explain the classes and style properties of Mendix’s widgets. To learn the basics of native styling, you can consult [Designing Mobile User Interfaces](/refguide/mobile/designing-mobile-user-interfaces/).
+This guide will contextualize the style elements Mendix uses in native mobile apps, as well as explain the classes and style properties of Mendix’s widgets. To learn the basics of native styling, you can consult [Designing Mobile User Interfaces](/refguide10/mobile/designing-mobile-user-interfaces/).
 
-Mendix apps use layouts to dictate how pages can look and function. For native mobile apps specifically, you can use a native layout to easily integrate navigation and settings optimized for native functionality. For more information on layouts, see [Layout](/refguide/layout/).
+Mendix apps use layouts to dictate how pages can look and function. For native mobile apps specifically, you can use a native layout to easily integrate navigation and settings optimized for native functionality. For more information on layouts, see [Layout](/refguide10/layout/).
 
 To keep widgets responsive, Mendix apps use Flexbox. Using Flexbox, a component can set the layout of its child components. This allows your app to retain a consistent layout across multiple form factors. For more information on layout, see React Native’s [Flexbox documentation](https://reactnative.dev/docs/flexbox).
 
@@ -74,7 +74,7 @@ export const com_mendix_widget_native_badge_Badge = (Badge = {
 });
 ```
 
-For more information on creating your own classes, see the [Creating Your Own Classes](/refguide/mobile/designing-mobile-user-interfaces/native-styling/#creating-your-own-classes) section in *Style Your Mendix Native Mobile App*. That document also shows how to use custom classes as design properties.
+For more information on creating your own classes, see the [Creating Your Own Classes](/refguide10/mobile/designing-mobile-user-interfaces/native-styling/#creating-your-own-classes) section in *Style Your Mendix Native Mobile App*. That document also shows how to use custom classes as design properties.
 
 ## Data Containers {#understanding-data-widgets}
 
@@ -82,11 +82,11 @@ Data containers are essential to many Mendix apps. These widgets will allow your
 
 ### Data View Widget
 
-The data view widget shows the contents of one data object. For more information about this widget, see [Data View](/refguide/data-view/).This widget has no user interface, so it does not support any styling.
+The data view widget shows the contents of one data object. For more information about this widget, see [Data View](/refguide10/data-view/).This widget has no user interface, so it does not support any styling.
 
 ### List View Widget {#list-view}
 
-The list view shows a list of objects arranged vertically or horizontally. For more information about this widget, see [List View](/refguide/list-view/). This is not the default list view, but how a list view widget could look in an app:
+The list view shows a list of objects arranged vertically or horizontally. For more information about this widget, see [List View](/refguide10/list-view/). This is not the default list view, but how a list view widget could look in an app:
 
 {{< figure src="/attachments/refguide10/mobile/native-mobile/native-styling-refguide/list-view.png" alt="list view"   width="350"  class="no-border" >}}
 
@@ -126,7 +126,7 @@ Text widgets are used in almost all app pages. Because of their ubiquity, learni
 
 ### Text
 
-The text widget shows text which can optionally contain parameters. For more information on these widgets, see [Text Widgets](/refguide/text/). 
+The text widget shows text which can optionally contain parameters. For more information on these widgets, see [Text Widgets](/refguide10/text/). 
 
 ```javascript
 export const Text = {
@@ -150,7 +150,7 @@ The default class to style all texts is named `Text`.
 
 ### Page Title 
 
-The page title widget shows the title of the page on which it is used. This can be the title defined on the page itself, or the override title defined when showing a page. For more information on this widget, consult [Page Title](/refguide/page-title/). 
+The page title widget shows the title of the page on which it is used. This can be the title defined on the page itself, or the override title defined when showing a page. For more information on this widget, consult [Page Title](/refguide10/page-title/). 
 
 ```javascript
 export const PageTitle = {
@@ -174,7 +174,7 @@ The default class to style all page titles is named `PageTitle`.
 
 ## Structure Widgets
 
-Structure widgets are a set of tools that allow you to provide structure for your page’s content. There is also a specific widget called container widget detailed below. For more information on these widgets, see [Structure](/refguide/structure-widgets/).
+Structure widgets are a set of tools that allow you to provide structure for your page’s content. There is also a specific widget called container widget detailed below. For more information on these widgets, see [Structure](/refguide10/structure-widgets/).
 
 ### Layout Grid
 
@@ -296,7 +296,7 @@ The default class to style all scroll containers is named `ScrollContainer`.
 
 ## Input Elements
 
-Input elements are typically used to show data to the user and allow them to edit data. For more information on these widgets, see [Input Elements](/refguide/input-widgets/).
+Input elements are typically used to show data to the user and allow them to edit data. For more information on these widgets, see [Input Elements](/refguide10/input-widgets/).
 
 ### Text Box {#text-box}
 
@@ -633,13 +633,13 @@ The default class to style all date picker inputs is named `DatePicker`.
 
 ### Reference selector
 
-The reference selector is an input widget that can be used to display and edit associations. For more information on this widget, see [Reference Selector](/refguide/reference-selector/). This widget supports the same style properties and structure as the [drop-down](#drop-down) widget above.
+The reference selector is an input widget that can be used to display and edit associations. For more information on this widget, see [Reference Selector](/refguide10/reference-selector/). This widget supports the same style properties and structure as the [drop-down](#drop-down) widget above.
 
 The default class to style all reference selector inputs is named `ReferenceSelector`.
 
 ## Images, Videos, and Files
 
-Images, videos, and files help your user app manage images and other files. For more information on these widgets, see [Images, Videos, and Files](/refguide/image-and-file-widgets/).
+Images, videos, and files help your user app manage images and other files. For more information on these widgets, see [Images, Videos, and Files](/refguide10/image-and-file-widgets/).
 
 ### Image (#new-image)
 
@@ -667,7 +667,7 @@ export const com_mendix_widget_native_image_Image = {
 
 ### Static Image {#image}
 
-The static image widget can be used to show a predefined image on a page, layout, or snippet. For more information on this widgets, see [Static Image](/refguide/image/). 
+The static image widget can be used to show a predefined image on a page, layout, or snippet. For more information on this widgets, see [Static Image](/refguide10/image/). 
 
 ```javascript
 export const Image = {
@@ -707,7 +707,7 @@ The default class to style all dynamic images is named `NativeDynamicImage`.
 
 ## Buttons
 
-Buttons help your user perform actions. For more information about these widgets, see [Buttons](/refguide/button-widgets/).
+Buttons help your user perform actions. For more information about these widgets, see [Buttons](/refguide10/button-widgets/).
 
 ### Action Button
 
@@ -2486,5 +2486,5 @@ The default class to style all gallery text filter widgets is named `com_mendix_
 
 ## Read More
 
-* [Native Styling](/refguide/mobile/designing-mobile-user-interfaces/native-styling/)
+* [Native Styling](/refguide10/mobile/designing-mobile-user-interfaces/native-styling/)
 * [Design Properties Documentation](/apidocs-mxsdk/apidocs/design-properties/)

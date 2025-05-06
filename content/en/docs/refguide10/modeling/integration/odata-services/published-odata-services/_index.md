@@ -1,13 +1,13 @@
 ---
 title: "Published OData/GraphQL Services"
-url: /refguide/published-odata-services/
+url: /refguide10/published-odata-services/
 weight: 10
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-In Studio Pro, [entities](/refguide/published-odata-entity/) and [microflows](/refguide/published-odata-microflow/) by adding them to a published OData/GraphQL service. You can publish any number of related entities and microflows.
+In Studio Pro, [entities](/refguide10/published-odata-entity/) and [microflows](/refguide10/published-odata-microflow/) by adding them to a published OData/GraphQL service. You can publish any number of related entities and microflows.
 
 A published OData service is a REST service with an OpenAPI contract, which means that OpenAPI compatible REST clients can easily interact with it. 
 
@@ -62,19 +62,19 @@ GraphQL support was introduced in [Studio Pro 10.14.0](/releasenotes/studio-pro/
 
 Default: **No**
 
-Choose **Yes** to publish the entities in a GraphQL service. This allows clients to send GraphQL `POST` requests to the location of the service. The service responds with the requested entity data in JSON format. This option is available when the [GraphQL feature](/refguide/preferences-dialog/#graphql) is enabled or when the value is **Yes**.
+Choose **Yes** to publish the entities in a GraphQL service. This allows clients to send GraphQL `POST` requests to the location of the service. The service responds with the requested entity data in JSON format. This option is available when the [GraphQL feature](/refguide10/preferences-dialog/#graphql) is enabled or when the value is **Yes**.
 
 {{% alert color="warning" %}}
 Enabling GraphQL on a service that publishes OData v3 is not supported.
 {{% /alert %}}
 
-See [Supported GraphQL Operations](/refguide/supported-graphql-operations/) for an overview of the operations of the resulting GraphQL service.
+See [Supported GraphQL Operations](/refguide10/supported-graphql-operations/) for an overview of the operations of the resulting GraphQL service.
 
 Not all features that you can model in a published OData/GraphQL service are supported through GraphQL. See [GraphQL Limitations](#graphql-limitations) for more details.
 
 ### Entities
 
-This list gives an overview of all [published entities](/refguide/published-odata-entity/).
+This list gives an overview of all [published entities](/refguide10/published-odata-entity/).
 
 #### Entity Details
 
@@ -82,7 +82,7 @@ This list gives an overview of all published attributes and associations.
 
 ### Enumerations
 
-This list gives an overview of all [enumerations](/refguide/enumerations/) that are published by the service (for OData v4 only). When a published entity has an attribute with an enumeration type then the enumeration appears in this list. The list does not appear when there are no published enumerations. There is no need to add enumerations yourself, because Studio Pro will add them when needed.
+This list gives an overview of all [enumerations](/refguide10/enumerations/) that are published by the service (for OData v4 only). When a published entity has an attribute with an enumeration type then the enumeration appears in this list. The list does not appear when there are no published enumerations. There is no need to add enumerations yourself, because Studio Pro will add them when needed.
 
 Click **Edit** to change the exposed name of the enumeration (the name as it appears to clients of the service) and to provide documentation.
 
@@ -96,11 +96,11 @@ Use the **Refresh** button when the enumeration values have changed to update th
 
 ### Microflows
 
-This list gives an overview of all microflows published as [OData actions](/refguide/published-odata-microflow/).
+This list gives an overview of all microflows published as [OData actions](/refguide10/published-odata-microflow/).
 
 ### Parameters
 
-This list gives an overview of the [parameters](/refguide/published-odata-microflow/#pub-odata-mflow-parameters) of a selected microflow.
+This list gives an overview of the [parameters](/refguide10/published-odata-microflow/#pub-odata-mflow-parameters) of a selected microflow.
 
 ## Settings
 
@@ -116,7 +116,7 @@ In OData, the namespace is used to refer to data types. You can customize this n
 
 #### Associations
 
-You can select how you want to represent associations. For more information, see the [Associations](/refguide/odata-representation/#associations) section of *OData Representation*.
+You can select how you want to represent associations. For more information, see the [Associations](/refguide10/odata-representation/#associations) section of *OData Representation*.
 
 #### Include Metadata in Response by Default
 
@@ -150,16 +150,16 @@ The GraphQL schema describes the queries and types exposed by this GraphQL servi
 
 ### Security {#security}
 
-You can configure security for the OData/GraphQL service when [App Security](/refguide/app-security/) is enabled.
+You can configure security for the OData/GraphQL service when [App Security](/refguide10/app-security/) is enabled.
 
 #### Requires Authentication {#authentication}
 
 Select whether clients need to authenticate or not. Select **No** to allow access to the service without restrictions. Select **Yes** to be able to select which authentication methods to support.
 
-Even when you choose **Yes**, you can still expose the service to anonymous users. For detailed information on allowing anonymous users, see [Anonymous User Role](/refguide/anonymous-users/).
+Even when you choose **Yes**, you can still expose the service to anonymous users. For detailed information on allowing anonymous users, see [Anonymous User Role](/refguide10/anonymous-users/).
 
 {{% alert color="info" %}}
-The **Authentication** section of a published OData/GraphQL service is only visible when you have enabled [app security](/refguide/app-security/).
+The **Authentication** section of a published OData/GraphQL service is only visible when you have enabled [app security](/refguide10/app-security/).
 {{% /alert %}}
 
 #### Authentication Methods {#authentication-methods}
@@ -203,9 +203,9 @@ Support for using a list of `System.HttpHeader` in authentication microflows was
 
 Specify which microflow to use for custom authentication. The microflow may take the following as a parameter:
 
-* A list of [HttpHeader](/refguide/http-request-and-response-entities/#http-header). These are the HTTP headers in the client's request. Use this parameter for authentication schemes that are based on HTTP headers.
-* [HttpRequest](/refguide/http-request-and-response-entities/#http-request). Use this parameter for authentication schemes that are based on more than just the HTTP headers (for example, when the client supplies credentials in the request body). You cannot use this parameter together with a list of HttpHeader. Instead, use a [retrieve activity](/refguide/retrieve/) to retrieve the associated request headers.
-* [HttpResponse](/refguide/http-request-and-response-entities/#http-response). When the microflow sets the status code of this response to something other then **200**, this value is returned and the operation will not be executed. Any headers set on the response are returned (except when the microflow returns an empty user).
+* A list of [HttpHeader](/refguide10/http-request-and-response-entities/#http-header). These are the HTTP headers in the client's request. Use this parameter for authentication schemes that are based on HTTP headers.
+* [HttpRequest](/refguide10/http-request-and-response-entities/#http-request). Use this parameter for authentication schemes that are based on more than just the HTTP headers (for example, when the client supplies credentials in the request body). You cannot use this parameter together with a list of HttpHeader. Instead, use a [retrieve activity](/refguide10/retrieve/) to retrieve the associated request headers.
+* [HttpResponse](/refguide10/http-request-and-response-entities/#http-response). When the microflow sets the status code of this response to something other then **200**, this value is returned and the operation will not be executed. Any headers set on the response are returned (except when the microflow returns an empty user).
 
 The authentication microflow should return a User.
 
@@ -226,7 +226,7 @@ To set up authentication with Mendix SSO, do the following:
 
 #### Allowed Roles
 
-The allowed roles define which [module role](/refguide/module-security/#module-role) a user must have to be able to access the service. This option is only available when **Requires authentication** is set to **Yes**.
+The allowed roles define which [module role](/refguide10/module-security/#module-role) a user must have to be able to access the service. This option is only available when **Requires authentication** is set to **Yes**.
 
 {{% alert color="warning" %}}
 Web service users cannot access OData/GraphQL services.
@@ -268,9 +268,9 @@ Once your app is published, a list of the published OData services will be avail
 While the API documentation for published OData services is enabled by default, access to it may be restricted by the administrator for apps running in production.
 {{% /alert %}}
 
-For details on how to filter the OData response, refer to [Supported OData Operations](/refguide/supported-odata-operations/#filtering).
+For details on how to filter the OData response, refer to [Supported OData Operations](/refguide10/supported-odata-operations/#filtering).
 
-For details on how Mendix attributes are represented in OData, refer to [OData Representation](/refguide/odata-representation/).
+For details on how Mendix attributes are represented in OData, refer to [OData Representation](/refguide10/odata-representation/).
 
 When publishing entities through OData, the entities are retrieved from the Mendix database in a streaming fashion to avoid out-of-memory errors in the Mendix Runtime.
 
@@ -292,28 +292,28 @@ Responses to GraphQL requests return `200` when the server understands the reque
 
 ## Publishing CRUD
 
-To publish an entity with full CRUD (Create, Read, Update, or Delete functionality; or in Studio Pro, **Insertable**, **Readable**, **Updateable**, and **Deletable**), select the relevant checkboxes in the [Capabilities](/refguide/published-odata-entity/#capabilities) section in [Published OData Entity](/refguide/published-odata-entity/). You can then [Send](/refguide/send-external-object/) and [Delete](/refguide/delete-external-object/) objects using [External Object activities](/refguide/external-object-activities/). 
+To publish an entity with full CRUD (Create, Read, Update, or Delete functionality; or in Studio Pro, **Insertable**, **Readable**, **Updateable**, and **Deletable**), select the relevant checkboxes in the [Capabilities](/refguide10/published-odata-entity/#capabilities) section in [Published OData Entity](/refguide10/published-odata-entity/). You can then [Send](/refguide10/send-external-object/) and [Delete](/refguide10/delete-external-object/) objects using [External Object activities](/refguide10/external-object-activities/). 
 
 ## Limitations
 
 ### OData Limitations
 
-Studio Pro currently does not support publishing media entities with OData services. To learn about consuming media entities with OData, see the [Binary Attributes](/refguide/consumed-odata-service-requirements/#binary-attributes) section of *Consumed OData Service Requirements*. You can also [Publish and Retrieve Images and Files with REST](/refguide/send-receive-files-rest/).
+Studio Pro currently does not support publishing media entities with OData services. To learn about consuming media entities with OData, see the [Binary Attributes](/refguide10/consumed-odata-service-requirements/#binary-attributes) section of *Consumed OData Service Requirements*. You can also [Publish and Retrieve Images and Files with REST](/refguide10/send-receive-files-rest/).
 
 ### GraphQL Limitations {#graphql-limitations}
 
-A service that [supports GraphQL](#supports-graphql) does not support all of the modeling features available for OData services. See [Supported GraphQL Operations](/refguide/supported-graphql-operations/) for an overview of what clients can retrieve when you publish an entity.
+A service that [supports GraphQL](#supports-graphql) does not support all of the modeling features available for OData services. See [Supported GraphQL Operations](/refguide10/supported-graphql-operations/) for an overview of what clients can retrieve when you publish an entity.
 
 The following modeling options are limited in the GraphQL service:
 
 * Published microflows are ignored.
-* The insertable, updatable, and deletable [capabilities](/refguide/published-odata-entity/#capabilities) values have no effect, because GraphQL services are read-only.
-* Entities that are not [readable](/refguide/published-odata-entity/#readable) are not part of the GraphQL service.
-* Entities without a [key](/refguide/published-odata-entity/#key) are not part of the GraphQL service.
-* The [Use paging](/refguide/published-odata-entity/#paging) setting has no effect.
+* The insertable, updatable, and deletable [capabilities](/refguide10/published-odata-entity/#capabilities) values have no effect, because GraphQL services are read-only.
+* Entities that are not [readable](/refguide10/published-odata-entity/#readable) are not part of the GraphQL service.
+* Entities without a [key](/refguide10/published-odata-entity/#key) are not part of the GraphQL service.
+* The [Use paging](/refguide10/published-odata-entity/#paging) setting has no effect.
 * Published `ID` attributes are ignored.
 * Published `owner` and `changedBy` system associations are ignored.
-* Enumerations [exposed as](/refguide/published-odata-attribute/#exposed-as) a string are ignored.
+* Enumerations [exposed as](/refguide10/published-odata-attribute/#exposed-as) a string are ignored.
 * Binary attributes are ignored.
 * A published OData service that publishes associations as an associated object ID cannot support GraphQL.
 * The GraphQL endpoint is not part of the OpenAPI document.  

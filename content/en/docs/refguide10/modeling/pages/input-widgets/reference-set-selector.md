@@ -1,19 +1,19 @@
 ---
 title: "Reference Set Selector"
-url: /refguide/reference-set-selector/
+url: /refguide10/reference-set-selector/
 weight: 80
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 {{% alert color="warning" %}}The **reference set selector** widget is not supported on native mobile pages. 
 
-To upgrade it to a React-compliant widget which works on a native page, see the Mendix React Client's [Migration Guide](/refguide/mendix-client/react/#migration-guide).{{% /alert %}}
+To upgrade it to a React-compliant widget which works on a native page, see the Mendix React Client's [Migration Guide](/refguide10/mendix-client/react/#migration-guide).{{% /alert %}}
 
 ## Introduction
 
-A **reference set selector** is used to allow the end-user to display or select the value (or values) of a many-to-many (reference set) [association](/refguide/associations/) by selecting the associated object (or objects).
+A **reference set selector** is used to allow the end-user to display or select the value (or values) of a many-to-many (reference set) [association](/refguide10/associations/) by selecting the associated object (or objects).
 
-A reference set selector must be placed in a [data container](/refguide/data-widgets/).
+A reference set selector must be placed in a [data container](/refguide10/data-widgets/).
 
 For example, you could group customers into groups, and each customer could belong to several groups. Each Group can have many customers. The entities **Customer** and **Group** have a many-to-many (reference set) relationship. A reference set selector can be used to select the groups the customer belongs to.
 
@@ -27,15 +27,15 @@ To allow you to both add a Group to a Customer, and add a Customer to a Group, y
 
 {{< figure src="/attachments/refguide10/modeling/pages/input-widgets/reference-set-selector/domain-model-owner-both.png" alt="The domain model for a reference set selector between Customer (parent) and Group where the owner is 'both' (as in, the Customer and Group refer to each other)" class="no-border" >}}
 
-In the reference set selector, the related entity and association used to connect it to the entity in the data view are displayed at the top of the reference set selector, and the names of the attributes of the associated objects which will be displayed are shown inside the reference set selector. Each attribute is displayed in a [grid column](/refguide/columns/). The association and related entity and attributes are displayed between square brackets, and colored blue.
+In the reference set selector, the related entity and association used to connect it to the entity in the data view are displayed at the top of the reference set selector, and the names of the attributes of the associated objects which will be displayed are shown inside the reference set selector. Each attribute is displayed in a [grid column](/refguide10/columns/). The association and related entity and attributes are displayed between square brackets, and colored blue.
 
 For example, using the domain model above, the following reference set selector allows the end-user to associate a Customer with one or more Groups by setting the association **Customer_Group**. This is done by selecting the **Name** of the **Group** associated with the current **Customer**.
 
 {{< figure src="/attachments/refguide10/modeling/pages/input-widgets/reference-set-selector/reference-set-selector.png" class="no-border" >}}
 
-The reference set selector looks a lot like a [data grid](/refguide/data-grid/) and consequently shares many properties with it. The main differences are that the reference set selector lacks a search bar and that it has **Add** and **Remove** buttons instead of **New** and **Delete**. This is because they perform slightly different functions:
+The reference set selector looks a lot like a [data grid](/refguide10/data-grid/) and consequently shares many properties with it. The main differences are that the reference set selector lacks a search bar and that it has **Add** and **Remove** buttons instead of **New** and **Delete**. This is because they perform slightly different functions:
 
-* The **Add** button adds an association to an existing object. You will need to specify the page which opens when you want to add a new association. For more information, see [Add Button](/refguide/control-bar/#add-button).
+* The **Add** button adds an association to an existing object. You will need to specify the page which opens when you want to add a new association. For more information, see [Add Button](/refguide10/control-bar/#add-button).
 * The **Remove** button removes the association to an object, but does not change or delete the object itself
 
 {{% alert color="info" %}}
@@ -62,9 +62,9 @@ Styling:
 
 There are additional sets of properties which do not appear in the properties of the reference set selector widget.
 
-1. The control bar contains the buttons needed to search, add, and remove associations. For more information see [Control Bar](/refguide/control-bar/).
+1. The control bar contains the buttons needed to search, add, and remove associations. For more information see [Control Bar](/refguide10/control-bar/).
 
-2. Each attribute is displayed in a column. You can find out more about the properties of these columns in [Grid Columns](/refguide/columns/)
+2. Each attribute is displayed in a column. You can find out more about the properties of these columns in [Grid Columns](/refguide10/columns/)
 
 ## Properties
 
@@ -99,14 +99,14 @@ Default: *False*
 
 A tooltip page is a page that appears when you hover your mouse over a row. The tooltip page must contain a data view on the same entity as the data grid.
 
-The tooltip will only be shown for the columns you specify. The default for each column is that the tooltip will *not* appear. See [Grid Columns](/refguide/columns/) for more information.
+The tooltip will only be shown for the columns you specify. The default for each column is that the tooltip will *not* appear. See [Grid Columns](/refguide10/columns/) for more information.
 
 #### Show Control Bar {#show-control-bar}
 
-This property indicates whether the control bar will be visible in the end-user interface. The control bar also includes the paging buttons. See [Control Bar](/refguide/control-bar/) for more information.
+This property indicates whether the control bar will be visible in the end-user interface. The control bar also includes the paging buttons. See [Control Bar](/refguide10/control-bar/) for more information.
 
 {{% alert color="warning" %}}
-Even if the control bar is invisible there can still be a default button that is triggered by (double) clicking on a row. See the property 'Default button trigger' and [control bar](/refguide/control-bar/) for more information.
+Even if the control bar is invisible there can still be a default button that is triggered by (double) clicking on a row. See the property 'Default button trigger' and [control bar](/refguide10/control-bar/) for more information.
 {{% /alert %}}
 
 Default: *True*
@@ -159,7 +159,7 @@ The default button can be triggered by single- or double-clicking a row.
 
 ### Data Source Section {#data-source}
 
-{{% snippet file="/static/_includes/refguide/data-source-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/data-source-section-link.md" %}}
 
 The attribute path specifies which attribute (or attributes) of an associated entity is shown in the reference set selector. The path must follow one association of type reference set starting in the entity of the data view.
 
@@ -169,19 +169,19 @@ You cannot currently use non-persistable entities in a reference set selector.
 
 ### Visibility Section {#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ### Events Section {#events}
 
 The on-change property specifies an action that will be executed when leaving the widget, either by using the <kbd>Tab</kbd> key or by clicking another widget, after the value has been changed.
 
-{{% snippet file="/static/_includes/refguide/events-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/events-section-link.md" %}}
 
 ### Common Section{#common}
 
-The rows of the reference set selector can be sorted using the `Sort order` property. It is only available for **Database** [data sources](#data-source). For more information on sorting, see [Sort Order](/refguide/sort-order/).
+The rows of the reference set selector can be sorted using the `Sort order` property. It is only available for **Database** [data sources](#data-source). For more information on sorting, see [Sort Order](/refguide10/sort-order/).
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### Selectable Objects Section {#selectable-objects}
 
@@ -192,7 +192,7 @@ The **Source** property sets the way to define the selectable objects:
 * Database *(default)*
 * XPath
 
-For more information, see the [Selectable Objects Section](/refguide/reference-selector/#selectable-objects) section of *Reference Selector*.
+For more information, see the [Selectable Objects Section](/refguide10/reference-selector/#selectable-objects) section of *Reference Selector*.
 
 {{% alert color="info" %}}
 You cannot use a microflow to define selectable objects in a reference set selector.
@@ -202,15 +202,15 @@ You cannot use a microflow to define selectable objects in a reference set selec
 
 ### Design Properties Section {#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}}
 
 ### Common Section{#common-styling}
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ## Read More
 
-* [Data view](/refguide/data-view/)
-* [Entities](/refguide/entities/)
-* [Associations](/refguide/associations/)
-* [Control Bar](/refguide/control-bar/)
+* [Data view](/refguide10/data-view/)
+* [Entities](/refguide10/entities/)
+* [Associations](/refguide10/associations/)
+* [Control Bar](/refguide10/control-bar/)

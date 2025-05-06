@@ -1,9 +1,9 @@
 ---
 title: "Import XML Documents"
-url: /refguide/importing-xml-documents/
+url: /refguide10/importing-xml-documents/
 weight: 3
 description: "Describes how to prepare the data structure and GUI, add an XML schema, and create XML-to-domain mapping."
-aliases: /howto/integration/importing-xml-documents/
+aliases: /howto10/integration/importing-xml-documents/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -21,10 +21,10 @@ This how-to teaches you how to do the following:
 
 Before you continue, make sure that you know how to create:
 
-* Domain models (see [Configuring a Domain Model](/refguide/configuring-a-domain-model/))
-* A custom file document (see [File Manager](/refguide/file-manager/))
-* Overview and detail pages (see [How to Create Your First Two Overview and Detail Pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/))
-* Menu items (see [Setting Up Navigation](/refguide/setting-up-the-navigation-structure/))
+* Domain models (see [Configuring a Domain Model](/refguide10/configuring-a-domain-model/))
+* A custom file document (see [File Manager](/refguide10/file-manager/))
+* Overview and detail pages (see [How to Create Your First Two Overview and Detail Pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/))
+* Menu items (see [Setting Up Navigation](/refguide10/setting-up-the-navigation-structure/))
 
 ## Preparing the Data Structure and GUI
 
@@ -43,7 +43,7 @@ To prepare the data structure and the GUI, follow these steps:
     {{< figure src="/attachments/refguide10/modeling/integration/export-xml-documents/18581650.png" class="no-border" >}}
 
 5. Create the overview and detail pages to manage objects of the **XMLDocument** type.
-6. Create a menu item to access the XML document overview page (for more information, see [Setting Up Navigation](/refguide/setting-up-the-navigation-structure/)).
+6. Create a menu item to access the XML document overview page (for more information, see [Setting Up Navigation](/refguide10/setting-up-the-navigation-structure/)).
 
 ## Adding an XML Schema (XSD)
 
@@ -147,10 +147,10 @@ To import the XML file, follow these steps:
 
 ## Read More
 
-* [How to Consume a Complex Web Service](/howto/integration/consume-a-complex-web-service/)
-* [How to Consume a Simple Web Service](/howto/integration/consume-a-simple-web-service/)
-* [How to Export XML Documents](/howto/integration/export-xml-documents/)
-* [How to Expose a Web Service](/howto/integration/expose-a-web-service/)
-* [How to Handle Selenium Support](/howto/integration/selenium-support/)
-* [How to Consume a REST Service](/howto/integration/consume-a-rest-service/)
-* [How to Expose Data to BI Tools Using OData](/howto/integration/exposing-data-to-bi-tools-using-odata/) 
+* [How to Consume a Complex Web Service](/howto10/integration/consume-a-complex-web-service/)
+* [How to Consume a Simple Web Service](/howto10/integration/consume-a-simple-web-service/)
+* [How to Export XML Documents](/howto10/integration/export-xml-documents/)
+* [How to Expose a Web Service](/howto10/integration/expose-a-web-service/)
+* [How to Handle Selenium Support](/howto10/integration/selenium-support/)
+* [How to Consume a REST Service](/howto10/integration/consume-a-rest-service/)
+* [How to Expose Data to BI Tools Using OData](/howto10/integration/exposing-data-to-bi-tools-using-odata/) 

@@ -1,6 +1,6 @@
 ---
 title: "Java Memory Usage"
-url: /refguide/java-memory-usage/
+url: /refguide10/java-memory-usage/
 weight: 2
 ---
 

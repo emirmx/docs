@@ -1,6 +1,6 @@
 ---
 title: "Retrieve"
-url: /refguide/retrieve/
+url: /refguide10/retrieve/
 weight: 60
 #To update screenshots of these microflows in Studio Pro, use the Microflow Screenshots app.
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
@@ -42,7 +42,7 @@ The **Source** defines the way the objects are retrieved:
 | Option | Description |
 | --- | --- |
 | By association | Retrieve the object (or objects) associated to an object by following an association. Note that when objects and/or their associations are changed and not committed, the data is not yet available in the database. By retrieving **By association**, the data that is not committed can be retrieved. For more information, see the [Retrieve by Association Properties](#association) section below.  |
-| From database | Retrieve objects from the database. This can only be used for [persistable objects](/refguide/persistability/). For more information, see the [Retrieve from Database Properties](#from-database) section below. 
+| From database | Retrieve objects from the database. This can only be used for [persistable objects](/refguide10/persistability/). For more information, see the [Retrieve from Database Properties](#from-database) section below. 
 
 {{% alert color="warning" %}}
 If you have changes in the memory, this action retrieves objects from the database and also applies the changes in the client.
@@ -68,7 +68,7 @@ This property specifies the entity from which to retrieve instances (objects).
 
 #### XPath Constraint
 
-The [XPath constraint](/refguide/xpath-constraints/) defines the condition the objects need to fulfill to be retrieved. If there is no XPath constraint, all objects of the entity are retrieved.
+The [XPath constraint](/refguide10/xpath-constraints/) defines the condition the objects need to fulfill to be retrieved. If there is no XPath constraint, all objects of the entity are retrieved.
 
 {{% alert color="info" %}}
 Date functions, user-role tokens, computations based on tokens, and following associations are not supported in XPath constraints when the retrieve activity is in a nanoflow.
@@ -98,7 +98,7 @@ This is the name of the list or object returned by the activity. It can be used 
 
 ## Common Section{#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}
 
 ## Optimizing Retrieve Activities
 
@@ -138,4 +138,4 @@ However, there is the risk of creating an infinite loop if the retrieve activity
 
 ## Read More
 
-* [Extracting and Using Sub-Microflows](/refguide/extracting-and-using-sub-microflows/)
+* [Extracting and Using Sub-Microflows](/refguide10/extracting-and-using-sub-microflows/)

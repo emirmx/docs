@@ -70,7 +70,7 @@ If the URL prefix breaks any of the rules mentioned above, then you will get a c
 
 ### Java Version{#java-version}
 
-Here you can select which Java version to use for you application.
+Here you can select which Java version to use for you application. For information on how the Java version can influence the behavior of an application, see [Java Version Migration](/refguide/java-version-migration/).
 
 {{% alert color="info" %}}
 For Studio Pro 11, you should choose Java 21.
@@ -235,10 +235,6 @@ Default: *Yes*
 ### SSL Certificate Algorithm
 
 Choose between **PKIX (recommended)** and **SunX509 (for backwards compatibility)** as the Java validator and trust manager. According to [this JDK issue](https://bugs.openjdk.org/browse/JDK-8169745), the PKIX validator/trust manager supports richer extensions and features, and the use of SunX509 is discouraged.
-
-{{% alert color="info" %}}
-This option was added in Mendix version 10.21.0.
-{{% /alert %}}
 
 Default: **SunX509 (for backwards compatibility)**
 
@@ -449,7 +445,7 @@ See the list below for detailed information on which widgets are generated in va
 
 ### Default Association Storage
 
-In Mendix 10.21 and above, you can decide how associations are stored in the database.
+You can decide how associations are stored in the database.
 
 This option allows you to change the default for new associations. The initial defaults will be as follows:
 
@@ -468,6 +464,6 @@ This table allows you to select a default color for each microflow activity type
 
 ### Automatically Encode Parameter Values in Send REST Request Microflow Activities
 
-For Studio Pro 10.21 and above, you can disable the encoding of the URL parameters for the Send REST Request microflow activity. This allows parameter values to be used as provided.
+You can disable the encoding of the URL parameters for the Send REST Request microflow activity. This allows parameter values to be used as provided.
 
 When enabled, the behavior will be inconsistent with the Consumed REST service.

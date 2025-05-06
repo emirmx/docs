@@ -1,14 +1,14 @@
 ---
 title: "Build a Pluggable Web Widget: Part 2 (Advanced)"
 linktitle: "2. Build Pluggable Web Widget"
-url: /howto/extensibility/create-a-pluggable-widget-two/
+url: /howto10/extensibility/create-a-pluggable-widget-two/
 weight: 20
 description: "This how-to teaches you how to add advanced features to your TextBox input widget."
 ---
 
 ## Introduction
 
-The new pluggable widget API makes building feature-complete widgets much easier. This how-to will go beyond [How to Build a Pluggable Web Widget: Part 1](/howto/extensibility/create-a-pluggable-widget-one/) and teach you how to add advanced features to your TextBox input widget.
+The new pluggable widget API makes building feature-complete widgets much easier. This how-to will go beyond [How to Build a Pluggable Web Widget: Part 1](/howto10/extensibility/create-a-pluggable-widget-one/) and teach you how to add advanced features to your TextBox input widget.
 
 This how-to teaches you how to do the following:
 
@@ -23,7 +23,7 @@ This how-to teaches you how to do the following:
 
 Before starting this how-to, make sure you have completed the following prerequisites:
 
-* Complete [Build a Pluggable Web Widget: Part 1](/howto/extensibility/create-a-pluggable-widget-one/)
+* Complete [Build a Pluggable Web Widget: Part 1](/howto10/extensibility/create-a-pluggable-widget-one/)
 
 ## Adding Advanced Features to Your TextBox Input Widget
 
@@ -622,7 +622,7 @@ Your code alterations will produce the following result:
 
 ## Read More
 
-* [Build a Pluggable Web Widget: Part 1](/howto/extensibility/create-a-pluggable-widget-one/)
+* [Build a Pluggable Web Widget: Part 1](/howto10/extensibility/create-a-pluggable-widget-one/)
 * [Pluggable Widgets API](/apidocs-mxsdk/apidocs/pluggable-widgets/)
 * [Client APIs Available to Pluggable Widgets](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/)
 * [Pluggable Widget Property Types](/apidocs-mxsdk/apidocs/pluggable-widgets-property-types/)

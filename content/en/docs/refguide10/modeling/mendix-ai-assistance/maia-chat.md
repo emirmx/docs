@@ -1,11 +1,11 @@
 ---
 title: "Maia Chat"
 linktitle: "Chat"
-url: /refguide/maia-chat/
+url: /refguide10/maia-chat/
 weight: 5
 description: "Describes the features in Maia Chat."
 aliases:
-    - /refguide/mendix-chat/
+    - /refguide10/mendix-chat/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -45,7 +45,7 @@ The chat interface appears at the right side of Studio Pro under the **Maia** pa
 
 {{< figure src="/attachments/refguide10/modeling/mendix-ai-assistance/maia-chat/maia-chat-interface.png" width="250px">}}
 
-You can start using Maia Chat by clicking one of the demo questions. Alternatively, you can ask your own question, and press <kbd>Enter</kbd> or click **Ask** to send the question. For information on the supported shortcut keys in Maia Chat, see the [Maia Chat Shortcut Keys](/refguide/keyboard-shortcuts/#maia-chat-shortcuts) section in *Keyboard Shortcuts*.
+You can start using Maia Chat by clicking one of the demo questions. Alternatively, you can ask your own question, and press <kbd>Enter</kbd> or click **Ask** to send the question. For information on the supported shortcut keys in Maia Chat, see the [Maia Chat Shortcut Keys](/refguide10/keyboard-shortcuts/#maia-chat-shortcuts) section in *Keyboard Shortcuts*.
 
 For more information on Maia Chat features in Studio Pro, see the sub-sections below.
 
@@ -90,4 +90,4 @@ In Studio Pro 10.7.0 and above, there is a **New chat** option at the top left o
  
 ## Read More
 
-Under the **Maia** pane, there is also a tab called **Learn**. For more information, see [Maia Learn](/refguide/maia-learn/).
+Under the **Maia** pane, there is also a tab called **Learn**. For more information, see [Maia Learn](/refguide10/maia-learn/).

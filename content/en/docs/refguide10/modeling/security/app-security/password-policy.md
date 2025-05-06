@@ -1,6 +1,6 @@
 ---
 title: "Password Policy"
-url: /refguide/password-policy/
+url: /refguide10/password-policy/
 weight: 50
 ---
 
@@ -25,8 +25,8 @@ Password policy properties are described in the table below:
 
 ## Read More
 
-* [App Security](/refguide/app-security/)
-* [User Roles](/refguide/user-roles/)
-* [Administrator](/refguide/administrator/)
-* [Demo Users](/refguide/demo-users/)
-* [Anonymous Users](/refguide/anonymous-users/)
+* [App Security](/refguide10/app-security/)
+* [User Roles](/refguide10/user-roles/)
+* [Administrator](/refguide10/administrator/)
+* [Demo Users](/refguide10/demo-users/)
+* [Anonymous Users](/refguide10/anonymous-users/)

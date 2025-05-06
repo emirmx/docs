@@ -1,6 +1,6 @@
 ---
 title: "Java Action Call"
-url: /refguide/java-action-call/
+url: /refguide10/java-action-call/
 weight: 10
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -11,7 +11,7 @@ This activity can only be used in microflows.
 
 ## Introduction
 
-The **Java action call** activity can be used to call a [Java action](/refguide/java-actions/). Arguments can be passed to the action and the result can be stored.
+The **Java action call** activity can be used to call a [Java action](/refguide10/java-actions/). Arguments can be passed to the action and the result can be stored.
 
 ## Properties
 
@@ -42,7 +42,7 @@ Click **Edit** next to the parameter to fill in the arguments.
 
 An argument is the input data that you are passing to the Java action. For each Java action parameter, you must supply an argument of the same type. 
 
-The values of the arguments are defined using [expressions](/refguide/expressions/):
+The values of the arguments are defined using [expressions](/refguide10/expressions/):
 
 {{< figure src="/attachments/refguide10/modeling/application-logic/microflows-and-nanoflows/activities/action-call-activities/java-action-call/argument-edit.png" alt="argument" class="no-border" >}}
 
@@ -70,8 +70,8 @@ If you want a microflow to call a Java action to run in the background using a t
 2. Identify which task queue it should run in in **Select Task Queue**.
 3. (optionally) Select an automatic retry strategy.
 
-For more information about task queues, see [Task Queue](/refguide/task-queue/).
+For more information about task queues, see [Task Queue](/refguide10/task-queue/).
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}

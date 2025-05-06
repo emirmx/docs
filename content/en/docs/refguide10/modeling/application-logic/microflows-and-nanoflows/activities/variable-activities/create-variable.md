@@ -1,6 +1,6 @@
 ---
 title: "Create Variable"
-url: /refguide/create-variable/
+url: /refguide10/create-variable/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -41,11 +41,11 @@ You can also open the dialog box by double-clicking the activity, or right-click
 
 ### Data Type
 
-**Data type** defines what type of data is stored in the variable. A variable can have one of the following [data types](/refguide/data-types/): Boolean, Enumeration, Decimal, Integer/Long, or String.
+**Data type** defines what type of data is stored in the variable. A variable can have one of the following [data types](/refguide10/data-types/): Boolean, Enumeration, Decimal, Integer/Long, or String.
 
 ### Initial Value
 
-Defines the initial value of the variable. The value is entered using an [expression](/refguide/expressions/) (the result of the microflow expression must match the data type of the variable).
+Defines the initial value of the variable. The value is entered using an [expression](/refguide10/expressions/) (the result of the microflow expression must match the data type of the variable).
 
 ### Variable Name
 
@@ -53,8 +53,8 @@ Variable name defines the name of the resulting variable. The variable can be us
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}
 
 ## Read More
 
-* [Activities](/refguide/activities/)
+* [Activities](/refguide10/activities/)

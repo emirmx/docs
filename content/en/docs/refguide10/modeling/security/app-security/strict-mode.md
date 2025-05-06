@@ -1,12 +1,12 @@
 ---
 title: "Strict Mode"
-url: /refguide/strict-mode/
+url: /refguide10/strict-mode/
 weight: 50
 ---
 
 ## Introduction
 
-Configuring [access rules](/refguide/access-rules/) is essential for the security of your app. However, accurately setting up these rules can be challenging. In case you make any mistakes setting up access rules, you want a safety net when you roll your app out to users. To make your app more secure in cases where access rules are not configured correctly, you can enable strict mode. 
+Configuring [access rules](/refguide10/access-rules/) is essential for the security of your app. However, accurately setting up these rules can be challenging. In case you make any mistakes setting up access rules, you want a safety net when you roll your app out to users. To make your app more secure in cases where access rules are not configured correctly, you can enable strict mode. 
 
 Strict mode will help ensure that entities are accessible only in the ways defined within your model – through microflows, nanoflows, widgets, or pages – by restricting certain client APIs. 
 
@@ -18,7 +18,7 @@ Please note, strict mode is exclusively available for the React client.
 
 ### Enabling Strict Mode
 
-Strict mode can be enabled in [App Security](/refguide/app-security/#strict-mode) when the React client is enabled and the security level is set to **Production**.
+Strict mode can be enabled in [App Security](/refguide10/app-security/#strict-mode) when the React client is enabled and the security level is set to **Production**.
 
 ## Restricted Client APIs
 
@@ -43,6 +43,6 @@ Additionally, since **Save Changes Actions** and **Cancel Changes Actions** are 
 
 ## Read More
 
-* [App Security](/refguide/app-security/)
+* [App Security](/refguide10/app-security/)
 * [Client APIs](/apidocs-mxsdk/apidocs/client-api/)
-* [Access Rules](/refguide/access-rules/)
+* [Access Rules](/refguide10/access-rules/)

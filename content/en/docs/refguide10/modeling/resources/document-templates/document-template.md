@@ -1,11 +1,11 @@
 ---
 title: "Document Template"
-url: /refguide/document-template/
+url: /refguide10/document-template/
 ---
 
 ## Introduction
 
-This document describes the properties of a document template. If you want to see what document templates are for and what kind of widgets can be placed on them, you can check the [Document Templates](/refguide/document-templates/) overview documentation.
+This document describes the properties of a document template. If you want to see what document templates are for and what kind of widgets can be placed on them, you can check the [Document Templates](/refguide10/document-templates/) overview documentation.
 
 ## Appearance Properties {#appearance-properties}
 
@@ -49,7 +49,7 @@ Indicates whether the page has a footer that is displayed on each page (except o
 
 ## Style
 
-For details, see [Style](/refguide/style/).
+For details, see [Style](/refguide10/style/).
 
 ## Common Properties
 

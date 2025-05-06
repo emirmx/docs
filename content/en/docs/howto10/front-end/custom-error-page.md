@@ -1,6 +1,6 @@
 ---
 title: "Create Custom Error Pages"
-url: /howto/front-end/custom-error-page/
+url: /howto10/front-end/custom-error-page/
 weight: 55
 description: "Describes how to create a custom error page for a more tailored user experience."
 ---
@@ -8,7 +8,7 @@ description: "Describes how to create a custom error page for a more tailored us
 {{% alert color="info" %}}
 This document explains how to make custom error pages for web pages. Native mobile does not use custom error pages, as users cannot enter URLs which lead to them.
 
-To create customized error information for native pages, please create custom [system texts](/refguide/system-texts/).
+To create customized error information for native pages, please create custom [system texts](/refguide10/system-texts/).
 {{% /alert %}}
 
 ## Introduction
@@ -91,7 +91,7 @@ This example refers to *style.css* and *script.js*, which you should also create
 
 ## Creating a Re-Usable Custom Error Page {#create-reusable-error}
 
-It is also possible to create custom error pages inside [re-usable theme modules](/howto/front-end/customize-styling-new/#create-theme-mod).
+It is also possible to create custom error pages inside [re-usable theme modules](/howto10/front-end/customize-styling-new/#create-theme-mod).
 
 To create a custom error page inside your theme module, do the following:
 
@@ -118,7 +118,7 @@ To create a custom error page inside your theme module, do the following:
 
 Now you have a custom error page inside a re-usable theme module! When this module is imported into other apps, its custom error pages will automatically become available.
 
-This can also be used in a [company design system](/howto/front-end/create-a-company-design-system/).
+This can also be used in a [company design system](/howto10/front-end/create-a-company-design-system/).
 
 {{% alert color="info" %}}
 Error pages created inside your app's **theme/web** folder will override error pages that are included in a theme module.

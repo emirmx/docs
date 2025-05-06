@@ -1,6 +1,6 @@
 ---
 title: "Generating a Published REST Resource"
-url: /refguide/generate-rest-resource/
+url: /refguide10/generate-rest-resource/
 weight: 20
 description: "Generate a published REST resource from an entity"
 # If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
@@ -9,7 +9,7 @@ description: "Generate a published REST resource from an entity"
 
 ## Introduction
 
-You can publish a REST resource with basic operations based on an entity by right-clicking an entity in the domain model and selecting **Expose as REST resource**. Alternatively, you can drag an entity or [message definition](/refguide/message-definitions/) onto the list of resources of a published REST service. This page describes the options you have once you perform one of these actions.
+You can publish a REST resource with basic operations based on an entity by right-clicking an entity in the domain model and selecting **Expose as REST resource**. Alternatively, you can drag an entity or [message definition](/refguide10/message-definitions/) onto the list of resources of a published REST service. This page describes the options you have once you perform one of these actions.
 
 ## REST Service
 
@@ -41,7 +41,7 @@ When you click **OK**, the following items are created:
 * All the operations you selected
 * A microflow for each operation
 * A message definition
-* An [import mapping](/refguide/import-mappings/) (for the `POST` and `PATCH` operations)
-* An [export mapping](/refguide/export-mappings/) (for the **Get all** and **Get by key** operations)
+* An [import mapping](/refguide10/import-mappings/) (for the `POST` and `PATCH` operations)
+* An [export mapping](/refguide10/export-mappings/) (for the **Get all** and **Get by key** operations)
 
 If you have already created a message definition for the entity, that message definition will be reused. Existing import and export mappings based on that message definition will also be reused.

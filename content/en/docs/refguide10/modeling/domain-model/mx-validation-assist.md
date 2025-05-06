@@ -1,13 +1,13 @@
 ---
 title: "Validation Assist"
-url: /refguide/validation-assist/
+url: /refguide10/validation-assist/
 weight: 80
 description: "Describes Mendix Validation Assist on pages."
 ---
 
 ## Introduction 
 
-The Validation Assist helps you build validation microflows in a more automated way using pre-built expressions. [Validation rules](/refguide/validation-rules/) are conditions that should be satisfied before an object is committed. There are different ways to [set up data validations](/refguide/setting-up-data-validation/) in Mendix. Building data validation in microflows is a manual and repetitive task and Validation Assist helps automate it. 
+The Validation Assist helps you build validation microflows in a more automated way using pre-built expressions. [Validation rules](/refguide10/validation-rules/) are conditions that should be satisfied before an object is committed. There are different ways to [set up data validations](/refguide10/setting-up-data-validation/) in Mendix. Building data validation in microflows is a manual and repetitive task and Validation Assist helps automate it. 
 
 The main features of the Validation Assist are as follows:
 
@@ -52,7 +52,7 @@ The dialog box consists of two sections:
     * **Microflow** – microflow name
     * **Commit** – defines whether changes should be committed to the database (only for buttons)
     * **Close Page** – defines whether the page should be closed after clicking the button (only for buttons)
-    * **On Event** – defines when to trigger the validation check (only for input widgets); for more information on events, see [On Click Events and Events Section](/refguide/on-click-event/)
+    * **On Event** – defines when to trigger the validation check (only for input widgets); for more information on events, see [On Click Events and Events Section](/refguide10/on-click-event/)
 
 * **Validations** where validations for the microflow are configured. This section contains the following: 
 
@@ -126,5 +126,5 @@ You can now click **Run Locally** ({{% icon name="controls-play-filled" %}}) in 
 
 ## Read More 
 
-* [Validation Rules](/refguide/validation-rules/)
-* [Setting Up Data Validation](/refguide/setting-up-data-validation/)     
+* [Validation Rules](/refguide10/validation-rules/)
+* [Setting Up Data Validation](/refguide10/setting-up-data-validation/)     

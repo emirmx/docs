@@ -1,6 +1,6 @@
 ---
 title: "Errors Pane"
-url: /refguide/errors-pane/
+url: /refguide10/errors-pane/
 weight: 40
 description: "Describes the Errors pane in Mendix Studio Pro."
 ---
@@ -76,5 +76,5 @@ The following actions are available in the drop-down menu:
 
 ## Read More
 
-* [Consistency Errors](/refguide/consistency-errors/)
-* [Studio Pro Overview](/refguide/studio-pro-overview/)
+* [Consistency Errors](/refguide10/consistency-errors/)
+* [Studio Pro Overview](/refguide10/studio-pro-overview/)

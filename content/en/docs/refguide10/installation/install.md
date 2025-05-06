@@ -1,20 +1,20 @@
 ---
 title: "Installing Mendix Studio Pro"
-url: /refguide/install/
+url: /refguide10/install/
 linktitle: "Installing Studio Pro"
 weight: 10
 description: "Describes how to install Mendix Studio Pro."
 aliases:
-    - /howto/general/install/
+    - /howto10/general/install/
 ---
 
 {{% button color="info" href="https://marketplace.mendix.com/link/studiopro/" text="Go to Marketplace" title="Download Studio Pro from the Marketplace" %}}
 
 ## Introduction
 
-Mendix Studio Pro allows you to build apps on the Mendix Platform. This document will guide you through the steps of installing [the latest version of Studio Pro](https://marketplace.mendix.com/link/studiopro/). For the full list of supported systems and required frameworks, see [System Requirements](/refguide/system-requirements/). 
+Mendix Studio Pro allows you to build apps on the Mendix Platform. This document will guide you through the steps of installing [the latest version of Studio Pro](https://marketplace.mendix.com/link/studiopro/). For the full list of supported systems and required frameworks, see [System Requirements](/refguide10/system-requirements/). 
 
-If you use a Mac device and need to use a version of Mendix Studio Pro older than 10.7, see [Configuring Parallels](/refguide/using-mendix-studio-pro-on-a-mac/) to configure a Windows virtual machine. 
+If you use a Mac device and need to use a version of Mendix Studio Pro older than 10.7, see [Configuring Parallels](/refguide10/using-mendix-studio-pro-on-a-mac/) to configure a Windows virtual machine. 
 
 ## Downloading Mendix Studio Pro
 
@@ -54,7 +54,7 @@ The prerequisites are the following:
     | --- | --- |
     | [.NET Desktop Runtime 6.0.x (x64 or ARM64)](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) <br/> Mendix recommends using version 6.0.35 or above | [.NET Desktop Runtime 8.0.x (x64 or ARM64)](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) <br/> Mendix recommends using version 8.0.10 or above |
 
-* Eclipse Temurin JDK (x64) (see [JDK Installation](/refguide/jdk-installation/) if you want to install another version of the JDK). Mendix version 10.8.0 and 10.0.9 supports JDK 11 and 17. Mendix version 10.10.0 supports JDK 11, 17, and 21, but installer still installs JDK 11.
+* Eclipse Temurin JDK (x64) (see [JDK Installation](/refguide10/jdk-installation/) if you want to install another version of the JDK). Mendix version 10.8.0 and 10.0.9 supports JDK 11 and 17. Mendix version 10.10.0 supports JDK 11, 17, and 21, but installer still installs JDK 11.
 
     | Studio Pro 10.0.0 - 10.10.0 | Studio Pro 10.11.0 and above |
     | --- | --- |
@@ -70,9 +70,11 @@ The prerequisites are the following:
     | --- | --- | --- | --- |
     | [2.37.1](https://github.com/git-for-windows/git/releases/tag/v2.37.1.windows.1) | [2.41.0](https://github.com/git-for-windows/git/releases/tag/v2.41.0.windows.3) | [2.43.0](https://github.com/git-for-windows/git/releases/tag/v2.43.0.windows.1)|[2.48.1](https://github.com/git-for-windows/git/releases/download/v2.48.1.windows.1/Git-2.48.1-64-bit.exe)|
 
-{{% alert color="warning" %}}  Mendix recommends installing Git for all versions of Studio Pro to ensure optimal performance and full feature availability.
-* Studio Pro versions below 10.21.0 can work without Git, but some operations may experience reduced performance, and advanced features—such as [rebase](/refguide/merge-algorithm/#rebase)—will not be available.
-* Starting from Studio Pro 10.21.0, Git version 2.48.1 or above is required. This version is automatically installed during Studio Pro installation. However, for [non-administrative installation](#offline) you must install Git manually.{{% /alert %}}
+{{% alert color="info" %}}
+You do not need to install Git for all operations, but you may need to install the Git CLI if you perform certain actions. For example, [rebase](/refguide/merge-algorithm/#rebase) will not work without Git being installed. 
+
+Starting from Studio Pro 10.21.0, Git version 2.48.1 or above is required. This version is automatically installed during Studio Pro installation. However, for [non-administrative installation](#offline), you must install Git manually.
+{{% /alert %}}
 
 * [Microsoft Edge WebView2 Evergreen Runtime (x64 or ARM64) (Evergreen Standalone Installer version)](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)
 
@@ -136,7 +138,7 @@ If an error occurs during JDK installation, try the following:
 
 If managed dependencies are used (in Mendix 10.3.0 and above), you need to set up a custom repository that can resolve the dependencies.
 
-For more information on how to configure a custom repository, see the *Custom Repositories* section of [Managed Dependencies](/refguide/managed-dependencies/#custom-repos).
+For more information on how to configure a custom repository, see the *Custom Repositories* section of [Managed Dependencies](/refguide10/managed-dependencies/#custom-repos).
 
 ## Installing Mendix Studio Pro Without Admin Rights
 
@@ -152,7 +154,7 @@ From Studio Pro version 10.14.0, the portable installer for Windows x64 and arm6
 
 {{% alert color="info" %}}Git does not get installed automatically for the portable version because it requires Admin rights.{{% /alert %}}
 
-You can download and install [portable version](https://git-scm.com/downloads/win) of Git and configure [Git Location](/refguide/preferences-dialog/#git-location) in **Preferences** in Studio Pro to use it.
+You can download and install [portable version](https://git-scm.com/downloads/win) of Git and configure [Git Location](/refguide10/preferences-dialog/#git-location) in **Preferences** in Studio Pro to use it.
 
 Versions of Mendix Studio Pro that are installed via the portable installer do not show up in the Mendix Version Selector where you can manage Mendix versions. However, you can manually add a Studio Pro version by clicking **Add custom version** in **Manage Mendix versions** and specifying the path to the executable file of the Studio Pro version:
 
@@ -178,4 +180,4 @@ Accepting untrusted certificates can bring security risks. You should only do so
 
 Congratulations on installing Mendix Studio Pro! Now you are ready to start modeling your apps. 
 
-You can start with the [Studio Pro Overview](/refguide/studio-pro-overview/) for details on Studio Pro's UI and shortcuts, or you can move straight to [App Modeling](/refguide/modeling/). 
+You can start with the [Studio Pro Overview](/refguide10/studio-pro-overview/) for details on Studio Pro's UI and shortcuts, or you can move straight to [App Modeling](/refguide10/modeling/). 

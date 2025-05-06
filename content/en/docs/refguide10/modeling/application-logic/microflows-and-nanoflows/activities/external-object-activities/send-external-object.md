@@ -1,6 +1,6 @@
 ---
 title: "Send External Object"
-url: /refguide/send-external-object/
+url: /refguide10/send-external-object/
 ---
 
 {{% alert color="info" %}}
@@ -17,7 +17,7 @@ Use this activity with [updatable external entities](#updatable-entities) to sen
 
 ### Updatable External Entities {#updatable-entities}
 
-External entities may have updatable attributes. The values of these attributes can change; for example, in a widget, or by using the [change object activity](/refguide/change-object/). Associations between two external entities from the same OData service may be updatable as well.
+External entities may have updatable attributes. The values of these attributes can change; for example, in a widget, or by using the [change object activity](/refguide10/change-object/). Associations between two external entities from the same OData service may be updatable as well.
 
 Use the **Send External Object** activity to send the changed attributes and the changed associations that the entity owns to the app that publishes the entity. That app will persist the changes, overwriting the previous values of the attributes and associations.
 
@@ -51,7 +51,7 @@ This setting defines how changes are reflected in the pages presented to the end
 
 ## After the Activity
 
-After this activity, the `$latestHttpResponse` variable (of the [HttpResponse](/refguide/http-request-and-response-entities/#http-response) type) is available to inspect the response returned by the service.
+After this activity, the `$latestHttpResponse` variable (of the [HttpResponse](/refguide10/http-request-and-response-entities/#http-response) type) is available to inspect the response returned by the service.
 
 After this activity, an external object is updated based on the received response.
 
@@ -61,6 +61,6 @@ The feature to update an external entity was introduced in Studio Pro 10.3.0.
 
 ## Related
 
-Persistable objects are persisted by using the [commit](/refguide/committing-objects/) activity. External entities cannot be committed. Use this activity instead.
+Persistable objects are persisted by using the [commit](/refguide10/committing-objects/) activity. External entities cannot be committed. Use this activity instead.
 
-The [Save](/refguide/button-widgets/) button does not work for external entities, either. To persist changes to an external object on a page, use a microflow that has this activity.
+The [Save](/refguide10/button-widgets/) button does not work for external entities, either. To persist changes to an external object on a page, use a microflow that has this activity.

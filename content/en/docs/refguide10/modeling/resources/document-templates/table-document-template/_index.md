@@ -1,11 +1,11 @@
 ---
 title: "Table (Document Template)"
-url: /refguide/table-document-template/
+url: /refguide10/table-document-template/
 aliases:
-    - /refguide/table-(document-template).html
-    - /refguide/Table+(document+template.html
-    - /refguide/table-(document-template)
-    - /refguide/Table+(document+template
+    - /refguide10/table-(document-template).html
+    - /refguide10/Table+(document+template.html
+    - /refguide10/table-(document-template)
+    - /refguide10/Table+(document+template
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -31,7 +31,7 @@ A column in a table.
 
 ### Row
 
-A row in a table. See [Row (document template)](/refguide/row-document-template/).
+A row in a table. See [Row (document template)](/refguide10/row-document-template/).
 
 ## Appearance Properties
 
@@ -55,8 +55,8 @@ Cell padding specifies the space between the content of the cell and the cell wa
 
 ### Style
 
-For details, see [Style](/refguide/style/).
+For details, see [Style](/refguide10/style/).
 
 ## Common Properties
 
-{{% snippet file="/static/_includes/refguide/name-property.md" %}}
+{{% snippet file="/static/_includes/refguide10/name-property.md" %}}

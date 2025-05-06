@@ -1,12 +1,12 @@
 ---
 title: "Build OData APIs with REST Best Practices"
-url: /refguide/build-odata-apis/
+url: /refguide10/build-odata-apis/
 weight: 75
 ---
 
 ## Introduction
 
-Companies with a large portfolio of custom-built REST APIs use a set of best practices to ensure these APIs function properly and in a predictable way. Mendix Studio Pro gives you full control of all these aspects when creating a [published REST service](/refguide/published-rest-service/).
+Companies with a large portfolio of custom-built REST APIs use a set of best practices to ensure these APIs function properly and in a predictable way. Mendix Studio Pro gives you full control of all these aspects when creating a [published REST service](/refguide10/published-rest-service/).
 
 If you plan to create a large number of APIs, implementing REST using published OData services can save you a lot of time and ensure consistency across your APIs. 
 
@@ -40,7 +40,7 @@ Create OData APIs by right-clicking on an entity > **Publish in OData service** 
 
 ### Published OData Service Document
 
-In the [published OData service](/refguide/published-odata-services/) document, select which attributes and associations are available in the API:
+In the [published OData service](/refguide10/published-odata-services/) document, select which attributes and associations are available in the API:
 
 {{< figure src="/attachments/refguide10/modeling/integration/build-odata-apis/select-attributes-associations.png" class="no-border" >}} 
 
@@ -114,7 +114,7 @@ The following URL parameters are available:
 * **$expand** – This defines which associated resources to include in the response payload. 
 * **$count** – This defines whether or not to return the count of the query result instead of the resources themselves. 
 
-For more information about these query options, see [Supported OData Operations](/refguide/supported-odata-operations/#query-options).
+For more information about these query options, see [Supported OData Operations](/refguide10/supported-odata-operations/#query-options).
 
 The following example illustrates how you can combine filtering, sorting, pagination, and attribute selection:
 
@@ -375,7 +375,7 @@ There are two ways to take an API-first approach, as explained in [API-First vs.
 
 ### Defining a Resource Model
 
-Define a resource model using [non-persistable entities](/refguide/persistability/), publish them in an OData service, then model microflows to map these resources to the actual source data. This will require you to handle the OData query options in the microflow. Using custom Java actions can simplify this process, as explained in the [Combining Data from Two Entities](#two-entities) section below.
+Define a resource model using [non-persistable entities](/refguide10/persistability/), publish them in an OData service, then model microflows to map these resources to the actual source data. This will require you to handle the OData query options in the microflow. Using custom Java actions can simplify this process, as explained in the [Combining Data from Two Entities](#two-entities) section below.
 
 ### Combining Data from Two Entities {#two-entities}
 
@@ -439,7 +439,7 @@ This example shows a **CustomerEmailRequest** entity that a client can create us
 
 ### Running Operations Asynchronously 
 
-Consider running operations that take longer to complete [asynchronously](https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design#asynchronous-operations). This means you tell the client that the request has been received, that it is not yet completely processed, but that it will be done in the background. In Studio Pro, you can use a [task queue](/refguide/task-queue/) to schedule the logic to run in the background. In the meantime, the client can `GET` the resource to see what the status is.
+Consider running operations that take longer to complete [asynchronously](https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design#asynchronous-operations). This means you tell the client that the request has been received, that it is not yet completely processed, but that it will be done in the background. In Studio Pro, you can use a [task queue](/refguide10/task-queue/) to schedule the logic to run in the background. In the meantime, the client can `GET` the resource to see what the status is.
 
 The last activity of the insert microflow calls the SendCustomerEmail microflow using the task queue:
 
@@ -485,5 +485,5 @@ This approach ensures customer applications can migrate at their own pace becaus
 
 ## Read More
 
-* [OData Services](/refguide/integration/odata-services/)
-* [Integration](/refguide/integration/)
+* [OData Services](/refguide10/integration/odata-services/)
+* [Integration](/refguide10/integration/)

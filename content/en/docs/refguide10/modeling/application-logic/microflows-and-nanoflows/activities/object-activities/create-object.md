@@ -1,6 +1,6 @@
 ---
 title: "Create Object"
-url: /refguide/create-object/
+url: /refguide10/create-object/
 weight: 40
 ---
 
@@ -39,12 +39,12 @@ The entity of which you want to create an object.
 
 ### Commit
 
-**Commit** defines the way the object is committed. For more information on committing, see the section [How Commits Work](/refguide/committing-objects/#how-commits-work) in *Commit Object(s)*.
+**Commit** defines the way the object is committed. For more information on committing, see the section [How Commits Work](/refguide10/committing-objects/#how-commits-work) in *Commit Object(s)*.
 
 | Option | Description |
 | --- | --- |
-| Yes with event handlers | The object is saved in the database and the [event handlers](/refguide/event-handlers/) are triggered. |
-| Yes without event handlers | The object is saved in the database, but the [event handlers](/refguide/event-handlers/) are not triggered. |
+| Yes with event handlers | The object is saved in the database and the [event handlers](/refguide10/event-handlers/) are triggered. |
+| Yes without event handlers | The object is saved in the database, but the [event handlers](/refguide10/event-handlers/) are not triggered. |
 | No *(default)*  | The object is changed without being saved in the database. |
 
 #### Commits in Nanoflows
@@ -61,21 +61,21 @@ Default: **No**
 
 If **Refresh in client** is set to **No**, the change is not reflected in any widgets in the client.
 
-If **Commit** and **Refresh in client** are both set to **Yes**, [data sources](/refguide/data-sources/) are reloaded and the new object's values are displayed in relevant widgets.
+If **Commit** and **Refresh in client** are both set to **Yes**, [data sources](/refguide10/data-sources/) are reloaded and the new object's values are displayed in relevant widgets.
 
 #### Microflow Is Called in an Offline or Native App
 
 When inside a microflow that is called from an offline or native app, the **Refresh in client** option is ignored and functions as if it was set to **No**.
 
-For more information, see the [Microflows](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/#microflows) section of Offline-First Data.
+For more information, see the [Microflows](/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/#microflows) section of Offline-First Data.
 
 #### Action Is in a Nanoflow
 
-In a nanoflow, the create object action reloads [data sources](/refguide/data-sources/) as if **Refresh in client** was set to **Yes**.
+In a nanoflow, the create object action reloads [data sources](/refguide10/data-sources/) as if **Refresh in client** was set to **Yes**.
 
 ### Change Members
 
-You can set the values of members (attributes and associations) of the newly created object to be different from the default value set in the [entity](/refguide/entities/). Values for members are specified with an [expression](/refguide/expressions/) and must be of the same type as the member.
+You can set the values of members (attributes and associations) of the newly created object to be different from the default value set in the [entity](/refguide10/entities/). Values for members are specified with an [expression](/refguide10/expressions/) and must be of the same type as the member.
 
 ### Object Name
 
@@ -83,7 +83,7 @@ This is the name of the resulting object which can be used by all activities tha
 
 ## Common Section{#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}
 
 ## What Happens During a Create?
 

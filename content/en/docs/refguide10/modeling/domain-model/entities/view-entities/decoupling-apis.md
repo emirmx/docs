@@ -1,6 +1,6 @@
 ---
 title: "Decoupling APIs"
-url: /refguide/decoupling-apis/
+url: /refguide10/decoupling-apis/
 weight: 30
 ---
 

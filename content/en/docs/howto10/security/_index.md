@@ -1,7 +1,7 @@
 ---
 title: "Securing Your Data"
 linktitle: "Security"
-url: /howto/security/
+url: /howto10/security/
 weight: 90
 description: "Presents a series of how-tos to secure your data and ensure that the right user is seeing the right data."
 no_list: false

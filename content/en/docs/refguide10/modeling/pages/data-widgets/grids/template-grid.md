@@ -1,6 +1,6 @@
 ---
 title: "Template Grid"
-url: /refguide/template-grid/
+url: /refguide10/template-grid/
 weight: 20
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -13,17 +13,17 @@ A template grid shows a list of objects in a tile view. For example, a template 
 
 {{< figure src="/attachments/refguide10/modeling/pages/data-widgets/grids/template-grid/template-grid.png" class="no-border" >}}
 
-The template grid has a lot in common with a [data grid](/refguide/data-grid/). The main difference is that the objects are shown in templates instead of rows.
+The template grid has a lot in common with a [data grid](/refguide10/data-grid/). The main difference is that the objects are shown in templates instead of rows.
 
 ## Components
 
 ### Control Bar
 
-For more information, see [Control Bar](/refguide/control-bar/).
+For more information, see [Control Bar](/refguide10/control-bar/).
 
 ### Search Bar
 
-**Search Bar** is only available for **Database** and, below version 10.5, **XPath** [data sources](#data-source). For more information on a search bar and its settings, see [Search Bar](/refguide/search-bar/).
+**Search Bar** is only available for **Database** and, below version 10.5, **XPath** [data sources](#data-source). For more information on a search bar and its settings, see [Search Bar](/refguide10/search-bar/).
 
 ## Properties
 
@@ -41,29 +41,29 @@ Template grid properties consist of the following sections:
 
 ### Common Section {#common}
 
-The rows of the template grid can be sorted using the `Sort order` property. It is only available for **Database** [data sources](#data-source). For more information on sorting, see [Sort Order](/refguide/sort-order/).
+The rows of the template grid can be sorted using the `Sort order` property. It is only available for **Database** [data sources](#data-source). For more information on sorting, see [Sort Order](/refguide10/sort-order/).
 
-{{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/common-section-link.md" %}}
 
 ### Data Source Properties {#data-source}
 
-The data source determines which objects will be shown in the template grid. For general information about data sources, see [Data Sources](/refguide/data-sources/).
+The data source determines which objects will be shown in the template grid. For general information about data sources, see [Data Sources](/refguide10/data-sources/).
 
 #### Type
 
 The template grid supports the following types of data sources: 
 
-* [Database source](/refguide/database-source/) – objects are retrieved directly form the database
-* [XPath source](/refguide/xpath-source/) – objects are retrieved directly form the database
+* [Database source](/refguide10/database-source/) – objects are retrieved directly form the database
+* [XPath source](/refguide10/xpath-source/) – objects are retrieved directly form the database
     {{% alert color="info" %}}From Mendix version 10.5, the template grid widget does not have a separate XPath source, you can apply XPath constraints to the **Database** source.{{% /alert %}}
-* [Microflow source](/refguide/microflow-source/) – calculates the list of objects by executing a microflow
-* [Association source](/refguide/association-source/) – follows an association to get to objects
+* [Microflow source](/refguide10/microflow-source/) – calculates the list of objects by executing a microflow
+* [Association source](/refguide10/association-source/) – follows an association to get to objects
 
 The database and, below version 10.5, XPath sources retrieve objects from the database and supports searching and sorting. 
 
 ### Design Properties Section {#design-properties}
 
-{{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
+{{% snippet file="/static/_includes/refguide10/design-section-link.md" %}} 
 
 ### General Section {#general}
 
@@ -72,7 +72,7 @@ The database and, below version 10.5, XPath sources retrieve objects from the da
 This property indicates whether the control bar will be visible in the end-user interface. The control bar also includes the paging buttons.
 
 {{% alert color="warning" %}}
-Even if the control bar is invisible there can still be a default button that is triggered by (double) clicking a row. See the property 'Default button trigger' and [grid buttons](/refguide/control-bar/) for more information.
+Even if the control bar is invisible there can still be a default button that is triggered by (double) clicking a row. See the property 'Default button trigger' and [grid buttons](/refguide10/control-bar/) for more information.
 {{% /alert %}}
 
 Default: *True*
@@ -144,7 +144,7 @@ Default: *0*
 
 ### Visibility Section {#visibility}
 
-{{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/visibility-section-link.md" %}}
 
 ## Performing Specific Actions
 
@@ -155,7 +155,7 @@ To perform actions on a template grid, select it on a page and right-click it. T
 
 ## Read More
 
-* [Page](/refguide/page/)
-* [Data Containers](/refguide/data-widgets/)
-* [Data Sources](/refguide/data-sources/)
-* [Properties Common in the Page Editor](/refguide/common-widget-properties/)
+* [Page](/refguide10/page/)
+* [Data Containers](/refguide10/data-widgets/)
+* [Data Sources](/refguide10/data-sources/)
+* [Properties Common in the Page Editor](/refguide10/common-widget-properties/)

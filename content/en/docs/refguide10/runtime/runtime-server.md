@@ -1,6 +1,6 @@
 ---
 title: "Runtime Server"
-url: /refguide/runtime-server/
+url: /refguide10/runtime-server/
 description: "Describes the Runtime Server and how it functions."
 weight: 10
 ---
@@ -13,7 +13,7 @@ This description of the Runtime Server is based on an app running in the cloud. 
 
 ## Description
 
-The Runtime Server is [deployed](/refguide/runtime-deployment/) and waits for requests from the Mendix Client or a call from another app or service. It processes the request and returns the requested data, plus any additional state information where appropriate; for more information, see [Communication Patterns in the Mendix Runtime](/refguide/communication-patterns/). The Runtime Server itself is stateless, which allows it to be efficiently scaled to multiple instances.
+The Runtime Server is [deployed](/refguide10/runtime-deployment/) and waits for requests from the Mendix Client or a call from another app or service. It processes the request and returns the requested data, plus any additional state information where appropriate; for more information, see [Communication Patterns in the Mendix Runtime](/refguide10/communication-patterns/). The Runtime Server itself is stateless, which allows it to be efficiently scaled to multiple instances.
 
 Below is a chart showing the components of the Runtime Server. Each of the components is described below the chart.
 
@@ -110,6 +110,6 @@ This decodes HTTPS requests from Mendix Clients or other services, and passes th
 
 This is the web browser (for example, Google Chrome) or mobile device (for example, an iPhone) which allows the user to interact with the app. It typically has a screen, pointer device, and input device to allow users to use the app.
 
-The Runtime Server communicates with the Mendix Client using a number of [request handlers](/refguide/request-handlers/) called over a private API. One of these, for example, is called xas.
+The Runtime Server communicates with the Mendix Client using a number of [request handlers](/refguide10/request-handlers/) called over a private API. One of these, for example, is called xas.
 
-For a description of the Mendix Client, see [Mendix Client](/refguide/mendix-client/).
+For a description of the Mendix Client, see [Mendix Client](/refguide10/mendix-client/).

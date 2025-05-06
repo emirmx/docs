@@ -1,11 +1,11 @@
 ---
 title: "Data View (Document Template)"
-url: /refguide/data-view-document-template/
+url: /refguide10/data-view-document-template/
 aliases:
-    - /refguide/Data+View+(document+template).html
-    - /refguide/data-view-(document-template).html
-    - /refguide/Data+View+(document+template)
-    - /refguide/data-view-(document-template)
+    - /refguide10/Data+View+(document+template).html
+    - /refguide10/data-view-(document-template).html
+    - /refguide10/Data+View+(document+template)
+    - /refguide10/data-view-(document-template)
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -23,7 +23,7 @@ A data view showing orderline information.
 
 ## Common Properties
 
-{{% snippet file="/static/_includes/refguide/name-property.md" %}}
+{{% snippet file="/static/_includes/refguide10/name-property.md" %}}
 
 ## Data Source Properties
 

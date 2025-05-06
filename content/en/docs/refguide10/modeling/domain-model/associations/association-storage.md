@@ -1,7 +1,7 @@
 ---
 title: "Association Storage Options"
 linktitle: "Association Storage"
-url: /refguide/association-storage/
+url: /refguide10/association-storage/
 weight: 25
 ---
 
@@ -13,7 +13,7 @@ Association storage options were introduced in Mendix 10.21 to give you more con
 
 <!--- Everything except simple associations is in tables – what do you mean "except simple associations?" --->
 
-Prior to Mendix 10.21, all associations (except the system associations `owner` and `changedby`, where selected) were stored in association tables. This had the advantage that you didn't have to worry about the [multiplicity](/refguide/association-properties/#multiplicity) or [navigability](/refguide/association-properties/#navigability) of the associations. You could change things as your domain model evolved.
+Prior to Mendix 10.21, all associations (except the system associations `owner` and `changedby`, where selected) were stored in association tables. This had the advantage that you didn't have to worry about the [multiplicity](/refguide10/association-properties/#multiplicity) or [navigability](/refguide10/association-properties/#navigability) of the associations. You could change things as your domain model evolved.
 
 In Mendix 10.21 you can choose to implement some associations as direct associations. This means that the ID of the **Child** object is stored as a foreign key column of the **Parent** object (for example the "many" side of the association) in the underlying database table, thus removing the need for a association table.
 
@@ -29,7 +29,7 @@ In Mendix 10.21 and above, the following defaults apply:
 * **Upgraded projects** – for projects which are upgraded from an older version of Mendix, all new associations continue to be implemented as association tables
 
 {{% alert color="info" %}}
-In your app settings you can [change the default](/refguide/app-settings/#miscellaneous) for all new associations. This does not affect existing associations.
+In your app settings you can [change the default](/refguide10/app-settings/#miscellaneous) for all new associations. This does not affect existing associations.
 {{% /alert %}}
 
 ## Advantages of Direct Associations
@@ -53,10 +53,10 @@ Enabling direct associations is simple, and has the following features:
 
 * The choice is reversible – you can decide to revert to using association tables (but see things to think about [before switching to direct associations](#before))
 * Direct associations are available in Mendix versions 10.21 and above
-* You can [change the default](/refguide/app-settings/#miscellaneous) for all new associations
+* You can [change the default](/refguide10/app-settings/#miscellaneous) for all new associations
 * You can enable it for specific associations
 
-For more information, see the [Association Storage](/refguide/association-properties/#storage) section of *Association Properties*.
+For more information, see the [Association Storage](/refguide10/association-properties/#storage) section of *Association Properties*.
 
 ## Before Switching to Direct Associations{#before}
 

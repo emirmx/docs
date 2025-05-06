@@ -1,13 +1,13 @@
 ---
 title: "Performing Workflow Basic Functions"
 linktitle: "Perform Basic Functions"
-url: /refguide/perform-workflow-basic-functions/
+url: /refguide10/perform-workflow-basic-functions/
 weight: 50
 ---
 
 ## Introduction
 
-A workflow is composed of [elements](/refguide/workflow-elements/) that you can use in the workflow editor. In this document, you will learn how to perform the following basic functions when working on workflows and on workflow elements:
+A workflow is composed of [elements](/refguide10/workflow-elements/) that you can use in the workflow editor. In this document, you will learn how to perform the following basic functions when working on workflows and on workflow elements:
 
 * [Add a workflow](#add-workflow)
 * [Delete a workflow](#delete-workflow)
@@ -23,9 +23,9 @@ A workflow is composed of [elements](/refguide/workflow-elements/) that you can 
 
 To add a workflow to your app, do the following:
 
-1. In the [App Explorer](/refguide/app-explorer/), right-click the module or a folder you want to create a page in and select **Add workflow**.
+1. In the [App Explorer](/refguide10/app-explorer/), right-click the module or a folder you want to create a page in and select **Add workflow**.
 2. In the **Add Workflow** dialog box, fill in the **Name** for the workflow.
-3. Select an **Entity** to use it as a [workflow parameter](/refguide/workflow-parameters/):
+3. Select an **Entity** to use it as a [workflow parameter](/refguide10/workflow-parameters/):
 
     {{< figure src="/attachments/refguide10/modeling/application-logic/workflows/add-workflow-dialog.png" alt="Adding Workflow" class="no-border" >}}
 
@@ -35,7 +35,7 @@ The workflow is created.
 
 To delete a workflow, do the following:
 
-1. In the [App Explorer](/refguide/app-explorer/), select a workflow you would like to delete and right-click it.
+1. In the [App Explorer](/refguide10/app-explorer/), select a workflow you would like to delete and right-click it.
 2. In the displayed list, select **Delete** and confirm your choice by clicking **Delete** in the pop-up dialog.
 
 The selected workflow is deleted. 
@@ -102,7 +102,7 @@ When using cut/copy/paste, note the following:
 * When the clipboard contents has an **Annotation**, it can only be pasted into the workflow or into individual activities that support annotations.
 * Pasting an activity after an **End** or **Jump** activity results in a consistency error as an **End** or **Jump** activity should be placed at the end of a flow.
 * Pasting activity can result in a consistency error when the next activity becomes unreachable by either placing an **End** or **Jump** activity in front of it or when all flows before a merge end with an **End** or **Jump** activity.
-* Pasting a boundary event on an activity adds it to the activity. You can add maximum five boundary events to one activity. For more information, see [a list of activities that support adding boundary events](/refguide/workflow-boundary-events/#supported-activities).
+* Pasting a boundary event on an activity adds it to the activity. You can add maximum five boundary events to one activity. For more information, see [a list of activities that support adding boundary events](/refguide10/workflow-boundary-events/#supported-activities).
 * Pasting a **Jump** activity in a boundary event is only allowed when there are multiple paths going to the boundary event's ending path, otherwise a consistency error is thrown.
 * Pasting an **End** event inside a non-interrupting boundary event path is not allowed. This is because an **End** event is only allowed if no other paths will be executed, which is not the case in a non-interrupting timer boundary event.
 
@@ -110,7 +110,7 @@ When using cut/copy/paste, note the following:
 
 The following elements cannot be cut, copied or pasted in the workflow editor:
 
-* Workflow (this can be only be done in the [App Explorer](/refguide/app-explorer/#basic-functions))
+* Workflow (this can be only be done in the [App Explorer](/refguide10/app-explorer/#basic-functions))
 * WorkflowContext
 * Start event
 * End event  (the final End event which is at the end of the workflow)
@@ -137,7 +137,7 @@ You can trigger a workflow [from a page](#trigger-page) or [via a microflow](#tr
 
 ### Triggering a Workflow from a Page {#trigger-page}
 
-To start the workflow, you can add a widget with a specific on-click event on a page. For more information on on-click events, see [On Click Event and Events Section](/refguide/on-click-event/).
+To start the workflow, you can add a widget with a specific on-click event on a page. For more information on on-click events, see [On Click Event and Events Section](/refguide10/on-click-event/).
 
 Do the following:
 
@@ -152,7 +152,7 @@ You have configured the button to trigger the workflow.
 
 ### Triggering a Workflow via a Microflow {#trigger-microflow}
 
-To trigger a workflow via a microflow, you can add a **Call workflow** activity to the microflow. For more information on this activity, see [Call Workflow](/refguide/workflow-call/).  
+To trigger a workflow via a microflow, you can add a **Call workflow** activity to the microflow. For more information on this activity, see [Call Workflow](/refguide10/workflow-call/).  
 
 Do the following:
 
@@ -173,7 +173,7 @@ Now when you run this microflow, it will trigger the selected workflow.
 
 There are two ways to export a workflow to an image: 
 
-* Through the [File menu](/refguide/file-menu/) in the top bar: **File** > **Export as image**.
+* Through the [File menu](/refguide10/file-menu/) in the top bar: **File** > **Export as image**.
 * By clicking **Export as image** in the upper-left corner of the workflow editor.
 
 Both options open a **Save file** dialog-box allowing you to choose a name and location for the exported image. After clicking **Save** the **Export workflow model to image** dialog-box is opened, where you can change parameters for your image export such as a transparent or opaque background and a relative size of the exported image by selecting a zoom level:
@@ -190,5 +190,5 @@ It is important to bear in mind that the chosen orientation is not preserved or 
 
 ## Read More
 
-* [Workflow Elements](/refguide/workflow-elements/)
-* [Configuring a Workflow in Studio Pro for the Employee Onboarding Process](/refguide/workflow-how-to-configure/)
+* [Workflow Elements](/refguide10/workflow-elements/)
+* [Configuring a Workflow in Studio Pro for the Employee Onboarding Process](/refguide10/workflow-how-to-configure/)
