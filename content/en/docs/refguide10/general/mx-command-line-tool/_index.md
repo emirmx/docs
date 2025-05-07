@@ -68,7 +68,6 @@ These are the available [merging and diffing commands](/refguide10/mx-command-li
 |   Command | Description |
 | --- | --- |
 | [merge](/refguide/mx-command-line-tool/merge/#merge) | Merges the *.mpr* files. |
-| [git-merge](/refguide/mx-command-line-tool/merge/#git-merge) | Merges the *.mpr* files as a custom git merge driver. |
 | [diff](/refguide/mx-command-line-tool/merge/#diff) | Shows the diff of the *.mpr* files. |
 | [dump-mpr](/refguide/mx-command-line-tool/dump-mpr/) | Create a JSON description of the model of a Mendix app. |
 
