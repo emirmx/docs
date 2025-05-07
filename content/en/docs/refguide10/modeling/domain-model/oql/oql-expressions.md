@@ -221,7 +221,7 @@ Parameters are external variables that are referenced to by name in an OQL query
 
 If you use undefined in `IN` and `LIKE` comparison expressions, the condition always returns `true`. In other cases, undefined parameters cause an exception.
 
-{{% alert color="warning" %}} Parameters are only supported within OQL queries defined in [data sets](/refguide10/data-sets/) or inside Java actions using the [Mendix Runtime API](/apidocs-mxsdk/apidocs/runtime-api/). They can not be used in [view entities](/refguide10/view-entities/).{{% /alert %}}
+{{% alert color="warning" %}} Parameters are only supported within OQL queries defined in [data sets](/refguide10/data-sets/) or inside Java actions using the [Mendix Runtime API](/apidocs-mxsdk/apidocs/runtime-api-10/). They can not be used in [view entities](/refguide10/view-entities/).{{% /alert %}}
 
 ### Examples
 
