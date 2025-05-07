@@ -150,7 +150,9 @@ The new draft version will initially have the same prompt texts, tools and linke
 #### Manage In-use Version per Environment
 
 Each time a new version of the agent is created, a decision needs to be made regarding which version to use in the end-user logic. Mendix recommends evaluating the in-use version as part of the test and release process. When importing the new agents into other environments, selecting the in-use version is always a manual step and, therefore, a conscious decision.
+The user will be prompted to select the version used as part of the import user flow. At later moments, this can always be managed from the agent overview directly. 
 
+ {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/agentcommons/Select_in_use.png" >}}
 
 ## Technical Reference
 
