@@ -3,7 +3,7 @@ title: "Agents"
 url: /appstore/modules/genai/agents/
 linktitle: "Agents"
 weight: 40
-description: "Describes Agents and Agentic Pattenrs as used with generative AI in Mendix"
+description: "Describes Agents and Agentic Patterns as used with generative AI in Mendix"
 ---
 
 ## Introduction
@@ -70,4 +70,4 @@ Check out the [GenAI Showcase App](https://marketplace.mendix.com/link/component
 
 ### Additional Information
 
- Read our [Blogpost about multi-agent systems in a Mendix App](https://www.mendix.com/blog/how-multi-agent-ai-systems-in-mendix-can-train-you-for-a-marathon/)
+ Read our [Blogpost about multi-agent systems in a Mendix app](https://www.mendix.com/blog/how-multi-agent-ai-systems-in-mendix-can-train-you-for-a-marathon/)
