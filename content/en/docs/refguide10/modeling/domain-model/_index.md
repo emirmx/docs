@@ -120,4 +120,4 @@ The entity `OrderLine` is stored in the table `module$orderline` which is shown 
 ## Read More
 
 * [Configuring a Domain Model](/refguide10/configuring-a-domain-model/)
-* [Maia Domain Model Generator](/refguide10/domain-model-generator/)
+* [Maia for Domain Model](/refguide10/maia-for-domain-model/)

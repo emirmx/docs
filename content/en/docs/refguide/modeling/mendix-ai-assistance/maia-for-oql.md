@@ -1,7 +1,7 @@
 ---
 title: "Maia for OQL"
 url: /refguide/maia-for-oql/
-weight: 5
+weight: 70
 description: "Describes the features in Maia for OQL Generation."
 ---
 
