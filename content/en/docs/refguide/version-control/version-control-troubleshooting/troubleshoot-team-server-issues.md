@@ -10,7 +10,7 @@ description: "Presents a list of problems and fixes for Team Server issues."
 
 Mendix Studio Pro needs to connect to the Team Server, where all your apps are stored. Team Server is a version control server. Git is the default version control system for the Team Server. This document describes permissions and settings required to connect to the Team Server, as well as troubleshooting steps in case of connectivity issues.
 
-## Basic Configuration: Team Server App Network Settings
+## Basic Configuration Issues: Team Server App Network Settings
 
 Being unable to download the Team Server app can indicate that the security configuration of your company network is blocking access to `https://home.mendix.com` and the Team Server itself that is located at `https://git.api.mendix.com/`.
 
@@ -33,29 +33,29 @@ Mendix reserves the right to change the IP address at any time and without notif
 Contact your network administrator and give them this information to allow them to configure your network (for example, firewall and proxy settings) correctly.
 {{% /alert %}}
 
-## Advanced
+## Advanced Troubleshooting
 
-### Symptoms
+### Most Reported Git-Related Issues
 
 Customers experiencing Git-related problems often report the following issues:
 
-* Git operations (clone, commit, pull, push) are unusually slow or never complete.
-* Network timeout errors when connecting to git.api.mendix.com. 
-* SSL connection failures during Git operations. 
+* Git operations (clone, commit, pull, push) are unusually slow or never get completed
+* Network timeout errors when connecting to `git.api.mendix.com`
+* SSL connection failures during Git operations
 * Proxy error
-* Sprintr connector errors while trying to create a project or interact with the TeamServer.
+* Mendix Portal connector errors while trying to create a project or interact with the Team Server
 
-#### Known Errors and Exceptions
+The error messages that you get from known errors and exceptions are represented below.
 
-**Timeout Error:**
+#### Timeout Error
 
 ```Failed to connect to git.api.mendix.com port 443 after 262515 ms: Timed out```
 
-**SSL Connection Error:**
+#### SSL Connection Error
 
 ```The SSL connection could not be established```
 
-**Sprintr Connector Exception:**
+#### Mendix Portal Connector Exception
 
 ```
 Mendix.Modeler.Sprintr.SprintrConnectorException: Error while creating sprintr project.
@@ -64,32 +64,33 @@ Mendix.Modeler.Sprintr.SprintrConnectorException: Error while creating sprintr p
 ---> System.Net.Http.WinHttpException (80072EFF, 12030): Error 12030 calling WINHTTP_CALLBACK_STATUS_REQUEST_ERROR, 'The connection with the server was terminated abnormally'.
 ```
 
-**SocketException and Early EOF:**
+#### Socket Exception and Early EOF
 
 ```LibGit2Sharp.LibGit2SharpException: early EOF```
 
-**Proxy error:**
+#### Proxy Error
 
 ```Failed with status 407```
 
-### Diagnosing the Issues
+### Diagnosing Git-Related Issues
 
-To determine which area has an issue there are 3 diagnosing steps, which are explained in more detail in the next sections.
+To determine which area has an issue there are three diagnosing steps:
 
-1. **General connectivity:** Are you able to reach the Team Server, what is the internet speed, is there a VPN/Proxy?
-2. **GIT CLI interaction with the Team Server:** Is the Git Command Line Interface (CLI) able to work effectively with the Team Server?
-3. **Studio Pro connectivity:** Are you encountering issues within Studio Pro, provided that the first two steps have not resulted in issues?
+1. [General connectivity](#general-connectivity) – Can you successfully reach the Team Server? Check your internet speed, and verify whether a VPN or proxy is in use.
+2. [GIT CLI interaction with the Team Server](#team-server) – Is the Git Command Line Interface (CLI) functioning correctly when communicating with the Team Server?
+3. [Studio Pro connectivity](#studio-pro-connectivity) – Are there any issues within Studio Pro, assuming no problems were found in the previous two steps?
 
-#### Validating General Connectivity
+#### Validating General Connectivity {#general-connectivity}
 
 ##### CURL over HTTP
+
 The first step is to validate whether CURL is able to reach the Team Server over HTTP.
-* **Why:** Git uses the CURL library to do network operations over HTTP or HTTPS. If CURL does not work the network infrastructure is interfering. 
-* **How:** Store the output of the following command on the command line: ```curl -v http://git.api.mendix.com```
-* **Validate the output:** Beneath you will see a expected response. Important lines:
-    * **Line 6:** We see the request connected to git.api.mendix.com This means the request hit our server and was not interrupted.
-    * **Line 13:** We see the request returned a Permanent redirect. This is expected as we are hitting the HTTP URL, which should redirect to the HTTPS variant.
-* **Actions to take if something is wrong:** Request your internal IT department to look into this and get back to Mendix once the CURL request returns an expected request. 
+* Why – Git uses the CURL library to do network operations over HTTP or HTTPS. If CURL does not work the network infrastructure is interfering. 
+* How – Store the output of the following command on the command line: ```curl -v http://git.api.mendix.com```
+* Validate the output – Beneath you will see a expected response. Lines to note:
+    * Line 6 – We see the request connected to `git.api.mendix.com` This means the request has reached our server and was not interrupted.
+    * Line 13 – We see the request returned a permanent redirect. This is expected as we are hitting the HTTP URL, which should redirect to the HTTPS variant.
+* Actions to take if something is wrong – Request your internal IT department to look into this and contact Mendix once the CURL request returns an expected request. 
     ```
     curl -v git.api.mendix.com
     * Host git.api.mendix.com:80 was resolved.
@@ -192,7 +193,7 @@ The next step is to verify whether you are behind a VPN, Proxy or Zscaler.
 * **How:** Use a tool to test your network speed, such as [speedtest.net](https://www.speedtest.net/) and write down the download and upload speed.
 * **Validate the output:** The speeds are in bits, meaning the value has to be divided by 8. if the speed is shown as 80Mbitps, the actual speed is 10MByte per second. Meaning a 80MB repo will take at least 8 seconds to download.
 
-#### GIT CLI Interaction with the Team Server
+#### GIT CLI Interaction with the Team Server {#team-server}
 
 In the previous chapter, we checked: 
 * The ability of CURL to access the Team Server through HTTP and HTTPS;
@@ -270,12 +271,12 @@ set GIT_CURL_VERBOSE=1
 git -c http.sslVerify=false clone --depth 1 https://git.api.mendix.com/[PROJECT_ID].git 
 ```
 * **Validate the output:**
-If this succeeded, there is an issue with SSL handling. Please take a look at your git config 
+  If this succeeded, there is an issue with SSL handling. Please take a look at your git config 
     * If you are using a proxy: setting up a `http.proxy` in the git config might address this issue.
     * If you are seeing a warning on SSL on windows: setting the `http.sslbackend` to `schannel` by running the following command might improve your experience. `git config --global http.sslbackend schannel`
     * If you are using a VPN: try again without VPN
     * If Zscaler or any other network filtering/security tool is active: check whether SSL inspection is enabled. Try disabling SSL inspection or adding an exception for git.api.mendix.com.
-    *
+      *
 * **Actions to take if something is wrong:** Save the output and reach out to Mendix Support with all information that you've gathered to discuss the situation.
 
 #### Studio Pro Connectivity {#studio-pro-connectivity}
