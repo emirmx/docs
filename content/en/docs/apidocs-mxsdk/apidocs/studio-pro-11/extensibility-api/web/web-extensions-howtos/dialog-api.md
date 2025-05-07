@@ -22,12 +22,12 @@ In a listener event called `menuItemActivated`, the `studioPro.ui.dialogs.showMo
 * `<dialogInfo>` is an object containing the `title` of the dialog, which is shown in the title bar of your dialog in Studio Pro. It also contains the `contentSize` object, where `height` and `width` dimensions for the dialog can be provided.
 * `<uiSpec>` is an object containing two required properties and one optional property:
 
-    * `componentName` — the name of the extension prefixed with `extension/`; for example, `extension/myextension`.
+    * `componentName` — the name of the extension prefixed with `extension/`; for example, `extension/myextension`
     * `uiEntryPoint` —  the name mapped from the `manifest.json` file
     * `queryParams` (optional) — a key-value pair object for passing data to your web content inside the dialog
 
 {{% alert color="info" %}}
-When the dialogs API `showModal` method is called, a `Promise` of `unknown` or `null` is returned. This return value represents anything the web content determines should be returned when the dialog gets closed. It is currently unknown by the API, since it can be anything. 
+When the dialog's API `showModal` method is called, a `Promise` of `unknown` or `null` is returned. This return value represents anything the web content determines should be returned when the dialog gets closed. It is currently unknown by the API, since it can be anything. 
 
 In the example below, the dialog will contain a form where an object is modified, then returned at closing time.
 {{% /alert %}}
@@ -79,7 +79,7 @@ export const component: IComponent = new Main();
 
 ## Filling the Dialog With Content
 
-In the previous example, the `uiEntryPoint` property of the `<uispec>` object had the value `dialog`. This value must match the one from the manifest. Below is an example of the dialog under the `ui` property.
+In the previous example, the `uiEntryPoint` property of the `<uispec>` object had the value `dialog`. This value must match the one from the manifest. Below is an example of the dialog under the `ui` property:
 
 ```json
 {

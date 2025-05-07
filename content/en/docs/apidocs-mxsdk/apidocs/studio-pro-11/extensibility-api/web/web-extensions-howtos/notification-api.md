@@ -15,7 +15,7 @@ This guide uses the results of [Get Started with the Web Extensibility API](/api
 
 ## Showing a Notification
 
-With the Notifications API, you can show a pop-up notification when your extension loads. The notification will disappear after five seconds. To do this, follow the steps below:
+With the notifications API, you can show a pop-up notification when your extension loads. The notification will disappear after five seconds. To do this, follow the steps below:
 
 1. Create an `assets` folder under your `src` folder.
 2. Find an icon you want to use in your notification and copy it into the `assets` folder. This example uses the file `check.png`.
@@ -71,7 +71,7 @@ The show method has the following parameters:
 
 * `title` – the title of the notification
 * `message` – the text content of the notification
-* `displayDurationInSeconds` – an optional duration in seconds for the notification to remain visible; if no duration is provided, the pop-up will remain indefinitely until the user removes it themselves
+* `displayDurationInSeconds` – an optional duration (in seconds) for the notification to remain visible; if no duration is provided, the pop-up will remain indefinitely until the user removes it themselves
 * `icon` – an optional icon that is displayed inside the notification
 
 ## Extensibility Feedback

@@ -7,7 +7,7 @@ weight: 30
 
 ## Introduction
 
-This how-to describes how to create a simple menu that shows the user's Preferences (current theme and language) in a message box.
+This how-to describes how to create a simple menu that shows the user's preferences (current theme and language) in a message box.
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ Before starting this how-to, ensure you have:
 1. Completed the steps in [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/v11/getting-started/).
 2. Become familiar with creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/v11/menu-api/) and message boxes as described in [Show a Message Box Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/v11/messagebox-api/).
 
-## Set Up the Extension Structure by Creating a Simple Menu
+## Set Up the Extension Structure 
 
 Create a menu that will display a dialog with text. This is done in the `loaded` event in `Main`. This can be done by following the steps in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/v11/menu-api/).
 
@@ -62,7 +62,7 @@ It listens to the `menuItemActivated` endpoint, which will notify the extension 
 
 ## Import and Use the Preferences API
 
-Import the Preferences API and use it to fetch the user’s preferences. 
+Import the preferences API and use it to fetch the user’s preferences. 
 
 1. Add the following import at the top of the file:
 
@@ -70,7 +70,7 @@ Import the Preferences API and use it to fetch the user’s preferences.
     const preferencesApi = studioPro.ui.preferences;
     ```
 
-2. Update the event listener to use the Preferences API:
+2. Update the event listener to use the preferences API:
 
     ```typescript
     studioPro.ui.extensionsMenu.addEventListener(
@@ -98,8 +98,8 @@ Note that the function is `async` in order for you to use `await` when fetching 
 
 The `getPreferences()` function returns an object with two properties:
 
-* theme — either **Light** or **Dark**, representing the current theme setting in Studio Pro.
-* language — a string representing the current language setting, such as `en_US` for English (United States).
+* Theme — either **Light** or **Dark**, representing the current theme setting in Studio Pro
+* Language — a string representing the current language setting, such as `en_US` for English (United States)
 
 The complete `src/main/index.ts` file should now look like this:
 
