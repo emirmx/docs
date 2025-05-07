@@ -9,7 +9,7 @@ info:
     url: 'https://support.mendix.com'
     email: support@mendix.com
 servers:
-  - url: 'https://users-status-api.home-test.mendix.com/v1'
+  - url: 'https://users-status-api.home.mendix.com/v1'
 paths:
   '/platform-users/{uuid}':
     patch:
@@ -155,7 +155,7 @@ paths:
       security:
         - PersonalAccessToken: []
       servers:
-        - url: 'https://users-status-api.home-test.mendix.com/v1'
+        - url: 'https://users-status-api.home.mendix.com/v1'
           description: ''
 components:
   securitySchemes:
