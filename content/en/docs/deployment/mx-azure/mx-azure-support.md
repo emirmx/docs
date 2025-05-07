@@ -151,6 +151,14 @@ Mendix strives to minimize the impact of such bugs and issues for our customers 
 
 The solution is being benchmarked against SOC2 Azure Policy Compliance controls.
 
+Some Security highlights:
+
+* Deploys a managed Mendix environment within the customer's Azure subscription
+* Incorporate built in security features and adheres to Azure Best Practices.
+* Utilizes reporting tools to proof compliance
+
+There are some exceptions which you can refer [here](https://docs.mendix.com/developerportal/deploy/mendix-on-azure/#soc-2-type-2-compliance-exceptions)
+
 ## Known Limitations
 
 * Mendix on Azure only supports hosting apps on Mendix versions 10.10 or later. Any app on an earlier version will fail to deploy successfully.
