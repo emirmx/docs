@@ -42,7 +42,11 @@ Version control systems like Git do not store a full copy of a document for ever
 
 #### MPRv2 Format {#mprv2}
 
-MPRv2 is a new version of the *.mpr* format. The key difference is that all documents, such as microflows, are no longer stored as part of the *.mpr* file but as separate files in the *mprcontents* directory. The *.mpr* file functions as an index file pointing to all the different files on disk.
+{{% alert color="info" %}}
+When opening an existing app in Studio Pro 11, it automatically converts to the MPRv2 format.
+{{% /alert %}}
+
+Studio Pro 10.18 introduced a new version of the *.mpr* format: MPRv2. The key difference is that all documents, such as microflows, are no longer stored as part of the *.mpr* file but as separate files in the *mprcontents* directory. The *.mpr* file functions as an index file pointing to all the different files on disk.
 
 This means that when you change one document, for example, a page, only a small file representing that page will change on disk. This allows Git to calculate an efficient delta and results in a more appropriate repository growth compared to MPRv1. Functionally there is no differences between the split (v2) or the combined (v1) format inside Studio Pro.
 
@@ -231,5 +235,5 @@ In case you are still deciding whether to migrate from SVN to Git, or you are al
 
 {{< figure src="/attachments/refguide/version-control/troubleshoot-version-control-issues/migration-advice-combined.png" class="no-border" >}}
 
-You can manually convert branches to MPRv2. In future versions, branch conversion will happen automatically. For more information on the format, see the [MPRv2 Format](#mprv2) section.
+In Studio Pro 10.18 and above, you can manually convert branches to MPRv2. In Studio Pro 10.22 and above, branch conversion happens automatically. For more information on the format, see the [MPRv2 Format](#mprv2) section.
 For more information on partial clone, see [Clone Type](/refguide/clone-type/).
