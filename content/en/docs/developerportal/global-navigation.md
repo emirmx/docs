@@ -66,7 +66,7 @@ Below are the Maia capabilities that are available in Mendix Portal:
 * **Maia Chat**  – a built-in chat interface, for more information, see the [Maia Chat](#maia-chat) section below.
 * **Maia Rewrite** – an AI-assisted writing aid integrated within the Mendix Community posting interface, which helps you to ask properly-formatted questions that are more likely to be answered. For more information on how to use it, see the [Asking Your Question](/community-tools/mendix-community/#asking-question) section in *Mendix Community*.
 * **Maia Summarize** – an AI-assisted summarizing aid which condenses lengthy discussions for a question posted on Mendix Community into key points, making it easier for you to find solutions to your questions without having to plough through every single answer in the thread. For more information on how to use it, see the [Question Details](/community-tools/mendix-community/#question-details) section in *Mendix Community*.
-* **Maia Create User Story** (beta) – an AI-assisted tool that helps you to easily create stories in [Epics](/developerportal/project-management/epics/) through the [Board](/developerportal/project-management/epics/board/) or the [Planning](/developerportal/project-management/epics/planning/) page.
+* **Maia Create User Story** – an AI-assisted tool that helps you to easily create stories in [Epics](/developerportal/project-management/epics/) through the [Board](/developerportal/project-management/epics/board/) or the [Planning](/developerportal/project-management/epics/planning/) page.
 
 ### Maia Chat {#maia-chat}
 
