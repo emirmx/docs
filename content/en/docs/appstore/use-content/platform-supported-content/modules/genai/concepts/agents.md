@@ -8,17 +8,17 @@ description: "Describes Agents and Agentic Patterns as used with generative AI i
 
 ## Introduction
 
-AI agents are autonomous computational systems that execute actions based on triggers such as user input or system events. These agents utilize tools, functions, and knowledge bases to determine appropriate responses. They can be either adaptive (learning-based) or task-specific, designed to automate processes and enhance operational efficiency.
+AI agents are autonomous computational systems that execute actions based on triggers such as user input or system events. These agents utilize reasoning, execute tools (functions) and leverage data from knowledge bases to determine appropriate responses. They can be either adaptive (learning-based) or task-specific, designed to automate processes and enhance operational efficiency.
 
 If you are new to the topic and would like to build your own agent, check out our guide on [how to build your first agent in Mendix](https://docs.mendix.com/appstore/modules/genai/how-to/howto-single-agent/). It covers how to combine prompt engineering, function calling, and knowledge bases—all within a Mendix app.
 
 ## Multi-Agent systems
 
-Sometimes, one agent is not enough for more complex use cases. Then a multi-agent solution is needed. Multi-agent architectures supersede single-agent implementations when task complexity exceeds individual agent capabilities. While single-agent systems demonstrate efficacy in well-defined, discrete operations, complex or ambiguous scenarios necessitate distributed agent collaboration. Multi-agent frameworks enable specialized task allocation and coordinate execution protocols, resulting in enhanced operational outcomes and improved system performance.
+Sometimes, one agent is not enough for more complex use cases. Then a multi-agent solution is needed. Multi-agent architectures supersede single-agent implementations when task complexity exceeds individual agent capabilities. While single-agent systems demonstrate efficacy in well-defined, discrete operations, complex or ambiguous scenarios necessitate distributed agent collaboration. Multi-agent frameworks enable specialized task allocation and coordinate business processes and execution protocols by invoking dedicated sub-agents, often dynamically. The goal is to have enhanced operational outcomes and an improved system performance compared to single-systems where one agent takes care of the complexity by itself.
 
 ## Pattern Overview
 
-When building agents, it is necessary to choose a pattern so that the task allocation and coordination can be executed as desired. Some examples for patterns can be found below. For practical examples on the following patterns, check the GenAI Showcase App. 
+When building agents, it is necessary to choose a pattern that fits the goal of the system: it is important to make sure that the task allocation and coordination can be executed as desired and results in the right outcomes. Some examples for patterns can be found below. For practical examples on the following patterns, check the GenAI Showcase App. 
 
 ### Prompt Chaining
 
