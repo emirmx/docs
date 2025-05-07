@@ -13,12 +13,12 @@ This how-to describes how to create a simple menu that shows the user's preferen
 
 Before starting this how-to, ensure you have:
 
-1. Completed the steps in [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/v11/getting-started/).
-2. Become familiar with creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/v11/menu-api/) and message boxes as described in [Show a Message Box Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/v11/messagebox-api/).
+1. Completed the steps in [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/).
+2. Become familiar with creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/) and message boxes as described in [Show a Message Box Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/messagebox-api/).
 
 ## Set Up the Extension Structure 
 
-Create a menu that will display a dialog with text. This is done in the `loaded` event in `Main`. This can be done by following the steps in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/v11/menu-api/).
+Create a menu that will display a dialog with text. This is done in the `loaded` event in `Main`. This can be done by following the steps in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
 
 In the example below, you create one menu item that will show a message box.
 

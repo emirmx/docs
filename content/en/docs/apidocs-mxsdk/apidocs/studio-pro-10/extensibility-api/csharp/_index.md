@@ -50,7 +50,7 @@ Here is a list of how-tos for you to begin with:
 
 APIs for the Mendix platform's advanced users:
 
-* [Use the Untyped Model Access API Using C#](/apidocs-mxsdk/apidocs/untyped-model-access-api/)
+* [Use the Untyped Model Access API Using C#](/apidocs-mxsdk/apidocs/untyped-model-access-api-10/)
 
 ## Learn More
 
@@ -58,7 +58,7 @@ You can dive into the following topics in depth:
 
 * [What are extension points](/apidocs-mxsdk/apidocs/csharp-extensibility-api-10/extension-points/)
 * [What are the Extensibility API services](/apidocs-mxsdk/apidocs/csharp-extensibility-api-10/services/)
-* [How to Interact with the Model API Using C#](/apidocs-mxsdk/apidocs/interact-with-model-api/)
+* [How to Interact with the Model API Using C#](/apidocs-mxsdk/apidocs/interact-with-model-api-10/)
 * [How to host web content via a web view wrapper](/apidocs-mxsdk/apidocs/csharp-extensibility-api-10/web-views/)
 * [How to Build a Todo Example Extension Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api-10/build-todo-example-extension/)
 

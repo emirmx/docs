@@ -84,7 +84,7 @@ public void CreateMicroflows(IModel currentApp)
 }
 ```
 
-As you can see, the `CreateMicroflows` method starts a new transaction, by calling `currentApp.StartTransaction`, which is the only way an extension can modify the model of the app. If your class tried to create microflows outside of a transaction, an error will be thrown. For more information, see [Interact with the Model API Using C#](/apidocs-mxsdk/apidocs/interact-with-model-api/).
+As you can see, the `CreateMicroflows` method starts a new transaction, by calling `currentApp.StartTransaction`, which is the only way an extension can modify the model of the app. If your class tried to create microflows outside of a transaction, an error will be thrown. For more information, see [Interact with the Model API Using C#](/apidocs-mxsdk/apidocs/interact-with-model-api-10/).
 
  `IMicroflowService` enables creating microflows. For details, see [Create a Microflow and Add Activities Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api-10/create-microflow-add-activities/). It requires the current model (`IModel`), the containing module or folder inside a module (`IFolderBase`), a name, and an optional `MicroflowReturnValue`. The return value is actually used in the example, so you will see how to create one as well.
 
