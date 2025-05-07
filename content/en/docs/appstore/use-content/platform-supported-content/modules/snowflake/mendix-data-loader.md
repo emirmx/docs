@@ -87,15 +87,18 @@ The ingested data is stored in the target schema of the specified target databas
 
 ## Exposing Associations in OData
 
-Depending on how you expose the associations in your published OData you can expect slightly different structure of the ingested data in your staging area in Snowflake. Navigate to your OData resource in studio pro and select one of the two options "As a Link" or "As an Associated Object ID".
+Depending on how you expose the associations in your published OData, you can expect slightly different structure of the ingested data in your staging area in Snowflake. Navigate to your OData resource in Studio Pro and select one of the following options:
+
+* **As a Link**
+* **As an Associated Object ID**
 
 ### As a Link
 
-When exposing associations as a link we recommend that you expose the associations on the owners side of the association. This will avoid duplicate junction table creation when ingesting the data. When choosing this option all associations will be ingested into junction tables where the name of the table has the format "MX_OwnerObjectName_TargetObjectName_ExposedAssociationName". The column names will be the name of the attribute that is exposed in the OData as the object key. Make sure that the attribute you choose as object key has unique values for all the different objects.
+When exposing associations as a link, we recommend that you expose the associations on the owners side of the association. This prevents the creation of duplicate junction tables when ingesting the data. When choosing this option, all associations are ingested into junction tables where the name of the table has the format *MX_OwnerObjectName_TargetObjectName_ExposedAssociationName*. The column names are the names of the attributes that are exposed in the OData as the object key. Make sure that the attribute you choose as object key has unique values for all the different objects.
 
 ### As an Associated Object ID
 
-When exposing associations as an object ID, no junction tables will be created on ingestion but a column will be added on the target table holding the ID of the associated object. Many to many associations aren't supported with this setting. 
+When exposing associations as an object ID, no junction tables are created on ingestion. Instead, a column is added on the target table with the ID of the associated object. This setting does not support many-to-many associations. 
 
 ## Using Delta Ingestion Setting
 
