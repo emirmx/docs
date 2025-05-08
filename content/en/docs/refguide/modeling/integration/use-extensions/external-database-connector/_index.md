@@ -1,15 +1,14 @@
 ---
-title: "External Database Connection"
+title: "Connect to an External Database"
 url: /refguide/external-database-connection/
 weight: 30
-description: "Overview of the [External Database Connection document](https://marketplace.mendix.com/link/component/219862) in Studio Pro, downloaded from the Mendix Marketplace."
+linktitle: "External Database Connection"
+description: "Overview of how to configure the [External Database Connection document](https://marketplace.mendix.com/link/component/219862)."
 ---
 
 ## Introduction
 
 The [External Database Connector](/appstore/modules/external-database-connector/) integrates with Studio Pro with an **External database connection** service document. Use this document to connect to external databases in Studio Pro.
-
-This page references the External Database Connection document in Studio Pro. For information on how to configure the connector, see [External Database Connector](/appstore/modules/external-database-connector/). For information on how to create and validate SQL queries, see [Use the External Database Connector](/refguide/use-the-external-database-connector/).
 
 {{% alert color="info" %}}
 You must have the [External Database Connector](https://marketplace.mendix.com/link/component/219862) installed for external database connections to work properly while running your app. For instructions on adding modules or connectors to your app, see [Use Marketplace Content in Studio Pro](/appstore/use-content/).

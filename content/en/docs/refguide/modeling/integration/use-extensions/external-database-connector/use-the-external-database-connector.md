@@ -1,8 +1,8 @@
 ---
-title: "Use the External Database Connector"
+title: "Querying and Integrating External Data"
 url: /refguide/use-the-external-database-connector/
 weight: 40
-description: "Overview of the External Database Connector in Studio Pro"
+description: "Details how to use the External Database Connector to query external databases and integrate the data into your Mendix application."
 aliases: 
     - /howto/integration/use-the-external-database-connector/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team (buildpack) know they should update the URL in the product. See Mapping to Products for more details.
