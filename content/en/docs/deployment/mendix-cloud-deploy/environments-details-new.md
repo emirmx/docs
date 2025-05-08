@@ -29,11 +29,13 @@ The **Environment Details** page shows information about the selected environmen
 
 ## Actions {#actions}
 
-On the top right side of the screen, there are buttons and a **More Options** menu that you can use to perform various actions. Some action buttons are visible when your app is running, some are visible when your app is stopped, and some are always visible.
+On the top right side of the screen, there are buttons and a **More Options** ({{% icon name="three-dots-menu-horizontal"%}}) menu that you can use to perform various actions. Some action buttons are visible when your app is running, some are visible when your app is stopped, and some are always visible.
 
 {{% alert color="info" %}}Depending on your permissions, you may see only some of the action buttons described below. You can adjust your permissions settings on the [Permissions](/developerportal/deploy/node-permissions/) tab of your app's **Environments** page.{{% /alert %}}
 
 {{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details-beta/actions.png" alt="The buttons and More Options menu" >}}
+
+### Running App Actions
 
 When your app is running, you can perform the following actions:
 
@@ -43,11 +45,13 @@ When your app is running, you can perform the following actions:
 * **More Options**:
     * **Show Logged in Users** – This shows all users who are logged in to your app.
     * **Change Admin Password** – This changes the password for the built-in [administrator](/refguide/administrator/) account. The new password is applied immediately, without the need for a restart, and forces the administrator to pick up any new [roles](/refguide/administrator/#user-role) assigned in the app deployment package.
-    * **View Live Logs** – This shows a live log of your application. It is identical to the **View Live Log** action on the [Logs](/developerportal/operate/logs/) page.
+    * **View Live Logs** – This shows a live log of your application and performs the same action as the **View Live Log** button on the [Logs](/developerportal/operate/logs/) page.
     * **Show Debugger Info** – This shows the settings needed to connect the debugger in Studio Pro to your app. For more information on debugging in the cloud, see [How To Debug Microflows Remotely](/refguide/debug-microflows-remotely/).
     * **Show Running Now** – You can use this to monitor all actions that are currently running in your environment. For more information, see [Running Now](/developerportal/deploy/mxcloud-runningnow/).
 
-When your app is stopped, you can perform these actions instead:
+### Stopped App Actions
+
+When your app is stopped, you can perform these actions:
 
 * **Deploy** – This deploys an application to the environment.
 * **Start App** – This starts the application.
@@ -58,29 +62,6 @@ When your app is stopped, you can perform these actions instead:
 {{% alert color="info" %}}
 During a [maintenance window](/developerportal/deploy/maintenance-windows/), you cannot start, restart, or stop your app.
 {{% /alert %}}
-
-## The General Tab
-
-In the **Application Status** section of the **General** tab, you can find the following information about your environment:
-
-* **Status**
-    * {{% icon name="checkmark-circle-filled" color="green" %}} – The application in this environment is running
-    * {{% icon name="subtract-circle-filled" color="gray" %}} – No application has been started yet in this environment, or it has been turned off
-    * {{% icon name="alert-circle-filled" color="yellow" %}} – The application in this environment is experiencing some difficulties; check the alerts page or logs for more information
-    * {{% icon name="remove-circle-filled" color="red" %}} – The application in this environment is unstable and probably not usable anymore
-* **Project ID** – the unique identifier of the app
-* **Environment ID** – the unique identifier of the environment
-* **Running Since** – the date the app was started, if it is running
-* **Name** – the type of environment (Acceptance, Production, Test, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments)); for more information, see the [Naming of Environments](#naming) section below
-* **URL** – the URL of the app
-* **Custom Domains** – any [custom domains](/developerportal/deploy/custom-domains/) of the app; to add a new domain, click **Add Custom Domain**
-* **Studio Pro Target** – a **Yes** or **No** value indicating whether the environment is the designated deployment target from Studio Pro; for more information, see [Studio Pro Deployment Settings](/developerportal/deploy/studio-deployment-settings/)
-* **Java Version** – the JDK version selected for the MDA that is deployed to the environment
-* **Database Version** – the PostgreSQL version supporting the database
-* **Region** – the data center region where the app is hosted (for the full list of Mendix Cloud regions, see [Outgoing IP](/developerportal/deploy/mendix-ip-addresses/#outgoing))
-* **Data Backup Secondary Location** – the region where the backup is stored (for more information, see [Data Location](/developerportal/operate/backups/#data-location) in the *Backups* documentation)
-
-At the bottom of the **General** tab, there are three additional sections, which are described in detail in the [Overviews](#overviews) section below.
 
 #### Clearing an Environment {#clear-environment}
 
@@ -106,25 +87,74 @@ To clear your environment, follow these steps:
 3. Confirm that you want to clear your environment by typing the indicated text (*clear database* or *clear model and database*, depending on which option you selected).
 4. Click **Clear Environment**.
 
-### Naming of Environments – Flexible Environments in Mendix Cloud {#naming}
+## The General Tab
+
+In the **General** tab, you can find four sections that provide information about the [application status](#application-status), [deployment package details](#deployment-package-details), [plan details](#plan-details), and [license](#license).
+
+### Application Status
+
+In the **Application Status** section of the **General** tab, you can find the following information about your environment:
+
+* **Status**
+    * {{% icon name="checkmark-circle-filled" color="green" %}} – The application in this environment is running
+    * {{% icon name="subtract-circle-filled" color="gray" %}} – No application has been started yet in this environment, or it has been turned off
+    * {{% icon name="alert-circle-filled" color="yellow" %}} – The application in this environment is experiencing some difficulties; check the alerts page or logs for more information
+    * {{% icon name="remove-circle-filled" color="red" %}} – The application in this environment is unstable and probably not usable anymore
+* **Project ID** – the unique identifier of the app
+* **Environment ID** – the unique identifier of the environment
+* **Running Since** – the date the app was started, if it is running
+* **Name** – the type of environment (Acceptance, Production, Test, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments)); for more information, see the [Naming of Environments](#naming) section below
+* **URL** – the URL of the app
+* **Custom Domains** – any [custom domains](/developerportal/deploy/custom-domains/) of the app; to add a new domain, click **Add Custom Domain**
+* **Studio Pro Target** – a **Yes** or **No** value indicating whether the environment is the designated deployment target from Studio Pro; for more information, see [Studio Pro Deployment Settings](/developerportal/deploy/studio-deployment-settings/)
+* **Java Version** – the JDK version selected for the MDA that is deployed to the environment
+* **Database Version** – the PostgreSQL version supporting the database
+* **Region** – the data center region where the app is hosted (for the full list of Mendix Cloud regions, see [Outgoing IP](/developerportal/deploy/mendix-ip-addresses/#outgoing))
+* **Data Backup Secondary Location** – the region where the backup is stored (for more information, see [Data Location](/developerportal/operate/backups/#data-location) in the *Backups* documentation)
+
+#### Naming of Environments – Flexible Environments in Mendix Cloud {#naming}
 
 If you are the app's [Technical Contact](/developerportal/general/app-roles/#technical-contact), you can rename the environments.
 
 To rename an environment, follow these steps:
 
-1. Click **Change** next to the name of the environment
+1. Click **Change** next to the name of the environment.
 2. Enter the new name, which must meet the following requirements:
-    * Consists of at least two characters
-    * Consists of only alphanumeric characters and hyphens (`a-z`, `A-Z`, `0-9`, and `-`)
-    * Does not begin or end with a hyphen
+    * Consists of at least two characters.
+    * Consists of only alphanumeric characters and hyphens (`a-z`, `A-Z`, `0-9`, and `-`).
+    * Does not begin or end with a hyphen.
 
 {{% alert color="info" %}}
 After you rename an environment, it may take up to 15 minutes before you can access an app via its URL. This is because the URL includes the name of the environment, and the old value needs to be removed from the DNS cache. It may take considerably longer for the change to be visible worldwide.
 {{% /alert %}}
 
-### Scaling {#scaling}
+### Deployment Package Details
 
-To see the options for changing scaling, scroll to the **Instances** row in the **Plan Details** section of the **General** tab, and click **Scale**. This will open the **Change Scaling** dialog box, which includes two sliders that you can control:
+In this section, you can find information about the deployment package that is loaded into the environment:
+
+* **Name** of the deployment package
+* **Version** of the deployment package
+* **Runtime** version of Mendix used to create the app
+* **Size (MB)** of the deployment package
+* **Upload Date** of the deployment package
+
+### Plan Details
+
+This section shows details of the plan that applies to this environment:
+
+* **Name** – the type of plan associated with your license
+* **Instances** – the number and memory allocation of instances in the environment (for more information, see the [Scaling](#scaling))
+* **Memory** – the total allocated memory of the plan
+* **Database Plan Cores** – the CPU cores allocated to the database
+* **Database Plan Space** – the storage capacity of the database
+* **Database Plan Memory** – the database's RAM size
+* **File Storage** – available size for storing blobs
+* **Backup Storage** – total size available for database backup files
+* **Multi-AZ Enabled** –  a **Yes** or **No** value indicating whether multiple availability zones are enabled
+
+#### Scaling {#scaling}
+
+To see the options for changing scaling, click **Scale** on the **Instances** row. This will open the **Change Scaling** dialog box, which includes two sliders that you can control:
 
 * Use the **Instances** slider to increase or decrease the number of instances
     * The instances are meant for improved resiliency and increased processing power
@@ -135,29 +165,11 @@ The **Total Allocated Memory** is represented by a progress circle that shows ho
 
 {{% alert color="info" %}}The maximum value for **Memory per instance** equals the **Total Allocated Memory** of your plan, and it cannot exceed 32 GiB. The maximum number of instances depends on the **Memory per instance** you have chosen; the maximum number of instances equals the total allocated memory divided by the memory per instance.{{% /alert %}}
 
-If you have 1 GiB RAM of total allocated memory, you have one instance available to store your memory. To scale your memory over multiple instances, you need more memory.
+If you have 1 GiB RAM of total allocated memory, you have one instance to use your memory. To scale your memory over multiple instances, you need more memory.
 
 For more information, see [Scaling Your Environment](/developerportal/deploy/scale-environment/).
 
-### Overviews {#overviews}
-
-In addition to the **Application Status** section in the **General** tab, there are three more sections showing the deployment package details, plan details, and license.
-
-#### Deployment Package Details
-
-In this section, you can find information about the deployment package that is loaded into the environment:
-
-* **Name** of the deployment package
-* **Version** of the deployment package
-* **Runtime** version of Mendix used to create the app
-* **Size (MB)** of the deployment package
-* **Upload Date** of the deployment package
-
-#### Plan Details
-
-This section shows details of the plan that applies to this environment.
-
-#### License
+### License
 
 The license overview contains the following information:
 
@@ -181,7 +193,7 @@ To fill in a new value, select the constant and click **Edit** to bring up the *
 
 In the **Edit Constant** dialog box, you can change the constant value using the **New Value** field.
 
-You can also set **Mask** to **Yes** to change the display settings for **Current Value** and **New Value**. When masking is enabled, all screens in the Mendix Portal (and in Excel if you export the constants) conceal these values and display asterisks in their place. This keeps your constants secret from users with no edit rights.
+You can also set **Mask** to **Yes** to change the display settings for **Current Value** and **New Value**. When masking is enabled, all screens in the Mendix Portal (and in Excel if you export the constants) conceal their values and display asterisks in their place. This keeps your constants secret from users with no edit rights.
 
 {{% alert color="info" %}}
 For the changes to take effect, you must restart your application.
@@ -494,7 +506,7 @@ Click **Add** and select **Supported** to choose from the following variables:
     * The value of this variable is in the format `Module.Entity.Attribute`, where `Module` is the module of your app that contains the `Entity` that is a specialization of `System.User` and `Attribute` is the attribute that contains the email address of the user.
     * If you have multiple specializations of `System.User`, you can specify the values in comma-separated format (that is, `Module1.Entity1.Attribute1,Module2.Entity2.Attribute2,…,ModuleN.EntityN.AttributeN`). In the following example, there are two specializations identified: `Administration.Account.Email,MendixSSO.MendixSSOUser.EmailAddress`.
 
-Unsupported environment variables can only be used to control Mendix beta features. To configure an unsupported variable, click **Add** and select **Unsupported**. If you are participating in using a beta feature, you will be informed what **Name** and **Value** to enter.
+Unsupported environment variables can only be used to control Mendix beta features. To configure an unsupported variable, click **Add** and select **Unsupported**. If you are using a beta feature, you will be informed what **Name** and **Value** to enter.
 
 ## The Maintenance Tab {#maintenance-tab}
 
@@ -523,9 +535,9 @@ The status of a maintenance task can be one of:
 
 * **Succeeded** – the maintenance task was successful
 * **Failed** – the maintenance task failed and the environment requires intervention
-    * Our engineering team has already been notified about the failed task. If you are still experiencing issues, please create a support ticket with [Mendix Support](https://support.mendix.com/hc/en-us)
+    * Our engineering team will have been notified about the failed task. If you are still experiencing issues, please create a support ticket with [Mendix Support](https://support.mendix.com/hc/en-us)
 * **Incomplete** – the maintenance task was unsuccessful and no changes were applied
-    * You can operate the environment as usual. Our engineering team has received an alerted about the incomplete task and will take the appropriate action (which may involve rescheduling the task)
+    * You can operate the environment as usual. Our engineering team will have been alerted about the incomplete task and will take the appropriate action (which may involve rescheduling the task)
 * **Ineligible** – the maintenance task was unsuccessful because one or more starting criteria were not met
     * You can operate the environment as usual. This can happen, for example, if the database of your environment was scheduled to be upgraded but it is already on the target version
 
@@ -550,9 +562,9 @@ If you want to add, edit, or delete a tag, make the change on the **Tags** tab a
 
 ## The Services Tab {#services}
 
-In the **Services** tab, the [Technical Contact](/developerportal/general/app-roles/#technical-contact) decides which custom services to be used in each environment of the app. You can then enable and disable these services for individual environments of your app. 
+In the **Services** tab, the [Technical Contact](/developerportal/general/app-roles/#technical-contact) decides the custom services for each environment. You can then enable and disable these services for individual environments as needed. 
 
-Note that a service must first be enabled for the app by the [Technical Contact](/developerportal/general/app-roles/#technical-contact) before it can be used. For more information, see [Services](/developerportal/deploy/environments/#services).
+The [Technical Contact](/developerportal/general/app-roles/#technical-contact) must first enable a service for the app before you can use it. For more information, see [Services](/developerportal/deploy/environments/#services).
 
 {{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details-beta/services.png" >}}
 
