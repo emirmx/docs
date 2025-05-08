@@ -57,7 +57,7 @@ You can find the following pages in Workflow Commons:
 * **MyInitiatedWorkflows** – This page gives end-users an overview of all their initiated workflows. They can view the current state, task timeline and can withdraw workflows that are in progress, paused, or incompatible.
 * **TaskDashboard** – This page gives end-users an overview of their performance. It contains such information as the number of completed tasks, average time spent to complete a task, and percentage of completed tasks within a deadline.
 * **TaskInbox** – This page contains a list of all tasks that a user can interact with. **My open tasks** shows the tasks assigned to current users, **All open tasks** is a list of tasks they could pick up and **Unassigned tasks** shows all unassigned tasks.
-* **WorkflowAdminCenter** – A navigational page for workflow administrators. From here, a workflow administrator can go the **Workflow Dashboard**, which gives them general statistics of workflows. Workflow administrators also gain access to **Workflow management**, where they can see all the instances of specific workflows and make changes to their data or even abort workflows.
+* **WorkflowAdminCenter** – A navigational page for workflow administrators. From here, a workflow administrator can go the **Workflow dashboard**, which gives them general statistics of workflows. Workflow administrators also gain access to **Workflow management**, where they can see all the instances of specific workflows and make changes to their data or even abort workflows. Additionally, the Workflow administrator can monitor audit records by accessing the **Workflow audit trail**, and manage assignments and user targeting via the **Manage task assignments** page from here.
 * **WorkflowDashboard** – This page gives you workflow/task based metrics and direct access to all *Workflow* and *WorkflowUserTask* data. When you want to use the Workflow Dashboard as your only admin go-to page, add this to the navigation instead of the **WorkflowAdminCenter**. 
 * **TaskAssignment** – This page allows the workflow administrator to manage the assignment and targeting of user tasks based on a selected user. This is typically done when a user is leaving the organization or their current role. Thus, all tasks that user is working on must be unassigned from that user or assigned to another user. On the page, first select the user whose tasks should be listed. Then, use the following tabs to reassign the user's tasks based on their involvement:
     * **Assigned tasks** – Shows a list of tasks assigned to the selected user (possible actions are reassigning and unassigning the corresponding tasks).
@@ -110,10 +110,35 @@ You can find the following microflows in Workflow Commons:
         2. Views personal performance in the **Task Dashboard**.
         3. Views workflow progress in the **My Initiated Workflows** overview.
 3. Make sure the correct user entity is set in the **App Settings**: open **App Settings** > **Workflows** tab and set **User entity** to *Administration.Account*.
-4. For Workflow Commons v2.1.0 and above, you need to configure the state change microflows in the **App Settings**: open **App Settings** > **Workflows** tab to configure the following state change microflows:
+4. For Workflow Commons v2.1.0 up to (but not including) v4.0.0, you need to configure the state change microflows in the **App Settings**: open **App Settings** > **Workflows** tab to configure the following state change microflows:
     1. Set **Workflow state change** to *OCh_Workflow_State*
     2. Set **User task state change** to *OCh_WorkflowUserTask_State*
+
+{{% alert color="info" %}}
+For version 4.0 and above, this step is no longer required. 
+{{% /alert %}}    
+
 5. For Workflow Commons v3.10.0 and above, we introduced the `DueDateExpirationInDays` constant to configure the period in days for which the workflows/user tasks are to be considered almost due with visual indicators in pages **Task Inbox**, **Task Dashboard**, **Default Workflow Admin** and **Workflow Definition View**. The default value is set to 2 days. You should set the value based on your business needs.
+
+### Upgrading from Mendix 10 to Mendix 11
+
+This section explains the required steps when upgrading an existing app that is using Workflow Commons from Mendix 10 to Mendix 11. With the removal of state-change events in Mendix 11, it is required to upgrade Workflow Commons to version 4.0.0 or higher. In addition, it is required to perform a one-off migration for your existing data. 
+
+Starting with version 4.0.0, Workflow Commons uses the new [View Entities](https://docs.mendix.com/refguide/view-entities) feature for unified access to user tasks, regardless of whether these tasks are in progress or completed. The WorkflowUserTaskView view entity combines objects from System.WorkflowUserTask and System.WorkflowEndedUserTask into a single view. This removes the need for the custom entities (WorkflowView and UserTaskView) that used to be part of Workflow Commons in versions below v4.0.0, that were kept up to date using state-change events.
+
+Starting with Mendix 11, ended user tasks are now stored in the WorkflowEndedUserTask entity in the System module. In order to preserve existing data, it is important to migrate information on ended user tasks from WorkflowCommons.UserTaskView objects into System.WorkflowEndedUserTask objects. A migration microflow is shipped with Workflow Commons v4.0.0 to help you perform this task.
+
+To perform the migration, follow the steps below:
+
+1. After upgrading your project to Mendix 11, download Workflow Commons v4.0.0 from the marketplace.
+
+2. In the runtime settings of your app, configure the ASU_UserTaskView_Migrate microflow for the after startup property. If there is already an after startup microflow set, add the ASU_UserTaskView_Migrate microflow as an action to the existing microflow.
+
+3. Alternatively, you can manually start the migration by clicking the "Migrate UserTaskView object(s) to WorkflowEndedUserTask entity" button which is available on the Workflow Admin Center page, or use the ACT_UserTaskView_Migrate microflow in your project.
+
+{{% alert color="info" %}}
+As a result of upgrading to Mendix 11, the pages, microflows, and snippets that previously used the `WorkflowCommons.UserTaskView` entity have either been removed from the WorkflowCommons module or replaced with documents that uses `WorkflowCommons.WorkflowUserTaskView` or `System.WorkflowEndedUserTask` as a parameter. For a full list, refer to the release notes of v4.0.0 of the Workflow Commons module.
+{{% /alert %}}  
 
 ## Workflow Audit Trail
 
