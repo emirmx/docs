@@ -131,9 +131,7 @@ Starting with Mendix 11, ended user tasks are now stored in the WorkflowEndedUse
 To perform the migration, follow the steps below:
 
 1. After upgrading your project to Mendix 11, download Workflow Commons v4.0.0 from the marketplace.
-
 2. In the runtime settings of your app, configure the ASU_UserTaskView_Migrate microflow for the after startup property. If there is already an after startup microflow set, add the ASU_UserTaskView_Migrate microflow as an action to the existing microflow.
-
 3. Alternatively, you can manually start the migration by clicking the "Migrate UserTaskView object(s) to WorkflowEndedUserTask entity" button which is available on the Workflow Admin Center page, or use the ACT_UserTaskView_Migrate microflow in your project.
 
 {{% alert color="info" %}}
