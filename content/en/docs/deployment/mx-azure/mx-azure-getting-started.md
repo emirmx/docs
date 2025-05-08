@@ -54,13 +54,13 @@ To adopt Mendix on Azure, you need to have the following:
 
 {{% /alert %}}
 
-Once you have an azure subscription, you can find your Subsciption ID using [this](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id#find-your-azure-subscription) documentation and provide this information to the Mendix representative.
-
+After you obtain an Azure subscription, you can [find your Subsciption ID](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id#find-your-azure-subscription) and provide this information to the Mendix representative.
 
 ## Next Steps
-Once all the prerequisites are met, customer will be granted access to our [Mendix on Azure](https://portal.azure.com/#create/mendixtechbv.mxonazure) offering in Azure Marketplace. You need to use this listing to purchase and deploy to a resource group of your choice.
 
-After purchasing the offering, you can initialize your first Mendix on Azure cluster by following the [instructions](https://docs.mendix.com/developerportal/deploy/mendix-on-azure/installation/) documentation 
+Once all the prerequisites are met, you will be granted access to the [Mendix on Azure](https://portal.azure.com/#create/mendixtechbv.mxonazure) offering in Azure Marketplace. You must use this listing to purchase and deploy to a resource group of your choice.
+
+After purchasing the offering, you can initialize your first Mendix on Azure cluster by following the [installation instructions](https://docs.mendix.com/developerportal/deploy/mendix-on-azure/installation/).
 
 ## Licensing
 
