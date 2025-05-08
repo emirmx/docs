@@ -18,9 +18,9 @@ The following operators can be used in XPath query constraints, both in Studio P
 | `or` | Or | `price = 9.80 or price = 9.70` | true if price is 9.80, false if price is 9.60 |
 | `and` | And | `price = 9.80 and amount = 1` | true if price is 9.80 and amount is 1, false if price is 9.70 and amount is 1, false if price is 9.80 and amount is 2, false if price is 9.70 and amount is 2 |
 
-## For Java Code
+## Mathematical operators
 
-Additionally, the following operators are supported in Java code only:
+The following mathematical operators are supported:
 
 | Operator | Description | Example | Return value |
 | --- | --- | --- | --- |
@@ -28,6 +28,14 @@ Additionally, the following operators are supported in Java code only:
 | `-` | Subtraction | `6 - 4` | 2 |
 | `*` | Multiplication | `6 * 4` | 24 |
 | `div` | Division | `8 div 4` | 2 |
+
+Mathematical operators can be used in Studio Pro. In Java code, they are disabled by default for `XPathQuery` API, but can be enabled with method `allowMathOperators`. For example:
+
+```java
+core.createXPathQuery("//Module.Entity[attr1 + attr2 = 42]")
+    .allowMathOperators(true)
+    .execute(context);
+```
 
 ## Operator Behavior
 
