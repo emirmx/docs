@@ -8,51 +8,52 @@ description: "Describes Agents and Agentic Patterns as used with generative AI i
 
 ## Introduction
 
-AI agents are autonomous computational systems that execute actions based on triggers such as user input or system events. These agents utilize reasoning, execute tools (functions) and leverage data from knowledge bases to determine appropriate responses. They can be either adaptive (learning-based) or task-specific, designed to automate processes and enhance operational efficiency.
+AI agents are autonomous computational systems that perform actions in response to triggers such as user input or system events. These agents apply reasoning, execute tools (functions), and leverage data from knowledge bases to determine the most appropriate responses. They may be adaptive (learning-based) or task-specific, designed to automate processes and improve operational efficiency.
 
-If you are new to the topic and would like to build your own agent, check out our guide on [how to build your first agent in Mendix](https://docs.mendix.com/appstore/modules/genai/how-to/howto-single-agent/). It covers how to combine prompt engineering, function calling, and knowledge bases—all within a Mendix app.
+If you are interested in creating your own agent, explore the guide on [building your first agent in Mendix](/appstore/modules/genai/how-to/howto-single-agent/). It walks you through how to combine prompt engineering, function calling, and knowledge base integration—all within a Mendix app.
 
 ## Multi-Agent systems
 
-Sometimes, one agent is not enough for more complex use cases. Then a multi-agent solution is needed. Multi-agent architectures supersede single-agent implementations when task complexity exceeds individual agent capabilities. While single-agent systems demonstrate efficacy in well-defined, discrete operations, complex or ambiguous scenarios necessitate distributed agent collaboration. Multi-agent frameworks enable specialized task allocation and coordinate business processes and execution protocols by invoking dedicated sub-agents, often dynamically. The goal is to have enhanced operational outcomes and an improved system performance compared to single-systems where one agent takes care of the complexity by itself.
+Sometimes, a single agent is not enough for more complex use cases. In such cases, a multi-agent solution is needed. Multi-agent architectures go beyond single-agent implementations when tasks become too complex for one agent to handle alone. While single agents work well for simple, well-defined tasks, more complex or uncertain scenarios require multiple agents to collaborate. Multi-agent systems enable the coordination of business processes, specialized task allocation, and protocol execution by invoking dedicated sub-agents, often dynamically. This approach leads to better performance and more efficient operations compared to relying on a single agent to handle everything.
 
 ## Pattern Overview
 
-When building agents, it is necessary to choose a pattern that fits the goal of the system: it is important to make sure that the task allocation and coordination can be executed as desired and results in the right outcomes. Some examples for patterns can be found below. For practical examples on the following patterns, check the GenAI Showcase App. 
+When building agents, choose a pattern that aligns with your system's goals. Ensure that task allocation and coordination work as intended and lead to the desired outcomes. You will find examples of common patterns below. For practical implementations, check out the GenAI Showcase App.
 
 ### Prompt Chaining
 
-This is a linear chain of multiple LLM calls. The output of one LLM call is the basis for the input of the next LLM call. It can be passed directly as-is, or as a part of the user prompt with some additional instructions. Each LLM call will have its own system prompt and forms a discrete step in the bigger process that has an overarching goal. It is not necessary that the model used for each call is the same: the choice of model can be optimized for the task of each LLM step.
+This approach uses a linear chain of multiple LLM calls, where the output of one call becomes the input for the next. The output can be passed directly or included in the next prompt with additional instructions. Each LLM call has its own system prompt and represents a distinct step in a larger process with an overarching goal. You do not need to use the same model for every step. The model can be selected based on the task of each LLM step.
 
-The input of this system is a user prompt, either typed directly by the user, or constructed using prompt engineering techniques. The output of the system is typically the plain output of the last LLM call.
+The system takes a user prompt as input, either typed directly or generated using prompt engineering techniques. Its output is typically the plain response from the final LLM call in the chain.
 
  {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/agents/Linear-Chaining.svg" >}}
 
 ### Prompt Chaining with Gatekeeper
 
-This is an extension of the linear chain of multiple LLM calls. Now, the gatekeeper LLM call is part of the linear flow as well. The difference with the other elements in the flow is that the output of the gatekeeper is not always blindly passed to the next. The task is to break out of the flow in certain (typically unhappy) scenarios, which is determined based on the input it receives. If the flow, however, can be continued according to the gatekeeper, the input of the next LLM call will be the same as the input the gatekeeper received. 
+This is an extension of the linear chain of multiple LLM calls. Now, the gatekeeper LLM call is part of the linear flow. Unlike other steps, the gatekeeper does not always pass its output directly to the next call. Its role is to assess the input and decide whether to continue the flow or break out, typically in "unhappy" or exception scenarios. If the gatekeeper determines that the process should proceed, the next LLM call receives the same input that the gatekeeper received.
 
-Like in the previous pattern, the input of this system is a user prompt, either typed directly by the user, or constructed using prompt engineering techniques. The output of the system is typically the plain output of the last LLM call in the happy flow. In an unhappy scenario, developers can choose to use the response of the Gatekeeper Agent or to return a static response as output.
+As with the previous pattern, the system takes a user prompt as input, either entered directly or generated through prompt engineering techniques. The output is typically the plain result of the final LLM call in the happy flow. In an unhappy scenario, developers can choose to return either the gatekeeper agent’s response or a predefined static message.
 
  {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/agents/Linear-Chaining-Gatekeeper.svg" >}}
 
 ### Evaluator-Optimizer
 
-In the evaluator-optimizer workflow, one LLM interaction generates a text, then another evaluates the text and provides feedback. This happens in a loop until the evaluation criteria are met, or a certain maximum number of attempts has been reached. 
+In the evaluator-optimizer workflow, one LLM generates a text, and another evaluates it by providing feedback. This loop continues until the output meets the evaluation criteria or reaches a maximum number of attempts.
 
-Alternative names for this pattern include:
-- LLM as a judge (this term is also used for a test/evaluation framework, not to be confused)
-- Generator-Evaluator
+Alternative names for this pattern are:
 
-The input of this system is a user prompt, either typed directly by the user, or constructed using prompt engineering techniques. The output of the system is the plain output of the last iteration of the Generator Agent LLM call as approved by the Evaluator Agent.
+* LLM-as-a-judge (also used in testing or evaluation frameworks, so context is important to avoid confusion)
+* Generator evaluator
 
- {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/agents/Evaluator-Optimizer.svg" >}}
+The input of this system is a user prompt, either typed directly by the user or constructed using prompt engineering techniques. The output of the system is the plain output of the last iteration of the Generator Agent LLM call, as approved by the Evaluator Agent.
+
+ {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/agents/Evaluator-optimizer.svg" >}}
 
 ### Routing
 
-This pattern is powerful if the desired system must handle a variety of concrete tasks. For each of the different tasks the system should handle, a dedicated agent is created with focus on its specific task. When the system is triggered, the router agent will determine (i.e. classify) which of the supported tasks is semantically most similar to the intent of the input that was given. When a match is found, the input that was given to the system (which can include chat history) will be passed to the corresponding agent. This is often referred to as "hand-off", which means that the chosen agent is now fully responsible for processing the input and generating output, most often without knowing the router agent was there in the first place.
+This pattern is especially effective when the system needs to handle a variety of specific tasks. For each task, a dedicated agent is created with a clear focus on its assigned responsibility. When the system is triggered, a router agent classifies the input and determines which supported task most closely matches the user's intent. Once a match is found, the original input (which may include chat history) is passed to the appropriate agent. This process is often referred to as “hand-off”. It transfers full responsibility to the selected agent, which processes the input and generates an output, typically without any awareness of the router's involvement.
 
-The input of this system is a user prompt, either typed directly by the user, or constructed using prompt engineering techniques. The output of the system is the plain output of the Agent chosen by the Router Agent. Variations exist where the Router Agent has the option to not hand off the input (or conversation) to any of the given agents if it considers the input to be out of the scope for the system. The output of the system can then be the Router Agents response or a static message for the end-user explaining why the system could not successfully process the request.
+The system takes a user prompt as input, either entered directly or crafted using prompt engineering techniques. The output is typically the plain response from the agent chosen by the Router Agent. In some variations, the Router Agent may choose not to hand off the input if it determines that the request falls outside the system's supported scope. In such cases, the system returns either the Router Agent's own response or a static message explaining why the request could not be processed.
 
  {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/agents/Routing.svg" >}}
 
@@ -64,10 +65,6 @@ Start from the [Agent Builder Starter App](https://marketplace.mendix.com/link/c
 
 Read more about [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commons/) in the GenAI reference guide.
 
-### Showcases
-
-Check out the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) in the Marketplace to see the patterns that were mentioned above in action.
-
 ### Additional Information
 
- Read our [Blogpost about multi-agent systems in a Mendix app](https://www.mendix.com/blog/how-multi-agent-ai-systems-in-mendix-can-train-you-for-a-marathon/)
+ Read the blog post on [Multi-agent systems in a Mendix app](https://www.mendix.com/blog/how-multi-agent-ai-systems-in-mendix-can-train-you-for-a-marathon/)
