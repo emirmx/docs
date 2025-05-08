@@ -90,7 +90,7 @@ You need at least one GenAI connector that follows the principles of GenAI commo
 When the app is running, a user with the `AgentAdmin` role can set up an agent, write the prompts, link microflows as tools and give it access to knowledge bases. When the agent is associated to a deployed model, it can be tested in an isolated set-up separate from the rest of the app's logic, to properly validate the behavior.
 The user can create either a Conversational agent, intended for scenarios where the end-user interacts through a chat interface or the agent is called in a conversational style by another agent, as opposed to a Single-Call agent, designed for isolated agentic patterns, like agents that work in background processes, subagents that are part of an Agent-as-Tool pattern, or otherwise agentic patterns that do not require a conversational interface with historical messages. 
 
- {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/agentcommons/AgentbuilderUI.png" >}}
+ {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/agentcommons/agentbuilderUI.png" >}}
 
 #### Define Context Entity
 
