@@ -11,10 +11,10 @@ description: "Overview of how to configure the [External Database Connection doc
 The [External Database Connector](/appstore/modules/external-database-connector/) integrates with Studio Pro with an **External database connection** service document. Use this document to connect to external databases in Studio Pro.
 
 {{% alert color="info" %}}
-You must have the [External Database Connector](https://marketplace.mendix.com/link/component/219862) installed for external database connections to work properly while running your app. For instructions on adding modules or connectors to your app, see [Use Marketplace Content in Studio Pro](/appstore/use-content/).
+You must install the [External Database Connector](https://marketplace.mendix.com/link/component/219862) for external database connections to work properly while running your app. For instructions on adding modules or connectors to your app, see [Use Marketplace Content in Studio Pro](/appstore/use-content/).
 {{% /alert %}}
 
-## Connect to Database Wizard {#wizard}
+## Connect to the Database Wizard {#wizard}
 
 Right-click your module and click **Add other > External database connection** to open the **Database Connection** wizard:
 
@@ -54,7 +54,7 @@ The password you provide when using one of the above connection methods will be 
 
 ## External Database Connection Document {#external-database-document}
 
-After entering your database information in the Database Connection wizard, the external database connection document is open in Studio Pro. 
+After entering your database information in the Database Connection wizard, the external database connection document opens in Studio Pro. 
 
 The name of the document is the **Name** (not **Database name**) you provided when running the wizard:
 
@@ -87,7 +87,7 @@ The **Tables & Columns** field on the right side of the screen displays the info
 
 After [querying the database](/appstore/modules/external-database-connector/#query-database), view the data included in the query in the **Response data** field.
 
-If you are satisfied with the response, click **Use Response**. This will take you to the [Response Structure](#data-structure) tab where you can preview and create an entity from the response.
+If you are satisfied with the response, click **Use Response**. This will take you to the **Response Structure** tab where you can preview and create an entity from the response.
 
 ### Response Structure {#data-structure}
 
@@ -95,4 +95,7 @@ The **Response Structure** tab displays a preview of an entity that can be creat
 
 ## Read More
 
-To learn about how to use the data in a microflow, see the [Query External Database](/refguide/query-external-database/) activity. 
+* To configure the connector with an external database, follow the steps in [External Database Connector](/appstore/modules/external-database-connector/).
+* To utilize the connector to integrate data into your Mendix application, see [Querying and Integrating External Data](/refguide/use-the-external-database-connector/).
+* To use SQL, see [Execute an SQL Statement on an External Database](/refguide/execute-an-sql-statement-on-an-external-database/).
+* To learn about how to use the data in a microflow, see the [Query External Database](/refguide/query-external-database/) activity. 
