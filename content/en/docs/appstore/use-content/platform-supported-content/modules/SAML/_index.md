@@ -445,7 +445,7 @@ You can set up custom user provisioning by setting the following constants. You 
 | DisableMxAdmin | deactivates Mx admin | *Optional* | `True` |
 
 {{% alert color="info" %}}
-From version 2.1.0 of the UserCommons module, if the flag is set to `True` for the `DisableMxAdmin` constant, MxAdmin will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
+You may have a requirement that users log in to your application only via SSO. However, when you deploy your app on the Mendix Cloud, the platform may still create an MxAdmin user with a local password. From version 2.1.0 of the UserCommons module, if the flag for the `DisableMxAdmin` constant is set to `True`, the MxAdmin user will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
 {{% /alert %}}
 
 ### Custom User Provisioning at Runtime{#custom-provisioning-rt}
