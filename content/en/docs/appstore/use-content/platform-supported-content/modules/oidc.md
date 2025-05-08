@@ -533,16 +533,16 @@ By default, users are provisioned by [Default User Provisioning Configuration](#
 You can set up just-in-time user provisioning as follows:
 
 1. Sign in to the running app with an administrator account.
-2. Navigate to the `OIDC.OIDC_Client_Overview` page which is set up in the app navigation.
+2. Navigate to the `OIDC.OIDC_Client_Overview` page, which is set up in the app navigation.
 3. In the **IdPs for SSO and API security** tab, click **New** and access the **UserProvisioning** tab.
 
-Below fields are available in the **UserProvisioning** tab for the User Provisioning configuration.
+Fields below are available in the **UserProvisioning** tab for the User Provisioning configuration.
 
 * **Custom user Entity (extension of System.User)** – the Mendix entity where you will store and look up the user account. If you are using the [Administration module](https://marketplace.mendix.com/link/component/23513), this would be `Administration.Account`.
-* **The attribute where the user principal is stored** – unique identifier associated with an authenticated user.
+* **The attribute where the user principal is stored** – a unique identifier associated with an authenticated user.
 * **Allow the module to create users** – this enables the module to create users based on configurations of JIT user provisioning and attribute mapping. When disabled, it will still update existing users. However, for new users, it will display an exception message in the log.
     * By default, the value is set to ***Yes***.
-* **User role** (optional) – the role which will be assigned to newly created users. This is optional and will be applied to all IdPs. You can select any user role as a default or keep the field empty. User Provisioning does not allow you to assign user roles dynamically. It can only set a default role. If you need additional user roles, use Access Token Parsing microflow to assign multiple roles. For more information, see the [Dynamic Assignment of Userroles (Access Token Parsing)](#access-token-parsing) section below.
+* **User role** (optional) – the role which will be assigned to newly created users. This is optional and will be applied to all IdPs. You can select any user role as a default or keep the field empty. User Provisioning does not allow you to assign user roles dynamically. It can only set a default role. If you need additional user roles, use the Access Token Parsing microflow to assign multiple roles. For more information, see the [Dynamic Assignment of Userroles (Access Token Parsing)](#access-token-parsing) section below.
     * By default, the value is set to ***User***.
 * **User Type** – this allows you to configure end-users of your application as internal or external. It is created upon the creation of the user and updated each time the user logs in.
     * By default, the value is set to ***Internal***.
