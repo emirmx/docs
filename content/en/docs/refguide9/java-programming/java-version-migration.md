@@ -42,3 +42,5 @@ The following changes in behavior have been noticed when migrating from Java ver
 [Locale data updates in Java version 20](https://www.oracle.com/java/technologies/javase/20-relnote-issues.html#JDK-8284840) mean that [date formatting microflow expressions](/refguide9/parse-and-format-date-function-calls/#format-datetime-utc) return a different result when the format string contains AM or PM.
 
 In Java versions below 20, a space would be included before the AM/PM, but now it will be a Unicode non-breaking space (NBSP or NNBSP, \u202f). In a microflow expression, this non-breaking space can be included in a string using `urlDecode('%E2%80%AF')`—for example `'8:24' + urlDecode('%E2%80%AF') + 'AM'`.
+
+In Java versions below 21, a period would be included at the end of the abbreviated month name (`MMM`) for the Dutch locale. In 21 and up the there will not be a period at the end of abbreviated month name. 
