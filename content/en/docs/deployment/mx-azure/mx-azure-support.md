@@ -149,15 +149,13 @@ Mendix strives to minimize the impact of such bugs and issues for our customers 
 
 ## Compliance Frameworks
 
-The solution is being benchmarked against SOC2 Azure Policy Compliance controls.
+The solution is being benchmarked against SOC2 Azure Policy Compliance controls. Security highlights include the following:
 
-Some Security highlights:
+* Deploys a managed Mendix environment within the customer's Azure subscription.
+* Incorporates built-in security features and adheres to Azure Best Practices.
+* Utilizes reporting tools to prove compliance.
 
-* Deploys a managed Mendix environment within the customer's Azure subscription
-* Incorporate built in security features and adheres to Azure Best Practices.
-* Utilizes reporting tools to proof compliance
-
-There are some exceptions which you can refer [here](https://docs.mendix.com/developerportal/deploy/mendix-on-azure/#soc-2-type-2-compliance-exceptions)
+There are some exceptions; for more information, see [SOC 2 Type 2 Compliance Exceptions](https://docs.mendix.com/developerportal/deploy/mendix-on-azure/#soc-2-type-2-compliance-exceptions).
 
 ## Known Limitations
 
