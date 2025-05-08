@@ -838,12 +838,18 @@ HAVING
 	)
 ```
 
-## `ORDER BY` Clause{#order-by}
+## `ORDER BY` Clause {#order-by}
 
 The `ORDER BY` clause specifies the sort order used on columns returned in a `SELECT` statement. Multiple columns can be specified. Columns are ordered in the sequence of the items in the `ORDER BY` clause.
 
 {{% alert color="info" %}}
 This clause can include items that do not appear in the `SELECT` clause, except when `SELECT DISTINCT` is specified or when a `GROUP BY` clause exists. When `UNION` is used, the column names or aliases must be those specified in the `SELECT` clause of the first part of the query. More information is presented in the [Union Clause](#oql-union) section.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+`ORDER BY` clause cannot be used in view entities without a `LIMIT` or an `OFFSET` clause. See [Sorting of view entity results](/refguide/view-entities/#sorting) for more details.
+
+If OQL v2 is enabled, `ORDER BY` clause cannot be used in subqueries without a `LIMIT` or an `OFFSET` clause because the order of the subquery results may not be retained in the outer query. See [OQL v2](/refguide/oql-v2/#order-by-in-subquery) for more details.
 {{% /alert %}}
 
 ### Syntax
