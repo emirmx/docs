@@ -22,7 +22,7 @@ This document teaches you how to do the following:
 
 ## Prerequisites
 
-Ensure you have an active connection using the External Database Connection document. For information on how to configure the connector, see [Configuring the External Database Connector](/appstore/modules/external-database-connector/). 
+Ensure you have an active connection using the External Database Connection document. For information on how to configure the connector, see [External Database Connector](/appstore/modules/external-database-connector/) in the *Marketplace Guide*. 
 
 * If additional connection properties are required to connect, you can alternatively use **JDBC Connection String**.
 * If certificate-based authentication is required for PostgreSQL connections, ensure that all necessary certificates are added before running the app.
@@ -171,3 +171,8 @@ You are now ready to use data from an external database in your Mendix App.
 {{% alert color="warning" %}}
 Make sure to use secure measures, as this action can allow for SQL injection into your app. Do not use user-supplied or environment-supplied variables in your SQL statement; if possible, they should be static.
 {{% /alert %}}
+
+## Read More
+
+* [Connect to an External Database](/refguide/external-database-connection/), an overview of the External Database Connection document.
+* [External Database Connector](/appstore/modules/external-database-connector/), which describes the confirmation and usage of the External Database Connector.

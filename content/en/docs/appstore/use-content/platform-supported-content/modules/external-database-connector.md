@@ -15,7 +15,9 @@ Connect to Microsoft SQL, MySQL, PostgreSQL, Oracle, and Snowflake databases wit
 
 Use this module to connect to databases and select data to use in your app. This connector allows you to directly test connections and queries during configuration in Studio Pro (design time). 
 
+{{% alert color="info" %}}
 If you need to connect to other database types, see the [Database Connector](/appstore/modules/database-connector/). Keep in mind that design time support is not available for the older version of the connector.
+{{% /alert %}}
 
 ## Features {#features}
 
@@ -70,6 +72,7 @@ After installing the connector, get started by doing the following:
 
 4. Click **Save** to open the external database document for this database.
 
+For more information on the connection details, see [Connect to an External Database](/refguide/external-database-connection/).
 
 ### Saving Connection Details
 
@@ -83,9 +86,9 @@ For example: `*Database*_DBsource.`
 
 Values for these constants are stored in the active configuration of the user. The password is stored as a private value.
 
+{{% alert color="info" %}}
 Constants are an environment variable whose values can differ per environment, When you deploy an app on Mendix Cloud, values for constants are not added. For more information, see [Constants](https://docs.mendix.com/refguide/configuration/#constants).
 
-{{% alert color="info" %}}
 For free apps, make sure to add the default values to the constant in Studio Pro. For more information, see the [Deploying a Free App](https://docs.mendix.com/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/#deploy-free-app) section below. {{% /alert %}}
 
 ### Exploring Schemas of a Connected Database
@@ -135,9 +138,9 @@ Here, the parameter `EmpIdList` is of type String with the  value `[1,7946,3,4,7
 
 ### Using Query Response {#use-query-response}
 
-After [querying the database](#query-database), you can view the response in the **Response** screen. 
+After querying the database, you can view the response in the **Response** screen. 
 
-Click **Use Response** if you want to [create an entity from the response](#create-entity).
+Click **Use Response** if you want to create an entity from the response.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/external-database-connector/execute-query.png" class="no-border" >}}
 
@@ -304,3 +307,8 @@ For more information, see:
 
 * [Java 21 Support with Databricks](https://community.databricks.com/t5/data-engineering/java-21-support-with-databricks-jdbc-driver/td-p/49297) in Databricks documentation
 * [Configure the External Database Connector for Databricks](/appstore/modules/databricks/external-database-connector/)
+
+## Read More
+
+* [Connect to an External Database](/refguide/external-database-connection/), an overview of the External Database Connection document.
+* [Querying and Integrating External Data](/refguide/query-and-integrate-external-data/), describes how to use the External Database Connector to query external databases and integrate data into your Mendix application.
