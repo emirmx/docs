@@ -315,17 +315,19 @@ In this case, the OIDC client is the app you are making.
 
    **Client assertion** is automatically set to *Client ID and Secret*.
 
-4. Choose the **Client authentication method** — make sure that you select a method that is supported by your IdP. You can normally check this via the `token_endpoint_auth_methods_supported` setting on the IdP’s well-known endpoint. Also ensure that the correct client authentication method is configured at the IdP when you register the client.
+4. Choose the **Client authentication method** — make sure that you select a method that is supported by your IdP. You can normally check this via the `token_endpoint_auth_methods_supported` setting on the IdP’s well-known endpoint. Also, ensure that the correct client authentication method is configured at the IdP when you register the client.
 
     The options are:
-    * `client_secret_basic`: Your app will use the HTTP Basic Authentication scheme to authenticate itself at your IdP. (Default – for security reasons this should be your preferred choice.) The `client_secret_basic` makes use of the `client-id` and `client-secret`.
-    * `client_secret_post`: Your app will authenticate itself by including its `client_id` and `client_secret` in the payload of token requests. (Older versions of the OIDC SSO module used this method).
-    * `private_key_jwt`: This method uses asymmetric key cryptography (algorithm) for authentication. When you select `private key` option, you can configure below fields:
+    * `client_secret_basic`: Your app will use the HTTP Basic Authentication scheme to authenticate itself at your IdP. (Default – for security reasons, this should be your preferred choice.) The `client_secret_basic` makes use of the `client-id` and `client-secret`.
+    * `client_secret_post`: Your app will authenticate itself by including its `client_id` and `client_secret` in the payload of token requests. (Older versions of the OIDC SSO module used this method.)
+    * `private_key_jwt`: This method uses asymmetric key cryptography (algorithm) for authentication. When you select the `private key` option, you can configure below fields:
         * **Key Pair Expiration Days**: (default `90`)
         * **JWT ALG(Signing Algorithm)**: (default `RS256`)
  
     Once you **Save** the configuration, a key pair is automatically generated. Before you set up the private key
 authentication in your Mendix App, complete the JWKS configuration at your IdP, for example, Okta. For more information, see the [Configuring JWKS at Your IdP (Okta)](#jwks-okta) section. 
+
+    {{% alert color="info" %}} Requests signed with the new key may fail until Okta refreshes its key cache by calling the `/jwks` endpoint. {{% /alert %}}
 
 5. Add the **Client Secret**.
 6. If you have the **Automatic Configuration URL** (also known as the *well-known endpoint*), enter it and click **Import Configuration** to automatically fill the other endpoints.
