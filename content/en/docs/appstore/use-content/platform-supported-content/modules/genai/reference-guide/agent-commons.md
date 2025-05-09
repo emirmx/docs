@@ -111,15 +111,31 @@ Users can create two types of agents:
 
 #### Define Context Entity
 
-If a prompt text of your agent contains variables, your app must have an entity with attributes that match the variable names. An object of this entity functions as the context object, containing the context data and being passed when the **call agent** operation is triggered. For more details, see the [Use the agent in the app logic section below](#app-logic). This object contains the actual values that will be inserted into the prompt text(s) where the variables were defined. This entity needs to be linked to the agent in the Agent Commons UI. If you create a new entity, run the app locally first to ensure it appears in the selection list. The `AgentAdmin` will see warnings on the Agent Version details page if the attributes and variables do not match or if no entity has been selected for the prompt. Make sure that the attribute length of the context object is large enough to accommodate the actual values when logic is executed in the running app.
+If your agent's prompt includes variables, your app must define an entity with attributes that match the variable names. An object of this entity serves as the context object, which holds the context data that will be passed when the **call agent** operation is triggered. For more details, see the [Use the agent in the app logic](#app-logic) section below.
+
+This object contains the actual values that will be inserted into the prompt texts where the variables were defined. To link the context entity to the agent, select it in the Agent Commons UI. If you have created a new entity, run the app locally first to ensure it appears in the selection list.
+
+The `AgentAdmin` will see warnings on the Agent Version Details page if:
+
+* The entity has not been selected
+
+* The entity's attributes do not match the defined variables
+
+* The attribute length is insufficient to hold the actual values when logic is executed in the running app.
 
 #### Add Microflows as Tools
 
 To allow your agent to perform actions dynamically and autonomously, or to give it access to specific data based on its autonomously suggested function input, microflows can be added as tools. Invoking the agent will then make use of the function calling pattern to execute the required microflows with the input as specified in the model's response. See [Function Calling](/appstore/modules/genai/function-calling/) for more technical information.
 
+To allow your agent to act dynamically and autonomously or to access specific data based on input it determines, microflows can be added as tools. When the agent is invoked, it uses the function calling pattern to execute the required microflows, using the input specified in the model’s response.
+
+For more technical details, see the [Function Calling](/appstore/modules/genai/function-calling/) documentation.
+
 #### Add Knowledge Bases
 
-For supported knowledge bases that are registered in the app, you can connect the agent to allow it to do specified retrievals autonomously. Refer to the documentation of the connector of the knowledge base provider of choice to set up the connection from your app to the knowledge base. To allow the agent to perform semantic searches in the knowledge base, add the knowledge base to the agent definition and specify the parameters that determine how a retrieve should happen (e.g. metadata, desired number of chunks retrieved, threshold similarity).
+For supported knowledge bases registered in your app, you can connect them to agents to enable autonomous retrievals. To set this up, refer to the documentation of the connector provided by your chosen knowledge base provider and follow the instructions for establishing a connection from your app.
+
+To allow the agent to perform semantic searches, add the knowledge base to the agent definition and configure the retrieval parameters, such as metadata filters, the number of chunks to retrieve, and the threshold similarity.
 
 #### Test and Refine the Agent
 
