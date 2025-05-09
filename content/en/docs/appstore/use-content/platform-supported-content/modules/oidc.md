@@ -128,6 +128,7 @@ It requires the following Marketplace modules to be included in your app:
 * [Nanoflow Commons](https://marketplace.mendix.com/link/component/109515) – see [Nanoflow Commons](/appstore/modules/nanoflow-commons/) documentation.
 * [Mx Model reflection](https://marketplace.mendix.com/link/component/69) – see [Mx Model Reflection](/appstore/modules/model-reflection/) documentation (deprecated from version 4.0.0 of the module).
 * [User Commons](https://marketplace.mendix.com/link/component/223053) (for version 3.0.0 and above)
+* [Events](https://marketplace.mendix.com/link/component/224259) – see [Events](/appstore/widgets/events/) documentation.
 
 Versions below 2.3.0 also require [Native Mobile Resources](https://marketplace.mendix.com/link/component/109513) – see [Native Mobile Resources](/appstore/modules/native-mobile-resources/) documentation.
 
@@ -332,12 +333,12 @@ authentication in your Mendix App, complete the JWKS configuration at your IdP, 
 5. Add the **Client Secret**.
 6. If you have the **Automatic Configuration URL** (also known as the *well-known endpoint*), enter it and click **Import Configuration** to automatically fill the other endpoints.
 
-    {{% alert color="info" %}}If the endpoint URL does not already end with `/.well-known/openid-configuration`, include it at the end. According to the specifications, the URL you need to enter typically ends with `/.well-known/openid-configuration`.{{% /alert %}}
+    {{% alert color="info" %}} If the endpoint URL does not already end with `/.well-known/openid-configuration`, include it at the end. According to the specifications, the URL you need to enter typically ends with `/.well-known/openid-configuration`. {{% /alert %}}
 
     * If you do not have an automatic configuration URL, you can fill in the other endpoints manually.
 7. Click **Save**
 
-    {{% alert color="info" %}}Your client configuration is not yet complete, but you have to save at this point to allow you to set up the rest of the information.{{% /alert %}}
+    {{% alert color="info" %}} Your client configuration is not yet complete, but you have to save at this point to allow you to set up the rest of the information. {{% /alert %}}
 
 8. Select your client configuration and click **Edit**.
 9. Select the scopes expected by your OIDC IdP. The standard scopes are `openid`, `profile`, and `email`, but some IdPs may use different ones.
