@@ -9,62 +9,71 @@ weight: 20
 
 ## Introduction
 
-The Agent Commons functionalities allows users to develop, test, and optimize their GenAI use cases by creating effective agents that interact with large language models (LLM). 
-Using the [Agent Commons](https://marketplace.mendix.com/link/component/239450) module you can use the Agent Builder interface in your app to define agents at runtime and manage multiple versions over time. Wire up prompts, microflows as tools, knowledge bases together with large language models to build agentic patterns to support your business logic. Agent Builder also supports defining variables that serve as placeholders for data from the app session context which are replaced by actual values when the end user interacts with the app. The Agent Commons module contains the necessary data model, pages, and snippets to include an agent builder interface to your app and get started using Agents from your app logic.
+The [Agent Commons](https://marketplace.mendix.com/link/component/239450) module enables users to develop, test, and optimize their GenAI use cases by creating effective agents that interact with large language models (LLMs).
+With the Agent Commons module, you can use the Agent Builder interface within your app to define agents at runtime and manage multiple versions over time.
+
+You can wire up prompts, microflows (as tools), knowledge bases, and large language models to build agentic patterns that support your business logic. The Agent Builder also allows you to define variables that act as placeholders for data from the app session context which are replaced with actual values when the end user interacts with the app.
+
+The Agent Commons module includes the necessary data model, pages, and snippets to seamlessly integrate the agent builder interface into your app and start using agents within your app logic.
 
 ### Typical Use Cases
 
-Typical use cases for Agent Commons include the following:
+Typical use cases for Agent Commons include:
 
-* The app includes one or more agentic patterns that include interactions with an LLM. These patterns may include additionally microflows as tools, knowledge bases and guardrails.
-* The prompts for agents to do the LLM interaction need to be updated or improved, often without changing the code of the LLM interaction or the traditional low-code app logic that calls the agents. This enables people outside the development team (for example, data scientists) to change prompts and iterate on agent configurations .
-* The use case benefits from rapid iterations on prompts, microflows as tools, knowledge bases, models, and variable placeholders in a playground set-up, separately from app logic.
+* Incorporating one or more agentic patterns in the app that involve interactions with a LLM. These patterns may also include microflows as tools, knowledge bases, and guardrails.
+
+* Enabling prompt updates or improvements without modifying the underlying LLM integration code or low-code application logic. This allows non-developers, such as data scientists to change prompts and iterate on agent configurations.
+
+* Supporting rapid iteration on prompts, microflows, knowledge bases, models, and variable placeholders in a playground setup, separate from core app logic.
 
 ### Features
 
-The Agent Commons functionality provides the following:
+The Agent Commons module offers the following features:
 
-* Agent Builder UI components and a data structure to manage, store, and rapidly iterate on agent  versions at runtime—without requiring app deployment to change the agent.
-* Drag-and-drop operations for calling both single-call and conversational agents from microflows and workflows.
-* Support for placeholders in prompts of the agents. The values will be populated in the running app based on a user/context object.
-* Logic to define and execute tests individually or in bulk, with result comparison.
-* Export/import functionality for transporting agents across different app environments (local, acceptance, and production).
-* The ability to manage the active agent version used by the logic in the running app, in the app environment itself without the need to re-deploy.
+* Agent Builder UI components and data model for managing, storing, and rapidly iterating on agent versions at runtime. No app deployment is required to update an agent.
 
-### Limitations 
+* Drag and drop operations for calling both single-call and conversational agents from microflows and workflows.
 
-The current scope of the module is focused on LLM invocations with a variety of prompts, optionally with placeholders (variables). The agents can be enriched by adding microflows with a single parameter as tools in a [Function Calling](/appstore/modules/genai/function-calling/) setup, and providing access to knowledge bases provided by [Mendix Cloud GenAI Resources](/appstore/modules/genai/mx-cloud-genai/resource-packs/#knowledge-bases).
+* Prompt placeholders, allowing dynamic insertion of values based on user or context objects at runtime.
+
+* Logic to define and run tests individually or in bulk, with result comparisons.
+
+* Export/import functionality for transporting agents across different app environments (for example, local, acceptance, production).
+
+* The ability to manage the active agent version used by the app logic in the app environment, eliminating the need for redeployment.
+
+{{% alert color="info" %}} The current scope of the module focuses on LLM invocations using a variety of prompts, optionally enhanced with placeholders (variables). Agents can be further extended by integrating microflows with a single parameter as tools using the [Function Calling](/appstore/modules/genai/function-calling/) setup, and by connecting to knowledge bases provided through [Mendix Cloud GenAI Resources](/appstore/modules/genai/mx-cloud-genai/resource-packs/#knowledge-bases). {{% /alert %}}
 
 ### Dependencies {#dependencies}
 
 The Agent Commons module requires Mendix Studio Pro version [10.21.0](/releasenotes/studio-pro/10.21/#10210) or above.
 
-You must also download the [Community Commons](/appstore/modules/community-commons-function-library/) module, the [GenAI Commons](https://marketplace.mendix.com/link/component/239448), the [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449) and the [Conversational UI](https://marketplace.mendix.com/link/component/239450) modules.
+In addition, install the following modules:
+
+* [Community Commons](https://marketplace.mendix.com/link/component/170)
+* [GenAI Commons](https://marketplace.mendix.com/link/component/239448)
+* [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449)
+* [Conversational UI](https://marketplace.mendix.com/link/component/239450)
 
 ## Installation
 
-If you start from a blank app, or have an existing project where you want to include the agent building functionalities from Agent Commons, you must install the module manually from the Mendix Marketplace. First, make sure your project contains the latest versions of the following dependencies:
-
-- [Community Commons](/appstore/modules/community-commons-function-library/) 
-- [GenAI Commons](https://marketplace.mendix.com/link/component/239448)
-- [Conversational UI](https://marketplace.mendix.com/link/component/239450)
-- [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449)
-
- Then follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to install the [Agent Commons](https://marketplace.mendix.com/link/component/240371) module.
+If you are starting from a blank app or adding agent-building functionality to an existing project, you need to manually install the [Agent Commons](https://marketplace.mendix.com/link/component/239450) module from the Mendix Marketplace. 
+Before proceeding, ensure your project includes the latest versions of the required [dependencies](#dependencies). Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to install the Agent Commons module.
 
 ## Configuration
 
 To use the Agent Commons functionalities in your app, you must perform the following tasks in Studio Pro:
 
-1. Add the relevant [module roles](#module-roles) to the applicable user roles in the project security.
-1. Add the [Agent Builder UI to your app](#ui-components) by using the pages and snippets as a basis.
-1. Make sure to have a [deployed model](#deployed-models) configured.
-1. [Define](#define-prompt), the prompts, add functions, knowledge bases and test the agent.
-1. Add the agent to the [logic](#app-logic) of the actual use case.
-1. Improve and [iterate on agent versions](#improve-agent).
+1. Assign the relevant [module roles](#module-roles) to the applicable user roles in the project **Security**.
+2. Add the [Agent Builder UI to your app](#ui-components) by using the pages and snippets as a basis.
+3. Ensure that a [deployed model](#deployed-models) is configured.
+4. [Define](#define-prompt), the prompts, add functions, knowledge bases, and test the agent.
+5. Add the agent to app the [logic](#app-logic) of your specific use case.
+6. Improve and [iterate on agent versions](#improve-agent).
 
 ### Configuring the Roles {#module-roles}
-In the project security of your app, add the module role **AgentCommons.AgentAdmin** to the user roles that are intended to define and refine Agents. They also decide which version is used in the running app environment.
+
+In the project **Security** of your app, assign the **AgentCommons.AgentAdmin** module role to user roles responsible for defining and refining agents, as well as selecting the active agent version used in the running app environment.
 
 ### Adding the Agent Builder UI to Your App {#ui-components} 
 
@@ -72,14 +81,17 @@ The module includes a set of reusable pages, layouts, and snippets, allowing you
 
 #### Pages and Layouts
 
-Add the **Agent_Overview** page (USE_ME > Agent Builder) to your Navigation or add the **Snippet_Agent_Overview** to a page that is already part of your Navigation. Now the Agents can be defined at runtime. From this overview, the user can reach the **Version_Details** page to edit the prompt and execute tests. If customization is needed, its contents can be found in **Snippet_Agent_Details**.
-If you need to change the layout or apply other customizations, Mendix recommends copying the page to your own module and modifying it to match your app styling or use case. 
+To define the agents at runtime, add the **Agent_Overview** page (**USE_ME** > **Agent Builder**) to your app **Navigation**, or include the **Snippet_Agent_Overview** in a page that is already part of your navigation.
+
+From the overview, users can access the **Version_Details** page to edit prompts and run tests. For more customization, you can refer to the contents of **Snippet_Agent_Details**.
+
+If you need to adjust the layout or apply other customizations, it is recommended to copy the relevant page into your own module and modify it to match your app styling or use case. 
 
 For example, download and run the [Agent Builder Starter App](https://marketplace.mendix.com/link/component/240369) to see the pages in action.
 
-### Configure Deployed Models {#deployed-models}
+### Configuring Deployed Models {#deployed-models}
 
-You need at least one GenAI connector that follows the principles of GenAI commons to interact with LLMs from the Agent Commons logic. To test the behavior of an agent, you must configure at least one [Deployed Model](/appstore/modules/genai/genai-for-mx/commons/#deployed-model) for your chosen connector. Refer to the specific connector’s documentation for detailed setup instructions on configuring the Deployed Model.
+To interact with LLMs using Agent Commons, you need at least one GenAI connector that adheres to the GenAI Commons principles. To test agent behavior, you must configure at least one [Deployed Model](/appstore/modules/genai/genai-for-mx/commons/#deployed-model) for your chosen connector. Refer to the specific connector’s documentation for detailed instructions on setting up the Deployed Model.
 
 * For [Mendix Cloud GenAI](https://marketplace.mendix.com/link/component/239449) importing the **Key** from the Mendix portal automatically creates a MxCloud Deployed Model. This is part of the [configuration](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#configuration).
 * For [Amazon Bedrock](https://marketplace.mendix.com/link/component/215042), the creation of Bedrock Deployed Models is part of the [model synchronization mechanism](/appstore/modules/aws/amazon-bedrock/#sync-models).
@@ -87,8 +99,13 @@ You need at least one GenAI connector that follows the principles of GenAI commo
 
 ### Define the Agent {#define-prompt}
 
-When the app is running, a user with the `AgentAdmin` role can set up an agent, write the prompts, link microflows as tools and give it access to knowledge bases. When the agent is associated to a deployed model, it can be tested in an isolated set-up separate from the rest of the app's logic, to properly validate the behavior.
-The user can create either a Conversational agent, intended for scenarios where the end-user interacts through a chat interface or the agent is called in a conversational style by another agent, as opposed to a Single-Call agent, designed for isolated agentic patterns, like agents that work in background processes, subagents that are part of an Agent-as-Tool pattern, or otherwise agentic patterns that do not require a conversational interface with historical messages. 
+When the app is running, a user with the `AgentAdmin` role can set up agents, write prompts, link microflows as tools, and provide access to knowledge bases. Once an agent is associated with a deployed model, it can be tested in an isolated environment, separate from the rest of the app’s logic to validate its behavior effectively.
+
+Users can create two types of agents:
+
+* Conversational Agent: Intended for scenarios where the end user interacts through a chat interface, or where the agent is called in a conversational manner by another agent.
+
+* Single-Call Agent: Designed for isolated agentic patterns such as background processes, subagents in an Agent-as-Tool setup, or any use case that doesn't require a conversational interface with historical context.
 
  {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/agentcommons/agentbuilderUI.png" >}}
 
