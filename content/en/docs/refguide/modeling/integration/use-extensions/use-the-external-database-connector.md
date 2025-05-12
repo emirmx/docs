@@ -12,17 +12,13 @@ aliases:
 
 Use the [External Database Connector](https://marketplace.mendix.com/link/component/219862) to connect, retrieve, and insert data into your Mendix app.
 
-{{% alert color="info" %}}
-If you are using Studio Pro 10.12, make sure to use the latest version 3.0.0 [External Database Connector](https://marketplace.mendix.com/link/component/219862).
-{{% /alert %}}
-
 The External Database Connector supports connections to the following databases:
 
 * MSSQL
 * MySQL
 * PostgreSQL
 * Oracle
-* Snowflake (GA support from [Studio Pro 10.12](/releasenotes/studio-pro/10.12/) – Beta versions are available from [Studio Pro 10.10](/releasenotes/studio-pro/10.10/))
+* Snowflake
 
 This document teaches you how to do the following:
 
@@ -44,16 +40,9 @@ Download the [External Database Connector](https://marketplace.mendix.com/link/c
 
 If additional connection properties are required to connect, you can alternatively use **JDBC Connection String**.
 
-### For Studio Pro 10.18 and above {#enable-live-preview}
+If certificate-based authentication is required for PostgreSQL connections, ensure that all necessary certificates are added before running the app.
 
-For Studio Pro 10.18 and above, the External Database Connector uses a different approach to connect to databases during design time. This functionality enhances consistency between design time and runtime environments. To enable this beta feature, use the flag: `--enable-live-preview`
-
-{{% alert color="info" %}}
-This feature flag is only for Studio Pro 10.18. The feature is GA for Studio Pro 10.19 and above.
-{{% /alert %}}
-
-* If certificate-based authentication is required for PostgreSQL connections, ensure that all necessary certificates are added before running the app.
-* To test the connection and execute queries during design time, ensure to run your app locally.
+To test the connection and execute queries during design time, ensure to run your app locally.
 
 ## Connect to the External Database
 
@@ -143,13 +132,7 @@ You can typecast `String` into UUID, as shown below:
 
 ## Update Existing Query
 
-You can use the existing entity when updating a existing query. 
-
-{{% alert color="info" %}}
-
-This feature was introduced in Studio Pro 10.15 and above.
-
-{{% /alert %}}
+You can use the existing entity when updating a existing query.
 
 For example, you can modify the query below to retrieve a list of `productLine`, `textDescription`, and `htmlDescription` columns from `productLines` where the `productLine` is **Planes**.
 
@@ -172,8 +155,6 @@ Do the following:
     {{< figure src="/attachments/refguide/modeling/integration/use-the-external-database-connector/5b.png" width="600" >}}
 
 ## Call Stored Procedure
-
-{{% alert color="info" %}} Calling stored procedures with parameters is supported for Studio Pro 10.13 and above. {{% /alert %}}
 
 To call a stored procedure, do the following:
 

@@ -8,7 +8,7 @@ description: "Studio Pro 10 compatible Native Template release notes."
 These are the current Native Template versions for Studio Pro 10 in active development:
 
 * Native Template versions of [14](/releasenotes/mobile/nt-14-rn/) are compatible with apps built using the following versions of Studio Pro:
-    * Studio Pro 10.22 and above.
+    * Studio Pro [10.22](/releasenotes/studio-pro/10.22/) and above.
 * Native Template versions of [13](/releasenotes/mobile/nt-13-rn/) are compatible with apps built using the following versions of Studio Pro:
     * Studio Pro [10.21](/releasenotes/studio-pro/10.21/)
 * Native Template versions of [12](/releasenotes/mobile/nt-12-rn/) are compatible with apps built using the following versions of Studio Pro:
