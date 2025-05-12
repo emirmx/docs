@@ -1,11 +1,13 @@
 ---
 title: "History"
-url: /refguide/history-dialog/
+url: /refguide10/history-dialog/
 weight: 50
 ---
 ## Introduction
 
 Use the **History** dialog box to look at all the changes that have been committed to a development line of an app. You can open this dialog box from the **Version Control** > **History…** menu item. This dialog box is also used when selecting a revision to merge from, create a branch line off, or to create a deployment archive from.
+
+The **History** dialog can display up to 250 commits at once, making it easy to look at the detailed project history. If the app was only partially copied, it may need to download missing data from the server. While the data is being downloaded, a progress bar will be shown. This initial download could take a little time, but once the data is saved locally, future access to the **History** dialog will be significantly faster — almost instant.
 
 ## Revisions
 
@@ -36,7 +38,7 @@ A visual summary of the changes in the selected revision, each icon represents d
 | {{< figure src="/attachments/refguide10/modeling/menus/version-control-menu/history-dialog/RevChangesModel.png" width=32 alt="Model changes icon" class="no-border" >}} | Model changes | Indicates that there were some changes made to the app model.<br/>For example, changes to the domain model, microflows, or pages. |
 | {{< figure src="/attachments/refguide10/modeling/menus/version-control-menu/history-dialog/RevChangesDisk.png" width=32 alt="Changes on disk icon" class="no-border" >}} | Changes on disk | Indicates that there were changes on disk.<br/>For example, a file was added or removed. |
 | {{< figure src="/attachments/refguide10/modeling/menus/version-control-menu/history-dialog/RevChangesVersion.png" width=32 alt="Studio Pro changes icon" class="no-border" >}} | Studio Pro changes | Indicates that there was a change to the Studio Pro version used to work with the app.<br/>For example, when upgrading the app from a previous version to the latest one. |
-| {{< figure src="/attachments/refguide10/modeling/menus/version-control-menu/history-dialog/Solution.png" width=32 alt="Solution version changes icon" class="no-border" >}} | Solution version changes | Indicates that a [solution module](/refguide/configure-add-on-and-solution-modules/) used in the app was updated. |
+| {{< figure src="/attachments/refguide10/modeling/menus/version-control-menu/history-dialog/Solution.png" width=32 alt="Solution version changes icon" class="no-border" >}} | Solution version changes | Indicates that a [solution module](/refguide10/configure-add-on-and-solution-modules/) used in the app was updated. |
 
 Hover over this column in Studio Pro to get a textual summary of the changes.
 
@@ -84,5 +86,5 @@ This tab shows a list of the files that were changed on disk. You can see whethe
 
 ## Read More
 
-* [Version Control](/refguide/version-control/)
-* [Stories Pane](/refguide/stories-pane/)
+* [Version Control](/refguide10/version-control/)
+* [Stories Pane](/refguide10/stories-pane/)

@@ -1,11 +1,11 @@
 ---
 title: "Call Workflow"
-url: /refguide/call-workflow/
+url: /refguide10/call-workflow/
 weight: 100
 ---
 
 {{% alert color="info" %}}
-This page describes the **Call workflow** activity you can use in your [workflow](/refguide/workflow-elements/). Looking for information on the **Call workflow** activity for [microflows](/refguide/workflow-activities/) instead? See [Call workflow](/refguide/workflow-call/).
+This page describes the **Call workflow** activity you can use in your [workflow](/refguide10/workflow-elements/). Looking for information on the **Call workflow** activity for [microflows](/refguide10/workflow-activities/) instead? See [Call workflow](/refguide10/workflow-call/).
 {{% /alert %}}
 
 ## Introduction
@@ -48,7 +48,7 @@ To change the parameter, either double-click the parameter from the list or sele
 
 ### Boundary Events Section {#boundary-events}
 
-For more information, see [Boundary Events](/refguide/workflow-boundary-events/).
+For more information, see [Boundary Events](/refguide10/workflow-boundary-events/).
 
 ### Common Section {#common}
 
@@ -60,7 +60,7 @@ When a calling workflow or a called workflow changes a state, they may have impa
 
 ### State of Calling Workflow When Called Workflow Changes Its State
 
-Usually state transition of a called workflow does not affect the calling workflow except for when the called workflow fails, is aborted or locked. When the called workflow fails or is aborted, the calling workflow fails. When the called workflow is [locked](/refguide/lock-workflow/), the calling workflow fails because calling workflow tries to call the locked workflow.
+Usually state transition of a called workflow does not affect the calling workflow except for when the called workflow fails, is aborted or locked. When the called workflow fails or is aborted, the calling workflow fails. When the called workflow is [locked](/refguide10/lock-workflow/), the calling workflow fails because calling workflow tries to call the locked workflow.
 
 All other state changes of a called workflow do not affect the workflow.
 
@@ -75,8 +75,8 @@ The following cases when the state of the calling workflow changes affect the st
 
 All other state changes of the calling workflow do not affect the called workflow.
 
-You can use the [Workflow state change](/refguide/workflow-properties/#workflow-state-change) property to extend the behavior described above and, for example, configure a behavior that when the calling workflow is paused, the called workflow is paused as well.
+You can use the [Workflow state change](/refguide10/workflow-properties/#workflow-state-change) property to extend the behavior described above and, for example, configure a behavior that when the calling workflow is paused, the called workflow is paused as well.
 
 ## Read More
 
-* [Workflow Properties](/refguide/workflow-properties/)
+* [Workflow Properties](/refguide10/workflow-properties/)

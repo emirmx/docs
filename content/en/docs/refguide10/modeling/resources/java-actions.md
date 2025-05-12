@@ -1,6 +1,6 @@
 ---
 title: "Java Actions"
-url: /refguide/java-actions/
+url: /refguide10/java-actions/
 weight: 10
 description: "Describes using Java Actions to extend the functionality of your Mendix app."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
@@ -8,12 +8,12 @@ description: "Describes using Java Actions to extend the functionality of your M
 
 ## Introduction
 
-With Java actions you can extend the functionality of your application in situations where it would be hard to implement this functionality in microflows. You can call a Java action from a microflow using the [Java action call](/refguide/java-action-call/).
+With Java actions you can extend the functionality of your application in situations where it would be hard to implement this functionality in microflows. You can call a Java action from a microflow using the [Java action call](/refguide10/java-action-call/).
 
 {{% alert color="info" %}}
 Each Java action defined in Studio Pro corresponds to a file *{name of Java action}.java* in the subdirectory *javasource/{module name}/actions* of the app directory.
 
-The skeletons of these *.java* files are generated automatically when you deploy for Eclipse (in the **App** menu). For more information about creating the Java code in these files, see [Java Programming](/refguide/java-programming/).
+The skeletons of these *.java* files are generated automatically when you deploy for Eclipse (in the **App** menu). For more information about creating the Java code in these files, see [Java Programming](/refguide10/java-programming/).
 {{% /alert %}}
 
 ## General
@@ -28,9 +28,9 @@ A Java action has zero or more parameters. Parameters are the means by which you
 
 Each parameter has a name, type, category, and description. 
 
-Use categories to keep the parameters apart in the [Java action call](/refguide/java-action-call/). If you do not specify a category, the parameter will appear in the **Input** group.
+Use categories to keep the parameters apart in the [Java action call](/refguide10/java-action-call/). If you do not specify a category, the parameter will appear in the **Input** group.
 
-See [Data Types](/refguide/data-types/) for the possible standard parameter types. When the type is an Object or List, you must also select its Entity type, which can be either a specific entity or a type parameter. The type parameter postpones the selection of the actual entity type until the Java action is used in a microflow. This allows your Java action to accept a (list of) Mendix object (or objects) of an arbitrary entity type.
+See [Data Types](/refguide10/data-types/) for the possible standard parameter types. When the type is an Object or List, you must also select its Entity type, which can be either a specific entity or a type parameter. The type parameter postpones the selection of the actual entity type until the Java action is used in a microflow. This allows your Java action to accept a (list of) Mendix object (or objects) of an arbitrary entity type.
 
 The other types supported by Java actions are described below.
 
@@ -71,7 +71,7 @@ Your Java action can return different data types to your app.
 
 #### Return Type
 
-The return type determines the type of the data that the Java action returns. It corresponds with the return type of the `executeAction()` method in the *.java* file of the Java action. You can use the result of a Java action in the microflow in which you call it. See [Data Types](/refguide/data-types/) for the possible return types.
+The return type determines the type of the data that the Java action returns. It corresponds with the return type of the `executeAction()` method in the *.java* file of the Java action. You can use the result of a Java action in the microflow in which you call it. See [Data Types](/refguide10/data-types/) for the possible return types.
 
 As with parameters, the return type can also be an object or a list of some type parameter. The type parameter you choose for the return type must also be used by at least one of the Java action parameters.
 

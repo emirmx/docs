@@ -1,6 +1,6 @@
 ---
 title: "Chart Advanced Cheat Sheet"
-url: /refguide/charts-advanced-cheat-sheet/
+url: /refguide10/charts-advanced-cheat-sheet/
 weight: 20
 ---
 

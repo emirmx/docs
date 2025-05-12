@@ -1,6 +1,6 @@
 ---
 title: "Creating Your Own Documents"
-url: /refguide/creating-your-own-documents/
+url: /refguide10/creating-your-own-documents/
 description: "This documentation will give you insight into creating documents with Mendix."
 ---
 
@@ -12,8 +12,8 @@ With Mendix, you can generate documents in different ways. Here, you will learn 
 
 Before we start, Mendix recommends first reading these pages:
 
-* [Document Templates](/refguide/document-templates/)
-* [Generate Documents](/refguide/generate-document/)
+* [Document Templates](/refguide10/document-templates/)
+* [Generate Documents](/refguide10/generate-document/)
 
 ## Knowing Your Document
 

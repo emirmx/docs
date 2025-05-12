@@ -1,7 +1,7 @@
 ---
 title: "Extending Your Application with Custom Java"
 linktitle: "Extending App with Custom Java"
-url: /refguide/extending-your-application-with-custom-java/
+url: /refguide10/extending-your-application-with-custom-java/
 weight: 30
 description: "Describes how to extend your application with custom Java code."
 # Linked from https://www.mendix.com/blog/easy-xpath-retrieval-in-java/ - please ask for this to be changed and redirect if moved
@@ -9,12 +9,12 @@ description: "Describes how to extend your application with custom Java code."
 
 ## Introduction
 
-Most application logic can be developed using [microflows](/refguide/microflows/) and [nanoflows](/refguide/nanoflows/). These are very powerful and contain most of the features you need in every application. However, If there is a feature missing you can extend Mendix microflows with the use of Java actions. 
+Most application logic can be developed using [microflows](/refguide10/microflows/) and [nanoflows](/refguide10/nanoflows/). These are very powerful and contain most of the features you need in every application. However, If there is a feature missing you can extend Mendix microflows with the use of Java actions. 
 
 This document teaches you how to do the following:
 
 * Extend your application with custom Java code you can call from a microflow
-* Use the [Mendix Runtime API](/apidocs-mxsdk/apidocs/runtime-api/) to retrieve data from the database using an XPath in a Java action
+* Use the [Mendix Runtime API](/apidocs-mxsdk/apidocs/runtime-api-10/) to retrieve data from the database using an XPath in a Java action
 
 ## Prerequisites {#prerequisites}
 
@@ -23,7 +23,7 @@ This how-to assumes that you are familiar with using Studio Pro to create a simp
 Before starting this how-to, Mendix recommends that you install Eclipse. Eclipse is a Java editor which can be downloaded from the [Eclipse Foundation](https://eclipse.org/).
 
 {{% alert color="info" %}}
-Mendix recommends using Eclipse to edit your Java code, although you can use any text editor. Studio Pro contains a [Deploy for Eclipse](/refguide/app-menu/#eclipse) feature which automatically configures everything so you only have to import the app into your Eclipse working environment.
+Mendix recommends using Eclipse to edit your Java code, although you can use any text editor. Studio Pro contains a [Deploy for Eclipse](/refguide10/app-menu/#eclipse) feature which automatically configures everything so you only have to import the app into your Eclipse working environment.
 {{% /alert %}}
 
 ## Setting Up a Simple App{#simple-app}
@@ -174,7 +174,7 @@ Now you will add a button to the Product_NewEdit page which uses a microflow to 
 
 ## XPath Retrieval in Java {#xpath}
 
-Using the [Mendix Runtime API](/apidocs-mxsdk/apidocs/runtime-api/), your Java actions can interact with many parts of your app. One thing that many developers want to do is to retrieve a list of objects using an [XPath Constraint](/refguide/xpath-constraints/). This section describes how to implement an XPath retrieval in a Java action.
+Using the [Mendix Runtime API](/apidocs-mxsdk/apidocs/runtime-api-10/), your Java actions can interact with many parts of your app. One thing that many developers want to do is to retrieve a list of objects using an [XPath Constraint](/refguide10/xpath-constraints/). This section describes how to implement an XPath retrieval in a Java action.
 
 Using the Domain Model you set up in [Setting Up a Simple App](#simple-app), above, you want to retrieve a list of Products which meet the following criteria:
 
@@ -312,7 +312,7 @@ To use this same XPath in a Java action called from a microflow, perform the fol
 If you get an `UnsupportedClassVersionError` when running your app, follow these steps:
 
 1. Clean your app's **deployment** folder by selecting **App** > **Clean Deployment Directory**.
-2. Add the same JDK version to Eclipse as that which you are using in Studio Pro (this is the recommended version correlation). For details on JDK requirements, see the [Mendix Studio Pro](/refguide/system-requirements/#sp) section of *System Requirements*.
+2. Add the same JDK version to Eclipse as that which you are using in Studio Pro (this is the recommended version correlation). For details on JDK requirements, see the [Mendix Studio Pro](/refguide10/system-requirements/#sp) section of *System Requirements*.
 
 ### Compile Errors
 
@@ -324,5 +324,5 @@ When you use your app, you may encounter an error. You can look in the Studio Pr
 
 ## Read More
 
-* [Using Eclipse](/refguide/using-eclipse/)
-* [Using the Java API](/refguide/java-api-tutorial/)
+* [Using Eclipse](/refguide10/using-eclipse/)
+* [Using the Java API](/refguide10/java-api-tutorial/)

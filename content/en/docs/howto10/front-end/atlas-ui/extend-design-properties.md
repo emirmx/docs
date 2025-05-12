@@ -1,6 +1,6 @@
 ---
 title: "Extend Design Properties"
-url: /howto/front-end/extend-design-properties/
+url: /howto10/front-end/extend-design-properties/
 weight: 60
 ---
 
@@ -16,4 +16,4 @@ Design properties are visible as part of the widget properties:
 
 For more information on learning how to add design properties, see the [Design Properties API Documentation](/apidocs-mxsdk/apidocs/design-properties/).
 
-Developers can also add additional design properties as part of a module. For more information, see the [File and Folder Structure](/howto/front-end/customize-styling-new/#file-and-folder) section of *How to Customize Styling*.
+Developers can also add additional design properties as part of a module. For more information, see the [File and Folder Structure](/howto10/front-end/customize-styling-new/#file-and-folder) section of *How to Customize Styling*.

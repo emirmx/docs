@@ -1,9 +1,9 @@
 ---
 title: "Complete User Task"
-url: /refguide/complete-user-task/
+url: /refguide10/complete-user-task/
 weight: 30
 aliases:
-    - /refguide/complete-task/
+    - /refguide10/complete-task/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -13,7 +13,7 @@ This activity can only be used in microflows.
 
 ## Introduction
 
-The **Complete user task** activity can be used to define which outcome the [user task](/refguide/user-task/) should follow. 
+The **Complete user task** activity can be used to define which outcome the [user task](/refguide10/user-task/) should follow. 
 
 ## Properties
 
@@ -50,4 +50,4 @@ Gives you a list of available outcomes for the selected user task. The user task
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}

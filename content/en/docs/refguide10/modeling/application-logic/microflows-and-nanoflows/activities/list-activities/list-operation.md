@@ -1,6 +1,6 @@
 ---
 title: "List Operation"
-url: /refguide/list-operation/
+url: /refguide10/list-operation/
 weight: 4
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -11,7 +11,7 @@ This activity works differently in microflows and in nanoflows. In nanoflows, ch
 
 ## Introduction
 
-The **List operation** activity can perform various actions on a list. The result of the action is returned as a new list in contrast to the [Change list](/refguide/change-list/) activity.
+The **List operation** activity can perform various actions on a list. The result of the action is returned as a new list in contrast to the [Change list](/refguide10/change-list/) activity.
 
 The actions which can be performed are:
 
@@ -118,4 +118,4 @@ This is the name of the resulting List, Object, or Boolean variable. The result 
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}

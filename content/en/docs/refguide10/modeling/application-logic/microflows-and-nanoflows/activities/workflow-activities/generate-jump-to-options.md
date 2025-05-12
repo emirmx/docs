@@ -1,6 +1,6 @@
 ---
 title: Generate Jump-To Options
-url: /refguide/generate-jump-to-options/
+url: /refguide10/generate-jump-to-options/
 weight: 35
 ---
 
@@ -10,16 +10,16 @@ This activity can only be used in microflows.
 
 ## Introduction
 
-The **Generate jump-to options** activity allows you to generate a list of workflow activities where the workflow can jump to as its next step. The [Apply jump-to option](/refguide/apply-jump-to-option/) activity should be used after the **Generate jump-to options** to let the workflow continue from the selected activity. This is useful when, for example, the workflow is in incompatible state and the Workflow Administrator or any other user should be able to select a specific activity where the workflow can continue. 
+The **Generate jump-to options** activity allows you to generate a list of workflow activities where the workflow can jump to as its next step. The [Apply jump-to option](/refguide10/apply-jump-to-option/) activity should be used after the **Generate jump-to options** to let the workflow continue from the selected activity. This is useful when, for example, the workflow is in incompatible state and the Workflow Administrator or any other user should be able to select a specific activity where the workflow can continue. 
 
 {{% alert color="warning" %}} 
-The list of generated options only contains activities of the currently executed path in the workflow, excluding activities inside a [Parallel split](/refguide/parallel-split/) activity of the workflow or activities inside a non-interrupting [Boundary Event](/refguide/workflow-boundary-events/) path. When the workflow is executing a path in a [Parallel split](/refguide/parallel-split/) or in a non-interrupting [Boundary Event](/refguide/workflow-boundary-events/) path, the generated options will only contain activities of the current path. 
+The list of generated options only contains activities of the currently executed path in the workflow, excluding activities inside a [Parallel split](/refguide10/parallel-split/) activity of the workflow or activities inside a non-interrupting [Boundary Event](/refguide10/workflow-boundary-events/) path. When the workflow is executing a path in a [Parallel split](/refguide10/parallel-split/) or in a non-interrupting [Boundary Event](/refguide10/workflow-boundary-events/) path, the generated options will only contain activities of the current path. 
 {{% /alert %}}
 
-For more information on configuring the jumping to other activities, see [Jumping to Different Activities in a Workflow](/refguide/jump-to/).
+For more information on configuring the jumping to other activities, see [Jumping to Different Activities in a Workflow](/refguide10/jump-to/).
 
 {{% alert color="info" %}}
-This functionality is different from the [Jump activity](/refguide/jump-activity/) in workflows, which you can add from the **Toolbox** when you configure the workflow. 
+This functionality is different from the [Jump activity](/refguide10/jump-activity/) in workflows, which you can add from the **Toolbox** when you configure the workflow. 
 {{% /alert %}}
 
 ## Properties
@@ -49,12 +49,12 @@ A workflow object of the **System.Workflow** entity available from the microflow
 
 ### Variable Name or Object Name
 
-The name of the variable or the object returned by the activity. This is an object of the **System.WorkflowJumpToDetails** entity which can be used by the [Apply jump-to option](/refguide/apply-jump-to-option/) activity.
+The name of the variable or the object returned by the activity. This is an object of the **System.WorkflowJumpToDetails** entity which can be used by the [Apply jump-to option](/refguide10/apply-jump-to-option/) activity.
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}
 
 ## Read More
 
-* [Jumping to Different Activities in a Workflow](/refguide/jump-to/)
+* [Jumping to Different Activities in a Workflow](/refguide10/jump-to/)

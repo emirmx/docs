@@ -1,6 +1,6 @@
 ---
 title: "Changes Pane"
-url: /refguide/changes-pane/
+url: /refguide10/changes-pane/
 weight: 20
 description: "Describes the Changes pane in Mendix Studio Pro."
 ---
@@ -26,9 +26,9 @@ Buttons allow you to perform the following actions:
 * **Back** – goes back up one level; at the top level, this button is disabled
 * **Go to** – opens a zoomed-in level and opens up the selected document 
 * **Tasks** – allows you to perform specific actions such as reverting the change to the latest commit, or solving conflicts
-* **Pull** – retrieves latest changes from the repository (for more information on the pull concept, see the [Pull](/refguide/version-control/#pull) section in *Version Control*) 
-* **Commit** – commits your changes to the repository and starts a new revision (for more information on the commit concept, see the [Commit](/refguide/version-control/#commit) section in *Version Control*)
-* **History** – opens the **History** dialog box that shows the changes made on the current development line of the app (for more information on history, see [History](/refguide/history-dialog/))
+* **Pull** – retrieves latest changes from the repository (for more information on the pull concept, see the [Pull](/refguide10/version-control/#pull) section in *Version Control*) 
+* **Commit** – commits your changes to the repository and starts a new revision (for more information on the commit concept, see the [Commit](/refguide10/version-control/#commit) section in *Version Control*)
+* **History** – opens the **History** dialog box that shows the changes made on the current development line of the app (for more information on history, see [History](/refguide10/history-dialog/))
 
 The **Back** and **Go to** buttons are common throughout all the levels, while other buttons will only apply to a specific one.
 
@@ -97,7 +97,7 @@ The toolbar at this level contains the following buttons:
 
 * **Back** – takes you back to the top level
 * **Go to** – takes you directly to the selected element
-* **Interactive Merge** – combines changes where possible for all conflicting documents that you can revise in the [Merge Mode](#merge-mode); for more information on how to solve conflicts, see [Merge Algorithm with Fine-Grained Conflict Resolution](/refguide/merge-algorithm/) 
+* **Interactive Merge** – combines changes where possible for all conflicting documents that you can revise in the [Merge Mode](#merge-mode); for more information on how to solve conflicts, see [Merge Algorithm with Fine-Grained Conflict Resolution](/refguide10/merge-algorithm/) 
 * **Resolve conflict using my whole document** – your version is applied to all conflicted documents
 * **Resolve conflict using their whole document** – other branch's version is applied to all conflicted documents
 * **Show purely visual changes** – shows visual changes, such as dragging an entity to a new location in the domain model
@@ -140,5 +140,5 @@ The left and right panes will contain the same information as in [Zoomed-In Leve
 
 ## Read More
 
-* [Studio Pro Overview](/refguide/studio-pro-overview/)
-* [Version Control](/refguide/version-control/) 
+* [Studio Pro Overview](/refguide10/studio-pro-overview/)
+* [Version Control](/refguide10/version-control/) 

@@ -1,6 +1,6 @@
 ---
 title: "Order By Behavior"
-url: /refguide/ordering-behavior/
+url: /refguide10/ordering-behavior/
 weight: 20
 ---
 

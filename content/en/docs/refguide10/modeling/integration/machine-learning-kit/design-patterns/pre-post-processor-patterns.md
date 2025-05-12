@@ -1,13 +1,13 @@
 ---
 title: "Pre/Post-Processor Design Patterns"
-url: /refguide/machine-learning-kit/design-patterns/pre-post-processor-patterns/
+url: /refguide10/machine-learning-kit/design-patterns/pre-post-processor-patterns/
 weight: 35
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-The [Integrating Models with Pre-processors and Post-processors](/refguide/machine-learning-kit/using-ml-kit/#pre-post-processors) section of *Integrate Machine Learning Models* outlines considerations when importing a machine learning model with advanced processing needs. 
+The [Integrating Models with Pre-processors and Post-processors](/refguide10/machine-learning-kit/using-ml-kit/#pre-post-processors) section of *Integrate Machine Learning Models* outlines considerations when importing a machine learning model with advanced processing needs. 
 
 An ML algorithm typically gets and returns numerical values in various shapes (scalar, vector, matrix, etc.) as input and output. However, the input data in our applications could be used and stored in different formats like string, JPG, PNG, mp3, etc. Similarly, an output of an ML model could not be interpreted by our applications and need to be converted into a different data representation format. Therefore, we need pre- / post-processors to make the necessary data representation conversions in our ML-based applications in order to feed the ML model with the correct input data format and parse the relevant output. Mendix developers have multiple choices when it comes to implementing pre- / post-processors.
 
@@ -54,7 +54,7 @@ For instance, the output of the model that is called target_probability which is
 
 #### Aggregation
 
-Some numerical features can be somewhat summarized using aggregation components. The most common aggregate functions are min(), max(), mean(), count(), sum(), etc. Those features could be very powerful features for use-cases like real-time data flow is a concern on time-series data. [List activities](/refguide/list-activities/) can be useful to calculate such features inside the microflows.
+Some numerical features can be somewhat summarized using aggregation components. The most common aggregate functions are min(), max(), mean(), count(), sum(), etc. Those features could be very powerful features for use-cases like real-time data flow is a concern on time-series data. [List activities](/refguide10/list-activities/) can be useful to calculate such features inside the microflows.
 
 An aggregation activity
 
@@ -70,7 +70,7 @@ For instance, a new feature (minimum bike age) is calculated via Aggregate List 
 
 More advanced use cases would require to use the full power of a programming language in order to achieve some complex transformation, into and from the model itself.
 
-If your model has multidimensional numeric inputs and/or outputs, you need to encode these as `strings`, using Base64. In this use case Java Actions will be required. See the [Multidimensional Outputs](/refguide/machine-learning-kit/using-ml-kit/#multidimensional-outputs) section of *Using ML Kit* for more information.
+If your model has multidimensional numeric inputs and/or outputs, you need to encode these as `strings`, using Base64. In this use case Java Actions will be required. See the [Multidimensional Outputs](/refguide10/machine-learning-kit/using-ml-kit/#multidimensional-outputs) section of *Using ML Kit* for more information.
 
 #### Java Actions for Encoding Features
 

@@ -26,7 +26,7 @@ Use the Consumed REST Service document to do the following:
 * Send REST requests through a microflow
 
 {{% alert color="info" %}}
-The ability to import an OpenAPI/Swagger contract was introduced as a beta feature in [Studio Pro 10.21](/releasenotes/studio-pro/10.21/).
+The ability to import an OpenAPI/Swagger contract is currently in beta.
 {{% /alert %}}
 
 ### Limitations

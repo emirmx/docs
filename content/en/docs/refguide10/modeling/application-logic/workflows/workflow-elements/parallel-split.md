@@ -1,6 +1,6 @@
 ---
 title: "Parallel Split"
-url: /refguide/parallel-split/
+url: /refguide10/parallel-split/
 weight: 40
 ---
 
@@ -36,4 +36,4 @@ The **Paths** property allows you to add as many paths as there are parallel pro
 
 ## Read More
 
-* [Workflow Properties](/refguide/workflow-properties/)
+* [Workflow Properties](/refguide10/workflow-properties/)

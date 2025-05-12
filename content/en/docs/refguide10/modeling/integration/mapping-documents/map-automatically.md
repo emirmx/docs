@@ -1,6 +1,6 @@
 ---
 title: "Map Automatically"
-url: /refguide/map-automatically/
+url: /refguide10/map-automatically/
 ---
 
 ## Creating Entities, Attributes, and Associations from Import or Export Mappings

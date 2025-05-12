@@ -1,13 +1,13 @@
 ---
 title: "Edit Menu"
-url: /refguide/edit-menu/
+url: /refguide10/edit-menu/
 description: "Describes the Edit Menu in Studio Pro."
 weight: 10
 ---
 
 ## Introduction
 
-Via the **Edit** menu you can perform various actions, such cut/copy/paste or search where a particular document is used. You can also open the [Preferences](/refguide/preferences-dialog/) dialog that contains user-specific settings. 
+Via the **Edit** menu you can perform various actions, such cut/copy/paste or search where a particular document is used. You can also open the [Preferences](/refguide10/preferences-dialog/) dialog that contains user-specific settings. 
 
 {{< figure src="/attachments/refguide10/modeling/menus/edit-menu/edit-menu.png" alt="Edit Menu" class="no-border" width="300" >}}
 
@@ -33,11 +33,11 @@ The **Edit** menu items are described in the table below:
 | **Forward** (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>-</kbd>) | Move forward through your editing history to show the documents you have recently worked on. |
 | **Next Error** (<kbd>F8</kbd>)                               | Highlights the next error in the **Error List** pane and open it in an editor. |
 | **Previous Error** (<kbd>Shift</kbd> + <kbd>F8</kbd>)        | Highlights the previous error result in the **Error List** pane and open it in an editor. |
-| **Preferences**                                              | Opens the **Preferences** dialog box, where you can set your general, model, and advanced editing preferences. For more information on the **Preferences** dialog box, see [Preferences](/refguide/preferences-dialog/). |
+| **Preferences**                                              | Opens the **Preferences** dialog box, where you can set your general, model, and advanced editing preferences. For more information on the **Preferences** dialog box, see [Preferences](/refguide10/preferences-dialog/). |
 
 ## Read More
 
-* [Changes Pane](/refguide/changes-pane/)
-* [Errors Pane](/refguide/errors-pane/)
-* [App Explorer](/refguide/app-explorer/)
-* [Studio Pro Overview](/refguide/studio-pro-overview/)
+* [Changes Pane](/refguide10/changes-pane/)
+* [Errors Pane](/refguide10/errors-pane/)
+* [App Explorer](/refguide10/app-explorer/)
+* [Studio Pro Overview](/refguide10/studio-pro-overview/)

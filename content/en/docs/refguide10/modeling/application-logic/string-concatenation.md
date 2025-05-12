@@ -1,11 +1,11 @@
 ---
 title: "Configuring String Concatenation"
 linktitle: "Configure String Concatenation"
-url: /refguide/string-concatenation/
+url: /refguide10/string-concatenation/
 weight: 110
 description: "Describes three examples as well as best practices on configuring string concatenation."
 aliases:
-    - /howto/logic-business-rules/string-concatenation/
+    - /howto10/logic-business-rules/string-concatenation/
 ---
 
 ## Introduction

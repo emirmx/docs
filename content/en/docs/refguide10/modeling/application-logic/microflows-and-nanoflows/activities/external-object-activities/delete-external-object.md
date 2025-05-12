@@ -1,6 +1,6 @@
 ---
 title: "Delete External Object"
-url: /refguide/delete-external-object/
+url: /refguide10/delete-external-object/
 ---
 
 {{% alert color="info" %}}
@@ -31,4 +31,4 @@ This setting defines how changes are reflected in the pages presented to the end
 
 ## After the Activity
 
-After this activity, the `$latestHttpResponse` variable (of the [HttpResponse](/refguide/http-request-and-response-entities/#http-response) type) is available to inspect the response returned by the service.
+After this activity, the `$latestHttpResponse` variable (of the [HttpResponse](/refguide10/http-request-and-response-entities/#http-response) type) is available to inspect the response returned by the service.

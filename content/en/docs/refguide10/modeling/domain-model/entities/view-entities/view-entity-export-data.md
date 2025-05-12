@@ -1,6 +1,6 @@
 ---
 title: "Exporting Data with View Entities"
-url: /refguide/view-entity-expport-data/
+url: /refguide10/view-entity-expport-data/
 weight: 90
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Context Source"
-url: /refguide/context-source/
+url: /refguide10/context-source/
 weight: 30
 ---
 
@@ -23,11 +23,11 @@ If you have a nested data view, you can select one of the following:
 * An entity of a page parameter.
 * An entity that has an association with the entity of a page parameter, which should be a parent of this association. 
 
-For more information on associations, see [Associations](/refguide/associations/). 
+For more information on associations, see [Associations](/refguide10/associations/). 
 
 {{< figure src="/attachments/refguide10/modeling/pages/data-widgets/data-sources/context-source/context-source-example.png" alt="Context Source"   width="400"  class="no-border" >}}
 
 ## Read More
 
-* [Data Containers](/refguide/data-widgets/)
-* [Associations](/refguide/associations/)
+* [Data Containers](/refguide10/data-widgets/)
+* [Associations](/refguide10/associations/)

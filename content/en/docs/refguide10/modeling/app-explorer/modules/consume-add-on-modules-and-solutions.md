@@ -1,6 +1,6 @@
 ---
 title: "Consuming Add-on Modules and Solutions"
-url: /refguide/consume-add-on-modules-and-solutions/
+url: /refguide10/consume-add-on-modules-and-solutions/
 linktitle: "Consume Add-on Modules and Solutions"
 weight: 30
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
@@ -18,18 +18,18 @@ When consuming add-on modules and solutions, you may come across the following l
 
 * When debugging add-on and solution modules, you cannot step into microflows, debugging will automatically use **Step Over**.
 * If app modules and add-on modules or solutions have conflicting custom widgets, you are prompted with a warning showing the sources of the conflicts (module and widget package names) to find a workaround. An automatic fix is not implemented.
-* When a constant is hidden, you cannot configure its value in the **App settings**. For more information on app settings, see the [Configuration Tab](/refguide/app-settings/#configurations) section in *App Settings*. 
+* When a constant is hidden, you cannot configure its value in the **App settings**. For more information on app settings, see the [Configuration Tab](/refguide10/app-settings/#configurations) section in *App Settings*. 
 * If there are add-on modules imported into Studio Pro and the application is deployed for Eclipse using menu option **App > Deploy for Eclipse**, there are known build failures in Java source code.
 
 ## Importing an Add-on Module 
 
 There are several ways to import an add-on module from the Marketplace. For more information, see the [Installing Marketplace Content](/appstore/use-content/#install) section in *Using Marketplace Content*.
 
-You can also add an add-on module to your app not through the Marketplace. For more information, see the [Importing Module Package](/refguide/import-and-export/#import-module) section in *Importing and Exporting Apps, Modules, Widgets, and Documents*. 
+You can also add an add-on module to your app not through the Marketplace. For more information, see the [Importing Module Package](/refguide10/import-and-export/#import-module) section in *Importing and Exporting Apps, Modules, Widgets, and Documents*. 
 
 ## Importing a Solution Package 
 
-A solution package is imported to your app as any other app package. For more information, see the [Importing App Packages](/refguide/import-and-export/#import-app-package) section in *Importing and Exporting Apps, Modules, Widgets, and Documents*. 
+A solution package is imported to your app as any other app package. For more information, see the [Importing App Packages](/refguide10/import-and-export/#import-app-package) section in *Importing and Exporting Apps, Modules, Widgets, and Documents*. 
 
 ## Working with Add-on Modules and Solutions in Your App
 
@@ -52,4 +52,4 @@ The module is deleted from your app.
 
 * [IP Protection](/appstore/creating-content/sol-ip-protection/)
 * [How to Use Marketplace Content](/appstore/use-content/)
-* [Importing and Exporting Apps, Modules, Widgets, and Documents](/refguide/import-and-export/)
+* [Importing and Exporting Apps, Modules, Widgets, and Documents](/refguide10/import-and-export/)

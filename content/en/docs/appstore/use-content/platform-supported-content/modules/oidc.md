@@ -18,8 +18,6 @@ This OIDC SSO module works with Mendix 9.0 and above. If you are using a previou
 If you are using Mendix versions from 9.20 to 9.24, ensure you are using version 2.0.0 or above of the OIDC SSO module. For all versions of Mendix 10.0, you need to use version 2.2.0 or above of the OIDC SSO module.
 {{% /alert %}}
 
-{{% todo %}} The team will update the above warning for Mendix 11 when more information is available. {{% /todo %}}
-
 {{% alert color="warning" %}}
 If you are migrating to the OIDC module version 3.0.0 and above, include the [UserCommons](https://marketplace.mendix.com/link/component/223053) module as a dependency and configure the `OIDC.Startup` microflow as part of after-startup Microflow. In the module version 3.1.0 and above, `OIDC.Startup` has been renamed to `OIDC.ASU_OIDC_Startup`. For more details, see the [Upgrading the OIDC SSO Module](#upgrade) section below.
 {{% /alert %}}
@@ -515,13 +513,18 @@ You can set up custom user provisioning by setting the following constants. You 
 
 | Constant | Use | Notes | Example |
 | --- | --- | --- | --- |
-| CustomUserEntity | a custom user entity | in the form `modulename.entityname` – a specialization of `System.User` | `Administration.Account` |
-| PrincipalEntityAttribute | the attribute holding the unique identifier of an authenticated user | | `Name` |
-| PrincipalIdPAttribute | the IdP claim which is the unique identifier of an authenticated user | | `sub` |
-| AllowcreateUsers | allows to create users in the application | *optional* | `True` |
-| Userrole | the role that will be assigned to newly created users | *optional* - Default Userrole is assigned only at user creation <br> - User updates do not change the default role <br> - No bulk update for existing users when the default userrole changes | `User` |
-| UserType | assigns user type to the created user | *optional* | `Internal` |
-| CustomUserProvisioning | a custom microflow to use for user provisioning | *optional* – in the form `modulename.microflowname` – the microflow name must begin with the string `UC_CustomProvisioning` | `Mymodule.UC_CustomProvisioning` |
+| `CustomUserEntity` | a custom user entity | in the form `modulename.entityname` – a specialization of `System.User` | `Administration.Account` |
+| `PrincipalEntityAttribute` | the attribute holding the unique identifier of an authenticated user | | `Name` |
+| `PrincipalIdPAttribute` | the IdP claim which is the unique identifier of an authenticated user | | `sub` |
+| `AllowcreateUsers` | allows to create users in the application | *optional* | `True` |
+| `Userrole` | the role that will be assigned to newly created users | *optional* - Default Userrole is assigned only at user creation <br> - User updates do not change the default role <br> - No bulk update for existing users when the default userrole changes | `User` |
+| `UserType` | assigns user type to the created user | *optional* | `Internal` |
+| `CustomUserProvisioning` | a custom microflow to use for user provisioning | *optional* – in the form `modulename.microflowname` – the microflow name must begin with the string `UC_CustomProvisioning` | `Mymodule.UC_CustomProvisioning` |
+| `DisableMxAdmin` | deactivates Mx admin | *optional* | `True` |
+
+{{% alert color="info" %}}
+You may have a requirement that users log in to your application only via SSO. However, when you deploy your app on the Mendix Cloud, the platform may still create an MxAdmin user with a local password. From version 2.1.0 of the UserCommons module, if the flag for the `DisableMxAdmin` constant is set to `True`, the MxAdmin user will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
+{{% /alert %}}
 
 #### Runtime Configuration of End-user Onboarding{#custom-provisioning-rt}
 
@@ -530,16 +533,16 @@ By default, users are provisioned by [Default User Provisioning Configuration](#
 You can set up just-in-time user provisioning as follows:
 
 1. Sign in to the running app with an administrator account.
-2. Navigate to the `OIDC.OIDC_Client_Overview` page which is set up in the app navigation.
+2. Navigate to the `OIDC.OIDC_Client_Overview` page, which is set up in the app navigation.
 3. In the **IdPs for SSO and API security** tab, click **New** and access the **UserProvisioning** tab.
 
-Below fields are available in the **UserProvisioning** tab for the User Provisioning configuration.
+Fields below are available in the **UserProvisioning** tab for the User Provisioning configuration.
 
 * **Custom user Entity (extension of System.User)** – the Mendix entity where you will store and look up the user account. If you are using the [Administration module](https://marketplace.mendix.com/link/component/23513), this would be `Administration.Account`.
-* **The attribute where the user principal is stored** – unique identifier associated with an authenticated user.
+* **The attribute where the user principal is stored** – a unique identifier associated with an authenticated user.
 * **Allow the module to create users** – this enables the module to create users based on configurations of JIT user provisioning and attribute mapping. When disabled, it will still update existing users. However, for new users, it will display an exception message in the log.
     * By default, the value is set to ***Yes***.
-* **User role** (optional) – the role which will be assigned to newly created users. This is optional and will be applied to all IdPs. You can select any user role as a default or keep the field empty. User Provisioning does not allow you to assign user roles dynamically. It can only set a default role. If you need additional user roles, use Access Token Parsing microflow to assign multiple roles. For more information, see the [Dynamic Assignment of Userroles (Access Token Parsing)](#access-token-parsing) section below.
+* **User role** (optional) – the role which will be assigned to newly created users. This is optional and will be applied to all IdPs. You can select any user role as a default or keep the field empty. User Provisioning does not allow you to assign user roles dynamically. It can only set a default role. If you need additional user roles, use the Access Token Parsing microflow to assign multiple roles. For more information, see the [Dynamic Assignment of Userroles (Access Token Parsing)](#access-token-parsing) section below.
     * By default, the value is set to ***User***.
 * **User Type** – this allows you to configure end-users of your application as internal or external. It is created upon the creation of the user and updated each time the user logs in.
     * By default, the value is set to ***Internal***.
@@ -601,8 +604,8 @@ Select it in the **Custom UserProvisioning** field. The custom microflow name mu
 
 * **UserInfoParameter(UserCommons.UserInfoParam)**: A Mendix object containing user claims information through its associated objects. You can use this parameter to retrieve user provisioning configuration information.
 * **User(System.User)**: A Mendix object representing the user to be provisioned. Ensure that the selected microflow matches this parameter signature.
-
-The custom microflow will be executed after the user is created or updated. 
+* The microflow must return a **System.User** object to ensure proper user provisioning and updates. It will be executed after user creation or update of user. However, starting from version 2.0.0 of the UserCommons module, this is no longer mandatory.
+* If you have added a new microflow, you need to refresh the module containing your microflow as described in the [Mx Model Reflection](/appstore/modules/model-reflection/).
 
 ### Configuring User Provisioning for Version 2.4.0 and Below
 

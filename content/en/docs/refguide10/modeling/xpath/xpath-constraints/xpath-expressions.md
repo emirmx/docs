@@ -1,6 +1,6 @@
 ---
 title: "XPath Expressions"
-url: /refguide/xpath-expressions/
+url: /refguide10/xpath-expressions/
 ---
 
 ## Overview
@@ -15,7 +15,7 @@ There are three types of expressions usable for constraints:
 
 ## Comparisons
 
-A comparison expression consists of two attributes or values separated by a comparison [operator](/refguide/xpath-operators/) like `=`, `<=`, or `>`.
+A comparison expression consists of two attributes or values separated by a comparison [operator](/refguide10/xpath-operators/) like `=`, `<=`, or `>`.
 
 ### Examples
 
@@ -134,7 +134,7 @@ The following query retrieves the same customer as the previous query:
 
 If two sides of a comparison (`=`, `!=`, `<`, `<=`, `>`, `>=`) have different types, one of the sides may be converted implicitly to the type of the other side.
 
-If one of the sides is a plain value (a literal, a microflow variable or a [system variable](/refguide/xpath-keywords-and-system-variables/#system-variables)) and the other side is an attribute to be queried, the value is converted to the type of the attribute. For example, the line below will convert the string `'42'` to the number `42` before executing the query:
+If one of the sides is a plain value (a literal, a microflow variable or a [system variable](/refguide10/xpath-keywords-and-system-variables/#system-variables)) and the other side is an attribute to be queried, the value is converted to the type of the attribute. For example, the line below will convert the string `'42'` to the number `42` before executing the query:
 
 {{< tabpane >}}
   {{% tab header="Environments:" disabled=true /%}}
@@ -200,7 +200,7 @@ For the purpose of evaluating an XPath expression, a microflow variable is also 
 
 ## Functions
 
-For information on the available functions, see [XPath Constraint Functions](/refguide/xpath-constraint-functions/).
+For information on the available functions, see [XPath Constraint Functions](/refguide10/xpath-constraint-functions/).
 
 ## Exist-Expressions {#exist}
 

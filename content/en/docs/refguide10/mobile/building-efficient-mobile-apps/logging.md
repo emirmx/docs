@@ -1,14 +1,14 @@
 ---
 title: "Logging in Native Apps"
-url: /refguide/mobile/building-efficient-mobile-apps/logging/
+url: /refguide10/mobile/building-efficient-mobile-apps/logging/
 weight: 25
 description: "Describes using logging in native mobile apps"
 aliases:
-    - /refguide/mobile/logging/
+    - /refguide10/mobile/logging/
 ---
 ## Introduction
 
-Native mobile apps are able to send logs to the [Mendix Runtime](/refguide/runtime/). Read this guide for information on native app logging configuration.
+Native mobile apps are able to send logs to the [Mendix Runtime](/refguide10/runtime/). Read this guide for information on native app logging configuration.
 
 {{% alert color="warning" %}}
 Please note the following current limitations regarding native client logs:
@@ -18,10 +18,10 @@ Please note the following current limitations regarding native client logs:
 
 ## Enabling Native App Logging
 
-Sending logs from native apps is disabled by default. However, sending logs can be enabled from your [native phone profile](/refguide/navigation/#native-phone) by selecting the **Enable sending logs to runtime** checkbox inside the **Logging** group box.
+Sending logs from native apps is disabled by default. However, sending logs can be enabled from your [native phone profile](/refguide10/navigation/#native-phone) by selecting the **Enable sending logs to runtime** checkbox inside the **Logging** group box.
 
 {{% alert color="warning" %}}
-Please note that after enabling or disabling sending logs to runtime, you must create and distribute a new build of the native mobile app for this change to take effect. For more information on creating and distributing builds, see [Building, Testing, and Distributing Apps](/refguide/mobile/distributing-mobile-apps/).
+Please note that after enabling or disabling sending logs to runtime, you must create and distribute a new build of the native mobile app for this change to take effect. For more information on creating and distributing builds, see [Building, Testing, and Distributing Apps](/refguide10/mobile/distributing-mobile-apps/).
 {{% /alert %}}
 
 {{< figure src="/attachments/refguide10/mobile/native-mobile/logging/enable-logging.png" class="no-border" >}}
@@ -34,7 +34,7 @@ Please note the following:
 * `Crash` logs are not supported currently
 {{% /alert %}}
 
-For more information on log levels, see the [Log Levels](/refguide/logging/#log-levels) section of *Logging*.
+For more information on log levels, see the [Log Levels](/refguide10/logging/#log-levels) section of *Logging*.
 
 ### Critical
 
@@ -64,7 +64,7 @@ However, you may choose to add more entry and exit points at the **Debug** level
 
 ## Native Client Default Log Nodes
 
-This section provides some details on specific log nodes used by the Mendix native client. Mendix recommends that if you write your own [log messages](/refguide/log-message/), you should also use your own log node names to avoid confusion with the Mendix log messages.
+This section provides some details on specific log nodes used by the Mendix native client. Mendix recommends that if you write your own [log messages](/refguide10/log-message/), you should also use your own log node names to avoid confusion with the Mendix log messages.
 
 ### Default Mendix Native Client Log Nodes {#native-client-log-nodes}
 
@@ -73,12 +73,11 @@ The following log nodes are used by Mendix when writing log messages:
 {{% alert color="warning" %}}
 
 * Log messages are filtered based on the log levels set in the Cloud Portal app.
-* Enabling the `trace` log level may cause too many logs to be sent to the [Mendix Runtime](/refguide/runtime/), so it should not be kept enabled for long periods of time.
+* Enabling the `trace` log level may cause too many logs to be sent to the [Mendix Runtime](/refguide10/runtime/), so it should not be kept enabled for long periods of time.
 {{% /alert %}}
 
 | Log Node | Description |
 | --- | --- |
-| Client_AppCenter| Logs messages related to the state and phases of over-the-air updates by App Center. |
 | Client_Auth | Logs messages related to the different authentication states and user actions.|
 | Client | The default log node when no log node is provided. |
 | Client_Database | Logs messages related to different read/write operations on the local database. |

@@ -1,6 +1,6 @@
 ---
 title: "Using ML Kit"
-url: /refguide/machine-learning-kit/using-ml-kit/
+url: /refguide10/machine-learning-kit/using-ml-kit/
 weight: 15
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -19,7 +19,7 @@ For information on ML Kit known issues, see the [Known Issues](#known-issues) se
 
 ## Usage {#usage}
 
-To use an ML model in your app, you need to convert it to ONNX, then import it to create an ML model mapping. For a visual walkthrough of the steps in this section, see the [Logistic Regression Example](/refguide/machine-learning-kit/using-ml-kit/logistic-regression/).
+To use an ML model in your app, you need to convert it to ONNX, then import it to create an ML model mapping. For a visual walkthrough of the steps in this section, see the [Logistic Regression Example](/refguide10/machine-learning-kit/using-ml-kit/logistic-regression/).
 
 ### Converting Your Model to ONNX {#convert-ml-model}
 
@@ -89,7 +89,7 @@ When importing your model, you might encounter error CE1790 like in this [BERT](
 
 {{< figure src="/attachments/refguide10/modeling/integration/ml-kit/ml-kit/edit-model-input-shapes.png" alt="Edit ML model input shape dialog box." class="no-border" >}}
 
-In this case, configure the **?** dimensions before using the mapping in a [Call ML model](/refguide/call-ml-model/) activity. Once filled in, static tensor shapes of an output mapping will be automatically calculated based on configured dimensions of the input entity mappings, like in the [BERT](https://github.com/onnx/models/blob/main/text/machine_comprehension/bert-squad/model/bertsquad-12-int8.onnx) example below.
+In this case, configure the **?** dimensions before using the mapping in a [Call ML model](/refguide10/call-ml-model/) activity. Once filled in, static tensor shapes of an output mapping will be automatically calculated based on configured dimensions of the input entity mappings, like in the [BERT](https://github.com/onnx/models/blob/main/text/machine_comprehension/bert-squad/model/bertsquad-12-int8.onnx) example below.
 
 The editor for the BERT model is below:
 
@@ -103,7 +103,7 @@ The completed mapping for the BERT model is below:
 
 #### Persistable and Non-Persistable Entities {#persist-nonpersist-entities}
 
-After importing a model, two [non-persistable](/refguide/persistability/) entities are created using the ML model *input* and *output* like in this [sample XGBoost ML model](https://github.com/mendix/mlkit-example-app/tree/main/mlsource/titanic_xgboost):
+After importing a model, two [non-persistable](/refguide10/persistability/) entities are created using the ML model *input* and *output* like in this [sample XGBoost ML model](https://github.com/mendix/mlkit-example-app/tree/main/mlsource/titanic_xgboost):
 
 {{< figure src="/attachments/refguide10/modeling/integration/ml-kit/ml-kit/entities-example-1.png" alt="Input and output entities in the mapping document." class="no-border" >}}
 
@@ -119,30 +119,30 @@ See [Integrating Models with Pre-processors and Post-processors](#pre-post-proce
 
 ##### Converting to Persistable Entities
 
-You can convert non-persistable entities into [persistable](/refguide/persistability/) ones and use other types, such as **Binary**. This can be done to decrease inference latency of ML mappings document used in the [Call ML model](/refguide/call-ml-model/) activity. 
+You can convert non-persistable entities into [persistable](/refguide10/persistability/) ones and use other types, such as **Binary**. This can be done to decrease inference latency of ML mappings document used in the [Call ML model](/refguide10/call-ml-model/) activity. 
 
 To convert an entity, do the following:
 
 1. Double-click on the entity to open its **Properties**.
 2. Select **Yes** in the **Persistable** section.
 
-You now have a [persistable](/refguide/persistability/) entity in your domain model that you can set as the type you need, and that can be used in [pre- and post-processors](#pre-post-processors).
+You now have a [persistable](/refguide10/persistability/) entity in your domain model that you can set as the type you need, and that can be used in [pre- and post-processors](#pre-post-processors).
  
 ### Using the ML Model in a Microflow {#use-model-microflow}
 
 Once the ML [mapping document](#import-model) is created by importing the ML model, the ML model is available in Studio Pro. 
 
-Drag and drop the [Call ML model](/refguide/call-ml-model/) activity from the Toolbox in the microflow editor to use call and use your ML model in your application logic.
+Drag and drop the [Call ML model](/refguide10/call-ml-model/) activity from the Toolbox in the microflow editor to use call and use your ML model in your application logic.
 
 #### Example of a Model Microflow
 
-In the microflow below, a [Create object](/refguide/create-object/) activity creates an object of input entity type, mapped to input tensors in the ML mapping document. The [Call ML model](/refguide/call-ml-model/) activity calls the ML model, and a [Change object](/refguide/change-object/) activity updates business object with predicted value.
+In the microflow below, a [Create object](/refguide10/create-object/) activity creates an object of input entity type, mapped to input tensors in the ML mapping document. The [Call ML model](/refguide10/call-ml-model/) activity calls the ML model, and a [Change object](/refguide10/change-object/) activity updates business object with predicted value.
 
 {{< figure src="/attachments/refguide10/modeling/integration/ml-kit/ml-kit/drag-action-into-microflow.png" alt="Completed ML mapping. Described in the paragraph above." class="no-border" >}}
 
 #### Call ML Model Activity Details
 
-The **Call ML model** activity is an **ML Kit** activity in the **Toolbox**. For further details, see [Call ML model](/refguide/call-ml-model/).
+The **Call ML model** activity is an **ML Kit** activity in the **Toolbox**. For further details, see [Call ML model](/refguide10/call-ml-model/).
 
 ## Integrating Models with Pre-processors and Post-processors {#pre-post-processors}
 
@@ -152,7 +152,7 @@ Integrating machine learning models can sometimes require using a more complex s
 
 ### Pre-processing and Post-processing Using Java Actions {#java-pre-post}
 
-Data transformations are usually complex tasks, and often require mathematical libraries or even more complex pieces of software (think OpenCV for computer vision). As a result, sometimes they are not integrated into the ML model. In this case, the best way to perform these transformations in Mendix is using Java Actions (see [Extending Your Application with Custom Java](/refguide/extending-your-application-with-custom-java/)).
+Data transformations are usually complex tasks, and often require mathematical libraries or even more complex pieces of software (think OpenCV for computer vision). As a result, sometimes they are not integrated into the ML model. In this case, the best way to perform these transformations in Mendix is using Java Actions (see [Extending Your Application with Custom Java](/refguide10/extending-your-application-with-custom-java/)).
  
 Read the sections below for an example of pre-processing and post-processing using Java Actions in Mendix.
 
@@ -221,15 +221,15 @@ Currently, it is required to have any multidimensional data as a string encoded 
 
 Once you import your model, the **Call ML Model** activity allows you to add your input variable coming from the previous action, and name your output to be used in any ulterior steps.
 
-For information on design patterns that include pre-processors and post-processors, see [Pre/Post-Processor Design Patterns](/refguide/machine-learning-kit/design-patterns/pre-post-processor-patterns/).
+For information on design patterns that include pre-processors and post-processors, see [Pre/Post-Processor Design Patterns](/refguide10/machine-learning-kit/design-patterns/pre-post-processor-patterns/).
 
 {{% alert color="info" %}}Check out pre- and post-processor sample files in our [Mendix ML Kit Demo Repository](https://github.com/mendix/mlkit-example-app/tree/main/javasource). In **Actions** folders, look for Java files named `PreProcessor.java` and `PostProcessor.java`.{{% /alert %}}
 
 ## Supported Frameworks and Libraries {#supported-frameworks}
 
-To ensure that your model will work with the [Call ML Model](/refguide/call-ml-model/) activity, follow the guidelines in this section.
+To ensure that your model will work with the [Call ML Model](/refguide10/call-ml-model/) activity, follow the guidelines in this section.
 
-To learn more about design patterns that can be applied to the Inference process, and specifications that for pre/post-processing while using Mendix components, Java actions, or embedding it into the ML model directly, see our documentation on [Design Patterns](/refguide/machine-learning-kit/design-patterns/).
+To learn more about design patterns that can be applied to the Inference process, and specifications that for pre/post-processing while using Mendix components, Java actions, or embedding it into the ML model directly, see our documentation on [Design Patterns](/refguide10/machine-learning-kit/design-patterns/).
 
 ### Model Building
 
@@ -261,7 +261,7 @@ In the section below, there are tips for Mendix developers to get insights about
 
 ### Troubleshooting
 
-The [Errors Pane](/refguide/errors-pane/) in Studio Pro shares informative messages about the metadata of the ML models that are consumed by the **Call ML Model** activity. Warning messages do not block deployment, but the application may not work seamlessly. All error messages have to be resolved in order to execute applications in local environments or deploy applications into the production environments.
+The [Errors Pane](/refguide10/errors-pane/) in Studio Pro shares informative messages about the metadata of the ML models that are consumed by the **Call ML Model** activity. Warning messages do not block deployment, but the application may not work seamlessly. All error messages have to be resolved in order to execute applications in local environments or deploy applications into the production environments.
 
 Warning
 
@@ -275,7 +275,7 @@ Error
 
 ### Console
 
-The [Console](/refguide/view-menu/#console) pane displays the output of the [Mendix Runtime](/refguide/runtime/) while running an application.
+The [Console](/refguide10/view-menu/#console) pane displays the output of the [Mendix Runtime](/refguide10/runtime/) while running an application.
 
 #### Mendix Runtime Logs
 
@@ -286,7 +286,7 @@ The responsibility of the Mendix Runtime is to make an inference call on the ML 
 
 #### Using the Log Message Activity
 
-The [Log Message](/refguide/log-message/) activity is very flexible and can be used to debug the inputs/outputs of any activity including Java Actions and the **Call ML Model** activities. It is useful when it comes to checking the state of the data at a specific point inside the Microflow.
+The [Log Message](/refguide10/log-message/) activity is very flexible and can be used to debug the inputs/outputs of any activity including Java Actions and the **Call ML Model** activities. It is useful when it comes to checking the state of the data at a specific point inside the Microflow.
 
 For example, a log message after an inference call made by the **Call ML Model** activity helps to observe the classification result of a ResNet model on a provided image:
 
@@ -302,7 +302,7 @@ A similar log message can also be placed after pre-processing actions to observe
 
 In general, the transformation of the multidimensional arrays is subject to Java Actions. Exploiting debugging tools or using logging mechanisms inside the Java Actions will help you debug the state of the variables. 
 
-For more information, see [Debug Java Actions](/howto/monitoring-troubleshooting/debug-java-actions/).
+For more information, see [Debug Java Actions](/howto10/monitoring-troubleshooting/debug-java-actions/).
  
 ## Known Issues {#known-issues}
 
@@ -389,7 +389,7 @@ The table below presents the compatibility list for your models per Studio Pro v
 
 ## Read More {#readmore}
 
-* Learn about machine learning [Design Patterns](/refguide/machine-learning-kit/design-patterns/), including [Advanced Inference Design Patterns](/refguide/machine-learning-kit/design-patterns/advanced-inference/) and [Pre- and Post-Processor Design Patterns](/refguide/machine-learning-kit/design-patterns/pre-post-processor-patterns/)
-* See [Pre-Trained ML Models](/refguide/machine-learning-kit/pretrained-ml-models/) to learn about models you can use with *Mendix ML Kit*.
-* The [ML model mapping](/refguide/ml-model-mapping/) document covers details of the service document for machine learning models
-* The [Call ML Model](/refguide/call-ml-model/) document covers the microflow [activity](/refguide/activities/) used to call an imported ML model in a microflow
+* Learn about machine learning [Design Patterns](/refguide10/machine-learning-kit/design-patterns/), including [Advanced Inference Design Patterns](/refguide10/machine-learning-kit/design-patterns/advanced-inference/) and [Pre- and Post-Processor Design Patterns](/refguide10/machine-learning-kit/design-patterns/pre-post-processor-patterns/)
+* See [Pre-Trained ML Models](/refguide10/machine-learning-kit/pretrained-ml-models/) to learn about models you can use with *Mendix ML Kit*.
+* The [ML model mapping](/refguide10/ml-model-mapping/) document covers details of the service document for machine learning models
+* The [Call ML Model](/refguide10/call-ml-model/) document covers the microflow [activity](/refguide10/activities/) used to call an imported ML model in a microflow

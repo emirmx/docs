@@ -1,6 +1,6 @@
 ---
 title: "Boolean Expressions"
-url: /refguide/boolean-expressions/
+url: /refguide10/boolean-expressions/
 weight: 50
 ---
 

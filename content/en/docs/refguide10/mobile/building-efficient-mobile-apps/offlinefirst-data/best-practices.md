@@ -1,6 +1,6 @@
 ---
 title: "Offline Best Practices"
-url: /refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/
+url: /refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/
 weight: 30
 description: "Describes how to make secure, high-performing offline-first apps."
 ---
@@ -15,7 +15,7 @@ To ensure the best user experience for your Mendix application, follow these bes
 * Synchronize large files or images using selective synchronization
 * Use an `isDeleted` Boolean attribute for delete functionality so that conflicts can be handled correctly on the server
 * Use before- and after-commit microflows to pre- or post-process data
-* Use a [microflow call](/refguide/microflow-call/) in your nanoflows to perform additional server-side logic such as retrieving data from a REST service, or accessing and using complex logic such as Java actions
+* Use a [microflow call](/refguide10/microflow-call/) in your nanoflows to perform additional server-side logic such as retrieving data from a REST service, or accessing and using complex logic such as Java actions
 * Help your user remember to synchronize their data so it is processed as soon as possible: you can check for connectivity and automatically synchronize in the nanoflow that commits your object, or remind a user to synchronize while using a notification or before signing out to ensure no data is lost
 
 ## Preventing Synchronization Issues
@@ -41,7 +41,7 @@ Mendix helps developers build rich offline-first apps. However, there are some l
 
 ### Microflows {#microflows}
 
-Microflows can be called from offline apps by using [microflow call](/refguide/microflow-call/) action in your nanoflows to perform logic on the server. However, it works a bit different from when used in online profiles, these differences are explained below:
+Microflows can be called from offline apps by using [microflow call](/refguide10/microflow-call/) action in your nanoflows to perform logic on the server. However, it works a bit different from when used in online profiles, these differences are explained below:
 
 #### Microflow Arguments Type
 
@@ -58,12 +58,12 @@ UI-related actions will be ignored and will not have any effect. We encourage yo
 
 These actions are as the following:
 
-* [Show message](/refguide/show-message/)
-* [Show validation message](/refguide/validation-feedback/)
-* [Show home page](/refguide/show-home-page/)
-* [Show page](/refguide/show-page/)
-* [Close page](/refguide/close-page/)
-* [Download file](/refguide/download-file/)
+* [Show message](/refguide10/show-message/)
+* [Show validation message](/refguide10/validation-feedback/)
+* [Show home page](/refguide10/show-home-page/)
+* [Show page](/refguide10/show-page/)
+* [Close page](/refguide10/close-page/)
+* [Download file](/refguide10/download-file/)
 
 #### Object Side-Effects
 
@@ -76,11 +76,11 @@ Changes to persistable objects made in a microflow will not be reflected on the 
 
 #### Language Switching
 
-To be able to switch the language of a Mendix app, a device must be online and have access to the Mendix runtime. For more information on the runtime, see the [Runtime Reference Guide](/refguide/runtime/).
+To be able to switch the language of a Mendix app, a device must be online and have access to the Mendix runtime. For more information on the runtime, see the [Runtime Reference Guide](/refguide10/runtime/).
 
 ### Offline Microflow Best Practices {#offline-mf-best-practices}
 
-To make microflow calls work from offline-first apps, Mendix stores some microflow information in the offline app. That information is called from the app. This means that changes to microflows used from offline apps must be backwards-compatible, because there can be older apps which have not received an over the air update yet. All microflow calls from such a device will still contain the old microflow call configuration in nanoflows, which means that the request might fail. For more information on over-the-air updates, see [Updating Native Apps](/refguide/mobile/distributing-mobile-apps/overtheair-updates/).
+To make microflow calls work from offline-first apps, Mendix stores some microflow information in the offline app. That information is called from the app. This means that changes to microflows used from offline apps must be backwards-compatible, because there can be older apps which have not received an over the air update yet. All microflow calls from such a device will still contain the old microflow call configuration in nanoflows, which means that the request might fail. For more information on over-the-air updates, see [Updating Native Apps](/refguide10/mobile/distributing-mobile-apps/overtheair-updates/).
 
 To avoid backwards-compatibility errors in offline microflow calls after the initial release, Mendix suggests these best practices:
 
@@ -102,7 +102,9 @@ Many-to-many associations are not supported. A common alternative is to introduc
 
 ### Inheritance {#inheritance}
 
-It is not possible to use more than one entity from a generalization or specialization relation. For example if you have an `Animal` entity and a `Dog` specialization, you can use either use `Animal` or `Dog`, but not both from your offline profile. An alternative pattern is to use composition (for example, object associations).
+{{% alert color="info" %}}
+In Studio Pro 10.20 and below, it is not possible to use more than one entity from a generalization or specialization relation. For example if you have an `Animal` entity and a `Dog` specialization, you can use either use `Animal` or `Dog`, but not both from your offline profile. An alternative pattern is to use composition (for example, object associations).
+{{% /alert %}}
 
 ### System Members {#system-members}
 
@@ -114,7 +116,7 @@ Excel and CSV export are not available in offline applications.
 
 ### Hashed String Attributes {#hashed-strings}
 
-Attributes with the hashed string [attribute type](/refguide/attributes/#type) will not be synchronized.
+Attributes with the hashed string [attribute type](/refguide10/attributes/#type) will not be synchronized.
 
 ### Access Rules with XPath Constraints {#access-rules}
 

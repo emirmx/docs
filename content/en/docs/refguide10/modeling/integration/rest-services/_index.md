@@ -1,6 +1,6 @@
 ---
 title: "REST Services"
-url: /refguide/integration/rest-services/
+url: /refguide10/integration/rest-services/
 weight: 30
 description: "Introduces REST services."
 ---
@@ -15,12 +15,12 @@ Representational state transfer (REST) is an approach to consuming or exposing r
 
 Lack of contracts and schemas give you an easy start to using REST. However, many REST endpoints return complex data.
 
-The [JSON Structure](/refguide/json-structures/) document helps to give structure to JSON data. From an example JSON snippet, a lightweight schema is extracted that is used in [Mapping Documents](/refguide/mapping-documents/). 
-The [Import Mapping](/refguide/import-mappings/) document converts JSON (or XML) to Mendix objects, and the [Export Mapping](/refguide/export-mappings/) document serializes Mendix objects to JSON (or XML).
+The [JSON Structure](/refguide10/json-structures/) document helps to give structure to JSON data. From an example JSON snippet, a lightweight schema is extracted that is used in [Mapping Documents](/refguide10/mapping-documents/). 
+The [Import Mapping](/refguide10/import-mappings/) document converts JSON (or XML) to Mendix objects, and the [Export Mapping](/refguide10/export-mappings/) document serializes Mendix objects to JSON (or XML).
 
 ## Content Types {#content-types}
 
-Content types are included in [custom HTTP headers](/refguide/call-rest-action/#custom-http-headers) to specify the output of the call, including media type or data format. For more information on content types, see [Content Negotiation in REST](https://restfulapi.net/content-negotiation/).
+Content types are included in [custom HTTP headers](/refguide10/call-rest-action/#custom-http-headers) to specify the output of the call, including media type or data format. For more information on content types, see [Content Negotiation in REST](https://restfulapi.net/content-negotiation/).
 
 ## JSON
 
@@ -46,13 +46,13 @@ REST calls that output JSON need to declare the [content type](#content-types) a
 
 To publish REST services, see:
 
-* [Published REST Services](/refguide/published-rest-services/), an overview in the Studio Pro guide
-* [Publish a REST Service](/howto/integration/publish-rest-service/) for step-by-step instructions
-* [HttpRequest and HttpResponse System Entities](/refguide/http-request-and-response-entities/), an overview of these system entities in your domain model
+* [Published REST Services](/refguide10/published-rest-services/), an overview in the Studio Pro guide
+* [Publish a REST Service](/howto10/integration/publish-rest-service/) for step-by-step instructions
+* [HttpRequest and HttpResponse System Entities](/refguide10/http-request-and-response-entities/), an overview of these system entities in your domain model
 
 To consume REST services, see:
 
-* [Consumed REST Service](/refguide/consumed-rest-service/), an overview on how to Consume a REST Service
-* [Call REST Service](/refguide/call-rest-action/), a description of the microflow action
-* [Use Call REST Service Action in a Microflow](/refguide/integration/use-call-rest-action-in-microflow/), instructions on how to use the Call REST Service action in a microflow
-* [HttpRequest and HttpResponse System Entities](/refguide/http-request-and-response-entities/), an overview of these system entities in your domain model
+* [Consumed REST Service](/refguide10/consumed-rest-service/), an overview on how to Consume a REST Service
+* [Call REST Service](/refguide10/call-rest-action/), a description of the microflow action
+* [Use Call REST Service Action in a Microflow](/refguide10/integration/use-call-rest-action-in-microflow/), instructions on how to use the Call REST Service action in a microflow
+* [HttpRequest and HttpResponse System Entities](/refguide10/http-request-and-response-entities/), an overview of these system entities in your domain model

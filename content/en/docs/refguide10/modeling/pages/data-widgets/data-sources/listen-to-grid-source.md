@@ -1,6 +1,6 @@
 ---
 title: "Listen to Widget Source"
-url: /refguide/listen-to-grid-source/
+url: /refguide10/listen-to-grid-source/
 weight: 70
 ---
 

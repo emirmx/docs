@@ -1,6 +1,6 @@
 ---
 title: "Use MIN With Older Studio Pro Versions"
-url: /refguide/mobile/distributing-mobile-apps/use-min-older-sp/
+url: /refguide10/mobile/distributing-mobile-apps/use-min-older-sp/
 weight: 45
 description: "This guide will help you build a MIN app compatible with a non-LTS Studio Pro version."
 ---
@@ -9,7 +9,7 @@ description: "This guide will help you build a MIN app compatible with a non-LTS
 
 The Make It Native (MIN) app allows you to test native apps in development with ease. We have also made it open source, allowing you to change it depending on your needs. You can continue to use the [Make It Native App](/releasenotes/mobile/make-it-native-parent/) we provide via the iOS App Store and Google Play Store, or you can build your own Make It Native app.
 
-A common reason to build your own Make It Native app is to support one or more development teams that work on a specific version of Mendix and require additional native dependencies. Building your own Make It Native app is an alternative to [Creating a Custom Developer App](/howto/mobile/how-to-devapps/) which adds more convenience for your developers and gives you more control over the native app.
+A common reason to build your own Make It Native app is to support one or more development teams that work on a specific version of Mendix and require additional native dependencies. Building your own Make It Native app is an alternative to [Creating a Custom Developer App](/howto10/mobile/how-to-devapps/) which adds more convenience for your developers and gives you more control over the native app.
 
 This guide explains how to build your own Make It Native app.
 
@@ -367,7 +367,7 @@ If using Native Builder UI (which also creates native apps to use for testing), 
 1. In Studio Pro, click **App** > **Build Native Mobile App**.
 1. Click **Configure app for local building**.
 1. (Build type) Select a disk location for the native app source code.
-1. (Build type) Disable GitHub and App Center cloud services.
+1. (Build type) Disable GitHub.
 1. (Splash screens / App icon / Custom fonts) Use the default splash screen and app icons and no custom fonts (because we need the JavaScript bundle and project assets, this step isn't important but required).
 1. (App details) Select **Portrait** and **Landscape** for app's **orientation selection**.
 1. (App details) Select **Phones** and **Tablets** for app's **Device targets selection**.

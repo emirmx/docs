@@ -1,6 +1,6 @@
 ---
 title: "JavaScript Action Call"
-url: /refguide/javascript-action-call/
+url: /refguide10/javascript-action-call/
 weight: 20
 description: "This reference explains the properties of the JavaScript action call activity."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
@@ -12,7 +12,7 @@ This activity can only be used in nanoflows.
 
 ## Introduction
 
-The JavaScript action call activity can be used to call a [JavaScript action](/refguide/javascript-actions/). Arguments can be passed to the action, and the result can be stored.
+The JavaScript action call activity can be used to call a [JavaScript action](/refguide10/javascript-actions/). Arguments can be passed to the action, and the result can be stored.
 
 ## Properties
 
@@ -47,7 +47,7 @@ Click **Edit** next to the parameter to fill in the arguments.
 
 An argument is the input data that you are passing to the JavaScript action. For each JavaScript action parameter, you must supply an argument of the same type. 
 
-The values of the arguments are defined using [expressions](/refguide/expressions/):
+The values of the arguments are defined using [expressions](/refguide10/expressions/):
 
 {{< figure src="/attachments/refguide10/modeling/application-logic/microflows-and-nanoflows/activities/action-call-activities/java-action-call/argument-edit.png" alt="argument" class="no-border" >}}
 
@@ -65,11 +65,11 @@ The name of the variable, list, or object returned by the activity. If it is an 
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}
 
 ## Read More
 
-* [JavaScript Actions](/refguide/javascript-actions/)
-* [Build JavaScript Actions](/howto/extensibility/build-javascript-actions/)
-* [Nanoflows](/refguide/nanoflows/)
-* [Java Action Call](/refguide/java-action-call/)
+* [JavaScript Actions](/refguide10/javascript-actions/)
+* [Build JavaScript Actions](/howto10/extensibility/build-javascript-actions/)
+* [Nanoflows](/refguide10/nanoflows/)
+* [Java Action Call](/refguide10/java-action-call/)

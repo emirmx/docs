@@ -1,6 +1,6 @@
 ---
 title: "User Task"
-url: /refguide/user-task/
+url: /refguide10/user-task/
 weight: 70
 ---
 
@@ -56,15 +56,15 @@ Possible options of this property are described in the table below:
 
 | Option | Description |
 | --- | --- |
-| XPath | Allows you to filter users who should be assigned the user task. For example, you can assign a certain task only to users with the Manager user role. You can use attributes of the **User Entity** set in [App Settings](/refguide/app-settings/#workflows). |
-| Microflow | Allows you to assign the user task to certain users. Using microflow you can check, for example, which users have the right to approve user tasks and are currently not on vacation and assign the task only to users who passed the check.<br />The return type of the microflow should be the **User Entity** set in [App Settings](/refguide/app-settings/#workflows). |
+| XPath | Allows you to filter users who should be assigned the user task. For example, you can assign a certain task only to users with the Manager user role. You can use attributes of the **User Entity** set in [App Settings](/refguide10/app-settings/#workflows). |
+| Microflow | Allows you to assign the user task to certain users. Using microflow you can check, for example, which users have the right to approve user tasks and are currently not on vacation and assign the task only to users who passed the check.<br />The return type of the microflow should be the **User Entity** set in [App Settings](/refguide10/app-settings/#workflows). |
 | No assignment | Allows you to not assign the user task to certain users immediately. This can be useful when you, for example, want the user task to be created but have an administrator assign it to certain users later. |
 
-In case **Target users using** (an XPath or a microflow) results in an empty list of users (0 users), the workflow fails. For more information on how to handle this kind of issues, see the [Operation](/refguide/change-workflow-state/#operation) section in *Change Workflow State*.
+In case **Target users using** (an XPath or a microflow) results in an empty list of users (0 users), the workflow fails. For more information on how to handle this kind of issues, see the [Operation](/refguide10/change-workflow-state/#operation) section in *Change Workflow State*.
 
 #### XPath Constraint {#xpath-constraint}
 
-Specifies the expression used to assign the user task. This option is displayed only when the [Target users using](#target-users) is set to **XPath**. Click **Edit** to edit the [XPath constraint](/refguide/xpath-constraints/).
+Specifies the expression used to assign the user task. This option is displayed only when the [Target users using](#target-users) is set to **XPath**. Click **Edit** to edit the [XPath constraint](/refguide10/xpath-constraints/).
 
 #### Microflow
 
@@ -142,7 +142,7 @@ In addition to adding new parameters, you can perform the following actions on p
 
 ### Boundary Events Section {#boundary-events}
 
-For more information, see [Boundary Events](/refguide/workflow-boundary-events/).
+For more information, see [Boundary Events](/refguide10/workflow-boundary-events/).
 
 ### Common Section {#common}
 
@@ -150,5 +150,5 @@ For more information, see [Boundary Events](/refguide/workflow-boundary-events/)
 
 ## Read More
 
-* [Workflows](/refguide/workflows/)
-* [Multi-User Task](/refguide/multi-user-task/)
+* [Workflows](/refguide10/workflows/)
+* [Multi-User Task](/refguide10/multi-user-task/)

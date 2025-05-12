@@ -1,6 +1,6 @@
 ---
 title: "Call External Action"
-url: /refguide/call-external-action/
+url: /refguide10/call-external-action/
 weight: 5
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -67,7 +67,7 @@ In the **Documentation** tab, you can find a **Summary** and a **Description**. 
 
 {{< figure src="/attachments/refguide10/modeling/application-logic/microflows-and-nanoflows/activities/integration-activities/call-external-action/edit-parameter-mapping.png" class="no-border" >}}
 
-The **Edit External Action Parameter Mapping** dialog allows you to set the value of the parameter you pass to an external action. You can either select a **Variable** from the dropdown field, or write a custom [microflow expression](/refguide/expressions/) that returns a value of the expected type.
+The **Edit External Action Parameter Mapping** dialog allows you to set the value of the parameter you pass to an external action. You can either select a **Variable** from the dropdown field, or write a custom [microflow expression](/refguide10/expressions/) that returns a value of the expected type.
 
 Every parameter must have a value specified. When **Can be empty** is true, the selected variable or expression may evaluate to `empty`. When the value cannot be empty, the microflow will throw an error if the value evaluates to `empty`.
 

@@ -1,11 +1,11 @@
 ---
 title: "Header (Document Template)"
-url: /refguide/header-document-template/
+url: /refguide10/header-document-template/
 aliases:
-    - /refguide/header-(document-template).html
-    - /refguide/Header+(document+template).html
-    - /refguide/header-(document-template)
-    - /refguide/Header+(document+template)
+    - /refguide10/header-(document-template).html
+    - /refguide10/Header+(document+template).html
+    - /refguide10/header-(document-template)
+    - /refguide10/Header+(document+template)
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -21,9 +21,9 @@ A header.
 
 {{% /alert %}}
 
-For details on enabling the header from the properties of the document template itself, see the [Appearance Properties](/refguide/document-template/#appearance-properties) section of *Document Template*.
+For details on enabling the header from the properties of the document template itself, see the [Appearance Properties](/refguide10/document-template/#appearance-properties) section of *Document Template*.
 
-For details on inserting page numbers, see [Static Label](/refguide/static-label-document-template/).
+For details on inserting page numbers, see [Static Label](/refguide10/static-label-document-template/).
 
 ## Appearance
 

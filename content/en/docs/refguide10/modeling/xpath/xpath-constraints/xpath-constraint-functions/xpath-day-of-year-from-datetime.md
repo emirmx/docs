@@ -1,6 +1,6 @@
 ---
 title: "XPath day-of-year-from-dateTime"
-url: /refguide/xpath-day-of-year-from-datetime/
+url: /refguide10/xpath-day-of-year-from-datetime/
 weight: 13
 ---
 

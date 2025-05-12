@@ -1,14 +1,14 @@
 ---
 title: "Configuring a Form and Show Items Related to It"
 linktitle: "Configure Form and Show Form Items"
-url: /refguide/configure-form/
+url: /refguide10/configure-form/
 description: "Describes how to configure a form in Mendix Studio Pro."
 weight: 50
 ---
 
 ## Introduction 
 
-This how-to explains how you can configure a page with a form and how to show items related to this form on the same page. For example, to show a page with a report and a checklist associated with this report and use the page for a [workflow user task](/refguide/user-task/) afterwards. 
+This how-to explains how you can configure a page with a form and how to show items related to this form on the same page. For example, to show a page with a report and a checklist associated with this report and use the page for a [workflow user task](/refguide10/user-task/) afterwards. 
 
 This how-to teaches you how to do the following:
 
@@ -42,8 +42,8 @@ You would like the **Details** button in this list to open a page showing the de
 
 Before starting this how-to, make sure you have completed the following prerequisites:
 
-* Familiarize yourself with page terms and how to perform basic functions on pages. For more information, see [Page](/refguide/page/). 
-* Familiarize yourself with the domain model terms and learn how to perform basic functions. For more information, see [Data in the Domain Model](/refguide/domain-model/).
+* Familiarize yourself with page terms and how to perform basic functions on pages. For more information, see [Page](/refguide10/page/). 
+* Familiarize yourself with the domain model terms and learn how to perform basic functions. For more information, see [Data in the Domain Model](/refguide10/domain-model/).
 * Make sure your domain model is configured the following way:
 
     {{< figure src="/attachments/refguide10/modeling/pages/data-widgets/configure-form/domain-model.jpg" alt="Domain Model"   class="no-border" >}}
@@ -140,6 +140,6 @@ Congratulations! You have the page that displays details of the selected report 
 
 {{< figure src="/attachments/refguide10/modeling/pages/data-widgets/configure-form/configured-page.jpg" alt="Configured Page"   width="80%"  class="no-border" >}}
 
-There are many ways you can use this page in your app. For example, you can use it as a page for a user task in a [workflow](/refguide/workflows/). 
+There are many ways you can use this page in your app. For example, you can use it as a page for a user task in a [workflow](/refguide10/workflows/). 
 
 You can now preview your app and test your page.

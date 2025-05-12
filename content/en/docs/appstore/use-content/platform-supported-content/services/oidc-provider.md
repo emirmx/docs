@@ -22,6 +22,7 @@ Certain OIDC Provider module versions are compatible with certain versions of St
 
 | Mendix Version | OIDC Provider Version |
 | --- | --- |
+| 10.21.01 and above | 4.2.0 and above |
 | 10.12.10 and above | 4.0.0 and above |
 | 9.24.18 and above | 3.2.0 and above |
 
@@ -100,7 +101,6 @@ The OIDC Provider has the following features and limitations:
 * The hybrid resource owner password credential is not supported, although the OIDC Provider may contain some (rudimentary) implementation to support it.
 * The OIDC Provider service ignores "email", "phone" and "profile" scope values (as specified by OIDC specs) when the client includes these in an authentication request. Instead, the OIDC Provider service will include user claims in an ID-token based on a custom microflow, regardless of the scopes in the request.
 * Front channel and back-channel logout are implemented as alpha features.
-* The module does not support `CustomRedirectLogicMicroflow` constant.
 
 ### Dependencies
 
@@ -482,6 +482,18 @@ You need to configure the OIDC SSO module in your app which is using the IAM bro
 1. Login by entering credentials of the user which you have created earlier on OIDC provider Accounts section.
     You should be able to login successfully and get into the index.html page
 
+## Using `CustomRedirectLogicMicroflow` Microflow
+
+Use the constant `CustomRedirectLogicMicroflow` to specify which microflow determines where the user should be directed. This microflow has the following signatures:
+
+ **Input Parameter**: `username` (String) – The username of the user logging in.
+
+**Return Value**: `Boolean` – Indicates whether the user should be sent to the client application or to the SSO provider application.
+
+**True**: Direct the user to the client application (their original destination).
+
+**False**: Direct the user to the SSO provider application.
+
 ## Token Formats for Non-Custom Claims
 
 ### Non-Custom Claims in Access Token
@@ -561,8 +573,12 @@ In versions of the OIDC Provider above 2.0.0, the sub value was changed from an 
 
 ### Infinite Loop of Redirects
 
-The OIDC Provider service sets a cookie as a means to persist the session in the user’s browser. If the cookie is not properly set, this may lead to problems. For example, when the OIDC Provider service is used to build an IAM Broker, no session is established and the broker may initiate a new session at the upstream IdP, which results in an ‘infinite loop’ of redirects via the user’s browser.
+The OIDC Provider service sets a cookie as a means to persist the session in the user’s browser. If the cookie is not properly set, this may lead to problems. For example, when the OIDC Provider service is used to build an IAM Broker, no session is established and the broker may initiate a new session at the upstream IdP, which results in an ‘infinite loop’ of redirects via the user's browser.
 To ensure the cookie is properly set, the runtime setting com.mendix.core.SameSiteCookies must have value None. See [Environment Details](/developerportal/deploy/environments-details/#samesite) for more information how to set the correct value for SameSite runtime setting. Note that the default value for this setting changed in [Mendix 8.11](/releasenotes/studio-pro/8.11/).
+
+### On-premise Deployment and IIS
+
+In an on-premise deployment scenario, if you want to allow users to navigate freely between applications, you must unselect the **Reverse rewrite host in response header** check box in IIS, under **IIS** > **Server** > **Application Request Routing** > **Proxy Settings**. If you leave this option enabled, redirects for authentication fail for users who are already logged in (have the cookie) if they navigate to one of the applications that would need to authenticate with the Provider service. This issue happens because IIS rewrites the host in the response header, resulting the in request attempting to authenticate on itself for authentication instead of the Provider service.
 
 ## Authorization{#authorization}
 

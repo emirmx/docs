@@ -1,6 +1,6 @@
 ---
 title: "Import with Mapping"
-url: /refguide/import-mapping-action/
+url: /refguide10/import-mapping-action/
 weight: 30
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -11,7 +11,7 @@ This activity can only be used in microflows.
 
 ## Introduction
 
-The **Import with mapping** activity allows you to import the data stored in an XML or JSON document into [domain model](/refguide/domain-model/) entities.
+The **Import with mapping** activity allows you to import the data stored in an XML or JSON document into [domain model](/refguide10/domain-model/) entities.
 
 ## Properties
 
@@ -38,19 +38,19 @@ You can also open the dialog box by double-clicking the activity, or right-click
 
 ### Variable
 
-The input variable can be the name of a string variable, a file document, an [HttpRequest](/refguide/http-request-and-response-entities/#http-request), or an [HttpResponse](/refguide/http-request-and-response-entities/#http-response). The content of the file document, HttpRequest, or HttpResponse should be XML or JSON.
+The input variable can be the name of a string variable, a file document, an [HttpRequest](/refguide10/http-request-and-response-entities/#http-request), or an [HttpResponse](/refguide10/http-request-and-response-entities/#http-response). The content of the file document, HttpRequest, or HttpResponse should be XML or JSON.
 
 ### Mapping
 
-The [import mapping](/refguide/import-mappings/) defines how to transform the XML or JSON into objects.
+The [import mapping](/refguide10/import-mappings/) defines how to transform the XML or JSON into objects.
 
 ### Input Content Type
 
-If the import mapping is based on a [message definitions](/refguide/message-definitions/), it can import both XML and JSON. Select whether the input object contains XML or JSON.
+If the import mapping is based on a [message definitions](/refguide10/message-definitions/), it can import both XML and JSON. Select whether the input object contains XML or JSON.
 
 ### The Input Contains
 
-If the import mapping is based on a [message definitions](/refguide/message-definitions/), it can import both single objects and lists. Select whether the input is a single object or a list of objects.
+If the import mapping is based on a [message definitions](/refguide10/message-definitions/), it can import both single objects and lists. Select whether the input is a single object or a list of objects.
 
 ### If No Object Was Found
 
@@ -76,17 +76,17 @@ Indicates whether the resulting objects should be committed to the database, and
 
 | Option | Description |
 | --- | --- |
-| Yes | The objects are saved in the database and the [event handlers](/refguide/event-handlers/) are triggered. |
-| Yes without events | The objects are saved in the database, but the [event handlers](/refguide/event-handlers/) are not triggered (default). |
-| No | The objects are created without being saved in the database. You will need a [commit action](/refguide/committing-objects/) to save them. |
+| Yes | The objects are saved in the database and the [event handlers](/refguide10/event-handlers/) are triggered. |
+| Yes without events | The objects are saved in the database, but the [event handlers](/refguide10/event-handlers/) are not triggered (default). |
+| No | The objects are created without being saved in the database. You will need a [commit action](/refguide10/committing-objects/) to save them. |
 
 ### Validate Against Schema
 
 {{% alert color="info" %}}
-Validation properties are only applicable if an import mapping is selected that maps from XML based on an [XML schema](/refguide/xml-schemas/) or a [consumed web service](/refguide/consumed-web-service/).
+Validation properties are only applicable if an import mapping is selected that maps from XML based on an [XML schema](/refguide10/xml-schemas/) or a [consumed web service](/refguide10/consumed-web-service/).
 {{% /alert %}}
 
-Determines whether the import action should validate the incoming XML against the [XML schema](/refguide/xml-schemas/).
+Determines whether the import action should validate the incoming XML against the [XML schema](/refguide10/xml-schemas/).
 
 Setting this to *yes* can impact performance!
 
@@ -106,4 +106,4 @@ The name of the result of the import.
 
 ## Common Section{#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}

@@ -1,11 +1,11 @@
 ---
 title: "Footer (Document Template)"
-url: /refguide/footer-document-template/
+url: /refguide10/footer-document-template/
 aliases:
-    - /refguide/footer-(document-template).html
-    - /refguide/Footer+(document+template).html
-    - /refguide/footer-(document-template)
-    - /refguide/Footer+(document+template)
+    - /refguide10/footer-(document-template).html
+    - /refguide10/Footer+(document+template).html
+    - /refguide10/footer-(document-template)
+    - /refguide10/Footer+(document+template)
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -13,7 +13,7 @@ aliases:
 
 When enabled, the footer will be inserted at the bottom of every page. Other widgets can be put in the footer.
 
-For inserting page numbers, see [Static Label](/refguide/static-label-document-template/).
+For inserting page numbers, see [Static Label](/refguide10/static-label-document-template/).
 
 {{% alert color="info" %}}
 

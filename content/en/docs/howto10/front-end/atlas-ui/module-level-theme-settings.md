@@ -1,17 +1,17 @@
 ---
 title: "Configure Module-Level Theme Settings"
-url: /howto/front-end/module-level-theme-settings/
+url: /howto10/front-end/module-level-theme-settings/
 weight: 25
 description: "Understand the advanced options of module-level theme settings."
 ---
 
 ## Introduction
 
-Atlas UI gives you a powerful tool to build a modern user experience. However, the flexibility of Mendix does not stop you from making your design system from scratch. This document will introduce you to the advanced options that module-level theme settings provide. For more information on making a theme module, see the [Create a Theme Module](/howto/front-end/customize-styling-new/#create-theme-mod) section of *Customize Styling*.
+Atlas UI gives you a powerful tool to build a modern user experience. However, the flexibility of Mendix does not stop you from making your design system from scratch. This document will introduce you to the advanced options that module-level theme settings provide. For more information on making a theme module, see the [Create a Theme Module](/howto10/front-end/customize-styling-new/#create-theme-mod) section of *Customize Styling*.
 
 The module-level theme settings enable you to control the theme system behavior in Studio Pro. As the name implies, you have a separate settings file for each module which you can find under **themesource/{your-module}/settings.json**.
 
-If you wish for further guidance on front-end best practices, see [Implement Best Practices for UX Design](/howto/front-end/ux-best-practices/). 
+If you wish for further guidance on front-end best practices, see [Implement Best Practices for UX Design](/howto10/front-end/ux-best-practices/). 
 
 ## Excluding UI Elements and Styling
 
@@ -34,7 +34,7 @@ By excluding a UI element, you can no longer use it across your app.
 
 ### Excluding Layouts and Page Templates
 
-By excluding [layouts](/refguide/layout/) and [page templates](/refguide/page-templates/), developers can no longer use them to create a new page. Here is a small example of how to exclude Atlas Core layouts and page templates:
+By excluding [layouts](/refguide10/layout/) and [page templates](/refguide10/page-templates/), developers can no longer use them to create a new page. Here is a small example of how to exclude Atlas Core layouts and page templates:
 
 ```json
 {
@@ -53,7 +53,7 @@ Existing pages with the banned designs will continue to work.
 
 ### Excluding Building Blocks
 
-Similar to layouts and page templates, excluding the [building blocks](/refguide/building-block/) will hide them from the page editor toolbox. Here is a small example of how to exclude Atlas Web Content building blocks:
+Similar to layouts and page templates, excluding the [building blocks](/refguide10/building-block/) will hide them from the page editor toolbox. Here is a small example of how to exclude Atlas Web Content building blocks:
 
 ```json
 {
@@ -67,7 +67,7 @@ Similar to layouts and page templates, excluding the [building blocks](/refguide
 
 ### Filtering Design Properties and Styling
 
-Filtering styling elements like [design properties](/apidocs-mxsdk/apidocs/design-properties/) or [CSS classes](/howto/front-end/customize-styling-new/) is useful when you do not want your developers to apply them. Here is a small example:
+Filtering styling elements like [design properties](/apidocs-mxsdk/apidocs/design-properties/) or [CSS classes](/howto10/front-end/customize-styling-new/) is useful when you do not want your developers to apply them. Here is a small example:
 
 ```json
 {
@@ -106,5 +106,5 @@ Atlas Core provides the base functionalities required by your design system. The
 
 ## Read More
 
-* [Create a Company Design System](/howto/front-end/create-a-company-design-system/)
+* [Create a Company Design System](/howto10/front-end/create-a-company-design-system/)
 * [Atlas 3 Site](https://atlas.mendix.com)

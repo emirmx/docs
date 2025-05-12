@@ -1,6 +1,6 @@
 ---
 title: "Wait for Notification"
-url: /refguide/wait-for-notification/
+url: /refguide10/wait-for-notification/
 weight: 60
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -31,7 +31,7 @@ The **Caption** describes what happens in this element. It is displayed under th
 
 ### Boundary Events {#boundary-events}
 
-For more information, see [Boundary Events](/refguide/workflow-boundary-events/).
+For more information, see [Boundary Events](/refguide10/workflow-boundary-events/).
 
 ### Common Section {#common}
 
@@ -39,4 +39,4 @@ For more information, see [Boundary Events](/refguide/workflow-boundary-events/)
 
 ## Read More
 
-* [Workflows](/refguide/workflows/)
+* [Workflows](/refguide10/workflows/)

@@ -1,6 +1,6 @@
 ---
 title: "Validation Rules"
-url: /refguide/validation-rules/
+url: /refguide10/validation-rules/
 weight: 40
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -24,7 +24,7 @@ You can only define validation rules for persistable entities as they are design
 
 ## Properties
 
-You can add and edit validation rules for an entity from the [entity dialog box](/refguide/entities/#dialog-box).
+You can add and edit validation rules for an entity from the [entity dialog box](/refguide10/entities/#dialog-box).
 
 An example of the validation rule properties is represented in the image below:
 
@@ -57,7 +57,7 @@ The rule defines which condition an attribute should satisfy.
 | Unique | The value of this attribute must be different from the values of this attribute in all other objects of the same entity. See [Uniqueness Constraint](#uniqueness), below for more information. |
 | Equals | The attribute value needs to be equal to a specified value or equal to the value of another attribute of the same object. |
 | Range | The attribute value needs to be greater than or equal to, less than or equal to, or between two values. The values are either specified fixed values or values of other attributes of the same object. |
-| Regular expression | The attribute needs to match a regular expression stored in a [regular expression](/refguide/regular-expressions/) resource. |
+| Regular expression | The attribute needs to match a regular expression stored in a [regular expression](/refguide10/regular-expressions/) resource. |
 | Maximum length | The attribute may have no more than the specified number of characters. |
 
 {{% alert color="info" %}}
@@ -85,7 +85,7 @@ There are some things you need to consider when applying a uniqueness constraint
 
 #### Strings
 
-The uniqueness constraint will take into account the way that the underlying database deals with case sensitivity. For a full discussion of this, see [Case-Sensitive Database Behavior](/refguide/case-sensitive-database-behavior/).
+The uniqueness constraint will take into account the way that the underlying database deals with case sensitivity. For a full discussion of this, see [Case-Sensitive Database Behavior](/refguide10/case-sensitive-database-behavior/).
 
 The uniqueness constraint will also take into account the way that the underlying database deals with string matching. If, for example, two values of a string attribute differ only in having a different number of trailing spaces, some databases will ignore these spaces when deciding if the strings are the same, while others will see them as different.
 

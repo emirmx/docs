@@ -1,6 +1,6 @@
 ---
 title: "DateTime Handling FAQ"
-url: /refguide/datetime-handling-faq/
+url: /refguide10/datetime-handling-faq/
 ---
 
 ## Introduction

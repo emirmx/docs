@@ -1,6 +1,6 @@
 ---
 title: "Commit Object(s)"
-url: /refguide/committing-objects/
+url: /refguide10/committing-objects/
 weight: 30
 ---
 
@@ -10,7 +10,7 @@ This activity can be used in both microflows and nanoflows.
 
 ## Introduction
 
-The **Commit object(s)** activity works on one or more objects. For persistable entities, committing an object stores it in the database. Committing non-persistable entities stores the current attribute values and association values in memory. This allows a rollback to revert to those values. See also [Persistability](/refguide/persistability/). External objects cannot be committed. To store changed values of external objects, use the [Send External Object](/refguide/send-external-object/) activity.
+The **Commit object(s)** activity works on one or more objects. For persistable entities, committing an object stores it in the database. Committing non-persistable entities stores the current attribute values and association values in memory. This allows a rollback to revert to those values. See also [Persistability](/refguide10/persistability/). External objects cannot be committed. To store changed values of external objects, use the [Send External Object](/refguide10/send-external-object/) activity.
 
 {{% alert color="info" %}}
 A Mendix commit does not always behave like a database commit. See [How Commits Work](#how-commits-work), below, for more information.
@@ -52,7 +52,7 @@ Indicates whether or not to execute the commit event handlers of the objects.
 Default: **Yes**
 
 {{% alert color="warning" %}}
-Most validation rules are not triggered if you do a commit and **With events** is set to *No*. In most cases, validation rules will have been triggered when members (for example, an attribute) are changed, but Mendix advises that you set **With events** to *Yes* if you want to ensure that validations are always carried out. See [data validation](/refguide/setting-up-data-validation/) for more information.
+Most validation rules are not triggered if you do a commit and **With events** is set to *No*. In most cases, validation rules will have been triggered when members (for example, an attribute) are changed, but Mendix advises that you set **With events** to *Yes* if you want to ensure that validations are always carried out. See [data validation](/refguide10/setting-up-data-validation/) for more information.
 {{% /alert %}}
 
 #### Events in Nanoflows
@@ -72,7 +72,7 @@ Default: **No**
 {{% alert color="info" %}}
 To make pages of a Mendix app efficient, many widgets display values from an attribute of an object which is cached on the page. Attributes in widgets which use cached data are always reflected in the client when they are updated or deleted irrespective of the value of **Refresh in client**.
 
-If a widget is only updated when a [data source](/refguide/data-sources/) is loaded, then changes are only seen when **Refresh in client** is set to **Yes**.
+If a widget is only updated when a [data source](/refguide10/data-sources/) is loaded, then changes are only seen when **Refresh in client** is set to **Yes**.
 
 When testing your app, ensure that the desired data is being displayed by the widgets you choose.
 {{% /alert %}}
@@ -85,21 +85,21 @@ When committing a large number of objects, Mendix recommends not enabling **Refr
 
 If **Refresh in client** is set to **No**, the change is not reflected in the client.
 
-If set to **Yes**, the object is refreshed across the client, which includes reloading the relevant [data sources](/refguide/data-sources/).
+If set to **Yes**, the object is refreshed across the client, which includes reloading the relevant [data sources](/refguide10/data-sources/).
 
 #### Microflow is Called in an Offline or Native App
 
 When inside a microflow that is called from an offline or native app, the **Refresh in client** option is ignored and functions as if it was set to **No**.
 
-For more information, see the [Microflows](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/#microflows) section of Offline-First Data.
+For more information, see the [Microflows](/refguide10/mobile/building-efficient-mobile-apps/offlinefirst-data/best-practices/#microflows) section of Offline-First Data.
 
 #### Action is in a Nanoflow
 
-When inside a [nanoflow](/refguide/nanoflows/), the object is refreshed across the client as if **Refresh in client** was set to **Yes**.
+When inside a [nanoflow](/refguide10/nanoflows/), the object is refreshed across the client as if **Refresh in client** was set to **Yes**.
 
 ## Common Section{#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}
 
 ## How Commits Work{#how-commits-work}
 
@@ -107,7 +107,7 @@ When inside a [nanoflow](/refguide/nanoflows/), the object is refreshed across t
 
 When you commit an object, the current value is saved. This means that you cannot roll back to the previous values of the object using the rollback object activity of a microflow.
 
-However, a Mendix commit is not the same as a database commit. For an object of a persistable entity, the saved value is not committed to the database until the microflow and any microflows from which it is called, complete. This means that errors in a microflow can initiate a rollback. If a microflow activity errors and has **Error handling** set to **Rollback** or **Custom with rollback**, the value of the object is rolled back to the value it had at the start of the microflow. See [Error Handling in Microflows](/refguide/error-handling-in-microflows/) for more information.
+However, a Mendix commit is not the same as a database commit. For an object of a persistable entity, the saved value is not committed to the database until the microflow and any microflows from which it is called, complete. This means that errors in a microflow can initiate a rollback. If a microflow activity errors and has **Error handling** set to **Rollback** or **Custom with rollback**, the value of the object is rolled back to the value it had at the start of the microflow. See [Error Handling in Microflows](/refguide10/error-handling-in-microflows/) for more information.
 
 Mendix mimics this behavior for non-persistable entities. Committing a non-persistable entity means that you cannot use a rollback object activity to go back to the previous values, although the rollback error handling in a microflow rolls back to the original values.
 
@@ -122,7 +122,7 @@ An autocommit is not the same as an explicit commit!
 
 When objects are autocommitted, all changed member values, including associations, are saved in the database as well. These members are still marked as changed until these objects are explicitly committed. As a consequence, association rows for these objects are deleted and reinserted in the database when these objects are explicitly committed.
 
-If a rollback is triggered for any reason (for example, if the user session is terminated by the user closing the browser), then autocommitted objects are deleted from the database. For more information about how Mendix handles persistable objects, see [Persistability](/refguide/persistability/).
+If a rollback is triggered for any reason (for example, if the user session is terminated by the user closing the browser), then autocommitted objects are deleted from the database. For more information about how Mendix handles persistable objects, see [Persistability](/refguide10/persistability/).
 {{% /alert %}}
 
 If you end up with autocommitted objects, it is always because of a modeling error. At some point in time, an association was set to a new object, the associated object was committed, and all of its associations were committed as well to keep all the data consistent.

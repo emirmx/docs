@@ -1,10 +1,10 @@
 ---
 title: "Publish a REST Service"
-url: /refguide/publish-a-rest-service/
+url: /refguide10/publish-a-rest-service/
 weight: 10
 description: "Describes how to create a published REST service and return the results in JSON or XML."
 aliases:
-    - /howto/integration/publish-rest-service/
+    - /howto10/integration/publish-rest-service/
 ---
 
 ## Introduction
@@ -21,8 +21,8 @@ To set up the example app you will use in the next sections, follow these steps:
 
     {{< figure src="/attachments/refguide10/modeling/integration/publish-rest-service/domainmodel.png" alt="Many-to-one association from OrderItem to Order" class="no-border" >}}
 
-4. [Generate overview and detail pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/#create-automatically) for the **Order** and **OrderItem** entities.
-5. [Add a data grid](/refguide/data-grid/) to the **Order_NewEdit** page. Set it to display the **OrderItem** objects from the database over an association:
+4. [Generate overview and detail pages](/howto10/front-end/create-your-first-two-overview-and-detail-pages/#create-automatically) for the **Order** and **OrderItem** entities.
+5. [Add a data grid](/refguide10/data-grid/) to the **Order_NewEdit** page. Set it to display the **OrderItem** objects from the database over an association:
     
     {{< figure src="/attachments/refguide10/modeling/integration/publish-rest-service/DataGridSettings.png" alt="Data grid settings for the Order_NewEdit page" class="no-border" >}}
 
@@ -86,7 +86,7 @@ To create the mapping, follow these steps:
 
 #### Building an Export Mapping (optional){#export-mapping}
 
-The next steps explain how to ensure that outputs are generated in JSON. You can do this using [Export Mappings](/refguide/export-mappings/) or in a microflow. Creating an export mapping is not required because published REST services in Studio Pro support [content negotiation](https://nordicapis.com/content-negotiation/), which means the REST services let you select which media type you want to be returned to the server.
+The next steps explain how to ensure that outputs are generated in JSON. You can do this using [Export Mappings](/refguide10/export-mappings/) or in a microflow. Creating an export mapping is not required because published REST services in Studio Pro support [content negotiation](https://nordicapis.com/content-negotiation/), which means the REST services let you select which media type you want to be returned to the server.
 
 {{% alert color="info" %}}You can follow the next steps in this document to learn how to set up export mapping, but note that you can also return the list of objects from the microflow. Studio Pro will export it in the desired format, as indicated by the `Accept` header. You can then specify if you want to receive XML or JSON. If you are using a microflow instead of export mappings, skip ahead to [Viewing the App](#viewing).{{% /alert %}}
 
@@ -198,4 +198,4 @@ Now that you have covered the **OrderID** parameter error handling, it is time t
 
 ## Read More
 
-* [Published REST Services](/refguide/published-rest-services/) – Information on creating published REST services (including `GET`, `POST`, and `DELETE` operations)
+* [Published REST Services](/refguide10/published-rest-services/) – Information on creating published REST services (including `GET`, `POST`, and `DELETE` operations)

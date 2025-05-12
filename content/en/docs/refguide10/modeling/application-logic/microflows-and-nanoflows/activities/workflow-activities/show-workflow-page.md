@@ -1,6 +1,6 @@
 ---
 title: "Show Workflow Admin Page"
-url: /refguide/show-workflow-page/
+url: /refguide10/show-workflow-page/
 weight: 60
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -40,4 +40,4 @@ A workflow object of which the page you would like to show.
 
 ## Common Section {#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}

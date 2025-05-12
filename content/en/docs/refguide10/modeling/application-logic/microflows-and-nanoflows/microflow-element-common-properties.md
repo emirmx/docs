@@ -1,6 +1,6 @@
 ---
 title: "Common Properties"
-url: /refguide/microflow-element-common-properties/
+url: /refguide10/microflow-element-common-properties/
 weight: 110
 ---
 
@@ -37,13 +37,13 @@ The **Auto-generate caption** property specifies whether the caption is automati
 
 ## Background Color {#color}
 
-The **Background color** property allows you to choose a background color for each activity individually. Colors do not influence execution; they are only used to quickly spot an element in a flow. For example, you can make activities with [error handlers](/refguide/error-handling-in-microflows/#errorhandlers) red so you can easily identify them.
+The **Background color** property allows you to choose a background color for each activity individually. Colors do not influence execution; they are only used to quickly spot an element in a flow. For example, you can make activities with [error handlers](/refguide10/error-handling-in-microflows/#errorhandlers) red so you can easily identify them.
 
-You can also select a default color for all the activities of a certain type in **App Settings** > [Miscellaneous](/refguide/app-settings/#miscellaneous). The default color for all activities of a certain type can also be changed by right-clicking a microflow activity and selecting **Set as default color** from the context menu. This will make the current activity's color the default color for all activities of the same type. If you change the default color for an activity type and there are other activities of that type present in the app that have a different individual background color specified, you will be asked whether you want to overwrite these individual colors with the new default color.
+You can also select a default color for all the activities of a certain type in **App Settings** > [Miscellaneous](/refguide10/app-settings/#miscellaneous). The default color for all activities of a certain type can also be changed by right-clicking a microflow activity and selecting **Set as default color** from the context menu. This will make the current activity's color the default color for all activities of the same type. If you change the default color for an activity type and there are other activities of that type present in the app that have a different individual background color specified, you will be asked whether you want to overwrite these individual colors with the new default color.
 
 ## Error Handling Type {#error-handling}
 
-In **Error handling type**, you can choose the type of error handling for the activity. For details on available options and their effects, see the [Error Handling Options](/refguide/error-handling-in-microflows/#errorhandlers) section in *Error Handling in Microflows*.
+In **Error handling type**, you can choose the type of error handling for the activity. For details on available options and their effects, see the [Error Handling Options](/refguide10/error-handling-in-microflows/#errorhandlers) section in *Error Handling in Microflows*.
 
 ## Disabled {#disabled}
 
@@ -56,5 +56,5 @@ The **Disabled** property allows you to skip the activity from a flow.
 
 ## Read More
 
-* [Microflows](/refguide/microflows/)
-* [Nanoflows](/refguide/nanoflows/)
+* [Microflows](/refguide10/microflows/)
+* [Nanoflows](/refguide10/nanoflows/)

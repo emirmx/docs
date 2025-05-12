@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting Repository Size"
-url: /refguide/troubleshoot-repository-size/
+url: /refguide10/troubleshoot-repository-size/
 linktitle: "Repository Size"
 weight: 20
 description: "Explains consequences and root cause of a large repository size and how to mitigate this."
@@ -43,7 +43,7 @@ Version control systems like Git do not store a full copy of a document for ever
 #### MPRv2 Format {#mprv2}
 
 {{% alert color="info" %}}
-MPRv2 was released in Studio Pro 10.18.0 as [Public Beta](/releasenotes/beta-features/). In Studio Pro 10.21.0, MPRv2 was released for General Availability (GA) and is automatically used for new apps.
+MPRv2 was released in Studio Pro 10.18.0 as [Public Beta](/releasenotes/beta-features/). In Studio Pro 10.21.0, MPRv2 was released for General Availability (GA) and is automatically used for new apps. When opening an existing app in Studio Pro 10.22 and above, it automatically converts to the MPRv2 format.
 {{% /alert %}}
 
 Studio Pro 10.18 introduced a new version of the *.mpr* format: MPRv2. The key difference is that all documents, such as microflows, are no longer stored as part of the *.mpr* file but as separate files in the *mprcontents* directory. The *.mpr* file functions as an index file pointing to all the different files on disk. 
@@ -60,7 +60,7 @@ Merging MPRv2 apps using the command line with `git merge` or using third-party 
 
 #### Converting MPR Storage Format {#convert}
 
-In Studio Pro 10.18 and above upgrading to the new format is optional and can be done per branch via the [File menu](/refguide/file-menu/). To upgrade to MPRv2, open your app and select **File > Upgrade app to split MPR format (v2)**. After a confirmation the app will be converted and you will be prompted to commit.
+In Studio Pro 10.18 and above upgrading to the new format is optional and can be done per branch via the [File menu](/refguide10/file-menu/). To upgrade to MPRv2, open your app and select **File > Upgrade app to split MPR format (v2)**. After a confirmation the app will be converted and you will be prompted to commit.
 
 You can also downgrade branches that are already on MPRv2 to MPRv1 by selecting **File > Downgrade app to combined MPR format (v1)**.
 
@@ -79,15 +79,15 @@ When a file exceeds the Git compression threshold, 512 MB by default, Git will s
 As the Mendix model is stored in a single file, this threshold can be exceeded by the *.mpr* file. To decrease the MPR file size, consider doing the following:
 
 * [Convert to MPRv2](#convert) – By splitting the single binary file into multiple files, your file size will drop below the compression threshold.
-* Remove [excluded and unused documents](/refguide/dev-best-practices/#excluded-and-unused-documents) – If you have a large number of unnecessary documents in your app model, this can significantly increase the size of the MPR file.
+* Remove [excluded and unused documents](/refguide10/dev-best-practices/#excluded-and-unused-documents) – If you have a large number of unnecessary documents in your app model, this can significantly increase the size of the MPR file.
 * Decrease duplication in pages – If you have a number of pages featuring the same content, such as an advanced datagrid, consider extracting this piece of logic to a widget. Reusing a widget on multiple pages prevents the data from being saved several times and can have a large impact on the size of the MPR file.
-* You can use [analyze-mpr](/refguide/mx-command-line-tool/analyze-mpr/) of the [mx Command-Line Tool](/refguide/mx-command-line-tool/) to analyze how your MPR file builds up. The output shows how many documents of a certain type (for example, the number of pages) exist and how much disk space they represent within the MPR file. Mendix recommends starting with a quick scan to see whether there is an unexpected number of occurrences (for example, 1500 pages) or a large number of bytes (over 50 000 000 bytes) for a unit type.
+* You can use [analyze-mpr](/refguide10/mx-command-line-tool/analyze-mpr/) of the [mx Command-Line Tool](/refguide10/mx-command-line-tool/) to analyze how your MPR file builds up. The output shows how many documents of a certain type (for example, the number of pages) exist and how much disk space they represent within the MPR file. Mendix recommends starting with a quick scan to see whether there is an unexpected number of occurrences (for example, 1500 pages) or a large number of bytes (over 50 000 000 bytes) for a unit type.
 
 ### Working with a Large Repository Size
 
 When cloning an app, the default behavior of Git is to download the full history. As Mendix uses different folders on disk for different branches, downloading full history is done for each branch. To mitigate that, Mendix uses local cloning for subsequent branch downloads. When cloning a new branch, data from a local branch you already have is used to reduce data that needs to be downloaded. 
 
-Starting from Studio Pro 10.12 it is possible to prevent downloading the full history, by changing the [Clone type](/refguide/clone-type/) to use partial clones. A partial clone downloads all data for a specific revision without downloading the contents of all historical commits.
+Starting from Studio Pro 10.12 it is possible to prevent downloading the full history, by changing the [Clone type](/refguide10/clone-type/) to use partial clones. A partial clone downloads all data for a specific revision without downloading the contents of all historical commits.
 
 ### Mitigating Large Repository Size
 
@@ -128,6 +128,7 @@ To conclude whether the situation is acceptable for you, follow these steps:
 * Ensure the Git app you are downloading is not yet on your machine
 * Download the branch through Studio Pro, while manually measuring how long the download takes
   
+
 The first download of a branch on a device is a good indication of the maximum waiting time you or your team member can experience. Subsequent branch downloads use data that is already available locally and will, therefore, be a lot faster.
 
 If the download time was acceptable, or if you have a process where team members do not change often and they do not have to download an app for the first time, you can skip the cleanup.
@@ -178,7 +179,7 @@ Force pushing your results to the server is a separate step, in a separate scrip
 
 If you are using Mendix Team Server as your Git version control server, you can follow the steps below:
 
-* Ensure you have configured a Personal Access Token to use it as described in the [Authenticating to Team Server](/refguide/using-version-control-in-studio-pro/#authenticating) section in *Using Version Control in Studio Pro*. 
+* Ensure you have configured a Personal Access Token to use it as described in the [Authenticating to Team Server](/refguide10/using-version-control-in-studio-pro/#authenticating) section in *Using Version Control in Studio Pro*. 
 * Run the second script.
     * When prompted, enable force pushing.
     * Conduct the force push.
@@ -223,6 +224,7 @@ We recommend doing the following:
 * Check your git config settings, especially any setting that involves encoding or text conversions: run `git config --list --show-origin`.
 * Consider moving your local repo, so that its folder has a shorter name
   
+
 When reaching out to Mendix Support, please include:
 
 * App/Projects ID for your app
@@ -235,5 +237,5 @@ In case you are still deciding whether to migrate from SVN to Git, or you are al
 
 {{< figure src="/attachments/refguide10/version-control/troubleshoot-version-control-issues/migration-advice-combined.png" class="no-border" >}}
 
-In Studio Pro 10.18 and above, you can manually convert branches to MPRv2. In future versions, branch conversion will happen automatically. For more information on the format, see the [MPRv2 Format](#mprv2) section.
-For more information on partial clone, see [Clone Type](/refguide/clone-type/).
+In Studio Pro 10.18 and above, you can manually convert branches to MPRv2. In Studio Pro 10.22 and above, branch conversion happens automatically. For more information on the format, see the [MPRv2 Format](#mprv2) section.
+For more information on partial clone, see [Clone Type](/refguide10/clone-type/).

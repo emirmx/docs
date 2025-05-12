@@ -1,6 +1,6 @@
 ---
 title: "Create List"
-url: /refguide/create-list/
+url: /refguide10/create-list/
 weight: 3
 ---
 
@@ -43,4 +43,4 @@ This is the name of the list which can be used by all activities that follow thi
 
 ## Common Section{#common}
 
-{{% snippet file="/static/_includes/refguide/microflow-common-section-link.md" %}}
+{{% snippet file="/static/_includes/refguide10/microflow-common-section-link.md" %}}

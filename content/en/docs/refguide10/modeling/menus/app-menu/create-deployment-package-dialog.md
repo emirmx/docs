@@ -1,6 +1,6 @@
 ---
 title: "Create Deployment Package"
-url: /refguide/create-deployment-package-dialog/
+url: /refguide10/create-deployment-package-dialog/
 ---
 
 ## Introduction
@@ -33,7 +33,7 @@ A non-versioned deployment package is based on your local app on disk and cannot
 
 ## Options for Versioned Deployment Packages
 
-If you are creating a versioned deployment package, enter the information outlined below. For more information on versioning, see [Version Control](/refguide/version-control/).
+If you are creating a versioned deployment package, enter the information outlined below. For more information on versioning, see [Version Control](/refguide10/version-control/).
 
 ### Development Line
 
@@ -63,4 +63,4 @@ All packages are placed in a **releases** directory inside your app directory. T
 
 ## Troubleshooting
 
-If you have difficulty creating a deployment package, it could be an issue with version control. For more information, see [Cannot Create Package from a Revision](/refguide/troubleshoot-version-control-issues/#cannot-create-package) in *Troubleshooting Version Control*.
+If you have difficulty creating a deployment package, it could be an issue with version control. For more information, see [Cannot Create Package from a Revision](/refguide10/troubleshoot-version-control-issues/#cannot-create-package) in *Troubleshooting Version Control*.

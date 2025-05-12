@@ -1,6 +1,6 @@
 ---
 title: "End Event"
-url: /refguide/end-event/
+url: /refguide10/end-event/
 weight: 2
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -13,7 +13,7 @@ In the example below, a *Buyer* variable of the *Customer* entity is returned by
 
 {{< figure src="/attachments/refguide10/modeling/application-logic/microflows-and-nanoflows/events/end-event/end-event.png" class="no-border" >}}
 
-The number of end events depends on the number of possible outcomes of the microflow or nanoflow. That means there can be more than one end event, for example when a [decision](/refguide/decision/) is used:
+The number of end events depends on the number of possible outcomes of the microflow or nanoflow. That means there can be more than one end event, for example when a [decision](/refguide10/decision/) is used:
 
 {{< figure src="/attachments/refguide10/modeling/application-logic/microflows-and-nanoflows/events/end-event/end-events.png" width="500px" class="no-border" >}}
 
@@ -39,9 +39,9 @@ If you have several end events and they have a return value, they all need to re
 
 ### Return Type {#return-type}
 
-You can choose to return nothing, or to return, for example, a list, enumeration, or Boolean value. For more information on possible return types, see [Data Types](/refguide/data-types/).
+You can choose to return nothing, or to return, for example, a list, enumeration, or Boolean value. For more information on possible return types, see [Data Types](/refguide10/data-types/).
 
-After you type an [expression](/refguide/expressions/) in the **End Event** dialog box, you will see an option that allows you to update the return type:
+After you type an [expression](/refguide10/expressions/) in the **End Event** dialog box, you will see an option that allows you to update the return type:
 
 {{< figure src="/attachments/refguide10/modeling/application-logic/microflows-and-nanoflows/events/end-event/end-event-form.png" width="500px" >}}
 
@@ -59,6 +59,6 @@ When you update the return type, a default variable name is set based on the ret
 
 ## Read More
 
-* [Start Event](/refguide/start-event/)
-* [Microflow Call](/refguide/microflow-call/)
-* [Call Nanoflow](/refguide/nanoflow-call/)
+* [Start Event](/refguide10/start-event/)
+* [Microflow Call](/refguide10/microflow-call/)
+* [Call Nanoflow](/refguide10/nanoflow-call/)

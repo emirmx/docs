@@ -1,14 +1,14 @@
 ---
 title: "Build JavaScript Actions: Part 2 (Advanced)"
 linktitle: "2. Build JavaScript Actions"
-url: /howto/extensibility/write-javascript-github/
+url: /howto10/extensibility/write-javascript-github/
 weight: 20
 description: "This advanced how-to teaches you to make a JavaScript action which can search for GitHub users."
 ---
 
 ## Introduction
 
-Nanoflows are even more powerful with pluggable nanoflow actions — called JavaScript actions. [How to Build JavaScript Actions: Part 1 (Basic)](/howto/extensibility/write-javascript-actions/) shows you how to create a JavaScript TextToSpeech action, expose it as a nanoflow action, and then use it in a demo. In this advanced how-to you will learn to call a REST service, use a generic return type, and make an API to enhance the power of your JavaScript actions.
+Nanoflows are even more powerful with pluggable nanoflow actions — called JavaScript actions. [How to Build JavaScript Actions: Part 1 (Basic)](/howto10/extensibility/write-javascript-actions/) shows you how to create a JavaScript TextToSpeech action, expose it as a nanoflow action, and then use it in a demo. In this advanced how-to you will learn to call a REST service, use a generic return type, and make an API to enhance the power of your JavaScript actions.
 
 This how-to teaches you how to do the following:
 
@@ -259,7 +259,7 @@ To create a JavaScript action that can search for users on GitHub, follow the st
 
     {{< figure src="/attachments/howto10/extensibility/build-javascript-actions/write-javascript-github/select-searchgithub-users.png" alt="select search GitHub users" class="no-border" >}}
 
-    Optionally, you can expose the JavaScript action as a nanoflow action. When you do, you can choose a **Caption**, **Category**, and **Icon**. Note that your icon image will need to be in an existing [image collection](/refguide/image-collection/):
+    Optionally, you can expose the JavaScript action as a nanoflow action. When you do, you can choose a **Caption**, **Category**, and **Icon**. Note that your icon image will need to be in an existing [image collection](/refguide10/image-collection/):
 
     {{< figure src="/attachments/howto10/extensibility/build-javascript-actions/write-javascript-github/nanoflow-options.png" alt="nanoflow options" class="no-border" >}}
 
@@ -301,9 +301,9 @@ Congratulations! Using the power of JavaScript actions, your app can search for 
 
 ## Read More
 
-* [Build JavaScript Actions: Part 1 (Basic)](/howto/extensibility/write-javascript-actions/)
+* [Build JavaScript Actions: Part 1 (Basic)](/howto10/extensibility/write-javascript-actions/)
 * [Mendix Client API](https://apidocs.rnd.mendix.com/10/client/index.html)
-* [JavaScript Actions](/refguide/javascript-actions/)
+* [JavaScript Actions](/refguide10/javascript-actions/)
 * JavaScript Resources
     * [JavaScript Basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
     * [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)

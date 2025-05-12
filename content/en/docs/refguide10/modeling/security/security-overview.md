@@ -1,12 +1,12 @@
 ---
 title: "Security Overview"
-url: /refguide/security-overview/
+url: /refguide10/security-overview/
 weight: 20
 beta: true
 ---
 
 {{% alert color="info" %}}
-This feature was introduced in Mendix 10.18 and is currently in beta. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+The security overview became generally available in Studio Pro version 10.21.0. It was previously in beta starting from version 10.18.
 {{% /alert %}}
 
 ## Introduction
@@ -101,5 +101,5 @@ To export the **Security Overview**, click the **Export to Excel** button. This 
 
 ## Read More
 
-* [User Roles](/refguide/user-roles/)
-* [Access Rules](/refguide/access-rules/)
+* [User Roles](/refguide10/user-roles/)
+* [Access Rules](/refguide10/access-rules/)
