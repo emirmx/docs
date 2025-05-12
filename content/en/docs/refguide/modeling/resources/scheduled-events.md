@@ -169,7 +169,7 @@ If a repeated scheduled event takes longer than the interval, an overlap would o
 
 ### Server Time{#server-time}
 
-Although you can choose **Server** time rather than **UTC** time, make sure that your server time is set as you expect. Many servers are set to run on UTC to avoid issues when working across time zones.
+You can choose **Server** time rather than **UTC** time, but make sure that your server time is set as you expect. Many servers are set to run on UTC to avoid issues when working across time zones.
 
 {{% alert color="warning" %}}
 All Mendix Cloud servers are set to UTC.
