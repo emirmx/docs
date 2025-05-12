@@ -298,6 +298,11 @@ The table below lists all supported constants. Mandatory constants must be set a
 | `Default_UserNameMapping` | sets the mapping entity attribute to the Identity provider attribute |  Optional | No default Value |
 | `Default_UserRole` | sets the mapping entity attribute to the Identity provider attribute | Optional | `User` |
 | `Default_UserType` | sets the mapping entity attribute to the Identity provider attribute | Optional | `Internal` |
+| `DisableMxAdmin` | deactivates Mx admin | Optional | `True` |
+
+{{% alert color="info" %}}
+You may have a requirement that users log in to your application only via SSO. However, when you deploy your app on the Mendix Cloud, the platform may still create an MxAdmin user with a local password. From version 2.1.0 of the UserCommons module, if the flag for the `DisableMxAdmin` constant is set to `True`, the MxAdmin user will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
+{{% /alert %}}
 
 #### Configuration with Entra ID
 
@@ -352,4 +357,10 @@ Your app may have multiple tenants in the Entra ID. Users created from any of th
 
 ### Troubleshooting
 
+#### Modifying Default-time Configuration at Runtime
+
 Attempting to edit or delete the default deploy-time configuration at runtime will result in errors. These errors indicate that the SCIM configuration was created at runtime with possible deploy-time overrides, as explained in the [Deploy-time configuration](#deploy-time) section above. You cannot modify such configurations at runtime using the admin screens.
+
+#### SCIM User Deactivation Due to Missing `active` Attribute in the `PUT` Request
+
+The issue occurs when the `active` attribute is missing in the first `PUT` request, causing the user to become inactive (`"active": false`). Once the user is inactive, any further `PUT` updates fail with a **500 Internal Server Error**. To prevent this, always include `"active": true` in the PUT requests to keep the user active. 

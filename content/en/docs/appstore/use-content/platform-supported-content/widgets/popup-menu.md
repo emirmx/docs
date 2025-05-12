@@ -45,7 +45,7 @@ Other main properties of the widget are as follows:
 * **Menu position** – determines the location of a visible menu relative to the trigger area
     * Default: **Bottom**
 * **Clipping strategy** – determines the relative positioning of floating elements on the page. 
-    *   **Absolute** - positions the floating element relative to its nearest positioned ancestor.
-    *   **Fixed** - positions the floating element relative to the viewport. It breaks the element out of any clipping ancestor.
+    * **Absolute** - positions the floating element relative to its nearest positioned ancestor.
+    * **Fixed** - positions the floating element relative to the viewport. It breaks the element out of any clipping ancestor.
 
 If you want to use dynamic content, make sure to wrap the widget in a [data view](/refguide/data-view/) and set **Enable advanced options** to **Yes**.

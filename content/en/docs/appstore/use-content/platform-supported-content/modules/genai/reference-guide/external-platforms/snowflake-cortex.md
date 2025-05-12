@@ -56,7 +56,6 @@ The [Snowflake showcase app](https://marketplace.mendix.com/link/component/22584
     3. Cortex LLM Functions
     4. Cortex Analyst
    
-
 3. To see how a Snowflake Cortex Analyst action is called, use the **Explorer** search box to find and open the *EXAMPLE_CortexAnalyst_GenerateResponseMessage** microflow.
 
    {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/CortexAnalystRequestExample.png" >}}

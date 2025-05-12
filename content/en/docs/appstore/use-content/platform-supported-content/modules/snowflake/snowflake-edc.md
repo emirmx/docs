@@ -8,7 +8,7 @@ weight: 10
 
 ## Introduction
 
-The [External Database connector](/appstore/modules/external-database-connector/) allows you to connect to databases and select data to use in your app. You can use it to directly test connections and queries during configuration in Studio Pro (design time). For Mendix apps that use Snowflake as their database, the External Database connector is the recommended integration option for Mendix 10.
+The [External Database connector](/appstore/modules/external-database-connector/) allows you to connect to databases and select data to use in your app. You can use it to directly test connections and queries during configuration in Studio Pro (design time). For Mendix apps that work with Snowflake data, the External Database connector is the recommended integration option for Mendix 10 and above.
 
 This how-to describes the steps required to enable your app to use the External Database connector with Snowflake, and to model several common use cases.
 
@@ -164,7 +164,7 @@ To set the result format at the Snowflake session or user level, use the followi
 **ALTER USER <user_name> SET JDBC_QUERY_RESULT_FORMAT='JSON';**
 ```
 
-This approach ensures compatibility with JDK 16+.
+This approach ensures compatibility with JDK 16+. For more information, see [JDBC Driver throws NoClassDefFoundError for class RootAllocator in Arrow Library, while trying to run a select query](https://community.snowflake.com/s/article/Getting-java-lang-NoClassDefFoundError-for-class-RootAllocator).
 
 ## Configuring a Query to Display Data as a Chart
 
