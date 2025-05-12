@@ -8,7 +8,7 @@ description: "Options for configuring scheduled events"
 
 ## Introduction
 
-Sometimes you will want to regularly run a microflow which does not require end-user interaction. You can do this using scheduled events. Scheduled events are managed using the [task queue](/refguide/task-queue/) mechanism,
+Sometimes you will want to regularly run a microflow which does not require end-user interaction. You can do this using scheduled events. Scheduled events are managed using the [task queue](/refguide/task-queue/) mechanism.
 
 A scheduled event is added to your module as a document (right-click your module and you will find it listed under *Add other*).
 
@@ -153,7 +153,7 @@ This allows you to run the event every minute, or number of minutes.
 
 ### Long-Running Events {#long-events}
 
-If a repeated scheduled event takes longer than the interval, an overlap would occur. To prevent this, a choice must be made on how to handle this. This is set in the **On overlap** property of the scheduled event.
+If a repeated scheduled event takes longer than the interval, an overlap would occur. To prevent this, choose one of the following options in the **On overlap** property of the scheduled event:
 
 * **Skip next** – If an event takes longer than its interval, subsequent events are skipped until it has completed. The next event will start at the next available scheduled time.
 
@@ -169,7 +169,7 @@ If a repeated scheduled event takes longer than the interval, an overlap would o
 
 ### Server Time{#server-time}
 
-Although you can choose **Server** time rather than **UTC** time, make sure that your server time is set as you expect. Many servers are set to run on UTC to avoid issues when working across time zones.
+You can choose **Server** time rather than **UTC** time, but make sure that your server time is set as you expect. Many servers are set to run on UTC to avoid issues when working across time zones.
 
 {{% alert color="warning" %}}
 All Mendix Cloud servers are set to UTC.
