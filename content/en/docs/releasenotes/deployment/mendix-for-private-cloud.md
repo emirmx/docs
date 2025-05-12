@@ -12,6 +12,12 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2025
 
+### May 08, 2025
+
+#### Portal Improvements
+
+* Updating or setting an Environment Purpose is now logged in the activity logs.
+
 ### April 24, 2025
 
 #### Deploy API Improvements

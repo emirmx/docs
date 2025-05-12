@@ -23,7 +23,7 @@ Before starting the installation and implementation process, make sure that you 
 {{< figure src="/attachments/deployment/mx-azure/coadmin-permission.png" class="no-border" >}}
 
 * Familiarize yourself with the [Private Cloud](https://docs.mendix.com/developerportal/deploy/private-cloud/) concepts.
-* Ensure that your Mendix Studio Pro is in version 10.10 or newer.
+* Ensure that your Mendix Studio Pro is in version 10.10 or above.
 * As an optional best practice, add multiple cluster manager to your clusters.
 
 ## Creating an Azure Cluster
@@ -66,12 +66,13 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
 9. In the **Provision** screen, add the custom tags if required and review the information in the **Advanced Options** section. If required, adjust any settings as needed. Note that selecting higher service tiers will also incur higher costs.
    
     You can update the following advanced options:
-        * AKS Service Tier
-        * AKS Node Size
-        * VM Type
-        * Load Balancer Type
-        * Postgres Flexible Server - Under this, you can update Compute Tier, Compute Size and Storage Performance Tier.
-        * AKS Node IP Address 
+
+    * AKS Service Tier
+    * AKS Node Size
+    * VM Type
+    * Load Balancer Type
+    * Postgres Flexible Server - Under this, you can update Compute Tier, Compute Size and Storage Performance Tier.
+    * AKS Node IP Address 
 
     {{% alert color="info" %}}If you plan to use [virtual network peering](#network-peering), you must set the **Load Balancer Type** to **Private (Internal)**.{{% /alert %}}
 
