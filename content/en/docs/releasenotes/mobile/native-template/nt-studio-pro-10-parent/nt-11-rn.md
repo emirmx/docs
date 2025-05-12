@@ -20,6 +20,7 @@ description: "Native Template 11 release notes."
 ### Fixes
 
 * We fixed an issue with the bundle identifier in Xcode's **Dev** scheme.
+* We fixed an issue where an image that was not in PNG format caused errors because the react-native version was missing a patch.
 
 ## 11.0.2 {#1002}
 

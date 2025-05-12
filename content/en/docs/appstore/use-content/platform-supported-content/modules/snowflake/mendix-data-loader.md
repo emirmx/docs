@@ -42,7 +42,7 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
 4. Click **Create** to create a new data source.
     1. Enter a **Name** for your data source within the Data Loader.
     2. Enter an **API endpoint** – that is, the base endpoint for the OData resource in your Mendix application, for example, `https://yourmendixapp.mendixcloud.com/odata/snowflakedata/v1/`.
-    3. Use the radio button **Use Delta Ingestion** to specify if you want to ingest all exposed data with every ingestion, or if you want to ingest only data that was newly created or changed since the last ingestion for this data source.
+    3. Use the **Use Delta Ingestion** check box to specify if you want to ingest all exposed data with every ingestion, or if you want to ingest only data that was newly created or changed since the last ingestion for this data source.
     4. Click **Save**.
     5. Grant the application **CREATE DATABASE** and **EXECUTE TASK** privileges. This step is necessary for the application to create the staging database for data ingestion and to execute tasks.
 
@@ -85,6 +85,21 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
 
 The ingested data is stored in the target schema of the specified target database, created by the Mendix Data Loader application. This target schema serves as a staging area. After each ingestion, copy the tables from the target schema to the desired database and schema that you want to use to store the ingested data.
 
+## Exposing Associations in OData
+
+Depending on how you expose the associations in your published OData, you can expect slightly different structure of the ingested data in your staging area in Snowflake. Navigate to your OData resource in Studio Pro and select one of the following options:
+
+* **As a Link**
+* **As an Associated Object ID**
+
+### As a Link
+
+When exposing associations as a link, we recommend that you expose the associations on the owners side of the association. This prevents the creation of duplicate junction tables when ingesting the data. When choosing this option, all associations are ingested into junction tables where the name of the table has the format *MX_OwnerObjectName_TargetObjectName_ExposedAssociationName*. The column names are the names of the attributes that are exposed in the OData as the object key. Make sure that the attribute you choose as object key has unique values for all the different objects.
+
+### As an Associated Object ID
+
+When exposing associations as an object ID, no junction tables are created on ingestion. Instead, a column is added on the target table with the ID of the associated object. This setting does not support many-to-many associations. 
+
 ## Using Delta Ingestion Setting
 
 If you do not want to ingest all exposed data from the published OData of your Mendix application, you can enable the **Use Delta Ingestion** setting on your data source when creating or editing the data source in the Mendix Data Loader.
@@ -93,11 +108,21 @@ The first ingestion performed for the data source with this setting enabled inge
 
 ### Enabling ChangedDate for Delta Ingestion
 
-To use delta ingestion, you must enable the **changedDate** system member on the exposed entities. To do this, perform the following steps:
+To use delta ingestion, you must expose a Date and Time attribute with the name **changedDate** in your OData resource. This attribute is used to track changes and must follow the `yyyy-MM-dd'T'HH:mm:ss.SSS` format.
 
-1. Navigate to the entities in your domain model.
-2. In their properties, select the **Store 'changedDate'** radio button.
-3. Navigate to your OData resource and expose the **changedDate** attribute.
+{{% alert color="info" %}}This format should be the default for date attributes in Mendix when exposed through OData.{{% /alert %}}
+
+To provide this date choose one of the following options:
+
+* Use the **changedDate** system member:
+
+    1. Navigate to the entities in your domain model.
+    2. In their properties, select the **Store changedDate** check box.
+        This option automatically tracks when each object is modified.
+
+* Use any custom date attribute - Use any Date and Time attribute from your domain model, with any name you choose. Make sure to expose it in OData under the name **changedDate**.
+
+In both cases, make sure the **changedDate** attribute is exposed in your OData resource so it can be used during delta ingestion.
 
 ### Handling Deleted Objects
 
@@ -268,7 +293,6 @@ To implement the connection between Mendix Data Loader and your app, perform the
 
 ## Current Limitations
 
-* Exposing an association in an OData service as a link is not supported yet by the Mendix Data Loader. Instead, choose the **As an associated object id** option in your OData settings. This option stores the associated object ID in the table, but not explicitly as foreign key.
 * The Mendix Data Loader does not support custom domains for Mendix applications when using pagination in published OData services. This is because the OData response always returns the base domain's root URL, regardless of the custom domain being used. As a result, the call for the next page fails because the returned root URL does not have a corresponding network rule in Snowflake.
 
 ## Technical Reference {#technical-reference}
