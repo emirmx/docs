@@ -163,7 +163,7 @@ If a repeated scheduled event takes longer than the interval, an overlap would o
 
     If multiple successive events are longer than their interval, the intended scheduled time will be further and further away from the actual start time. This situation should be avoided by choosing an interval that is generally sufficient to run the event.
 
-    Should an event have drifted a long way from its intended schedule over time, the best way to remedy this is to delete the event and create a new one (with a longer interval).
+    If an event has drifted a long way from its intended schedule over time, the best way to remedy this is to delete the event and create a new one (with a longer interval).
 
 ## Additional Information
 
