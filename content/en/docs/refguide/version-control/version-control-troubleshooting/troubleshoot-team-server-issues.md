@@ -88,7 +88,7 @@ The first step is to validate whether CURL is able to reach the Team Server over
 * Why – Git uses the CURL library to do network operations over HTTP or HTTPS. If CURL does not work the network infrastructure is interfering. 
 * How – Store the output of the following command on the command line: ```curl -v http://git.api.mendix.com```
 * Validate the output – Beneath you will see a expected response. Lines to note:
-    * Line 6 – We see the request connected to `git.api.mendix.com` This means the request has reached our server and was not interrupted.
+    * Line 6 – We see the request connected to `https://git.api.mendix.com` This means the request has reached our server and was not interrupted.
     * Line 13 – We see the request returned a permanent redirect. This is expected as we are hitting the HTTP URL, which should redirect to the HTTPS variant.
 * Actions to take if something is wrong – Request your internal IT department to look into this and contact Mendix once the CURL request returns an expected request. 
     ```
@@ -124,14 +124,14 @@ The first step is to validate whether CURL is able to reach the Team Server over
 
 ##### CURL over HTTPS
 The second step is to validate whether CURL is able to reach the Team Server over HTTPS.
-* **Why:** Git uses the CURL library to do network operations over HTTP or HTTPS. If CURL does not work the network infrastructure is interfering. 
-* **How:** Store the output of the following command on the command line: ```curl -v https://git.api.mendix.com```
-* **Validate the output:** Beneath you will see a expected response. Important lines:
-    * **Line 2:** We see the host/domain is resolved
-    * **Line 6:** We see the request connected to https://git.api.mendix.com on port 443 This means the request hit our server and was not interrupted
-    * **Line 13:** We see the request returned a Permanent redirect. This is expected as we are hitting the HTTP URL, which should redirect to the HTTPS variant.
-    * **Line 23:** Even though this line says 400 Bad Request, this is expected as the teams server is no HTTP server. This line DOES tell us the request made it to the server and a response was given. 
-* **Actions to take if something is wrong:** Request your internal IT department to look into this and get back to Mendix once the CURL request returns an expected request. 
+* Why  – Git uses the CURL library to do network operations over HTTP or HTTPS. If CURL does not work the network infrastructure is interfering. 
+* How – Store the output of the following command on the command line: ```curl -v https://git.api.mendix.com```
+* Validate the output – Beneath you will see an expected response. Lines to note:
+    * Line 2 – You see the host/domain is resolved.
+    * Line 6 – You see the request connected to `https://git.api.mendix.com` on port 443. This means the request hit our server and was not interrupted.
+    * Line 13 – You see the request returned a permanent redirect. This is expected as we are hitting the HTTP URL, which should redirect to the HTTPS variant.
+    * Line 23 – Even though this line says 400 Bad Request, this is expected as the teams server is no HTTP server. This line tells you the request made it to the server and a response was given. 
+* Actions to take if something is wrong – Request your internal IT department to look into this and get back to Mendix once the CURL request returns an expected request. 
     ```
     curl -v https://git.api.mendix.com
     * Host git.api.mendix.com:443 was resolved.
@@ -168,24 +168,23 @@ The second step is to validate whether CURL is able to reach the Team Server ove
 ##### VPN, Proxy or Zscaler
 The next step is to verify whether you are behind a VPN, Proxy or Zscaler.
 
-* **Why:** Git uses the CURL library to do network operations over HTTP or HTTPS. If CURL does not work the network infrastructure may be interfering.  
-* **How:** 
-    * Check whether you are behind a VPN or proxy. Reach out to your internal IT department if you're not sure. Alternatively you can try a website to detect a VPN.
-    * Perform the following line on `cmd` and store the output: ```netsh.exe winhttp show proxy```
-* **Validate the output:** 
-    * A system with no proxy should show the following:
+* Why – Git uses the CURL library to do network operations over HTTP or HTTPS. If CURL does not work the network infrastructure may be interfering.  
+* How – do the following: 
+    * Check whether you are behind a VPN or proxy. Reach out to your internal IT department if you are not sure. Alternatively you can try a website to detect a VPN.
+    * Perform the following line on `cmd` and store the output: ```netsh.exe winhttp show proxy```.
+* Validate the output – A system with no proxy should show the following:
     ```
     C:\Users\UserName>netsh.exe winhttp show proxy
     Current WinHTTP proxy settings:
     Direct access (no proxy server).
     ```
-* **Actions to take if something is wrong:**
+* Actions to take if something is wrong  – do one of the following:
     * If you are behind a proxy according:  
-        * Retry without VPN or proxy and see if that solves the issue. Reach out to your internal IT department if you're not sure how to test this.
-        * Setup the proxy in Git according to [Troubleshooting Version Control](/refguide/troubleshoot-version-control-issues/#proxy-servers-are-not-supported).
-        A proper example command would look like this: ```git config --global http.proxy https://username:mypassword@someproxyurl.com:123123```
-        Take note; if the username or password contains a `:` or a `@` it might not work.
-    * In case ```netsh.exe winhttp show proxy``` gives an output that implies there is no proxy active, keep this information in mind. If the Git CLI **is** able to work with Git, but Studio Pro **is not**, then you can ask try ```netsh.exe winhttp reset proxy```, to reset your local proxy setting.
+        * Retry without VPN or proxy and see if that solves the issue. Reach out to your internal IT department if you are not sure how to test it.
+        * Set up the proxy in Git according to [Troubleshooting Version Control](/refguide/troubleshoot-version-control-issues/#proxy-servers-are-not-supported).
+        A correct example command looks like this: ```git config --global http.proxy https://username:mypassword@someproxyurl.com:123123```
+        Please note, if the username or password contains a `:` or a `@`, it might not work.
+    * In case ```netsh.exe winhttp show proxy``` gives an output that implies there is no proxy active, keep this information in mind. If the Git CLI is able to work with Git, but Studio Pro is not, then you can try ```netsh.exe winhttp reset proxy``` to reset your local proxy setting.
 
 ##### Validate network speed
 
