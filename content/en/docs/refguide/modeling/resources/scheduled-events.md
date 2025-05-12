@@ -8,7 +8,7 @@ description: "Options for configuring scheduled events"
 
 ## Introduction
 
-Sometimes you will want to regularly run a microflow which does not require end-user interaction. You can do this using scheduled events. Scheduled events are managed using the [task queue](/refguide/task-queue/) mechanism,
+Sometimes you will want to regularly run a microflow which does not require end-user interaction. You can do this using scheduled events. Scheduled events are managed using the [task queue](/refguide/task-queue/) mechanism.
 
 A scheduled event is added to your module as a document (right-click your module and you will find it listed under *Add other*).
 
