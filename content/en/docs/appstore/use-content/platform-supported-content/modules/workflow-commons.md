@@ -20,12 +20,15 @@ This module allows Mendix developers with little or no experience in building wo
 * Attachments layer on top of workflows
 * Comments section to use with workflows
 * Audit trail for tracking workflows
+* Task assignment to manage user assignment and targeting. For example, when users leaving the organization or change their roles
 
 {{% alert color="info" %}}For Workflow Commons version 2.4.0 and above, attachments are (an optional) part of comments. This means that the WorkflowAttachment entity is associated with the WorkflowComment entity. Security settings for the WorkflowAttachment entity are based on the workflows in which a user is involved, since the context of a specific workflow is not known in advance in Workflow Commons. If you would like to set custom security for attachments, you need to configure the attachment entity in your domain model and associate it with the workflow context entity of the workflow. {{% /alert %}}
 
 ### Prerequisites
 
-As workflows are only available from Mendix 9 version, Workflow Commons requires Mendix 9.0.5 and above.
+- As workflows are only available from Mendix 9 version, Workflow Commons requires Mendix 9.0.5 and above.
+
+- Workflow Commons v4.0.0 and above require Mendix 11 or higher, since the module is based on [View Entities](https://docs.mendix.com/refguide/view-entities).
 
 ### Dependencies
 
@@ -122,21 +125,29 @@ For version 4.0 and above, this step is no longer required.
 
 ### Upgrading from Mendix 10 to Mendix 11
 
-This section explains the required steps when upgrading an existing app that is using Workflow Commons from Mendix 10 to Mendix 11. With the removal of state-change events in Mendix 11, it is required to upgrade Workflow Commons to version 4.0.0 or higher. In addition, it is required to perform a one-off migration for your existing data. 
+This section explains the required steps when upgrading an existing app that is using Workflow Commons from Mendix 10 to Mendix 11. 
 
-Starting with version 4.0.0, Workflow Commons uses the new [View Entities](https://docs.mendix.com/refguide/view-entities) feature for unified access to user tasks, regardless of whether these tasks are in progress or completed. The WorkflowUserTaskView view entity combines objects from System.WorkflowUserTask and System.WorkflowEndedUserTask into a single view. This removes the need for the custom entities (WorkflowView and UserTaskView) that used to be part of Workflow Commons in versions below v4.0.0, that were kept up to date using state-change events.
+ Workflow Commons version 4.0.0 and above uses the new [View Entities](https://docs.mendix.com/refguide/view-entities) feature for unified access to user tasks, regardless of whether these tasks are in progress or completed. Starting with Mendix 11, ended user tasks are now stored in the **WorkflowEndedUserTask** entity in the System module. The **WorkflowUserTaskView** view entity combines objects from **System.WorkflowUserTask** and **System.WorkflowEndedUserTask** into a single view. This eliminates the need for the custom entities (WorkflowView and UserTaskView) that used to be part of Workflow Commons in versions below v4.0.0, which were kept up to date using state-change events.
 
-Starting with Mendix 11, ended user tasks are now stored in the WorkflowEndedUserTask entity in the System module. In order to preserve existing data, it is important to migrate information on ended user tasks from WorkflowCommons.UserTaskView objects into System.WorkflowEndedUserTask objects. A migration microflow is shipped with Workflow Commons v4.0.0 to help you perform this task.
+With the removal of state-change events in Mendix 11, it is required to upgrade Workflow Commons to version 4.0.0 or higher. With this update, it is required to perform a one-off migration for your existing data and move all logic based on old entities.
+
+#### Data Migration
+
+In order to preserve your data, it is important to migrate information on ended user tasks from WorkflowCommons.UserTaskView objects into System.WorkflowEndedUserTask objects. A migration microflow is shipped with the module to help you perform this task.
 
 To perform the migration, follow the steps below:
 
 1. After upgrading your project to Mendix 11, download Workflow Commons v4.0.0 from the marketplace.
-2. In the runtime settings of your app, configure the ASU_UserTaskView_Migrate microflow for the after startup property. If there is already an after startup microflow set, add the ASU_UserTaskView_Migrate microflow as an action to the existing microflow.
-3. Alternatively, you can manually start the migration by clicking the "Migrate UserTaskView object(s) to WorkflowEndedUserTask entity" button which is available on the Workflow Admin Center page, or use the ACT_UserTaskView_Migrate microflow in your project.
+2. In the runtime settings of your app, configure the **ASU_UserTaskView_Migrate** microflow for the after startup property. If there is already an after-startup microflow set, add the ASU_UserTaskView_Migrate microflow as an action to the existing microflow. We recommend removing the microflow once the migration is complete.
+3. Alternatively, you can manually start the migration by clicking the "Migrate UserTaskView object(s) to WorkflowEndedUserTask entity" button which is available on the Workflow Admin Center page, or use the **ACT_UserTaskView_Migrate** microflow in your project. After successful migration, the button will no longer appear in the Workflow Admin Center.
 
-{{% alert color="info" %}}
-As a result of upgrading to Mendix 11, the pages, microflows, and snippets that previously used the `WorkflowCommons.UserTaskView` entity have either been removed from the WorkflowCommons module or replaced with documents that uses `WorkflowCommons.WorkflowUserTaskView` or `System.WorkflowEndedUserTask` as a parameter. For a full list, refer to the release notes of v4.0.0 of the Workflow Commons module.
-{{% /alert %}}  
+The user tasks objects will only be migrate once, even if the migration flow is set in the after-startup microflow and the app is restarted. If the migration is interrupted due to an error, a full rollback will be triggered. For extra assurance and ensuring no user tasks are migrated twice, we added the **IsMigrated** flag attribute to WorkflowCommons.UserTaskView that will be set to true for each migrated user task object.
+
+#### Migrating Your Logic And Pages
+
+As a result of upgrading to Mendix 11, the pages, microflows, and snippets that previously used the **WorkflowCommons.UserTaskView** entity have either been removed from the WorkflowCommons module or replaced with documents that uses **WorkflowCommons.WorkflowUserTaskView** or **System.WorkflowEndedUserTask** as a parameter. For a full list, refer to the release notes of v4.0.0 of the Workflow Commons module.
+
+WorkflowCommons.WorkflowView and WorkflowCommons.UserTaskView are deprecated and replaced by the WorkflowCommons.WorkflowUserTaskView view entity. In case, you have any logic and pages that rely on WorkflowCommons.WorkflowView and WorkflowCommons.UserTaskView entities, you need to adapt those based on them to the System.Workflow and the new WorkflowCommons.WorkflowUserTaskView entities instead.
 
 ## Workflow Audit Trail
 
