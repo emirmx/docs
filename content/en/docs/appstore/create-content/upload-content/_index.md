@@ -1,5 +1,5 @@
 ---
-title: "Upload to the Marketplace"
+title: "Uploading to the Marketplace"
 url: /appstore/submit-content/
 weight: 6
 description_list: true

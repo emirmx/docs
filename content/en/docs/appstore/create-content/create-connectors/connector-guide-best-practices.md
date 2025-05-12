@@ -6,51 +6,51 @@ weight: 7
 
 ## Introduction
 
-In [Build Connectors](/appstore/creating-content/connector-guide-build/), you learned about the background and basic steps of building connectors. This guide will go into more detail and explore recommended practices for building, testing, and distributing connectors. 
+This document provides details and recommended best practices for building, testing, and distributing connectors. 
 
 ## App Setup {#app-setup}
 
-This section dives into best practices for setting up your app in Studio Pro. For the basic instructions, see the [Setting Up Your App](/appstore/creating-content/connector-guide-build/#app-setup) section of *Build Connectors*.
+This section dives into best practices for setting up your app in Studio Pro. For basic instructions, see the [Setting Up Your App](/appstore/creating-content/connector-guide-build/#app-setup) section of *Creating Connectors*.
 
 ### Studio Pro Version
 
-For people to use your connector, ensure that you are not only servicing toward end-users that have the latest version. Try to support the latest [LTS](/releasenotes/studio-pro/lts-mts/) version, or if possible even older supported versions. 
+For people to use your connector, ensure that you are not only targeting end-users that have the latest version Studio Pro. Try to support the latest [LTS](/releasenotes/studio-pro/lts-mts/) version, and, if possible, even older supported versions. 
 
 The only reason to deviate from this is when your connector requires a certain platform functionality that is only available in a newer version, or requires another module that is only available on a newer version. In that case, use that newer version as your Mendix required version.
 
 ### Modules in the App
 
-Create a Mendix app in Studio Pro with the main connector module and a testing module. You can also optionally add an example module showing some use cases.
+Create a Mendix app in Studio Pro with the main connector module and a testing module. You can also add an example module showing some use cases.
 
-* Name the *main module* how you want it to appear in apps after others import your module. This module will contain all the logic to let your connector function in apps that import it.
-* The *testing module* has microflows, pages, and Java code to test your module's functionality without having to add the test logic to the module that you will later export and publish.
-* The *example module* can be published next to the main connector module to help end-users better understand the implementation of your connector module, or to try it out without having to do too much configuration from the start.
+* The main module contains all the logic needed to let your connector function in apps that import it. Give the main module the name you want to appear in apps after others import your module.
+* The testing module has microflows, pages, and Java code to test your module's functionality. This means that you will not have to add the test logic to the module that you will later export and publish.
+* You can publish the example module next to the main connector module to help end-users better understand the implementation of your connector module, or to try it out without having to do too much configuration from the start.
 
-#### Main Connector Module Setup {#main-setup}
+#### Setting Up the Main Connector Module {#main-setup}
 
-Mendix recommends the *main module* for your connector include the following:
+Mendix recommends that the main module for your connector include the following:
 
-* **_Docs** (folder) – contains documentation or a reference to documentation and a version indicator
-    * **ReadMe** (snippet) – used to give a reference to documentation and/or some direct documentation on how to use the module
-    * **[ModuleName]_Version** (string constant) – replace the [ModuleName] part with your module name and fill the value with the version of the module using the same standard as the Mendix Marketplace 1.2.3 (see the [Versioning](#versioning) section below)
-        * As an alternative to the version constant, you can place a subfolder with the version indication
-* **Private** (folder)– indicates what other developers should not touch when implementing your module by placing all of that logic in this folder
-* **UseMe** (folder) – contains everything the implementing developer could use to implement your module in their application, and might include subfolders for **Microflows**, **Pages**, **Snippets**, **Templates**, and **Constants**
+* **_Docs** (folder) – Contains documentation or a reference to documentation, and a version indicator.
+    * **ReadMe** (snippet) – Used to give a reference to documentation and/or some direct documentation on how to use the module.
+    * **[ModuleName]_[Version]** (string constant) – Replace [ModuleName] with the name of your module, and [Version] with the version of the module. Use the same standard as the Mendix Marketplace 1.2.3. See the [Versioning](#versioning) section below.
+        * As an alternative to the version constant, you can include a subfolder with the version indication.
+* **Private** (folder) – This folder contains all the logic that other developers should not touch when implementing your module.
+* **UseMe** (folder) – Contains everything the implementing developer could use to implement your module in their application. It can include subfolders for **Microflows**, **Pages**, **Snippets**, **Templates**, and **Constants**.
 
-Your **App Explorer** should look like this after initial setup:
+Your **App Explorer** should look like this after the initial setup:
 
 {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/app-initial-setup.png" class="no-border" >}}
 
 {{% alert color="info" %}}
-This app folder structure example is based on the **Blank Web App** starter app and contains Mendix Marketplace modules that your app might not have. The important Marketplace module that is shown is the [Unit Testing](/appstore/modules/unit-testing/) module for testing purposes.
+This app folder structure example is based on the **Blank Web App** starter app, and contains Mendix Marketplace modules that your app might not have. The important Marketplace module that is shown is the [Unit Testing](/appstore/modules/unit-testing/) module for testing purposes.
 {{% /alert %}}
 
-#### App Root Setup {#root-setup}
+#### Setting Up the App Root {#root-setup}
 
-Mendix recommends adding add additional folders to the root of your app (on disk). These include the following:
+Mendix recommends adding additional folders to the root of your app, on disk. These include the following:
 
-* **DIST** – contains the releases of your module kept for reference
-* **MarketplaceResources** – contains all the assets used in the Mendix Marketplace (except for the release packages), including screenshots, videos, and reference documents
+* **DIST** – This contains the releases of your module kept for reference.
+* **MarketplaceResources** – This contains all the assets used in the Mendix Marketplace, such as screenshots, videos, and reference documents. It does not contain the release packages.
 
 The app root of your **App Explorer** should look like this after root setup:
 
@@ -58,55 +58,55 @@ The app root of your **App Explorer** should look like this after root setup:
 
 #### Importing Dependency Modules
 
-Use as few dependency modules as possible. When you must use one, make sure they are either maintained by your own company (when creating a company-only connector) and/or platform-supported so users are not left unsupported. Otherwise, you might end up having to maintain those public non-platform supported modules to ensure that your connector operates properly.
+Use as few dependency modules as possible. When you must use one, make sure it is either maintained by your own company, when creating a company-only connector, and/or platform-supported. This ensure that users are are always supported. Otherwise, you might end up having to maintain those public non-platform supported modules to ensure that your connector operates properly.
 
 ### Adding the App to Version Control
 
-Add the app to [Team Server](/refguide/version-control/#team-server) (or GitHub) version control, if you have not already done so when creating the app. 
+Add the app to the [Team Server](/refguide/version-control/#team-server) or to GitHub version control, if you have not already done so when creating it. 
 
-Mendix recommends having a separate public Git repository next to your private Team Server Git repository, so that you can continue committing and applying changes while you only push to the public repository for a new release to the Marketplace. The automated integration with GitHub from the Marketplace makes this a good option for your public-facing Git repository.
+Mendix recommends having a separate public Git repository next to your private Team Server Git repository. This way, you can continue committing and applying changes while you only push to the public repository for a new release to the Marketplace. The automated integration with GitHub from the Marketplace makes this a good option for your public-facing Git repository.
 
 ### Working with Java-Intensive Apps
 
-For Java-intensive apps, consider creating an **Implementation** sub-module to keep core implementation separate. You can also make the module a Gradle project in order to better manage dependencies and release pipeline. Create the *gradle.build* file to manage Java library dependencies and cleanup of the **userlib** folder for export. For further information, see [Extend App Setup for Building Connectors with Java](#extend-app-java) below.
+For Java-intensive apps, consider creating an **Implementation** submodule to keep core implementation separate. You can also make the module a Gradle project in order to better manage dependencies and the release pipeline. Create the *gradle.build* file to manage Java library dependencies and the cleanup of the **userlib** folder for export. For further information, see [Extending App Setup for Building Connectors with Java](#extend-app-java) below.
 
 ## Development
 
-This section explores best practices for connector development. You can develop connectors using Java or using Mendix.
+This section explores best practices for connector development. You can develop connectors using Java or Mendix.
 
 ### Developing Connectors Using Java
 
 Implementing the bulk of the functionality in Java has the following benefits: 
 
-* Complexity is hidden from end-users and apps are easier to understand.     
+* Complexity is hidden from end-users, making apps easier to understand.     
 {{% alert color="info" %}}
-Mendix apps should focus on solving the business requirements. Generic technical constructs should be hidden from the developers. Currently, Java is the best way to achieve this. A module does not have to ship the Java source for its Java functionality. You can also make a (hidden) *.jar* in another app, and place that in the connector module **user lib**.
+Mendix apps should focus on solving business requirements. Generic technical constructs should be hidden from developers. Currently, Java is the best way to achieve this. A module does not have to ship the Java source for its Java functionality. You can also make a (hidden) *.jar* in another app, and place that in the connector module **user lib**.
 {{% /alert %}}
 * End-users are less likely to change it.
 * You can use [unit tests](#unit-testing).
 
 #### Extending App Setup for Building Connectors with Java {#extend-app-java}
 
-You can extend your app to work with Java and Gradle.
+You can extend your app to work with Java and Gradle. Follow these steps to do that:
 
 1. Add an **Implementation** folder next to other app folders. 
 
     {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/implementation-folder.png" class="no-border" >}}
 
-2. Set up an  **Implementation** folder as a Gradle `java-library` project. For details, see Gradle documentation on [Building Java Libraries Sample](https://docs.gradle.org/current/samples/sample_building_java_libraries.html#run_the_init_task). This is the expansion of the **Implementation** folder:
+2. Set up an  **Implementation** folder as a Gradle `java-library` project. For details, see the Gradle documentation on [Building Java Libraries Sample](https://docs.gradle.org/current/samples/sample_building_java_libraries.html#run_the_init_task). This is the expansion of the **Implementation** folder:
 
     {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/gradle-library.png" class="no-border" >}}
 
-    The **Implementation** folder is now a self contained Gradle project which can be opened in any IDE which understands Gradle and expanded with any code you like.
+    The **Implementation** folder is now a self contained Gradle project. It can be opened in any IDE that understands Gradle, and expanded with any code you like.
 
-3. Build the **Implementation** folder and place the resulting *.jar* to the **userlib** folder. 
+3. Build the **Implementation** folder and place the resulting *.jar* in the **userlib** folder. 
 
     If your implementation has additional dependencies, consider creating one `fat jar`  containing all dependent *.jar* files.     
 {{% alert color="info" %}}
 All modules have their *.jar* files in the **userlib** folder. In order to specify that this *.jar* is being used by your connector module, add an additional text file named `<jar-file-name>-<modulename>.requiredLib` .
 {{% /alert %}}
 
-4. After implementation libraries are placed into the **userlib** folder, they are available in the Mendix application classpath so they can be used in a Java action in your connector module.
+4. After implementation, libraries are placed in the **userlib** folder, and are available in the Mendix application classpath so they can be used in a Java action in your connector module.
 
 You can also extend your app with Gradle and add the **Implementation** project as a sub-module. In this case, your implementation project becomes part of your Mendix app. You can use it in Java actions without having to copy the *.jar* files to the **userlib** folder. 
 
@@ -114,74 +114,80 @@ You can also extend your app with Gradle and add the **Implementation** project 
 You must have the *.jar* file placed in the  **userlib** folder before exporting the connector module. Otherwise, **Implementation** *.jar* files will not be packaged with the module.
 {{% /alert %}}
 
-A self-contained Gradle project can do unit testing and integration testing in the same way as you would do in any other Java project. See the [Testing](#testing) section of this document for best testing practices.
+A self-contained Gradle project can do unit testing and integration testing in the same way as you would do in any other Java project. See the [Testing](#testing) section of this document for best practices.
 
 ### Developing Connectors with Mendix
 
-While Java is likely going to be a primary choice for building your connector modules, it is not your only option. Lucky you!
+While Java is likely going to be a primary choice for building your connector modules, you can also use Mendix.
 
 #### Making Microflows Available as Microflow or Workflow Activities
 
-To ensure that end-users can reuse your Mendix build logic as easily as possible, you will need to make microflows available as microflow or workflow activities (see the [Triggering a Workflow via a Microflow](/refguide/perform-workflow-basic-functions/#trigger-microflow) section of *Performing Workflow Basic Functions*).
+To ensure that end-users can reuse your Mendix build logic as easily as possible, you need to make microflows available as microflow or workflow activities. For details, see the [Triggering a Workflow via a Microflow](/refguide/perform-workflow-basic-functions/#trigger-microflow) section of *Performing Workflow Basic Functions*).
 
-Ensure that a microflow is visible in the **Toolbox** in the [Expose as microflow action](/refguide/java-actions/#expose-microflow-action) section of the microflow properties. You can do this by right-clicking in your microflow working area. Additionally, you can specify a caption for the action, a category for the **Toolbox**, and an icon. These will be used in the **Toolbox**, and also in the microflows, so these will be easy to read for the end-user:
+Ensure that a microflow is visible in the **Toolbox**, in the [Expose as microflow action](/refguide/java-actions/#expose-microflow-action) section of the microflow properties. You can do this by right-clicking in your microflow working area. Additionally, you can specify a caption for the action, a category for the **Toolbox**, and an icon. These will be used in the **Toolbox**, and also in the microflows, so they need to be easy to read for the end-user:
 
 {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/microflow-action.png" class="no-border" >}}
 
 After you [expose as microflow action](/refguide/java-actions/#expose-microflow-action), this can be dragged and dropped inside another microflow.
 
-If you create functionality that requires for example REST API integrations or complex data processing, make sure you have well-documented microflows connecting your  *public* part of the module to the  *private* part. By doing this, you can shield the implementing developer from having to understand the REST API integration or complex data processing logic. 
+If you create functionality that requires REST API integrations or complex data processing, make sure you have well-documented microflows connecting the  public part of your module to the  private part. This way, the implementing developer will not have to understand the intricacies of the integration.
 
 #### Naming and Choice of Icon
 
-Make sure the name of your category matches the name of the category for similar functionality, and that the name of the caption for your microflow or workflow exposed action does not overlap with others.
+Follow these guidelines for names and icons:
 
-The icon should give instant recognition to your function. Make sure that it square and 16 by 16 pixels. This is very small, so try not to overdo it on the details.
+* The name of your category must match the name of the category which covers similar functionality.
+* The name of the caption for your microflow or workflow exposed action does not overlap with others.
+* The icon should give instant recognition to your function. Make sure that it is square and 16 by 16 pixels. This size is very small, so try not to add too many details.
 
 #### Structuring the Usage of Your Connector
 
-As stated in the [Main Connector Module Setup](#main-setup) section, each connector build will have a  **UseMe** folder where you expose the logic that users of your connector module need when implementing your module. You have the ability to expose your microflows and Java actions in the toolbox. This means that users will be able to use your microflows and Java actions as microflow activities or workflow system tasks. You can also add page templates that are reusable.
+As stated in the [Setting Up the Main Connector Module](#main-setup) section, each connector build will have a  **UseMe** folder where you expose the logic that users of your connector module need when implementing your module. You can expose your microflows and Java actions in the toolbox. This means that users will be able to use your microflows and Java actions as microflow activities or workflow system tasks. You can also add page templates that are reusable.
 
-When exposing your microflows and Java actions, you need to ensure that end-users will be able to find them easily. As an example, take a look at how the category, icon, and name are listed for platform-supported items. Add documentation to your input parameters and for the full Java action/Microflow. This is part of the platform end-users will be able to access easily while using your Java action/microflow activities.
+When exposing your microflows and Java actions, you need to ensure that end users can find them easily. As an example, take a look at how the category, icon, and name are listed for platform-supported items. Add documentation to your input parameters and for the full Java action/microflow. This is part of the platform end users will be able to access easily while using your Java action/microflow activities.
 
 For page templates, make sure to use a representative image, define a category that makes sense based on your module usage, and give a name that makes the template easily recognizable.
 
 ### Logging
 
-When something goes wrong or the module needs to expose information that it is unable to expose via the regular outputs, logging is a good option. Make sure your connector uses one log node for all the log messages if they are logged from the Java code or the Mendix code. 
+When something goes wrong or the module needs to expose information that it is unable to expose via regular outputs, logging is a good option. 
 
-Do make sure that you utilize the right log levels:
+Make sure your connector uses one log node for all log messages if they are logged from the Java code or the Mendix code. 
 
-* `CRITICAL` – when the thing that goes wrong harms the stability of the application
-* `ERROR` – when an error occurs that the process the end-user is executing via your connector cannot recover from
-* `WARNING` – when something went wrong, but the process can finish anyway
-* `INFO` – useful information that should always appear in log files
-* `DEBUG` – when the user needs to determine why the connector is not working as expected
-* `TRACE` – used to determine why the implementation is not working as expected
+Ensure you utilize the right log levels:
+
+* `CRITICAL` – The error harms the stability of the application.
+* `ERROR` – The process cannot recover from the error.
+* `WARNING` – Something went wrong, but the process can finish anyway.
+* `INFO` – Useful information that should always appear in log files.
+* `DEBUG` – The user needs to determine why the connector is not working as expected.
+* `TRACE` – Determine why the implementation is not working as expected.
 
 ### Data Storage
 
-Depending on your module's functionality, you might need to store data in the end-user's application. The downside is that end-users might delete your module to resolve issues such as **userlib** conflicts. We advise limiting the amount of data stored in persistable entities and passing the data via your exposed logic to the end-user's application logic instead. Then, the user may decide to store it or only use it during a process. 
+Depending on your module's functionality, you might need to store data in the end user's application. The downside is that end users might delete your module to resolve issues such as **userlib** conflicts. 
+
+We advise limiting the amount of data stored in persistable entities, and passing the data via your exposed logic to the end user's application logic instead. Then, they may decide to store it, or to only use it during a process. 
 
 ### Task Queue
 
-Actions that may be batched or divided over multiple threads due to a large load or volume should be offloaded to the [task queue](/refguide/task-queue/). Using this method, you can offload multiple tasks at once to multiple instances and over multiple threads. You can also run these tasks in the background without the user request waiting for it. Make sure that the end-user is aware that something is going on by setting a certain Task Status, or maybe implementing a progress log.
+Actions that may be batched or divided over multiple threads due to a large load or volume should be offloaded to the [task queue](/refguide/task-queue/). Using this method, you can simultaneously offload multiple tasks to multiple instances, and over multiple threads. You can also run these tasks in the background without having to wait for a user request. Make sure that the end user is aware that something is going on by setting a certain Task Status, or by implementing a progress log.
 
 If you are using Studio Pro [8.18](/releasenotes/studio-pro/8.18/) or older, you can consider using the process queue. See the [Replacing Process Queue](/refguide9/task-queue/#process-queue) section of *Task Queue* for the difference between these functionalities.
 
 ### ConnectionDetails Entity
 
-Use a **ConnectionDetails** entity for all general connection and security settings for the call. Use a **ConnectionDetails_Get** microflow in all your Operations. This way it is easy to change all the settings in one location. The individual settings can be stored in a constant or in the database and set in the create. Using constants are recommended because this avoids a dependency on the Encryption module.  
+Use a **ConnectionDetails** entity for all general connection and security settings for the call. Use a **ConnectionDetails_Get** microflow in all your operations. This makes it easy to change all the settings in one location. Individual settings can be stored in a constant or in the database, and set during creation. Using constants is recommended because this avoids a dependency on the encryption module.  
 
-{{% alert color="warning" %}} Using either the default value of a constant or the project’s configuration setting is unsafe. Both these places are readable by others and visible in the version management. If you can share these settings with other developers, set them in the project configuration and leave the default values blank. This will limit the risk of accidentally exposing the settings when exporting the module.{{% /alert %}}
+{{% alert color="warning" %}} Using either the default value of a constant, nor the project’s configuration setting is unsafe. Both these places are readable by others and visible in the version management. If you can share these settings with other developers, set them in the project configuration and leave the default values blank. This will limit the risk of accidentally exposing the settings when exporting the module.{{% /alert %}}
 
-If you do need to store sensitive information in the database, then always use the [Encryption](/appstore/modules/encryption/) module to encrypt and store and to retrieve and decrypt the information.
+If you need to store sensitive information in the database, always use the [Encryption](/appstore/modules/encryption/) module to encrypt and store, and to retrieve and decrypt the information.
 
 ### Persistable Entities
 
-If possible, avoid storing persistable data into persistable entities for your connector module. Developers will remove modules when troubleshooting Java compile issues. If they add them back, data stored in persistable entities is lost. 
+If possible, avoid storing persistable data in persistable entities for your connector module. Developers will remove modules when troubleshooting Java compiling issues. If they add them back, data stored in persistable entities is lost. 
 
-It is better to use non-persistable entities and let the user decide how to store any data passed back from your connector in their own domain model.
+It is better to use non-persistable entities, and let the user decide how to store any data passed back from your connector in their own domain model.
 
 ### Toolbox Actions and Non-Persistable Entities (NPEs)
 
@@ -192,11 +198,10 @@ Toolbox actions need clear naming, consistent categorization, and documentation,
 Consider doing the following for all entity attributes:
 
 * Set all string values to unlimited.
-* Check all date values. If the service only returns a date (no time), then set **localize** to *No*.
+* Check all date values. If the service only returns a date (no time), then set **localize** to **No**.
 * Check all number values (decimal, integer, long), and remove the default value of 0.
 
 {{% alert color="info" %}}
-
 Databases like SAP HANA and Oracle do not support CLOBs for order by or group by clauses. Because of this, attributes that are used for sorting or group by operations should not be set to unlimited.
 {{% /alert %}}
 
@@ -204,7 +209,7 @@ Databases like SAP HANA and Oracle do not support CLOBs for order by or group by
 
 Given that there is no dependency management between Mendix modules, try to minimize the number of dependencies your module has on other modules. If you do have to depend on other modules, make sure those modules are well-maintained by you or by Mendix themselves. Introducing another community-supported module as a dependent module might be too much of a risk for developers wanting to use your module.
 
-Any dependencies your module has should be well documented including the minimum required version to be used. It is also recommended to use the *.RequiredLib* files that Mendix uses for platform-supported modules, best handled with a build script like Gradle. To learn more about working with Gradle, see [Extending App Setup for Building Connectors with Java](#extend-app-java).
+Any dependencies your module has should be well documented, including the minimum required version to be used. It is also recommended to use the *.RequiredLib* files that Mendix uses for platform-supported modules, best handled with a build script like Gradle. To learn more about working with Gradle, see [Extending App Setup for Building Connectors with Java](#extend-app-java).
 
 ### IP Protection
 
