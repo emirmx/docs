@@ -778,6 +778,7 @@ If you are just delegating authentication for your app to the IdP you will not n
 If you want to use the information in an access token which is a JWT, you need to parse the access token in a microflow. For example, you may want to assign user roles in your app based on the contents of the access token JWT.
 
 * The OIDC module provides you with default microflows for parsing access tokens from the following IdPs:
+
     * Siemens SAM – in this case the `sws.samauth.role.name` claim is interpreted — for example:
 
         ```json
@@ -794,7 +795,7 @@ If you want to use the information in an access token which is a JWT, you need t
         ]
         ```
 
-* If you are using another IdP or want to use a different claim, you can create a custom microflow to parse the access token.
+If you are using another IdP or want to use a different claim, you can create a custom microflow to parse the access token.
 
 To parse access tokens, you need to do the following:
 
