@@ -30,12 +30,16 @@ This page outlines the compatibility between Mendix mobile development libraries
 
 ### Native Mobile Resources
 
+This module contains a powerful set of widgets and nanoflow actions created for native mobile. They enable authentication, network, platform capabilities, and more.
+
 [GitHub Repository](https://github.com/mendix/native-widgets)
 
 | --------------- | ------------------------------ |
 | 9.*             | 10.17 and above                |
 
 ### Nanoflow Commons
+
+This module contains nanoflow actions commonly used across mobile apps, enabling things such as client activities, geo-location, local storage, and more.
 
 [GitHub Repository](https://github.com/mendix/native-widgets)
 
