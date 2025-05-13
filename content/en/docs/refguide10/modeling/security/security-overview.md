@@ -6,7 +6,7 @@ beta: true
 ---
 
 {{% alert color="info" %}}
-This feature was introduced in Mendix 10.18 and is currently in beta. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+The security overview became generally available in Studio Pro version 10.21.0. It was previously in beta starting from version 10.18.
 {{% /alert %}}
 
 ## Introduction

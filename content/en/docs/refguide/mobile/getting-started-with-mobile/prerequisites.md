@@ -59,11 +59,13 @@ Building native mobile apps is not supported on the [Private Mendix Platform](/p
 
 ## Getting the Make It Native App {#get-min-app}
 
+{{% alert color="info" %}}
+The Mendix 11 beta is not supported by a Make It Native app version. A compatible MIN version will be available for Mx11 beginning in Studio Pro 11.1.
+{{% /alert %}}
+
 The Make It Native app allows developers to preview, test, and debug native mobile apps in conjunction with Mendix Studio Pro. This app is available for both Android and iOS devices.
 
 Depending on the Mendix version used to build your app, you have to use a different version of Make It Native. The following list explains which version to use:
-
-{{% todo %}}I don't think we need all these versions in the Mx 11 version of the refguide. But will there be a MIN 11 which should be used for Mx11?{{% /todo %}}
 
 * **Latest Mendix Version** - Latest version of Make It Native 10 ([Android](https://play.google.com/apps/testing/com.mendix.developerapp.mx10), [iOS](https://testflight.apple.com/join/bQfLf27w))
     * Please note that the latest version of Make It Native 10 is offered in online stores' beta version programs. Simply follow the instructions on those sites to download and install the latest version of MIN 10.

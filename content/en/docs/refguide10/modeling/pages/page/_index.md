@@ -41,7 +41,7 @@ The selected page is opened.
 ### Creating a Page
 
 {{% alert color="info" %}}
-In Studio Pro 10.21 and above, you can use Maia Page Generator, an AI-powered tool, to create pages by providing a description of your requirements and optional images. For more information, see [Page Generator](/refguide10/page-generator/).
+In Studio Pro 10.21 and above, you can use Maia for Pages, an AI-powered tool, to create pages by providing a description of your requirements and optional images. For more information, see [Maia for Pages](/refguide10/maia-for-pages/).
 {{% /alert %}}
 
 To create a new page, do the following:

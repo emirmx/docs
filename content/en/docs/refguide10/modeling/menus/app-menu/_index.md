@@ -91,8 +91,7 @@ For more information on using this option, see [Deploy to the Cloud](/refguide10
 
 If you have an app with a [native profile](/refguide10/navigation/#native-phone), this option launches the [Mendix Native Mobile Builder](/releasenotes/mobile/mendix-native-mobile-builder/). This wizard will guide you through the required steps for configuring and publishing your app. 
 
-For the first step in your native mobile journey, see [Build a Mendix Native App Locally
-](/refguide10/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/).
+For the first step in your native mobile journey, see [Build a Mendix Native App Locally](/refguide10/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/).
 
 ## Synchronize Dependencies 
 
@@ -102,9 +101,9 @@ You can trigger manual synchronization by opening the **App** menu and selecting
 
 For more information, see the [Dependency Sychronization](/refguide10/managed-dependencies/#dependency-synchronization) section of *Managed Dependencies*.
 
-## Show Security Overview (Beta)
+## Show Security Overview
 
-The **Show Security Overview (Beta)** option opens the [Security Overview](/refguide10/security-overview/), where you can view a unified overview of your app's security. 
+The **Show Security Overview** option opens the [Security Overview](/refguide10/security-overview/), where you can view a unified overview of your app's security. 
 
 ## Read More
 

@@ -43,7 +43,7 @@ Version control systems like Git do not store a full copy of a document for ever
 #### MPRv2 Format {#mprv2}
 
 {{% alert color="info" %}}
-MPRv2 was released in Studio Pro 10.18.0 as [Public Beta](/releasenotes/beta-features/). In Studio Pro 10.21.0, MPRv2 was released for General Availability (GA) and is automatically used for new apps.
+MPRv2 was released in Studio Pro 10.18.0 as [Public Beta](/releasenotes/beta-features/). In Studio Pro 10.21.0, MPRv2 was released for General Availability (GA) and is automatically used for new apps. When opening an existing app in Studio Pro 10.22 and above, it automatically converts to the MPRv2 format.
 {{% /alert %}}
 
 Studio Pro 10.18 introduced a new version of the *.mpr* format: MPRv2. The key difference is that all documents, such as microflows, are no longer stored as part of the *.mpr* file but as separate files in the *mprcontents* directory. The *.mpr* file functions as an index file pointing to all the different files on disk. 
@@ -128,6 +128,7 @@ To conclude whether the situation is acceptable for you, follow these steps:
 * Ensure the Git app you are downloading is not yet on your machine
 * Download the branch through Studio Pro, while manually measuring how long the download takes
   
+
 The first download of a branch on a device is a good indication of the maximum waiting time you or your team member can experience. Subsequent branch downloads use data that is already available locally and will, therefore, be a lot faster.
 
 If the download time was acceptable, or if you have a process where team members do not change often and they do not have to download an app for the first time, you can skip the cleanup.
@@ -223,6 +224,7 @@ We recommend doing the following:
 * Check your git config settings, especially any setting that involves encoding or text conversions: run `git config --list --show-origin`.
 * Consider moving your local repo, so that its folder has a shorter name
   
+
 When reaching out to Mendix Support, please include:
 
 * App/Projects ID for your app
@@ -235,5 +237,5 @@ In case you are still deciding whether to migrate from SVN to Git, or you are al
 
 {{< figure src="/attachments/refguide10/version-control/troubleshoot-version-control-issues/migration-advice-combined.png" class="no-border" >}}
 
-In Studio Pro 10.18 and above, you can manually convert branches to MPRv2. In future versions, branch conversion will happen automatically. For more information on the format, see the [MPRv2 Format](#mprv2) section.
+In Studio Pro 10.18 and above, you can manually convert branches to MPRv2. In Studio Pro 10.22 and above, branch conversion happens automatically. For more information on the format, see the [MPRv2 Format](#mprv2) section.
 For more information on partial clone, see [Clone Type](/refguide10/clone-type/).

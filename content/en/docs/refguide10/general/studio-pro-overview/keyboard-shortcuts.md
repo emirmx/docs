@@ -119,7 +119,7 @@ The tables in the following sub-sections present the shortcut keys that can be u
 | --- | --- | --- |
 | Arrow Keys | Arrow Keys | Select nearby element (activity, event, loop or parameter) in the direction of the arrow. |
 | <kbd>Home</kbd> | <kbd>Fn</kbd> + Left arrow | Select the start event. |
-| <kbd>End</kbd> | <kbd>Fn</kbd> + Right arrow | Select the first end event. |
+| <kbd>End</kbd> | <kbd>Fn</kbd> + Right arrow | Cycle through the end events. In Studio Pro 10.21 and below, pressing <kbd>End</kbd> only selects the first end event. |
 | <kbd>Ctrl</kbd> + <kbd>A</kbd> | <kbd>Command</kbd> + <kbd>A</kbd> | Select all elements. |
 | <kbd>Ctrl</kbd> (in Studio Pro 10.12 and above) | <kbd>Command</kbd> | When pressing <kbd>Ctrl</kbd>/<kbd>Command</kbd>, you can select additional elements. Clicking a selected element or selecting it with a selection rectangle while holding <kbd>Ctrl</kbd>/<kbd>Command</kbd> will deselect it. |
 | <kbd>Tab</kbd> | <kbd>Tab</kbd> | If a loop is selected, the first element inside the loop will be selected. |
@@ -144,8 +144,8 @@ The tables in the following sub-sections present the shortcut keys that can be u
 | <kbd>Enter</kbd> - on a Logic Recommender suggestion list item | <kbd>Enter</kbd> - on a Logic Recommender suggestion list item | The selected item is added on the sequence flow. The Logic Recommender dialog box is shown again for the next action to be added. |
 | <kbd>Shift</kbd> + <kbd>Enter</kbd> (or <kbd>Shift</kbd> + Mouse button) - on a Logic Recommender suggestion list item| <kbd>Shift</kbd> + <kbd>Enter</kbd> (or <kbd>Shift</kbd> + Mouse button) - on a Logic Recommender suggestion list item | The selected item is added on the sequence flow. The element’s property dialog box is opened. |
 | <kbd>F2</kbd> | <kbd>Fn</kbd> + <kbd>F2</kbd> | Rename the variable returned by the selected element. |
-| <kbd>Shift</kbd> + <kbd>F2</kbd> | <kbd>Shift</kbd> + <kbd>Fn</kbd> + <kbd>F2</kbd> | Edit the caption of the selected element. |
-| Context-menu key | Not available | Open the context-menu for the currently selected element. |
+| <kbd>Shift</kbd> + <kbd>F2</kbd> (or just start typing: in Studio Pro 10.22 and above) | <kbd>Shift</kbd> + <kbd>Fn</kbd> + <kbd>F2</kbd> (or just start typing: in Studio Pro 10.22 and above) | Open the **Properties** pane and edit the caption of the selected element. |
+| Context-menu key (or <kbd>Shift</kbd> + <kbd>F10</kbd>: in Studio Pro 10.22 and above)  | <kbd>Shift</kbd> + <kbd>Fn</kbd> + <kbd>F10</kbd> (in Studio Pro 10.22 and above) | Open the context-menu for the currently selected element. |
 
 ### Studio Pro 10.5 and Below
 

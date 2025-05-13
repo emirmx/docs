@@ -239,6 +239,10 @@ It is recommended to limit the number of open tabs (open documents) to improve t
 The closing policy is not applied to tabs with unsaved changes.
 {{% /alert %}}
 
+### Navigation
+
+This setting allows you to move forward and backward through your editing history to show the documents you have recently worked on. This feature is enabled by default. 
+
 ## Advanced Tab
 
 ### Proxy Server
@@ -257,7 +261,21 @@ When the **Send Studio Pro usage data to Mendix** setting is enabled, Studio Pro
 
 When the **Show feedback survey periodically** setting is enabled, Studio Pro will periodically display a feedback survey to gather input on your experience. This helps Mendix improve the product based on user feedback. For more information, see [Feedback Survey](/refguide/feedback-survey/).
 
+### Antivirus Exclusion
+
+When the **Do not show antivirus exclusion notifications** setting is enabled, Studio Pro will not display notifications related to antivirus exclusions. For more information, see [Antivirus Exclusion](/refguide/antivirus-exclusion/).
+
 ## New Features Tab {#new-features}
+
+### Access Rules Editor
+
+This option allows you to disable the new editor in the *Access rules* tab of the entity properties dialog and return to the version which was available in Studio Pro 10 or enable the new editor if it has been disabled.
+
+{{% alert color="warning" %}}
+This option will be removed before the GA version of Mendix 11.0.
+{{% /alert %}}
+
+For more information, see [Defining Access Rules Using the New Editor](/refguide10/access-rules/#new-editor) section of the Mendix 10 documentation *Access Rules*.
 
 ### App Explorer
 
@@ -277,9 +295,17 @@ You can publish data as a GraphQL service. When you enable this feature, you can
 
 ### Maia
 
-#### Enable Domain Model Generator
+#### Enable Maia for Domain Model
 
-Enable this option to help you generate entities and associations for empty domain models. For more information on how to use this feature, see [Domain Model Generator](/refguide/domain-model-generator/).
+Enable this option to help you generate entities and associations for your domain models. For more information on how to use this feature, see [Maia for Domain Model](/refguide/maia-for-domain-model/).
+
+#### Enable Maia for Pages
+
+Enable this option to help you generate pages by adding and configuring widgets based on text input and an optional image. For more information on how to use this feature, see [Maia for Pages](/refguide/maia-for-pages/).
+
+#### Enable Maia for OQL
+
+Enable this option to help you generate and manage OQL (Object Query Language) queries through an intuitive interface. For more information on how to use this feature, see [Maia for OQL](/refguide/maia-for-oql/).
 
 #### Enable Translation Generator
 
@@ -288,10 +314,6 @@ Enable this option to help you translate your model to different languages throu
 ### Mapping Editor
 
 This setting allows you to set the beta version as the default editor.
-
-### Navigation
-
-This setting allows you to move forward and backward through your editing history to show the documents you have recently worked on. You must restart Studio Pro to use this feature.
 
 ### Online Synchronization Mode
 
