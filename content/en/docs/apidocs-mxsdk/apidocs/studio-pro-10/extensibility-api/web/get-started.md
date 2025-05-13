@@ -9,7 +9,7 @@ weight: 2
 
 Studio Pro extensions can be developed using typescript and use standard web development technologies to extend the Studio Pro development environment. This guide shows you how to set up a basic development environment for building an extension using the web extensibility API.
 
-You can view the api reference documentations [here](http://apidocs.rnd.mendix.com/10/extensions-api/index.html).
+For more information see the [Mendix Studio Pro Web Extensibility API](http://apidocs.rnd.mendix.com/10/extensions-api/index.html).
 
 ### Prerequisites
 
@@ -103,7 +103,7 @@ To test the extension, do the following in File Explorer.
 
     These flags instruct Studio Pro to do the following:
 
-    * Load extensions from the webextensions folder
+    * Load extensions from the `webextensions` folder
     * Enable web debugging tools which will be useful when developing your extension
 
 1. In Studio Pro, open the new app. 
