@@ -1,31 +1,28 @@
 ---
-title: "Unix-Like Deployment"
-url: /developerportal/deploy/unix-like/
-description: "How to install and configure Mendix on a Unix-like system"
+title: "Linux Deployment"
+url: /developerportal/deploy/linux/
+description: "How to install and configure Mendix on a Linux system"
 weight: 99
-#To update these screenshots, you can log in with credentials detailed in How to Update Screenshots Using Team Apps.
+aliases:
+    - /developerportal/deploy/unix-like/
 ---
+
+{{% alert color="warning" %}} Linux deployment is only supported on Debian 10 (buster) and using Mendix Runtime versions 7-9. Further version support will not be added anymore.  {{% /alert %}}
 
 ## Introduction
 
-Mendix can be installed on-premises on systems running Unix-like operating systems. The installation consists of the following:
+Mendix can be installed on premises on systems running Linux. The installation consists of the following:
 
-* m2ee-tools: a command line tool used for managing your Mendix installation
+* M2ee-tools - A command line tool used for managing your Mendix installation
 * Mendix Runtime
 * Java Runtime Environment
 * Web server
 
-For a list of the operating systems which are currently supported, see [Operating System](/refguide/system-requirements/#server-os) in *System Requirements*.
-
-Installation on other Unix-like operating systems is possible, but these have not been tested and cannot be supported by Mendix.
+For a list of the distributions which are currently supported, see [Operating System](/refguide/system-requirements/#server-os) in *System Requirements*.
 
 ## Technical Documentation
 
-The documentation describing the installation and basic configuration of the Mendix software on a Unix-like system is available as part of the m2ee-tools helper program: [https://github.com/mendix/m2ee-tools/tree/develop/doc/README.md](https://github.com/mendix/m2ee-tools/tree/develop/doc/README.md).
-
-{{% alert color="info" %}}
-Specific Mendix versions require specific versions of the buildpack. For more information, see [Supported Mendix Versions](https://github.com/mendix/cf-mendix-buildpack#supported-mendix-versions).
-{{% /alert %}}
+The documentation describing the installation and basic configuration of the Mendix software on a Linux system is available as part of the m2ee-tools helper program: [https://github.com/mendix/m2ee-tools/tree/develop/doc/README.md](https://github.com/mendix/m2ee-tools/tree/develop/doc/README.md).
 
 ## License Key Activation on Linux
 
