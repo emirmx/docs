@@ -1,7 +1,7 @@
 ---
 title: "Best Practice Recommender"
 url: /refguide10/best-practice-recommender/
-weight: 10
+weight: 15
 description: "Describes Best Practice Recommender in Mendix Studio Pro."
 aliases:
     - /refguide10/mx-assist-performance-bot/
