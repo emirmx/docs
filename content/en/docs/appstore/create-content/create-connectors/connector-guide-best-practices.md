@@ -179,7 +179,7 @@ If you are using Studio Pro [8.18](/releasenotes/studio-pro/8.18/) or older, you
 
 Use a **ConnectionDetails** entity for all general connection and security settings for the call. Use a **ConnectionDetails_Get** microflow in all your operations. This makes it easy to change all the settings in one location. Individual settings can be stored in a constant or in the database, and set during creation. Using constants is recommended because this avoids a dependency on the encryption module.  
 
-{{% alert color="warning" %}} Using either the default value of a constant, nor the project’s configuration setting is unsafe. Both these places are readable by others and visible in the version management. If you can share these settings with other developers, set them in the project configuration and leave the default values blank. This will limit the risk of accidentally exposing the settings when exporting the module.{{% /alert %}}
+{{% alert color="warning" %}} Using either the default value of a constant, or the project’s configuration setting is unsafe. Both these places are readable by others and visible in the version management. If you can share these settings with other developers, set them in the project configuration and leave the default values blank. This will limit the risk of accidentally exposing the settings when exporting the module.{{% /alert %}}
 
 If you need to store sensitive information in the database, always use the [Encryption](/appstore/modules/encryption/) module to encrypt and store, and to retrieve and decrypt the information.
 
@@ -191,7 +191,9 @@ It is better to use non-persistable entities, and let the user decide how to sto
 
 ### Toolbox Actions and Non-Persistable Entities (NPEs)
 
-Toolbox actions need clear naming, consistent categorization, and documentation, and NPEs should be well-organized visually.
+Toolbox actions need clear naming, consistent categorization, and documentation.
+
+NPEs should be well-organized visually.
 
 ### Attributes
 
@@ -213,9 +215,9 @@ Any dependencies your module has should be well documented, including the minimu
 
 ### IP Protection
 
-For members of the [Mendix Partner Program](/appstore/partner-program/) and the [Mendix Commercial Solution Partner Program](https://www.mendix.com/partners/become-a-partner/isv-program/), protecting your intellectual property (IP) or preventing end-users from changing any logic that you ship in a module using Mendix tooling is possible. For details, see [How to Apply IP Protection](/appstore/creating-content/sol-ip-protection/).
+Members of the [Mendix Partner Program](/appstore/partner-program/) and of the [Mendix Commercial Solution Partner Program](https://www.mendix.com/partners/become-a-partner/isv-program/) can protect their intellectual property (IP) or prevent end users from changing any logic shipped in a module using Mendix tooling. For details, see [How to Apply IP Protection](/appstore/creating-content/sol-ip-protection/).
 
-If protecting your IP or preventing end-users from changing your logic is not a requirement, you can use all the tooling that Mendix provides to build a connector using available Mendix tools. If you want IP protection today, you need to implement the sensitive parts of the module in a hidden Java library. 
+If protecting your IP or preventing end users from changing your logic is not a requirement, you can build a connector using available Mendix tools. If you want IP protection today, you need to implement the sensitive parts of the module in a hidden Java library. 
 
 ### Performance Considerations
 
@@ -229,7 +231,7 @@ When importing large datasets into Mendix application, use streamable formats to
 
 If using NPEs, data retrieved by the connector is loaded into memory, so it is important to avoid requesting large amounts of data from an underlying system in a single call. Limiting or paginating the size of the retrieved data will lead to better performance for the Mendix app. Use server-side pagination for search results.
 
-To provide a proper user experience, the amount of data loaded and rendered on the page needs to be limited. A typical page size of 25 objects or 100 objects is recommend, with "load more" and filter/search options for optimized navigation through the dataset.
+To provide a proper user experience, the amount of data loaded and rendered on the page needs to be limited. A typical page size of 25 objects or 100 objects is recommend, with options to load more and filter or search for optimized navigation through the dataset.
 
 #### Import Mappings (Deep Structures)
 
@@ -237,23 +239,23 @@ Mendix does not support import mappings for recursive structure. Consider simpli
 
 #### Caching
 
-Use caching for frequently retrieved objects to reduce redundant database actions.
+Use caching to reduce redundant database actionfor frequently retrieved objects.
 
 #### Domain Model
 
-A connector exposes the data of underlying system using its domain model. Consider the following during the domain model design so that app performs well:
+A connector exposes the data of the underlying system using its domain model. Consider the following during the domain model design to ensure proper app performance:
 
-* Do not expose the full data model complexity of the underlying source system in the connector domain model to facilitate easy data exchange. Try to only expose those pieces that are relevant for implementing your connector inside of the application of the implementing developer.
-* Keep connector logic (Java actions code, microflows) as light as possible. You need the ability to properly connect, but overcomplicating connector logic will be more difficult to implement.
-* Limit levels of inheritance and associations to not more than two, using persistable entities. In case of NPEs, this is not an issue, so consider using NPEs where possible.
-* Minimize the use of reference set (many-to-many) associations. Mendix retrieves the IDs (per row for a list retrieve) on every query. As a result, many references—and especially reference sets—cause extra queries and thus extra load on the database.
-* Consider adding indices where relevant. And make sure to add them in a way that they make sense with the querying logic in your connector and/or use cases for implementing apps.
-* Keep your persistable entities from growing too large. You may do this by adding a cleanup scheduled event scheduled event, which you should make configurable via constants (for example, for the batch size used to remove {x} amount of objects at a time).
-* Add a flexible but secure set of entity access rules based on the module roles that you add for access to the module. Keep in mind the use cases for your connector. If you are able to avoid any persistable data, that is recommended. 
+* Do not expose the full data model complexity of the underlying source system in the connector domain model to facilitate easy data exchange. Try to only expose those pieces that are relevant for implementing your connector in the application of the implementing developer.
+* Keep connector logic, such as Java actions code and microflows, as light as possible. An overcomplicated connector logic is more difficult to implement.
+* Limit levels of inheritance and associations to no more than two, using persistable entities. This is not an issue for NPEs, so consider using them where possible.
+* Minimize the use of reference set (many-to-many) associations. Mendix retrieves the IDs (per row for a list retrieve) on every query. As a result, many references, and especially reference sets, cause extra queries, and thus extra load on the database.
+* Consider adding indices where relevant. Make sure to add them in a way that they make sense with the querying logic in your connector and/or use cases for implementing apps.
+* Keep your persistable entities from growing too large. You may do this by adding a scheduled cleanup event, which you should make configurable via constants. An example of this is removing {x} amount of objects at a time.
+* Add a flexible but secure set of entity access rules based on the module roles that you add. Keep in mind the use cases for your connector. Mendix recommends you avoid any persistable data. 
 
 ## Configuration
 
-Configuration should ensure that your connector can be used in different settings without changes to the module itself. This means that upon deployment or after deployment your connector can be configured to connect to the relevant services. 
+You should set up your configuration in such a way as to ensure that your connector can be used in different settings without changes to the module itself. This means that upon deployment or after deployment your connector can be configured to connect to the relevant services. 
 
 Using constants is the way to deal with configuration that aligns with the [Twelve-Factor Architecture](https://www.mendix.com/evaluation-guide/enterprise-capabilities/twelve-factor-architecture/) cloud-native approach.
 
@@ -263,33 +265,35 @@ When you are looking for a simple configuration, such as a URL, username, or pas
 
 #### Simple Configuration with a Free App Environment
 
-When using constants in combination with a Free App, you can use the settings profile to allow for different configuration.
+When using constants in combination with a Free App, you can use the settings profile to allow for different configurations. Follow these steps to do that:
 
 1. Create a constant.
 
-    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/simple-config-constant.png" class="no-border" >}}
+    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/simple-config-constant.png">}}
 
 2. Set the value of the constant to the value you want to use in your free cloud node.
 
-    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/simple-config-value.png" class="no-border" >}}
+    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/simple-config-value.png" >}}
 
-3. Open your application **Settings**. Click **Duplicate** or **New** to create a new configuration for your local usage.
+3. Open your application **Settings**. 
 
-    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/simple-config-settings.png" class="no-border" >}}
+4. Click **Duplicate** or **New** to create a new configuration for your local usage.
 
-4. In your configuration, open the **Constants** tab and click **New**.
+    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/simple-config-settings.png">}}
 
-    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/simple-config-new-constants.png" class="no-border" >}}
+5. In your configuration, open the **Constants** tab and click **New**.
 
-5. Look up and select your constant.
+    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/simple-config-new-constants.png">}}
 
-    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/simple-config-select-constant.png" class="no-border" >}}
+6. Look up and select your constant.
 
-6. Change the configuration value of your constant to the value you want to use on your local environment.
+    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/simple-config-select-constant.png">}}
 
-    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/simple-config-change-value.png" class="no-border" >}}
+7. Change the configuration value of your constant to the value you want to use in your local environment.
 
-7. Save all configuration and publish your application to your free node. When you run locally, Studio Pro will now use the **Active** configuration, while the free cloud node will keep using the value you specified in the **App Explorer**.
+    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/simple-config-change-value.png">}}
+
+8. Save the configuration and publish the application to your free node. When you run locally, Studio Pro will now use the **Active** configuration, while the free cloud node will keep using the value you specified in the **App Explorer**.
 
 ### Complex Configuration
 
@@ -299,71 +303,75 @@ You might need a more sophisticated configuration to connect to external systems
 
 The following are the disadvantages of complex configuration:
 
-* Configuration in the database or the codebase means it is more difficult to deploy your connector/app just to any new environment
-* Manual configuration could cause more mistakes
-* Restoring a database to a different environment when the configuration is stored in the database could cause unwanted behavior
-
-One big risk of using the database to store configuration is something we have all seen go wrong at some point in time: test data going out to production users, or worse.
+* Configuration in the database or the codebase makes it difficult to deploy your connector/app to any new environment.
+* Manual configuration could cause more mistakes.
+* Restoring a database to a different environment when the configuration is stored in the database could cause unwanted behavior.
+* One big risk of using the database to store configuration is test data going out to production users.
 
 #### Advantages of Complex Configuration
 
 The following are the advantages of complex configuration: 
 
-* More complex configuration then you could ever capture in constants
-* Easy runtime changes of the configuration
-* Option to add wizards/helper flows to guide the user with the configuration
+* It provides more complexity than constants.
+* You can easily perform runtime changes on the configuration.
+* You can add wizards/helper flows to guide the user with the configuration.
 
 #### Setting Up Complex Configuration
 
-The following steps walk you through complex configuration: 
+Follow these steps to set up complex configuration: 
 
 1. Set up a **Configuration** entity.
 
-    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/complex-config-entity.png" class="no-border" >}}
+    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/complex-config-entity.png">}}
 
-2. Create the microflow. Have a single microflow called **DS_GetOrCreateSettings** that is the only place in your application to acquire your settings. This microflow would retrieve your settings from the database and creates it if this does exist with appropriate default values.
+2. Create the microflow.  
+   Have a single microflow called **DS_GetOrCreateSettings**. It will retrieve your settings from the database, and create it with appropriate default values if it does not exist.
 
-    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/complex-config-create-microflow.png" class="no-border" >}}
+    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/complex-config-create-microflow.png">}}
 
 3. Set up security on the entity and the microflow.
 
-    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/complex-config-security.png" class="no-border" >}}
+    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/complex-config-security.png" >}}
 
-    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/complex-config-security-2.png" class="no-border" >}}
+    {{< figure src="/attachments/appstore/create-content/create-connectors/connector-guide-best-practices/complex-config-security-2.png" >}}
 
-4. Set up the administrator page. Have an administration page to manage the configuration. For maximum reusability, have all configuration settings available in a single snippet so your consumer can combine all admin sections from all components into a single area in their application.
+4. Set up the administrator page.  
+   Have an administration page to manage the configuration. For maximum reusability, have all configuration settings available in a single snippet so your consumer can combine all admin sections from all components into a single area in their application.
 
 5. Encrypt the password and other sensitive information.
 
 ##### Further Considerations
 
-When possible, create a microflow to set up the default or starting configuration for your consumers. Consider adding logic so you can code the configuration in a microflow to easily configure from your code base.
+When possible, create a microflow to set up the default or starting configuration for your consumers. 
+
+Consider adding logic so the configuration can easily be set up from your codebase.
 
 If possible, add an export/import option for the configuration to safely move the configuration between environments. This could be achieved via a JSON export/import of the configuration data.
 
 ## Security
 
-Security for components should be set up in a generic, granular, and secure way. When choosing your module roles, think about the most granular configuration, allowing end-users maximum flexibility in setting up roles. 
+Security for components should be set up in a generic and granular way. When choosing your module roles, think about the most granular configuration which also allows end users maximum flexibility. 
 
 ### Module Security
 
 The following recommendations apply to module security:
 
-* Module roles should always be set up even if there is limited or no UI to allow the user to extend your component without having to customize. 
-* Use clear granular roles, in which the role **Documentation** field clearly explains the purpose of each role.
+* Module roles should always be set up, even if there is limited or no UI to allow the user to extend your component without having to customize. 
+* Use clear granular roles, in which the **Documentation** field clearly explains the purpose of each role.
 * Keep security as simple as possible. Find a balance between granularity and simplicity. 
-* Always keep configuration and data access separate. In most organizations, administrators should not have access to the data. If your organization is different, you can always combine module roles but consumers cannot split them.
+* Always keep configuration and data access separate.  
+In most organizations, administrators should not have access to the data. If your organization is different, you can always combine module roles, but consumers cannot split them.
 * Make sure to [implement best practices for app security](/howto/security/best-practices-security/).
 
-See [Module Security](/refguide/module-security/) for more detailed information.
+See [Module Security](/refguide/module-security/) for more details.
 
 ### Entity Security
 
-Think about how to apply access rules and read or write to your domain model. For example, if you do not give any rights to objects, you are telling the developer to use a data transformation layer and create their own objects to build their pages, or enrich their own objects with results coming from the connector.
+Think about how to apply access rules and read or write permissions to your domain model. For example, if you do not give any rights to objects, developers have to use a data transformation layer and create their own objects to build their pages, or enrich their own objects with results coming from the connector.
 
 ### Passwords and Other API keys
 
-If you store a password or API keys for your endpoint, always encrypt the password and API keys using the [Encryption](/appstore/modules/encryption/) module.
+If you store a password or API keys for your endpoint, always encrypt them using the [Encryption](/appstore/modules/encryption/) module.
 
 ### Typical Security Schemes
 
@@ -371,17 +379,20 @@ There are several security schemes you might encounter when building a connector
 
 #### Client Credentials
 
-Security via client credentials is a very basic security method. Given that you use the login name and password, the only protection when sending it over to the service you are integrating with is an encrypted connection over SSL. If that is unavailable, make sure to never use this type of encryption. 
+Security via client credentials is a very basic security method. Given that you use the login name and password, the only protection when sending it to the service you are integrating with is an encrypted connection over SSL. If that is unavailable, make sure to never use this type of encryption. 
 
 #### API Tokens
 
-API tokens help when securing an API. But an API payload sent in plain text could still be intercepted. Only use API tokens when you have at least an SSL connection. 
+API tokens help when securing an API. However, an API payload sent in plain text could still be intercepted. Only use API tokens when you have at least an SSL connection. 
 
 #### OAuth
 
-OAuth comes in two types. In the first, an Authorization Code flow, the user does a login to the service providing the OAuth authentication to give access to their data on a per-user basis. The second type, with Client Credentials, provides a public and private key with access tokens for server-to-server communication. 
+OAuth comes in two types:
 
-OAuth is a secure, because the secret key is never exchanged during API requests. As long as you store the secret key safely in your own app, it will not be possible to hijack your credentials for the API provider if you are using HTTPS.
+* An Authorization Code flow – The user logs in to the service through OAuth authentication, thus giving access to their data on a per-user basis. 
+* Client Credentials – Provide a public and private key with access tokens for server-to-server communication. 
+
+OAuth is a secure schema because the secret key is never exchanged during API requests. As long as you store the secret key safely in your own app, and you use HTTPS, your credentials for the API provider cannot be hijacked.
 
 #### SAML
 
@@ -389,9 +400,9 @@ The [SAML](/appstore/modules/saml/) module, available on the Mendix Marketplace,
 
 ## Testing {#testing}
 
-You can test Mendix by calling microflows with the [Unit Testing](/appstore/modules/unit-testing/) module for whole pieces of functionality. Use unit tests for smaller, more targeted tests at the method-level of your Java code.
+You can use the [Unit Testing](/appstore/modules/unit-testing/) module to test Mendix by calling microflows for whole pieces of functionality. Use unit tests for smaller, more targeted tests at the method-level of your Java code.
 
-As with any automated testing, it is a great supplement for capturing known, expected behavior. For capturing known unknowns and unknown unknowns, Mendix recommends risk-based exploratory testing.
+As with any automated testing, it is a great supplement for capturing known, expected behavior. For capturing unknown behavior, Mendix recommends risk-based exploratory testing.
 
 ### Testing Microflows
 
@@ -408,9 +419,8 @@ The following tools are part of the testing process of custom Java code in your 
 * [JUnit](https://junit.org/junit5/) — This allows you to run Java unit tests easily.
 * [Mockito](https://site.mockito.org/) — This allows you to mock Java classes. You can fake a class during a test so that it thinks that it deals with a real class, while it is actually just behaving like one.
 * [JaCoCo](https://www.jacoco.org/jacoco/trunk/index.html) (Java Code Coverage) — This helps you check how well your code is covered by tests.
-* Gradle — This pulls everything together to manage Java dependencies, and provides a way to work with JUnit and Mockito.
-
-Gradle can handle managing Java dependencies and running [JUnit](https://junit.org) tests. Read about setting up Gradle in [Extending App Setup for Building Connectors with Java](#extend-app-java). If you have a pipeline, Mendix recommends running your tests as part of it. 
+* [Gradle](https://gradle.org/) — This pulls everything together to manage Java dependencies, and provides a way to work with JUnit and Mockito.  
+   Gradle can handle managing Java dependencies and running [JUnit](https://junit.org) tests. Read about setting up Gradle in [Extending App Setup for Building Connectors with Java](#extend-app-java). If you have a pipeline, Mendix recommends running your tests as part of it. 
 
 #### Using the Java Unit Test Reference
 
@@ -418,9 +428,9 @@ Mendix apps need `Core` classes, and the **Class Core** [Runtime API](/apidocs-m
 
 Our [Java unit test reference](https://Github.com/mendixlabs/javaunittestreference) is available to help you through this process. `MendixUnitTestBase.java` is extendable and reusable for your own purposes. When extended, it enables Mockito on your test classes and mocks `Core` API behavior.  This does the following:
 
-* Checks that your code sends a certain log message to a log node
-* Verifies that your code calls a microflow with correct parameters
-* Makes constants available to your Java code
+* Checks that your code sends a certain log message to a log node.
+* Verifies that your code calls a microflow with correct parameters.
+* Makes constants available to your Java code.
 
 {{% alert color="info" %}}
 The Java unit test reference has been tested up to and including Studio Pro [9.12](/releasenotes/studio-pro/9.12/).
@@ -428,7 +438,7 @@ The Java unit test reference has been tested up to and including Studio Pro [9.1
 
 #### Writing Java Code
 
-When writing Java code, try to use as much Mendix-independent logic as possible. This helps with testability, so you do not have to mock Mendix Core to unit test the Java code. 
+When writing Java code, try to use as much Mendix-independent logic as possible. This helps with testability, so you do not have to mock Mendix `Core` to unit test the Java code. 
 
 If you code the bulk of the behavior in generic Java classes that can run without Mendix, development and testing becomes a lot simpler and faster. There is no need to run your Mendix app to test, and you can also rely on Java JUnit tests for testing.
 
@@ -443,17 +453,17 @@ When calling a REST service, you can run into an error. This can be one of two t
    
 If there is no response, the default error handling is enough. This will typically occur when the endpoint is down or when you get a timeout.
 
-If there is a response the error message will contain the error code and the reason, but not the message. For that reason, add an additional log message with the response and then rethrow the error. Add details about the request that will help the developer.
+If there is a response, the error message will contain the error code and the reason, but not the message. For that reason, add an additional log message with the response, then rethrow the error. The log message should include details about the request that will help the developer.
 
-Any input, such as objects or path parameters might trigger an error event in the REST call. It is unnecessary to check them for empty values in the connector itself. Make sure to check them for empty before using [urlEncode](/refguide/string-function-calls/#urlEncode).
+Any input, such as objects or path parameters, might trigger an error event in the REST call. It is not necessary to check them for empty values in the connector itself, but do make sure to check them before using [urlEncode](/refguide/string-function-calls/#urlEncode).
 
 In some situations, the error response from the service has its own structure that you want to leverage. For example, when there is a bad request, you might want to pass that message back to the user instead of logging it. However, you cannot return two different objects from one microflow. In those situations, combine the response from the error message with the regular message. In all other situations, the error is unexpected, and you can return the error.
 
-## Release and Versioning
+## Releasing and Versioning
 
-This section addresses best practices for releasing your connector and using a versioning system. For the basic instructions for releasing, versioning, and distributing your connector, see the [Exporting the Connector](/appstore/creating-content/connector-guide-build/#export) and [Distributing the Connector](/appstore/creating-content/connector-guide-build/#distribute) sections of *Build Connectors*. 
+This section addresses best practices for releasing your connector and using a versioning system. For the basic instructions for releasing, versioning, and distributing your connector, see the [Exporting the Connector](/appstore/creating-content/connector-guide-build/#export) and [Distributing the Connector](/appstore/creating-content/connector-guide-build/#distribute) sections of *Creating Connectors*. 
 
-### Release
+### Releasing
 
 Ensure a new release includes the following:
 
@@ -462,13 +472,13 @@ Ensure a new release includes the following:
 
 ### Versioning {#versioning}
 
-The [Update Existing Marketplace Content](/appstore/submit-content/#updating) section of *Share Marketplace Content* provides explanations of the recommended versioning system. The following points go into more detail on the versioning number system:
+The [Updating Existing Marketplace Content](/appstore/submit-content/#updating) section of *Uploading to the Marketplace* provides explanations of the recommended versioning system. The following points go into more detail on the versioning number system:
 
-* *Major version* — This is the first digit. This number goes up when you release major breaking changes, or at the very least a major new feature, as part of your connector. Determining what is major is up to you. You can deploy minor/patch versions for older major versions when you have bugs that need resolving.
+* Major version — This is the first digit. This number goes up when you release major breaking changes, or at the very least a major new feature, as part of your connector. Determining what is major is up to you. You can deploy minor/patch versions for older major versions when you have bugs that need resolving.
 
-* *Minor version* — This is the second digit. This number goes up when you release minor changes that do not break backwards compatibility, fixes some bugs, or adds small new features. Depending on your development cycle, this could be intermediate releases in smaller batches.
+* Minor version — This is the second digit. This number goes up when you release minor changes that do not break backwards compatibility, and that fix some bugs, or add small new features. Depending on your development cycle, this could be intermediate releases in smaller batches.
 
-* *Patch version* — This is the third digit. This number goes up when you really have to patch a bug for a specific version and it cannot be released as part of your next major or minor version. While it is allowed to add new patch versions to older major versions, you cannot add patch versions to older minor versions within the Marketplace.
+* Patch version — This is the third digit. This number goes up when you really have to patch a bug for a specific version and it cannot be released as part of your next major or minor version. While it is allowed to add new patch versions to older major versions, you cannot add patch versions to older minor versions within the Marketplace.
 
 ## Licensing
 
