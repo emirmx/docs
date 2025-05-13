@@ -22,6 +22,7 @@ Certain OIDC Provider module versions are compatible with certain versions of St
 
 | Mendix Version | OIDC Provider Version |
 | --- | --- |
+| 10.21.01 and above | 4.2.0 and above |
 | 10.12.10 and above | 4.0.0 and above |
 | 9.24.18 and above | 3.2.0 and above |
 
@@ -92,14 +93,14 @@ The OIDC Provider has the following features and limitations:
 * It supports responsive web applications, using the common OAuth Authorization Code grant.
 * Your apps can be registered as an OIDC client with the OIDC Provider using the client registration API or client configuration screen. The client registration API allows you to register your client automatically when using a CI/CD deployment pipeline.
 * It publishes a well-known endpoint to communicate endpoints and other IdP characteristics to client applications. Mendix apps using the OIDC SSO module will consume this endpoint to perform actions like retrieving the keys needed to validate ID-tokens that they receive.
-* It supports the OIDC ‘nonce’ parameter, PKCE, and multiple client authentication methods ( client_secret_post, client_secret_basic) as security features.
+* It supports the OIDC ‘nonce’ parameter, PKCE, and multiple client authentication methods (client_secret_post, client_secret_basic) as security features.
+* The module connects mobile apps easily, just like web apps.
 
 #### Limitations
 
 * The hybrid resource owner password credential is not supported, although the OIDC Provider may contain some (rudimentary) implementation to support it.
 * The OIDC Provider service ignores "email", "phone" and "profile" scope values (as specified by OIDC specs) when the client includes these in an authentication request. Instead, the OIDC Provider service will include user claims in an ID-token based on a custom microflow, regardless of the scopes in the request.
 * Front channel and back-channel logout are implemented as alpha features.
-* The module does not support `CustomRedirectLogicMicroflow` constant.
 
 ### Dependencies
 
@@ -429,16 +430,24 @@ Some examples of existing claims are:
 
 This section applies only when your client is using the authorization code grant.
 
+#### Provider App Acting as an Identity Provider (IdP)
+
 Consider a scenario, where you build an app using the [OIDC Provider](https://marketplace.mendix.com/link/component/214681) service. You can call this app an OIDC Provider app or Provider app. Other apps using the [OIDC SSO](https://marketplace.mendix.com/link/component/120371) module redirect end-users to your Provider app for authentication. You can choose how your Provider app handles the authentication process.
 The **LoginLocation** is a constant in the OIDC Provider service that controls where end-users are authenticated. The default value is a local sign in using a username and password as shown below:
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/oidc-provider/Basic_Username_Password.png" class="no-border" >}}
 
+#### Provider App Acting as an IAM Broker
+
 However, if you want the Provider app to act as an IAM broker, you need to redirect the authorization request within your Provider app to the endpoint of the local SSO module you choose to use. To do so, perform the steps below:
 
 1. Set the **LoginLocation** to the login URL of the SSO module.
-1. Include the return parameter name.
-For example, `SSO/Login?cont=` is the login URL and `cont` is the return parameter name.
+2. When you use the OIDC SSO as local SSO module in the provider application, set the **LoginLocation** value as `oauth/v2/login?cont=`.
+3. When you deployed your application on Mendix Cloud and linked to a licensed node, set the below values in the **Custom Runtime Settings**.
+
+| Setting type | Current value | New value |
+| --- | --- | --- |
+| com.mendix.core.SamSiteCookies | LAX | LAX |
 
 ## Configuring an OIDC Client
 
@@ -472,6 +481,18 @@ You need to configure the OIDC SSO module in your app which is using the IAM bro
 1. Sign back in to the app using the OIDC SSO client alias you have just configured.
 1. Login by entering credentials of the user which you have created earlier on OIDC provider Accounts section.
     You should be able to login successfully and get into the index.html page
+
+## Using `CustomRedirectLogicMicroflow` Microflow
+
+Use the constant `CustomRedirectLogicMicroflow` to specify which microflow determines where the user should be directed. This microflow has the following signatures:
+
+ **Input Parameter**: `username` (String) – The username of the user logging in.
+
+**Return Value**: `Boolean` – Indicates whether the user should be sent to the client application or to the SSO provider application.
+
+**True**: Direct the user to the client application (their original destination).
+
+**False**: Direct the user to the SSO provider application.
 
 ## Token Formats for Non-Custom Claims
 
@@ -552,8 +573,12 @@ In versions of the OIDC Provider above 2.0.0, the sub value was changed from an 
 
 ### Infinite Loop of Redirects
 
-The OIDC Provider service sets a cookie as a means to persist the session in the user’s browser. If the cookie is not properly set, this may lead to problems. For example, when the OIDC Provider service is used to build an IAM Broker, no session is established and the broker may initiate a new session at the upstream IdP, which results in an ‘infinite loop’ of redirects via the user’s browser.
+The OIDC Provider service sets a cookie as a means to persist the session in the user’s browser. If the cookie is not properly set, this may lead to problems. For example, when the OIDC Provider service is used to build an IAM Broker, no session is established and the broker may initiate a new session at the upstream IdP, which results in an ‘infinite loop’ of redirects via the user's browser.
 To ensure the cookie is properly set, the runtime setting com.mendix.core.SameSiteCookies must have value None. See [Environment Details](/developerportal/deploy/environments-details/#samesite) for more information how to set the correct value for SameSite runtime setting. Note that the default value for this setting changed in [Mendix 8.11](/releasenotes/studio-pro/8.11/).
+
+### On-premise Deployment and IIS
+
+In an on-premise deployment scenario, if you want to allow users to navigate freely between applications, you must unselect the **Reverse rewrite host in response header** check box in IIS, under **IIS** > **Server** > **Application Request Routing** > **Proxy Settings**. If you leave this option enabled, redirects for authentication fail for users who are already logged in (have the cookie) if they navigate to one of the applications that would need to authenticate with the Provider service. This issue happens because IIS rewrites the host in the response header, resulting the in request attempting to authenticate on itself for authentication instead of the Provider service.
 
 ## Authorization{#authorization}
 
@@ -601,11 +626,11 @@ When Using IAM Brokering, accounts which can be used by OIDC provider are synced
 
 This means that the access token will contain a "sub" claim which gets value from the `MendixUserID` attribute of the `AccountDetail` entity.
 
-#### Using the AccountDetail Page of the OIDC Provider service
+#### Using the AccountDetail_Overview Page of the OIDC Provider service
 
-This method allows OIDC Provider service to be used separately as an IDP without building an IAM structure.
+This method allows OIDC Provider service to be used separately as an IdP without building an IAM structure.
 
-Where there is no IAM brokering functionality, the administrator can create end-users (Accounts) using the AccountDetail page in the OIDC Provider service. This page creates `AccountDetail` objects which automatically create `Account` objects in the app to represent the AccountDetails as accounts.
+When there is no IAM brokering functionality, the administrator can create end-users (Accounts) using the `AccountDetail_Overview` page in the OIDC Provider service. This page creates `AccountDetail` objects which automatically create `Account` objects in the app to represent the AccountDetails as accounts. If you want the user to log in through the provider as an IdP, make sure that the user has been created via the `AccountDetail_Overview` page.
 
 ### Structure of ID and Access Tokens
 

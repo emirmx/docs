@@ -7,7 +7,7 @@ description: "Describes the steps required to use the Mendix External Database c
 
 ## Introduction
 
-The [External Database connector](/appstore/modules/external-database-connector/) allows you to connect to databases and select data to use in your app. You can use it to directly test connections and queries during configuration in Studio Pro at design time. For Mendix apps that use Databricks as their database, the External Database connector is the recommended integration option for Mendix 10.20.0 and up.
+The [External Database connector](/appstore/modules/external-database-connector/) allows you to connect to databases and select data to use in your app. You can use it to directly test connections and queries during configuration in Studio Pro at design time. For Mendix apps that use Databricks as their database, the External Database connector is the recommended integration option for Mendix 10.20.0 and above.
 
 This how-to describes the steps required to enable your app to use the External Database connector with Databricks.
 
@@ -121,3 +121,7 @@ After you have created a table with some entries, you can now be query from your
     {{< figure src="/attachments/appstore/platform-supported-content/modules/databricks/JA_Query.png" >}}
 
 7. Link the microflow to a microflow button and use the Debugger to test if the objects are properly returned.
+
+## Read More
+
+* [External Database Connector: Resolving Apache Arrow dependency issue in Databricks](/appstore/modules/external-database-connector/#apache-arrow-databricks)

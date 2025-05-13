@@ -44,6 +44,8 @@ To use PAT (or another equivalent), you need to specify it in the **Password** f
 
 {{< figure src="/attachments/refguide/version-control/on-premises-git/sign-in-dialog.png" alt="Sign In dialog" class="no-border" >}}
 
+{{% alert color="info" %}}When using a PAT for the Mendix platform, fill in your email in the **Username** field. For more information on how to create a PAT for the Mendix platform, see the [Personal Access Tokens](/community-tools/mendix-profile/user-settings/#pat) section in *User Settings*.{{% /alert %}}
+
 Currently Mendix keeps PAT using operating system supported solutions:
 
 * For Windows, Mendix uses a credential locker mechanism, accessible to users by using Credential Manager.
@@ -54,7 +56,6 @@ Currently Mendix keeps PAT using operating system supported solutions:
 Studio Pro can use Windows Authentication for Git service providers that support it. When you use Windows Authentication, you do not need to provide a password. 
 
 You can enable Windows Authentication in [Git Preferences settings](/refguide/preferences-dialog/#enable-windows-authentication).
-
 
 ## Setting Up the Environment
 
@@ -223,6 +224,14 @@ After the import process is completed, your previous Subversion app will be now 
 Note that your previous app still exists, **Studio Pro** will simply make an unversioned copy and upload it to your private Git server. So, in your **Recent Apps** list, you will still see both:
 
 {{< figure src="/attachments/refguide/version-control/on-premises-git/recent-apps.png" alt="Recent Apps form" class="no-border" >}}
+
+### Moving from Team Server to a Private Git Server
+
+To migrate from Mendix Team Server to a private Git server, follow your Git provider's documentation for uploading a full repository clone to their platform.
+
+After migration, download a fresh clone in Studio Pro from your private Git server.
+
+{{% alert color="warning" %}} When redirecting an existing clone by updating the `config` file in the `.git` folder, make sure you remove the `sprintr-project-id` setting to prevent errors in Studio Pro. {{% /alert %}}
 
 ## Read More
 
