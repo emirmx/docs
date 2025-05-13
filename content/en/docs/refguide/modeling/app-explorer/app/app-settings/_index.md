@@ -28,7 +28,9 @@ These settings influence the behavior of the Runtime when running your applicati
 
 ### Use React Client {#react-client}
 
-This setting enables the new React version of the Mendix Client. As of Mendix 11, the React Client is the default for new applications, and the legacy Dojo Client is deprecated. The available options are:
+This setting enables the React version of the Mendix Client. In Mendix 11.0 and above, the React Client is the default for new applications and the legacy Dojo Client is deprecated. 
+
+The available configuration options are as follows:
 
 * **No**: Do not use the React client. This option will trigger a deprecation warning, as the Dojo client is deprecated.
 * **Yes**: Use the React client (default). In this mode, you will get consistency errors for incompatible widgets.
