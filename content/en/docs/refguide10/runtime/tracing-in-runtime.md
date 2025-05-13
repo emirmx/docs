@@ -5,10 +5,6 @@ beta: true
 description: "Describes how to setup and use tracing in the Mendix Runtime."
 ---
 
-{{% alert color="warning" %}}
-This feature is in Public Beta. For more information, see [Beta Releases](/releasenotes/beta-features/).
-{{% /alert %}}
-
 ## Introduction
 
 Starting in version 10.18.0, Mendix now supports tracing via OpenTelemetry. When tracing is enabled the runtime will generate traces that will help you analyze errors and performance.
