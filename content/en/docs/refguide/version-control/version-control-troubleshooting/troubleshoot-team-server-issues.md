@@ -40,20 +40,20 @@ Contact your network administrator and give them this information to allow them 
 Customers experiencing Git-related problems often report the following issues:
 
 * Git operations (clone, commit, pull, push) are unusually slow or never get completed
-* Network timeout errors when connecting to `git.api.mendix.com`
+* Network timeout errors when connecting to `https://git.api.mendix.com`
 * SSL connection failures during Git operations
 * Proxy error
-* Mendix Portal connector errors while trying to create a project or interact with the Team Server
+* Mendix Portal connection errors while trying to create an app or interact with the Team Server
 
 The error messages that you get from known errors and exceptions are represented below.
 
 #### Timeout Error
 
-```Failed to connect to git.api.mendix.com port 443 after 262515 ms: Timed out```
+```Failed to connect to git.api.mendix.com port 443 after 262515 ms: Timed out```.
 
 #### SSL Connection Error
 
-```The SSL connection could not be established```
+```The SSL connection could not be established```.
 
 #### Mendix Portal Connector Exception
 
@@ -66,11 +66,11 @@ Mendix.Modeler.Sprintr.SprintrConnectorException: Error while creating sprintr p
 
 #### Socket Exception and Early EOF
 
-```LibGit2Sharp.LibGit2SharpException: early EOF```
+```LibGit2Sharp.LibGit2SharpException: early EOF```.
 
 #### Proxy Error
 
-```Failed with status 407```
+```Failed with status 407```.
 
 ### Diagnosing Git-Related Issues
 
@@ -86,10 +86,10 @@ To determine which area has an issue there are three diagnosing steps:
 
 The first step is to validate whether CURL is able to reach the Team Server over HTTP.
 * Why – Git uses the CURL library to do network operations over HTTP or HTTPS. If CURL does not work the network infrastructure is interfering. 
-* How – Store the output of the following command on the command line: ```curl -v http://git.api.mendix.com```
-* Validate the output – Beneath you will see a expected response. Lines to note:
-    * Line 6 – We see the request connected to `https://git.api.mendix.com` This means the request has reached our server and was not interrupted.
-    * Line 13 – We see the request returned a permanent redirect. This is expected as we are hitting the HTTP URL, which should redirect to the HTTPS variant.
+* How – Store the output of the following command on the command line: ```curl -v http://git.api.mendix.com```.
+* Validate the output – An expected response is given below. Lines to note:
+    * Line 6 – You see the request connected to `https://git.api.mendix.com`. This means the request has reached the server and was not interrupted.
+    * Line 13 – You see the request returned a permanent redirect. This is expected as CURL is reaching the HTTP URL, which should redirect to the HTTPS variant.
 * Actions to take if something is wrong – Request your internal IT department to look into this and contact Mendix once the CURL request returns an expected request. 
     ```
     curl -v git.api.mendix.com
@@ -125,11 +125,11 @@ The first step is to validate whether CURL is able to reach the Team Server over
 ##### CURL over HTTPS
 The second step is to validate whether CURL is able to reach the Team Server over HTTPS.
 * Why  – Git uses the CURL library to do network operations over HTTP or HTTPS. If CURL does not work the network infrastructure is interfering. 
-* How – Store the output of the following command on the command line: ```curl -v https://git.api.mendix.com```
-* Validate the output – Beneath you will see an expected response. Lines to note:
+* How – Store the output of the following command on the command line: ```curl -v https://git.api.mendix.com```.
+* Validate the output – An expected response is given below. Lines to note:
     * Line 2 – You see the host/domain is resolved.
-    * Line 6 – You see the request connected to `https://git.api.mendix.com` on port 443. This means the request hit our server and was not interrupted.
-    * Line 13 – You see the request returned a permanent redirect. This is expected as we are hitting the HTTP URL, which should redirect to the HTTPS variant.
+    * Line 6 – You see the request connected to `https://git.api.mendix.com` on port 443. This means the request hit the server and was not interrupted.
+    * Line 13 – You see the request returned a permanent redirect. This is expected as CURL is reaching the HTTP URL, which should redirect to the HTTPS variant.
     * Line 23 – Even though this line says 400 Bad Request, this is expected as the teams server is no HTTP server. This line tells you the request made it to the server and a response was given. 
 * Actions to take if something is wrong – Request your internal IT department to look into this and get back to Mendix once the CURL request returns an expected request. 
     ```
@@ -178,25 +178,25 @@ The next step is to verify whether you are behind a VPN, Proxy or Zscaler.
     Current WinHTTP proxy settings:
     Direct access (no proxy server).
     ```
-* Actions to take if something is wrong  – do one of the following:
-    * If you are behind a proxy according:  
+* Actions to take if something is wrong – do one of the following:
+    * If you are behind a proxy:  
         * Retry without VPN or proxy and see if that solves the issue. Reach out to your internal IT department if you are not sure how to test it.
-        * Set up the proxy in Git according to [Troubleshooting Version Control](/refguide/troubleshoot-version-control-issues/#proxy-servers-are-not-supported).
+        * Set up the proxy in Git following the [Proxy Servers Are Not Supported](/refguide/troubleshoot-version-control-issues/#proxy-servers-are-not-supported) section in *Troubleshooting Version Control*.
         A correct example command looks like this: ```git config --global http.proxy https://username:mypassword@someproxyurl.com:123123```
         Please note, if the username or password contains a `:` or a `@`, it might not work.
-    * In case ```netsh.exe winhttp show proxy``` gives an output that implies there is no proxy active, keep this information in mind. If the Git CLI is able to work with Git, but Studio Pro is not, then you can try ```netsh.exe winhttp reset proxy``` to reset your local proxy setting.
+    * In case ```netsh.exe winhttp show proxy``` gives an output that implies there is no proxy active. If the Git CLI is able to work with Git, but Studio Pro is not, then you can try ```netsh.exe winhttp reset proxy``` to reset your local proxy setting.
 
-##### Validate network speed
+##### Validate Network Speed
 
 * Why – Speed gives you a tool to calculate the expected time a clone should roughly take.
 * How – Use a tool to test your network speed, such as [speedtest.net](https://www.speedtest.net/) and write down the download and upload speed.
-* Validate the output – The speeds are in bits, meaning the value has to be divided by 8. if the speed is shown as 80Mbitps, the actual speed is 10MByte per second. This means that a 80MB repo will take at least 8 seconds to download.
+* Validate the output – The speed is in bits, meaning the value has to be divided by 8. if the speed is shown as 80Mbitps, the actual speed is 10MByte per second. This means that a 80MB repo will take at least 8 seconds to download.
 
 #### GIT CLI Interaction with the Team Server {#team-server}
 
 In the section above, you checked: 
 * The ability of CURL to access the Team Server through HTTP and HTTPS
-* Proxy/VPN situation
+* Proxy/VPN 
 * Internet speed
 
 With this information, you can try to get Git working using the command line.
@@ -207,7 +207,7 @@ Studio Pro uses the Git Command Line Interface (CLI) under the hood. However, St
 If you are encountering issues when using Git CLI, this is typically an issue your internal IT department should help with.
 {{% /alert %}}
 
-##### Setup Before Troubleshooting
+##### Prerequisites
 
 You need to setup a [Personal Access Token (PAT)](/community-tools/mendix-profile/user-settings/#pat) to work with Git on the command line. The following permissions should be configured while creating the PAT:
 ```
@@ -289,19 +289,19 @@ All files from the log folder should be shared with Mendix in a Support ticket. 
 
 Given that the commands through Git CLI succeeded, this will help to find out what the problem in Studio Pro is. 
 
-##### If a Full Clone Through Git CLI Succeeded
+##### If a Full Clone Through Git CLI Succeeds
 
-If a full clone through Git CLI succeeded, please attempt a regular clone in Studio Pro. In case this fails, run ```netsh.exe winhttp reset proxy``` on the command line and try again. 
+If a full clone through Git CLI succeeds, please attempt a regular clone in Studio Pro. In case this fails, run ```netsh.exe winhttp reset proxy``` on the command line and try again. 
 If it still fails, gather all files from the log and provide them to Mendix Support.
 
-##### If a Shallow Clone Through Git CLI Succeeded
+##### If a Shallow Clone Through Git CLI Succeeds
 
-If a shallow clone through Git CLI succeeded, attempt a Partial Clone in Studio Pro, by changing the [clone type](/refguide/clone-type) and doing a fresh clone. In case this fails, run ```netsh.exe winhttp reset proxy``` on the command line and try again. 
+If a shallow clone through Git CLI succeeds, attempt a Partial Clone in Studio Pro, by changing the [clone type](/refguide/clone-type) and doing a fresh clone. In case this fails, run ```netsh.exe winhttp reset proxy``` on the command line and try again. 
 If it still fails, gather all files from the Log directory and provide them to Mendix Support.
 
-##### If a Clone Through Git CLI Without SSL Succeeded
+##### If a Clone Through Git CLI Without SSL Succeeds
 
-If a Clone Through Git CLI Without SSL succeeded, temporarily disable Git sslVerify, by running ```config --global http.sslVerify false```, and attempt a fresh clone in Studio Pro. 
+If a Clone Through Git CLI Without SSL succeeds, temporarily disable Git sslVerify, by running ```config --global http.sslVerify false```, and attempt a fresh clone in Studio Pro. 
 
 Re-enable Git sslVerify by running ```git config --global --unset http.sslVerify```.
 
