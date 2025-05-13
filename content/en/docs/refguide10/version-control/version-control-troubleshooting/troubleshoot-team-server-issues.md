@@ -201,7 +201,7 @@ The next step is to verify whether you are behind a VPN, Proxy or Zscaler.
 
   * If you are behind a proxy:  
     * Retry without VPN or proxy and see if that solves the issue. Reach out to your internal IT department if you are not sure how to test it.
-    * Set up the proxy in Git following the [Proxy Servers Are Not Supported](/refguide/troubleshoot-version-control-issues/#proxy-servers-are-not-supported) section in *Troubleshooting Version Control*.
+    * Set up the proxy in Git following the [Proxy Servers Are Not Supported](/refguide10/troubleshoot-version-control-issues/#proxy-servers-are-not-supported) section in *Troubleshooting Version Control*.
       A correct example command looks like this: ```git config --global http.proxy https://username:mypassword@someproxyurl.com:123123```
       Please note, if the username or password contains a `:` or a `@`, it might not work.
   * In case ```netsh.exe winhttp show proxy``` gives an output that implies there is no proxy active. If the Git CLI is able to work with Git, but Studio Pro is not, then you can try ```netsh.exe winhttp reset proxy``` to reset your local proxy setting.
@@ -332,7 +332,7 @@ If it still fails, gather all files from the log and provide them to Mendix Supp
 
 ##### If a Shallow Clone Through Git CLI Succeeds
 
-If a shallow clone through Git CLI succeeds, attempt a Partial Clone in Studio Pro, by changing the [clone type](/refguide/clone-type) and doing a fresh clone. In case this fails, run ```netsh.exe winhttp reset proxy``` on the command line and try again. 
+If a shallow clone through Git CLI succeeds, attempt a Partial Clone in Studio Pro, by changing the [clone type](/refguide10/clone-type/) and doing a fresh clone. In case this fails, run ```netsh.exe winhttp reset proxy``` on the command line and try again. 
 If it still fails, gather all files from the Log directory and provide them to Mendix Support.
 
 ##### If a Clone Through Git CLI Without SSL Succeeds

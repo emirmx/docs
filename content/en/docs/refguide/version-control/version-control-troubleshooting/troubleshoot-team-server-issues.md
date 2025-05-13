@@ -296,7 +296,7 @@ If it still fails, gather all files from the log and provide them to Mendix Supp
 
 ##### If a Shallow Clone Through Git CLI Succeeds
 
-If a shallow clone through Git CLI succeeds, attempt a Partial Clone in Studio Pro, by changing the [clone type](/refguide/clone-type) and doing a fresh clone. In case this fails, run ```netsh.exe winhttp reset proxy``` on the command line and try again. 
+If a shallow clone through Git CLI succeeds, attempt a Partial Clone in Studio Pro, by changing the [clone type](/refguide/clone-type/) and doing a fresh clone. In case this fails, run ```netsh.exe winhttp reset proxy``` on the command line and try again. 
 If it still fails, gather all files from the Log directory and provide them to Mendix Support.
 
 ##### If a Clone Through Git CLI Without SSL Succeeds
