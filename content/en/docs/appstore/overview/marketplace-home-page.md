@@ -114,7 +114,7 @@ This page contains private content shared with you by other companies who have m
 
 ### Saved Content {#saved-components}
 
-This page presents the Marketplace content you have [saved](/appstore/component-details/#saved). 
+This page presents the Marketplace content you have [saved](/appstore/component-details/). 
 
 Click the name of the component to go its [component details page](/appstore/component-details/).
 

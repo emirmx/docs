@@ -1,7 +1,7 @@
 ---
-title: "Architect Adaptable Solutions"
+title: "Architecting Adaptable Solutions"
 url: /appstore/creating-content/sol-architecting/
-linktitle: "Architect Solutions"
+linktitle: "Architecting Solutions"
 weight: 1
 description: "Architect a solution for adaptation"
 ---
@@ -12,15 +12,13 @@ The Mendix Platform is well-suited to supporting the development of solutions. R
 
 ## Progressive and Emergent Architecture
 
-The goal for architecting a solution for adaptation is a deep understanding and full specification of the correct scoping of the [three solution parts](/appstore/creating-content/sol-adapt/#three-parts) (meaning, the immutable core, customizable modules, and customer-specific components). This is a level of knowledge you will only reach once you are serving a large number of customers.
+The goal for architecting a solution for adaptation is a deep understanding and correct scoping of the [three solution parts](/appstore/creating-content/sol-adapt/#three-parts): the immutable core, the customizable modules, and the customer-specific components.
 
-When you start work on a solution for an initial customer or handful of customers, you might not have this thorough understanding. Instead, as you deliver the solution to additional customers, you will learn about their needs and will better understand which functionalities will be common and which will be specific.
-
-This requires an iterative approach, where your understanding of the architectural requirements becomes clearer over time. It also requires a certain level of pragmatism in technical design choices, because you have to accept that you do not know everything up-front and you will have to redo certain design choices as your understanding increases.
+This requires an iterative approach, where your understanding of the architectural requirements becomes clearer over time. It also requires a certain level of pragmatism in technical design choices, because you have to accept that you do not know everything upfront, and you will have to redo certain design choices as your understanding increases.
 
 ## Implementation per Customer {#per-customer}
 
-The customer implementation is a separate, upgradable model instance (fork) per customer that shares generic functionality from the original solution model and that is deployed to separate cloud resources. This allows the implementation team to fully customize all the functionality that is not IP-protected. Not all customer implementations require changes to the model. In those cases, the original model can be deployed as is. Depending on the use case, the customer gains access to the app as well.
+The customer implementation is a separate upgradable model instance (fork). It shares generic functionality with the original solution model, and is deployed to separate cloud resources. This allows the implementation team to fully customize all the functionality that is not IP-protected. Not all customer implementations require changes to the model. In those cases, the original model can be deployed as is. Depending on the use case, the customer gains access to the app as well.
 
 ### Summary
 
@@ -34,28 +32,28 @@ The customer implementation is a separate, upgradable model instance (fork) per 
 
 ### Configuration and Adaptation
 
-As discussed in the [Solution Lifecycle](/appstore/creating-content/sol-adapt/#lifecycle) section of *Introduction to Adaptable Solutions*, the solution can be tailored to the customer’s need. 
+As mentioned in the [Solution Lifecycle](/appstore/creating-content/sol-adapt/#lifecycle) section of *Adaptable Solutions*, the solution can be tailored to the customer’s need. 
 
 Mendix recommends using the following:
 
-* **Runtime configuration** (using [database setting objects](/refguide/custom-settings/#database-settings), or [constants](/refguide/constants/)) when configuring for the needs of customer groups. This should be used for light configuration and personalization through developer-built flexibility.
-    * Enable/disable business processes
-    * Conditionally make capabilities available (for example, feature toggles)
-    * Parameterize capabilities for groups of customers (for example, configurable thresholds)
-* **Design-time adaptation** for changing the application model to the needs of individual customers. This should be used for the larger customizations in order to do the following:
-    * Adapt business processes and add rules
-    * Modify integrations with core systems
-    * Add customer-specific extensions that need to reside inside the solution application model
-    * Complete (custom) Integrations
-    * Make (larger) UI customizations
+* **Runtime configuration** through [database setting objects](/refguide/custom-settings/#database-settings) or [constants](/refguide/constants/) when configuring for the needs of customer groups. This should be used for light configuration and personalization through developer-built flexibility, for the following purposes:
+    * Enable/disable business processes.
+    * Provide conditional access to capabilities, such as through feature toggles.
+    * Parameterize capabilities for groups of customers, such as through configurable thresholds.
+* **Design-time adaptation** for changing the application model to the needs of individual customers. This should be used for larger customizations in order to do the following:
+    * Adapt business processes and add rules.
+    * Modify integrations with core systems.
+    * Add customer-specific extensions that need to reside inside the solution application model.
+    * Complete (custom) Integrations.
+    * Make (larger) UI customizations.
 
-For some customizations, both approaches can be utilized, but Mendix recommends taking the following into account:
+For some customizations, both approaches can be used, but Mendix recommends taking the following into account:
 
 * How easy is it to build and maintain?
 * Is it easy to implement and upgrade afterwards?
 * What is the impact on performance?
 
-Mendix recommends design-time model adaptation over "building Mendix in Mendix."
+Mendix recommends design-time model adaptation over building Mendix in Mendix.
 
 ### Design-Time Adaptation
 
