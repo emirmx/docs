@@ -916,10 +916,20 @@ You can disable this setting by navigating to **Security > Anonymous users** and
 
 1. To use the Page URL functionality, replace the content of `login.html` with the content of `login-with-mendixsso-automatically.html` (located in the `resources\mendixsso\templates` folder) and save it as `login.html`.
 
-2. To implement the SSO redirection, replace the code in the `<script>` tag of your login page (for example, `login.html`) with one of the following pieces of code, depending on whether you want automatic or manual redirection:
+2. To implement the SSO redirection, you will need to replace the code in the `<script>` tag of your login page (for example, `login.html`) with code which does one of the following, depending on whether you want automatic or manual redirection:
 
-    * For automatic redirection, use `window.onload` to automatically redirect users to the SSO login page. `const returnURL = encodeURIComponent(window.location.search+window.location.hash);` `self.location = '/oauth/v2/login?cont='+returnURL;`
-    * For manual redirection: add an onclick event to the button that manually triggers the SSO login. `window.location.href='/oauth/v2/login?cont=' + encodeURIComponent(window.location.search + window.location.hash);`
+    * For automatic redirection, you can use `window.onload` to automatically redirect users to the SSO login page. You could, for example, use the following code:
+    
+        ```javascript
+        const returnURL = encodeURIComponent(window.location.search+window.location.hash);
+        self.location = '/oauth/v2/login?cont='+returnURL;
+        ```
+
+    * For manual redirection, you can add an onclick event to a button that manually triggers the SSO login. For example:
+    
+        ```javascript
+        window.location.href='/oauth/v2/login?cont=' + encodeURIComponent(window.location.search + window.location.hash);
+        ```
 
 Once the above changes are applied, end users can directly navigate to the desired page. If not logged in, they will be redirected to the IdP login page for authentication. After successful log in, they will be directed to the desired page using page and microflow URLs.
 
