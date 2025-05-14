@@ -34,6 +34,7 @@ To upgrade your theme directory to latest version, complete the following steps:
 ### Changing the Theme
 
 #### In Dojo Client
+
 {{% alert color="warning" %}}
 In Mendix 11.0 and above, the Dojo Client is deprecated.
 {{% /alert %}}
@@ -154,7 +155,7 @@ In *theme/web/index.html* do the following:
     </html>
     ```
 
-1. In the `<body>` tag, add a reference to the `appSetup.js` script before `mxui.js` is loaded:
+1. In the `<body>` tag, add a reference to the `appSetup.js` script before `index.js` is loaded:
 
     ```js
     <html>
