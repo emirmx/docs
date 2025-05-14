@@ -10,6 +10,10 @@ description: "Describes how to setup and use tracing in the Mendix Runtime."
 Starting in version 10.18.0, Mendix now supports tracing via OpenTelemetry. When tracing is enabled the runtime will generate traces that will help you analyze errors and performance.
 These traces can be sent to observability tools like [Jaeger](https://www.jaegertracing.io/) or [Datadog](https://www.datadoghq.com/).
 
+{{% alert color="warning" %}}
+Tracing is currently not supported on the Mendix Cloud.
+{{% /alert %}}
+
 ## Generated spans
 
 In Mendix 10.18.0 and above, the runtime generates spans for:
