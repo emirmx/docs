@@ -163,7 +163,7 @@ In *theme/web/index.html* do the following:
             ...
             <div id-"content"></div>
             <script src="appSetup.js"></script>
-            <script src="dist/index.js?{{cachebust}}?{{cachebust}}"></script>
+            <script src="dist/index.js?{{cachebust}}"></script>
         </body>
     </html>
     ```
