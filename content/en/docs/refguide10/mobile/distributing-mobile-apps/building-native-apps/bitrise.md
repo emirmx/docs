@@ -136,7 +136,7 @@ This step will install the dependencies required for iOS.
 
 1. Add a new step before the step **Xcode Archive** (after Run CocoaPods install).
 1. Choose **Manage iOS Code Singing** from the list of steps.
-1. Set the distribution method to the method selected in [section 3](#set-up-your-build-project).
+1. Set the distribution method to the method selected in the [Set Up Your Build Project](#set-up-your-build-project) section.
 1. Save changes.
 
 Bitrise will use the provided iOS Signing information to sign the iOS app.
@@ -163,4 +163,4 @@ Now, every time some runs **Build Native App** to update the application bundle,
 
 ## Additional Considerations
 
-Our MVP Marcel Groeneweg has written a blog post about optimizing Mendix native mobile builds with Bitrise. Check it out on [Medium](https://marcel-groeneweg.medium.com/mendix-native-builds-with-bitrise-6ce56f0bb8fc) (Mendix cannot take responsibility for third-party recommendations).
+Our MVP Marcel Groeneweg has written a [Medium post](https://marcel-groeneweg.medium.com/mendix-native-builds-with-bitrise-6ce56f0bb8fc) about optimizing Mendix native mobile builds with Bitrise.  Mendix cannot take responsibility for third-party recommendations.
