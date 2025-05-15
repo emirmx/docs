@@ -20,7 +20,7 @@ The following are the properties in the **Request** section:
 
 * **REST request** – select the REST request you want to use in your microflow
 * **Input entity type** – indicates the type of request entity, which has been configured from the document
-* **Value** – select a value for your input entity (applicable only for `POST`)
+* **Value** – select a value for your input entity (applicable only for `POST` , `PUT`, and `PATCH`)
 * **Parameters** – edit the parameter values
 
 The following are the properties in the **Output** section:
