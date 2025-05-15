@@ -14,7 +14,7 @@ The **Send REST request** activity allows you to send a REST request, which is c
 
 Double-click the **Send REST request** activity to view its properties:
 
-{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/integration-activities/send-rest-request/send-request.png" >}}
+{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/integration-activities/send-rest-request/send-request.png" width="500" >}}
 
 The following are the properties in the **Request** section:
 
