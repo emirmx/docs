@@ -111,7 +111,7 @@ To test the extension, do the following in File Explorer.
     You will see a new `Extensions` item in the top menu.
 
 {{% alert color="warning" %}}
-Extension names used in place of `myextension` must only contain digits, letters, dashes, and underscores. Extensions with an will not be loaded, and will display an error.
+Extension names used in place of `myextension` must only contain digits, letters, dashes, and underscores. Extensions with an invalid name will not be loaded and will display an error.
 {{% /alert %}}
 
 ## Conclusion
