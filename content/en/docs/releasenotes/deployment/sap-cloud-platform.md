@@ -14,6 +14,24 @@ For information on the current status of deployment to SAP BTP and any planned r
 
 ## 2025
 
+### April 18, 2025
+
+#### Portal Improvements
+
+* We updated the portal configuration for the XSUAA service to include a default wildcard (`*`) in the redirect URL. This enables flexible pattern matching to support dynamic endpoints, as per SAP [mandates](https://help.sap.com/whats-new/cf0cb2cb149647329b5d02aa96303f56?locale=en-US&Component=Authorization+and+Trust+Management+Service).
+* We removed the `xsenablesyncservice` property from the XSUAA service configuration, as per SAP mandates.
+
+### February 16, 2025
+
+#### Portal Improvements
+
+* We have implemented a default URL for redirection in compliance with SAP [mandates](https://help.sap.com/whats-new/cf0cb2cb149647329b5d02aa96303f56?locale=en-US&Component=Authorization+and+Trust+Management+Service).
+
+#### Bug Fixes
+
+* We fixed an issue where setting an empty environment constant did not remove the environment variable from the SAP BTP cockpit.
+* We fixed an issue with the icon size for the deployment package.
+  
 ### February 02, 2025
 
 #### Portal Improvements

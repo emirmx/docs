@@ -129,7 +129,7 @@ If you are planning this sort of testing you must raise a ticket with Mendix Sup
 
 Please provide this information as early as possible, at least two weeks in advance of the test date. Mendix may refuse permission to do some kinds of test if they break local laws or pose too high a risk to the Mendix infrastructure or other customers.
 
-If you want to perform penetration tests, your Customer Service Manager (CSM) can provide you with an indemnification agreement. This should be signed by all parties, confirming the information above, and agreeing that your tests are legal and do not impact other customers. If you don't know who your CSM is, Mendix Support can provide you with their contact details. 
+If you want to perform penetration tests, your Customer Success Manager (CSM) can provide you with an indemnification agreement. This should be signed by all parties, confirming the information above, and agreeing that your tests are legal and do not impact other customers. If you don't know who your CSM is, Mendix Support can provide you with their contact details. 
 
 If Mendix is not aware of your tests, you may find that they are interrupted if they cause unexpected alerts to be generated for our Cloud Operations or Security teams. You may also be breaking your agreement with Mendix.
 
@@ -185,6 +185,10 @@ Mendix Support does not have access to app health, logs, graphs and monitoring. 
 
 {{< figure src="/attachments/support/private-cloud.png"   width="75%"  class="no-border" >}}
 
+### Mendix on Azure
+
+[Mendix on Azure](/developerportal/deploy/mendix-on-azure/) is a deployment option that makes use of some of the features of Mendix for Private Cloud in an opinionated way. For detailed information about the support policy in place for Mendix on Azure, see [Support Policy for Mendix on Azure](/developerportal/deploy/mendix-on-azure/support/).
+
 ### Private Mendix Platform
 
 Private Mendix Platform provides a platform experience in on-premises or (virtual) private cloud environments. It is dependent on Mendix for Private Cloud and Kubernetes, and integrates with tooling in the customer's landscape. Please refer to [Private Mendix Platform](/private-mendix-platform/) documentation for [prerequisites](/private-mendix-platform-prerequisites/) to install the platform and set up [configurations](/private-mendix-platform-configuration/), as well as [Mendix for Private Cloud](/developerportal/deploy/private-cloud/) documentation for [supported environments](/developerportal/deploy/private-cloud-supported-environments/). 
@@ -236,7 +240,7 @@ Mendix Support can analyze this component if your app is running on Mendix Cloud
 
 The Mendix buildpacks for [Cloud Foundry](https://github.com/mendix/cf-mendix-buildpack) and [Docker](https://github.com/mendix/docker-mendix-buildpack) are available in GitHub repositories. The documentation for the buildpacks and m2ee tools is contained within these GitHub repositories and, because they are released under an Open Source license, the code can be inspected and the functionality and options can be understood by customers who wish to use these buildpacks.
 
-If you want to run Mendix apps on a Unix-like server you will need the [m2ee tools](https://github.com/mendix/m2ee-tools), available on GitHub. Read more about installing on systems running Unix-like operating systems in [Unix-Like Deployment](/developerportal/deploy/unix-like/).
+If you want to run Mendix apps on a Unix-like server you will need the [m2ee tools](https://github.com/mendix/m2ee-tools), available on GitHub. Read more about installing on systems running Unix-like operating systems in [Linux Deployment](/developerportal/deploy/linux/).
 
 Mendix Support can analyze these components if your app is running on Mendix Cloud or Mendix Cloud Dedicated. Because Mendix has no control over the context in which the buildpack or m2ee tools are run outside of Mendix Cloud and Mendix Cloud Dedicated, you will have to demonstrate that the bug is in the supported component by showing the behavior independently from the context in which you are using it.
 

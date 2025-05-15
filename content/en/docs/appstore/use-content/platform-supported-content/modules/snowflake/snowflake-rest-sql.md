@@ -12,22 +12,29 @@ The [Snowflake REST SQL connector](https://marketplace.mendix.com/link/component
 
 ### Typical Use Cases
 
-The Snowflake REST SQL connector provides a way to first setup key-pair authentication with an RSA key pair according to PKCS #8 standard, and then execute SQL statements on Snowflake via a REST call from within your Mendix application. These statements allow you to perform the following tasks:
+The Snowflake REST SQL connector supports the following:
 
-* Read data from Snowflake.
-* Write data to Snowflake.
-* Trigger [Snowflake Cortex ML functions](https://docs.snowflake.com/en/guides-overview-ml-functions):
-    * [Forecasting](https://docs.snowflake.com/en/user-guide/ml-functions/forecasting) - Predicts future metric values from past trends in time-series data.
-    * [Anomaly Detection](https://docs.snowflake.com/en/user-guide/ml-functions/anomaly-detection) - Flags metric values that differ from typical expectations.
-    * [CLASSIFY_TEXT](https://docs.snowflake.com/en/sql-reference/functions/classify_text-snowflake-cortex) - Given a piece of text, classifies it into one of the categories that you define.
-    * [EXTRACT_ANSWER](https://docs.snowflake.com/en/sql-reference/functions/extract_answer-snowflake-cortex) - Given a question and unstructured data, returns the answer to the question if it can be found in the data.
-    * [PARSE_DOCUMENT](https://docs.snowflake.com/en/sql-reference/functions/parse_document-snowflake-cortex) - Given an internal or external stage with documents, returns an object that contains extracted text content using OCR mode, or the extracted text and layout elements using LAYOUT mode.
-    * [SENTIMENT](https://docs.snowflake.com/en/sql-reference/functions/sentiment-snowflake-cortex) - Returns a sentiment score, from -1 to 1, representing the detected positive or negative sentiment of the given text.
-    * [SUMMARIZE](https://docs.snowflake.com/en/sql-reference/functions/summarize-snowflake-cortex) - Returns a summary of the given text.
-    * [TRANSLATE](https://docs.snowflake.com/en/sql-reference/functions/translate-snowflake-cortex) - Translates given text from any supported language to any other.
-    * [EMBED_TEXT_768](https://docs.snowflake.com/en/sql-reference/functions/embed_text-snowflake-cortex) - Given a piece of text, returns a vector embedding of 768 dimensions that represents that text.
-    * [EMBED_TEXT_1024](https://docs.snowflake.com/en/sql-reference/functions/embed_text_1024-snowflake-cortex) - Given a piece of text, returns a vector embedding of 1024 dimensions that represents that text. 
-* Use [Snowflake Cortex Analyst](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst) - This Snowflake Cortex feature is used to get information/insights out of structured data sets using natural language instead of sql.
+1. **Authentication:**
+
+    * Key-pair authentication (using PKCS #8 standard RSA keys)
+    * OAuth authentication
+
+2. **Functionality:** Execute SQL statements on Snowflake via REST calls from your Mendix application. These statements allow you to perform the following tasks:
+
+    * Read data from Snowflake.
+    * Write data to Snowflake.
+    * Trigger the following [Snowflake Cortex ML functions](https://docs.snowflake.com/en/guides-overview-ml-functions):
+        * [Forecasting](https://docs.snowflake.com/en/user-guide/ml-functions/forecasting) – Predicts future metric values from past trends in time-series data.
+        * [Anomaly Detection](https://docs.snowflake.com/en/user-guide/ml-functions/anomaly-detection) – Flags metric values that differ from typical expectations.
+        * [CLASSIFY_TEXT](https://docs.snowflake.com/en/sql-reference/functions/classify_text-snowflake-cortex) – Given a piece of text, classifies it into one of the categories that you define.
+        * [EXTRACT_ANSWER](https://docs.snowflake.com/en/sql-reference/functions/extract_answer-snowflake-cortex) – Given a question and unstructured data, returns the answer to the question if it can be found in the data.
+        * [PARSE_DOCUMENT](https://docs.snowflake.com/en/sql-reference/functions/parse_document-snowflake-cortex) – Given an internal or external stage with documents, returns an object that contains extracted text content using OCR mode, or the extracted text and layout elements using LAYOUT mode.
+        * [SENTIMENT](https://docs.snowflake.com/en/sql-reference/functions/sentiment-snowflake-cortex) – Returns a sentiment score, from -1 to 1, representing the detected positive or negative sentiment of the given text.
+        * [SUMMARIZE](https://docs.snowflake.com/en/sql-reference/functions/summarize-snowflake-cortex) – Returns a summary of the given text.
+        * [TRANSLATE](https://docs.snowflake.com/en/sql-reference/functions/translate-snowflake-cortex) – Translates given text from any supported language to any other.
+        * [EMBED_TEXT_768](https://docs.snowflake.com/en/sql-reference/functions/embed_text-snowflake-cortex) – Given a piece of text, returns a vector embedding of 768 dimensions that represents that text.
+        * [EMBED_TEXT_1024](https://docs.snowflake.com/en/sql-reference/functions/embed_text_1024-snowflake-cortex) – Given a piece of text, returns a vector embedding of 1024 dimensions that represents that text. 
+    * Use [Snowflake Cortex Analyst](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst) – This Snowflake Cortex feature is used to get information/insights out of structured data sets using natural language instead of sql.
 
 For more use cases and examples for [Snowflake Cortex LLM functions](https://docs.snowflake.com/en/user-guide/snowflake-cortex/llm-functions), written by the Head of Snowflake Tech Consulting, see [Karthik S Raman's Medium profile](https://medium.com/@karthiksraman).
 
@@ -45,9 +52,9 @@ The Snowflake REST SQL connector requires Mendix Studio Pro version 9.18.0 or ab
 
 To use the Snowflake REST SQL connector, you must also install and configure the following modules from the Mendix marketplace:
 
-* [Community Commons](https://marketplace.mendix.com/link/component/170) - This module is a required dependency for the Snowflake REST SQL connector.
-* [Encryption](https://marketplace.mendix.com/link/component/1011) - This module is a required dependency for the Snowflake REST SQL connector. The EncryptionKey constant must be set up in your application settings.
-* GenAI Commons module from the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle - This module is a required dependency for the Snowflake Cortex Analyst.
+* [Community Commons](https://marketplace.mendix.com/link/component/170) – This module is a required dependency for the Snowflake REST SQL connector.
+* [Encryption](https://marketplace.mendix.com/link/component/1011) – This module is a required dependency for the Snowflake REST SQL connector. The EncryptionKey constant must be set up in your application settings.
+* GenAI Commons module from the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle – This module is a required dependency for the Snowflake Cortex Analyst.
 
 ### Licensing and Cost
 
@@ -65,9 +72,13 @@ After you install the connector, you can find it in the **App Explorer**, in the
 
 ### Configuring Snowflake Authentication
 
-In order to use the capabilities of Snowflake in a Mendix app with the Snowflake REST SQL connector, an RSA key-pair authentication method must be used.
+To use the capabilities of Snowflake in a Mendix app with the Snowflake REST SQL connector, you must use either OAUTH authentication or RSA key-pair authentication.
 
-### Configuring Key-pair Authentication in Snowflake {#setup-key-pair-snowflake}
+#### Configuring OAUTH Authentication {#setup-OAUTH-snowflake}
+
+To find out how configure the OAUTH Authentication method, see [Role-based Access Control](/appstore/modules/snowflake/snowflake-rbac/).
+
+#### Configuring Key-Pair Authentication in Snowflake {#setup-key-pair-snowflake}
 
 To configure RSA key-pair authentication for your account in Snowflake, perform the following steps:
 
@@ -77,7 +88,7 @@ To configure RSA key-pair authentication for your account in Snowflake, perform 
 
 For more details about each step, refer to the official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/key-pair-auth).
 
-### Setting up the Key-pair Authentication in a Mendix App {#setup-key-pair-mendix}
+#### Setting up the Key-Pair Authentication in a Mendix App {#setup-key-pair-mendix}
 
 To make it easier for users to configure the key-pair authentication in a Mendix app, the Snowflake REST SQL connector includes pages and microflows that you can simply drag and drop them into your own modules.
 
@@ -123,14 +134,83 @@ To set this up:
 
 Your custom microflows should consist of the following:
 
-* **A request call microflow** - Sends the request and returns the request ID.
-* **A polling microflow** - Uses the request ID to check if the response is available, and then returns the response once it is ready.
+* **A request call microflow** – Sends the request and returns the request ID.
+* **A polling microflow** – Uses the request ID to check if the response is available, and then returns the response once it is ready.
 
 This approach allows you to achieve asynchronous behavior while leveraging the Snowflake REST SQL Connector.
 
 #### Programmatic Triggering of Ingestion Jobs
 
 The Snowflake REST SQL connector can be used to trigger data ingestion jobs with an SQL statement. For more information, see [Mendix Data Loader: Programmatically Triggering an Ingestion Job From a Mendix App](/appstore/modules/snowflake/mendix-data-loader/#trigering-jobs).
+
+## Binding Variables in Snowflake using the Snowflake REST SQL Connector
+
+When executing SQL statements from Mendix into Snowflake, *binding variables* is a critical concept that improves security, performance, and maintainability of your database interactions.
+
+### What Is Variable Binding?
+
+Instead of putting values directly into your SQL, you can use `?` placeholders and provide the values separately. This is called *binding*. It works in a similar way to using parameters in a Mendix microflow, that is, it keeps your logic and data separate.
+
+In Mendix, you do this by creating a `Statement` entity with a SQL query that includes `?`. Then, you add `Binding` entities to provide the values for those placeholders.
+
+Each `Binding` is linked to the `Statement`. The order of the bindings matters — the first binding fills the first `?`, the second fills the second `?`, and so on.
+
+Make sure the number of bindings matches the number of `?` placeholders in your SQL. Otherwise, the execution will fail due to mismatched parameters.
+
+### Benefits of Variable Binding
+
+Binding variables provides the following benefits:
+
+* **Security** - Prevents SQL injection attacks by treating values as data, not code.
+* **Reusability** - You can reuse the same SQL template with different values.
+* **Performance** - Snowflake can cache and reuse execution plans for bound SQL.
+* **Clarity** - Keeps SQL readable and separates logic from values—easier to debug and maintain.
+
+## Sample SQL for Variable Binding
+
+The following is an example of unbound SQL:
+
+```sql
+INSERT INTO db.sch.Persons (PersonID, LastName, FirstName, Address, City, IsActiveUser) 
+VALUES (12, 'Doe', 'Jane', 'Main Street 123', 'Metroville', true);
+```
+
+The following is an example of bound SQL using `?` placeholders:
+
+```sql
+INSERT INTO db.sch.Persons (PersonID, LastName, FirstName, Address, City, IsActiveUser)
+VALUES (?, ?, ?, ?, ?, ?);
+```
+
+The following values are provided separately in a bindings structure:
+
+```sql
+"bindings": {
+    "1": { "type": "FIXED", "value": "12" },
+    "2": { "type": "TEXT", "value": "Doe" },
+    "3": { "type": "TEXT", "value": "Jane" },
+    "4": { "type": "TEXT", "value": "Main Street 123" },
+    "5": { "type": "TEXT", "value": "Metroville" },
+    "6": { "type": "BOOLEAN", "value": "true" }
+}
+```
+
+### Mendix Attribute Type to Snowflake Data Type Mapping
+
+This table maps Mendix attribute types to Snowflake data types, along with common binding types and usage notes.
+
+| Mendix Attribute Type | Snowflake Data Type | Typical Binding Type | Notes |
+| --- | --- | --- | --- |
+| Integer | `INT` / `NUMBER` | FIXED | Maps from Snowflake *INT* or *NUMBER*, depending on the range. |
+| Decimal | `FLOAT` | REAL | Supports floating-point precision. |
+| String | `VARCHAR` | TEXT | Use for general text data. |
+| Binary / String | `BINARY` | BINARY / TEXT | *Binary* for raw data; *String* for hex representations. |
+| Boolean | `BOOLEAN` | BOOLEAN / TEXT | Accepts `true`/`false` or `0`/`1`. |
+| DateTime | `DATE` | DATE / TEXT | Stores both date and time; time defaults to `00:00:00`. |
+| String / DateTime | `TIME` | TIME / TEXT | Store as *String* or convert to *DateTime*. |
+| DateTime | `TIMESTAMP_TZ` | TIMESTAMP_TZ / TEXT | Time zone-aware; stored in UTC. |
+| DateTime | `TIMESTAMP_LTZ` | TIMESTAMP_LTZ / TEXT | Local time zone; stored in UTC. |
+| DateTime | `TIMESTAMP_NTZ` | TIMESTAMP_NTZ / TEXT | No time zone; stored in UTC. |
 
 ## Technical Reference
 
@@ -173,6 +253,14 @@ The domain model is a data model that describes the information in your applicat
 | `Schema` | The database schema to use, for example `PUBLIC`. |
 | `Warehouse` | The warehouse to use for computations. |
 | `Role` | The role to use to execute the SQL statement. The role sufficient permissions to execute the statement. |
+
+#### Binding {#binding}
+
+| **Attribute**   | **Description**                                                       |
+|----------------|------------------------------------------------------------------------|
+| `createdDate`  | The timestamp when this binding was generated.                         |
+| `BindingType`  | The Snowflake data type used in binding (e.g., `FIXED`, `TEXT`).       |
+| `value`        | The actual value passed into the query for that position.              |
 
 #### ResultSet {#result-set}
 
@@ -264,23 +352,23 @@ To configure your Mendix app for Snowflake Cortex Analyst, perform the following
 
 1. Create a microflow and add the **Cortex Analyst: Create Cortex Analyst Connection** action from the **Toolbox**.
 2. Provide the following mandatory information:
-    * **Token** - The authentication token created from the OIDC provider, or the JWT Token
-    * **AccountURL** - The URL of the Snowflake account that has access to Snowflake Cortex Analyst
+    * **Token** – The authentication token created from the OIDC provider, or the JWT Token
+    * **AccountURL** – The URL of the Snowflake account that has access to Snowflake Cortex Analyst
     * **Authentication Type**
 3. Add the **Cortex Analyst: Create Request** action from the **Toolbox**, and then configure the **Request** to contain the path to the Snowflake semantic model file.
 4. Add the **Chat: Add Message to Request** action from the Toolbox and provide the following information:
-    * **Request** - The request that you configured for the **Cortex Analyst: Create Request** action
-    * **ENUM_MessageRole** - The role of the entity that creates the message; in the current version, the role must be set to **user**
-    * **ContentString** - The text of the question for Cortex Analyst
+    * **Request** – The request that you configured for the **Cortex Analyst: Create Request** action
+    * **ENUM_MessageRole** – The role of the entity that creates the message; in the current version, the role must be set to **user**
+    * **ContentString** – The text of the question for Cortex Analyst
 5. Add the **Snowflake Cortex Analyst** action from the Toolbox and provide the following information:
-    * **Connection** - The Cortex Analyst connection that you configured for the **Cortex Analyst: Create Cortex Analyst Connection** action
-    * **Request** - The request that you configured for the **Cortex Analyst: Create Request** action
+    * **Connection** – The Cortex Analyst connection that you configured for the **Cortex Analyst: Create Cortex Analyst Connection** action
+    * **Request** – The request that you configured for the **Cortex Analyst: Create Request** action
 6. To get the response message from the response, add the **Response: Get Cortex Analyst Response Message** action from the Toolbox, and then add the **Response** entity as a parameter. The message contains the following information:
-    * **Content** - This is the content of the response message. It includes the text and the SQL, or the suggestions if no SQL is returned
-    * **Cortex Role** - The entity that produced the message; possible values are *user* or *analyst*
-    * **SQLText** - The returned SQL suggestion
+    * **Content** – This is the content of the response message. It includes the text and the SQL, or the suggestions if no SQL is returned
+    * **Cortex Role** – The entity that produced the message; possible values are *user* or *analyst*
+    * **SQLText** – The returned SQL suggestion
 7. To get the Cortex Analyst Response entity, add the **Response: Get Cortex Analyst Response** action from the Toolbox, and then add the **Response** entity as a parameter. The response contains the following information:
-    * **Request_ID** - The returned *RequestId*
+    * **Request_ID** – The returned *RequestId*
    
  {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/CortexAnalystRequestExample.png" >}}
 

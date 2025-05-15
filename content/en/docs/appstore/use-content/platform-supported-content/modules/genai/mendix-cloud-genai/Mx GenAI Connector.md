@@ -10,7 +10,7 @@ aliases:
 
 ## Introduction
 
-The Mendix Cloud GenAI connector (delivered as part of [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931)) lets you utilize Mendix Cloud GenAI resource packs directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox. Feel free to contact [genai-resource-packs@mendix.com](mailto:genai-resource-packs@mendix.com) to learn more.
+The [Mendix Cloud GenAI connector](https://marketplace.mendix.com/link/component/239449) lets you utilize Mendix Cloud GenAI resource packs directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox. Feel free to contact [genai-resource-packs@mendix.com](mailto:genai-resource-packs@mendix.com) to learn more.
 
 ### Typical Use Cases
 
@@ -70,24 +70,24 @@ To use this connector, you need configuration keys to authenticate to the Mendix
 
 ### Dependencies {#dependencies}
 
-* Mendix Studio Pro version [9.24.2](/releasenotes/studio-pro/9.24/#9242) or above
+* [GenAICommons](https://marketplace.mendix.com/link/component/239448)
 * [Encryption](https://marketplace.mendix.com/link/component/1011)
 * [Community Commons](https://marketplace.mendix.com/link/component/170)
 
 ## Installation
 
-Add the [dependencies](#dependencies) listed above from the Marketplace. On the Marketplace, the Mendix Cloud GenAI connector is bundled inside of the [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931) which also contains GenAI commons operations and logic. To import this module into your app, follow the instructions in the [Use Marketplace Content](/appstore/use-content/).
+Add the [dependencies](#dependencies) listed above from the Marketplace. To import this module into your app, follow the instructions in the [Use Marketplace Content](/appstore/use-content/).
 
 ## Configuration {#configuration}
 
-After installing the Mendix Cloud GenAI connector, you can find it in the **App Explorer** inside of the **Add-ons** section. The connector includes a domain model and several activities to help integrate your app with the Mendix Cloud GenAI service. To implement the connector, simply use its actions in a microflow. You can find the Mendix GenAI actions in the microflow toolbox. Note that the module is protected, meaning it cannot be modified and the microflow logic is not visible. For details about each exposed operation, see the [Operations](#operations) section below or refer to the documentation provided within the module. For more information on Add-on modules, see [Consuming Add-on Modules and Solutions](/refguide/consume-add-on-modules-and-solutions/).
+After installing the Mendix Cloud GenAI connector, you can find it in the **App Explorer** inside of the **Marketplace modules** section. The connector includes a domain model and several activities to help integrate your app with the Mendix Cloud GenAI service. To implement the connector, simply use its actions in a microflow. You can find the Mendix GenAI actions in the microflow toolbox.
 
 Follow the steps below to get started:
 
 * Make sure to configure the [Encryption module](/appstore/modules/encryption/#configuration) before you connect your app to Mendix Cloud GenAI.
 * Add the module role `MxGenAIConnector.Administrator` to your Administrator **User roles** in the **Security** settings of your app. 
-* Add the `NAV_ConfigurationOverview_Open` microflow (**USE_ME** > **Configuration**) to your **Navigation** or register your key using the `Configuration_RegisterByString` microflow.
-* Complete the runtime setup of Mendix Cloud GenAI configuration by navigating to the page through the microflow mentioned above. Import a key generated in the [portal](https://genai.home.mendix.com) or provided to you and click **Test Key** to validate its functionality.
+* Add the `Configuration_Overview` page (**USE_ME** > **Configuration**) to your navigation, or add the `Snippet_Configuration` to a page that is already part of your navigation. Alternatively, you can register your key by using the `Configuration_RegisterByString` microflow.
+* Complete the runtime setup of Mendix Cloud GenAI configuration by navigating to the page mentioned above. Import a key generated in the [portal](https://genai.home.mendix.com) or provided to you and click **Test Key** to validate its functionality.
 
 ## Operations
 
@@ -99,13 +99,13 @@ To use the operations, either a `DeployedModel` (text, embeddings) or a `MxKnowl
 
 ### Chat Completions Operation
 
-After following the general setup above, you are ready to use the chat completions microflows in the GenAICommons and MxGenAIConnector modules. You can find `Chat Completions (without history)` and `Chat Completions (with history)` in the **Text & Files** folder of the GenAICommons and `Retrieve and Generate (MxCloud, without history)` inside of the **USE_ME > RetrieveAndGenerate** folder of the MxGenAIConnector module. The chat completions microflows are also exposed as microflow actions under the **GenAI (Generate)** category inside of the **Toolbox**.
+After following the general setup above, you are ready to use the chat completions microflows in the GenAICommons and MxGenAIConnector modules. You can find `Chat Completions (without history)` and `Chat Completions (with history)` in the **Text & Files** folder of the GenAICommons. The chat completions microflows are also exposed as microflow actions under the **GenAI (Generate)** category inside of the **Toolbox**.
 
 These microflows expect a `DeployedModel` as input to determine the connection details. 
 
 In chat completions, system prompts and user prompts are two key components that help guide the language model in generating relevant and contextually appropriate responses. For more information on prompt engineering, see the [Read More](#readmore) section. Different exposed microflow activities may require different prompts and logic for how the prompts must be passed, as described in the following sections. For more information on message roles, see the [ENUM_MessageRole](/appstore/modules/genai/genai-for-mx/commons/#enum-messagerole) enumeration in *GenAI Commons*.
 
-Apart from `Retrieve and Generate (MxCloud, without history)`, the chat completion operations support [Function Calling](#function-calling), [Vision](#vision), and [Document Chat](#document-chat).
+The chat completion operations support [Function Calling](#function-calling), [Vision](#vision), and [Document Chat](#document-chat).
 
 For more inspiration or guidance on how to use the above-mentioned microflows in your logic, Mendix recommends downloading the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of examples.
 
@@ -117,15 +117,13 @@ The microflow activity [Chat Completions (without history)](/appstore/modules/ge
 
 The microflow activity [Chat completions (with history)](/appstore/modules/genai/genai-for-mx/commons/#chat-completions-with-history) supports more complex use cases where a list of (historical) messages (for example, the conversation or context so far) is sent as part of the request to the LLM.
 
-#### Chat Completions (Retrieve & Generate)
+#### Retrieve & Generate {#retrieve-and-generate}
 
-The microflow activity `Retrieve and Generate (MxCloud, without history)` simplifies `Retrieve and Generate` use cases without history. By providing a user prompt, the knowledge base is searched for similar knowledge chunks, which are then passed to the model. The model is instructed to base its response on the retrieved knowledge while referring to the source used to generate the response. This operation requires a [Request](/appstore/modules/genai/genai-for-mx/commons/#request) which is associated to a `RetrieveAndGenerateRequest_Extension` pointing to a `MxKnowledgebaseConnection` object. Please use the flow shown below as orientation when setting up your logic to make sure that all is implemented as required: 
+To use retrieval and generation in a single operation, an internally predefined tool can be added to the [Request](/appstore/modules/genai/genai-for-mx/commons/#request) via the `Tools: Add Mendix Cloud Knowledge Base` action . The model can then decide whether to use the [knowledge base retrieval](/appstore/modules/genai/genai-for-mx/commons/#knowledge-base-retrieval) tool when handling the request. This functionality is supported in both with-history and without-history operations. Additionally, you may apply optional filters, such as `MaxNumberOfResults` or `MinimumSimilarity`, or pass a [MetadataCollection](/appstore/modules/genai/genai-for-mx/commons/#metadatacollection-entity). The optional `Description` can help the model understand the knowledge base content and decide whether it should be called in the current chat context.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/MxGenAIConnector_ConfigureRAG.png" >}}
 
-A `SystemPrompt` can be provided through the `Request` and other filter options can be set when initializing the `RetrieveAndGenerateRequest_Extension` (for example through metadata). 
-
-The returned `Response` includes [References](/appstore/modules/genai/genai-for-mx/commons/#reference) if the model used them to generate its response. In some cases, a knowledge chunk consists of two texts: one for the semantic search step and another for the generation step. For example, when solving a problem based on historical solutions, the semantic search identifies similar problems using their descriptions, while the generation step produces a solution based on the corresponding historical solutions. In those cases, you can add [MetaData](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection-add-knowledgebasechunk) with the key `knowledge` to the chunks during the insertion stage, allowing the model to base its response on the specified metadata rather than the input text.
+The returned `Response` includes [References](/appstore/modules/genai/genai-for-mx/commons/#reference) if the model used them to generate its response. In some cases, a knowledge chunk consists of two texts: one for the semantic search step (retrieval) and another for the generation step. For example, when solving a problem based on historical solutions, the semantic search identifies similar problems using their descriptions, while the generation step produces a solution based on the corresponding historical solutions. In those cases, you can add [MetaData](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection-add-knowledgebasechunk) with the key `knowledge` to the chunks during the insertion stage, allowing the model to base its response on the specified metadata rather than the input text (only the knowledge is passed to the model).
 
 Additionally, to utilize the `Source` attribute of the references, you can include `MetaData` with the key `sourceUrl`. Finally, the `HumanReadableId` of a chunk is used to display the reference's title in the response.
 
@@ -135,7 +133,7 @@ Function calling enables LLMs to connect with external tools to gather informati
 
 The model does not call the function but rather returns a tool called JSON structure that is used to build the input of the function (or functions) so that they can be executed as part of the chat completions operation. Functions in Mendix are essentially microflows that can be registered within the request to the LLM​. The connector takes care of handling the tool call response and executing the function microflows until the API returns the assistant's final response.
 
-Function microflows take a single input parameter of type string or no input parameter and must return a string. Currently, adding a [ToolChoice](/appstore/modules/genai/genai-for-mx/commons/#set-toolchoice) for function calling is not supported by the Mendix Cloud GenAI Connector.
+Function microflows take a single input parameter of type string and optionally a Request and/or Tool object or no input parameter at all and return a string.
 
 {{% alert color="warning" %}}
 Function calling is a highly effective capability and should be used with caution. Function microflows run in the context of the current user, without enforcing entity access. You can use `$currentUser` in XPath queries to ensure that you retrieve and return only information that the end-user is allowed to view; otherwise, confidential information may become visible to the current end-user in the assistant's response.
@@ -170,7 +168,7 @@ Note that the model uses the file name when analyzing documents, which could mak
 
 ### Knowledge Base Operations
 
-To implement knowledge base logic into your Mendix application, you can use the actions in the **USE_ME** > **Knowledge Base** folder or under the **GenAI Knowledge Base (Content)** or **Mendix Cloud Knowledge Base** categories in the **Toolbox**. These actions require a specialized [Connection](/appstore/modules/genai/genai-for-mx/commons/#connection) of type `MxKnowledgeBaseConnection` that determines the model and endpoint to use. Additionally, the collection name must be passed when creating the object and it must be associated with a `Configuration` object. Please note that for Mendix Cloud a knowledge base resource may contain several collections (tables). 
+To implement knowledge base logic into your Mendix application, you can use the actions in the **USE_ME** > **Knowledge Base** folder or under the **GenAI Knowledge Base (Content)** or **Mendix Cloud Knowledge Base** categories in the **Toolbox**. These actions require a specialized [Connection](/appstore/modules/genai/genai-for-mx/commons/#connection) of type `MxKnowledgeBaseConnection` that determines the model and endpoint to use. Additionally, the collection name must be passed when creating the object and it must be associated with a `Configuration` object. Please note that for Mendix Cloud GenAI a knowledge base resource may contain several collections (tables). 
 
 Dealing with knowledge bases involves two main stages:
 
@@ -178,6 +176,10 @@ Dealing with knowledge bases involves two main stages:
 2. [Retrieval of knowledge (Nearest neighbor)](#knowledge-base-retrieval)
 
 You do not need to manually add embeddings to a chunk, as the connector handles this internally. To see all existing knowledge bases for a configuration, go to the **Knowledge Base** tab on the [Mendix Cloud GenAI Configuration](#configuration) page and refresh the view on the right. Alternatively, use the `Get Collections` action to retrieve a synchronized list of collections inside of your knowledge base resource to include in your module. Lastly, you can delete a collection using the `Delete Collection` action.
+
+{{% alert color="warning" %}}
+The knowledge chunks are stored in an AWS OpenSearch Serverless database to ensure scalable and high-performance vector calculations—for example, retrieving the nearest neighbors of a given input. Inserted or modified chunks are only available for read operations (retrieval) in the knowledge base within 60-120 seconds. For more information, see [AWS documentation](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vector-search.html#serverless-vector-limitations).
+{{% /alert %}}
 
 #### Knowledge Base Insertion{#knowledge-base-insertion}
 
@@ -254,7 +256,7 @@ The **Documentation** pane displays the documentation for the currently selected
 
 ## Implementing GenAI with the Showcase App
 
-For more inspiration or guidance on how to use microflows in your logic, Mendix recommends downloading the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of example use cases and applies almost all of the Mendix Cloud GenAI operations. The starter apps in the [Mendix Components](/appstore/modules/genai/#mendix-components) list can also be used as inspiration or simply adapted for a specific use case.
+For more guidance on how to use microflows in your logic, Mendix recommends downloading the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of example use cases and applies almost all of the Mendix Cloud GenAI operations. The starter apps in the [Mendix Components](/appstore/modules/genai/#mendix-components) list can also be used as inspiration or simply adapted for a specific use case.
 
 ## Troubleshooting {#troubleshooting}
 
@@ -278,7 +280,22 @@ To check your JDK version and update it if necessary, follow these steps:
     2. You may also need to update Gradle. To do this, go to **Edit** > **Preferences** > **Deployment** > **Gradle directory**. Click **Browse** and select the appropriate Gradle version from the Mendix folder. For Mendix 10.10 and above, use Gradle 8.5. For Mendix 10 versions below 10.10, use Gradle 7.6.3. Then save your settings by clicking **OK**.
     3. Rerun the project.
 
-## Read More{#readmore}
+### Migrating From Add-on Module to App Module
+
+Since the module has been changed with version 3.0.0 from an add-on to an app module, updating it via the marketplace will require a migration to ensure it works properly with your application.
+
+To do this, follow the steps below:
+
+1. Back up your data — either as a full database backup or by exporting individual components:
+
+    * Keys for the Mendix Cloud GenAI Resource Packs can be reimported later.
+    * Incoming associations to the protected module’s entities will be deleted.
+2. Delete the add-on module: MxGenAIConnector.
+3. Download the updated module from the Marketplace. Note that the module is now listed under the **Marketplace modules** category in the **App Explorer**.
+4. Test your application locally to ensure everything functions as expected.
+5. Restore any lost data in deployed environments. Typically, keys and incoming associations to the protected module need to be reset.
+  
+## Read More {#readmore}
 
 For Anthropic Claude-specific documentation, refer to:
 

@@ -7,6 +7,23 @@ weight: 15
 numberless_headings: true
 ---
 
+## 3.0.2
+
+**Release date: May 13, 2025**
+
+### Fixes
+
+* We upgraded to Studio Pro [9.24.34](/releasenotes/studio-pro/9.24/#92434) for security fixes.
+* We updated dependencies for security fixes.
+
+## 3.0.1
+
+**Release date: February 18, 2025**
+
+### Fixes
+
+* We fixed an issue with compatibility for [Data Widgets](https://marketplace.mendix.com/link/component/116540) 2.29.1.
+
 ## 3.0.0
 
 **Release date: September 24, 2024**

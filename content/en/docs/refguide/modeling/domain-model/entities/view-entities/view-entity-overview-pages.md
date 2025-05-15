@@ -253,9 +253,9 @@ When you run your app, you should now be able to update the product’s category
 
 You can use a view entity to add a new product into the existing database. Follow the steps below:
 
-1. Create a new microflow and name it *ACT_CreateProduct*
+1. Create a new nanoflow and name it *ACT_CreateProduct*.
 2. Add a Create object activity to create a *Product* (the persistable entity) object. Leave all the attributes blank.
-3. Check the Commit checkbox.
+3. Check the **Commit** checkbox.
 4. Place another Retrieve object activity after the previous activity. 
 5. Retrieve `ProductOverviewVE` that corresponds to the new `Product` object. Configure it with the following details:
 

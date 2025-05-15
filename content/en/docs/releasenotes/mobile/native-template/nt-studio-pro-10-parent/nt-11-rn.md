@@ -1,15 +1,26 @@
 ---
 title: "Native Template 11"
 url: /releasenotes/mobile/nt-11-rn/
-weight: 5
+weight: 50
 description: "Native Template 11 release notes."
 ---
+
+## 11.0.5 {#1004}
+
+### Fixes
+
+**Release date: March 10, 2025**
+
+* We fixed an issue where changing the system font scale caused crashes on Android. 
 
 ## 11.0.4 {#1003}
 
 **Release date: January 15, 2025**
 
-* We resolved an issue with the bundle identifier in Xcode's **Dev** scheme.
+### Fixes
+
+* We fixed an issue with the bundle identifier in Xcode's **Dev** scheme.
+* We fixed an issue where an image that was not in PNG format caused errors because the react-native version was missing a patch.
 
 ## 11.0.2 {#1002}
 
@@ -17,7 +28,7 @@ description: "Native Template 11 release notes."
 
 ### Fixes
 
-* We resolved an issue where remote JavaScript debugging failed in a custom-built Mendix Native Developer App, leading to crashes when enabling “Remote JS Debugging.” The problem was caused by Firebase services not being initialized properly during the build process. Firebase dependencies are now only included when explicitly required by the application.
+* We fixed an issue where remote JavaScript debugging failed in a custom-built Mendix Native Developer App, leading to crashes when enabling “Remote JS Debugging.” The problem was caused by Firebase services not being initialized properly during the build process. Firebase dependencies are now only included when explicitly required by the application.
 
 ## 11.0.1 {#1001}
 

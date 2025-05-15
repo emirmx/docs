@@ -87,7 +87,7 @@ To use this connector, you need to either sign up for an [OpenAI account](https:
 
  The following modules from the Marketplace need to be installed:
 
-* GenAI Commons module, available in the [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931) marketplace listing.
+* [GenAI Commons](https://marketplace.mendix.com/link/component/239448) module
 * [Encryption](https://marketplace.mendix.com/link/component/1011) module
 * [Community Commons](https://marketplace.mendix.com/link/component/170) module
 
@@ -155,6 +155,7 @@ A [Deployed Model](/appstore/modules/genai/genai-for-mx/commons/#deployed-model)
     | Display name | This is the reference to the model for app users in case they have to select which one is to be used. |
     | Deployment name / Model name | This is the technical reference for the model. For OpenAI this is equal to the [model aliases](https://platform.openai.com/docs/models#current-model-aliases). For Azure OpenAI this is the deployment name from the [Azure Portal](https://oai.azure.com/resource/deployments).
     | Output modality| Describes what the output of the model is. This connector currently supports Text, Embedding, and Image.
+    | Input modality| Describes what input modalities are accepted by the model. This connector currently supports Text and Image.
     | Azure API version    | Azure OpenAI only. This is the API version to use for this operation. It follows the `yyyy-MM-dd` format. For supported versions, see [Azure OpenAI documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference). The supported versions can vary depending on the type of model, so make sure to look for the right section (such as Chat Completions, Image Generation, or Embeddings) on that page. |
 
 3. Close the popup and test the configuration with the newly created deployed models.
@@ -190,7 +191,7 @@ OpenAI does not call the function. The model returns a tool called JSON structur
 
 This is all part of the implementation that is executed by the GenAI Commons chat completions operations mentioned before. As a developer, you have to make the system aware of your functions and what these do by registering the function(s) to the request. This is done using the GenAI Commons operation [Tools: Add Function to Request](/appstore/modules/genai/genai-for-mx/commons/#add-function-to-request) once per function before passing the request to the chat completions operation.
 
-Currently, the connector supports the calling of Function microflows that take a single input parameter of type string or no input parameter and return a string.
+Currently, the connector supports the calling of Function microflows that take a single input parameter of type string and optionally a Request and/or Tool object or no input parameter at all and return a string.
 
 {{% alert color="warning" %}}
 Function calling is a very powerful capability and should be used with caution. Function microflows run in the context of the current user, without enforcing entity access. You can use `$currentUser` in XPath queries to ensure that you retrieve and return only information that the end-user is allowed to view; otherwise, confidential information may become visible to the current end-user in the assistant's response.
