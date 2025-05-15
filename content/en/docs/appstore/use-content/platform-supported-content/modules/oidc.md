@@ -93,7 +93,8 @@ For readers with more knowledge of the OAuth and OIDC protocol:
     For signing into the app, the OIDC SSO module will not use token introspection and will always validate against the published `jwks` endpoint.
 
 * Stores an access token for each end-user that can be used to make API calls on their behalf
-* Can be configured to use either client_secret_post or client_secret_basic as the client authentication method. Both make use of the client-id and client-secret as configured at the IdP
+* Can be configured to use either `client_secret_post`, `client_secret_basic`, or `private_key_jwt` as the client authentication method.
+* It supports nine signing algorithms (ES256, ES384, ES512, PS256, PS384, PS512, RS256, RS384, RS512) and automatically regenerates a new key pair upon expiry.
 * Supports ACR in authorization requests. The ACR in OIDC protocol is used to indicate the desired level of assurance or strength of authentication during the authentication process. It allows the relying party (your application) to request a specific level of authentication assurance from the identity provider (IdP) (version 2.3.0 and above)
 * Supports response_mode=query and response_mode=form_post
 * Helps you implement an OAuth Resource Server that receives an Access Token which is obtained by a client via either Authorization Code grant or Client Credential grant.
@@ -105,7 +106,6 @@ For readers with more knowledge of the OAuth and OIDC protocol:
 The OIDC SSO module does not yet support the following:
 
 * Requesting claims via the 'claims' query parameter, as per OIDC specs
-* Other client authentication methods such as using asymmetric keys (“private_key_jwt”)
 * Delegating authorization using OAuth-scopes; this currently requires a custom microflow for parsing of Access Tokens
 * Mobile apps
 * Controlling the configuration using constants requires an app restart
@@ -128,6 +128,7 @@ It requires the following Marketplace modules to be included in your app:
 * [Nanoflow Commons](https://marketplace.mendix.com/link/component/109515) – see [Nanoflow Commons](/appstore/modules/nanoflow-commons/) documentation.
 * [Mx Model reflection](https://marketplace.mendix.com/link/component/69) – see [Mx Model Reflection](/appstore/modules/model-reflection/) documentation (deprecated from version 4.0.0 of the module).
 * [User Commons](https://marketplace.mendix.com/link/component/223053) (for version 3.0.0 and above)
+* [Events](https://marketplace.mendix.com/link/component/224259) – see [Events](/appstore/widgets/events/) documentation.
 
 Versions below 2.3.0 also require [Native Mobile Resources](https://marketplace.mendix.com/link/component/109513) – see [Native Mobile Resources](/appstore/modules/native-mobile-resources/) documentation.
 
@@ -315,21 +316,28 @@ In this case, the OIDC client is the app you are making.
 
    **Client assertion** is automatically set to *Client ID and Secret*.
 
-4. Choose the **Client authentication method** — make sure that you select a method that is supported by your IdP. You can normally check this via the `token_endpoint_auth_methods_supported` setting on the IdP’s well-known endpoint. Also ensure that the correct client authentication method is configured at the IdP when you register the client.
+4. Choose the **Client authentication method** — make sure that you select a method that is supported by your IdP. You can normally check this via the `token_endpoint_auth_methods_supported` setting on the IdP’s well-known endpoint. Also, ensure that the correct client authentication method is configured at the IdP when you register the client.
 
     The options are:
-    * `client_secret_basic`: Your app will use the HTTP Basic Authentication scheme to authenticate itself at your IdP. (Default – for security reasons this should be your preferred choice)
-    * `client_secret_post`: Your app will authenticate itself by including its `client_id` and `client_secret` in the payload of token requests. (Older versions of the OIDC SSO module used this method).
+    * `client_secret_basic`: Your app will use the HTTP Basic Authentication scheme to authenticate itself at your IdP. This is the default. The `client_secret_basic` makes use of the `client-id` and `client-secret`.
+    * `client_secret_post`: Your app will authenticate itself by including its `client_id` and `client_secret` in the payload of token requests. (Older versions of the OIDC SSO module used this method.)
+    * `private_key_jwt`: This method, introduced in version 4.1.0, uses asymmetric key cryptography (algorithm) for authentication. This is the best option for security. When you select the `private key` option, you can configure the following fields:
+        * **Key Pair Expiration Days**: (default `90`)
+        * **JWT ALG(Signing Algorithm)**: (default `RS256`)
+ 
+    Once you **Save** the configuration, a key pair is automatically generated. Before you set up the private key authentication in your Mendix App, complete the JWKS configuration at your IdP. Check the documentation of your IdP for details. If you are using Okta, you can refer to the [Configuring JWKS at Your IdP (Okta)](#jwks-okta) section. 
+
+    {{% alert color="info" %}}After a key renewal, some SSO requests may fail if your IdP does not immediately refresh its key cache. {{% /alert %}}
 
 5. Add the **Client Secret**.
 6. If you have the **Automatic Configuration URL** (also known as the *well-known endpoint*), enter it and click **Import Configuration** to automatically fill the other endpoints.
 
-    {{% alert color="info" %}}If the endpoint URL does not already end with `/.well-known/openid-configuration`, include it at the end. According to the specifications, the URL you need to enter typically ends with `/.well-known/openid-configuration`.{{% /alert %}}
+    {{% alert color="info" %}} If the endpoint URL does not already end with `/.well-known/openid-configuration`, include it at the end. According to the specifications, the URL you need to enter typically ends with `/.well-known/openid-configuration`. {{% /alert %}}
 
     * If you do not have an automatic configuration URL, you can fill in the other endpoints manually.
 7. Click **Save**
 
-    {{% alert color="info" %}}Your client configuration is not yet complete, but you have to save at this point to allow you to set up the rest of the information.{{% /alert %}}
+    {{% alert color="info" %}} Your client configuration is not yet complete, but you have to save at this point to allow you to set up the rest of the information. {{% /alert %}}
 
 8. Select your client configuration and click **Edit**.
 9. Select the scopes expected by your OIDC IdP. The standard scopes are `openid`, `profile`, and `email`, but some IdPs may use different ones.
@@ -383,7 +391,7 @@ Now, you can acquire tokens which can be validated using JWKS URI.
 
 For more information about configuring your app for OIDC with Amazon Cognito, see [Amazon Cognito: Configuring the Required Settings in Your Mendix App](/appstore/modules/aws/amazon-cognito/#cognito).
 
-### Deploytime Configuration of Your IdP at Your App{#deploytime-idp-configuration}
+### Deploy-time Configuration of Your IdP at Your App{#deploytime-idp-configuration}
 
 #### Automated Deploy-time SSO Configuration{#deploy-time}
 
@@ -434,7 +442,19 @@ The following constants are optional:
 
 * **ClientAuthenticationMethod** (*default: client_secret_basic*) – the client authentication method — the caption of OIDC.ENU_ClientAuthenticationMethod
 
-    Examples: `client_secret_post` or `client_secret_basic`
+    Examples: `client_secret_post`, `client_secret_basic`, or `private_key_jwt`
+
+{{% alert color="info" %}}
+when you set **ClientAuthenticationMethod** as `private_key_jwt`, you do not need to set **ClientSecret** constant.
+{{% /alert %}}
+
+* **JWT_ALG** (*default: RS256*) – JWT signing algorithm
+
+    Example: `ES256`, `ES384`, `ES512`, `PS256`, `PS384`, `PS512`, `RS256`,`RS384`, and `RS512`
+
+* **KeyPair_ExpirationDays** (*default: 90*) – Expiration time of key pair
+
+    Example: `30`
 
 * **CallbackResponseMode** (*default: Query*) – : the callback response mode — the caption of OIDC.ENU_ResponseMode
 
@@ -1004,6 +1024,18 @@ Your IdP may have different ways of handling requests to use a specific authenti
 * Your IdP may send an error response to your app if the requested authentication method was not possible for the user that was asked to login, for whatever reason.
 
 When a user successfully signs in at your IdP, your IdP may or may not return an ACR claim in the ID-token. If your IdP returns the actual authentication method that was used in the ACR claim in the ID-token (and/or Access Token), you can create a [custom User Provisioning microflow](#microflow-at-runtime) (or [custom access token parsing microflow](#custom-parsing)) to grant or restrict access to specific resources or functionalities based on the level of authentication assurance.
+
+### Configuring JWKS at Your IdP (Okta) {#jwks-okta}
+
+Follow the steps below to configure the JWKS in Okta before you set up the private key
+authentication in your Mendix App.
+
+1. Go to the OIDC application in Okta.
+2. Navigate to the **General** tab and click **Edit** in the Client Credentials section.
+3. For **Client authentication**, select **Public Key / Private Key**.
+4. In the **PUBLIC KEYS** section, go to the **Configuration** and choose **Use a URL to fetch keys dynamically**.
+5. In the **Url** field, enter the location where your public key is stored. The following is the new endpoint in the OIDC SSO to fetch public keys based on the configured alias For example, `https:/`*`BASE_URL`*`/oauth/v2/jwks/`*`ALIAS`*. Here, *`ALIAS`* is the client alias configured in the OIDC application. For example, Okta.
+6. **Save** the configuration.
 
 ## Testing and Troubleshooting{#testing}
 
