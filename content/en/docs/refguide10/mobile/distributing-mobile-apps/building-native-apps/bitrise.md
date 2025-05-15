@@ -9,7 +9,7 @@ description: Describes how to integrate with Bitrise to build a Mendix native ap
 
 This guide helps you set up [Bitrise](https://bitrise.io) to automate building a Mendix native app in the cloud. Bitrise is a popular continuous integration service optimized for mobile apps.
 
-{{% alert color="info" %}}
+{{% alert color="warning" %}}
 The React Native version used in Studio Pro versions 10.11-10.16 includes Bitcode, which is not longer supported by Xcode 16 and above. This means that native mobile iOS applications created by customers **cannot be submitted to the App Store**. 
 
 For more information and workarounds, see [Bitcode Deprecation](/refguide10/mobile/introduction-to-mobile-technologies/native-mobile/#bitcode-deprecation).
@@ -22,8 +22,8 @@ Before starting this guide, make sure you have completed the following prerequis
 * Signed up for a [GitHub account](https://github.com/signup) and created a personal access token
 * Signed up for a [Bitrise account](https://app.bitrise.io/users/sign_up)
 * Read the [Getting Starting guide from Bitrise](https://devcenter.bitrise.io/en/getting-started.html) and understand the key concepts of Bitrise
-* Have access to a Mendix application project with a native mobile profile as a developer
-    * The Mendix application is deployed
+* Have access to a Mendix app with a native mobile profile as a developer
+    * The Mendix app is deployed
 * Have created the native template project for your app by following [Using Mendix Native Mobile Builder to Set Up Your Local App](/refguide10/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/#using-mendix-native-mobile-builder-to-set-up-your-local-app). Make sure to set the GitHub token to also create a GitHub repository.
 * Fulfilled the prerequisites below for all operating systems you want to target:
 
@@ -41,7 +41,9 @@ Before starting this guide, make sure you have completed the following prerequis
 
 ## Set Up Your Build Project {#set-up-your-build-project}
 
-To set up your build project, do the following:
+Bitrise allows you to make a build project for your app: an enumerated series of steps you outline that then become that app's build process. For more information, see [Bitrise's documentation](https://devcenter.bitrise.io/en/builds.html).
+
+ To set up your build project, do the following:
 
 1. Create a workspace (if needed) in Bitrise.
 1. Create a new project in the workspace.
@@ -65,7 +67,7 @@ To set up your build project, do the following:
 
 ## Setup Code Signing for iOS
 
-Applications distributed to iOS devices must be signed with a certificate and a provisioning profile. To do so, you need to register as a developer with Apple and join one of their development programs (see [Prerequisites](#prerequisites)).
+Applications distributed to iOS devices must be signed with a certificate and a provisioning profile. To do so, you need to register as a developer with Apple and join one of their development programs (see [Prerequisites for iOS](#prerecs-ios) above).
 
 Bitrise supports automatic provisioning via a constant connection with the App Store. To set it up, follow [the guide from Bitrise](https://devcenter.bitrise.io/en/code-signing/ios-code-signing/managing-ios-code-signing-files---automatic-provisioning.html).
 
@@ -73,7 +75,7 @@ If you prefer to manually set up provisioning, follow [this guide from Bitrise](
 
 ## Setup Code Signing for Android 
 
-Applications distributed to Android devices must be signed with a keystore. To distribute Android apps via the PlayStore, you must also register as an Android developer (see [Prerequisites](#prerequisites)).
+Applications distributed to Android devices must be signed with a keystore. To distribute Android apps via the PlayStore, you must also register as an Android developer (see [Prerequisites for Android](#prerecs-android) above).
 
 Bitrise lets you store your Android keystore in the build project. Follow [this guide from Bitrise](https://devcenter.bitrise.io/en/code-signing/android-code-signing/uploading-android-keystore-files-to-bitrise.html) to upload and store the keystore.
 
