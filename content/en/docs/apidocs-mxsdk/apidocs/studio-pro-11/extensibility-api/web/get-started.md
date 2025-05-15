@@ -24,6 +24,10 @@ You will need the following prerequisites:
 Extensions can be built on any operating system as the underlying framework is cross-platform.
 {{% /alert %}}
 
+{{% alert color="info" %}}
+Please note that extension development is only possible by starting Studio Pro with the `--enable-extension-development` feature flag.
+{{% /alert %}}
+
 ## Creating Your First Extension
 
 This section will show you how to build and test an extension.
@@ -99,7 +103,7 @@ To test the extension, do the following in File Explorer.
     
 1. Start Studio Pro with the following command line parameters to tell it to use the extensions in the folder.
 
-    `--enable-extension-development --enable-webview-debugging`
+    `--enable-extension-development --webview-remote-debugging`
 
     These flags instruct Studio Pro to do the following:
 

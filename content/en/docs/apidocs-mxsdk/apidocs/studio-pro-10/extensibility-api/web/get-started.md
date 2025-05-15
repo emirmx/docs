@@ -99,7 +99,7 @@ To test the extension, do the following in File Explorer.
     
 1. Start Studio Pro with the following command line parameters to tell it to use the extensions in the folder.
 
-    `--enable-extension-development --enable-webview-debugging`
+    `--enable-extension-development --webview-remote-debugging`
 
     These flags instruct Studio Pro to do the following:
 
