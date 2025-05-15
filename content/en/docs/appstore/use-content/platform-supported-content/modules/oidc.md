@@ -783,6 +783,7 @@ If you are just delegating authentication for your app to the IdP you will not n
 If you want to use the information in an access token which is a JWT, you need to parse the access token in a microflow. For example, you may want to assign user roles in your app based on the contents of the access token JWT.
 
 * The OIDC module provides you with default microflows for parsing access tokens from the following IdPs:
+
     * Siemens SAM – in this case the `sws.samauth.role.name` claim is interpreted — for example:
 
         ```json
@@ -799,7 +800,7 @@ If you want to use the information in an access token which is a JWT, you need t
         ]
         ```
 
-* If you are using another IdP or want to use a different claim, you can create a custom microflow to parse the access token.
+If you are using another IdP or want to use a different claim, you can create a custom microflow to parse the access token.
 
 To parse access tokens, you need to do the following:
 
@@ -900,28 +901,42 @@ For more information on using Deep Link module (with Mendix 8 and 9), see the [U
 Page URLs and Microflow URLs are supported with OIDC SSO for Mendix version 10.6 and above. To do this, follow the steps below:
 
 1. In the **Runtime** tab of the **App Settings**, configure the page **URL prefix** to **link** instead of the default **P** to maintain compatibility with existing URLs, and ensure to remove the Deep Link module from your app to start the app successfully.
-1. Configure **OIDC.Login_Web_Button** as the **Sign-in page** in the **Authentication** section of the app **Navigation**.
-1. The user is redirected to the OIDC login page for authentication.
-1. After successful log in, the user is directed to the desired page using page URLs and microflow URLs within the application.
+2. Configure **OIDC.Login_Web_Button** as the **Sign-in page** in the **Authentication** section of the app **Navigation**.
+3. The user is redirected to the OIDC login page for authentication.
+4. After successful log in, the user is directed to the desired page using page URLs and microflow URLs within the application.
 
 If you are building a new app using the OIDC SSO module (Mendix version 10.6 and above) and you are using Page URLs and Microflow URLs, follow the same steps as above.
-
-To allow the end users to navigate to the desired page:
-
-* If single IdP configured, URL will be the base URL of your application followed by `oauth/v2/login?cont={page/Microflowurl}`
-
-    For example, `http://localhost:8080/oauth/v2/login?cont=link/pagepath`
-
-* If multiple IdPs configured, you can specify which IdP should be used by adding the alias (MyIdPAlias)
-`oauth/v2/login?idp={MyIdPAlias}&cont={page/Microflowurl}`
-
-    For example, `http://localhost:8080/oauth/v2/login?idp=Okta&cont=link/pagepath`
 
 The Page and Microflow URLs fully support multiple IdPs, allowing users to trigger the login and choose the IdP on the OIDC login page.
 For more information, see the [Migrating to Page and Microflow URLs](/appstore/modules/deep-link/#migrate-page-micro) section of the *Deep Link*.
 
 Starting from Studio Pro 10.9.0, you can use the primitive parameters as **Query string** parameters in microflows. Check the checkbox in the parameter table to configure a microflow parameter to use as a **Query string** parameter.
 For more information, see the [URL](/refguide/microflow/#url) section of the *Microflow Properties*.
+
+##### Steps for OIDC SSO Version v4.1.0 and above
+
+In OIDC SSO version 4.1.0 and above, you do not have to enable anonymous users.
+
+You can disable this setting by navigating to **Security > Anonymous users** and setting **Allow anonymous users** to **No**.
+
+1. To use the Page URL functionality, replace the content of `login.html` with the content of `login-with-mendixsso-automatically.html` (located in the `resources\mendixsso\templates` folder) and save it as `login.html`.
+
+2. To implement the SSO redirection, you will need to replace the code in the `<script>` tag of your login page (for example, `login.html`) with code which does one of the following, depending on whether you want automatic or manual redirection:
+
+    * For automatic redirection, you can use `window.onload` to automatically redirect users to the SSO login page. You could, for example, use the following code:
+    
+        ```javascript
+        const returnURL = encodeURIComponent(window.location.search+window.location.hash);
+        self.location = '/oauth/v2/login?cont='+returnURL;
+        ```
+
+    * For manual redirection, you can add an onclick event to a button that manually triggers the SSO login. For example:
+    
+        ```javascript
+        window.location.href='/oauth/v2/login?cont=' + encodeURIComponent(window.location.search + window.location.hash);
+        ```
+
+Once the above changes are applied, end users can directly navigate to the desired page. If not logged in, they will be redirected to the IdP login page for authentication. After successful log in, they will be directed to the desired page using page and microflow URLs.
 
 #### Using Deep Link Module{#using-deep-link}
 
