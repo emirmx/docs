@@ -108,7 +108,7 @@ Users can create two types of agents:
 
  {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/agentcommons/agentbuilderUI.png" >}}
 
-#### Defining Context Entity
+#### Defining Context Entity {#define-context-entity}
 
 If your agent's prompt includes variables, your app must define an entity with attributes that match the variable names. An object of this entity serves as the context object, which holds the context data that will be passed when the **call agent** operation is triggered. For more details, see the [Use the agent in the app logic](#app-logic) section below.
 
@@ -149,28 +149,36 @@ New agents will be created in the draft status by default, meaning they are stil
 
 #### Calling the Agent from a Microflow
 
-For most use cases, the `Call Agent` microflow activity can be used. You can find this operation in Studio Pro **Toolbox**, under the **Agents Kit** category while editing a microflow.
+For most use cases, a `Call Agent` microflow activity can be used. You can find these operations in Studio Pro **Toolbox**, under the **Agents Kit** category while editing a microflow. Take a look at the table below if you're unsure which operation to use.
+
+| Operation name | Supported agent types | Description |
+|---|---|---|
+| Call Agent without History | Single-Call | For Single-Call agents, the user message is already part of the agent version and thus doesn't need to be passed explicitly or added to the optional request. |
+| Call Agent with History | Single-Call, Conversational | The user message or an alternating chat history of user and assistant message need to be added to the rest before calling this action. For Single-Call agents, the user message defined on the agent version is ignored. |
+
+##### Call Agent without History
+
+This action is only supported by Single-Call agents which have a user prompt as part of the agent version and calls the Agent by executing a `Chat Completions` operation. It uses all defined settings, including the selected model, system prompt, tools, knowledge base, and model parameters. If any of such parameters should be overwritten or you want to pass a knowledgebase or tool that is not already defined with the agent, you can do this by creating a request and adding these properties before passing it as OptionalRequest to the operation. If a context entity was configured, the corresponding context object must be passed so that variables in the system promt can be replaced. The operation returns a Response object containing the assistant’s final message, in the same fashion as the chat completions operations from GenAI Commons.
+
+To use it:
+
+1. Ensure the Agent object is in scope, for example, retrieve it from the database by name. 
+2. Optional: Create a Request object using either the [GenAI Commons operation](/appstore/modules/genai/genai-for-mx/commons/#chat-create-request) or the [Default Preprocessing from ConversationalUI](/appstore/modules/genai/conversational-ui-module/) and set properties any properties you want to overwrite from the agent definition.
+3. Optional: For more specific use cases, a context object can be passed for variable replacement. This object needs to be of the entity that was selected while [defining the agent](#define-context-entity).
+4. Optional: You can [create a file collection and add file(s)](/appstore/modules/genai/genai-for-mx/commons/#initialize-filecollection) to it that can be sent along with the user message. Check the documentation of the underlying LLM connector for support of files and images.
+5. Pass Agent and, if relevant, optional objects to the `Call Agent witout History` activity.
+
+##### Call Agent with History
+
+This action calls the Agent using the specified Request and executes a `Chat Completions` operation. It uses all defined settings, including the selected model, system prompt, tools, knowledge base, and model parameters. If a context entity was configured, the corresponding context object must be passed so that variables in the system promt can be replaced. The operation returns a Response object containing the assistant’s final message, in the same fashion as the chat completions operations from GenAI Commons.
 
 To use it:
 
 1. Create a Request object using either the [GenAI Commons operation](/appstore/modules/genai/genai-for-mx/commons/#chat-create-request) or the [Default Preprocessing from ConversationalUI](/appstore/modules/genai/conversational-ui-module/).
-2. Ensure the Agent object is in scope, for example, retrieve it from the database by name.
-3. Pass both the Request and Agent objects to the `Call Agent` activity.
-
-This action calls the Agent using the specified Request and executes a `Chat Completions (With History)` operation based on a defined agent. It uses all defined settings, including the selected model, system prompt, tools, knowledge base, and model parameters. The operation returns a Response object containing the assistant’s final message, in the same fashion as the chat completions operations from GenAI Commons.
-
-For more specific use cases, where a context object is required for variable replacement, use the `Get Prompt for Context Object`. You can find this in Studio Pro **Toolbox**, under the **Agents Kit** category while editing a microflow.
-
-
-This operation returns both the system prompt and user prompt as string attributes within a combined `PromptToUse` object. These prompt strings can then be passed to a Chat Completions operation.
-
-To use this setup:
-
-1. Retrieve the relevant Agent one more time (for example, by name) and pass it with your custom context object to the operation.
-
-2. In a similar way to the Call Agent activity, use the `Request_AddAgentCapabilities` microflow to apply the agent's properties to the request.
-
-3. Finally, place the required Chat Completions operation (with or without history) after this step to invoke the agent.
+2. Add at least one user message to the request using the [GenAI Commons operation](/appstore/modules/genai/genai-for-mx/commons/#chat-add-message-to-request). You can alternate between user and assistant messages if you want to send a whole conversation history.
+3. Ensure the Agent object is in scope, for example, retrieve it from the database by name.
+4. Optional: For more specific use cases, a context object can be passed for variable replacement. This object needs to be of the entity that was selected while [defining the agent](#define-context-entity).
+5. Pass both the Request, Agent and optionally the context objects to the `Call Agent with History` activity.
 
 For a conversational agent, the chat context can be created based on the agent in one convenient operation. Use the `New Chat for Agent` operation from the **Toolbox** under the **Agents Kit** category. Retrieve the agent (for example, by name) and pass it with your custom context object to the operation. Note that this sets the system prompt for the chat context, making it applicable to the entire (future) conversation. Similar to other chat context operations, an [action microflow needs to be selected](/appstore/modules/genai/conversational-ui-module/conversational-ui/#action-microflow) for this microflow action.
 
