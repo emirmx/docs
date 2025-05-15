@@ -7,6 +7,10 @@ description: "Describes Mendix Validation Assist on pages."
 
 ## Introduction 
 
+{{% alert color="info" %}}
+Validation Assist works both online and offline. No internet connection or signing-in is required.
+{{% /alert %}}
+
 The Validation Assist helps you build validation microflows in a more automated way using pre-built expressions. [Validation rules](/refguide/validation-rules/) are conditions that should be satisfied before an object is committed. There are different ways to [set up data validations](/refguide/setting-up-data-validation/) in Mendix. Building data validation in microflows is a manual and repetitive task and Validation Assist helps automate it. 
 
 The main features of the Validation Assist are as follows:
