@@ -2,11 +2,12 @@
 title: "Metamodel Release Notes"
 linktitle: "Metamodel"
 url: /releasenotes/sdk/metamodel/
-weight: 3
+weight: 7
 ---
 
 These are the release notes for the [Mendix Metamodel](/apidocs-mxsdk/mxsdk/mendix-metamodel/):
 
+* [11](/releasenotes/sdk/metamodel-11/)
 * [10](/releasenotes/sdk/metamodel-10/)
 * [9](/releasenotes/sdk/metamodel-9/)
 * [8](/releasenotes/sdk/metamodel-8/)
