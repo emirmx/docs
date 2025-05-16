@@ -1,21 +1,28 @@
 ---
-title: "External Database Connection"
-url: /refguide/external-database-connection/
+title: "Connect to an External Database"
+url: /refguide10/external-database-connection/
 weight: 30
-description: "Overview of the [External Database Connection document](https://marketplace.mendix.com/link/component/219862) in Studio Pro, downloaded from the Mendix Marketplace."
+linktitle: "External Database Connection"
+description: "Overview of how to configure the [External Database Connection document](https://marketplace.mendix.com/link/component/219862)."
 ---
 
 ## Introduction
 
 The [External Database Connector](/appstore/modules/external-database-connector/) integrates with Studio Pro with an **External database connection** service document. Use this document to connect to external databases in Studio Pro.
 
-This page references the External Database Connection document in Studio Pro. For information on how to configure the connector, see [External Database Connector](/appstore/modules/external-database-connector/). For information on how to create and validate SQL queries, see [Use the External Database Connector](/refguide/use-the-external-database-connector/).
-
 {{% alert color="info" %}}
-You must have the [External Database Connector](https://marketplace.mendix.com/link/component/219862) installed for external database connections to work properly while running your app. For instructions on adding modules or connectors to your app, see [Use Marketplace Content in Studio Pro](/appstore/use-content/).
+You must install the [External Database Connector](https://marketplace.mendix.com/link/component/219862) installed for external database connections to work properly while running your app. For instructions on adding modules or connectors to your app, see [Use Marketplace Content in Studio Pro](/appstore/use-content/).
 {{% /alert %}}
 
-## Connect to Database Wizard {#wizard}
+{{% alert color="info" %}}
+For Studio Pro 10.18, the External Database Connector uses a different approach to connect to databases during design time. This functionality enhances consistency between design time and runtime environments. To enable this beta feature, use the flag: `--enable-live-preview`
+
+For information on how to connect using the External Database Connection document with a feature flag, see [Querying and Integrating External Data](/refguide10/query-and-integrate-external-data/#enable-live-preview).
+
+This feature flag is only for Studio Pro 10.18. The feature is GA for Studio Pro 10.19 and above.
+{{% /alert %}}
+
+## Connect to the Database Wizard {#wizard}
 
 Right-click your module and click **Add other > External database connection** to open the **Database Connection** wizard:
 
@@ -24,7 +31,7 @@ Right-click your module and click **Add other > External database connection** t
 Enter or select the following:
 
 * **Name** — name of your database connection
-* **Database Type** — Microsoft SQL, MySQL, Oracle, PostgreSQL, or Snowflake
+* **Database Type** — Microsoft SQL, MySQL, Oracle, PostgreSQL, or Snowflake (Beta support from [Studio Pro 10.10](/releasenotes/studio-pro/10.10/))
 
 ### Connection Details
 
@@ -51,7 +58,7 @@ If you select **Use connection string**, enter the following:
 
 ### Password Security
 
-The password you provide when using one of the above connection methods will be stored in a constant, which can be altered upon deployment on a Cloud node. You can indicate which constants contain private or sensitive information to ensure this information is saved locally, and that it is not shared on the TeamServer or Cloud Portal.
+The password you provide when using one of the above connection methods will be stored in a constant, which can be altered upon deployment on a Cloud node. As of Mendix Studio Pro 10.9, you can indicate which constants contain private or sensitive information to ensure this information is saved locally, and that it is not shared on the TeamServer or Cloud Portal.
 
 ## External Database Connection Document {#external-database-document}
 
@@ -96,4 +103,7 @@ The **Response Structure** tab displays a preview of an entity that can be creat
 
 ## Read More
 
-To learn about how to use the data in a microflow, see the [Query External Database](/refguide/query-external-database/) activity. 
+* To configure the connector with an external database, follow the steps in [External Database Connector](/appstore/modules/external-database-connector/).
+* To utilize the connector to integrate data into your Mendix application, see [Querying and Integrating External Data](/refguide10/use-the-external-database-connector/).
+* To use SQL, see [Execute an SQL Statement on an External Database](/refguide10/execute-an-sql-statement-on-an-external-database/).
+* To learn about how to use the data in a microflow, see the [Query External Database](/refguide10/query-external-database/) activity. 
