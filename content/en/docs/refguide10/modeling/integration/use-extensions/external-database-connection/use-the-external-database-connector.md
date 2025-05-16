@@ -6,6 +6,7 @@ linktitle: "Querying and Integrating External Data"
 description: "Details how to use the External Database Connector to query external databases and integrate the data into your Mendix application."
 aliases: 
     - /howto10/integration/use-the-external-database-connector/
+    - /refguide10/use-the-external-database-connector/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team (buildpack) know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
