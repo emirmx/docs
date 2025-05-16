@@ -158,7 +158,7 @@ For most use cases, a `Call Agent` microflow activity can be used. You can find 
 
 ##### Call Agent with History {#call-agent-with-history}
 
-This action uses all defined settings, including the selected model, system prompt, tools, knowledge base, and model parameters to call the Agent using the specified Request and execute a `Chat Completions` operation. If a context entity was configured, the corresponding context object must be passed so that variables in the system promt can be replaced. The operation returns a Response object containing the assistant’s final message, in the same fashion as the chat completions operations from GenAI Commons.
+This action uses all defined settings, including the selected model, system prompt, tools, knowledge base, and model parameters to call the Agent using the specified Request and execute a `Chat Completions` operation. If a context entity was configured, the corresponding context object must be passed so that variables in the system prompt can be replaced. The operation returns a Response object containing the assistant’s final message, in the same fashion as the chat completions operations from GenAI Commons.
 
 To use it:
 
@@ -176,7 +176,7 @@ Download the [Agent Builder Starter App](https://marketplace.mendix.com/link/com
 
 ##### Call Agent without History {#call-agent-without-history}
 
-This action is only supported by Single-Call agents which have a user prompt defined as part of the agent version. It uses all defined settings, including the selected model, system prompt, user prompt, tools, knowledge base, and model parameters to call the Agent by executing a `Chat Completions` operation. If any of such parameters should be overwritten or you want to pass a knowledge base or tool that is not already defined with the agent, you can do this by creating a request and adding these properties before passing it as OptionalRequest to the operation. If a context entity was configured, the corresponding context object must be passed so that variables in the system promt can be replaced. The operation returns a Response object containing the assistant’s final message, in the same fashion as the chat completions operations from GenAI Commons.
+This action is only supported by Single-Call agents which have a user prompt defined as part of the agent version. It uses all defined settings, including the selected model, system prompt, user prompt, tools, knowledge base, and model parameters to call the Agent by executing a `Chat Completions` operation. If any of such parameters should be overwritten or you want to pass a knowledge base or tool that is not already defined with the agent, you can do this by creating a request and adding these properties before passing it as OptionalRequest to the operation. If a context entity was configured, the corresponding context object must be passed so that variables in the system prompt can be replaced. The operation returns a Response object containing the assistant’s final message, in the same fashion as the chat completions operations from GenAI Commons.
 
 To use it:
 
