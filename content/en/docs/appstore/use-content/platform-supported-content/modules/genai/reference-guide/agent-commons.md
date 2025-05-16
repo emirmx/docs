@@ -59,14 +59,14 @@ In addition, install the following modules:
 If you are starting from a blank app or adding agent-building functionality to an existing project, you need to manually install the [Agent Commons](https://marketplace.mendix.com/link/component/239450) module from the Mendix Marketplace. 
 Before proceeding, ensure your project includes the latest versions of the required [dependencies](#dependencies). Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to install the Agent Commons module.
 
-## Configuration
+## Configuration {#configuration}
 
 To use the Agent Commons functionalities in your app, you must perform the following tasks in Studio Pro:
 
 1. Assign the relevant [module roles](#module-roles) to the applicable user roles in the project **Security**.
 2. Add the [Agent Builder UI to your app](#ui-components) by using the pages and snippets as a basis.
 3. Ensure that a [deployed model](#deployed-models) is configured.
-4. [Define](#define-prompt) the prompts, add functions, knowledge bases, and test the agent.
+4. [Define](#define-agent) the prompts, add functions, knowledge bases, and test the agent.
 5. Add the agent to the app [logic](#app-logic) of your specific use case.
 6. Improve and [iterate on agent versions](#improve-agent).
 
@@ -96,7 +96,7 @@ To interact with LLMs using Agent Commons, you need at least one GenAI connector
 * For [Amazon Bedrock](https://marketplace.mendix.com/link/component/215042), the creation of Bedrock Deployed Models is part of the [model synchronization mechanism](/appstore/modules/aws/amazon-bedrock/#sync-models).
 * For [OpenAI](https://marketplace.mendix.com/link/component/220472), the configuration of OpenAI Deployed Models is part of the [configuration](/appstore/modules/genai/reference-guide/external-connectors/openai/#general-configuration).
 
-### Defining the Agent {#define-prompt}
+### Defining the Agent {#define-agent}
 
 When the app is running, a user with the `AgentAdmin` role can set up agents, write prompts, link microflows as tools, and provide access to knowledge bases. Once an agent is associated with a deployed model, it can be tested in an isolated environment, separate from the rest of the app’s logic, to validate its behavior effectively.
 
@@ -147,35 +147,23 @@ After a few quick iterations, the first version of the agent is typically ready 
 
 New agents will be created in the draft status by default, meaning they are still being worked on and can be tested using the agent commons module only. Once an agent is ready to be integrated into the app logic (i.e., logic triggered by end users), it must be saved as a version. This will store a snapshot of the prompt texts and the configured microflows as tools and knowledge bases. To select the active version for the agent, use the three-dot ({{% icon name="three-dots-menu-horizontal" %}}) menu option on the agent overview and click  **Select Version in use**.
 
-#### Calling the Agent from a Microflow
+#### Calling the Agent from a Microflow {#call-agent-microflow}
 
-For most use cases, a `Call Agent` microflow activity can be used. You can find these operations in Studio Pro **Toolbox**, under the **Agents Kit** category while editing a microflow. Take a look at the table below if you're unsure which operation to use.
+For most use cases, a `Call Agent` microflow activity can be used. You can find these actions in Studio Pro **Toolbox**, under the **Agents Kit** category while editing a microflow. Take a look at the table below if you're unsure which action to use based on your [agent type](#define-agent):
 
-| Operation name | Supported agent types | Description |
+| Toolbox action name | Supported agent types | Description |
 |---|---|---|
-| Call Agent without History | Single-Call | For Single-Call agents, the user message is already part of the agent version and thus doesn't need to be passed explicitly or added to the optional request. |
-| Call Agent with History | Single-Call, Conversational | The user message or an alternating chat history of user and assistant message need to be added to the rest before calling this action. For Single-Call agents, the user message defined on the agent version is ignored. |
+| [Call Agent with History](#call-agent-with-history) | Single-Call, Conversational | This action returns the assistant response for a single user message or based on a conversation history. The user message or an alternating chat history of user and assistant message need to be added to the request before calling this action. For Single-Call agents, the user message defined on the agent version is ignored. |
+| [Call Agent without History](#call-agent-without-history) | Single-Call | This action returns the assistant response for a single user message. For Single-Call agents, the user message is already part of the agent version and thus doesn't need to be passed explicitly or added to the optional request. |
 
-##### Call Agent without History
+##### Call Agent with History {#call-agent-with-history}
 
-This action is only supported by Single-Call agents which have a user prompt as part of the agent version and calls the Agent by executing a `Chat Completions` operation. It uses all defined settings, including the selected model, system prompt, tools, knowledge base, and model parameters. If any of such parameters should be overwritten or you want to pass a knowledgebase or tool that is not already defined with the agent, you can do this by creating a request and adding these properties before passing it as OptionalRequest to the operation. If a context entity was configured, the corresponding context object must be passed so that variables in the system promt can be replaced. The operation returns a Response object containing the assistant’s final message, in the same fashion as the chat completions operations from GenAI Commons.
-
-To use it:
-
-1. Ensure the Agent object is in scope, for example, retrieve it from the database by name. 
-2. Optional: Create a Request object using either the [GenAI Commons operation](/appstore/modules/genai/genai-for-mx/commons/#chat-create-request) or the [Default Preprocessing from ConversationalUI](/appstore/modules/genai/conversational-ui-module/) and set properties any properties you want to overwrite from the agent definition.
-3. Optional: For more specific use cases, a context object can be passed for variable replacement. This object needs to be of the entity that was selected while [defining the agent](#define-context-entity).
-4. Optional: You can [create a file collection and add file(s)](/appstore/modules/genai/genai-for-mx/commons/#initialize-filecollection) to it that can be sent along with the user message. Check the documentation of the underlying LLM connector for support of files and images.
-5. Pass Agent and, if relevant, optional objects to the `Call Agent witout History` activity.
-
-##### Call Agent with History
-
-This action calls the Agent using the specified Request and executes a `Chat Completions` operation. It uses all defined settings, including the selected model, system prompt, tools, knowledge base, and model parameters. If a context entity was configured, the corresponding context object must be passed so that variables in the system promt can be replaced. The operation returns a Response object containing the assistant’s final message, in the same fashion as the chat completions operations from GenAI Commons.
+This action uses all defined settings, including the selected model, system prompt, tools, knowledge base, and model parameters to call the Agent using the specified Request and execute a `Chat Completions` operation. If a context entity was configured, the corresponding context object must be passed so that variables in the system promt can be replaced. The operation returns a Response object containing the assistant’s final message, in the same fashion as the chat completions operations from GenAI Commons.
 
 To use it:
 
-1. Create a Request object using either the [GenAI Commons operation](/appstore/modules/genai/genai-for-mx/commons/#chat-create-request) or the [Default Preprocessing from ConversationalUI](/appstore/modules/genai/conversational-ui-module/).
-2. Add at least one user message to the request using the [GenAI Commons operation](/appstore/modules/genai/genai-for-mx/commons/#chat-add-message-to-request). You can alternate between user and assistant messages if you want to send a whole conversation history.
+1. Create a Request object using either the [Create Request](/appstore/modules/genai/genai-for-mx/commons/#chat-create-request) or the [Create Request with Chat History](/appstore/modules/genai/conversational-ui-module/conversational-ui/#request-operations) action. You can set optional attributes (such as temperature) directly on the request, if you want to overwrite those from the agent version. You can also [add additional knowledge bases or tools to the request](/appstore/modules/genai/genai-for-mx/commons/#add-function-to-request) that are not already defined with the agent version.
+2. Add at least one user message to the request using the [GenAI Commons operation](/appstore/modules/genai/genai-for-mx/commons/#chat-add-message-to-request). You can alternate between user and assistant messages if you want to send a whole conversation history to the model. If you used [Create Request with Chat History](/appstore/modules/genai/conversational-ui-module/conversational-ui/#request-operations) and your Chat Context contained messages, you can ignore this step.
 3. Ensure the Agent object is in scope, for example, retrieve it from the database by name.
 4. Optional: For more specific use cases, a context object can be passed for variable replacement. This object needs to be of the entity that was selected while [defining the agent](#define-context-entity).
 5. Pass both the Request, Agent and optionally the context objects to the `Call Agent with History` activity.
@@ -185,6 +173,18 @@ For a conversational agent, the chat context can be created based on the agent i
 {{% alert color="info" %}}
 Download the [Agent Builder Starter App](https://marketplace.mendix.com/link/component/240369) from the Marketplace for a detailed example of how to use the **Call Agent** activity in an action microflow of a chat interface.
 {{% /alert %}}
+
+##### Call Agent without History {#call-agent-without-history}
+
+This action is only supported by Single-Call agents which have a user prompt defined as part of the agent version. It uses all defined settings, including the selected model, system prompt, user prompt, tools, knowledge base, and model parameters to call the Agent by executing a `Chat Completions` operation. If any of such parameters should be overwritten or you want to pass a knowledge base or tool that is not already defined with the agent, you can do this by creating a request and adding these properties before passing it as OptionalRequest to the operation. If a context entity was configured, the corresponding context object must be passed so that variables in the system promt can be replaced. The operation returns a Response object containing the assistant’s final message, in the same fashion as the chat completions operations from GenAI Commons.
+
+To use it:
+
+1. Ensure the Agent object is in scope, for example, retrieve it from the database by name. 
+2. Optional: Create a Request object using the [GenAI Commons operation](/appstore/modules/genai/genai-for-mx/commons/#chat-create-request) to set optional attributes (such as temperature), if you want to overwrite those from the agent version. You can also [add additional knowledge bases or tools to the request](/appstore/modules/genai/genai-for-mx/commons/#add-function-to-request) that are not already defined with the agent version.
+3. Optional: For more specific use cases, a context object can be passed for variable replacement. This object needs to be of the entity that was selected while [defining the agent](#define-context-entity).
+4. Optional: You can [create a file collection and add file(s)](/appstore/modules/genai/genai-for-mx/commons/#initialize-filecollection) to it that can be sent along with the user message to the model. Check the documentation of the underlying LLM connector for support of files and images.
+5. Pass Agent and, if relevant, optional objects to the `Call Agent without History` activity.
 
 #### Transporting the Agent to Other Environments
 

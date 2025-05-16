@@ -137,7 +137,7 @@ The following additional snippets can be used to give the user more control over
 
 See the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926) or the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) on how to use those snippets.
 
-### Providing the ChatContext {#chat-context}
+### Providing the Chat Context {#chat-context}
 
 The `ChatContext` is the central entity in the pages and snippets above and represents a chat conversation with potentially many messages. It functions as the input for the action microflow, which contains the logic for LLM interaction and is executed when the user clicks the **Send** button. The `ChatContext` is visible only to its owner (see [Module Roles](#module-roles) for exceptions). 
 
@@ -190,7 +190,7 @@ If you want to create your custom action microflow, keep the following considera
 * Use the [chat context](#chatcontext-operations) and [request operations](#request-operations) to facilitate the interaction between the chat context and the model.
 * The custom action microflow can only be triggered if it is set as an action microflow for the `ProviderConfig` using one of the operations mentioned before.
 
-##### ChatContext operations {#chatcontext-operations}
+##### Chat Context operations {#chatcontext-operations}
 
 The following operations can be found in the toolbox for changing the [ChatContext](#chat-context) in a (custom) action microflow:
 
