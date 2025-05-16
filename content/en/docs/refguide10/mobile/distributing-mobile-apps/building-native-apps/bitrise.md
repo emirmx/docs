@@ -81,7 +81,7 @@ Bitrise lets you store your Android keystore in the build project. Follow [this 
 
 ## Adjust Workflow
 
-The default workflow (**deploy**) needs to be extended to work for Mendix native mobile apps. Open the build project and click on **Workflow** to access the workflow editor. With it, you can customize the commands you run in order to build your application.
+The default workflow (**deploy**) needs to be extended to work for Mendix native mobile apps. Open the build project in Bitrise and click on **Workflow** to access Bitrise's workflow editor. With it, you can customize the commands you run in order to build your application.
 
 Any additional workflows that may have been created can be removed. Select the workflow from the dropdown and click **Properties** > **Delete workflow**.
 
