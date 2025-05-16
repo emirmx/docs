@@ -1,0 +1,167 @@
+name: Merged stale branch deletion
+
+on:
+  schedule:
+    # Runs every two weeks (on the 1st and 15th of each month)
+    - cron: "0 0 1,15 * *"
+
+  # Manual trigger
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (no actual deletions)"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+      min_age_days:
+        description: "Minimum age in days since merge"
+        required: true
+        default: 14
+        type: number
+
+jobs:
+  cleanup-branches:
+    
+    if: github.repository_owner == 'mendix'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Git
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+
+      - name: Process branches
+        run: |
+          echo "FETCHING ALL BRANCHES"
+          git fetch --all
+
+          # Checks if it is a dry run
+          if [[ "${{ github.event_name }}" == "schedule" ]]; then
+            IS_DRY_RUN="false"  # Scheduled runs do actual deletions
+            MIN_AGE_DAYS=14
+          else
+            IS_DRY_RUN="${{ github.event.inputs.dry_run }}"
+            MIN_AGE_DAYS=${{ github.event.inputs.min_age_days }}
+          fi
+
+          echo "Mode: $([ "$IS_DRY_RUN" == "true" ] && echo "DRY RUN (no deletions)" || echo "ACTUAL DELETION")"
+          echo "Using minimum age of $MIN_AGE_DAYS days since merge"
+
+          echo "FINDING MERGED BRANCHES"
+          # Gets list of merged branches
+          MERGED_BRANCHES=$(git branch -r --merged origin/development | grep -v "origin/development" | grep -v "origin/main" | grep -v "origin/production"  | grep -v "origin/master" | sed 's/origin\///')
+
+          CURRENT_DATE=$(date +%s)
+          echo "Current date: $(date -d @$CURRENT_DATE)"
+
+          # Creates arrays to track results
+          BRANCHES_TO_DELETE=()
+          BRANCHES_TOO_RECENT=()
+          BRANCHES_SKIPPED=()
+
+          echo "CHECKING BRANCH MERGE DATES:"
+          echo "=================================="
+          for BRANCH in $MERGED_BRANCHES; do
+            # Skips branches with "backup" in their name
+            if [[ $BRANCH == *backup* ]]; then
+              BRANCHES_SKIPPED+=("$BRANCH (backup branch)")
+              continue
+            fi
+            
+            # Finds when branch was merged to development
+            # Gets the commit hash where the branch was merged
+            MERGE_HASH=$(git log --grep="Merge branch.*$BRANCH" origin/development -n 1 --pretty=format:"%H" || git log --grep="Merge pull request.*$BRANCH" origin/development -n 1 --pretty=format:"%H")
+            
+            # If no merge commit found, do:
+            if [[ -z "$MERGE_HASH" ]]; then
+              # Get the last commit of the branch
+              LAST_COMMIT=$(git log -n 1 origin/$BRANCH --pretty=format:"%H")
+              # Find when this commit or its equivalent appeared in development
+              MERGE_HASH=$(git log origin/development --pretty=format:"%H" --grep="$(git log -n 1 $LAST_COMMIT --pretty=format:"%s")" -n 1)
+            fi
+            
+            # If still no merge info, use the last commit on the branch
+            if [[ -z "$MERGE_HASH" ]]; then
+              MERGE_HASH=$(git log -n 1 origin/$BRANCH --pretty=format:"%H")
+            fi
+            
+            # Get the commit date
+            MERGE_DATE=$(git show -s --format=%ct $MERGE_HASH)
+            MERGE_DATE_HUMAN=$(git show -s --format=%ci $MERGE_HASH)
+            
+            # Calculate days since merge
+            DAYS_AGO=$(( (CURRENT_DATE - MERGE_DATE) / 86400 ))
+            
+            echo "Branch: $BRANCH - merged approximately $DAYS_AGO days ago ($MERGE_DATE_HUMAN)"
+            
+            # Check if the branch is old enough to be deleted
+            if [[ $DAYS_AGO -ge $MIN_AGE_DAYS ]]; then
+              BRANCHES_TO_DELETE+=("$BRANCH ($DAYS_AGO days since merge)")
+            else
+              BRANCHES_TOO_RECENT+=("$BRANCH ($DAYS_AGO days since merge)")
+            fi
+          done
+
+          # Display results
+          echo ""
+          echo "BRANCHES RECOMMENDED FOR DELETION (MERGED >= $MIN_AGE_DAYS DAYS AGO):"
+          echo "=================================="
+          if [ ${#BRANCHES_TO_DELETE[@]} -eq 0 ]; then
+            echo "No branches found that meet deletion criteria"
+          else
+            for BRANCH_INFO in "${BRANCHES_TO_DELETE[@]}"; do
+              echo "$BRANCH_INFO"
+            done
+          fi
+
+          echo ""
+          echo "BRANCHES TOO RECENT TO DELETE (MERGED < $MIN_AGE_DAYS DAYS AGO):"
+          echo "=================================="
+          if [ ${#BRANCHES_TOO_RECENT[@]} -eq 0 ]; then
+            echo "No recently merged branches found"
+          else
+            for BRANCH_INFO in "${BRANCHES_TOO_RECENT[@]}"; do
+              echo "$BRANCH_INFO"
+            done
+          fi
+
+          echo ""
+          echo "BRANCHES SKIPPED:"
+          echo "=================================="
+          if [ ${#BRANCHES_SKIPPED[@]} -eq 0 ]; then
+            echo "No branches skipped"
+          else
+            for BRANCH_INFO in "${BRANCHES_SKIPPED[@]}"; do
+              echo "$BRANCH_INFO"
+            done
+          fi
+
+          # Perform actual deletion if not a dry run
+          if [[ "$IS_DRY_RUN" == "false" ]]; then
+            echo ""
+            echo "=================================="
+            echo "PROCEEDING WITH ACTUAL DELETION"
+            echo "=================================="
+            
+            # Extract just the branch names from BRANCHES_TO_DELETE
+            for BRANCH_INFO in "${BRANCHES_TO_DELETE[@]}"; do
+              BRANCH=$(echo $BRANCH_INFO | cut -d' ' -f1)
+              echo "Deleting branch: $BRANCH"
+              git push origin --delete $BRANCH
+            done
+          else
+            echo ""
+            echo "=================================="
+            echo "This is just a report - no branches were actually deleted."
+          fi
