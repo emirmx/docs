@@ -1,8 +1,8 @@
 ---
-title: "External Database Connection"
+title: "Connect to an External Database"
 url: /refguide10/external-database-connection/
 weight: 30
-description: "Overview of the [External Database Connection document](https://marketplace.mendix.com/link/component/219862) in Studio Pro, downloaded from the Mendix Marketplace."
+description: "Overview of how to configure the [External Database Connection document](https://marketplace.mendix.com/link/component/219862)."
 ---
 
 ## Introduction
@@ -12,7 +12,7 @@ The [External Database Connector](/appstore/modules/external-database-connector/
 This page references the External Database Connection document in Studio Pro. For information on how to configure the connector, see [External Database Connector](/appstore/modules/external-database-connector/). For information on how to create and validate SQL queries, see [Use the External Database Connector](/refguide10/use-the-external-database-connector/).
 
 {{% alert color="info" %}}
-You must have the [External Database Connector](https://marketplace.mendix.com/link/component/219862) installed for external database connections to work properly while running your app. For instructions on adding modules or connectors to your app, see [Use Marketplace Content in Studio Pro](/appstore/use-content/).
+You must install the [External Database Connector](https://marketplace.mendix.com/link/component/219862) installed for external database connections to work properly while running your app. For instructions on adding modules or connectors to your app, see [Use Marketplace Content in Studio Pro](/appstore/use-content/).
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -23,7 +23,7 @@ For information on how to connect using the External Database Connection documen
 This feature flag is only for Studio Pro 10.18. The feature is GA for Studio Pro 10.19 and above.
 {{% /alert %}}
 
-## Connect to Database Wizard {#wizard}
+## Connect to the Database Wizard {#wizard}
 
 Right-click your module and click **Add other > External database connection** to open the **Database Connection** wizard:
 
