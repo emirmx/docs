@@ -29,10 +29,10 @@ The following mathematical operators are supported:
 | `*` | Multiplication | `6 * 4` | 24 |
 | `div` | Division | `8 div 4` | 2 |
 
-Mathematical operators can be used in Studio Pro. In Java code, they are disabled by default forn the `XPathQuery` API, but can be enabled using the `allowMathOperators` method. For example:
+Mathematical operators can be used in Studio Pro in XPath constraints that are defined in the model such as the [Retrieve](/refguide/retrieve/) microflow activity or [constraints](/refguide/access-rules/#xpath-constraints) in access rules. Mathematical operators are not allowed in queries that come from the client. For instance, they cannot be used in [widgets](/appstore/widgets/). In Java code, mathematical operators are disabled by default for the `XPathQuery` API, but can be enabled using the `allowMathOperators` method. For example:
 
 ```java
-core.createXPathQuery("//Module.Entity[attr1 + attr2 = 42]")
+Core.createXPathQuery("//Module.Entity[attr1 + attr2 = 42]")
     .allowMathOperators(true)
     .execute(context);
 ```
