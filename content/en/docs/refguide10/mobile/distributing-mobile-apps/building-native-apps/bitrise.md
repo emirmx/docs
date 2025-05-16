@@ -25,7 +25,7 @@ Before starting this guide, make sure you have completed the following prerequis
 * Have access to a Mendix app with a native mobile profile as a developer
     * The Mendix app is deployed
 * Have created the native template project for your app by following [Using Mendix Native Mobile Builder to Set Up Your Local App](/refguide10/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/#using-mendix-native-mobile-builder-to-set-up-your-local-app). Make sure to set the GitHub token to also create a GitHub repository.
-* Fulfilled the prerequisites below for all operating systems you want to target:
+* Fulfilled the prerequisites subsections below for all operating systems you want to target
 
 ### Prerequisites for iOS {#prerecs-ios}
 
@@ -98,7 +98,7 @@ You can find the required Node version in the **package.json** file of your app'
 
 ### Add Missing npm Command
 
-Add a missing npm command by doing the following:
+Our Bitrise's workflow needs an additional npm command step to function optimally. Add the missing npm command by doing the following:
 
 1. Add a new step after the step "Run npm command".
 1. Choose **Run npm command** from the list of steps.
