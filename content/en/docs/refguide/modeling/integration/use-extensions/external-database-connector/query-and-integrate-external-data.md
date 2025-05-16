@@ -1,10 +1,12 @@
 ---
-title: "Use the External Database Connector"
-url: /refguide/use-the-external-database-connector/
+title: "Querying and Integrating External Data"
+url: /refguide/query-and-integrate-external-data/
 weight: 40
-description: "Overview of the External Database Connector in Studio Pro"
+linktitle: Querying and Integrating External Data
+description: "Details how to use the External Database Connector to query external databases and integrate the data into your Mendix application."
 aliases: 
     - /howto/integration/use-the-external-database-connector/
+    - /refguide/use-the-external-database-connector/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team (buildpack) know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -12,74 +14,21 @@ aliases:
 
 Use the [External Database Connector](https://marketplace.mendix.com/link/component/219862) to connect, retrieve, and insert data into your Mendix app.
 
-The External Database Connector supports connections to the following databases:
-
-* MSSQL
-* MySQL
-* PostgreSQL
-* Oracle
-* Snowflake
-
 This document teaches you how to do the following:
 
 * Connect your Mendix App to an external database
 * Create and validate SQL queries
 * Use created queries in the **Query External Database** activity
 
-For information on how to configure the connector, see [External Database Connector](/appstore/modules/external-database-connector/). For information on the database wizard and how to connect using the External Database Connection document, see [External Database Connection](/refguide/external-database-connection/). 
-
 ## Prerequisites
 
-Download the [External Database Connector](https://marketplace.mendix.com/link/component/219862) into your app. Make sure you have the following details for your external connection:  
+Ensure you have an active connection using the External Database Connection document. For information on how to configure the connector, see [External Database Connector](/appstore/modules/external-database-connector/) in the *Marketplace Guide*. 
 
-* Username
-* Password
-* Host
-* Port
-* Database name
+* If additional connection properties are required to connect, you can alternatively use **JDBC Connection String**.
+* If certificate-based authentication is required for PostgreSQL connections, ensure that all necessary certificates are added before running the app.
+* To test the connection and execute queries during design time, ensure to run your app locally.
 
-If additional connection properties are required to connect, you can alternatively use **JDBC Connection String**.
-
-If certificate-based authentication is required for PostgreSQL connections, ensure that all necessary certificates are added before running the app.
-
-To test the connection and execute queries during design time, ensure to run your app locally.
-
-## Connect to the External Database
-
-### Establish Connection Between the External Database and Mendix App
-
-1. Right-click the module you want to add the external database document to and click **Add other** > **External database connection**.
-
-2. Select the database you want to connect to and add the connection details in the Database Connection wizard.
-
-    {{< figure src="/attachments/refguide/modeling/integration/use-the-external-database-connector/1.png" width="600" >}}
-
-3. Click **“Test Connection”** to validate the connection to the external database.
-
-{{< figure src="/attachments/refguide/modeling/integration/use-the-external-database-connector/2.png" width="600" >}}
-
-Click **Save** to save the connection details, which are stored in 3 constants:
-
-* `\<Document Name\>_DBSource`
-* `\<Document Name\>_DBUsername`
-* `\<Document Name\>_DBPassword`
-
-For example: `*Database*_DBsource.`
-
-{{% alert color="info" %}} Values for these constants are stored in the active configuration of the user. The password is stored as a private value.
-
-Constants are an environment variable whose values can differ per environment, When you deploy an app on Mendix Cloud, values for constants are not added. For more information, see [Constants](https://docs.mendix.com/refguide/configuration/#constants){{% /alert %}}
-
-{{% alert color="info" %}}
-For free apps, make sure to add the default values to the constant in Studio Pro. For more information, see the [Deploying a Free App](https://docs.mendix.com/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/#deploy-free-app) section below. {{% /alert %}}
-
-### Explore Schemas of a Connected Database
-
-When the connection is successful and saved, you can search the **Browse database** tab for Tables, Views, Procedures, and Functions.
-
-{{< figure src="/attachments/refguide/modeling/integration/use-the-external-database-connector/3.png" width="700" >}}
-
-### Create and Validate SQL Queries with Parameters
+## Create and Validate SQL Queries with Parameters
 
 1. Create a new query by entering an SQL query in the **SQL query** field.
 
@@ -91,8 +40,9 @@ When the connection is successful and saved, you can search the **Browse databas
 
 For example, the query below retrieves a list of RequestedProductRequirement where the ProductLine is **Planes**.
 
-SQL Query:
+```sql
 `Select requestedProductRequirement from productlines where productLine = {productLine}`
+```
 
 {{< figure src="/attachments/refguide/modeling/integration/use-the-external-database-connector/4.png" width="700" >}}
 
@@ -204,7 +154,7 @@ For MSSQL, for **INOUT** and **OUT** parameters of type Decimal, test values (in
 
 ## Use the Query External Database Activity
 
-1. Add the **Query external database** activity into your microflow.
+1. Add the [Query external database](/refguide/query-external-database/) activity into your microflow.
 
 2. Double-click on the activity and select the new external database document.
 
@@ -221,3 +171,8 @@ You are now ready to use data from an external database in your Mendix App.
 {{% alert color="warning" %}}
 Make sure to use secure measures, as this action can allow for SQL injection into your app. Do not use user-supplied or environment-supplied variables in your SQL statement; if possible, they should be static.
 {{% /alert %}}
+
+## Read More
+
+* [Connect to an External Database](/refguide/external-database-connection/), an overview of the External Database Connection document.
+* [External Database Connector](/appstore/modules/external-database-connector/), which describes the confirmation and usage of the External Database Connector.

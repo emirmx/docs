@@ -3,14 +3,9 @@ title: "Entitlements"
 url: /control-center/entitlements/
 description: "Describes the Entitlements page in the Mendix Control Center."
 weight: 50
-beta: true
 no_list: true 
 
 ---
-
-{{% alert color="info" %}}
-This feature is currently in beta. For more information, see [Beta Releases](/releasenotes/beta-features/).
-{{% /alert %}}
 
 ## Introduction
 

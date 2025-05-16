@@ -50,7 +50,7 @@ To set up your build project, do the following:
    * Root directory of Android project: `android`
    * Module: `app`
    * Variant: `appstoreRelease`
-   * Project or Workspace path: `ios/NativeTempalte.xcworkspace`
+   * Project or Workspace path: `ios/NativeTemplate.xcworkspace`
    * Scheme name: `nativeTemplate`
    * Distribution method: [Choose the distribution method you want to use](https://developer.apple.com/videos/play/wwdc2019/304/)
    * Build stack: Choose the latest Xcode version compatible with your Mendix version
