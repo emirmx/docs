@@ -63,9 +63,9 @@ Bitrise allows you to make a build project for your app: an enumerated series of
    * Distribution method: [Choose the distribution method you want to use](https://developer.apple.com/videos/play/wwdc2019/304/)
    * Build stack: Choose the latest Xcode version compatible with your Mendix version
 1. Finish creating the project.
-1. Abort the build if one starts automatically (you first need to setup code signing and adjust the workflow).
+1. Abort the build if one starts automatically (you first need to set up code signing and adjust the workflow).
 
-## Setup Code Signing for iOS
+## Set Up Code Signing for iOS
 
 Applications distributed to iOS devices must be signed with a certificate and a provisioning profile. To do so, you need to register as a developer with Apple and join one of their development programs (see [Prerequisites for iOS](#prerecs-ios) above).
 
@@ -73,7 +73,7 @@ Bitrise supports automatic provisioning via a constant connection with the App S
 
 If you prefer to manually set up provisioning, follow [this guide from Bitrise](https://devcenter.bitrise.io/en/code-signing/ios-code-signing/managing-ios-code-signing-files---manual-provisioning.html) instead.
 
-## Setup Code Signing for Android 
+## Set Up Code Signing for Android 
 
 Applications distributed to Android devices must be signed with a keystore. To distribute Android apps via the PlayStore, you must also register as an Android developer (see [Prerequisites for Android](#prerecs-android) above).
 
