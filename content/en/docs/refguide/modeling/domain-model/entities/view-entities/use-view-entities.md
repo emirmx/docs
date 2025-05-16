@@ -68,15 +68,15 @@ Age is determined for each customer by calculating the difference in years betwe
 
 The original customer view included address information, but most database optimizers will see that this information is not relevant when counting customers by age, so this information is excluded when retrieving the data. However, the information is still present and can be generated, if requested. 
 
-## Sorting of view entity results {#sorting}
+## Sorting of View Entity Results {#sorting}
 
-Similarly to database views, vien entities are representations of data that do not imply any particular order of the results. Due to that, it is not possible to use `ORDER BY` clause in the view entity OQL to sort the results of the query. Data retrieved from a view entity can be sorted on retrieval, like regular entities. For example, using [Sorting](/refguide/retrieve/#sorting) functionality of a microflow Retrieve activity.
+Similar to database views, view entities represent data without enforcing any specific order. As a result, it is not possible to use the `ORDER BY` clause in the view entity OQL to sort query results. However, data retrieved from a view entity can be sorted on retrieval (like regular entities) using options like the [Sorting](/refguide/retrieve/#sorting) feature in a Retrieve microflow activity.
 
-### `ORDER BY` in combination with `LIMIT` and `OFFSET`
+### `ORDER BY` in Combination with `LIMIT` and `OFFSET`
 
-`ORDER BY` clause can be used in a view entity in combination with `LIMIT` or `OFFSET` clauses. That can be done to define a slice of data to retrieve. In that case, you still should not rely on the order of the output. If it is required to have the results in particular order, they can be sorted on retrieval.
+The `ORDER BY` clause can be used in a view entity in combination with `LIMIT` or `OFFSET` clauses to define a specific set of data to retrieve. If you do this, you still should not rely on the order of the output. If you want the results in particular order, they can be sorted on retrieval.
 
-For example, the following OQL query defines a view entity `Books.Bestseller`, which contains data of 10 most sold books. When using that view entity in your app, you should still explicitly specify sorting of the results.
+For example, the following OQL query defines a view entity `Books.Bestseller`, which contains data of 10 most frequently sold books. When using this view entity in your app, you should still explicitly specify sorting of the results.
 
 ```sql
 FROM Books.Book
