@@ -102,9 +102,9 @@ When the app is running, a user with the `AgentAdmin` role can set up agents, wr
 
 Users can create two types of agents:
 
-* Conversational Agent: Intended for scenarios where the end user interacts through a chat interface, or where the agent is called conversationally  by another agent.
+* **Conversational Agent**: Intended for scenarios where the end user interacts through a chat interface, or where the agent is called conversationally  by another agent.
 
-* Single-Call Agent: Designed for isolated agentic patterns such as background processes, subagents in an Agent-as-Tool setup, or any use case that doesn't require a conversational interface with historical context.
+* **Single-Call Agent**: Designed for isolated agentic patterns such as background processes, subagents in an Agent-as-Tool setup, or any use case that doesn't require a conversational interface with historical context.
 
  {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/agentcommons/agentbuilderUI.png" >}}
 
@@ -153,7 +153,7 @@ For most use cases, a `Call Agent` microflow activity can be used. You can find 
 
 | Toolbox action name | Supported agent types | Description |
 |---|---|---|
-| [Call Agent with History](#call-agent-with-history) | Single-Call, Conversational | This action returns the assistant response for a single user message or based on a conversation history. The user message or an alternating chat history of user and assistant message need to be added to the request before calling this action. For Single-Call agents, the user message defined on the agent version is ignored. |
+| [Call Agent with History](#call-agent-with-history) | Single-Call, Conversational | This action returns the assistant response for a single user message or based on a conversation history. The user message or an alternating chat history of user and assistant message need to be added to the request before calling this action. See [Add Message to Request](/appstore/modules/genai/genai-for-mx/commons/#chat-add-message-to-request) <br> This operation is designed for conversational agents, but will work for single-call agents as well; note that in that case the user prompt defined on the agent version is ignored. |
 | [Call Agent without History](#call-agent-without-history) | Single-Call | This action returns the assistant response for a single user message. For Single-Call agents, the user message is already part of the agent version and thus doesn't need to be passed explicitly or added to the optional request. |
 
 ##### Call Agent with History {#call-agent-with-history}
@@ -162,11 +162,11 @@ This action uses all defined settings, including the selected model, system prom
 
 To use it:
 
-1. Create a Request object using either the [Create Request](/appstore/modules/genai/genai-for-mx/commons/#chat-create-request) or the [Create Request with Chat History](/appstore/modules/genai/conversational-ui-module/conversational-ui/#request-operations) action. You can set optional attributes (such as temperature) directly on the request, if you want to overwrite those from the agent version. You can also [add additional knowledge bases or tools to the request](/appstore/modules/genai/genai-for-mx/commons/#add-function-to-request) that are not already defined with the agent version.
-2. Add at least one user message to the request using the [GenAI Commons operation](/appstore/modules/genai/genai-for-mx/commons/#chat-add-message-to-request). You can alternate between user and assistant messages if you want to send a whole conversation history to the model. If you used [Create Request with Chat History](/appstore/modules/genai/conversational-ui-module/conversational-ui/#request-operations) and your Chat Context contained messages, you can ignore this step.
+1. Create a Request object using the [Create Request](/appstore/modules/genai/genai-for-mx/commons/#chat-create-request), [Default Preprocessing](/appstore/modules/genai/conversational-ui-module/conversational-ui/#chatcontext-operations) or the [Create Request with Chat History](/appstore/modules/genai/conversational-ui-module/conversational-ui/#request-operations) action. You can set optional attributes (such as temperature) directly on the request, if you want to overwrite those from the agent version. You can also [add additional knowledge bases or tools to the request](/appstore/modules/genai/genai-for-mx/commons/#add-function-to-request) that are not already defined with the agent version.
+2. Add at least one user message to the request using the [GenAI Commons operation](/appstore/modules/genai/genai-for-mx/commons/#chat-add-message-to-request). You can alternate between user and assistant messages if you want to send a whole conversation history to the model. If you used [Create Request with Chat History](/appstore/modules/genai/conversational-ui-module/conversational-ui/#request-operations) or [Default Preprocessing](/appstore/modules/genai/conversational-ui-module/conversational-ui/#chatcontext-operations) and your Chat Context contained messages, you can ignore this step.
 3. Ensure the Agent object is in scope, for example, retrieve it from the database by name.
 4. Optional: For more specific use cases, a context object can be passed for variable replacement. This object needs to be of the entity that was selected while [defining the agent](#define-context-entity).
-5. Pass both the Request, Agent and optionally the context objects to the `Call Agent with History` activity.
+5. Pass both the Request, Agent and optionally the context object to the `Call Agent with History` activity.
 
 For a conversational agent, the chat context can be created based on the agent in one convenient operation. Use the `New Chat for Agent` operation from the **Toolbox** under the **Agents Kit** category. Retrieve the agent (for example, by name) and pass it with your custom context object to the operation. Note that this sets the system prompt for the chat context, making it applicable to the entire (future) conversation. Similar to other chat context operations, an [action microflow needs to be selected](/appstore/modules/genai/conversational-ui-module/conversational-ui/#action-microflow) for this microflow action.
 
@@ -184,7 +184,7 @@ To use it:
 2. Optional: Create a Request object using the [GenAI Commons operation](/appstore/modules/genai/genai-for-mx/commons/#chat-create-request) to set optional attributes (such as temperature), if you want to overwrite those from the agent version. You can also [add additional knowledge bases or tools to the request](/appstore/modules/genai/genai-for-mx/commons/#add-function-to-request) that are not already defined with the agent version.
 3. Optional: For more specific use cases, a context object can be passed for variable replacement. This object needs to be of the entity that was selected while [defining the agent](#define-context-entity).
 4. Optional: You can [create a file collection and add file(s)](/appstore/modules/genai/genai-for-mx/commons/#initialize-filecollection) to it that can be sent along with the user message to the model. Check the documentation of the underlying LLM connector for support of files and images.
-5. Pass Agent and, if relevant, optional objects to the `Call Agent without History` activity.
+5. Pass Agent and, if relevant, the optional request and context objects to the `Call Agent without History` activity.
 
 #### Transporting the Agent to Other Environments
 
