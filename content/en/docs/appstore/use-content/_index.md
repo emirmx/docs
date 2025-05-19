@@ -1,5 +1,5 @@
 ---
-title: "Use Marketplace Content"
+title: "Using Marketplace Content"
 url: /appstore/use-content/
 weight: 3
 description: "Covers the basics of how to access the Marketplace from Studio Pro and provides examples of how to add a widget and module to your app."
