@@ -17,18 +17,13 @@ aliases:
 
 This how-to covers the basics of accessing the Marketplace from Studio Pro and provides examples of how to add a widget and a module to your application.
 
-This how-to teaches you how to do the following:
-
-* Download content from the Marketplace via Studio Pro
-* Use content (for example, modules) downloaded from the Marketplace in Studio Pro
-
 {{% alert color="warning" %}}
 If you are using Studio Pro on a Mac with Parallels, see [this update](https://kb.parallels.com/112091#section7) for improving the loading time of Marketplace in Studio Pro.
 {{% /alert %}}
 
 ## Installing Marketplace Content {#install}
 
-There are three ways to install a Marketplace component, which are described in the sections below.
+There are three ways to install a Marketplace component, which are described in the following sections.
 
 ### Finding and Downloading Content in Studio Pro {#downloading}
 
@@ -40,7 +35,7 @@ To download content in Studio Pro [9.19](/releasenotes/studio-pro/9.19/) and abo
 
 2. Open the app in which you want to install the component from the Marketplace.
 
-3. To open the Marketplace in Studio Pro, you can either click the **View** menu in the top bar and select **Marketplace**, or you can click the Marketplace icon on the right side of the top bar
+3. To open the Marketplace in Studio Pro, you can either click the **View** menu in the top bar and select **Marketplace**, or you can click the Marketplace icon on the right side of the top bar.
 
     {{< figure src="/attachments/appstore/use-content/toolbar.png" alt="Marketplace icon" class="no-border" >}}
 
@@ -49,20 +44,22 @@ To download content in Studio Pro [9.19](/releasenotes/studio-pro/9.19/) and abo
     {{< figure src="/attachments/appstore/use-content/marketplace.png" alt="Search result for rating" class="no-border" >}}
 
 4. You can explore Marketplace content in the following ways:
-    * Use **Search in the Marketplace** to find the component that you want to download
-        * You can paste the content ID here if you copied it via the [Use in Studio Pro button](/appstore/component-details/) in the web Marketplace
-    * Filter via the **Categories** and **Subcategories** drop-down menus, which correspond to the [Marketplace content types](/appstore/overview/)
-    * Filter for **All Content**, **My Company Content**, or **Platform-Supported Content**
+    * Use **Search in the Marketplace** to find the component that you want to download.    
+      You can paste the content ID here if you copied it via the [Use in Studio Pro button](/appstore/component-details/) in the web Marketplace.
+    * Filter via the **Categories** and **Subcategories** drop-down menus, which correspond to the [Marketplace content types](/appstore/overview/).
+    * Filter for **All Content**, **My Company Content**, or **Platform-Supported Content**.
 
 5. Select a component from the pane to see its details:
 
     {{< figure src="/attachments/appstore/use-content/component-details.png" alt="Details of Blank App example component" class="no-border" >}}
 
-    The details presented here correspond to what you see on the [component details page](/appstore/component-details/) in the online Mendix Marketplace.
+    The details presented here correspond to what you see on the [component details page](/appstore/component-details/) in the online Marketplace.
 
-6. Click **Download** to download the component. The correct version of the component that is compatible with your Studio Pro version is integrated directly into your application (for widgets, version compatibility is not applicable). By default, the highest correct version of the component is downloaded. If you want to download an older component version, go to the **Releases** tab and click **Download** for the desired version.
+6. Click **Download** to download the component.     
+   The correct version of the component that is compatible with your Studio Pro version is integrated directly into your application. By default, the highest correct version of the component is downloaded. If you want to download an older component version, go to the **Releases** tab and click **Download** for the desired version.    
+   Version compatibility is not applicable to widgets.
 
-7. Depending on whether the component is a widget, a module, an [extension](/appstore/modules/#introduction), (which is a special type of module), or an app, go to one of the sections below:
+7. Depending on the type of component, go to one of these sections:
 
     * [Widgets](#widgets)
     * [Modules](#modules)
@@ -79,15 +76,17 @@ If you download a module, the **Import Module** dialog box opens, where you shou
 
 1. Select one of these options:
 
-   * **Add as a new module** (default option when the module is downloaded to your app for the first time ) – if you select this option, new entities and attributes are created in your app.
+   * **Add as a new module** (default option when the module is downloaded to your app for the first time ) – If you select this option, new entities and attributes are created in your app.
 
-   * **Replace existing module** (default option when the module already exists in your app) – if you select this option, you need to specify which **Module to replace**
+   * **Replace existing module** (default option when the module already exists in your app) – If you select this option, you need to specify which **Module to replace**
 
-     {{% alert color="warning" %}}If you have made any changes to the existing module, selecting the **Replace existing module** option will replace all the changes that you made (for example, your renamed entities, attributes, and associations as well as their respective tables and columns represented in the database will all be replaced). Your user data will stay if you have not changed entities, attributes, or associations. If you have changed data types, your user data can be influenced as well. For more information, see [Attribute Type Migration](/refguide/attributes-type-migration/).{{% /alert %}}
+     {{% alert color="warning" %}}If you have made any changes to the existing module, selecting the **Replace existing module** option replaces all the changes that you made. For example, your renamed entities, attributes, and associations, as well as their respective tables and columns represented in the database will all be replaced. If you have changed data types, your user data can be influenced as well. User data will not be changed, though, if you have not changed entities, attributes, or associations. For more information, see [Attribute Type Migration](/refguide/attributes-type-migration/).{{% /alert %}}
 
 2. Click **Import**.
    
-3. Wait until a pop-up window states that the module was successfully imported. Click **OK**. You can find the imported module in the **App Explorer**. 
+3. Wait until a pop-up window states that the module was successfully imported, then click **OK**.     
+
+You can find the imported module in the **App Explorer**. 
 
 ##### Extensions {#extensions}
 
@@ -95,9 +94,10 @@ If you download an [extension](/appstore/modules/#introduction), a warning dialo
 
 * If you trust the extension, click **Trust module and enable extension**.
 
-* If you decide to not trust the extension, you will get asked whether or not to trust the extension every time you reload the application. 
+* If you decide to not trust the extension, you are asked whether or not to trust the extension every time you reload the application. 
 
-Click **OK** in the confirmation pop-up window. Your extension is now installed and is ready to use. Depending on the extension that you have installed, the functionality appears in a certain location of your app. Read the extension-specific documentation to get more information on how to use it.
+Click **OK** in the confirmation pop-up window. Your extension is now installed and ready to use.    
+Depending on the extension that you have installed, the functionality appears in a certain location of your app. Read the extension-specific documentation to get more information on how to use it.
 
 If you do not want to trust the extension and would prefer to remove the extension altogether, you can remove the add-on module that was added.
 
@@ -107,23 +107,29 @@ If you do not want to trust the extension and would prefer to remove the extensi
 
 If you download an app, the **Download Marketplace App** dialog box opens, where you should perform the following steps:
 
-1. Select where the app should be stored: **New Mendix Team Server**, **Existing Mendix Team Server**, or **Locally on disk**. 
+1. Select where the app should be stored:  
+
+   * **New Mendix Team Server**
+   * **Existing Mendix Team Server**
+   * **Locally on disk**
+
 2. Configure the necessary settings based on your storage choice.
-3. Click **OK**.
+3. Click **OK**.    
+   After the app is downloaded, it opens automatically in Studio Pro.
 
-    After the app is downloaded, it opens automatically in Studio Pro.
+#### For Studio Pro 9.18 and Older
 
-#### For Studio Pro 9.18 and Below
-
-To download content in Studio Pro [9.18](/releasenotes/studio-pro/9.18/) and below, follow these steps:
+To download content in Studio Pro [9.18](/releasenotes/studio-pro/9.18/) and older, follow these steps:
 
 1. Open Studio Pro and sign in with your Mendix credentials.
 2. Open the app in which you want to install the component from the Marketplace.
 3. Click the Marketplace icon in the top menu bar to open it in Studio Pro. The Marketplace opens within Studio Pro. The **Categories** menu item on the left side gives an overview of which types of content are available.
-4. Use the **Search** bar to find the component that you want to download. Note that results for Marketplace content searches within Studio Pro may differ from those in the online [Marketplace](/appstore/overview/) due to synchronization issue.
-5. Click the component (or the **Read more** button on the right side) to show the details of the component.
-6. Click **Download** to download the component. The correct version of the component that is compatible with your Studio Pro version is integrated directly into your application (for widgets, version compatibility is not applicable). By default, the highest correct version of the component is downloaded. If you want to download an older component version, go to the **Releases** tab and click **Download** for the desired version.
-7. Depending on whether the component is a widget, a module, or an app, go to one of the sections above:
+4. Use the **Search** bar to find the component that you want to download. Note that results for Marketplace content searches within Studio Pro may differ from those in the online [Marketplace](/appstore/overview/) due to a synchronization issue.
+5. Click the component or the **Read more** button on the right side to show the details of the component.
+6. Click **Download** to download the component.     
+   The correct version of the component that is compatible with your Studio Pro version is integrated directly into your application. By default, the highest correct version of the component is downloaded. If you want to download an older component version, go to the **Releases** tab and click **Download** for the desired version.    
+   Version compatibility is not applicable to widgets.
+7. Depending on the type of component, go to one of these sections:
 
    * [Widgets](#widgets)
    * [Modules](#modules)
@@ -131,13 +137,13 @@ To download content in Studio Pro [9.18](/releasenotes/studio-pro/9.18/) and bel
 
 ### Importing Content from Studio Pro's App Explorer {#import}
 
-{{% alert color="info" %}}This procedure works for [modules](/appstore/modules/) (including [add-on and solution modules](/refguide/module-settings/#module-type)).{{% /alert %}}
+{{% alert color="info" %}}This procedure is applicable to [modules](/appstore/modules/), including [add-on and solution modules](/refguide/module-settings/#module-type).{{% /alert %}}
 
 To import content downloaded from the online Mendix Marketplace into Studio Pro, follow these steps:
 
 1. Go to the [Marketplace](https://marketplace.mendix.com/) and sign in with your Mendix credentials.
-2. Search in the online Marketplace for the component you want to download and open the [component details page](/appstore/component-details/).
-3. Check **Usage** > **Version** to see the required Studio Pro version for the component. Do not download a component that requires a higher version than the one you are using.
+2. Search in the online Marketplace for the component you want to download, and open the [component details page](/appstore/component-details/).
+3. Access **Usage**, then **Version** to see the required Studio Pro version for the component. Do not download a component that requires a higher version than the one you are using.
 4. Go to the **Releases** tab and **Download** the desired version. Mendix recommends using the latest version of the component if possible.
 5. In the **App Explorer**, right-click the app, then click **Import module package**, and select the component you downloaded:
 
@@ -147,13 +153,13 @@ To import content downloaded from the online Mendix Marketplace into Studio Pro,
 
 6. In the **Import Module** dialog box, select one of these options:
 
-    * **Add as a new module** (default option when the module is downloaded to your app for the first time ) – if you select this option, new entities and attributes are created in your app
-    * **Replace existing module** (default option when the module already exists in your app) – if you select this option, you need to specify which **Module to replace**
+    * **Add as a new module** (default option when the module is downloaded to your app for the first time ) – If you select this option, new entities and attributes are created in your app.
+    * **Replace existing module** (default option when the module already exists in your app) – If you select this option, you need to specify which **Module to replace**.
 
-        {{% alert color="warning" %}}If you have made any changes to the existing module, selecting the **Replace existing module** option will replace all the changes that you made (for example, your renamed entities, attributes, and associations as well as their respective tables and columns represented in the database will all be replaced). Your user data will stay if you have not changed entities, attributes, or associations. If you have changed data types, your user data can be influenced as well. For more information, see [Attribute Type Migration](/refguide/attributes-type-migration/).{{% /alert %}}
+        {{% alert color="warning" %}}If you have made any changes to the existing module, selecting the **Replace existing module** option replaces all the changes that you made. For example, your renamed entities, attributes, and associations, as well as their respective tables and columns represented in the database will all be replaced. If you have changed data types, your user data can be influenced as well. User data will not be changed, though, if you have not changed entities, attributes, or associations. For more information, see [Attribute Type Migration](/refguide/attributes-type-migration/).{{% /alert %}}
     
 7. Click **Import**. 
-8. Wait until a pop-up window states that the module was successfully imported. Click **OK**. 
+8. Wait until a pop-up window states that the module was successfully imported, then click **OK**. 
 
 You can find the imported module in the **App Explorer**.
 
