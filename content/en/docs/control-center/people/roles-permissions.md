@@ -55,30 +55,34 @@ Follow these steps to create a role:
 
   {{< figure src="/attachments/control-center/people/roles-permissions/edit-project-role-step-3.png" alt="Project Role Step 3" >}}
 
-  You can choose between **No Access** and **Access**.
+   You can choose between **No Access** and **Access**.
 
-  If you choose **Access**, you can refine your settings in the following sections:
+   If you choose **Access**, you can refine your settings in the following sections:
 
-  * **Permission Management** - You can select **Fixed** or **Custom**. 
-    * If you select **Fixed**, continue to set the permissions for this role in the **Set Permissions** section. 
-    * If you select **Custom**, you allow anyone with **Manage Permissions** rights, such as the Technical Contact, to set permissions per environment.
-  * **Set Permissions** - Choose the specific privileges you want to include in this role for non-production environments. The permissions you set here are fixed for this role. They cannot be changed later on the **Permissions** page.
+   * **Permission Management** - You can select **Fixed** or **Custom**. 
+   
+     * If you select **Fixed**, continue to set the permissions for this role in the **Set Permissions** section. 
+     * If you select **Custom**, you allow anyone with **Manage Permissions** rights, such as the Technical Contact, to set permissions per environment.
+
+   * **Set Permissions** - Choose the specific privileges you want to include in this role for non-production environments. The permissions you set here are fixed for this role. They cannot be changed later on the **Permissions** page.
 
 7. Click **Next**.  
 8. Select the access rights for **Production Environments**.
 
-{{% alert color="warning" %}}You need to complete multi-factor authentication before you can edit and save production environment permissions.{{% /alert %}}
+   {{% alert color="warning" %}}You need to complete multi-factor authentication before you can edit and save production environment permissions.{{% /alert %}}
 
 {{< figure src="/attachments/control-center/people/roles-permissions/edit-project-role-step-4.png" alt="Project Role Step 4" >}}
 
-You can choose between **No Access** and **Access**.
+   You can choose between **No Access** and **Access**.
 
-If you choose **Access**, you can refine your settings in the following sections:
+   If you choose **Access**, you can refine your settings in the following sections:
 
-* **Permission Management** - You can select **Fixed** or **Custom**. 
-    * If you select **Fixed**, continue to set the permissions for this role in the **Set Permissions** section. 
-    * If you select **Custom**, you allow anyone with **Manage Permissions** rights, such as the Technical Contact, to set permissions per environment.
-* **Set Permissions** - Choose the specific privileges you want to include in this role for non-production environments. The permissions you set here are fixed for this role. They cannot be changed later on the **Permissions** page.
+    * **Permission Management** - You can select **Fixed** or **Custom**. 
+
+      * If you select **Fixed**, continue to set the permissions for this role in the **Set Permissions** section. 
+      * If you select **Custom**, you allow anyone with **Manage Permissions** rights, such as the Technical Contact, to set permissions per environment.
+
+    * **Set Permissions** - Choose the specific privileges you want to include in this role for non-production environments. The permissions you set here are fixed for this role. They cannot be changed later on the **Permissions** page.
 
 ## Showing Role Details
 
