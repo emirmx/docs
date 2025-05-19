@@ -41,6 +41,14 @@ Once you have created a backup archive, you can download it by clicking **More O
 If you want to restart your environment after creating a backup archive, wait until the backup completes. Tables are locked while the database is in the process of creating a backup, so you may receive a timeout error if you try to start your environment while the backup is being created.
 {{% /alert %}}
 
+## Files in a Backup
+
+All files will be part of a backup unless the following is true:
+
+* The attribute **DeleteAfterDownload** of the entity **System.FileDocument**, including all generalizations of this entity, is set to **true**.
+
+The **DeleteAfterDownload** flag is a security feature that automatically removes files from the file storage system immediately after successful download and ensures these files are excluded from system backups. This flag is particularly important for handling sensitive or confidential data, as it guarantees that once downloaded and deleted, the files cannot be retrieved from either the active storage or backup systems, thereby maintaining complete data security throughout the file's lifecycle.
+
 ## Read More
 
 * [How to Deploy to Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/)
