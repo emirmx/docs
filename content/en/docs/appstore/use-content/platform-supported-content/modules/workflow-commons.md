@@ -150,7 +150,7 @@ To perform the migration, follow the steps below:
 In case of any added logic with relation to Workflow Commons, please check if the migration microflow needs be modified as well to result in the desired migration of data.
 {{% /alert %}}
 
-The user tasks objects will only be migrate once, even if the migration flow is set in the after-startup microflow and the app is restarted. If the migration is interrupted due to an error, a full rollback will be triggered. For extra assurance and ensuring no user tasks are migrated twice, we added the **IsMigrated** flag attribute to WorkflowCommons.UserTaskView that will be set to true for each migrated user task object. After the migration, the existing data will still be available in the WorkflowCommons.UserTaskView entity, nothing will be deleted.
+The user tasks objects will only be migrate once, even if the migration flow is set in the after-startup microflow and the app is restarted. If the migration is interrupted due to an error, a full rollback will be triggered. For extra assurance and ensuring no user tasks are migrated twice, we added the **IsMigrated** flag attribute to WorkflowCommons.UserTaskView that will be set to true for each migrated user task object. After the migration, the existing data will still be available in the WorkflowCommons.UserTaskView entity, nothing will be deleted. In a future major module release, we will remove the WorkflowCommons.WorkflowView and WorkflowCommons.UserTaskView entities. 
 
 #### Migrating Your Logic And Pages
 
