@@ -27,12 +27,12 @@ Before starting this how-to, make sure you have reviewed the [Marketplace Overvi
 
 ## Adding New Marketplace Content {#adding}
 
-To get started, click **Add Content** in the Marketplace home screen. Follow the steps in the sections below to add and submit the content.
+To get started, click **Add Content** on the Marketplace home screen. Follow the steps in the sections below to add and submit the content.
 
 {{% alert color="info" %}}
 <a id="draft"></a>On each page of the upload flow, click one of the following buttons:
 
-* **Save Draft & Exit** to store the details you have entered so far as a draft (accessible via [My Drafts](/appstore/home-page/#my-drafts)) and exit the upload flow
+* **Save Draft & Exit** to save the details you have entered so far as a draft (accessible via [My Drafts](/appstore/home-page/#my-drafts)) and exit the upload flow
 * **Next** to continue to the next page in the upload flow
 {{% /alert %}}
 
@@ -89,7 +89,7 @@ The [GNU General Public License (GPL), version 3](https://www.gnu.org/licenses/g
 
 You can configure a proprietary license for your company’s content, which can be applied to multiple components and used by everyone within your organization. 
 
-This license can be created for a new **Public Marketplace (all Mendix users)** component by requesting a new license and submitting it alongside the component. The license needs to be approved by Mendix after you have created and submitted it the first time. Once approved, you and the people within your organization can use it it for other components.
+This license can be created for a new **Public Marketplace (all Mendix users)** component by requesting a new license and submitting it alongside the component. The license needs to be approved by Mendix after you have created and submitted it the first time. Once it is submitted for approval, you and the people within your organization can use it for other components.
 
 Follow these steps to configure a proprietary license for a new public component:
 
@@ -119,7 +119,7 @@ In the **How would you like to receive information on new leads?** field, you mu
 
 #### Finishing Up
 
-To finish up configuring the **General** page, click **Upload Image** to upload a cover image for your component.
+To finish the configuration on the **General** page, click **Upload Image** to upload a cover image for your component.
 
 {{< figure src="/attachments/appstore/submit-content/general.png" >}}
 
@@ -137,7 +137,7 @@ On the **Package** page, you can **Upload Source File**:
     * To include the repo's *README.md* file on the component's [Documentation](#doc) tab, make sure you check the **Import Documentation** box 
     * Click **OK** to finish
 
-Optionally select **Compatibility** to test whether your component works with the React Client in Mendix Studio Pro 10.7 or higher. For details, see the [Widgets](/appstore/guidelines-content-creators/#github) section in *Mendix React Client*. Note that this option is only available if you selected **Widget** as the **Content Type** on the **General** page.
+If you selected **Widget** as the **Content Type** on the **General** page, you can optionally select **Compatibility** to test whether your component works with the React Client in Mendix Studio Pro 10.7 or higher. For details, see the [Widgets](/appstore/guidelines-content-creators/#github) section in *Mendix React Client*.
 
 Select the **Studio Pro Version** on which you built the content.
 
@@ -198,7 +198,8 @@ To update content that has already been published, follow these steps:
 1. Find the component by clicking one of the following:
     * **My Content**
     * **Company Content**
-    * **Content Group** (note that if an existing Marketplace component is assigned to a [content group](/appstore/home-page/#content-groups) as specific content group [content](/appstore/home-page/#group-content), you can only update the component if you are a member of that group)
+    * **Content Group**
+    {{% alert color="info" %}}If an existing Marketplace component is assigned to a [content group](/appstore/home-page/#content-groups) as specific content group [content](/appstore/home-page/#group-content), you can only update the component if you are a member of that group.{{% /alert %}}
 
 2. Click the menu item next to the component you want to update and select **Manage Draft**.
 
