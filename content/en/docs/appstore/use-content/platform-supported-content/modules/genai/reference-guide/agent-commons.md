@@ -8,7 +8,7 @@ weight: 20
 
 ## Introduction
 
-The [Agent Commons](https://marketplace.mendix.com/link/component/239450) module enables users to develop, test, and optimize their GenAI use cases by creating effective agents that interact with large language models (LLMs).
+The [Agent Commons](https://marketplace.mendix.com/link/component/240371) module enables users to develop, test, and optimize their GenAI use cases by creating effective agents that interact with large language models (LLMs).
 With the Agent Commons module, you can use the Agent Builder interface within your app to define agents at runtime and manage multiple versions over time.
 
 You can wire up prompts, microflows (as tools), knowledge bases, and large language models to build agentic patterns that support your business logic. The Agent Builder also allows you to define variables that act as placeholders for data from the app session context, which are replaced with actual values when the end user interacts with the app.
@@ -56,7 +56,7 @@ In addition, install the following modules:
 
 ## Installation
 
-If you are starting from a blank app or adding agent-building functionality to an existing project, you need to manually install the [Agent Commons](https://marketplace.mendix.com/link/component/239450) module from the Mendix Marketplace. 
+If you are starting from a blank app or adding agent-building functionality to an existing project, you need to manually install the [Agent Commons](https://marketplace.mendix.com/link/component/240371) module from the Mendix Marketplace. 
 Before proceeding, ensure your project includes the latest versions of the required [dependencies](#dependencies). Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to install the Agent Commons module.
 
 ## Configuration {#configuration}
