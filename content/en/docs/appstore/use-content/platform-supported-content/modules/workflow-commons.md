@@ -117,7 +117,7 @@ You can find the following microflows in Workflow Commons:
         1. Executes workflows by completing user tasks.
         2. Views personal performance in the **Task Dashboard**.
         3. Views workflow progress in the **My Initiated Workflows** overview.
-3. Make sure the correct user entity is set in the **App Settings**: open **App Settings** > **Workflows** tab and set **User entity** to *Administration.Account*.
+3. Make sure the correct user entity is set in the **App Settings**: open **App Settings** > **Workflows** tab and set **User entity** to *Administration.Account*. When using demo users, you should ensure that the entity of demo users is also set correctly: open **App Security** > **Demo users** tab and set the **Entity** to *Administration.Account* for each of the relevant users.
 4. For Workflow Commons v2.1.0 up to (but not including) v4.0.0, you need to configure the state change microflows in the **App Settings**: open **App Settings** > **Workflows** tab to configure the following state change microflows:
     1. Set **Workflow state change** to *OCh_Workflow_State*
     2. Set **User task state change** to *OCh_WorkflowUserTask_State*
