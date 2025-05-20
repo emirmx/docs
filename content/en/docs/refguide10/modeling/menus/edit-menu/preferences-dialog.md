@@ -94,7 +94,7 @@ This option controls the synchronization of managed dependencies. For more infor
 
 A directory where Gradle is located on the computer that you use to deploy the application. The correct directory is usually located automatically.
 
-#### Extra Arguments
+#### Extra Arguments {#extra-arguments}
 
 {{% alert color="info" %}}
 This option is available for Studio Pro 10.23.0 and above.
