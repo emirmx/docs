@@ -92,11 +92,11 @@ maven {
 }
 ```
 
-To configure a local directory to serve as a repository, use the following configuration:
+To configure a local directory to serve the required jar files, use the following configuration:
 
 ```groovy
 flatDir {
-    dirs 'local path of folder that contains the repository'
+    dirs 'local path of folder that contains jar files'
 }
 ```
 
