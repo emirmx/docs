@@ -55,6 +55,7 @@ In some situations, it can be beneficial to designate a single machine for build
 
 {{% alert color="warning" %}}
 Building native mobile apps is not supported on the [Private Mendix Platform](/private-mendix-platform/).
+Starting from version 10.22, native mobile builds are supported for PMP, including air-gapped environments with custom repository mirror support.
 {{% /alert %}}
 
 ## Getting the Make It Native App {#get-min-app}
