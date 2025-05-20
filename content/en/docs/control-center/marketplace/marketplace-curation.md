@@ -11,7 +11,7 @@ no_list: true
 The **Marketplace Curation** feature is a governance capability within the Mendix Platform. With this feature, you can translate the company's policies and guidelines for public Marketplace content to curation settings. Marketplace components that meet these requirements will get a company approved label: <text class="badge badge-pill badge-company-approved" style="margin-left:0px"> {{% icon name="checkmark-shield-filled" color="green" %}}COMPANY APPROVED</text>. This way, developers from your company can easily see which public content is company approved according to your company policies and guidelines. This functionality provides several key benefits:
 
 * Developer guidance – Developers can easily identify Marketplace content suitable for their apps by filtering Marketplace content by the company approved label in Studio Pro's Marketplace section or on the Marketplace website. This helps developers find valuable and relevant content for app development in your company.     
-  For more information, see [Displaying Company Approved Marketplace Content in Studio Pro](#display-company-approved-marketplace-content).
+    For more information, see [Displaying Company Approved Marketplace Content in Studio Pro](#display-company-approved-marketplace-content).
 * Enhanced marketplace exploration – By specifying criteria for company approved content, developers can explore a wider array of public content, enabling them to leverage resources for their apps.
 * Governance control – Centralized curation allows Mendix Admins to translate offline policies and guidelines to an in-platform experience, establishing efficient communication and time-saving processes between developers and Mendix Admins.
 
