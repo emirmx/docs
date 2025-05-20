@@ -14,12 +14,17 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ### May 23, 2025
 
+#### License Manage CLI v0.10.3
+
+* We've added support for uploading license bundles with an extended license expiration date (Ticket 249344).
+
 #### Mendix Operator v2.21.3 {#2.21.3}
 
 * We have addressed an issue with accessing contents of the `model/resources` directory when using the [read-only root filesystem feature](/developerportal/deploy/private-cloud-cluster/#readonlyrootfs).
   Starting from this version, the contents of `model/resources` will be available for use by the app (in read-only mode) even when the **Read-Only Root Filesystem** feature is enabled.
-* Upgrading to Mendix Operator v2.21.3 from a previous version now restarts environments managed by that version of the Operator. Environments with two or more replicas and a **PreferRolling** update strategy are restarted without downtime.
 * We fixed an issue where an ovelapping `/tmp/mendix/img` path could cause issues with some Marketplace components such as [Azure Application Insights](https://marketplace.mendix.com/link/component/108303) (Ticket 248704).
+* We've added support for updating license expiration dates when a newer license is available in PCLM (Ticket 249344).
+* Upgrading to Mendix Operator v2.21.3 from a previous version now restarts environments managed by that version of the Operator. Environments with two or more replicas and a **PreferRolling** update strategy are restarted without downtime.
 
 ### May 08, 2025
 
