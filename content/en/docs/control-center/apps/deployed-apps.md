@@ -16,7 +16,7 @@ If you click the **...** icon in the upper-right corner, you can access the foll
 
 * [Resize App](/support/new-app-node-request-template/#resize) – requests a container size change
 * [Offboard App](/support/new-app-node-request-template/#offboard) – requests that an app is offboarded
-* [Add new App](/new-app-node-request-template/#new-node) – requests a new app addition
+* [Add new App](/support/new-app-node-request-template/#new-node) – requests a new app addition
 
 The **Deployed Apps Overview** page has the following tabs: [Mendix Cloud](#mendix-cloud), [Free Apps](#free-apps), and [Apps with License Keys](#apps-license-keys).
 
