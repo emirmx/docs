@@ -8,7 +8,7 @@ no_list: true
 
 ## Introduction
 
-On the **Roles & Permissions** page in the Control Center, you can view and manage your company's centralized project roles and their permissions.  
+On the **Roles & Permissions** page in Control Center, you can view and manage your company's centralized project roles and their permissions.
 
 ## Centralized Project Roles
 
