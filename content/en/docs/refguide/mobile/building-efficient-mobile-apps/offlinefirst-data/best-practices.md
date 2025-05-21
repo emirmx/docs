@@ -100,13 +100,13 @@ Both autonumbers and calculated attributes require input from the server; theref
 
 There is no limitation to the use of many-to-many associations in offline apps, many-to-many is fully supported for offline apps.
 
-### Association ownership types
+### Association Ownership Types
 
-Offline apps only support default ownership for both many-to-one as for many-to-many associations. Ownership type "both" is not supported in offline apps.
+Offline apps only support default ownership for both many-to-one and many-to-many associations. The "both" ownership type is not supported in offline apps.
 
-### Association delete behavior
+### Association Delete Behavior
 
-Offline apps don't have support for delete behaviors on associations. Both the features of cascading a delete and prevent delete when associated is not available in offline apps. Note that the delete behavior is respected when synchronizing offline data with the server.
+Offline apps do not have support for delete behaviors on associations. Neither the "cascading a delete" nor the "prevent delete when associated" feature are available in offline apps. Note that the delete behavior is respected when synchronizing offline data with the server.
 
 ### Inheritance {#inheritance}
 
@@ -130,12 +130,12 @@ While working offline, offline-first apps cannot apply access rules with XPath c
 
 ### Event Handlers
 
-Event handlers trigger microflows upon a specific moment (Before/After) of an event (Create, Commit, Delete, Rollback). Those event handlers will not be triggered on the offline app, but only during synchronization with the server.
+Event handlers trigger microflows upon a specific moment (**Before**, **After**) of an event (**Create**, **Commit**, **Delete**, **Rollback**). Those event handlers will not be triggered on the offline app, but only during synchronization with the server.
 
-### Attribute paths in grid columns
+### Attribute Paths in Grid Columns
 
 Datagrids can not have columns with attributes from related entities in offline apps.
 
-### Attribute paths in sort orders
+### Attribute Paths in Sort Orders
 
 Attribute paths can not be used in sort orderings in offline apps.
