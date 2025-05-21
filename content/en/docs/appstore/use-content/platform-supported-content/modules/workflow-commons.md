@@ -132,6 +132,10 @@ For Workflow Commons v4.0.0 and above, this step is no longer required.
 
 This section explains the required steps when upgrading an existing app that is using Workflow Commons from Mendix 10 to Mendix 11. 
 
+{{% alert color="warning" %}}
+When upgrading to Workflow Commons v4.0.0 or above, make sure that you are currently using Workflow Commons v3.6.0 or above. If you are using an earlier version, first upgrade to any version between v3.6.0 and (but not including) v4.0.0, using a Mendix 10 version. Perform the required key and/or assignee migrations for all your environments. Any required migration will be shown in the WorkflowAdminCenter page. Once you have completed all the migrations, start upgrading your project from Mendix 10 to Mendix 11.
+{{% /alert %}}
+
 Workflow Commons version 4.0.0 and above uses the new [View Entities](https://docs.mendix.com/refguide/view-entities) feature for unified access to user tasks, regardless of whether these tasks are in progress or completed. Starting with Mendix 11, ended user tasks (with state Aborted and Completed) are now stored in the **WorkflowEndedUserTask** entity in the System module. The **WorkflowUserTaskView** view entity combines objects from **System.WorkflowUserTask** and **System.WorkflowEndedUserTask** into a single view. This eliminates the need for the custom entities (WorkflowView and UserTaskView) that used to be part of Workflow Commons in versions below v4.0.0, which were kept up to date using state-change events.
 
 With the removal of state-change events in Mendix 11, it is required to upgrade Workflow Commons to version 4.0.0 or higher. With this update, it is required to perform a one-off migration for your existing data and move all logic based on old entities.
