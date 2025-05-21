@@ -165,7 +165,7 @@ To create a new environment, perform the following steps:
 
 10. To configure logging, select the **Logging** service you would like to use from the dropdown.
 
-    {{% alert color="info" %}} **Application Logs** has been the default logging service but will be deprecated soon. See [SAP Application Logging Service](https://help.sap.com/docs/application-logging-service/sap-application-logging-service/what-is-sap-application-logging-service) for more details on the deprecation of **Application Logs**. For older applications still using the **Application Logs** service, see the [Migrating from SAP Application Logging to SAP Cloud Loggin](#migrating-cloud-logging) section below to ensure continued logging support.{{% /alert %}}
+    {{% alert color="info" %}} **Application Logs** has been the default logging service but will be deprecated soon. See [SAP Application Logging Service](https://help.sap.com/docs/application-logging-service/sap-application-logging-service/what-is-sap-application-logging-service) for more details on the deprecation of **Application Logs**. For older environments still using the **Application Logs** service, see the [Migrating from SAP Application Logging to SAP Cloud Loggin](#migrating-cloud-logging) section below to ensure continued logging support.{{% /alert %}}
 
 11. Set a **Subscription Secret** (required). This secret is associated with your Mendix production license. By entering the subscription secret, your application will run in this environment as production. If the subscription secret is invalid, your app will still run, but will restart every 2-4 hours and have a limitation of six concurrent users.
 
@@ -729,7 +729,7 @@ You can still delete the app and its resources from the SAP BTP cockpit, but you
 
 ## Migrating from SAP Application Logging to SAP Cloud Logging {#migrating-cloud-logging}
 
-Since SAP Application Logging will soon be deprecated, you need to migrate your logging service to SAP Cloud Logging for older applications still using SAP Application Logging. To complete the migration, follow the steps below:
+Since SAP Application Logging will soon be deprecated, you need to migrate your logging service to SAP Cloud Logging for older environments still using SAP Application Logging. To complete the migration, follow the steps below:
 
 1. In the **Services** tab of the **Environment** details page, search for and select **cloud-logging** in the **Available Services** field.
 2. Select the appropriate **Plan** and upload a **File** if required. 
