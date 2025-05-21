@@ -117,9 +117,9 @@ If you download an app, the **Download Marketplace App** dialog box opens, where
 3. Click **OK**.    
    After the app is downloaded, it opens automatically in Studio Pro.
 
-#### For Studio Pro 9.18 and Older
+#### For Studio Pro 9.18 and Above
 
-To download content in Studio Pro [9.18](/releasenotes/studio-pro/9.18/) and older, follow these steps:
+To download content in Studio Pro [9.18](/releasenotes/studio-pro/9.18/) and above, follow these steps:
 
 1. Open Studio Pro and sign in with your Mendix credentials.
 2. Open the app in which you want to install the component from the Marketplace.
@@ -175,8 +175,8 @@ To manually add content downloaded from the online Mendix Marketplace into Studi
 6. Open the app in which you want to install the Marketplace component.
 7. On the menu bar, click **App** > **Show App Directory in Explorer**. The app directory opens.
 8. Add the component into the app directory as follows:
-    * If it is a widget, add it into the **widgets** folder
-    * If it is an *.mxmodule* file, add it into the **modules** folder (you need to create this folder if it does not already exist)
+    * If it is a widget, add it to the **widgets** folder.
+    * If it is an *.mxmodule* file, add it to the **modules** folder. You need to create this folder if it does not already exist.
 9. On the menu bar, click **App** > **Synchronize App Directory**.
 10. Wait until the synchronization is finished.
 
@@ -195,7 +195,7 @@ After you [install](#install) the widget from the Marketplace in your app, there
 To add a widget from the **Toolbox**, follow these steps:
 
 1. Open the page where you want to add the widget.
-2. In the **Toolbox**, search for the name of the widget (for example, *Rating* to find the widget):
+2. In the **Toolbox**, search for the name of the widget.
 
     {{< figure src="/attachments/appstore/use-content/toolbox-rating.png" alt="Rating widget found in the toolbox" class="no-border" >}}
 
@@ -203,16 +203,18 @@ To add a widget from the **Toolbox**, follow these steps:
 
 To add a widget using the **Add widget** option from the toolbar, follow these steps:
 
-1. Click **Add widget** on the toolbar on the page where you want to add the widget. The **Select Widget** dialog box opens.
+1. Click **Add widget** on the toolbar on the page where you want to add the widget.    
+    The **Select Widget** dialog box opens.
 
     {{< figure src="/attachments/appstore/use-content/add-widget.png" alt="Add widget" class="no-border" >}}
 
-2. In the **Filter** bar, enter the name of the widget, for example *Rating*, to find the widget.
+2. In the **Filter** bar, enter the name of the widget.
 
     {{< figure src="/attachments/appstore/use-content/select-widget.png" alt="Rating widget highlighted in Select Widget dialog box" class="no-border" >}}
 
-3. Click the widget and then click **Select**. 
-4. In the page, click where you want to drop the widget. The widget is added to the location where the mouse pointer is.
+3. Click the widget, then click **Select**. 
+4. On the page, click where you want to drop the widget.    
+    The widget is added to the location where the mouse pointer is.
 
     {{< figure src="/attachments/appstore/use-content/widget-dropped-in-page.png" alt="Rating widget in the page" class="no-border" >}}
 
@@ -222,15 +224,15 @@ To update the widget in your app to a newer version, go to the Marketplace to do
 
 ##### Maintaining Added Translations in a Widget to Update
 
-In the scenario where you have an app with multiple languages in which you need to update an imported Marketplace widget that only comes with one language and where you have manually added translations for the additional languages you need, you can maintain the additional translations by following these steps:
+If you have an app with multiple languages in which you need to update an imported Marketplace widget that only comes with one language, and where you have manually added translations for the additional languages you need, you can maintain the additional translations by following these steps:
 
 1. Maintain the translations for the widget by [exporting them to Excel](/refguide/batch-translate/#export).
-2. Update the widget via the steps described above.
+2. Update the widget via the steps described in the previous section.
 3. [Import](/refguide/batch-translate/#import) the maintained translations from the Excel.
 
 #### Configuring the Widget
 
-After you place the widget in your page, some new errors can appear in the [Errors](/refguide/errors-pane/) pane. That is because you still need to configure the widget. In this procedure, the Ratings widget is used as an example.
+After you place the widget on your page, some new errors can appear in the [Errors](/refguide/errors-pane/) pane. That is because you still need to configure the widget. In this procedure, the **Ratings** widget is used as an example.
 
 To configure the widget, follow these steps:
 
@@ -238,7 +240,8 @@ To configure the widget, follow these steps:
 
     {{< figure src="/attachments/appstore/use-content/widget-errors.png" alt="Errors pane" class="no-border" >}}
 
-2. In the page, double-click the Rating widget. The **Edit Rating** dialog box opens and the **Attribute** field shows **(none)** – this means that no attribute is assigned, which causes the error.
+2. On the page, double-click the **Rating** widget.    
+    The **Edit Rating** dialog box opens, and the **Attribute** field shows **(none)**. This means that no attribute is assigned, which causes the error.
 
     {{< figure src="/attachments/appstore/use-content/edit-rating.png" alt="Edit Rating dialog box" class="no-border" >}}
 
@@ -246,7 +249,8 @@ To configure the widget, follow these steps:
 
     {{< figure src="/attachments/appstore/use-content/select-attribute.png" alt="ProductRating selected in Select Attribute dialog box" class="no-border" >}}
 
-4. In the **Edit Rating** dialog box, click **OK**. The error in the **Errors** pane disappears.
+4. In the **Edit Rating** dialog box, click **OK**.     
+    The error in the **Errors** pane disappears.
 
 ### Using a Module {#module}
 
@@ -270,10 +274,10 @@ To update the module in your app to a newer version, follow these steps:
 
 ##### Maintaining Added Translations in a Module to Update
 
-In the scenario where you have an app with multiple languages in which you need to update an imported Marketplace module that only comes with one language and where you have manually added translations for the additional languages you need, you can maintain the additional translations by following these steps:
+If you have an app with multiple languages in which you need to update an imported Marketplace module that only comes with one language, and where you have manually added translations for the additional languages you need, you can maintain the additional translations by following these steps:
 
 1. Maintain the translations for the module by [exporting them to Excel](/refguide/batch-translate/#export).
-2. Update the module via the steps described above.
+2. Update the module via the steps described in the previous section.
 3. [Import](/refguide/batch-translate/#import) the maintained translations from the Excel.
 
 #### Configuring the Module
@@ -284,7 +288,7 @@ Keep in mind that some modules you can download may come with their own user rol
 
 ### Using a Starter App
 
-Downloading a starter app (via **Create New App**) creates a new app structure in the storage location that you select. After you click **Download**, a window will appear where you can specify how the app should be created.
+Downloading a starter app via **Create New App** creates a new app structure in the storage location that you select. After you click **Download**, a window is displayed, allowing you to specify how the app should be created.
 
 {{% alert color="info" %}}
 You cannot create a new app in an existing repository that is not empty.
@@ -294,17 +298,17 @@ You cannot create a new app in an existing repository that is not empty.
 
 To remove a widget from your app, follow these steps:
 
-1. In Studio Pro, go to **App** > **Show App Directory in Explorer** on the menu bar to open the app directory.
+1. In Studio Pro, go to **App**, then to **Show App Directory in Explorer** on the menu bar to open the app directory.
 2. Go to the **widgets** folder.
 3. Remove the *.mpk* file for the widget.
-4. In Studio Pro, go to **App** > **Synchronize App Directory**.
+4. In Studio Pro, go to **App**, then to **Synchronize App Directory**.
 
 To remove a module and user data from your app, follow these steps:
 
 1. In the **App Explorer**, find the module that you want to delete.
-2. Right-click the module and select **Delete** from the pop-up menu. A warning pop-up window opens.
+2. Right-click the module and select **Delete** from the pop-up menu. A warning pop-up window is displayed.
 
-    {{% alert color="warning" %}} Once you delete a module, all your user data will be lost – even if you later install the module again. If you want to replace the existing module with a different version, do not delete the module – [update the module](#update-module) instead.{{% /alert %}}
+    {{% alert color="warning" %}} Once you delete a module, all your user data is lost, even if you later install the module again. If you want to replace the existing module with a different version, do not delete the module, but [update](#update-module) it instead.{{% /alert %}}
 
 3. When you are sure that you want to delete the module and existing user data, click **Delete module and user data**.
 
