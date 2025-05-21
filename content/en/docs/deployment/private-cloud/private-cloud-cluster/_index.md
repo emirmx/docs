@@ -965,7 +965,7 @@ If your app works without issues when read-only root filesystem is enabled, it i
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-In Mendix Operator versions 2.21.0, 2.21.1 and 2.21.2, enabling the `runtimeReadOnlyRootFilesystem` option causes the `model/resources` directory to be empty. If your app (or a Marketplace module such as SAML) uses the `model/resources` directory for resources such as configuration data, consider upgrading to Mendix Operator 2.21.3 (or a later version), which is not affected by this issue.
+Enabling the `runtimeReadOnlyRootFilesystem` option causes the `model/resources` directory to be empty. If your app (or a Marketplace module such as SAML) uses the `model/resources` directory for resources such as configuration data, consider moving those resources to another location (for example, `model/userlib`) or loading them from FileDocument entities.
 {{% /alert %}}
 
 ### GKE Autopilot Workarounds {#gke-autopilot-workarounds}
