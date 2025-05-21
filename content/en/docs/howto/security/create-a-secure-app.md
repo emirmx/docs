@@ -225,16 +225,16 @@ To create access roles for the User module role, follow these steps:
     * **Default rights for new members**: Read, Write
     * **Access rights** for each member: **Read, Write**
 
-    {{< figure src="/attachments/howto/security/create-a-secure-app/18581534.png" class="no-border" >}} 
+    {{< figure src="/attachments/howto/security/create-a-secure-app/18581534.png" class="no-border" >}}
 
     {{< figure src="/attachments/howto/security/create-a-secure-app/18581533.png" class="no-border" >}}
 
 5. Deploy the application.
-6. Sign in with the different users and test the differences in your application. 
+6. Sign in with the different users and test the differences in your application.
 
 ## Defining the Access Rules on the Order Entity Using XPath
 
-In the previous section you set some access rules on your domain model. In this section you will define the access rules on the Order entity so that orders can only be viewed by a user if the payment status of the order is set to open. You will do this by adding an XPath constraint to the Order entity for the User module role. 
+In the previous section you set some access rules on your domain model. In this section you will define the access rules on the Order entity so that orders can only be viewed by a user if the payment status of the order is set to open. You will do this by adding an XPath constraint to the Order entity for the User module role.
 
 An XPath constraint can be used to constrain the set of objects to which the access rule applies. If the XPath constraint is empty, the rule applies to all the objects of the entity. For more information, see [XPath Constraints](/refguide/xpath-constraints/) in the *Studio Pro Guide*.
 

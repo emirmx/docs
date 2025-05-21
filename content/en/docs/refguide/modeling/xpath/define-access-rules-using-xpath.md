@@ -51,7 +51,7 @@ To prepare the data structure, GUI, and example data, follow these steps:
 3. Create menu items to access the **Order** and **Customer** overview pages (for more information on creating menu items, see [Setting Up Navigation](/refguide/setting-up-the-navigation-structure/)).
 4. Set the **Security level** of you application to **Production** (for more information, see [How to Create a Secure App](/howto/security/create-a-secure-app/)).
 
-    {{< figure src="/attachments/refguide/modeling/xpath/define-access-rules-using-xpath/app-security.png"  >}}
+    {{< figure src="/attachments/refguide/modeling/xpath/define-access-rules-using-xpath/app-security.png" >}}
 
 5. Enter *FinancialAdministrator* for the **Name** of the new user role on the **User roles** tab (for more information on adding roles, see [How to Create a Secure App](/howto/security/create-a-secure-app/):
 
