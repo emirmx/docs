@@ -1,7 +1,7 @@
 ---
 title: "External Database Connector"
 url: /appstore/modules/external-database-connector/
-description: "Describes the configuration and usage of the new Database connector, which incorporates your external data directly in your Mendix app."
+description: "Describes the configuration and usage of the External Database Connector."
 aliases:
     - /appstore/connectors/external-database-connector/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details. 
@@ -9,41 +9,25 @@ aliases:
 
 ## Introduction
 
-Connect to Microsoft SQL, MySQL, PostgreSQL, Oracle, and Snowflake databases with the [External Database Connector](https://marketplace.mendix.com/link/component/219862). The External Database Connector is supported for [Studio Pro 10.6](/releasenotes/studio-pro/10.6/) and above.
+Connect to Microsoft SQL, MySQL, PostgreSQL, Oracle, and Snowflake databases with the [External Database Connector](https://marketplace.mendix.com/link/component/219862).
+
+## Use Cases
+
+Use this module to connect to databases and select data to use in your app. This connector allows you to directly test connections and queries during configuration in Studio Pro (design time). 
 
 {{% alert color="info" %}}
-If you are using Studio Pro 10.12, make sure to use the latest version 3.0.0 [External Database Connector](https://marketplace.mendix.com/link/component/219862).
+If you need to connect to other database types, see the [Database Connector](/appstore/modules/database-connector/). Keep in mind that design time support is not available for the older version of the connector.
 {{% /alert %}}
 
-This document provides instructions on how to configure and use the External Database Connector. For information on the database wizard and how to connect using the External Database Connection document, see [External Database Connection](/refguide/external-database-connection/). For information on how to create and validate SQL queries, see [Use the External Database Connector](/refguide/use-the-external-database-connector/).
-
-{{% alert color="info" %}}
-For Studio Pro 10.18, the External Database Connector uses a different approach to connect to databases during design time. This functionality enhances consistency between design time and runtime environments. To enable this beta feature, use the flag: `--enable-live-preview`
-
-For information on how to connect using the External Database Connection document with a feature flag, see [External Database Connection](/refguide10/use-the-external-database-connector/#enable-live-preview).
-{{% /alert %}}
-
-### Typical Use Cases
-
-Use this module if you need to connect to databases and select data to use in your app. This connector allows you to directly test connections and queries during configuration in Studio Pro (design time). 
-
-If you need to connect to other database types, check out the [Database Connector](/appstore/modules/database-connector/). Keep in mind that design time support is not available for the older version of the connector.
-
-### Features {#features}
-
-{{% alert color="info" %}}
-
-From [Studio Pro 10.19](/releasenotes/studio-pro/10.19/), you can connect to any database by using the Java dependency specified by the user for the respective database. For more information, see the [Configure for Any Database](#byod) section below.
-
-{{</alert>}}
+## Features {#features}
 
 This connector supports connections to the following database types:
 
 * Microsoft SQL
 * MySQL
-* PostgreSQL - For certificate-based authentication (available from Studio Pro 10.16), see the [Use Certificate-Based Authentication for PostgreSQL Connections](#postgres-ssl) section below
+* PostgreSQL
 * Oracle
-* Snowflake – GA support from [Studio Pro 10.12](/releasenotes/studio-pro/10.12/) (Beta versions are available from [Studio Pro 10.10](/releasenotes/studio-pro/10.10/)). For more information, see [Configure the External Database Connector for Snowflake](/appstore/modules/snowflake/external-database-connector/)
+* Snowflake
 
 This connector supports the following statements:
 
@@ -55,15 +39,12 @@ This connector supports the following statements:
 
 ### Limitations 
 
-* `SELECT` queries and `Stored Procedure` can be saved only if they are successfully executed and a response structure is created (this is no longer a limitation as of Studio Pro 10.20)
 * The connector supports columns and stored procedure parameters with primitive data types only
-* If column names contain special characters, use an alias for the column name (this is no longer a limitation as of Studio Pro 10.20)
 * Parameters are only supported for filter values (prepared statements)
 * Certificate-based authentication for PostgreSQL is not supported on macOS
 
 ### Prerequisites
 
-* Studio Pro 10.6 or above
 * External database connection details, including the following:
     * Login credentials
     * Database type
@@ -77,9 +58,9 @@ Download the [External Database Connector](https://marketplace.mendix.com/link/c
 
 With this connector, you can test database connections and add queries and parameters during design time before your app is running. This allows you to make sure everything works before deploying your app.
 
-### Getting Started: Connecting to a Database {#connect-database}
+### Connecting to a Database {#connect-database}
 
-After [installing](#installation) the connector, get started by doing the following:
+After installing the connector, get started by doing the following:
 
 1. Right-click the module you would like to add the connection to and click **Add other** > **External database connection**. This opens the **Database Connection** wizard:
 
@@ -91,16 +72,32 @@ After [installing](#installation) the connector, get started by doing the follow
 
 4. Click **Save** to open the external database document for this database.
 
-{{% alert color="info" %}} Values for these constants are stored in the active configuration of the user. The password is stored as a private value.
+For more information on the connection details, see [Connect to an External Database](/refguide/external-database-connection/).
 
-Constants are an environment variable whose values can differ per environment, When you deploy an app on Mendix Cloud, values for constants are not added. For more information, see [Constants](https://docs.mendix.com/refguide/configuration/#constants){{% /alert %}}
+### Saving Connection Details
+
+The connection details are stored in 3 constants:
+
+* `\<Document Name\>_DBSource`
+* `\<Document Name\>_DBUsername`
+* `\<Document Name\>_DBPassword`
+
+For example: `*Database*_DBsource.`
+
+Values for these constants are stored in the active configuration of the user. The password is stored as a private value.
 
 {{% alert color="info" %}}
+Constants are an environment variable whose values can differ per environment, When you deploy an app on Mendix Cloud, values for constants are not added. For more information, see [Constants](https://docs.mendix.com/refguide/configuration/#constants).
+
 For free apps, make sure to add the default values to the constant in Studio Pro. For more information, see the [Deploying a Free App](https://docs.mendix.com/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/#deploy-free-app) section below. {{% /alert %}}
 
-Now, you can [query the database](#query-database) to select data to use in your app.
+### Exploring Schemas of a Connected Database
 
-### Querying a Database {#query-database}
+When the connection is successful and saved, you can search the **Browse database** tab for Tables, Views, Procedures, and Functions.
+
+{{< figure src="/attachments/refguide/modeling/integration/use-the-external-database-connector/3.png" width="700" >}}
+
+## Querying a Database {#query-database}
 
 To query the database, do the following:
 
@@ -111,7 +108,7 @@ To query the database, do the following:
    
 3. Click **Run Query** to move to the **Response data** tab and view the queried data.
 
-#### Adding Parameters {#parameters}
+### Adding Parameters {#parameters}
 
 Click **Add Parameter** to add parameters to your SQL queries to pass dynamic values to the query at runtime. 
 
@@ -141,9 +138,9 @@ Here, the parameter `EmpIdList` is of type String with the  value `[1,7946,3,4,7
 
 ### Using Query Response {#use-query-response}
 
-After [querying the database](#query-database), you can view the response in the **Response** screen. 
+After querying the database, you can view the response in the **Response** screen. 
 
-Click **Use Response** if you want to [create an entity from the response](#create-entity).
+Click **Use Response** if you want to create an entity from the response.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/external-database-connector/execute-query.png" class="no-border" >}}
 
@@ -191,8 +188,6 @@ Studio Pro's standard save behavior is implemented, including the dot indicator 
 Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to store changes when switching to a different query or performing another action. Make sure to not to use queries that are saved intermediately in the [Query External Database](/refguide/query-external-database/) activity of a microflow, as it might lead to runtime exception.
 
 ## Use Certificate-Based Authentication for PostgreSQL Connections {#postgres-ssl}
-
-### Prerequisites 
 
 The certificates below are required for server configuration and the SSL mode selected.
 
@@ -285,7 +280,7 @@ By default, autocommit is set to false for design time queries.
 
 When using JDK versions 17 or 21 (or any version above 16), you may encounter compatibility issues if database you are connecting to has a dependency on Apache Arrow.
 
-#### Resolving Apache Arrow Dependency Issues in Snowflake
+### Resolving Apache Arrow Dependency Issues in Snowflake
 
 The Snowflake JDBC Driver uses Arrow as the default result format for query execution to improve performance. However, you can override this default setting by switching the result format to JSON.
 
@@ -298,7 +293,7 @@ To set the result format at the Snowflake session or user level, use the followi
 This approach ensures compatibility with JDK 16+.
 For more information, see [Getting Java Lang NoClassDefFoundError](https://community.snowflake.com/s/article/Getting-java-lang-NoClassDefFoundError-for-class-RootAllocator) in Snowflake documentation.
 
-#### Resolve Apache Arrow Dependency Issues in Databricks {#apache-arrow-databricks}
+### Resolve Apache Arrow Dependency Issues in Databricks {#apache-arrow-databricks}
 
 The Databricks JDBC Driver uses Arrow for serialization as it improves performance.
 
@@ -312,3 +307,8 @@ For more information, see:
 
 * [Java 21 Support with Databricks](https://community.databricks.com/t5/data-engineering/java-21-support-with-databricks-jdbc-driver/td-p/49297) in Databricks documentation
 * [Configure the External Database Connector for Databricks](/appstore/modules/databricks/external-database-connector/)
+
+## Read More
+
+* [Connect to an External Database](/refguide/external-database-connection/), an overview of the External Database Connection document.
+* [Querying and Integrating External Data](/refguide/query-and-integrate-external-data/), describes how to use the External Database Connector to query external databases and integrate data into your Mendix application.

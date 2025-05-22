@@ -46,6 +46,7 @@ Generators:
 * **Maia for Domain Model** (introduced in Studio Pro 10.13.0) - an AI-powered tool that you can use for generating new [domain models](/refguide10/domain-model/) as well as explaining and providing suggestions for existing domain models. For more information, see [Maia for Domain Model](/refguide10/maia-for-domain-model/).
 * **Maia for Pages** (introduced in Studio Pro 10.21.0) - an AI-powered tool that lets you generate a [page](/refguide10/page/). It helps you add and configure widgets based on a text input and an optional image. After a page is generated, you can continue in the same session to ask Maia for further improvements and explanations. For more information, see [Maia for Pages](/refguide10/maia-for-pages/).
 * **Translation Generator** (introduced in Studio Pro 10.12.0) - an AI-powered translation tool available in Mendix Studio Pro. Currently, it can be used for [batch translate](/refguide10/translation-generator/#batch-translate) and [translating system texts](/refguide10/translation-generator/#translate-system-text) in the new web-based system texts editor (in Studio Pro 10.14.0 and above). For more information, see [Translation Generator](/refguide10/translation-generator/).
+* **Validation Assist** – helps you build validation microflows in a more automated way using pre-built expressions. For more information, see [Validation Assist](/refguide10/validation-assist/).
 
 ## Maia in Mendix Portal
 
@@ -67,6 +68,7 @@ The table below presents all the third-party services each Maia capability uses 
 | Maia for Domain Model | [Claude in Amazon Bedrock](https://aws.amazon.com/bedrock/claude/) | Project context to fulfill user prompt request |
 | Maia for Pages | [Claude in Amazon Bedrock](https://aws.amazon.com/bedrock/claude/) | Project context to fulfill user prompt request |
 | Translation Generator | [Amazon Translate](https://aws.amazon.com/translate/) | All translatable texts in the application, for example, labels, button names, and menu items |
+| Validation Assist | No third-party services used | NA |
 | Maia Rewrite | [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/) hosted in Mendix AWS environment | The draft question description from users |
 | Maia Summarize | [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/) hosted in Mendix AWS environment | [Community](https://community.mendix.com/p/community) threads |
 | Maia Create User Story | [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/) hosted in Mendix AWS environment | User prompts |

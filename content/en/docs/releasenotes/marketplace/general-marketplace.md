@@ -14,7 +14,11 @@ These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 
 ## 2025
 
-### January 16, 2024
+### May 22, 2025
+
+* We have replaced the [Marketplace Curation](/control-center/marketplace-curation/) <text class="badge badge-pill badge-recommended" style="margin-left:0px">RECOMMENDED</text> label with <text class="badge badge-pill badge-company-approved" style="margin-left:0px"> {{% icon name="checkmark-shield-filled" color="green" %}}COMPANY APPROVED</text>. The new label indicates Marketplace components that meet company policies and guidelines.
+
+### January 16, 2025
 
 #### Improvements
 
