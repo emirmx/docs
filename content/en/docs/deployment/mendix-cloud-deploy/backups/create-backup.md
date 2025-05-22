@@ -22,16 +22,16 @@ Before starting this how-to, make sure you have completed the following prerequi
 To create a backup archive of a licensed app, follow these steps:
 
 1. Go to [Apps](https://sprintr.home.mendix.com) and select the app.
-1. Click **Backups** in the navigation pane.
-1. Select the environment for which you want to create a backup snapshot.
+2. Click **Backups** in the navigation pane.
+3. Select the environment for which you want to create a backup snapshot.
 
     {{< figure src="/attachments/deployment/mendix-cloud-deploy/backups/create-backup/environment.png" width=25% class="no-border" >}}
 
-1. Click **Create Backup**.
+4. Click **Create Backup**.
 
     {{< figure src="/attachments/deployment/mendix-cloud-deploy/backups/create-backup/backupoptions.png" class="no-border" >}}
 
-Once you have created a backup archive, you can download it by clicking **More Options** ({{% icon name="three-dots-menu-horizontal" %}}), then select **Download**. For more information, see [Downloading a Backup](/developerportal/operate/download-backup/).
+Once you have created a backup archive, you can download it by clicking **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) then selecting **Download**. For more information, see [Downloading a Backup](/developerportal/operate/download-backup/).
 
 {{% alert color="info" %}}
 If you want to restart your environment after creating a backup archive, wait until the backup completes. Tables are locked while the database is in the process of creating a backup, so you may receive a timeout error if you try to start your environment while the backup is being created.
