@@ -54,7 +54,7 @@ Similar to database views, view entities represent data without enforcing any sp
 
 The `ORDER BY` clause can be used in a view entity in combination with `LIMIT` or `OFFSET` clauses to define a specific set of data to retrieve. If you do this, you still should not rely on the order of the output. If you want the results in particular order, they can be sorted on retrieval.
 
-For example, the following OQL query defines a view entity `Books.Bestseller`, which contains data of 10 most frequently sold books. When using this view entity in your app, you should still explicitly specify sorting of the results.
+For example, the following OQL query defines a view entity `Books.Bestseller`, which contains data of the ten books which have sold the most copies. When using this view entity in your app, you should still explicitly specify sorting of the results.
 
 ```sql
 FROM Books.Book

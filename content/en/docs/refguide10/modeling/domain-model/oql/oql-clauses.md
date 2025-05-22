@@ -847,9 +847,9 @@ This clause can include items that do not appear in the `SELECT` clause, except 
 {{% /alert %}}
 
 {{% alert color="info" %}}
-`ORDER BY` clause cannot be used in view entities without a `LIMIT` or an `OFFSET` clause. See [Sorting of view entity results](/refguide10/view-entities/#sorting) for more details.
+The `ORDER BY` clause cannot be used in view entities without a `LIMIT` or an `OFFSET` clause. See [Sorting of View Entity Results](/refguide10/use-view-entities/#sorting) in *How To Use View Entities* for more details.
 
-If OQL v2 is enabled, `ORDER BY` clause cannot be used in subqueries without a `LIMIT` or an `OFFSET` clause because the order of the subquery results may not be retained in the outer query. See [OQL v2](/refguide10/oql-v2/#order-by-in-subquery) for more details.
+If OQL v2 is enabled, an `ORDER BY` clause cannot be used in subqueries without a `LIMIT` or an `OFFSET` clause because the order of the subquery results may not be retained in the outer query. See the [`ORDER BY` in Subquery](/refguide10/oql-v2/#order-by-in-subquery) section of *OQL Version 2 Features* for more details.
 {{% /alert %}}
 
 
