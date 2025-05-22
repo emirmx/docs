@@ -303,6 +303,10 @@ Enable this option to help you generate entities and associations for your domai
 
 Enable this option to help you generate pages by adding and configuring widgets based on text input and an optional image. For more information on how to use this feature, see [Maia for Pages](/refguide/maia-for-pages/).
 
+#### Enable Maia for Workflows
+
+Enable this option to help you generate workflows by adding and configuring activities. For more information on how to use this feature, see [Maia for Workflows](/refguide/maia-for-workflows/).
+
 #### Enable Maia for OQL
 
 Enable this option to help you generate and manage OQL (Object Query Language) queries through an intuitive interface. For more information on how to use this feature, see [Maia for OQL](/refguide/maia-for-oql/).
