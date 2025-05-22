@@ -37,13 +37,13 @@ Technical Contacts with a license to the Mendix Event Broker can manage its feat
 
 Users within the company's email domain that have a Mendix login can participate in the administration of the Mendix Event Broker as either a View or Admin user. They can also be blocked from participation.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_internal_user.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_internal_user.png" >}}
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_internal_user_2.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_internal_user_2.png" >}}
 
 Users that are not part of the customer organization (not within the email domain of the customer) can be invited within the same levels of access. Such users still require a standard Mendix login.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_external_user.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_external_user.png" >}}
 
 #### Environments and Spaces
 
@@ -68,19 +68,19 @@ The overview page contains a list of applications by environment within the orga
 * **Implemented but no access** - an application has implemented an event that it is not allowed to access, guaranteeing a failure to subscribe to and/or publish the event
 * **Has access but not implemented** - an application has been provided with more access than is required and thus can be secured more accurately
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_access_control_overview.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_access_control_overview.png" >}}
 
 Selecting the specific application provides an overview of the application's implemented events with their associated access.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_access_control_overview_2.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_access_control_overview_2.png" >}}
 
 From this view, access to the individual events can be configured. Changes take effect immediately upon application.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_access_control_overview_3.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_access_control_overview_3.png" >}}
 
 From the main overview page, an administrator can assign the default behavior of applications when they deploy to an environment for the first time by changing the configuration in the **Manage Default Access** dialog box.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_access_control_defaults.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_access_control_defaults.png" >}}
 
 From here, you can manage the default access settings:
 
@@ -89,17 +89,17 @@ From here, you can manage the default access settings:
 
 ## Mendix Event Broker Bridges {#manage-mx-broker-bridge}
 
-{{% alert color="warn" %}}
+{{% alert color="warning" %}}
 This feature is currently in [Private Beta](/releasenotes/beta-features/). Contact your Customer Success Manager or Account Manager for further assistance.
 {{% /alert %}}
 
 Mendix Event Broker Bridges facilitate integration between the Mendix Event Broker and external technologies, such as AWS SQS and HTTP. These bridges enable the exchange of events between your Mendix Cloud environment and external systems, ensuring efficient communication across diverse technological landscapes.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_bridges.png" class="no-border"  width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_bridges.png" class="no-border"  >}}
 
 ### Standard Message Format
 
-Every event must carry four mandatory CloudEvents core attributes, each prefixed with ce_:
+Every event must carry four mandatory CloudEvents core attributes, each prefixed with `ce_`:
 
 * id as `ce_id`
 * source as `ce_source`
@@ -108,54 +108,58 @@ Every event must carry four mandatory CloudEvents core attributes, each prefixed
 
 See [CloudEvents](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#required-attributes) for more information on required attributes.
 
-### Configuring a Bridge with AWS SQS {#bridge-with-aws-sqs}
+### Creating a Bridge
 
 Technical Contacts with a license to the Mendix Event Broker can manage this feature from the **Event Broker Bridges** tab on the [Event Broker Manager](https://broker.mendix.com/) page.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_create.png" class="no-border" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_create.png" class="no-border" >}}
 
-The creation process contains three steps on the Mendix side and policies that need to be implemented on the AWS side.
+1. Click **Create a Bridge** to create a new bridge.
+2. Select either an **AWS SQS** or an **HTTP** service to configure.
 
-### Select a Service to Configure
+    An AWS SQS bridge uses the [Amazon Simple Queue Service](https://aws.amazon.com/sqs/). The HTTP Bridge uses HTTP requests to send events from external systems to the Mendix Event Broker. The HTTP bridge is one-way: **HTTP to Event Broker**.
 
-Within the scope of the current Public Beta for this feature, Mendix Event Broker Bridges can transport events between the Mendix Event Broker and AWS SQS.  Other options in the list are currently not available for use.
+3. Click **Next** to continue with creating your bridge.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_create_2_sqs.png" class="no-border" width="850" >}}
+    * For instructions on configuring for AWS SQS, see [Configuring a Bridge with AWS SQS](#bridge-with-aws-sqs)
+    * For instructions on configuring for HTTP, see [Configuring a Bridge with HTTP](#bridge-with-http)
 
-### Configuration Details
+### Configuring a Bridge with AWS SQS {#bridge-with-aws-sqs}
+
+The creation process for AWS SQS bridges contains two further steps on the Mendix side and policies that need to be implemented on the AWS side.
+
+#### Configuration Details
 
 The next step of configuration is to select a [Space](#manage-mx-broker), Name, and Region for the bridge to operate in.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_create_3_sqs.png" class="no-border" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_create_3_sqs.png" class="no-border" >}}
 
-### Choose the Business Events to Integrate
+#### Choose the Business Events to Integrate
 
 The user must select events from the Event Broker landscape of events to send to or receive from AWS SQS. To do this, do the following:
 
-1. Select ***Add Business Events** and search for the appropriate events. 
+1. Select **Add Business Events** and search for the appropriate events. 
 2. Select the checkbox for the event you want to add, then click **Select**.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_create_4_sqs.png" class="no-border" width="850" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_create_4_sqs.png" class="no-border" >}}
 
 3. Configure each event with its own SQS URL for each direction that the event will be integrated.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_create_5_sqs.png" class="no-border" width="850" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_create_5_sqs.png" class="no-border" >}}
 
 4. Confirm the configuration with the AWS Access Policy.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_create_6_sqs.png" class="no-border" width="850" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_create_6_sqs.png" class="no-border" >}}
 
-5. After all events have been configured, click **Start** to start the Mendix Event Broker Bridge. This process will take several minutes to complete.
+5. After all events have been configured, click **Start** to start the Mendix Event Broker Bridge. This process will take several minutes to complete. You can also choose to **Start Later**.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_create_7_sqs.png" class="no-border" width="850" >}}
+    You will be taken back to the overview page.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_management_sqs.png" class="no-border" width="850" >}}
+    Once the Mendix Event Broker Bridge has been successfully deployed, its configuration and status can be viewed on the **Overview** page.
 
-Once the Mendix Event Broker Bridge has been successfully deployed, its configuration and status can be viewed on the **Overview** page.
+    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_overview_sqs.png" class="no-border" >}}
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_overview_sqs.png" class="no-border" width="850" >}}
-
-### Configure AWS Access Policy for Sending Messages to Mendix
+#### Configure AWS Access Policy for Sending Messages to Mendix
 
 Add this object to your Access Policy of the AWS SQS queue if it is sending messages to Mendix.
 
@@ -175,7 +179,7 @@ Add this object to your Access Policy of the AWS SQS queue if it is sending mess
 }
 ```
 
-### Configure AWS Access Policy for Receiving Messages from Mendix
+#### Configure AWS Access Policy for Receiving Messages from Mendix
 
 Add this object to your Access Policy of the AWS SQS queue if it is receiving messages from Mendix.
 
@@ -199,44 +203,54 @@ Add this object to your Access Policy of the AWS SQS queue if it is receiving me
 
 ### Configuring a Bridge with HTTP {#bridge-with-http}
 
-The HTTP Bridge allows users to send events from external systems to the Mendix Event Broker using HTTP requests. This bridge is one-way: **HTTP to Event Broker**. Below are the steps to configure an HTTP Bridge:
+The creation process for HTTP bridges contains two further steps:
 
-#### 1. Select a Service to Configure
-  - Select **HTTP** as the bridge type.
+#### Configure Service
 
-  {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/http/event_broker_bridges_create_2_http.png" class="no-border" width="850" >}}
+Configure the service by doing the following:
 
-#### 2. Configure Service
-  - Select the appropriate:
-    1. **Event Broker Space** – Choose the space where the bridge will operate.
-    2. **Bridge Name** – Enter your desired name for the bridge.
+1. Select the **Event Broker Space** – the space where the bridge will operate.
+2. Enter the **Bridge Name** – the name you want to call the bridge.
+3. Select the **AWS region** - the AWS region where your bridge operates.
+4. Click **Next** to connect events to your bridge.
 
-  {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/http/event_broker_bridges_create_3_http.png" class="no-border" width="850" >}}
+  {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/http/event_broker_bridges_create_3_http.png" class="no-border" >}}
 
-#### 3. Choose the Business Events to Integrate
-  - The step starts with no events selected.
-  - Click **Add Business Events** to open a popup displaying all events managed by the Event Broker (including Mendix app-defined and uploaded AsyncAPI events).
-  - Only events that can **subscribe** are displayed, as this bridge is one-way.
-  - Once events are selected, the URL for the HTTP connection is automatically generated. No further configuration is required.
+#### Connect Events
 
-  {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/http/event_broker_bridges_create_4_http.png" class="no-border" width="850" >}}
+Initially, you will have no business events. Choose the business events to integrate by doing the following:
 
-#### 4. Confirmation
-  - The confirmation step is similar to other bridges, with a different informational message for HTTP-specific details.
+1. Click **Add Business Events** to open a dialog displaying all events managed by the Event Broker (including Mendix app-defined and uploaded AsyncAPI events).
 
-  {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/http/event_broker_bridges_create_5_http.png" class="no-border" width="850" >}}
+    Only events that can **subscribe** are displayed, as this bridge is one-way.
 
-### HTTP Bridge Overview
+2. Select the event(s) you want to integrate.
 
-The HTTP Bridge has the same look and feel as other bridges, with the exception of a unique HTTP-specific icon.
+    Once events are selected, the URL for the HTTP connection is automatically generated. No further configuration is required.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/http/event_broker_bridges_create_6_http.png" class="no-border" width="850" >}}
+3. Click **Next** to integrate the chosen business events.
 
-### HTTP Bridge Details Overview
+  {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/http/event_broker_bridges_create_4_http.png" class="no-border" >}}
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/http/event_broker_bridges_create_7_http.png" class="no-border" width="850" >}}
+#### Confirmation
+
+On the confirmation screen you can do the following:
+
+* Click **Start** to the bridge immediately
+* Click **Start Later** to continue without starting the bridge.
+
+    Once The HTTP Bridge has been configured, its configuration and status can be viewed on the **Overview** page.
+
+    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/http/event_broker_bridges_create_6_http.png" class="no-border" >}}
+
+#### Using the HTTP Bridge
 
 To run the HTTP bridge from your client, include a Bearer token in the request header.
+
+1. Open the HTTP bridge details using **Options** ({{% icon name="three-dots-menu-horizontal" %}}) menu on the overview.
+2, Add the **Bearer token**
+
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/http/event_broker_bridges_create_7_http.png" class="no-border" >}}
 
 ## Externally Defined Events {#externally-defined-events}
 
@@ -248,7 +262,7 @@ The Mendix Event Broker allows users to upload an AsyncAPI document for these ex
 
 Technical Contacts with a license to the Mendix Event Broker can manage this feature from the **Uploaded Events** tab on the [Event Broker Manager](https://broker.mendix.com/) page.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_get_started.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_get_started.png" >}}
 
 To begin, click **Get Started** or **Upload AsyncAPI Document**, which involves uploading a file, verifying event information, and selecting spaces.
 
@@ -256,33 +270,33 @@ To begin, click **Get Started** or **Upload AsyncAPI Document**, which involves 
 
 Upload an AsyncAPI contract based on the [AsyncAPI format](#asyncapi-format). If there are any errors with the content or file format, an error box will display a list of the issues found.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_create_1.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_create_1.png" >}}
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_create_1_errors.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_create_1_errors.png" >}}
 
 #### Verify File Information
 
 The details of the uploaded file are extracted in the Verify section. This allows you to confirm that all information is accurate and meets the required expectations.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_create_2.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_create_2.png" >}}
 
 #### Choose Spaces
 
 Select the spaces where the events will be used. When at least one space is selected, the **Create Service** button will be enabled. Click **Create Service** to create the service.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_create_3.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_create_3.png" >}}
 
 #### Successful Page
 
 The externally defined events have been successfully uploaded and are now ready to be used in Bridges or applications. For more information on how to use an event, see [Usages](#event-usages).
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_create_4.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_create_4.png" >}}
 
 ### Overview Page
 
 After a service is uploaded, it can be viewed on the Overview page. This page presents a list of uploaded events, along with their corresponding services and the spaces selected for the AsyncAPI.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_overview.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_overview.png" >}}
 
 ### Events and Services Details
 
@@ -292,25 +306,25 @@ From the Overview page, users can access the Event and Service details by clicki
 
 This page provides information about the uploaded event, including the event name, PUB/SUB details, attributes, and [usages](#event-usages).
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_event_page.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_event_page.png" >}}
 
 #### Service Details {#service-details}
 
 The services details page includes information about the uploaded services, including the service name, description, and associated events. You can also delete a service within the selected space (subject to [deletion conditions](#delete-service)) and download the AsyncAPI contract to import into an existing Mendix application (for more information, see [Application Usages](#usages-app)).
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_service_page.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_service_page.png" >}}
 
 ### Event Usages {#event-usages}
 
 Once an AsyncAPI contract is successfully uploaded, it can be used through Bridges or applications.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_event_usages.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_event_usages.png" >}}
 
 #### Bridges
 
 To use an uploaded event in a Bridge, you must configure a [Bridge with AWS SQS](#bridge-with-aws-sqs). During the step **Choose business events to connect**, the newly uploaded events in the selected space from the previous step will be visible.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_add_bridge.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_add_bridge.png" >}}
 
 #### Applications {#usages-app}
 
@@ -318,11 +332,11 @@ To use an uploaded event in an application, download the AsyncAPI contract for S
 
 After downloading the file, open your Studio Pro app and import the file as a new business event using the **Use an existing business event service** option.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_import_file.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_import_file.png" >}}
 
 Click **OK**, and the new business event is created and ready to be used with the same features as any other imported event.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_imported_file.png" width="850" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_imported_file.png" >}}
 
 ### Delete Service {#delete-service}
 
