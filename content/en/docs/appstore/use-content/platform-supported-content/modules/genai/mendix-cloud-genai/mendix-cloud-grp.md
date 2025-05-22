@@ -22,11 +22,11 @@ Mendix Cloud GenAI Resource Packs are currently available under limited availabi
 
 ## Models
 
-Mendix Cloud Model Resource Packs provide customers with a monthly quota of input and output tokens for Anthropic's Claude and Cohere's Embed models. This allows customers to implement typical Generative AI use cases like:
+Mendix Cloud Model Resource Packs provide customers with a monthly quota of input and output tokens for Anthropic's Claude and Cohere's Embed models. This allows customers to implement typical Generative AI use cases using text generation, embeddings, and knowledge bases.
 
 ### Supported models
 
-Mendix Cloud provides access to the following models:
+The Mendix Cloud GenAI Resource Packs provide access to the following models:
 
 * Anthropic Claude v3.5 Sonnet v1
 * Cohere Embed v3 (English & multilingual options)
@@ -84,4 +84,4 @@ Data sent to the Knowledge Base (vectors, chunks) is stored in a logically isola
 ### Read More
 
 * [Enrich your Mendix app with GenAI capabilities](/appstore/modules/genai/)
-* [Build a Chatbot Using the AI Bot Starter App](/appstore/modules/genai/using-genai/starter-template/)
+* [Build a Chatbot Using the AI Bot Starter App](/appstore/modules/genai/how-to/starter-template/)

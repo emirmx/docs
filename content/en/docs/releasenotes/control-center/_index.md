@@ -14,6 +14,16 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 ## 2025
 
+### May 22, 2025
+
+* We have replaced the [Marketplace Curation](/control-center/marketplace-curation/) <text class="badge badge-pill badge-recommended" style="margin-left:0px">RECOMMENDED</text> label with <text class="badge badge-pill badge-company-approved" style="margin-left:0px"> {{% icon name="checkmark-shield-filled" color="green" %}}COMPANY APPROVED</text>. The new label indicates Marketplace components that meet company policies and guidelines.
+
+### March 18, 2025
+
+#### New Features
+
+* Software Composition is now generally available. It helps you easily manage security risk by providing visibility and insights into the dependencies of each application across your application landscape. You can access the feature in [Control Center](/control-center/software-composition/) and [Apps navigation pane](/developerportal/deploy/software-composition/).
+
 ### February 13, 2025
 
 #### New Features

@@ -5,9 +5,7 @@ weight: 20
 ---
 
 {{% alert color="info" %}}
-Non-interrupting timer boundary events were introduced in beta in Studio Pro 10.15 and released in GA in Studio Pro 10.16.
-
-Interrupting timer boundary events were introduced in Studio Pro 10.20 and are currently in beta. Certain features or attributes are subject to change and may contain bugs. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+Interrupting timer boundary events are currently in beta. Certain features or attributes are subject to change and may contain bugs. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).
 {{% /alert %}}
 
 ## Introduction
@@ -120,7 +118,7 @@ With non-interrupting boundary events, the parent activity remains active/in pro
 However, with interrupting boundary events, the parent activity is aborted. For example, when an interrupting timer boundary event is set on a user task and is triggered after 2 days, this user task will be aborted, and the path following the timer boundary event will become the active path. 
 
 {{% alert color="info" %}}
-Currently, due to its beta status, an interrupting boundary event must end with an **End** event. The option to allow jumping back to the path of the parent activity from the interrupting path will be added soon. For more limitations, see the [Current Limitations](#limitation) section below.
+An interrupting boundary event path must end with an **End** event or a **Jump** activity. You can jump back to the path of the parent activity from the interrupting path.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -129,10 +127,6 @@ When there are multiple boundary events attached to an activity and an interrupt
 
 ## Boundary Event Variables
 
-{{% alert color="info" %}}
-Boundary event variables are available starting from Studio Pro version 10.16.
-{{% /alert %}}
-
 Boundary events have dedicated variables that can be used to get direct access to the values of the parent activity if it is either a user task or Call workflow activity. You can get information such as the parent activity's `DueDate`, which can be used in the boundary event flow and its expressions. For instance, you can use the expression `addDays($ParentTask/DueDate, -2)` to configure a timer boundary event so that it is triggered two days before the due date of its parent user task.
 
 The list of variables is described below: 
@@ -140,12 +134,10 @@ The list of variables is described below:
 * `$ParentTask` – the parent user task of the attached boundary event
 * `$CalledWorkflowInstance` – the parent Call workflow activity of the attached boundary event
 
-## Current Limitations {#limitation}
+## Current Limitation {#limitation}
 
-The current release of boundary events is still under development and has the following limitations:
+The current release of boundary events is still under development and has the following limitation:
 
-* Interrupting boundary events are not allowed to be nested in other boundary event paths, meaning that if an activity has a boundary event path (interrupting or non-interrupting), this activity cannot be placed in a boundary event path.
-* Interrupting boundary events are not allowed to have a jump at the end of their flow, nor do they allow jumping inside or outside of their flow.
 * Non-interrupting timer boundary events currently have no recurrence (they are only executed once and will not repeat).
 
 ## Read more

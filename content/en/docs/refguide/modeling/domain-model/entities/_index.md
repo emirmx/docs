@@ -27,21 +27,21 @@ The rows in the table are CDs. The type of the two rows is *CD* and this is the 
 ## Types of Entities {#entity-types}
 
 {{% alert color="info" %}}
-View entities were introduced in [Studio Pro 10.19](/releasenotes/studio-pro/10.19/) as a beta feature. 
+View entities is currently in beta. 
 {{% /alert %}}
 
 The entity type defines how the data is handled and there are four types:
 
-* Persistable entity
+1. Persistable entity
     * When an entity is declared persistable, a database table is created for the entity. These type of entities are colored *blue* in the domain model.
-* Non-persistable entity
+2. Non-persistable entity
     * Non-persistable entities are stored in the runtime memory and never get committed to the database. These type of entities are colored *orange* in the domain model.
-* External entity
+3. External entity
     * External entities represent the link to datasets that are made available through shared data sources registered in Mendix Catalog. These type of entities are colored *purple* in the domain model. 
-* View entity (beta)
+4. View entity (beta)
     * View entities represent the result sets of stored OQL queries on one or more entities, similar to database views, and are read-only. These entities are colored *green* in the domain model.
 
-{{< figure src="/attachments/refguide/modeling/domain-model/entities/type-of-entities.jpg" class="no-border" width=="300" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/entities/type-of-entities.png" width=="300" >}}
 
 The structure of persistable, non-persistable, and view entities are defined within your app. This page describes how to add and update persistable and non-persistable entities. For more information on persistable entities, see [Persistability](/refguide/persistability/). 
 
@@ -142,9 +142,7 @@ Data grids do not directly display this date.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-In Mendix 10.20 and above, the 'changedDate' attribute is updated when the changed object is committed.
-
-In Mendix 10.19.x and below, the 'changedDate' attribute is updated whenever a value is set for a member (attribute or association).
+The 'changedDate' attribute is updated when the changed object is committed.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
@@ -178,9 +176,7 @@ Data grids do not directly display the associated System.User entity or its spec
 {{% /alert %}}
 
 {{% alert color="info" %}}
-In Mendix 10.20 and above, the 'changedBy' property is updated when a changed object is committed.
-
-In Mendix 10.19.x and below, the 'changedBy' property is updated whenever a value is set for a member (attribute or association).
+The 'changedBy' property is updated when a changed object is committed.
 {{% /alert %}}
 
 ### Access Rules Section {#access-rules}

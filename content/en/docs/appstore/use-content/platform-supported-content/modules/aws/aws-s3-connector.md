@@ -111,3 +111,23 @@ The **Documentation** pane displays the documentation for the currently selected
 2. Click on the element for which you want to view the documentation.
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" class="no-border" >}}
+
+For additional reference, the available activities are listed below.
+
+### Activities
+
+[Activities](/refguide/activities/) define the actions that are executed in a microflow or a nanoflow.
+
+The Amazon S3 connector contains the following activities:
+
+* `CreateBucket` - Create a new S3 Bucket. 
+* `PutObject` - Put an object into a specified S3 bucket.
+* `DeleteObject` - Delete an object from a specified S3 bucket.
+* `ListBuckets` - Retrieve a list of all buckets in your Amazon S3 environment.
+* `ListObjects` - Retrieve a list of the metadata of the objects for a specified bucket in your Amazon S3 environment.
+* `DeleteBucket` - Delete a bucket.
+* `GetObject` - Get an object from the s3 simple storage service. 
+* `CopyObject` - Copy an s3 object placed within a bucket or prefix to an other bucket or prefix.
+* `MoveObject` - Move an s3 object between buckets or prefixes.
+* `GeneratePresignedUrl` - Presign a request and generates and returns the presigned url.
+* `HeadBucket` - Retrieve the `AWS_Region` where a bucket is located, check if the bucket exists, and verify if you have access to the bucket. This activity also determines if the bucket name used in the request is an access point alias.
