@@ -45,6 +45,7 @@ Generators:
 
 * **Maia for Domain Model** – an AI-powered tool that you can use for generating new [domain models](/refguide/domain-model/) as well as explaining and providing suggestions for existing domain models. For more information, see [Maia for Domain Model](/refguide/maia-for-domain-model/).
 * **Maia for Pages** – an AI-powered tool that lets you generate a [page](/refguide/page/). It helps you add and configure widgets based on a text input and an optional image. After a page is generated, you can continue in the same session to ask Maia for further improvements and explanations. For more information, see [Maia for Pages](/refguide/maia-for-pages/).
+* **Maia for Workflows** – an AI-powered tool that lets you generate a [Workflow](/refguide/workflows/). By describing a use-case by text input or through the usage of an image, Maia can help you kickstart the creation of your workflows. For more information, see [Maia for Workflows](/refguide/maia-for-workflows/).
 * **Maia for OQL** – a AI-powered tool that enables you to generate and manage OQL (Object Query Language) queries through an intuitive interface. It is designed to simplify query creation and reduce manual effort. For more information, see [Maia for OQL](/refguide/maia-for-oql/).
 * **Translation Generator** – an AI-powered translation tool that can be used for [batch translate](/refguide/translation-generator/#batch-translate) and [translating system texts](/refguide/translation-generator/#translate-system-text) in the web-based system texts editor. For more information, see [Translation Generator](/refguide/translation-generator/).
 * **Validation Assist** – helps you build validation microflows in a more automated way using pre-built expressions. For more information, see [Validation Assist](/refguide/validation-assist/).
@@ -69,6 +70,7 @@ The table below presents all the third-party services each Maia capability uses 
 | Maia for Domain Model | [Claude in Amazon Bedrock](https://aws.amazon.com/bedrock/claude/) | Project context to fulfill user prompt request |
 | Maia for Pages | [Claude in Amazon Bedrock](https://aws.amazon.com/bedrock/claude/) | Project context to fulfill user prompt request |
 | Maia for OQL | [Claude in Amazon Bedrock](https://aws.amazon.com/bedrock/claude/) | Project context to fulfill user prompt request |
+| Maia for Workflows | [Claude in Amazon Bedrock](https://aws.amazon.com/bedrock/claude/) | Project context to fulfill user prompt request |
 | Translation Generator | [Amazon Translate](https://aws.amazon.com/translate/) | All translatable texts in the application, for example, labels, button names, and menu items |
 | Validation Assist | No third-party services used | NA |
 | Maia Rewrite | [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/) hosted in Mendix AWS environment | The draft question description from users |
