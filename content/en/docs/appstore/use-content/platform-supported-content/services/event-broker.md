@@ -31,27 +31,27 @@ The Event Broker must be enabled on both the app and specific environment levels
 
 ### Managing the Mendix Event Broker {#manage-mx-broker}
 
-Technical Contacts with a license to the Mendix Event Broker can manage its features on the [Event Broker Manager](https://broker.mendix.com/) page.
+Technical Contacts with a license for the Mendix Event Broker can manage its features on the [Event Broker Manager](https://broker.mendix.com/) page.
 
 #### Users for Event Broker Manager 
 
-Users within the company's email domain that have a Mendix login can participate in the administration of the Mendix Event Broker as either a View or Admin user. They can also be blocked from participation.
+Users within the company's email domain that have a Mendix login can participate in the administration of the Mendix Event Broker as either a View or Admin user. They can also be blocked from participation. 
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_internal_user.png" >}}
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_internal_user_2.png" >}}
 
-Users that are not part of the customer organization (not within the email domain of the customer) can be invited within the same levels of access. Such users still require a standard Mendix login.
+Users that are not part of the customer organization (not within the email domain of the customer) can be invited with the same levels of access. Such users still require a standard Mendix login.
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_external_user.png" >}}
 
-#### Environments and Spaces
+#### Spaces and Environments{#spaces}
 
-**Space** define which applications can exchange events with each other. When Business Events is enabled for an environment, it is placed in an Event Broker **Space** based on the environment name. This enables apps deployed under the same **Space** to publish and consume events. For example, apps in acceptance environment can only exchange events with other apps' acceptance environments. You can check the **Space** of an app's environment on the [Event Broker Manager](https://broker.mendix.com/) page.
+Spaces define which applications can exchange events with each other. When Business Events is enabled for an environment, it is placed in an Event Broker space based on the environment name. This enables apps deployed under the same space to publish and consume events. For example, apps in acceptance environment can only exchange events with other apps' acceptance environments. You can check the space of an app's environment on the [Event Broker Manager](https://broker.mendix.com/) page.
 
-Spaces are created and assigned based on the app environment name and allow isolation of your business events. The default behavior can be changed if needed. Contact [Mendix Support](https://support.mendix.com/) if you would like to change the **Space** of a specific app environment.
+Spaces are created and assigned based on the app environment name and allow isolation of your business events. The default behavior can be changed if needed. Contact [Mendix Support](https://support.mendix.com/) if you would like to change the space of a specific app environment.
 
-See [Enabling the Mendix Event Broker Service](#enable-mx-event-broker) for more information.
+See [Enabling the Mendix Event Broker Service](#enable-mx-event-broker), above, for more information.
 
 #### Topics and Channels {#topics-channels}
 
@@ -61,12 +61,12 @@ Events published by Free Apps are published to one shared company channel on a m
 
 #### Event Access Control {#access-control}
 
-The Mendix Event Broker allows for access control to be applied down to the event level. Each application can be granted or denied access to events using the [Event Broker Manager](https://broker.mendix.com/).
+The Mendix Event Broker allows access control to be applied down to the event level. Each application can be granted or denied access to events using the [Event Broker Manager](https://broker.mendix.com/).
 
 The overview page contains a list of applications by environment within the organization's event landscape. The table contains columns that provide cases with exceptions:
 
 * **Implemented but no access** - an application has implemented an event that it is not allowed to access, guaranteeing a failure to subscribe to and/or publish the event
-* **Has access but not implemented** - an application has been provided with more access than is required and thus can be secured more accurately
+* **Has access but not implemented** - an application has been provided with more access than is required and you could make it more secure.
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_access_control_overview.png" >}}
 
@@ -74,7 +74,7 @@ Selecting the specific application provides an overview of the application's imp
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_access_control_overview_2.png" >}}
 
-From this view, access to the individual events can be configured. Changes take effect immediately upon application.
+From this view, access to the individual events can be configured. Changes take effect immediately when **Apply Changes** is clicked.
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_access_control_overview_3.png" >}}
 
@@ -84,8 +84,11 @@ From the main overview page, an administrator can assign the default behavior of
 
 From here, you can manage the default access settings:
 
-* **An app can access events defined in it** – allows newly-deployed applications to always have access to any events defined within that application (see [Creating a New Business Event Service](/appstore/services/business-events/#two-way-be-create) for more information)
-* **For other events, in all environments, the app can:** – allows administrators to turn on or off the default assigning of event access 
+* Allowing **An app can access events defined in it** – allows newly-deployed applications to always have access to any events defined within that application (see [Creating a New Business Event Service](/appstore/services/business-events/#two-way-be-create) for more information)
+* Administrators can check two options under **For other events, in all environments, the app can:**
+
+    * **Publish events it implements**
+    * **Subscribe to events it implements**
 
 ## Mendix Event Broker Bridges {#manage-mx-broker-bridge}
 
@@ -130,16 +133,18 @@ The creation process for AWS SQS bridges contains two further steps on the Mendi
 
 #### Configuration Details
 
-The next step of configuration is to select a [Space](#manage-mx-broker), Name, and Region for the bridge to operate in.
+The next step of configuration is to select a [Space](#spaces), Name, and Region for the bridge to operate in.
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_create_3_sqs.png" class="no-border" >}}
+
+Click **Next** to continue the configuration.
 
 #### Choose the Business Events to Integrate
 
 The user must select events from the Event Broker landscape of events to send to or receive from AWS SQS. To do this, do the following:
 
 1. Select **Add Business Events** and search for the appropriate events. 
-2. Select the checkbox for the event you want to add, then click **Select**.
+2. Select the checkbox for the event(s) you want to add, then click **Select**.
 
     {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_create_4_sqs.png" class="no-border" >}}
 
@@ -147,11 +152,13 @@ The user must select events from the Event Broker landscape of events to send to
 
     {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_create_5_sqs.png" class="no-border" >}}
 
-4. Confirm the configuration with the AWS Access Policy.
+4. Click **Next** to continue.
+
+5. Confirm the configuration with the AWS Access Policy.
 
     {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_create_6_sqs.png" class="no-border" >}}
 
-5. After all events have been configured, click **Start** to start the Mendix Event Broker Bridge. This process will take several minutes to complete. You can also choose to **Start Later**.
+6. After all events have been configured, click **Start** to start the Mendix Event Broker Bridge. This process will take several minutes to complete. You can also choose to **Start Later**.
 
     You will be taken back to the overview page.
 
@@ -159,9 +166,13 @@ The user must select events from the Event Broker landscape of events to send to
 
     {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_overview_sqs.png" class="no-border" >}}
 
-#### Configure AWS Access Policy for Sending Messages to Mendix
+#### Configure AWS Access Policy
 
-Add this object to your Access Policy of the AWS SQS queue if it is sending messages to Mendix.
+You need to configure AWS access policies for both sending and receiving messages.
+
+##### Sending Messages to Mendix
+
+Add this object to the Access Policy of your AWS SQS queue if it is sending messages to Mendix.
 
 ```
 {
@@ -179,7 +190,7 @@ Add this object to your Access Policy of the AWS SQS queue if it is sending mess
 }
 ```
 
-#### Configure AWS Access Policy for Receiving Messages from Mendix
+##### Receiving Messages from Mendix
 
 Add this object to your Access Policy of the AWS SQS queue if it is receiving messages from Mendix.
 
@@ -254,7 +265,7 @@ To run the HTTP bridge from your client, include a Bearer token in the request h
 
 ## Externally Defined Events {#externally-defined-events}
 
-Externally defined events refer to events that are defined outside the Mendix application, specifically outside of Studio Pro.
+Externally defined events refer to events that are defined outside the Mendix application, specifically outside Studio Pro.
 
 The Mendix Event Broker allows users to upload an AsyncAPI document for these external events. Once uploaded, users can download a new AsyncAPI document compatible with [Mendix Business Events](/appstore/services/business-events/), which can then be imported into Studio Pro to share the events across Mendix applications or use them in a new [Bridge](#manage-mx-broker-bridge).
 
@@ -288,9 +299,11 @@ Select the spaces where the events will be used. When at least one space is sele
 
 #### Successful Page
 
-The externally defined events have been successfully uploaded and are now ready to be used in Bridges or applications. For more information on how to use an event, see [Usages](#event-usages).
+You will get a confirmation that the externally defined events have been successfully uploaded and are now ready to be used in Bridges or applications.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_create_4.png" >}}
+Click **Close** to continue.
+
+For more information on how to use an event, see [Usages](#event-usages).
 
 ### Overview Page
 
