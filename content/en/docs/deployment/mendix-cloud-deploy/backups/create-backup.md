@@ -10,10 +10,6 @@ description: "This page describes how to create a backup."
 
 This how-to describes creating a backup of a licensed cloud node.
 
-This how-to explains how to do the following:
-
-* Create a backup of a licensed cloud node
-
 ## Prerequisites
 
 Before starting this how-to, make sure you have completed the following prerequisites:
@@ -35,7 +31,7 @@ To create a backup archive of a licensed app, follow these steps:
 
     {{< figure src="/attachments/deployment/mendix-cloud-deploy/backups/create-backup/backupoptions.png" class="no-border" >}}
 
-Once you have created a backup archive, you can download it by clicking **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) > **Download**. For more information, see [Downloading a Backup](/developerportal/operate/download-backup/).
+Once you have created a backup archive, you can download it by clicking **More Options** ({{% icon name="three-dots-menu-horizontal" %}}), then select **Download**. For more information, see [Downloading a Backup](/developerportal/operate/download-backup/).
 
 {{% alert color="info" %}}
 If you want to restart your environment after creating a backup archive, wait until the backup completes. Tables are locked while the database is in the process of creating a backup, so you may receive a timeout error if you try to start your environment while the backup is being created.
@@ -43,11 +39,11 @@ If you want to restart your environment after creating a backup archive, wait un
 
 ## Files in a Backup
 
-All files will be part of a backup unless the following is true:
+All files will be included in the backup unless the **DeleteAfterDownload** attribute of the **System.FileDocument** entity, or any of its generalizations, is set to **true**.
 
-* The attribute **DeleteAfterDownload** of the entity **System.FileDocument**, including all generalizations of this entity, is set to **true**.
+The **DeleteAfterDownload** flag is a security feature that automatically removes files from the file storage system immediately after a successful download and ensures these files are excluded from system backups. 
 
-The **DeleteAfterDownload** flag is a security feature that automatically removes files from the file storage system immediately after successful download and ensures these files are excluded from system backups. This flag is particularly important for handling sensitive or confidential data, as it guarantees that once downloaded and deleted, the files cannot be retrieved from either the active storage or backup systems, thereby maintaining complete data security throughout the file's lifecycle.
+This flag is particularly important when handling sensitive or confidential data, as it guarantees that once a file is downloaded and deleted, it cannot be retrieved from either the active storage or backup systems, thereby maintaining complete data security throughout the file's lifecycle.
 
 ## Read More
 
