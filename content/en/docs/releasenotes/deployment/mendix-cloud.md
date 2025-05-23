@@ -16,6 +16,28 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
+### May 25, 2025
+
+#### New Features
+
+* We have added a new warning message  about required overhead (required database disk space) before starting the restore of backup.
+  
+#### Improvements
+
+* We have updated the validation while creating custom  domain names. Instead of 53 characters limit, it is set to 63 characters limit now as per DNS standards .
+
+#### Bug Fixes
+
+* We fixed a bug where user got an Error while opening  permissions tab for production environment (Ticket no. 241675)
+  
+#### Deprecations
+
+* Old UI is being deprecated on 1st June and users will now automatically be switched to new UI if not already done before
+
+#### Temporary Deprecations
+
+* Basic plan offering is being temporarily paused
+
 ### April 17, 2025
 
 #### Improvements
@@ -29,7 +51,6 @@ For information on the current status of deployment to Mendix Cloud and any plan
 * We have added a validation mechanism for pipeline designs, which prevents users from deleting a design if any pipelines using that design are currently running. For more information, see [Pipelines: Editing a Pipeline Design](/developerportal/deploy/pipelines/#edit-pipeline). 
 * You can now access the **Details** page of a pipeline at any point, also while the pipeline is running. For more information, see [Pipelines: Run Results](/developerportal/deploy/pipelines/#run-results).
 
-## 2025
 
 ### February 20, 2025
 
