@@ -172,7 +172,7 @@ This issue has been fixed in Mendix Operator [version 2.21.1](#2.21.1).
 #### Mendix Operator v2.20.1 {#2.20.1}
 
 * We have updated the m2ee-sidecar lifecycle to no longer stop the Mendix Runtime if a `ping` times out or fails; an app will now only be restarted by the liveness probe (Ticket 230648).
-* We have adjusted AWS STS token expiration for envrionments using IRSA, which should prevent occasional *SQLState: 28000 Error code: 0 Message: "FATAL: PAM authentication failed for user …", retrying...(1/4)* errors (Ticket 234454).
+* We have adjusted AWS STS token expiration for environments using IRSA, which should prevent occasional *SQLState: 28000 Error code: 0 Message: "FATAL: PAM authentication failed for user …", retrying...(1/4)* errors (Ticket 234454).
 * We have switched the log format to JSON for the `build`, `database` and `file` pods, to help with parsing the logs and automatically assigning log levels and timestamps.
 * We have updated a library used to validate licenses to the latest non-alpha version.
 * We have updated documentation that OpenShift 4.17 and Postgres 17 are supported by the Mendix Operator.
@@ -183,7 +183,7 @@ This issue has been fixed in Mendix Operator [version 2.21.1](#2.21.1).
 
 At present, a Technical Contact can only be assigned to one application at a time instead of multiple applications. If an individual who is already a Technical Contact for an existing application creates another application, they are automatically assigned as the Technical Contact for the new application. However, this results in their removal as the Technical Contact for the previous application. 
 
-Additionally, being assigned as a Technical Contact grants the individual administrator-level access across all namespaces where environments are created. Consequently, in this scenario, the individual gaina administrator access to the namespaces for both applications with created environments.
+Additionally, being assigned as a Technical Contact grants the individual administrator-level access across all namespaces where environments are created. Consequently, in this scenario, the individual grants administrator access to the namespaces for both applications with created environments.
 
 We are working on a fix, which is expected to be available in next release. Once the fix is available, make sure to check your applications and assign the Technical Contact accordingly.
 
