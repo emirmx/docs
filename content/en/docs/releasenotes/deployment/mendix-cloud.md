@@ -20,23 +20,23 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### New Features
 
-* We have added a new warning message  about required overhead (required database disk space) before starting the restore of backup.
+* We have added a new warning message about required overhead (database disk space) before starting a backup restore.
   
 #### Improvements
 
-* We have updated the validation while creating custom  domain names. Instead of 53 characters limit, it is set to 63 characters limit now as per DNS standards .
+* We have updated the validation rules for creating custom domain names. Instead of 53 characters limit, it is now set to 63 characters limit in compliance with DNS standards.
 
 #### Bug Fixes
 
-* We fixed a bug where user got an Error while opening  permissions tab for production environment (Ticket no. 241675)
+* We fixed a bug where user got an error while opening the permissions tab for production environment (Ticket 241675).
   
 #### Deprecations
 
-* Old UI is being deprecated on 1st June and users will now automatically be switched to new UI if not already done before
+* Old UI is being deprecated on 1st June. Users will automatically be switched to the new UI if not already done before.
 
 #### Temporary Deprecations
 
-* Basic plan offering is being temporarily paused
+* Basic plan offering is being temporarily paused.
 
 ### April 17, 2025
 
