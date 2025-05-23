@@ -46,14 +46,14 @@ In this dedicated chat, only requests related to Pages will be properly handled.
 
 To achieve optimal results, provide context about your page by describing its main use cases, customer needs, or other relevant details. The more Maia knows about your page, the more tailored and accurate the generated page will be.
 
-Below are some examples of prompts you can use as a starting point:
+Below are examples of prompts you can use as a starting point:
 
 * The page will be used to ...
 * I need a page to be able to edit my entity ...
 * Create a page like the image.
 * Base the page on the image, but change ... to ...
 
-Below are some examples of prompts you can use to ask Maia for further explanations or suggestions to improve the generated page:
+Below are examples of prompts you can use to ask Maia to make further edits or request suggestions for improving a page:
 
 * Can you add a button called `BUTTON_NAME` to the page?
 * I want an area on the page where users can ...
