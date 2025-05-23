@@ -1,10 +1,8 @@
 ---
 title: "Maia for Workflows"
 url: /refguide/maia-for-workflows/
-weight: 60
+weight: 75
 description: "Describes the features in Maia for Workflows."
-aliases:
-    - /refguide/workflow-generator/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -14,7 +12,7 @@ aliases:
 To use Maia for Workflows, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-Maia for Workflows is an AI-powered tool that you can use for generating a [workflow](/refguide/workflows/) as well as explaining and providing further improvements. It helps you in configuring workflows based on text input and optionally image inputs. To get a better understanding of what is generated you can ask it for explanations. The current version has some known limitations. For example, it is currently intended only for use with empty workflows. Everything that is generated is appended to the end of the workflow. Which can cause some incorrectly modelled workflows. For more details, see the [Limitations](#limitation) section below.
+Maia for Workflows allows you to generate a [workflow](/refguide/workflows/) as well as explain and provide further improvements. It helps you configure workflows based on text or image input. To get a better understanding of what is generated, you can ask it for explanations. The current version has some known limitations. For example, it is currently intended only for use with empty workflows. Generated elements are appended to the end of the workflow, which may result in incorrectly modeled workflows if the workflow is not empty. For more details, see the [Limitations](#limitation) section below.
 
 ## Using Maia for Workflows
 
@@ -30,7 +28,7 @@ After clicking **Maia for Workflow**, a dedicated chat interface appears at the 
 
 Describe a business process which you want to model and Maia uses this information to add relevant workflow activities, and tries to configure them where possible.
 
-You can also supplement text input with an image. Maia uses the image to interpret your request better. For example, it can interpret a BPMN image that represents an employee onboarding. It will rework this into Mendix Workflows terms and generates the activites for you. The image can be a screenshot, photo, BPMN schema or drawing. With text input, you can also specify differences between the provided image and how you would like the generated workflow to be modelled. For example, you might write: *Generate a workflows based on this BPMN image, but make sure it waits before sending an email to the new employee.*
+You can also supplement text input with an image, which Maia uses to interpret your request more effectively. For example, it can analyze a BPMN image representing employee onboarding, rework it using Mendix Workflows terminology, and generate the corresponding activities for you. The image can be a screenshot, photo, BPMN schema, or drawing. Alongside the image, you can also use text input to specify how the generated workflow should differ from the provided image. For example, you might write: *Generate a workflows based on this BPMN image, but make sure it waits before sending an email to the new employee.*
 
 After a workflow is generated, you can continue asking Maia in the same session to further improve the workflow and provide explanations.
 
@@ -45,7 +43,7 @@ To achieve optimal results, provide context about your workflow by describing it
 Below are some examples of prompts you can use as a starting point:
 
 * The workflow will be used to ...
-* Create a workflow like the image.
+* Create a workflow based on the image.
 * Base the workflow on the image, but change ... to ...
 
 Below are some examples of prompts you can use to ask Maia for further explanations or suggestions to improve the generated page:
@@ -54,7 +52,7 @@ Below are some examples of prompts you can use to ask Maia for further explanati
 * I want the process to run in parallel.
 
 {{% alert color="warning" %}}
-Requests for improvements or explanations currently only work within the same session where the workflow is generated. If you close the session and start a new session on that workflow, any attempts to make changes to the workflow will result in the removal of existing widgets.
+Requests for improvements or explanations currently only work within the same session where the workflow is generated. If you close the session and start a new session on that workflow, any attempts to make changes to the workflow will result in the removal of existing elements.
 {{% /alert %}}
 
 ### Best Practices for Image Input
@@ -67,13 +65,13 @@ Maia for Workflows has some limitations.
 
 ### Empty Workflows Only
 
-Maia for Workflows is currently intended only for use with empty Workflows. Using it on existing workflows can result into incorrectly modeled business processes.
+Maia for Workflows is currently intended only for use with empty Workflows. Using it on existing workflows can result in incorrectly modeled business processes.
 
-Requests for improvements and explanations currently only work within the same session where a workflow has been generated. Once the session is closed, Maia for Workflows loses the context. Any attempts to make changes to that page in a new session will also result in the removal of all existing widgets.
+Requests for improvements and explanations currently only work within the same session where a workflow has been generated. Once the session is closed, Maia for Workflows loses the context. Any attempts to make changes to that workflow in a new session will also result in the removal of all existing elements.
 
 ### Supported Workflow Elements
 
-Currently annotations are not supported, however most of the other workflow elements are supported.
+Currently annotations are not supported, however most of the other workflow elements are supported. See below a list of supported workflow elements:
 
 * [User Task](/refguide/user-task/)
 * [Multi-user Task](/refguide/multi-user-task/)
@@ -86,16 +84,15 @@ Currently annotations are not supported, however most of the other workflow elem
 * [Call Workflow](/refguide/call-workflow/)
 * [Boundary Events](/refguide/workflow-boundary-events/)
 
-### Not all settings can be configured
+### Not All Properties Can Be Configured
 
-Due to the more complex cross-document nature of a workflow, not all settings of activities are able to be generated as of yet. Some settings which cannot be configured are the following:
+Due to the complex cross-document nature of a workflow, not all properties of the workflow elements can be generated yet. The following properties cannot be configured yet:
 
-- User Task
-  - Task page
-  - Targeted users
-  - Due date
-
-- Any setting to the workflow document itself.
+* The following properties of [User Task](/refguide/user-task/):
+    * Task page
+    * Targeted users
+    * Due date
+* Any [properties](/refguide/workflow-properties/) of the workflow document itself
 
 ## Read More
 
