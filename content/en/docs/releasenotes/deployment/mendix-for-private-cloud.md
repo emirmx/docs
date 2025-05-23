@@ -14,6 +14,9 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ### May 23, 2025
 
+In today's release, we've addressed an issue with updating expired licenses in PCLM and the Mendix Operator.
+If you're using the Mendix Operator with PCLM, it's **highly recommended** to upgrade Mendix Operator to version 2.21.3 (or later) and PCLM to version 0.10.3 (or later).
+
 #### License Manage CLI v0.10.3
 
 * We've added support for uploading license bundles with an extended license expiration date (Ticket 249344).
