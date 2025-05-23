@@ -56,7 +56,7 @@ For some parse and format functions, there are UTC variants. Do not use these UT
 ### Issues with Pattern letters `M` and `L` in Nanoflows
 
 {{% alert color="info" %}}
-The issues have been resolved in Mendix 10.22.
+The issues have been resolved in Mendix 10.22, in patch versions of Mendix 10.18 starting from 10.18.7, Mendix 10.12 starting from 10.12.17, and Mendix 10.6 starting from 10.6.24.
 {{% /alert %}}
 
 In microflows, both pattern letters `M` and `L` are supported and work completely as expected.
@@ -67,7 +67,7 @@ In nanoflows, the pattern letter `L` works properly except when it is used for s
 
 Here is a full collection of such languages that are available in Studio Pro: Armenian, Belarusian, Catalan, Croatian, Czech, Finnish, Greek, Lithuanian, Polish, Russian, Slovak, and Ukrainian.
 
-In Mendix 10.22 and above, both pattern letters `M` and `L` are also properly supported in nanoflows. Here are some examples of using `LLLL`, `MMMM`, `LLL`, and `MMM` in languages that support the genitive case:
+In Mendix 10.22 and above, in patch versions of Mendix 10.18 starting from 10.18.7, Mendix 10.12 starting from 10.12.17, and Mendix 10.6 starting from 10.6.24, both pattern letters `M` and `L` are also properly supported in nanoflows. Here are some examples of using `LLLL`, `MMMM`, `LLL`, and `MMM` in languages that support the genitive case:
 
 * Ukrainian:
     * `LLLL` returns `квітень`
