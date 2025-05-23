@@ -149,7 +149,7 @@ To create a new environment, perform the following steps:
 
 5. Enter the name of the environment. This can be anything you choose: for example Test, Acceptance, or Production.
 
-    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/08-sap-env-2.png" class="no-border" >}}
+    {{< figure src="/attachments/deployment/sap-btp/sap-cloud-platform/08-sap-env-2.png" >}}
 
 6. Set the size of the memory that the app needs in order to run. This can also be changed later.
 
@@ -732,6 +732,9 @@ You can still delete the app and its resources from the SAP BTP cockpit, but you
 Since SAP Application Logging will soon be deprecated, you need to migrate your logging service to SAP Cloud Logging for older environments still using SAP Application Logging. To complete the migration, follow the steps below:
 
 1. In the **Services** tab of the **Environment** details page, search for and select **cloud-logging** in the **Available Services** field.
+
+    {{% alert color="info" %}}Note that the user account must have entitlements for the SAP Cloud Logging service in SAP BTP.{{% /alert %}}
+
 2. Select the appropriate **Plan** and upload a **File** if required. 
 3. Click **Connect Services** and restart your application to bind the new SAP Cloud logging service.
 4. At this point, both **application-logs** and **cloud-logging** services will be active for your application.
