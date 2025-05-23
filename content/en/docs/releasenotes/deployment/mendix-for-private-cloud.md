@@ -27,7 +27,7 @@ For information on the current status of deployment to Mendix for Private Cloud 
 #### Mendix Operator v2.21.3 {#2.21.3}
 
 * We fixed an issue where an overlapping `/tmp/mendix/img` path could cause issues with some Marketplace components, for example [Azure Application Insights](https://marketplace.mendix.com/link/component/108303). (Ticket 248704)
-* We added support for updating license expiration dates when a newer license is available in PCLM. (Ticket 249344)
+* We updated the license refresh mechanism to automatically refresh expired licenses from PCLM. (Ticket 249344)
 * Upgrading to Mendix Operator v2.21.3 from a previous version now restarts environments managed by that version of the Operator. Environments with two or more replicas and a **PreferRolling** update strategy are restarted without downtime.
 
 ### May 08, 2025
