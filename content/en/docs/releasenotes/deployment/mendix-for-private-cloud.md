@@ -14,17 +14,20 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ### May 23, 2025
 
-In today's release, we've addressed an issue with updating expired licenses in PCLM and the Mendix Operator.
-If you're using the Mendix Operator with PCLM, it's **highly recommended** to upgrade Mendix Operator to version 2.21.3 (or later) and PCLM to version 0.10.3 (or later).
+#### Fixes
+
+* We addressed an issue with updating expired licenses in PCLM and the Mendix Operator.
+
+    If you are using the Mendix Operator with PCLM, it is **highly recommended** that you upgrade Mendix Operator to version 2.21.3 or above and PCLM to version 0.10.3 or above.
 
 #### License Manage CLI v0.10.3
 
-* We've added support for uploading license bundles with an extended license expiration date (Ticket 249344).
+* We added support for uploading license bundles with an extended license expiration date. (Ticket 249344)
 
 #### Mendix Operator v2.21.3 {#2.21.3}
 
-* We fixed an issue where an ovelapping `/tmp/mendix/img` path could cause issues with some Marketplace components such as [Azure Application Insights](https://marketplace.mendix.com/link/component/108303) (Ticket 248704).
-* We've added support for updating license expiration dates when a newer license is available in PCLM (Ticket 249344).
+* We fixed an issue where an overlapping `/tmp/mendix/img` path could cause issues with some Marketplace components, for example [Azure Application Insights](https://marketplace.mendix.com/link/component/108303). (Ticket 248704)
+* We added support for updating license expiration dates when a newer license is available in PCLM. (Ticket 249344)
 * Upgrading to Mendix Operator v2.21.3 from a previous version now restarts environments managed by that version of the Operator. Environments with two or more replicas and a **PreferRolling** update strategy are restarted without downtime.
 
 ### May 08, 2025
