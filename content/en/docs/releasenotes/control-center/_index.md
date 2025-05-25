@@ -14,6 +14,10 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 ## 2025
 
+### May 26, 2025
+
+* You can now restrict people from outside your organisation from being invited to projects. Read more about how to block external users in our documentation [here](/control-center/security-settings/).
+
 ### May 22, 2025
 
 * We have replaced the [Marketplace Curation](/control-center/marketplace-curation/) <text class="badge badge-pill badge-recommended" style="margin-left:0px">RECOMMENDED</text> label with <text class="badge badge-pill badge-company-approved" style="margin-left:0px"> {{% icon name="checkmark-shield-filled" color="green" %}}COMPANY APPROVED</text>. The new label indicates Marketplace components that meet company policies and guidelines.
