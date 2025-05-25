@@ -33,6 +33,23 @@ Digital signing of email content contributes to security, so why would you want 
 
 Digital signing might interfere with other email safety measures like “External Email Warning”. This feature might add a customized HTML warning to the email. Since Mendix emails cannot be altered, some email servers will wrap the original message in a blank email and add the original email as an attachment. This is not beneficial for the experience of the user and will make the emails look suspicious, impacting user engagement. Also, it makes searching for emails with specific text content more difficult for users.
 
+### Allow External User Invites to project
+
+By default, members outside your organization can be invited to collaborate on projects.
+
+However, if your IT policy requires that only individuals with a [company email](/control-center/company-settings/#company-email-domains) address (i.e., one that matches your company’s domain) work on projects, you can disable this feature.
+
+{{% alert color="info" %}}
+**Note:** Disabling this option will block invitations to any email addresses outside your company domain. Attempts to invite such users will result in an error.
+{{% /alert %}}
+
+Existing external collaborators will **not** be affected by this change. You can manually remove them at any time from the [External Members](/control-center/members/#external-members) page.
+
+If you need to make an exception and temporarily invite an external member:
+1. Re-enable external invitations.
+2. Add the external member.
+3. Disable the setting again to reinstate the restriction.
+
 ### Application Data Replication {#application-data-replication}
 
 {{% alert color="info" %}}
