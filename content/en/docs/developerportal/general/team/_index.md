@@ -42,6 +42,10 @@ To invite new team members, follow these steps:
 
 {{% alert color="info" %}}If you invite a Mendix user from your company to an app owned by your company, the invited user is added directly to the app's team.{{% /alert %}}
 
+### External Invitations
+
+You can invite users with email addresses outside your [company domain](/control-center/company-settings/#company-email-domains), provided your company administrator has allowed this setting. If permitted, the user will receive an email invitation to join the project.
+
 ## Read More
 
 * [App Roles](/developerportal/general/app-roles/)
