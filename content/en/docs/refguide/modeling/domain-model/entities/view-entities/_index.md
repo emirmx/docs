@@ -31,7 +31,7 @@ Your app must use OQL version 2 to use view entities. You can change this settin
 
 Double-click a view entity to open its Properties dialog box. An example of a view entity's properties dialog box is represented in the image below:
 
-{{< figure src="/attachments/refguide/modeling/domain-model/use-view-entities/view-entity-dialog.png" width="600" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-dialog.png" >}}
 
 The **view entity properties dialog** consists of the following sections:
 
@@ -67,9 +67,9 @@ You can add any local information about the view entity in this tab. This is als
 
 ## OQL Query Tab {#oql-query-tab}
 
-To open the OQL query, click the **Show** button in the view entity dialog:
+To open the OQL query tab, click the **Show** button in the view entity dialog:
 
-{{< figure src="/attachments/refguide/modeling/domain-model/use-view-entities/view-entity-dialog.png" width="600" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-dialog-show.png">}}
 
 Alternatively, you can right-click the view entity and click **Go to OQL query** from the context menu:
 
@@ -77,7 +77,7 @@ Alternatively, you can right-click the view entity and click **Go to OQL query**
 
 The **OQL query tab** consists of the following sections:
 
-{{< figure src="/attachments/refguide/modeling/domain-model/use-view-entities/view-entity-document.png">}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-document.png">}}
 
 * [OQL editor](#oql-editor)
 * [Maia for OQL](#maia-for-oql)
@@ -95,7 +95,7 @@ To learn more about how to write OQL code, read [OQL]( /refguide/oql/). Continue
 
 An OQL query can begin with either a `SELECT` clause or a `FROM` clause, as both syntaxes are supported in the OQL editor. Regardless of which clause you choose to start with, you must follow the specific sequence of OQL clauses as shown in the image below:
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/Syntax.png">}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/syntax.png">}}
 
 #### `ORDER BY` Is Only Needed with `LIMIT` or `OFFSET`
 
@@ -120,7 +120,7 @@ SELECT
 FROM Shop.Order AS o
 ```
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/Association.png">}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/association.png">}}
 
 ```sql
 SELECT
@@ -129,7 +129,7 @@ SELECT
 FROM Shop.Order AS o
 ```
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/Association_alias.png">}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/association_alias.png">}}
 
 ### Maia for OQL {#maia-for-oql}
 
