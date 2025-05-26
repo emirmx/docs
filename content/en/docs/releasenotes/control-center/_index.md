@@ -16,7 +16,8 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 ### May 26, 2025
 
-* You can now restrict people from outside your organisation from being invited to projects. Read more about how to block external users in our documentation [here](/control-center/security-settings/).
+* You can now restrict people from outside your organization from being invited to projects. To do that, toggle off the **External User Invites** option on the **Security Settings** tab of the Control Center **Settings** page.    
+For more information, see [Allowing External User Invites to Projects](/control-center/security-settings/#allow-external-users).
 
 ### May 22, 2025
 
