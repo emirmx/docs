@@ -165,7 +165,7 @@ To create a new environment, perform the following steps:
 
 10. To configure logging, select the **Logging** service you would like to use from the dropdown.
 
-    {{% alert color="info" %}} **Application Logs** has been the default logging service but will be deprecated soon. See [SAP Application Logging Service](https://help.sap.com/docs/application-logging-service/sap-application-logging-service/what-is-sap-application-logging-service) for more details on the deprecation of **Application Logs**. For older environments still using the **Application Logs** service, see the [Migrating from SAP Application Logging to SAP Cloud Loggin](#migrating-cloud-logging) section below to ensure continued logging support.{{% /alert %}}
+    {{% alert color="info" %}} **Application Logs** has been the default logging service but will be deprecated soon. See [SAP Application Logging Service](https://help.sap.com/docs/application-logging-service/sap-application-logging-service/what-is-sap-application-logging-service) for more details on the deprecation of **Application Logs**. For older environments still using the **Application Logs** service, see the [Migrating from SAP Application Logging to SAP Cloud Logging](#migrating-cloud-logging) section below to ensure continued logging support.{{% /alert %}}
 
 11. Set a **Subscription Secret** (required). This secret is associated with your Mendix production license. By entering the subscription secret, your application will run in this environment as production. If the subscription secret is invalid, your app will still run, but will restart every 2-4 hours and have a limitation of six concurrent users.
 
