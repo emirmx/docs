@@ -7,7 +7,7 @@ weight: 5
 numberless_headings: true
 aliases:
     - /releasenotes/app-store/index.html
-#This document is mapped to the landing page, update the link there if renaming or moving the doc file.
+#This document is mapped to the landing page, update the link there if renaming or moving the doc file
 ---
 
 These release notes cover changes made to the [Mendix Marketplace](/appstore/).
