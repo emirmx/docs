@@ -37,10 +37,10 @@ Digital signing might interfere with other email safety measures like “Externa
 
 By default, members outside your organization can be invited to collaborate on projects.
 
-However, if your IT policy requires that only individuals with a [company email](/control-center/company-settings/#company-email-domains) address, meaning an email address that matches your company’s domain, work on projects, you can disable this option.
+However, if your IT policy requires that only individuals with a [company email](/control-center/company-settings/#company-email-domains) address, meaning an email address that matches your company domains, work on projects, you can disable this option.
 
 {{% alert color="info" %}}
-If you disable this option, all invitations to email addresses outside of your company domain will be blocked. Any attempt to invite such users will result in an error.
+If you disable this option, all invitations to email addresses outside of your company domains will be blocked. Any attempt to invite such users will result in an error.
 {{% /alert %}}
 
 Existing external collaborators are not affected by this change. You can manually remove them at any time from the [External Members](/control-center/members/#external-members) page.

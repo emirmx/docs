@@ -44,7 +44,7 @@ To invite new team members, follow these steps:
 
 ### External Invitations
 
-You can invite users with email addresses outside of your [company domain](/control-center/company-settings/#company-email-domains), provided your company administrator has allowed this setting. If permitted, the user will receive an email invitation to join the project.    
+You can invite users with email addresses outside of your [company domains](/control-center/company-settings/#company-email-domains), provided your company administrator has allowed this setting. If permitted, the user will receive an email invitation to join the project.    
 For more information, see [Allowing External User Invites to Projects](/control-center/security-settings/#allow-external-users).
 
 ## Read More
