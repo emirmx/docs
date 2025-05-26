@@ -208,4 +208,8 @@ Follow the decision tree in the image below for help with Git-related performanc
 
 {{< figure src="/attachments/refguide/version-control/troubleshoot-version-control-issues/migration-advice-mx11.png" class="no-border" >}}
 
-For more information on partial clone, see [Clone Type](/refguide/clone-type/).
+\* In case your .git folder is <2GB but you are having performance issues when cloning, please consult [Verify Full Clone Through Git CLI](/refguide10/troubleshoot-team-server-issues/#verify-full-clone-through-git-cli]) and contact Support with the relevant information.
+
+\** For more information on partial clone, see [Clone Type](/refguide10/clone-type/).
+
+\*** For more information on Git cleanup, see [Cleanup](/refguide10/troubleshoot-repository-size/#cleanup-tool).
