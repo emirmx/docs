@@ -35,7 +35,7 @@ To upgrade your theme directory to latest version, complete the following steps:
 
 #### In React Client
 
-Create a new file in your theme folder (*theme/web/appSetup.js*) with the following:
+Create a new file in your theme folder (**theme/web/appSetup.js**) with the following:
 
 ```js
 if (!document.cookie || !document.cookie.match(/(^|;) *originURI=/gi)) {
@@ -57,12 +57,12 @@ if (typeof Symbol !== "function") {
 }
 ```
 
-Finally, the *theme/web/index.html* file needs to be changed to use these files directly. If you lack this file, please follow the [Customizing index.html (Web)](/howto/front-end/customize-styling-new/#custom-web) section of *Customize Styling*.
+Next, the *theme/web/index.html* file needs to be changed to use these files directly. If you lack this file, complete the [Customizing index.html (Web)](/howto/front-end/customize-styling-new/#custom-web) section of *Customize Styling*. Once you have the file, you can proceed.
 
 In *theme/web/index.html* do the following:
 
-1. Remove the line with the `{{unsupportedbrowsers}}` tag
-1. Remove the `<script>` which tells the client where to redirect to if a user is required to log in
+1. Remove the line with the `{{unsupportedbrowsers}}` tag.
+1. Remove the `<script>` which tells the client where to redirect to if a user is required to log in.
 1. At the top of the `<head`> tag, add a reference to the `unsupported-browser.js` script:
 
     ```js
