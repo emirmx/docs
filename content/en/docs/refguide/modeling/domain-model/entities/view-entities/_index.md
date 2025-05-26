@@ -73,7 +73,7 @@ To open the OQL query tab, click the **Show** button in the view entity dialog:
 
 Alternatively, you can right-click the view entity and click **Go to OQL query** from the context menu:
 
-{{< figure src="/attachments/refguide/modeling/domain-model/use-view-entities/view-entity-contextual-menu.png" width="500" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-contextual-menu.png" width="500" >}}
 
 The **OQL query tab** consists of the following sections:
 
