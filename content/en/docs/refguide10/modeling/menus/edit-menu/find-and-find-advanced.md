@@ -17,9 +17,8 @@ You can find various elements in your app via the **Find** option. For example, 
 
 1. Click **Edit** > **Find** in the top-bar or press <kbd>Ctrl</kbd> + <kbd>F</kbd>.
 2. In the **Find** dialog box, leave **Match case** and **Match the whole word** unselected. This way you will search for all instances of the word "Employee" including such instances as "employee", Employees", or "Department_Employee":
-3. In the **Look in** section unselect items in your app where you do not want to search in:  
 
-    {{< figure src="/attachments/refguide10/modeling/menus/edit-menu/find-and-find-advanced/look-in.jpg" alt="Look in Section" class="no-border" >}}
+    {{< figure src="/attachments/refguide10/modeling/menus/edit-menu/find-and-find-advanced/find.png" alt="Find" class="no-border" >}}
 
 You can see search results in the **Find Results** pane:
 
