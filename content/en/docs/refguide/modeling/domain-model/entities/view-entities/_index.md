@@ -89,7 +89,7 @@ The **OQL editor** runs in the OQL query tab, where you can interact with variou
 
 The **OQL editor** allows you to write the query that defines this view entity. While writing the query, the editor suggests names of the entities and attributes in your domain model, as well as allowed clauses, operators, and functions. If the query is not valid, a list of validation errors are displayed underneath the editor with the line and column number of the place where the error was found.
 
-To learn more about how to write OQL code, read [OQL]( /refguide/oql/). Continue reading for a few view entity-specific considerations.
+To learn more about how to write OQL code, read [OQL]( /refguide/oql/). Continue reading for a few view entity-specific OQL considerations.
 
 #### Supported OQL Syntax Patterns
 
