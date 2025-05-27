@@ -22,6 +22,8 @@ Once you have deactivated users, they will no longer be able to log in to the Me
 
 As an alternative, you can use this API to deactivate platform users, instead of the deprecated User Management API.
 
+This API enforces request rate limits to ensure optimal usage. Exceeding these limits results in a `429 Too Many Requests` error.
+
 ## Authentication
 
 Authentication for the User Deactivation API uses a personal access token (PAT).
