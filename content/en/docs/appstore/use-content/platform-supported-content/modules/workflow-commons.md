@@ -27,7 +27,7 @@ This module allows Mendix developers with little or no experience in building wo
 ### Prerequisites
 
 * As workflows are only available from Mendix 9, Workflow Commons requires Mendix 9.0.5 and above.
-* Workflow Commons versions from 4.0.0 require Mendix 11 and above, as these versions are based on [View Entities](/refguide/view-entities). For information on how to upgrade an existing app that uses Workflow Commons from Mendix 10 to Mendix 11, see the [Upgrading from Mendix 10 to Mendix 11](#upgrade-from-10-to-11) section below.
+* Workflow Commons versions from 4.0.0 require Mendix 11 and above, as these versions are based on [View Entities](/refguide/view-entities/). For information on how to upgrade an existing app that uses Workflow Commons from Mendix 10 to Mendix 11, see the [Upgrading from Mendix 10 to Mendix 11](#upgrade-from-10-to-11) section below.
 
 ### Dependencies
 
