@@ -232,7 +232,7 @@ Mendix Support can analyze this component if your app is running on Mendix Cloud
 
 ### Container Runtime Platform
 
-The container runtime platform refers to the platform for managing, creating, destroying, and scaling of runtime containers. In Mendix Cloud and Mendix Cloud Dedicated, Cloud Foundry is used.
+The container runtime platform refers to the platform for managing, creating, destroying, and scaling of runtime containers. In Mendix Cloud and Mendix Cloud Dedicated, Kubernetes is used.
 
 Mendix Support can analyze this component if your app is running on Mendix Cloud or Mendix Cloud Dedicated. If it is running on SAP BTP instead, the selected third party can analyze this component.
 

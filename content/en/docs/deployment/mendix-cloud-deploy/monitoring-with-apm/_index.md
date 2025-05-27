@@ -50,7 +50,7 @@ The integration with Splunk Cloud Platform sends only runtime application logs. 
 
 Mendix provides two types of monitoring data:
 
-* Data from the Mendix Runtime, the Java Virtual Machine (JVM), the database, and the SaaS (for example, Cloud Foundry) environment – this is described in [Environment Metrics](#environment), below
+* Data from the Mendix Runtime, the Java Virtual Machine (JVM), the database, and the SaaS (for example, Kubernetes or Cloud Foundry) environment – this is described in [Environment Metrics](#environment), below
 * Data from within the Mendix app itself – this is described in [App Metrics](#app-metrics), below
 
 ## Environment Metrics{#environment}
