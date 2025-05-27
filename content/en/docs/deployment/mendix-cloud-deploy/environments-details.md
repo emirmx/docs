@@ -159,7 +159,7 @@ This section shows details of the plan that applies to this environment:
 * **Backup Storage** – total size available for database backup files
 * **Multi-AZ Enabled** –  a **Yes** or **No** value indicating whether multiple availability zones are enabled
 
-### License
+### License {#license)
 
 The license overview contains the following information:
 
