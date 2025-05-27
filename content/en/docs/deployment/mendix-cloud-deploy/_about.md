@@ -34,6 +34,10 @@ The primary hosting locations are as follows:
 * Mendix Cloud US West: Oregon
 * Mendix Cloud South America: São Paulo
 
+## Does Mendix Expose the Underlying Cloud Foundry API?
+
+No, it does not. The Cloud Foundry API does not map one-to-one to Mendix's deployment options, authorization model, or cloud resource usage. However, deployment to Mendix Cloud can be automated using the [Deploy API](/apidocs-mxsdk/apidocs/deploy-api/).
+
 ## How Do You Access the Underlying AWS Resources? How Can You Deploy in Your AWS Account?
 
 Mendix Cloud runs in Mendix's own AWS account; you cannot interact with the AWS APIs directly via Mendix credentials. Mendix Cloud does not offer [VPC peering](https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/Welcome.html) or VPC connections. All access to Mendix-hosted AWS resources (such as EC2, RDS, and S3) is done via Mendix APIs, such as the [Database API](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/core/Core.html#createXPathQuery(java.lang.String)) and [FileDocument API](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/core/Core.html#storeFileDocumentContent(com.mendix.systemwideinterfaces.core.IContext,com.mendix.systemwideinterfaces.core.IMendixObject,java.io.InputStream)) in Runtime and the [Deploy API](/apidocs-mxsdk/apidocs/deploy-api/) for cloud resources.
