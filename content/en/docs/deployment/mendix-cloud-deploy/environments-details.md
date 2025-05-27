@@ -4,8 +4,7 @@ url: /developerportal/deploy/environments-details/
 weight: 7
 description: "Describes the environmental details of your app and how to manage the environment."
 #To update these screenshots, you can log in with credentials detailed in How to Update Screenshots Using Team Apps.
-#The anchor #connection-safelist below is mapped from the Mendix Portal (Mendix Cloud Environment Details), so it should not be removed or changed.
-#The anchor #services below is mapped from the Mendix Portal (Mendix Cloud Environment Details), so it should not be removed or changed.
+#Do not remove any of the anchor tags. They are mapped to other documents.
 ---
 
 ## Introduction
@@ -50,7 +49,7 @@ On the right side of the screen in the **General** tab, there are buttons that y
 
 {{% alert color="info" %}}Depending on your permissions, you may see only some of the action buttons described below. You can adjust your permissions settings on the [Permissions](/developerportal/deploy/node-permissions/) tab of your app's **Environments** page.{{% /alert %}}
 
-#### Running App Actions
+#### Running App Actions {#running-app-actions}
 
 When your app is running, you can see the following action buttons:
 
@@ -62,7 +61,7 @@ When your app is running, you can see the following action buttons:
 * **Show Debugger Information** – This shows the settings needed to connect the debugger in Studio Pro to your app. For more information on debugging in the cloud, see [How To Debug Microflows Remotely](/refguide/debug-microflows-remotely/).
 * **Show Running Now** – You can use this to monitor all actions that are currently running in your environment. For more information, see [Running Now](/developerportal/deploy/mxcloud-runningnow/).
 
-#### Stopped App Actions
+#### Stopped App Actions {#stopped-app-actions}
 
 When your app is stopped, you see this set of action buttons instead:
 
@@ -136,7 +135,7 @@ If you have 1 GiB RAM of total allocated memory, you have one instance to use yo
 
 For more information, see [Scaling Your Environment](/developerportal/deploy/scale-environment/).
 
-### Deployment Package Details
+### Deployment Package Details {#deployment-package-details}
 
 In this section, you can find information about the deployment package that is loaded into the environment:
 
@@ -146,7 +145,7 @@ In this section, you can find information about the deployment package that is l
 * **Size (MB)** of the deployment package
 * **Upload date** of the deployment package
 
-### Plan Details
+### Plan Details {#plan-details}
 
 This section shows details of the plan that applies to this environment:
 
@@ -159,7 +158,7 @@ This section shows details of the plan that applies to this environment:
 * **Backup Storage** – total size available for database backup files
 * **Multi-AZ Enabled** –  a **Yes** or **No** value indicating whether multiple availability zones are enabled
 
-### License {#license)
+### License {#license}
 
 The license overview contains the following information:
 
@@ -173,7 +172,7 @@ On this tab, you can edit the model options for constants and scheduled events.
 
 {{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details/model-options.png" class="no-border" >}}
 
-### Scheduled Events
+### Scheduled Events {#scheduled-events}
 
 In this section, you can view your configured scheduled events.
 
@@ -193,7 +192,7 @@ Constants are used to define configuration values that can differ per environmen
 
 To fill in a new value, select the constant and click **Edit** to bring up the **Edit Constant** dialog box.
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details/edit-constant.png" alt="Edit Constants Pop-up window"   width="80%" >}}
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details/edit-constant.png"  width="80%" >}}
 
 In the **Edit Constant** dialog box, you can change the constant value using the **New Value** field.
 
@@ -266,7 +265,7 @@ The changes to the headers are implemented when the app is redeployed.
 
 For more information about HTTP headers, see [MDN's HTTP headers overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers).
 
-#### HTTP Response Headers Inserted Automatically
+#### HTTP Response Headers Inserted Automatically {#http-response-headers}
 
 Mendix and the deployment environment automatically add some non-configurable response headers. These are listed below.
 
@@ -285,7 +284,7 @@ Most browsers have additional security to ensure that iframes are only allowed w
 There can be additional issues when using cookies in iframes for end-users using the Safari browser. Resolving these issues is outside the control of Mendix. For more information, see [Full Third-Party Cookie Blocking and More](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/).
 {{% /alert %}}
 
-##### Using Custom Domains
+##### Using Custom Domains {#custom-domains}
 
 To avoid security issues when you want to embed the app in an iframe, use [custom domains](/developerportal/deploy/custom-domains/). This way, you can ensure that the app you want to embed is part of the same domain. For example, if your page is `mainpage.domain.name`, then the app embedded in the iframe should be `appname.domain.name`.
 
@@ -304,7 +303,7 @@ For Mendix 8.11 and below, there was no `SameSite` value set on cookies, and the
 The `SAMESITE_COOKIE_PRE_MX812` setting is implemented the next time your app is deployed after you apply the change.
 {{% /alert %}}
 
-##### Using Custom Sign-In Pages
+##### Using Custom Sign-In Pages {#custom-signin-details}
 
 If you use a custom sign-in page, the `originURI` cookie is normally set in the *index.html* file. If your Mendix app runs within an iframe, set this cookie with the `SameSite=None` and `Secure` attributes.
 
@@ -340,7 +339,7 @@ You can add or edit multiple different IP address and port combinations. Any ran
 * To edit a range, select an existing range and click **Edit**.
 * To delete a range, select an existing range, click **Delete**, and then confirm that you want to delete it.
 
-#### Managing a Safelist Range
+#### Managing a Safelist Range {#safelist-range}
 
 For each range where you define safelisted IP addresses and ports, you can enter the following information:
 
@@ -387,7 +386,7 @@ You can **Delete** a path or you can **Add** and **Edit** a path with the follow
 
 For more information, see [How to Restrict Access for Incoming Requests](/developerportal/deploy/access-restrictions/).
 
-### Outgoing Connections Certificates
+### Outgoing Connections Certificates {#outgoing-connections-certificates}
 
 Add client certificates (in the PKCS12 format) or certificate authorities (in the PEM format). These are used when your application initiates SSL/TLS connections.
 
@@ -502,11 +501,11 @@ There are two types of maintenance:
 * Regular weekly maintenance (which does not affect your app), during which you can change the preferred maintenance window
 * Planned maintenance (which affects your app in some ways), about which you will automatically receive an email
 
-### Preferred Maintenance Window
+### Preferred Maintenance Window {#preferred-maintenance-window}
 
 You can view and change the preferred maintenance. For more information about maintenance, see [Maintenance Windows: Configuration](/developerportal/deploy/maintenance-windows/).
 
-### Planned Maintenance
+### Planned Maintenance {#planned-maintenance}
 
 When a maintenance operation is planned, it appears under **Planned Maintenance**. Each task card will show the purpose of the maintenance, when it is scheduled, and its status.
 
@@ -514,21 +513,27 @@ When a maintenance operation is planned, it appears under **Planned Maintenance*
 Maintenance topics (for example, "PostgreSQL 14 Upgrade") have a predefined period (start date and deadline). Once the start date is reached, you will get the option to execute it immediately, regardless of the Maintenance Window configured for the environment, by clicking **Execute Now**.
 {{% /alert %}}
 
-The status of a maintenance task can be one of:
+The status of a maintenance task can be one of the following:
 
 * **Succeeded** – the maintenance task was successful
-* **Failed** – the maintenance task failed and the environment requires intervention
-    * Our engineering team will have been notified about the failed task. If you are still experiencing issues, please create a support ticket with [Mendix Support](https://support.mendix.com/hc/en-us)
-* **Incomplete** – the maintenance task was unsuccessful and no changes were applied
-    * You can operate the environment as usual. Our engineering team will have been alerted about the incomplete task and will take the appropriate action (which may involve rescheduling the task)
-* **Ineligible** – the maintenance task was unsuccessful because one or more starting criteria were not met
-    * You can operate the environment as usual. This can happen, for example, if the database of your environment was scheduled to be upgraded but it is already on the target version
+    * No further action is required
+* **Failed** – the maintenance task was unsuccessful
+    * The environment requires intervention and our engineering team has been notified, they will recover the environment according to its SLA. If you are still experiencing issues, please create a support ticket with [Mendix Support](https://support.mendix.com/hc/en-us)
+* **Incomplete** – the maintenance task was unsuccessful
+    * No changes were applied, you can operate the environment as usual
+    * Our engineering team has been alerted and will take the appropriate action, which may include rescheduling the task
+* **Ineligible** – the task is not applicable to the environment
+    * No changes were applied, you can operate the environment as usual
+    * This can happen, for example, if the database of your environment was scheduled to be upgraded but it is already on the target version
+* **Canceled** – the task was canceled
+    * No changes were applied, you can operate the environment as usual
+    * This can happen if circumstances required us to remove the planned task, a new copy of the task will be scheduled at a later point in time
 
 {{% alert color="info" %}}
 The application's Technical Contact will automatically receive email notifications about planned maintenance.
 {{% /alert %}}
 
-## The Tags Tab{#tags}
+## The Tags Tab {#tags}
 
 You can set tags on your environment. Tags are arbitrary strings that are not interpreted by the Mendix Portal.
 
@@ -551,10 +556,10 @@ The [Technical Contact](/developerportal/general/app-roles/#technical-contact) m
 
 {{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details/services-tab.png" >}}
 
-### Available Services
+### Available Services {#available-services}
 
 One custom service is available: Mendix Event Broker. This service is required to use [Mendix Business Events](/appstore/services/business-events/) on production apps.
 
-### Enabling Custom Services
+### Enabling Custom Services {#enabling-custom-services}
 
 Custom services are only available if the app's Technical Contact has enabled them. The custom services are enabled or disabled separately for each environment of each app. For more information, see [Services](/developerportal/deploy/environments/#services) in the *Environments* documentation.
