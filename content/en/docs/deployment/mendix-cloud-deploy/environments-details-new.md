@@ -528,16 +528,18 @@ Maintenance topics (for example, "PostgreSQL 14 Upgrade") have a predefined peri
 The status of a maintenance task can be one of:
 
 * **Succeeded** – the maintenance task was successful
-* **Failed** – the maintenance task failed and the environment requires intervention
-    * Our engineering team should already have been notified about the failed task. If you are still experiencing issues, please create a support ticket with [Mendix Support](https://support.mendix.com/hc/en-us)
-* **Incomplete** – the maintenance task was unsuccessful and no changes were applied
-    * You can operate the environment as usual. Our engineering team should already have been alerted about the incomplete task and will take the appropriate action (which may involve rescheduling the task).
-* **Ineligible** – the maintenance task was unsuccessful because one or more starting criteria were not met
-    * You can operate the environment as usual. This can happen, for example, if the database of your environment was scheduled to be upgraded but it is already on the target version
-
-{{% alert color="info" %}}
-The Technical Contact for the application will automatically receive email notifications about planned maintenance.
-{{% /alert %}}
+    * No further action is required
+* **Failed** – the maintenance task was unsuccessful
+    * The environment requires intervention and our engineering team has been notified, they will recover the environment according to its SLA. If you are still experiencing issues, please create a support ticket with [Mendix Support](https://support.mendix.com/hc/en-us)
+* **Incomplete** – the maintenance task was unsuccessful
+    * No changes were applied, you can operate the environment as usual
+    * Our engineering team has been alerted and will take the appropriate action, which may include rescheduling the task
+* **Ineligible** – the task is not applicable to the environment
+    * No changes were applied, you can operate the environment as usual
+    * This can happen, for example, if the database of your environment was scheduled to be upgraded but it is already on the target version
+* **Canceled**  – the task was canceled
+    * No changes were applied, you can operate the environment as usual
+    * This can happen if circumstances required us to remove the planned task, a new copy of the task will be scheduled at a later point in time
 
 ## The Tags Tab{#tags}
 
