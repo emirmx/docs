@@ -34,9 +34,9 @@ The primary hosting locations are as follows:
 * Mendix Cloud US West: Oregon
 * Mendix Cloud South America: São Paulo
 
-## Does Mendix Expose the Underlying Cloud Foundry API?
+## Does Mendix Expose the Underlying Container Platform API?
 
-No, it does not. The Cloud Foundry API does not map one-to-one to Mendix's deployment options, authorization model, or cloud resource usage. However, deployment to Mendix Cloud can be automated using the [Deploy API](/apidocs-mxsdk/apidocs/deploy-api/).
+No, it does not. The container platform APIs do not map one-to-one to Mendix's deployment options, authorization model, or cloud resource usage. However, deployment to Mendix Cloud can be automated using the [Deploy API](/apidocs-mxsdk/apidocs/deploy-api/).
 
 ## How Do You Access the Underlying AWS Resources? How Can You Deploy in Your AWS Account?
 
