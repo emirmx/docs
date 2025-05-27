@@ -118,6 +118,22 @@ paths:
                       detail: Access token does not include the required scope.
                       code: 403
                       instance: 'urn:uuid:0cbe900c-6656-447d-8e51-54097cdfcd65'
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    message: API rate limit exceeded
+              examples:
+                RateLimitExceeded:
+                  value:
+                    message: API rate limit exceeded
         '500':
           description: Internal Server Error
           content:
