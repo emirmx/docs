@@ -8,11 +8,20 @@ description: "Release notes for deployment to Mendix Cloud"
 
 These release notes cover changes to deployment to [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/).
 
+Mendix Cloud deployments are also dependent on the latest version of the [Mendix Cloud Foundry Buildpack](https://github.com/mendix/cf-mendix-buildpack). The [Mendix Cloud Foundry Buildpack release notes](https://github.com/mendix/cf-mendix-buildpack/releases) are published separately, as other deployment targets are also dependent on the buildpack.
+
 There are separate release notes for other deployment targets; for more information, see the [Deployment](/releasenotes/developer-portal/deployment/) release notes.
 
 For information on the current status of deployment to Mendix Cloud and any planned releases, see [Mendix Status](https://status.mendix.com/).
 
 ## 2025
+
+### June ___, 2025
+
+#### New Features
+
+* We have added a new beta feature in the [new environment UI](/developerportal/deploy/environments-redesign/). This feature allows Technical Contacts to [change app's environment plan](/developerportal/deploy/change-plan/) to a higher-instance plan.
+    * Additionally, a new tab ([Request Overview](/developerportal/deploy/environments-redesign/#request-overview)) has been introduced where Technical Contacts can view and manage plan change requests and track the status of their pending requests awaiting a Mendix Admin review from the [Control Center](/control-center/entitlements/#plan-change-requests-tab).
 
 ### May 25, 2025
 
