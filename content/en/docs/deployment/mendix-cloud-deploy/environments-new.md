@@ -1,19 +1,9 @@
 ---
-title: "Environments and Deployment (New UI)"
+title: "Environments and Deployment"
 url: /developerportal/deploy/environments-redesign/
-beta: true
 weight: 8
 description: "Describes the new Environments page and deployment flow"
 ---
-
-{{% alert color="warning" %}}
-This feature is in Public Beta. For more information, see [Beta Releases](/releasenotes/beta-features/).
-{{% /alert %}}
-
-{{% alert color="info" %}}
-While this feature is in Beta, you can use the **New Theme** toggle to switch between this new UI and the [legacy UI](/developerportal/deploy/environments/). For apps running on Kubernetes, the new UI displays by default and cannot be toggled off. 
-{{% /alert %}}
-
 ## Introduction
 
 You can use the **Environments** page to access information about your environments, deploy packages, manage certificates and access restrictions, and more. To access your app's **Environments** page, go to [Apps](https://sprintr.home.mendix.com/) and click **Environments** on your app. You can also directly visit the **Environments** page using this link: `https://cloud.home.mendix.com/link/deploy/`*`APP_ID`*, with *`APP_ID`* replaced by your [project ID](/developerportal/deploy/environments-details/#general-tab).
