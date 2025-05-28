@@ -140,9 +140,10 @@ The examples above show that the fields `name` and `description` define the UI, 
 Field `type` defines the type of a property and can only take one of the two string values: `Toggle` or `Dropdown`.
 
 {{% alert color="warning" %}}
-Name your design property and its options carefully. Those names cannot be changed easily when there are apps already using them. If you want to rename a design property which is already being used in an app, see the [Renaming Design Properties](#old-names) section below.
-{{% /alert %}}
+Name your design property and its options carefully. Those names cannot be changed easily when there are apps already using them. 
 
+If you want to rename a design property which is already being used in an app, see the [Renaming Design Properties](#old-names) section below.
+{{% /alert %}}
 #### 4.1.2 Toggle-Specific Fields
 
 When a type of design property is **Toggle** it should contain a `class` field on the top level of its property definition. This field defines an arbitrary class name to be applied if the option is toggled on for a widget. In the example above, the class to be applied is `hereMyClass`.

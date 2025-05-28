@@ -116,7 +116,9 @@ The examples above show that the fields `name` and `description` define the UI, 
 Field `type` defines the type of a property and must be one of the design property types: `Toggle`, `Dropdown`, `Colorpicker`, `ToggleButtonGroup` or `Spacing`.
 
 {{% alert color="warning" %}}
-Name your design property and its options carefully. Those names cannot be changed easily when there are apps already using them. If you want to rename a design property which is already being used in an app, see the [Renaming Design Properties](#old-names) section below.
+Name your design property and its options carefully. Those names cannot be changed easily when there are apps already using them. 
+
+If you want to rename a design property which is already being used in an app, see the [Renaming Design Properties](#old-names) section below.
 {{% /alert %}}
 
 #### Toggle-Specific Fields

@@ -117,20 +117,23 @@ The common fields, as seen within the example above, are available on all the de
 
 | Field          | Required | Type   | Description                                                                                   |
 | -------------- | -------- | ------ | --------------------------------------------------------------------------------------------- |
-| `name`         | Yes      | String | The name and identifier for the design property, that will be displayed on the UI.            |
+| `name`         | Yes      | String | The name and identifier for the design property, which are displayed in the UI.            |
 | `description`  | Yes      | String | A short description of the design property and what it provides.                              |
-| `type`         | Yes      | String | Defines the type of a property .                                                              |
-| `category`     | No       | String | An identifier that will be used to group design properties on the UI (defaults to "General"). |
+| `type`         | Yes      | String | Defines a property's type.                                                              |
+| `category`     | No       | String | An identifier that will be used to group design properties in the UI (defaults to **General**). |
 
 {{% alert color="warning" %}}
-Name your design property and its options carefully. Those names cannot be changed easily when there are apps already using them. If you want to rename a design property which is already being used in an app, see the [Renaming Design Properties](#old-names) section below.
+Name your design property and its options carefully. Those names cannot be changed easily when there are apps already using them. 
+
+If you want to rename a design property which is already being used in an app, see the [Renaming Design Properties](#old-names) section below.
 {{% /alert %}}
 
 ##### Limitations
 
-It is important to note that the `category` shouldn't be "Common" as this is a reserved category and will cause Studio Pro to raise a warning and display that design property within the default category.
+Please note the following design property limitations:
 
-The `type`property must be one of the following design property types: `Toggle`, `Dropdown`, `Colorpicker`, `ToggleButtonGroup` or `Spacing`.
+* It is important to note that the `category` should not be **Common**, as this is a reserved category. Setting `category` to **Common** will cause Studio Pro to raise a warning and display that design property within the default category.
+* The `type`property must be one of the following design property types: `Toggle`, `Dropdown`, `Colorpicker`, `ToggleButtonGroup`, or `Spacing`.
 
 #### Toggle-Specific Fields
 
