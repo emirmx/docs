@@ -105,7 +105,7 @@ Here is an example of a **Toggle** design property:
 
 This is how the **Toggle** design property appears:
 
-{{< figure src="/attachments/apidocs-mxsdk/apidocs/design-properties/design_property_toggle_studio_pro.png" alt="Toggle property in Studio Pro" >}}
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/design-properties/toggle.png" alt="Toggle property in Studio Pro" >}}
 
 Here is an example of a **Dropdown** design property:
 

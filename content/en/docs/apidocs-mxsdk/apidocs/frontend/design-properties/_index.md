@@ -9,7 +9,7 @@ weight: 50
 
 The Mendix Design Properties API allows you to create or extend design properties for your Mendix apps.
 
-{{% alert color="warning" %}}
+{{% alert color="info" %}}
 This document pertains to Mendix 11. For other Design Properties API documents, see the other documents in this category:
 * [Mendix 10](/apidocs-mxsdk/apidocs/design-properties-10/)
 * [Mendix 9](/apidocs-mxsdk/apidocs/design-properties-9/)
@@ -162,7 +162,7 @@ Here is a full example of a **Toggle** design property:
 
 This is how the **Toggle** design property appears:
 
-{{< figure src="/attachments/apidocs-mxsdk/apidocs/design-properties/toggle.png" alt="Toggle property in Studio Pro" class="no-border" >}}
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/design-properties/toggle.png" alt="Toggle property in Studio Pro" >}}
 
 #### Dropdown-Specific Fields
 

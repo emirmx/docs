@@ -142,7 +142,7 @@ Here is a full example of a **Toggle** design property:
 
 This is how the **Toggle** design property appears:
 
-{{< figure src="/attachments/apidocs-mxsdk/apidocs/design-properties/toggle.png" alt="Toggle property in Studio Pro" class="no-border" >}}
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/design-properties/toggle.png" alt="Toggle property in Studio Pro" >}}
 
 #### Dropdown-Specific Fields
 
