@@ -90,6 +90,10 @@ This option controls the synchronization of managed dependencies. For more infor
 
 A directory where Gradle is located on the computer that you use to deploy the application. The correct directory is usually located automatically.
 
+#### Extra Arguments
+
+This option can be used to add extra arguments to the Gradle process.
+
 #### Use Custom Repositories
 
 Enabling this option allows you to specify which repositories should be used by Gradle. For more information, see the [Custom Repositories](/refguide/managed-dependencies/#custom-repos) section in *Managed Dependencies*.
