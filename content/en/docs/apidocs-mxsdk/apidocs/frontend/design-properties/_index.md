@@ -9,6 +9,12 @@ weight: 50
 
 The Mendix Design Properties API allows you to create or extend design properties for your Mendix apps.
 
+{{% alert color="info" %}}
+This document pertains to Mendix 11. For other Design Properties API documents, see the other documents in this category:
+* [Mendix 10](/apidocs-mxsdk/apidocs/design-properties-10/)
+* [Mendix 9](/apidocs-mxsdk/apidocs/design-properties-9/)
+{{% /alert %}}
+
 To use the API, you need to alter the *design-properties.json* file of a specific module in your application's **themesource** folder. This process is described in the [Design Properties Definitions](#design-properties-definitions) section below.
 
 Many apps can simply use the Atlas UI theme and its included set of design properties to satisfy their styling needs. However, if you want to customize your styling more deeply, you will have to create your own custom design properties. This guide outlines how design properties work and can help you create custom design properties. The design properties provided by Atlas UI have been built in the same way as outlined here.
@@ -61,6 +67,7 @@ Here is a simplified example of a design properties file:
             "name": "My Toggle Property",
             "type": "Toggle",
             "description": "Description of My Toggle Design Property",
+            "category": "Best place for this toggle property",
             "class": "hereMyClass"
         },
         {
@@ -109,15 +116,30 @@ As you can see, design properties are defined as a *JSON* object where the keys 
 
 Every design property in the array is also represented by a *JSON* object. The exact structure of each object is dependent on its type, as indicated by the `type` property. All types also share common fields such as `name` and `description`. Those names determine how a design property appears to a user in Mendix Studio Pro.
 
-#### Common Fields
+#### Common Fields {#common-fields}
 
-The examples above show that the fields `name` and `description` define the UI, the name of a form control in Studio Pro, and the description under it. They are required string values naming and describing a design property. 
+The common fields, as seen within the example above, are available on all the design properties as defined in the following table.
 
-Field `type` defines the type of a property and must be one of the design property types: `Toggle`, `Dropdown`, `Colorpicker`, `ToggleButtonGroup` or `Spacing`.
+
+| Field          | Required | Type   | Description                                                                                   |
+| -------------- | -------- | ------ | --------------------------------------------------------------------------------------------- |
+| `name`         | Yes      | String | The name and identifier for the design property, which are displayed in the UI.            |
+| `description`  | Yes      | String | A short description of the design property and what it provides.                              |
+| `type`         | Yes      | String | Defines a property's type.                                                              |
+| `category`     | No       | String | An identifier that will be used to group design properties in the UI (defaults to **General**). |
 
 {{% alert color="warning" %}}
-Name your design property and its options carefully. Those names cannot be changed easily when there are apps already using them. If you want to rename a design property which is already being used in an app, see the [Renaming Design Properties](#old-names) section below.
+Name your design property and its options carefully. Those names cannot be changed easily when there are apps already using them. 
+
+If you want to rename a design property which is already being used in an app, see the [Renaming Design Properties](#old-names) section below.
 {{% /alert %}}
+
+##### Limitations
+
+Please note the following design property limitations:
+
+* It is important to note that the `category` should not be **Common**, as this is a reserved category. Setting `category` to **Common** will cause Studio Pro to raise a warning and display that design property within the default category.
+* The `type`property must be one of the following design property types: `Toggle`, `Dropdown`, `Colorpicker`, `ToggleButtonGroup`, or `Spacing`.
 
 #### Toggle-Specific Fields
 
@@ -140,7 +162,7 @@ Here is a full example of a **Toggle** design property:
 
 This is how the **Toggle** design property appears:
 
-{{< figure src="/attachments/apidocs-mxsdk/apidocs/design-properties/toggle.png" alt="Toggle property in Studio Pro" class="no-border" >}}
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/design-properties/toggle.png" alt="Toggle property in Studio Pro" >}}
 
 #### Dropdown-Specific Fields
 
