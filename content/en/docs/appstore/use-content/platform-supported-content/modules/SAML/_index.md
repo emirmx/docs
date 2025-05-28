@@ -241,7 +241,7 @@ After creating an application, you will receive an IdP metadata URL. This URL is
 
 The setup described above offers default configurations to start the SAML module. Any changes made to the configuration will require adjustments to other configuration details accordingly.
 
-##### Creating SP Manually at Azure
+##### Creating SP Manually at Entra ID
 
 To connect [Azure](https://portal.azure.com/#home) with SAML, refer to the below image. 
 
@@ -410,11 +410,13 @@ By default, end-users are provisioned using the Account object in the Administra
 
 ### Default User Provisioning
 
-This applies to the following mapping:
+If the standard configuration meets your needs and your application does not have special user management requirements, you can use the default User Provisioning.
 
-| ID-token Provided by your IdP | Attribute of `Administration.Account` Object |
+In default configuration, the custom user entity is set as `Administration.Account`, the principal attribute is set as `Use Name ID`, and the default attribute mapping is provided.
+
+| IdP Attribute | Configured Entity Attribute |
 | --- | --- |
-| nameID | Name |
+| Use Name ID | Name |
 
 ### Custom User Provisioning{#custom-provisioning}
 
