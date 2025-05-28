@@ -1,5 +1,5 @@
 ---
-title: "Environment Details (New UI)"
+title: "Environment Details"
 url: /developerportal/deploy/environments-details-redesign/
 weight: 7
 beta: true
