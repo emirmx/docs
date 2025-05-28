@@ -253,7 +253,7 @@ In Operator version 2.7.0 and above, the build pod will trust certificates from 
 {{% /alert %}}
 
 {{% alert color="info" %}}
-When using Global Operator, the custom tls secret has to be created in both namespaces (global + managed). If it’s not created the operator will crashloopbackoff because the secret cannot be mounted. The same secret needs to be added for both Global and managed, as we dont support different custom TLS on different managed namespace.
+When using Global Operator, you must create the custom TLS secret in both namespaces (Global and Managed), otherwise the Operator will show an error because the secret cannot be mounted. The same secret must be added for both Global and Managed namespaces, because Mendix does not support different custom TLS on different Managed namespaces.
 {{% /alert %}}
 
 To use encryption and avoid [MITM attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack), communication with all external services should be done over TLS.
