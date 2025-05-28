@@ -1,8 +1,11 @@
 ---
 title: "Environment Details"
-url: /developerportal/deploy/environments-details-redesign/
+url: /developerportal/deploy/environments-details/
 weight: 8
 description: "Describes the environmental details of your app and how to manage the environment."
+aliases:
+    - /developerportal/deploy/environments-details-redesign.html
+    - /developerportal/deploy/environments-details-redesign/
 #To update these screenshots, you can log in with credentials detailed in How to Update Screenshots Using Team Apps.
 #The anchor #connection-safelist below is mapped from the Mendix Portal (Mendix Cloud Environment Details), so it should not be removed or changed.
 #The anchor #services below is mapped from the Mendix Portal (Mendix Cloud Environment Details), so it should not be removed or changed.
