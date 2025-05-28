@@ -129,9 +129,7 @@ Here is an example of a **Dropdown** design property:
 
 This is how the **Dropdown** design property appears:
 
-{{< figure src="/attachments/apidocs-mxsdk/apidocs/design-properties/design_property_dropdown_studio_pro.png" alt="Dropdown property in Studio Pro" >}}
-
-{{< figure src="/attachments/apidocs-mxsdk/apidocs/design-properties/design_property_dropdown_open_studio_pro.png" alt="Dropdown property options in Studio Pro" >}}
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/design-properties/dropdown.png" alt="Dropdown property in Studio Pro" max-width=80% >}}
 
 #### 4.1.1 Common Fields
 
