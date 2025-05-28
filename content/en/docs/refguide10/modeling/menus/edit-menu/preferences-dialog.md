@@ -94,6 +94,14 @@ This option controls the synchronization of managed dependencies. For more infor
 
 A directory where Gradle is located on the computer that you use to deploy the application. The correct directory is usually located automatically.
 
+#### Extra Arguments {#extra-arguments}
+
+{{% alert color="info" %}}
+This option is available for Studio Pro 10.23.0 and above.
+{{% /alert %}}
+
+This option can be used to add extra arguments to the Gradle process.
+
 #### Use Custom Repositories
 
 Enabling this option allows you to specify which repositories should be used by Gradle. For more information, see the [Custom Repositories](/refguide10/managed-dependencies/#custom-repos) section in *Managed Dependencies*.
