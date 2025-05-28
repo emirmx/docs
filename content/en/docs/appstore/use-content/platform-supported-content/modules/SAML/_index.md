@@ -300,10 +300,10 @@ The following entities are used to create IdP configurations:
 
 The below table shows you the constants used to configure the SP Metadata.
 
-| IDPConfiguration(Non-Persistable entity) | Description | Default Value |
-| --- | --- | --- |
-| **Alias** (mandatory) | This represents the IdPconfiguration Alias | |
-| **IdPMetadataURL** (mandatory) | This represents the URL of the IdPMetadataURL | | 
+| IDPConfiguration(Non-Persistable entity) | Description |
+| --- | --- |
+| **Alias** (mandatory) | This represents the IdPconfiguration Alias |
+| **IdPMetadataURL** (mandatory) | This represents the URL of the IdPMetadataURL |
 
 Deploy the application and log in with the SSO. For more information, see the [Deploy the Application and Login with SSO](#deploy-application) section above.
 
