@@ -23,14 +23,11 @@ For information on the current status of deployment to Mendix Cloud and any plan
 #### Improvements
 
 * We have updated the validation rules for creating custom domain names. Instead of 53 characters limit, it is now set to 63 characters limit in compliance with DNS standards.
+* Old UI is deprecated and will be removed on June 1. Users will automatically be switched to the new UI if not already done before.
 
 #### Bug Fixes
 
 * We fixed a bug where user got an error while opening the permissions tab for production environment (Ticket 241675).
-  
-#### Deprecations
-
-* Old UI is being deprecated on 1st June. Users will automatically be switched to the new UI if not already done before.
 
 #### Temporary Deprecations
 
