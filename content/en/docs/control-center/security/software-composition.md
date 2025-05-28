@@ -4,13 +4,7 @@ linktitle: "Software Composition"
 url: /control-center/software-composition/
 description: "Describes the Software Composition page in the Mendix Control Center."
 weight: 20
-status: "Public Beta"
-beta: true
 ---
-
-{{% alert color="warning" %}}
-This feature is in beta. For more information, see [Beta Releases](/releasenotes/beta-features/). 
-{{% /alert %}}
 
 ## Introduction
 
@@ -20,9 +14,7 @@ Over time, these dependencies can become deprecated, outdated, or vulnerable. En
 
 To enable this, the **Software Composition** page in Control Center provides visibility into the component dependencies in each app environment. The components displayed here will be based on the [Software Bill of Materials (SBOM)](/refguide/sbom-generation/).
 
-### Known Issues
-
-After the creation of a deployment package, it may take up to a day for the **Software Composition** page to become visible. Mendix is working to improve the performance on this front.
+{{% alert color="warning" %}}Advanced software composition capabilities are currently available to all. In the future, access to these capabilities will be subject to your license.{{% /alert %}}
 
 ### Prerequisites {#prerequisites}
 
@@ -48,6 +40,8 @@ a software bill of material (SBOM) is generated in the following circumstances:
 Click **View build output** in the deployment package details in the Mendix Portal to see the log details. For details of SBOM generation, see [SBOM Generation](/refguide/sbom-generation/).
 
 You can find the component dependencies for each non-expired, deployment package in the [Software Composition](/developerportal/deploy/software-composition/) page of **Apps** in the Mendix Portal. 
+
+After the creation of a deployment package, it may take up to a day for the **Software Composition** page to become visible. Mendix is working to improve the performance on this front.
 
 ## Overview {#overview}
 

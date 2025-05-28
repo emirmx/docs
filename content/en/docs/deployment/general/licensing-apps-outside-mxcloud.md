@@ -23,7 +23,7 @@ Unlicensed apps, running outside Mendix Cloud, have some restrictions. These res
 
 ¹ More information on the capabilities of different license options is available on [Mendix Platform Pricing](https://www.mendix.com/pricing).
 
-² End-users of your app are classified as either internal or external. You will need to report this for licensing purposes using either the [`USAGE_METRICS_EMAIL_FIELDS` custom variable](/developerportal/deploy/environments-details/#custom-environment-variables) (if you are using email domain to distinguish between them) or by [populating the user type](/howto/monitoring-troubleshooting/populate-user-type/) for each end-user of your app. Only end-users whose Mendix accounts are marked as **Active** are counted towards the number of end-users of the app.
+² End-users of your app are classified as either internal or external. You will need to report this for licensing purposes using either the [`USAGE_METRICS_EMAIL_FIELDS` custom variable](/developerportal/deploy/environments-details/#custom-environment-variables) (if you are using email domain to distinguish between them) or by [populating the user type](/developerportal/deploy/populate-user-type/) for each end-user of your app. Only end-users whose Mendix accounts are marked as **Active** are counted towards the number of end-users of the app.
 
 ³ Depending on the configuration of your chosen cloud, a container and runtime may be restarted if it appears unhealthy because the runtime has stopped.
 
@@ -142,4 +142,4 @@ To license a Mendix app on Linux or another Unix-like operating system, follow t
 3. Request a license key from Mendix Support.
 4. Activate your license on the server, using the m2ee command `activate_license`.
 
-For more instructions on how to do this, see [Unix-Like Deployment](/developerportal/deploy/unix-like/).
+For more instructions on how to do this, see [Linux Deployment](/developerportal/deploy/linux/).

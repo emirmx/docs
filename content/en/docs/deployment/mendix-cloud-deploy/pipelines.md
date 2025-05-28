@@ -3,12 +3,7 @@ title: "Pipelines"
 url: /developerportal/deploy/pipelines/
 weight: 8
 description: "Describes how to design, implement, and review pipelines using the Pipelines feature in the Mendix Portal"
-beta: true
 ---
-
-{{% alert color="warning" %}}
-Mendix Pipelines is in [public beta](/releasenotes/beta-features/). It is currently available for unlimited use with all licensed Mendix Cloud apps. Limitations may be put on its use in the future.
-{{% /alert %}}
 
 ## Introduction
 
@@ -165,7 +160,7 @@ Evaluate results of the [Maia Best Practice Recommender](/refguide/best-practice
 * Import the [Unit Testing](https://marketplace.mendix.com/link/component/390) module into your Mendix application from the Marketplace.
 * The environment in which Unit Testing needs to happen should be in a running state.
 
-Since a remote API password is required to trigger Unit Tests and it is not advisable to have sensitive credential information in the pipeline definition, use variables within pipelines. These variables can then be easily referenced in the pipeline design. For more information, see the [Running Unit Tests Through the Remote API](/appstore/modules/unit-testing/#running-unit-tests-through-the-remote-api) section of *Unit Testing*.
+Since a remote API password is required to trigger Unit Tests and it is not advisable to have sensitive credential information in the pipeline definition, use variables within pipelines. These variables can then be easily referenced in the pipeline design. For more information, see the [Running Unit Tests Through the Remote API](/appstore/modules/unit-testing/#using-the-remote-api) section of *Unit Testing*.
 
 Using **Timeout (in seconds)** field, users can restrict the execution time of unit tests. If the tests exceed the predefined duration or timeout, the test step fails. It helps to avoid unnecessary waiting if tests are stuck in a loop.
 
@@ -330,9 +325,11 @@ To trigger pipelines based on Teamserver push (Git), Mendix automatically create
 
 ### Known Issues and Limitations
 
-Pipelines is in public beta and is undergoing optimizations. Initial stages may involve occasional slowness, leading to pipeline failures. Mendix is committed to resolving these issues swiftly and appreciates your understanding.
+Pipeline runs are not picked up and executed if the Pipelines functionality is undergoing maintenance.
 
 It is not currently possible to add the same pipeline step more than once in a pipeline. This will be improved in the future.
+
+In case of a system outage, pipelines triggered during that time are not executed.
 
 ## Read More
 

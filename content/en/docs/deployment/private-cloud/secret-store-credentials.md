@@ -801,7 +801,6 @@ After completing the prerequisites, follow these steps to switch from password-b
 3. Open the environment's Blob Storage Account Container in the Azure portal, and [assign a Storage Blob Data Contributor role](https://learn.microsoft.com/en-us/azure/storage/blobs/assign-azure-role-data-access) to the environment's managed identity.
 4. Restart the Mendix app environment.
 
-
 ### Configuring a Secret Store with Google Secret Manager {#google-secret-manager}
 
 To follow these instructions you will need:
@@ -968,7 +967,6 @@ To enable your environment to use [Google Secret Manager Provider](https://githu
     Replace `<{Project number}>` and `<{Project ID}>` with the Google Cloud account **Project Number** and **Project ID** which you found earlier, `<{Kubernetes namespace}>` with the namespace where the app is deployed, and `<{Mendix App CR name}>` with the name of the MendixApp CR.
 
 For more information, refer to the the official [Google Secret Manager Provider for Secret Store CSI Driver](https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp) repository and [Google Secret Manager documentation](https://cloud.google.com/secret-manager/docs/overview).
-
 
 ## Additional Considerations {#additional-considerations}
 
