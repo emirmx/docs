@@ -14,7 +14,7 @@ aliases:
 To use Maia for Pages, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-Maia for Pages is an AI-powered tool that you can use for generating a [page](/refguide/page/) as well as explaining and providing further improvements. It helps you add and configure widgets based on text input and optional image input. After a page is generated, you can continue in the same session to ask Maia for further improvements and explanations. It has some limitations. For example, it is currently intended only for use with empty pages. Using it on an existing page results in the removal of all existing widgets on that page. For more details, see the [Limitations](#limitation) section below.
+Maia for Pages helps you generate a [page](/refguide/page/) as well as explain and provide further improvements. It helps you add and configure widgets based on text input and optional image input. After a page is generated, you can continue in the same session to ask Maia for further improvements and explanations. It has some limitations. For example, it is currently intended only for use with empty pages. Using it on an existing page results in the removal of all existing widgets on that page. For more details, see the [Limitations](#limitation) section below.
 
 ## Using Maia for Pages
 
@@ -50,7 +50,7 @@ Below are some examples of prompts you can use as a starting point:
 
 * The page will be used to ...
 * I need a page to be able to edit my entity ...
-* Create a page like the image.
+* Create a page based on the image.
 * Base the page on the image, but change ... to ...
 
 Below are some examples of prompts you can use to ask Maia for further explanations or suggestions to improve the generated page:
