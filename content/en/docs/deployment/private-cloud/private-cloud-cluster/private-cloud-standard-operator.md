@@ -252,6 +252,10 @@ To use this option, [upgrade](/developerportal/deploy/private-cloud-upgrade-guid
 In Operator version 2.7.0 and above, the build pod will trust certificates from the custom TLS trust secret.
 {{% /alert %}}
 
+{{% alert color="info" %}}
+When using Global Operator, the custom tls secret has to be created in both namespaces (global + managed). If it’s not created the operator will crashloopbackoff because the secret cannot be mounted. The same secret needs to be added for both Global and managed, as we dont support different custom TLS on different managed namespace.
+{{% /alert %}}
+
 To use encryption and avoid [MITM attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack), communication with all external services should be done over TLS.
 By default, Mendix Operator trusts Certificate Authorities from the [Mozilla CA root bundle](https://wiki.mozilla.org/CA), as they are provided by default in the container image.
 
