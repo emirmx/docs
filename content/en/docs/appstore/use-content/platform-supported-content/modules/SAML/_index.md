@@ -241,7 +241,7 @@ After creating an application, you will receive an IdP metadata URL. This URL is
 
 The setup described above offers default configurations to start the SAML module. Any changes made to the configuration will require adjustments to other configuration details accordingly.
 
-##### Creating SP Manually at Azure
+##### Creating SP Manually at Entra ID
 
 To connect [Azure](https://portal.azure.com/#home) with SAML, refer to the below image. 
 
@@ -302,7 +302,7 @@ The below table shows you the constants used to configure the SP Metadata.
 
 | IDPConfiguration(Non-Persistable entity) | Description | Default Value |
 | --- | --- | --- |
-| **Alias** (mandatory) | This represents IdPconfiguration Alias | |
+| **Alias** (mandatory) | This represents the IdPconfiguration Alias | |
 | **IdPMetadataURL** (mandatory) | This represents the URL of the IdPMetadataURL | | 
 
 Deploy the application and log in with the SSO. For more information, see the [Deploy the Application and Login with SSO](#deploy-application) section above.
