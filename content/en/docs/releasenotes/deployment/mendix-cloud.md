@@ -8,13 +8,33 @@ description: "Release notes for deployment to Mendix Cloud"
 
 These release notes cover changes to deployment to [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/).
 
-Mendix Cloud deployments are also dependent on the latest version of the [Mendix Cloud Foundry Buildpack](https://github.com/mendix/cf-mendix-buildpack). The [Mendix Cloud Foundry Buildpack release notes](https://github.com/mendix/cf-mendix-buildpack/releases) are published separately, as other deployment targets are also dependent on the buildpack.
-
 There are separate release notes for other deployment targets; for more information, see the [Deployment](/releasenotes/developer-portal/deployment/) release notes.
 
 For information on the current status of deployment to Mendix Cloud and any planned releases, see [Mendix Status](https://status.mendix.com/).
 
 ## 2025
+
+### May 25, 2025
+
+#### New Features
+
+* We have added a new warning message about required overhead (database disk space) before starting a backup restore.
+  
+#### Improvements
+
+* We have updated the validation rules for creating custom domain names. Instead of 53 characters limit, it is now set to 63 characters limit in compliance with DNS standards.
+
+#### Bug Fixes
+
+* We fixed a bug where user got an error while opening the permissions tab for production environment (Ticket 241675).
+  
+#### Deprecations
+
+* Old UI is being deprecated on 1st June. Users will automatically be switched to the new UI if not already done before.
+
+#### Temporary Deprecations
+
+* Basic plan offering is being temporarily paused.
 
 ### April 17, 2025
 
@@ -29,7 +49,6 @@ For information on the current status of deployment to Mendix Cloud and any plan
 * We have added a validation mechanism for pipeline designs, which prevents users from deleting a design if any pipelines using that design are currently running. For more information, see [Pipelines: Editing a Pipeline Design](/developerportal/deploy/pipelines/#edit-pipeline). 
 * You can now access the **Details** page of a pipeline at any point, also while the pipeline is running. For more information, see [Pipelines: Run Results](/developerportal/deploy/pipelines/#run-results).
 
-## 2025
 
 ### February 20, 2025
 

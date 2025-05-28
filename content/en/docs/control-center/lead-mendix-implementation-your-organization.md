@@ -235,7 +235,7 @@ High-level positioning is about knowing how and where Mendix fits in with the re
 
 **Deployment strategy** 
 
-The Start stage is an excellent time to start exploring your cloud options, and use this knowledge as input for strategic choices in the future. You’re most likely going to deploy your application on Mendix Cloud because it’s the most optimized cloud to run Mendix-built applications. Built on top of Cloud Foundry and AWS, Mendix Cloud is the deployment solution in which Mendix provides hosting environments for you. It’s available globally and comes standard with deep insights, alerting capabilities, high availability options, and backups. 
+The Start stage is an excellent time to start exploring your cloud options, and use this knowledge as input for strategic choices in the future. You are most likely going to deploy your application on Mendix Cloud because it’s the most optimized cloud to run Mendix-built applications. Built on top of AWS, Mendix Cloud is the deployment solution in which Mendix provides hosting environments for you. It’s available globally and comes standard with deep insights, alerting capabilities, high availability options, and backups. 
 
 {{< figure src="/attachments/quickstarts/leading-mendix-implementation/cloud-options.png"  >}}
 
@@ -619,7 +619,7 @@ Mendix applications can be deployed in different ways, mainly:
 
 **Mendix Cloud** is the default deployment option and has the advantage of being a fully integrated solution, with easy setting up and administrating. When developing your first application and if there are no specific (private) cloud constraints, it makes sense to choose the user friendly Mendix Cloud option. Within Mendix Cloud, there are options for multitenant cloud environments and single-tenant cloud environments. Deploying to Mendix Cloud gives you the shortest time-to-value.
 
-Mendix can also be deployed to any cloud platform which supports a version of Cloud Foundry. With **Mendix for Private Cloud**, you can choose the cloud provider of your preference, e.g. your own Azure or AWS infrastructures. If there already is access to an on-premise hosting environment, Mendix can also be deployed on-premise.
+Mendix can also be deployed to any cloud platform which supports a version of Kubernetes or Cloud Foundry. With **Mendix for Private Cloud**, you can choose the cloud provider of your preference, e.g. your own Azure or AWS infrastructures. If there already is access to an on-premise hosting environment, Mendix can also be deployed on-premise.
 
 When setting up your deployment strategy, it is important to look at the features that are needed, as some features that rely on the target platform can work differently.
 

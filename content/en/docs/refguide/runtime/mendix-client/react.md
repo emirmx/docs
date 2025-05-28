@@ -7,7 +7,9 @@ weight: 10
 
 ## Introduction
 
-There is an alternative version of the Mendix Client written in React. You can enable this React client in [App Settings](/refguide/app-settings/#react-client).
+The Mendix Client has transitioned to a modern implementation using React. As of Mendix 11, the React Client is the default for all new applications created in Studio Pro, and the legacy Dojo client has been deprecated.
+
+You can enable the React client for existing applications in [App Settings](/refguide/app-settings/#react-client).
 
 The React client replaces [Dojo](https://dojotoolkit.org/) with [React](https://react.dev/) for the view layer. This change allows for improved performance, enables incremental loading, and future-proofs your application. For more information on these three aspects, see the sections below:
 
@@ -83,9 +85,9 @@ Read further for guides that allow you convert your app so it is ready for the R
 
 The structure of the `index.html` file is different for React and Dojo clients. To make sure your application will work correctly, follow these steps:
 
-1. Delete the custom `index.html`, or rename it temporarily.
-2. Run the local deployment and copy the app/deployment/web/index-example.html to your app/theme/web/index.html. That will be your new `index.html`.
-3. Apply any changes you want.
+1. Delete the custom `app/theme/web/index.html`, or rename it temporarily.
+2. Run the local deployment and copy the `app/deployment/web/index-example.html` to your `app/theme/web/index.html`. That will be your new `index.html`.
+3. Apply customization where required.
 
 It is also possible to keep custom `index.html` files for both clients. To do this, name the React client index file *index-react.html*. This file will take precedence when the React client is enabled, while the `index.html` will be used for Dojo client deployments.
 

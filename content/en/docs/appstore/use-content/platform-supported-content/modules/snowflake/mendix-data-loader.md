@@ -312,6 +312,18 @@ If you encounter any issues while using the Mendix Data Loader, use the followin
 
 For any additional troubleshooting, contact the [development team](mailto:sa_dev_team@mendix.com).
 
+### Ingestion Fails at RETRIEVING_METADATA
+
+When ingesting data, the Mendix Data Loader displays an error similar to the following: `connection.ConnectionValidationException: Failed to validate connection to https://nodename.mendixcloud.com/odata/TableName/v1/`.
+
+#### Cause
+
+The authentication configuration may be incorrect, or the endpoint might not be properly set up.
+
+#### Solution
+
+In the Data Loader, go to the **Authentication Configuration** tab. Ensure that the correct **Auth Type** is selected and that the credentials are accurate. If the issue persists, try testing the connection using Postman.
+
 ### Error Parsing JSON: Document Is Too Large
 
 When ingesting data, the Mendix Data Loader shows an error similar to the following: `net.snowflake.client.jdbc.SnowflakeSQLException: Error parsing JSON: document is too large, max size 16777216 bytes`.

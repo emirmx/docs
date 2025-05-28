@@ -88,7 +88,7 @@ Create a `GET`, `POST`, `PUT`, `PATCH`, or `DELETE` request to send data to your
 5. Click **Authentication**.
 6. Select an authentication method, then click **OK**. For more information, see [Authentication methods](#authentication).
 
-    {{< figure src="/attachments/refguide10/modeling/integration/consumed-rest-service/configuration-screen.png" class="no-border" width="500" >}}
+    {{< figure src="/attachments/refguide10/modeling/integration/consumed-rest-service/configuration-screen.png" width="500" >}}
 
 7. Click **Send**. 
 
