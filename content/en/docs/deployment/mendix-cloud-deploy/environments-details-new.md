@@ -8,15 +8,6 @@ description: "Describes the environmental details of your app and how to manage 
 #The anchor #connection-safelist below is mapped from the Mendix Portal (Mendix Cloud Environment Details), so it should not be removed or changed.
 #The anchor #services below is mapped from the Mendix Portal (Mendix Cloud Environment Details), so it should not be removed or changed.
 ---
-
-{{% alert color="warning" %}}
-This feature is in Public Beta. For more information, see [Beta Releases](/releasenotes/beta-features/).
-{{% /alert %}}
-
-{{% alert color="info" %}}
-While this feature is in Beta, you can use the **New Theme** toggle to switch between this new UI and the [legacy UI](/developerportal/deploy/environments-details/). For apps running on Kubernetes, the new UI displays by default and cannot be toggled off. 
-{{% /alert %}}
-
 ## Introduction
 
 To open the **Environment Details** page, go to [Apps](https://sprintr.home.mendix.com) and click **Environments** on your licensed app. Then click **Details** ({{% icon name="notes-paper-edit" %}}) by the environment you want to view.
