@@ -241,7 +241,7 @@ After creating an application, you will receive an IdP metadata URL. This URL is
 
 The setup described above offers default configurations to start the SAML module. Any changes made to the configuration will require adjustments to other configuration details accordingly.
 
-##### Creating SP Manually at Entra ID
+##### Creating SP Manually at Azure
 
 To connect [Azure](https://portal.azure.com/#home) with SAML, refer to the below image. 
 
