@@ -267,6 +267,8 @@ The following constants in the **IdP Configuration** > **USE_ME** folder help co
 
 If you provide values for the above constants, the SAML module will automatically generate the required/default additional configurations with the help of the `Default_CreateIDPConfiguration` microflow.
 
+`SP_Entity` is an optional constant in the SP Metadata that represents the SP Entity.
+
 #### Deploy the Application and Login with SSO{#deploy-application}
 
 After configuring the eight constants, you need to deploy the application. For details, see the [Deploying the App](/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/) section in the *Deploying an App to Mendix Cloud*. Once deployed, you can now log in to your application using SSO.
@@ -296,44 +298,12 @@ The following entities are used to create IdP configurations:
 * `Dep_SAMLAuthnContext`: List of SAMLAuthnContext
 * `Dep_IdpAttributeEntityAttributeMapping`: List of Attribute Mapping
 
-The below table shows you the different attributes and their values for quick reference. You can see the details of these attributes of the above entities in the [Reference Guide for SAML IdP Configuration](/appstore/modules/saml/idp-attributes/) document.
+The below table shows you the constants used to configure the SP Metadata.
 
 | IDPConfiguration(Non-Persistable entity) | Description | Default Value |
 | --- | --- | --- |
 | **Alias** (mandatory) | This represents IdPconfiguration Alias | |
-| **ResponseProtocolBinding**  | Response protocol binding contains a caption value of SAML20.Enum_ProtocolBinding | POST_BINDING |
-| **EnableAssertionConsumerServiceIndex** | EnableAssertionConsumerService Concept contains caption value of SAML20.Enum_AssertionConsumerServiceIndex | NO |
-| **AssertionConsumerServiceIndex** | This should hold the same value for the SAML configuration and the IdPs. | 0 |
-| **EnableInitialLoginAttributeConsumingService** | This will be returned when the end-user initially signs in | FALSE | 
-| **InitialLoginServiceName** |  It represents the Initial login Attribute Consuming Service name | Service1 | 
-| **InitialLoginAttributeConsumingServiceIndex** | It represents the Initial login Attribute Consuming Service Index | 1 | 
-| **InitialLoginDep_SPAttribute_Dep_IdPConfiguration** | It will display the details of Value, Name, IsRequired details | | 
-| **EnableInSessionAttributeConsumingService** | To enable this feature, configure at least one request attribute for the in-session attribute consuming service. | FALSE | 
-| **InSessionServiceName** | It represents the In-Session Attribute Consuming Service name | Service2 |  
-| **InSessionAttributeConsumingServiceIndex** |  It represents the In-Session Attribute Consuming Service Index | 2 | 
-| **InSessionDep_SPAttribute_Dep_IdPConfiguration**| It will display the details of Value, Name, IsRequired details | | 
 | **IdPMetadataURL** (mandatory) | This represents the URL of the IdPMetadataURL | | 
-| **PreferredEntityDescriptor** | It represents the entityID of the EntityDescriptor | | 
-| **AllowIdpInitiatedAuthentication** | Authentication should start at this application, which generates an ID. The authenticated response should match this generated Id. If no request can be found that matches the response Id the information is rejected. If your IdP can initiate a new transaction (with a new or no Id) and you want to allow this you can check this box. | FALSE |
-| **EnableForceAuthentication** | will force the SAML IdP to (re)authenticate end-users, even if they are already signed in at the SAML IdP. | FALSE |
-| **EnableMobileAuthToken** | If enabled, an auth token cookie will be set on login that can be used by Mendix hybrid mobile apps to log in after the app is closed. | FALSE |
-| DelegatedAuthenticationURL | This will allow you to use a SAML token and delegate the authentication through SAML. | |
-| **CustomPrepareInSessionAuthenticationMicroflow**  | This represents the Custom Prepare In-Session Authentication microflow. It sets up specific data in the current user session so that it can be recovered after the SAML in-session authentication flow returns to the app. | |
-| **CustomEvaluateInSessionAuthenticationMicroflow**  | It implements the logic that handles the authentication details of the in-session authentication. | |
-| **NameIDFormat** | This attribute represents the Description of SAML20.NameIDFormat. Disable NameID policy is true when this attribute (NameIDFormat) is invalid. | |
-| **AuthenticationContext** | It represents Authentication context comparison contains the caption value of SAML20.TypeOfAuthnContext | Exact (Default) |
-| **UserEntity** | The Mendix entity in which you will store and look up the user account. | Administration.Account |
-| **UserPrincipalAttribute** | Determines the attribute on which you want to do the lookup in Entity attributes. | Name |
-| **UserIdPPrincipalAttribute** | We need to provide the attribute that contains the user name that uniquely identifies the user. It should be Assertion Name | UseNameID |
-| **CreateUsers** | The module will always search for the user, based on the Identifying Assertion. You can allow the module to create users with a predefined user role. If you allow the module to create users, it will automatically create a new user account if the user cannot be found. If the module is not allowed to create users, it will present a message to the user stating that the login action was successful but no user has been configured. | true |
-| **UserRoleName**  | This role will be assigned to newly created users. | User |
-| **UserType** | Assign user type to the created users | Internal |
-| **CustomUserProvisioning**  | This is an optional configuration to run a microflow to persist user information in your app model using some of your own specific logic. First, you need to develop a custom microflow in your app and select it for the CustomUserProvisioning. | |
-| **CustomAfterSigninLogic**  | Checking the box will execute the `CustomAfterSigninLogic microflow`. You can replace the default with your custom microflow below. This microflow runs after a new session is created, allowing you to copy or review data from the original (anonymous) session to the new session or user. This functionality is similar to the after-sign-in microflow in Mendix project security. Only custom microflows starting with 'Custom' will appear in the list. | |
-| **UseEncryption**  | Enable better security for app | TRUE |
-| **EncryptionMethod**  | This represents the Encryption Algorithm | SHA256 - RSA |
-| **EncryptionKeyLength**  | This constant represents the Encryption length | 2048 bits |
-| Active | After completion of Idp config it will make the Toggle Active | true |
 
 Deploy the application and log in with the SSO. For more information, see the [Deploy the Application and Login with SSO](#deploy-application) section above.
 
@@ -422,27 +392,9 @@ If you create custom user entities as specializations of the `System.User` entit
 
 If you connect multiple IdPs to your Mendix app, you can use separate custom user entities for each IdP, each with its own attribute mapping.
 
-### Custom User Provisioning at Deploy Time{#custom-provisioning-dep}
+### Disable MxAdmin at Deploy Time
 
-{{% alert color="info" %}} This feature is available in version 4.0.0 and above {{% /alert %}}
-
-You can set up custom user provisioning by setting constants when you deploy your app. This has the following limitations compared to setting up provisioning using a microflow or changing the settings at runtime:
-
-* You will need to restart your app to apply changes to the constants
-* You cannot set custom mapping of IdP claims to attributes of your custom user entity
-
-You can set up custom user provisioning by setting the following constants. You can set default values when you build your app but can override these in the app's environment.
-
-| Constant | Use | Notes | Example |
-| --- | --- | --- | --- |
-| CustomUserEntity | a custom user entity | in the form `modulename.entityname` – a specialization of `System.User` | `Administration.Account` |
-| PrincipalAttribute | the attribute holding the unique identifier of an authenticated user | | `Name` |
-| IdPAttribute | the IdP claim which is the unique identifier of an authenticated user | *Default* | `NameId` |
-| AllowcreateUsers | allows to create users in the application | *Optional* | `True` |
-| Userrole | the role which will be assigned to newly created users | *Optional* | `User` |
-| UserType | assigns user type to the created user | *Optional* | `Internal` |
-| CustomUserProvisioning | a custom microflow to use for user provisioning | *Optional* – in the form `modulename.microflowname` – the microflow name must begin with the string `CustomUserProvisioning` | `Mymodule.CustomUserProvisioningEntra` |
-| DisableMxAdmin | deactivates Mx admin | *Optional* | `True` |
+Use the `DisableMxAdmin` constant to deactivate MxAdmin. It is optional and set to `True`.
 
 {{% alert color="info" %}}
 You may have a requirement that users log in to your application only via SSO. However, when you deploy your app on the Mendix Cloud, the platform may still create an MxAdmin user with a local password. From version 2.1.0 of the UserCommons module, if the flag for the `DisableMxAdmin` constant is set to `True`, the MxAdmin user will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
