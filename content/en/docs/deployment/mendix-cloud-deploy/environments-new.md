@@ -1,7 +1,7 @@
 ---
 title: "Environments and Deployment"
 url: /developerportal/deploy/environments-redesign/
-weight: 8
+weight: 7
 description: "Describes the new Environments page and deployment flow"
 ---
 ## Introduction
