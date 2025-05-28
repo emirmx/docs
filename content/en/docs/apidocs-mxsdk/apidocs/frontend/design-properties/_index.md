@@ -116,7 +116,7 @@ As you can see, design properties are defined as a *JSON* object where the keys 
 
 Every design property in the array is also represented by a *JSON* object. The exact structure of each object is dependent on its type, as indicated by the `type` property. All types also share common fields such as `name` and `description`. Those names determine how a design property appears to a user in Mendix Studio Pro.
 
-#### Common Fields
+#### Common Fields {#common-fields}
 
 The common fields, as seen within the example above, are available on all the design properties as defined in the following table.
 
