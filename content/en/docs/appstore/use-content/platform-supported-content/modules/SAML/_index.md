@@ -412,7 +412,7 @@ By default, end-users are provisioned using the Account object in the Administra
 
 If the standard configuration meets your needs and your application does not have special user management requirements, you can use the default User Provisioning.
 
-In default configuration, the custom user entity is set as `Administration.Account`, the principal attribute is set as `Use Name ID`, and the default attribute mapping is provided.
+In default configuration, the custom user entity is set as `Administration.Account`, the principal attribute is set as `Name`, and the default attribute mapping is provided.
 
 | IdP Attribute | Configured Entity Attribute |
 | --- | --- |
