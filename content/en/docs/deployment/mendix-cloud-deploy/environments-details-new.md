@@ -77,7 +77,7 @@ In the **Application Status** section of the **General** tab, you can find the f
 * **Custom domains** – any [custom domains](/developerportal/deploy/custom-domains/) of the app; to add a new domain, click **Add Custom Domain**
 * **Java Version** – the JDK version selected for the MDA that is deployed to the environment
 * **Studio Pro Target** – a **Yes** or **No** value indicating whether the environment is the designated deployment target from Studio Pro; for more information, see [Studio Pro Deployment Settings](/developerportal/deploy/studio-deployment-settings/).
-* **Plan** – the type of plan covered by your license (for more information, see the [Overviews](/developerportal/deploy/environments-details/#overviews) section below)
+* **Plan** – the type of plan covered by your license (for more information, see the [Overviews](#overviews) section below)
 * **Instances** – a summary of the number and memory allocation of instances of the environment (for more information, see the [Scaling](#scaling) section below)
 * **Database Version** – the PostgreSQL version supporting the database
 * **Region** – the region of the data center where the app is hosted (for the full list of Mendix Cloud regions, see [Outgoing IP](/developerportal/deploy/mendix-ip-addresses/#outgoing))
@@ -287,7 +287,7 @@ Mendix and the deployment environment automatically add some non-configurable re
 | `cache-control`| The buildpack for *index.html* and *login.html* – the Mendix Runtime for other pages |
 | `permissions-policy: interest-cohort=()` | Exclude from Federated Learning of Cohorts (FLoC) calculation |
 | `strict-transport-security` | TLS terminating webservers – set to `max-age=31536000` (365 days, in seconds)|
-| `x-vcap-request-id` | Cloud Foundry to track requests through CF |
+| `X-Request-ID` | Kubernetes to track requests through the Mendix Cloud platform |
 
 #### Running Your App in an Iframe {#iframe}
 
@@ -528,16 +528,18 @@ Maintenance topics (for example, "PostgreSQL 14 Upgrade") have a predefined peri
 The status of a maintenance task can be one of:
 
 * **Succeeded** – the maintenance task was successful
-* **Failed** – the maintenance task failed and the environment requires intervention
-    * Our engineering team should already have been notified about the failed task. If you are still experiencing issues, please create a support ticket with [Mendix Support](https://support.mendix.com/hc/en-us)
-* **Incomplete** – the maintenance task was unsuccessful and no changes were applied
-    * You can operate the environment as usual. Our engineering team should already have been alerted about the incomplete task and will take the appropriate action (which may involve rescheduling the task).
-* **Ineligible** – the maintenance task was unsuccessful because one or more starting criteria were not met
-    * You can operate the environment as usual. This can happen, for example, if the database of your environment was scheduled to be upgraded but it is already on the target version
-
-{{% alert color="info" %}}
-The Technical Contact for the application will automatically receive email notifications about planned maintenance.
-{{% /alert %}}
+    * No further action is required
+* **Failed** – the maintenance task was unsuccessful
+    * The environment requires intervention and our engineering team has been notified, they will recover the environment according to its SLA. If you are still experiencing issues, please create a support ticket with [Mendix Support](https://support.mendix.com/hc/en-us)
+* **Incomplete** – the maintenance task was unsuccessful
+    * No changes were applied, you can operate the environment as usual
+    * Our engineering team has been alerted and will take the appropriate action, which may include rescheduling the task
+* **Ineligible** – the task is not applicable to the environment
+    * No changes were applied, you can operate the environment as usual
+    * This can happen, for example, if the database of your environment was scheduled to be upgraded but it is already on the target version
+* **Canceled**  – the task was canceled
+    * No changes were applied, you can operate the environment as usual
+    * This can happen if circumstances required us to remove the planned task, a new copy of the task will be scheduled at a later point in time
 
 ## The Tags Tab{#tags}
 
