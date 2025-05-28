@@ -167,7 +167,7 @@ Follow these steps to approve a request:
 
 Once a request is approved, its status changes to **Approved**.
 
-For the Technical Contact, the status changes to **Pending Schedule** on the [Request Overview tab](/developerportal/deploy/environments-redesign/#request-overview) of the **Environments** page. They then need to specify when the plan change should take effect. For more information, refer to the [Scheduling a Plan Change](/developerportal/deploy/change-plan/#scheduling-a-plan-change) section in *Changing Your Plan in Mendix Cloud*.
+For the Technical Contact, the status changes to **Pending Schedule** on the [Request Overview tab](/developerportal/deploy/environments/#request-overview) of the **Environments** page. They then need to specify when the plan change should take effect. For more information, refer to the [Scheduling a Plan Change](/developerportal/deploy/change-plan/#scheduling-a-plan-change) section in *Changing Your Plan in Mendix Cloud*.
 
 #### Rejecting a Request
 
