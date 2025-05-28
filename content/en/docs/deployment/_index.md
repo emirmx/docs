@@ -14,7 +14,7 @@ cascade:
 
 ## Introduction
 
-There are multiple ways to deploy a Mendix application. You can deploy to your local machine for development and testing. You can deploy to Mendix Cloud, which is the default location for both free and licensed apps. You can also deploy to SAP Business Technology (SAP BTP) Platform, Cloud Foundry-based platforms, Docker containers, Azure, or to a server you configured yourself.
+There are multiple ways to deploy a Mendix application. You can deploy to your local machine for development and testing. You can deploy to Mendix Cloud, which is the default location for both free and licensed apps. You can also deploy to SAP Business Technology (SAP BTP) Platform, Kubernetes and Cloud Foundry-based platforms, Docker containers, Azure, or to a server you configured yourself.
 
 {{% alert color="warning" %}}
 Each app can only be deployed to one type of target platform (such as Mendix Cloud nodes) in addition to local testing.
