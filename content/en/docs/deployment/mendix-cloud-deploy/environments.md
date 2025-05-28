@@ -100,7 +100,7 @@ If you click **More Options** ({{< icon name="three-dots-menu-horizontal" >}}) o
 * View details, including the package size, description, build output, and an overview of the environments that are running the package
 * Delete the package
 
-### Permissions Tab{#permissions-tab}
+### Permissions Tab{#permissions}
 
 In the **Permissions** tab, the [Technical Contact](/developerportal/general/app-roles/#technical-contact) and other team members who have **Manage Permissions** enabled can manage various permissions to the environments for each team member. Team members who have a role with **Cloud Access** can view the permissions.
 
@@ -142,7 +142,7 @@ In the **Custom Domains** tab, you can manage your custom domain certificates at
 
 When you need your Mendix app to be accessible via your own URL (for example, `https://myapp.mycompany.com/`), you must provide a custom SSL/TLS certificate for your domain. This enables your Mendix app to be accessible via a secure connection. For more information, see [Custom Domains](/developerportal/deploy/custom-domains/).
 
-### Access Restriction Profiles
+### Access Restriction Profiles {#access-restriction-profiles}
 
 In the **Access Restriction Profiles** tab, you can manage custom access restriction profiles. These profiles can combine IP range filters and client certificate verification, so that any match on either the IP range or the client certificate will grant access. You can apply access restriction profiles to path-based access restrictions in specific environments of the application.
 

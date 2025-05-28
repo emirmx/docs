@@ -52,7 +52,7 @@ When your app is stopped, you can perform this set of action buttons instead:
 During a [maintenance window](/developerportal/deploy/maintenance-windows/), you cannot start, restart, or stop your app.
 {{% /alert %}}
 
-## The General Tab
+## The General Tab {#general-tab}
 
 In the **Application Status** section of the **General** tab, you can find the following information about your environment:
 

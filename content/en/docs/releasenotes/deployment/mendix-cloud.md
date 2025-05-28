@@ -1057,7 +1057,7 @@ SSL/TLS ciphers that are still supported for HTTPS connections after December 1,
 
 #### Fixes
 
-* We fixed an issue where some customers were unable to manually add certificates to [access restriction profiles](/developerportal/deploy/environments/#asp). (Ticket 102615)
+* We fixed an issue where some customers were unable to manually add certificates to [access restriction profiles](/developerportal/deploy/environments/#access-restriction-profiles). (Ticket 102615)
 
 ### August 7, 2020
 
