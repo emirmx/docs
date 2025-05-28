@@ -376,7 +376,7 @@ The following settings apply to the IdP configuration:
 
 Initially, your app will not have any end-users. The SAML module provides so-called Just-In-Time (JIT) user provisioning. This means that an end-user will be created in your app when they log in for the first time. If you do not want JIT user provisioning, it is possible to disable it as described in the section [Custom User Provisioning at Runtime](#custom-provisioning-rt) below.
 
-By default, end-users are provisioned using the Account object in the Administration module. If you need to use a custom user entity, you can do this via [Custom User Provisioning at Deploy Time](#custom-provisioning-dep) or [Custom User Provisioning at Runtime](#custom-provisioning-rt).
+By default, end-users are provisioned using the Account object in the Administration module. If you need to use a custom user entity, you can do this via [Custom User Provisioning at Runtime](#custom-provisioning-rt).
 
 ### Default User Provisioning
 
@@ -394,11 +394,7 @@ If you connect multiple IdPs to your Mendix app, you can use separate custom use
 
 ### Disable MxAdmin at Deploy Time
 
-Use the `DisableMxAdmin` constant to deactivate MxAdmin. It is optional and set to `True`.
-
-{{% alert color="info" %}}
 You may have a requirement that users log in to your application only via SSO. However, when you deploy your app on the Mendix Cloud, the platform may still create an MxAdmin user with a local password. From version 2.1.0 of the UserCommons module, if the flag for the `DisableMxAdmin` constant is set to `True`, the MxAdmin user will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
-{{% /alert %}}
 
 ### Custom User Provisioning at Runtime{#custom-provisioning-rt}
 
