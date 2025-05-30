@@ -83,6 +83,12 @@ Mendix applications that are deployed to SAP BTP can have SSO with SAP's IdP. Me
 
 If you want to invite your colleagues to build your app, you can manage the **Team** in [Apps](https://sprintr.home.mendix.com/). Only team members who are invited to your app can access it (as a project to collaborate on). You can assign app roles to them. These team member roles define what they can access and change in the app in the backend while developing the app and are different from end-user roles which define what users can access in a running app. For more information, see [Team](/developerportal/general/team/) in the documentation of **Apps**.
 
+## The System Module
+
+Each Mendix app contains a module called "System" that contains a standard functionality that every app needs, such as entities for users and user roles. This module is automatically included with each app.
+
+One of the documents that is included in this module is the 'ShowHomePage' microflow, that can be used when creating the app. Starting from version 11 of studio-pro, this microflow provides a secure default for enabling entity access. This means that when using this microflow (i.e. calling it from another microflow), you are assured that the access to entites is applied and restricted by default. This is a breaking change for version 11 of studio-pro (please read more in [Upgrading from 10 to 11](/refguide/upgrading-from-10-to-11)). 
+
 ## The Security Overview
 
 The [Security Overview](/refguide/security-overview/) provides you with an overview of your app's security. To access the overview, open the **App** menu, and then click **Show Security Overview**. 
