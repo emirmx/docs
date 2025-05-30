@@ -95,7 +95,7 @@ Follow the steps below to get started:
 
 Configuration keys are stored persistently after they are imported (either via the UI or the exposed microflow). There are three different types of configurations that reflect the use cases this service supports. The specific operations are described below.
 
-To use the operations, either a `DeployedModel` (text, embeddings) or a `MxKnowledgebaseConnection` must always be passed as input. The DeployedModel will be created automatically when importing keys at runtime and needs to be retrieved from the database. To initialize a knowledge base operation, use the `Connection: Get` toolbox action to create the `MxKnowledgebaseConnection` object. It requires a `CollectionName` (string) for the right collection inside of the knowledge base resource to be used.
+To use the operations, either a `DeployedModel` (text, embeddings) or a `DeployedKnowledgeBase` must always be passed as input. The DeployedModel will be created automatically when importing keys at runtime and needs to be retrieved from the database. To initialize a knowledge base operation, use the `DeployedKnowledgeBase: Get` toolbox action to create the `DeployedKnowledgeBase` object. It requires a `Name` (string) for the right collection inside of the knowledge base resource to be used.
 
 ### Chat Completions Operation
 
@@ -168,7 +168,7 @@ Note that the model uses the file name when analyzing documents, which could mak
 
 ### Knowledge Base Operations
 
-To implement knowledge base logic into your Mendix application, you can use the actions in the **USE_ME** > **Knowledge Base** folder or under the **GenAI Knowledge Base (Content)** or **Mendix Cloud Knowledge Base** categories in the **Toolbox**. These actions require a specialized [Connection](/appstore/modules/genai/genai-for-mx/commons/#connection) of type `MxKnowledgeBaseConnection` that determines the model and endpoint to use. Additionally, the collection name must be passed when creating the object and it must be associated with a `Configuration` object. Please note that for Mendix Cloud GenAI a knowledge base resource may contain several collections (tables). 
+To implement knowledge base logic into your Mendix application, you can use the actions in the **USE_ME** > **Knowledge Base** folder or under the **GenAI Knowledge Base (Content)** or **Mendix Cloud Knowledge Base** categories in the **Toolbox**. These actions require a specialized [DeployedKnowledgeBase](/appstore/modules/genai/genai-for-mx/commons/#deployed-knowledge-base) of type `Collection` that determines the model and endpoint to use. Additionally, the collection name must be passed when creating the object and it must be associated with a `Configuration` object. Please note that for Mendix Cloud GenAI a knowledge base resource may contain several collections (tables). 
 
 Dealing with knowledge bases involves two main stages:
 
@@ -207,10 +207,6 @@ Additionally, use the following toolbox actions to delete chunks:
 * `Delete for List` is similar to the `Delete for Object`, but a list of Mendix objects is passed instead.
 
 When data in your Mendix app that is relevant to the knowledge base changes, it is usually necessary to keep the knowledge base chunks in sync. Whenever a Mendix Object changes, the affected chunks must be updated. Depending on your use case, the `Embed & Replace` and `Delete for Objects` can be conveniently used in event handler microflows.
-
-The example below shows how to repopulate a knowledge base using a list of Mendix objects:
-
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/PushTicketstoMxKB.png" >}} 
 
 ##### Knowledge Base Retrieval{#knowledge-base-retrieval}
 

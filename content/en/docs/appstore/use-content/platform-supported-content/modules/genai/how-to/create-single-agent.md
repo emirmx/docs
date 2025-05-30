@@ -122,7 +122,7 @@ Mendix ticket data needs to be ingested into the knowledge base. You can find a 
     * Edit the first retrieve action to retrieve objects from your new entity `Ticket`.
     * In the loop, delete the second action that adds metadata to the `MetadataCollection`.
     * In the last action of the loop `Chunks: Add KnowledgeBaseChunk to ChunkCollection` keep the **Human readable ID** field empty.
-    * Near the end of the microflow, edit the action `Connection: Get` to change the collection name from *example* to `HistoricalTickets`
+    * Near the end of the microflow, edit the action `DeployedKnowledgeBase: Get` to change the collection name from *example* to `HistoricalTickets`
 
 7. Finally, create a microflow `ACT_CreateDemoData_IngestIntoKnowledgeBase` that first calls the `Tickets_CreateDataset` microflow, followed by the `ACT_TicketList_LoadAllIntoKnowledgeBase` microflow. Add this `ACT_CreateDemoData_IngestIntoKnowledgeBase` new microflow to your navigation or homepage and ensure that it is accessible to admins (add the admin role under **Allowed Roles** in the microflow properties).
 

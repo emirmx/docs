@@ -80,22 +80,22 @@ To start, create a microflow that allows you to upload data into your knowledge 
     * Use return value: No
     * Metadata collection: `empty` (optional)
 
-5. After the loop, add a `Retrieve` action to retrieve a `MxCloudKnowledgeBase`. In this example, the first entry found in the database is used.
+5. After the loop, add a `Retrieve` action to retrieve a `MxCloudKnowledgeBaseResource`. In this example, the first entry found in the database is used.
     
     * **Source**: `From database`
-    * **Entity**: `MxGenAIConnector.MxCloudKnowledgeBase`
+    * **Entity**: `MxGenAIConnector.MxCloudKnowledgeBaseResource`
     * **Range**: `First`
-    * **Object name**: `MxCloudKnowledgeBase`
+    * **Object name**: `MxCloudKnowledgeBaseResource`
 
-6. Next, add the `Connection: Get` action from the `Mendix Cloud Knowledge Base` category:
+6. Next, add the `DeployedKnowledgeBase: Get` action from the `Mendix Cloud Knowledge Base` category:
 
-    To edit the parameter value for `MxCloudKnowledgeBase`, double-click its type, select `Variable`, and assign it the value `MxCloudKnowledgeBase`. Similarly, for `CollectionName`, double-click its type, select `Expression`, and assign it the value `TicketSolutions`.
+    To edit the parameter value for `MxCloudKnowledgeBaseResource`, double-click its type, select `Variable`, and assign it the value `MxCloudKnowledgeBaseResource`. Similarly, for `CollectionName`, double-click its type, select `Expression`, and assign it the value `TicketSolutions`.
 
-    You can keep the **Use return variable** as *Yes* and the object name `MxKnowledgeBaseConnection`.
+    You can keep the **Use return variable** as *Yes* and the object name `DeployedKnowledgeBase`.
 
 7. Add the `Embed & Repopulate Collection` action to insert your knowledge into the knowledge base:
 
-    To edit the parameter value for `Connection`, double-click its type, select `Variable`, and assign it the value `MxKnowledgeBaseConnection`. Similarly, for `ChunkCollection`, double-click its type, select `Variable`, and assign it the value `GenAICommons.ChunkCollection`.
+    To edit the parameter value for `DeployedKnowledgeBase`, double-click its type, select `Variable`, and assign it the value `DeployedKnowledgeBase`. Similarly, for `ChunkCollection`, double-click its type, select `Variable`, and assign it the value `GenAICommons.ChunkCollection`.
 
     You can keep the **Use return variable** as *Yes* and the variable name `IsSuccess`.
 
@@ -186,9 +186,9 @@ To use the knowledge in a chat interface, create and adjust certain microflows a
 5. After the `Request found` decision, add a `Retrieve` action. In this example, the first entry found in the database is used, just as in the insertion microflow.
     
     * **Source**: `From database`
-    * **Entity**: `MxGenAIConnector.MxCloudKnowledgeBase`
+    * **Entity**: `MxGenAIConnector.MxCloudKnowledgeBaseResource`
     * **Range**: `First`
-    * **Object name**: `MxCloudKnowledgeBase`
+    * **Object name**: `MxCloudKnowledgeBaseResource`
 
 6. Add the `Tools: Add Mendix Cloud Knowledge Base` action with the settings shown in the image below:
 

@@ -61,7 +61,7 @@ The domain model in Mendix is a data model that describes the information in you
 
 The `DeployedModel` represents a GenAI model that can be invoked by the Mendix app. It contains a display name and a technical name/identifier. It also contains the name of the microflow to be executed for the specified model and other information relevant to connect to a model. The creation of Deployed Models is handled by the connectors themselves (see their specializations) where admins can configure those at runtime.
 
-The `DeployedModel` entity replaces the capabilities that were covered by the `Connection` entity for model invocations in earlier versions of GenAI Commons. For knowledge base interactions, the `Connection` entity is still used.
+The `DeployedModel` entity replaces the capabilities that were covered by the `Connection` entity for model invocations in earlier versions of GenAI Commons. For knowledge base interactions, the `DeployedKnowledgeBase` entity is used.
 
 | Attribute | Description |
 | --- | --- |
@@ -74,6 +74,20 @@ The `DeployedModel` entity replaces the capabilities that were covered by the `C
 | `SupportsConversationsWithHistory` | An enum to specify if the model supports conversation with history. |
 | `SupportsFunctionCalling` | An enum to specify if the model supports function calling. |
 | `IsActive` | A boolean to specify if the model is active/usable with the current authentication settings and user preference. |
+
+#### `DeployedKnowledgeBase` {#deployed-knowledge-base}
+
+The `DeployedKnowledgeBase` represents a GenAI knowledge base that can be added to the request when calling an LLM. It contains a display name and a technical name/identifier. It also contains the name of the microflow to be executed for the specified knowledge base specialization and other information relevant to connect to the knowledge base. The creation of Deployed Knowledge Base is handled by the connectors themselves (see their specializations) where admins can configure those at runtime.
+
+The `DeployedKnowledgeBase` entity replaces the capabilities that were covered by the `Connection` entity for knowledge base interaction in earlier versions of GenAI Commons. 
+
+| Attribute | Description |
+| --- | --- |
+| `DisplayName` | The display name of the deployed knowledge base. | 
+| `Name` | The name of the deployed knowledge base. |
+| `Architecture` | The architecture of the deployed model; e.g. MxGenAI or Amazon Bedrock. |
+| `Microflow` |  The microflow to execute to retrieve information for the specified knowledge. |
+| `IsActive` | A boolean to specify if the knowledge base is active/usable with the current authentication settings and user preference. |
 
 #### `InputModality` {#Usage}
 
@@ -103,7 +117,7 @@ The data stored in this entity is to be used later on for token consumption moni
 
 #### `Connection` {#connection}
 
-The Connection entity used to be an input parameter for Chat completions, Embeddings, and Image Generation operations but was replaced by `DeployedModel`. It is currently only used as a general connection entity for Knowledge Base interactions.
+The Connection entity used to be an input parameter for Chat completions, Embeddings, and Image Generation operations but was replaced by `DeployedModel`. It was also previously used as a general connection entity for Knowledge Base interactions, but it has since been replaced with the `DeployedKnowledgeBase` entity.
 
 #### `Request` {#request} 
 
@@ -517,6 +531,26 @@ Use this microflow to control how the model should determine which function to l
 ###### Return Value
 
 This microflow does not have a return value.
+
+##### Tools: Add Knowledge Base {#add-knowledge-base-to-request}
+
+Adds a new Function to a [ToolCollection](#toolcollection) that is part of a Request. Use this microflow when you have knowledge bases in your application that may be called to retrieve the required information as part of a GenAI interaction. If you want the model to be aware of these microflows, you can use this operation to add them as functions to the request. If supported by the LLM connector, the chat completion operation calls the right knowledge base function based on the LLM response and continues the process until the assistant's final response is returned.
+
+###### Input Parameters
+
+| Name | Type | Notes | Description |
+|---|---|---|---|
+| `Request` | [Request](#request) | mandatory | The request to add the knowledge base to. |
+| `Name` | String | mandatory | The name of the knowledge base to use/call. |
+| `Description` | String | optional | A description of what the knowledge base does, used by the model to choose when and how to call the knowledge base. |
+| `DeployedKnowledgeBase` | Object | mandatory | The knowledge base that is called within this tool. The object has a `Microflow` that is added as the microflow to be executed when this knowledge base will be used. |
+| `MaxNumberOfResults` | Integer | optional | This can be used to limit the number of results that should be retrieved. |
+| `MinimumSimilarity` | Decimal | optional | This is to filter the results, so that only Chunks are retrieved which similarity score is equal or greater than the value provided. The score ranges from 0 (not similar) to 1.0 (the same vector). |
+| `MetadataCollection` | Object | optional | Optional: This contains a list for additional filtering in the retrieve. Only chunks that comply with the metadata labels will be returned. |
+
+###### Return Value
+
+This microflow returns a KnowledgeBaseRetrieval object.
 
 #### GenAI (Response Handling) {#genai-response-handling}
 
