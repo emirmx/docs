@@ -85,7 +85,7 @@ The `DeployedKnowledgeBase` entity replaces the capabilities that were covered b
 | --- | --- |
 | `DisplayName` | The display name of the deployed knowledge base. | 
 | `Name` | The name of the deployed knowledge base. |
-| `Architecture` | The architecture of the deployed model; e.g. MxGenAI or Amazon Bedrock. |
+| `Architecture` | The architecture of the deployed model; e.g. Mendix Cloud or Amazon Bedrock. |
 | `Microflow` |  The microflow to execute to retrieve information for the specified knowledge. |
 | `IsActive` | A boolean to specify if the knowledge base is active/usable with the current authentication settings and user preference. |
 
