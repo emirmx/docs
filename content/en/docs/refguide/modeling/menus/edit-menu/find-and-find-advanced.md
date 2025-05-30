@@ -9,7 +9,7 @@ weight: 10
 
 You can search for changes or usages of different elements, documents, XPaths, changes to various elements, in your app.  You do it via **Find**, **Find Advanced**, and **Find Usages** options under the **Edit** menu. 
 
-{{< figure src="/attachments/refguide/modeling/menus/edit-menu/find-and-find-advanced/find-options.png" alt="Find Options" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/menus/edit-menu/find-and-find-advanced/find-options.png" alt="Find Options" >}}
 
 ## Find Option
 
@@ -18,7 +18,7 @@ You can find various elements in your app via the **Find** option. For example, 
 1. Click **Edit** > **Find** in the top-bar or press <kbd>Ctrl</kbd> + <kbd>F</kbd>.
 2. In the **Find** dialog box, leave **Match case** and **Match the whole word** unselected. This way you will search for all instances of the word "Employee" including such instances as "employee", Employees", or "Department_Employee":
 
-    {{< figure src="/attachments/refguide/modeling/menus/edit-menu/find-and-find-advanced/find.png" alt="Find" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/menus/edit-menu/find-and-find-advanced/find.png" alt="Find" >}}
 
 You can see search results in the **Find Results** pane:
 
