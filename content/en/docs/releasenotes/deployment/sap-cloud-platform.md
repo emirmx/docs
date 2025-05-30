@@ -14,6 +14,16 @@ For information on the current status of deployment to SAP BTP and any planned r
 
 ## 2025
 
+### June 1, 2025
+
+#### New Features
+
+* We added a deprecation info banner for SAP Application Logging service in the Environment details page.
+
+#### Bug Fixes
+
+* We fixed the issue where users were not able to delete redirect uris from xsuaa configuration.
+
 ### May 25, 2025
 
 #### New Features
