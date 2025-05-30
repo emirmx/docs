@@ -78,6 +78,16 @@ We recommend you also upgrade Atlas Web Content if it is in your app.
 
 For optimal implementation, ensure all UI modules either use CSS variables or have their variables defined within the module. If an app uses CSS variables inside **theme/web/custom-variables.scss** while some UI modules still rely on old Atlas SASS variables, those usages will fallback to Atlas default values. Therefore, we recommend you to transition to CSS variables only after confirming that all company design modules no longer depend on Atlas SASS variables.
 
+### Using the 'ShowHomePage' microflow in the 'System' module
+
+This microflow now enforces a secure default for entity access. In versions prior to 11, the default configuration was insecure: 'Apply entity access' was set to false. As a result, after upgrading to version 11, your application may report errors that were previously not detected.
+
+Below is an example of a potential error that may occur after upgrading to version 11, along with a recommended approach for resolving it.
+
+After upgrading, your app may report the following new error: "`A microflow that does not apply entity access can only call microflows that also do not apply entity access`". This error may occur if your microflow does not apply entity access and calls the ShowHomePage microflow from the System module, which now enforces entity access. In earlier versions, ShowHomePage did not apply entity access, so this issue would not have reported prior to the upgrade.
+
+You can resolve the error by enabling entity access in your own microflow. However, this may not always align with your intended access control strategy. Alternatively, you can create your own microflow with the "Show home page" activity without entity access enabled. You can then call this new microflow (instead of the one in the 'System' module) from your original microflow.
+
 ### Other
 
 * Studio Pro 10.21 and above requires your application to use Java 21. The Java version of an application can be configured in the runtime settings. Java 21 is available in 9.24.23 and above. Please consider the Java Version Migration guide for a list of changes between Java versions. For on-premises deployments, ensure that JDK 21 is installed in the environments where Mendix 10 applications are deployed.
