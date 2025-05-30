@@ -26,7 +26,7 @@ You can import and export the following:
 ## Importing Various Elements
 
 {{% alert color="warning" %}}
-Studio Pro prevents packages from unpacking content to undesired locations. Contact the content publisher to get the issue fixed.
+Studio Pro prevents packages from unpacking content to undesired locations. If you cannot change the location, contact the content publisher to get the issue fixed.
 Current undesired locations:
 * directories starting with '.'
 * releases/
