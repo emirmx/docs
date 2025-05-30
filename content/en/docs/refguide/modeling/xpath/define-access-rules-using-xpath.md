@@ -57,8 +57,6 @@ To prepare the data structure, GUI, and example data, follow these steps:
 
     {{< figure src="/attachments/refguide/modeling/xpath/define-access-rules-using-xpath/add-user-role.png" class="no-border" >}}
 
-{{% todo %}}Both module roles? Does User get created properly{{% /todo %}}
-
 6. Give both module roles access to all your created pages, and create separate read and write access rights to all your created entities (for more information on how to set the entity access, see [How to Create a Secure App](/howto/security/create-a-secure-app/)):
 
     {{< figure src="/attachments/refguide/modeling/xpath/define-access-rules-using-xpath/new-access-rule.png">}}
