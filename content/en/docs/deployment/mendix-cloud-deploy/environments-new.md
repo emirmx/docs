@@ -182,7 +182,7 @@ If you are the [Technical Contact](/developerportal/general/app-roles/#technical
 
 ### Request Overview Tab {#request-overview}
 
-On the **Request Overview** tab, the Technical Contact can view details of all past and current plan change requests and perform certain actions based on the current request status.
+On the **Request Overview** tab, the Technical Contact can view details of all past and current [Change Plan](/developerportal/deploy/change-plan/) requests and perform certain actions based on the current request status.
 
 For each submitted plan change request you can see the following information:
 
