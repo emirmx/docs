@@ -31,7 +31,7 @@ To see the results of this how-to, you must set up a test project with test data
 
 1. Create the following domain model:
 
-    {{< figure src="/attachments/howto/security/create-a-secure-app/18581378.png" class="no-border" >}}
+    {{< figure src="/attachments/howto/security/create-a-secure-app/domain-model.png" >}}
 
 2. Create overview and detail pages to manage objects of **Customer** and **Order** type.
 3. Create menu items to access the **Customer** and **Order** overview pages.
