@@ -99,7 +99,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Deployment Portal Fixes
 
-* We fixed a bug in the [Permissions tab of the legacy UI](/developerportal/deploy/environments/#permissions), where changing an application's technical contact resulted in a blank page.
+* We fixed a bug in the [Permissions tab of the legacy UI](/developerportal/deploy/environments/#permissions-tab), where changing an application's technical contact resulted in a blank page.
 * We fixed a bug in the [new UI](/developerportal/deploy/environments-redesign/), where the **scalable** tag was displayed for environments that were not scalable.
 * We fixed a number of other bugs related to dark mode.
 
