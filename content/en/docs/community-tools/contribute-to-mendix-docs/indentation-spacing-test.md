@@ -2,7 +2,7 @@
 title: "Indentation and Spacing Test"
 url: /developerportal/community-tools/indentation-spacing-test/
 draft: true
-banner: "Go <a href=\"/refguide9/moving-from-8-to-9/\">here</a>"
+banner: "Banner with a link to <a href=\"#spacing\">spacing</a>"
 description: "Various test cases for rendering of indents and spaces. Use this page to test how spacing and indents will render with various elements and shortcodes. Linting has been disabled for this file."
 ---
 
