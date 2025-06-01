@@ -49,7 +49,6 @@ For information on the current status of deployment to Mendix Cloud and any plan
 * We have added a validation mechanism for pipeline designs, which prevents users from deleting a design if any pipelines using that design are currently running. For more information, see [Pipelines: Editing a Pipeline Design](/developerportal/deploy/pipelines/#edit-pipeline). 
 * You can now access the **Details** page of a pipeline at any point, also while the pipeline is running. For more information, see [Pipelines: Run Results](/developerportal/deploy/pipelines/#run-results).
 
-
 ### February 20, 2025
 
 #### Improvements

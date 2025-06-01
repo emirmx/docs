@@ -217,6 +217,7 @@ FROM (
 For [view entities](/refguide10/view-entities/), you must now have a `LIMIT` and `OFFSET` in all `ORDER BY` clauses, even for the top level query.
 
 This is because view entities, like any other entity type, do not imply order of the results. See [Sorting of View Entity Results](/refguide10/use-view-entities/#sorting) in *How To Use View Entities* for more details.
+
 ### Result Types from Arithmetic Functions
 
 OQL v2 handles the situations where different sides of an arithmetic operation have different data types differently.
