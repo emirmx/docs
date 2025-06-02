@@ -150,7 +150,7 @@ Right-click anywhere in the nanoflow editor, or right-click a nanoflow in the **
     In the warning dialog, you have the following options:
 
     * **Convert**: The original nanoflow is removed, only replaceable usages are updated, and any non-replaceable usages remain as they are.
-    * **Find usages**: Stops the conversion and finds usages of the original nanoflow.
+    * **Show usages**: Stops the conversion and shows the irreplaceable usages of the original nanoflow.
     * **Cancel**: The conversion is cancelled and no changes are made.
 
 ## Canvas Interaction

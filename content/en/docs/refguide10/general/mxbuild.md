@@ -67,6 +67,7 @@ Command-line options are described in the table below:
 | `--generate-sbom` | Generates a Software Bill of Materials (SBOM) file as a part of the `package` and `deployment` targets. The SBOM will be included in the deployment package if this option is used and is saved under its default location: `deployment\sbom.json` |
 | `--sbom-output-path=VALUE` | The file path to generate a bill of material file for the `package` and `deployment` targets. Use `--output` for the `sbom` target (Default value: `deployment\sbom.json`). <br>This parameter is deprecated and will be removed in Mendix 11 and replaced with the `sbom` target.</br> |
 | `--gradle-home` | Sets the Gradle home directory. This can be used when auto-detection of the Gradle installation fails. | 
+| `--extra-gradle-arguments` | Adds extra arguments to the Gradle process (available for Studio Pro 10.23 and above). | 
 
 ### Options When Creating a Package
 
