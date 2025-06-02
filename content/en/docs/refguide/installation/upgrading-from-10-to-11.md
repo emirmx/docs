@@ -78,15 +78,15 @@ We recommend you also upgrade Atlas Web Content if it is in your app.
 
 For optimal implementation, ensure all UI modules either use CSS variables or have their variables defined within the module. If an app uses CSS variables inside **theme/web/custom-variables.scss** while some UI modules still rely on old Atlas SASS variables, those usages will fallback to Atlas default values. Therefore, we recommend you to transition to CSS variables only after confirming that all company design modules no longer depend on Atlas SASS variables.
 
-### Using the 'ShowHomePage' microflow in the 'System' module
+### Using the **ShowHomePage** Microflow in the **System** Module {#apply-entity-access}
 
-This microflow now enforces a secure default for entity access. In versions prior to 11, the default configuration was insecure: 'Apply entity access' was set to false. As a result, after upgrading to version 11, your application may report errors that were previously not detected.
+In Studio Pro versions prior to 11, the default configuration was insecure: **Apply entity access** was set to `false`. In Studio Pro version 11, the **ShowHomePage** microflow in the **System** module now enforces a secure default for entity access. As a result, after upgrading to version 11, your application may report errors that were previously not detected.
 
-Below is an example of a potential error that may occur after upgrading to version 11, along with a recommended approach for resolving it.
+Below is an example of a potential error that may occur after upgrading to version 11, along with recommended approaches for resolving it.
 
-After upgrading, your app may report the following new error: "`A microflow that does not apply entity access can only call microflows that also do not apply entity access`". This error may occur if your microflow does not apply entity access and calls the ShowHomePage microflow from the System module, which now enforces entity access. In earlier versions, ShowHomePage did not apply entity access, so this issue would not have reported prior to the upgrade.
+After the upgrade, your app may report the following new error: `A microflow that does not apply entity access can only call microflows that also do not apply entity access`. This error occurs when a microflow that does not apply entity access attempts to call the **ShowHomePage** microflow in the **System** module, which now enforces entity access. In earlier versions, the **ShowHomePage** microflow did not have entity access applied, so this error did not arise before the upgrade.
 
-You can resolve the error by enabling entity access in your own microflow. However, this may not always align with your intended access control strategy. Alternatively, you can create your own microflow with the "Show home page" activity without entity access enabled. You can then call this new microflow (instead of the one in the 'System' module) from your original microflow. You can also call the "Show home page" activity action directly from your own microflow instead.
+You can resolve the error by enabling entity access for the microflow that calls the **ShowHomePage** microflow. However, this may not always align with your intended access control strategy. Alternatively, you can create a custom microflow that includes the [Show home page](/refguide/show-home-page/) activity without enabling entity access. You can then call this new microflow instead of the one in the **System** module. Another approach is to call the **Show home page** activity directly within your microflow.
 
 ### Other
 
