@@ -86,7 +86,7 @@ Below is an example of a potential error that may occur after upgrading to versi
 
 After upgrading, your app may report the following new error: "`A microflow that does not apply entity access can only call microflows that also do not apply entity access`". This error may occur if your microflow does not apply entity access and calls the ShowHomePage microflow from the System module, which now enforces entity access. In earlier versions, ShowHomePage did not apply entity access, so this issue would not have reported prior to the upgrade.
 
-You can resolve the error by enabling entity access in your own microflow. However, this may not always align with your intended access control strategy. Alternatively, you can create your own microflow with the "Show home page" activity without entity access enabled. You can then call this new microflow (instead of the one in the 'System' module) from your original microflow.
+You can resolve the error by enabling entity access in your own microflow. However, this may not always align with your intended access control strategy. Alternatively, you can create your own microflow with the "Show home page" activity without entity access enabled. You can then call this new microflow (instead of the one in the 'System' module) from your original microflow. You can also call the "Show home page" activity action directly from your own microflow instead.
 
 ### Other
 
