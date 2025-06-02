@@ -11,6 +11,7 @@ The Mendix Design Properties API allows you to create or extend design propertie
 
 {{% alert color="info" %}}
 This document pertains to Mendix 11. For other Design Properties API documents, see the other documents in this category:
+
 * [Mendix 10](/apidocs-mxsdk/apidocs/design-properties-10/)
 * [Mendix 9](/apidocs-mxsdk/apidocs/design-properties-9/)
 {{% /alert %}}
@@ -119,7 +120,6 @@ Every design property in the array is also represented by a *JSON* object. The e
 #### Common Fields {#common-fields}
 
 The common fields, as seen within the example above, are available on all the design properties as defined in the following table.
-
 
 | Field          | Required | Type   | Description                                                                                   |
 | -------------- | -------- | ------ | --------------------------------------------------------------------------------------------- |
