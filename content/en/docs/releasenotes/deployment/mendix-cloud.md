@@ -32,14 +32,11 @@ For information on the current status of deployment to Mendix Cloud and any plan
 #### Improvements
 
 * We have updated the validation rules for creating custom domain names. Instead of 53 characters limit, it is now set to 63 characters limit in compliance with DNS standards.
+* Old UI is deprecated and will be removed on June 1. Users will automatically be switched to the new UI if not already done before.
 
 #### Bug Fixes
 
 * We fixed a bug where user got an error while opening the permissions tab for production environment (Ticket 241675).
-  
-#### Deprecations
-
-* Old UI is being deprecated on 1st June. Users will automatically be switched to the new UI if not already done before.
 
 #### Temporary Deprecations
 
@@ -58,7 +55,6 @@ For information on the current status of deployment to Mendix Cloud and any plan
 * We have added a validation mechanism for pipeline designs, which prevents users from deleting a design if any pipelines using that design are currently running. For more information, see [Pipelines: Editing a Pipeline Design](/developerportal/deploy/pipelines/#edit-pipeline). 
 * You can now access the **Details** page of a pipeline at any point, also while the pipeline is running. For more information, see [Pipelines: Run Results](/developerportal/deploy/pipelines/#run-results).
 
-
 ### February 20, 2025
 
 #### Improvements
@@ -69,7 +65,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### New Features
 
-* We have added a number of new features which are all available as part of the [new UI](/developerportal/deploy/environments-redesign/). These are:
+* We have added a number of new features which are all available as part of the [new UI](/developerportal/deploy/environments/). These are:
 
     * Redesigned the **Environment Details** page to improve functionality and enhance the user experience.
     * Added staging support for apps in the deploy wizard.
@@ -78,7 +74,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Improvements
 
-* Based on user feedback, the [new UI](/developerportal/deploy/environments-redesign/) now also contains UX improvements to the **Environments Overview** page for paid apps.
+* Based on user feedback, the [new UI](/developerportal/deploy/environments/) now also contains UX improvements to the **Environments Overview** page for paid apps.
 
 ## 2024
 
@@ -111,8 +107,8 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Deployment Portal Fixes
 
-* We fixed a bug in the [Permissions tab of the legacy UI](/developerportal/deploy/environments/#permissions), where changing an application's technical contact resulted in a blank page.
-* We fixed a bug in the [new UI](/developerportal/deploy/environments-redesign/), where the **scalable** tag was displayed for environments that were not scalable.
+* We fixed a bug in the [Permissions tab of the legacy UI](/developerportal/deploy/environments/#permissions-tab), where changing an application's technical contact resulted in a blank page.
+* We fixed a bug in the [new UI](/developerportal/deploy/environments/), where the **scalable** tag was displayed for environments that were not scalable.
 * We fixed a number of other bugs related to dark mode.
 
 ### November 14, 2024
@@ -1069,7 +1065,7 @@ SSL/TLS ciphers that are still supported for HTTPS connections after December 1,
 
 #### Fixes
 
-* We fixed an issue where some customers were unable to manually add certificates to [access restriction profiles](/developerportal/deploy/environments/#asp). (Ticket 102615)
+* We fixed an issue where some customers were unable to manually add certificates to [access restriction profiles](/developerportal/deploy/environments/#access-restriction-profiles). (Ticket 102615)
 
 ### August 7, 2020
 

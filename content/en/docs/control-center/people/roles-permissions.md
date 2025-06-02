@@ -55,7 +55,7 @@ To create a role, do the following:
 
    {{< figure src="/attachments/control-center/people/roles-permissions/edit-project-role-step-3.png" alt="Project Role Step 3" >}}
 
-   Set the environment permissions for non-productive environments, such as the test or acceptance environments, as described below. These permissions are applied to the assigned team members on the [Permissions](/developerportal/deploy/environments/#permissions) page in the Cloud Portal.
+   Set the environment permissions for non-productive environments, such as the test or acceptance environments, as described below. These permissions are applied to the assigned team members on the [Permissions](/developerportal/deploy/environments/#permissions-tab) page in the Cloud Portal.
 
    1. Set the correct access rights.
    2. For **Permission Management**, you can select **Fixed** or **Custom**. 
@@ -66,7 +66,7 @@ To create a role, do the following:
 
     {{< figure src="/attachments/control-center/people/roles-permissions/edit-project-role-step-4.png" alt="Project Role Step 4" >}}
 
-    Set the environment permissions for production environments as described below. The permissions you set here will be fixed for this role. They cannot be altered later on the [Permissions](/developerportal/deploy/environments/#permissions) page in the Cloud Portal.
+    Set the environment permissions for production environments as described below. The permissions you set here will be fixed for this role. They cannot be altered later on the [Permissions](/developerportal/deploy/environments/#permissions-tab) page in the Cloud Portal.
 
     1. Set the correct access rights.
     2. For **Permission Management**, you can select **Fixed** or **Custom**. 

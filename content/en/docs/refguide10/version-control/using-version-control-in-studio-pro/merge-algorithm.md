@@ -113,6 +113,7 @@ Your work is now labelled *Theirs*, while the server changes are labelled *Mine*
 
 When merge conflicts are automatically resolved, Studio Pro adds a **#Conflicts** tag to the commit message. The **#Conflicts** tag in Studio Pro serves as a smart indicator, highlighting files that encountered conflicts during the rebase process. This feature is particularly valuable as it maintains a record of auto-merged conflicts, giving developers clear insight into the merge history.
 Key benefits of this approach are the following:
+
 * Transparency – It clearly shows which files required conflict resolution.
 * Efficiency – Auto-merging saves time while still flagging areas for review.
 * Traceability – It maintains conflict history to support code reviews and troubleshooting.

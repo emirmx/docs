@@ -3,6 +3,7 @@ title: "Changing Your Plan in Mendix Cloud"
 linktitle: "Changing Plan"
 url: /developerportal/deploy/change-plan/
 weight: 80
+beta: true
 description: "Describes how to change your plan in Mendix Cloud."
 
 #Do NOT remove any of the anchors in this document as they are all referenced from other documents
@@ -54,7 +55,7 @@ To change an environment's plan, follow these steps:
         * To compare plans, click **Show Comparison**. This opens a comparison page where the Technical Contact can evaluate the current plan against other available options. The last selected comparison will populate the form. Alternatively, select a new plan directly from the **Plan** dropdown without comparing.
         * Enter a reason for plan change.
 
-7. Click **Submit Request** to submit your plan change request. After submission, the request appears in the [Control Center](/control-center/entitlements/#plan-change-requests-tab) for the [Mendix Admin](/control-center/company-settings/#mendix-admins) review. To view the list of approvers, click **Mendix Admin** at the bottom of the **New Plan** form. As a Technical Contact, you can [track and manage](#manage-plan-requests) your plan change requests from the [Request Overview](/developerportal/deploy/environments-redesign/#request-overview) tab on your app's environment's page. 
+7. Click **Submit Request** to submit your plan change request. After submission, the request appears in the [Control Center](/control-center/entitlements/#plan-change-requests-tab) for the [Mendix Admin](/control-center/company-settings/#mendix-admins) review. To view the list of approvers, click **Mendix Admin** at the bottom of the **New Plan** form. As a Technical Contact, you can [track and manage](#manage-plan-requests) your plan change requests from the [Request Overview](/developerportal/deploy/environments/#request-overview) tab on your app's environment's page. 
 
 The app environment will remain on its current plan until the request is approved by a Mendix Admin.
 
@@ -72,7 +73,7 @@ To access it:
 2. Click **Environments** on your app.
 3. Open the **Request Overview** tab.
 
-For detailed information on the **Request Overview** tab, refer to the [Request Overview](/developerportal/deploy/environments-redesign/#request-overview) section in *Environments and Deployment*.
+For detailed information on the **Request Overview** tab, refer to the [Request Overview](/developerportal/deploy/environments/#request-overview) section in *Environments and Deployment*.
 
 This diagram shows the progress of the request status from plan change submission to fulfilled (approved, rejected, completed, or failed):
 
