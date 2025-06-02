@@ -87,7 +87,7 @@ If you want to invite your colleagues to build your app, you can manage the **Te
 
 Each Mendix app contains a module called "System" that contains a standard functionality that every app needs, such as entities for users and user roles. This module is automatically included with each app.
 
-One of the documents that is included in this module is the 'ShowHomePage' microflow, that can be used when creating the app. Starting from version 11 of studio-pro, this microflow provides a secure default for enabling entity access. This means that when using this microflow (i.e. calling it from another microflow), you are assured that the access to entites is applied and restricted by default. This is a breaking change for version 11 of studio-pro (please read more in [Upgrading from 10 to 11](/refguide/upgrading-from-10-to-11)). 
+One of the documents that is included in this module is the 'ShowHomePage' microflow, that can be used when creating the app. Starting from version 11 of studio-pro, this microflow provides a secure default for enabling entity access. This means that when using this microflow (i.e. calling it from another microflow), you are assured that the access to entities is applied and restricted by default. This is a breaking change for Studio Pro version 11. For more information, see [Upgrading from Mendix Studio Pro 10 to 11](/refguide/upgrading-from-10-to-11/).
 
 ## The Security Overview
 
