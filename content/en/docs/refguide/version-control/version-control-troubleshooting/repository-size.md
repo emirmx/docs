@@ -41,7 +41,6 @@ In Studio Pro 11, apps are automatically converted to the MPRv2 storage format. 
 
 MPRv2 storage format prevents your repository from a rapid growth. Documents such as microflows, are not stored as part of the *.mpr* file but as separate files in the *mprcontents* directory. The *.mpr* file functions as an index file pointing to all the different files on disk.
 This means that when you change one document, for example, a page, only a small file representing that page will change on disk.
-{{% /alert %}}
 
 ### Decreasing App File Size
 
