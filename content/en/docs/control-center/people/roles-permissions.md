@@ -51,7 +51,7 @@ Follow these steps to create a role:
     {{< figure src="/attachments/control-center/people/roles-permissions/edit-project-role-step-2.png" alt="Project Role Step 2" >}}
 
 5. Click **Next**.
-6. Select the access rights for **Non-production Environments**. These permissions dictate access to environments such as test or acceptance, and are applied to the assigned team members on the [Permissions](/developerportal/deploy/environments/#permissions) page in the Cloud Portal.  
+6. Select the access rights for **Non-production Environments**. These permissions dictate access to environments such as test or acceptance, and are applied to the assigned team members on the [Permissions](/developerportal/deploy/environments/#permissions-tab) page in the Cloud Portal.  
 
     {{< figure src="/attachments/control-center/people/roles-permissions/edit-project-role-step-3.png" alt="Project Role Step 3" >}}
     
