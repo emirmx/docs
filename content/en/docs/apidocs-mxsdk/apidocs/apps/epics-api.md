@@ -43,4 +43,8 @@ To authenticate calls when using the Open API specification below, click **Autho
 
 ## API Reference
 
-{{< swaggerui src="/openapi-spec/epics.yaml"  >}}
+{{% alert color="warning" %}}
+You cannot call endpoints in the Swagger UI below on this page.
+{{% /alert %}}
+
+{{< swaggerui-disable-try-it-out src="/openapi-spec/epics.yaml"  >}}
