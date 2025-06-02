@@ -118,7 +118,7 @@ Now that you have a Git app on your server, you can download it to another direc
 
     {{< figure src="/attachments/refguide/version-control/on-premises-git/sign-in-dialog.png" alt="Sign In dialog" class="no-border" >}}
 
-1. Enter username (it can be anything except empty) and use the PAT you saved earlier as the password. 
+1. Enter username (it can be anything except empty) and use PAT from your Git provider you created earlier as the password. 
 
 The app is downloaded and ready to be used with version control.
 
