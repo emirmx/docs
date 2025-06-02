@@ -2,52 +2,48 @@
 title: "Entitlements"
 url: /control-center/entitlements/
 description: "Describes the Entitlements page in the Mendix Control Center."
-weight: 50
+weight: 30
 no_list: true 
 
 ---
 
 ## Introduction
 
-The **Entitlements** page is a self-service tool that displays transactions which use Mendix Cloud Tokens, and that helps manage plan change requests. It also displays the number of entitled, consumed, and remaining Mendix Cloud Tokens.
+The **Entitlements** section is a self-service tool that provides access to transactions which use Mendix Cloud Tokens, and that helps manage plan change requests. It also displays the number of entitled, consumed, and remaining Mendix Cloud Tokens.
 
-### Mendix Cloud Tokens Explained {#cloud-tokens}
+This section contains the following pages:
+
+* Cloud Tokens <!--* End-users -->
+* Requests
+
+## The Cloud Tokens Page
+
+The **Cloud Tokens** page displays the total number of Mendix Cloud Tokens that your company is entitled to, as well as the number of consumed and available Mendix Cloud Tokens.
+
+It also includes a list of transactions that use Mendix Cloud Tokens. These are the details available for each transaction:
+
+* **Transaction** – The identifier of the transaction, made up of the provisioned plan, and the impacted application and environment.
+* **Transaction Date** - The date when the transaction occurred.
+* **Quantity** - The number of Mendix Cloud Tokens credited or debited. <!-- check -->
+* **Tokens per Unit** – The number of Mendix Cloud Tokens included in the transaction. <!-- check -->
+* **Transaction Type** – This can be either **Credit** or **Debit**.
+* **Cloud Tokens** – The number of Mendix Cloud Tokens consumed within the transaction. <!-- check -->
+
+### Mendix Cloud Tokens {#cloud-tokens}
 
 Mendix Cloud Tokens are a type of Token that can be used within the Mendix Platform to consume Cloud Resources, such as  [Cloud Resource Packs](/developerportal/deploy/mendix-cloud-deploy/#resource-pack) (CRPs), for your Mendix Cloud deployments. The contractual definitions of Tokens and Mendix Cloud Tokens can be found on our [Order Form Definitions](https://www.mendix.com/legal/platform-usage/order-form-definitions/#section-9) page.
 
-
-{{% alert color="info" %}}
-From now on, you can only purchase and provision Standard, Premium, and Premium Plus cloud resource packs, not legacy resource packs. The cloud tokens for legacy resource packs that you already purchased are credited back to your account if you deprovision an environment.
-{{% /alert %}}
-
-### Cloud Resource Packs
-
-For the technical details of each cloud resource pack, refer to the [Cloud Resource Packs](/developerportal/deploy/mendix-cloud-deploy/#resource-pack) section in *Mendix Cloud*.
-
-The number of Mendix Cloud Tokens required for each type of Cloud Resource Pack is specified in the [Cloud Resource Packs](#crps) section of this document. All your current CRPs will be converted to their equivalent Mendix Cloud Tokens and aggregated with any other Mendix Cloud Tokens. You can then use these to provision Cloud resources (of any type and size) as specified in your contracts. 
-
-You can see available and used Mendix Cloud Tokens on the **Entitlements** page. If you cannot, contact your Customer Success Manager (CSM).
-
-### Legacy Cloud Resource Packs
-
-{{% alert color="info" %}}
-It is no longer possible to purchase Legacy Cloud Resources Packs. It is now only possible to purchase and provision the following CRPs: Standard; Premium; and Premium Plus. Any legacy Cloud Resource Packs you already purchased will be converted into Mendix Cloud Tokens if they are deprovisioned. This will use the rate specified in the [Cloud Resource Packs](#crps) section and the Mendix Cloud Tokens will be added to your Token pool.
-{{% /alert %}}
-
-### Key Takeaways
-
-* Mendix Cloud Tokens are a specific type of token used to access Cloud Resources in the Mendix Platform.
-* The number of tokens required depends on the CRP you want, as listed below.
-* You buy tokens in advance and can use them to obtain CRPs.
-* If you no longer need those resources, you can reuse the token to obtain other CRPs or keep it to be used later.
-
-## Cloud Resource Packs {#crps}
+### Cloud Resource Packs {#crps}
 
 {{% alert color="info" %}}
 For the technical details of each cloud resource pack, see the [Cloud Resource Packs](/developerportal/deploy/mendix-cloud-deploy/#resource-pack) section of *Mendix Cloud*.
 {{% /alert %}}
 
-The tables below show how many Mendix Cloud Tokens each CRP requires:
+The number of Mendix Cloud Tokens required for each type of Cloud Resource Pack is specified in the [Cloud Resource Packs](#crps) section of this document. All your current CRPs will be converted to their equivalent Mendix Cloud Tokens and aggregated with any other Mendix Cloud Tokens. You can then use these to provision Cloud resources (of any type and size) as specified in your contracts. 
+
+You can see available and used Mendix Cloud Tokens on the **Entitlements** page. If you cannot, contact your Customer Success Manager (CSM).
+
+These tables show how many Mendix Cloud Tokens each CRP requires:
 
 | Standard Resource Packs | Mendix Cloud Tokens |
 | --- | --: |
@@ -99,29 +95,18 @@ The tables below show how many Mendix Cloud Tokens each CRP requires:
 | 2XL | 167 |
 | 3XL | 640 |
 
-## Entitlements Page Tabs
+#### Legacy Cloud Resource Packs
 
-The **Entitlements** page contains the following tabs:
+You can no longer purchase Legacy Cloud Resources Packs. You can now only purchase and provision Standard, Premium, and Premium Plus CRPs. Any legacy Cloud Resource Packs that you have already purchased will be converted into Mendix Cloud Tokens if they are deprovisioned. This will use the rate specified in the [Cloud Resource Packs](#crps) section, and the Mendix Cloud Tokens will be added to your Token pool.
 
-* **Transactions** – Allows you to monitor your Mendix Cloud Token consumption.
-* **Requests** – Allows you to view and manage plan change requests.
+### Key Takeaways
 
-### The Transactions Tab
+* Mendix Cloud Tokens are a specific type of Token used to access Cloud Resources in the Mendix Platform.
+* The number of Mendix Cloud Tokens required depends on the CRP you want.
+* You buy Tokens in advance, and can use them to obtain CRPs.
+* If you no longer need those resources, you can reuse the Token to obtain other CRPs, or keep it to be used later.
 
-On the **Transactions** tab, you can view a list of transactions that use Mendix Cloud Tokens.
-
-{{< figure src="/attachments/control-center/apps/entitlements/entitlements-transactions_beta.png" alt="The Transactions tab of the Entitlements page">}}
-
-These are the details available for each transaction:
-
-* **Transaction** – The identifier of the transaction, made up of the provisioned plan, and the impacted application and environment.
-* **Transaction Date** - The date when the transaction occurred.
-* **Quantity** - The number of Mendix Cloud Tokens credited or debited. <!-- check -->
-* **Tokens per Unit** – The number of Mendix Cloud Tokens included in the transaction. <!-- check -->
-* **Transaction Type** – This can be either **Credit** or **Debit**.
-* **Cloud Tokens** – The number of Mendix Cloud Tokens consumed within the transaction. <!-- check -->
-
-### The Requests Tab {#plan-change-requests-tab}
+## The Requests Page {#plan-change-requests-tab}
 
 {{% alert color="info" %}}
 This feature is in Public Beta. For more information, refer to [Beta Releases](/releasenotes/beta-features/).
@@ -130,8 +115,6 @@ This feature is in Public Beta. For more information, refer to [Beta Releases](/
 The Technical Contact can request a plan change for an app environment. To do that, they need to click the **Change Plan** button on the environment in the **Apps** section of Mendix Portal. For more information, refer to [Changing Your Plan in Mendix Cloud](/developerportal/deploy/change-plan/).    
 
 The **Requests** tab displays all plan change requests, along with the actions you can take for each request. 
-
-{{< figure src="/attachments/control-center/apps/entitlements/entitlements-requests_beta.png" alt="The Requests tab of the Entitlements page">}}  
 
 These are the details available for each request:
 
