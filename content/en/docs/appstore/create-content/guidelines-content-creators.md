@@ -271,7 +271,6 @@ While the description itself has no character limit, the introductory one-liner 
 Here are some tips to help you write a proper product description:
 
 * Include answers to key questions that developers have when they look for content.
-Here are some tips to help you write a proper product description:
 * Cover the entire range of product benefits, and focus on how your product can improve customers' app development or work life in general.  
   A good practice is to outline the features and benefits of your product before describing them.  
   For every feature you list, think about how it will directly benefit customers.  
