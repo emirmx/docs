@@ -23,14 +23,11 @@ For information on the current status of deployment to Mendix Cloud and any plan
 #### Improvements
 
 * We have updated the validation rules for creating custom domain names. Instead of 53 characters limit, it is now set to 63 characters limit in compliance with DNS standards.
+* Old UI is deprecated and will be removed on June 1. Users will automatically be switched to the new UI if not already done before.
 
 #### Bug Fixes
 
 * We fixed a bug where user got an error while opening the permissions tab for production environment (Ticket 241675).
-  
-#### Deprecations
-
-* Old UI is being deprecated on 1st June. Users will automatically be switched to the new UI if not already done before.
 
 #### Temporary Deprecations
 
@@ -101,7 +98,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Deployment Portal Fixes
 
-* We fixed a bug in the [Permissions tab of the legacy UI](/developerportal/deploy/environments/#permissions), where changing an application's technical contact resulted in a blank page.
+* We fixed a bug in the [Permissions tab of the legacy UI](/developerportal/deploy/environments/#permissions-tab), where changing an application's technical contact resulted in a blank page.
 * We fixed a bug in the [new UI](/developerportal/deploy/environments-redesign/), where the **scalable** tag was displayed for environments that were not scalable.
 * We fixed a number of other bugs related to dark mode.
 
@@ -1059,7 +1056,7 @@ SSL/TLS ciphers that are still supported for HTTPS connections after December 1,
 
 #### Fixes
 
-* We fixed an issue where some customers were unable to manually add certificates to [access restriction profiles](/developerportal/deploy/environments/#asp). (Ticket 102615)
+* We fixed an issue where some customers were unable to manually add certificates to [access restriction profiles](/developerportal/deploy/environments/#access-restriction-profiles). (Ticket 102615)
 
 ### August 7, 2020
 
