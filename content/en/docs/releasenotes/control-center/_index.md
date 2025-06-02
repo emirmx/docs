@@ -18,8 +18,10 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 #### New Features
 
+* We are updating the **Entitlements** section to set the stage for powerful analytics. As a first step of this update, we have moved the **Transactions** tab out of **Entitlements**, and have renamed it to **Cloud Tokens**. You can now find it as a standalone page within the **Entitlements** section.
+
 * We have released a beta feature that enables Technical Contacts to request a plan change for each of their environments, thus allowing them to increase the resources available for running apps.    
-The request is sent to the company Admin, who can see and manage it from the newly introduced **Requests** tab, which can be found on the **Entitlements** page in Control Center.    
+The request is sent to the company Admin, who can see and manage it from the newly introduced **Requests** page, which can be found in the **Entitlements** section in Control Center.    
 
     For more information on requesting a plan change, refer to [Changing Your Plan in Mendix Cloud](/developerportal/deploy/change-plan/).    
     For more information on approving or rejecting a plan change, refer to [The Requests Tab](/control-center/entitlements/#plan-change-requests-tab) in *Entitlements*.

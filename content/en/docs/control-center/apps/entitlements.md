@@ -136,12 +136,12 @@ These are the details available for each request:
 
 You can filter requests by status and type.
 
-#### Request Details
+### Request Details
 
 Once a plan change request is submitted at the app environment level, a banner and a notification are displayed on the **Entitlements** page. For more information, refer to [Changing Your Plan in Mendix Cloud](/developerportal/deploy/change-plan/).         
 You can access the request details by clicking the notification itself or the **Details** button next to the request in the list. The details include the same information that is available on the **Requests** tab, as well as the cost of the plan change and the reason for the request.
 
-#### Approving a Request
+### Approving a Request
 
 Follow these steps to approve a request:
 
@@ -152,7 +152,7 @@ Once a request is approved, its status changes to **Approved**.
 
 For the Technical Contact, the status changes to **Pending Schedule** on the [Request Overview tab](/developerportal/deploy/environments/#request-overview) of the **Environments** page. They then need to specify when the plan change should take effect. For more information, refer to the [Scheduling a Plan Change](/developerportal/deploy/change-plan/#scheduling-a-plan-change) section in *Changing Your Plan in Mendix Cloud*.
 
-#### Rejecting a Request
+### Rejecting a Request
 
 Follow these steps to reject a request:
 
