@@ -74,7 +74,7 @@ The tool is currently in public beta. The cleanup tool can be downloaded [here](
 {{% /alert %}}
 
 {{% alert color="info" %}}
-This tool is executed on a Mendix Git repository. If your Mendix app is still on SVN you first have to [migrate to Git](/developerportal/general/migrate-to-git/).
+This tool is executed on a Mendix Git repository. If your Mendix app is still on SVN you first must [migrate to Git](/developerportal/general/migrate-to-git/).
 {{% /alert %}}
 
 ### Cleanup Process
