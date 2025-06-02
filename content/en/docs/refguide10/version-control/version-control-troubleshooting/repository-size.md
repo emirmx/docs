@@ -60,7 +60,7 @@ Merging MPRv2 apps using the command line with `git merge` or using third-party 
 
 #### Converting MPR Storage Format {#convert}
 
-In Studio Pro 10.18 and above upgrading to the new format is optional and can be done per branch via the [File menu](/refguide10/file-menu/). As of Studio Pro 10.22 conversion happens automatically when opening the app. 
+In Studio Pro 11, conversion happens automatically when opening the app. 
 
 To manually upgrade to MPRv2, open your app and select **File > Upgrade app to split MPR format (v2)**. After a confirmation the app will be converted and you will be prompted to commit.
 
@@ -104,7 +104,7 @@ The tool is currently in public beta. The cleanup tool can be downloaded [here](
 {{% /alert %}}
 
 {{% alert color="info" %}}
-This tool is executed on a Mendix Git repository. If your Mendix app is still on SVN you will first have to [migrate to Git](/developerportal/general/migrate-to-git/).
+This tool is executed on a Mendix Git repository. If your Mendix app is still on SVN you first must [migrate to Git](/developerportal/general/migrate-to-git/).
 {{% /alert %}}
 
 ### Cleanup Process

@@ -11,7 +11,7 @@ description: "Explains consequences and root cause of a large repository size an
 In case you are experiencing performance issues when cloning or pulling your app, this may be caused by a large repository size. This document explains why your repository may be large, how Git handles it, and what you can do about this issue.
 
 {{% alert color="info" %}}
-As of Studio Pro 10.22 apps are automatically converted to the MPRv2 storage format. If you have manually reverted to the MPRv1 storage format, you can find more information in the [documentation for Mendix 10](/refguide10/troubleshoot-repository-size/#mpr-format).
+From Studio Pro 10.22 and above apps are automatically converted to the MPRv2 storage format. If you manually reverted to the MPRv1 storage format and would like to learn more about it, you can see more information in the [MPR Storage Format](/refguide10/troubleshoot-repository-size/#mpr-format) section in *Troubleshooting Repository Size* in *Studio Pro 10 Guide*.
 {{% /alert %}}
 
 ## Causes of a Large Repository
@@ -36,8 +36,11 @@ Other places where you might encounter performance issues or timeouts are the fo
 
 ### MPR Storage Format {#mpr-format}
 
-{{% alert color="info" %}}
-As of Studio Pro 10.22 apps are automatically converted to the MPRv2 storage format. For more information of the effects of the MPRv1 storage format, please consult the [documentation for Mendix 10](/refguide10/troubleshoot-repository-size/#mpr-format).
+
+In Studio Pro 11, apps are automatically converted to the MPRv2 storage format. For more information of the effects of the MPRv1 storage format, please see the [MPR Storage Format](/refguide10/troubleshoot-repository-size/#mpr-format) section in *Troubleshooting Repository Size* in *Studio Pro 10 Guide*.
+
+MPRv2 storage format prevents your repository from a rapid growth. Documents such as microflows, are not stored as part of the *.mpr* file but as separate files in the *mprcontents* directory. The *.mpr* file functions as an index file pointing to all the different files on disk.
+This means that when you change one document, for example, a page, only a small file representing that page will change on disk.
 {{% /alert %}}
 
 ### Decreasing App File Size
@@ -71,7 +74,7 @@ The tool is currently in public beta. The cleanup tool can be downloaded [here](
 {{% /alert %}}
 
 {{% alert color="info" %}}
-This tool is executed on a Mendix Git repository. If your Mendix app is still on SVN you will first have to [migrate to Git](/developerportal/general/migrate-to-git/).
+This tool is executed on a Mendix Git repository. If your Mendix app is still on SVN you first have to [migrate to Git](/developerportal/general/migrate-to-git/).
 {{% /alert %}}
 
 ### Cleanup Process
@@ -197,19 +200,19 @@ When reaching out to Mendix Support, please include:
 ## Recommendation on Avoiding Git Issues {#recommendation}
 
 {{% alert color="info" %}}
-If you have manually reverted to MPRv1, please consult the [documentation for Mendix 10](/refguide10/troubleshoot-repository-size/#mpr-format) and first convert to MPRv2.
+If you manually reverted to the MPRv1 storage format, you can see more information on this format in the [MPR Storage Format](/refguide10/troubleshoot-repository-size/#mpr-format) section in *Troubleshooting Repository Size* in *Studio Pro 10 Guide*. and you first must convert to MPRv2.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-If you are still on SVN in Mendix 9, please consult the [documentation for Mendix 10](/refguide10/troubleshoot-repository-size/#recommendation) for more detailed migration advice.
+If you are still on SVN in Studio Pro 9, see the [Recommendation on Avoiding Git Issues](/refguide10/troubleshoot-repository-size/#recommendation) section in *Troubleshooting Repository Size* in *Studio Pro 10 Guide* for a more detailed migration advice.
 {{% /alert %}}
 
-Follow the decision tree in the image below for help with Git-related performance issues:
+Follow the decision tree in the image below to troubleshoot Git-related performance issues:
 
 {{< figure src="/attachments/refguide/version-control/troubleshoot-version-control-issues/migration-advice-mx11.png" class="no-border" >}}
 
-\* In case your .git folder is <2GB but you are having performance issues when cloning, please consult [Verify Full Clone Through Git CLI](/refguide10/troubleshoot-team-server-issues/#verify-full-clone-through-git-cli]) and contact Support with the relevant information.
+\* In case your *.git* folder is  less than 2GB but you are having performance issues when cloning, please see the [Verify Full Clone Through Git CLI](/refguide/troubleshoot-team-server-issues/#verify-full-clone-through-git-cli]) section in *Troubleshooting Team Server Issues* and contact Support with the relevant information.
 
-\** For more information on partial clone, see [Clone Type](/refguide10/clone-type/).
+\** For more information on partial clone, see [Clone Type](/refguide/clone-type/).
 
-\*** For more information on Git cleanup, see [Cleanup](/refguide10/troubleshoot-repository-size/#cleanup-tool).
+\*** For more information on Git cleanup, see the [Cleanup](/refguide/troubleshoot-repository-size/#cleanup-tool) section in *Troubleshooting Repository Size*.
