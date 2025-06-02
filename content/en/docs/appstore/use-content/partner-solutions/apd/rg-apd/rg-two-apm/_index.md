@@ -16,7 +16,7 @@ This is the reference guide for CLEVR APM 2 for Mendix. It has the following cha
 * [Apps](/appstore/partner-solutions/apd/rg-two-apps/)
 * [Environments](/appstore/partner-solutions/apd/rg-two-environments/)
 * [Dashboard](/appstore/partner-solutions/apd/rg-two-dashboard/)
-* [Logs](/appstore/partner-solutions/apd/rg-two-logs/)
+* [APD Logs](/appstore/partner-solutions/apd/rg-two-logs/)
 * [Performance Statistics](/appstore/partner-solutions/apd/rg-two-statistics/)
 * [Performance Recorder](/appstore/partner-solutions/apd/rg-two-recorder/)
 * [Settings](/appstore/partner-solutions/apd/rg-two-settings/)

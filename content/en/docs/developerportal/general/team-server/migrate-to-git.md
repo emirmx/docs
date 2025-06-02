@@ -64,7 +64,7 @@ If your app is not eligible for migration the reason(s) will be listed on a page
 When the size of the *.mpr* file exceeds the threshold, migration is blocked to prevent rapid repository growth after migrating to Git. To get your app approved for migration, you have to agree on the following steps with Support or your Customer Success Manager:
 
 1. [Migrate without history](#without-history). This requires converging all branches which you want to retain.
-2. Update your app to Studio Pro version 10.18 or above, and convert to [MPRv2](/refguide/troubleshoot-repository-size/#mprv2).
+2. Update your app to Studio Pro version 10.18 or above, and convert to [MPRv2](/refguide10/troubleshoot-repository-size/#mprv2). If you upgrade to Studio Pro 10.22 and above, the conversion will happen automatically. 
 3. Execute a [Git cleanup](/refguide/troubleshoot-repository-size/#cleanup-tool).
 
 The first two steps need to be executed within a short timeframe. The last step is technically optional, but is strongly recommended for the best experience.
