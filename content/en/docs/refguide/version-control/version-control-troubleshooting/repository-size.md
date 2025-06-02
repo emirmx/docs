@@ -210,7 +210,7 @@ Follow the decision tree in the image below to troubleshoot Git-related performa
 
 {{< figure src="/attachments/refguide/version-control/troubleshoot-version-control-issues/migration-advice-mx11.png" class="no-border" >}}
 
-\* In case your *.git* folder is  less than 2GB but you are having performance issues when cloning, please see the [Verify Full Clone Through Git CLI](/refguide/troubleshoot-team-server-issues/#verify-full-clone-through-git-cli]) section in *Troubleshooting Team Server Issues* and contact Support with the relevant information.
+\* In case your *.git* folder is  less than 2GB but you are having performance issues when cloning, please see the [Verify Full Clone Through Git CLI](/refguide/troubleshoot-team-server-issues/#verify-full-clone-through-git-cli) section in *Troubleshooting Team Server Issues* and contact Support with the relevant information.
 
 \** For more information on partial clone, see [Clone Type](/refguide/clone-type/).
 
