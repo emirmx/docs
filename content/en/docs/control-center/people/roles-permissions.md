@@ -58,12 +58,12 @@ Follow these steps to create a role:
     You can choose between **No Access** and **Access**.    
     If you choose **Access**, you can refine your settings in the following sections:    
       
-      * **Permission Management** - You can select **Fixed** or **Custom**. 
+    * **Permission Management** - You can select **Fixed** or **Custom**. 
    
-          * If you select **Fixed**, continue to set the permissions for this role in the **Set Permissions** section. 
-          * If you select **Custom**, you allow anyone with **Manage Permissions** rights, such as the Technical Contact, to set permissions per environment.
+        * If you select **Fixed**, continue to set the permissions for this role in the **Set Permissions** section. 
+        * If you select **Custom**, you allow anyone with **Manage Permissions** rights, such as the Technical Contact, to set permissions per environment.
 
-      * **Set Permissions** - Choose the specific privileges you want to include in this role for non-production environments. The permissions you set here are fixed for this role. They cannot be changed later on the **Permissions** page.
+    * **Set Permissions** - Choose the specific privileges you want to include in this role for non-production environments. The permissions you set here are fixed for this role. They cannot be changed later on the **Permissions** page.
 
 7. Click **Next**.  
 8. Select the access rights for **Production Environments**.
@@ -75,12 +75,12 @@ Follow these steps to create a role:
     You can choose between **No Access** and **Access**.    
     If you choose **Access**, you can refine your settings in the following sections:
 
-      * **Permission Management** - You can select **Fixed** or **Custom**. 
+    * **Permission Management** - You can select **Fixed** or **Custom**. 
 
-          * If you select **Fixed**, continue to set the permissions for this role in the **Set Permissions** section. 
-          * If you select **Custom**, you allow anyone with **Manage Permissions** rights, such as the Technical Contact, to set permissions per environment.
+        * If you select **Fixed**, continue to set the permissions for this role in the **Set Permissions** section. 
+        * If you select **Custom**, you allow anyone with **Manage Permissions** rights, such as the Technical Contact, to set permissions per environment.
 
-      * **Set Permissions** - Choose the specific privileges you want to include in this role for non-production environments. The permissions you set here are fixed for this role. They cannot be changed later on the **Permissions** page.
+    * **Set Permissions** - Choose the specific privileges you want to include in this role for non-production environments. The permissions you set here are fixed for this role. They cannot be changed later on the **Permissions** page.
 
 ## Showing Role Details
 
