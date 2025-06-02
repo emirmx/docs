@@ -200,7 +200,7 @@ When reaching out to Mendix Support, please include:
 ## Recommendation on Avoiding Git Issues {#recommendation}
 
 {{% alert color="info" %}}
-If you manually reverted to the MPRv1 storage format, you can see more information on this format in the [MPR Storage Format](/refguide10/troubleshoot-repository-size/#mpr-format) section in *Troubleshooting Repository Size* in *Studio Pro 10 Guide*. and you first must convert to MPRv2.
+If you manually reverted to the MPRv1 storage format, you can see more information on this format in the [MPR Storage Format](/refguide10/troubleshoot-repository-size/#mpr-format) section in *Troubleshooting Repository Size* in *Studio Pro 10 Guide* and you first must convert to MPRv2.
 {{% /alert %}}
 
 {{% alert color="info" %}}
