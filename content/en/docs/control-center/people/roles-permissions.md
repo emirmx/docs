@@ -71,7 +71,6 @@ Follow these steps to create a role:
     {{% alert color="warning" %}}You need to complete multi-factor authentication before you can edit and save production environment permissions.{{% /alert %}}
 
     {{< figure src="/attachments/control-center/people/roles-permissions/edit-project-role-step-4.png" alt="Project Role Step 4" >}}
-
     You can choose between **No Access** and **Access**.    
     If you choose **Access**, you can refine your settings in the following sections:
 

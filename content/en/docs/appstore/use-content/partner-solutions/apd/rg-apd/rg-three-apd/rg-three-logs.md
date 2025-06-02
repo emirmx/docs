@@ -1,5 +1,6 @@
 ---
-title: "Logs"
+title: "APD Logs"
+linktitle: "Logs"
 url: /appstore/partner-solutions/apd/rg-three-logs/
 ---
 
