@@ -25,13 +25,13 @@ View entities are read-only. To change the resulting data of a view entity retri
 
 Your app must use OQL version 2 to use view entities. You can change this setting by clicking **App 'APP_NAME'** > **Settings** > **Runtime** and setting [OQL version 2](/refguide/app-settings/#oql-version-2) to **Yes**. Alternatively, you can drag a new view entity from the toolbar or **Toolbox** to the domain model, which opens a dialog box where you can confirm upgrading to OQL version 2 if it has not been upgraded yet.
 
-## View entity properties dialog
+## Properties Dialog
 
 Double-click a view entity to open its Properties dialog box. An example of a view entity's properties dialog box is represented in the image below:
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-dialog.png" >}}
 
-The **view entity properties dialog** consists of the following sections:
+The view entities **Properties** dialog consists of the following sections:
 
 * [General](#general)
 * [Access rules](#access-rules)
@@ -65,21 +65,21 @@ You can add any local information about the view entity in this tab. This is als
 
 ## OQL Query Tab {#oql-query-tab}
 
-To open the OQL query tab, click the **Show** button in the view entity dialog:
+To open the OQL query tab, click **Show** in the view entity dialog:
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-dialog-show.png">}}
 
 Alternatively, you can right-click the view entity and click **Go to OQL query** from the context menu:
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-contextual-menu.png" width="500" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-contextual-menu.png" width="400" >}}
 
-The **OQL query tab** consists of the following sections:
-
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-document.png">}}
+The OQL query tab consists of the following sections:
 
 * [OQL editor](#oql-editor)
 * [Maia for OQL](#maia-for-oql)
 * [Preview data table](#preview-data)
+
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-document.png">}}
 
 ### OQL Editor {#oql-editor}
 
@@ -87,7 +87,7 @@ The **OQL editor** runs in the OQL query tab, where you can interact with variou
 
 The **OQL editor** allows you to write the query that defines this view entity. While writing the query, the editor suggests names of the entities and attributes in your domain model, as well as allowed clauses, operators, and functions. If the query is not valid, a list of validation errors are displayed underneath the editor with the line and column number of the place where the error was found.
 
-To learn more about how to write OQL code, read [OQL]( /refguide/oql/). Continue reading for a few view entity-specific OQL considerations.
+To learn more about how to write OQL code, see [OQL](/refguide/oql/).
 
 #### Supported OQL Syntax Patterns
 
@@ -97,15 +97,15 @@ An OQL query can begin with either a `SELECT` clause or a `FROM` clause, as both
 
 #### `ORDER BY` Is Only Needed with `LIMIT` or `OFFSET`
 
- Similar to database views, view entities represent data without enforcing any specific order. Therefore, using the `ORDER BY` clause in the view entity query to sort query results is neither possible nor necessary. Data retrieved from a view entity can be sorted on retrieval (like regular entities) using options like the [Sorting](/refguide/retrieve/#sorting) feature in a Retrieve microflow activity.
+Similar to database views, view entities represent data without enforcing any specific order. Therefore, using the `ORDER BY` clause in the view entity query to sort query results is neither possible nor necessary. Data retrieved from a view entity can be sorted on retrieval (like regular entities) using options like the [Sorting](/refguide/retrieve/#sorting) feature in a Retrieve microflow activity.
 
- The `ORDER BY` clause is only required in a view entity when using `LIMIT` or `OFFSET` to create data subsets. For example, you might need this when retrieving:
+The `ORDER BY` clause is only required in a view entity when using `LIMIT` or `OFFSET` to create data subsets. For example, you might need this when retrieving:
 
- * The top 5 customers by revenue
- * The 10 most recent transactions
- * The first 20 products by profit margin
+* The top 5 customers by revenue
+* The 10 most recent transactions
+* The first 20 products by profit margin
 
- For more information, see [ORDER BY Clause](/refguide/oql-clauses/#order-by) in the OQL documentation.
+For more information, see [ORDER BY Clause](/refguide/oql-clauses/#order-by) in the OQL documentation.
 
 #### `ID` as Associations
 
