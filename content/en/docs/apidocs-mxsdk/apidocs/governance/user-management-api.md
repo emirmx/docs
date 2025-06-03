@@ -127,7 +127,7 @@ Retrieves a user account's OpenID based on its email address.
  URL: https://usermanagement.mendix.com/legacy-api/1/users/by-email/<emailAddress>
 ```
 
-Refer to the [User Identifiers API](/apidocs-mxsdk/apidocs/user-identifiers-api/) for more details.
+The replacement for this deprecated endpoint is the [User Identifiers API](/apidocs-mxsdk/apidocs/user-identifiers-api/). 
 
 #### Can Be Invoked By
 
@@ -234,7 +234,7 @@ Activate/deactivate a user account in your company. Deactivating a user means th
  URL: https://usermanagement.mendix.com/legacy-api/1/users/<openId>
 ```
 
-Refer to the [User Deactivation API](/apidocs-mxsdk/apidocs/user-deactivation-api/) for more details.
+The replacement for this deprecated endpoint is the [User Identifiers API](/apidocs-mxsdk/apidocs/user-identifiers-api/).
 
 #### Can Be Invoked By
 
