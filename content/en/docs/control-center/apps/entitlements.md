@@ -13,10 +13,10 @@ The **Entitlements** section is a self-service tool that provides access to tran
 
 This section contains the following pages:
 
-* Cloud Tokens <!--* End-users -->
-* Requests
+* [Cloud Tokens](#cloud-tokens-page) <!--* End-users -->
+* [Requests](#plan-change-requests-tab)
 
-## The Cloud Tokens Page
+## The Cloud Tokens Page {#cloud-tokens-page}
 
 The **Cloud Tokens** page displays the total number of Mendix Cloud Tokens that your company is entitled to, as well as the number of consumed and available Mendix Cloud Tokens.
 
