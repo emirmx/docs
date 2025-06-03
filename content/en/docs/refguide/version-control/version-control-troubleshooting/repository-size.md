@@ -41,7 +41,6 @@ In Studio Pro 11, apps are automatically converted to the MPRv2 storage format. 
 
 MPRv2 storage format prevents your repository from a rapid growth. Documents such as microflows, are not stored as part of the *.mpr* file but as separate files in the *mprcontents* directory. The *.mpr* file functions as an index file pointing to all the different files on disk.
 This means that when you change one document, for example, a page, only a small file representing that page will change on disk.
-{{% /alert %}}
 
 ### Decreasing App File Size
 
@@ -74,7 +73,7 @@ The tool is currently in public beta. The cleanup tool can be downloaded [here](
 {{% /alert %}}
 
 {{% alert color="info" %}}
-This tool is executed on a Mendix Git repository. If your Mendix app is still on SVN you first must [migrate to Git](/developerportal/general/migrate-to-git/).
+This tool is executed on a Mendix Git repository. If your Mendix app is still on SVN you will first have to migrate to Git. In case the Migrate button is not showing on the Team Server page after you open your app in [Apps](https://sprintr.home.mendix.com/), because of the size restrictions, you can reach out to your CSM to get your app safelisted.
 {{% /alert %}}
 
 ### Cleanup Process
@@ -211,7 +210,7 @@ Follow the decision tree in the image below to troubleshoot Git-related performa
 
 {{< figure src="/attachments/refguide/version-control/troubleshoot-version-control-issues/migration-advice-mx11.png" class="no-border" >}}
 
-\* In case your *.git* folder is  less than 2GB but you are having performance issues when cloning, please see the [Verify Full Clone Through Git CLI](/refguide/troubleshoot-team-server-issues/#verify-full-clone-through-git-cli]) section in *Troubleshooting Team Server Issues* and contact Support with the relevant information.
+\* In case your *.git* folder is  less than 2GB but you are having performance issues when cloning, please see the [Verify Full Clone Through Git CLI](/refguide/troubleshoot-team-server-issues/#verify-full-clone-through-git-cli) section in *Troubleshooting Team Server Issues* and contact Support with the relevant information.
 
 \** For more information on partial clone, see [Clone Type](/refguide/clone-type/).
 
