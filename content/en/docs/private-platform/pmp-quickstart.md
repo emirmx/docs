@@ -111,9 +111,9 @@ To install and configure the Mendix Operator, perform the following steps:
     1. Run one of the following commands, where `-n` indicates the namespace: 
     
         * `./mxpc-cli installer -n=<namespace name>` - To install the Operator in [Standard](/developerportal/deploy/standard-operator/) mode
-        * `./mxpc-cli installer --global -n=<namespace name>` - To install the Operator in [Global](/developerportal/deploy/global-operator/) mode
+        * `./mxpc-cli installer --global -n=<namespace name>` - To install the Operator in [Global](/developerportal/deploy/global-operator/) mode; you must use a Global namespace for this installation type.
 
-            In order to install and configure a cluster with a Global installation of the Operator and the Agent, you must use Operator version 2.14.0 or above. 
+            In order to install and configure a cluster with a Global installation of the Operator and the Agent, you must use Operator version 2.21.2 or above. 
     
     2. Click **Base Installation**, and then select the cluster type.
 
@@ -126,7 +126,7 @@ To install and configure the Mendix Operator, perform the following steps:
     1. Click **Configure Namespace**.
     2. Optional: If you want to run the Operator in Global mode, click **Global Operator**.
 
-        Ensure that you do not use a namespace that is intended to be a managed namespace, that is, a namespace where you plan to deploy a Mendix app. The Global Operator namespace must be separate from managed namespaces, otherwise you may encounter unexpected results.
+        You must use a different namespace here than the Global namespace that you selected in step 4 above. Ensure that you do not use a namespace that is intended to be a managed namespace, that is, a namespace where you plan to deploy a Mendix app. The Global Operator namespace must be separate from managed namespaces, otherwise you may encounter unexpected results.
 
     3. Optional: If you are not using the AWS Secret Manager, click **Database Plan** and fill out the required information.
         
@@ -216,7 +216,17 @@ Private Cloud License Manager is a required component of Private Mendix Platform
 
 Svix is required if you want to use webhooks. Install the Svix component by doing the following steps:
 
-1. Optional: If you are using a self-signed TLS certificate, build and deploy a private Svix server with custom self-signed TLS certification by performing the following steps:
+1. Optional: If you want to use AWS Secret Manager, configure it by performing the following steps:
+
+    1. Configure the secret in AWS Secret Manager by providing the following information:
+
+        * **POSTGRES DSN** - The key is `svix-db-dsn`; an example value may be similar to `postgresql://postgres:postgres@pgbouncer/postgres`.
+        * **Redis DSN** - This value is only required if you also use Redis for Svix. The key is `svix-redis-dsn`; an example value may be similar to `redis://redis:6379`.
+    
+    2. Configure an IAM role with the **secretsmanager:GetSecretValue** and **secretsmanager:DescribeSecret** permissions and allow it to assume the Service Account which the Svix pod will use to retrieve the secret info.
+
+2. Optional: If you are using a self-signed TLS certificate, build and deploy a private Svix server with custom self-signed TLS certification by performing the following steps:
+
     1. Prepare the following Docker file to build a private Svix server image:
 
         ```text
@@ -248,15 +258,21 @@ Svix is required if you want to use webhooks. Install the Svix component by doin
         docker push {customer-private-image-registry-url}/svix/svix-server:v1.25.tls
         ```
     
-2. Run the command `./installer component -n=<namespace name>`, where `-n` indicates a namespace. The namespace must be the same as the namespace that you plan to use for Private Mendix Platform.
-3. Select **Svix**, and then specify the following parameters:
+3. Run the command `./installer component -n=<namespace name>`, where `-n` indicates a namespace. The namespace must be the same as the namespace that you plan to use for Private Mendix Platform.
+4. Select **Svix**, and then specify the following parameters:
 
-    * **POSTGRES_DSN** - A Postgres DSN, for example, `postgresql://postgres:postgres@pgbouncer/postgres`.
     * **Image** - The Svix image path. The default path is `svix/svix-server:v1.25.0`. If you are using a self-signed TLS certificate, set this path to `{customer-private-image-registry-url}/svix/svix-server:v1.25.tls`.
-    * **Use Redis** - Optional. Select this check box if you want to use Redis for message cache and queues.
-    * **REDIS_DSN** - The Redis DSN, for example, `redis://redis:6379`. This field is only available if you select the **Use Redis** check box.
+    * **Use Secret Provider** - Optional. Select this option to use the AWS Secret Manager. Selecting this option enables the following additional fields:
 
-4. Click **Install Svix** or **Upgrade Svix**.
+        * **Secret Provider** - Set to **AWS** by default.
+        * **AWS-Role-ARN** - An AWS role ARN which can access the specified Secret Manager.
+        * **AWS SecretManager Name** - The AWS Secret Manager name where the sensitive data is stored.
+
+    * **POSTGRES_DSN** - Available only if you do not use the AWS Secret Manager. A Postgres DSN, for example, `postgresql://postgres:postgres@pgbouncer/postgres`.
+    * **Use Redis** - Optional. Select this check box if you want to use Redis for message cache and queues.
+    * **REDIS_DSN** - Available only if you do not use the AWS Secret Manager. The Redis DSN, for example, `redis://redis:6379`. This field is only available if you select the **Use Redis** check box.
+
+5. Click **Install Svix** or **Upgrade Svix**.
 
 {{< figure src="/attachments/private-platform/pmp-installer-update-svix.png" class="no-border" >}}
 
