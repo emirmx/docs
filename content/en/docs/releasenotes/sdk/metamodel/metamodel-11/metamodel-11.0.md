@@ -1,9 +1,10 @@
 ---
 title: "11.0"
-parent: "metamodel-11"
+url: /releasenotes/sdk/metamodel-11.0/
+weight: 78
 ---
 
-## 11.0.0
+## 11.0.0 Beta 2 
 
 ### Settings
 
@@ -17,24 +18,24 @@ parent: "metamodel-11"
 ### DatabaseConnector
 
 #### QueryParameter (Element)
-* We introduced the `tableMapping` property. Info: "Table mapping for a parameter to support REF CURSOR, custom types"
+* We introduced the `tableMapping` property. Info: "Table mapping for a parameter to support REF CURSOR, custom types."
 
 ### Rest
 
 #### RestOperation (Element)
-* We introduced the `queryParameters` property. Info: "Query parameters"
+* We introduced the `queryParameters` property. Info: "Query parameters."
 
 #### QueryParameter (Element)
-* We introduced this element. Info: "Query parameter name and value for REST operation"
+* We introduced this element. Info: "Query parameter name and value for REST operation."
 
 #### QueryParameterUsage (Element)
-* We introduced this element. Info: "Required query parameter usage"
+* We introduced this element. Info: "Required query parameter usage."
 
 #### RequiredQueryParameterUsage (Element)
-* We introduced this element. Info: "Required query parameter usage"
+* We introduced this element. Info: "Required query parameter usage."
 
 #### OptionalQueryParameterUsage (Element)
-* We introduced this element. Info: "Optional query parameter usage"
+* We introduced this element. Info: "Optional query parameter usage."
 
 #### JsonBody (Element)
 * We introduced this element. Info: "JSON version of the request body."
@@ -50,4 +51,3 @@ parent: "metamodel-11"
 * We deleted the `workflowOnStateChangeEvent` property. 
 * We deleted the `usertaskOnStateChangeEvent` property. 
 
-This page has been generated automatically.
