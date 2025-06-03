@@ -38,7 +38,7 @@ Native mobile apps are not run in the device browser like web-based Mendix apps.
 
 ### Air-Gapped Development
 
-Developing and building native mobile apps requires access to several online resources. Without whitelisting these resources, a native mobile build will fail.
+Developing and building native mobile apps requires access to several online resources. Without safelisting these resources, a native mobile build will fail.
 
 For development:
 
@@ -58,6 +58,10 @@ Building native mobile apps is not supported on the [Private Mendix Platform](/p
 {{% /alert %}}
 
 ## Getting the Make It Native App {#get-min-app}
+
+{{% alert color="info" %}}
+The Mendix 11 beta is not supported by a Make It Native app version. A compatible MIN version will be available for Mx11 beginning in Studio Pro 11.1.
+{{% /alert %}}
 
 The Make It Native app allows developers to preview, test, and debug native mobile apps in conjunction with Mendix Studio Pro. This app is available for both Android and iOS devices.
 

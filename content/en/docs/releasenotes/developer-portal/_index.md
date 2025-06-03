@@ -43,7 +43,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 #### New Features
 
-* We introduced a new beta feature for Mendix AI Assistance (Maia) in Epics: **Maia Create User Story**. It helps you to easily create stories. You can access it on the [Board](/developerportal/project-management/epics/board/) or the [Planning](/developerportal/project-management/epics/planning/) page under **Project Management**.
+* We introduced a new feature for Mendix AI Assistance (Maia) in Epics: **Maia Create User Story**. It helps you to easily create stories. You can access it on the [Board](/developerportal/project-management/epics/board/) or the [Planning](/developerportal/project-management/epics/planning/) page under **Project Management**.
 
 It is turned off by default. Scrum Master can switch it on in the Project Management settings.
 

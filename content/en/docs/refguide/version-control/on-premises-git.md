@@ -44,6 +44,8 @@ To use PAT (or another equivalent), you need to specify it in the **Password** f
 
 {{< figure src="/attachments/refguide/version-control/on-premises-git/sign-in-dialog.png" alt="Sign In dialog" class="no-border" >}}
 
+{{% alert color="info" %}}When using a PAT for the Mendix platform, fill in your email in the **Username** field. For more information on how to create a PAT for the Mendix platform, see the [Personal Access Tokens](/community-tools/mendix-profile/user-settings/#pat) section in *User Settings*.{{% /alert %}}
+
 Currently Mendix keeps PAT using operating system supported solutions:
 
 * For Windows, Mendix uses a credential locker mechanism, accessible to users by using Credential Manager.
@@ -116,7 +118,7 @@ Now that you have a Git app on your server, you can download it to another direc
 
     {{< figure src="/attachments/refguide/version-control/on-premises-git/sign-in-dialog.png" alt="Sign In dialog" class="no-border" >}}
 
-1. Enter username (it can be anything except empty) and use the PAT you saved earlier as the password. 
+1. Enter username (it can be anything except empty) and use PAT from your Git provider you created earlier as the password. 
 
 The app is downloaded and ready to be used with version control.
 
