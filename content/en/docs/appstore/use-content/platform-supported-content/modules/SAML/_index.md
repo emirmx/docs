@@ -416,7 +416,7 @@ In default configuration, the custom user entity is set as `Administration.Accou
 
 | IdP Attribute | Configured Entity Attribute |
 | --- | --- |
-| Use Name ID | Name |
+| NameID | Name |
 
 ### Custom User Provisioning{#custom-provisioning}
 
