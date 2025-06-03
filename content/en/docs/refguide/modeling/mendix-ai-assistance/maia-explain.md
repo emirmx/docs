@@ -12,7 +12,7 @@ description: "Describes the features in Maia Explain."
 To use Maia Explain, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-Maia Explain is an AI-powered tool that helps you easily understand a microflow or a nanoflow. It explains the general purpose of the logic and highlights specific technical details to help you understand the logic further.
+Maia Explain helps you easily understand a microflow or a nanoflow. It explains the general purpose of the logic and highlights specific technical details to help you understand the logic further.
 
 ## Using Maia Explain
 

@@ -145,7 +145,6 @@ To use this functionality, your app must be running to access the test data.
 The **Preview data** table tries to retrieve the data using your OQL query from the running app. This means if you have changed your domain model since you last started the app, you can run into errors when the OQL query uses attributes or entities that do not yet exist in the version of the app that is running.
 {{% /alert %}}
 
-
 ## Using a View Entity
 
 After creating a view entity in the domain model, it can be used in microflows and pages like any other entity. For more information, see [Use View Entities](/refguide/use-view-entities/).

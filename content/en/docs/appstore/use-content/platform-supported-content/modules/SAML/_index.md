@@ -241,7 +241,7 @@ After creating an application, you will receive an IdP metadata URL. This URL is
 
 The setup described above offers default configurations to start the SAML module. Any changes made to the configuration will require adjustments to other configuration details accordingly.
 
-##### Creating SP Manually at Azure
+##### Creating SP Manually at Entra ID
 
 To connect [Azure](https://portal.azure.com/#home) with SAML, refer to the below image. 
 
@@ -266,6 +266,8 @@ The following constants in the **IdP Configuration** > **USE_ME** folder help co
 2. IdPMetaDataURL
 
 If you provide values for the above constants, the SAML module will automatically generate the required/default additional configurations with the help of the `Default_CreateIDPConfiguration` microflow.
+
+`SP_Entity` is an optional constant in the SP Metadata that represents the SP Entity.
 
 #### Deploy the Application and Login with SSO{#deploy-application}
 
@@ -333,7 +335,7 @@ The below table shows you the different attributes and their values for quick re
 | **UseEncryption**  | Enable better security for app | TRUE |
 | **EncryptionMethod**  | This represents the Encryption Algorithm | SHA256 - RSA |
 | **EncryptionKeyLength**  | This constant represents the Encryption length | 2048 bits |
-| Active | After completion of Idp config it will make the Toggle Active | true |
+| Active | After completion of IdP config it will make the Toggle Active | true |
 
 Deploy the application and log in with the SSO. For more information, see the [Deploy the Application and Login with SSO](#deploy-application) section above.
 
@@ -406,15 +408,17 @@ The following settings apply to the IdP configuration:
 
 Initially, your app will not have any end-users. The SAML module provides so-called Just-In-Time (JIT) user provisioning. This means that an end-user will be created in your app when they log in for the first time. If you do not want JIT user provisioning, it is possible to disable it as described in the section [Custom User Provisioning at Runtime](#custom-provisioning-rt) below.
 
-By default, end-users are provisioned using the Account object in the Administration module. If you need to use a custom user entity, you can do this via [Custom User Provisioning at Deploy Time](#custom-provisioning-dep) or [Custom User Provisioning at Runtime](#custom-provisioning-rt).
+By default, end-users are provisioned using the Account object in the Administration module. If you need to use a custom user entity, you can do this via [Custom User Provisioning at Runtime](#custom-provisioning-rt).
 
 ### Default User Provisioning
 
-This applies to the following mapping:
+If the standard configuration meets your needs and your application does not have special user management requirements, you can use the default User Provisioning.
 
-| ID-token Provided by your IdP | Attribute of `Administration.Account` Object |
+In default configuration, the custom user entity is set as `Administration.Account`, the principal attribute is set as `Name`, and the default attribute mapping is provided.
+
+| IdP Attribute | Configured Entity Attribute |
 | --- | --- |
-| nameID | Name |
+| NameID | Name |
 
 ### Custom User Provisioning{#custom-provisioning}
 
@@ -422,31 +426,9 @@ If you create custom user entities as specializations of the `System.User` entit
 
 If you connect multiple IdPs to your Mendix app, you can use separate custom user entities for each IdP, each with its own attribute mapping.
 
-### Custom User Provisioning at Deploy Time{#custom-provisioning-dep}
+### Disable MxAdmin at Deploy Time
 
-{{% alert color="info" %}} This feature is available in version 4.0.0 and above {{% /alert %}}
-
-You can set up custom user provisioning by setting constants when you deploy your app. This has the following limitations compared to setting up provisioning using a microflow or changing the settings at runtime:
-
-* You will need to restart your app to apply changes to the constants
-* You cannot set custom mapping of IdP claims to attributes of your custom user entity
-
-You can set up custom user provisioning by setting the following constants. You can set default values when you build your app but can override these in the app's environment.
-
-| Constant | Use | Notes | Example |
-| --- | --- | --- | --- |
-| CustomUserEntity | a custom user entity | in the form `modulename.entityname` – a specialization of `System.User` | `Administration.Account` |
-| PrincipalAttribute | the attribute holding the unique identifier of an authenticated user | | `Name` |
-| IdPAttribute | the IdP claim which is the unique identifier of an authenticated user | *Default* | `NameId` |
-| AllowcreateUsers | allows to create users in the application | *Optional* | `True` |
-| Userrole | the role which will be assigned to newly created users | *Optional* | `User` |
-| UserType | assigns user type to the created user | *Optional* | `Internal` |
-| CustomUserProvisioning | a custom microflow to use for user provisioning | *Optional* – in the form `modulename.microflowname` – the microflow name must begin with the string `CustomUserProvisioning` | `Mymodule.CustomUserProvisioningEntra` |
-| DisableMxAdmin | deactivates Mx admin | *Optional* | `True` |
-
-{{% alert color="info" %}}
 You may have a requirement that users log in to your application only via SSO. However, when you deploy your app on the Mendix Cloud, the platform may still create an MxAdmin user with a local password. From version 2.1.0 of the UserCommons module, if the flag for the `DisableMxAdmin` constant is set to `True`, the MxAdmin user will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
-{{% /alert %}}
 
 ### Custom User Provisioning at Runtime{#custom-provisioning-rt}
 
