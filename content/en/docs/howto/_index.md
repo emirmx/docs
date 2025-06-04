@@ -11,12 +11,9 @@ cascade:
     - mendix_version: 11
     - sitemap:
         priority: 0.7
+    - banner: "Mendix 11 is currently in Beta. For more information about Beta releases and features, see <a href=\"/releasenotes/beta-features/\">Beta Releases</a>."
 #This document is mapped to the landing page, update the link there if renaming or moving the doc file.
 ---
-
-{{% alert color="warning" %}}
-Mendix 11 is currently in Beta. For more information about Beta releases and features, see [Beta Releases](/releasenotes/beta-features/).
-{{% /alert %}}
 
 ## Introduction
 
