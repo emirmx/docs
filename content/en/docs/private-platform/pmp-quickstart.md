@@ -209,6 +209,8 @@ Private Cloud License Manager is a required component of Private Mendix Platform
     * **Admin Password** – A new PCLM admin password. When the PCLM server is set up, it contains an *administrator* user with a default password. This password should be modified immediately.
     * **PCLM Operator User** – A new PCLM operator user.
     * **PCLM Operator Password** – A new PCLM operator password.
+    * **Global Operator Namespace** - If you are using Mendix Operator in Global mode, enter the Global namespace information. If not, leave this field blank. 
+    * **Customized cluster domain** - The default is `cluster.local`. Change the value if you are using a different internal cluster domain.
 
 4. Click **Install PCLM**.
 
@@ -273,8 +275,6 @@ Svix is required if you want to use webhooks. Install the Svix component by doin
     * **REDIS_DSN** - Available only if you do not use the AWS Secret Manager. The Redis DSN, for example, `redis://redis:6379`. This field is only available if you select the **Use Redis** check box.
 
 5. Click **Install Svix** or **Upgrade Svix**.
-
-{{< figure src="/attachments/private-platform/pmp-installer-update-svix.png" class="no-border" >}}
 
 {{% alert color="info" %}}
 The installer does not catch your pod's running status. In case of issues, verify that the pod is running correctly.
