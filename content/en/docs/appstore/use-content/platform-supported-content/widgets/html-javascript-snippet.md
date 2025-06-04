@@ -10,7 +10,7 @@ description: "Describes the configuration and usage of the TML/JavaScript Snippe
 The [HTML/JavaScript Snippet](https://marketplace.mendix.com/link/component/56/) widget is useful for adding a piece of HTML or JavaScript to a page (for example, to embed a YouTube or Flash object). In addition, it can be used to enhance styling by adding arbitrary HTML elements.
 
 {{% alert color="warning" %}}
-HTML/Javascript snippet is not supported in react client. Please check [migration guide](/refguide/mendix-client/react/#html--javascript-snippet) for more information.
+HTML and JavaScript snippets are not supported in Mendix's React client. For more information, see the [React migration guide](/refguide/mendix-client/react/#migration-guide) for more information.
 {{% /alert %}}
 
 ### Typical Use Cases
