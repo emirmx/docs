@@ -61,23 +61,29 @@ To learn more about how to write OQL code, read [OQL]( /refguide10/oql/). Contin
 
 #### Supported OQL Syntax Patterns
 
-An OQL query can begin with either a `SELECT` clause or a `FROM` clause, as both syntaxes are supported in the OQL editor. Regardless of which clause you choose to start with, you must follow the specific sequence of OQL clauses as shown in the image below:
+An OQL query can begin with either a `SELECT` clause or a `FROM` clause, as both syntaxes are supported in the OQL editor. Regardless of which clause you choose to start with, you must follow the specific sequence of OQL clauses as follows:
 
-{{< figure src="/attachments/refguide10/modeling/domain-model/view-entities/Syntax.png">}}
+| Classic | Alternative |
+| --- | --- |
+| SELECT | FROM<br />JOIN<br />WHERE<br />GROUP BY<br />HAVING |
+| FROM<br />JOIN<br />WHERE<br />GROUP BY<br />HAVING | SELECT |
+| ORDER BY<br />LIMIT<br />OFFSET | ORDER BY<br />LIMIT<br />OFFSET |
+
+{{< figure src="/attachments/refguide10/modeling/domain-model/view-entities/syntax.png">}}
 
 #### `ORDER BY` Is Only Needed with `LIMIT` or `OFFSET`
 
- Similar to database views, view entities represent data without enforcing any specific order. Therefore, using the `ORDER BY` clause in the view entity query to sort query results is neither possible nor necessary. Data retrieved from a view entity can be sorted on retrieval (like regular entities) using options like the [Sorting](/refguide10/retrieve/#sorting) feature in a Retrieve microflow activity.
+Similar to other types of Mendix entity, view entities represent data without enforcing any specific order. Therefore, using the `ORDER BY` clause in the view entity query to sort query results is neither possible nor necessary. Data retrieved from a view entity can be sorted on retrieval (like regular entities) using options like the [Sorting](/refguide10/retrieve/#sorting) feature in a Retrieve microflow activity.
 
- The `ORDER BY` clause is only required in a view entity when using `LIMIT` or `OFFSET` to create data subsets. For example, you might need this when retrieving:
+The `ORDER BY` clause is only required in a view entity when using `LIMIT` or `OFFSET` to create data subsets. For example, you might need to use `ORDER BY` when retrieving:
 
- * The top 5 customers by revenue
- * The 10 most recent transactions
- * The first 20 products by profit margin
+* The top 5 customers by revenue
+* The 10 most recent transactions
+* The first 20 products by profit margin
 
- For more information, see [ORDER BY Clause](/refguide10/oql-clauses/#order-by) in the OQL documentation.
+For more information, see [ORDER BY Clause](/refguide10/oql-clauses/#order-by) in *OQL Clauses*.
 
-#### `ID` as Associations
+#### `ID` as Association
 
 You can create [one-way navigable associations](/refguide10/association-properties/#one-way-navigable) from a view entity to its source entities. To establish this association, include the source entity's reserved `ID` in the `SELECT` clause. In this specific scenario, the alias is optional. If the alias is omitted, a default name following the association naming convention will be applied. However, you can always customize the association name by specifying an alias of the reserved `ID` in your code.
 
@@ -97,14 +103,18 @@ SELECT
 FROM Shop.Order AS o
 ```
 
-{{< figure src="/attachments/refguide10/modeling/domain-model/view-entities/association-alias.png">}}
+{{< figure src="/attachments/refguide10/modeling/domain-model/view-entities/association-alias.png" >}}
+
+### Maia for OQL {#maia-for-oql}
+
+You can ask Maia to suggest OQL queries for you. For more information, see [Maia for OQL](/refguide10/maia-for-oql/).
 
 ### Preview Data Table {#preview-data}
 
-In the **Preview data** table, You can view the resulting data set of your OQL query by clicking **Run Query**, which enables Studio Pro to retrieve the data from the database that is configured in your app settings. The database type of the active configuration is also listed in the header of the section.
+You can view the resulting data set of your OQL query by clicking **Run Query**, which enables Studio Pro to retrieve the data from the database that is configured in your app settings. The database type of the active configuration is also listed in the header of the section.
 
 {{% alert color="info" %}}
-To use this functionality, your app must be running to access the test data.
+You can only use this functionality when your app is running as it needs access the test data.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
@@ -115,10 +125,10 @@ The **Preview data** table tries to retrieve the data using your OQL query from 
 
 When the security level of the app is set to **Production**, the **Access rules** tab becomes available in the view entity properties.
 
-In case of view entities, assigning write access to an attribute allows the selected module role to edit the in-memory representation of the query result, but not the underlying source entity. The access level set on the view entity is the sole determining factor for whether a role can read or write to it. The access levels of underlying entities are not considered. This is crucial to prevent unintended exposure of data that is restricted at the source entity level.
+Assigning write access to an attribute of a view entity allows the selected module role to edit the in-memory representation of the query result, but not the underlying source entity. The access level set on the view entity is the sole determining factor for whether a role can read or write to it. The access levels of underlying entities are not considered. This is crucial to prevent unintended exposure of data that is restricted at the source entity level.
 
 {{% alert color="info" %}}
-Direct writing from the view entity to its source entities is not supported. You can set up a microflow to retrieve and update the source entities to achieve this.
+Direct writing from the view entity to its source entities is not supported. You can set up a microflow to retrieve and update the source entities to achieve this. See [Update Underlying Persistent Entities](/refguide10/view-entity-overview-pages/#update-underlying-persistent-entities) in *Creating Overview Pages* for more information.
 {{% /alert %}}
 
 ### Documentation {#documentation}
