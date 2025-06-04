@@ -144,7 +144,7 @@ You can ask Maia to suggest OQL queries for you. For more information, see [Maia
 You can view the resulting data set of your OQL query by clicking **Run Query**, which enables Studio Pro to retrieve the data from the database that is configured in your app settings. The database type of the active configuration is also listed in the header of the section.
 
 {{% alert color="info" %}}
-To use this functionality, your app must be running to access the test data.
+You can only use this functionality when your app is running as it needs access the test data.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
