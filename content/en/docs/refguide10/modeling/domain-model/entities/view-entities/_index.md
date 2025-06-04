@@ -88,7 +88,7 @@ SELECT
 FROM Shop.Order AS o
 ```
 
-{{< figure src="/attachments/refguide10/modeling/domain-model/view-entities/Association.png">}}
+{{< figure src="/attachments/refguide10/modeling/domain-model/view-entities/association.png">}}
 
 ```sql
 SELECT
@@ -97,7 +97,7 @@ SELECT
 FROM Shop.Order AS o
 ```
 
-{{< figure src="/attachments/refguide10/modeling/domain-model/view-entities/Association_alias.png">}}
+{{< figure src="/attachments/refguide10/modeling/domain-model/view-entities/association-alias.png">}}
 
 ### Preview Data Table {#preview-data}
 

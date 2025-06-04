@@ -133,7 +133,7 @@ SELECT
 FROM Shop.Order AS o
 ```
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/association_alias.png" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/association-alias.png" >}}
 
 ### Maia for OQL {#maia-for-oql}
 
