@@ -22,6 +22,10 @@ If you are using Mendix versions from 9.20 to 9.24, ensure you are using version
 If you are migrating to the OIDC module version 3.0.0 and above, include the [UserCommons](https://marketplace.mendix.com/link/component/223053) module as a dependency and configure the `OIDC.Startup` microflow as part of after-startup Microflow. In the module version 3.1.0 and above, `OIDC.Startup` has been renamed to `OIDC.ASU_OIDC_Startup`. For more details, see the [Upgrading the OIDC SSO Module](#upgrade) section below.
 {{% /alert %}}
 
+{{% alert color="warning" %}}
+OIDC SSO module 4.1.0 is the latest version and includes all new features. The module version 4.1.1 is a special release intended only for Mendix version 10.21.0. If you are using Mendix 10.21.1 or above, use the OIDC SSO module 4.1.0.
+{{% /alert %}}
+
 {{% alert color="info" %}}
 The OIDC SSO module works with both web/responsive applications and progressive web apps (PWA).
 {{% /alert %}}
@@ -128,7 +132,12 @@ It requires the following Marketplace modules to be included in your app:
 * [Nanoflow Commons](https://marketplace.mendix.com/link/component/109515) – see [Nanoflow Commons](/appstore/modules/nanoflow-commons/) documentation.
 * [Mx Model reflection](https://marketplace.mendix.com/link/component/69) – see [Mx Model Reflection](/appstore/modules/model-reflection/) documentation (deprecated from version 4.0.0 of the module).
 * [User Commons](https://marketplace.mendix.com/link/component/223053) (for version 3.0.0 and above)
-* [Events](https://marketplace.mendix.com/link/component/224259) – see [Events](/appstore/widgets/events/) documentation.
+
+    {{% alert color="warning" %}}
+If you are using Mendix version 10.21.1, use User Commons module version 2.1.0 or upgrade to version 2.1.2. Version 2.1.1 of the module is a special release intended solely for Mendix version 10.21.0.
+    {{% /alert %}}
+
+* [Events](https://marketplace.mendix.com/link/component/224259) – see [Events](/appstore/widgets/events/) documentation (for version 4.0.0 and above).
 
 Versions below 2.3.0 also require [Native Mobile Resources](https://marketplace.mendix.com/link/component/109513) – see [Native Mobile Resources](/appstore/modules/native-mobile-resources/) documentation.
 
