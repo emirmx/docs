@@ -29,7 +29,7 @@ Your app must use OQL version 2 to use view entities. You can change this settin
 
 Double-click a view entity to open its Properties dialog box. An example of a view entity's properties dialog box is represented in the image below:
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-dialog.png" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-dialog.png" class="no-border" >}}
 
 The view entities **Properties** dialog consists of the following sections:
 
@@ -67,7 +67,7 @@ You can add any local information about the view entity in this tab. This is als
 
 To open the OQL query tab, click **Show** in the view entity dialog:
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-dialog-show.png">}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-dialog-show.png" class="no-border" >}}
 
 Alternatively, you can right-click the view entity and click **Go to OQL query** from the context menu:
 
