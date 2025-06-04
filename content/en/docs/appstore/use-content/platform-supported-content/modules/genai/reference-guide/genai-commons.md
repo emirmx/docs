@@ -534,7 +534,7 @@ This microflow does not have a return value.
 
 ##### Tools: Add Knowledge Base {#add-knowledge-base-to-request}
 
-Adds a new Function to a [ToolCollection](#toolcollection) that is part of a Request. Use this microflow when you have knowledge bases in your application that may be called to retrieve the required information as part of a GenAI interaction. If you want the model to be aware of these microflows, you can use this operation to add them as functions to the request. If supported by the LLM connector, the chat completion operation calls the right knowledge base function based on the LLM response and continues the process until the assistant's final response is returned.
+Adds a function performing a Retrieve from a Knowledgebase to a [ToolCollection](#toolcollection) that is part of a Request. Use this microflow when you have knowledge bases in your application that may be called to retrieve the required information as part of a GenAI interaction. If you want the model to be aware of these microflows, you can use this operation to add them as functions to the request. If supported by the LLM connector, the chat completion operation calls the right knowledge base function based on the LLM response and continues the process until the assistant's final response is returned. Please note that Deployed Knowledgebases have a different specialization per provider, e.g. `Collection`for Mendix Cloud.
 
 ###### Input Parameters
 
