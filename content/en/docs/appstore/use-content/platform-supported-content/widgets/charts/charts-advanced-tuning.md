@@ -10,9 +10,9 @@ aliases:
 
 ## Introduction
 
-The individual Charts widgets can be fine-tuned with chart playground. The settings can affect the layout, configuration and data.
+The individual charts widgets can be fine-tuned using a chart playground. The settings can affect the layout, configuration, and data.
 
-This how-to teaches you how to do the following:  
+This guide teaches you how to do the following:  
 
 * Change font style (layout)
 * Change chart type (data series)
@@ -20,11 +20,11 @@ This how-to teaches you how to do the following:
 
 ## Prerequisites
 
-Before starting this how-to, make sure you have completed the following prerequisites:
+Before starting this guide, make sure you have completed the following prerequisites:
 
 * Installed the latest version of Mendix Studio Pro
 * Downloaded the latest [Chart Widget](/appstore/widgets/charts/) from the Mendix Marketplace
-* Set up a chart, see [How to Create a Chart](/howto/front-end/charts-basic-create/)
+* Set up a chart by using [How to Create a Chart](/howto/front-end/charts-basic-create/)
 
 ## Changing the Layout {#layout-changes}
 
@@ -38,10 +38,9 @@ To create a custom layout, follow these steps:
 1. Open the page with the charts widget.
 1. Open the charts widget's settings.
 1. Click the **General** tab.
-1. Set **Show playground slot** to **Yes**.
-1. See the widget **Playground slot** drop zone area is now visible in the chart.
-1. Find the **Chart playground** widget in the **Toolbox**.
-1. Drag and drop the **Chart playground** widget to the available **Playground slot**.
+1. Set **Show playground slot** to **Yes**. If you check, you can see the widget **Playground slot** drop zone area is now visible in the chart.
+1. Find the **Chart playground** widget in **Toolbox**.
+1. Drag and drop the **Chart playground** widget onto the available **Playground slot**.
 1. Run the app.
 1. In your browser, open the page with the chart.
 1. Click the button **Toggle Editor**.
