@@ -35,7 +35,7 @@ The **Settings** tab contains the details of a GenAI resource. It shows the foll
 When you are looking at the knowledge base resource settings, you will also see details of the associated embeddings resource and vice versa. To learn more about embeddings,  see the [Embedding vector](/appstore/modules/genai/rag/#embedding-vector) section of *RAG in a Mendix App*.
 
 #### Cross Region Inference (CRI)
-Cross Region Inference is the ability of the model to re-direct the request to another region to spread out the load per region. Enableing CRI doesn't change how the request is send, redirecting a request is done at the server itself where it can decide where to progress the request to get the fastest response. CRI is only available on a limited amount of models and only able to enable for new resources.
+Cross Region Inference is the ability of the model to re-direct the request to another region to spread out the load per region. Connecting to a cross-region inference profile doesn't change how the request is send, redirecting a request is done at the server itself where it can decide where to progress the request to get the fastest response. PLease see the following [link](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html) for additional information on how to increase throughput through CRI. CRI is only available on a limited amount of models and can be enabled for new resources only. There even are some cases where models are available via cross-region inference only.
 
 ### Team
 
