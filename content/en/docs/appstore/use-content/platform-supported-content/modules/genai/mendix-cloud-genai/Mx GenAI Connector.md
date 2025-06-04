@@ -41,6 +41,8 @@ Knowledge bases are often used for:
 1. [Retrieval Augmented Generation (RAG)](https://docs.mendix.com/appstore/modules/genai/rag/) retrieves relevant knowledge from the knowledge base, incorporates it into a prompt, and sends it to the model to generate a response.
 2. Semantic search enables advanced search capabilities by considering the semantic meaning of the text, going beyond exact and approximate matching. It allows the knowledge base to be searched for similar chunks effectively.
 
+Find this detailed [how-to](/appstore/modules/genai/how-to/howto-groundllm) if you are looking for a step-by-step guide on how to get your application data into a Mendix Cloud Knowledge Base. Please note that the Mendix Portal also offers ways to import data into your knowledge base, such as via file upload. You can find more documentation about this [here](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/). The following documentation focuses solely on adding data from an app through the connector.
+
 #### Embeddings
 
 Convert strings into vector embeddings for various purposes based on the relatedness of texts.
@@ -181,7 +183,6 @@ You do not need to manually add embeddings to a chunk, as the connector handles 
 The knowledge chunks are stored in an AWS OpenSearch Serverless database to ensure scalable and high-performance vector calculations—for example, retrieving the nearest neighbors of a given input. Inserted or modified chunks are only available for read operations (retrieval) in the knowledge base within 60-120 seconds. For more information, see [AWS documentation](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vector-search.html#serverless-vector-limitations).
 {{% /alert %}}
 
-Find this detailed [how-to](/appstore/modules/genai/how-to/howto-groundllm) if you are looking for a step-by-step guide on how to get your application data into a Mendix Cloud Knowledge Base. Please note that the Mendix Portal offers ways to import data into your knowledge base, such as via file upload. You can find more documentation about this (here)[/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/]. 
 
 #### Knowledge Base Insertion{#knowledge-base-insertion}
 
