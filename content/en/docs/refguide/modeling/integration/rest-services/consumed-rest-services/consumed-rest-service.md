@@ -150,6 +150,31 @@ You can add a Base URL as a parameter. To do this, follow these steps:
 
 Your base URL is now considered as a parameter. You can change its value in the [Send REST Request](/refguide/send-rest-request/) microflow activity. 
 
+#### Adding Query Parameters
+
+{{% alert color="info" %}}
+
+Query parameters are available for Studio Pro 11.0.0 GA and above. 
+
+{{% /alert %}}
+
+Query parameters can be configured in the **Parameters** tab in the **Query Parameters** field. You can define them directly in the URL or by adding them manually in the Query parameters grid.
+
+To append query params to the end of a URL, a question mark (?) is added followed immediately by a query parameter. To add multiple parameters, an ampersand (&) is added in between each, joining them to form a query string parameter. These can be created by any variation of object types or lengths such as strings, arrays, and numbers. The following is an example:
+
+{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/query-paramters.png" >}}
+
+You can also manually add new query parameters to the Query parameters grid directly. To do so, follow these steps:
+
+1. Open the Parameters tab and click Add query parameter.
+2. Name your query parameter and add a test value.
+
+In this case, the newly configured query parameter will be automatically added in the URL.
+
+By default when a new query parameter is added to the grid, it is configured as a Required query parameter. You can still change the query param to not required by clicking the dropdown and the change the value of the Required property to "No".
+
+If you would like to include or exclude a query parameter from the URL, you can simply check/uncheck the checkbox of the specific query parameter.  
+
 ### Adding Headers {#add-headers}
 
 You can add a header for any HTTP request you have specified in your document. To add a header, do the following:
