@@ -5,6 +5,14 @@ weight: 6
 description: "Native Template 14"
 ---
 
+## 14.0.1 {#1401}
+
+**Release date: June 5, 2025**
+
+### Fixes
+
+* We've resolved an issue where iOS applications built with Mendix 10.18 or later would fail when the React Client was enabled in runtime settings.
+
 ## 14.0.0 {#1400}
 
 **Release date: April 2, 2025**

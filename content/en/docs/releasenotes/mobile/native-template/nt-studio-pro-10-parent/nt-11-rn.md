@@ -5,6 +5,14 @@ weight: 50
 description: "Native Template 11 release notes."
 ---
 
+## 11.0.6 {#1005}
+
+**Release date: June 5, 2025**
+
+### Fixes
+
+* We've resolved an issue where iOS applications built with Mendix 10.18 or later would fail when the React Client was enabled in runtime settings.
+
 ## 11.0.5 {#1004}
 
 ### Fixes
