@@ -32,7 +32,7 @@ Before requesting a plan change, verify the following:
 * The app's tenant is self-service enabled. To activate this capability for your company, contact your Customer Success Manager.
 * You are the [Technical Contact](/support/#technical-contacts) for the app (only Technical Contacts can submit a plan change request).
 
-## Changing Plan {#changing-plan}
+## Changing a Plan {#changing-plan}
 
 {{% alert color="info" %}}
 This feature is only visible to the Technical Contact.
@@ -40,27 +40,30 @@ This feature is only visible to the Technical Contact.
 
 To change an environment's plan, follow these steps:
 
-1. Go to [Apps](https://sprintr.home.mendix.com/) and click **Environments** on your app. 
-2. On the **Environments** page, click the **Overview** tab to view your environments.
-3. Find your target environment.
-4. Use the **Expand** ({{< icon name="chevron-down" >}}) toggle to view detailed information about each environment, such as the environment resources and deployed package.
-5. In the environment resource section, click **Change Plan**. 
-6. In the **Plan Change Request** dialog that appears:
-    * On the left side, review your current plan details. This includes:
-        * Plan **Name**.
-        * Plan **Environment** (such as, staging or acceptance).
-        * **App** Name.
-        * Plan **Memory**.
-    * On the right side, create a new plan:
-        * To compare plans, click **Show Comparison**. This opens a comparison page where the Technical Contact can evaluate the current plan against other available options. The last selected comparison will populate the form. Alternatively, select a new plan directly from the **Plan** dropdown without comparing.
-        * Enter a reason for plan change.
+1. Go to [Apps](https://sprintr.home.mendix.com/)
+2. Click **Environments** on your app. 
+3. On the **Environments** page, click the **Overview** tab to view your environments.
+4. Find your target environment.
+5. Use the **Expand** ({{< icon name="chevron-down" >}}) toggle to view detailed information about each environment, such as the environment resources and deployed package.
+6. In the environment resource section, click **Change Plan**. 
+7. On the left side of the form that appears, review your current plan details. These include:
+    * **Name** – Plan name.
+    * **Environment** – Plan environment (such as, staging or acceptance).
+    * **App** – App name.
+    * **Memory** – Allocated plan's memory.
+8. On the right side of the form that appears, create a new plan:
+    * To compare plans, click **Show Comparison**. This opens a comparison page where the Technical Contact can evaluate the current plan against other available options. The last selected comparison will populate the form. Alternatively, select a new plan directly from the **Plan** dropdown without comparing.
+    * Enter a reason for plan change.
+9. Click **Submit Request** to submit your plan change request. 
+10. Submitted requests appear in the [Control Center](/control-center/requests/) for the [Mendix Admin](/control-center/company-settings/#mendix-admins) review. To view the list of approvers, click **Mendix Admin** at the bottom of the **New Plan** form.
 
-7. Click **Submit Request** to submit your plan change request. After submission, the request appears in the [Control Center](/control-center/entitlements/#plan-change-requests-tab) for the [Mendix Admin](/control-center/company-settings/#mendix-admins) review. To view the list of approvers, click **Mendix Admin** at the bottom of the **New Plan** form. As a Technical Contact, you can [track and manage](#manage-plan-requests) your plan change requests from the [Request Overview](/developerportal/deploy/environments/#request-overview) tab on your app's environment's page. 
+    {{% alert color="info" %}}Approval from a Mendix Admin only authorizes the plan change but does not immediately apply it. As a result, the environment will remain on its current plan until the new plan is [approved](/control-center/requests/#approving-a-request), [scheduled](#scheduling-a-plan-change) and [successfully applied](#after-schedule).
+    {{% /alert %}}
 
-The app environment will remain on its current plan until the request is approved by a Mendix Admin.
+11. [Track and manage](#manage-plan-requests) your plan change requests from the [Request Overview](/developerportal/deploy/environments/#request-overview) tab on your app's environment's page. 
 
 {{% alert color="info" %}}
-Changing plan consumes [Mendix Cloud Tokens](/control-center/entitlements/#cloud-tokens). Only one plan change request can exist per environment at a time. As a result, new requests cannot be submitted until the current one is completed.
+Changing plan consumes [Mendix Cloud Tokens](/control-center/cloud-tokens/#cloud-tokens). Only one plan change request can exist per environment at a time. As a result, new requests cannot be submitted for the same environment until the current one is completed.
 {{% /alert %}}
 
 ## Managing Plan Requests {#manage-plan-requests}
@@ -106,7 +109,7 @@ To schedule for later:
 * Select a preferred date.
 * The system will apply the change during the first available maintenance window after that date. For example, if you select May 22 and the next window is May 28, the change will occur on May 28.
 
-After scheduling, the status changes to **Scheduled**. You can still click **Execute Now** at any time before the scheduled window to apply the change immediately.
+After scheduling, the status changes to **Scheduled**. You can still click **Execute Now** at any time before the scheduled window to apply the change immediately. This overrides the scheduled maintenance window and executes the plan change right away.
 
 {{% alert color="warning" %}}
 Applications will be unavailable for up to 45 minutes while the plan change is being applied.
