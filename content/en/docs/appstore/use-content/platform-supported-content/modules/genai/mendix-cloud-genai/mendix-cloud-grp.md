@@ -69,23 +69,22 @@ Mendix Cloud GenAI Resource Packs are available in the following regions of Mend
 
 ## Understanding Third-Party Requirements
 
-Our AI services are powered by third-party technology from AWS Bedrock, Anthropic, and Cohere. To help you succeed with your implementation, here's what you need to do:
+Mendix AI services are powered by third-party technologies, including AWS Bedrock, Anthropic, and Cohere. To help you succeed with your implementation, here is what to do next:
 
-1. Review and Follow Service Terms
-   - AWS Bedrock - [Ground rules for infrastructure use](https://aws.amazon.com/service-terms/)
+1. Review and follow the Service Terms
+   * AWS Bedrock – [Ground rules for infrastructure usage](https://aws.amazon.com/service-terms/)
   
-3. Understand AI Usage Policies
-   - Anthropic - [Guidelines for responsible AI use](https://anthropic.com/legal)
-   - Cohere - [Responsible use requiremrents](https://cohere.com/responsible-use)
+2. Understand AI Usage Policies
+   * Anthropic – [Guidelines for responsible AI use](https://anthropic.com/legal)
+   * Cohere – [Responsible use requirements](https://cohere.com/responsible-use)
 
 {{% alert color="info" %}}
-Make sure to save these links for future reference, check the terms before starting development, and review updates to these terms when notified.
+Save these links for future reference. Always review the terms before starting development, and check for updates when notified.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Compliance with these terms is required to maintain service access.
+Compliance with these terms is mandatory to maintain access to the services.
 {{% /alert %}}
-
 
 ## FAQ
 
