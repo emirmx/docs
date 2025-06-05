@@ -11,7 +11,7 @@ Use our powerful APIs to build any JavaScript action you need.
 
 ## Client API
 
-The Client API is compatible with both the React and the Dojo client.
+The client API is compatible with both the React and the Dojo client and will replace the previous API which was based on the global mx object.
 
 * [Mendix 10 Client API](https://apidocs.rnd.mendix.com/10/client-mx-api/index.html)
 
@@ -23,9 +23,7 @@ The Mendix 10 Client API is available in Studio Pro 10.20.0 and above. For earli
 The Client API is not supported in widgets. For widget development, please use our [Pluggable Widgets API](/apidocs-mxsdk/apidocs/pluggable-widgets/)
 {{% /alert %}}
 
-## Legacy Client APIs {#legacy}
+## Legacy Client API {#legacy}
 
-* [Mendix 10 React Client API](https://apidocs.rnd.mendix.com/10/client-react/index.html)
-* [Mendix 10 Dojo Client API](https://apidocs.rnd.mendix.com/10/client/index.html)
-* [Mendix 9 Dojo Client API](https://apidocs.rnd.mendix.com/9/client/index.html)
-* [Mendix 8 Dojo Client API](https://apidocs.rnd.mendix.com/8/client/index.html)
+* [Mendix 10 Client API (React)](https://apidocs.rnd.mendix.com/10/client-react/index.html)
+* [Mendix 10 Client API (Dojo)](https://apidocs.rnd.mendix.com/10/client/index.html)
