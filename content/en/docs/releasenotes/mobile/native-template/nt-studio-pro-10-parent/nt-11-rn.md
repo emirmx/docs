@@ -11,7 +11,7 @@ description: "Native Template 11 release notes."
 
 ### Fixes
 
-* We've resolved an issue where iOS applications built with Mendix 10.18 or later would fail when the React Client was enabled in runtime settings.
+* We resolved an issue where iOS applications built with Mendix 10.18 or higher would fail when the React client was enabled in **Runtime** settings.
 
 ## 11.0.5 {#1004}
 
