@@ -27,6 +27,8 @@ Environment maintenance is a maintenance operation that will be (or has been) ca
 
 Whenever possible, environment maintenance is carried out within your preferred maintenance window.
 
+For more information about environment maintenance status, see [Maintenance Tab: Planned Maintenance](/developerportal/deploy/environments-details/#planned-maintenance).
+
 ### Mendix Cloud Maintenance
 
 Mendix Cloud must be updated regularly too. Platform infrastructure maintenance requires an update to an entire Mendix Cloud region at once, so it may occur outside of your preferred maintenance window. Platform maintenance is announced on the [Mendix Status](https://status.mendix.com/#) page.
