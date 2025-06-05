@@ -19,7 +19,7 @@ In this section, you will add a simple menu to your extension.
 
 The code below will:
 
-* create a menu item under the menu that was added in [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/)
+* create a menu item with the caption "My First Menu"
 * show a dialog when the menu is clicked
 
 Replace your `src/main/index.ts` file with the following:
@@ -82,7 +82,6 @@ The menu has the following properties:
 * `enabled` (default: `true`) – indicates that this menu item notifies the listener when clicked
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/menus/grouped_menus.png" >}}
-
 
 ## Creating a Menu with Submenus
 

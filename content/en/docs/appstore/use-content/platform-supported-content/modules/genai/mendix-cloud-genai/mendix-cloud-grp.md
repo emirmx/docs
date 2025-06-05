@@ -14,7 +14,7 @@ Mendix Cloud GenAI Resource Packs provide turn-key access to Generative AI techn
 
 * Knowledge Base Resource Packs provide an OpenSearch-based vector database to support Retrieval-Augmented Generation (RAG), Semantic Search, and other Generative AI use cases.
 
-Developers can use the Mendix Portal to manage their Mendix Cloud GenAI resources and seamlessly integrate model and knowledge base capabilities into their Mendix applications using the [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/). Optimized for high performance and low latency, Mendix Cloud GenAI Resource Packs provide the easiest and fastest way to deliver end-to-end Generative AI solutions on a single platform.
+Developers can use the Mendix Portal to manage their Mendix Cloud GenAI resources and seamlessly integrate model and knowledge base capabilities into their Mendix applications using the [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/). Optimized for high performance and low latency, Mendix Cloud GenAI Resource Packs provide the easiest and fastest way to deliver end-to-end Generative AI solutions with Mendix.
 
 ### Limited Availability
 
@@ -66,6 +66,25 @@ The [Mendix Cloud GenAI connector](/appstore/modules/genai/mx-cloud-genai/MxGenA
 Mendix Cloud GenAI Resource Packs are available in the following regions of Mendix Cloud:
 
 * Europe (Frankfurt) - eu-central-1
+
+## Understanding Third-Party Requirements
+
+Mendix AI services are powered by third-party technologies, including AWS Bedrock, Anthropic, and Cohere. To help you succeed with your implementation, here is what to do next:
+
+1. Review and follow the Service Terms
+   * AWS Bedrock – [Ground rules for infrastructure usage](https://aws.amazon.com/service-terms/)
+  
+2. Understand AI Usage Policies
+   * Anthropic – [Guidelines for responsible AI use](https://anthropic.com/legal)
+   * Cohere – [Responsible use requirements](https://docs.cohere.com/v2/docs/usage-policy)
+
+{{% alert color="info" %}}
+Save these links for future reference. Always review the terms before starting development, and check for updates when notified.
+{{% /alert %}}
+
+{{% alert color="warning" %}}
+Compliance with these terms is mandatory to maintain access to the services.
+{{% /alert %}}
 
 ## FAQ
 

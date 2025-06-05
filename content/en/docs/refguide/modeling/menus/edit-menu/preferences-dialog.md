@@ -90,6 +90,10 @@ This option controls the synchronization of managed dependencies. For more infor
 
 A directory where Gradle is located on the computer that you use to deploy the application. The correct directory is usually located automatically.
 
+#### Extra Arguments
+
+This option can be used to add extra arguments to the Gradle process.
+
 #### Use Custom Repositories
 
 Enabling this option allows you to specify which repositories should be used by Gradle. For more information, see the [Custom Repositories](/refguide/managed-dependencies/#custom-repos) section in *Managed Dependencies*.
@@ -229,7 +233,7 @@ Hardware and driver issues may cause performance problems when running Studio Pr
 
 This feature is currently in beta.
 
-This option allows you to change the user interface language you work in while using Studio Pro. At this time, English, Japanese, Chinese, and Korean are supported. You must restart Studio Pro in order to use this feature.
+This option allows you to change the user interface language you work in while using Studio Pro. At this time, English, Japanese, Chinese, Korean, and Brazilian Portuguese are supported. You must restart Studio Pro in order to use this feature.
 
 ### Editor Tabs Closing Policy {#closing-policy}
 
@@ -267,16 +271,6 @@ When the **Do not show antivirus exclusion notifications** setting is enabled, S
 
 ## New Features Tab {#new-features}
 
-### Access Rules Editor
-
-This option allows you to disable the new editor in the *Access rules* tab of the entity properties dialog and return to the version which was available in Studio Pro 10 or enable the new editor if it has been disabled.
-
-{{% alert color="warning" %}}
-This option will be removed before the GA version of Mendix 11.0.
-{{% /alert %}}
-
-For more information, see [Defining Access Rules Using the New Editor](/refguide10/access-rules/#new-editor) section of the Mendix 10 documentation *Access Rules*.
-
 ### App Explorer
 
 Select this option to use the modernized version of the App Explorer. You must restart Studio Pro to use this feature.
@@ -302,6 +296,10 @@ Enable this option to help you generate entities and associations for your domai
 #### Enable Maia for Pages
 
 Enable this option to help you generate pages by adding and configuring widgets based on text input and an optional image. For more information on how to use this feature, see [Maia for Pages](/refguide/maia-for-pages/).
+
+#### Enable Maia for Workflows
+
+Enable this option to help you generate workflows by adding and configuring activities. For more information on how to use this feature, see [Maia for Workflows](/refguide/maia-for-workflows/).
 
 #### Enable Maia for OQL
 

@@ -29,7 +29,7 @@ Mendix Studio Pro needs to be installed on your computer before you can start bu
 
 1. Open the downloaded Mendix Studio Pro executable. It is named: *Mendix-11.X.X-Setup.exe*. Then, click **Next**:
 
-    {{< figure src="/attachments/refguide/installation/install/setup-wizard.png"  class="no-border" >}}
+    {{< figure src="/attachments/refguide/installation/install/setup-wizard.png" width="500" >}}
 
 2. Select **I accept the terms in the License Agreement** and click **Next**.
 

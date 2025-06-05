@@ -29,7 +29,7 @@ Whenever possible, environment maintenance is carried out within your preferred 
 
 ### Mendix Cloud Maintenance
 
-Mendix Cloud must be updated regularly too. Platform infrastructure maintenance requires an update to an entire Mendix Cloud region at once, so it may occur outside of your preferred maintenance window.
+Mendix Cloud must be updated regularly too. Platform infrastructure maintenance requires an update to an entire Mendix Cloud region at once, so it may occur outside of your preferred maintenance window. Platform maintenance is announced on the [Mendix Platform Status](https://status.mendix.com/#) page.
 
 This infrastructure maintenance uses rolling updates, so multi-instance applications continue to be available. However, applications with a single instance see brief downtime (~1-2 minutes) when their instance is restarted.
 

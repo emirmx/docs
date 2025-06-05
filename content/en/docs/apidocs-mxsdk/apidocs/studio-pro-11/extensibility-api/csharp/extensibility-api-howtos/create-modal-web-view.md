@@ -88,6 +88,7 @@ To open static pages, you need to source them from either a file system path or 
 namespace MyCompany.MyProject.MendixExtension;
 
 [Export(typeof(WebServerExtension))]
+[method: ImportingConstructor]
 class ContentServer : WebServerExtension
 {
     private const string Content = """

@@ -14,7 +14,7 @@ aliases:
 
 ## Introduction
 
-The Mendix Marketplace is driven by contributions from members of the community who share the connectors, modules, and apps they have built with the Mendix Platform. This how-to shows how to add and update Marketplace content.
+The Mendix Marketplace is driven by contributions from community members who share the connectors, modules, and apps they have built with the Mendix Platform.
 
 ## Prerequisites
 
@@ -35,15 +35,15 @@ To get started, click **Add Content** in the left pane of the Marketplace home s
 
 ### General {#general}
 
-On the **General** page,  you need to provide some details about your component. 
+Provide key details about your component on the **General** page. 
 
 #### Describing Your Content
 
 Follow these steps to describe your content:
 
-1. Select a **Content type** for your component. 
+1. Select a **Content Type** for your component. 
 
-    {{% alert color="warning" %}}You can only set the content type in the initial version of your content. You cannot change this setting after the initial version is published.{{% /alert %}}
+    {{% alert color="warning" %}}You can only set the content type when creating the initial version of your content. You cannot change this setting after it is published.{{% /alert %}}
 
 2. Select the **Visibility** of your component:
 
@@ -52,7 +52,6 @@ Follow these steps to describe your content:
     * <a id="private"></a>**Private Marketplace (your company only)** – Your content will receive the **Private** label, and be available only via your [Company Content](/appstore/home-page/#company-content) page.
         * Selected private content of a content group can also be made available to [content group guests](/appstore/home-page/#guests) for download.
         * This content is not reviewed by Mendix.
-
     {{% alert color="warning" %}}You can only set the visibility in the initial version of your content. You cannot change this setting by updating the Marketplace component later.{{% /alert %}}
     
 3. Add between one and three categories in the **Category** field. A category groups together similar components or services that share common characteristics, functions, or purposes. Categories make it easier for Marketplace users to find what they are looking for.
@@ -103,7 +102,6 @@ A lead is a potential sales contact that expresses interest in your product or s
 
 * Solutions
 * Industry templates
-* Services
 
 When prospective customers are interested in your product, they can leave their contact information using the Marketplace product listing. This is done by clicking a call-to-action button and filling in a form.
 
@@ -119,9 +117,9 @@ In the **How would you like to receive information on new leads?** field, you mu
 
 #### Adding an Icon
 
-To finish up configuring this page, click **Upload** to upload an icon for your component.
+To finish the configuration on the **General** page, click **Upload Image** to upload a cover image for your component.
 
-{{< figure src="/attachments/appstore/submit-content/general.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/submit-content/general.png" >}}
 
 ### Package {#package}
 
@@ -129,7 +127,7 @@ To finish up configuring this page, click **Upload** to upload an icon for your 
 If you are using **Solutions**, you will not see the option to select your content source. If you are using **Industry Template**, selecting a content source is optional.
 {{% /alert %}}
 
-1. Sselect one of the options for uploading the source file: 
+1. Select one of the options for uploading the source file: 
 
 * **Manual upload** – Follow the steps in the dialog box for uploading the package source file.    
   When you are finished, click **Save**.
@@ -160,33 +158,21 @@ On the **Enable** page, in the **Documentation** section, you can enter details 
     * The **Installation** steps and details
     * The **Configuration** steps and details
     * Any **Known bugs**
-    * Any **Frequently asked questions**
+    * Any **Frequently Asked Questions**
 
 The editor comes with a set of basic formatting tools, such as bold, bullet lists, and URL links.
 
 <a id="screenshot"></a>2. Click **Upload Screenshot** to upload images of the component from your computer. This is required for submitting a new component, and is especially important for configuration steps:
 
-{{< figure src="/attachments/appstore/submit-content/enable.png"  class="no-border" >}}
+{{< figure src="/attachments/appstore/submit-content/enable.png"  >}}
 
 3. (Optional) Add a **YouTube URL** and a **Demo URL**.
-
-### Capabilities {#capabilities}
-
-On the **Capabilities** page, you can provide the following details about an industry template:
-
-* A category recommendation in the **Industry Cloud** section
-* A **Banner** that will be displayed on your content page
-* One or more key features to leverage in the **Solution Capabilities** section (for each capability, enter a **Name** and **Description**)
-* A **Use Case** relevant to the content (enter a **Header** and **CTA URL**)
-* **External Links** relevant to the content
-
-{{< figure src="/attachments/appstore/submit-content/capabilities.png"  class="no-border" >}}
 
 ### Publish {#publish}
 
 Finally, on the **Publish** page, you can review all the details you entered so far, and edit them if necessary before publishing.
 
-{{< figure src="/attachments/appstore/submit-content/publish.png"   width="600"  class="no-border" >}}
+{{< figure src="/attachments/appstore/submit-content/publish.png"   width="600" >}}
 
 After you click **Publish Content**, your draft will be reviewed by Mendix before it is visible in the Marketplace. 
 
@@ -210,13 +196,15 @@ Mendix expects the following updates for components in the Platform, Community, 
 To update content that has already been published, follow these steps:
 
 1. Find the component in one of the following sections:
+
     * **My Content**
     * **Company Content**
-    * **Content Groups** (note that if an existing Marketplace component is assigned to a [content group](/appstore/home-page/#content-groups) as specific content group [content](/appstore/home-page/#group-content), you can only update the component if you are a member of that group)
+    * **Content Group**
+    {{% alert color="info" %}}If an existing Marketplace component is assigned to a [content group](/appstore/home-page/#content-groups) as specific content group [content](/appstore/home-page/#group-content), you can only update the component if you are a member of that group.{{% /alert %}}
 
 2. Click the menu item next to the component you want to update and select **Manage Draft**.
 
-    {{% alert color="info" %}}Only one draft version of a component can exist at a time, so when one draft version is in progress, another draft cannot be started. If there is a draft version in progress, click **View draft** on the page where you manage the component in order to see the draft.{{% /alert %}}
+    {{% alert color="info" %}}Only one draft version of a component can exist at a time, so when one draft version is in progress, another draft cannot be started. If there is a draft version in progress, click **Edit Draft** on the page where you manage the component in order to see the draft.{{% /alert %}}
 
 3. You can edit all component details, as described in the [Adding New Marketplace Content](#adding) section above.
 4. In the **Version** section of the **Package** page, update the **Major**, **Minor**, and **Patch** numbers so that the component is saved as a new version:
@@ -225,4 +213,4 @@ To update content that has already been published, follow these steps:
     * **Minor update** – new features that do not break existing usage.
     * **Patch** – a small change that fixes bugs or security issues.
 
-5. On the **Publish** page, you can review all the details of your component you entered so far and edit as necessary (via the **Edit Section** button) before clicking **Publish Content**.
+5. On the **Publish** page, you can review all the details of your component entered so far and edit as necessary using the **Edit** button in each section before clicking **Publish Content**.

@@ -44,3 +44,25 @@ For serving content to the web view and communicating both ways with it, see [Bu
 {{% alert color="warning" %}}
 {{% snippet file="/static/_includes/apidocs-mxsdk/warning-wwwroot.md" %}}
 {{% /alert %}}
+
+## Troubleshooting
+
+### Web Content Fails to Load
+
+If your pane or tab was open when Studio Pro was closed, your web content might fail to load when you reopen Studio Pro. This is because the `WebServerBaseUrl` property is null due to timing issues in the startup sequence.
+
+To resolve this, listen to `OnWebServerBaseUrlChanged` in your `WebServerExtension`. This will get the URL when it gets re-initialized.
+
+You can use the following code:
+
+```csharp
+[Export(typeof(WebServerExtension))]
+class ContentServer : WebServerExtension
+{
+    [ImportingConstructor]
+    public ContentServer(INotificationPopupService notificationPopupService)
+    {
+        OnWebServerBaseUrlChanged += () =>  notificationPopupService.ShowNotification("Web Server Base Url Initialized", WebServerBaseUrl.ToString(), null, 2);
+    }
+}
+```
