@@ -76,7 +76,7 @@ Mendix AI services are powered by third-party technologies, including AWS Bedroc
   
 2. Understand AI Usage Policies
    * Anthropic – [Guidelines for responsible AI use](https://anthropic.com/legal)
-   * Cohere – [Responsible use requirements](https://cohere.com/responsible-use)
+   * Cohere – [Responsible use requirements](https://docs.cohere.com/v2/docs/usage-policy)
 
 {{% alert color="info" %}}
 Save these links for future reference. Always review the terms before starting development, and check for updates when notified.
