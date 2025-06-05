@@ -14,7 +14,7 @@ aliases:
 To use Maia for Domain Model, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-Maia for Domain Model is an AI-powered tool that you can use for generating new [domain model](/refguide/domain-model/) as well as explaining and providing suggestions for existing domain models. It has some limitations. For more information, see the [Limitations](#limitation) section below.
+Maia for Domain Model helps you generate new [domain model](/refguide/domain-model/), and explain and provide suggestions for existing domain models. It has some limitations. For more information, see the [Limitations](#limitation) section below.
 
 ## Using Maia for Domain Model
 

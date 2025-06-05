@@ -1,13 +1,15 @@
 ---
 title: "Mendix React Client"
-url: /refguide/mendix-client/react
+url: /refguide/mendix-client/react/
 description: "Describes the React version of the Mendix Client."
 weight: 10
 ---
 
 ## Introduction
 
-There is an alternative version of the Mendix Client written in React. You can enable this React client in [App Settings](/refguide/app-settings/#react-client).
+The Mendix Client has transitioned to a modern implementation using React. As of Mendix 11, the React Client is the default for all new applications created in Studio Pro, and the legacy Dojo client has been deprecated.
+
+You can enable the React client for existing applications in [App Settings](/refguide/app-settings/#react-client).
 
 The React client replaces [Dojo](https://dojotoolkit.org/) with [React](https://react.dev/) for the view layer. This change allows for improved performance, enables incremental loading, and future-proofs your application. For more information on these three aspects, see the sections below:
 
@@ -79,7 +81,7 @@ The migration mode will show deprecation warnings instead of errors for all inco
 
 Read further for guides that allow you convert your app so it is ready for the React client.
 
-### Custom `index.html`{#index}
+### Custom index.html{#index}
 
 The structure of the `index.html` file is different for React and Dojo clients. To make sure your application will work correctly, follow these steps:
 
@@ -105,7 +107,7 @@ The [Dynamic Image](/refguide/image-viewer/) and [Static Image](/refguide/image/
 
 To automatically convert a dynamic image or a static image, right-click the widget (or the error message) and select **Convert to Image**.
 
-#### Reference Selectors & Drop-down{#reference-selectors-drop-down}
+#### Reference Selectors & Drop-Down{#reference-selectors-drop-down}
 
 The reference selector widgets ([Reference Selector](/refguide/reference-selector/), [Reference Set Selector](/refguide/reference-set-selector/), and [Input Reference Set Selector](/refguide/input-reference-set-selector/)) and the [Drop-down](/refguide/drop-down/) widget are not supported in the React client. To leverage React, replace unsupported widgets with the combo box widget; it is documented [here](/appstore/widgets/combobox/), and downloadable [here](https://marketplace.mendix.com/link/component/219304). 
 
@@ -114,6 +116,13 @@ To automatically convert a reference selector widget or a drop-down to a combo b
 {{% alert color="warning" %}}
 Because the reference set selector widget is technically a grid, while combo box is a drop-down, only the applicable configuration options will be transferred to the resulting combo box during conversion.
 {{% /alert %}}
+
+#### HTML / JavaScript Snippet
+
+The [HTML/JavaScript snippet](/appstore/widgets/html-javascript-snippet/) widget is not supported in the React Client. To leverage React, this widget can be replaced using [HTML Element](/appstore/widgets/htmlelement/) widget or [JavaScript actions](/refguide/javascript-actions/):
+
+*  **Content Type** HTML — The HTML Element can be downloaded [here](https://marketplace.mendix.com/link/component/204843).
+*  **Content Type** JavaScript — Write the code inside the supported JavaScript actions. If the user needs to execute the code in a certain way, calling the JavaScript action via nanoflow that triggers by [Events](/appstore/widgets/events/) widget is recommended.
 
 #### Data Grid{#data-grid}
 

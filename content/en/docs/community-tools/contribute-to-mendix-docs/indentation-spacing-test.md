@@ -2,6 +2,7 @@
 title: "Indentation and Spacing Test"
 url: /developerportal/community-tools/indentation-spacing-test/
 draft: true
+banner: "Banner with a link to <a href=\"#spacing\">spacing</a>"
 description: "Various test cases for rendering of indents and spaces. Use this page to test how spacing and indents will render with various elements and shortcodes. Linting has been disabled for this file."
 ---
 

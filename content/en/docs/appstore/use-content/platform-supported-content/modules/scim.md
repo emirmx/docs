@@ -118,9 +118,13 @@ It is necessary to include the following Marketplace modules in your app:
 
 * [Community Commons](https://marketplace.mendix.com/link/component/170) – see [Community Commons](/appstore/modules/community-commons-function-library/) documentation
 
-* [User Commons](https://marketplace.mendix.com/link/component/223053) module - install and configure the User Commons module to support user provisioning and deactivation of user
+* [Mx Model Reflection](https://marketplace.mendix.com/link/component/69) module – install and configure the [Mx Model Reflection](/appstore/modules/model-reflection/) module
 
-* [Mx Model Reflection](https://marketplace.mendix.com/link/component/69) module - install and configure the [Mx Model Reflection](/appstore/modules/model-reflection/) module
+* [User Commons](https://marketplace.mendix.com/link/component/223053) module – install and configure the User Commons module to support user provisioning and deactivation of user
+
+    {{% alert color="warning" %}}
+If you are using Mendix version 10.21.1, use User Commons module version 2.1.0 or upgrade to version 2.1.2. Version 2.1.1 of the module is a special release intended solely for Mendix version 10.21.0.
+    {{% /alert %}}
 
 ## Upgrading the SCIM Module
 
@@ -245,7 +249,7 @@ In the **Provisioning** tab of the SCIM server configuration, you need to config
 * **Allow the module to create users**: this enables the module to create users based on user provisioning and attribute mapping configurations.
     * By default, the value is set to ***Yes***.
 * **Default Userrole** – the role assigned to newly created users and remains unchanged even when the user's details are updated. You can select one default user role. To assign additional roles, use the Access Token Parsing Microflow. If the Access Token Processing Microflow is selected, OIDC verifies the updated default role configuration and applies any changes to the user's role. Note that, bulk updates for existing users are not automated when the default role configuration is changed.
-* **User Type**: this allows you to configure end-users of your application as internal or external. It is created when the user is created and updated whenever user details, such as name, email, or active status, are changed. For more information, see [Populate User Types](/howto/monitoring-troubleshooting/populate-user-type/).
+* **User Type**: this allows you to configure end-users of your application as internal or external. It is created when the user is created and updated whenever user details, such as name, email, or active status, are changed. For more information, see [Populate User Types](/developerportal/deploy/populate-user-type/).
     * By default, the value is set to ***Internal***.
 * **Attribute Mapping**: under **Attribute Mapping**, select an **IdP Attribute** (claim) for each piece of information you want to add to your custom user entity. Specify the **Configured Entity Attribute** where you want to store the information.
 

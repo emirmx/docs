@@ -108,11 +108,14 @@ To install and configure the Mendix Operator, perform the following steps:
 
 4. Perform the base installation by doing the following steps:
 
-    1. Run the following command, where `-n` indicates the namespace: `./installer operator configure -n=<namespace name>`
-    2. Click **Base Installation**, and then set the following settings:
+    1. Run one of the following commands, where `-n` indicates the namespace: 
+    
+        * `./mxpc-cli installer -n=<namespace name>` - To install the Operator in [Standard](/developerportal/deploy/standard-operator/) mode
+        * `./mxpc-cli installer --global -n=<namespace name>` - To install the Operator in [Global](/developerportal/deploy/global-operator/) mode
 
-        * **Cluster Mode** – Select **standalone**.
-        * **Cluster Type** – Select **openshift** or **generic**.
+            In order to install and configure a cluster with a Global installation of the Operator and the Agent, you must use Operator version 2.14.0 or above. 
+    
+    2. Click **Base Installation**, and then select the cluster type.
 
         {{< figure src="/attachments/private-platform/pmp-install1.png" class="no-border" >}}
 
@@ -121,22 +124,26 @@ To install and configure the Mendix Operator, perform the following steps:
 5. Configure the namespace by doing the following steps:
 
     1. Click **Configure Namespace**.
-    2. Optional: If you are not using the AWS Secret Manager, click **Database Plan** and fill out the required information.
+    2. Optional: If you want to run the Operator in Global mode, click **Global Operator**.
+
+        Ensure that you do not use a namespace that is intended to be a managed namespace, that is, a namespace where you plan to deploy a Mendix app. The Global Operator namespace must be separate from managed namespaces, otherwise you may encounter unexpected results.
+
+    3. Optional: If you are not using the AWS Secret Manager, click **Database Plan** and fill out the required information.
         
         {{< figure src="/attachments/private-platform/pmp-install2.png" class="no-border" >}}
 
-    3. Optional: If you are not using the AWS Secret Manager, click **Storage Plan** and fill out the required information.
-    4. Click **Ingress** and fill out the required information.
+    4. Optional: If you are not using the AWS Secret Manager, click **Storage Plan** and fill out the required information.
+    5. Click **Ingress** and fill out the required information.
         
         {{< figure src="/attachments/private-platform/pmp-install3.png" class="no-border" >}}
     
-    5. Click **Registry** and fill out the required information.
-    6. Click **Review and Apply** > **Evaluate Configuration**.
-    7. Make any required changes or click **Apply Configuration**.
+    6. Click **Registry** and fill out the required information.
+    7. Click **Review and Apply** > **Evaluate Configuration**.
+    8. Make any required changes or click **Apply Configuration**.
         
         {{< figure src="/attachments/private-platform/pmp-install4.png" class="no-border" >}}
     
-    8. Click **Exit Installer** > **OK**.
+    9. Click **Exit Installer** > **OK**.
     
         {{< figure src="/attachments/private-platform/pmp-install5.png" class="no-border" >}}
 
