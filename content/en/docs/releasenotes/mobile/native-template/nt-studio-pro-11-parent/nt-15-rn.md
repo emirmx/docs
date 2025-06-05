@@ -6,7 +6,7 @@ description: "Native Template 15"
 ---
 
 ## 15.0.1 {#1501}
-**Release date: May 30, 2025**
+**Release date: ____**
 
 ### Improvements
 - We improved update process from an older version of Studio Pro to the Latest version(s).
