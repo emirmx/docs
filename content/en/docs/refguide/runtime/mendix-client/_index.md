@@ -122,7 +122,7 @@ Firstly, during deployment, all microflows “reachable” from the client are a
 This analysis is done based on the microflow parameters and their usages throughout the microflow. Any time an association is used in the microflow, the association is marked, and will also be sent in the request if needed. In some cases, such as Java actions, the analysis is not done as it would be too performance heavy. In that case, all objects associated with the microflow parameters will be sent.
 
 {{% alert color="warning" %}}
-When an object is retrieved in a microflow using a Java Action or a microflow that was called dynamically in a Java Action, it is not part of the analyzed state and changes made in the client are not applied. This mainly occurs when objects associated with the current user or session object are updated in the client and are subsequently retrieved from the database in a Java Action. Make sure to commit changes to these kinds of objects before calling the microflow to prevent issues occurring.
+When an object is retrieved in a Java Action or in a microflow that was called dynamically in a Java Action, it is not part of the analyzed state and changes made in the client are not applied. This mainly occurs when objects associated with the current user or session object are updated in the client and are subsequently retrieved from the database in a Java Action. Commit changes to these kinds of objects before calling the Java Action when issue arise from this.
 {{% /alert %}}
 
 Secondly, for other (non-microflow) actions such as committing or deleting objects, a simpler analysis is performed on the client side to determine which associations should be included in the request.
