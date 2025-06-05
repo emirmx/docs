@@ -200,11 +200,13 @@ Rule | Name | Pattern | Rewrite URL
 10 | p | `^(p/)(.*)` | `http://localhost:8080/{R:1}{R:2}`
 11 | manifest | `^(manifest.webmanifest)(.*)` | `http://localhost:8080/{R:1}{R:2}`
 
-Follow the instructions below and replace *[Name]* with the name of the rule in the table above, *[Pattern]* with the regular expression pattern, and *[Rewrite URL]* with the Rewrite URL.
-
 {{% alert color="info" %}}
-Some patterns contain a trailing slash, `/`, when they need to point to an exact path (for example, `/ws-doc/mydoc/1234`).
+Some patterns include a trailing slash, `/`, when they need to match an exact path. For example, the pattern `ws-doc/` will match `/ws-doc/mydoc/1234`, but it will not match similar prefixes like `/ws-documentation/`.
+
+Additionally, while the example path (`/ws-doc/mydoc/1234`) includes a leading slash because browser URLs always start with one, IIS rewrite patterns do not include this slash. This is because the web server removes the leading slash before processing the URL path for matching.
 {{% /alert %}}
+
+Follow the instructions below and replace *[Name]* with the name of the rule in the table above, *[Pattern]* with the regular expression pattern, and *[Rewrite URL]* with the Rewrite URL.
 
 1. Open the IIS Manager and navigate to the website you want to manage.
 2. In the **Features View**, double-click **URL Rewrite**.
