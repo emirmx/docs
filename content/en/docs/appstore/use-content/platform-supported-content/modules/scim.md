@@ -118,9 +118,13 @@ It is necessary to include the following Marketplace modules in your app:
 
 * [Community Commons](https://marketplace.mendix.com/link/component/170) – see [Community Commons](/appstore/modules/community-commons-function-library/) documentation
 
-* [User Commons](https://marketplace.mendix.com/link/component/223053) module - install and configure the User Commons module to support user provisioning and deactivation of user
+* [Mx Model Reflection](https://marketplace.mendix.com/link/component/69) module – install and configure the [Mx Model Reflection](/appstore/modules/model-reflection/) module
 
-* [Mx Model Reflection](https://marketplace.mendix.com/link/component/69) module - install and configure the [Mx Model Reflection](/appstore/modules/model-reflection/) module
+* [User Commons](https://marketplace.mendix.com/link/component/223053) module – install and configure the User Commons module to support user provisioning and deactivation of user
+
+    {{% alert color="warning" %}}
+If you are using Mendix version 10.21.1, use User Commons module version 2.1.0 or upgrade to version 2.1.2. Version 2.1.1 of the module is a special release intended solely for Mendix version 10.21.0.
+    {{% /alert %}}
 
 ## Upgrading the SCIM Module
 
