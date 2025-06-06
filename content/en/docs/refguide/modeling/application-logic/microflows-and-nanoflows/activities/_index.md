@@ -101,7 +101,7 @@ These activities can only be used in microflows.
 ## Document Generation Activities (Deprecated)
 
 {{% alert color="warning" %}}
-Document Generation is deprecated. See [Document Templates](/refguide/document-templates/) for alternatives.
+Document generation using Document Templates is deprecated. See [Document Templates](/refguide/document-templates/) for alternatives.
 {{% /alert %}}
 
 | Graphic | Name | Description |
