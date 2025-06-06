@@ -10,7 +10,7 @@ aliases:
 
 ## Introduction
 
-The individual charts widgets can be fine-tuned using a chart playground. The settings can affect the layout, configuration, and data.
+The individual charts widgets can be fine-tuned using a **Chart playground** widget. The settings can affect the layout, configuration, and data.
 
 This guide teaches you how to do the following:  
 
@@ -18,12 +18,14 @@ This guide teaches you how to do the following:
 * Change chart type (data series)
 * Enable toolbar (configuration)
 
+{{% alert color="info" %}}The **Chart playground** widget is included in [Charts Widget](/appstore/widgets/charts/) to replace developer mode starting from version 5 and above.{{% /alert %}}
+
 ## Prerequisites
 
 Before starting this guide, make sure you have completed the following prerequisites:
 
 * Installed the latest version of Mendix Studio Pro
-* Downloaded the latest [Chart Widget](/appstore/widgets/charts/) from the Mendix Marketplace
+* Downloaded the latest [Charts Widget](/appstore/widgets/charts/) from the Mendix Marketplace
 * Set up a chart by using [How to Create a Chart](/howto/front-end/charts-basic-create/)
 
 ## Changing the Layout {#layout-changes}
