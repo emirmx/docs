@@ -93,6 +93,12 @@ To learn more about how to write OQL code, see [OQL](/refguide/oql/).
 
 An OQL query can begin with either a `SELECT` clause or a `FROM` clause, as both syntaxes are supported in the OQL editor. Regardless of which clause you choose to start with, you must follow the specific sequence of OQL clauses as follows:
 
+| Classic | Alternative |
+| --- | --- |
+| SELECT | FROM<br />JOIN<br />WHERE<br />GROUP BY<br />HAVING |
+| FROM<br />JOIN<br />WHERE<br />GROUP BY<br />HAVING | SELECT |
+| ORDER BY<br />LIMIT<br />OFFSET | ORDER BY<br />LIMIT<br />OFFSET |
+
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/syntax.png">}}
 
 #### `ORDER BY` Is Only Needed with `LIMIT` or `OFFSET`
