@@ -10,15 +10,17 @@ aliases:
 
 ## Introduction
 
-The individual charts widgets can be fine-tuned using a **Chart playground** widget. The settings can affect the layout, configuration, and data.
+The individual charts widgets can be fine-tuned using a **Chart Playground** widget. The settings can affect the layout, configuration, and data.
+
+{{% alert color="info" %}}
+The **Chart Playground** widget is included in [Charts Widget](/appstore/widgets/charts/). It replaces developer mode in Charts Widget versions 5 and higher.
+{{% /alert %}}
 
 This guide teaches you how to do the following:  
 
 * Change font style (layout)
 * Change chart type (data series)
 * Enable toolbar (configuration)
-
-{{% alert color="info" %}}The **Chart playground** widget is included in [Charts Widget](/appstore/widgets/charts/) to replace developer mode starting from version 5 and above.{{% /alert %}}
 
 ## Prerequisites
 
