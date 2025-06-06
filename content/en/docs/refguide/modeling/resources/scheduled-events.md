@@ -196,3 +196,13 @@ Every time a scheduled event is run it produces an entry in the `System.Processe
 ### One Session for All Scheduled Events
 
 Each runtime node has one specific session in memory which is used for all scheduled events. Changes to this session are visible for all scheduled events on that node. Things like changing the time zone via a Java action in one scheduled event can lead to unexpected behavior in other scheduled events. You are therefore strongly discouraged from changing the session object for scheduled events.
+
+### Complex Interval Patterns
+
+To implement complex interval patterns, such as running a scheduled event hourly but only on Tuesdays, you can follow these steps:
+
+1. Create a Scheduled Event that runs at the highest required frequency (e.g. hourly).
+1. Add a Condition in the Microflow triggered by the event to check whether the additional criteria are met (e.g. verify that the current day of the week is Tuesday).
+1. Execute the Desired Logic only if the condition evaluates to true.
+
+This approach allows you to maintain flexibility in scheduling while keeping the logic centralized and easy to manage.
