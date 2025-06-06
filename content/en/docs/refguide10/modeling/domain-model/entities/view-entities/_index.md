@@ -57,7 +57,7 @@ The image property can be used to associate an image with a view entity. In the 
 
 The **OQL editor** allows you to write the query that defines this view entity. While writing this query, the editor suggests names of the entities and attributes in your domain model, as well as allowed clauses, operators, and functions. If the query is not valid, a list of validation errors will be displayed underneath the editor with the line and column number of the place where the error was found.
 
-To learn more about how to write OQL code, read [OQL]( /refguide10/oql/). Continue reading for a few view entity-specific OQL considerations.
+To learn more about how to write OQL code, read [OQL](/refguide10/oql/). Continue reading for a few view entity-specific OQL considerations.
 
 #### Supported OQL Syntax Patterns
 
@@ -69,7 +69,7 @@ An OQL query can begin with either a `SELECT` clause or a `FROM` clause, as both
 | FROM<br />JOIN<br />WHERE<br />GROUP BY<br />HAVING | SELECT |
 | ORDER BY<br />LIMIT<br />OFFSET | ORDER BY<br />LIMIT<br />OFFSET |
 
-{{< figure src="/attachments/refguide10/modeling/domain-model/view-entities/syntax.png">}}
+{{< figure src="/attachments/refguide10/modeling/domain-model/use-view-entities/syntax.png">}}
 
 #### `ORDER BY` Is Only Needed with `LIMIT` or `OFFSET`
 
