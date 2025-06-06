@@ -5,6 +5,25 @@ weight: 90
 aliases:
     - /refguide/Document+Templates.html
     - /refguide/Document+Templates
+    - /refguide/creating-your-own-documents/
+    - /refguide/data-view-document-template/
+    - /refguide/document-template/
+    - /refguide/dynamic-image-document-template/
+    - /refguide/dynamic-label-document-template/
+    - /refguide/footer-document-template/
+    - /refguide/header-document-template/
+    - /refguide/line-break-document-template/
+    - /refguide/page-break-document-template/
+    - /refguide/static-image-document-template/
+    - /refguide/static-label-document-template/
+    - /refguide/style/
+    - /refguide/template-grid-document-template/
+    - /refguide/title-document-template/
+    - /refguide/data-grid-document-template/
+    - /refguide/columns-document-template/
+    - /refguide/table-document-template/
+    - /refguide/row-document-template/
+    - /refguide/cell-document-template/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
