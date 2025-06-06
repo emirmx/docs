@@ -166,7 +166,7 @@ To add query parameters to the end of a URL, add a question mark (?), followed i
 
 To add multiple parameters, add an ampersand (&) between each parameter, joining them to form a query string parameter. These can be created by any variation of object types or lengths such as strings, arrays, or numbers.
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/query-paramters.png" >}}
+{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/query-parameters.png" >}}
 
 ##### Manually Add Query Parameters
 
