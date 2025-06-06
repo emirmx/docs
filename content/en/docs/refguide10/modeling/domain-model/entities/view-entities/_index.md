@@ -63,7 +63,7 @@ To learn more about how to write OQL code, read [OQL](/refguide10/oql/). Continu
 
 An OQL query can begin with either a `SELECT` clause or a `FROM` clause, as both syntaxes are supported in the OQL editor. Regardless of which clause you choose to start with, you must follow the specific sequence of OQL clauses as follows:
 
-{{< figure src="/attachments/refguide10/modeling/domain-model/use-view-entities/syntax.png">}}
+{{< figure src="/attachments/refguide10/modeling/domain-model/view-entities/syntax.png">}}
 
 #### `ORDER BY` Is Only Needed with `LIMIT` or `OFFSET`
 
