@@ -41,7 +41,7 @@ In addition to the hard criteria mentioned above, a check is performed to determ
 
 {{% alert type="info" %}}
 
-The eligibility check does not display your repository size and Support engineers do not have access to this information. Deleting branches in an attempt to reduce the server-side repository size does not have an effect, due to the nature of SVN.
+The eligibility check does not display your repository size, and Support Engineers do not have access to this information. Additionally, deleting branches will not reduce the server-side repository size due to the way SVN manages data.
 
 {{% /alert %}}
 
