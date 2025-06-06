@@ -188,6 +188,29 @@ To accomplish this, follow these steps:
     </html>
     ```
 
+#### Using Page and Microflow URLs
+
+To redirect the users to the desired page using page and microflow URLs, follow the steps below:
+
+1. To use the Page URL functionality, replace the content of `login.html` with the content of `login-with-mendixsso-automatically.html` (located in the `resources\mendixsso\templates` folder) and save it as `login.html`.
+
+2. To implement the SSO redirection, you will need to replace the code in the `<script>` tag of your login page (for example, `login.html`) with code which does one of the following, depending on whether you want automatic or manual redirection:
+
+    * For automatic redirection, you can use `window.onload` to redirect users to the SSO login page automatically. You could, for example, use the following code:
+    
+        ```javascript
+        const returnURL = encodeURIComponent(window.location.search + window.location.hash);
+        self.location = '/xsauaalogin/login?ret=' + returnURL;
+        ```
+
+    * For manual redirection, you can add an onclick event to a button that manually triggers the SSO login. For example:
+    
+        ```javascript
+        window.location.href = '/xsauaalogin/login?ret=' + encodeURIComponent(window.location.search + window.location.hash);
+        ```
+
+Once the above changes are applied, end users can directly navigate to the desired page. If not logged in, they will be redirected to the IdP login page for authentication. After successful log in, they will be directed to the desired page using page and microflow URLs.
+
 ### Configuring the SAP BTP Subaccount
 
 Your app is configured to use an IdP. Now you need to configure the IdP and allocate users to roles. This is performed in the [SAP Business Technology Platform cockpit](https://account.hana.ondemand.com/cockpit#/home/allaccounts).
