@@ -100,11 +100,11 @@ Run the following commands in a Bash console, (replace `{namespace}` with the na
 
 ```shell
 NAMESPACE={namespace}
-helm upgrade --install loki grafana/loki-stack --version='^2.8.0' --namespace=${NAMESPACE} --set grafana.enabled=true,grafana.persistence.enabled=true,grafana.persistence.size=1Gi,grafana.initChownData.enabled=false,grafana.admin.existingSecret=grafana-admin \
+helm upgrade --install loki grafana/loki-stack --version='^2.10.2' --namespace=${NAMESPACE} --set grafana.enabled=true,grafana.persistence.enabled=true,grafana.persistence.size=1Gi,grafana.initChownData.enabled=false,grafana.admin.existingSecret=grafana-admin \
 --set prometheus.enabled=true,prometheus.server.persistentVolume.enabled=true,prometheus.server.persistentVolume.size=50Gi,prometheus.server.retention=7d \
 --set loki.persistence.enabled=true,loki.persistence.size=10Gi,loki.config.chunk_store_config.max_look_back_period=168h,loki.config.table_manager.retention_deletes_enabled=true,loki.config.table_manager.retention_period=168h \
 --set promtail.enabled=true,promtail.containerSecurityContext.privileged=true,promtail.containerSecurityContext.allowPrivilegeEscalation=true \
---set prometheus.nodeExporter.enabled=false,prometheus.alertmanager.enabled=false,prometheus.pushgateway.enabled=false
+--set prometheus.prometheus-node-exporter.enabled=false,prometheus.alertmanager.enabled=false,prometheus.prometheus-pushgateway.enabled=false
 ```
 
 This Helm chart will install and configure Grafana, Prometheus, Loki, and their dependencies.
@@ -244,11 +244,11 @@ Run the following commands in a Bash console: replace `{uid}` with the UID chose
 ```shell
 PROJECT={project}
 GRAFANA_UID={uid}
-helm upgrade --install loki grafana/loki-stack --version='^2.8.0' --namespace=${PROJECT} --set grafana.enabled=true,grafana.persistence.enabled=true,grafana.persistence.size=1Gi,grafana.initChownData.enabled=false,grafana.admin.existingSecret=grafana-admin \
+helm upgrade --install loki grafana/loki-stack --version='^2.10.2' --namespace=${PROJECT} --set grafana.enabled=true,grafana.persistence.enabled=true,grafana.persistence.size=1Gi,grafana.initChownData.enabled=false,grafana.admin.existingSecret=grafana-admin \
 --set prometheus.enabled=true,prometheus.server.persistentVolume.enabled=true,prometheus.server.persistentVolume.size=50Gi,prometheus.server.retention=7d \
 --set loki.persistence.enabled=true,loki.persistence.size=10Gi,loki.config.chunk_store_config.max_look_back_period=168h,loki.config.table_manager.retention_deletes_enabled=true,loki.config.table_manager.retention_period=168h \
 --set promtail.enabled=true,promtail.containerSecurityContext.privileged=true,promtail.containerSecurityContext.allowPrivilegeEscalation=true \
---set prometheus.nodeExporter.enabled=false,prometheus.alertmanager.enabled=false,prometheus.pushgateway.enabled=false \
+--set prometheus.prometheus-node-exporter.enabled=false,prometheus.alertmanager.enabled=false,prometheus.prometheus-pushgateway.enabled=false \
 --set grafana.securityContext.runAsUser=${GRAFANA_UID},grafana.securityContext.runAsGroup=0,grafana.securityContext.fsGroup=${GRAFANA_UID} \
 --set prometheus.server.securityContext.runAsUser=${GRAFANA_UID},prometheus.server.securityContext.runAsGroup=0,prometheus.server.securityContext.fsGroup=${GRAFANA_UID} \
 --set prometheus.kube-state-metrics.securityContext.runAsUser=${GRAFANA_UID},prometheus.kube-state-metrics.securityContext.runAsGroup=0,prometheus.kube-state-metrics.securityContext.fsGroup=${GRAFANA_UID} \
