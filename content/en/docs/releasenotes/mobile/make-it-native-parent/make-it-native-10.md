@@ -38,7 +38,7 @@ Depending on the Mendix version your app is developed in and the device you want
 
 ### Fixes
 
-* Resolved issues causing crashes when reloading the native app.
+* We fixed issues causing crashes when reloading the native app.
 
 ## Android 4.0.0 / iOS 4.0.0
 
@@ -46,11 +46,11 @@ Depending on the Mendix version your app is developed in and the device you want
 
 ### Fixes
 
-* We resolved an issue with the bundle identifier in the Dev scheme on Xcode.
+* We fixed an issue with the bundle identifier in the **Dev** scheme on Xcode.
 
 ### Improvements
 
-* We have changed Offline Database Management Backend to op-sqlite. The native apps need to be rebuilt via Studio Pro (App -> Build Native Mobile App).
+* We have changed our offline database management backend (ODMB) to OP-SQLite. Native apps need to be rebuilt via Studio Pro (**App** > **Build Native Mobile App**).
 
 ## iOS 3.2.1
 
@@ -58,7 +58,7 @@ Depending on the Mendix version your app is developed in and the device you want
 
 ### Fixes
 
-* We've fixed an issue that caused the app to crash when using the React client in Mendix Studio Pro version 10.21.
+* We fixed an issue that caused apps to crash when using the React client in Mendix Studio Pro version 10.21.
 
 ## Android 3.2.1 / iOS 3.2.0
 
@@ -74,7 +74,7 @@ Depending on the Mendix version your app is developed in and the device you want
 
 ### Fixes
 
-* We've applied fixes to Sample Apps.
+* We applied fixes to Sample Apps.
 
 ## Android 3.1.7 / iOS 3.1.7
 
@@ -82,7 +82,7 @@ Depending on the Mendix version your app is developed in and the device you want
 
 ### Improvements
 
-* We've enabled the Sample Apps section.
+* We enabled the **Sample Apps** section.
 
 ## Android 3.1.6 / iOS 3.1.6
 
@@ -90,7 +90,7 @@ Depending on the Mendix version your app is developed in and the device you want
 
 ### Fixes
 
-* We've updated @react-native-community/geolocation to version 3.4.0 to resolve location-related issues.
+* We updated @react-native-community/geolocation to version 3.4.0 to resolve location-related issues.
 
 ## Android 3.1.2 / iOS 3.1.2
 
