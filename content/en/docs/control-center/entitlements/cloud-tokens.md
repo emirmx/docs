@@ -4,6 +4,8 @@ url: /control-center/cloud-tokens/
 description: "Describes the Cloud Tokens page in the Mendix Control Center."
 weight: 20
 no_list: false 
+
+#This page contains the Cloud Tokens equivalence of all Cloud Resource Packs. It is referenced in the legal documentation and in the Order Forms that customers sign. Any changes to this page must be validated by Peter Koemans and Satyam Singh.
 ---
 
 ## Introduction
