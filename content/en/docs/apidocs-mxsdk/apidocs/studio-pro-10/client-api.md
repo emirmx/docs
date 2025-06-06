@@ -25,5 +25,7 @@ The Client API is not supported in widgets. For widget development, please use o
 
 ## Legacy Client API {#legacy}
 
+This API is deprecated in Mendix 11 and will be fully removed in Mendix 12.
+
 * [Mendix 10 Client API (React)](https://apidocs.rnd.mendix.com/10/client-react/index.html)
 * [Mendix 10 Client API (Dojo)](https://apidocs.rnd.mendix.com/10/client/index.html)
