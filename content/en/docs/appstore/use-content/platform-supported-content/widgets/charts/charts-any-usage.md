@@ -1,6 +1,7 @@
 ---
 title: "Use Any Chart"
 url: /appstore/widgets/charts-any-usage/
+deprecated: true
 weight: 20
 description: "How to use the Any Chart widget to create advanced charts"
 aliases:
