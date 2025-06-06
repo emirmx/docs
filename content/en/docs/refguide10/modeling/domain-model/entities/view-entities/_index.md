@@ -99,10 +99,6 @@ FROM Shop.Order AS o
 
 {{< figure src="/attachments/refguide10/modeling/domain-model/view-entities/association-alias.png" >}}
 
-### Maia for OQL {#maia-for-oql}
-
-You can ask Maia to suggest OQL queries for you. For more information, see [Maia for OQL](/refguide10/maia-for-oql/).
-
 ### Preview Data Table {#preview-data}
 
 You can view the resulting data set of your OQL query by clicking **Run Query**, which enables Studio Pro to retrieve the data from the database that is configured in your app settings. The database type of the active configuration is also listed in the header of the section.
