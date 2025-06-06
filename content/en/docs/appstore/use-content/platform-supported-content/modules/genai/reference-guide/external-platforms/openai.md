@@ -280,6 +280,18 @@ The **Documentation** pane displays the documentation for the currently selected
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" >}}
 
+### Tool Choice
+
+All [tool choice types](/appstore/modules/genai/genai-for-mx/commons/#enum-toolchoice) of GenAI Commons for the [Tools: Set Tool Choice](/appstore/modules/genai/genai-for-mx/commons/#set-toolchoice) action are supported. For API mapping reference, see the table below:
+
+| GenAI Commons (Mendix) | OpenAI  |
+| -----------------------| ------- |
+| auto                   | auto    |
+| any                    | required|
+| none                   | none    |
+| tool                   | tool    |
+
+
 ## GenAI showcase Application {#showcase-application}
 
 For more inspiration or guidance on how to use those microflows in your logic, Mendix recommends downloading the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of example use cases.
