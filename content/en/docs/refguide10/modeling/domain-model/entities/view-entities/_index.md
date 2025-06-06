@@ -69,7 +69,7 @@ An OQL query can begin with either a `SELECT` clause or a `FROM` clause, as both
 | FROM<br />JOIN<br />WHERE<br />GROUP BY<br />HAVING | SELECT |
 | ORDER BY<br />LIMIT<br />OFFSET | ORDER BY<br />LIMIT<br />OFFSET |
 
-{{< figure src="/attachments/refguide10/modeling/domain-model/view-entities/syntax.png">}}
+{{< figure src="/attachments/refguide10/modeling/domain-model/view-entities/Syntax.png">}}
 
 #### `ORDER BY` Is Only Needed with `LIMIT` or `OFFSET`
 
