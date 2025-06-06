@@ -158,22 +158,29 @@ Query parameters are available for Studio Pro 11.0.0 GA and above.
 
 {{% /alert %}}
 
-Query parameters can be configured in the **Parameters** tab in the **Query Parameters** field. You can define them directly in the URL or by adding them manually in the Query parameters grid.
+Query parameters can be configured in the **Parameters** tab in the **Query Parameters** field. You can define them directly in the URL or add them manually in the Query parameters field.
 
-To append query params to the end of a URL, a question mark (?) is added followed immediately by a query parameter. To add multiple parameters, an ampersand (&) is added in between each, joining them to form a query string parameter. These can be created by any variation of object types or lengths such as strings, arrays, and numbers. The following is an example:
+##### Add Query Parameter to URL
+
+To add query parameters to the end of a URL, add a question mark (?), followed immediately by the query parameter. 
+
+To add multiple parameters, add an ampersand (&) between each parameter, joining them to form a query string parameter. These can be created by any variation of object types or lengths such as strings, arrays, or numbers.
 
 {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/query-paramters.png" >}}
 
-You can also manually add new query parameters to the Query parameters grid directly. To do so, follow these steps:
+##### Manually Add Query Parameters
 
-1. Open the Parameters tab and click Add query parameter.
-2. Name your query parameter and add a test value.
+You can manually add new query parameters directly to the Query parameters grid. To do this, follow the steps below:
 
-In this case, the newly configured query parameter will be automatically added in the URL.
+1. Open the **Parameters** tab.
+2. Click **Add query parameter**.
+3. Name your query parameter and add a test value.
 
-By default when a new query parameter is added to the grid, it is configured as a Required query parameter. You can still change the query param to not required by clicking the dropdown and the change the value of the Required property to "No".
+In this case, the newly configured query parameter will be automatically added to the URL.
 
-If you would like to include or exclude a query parameter from the URL, you can simply check/uncheck the checkbox of the specific query parameter.  
+By default, when a new query parameter is added to the grid, it is configured as a **Required** query parameter. You can change this setting to **Not required** by clicking the drop-down and changing the value of the required property to **No**.
+
+To include or exclude a query parameter from the URL, check or uncheck the checkbox of the specific query parameter.  
 
 ### Adding Headers {#add-headers}
 
