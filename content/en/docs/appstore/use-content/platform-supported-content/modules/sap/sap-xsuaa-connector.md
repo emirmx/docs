@@ -125,7 +125,7 @@ By default, the Mendix login page will not allow the user to enter their SSO cre
 * Bypass the Mendix login page altogether and just display the XSUAA login page
 
 {{% alert color="info" %}}
-If you are using the [Deep Link](/appstore/modules/deep-link/) module, you will also need to set the **LoginLocation** constant to `/xsauaalogin/login?ret=`.
+The page/microflow URL is used to redirect users to the desired page. If you are using the [Deep Link](/appstore/modules/deep-link/) module, you will also need to set the **LoginLocation** constant to `/xsauaalogin/login?ret=`.
 {{% /alert %}}
 
 #### Adding the SSO Login Button to the Login Page {#adding}
@@ -152,10 +152,12 @@ If login.html does not support XSUAA then you need to add the SSO login button t
 6. Replace those lines with the following lines (or add them below the `<a>` element in the code above):
 
     ```html
-    <a id="ssoButton" href="/xsauaalogin/" class="btn btn-default btn-lg">
-        <img src="logo.png" />
-        <span class="loginpage-signin">Sign in using XSUAA</span>
-    </a>
+    <script>
+    document.getElementById("ssoButton").addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location.href = '/xsauaalogin/login?ret=' + encodeURIComponent(window.location.search + window.location.hash); 
+        });
+    </script>
     ```
 
 7. Deploy and run your app. The XSUAA login button will look like this:
@@ -182,34 +184,11 @@ To accomplish this, follow these steps:
     <html>
         <head>
             <script>
-                window.location.assign("/xsauaalogin/")
+                self.location = '/xsauaalogin/login?ret=' + encodeURIComponent(window.location.search + window.location.hash);
             </script>
         </head>
     </html>
     ```
-
-#### Using Page and Microflow URLs
-
-To redirect the users to the desired page using page and microflow URLs, follow the steps below:
-
-1. To use the Page URL functionality, replace the content of `login.html` with the content of `login-with-mendixsso-automatically.html` (located in the `resources\mendixsso\templates` folder) and save it as `login.html`.
-
-2. To implement the SSO redirection, you will need to replace the code in the `<script>` tag of your login page (for example, `login.html`) with code which does one of the following, depending on whether you want automatic or manual redirection:
-
-    * For automatic redirection, you can use `window.onload` to redirect users to the SSO login page automatically. You could, for example, use the following code:
-    
-        ```javascript
-        const returnURL = encodeURIComponent(window.location.search + window.location.hash);
-        self.location = '/xsauaalogin/login?ret=' + returnURL;
-        ```
-
-    * For manual redirection, you can add an onclick event to a button that manually triggers the SSO login. For example:
-    
-        ```javascript
-        window.location.href = '/xsauaalogin/login?ret=' + encodeURIComponent(window.location.search + window.location.hash);
-        ```
-
-Once the above changes are applied, end users can directly navigate to the desired page. If not logged in, they will be redirected to the IdP login page for authentication. After successful log in, they will be directed to the desired page using page and microflow URLs.
 
 ### Configuring the SAP BTP Subaccount
 
