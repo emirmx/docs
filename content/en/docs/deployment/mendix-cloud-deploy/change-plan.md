@@ -27,7 +27,6 @@ It is only possible to change and upgrade to higher-tier plans, not downgrade. U
 
 Before requesting a plan change, verify the following:
 
-* The app environment is deployed.
 * The app runs on Kubernetes.
 * The app's tenant is self-service enabled. To activate this capability for your company, contact your Customer Success Manager.
 * You are the [Technical Contact](/support/#technical-contacts) for the app (only Technical Contacts can submit a plan change request).
@@ -54,10 +53,10 @@ To change an environment's plan, follow these steps:
 8. On the right side of the form that appears, create a new plan:
     * To compare plans, click **Show Comparison**. This opens a comparison page where the Technical Contact can evaluate the current plan against other available options. The last selected comparison will populate the form. Alternatively, select a new plan directly from the **Plan** dropdown without comparing.
     * Enter a reason for plan change.
-9. Click **Submit Request** to submit your plan change request. 
-10. Submitted requests appear in the [Control Center](/control-center/requests/) for the [Mendix Admin](/control-center/company-settings/#mendix-admins) review. To view the list of approvers, click **Mendix Admin** at the bottom of the **New Plan** form.
 
-    {{% alert color="info" %}}Approval from a Mendix Admin only authorizes the plan change but does not immediately apply it. As a result, the environment will remain on its current plan until the new plan is [approved](/control-center/requests/#approving-a-request), [scheduled](#scheduling-a-plan-change) and [successfully applied](#after-schedule).
+9. All submitted plan change requests appear in the [Control Center](/control-center/approval-requests/) for the [Mendix Admin](/control-center/company-settings/#mendix-admins) review. To view the list of approvers, click **Mendix Admin** at the bottom of the **New Plan** form. When ready, click **Submit Request** to submit your plan change request. 
+
+    {{% alert color="info" %}}Approval from a Mendix Admin only authorizes the plan change but does not immediately apply it. As a result, the environment will remain on its current plan until the new plan is [approved](/control-center/approval-requests/#approving-a-request), [scheduled](#scheduling-a-plan-change) and [successfully applied](#after-schedule).
     {{% /alert %}}
 
 11. [Track and manage](#manage-plan-requests) your plan change requests from the [Request Overview](/developerportal/deploy/environments/#request-overview) tab on your app's environment's page. 
