@@ -168,7 +168,7 @@ The repository has to be completely empty (this includes the `README.md` and `.g
 
 To upload your app, do the following:
 
-1. Open the app in Studio Pro and go to **Version Control > Upload to Version Control Server**.
+1. Open the app in Studio Pro and go to **Version Control** > **Upload to Version Control Server**.
 2. In the **Upload to Version Control Server** dialog box, select **Private server**. 
 3. Enter the link to the repository you want to upload this app to and click **OK**:
 
@@ -182,20 +182,20 @@ The app is uploaded successfully. You can check on your private server and see t
 
 ### Moving an Existing Versioned App to Private Git
 
-If you already have an existing versioned app that you would like to upload to your Git private server instead, you can fully migrate the history or start with a fresh repository.
+If you already have an existing versioned app that you would like to upload to your Git private server, you can fully migrate the history or start with a fresh repository.
 
 #### Retaining History
 
-To migrate from on Git server to another private Git server, follow your Git provider's documentation for uploading a full repository clone to their platform.
+To migrate a repository from one Git server to another private Git server, follow your new Git provider's documentation for transferring a complete repository clone to their platform.
 
 After migration, download a fresh clone in Studio Pro from your private Git server.
 
-{{% alert color="warning" %}} If you are migrating from Mendix Team Server, make sure you remove the `sprintr-project-id` setting to prevent errors in Studio Pro when redirecting an existing clone by updating the `config` file in the `.git` folder. {{% /alert %}}
+{{% alert color="warning" %}} When migrating from Mendix Team Server, prevent Studio Pro errors by removing the `sprintr-project-id` setting from the *.git/config* file in your repository's local clone. {{% /alert %}}
 
 #### Starting with a Fresh Repository
 
 {{% alert color="info" %}}
-This creates an unversioned app, based on the branch you are working on in Studio Pro. This means that you will not get version history or other branches in the Git repo.
+This process creates an unversioned app, based on the branch you are working on in Studio Pro. This means that you will not get version history or other branches in the Git repo.
 
 You can move the whole app, including branches and history, to the Mendix Git repository by following the instructions in [Migrate to Git](/developerportal/general/migrate-to-git/)
 {{% /alert %}}
