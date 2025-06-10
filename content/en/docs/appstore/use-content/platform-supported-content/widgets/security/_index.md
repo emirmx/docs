@@ -19,7 +19,9 @@ The following widgets are not fully compliant with strict CSP. See the widgets' 
 
 ### Charts
 
-You can enable `allowlist` CSP for [Charts](/appstore/widgets/charts/) by including these directives:
+Use [Charts](/appstore/widgets/charts/) version 6.0 and above for strict CSP compliance.
+
+For older versions, you can enable `allowlist` CSP for [Charts](/appstore/widgets/charts/) by including these directives:
 
 ```text
 style-src 'self' 'unsafe-inline';

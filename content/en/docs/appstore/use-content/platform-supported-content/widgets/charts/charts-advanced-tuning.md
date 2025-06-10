@@ -1,5 +1,5 @@
 ---
-title: "Fine-Tune a Chart with Advanced Settings"
+title: "Fine-Tune a Chart with Chart Playground"
 linktitle: "Chart Advanced Tuning"
 url: /appstore/widgets/chart-advanced-tuning/
 weight: 30
@@ -10,9 +10,13 @@ aliases:
 
 ## Introduction
 
-The individual Charts widgets can be fine-tuned with advanced settings. The settings can affect the layout, configuration and data.
+The individual charts widgets can be fine-tuned using a **Chart Playground** widget. The settings can affect the layout, configuration, and data.
 
-This how-to teaches you how to do the following:  
+{{% alert color="info" %}}
+The **Chart Playground** widget is included in [Charts Widget](/appstore/widgets/charts/). It replaces developer mode in Charts Widget versions 5 and higher.
+{{% /alert %}}
+
+This guide teaches you how to do the following:  
 
 * Change font style (layout)
 * Change chart type (data series)
@@ -20,11 +24,11 @@ This how-to teaches you how to do the following:
 
 ## Prerequisites
 
-Before starting this how-to, make sure you have completed the following prerequisites:
+Before starting this guide, make sure you have completed the following prerequisites:
 
 * Installed the latest version of Mendix Studio Pro
-* Downloaded the latest [Chart Widget](/appstore/widgets/charts/) from the Mendix Marketplace
-* Set up a chart, see [How to Create a Chart](/howto/front-end/charts-basic-create/)
+* Downloaded the latest [Charts Widget](/appstore/widgets/charts/) from the Mendix Marketplace
+* Set up a chart by using [How to Create a Chart](/howto/front-end/charts-basic-create/)
 
 ## Changing the Layout {#layout-changes}
 
@@ -35,15 +39,16 @@ This is what the original chart looks like:
 To create a custom layout, follow these steps:
 
 1. Open an app containing a chart.
-2. Open the page with the charts widget.
-3. Open the charts widget settings.
-4. Go to the tab **Advanced**.
-5. Set the **Mode** to **Developer**.
-    {{< figure src="/attachments/appstore/platform-supported-content/widgets/charts/charts-tutorials/charts-advanced-tuning/charts-widget-properties-advanced.png" alt="chart properties" class="no-border" >}}
-6. Run the app.
-7. In your browser, open the page with the chart.
-8. Click the button **Toggle Editor**.
-9. In the **Layout** section add the following **Custom setting**:
+1. Open the page with the charts widget.
+1. Open the charts widget's settings.
+1. Click the **General** tab.
+1. Set **Show playground slot** to **Yes**. If you check, you can see the widget **Playground slot** drop zone area is now visible in the chart.
+1. Find the **Chart playground** widget in **Toolbox**.
+1. Drag and drop the **Chart playground** widget onto the available **Playground slot**.
+1. Run the app.
+1. In your browser, open the page with the chart.
+1. Click the button **Toggle Editor**.
+1. In the **Layout** section add the following **Custom setting**:
 
     ```json
     {
@@ -55,7 +60,7 @@ To create a custom layout, follow these steps:
     }
     ```
 
-10. Change the font settings till the chart shows the required font. Copy the font settings.
+1. Change the font settings until the chart shows the required font. Copy the font settings:
 
     {{% alert color="warning" %}}Please note that changes made in the editor will not persist unless they are stored in the advanced settings of the widget or in the theme.{{% /alert %}}
 
@@ -63,15 +68,8 @@ To create a custom layout, follow these steps:
 
     {{< figure src="/attachments/appstore/platform-supported-content/widgets/charts/charts-tutorials/charts-advanced-tuning/charts-toggle-editor-open.png" alt="chart editor" class="no-border" >}}
 
-11. Paste the new font settings into the **Layout options** property in the **Advanced** tab.
-
-    {{< figure src="/attachments/appstore/platform-supported-content/widgets/charts/charts-tutorials/charts-advanced-tuning/charts-widget-properties-advanced-layout.png" alt="chart editor" class="no-border" >}}
-
-12. Change the **Mode** back to **Advanced** in Studio Pro, this will remove the Toggle Editor button from the chart.  
-
-{{% alert color="warning" %}}
-Please note that the advanced settings only apply to the chart in Advanced or Developer mode.
-{{% /alert %}}
+1. Paste the new font settings into the **Custom layout** property in the **Advanced** tab.
+1. Change the **Show playground slot** back to **No** in Studio Pro, this will remove the Toggle Editor button from the chart.  
 
 ## Changing the Chart Type
 
@@ -81,7 +79,7 @@ This is what the chart looks like before making any changes:
 
 To create a custom configuration, follow these steps:
 
-1. Repeat steps 1 to 8 from the [layout instructions](#layout-changes).
+1. Repeat steps 1 to 11 from the [layout instructions](#layout-changes).
 2. Select the name of the series you want to display differently from the drop-down menu: in this case **Series 1**.
 3. Edit the **Custom settings**; change them to `{ "type": "line" }`.
     {{< figure src="/attachments/appstore/platform-supported-content/widgets/charts/charts-tutorials/charts-advanced-tuning/charts-widget-bar-line-combination.png" alt="chart editor" class="no-border" >}}
@@ -99,7 +97,7 @@ After the changes, the chart looks like this:
 
 To create custom a configuration, follow these steps:
 
-1. Repeat steps 1 to 8 from the [layout instructions](#layout-changes).
+1. Repeat steps 1 to 11 from the [layout instructions](#layout-changes).
 2. Select **Configuration** from the drop-down menu.
 3. Edit the **Custom settings**, change them to `{ "displayModeBar": true }`.
 4. Add more Custom settings as desired. See [here](https://plot.ly/javascript/configuration-options/) for more configuration settings.
