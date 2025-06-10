@@ -125,7 +125,7 @@ By default, the Mendix login page will not allow the user to enter their SSO cre
 * Bypass the Mendix login page altogether and just display the XSUAA login page
 
 {{% alert color="info" %}}
-If you are using the [Deep Link](/appstore/modules/deep-link/) module, you will also need to set the **LoginLocation** constant to `/xsauaalogin/login?ret=`.
+To configure a page/microflow URL, follow the steps mentioned in the subsections below. If you are using the Deep Link module, make sure the **LoginLocation** constant is set to `/xsauaalogin/login?ret=`.
 {{% /alert %}}
 
 #### Adding the SSO Login Button to the Login Page {#adding}
@@ -158,7 +158,18 @@ If login.html does not support XSUAA then you need to add the SSO login button t
     </a>
     ```
 
-7. Deploy and run your app. The XSUAA login button will look like this:
+7. Add the below custom script to the **login.html**.
+
+    ```html
+    <script>
+    document.getElementById("ssoButton").addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location.href = '/xsauaalogin/login?ret=' + encodeURIComponent(window.location.search + window.location.hash); 
+        });
+    </script>
+    ```
+
+8. Deploy and run your app. The XSUAA login button will look like this:
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/sap-xsuaa-connector/sso-login-screen.png" class="no-border" >}}
 
@@ -182,7 +193,7 @@ To accomplish this, follow these steps:
     <html>
         <head>
             <script>
-                window.location.assign("/xsauaalogin/")
+                self.location = '/xsauaalogin/login?ret=' + encodeURIComponent(window.location.search + window.location.hash);
             </script>
         </head>
     </html>
