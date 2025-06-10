@@ -199,10 +199,10 @@ Each runtime node has one specific session in memory which is used for all sched
 
 ### Complex Interval Patterns
 
-To implement complex interval patterns, such as running a scheduled event hourly but only on Tuesdays, you can follow these steps:
+If you want to implement complex interval patterns, such as running a scheduled event hourly but only on Tuesdays, you can do the following:
 
-1. Create a Scheduled Event that runs at the highest required frequency (e.g. hourly).
-1. Add a Condition in the Microflow triggered by the event to check whether the additional criteria are met (e.g. verify that the current day of the week is Tuesday).
-1. Execute the Desired Logic only if the condition evaluates to true.
+1. Create a Scheduled Event that runs at the highest required frequency (in this example, hourly).
+1. Add a condition at the start of the microflow triggered by the event which checks whether the additional criteria are met. In this example, you would verify that the current day of the week is Tuesday.
+1. Perform the actions relating to the event only if the condition evaluates to true.
 
 This approach allows you to maintain flexibility in scheduling while keeping the logic centralized and easy to manage.
