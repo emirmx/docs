@@ -1046,6 +1046,26 @@ authentication in your Mendix App.
 5. In the **Url** field, enter the location where your public key is stored. The following is the new endpoint in the OIDC SSO to fetch public keys based on the configured alias For example, `https:/`*`BASE_URL`*`/oauth/v2/jwks/`*`ALIAS`*. Here, *`ALIAS`* is the client alias configured in the OIDC application. For example, Okta.
 6. **Save** the configuration.
 
+## URLs
+
+The following diagram gives an overview of all endpoints that the OIDC SSO module exposes and consumes:
+
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/oidc-endpoints.png" class="no-border" >}}
+
+End-users can access your app through the following endpoints when using the OIDC SSO module:
+
+* SSO Endpoint: Initiates the authentication process by redirecting the user to the Identity Provider (IdP) login page. This is typically the starting point of the SSO login flow.
+    For example, `https://<YOUR_APP_URL>/oauth/v2/login`
+* `post_logout_redirect`: The URL to which users are redirected after they successfully log out from the application. This helps ensure a seamless user experience by taking them to a predefined page after logout.
+* `redirect_uri`: The callback URL that receives the authorization response from the IdP after the user successfully authenticates. This endpoint processes the returned authorization code or token to complete the login process.
+    For example, `https://<YOUR_APP_URL>/oauth/v2/callback`
+* `/.well-known/openid_configuration`: A standardized URL exposed by the IdP to initiate OAuth2 authorization
+* `authorization_endpoint`: The URL on the IdP where the authorization request is sent to start the OIDC login process. It redirects the user to the IdP for authentication
+* `token_endpoint`: The endpoint used by the Mendix app to exchange the received authorization code for tokens, such as access tokens, ID tokens
+* `jwks_uri`: URL exposing the JSON Web Key Set (JWKS), which contains the public keys used to validate token signatures.
+* `introspection_endpoint` (optional): An endpoint provided by the IdP to validate or introspect tokens (optional, depending on the IdP).
+* `end_session_endpoint`: Used to initiate logout at the IdP. This endpoint ensures that the user is logged out from both the Mendix app and the IdP, effectively terminating the entire SSO session.
+
 ## Testing and Troubleshooting{#testing}
 
 Once you have your app deployed, you can test the SSO set-up by trying to login. If you have multiple IdPs set up, you will be able to choose which IdP to use for authentication. If you have only one IdP provider configured, then you will be taken directly to that IdP's sign in page.
