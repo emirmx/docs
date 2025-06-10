@@ -48,7 +48,7 @@ In OQL v2, all result expressions of a [CASE](/refguide/oql-expression-syntax/#c
 
 Also, in OQL v2 it is no longer possible to have Null as the result of all result expressions of CASE. In OQL v1, that was allowed, but would lead to database-level exceptions for some database vendors.
 
-Numeric types Integer, Long and Decimal are considered matching. See [examples](/refguide/oql-expression-syntax/#case-expression-examples) of `CASE` expressions for details on how different numeric types are combined.
+Numeric types Integer, Long and Decimal are considered matching. The type of the resulting expression is defined according to [type coercion precedence](/refguide/oql-expression-syntax/#type-coercion). In OQL v1, the type of the expression was defined based on the first result expression of `CASE`.
 
 #### `COALESCE` {#coalesce-validations}
 
@@ -58,7 +58,7 @@ In OQL v2, all arguments of a [COALESCE](/refguide/oql-expression-syntax/#coales
 
 Also, in OQL v2 it is no longer possible to have a COALESCE expression where all arguments are Null literals. In OQL v1, that was allowed, but would lead to database-level exceptions for some database vendors.
 
-Numeric types Integer, Long and Decimal are considered matching. See [examples](/refguide/oql-expression-syntax/#coalesce-expression-examples) of `COALESCE` for details on how different numeric types are combined.
+Numeric types Integer, Long and Decimal are considered matching. The type of the resulting expression is defined according to [type coercion precedence](/refguide/oql-expression-syntax/#type-coercion). In OQL v1, the type of the expression was defined based on the first argument of `COALESCE`.
 
 #### `LENGTH` {#length-validations}
 
@@ -229,15 +229,11 @@ SELECT Attribute1 + Attribute2 AS SumAttr
 FROM Module.Entity
 ```
 
-In OQL v1, the result of the arithmetic operation will always be of type pf the first attribute in the expression because it is handled by the database. Therefore, the result would depend on the underlying database engine.
+In OQL v1, the result of the arithmetic operation will always be of type of the first attribute in the expression. Therefore, the result would depend on the underlying database engine.
 
-When handling numeric types in OQL v2 (Integer, Long, and Decimal), the result of the operation is always the most precise attribute type, using the following precedence:
+When handling numeric types in OQL v2 (Integer, Long, and Decimal), the result type is defined according to [type coercion precedence](/refguide/oql-expression-syntax/#type-coercion).
 
-* Decimal (highest)
-* Long
-* Integer
-
-If any side of the operation is of a non-numeric type, no casting is performed, and the result is handled by the database, as in OQL v1. See [Expression syntax](/refguide/oql-expression-syntax/#type-coercion) for more information.
+If any side of the operation is of a non-numeric type, no casting is performed, and the result is handled by the database, as in OQL v1.
 
 ### The Result Type of `ROUND` Is Now `Decimal`
 
