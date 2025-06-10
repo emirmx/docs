@@ -42,7 +42,7 @@ With most providers, HTTP basic authentication takes the form of using of person
 
 To use PAT (or another equivalent), you need to specify it in the **Password** field when Studio Pro requests credentials for the version control server:
 
-{{< figure src="/attachments/refguide/version-control/on-premises-git/sign-in-dialog.png" alt="Sign In dialog" class="no-border" >}}
+{{< figure src="/attachments/refguide/version-control/on-premises-git/sign-in-dialog.png" alt="Sign In dialog" class="no-border"  width="600">}}
 
 {{% alert color="info" %}}When using a PAT for the Mendix platform, fill in your email in the **Username** field. For more information on how to create a PAT for the Mendix platform, see the [Personal Access Tokens](/community-tools/mendix-profile/user-settings/#pat) section in *User Settings*.{{% /alert %}}
 
@@ -88,7 +88,7 @@ To interact with this private repository from Studio Pro, you need a link to the
 
 To use on-premise Git, you need to configure name and email values that will be used to identify your commit in Studio Pro by navigating to **Edit** > **Preferences** > **Version Control**:
 
-{{< figure src="/attachments/refguide/version-control/on-premises-git/preferences-git.png" alt="Preferences dialog" class="no-border" >}}
+{{< figure src="/attachments/refguide/version-control/on-premises-git/preferences-git.png" alt="Preferences dialog" class="no-border" width="800" >}}
 
 Studio Pro now is set up to support Git.
 
@@ -96,7 +96,7 @@ Studio Pro now is set up to support Git.
 
 Create an unversioned app in Studio Pro:
 
-{{< figure src="/attachments/refguide/version-control/on-premises-git/app-settings.png" alt="App Settings dialog" class="no-border" >}}
+{{< figure src="/attachments/refguide/version-control/on-premises-git/app-settings.png" alt="App Settings dialog" class="no-border" width="600">}}
 
 Once the app is created, you can upload it to your private Git repository. For more information on how to upload it, see the [Uploading to the Private Git Server](#upload-to-private-git-server) section below.
 
@@ -116,7 +116,7 @@ Now that you have a Git app on your server, you can download it to another direc
 1. Click **OK**. 
 1. In the **Sign In** dialog box, enter your credentials:
 
-    {{< figure src="/attachments/refguide/version-control/on-premises-git/sign-in-dialog.png" alt="Sign In dialog" class="no-border" >}}
+    {{< figure src="/attachments/refguide/version-control/on-premises-git/sign-in-dialog.png" alt="Sign In dialog" class="no-border" width="600">}}
 
 1. Enter username (it can be anything except empty) and use the PAT you saved earlier as the password. 
 
@@ -221,7 +221,7 @@ After the import process is completed, your previously version controlled app wi
 
 Note that your previous app still exists, **Studio Pro** will simply make an unversioned copy and upload it to your private Git server. So, in your **Recent Apps** list, you will still see both:
 
-{{< figure src="/attachments/refguide/version-control/on-premises-git/recent-apps.png" alt="Recent Apps form" class="no-border" >}}
+{{< figure src="/attachments/refguide/version-control/on-premises-git/recent-apps.png" alt="Recent Apps form" class="no-border" width="600">}}
 
 ## Read More
 
