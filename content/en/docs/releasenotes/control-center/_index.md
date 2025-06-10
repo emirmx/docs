@@ -18,15 +18,13 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 #### New Features
 
-* We are updating the **Entitlements** section to set the stage for powerful analytics. These are the first steps of the update:
+* We are updating the **Entitlements** section to set the stage for powerful analytics. These are the first steps in this series of changes:
 
     * We have moved **Entitlements** out of the **Apps** space, and have given it a section of its own.
     * We have renamed the **Transactions** tab to **Cloud Tokens**, and have turned it into a standalone page within the **Entitlements** section.
-
-* We have released a beta feature that enables Technical Contacts to request a plan change for each of their environments, thus allowing them to increase the resources available for running apps.    
-The request is sent to the company Admin, who can see and manage it from the newly introduced **Requests** page, which can be found in the **Entitlements** section in Control Center.    
-For more information on requesting a plan change, refer to [Changing Your Plan in Mendix Cloud](/developerportal/deploy/change-plan/).    
-For more information on approving or rejecting a plan change, refer to [Requests](/control-center/requests/).
+    * We have added the **Approval Requests** page, currently in beta, which allows you to manage all approval requests created for your company. For now, this covers plan change requests sent by Technical Contacts.   
+    For more information on approving or rejecting a plan change, refer to [Approval Requests](/control-center/approval-requests/).     
+    For more information on requesting a plan change, refer to [Changing Your Plan in Mendix Cloud](/developerportal/deploy/change-plan/).    
 
 ### May 26, 2025
 

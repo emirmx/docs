@@ -89,6 +89,10 @@ These tables show how many Mendix Cloud Tokens each CRP requires:
 | 2XL | 167 |
 | 3XL | 640 |
 
+{{% alert color="info" %}} 
+You can no longer purchase Legacy Cloud Resources Packs. You can now only purchase and provision Standard, Premium, and Premium Plus CRPs. Any legacy Cloud Resource Packs that you have already purchased will be converted into Mendix Cloud Tokens if they are deprovisioned. This will use the rate specified in the [Cloud Resource Packs](/control-center/cloud-tokens/#crps) section of *Cloud Tokens*, and the Mendix Cloud Tokens will be added to your Token pool.
+{{% /alert %}}
+
 ## Key Takeaways
 
 * Mendix Cloud Tokens are a specific type of Token used to access Cloud Resources in the Mendix Platform.
