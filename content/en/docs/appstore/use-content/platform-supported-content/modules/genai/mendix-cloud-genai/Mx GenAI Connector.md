@@ -161,9 +161,7 @@ For [Chat Completions (without history)](/appstore/modules/genai/genai-for-mx/co
 In the entire conversation, you can pass up to five documents that are smaller than 4.5 MB each. The following file types are accepted: PDF, CSV, DOC, DOCX, XLS, XLSX, HTML, TXT, and MD.
 
 {{% alert color="info" %}}
-When adding a document to the `FileCollection`, you can optionally use the `TextContent` parameter to pass the file name. Ensure the file name excludes its extension before passing it to the file collection.
-
-Note that the model uses the file name when analyzing documents, which could make it vulnerable to prompt injection. Depending on your use case, you may choose to modify the string or not pass it at all.
+Note that the model uses the file name when analyzing documents, which could make it vulnerable to prompt injection. Depending on your use case, you may choose to modify the file's name before adding it to the request.
 {{% /alert %}}
 
 ### Knowledge Base Operations
