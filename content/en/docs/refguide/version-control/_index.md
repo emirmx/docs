@@ -103,7 +103,7 @@ You can convert *.mpr* to a new [MPRv2 storage format](/refguide/troubleshoot-re
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Manually modifying files belonging to the *.mpr* storage format such as the *.mpr* file or the *mprcontents* directory (for example, when resolving file conflicts through third-party tooling), will lead to a corrupted state. To recover from a corrupted state a previous commit will need to be restored.
+Manually modifying files belonging to the *.mpr* storage format such as the *.mpr* file or the *mprcontents* directory (for example, when resolving file conflicts through third-party tooling), will lead to a corrupted state. To recover from a corrupted state a previous commit will need to be restored. This includes renaming the *.mpr* file itself. Renaming the App by renaming the *.mpr* file is not supported. Renaming your App when using version control is only supported via Sprintr.
 {{% /alert %}}
 
 ## Branches {#branches}
