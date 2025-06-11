@@ -16,7 +16,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
-### June ___, 2025
+### June 12, 2025
 
 #### New Features
 
