@@ -1,6 +1,6 @@
 ---
 title: "Select Elements"
-url: /refguide/select--elements/
+url: /refguide/select-elements/
 aliases:
     - /refguide/Select++Elements.html
     - /refguide/Select++Elements
