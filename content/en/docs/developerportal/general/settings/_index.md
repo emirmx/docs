@@ -15,14 +15,6 @@ aliases:
 
 The **Settings** page in the [navigation pane](/developerportal/#navigation-pane) of **Apps** presents an overview of your app.
 
-On the top of the page, you can see the image of the app, the app name, and the company that owns the app. You can also find the **Watch** / **Stop Watching** toggle, which enables or disables notifications for this app.
-
-{{< figure src="/attachments/developerportal/general/settings/general-information.png"  class="no-border" >}}
-
-{{% alert color="info" %}}
-Only users with the **App Settings** permission can edit the image and the app name.
-{{% /alert %}}
-
 The **Settings** page always contains the following tabs:
 
 * **General**
@@ -34,6 +26,22 @@ These tabs are only available for users with the **App Settings** permission:
 * **Project Management**
 * **History**
 * **Story Archive**
+
+## Page Header
+
+The page header displays the following information:
+
+* The app image – You can change the image by clicking it.
+* The app name – You can change the name of the app by clicking the pencil icon next to it.    
+    Renaming the app in the Mendix Portal does not automatically rename it in Studio Pro. Refer to [Version Control](/refguide/version-control/#mpr-format) in the Studio Pro guide for information on renaming the *.mpr* file.
+* The company that owns the app.
+* The **Watch** / **Stop Watching** toggle – You can enable or disable notifications for this app.
+
+{{< figure src="/attachments/developerportal/general/settings/general-information.png"  class="no-border" >}}
+
+{{% alert color="info" %}}
+Only users with the **App Settings** permission can edit the image and the app name.
+{{% /alert %}}
 
 ## General {#general}
 
