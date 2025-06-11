@@ -77,7 +77,7 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
         * **Number of Retry Attempts** – Number of retries for failed ingestion jobs.
         * **Suspend Task After Failures** – Number of consecutive failures allowed before suspending the task.
         * **Use Specific Warehouse** - Boolean setting. When false the task will use the referenced warehouse, when true a specific warehouse, for which you will need to run the script provided when boolean is set to true.
-        * **Warehouse** - Field to input the name of the warehouse you want to use (when **Use Specific Warehouse** set tot true).
+        * **Warehouse** - Field to input the name of the warehouse you want to use (when **Use Specific Warehouse** set to true).
 
 16. Click **Schedule Ingestion Task**.
 17. To view the created task, go to the **Task Management** tab, where you can monitor performed ingestion jobs, suspend or enable the task, or drop it. Currently, only one ingestion task can exist at a time.
