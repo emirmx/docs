@@ -1,7 +1,7 @@
 ---
 title: "Property Types"
 url: /apidocs-mxsdk/apidocs/pluggable-widgets-property-types/
-description: A guide for understanding pluggable widgets' property types in Mx10.
+description: A guide for understanding pluggable widgets' property types in Mx11.
 weight: 10
 aliases:
 - /apidocs-mxsdk/apidocs/property-types-pluggable-widgets

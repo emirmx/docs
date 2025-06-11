@@ -1,8 +1,8 @@
 ---
-title: "Mendix 8"
+title: "Pluggable Widgets API"
 url: /apidocs-mxsdk/apidocs/pluggable-parent-8/
-weight: 60
-description: Information on Pluggable Widget API in Mx8.
+weight: 90
+description: "This API helps you to understand pluggable widgets, how they extend app functionality, and how they can be built to interact with Mendix's APIs in Mx8."
 ---
 
 The following Mendix 8 pluggable widget API documents are available here:

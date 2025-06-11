@@ -1,6 +1,6 @@
 ---
 title: "Pluggable Widgets API"
-url: /apidocs-mxsdk/apidocs/pluggable-widgets/
+url: /apidocs-mxsdk/apidocs/pluggable-widgets-10/
 description: "This API helps you to understand pluggable widgets, how they extend app functionality, and how they can be built to interact with Mendix's APIs in Mx10."
 no_list: false
 description_list: true
