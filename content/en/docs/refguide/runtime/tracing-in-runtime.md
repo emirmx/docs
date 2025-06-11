@@ -27,6 +27,12 @@ The runtime generates spans for:
 
 ### Minimal Configuration {#min-configuration}
 
+Tracing can be enabled from `App Settings` -> `Configuration` dialog. Under `Tracing` tab tracing can be enabled, end point and service name can be specified.
+
+{{< figure src="/attachments/refguide/runtime/tracing-in-runtime/tracing-configuration.png" alt="Tracing Configuration Dialog" class="no-border" >}}
+
+### Minimal Configuration {#min-configuration-pre-10-24} (Pre 10.24)
+
 Tracing configuration is handled through the [OpenTelemetry Java Agent](https://opentelemetry.io/docs/zero-code/java/agent/). Use the following steps to set up a minimal tracing configuration:
 
 1. Download [opentelemetry-javaagent.jar](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar) from the [OpenTelemetry Java Instrumentation release page](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases).
