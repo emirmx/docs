@@ -8,13 +8,30 @@ description: "Release notes for deployment to Mendix Cloud"
 
 These release notes cover changes to deployment to [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/).
 
-Mendix Cloud deployments are also dependent on the latest version of the [Mendix Cloud Foundry Buildpack](https://github.com/mendix/cf-mendix-buildpack). The [Mendix Cloud Foundry Buildpack release notes](https://github.com/mendix/cf-mendix-buildpack/releases) are published separately, as other deployment targets are also dependent on the buildpack.
-
 There are separate release notes for other deployment targets; for more information, see the [Deployment](/releasenotes/developer-portal/deployment/) release notes.
 
 For information on the current status of deployment to Mendix Cloud and any planned releases, see [Mendix Status](https://status.mendix.com/).
 
 ## 2025
+
+### May 25, 2025
+
+#### New Features
+
+* We have added a new warning message about required overhead (database disk space) before starting a backup restore.
+  
+#### Improvements
+
+* We have updated the validation rules for creating custom domain names. Instead of 53 characters limit, it is now set to 63 characters limit in compliance with DNS standards.
+* Old UI is deprecated and will be removed on June 1. Users will automatically be switched to the new UI if not already done before.
+
+#### Bug Fixes
+
+* We fixed a bug where user got an error while opening the permissions tab for production environment (Ticket 241675).
+
+#### Temporary Deprecations
+
+* Basic plan offering is being temporarily paused.
 
 ### April 17, 2025
 
@@ -28,8 +45,6 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 * We have added a validation mechanism for pipeline designs, which prevents users from deleting a design if any pipelines using that design are currently running. For more information, see [Pipelines: Editing a Pipeline Design](/developerportal/deploy/pipelines/#edit-pipeline). 
 * You can now access the **Details** page of a pipeline at any point, also while the pipeline is running. For more information, see [Pipelines: Run Results](/developerportal/deploy/pipelines/#run-results).
-
-## 2025
 
 ### February 20, 2025
 
@@ -83,7 +98,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Deployment Portal Fixes
 
-* We fixed a bug in the [Permissions tab of the legacy UI](/developerportal/deploy/environments/#permissions), where changing an application's technical contact resulted in a blank page.
+* We fixed a bug in the [Permissions tab of the legacy UI](/developerportal/deploy/environments/#permissions-tab), where changing an application's technical contact resulted in a blank page.
 * We fixed a bug in the [new UI](/developerportal/deploy/environments-redesign/), where the **scalable** tag was displayed for environments that were not scalable.
 * We fixed a number of other bugs related to dark mode.
 
@@ -1041,7 +1056,7 @@ SSL/TLS ciphers that are still supported for HTTPS connections after December 1,
 
 #### Fixes
 
-* We fixed an issue where some customers were unable to manually add certificates to [access restriction profiles](/developerportal/deploy/environments/#asp). (Ticket 102615)
+* We fixed an issue where some customers were unable to manually add certificates to [access restriction profiles](/developerportal/deploy/environments/#access-restriction-profiles). (Ticket 102615)
 
 ### August 7, 2020
 

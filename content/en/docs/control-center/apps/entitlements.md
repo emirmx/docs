@@ -3,44 +3,46 @@ title: "Entitlements"
 url: /control-center/entitlements/
 description: "Describes the Entitlements page in the Mendix Control Center."
 weight: 50
-beta: true
 no_list: true 
 
 ---
 
-{{% alert color="info" %}}
-This feature is currently in beta. For more information, see [Beta Releases](/releasenotes/beta-features/).
-{{% /alert %}}
-
 ## Introduction
 
-The **Entitlements** page is a self-service tool that displays the transactions using cloud tokens. You can use the page to monitor your consumption of cloud tokens.
+The **Entitlements** page is a self-service tool that displays the transactions using Mendix Cloud Tokens. You can use this page to manage and monitor the consumption of your Mendix Cloud Tokens.
 
-{{< figure src="/attachments/control-center/apps/entitlements/entitlements.png" alt="entitlements page" >}}
+{{< figure src="/attachments/control-center/apps/entitlements/entitlements.png" >}}
 
 ## What Are Mendix Cloud Tokens? {#cloud-tokens}
 
-Mendix cloud tokens are annual capacity-based virtual credits that allow you to provision and allocate any Mendix [cloud resource pack](/developerportal/deploy/mendix-cloud-deploy/#resource-pack) for your Mendix Cloud deployments.
+Mendix Cloud Tokens are a type of Token that can be used within the Mendix Platform to consume Cloud Resources, such as  [Cloud Resource Packs](/developerportal/deploy/mendix-cloud-deploy/#resource-pack) (CRPs), for your Mendix Cloud deployments. The contractual definitions of Tokens and Mendix Cloud Tokens can be found on our [Order Form Definitions](https://www.mendix.com/legal/platform-usage/order-form-definitions/#section-9) page.
 
-To use cloud tokens, you need to enable self-service. If you want to enable self-service or have questions about cloud tokens, contact your Customer Success Manager (CSM).
+The number of Mendix Cloud Tokens required for each type of Cloud Resource Pack is specified in the [Cloud Resource Packs](#crps) section of this document. All your current CRPs will be converted to their equivalent Mendix Cloud Tokens and aggregated with any other Mendix Cloud Tokens. You can then use these to provision Cloud resources (of any type and size) as specified in your contracts. 
 
-{{% alert color="info" %}}
-If you previously worked with cloud credits, please note that cloud tokens have now replaced cloud credits. Cloud tokens will be available as a product on the Mendix pricelist, starting in early 2025. One cloud credit is equivalent to ten cloud tokens. For more information, see the [Transition from Cloud Credits to Cloud Tokens](#cloud-tokens-faq).
-{{% /alert %}}
+To use Mendix Cloud Tokens, you need to enable self-service. If you want to enable self-service or have questions about Mendix Cloud Tokens, contact your Customer Success Manager (CSM).
 
-{{% alert color="info" %}}
-From now on, you can only purchase and provision standard, premium, and premium plus cloud resource packs, not legacy resource packs. The cloud tokens for legacy resource packs that you already purchased will be credited back to your account if you deprovision an environment.
-{{% /alert %}}
-
-## Cloud Resource Packs
+### Legacy Cloud Resource Packs
 
 {{% alert color="info" %}}
-For the technical details of each cloud resource pack, see the [Cloud Resource Packs](/developerportal/deploy/mendix-cloud-deploy/#resource-pack) section in *Mendix Cloud*.
+It is no longer possible to purchase Legacy Cloud Resources Packs. It is now only possible to purchase and provision the following CRPs: Standard; Premium; and Premium Plus. Any legacy Cloud Resource Packs you already purchased will be converted into Mendix Cloud Tokens if they are deprovisioned. This will use the rate specified in the [Cloud Resource Packs](#crps) section and the Mendix Cloud Tokens will be added to your Token pool.
 {{% /alert %}}
 
-The tables below show how many cloud tokens each cloud resource pack costs:
+### Key Takeaways
 
-| Standard Resource Packs | Cloud Tokens |
+* Mendix Cloud Tokens are a specific type of Token used to access Cloud Resources in the Mendix Platform.
+* The number of tokens required depends on the CRP you want, as listed below.
+* You buy tokens in advance and can use them to obtain CRPs.
+* If you no longer need those resources, you can reuse the token to obtain other CRPs or keep it to be used later.
+
+## Cloud Resource Packs {#crps}
+
+{{% alert color="info" %}}
+For the technical details of each cloud resource pack, see the [Cloud Resource Packs](/developerportal/deploy/mendix-cloud-deploy/#resource-pack) section of *Mendix Cloud*.
+{{% /alert %}}
+
+The tables below show how many Mendix Cloud Tokens each CRP requires:
+
+| Standard Resource Packs | Mendix Cloud Tokens |
 | --- | --: |
 | XS21 | 10 |
 | S21 | 20 |
@@ -52,7 +54,7 @@ The tables below show how many cloud tokens each cloud resource pack costs:
 | 4XL21 | 1280 |
 | 4XL-5XLDB | 2240 |
 
-|Premium Resource Packs | Cloud Tokens |
+|Premium Resource Packs | Mendix Cloud Tokens |
 | --- | --: |
 | S21 | 30 |
 | M21 | 60 |
@@ -63,7 +65,7 @@ The tables below show how many cloud tokens each cloud resource pack costs:
 | 4XL21 | 1920 |
 | 4XL-5XLDB | 3360 |
 
-|Premium Plus Resource Packs | Cloud Tokens |
+|Premium Plus Resource Packs | Mendix Cloud Tokens |
 | --- | --: |
 | XL21 | 400 |
 | 2XL21 | 800 |
@@ -71,7 +73,7 @@ The tables below show how many cloud tokens each cloud resource pack costs:
 | 4XL21 | 3200 |
 | 4XL-5XLDB | 5600 |
 
-| Legacy Resource Packs | Cloud Tokens |
+| Legacy Resource Packs | Mendix Cloud Tokens |
 | --- | --: |
 | XS20 | 10 |
 | S20 | 20 |
@@ -90,12 +92,16 @@ The tables below show how many cloud tokens each cloud resource pack costs:
 | 2XL | 167 |
 | 3XL | 640 |
 
-## Transition from Cloud Credits to Cloud Tokens{#cloud-tokens-faq}
+## Transition from Cloud Credits to Mendix Cloud Tokens{#cloud-tokens-faq}
 
-If you previously worked with cloud credits, you can see the following changes after Mendix cloud tokens are introduced:
+{{% alert color="info" %}}
+If you previously worked with Cloud Credits, please note that Mendix Cloud Tokens have now replaced Cloud Credits. Ten Mendix Cloud Tokens are equivalent to one Cloud Credit. Mendix Cloud Tokens are available as a product on the Mendix pricelist.
+{{% /alert %}}
 
-* Name change: cloud tokens are the successor to cloud credits and completely replace this concept. Cloud tokens have replaced cloud credits throughout the Mendix Platform. This name change has primarily affected the **Entitlements** page and the [Deployed Apps](/control-center/deployed-apps/) page in Control Center.
-* Value adjustment: A cloud credit is equivalent to ten cloud tokens. As a result, Mendix cloud resource packs are valued differently with cloud tokens compared to cloud credits. For example, the smallest cloud resource pack, XS standard resource pack, which was valued at one cloud credit, is now equivalent to ten cloud tokens. Your existing transactions and the number of cloud tokens are automatically adjusted. You can see this change on the **Entitlements** page in Control Center. 
-* Direct ordering: you can order Mendix cloud tokens directly from the Mendix pricelist. You can use your available cloud tokens to provision any cloud resource pack for your apps.
+If you previously worked with Cloud Credits, you will see the following changes:
+
+* **Name change** – Mendix Cloud Tokens are the successor to Cloud Credits and have replaced Cloud Credits throughout the Mendix Platform. This name change has primarily affected the Entitlements page and the Deployed Apps page in Control Center.
+* **Value adjustment** – Ten Mendix Cloud Tokens are equivalent to one Cloud Credit. As a result, Mendix Cloud Resource Packs (CRPs) have different Mendix Cloud Token values compared to their previous value in Cloud Credits. For example, the smallest CRP, XS Standard Resource Pack, which was valued at one Cloud Credit, is now equivalent to ten Mendix Cloud Tokens. Your existing transactions and the number of Mendix Cloud Tokens are automatically adjusted. You can see this change on the Entitlements page in Control Center.
+* **Direct ordering** – you can order Mendix Cloud Tokens directly from the Mendix pricelist and you can use your available Mendix Cloud Tokens to provision any CRPs for your apps.
 
 For any questions, contact your Mendix Customer Success Manager. If you experience any issues, create a support ticket with Mendix Support.

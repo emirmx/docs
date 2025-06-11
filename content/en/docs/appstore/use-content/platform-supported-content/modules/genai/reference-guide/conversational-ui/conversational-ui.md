@@ -137,7 +137,7 @@ The following additional snippets can be used to give the user more control over
 
 See the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926) or the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) on how to use those snippets.
 
-### Providing the ChatContext {#chat-context}
+### Providing the Chat Context {#chat-context}
 
 The `ChatContext` is the central entity in the pages and snippets above and represents a chat conversation with potentially many messages. It functions as the input for the action microflow, which contains the logic for LLM interaction and is executed when the user clicks the **Send** button. The `ChatContext` is visible only to its owner (see [Module Roles](#module-roles) for exceptions). 
 
@@ -190,7 +190,7 @@ If you want to create your custom action microflow, keep the following considera
 * Use the [chat context](#chatcontext-operations) and [request operations](#request-operations) to facilitate the interaction between the chat context and the model.
 * The custom action microflow can only be triggered if it is set as an action microflow for the `ProviderConfig` using one of the operations mentioned before.
 
-##### ChatContext operations {#chatcontext-operations}
+##### Chat Context Operations {#chatcontext-operations}
 
 The following operations can be found in the toolbox for changing the [ChatContext](#chat-context) in a (custom) action microflow:
 
@@ -206,7 +206,7 @@ The following operations are used in a (custom) action microflow:
 * `Get Current User Prompt` gets the current user prompt. It can be used in the [action microflow](#action-microflow) because the `CurrentUserPrompt` from the chat context is no longer available.
 * `Update Assistant Response` processes the response of the model and adds the new message and any sources to the UI. This is typically one of the last steps of the logic in an [action microflow](#action-microflow). It only needs to be included at the end of the happy flow of an action microflow. Make sure to pass the response object.
 
-### Customizing styling {#customize-styling}
+### Customizing Styling {#customize-styling}
 
 The ConversationalUI module comes with stylesheets that are intended to work on top of Atlas Core. You can use variables and custom classes to modify the default rendering and think of colors, sizes, and positions. To learn more about customizing styling in a Mendix app in general and targeting elements using SCSS selectors, refer to the [how-to](/howto/front-end/customize-styling-new/#add-custom-styling) page.
 
@@ -247,7 +247,7 @@ You can use the following classes in your custom stylesheets to create SCSS sele
 | `message--user` | a user message in the conversation |  
 | `chat-bubble-wrapper--user` | a user message in the pop-up and sidebar chat |  
 
-#### Creating a custom page {#custom-page}
+#### Creating a Custom Page {#custom-page}
 
 You may need to use the following classes when building a more complex custom page that includes Conversational UI components.
 
