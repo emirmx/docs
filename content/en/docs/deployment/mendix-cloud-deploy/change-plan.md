@@ -31,6 +31,11 @@ Before requesting a plan change, verify the following:
 * The app's tenant is self-service enabled. To activate this capability for your company, contact your Customer Success Manager.
 * You are the [Technical Contact](/support/#technical-contacts) for the app (only Technical Contacts can submit a plan change request).
 
+{{% alert color="info" %}}
+Changing your app environment's plan does not change the additional storage attached to it. To change the additional storage, you must request an [environment resize](/support/new-app-node-request-template/#resize) through [Mendix Support](https://support.mendix.com/).
+{{% /alert %}}
+
+
 ## Changing a Plan {#changing-plan}
 
 {{% alert color="info" %}}
