@@ -8,7 +8,7 @@ description_list: true
 cascade:
     - content_type: "Studio Pro 8"
     - mendix_version: 8
-    - banner_8: true
+    - banner: "If you would like to upgrade to a newer <a href=\"/releasenotes/studio-pro/lts-mts/#lts\">long-term support version</a> of Studio Pro, see <a href=\"/refguide9/moving-from-8-to-9/\">Moving from Mendix Studio Pro 8 to 9</a>."
     - old_content: true
     - hide_feedback: true
     - notsitemap: true

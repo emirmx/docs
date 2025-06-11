@@ -21,7 +21,7 @@ This is the reference guide for CLEVR's APD 3 for Mendix. It has the following c
 * [Apps](/appstore/partner-solutions/apd/rg-three-apps/)
 * [Environments](/appstore/partner-solutions/apd/rg-three-environments/)
 * [Dashboard](/appstore/partner-solutions/apd/rg-three-dashboard/)
-* [Logs](/appstore/partner-solutions/apd/rg-three-logs/)
+* [APD Logs](/appstore/partner-solutions/apd/rg-three-logs/)
 * [Performance Statistics](/appstore/partner-solutions/apd/rg-three-statistics/)
 * [Performance Recorder](/appstore/partner-solutions/apd/rg-three-recorder/)
 * [Settings](/appstore/partner-solutions/apd/rg-three-settings/)

@@ -139,7 +139,7 @@ You can use Mendix to verify your webhook; the [Community Commons](/appstore/mod
 
 ## Package Upload to the Mendix Portal
 
-When you [upload a package to the Mendix Portal](/developerportal/deploy/environments/#package-repository) (including creating a package from the Team Server), and the webhook responds to the event **On package upload**, request content is sent to the configured endpoint. The request content contains a payload with the following format:
+When you [upload a package to the Mendix Portal](/developerportal/deploy/environments/#deployment-packages-tab) (including creating a package from the Team Server), and the webhook responds to the event **On package upload**, request content is sent to the configured endpoint. The request content contains a payload with the following format:
 
 ```json
 {
