@@ -625,7 +625,7 @@ FROM Sales.Order
 | Doe      | 2      | 5.0   | Regular   |
 | Moose    | 3      | 8.2   | Priority  |
 
-If result expressions have different numeric types, data type of the result expression is defined based on [type coercion precedence](#type-coercion).
+If expression results have different numeric types, the data type of the expression result is defined based on [type coercion precedence](#type-coercion).
 
 ```sql
 SELECT
@@ -643,15 +643,13 @@ SELECT
 FROM Sales.Order
 ```
 
-| LastName | Number | Price | PriceOrNumber (type: Decimal) | NumberOrPrice (type: Decimal) |
+| LastName | Number | Price | PriceOrNumber (type: Decimal) | NumberOrPrice (type: Decimal¹) |
 |:---------|-------:|------:|--------------:|--------------:|
 | Doe      | 7      | 1.5   | 1.5     | 7.0     |
 | Doe      | 2      | 5.0   | 5.0   | 2.0     |
 | Moose    | 3      | 8.2   | 3.0 | 8.0     |
 
-{{% alert color="info" %}}
-In OQL v1, the expression gets the type of the first argument. If you use OQL v1, the type of `NumberOrPrice` in the example above is Integer, not Decimal.
-{{% /alert %}}
+¹In OQL v1, the expression gets the type of the first argument. If you use OQL v1, the type of `NumberOrPrice` in the example above is Integer, not Decimal.
 
 ### Operator Precedence
 
@@ -800,7 +798,7 @@ SELECT COALESCE(LastName, FirstName) AS Name FROM Sales.Customer
 | Doe  |
 | Jane |
 
-If all arguments have different numeric types, data type of the result expression is defined based on [type coercion precedence](#type-coercion).
+If all arguments have different numeric types, the data type of the expression result is defined based on [type coercion precedence](#type-coercion).
 
 ```sql
 SELECT
@@ -809,14 +807,12 @@ SELECT
 FROM Sales.Customer
 ```
 
-| AgeOrAmount (type: Decimal) | AmountOrAge (type: Decimal) |
+| AgeOrAmount (type: Decimal) | AmountOrAge (type: Decimal²) |
 |------:|------:|
 | 25.0   | 25.0 |
 | 42.3   | 42.3 |
 
-{{% alert color="info" %}}
-In OQL v1, the expression gets the type of the first argument. If you use OQL v1, the type of `AgeOrAmount` in the example above is Integer, not Decimal.
-{{% /alert %}}
+²In OQL v1, the expression gets the type of the first argument. If you use OQL v1, the type of `AgeOrAmount` in the example above is Integer, not Decimal.
 
 ### DATEDIFF {#datediff-function}
 
