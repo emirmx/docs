@@ -27,9 +27,9 @@ The runtime generates spans for:
 
 ### Minimal Configuration {#min-configuration}
 
-Tracing can be enabled from `App Settings` -> `Configuration` dialog. Under `Tracing` tab tracing can be enabled, end point and service name can be specified.
+Tracing can be enabled from the `App Settings` -> `Configuration` dialog. In the `Tracing` tab you can enable tracing and specify an **Endpoint** and **Service Name**.
 
-{{< figure src="/attachments/refguide/runtime/tracing-in-runtime/tracing-configuration.png" alt="Tracing Configuration Dialog" class="no-border" >}}
+{{< figure src="/attachments/refguide/runtime/tracing-in-runtime/tracing-configuration.png" >}}
 
 ### Minimal Configuration {#min-configuration-pre-10-24} (Pre 10.24)
 
