@@ -232,12 +232,12 @@ Some capabilities of the chat completions operations are currently only availabl
 
 All [tool choice types](/appstore/modules/genai/genai-for-mx/commons/#enum-toolchoice) of GenAI Commons for the [Tools: Set Tool Choice](/appstore/modules/genai/genai-for-mx/commons/#set-toolchoice) action are supported. For API mapping reference, see the table below:
 
-| GenAI Commons (Mendix) | Amazon Bedrock                |
-| -----------------------| ----------------------------- |
-| auto                   | auto                          |                     
-| any                    | any                           |
-| none                   | tools removed from request    |
-| tool                   | tool                          |
+| GenAI Commons (Mendix) | Amazon Bedrock |
+| --- | --- |
+| Auto | Auto |                     
+| Any | Any |
+| None | Tools removed from request |
+| Tool | Tool |
 
 #### RetrieveAndGenerate {#retrieve-and-generate}
 
