@@ -113,7 +113,7 @@ To build your iOS app in Xcode, do the following:
 1. From there, you can export the *.ipa* file by selecting **Distribute App** > **App Store Connect** or **Ad Hoc**, depending on your goal.
 1. Follow the steps to export the *.ipa* file or upload it directly to App Store Connect 
 
-Once you finish the final step, the exported *.ipa* file is usually located under `"~/Library/Developer/Xcode/Archives/<DATE>/<YourApp>.xcarchive"`.
+Once you finish the final step, the exported *.ipa* file is usually located under `"~/Library/Developer/Xcode/Archives/DATE/YOUR-APP.xcarchive"` (with the publish date and name of your app instead of DATE and YOUR-APP).
 
 ### Android (Android Studio)
 
@@ -126,10 +126,10 @@ To build an Android app in Android Studio, do the following:
 1. Select release as the build variant.
 1. Complete the wizard and wait for Android Studio to build the release file.
 
-Once you finish the final step, the output *.apk* or *.aab* file will be located in one of two places:
+Once you finish the final step, the output *.apk* or *.aab* file will be located in one of two places (with the name of your project instead of YOUR-PROJECT):
 
-* `"<your-project>/android/app/build/outputs/apk/release/app-release.apk"`
-* `"~<your-project>/android/app/build/outputs/bundle/release/app-release.aab"`
+* `"YOUR-PROJECT/android/app/build/outputs/apk/release/app-release.apk"`
+* `"~YOUR-PROJECT/android/app/build/outputs/bundle/release/app-release.aab"`
 
 ## Publishing to App Stores {#publishing}
 
