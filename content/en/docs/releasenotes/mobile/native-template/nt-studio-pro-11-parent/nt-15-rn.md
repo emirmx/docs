@@ -5,8 +5,8 @@ weight: 6
 description: "Native Template 15"
 ---
 
-## 15.0.1 {#1501}
-**Release date: ____**
+## 15.1.1 {#1501}
+**Release date: June 12, 2025**
 
 ### Improvements
 - We improved update process from an older version of Studio Pro to the Latest version(s).
@@ -15,6 +15,23 @@ description: "Native Template 15"
 ### Library Updates and Improvements
 
 - **@mendix/native:** 10.1.4
+
+## 15.1.0 {#1400}
+
+**Release date: June 2, 2025**
+
+### Improvements
+
+* We migrated several libraries that hadn’t been maintained in years to modern, actively supported alternatives.
+
+### Removed
+
+* **@react-native-community/push-notification-ios:** 1.10.1
+
+#### Library Updates and Improvements
+
+* **notifee@notifee/react-native:** 9.1.8
+* **react-native-device-info:** 14.0.4
 
 ## 15.0.0 {#1500}
 
