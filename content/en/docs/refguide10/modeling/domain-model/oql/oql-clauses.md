@@ -852,7 +852,6 @@ The `ORDER BY` clause cannot be used in view entities without a `LIMIT` or an `O
 If OQL v2 is enabled, an `ORDER BY` clause cannot be used in subqueries without a `LIMIT` or an `OFFSET` clause because the order of the subquery results may not be retained in the outer query. See the [`ORDER BY` in Subquery](/refguide10/oql-v2/#order-by-in-subquery) section of *OQL Version 2 Features* for more details.
 {{% /alert %}}
 
-
 ### Syntax
 
 The syntax is as follows:

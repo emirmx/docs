@@ -5,16 +5,21 @@ weight: 6
 description: "Native Template 14"
 ---
 
+## 14.0.2 {#1402}
+
+**Release date: June 12, 2025**
+
+### Fixes
+
+* We improved update process from an older version of Studio Pro to the Latest version(s).
+
 ## 14.0.1 {#1401}
-**Release date: ____**
 
-### Improvements
-- We improved update process from an older version of Studio Pro to the Latest version(s).
-- We fixed an issue where iOS apps built with Mendix 10.21 and above would not run when the React Client was enabled. Android was not affected.
+**Release date: June 5, 2025**
 
-### Library Updates and Improvements
+### Fixes
 
-- **@mendix/native:** 9.0.4
+* We resolved an issue where iOS applications built with Mendix 10.18 or higher would fail when the React client was enabled in **Runtime** settings.
 
 ## 14.0.0 {#1400}
 

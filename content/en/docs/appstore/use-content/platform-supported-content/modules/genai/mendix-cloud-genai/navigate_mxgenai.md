@@ -20,19 +20,27 @@ GenAI resource packs accelerate the delivery of complete generative AI solutions
 ### Settings
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIResource_Settings.png" >}}
-
 The **Settings** tab contains the details of a GenAI resource. It shows the following:
 
 * **Display Name**: indicates the name of the resource.
 * **ID**: indicates the resource ID.
-* **Region**: the region where the resource is hosted.
+* **Region(s)**: the region where the resource is hosted.
+* **Cross Region Inference (CRI)**: shows if the model supports cross-region inference.
 * **Cloud Provider**: indicates the cloud provider, for example, AWS.
 * **Type**: this is the type of resource, for example, Text Generation, Embedding, Knowledge Base, etc.
 * **Model**: indicates which model is used, for example, Anthropic Claude Sonnet 3.5.
 * **Plan**: indicates the subscription plan used for compute resources (for example, embedding or text generation resources).
 * **Environment**: shows which environment is used, for example, test, acceptance, or production.
 
-When you are looking at the knowledge base resource settings, you will also see details of the associated embeddings resource and vice versa. To learn more about embeddings,  see the [Embedding vector](/appstore/modules/genai/rag/#embedding-vector) section of *RAG in a Mendix App*.
+When you are looking at the knowledge base resource settings, you will also see details of the associated embeddings resource and vice versa. To learn more about embeddings, see the [Embedding vector](/appstore/modules/genai/rag/#embedding-vector) section of *RAG in a Mendix App*.
+
+#### Cross-Region Inference (CRI)
+
+Cross-region inference (CRI) allows a model to redirect requests to another region, helping to distribute the load across multiple regions. Connecting to a cross-region inference profile does not change how the request is sent; the redirection happens on the server side, determining the region to handle the request to get the fastest response.
+
+For more details on how CRI can help increase throughput, see [Increase throughput with cross-Region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html). 
+
+Currently, CRI is available for a limited number of models and can only be enabled for new resources. In some cases, certain models are available only through cross-region inference.
 
 ### Team
 

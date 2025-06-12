@@ -1,11 +1,16 @@
 ---
 title: "Use Any Chart"
 url: /appstore/widgets/charts-any-usage/
+deprecated: true
 weight: 20
 description: "How to use the Any Chart widget to create advanced charts"
 aliases:
     - /howto/front-end/charts-any-usage/
 ---
+
+{{% alert color="warning" %}}
+This widget is not compatible with the [Mendix React Client](/refguide/mendix-client/react/). We have published a version of Any Chart that supports the React client called Custom Chart. Update your [Charts](/appstore/widgets/charts/) widget (to version 6.0 or above) to use the Custom Chart feature.
+{{% /alert %}}
 
 ## Introduction
 

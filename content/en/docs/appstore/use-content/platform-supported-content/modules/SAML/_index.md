@@ -117,9 +117,6 @@ Custom user provisioning flows created for a SAML V3.x are still supported in V4
 
 ### Prerequisites {#dependencies}
 
-* Install and configure the [Mx Model Reflection](/appstore/modules/model-reflection/) module.
-* Install and configure the [Encryption](/appstore/modules/encryption/) module – this is needed to encrypt the key store passwords in version 3.5.0 and above of the SAML module.
-* Install and configure the [User Commons](https://marketplace.mendix.com/link/component/223053) module (for version 4.0.0 and above)
 * For apps running outside of Mendix Cloud, make sure you have [external file storage](/refguide/system-requirements/#file-storage) configured.
 
     {{% alert color="warning" %}}The SAML module writes configuration data to a file document on the file storage to read it later. Without external file storage, this configuration will be lost when you restart your app. The SAML module will not work correctly without reading the configuration data from the file storage.
@@ -135,6 +132,16 @@ Custom user provisioning flows created for a SAML V3.x are still supported in V4
         <action type="Rewrite" url="http://localhost:8080/SubmitLoginForm>
     </rule>
     ```
+
+### Dependencies
+
+* [Mx Model Reflection](/appstore/modules/model-reflection/) module.
+* [Encryption](/appstore/modules/encryption/) module – this is needed to encrypt the key store passwords in version 3.5.0 and above of the SAML module.
+* [User Commons](https://marketplace.mendix.com/link/component/223053) module (for version 4.0.0 and above)
+
+    {{% alert color="warning" %}}
+If you are using Mendix version 10.21.1, use User Commons module version 2.1.0 or upgrade to version 2.1.2. Version 2.1.1 of the module is a special release intended solely for Mendix version 10.21.0.
+    {{% /alert %}}
 
 ## Installation
 
@@ -241,7 +248,7 @@ After creating an application, you will receive an IdP metadata URL. This URL is
 
 The setup described above offers default configurations to start the SAML module. Any changes made to the configuration will require adjustments to other configuration details accordingly.
 
-##### Creating SP Manually at Azure
+##### Creating SP Manually at Entra ID
 
 To connect [Azure](https://portal.azure.com/#home) with SAML, refer to the below image. 
 
@@ -412,11 +419,13 @@ By default, end-users are provisioned using the Account object in the Administra
 
 ### Default User Provisioning
 
-This applies to the following mapping:
+If the standard configuration meets your needs and your application does not have special user management requirements, you can use the default User Provisioning.
 
-| ID-token Provided by your IdP | Attribute of `Administration.Account` Object |
+In default configuration, the custom user entity is set as `Administration.Account`, the principal attribute is set as `Name`, and the default attribute mapping is provided.
+
+| IdP Attribute | Configured Entity Attribute |
 | --- | --- |
-| nameID | Name |
+| NameID | Name |
 
 ### Custom User Provisioning{#custom-provisioning}
 

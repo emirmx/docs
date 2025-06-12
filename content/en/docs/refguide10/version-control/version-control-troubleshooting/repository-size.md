@@ -55,21 +55,19 @@ Collaborating within one app on MPRv1 and MPRv2 branches is possible. To limit r
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Merging MPRv2 apps using the command line with `git merge` or using third-party tools is only supported from Studio Pro 10.21.0 and above. Hybrid merges involving both MPRv1 and MPRv2 formats are not supported.
+Merging MPRv2 apps using the command line with `git merge` or using third-party tools is currently not supported.
 {{% /alert %}}
 
 #### Converting MPR Storage Format {#convert}
 
-In Studio Pro 10.18 and above upgrading to the new format is optional and can be done per branch via the [File menu](/refguide10/file-menu/). To upgrade to MPRv2, open your app and select **File > Upgrade app to split MPR format (v2)**. After a confirmation the app will be converted and you will be prompted to commit.
+In Studio Pro 10.18 and above upgrading to the new format is optional and can be done per branch via the [File menu](/refguide10/file-menu/). As of Studio Pro 10.22, conversion happens automatically when opening the app. 
+
+To manually upgrade to MPRv2, open your app and select **File > Upgrade app to split MPR format (v2)**. After a confirmation the app will be converted and you will be prompted to commit.
 
 You can also downgrade branches that are already on MPRv2 to MPRv1 by selecting **File > Downgrade app to combined MPR format (v1)**.
 
 {{% alert color="info" %}}
 Before converting the MPR format it is recommended to commit your local work to ensure there is an isolated commit with the conversion step for debugging, in case conversion fails.
-{{% /alert %}}
-
-{{% alert color="info" %}}
-In future versions of Studio Pro conversion to MPRv2 will happen automatically when opening a branch.
 {{% /alert %}}
 
 ### Decreasing MPRv1 File Size
@@ -106,7 +104,7 @@ The tool is currently in public beta. The cleanup tool can be downloaded [here](
 {{% /alert %}}
 
 {{% alert color="info" %}}
-This tool is executed on a Mendix Git repository. If your Mendix app is still on SVN you will first have to migrate to Git. In case the Migrate button is not showing on the Team Server page after you open your app in [Apps](https://sprintr.home.mendix.com/), because of the size restrictions, you can reach out to your CSM to get your app whitelisted.
+This tool is executed on a Mendix Git repository. If your Mendix app is still on SVN you will first have to migrate to Git. In case the Migrate button is not showing on the Team Server page after you open your app in [Apps](https://sprintr.home.mendix.com/), because of the size restrictions, you can reach out to your CSM to get your app safelisted.
 {{% /alert %}}
 
 ### Cleanup Process
@@ -128,7 +126,6 @@ To conclude whether the situation is acceptable for you, follow these steps:
 * Ensure the Git app you are downloading is not yet on your machine
 * Download the branch through Studio Pro, while manually measuring how long the download takes
   
-
 The first download of a branch on a device is a good indication of the maximum waiting time you or your team member can experience. Subsequent branch downloads use data that is already available locally and will, therefore, be a lot faster.
 
 If the download time was acceptable, or if you have a process where team members do not change often and they do not have to download an app for the first time, you can skip the cleanup.
@@ -224,7 +221,6 @@ We recommend doing the following:
 * Check your git config settings, especially any setting that involves encoding or text conversions: run `git config --list --show-origin`.
 * Consider moving your local repo, so that its folder has a shorter name
   
-
 When reaching out to Mendix Support, please include:
 
 * App/Projects ID for your app
