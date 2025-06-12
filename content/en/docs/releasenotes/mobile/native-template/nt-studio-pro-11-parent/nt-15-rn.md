@@ -5,7 +5,7 @@ weight: 6
 description: "Native Template 15"
 ---
 
-## 15.1.1 {#1501}
+## 15.1.1 {#1511}
 **Release date: June 12, 2025**
 
 ### Improvements
@@ -16,7 +16,7 @@ description: "Native Template 15"
 
 - **@mendix/native:** 10.1.4
 
-## 15.1.0 {#1400}
+## 15.1.0 {#1510}
 
 **Release date: June 2, 2025**
 
