@@ -8,6 +8,103 @@ description: "These release notes showcase each release of the iOS and Android M
 
 Depending on the Mendix version your app is developed in and the device you want to run on, you need a different Make It Native app. For more information on how to download the correct version, see the [Getting the Make It Native App](/refguide/mobile/getting-started-with-mobile/prerequisites/#get-min-app) section in *Native App Prerequisites and Troubleshooting*.
 
+## Android 5.0.1 / iOS 5.0.1
+
+**Release date: May 30, 2025**
+
+### Improvements
+
+* This new version is compatible with Mendix 10.22.
+
+## Android 4.2.0 / iOS 4.2.0
+
+**Release date: March 28, 2025**
+
+### Improvements
+
+* This new version is compatible with Mendix 10.21.
+
+## Android 4.1.0 / iOS 4.1.0
+
+**Release date: February 26, 2025**
+
+### Improvements
+
+* This new version is compatible with Mendix 10.20.
+
+## Android 4.0.1
+
+**Release date: February 25, 2025**
+
+### Fixes
+
+* We fixed issues causing crashes when reloading the native app.
+
+## Android 4.0.0 / iOS 4.0.0
+
+**Release date: January 30, 2025**
+
+### Fixes
+
+* We fixed an issue with the bundle identifier in the **Dev** scheme on Xcode.
+
+### Improvements
+
+* We have changed our offline database management backend (ODMB) to OP-SQLite. Native apps need to be rebuilt via Studio Pro (**App** > **Build Native Mobile App**).
+
+## iOS 3.2.1
+
+**Release date: Jun 3, 2025**
+
+### Fixes
+
+* We fixed an issue that caused apps to crash when using the React client in Mendix Studio Pro version 10.21.
+
+## Android 3.2.1 / iOS 3.2.0
+
+**Release date: May 21, 2025**
+
+### Improvements
+
+* The latest version of Studio Pro 10.18 includes bug fixes and performance improvements.
+
+## Android 3.1.8 / iOS 3.1.8
+
+**Release date: March 31, 2025**
+
+### Fixes
+
+* We applied fixes to Sample Apps.
+
+## Android 3.1.7 / iOS 3.1.7
+
+**Release date: March 29, 2025**
+
+### Improvements
+
+* We enabled the **Sample Apps** section.
+
+## Android 3.1.6 / iOS 3.1.6
+
+**Release date: March 26, 2025**
+
+### Fixes
+
+* We updated @react-native-community/geolocation to version 3.4.0 to resolve location-related issues.
+
+## Android 3.1.2 / iOS 3.1.2
+
+**Release date: February 3, 2025**
+
+### Improvements
+
+* The new version of MiN is compatible with Studio Pro 10.18.
+
+### Important Notes
+
+* We disabled JavaScriptCore(JSC) entirely and now only support Hermes.
+* Apps created in Studio Pro 10.18 and above will automatically use Hermes without any additional configuration.
+
 ## Android 3.0.0 / iOS 3.0.0
 
 **Release date: July 31, 2023**

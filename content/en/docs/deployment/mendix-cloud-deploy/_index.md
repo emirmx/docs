@@ -113,7 +113,7 @@ Apps that run on Mendix Cloud are automatically assigned their own URLs. The for
 | Licensed app | Test, acceptance, flexible environments | Depends on the region:<br /> `{app-name}-{environment-type}.mendixcloud.com`<br />or<br />`{app-name}-{environment-type}.apps.{region}.mendixcloud.com` | `myappname-accp.mendixcloud.com`, <br /> `myappname-accp.apps.ap-3a.mendixcloud.com` |
 | Free App     | N/A         | `{app-name}-sandbox.mxapps.io`<br />or<br />`{app-name}.mxapps.io` | `myfreeappname.mxapps.io` |
 
-{{% alert color="info" %}}Licensed apps run in Cloud Foundry clusters deployed on AWS. You can select the region for your app, but not for the cluster. Note that there can be multiple clusters in a region, and the URL of an app on some clusters in a region contains `apps.{region}`.{{% /alert %}}
+{{% alert color="info" %}}Licensed apps run in clusters deployed on AWS. You can select the region for your app, but not for the cluster. Note that there can be multiple clusters in a region, and the URL of an app on some clusters in a region contains `apps.{region}`.{{% /alert %}}
 
 For licensed apps, you can customize a URL by adding [custom domains](/developerportal/deploy/custom-domains/).
 

@@ -12,6 +12,16 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2025
 
+### May 29, 2025
+
+#### Portal Improvements
+
+* We have added a new **Description** field in the Deploy Package flow to provide more information about the deployment package.
+
+#### Deploy API
+
+* It is now possible to enable the deployment strategy by using the Deploy APIs (Create environment, Update environment). This feature lets you apply or configure updates with minimized downtime in certain scenarios. For more information, see [Reduced Downtime Deployment](/developerportal/deploy/private-cloud-reduced-downtime/).
+
 ### May 23, 2025
 
 #### Fixes

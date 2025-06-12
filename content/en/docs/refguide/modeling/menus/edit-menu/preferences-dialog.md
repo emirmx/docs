@@ -90,6 +90,10 @@ This option controls the synchronization of managed dependencies. For more infor
 
 A directory where Gradle is located on the computer that you use to deploy the application. The correct directory is usually located automatically.
 
+#### Extra Arguments
+
+This option can be used to add extra arguments to the Gradle process.
+
 #### Use Custom Repositories
 
 Enabling this option allows you to specify which repositories should be used by Gradle. For more information, see the [Custom Repositories](/refguide/managed-dependencies/#custom-repos) section in *Managed Dependencies*.
@@ -221,15 +225,11 @@ This option allows user to choose between Studio Pro themes: **Auto (System them
 
 This option sets the default page editor mode that your page opens in: **Structure mode** (the default) or **Design mode**. For more information on page editor modes, see the [Page Editor Modes](/refguide/page/#page-editor-modes) section in *Page*.
 
-### Rendering {#rendering}
-
-Hardware and driver issues may cause performance problems when running Studio Pro. These issues can appear in form of dialog boxes opening and closing much more slowly than expected, and general slowness of the UI. In case the hardware problems cannot be solved, it is possible to mitigate these issues by turning the **Enable software rendering mode** setting on. Enabling this setting requires a restart of Studio Pro to take effect. Running the application with this setting on may increase the CPU usage.
-
 ### Language {#language}
 
 This feature is currently in beta.
 
-This option allows you to change the user interface language you work in while using Studio Pro. At this time, English, Japanese, Chinese, and Korean are supported. You must restart Studio Pro in order to use this feature.
+This option allows you to change the user interface language you work in while using Studio Pro. At this time, English, Japanese, Chinese, Korean, and Brazilian Portuguese are supported. You must restart Studio Pro in order to use this feature.
 
 ### Editor Tabs Closing Policy {#closing-policy}
 
@@ -244,6 +244,12 @@ The closing policy is not applied to tabs with unsaved changes.
 This setting allows you to move forward and backward through your editing history to show the documents you have recently worked on. This feature is enabled by default. 
 
 ## Advanced Tab
+
+### Rendering {#rendering}
+
+Hardware and driver issues may cause performance problems when running Studio Pro. These issues can appear in form of dialog boxes opening and closing much more slowly than expected, and general slowness of the UI. If case the hardware problems cannot be solved, it is possible to mitigate these issues by turning the **Enable software rendering mode** setting on. This option is available for Native UI and Web Content. For Web Content, you can select **Auto**, which enables software rendering mode automatically when running on Parallels or another virtual machine.
+
+Enabling this setting requires a restart of Studio Pro to take effect. Running the application with this setting on may increase the CPU usage.
 
 ### Proxy Server
 
@@ -266,16 +272,6 @@ When the **Show feedback survey periodically** setting is enabled, Studio Pro wi
 When the **Do not show antivirus exclusion notifications** setting is enabled, Studio Pro will not display notifications related to antivirus exclusions. For more information, see [Antivirus Exclusion](/refguide/antivirus-exclusion/).
 
 ## New Features Tab {#new-features}
-
-### Access Rules Editor
-
-This option allows you to disable the new editor in the *Access rules* tab of the entity properties dialog and return to the version which was available in Studio Pro 10 or enable the new editor if it has been disabled.
-
-{{% alert color="warning" %}}
-This option will be removed before the GA version of Mendix 11.0.
-{{% /alert %}}
-
-For more information, see [Defining Access Rules Using the New Editor](/refguide10/access-rules/#new-editor) section of the Mendix 10 documentation *Access Rules*.
 
 ### App Explorer
 
@@ -302,6 +298,10 @@ Enable this option to help you generate entities and associations for your domai
 #### Enable Maia for Pages
 
 Enable this option to help you generate pages by adding and configuring widgets based on text input and an optional image. For more information on how to use this feature, see [Maia for Pages](/refguide/maia-for-pages/).
+
+#### Enable Maia for Workflows
+
+Enable this option to help you generate workflows by adding and configuring activities. For more information on how to use this feature, see [Maia for Workflows](/refguide/maia-for-workflows/).
 
 #### Enable Maia for OQL
 

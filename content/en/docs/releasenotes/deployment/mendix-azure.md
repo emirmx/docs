@@ -12,6 +12,10 @@ These release notes cover changes to deployment to [Mendix on Azure](/developerp
 
 For information on the current status of Mendix deployment, see [Mendix Status](https://status.mendix.com/).
 
+### Release date: May 29, 2025
+
+* We have strengthened the preflight check process to deliver a better user experience.
+
 ### Release date: April 24, 2025
 
 * You can now update the **Additional Options** even after the clusters have been initialized.

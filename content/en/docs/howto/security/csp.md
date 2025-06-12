@@ -166,7 +166,6 @@ In *theme/web/index.html* do the following:
 
 Lastly, ensure you are not using any external fonts by checking your theme's styling to confirm all of the fonts are loaded locally.
 
-
 #### Testing Your Changes Locally
 
 To check that your changes are working locally, you can add a custom `Content-Security-Policy` header in your [configuration](/refguide/configuration/#headers).
