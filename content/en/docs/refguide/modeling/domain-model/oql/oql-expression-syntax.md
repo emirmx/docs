@@ -555,7 +555,7 @@ The `IS` operator can be used to filter out rows with values that are NULL. For 
 
 The `CASE` expression is a conditional expression, similar to if/else statements in other programming languages. If the result of a following `WHEN` condition is `TRUE`, the value of the `CASE` expression is the result that follows the condition and the remainder of the `CASE` expression is not processed. If the result is not `TRUE`, any subsequent `WHEN` clauses are examined in the same manner. If no `WHEN` condition yields `TRUE`, the value of the `CASE` expression is the result of the `ELSE` clause. If the `ELSE` clause is omitted and no condition is `TRUE`, the result is null.
 
-If [OQL v2](/refguide/oql-v2/) is enabled, additional data type validations apply to result expressions of `CASE`. See the corresponding [page](/refguide/oql-v2/#case-validations) for details.
+If [OQL v2](/refguide/oql-v2/) is enabled, additional data type validations apply to results of `CASE` expressions. See [`CASE`](/refguide/oql-v2/#case-validations) in *OQL Version 2 Features* for details.
 
 #### Syntax
 
