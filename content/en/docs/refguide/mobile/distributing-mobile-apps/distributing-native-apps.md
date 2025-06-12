@@ -95,7 +95,6 @@ To generate a keystore for Android, follow these steps:
 
 6. Finishing these questions generates a keystore which will be saved into a *file.keystore* file in your current working directory. 
 
-
 ## Building a Release App {#building-release}
 
 Once your signing credentials are ready, you can build the signed release version of your app using Xcode (for iOS) or Android Studio (for Android).
