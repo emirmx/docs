@@ -10,7 +10,7 @@ weight: 20
 You can increase the security of your environment by implementing an external secrets store to manage your Kubernetes secrets.
 Environments running Mendix for Private Cloud can be granted read-only access to a secrets store by using a [Kubernetes Secrets Store CSI Driver](https://secrets-store-csi-driver.sigs.k8s.io/). This document outlines the high-level process, and provides example implementations for HashiCorp Vault and AWS Secrets Manager.
 
-Starting from Mendix Operator version 2.22.0, regular Kubernetes secrets can be used instead of a Secrets Store CSI driver. [External Secrets Operator](https://external-secrets.io/).
+Starting from Mendix Operator version 2.22.0, regular Kubernetes secrets can be used instead of a Secrets Store CSI driver. These secrets can be created directly from Kubernetes, or by using an addon such as [External Secrets Operator](https://external-secrets.io/) to load the contents of a secret from a different source.
 
 {{% alert color="info" %}}
 Secret storage does not currently support [database plans](/developerportal/deploy/private-cloud-storage-plans/#database) or [blob storage plans](/developerportal/deploy/private-cloud-storage-plans/#blob-storage). You must provision your environment manually.
