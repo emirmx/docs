@@ -143,7 +143,7 @@ This is a file in a collection of files that belongs to a message. Each instance
 | `FileType` | Currently only images and documents are supported file types. In general, not all file types might be supported by all AI providers or models. For more information, see the [ENUM_FileType](#enum-filetype).
 | `TextContent` | An optional text content describing the file content. | 
 | `FileExtension` | Extension of the file, e.g. *png* or *pdf*. Note that this attribute may only be filled if the ContentType equals *Base64* and can be empty. | 
-| `FileName` | If a FileDocument is added, the Filename is extracted automatically. | 
+| `FileName` | If a FileDocument is added, the `Filename` is extracted automatically. | 
 
 #### `ToolCollection` {#toolcollection}
 

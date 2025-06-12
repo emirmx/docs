@@ -221,16 +221,16 @@ For more information on vision, see [OpenAI](https://platform.openai.com/docs/gu
 
 #### Document Chat {#chatcompletions-document}
 
-Document chat enables the model to interpret and analyze PDF documents, allowing them to answer questions and perform tasks related to the content. To use document chat, an optional [FileCollection](/appstore/modules/genai/genai-for-mx/commons/#filecollection) containing one or multiple documents must be sent along with a single message.
+Document chat enables the model to interpret and analyze PDF documents, allowing it to answer questions and perform tasks based on the document content. To use document chat, you can send an optional [FileCollection](/appstore/modules/genai/genai-for-mx/commons/#filecollection) containing one or more documents along with a single message.
 
 For [Chat Completions (without history)](/appstore/modules/genai/genai-for-mx/commons/#chat-completions-without-history), `OptionalFileCollection` is an optional input parameter. For [Chat completions (with history)](/appstore/modules/genai/genai-for-mx/commons/#chat-completions-with-history), a `FileCollection` can optionally be added to individual user messages using [Add Message to Request](/appstore/modules/genai/genai-for-mx/commons/#chat-add-message-to-request).
 
-In the entire conversation, you can pass up 100 pages across multiple files and a maximum of 32MB. Currently, processing multiple files with OpenAI is not always guaranteed and can lead to unexpected behavior (e.g., only using one document).
+You can send up to 100 pages across multiple files, with a maximum combined size of 32 MB per conversation.  Currently, processing multiple files with OpenAI is not always guaranteed and can lead to unexpected behavior (for example, only one file being processed).
 
 {{% alert color="info" %}}
-Azure OpenAI does not support the use of file input at the moment.
+Azure OpenAI does not currently support file input.
 
-Note that the model uses the file name when analyzing documents, which could make it vulnerable to prompt injection. Depending on your use case, you may choose to modify the string or not pass it at all.
+Note that the model uses the file name when analyzing documents, which may introduce a potential vulnerability to prompt injection. To reduce this risk, consider modifying the string or not passing it at all.
 {{% /alert %}}
 
 #### Image Generations {#image-generations-configuration}
@@ -304,7 +304,6 @@ All [tool choice types](/appstore/modules/genai/genai-for-mx/commons/#enum-toolc
 | any                    | required|
 | none                   | none    |
 | tool                   | tool    |
-
 
 ## GenAI showcase Application {#showcase-application}
 
