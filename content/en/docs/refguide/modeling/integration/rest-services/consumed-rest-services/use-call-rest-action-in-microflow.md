@@ -10,7 +10,7 @@ aliases:
 
 ## Introduction
 
-In your Mendix app, you can use information from REST services. This how-to shows you how to do that through an example where you create an app that retrieves Wikipedia pages from a REST service. The resulting app is [available for download](/attachments/refguide/modeling/integration/consume-a-rest-service/WikipediaApi.mpk).
+In your Mendix app, you can use information from REST services. This how-to shows you how to do that through an example where you create an app that retrieves Wikipedia pages from a REST service. The resulting app is [available for download](/attachments/refguide/modeling/integration/rest-services/consume-a-rest-service/WikipediaApi.mpk).
 
 This how-to teaches you how to do the following:
 
