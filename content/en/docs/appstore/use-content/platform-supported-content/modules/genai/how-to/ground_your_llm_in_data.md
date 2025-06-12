@@ -39,9 +39,9 @@ Before implementing this capability into your app, make sure you meet the follow
 
 Since this document focuses on the [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/), ensure that you have the [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449) installed.
 
-Follow the [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/) instructions to collect the resource's keys and configure the connector with them inside the application. The keys bridge the gap between your app and the resources. Through them, you can access models or add/retrieve data from a Mendix Cloud GenAI knowledge base.
+Follow the instructions in the [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/) guide to collect the resources keys and configure the connector within your application. The keys bridge the gap between your app and the resources, enabling you to access models and add to or retrieve data from a Mendix Cloud GenAI knowledge base.
 
-Note: While this documentation focuses on adding data from a Mendix application to your knowledge base, you can also fill your knowledge base with content from within the portal, for example, via file upload.
+ While this documentation focuses on adding data to your knowledge base from a Mendix application, you can also fill the knowledge base directly within the portal, for example, by uploading files.
 
 ### Creating Domain Model Entity {#domainmodel}
 

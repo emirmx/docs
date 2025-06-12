@@ -41,7 +41,7 @@ Knowledge bases are often used for:
 1. [Retrieval Augmented Generation (RAG)](https://docs.mendix.com/appstore/modules/genai/rag/) retrieves relevant knowledge from the knowledge base, incorporates it into a prompt, and sends it to the model to generate a response.
 2. Semantic search enables advanced search capabilities by considering the semantic meaning of the text, going beyond exact and approximate matching. It allows the knowledge base to be searched for similar chunks effectively.
 
-Find this detailed [how-to](/appstore/modules/genai/how-to/howto-groundllm) if you are looking for a step-by-step guide on how to get your application data into a Mendix Cloud Knowledge Base. Please note that the Mendix Portal also offers ways to import data into your knowledge base, such as via file upload. You can find more documentation about this [here](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/). The following documentation focuses solely on adding data from an app through the connector.
+If you are looking for a step-by-step guide on how to get your application data into a Mendix Cloud Knowledge Base, refer [Grounding Your Large Language Model in Data – Mendix Cloud GenAI](/appstore/modules/genai/how-to/howto-groundllm/). Note that the Mendix Portal also provides options for importing data into your knowledge base, such as file uploads. For more information, see [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/). This documentation focuses solely on adding data from an application using the connector.
 
 #### Embeddings
 
@@ -89,7 +89,7 @@ Follow the steps below to get started:
 * Make sure to configure the [Encryption module](/appstore/modules/encryption/#configuration) before you connect your app to Mendix Cloud GenAI.
 * Add the module role `MxGenAIConnector.Administrator` to your Administrator **User roles** in the **Security** settings of your app. 
 * Add the `Configuration_Overview` page (**USE_ME** > **Configuration**) to your navigation, or add the `Snippet_Configuration` to a page that is already part of your navigation. Alternatively, you can register your key by using the `Configuration_RegisterByString` microflow.
-* Complete the runtime setup of Mendix Cloud GenAI configuration by navigating to the page mentioned above. Import a key generated in the [portal](https://genai.home.mendix.com) or provided to you and click **Test Key** to validate its functionality. Please note that this key establishes a connection between the Mendix Cloud resources and your application. It contains all the information required to set up the connection.
+* Complete the runtime setup of Mendix Cloud GenAI configuration by navigating to the page mentioned above. Import a key generated in the [portal](https://genai.home.mendix.com) or provided to you and click **Test Key** to validate its functionality. Note that this key establishes a connection between the Mendix Cloud resources and your application. It contains all the information required to set up the connection.
 
 ## Operations
 
@@ -97,7 +97,9 @@ Follow the steps below to get started:
 
 Configuration keys are stored persistently after they are imported (either via the UI or the exposed microflow). There are three different types of configurations that reflect the use cases this service supports. The specific operations are described below.
 
-To use the operations, either a `DeployedModel` (text, embeddings) or a `DeployedKnowledgeBase` must always be passed as input. The DeployedModel will be created automatically when importing keys at runtime and needs to be retrieved from the database. To initialize a knowledge base operation, use the `DeployedKnowledgeBase: Get` toolbox action to retrieve the DeployedKnowledgeBase object for a specified collection. It requires the collection's  Name (string) as input. Please note that for Mendix Cloud GenAI a knowledge base resource may contain several collections (tables), so that several `DeployedKnowledgeBase` objects can belong to the same `MxCloudKnowledgeBaseResource`.
+To use the operations, either a `DeployedModel` (text, embeddings) or a `DeployedKnowledgeBase` must always be passed as input. The DeployedModel will be created automatically when importing keys at runtime and needs to be retrieved from the database. To initialize a knowledge base operation, use the `DeployedKnowledgeBase: Get` toolbox action to retrieve the DeployedKnowledgeBase object for a specified collection. It requires the collection's Name (string) as input. 
+
+In Mendix Cloud GenAI, a single knowledge base resource (MxCloudKnowledgeBaseResource) can contain multiple collections (tables). As a result, several DeployedKnowledgeBase objects may belong to the same resource.
 
 ### Chat Completions Operation
 
@@ -182,7 +184,6 @@ You do not need to manually add embeddings to a chunk, as the connector handles 
 {{% alert color="warning" %}}
 The knowledge chunks are stored in an AWS OpenSearch Serverless database to ensure scalable and high-performance vector calculations—for example, retrieving the nearest neighbors of a given input. Inserted or modified chunks are only available for read operations (retrieval) in the knowledge base within 60-120 seconds. For more information, see [AWS documentation](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vector-search.html#serverless-vector-limitations).
 {{% /alert %}}
-
 
 #### Knowledge Base Insertion{#knowledge-base-insertion}
 
