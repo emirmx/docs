@@ -44,11 +44,11 @@ OQL v2 has more strict data type validation of some functions and other expressi
 
 #### `CASE` {#case-validations}
 
-In OQL v2, all result expressions of a [CASE](/refguide/oql-expression-syntax/#case-expression) expression should have matching types or be Null. In OQL v1, there was no such validation, and handling of different types was delegated to the database, which made the behavior database-specific and unreliable.
+In OQL v2, all results of a [CASE](/refguide/oql-expression-syntax/#case-expression) expression should have matching types or be Null. In OQL v1, there was no such validation, and handling of different types was delegated to the database, which made the behavior database-specific and unreliable.
 
-Also, in OQL v2 it is no longer possible to have Null as the result of all result expressions of CASE. In OQL v1, that was allowed, but would lead to database-level exceptions for some database vendors.
+Also, in OQL v2 it is no longer possible to have Null as the only result a CASE expression. In OQL v1, that was allowed, but would lead to database-level exceptions for some database vendors.
 
-Numeric types Integer, Long and Decimal are considered matching. The type of the resulting expression is defined according to [type coercion precedence](/refguide/oql-expression-syntax/#type-coercion). In OQL v1, the type of the expression was defined based on the first result expression of `CASE`.
+Identical values of numeric types Integer, Long, and Decimal are considered matching. The type of the resulting expression is defined according to [type coercion precedence](/refguide/oql-expression-syntax/#type-coercion). In OQL v1, the type of the expression was defined based on the result of the first expression of `CASE`.
 
 #### `COALESCE` {#coalesce-validations}
 
@@ -58,7 +58,7 @@ In OQL v2, all arguments of a [COALESCE](/refguide/oql-expression-syntax/#coales
 
 Also, in OQL v2 it is no longer possible to have a COALESCE expression where all arguments are Null literals. In OQL v1, that was allowed, but would lead to database-level exceptions for some database vendors.
 
-Numeric types Integer, Long and Decimal are considered matching. The type of the resulting expression is defined according to [type coercion precedence](/refguide/oql-expression-syntax/#type-coercion). In OQL v1, the type of the expression was defined based on the first argument of `COALESCE`.
+Identical values of numeric types Integer, Long, and Decimal are considered matching. The type of the resulting expression is defined according to [type coercion precedence](/refguide/oql-expression-syntax/#type-coercion). In OQL v1, the type of the expression was defined based on the result of the first expression of `COALESCE`.
 
 #### `LENGTH` {#length-validations}
 
@@ -229,11 +229,11 @@ SELECT Attribute1 + Attribute2 AS SumAttr
 FROM Module.Entity
 ```
 
-In OQL v1, the result of the arithmetic operation will always be of type of the first attribute in the expression. Therefore, the result would depend on the underlying database engine.
+In OQL v1, the type of the result of the arithmetic operation will always be the type of the first attribute in the expression. Therefore, the result would depend on the underlying database engine.
 
 When handling numeric types in OQL v2 (Integer, Long, and Decimal), the result type is defined according to [type coercion precedence](/refguide/oql-expression-syntax/#type-coercion).
 
-If any side of the operation is of a non-numeric type, no casting is performed, and the result is handled by the database, as in OQL v1.
+No casting is performed if the type of either side of the operation is non-numeric, and the result is handled by the database, as in OQL v1.
 
 ### The Result Type of `ROUND` Is Now `Decimal`
 
