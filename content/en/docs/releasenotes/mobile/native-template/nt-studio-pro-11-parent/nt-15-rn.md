@@ -5,11 +5,14 @@ weight: 6
 description: "Native Template 15"
 ---
 
-## 15.1.1 {#1511}
-**Release date: June 12, 2025**
+## Unreleased
+
+- We improved update process from an older version of Studio Pro to the Latest version(s).
+
+## 15.2.0 {#1520}
+**Release date: June 11, 2025**
 
 ### Improvements
-- We improved update process from an older version of Studio Pro to the Latest version(s).
 - We fixed an issue where iOS apps built with Mendix 10.21 and above would not run when the React Client was enabled. Android was not affected.
 
 ### Library Updates and Improvements
