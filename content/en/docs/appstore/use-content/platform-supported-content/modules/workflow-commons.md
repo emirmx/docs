@@ -21,6 +21,7 @@ This module allows Mendix developers with little or no experience in building wo
 * Comments section to use with workflows
 * Audit trail for tracking workflows
 * Task assignment to manage user assignment and targeting. For example, when users leaving the organization or change their roles
+* Workflow group membership to manage task targeting
 
 {{% alert color="info" %}}For Workflow Commons version 2.4.0 and above, attachments are (an optional) part of comments. This means that the WorkflowAttachment entity is associated with the WorkflowComment entity. Security settings for the WorkflowAttachment entity are based on the workflows in which a user is involved, since the context of a specific workflow is not known in advance in Workflow Commons. If you would like to set custom security for attachments, you need to configure the attachment entity in your domain model and associate it with the workflow context entity of the workflow. {{% /alert %}}
 
@@ -64,9 +65,11 @@ You can find the following pages in Workflow Commons:
 * **TaskInbox** – This page contains a list of all tasks that a user can interact with. **My open tasks** shows the tasks assigned to current users, **All open tasks** is a list of tasks they could pick up and **Unassigned tasks** shows all unassigned tasks.
 * **WorkflowAdminCenter** – A navigational page for workflow administrators. From here, a workflow administrator can go the **Workflow dashboard**, which gives them general statistics of workflows. Workflow administrators also gain access to **Workflow management**, where they can see all the instances of specific workflows and make changes to their data or even abort workflows. Additionally, the Workflow administrator can monitor audit records by accessing the **Workflow audit trail**, and manage assignments and user targeting via the **Manage task assignments** page from here.
 * **WorkflowDashboard** – This page gives you workflow/task based metrics and direct access to all *Workflow* and *WorkflowUserTask* data. When you want to use the Workflow Dashboard as your only admin go-to page, add this to the navigation instead of the **WorkflowAdminCenter**. 
-* **TaskAssignment** – This page allows the workflow administrator to manage the assignment and targeting of user tasks based on a selected user. This is typically done when a user is leaving the organization or their current role. Thus, all tasks that user is working on must be unassigned from that user or assigned to another user. On the page, first select the user whose tasks should be listed. Then, use the following tabs to reassign the user's tasks based on their involvement:
+* **TaskAssignment** – This page allows the workflow administrator to manage the assignment and targeting of user tasks based on a selected user. This is typically done when a user is leaving the organization or their current role. Thus, all tasks that user is working on must be unassigned from that user or assigned to another user. On the page, first select the user whose tasks should be listed. Then, use the following tabs in the tasks section to reassign the user's tasks based on their involvement:
     * **Assigned tasks** – Shows a list of tasks assigned to the selected user (possible actions are reassigning and unassigning the corresponding tasks).
     * **Targeted tasks** – Shows a list of all tasks that the selected user is a target user of (the administrator can retarget these tasks to another user).
+In the groups section, administrator can see which groups the user belongs to, as well as add the user to new groups or remove from existing ones.
+* **WorkflowGroup** - This page allows the workflow administrator to manage workflow groups and their members. The administrator can add or remove users from groups. These workflow groups are used for task targeting, enabling members to view and pick up tasks targeted to their group.
 
 ### Page Templates
 
