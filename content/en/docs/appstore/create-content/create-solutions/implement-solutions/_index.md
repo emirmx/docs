@@ -33,7 +33,7 @@ For details on the upgrade procedure for a solution that has been set up correct
 
 ## Read More
 
-* [Adaptables Solution](/appstore/creating-content/sol-adapt/)
+* [Adaptable Solutions](/appstore/creating-content/sol-adapt/)
 * [Architecting Adaptable Solutions](/appstore/creating-content/sol-architecting/)
 * [Setting Up Solutions](/appstore/creating-content/sol-set-up/)
 * [Upgrading Solutions](/appstore/creating-content/sol-upgrade/)

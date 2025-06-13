@@ -14,7 +14,7 @@ This section dives into best practices for setting up your app in Studio Pro. Fo
 
 ### Studio Pro Version
 
-For people to use your connector, ensure that you are not only targeting end-users that have the latest version Studio Pro. Try to support the latest [LTS](/releasenotes/studio-pro/lts-mts/) version, and, if possible, even older supported versions. 
+For people to use your connector, ensure that you are not only targeting end-users that have the latest version Studio Pro. Try to support the latest [LTS](/releasenotes/studio-pro/lts-mts/) version and, if possible, even older supported versions. 
 
 The only reason to deviate from this is when your connector requires a certain platform functionality that is only available in a newer version, or requires another module that is only available on a newer version. In that case, use that newer version as your Mendix required version.
 
@@ -24,7 +24,7 @@ Create a Mendix app in Studio Pro with the main connector module and a testing m
 
 * The main module contains all the logic needed to let your connector function in apps that import it. Give the main module the name you want to appear in apps after others import your module.
 * The testing module has microflows, pages, and Java code to test your module's functionality. This means that you will not have to add the test logic to the module that you will later export and publish.
-* You can publish the example module next to the main connector module to help end-users better understand the implementation of your connector module, or to try it out without having to do too much configuration from the start.
+* You can publish the example module next to the connector main module and testing module to help end-users better understand the implementation of your connector module, or to try it out without having to do too much configuration from the start.
 
 #### Setting Up the Main Connector Module {#main-setup}
 
@@ -58,13 +58,11 @@ The app root of your **App Explorer** should look like this after root setup:
 
 #### Importing Dependency Modules
 
-Use as few dependency modules as possible. When you must use one, make sure it is either maintained by your own company, when creating a company-only connector, and/or platform-supported. This ensure that users are are always supported. Otherwise, you might end up having to maintain those public non-platform supported modules to ensure that your connector operates properly.
+Use as few dependency modules as possible. When you must use one, make sure it is either platform supported or, if you are creating a company-only connector, maintained by your own company. This ensure that users are are always supported. Otherwise, you might end up having to maintain those public non-platform supported modules to ensure that your connector operates properly.
 
 ### Adding the App to Version Control
 
-Add the app to the [Team Server](/refguide/version-control/#team-server) or to GitHub version control, if you have not already done so when creating it. 
-
-Mendix recommends having a separate public Git repository next to your private Team Server Git repository. This way, you can continue committing and applying changes while you only push to the public repository for a new release to the Marketplace. The automated integration with GitHub from the Marketplace makes this a good option for your public-facing Git repository.
+If you have not already added your app, add it to the [Team Server](/refguide/version-control/#team-server). An alternative solution that Mendix recommends is having a separate public Git repository next to your private Team Server Git repository. This way, you can continue committing and applying changes while you only push to the public repository for a new release to the Marketplace. The automated integration with GitHub from the Marketplace makes this a good option for your public-facing Git repository.
 
 ### Working with Java-Intensive Apps
 
@@ -130,9 +128,9 @@ Ensure that a microflow is visible in the **Toolbox**, in the [Expose as microfl
 
 After you [expose as microflow action](/refguide/java-actions/#expose-microflow-action), this can be dragged and dropped inside another microflow.
 
-If you create functionality that requires REST API integrations or complex data processing, make sure you have well-documented microflows connecting the  public part of your module to the  private part. This way, the implementing developer will not have to understand the intricacies of the integration.
+If you create functionality that requires REST API integrations or complex data processing, make sure you have well-documented microflows connecting the public part of your module to the  private part. This way, the implementing developer will not have to understand the intricacies of the integration.
 
-#### Naming and Choice of Icon
+If you create functionality that requires REST API integrations or complex data processing, make sure you have well-documented microflows connecting the public part of your module to the  private part. This way, the implementing developer will not have to understand the intricacies of the integration.
 
 Follow these guidelines for names and icons:
 
@@ -215,7 +213,7 @@ Any dependencies your module has should be well documented, including the minimu
 
 ### IP Protection
 
-Members of the [Mendix Partner Program](/appstore/partner-program/) and of the [Mendix Commercial Solution Partner Program](https://www.mendix.com/partners/become-a-partner/isv-program/) can protect their intellectual property (IP) or prevent end users from changing any logic shipped in a module using Mendix tooling. For details, see [How to Apply IP Protection](/appstore/creating-content/sol-ip-protection/).
+Members of the [Mendix Partner Program](/appstore/partner-program/) and of the [Mendix Commercial Solution Partner Program](https://www.mendix.com/partners/become-a-partner/isv-program/) can protect their intellectual property (IP) or prevent end users from changing any logic shipped in a module using Mendix tooling. For details, see [Applying Intellectual Property Protection](/appstore/creating-content/sol-ip-protection/).
 
 If protecting your IP or preventing end users from changing your logic is not a requirement, you can build a connector using available Mendix tools. If you want IP protection today, you need to implement the sensitive parts of the module in a hidden Java library. 
 
@@ -239,7 +237,7 @@ Mendix does not support import mappings for recursive structure. Consider simpli
 
 #### Caching
 
-Use caching to reduce redundant database actionfor frequently retrieved objects.
+Use caching to reduce redundant database action for frequently retrieved objects.
 
 #### Domain Model
 

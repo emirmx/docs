@@ -35,9 +35,9 @@ Connectors can be used in your app to simplify connecting to existing third-part
 
 ### Connecting to Other Systems
 
-Connectors are implemented as Mendix modules focused on connecting to other systems. They can be used to package a Java library provided by the other system to make the connection. These Java library functions can be exposed via Java actions as [custom microflow activities](/howto/extensibility/howto-connector-kit/). This makes it simpler for Mendix developers without in-depth knowledge about third-party integrations to use these connectors in their business logic.
+Connectors are implemented as Mendix modules focused on connecting to other systems. They can use any of the platform-supported protocols like [SOAP](/refguide/consumed-web-services/#soap), [REST](/refguide/integration/rest-services/), [OData](/refguide/consumed-odata-services/#external-entities), or [Catalog](/catalog/). 
 
-Connectors can use any of the platform-supported protocols like [SOAP](/refguide/consumed-web-services/#soap), [REST](/refguide/integration/rest-services/), [OData](/refguide/consumed-odata-services/#external-entities), or [Catalog](/catalog/). 
+Connectors can also be used to package a Java library provided by the other system to make the connection. These Java library functions can be exposed via Java actions as [custom microflow activities](/howto/extensibility/howto-connector-kit/). This makes it simpler for Mendix developers without in-depth knowledge about third-party integrations to use these connectors in their business logic.
 
 #### Connecting Mendix Apps to Mendix Apps  
 
@@ -72,7 +72,7 @@ Connectors expose data via custom microflow activities. As such, you can find th
 
 Once you deploy an application, the connector automatically deploys with it. You can also set a few runtime or node specific configurations (via the application interface or constants).
 
-As an example, check out the [Amazon SNS](/appstore/modules/aws/amazon-sqs/) connector. It uses AWS-provided libraries to interact with the Amazon Simple Notification Service. The functions are exposed via a set of Mendix actions that are available in the toolbox to use in your logic.
+As an example, check out the [Amazon SNS](/appstore/modules/aws/amazon-sqs/) connector. This uses AWS-provided libraries to interact with the Amazon Simple Notification Service. The functions are exposed via a set of Mendix actions that are available in the toolbox to use in your logic.
 
 ## Building a Mendix Connector in Studio Pro {#build-connector}
 
@@ -99,13 +99,14 @@ How you implement the connector is entirely up to you and your use case, but it 
 * Document the parts that are to be used by the implementing application.
 * Provide a granular security model that allows the implementing application to use your connector in a secure way.
 * Hide complex parts, preferably in the Java code, or at least in the private folder. 
+* Apply Intellectual Property (IP) protection to your Mendix module. For more information, refer to [Applying Intellectual Property Protection](/appstore/creating-content/sol-ip-protection/).
 * Minimize dependencies to easily available libraries/modules that are well maintained. Where possible, do not use any dependencies.
 * Contain all your core code in your connector module. Anything assisting you during development or testing should be in separate modules using the connector module, but never the other way around.
 * Test your connector.
 
 ### Exporting the Connector {#export}
 
-Mendix connectors are like any other Mendix [module](/appstore/modules/), which means you can export them from your app. When a connector module is exported, the following is also exported:
+Mendix connectors are like any other Mendix [module](/appstore/modules/), which means you can export them from your app. When a connector module is exported, the following are also exported:
 
 * Entities
 * Microflows
@@ -130,12 +131,12 @@ To share your connector with other developers and the wider community, you can p
 
 Once you publish the connector and someone imports it in their Mendix app, all of these elements will be placed in the same location from which they are exported.
 
-You can distribute the module to whomever wants to use it, by either sharing the file or uploading it to the Marketplace. Follow these steps to do so: 
+You can distribute the module to those who want to use it, by either sharing the file or uploading it to the Marketplace. Follow these steps to do so: 
 
 1. Keep the release notes ready.
 2. Deploy to GitHub by doing the following:
 
-    1. Commit code to GitHub (if you have not already made this a Git project).
+    1. Commit the code to GitHub (if you have not already made this a Git project).
     2. Create a new release.
 3. Create the release in Marketplace using the release from GitHub.
 

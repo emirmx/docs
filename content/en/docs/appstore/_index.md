@@ -16,9 +16,12 @@ The Mendix Portal is the online platform of Mendix. It includes [Apps](/develope
 
 ## Introduction
 
-The [Mendix Marketplace](https://marketplace.mendix.com/) is a vibrant marketplace containing complete sample apps that can be used right away, as well as various components (connectors, modules, widgets, and more) that can be used to build your apps more quickly. In the Mendix Marketplace, you can browse all the content, get what you need, and share the content you have created.
+Mendix Studio Pro includes many core out-of-the-box widgets, such as data grids and snippets. You can, however, extend your application with more features, widgets, and modules, such as the [Forgot Password module](https://marketplace.mendix.com/link/component/1296/)), simple charts, an [Excel importer](https://marketplace.mendix.com/link/component/1296/), thus making your development even faster. You can do this by using content from the [Mendix Marketplace](https://marketplace.mendix.com/). The Mendix Marketplace is a robust platform for the rapid development of apps, which contains many useful and reusable widgets and modules created by Mendix, as well as by our partners and community. It includes complete sample apps that can be used right away, as well as various components, such as connectors, modules, and widgets, that can be used to build your apps more quickly. In the Mendix Marketplace, you can browse all the content, get what you need, and share the content you have created.
 
-This document provides details on configuring and using the latest versions of [platform-supported](/appstore/marketplace-content-support/#category) Marketplace components. It also contains guidelines on [creating Marketplace content](/appstore/creating-content/) to share and sell.
+This document provides the following:
+
+* Details on configuring and using the latest versions of [platform-supported](/appstore/marketplace-content-support/#category) Marketplace components
+* Guidelines on [creating Marketplace content](/appstore/creating-content/) to share and sell
 
 Mendix Studio Pro includes many core out-of-the-box widgets, such as data grids and snippets. You can, however, extend your application with more features, widgets, and modules, such as the [Forgot Password module](https://marketplace.mendix.com/link/component/1296/)), simple charts, an [Excel importer](https://marketplace.mendix.com/link/component/1296/). 
 
