@@ -16,11 +16,11 @@ Siemens Advanced License Technology (SALT) is a Siemens service used to validate
 
 ## Prerequisites
 
-Upon successful purchase, you will receive an email containing your SALT-based license file. Please note the following limitations when using a SALT-based license:
+Upon purchase, you will receive an email containing your SALT-based license file. Please note the following limitations when using a SALT-based license:
 
-* **Version Compatibility**: SALT licenses are supported only with Mendix version 10.24 and above.
-* **Version Binding**: Each SALT license is bound to a specific major version of Mendix and cannot be used in newer major versions.
-* **Cloud Restrictions**: SALT licenses are not supported in the Mendix Public Cloud environment.
+* Version compatibility - SALT licenses are supported only for Mendix version 10.24 and newer.
+* Version binding - Each SALT license is bound to a specific major version of Mendix and cannot be used in newer major versions.
+* Cloud restrictions - SALT licenses are not supported for Mendix Cloud environments.
 
 ## Siemens License Server
 
