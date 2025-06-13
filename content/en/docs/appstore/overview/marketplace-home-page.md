@@ -19,7 +19,7 @@ For more information about content support, see [Marketplace Content Support](/a
 
 ## Introduction
 
-The [Mendix Marketplace](https://marketplace.mendix.com/) provides access to ready-to-use sample apps, as well as to various components, such as connectors, modules, and widgets, that you can use to build your own apps more quickly. The Marketplace also allows you to share the content you have created.
+The [Mendix Marketplace](https://marketplace.mendix.com/) provides access to ready-to-use sample apps, as well as to various components such as connectors, modules, and widgets, that you can use to build your own apps more quickly. The Marketplace also allows you to share the content you have created.
 
 This document describes the different sections of the Marketplace home page, which is your entry point to the various parts of the Mendix Marketplace.
 
