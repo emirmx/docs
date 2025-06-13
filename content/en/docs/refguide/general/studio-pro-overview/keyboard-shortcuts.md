@@ -142,6 +142,7 @@ The tables in the following sub-sections present the shortcut keys that can be u
 | <kbd>F2</kbd> | <kbd>Fn</kbd> + <kbd>F2</kbd> | Rename the variable returned by the selected element. |
 | <kbd>Shift</kbd> + <kbd>F2</kbd> or just start typing | <kbd>Shift</kbd> + <kbd>Fn</kbd> + <kbd>F2</kbd> or just start typing | Open the **Properties** pane and edit the caption of the selected element. |
 | Context-menu key or <kbd>Shift</kbd> + <kbd>F10</kbd> | <kbd>Shift</kbd> + <kbd>Fn</kbd> + <kbd>F10</kbd> | Open the context-menu for the currently selected element. |
+| <kbd>Shift</kbd> | <kbd>Shift</kbd> | When holding <kbd>Shift</kbd>, connection points are shown while hovering over elements. |
 
 ## Workflow Editor Shortcut Keys {#workflow-editor-shortcut-keys}
 
