@@ -79,7 +79,7 @@ For more information, see [Common Section](/refguide/common-widget-properties/#c
 
 #### Sanitization Configuration
 
-This setting stores the [DOMPurify](https://cure53.de/purify) library configuration in JSON. Use this setting to fine-tune how the sanitization process handles input HTML. You can block tags, whitelist dangerous tags and values, and more.
+This setting stores the [DOMPurify](https://cure53.de/purify) library configuration in JSON. Use this setting to fine-tune how the sanitization process handles input HTML. You can block tags, safelist dangerous tags and values, and more.
 
 For example, here is a short config that disallows all `<style>`:
 

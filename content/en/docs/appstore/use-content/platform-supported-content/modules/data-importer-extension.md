@@ -41,6 +41,7 @@ This extension currently has the following limitations:
 * You cannot map data to an existing NPE; you have to create a new entity as part of mapping
 * Enumerations are not supported
 * **String** is the default attribute type (*.csv* only)
+* Only UTF-8 encoded files are supported for CSV import. Non-encoded files may result in loss of data.
 
 ### Prerequisites
 
@@ -270,6 +271,8 @@ The instructions below show how to import data from an Excel (or CSV) file.
 
 ### Support for Mapping Parameter in Import Mapping {#mapping-param-import-mapping}
 
+{{% alert color="warning" %}} This feature is supported for the Data Importer runtime module v1.5.0 and above. {{% /alert %}}
+
 The [Mapping Parameter](/refguide/import-mappings/#mapping-parameter) is supported by Data Importer starting from Mendix 10.21. The Mapping Parameter can be used to create associations with imported data. Primitive types that are not supported but any Mendix object type can be passed as the **Mapping Parameter**.
 
 Follow the instructions below to define an **Import Mapping** with mapping parameters. 
@@ -328,3 +331,7 @@ You can now update the domain model entities, microflows, pages, and any other d
 ### Unchecked Columns
 
 It is not possible to rename an attribute or change a data type if there are unchecked columns. To avoid this issue, format your Excel or CSV file in a way that does not require you to uncheck any columns after inputting to Studio Pro. 
+
+### "No suitable constructors found" Error in Studio Pro versions < 10.21.0 with module v1.4.0
+
+While using the Data Importer document with import mapping capability, there is an issue where the runtime module throws an error with the message "No suitable constructors found for action class 'DataImportMapping'." This is due to a non-compatible Data Importer module in the Marketplace. If you experience this issue, re-import the latest version of the Data Importer module. The Data Importer module v1.4.0 has been republished to solve this issue.

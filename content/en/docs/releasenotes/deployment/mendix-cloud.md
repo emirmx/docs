@@ -16,14 +16,44 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
+### June 12, 2025
+
+#### New Features
+
+* We have added a new beta feature in the [environment UI](/developerportal/deploy/environments/). This feature allows Technical Contacts to [change app's environment plan](/developerportal/deploy/change-plan/) to a higher-resource plan.
+    * Additionally, a new tab ([Request Overview](/developerportal/deploy/environments/#request-overview)) has been introduced where Technical Contacts can view and manage plan change requests and track the status of their pending requests awaiting a Mendix Admin review from the [Control Center](/control-center/approval-requests/).
+
+### May 25, 2025
+
+#### New Features
+
+* We have added a new warning message about required overhead (database disk space) before starting a backup restore.
+  
+#### Improvements
+
+* We have updated the validation rules for creating custom domain names. Instead of 53 characters limit, it is now set to 63 characters limit in compliance with DNS standards.
+* Old UI is deprecated and will be removed on June 1. Users will automatically be switched to the new UI if not already done before.
+
+#### Bug Fixes
+
+* We fixed a bug where user got an error while opening the permissions tab for production environment (Ticket 241675).
+
+#### Temporary Deprecations
+
+* Basic plan offering is being temporarily paused.
+
+### April 17, 2025
+
+#### Improvements
+
+* We have added new environment variables which allow you to control the buffer size and buffer memory for the Fluentbit agent for Splunk and New Relic.
+
 ### February 27, 2025
 
 #### Improvements
 
 * We have added a validation mechanism for pipeline designs, which prevents users from deleting a design if any pipelines using that design are currently running. For more information, see [Pipelines: Editing a Pipeline Design](/developerportal/deploy/pipelines/#edit-pipeline). 
 * You can now access the **Details** page of a pipeline at any point, also while the pipeline is running. For more information, see [Pipelines: Run Results](/developerportal/deploy/pipelines/#run-results).
-
-## 2025
 
 ### February 20, 2025
 
@@ -35,7 +65,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### New Features
 
-* We have added a number of new features which are all available as part of the [new UI](/developerportal/deploy/environments-redesign/). These are:
+* We have added a number of new features which are all available as part of the [new UI](/developerportal/deploy/environments/). These are:
 
     * Redesigned the **Environment Details** page to improve functionality and enhance the user experience.
     * Added staging support for apps in the deploy wizard.
@@ -44,7 +74,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Improvements
 
-* Based on user feedback, the [new UI](/developerportal/deploy/environments-redesign/) now also contains UX improvements to the **Environments Overview** page for paid apps.
+* Based on user feedback, the [new UI](/developerportal/deploy/environments/) now also contains UX improvements to the **Environments Overview** page for paid apps.
 
 ## 2024
 
@@ -59,7 +89,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Improvements
 
-* We introduced cloud tokens for your cloud resource pack purchases! Starting now, you will use [cloud tokens](/control-center/entitlements/#cloud-tokens) instead of cloud credits to complete your cloud resource purchases. With the transitioning from cloud credits to cloud tokens, Mendix is paving the way for a more streamlined and flexible approach to purchasing and switching between Mendix Cloud products.
+* We introduced cloud tokens for your cloud resource pack purchases! Starting now, you will use [cloud tokens](/control-center/cloud-tokens/#cloud-tokens) instead of cloud credits to complete your cloud resource purchases. With the transitioning from cloud credits to cloud tokens, Mendix is paving the way for a more streamlined and flexible approach to purchasing and switching between Mendix Cloud products.
 
 ### December 1, 2024
 
@@ -77,8 +107,8 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Deployment Portal Fixes
 
-* We fixed a bug in the [Permissions tab of the legacy UI](/developerportal/deploy/environments/#permissions), where changing an application's technical contact resulted in a blank page.
-* We fixed a bug in the [new UI](/developerportal/deploy/environments-redesign/), where the **scalable** tag was displayed for environments that were not scalable.
+* We fixed a bug in the [Permissions tab of the legacy UI](/developerportal/deploy/environments/#permissions-tab), where changing an application's technical contact resulted in a blank page.
+* We fixed a bug in the [new UI](/developerportal/deploy/environments/), where the **scalable** tag was displayed for environments that were not scalable.
 * We fixed a number of other bugs related to dark mode.
 
 ### November 14, 2024
@@ -1035,7 +1065,7 @@ SSL/TLS ciphers that are still supported for HTTPS connections after December 1,
 
 #### Fixes
 
-* We fixed an issue where some customers were unable to manually add certificates to [access restriction profiles](/developerportal/deploy/environments/#asp). (Ticket 102615)
+* We fixed an issue where some customers were unable to manually add certificates to [access restriction profiles](/developerportal/deploy/environments/#access-restriction-profiles). (Ticket 102615)
 
 ### August 7, 2020
 

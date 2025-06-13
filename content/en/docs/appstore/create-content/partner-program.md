@@ -17,25 +17,25 @@ Whether you are an established ISV, an ambitious startup, or a pioneering indepe
 
 In return, you will gain the following benefits:
 
-* Reach a global community of Mendix developers
-* Win new income streams
-* Develop brand awareness with target audiences
-* Drive demand for your services
-* Present a [partner icon](/appstore/component-details/#header) on the components you support
+* Reach a global community of Mendix developers.
+* Win new income streams.
+* Develop brand awareness with target audiences.
+* Drive demand for your services.
+* Present a [partner icon](/appstore/component-details/#header) on the components you support.
 
 ## Joining the Marketplace Program
 
 The process is simple: 
 
-1. Sign up as a [Mendix Component Partner](https://www.mendix.com/partners/become-a-partner/component-partner/)/.
+1. Sign up as a [Mendix Component Partner](https://www.mendix.com/partners/become-a-partner/component-partner/).
 2. Design and build your content.
 3. Edit your listing and submit it to the Marketplace for the [Partner](/appstore/marketplace-content-support/#category) support category.
 
-As a partner in the Mendix Marketplace, you can offer your components to customers all over the world who are looking for innovative ways to address their business challenges. You will be part of a powerful ecosystem that provides a wealth of resources and support to help you succeed. 
+As a partner in the Mendix Marketplace, you can offer your components to worldwide customers who are looking for innovative ways to address their business challenges. You will be part of a powerful ecosystem that provides a wealth of resources and support to help you succeed. 
 
-There are a few steps to publishing an offering. A partner interested in publishing its product (or products) on the Mendix Marketplace must meet certain criteria and must comply with some legal, compliance, technical, operational, and marketing requirements.
+There are a few steps to publishing an offering. A partner interested in publishing their products on the Mendix Marketplace must meet certain criteria and must comply with some legal, compliance, technical, operational, and marketing requirements.
 
-Currently, we are offering product listings with contact referrals for commercial content. There is currently no fee to publish an offering on the Mendix Marketplace.
+We are offering product listings with contact referrals for commercial content. There is no fee to publish an offering on the Mendix Marketplace.
 
 ## Read More
 

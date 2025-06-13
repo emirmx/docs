@@ -8,9 +8,9 @@ tags: ["marketplace", "content creation", "guidelines"]
 
 ## Introduction
 
-When you prepare a product and submit it to the public Marketplace, follow the guidelines in this document.
+This document provides guidelines and best practices to follow before you submit content to the public Mendix Marketplace. They ensure that your content is secure, compliant with legal and data privacy standards, user friendly, consistent, and discoverable.
 
-### General Guidelines{#general}
+## General Guidelines {#general}
 
 These are the general guidelines for creating new Marketplace content:
 
@@ -22,30 +22,35 @@ These are the general guidelines for creating new Marketplace content:
 
 When you add content to the Marketplace, include in the component [documentation](/appstore/submit-content/#doc) any information that the end-user should know.
 
-### Using a GitHub Repo {#github}
+## Using a GitHub Repository {#github}
 
-You can set up a GitHub repository to contain the development content for your Marketplace component, and you can share this repo URL as the component source on the [Package](/appstore/submit-content/#package) page in the submission process.
+You can set up a GitHub repository to contain the development content for your Marketplace component. During the submission process, you can share the repository URL as the component source on the [Package](/appstore/submit-content/#package) page.
 
-When setting up the GitHub repo for your component, follow these guidelines:
+### GitHub Repository Guidelines
 
-* Make sure the repo name matches the name that will be used for the published Marketplace component.
-* Use upper camel case to replace the spaces in the name, for example, *MyFirstApp*.
-* Make sure the repo description states what the component does. You can also use this description in the Mendix Marketplace.
-* Add a *.gitignore* file to keep your repo clean.
+When setting up the GitHub repository for your content, follow these guidelines:
+
+* Make sure the repository name matches the name that will be used for the published Marketplace component.
+* Use upper camel case to replace any spaces in the repository name. Example: *MyFirstApp*.
+* Make sure the repository description states what the component does. You can use the same description in the Mendix Marketplace.
+* Add a *.gitignore* file to keep your repository clean.
+
+### Creating a Component Release
 
 To create a new component release for the Mendix Marketplace, follow these steps:
 
-1. Create a new tag on the appropriate commit on the production or release branch in your GitHub repo.
+1. Create a new tag on the appropriate commit on the production or the release branch in your GitHub repository.
 
 2. From this tag, create a [new release in GitHub](https://help.github.com/articles/creating-releases). 
 
-3. In this GitHub release, provide an official name and write the release notes. You can use these for the Marketplace release as well.
+3. In this GitHub release, provide an official name and write the release notes.  
+   You can use these for the Marketplace release as well.
 
-4. If you add the *.mpk* file as a binary file to the release tag, the Mendix Marketplace automatically syncs the *.mpk* to your new draft:
+4. If you add the *.mpk* binary file to the release tag, the Mendix Marketplace automatically syncs the *.mpk* to your new draft:
 
    {{< figure src="/attachments/appstore/submit-content/github-releases.png" >}}
 
-5. Link this GitHub release to the upcoming Mendix Marketplace release by mentioning the GitHub release number in the description. For more details, see the [Package](/appstore/submit-content/#package) and [Updating Existing Marketplace Content](/appstore/submit-content/#updating) sections in *How to Submit Marketplace Content*.
+5. Link this GitHub release to the upcoming Mendix Marketplace release by mentioning the GitHub release number in the description. For more details, see the [Package](/appstore/submit-content/#package) and [Updating Existing Marketplace Content](/appstore/submit-content/#updating) sections in *Upload to the Marketplace*.
 
 ## Preparing Your Submission
 
@@ -55,7 +60,7 @@ If you are not a [component partner](/appstore/partner-program/), you can skip t
 
 ### Legal and Compliance Guidelines
 
-This section covers the legal and compliance guidelines.
+This section covers the legal and compliance guidelines needed to ensure that your content abides by intellectual property, licensing, privacy, and export control regulations.
 
 #### Acceptable Use Policy
 
@@ -65,240 +70,272 @@ Your products must comply with the [Acceptable Use Policy](https://www.sw.siemen
 
 When considering intellectual property (IP) in the Mendix Marketplace, follow these guidelines:
 
-* Do not copy any text, names, or other data from other components published in the Marketplace, since you do not own the copyright. Do not create unnecessary ambiguity or confusion that would mislead users of Marketplace components.
-* Do not mention components published by others within your content on the Marketplace. 
-* Make sure your component documentation only includes intellectual property that you have created. Your component should not include information or content published by others on the Marketplace, as this may lead to removing your component from the Marketplace. This also means other components can also be removed if they are using your component information or content. 
-* If you come across instances of intellectual property abuse, contact support.
+* Do not copy any text, names, or other data from Marketplace components for which you do not own the copyright. Doing so might create unnecessary ambiguity or confusion that could mislead users of those Marketplace components.
+* Do not mention components published by others within your content. 
+* Make sure your component documentation only includes intellectual property that you have created.  
+  Including information or content published by others on the Marketplace could lead to your component being removed from the Marketplace.  
+  This also means other components can be removed if they are using your component information or content. 
+* If you come across instances of intellectual property abuse, contact the support team.
 
 For more information, see [Apply IP Protection](/appstore/creating-content/sol-ip-protection/).
 
 #### End-User License
 
-You must declare whether your product includes, uses, depends on, or distributes third-party software of any kind from sources other than you or Mendix. Third-party software means any and all files, including, but not limited to, APIs, content, source code, or compiled libraries. As part of your submission, you are required to include licensing and copyright information as part of your product description and to include *licensing.txt*, dependencies, and an OSS Readme at the root directory level of the *.mpk* file.
+You must declare whether your product includes, uses, depends on, or distributes third-party software of any kind from sources other than you or Mendix. Third-party software means any and all files, such as APIs, content, source code, or compiled libraries. 
 
-You must not use any restrictive or copyleft licenses such as GNU GPLv2, v3, as these limit the ability to sell commercially without disclosing source code or place restrictions on its usage. 
+You must include the following:
 
-If you have a content which has open-source license such as MIT or Apache, check if the third-party libraries being used are compatible with the license. 
+* In the product description:
+    * Licensing information
+    * Copyright information
+* At the root directory level of the *.mpk* file:
+    * The *licensing.txt* file
+    * Any dependencies
+    * An OSS Readme file
 
-If you are using any [open-source licenses](https://opensource.org/licenses-old/category), make sure you have the code hosted on a public repository.  
+You must not use any restrictive or copyleft licenses, such as GNU GPL v2 or v3, as they limit the ability to sell commercially without disclosing source code, or place restrictions on code usage. 
 
-Marketplace content governance team will check these cases once content is  submitted and get back to you if they find such issues. It is recommended that you do the check yourself beforehand to avoid delay in the listing.
+If you have content which has an open-source license, such as MIT or Apache, check if the third-party libraries being used are compatible with the license. 
 
-If you have created own product specific terms and conditions, you must host them, for example, on your web page, and share the URL with the Mendix Marketplace team so they could be attached to the product listing page.
+If you are using any [open-source licenses](https://opensource.org/licenses-old/category), make sure you have the code hosted in a public repository.  
 
-If your product is not licensed as an open-source component and you would like to specify certain licensing terms and conditions or end-user license agreements, Mendix recommends creating a document that covers the following topics:
+The Marketplace content governance team will check these cases once content is  submitted, and get back to you if they find issues. It is recommended that you do the check yourself beforehand to avoid any delays in the listing of your content.
+
+If you have created your own product specific terms and conditions, you must host them, for example, on your web page, and share the URL with the Mendix Marketplace team. The team will then attach the terms and conditions to the product listing page.
+
+If your product is not licensed as an open-source component, and you would like to specify certain licensing terms and conditions or end-user license agreements, Mendix recommends creating a document that covers the following topics:
 
 * Copyright information and license conditions
 
-* IP usage, which covers a list of OSS/commercial licenses used
+* IP usage, which includes a list of OSS/commercial licenses used
 
-  Below is a declaration template you can use for terms & conditions.
+  Below is a declaration template that you can use for terms and conditions.
 
 | Software Name and Version | Software URL | What does the Software do? Why is it needed? | License |
 | ------------------------- | ------------ | -------------------------------------------- | ------- |
 | Pro Secure Net 5.0 | https://example.com/prosecurenet/9f86d081884c7d659a2feaa0c55ad915 | A network security software that protects systems from unauthorized access and cyber threats. The software is needed to ensure the safety and integrity of network data. | MIT |
 
 * Export control
-* Data Privacy, including data processing agreement, as necessary 
+* Data Privacy, including a data processing agreement, as necessary 
 * Customer Service Level Agreement (SLA)
 
 #### Data Privacy
 
-Mendix wants to make sure that key data privacy principles are complied with at any time. 
+Mendix wants to make sure that Marketplace content complies with key data privacy principles at all times. This means that you must abide by the following guidelines: 
 
-* Create transparency on all personal data processing activities. 
-* Give users the choice to configure or influence the data collection, processing, and deletion wherever possible and useful. 
+* Create transparency around activities that process personal data. 
+* Give users the choice to configure or influence data collection, processing, and deletion wherever possible and useful. 
 * Collect only personal data that is necessary for the provision of the application’s services and functions. 
-* Delete personal data once no longer needed for the purpose of the collection. 
-* Integrate the [Privacy by Design](https://gdpr-info.eu/issues/privacy-by-design/) principles by default into your application. 
-* Conclude appropriate data processing agreements with your suppliers and subcontractors and give the customer full transparency and control over all recipients of their personal data.  
-* Ensure that technical and organizational measures to protect data are in place.
+* Delete personal data once it is no longer needed. 
+* Integrate the [Privacy by Design](https://gdpr-info.eu/issues/privacy-by-design/) principles into your application by default. 
+* Conclude appropriate data processing agreements with your suppliers and subcontractors, and give the customer full transparency and control over all recipients of their personal data.  
+* Ensure that technical and organizational data protection measures are in place.
 
-Declare to the Marketplace team which applies to your product:
+Let the Marketplace team know which of these options applies to your product:
 
 * Personal data is not collected: the developer does not collect any data with the product.
 * Personal data is collected, but not shared: the developer collects data with the product, but does not share it with any third-party.
-* Personal data is collected and shared: the developer collects data with the product, and share it with third-parties.
+* Personal data is collected and shared: the developer collects data with the product, and shares it with third-parties.
 
 #### Export Control
 
-Export Control is about following rules and regulations, mandated by countries in context of developing, sharing, delivering product, and handling different areas and departments where information and goods transfer can happen cross-border. 
+Export control covers the rules and regulations mandated by different countries around developing, sharing, and delivering products. It also covers different areas and departments where the transfer of information and goods can happen across borders. 
 
-It is imperative to understand main pillars on which the control system is placed. 
+It is imperative to understand the main pillars that support the control system. 
 
-##### Country-based Sanctions 
+##### Sanctioned Countries 
 
-Do not get confused with the word "Sanction". It has got exactly two opposite meanings. For export control, sanctioned countries mostly mean the ones which you are not allowed to do business with. An embargo is a government order that restricts or limits commerce with a specified country or the exchange of specific goods. An embargo is usually created as a result of unfavorable political or economic circumstances between nations. Country-specific embargoes are a list of countries to be prohibited for doing any economic activity. Currently, they are Cuba, North Korea, Iran, Syria, and Crimea region of Ukraine. Note that Russia and Belarus are not embargoed but very critical at the moment. 
+In the context of export control, sanctioned countries are the ones that you are not allowed to do business with.   
+
+An embargo is a government order that restricts or limits commerce or the exchange of specific goods with a specified country. An embargo is usually created as a result of unfavorable political or economic circumstances between nations.  
+
+Country-specific embargoes, which dictate the prohibition of any economic activity, are currently in place for Cuba, North Korea, Iran, Syria, and the Crimea region of Ukraine. Russia and Belarus are not embargoed, but are very critical at the moment. 
 
 ##### Sanctioned Parties 
 
-Sanctioned parties are individuals, companies, institutions, vessels, banks, etc., with whom either business is prohibited or possible, only after obtaining authorization from relevant government authorities. Sanctioned parties are published by US, EU, and other national authorities. 
+Sanctioned parties are individuals, companies, institutions, vessels, banks, etc., with whom business is either prohibited or possible only after obtaining authorization from relevant government authorities. Sanctioned parties are published by the USA, the EU, and other national authorities. 
 
-### Technical Guidelines
+### Technical Guidelines  
+
+This section covers the technical guidelines needed to ensure that your content is free of viruses, malware, and security vulnerabilities.
 
 #### Security Requirements 
-
-Content security is an important pillar for the Mendix Marketplace. The following sections details the security requirements necessary for modules, widgets, and connectors packaged into an *.mph* file format. Fulfill the following requirements for all Mendix Marketplace content (*.mpk* files) onboarded to Mendix  Marketplace.
+ 
+You must abide by the following requirements for all modules, widgets, and connectors packaged into an *.mpk* file and published to the Mendix  Marketplace.
 
 ##### Virus and Malware Scan for Files
 
-During the governance check, performed by the Marketplace team, it is checked  whether the file contains viruses. Mendix expects that the product that you submit is without any malware. Therefore, Mendix recommends completing a full virus and malware scan using [VirusTotal](https://www.virustotal.com/gui/home/upload) prior to your submission. You can also provide a “clean” report during onboarding of your *.mpk*  file to Mendix Marketplace onboarding team.
+The governance check performed by the Marketplace team includes a virus and malware scan. This means that Mendix expects that the product you submit is virus- and malware-free.  
 
-VirusTotal scans the file for traces of virus, and malware against 70+ virus engines and provides a report. This ensures that the uploaded file to the Marketplace is free from any viruses and malware.  
-
+Mendix recommends completing a full scan using [VirusTotal](https://www.virustotal.com/gui/home/upload) prior to your submission. VirusTotal checks the file for traces of virus and malware against more than 70 virus engines, and provides a report. This ensures that you can provide the Mendix Marketplace team with a clean report while uploading your *.mpk* file.
+  
 ##### File Integrity Check
 
-You must generate and provides a SHA-2 compatible hash (>=SHA256) of the file being uploaded to Mendix Marketplace. This way, Mendix Marketplace onboarding team can verify the integrity of the file being sent and that files are not corrupted or have been tampered with.  
+You must generate and provide at least a 256 bit hash (SHA256) of the file you upload to the Mendix Marketplace. This way, the Mendix Marketplace onboarding team can verify that the file is complete, not corrupted, and has not been tampered with.  
 
-More information of how to generate a hash can be found here:  
-
-* [Windows](https://www.howtohaven.com/system/how-to-hash-file-on-windows.shtml)
-
-* [Linux](https://www.techengineer.one/how-to-hash-files-in-linux/)
-
-Essentially, you can use any inbuilt utility for your operating system to generate the hash and provide it to Mendix Marketplace onboarding team for verification of integrity of your artifact.  
-
+You can generate the hash using any inbuilt utility. Find out more about how to generate a hash for [Windows](https://www.howtohaven.com/system/how-to-hash-file-on-windows.shtml) or [Linux](https://www.techengineer.one/how-to-hash-files-in-linux/).
+ 
 ##### Vulnerability Check 
 
-To ensure that the uploaded artifact is free from any critical and high vulnerabilities, you must ensure that you have scanned all 3rd party libraries and dependencies distributed with the artifact (the *.mpk* file). Normally they are in the **userlib** or  **widgets** folder inside the *.mpk*.  
+To ensure that the uploaded artifact is free of any critical and high vulnerabilities, you must scan all third party libraries and dependencies distributed with the *.mpk* file. These libraries and dependencies can be found in the **userlib** or  **widgets** folder within the *.mpk*.  
 
-You must ensure that the CVSS 3.0 score is less than 7.0 to pass the onboarding  criteria as per the [NIST NVD specification](https://nvd.nist.gov/vuln-metrics/cvss).  
+You must ensure that the CVSS 3.0 score is less than 7.0 to pass the onboarding  criteria, as described in the [NIST NVD specification](https://nvd.nist.gov/vuln-metrics/cvss).  
 
-A report supporting the above scan indicating libraries free of vulnerabilities can also be provided by to the Menidx Marketplace onboarding team during onboarding. Mendix recommends [Snyk Open Source](https://snyk.io/product/open-source-security-management/) solution to scan the third-party dependencies for vulnerabilities. This is required for all new and subsequent versions of the component uploaded to Mendix Marketplace. 
+When uploading your file, you must provide the Mendix Marketplace team with a report proving that you have completed a vulnerability scan and indicating that libraries are free of vulnerabilities. Mendix recommends the [Snyk Open Source](https://snyk.io/product/open-source-security-management/) solution for scanning third-party dependencies for vulnerabilities. This is required for all new and subsequent versions of any component uploaded to the Mendix Marketplace. 
 
 ##### SAST Scan for OWASP top 10 vulnerabilities
 
-In addition, you must ensure there are no [OWASP Top 10 vulnerabilities](https://owasp.org/www-project-top-ten/) in the code.  Traditional code based SAST scanners will not be very helpful to detect security issues in the low-code. They also cannot point out  security misconfigurations—if any. It is recommended to use a tool that can look into security best  practices outlined in the [Implementing Best Practices for App Security](/howto/security/best-practices-security/) and point out any security misconfigurations and bad practices.  
+You must ensure that there are no [OWASP Top 10 vulnerabilities](https://owasp.org/www-project-top-ten/) in the code.  
 
-Mendix Marketplace contains the following products which you could use for the check:  [Clevr ACR](https://marketplace.mendix.com/link/component/114669), [SIG QSM/AQM](https://www.softwareimprovementgroup.com/mendix-quality-and-security-management-powered-by-sigrid/),  [Bizzomate](https://chromewebstore.google.com/detail/bizzomate-mendix-dev-tool/nkbokoloejkhohjlickhfkjfmbmboaof),  [Omnext Software Analyses Suit](https://marketplace.mendix.com/link/component/120746). You can use them to inspect and correct your product. Mendix recommends that you inspect the component before you onboard your content on the Marketplace.
+Traditional code-based SAST scanners cannot properly detect security issues in low-code applications. They also cannot point out any security misconfigurations. Mendix recommends that you use a tool which can take into consideration the security best  practices outlined in [Implementing Best Practices for App Security](/howto/security/best-practices-security/), and point out security misconfigurations and bad practices.  
+
+The Mendix Marketplace contains the following products that you can use to inspect and correct your product before uploading it:  
+
+* [Clevr ACR](https://marketplace.mendix.com/link/component/114669)
+* [SIG QSM/AQM](https://www.softwareimprovementgroup.com/mendix-quality-and-security-management-powered-by-sigrid/)
+* [Bizzomate](https://chromewebstore.google.com/detail/bizzomate-mendix-dev-tool/nkbokoloejkhohjlickhfkjfmbmboaof)
+* [Omnext Software Analyses Suit](https://marketplace.mendix.com/link/component/120746)
 
 #### Architectural Best Practices
 
-As the supplier ecosystem evolves, different types of services will emerge. This section shares the best practice relevant for each type of offering in respect to the access management and service reliability. 
+As the supplier ecosystem evolves, different types of services emerge. This section shares the best practices relevant for each type of offering in respect to access management and service reliability. 
 
 ##### Access Management
 
-Below are the best practices regarding the access management:
+Follow these best practices with regards to access management:
 
-1. Issue one set of keys to access one service instance only.  
-2. Ensure that provided keys can provide minimal access rights for the application to perform any operations on the service instance. Service can choose the level of access according to the service instance configuration. 
-3. Mendix does not store keys issued to service consumer. If the consumer loses the key, they are bound to generate multiple binding keys for same instances. Hence, ensure that the number of binding keys per service instance is not a limiting factor. 
-4. On deletion of binding, delete the corresponding keys. Do not reuse the keys for any other binding key request. 
-5. Log any operation with binding keys for auditing purposes .
-6. Return a 404 error code for both scenarios below. This prevents giving clue to hackers:
-   * Absence of a resource (service instance)
-   * Access of a resource to which the accessor does not have rights for 
+* Issue one set of keys for each service instance.  
+* Ensure that the keys provide minimal access rights for the application to perform operations on the service instance.  
+  The service can choose the access level according to the service instance configuration. 
+* Mendix does not store the keys which are issued to the service consumer.  
+  If the consumer loses the keys, they will likely generate multiple binding keys for the same instances. Hence, ensure that the number of binding keys per service instance is not a limiting factor. 
+* When the binding is deleted, make sure to delete the corresponding keys.  
+  Do not reuse the keys for any other binding key request. 
+* Log any operation with binding keys for auditing purposes.
+* Return a 404 error code for both of the following scenarios, thus ensuring that hackers do not get any clues:
+    * Absence of a resource (service instance)
+    * Access of a resource for which the accessor does not have rights 
 
 ##### Service Reliability
 
-Below are the best practices regarding the service reliability:
+Follow these best practices with regards to service reliability:
 
-1. If the service cannot complete the provided operation within two seconds, consider using an asynchronous response mechanism. 
-2. Throttle requests to avoid noisy neighborhood issues. 
-3. Respond a 4XX error code for invalid inputs and if preconditions are not met. 
-4. In case of server error, the consuming app may retry invoking the service multiple times. An idempotent endpoint will be more robust for retries. 
-5. Choose appropriate scaling mechanism to handle varying loads. Prefer horizontal scaling against vertical scaling.
-6. Set up appropriate tools can monitor the service workload and raise notifications.
-7. Have a disaster recovery plan for your service.
-8. Broadcast availability of your service and scheduled maintenance window.
+* If the service cannot complete the provided operation within two seconds, consider using an asynchronous response mechanism. 
+* Throttle requests to avoid noisy neighbor issues. 
+* Respond with a 4XX error code for invalid inputs and unmet preconditions. 
+* Use an idempotent endpoint for retries in case of server errors, where the consuming app may retry invoking the service multiple times.
+* Choose an appropriate scaling mechanism to handle varying loads. Horizontal scaling is preferred to vertical scaling.
+* Set up appropriate tools that can monitor the service workload and raise notifications.
+* Have a disaster recovery plan for your service.
+* Broadcast the availability of your service and the scheduled maintenance window.
 
 ## Submitting Your Product
 
 ### Product Logo 
 
-Display your cover image in your Mendix Marketplace listing by uploading your file in the *.jpg* format with a resolution of minimum 600 px x 420 px and a file size of maximum 1 MB. Check the copyright branding guidelines of other companies if you use their logo as part of your image.
+Display your cover image in your Mendix Marketplace listing by uploading a file with these specifications:
 
-The thumbnail is visible on the Mendix Marketplace homepage. It is the same image as the cover image in the listing itself.
+* *.jpg* format
+* Minimum 600 x 420 px resolution
+* Maximum 1 MB file size
 
-It is important to carefully think about the thumbnail image, since it is the first item that draws the attention of the potential customers to your product offering. Therefore, Mendix recommends not using personal photos but rather an image that represents your offering.
+Check the copyright branding guidelines of other companies if you use their logo as part of your image.
+
+#### Thumbnail
+
+The thumbnail is visible on the Mendix Marketplace homepage. It is the same image as the cover image within the listing itself.
+
+It is important to carefully think about the thumbnail image, since it is the first item that draws the attention of potential customers. Therefore, Mendix recommends not using personal photos, but rather an image that clearly represents your offering.
 
 ### Product Name Taxonomy
 
-Finding a perfect name is one of the most challenging topics regarding your product. The Mendix Marketplace has almost no restrictions on the names and as a supplier. Knowing your product, you are responsible for finding the best option.
+The product name is just as important as the logo. As such, follow these rules to make sure your product's name is compliant and draws attention to your listing:
 
-However, Mendix still has some rules associated with naming:
+* Use a maximum of 30 - 32 characters to ensure the name fits within the thumbnail.
 
-* The size of the name has to be 30-32 characters to fit it in the thumbnail.
+* Use an English name to ensure global exposure.  
+  Currently, the Mendix Marketplace is international, with no option to switch languages.
 
-* Names have to be in English. Currently, the Mendix Marketplace is international with no option to switch languages. Thus, use an English name for global rather than regional exposure.
+* Do not include the content type or standard platform terms in the name. The Mendix Marketplace already classifies products by content types and categories, which helps customers filter and search. Instead, focus on the main product features and benefits. For example, “Widget” can be substituted with “3D Viewer”.
 
-* Do not use content type as part of the name. The Mendix Marketplace classifies products by content types and categories, which help customers with filtering and searching. Avoid using standard platform terms in the name of your product and focus on the main product features and benefits. For example, “Widget” can be substituted with “3D Viewer”.
+* Avoid using abbreviations that are not commonly known.  
 
-* Avoid using non-commonly-known abbreviations. It is important to draw customers' attention right from the thumbnail view, so potential customers open the listing itself to get more information. Apart from the image, the name has to be catchy.
-
-* If you use your company's name in the product name, similarly to the previous bullet point, do not abbreviate it so that customers remember your brand and pay attention to it in the future.
+* If you use your company's name in the product name, do not abbreviate it.
 
 ### Product Description
 
-Use this field to explain your offering. Product description is one of the most important aspects of online selling. Even if your product is great, it is significant to let your customer know that.
+Describe the challenges your potential customers may face daily, and how your product can help. Mendix recommends starting with a catchy one-liner, which will be used in the product's thumbnail as plain text. 
 
-Start introducing your offering by describing the challenges your potential customers may face daily and how your offering can solve those issues.
+While the description itself has no character limit, the introductory one-liner is capped at 150 characters.
 
-Follow your description by adding information on how the product solves the problems and what benefits the product brings.
+Here are some tips to help you write a proper product description:
 
-The requirements for the product description are as follows:
+* Include answers to key questions that developers have when they look for content.
+* Cover the entire range of product benefits, and focus on how your product can improve customers' app development or work life in general.  
+  A good practice is to outline the features and benefits of your product before describing them.  
+  For every feature you list, think about how it will directly benefit customers.  
+  Consider including technical aspects on the **Documentation** tab.
 
-* There is no limit on the characters in the description.
-* Mendix recommends adding a catchy one-liner before the rich text of the description. This line is used in the product's thumbnail as plain text—a maximum of 150 characters.
+* Know your target audience, and try to understand why they need your product, and what features or benefits are of interest to them.
+* Use friendly and easy to understand language, ensuring that customers can connect to the product.   
+  A good practice is to read the description aloud and assess whether it sounds natural. 
 
-Below are some tips that can help you write a proper product description:
+* Support your description with a good layout including bullet points, short paragraphs, and different sized fonts. This will help customers skim your text faster and focus on the most important parts of the text.
 
-* The product description should cover answers to the key questions that developers have when they look for content.
-
-* The product description should cover the product benefits. Rather than covering many technical features, which you can also cover in the **Documentation** tab, the **Overview** tab can draw attention to the benefits. Specify how your product can improve customers' app development or work life in general. What can help you is outlining the features and benefits of your product, before writing the description. For every feature you list, think about how it will directly benefit a customer.
-
-* Knowing the target audience will help you understand why this person needs your product, what features or benefits interest your customer. That way, you can put the focus on the right aspects.
-* Use natural language. Imagine you are telling your friend about the product. Reading the description aloud helps you see if you bring the natural tone like in the real conversation. Friendly- and easily-explained lines in the description help your customers connect to your product. 
-
-* Try not to use plain text, but rather support your description with bullet points, short paragraphs, and different size fonts. That way, you will help customers skim your text faster and draw attention to the most important parts of the text.
-
-* You can also add keywords to your description to optimize the content for search engines like Mendix or Google Search. That way, if someone is searching for your product using a certain word, your product may come out in the search of the potential customer.
+* Add keywords to optimize the content for search engines. That way, if a potential customer searches using a certain word, your product may come up in the search results.
 
 ### Screenshots and Assets
 
-A picture says more than 1,000 words. You can share up to 10 screenshots of your offering to showcase what your offering looks like so that future users know what to expect. You can also upload asset links like white papers, eBooks, and testimonials. The maximum file size is 1 MB.
+You can share up to 10 screenshots of your offering so that potential customers know what to expect. You can also upload asset links like white papers, eBooks, and testimonials.  
 
-### Video or Demo (Optional)
+The maximum file size is 1 MB.
 
-It would be great if you upload a short demo video, for example, 30-90 seconds, of your offering, in which you briefly explain why people need it, what it does, how it works, and how it can be implemented. Demo videos are important for developers because they give them an idea of how your product looks and works. It is a very powerful resource, especially for paid content.
+### Demo (Optional)
+
+You can upload a short 30- to 90-second demo video of your offering, in which you briefly explain why people need it, what it does, how it works, and how it can be implemented. This can prove to be a useful resource, especially for paid content.
 
 ## Publishing Your Product
 
-After Mendix reviews and approves your offering, the Mendix Marketplace team will make the final preparations for the technical onboarding and publishing.   
+After Mendix reviews and approves your offering, the Mendix Marketplace team makes the final preparations for the technical onboarding and publishing.   
 
-You can also work with the Mendix Marketplace team to define joint customer value propositions, marketing messages, and campaigns to further strengthen your offering as well as potential integrated end-to-end solutions that contain offerings from both you and Mendix.
+You can work with the Mendix Marketplace team to define joint customer value propositions, marketing messages, and campaigns to further strengthen your offering. In addition to that, you can collaborate with the team on integrated end-to-end solutions that contain offerings from both you and Mendix.
 
-Once everything is ready, the offering is marked for production and will be published on the Mendix Marketplace during the next scheduled release.
+Once everything is ready, the offering is marked for production and is published to the Mendix Marketplace during the next scheduled release.
 
-## Managing the Lifecycle
+## Managing the Product Lifecycle
 
 ### Product Support
 
-You must manage the accuracy of the offering on the Marketplace. Therefore, it is a requirement that the offering information is kept up to data e.g. in the event of new features or  benefits, with new releases. Our goal is to ensure that users and customers of the Mendix Marketplace have the most updated information about offerings.
+Our goal is to ensure that users and customers of the Mendix Marketplace have the most up-to-date information about offerings. You must therefore manage the accuracy of your own offering on the Marketplace, making sure that it is kept up to date with new features or releases.
 
-If users or customers have additional questions about your product on Mendix Marketplace or want to engage to discuss a challenge, they should always be able to request a response using the **Contact Us** form on Mendix website or by clicking the link to your webpage available on your product offering page. If the **Contact Us** option is used, then you will be informed about these requests. You are expected to respond in a timely manner.  
+If users or customers have additional questions about your product, or if they want to engage to discuss a challenge, they should always be able to contact you.  This can be done by clicking the link to your website available on your product offering page. For solutions, users can also get in touch with you through the **Contact Us** form on your solution page. If they do, you are notified, and are expected to respond in a timely manner.  
 
-Any products listed on Mendix Marketplace must meet the following requirements: 
+#### Product Support Requirements
 
-1. Customers must be able to submit issues to you through a customer support portal or using a dedicated email address. A link to the customer support portal or email address must be provided in the product listing. 
-2. You must support customers under an enterprise service level agreement. A Service Level Agreement (SLA) report must be made available to Mendix upon request. Part of this SLA report must include proof of a customer satisfaction survey with CSAT >=97% for issues with the product. 
-3. Critical issues, like security issues or data loss bugs, must be fixed according to a responsible disclosure policy. If an issue is already published, then it must be resolved within 48 hours after being disclosed. 
-4. Mendix reserves the right to notify any customers who are in any way using a product with such a critical issue.
-5. Mendix reserves the right to run customer satisfaction surveys for your products. If CSAT score is lower than 97%, then Mendix reserves the right to delist the product. 
-6. A list of known issues must be documented and available for customers and Mendix Customer Support. 
-7. For services or APIs, a well-known information point on service status must be available to customers and Mendix Customer Support.
+All products listed on the Mendix Marketplace must meet the following requirements: 
 
-To provide the best level of support to customers of the product. Mendix recommends that you do the following:
-
-* Set up a Service Level Agreement (SLA). For inspiration, consider the Mendix SLA as one example.
-* Provide customers 24 x 7 x 365 support with global coverage. Ideally, a dedicated support team is available. In any case, make it straightforward for customers to identify which team or contact person  gives them support. Ensure proper Mendix training for the team—Mendix Advanced Certification is recommended.
-* Continuously monitor customer satisfaction with both the product itself and the support you are providing.
-* The support team should have a direct line of communication with the engineering team delivering the product as second- or third-line  support.
+* Customers must be able to submit issues to you through a customer support portal or using a dedicated email address.  
+  You must provide a link to either of these in the product listing. 
+* You must support customers under an Enterprise Service Level Agreement.  
+  A Service Level Agreement (SLA) report must be made available to Mendix upon request. It must include proof of a customer satisfaction survey with a CSAT score of at least 97% for product issues. 
+* Mendix reserves the right to run customer satisfaction surveys for your products.  
+  If the CSAT score is lower than 97%, Mendix reserves the right to delist the product.
+* Critical issues, like security vulnerabilities or data loss problems, must be fixed according to a responsible disclosure policy.  
+  If an issue is already published, it must be resolved within 48 hours of it being disclosed.  
+  Mendix reserves the right to notify any customers who are in any way using a product with such a critical issue. 
+* You must provide a list of known issues to customers and to Mendix Customer Support. 
+* For services or APIs, you must provide a well-known information point on service status to customers and to Mendix Customer Support.
+* Provide customers with global non-stop support, ideally through a dedicated support team.  
+  Customers should be able to easily identify which team or contact person  provides them support.  
+* Ensure the support team has proper Mendix training. The Mendix Advanced Certification is recommended for this purpose.
+* The support team should have a direct line of communication with the engineering team delivering the product, as second- or third-line support.
+* Continuously monitor customer satisfaction with both the product itself, and the support you are providing.
 * Put internal procedures in place to manage changes, incidents, and escalations.
-* Make a status page like status.mendix.com available for all customers.
 
 {{% alert color="info" %}}
-Mendix reserves the right to temporarily delist any products that do not adhere to these requirements until resolved. In principle, you will be notified in advance, but for critical issues, the notification can be sent at the same time as the delisting and customer notifications.
+Mendix reserves the right to temporarily delist any products that do not adhere to these requirements until resolved.  
+
+In principle, you are notified in advance. For critical issues, though, the notification can be sent at the same time as the delisting and the customer notifications.
 {{% /alert %}}
 
 ## Mendix Partner Program
@@ -309,4 +346,4 @@ For more information on what this program offers, see [Mendix Component Partner 
 
 * [Community Best Practices for App Performance](/refguide/community-best-practices-for-app-performance/)
 * [Mendix Best Practices for Development](/refguide/dev-best-practices/)
-* [Best Practices for Building Connectors](/appstore/creating-content/connector-guide-best-practices/)
+* [Best Practices for Creating Connectors](/appstore/creating-content/connector-guide-best-practices/)
