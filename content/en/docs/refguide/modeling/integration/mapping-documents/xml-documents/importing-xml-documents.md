@@ -103,7 +103,7 @@ To create the XML-to-domain mapping, follow these steps:
 
 ## Creating the Import Logic
 
-In this section, you will create the logic to import the customers stored in an [XML document](/attachments/refguide/modeling/integration/mapping-documents/importing-xml-documents/18581651.xml) in your application.
+In this section, you will create the logic to import the customers stored in an [XML document](/attachments/refguide/modeling/integration/mapping-documents/importing-xml-documents/customers.xml) in your application.
 
 To create the import logic, follow these steps:
 
