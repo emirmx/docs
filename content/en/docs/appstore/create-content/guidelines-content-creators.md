@@ -12,15 +12,15 @@ This document provides guidelines and best practices to follow before you submit
 
 ## General Guidelines {#general}
 
-Here are some general guidelines for creating Marketplace content:
+These are the general guidelines for creating new Marketplace content:
 
-* Set up a separate app to build and maintain your Marketplace content.
+* Set up a separate app to build and maintain your Marketplace component.
 * Use the latest MTS or LTS of any major Studio Pro version when creating the item. If that is not possible, then use the earliest version of any major Studio Pro version.
-* Ensure that the latest version of your product supports at least one Mendix LTS or MTS version.
+* Ensure that the latest version of your product supports at least one Mendix LTS version or Mendix MTS version.
 * Your product must be complete and fully functional, as advertised upon submission.
 * In Mendix 10.21.0 and above, do not use direct associations in your module, as this can cause issues when it is imported.
 
-When you add content to the Marketplace, include any information that the end-user should know in the component [documentation](/appstore/submit-content/#doc).
+When you add content to the Marketplace, include in the component [documentation](/appstore/submit-content/#doc) any information that the end-user should know.
 
 ## Using a GitHub Repository {#github}
 
