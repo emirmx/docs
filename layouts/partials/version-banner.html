@@ -7,9 +7,9 @@
     {{ with .Params.banner }}
        {{ if ne . "" }}
             <div class="pageinfo pageinfo-warning">
-             <p>{{ . | safeHTML }}</p>
-        {{ end }}
-    </div>
+                <p>{{ . | safeHTML }}</p>
+            </div>
+       {{ end }}
     {{ end }}
 
     <!-- If the page has draft: true set, display the following text as a banner. -->
