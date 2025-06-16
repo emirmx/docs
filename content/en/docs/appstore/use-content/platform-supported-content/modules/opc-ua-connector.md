@@ -266,7 +266,7 @@ In order to monitor items, create a microflow that does the following:
 
 1. Call `CreateSubscription` action. 
 2. Create `MonitorItem` objects for each attribute to be monitored, with the following fields specified: `NodeID`, `AttributeID`, `MicroflowName`, associated to the created `Subscription`. 
-3. Do not use the Mendix commit, use instead the provided `CommitMonitoredItem` or `CommitMonitoredItems` action.
+3. Do not use the Mendix commit, use instead the provided `CommitMonitoredItem` or `CommitMonitoredItems` action. In the App Explorer, the microflows will show as `MonitoredItem_Commit` and `MonitoredItemList_Commit`.
 
 When a notification comes in, the microflow specified by `MicroflowName` on the monitored item will be triggered. 
 
