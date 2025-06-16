@@ -228,6 +228,17 @@ Some capabilities of the chat completions operations are currently only availabl
 
 * **Document Chat** - This operation supports the ability to chat with documents for [supported models](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html). To send a document to the model add a `FileCollection` with a `System.FileDocument` to the `Message` using the [Files: Initialize Collection with File](/appstore/modules/genai/genai-for-mx/commons/#initialize-filecollection) or the [Files: Add to Collection](/appstore/modules/genai/genai-for-mx/commons/#add-file-to-collection) operation. For Document Chat, it is not supported to create a `FileContent` from an URL using the above mentioned operations; Please use the `System.FileDocument` option. Make sure to set the `FileType` attribute to **document**.
 
+##### Tool Choice
+
+All [tool choice types](/appstore/modules/genai/genai-for-mx/commons/#enum-toolchoice) of GenAI Commons for the [Tools: Set Tool Choice](/appstore/modules/genai/genai-for-mx/commons/#set-toolchoice) action are supported. For API mapping reference, see the table below:
+
+| GenAI Commons (Mendix) | Amazon Bedrock |
+| --- | --- |
+| Auto | Auto |                     
+| Any | Any |
+| None | Tools removed from request |
+| Tool | Tool |
+
 #### RetrieveAndGenerate {#retrieve-and-generate}
 
 The `Retrieve and Generate` activity can be used for conversations leveraging Retrieval Augmented Generation through a knowledge base. This operation corresponds to the *RetrieveAndGenerate* microflow.

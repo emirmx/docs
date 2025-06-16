@@ -219,6 +219,20 @@ When you use Azure OpenAI, it is recommended to set the optional `MaxTokens` inp
 
 For more information on vision, see [OpenAI](https://platform.openai.com/docs/guides/vision) and [Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/gpt-with-vision) documentation.
 
+#### Document Chat {#chatcompletions-document}
+
+Document chat enables the model to interpret and analyze PDF documents, allowing it to answer questions and perform tasks based on the document content. To use document chat, you can send an optional [FileCollection](/appstore/modules/genai/genai-for-mx/commons/#filecollection) containing one or more documents along with a single message.
+
+For [Chat Completions (without history)](/appstore/modules/genai/genai-for-mx/commons/#chat-completions-without-history), `OptionalFileCollection` is an optional input parameter. For [Chat completions (with history)](/appstore/modules/genai/genai-for-mx/commons/#chat-completions-with-history), a `FileCollection` can optionally be added to individual user messages using [Add Message to Request](/appstore/modules/genai/genai-for-mx/commons/#chat-add-message-to-request).
+
+You can send up to 100 pages across multiple files, with a maximum combined size of 32 MB per conversation.  Currently, processing multiple files with OpenAI is not always guaranteed and can lead to unexpected behavior (for example, only one file being processed).
+
+{{% alert color="info" %}}
+Azure OpenAI does not currently support file input.
+
+Note that the model uses the file name when analyzing documents, which may introduce a potential vulnerability to prompt injection. To reduce this risk, consider modifying the string or not passing it at all.
+{{% /alert %}}
+
 #### Image Generations {#image-generations-configuration}
 
 OpenAI also provides image generation capabilities which can be invoked using this connector module. The `OpenAIDeployedModel` entity is compatible with the [image generation operation from GenAI Commons](/appstore/modules/genai/genai-for-mx/commons/#generate-image).
@@ -257,11 +271,11 @@ OpenAI-specific exposed microflow actions to construct requests via drag-and-dro
 
 This microflow changes the `ResponseFormat` of the `OpenAIRequest_Extension` object, which will be created for a `Request` if not present. This describes the format that the chat completions model must output. The default behavior for OpenAI's models currently is `Text`. This operation must be used to enable JSON mode by providing the value `JSONObject` as input.
 
-#### Files: Initialize Collection with OpenAI File {#initialize-filecollection}
+#### Files: Initialize Collection with OpenAI Image {#initialize-filecollection}
 
 This microflow initializes a new `FileCollection` and adds a new `FileDocument` or URL. Optionally, the `Image Detail` or a description using `TextContent` can be passed.
 
-#### Files: Add OpenAI File to Collection {#add-file}
+#### Files: Add OpenAI Image to Collection {#add-file}
 
 This microflow adds a new `FileDocument` or URL to an existing `FileCollection`. Optionally, the `Image Detail` or a description using `TextContent` can be passed.
 
@@ -279,6 +293,17 @@ The **Documentation** pane displays the documentation for the currently selected
 2. Click the element for which you want to view the documentation.
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" >}}
+
+### Tool Choice
+
+All [tool choice types](/appstore/modules/genai/genai-for-mx/commons/#enum-toolchoice) of GenAI Commons for the [Tools: Set Tool Choice](/appstore/modules/genai/genai-for-mx/commons/#set-toolchoice) action are supported. For API mapping reference, see the table below:
+
+| GenAI Commons (Mendix) | OpenAI  |
+| -----------------------| ------- |
+| auto                   | auto    |
+| any                    | required|
+| none                   | none    |
+| tool                   | tool    |
 
 ## GenAI showcase Application {#showcase-application}
 

@@ -161,9 +161,7 @@ For [Chat Completions (without history)](/appstore/modules/genai/genai-for-mx/co
 In the entire conversation, you can pass up to five documents that are smaller than 4.5 MB each. The following file types are accepted: PDF, CSV, DOC, DOCX, XLS, XLSX, HTML, TXT, and MD.
 
 {{% alert color="info" %}}
-When adding a document to the `FileCollection`, you can optionally use the `TextContent` parameter to pass the file name. Ensure the file name excludes its extension before passing it to the file collection.
-
-Note that the model uses the file name when analyzing documents, which could make it vulnerable to prompt injection. Depending on your use case, you may choose to modify the string or not pass it at all.
+The model uses the file name when analyzing documents, which may introduce a potential vulnerability to prompt injection. To reduce this risk, consider modifying file names before including them in the request.
 {{% /alert %}}
 
 ### Knowledge Base Operations
@@ -253,6 +251,17 @@ The **Documentation** pane displays the documentation for the currently selected
 2. Click the element for which you want to view the documentation.
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" >}}
+
+### Tool Choice
+
+All [tool choice types](/appstore/modules/genai/genai-for-mx/commons/#enum-toolchoice) of GenAI Commons for the [Tools: Set Tool Choice](/appstore/modules/genai/genai-for-mx/commons/#set-toolchoice) action are supported. For API mapping reference, see the table below:
+
+| GenAI Commons (Mendix) | Amazon Bedrock                |
+| -----------------------| ----------------------------- |
+| auto                   | auto                          |                     
+| any                    | any                           |
+| none                   | tools removed from request    |
+| tool                   | tool                          |
 
 ## Implementing GenAI with the Showcase App
 
