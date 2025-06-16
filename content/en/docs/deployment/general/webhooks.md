@@ -161,6 +161,12 @@ Make sure to use the correct key names when using this payload information to ca
 
 ## Teamserver Push (Git)
 
+{{% alert color="info" %}}
+This webhook is not visible for newly created apps. It is only visible for existing apps.
+
+For apps where the webhook is visible, do not delete it; deleting it would cause pipeline run failures for pipelines that rely on the Teamserver push (Git) trigger type.
+{{% /alert %}}
+
 When you push a model change to the [Git Team Server](/developerportal/general/team-server/), and the webhook responds to the event **Teamserver push (Git)**, request content is sent to the configured endpoint. The request content contains a payload with the following format:
 
 ```json
