@@ -61,7 +61,7 @@ The domain model in Mendix is a data model that describes the information in you
 
 The `DeployedModel` represents a GenAI model that can be invoked by the Mendix app. It contains a display name and a technical name/identifier. It also contains the name of the microflow to be executed for the specified model and other information relevant to connect to a model. The creation of Deployed Models is handled by the connectors themselves (see their specializations) where admins can configure those at runtime.
 
-The `DeployedModel` entity replaces the capabilities that were covered by the `Connection` entity for model invocations in earlier versions of GenAI Commons. For knowledge base interactions, the `Connection` entity is still used.
+The `DeployedModel` entity replaces the capabilities that were covered by the `Connection` entity for model invocations in earlier versions of GenAI Commons. For knowledge base interactions, the `DeployedKnowledgeBase` entity is used.
 
 | Attribute | Description |
 | --- | --- |
@@ -74,6 +74,20 @@ The `DeployedModel` entity replaces the capabilities that were covered by the `C
 | `SupportsConversationsWithHistory` | An enum to specify if the model supports conversation with history. |
 | `SupportsFunctionCalling` | An enum to specify if the model supports function calling. |
 | `IsActive` | A boolean to specify if the model is active/usable with the current authentication settings and user preference. |
+
+#### `DeployedKnowledgeBase` {#deployed-knowledge-base}
+
+The `DeployedKnowledgeBase` represents a GenAI knowledge base that can be added to the request when calling an LLM. It contains a display name, a technical name (or identifier), the name of the microflow to be executed for the specified knowledge base specialization, and other relevant information  to connect to the knowledge base. These objects are created by the connectors themselves (see their specializations), allowing admins to configure them at runtime.
+
+The `DeployedKnowledgeBase` entity replaces the capabilities covered by the `Connection` entity for knowledge base interaction in earlier versions of GenAI Commons. 
+
+| Attribute | Description |
+| --- | --- |
+| `DisplayName` | The display name of the deployed knowledge base. | 
+| `Name` | The name of the deployed knowledge base. |
+| `Architecture` | The architecture of the deployed model, for example, Mendix Cloud or Amazon Bedrock. |
+| `Microflow` |  The microflow to execute to retrieve information for the specified knowledge. |
+| `IsActive` | A boolean to specify if the knowledge base is active/usable with the current authentication settings and user preference. |
 
 #### `InputModality` {#Usage}
 
@@ -103,7 +117,7 @@ The data stored in this entity is to be used later on for token consumption moni
 
 #### `Connection` {#connection}
 
-The Connection entity used to be an input parameter for Chat completions, Embeddings, and Image Generation operations but was replaced by `DeployedModel`. It is currently only used as a general connection entity for Knowledge Base interactions.
+The Connection entity was previously used as an input parameter for Chat completions, Embeddings, and Image Generation operations, but it has been replaced by the `DeployedModel` entity. It was also used as a general connection entity for Knowledge Base interactions, which is now replaced with the `DeployedKnowledgeBase` entity.
 
 #### `Request` {#request} 
 
@@ -519,6 +533,28 @@ Use this microflow to control how the model should determine which function to l
 
 This microflow does not have a return value.
 
+##### Tools: Add Knowledge Base {#add-knowledge-base-to-request}
+
+This tool adds a function that performs a retrieval from a knowledge base to a [ToolCollection](#toolcollection) that is part of a Request. Use this microflow when you have knowledge bases in your application that may be called to retrieve the required information as part of a GenAI interaction. If you want the model to be aware of these microflows, you can use this operation to add them as functions to the request. If supported by the LLM connector, the chat completion operation calls the appropriate knowledge base function based on the LLM response and continue the process until the assistant's final response is returned.
+
+`DeployedKnowledgeBase` objects have provider-specific specializations, for example, `Collection` for Mendix Cloud.
+
+###### Input Parameters
+
+| Name | Type | Notes | Description |
+|---|---|---|---|
+| `Request` | [Request](#request) | mandatory | The request to which the knowledge base should be added. |
+| `Name` | String | mandatory | The name of the knowledge base to use or call. |
+| `Description` | String | optional | A description of the knowledge base's purpose, used by the model to determine when and how to invoke it. |
+| `DeployedKnowledgeBase` | Object | mandatory | The knowledge base that is called within this tool. This object includes a `microflow`, which is executed when the knowledge base is invoked. |
+| `MaxNumberOfResults` | Integer | optional | This can be used to limit the number of results that should be retrieved. |
+| `MinimumSimilarity` | Decimal | optional | Filters the results to retrieve only chunks with a similarity score greater than or equal to the specified value. The score ranges from 0 (no similarity) to 1.0 (the same vector). |
+| `MetadataCollection` | Object | optional | Optional: This contains a list for additional filtering in the retrieve. Only chunks that comply with the metadata labels will be returned. |
+
+###### Return Value
+
+This microflow returns a `KnowledgeBaseRetrieval` object.
+
 #### GenAI (Response Handling) {#genai-response-handling}
 
 The following microflows handle the response processing.
@@ -872,4 +908,3 @@ The process may look like this:
 3. Download the module from the marketplace; note that the module is from now on located under the “Marketplace modules” category in the app explorer.
 4. Test your application locally and verify that everything works as before.
 5. Restore lost data on deployed environments. Usually incoming associations to the protected modules need to be reset.
-    

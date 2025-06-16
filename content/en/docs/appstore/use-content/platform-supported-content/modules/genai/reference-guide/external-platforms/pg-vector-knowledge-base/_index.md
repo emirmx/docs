@@ -71,13 +71,13 @@ It is possible to have multiple knowledge bases in the same database in parallel
 
 ### General Operations {#general-operations-configuration} 
 
-After following the general setup above, you are all set to use the microflows and Java actions in the **USE_ME > Operations** folder in your logic. Currently, ten operations (microflows and Java actions) are exposed as microflow actions under the **PgVector Knowledge Base Operations** category in the **Toolbox** in Mendix Studio Pro. These can be split into three categories, corresponding to the main functionalities: managing data chunks in the knowledge base (for example, [(Re)populate](#repopulate-knowledge-base)), finding relevant data chunks in an existing knowledge base (for example, [Retrieve](#retrieve)), and deleting chunk data or a whole knowledge base (for exapmle, [Delete Knowledge Base](#delete-knowledge-base)). In many occasions, metadata in a [MetadataCollection](/appstore/modules/genai/commons/) can be provided to enable additional filtering.
+After following the general setup above, you are all set to use the microflows and Java actions in the **USE_ME > Operations** folder in your logic. Currently, eleven operations (microflows and Java actions) are exposed as microflow actions under the **PgVector Knowledge Base** category in the **Toolbox** in Mendix Studio Pro. These can be split into three categories, corresponding to the main functionalities: managing data chunks in the knowledge base (for example, [(Re)populate](#repopulate-knowledge-base)), finding relevant data chunks in an existing knowledge base (for example, [Retrieve](#retrieve)), and deleting chunk data or a whole knowledge base (for exapmle, [Delete Knowledge Base](#delete-knowledge-base)). In many occasions, metadata in a [MetadataCollection](/appstore/modules/genai/genai-for-mx/commons/#metadatacollection-entity) can be provided to enable additional filtering.
 
-Additionally, there is one activity to prepare the connection input, which is a required input parameter for all operations, under **USE_ME > Connection**, and exposed separately in the **Toolbox** in Studio Pro.
+Additionally, there is one activity to prepare the connection input, which is a required input parameter for all operations and exposed separately in the **Toolbox** in Studio Pro. The following section describes this operation:
 
-#### `Create PgVector Knowledge Base Connection` {#create-pgvectorconnection}
+#### `DeployedKnowledgeBase: Create` {#create-pgvectordeployedknowledgebase}
 
-All operations that include knowledge base interaction need the connection details to the knowledge base. Adhering to the GenAI Commons standard, this information is conveyed in a specialization of the GenAI Commons [Connection](/appstore/modules/genai/commons/) entity (see the [Technical Reference](#technical-reference) section). After instantiating the `PgVectorKnowledgeBaseConnection` based on custom logic and/or front-end logic, this object can be used for the actual knowledge base operations.
+All operations that include knowledge base interaction need the connection details to the knowledge base. Adhering to the GenAI Commons standard, this information is conveyed in a specialization of the GenAI Commons [DeployedKnowledgeBase](/appstore/modules/genai/genai-for-mx/commons/#deployed-knowledge-base) entity (see the [Technical Reference](#technical-reference) section). After instantiating the `PgVectorKnowledgeBase` based on custom logic and/or front-end logic, this object can be used for the actual knowledge base operations.
 
 ### (Re)populate Operations {#repopulate-operations-configuration}
 
@@ -114,7 +114,7 @@ The `Replace` operation is intended to be used in scenarios in which the chunks 
 
 ### Retrieve Operations {#retrieve-operations}
 
-Currently, four operations are available for on-demand retrieval of data chunks from a knowledge base. All operations work on a single knowledge base (specified by the knowledge base name) on a single database server (specified by the `DatabaseConfiguration`). The details for this are captured in the `PgVectorKnowledgeBaseConnection`. Apart from a regular [Retrieve](#retrieve), an additional operation was exposed to [Retrieve Nearest Neighbors](#retrieve-nearest-neighbors), where the cosine similarity between the input vector and the vectors of the records in the knowledge base is calculated. In both cases it is possible to filter on metadata. 
+Currently, four operations are available for on-demand retrieval of data chunks from a knowledge base. All operations work on a single knowledge base (specified by the knowledge base name) on a single database server (specified by the `DatabaseConfiguration`). The details for this are captured in the `PgVectorKnowledgeBase`. Apart from a regular [Retrieve](#retrieve), an additional operation was exposed to [Retrieve Nearest Neighbors](#retrieve-nearest-neighbors), where the cosine similarity between the input vector and the vectors of the records in the knowledge base is calculated. In both cases it is possible to filter on metadata. 
 
 A typical pattern for retrieval from a knowledge base uses GenAI Commons operations and can be illustrated as follows:
 

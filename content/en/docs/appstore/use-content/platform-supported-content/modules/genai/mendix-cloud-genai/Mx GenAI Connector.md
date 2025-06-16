@@ -41,6 +41,8 @@ Knowledge bases are often used for:
 1. [Retrieval Augmented Generation (RAG)](https://docs.mendix.com/appstore/modules/genai/rag/) retrieves relevant knowledge from the knowledge base, incorporates it into a prompt, and sends it to the model to generate a response.
 2. Semantic search enables advanced search capabilities by considering the semantic meaning of the text, going beyond exact and approximate matching. It allows the knowledge base to be searched for similar chunks effectively.
 
+If you are looking for a step-by-step guide on how to get your application data into a Mendix Cloud Knowledge Base, refer [Grounding Your Large Language Model in Data – Mendix Cloud GenAI](/appstore/modules/genai/how-to/howto-groundllm/). Note that the Mendix Portal also provides options for importing data into your knowledge base, such as file uploads. For more information, see [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/). This documentation focuses solely on adding data from an application using the connector.
+
 #### Embeddings
 
 Convert strings into vector embeddings for various purposes based on the relatedness of texts.
@@ -87,7 +89,7 @@ Follow the steps below to get started:
 * Make sure to configure the [Encryption module](/appstore/modules/encryption/#configuration) before you connect your app to Mendix Cloud GenAI.
 * Add the module role `MxGenAIConnector.Administrator` to your Administrator **User roles** in the **Security** settings of your app. 
 * Add the `Configuration_Overview` page (**USE_ME** > **Configuration**) to your navigation, or add the `Snippet_Configuration` to a page that is already part of your navigation. Alternatively, you can register your key by using the `Configuration_RegisterByString` microflow.
-* Complete the runtime setup of Mendix Cloud GenAI configuration by navigating to the page mentioned above. Import a key generated in the [portal](https://genai.home.mendix.com) or provided to you and click **Test Key** to validate its functionality.
+* Complete the runtime setup of Mendix Cloud GenAI configuration by navigating to the page mentioned above. Import a key generated in the [portal](https://genai.home.mendix.com) or provided to you and click **Test Key** to validate its functionality. Note that this key establishes a connection between the Mendix Cloud resources and your application. It contains all the information required to set up the connection.
 
 ## Operations
 
@@ -95,7 +97,9 @@ Follow the steps below to get started:
 
 Configuration keys are stored persistently after they are imported (either via the UI or the exposed microflow). There are three different types of configurations that reflect the use cases this service supports. The specific operations are described below.
 
-To use the operations, either a `DeployedModel` (text, embeddings) or a `MxKnowledgebaseConnection` must always be passed as input. The DeployedModel will be created automatically when importing keys at runtime and needs to be retrieved from the database. To initialize a knowledge base operation, use the `Connection: Get` toolbox action to create the `MxKnowledgebaseConnection` object. It requires a `CollectionName` (string) for the right collection inside of the knowledge base resource to be used.
+To use the operations, either a `DeployedModel` (text, embeddings) or a `DeployedKnowledgeBase` must always be passed as input. The DeployedModel will be created automatically when importing keys at runtime and needs to be retrieved from the database. To initialize a knowledge base operation, use the `DeployedKnowledgeBase: Get` toolbox action to retrieve the DeployedKnowledgeBase object for a specified collection. It requires the collection's Name (string) as input. 
+
+In Mendix Cloud GenAI, a single knowledge base resource (MxCloudKnowledgeBaseResource) can contain multiple collections (tables). As a result, several DeployedKnowledgeBase objects may belong to the same resource.
 
 ### Chat Completions Operation
 
@@ -119,7 +123,7 @@ The microflow activity [Chat completions (with history)](/appstore/modules/genai
 
 #### Retrieve & Generate {#retrieve-and-generate}
 
-To use retrieval and generation in a single operation, an internally predefined tool can be added to the [Request](/appstore/modules/genai/genai-for-mx/commons/#request) via the `Tools: Add Mendix Cloud Knowledge Base` action . The model can then decide whether to use the [knowledge base retrieval](/appstore/modules/genai/genai-for-mx/commons/#knowledge-base-retrieval) tool when handling the request. This functionality is supported in both with-history and without-history operations. Additionally, you may apply optional filters, such as `MaxNumberOfResults` or `MinimumSimilarity`, or pass a [MetadataCollection](/appstore/modules/genai/genai-for-mx/commons/#metadatacollection-entity). The optional `Description` can help the model understand the knowledge base content and decide whether it should be called in the current chat context.
+To use retrieval and generation in a single operation, an internally predefined tool can be added to the [Request](/appstore/modules/genai/genai-for-mx/commons/#request) via the `Tools: Add Knowledge Base` action . The model can then decide whether to use the [knowledge base retrieval](/appstore/modules/genai/genai-for-mx/commons/#knowledge-base-retrieval) tool when handling the request. This functionality is supported in both with-history and without-history operations. The (optional) `Description` helps the model to understand the knowledge base content and decide whether it should be called in the current chat context. Additionally, you may apply optional filters, such as `MaxNumberOfResults` or `MinimumSimilarity`, or pass a [MetadataCollection](/appstore/modules/genai/genai-for-mx/commons/#metadatacollection-entity). 
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/MxGenAIConnector_ConfigureRAG.png" >}}
 
@@ -166,7 +170,7 @@ The model uses the file name when analyzing documents, which may introduce a pot
 
 ### Knowledge Base Operations
 
-To implement knowledge base logic into your Mendix application, you can use the actions in the **USE_ME** > **Knowledge Base** folder or under the **GenAI Knowledge Base (Content)** or **Mendix Cloud Knowledge Base** categories in the **Toolbox**. These actions require a specialized [Connection](/appstore/modules/genai/genai-for-mx/commons/#connection) of type `MxKnowledgeBaseConnection` that determines the model and endpoint to use. Additionally, the collection name must be passed when creating the object and it must be associated with a `Configuration` object. Please note that for Mendix Cloud GenAI a knowledge base resource may contain several collections (tables). 
+To implement knowledge base logic into your Mendix application, you can use the actions in the **USE_ME** > **Knowledge Base** folder or under the **GenAI Knowledge Base (Content)** or **Mendix Cloud Knowledge Base** categories in the **Toolbox**. These actions require a specialized [DeployedKnowledgeBase](/appstore/modules/genai/genai-for-mx/commons/#deployed-knowledge-base) of type `Collection` that determines the model and endpoint to use. Additionally, the collection name must be passed when creating the object and it must be associated with a `Configuration` object. Please note that for Mendix Cloud GenAI a knowledge base resource may contain several collections (tables). 
 
 Dealing with knowledge bases involves two main stages:
 
@@ -193,7 +197,7 @@ The chunk collection can then be stored in the knowledge base using one of the f
 
 ##### Add Data Chunks to Your Knowledge Base
 
-Use the following toolbox actions inside the **Mendix Cloud Knowledge Base** toolbox category to populate knowledge data into the knowledge base:
+Use the following toolbox actions inside the **Mendix Cloud Knowledge Base** toolbox category to populate knowledge data into a collection:
 
 1. `Embed & Insert` embeds a list of chunks (passed via a [ChunkCollection](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection)) and inserts them into the knowledge base.
 2. `Embed & repopulate KB` is similar to the `Embed & Insert`, but deletes all existing chunks from the knowledge base before inserting the new chunks.
@@ -206,15 +210,11 @@ Additionally, use the following toolbox actions to delete chunks:
 
 When data in your Mendix app that is relevant to the knowledge base changes, it is usually necessary to keep the knowledge base chunks in sync. Whenever a Mendix Object changes, the affected chunks must be updated. Depending on your use case, the `Embed & Replace` and `Delete for Objects` can be conveniently used in event handler microflows.
 
-The example below shows how to repopulate a knowledge base using a list of Mendix objects:
-
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/PushTicketstoMxKB.png" >}} 
-
 ##### Knowledge Base Retrieval{#knowledge-base-retrieval}
 
-The following toolbox actions can be used to retrieve knowledge data from the knowledge base (and associate it with your Mendix data):
+The following toolbox actions can be used to retrieve knowledge data from a collection (and associate it with your Mendix data):
 
-1. `Retrieve` retrieves knowledge base chunks from the knowledge base. You can use pagination via the `Offset` and `MaxNumberOfResults` parameters or apply filtering via a `MetadataCollection` or `MxObject`. (Scroll down to see all available input parameters of this operation)
+1. `Retrieve` retrieves knowledge base chunks from the knowledge base. You can use pagination via the `Offset` and `MaxNumberOfResults` parameters or apply filtering via a `MetadataCollection` or `MxObject`. 
 2. `Retrieve & Associate` is similar to the `Retrieve` but associates the returned chunks with a Mendix object if they were linked at the insertion stage. 
 
     {{% alert color="info" %}}You must define your entity specialized from `KnowledgeBaseChunk`, which is associated to the entity that was used to pass a MendixObject during the [insertion stage](#knowledge-base-insertion).

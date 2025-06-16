@@ -122,7 +122,7 @@ Mendix ticket data needs to be ingested into the knowledge base. You can find a 
     * Edit the first retrieve action to retrieve objects from your new entity `Ticket`.
     * In the loop, delete the second action that adds metadata to the `MetadataCollection`.
     * In the last action of the loop `Chunks: Add KnowledgeBaseChunk to ChunkCollection` keep the **Human readable ID** field empty.
-    * Near the end of the microflow, edit the action `Connection: Get` to change the collection name from *example* to `HistoricalTickets`
+    * Near the end of the microflow, edit the action `DeployedKnowledgeBase: Get` to change the collection name from *example* to `HistoricalTickets`
 
 7. Finally, create a microflow `ACT_CreateDemoData_IngestIntoKnowledgeBase` that first calls the `Tickets_CreateDataset` microflow, followed by the `ACT_TicketList_LoadAllIntoKnowledgeBase` microflow. Add this `ACT_CreateDemoData_IngestIntoKnowledgeBase` new microflow to your navigation or homepage and ensure that it is accessible to admins (add the admin role under **Allowed Roles** in the microflow properties).
 
@@ -289,23 +289,22 @@ Users can now ask for information for a specific ticket by providing a ticket id
 
 Finally, you can add a tool for knowledge base retrieval. This allows the agent to query the knowledge base for similar tickets and thus tailor a response to the user based on private knowledge. Note that the knowledge base retrieval is only supported for [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/).
 
-1. In the microflow `ACT_TicketHelper_CallAgent`, add a `Retrieve` action, before the request is created, to retrieve a **Mendix Cloud Knowledge Base** object:
+1. In the microflow `ACT_TicketHelper_CallAgent`, add a `Retrieve` action, before the request is created, to retrieve a **Collection** object:
 
     * Source: `From database`
-    * Entity: `MxGenAIConnector.MxCloudKnowledgeBase` (search for *MxCloudKnowledgeBase*)
+    * Entity: `MxGenAIConnector.Collection` (search for *Collection*)
     * Range: `First`
-    * Object name: `MxCloudKnowledgeBase` (default)
+    * Object name: `Collection` (default)
 
-2. Add the `Tools: Add Mendix Cloud Knowledge Base` action after the **Request** creation microflow:
+2. Add the `Tools: Add Knowledge Base` action after the **Request** creation microflow:
 
     * Request: `Request` (object created in previous action)
-    * MxCloudKnowledgeBase: `MxCloudKnowledgeBase` (object that was retrieved in the previous step)
-    * CollectionName: `HistoricalTickets` (name that was used in the [Ingest Data into Knowledge Base](#ingest-knowledge-base))
     * MaxNumberOfResults: empty (expression; optional)
     * MinimumSimilarity: empty (expression; optional)
     * MetadataCollection: empty (expression; optional)
     * Name: `RetrieveSimilarTickets` (expression)
     * Description: `Similar tickets from the database` (expression)
+    * DeployedKnowledgeBase: `Collection` (object that was retrieved in the previous step)
     * Use return value: `no`
 
 You have successfully integrated a knowledge base into your agent interaction. Now, when a user submits a request like, `My VPN crashes all the time and I need it to work on important documents`, the agent will search the knowledge base for similar tickets and provide a relevant solution.

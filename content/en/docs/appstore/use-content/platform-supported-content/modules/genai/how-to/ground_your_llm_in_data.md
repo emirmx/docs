@@ -39,7 +39,9 @@ Before implementing this capability into your app, make sure you meet the follow
 
 Since this document focuses on the [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/), ensure that you have the [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449) installed.
 
-Follow the [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/) instructions to collect the resources keys.
+Follow the instructions in the [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/) guide to collect the resources keys and configure the connector within your application. The keys bridge the gap between your app and the resources, enabling you to access models and add to or retrieve data from a Mendix Cloud GenAI knowledge base.
+
+ While this documentation focuses on adding data to your knowledge base from a Mendix application, you can also fill the knowledge base directly within the portal, for example, by uploading files.
 
 ### Creating Domain Model Entity {#domainmodel}
 
@@ -80,22 +82,22 @@ To start, create a microflow that allows you to upload data into your knowledge 
     * Use return value: No
     * Metadata collection: `empty` (optional)
 
-5. After the loop, add a `Retrieve` action to retrieve a `MxCloudKnowledgeBase`. In this example, the first entry found in the database is used.
+5. After the loop, add a `Retrieve` action to retrieve a `MxCloudKnowledgeBaseResource`. In this example, the first entry found in the database is used.
     
     * **Source**: `From database`
-    * **Entity**: `MxGenAIConnector.MxCloudKnowledgeBase`
+    * **Entity**: `MxGenAIConnector.MxCloudKnowledgeBaseResource`
     * **Range**: `First`
-    * **Object name**: `MxCloudKnowledgeBase`
+    * **Object name**: `MxCloudKnowledgeBaseResource`
 
-6. Next, add the `Connection: Get` action from the `Mendix Cloud Knowledge Base` category:
+6. Next, add the `DeployedKnowledgeBase: Get` action from the `Mendix Cloud Knowledge Base` category:
 
-    To edit the parameter value for `MxCloudKnowledgeBase`, double-click its type, select `Variable`, and assign it the value `MxCloudKnowledgeBase`. Similarly, for `CollectionName`, double-click its type, select `Expression`, and assign it the value `TicketSolutions`.
+    To edit the parameter value for `MxCloudKnowledgeBaseResource`, double-click its type, select `Variable`, and assign it the value `MxCloudKnowledgeBaseResource`. Similarly, for `CollectionName`, double-click its type, select `Expression`, and assign it the value `TicketSolutions`.
 
-    You can keep the **Use return variable** as *Yes* and the object name `MxKnowledgeBaseConnection`.
+    You can keep the **Use return variable** as *Yes* and the object name `DeployedKnowledgeBase`.
 
 7. Add the `Embed & Repopulate Collection` action to insert your knowledge into the knowledge base:
 
-    To edit the parameter value for `Connection`, double-click its type, select `Variable`, and assign it the value `MxKnowledgeBaseConnection`. Similarly, for `ChunkCollection`, double-click its type, select `Variable`, and assign it the value `GenAICommons.ChunkCollection`.
+    To edit the parameter value for `DeployedKnowledgeBase`, double-click its type, select `Variable`, and assign it the value `DeployedKnowledgeBase`. Similarly, for `ChunkCollection`, double-click its type, select `Variable`, and assign it the value `GenAICommons.ChunkCollection`.
 
     You can keep the **Use return variable** as *Yes* and the variable name `IsSuccess`.
 
@@ -186,9 +188,9 @@ To use the knowledge in a chat interface, create and adjust certain microflows a
 5. After the `Request found` decision, add a `Retrieve` action. In this example, the first entry found in the database is used, just as in the insertion microflow.
     
     * **Source**: `From database`
-    * **Entity**: `MxGenAIConnector.MxCloudKnowledgeBase`
+    * **Entity**: `MxGenAIConnector.MxCloudKnowledgeBaseResource`
     * **Range**: `First`
-    * **Object name**: `MxCloudKnowledgeBase`
+    * **Object name**: `MxCloudKnowledgeBaseResource`
 
 6. Add the `Tools: Add Mendix Cloud Knowledge Base` action with the settings shown in the image below:
 
