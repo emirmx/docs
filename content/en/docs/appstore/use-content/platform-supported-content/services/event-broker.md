@@ -109,22 +109,20 @@ Every event must carry four mandatory CloudEvents core attributes, each prefixed
 * specversion as `ce_specversion`
 * type as `ce_type`
 
-{{% alert color="info" %}}
+See [CloudEvents](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#required-attributes) for more information on required attributes.
+
+#### HTTP Bridges Header
+
 For HTTP Bridges, an additional HTTP header is required for authentication.
-{{% /alert %}}
 
 * **Authorization**: The value must be set as a Bearer token using the Personal Access Token (PAT) generated during bridge configuration.  
-  Example: `Authorization: Bearer <your-personal-access-token>`
+For example: `Authorization: Bearer <your-personal-access-token>`
 
-This header must be included in all HTTP requests sent to the Mendix Event Broker via the HTTP Bridge.  
-For details on how to obtain your Bearer token, see [Using the HTTP Bridge](#using-the-http-bridge).
+This header must be included in all HTTP requests sent to the Mendix Event Broker via the HTTP Bridge. For details on how to obtain your Bearer token, see [Using the HTTP Bridge](#using-the-http-bridge).
 
-> **Note:**  
-> You can include additional HTTP headers in your request, such as `ce_time: 2025-06-13T15:36:52.148542+02:00`.  
-> For example, passing `ce_time` will set the published time of the event.  
-> All other custom HTTP headers will be forwarded as Kafka headers by default.
-
-See [CloudEvents](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#required-attributes) for more information on required attributes.
+{{% alert color="info" %}}
+You can include additional HTTP headers in your request, such as `ce_time: 2025-06-13T15:36:52.148542+02:00`.  For example, passing `ce_time` will set the published time of the event. All other custom HTTP headers will be forwarded as Kafka headers by default.
+{{% /alert %}}
 
 ### Creating a Bridge
 
