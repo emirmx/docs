@@ -48,7 +48,7 @@ For details, see [Upload to the Marketplace](/appstore/submit-content/).
 
 ## Get Studio Pro
 
-Get the latest version of [Studio Pro](/releasenotes/studio-pro/).
+Download the latest version of [Studio Pro](/releasenotes/studio-pro/).    
 
 ## Personal {#personal}
 
