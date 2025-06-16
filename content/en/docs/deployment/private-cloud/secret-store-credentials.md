@@ -21,7 +21,7 @@ Using an external secret storage provides multiple benefits, such as rotating cr
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Using a secret storage *incorrectly* may reduce the security of your app. This document describes a simplified approach to setting up Vault and should not be used for production environments. Consult with your secrets store provider to ensure that it is set up securely for your production environment.
+Incorrect use of a secret storage may reduce the security of your app. This document describes a simplified approach to setting up Vault and should not be used for production environments. Consult your secrets store provider to ensure that it is set up securely for your production environment.
 {{% /alert %}}
 
 ### Supported Stores
