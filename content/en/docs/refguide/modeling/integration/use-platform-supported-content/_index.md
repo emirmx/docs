@@ -1,14 +1,15 @@
 ---
-title: Use Extensions 
-url: /refguide/use-extensions/
+title: Use Platform-Supported Content 
+url: /refguide/use-platform-supported-content/
 aliases: 
    - /howto/integration/use-extensions/
+   - /refguide/use-extensions/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team (buildpack) know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction 
 
-Connect to and receive information from external sources with extensions in Mendix Studio Pro.
+Connect to and receive information from external sources with platform-supported content in Mendix Studio Pro.
 
 Documents available for this topic:
 
