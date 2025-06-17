@@ -37,7 +37,7 @@ You can refine search results using the following filters:
 * **Rating** – Display components based on their ratings in user [reviews](#my-reviews).
 
 {{% alert color="info" %}}
-For details on finding and installing Marketplace content in Studio Pro, see the [Finding and Downloading Content in Studio Pro](/appstore/use-content/#downloading) section of *Use Marketplace Content*.
+For details on finding and installing Marketplace content in Studio Pro, see the [Finding and Downloading Content in Studio Pro](/appstore/use-content/#downloading) section of *Using Marketplace Content*.
 {{% /alert %}}
 
 ## Add Content
@@ -91,14 +91,14 @@ Click the context menu to access options for managing your content:
     * If there is a draft version in progress, you can edit or delete it.
     * If there is a draft version in progress, and it is assigned to another user, you can reassign it to to yourself. 
 
-    For more information on creating a draft version, see the [Updating Existing Marketplace Content](/appstore/submit-content/#updating) section of *Upload to the Marketplace*.
-* **Edit a Version** – Edit the component. For details on editing, see the [Adding New Marketplace Content](/appstore/submit-content/#adding) section of *Upload to the Marketplace*.
+    For more information on creating a draft version, see the [Updating Existing Marketplace Content](/appstore/submit-content/#updating) section of *Uploading to the Marketplace*.
+* **Edit a Version** – Edit the component. For details on editing, see the [Adding New Marketplace Content](/appstore/submit-content/#adding) section of *Uploading to the Marketplace*.
 * **Unpublish a Version** – Remove one or all versions of the component.
     * If the component is [protected](#group-content) within a [content group](#content-groups), a [group member](#members) can unpublish any version.
     * If the component is not protected within a content group, you can only unpublish a version that you have published yourself.
     * Select **Unpublish All My Versions** to remove all your versions of the component.
 
-A **Private** label on a component means the component is your company's private Marketplace content. For details on how this is configured, see the [Adding New Marketplace Content](/appstore/submit-content/#adding) section of *Upload to the Marketplace*. This content can be shared with [guests](#guests).
+A **Private** label on a component means the component is your company's private Marketplace content. For details on how this is configured, see the [Adding New Marketplace Content](/appstore/submit-content/#adding) section of *Uploading to the Marketplace*. This content can be shared with [guests](#guests).
 
 A component assigned as [group content](#group-content) will have a label for the [content group](#content-groups) to which it is assigned.
 
