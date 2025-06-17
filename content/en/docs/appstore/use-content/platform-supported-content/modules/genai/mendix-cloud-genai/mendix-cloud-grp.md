@@ -16,9 +16,9 @@ Mendix Cloud GenAI Resource Packs provide turn-key access to Generative AI techn
 
 Developers can use the Mendix Portal to manage their Mendix Cloud GenAI resources and seamlessly integrate model and knowledge base capabilities into their Mendix applications using the [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/). Optimized for high performance and low latency, Mendix Cloud GenAI Resource Packs provide the easiest and fastest way to deliver end-to-end Generative AI solutions with Mendix.
 
-### Limited Availability
+### General Availability
 
-Mendix Cloud GenAI Resource Packs are currently available under limited availability. Mendix is collaborating with early adopters—including customers, partners, and ISVs—to drive successful project outcomes. Access to GenAI Resource Packs is evaluated on a case-by-case basis. To learn more about the conditions for access during the limited availability phase, contact [genai-resource-packs@mendix.com](mailto:genai-resource-packs@mendix.com) until the general availability release.
+Mendix Cloud GenAI Resource Packs is a premium Mendix product that requires an additional purchase. To start using GenAI Resource Packs, contact your Customer Success Manager (CSM). 
 
 ## Models
 
