@@ -8,4 +8,4 @@ weight: 8
 linktitle: "Studio Pro 8"
 ---
 
-Mendix offers the following APIs for Studio Pro 9:
+Mendix offers the following APIs for Studio Pro 8:

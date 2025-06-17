@@ -1,5 +1,5 @@
 ---
-title: "Preview Appearance APIs – Mx8"
+title: "Preview Appearance APIs"
 linktitle: "Preview Appearance APIs"
 url: /apidocs-mxsdk/apidocs/studio-apis-for-pluggable-widgets-8/
 weight: 30

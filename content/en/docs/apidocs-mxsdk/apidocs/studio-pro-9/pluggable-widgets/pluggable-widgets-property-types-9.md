@@ -1,5 +1,5 @@
 ---
-title: "Property Types – Mx9"
+title: "Property Types"
 url: /apidocs-mxsdk/apidocs/pluggable-widgets-property-types-9/
 description: A guide for understanding pluggable widgets' property types in Studio Pro Mendix 9.
 weight: 10
