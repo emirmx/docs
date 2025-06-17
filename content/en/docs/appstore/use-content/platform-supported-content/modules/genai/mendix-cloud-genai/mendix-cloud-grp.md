@@ -35,6 +35,13 @@ The models are available through the Mendix Cloud, leveraging AWS's highly secur
 
 Customers looking to leverage other models in addition to the above can also take advantage of Mendix's [(Azure) OpenAI Connector](/appstore/modules/genai/reference-guide/external-connectors/openai/) and Amazon [Bedrock Connector](/appstore/modules/genai/reference-guide/external-connectors/bedrock/) to integrate numerous other models into their apps.
 
+### Technical Details Model Resource Packs
+| Genai Model Resource Pack                                              | S                  | M                 | L           |
+| ---------------------------------------------------------------------- | ------------------ | ----------------- | ----------- |
+| Anthropic Claude V3.5 (Tokens in/month)                                | 2.5 Million In     | 5 Million         | 10 Million  |
+| Anthropic Claude V3.5 (Tokens out/month)                               | 1.25 Million Out   | 2.5 Million       | 5 Million   |
+| Cohere Embed V3 (Tokens in/month)                                      | 5 Million In       | 10 Million        | 20 Million  |
+
 ## Knowledge Bases
 
 Mendix Cloud Knowledge Base Resource Packs provide customers with an elastic, logically isolated vector database, to use for standard Generative AI architectural patterns such as Retrieval-Augmented Generation (RAG), semantic similarity search, and other Generative AI use cases. The Knowledge Bases on Mendix Cloud are based on AWS's highly secure Amazon Bedrock Knowledge Bases capability, combined with AWS' OpenSearch Serverless database— a widely adopted standard infrastructure for Generative AI Knowledge Bases on AWS, ensuring fast & accurate information retrieval.
@@ -46,6 +53,14 @@ Knowledge bases enable you to bring your own data for RAG, semantic similarity s
 * Manage knowledge base content and add metadata labels
 
 Knowledge Bases are based on elastically scaling, serverless OpenSearch vector databases, to ensure high performance under load. The database is set up as a highly available cluster to ensure business continuity. Customer data is stored in logical isolation from other customers and is not used for model training, ensuring data security and privacy in compliance with industry standards.
+
+### Technical Details Knowledge Base Resource Packs
+
+| Genai Knowledge Base Resource Pack                                     | Standard      | 
+| ---------------------------------------------------------------------- | --------------|
+| Compute                                                                | Elastic       |
+| Memory                                                                 | Elastic       |
+| Disk Space                                                             | 10GB          |
 
 ## Mendix Portal
 
