@@ -1,5 +1,5 @@
 ---
-title: "Property Types – Mx8"
+title: "Property Types"
 url: /apidocs-mxsdk/apidocs/property-types-pluggable-widgets-8/
 weight: 10
 description: A guide for understanding pluggable widgets' property types.

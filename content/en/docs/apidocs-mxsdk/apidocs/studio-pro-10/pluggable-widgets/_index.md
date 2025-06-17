@@ -1,6 +1,6 @@
 ---
 title: "Pluggable Widgets API"
-url: /apidocs-mxsdk/apidocs/pluggable-widgets/
+url: /apidocs-mxsdk/apidocs/pluggable-widgets-10/
 description: "This API helps you to understand pluggable widgets, how they extend app functionality, and how they can be built to interact with Mendix's APIs in Mx10."
 no_list: false
 description_list: true
@@ -285,7 +285,7 @@ Note that the **Common** and **Appearance** tabs are added to your widget config
 
 ## Widget Property
 
-This section will explain the shape of the widget property. For more detailed information on widget properties, see [Pluggable Widget Property Types](/apidocs-mxsdk/apidocs/pluggable-widgets-property-types/). Every `property` tag in the Widget Properties Definition has a shape similar to this:
+This section will explain the shape of the widget property. For more detailed information on widget properties, see [Pluggable Widget Property Types](/apidocs-mxsdk/apidocs/pluggable-widgets-property-types-10/). Every `property` tag in the Widget Properties Definition has a shape similar to this:
 
 ```xml
     <property key="cardName" type="textTemplate">

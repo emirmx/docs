@@ -1,5 +1,5 @@
 ---
-title: "Client APIs – Mx8"
+title: "Client APIs"
 linktitle: "Client APIs for Pluggable Widgets"
 url: /apidocs-mxsdk/apidocs/client-apis-for-pluggable-widgets-8/
 weight: 20

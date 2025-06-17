@@ -1,8 +1,10 @@
 ---
-title: "Property Types – Mx9"
-url: /apidocs-mxsdk/apidocs/pluggable-widgets-property-types-9/
-description: A guide for understanding pluggable widgets' property types in Studio Pro Mendix 9.
+title: "Property Types"
+url: /apidocs-mxsdk/apidocs/pluggable-widgets-property-types/
+description: A guide for understanding pluggable widgets' property types in Mx11.
 weight: 10
+aliases:
+- /apidocs-mxsdk/apidocs/property-types-pluggable-widgets
 ---
 
 ## Introduction
@@ -47,6 +49,7 @@ This defines a property's type. A `type` must be one of the following:
     * [object](#object)
     * [file](#file)
     * [datasource](#datasource)
+    * [selection](#selection)
 
 ### XML Elements
 
@@ -131,7 +134,7 @@ Then the Studio Pro UI for the property appears like this:
 
 Integer is represented as a number input in Studio Pro. It is passed as a `number` prop to a client component.
 
-#### XML Attributes
+#### XML Attributes 
 
 | Attribute      | Required | Attribute Type | Description                    |
 |----------------|----------|----------------|--------------------------------|
@@ -363,10 +366,6 @@ The return type of the expression must be defined using either the `type` or the
 
 ##### Fixed Return Type
 
-{{% alert color="info" %}}
-The `type` attribute was required in Mendix [9.19](/releasenotes/studio-pro/9.19/) and below.
-{{% /alert %}}
-
 You can set a fixed return type for your expression property with one of the supported types from below.
 
 | Supported Return Types | Corresponding Types Client Components Receive                                           |
@@ -378,10 +377,6 @@ You can set a fixed return type for your expression property with one of the sup
 | `String`               | `DynamicValue<string>`                                                                  |
 
 ##### Return Type Assignable to an Attribute
-
-{{% alert color="info" %}}
-The `assignableTo` attribute was introduced in Mendix [9.20](/releasenotes/studio-pro/9.20/).
-{{% /alert %}}
 
 You can use `assignableTo` to specify that the return type of the expression property should depend on the attribute property with the given property path. This means that the value of the expression will be assignable to the attribute configured for that attribute property (using [`setValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#editable-value)).
 
@@ -472,19 +467,43 @@ Then the Studio Pro UI for the property appears like this:
 
 ### Action {#action}
 
+{{% alert color="info" %}}
+The `defaultType` and `defaultValue` attributes for Action were introduced in Mendix [10.15](/releasenotes/studio-pro/10.15/).
+{{% /alert %}}
+
 The action property type allows a user to configure an action which can do things like call nanoflows, save changes, and open pages.
 
 If a `dataSource` attribute is not specified, the client will receive an `ActionValue` representing the action or `undefined` if the **Do nothing** action was selected.
 
 When a `dataSource` attribute is specified and configured by the user, it is passed as a [`ListActionValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listactionvalue). For more information, see the [Datasource](#datasource) section below.
 
-#### XML Attributes
+#### XML Attributes {#xml-attributes}
 
-| Attribute    | Required | Attribute Type | Description                                                                             |
-|--------------|----------|----------------|-----------------------------------------------------------------------------------------|
-| `type`       | Yes      | String         | Must be `action`                                                                        |
-| `key`        | Yes      | String         | See [key](#key)                                                                         |
-| `dataSource` | No       | Property Path  | Specifies path to a [`datasource`](#datasource) property linked to this action property |
+| Attribute      | Required | Attribute Type | Description                                                                                             |
+|----------------|----------|----------------|---------------------------------------------------------------------------------------------------------|
+| `type`         | Yes      | String         | Must be `action`                                                                                        |
+| `key`          | Yes      | String         | See [key](#key)                                                                                         |
+| `dataSource`   | No       | Property Path  | Specifies path to a [`datasource`](#datasource) property linked to this action property                 |
+| `defaultValue` | No       | String         | Default value for the property, the format should be `<ModuleId>.<DocumentId>`                          |
+| `defaultType`  | No       | String         | Default type for the property, supported values are `None`, `OpenPage`, `CallNanoflow`, `CallMicroflow` |
+
+#### XML Elements {#action-xml-elements}
+
+`<actionVariables>` — Defines variables a widget provides when calling [execute() on an ActionValue](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#execute). The variables are made available in Studio Pro when configuring [Call a Microflow](/refguide/on-click-event/#call-microflow) and [Call a Nanoflow](/refguide/on-click-event/#call-nanoflow) actions.
+
+`<actionVariable>` (required one or more) — Represents a primitive value provided by the widget as an argument when calling `ActionValue.execute()`. The variable is defined by the following attributes:
+
+* `key` (required) — The identifier of the variable used in Studio Pro and the Pluggable Widgets API.
+* `type` (required) — The type of the value that the variable represents. Supported types and their corresponding Typescript type are listed in the table below.
+* `caption` (required) — A short description of the variable that is displayed in Studio Pro.
+
+| Action Variable Type | Client Type  |
+| -------------------- | --------- |
+| `String`             | `string`  |
+| `Integer`            | `Big`  |
+| `Decimal`            | `Big`  |
+| `DateTime`           | `Date`    |
+| `Boolean`            | `boolean` |
 
 #### Studio Pro UI
 
@@ -501,6 +520,22 @@ Then the Studio Pro UI for the property appears like this:
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/pluggable-widgets/pluggable-widgets-property-types/action.png" class="no-border" >}}
 
+When the action exposes variables with the following XML:
+
+```xml
+<property key="actionWithVariable" type="action">
+	<caption>On click</caption>
+	<description>Action to be performed when button is clicked</description>
+	<actionVariables>
+		<actionVariable key="random" type="Decimal" caption="Random number between 0 and 1" />
+	</actionVariables>
+</property>
+```
+
+The variable appears in the UI like this:
+
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/pluggable-widgets/pluggable-widgets-property-types/action-variable.png" class="no-border" >}}
+
 ### Attribute {#attribute}
 
 The attribute property type allows a widget to work directly with entities' attributes, both reading and writing attributes. Depending on the widget's purposes, a widget should define attribute types it supports. 
@@ -515,9 +550,10 @@ When a `dataSource` attribute is specified and configured by the user, it is pas
 |--------------|----------|----------------|----------------------------------------------------------------------------------------------------------------------------------|
 | `type`       | Yes      | String         | Must be `attribute`                                                                                                              |
 | `key`        | Yes      | String         | See [key](#key)                                                                                                                  |
-| `onChange`   | No       | Property Path  | The path to an [`action`](#action) property that will be executed by the Mendix Platform when the value is changed by the widget |
+| `onChange`   | No       | Property Path  | The path to an [`action`](#action) property that will be run by the Mendix Platform when the value is changed by the widget |
 | `required`   | No       | Boolean        | Decides if the property must be specified by the user, `true` by default                                                         |
 | `dataSource` | No       | Property Path  | Specifies the path to a [`datasource`](#datasource) property linked to this attribute property                                   |
+| `setLabel`   | No       | Boolean        | `true` to enable setting [`Label`](#setLabel) value automatically with configured attribute, false `otherwise`                   |
 
 #### XML Elements
 
@@ -564,14 +600,6 @@ Then the Studio Pro UI for the property appears like this:
 
 ### Association {#association}
 
-{{% alert color="info" %}}
-This property type was introduced in Mendix [9.13](/releasenotes/studio-pro/9.13/).
-{{% /alert %}}
-
-{{% alert color="info" %}}
-The ability to link association properties to a data source was introduced in Mendix [9.17](/releasenotes/studio-pro/9.17/).
-{{% /alert %}}
-
 The association property type allows a widget to work directly with both reading and writing associations between entities. Depending on the widget's purposes, a widget should define association types it supports.
 
 If a `dataSource` attribute is not specified the client will receive a `ReferenceValue` for references (singular references), a `ReferenceSetValue` for reference sets (multiple references), or a union of them. For more information, see the [ModifiableValue](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#modifiable-value) section of *Client APIs Available to Pluggable Widgets*.
@@ -584,10 +612,11 @@ When a `dataSource` attribute is specified and configured by the user, it is pas
 |---------------------|----------|----------------|----------------------------------------------------------------------------------------------------------------------------------|
 | `type`              | Yes      | String         | Must be `association`                                                                                                            |
 | `key`               | Yes      | String         | See [key](#key)                                                                                                                  |
-| `onChange`          | No       | Property Path  | The path to an [`action`](#action) property that will be executed by the Mendix Platform when the value is changed by the widget |
+| `onChange`          | No       | Property Path  | The path to an [`action`](#action) property that will be run by the Mendix Platform when the value is changed by the widget |
 | `required`          | No       | Boolean        | Decides if the property must be specified by the user, `true` by default                                                         |
 | `selectableObjects` | Yes      | Property Path  | Specifies the path to a [`datasource`](#datasource) property that will provide selectable objects for the association            |
 | `dataSource`        | No       | Property Path  | Specifies the path to a [`datasource`](#datasource) property linked to this association property                                 |
+| `setLabel`          | No       | Boolean        | `true` to enable setting [`Label`](#setLabel) value automatically with configured entity, false `otherwise`                      |
 
 #### XML Elements
 
@@ -666,7 +695,7 @@ When the property is defined as follows:
 
 Then the Studio Pro UI for the property appears like this:
 
-{{< figure src="/attachments/apidocs-mxsdk/apidocs/pluggable-widgets/pluggable-widgets-property-types/object.png" class="no-border" >}}
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/pluggable-widgets/pluggable-widgets-property-types/object.png" >}}
 
 ### File {#file}
 
@@ -693,15 +722,11 @@ When the property is defined as follows:
 
 Then the Studio Pro UI for the property appears like this:
 
-{{< figure src="/attachments/apidocs-mxsdk/apidocs/pluggable-widgets/pluggable-widgets-property-types/file.png" class="no-border" >}}
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/pluggable-widgets/pluggable-widgets-property-types/file.png" >}}
 
 ### Datasource {#datasource}
 
 The datasource property allows widgets to work with object lists. The client component will receive value prop of type [`ListValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listvalue) and may be used with [`action`](#action), [`attribute`](#attribute), [`association`](#association), [`expression`](#expression), [`text template`](#texttemplate), and [`widgets`](#widgets) properties. See [Data Sources](/refguide/data-sources/#list-widgets) for available data source types.
-
-{{% alert color="info" %}}
-The ability to link association properties to a data source was introduced in Mendix [9.17](/releasenotes/studio-pro/9.17/).
-{{% /alert %}}
 
 If no data source has been configured by the user, any properties that are linked to the datasource property are automatically omitted from the props passed to the client component (even if they are marked as required).
 
@@ -711,12 +736,29 @@ Only list datasources are supported, therefore specifying `isList="true"` is req
 
 #### XML Attributes
 
-| Attribute  | Required | Attribute Type | Description                                                                     |
-|------------|----------|----------------|---------------------------------------------------------------------------------|
-| `type`     | Yes      | String         | Must be `datasource`                                                            |
-| `key`      | Yes      | String         | See [key](#key)                                                                 |
-| `isList`   | Yes      | Boolean        | Must be `true`                                                                  |
-| `required` | No       | Boolean        | This decides if the user is required to specify a datasource, `true` by default |
+| Attribute      | Required | Attribute Type | Description                                                                                                |
+|----------------|----------|----------------|------------------------------------------------------------------------------------------------------------|
+| `type`         | Yes      | String         | Must be `datasource`                                                                                       |
+| `key`          | Yes      | String         | See [key](#key)                                                                                            |
+| `isList`       | Yes      | Boolean        | Must be `true`                                                                                             |
+| `required`     | No       | Boolean        | This decides if the user is required to specify a datasource, `true` by default                            |
+| `defaultType`  | No       | String         | Default type for the property, supported values are `Database`, `Microflow`, `Nanoflow`, and `Association` |
+| `defaultValue` | No       | String         | Default value for the property, see [Default Data Sources](#data-source-defaults)                          |
+
+##### Data Source Defaults {#data-source-defaults}
+
+{{% alert color="info" %}}
+The `defaultType` and `defaultValue` attributes for datasources were introduced in Mendix [10.16](/releasenotes/studio-pro/10.16/).
+{{% /alert %}}
+
+You can use the `defaultType` and `defaultValue` attributes to configure default data sources for your widget. Unless overridden in Studio Pro, the widget will attempt to configure the data source according to its defaults. Both attributes need to be set for the defaults to be applied.
+
+The format of `defaultValue` depends on the chosen `defaultType`:
+
+| Data source type         | Format      | Example                                                               |
+|--------------------------|-------------|-----------------------------------------------------------------------|
+| `Database` `Association` | Entity Path | `ModuleName.EntityName` or `ModuleName.A/ModuleName.A_B/ModuleName.B` |
+| `Microflow` `Nanoflow`   | Document ID | `ModuleName.DocumentName`                                             |
 
 #### Studio Pro UI
 
@@ -732,6 +774,58 @@ When the property is defined as follows:
 Then the Studio Pro UI for the property appears like this:
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/pluggable-widgets/pluggable-widgets-property-types/datasource.png" class="no-border" >}}
+
+### Selection {#selection}
+
+{{% alert color="info" %}}
+The property type was introduced in Mendix [10.7](/releasenotes/studio-pro/10.7/).
+{{% /alert %}}
+
+The selection property allows a widget to read and set a selection that can be used in actions, expressions, or a `Listen to` data source of a data view.
+
+#### XML Attributes
+
+| Attribute      | Required | Attribute Type      | Description                                                                                                                     |
+|----------------|----------|---------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| `type`         | Yes      | String              | Must be `selection`                                                                                                             |
+| `key`          | Yes      | String              | See [key](#key)                                                                                                                 |
+| `dataSource`   | Yes      | Property Path       | Specifies the path to a [`datasource`](#datasource) property linked to this selection property                                  |
+| `defaultValue` | No       | String (Expression) | Default value for the property                                                                                                  |
+| `onChange`     | No       | Property Path       | The path to an [`action`](#action) property that will be run by the Mendix Platform when the selection is changed by the widget |
+
+#### XML Elements
+
+`<selectionTypes>` (required) — This element encapsulates `<selectionType>` elements which declare supported selection types available while configuring the selection property in Studio Pro.
+
+`<selectionType>` (required one or more) — This element defines the selection type in the `name` attribute.
+
+| Supported Selection Types | Corresponding Types Client Components Receive |
+|---------------------------|-----------------------------------------------|
+| `None`                    | `undefined`                                   |
+| `Single`                  | `SelectionSingleValue`                        |
+| `Multi`                   | `SelectionMultiValue`                         |
+
+For more information, see the [SelectionValue](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#selection-value) section of *Client APIs Available to Pluggable Widgets*.
+
+#### Studio Pro UI
+
+When the property is defined as follows:
+
+```xml
+<property key="selection" type="selection" dataSource="datasource">
+  <caption>Selection</caption>
+  <description />
+  <selectionTypes>
+    <selectionType name="None" />
+    <selectionType name="Single" />
+    <selectionType name="Multi" />
+  </selectionTypes>
+</property>
+```
+
+Then the Studio Pro UI for the property appears like this:
+
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/pluggable-widgets/pluggable-widgets-property-types/selection.png" >}}
 
 ## System Properties {#system-properties}
 
@@ -750,6 +844,45 @@ Label property allows a pluggable widget to have labeling functionality similar 
 ```xml
 <systemProperty key="Label"/>
 ```
+
+#### setLabel {#setLabel}
+
+{{% alert color="info" %}}
+The `setLabel` attribute was introduced in Mendix [10.5](/releasenotes/studio-pro/10.5/).
+{{% /alert %}}
+
+You can use `setLabel` to specify which properties can be used to set the `Label` property value. 
+
+Configuring the value of a property with the `setLabel` attribute will automatically update the value of `Label`.
+
+Only attribute and association properties can use the `setLabel` attribute. 
+
+The `Label` value is set only if it lacks a non-default value when you set it. If a property become hidden, the `Label` value is reverted back to default. More than one property can set the label. However if multiple properties with the `setLabel` attribute are visible simultaneously, the first one updated sets the label. For example, when properties are defined as follows:
+
+```xml
+<property key="myAttribute" setLabel="true" type="attribute">
+	<caption>My string</caption>
+	<description>My string setting</description>
+    <attributeTypes>
+        <attributeType name="String" />
+        <attributeType name="Boolean" />
+    </attributeTypes>
+</property>
+<property key="myAssociation" setLabel="true" type="association" selectableObjects="objectsDatasource">
+    <caption>Reference</caption>
+    <description>Reference</description>
+    <associationTypes>
+        <associationType name="Reference"/>
+        <associationType name="ReferenceSet"/>
+    </associationTypes>
+</property>
+<property key="objectsDatasource" type="datasource" isList="true">
+    <caption>Selectable objects</caption>
+    <description/>
+</property>
+```
+
+Then the `Label` property will be set by the first property configured. 
 
 ### Name {#name}
 
@@ -785,4 +918,6 @@ The editability property allows a pluggable widget to have an editable configura
 
 ## Read More
 
-* [Mendix 9](/apidocs-mxsdk/apidocs/pluggable-parent-9/) Pluggable Widget API Documentation
+* [Pluggable Widgets API](/apidocs-mxsdk/apidocs/pluggable-widgets/)
+* [Client APIs Available to Pluggable Widgets](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/)
+* [Build Pluggable Widgets](/howto/extensibility/pluggable-widgets/)
