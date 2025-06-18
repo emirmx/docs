@@ -33,7 +33,7 @@ The use of **Document Templates** and the **Generate Document** microflow action
 
 ## Introduction
 
-Document Templates, previously used to design templates for exporting documents based on application data in Mendix, along with the Generate Document microflow action, are now deprecated and will be removed in a future Mendix release. This guide outlines the recommended alternatives for document generation.
+Document Templates, previously used to design templates for exporting documents based on application data in Mendix, along with the **Generate Document** microflow action, are now deprecated and will be removed in a future Mendix release. This guide outlines the recommended alternatives for document generation.
 
 To view the documentation of Document Templates, please refer to the [Mendix 10 documentation](/refguide10/document-templates/) instead.
 
