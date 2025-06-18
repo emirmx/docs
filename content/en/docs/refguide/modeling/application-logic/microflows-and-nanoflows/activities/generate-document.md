@@ -7,7 +7,7 @@ description: "Describes generating documents from a microflow. "
 ---
 
 {{% alert color="warning" %}}
-**Document generation** using Document Templates is deprecated. Please see the documentation of [Document Templates](/refguide/document-templates/) for alternatives.
+**Document generation** using Document Templates was deprecated in 10.24. Please see the documentation of [Document Templates](/refguide/document-templates/) for alternatives.
 {{% /alert %}}
 
 ## Introduction
