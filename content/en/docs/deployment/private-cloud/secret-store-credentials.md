@@ -975,11 +975,17 @@ For more information, refer to the the official [Google Secret Manager Provider 
 
 ### Using an exixting Kubernetes Secret as an external secret source{#regular-k8s-secrets}
 
+{{% alert color="info" %}}
+This feature is only available in Mendix Operator version 2.22.0 or later.
+{{% /alert %}}
+
 To enable your environment to use a regular, existing Kubernetes Secret for some configuration options, follow these steps:
 
 1. Configure a Postgres or SQLServer database server with the following:
+
     * A dedicated database to store your secrets
     * An S3-compatible storage or Azure Blob Storage.
+
 2. Create the Kubernetes Secret, as shown in the following example. Replace `<{MendixApp CR name}>` with the environment internal name (MendixApp CR name):
 
     ```yaml
@@ -1043,7 +1049,7 @@ To enable your environment to use a regular, existing Kubernetes Secret for some
     EOF
     ```
 
-4. (optional) If the environment should use identity-based authentication, such as AWS IRSA or Azure Workload Identity, create a Kubernetes `ServiceAccount`, as shown in the following example.
+4. Optional: If the environment should use identity-based authentication, such as AWS IRSA or Azure Workload Identity, create a Kubernetes `ServiceAccount`, as shown in the following example.
     Specify the environment's Kubernetes namespace and MendixApp CR name in place of `<{env-namespace}>` and `<{env-name}>`:
 
     ```shell
@@ -1051,25 +1057,7 @@ To enable your environment to use a regular, existing Kubernetes Secret for some
     kubectl -n <{env-namespace}> annotate serviceaccount <{env-name}> privatecloud.mendix.com/environment-account=true
     ```
 
-    Consult documentation of your identity-based authentication provider on instructions how to attach this service account to an IAM role.
-
-{{% alert color="warning" %}}
-This feature is only available in Mendix Operator version 2.22.0 or later.
-{{% /alert %}}
-
-{{% alert color="info" %}}
-If the secret is expected to be synchronized from an external source, create configuration for this synchronization process.
-For example, the [External Secrets Operator](https://external-secrets.io) needs an addititional `ExternalSecret` CR to specify where to get the data and any additional processing rules.
-{{% /alert %}}
-
-{{% alert color="info" %}}
-Consider enabling etcd encryption, which is available in [AWS EKS](https://docs.aws.amazon.com/eks/latest/userguide/enable-kms.html), [Azure AKS](https://learn.microsoft.com/en-us/azure/aks/use-kms-etcd-encryption) and other enterprise-grade Kubernetes distributions.
-{{% /alert %}}
-
-{{% alert color="warning" %}}
-If the namespace has both a `SecretProviderClass` and regular Kubernetes Secret that match a `<{Mendix App CR name}>`, the `SecretProviderClass` takes priority, and the regular Kubernetes Secret will be ignored.
-It's not possible for an environment to use both a `SecretProviderClass` and regular Kubernetes Secret at the same time.
-{{% /alert %}}
+    Consult the documentation of your identity-based authentication provider on instructions how to attach this service account to an IAM role.
 
 ## Additional Considerations {#additional-considerations}
 
@@ -1083,3 +1071,7 @@ When implementing a secret store, keep in mind the following considerations:
 * Dynamic secrets in HashiCorp Vault are supported - from the app environment, they are identical to regular secrets.
 * The internal name of the environment must match an existing `ServiceAccount` and `SecretProviderClass` (or regular Kubernetes Secret).
 * CSI Secrets Storage can override app settings — if a parameter is configured in the Mendix Portal or `MendixApp` CR, the value from CSI Secrets Storage will have a higher priority and will override the value specified elsewhere. For example, CSI Secrets Storage can override the `MxAdmin` password, app constants, and runtime custom settings.
+* If the secret is expected to be synchronized from an external source, create configuration for this synchronization process. For example, the [External Secrets Operator](https://external-secrets.io) needs an addititional `ExternalSecret` CR to specify where to get the data and any additional processing rules.
+* Consider enabling etcd encryption, which is available in [AWS EKS](https://docs.aws.amazon.com/eks/latest/userguide/enable-kms.html), [Azure AKS](https://learn.microsoft.com/en-us/azure/aks/use-kms-etcd-encryption) and other enterprise-grade Kubernetes distributions.
+* If the namespace has both a `SecretProviderClass` and regular Kubernetes Secret that match a `<{Mendix App CR name}>`, the `SecretProviderClass` takes priority, and the regular Kubernetes Secret will be ignored.
+It is not possible for an environment to use both a `SecretProviderClass` and regular Kubernetes Secret at the same time.
