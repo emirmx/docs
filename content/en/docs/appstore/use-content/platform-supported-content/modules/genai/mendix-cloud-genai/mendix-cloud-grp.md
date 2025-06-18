@@ -18,7 +18,7 @@ Developers can use the Mendix Portal to manage their Mendix Cloud GenAI resource
 
 ### General Availability
 
-Mendix Cloud GenAI Resource Packs is a premium Mendix product that requires an additional purchase. To start using GenAI Resource Packs or inquire about pricing, contact your Customer Success Manager (CSM). If you are looking for more information, contact [genai-resource-packs@mendix.com](mailto:genai-resource-packs@mendix.com).
+Mendix Cloud GenAI Resource Packs is a premium Mendix product that requires an additional purchase. To start using GenAI Resource Packs or inquire about pricing, contact your Customer Success Manager (CSM). For more information, you can also reach out to [genai-resource-packs@mendix.com](mailto:genai-resource-packs@mendix.com).
 
 ## Models
 
@@ -35,12 +35,13 @@ The models are available through the Mendix Cloud, leveraging AWS's highly secur
 
 Customers looking to leverage other models in addition to the above can also take advantage of Mendix's [(Azure) OpenAI Connector](/appstore/modules/genai/reference-guide/external-connectors/openai/) and Amazon [Bedrock Connector](/appstore/modules/genai/reference-guide/external-connectors/bedrock/) to integrate numerous other models into their apps.
 
-### Technical Details Model Resource Packs
-| Genai Model Resource Pack                                              | S                  | M                 | L           |
-| ---------------------------------------------------------------------- | ------------------ | ----------------- | ----------- |
-| Anthropic Claude V3.5 (Tokens in/month)                                | 2.5 Million In     | 5 Million         | 10 Million  |
-| Anthropic Claude V3.5 (Tokens out/month)                               | 1.25 Million Out   | 2.5 Million       | 5 Million   |
-| Cohere Embed V3 (Tokens in/month)                                      | 5 Million In       | 10 Million        | 20 Million  |
+### Technical Details for Model Resource Packs
+
+| GenAI Model Resource Pack                  | S                 | M                 | L                 |
+| ------------------------------------------ | ----------------- | ----------------- | ----------------- |
+| Anthropic Claude V3.5 (Tokens in/month)    | 2.5 million in    | 5 million         | 10 million        |
+| Anthropic Claude V3.5 (Tokens out/month)   | 1.25 million out  | 2.5 million       | 5 million         |
+| Cohere Embed V3 (Tokens in/month)          | 5 million in      | 10 million        | 20 million        |
 
 ## Knowledge Bases
 
@@ -54,13 +55,13 @@ Knowledge bases enable you to bring your own data for RAG, semantic similarity s
 
 Knowledge Bases are based on elastically scaling, serverless OpenSearch vector databases, to ensure high performance under load. The database is set up as a highly available cluster to ensure business continuity. Customer data is stored in logical isolation from other customers and is not used for model training, ensuring data security and privacy in compliance with industry standards.
 
-### Technical Details Knowledge Base Resource Packs
+### Technical Details for Knowledge Base Resource Packs
 
-| Genai Knowledge Base Resource Pack                                     | Standard      | 
-| ---------------------------------------------------------------------- | --------------|
-| Compute                                                                | Elastic       |
-| Memory                                                                 | Elastic       |
-| Disk Space                                                             | 10GB          |
+| GenAI Knowledge Base Resource Pack    | Standard      | 
+| ------------------------------------- | ------------- |
+| Compute                               | Elastic       |
+| Memory                                | Elastic       |
+| Disk Space                            | 10 GB         |
 
 ## Mendix Portal
 
