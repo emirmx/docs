@@ -258,7 +258,7 @@ This option allows you to change the user interface language you work in while u
 | Chinese                | 10.17      | 10.24                |
 | Japanese               | 10.17      | 10.24                |
 | Korean                 | 10.17      | 10.24                |
-| Portuguese (Brazilian) | 10.23      |                      |
+| Portuguese (Brazilian) | 10.23      | TBD                  |
 
 
 
