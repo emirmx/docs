@@ -37,7 +37,7 @@ Customers looking to leverage other models in addition to the above can also tak
 
 ### Technical Details for Model Resource Packs
 
-| GenAI Model Resource Pack                  | S                 | M                 | L                 |
+| GenAI Model Resource Pack Plan             | S                 | M                 | L                 |
 | ------------------------------------------ | ----------------- | ----------------- | ----------------- |
 | Anthropic Claude V3.5 (Tokens in/month)    | 2.5 million in    | 5 million         | 10 million        |
 | Anthropic Claude V3.5 (Tokens out/month)   | 1.25 million out  | 2.5 million       | 5 million         |
