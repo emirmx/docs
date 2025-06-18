@@ -222,6 +222,10 @@ You can receive a notification when new feedback lands in **Inbox** or when a re
 3. Enable the feedback notifications as follows:
     1. In Feedback, click the **Settings** {{% icon name="cog" %}} icon on the upper-right corner of the page.
     2. Turn on the toggle to receive notifications.
+    3. Choose how often you want to receive notifications by selecting a **Frequency**:
+        - **Instantly** (default) 
+        - **Daily email update**
+        - **Weekly email update**
 
 ### Receiving Notifications for an Individual Feedback Item {#notifications-individual-feedback}
 
