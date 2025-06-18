@@ -31,7 +31,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 * We fixed a bug in Epics where under certain circumstances the app would freeze when creating a new story
 
 #### Improvements
-* We made some performance improvements in Epics when reordering the backlog using drag-n-drop. We are aware of the poor performance of Epics in general and keep making improvements in the coming period
+* We made some performance improvements in Epics when reordering the stories on the [Planning overview](/developerportal/project-management/epics/planning/) using drag-n-drop. We are aware of the poor performance of Epics in general and keep making improvements in the coming period
 
 ### April 24, 2025
 
