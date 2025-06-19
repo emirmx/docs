@@ -40,7 +40,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 #### New Features
 
-* You can now select the frequency with which you receive feedback notifications. To do that, select the preferred frequency from the **Feedback** page settings. For more, information, refer to [Receiving Notifications](/developerportal/app-insights/feedback/#notifications) in *Feedback*.
+* You can now select the frequency with which you receive feedback notifications. To do that, select the preferred frequency from the **Feedback** page settings. For more information, refer to [Receiving Notifications](/developerportal/app-insights/feedback/#notifications) in *Feedback*.
 
 ### April 24, 2025
 
