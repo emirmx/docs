@@ -189,7 +189,7 @@ To migrate a repository from one Git server to another private Git server, follo
 
 After migration, download a fresh clone in Studio Pro from your private Git server.
 
-{{% alert color="warning" %}} When migrating from Mendix Team Server, prevent Studio Pro errors by removing the `sprintr-project-id` setting from the *.git/config* file in your repository's local clone. {{% /alert %}}
+{{% alert color="warning" %}} After migrating from Mendix Team Server, to link an existing folder to a new repository and avoid errors in Studio Pro, remove the `sprintr-project-id` setting from the *.git/config* file in your local repository clone.{{% /alert %}}
 
 #### Starting with a Fresh Repository
 
