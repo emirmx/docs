@@ -24,14 +24,17 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 ### June 19, 2025
 
 #### New features
-* In [Feedback](/developerportal/app-insights/feedback/) you can now create a user story based on multiple feedback items
-* When a user story is linked to a feedback item, we show the story details on the feedback item page in [Feedback](/developerportal/app-insights/feedback/)
 
-#### Fixes
-* We fixed a bug in Epics where under certain circumstances the app would freeze when creating a new story
+* In [Feedback](/developerportal/app-insights/feedback/), you can now create a story based on multiple feedback items.
+* When a story is linked to a feedback item, the story details are now displayed on the feedback item itself on the **Feedback** page.
 
 #### Improvements
-* We made some performance improvements in Epics when reordering the stories on the [Planning overview](/developerportal/project-management/epics/planning/) using drag-n-drop. We are aware of the poor performance of Epics in general and keep making improvements in the coming period
+
+* We have improved the drag-and-drop functionality for reordering stories in the [Planning](/developerportal/project-management/epics/planning/) page. You can expect more improvements around that in the coming months.
+
+#### Fixes
+
+* We have fixed a bug in [Epics](/developerportal/project-management/epics/) where, under certain circumstances, the app would freeze when creating a new user story.
 
 ### April 24, 2025
 
