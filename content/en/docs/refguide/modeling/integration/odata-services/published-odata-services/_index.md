@@ -182,12 +182,14 @@ This result is a header which looks like `Authorization: Basic QWxhZGRpbjpvcGVuI
 
 When you check this authentication method, the JavaScript in your app can access the REST service using the current user's session.
 
-To prevent cross-site request forgery, the `X-Csrf-Token` header needs to be set on each request, for example:
+To prevent cross-site request forgery, the `X-Csrf-Token` header needs to be set on each request. If you're using a JS action, you need can use our API to retrieve the token.
 
 ```js
+import getCSRFToken from "mx-api/session";
+
 var xmlHttp = new XMLHttpRequest();
 xmlHttp.open("GET", "http://mysite/odata/myservice/myentity", false);
-xmlHttp.setRequestHeader("X-Csrf-Token", mx.session.getConfig("csrftoken"));
+xmlHttp.setRequestHeader("X-Csrf-Token", getCSRFToken());
 xmlHttp.send(null);
 ```
 

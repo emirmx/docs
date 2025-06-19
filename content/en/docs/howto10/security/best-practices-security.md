@@ -139,7 +139,17 @@ This authentication option is not available for Published Web Services and can o
 
 If you choose this option, the API will expect a "X-Csrf-Token" HTTP request header to be set on each incoming request. This authentication option is particularly interesting for custom JavaScript and widget implementations.
 
-The session token can be acquired by calling `mx.session.getConfig("csrftoken")` in JavaScript. This method call should be used before each API call to prevent cross-site request forgery (CSRF/XSRF).
+The session token can be acquired by calling Mendix Client API method to get the current CSRF token. This method should be called before each API call in your widget or JavaScript action to prevent cross-site request forgery (CSRF/XSRF).
+
+For Mendix versions below 10.23 you can call `mx.session.getConfig("csrftoken")` in your widget or JavaScript action.
+
+For Mendix versions 10.23 and higher:
+
+```javascript
+import getCSRFToken from "mx-api/session";
+
+const token = getCSRFToken();
+```
 
 #### Authentication Option 3, Custom {#custom}
 
