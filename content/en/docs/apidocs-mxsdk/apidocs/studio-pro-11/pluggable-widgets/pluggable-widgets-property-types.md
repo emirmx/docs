@@ -939,6 +939,8 @@ When a pluggable widget's property type changes, the Mendix Platform will automa
 
 {{% alert color="warning" %}}
 When converting from `decimal` to `integer`, the value will be rounded to the closest integer.
+
+When converting from `TextTemplate` to `Expression`, only the text template of the active language is migrated; fallback texts are not included.
 {{% /alert %}}
 
 ## Read More
