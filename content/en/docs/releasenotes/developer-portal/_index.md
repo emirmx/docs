@@ -23,7 +23,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ### June 19, 2025
 
-#### New features
+#### New Features
 
 * In [Feedback](/developerportal/app-insights/feedback/), you can now create a story based on multiple feedback items.
 * When a story is linked to a feedback item, the story details are now displayed on the feedback item itself on the **Feedback** page.
@@ -35,6 +35,12 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 #### Fixes
 
 * We have fixed a bug in [Epics](/developerportal/project-management/epics/) where, under certain circumstances, the app would freeze when creating a new user story.
+
+### June 5, 2025
+
+#### New Features
+
+* You can now select the frequency with which you receive feedback notifications. To do that, select the preferred frequency from the **Feedback** page settings. For more, information, refer to [Receiving Notifications](/developerportal/app-insights/feedback/#notifications) in *Feedback*.
 
 ### April 24, 2025
 
