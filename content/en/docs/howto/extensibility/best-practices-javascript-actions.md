@@ -289,36 +289,6 @@ Use the following code to employ an asynchronous return for when your nanoflow n
 
 Many APIs and functions are designed in an asynchronous way, and use callback functions or promises. A JavaScript action expects a promise to be returned. The promise should be resolved with the return value as expected in the action.
 
-#### Understanding Promises
-
-A `Promise` object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
-
-Use the following code to wrap a callback API in a promise:
-
-```javascript
-function AskConfirmation(question) {
-    // BEGIN USER CODE
-    return new Promise(function (resolve) {
-        mx.ui.confirmation({
-            content: question,
-            handler: function() {
-                resolve(true);
-            },
-            onCancel: function() {
-                resolve(false);
-            }
-        });
-    });
-    // END USER CODE
-}
-```
-
-Explaining the callback code: 
-
-* Use the standard Mendix Client to show a confirmation dialog box with an **OK** and a **Cancel** button (the execution of the nanoflow halts until the user clicks one of the buttons) 
-* The resolve will return a Boolean value, which is used as the return value of the action 
-* In the nanoflow, the return variable can be used for an alternative flow for confirmation and cancel
-
 #### Understanding Promise API
 
 This function uses the Fetch API:
