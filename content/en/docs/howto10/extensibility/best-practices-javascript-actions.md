@@ -183,18 +183,17 @@ For information on how to use *Big.js*, consult the [big.js API](https://mikemcl
 Use the following code to create objects:
 
 ```javascript
-mx.data.create({
-    entity: "MyFirstModule.Cat",
-    callback: function(object) {
-        console.log("Object created on server");
-    },
-    error: function(error) {
-        console.error("Could not commit object:", error);
-    }
-});
+import { create } from "mx-api/data"
+
+try {
+    const cat = await create({ entity: "MyFirstModule.Cat" })
+    console.log("Object created on server:", cat);
+} catch (err) {
+    console.error("Could not commit object:", err);
+}
 ```
 
-For more information on creating objects, consult the [Create](https://apidocs.rnd.mendix.com/10/client/mx.data.html#.create) section of the *Mendix Client API*.
+For more information on creating objects, consult the [Create](https://apidocs.rnd.mendix.com/10/client-mx-api/module-mx-api_data.html#.create) section of the *Mendix Client API*.
 
 #### Changing Objects
 
