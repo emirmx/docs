@@ -17,11 +17,11 @@ For more information on how to enable and use this AI translation tool in Studio
 
 ## Modeling Using Translation Generator
 
-To enable Translation Generator, go to **Preferences** > the **New Features** tab > the **Maia** section.
+Translation Generator is enabled by default. If you want to disable it, go to **Edit** > **Preferences** > the **Maia** tab and clear the **Enable translation generator** checkbox.
 
 ### Generating Translation for Batch Translate {#batch-translate}
 
-Once enabled, you will find the **Generate Translations...** option in **Language** > **Batch translate**. 
+The **Generate Translations...** option is in **Language** > **Batch translate**. 
 
 {{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/translation-generator/batch-translate.png" max-width=80% >}}
 

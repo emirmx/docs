@@ -18,11 +18,13 @@ Maia for Pages helps you generate a [page](/refguide/page/) by adding and config
 
 ## Using Maia for Pages
 
-To enable Maia for Pages, go to **Edit** > **Preferences** > the **New Features** tab > the **Maia** section.
+Maia for Pages is enabled by default. 
 
-Once enabled, you can find it in the the toolbar of a page:
+You can find it in the the toolbar of a page:
 
 {{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/maia-for-pages/maia-for-pages.png" max-width=80% >}}
+
+If you want to disable this feature, go to **Edit** > **Preferences** > the **Maia** tab and clear the **Enable Maia for Pages** checkbox.
 
 {{% alert color="info" %}}
 Maia for Pages is available in both the **Structure mode** and **Design mode**.
