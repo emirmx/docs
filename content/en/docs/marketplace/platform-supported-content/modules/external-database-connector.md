@@ -95,7 +95,7 @@ For free apps, make sure to add the default values to the constant in Studio Pro
 
 When the connection is successful and saved, you can search the **Browse database** tab for Tables, Views, Procedures, and Functions.
 
-{{< figure src="/attachments/refguide/modeling/integration/use-the-external-database-connector/3.png" width="700" >}}
+{{< figure src="http://attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/3.png" width="700" >}}
 
 ## Querying a Database {#query-database}
 
