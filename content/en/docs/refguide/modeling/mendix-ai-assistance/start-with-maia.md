@@ -49,11 +49,12 @@ You can attach a maximal of one image or one PDF and the attachment must meet th
 * The image resolution must be no greater than 3840 × 2400 pixels.
 * The PDF file size must not exceed 1024 KB.
 
-## Limitation
+## Limitations
 
-**Start with Maia** currently has the following limitation:
+**Start with Maia** currently has the following limitations:
 
-* Start with Maia supports the creation of one-to-one and many-to-many associations for a domain model. However, no test data will be generated for these types of associations.
+* **Start with Maia** supports the creation of one-to-one and many-to-many associations for a domain model. However, no test data will be generated for these types of associations.
+* **Start with Maia** does not generate test data for binary attributes.
 
 ## Read More
 
