@@ -237,7 +237,7 @@ In case you are still deciding whether to migrate from SVN to Git, or you are al
 
 {{< figure src="/attachments/refguide10/version-control/troubleshoot-version-control-issues/migration-advice-mx10.png" class="no-border" >}}
 
-\* In case your *.git* folder is less than 2GB but you are having performance issues when cloning, please see the [Verify Full Clone Through Git CLI](/refguide10/troubleshoot-team-server-issues/#verify-full-clone-through-git-cli]) section in *Troubleshooting Team Server Issues* and contact Support with the relevant information.
+\* In case your *.git* folder is less than 2GB but you are having performance issues when cloning, please see the [Verify Full Clone Through Git CLI](/refguide10/troubleshoot-team-server-issues/#verify-full-clone-through-git-cli) section in *Troubleshooting Team Server Issues* and contact Support with the relevant information.
 
 \** For more information on the partial clone, see [Clone Type](/refguide10/clone-type/).
 
