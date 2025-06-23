@@ -44,7 +44,7 @@ After setting the objects, changes can be applied by calling a microflow contain
 
 Jumping to other activities has a limitation in parallel splits and in boundary event paths: it is not possible to jump into or out of a current parallel split or boundary event path. However, it is possible to jump to other activities within a current parallel split or boundary event path, including the end of the path. Activities in other parallel splits or boundary event paths, as well as activities outside the current path, are not available in the **System.WorkflowCurrentActivity_ApplicableTargets** association.
 
-For more information about jumping rules in a boundary event path see [Jump rules](/refguide/workflow-boundary-events/#jump-rules)
+For more information about jumping rules in a boundary event path, see the [Jump rules](/refguide/workflow-boundary-events/#jump-rules) section in [Boundary Events](/refguide/workflow-boundary-events/).
 
 ## Read More
 

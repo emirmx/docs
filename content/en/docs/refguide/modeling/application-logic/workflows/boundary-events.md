@@ -69,11 +69,11 @@ For an existing boundary event, when you change its type from non-interrupting t
 After you confirm the change:
 
 * The boundary event is re-created as the specified type.
-* The workflow will become incompatible once a boundary event is changed that has already been executed. The workflow will become incompatible by the following reasons:
-  * If the old boundary event was non-interrupting, we'll get the [Non-interrupting Boundary Event Path Removed](/refguide/workflow-versioning/#non-interrupting-boundary-event-path-removed) conflict.
-  * If the old boundary event was interrupting, we'll get the [Current Activity Removed](/refguide/workflow-versioning/#current-activity-removed) conflict.
+* The workflow will become incompatible if the changed boundary event has already been executed. The workflow becomes incompatible for the following reasons:
+    * If the changed boundary event was non-interrupting, you will get the [Non-interrupting Boundary Event Path Removed](/refguide/workflow-versioning/#non-interrupting-boundary-event-path-removed) conflict.
+    * If the changed boundary event was interrupting, you will get the [Current Activity Removed](/refguide/workflow-versioning/#current-activity-removed) conflict.
 
-We re-create boundary events upon type switch due to the execution limitations that exist for ongoing boundary events. For example, the parent activity will not be aborted when a non-interrupting boundary event starts. Once the boundary event type is changed to interrupting the parent activity will stay in progress. That would allow the parent activity to have more than one ongoing interrupting boundary event. And vice versa, when an ongoing interrupting boundary event is changed to a non-interrupting the parent activity is already aborted. And since a non-interrupting boundary event cannot end the workflow it may remain active indefinitely unless explicitly aborted.
+Boundary events are re-created upon type switch due to the execution limitations that exist for ongoing boundary events. For example, the parent activity will not be aborted when a non-interrupting boundary event starts. Once the boundary event type is changed to interrupting, the parent activity will stay in progress. That would allow the parent activity to have more than one ongoing interrupting boundary event. Vice versa, when an ongoing interrupting boundary event is changed to a non-interrupting, the parent activity is already aborted. since a non-interrupting boundary event cannot end the workflow, it may remain active indefinitely unless explicitly aborted.
 
 ### Rearranging Boundary Events
 
@@ -109,13 +109,13 @@ An interrupting boundary event path must end with an **End** event or a **Jump**
 When there are multiple boundary events attached to an activity and an interrupting boundary event is executed, all the scheduled boundary events will be aborted and all the boundary events that have already started will continue to run until the entire workflow ends.
 {{% /alert %}}
 
-## Jump rules
+## Jump Rules
 
-Boundary events come with a specific set of rules for jumps, these rules are applicable to both types of jumps - [Jumping to other activities in design time](/refguide/jump-activity/) and [Jumping in running workflow instances](/refguide/jump-to/). The rules are as follows:
+Boundary events come with a specific set of rules for jumps. These rules are applicable to both types of jumps - [Jumping to other activities in design time](/refguide/jump-activity/) and [Jumping in running workflow instances](/refguide/jump-to/). The rules are as follows:
 
-- Jump inside a boundary event: not possible
-- Jump outside a boundary event: not possible (we plan in the future to make it possible to jump outside interrupting boundary events but only to the parent or grandparent path)
-- Jump within a boundary event: possible
+* Jump inside a boundary event: not possible
+* Jump outside a boundary event: not possible (a future plan is to make it possible to jump outside interrupting boundary events but only to the parent or grandparent path)
+* Jump within a boundary event: possible
 
 ## Boundary Event Variables
 
@@ -127,7 +127,8 @@ The list of variables is described below:
 * `$CalledWorkflowInstance` – the parent Call workflow activity of the attached boundary event
 
 ## Current Limitation {#limitation}
-- The already scheduled timer boundary event will not be cancelled when a new one is scheduled for the same boundary event definition. For example, a workflow instance has a scheduled timer boundary event. Then we make a manual jump from a [Multi-User Task](/refguide/multi-user-task/) to itself, or a jump from the parent activity to another one back in the executed path that leads to it being executed for the second time. That will cause the timer boundary event to be scheduled again while the old timer is still pending. When the old timer expires the boundary event will be executed and the new timer will be disregarded. This is a limitation that will be fixed in the future.
+
+* The already-scheduled timer boundary event will not be cancelled when a new one is scheduled for the same boundary event definition. For example, if a workflow instance has a scheduled timer boundary event, and you make a manual jump from a [Multi-User Task](/refguide/multi-user-task/) to itself, or a jump from the parent activity to another activity earlier in the executed path that causes it to run a second time, the timer boundary event will be scheduled again while the original timer is still pending. When the original timer expires, the boundary event will be triggered and the new timer will be disregarded. This is a limitation that will be fixed in the future.
 
 ## Read more
 
