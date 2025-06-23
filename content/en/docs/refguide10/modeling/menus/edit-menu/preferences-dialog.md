@@ -325,7 +325,7 @@ Publishing data as a GraphQL service is available as of Studio Pro 10.14. When y
 
 ### Enable Maia Explain
 
-Maia Explain was introduced in Studio Pro 10.21.0. Enable this option to let Maia explain a microflow or a nanoflow in the logic editors for you. For more information on how to use this feature, see [Maia Explain](/refguide/maia-explain/). It is enabled by default.
+Maia Explain was introduced in Studio Pro 10.21.0. Enable this option to let Maia explain a microflow or a nanoflow in the logic editors for you. For more information on how to use this feature, see [Maia Explain](/refguide10/maia-explain/). It is enabled by default.
 
 #### Enable Maia for Domain Model
 
