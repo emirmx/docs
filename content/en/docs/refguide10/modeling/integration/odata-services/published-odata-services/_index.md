@@ -186,9 +186,9 @@ This result is a header which looks like `Authorization: Basic QWxhZGRpbjpvcGVuI
 
 When you check this authentication method, the JavaScript in your app can access the REST service using the current user's session.
 
-To prevent cross-site request forgery, the `X-Csrf-Token` header needs to be set on each request. If you're using a JS action, you need can use our API to retrieve the token.
+To prevent cross-site request forgery, the `X-Csrf-Token` header needs to be set on each request. If you are using a JavaScript action, you can use an API to retrieve the token.
 
-Example for Mendix versions below 10.23:
+For Studio Pro versions 10.22 and below, see the example below:
 
 ```javascript
 var xmlHttp = new XMLHttpRequest();
@@ -197,7 +197,7 @@ xmlHttp.setRequestHeader("X-Csrf-Token", mx.session.getConfig("csrftoken"));
 xmlHttp.send(null);
 ```
 
-Example for Mendix versions 10.23 and newer:
+For Studio Pro versions 10.23 and above, see the example below:
 
 ```javascript
 import getCSRFToken from "mx-api/session";
