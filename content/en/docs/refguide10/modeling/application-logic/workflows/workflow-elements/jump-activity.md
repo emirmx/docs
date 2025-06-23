@@ -31,8 +31,6 @@ The **Caption** describes what happens in this element. It is displayed under th
 You cannot use the **Jump** activity as the final step in a [Parallel split](/refguide10/parallel-split/) path, a [Boundary Event](/refguide10/workflow-boundary-events/) path, or the main workflow path without providing an alternative route. Doing so prevents the path from reaching its endpoint.
 {{% /alert %}}
 
-For more information about jumping rules in a boundary event path see [Jump rules](/refguide/workflow-boundary-events/#jump-rules)
-
 ### Common Section {#common}
 
 **Name** is the internal name of the element. When referring to the element in the app you will use this name. It must be unique within the workflow, but you can have two elements with the same name in different workflows. 
