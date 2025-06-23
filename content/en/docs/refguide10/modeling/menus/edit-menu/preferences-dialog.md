@@ -323,6 +323,10 @@ Publishing data as a GraphQL service is available as of Studio Pro 10.14. When y
 
 ### Maia
 
+### Enable Maia Explain
+
+Maia Explain was introduced in Studio Pro 10.21.0. Enable this option to let Maia explain a microflow or a nanoflow in the logic editors for you. For more information on how to use this feature, see [Maia Explain](/refguide/maia-explain/). It is enabled by default.
+
 #### Enable Maia for Domain Model
 
 Maia for Domain Model was introduced in Studio Pro 10.13.0. Enable this option to help you generate entities and associations for your domain models. For more information on how to use this feature, see [Maia for Domain Model](/refguide10/maia-for-domain-model/).
@@ -352,6 +356,10 @@ If Translation Generator is also enabled, you can use it in this editor as well.
 ### Toolbox
 
 Enable this setting to use the modernized toolbox. This requires restart of Studio Pro.
+
+### Workflow Editor
+
+Interrupting timer boundary event was released as a beta feature in Studio Pro 10.20.0. Enable this option to be able to use interrupting timer boundary events in the workflow editor. For more information, see [Boundary Events](/refguide10/workflow-boundary-events/).
 
 ## Read More
 
