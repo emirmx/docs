@@ -11,7 +11,7 @@ Use our powerful APIs to build any JavaScript action you need.
 
 ## Client API
 
-The client API is compatible with both the React and the Dojo client and will replace the previous API which was based on the global mx object.
+The Client API is compatible with both the React and the Dojo client and will replace the previous API which was based on the global mx object.
 
 * [Mendix 10 Client API](https://apidocs.rnd.mendix.com/10/client-mx-api/index.html)
 
