@@ -69,7 +69,7 @@ If authentication is required, you can select which authentication methods to su
 * Select **Active session** to allow access from JavaScript inside your current application
 * Once a user has logged into the browser, the JavaScript in your app can access the REST service using the current user's session
 * [Offline-first](/refguide/offline-first/) apps cannot use active session authentication, because they do not have sessions that stay active while the app is running
-* To prevent cross-site request forgery, the `X-Csrf-Token` header needs to be set on each request. If you're using a JS action, you need can use our API to retrieve the token.
+* To prevent cross-site request forgery, the `X-Csrf-Token` header needs to be set on each request; if you are using a JavaScript action, you can use an API to retrieve the token
 
     ```javascript
     import getCSRFToken from "mx-api/session";
