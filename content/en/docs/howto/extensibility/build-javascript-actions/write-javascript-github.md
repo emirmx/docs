@@ -156,8 +156,8 @@ To create a JavaScript action that can search for users on GitHub, follow the st
                 const mxObject = await create({ entity: "HowTo.GitHubUser" });
                 // Dynamically set attributes
                 mxObject.getAttributes()
-                    .forEach(function(attributeName) {
-                        var attributeValue = user[attributeName];
+                    .forEach(attributeName => {
+                        const attributeValue = user[attributeName];
                         if (attributeValue) {
                             mxObject.set(attributeName, attributeValue);
                         }
@@ -229,7 +229,7 @@ To create a JavaScript action that can search for users on GitHub, follow the st
                 const mxObject = await create({ entity: userEntity });
                 // Dynamically set attributes
                 mxObject.getAttributes()
-                    .forEach(function(attributeName) {
+                    .forEach(attributeName => {
                         const attributeValue = user[attributeName];
                         if (attributeValue) {
                             mxObject.set(attributeName, attributeValue);
