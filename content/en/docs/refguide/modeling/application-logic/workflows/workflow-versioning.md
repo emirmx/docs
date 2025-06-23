@@ -237,11 +237,11 @@ You can do one of the following:
 
 #### Non-Interrupting Boundary Event Path Removed
 
-When an app developer removes an ongoing non-interrupting boundary event and then deploys this change, the currently running workflow instances that are executing activities within that path cannot continue execution.
+When you remove an ongoing non-interrupting boundary event and then deploy this change, the currently running workflow instances that are executing activities within that path cannot be continued.
 
 You can do one of the following:
 
 * The workflow can be aborted, for example, by using the **DefaultWorkflowAdmin** page in the Workflow Commons.
 * The workflow can be restarted, for example, by using the **DefaultWorkflowAdmin** page in the Workflow Commons.
 * The Administrator can use **Mark-as-Resolved** to fix this issue (the currently running activity within the removed boundary event path will be aborted).
-* The app developer can revert the change (which adds the boundary event path back) and deploy it.
+* You can revert the change (which adds the boundary event path back) and deploy it.
