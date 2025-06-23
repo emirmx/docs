@@ -18,7 +18,7 @@ If your main line is Studio Pro version 9.24.28 or above and your team role is S
 
 ## When to Migrate from SVN to Git
 
-Mendix recommends to combine a migration to Git with an upgrade to Studio Pro version 10.24 LTS, as the advantages of Git in Studio Pro version 9 are limited. For more details on this recommendation, see the [Recommendation on Avoiding Git Issues](/refguide/troubleshoot-repository-size/#recommendation) section in *Troubleshooting Repository Size*.
+Mendix recommends to combine a migration to Git with an upgrade to Studio Pro version 10.24 LTS, as the advantages of Git in Studio Pro version 9 are limited. For more details on this recommendation, see the [Recommendation on Avoiding Git Issues](/refguide10/troubleshoot-repository-size/#recommendation) section in *Troubleshooting Repository Size*.
 
 ## Apps Eligible for Migration
 
@@ -51,8 +51,6 @@ For the smoothest experience after the migration, Mendix advises to [migrate wit
 
 {{% /alert %}}
 
-Read more about the process of [migrating without history](#with-history).
-
 #### Eligible for Migrating Without History
 
 If your app is eligible for migration, but the SVN repository size exceeds the threshold, you can only migrate the latest commit of the main branch. This limitation has been imposed to guarantee a smooth experience after the migration, as a [large Git Repository Size](/refguide/troubleshoot-repository-size/) can have a negative effect on the developer experience.
@@ -63,7 +61,7 @@ You will receive a full backup of your SVN repository after completing the migra
 
 {{% /alert %}}
 
-Read more about the process of [migrating without history](#without-history).
+For more information on the process, see [Migrating Without History](#without-history) section below.
 
 #### Not Eligible for Migration
 
@@ -74,7 +72,7 @@ If your app is not eligible for migration the reason(s) will be listed on a page
 When the size of the *.mpr* file exceeds the threshold, migration is blocked to prevent rapid repository growth after migrating to Git. To get your app approved for migration, you have to agree on the following steps with Support or your Customer Success Manager:
 
 1. [Migrate without history](#without-history). This requires converging all branches which you want to retain.
-2. Update your app to Studio Pro version 10.24 LTS, to automatically convert to [MPRv2](/refguide/troubleshoot-repository-size/#mprv2).
+2. Update your app to Studio Pro version 10.24 LTS to automatically convert to [MPRv2](/refguide10/troubleshoot-repository-size/#mprv2).
 3. Execute a [Git cleanup](/refguide/troubleshoot-repository-size/#cleanup-tool).
 
 The first two steps need to be executed within a short timeframe. The last step is technically optional, but is strongly recommended for the best experience.
@@ -152,7 +150,7 @@ Previously deleted SVN branches will not be mapped to Git branches by the migrat
 
 ## Steps After Migration
 
-### Developers
+### Steps for Developers
 
 After migration, existing local copies are no longer linked to a working version control system. To be able to work on your app and store your changes in the version control system, you need to check out (re-download) the app from Team Server. Do the following:
 
