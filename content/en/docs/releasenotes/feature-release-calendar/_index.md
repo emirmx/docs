@@ -22,7 +22,7 @@ The new features were divided into these major themes, which are described in th
 
 | Capability or Feature | Expected Release |
 | --- | --- |
-| Module updates while retaining customizations                | GA: Q4 2025                                                  |
+| Module updates while retaining customizations                | General Availability: Q4 2025                             |
 | Easily comparing revisions                                   | Public beta: 2026                                            |
 | Pull requests                                                | Public beta: 2026                                            |
 | Mendix on Azure                                              | Limited Availability: March 2025 <br/>General Availability: Summer 2025 |
@@ -39,30 +39,30 @@ The new features were divided into these major themes, which are described in th
 | Software Composition Marketplace Vulnerabilities             | General Availability: December 2025                          |
 | Policies                                                     | Public Beta: December 2025 <br/>General Availability: TBD    |
 | Optimised storage of association                             | General Availability: Mx 11.0                                |
-| Bulk DML                                                     | GA: Q4 2025                                                  |
-| Increased decimal precision                                  | GA: Q4 2025                                                  |
-| Maia: text to OQL                                            | Public beta: Q2 2025<br/>GA: Q4 2025                         |
+| Bulk DML                                                     | General Availability: Q4 2025                             |
+| Increased decimal precision                                  | General Availability: Q4 2025                             |
+| Maia: text to OQL                                            | Public beta: Q2 2025<br/>General Availability: Q4 2025    |
 | Maia: generate test data                                     | Private beta: 2026                                           |
-| Consumed OpenAPI and API discovery                           | Released for public beta: Q2 2025<br/>GA: Q4 2025            |
-| Improved OpenAPI generation for REST publish                 | Released for GA                                              |
-| Visual query editor for view entities                        | Currently PoCGA: Q4 2025                                     |
-| Event broker HTTP Bridge                                     | Released public beta <br/>GA: Q4 2025                        |
-| Compass Maturity Assessment                                  | GA: July 28th 2025                                           |
+| Consumed OpenAPI and API discovery                           | Released for public beta: Q2 2025<br/>General Availability: Q4 2025 |
+| Improved OpenAPI generation for REST publish                 | Released for General Availability:                         |
+| Visual query editor for view entities                        | Currently PoC <br/>General Availability: Q4 2025          |
+| Event broker HTTP Bridge                                     | Released public beta <br/>General Availability: Q4 2025   |
+| Compass Maturity Assessment                                  | General Availability: July 28th 2025                      |
 
 ## Agentic AI
 
 | Capability or Feature | Expected Release |
 | --- | --- |
-| Mendix Agents Kit                 | GA: June 2025    |
-| Mendix Cloud GenAI Resource Packs | GA: July 2025    |
+| Mendix Agents Kit                 | General Availability: June 2025 |
+| Mendix Cloud GenAI Resource Packs | General Availability: July 2025 |
 
 ## Process Automation
 
 | Capability or Feature | Expected Release |
 | --- | --- |
-| Global Inbox                      | General Availability H2 2025 |
+| Global Inbox                      | General Availability: H2 2025 |
 | Workflow Groups                   | 11.1                         |
-| Ad-hoc tasks / event-subprocesses | Q4 2025                      |
+| Ad-hoc tasks/event-subprocesses | Q4 2025                      |
 
 ## Industrial Market
 
