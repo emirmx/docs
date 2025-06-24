@@ -21,6 +21,12 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
+### June 29, 2025
+
+#### New Features
+
+* In [Apps](/developerportal), when creating a new app, MTS and LTS versions of apps will now be displayed if available.
+
 ### June 19, 2025
 
 #### New Features
