@@ -83,6 +83,8 @@ Modification has a strong copyleft effect.
 All consuming apps should make their code public.
 {{% /alert %}}
 
+Open-source software licenses must abide by a set of compliance rules to ensure the safety of the Mendix ecosystem. Refer to [OSS Compliance for External Developers](/appstore/submit-content/oss-compliance/) for details.
+
 ##### Proprietary Licenses {#proprietary-license}
 
 You can configure your own proprietary license for your company’s content. The license can be applied to multiple components, and it can be used by everyone within your organization. 
