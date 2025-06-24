@@ -165,7 +165,7 @@ After migration, existing local copies are no longer linked to a working version
 
 ### Upgrade Planning
 
-To prevent issues with rapid repository growth, we strongly recommend to upgrade to Studio Pro version 10.24 LTS as soon as possible, which will automatically convert your app to [MPRv2](/refguide10/troubleshoot-repository-size/#mprv2-format).
+To prevent issues with rapid repository growth, we strongly recommend to upgrade to Studio Pro version 10.24 LTS as soon as possible, which will automatically convert your app to [MPRv2](/refguide10/troubleshoot-repository-size/#mprv2).
 
 ## If Migration Failed
 
