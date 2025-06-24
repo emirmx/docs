@@ -308,15 +308,15 @@ Here is how a caption and description look in Studio Pro:
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/pluggable-widgets/card-description.png" alt="description" class="no-border" >}}
 
-## Widget translations
+## Widget Translations
 
-A pluggable widget can provide translations to be used within Studio Pro, to match a users preferred user interface language of Studio Pro. This includes translations for:
+A pluggable widget can provide translations to be used within Studio Pro to match an end-user's preferred user interface language (of Studio Pro). This includes translations for:
 
-* The name of the pluggable widget. For example, in the Toolbox.
-* The names of properties or values of properties. For example, in the Properties dialog.
-* Texts like labels used in the editor preview. For example, when editing a Page in Design Mode.
+* The name of the pluggable widget (for example, in the **Toolbox**).
+* The names of properties or values of properties, (for example, in the **Properties** dialog box).
+* Texts like labels used in the editor preview (for example, when editing a page in Design Mode).
 
-If provided, the Studio Pro user interface automatically uses the translations for the name of the widget and any of its properties. However, texts shown in the pluggable widgets preview have to be translated by calling the *translate* function. The *preview* function in *{widgetName}.editorPreview.js* receives this *translate* function as a prop. It'll look up the provided translation for a given key, like so:
+If provided, the Studio Pro user interface automatically uses the translations for the name of the widget and any of its properties. However, texts shown in the pluggable widgets preview have to be translated by calling the **translate** function. The **preview** function in *{widgetName}.editorPreview.js* receives this **translate** function as a prop. It will look up the provided translation for a given key, as in the following example:
 
 ```tsx
 export function preview(props) {
@@ -328,11 +328,7 @@ export function preview(props) {
 }
 ```
 
-Translations for a pluggable widget can be provided in two ways: either in the widget package itself, or in a module.
-
-These translations do not affect the behavior of the app once deployed.
-
-If there's no translations available for a users preferred user interface language, English will be used as the fallback language.
+Translations for a pluggable widget can be provided in two ways: in the widget package itself, or in a module. These translations do not affect the behavior of the app once deployed. If there is no translation available for a users preferred user interface language, English will be used as the fallback language.
 
 ### Providing Translations in a Pluggable Widget Package
 
