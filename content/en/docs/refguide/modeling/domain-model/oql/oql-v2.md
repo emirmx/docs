@@ -7,7 +7,7 @@ weight: 100
 
 ## Introduction
 
-In Studio Pro version 10.19, we introduced OQL v2. It can be enabled by setting the [OQL version 2](/refguide/app-settings/#oql-version-2) app setting to *Yes*. You will have to switch to OQL v2 in order to enable [View entities](/refguide/view-entities/).
+OQL v2 can be enabled by setting the [OQL version 2](/refguide/app-settings/#oql-version-2) app setting to *Yes*. You will have to switch to OQL v2 in order to enable [View entities](/refguide/view-entities/).
 
 OQL v2 syntax is the same as OQL. However, there are a few differences in the handling of specific, mostly not very common, cases.
 
@@ -183,7 +183,7 @@ JOIN (SELECT Name AS N FROM Module.City) C
 ON P/Residence = C/Name
 ```
 
-### `ORDER BY` in Subquery
+### `ORDER BY` in Subquery {#order-by-in-subquery}
 
 You must now have a `LIMIT` and/or `OFFSET` in subquery containing `ORDER BY`. Using `ORDER BY` in subquery makes sense only when it is combined with `LIMIT` and/or `OFFSET`. Without the limitations, database engines do not guarantee that the row order in the subquery will be preserved in the outer query.
 
@@ -216,7 +216,7 @@ FROM (
 
 For [view entities](/refguide/view-entities/), you must now have a `LIMIT` and `OFFSET` in all `ORDER BY` clauses, even for the top level query.
 
-This is because view entity results are not accessed directly. In the Runtime, a view entity is wrapped inside another `SELECT` query as a subquery, which allows further filtering and ordering. This makes it similar to the Subquery case, above.
+This is because view entities, like any other entity type, do not imply order of the results. See [Sorting of View Entity Results](/refguide/use-view-entities/#sorting) in *How To Use View Entities* for more details.
 
 ### Result Types from Arithmetic Functions
 

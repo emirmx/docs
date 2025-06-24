@@ -10,7 +10,7 @@ For more information on native mobile app development, see the [native-template]
 
 Compatible with Studio Pro 10:
 
-* Native Template versions of [14](/releasenotes/mobile/nt-14-rn/) are compatible with apps built using Studio Pro 10.22 and above.
+* Native Template versions of [14](/releasenotes/mobile/nt-14-rn/) are compatible with apps built using Studio Pro [10.22](/releasenotes/studio-pro/10.22/) and above.
 * Native Template versions of [13](/releasenotes/mobile/nt-13-rn/) are compatible with apps built using Studio Pro [10.21](/releasenotes/studio-pro/10.21/) and above.
 * Native Template versions of [12](/releasenotes/mobile/nt-12-rn/) are compatible with apps built using Studio Pro [10.19](/releasenotes/studio-pro/10.19/) and above.
 * Native Template versions of [11](/releasenotes/mobile/nt-11-rn/) are compatible with apps built using Studio Pro [10.18](/releasenotes/studio-pro/10.18/) and above.

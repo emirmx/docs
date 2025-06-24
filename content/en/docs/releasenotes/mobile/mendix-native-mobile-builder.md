@@ -20,6 +20,7 @@ The Mendix Native Mobile Builder uses MxBuild and GitHub to simplify the app bui
 If you built your app using a version of the Native Template that no longer exists (such as a beta version that was rolled out previously), then it is possible your app gets caught in an unresolved loop when you update it [OTA](/refguide/mobile/distributing-mobile-apps/overtheair-updates/#when-to-use-ota). This problem can affect any NMB version, as the problems stem from the unsupported Native Template. 
 
 To fix this issue, do the following:
+
 1. Navigate to the NMB's previous build output folder.
 2. Open the **template_version** file.
 3. Remove the content of the file.
