@@ -38,7 +38,7 @@ Native mobile apps are not run in the device browser like web-based Mendix apps.
 
 ### Air-Gapped Development
 
-Developing and building native mobile apps requires access to several online resources. Without whitelisting these resources, a native mobile build will fail.
+Developing and building native mobile apps requires access to several online resources. Without safelisting these resources, a native mobile build will fail.
 
 For development:
 

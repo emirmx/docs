@@ -9,11 +9,8 @@ simple_list: true
 beta: true
 cascade:
     - numberless_headings: true
+    - banner: "Mendix 11 is currently in Beta. For more information about Beta releases and features, see <a href=\"/releasenotes/beta-features/\">Beta Releases</a>."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
-
-{{% alert color="warning" %}}
-Mendix 11 is currently in Beta. For more information about Beta releases and features, see [Beta Releases](/releasenotes/beta-features/).
-{{% /alert %}}
 
 These are the release notes for Mendix Studio Pro 11:

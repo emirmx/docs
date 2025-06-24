@@ -83,7 +83,6 @@ The menu has the following properties:
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/menus/grouped_menus.png" >}}
 
-
 ## Creating a Menu with Submenus
 
 You can also have a number of submenus that branch out your menu.
