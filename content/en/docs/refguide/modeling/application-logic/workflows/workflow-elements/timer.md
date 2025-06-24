@@ -35,7 +35,7 @@ It can be used in the following two ways:
 
 The **Caption** describes what happens in this element. It is displayed under the workflow element to make the **Timer** easier to read and understand without the need to add annotations.
 
-### Boundary Properties Section
+### Boundary Properties Section {#boundary-properties}
 
 {{% alert color="info" %}}
 This section is only applicable when **Timer** is used as a timer boundary event.
