@@ -7,7 +7,7 @@ description: "Describes the criteria that must be met to ensure that Marketplace
 ## Introduction
 
 External developers play a key role in building a strong ecosystem of reusable, innovative modules for the Mendix platform.    
-Many contributions rely on Open Source Software (OSS), which is a powerful enabler of collaboration and rapid development. To ensure legal clarity, transparency, and security, contributors must ensure that their use of OSS is fully compliant with open source licensing requirements.
+Many contributions rely on open-source software (OSS), which is a powerful enabler of collaboration and rapid development. To ensure legal clarity, transparency, and security, contributors must ensure that their use of OSS is fully compliant with the open-source licensing requirements.
 
 ## The Importance of OSS Compliance
 
@@ -31,11 +31,13 @@ To ensure your Marketplace contribution is OSS-compliant, you must include the f
     * Configuration requirements, if applicable
     * Contribution or support details, if applicable
     * Licensing summary
-* A `LICENSE` file — This should include a legal declaration that clearly states the open source license for the project:
+
+* A `LICENSE` file — This should include a legal declaration that clearly states the open-source license for the project:
     
     * Choose a standard license, such as MIT, Apache 2.0, or BSD-3-Clause.
     * Include the full, unmodified license text.
     * Ensure compatibility with any third-party code included.
+
 * Third-party notices — If your module includes other OSS libraries:
 
     * Include a `NOTICE` or `third-party-licenses.txt` file.

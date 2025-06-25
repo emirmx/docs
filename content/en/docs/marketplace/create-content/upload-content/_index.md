@@ -66,6 +66,10 @@ Select the type of **License** you want applied to your app.
 
 ##### Open-Source Software Licenses
 
+{{% alert color="warning" %}}
+Open-source software licenses must abide by a set of compliance rules to ensure the safety of the Mendix ecosystem. Refer to [OSS Compliance for External Developers](/appstore/submit-content/oss-compliance/) for details.
+{{% /alert %}}
+
 These are the open-source software license options available and their requirements:
 
 | | **Notes** | **Commercial use allowed?** | **Component code needs to be in public repo?** | **License text required with copyright info in code and distribution artifact?** | **Can modify?** (Mention modifications to code) | **Can consuming apps use without making their code public?** | **Notice files should be distributed with artifact?** | **Original component source code to be distributed with consuming app?** | **Can sub-license?** |
@@ -82,8 +86,6 @@ GNU GPL has a strong copyleft effect.
 Modification has a strong copyleft effect.    
 All consuming apps should make their code public.
 {{% /alert %}}
-
-Open-source software licenses must abide by a set of compliance rules to ensure the safety of the Mendix ecosystem. Refer to [OSS Compliance for External Developers](/appstore/submit-content/oss-compliance/) for details.
 
 ##### Proprietary Licenses {#proprietary-license}
 
