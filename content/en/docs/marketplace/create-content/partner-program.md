@@ -25,7 +25,7 @@ In return, you will gain the following benefits:
 
 ## Joining the Marketplace Program
 
-The process is simple: 
+Follow these steps to join: 
 
 1. Sign up as a [Mendix Component Partner](https://www.mendix.com/partners/become-a-partner/component-partner/).
 2. Design and build your content.
@@ -37,6 +37,13 @@ There are a few steps to publishing an offering. A partner interested in publish
 
 We are offering product listings with contact referrals for commercial content. There is no fee to publish an offering on the Mendix Marketplace.
 
+## Legal Considerations
+
+The User acknowledges that offerings published or made available through the Mendix Marketplace may be subject to export control restrictions. Accordingly, publishers of such content bear responsibility for ensuring compliance with all applicable export and re-export control laws and regulations, including but not limited to those of The Netherlands, the European Union, and the United States. 
+
+For more information on sharing content to the Marketplace, refer to [Uploading to the Marketplace](/appstore/submit-content/).    
+For details on further legal considerations, refer to the [Mendix Terms of Use](https://www.mendix.com/legal/terms-of-use/#section-5).
+
 ## Read More
 
-* [Create Solutions](/appstore/creating-content/sol-solutions-guide/)
+* [Creating Solutions](/appstore/creating-content/sol-solutions-guide/)

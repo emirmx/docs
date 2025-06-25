@@ -396,7 +396,7 @@ You may get a consistency error when importing the Email Connector module in Men
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/email-connector/consistency-error-token.png" class="no-border" >}}
 
-### Duplicate Mx Model Reflection Objeccts in Email Template
+### Duplicate Mx Model Reflection Objects in Email Template
 
 {{% alert color="info" %}} It is recommended to try this microflow in a non-production environment and check if is working as expected after the clean up. After the successful validations, run it in the production environment.{{% /alert %}}
 
