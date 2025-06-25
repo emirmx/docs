@@ -39,6 +39,12 @@ The following criteria determine whether your app can be migrated to Git:
 
 In addition to the hard criteria mentioned above, a check is performed to determine whether your version control history can be migrated. To qualify for migrating your history, the size of your full SVN repository should be smaller than 3.5 GB.
 
+{{% alert type="info" %}}
+
+The eligibility check does not display your repository size, and Support Engineers do not have access to this information. Additionally, deleting branches will not reduce the server-side repository size due to the way SVN manages data.
+
+{{% /alert %}}
+
 ### Eligibility Check Outcomes
 
 #### Eligible for Migrating With History
