@@ -98,7 +98,7 @@ To interact with LLMs using Agent Commons, you need at least one GenAI connector
 
 ### Defining the Agent {#define-agent}
 
-When the app is running, a user with the `AgentAdmin` role can set up agents, write prompts, link microflows as tools, and provide access to knowledge bases. Once an agent is associated with a deployed model, it can be tested in an isolated environment, separate from the rest of the app’s logic, to validate its behavior effectively.
+When the app is running, a user with the `AgentAdmin` role can set up agents, write prompts, link microflows as tools, and provide access to knowledge bases. Once an agent version is associated with a deployed model, it can be tested in an isolated environment, separate from the rest of the app’s logic, to validate its behavior effectively.
 
 Users can create two types of agents:
 
@@ -130,9 +130,13 @@ For more technical details, see the [Function Calling](/appstore/modules/genai/f
 
 #### Adding Knowledge Bases
 
-For supported knowledge bases registered in your app, you can connect them to agents to enable autonomous retrievals. To set this up, refer to the documentation of the connector provided by your chosen knowledge base provider and follow the instructions for establishing a connection from your app.
+For supported knowledge bases registered in your app, you can connect them to agents to enable autonomous retrievals. Refer to the documentation of the connector provided by your selected knowledge base provider. Follow the instructions to configure the knowledge bases in your app, so that they can be linked to your agents. Mendix provides the following platform-supported connectors that support knowledge base integrations with agents:
 
-To allow the agent to perform semantic searches, add the knowledge base to the agent definition and configure the retrieval parameters, such as metadata filters, the number of chunks to retrieve, and the threshold similarity.
+* [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#configuration)
+* [Amazon Bedrock Connector](/appstore/modules/aws/amazon-bedrock/#sync-models)
+* [OpenAI Connector](/appstore/modules/genai/reference-guide/external-connectors/openai/#general-configuration) (for Azure knowledge bases, available in an upcoming release)
+
+To allow an agent to perform semantic searches, add the knowledge base to the agent definition and configure the retrieval parameters, such as the number of chunks to retrieve, and the threshold similarity. Multiple knowledge bases can be added to the agent to pick from. Give each knowledge base a name and description (in human language) so that the model can decide which retrieves are necessary based on the input it gets.
 
 #### Testing and Refining the Agent
 
@@ -158,7 +162,7 @@ For most use cases, a `Call Agent` microflow activity can be used. You can find 
 
 ##### Call Agent with History {#call-agent-with-history}
 
-This action uses all defined settings, including the selected model, system prompt, tools, knowledge base, and model parameters to call the Agent using the specified `Request` and execute a `Chat Completions` operation. If a context entity is configured, the corresponding context object must be passed so that variables in the system prompt can be replaced. The operation returns a `Response` object containing the assistant’s final message, consistent with the chat completions operations from GenAI Commons.
+This action uses all defined settings, including the selected model, system prompt, tools, knowledge base, and model parameters to call the Agent using the specified `Request` and execute a `Chat Completions` operation. If a `Request` object is passed that already contains a system prompt, or a value for the parameters temperature, top P or max tokens, those values have priority and will not be overwritten by the agent configurations. If a context entity is configured, the corresponding context object must be passed so that variables in the system prompt can be replaced. The operation returns a `Response` object containing the assistant’s final message, consistent with the chat completions operations from GenAI Commons.
 
 To use it:
 
@@ -176,7 +180,7 @@ Download the [Agent Builder Starter App](https://marketplace.mendix.com/link/com
 
 ##### Call Agent without History {#call-agent-without-history}
 
-This action is only supported by Single-call agents which have a user prompt defined as part of the agent version. It uses all defined settings, including the selected model, system prompt, user prompt, tools, knowledge base, and model parameters to call the agent by executing a `Chat Completions` operation. If any of such parameters should be overwritten or you want to pass a knowledge base or tool that is not already defined with the agent, you can do this by creating a request and adding these properties before passing it as `OptionalRequest` to the operation. If a context entity was configured, the corresponding context object must be passed so that variables in the system prompt can be replaced. The operation returns a `Response` object containing the assistant’s final message, similar to the chat completions operations from GenAI Commons.
+This action is only supported by Single-call agents which have a user prompt defined as part of the agent version. It uses all defined settings, including the selected model, system prompt, user prompt, tools, knowledge base, and model parameters to call the agent by executing a `Chat Completions` operation. If any of the parameters (system prompt, temperature, top P or max tokens) should be overwritten or you want to pass an additional knowledge base or tool that is not already defined with the agent, you can do this by creating a request and adding these properties before passing it as `OptionalRequest` to the operation. If a context entity was configured, the corresponding context object must be passed so that variables in the system prompt can be replaced. The operation returns a `Response` object containing the assistant’s final message, similar to the chat completions operations from GenAI Commons.
 
 To use it:
 
