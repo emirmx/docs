@@ -750,7 +750,7 @@ Design properties can be translated to match the end-user's preferred user inter
 
 To provide translations for your design properties, create a file *locales/{language-code}/translation.json* in the **Styling** folder of your module. The language code can be any of the user interface languages supported by Studio Pro, such as *en-US*, *ja-JP*, *ko-KR*, or *zh-CN*. Other files in the **locales/{language-code}** folders will be ignored. As a result, custom namespaces cannot be used. As an example, a resulting structure could look like this:
 
-{{< figure src="/attachments/apidocs-mxsdk/apidocs/design-properties/translations.png" alt="A translation.json file in the Styling/locales/de-DE folder" class="no-border" >}}
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/design-properties/translations.png" alt="A translation.json file in the Styling/locales/de-DE folder" class="no-border" max-width=50%>}}
 
 These JSON files follow the format used by the i18next library, specifically v3. See the [the i18next JSON format documentation](https://www.i18next.com/misc/json-format) for more information. For example to translate a design property with the name **Text align** with the options **left**, **center** and **right**, the contents of *locales/ko-KR/translation.json* might look something like this:
 

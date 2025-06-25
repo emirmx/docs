@@ -349,7 +349,7 @@ Translations for a pluggable widget can also be provided by a module. This can b
 
 To achieve this, create a *locales/{language-code}/{widget ID}.json* file in the **Styling** folder of your module. You will have to replace any spaces and illegal path characters (if there are any) with underscores. The file name should be all lower case. For example, if your widget ID is *%My Pluggable Widget%*, the name of the file should be *_my_pluggable_widget_.json*. In addition, create a *locales/metadata.json* file. The resulting structure will look something like this example:
 
-{{< figure src="attachments/apidocs-mxsdk/apidocs/pluggable-widgets/translations.png" alt="A metadata.json file in the Styling/locales folder and a custom.widget.id.json file in the Styling/locales/ko-KR folder" class="no-border" >}}
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/pluggable-widgets/translations.png" alt="A metadata.json file in the Styling/locales folder and a custom.widget.id.json file in the Styling/locales/ko-KR folder" class="no-border" max-width=50% >}}
 
 The contents of *locales/metadata.json* should be as follows:
 
