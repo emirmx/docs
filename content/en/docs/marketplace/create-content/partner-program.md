@@ -42,7 +42,7 @@ We are offering product listings with contact referrals for commercial content. 
 The User acknowledges that offerings published or made available through the Mendix Marketplace may be subject to export control restrictions. Accordingly, publishers of such content bear responsibility for ensuring compliance with all applicable export and re-export control laws and regulations, including but not limited to those of The Netherlands, the European Union, and the United States. 
 
 For more information on sharing content to the Marketplace, refer to [Uploading to the Marketplace](/appstore/submit-content/).    
-For details on further legal considerations, refer to the [Mendix Terms of Use](https://www.mendix.com/legal/terms-of-use/#section-5).
+For details on further legal considerations, refer to the [Mendix Terms of Use](https://www.mendix.com/legal/terms-of-use/).
 
 ## Read More
 
