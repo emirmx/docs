@@ -114,9 +114,9 @@ The **Generative AI** section contains the following settings:
 * **Enable Maia Explain** – When enabled, you can use it to explain a microflow or a nanoflow in the logic editors. For more information on how to use this feature, see [Maia Explain](/refguide/maia-explain/). It is enabled by default.
 * **Enable Maia for Domain Model** – when enabled, you can use it to generate a new domain model or to explain and improve an existing one. For more information on how to use this feature, see [Maia for Domain Model](/refguide/maia-for-domain-model/). It is enabled by default.
 * **Enable Maia for OQL**– when enabled, you can use it to generate and manage OQL (Object Query Language) queries through an intuitive interface. For more information on how to use this feature, see [Maia for OQL](/refguide/maia-for-oql/). It is disabled by default.
-* **Enable Maia for Pages** – when enabled, you can use it to generate a new page or to explain and improve an existing one. For more information on how to use this feature, see [Maia for Pages](/refguide/maia-for-pages/). It is enabled by default.
+* **Enable Maia for Pages** – when enabled, you can use it to generate a new page or to explain and improve an existing one. For more information on how to use this feature, see [Maia for Pages](/refguide/maia-for-pages/). It is disabled by default.
 * **Enable Maia for Workflows** – when enabled, you can use it to generate workflows by adding and configuring activities. For more information on how to use this feature, see [Maia for Workflows](/refguide/maia-for-workflows/). It is disabled by default.
-* **Enable Translation Generator** – when enabled, you can use it to translate your model into different languages through the **Batch translate** option under the **Language** menu, or to translate [system texts](/refguide/system-texts/) for you. For more information, see [Translation Generator](/refguide/translation-generator/). It is enabled by default.
+* **Enable Translation Generator** – when enabled, you can use it to translate your model into different languages through the **Batch translate** option under the **Language** menu, or to translate [system texts](/refguide/system-texts/) for you. For more information, see [Translation Generator](/refguide/translation-generator/). It is disabled by default.
 
 ### In-Editor Recommender
 
