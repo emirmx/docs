@@ -5,7 +5,7 @@ url: /refguide10/document-template/
 
 ## Introduction
 
-This document describes the properties of a document template. If you want to see what document templates are for and what kind of widgets can be placed on them, you can check the [Document Templates](/refguide10/document-templates/) overview documentation.
+This document describes the properties of a document template. If you want to see what document templates (deprecated in 10.24) are for and what kind of widgets can be placed on them, you can check the [Document Templates](/refguide10/document-templates/) overview documentation.
 
 ## Appearance Properties {#appearance-properties}
 
