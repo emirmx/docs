@@ -58,8 +58,8 @@ The new features were divided into major themes, which are described in the sect
 | Capability or Feature | Expected Release |
 | --- | --- |
 | Global Inbox                      | General Availability: H2 2025 |
-| Workflow Groups                   | 11.1                         |
-| Ad-hoc tasks/event-subprocesses | Q4 2025                      |
+| Workflow Groups                   | Public beta: 11.1                         |
+| Ad-hoc tasks/event-subprocesses | Public beta: Q4 2025                      |
 
 ## Industrial Market
 
