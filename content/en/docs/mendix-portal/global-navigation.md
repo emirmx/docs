@@ -1,8 +1,10 @@
 ---
 title: "Global Navigation"
-url: /developerportal/global-navigation/
+url: /portal/global-navigation/
 description: "Describes the global navigation and top bar that is available throughout the online Mendix Platform."
-weight: 1
+weight: 3
+aliases: 
+    - /developerportal/global-navigation/
 ---
 
 ## Introduction
