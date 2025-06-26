@@ -1,12 +1,12 @@
 ---
 title: "Conversational UI"
-url: /appstore/modules/genai/conversational-ui-module/conversational-ui/
+url: /appstore/modules/genai/genai-for-mx/conversational-ui/
 linktitle: "Conversational UI"
 weight: 20
 description: "Describes the Conversational UI marketplace module that assists developers in implementing conversational use cases such as an AI Bot."
 aliases:
-   - /appstore/modules/genai/genai-for-mx/conversational-ui/
    - /appstore/modules/genai/conversational-ui/
+   - /appstore/modules/genai/conversational-ui-module/conversational-ui/
 ---
 
 ## Introduction {#introduction}
@@ -14,6 +14,10 @@ aliases:
 With the [Conversational UI](https://marketplace.mendix.com/link/component/239450) module you can create a GenAI-based chat user interface. It contains the needed data model, pages, snippets, and building blocks. You can integrate with any LLM and knowledge base to create your full-screen, sidebar, or modal chat. It integrates with the Atlas framework and is the basis for the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926). It is also included in the [Blank GenAI App](https://marketplace.mendix.com/link/component/227934), the [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035), and the [RFP Assistant Starter App](https://marketplace.mendix.com/link/component/235917).
 
 Mendix has produced a [Conversational AI Design Checklist](/howto/front-end/conversation-checklist/) with some best practices for introducing conversational AI into your app.
+
+{{% alert color="info" %}}
+Prompt Management used to be a capability of the Conversational UI module. Since version 4.0.0, it is no longer part of the module and has been moved to the [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commons/) module. Existing prompts can be exported from the prompt management overview page and imported in the agent's kit.
+{{% /alert %}}
 
 ### Typical Use Cases {#use-cases}
 
@@ -34,7 +38,6 @@ The Conversational UI module provides the following functionalities:
     * Snippets that you can use directly on your pages, for example, to display messages or a history sidebar
     * A floating button for opening a pop-up chat
     * Pages, snippets, and logic to display and export token usage data (if enabled in GenAI Commons and supported by the GenAI Connector of choice)
-    * Pages, snippets, and logic to experiment with prompts. An admin, developer, or data scientist can test multiple versions at runtime, define variables, and decide which prompt version should be applied when end-users use the app. See [Prompt Management](/appstore/modules/genai/genai-for-mx/prompt-management/) for more information.
 
 * Operations to set up your context, interact with the model, and add the data to be displayed in the UI
 * Domain model to store the chat conversations and additional information
@@ -80,14 +83,13 @@ The main entities are shown for reference in the diagram below. For technical do
 
 ### Configuring the Roles {#module-roles}
 
-Make sure that the module role `User` is part of the user roles that are intended to chat with the model. Optionally, you can grant the `_addOn_ReadAll` role to admin roles, so that users with that role can read all messages. A role for usage monitoring is related only to the [Token consumption monitor snippets](#snippet-token-monitor). Additionally, a separate role is applicable for the [Prompt Management functionality](/appstore/modules/genai/genai-for-mx/prompt-management/). Both do not relate to the conversational snippets.
+Make sure that the module role `User` is part of the user roles that are intended to chat with the model. Optionally, you can grant the `_addOn_ReadAll` role to admin roles, so that users with that role can read all messages. A role for usage monitoring is related only to the [Token consumption monitor snippets](#snippet-token-monitor).
 
 | Module role | Description |
 | --- | --- |
 | `User` | Role needed for every user that should be able to interact with the chat components. Users can only read their messages (and related data). |
 | `_addOn_ReadAll` | Role can be granted additionally. Users with both roles can read all chat data. |
 | `UsageMonitoring` | Can view and export all token usage data. This is related to a module role with the same name in the GenAI Commons module. |
-| `PromptAdmin` | Designs, manages and tests prompts. Also decides which version is used in the running app environment. |
 
 ### Creating the Chat UI {#ui-components} 
 
@@ -264,10 +266,6 @@ A separate set of snippets has been made available to display and export token u
 
 * **Snippet_TokenMonitor** - This snippet can be used to display token usage information in charts and contains several other snippets that you can use to build your token consumption monitor dashboard. To display the token usage data, users will need the `UsageMonitoring` user role.
 * **Snippet_TokenMonitor_Export** - This snippet can be used to display token usage information in a grid and export it as *.xlsx*. 
-
-### Prompt Management {#prompt-management}
-
-The Conversational UI module comes with pages and snippets that provide the Prompt Management functionality. For more details, see [Prompt Management](/appstore/modules/genai/genai-for-mx/prompt-management/).
 
 ## Technical Reference {#technical-reference}
 
