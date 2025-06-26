@@ -27,7 +27,7 @@ Regardless of which major version you are upgrading from, we recommend you upgra
 
 1. Back up your app.
 1. Upgrade to the latest patch of Studio Pro.
-1. Upgrade widgets, modules, Marketplace components, templates, and connectors.
+1. Upgrade widgets, modules, Marketplace components, and connectors.
 1. Fix deprecations and test your app.
 1. Upgrade app to Mendix 11.
 
@@ -55,7 +55,10 @@ In general, you should not remove and re-import modules unless this is recommend
 
 After the upgrade of your marketplace content, take the next steps:
 
-1. Fix any deprecation warnings you see in development in Studio Pro, as well as in the Mendix Runtime using your console and browser console.
+1. Fix any deprecation warnings you see in development in Studio Pro, as well as in the Mendix Runtime using your console and browser console. These deprecations could include, but are not limited to, the following:
+    * [Document Templates](/refguide/document-templates/): deprecated in 10.24 
+    * [Dojo-based Mendix Client](/refguide/mendix-client/): deprecated in 11.0
+    * Deprecated Java Version: depending on your Java version you may see errors — to resolve those errors, see [Java Version Migration](/refguide/java-version-migration/)
 1. Review the major changes in the sections below.
 1. Run your app, test all functionality, and ensure it works without error.
 1. Back up or commit your Mendix 10 app so you can return to it if necessary.
