@@ -4,12 +4,7 @@ linktitle: "Software Composition"
 url: /developerportal/deploy/software-composition/
 description: "Describes the Software Composition page in Apps."
 weight: 80
-beta: true
 ---
-
-{{% alert color="warning" %}}
-This feature is in beta. For more information, see [Beta Releases](/releasenotes/beta-features/).
-{{% /alert %}}
 
 ## Introduction
 
@@ -21,9 +16,7 @@ To enable this, the **Software Composition** page in **Apps** provides visibilit
 
 The **Software Composition** page is visible to all members of the Mendix app.
 
-### Known Issues
-
-After the creation of a deployment package, it may take up to a day for the **Software Composition** page to become visible. Mendix is working to improve the performance on this front.
+{{% alert color="warning" %}}Advanced software composition capabilities are currently available to all. In the future, access to these capabilities will be subject to your license.{{% /alert %}}
 
 ### Prerequisites {#prerequisites}
 
@@ -32,7 +25,7 @@ To be able to see the software composition information, make sure that you meet 
 * Software Bill of Materials (SBOM) generation and the associated Software Composition capabilities are compatible with the following versions of Studio Pro: 9.24.26 and above, 10.6.12 and above, 10.12.3 and above.
 
     {{% alert color="warning" %}}Make sure you upgrade to a compatible Studio Pro version to continue to use Software Composition. Previously supported Studio Pro versions (9.24.22 to 9.24.25, 10.6.9 to 10.6.11, 10.10.0 to 10.12.2, and 10.13) will no longer result in SBOM generation and visibility in Software Composition. Any historical data within Software Composition remains accessible regardless of the upgrade.{{% /alert %}}
-
+   
 * Software composition visibility is only possible for deployment packages created via the platform services. It is not available if you manually upload the locally-created deployment package. SBOMs are created behind the scenes for each deployment package. For more information, see [Create Deployment Package](/refguide/create-deployment-package-dialog/).
 
 * You must be using free or licensed Mendix Cloud or Mendix Cloud Dedicated, or Mendix for Private Cloud.
@@ -47,6 +40,8 @@ First, when a new deployment package is created via the Mendix Portal with the c
 
 The component dependencies for each non-expired deployment package are available in the **Software Composition** page in **Apps**. 
 
+After the creation of a deployment package, it may take up to a day for the **Software Composition** page to become visible. Mendix is working to improve the performance on this front.
+
 ## Overview {#overview}
 
 On the **Overview** tab, you can see a list of all the deployed packages and their environments, if applicable.
@@ -57,12 +52,12 @@ Above the list, you can use the search box to search for information in the list
 
 The list contains the following information:
 
-* **Deployment Package**: This is the name of the deployment package.
-* **Environment**: This is the name of the environment.
-* **Runtime**: This shows the Mendix Runtime version.
-* **Version**: This shows the version of the deployment package on this app environment.
-* Column customization ({{% icon name="view" %}}): You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and adjusting the selection of the check boxes.
-* **View details**: Clicking this opens the [Component Summary](#component-summary) page, if it is available. The **View details** button is grayed out when an SBOM is not available for the selected deployment package. Ensure you are on a compatible runtime version and create a new deployment package in order to get component visibility here.
+* **Deployment Package** – This is the name of the deployment package.
+* **Environment** – This is the name of the environment.
+* **Runtime** – This shows the Mendix Runtime version.
+* **Version** – This shows the version of the deployment package on this app environment.
+* Column customization ({{% icon name="view" %}}) – You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and adjusting the selection of the check boxes.
+* **View details** – Clicking this opens the [Component Summary](#component-summary) page, if it is available. The **View details** button is grayed out when an SBOM is not available for the selected deployment package. Ensure you are on a compatible runtime version and create a new deployment package in order to get component visibility here.
 
 ### Component Summary {#component-summary}
 
@@ -92,9 +87,9 @@ Above the list, you can use the search box to search for a component. Next to th
 
 The list shows the following information about the component:
 
-* **Component**: This is the name of the component.
-* **Version**: This is the component version.
-* **Type**: This shows the type of the component. The type could be modules, widgets, framework, Java libraries (JAR), etc. The descriptions of each type are as follows:
+* **Component** – This is the name of the component.
+
+* **Type** – This shows the type of the component. The type could be modules, widgets, framework, Java libraries (JAR), etc. The descriptions of each type are as follows:
 
     * **Modules** – Standard marketplace modules imported from the Marketplace, for example [Community Commons](https://marketplace.mendix.com/link/component/170)
     * **Widgets** – User interface elements downloaded from the Marketplace, for example [Charts](https://marketplace.mendix.com/link/component/105695)
@@ -104,8 +99,22 @@ The list shows the following information about the component:
     * **Unknown** – When the type of the component is none of the above and hence undetermined
 
   For more information, refer to [SBOM Generation](/refguide/sbom-generation/).
-* Column customization ({{% icon name="view" %}}): You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and adjusting the selection of the checkboxes.
-* **View details**: Clicking this opens the [Component Usage](#component-usage) page.
+  
+* **Support type** – This shows the support type of the Marketplace component. It can be **Mendix**, **Partner**, or **Community**. For more information, see [Content Support Categories](/appstore/marketplace-content-support/#category).
+
+* **Version** – This is the component version.
+
+* **License** – This shows the end-user license for the component.
+
+* **Marketplace** – This shows whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the  Marketplace, while a private component is available only via your [Compnay Content](/appstore/home-page/#company-content) page.
+
+* **Latest version** – This shows the lastest version of the component.
+
+* **Publisher** – This shows the name of the organization that published the component.
+
+* Column customization ({{% icon name="view" %}}) – You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and adjusting the selection of the checkboxes.
+
+* **View details** – Clicking this opens the [Component Usage](#component-usage) page.
 
 ### Component Usage {#component-usage}
 

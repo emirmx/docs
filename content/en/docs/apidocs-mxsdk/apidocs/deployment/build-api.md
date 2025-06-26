@@ -12,7 +12,7 @@ The Build API only works for apps which are deployed to Mendix Cloud.
 
 ## Introduction
 
-The Build API allows you to manage deployment packages and create new deployment packages using our build server. You will need the information from the [Teamserver API](/apidocs-mxsdk/apidocs/team-server-api/) as input for these API calls.
+The Build API allows you to manage deployment packages and create new deployment packages using our build server. You will need the information from the  [App Repository API](/apidocs-mxsdk/apidocs/app-repository-api/) as input for these API calls.
 
 You can use webhooks to trigger CI/CD pipelines which use this API. These are described in [Webhooks](/developerportal/deploy/webhooks/).
 
@@ -57,7 +57,7 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/packages
 
 ##### Parameter
 
-* *AppId* (String) : Subdomain name of an app.
+* `AppId` (String) : Subdomain name of an app.
 
 ##### Example
 
@@ -73,16 +73,16 @@ Mendix-ApiKey:  26587896-1cef-4483-accf-ad304e2673d6
 
 List of objects with the following key-value pairs:
 
-* *PackageId* (String) : Unique identification of the package.
-* *Name* (String) : Name of the package.
-* *Description* (String) : Description of the package.
-* *Version* (String) : Package version. This is also the name of the tag on the project team server.
-* *Creator* (String) : Uploader or creator of this package.
-* *CreationDate* (Date) : Date that the package became available in the portal. This can be the
+* `PackageId` (String) : Unique identification of the package.
+* `Name` (String) : Name of the package.
+* `Description` (String) : Description of the package.
+* `Version` (String) : Package version. This is also the name of the tag on the project team server.
+* `Creator` (String) : Uploader or creator of this package.
+* `CreationDate` (Date) : Date that the package became available in the portal. This can be the
     upload date or the date that a build was created in the portal.
-* *Status* (String) : Status of the package. A package is ready to use if the status is 'Succeeded'.
+* `Status` (String) : Status of the package. A package is ready to use if the status is 'Succeeded'.
     Possible values: Succeeded, Queued, Building, Uploading and Failed.
-* *Size* (Long) : Size of the package in bytes.
+* `Size` (Long) : Size of the package in bytes.
 
 ##### Error Codes
 
@@ -129,9 +129,9 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/packages/<PackageId>?url=<Bool
 
 ##### Parameters
 
-* *AppId* (String) : Subdomain name of an app.
-* *PackageId* (String) : Id of the deployment package.
-* *url* (Boolean) *(default: false)*: Indicates whether the API should return a URL pointing to the location of the package.
+* `AppId` (String) : Subdomain name of an app.
+* `PackageId` (String) : Id of the deployment package.
+* `url` (Boolean) *(default: false)*: Indicates whether the API should return a URL pointing to the location of the package.
 
 ##### Example
 
@@ -147,24 +147,23 @@ Mendix-ApiKey:  26587896-1cef-4483-accf-ad304e2673d6
 
 An object with the following key-value pairs:
 
-* *PackageId* (String) : Unique identification of the package
-* *Name* (String) : Name of the package
-* *Description* (String) : Description of the package
-* *Version* (String) : Package version. This is also the name of the tag on the project team server
-* *Creator* (String) : Uploader or creator of this package
-* *CreationDate* (Date) : Date that the package became available in the portal. This can be the
+* `PackageId` (String) : Unique identification of the package
+* `Name` (String) : Name of the package
+* `Description` (String) : Description of the package
+* `Version` (String) : Package version. This is also the name of the tag on the project team server
+* `Creator` (String) : Uploader or creator of this package
+* `CreationDate` (Date) : Date that the package became available in the portal. This can be the
     upload date or the date that a build was created in the portal
-* *Status* (String) : Status of the package. A package is ready to use if the status is 'Succeeded'. Possible values:
+* `Status` (String) : Status of the package. A package is ready to use if the status is 'Succeeded'. Possible values:
     * Succeeded
     * Queued
     * Building
     * Uploading
     * Failed
-* *Size* (Long) : Size of the package in bytes
-* *Url* (object): A JSON object containing the following:
-
-    * *Location* (String): The URL pointing to the package file.
-    * *TTL* (Long): How long the URL is valid (in seconds).
+* `Size` (Long) : Size of the package in bytes
+* `Url` (object): A JSON object containing the following:
+    * `Location` (String): The URL pointing to the package file.
+    * `TTL` (Long): How long the URL is valid (in seconds).
 
 ##### Error Codes
 
@@ -207,8 +206,8 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/packages/<PackageId>
 
 ##### Parameters
 
-* *AppId* (String) : Subdomain name of an app
-* *PackageId* (String) : Id of the deployment package
+* `AppId` (String) : Subdomain name of an app
+* `PackageId` (String) : Id of the deployment package
 
 ```http
 DELETE /api/1/apps/calc/packages/b3d14e53-2654-4534-b374-9179a69ef3cf HTTP/1.1
@@ -244,8 +243,8 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/packages/<PackageId>/download
 
 Parameters
 
-* *AppId* (String) : Subdomain name of an app.
-* *PackageId* (String) : Id of the deployment package.
+* `AppId` (String) : Subdomain name of an app.
+* `PackageId` (String) : Id of the deployment package.
 
 ```http
 GET /api/1/apps/calc/packages/b3d14e53-2654-4534-b374-9179a69ef3cf/download HTTP/1.1
@@ -278,7 +277,7 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/packages
 
 ##### Parameter
 
-* *AppId* (String) : Subdomain name of an app.
+* `AppId` (String) : Subdomain name of an app.
 
 ##### Payload
 
@@ -286,14 +285,18 @@ The payload depends on whether the app is held in a [Git repository or an SVN re
 
 An object with the following key-value pairs:
 
-* *Branch* (String) : Name of the branch.
+* `Branch` (String) : Name of the branch.
     * For SVN, this is 'trunk' for the main line or 'branches/*branch name*' for a specific branch.
     * For Git, this is 'main' for the main line or 'branches/*branch name*' for a specific branch.
-* *Revision* (String) : Number of the revision to build a package from.
+* `Revision` (String) : Number of the revision to build a package from.
     * For SVN, this is an integer reflecting the revision number.
     * For Git, this is the commit hash. The API will accept either the short commit hash or the full commit hash.
-* *Version* (String) : Package version. This will also be the name of the tag on the project team server.
-* *Description* (String) : Description of the package.
+* `Version` (String) : Package version. This will also be the name of the tag on the project team server.
+* `Description` (String) : Description of the package.
+
+{{% alert color="warning" %}}
+For apps using SVN for version control, this call will build the specified revision even if that revision is not on the specified branch.
+{{% /alert %}}
 
 ##### Example
 
@@ -322,7 +325,7 @@ You can find out the status of your build by looking at the `status` from a [Ret
 
 An object with the following key-value pair:
 
-* *PackageId* (String) : Unique identification of the package. This string can be used to get the build status of the package later.
+* `PackageId` (String) : Unique identification of the package. This string can be used to get the build status of the package later.
 
 Error codes
 

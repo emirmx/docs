@@ -63,9 +63,9 @@ For apps on Mendix Cloud, it is not possible to upload files bigger than 1 GB to
 
 ##### Request Parameters
 
-* *AppId* (String): Subdomain name of an app
-* *PackageName* (String): the name given to the package (MDA) when it is uploaded — if this is omitted, it will be given the name *default.mda*
-* *file* (File): Deployment package as multipart/form-data (see [IETF RFC 7578: Returning Values from Forms: multipart/form-data](https://tools.ietf.org/html/rfc7578))
+* `AppId` (String): Subdomain name of an app
+* `PackageName` (String): the name given to the package (MDA) when it is uploaded — if this is omitted, it will be given the name *default.mda*
+* `file` (File): Deployment package as multipart/form-data (see [IETF RFC 7578: Returning Values from Forms: multipart/form-data](https://tools.ietf.org/html/rfc7578))
 
 ##### Example Request
 
@@ -123,8 +123,8 @@ URL: https://deploy.mendix.com/api/v2/apps/<AppId>/jobs/<JobId>
 
 ##### Request Parameters
 
-* *AppId* (String): Subdomain name of an app
-* *JobID* (String): the ID of a job that was triggered by a previous API call
+* `AppId` (String): Subdomain name of an app
+* `JobID` (String): the ID of a job that was triggered by a previous API call
 
 ##### Example Request
 

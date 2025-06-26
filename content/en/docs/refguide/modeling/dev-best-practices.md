@@ -51,7 +51,7 @@ Each user role should correspond to only one module role per module. In other wo
 
 Always store secret information in a safe place. A safe place is the database. Use the [Encryption](https://marketplace.mendix.com/link/component/1011) module to encrypt, store, retrieve, and decrypt the information.
 
-In Mendix version 10.9.0 and above, you can also store [private constants](/refguide/configuration/#constants) in configurations. These are encrypted and stored on your local machine so will not be shared with others. In versions of Mendix below 10.9.0, all configuration values are shared.
+You can also store [private constants](/refguide/configuration/#constants) in configurations. These are encrypted and stored on your local machine so will not be shared with others.
 
 Using either the default value of a constant or the project's shared configuration settings is unsafe. Both these places are readable by others and visible in the version management copies. 
 
@@ -218,9 +218,13 @@ To clearly identify a [sub-microflow](/refguide/extracting-and-using-sub-microfl
 
 Microflows containing unit tests should have the prefix **TEST_** or **UT_** (case-insensitive). For more information about the Unit Testing module, see [Unit Testing](/appstore/modules/unit-testing/).
 
+[//]: # (<!-- markdownlint-disable no-space-in-emphasis -->)
+
 | Event Type | Prefix       |
 | ---------- | ------------ |
-| Unit Test  | TEST_or UT_ |
+| Unit Test  | TEST_ or UT_ |
+
+[//]: # (<!-- markdownlint-enable no-space-in-emphasis -->)
 
 #### Integration Microflows
 
@@ -229,6 +233,7 @@ For integrations, you have the following types of microflow:
 | Event Type                                  | Prefix |
 | ------------------------------------------- | ------ |
 | Consumed web service operation microflow    | CWS_   |
+| Consumed REST service operation microflow   | CRS_   |
 | Published web service operation microflow   | PWS_   |
 | Published REST service operation microflow  | PRS_   |
 | Published OData service operation microflow | POS_   |
@@ -261,7 +266,7 @@ Guidelines below can help you choose a short yet meaningful name for your workfl
 
 #### Enumerations
 
-[Enumerations](/refguide/enumerations/) should be identified with a prefix.
+[Enumerations](/refguide/enumerations/) should be identified with a prefix. The name of the enumeration should reflect its business context, for example, *ENUM_ShippingStatus*.
 
 | Document Type | Prefix |
 | ------------- |------- |
@@ -306,9 +311,9 @@ Documents used to support integration should have the prefixes listed below.
 | Deeplink              | DL_    |
 
 {{% alert color="warning" %}}
-The [Deep Link](/appstore/modules/deep-link/) module is deprecated from Studio Pro 10.6.0. It is replaced by [page URLs](/refguide/page-properties/#url) and [microflow URLs](/refguide/microflow/#url). For instructions on migrating to page and microflow URLs, see the [Migrating to Page and Microflow URLs](/appstore/modules/deep-link/#migrate-page-micro) section in *Deep Link*.
+The [Deep Link](/appstore/modules/deep-link/) module is deprecated. It is replaced by [page URLs](/refguide/page-properties/#url) and [microflow URLs](/refguide/microflow/#url). For instructions on migrating to page and microflow URLs, see the [Migrating to Page and Microflow URLs](/appstore/modules/deep-link/#migrate-page-micro) section in *Deep Link*.
 
-We will continue to actively support this module for Mendix 9.
+We will continue to actively support this module for Studio Pro 9.
 {{% /alert %}}
 
 ### Home Pages
@@ -325,6 +330,25 @@ You can define the [home pages](/refguide/show-home-page/) per device and role i
 | Role based home page | Mobile  | Home_Phone_{User role}   |
 
 ## General Guidelines and Best Practices
+
+### Application
+
+#### Project Size
+
+Mendix apps are best built in a way that they are easily scalable through a microservice architecture.
+
+To ensure maintainability and performance, it is recommended to keep your app within: 
+
+* 3,000 microflows and 750 entities if using a high end machine
+* 2,000 microflows and 500 entities on a lower specced machine
+
+Staying within these limits helps maintain optimal performance in Studio Pro, while ensuring your app remains manageable and scalable over time. If your app exceeds these limits, consider breaking your app into smaller services to improve maintainability and performance.
+
+Applications exceeding these guidelines may still function, depending on your system. However, Mendix cannot provide support for performance issues in oversized projects.
+
+{{% alert color="info" %}}
+Project size impacts IDE performance. Choose a development strategy that aligns with your system's capabilities and Mendix's recommended guidelines.
+{{% /alert %}}
 
 ### Domain Models
 

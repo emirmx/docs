@@ -6,7 +6,7 @@ description: "Release notes for app management and other parts of Apps"
 weight: 20
 cascade:
     - numberless_headings: true
-#This document is mapped to the landing page, update the link there if renaming or moving the doc file.
+# This document is mapped to the landing page, update the link there if renaming or moving the doc file.
 ---
 
 These release notes cover changes to the app management functionality and other features of the [Apps](/developerportal/).
@@ -17,13 +17,165 @@ For release notes on Mendix Cloud and deployment options, see [Deployment](/rele
 
 To see the current status of the Mendix Portal, see [Mendix Status](https://status.mendix.com/). Here you can also see planned maintenance and past incidents.
 
+[//]: # (The latest release date of this file is on the landing page - update latest-releases.html)
+
+## 2025
+
+### June 19, 2025
+
+#### New Features
+
+* In [Feedback](/developerportal/app-insights/feedback/), you can now create a story based on multiple feedback items.
+* When a story is linked to a feedback item, the story details are now displayed on the feedback item itself on the **Feedback** page.
+
+#### Improvements
+
+* We have improved the drag-and-drop functionality for reordering stories in the [Planning](/developerportal/project-management/epics/planning/) page. You can expect more improvements around that in the coming months.
+
+#### Fixes
+
+* We have fixed a bug in [Epics](/developerportal/project-management/epics/) where, under certain circumstances, the app would freeze when creating a new user story.
+
+### June 5, 2025
+
+#### New Features
+
+* You can now select the frequency with which you receive feedback notifications. To do that, select the preferred frequency from the **Feedback** page settings. For more information, refer to [Receiving Notifications](/developerportal/app-insights/feedback/#notifications) in *Feedback*.
+
+### April 24, 2025
+
+#### Improvements 
+
+* We have made the following improvements to the feedback management page:
+
+    * DataGrid 2 now allows users to customize what they see on their feedback overview
+    * We have improved performance for large sets of feedback
+    * The date filters have been reset and the 6 month restriction has been removed
+    
+### March 30, 2025
+
+#### New Features
+
+* We have added a new endpoint to the [Projects API](/apidocs-mxsdk/apidocs/projects-api/). The endpoint allows clients to retrieve full details of a project and its team.
+* We have implemented all logic for the cleanup of unused projects and will soon start marking projects for deletion. Once a project is marked, you get a notice on the MyApps page. There you can filter the page to see which projects are marked. Once marked, you have two calendar weeks to get it unmarked. The easiest way to do this is by pinning the project. For more information, see [Deletion of Unused Projects](/developerportal/deploy/mendix-cloud-deploy/#projects-deletion).
+* We renamed the **Contact Reporter** tab to **Reporter Comments**.
+
+### March 20, 2025
+
+#### New Features
+
+* We introduced a new feature for Mendix AI Assistance (Maia) in Epics: **Maia Create User Story**. It helps you to easily create stories. You can access it on the [Board](/developerportal/project-management/epics/board/) or the [Planning](/developerportal/project-management/epics/planning/) page under **Project Management**.
+
+It is turned off by default. Scrum Master can switch it on in the Project Management settings.
+
+#### Improvements
+
+* We have redesigned the story creation page from a popup to a full page.
+
+### March 18, 2025
+
+#### New Features
+
+* Software Composition is now generally available. It helps you easily manage security risk by providing visibility and insights into the dependencies of each application across your application landscape. You can access the feature in [Control Center](/control-center/software-composition/) and [Apps navigation pane](/developerportal/deploy/software-composition/).
+
+### March 13, 2025
+
+#### Fixes
+
+* We fixed an issue in [Mini Surveys](/developerportal/app-insights/mini-surveys/#view-export-responses) where XLSX exports included empty responses.
+
+### February 6, 2025
+
+#### New Features
+
+* [Mendix AI Assistance Chat (Maia Chat)](/developerportal/global-navigation/#maia-chat), previously available in Studio Pro, is now accessible in Mendix Portal.
+
+### January 29, 2025
+
+#### Fixes
+
+* We fixed an issue where, after updating a role, some companies could not edit the role further.
+
+### January 26, 2025
+
+#### New Features
+
+* We have migrated all companies to use [Centralized Roles](/control-center/roles-and-permissions/#centralized-project-roles). 
+
+### January 5, 2025
+
+#### Deprecations
+
+* We have removed the GET projects endpoint in our [Projects API](/apidocs-mxsdk/apidocs/projects-api/) and replaced it with the new GET company projects endpoint.
+
+#### Fixes
+
+* We fixed a bug where the name of the revision author was not shown when the author was no longer part of the project
+* We fixed a small UI bug on the Company Roles overview page where the badges were not properly displayed
+* We fixed a bug in the self service migration to Company Roles
+
 ## 2024
+
+### December 1, 2024
+
+#### Improvements
+
+* We expanded the response of our [Projects API](/apidocs-mxsdk/apidocs/projects-api/) to include details on the company owning a particular app.
+
+#### Fixes
+
+* We fixed an issue where revisions on the **Team Server** page would not redirect to stories associated with a commit.
+* We fixed a tiny but annoying issue where the description of a new app would not accept special characters properly.
+
+### November 28, 2024
+
+#### New Features
+
+* In Mini Surveys, now you can [add multiple survey locations](/developerportal/app-insights/mini-surveys/#survey-locations) to your app.
+
+### November 14, 2024
+
+#### Improvements
+
+* We have improved [Mini Surveys](/developerportal/app-insights/mini-surveys/) as follows:
+    * Mini Surveys now features an updated onboarding flow that guides you step by step through the installation process.
+    * You no longer need to restart your application to switch surveys, as we have changed the module to use the survey location instead of linking it to a survey ID. 
+    * We have simplified the process of creating a new survey by introducing a wizard that walks you through each step.
+
+### November 7, 2024
+
+#### New features
+
+* We made it possible for you to [integrate your portfolio with Jira](/developerportal/portfolio-management/integrate-with-jira/)! This means now you can link Jira projects to your portfolio, assign Jira epics from these Jira projects to portfolio initiatives, and also track their progress. We offer this functionality as a beta version and welcome your feedback!
+
+### November 3, 2024
+
+#### New features
+
+* We have added two more endpoints to [Projects API](/apidocs-mxsdk/apidocs/projects-api/) to help you manage your project roles. More are on their way!
+
+### October 27, 2024
+
+#### Fixes
+
+* We have resolved an issue that was causing duplicate email notifications to be sent after the completion of the migration to Git.
+* We have resolved an issue that prevented teams from modifying their roles after migrating to the centralized company roles.
+
+### October 17, 2024
+
+#### New features
+
+* If you are new to the [Portfolio Management](/developerportal/portfolio-management/initiatives-overview/) tool, you can find a demo portfolio in the **My Portfolios** section. This demo serves as a playground for you to experiment with all the features of a portfolio. However, you will not be able to invite users or change the portfolio’s settings.
+
+#### Improvements
+
+* In [Portfolio Management](/developerportal/portfolio-management/initiatives-overview/), we replaced the introduction page for new users with a more streamlined introduction banner.
 
 ### September 29, 2024
 
 #### Improvements
 
-* We centralized the management of team project roles in Control Center. This improves access governance across all Mendix projects and streamlines the setup process for app access. You can [migrate your project roles](/control-center/roles-and-permissions/#migrate-centralized-roles) to the centralized company-level project roles to benefit from this improvement. We expect you to complete the migration by January 1, 2025.
+* We centralized the management of team project roles in Control Center. This improves access governance across all Mendix projects and streamlines the setup process for app access. You can migrate your project roles to the centralized company-level project roles to benefit from this improvement. We expect you to complete the migration by January 1, 2025.
 * We made it possible for you to add external team members to your app via the [Projects API](https://docs.mendix.com/apidocs-mxsdk/apidocs/projects-api/). This mimics the functionality that is already in place through the user interface.
 
 #### Fixes
@@ -145,8 +297,8 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 #### Improvements
 
 * In Feedback, we have fixed an issue where the reporter's name appeared empty on the **Contact Reporter** tab. Now if there is no reporter's name available, their email address will be shown instead.
-* We released the following improvements for [Mini survey](/developerportal/app-insights/mini-surveys/):
-    * We improved your experience of copying the generated API key by implementing a new widget on the [Settings](/developerportal/app-insights/mini-surveys/#settings) tab of the **Survey Overview** page.
+* We released the following improvements for [Mini surveys](/developerportal/app-insights/mini-surveys/):
+    * We improved your experience of copying the generated API key by implementing a new widget on the **Settings** tab of the **Survey Overview** page.
     * We improved our error messages by providing more details.
 
 ### March 28, 2024
@@ -189,7 +341,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 #### Fixes
 
-* We fixed a bug where the sidepanel would flicker upon loading either [Mini survey](/developerportal/app-insights/mini-surveys/) or [Feedback](/developerportal/app-insights/feedback/).
+* We fixed a bug where the sidepanel would flicker upon loading either [Mini Surveys](/developerportal/app-insights/mini-surveys/) or [Feedback](/developerportal/app-insights/feedback/).
 * In Feedback, creating, archiving, and deleting feedback items should now show the correct pages.
 
 ### February 8, 2024
@@ -241,7 +393,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 #### Improvements
 
-* [Epics](/developerportal/project-management/epics/), our new agile planning tool has [replaced Mendix Stories](#stories-deprecation). We have added the option to export data from the [Story Archive](/developerportal/collaborate/general-settings/#story-archive) in batches, for those of you who had a lot of stories to export.
+* [Epics](/developerportal/project-management/epics/), our new agile planning tool has [replaced Mendix Stories](#stories-deprecation). We have added the option to export data from the Story Archive in batches, for those of you who had a lot of stories to export.
 
   You will need to export everything you want to keep before 1 October, 2024. After that, old data will be deleted.
 
@@ -324,7 +476,7 @@ We have made the following improvements to the **Access Management** page in Por
 
 #### Fixes
 
-* We fixed an issue where under certain circumstances some attributes were not exposed in the [Feedback API](/apidocs-mxsdk/apidocs/feedback-api/).
+* We fixed an issue where under certain circumstances some attributes were not exposed in the Feedback API.
 
 ### October 26, 2023
 
@@ -351,7 +503,7 @@ We have made the following improvements to the **Access Management** page in Por
 
 #### Improvements
 
-* We improved the Sprint filter in [Story Archive](/developerportal/collaborate/general-settings/#story-archive) so that you can now type the Sprint name in a text box.
+* We improved the Sprint filter in Story Archive so that you can now type the Sprint name in a text box.
 
 #### Fixes
 
@@ -505,7 +657,7 @@ We have made the following improvements to the **Access Management** page in Por
 
 #### New Features
 
-* With both Epics and Jira connector as new options to plan your work, we are getting ready to say goodbye to Mendix Stories on October 1, 2023. As of today, once you switch to [Epics](/developerportal/project-management/epics/) or [Jira](/developerportal/project-management/jira-connector/), we will [archive all your work in Mendix Stories](/developerportal/collaborate/general-settings/#story-archive) and you will not be able to switch back to Mendix Stories anymore. The Scrum Master of your team can choose the right project management tool for you on the [Project Management](/developerportal/collaborate/general-settings/#project-management) tab on the **General Settings** page.
+* With both Epics and Jira connector as new options to plan your work, we are getting ready to say goodbye to Mendix Stories on October 1, 2023. As of today, once you switch to [Epics](/developerportal/project-management/epics/) or [Jira](/developerportal/project-management/jira-connector/), we will archive all your work in Mendix Stories and you will not be able to switch back to Mendix Stories anymore. The Scrum Master of your team can choose the right project management tool for you on the [Project Management](/developerportal/collaborate/general-settings/#project-management) tab on the **General Settings** page.
 * To highlight the story tool you choose for your app, we gave it its own section in the navigation, called [Project Management](/developerportal/project-management/).
 * With these changes, navigation in Epics works a bit differently than before: the navigation items are on a pane on the left now instead of at the top, so it is easier for you to get from one part of the Developer Portal to another. (If you need more space on the screen, you can always collapse the navigation pane.)
 * Speaking of Epics, we have released the new public API. You can find all the information in our [documentation](/apidocs-mxsdk/apidocs/epics-api/).
@@ -834,7 +986,7 @@ We have made the following improvements to the **Access Management** page in Por
 
 #### Fixes
 
-* We introduced improvements in the performance of the [Feedback API](/apidocs-mxsdk/apidocs/feedback-api/).
+* We introduced improvements in the performance of the Feedback API.
 
 #### New Features
 
@@ -936,7 +1088,7 @@ We have made the following improvements to the **Access Management** page in Por
 #### Improvements
 
 * The arrival of [Git support](/refguide9/branch-line-manager-dialog/#byo-server-app) means that a new version of the [Platform SDK](/apidocs-mxsdk/mxsdk/) is in order. We made some changes to the Developer Portal to accommodate this new version, which is currently being tested and will be published soon.
-* We introduced a new version of the [Feedback API](/apidocs-mxsdk/apidocs/feedback-api/) that will be used by a new generation of [Feedback widgets](/appstore/modules/mendix-feedback/) coming to the Marketplace soon.
+* We introduced a new version of the Feedback API that will be used by a new generation of [Feedback widgets](/appstore/modules/mendix-feedback/) coming to the Marketplace soon.
 * Until now, you were not able to delete or deactivate an app if it was still deployed to an environment, regardless of whether it was a licensed environment or a sandbox for a Free App. We changed this behavior so that the only check is on whether the environment is licensed. A consequence of this change is that the cloud icon on the app tiles on the [My Apps](/developerportal/#my-apps) page is only displayed if your app is deployed to a licensed node.
 
 ### November 4, 2021
@@ -1038,7 +1190,7 @@ We have made the following improvements to the **Access Management** page in Por
 * You can now assign team members to a user story.
 * We moved the old version of the Stories UI. You can now access it via the **More** button on the **Stories** page.
 * We removed the **Team** read-only overview page and send you straight to the [Manage Team](/developerportal/general/team/#managing) page.
-* We moved the **API Keys** page to the [General Settings](/developerportal/collaborate/general-settings/#general-settings-api-keys) page.
+* We moved the **API Keys** page to the **General Settings** page.
 * We implemented a new responsive search panel.
 * We will remove the **Burndown Chart** and **Release Plan** tabs from the Developer Portal on August 31, 2021.
 
@@ -1188,7 +1340,7 @@ We have made the following improvements to the **Access Management** page in Por
 
 #### Fixes
 
-* We fixed an issue where newly-added Company Admins did not get access to edit [user groups](/appstore/overview/#content-groups) in the Marketplace.
+* We fixed an issue where newly-added Company Admins did not get access to edit [user groups](/appstore/home-page/#content-groups) in the Marketplace.
 
 ## 2020
 

@@ -468,7 +468,7 @@ There are four main types of events that can be picked up on the Viewer widget, 
 
 #### On Selection Change {#on-selection-change}
 
-By selecting one attribute to set **Selection**, you can get information on the selected part (for this you might need to work with Viewer APIs; if you have inquiries on how to use the Viewer APIs, please contact [Mendix Support](https://support.mendix.com/)).
+By selecting one attribute to set **Selection**, you can get information on the selected part (for this you might need to work with Viewer APIs; if you have inquiries on how to use the Viewer APIs, please contact [Siemens Support](https://support.sw.siemens.com/en-US/)).
 
 **Selection** takes a String attribute. You can define an attribute and bind that attribute to Selection property. In a running app, when user select on a model part, the selection event will be triggered, and the selected part info will be populated to this Selection attribute. You can easily get this selected object information (psid and viewer)and use it in the actions. 
 
@@ -589,16 +589,6 @@ The sections below describe these tools.
 
 * **Delete** – select one measurement result, then click **Delete** and the selected measurement result will be removed from the scene
 * **Clear** – clear all the measurement results in the scene
-
-### Checking Statistics on the Usage Dashboard {#check-usage}
-
-The **Usage Dashboard** shows the real-time statistics about the usage of an app service. Perform the following steps to check the real-time statistics:
-
-1. Log into the Marketplace.
-2. Go to the Marketplace home page.
-3. On the left navigation menu, click [Company Subscriptions](https://marketplace.mendix.com/link/company/subscriptions). This page gives an overview of all the subscriptions of your organization.
-4. Find **3D Viewer** in the list.
-5. Click **Usage Dashboard** to show the usage details.
 
 ### Setting Preferences {#set-preferences}
 

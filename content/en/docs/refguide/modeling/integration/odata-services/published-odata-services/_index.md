@@ -56,10 +56,6 @@ The URL prefixes `api-doc/`, `xas/`, `p/`, and `reload/` are reserved and cannot
 
 ### Supports GraphQL {#supports-graphql}
 
-{{% alert color="info" %}}
-GraphQL support was introduced in [Studio Pro 10.14.0](/releasenotes/studio-pro/10.14/).
-{{% /alert %}}
-
 Default: **No**
 
 Choose **Yes** to publish the entities in a GraphQL service. This allows clients to send GraphQL `POST` requests to the location of the service. The service responds with the requested entity data in JSON format. This option is available when the [GraphQL feature](/refguide/preferences-dialog/#graphql) is enabled or when the value is **Yes**.
@@ -197,11 +193,11 @@ xmlHttp.send(null);
 
 ##### Custom {#authentication-microflow}
 
-Specify which microflow to use for custom authentication.
+Specify which microflow to use for custom authentication. The microflow may take the following as a parameter:
 
-The microflow may take an [HttpRequest](/refguide/http-request-and-response-entities/#http-request) as a parameter, so it can inspect the incoming request.
-
-The microflow may also take an [HttpResponse](/refguide/http-request-and-response-entities/#http-response) as a parameter. When the microflow sets the status code of this response to something other then **200**, this value is returned and the operation will not be executed. Any headers set on the response are returned (except when the microflow returns an empty user).
+* A list of [HttpHeader](/refguide/http-request-and-response-entities/#http-header). These are the HTTP headers in the client's request. Use this parameter for authentication schemes that are based on HTTP headers.
+* [HttpRequest](/refguide/http-request-and-response-entities/#http-request). Use this parameter for authentication schemes that are based on more than just the HTTP headers (for example, when the client supplies credentials in the request body). You cannot use this parameter together with a list of HttpHeader. Instead, use a [retrieve activity](/refguide/retrieve/) to retrieve the associated request headers.
+* [HttpResponse](/refguide/http-request-and-response-entities/#http-response). When the microflow sets the status code of this response to something other then **200**, this value is returned and the operation will not be executed. Any headers set on the response are returned (except when the microflow returns an empty user).
 
 The authentication microflow should return a User.
 

@@ -25,6 +25,7 @@ A configuration contains the following:
 * [Server tab](#server)
 * [Constants tab](#constants)
 * [Custom tab](#custom)
+* [Headers tab](#headers)
 
 ### Database {#database}
 
@@ -61,21 +62,33 @@ The choice between a **Shared** value or a **Private** value determines where St
 * Choose **Shared** to store the value as part of the app. That means that when you commit/push your changes, you share the value with everyone that has access to the app's repository.
 * Choose **Private** to store the value on your local machine. The value will be encrypted so that only your user account can read it. Other users will have to specify their own value for this constant.
 
-{{% alert color="info" %}}
-Private configuration values are available in Studio Pro 10.9.0 and above. In versions below 10.9.0, all configuration values are shared.
-{{% /alert %}}
-
 ### Custom {#custom}
 
 You can use custom server settings to configure the Runtime beyond the standard possibilities offered by Studio Pro.
 
 {{% alert color="warning" %}}
-Only use this functionality if you know exactly what you are doing. Wrong values can prevent the Runtime from starting.
+Only use this functionality if you know what you are doing. Wrong values can prevent the Mendix Runtime from starting.
 {{% /alert %}}
 
 Each custom setting consists of a name and a value. For example, to set the hash algorithm to BCRYPT you add a custom setting with name `HashAlgorithm` and value `BCRYPT`.
 
 For settings overview, see [Runtime Customization](/refguide/custom-settings/).
+
+### Headers {#headers}
+
+You can specify custom headers that will be applied to responses coming from the Mendix Runtime. 
+
+{{% alert color="warning" %}}
+Only use this functionality if you know what you are doing. Wrong values can stop the application from working correctly.
+{{% /alert %}}
+
+Each header consists of a name and a value. By default, when configuring a custom header it can be selected from the dropdown menu. A custom header can be specified by selecting the **Custom...** option in the dropdown menu. In most cases the header will be returned for all responses from the Mendix Runtime.
+
+#### Special headers
+
+The following headers are considered special and are handled a bit differently from other custom headers.
+
+* `Content-Security-Policy`, this is only returned for HTML responses and responses for which it is added using `response.addContentSecurityPolicyHeader()`. Additionally, a `{{ NONCE }}` template variable can be used, which be replaced when the response is sent back by the value returned from `response.getNonce`.
 
 ## An Example
 

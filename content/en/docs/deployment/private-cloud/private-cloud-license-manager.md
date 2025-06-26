@@ -4,10 +4,13 @@ linktitle: "PCLM – License Manager"
 url: /developerportal/deploy/private-cloud/private-cloud-license-manager/
 description: "Describes setting up a license server and applying licenses to your Mendix app namespaces in private cloud"
 weight: 47
+beta: true
 ---
 
 {{% alert color="warning" %}}
 Private Cloud License Manager is currently in beta. For more information, see [Beta Releases](/releasenotes/beta-features/).
+
+Mendix highly recommends that you upgrade to the latest available version to ensure that all apps get a valid, non-expired license. Newer versions contain bugfixes and improvements.
 {{% /alert %}}
 
 ## Introduction
@@ -57,6 +60,9 @@ Use the following command:
 ```bash
 mx-pclm-cli installer-gen --db-type <db-type> \
     --db-hostname <hostname> \
+    --db-auth-mode <authenticationMode> \
+    --db-aws-iam-role <aws-iam-role> \
+    --db-azure-client-id <azure-client-id> \
     --db-name <db-name> \
     --db-user <db-user> \
     --db-password <db-pass> \
@@ -72,6 +78,9 @@ Where you need to supply the following parameters
 
 * `<db-type>` – the sort of database, either `postgres` *(default)* or `sqlserver`
 * `<hostname>` – the hostname of the database service
+* `<authMode>` – authentication mode of the database, `aws-irsa` or `azure-wi` or `static` *(default)* 
+* `<azure-client-id>` – azure client id when authMode is set to `azure-wi`
+* `<aws-iam-role>` – aws iam role when authMode is set to `aws-irsa`  
 * `<db-name>` – the name of the database where you want to hold the PCLM data
 * `<db-user>` – a database user with the rights described in the prerequisites section
 * `<db-pass>` – the password for the database user
@@ -79,8 +88,18 @@ Where you need to supply the following parameters
 * `<tls-boolean>` – whether the database uses strict TLS, `true` or `false` *(default)*
 * `<ssl-root-certificate>` – the location of the SSL Root certificate file, if `<tls-boolean>` is `true`
 * `<docker-repo>` – location of the image repo, default: `private-cloud.registry.mendix.com/privatecloud-license-manager`
-* `<docker-tag>` – the docker image tag, default: `0.4.0`
+* `<docker-tag>` – the docker image tag, default: `0.10.0`
 * `<out-file>` – the name of the file where the yaml is written, for example `manifest.yaml`
+
+### Authentication mode
+
+By default, static credentials are used for authentication, meaning that if `--db-auth-mode` is not specified, you must provide `--db-password`. For enhanced security, AWS providers can use Postgres IAM authentication, while Azure providers can use Postgres managed identity authentication. When the authentication mode is set to `aws-irsa`, you need to specify `--db-aws-iam-role`, and the `--db-password` is no longer required. Similarly, for `azure-wi`, `--db-azure-client-id` must be provided, and `--db-password` is not necessary.
+
+To set up Postgres with IAM authentication, refer to the [Prerequisites](/developerportal/deploy/private-cloud-storage-plans/#prerequisites-1) for configuring the server. For instructions on configuring the database, see [Private Cloud Storage Plans: RDS Database](/developerportal/deploy/private-cloud-storage-plans/#rds-database).
+
+For setting up Postgres with Azure workload identity, follow the guide in [Azure azwi Postgres setup](/developerportal/deploy/private-cloud-storage-plans/#database-postgres-azwi).
+
+To configure an SQL Server, refer to the [Azure azwi SQL setup](/developerportal/deploy/private-cloud-storage-plans/#walkthrough-azure-azwi).
 
 ### Applying the Manifest
 
@@ -364,7 +383,7 @@ mx-pclm-cli config-namespace -n <operator-ns> \
 The default secret name is `mendix-operator-pclm`. If PCLM was previously configured manually, the existing secret name is used.
 
 {{% alert color="info" %}}
-For Global Operator installation, execute the above command in both the Global Operator namespace and its managed namespaces where the license is intended to be applied. Please make certain that identical PCLM license details are configured for both the managed and global operator namespaces to avoid unexpected outcomes. Global Operator is still in beta, and it does not currently fully supports PCLM.
+For Global Operator installation, execute the above command in both the Global Operator namespace and its managed namespaces where the license is intended to be applied. Please make certain that identical PCLM license details are configured for both the managed and global operator namespaces to avoid unexpected outcomes.
 {{% /alert %}}
 
 #### Sample Yaml Files
@@ -536,6 +555,18 @@ This will indicate that licenses have been applied to the operator and apps in t
 | ------------------------------------ | ---------- | -------- | ----------- |
 | `<license-id>` | `<namepace>` | `<app-ID>` | mx-operator |
 | `<license-id>` | `<namepace>` | `<app-ID>` | mx-runtime  |
+
+## Upgrade PCLM Server
+
+To upgrade the PCLM server, update the image tag in the PCLM server deployment and restart it.
+
+It is also possible to upgrade the PCLM server using following command:
+
+```bash
+mx-pclm-cli server-upgrade \
+    -d <pclm-deployment-name> \
+    -n <pclm-server-namespace>
+```
 
 ## Troubleshooting
 

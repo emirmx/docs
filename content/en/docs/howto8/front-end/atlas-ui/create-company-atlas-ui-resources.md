@@ -4,6 +4,10 @@ url: /howto8/front-end/create-company-atlas-ui-resources/
 weight: 30
 ---
 
+{{% alert color="info" %}}
+The Atlas UI Resources module is deprecated, as is Atlas 2. If you are still using Atlas 2, Mendix recommends that you [migrate from Atlas 2 To Atlas 3](/refguide9/moving-from-atlas-2-to-3/).
+{{% /alert %}}
+
 ## Introduction
 
 Creating Atlas UI resources for your company is a great way to keep your company's apps in sync with your company brand. It’s easier to scale and manage apps throughout your app landscape when all the resources are neatly organized in a single module. 

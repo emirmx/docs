@@ -14,14 +14,133 @@ There are separate release notes for other deployment targets; for more informat
 
 For information on the current status of deployment to Mendix Cloud and any planned releases, see [Mendix Status](https://status.mendix.com/).
 
+## 2025
+
+### June 12, 2025
+
+#### New Features
+
+* We have added a new beta feature in the [environment UI](/developerportal/deploy/environments/). This feature allows Technical Contacts to [change app's environment plan](/developerportal/deploy/change-plan/) to a higher-resource plan.
+    * Additionally, a new tab ([Request Overview](/developerportal/deploy/environments/#request-overview)) has been introduced where Technical Contacts can view and manage plan change requests and track the status of their pending requests awaiting a Mendix Admin review from the [Control Center](/control-center/approval-requests/).
+
+### May 25, 2025
+
+#### New Features
+
+* We have added a new warning message about required overhead (database disk space) before starting a backup restore.
+  
+#### Improvements
+
+* We have updated the validation rules for creating custom domain names. Instead of 53 characters limit, it is now set to 63 characters limit in compliance with DNS standards.
+* Old UI is deprecated and will be removed on June 1. Users will automatically be switched to the new UI if not already done before.
+
+#### Bug Fixes
+
+* We fixed a bug where user got an error while opening the permissions tab for production environment (Ticket 241675).
+
+#### Temporary Deprecations
+
+* Basic plan offering is being temporarily paused.
+
+### April 17, 2025
+
+#### Improvements
+
+* We have added new environment variables which allow you to control the buffer size and buffer memory for the Fluentbit agent for Splunk and New Relic.
+
+### February 27, 2025
+
+#### Improvements
+
+* We have added a validation mechanism for pipeline designs, which prevents users from deleting a design if any pipelines using that design are currently running. For more information, see [Pipelines: Editing a Pipeline Design](/developerportal/deploy/pipelines/#edit-pipeline). 
+* You can now access the **Details** page of a pipeline at any point, also while the pipeline is running. For more information, see [Pipelines: Run Results](/developerportal/deploy/pipelines/#run-results).
+
+### February 20, 2025
+
+#### Improvements
+
+* We have updated the custom JMX metrics prefix from `jmx` to `mx`. This change ensures that these metrics are not indexed as `custom metrics` in Datadog.
+
+### February 2, 2025
+
+#### New Features
+
+* We have added a number of new features which are all available as part of the [new UI](/developerportal/deploy/environments/). These are:
+
+    * Redesigned the **Environment Details** page to improve functionality and enhance the user experience.
+    * Added staging support for apps in the deploy wizard.
+    * Added the ability to compare and edit model options across environments.
+    * Redesigned the **Environments** page for Free Apps.
+
+#### Improvements
+
+* Based on user feedback, the [new UI](/developerportal/deploy/environments/) now also contains UX improvements to the **Environments Overview** page for paid apps.
+
 ## 2024
+
+### December 12, 2024
+
+#### Improvements
+
+* We improved the layout and display of the Alerts page. The new layout allows sorting and filtering of alerts based on the severity and date together with a free text search. 
+* You can now subscribe to alerts emails in the settings tab. For more information, see [Alerts](/developerportal/operate/monitoring-application-health/).
+
+### December 5, 2024
+
+#### Improvements
+
+* We introduced cloud tokens for your cloud resource pack purchases! Starting now, you will use [cloud tokens](/control-center/cloud-tokens/#cloud-tokens) instead of cloud credits to complete your cloud resource purchases. With the transitioning from cloud credits to cloud tokens, Mendix is paving the way for a more streamlined and flexible approach to purchasing and switching between Mendix Cloud products.
+
+### December 1, 2024
+
+#### API Retirement
+
+* We retired the Team Server API. You will now have to use the [App Repository API](/apidocs-mxsdk/apidocs/app-repository-api/) instead.
+
+### November 29, 2024
+
+#### New Features
+
+* We enhanced Software Composition to include marketplace-related metadata. You can now view this additional information on both the [All Components](/developerportal/deploy/software-composition/#all-components) tab and the [Company Summary](/developerportal/deploy/software-composition/#component-summary) page for a more comprehensive overview of your components.
+
+### November 17, 2024
+
+#### Deployment Portal Fixes
+
+* We fixed a bug in the [Permissions tab of the legacy UI](/developerportal/deploy/environments/#permissions-tab), where changing an application's technical contact resulted in a blank page.
+* We fixed a bug in the [new UI](/developerportal/deploy/environments/), where the **scalable** tag was displayed for environments that were not scalable.
+* We fixed a number of other bugs related to dark mode.
+
+### November 14, 2024
+
+#### Pipelines New Features
+
+* We added a new **Variables** tab that allows you to create user-defined pipeline variables. For more information, see [The Variables Tab](/developerportal/deploy/pipelines/#variable-tab) in the *Pipelines* documentation.
+* We added a new pipeline step: [Unit Testing](/developerportal/deploy/pipelines/#unit-testing). This step executes the Unit Testing module in a running environment to perform a regression testing and marks the pipeline as failed if any tests fail, providing the failure count and details.
+
+### November 6, 2024
+
+#### New Features
+
+* Cloud permissions are now included in project roles.
+* You can now manage all project roles centrally, on a company level, if you have switched to using company-level roles.
+
+#### Improvements
+
+* We have made improvements to the [permissions tab](/developerportal/deploy/node-permissions/#permissions-tab). The **Receive alerts** permission has also been removed from the permissions tab. You can subscribe to alerts using the **Email Alerts** option on the **Alerts** page.
+
+### October 17, 2024
+
+#### Improvements
+
+* We have made performance improvements to [Software Composition](/developerportal/deploy/software-composition/). Software Bills of Materials (SBOMs) generated automatically upon the creation of deployment packages now show up on the **Software Composition** page within minutes.
 
 ### September 19, 2024
 
 #### Pipelines New Features
 
 * We released an API that lets you start a new pipeline run for a saved and activated pipeline design and retrieve the status of a pipeline run. For more information, see [Pipelines API](/apidocs-mxsdk/apidocs/pipelines-api/).
-* We added a new pipeline step: Best Practice Recommender Check. This step lets you evaluate results of the Maia Best Practice Recommender within your pipeline.
+* We added a new pipeline step: [Best Practice Recommender](/developerportal/deploy/pipelines/#recommender) Check. This step lets you evaluate results of the Maia Best Practice Recommender within your pipeline.
 
 ### September 5, 2024
 
@@ -770,7 +889,7 @@ In connected environments, this usage information will be sent back to Mendix au
 
 ### March 3, 2021
 
-* We updated the [deploy API](/apidocs-mxsdk/apidocs/deploy-api/), [Build API](/apidocs-mxsdk/apidocs/build-api/), [Team Server API](/apidocs-mxsdk/apidocs/team-server-api/), [Backups API v2](/apidocs-mxsdk/apidocs/backups-api/), and [Backups API v1](/apidocs-mxsdk/apidocs/backups-api-v1/) to:
+* We updated the [deploy API](/apidocs-mxsdk/apidocs/deploy-api/), [Build API](/apidocs-mxsdk/apidocs/build-api/), Team Server API, [Backups API v2](/apidocs-mxsdk/apidocs/backups-api/), and [Backups API v1](/apidocs-mxsdk/apidocs/backups-api-v1/) to:
     * add json validation
     * add stricter API path validation (for example, a trailing `/` on the API path will result in `API not found`)
     * return differently formatted error messages for unhandled or unexpected errors
@@ -946,7 +1065,7 @@ SSL/TLS ciphers that are still supported for HTTPS connections after December 1,
 
 #### Fixes
 
-* We fixed an issue where some customers were unable to manually add certificates to [access restriction profiles](/developerportal/deploy/environments/#asp). (Ticket 102615)
+* We fixed an issue where some customers were unable to manually add certificates to [access restriction profiles](/developerportal/deploy/environments/#access-restriction-profiles). (Ticket 102615)
 
 ### August 7, 2020
 

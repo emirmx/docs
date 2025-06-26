@@ -17,10 +17,14 @@ This document is about [Private Cloud](/developerportal/deploy/private-cloud/) A
 The Mendix for Private Cloud Deploy API allows you to manage application environments deployed to your private cloud using the Mendix Operator. You can use the API to do the following:
 
 * Download the configuration tool, mxpc-cli, for your operating system
+* Get the manifest file of one or more clusters
+* Get the manifest file of one or more namespaces 
 * Create, update, or delete a cluster
 * Create, update, or delete a namespace
+* Get the manifest file of one or more environments
 * Create or delete an environment
 * Update an environment and deploy and manage an app in an environment through changes to the environment manifest
+* Get the manifest file of one or more applications
 
 {{% alert color="info" %}}
 The Mendix for Private Cloud Deploy API is for connected private cloud clusters only.
@@ -53,25 +57,26 @@ Store the `{GENERATED_PAT}` value in a safe location, so you can use it to autho
 
 #### Scopes Explanation
 
-| Operation                   | Scopes                                           |
-|-----------------------------|-------------------------------------------------|
-| Get namespace manifest      | `mx:deployment:read`  or `mx:deployment:write`    |
-| Get namespaces manifest     | `mx:deployment:read`  or `mx:deployment:write`    |
-| Get cluster manifest        | `mx:deployment:read`  or `mx:deployment:write`    |
-| Get clusters manifest       | `mx:deployment:read`  or `mx:deployment:write`    |
-| Create cluster              | `mx:deployment:write`                            |
-| Update cluster              | `mx:deployment:write`                            |
-| Delete cluster              | `mx:deployment:write`                            |
-| Create namespace            | `mx:deployment:write`                            |
-| Update namespace            | `mx:deployment:write`                            |
-| Delete namespace            | `mx:deployment:write`                            |
-| Get environment manifest    | `mx:deployment:read`  or `mx:deployment:write`    |
-| Create environment          | `mx:deployment:write`                            |
-| Update environment          | `mx:deployment:write`                           |
-| Delete environment          | `mx:deployment:write`                           |
-| Get Apps manifest           | `mx:deployment:write` and `mx:app:metadata:read`|                        
-| Get App manifest.           | `mx:deployment:write` and `mx:app:metadata:read`|                              
-| Get Job                     | `mx:deployment:read`  and `mx:deployment:write`    |
+| Operation                        | Scopes                                           |
+|----------------------------------|------------------------------------------------- |
+| Get namespace manifest           | `mx:deployment:read`  or `mx:deployment:write`   |
+| Get namespaces manifest          | `mx:deployment:read`  or `mx:deployment:write`   |
+| Get cluster manifest             | `mx:deployment:read`  or `mx:deployment:write`   |
+| Get clusters manifest            | `mx:deployment:read`  or `mx:deployment:write`   |
+| Create cluster                   | `mx:deployment:write`                            |
+| Update cluster                   | `mx:deployment:write`                            |
+| Delete cluster                   | `mx:deployment:write`                            |
+| Create namespace                 | `mx:deployment:write`                            |
+| Update namespace                 | `mx:deployment:write`                            |
+| Delete namespace                 | `mx:deployment:write`                            |
+| Get environment manifest         | `mx:deployment:read`  or `mx:deployment:write`   |
+| Get multiple environment manifest| `mx:deployment:read`  or `mx:deployment:write`   |                         
+| Create environment               | `mx:deployment:write`                            |
+| Update environment               | `mx:deployment:write`                            |
+| Delete environment               | `mx:deployment:write`                            |
+| Get apps manifest                | `mx:deployment:write` and `mx:app:metadata:read` |                        
+| Get app manifest                | `mx:deployment:write` and `mx:app:metadata:read` |                              
+| Get job                          | `mx:deployment:read`  and `mx:deployment:write`  |
 
 #### Using the PAT
 
@@ -97,7 +102,7 @@ The API does not generate unique UUIDs for the resources. You must generate your
 
 The following sections of this document contain sample usage scenarios for the API.
 
-### Using the API to Update the Cluster and Namespace
+### Using the API to Update the Cluster and Namespace {#update-cluster}
 
 The following steps will create a cluster, register and install a namespace, add or update a cluster member, and enable development mode for the namespace.
 
@@ -118,6 +123,21 @@ The following steps will create a cluster, register and install a namespace, add
 
 {{% alert color="info" %}}
 If required, the invitation for the cluster/namespace member can be auto-accepted by setting `autoAcceptInvite` to true in the update cluster/namespace API request.
+{{% /alert %}}
+
+### Using the API to Assign a Custom Role to the Namespace Member {#assign-custom-role}
+
+Perform the following steps to create a cluster, register and install a namespace, add a custom role in the Cluster Overview page in the portal, and assign the role to the namespace member:
+
+1. Set up your authentication PAT.
+2. Prepare the manifest for both your new cluster and namespace.
+3. Configure the namespace by following steps 8-11 of [Using the API to Update the Cluster and Namespace](#update-cluster).
+4. Create a custom role in the Cluster Overview page in the portal. This role must be created only on the Portal side.
+5. Make a POST `/clusters/{namespaceId}` API call to assign the role that you created in step 4 to the namespace member.
+    You can obtain the manifest for this update request through GET `/clusters/{namespaceId}`. When updating the namespace, only the role needs to be specified for the namespace member, as the fine-grained permissions are already included in the role created in step 4.
+
+{{% alert color="info" %}}
+If required, the invitation for the cluster or namespace member can be auto-accepted by setting `autoAcceptInvite` to true in the update cluster or namespace API request.
 {{% /alert %}}
 
 ### Using the API to Restart an App {#restart}
@@ -162,6 +182,10 @@ The following steps will create a cluster, create a namespace, and create an env
 
 {{% alert color="info" %}}
 Please note that there is a limited support for Custom permissions in Deploy APIs.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+In order to create or manage environments in a namespace through an API, the technical contact must have a role assigned to the namespace permissions.
 {{% /alert %}}
 
 ## API Reference

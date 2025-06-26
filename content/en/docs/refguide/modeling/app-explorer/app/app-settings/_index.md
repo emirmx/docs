@@ -26,12 +26,14 @@ For more information on settings in a configuration, see [Configuration](/refgui
 
 These settings influence the behavior of the Runtime when running your application.
 
-### Use React Client (Beta) {#react-client}
+### Use React Client {#react-client}
 
-This setting enables the new React version of the Mendix Client. This React client was released into beta in [Mendix 10.7](/releasenotes/studio-pro/10.7/#react-client). There are three options:
+This setting enables the React version of the Mendix Client. In Mendix 11.0 and above, the React Client is the default for new applications and the legacy Dojo Client is deprecated. 
 
-* **No**: Do not use the React client (default).
-* **Yes**: Use the React client. In this mode, you will get consistency errors for incompatible widgets.
+The available configuration options are as follows:
+
+* **No**: Do not use the React client. This option will trigger a deprecation warning, as the Dojo client is deprecated.
+* **Yes**: Use the React client (default). In this mode, you will get consistency errors for incompatible widgets.
 * **Migration mode**: Use the React client and ignore incompatible widgets. Placeholders are displayed in the case of incompatible widgets. Recommended when trying out the new client.
 
 ### Static Resources from Disk
@@ -70,12 +72,10 @@ If the URL prefix breaks any of the rules mentioned above, then you will get a c
 
 ### Java Version{#java-version}
 
-Here you can select which Java version to use for you application.
+Here you can select which Java version to use for you application. For information on how the Java version can influence the behavior of an application, see [Java Version Migration](/refguide/java-version-migration/).
 
 {{% alert color="info" %}}
-
-For Studio Pro versions 10.6.7 and 10.8.0 and above, you can choose Java 17.
-
+For Studio Pro 11, you should choose Java 21.
 {{% /alert %}}
 
 For local development the Java version configured here needs to have a corresponding JDK configured in the [Studio Pro preferences](/refguide/preferences-dialog/#jdk).
@@ -204,6 +204,14 @@ This table presents the results of rounding the input to one digit with the give
 | -2.5 | -3 | -2 |
 | -5.5 | -6 | -6 |
 
+### OQL version 2 {#oql-version-2}
+
+If this option is set to **Yes**, your app will use version 2 of the OQL syntax. This setting must be enabled to use [view entities](/refguide/view-entities/). Make sure your app is ready to use the new syntax before making the switch. 
+
+For more information about the differences, see [OQL Version 2 Features](/refguide/oql-v2/).
+
+Default: *No*
+
 ### Multiple Sessions per User {#multiple-sessions}
 
 If this option is enabled, users can sign in multiple times through different clients (for example, desktop browser and tablet). Otherwise, an existing session for a user is signed out when the user signs in somewhere else.
@@ -224,14 +232,13 @@ Default: *Yes*
 
 If this option is enabled, database [foreign key constraints](/refguide/data-storage/#fkc) will be used. An attempt to commit a dangling reference will throw a runtime exception.
 
-{{% alert color="info" %}}
-This option was added in Mendix version 10.10.
-{{% /alert %}}
+Default: *Yes*
 
-Default: *depends on the version of Mendix used to create the app:*
+### SSL Certificate Algorithm
 
-* *Yes* for apps created with Mendix versions 10.6.0 and above
-* *No* for apps created with Mendix versions below 10.6
+Choose between **PKIX (recommended)** and **SunX509 (for backwards compatibility)** as the Java validator and trust manager. According to [this JDK issue](https://bugs.openjdk.org/browse/JDK-8169745), the PKIX validator/trust manager supports richer extensions and features, and the use of SunX509 is discouraged.
+
+Default: **SunX509 (for backwards compatibility)**
 
 ## Languages Tab {#languages-tab}
 
@@ -394,10 +401,6 @@ A microflow selected for this setting will start every time a user task changes 
 
 ## Dependencies Tab {#deployment}
 
-{{% alert color="info" %}}
-The Deployment tab was renamed to **Dependencies** in Studio Pro 10.12.0.
-{{% /alert %}}
-
 This tab can be used to view the managed dependencies in your app in one place and to manage the dependencies in the userlib directory. It contains three tabbed sections.
 
 ### Overview
@@ -432,14 +435,6 @@ When deploying to the cloud, custom widgets are bundled to optimize client-serve
 
 If this option is set, custom widgets will also be bundled locally. This mimics the production deployment, eliminating risk at the cost of start-up time.
 
-### Suggest Lower-Case Variable Names in Microflows
-
-When enabled, the names that Studio Pro suggests in microflows will start with a lower-case letter instead of an upper-case letter.
-
-### Activity Default Colors
-
-This table allows you to select a default color for each microflow activity type that is available in your app. The selected color will be used as the background color for all microflow activities of that type in your app. It is possible to override this default value for individual activities in the microflow editor. If you change the default color for an activity type, and there are activities of that type present in the app that have an individual background color specified, a dialog will be shown that allows you to apply the new default color to these activities as well.
-
 ### Use Data Grid 2, Combo Box, and Image Widgets for Content Generation{#use-dg-cb-i}
 
 If this setting is enabled, modern widgets like [Data Grid 2](/appstore/modules/data-grid-2/), [Combo Box](/appstore/widgets/combobox/), and [Image](/appstore/widgets/image/) will be used when generating overview pages or the content of data views. Existing generated content remains as is. 
@@ -449,3 +444,28 @@ See the list below for detailed information on which widgets are generated in va
 * A Data Grid 2 module is generated instead of a Data Grid 1 module
 * A combo box is generated instead of a combination of dropdown, reference selector, and input reference set selector widgets
 * An image widget is generated instead of a static image widget and a dynamic image widget
+
+### Default Association Storage
+
+You can decide how associations are stored in the database.
+
+This option allows you to change the default for new associations. The initial defaults will be as follows:
+
+* **New projects** – one-to-many and one-to-one associations are implemented as direct associations
+* **Upgraded projects** – for projects which are upgraded from an older version of Mendix, all new associations continue to be implemented as association tables
+
+For more information, including which types of association this applies to, see [Association Storage Options](/refguide/association-storage/).
+
+### Suggest Lower-Case Variable Names in Microflows
+
+When enabled, the names that Studio Pro suggests in microflows will start with a lower-case letter instead of an upper-case letter.
+
+### Activity Default Colors
+
+This table allows you to select a default color for each microflow activity type that is available in your app. The selected color will be used as the background color for all microflow activities of that type in your app. It is possible to override this default value for individual activities in the microflow editor. If you change the default color for an activity type, and there are activities of that type present in the app that have an individual background color specified, a dialog will be shown that allows you to apply the new default color to these activities as well.
+
+### Automatically Encode Parameter Values in Send REST Request Microflow Activities
+
+You can disable the encoding of the URL parameters for the Send REST Request microflow activity. This allows parameter values to be used as provided.
+
+When enabled, the behavior will be inconsistent with the Consumed REST service.

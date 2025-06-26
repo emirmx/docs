@@ -15,7 +15,7 @@ A layout grid consists of [rows](#rows) and [columns](#columns):
 In a browser, the layout grid is based on the Bootstrap grid system. For more information on the Bootstrap grid system, see the [official Bootstrap documentation](https://getbootstrap.com/css/#grid).
 
 {{% alert color="info" %}}
-Row and column properties described below are available if your app has [Atlas UI Resources](/appstore/modules/atlas-ui-resources/) version 2.4.0 or above. 
+Row and column properties described below are available if your app has [Atlas Core](https://marketplace.mendix.com/link/component/117187) version 3.0 or above. 
 
 For more information on row and column properties, see the [Rows and Their Properties](#rows) and [Columns and Their Properties](#columns) sections. 
 {{% /alert %}}

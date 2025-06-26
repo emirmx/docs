@@ -60,7 +60,7 @@ This is the generic error response format. The payload example format applies to
 
 | Name | Value |
 | --- | --- |
-| Content-Type | `application/json; charset=utf-8` |
+| `Content-Type` | `application/json; charset=utf-8` |
 
 #### Payload
 
@@ -107,7 +107,7 @@ Returns information about the version control repository for a Mendix app.
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|`AppId`|String|Yes|The App ID of the Mendix app for which the repository information should be returned. You can find this in the [General](/developerportal/collaborate/general-settings/) tab of the **Settings** page after you open your app in [Apps](https://sprintr.home.mendix.com/). |
+|`AppId`|String|Yes|The App ID of the Mendix app for which the repository information should be returned. You can find this under **Project ID** in the [General](/developerportal/collaborate/general-settings/) tab of the **Settings** page after you open your app in [Apps](https://sprintr.home.mendix.com/). |
 
 ##### Example
 
@@ -122,7 +122,7 @@ Authorization: MxToken hZUPhAV4ELPrRm7U7JAKf5BnxJk6q7dcsvFdw6ZR4wRYdv7egHjwHEYBw
 
 |Name|Value|
 |---|---|
-|Content-Type|`application/json; charset=utf-8`|
+|`Content-Type`|`application/json; charset=utf-8`|
 
 #### Response Payload
 
@@ -183,7 +183,7 @@ Authorization: MxToken hZUPhAV4ELPrRm7U7JAKf5BnxJk6q7dcsvFdw6ZR4wRYdv7egHjwHEYBw
 
 |Name|Value|
 |---|---|
-|Content-Type|`application/json; charset=utf-8`|
+|`Content-Type`|`application/json; charset=utf-8`|
 
 #### Response Payload
 
@@ -266,7 +266,7 @@ Authorization: MxToken hZUPhAV4ELPrRm7U7JAKf5BnxJk6q7dcsvFdw6ZR4wRYdv7egHjwHEYBw
 
 |Name|Value|
 |---|---|
-|Content-Type|`application/json; charset=utf-8`|
+|`Content-Type`|`application/json; charset=utf-8`|
 
 #### Response Payload {#response-payload}
 
@@ -352,7 +352,7 @@ Authorization: MxToken hZUPhAV4ELPrRm7U7JAKf5BnxJk6q7dcsvFdw6ZR4wRYdv7egHjwHEYBw
 
 |Name|Value|
 |---|---|
-|Content-Type|`application/json; charset=utf-8`|
+|`Content-Type`|`application/json; charset=utf-8`|
 
 #### Response Payload
 

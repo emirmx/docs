@@ -12,9 +12,9 @@ Mendix allows you to change attribute and association types on existing domain m
 
 ### Data Type Change Behavior
 
-If the type of an existing attribute is changed in Mendix Studio Pro, the existing attribute will usually be deleted and a new attribute will be created. For some attribute type changes Mendix tries to convert existing data in the database to the new type.
+If the type of an existing attribute is changed in Mendix Studio Pro, the existing attribute will usually be deleted and a new attribute will be created. For some attribute type changes, Mendix tries to convert existing data in the database to the new type.
 
-If data should NOT be converted to the new type, you must remove the attribute in Studio Pro and create a new column (with the same name). If you change the type and rename the column, Mendix remembers the old column name and will try to convert the column values if possible.
+If data should NOT be converted to the new type, you must remove the attribute in Studio Pro and create a new attribute (with the same name). If you change the type and rename the attribute, Mendix remembers the old attribute name and will try to convert the attribute values if possible.
 
 ### Conversion Table
 
@@ -24,16 +24,16 @@ Key | Means
 --- | ---
 **&#x2713;** | Conversion always possible.
 **\*<sup><small>note</small></sup>** | Conversion is not always possible, or data will be changed during conversion. See related note for more information. If conversion is not possible, the behavior is the same as for "**X**", below.
-**X** | Conversion not possible. The original column will be removed and a new column will be created with default values for the existing rows.
+**X** | Conversion not possible. The original database column will be removed and a new column will be created with default values for the existing rows.
 
 {{< figure src="/attachments/refguide/runtime/data-storage/attributes-type-migration/conversion-table.png" alt="Table of conversions - click to enlarge" class="no-border" >}}
 (*Click the image to enlarge*)
 
 ### Manual Conversion
 
-Even if Mendix cannot convert the values of a specific column to another type, you can still manage that manually. Change the name of the attribute, for example append the text 'Deleted' to its name. Create a new attribute with the same name and the new data type. Look up each occurrence of the old (renamed) attribute in the whole model and change this to the new attribute. Be sure that there is no microflow or page anymore which refers to the old attribute.
+Even if Mendix cannot convert the values of a specific attribute to another type, you can still manage that manually. Change the name of the attribute, for example append the text 'Deleted' to its name. Create a new attribute with the same name and the new data type. Look up each occurrence of the old (renamed) attribute in the whole model and change this to the new attribute. Be sure that there is no microflow or page anymore which refers to the old attribute.
 
-Create a microflow in which you retrieve all instances of the entity, loop through the instances and for each instance, read the value of the old attribute, convert the value, store it in the new attribute and commit the instance. Place a button on an administrator page which calls this microflow.
+Create a microflow in which you retrieve all objects of the entity, loop through the objects and for each object, read the value of the old attribute, convert the value, store it in the new attribute and commit the object. Place a button on an administrator page which calls this microflow.
 
 When you deploy, you have to run this microflow one time, after which you can remove both the microflow and the button pointing to it, and then you can also remove the old attribute.
 

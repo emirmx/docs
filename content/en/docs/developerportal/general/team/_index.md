@@ -19,17 +19,13 @@ To view and manage your team members, follow these steps:
 
 Team members with the [Scrum Master](/developerportal/general/app-roles/#team-roles) role or [Mendix Administrators](/control-center/company-settings/#mendix-admins) can manage the app team.
 
-{{< figure src="/attachments/developerportal/general/team/team.png" class="no-border" >}}
+{{< figure src="/attachments/developerportal/general/team/team.png" >}}
 
 On the **Overview** tab, you can do the following:
 
 * Select a new **Role** for a team member (for details on available roles, see [App Roles](/developerportal/general/app-roles/))
 * Click **Remove** to remove a user from the team
 * Click **Invite New Member** to invite a new user to the team (for more information, see the [Inviting Team Members](#inviting) section below)
-
-Navigate to the **Role Settings** tab to view and edit permissions for the team roles as well as to **Add New Role**:
-
-{{< figure src="/attachments/developerportal/general/team/role-settings.png"   width="400"  class="no-border" >}}
 
 Navigate to the **Pending Invites** tab for an overview of all sent and unaccepted invitations. You can retract pending invitations from there.
 
@@ -45,6 +41,11 @@ To invite new team members, follow these steps:
 4. Send the invitation.
 
 {{% alert color="info" %}}If you invite a Mendix user from your company to an app owned by your company, the invited user is added directly to the app's team.{{% /alert %}}
+
+### External Invitations
+
+You can invite users with email addresses outside of your [company domains](/control-center/company-settings/#company-email-domains), provided your company administrator has allowed this setting. If permitted, the user will receive an email invitation to join the project.    
+For more information, see [Allowing External User Invites to Projects](/control-center/security-settings/#allow-external-users).
 
 ## Read More
 

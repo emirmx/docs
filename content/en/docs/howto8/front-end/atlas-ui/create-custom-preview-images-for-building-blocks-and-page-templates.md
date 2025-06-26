@@ -5,6 +5,10 @@ url: /howto8/front-end/create-custom-preview-images-for-building-blocks-and-page
 weight: 50
 ---
 
+{{% alert color="info" %}}
+The Atlas UI Resources module is deprecated, as is Atlas 2. If you are still using Atlas 2, Mendix recommends that you [migrate from Atlas 2 To Atlas 3](/refguide9/moving-from-atlas-2-to-3/).
+{{% /alert %}}
+
 ## Introduction
 
 To make your custom UI resources easy to browse, you can create custom preview images for your building blocks and page templates. We’ve provided downloadable templates in the *.sketch* and *.psd* formats, which are available on the [Atlas UI site](https://atlas2.mendix.com).

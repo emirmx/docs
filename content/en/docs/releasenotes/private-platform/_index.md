@@ -12,6 +12,14 @@ These release notes cover changes made to the [Private Mendix Platform](/private
 
 Release notes are available for the following versions of Private Mendix Platform:
 
+* [1.22](/releasenotes/private-platform/1-22/)
+* [1.21](/releasenotes/private-platform/1-21/)
+* [1.20](/releasenotes/private-platform/1-20/)
+* [1.19](/releasenotes/private-platform/1-19/)
+* [1.18](/releasenotes/private-platform/1-18/)
+* [1.17](/releasenotes/private-platform/1-17/)
+* [1.16](/releasenotes/private-platform/1-16/)
+* [1.15](/releasenotes/private-platform/1-15/)
 * [1.14](/releasenotes/private-platform/1-14/)
 * [1.13](/releasenotes/private-platform/1-13/)
 * [1.12](/releasenotes/private-platform/1-12/)

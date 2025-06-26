@@ -5,15 +5,9 @@ weight: 50
 description: "Describes how to use the managed dependencies feature in Studio Pro"
 ---
 
-{{% alert color="info" %}}
-This feature was introduced in Mendix 10.3.0.
-{{% /alert %}}
-
 ## Introduction
 
 Mendix Studio Pro allows you to manage your Java dependencies. By specifying Java dependencies and their versions per module, Studio Pro can automatically download them and resolve conflicts by leveraging Gradle.
-
-In versions of Mendix below 10.3.0, Java dependencies were put into the `userlib` folder manually. This process has been simplified using managed dependencies, although the `userlib` folder can still be used for custom `.jar`s. For more information see [Unmanaged Dependencies](#unmanaged), below.
 
 ## Adding or Updating Managed Dependencies{#add-dependency}
 
@@ -44,10 +38,6 @@ After finding the package of your choice, locate the Snippets part, containing t
 {{< figure src="/attachments/refguide/java-programming/managed-dependencies/junit-notation-example.png" class="no-border" >}}
 
 ## Adding or Updating Exclusions
-
-{{% alert color="info" %}}
-Exclusions are available in Studio Pro version 10.12.0 and above.
-{{% /alert %}}
 
 Transitive (or indirect) dependencies of different configured Java dependencies might conflict. For example, if two Java dependencies have the same package name and classes but a different group or artifact then they may both be included in your app, possibly causing conflicts.
 
@@ -90,15 +80,23 @@ Platform-supported Marketplace modules created by Mendix have been updated with 
 
 By default, dependencies are downloaded from the [Maven Central](https://central.sonatype.com/) repository. In some scenarios, you may want to specify a custom location. For example, if your organization has its own repository to cache downloads or as an alternative if internet access is restricted in an air-gapped setup.
 
-Custom repositories are configured in the **Repositories** setting of the **Deployment** tab in the [Preferences](/refguide/preferences-dialog/) dialog box. This setting uses the same syntax as Gradle. For internal usage of the platform, some dependencies are required which are also resolved using the configured repositories. For example:
+Custom repositories are configured in the **Repositories** setting of the **Deployment** tab in the [Preferences](/refguide/preferences-dialog/) dialog box. This setting uses the same syntax as Gradle. To configure a custom repository server that is accessible via URL, use the following configuration (credentials are optional):
 
 ```groovy
 maven {
-    url '{url to your custom remote repository}'
+    url 'url to your custom remote repository'
        credentials {
         username 'user'
         password 'password'
     }
+}
+```
+
+To configure a local directory to serve the required JAR files, use the following configuration:
+
+```groovy
+flatDir {
+    dirs 'local path of folder that contains jar files'
 }
 ```
 
@@ -124,7 +122,7 @@ For more details, refer to the Gradle documentation on [Declaring repositories](
 
 There are some dependencies that are required by Mendix. These need to be added to your configured repository. Below is a list of these dependencies:
 
-* The Gradle plugin [cyclonedx-gradle-plugin](https://github.com/CycloneDX/cyclonedx-gradle-plugin), which generates a Software Bill of Materials (SBoM) required in certain contexts
+* The Gradle plugin [cyclonedx-gradle-plugin](https://github.com/CycloneDX/cyclonedx-gradle-plugin), which generates a Software Bill of Materials (SBOM) required in certain contexts
 
 ## Proxy Settings{#proxy-settings}
 
@@ -195,9 +193,17 @@ If the above options don't work for you, please reach out to [Mendix Support](ht
 
 ## Marketplace Modules
 
-Dependency information is included per module and included in Marketplace Modules. The actual artifacts (`.jar` files) are not part of the module. They are downloaded to the `vendorlib` folder automatically when synchronization is run when the module is imported.
+Dependency information is included for each module and included in Marketplace Modules. Dependencies are downloaded to the `vendorlib` folder automatically when synchronization is run when the module is imported. Artifacts (`.jar` files) will also be included in the exported module packages. These are used if the module is imported in a Studio Pro which has [Gradle synchronization disabled](#disabling-synchronization).
 
 If you have an issue with the managed dependencies of a Marketplace module, you can revert to an earlier version by removing the new version and downloading an earlier version from the Marketplace.
+
+## Offline Usage {#disabling-synchronization}
+
+In the Deployment tab of the Studio Pro preferences, [Gradle synchronization](/refguide/preferences-dialog/#gradle-synchronization) can be disabled. This means that applications can be started even if Studio Pro is offline or in an air gapped environment.
+
+{{% alert color="info" %}}
+This prevents managed dependencies being synchronized, potentially causing compile errors and version conflicts. In addition, you cannot generate SBOMs while Gradle synchronization is disabled. Mendix recommends that air gapped users configure a [custom repository](#custom-repos) instead of relying on disabling Gradle synchronization.
+{{% /alert %}}
 
 ## Troubleshooting
 

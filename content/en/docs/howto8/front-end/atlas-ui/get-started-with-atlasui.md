@@ -4,6 +4,10 @@ url: /howto8/front-end/get-started-with-atlasui/
 weight: 10
 ---
 
+{{% alert color="info" %}}
+The Atlas UI Resources module is deprecated, as is Atlas 2. If you are still using Atlas 2, Mendix recommends that you [migrate from Atlas 2 To Atlas 3](/refguide9/moving-from-atlas-2-to-3/).
+{{% /alert %}}
+
 ## Introduction
 
 This how-to teaches you how to do the following:

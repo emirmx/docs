@@ -8,16 +8,6 @@ aliases:
 
 ## Introduction
 
-{{% alert color="info" %}}
-Due to web browsers changing what they support, offline-first progressive web apps are only supported in the following versions of Mendix:
-
-* Mendix 9.24.18 and higher patch versions
-* Mendix 10.6.6 and higher patch versions
-* Mendix 10.9.0 and above
-
-Offline-first progressive web apps build with other versions of Mendix will not work in most web browsers.
-{{% /alert %}}
-
 Progressive web apps (PWAs) are an evolution of traditional web apps. Overall, PWAs tend to behave more like native mobile apps, and their popularity is increasing. One difference and possible advantage of PWAs compared to native mobile apps is that PWAs do not need to be distributed via an app store but can be accessed directly via the browser.
 
 Progressive web apps have three main characteristics:
@@ -32,12 +22,6 @@ As PWAs are basically web apps with additional features, Mendix offers these fea
 
 {{% alert color="info" %}}
 PWAs require a version of Atlas 2 or above.
-{{% /alert %}}
-
-{{% alert color="warning" %}}
-PWAs have the following limitation on iOS:
-
-* Offline data is not supported for PWAs on iOS
 {{% /alert %}}
 
 To create a full offline-first PWA, choose and add one of the following profiles (depending on which form factor you need): Responsive Web Offline, Phone Web Offline, or Tablet Web Offline. For more information about offline-first apps, see the [Offline-First Guide](/refguide/offline-first/).
@@ -108,7 +92,7 @@ For example, when a Phone Web Offline profile is configured and the app is opene
 | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Desktop browser          | Responsive Web profile is loaded                                                                                                                               |
 | Android - Chrome browser | Phone Web Offline profile is loaded                                                                                                                            |
-| iOS - Any browser        | If there is a Phone Web profile, this is loaded; otherwise, the Responsive Web profile is loaded. This is because offline PWAs are not (yet) supported on iOS. |
+| iOS - Any browser        | Phone Web Offline profile is loaded                                                                                                                            |
 
 Next to that, it is possible to force a profile by providing the profile name in the URL as a query parameter: for example `http://localhost:8080/?profile=PhoneOffline`. Possible profile values are as follows:
 
@@ -142,17 +126,9 @@ For more information on the available properties in the web app manifest, read t
 
 ### Sessions {#sessions}
 
-#### Mendix Version 10.9.0 and Above
-
 Offline-first PWAs use an authentication token by default to keep the session active while users are not actively working in the app.
 
 For more information on the session and authentication tokens, see [Session Management](/refguide/session-management/)
-
-#### Mendix Versions Below 10.9.0
-
-Offline-first PWAs use long-lived sessions, which keep users logged in for a longer period even after their apps are closed. By default, users will be logged out after 7 days of inactivity. This can be customized using the [LongLivedSessionTimeout](/refguide/custom-settings/#LongLivedSessionTimeout) runtime setting.
-
-For more information on sessions and how to customize the timeout, see the [Session Duration](/refguide/tricky-custom-runtime-settings/#session-duration) section of the *Advanced Custom Settings in Mendix Runtime Reference Guide*.
 
 ## Accessing Device Features
 
@@ -173,7 +149,7 @@ This table lists the most used device features and APIs, and also documents thei
 | [Camera](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices) | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="alert-triangle-filled" color="yellow" >}} |
 | [Payment](https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API) | {{< icon name="alert-triangle-filled" color="yellow" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="alert-triangle-filled" color="yellow" >}} |
 | [Credentials (Biometrics)](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/credentials) | {{< icon name="alert-triangle-filled" color="yellow" >}} | {{< icon name="alert-triangle-filled" color="yellow" >}} | {{< icon name="remove-circle-filled" color="red" >}} |
-| [Push Notifications](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) | {{< icon name="alert-triangle-filled" color="yellow" >}} | {{< icon name="alert-triangle-filled" color="yellow" >}} | {{< icon name="remove-circle-filled" color="red" >}} |
+| [Push Notifications](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) | {{< icon name="alert-triangle-filled" color="yellow" >}} | {{< icon name="alert-triangle-filled" color="yellow" >}} | {{< icon name="alert-triangle-filled" color="yellow" >}} |
 | [Permissions](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/permissions) | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} |
 | [Foreground Detection](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API) | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [Bluetooth](https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth) | {{< icon name="alert-triangle-filled" color="yellow" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="remove-circle-filled" color="red" >}} |

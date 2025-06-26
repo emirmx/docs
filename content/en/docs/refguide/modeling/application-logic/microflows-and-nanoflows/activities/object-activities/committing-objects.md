@@ -41,7 +41,7 @@ You can also open the dialog box by double-clicking the activity, or right-click
 
 The object or list of objects that you want to commit.
 
-### With Events
+### With Events{#with-events}
 
 {{% alert color="info" %}}
 This property is for microflows only.
@@ -50,6 +50,10 @@ This property is for microflows only.
 Indicates whether or not to execute the commit event handlers of the objects.
 
 Default: **Yes**
+
+{{% alert color="warning" %}}
+Most validation rules are not triggered if you do a commit and **With events** is set to *No*. In most cases, validation rules will have been triggered when members (for example, an attribute) are changed, but Mendix advises that you set **With events** to *Yes* if you want to ensure that validations are always carried out. See [data validation](/refguide/setting-up-data-validation/) for more information.
+{{% /alert %}}
 
 #### Events in Nanoflows
 
@@ -115,6 +119,8 @@ An autocommit is an automatic commit from the platform, which is done to keep th
 
 {{% alert color="warning" %}}
 An autocommit is not the same as an explicit commit!
+
+When objects are autocommitted, all changed member values, including associations, are saved in the database as well. These members are still marked as changed until these objects are explicitly committed. As a consequence, association rows for these objects are deleted and reinserted in the database when these objects are explicitly committed.
 
 If a rollback is triggered for any reason (for example, if the user session is terminated by the user closing the browser), then autocommitted objects are deleted from the database. For more information about how Mendix handles persistable objects, see [Persistability](/refguide/persistability/).
 {{% /alert %}}

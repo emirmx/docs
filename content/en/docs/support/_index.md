@@ -53,11 +53,11 @@ We expect that many questions and issues can be solved by reading the [Mendix Do
 
 ### Mendix Academy
 
-If you have questions about [Mendix Academy](https://academy.mendix.com/) these will normally be handled by the Academy team.
+[Mendix Academy](https://academy.mendix.com/) issues can also be raised with Mendix Support. This covers all aspects of Mendix Academy, for example technical issues or queries related to certifications. 
 
-You can contact Mendix Academy directly at [academy@mendix.com](mailto:academy@mendix.com). Mendix Academy may take 3-5 business days to reply to your inquiry.
-
+{{% alert color="info" %}}
 If you have passed a Mendix certification, Mendix Academy will need 3-5 business days to prepare your certificate. You do not need to raise a support ticket as it will only be forwarded to the Academy team.
+{{% /alert %}}
 
 ## Feature Requests
 
@@ -95,7 +95,7 @@ Reading these alerts carefully and acting upon them is important, as they can af
 
 ### Training
 
-We expect your support team to be trained and certified on Studio Pro and the Mendix Portal so that they can interpret and analyze alerts, graphs, and logs in the Mendix Portal. For more information, please check our available [classroom courses](https://academy.mendix.com/link/classroom) and [expert webinars](https://academy.mendix.com/link/webinar) or contact the Mendix Academy ([academy@mendix.com](mailto:academy@mendix.com)).
+We expect your support team to be trained and certified on Studio Pro and the Mendix Portal so that they can interpret and analyze alerts, graphs, and logs in the Mendix Portal. For more information, please check our available [classroom courses](https://academy.mendix.com/link/classroom) and [expert webinars](https://academy.mendix.com/link/webinar).
 
 ## Platform Status
 
@@ -129,9 +129,13 @@ If you are planning this sort of testing you must raise a ticket with Mendix Sup
 
 Please provide this information as early as possible, at least two weeks in advance of the test date. Mendix may refuse permission to do some kinds of test if they break local laws or pose too high a risk to the Mendix infrastructure or other customers.
 
-If you want to perform penetration tests, your Customer Service Manager (CSM) can provide you with an indemnification agreement. This should be signed by all parties, confirming the information above, and agreeing that your tests are legal and do not impact other customers. If you don't know who your CSM is, Mendix Support can provide you with their contact details. 
+If you want to perform penetration tests, your Customer Success Manager (CSM) can provide you with an indemnification agreement. This should be signed by all parties, confirming the information above, and agreeing that your tests are legal and do not impact other customers. If you don't know who your CSM is, Mendix Support can provide you with their contact details. 
 
 If Mendix is not aware of your tests, you may find that they are interrupted if they cause unexpected alerts to be generated for our Cloud Operations or Security teams. You may also be breaking your agreement with Mendix.
+
+{{% alert color="info" %}}
+Mendix cannot change any standard settings for your environments to support your testing. For example, you cannot ask to have the Web Application Firewall (WAF) turned off during your testing.
+{{% /alert %}}
 
 ## Product Support Period
 
@@ -150,7 +154,7 @@ The full stack is depicted in the table below. This indicates which components a
 | **Commun&shy;ity Support&shy;ed Marketplace content** | | | | | | | | |
 | **Runtime** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner² | Mendix | Mendix | Mendix |
 | **Deploy&shy;ment Pipe&shy;line** | Mendix | Mendix | Mendix | | Certified Mendix Partner²  | | | |
-| **Logs/ Metrics** | Mendix | Mendix | | | Certified Mendix Partner² | Mendix Partner¹ | | |
+| **Backups/ Logs/ Metrics** | Mendix | Mendix | | | Certified Mendix Partner² | Mendix Partner¹ | | |
 | **Appli&shy;cation Opera&shy;tion** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner² | Mendix | Mendix | |
 | **Buildpack** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner² | Mendix | Mendix | Mendix |
 | **Contain&shy;er Platform/ OS/ Java/ Web Server** | Mendix | Mendix | | | Certified Mendix Partner² | Mendix Partner¹ | | |
@@ -180,6 +184,10 @@ Mendix for Private Cloud is based on the Kubernetes-Native Operator Framework. Y
 Mendix Support does not have access to app health, logs, graphs and monitoring. If you run into issues or want to ask a question on these supported components, please always provide relevant logs, data, and your own analysis that explains why you suspect the issue is caused by one of our supported components.
 
 {{< figure src="/attachments/support/private-cloud.png"   width="75%"  class="no-border" >}}
+
+### Mendix on Azure
+
+[Mendix on Azure](/developerportal/deploy/mendix-on-azure/) is a deployment option that makes use of some of the features of Mendix for Private Cloud in an opinionated way. For detailed information about the support policy in place for Mendix on Azure, see [Support Policy for Mendix on Azure](/developerportal/deploy/mendix-on-azure/support/).
 
 ### Private Mendix Platform
 
@@ -224,7 +232,7 @@ Mendix Support can analyze this component if your app is running on Mendix Cloud
 
 ### Container Runtime Platform
 
-The container runtime platform refers to the platform for managing, creating, destroying, and scaling of runtime containers. In Mendix Cloud and Mendix Cloud Dedicated, Cloud Foundry is used.
+The container runtime platform refers to the platform for managing, creating, destroying, and scaling of runtime containers. In Mendix Cloud and Mendix Cloud Dedicated, Kubernetes is used.
 
 Mendix Support can analyze this component if your app is running on Mendix Cloud or Mendix Cloud Dedicated. If it is running on SAP BTP instead, the selected third party can analyze this component.
 
@@ -232,7 +240,7 @@ Mendix Support can analyze this component if your app is running on Mendix Cloud
 
 The Mendix buildpacks for [Cloud Foundry](https://github.com/mendix/cf-mendix-buildpack) and [Docker](https://github.com/mendix/docker-mendix-buildpack) are available in GitHub repositories. The documentation for the buildpacks and m2ee tools is contained within these GitHub repositories and, because they are released under an Open Source license, the code can be inspected and the functionality and options can be understood by customers who wish to use these buildpacks.
 
-If you want to run Mendix apps on a Unix-like server you will need the [m2ee tools](https://github.com/mendix/m2ee-tools), available on GitHub. Read more about installing on systems running Unix-like operating systems in [Unix-Like Deployment](/developerportal/deploy/unix-like/).
+If you want to run Mendix apps on a Unix-like server you will need the [m2ee tools](https://github.com/mendix/m2ee-tools), available on GitHub. Read more about installing on systems running Unix-like operating systems in [Linux Deployment](/developerportal/deploy/linux/).
 
 Mendix Support can analyze these components if your app is running on Mendix Cloud or Mendix Cloud Dedicated. Because Mendix has no control over the context in which the buildpack or m2ee tools are run outside of Mendix Cloud and Mendix Cloud Dedicated, you will have to demonstrate that the bug is in the supported component by showing the behavior independently from the context in which you are using it.
 

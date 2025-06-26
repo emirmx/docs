@@ -61,7 +61,7 @@ Implement the Atlas Core module for apps in Mendix Studio Pro 9.24 and above. Sk
 1. Search for *Atlas Core*.
 1. Open the [Atlas Core](https://marketplace.mendix.com/link/component/117187/Mendix/Atlas-Core) module.
 1. Click **Download**.
-1. No further installation is required. If you want to know more about the module visit the [Atlas UI marketplace guide](/appstore/modules/atlas-ui-resources/).
+1. No further installation is required. If you want to know more about the module visit the [Atlas Core marketplace page](https://marketplace.mendix.com/link/component/117187).
 
 ## Implementing the Data Widgets Module
 

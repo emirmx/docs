@@ -11,37 +11,53 @@ This document describes functions that are used to parse Date and time values fr
 
 The following pattern letters can be used to parse and format Date and time values:
 
-| Letter | Date or Time Component                    | Examples               |
-| ------ | ----------------------------------------- | ---------------------- |
-| M      | Month in year (context sensitive)         | November; Nov; 11      |
-| L      | Month in year (standalone)                | November; Nov; 11      |
-| y      | Year                                      | 2001; 01               |
-| G      | Era designator                            | AD                     |
-| E      | Day name in week                          | Tuesday; Tue           |
-| u      | Day of week (1 = Monday, ..., 7 = Sunday) | 5                      |
-| Y      | Week year                                 | 2009; 09               |
-| w      | Week in year                              | 11                     |
-| W      | Week in month                             | 2                      |
-| D      | Day in year                               | 133                    |
-| d      | Day in month                              | 7                      |
-| F      | Day of week in month                      | 1                      |
-| a      | Am/pm marker                              | PM                     |
-| H      | Hour in day (0-23)                        | 0                      |
-| k      | Hour in day (1-24)                        | 24                     |
-| K      | Hour in am/pm (0-11)                      | 0                      |
-| h      | Hour in am/pm (1-12)                      | 12                     |
-| m      | Minute in hour                            | 24                     |
-| s      | Second in minute                          | 50                     |
-| S      | Millisecond                               | 201                    |
+| Letter | Date or Time Component                           | Examples                  |
+| ------ | ------------------------------------------------ | ------------------------- |
+| M      | Month in year, digit                             | 1                         |
+| MM     | Month in year, digit with leading zero           | 01                        |
+| MMM    | Month in year, abbreviated (context sensitive)   | Nov                       |
+| MMMM   | Month in year (context sensitive)                | November                  |
+| L      | Month in year, digit (standalone), digit         | 1                         |
+| LL     | Month in year, digit with leading zero           | 01                        |
+| LLL    | Month in year, abbreviated (standalone)          | Nov                       |
+| LLLL   | Month in year (standalone)                       | November                  |
+| yy     | Year, two digits                                 | 01                        |
+| yyyy   | Year, four digits                                | 2001                      |
+| G      | Era designator                                   | AD                        |
+| E      | Day name in week, abbreviated                    | Tue                       |
+| EEEE   | Day name in week                                 | Tuesday                   |
+| u      | Day of week (1 = Monday, ..., 7 = Sunday)        | 5                         |
+| w      | Week in year                                     | 11                        |
+| W      | Week in month                                    | 2                         |
+| D      | Day in year                                      | 133                       |
+| d      | Day in month                                     | 7                         |
+| F      | Day of week in month                             | 1                         |
+| a      | Am/pm marker                                     | PM                        |
+| H      | Hour in day (0-23)                               | 0                         |
+| k      | Hour in day (1-24)                               | 24                        |
+| K      | Hour in am/pm (0-11)                             | 0                         |
+| h      | Hour in am/pm (1-12)                             | 12                        |
+| m      | Minute in hour                                   | 24                        |
+| s      | Second in minute                                 | 50                        |
+| S      | Millisecond                                      | 201                       |
+
+{{% alert color="warning" %}}
+Prior to Mendix 11, the `MMM` and `MMMM` tokens were not properly supported in nanoflows for some languages.
+{{% /alert %}}
 
 {{% alert color="info" %}}
-In microflows, both pattern letters `M` and `L` are supported and work completely as expected.
+Here are some examples of using `LLLL`, `MMMM`, `LLL`, and `MMM` in languages that support the genitive case:
 
-However, in nanoflows, the pattern letter `M` usually should NOT be used, given that it is not properly supported in nanoflows currently. One exception is that you can use `MM` since it gives a numerical representation of a month name.
-
-In nanoflows, the pattern letter `L` works properly except when it is used for some languages where the month name changes depending on the context (languages with the genitive case). For those languages, Mendix recommends that the character limit is `LL`, given that with more characters (for instance, `LLL` or `LLLL`), the pattern letter `L` might not work properly. For example, `LLL` does work for Russian but not for Catalan. `LLLL` is not recommended for any of those languages. 
-
-Here is a full collection of such languages that are available in Studio Pro: Armenian, Belarusian, Catalan, Croatian, Czech, Finnish, Greek, Lithuanian, Polish, Russian, Slovak, and Ukrainian.
+* Ukrainian:
+    * `LLLL` returns `квітень`
+    * `MMMM` returns `квітня`
+    * `LLL` returns `квіт.`
+    * `MMM` returns `квіт.`
+* Polish:
+    * `LLLL` returns `kwiecień`
+    * `MMMM` returns `kwietnia`
+    * `LLL` returns `kwi`
+    * `MMM` returns `kwi`
 {{% /alert %}}
 
 The following pattern letters are only available for microflows:
@@ -61,15 +77,15 @@ For some parse and format functions, there are UTC variants. Do not use these UT
 Takes a string and parses it. If it fails and a default value is specified, it returns the default value. Otherwise, an error occurs. The function `parseDateTime` uses the user's time zone and `parseDateTimeUTC` uses the UTC calendar.
 
 {{% alert color="info" %}}
-When using `yy` dateformat, the century guessing by proximity follows the rule of **50/50**. Specifically, it adjusts dates to be within 50 years before and 50 years after the time the date format instance is created:
+When using `yy` date format in microflows, the century guessing by proximity follows the rule of **80/20**. Specifically, it adjusts dates to be within 80 years before and 20 years after the time the date format instance is created:
 
-* `24` {{< icon name="arrow-narrow-right" >}} `2024`
-* `75` {{< icon name="arrow-narrow-right" >}} `1975`
-  
-The topic above applies when using the expression in Nanoflow. When using it in a Microflow then the rule will follow the rule of **80/20**:
-
-* `24` {{< icon name="arrow-narrow-right" >}} `2024`
+* `25` {{< icon name="arrow-narrow-right" >}} `2025`
 * `68` {{< icon name="arrow-narrow-right" >}} `1968`
+  
+When using it in nanoflows, it follows the rule of **50/50**:
+
+* `25` {{< icon name="arrow-narrow-right" >}} `2025`
+* `88` {{< icon name="arrow-narrow-right" >}} `1988`
   
 {{% /alert %}}
 

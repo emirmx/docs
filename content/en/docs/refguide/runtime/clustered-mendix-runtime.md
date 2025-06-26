@@ -2,7 +2,7 @@
 title: "Clustered Mendix Runtime"
 url: /refguide/clustered-mendix-runtime/
 weight: 40
-description: "Introduces the cluster functionality of the Mendix Runtime, which allows you to set up your Mendix application to run behind a load balancer to enable a failover and/or high availability architecture."
+description: "Describes the cluster functionality of the Mendix Runtime, which allows you to set up your Mendix application to run behind a load balancer to enable a failover and/or high availability architecture."
 ---
 
 ## Introduction
@@ -25,9 +25,9 @@ The Mendix Runtime cluster requires the following infrastructure:
 
 This means that a Mendix cluster requires a load balancer to distribute the load of the clients over the available Runtime cluster nodes. It also means that all the nodes need to connect to the same Mendix database, and the files need to be stored on S3 (for details, see the [File Storage](#file-storage) section below). The number of nodes in your cluster depends on the application, the high availability requirements, and its usage.
 
-## Cluster Leader and Cluster Slaves{#cluster-leader-follower}
+## Cluster Leader and Cluster Followers{#cluster-leader-follower}
 
-Mendix Runtime has the concept of a cluster leader. This is a single node within a Mendix Runtime cluster that performs cluster management activities. These are the activities:
+Mendix Runtime has the concept of a cluster leader. This is a single node within a Mendix Runtime cluster that performs the initial database synchronization with Domain Model changes and initiates other cluster management activities which can be be picked by any node in a multi-node environment. These are the activities:
 
 * **Session cleanup handling** – each node expires its sessions (meaning, not being used for a configured timespan) and the cluster leader removes the sessions persisted in the database
     * In exceptional cases (for example, a node crash), some sessions may not be removed from the database, in which case the cluster leader makes sure this removal still happens
@@ -39,15 +39,13 @@ Mendix Runtime has the concept of a cluster leader. This is a single node within
 * **Performing database synchronization after new deploy**
 * **Clear persistent sessions after new deploy** – invalidating all existing sessions so that they get in sync with the latest model version
 
-These activities are only performed by the cluster leader. If the cluster leader is not running, the cluster will still function. However, the activities listed above will not be performed.
-
-The Cloud Foundry Buildpack determines which cluster node becomes the cluster leader and which become cluster slaves.
+The Cloud Foundry Buildpack determines which cluster node becomes the cluster leader and which become cluster followers.
 
 ## Cluster Startup
 
 Individual nodes in a cluster can be started and stopped with no impact on the uptime of the app. However, when you deploy a new version of the app the whole cluster is restarted and the cluster leader determines whether database synchronization is required. This means that there will be some downtime when the app is deployed while this is done.
 
-If database synchronization is required, all the cluster slaves will wait until the cluster leader finishes the database synchronization. When the database synchronization has finished, all the cluster nodes will become fully functional.
+If database synchronization is required, all the cluster followers will wait until the cluster leader finishes the database synchronization. When the database synchronization has finished, all the cluster nodes will become fully functional.
 
 If no database synchronization is required, all the cluster nodes will become fully functional directly after startup.
 
@@ -59,7 +57,7 @@ For more information about configuring the Mendix Runtime to store files on thes
 
 ## After-Startup and Before-Shutdown Microflows {#startup-shutdown-microflows}
 
-It is possible to configure `After-Startup` and `Before-Shutdown` microflows in Mendix. In a Mendix cluster, this means that those microflows are called per node. This lets you register request handlers and other activities. However, doing database maintenance during these microflows is strongly discouraged, because it might impact other nodes of the same cluster. There is no possibility to run a microflow on cluster startup or shutdown.
+It is possible to configure `After-Startup` and `Before-Shutdown` microflows in Mendix. In a Mendix cluster, this means that those microflows are called per node. This lets you register request handlers and other activities. However, doing data changes during these microflows is strongly discouraged, because it might impact other nodes of the same cluster. There is no possibility to run a microflow on cluster startup or shutdown.
 
 ## Cluster Limitations
 
@@ -93,7 +91,7 @@ Only the dirty state for requests that originate from the Mendix Client (both sy
 Whenever the Mendix Client is restarted, all the state is discarded, as it is only kept in the Mendix Client memory. The Mendix Client is restarted when reloading the browser tab (for example, when pressing <kbd>F5</kbd>) or explicitly signing out.
 {{% /alert %}}
 
-The more objects that are part of the dirty state, the more data has to be transferred in the requests and responses between the Mendix Runtime and the Mendix Client. As such, this has an impact on performance. In cluster environments, it is advised to minimize the amount of dirty state to minimize the impact of the synchronization on performance.
+The more objects that are part of the dirty state, the more data has to be transferred in the requests and responses between the Mendix Runtime and the Mendix Client. As such, this has an impact on performance. In clustered environments, it is advised to minimize the amount of dirty state to minimize the impact of the synchronization on performance.
 
 The Mendix Client attempts to optimize the amount of state sent to the Mendix Runtime by only sending data that can potentially be read while processing the request. For example, if you call a microflow that gets `Booking` as a parameter and retrieves `Flight` over association, then the client will pass only `Booking` and the associated `Flight`s from the dirty state along with the request, but not the `Hotel`s. Note that this behavior is the best effort; if the microflow is too complex to analyze (for example, when a Java action is called with a state object as a parameter), the entire dirty state will be sent along. This optimization can be disabled via the [Optimize network calls](/refguide/app-settings/#optimize-network-calls) app setting.
 

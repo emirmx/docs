@@ -75,13 +75,13 @@ URL: https://deploy.mendix.com/api/v2/apps/<ProjectId>/environments/<Environment
 
 **Request Parameters**
 
-* *ProjectId* (String): Unique project identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [apps API](/apidocs-mxsdk/apidocs/deploy-api/#list-apps).
-* *EnvironmentId* (String): Unique environment identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [environments API](/apidocs-mxsdk/apidocs/deploy-api/#list-environments).
+* `ProjectId` (String): Unique project identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [apps API](/apidocs-mxsdk/apidocs/deploy-api/#list-apps).
+* `EnvironmentId` (String): Unique environment identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [environments API](/apidocs-mxsdk/apidocs/deploy-api/#list-environments).
 
 **Query Parameters**
 
-* *offset* (Long): Number of items to offset. Default is 0.
-* *limit* (Long): Maximum number of items in response. Default is 100.
+* `offset` (Long): Number of items to offset. Default is 0.
+* `limit` (Long): Maximum number of items in response. Default is 100.
 
 **Example Request**
 
@@ -98,10 +98,10 @@ Mendix-ApiKey:  26587896-1cef-4483-accf-ad304e2673d6
 
 An object with the following key-value pairs:
 
-* *snapshots* (List): List of snapshot objects.
-* *total* (Long): The total number of snapshots for the requested environment.
-* *offset* (Long): The offset value of the current request.
-* *limit* (Long): The limit value of the current request.
+* `snapshots` (List): List of snapshot objects.
+* `total` (Long): The total number of snapshots for the requested environment.
+* `offset` (Long): The offset value of the current request.
+* `limit` (Long): The limit value of the current request.
 
 **Error Codes**
 
@@ -162,14 +162,14 @@ URL: https://deploy.mendix.com/api/v2/apps/<ProjectId>/environments/<Environment
 
 **Request Parameters**
 
-* *ProjectId* (String): Unique project identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [apps API](/apidocs-mxsdk/apidocs/deploy-api/#list-apps).
-* *EnvironmentId* (String): Unique environment identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [environments API](/apidocs-mxsdk/apidocs/deploy-api/#list-environments).
+* `ProjectId` (String): Unique project identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [apps API](/apidocs-mxsdk/apidocs/deploy-api/#list-apps).
+* `EnvironmentId` (String): Unique environment identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [environments API](/apidocs-mxsdk/apidocs/deploy-api/#list-environments).
 
 **Request Body**
 
 A JSON object with the following attributes:
 
-* *comment* (String): Optional comment for this snapshot.
+* `comment` (String): Optional comment for this snapshot.
 
 **Example Request**
 
@@ -190,15 +190,15 @@ Mendix-ApiKey:  26587896-1cef-4483-accf-ad304e2673d6
 
 A JSON object with the following key-value pairs:
 
-* *snapshot_id* (String): Unique identification of the snapshot job.
-* *status_message* (String): Human readable status message of this job.
-* *finished_at* (String): ISO 8601 date and time when this job reached the end state.
-* *updated_at* (String): ISO 8601 date and time when this job was updated.
-* *created_at* (String): ISO 8601 date and time when this job was created.
-* *state* (String): Current state of this job. It always starts with `queued` followed by `running` and eventually reaches either `failed` or `completed` end states.
-* *model_version* (String): Model version that was running when the snapshot was created.
-* *expires_at* (String): ISO 8601 date and time when this snapshot will be expired.
-* *comment* (String): A comment describing this snapshot. Can be set by users for easier future reference.
+* `snapshot_id` (String): Unique identification of the snapshot job.
+* `status_message` (String): Human readable status message of this job.
+* `finished_at` (String): ISO 8601 date and time when this job reached the end state.
+* `updated_at` (String): ISO 8601 date and time when this job was updated.
+* `created_at` (String): ISO 8601 date and time when this job was created.
+* `state` (String): Current state of this job. It always starts with `queued` followed by `running` and eventually reaches either `failed` or `completed` end states.
+* `model_version` (String): Model version that was running when the snapshot was created.
+* `expires_at` (String): ISO 8601 date and time when this snapshot will be expired.
+* `comment` (String): A comment describing this snapshot. Can be set by users for easier future reference.
 
 **Error Codes**
 
@@ -244,9 +244,9 @@ URL: https://deploy.mendix.com/api/v2/apps/<ProjectId>/environments/<Environment
 
 **Request Parameters**
 
-* *ProjectId* (String): Unique project identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [apps API](/apidocs-mxsdk/apidocs/deploy-api/#list-apps).
-* *EnvironmentId* (String): Unique environment identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [environments API](/apidocs-mxsdk/apidocs/deploy-api/#list-environments).
-* *SnapshotId* (String): Identifier of the snapshot being created.
+* `ProjectId` (String): Unique project identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [apps API](/apidocs-mxsdk/apidocs/deploy-api/#list-apps).
+* `EnvironmentId` (String): Unique environment identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [environments API](/apidocs-mxsdk/apidocs/deploy-api/#list-environments).
+* `SnapshotId` (String): Identifier of the snapshot being created.
 
 **Example Request**
 
@@ -263,15 +263,15 @@ Mendix-ApiKey:  26587896-1cef-4483-accf-ad304e2673d6
 
 An object with the following key-value pairs:
 
-* *snapshot_id* (String): Unique identification of the snapshot job.
-* *status_message* (String): Human readable status message of this job.
-* *finished_at* (String): ISO 8601 date and time when this job reached the end state.
-* *updated_at* (String): ISO 8601 date and time when this job was updated.
-* *created_at* (String): ISO 8601 date and time when this job was created.
-* *state* (String): Current state of this job. It always starts with `queued`, followed by `running`, and eventually reaches a `failed` or `completed` end state.
-* *model_version* (String): Model version that was running when the snapshot was created.
-* *expires_at* (String): ISO 8601 date and time when this snapshot will be expired.
-* *comment* (String): A comment describing this snapshot. Can be set by users for easier future reference.
+* `snapshot_id` (String): Unique identification of the snapshot job.
+* `status_message` (String): Human readable status message of this job.
+* `finished_at` (String): ISO 8601 date and time when this job reached the end state.
+* `updated_at` (String): ISO 8601 date and time when this job was updated.
+* `created_at` (String): ISO 8601 date and time when this job was created.
+* `state` (String): Current state of this job. It always starts with `queued`, followed by `running`, and eventually reaches a `failed` or `completed` end state.
+* `model_version` (String): Model version that was running when the snapshot was created.
+* `expires_at` (String): ISO 8601 date and time when this snapshot will be expired.
+* `comment` (String): A comment describing this snapshot. Can be set by users for easier future reference.
 
 **Error Codes**
 
@@ -315,13 +315,13 @@ URL: https://deploy.mendix.com/api/v2/apps/<ProjectId>/environments/<Environment
 
 **Request Parameters**
 
-* *ProjectId* (String): Unique project identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [apps API](/apidocs-mxsdk/apidocs/deploy-api/#list-apps).
-* *EnvironmentId* (String): Unique environment identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [environments API](/apidocs-mxsdk/apidocs/deploy-api/#list-environments).
-* *SnapshotId* (String): Identifier of the snapshot for which you want to create an archive.
+* `ProjectId` (String): Unique project identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [apps API](/apidocs-mxsdk/apidocs/deploy-api/#list-apps).
+* `EnvironmentId` (String): Unique environment identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [environments API](/apidocs-mxsdk/apidocs/deploy-api/#list-environments).
+* `SnapshotId` (String): Identifier of the snapshot for which you want to create an archive.
 
 **Query Parameters**
 
-* *data_type* (String): The type of data to retrieve. Valid types are: *database_only* and *files_and_database*. Default value is *files_and_database*.
+* `data_type` (String): The type of data to retrieve. Valid types are: *database_only* and *files_and_database*. Default value is *files_and_database*.
 
 **Example Request**
 
@@ -339,15 +339,15 @@ Mendix-ApiKey:  26587896-1cef-4483-accf-ad304e2673d6
 
 An object with the following key-value pairs:
 
-* *archive_id* (String): Unique identification of the archive job.
-* *status_message* (String): Human readable status message of this job.
-* *finished_at* (String): ISO 8601 date and time when this job reached the end state.
-* *updated_at* (String): ISO 8601 date and time when this job was updated.
-* *created_at* (String): ISO 8601 date and time when this job was created.
-* *state* (String): Current state of this job. It always starts with `queued`, followed by `running`, and eventually reaches either a `failed` or `completed` end state.
-* *data_type* (String): Type of data of the requested archive.
-* *snapshot_id* (String): Snapshot identifier of which this archive belongs to.
-* *url* (String): Direct URL to the backup archive. This URL can be used with download managers.
+* `archive_id` (String): Unique identification of the archive job.
+* `status_message` (String): Human readable status message of this job.
+* `finished_at` (String): ISO 8601 date and time when this job reached the end state.
+* `updated_at` (String): ISO 8601 date and time when this job was updated.
+* `created_at` (String): ISO 8601 date and time when this job was created.
+* `state` (String): Current state of this job. It always starts with `queued`, followed by `running`, and eventually reaches either a `failed` or `completed` end state.
+* `data_type` (String): Type of data of the requested archive.
+* `snapshot_id` (String): Snapshot identifier of which this archive belongs to.
+* `url` (String): Direct URL to the backup archive. This URL can be used with download managers.
 
 **Error Codes**
 
@@ -392,10 +392,10 @@ URL: https://deploy.mendix.com/api/v2/apps/<ProjectId>/environments/<Environment
 
 **Request Parameters**
 
-* *ProjectId* (String): Unique project identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [apps API](/apidocs-mxsdk/apidocs/deploy-api/#list-apps).
-* *EnvironmentId* (String): Unique environment identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [environments API](/apidocs-mxsdk/apidocs/deploy-api/#list-environments).
-* *SnapshotId* (String): Identifier of the backup.
-* *ArchiveId* (String): Identifier of the archive being created.
+* `ProjectId` (String): Unique project identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [apps API](/apidocs-mxsdk/apidocs/deploy-api/#list-apps).
+* `EnvironmentId` (String): Unique environment identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [environments API](/apidocs-mxsdk/apidocs/deploy-api/#list-environments).
+* `SnapshotId` (String): Identifier of the backup.
+* `ArchiveId` (String): Identifier of the archive being created.
 
 **Example Request**
 
@@ -413,15 +413,15 @@ Mendix-ApiKey:  26587896-1cef-4483-accf-ad304e2673d6
 
 An object with the following key-value pairs:
 
-* *archive_id* (String): Unique identification of the archive job.
-* *status_message* (String): Human readable status message of this job.
-* *finished_at* (String): ISO 8601 date and time when this job reached the end state.
-* *updated_at* (String): ISO 8601 date and time when this job was updated.
-* *created_at* (String): ISO 8601 date and time when this job was created.
-* *state* (String): Current state of this job. It always starts with `queued`, followed by `running`, and eventually reaches either a `failed` or `completed` end state.
-* *data_type* (String): Type of data of the requested archive.
-* *snapshot_id* (String): Snapshot identifier of which this archive belongs to.
-* *url* (String): Direct URL to the backup archive. This URL can be used to download your backup archive file.
+* `archive_id` (String): Unique identification of the archive job.
+* `status_message` (String): Human readable status message of this job.
+* `finished_at` (String): ISO 8601 date and time when this job reached the end state.
+* `updated_at` (String): ISO 8601 date and time when this job was updated.
+* `created_at` (String): ISO 8601 date and time when this job was created.
+* `state` (String): Current state of this job. It always starts with `queued`, followed by `running`, and eventually reaches either a `failed` or `completed` end state.
+* `data_type` (String): Type of data of the requested archive.
+* `snapshot_id` (String): Snapshot identifier of which this archive belongs to.
+* `url` (String): Direct URL to the backup archive. This URL can be used to download your backup archive file.
 
 **Error Codes**
 
@@ -465,16 +465,16 @@ URL: https://deploy.mendix.com/api/v2/apps/<ProjectId>/environments/<Environment
 
 **Request Parameters**
 
-* *ProjectId* (String): Unique project identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [apps API](/apidocs-mxsdk/apidocs/deploy-api/#list-apps).
-* *EnvironmentId* (String): Unique environment identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [environments API](/apidocs-mxsdk/apidocs/deploy-api/#list-environments).
-* *SnapshotId* (String): Identifier of the backup.
-* *Comment* (String): Optional comment for this snapshot.
+* `ProjectId` (String): Unique project identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [apps API](/apidocs-mxsdk/apidocs/deploy-api/#list-apps).
+* `EnvironmentId` (String): Unique environment identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [environments API](/apidocs-mxsdk/apidocs/deploy-api/#list-environments).
+* `SnapshotId` (String): Identifier of the backup.
+* `Comment` (String): Optional comment for this snapshot.
 
 **Request Body**
 
 A JSON object with the following attributes:
 
-* *comment* (String): New comment for this snapshot.
+* `comment` (String): New comment for this snapshot.
 
 **Example Request**
 
@@ -495,15 +495,15 @@ Mendix-ApiKey:  26587896-1cef-4483-accf-ad304e2673d6
 
 An object with the following key-value pairs:
 
-* *snapshot_id* (String): Unique identification of the snapshot job.
-* *status_message* (String): Human-readable status message of this job.
-* *finished_at* (String): ISO 8601 date and time when this job reached the end state.
-* *updated_at* (String): ISO 8601 date and time when this job was updated.
-* *created_at* (String): ISO 8601 date and time when this job was created.
-* *state* (String): Current state of this job. It always starts with `queued`, followed by `running`, and eventually reaches either a `failed` or `completed` end state.
-* *model_version* (String): Model version that was running when the snapshot was created.
-* *expires_at* (String): ISO 8601 date and time when this snapshot will be expired.
-* *comment* (String): A comment describing this snapshot. Can be set by users for easier future reference.
+* `snapshot_id` (String): Unique identification of the snapshot job.
+* `status_message` (String): Human-readable status message of this job.
+* `finished_at` (String): ISO 8601 date and time when this job reached the end state.
+* `updated_at` (String): ISO 8601 date and time when this job was updated.
+* `created_at` (String): ISO 8601 date and time when this job was created.
+* `state` (String): Current state of this job. It always starts with `queued`, followed by `running`, and eventually reaches either a `failed` or `completed` end state.
+* `model_version` (String): Model version that was running when the snapshot was created.
+* `expires_at` (String): ISO 8601 date and time when this snapshot will be expired.
+* `comment` (String): A comment describing this snapshot. Can be set by users for easier future reference.
 
 **Error Codes**
 
@@ -547,10 +547,10 @@ URL: https://deploy.mendix.com/api/v2/apps/<ProjectId>/environments/<Environment
 
 **Request Parameters**
 
-* *ProjectId* (String): Unique project identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [apps API](/apidocs-mxsdk/apidocs/deploy-api/#list-apps).
-* *EnvironmentId* (String): Unique environment identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [environments API](/apidocs-mxsdk/apidocs/deploy-api/#list-environments).
-* *SnapshotId* (String): Identifier of the backup.
-* *Comment* (String): Optional comment for this snapshot.
+* `ProjectId` (String): Unique project identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [apps API](/apidocs-mxsdk/apidocs/deploy-api/#list-apps).
+* `EnvironmentId` (String): Unique environment identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [environments API](/apidocs-mxsdk/apidocs/deploy-api/#list-environments).
+* `SnapshotId` (String): Identifier of the backup.
+* `Comment` (String): Optional comment for this snapshot.
 
 **Example Request**
 
@@ -594,13 +594,13 @@ URL: https://deploy.mendix.com/api/v2/apps/<ProjectId>/environments/<Environment
 
 **Request Parameters**
 
-* *ProjectId* (String): Unique project identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [apps API](/apidocs-mxsdk/apidocs/deploy-api/#list-apps).
-* *EnvironmentId* (String): Unique environment identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [environments API](/apidocs-mxsdk/apidocs/deploy-api/#list-environments).
+* `ProjectId` (String): Unique project identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [apps API](/apidocs-mxsdk/apidocs/deploy-api/#list-apps).
+* `EnvironmentId` (String): Unique environment identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [environments API](/apidocs-mxsdk/apidocs/deploy-api/#list-environments).
 
 **Query Parameters**
 
-* *source_snapshot_id* (String): Identifier of the snapshot that will be restored. This value is required; it must belong to a snapshot within the same application, although it could be a different environment.
-* *db_only* (Boolean): Boolean flag. Set this to *true* if you are doing a database-only restore operation. It defaults to *false* if not present.
+* `source_snapshot_id` (String): Identifier of the snapshot that will be restored. This value is required; it must belong to a snapshot  within the same application, although it could be a different  environment.
+* `db_only` (Boolean): Boolean flag. Set this to *true* if you are doing a database-only restore operation. It defaults to *false* if not present.
 
     {{% alert color="warning" %}}Setting `db_only` to `true` will not restore any of your files, leading to a risk that data will be missing from your app or that your app will not work as expected. Use this option with caution.
     {{% /alert %}}
@@ -629,15 +629,15 @@ Mendix-ApiKey:  26587896-1cef-4483-accf-ad304e2673d6
 
 An object with the following key-value pairs:
 
-* *restore_id* (String): Unique identification of the restore job.
-* *status_message* (String): Human readable status message of this job.
-* *finished_at* (String): ISO 8601 date and time when this job reached the end state.
-* *updated_at* (String): ISO 8601 date and time when this job was updated.
-* *created_at* (String): ISO 8601 date and time when this job was created.
-* *state* (String): Current state of this job. It always starts with `queued`, followed by `running`, and eventually reaches either a `failed` or `completed` end state.
-* *source_snapshot_id* (String): Identifier of the snapshot being restored.
-* *source_environment_id* (String): Identifier of the environment from which the source snapshot was created.
-* *target_environment_id* (String): Identifier of the target environment to which the snapshot is being restored.
+* `restore_id` (String): Unique identification of the restore job.
+* `status_message` (String): Human readable status message of this job.
+* `finished_at` (String): ISO 8601 date and time when this job reached the end state.
+* `updated_at` (String): ISO 8601 date and time when this job was updated.
+* `created_at` (String): ISO 8601 date and time when this job was created.
+* `state` (String): Current state of this job. It always starts with `queued`, followed by `running`, and eventually reaches either a `failed` or `completed` end state.
+* `source_snapshot_id` (String): Identifier of the snapshot being restored.
+* `source_environment_id` (String): Identifier of the environment from which the source snapshot was created.
+* `target_environment_id` (String): Identifier of the target environment to which the snapshot is being restored.
 
 **Error Codes**
 
@@ -686,9 +686,9 @@ URL: https://deploy.mendix.com/api/v2/apps/<ProjectId>/environments/<Environment
 
 **Request Parameters**
 
-* *ProjectId* (String): Unique project identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [apps API](/apidocs-mxsdk/apidocs/deploy-api/#list-apps).
-* *EnvironmentId* (String): Unique environment identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [environments API](/apidocs-mxsdk/apidocs/deploy-api/#list-environments).
-* *RestoreId* (String): Identifier of the request to restore the data.
+* `ProjectId` (String): Unique project identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [apps API](/apidocs-mxsdk/apidocs/deploy-api/#list-apps).
+* `EnvironmentId` (String): Unique environment identifier. Can be looked up via the [Mendix Portal](/developerportal/deploy/environments-details/) or [environments API](/apidocs-mxsdk/apidocs/deploy-api/#list-environments).
+* `RestoreId` (String): (String): Identifier of the request to restore the data.
 
 **Example Request**
 
@@ -705,15 +705,17 @@ Mendix-ApiKey:  26587896-1cef-4483-accf-ad304e2673d6
 
 An object with the following key-value pairs:
 
-* *restore_id* (String): Unique identification of the restore job.
-* *status_message* (String): Human0readable status message of this job.
-* *finished_at* (String): ISO 8601 date and time when this job reached the end state.
-* *updated_at* (String): ISO 8601 date and time when this job was updated.
-* *created_at* (String): ISO 8601 date and time when this job was created.
-* *state* (String): Current state of this job. It always starts with `queued`, followed by `running`, and eventually reaches either a `failed` or `completed` end state.
-* *source_snapshot_id* (String): Identifier of the snapshot being restored.
-* *source_environment_id* (String): Identifier of the environment from which the source snapshot was created.
-* *target_environment_id* (String): Identifier of the target environment to which the snapshot is being restored.
+* `restore_id` (String): Unique identification of the restore job.
+
+* `status_message` (String): Human-readable status message of this job.
+
+* `finished_at` (String): ISO 8601 date and time when this job reached the end state.
+* `updated_at` (String): ISO 8601 date and time when this job was updated.
+* `created_at` (String): ISO 8601 date and time when this job was created.
+* `state` (String): Current state of this job. It always starts with `queued`, followed by `running`, and eventually reaches either a `failed` or `completed` end state.
+* `source_snapshot_id` (String): Identifier of the snapshot being restored.
+* `source_environment_id` (String): Identifier of the environment from which the source snapshot was created.
+* `target_environment_id` (String): Identifier of the target environment to which the snapshot is being restored.
 
 **Error Codes**
 

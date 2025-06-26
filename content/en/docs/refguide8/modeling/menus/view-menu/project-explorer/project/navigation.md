@@ -134,7 +134,9 @@ This deletes the profile. If [menu widgets](/refguide8/menu-widgets/) are still 
 
 Only available on profiles supporting offline synchronization.
 
-This opens the **Customize offline synchronization** dialog box that is used for overriding offline synchronization settings for specific entities. For each entity the download setting is shown. A default is automatically determined by analyzing the model, but can be overridden in which case the setting will appear in boldface. For more details on the settings and when to use them, see the [Offline-First Reference Guide](/refguide8/offline-first/#customizable-synchronization).
+This opens the **Customize offline synchronization** dialog box that is used for overriding offline synchronization settings for specific entities. For each entity the download setting is shown. A default is automatically determined by analyzing the model, but can be overridden by the developer in which case the setting will appear in boldface.
+
+For more details on the settings and when to use them, see the [Offline-First Reference Guide](/refguide8/offline-first/#customizable-synchronization).
 
 {{< figure src="/attachments/refguide8/modeling/menus/view-menu/project-explorer/project/navigation/customize-offline-synchronization.png" class="no-border" >}}
 

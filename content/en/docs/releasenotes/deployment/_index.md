@@ -15,10 +15,11 @@ Follow the links in the table below to see the release notes you want:
 
 | Type of Deployment | Last Updated |
 | --- | --- |
-| [Mendix Cloud](/releasenotes/developer-portal/mendix-cloud/) | September 19, 2024 |
-| [Mendix for Private Cloud](/releasenotes/developer-portal/mendix-for-private-cloud/) | September 13, 2024 |
+| [Mendix Cloud](/releasenotes/developer-portal/mendix-cloud/) | June 12, 2025 |
+| [Mendix for Private Cloud](/releasenotes/developer-portal/mendix-for-private-cloud/) | June 25, 2025 |
+| [Mendix on Azure](/releasenotes/developer-portal/mendix-on-azure/) | April 24, 2025 |
 | [SAP Business Technology Platform (SAP BTP)](/releasenotes/developer-portal/sap-cloud-platform/) | August 27, 2024 |
-| [Other Deployment Options](/releasenotes/developer-portal/on-premises/) | December 12, 2022 |
+| [Other Deployment Options](/releasenotes/developer-portal/on-premises/) | September 15, 2023 |
 
 The release notes for the buildpacks are held in their respective GitHub repos:
 

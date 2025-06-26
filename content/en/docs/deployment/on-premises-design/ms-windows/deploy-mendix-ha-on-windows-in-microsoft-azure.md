@@ -33,9 +33,9 @@ It describes the installation and configuration of the Mendix software on multip
 
     * Storage accounts
 
-## Configure Cluster Slave Nodes
+## Configure Cluster Follower Nodes
 
-In a clustered environment there are some tasks (for example, cleaning up expired user sessions from the database) that should only be handled by one of the cluster members. By default, each Mendix app server will execute these tasks, which can lead to issues. Ensure that only one server executes these tasks by adding the Custom Mendix setting *com.mendix.core.isClusterSlave* and setting it to *true* for all servers **except one**. So if you have a two server cluster, add this setting for one server and if you have five servers in your cluster, add it for four of them.
+In a clustered environment the initial database synchronization should only be handled by one of the cluster members. By default, each Mendix app server will execute these tasks, which can lead to issues. Ensure that only one server executes these tasks by adding the Custom Mendix setting *com.mendix.core.isClusterSlave* and setting it to *true* for all servers **except one**. So if you have a two server cluster, add this setting for one server and if you have five servers in your cluster, add it for four of them.
 
 1. Select your app and click **Configuration**.
 
@@ -51,7 +51,7 @@ In a clustered environment there are some tasks (for example, cleaning up expire
 
 4. Click **Close** on both screens to return to the Service Console.
 
-More information on the cluster leader and slave roles can be found in the [Cluster Leader and Cluster Slaves](/refguide/clustered-mendix-runtime/#cluster-leader-follower) section of *Clustered Mendix Runtime*.
+More information on the cluster leader and follower roles can be found in the [Cluster Leader and Cluster Followers](/refguide/clustered-mendix-runtime/#cluster-leader-follower) section of *Clustered Mendix Runtime*.
 
 ## Configuring the Azure Load Balancer
 

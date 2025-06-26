@@ -1,7 +1,7 @@
 ---
 title: "Consuming Add-on Modules and Solutions"
 url: /refguide9/consume-add-on-modules-and-solutions/
-linktitle: "Consume Add-on Modules and Solutions"
+linktitle: "Consuming Add-on Modules and Solutions"
 weight: 30
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -50,5 +50,5 @@ The module is deleted from your app.
 ## Read More
 
 * [IP Protection](/appstore/creating-content/sol-ip-protection/)
-* [Using Marketplace Content](/appstore/use-content/)
+* [How to Use Marketplace Content](/appstore/use-content/)
 * [Importing and Exporting Apps, Modules, Widgets, and Documents](/refguide9/import-and-export/)

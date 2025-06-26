@@ -15,14 +15,6 @@ aliases:
 
 The **Settings** page in the [navigation pane](/developerportal/#navigation-pane) of **Apps** presents an overview of your app.
 
-On the top of the page, you can see the image of the app, the app name, and the company that owns the app. You can also find the **Watch** / **Stop Watching** toggle, which enables or disables notifications for this app.
-
-{{< figure src="/attachments/developerportal/general/settings/general-information.png"  class="no-border" >}}
-
-{{% alert color="info" %}}
-Only users with the **App Settings** permission can edit the image and the app name.
-{{% /alert %}}
-
 The **Settings** page always contains the following tabs:
 
 * **General**
@@ -31,26 +23,41 @@ The **Settings** page always contains the following tabs:
 These tabs are only available for users with the **App Settings** permission:
 
 * **Cloud Settings**
-* **API Keys**
 * **Project Management**
 * **History**
 * **Story Archive**
+
+## Page Header {#settings-page-header}
+
+The page header displays the following information:
+
+* The app image – You can change the image by clicking it.
+* The app name – You can change the name of the app by clicking the pencil icon next to it.    
+    Renaming the app in the Mendix Portal does not rename it in Studio Pro. The app name in Studio Pro is tied to its *.mpr* file. However, changing the name of the *.mpr* file is not supported, and we strongly advise against it. For more information, refer to the [Mendix MPR Storage ](/refguide/version-control/#mpr-format) section in *Version Control*. 
+* The company that owns the app.
+* The **Watch** / **Stop Watching** toggle – You can enable or disable notifications for this app.
+
+{{< figure src="/attachments/developerportal/general/settings/general-information.png"  class="no-border" >}}
+
+{{% alert color="info" %}}
+Only users with the **App Settings** permission can edit the image and the app name.
+{{% /alert %}}
 
 ## General {#general}
 
 In this tab, you can find the following items:
 
-* **Logo** of the app
-* **Description** of the app
-* **App ID**
+* Logo of the project
+* **Description** of the project
+* **Project ID**
 * [Technical Contact](/developerportal/general/app-roles/#technical-contact) of the app
 * **Danger Zone**
-    * **Leave this app**
-    * **Deactivate this app**
-    * **Delete this app**
+    * **Leave Project**
+    * **Deactivate Project**
+    * **Delete Project**
 
 {{% alert color="info" %}}
-Only users with the **App Settings** permission can change the description of the app.<br/>Only users with the **App Settings** permission can deactivate or delete an app. For details, see [How to Leave, Delete, or Deactivate an App](/developerportal/general/leave-delete-app/).
+Only users with the **App Settings** permission can change the description of the project.<br/>Only users with the **App Settings** permission can deactivate or delete a project. For details, see [How to Leave, Delete, or Deactivate an App](/developerportal/general/leave-delete-app/).
 {{% /alert %}}
 
 ## Cloud Settings {#cloud-settings}
@@ -112,29 +119,6 @@ The invitee will receive an email asking them to authorize access to their Mendi
 
 After they provide authorization, they will be brought to your deployed app.
 
-## API Keys {#general-settings-api-keys}
-
-{{% alert color="info" %}}
-Only users with the **App Settings** permission can manage app-specific API keys.
-{{% /alert %}}
-
-In **API Keys**, there is an overview of the API keys created for your app with the following information:
-
-* **API Key Name**
-* Date of **Creation**
-* Date **Last Used**
-
-{{< figure src="/attachments/developerportal/general/settings/keys.png"   width="800"  class="no-border" >}}
-
-To create a new app-specific API key, click **Create New API Key**  and follow these steps:
-
-1. Fill in the **API key name**.
-2. Click **Generate API Key** to be able to use the app API key.
-
-{{% alert color="warning" %}}For security reasons, the app API key will only be displayed once, during **Step 2 of 2**. It will not be displayed again.{{% /alert %}}
-
-To delete an app API key, click **Revoke**.
-
 ## Project Management {#project-management}
 
 {{% alert color="info" %}}
@@ -158,16 +142,6 @@ The **History** tab presents the collaboration actions for the app. On this page
 {{< figure src="/attachments/developerportal/general/settings/history.png"   width="700"  class="no-border" >}}
 
 When you select a history item and click **Show item**, the details of the story, Sprint, or [feedback item](/developerportal/app-insights/feedback/) will be presented.
-
-## Story Archive {#story-archive}
-
-Once you have switched from Mendix Stories to Epics or Jira, Mendix archives any work you may have had in Mendix Stories. You can review your work on this tab, and download it if necessary.
-
-{{% alert color="warning" %}}
-Mendix will keep this data until October 1, 2024. Until then, you will be able to export it to Excel in case you need an offline copy. Mendix strongly urges you to download your work before that date.
-{{% /alert %}}
-
-{{< figure src="/attachments/developerportal/general/settings/story-archive.png" width="700"  class="no-border" >}}
 
 ## Read More
 

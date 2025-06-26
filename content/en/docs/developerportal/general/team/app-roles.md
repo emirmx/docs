@@ -36,7 +36,7 @@ Within a team, there are predefined roles that can be provisioned to team member
 * Who has the [node permissions](/developerportal/deploy/node-permissions/) for access to the node information
 * Who can change the app's [Settings](/developerportal/collaborate/general-settings/)
 
-Scrum Masters can edit and create new team roles on the [Team](/developerportal/general/team/) page, and Mendix Admins can edit and create new team roles within the company in [Control Center](/control-center/).
+Mendix Admins can edit and create new team roles within the company in [Control Center](/control-center/roles-and-permissions/).
 
 ## Technical Contact {#technical-contact}
 
@@ -80,7 +80,7 @@ You can only change the Technical Contact for licensed Mendix apps. You cannot c
 If you are the current Technical Contact for an app, you can transfer your Technical Contact role to another team member as follows:
 
 1. Go to your app's [Environments](/developerportal/deploy/environments/) page.
-2. Switch to the [Permissions](/developerportal/deploy/environments/#permissions) tab.
+2. Switch to the [Permissions](/developerportal/deploy/environments/#permissions-tab) tab.
 3. Click **Change to Technical Contact** for the team member who should be the new Technical Contact. You may have to authenticate first to perform this action. If so, click **Change to Technical Contact** again after successful authentication to finish this action.
 
 This action changes the Technical Contact for all environments.

@@ -7,7 +7,7 @@ weight: 10
 
 {{% alert color="warning" %}}The data grid widget is not supported on native mobile pages.{{% /alert %}}
 
-{{% alert color="warning" %}}The data grid widget, which is not supported by the React client added to Mendix in [10.7](/releasenotes/studio-pro/10.7/#react-client), can be converted to a [data grid 2 widget](/appstore/modules/data-grid-2/) through the context menu of the widget **Convert to data grid 2** starting with Mendix [10.9](/releasenotes/studio-pro/10.9/#improvements).{{% /alert %}}
+{{% alert color="warning" %}}The data grid widget is not supported when using the [React client](/refguide/mendix-client/react/). Please use the [data grid 2 widget](/appstore/modules/data-grid-2/) instead. It is possible to convert existing data grid widgets to data grid 2 as explained in the [React Migration Guide](/refguide/mendix-client/react/#data-grid){{% /alert %}}
 
 ## Introduction
 
@@ -55,13 +55,11 @@ The data source determines which objects will be shown in a data grid. For gener
 
 The data grid supports the following types of data sources: 
 
-* [Database source](/refguide/database-source/) – objects are retrieved directly from the database. The database source can be used in [offline](/refguide/offline-first/) applications. 
-* [XPath source](/refguide/xpath-source/) – objects are retrieved directly from the database
-    {{% alert color="info" %}}From Mendix version 10.5, the data grid widget does not have a separate XPath source, you can apply XPath constraints to the **Database** source.{{% /alert %}}
+* [Database source](/refguide/database-source/) – objects are retrieved directly from the database. The database source can be used in [offline](/refguide/offline-first/) applications.
 * [Microflow source](/refguide/microflow-source/) – calculates the list of objects by executing a microflow
 * [Association source](/refguide/association-source/) – follows an association to get to objects
 
-The database and, below version 10.5, XPath sources retrieve objects from the database and supports searching and sorting. 
+The database source retrieves objects from the database and supports searching and sorting. 
 
 ### Design Properties Section {#design-properties}
 

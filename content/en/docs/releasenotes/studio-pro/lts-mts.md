@@ -14,25 +14,21 @@ To understand the different types of versions and releases, consider the example
 
 In the 9.24.1 example, the first number (**9**) indicates the major version.
 
-Mendix supports three major versions at a time. To clarify our current offering and in relation to our SLA, today Mendix supports major versions 8, 9, and 10. Version 7 is only supported via the Extended Support product.
+Mendix supports three major versions at a time. To clarify our current offering and in relation to our SLA, today Mendix supports major versions 8, 9, and 10. 
 
-As of Mendix 10, to make planning version upgrades easier for our users, Mendix will release in a two-year cadence, which means that every two years we plan to release a new major version in June. This will help in preparing and planning to adopt new releases and upgrade older Mendix versions. Each major version release will start with two [beta releases](/releasenotes/beta-features/).
+As of Mendix 10, to make planning version upgrades easier for our users, Mendix will release in a two-year cadence, which means that every two years we plan to release a new major version in June. This will help in preparing and planning to adopt new releases and upgrade older Mendix versions. Each major version release will start with two public [beta releases](/releasenotes/beta-features/).
 
 For Mendix 10 and 11, we are planning to follow this release timeline:
 
 | Release | Date |
 | --- | --- |
 | 9.24 LTS | March 2023 |
-| 10 Beta 1 | April 2023 |
-| 10 Beta 2 | May 2023 |
-| 10.0 GA | June 2023 |
 | 10.6 MTS | December 2023 |
 | 10.12 MTS | June 2024 |
 | 10.18 MTS | December 2024 |
-| 10.21 LTS | March 2025 |
-| 11 Beta 1 | April 2025 |
-| 11 Beta 2 | May 2025 |
-| 11.0 GA | June 2025 |
+| 11 Public Beta 1, 10.22 | April 2025 |
+| 11 Public Beta 2, 10.23 | May 2025 |
+| 11.0 GA, 10.24 LTS | June 2025 |
 
 ### Minor Version
 
@@ -48,12 +44,12 @@ A patch version is released on an as-needed basis. It includes security fixes an
 
 ## Long-Term Support Version (LTS) {#lts}
 
-An LTS version is the latest minor version before a new major version is released for general availability. Once a minor version becomes an LTS, it will not have new features added to it. 
+An LTS version is the last minor release of a major version. Its release is aligned with the GA release of the next major version. For example, the 10.24 LTS version will be released in the same month as Mendix 11 GA. Once a minor version becomes an LTS, it will not have new features added to it. 
 
 These are the current LTS versions of Studio Pro:
 
-* [9.24](/releasenotes/studio-pro/9.24/) (started in March, 2023)
 * [8.18](/releasenotes/studio-pro/8.18/) (started in March, 2021)
+* [9.24](/releasenotes/studio-pro/9.24/) (started in March, 2023)
 
 Release notes for the current LTS versions are marked with an LTS badge (<text class="badge badge-pill badge-lts" style="margin-left:0px">LTS</text>) in the left sidebar.
 
@@ -97,14 +93,11 @@ This is the current MTS version of Studio Pro:
 
 * [10.6](/releasenotes/studio-pro/10.6/) (started in December, 2023)
 * [10.12](/releasenotes/studio-pro/10.12/) (started in June, 2024)
+* [10.18](/releasenotes/studio-pro/10.18/) (started in December, 2024)
 
 Release notes for the current MTS version are marked with an MTS badge (<text class="badge badge-pill badge-mts" style="margin-left:0px">MTS</text>) in the left sidebar.
 
-{{% alert color="info" %}}
-MTS versions (for example, 9.6) remain supported until the next major version has been released for general availability (for example, 10.0).
-{{% /alert %}}
-
-If you are on an innovation track with your development and need to get the latest and greatest Mendix has to offer every month, then upgrade to an MTS and stay on that version with its patch releases until the next MTS version is released.
+Mendix MTS versions offer a balance between getting the latest and greatest Mendix has to offer every month, and security and stability.
 
 {{% alert color="info" %}}
 
@@ -114,7 +107,7 @@ Mendix recommends using the latest patch version of the release as the latest ve
 
 ### Support Duration
 
-The support duration for an MTS depends on when a new higher major version is released for general availability, which thus creates a new LTS and ends support for all MTS versions for that respective major version.
+Support for an MTS version ends three months after the LTS version of that major version is released. For example, version 10.24 is released in June 2025. Support for the 10.6, 10.12 and 10.18 MTS versions will then end in September 2025.
 
 ### Release Cycle
 
@@ -156,7 +149,7 @@ The impact of upgrading between monthly releases is the highest of these options
 
 ## End of Support {#end}
 
-The "end of support" for a version means that fixes, updates, investigating, troubleshooting, and other forms of assistance are no longer provided.
+The "end of support" for a version means that fixes (including fixes for security vulnerabilities), updates, investigating, troubleshooting, and other forms of assistance are no longer provided. Applications using [unsupported Mendix versions](/developerportal/deploy/mendix-cloud-deploy/#mendix-cloud-supported-versions) cannot be deployed or run on Mendix Cloud. They can still be deployed and run on infrastructure that is owned by customers, but Mendix will not investigate any issues related to these applications.
 
 If a new major version is nearing release, that means an older major version is nearing its end of support. If you are still using a major version for which support will end, Mendix recommends that you stop using that version and move to a newer LTS version that is supported. 
 

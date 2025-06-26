@@ -9,7 +9,7 @@ aliases:
 
 ## Introduction
 
-As of Mendix 10.2.0, Studio Pro allows you to publish microflows as part of an OData service. A published microflow becomes an [external action](/refguide/call-external-action/) which can be called by an application consuming this service. This allows you to model and publish operations that are more complex than straightforward create, read, update, and delete operations on a single entity.
+Studio Pro allows you to publish microflows as part of an OData service. A published microflow becomes an [external action](/refguide/call-external-action/) which can be called by an application consuming this service. This allows you to model and publish operations that are more complex than straightforward create, read, update, and delete operations on a single entity.
 
 ## Adding or Editing a Published Microflow
 
@@ -17,7 +17,7 @@ As of Mendix 10.2.0, Studio Pro allows you to publish microflows as part of an O
 
 Open your [published OData service](/refguide/published-odata-services/) or create a new one.
 
-{{< figure src="/attachments/refguide/modeling/integration/published-odata-services/published-odata-microflow/microflows-grid.png" alt="Published microflows" width="600" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/integration/odata-services/published-odata-microflow/microflows-grid.png" alt="Published microflows" width="600" class="no-border" >}}
 
 In the **Microflows** tab of the published OData service, click **Add**. This opens a selector dialog box where you can select the microflow you want to publish. You can also click **New** to create a new microflow.
 
@@ -58,7 +58,7 @@ This shows the return type of the published microflow.
 
 When you publish a microflow for the first time, the current microflow parameters are added to the **Parameters for microflow** grid of the published microflow. 
 
-{{< figure src="/attachments/refguide/modeling/integration/published-odata-services/published-odata-microflow/parameters-grid.png" alt="published microflow parameters" width="600" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/integration/odata-services/published-odata-microflow/parameters-grid.png" alt="published microflow parameters" width="600" class="no-border" >}}
 
 You can **Add** or **Delete** parameters from the published microflow.
 
@@ -68,8 +68,19 @@ To edit a published parameter, either select the parameter and click **Edit** or
 
 You can also select **Can be empty**. If this checkbox is cleared, calls to the published microflow will fail unless the parameter is provided.
 
-{{< figure src="/attachments/refguide/modeling/integration/published-odata-services/published-odata-microflow/published-parameter.png" alt="Published microflow parameter" width="700" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/integration/odata-services/published-odata-microflow/published-parameter.png" alt="Published microflow parameter" width="700" class="no-border" >}}
 
 {{% alert color="info" %}}
 Boolean and list parameters can never be empty.
 {{% /alert %}}
+
+## 4 Customizing the Outgoing HTTP Response
+
+It is possible to manipulate the response, which is produced as a result of an OData Action call. To do this, the published microflow must have a parameter with a [System.HttpResponse](/refguide/http-request-and-response-entities/) type.
+
+* If no changes were made to HttpResponse object, the actual response will not change.
+* If only headers of the HttpResponse were changed (for instance, a new header was added to the response), those headers are merged with default headers, which replaces values of the same name.
+* If the status code or content of the HttpResponse is changed, the actual response is produced exclusively from the HttpResponse parameter, including status code, headers, and response body. 
+* The ReasonPhrase field is ignored.
+* It is not possible to change values for `Transfer-Encoding` and `Date` headers.
+* When the status code is set to `204`, an empty response body is always produced.

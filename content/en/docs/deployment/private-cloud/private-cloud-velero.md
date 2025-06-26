@@ -78,7 +78,9 @@ To restore a backup that you created with Velero, follow these steps:
 3. Optional: After restoring the backup, add finalizers to `StorageInstances` by entering the following command:
 
     ```text
-    kubectl patch storageinstances $(kubectl get storageinstances --no-headers -o custom-columns=":metadata.name") -p '{"metadata":{"finalizers":["finalizer.privatecloud.mendix.com"]}}' --type=merge
+    kubectl patch storageinstances $(kubectl get storageinstances --no-headers -o custom-columns=":metadata.name") -p '{"metadata":{"finalizers":["privatecloud.mendix.com/storage-provisioner"]}}' --type=merge
     ```
 
     {{% alert color="info" %}}Adding finalizers is not required, but it is recommended as a best practice. It ensures that the Kubernetes garbage collection cleans up the storage from deleted environments.{{% /alert %}}
+
+    {{% alert color="info" %}}For Mendix Operator versions earlier than 2.20, use `finalizer.privatecloud.mendix.com` instead of `privatecloud.mendix.com/storage-provisioner` in the command above.{{% /alert %}}

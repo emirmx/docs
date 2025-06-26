@@ -94,10 +94,10 @@ Mendix-ApiKey: 26587896-1cef-4483-accf-ad304e2673d6
 
 List of objects with the following key-value pairs:
 
-* *AppId* (String): Sub-domain name of the app.
-* *Name* (String): Name of the app.
-* *ProjectId* (String): Mendix Portal Project identifier.
-* *Url* (String): Production or Free App URL to access your app.
+* `AppId` (String): Sub-domain name of the app.
+* `Name` (String): Name of the app.
+* `ProjectId` (String): Mendix Portal Project identifier.
+* `Url` (String): Production or Free App URL to access your app.
 
 **Example Output**
 
@@ -132,7 +132,7 @@ URL: https://deploy.mendix.com/api/1/apps
 
 An object with the following key-value pair:
 
-* *ProjectId* (String) : The Mendix Portal project identifier that should be linked to the new Free App. This value can be found on the **General** tab of the **Settings** page of your app, and it is represented as **App ID**.
+* `ProjectId` (String) : The Mendix Portal project identifier that should be linked to the new Free App. You can find this on the **General** tab of the **Settings** page of your app.
 
 **Example Request**
 
@@ -152,10 +152,10 @@ Mendix-ApiKey: 26587896-1cef-4483-accf-ad304e2673d6
 
 Response object with the following fields:
 
-* *AppId* (String): Sub-domain name of the app.
-* *Name* (String): Name of the app.
-* *ProjectId* (String): Mendix Portal Project identifier.
-* *Url* (String): Production or Free App URL to access your app.
+* `AppId` (String): Sub-domain name of the app.
+* `Name` (String): Name of the app.
+* `ProjectId` (String): Mendix Portal Project identifier.
+* `Url` (String): Production or Free App URL to access your app.
 
 **Error Codes**
 
@@ -190,7 +190,7 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>
 
 ##### Request Parameter
 
-* *AppId* (String): Sub-domain name of an app.
+* `AppId` (String): Sub-domain name of an app.
 
 ##### Example Request
 
@@ -206,10 +206,10 @@ Mendix-ApiKey: 26587896-1cef-4483-accf-ad304e2673d6
 
 Object with the following key-value pairs:
 
-* *AppId* (String): Sub-domain name of the app.
-* *ProjectId* (String): Mendix Portal Project identifier.
-* *Name* (String): Name of the app.
-* *Url* (String): Production or Free App URL to access your app.
+* `AppId` (String): Sub-domain name of the app.
+* `ProjectId` (String): Mendix Portal Project identifier.
+* `Name` (String): Name of the app.
+* `Url` (String): Production or Free App URL to access your app.
 
 ##### Error Codes
 
@@ -244,7 +244,7 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/environments
 
 ##### Request Parameter
 
-* *AppId* (String): Subdomain name of an app.
+* `AppId` (String): Subdomain name of an app.
 
 ##### Example Request
 
@@ -261,13 +261,13 @@ Mendix-ApiKey:  26587896-1cef-4483-accf-ad304e2673d6
 
 List of objects with the following key-value pairs:
 
-* *Status* (String): Status of the environment. Possible values: Empty, Stopped, Running.
-* *EnvironmentId* (String): Unique identifier of the environment.
-* *Url* (String): URL to access your application.
-* *Mode* (String): Mode of the environment. Possible values: Test, Acceptance, Production or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
-* *ModelVersion* (String): The version number of the package deployed in your environment.
-* *MendixVersion* (String): The Mendix version number of the package deployed in your environment.
-* *Production* (Boolean): A flag indicating if this environment is a production environment.
+* `Status` (String): Status of the environment. Possible values: Empty, Stopped, Running.
+* `EnvironmentId` (String): Unique identifier of the environment.
+* `Url` (String): URL to access your application.
+* `Mode` (String): Mode of the environment. Possible values: Test, Acceptance, Production or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
+* `ModelVersion` (String): The version number of the package deployed in your environment.
+* `MendixVersion` (String): The Mendix version number of the package deployed in your environment.
+* `Production` (Boolean): A flag indicating if this environment is a production environment.
 
 ##### Example Output
 
@@ -310,8 +310,8 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/environments/<Mode>
 
 ##### Request Parameters
 
-* *AppId* (String): Subdomain name of an app.
-* *Mode* (String): The mode of the environment of the app. An environment with this mode should exist.
+* `AppId` (String): Subdomain name of an app.
+* `Mode` (String): The mode of the environment of the app. An environment with this mode should exist.
 
 ##### Example Request
 
@@ -327,13 +327,13 @@ Mendix-ApiKey: 26587896-1cef-4483-accf-ad304e2673d6
 
 An object with the following key-value pairs:
 
-* *Status* (String): Status of the environment. Possible values: Empty, Stopped, Running.
-* *EnvironmentId* (String): Unique identifier of the environment.
-* *Url* (String): URL to access your application.
-* *Mode* (String): Mode of the environment. Possible values: Test, Acceptance, Production or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
-* *ModelVersion* (String): The version number of the package deployed in your environment.
-* *MendixVersion* (String): The Mendix version number of the package deployed in your environment.
-* *Production* (Boolean): A flag indicating if this environment is a production environment.
+* `Status` (String): Status of the environment. Possible values: Empty, Stopped, Running.
+* `EnvironmentId` (String): Unique identifier of the environment.
+* `Url` (String): URL to access your application.
+* `Mode` (String): Mode of the environment. Possible values: Test, Acceptance, Production or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
+* `ModelVersion` (String): The version number of the package deployed in your environment.
+* `MendixVersion` (String): The Mendix version number of the package deployed in your environment.
+* `Production` (Boolean): A flag indicating if this environment is a production environment.
 
 ##### Error Codes
 
@@ -372,7 +372,7 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/environments/<Mode>/start
 
 **Request Parameters**
 
-* *AutoSyncDb* (Boolean): Define whether the database should be synchronized automatically with the model during the start phase of the app.
+* `AutoSyncDb` (Boolean): Define whether the database should be synchronized automatically with the model during the start phase of the app.
 
 **Example Request**
 
@@ -393,17 +393,17 @@ Mendix-ApiKey:  26587896-1cef-4483-accf-ad304e2673d6
 
 An object with the following key-value pairs:
 
-* *JobId* (String): The identifier that can be used to track the progress of the start action
+* `JobId` (String): The identifier that can be used to track the progress of the start action
 
 ##### Error Codes
 
 | HTTP Status | Error code | Description |
 | --- | --- | --- |
+| 200 | ALREADY_STARTED | Cannot start app. App is already running. |
 | 400 | INVALID_APPID | Invalid AppId |
 | 404 | APP_NOT_FOUND | App not found |
 | 500 | NO_MDA_HAS_BEEN_DEPLOYED | Cannot start app. There is no MDA deployed. |
 | 500 | APP_ALREADY_HAS_A_STARTING_JOB | Cannot start app. There is already a starting job id found. |
-| 500 | ALREADY_STARTED | Cannot start app. App is already running. |
 
 ##### Example Output
 
@@ -441,7 +441,7 @@ Mendix-ApiKey:  26587896-1cef-4483-accf-ad304e2673d6
 
 An object with the following key-value pair:
 
-* *Status* (String): Possible values are Starting and Started
+* `Status` (String): Possible values are Starting and Started
 
 ##### Error Codes
 
@@ -519,9 +519,9 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/environments/<Mode>/package?ur
 
 ##### Request Parameters
 
-* *AppId* (String): Sub-domain name of an app.
-* *Mode* (String): The mode of the environment of the app. An environment with this mode should exist.
-* *url* (Boolean) *(default: false)*: Indicates whether the API should return a URL pointing to the location of the package.
+* `AppId` (String): Sub-domain name of an app.
+* `Mode` (String): The mode of the environment of the app. An environment with this mode should exist.
+* `url` (Boolean) *(default: false)*: Indicates whether the API should return a URL pointing to the location of the package.
 
 ##### Example Request
 
@@ -538,18 +538,17 @@ Mendix-ApiKey:  26587896-1cef-4483-accf-ad304e2673d6
 
 An object with the following key-value pairs:
 
-* *PackageId* (String): Unique identification of the package.
-* *Name* (String): Name of the package.
-* *Description* (String): Description of the package.
-* *Version* (String): Package version. This is also the name of the tag on the project teamserver.
-* *Creator* (String): Uploader or creator of this package.
-* *CreationDate* (Date): Date that the package became available in the portal. This can be the
+* `PackageId` (String): Unique identification of the package.
+* `Name` (String): Name of the package.
+* `Description` (String): Description of the package.
+* `Version` (String): Package version. This is also the name of the tag on the project teamserver.
+* `Creator` (String): Uploader or creator of this package.
+* `CreationDate` (Date): Date that the package became available in the portal. This can be the
     upload date or the date that a build was created in the portal.
-* *Status* (String): Status of the package. A package is ready to use if the status is 'Succeeded'.
+* `Status` (String): Status of the package. A package is ready to use if the status is 'Succeeded'.
     Possible values: Succeeded, Queued, Building, Uploading and Failed.
-* *Size* (Long): Size of the package in bytes.
-* *Url* (object): A JSON object containing the following:
-
+* `Size` (Long): Size of the package in bytes.
+* `Url` (object): A JSON object containing the following:
     * *Location*: The URL pointing to the package file.
     * *TTL*: How long the URL is valid (in seconds).
 
@@ -600,9 +599,9 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/packages/upload?name=<PackageN
 
 ##### Request Parameters
 
-* *AppId* (String): Subdomain name of an app
-* *PackageName* (String): The name given to the package (MDA) when it is uploaded; if this is omitted, it will be given the name *default.mda*
-* *file* (File): Deployment package as multipart/form-data (see [IETF RFC 7578: Returning Values from Forms: multipart/form-data](https://tools.ietf.org/html/rfc7578))
+* `AppId` (String): Subdomain name of an app
+* `PackageName` (String): The name given to the package (MDA) when it is uploaded; if this is omitted, it will be given the name *default.mda*
+* `file` (File): Deployment package as multipart/form-data (see [IETF RFC 7578: Returning Values from Forms: multipart/form-data](https://tools.ietf.org/html/rfc7578))
 
 ##### Example Request
 
@@ -657,9 +656,9 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/environments/<Mode>/transport
 
 ##### Request Parameters
 
-* *AppId* (String): Sub-domain name of an app.
-* *Mode* (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
-* *PackageId* (String): ID of the deployment package
+* `AppId` (String): Sub-domain name of an app.
+* `Mode` (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
+* `PackageId` (String): ID of the deployment package
 
 ##### Example Request
 
@@ -709,8 +708,8 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/environments/<Mode>/clean
 
 ##### Request Parameters
 
-* *AppId* (String): Sub-domain name of an app.
-* *Mode* (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
+* `AppId` (String): Sub-domain name of an app.
+* `Mode` (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
 
 ##### Example Request
 
@@ -763,8 +762,8 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/environments/<Mode>/settings
 
 ##### Request Parameters
 
-* *AppId* (String): Sub-domain name of an app.
-* *Mode* (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
+* `AppId` (String): Sub-domain name of an app.
+* `Mode` (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
 
 ##### Example Request
 
@@ -830,9 +829,9 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/environments/<Mode>/settings
 
 ##### Request Parameters
 
-* *AppId* (String): Subdomain name of an app.
-* *Mode* (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
-* *Body*: JSON collection retrieved with GET method at the same URI
+* `AppId` (String): Subdomain name of an app.
+* `Mode` (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
+* `Body`: JSON collection retrieved with GET method at the same URI
 
 ##### Example Request
 
@@ -918,8 +917,8 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/environments/<Mode>/scale
 
 ##### Request Parameters
 
-* *AppId* (String): Subdomain name of an app.
-* *Mode* (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
+* `AppId` (String): Subdomain name of an app.
+* `Mode` (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
 
 ##### Example Request
 
@@ -983,8 +982,8 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/environments/<Mode>/tags
 
 ##### Request Parameters
 
-* *AppId* (String): Subdomain name of an app.
-* *Mode* (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
+* `AppId` (String): Subdomain name of an app.
+* `Mode` (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
 
 ##### Example Request
 
@@ -1032,8 +1031,8 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/environments/<Mode>/tags
 
 ##### Request Parameters
 
-* *AppId* (String): Subdomain name of an app.
-* *Mode* (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
+* `AppId` (String): Subdomain name of an app.
+* `Mode` (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
 
 ##### Example Request
 
@@ -1078,8 +1077,8 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/environments/<Mode>/tags
 
 ##### Request Parameters
 
-* *AppId* (String): Subdomain name of an app.
-* *Mode* (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
+* `AppId` (String): Subdomain name of an app.
+* `Mode` (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
 
 ##### Example Request
 
@@ -1130,9 +1129,9 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/environments/<Mode>/logs/<Date
 
 ##### Request Parameters
 
-* *AppId* (String): Subdomain name of an app.
-* *Mode* (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
-* *Date* (String): Date of the desired log in the format `YYYY-MM-DD`.
+* `AppId` (String): Subdomain name of an app.
+* `Mode` (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
+* `Date` (String): Date of the desired log in the format `YYYY-MM-DD`.
 
 ##### Example Request
 
@@ -1179,9 +1178,9 @@ URL: https://deploy.mendix.com/api/1/apps/<AppId>/environments/<Mode>/access-log
 
 ##### Request Parameters
 
-* *AppId* (String): Subdomain name of an app.
-* *Mode* (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
-* *Date* (String): Date of the desired log in the format `YYYY-MM-DD`.
+* `AppId` (String): Subdomain name of an app.
+* `Mode` (String): Mode of the environment. Possible values: Test, Acceptance, Production, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments).
+* `Date` (String): Date of the desired log in the format `YYYY-MM-DD`.
 
 ##### Example Request
 

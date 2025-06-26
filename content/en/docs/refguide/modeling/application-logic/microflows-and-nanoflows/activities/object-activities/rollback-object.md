@@ -10,7 +10,7 @@ This activity can be used in both microflows and nanoflows.
 
 ## Introduction
 
-The **Rollback object** activity can be used to undo changes (that have not been committed) made to the object in the part of the flow preceding the activity. Furthermore, it deletes objects that have been created but never committed.
+The **Rollback object** activity can be used to undo all changes made to the object that have not been committed to the database. Furthermore, it deletes objects that have been created but never committed.
 
 {{% alert color="info" %}}
 When the rollback object activity is performed in a sub-microflow, it rolls back the changes in its parent microflow as well as in the sub-microflow.
