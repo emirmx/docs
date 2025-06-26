@@ -18,13 +18,7 @@ The service supports responsive browser-based applications, and has been tested 
 
 For successful implementation of the OIDC Provider module, Mendix recommends that you attain [Advanced](https://academy.mendix.com/link/certifications/6/advanced) or [Expert](https://academy.mendix.com/link/certifications/24/expert) Mendix certification. Customers with limited low-code experience may consider partnering with a Mendix Implementation Partner.
 
-Certain OIDC Provider module versions are compatible with certain versions of Studio Pro (shown below).
-
-| Mendix Version | OIDC Provider Version |
-| --- | --- |
-| 10.21.01 and above | 4.2.0 and above |
-| 10.12.10 and above | 4.0.0 and above |
-| 9.24.18 and above | 3.2.0 and above |
+{{% alert color="info" %}}If you are using Mendix version 10.24.0 or above, ensure you are using version 5.0.0 or above of the OIDC Provider module.{{% /alert %}}
 
 ### Typical Usage Scenarios
 
