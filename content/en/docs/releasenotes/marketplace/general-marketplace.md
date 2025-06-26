@@ -16,15 +16,15 @@ These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 
 ### June 26, 2025
 
-#### Private PDF Document Generation Service
+#### New Features
 
-We have released a [private PDF Document Generation service](/appstore/modules/private-document-generation-service/) which you can use in air-gapped environments, where the [PDF Document Generation](/appstore/modules/document-generation/) module is restricted.
+* We have released a [private PDF Document Generation service](/appstore/modules/private-document-generation-service/) which you can use in air-gapped environments, where the [PDF Document Generation](/appstore/modules/document-generation/) module is restricted.
 
 ### June 25, 2025
 
-#### Mendix Data Loader Version 2.3.0
+#### New Features
 
-This version of [Mendix Data Loader](/appstore/modules/snowflake/mendix-data-loader/) allows you to configure a specific warehouse for your task, which is used as a compute resource when the task triggers data ingestion. This is controlled through two new options: **Use Specific Warehouse** and **Warehouse**.
+* We have released [Mendix Data Loader](/appstore/modules/snowflake/mendix-data-loader/) version 2.3.0. This version allows you to configure a specific warehouse for your task, which is used as a compute resource when the task triggers data ingestion. This is controlled through two new options: **Use Specific Warehouse** and **Warehouse**.
 
 ### June 19, 2025
 
