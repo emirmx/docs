@@ -76,7 +76,7 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
         * **Timeout** – Optional setting to specify when a timeout exception should occur.
         * **Number of Retry Attempts** – Number of retries for failed ingestion jobs.
         * **Suspend Task After Failures** – Number of consecutive failures allowed before suspending the task.
-        * **Use Specific Warehouse** - Select this option if you want the task to use a specific warehouse. If selected, you need to run the script that is displayed.
+        * **Use Specific Warehouse** - Select this option if you want the task to use a specific warehouse. If selected, you need to run the provided script.
         * **Warehouse** - Use this field to enter the name of the warehouse you want to use. This only applies when **Use Specific Warehouse** is selected.
 
 16. Click **Schedule Ingestion Task**.
