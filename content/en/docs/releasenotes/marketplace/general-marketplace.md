@@ -14,6 +14,12 @@ These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 
 ## 2025
 
+### June 26, 2025
+
+#### Private PDF Document Generation Service
+
+We have released a [private PDF Document Generation service](/appstore/modules/private-document-generation-service/) which you can use in air-gapped environments, where the [PDF Document Generation](/appstore/modules/document-generation/) module is restricted.
+
 ### June 25, 2025
 
 #### Mendix Data Loader Version 2.3.0
