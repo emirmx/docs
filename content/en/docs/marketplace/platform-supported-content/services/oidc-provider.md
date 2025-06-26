@@ -5,12 +5,12 @@ description: "Describes the configuration and usage of the OIDC Provider service
 aliases:
     - /appstore/modules/oidc-provider/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
-# Linked from https://marketplace.mendix.com/link/component/214681
+# Linked from [placeholder]
 ---
 
 ## Introduction
 
-The [OIDC Provider](https://marketplace.mendix.com/link/component/214681) module lets developers build Mendix applications that issue security tokens to other applications. In IAM (Identity and Access Management) terminology, this module acts as an OpenID Provider and an OAuth Authorization Server. Therefore, this document will refer to such an application as an access-provider application.
+The [OIDC Provider](placeholder) module lets developers build Mendix applications that issue security tokens to other applications. In IAM (Identity and Access Management) terminology, this module acts as an OpenID Provider and an OAuth Authorization Server. Therefore, this document will refer to such an application as an access-provider application.
 
 An access-provider application can offer a Single Sign-On (SSO) experience for end-users of connected applications. Additionally, it can issue Access Tokens for API consumption when APIs are secured with OAuth bearer tokens.
 
@@ -73,7 +73,7 @@ In this setup, developers need both a Mendix platform account and an account for
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/oidc-provider/platform_extensions.png" class="no-border" >}}
 
-If you are building your Extension Application as a Mendix app, you can use the [OIDC Provider](https://marketplace.mendix.com/link/component/214681) module to allow platform users to log in to your Extension Application, get OAuth Access Tokens, and use these tokens to access web APIs provided by your Mendix Extension Services. The [OIDC SSO](/appstore/modules/oidc/) module then helps your web API validate the received token. Since the OIDC protocol requires a static URI for your IDE extension, you can set this URI using the Static URI API (available from Mendix 10.16 onward).
+If you are building your Extension Application as a Mendix app, you can use the [OIDC Provider](placeholder) module to allow platform users to log in to your Extension Application, get OAuth Access Tokens, and use these tokens to access web APIs provided by your Mendix Extension Services. The [OIDC SSO](/appstore/modules/oidc/) module then helps your web API validate the received token. Since the OIDC protocol requires a static URI for your IDE extension, you can set this URI using the Static URI API (available from Mendix 10.16 onward).
 
 ### Features and Limitations
 
@@ -129,7 +129,7 @@ This section provides clarity on the extent to which the OIDC Provider module su
 
 To install the OIDC Provider service in your IAM broker app, you need to import the following into your app:
 
-* [OIDC Provider](https://marketplace.mendix.com/link/component/214681)
+* [OIDC Provider](placeholder)
 * [Community Commons](https://marketplace.mendix.com/link/component/170)
 * [Mx Model reflection](https://marketplace.mendix.com/link/component/69)
 * [Administration](https://marketplace.mendix.com/link/component/23513)
@@ -426,7 +426,7 @@ This section applies only when your client is using the authorization code grant
 
 #### Provider App Acting as an Identity Provider (IdP)
 
-Consider a scenario, where you build an app using the [OIDC Provider](https://marketplace.mendix.com/link/component/214681) service. You can call this app an OIDC Provider app or Provider app. Other apps using the [OIDC SSO](https://marketplace.mendix.com/link/component/120371) module redirect end-users to your Provider app for authentication. You can choose how your Provider app handles the authentication process.
+Consider a scenario, where you build an app using the [OIDC Provider](placeholder) service. You can call this app an OIDC Provider app or Provider app. Other apps using the [OIDC SSO](https://marketplace.mendix.com/link/component/120371) module redirect end-users to your Provider app for authentication. You can choose how your Provider app handles the authentication process.
 The **LoginLocation** is a constant in the OIDC Provider service that controls where end-users are authenticated. The default value is a local sign in using a username and password as shown below:
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/oidc-provider/Basic_Username_Password.png" class="no-border" >}}
