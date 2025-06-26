@@ -1,6 +1,6 @@
 ---
 title: "11.0"
-parent: /releasenotes/sdk/metamodel-11.0/
+url: /releasenotes/sdk/metamodel-11.0/
 weight: 78
 ---
 
