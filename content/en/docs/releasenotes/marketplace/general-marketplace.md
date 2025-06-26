@@ -14,6 +14,12 @@ These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 
 ## 2025
 
+### June 25, 2025
+
+#### Mendix Data Loader Version 2.3.0
+
+This version of [Mendix Data Loader](/appstore/modules/snowflake/mendix-data-loader/) allows you to configure a specific warehouse for your task, which is used as a compute resource when the task triggers data ingestion. This is controlled through two new options: **Use Specific Warehouse** and **Warehouse**.
+
 ### June 19, 2025
 
 #### Improvements
