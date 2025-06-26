@@ -60,6 +60,10 @@ To add a boundary event to the [above-listed activities](#supported-activities),
 
 To configure the properties of a boundary event, double-click the event to open its properties dialog box. For more information on how to configure the properties of a timer boundary event, see [Boundary Properties](/refguide/timer/#boundary-properties).
 
+#### Adding Boundary Event to Ongoing Activity
+
+When a boundary event is added to an activity, any workflow instances currently executing that activity will schedule the new boundary event accordingly. The only exception occurs when an ongoing boundary event is first removed, the workflow is redeployed, and then the removal is reverted. In this case, the boundary event will not be rescheduled.
+
 #### Implications of Changing the Boundary Event Type
 
 For an existing boundary event, when you change its type from non-interrupting to interrupting or vice versa, you will be presented with a warning dialog. For example, when you change a boundary event from non-interrupting to interrupting, you will see the following warning dialog:
@@ -68,7 +72,7 @@ For an existing boundary event, when you change its type from non-interrupting t
 
 After you confirm the change:
 
-* The boundary event is re-created as the specified type.
+* The boundary event is re-created with the specified type. The new boundary event will be scheduled after redeploy of the workflow, as soon as it becomes in progress.
 * The workflow will become incompatible if the changed boundary event has already been executed. The workflow becomes incompatible for the following reasons:
     * If the changed boundary event was non-interrupting, you will get the [Non-interrupting Boundary Event Path Removed](/refguide/workflow-versioning/#non-interrupting-boundary-event-path-removed) conflict.
     * If the changed boundary event was interrupting, you will get the [Current Activity Removed](/refguide/workflow-versioning/#current-activity-removed) conflict.
