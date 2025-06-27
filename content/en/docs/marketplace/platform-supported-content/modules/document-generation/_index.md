@@ -19,17 +19,17 @@ The [PDF Document Generation](https://marketplace.mendix.com/link/component/2115
 
 ### Limitations {#limitations}
 
-* Currently, PDF is the only supported document export format.
-* For deployment, currently we support [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/), [Mendix Cloud Dedicated](/developerportal/deploy/mendix-cloud-deploy/), [Mendix for Private Cloud Connected](/developerportal/deploy/private-cloud/), and [On-Premises](/developerportal/deploy/on-premises-design/). Other deployment scenarios will be supported at a later stage.
+* PDF is the only supported document export format.
+* For deployment, we support [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/), [Mendix Cloud Dedicated](/developerportal/deploy/mendix-cloud-deploy/), [Mendix for Private Cloud Connected](/developerportal/deploy/private-cloud/), and [On-Premises](/developerportal/deploy/on-premises-design/). Other deployment scenarios will be supported at a later stage.
 
     {{% alert color="info" %}}For all deployment types except for on-premises, we only support apps that allow bi-directional communication with the PDF Service in Mendix Cloud.{{% /alert %}}
 
 * The maximum file size is 25 MB per document. If your document exceeds this limit, the action will result in an exception. We recommend compressing high-resolution images to reduce their file size.
-* If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using client certificates, our cloud service will not be able to reach your app and the module will not work properly.
+* If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using client certificates, our cloud service will not be able to reach your app, and the module will not work properly.
 * If your app uses a custom domain, you must configure a custom SSL/TLS domain certificate signed by a trusted public authority, including all intermediate certificates if applicable. Self-signed certificates will cause the service to fail. For more information, see [Obtaining a new signed certificate](/developerportal/deploy/custom-domains/#obtaining-a-new-signed-certificate).
 * We use a fixed 30 second timeout for the page to finish loading and rendering. A timeout exception is thrown if the page content did not finish loading within 30 seconds.
 * Widgets or add-ons for your `index.html` file that perform long polling network requests are not supported. The document generation service waits until there are no more pending network requests.
-* Some widgets, such as the [Charts](/appstore/widgets/charts/) widget, might be rendered inconsistently in the generated PDF due to factors like animation.
+* Some widgets, such as [Charts](/appstore/widgets/charts/), might be rendered inconsistently in the generated PDF due to factors like animation.
 * Complex documents (for example, large tables) may run into memory limitations, separate from the file size limitation. Try to reduce the number of widgets inside repeatable widgets as much as possible.
 * We currently do not enforce strict rate limits. However, take into account the following guidelines:
     * Only set the `Wait for result` parameter to *true* for direct user actions. Do not set it to *true* for batch processing. Under heavy load, requests that wait for the result may fail due to strict timeout limitations.
@@ -41,8 +41,8 @@ The [PDF Document Generation](https://marketplace.mendix.com/link/component/2115
 * Setting the microflow property **Apply entity access** to *Yes* does not have any effect on the `Generate PDF from page` action. Regardless of the **Apply entity access** setting, the action does not require *Create* or *Write* access rights for the `FileDocument` object that gets created.
 * The `System.Owner` association is currently not set to the user which has run the microflow. Instead, the user that is configured for the `Generate as user` property of the `Generate PDF from page` action is used to set the association.
 * For local development, we use the Chrome or Chromium executable that is available on the development machine. Even though we have not observed these yet, there might be minor differences in PDF output locally versus when using the cloud service.
-* The access (and refresh) tokens used to secure requests to the cloud service are stored unencrypted in the app database. No user roles have read access to these tokens and all communication with the cloud service is encrypted by requiring HTTPS. However, do consider this when sharing a backup of the database with other developers. We will introduce encryption at a later stage.
-* If you have the [Application Performance Monitor (APM)](/appstore/partner-solutions/apd/) or [Application Performance Diagnostics (APD)](/appstore/partner-solutions/apd/) add-on enabled in your app, or set the log level of the **Services** log node to *Trace*, the PDF Document Generation module will not be able to generate documents when used in Mendix Cloud. This limitation is only applicable for apps built in Mendix 9.24.5 and below and Mendix 10.0.0.
+* The access and refresh tokens used to secure requests to the cloud service are stored unencrypted in the app database. No user roles have read access to these tokens, and all communication with the cloud service is encrypted by requiring HTTPS. However, do consider this when sharing a backup of the database with other developers. We will introduce encryption at a later stage.
+* If you have the [Application Performance Monitor (APM)](/appstore/partner-solutions/apd/) or [Application Performance Diagnostics (APD)](/appstore/partner-solutions/apd/) add-on enabled in your app, or the log level of the **Services** log node set to *Trace*, the PDF Document Generation module will not be able to generate documents when used in Mendix Cloud. This limitation is only applicable for apps built in Mendix 9.24.5 and below and Mendix 10.0.0.
 
 ### Dependencies
 
