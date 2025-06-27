@@ -48,6 +48,19 @@ The required resources depend on demand. For instance, to be able to generate 5 
 * CPU: more than 2 CPU cores
 * Memory: more than 4096 MB of RAM
 
+### Installing the Service
+
+The following artifact is available for installing the service:
+
+* The Docker image for the PDF Document Generation service 
+
+#### Installing through Docker
+
+Follow these steps to install the service through Docker:
+
+1. Pull the Docker image using the following command: `docker pull private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`.
+2. Run the Docker container using the following command: `docker run -p 8085:8085 --name document-generation private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`. The `<tag>` component must be replaced with the version of the service, such as `1.0.0`. This creates a Docker container, which is exposed on port `8085`.
+
 ### Isolation
 
 Requests share the same container resources, which has the following implications:
@@ -72,17 +85,6 @@ You can scale the service in two ways:
     * Each container can serve multiple requests at a time.
 
 Running multiple container replicas requires additional load balancing, which is not provided by Mendix. You need to configure and use your own preferred load balancing tools, such as [Nginx](https://nginx.org/).
-
-### Installing the Service
-
-In order to install the service, the following artifact is available:
-
-* The Docker image for the PDF Document Generation service. 
-
-#### Installing through Docker
-
-* Pull the Docker image through `docker pull private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`.
-* Run the Docker container through the `docker run -p 8085:8085 --name document-generation private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`, command, where `<tag>` should be replaced with the version of the service, such as `1.0.0`. This creates a Docker container, which is exposed on port `8085`.
 
 ## Configuration {#configuration}
 
