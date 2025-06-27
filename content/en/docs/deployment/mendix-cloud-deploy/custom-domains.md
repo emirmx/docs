@@ -76,7 +76,7 @@ To manage custom domains, follow these steps:
 2. Click **Cloud Settings** ({{< icon name="settings-slider-1" >}}) from any of the [available tabs](/developerportal/deploy/environments/#available-tabs) to open the **Manage Cloud Settings** page.
 3. Switch to the **Custom Domains** tab.
 
-If you already have a signed SSL/TLS certificate, skip to [Uploading Your Own Custom Domain Certificate](#Uploading), below.
+If you already have a signed SSL/TLS certificate, skip to [Uploading Your Own Custom Domain Certificate](#Uploading) below.
 
 ## Obtaining a New Signed Certificate
 
@@ -107,25 +107,31 @@ To create a CSR and an RSA (Rivest–Shamir–Adleman) encryption key, follow th
 
     {{% alert color="info" %}}The SSL/TLS private key will be hidden after you upload it. To keep the key secure, it will be stored in Mendix Cloud's secure keystore; it will not be available for download, and it cannot be obtained by Mendix Support.{{% /alert %}}
 
+On successful CSR generation, your CSR name appears in the table on the **Custom Domain** tabs. In the **Description** column, the name you provided during creation is followed by **Pending Customer Feedback**. This suffix remains as long as the CSR is open and not yet signed with a certificate.
+
 You can now go to your certificate authority to get a signed SSL/TLS certificate.
 
 ### Uploading a Signed Certificate{#Upload}
 
 Once you have a signed SSL/TLS certificate, you can upload it by following these steps:
 
-1. In the **Custom Domains** tab, select the custom domain certificate that you want to upload.
+1. Switch to the **Custom Domains** tab.
 
-2. Click **Upload Signed Certificate**. 
+2. Click the **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) icon on the CSR of interest.
 
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/custom-domains/certificate.png" class="no-border" >}}
+3. Select **Details**.
 
-3. Add a **Description** of your certificate.
+4. Click **Upload Signed Certificate**. 
 
-4. Paste the signed **TLS Certificate** (in PEM format).
+5. Add a **Description** of your certificate.
 
-5. Paste an **Intermediate Certificate Chain**. This is optional, but highly recommended. The intermediate certificate chain is provided by your certificate authority.
+6. Paste the signed **TLS Certificate** (in PEM format).
+
+7. Paste an **Intermediate Certificate Chain**. This is optional, but highly recommended. The intermediate certificate chain is provided by your certificate authority.
 
     {{< figure src="/attachments/deployment/mendix-cloud-deploy/custom-domains/signed-certificate.png" width=80% class="no-border" >}}
+
+8. Click **Save** to complete the process.
 
 {{% alert color="warning" %}}
 The intermediate certificates of the main certificate authorities are included in the built-in CA databases of modern browsers. Therefore, you do not need to include an intermediate certificate to serve your website through SSL/TLS to users of modern browsers. 
@@ -196,7 +202,7 @@ If you are rotating a certificate, you do not need to remove the current domain 
 
 You can do this by editing an existing custom domain certificate. To update an existing custom domain certificate, follow these steps:
 
-1. Click the **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) icon on the custom domain certificate of interest.
+1. Click the **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) icon on the CSR of interest.
 2. Select **Edit**.
 3. Paste the signed **TLS Certificate**.
 4. Paste the **Intermediate Certificate Chain**. This is optional, but most browsers require it. The intermediate certificate chain is provided by your certificate authority.
