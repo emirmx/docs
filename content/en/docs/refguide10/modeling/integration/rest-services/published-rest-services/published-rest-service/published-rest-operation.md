@@ -13,7 +13,7 @@ A published REST operation is part of a [published REST resource](/refguide10/pu
 
 In the **Published REST Service** document, you can add items to be included in the service as **Resources**:
 
-{{< figure src="/attachments/refguide10/modeling/integration/published-rest-services/published-rest-service/published-rest-operation/publshed-rest-service.png" alt="Published REST Service" class="no-border" >}}
+{{< figure src="/attachments/refguide10/modeling/integration/rest-services/published-rest-operation/publshed-rest-service.png" alt="Published REST Service" class="no-border" >}}
 
 ## Operation Definition
 
