@@ -34,7 +34,6 @@ These are the limitations of using the private PDF Document Generation service:
 Before you start using the private PDF Document Generation service, make sure you meet these prerequisites:
 
 * You have a good understanding of how to run and manage Docker containers. 
-* (Optional) You are familiar with using Helm charts for Kubernetes deployments.
 * You are familiar with the PDF Document Generation module. For more information, refer to [PDF Document Generation](/appstore/modules/document-generation/).
 * Your deployment environment needs to allow bidirectional communication between Mendix apps and the Docker containers running the private PDF Document Generation service.
 
@@ -76,19 +75,14 @@ Running multiple container replicas requires additional load balancing, which is
 
 ### Installing the Service
 
-In order to install the service, the following artifacts are available:
+In order to install the service, the following artifact is available:
 
 * The Docker image for the PDF Document Generation service. 
-* An optional Helm chart that can be used to set up the service if you are using Helm charts to manage your deployments.
 
 #### Installing through Docker
 
 * Pull the Docker image through `docker pull private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`.
-* Run the docker container through the `docker run -p 8085:8085 --name document-generation private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`, command, where `<tag>` should be replaced with the version of the service, such as `1.0.0`. This creates a Docker container, which is exposed on port `8085`.
-
-#### Installing through Helm
-
-Install the service through the `helm install document-generation <path-to-helm-chart-directory>` command. This creates a Kubernetes deployment, which is exposed on port `8085`.
+* Run the Docker container through the `docker run -p 8085:8085 --name document-generation private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`, command, where `<tag>` should be replaced with the version of the service, such as `1.0.0`. This creates a Docker container, which is exposed on port `8085`.
 
 ## Configuration {#configuration}
 
@@ -102,17 +96,13 @@ The approach for setting configuration values depends on the installation type. 
 
 When using Docker to run the image, add the configuration using the provided environment variables. An example of this is `docker run -p 8085:8085 -e MAX_DOCUMENT_SIZE=<value> --name document-generation private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`.
 
-#### Configuring through Helm
-
-When using Helm, you can configure the options using the `values.yaml` file.
-
 ### Available configuration options {#configuration-options}
 
-| Environment variable | Helm chart variable | Default value | Description |
-|----------------------|---------------------|---------------|-------------|
-| `MAX_DOCUMENT_SIZE` | `maxDocumentSize` | `25000000` (25 MB) | The maximum size for PDF documents generated using the service. When a PDF exceeds this file size, the request is aborted. |
-| `MAX_PAGE_RENDERING_TIME` | `maxPageRenderingTime` | `30000` (30 seconds) | The maximum time to wait for the page to finish loading and rendering. If loading the page exceeds this time, a [Wait for Content](/appstore/modules/document-generation/#wait-for-content-exception) exception is sent to the module. |
-| `ACCEPT_INSECURE_CERTIFICATES` | `acceptInsecureCertificates` | `false` | <p> Allows the use of untrusted certificates, such as when using self-signed certificates.</p> <p> **Warning:** This disables certificate validation, and allows the use of invalid certificates. Be aware of any resulting security risks.</p> |
+| Environment variable | Default value | Description |
+|----------------------|---------------|-------------|
+| `MAX_DOCUMENT_SIZE` | `25000000` (25 MB) | The maximum size for PDF documents generated using the service. When a PDF exceeds this file size, the request is aborted. |
+| `MAX_PAGE_RENDERING_TIME` | `30000` (30 seconds) | The maximum time to wait for the page to finish loading and rendering. If loading the page exceeds this time, a [Wait for Content](/appstore/modules/document-generation/#wait-for-content-exception) exception is sent to the module. |
+| `ACCEPT_INSECURE_CERTIFICATES` | `false` | <p> Allows the use of untrusted certificates, such as when using self-signed certificates.</p> <p> **Warning:** This disables certificate validation, and allows the use of invalid certificates. Be aware of any resulting security risks.</p> |
 
 ## Configuring your Mendix Apps
 
