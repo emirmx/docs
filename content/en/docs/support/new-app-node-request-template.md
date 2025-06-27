@@ -29,7 +29,9 @@ Fill in the required details for the new licensed app node on the [Request New A
 
 By default, all developers in your organization can create node requests. You can limit this to Mendix Admins only by contacting your Customer Success Manager or requesting it via a support ticket.
 
-If you have an app deployed to **SAP** and need a *Subscription Secret*, you need to choose the **Hosting type** *Virtual Private Cloud* and then, on the subsequent screen choose **Hosting type** *Cloud Foundry* and **Virtual Private Cloud Name** *SAP BTP*.  
+**Mendix for Private Cloud** is only for deployments on Kubernetes using the Mendix Operator. For more information, please confirm [here](https://docs.mendix.com/developerportal/deploy/private-cloud/)  
+For an app deployed on **Windows**, please choose Server-Based (Windows-Server) and collect the ServerID ( follow the [steps](https://docs.mendix.com/developerportal/deploy/licensing-apps-outside-mxcloud/#windows-server))
+If you have an app deployed to **Docker**, **Cloud Foundry**, or **Kubernetes** ( without Mendix Operator), please choose **Container Based (Docker, Cloud Foundry, Kubernetes)** to get your licenses.
 
 ## Resizing an Existing Environment{#resize}
 
