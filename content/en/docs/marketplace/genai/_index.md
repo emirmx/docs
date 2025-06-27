@@ -38,9 +38,9 @@ If you are new to GenAI, follow the steps below:
 2. Select the right architecture to support your use case. For a full list of possibilities, see the [Architecture and Components](#architecture) section below.
 3. Obtain the required credentials for your selected architecture.
 
-## Architecture and Components of the Mendix Agents Kit{#architecture}
+## Architecture and Components {#architecture}
 
-Supercharge your applications with the Mendix Agents Kit: this powerful set of components puts cutting-edge GenAI capabilities at your fingertips, helping you to make your Mendix apps smarter. Explore our collection of components and models as listed below.
+Supercharge your applications with Mendix's Agents Kit: this powerful set of components puts cutting-edge GenAI capabilities at your fingertips, helping you to make your Mendix apps smarter. Explore our collection of components and models as listed below. Please note that the toolkit supports the full spectrum of generative AI implementations, from straightforward text generation to complex agentic AI.
 
 ### Mendix Components 
 
