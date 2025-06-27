@@ -20,7 +20,14 @@ The [PDF Document Generation](https://marketplace.mendix.com/link/component/2115
 ### Limitations {#limitations}
 
 * Currently, PDF is the only supported document export format.
-* For deployment, currently we support [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/), [Mendix Cloud Dedicated](/developerportal/deploy/mendix-cloud-deploy/), [Mendix for Private Cloud Connected](/developerportal/deploy/private-cloud/), and [On-Premises](/developerportal/deploy/on-premises-design/). Other deployment scenarios will be supported at a later stage.
+* For deployment, currently we support: 
+    * [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/).
+    * [Mendix Cloud Dedicated](/developerportal/deploy/mendix-cloud-deploy/).
+    * [Mendix for Private Cloud Connected](/developerportal/deploy/private-cloud/).
+    * [On-Premises](/developerportal/deploy/on-premises-design/)
+    * A privately hosted Docker containarized PDF Document Generation service. Starting with module versions 1.11.0 for Mx9 and 2.1.0 for Mx10, you can now deploy a Docker containerized version of the service. For more information see [Private PDF Document Generation Service](/appstore/modules/document-generation/private-service/)
+    
+    Other deployment scenarios will be supported at a later stage.
 
     {{% alert color="info" %}}For all deployment types except for on-premises, we only support apps that allow bi-directional communication with the PDF Service in Mendix Cloud.{{% /alert %}}
 
