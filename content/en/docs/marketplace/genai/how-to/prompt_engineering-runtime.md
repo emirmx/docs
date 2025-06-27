@@ -59,7 +59,7 @@ You can now run the app, login as administrator, and verify that you can navigat
 
 You can now create your first agent in the user interface. The final agent will look like this:
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-prompt-engineering/prompt_engineering_details.png" >}}
-TODO change picture from blank genai app
+
 ### Initial Agent {#initial-agent}
 
 1. In the running app, open the **Agent** overview page that you added to your navigation in the previous section.
