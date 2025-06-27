@@ -12,19 +12,11 @@ aliases:
 
 Generative AI can be very powerful in providing user-friendly interactions with your app. However, using generative AI is very different from writing low- or high-code. This page introduces some important concepts in generative AI and suggests ways in which it can enhance your low-code app.
 
-## Agents and Assistants {#agents}
-
-With our Agents Kit you can combine prompts, RAG, and ReAct in a single call. These are the main common ingredients and patterns for agentic logic and are briefly described in the next subsections below. The components of Agents Kit allow you to build agentic apps: using LLMs business logic can be enriched by letting AI agents reason and autonomously execute actions while being grounded in domain-specific knowledge. In this approach the agent is part of your app's logic.
-
-For an overview of the components that help you get started, please refer to [the Agents Kit overview](/appstore/modules/genai/#architecture).
-
-In addition, you can integrate agentic behavior in a Mendix app by leveraging external agents through cloud infrastructure providers. In this case, the Mendix app does not store the agent definition, it merely calls the external agent. For example, [Agents for Amazon Bedrock](https://aws.amazon.com/bedrock/agents/) provides this functionality for Amazon Bedrock. You can find out how to use this in your Mendix application in [Invoking an Agent with the InvokeAgent Operation](/appstore/modules/aws/amazon-bedrock/#invokeagent) section of the *Amazon Bedrock* module documentation.
-
-### Large Language Model (LLM) {#llm}
+## Large Language Model (LLM) {#llm}
 
 By understanding both the capabilities and limitations of LLMs, you can more effectively integrate generative AI into your apps. Mendix recommends that you use it to accelerate business processes, but still "keep the human in the loop".
 
-#### What is an LLM?
+### What is an LLM?
 
 One of the most important components for generative AI is the Large Language Model (LLM). It is an advanced neural network trained on large amounts of textual data. This allows the model to understand textual input, and generate output. LLMs are designed to handle a variety of natural language processing tasks, making them versatile tools for developers and businesses alike.
 
@@ -39,7 +31,7 @@ For example, you can use an LLM to do:
 
 Some LLMs, such as [Anthropic Claude](/appstore/modules/aws/amazon-bedrock/) and [GPT-4o](/appstore/modules/genai/openai/), can also use one or more images as input, allowing you to ask questions about images for use cases such as object recognition, image to text (OCR), and validating whether an image is as intended.
 
-#### What is an LLM Not?
+### What is an LLM Not?
 
 While LLMs are powerful, they are not without limitations. Remember they are:
 
@@ -48,7 +40,7 @@ While LLMs are powerful, they are not without limitations. Remember they are:
 * **not a replacement for human judgment:** LLMs should be seen as tools to augment human capabilities, not replace human expertise or critical thinking.
 * **not trained for specific use cases**: LLMs are trained on a broad variety of use cases, for some specific (e.g. statistical) use cases you need to use traditional machine learning (ML) models. For more details on how to deploy such a model see [Machine Learning Kit](/refguide/machine-learning-kit/).
 
-#### Making an LLM more specific
+### Making an LLM more specific
 
 Since an LLM is pretrained on a huge dataset it can do many things out of the box. If you want to make it more specific to your use case and program it to perform specific functions in your apps, you can typically do three things:
 
@@ -58,7 +50,7 @@ Since an LLM is pretrained on a huge dataset it can do many things out of the bo
 
 Often, you can use prompt engineering, RAG, and ReAct to build your use case and do not need fine-tuning.
 
-### Prompt Engineering {#prompt-engineering}
+## Prompt Engineering {#prompt-engineering}
 
 Prompt engineering is the activity of designing the input text that will be send to the LLM. This typically contains input from the end-user, enriched with instructions from the developer / administrator. A prompt typically contains:
 
@@ -69,7 +61,7 @@ Prompt engineering is the activity of designing the input text that will be send
 
 With prompt engineering you can guide the model to generate accurate, applicable, and coherent responses. The quality of your prompts directly influences the quality of the response. See [Prompt Engineering](/appstore/modules/genai/prompt-engineering/) to learn more about prompt engineering.
 
-### Retrieval Augmented Generation (RAG) {#rag}
+## Retrieval Augmented Generation (RAG) {#rag}
 
 The knowledge of LLMs is limited to the data they have been trained on. This is generally-available information, for example from Wikipedia and other internet sources.
 
@@ -86,13 +78,13 @@ This allows you to use your own knowledge base to do things like:
 
 There are two approaches to including RAG in your generative AI-powered app.
 
-#### Fully-Integrated RAG
+### Fully-Integrated RAG
 
 Some architectures provide the capabilities for the RAG pattern out of the box, which shields you from having to retrieve and augment your prompt yourself. All you need to do is ensure that your knowledge base is available to the model.
 
 For example, Amazon Bedrock has the concept of [knowledge bases for Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html), which allows you to create a repository of private information that can be used to improve an LLM's response. This knowledge base is based on files (e.g. manuals or historical documents) in an S3 bucket. You can then use the Retrieve And Generate operation which will retrieve data from the knowledge base, augment the prompt with the retrieved information, and generate the response.
 
-#### PgVector Knowledge Base {#pgvectorknowledgebase}
+### PgVector Knowledge Base {#pgvectorknowledgebase}
 
 If your chosen architecture doesn't have fully-integrated RAG capabilities, or if you want tighter control of the RAG process, you can create and use your own knowledge base.
 
@@ -109,5 +101,14 @@ This microflow runs in the context of the user, allowing you to make sure that i
 See [Function Calling](/appstore/modules/genai/function-calling/) for more information on ReAct. You can see ReAct implemented in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) where the `GetInformationForTicketID` microflow allows an LLM to answer a question like "What is the status of ticket 42?".
 
 This pattern is supported both by [OpenAI](https://platform.openai.com/docs/guides/function-calling) and [various models available on Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features).
+
+
+## Agents and Assistants {#agents}
+
+The agent concept combines prompts, RAG (Retrieval Augmented Generation), and ReAct patterns in a single call. These components of agent-based logic are all supported by our Agents Kit: using LLMs (Large Language Models), business logic can be enriched by enabling AI agents to reason and autonomously execute actions while being grounded in domain-specific knowledge. With Mendix's Agents Kit, agents become a seamless part of your application's logic.
+
+For an overview of the components that help you get started, please refer to [the Agents Kit overview](/appstore/modules/genai/#architecture). 
+
+In addition, you can integrate agentic behavior in a Mendix app by leveraging external agents through cloud infrastructure providers. In this case, the Mendix app does not store the agent definition, it merely calls the external agent. For example, [Agents for Amazon Bedrock](https://aws.amazon.com/bedrock/agents/) provides this functionality for Amazon Bedrock. You can find out how to use this in your Mendix application in [Invoking an Agent with the InvokeAgent Operation](/appstore/modules/aws/amazon-bedrock/#invokeagent) section of the *Amazon Bedrock* module documentation.
 
 
