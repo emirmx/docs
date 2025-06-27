@@ -83,7 +83,8 @@ In order to install the service, the following artifacts are available:
 
 #### Installing through Docker
 
-Run the docker container through the `docker run -p 8085:8085 --name document-generation mendix/document-generation-service:<tag>`, command, where `<tag>` should be replaced with the version of the service, such as `1.0.0`. This creates a Docker container, which is exposed on port `8085`.
+* Pull the Docker image through `docker pull private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`.
+* Run the docker container through the `docker run -p 8085:8085 --name document-generation private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`, command, where `<tag>` should be replaced with the version of the service, such as `1.0.0`. This creates a Docker container, which is exposed on port `8085`.
 
 #### Installing through Helm
 
@@ -99,7 +100,7 @@ The approach for setting configuration values depends on the installation type. 
 
 #### Configuring through Docker
 
-When using Docker to run the image, add the configuration using the provided environment variables. An example of this is `docker run -p 8085:8085 -e MAX_DOCUMENT_SIZE=<value> --name document-generation mendix/document-generation-service:<tag>`.
+When using Docker to run the image, add the configuration using the provided environment variables. An example of this is `docker run -p 8085:8085 -e MAX_DOCUMENT_SIZE=<value> --name document-generation private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`.
 
 #### Configuring through Helm
 
