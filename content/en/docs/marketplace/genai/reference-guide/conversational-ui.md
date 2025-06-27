@@ -16,7 +16,7 @@ With the [Conversational UI](https://marketplace.mendix.com/link/component/23945
 Mendix has produced a [Conversational AI Design Checklist](/howto/front-end/conversation-checklist/) with some best practices for introducing conversational AI into your app.
 
 {{% alert color="info" %}}
-Prompt Management used to be a capability of the Conversational UI module. Since version 4.0.0, it is no longer part of the module and has been moved to the [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commons/) module. Existing prompts can be exported from the prompt management overview page and imported in the agent's kit.
+Prompt Management used to be a capability of the Conversational UI module. Since version 4.0.0, it is no longer part of the module and has been moved to the [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commons/) module. Existing prompts can be exported from the prompt management overview page and imported into the agent builder interface.
 {{% /alert %}}
 
 ### Typical Use Cases {#use-cases}
