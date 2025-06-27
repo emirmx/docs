@@ -11,7 +11,7 @@ cascade:
 
 ## Introduction
 
-The Mendix Portal is Mendix's online platform. It provides access to the following:
+The Mendix Portal is the online platform from Mendix. It allows you to create, share, and manage your resources, and provides access to the following:
 
 * [Apps](/developerportal/) — Create, deploy, and manage apps. 
 * [Deployment](/deployment/) — Deploy apps to various target platforms.
