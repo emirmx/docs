@@ -103,7 +103,7 @@ To create a CSR and an RSA (Rivest–Shamir–Adleman) encryption key, follow th
 
     An SSL/TLS private key and a certificate request is generated. The certificate request will be shown in PEM (Privacy-Enhanced Mail) format.
 
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/custom-domains/pem-format.png" >}}
+    {{< figure src="/attachments/deployment/mendix-cloud-deploy/custom-domains/new-pem-format.png" >}}
 
     {{% alert color="info" %}}The SSL/TLS private key will be hidden after you upload it. To keep the key secure, it will be stored in Mendix Cloud's secure keystore; it will not be available for download, and it cannot be obtained by Mendix Support.{{% /alert %}}
 
