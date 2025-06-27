@@ -20,10 +20,14 @@ The [PDF Document Generation](https://marketplace.mendix.com/link/component/2115
 ### Limitations {#limitations}
 
 * PDF is the only supported document export format.
-* For deployment, we support [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/), [Mendix Cloud Dedicated](/developerportal/deploy/mendix-cloud-deploy/), [Mendix for Private Cloud Connected](/developerportal/deploy/private-cloud/), and [On-Premises](/developerportal/deploy/on-premises-design/). Other deployment scenarios will be supported at a later stage.
+* For deployment, we support: 
 
+    * [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/)
+    * [Mendix Cloud Dedicated](/developerportal/deploy/mendix-cloud-deploy/)
+    * [Mendix for Private Cloud Connected](/developerportal/deploy/private-cloud/)
+    * [On-Premises](/developerportal/deploy/on-premises-design/)
+    * A privately hosted Docker containerized PDF Document Generation service. It is available starting with module versions 1.11.0 for Studio Pro 9 and 2.1.0 for Studio Pro 10. For more information, refer to [Private PDF Document Generation Service](/appstore/modules/document-generation/private-service/).
     {{% alert color="info" %}}For all deployment types except for on-premises, we only support apps that allow bi-directional communication with the PDF Service in Mendix Cloud.{{% /alert %}}
-
 * The maximum file size is 25 MB per document. If your document exceeds this limit, the action will result in an exception. We recommend compressing high-resolution images to reduce their file size.
 * If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using client certificates, our cloud service will not be able to reach your app, and the module will not work properly.
 * If your app uses a custom domain, you must configure a custom SSL/TLS domain certificate signed by a trusted public authority, including all intermediate certificates if applicable. Self-signed certificates will cause the service to fail. For more information, see [Obtaining a new signed certificate](/developerportal/deploy/custom-domains/#obtaining-a-new-signed-certificate).
