@@ -26,7 +26,7 @@ The [PDF Document Generation](https://marketplace.mendix.com/link/component/2115
     * [Mendix Cloud Dedicated](/developerportal/deploy/mendix-cloud-deploy/)
     * [Mendix for Private Cloud Connected](/developerportal/deploy/private-cloud/)
     * [On-Premises](/developerportal/deploy/on-premises-design/)
-    * A privately hosted Docker containerized PDF Document Generation service. It is available starting with module versions 1.11.0 for Studio Pro 9 and 2.1.0 for Studio Pro 10. For more information, refer to [Private PDF Document Generation Service](/appstore/modules/document-generation/private-service/).
+    * A privately hosted Docker containerized PDF Document Generation service. It is available starting with module versions 1.11.0 for Studio Pro 9 and 2.1.0 for Studio Pro 10. For more information, refer to [Private PDF Document Generation Service](/appstore/modules/private-document-generation-service/).
     {{% alert color="info" %}}For all deployment types except for on-premises, we only support apps that allow bi-directional communication with the PDF Service in Mendix Cloud.{{% /alert %}}
 * The maximum file size is 25 MB per document. If your document exceeds this limit, the action will result in an exception. We recommend compressing high-resolution images to reduce their file size.
 * If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using client certificates, our cloud service will not be able to reach your app, and the module will not work properly.
