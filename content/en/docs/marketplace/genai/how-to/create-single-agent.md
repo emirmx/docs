@@ -282,7 +282,7 @@ Additionally we will connect the agent to our knowledge base, so that it can use
 
 1. Click **Save**.
 
-Note that if the knowledge base of choice is not compatible with Agent Commons, or if the retrieval that should happen is more complex than the one shown above (e.g. it needs to include specific metadata), it is recommended to wrap the logic for the retrieval in a microflow first. Then, letting the microflow return a string representation of the retrieved data and adding the microflow as a tool to the Agent, the knowledge base retrieval can still be linked to the agent. An example of this pattern can be inspected in the [Agent Builder Starter app](https://marketplace.mendix.com/link/component/240369).
+Note that if the knowledge base of choice is not compatible with Agent Commons, or if the retrieval that should happen is more complex than the one shown above (e.g. it needs to include specific metadata), it is recommended to wrap the logic for the retrieval in a microflow first. Then, letting the microflow return a string representation of the retrieved data and adding the microflow as a tool to the Agent, the knowledge base retrieval can still be linked to the agent. An example of this pattern can be inspected in the [Agent Builder Starter app](https://marketplace.mendix.com/link/component/240369), look for microflow `Ticket_SimilaritySearch_Function`.
 
 #### Save as new version
 
