@@ -274,7 +274,7 @@ Additionally we will connect the agent to our knowledge base, so that it can use
 
 1. From the agent view page for the `IT-Ticket Helper` agent, under Knowledge bases, add a new knowledge base:
 
-    * Knowledge base: select the knowledge base created in a previous step. For Mendix Cloud in particular, look for the collection `HistoricalTickets`. If nothing seems to appear in the list, refer to the documentation of the connector on how to set it up correctly.
+    * Knowledge base: select the knowledge base created in a previous step. For Mendix Cloud GenAI in particular, look for the collection `HistoricalTickets`. If nothing seems to appear in the list, refer to the documentation of the connector on how to set it up correctly.
     * Name: `RetrieveSimilarTickets` (expression)
     * Description: `Similar tickets from the database` (expression)
     * MaxNumberOfResults: empty (expression; optional)
