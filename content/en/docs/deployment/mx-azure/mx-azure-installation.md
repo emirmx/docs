@@ -243,6 +243,10 @@ After creating your cluster in Microsoft Azure, you can deploy now deploy your a
 
     {{< figure src="/attachments/deployment/mx-azure/envCreationFailedQuota.png" class="no-border" >}}
 
+## Back up and Restore environments
+
+You can also back up and restore Mx on Azure environments. You can find more information in [Backup And Restore](/developerportal/deploy/mendix-on-azure/backups/)
+
 ## Adding a New Cluster Manager
 
 Once the cluster is successfully created and initialized in the Mendix on the Azure portal, you can [add additional cluster managers](/developerportal/deploy/private-cloud-cluster/#managing-the-cluster). 
