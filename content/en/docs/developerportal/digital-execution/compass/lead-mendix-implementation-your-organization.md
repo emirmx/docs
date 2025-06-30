@@ -607,7 +607,7 @@ Low-code governance is about having oversight and maintaining control over both 
 
 {{< figure src="/attachments/quickstarts/leading-mendix-implementation/governance-capability-highlights.png"  >}}
 
-At the beginning, the governance responsibility will likely be in the hands of your Mendix Admin. However, as your Mendix landscape grows, you may want to define a Center of Excellence. Admins can use [Control Center](control-center/), which gives you an overview of various company activities on the Mendix platform, to manage many of the aspects of landscape governance. 
+At the beginning, the governance responsibility will likely be in the hands of your Mendix Admin. However, as your Mendix landscape grows, you may want to define a Center of Excellence. Admins can use [Control Center](/control-center/), which gives you an overview of various company activities on the Mendix platform, to manage many of the aspects of landscape governance. 
 
 There are several advanced capabilities in the Control Center to help you manage your app landscape as it grows.
 
