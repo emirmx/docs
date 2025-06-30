@@ -23,7 +23,7 @@ The type of agent you can build is a single-turn agent, which means that:
 * It focuses on specific task completion. 
 * It uses a knowledge base and function calling to retrieve data or perform actions.
 
-This document will cover two approaches of defining an agent for your Mendix app. Both approaches leverage the capabilities of Mendix Agents kit. One approach uses the Agent builder UI to define Agents at runtime by the prinicples of Agent Commons, enabling versioning, development iteration and refinement at runtime, separate from the traditional app logic development cycle. The second approach defines the Agent programmatically using the building blocks of GenAI Commons and is more useful for very specific use cases and when the Agent needs to be part of the code respository of the app.
+This document will cover two approaches of defining an agent for your Mendix app. Both approaches leverage the capabilities of Mendix Agents kit. One approach uses the [Agent builder UI to define Agents](#define-agent-commons) at runtime by the prinicples of Agent Commons, enabling versioning, development iteration and refinement at runtime, separate from the traditional app logic development cycle. The second approach [defines the Agent programmatically](#define-genai-commons) using the building blocks of GenAI Commons and is more useful for very specific use cases and when the Agent needs to be part of the code respository of the app.
 
 ### Prerequisites {#prerequisites}
 
@@ -199,7 +199,7 @@ You have now successfully created your first function microflow that we will lin
 As a result of this function, users will be able to ask for information for a specific ticket by providing a ticket identifier, for example, by asking `What is ticket 42 about?`.
 
 
-## Define the Agent (using Agent Commons)
+## Define the Agent (using Agent Commons) {#define-agent-commons}
 
 The main approach to set up the agent and build logic to generate responses, is based on the logic part of the Agent Commons module. We start with defining an agent with a prompt at runtime, and in the same UI we add tools (microflows as functions) and knowledge bases to the agent version.
 
@@ -327,7 +327,7 @@ Run the app to see the agent integrated in the use case. Using the **TicketHelpe
 
 
 
-## Define the Agent (using microflows)
+## Define the Agent (using microflows) {#define-genai-commons}
 
 This is an alternative apporach to the steps related to Agent Commons described in the previous subsections. Here you will read on how to set up the agent and build logic to generate responses, using microflows for the agent empowerment. We start with a prompt at runtime, and add functions and knowledge bases to the microflow (design time).
 
