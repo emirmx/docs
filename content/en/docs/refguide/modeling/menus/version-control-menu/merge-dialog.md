@@ -11,7 +11,6 @@ With the **Merge** dialog you can [merge](/refguide/version-control/#merge) chan
 {{% alert color="warning" %}}
 Before continuing with the merge action, make sure you are currently working in the development line to which you want to merge.
 {{% /alert %}}
-{{% /alert %}}
 
 To access the **Merge** dialog box, open [Version Control](/refguide/version-control-menu/) > **Merge Changes Here**:
 
@@ -27,7 +26,6 @@ This functionality was known as **Port fix** in previous versions of Studio Pro.
 
 This scenario allows you to move a fix from a maintenance branch line to the main line. If you just want to redo a small fix, a single commit is often enough.
 
-Cherry pick adds changes from the selected commit to your branch line. You will need to explicitly commit these changes after performing the cherry pick.
 Cherry pick adds changes from the selected commit to your branch line. You will need to explicitly commit these changes after performing the cherry pick.
 
 ### Branch Line
