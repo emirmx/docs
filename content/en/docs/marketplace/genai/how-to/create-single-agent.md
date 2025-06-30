@@ -45,7 +45,7 @@ Before building an agent in your app, make sure your case meets the following re
 
 ## Agent Use Case
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-singleagent/structure_singleagent.jpg" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-singleagent/structure_singleagent.svg" >}}
 
 The agent combines multiple capabilities of the GenAI Suite of Mendix, Agents Kit. In this document, you will set up the logic to start using LLM calls to dynamically determine which in-app and external information is needed based on user input. The system retrieves the necessary information, uses it to reason about the actions to be performed, and handles execution, while keeping the user informed and involved where needed. The end result is an example of an agent in a Mendix app. In this use case, the user can ask IT-related questions to the model, which assists in solving problems. The model has access to a knowledge base containing historical, resolved tickets that can help identify suitable solutions. Additionally, function microflows are available to enrich the context with relevant ticket information, for example, the number of currently open tickets or the status of a specific ticket.
 
