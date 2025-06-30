@@ -7,7 +7,7 @@ weight: 60
 ---
 ## Introduction
 
-{{% alert color="warning" %}}This feature is currently in preview mode - to collect feedback about the UX and features which should be added to the final version.{{% /alert %}}
+{{% alert color="warning" %}}This tool is provided as-is, and no additional features or enhancements will be implemented in the future. {{% /alert %}}
 
 The Private Cloud data migration tool allows you to:
 

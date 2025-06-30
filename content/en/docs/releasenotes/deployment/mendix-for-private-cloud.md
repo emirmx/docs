@@ -12,6 +12,17 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2025
 
+### Release date: July 3, 2025
+
+#### Portal Improvements
+* We have fixed the issue where a Cluster Manager was unable to delete the disconnected or pending installation namespace.
+* PCLM releases will be displayed in descending order now.
+
+
+#### Deploy API
+* We have fixed the issue where non-Technical Contact was unable to update the environment via Update environment API. (Ticket #250927)
+* We have improved the logging for Deploy API when a JA exception occurs while reading the certificate content.
+
 ### June 25, 2025
 
 #### Mendix Operator v2.22.0 {#2.22.0}

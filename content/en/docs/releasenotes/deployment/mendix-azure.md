@@ -12,6 +12,15 @@ These release notes cover changes to deployment to [Mendix on Azure](/developerp
 
 For information on the current status of Mendix deployment, see [Mendix Status](https://status.mendix.com/).
 
+### Release date: July 3, 2025
+* As of today, Mendix on Azure users can now create and restore environment backups through Private Cloud Portal. Detailed information can be found in the backups [backups](/developerportal/deploy/mendix-on-azure/backups) documentation.
+* Moving forward, [Cloud tokens](/control-center/cloud-tokens/) are required for cluster initialization and environment creation in Mendix on Azure.
+* The Mendix on Azure portal is now available in Japanese and Korean languages, enhancing user experience for native speakers. Language preferences can be adjusted in the Work environment tab under Preferences.
+* We've fixed a portal issue where error messages were incorrectly displayed despite successful resource provisioning.
+* We've eliminated the requirement to visit the Private Cloud portal before accessing the Mendix on Azure portal for first-time users.
+* We've resolved an issue with stack reruns, ensuring proper cluster registration and Spacelift stack creation when these steps previously failed.
+* A new option has been added to the Cluster initialize/Edit steps to enable Managed Grafana with Private access
+
 ### Release date: May 29, 2025
 
 * We have strengthened the preflight check process to deliver a better user experience.
