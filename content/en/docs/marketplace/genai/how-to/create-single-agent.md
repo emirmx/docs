@@ -466,7 +466,7 @@ Finally, you can add a tool for knowledge base retrieval. This allows the agent 
     * DeployedKnowledgeBase: `DeployedKnowledgeBase` (as retrieved in step 1)
     * Use return value: `no`
 
-You have successfully integrated a knowledge base into your agent interaction. Now, when a user submits a request like, `My VPN crashes all the time and I need it to work on important documents`, the agent will search the knowledge base for similar tickets and provide a relevant solution.
+You have successfully integrated a knowledge base into your agent interaction. Run the app to see the agent integrated in the use case. Using the **TicketHelper_Agent** page, the user can ask the model questions and receive responses and when it deems relevant it will use the functions or knowledge base.  If you ask the agent, 'How many tickets are open?', a log should appear in your Studio Pro console indicating that the function microflow was executed. Now, when a user submits a request like, `My VPN crashes all the time and I need it to work on important documents`, the agent will search the knowledge base for similar tickets and provide a relevant solution. 
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-singleagent/Microflow_GenAICommons.png" >}}
 
