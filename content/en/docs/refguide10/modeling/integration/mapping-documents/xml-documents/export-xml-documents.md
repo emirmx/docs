@@ -119,7 +119,7 @@ To create the export logic, follow these steps:
 3. Click **OK** to save the button properties.
 4. Right-click the new action button and click **Go to microflow** in the context menu. You should see an empty microflow with one input parameter:
 
-    {{< figure src="/attachments/refguide10/modeling/integration/mapping-documents/xml-documents/export-xml-documents/18581802.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide10/modeling/integration/mapping-documents/xml-documents/export-xml-documents/parameter.png" class="no-border" >}}
 
 5. Select the input parameter and delete it.
 6. Open the **Toolbox**, which should be on the lower-right side of Studio Pro (you can also open it from the **View** menu).

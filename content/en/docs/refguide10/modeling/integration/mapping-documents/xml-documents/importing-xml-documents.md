@@ -47,7 +47,7 @@ To prepare the data structure and the GUI, follow these steps:
 
 ## Adding an XML Schema (XSD)
 
-Whether you plan to import or export documents, working with XML means your application must contain an XML schema, which is also called an XSD. An XSD describes the possible contents of an XML file. Based on the XSD, your application knows how to read or write an XML file. If you don't have an XSD file, there are some online XSD generators that accept an XML document as input. For this how-to, you can use [Customers.xsd](/attachments/refguide10/modeling/integration/mapping-documents/xml-documents/importing-xml-documents/18581652.xsd).
+Whether you plan to import or export documents, working with XML means your application must contain an XML schema, which is also called an XSD. An XSD describes the possible contents of an XML file. Based on the XSD, your application knows how to read or write an XML file. If you don't have an XSD file, there are some online XSD generators that accept an XML document as input. For this how-to, you can use [Customers.xsd](/attachments/refguide10/modeling/integration/mapping-documents/xml-documents/importing-xml-documents/customers-xml.xsd).
 
 To add an XML schema (XSD), follow these steps:
 
