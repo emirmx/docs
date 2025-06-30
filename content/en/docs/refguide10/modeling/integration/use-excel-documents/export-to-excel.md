@@ -29,7 +29,7 @@ To download the modules, follow these steps:
 1. Open the **Mendix Marketplace** from within Studio Pro.
 2. Search for the keyword *reflection* and select **Mx Model reflection**:
 
-    {{< figure src="/attachments/refguide10/modeling/integration/use-excel-documents/export-to-excel/18581166.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide10/modeling/integration/use-excel-documents/export-to-excel/mx-model-reflection.png" class="no-border" >}}
 
 3. Click **Download** to include the module in your app. It will be imported into **App** > **Marketplace modules** in the **App Explorer**.
 4. Search for the keyword *Excel*, select **Excel exporter**, and download that module into your app:
@@ -64,7 +64,7 @@ In this section, you will create an entity which will be used to export the Exce
 1. Open the domain model for your app and add an entity to serve as a "primary export" entity that is a specialization of **FileDocument**.
 2. Create an association between the newly created entity and the entity (or entities) that you will want to serve as a base for the Excel export.
 
-    {{< figure src="/attachments/refguide10/modeling/integration/use-excel-documents/export-to-excel/18581908.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide10/modeling/integration/use-excel-documents/export-to-excel/create-association.png" class="no-border" >}}
 
 ## Configuring Mx Model Reflection {#configure-mx-model-reflection}
 
@@ -132,7 +132,7 @@ To create the worksheet layout, follow these steps:
 
 1. Under the **Worksheets** section for the template, select **New** to create a new sheet template:
 
-    {{< figure src="/attachments/refguide10/modeling/integration/use-excel-documents/export-to-excel/18581907.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide10/modeling/integration/use-excel-documents/export-to-excel/new-sheet-template.png" class="no-border" >}}
 
 2. Specify the **Name** that will be given to the sheet when the file is exported.
 
@@ -188,7 +188,7 @@ To configure the dynamic column data, follow these steps:
 
 1. On the **Column Data** tab, select **New** to create a new export column:
 
-    {{< figure src="/attachments/refguide10/modeling/integration/use-excel-documents/export-to-excel/18581905.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide10/modeling/integration/use-excel-documents/export-to-excel/new-export-column.png" class="no-border" >}}
 
 2. The **Column number** will be set automatically, but can be overwritten to the desired ordinal number.
 3. Define a **Name** for the column. This will be the **Column Header** when exported.
@@ -205,7 +205,7 @@ To configure the static data in the sheet, follow these steps:
 
 1. Open the **Static Data tab** and select **New** to create a new export column.
 
-    {{< figure src="/attachments/refguide10/modeling/integration/use-excel-documents/export-to-excel/18581903.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide10/modeling/integration/use-excel-documents/export-to-excel/static-data-tab.png" class="no-border" >}}
 
 2. Specify the **Row** and **Column** that the static value should be placed.
 3. Enter a name for the cell in the **Name** field.
@@ -218,7 +218,7 @@ To configure the custom formatting and styling for the cells, follow these steps
 
 1. Back on the main page for your new template, click **New** in the **Styles** section to create a new style that can be applied to any of the data in the Excel export:
 
-    {{< figure src="/attachments/refguide10/modeling/integration/use-excel-documents/export-to-excel/18581900.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide10/modeling/integration/use-excel-documents/export-to-excel/styles.png" class="no-border" >}}
 
 2. Specify the properties of the style that will be applied to the cells. 
 
