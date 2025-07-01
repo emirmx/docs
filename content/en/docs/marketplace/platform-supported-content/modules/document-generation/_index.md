@@ -232,7 +232,7 @@ Rule | Name | Pattern | Rewrite URL
 
         {{% alert color="info" %}}Whenever there are multiple document requests for the same app environment, the document generation service will prioritize requests that have the **Wait for result** property set to *true* above requests that have the property set to *false*.{{% /alert %}}
 
-5. Verify that the user which you configured in the **Generate document as** property has access to all relevant data used in the page to be exported correctly. It's not required to set access to the page microflow created in step 3.
+5. Verify that the user which you configured in the **Generate document as** property has access to all relevant data used in the page to be exported correctly.
 
 * Note: For all module versions below 1.11.1 for Studio Pro 9 and 2.1.1 for Studio Pro 10, The user configured in the **Generate document as** property should be assigned access to the page microflow.
 
