@@ -118,7 +118,7 @@ When there are multiple boundary events attached to an activity and an interrupt
 Boundary events come with a specific set of rules for jumps. These rules are applicable to both types of jumps - [Jumping to other activities in design time](/refguide/jump-activity/) and [Jumping in running workflow instances](/refguide/jump-to/). The rules are as follows:
 
 * Jump inside a boundary event: not possible
-* Jump outside a boundary event: not possible (a future plan is to make it possible to jump outside interrupting boundary events but only to the parent or grandparent path)
+* Jump outside a boundary event: not possible, except when jumping from an interrupting boundary event to its parent or grandparent path, which is possible
 * Jump within a boundary event: possible
 
 ## Boundary Event Variables
