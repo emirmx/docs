@@ -40,13 +40,13 @@ If you are new to GenAI, follow the steps below:
 
 ## Architecture and Components {#architecture}
 
-Supercharge your applications with Mendix's Agents Kit: this powerful set of components puts cutting-edge GenAI capabilities at your fingertips, helping you to make your Mendix apps smarter. Explore our collection of components and models as listed below. Please note that the toolkit supports the full spectrum of generative AI implementations, from straightforward text generation to complex agentic AI.
+Supercharge your applications with Mendix's Agents Kit. This powerful set of components puts cutting-edge GenAI capabilities at your fingertips, helping you make your Mendix apps smarter. Explore our collection of components and models as listed on this page. Please note that the toolkit supports the full spectrum of generative AI implementations, from straightforward text generation to complex agentic AI.
 
 ### Mendix Components 
 
 | Asset |  Description | Type | Studio Pro Version |
 |-------------------|---------------------------------------------------|----------------------------------|------------|
-| [Agent Builder Starter App](https://marketplace.mendix.com/link/component/240369) | See an example of how to build an agentic mendix application. Use the Agent Builder from Agent Commons to build your support assistant. | Starter App | 10.21 |
+| [Agent Builder Starter App](https://marketplace.mendix.com/link/component/240369) | See an example of how to build an agentic Mendix app. Use the Agent Builder from Agent Commons to build your support assistant. | Starter App | 10.21 |
 | [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commons/) | Build agentic functionality using common patterns in your application by defining, testing, and evaluating agents at runtime. | Common Module | 10.21 |
 | [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926) | Lets you kick-start the development of enterprise-grade AI chatbot experiences. For example, you can use it to create your own private enterprise-ready ChatGPT-like app. | Starter App | 10.21 |
 | [Amazon Bedrock Connector](/appstore/modules/aws/amazon-bedrock/) | Connect to Amazon Bedrock. Use Retrieve and Generate or Bedrock agents. | Connector Module | 10.21 |
@@ -58,9 +58,9 @@ Supercharge your applications with Mendix's Agents Kit: this powerful set of com
 | [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/) | Connect to Mendix Cloud and utilize Mendix Cloud GenAI resource packs directly within your Mendix application. | Connector Module | 10.21 |
 | [OpenAI Connector](/appstore/modules/genai/openai/) | Connect to (Azure) OpenAI. | Connector Module | 10.21 |
 | [PgVector Knowledge Base](/appstore/modules/genai/pgvector/) | Manage and interact with a PostgreSQL *pgvector* Knowledge Base. | Connector Module | 10.21 |
-| [RFP Assistant Starter App / Questionnaire Assistant Starter App](https://marketplace.mendix.com/link/component/235917) | The RFP Assistant Starter App and the Questionnaire Assistant Starter App leverage historical RFPs (or question-answer pairs) and a continuously updated knowledge base to generate and assist in editing responses to RFPs, offering a time-saving alternative to manually finding similar responses and enhancing the knowledge management process.  | Starter App | 10.21 |
+| [RFP Assistant Starter App / Questionnaire Assistant Starter App](https://marketplace.mendix.com/link/component/235917) | The RFP Assistant Starter App and the Questionnaire Assistant Starter App leverage historical question-answer pairs (RFPs)) and a continuously updated knowledge base to generate and assist in editing responses to RFPs. This offers a time-saving alternative to manually finding similar responses and enhancing the knowledge management process.  | Starter App | 10.21 |
 | [Snowflake Showcase App](https://marketplace.mendix.com/link/component/225845) | Learn how to implement the Cortex functionalities in your app. | Showcase App | 10.21 |
-| [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035) | Learn how to combine common GenAI patterns, such as function calling and RAG to build your support assistant. Connect it to a model like Anthropic Claude via Mendix Cloud GenAI or Amazon Bedrock or use an (Azure) OpenAI subscription.  | Starter App | 10.21 |
+| [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035) | Learn how to combine common GenAI patterns, such as function calling and RAG to build your support assistant. Connect it to a model like Anthropic Claude via Mendix Cloud GenAI or Amazon Bedrock or use an Azure OpenAI subscription.  | Starter App | 10.21 |
 
 Older versions of the marketplace modules and GenAI Showcase App are available in Studio Pro 9.24.2.
 
