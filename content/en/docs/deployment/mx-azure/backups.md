@@ -28,7 +28,7 @@ The **Backups** page presents options for managing your backups. These are descr
 
 ### Create Backup
 
-You can enable the **Try new Backup and Restore** option in order to avail this new feature.
+You can enable the **Try new Backup and Restore** option in order to enable this new feature.
 
 #### Prerequisites
 
@@ -48,6 +48,7 @@ Its not allowed to create backups for environments with below condition:
 	* Environment creation is in progress
 	* Environment creation failed
 	* A deployment package is being deployed in the environment
+	* Any environment in transition state (where runtime is processing) will not appear in the list
 {{% /alert %}}
 
 The environment with above status will not be visible in the environment selection dropdown.
@@ -112,5 +113,4 @@ There is currently no API support to perform the backup/restore.
 
 ## Limitations
 
-* In order to get the latest status of the restore, you need to navigate to the destination environment details and refresh environment page. 
 * Please note: While the portal interface might allow you to restore backups across different namespaces, this operation is restricted. Backup and restore operations must be performed within the same namespace only.
