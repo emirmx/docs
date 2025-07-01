@@ -18,7 +18,7 @@ To access the **Merge** dialog box, open [Version Control](/refguide10/version-c
 
 Available scenarios are described in sections below.
 
-## Cherry Pick
+## Cherry Pick {#cherry-pick}
 
 {{% alert color="info" %}}
 This functionality was known as **Port fix** in previous versions of Studio Pro. It has been renamed to **Cherry pick** to keep it more consistent with the native Git name.
