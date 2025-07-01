@@ -58,7 +58,7 @@ This document guides you through the following steps:
 For the last step, multiple options are possible. This how-to will cover **two ways** of setting up the agent logic. 
 
 1. The first approach uses the [Agent Commons module](appstore/modules/genai/genai-for-mx/agent-commons/) which means the agent capabilities are defined and managed on pages in the app at runtime. This allows for easy experimentation, iteration and the development of agentic logic by GenAI engineers (at runtime), whithout the need of changing the integration of the agent in the app logic (at design time)
-1. The second option is rather programmatic, where most of the agent capabilites are defined in a microflow, using toolbox activities from [GenAI Commons](/appstore/modules/genai/genai-for-mx/commons/). This makes the agent (versions) part of the project repository and allows for more straightforward debugging, but is less flexible for iteration and experimentation at runtime.
+1. The second option is rather programmatic, where most of the agent capabilites are defined in a microflow, using toolbox activities from [GenAI Commons](/appstore/modules/genai/genai-for-mx/commons/). This makes the agent (versions) part of the project repository and allows for more straightforward debugging, but is less flexible for iteration and experimentation at runtime. For the prompt engineering and text generation model selection, we will use the runtime editing capabilities of Agent Commons, just as in the first approach.
 
 ## Setup Your Application
 
