@@ -112,4 +112,5 @@ There is currently no API support to perform the backup/restore.
 
 ## Limitations
 
-In order to get the latest status of the restore, you can navigate to the destination environment details and refresh environment page.
+* In order to get the latest status of the restore, you need to navigate to the destination environment details and refresh environment page. 
+* Please note: While the portal interface might allow you to restore backups across different namespaces, this operation is restricted. Backup and restore operations must be performed within the same namespace only.
