@@ -16,7 +16,7 @@ With the [Conversational UI](https://marketplace.mendix.com/link/component/23945
 Mendix has produced a [Conversational AI Design Checklist](/howto/front-end/conversation-checklist/) with some best practices for introducing conversational AI into your app.
 
 {{% alert color="info" %}}
-Prompt Management used to be a capability of the Conversational UI module. Since version 4.0.0, it is no longer part of the module and has been moved to the [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commons/) module. Existing prompts can be exported from the prompt management overview page and imported into the agent builder interface.
+Prompt Management used to be a capability of the Conversational UI module. Since version 4.0.0, it is no longer part of the module, and has been moved to the [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commons/) module. Existing prompts can be exported from the prompt management overview page and imported into the Agent Builder interface.
 {{% /alert %}}
 
 ### Typical Use Cases {#use-cases}
@@ -83,7 +83,7 @@ The main entities are shown for reference in the diagram below. For technical do
 
 ### Configuring the Roles {#module-roles}
 
-Make sure that the module role `User` is part of the user roles that are intended to chat with the model. Optionally, you can grant the `_addOn_ReadAll` role to admin roles, so that users with that role can read all messages. A role for usage monitoring is related only to the [Token consumption monitor snippets](#snippet-token-monitor).
+Make sure that the module role `User` is part of the user roles that are intended to chat with the model. Optionally, you can grant the `_addOn_ReadAll` role to Admins, so that users with that role can read all messages. A role for usage monitoring is related only to the [Token consumption monitor snippets](#snippet-token-monitor).
 
 | Module role | Description |
 | --- | --- |
