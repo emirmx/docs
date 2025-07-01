@@ -59,7 +59,7 @@ This document guides you through the following actions:
 * Create an agent logic based on a prompt in the UI that fits the use case. Learn how to iterate on prompts and fine-tune them for production use.    
 Multiple options are possible for this action. This how-to will cover two ways of setting up the agent logic:    
 
-    * The first approach uses the [Agent Commons module](appstore/modules/genai/genai-for-mx/agent-commons/), which means agent capabilities are defined and managed on app pages at runtime. This allows for easy experimentation, iteration, and the development of agentic logic by GenAI engineers at runtime, without the need for changing the integration of the agent in the app logic at design time.
+    * The first approach uses the [Agent Commons module](/appstore/modules/genai/genai-for-mx/agent-commons/), which means agent capabilities are defined and managed on app pages at runtime. This allows for easy experimentation, iteration, and the development of agentic logic by GenAI engineers at runtime, without the need for changing the integration of the agent in the app logic at design time.
     * The second option is programmatic. Most of the agent capabilities are defined in a microflow, using toolbox activities from [GenAI Commons](/appstore/modules/genai/genai-for-mx/commons/). This makes the agent versions part of the project repository, and allows for more straightforward debugging. However, it is less flexible for iteration and experimentation at runtime.
 
 ## Setup Your Application
@@ -239,11 +239,11 @@ Create a an agent that can be called to interact with the LLM. The [Agent Common
     
 6. Add the `{{UserInput}}` expression to the [User Prompt](/appstore/modules/genai/prompt-engineering/#user-prompt) field. The user prompt typically reflects what the end user writes, although it can be prefilled with your own instructions. In this example, the prompt consists only of a placeholder variable for the actual input the user will provide while interacting with the running app.
 
-7. In the **Model** field, select the text generation model. Note that the model needs to support function calling and system prompts in order to be selectable. For Mendix Cloud GenAI Resources, this is automatically the case. However, if you use another connector to an LLM provider, and your chosen model does not show up in the list, check the documentation of the respective connector for information about [the supported model functionalities](appstore/modules/genai/genai-for-mx/commons/#deployed-model).
+7. In the **Model** field, select the text generation model. Note that the model needs to support function calling and system prompts in order to be selectable. For Mendix Cloud GenAI Resources, this is automatically the case. However, if you use another connector to an LLM provider, and your chosen model does not show up in the list, check the documentation of the respective connector for information about [the supported model functionalities](/appstore/modules/genai/genai-for-mx/commons/#deployed-model).
 
 8. Add a value in the **UserInput** variable field on the right of the page, under **Test Case**. That way, you can test the current prompt behavior by calling the agent. For example, type `How can I implement an agent in my Mendix app?` and click **Run**. You may need to scroll down to see the **Output** on the page after a few seconds. Ideally, the model does not attempt to answer requests that fall outside its scope, as it is restricted to handling IT-related issues and providing information about ticket data. However, if you ask a question that would require tools that are not yet implemented, the model might hallucinate and generate a response as if it had used those tools.
 
-9. Make sure the app is running with the latest [domain model changes from the previous section](#domain-model-setup). In the Agent Commons UI, you will see a field for the [Context Entity](/genai/genai-for-mx/agent-commons/#define-context-entity). Search for **TicketHelper**, and select the entity that was created in one of the previous steps. When starting from the Blank GenAI App, this should be **MyFirstModule.TicketHelper**. 
+9. Make sure the app is running with the latest [domain model changes from the previous section](#domain-model-setup). In the Agent Commons UI, you will see a field for the [Context Entity](/appstore/modules/genai/genai-for-mx/agent-commons/#define-context-entity). Search for **TicketHelper**, and select the entity that was created in one of the previous steps. When starting from the Blank GenAI App, this should be **MyFirstModule.TicketHelper**. 
 
 10. Save the agent version using the **Save As** button, and enter *Initial agent with prompt* as the title. 
 
@@ -383,7 +383,7 @@ Create an agent that can be sent to the LLM. The [Agent Commons](/appstore/modul
 
 7. Add a value in the **UserInput** variable field to test the current agent. For example, type `How can I implement an agent in my Mendix app?`. Ideally, the model will not attempt to answer requests that fall outside its scope, as it is restricted to handling IT-related issues and providing information about ticket data. However, if you ask a question that would require tools that are not yet implemented, the model might hallucinate and generate a response as if it had used those tools.
 
-8. Make sure the app is running with the latest [domain model changes from the previous section](#domain-model-setup). In the Agent Commons UI, you will see a field for the [Context Entity](/genai/genai-for-mx/agent-commons/#define-context-entity). Search for **TicketHelper** and select the entity that was created in one of the previous steps. When starting from the Blank GenAI App, this should be **MyFirstModule.TicketHelper**.
+8. Make sure the app is running with the latest [domain model changes from the previous section](#domain-model-setup). In the Agent Commons UI, you will see a field for the [Context Entity](/appstore/modules/genai/genai-for-mx/agent-commons/#define-context-entity). Search for **TicketHelper** and select the entity that was created in one of the previous steps. When starting from the Blank GenAI App, this should be **MyFirstModule.TicketHelper**.
 
 9. Save the agent version using the **Save As** button and enter *Initial agent* as the title.
 
