@@ -17,8 +17,8 @@ Before starting the installation and implementation process, make sure that you 
 
 * Obtain and configure a Microsoft Azure account. For more information, refer to the the Microsoft Azure documentation.
 * Purchase the Mendix on Azure offering in the [Azure Marketplace](https://azuremarketplace.microsoft.com/).
-* You must buy cloud tokens (min. 14 cloud tokens per environment) to consume Mx on Azure platform services.
-* You must sign in to the Mendix on Azure portal with the same Azure account that was used to purchasing the offering. If you sign in with another account, the cluster is not visible for initialization.
+* You must buy cloud tokens (min. 14 cloud tokens per environment) to consume Mendix on Azure platform services. Kinldy note that the cloud tokens are not utilized during an active trial.
+* You must sign in to the Mendix on Azure portal with the same Azure account that was used to purchase the offering. If you sign in with another account, the cluster is not visible for initialization.
 
 {{< figure src="/attachments/deployment/mx-azure/coadmin-permission.png" class="no-border" >}}
 
@@ -57,7 +57,7 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
 
     The preflight check launches to verify that the required resources can be registered in the cluster. Along with this, it will also validate, if there are valid (trial) service entitlement for Mendix on Azure assigned to your company and/or sufficient Cloud Tokens to initialise the cluster.
     The preflight checks also validates if the Azure account used for the initialization has owner role assigned to it.
-    Mendix apps are hosted with virtual images, so the preflight check determines whether the cluster contains the required type of virtual image. To view a list of the required resource providers, hover your cursor over the **Information** icon. If required, you can register any missing providers in the **Resource providers** section of the Microsoft Azure portal.
+    Mendix apps are hosted with virtual machines, so the preflight check determines whether the cluster contains the required type of virtual machine. To view a list of the required resource providers, hover your cursor over the **Information** icon. If required, you can register any missing providers in the **Resource providers** section of the Microsoft Azure portal.
 
     {{< figure src="/attachments/deployment/mx-azure/preflight-check.png" class="no-border" >}}
 
@@ -239,13 +239,13 @@ To enable private endpoints for your Mendix on Azure app, perform the following 
 
 ## Deploying an App to an Azure Cluster
 
-After creating your cluster in Microsoft Azure, you can now deploy your applications to the cluster. The deployment process is the same as with Mendix for Private Cloud. However, in order to use the Mx on Azure Platform service, you need to have minimum 14 cloud tokens to create an environment. For more information, see [Deploying a Mendix App to a Private Cloud Cluster](/developerportal/deploy/private-cloud-deploy/). In case of insufficient Cloud Tokens, user will get below error message.
+After creating your cluster in Microsoft Azure, you can now deploy your applications to the cluster. The deployment process is the same as with Mendix for Private Cloud. However, in order to use the Mendix on Azure Platform service, you need to have minimum 14 cloud tokens to create an environment. For more information, see [Deploying a Mendix App to a Private Cloud Cluster](/developerportal/deploy/private-cloud-deploy/). In case of insufficient Cloud Tokens, user will get below error message.
 
     {{< figure src="/attachments/deployment/mx-azure/envCreationFailedQuota.png" class="no-border" >}}
 
 ## Back up and Restore environments
 
-You can also back up and restore Mx on Azure environments. You can find more information in [Backup And Restore](/developerportal/deploy/mendix-on-azure/backups/)
+You can also back up and restore Mendix on Azure environments. You can find more information in [Backup And Restore](/developerportal/deploy/mendix-on-azure/backups/)
 
 ## Adding a New Cluster Manager
 
