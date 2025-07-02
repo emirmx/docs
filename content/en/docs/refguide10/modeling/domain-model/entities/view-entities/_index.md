@@ -3,12 +3,11 @@ title: "View Entities"
 url: /refguide10/view-entities/
 weight: 17
 cascade:
-    - beta: true
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 {{% alert color="info" %}}
-This feature was introduced in Studio Pro 10.19 and is currently in beta. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+This feature was introduced in Studio Pro 10.19 in beta, and is in general availability since 10.22. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).
 {{% /alert %}}
 
 ## Introduction
