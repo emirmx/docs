@@ -480,7 +480,7 @@ Then the Studio Pro UI for the property appears like this:
 
 The action property type allows a user to configure an action which can do things like call nanoflows, save changes, and open pages.
 
-If a `dataSource` attribute is not specified, the client will receive an `ActionValue` representing the action or `undefined` if the **Do nothing** action was selected.
+If a `dataSource` attribute is not specified, the client will receive an [`ActionValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#actionvalue) representing the action or `undefined` if the **Do nothing** action was selected.
 
 When a `dataSource` attribute is specified and configured by the user, it is passed as a [`ListActionValue`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-list-values/#listactionvalue). For more information, see the [Datasource](#datasource) section below.
 
