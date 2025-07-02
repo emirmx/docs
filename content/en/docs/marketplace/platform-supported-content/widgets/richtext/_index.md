@@ -30,9 +30,7 @@ The [Rich Text](https://marketplace.mendix.com/link/component/74889/) widget pro
 * Supports code highlight, which enables the user to insert code fragments and have a live preview with highlighted syntax
 
 {{% alert color="info" %}}
-
 Unlike Rich Text v3, this version no longer hosts the editor inside a sandboxed `iframe`. Thus, page styling will directly affect the rich text's styling.
-
 {{% /alert %}}
 
 ## Configuration
@@ -117,25 +115,24 @@ To configure this widget, follow these steps:
 
 ### Events Tab
 
-* **On change** – specifies an action to execute when the user changes the value of the editor
-    * **On change type** - specifies which type of event that will trigger the on change action
-        * **When user leaves input field** - if selected, an on change action will be triggered when user moves focus out of the editor
-        * **While user is entering data** - if selected, an on change action will be triggered each time a data change occurs
-* **On enter** – specifies an action to execute when the user focuses on the editor
-* **On leave** – specifies an action to execute when the user move focus out of the editor
-* **On load** – specifies an action to execute after the editor is fully loaded in the DOM
+* **On change** – specifies an action to execute when the user changes the value of the editor.
+    * **On change type** - specifies which type of event that will trigger the on change action.
+        * **When user leaves input field** - if selected, an on change action will be triggered when user moves focus out of the editor.
+        * **While user is entering data** - if selected, an on change action will be triggered each time a data change occurs.
+* **On enter** – specifies an action to execute when the user focuses on the editor.
+* **On leave** – specifies an action to execute when the user move focus out of the editor.
+* **On load** – specifies an action to execute after the editor is fully loaded in the DOM.
 
 ### Advanced Tab
 
 * **Enable spell checking** – configures to use the browser’s native spell checker.
 * **Custom fonts** – configures extra fonts selection for the font family.
 * **Selectable images** – configures image entity source to allow rich text to use images from entity instead of base64 string.
-* **Enable default upload** – if enabled, it will keep the current image upload method using base64 string, otherwise it is hidden (default value: true).
+* **Enable default upload** – if enabled, it will keep the current image upload method using base64 string, otherwise it is hidden (default value: **true**).
 
 ### Common Tab
 
 For more information, see [Common Section](/refguide/common-widget-properties/#common-properties) in *Properties Common in the Page Editor*.
-
 
 ## Advance Configuration
 
@@ -170,7 +167,7 @@ You will need to define the new font by adding the font face custom styling.
 This feature is available from Rich Text version 4.7.0 and above.
 {{% /alert %}}
 
-To add a new custom font, simply go to advance tab and click new on custom font.
+To add a new custom font, simply click the **Advanced** tab and click new on custom font:
 
 * **Font name** – this is the font name that will be use to display the font on font-family selection in Rich Text toolbar.
 * **Font style** – this is the font-family declaration that you have set previously in font-face styling.
@@ -209,16 +206,16 @@ Entity that being used for Rich Text data source value attribute have to use Fil
 
 ##### Configuration
 
-Use following configuration information to set up the File Uploader widget:
+Use following configuration information to set up the file uploader widget:
 
 1. **Selectable images**
-    1. Rich text needs to know the source of image entity to be display. On the **advance tab > selectable images**, choose association to **UploadedImage_FileUploadContext/UploadedImage** entity.
+    1. Rich text needs to know the source of image entity to be display. Click the **Advanced** tab > **Selectable images**, then choose association to **UploadedImage_FileUploadContext/UploadedImage** entity.
     1. By selecting this, Rich Text will display a dropzone for image upload widget.
 
 * **Configuring the image upload widget**
-    1. Drag and drop File Uploader widget to the available image upload dropzone underneath Rich Text widget.
-    1. Open File Uploader widget configuration and select Images as **Upload mode**.
-    1. On the advace tab of File Uploader widget, set **Enable custom buttons** to **Yes** and add a custom buttons.
+    1. Drag and drop file uploader widget to the available image upload dropzone underneath Rich Text widget.
+    1. Open the file uploader widget configuration and select **Images** as the **Upload mode**.
+    1. On the **Advanced** tab of file uploader widget, set **Enable custom buttons** to **Yes** and add a custom buttons.
     1. Set **Default file action** to **Yes** on the custom button and call the [nanoflow to select images](#configuring-image-selection-nanoflow) as the action.
 
 #### Using Another Widget as Image Selector
