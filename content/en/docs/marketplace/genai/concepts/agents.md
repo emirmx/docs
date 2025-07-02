@@ -67,7 +67,7 @@ Read more about [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commo
 
 ### GenAI Showcase App
 
-Check out example implementations of the previously mentioned patterns and multi-agent systems in the [GenAI Showcase Application](https://marketplace.mendix.com/link/component/220475).
+Check out example implementations of the previously mentioned patterns and multi-agent systems in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475).
 
 ### Additional Information
 

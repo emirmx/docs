@@ -68,7 +68,7 @@ Before you can start creating your first agent, you need to setup your applicati
 
 ## Create the Agent's Functional Prerequisites
 
-Now that the basics of the app are set up, you can start implementing the agent. The agent should interact with data from both a knowledge base and the Mendix app. In order to make this work form a user interface, we need to set up a number of functional prerequisites:
+Now that the basics of the app are set up, you can start implementing the agent. The agent should interact with data from both a knowledge base and the Mendix app. In order to make this work from a user interface, we need to set up a number of functional prerequisites:
 
 * Populate a knowledge base. 
 * Create a simple user interface which allows the user to trigger the agent from a button.
@@ -106,7 +106,7 @@ Mendix ticket data needs to be ingested into the knowledge base. You can find a 
     * Edit the first retrieve action to retrieve objects from your new entity `Ticket`.
     * In the loop, delete the second action that adds metadata to the `MetadataCollection`.
     * In the last action of the loop `Chunks: Add KnowledgeBaseChunk to ChunkCollection` keep the **Human readable ID** field empty.
-    * Near the end of the microflow, edit the `DeployedKnowledgeBase` retrieve action to change the XPath constraint for name from *example* to `HistoricalTickets`
+    * Near the end of the microflow, edit the `DeployedKnowledgeBase` retrieve action to change the XPath constraint for name from *example* to `HistoricalTickets`.
 
 7. Finally, create a microflow `ACT_CreateDemoData_IngestIntoKnowledgeBase` that first calls the `Tickets_CreateDataset` microflow, followed by the `ACT_TicketList_LoadAllIntoKnowledgeBase` microflow. Add this `ACT_CreateDemoData_IngestIntoKnowledgeBase` new microflow to your navigation or homepage and ensure that it is accessible to admins (add the admin role under **Allowed Roles** in the microflow properties).
 
@@ -142,7 +142,7 @@ First, create a user interface to test and use the agent properly.
 
 You have now successfully added a page that allows users to ask questions to an agent. You can verify this in the running app by opening the page and entering text into the **User input** field. However, the button does not do anything yet. You will add logic to the microflow behind the button following the steps in the [Generate a Response](#generate-response) section.
 
-### Create the function microflows
+### Create the Function Microflows
 
 We will add two microflows that the agent can leverage to use live app data:
 
@@ -196,7 +196,7 @@ You have now successfully created your first function microflow that you will li
 
     * Mapping: `EM_Ticket`
     * Parameter: `TicketList` (retrieved in previous action)
-    * Store in: ``String Variable` called `JSON_Ticket`
+    * Store in: `String Variable` called `JSON_Ticket`
 
 4. Right-click the action and click `Set $JSON_Ticket as return value`.
 
@@ -208,7 +208,7 @@ The main approach to set up the agent and build logic to generate responses is b
 
 ### Set up the Agent with a Prompt
 
-Create a an agent that can be called to interact with the LLM. The [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commons/) module allows agentic AI engineers to define agents and perform prompt engineering at runtime.
+Create an agent that can be called to interact with the LLM. The [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commons/) module allows agentic AI engineers to define agents and perform prompt engineering at runtime.
 
 1. Run the app.
 
@@ -243,7 +243,7 @@ Create a an agent that can be called to interact with the LLM. The [Agent Common
 
 8. Add a value in the **UserInput** variable field on the right of the page, under **Test Case**. That way, you can test the current prompt behavior by calling the agent. For example, type `How can I implement an agent in my Mendix app?` and click **Run**. You may need to scroll down to see the **Output** on the page after a few seconds. Ideally, the model does not attempt to answer requests that fall outside its scope, as it is restricted to handling IT-related issues and providing information about ticket data. However, if you ask a question that would require tools that are not yet implemented, the model might hallucinate and generate a response as if it had used those tools.
 
-9. Make sure the app is running with the latest [domain model changes from the previous section](#domain-model-setup). In the Agent Commons UI, you will see a field for the [Context Entity](/appstore/modules/genai/genai-for-mx/agent-commons/#define-context-entity). Search for **TicketHelper**, and select the entity that was created in one of the previous steps. When starting from the Blank GenAI App, this should be **MyFirstModule.TicketHelper**. 
+9. Make sure the app is running with the latest [domain model changes](#domain-model-setup) from the previous section. In the Agent Commons UI, you will see a field for the [Context Entity](/appstore/modules/genai/genai-for-mx/agent-commons/#define-context-entity). Search for **TicketHelper**, and select the entity that was created in one of the previous steps. When starting from the Blank GenAI App, this should be **MyFirstModule.TicketHelper**. 
 
 10. Save the agent version using the **Save As** button, and enter *Initial agent with prompt* as the title. 
 
@@ -270,7 +270,7 @@ You will now use the function microflows that were created in earlier steps. In 
 2. In the second half of the page, under **Tools**, add a new tool:
 
     * Name: `RetrieveNumberOfTicketsInStatus` (expression)
-    * Description: `Get number of tickets in a certain status. Only the following values for status are available: [''Open'', ''In Progress'', ''Closed'']` (expression)
+    * Description: `Get number of tickets in a certain status. Only the following values for status are available: ['Open', 'In Progress', 'Closed']` (expression)
     * Enabled: *yes* (default)
     * Tool action microflow: select the module in which the function microflows reside, then select the microflow called `Ticket_GetNumberOfTicketsInStatus`. When starting from the Blank GenAI App, this module should be **MyFirstModule**
 
@@ -383,7 +383,7 @@ Create an agent that can be sent to the LLM. The [Agent Commons](/appstore/modul
 
 7. Add a value in the **UserInput** variable field to test the current agent. For example, type `How can I implement an agent in my Mendix app?`. Ideally, the model will not attempt to answer requests that fall outside its scope, as it is restricted to handling IT-related issues and providing information about ticket data. However, if you ask a question that would require tools that are not yet implemented, the model might hallucinate and generate a response as if it had used those tools.
 
-8. Make sure the app is running with the latest [domain model changes from the previous section](#domain-model-setup). In the Agent Commons UI, you will see a field for the [Context Entity](/appstore/modules/genai/genai-for-mx/agent-commons/#define-context-entity). Search for **TicketHelper** and select the entity that was created in one of the previous steps. When starting from the Blank GenAI App, this should be **MyFirstModule.TicketHelper**.
+8. Make sure the app is running with the latest [domain model changes](#domain-model-setup) from the previous section. In the Agent Commons UI, you will see a field for the [Context Entity](/appstore/modules/genai/genai-for-mx/agent-commons/#define-context-entity). Search for **TicketHelper** and select the entity that was created in one of the previous steps. When starting from the Blank GenAI App, this should be **MyFirstModule.TicketHelper**.
 
 9. Save the agent version using the **Save As** button and enter *Initial agent* as the title.
 

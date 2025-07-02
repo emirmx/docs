@@ -48,7 +48,7 @@ Agent Commons enables users to create powerful agents at runtime, enriching requ
 2. Go to **Navigation**, and add a new **Agents** item.     
    
    1. Select a suitable icon, such as `notes-paper-text`, from the Atlas icon set.
-   2. Set the **On Click** action to *Show Page*. 
+   2. Set the `On Click` action to `Show Page`. 
    3. Search and select the `Agent_Overview` page, located under **AgentCommons** > **USE_ME** > **Agent Builder** folder. Alternatively, you can add a button to a page and connect to the same page.
 
 3. If you have not started from a GenAI Starter App, you also need to add a navigation item that opens the `Configuration_Overview` page of the **MxGenAIConnector**. For more details, see [Configuration](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#configuration).
@@ -117,7 +117,7 @@ Enter `Chair 30 words` as the title for the test case.
 5. Now that you have saved at least two test cases, open a dropdown next to the **Run** button, and click **Run All**.
 This will execute both test cases, allowing you to compare the different input values. Note that the **Language** variable was not set in the first test case, as it did not exist at the time. As a result, the model's response may be in English or another random language.
 
-5. Once you are satisfied with your agent, you can now save the version one more time with the title `Added system prompt and language`.
+6. Once you are satisfied with your agent, you can now save the version one more time with the title `Added system prompt and language`.
 
 You have now successfully created your first agent. A few additional configurations are still required, which will be covered later in this document.
 
@@ -243,7 +243,7 @@ When you want to run your agent from the Agent Commons page, you need to select 
 
 ### Context Entity Issues {#context-entity-issues}
 
-When you select the `Context entity` in the UI, but cannot find the one you are are looking for, you might need to restart your application after the entity was added to your domain model.
+When you select the `Context entity` in the UI, but cannot find the one you are looking for, you might need to restart your application after the entity was added to your domain model.
 
 If the attributes do not match the variables, a warning is displayed in the UI or the Console of your running app. This might happen if you have used inconsistent names for the `{{variables}}` inside of your prompts compared to the attribute names. Double check if they are exactly the same, with no whitespace or other characters.
 
