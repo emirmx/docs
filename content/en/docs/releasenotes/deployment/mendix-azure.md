@@ -17,7 +17,6 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 * Moving forward, [Cloud tokens](/control-center/cloud-tokens/) are required for cluster initialization and environment creation in Mendix on Azure except when a trial is active. A check is added under Preflight check which validates if user have sufficient valid cloud tokens.
 * The Mendix on Azure portal is now available in Japanese and Korean languages, enhancing user experience for native speakers. Language preferences can be adjusted in the Work environment tab under Preferences.
 * We've fixed a portal issue where error messages were incorrectly displayed despite successful resource provisioning.
-* We've eliminated the requirement to visit the Private Cloud portal before accessing the Mendix on Azure portal for first-time users.
 * We've made improvements to the handling of cluster deployment retries.
 * A new option has been added to the Cluster initialize/Edit steps to enable Managed Grafana with Private access.
 * We also added a new option under Preflight check which validates that the Azure account used to initialize the cluster has an owner role assigned on the target subscription.
