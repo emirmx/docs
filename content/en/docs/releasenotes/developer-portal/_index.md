@@ -1517,7 +1517,7 @@ We have made the following improvements to the **Access Management** page in Por
 
 #### Improvements
 
-* We redesigned the **Stories** page with a brand new UI and improved stability. The new UI can be accessed by clicking **Enable new UI**. This is a [beta version](/releasenotes/beta-features/).
+* We redesigned the **Stories** page with a brand new UI and improved stability. The new UI can be accessed by clicking **Enable new UI**. This is a [beta version](/releasenotes/release-status/).
 
 ### December 5, 2019
 
