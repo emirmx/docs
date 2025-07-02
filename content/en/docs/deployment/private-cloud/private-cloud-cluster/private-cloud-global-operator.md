@@ -175,9 +175,9 @@ Licenses imported in the PCLM Server appear in the PCLM Statistics section of th
 
 Claimed licenses are visible in the PCLM Statistics section of the Managed namespace.
 
-### Offline License/Subscription Secret
+### Offline License and Subscription Secret
 
-In case of Global operator, the Runtime and Operator licenses needs to be applied to all the managed namespaces seperately. 
+For Global operator, the Runtime and Operator licenses must be applied to all the managed namespaces separately. 
 
 ## Upgrading Managed Namespaces
 
