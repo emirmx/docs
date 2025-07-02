@@ -229,7 +229,7 @@ To use another widget as an image selector for Rich Text, ensure you meet the fo
     {{< figure src="/attachments/appstore/platform-supported-content/widgets/rich-text/entity-with-system-image.png" alt="Rich text entity with FileUploadContext generalization" >}}
 
 * The custom widget needs to have access to the System.Image object and able to call nanoflow action when image being selected.
-* It is not mandatory that the custom widget have upload image function (e.g, using gallery and [Image](/appstore/widgets/image/) widget with onClick is also possible), because Rich Text widget only need the selection action call.
+* It is not mandatory that the custom widget have upload image functionality (for example, it is also possible to use [Gallery](/appstore/modules/gallery/) and [Image](/appstore/widgets/image/) widgets with onClick), because the Rich Text widget only needs the selection action call.
 
 ##### Configuration
 
