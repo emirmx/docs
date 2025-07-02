@@ -142,24 +142,19 @@ This advance configuration allows you to add extra font list to the font family 
 
 #### Prerequisites
 
-Prior to adding a new font, the font files and font family have to already be included in your project.
+Before use, please ensure you meet the following prerequisites:
 
-* **Adding font files**
+* Prior to adding a new font, the font files and font family have to already be included in your project. To add font files into the project, you can put the font files inside your styles/web directory.
+* Define font family in styling. You will need to define the new font by adding the font face custom styling.
 
-To add font files into the project, you can put the font files inside your styles/web directory.
-
-* **Define font family in styling**
-
-You will need to define the new font by adding the font face custom styling.
-
-```css
-@font-face {
-  font-family: 'Your-font-family-name';
-  src: url('YourFontFile.ttf') format('truetype');
-  font-weight: 100;
-  font-style: normal;
-}
-```
+	```css
+	@font-face {
+	  font-family: 'Your-font-family-name';
+	  src: url('YourFontFile.ttf') format('truetype');
+	  font-weight: 100;
+	  font-style: normal;
+	}
+	```
 
 #### Adding a Custom Font 
 
@@ -184,7 +179,7 @@ The new font name will be display in the toolbar with data-value attribute as `d
 }
 ```
 
-### Image from entity
+### Image From Entity
 
 {{% alert color="info" %}}
 This feature is available from Rich Text version 4.8.0 and above.
@@ -196,7 +191,7 @@ The default image upload and selection method of Rich Text is to use base64 stri
 
 The default and recommended way of uploading and selecting images from entity in Rich Text widget is to use [File Uploader](/appstore/modules/file-uploader/) module.
 
-##### Prerequisite
+##### Prerequisites
 
 Entity that being used for Rich Text data source value attribute have to use FileUploadContext entity generalization.
 
