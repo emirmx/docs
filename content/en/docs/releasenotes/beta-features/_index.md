@@ -22,7 +22,7 @@ This document outlines the purpose of each phase and what customers can expect f
 
 Some of the phases are optional. The release status impacts the support level for the feature or product. More specifically, Limited or General Availability features or products are ready for production use and are covered by your Support Level Agreement, as opposed to Private Beta, Public Beta or Experimental features. 
 
-Next to release statuses, content available on Mendix Marketplace has a Support status (for example, Platform Supported or Deprecated). For more information, see the [Content Support Categories](/marketplace/marketplace-content-support/#category) section in the *Marketplace Support Content*. 
+Next to release statuses, content available on Mendix Marketplace has a Support status (for example, Platform Supported or Deprecated). For more information, see the [Content Support Categories](/appstore/marketplace-content-support/#category) section in the *Marketplace Support Content*. 
 
 ## Private Beta, Experimental, and Public Beta Releases 
 
@@ -50,7 +50,7 @@ If you would like to test a beta feature or product, consider the following:
 * Features or products labeled Public beta or Experimental are available for all customers. Your feedback on these features is welcome through your Customer Success Manager (CSM) and in the community forum. 
 * For features or products labeled Private beta, our product team usually reaches out to you with an invitation to test the feature or products. They will be your point of contact for any feedback and will ensure the involvement of Mendix Expert Services if required to provide you with the required knowledge to successfully make use of the private beta feature or product. 
 
-## Limitations of Beta and Experimental Releases
+### Limitations of Beta and Experimental Releases
 
 Please take note of the following limitations regarding beta/experimental features and products: 
 
