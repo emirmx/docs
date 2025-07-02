@@ -299,7 +299,7 @@ Explaining the callback code:
 
 #### Understanding Promises
 
-If you are using Mendix version 10.23 or below, you will need to use promises. A `Promise` object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+If you are using Mendix version 10.22 or below, you will need to use promises. A `Promise` object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
 
 Use the following code in Mendix versions 10.23 or below to wrap a callback API in a promise:
 
