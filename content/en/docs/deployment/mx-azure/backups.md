@@ -1,116 +1,99 @@
 ---
-title: "Backups"
+title: "Backups for Mendix on Azure"
 url: /developerportal/deploy/mendix-on-azure/backups/
 weight: 13
-description: "Describes the Backups page of Apps."
+description: "Describes the backups functionality for apps running on Mendix on Azure."
 #To update these screenshots, you can log in with credentials detailed in How to Update Screenshots Using Team Apps.
 ---
 
 ## Introduction
 
-Backups allows to create/restore database/file documents back ups for apps running in Mendix on Azure.
-
-{{% alert color="warning" %}}
-Features like Upload backups, Nightly backups and Download backups are not yet available for Mendix on Azure.
-{{% /alert %}}
+For apps running in Mendix on Azure, the [Backups](/developerportal/operate/backups/) functionality enables you to create and restore database or file document backups. Other backup functionalities, such as uploading and downloading backup snapshots, or scheduling nightly backups, are not yet supported for Mendix on Azure. 
 
 Backup snapshots contain both the database and file documents referred to in the database.
 
-{{% alert color="info" %}}
-This page describes backups for apps deployed to Mendix on Azure. Hence, creating/restoring the backups is only possible for **Mendix on Azure** apps currently. If you would like to use this feature, **Try new Backup and Restore** needs to be enabled in Backups page.
-{{% /alert %}}
+## Enabling Backups
 
-## Backups{#backups}
-
-The **Backups** page presents options for managing your backups. These are described below.
+If you would like to enable creating and restoring backups, select **Try new Backup and Restore** on the **Backups** page. 
 
 {{< figure src="/attachments/deployment/mx-azure/backups/backup-controls.png" alt="" >}}
 
-### Create Backup
+You must have permission to **Manage Apps Backups** for the namespace.
 
-You can enable the **Try new Backup and Restore** option in order to enable this new feature.
+## Creating a Backup {#creating-backup}
 
-#### Prerequisites
-
-You have Access to Backups permission (**Manage Apps Backups**) for the namespace.
-
-#### Creating a Backup {#creating-backup}
-
-1. Go to [Apps](https://sprintr.home.mendix.com) and select the app.
-
-2. Click **Backups** in the navigation pane.
-
-3. On the right side of the page, select the environment from the dropdown for which you want to create a backup. 
+1. In the [Apps](https://sprintr.home.mendix.com) page, select your app.
+2. In the navigation pane, click **Backups**.
+3. Select the environment for which you want to create a backup from the dropdown on the right. 
 
 {{% alert color="info" %}}
-Its not allowed to create backups for environments with below condition:
+You may not create backups while the environment status is any of the following:
 
-	* Environment creation is in progress
-	* Environment creation failed
-	* A deployment package is being deployed in the environment
-	* Any environment in transition state (where runtime is processing) will not appear in the list
+* Environment creation is in progress
+* Environment creation failed
+* A deployment package is being deployed in the environment
+* The environment is in transition state (runtime is processing)
 {{% /alert %}}
 
-The environment with above status will not be visible in the environment selection dropdown.
-
 4. Click **Create Backup**. 
-
-5. You can check the status of the backup under Status column. 
+5. To check the status of the backup, see the **Status** column. 
 
 {{% alert color="info" %}}
 If you want to restart your environment after creating a backup archive, wait until the backup completes. Tables are locked while the database is in the process of creating a backup, so you may receive a timeout error if you try to start your environment while the backup is being created.
 {{% /alert %}}
 
+### Backup Details {#backups-details}
 
-#### Details {#backups-details}
+You can view details of a backup by clicking **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) and then **Details**. The following details are displayed:
 
-You can view details of a backup by clicking **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) and then **Details**. You will see the following details:
-
-| Backup Details                      | Description                                                                                   |
-| :---------------------------------- | :-------------------------------------------------------------------------------------------- |
-| **Status**                          | The status of the backup (**Processing**,**Failed**, or **Finished**) |
-| **Snapshot id**                     | A unique identifier for the backup snapshot                                                   |
-| **Created on**                      | The creation date and time of the backup                                                      |
-| **Deployment Package**              | The version of the deployment package used during backup creation                             |
-| **Comment**                         | A comment added to the backup                                                                 |
+| Backup Details | Description |
+| --- | --- |
+| **Status** | The status of the backup (**Processing**,**Failed**, or **Finished**) |
+| **Snapshot ID** | A unique identifier for the backup snapshot |
+| **Created on** | The creation date and time of the backup |
+| **Deployment Package** | The version of the deployment package used during backup creation |
+| **Comment** | A comment added to the backup |
 
 {{< figure src="/attachments/deployment/mx-azure/backups/backup-details.png" alt="Backup Details" max-width=60% class="no-border" >}}
 
-#### Delete Backup {#backups-delete}
+## Deleting a Backup {#backups-delete}
 
-You can delete the backup snapshots by clicking **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) and then **Delete**. If not deleted, the backup file will stay until you explicitly delete it from the portal. 
+To delete a backup snapshot, perform the following steps:
 
+1. Click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) by a backup that you want to delete.
+2. Click **Delete**.
 
-### Restore Backup {#restore-backup}
+The backup file is retained until you delete it from the portal. 
 
-To restore a backup, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) > **Restore** on the backup you want to restore.
+## Restoring a Backup {#restore-backup}
 
-{{< figure src="/attachments/deployment/mx-azure/backups/backup-restore.png" alt="Backup Restore" max-width=60% class="no-border" >}}
-
-{{% alert color="info" %}}
-You can restore a backup that has been stored in Mendix on Azure environment. Back up from other cloud providers is not supported.
-{{% /alert %}}
+You can restore a backup that has been created in your Mendix on Azure environment. Backups from other cloud providers are not supported.
 
 {{% alert color="info" %}}
 You can only restore a backup if you have **Manage Apps Backups and Stop Apps** permissions in the respective namespace.
 {{% /alert %}}
 
-You can choose the destination environment to which you want to restore the backup snapshot. This allows you to, for example, restore a production environment backup to an acceptance environment.
+To restore a backup, perform the following steps:
 
-If you restore a backup snapshot that was originally deployed with a different Mendix version, you will get a warning. You can still restore the data, but you will have to deploy the same model later on.
+1. If your app is running, stop it by clicking **Stop Application**.
+2. Click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) by a backup that you want to restore.
+
+    If you select a backup snapshot that was originally deployed with a different Mendix version, you will see a warning. You can still restore the data, but you must deploy the same model afterwards.
+   
+4. Click **Restore**.
+
+    {{< figure src="/attachments/deployment/mx-azure/backups/backup-restore.png" alt="Backup Restore" max-width=60% class="no-border" >}}
+
+5. Choose the destination environment to which you want to restore the backup snapshot. This allows you to, for example, restore a production environment backup to an acceptance environment.
 
 {{% alert color="info" %}}
-If the app is still running, you have to stop it by clicking Stop Application. Then click Restore Backup again. No updates should be done to the environment while restore process is under progress. 
+Do not update the environment while the restore process is in progress.
 {{% /alert %}}
 
-The environment activity log will indicate status as **FINISHED** when the restore has completed. Your environment details page will display a message while the backup is being restored
+Your environment details page displays a message while the backup is being restored. After the restore process is completed, the environment activity log shows the status as **FINISHED**. If a backup restore fails, the backup activity log of your environment shows the status as **FAILED**.
+
+## Known Limitations
  
-If a backup restore fails, the failure is logged in your app’s Backup Activity log, which you can view on the Backups page of your app. If this happens, all data that was restored until the point of failure will be present in your database. This will leave the database only partially restored; not all data from the backup file will be present in your database. The failed restore process will log **FAILED** status in activity logs.
-
-{{% alert color="info" %}}
-There is currently no API support to perform the backup/restore.
-{{% /alert %}}
-
-## Limitations
-
-* Please note: While the portal interface might allow you to restore backups across different namespaces, this operation is unsupported. Backup and restore operations must be performed within the same namespace only.
+* If a backup restore fails, all data that was restored until the point of failure is present in the database. This leaves the database only partially restored.
+* There is currently no API support for the backup and restore process.
+* The portal interface appears to allow restoring backups across different namespaces, but in reality this operation is unsupported. Backup and restore operations must be performed within the same namespace only.
