@@ -84,7 +84,7 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
 
     {{% alert color="info" %}}If you plan to use [virtual network peering](#network-peering), you must set the **Load Balancer Type** to **Private (Internal)**.{{% /alert %}}
 
-    {{% alert color="info" %}}Under Managed Grafana, if you select False, then Private access to Grafana dashboard is required. Make sure that the required network is set up to accomodate Private access.{{% /alert %}}
+    {{% alert color="info" %}}If **Managed Grafana** is set to **False**, private access to a Grafana dashboard is required. Make sure that the required network is set up to accomodate private access.{{% /alert %}}
 
     {{< figure src="/attachments/deployment/mx-azure/provision-additional-option.png" class="no-border" >}}
 
