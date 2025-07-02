@@ -134,7 +134,7 @@ To configure this widget, follow these steps:
 
 For more information, see [Common Section](/refguide/common-widget-properties/#common-properties) in *Properties Common in the Page Editor*.
 
-## Advance Configuration
+## Advanced Configuration
 
 ### Custom Fonts
 
@@ -174,9 +174,7 @@ To add a new custom font, simply click the **Advanced** tab and click new on cus
 
 #### Display Custom Font with Correct Styling in the Toolbar
 
-This is an optional configuration that user can employ to display custom fonts, in their own styling, on the font-family toolbar selection:
-
-* **Font name variable**
+**Font name variable** is an optional configuration that user can employ to display custom fonts, in their own styling, on the font-family toolbar selection.
 
 The new font name will be display in the toolbar with data-value attribute as `data-value="your-font-name"`. The name will be derived from **Font name** configuration by set it to lower case, and replace all spaces (" ") with dashes ("-"). You can use this custom styling to display it correctly in the toolbar:
 
