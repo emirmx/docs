@@ -17,7 +17,7 @@ Before starting the installation and implementation process, make sure that you 
 
 * Obtain and configure a Microsoft Azure account. For more information, refer to the the Microsoft Azure documentation.
 * Purchase the Mendix on Azure offering in the [Azure Marketplace](https://azuremarketplace.microsoft.com/).
-* You must buy cloud tokens (min. 14 cloud tokens per environment) to consume Mendix on Azure platform services. Kinldy note that the cloud tokens are not utilized during an active trial.
+* You must buy cloud tokens (min. 14 cloud tokens per environment) to consume Mendix on Azure platform services. Cloud tokens are not utilized during an active trial.
 * You must log in to [Private Cloud page](https://privatecloud.mendixcloud.com/) before starting the installation process in the Mendix on Azure portal.
 * You must sign in to the Mendix on Azure portal with the same Azure account that was used to purchase the offering. If you sign in with another account, the cluster is not visible for initialization.
 
