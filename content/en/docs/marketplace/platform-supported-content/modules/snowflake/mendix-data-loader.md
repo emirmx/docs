@@ -43,7 +43,7 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
     1. Enter a **Name** for your data source within the Data Loader.
     2. Enter an **API endpoint** – that is, the base endpoint for the OData resource in your Mendix application, for example, `https://yourmendixapp.mendixcloud.com/odata/snowflakedata/v1/`.
 
-{{% alert color="warning" %}}This must be the root URL, that is, it must end in `/v1/` or `/v2/` Adding anything to the root URL (such as a resource path} will prevent the Mendix Data Loader from working.
+{{% alert color="warning" %}}This must be the root URL, that is, it must end in `/v1/` or `/v2/` Adding anything to the root URL (such as a resource path) will prevent the Mendix Data Loader from working.
 
 If you want to use specific resources, you should instead expose a new endpoint that only contains the resources that you require. This is because it is only possible to use every resource that is exposed in the OData endpoint, and impossible to exclude certain resources.{{% /alert %}}
 
