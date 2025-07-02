@@ -130,8 +130,7 @@ If required, you can change the following options for your cluster. The **Edit**
 * Postgres Compute tier
 * Postgres Compute size
 
-
-    {{< figure src="/attachments/deployment/mx-azure/editClusterPage.png" class="no-border" >}}
+{{< figure src="/attachments/deployment/mx-azure/editClusterPage.png" class="no-border" >}}
 
 ## Enabling Connections Between Different Azure Resource Groups
 
