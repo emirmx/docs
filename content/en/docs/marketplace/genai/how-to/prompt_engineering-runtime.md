@@ -84,7 +84,7 @@ You can now create your first agent in the user interface. The final agent will 
 
     The agent cannot be edited anymore.
 
-### Iterate and First Test Case
+### Iteration and First Test Case
 
 To further improve your prompts and the user experience for the end users, you can now add some placeholder variables. 
 
