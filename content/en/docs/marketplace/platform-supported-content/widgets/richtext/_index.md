@@ -44,54 +44,54 @@ To configure this widget, follow these steps:
 ### General Tab
 
 * **Data source**
-    * **Value attribute** (required) – sets a String attribute to store the rich-text content
+    * **Value attribute** (required) – sets a String attribute to store the rich-text content.
 * **General** 
     * **Show label** 
-        * **Yes** – if selected, you can define the label caption
-            * **Label caption** – defines the label caption of the widget that is displayed on the page
-        * **No** (default) – if selected, there is no label for this widget on the page
-    * **Enable status bar** display status bar on the bottom of the editor
+        * **Yes** – if selected, you can define the label caption.
+            * **Label caption** – defines the label caption of the widget that is displayed on the page.
+        * **No** (default) – if selected, there is no label for this widget on the page.
+    * **Enable status bar** display status bar on the bottom of the editor.
 * **Toolbar**
-    * **Toolbar** display toolbar based on the selected location on the editor
+    * **Toolbar** display toolbar based on the selected location on the editor.
         * **Basic** – if selected, the following menu will be shown: 
-            * bold italic, numlist bullist, outdent indent, link, removeformat 
+            * bold italic | numlist bullist | outdent indent | link | removeformat 
         * **Standard** – if selected, the following menu will be shown: 
-            * undo redo, bold italic underlined, bullist numlist loweralphalist, outdent indent, ltr rtl, alignleft aligncenter alignjustify alignright, fontfamily fontsize forecolor backcolor, link image, blockquote codesample codeblock (view/edit)code, removeformat
+            * undo redo | bold italic underlined | bullist numlist loweralphalist | outdent indent | ltr rtl | alignleft aligncenter alignjustify alignright | fontfamily fontsize forecolor backcolor | link image | blockquote codesample codeblock (view/edit)code, removeformat
         * **Full** – if selected, the following menu will be shown: 
-            * undo redo, bold italic underlined strikethrough, superscript subscript, bullist numlist loweralphalist checklist, outdent indent, ltr rtl, alignleft aligncenter alignjustify alignright, fontfamily fontsize forecolor backcolor, link image video formula, heading, blockquote codesample codeblock (view/edit)code, removeformat
-        * **Custom** – allows you to make your own menubar selection based on the **full** selection list
+            * undo redo | bold italic underlined strikethrough | superscript subscript | bullist numlist loweralphalist checklist | outdent indent | ltr rtl, alignleft aligncenter alignjustify alignright | fontfamily fontsize forecolor backcolor | link image video formula | heading | blockquote codesample codeblock (view/edit)code | removeformat
+        * **Custom** – allows you to make your own menubar selection based on the **full** selection list.
     * **Location** 
-        * **Sticky** – if selected, toolbar will be placed on the top of the editor and sticky position will apply upon scrolled
-        * **Top** – if selected, toolbar will be placed on the top of the editor
-        * **Bottom** – if selected, toolbar will be placed on the bottom of the editor
-        * **Hide** – if selected, toolbar will be hidden or not shown
+        * **Sticky** – if selected, toolbar will be placed on the top of the editor and sticky position will apply upon scrolled.
+        * **Top** – if selected, toolbar will be placed on the top of the editor.
+        * **Bottom** – if selected, toolbar will be placed on the bottom of the editor.
+        * **Hide** – if selected, toolbar will be hidden or not shown.
 
 * **Editable** – determines when user can edit content in the editor and when it is read-only.
-    * **Read-only style** - determines the style of the rich text when set to read-only
+    * **Read-only style** - determines the style of the rich text when set to read-only.
     For more information, see the [Editability Section](/refguide/common-widget-properties/#editability) in *Properties Common in the Page Editor*.
 
-* **Visible** – determines if the widget is visible on the page
+* **Visible** – determines if the widget is visible on the page.
     For more information, see the [Visibility Section](/refguide/common-widget-properties/#visibility-properties) in *Properties Common in the Page Editor*.
     
 ### Custom Toolbar Tab
 
-* **Custom** – allows you to make your toolbar with customized options
+* **Custom** – allows you to make your toolbar with customized options.
     * **Toolbar group** 
-        * **Basic** (default) – if selected, you can select which of the following toolbar groups are available in the toolbar
-            * **Edit history** - items: undo, redo
-            * **Font style** - items: bold, italic, underline, strikethrough
-            * **Font script** - items: superscript, subscript
-            * **List** - items: bullist numlist loweralphalist checklist
-            * **Indentation** - items: outdent, indent, ltr rtl
-            * **Embedded media** - items: link, image, video, formula
-            * **Alignment** - items: alignleft aligncenter alignjustify alignright
-            * **Syntax** - items: blockquote, codesample, codeblock, (view/edit)code
-            * **Font colors** - items: fontfamily, fontsize, forecolor, backcolor
-            * **Content type** - items: header
-            * **View** - items: fullscreen
-            * **Removal** - items: clear
-            * **Table** - items: table
-        * **Advanced** – if selected, you can configure buttons for different toolbar groups
+        * **Basic** (default) – if selected, you can select which of the following toolbar groups are available in the toolbar:
+            * **Edit history** - items: undo, redo.
+            * **Font style** - items: bold, italic, underline, strikethrough.
+            * **Font script** - items: superscript, subscript.
+            * **List** - items: bullist numlist loweralphalist checklist.
+            * **Indentation** - items: outdent, indent, ltr rtl.
+            * **Embedded media** - items: link, image, video, formula.
+            * **Alignment** - items: alignleft aligncenter alignjustify alignright.
+            * **Syntax** - items: blockquote, codesample, codeblock, (view/edit)code.
+            * **Font colors** - items: fontfamily, fontsize, forecolor, backcolor.
+            * **Content type** - items: header.
+            * **View** - items: fullscreen.
+            * **Removal** - items: clear.
+            * **Table** - items: table.
+        * **Advanced** – if selected, you can configure buttons for different toolbar groups:
 
             {{% alert color="info" %}}All the toolbar groups that you configure will be available in the toolbar. With vertical bars or separator options ("|"), you can separate different toolbar groups.{{% /alert %}}
 
@@ -102,16 +102,16 @@ To configure this widget, follow these steps:
 
 ### Dimensions Tab
 
-* **Width unit** – the width of the widget
-    * **Percentage** – specifies the width in relation to the rest of the elements on the page
-    * **Pixels** – specifies the width in pixels
-* **Width** – used as an appropriate CSS value
-* **Height unit** – the height of the widget
-    * **Percentage of width** – specifies the height in relation to the width
-    * **Pixels** – specifies the height in pixels
-    * **Percentage of parent** – specifies the width in relation to the rest of the elements on the page
-* **Height** – used as an appropriate CSS value
-* **Minimum height** – applicable if height is relative to parent's percentage
+* **Width unit** – the width of the widget.
+    * **Percentage** – specifies the width in relation to the rest of the elements on the page.
+    * **Pixels** – specifies the width in pixels.
+* **Width** – used as an appropriate CSS value.
+* **Height unit** – the height of the widget.
+    * **Percentage of width** – specifies the height in relation to the width.
+    * **Pixels** – specifies the height in pixels.
+    * **Percentage of parent** – specifies the width in relation to the rest of the elements on the page.
+* **Height** – used as an appropriate CSS value.
+* **Minimum height** – applicable if height is relative to parent's percentage.
 
 ### Events Tab
 
@@ -208,11 +208,11 @@ Entity that being used for Rich Text data source value attribute have to use Fil
 
 Use following configuration information to set up the file uploader widget:
 
-1. **Selectable images**
+1. Set selectable images:
     1. Rich text needs to know the source of image entity to be display. Click the **Advanced** tab > **Selectable images**, then choose association to **UploadedImage_FileUploadContext/UploadedImage** entity.
     1. By selecting this, Rich Text will display a dropzone for image upload widget.
 
-* **Configuring the image upload widget**
+1. Configure the image upload widget:
     1. Drag and drop file uploader widget to the available image upload dropzone underneath Rich Text widget.
     1. Open the file uploader widget configuration and select **Images** as the **Upload mode**.
     1. On the **Advanced** tab of file uploader widget, set **Enable custom buttons** to **Yes** and add a custom buttons.
