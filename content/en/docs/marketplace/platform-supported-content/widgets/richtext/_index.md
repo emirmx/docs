@@ -56,11 +56,11 @@ To configure this widget, follow these steps:
 * **Toolbar**
     * **Toolbar** display toolbar based on the selected location on the editor
         * **Basic** – if selected, the following menu will be shown: 
-            * | bold italic | numlist bullist | outdent indent | link | removeformat 
+            * bold italic, numlist bullist, outdent indent, link, removeformat 
         * **Standard** – if selected, the following menu will be shown: 
-            * | undo redo | bold italic underlined | bullist numlist loweralphalist | outdent indent | ltr rtl | alignleft aligncenter alignjustify alignright | fontfamily fontsize forecolor backcolor | link image | blockquote codesample codeblock (view/edit)code | removeformat
+            * undo redo, bold italic underlined, bullist numlist loweralphalist, outdent indent, ltr rtl, alignleft aligncenter alignjustify alignright, fontfamily fontsize forecolor backcolor, link image, blockquote codesample codeblock (view/edit)code, removeformat
         * **Full** – if selected, the following menu will be shown: 
-            * | undo redo | bold italic underlined strikethrough | superscript subscript | bullist numlist loweralphalist checklist | outdent indent | ltr rtl | alignleft aligncenter alignjustify alignright | fontfamily fontsize forecolor backcolor | link image video formula | heading | blockquote codesample codeblock (view/edit)code | removeformat
+            * undo redo, bold italic underlined strikethrough, superscript subscript, bullist numlist loweralphalist checklist, outdent indent, ltr rtl, alignleft aligncenter alignjustify alignright, fontfamily fontsize forecolor backcolor, link image video formula, heading, blockquote codesample codeblock (view/edit)code, removeformat
         * **Custom** – allows you to make your own menubar selection based on the **full** selection list
     * **Location** 
         * **Sticky** – if selected, toolbar will be placed on the top of the editor and sticky position will apply upon scrolled
@@ -69,15 +69,12 @@ To configure this widget, follow these steps:
         * **Hide** – if selected, toolbar will be hidden or not shown
 
 * **Editable** – determines when user can edit content in the editor and when it is read-only.
-
-    {{% alert color="info" %}}For more information, see [Editability Section](/refguide/common-widget-properties/#editability) in the *Studio Pro Guide*.{{% /alert %}}
-
     * **Read-only style** - determines the style of the rich text when set to read-only
+    For more information, see the [Editability Section](/refguide/common-widget-properties/#editability) in *Properties Common in the Page Editor*.
 
 * **Visible** – determines if the widget is visible on the page
-
-    {{% alert color="info" %}}For more information, see [Visibility Section](/refguide/common-widget-properties/#visibility-properties) in the *Studio Pro Guide*.{{% /alert %}}
-
+    For more information, see the [Visibility Section](/refguide/common-widget-properties/#visibility-properties) in *Properties Common in the Page Editor*.
+    
 ### Custom Toolbar Tab
 
 * **Custom** – allows you to make your toolbar with customized options
