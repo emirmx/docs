@@ -56,21 +56,21 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
 
 7. In the **Actions** column, click the icon, and then select **Initialize**. 
 
-    The preflight check launches to verify that the required resources can be registered in the cluster. Along with this, it will also validate, if there are valid (trial) service entitlement for Mendix on Azure assigned to your company and/or sufficient Cloud Tokens to initialise the cluster.
-    The preflight checks also validates if the Azure account used for the initialization has owner role assigned to it.
-    Mendix apps are hosted with virtual machines, so the preflight check determines whether the cluster contains the required type of virtual machine. To view a list of the required resource providers, hover your cursor over the **Information** icon. If required, you can register any missing providers in the **Resource providers** section of the Microsoft Azure portal.
+    The preflight check launches to verify that the required resources can be registered in the cluster. The check also validates if there are valid (trial) service entitlements for Mendix on Azure assigned to your company, or sufficient cloud tokens to initialise the cluster. Finally, the preflight checks validates if the Azure account used for the initialization has the Owner role.
+
+   Mendix apps are hosted with virtual machines, so the preflight check determines whether the cluster contains the required type of virtual machine. To view a list of the required resource providers, hover your cursor over the **Information** icon. If required, you can register any missing providers in the **Resource providers** section of the Microsoft Azure portal.
 
     {{< figure src="/attachments/deployment/mx-azure/preflight-check.png" class="no-border" >}}
 
-    When there are insufficient Cloud tokens, users will get below error message.
+    If the number of cloud tokens is not sufficient, the following error message is shown:
 
     {{< figure src="/attachments/deployment/mx-azure/clusterInitializeFailedQuota.png" class="no-border" >}}
 
-8. In the **Preflight Check** screen, click **Next** to be redirected to the **Provision** screen. When all preflight checks are passed, the status is displayed as **Done** in the **Preflight Check** section, as in the following figure:
+9. In the **Preflight Check** screen, click **Next** to be redirected to the **Provision** screen. When all preflight checks are passed, the status is displayed as **Done** in the **Preflight Check** section, as in the following figure:
 
     {{< figure src="/attachments/deployment/mx-azure/preflight-check-successful.png" class="no-border" >}}
 
-9. In the **Provision** screen, add the custom tags if required and review the information in the **Advanced Options** section. If required, adjust any settings as needed. Note that selecting higher service tiers will also incur higher costs.
+10. In the **Provision** screen, add the custom tags if required and review the information in the **Advanced Options** section. If required, adjust any settings as needed. Note that selecting higher service tiers will also incur higher costs.
    
     You can update the following advanced options:
 
