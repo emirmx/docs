@@ -238,13 +238,15 @@ To enable private endpoints for your Mendix on Azure app, perform the following 
 
 ## Deploying an App to an Azure Cluster
 
-After creating your cluster in Microsoft Azure, you can now deploy your applications to the cluster. The deployment process is the same as with Mendix for Private Cloud. However, in order to use the Mendix on Azure Platform service, you need to have minimum 14 cloud tokens to create an environment. For more information, see [Deploying a Mendix App to a Private Cloud Cluster](/developerportal/deploy/private-cloud-deploy/). In case of insufficient Cloud Tokens, user will get below error message.
+After creating your cluster in Microsoft Azure, you can now deploy your applications to the cluster. The deployment process is the same as with Mendix for Private Cloud. However, in order to use the Mendix on Azure Platform service, you need to have a minimum of 14 cloud tokens to create an environment. For more information, see [Deploying a Mendix App to a Private Cloud Cluster](/developerportal/deploy/private-cloud-deploy/). 
 
-    {{< figure src="/attachments/deployment/mx-azure/envCreationFailedQuota.png" class="no-border" >}}
+If the number of cloud tokens is insufficient, the following error message is shown:
 
-## Back up and Restore environments
+{{< figure src="/attachments/deployment/mx-azure/envCreationFailedQuota.png" class="no-border" >}}
 
-You can also back up and restore Mendix on Azure environments. You can find more information in [Backup And Restore](/developerportal/deploy/mendix-on-azure/backups/)
+## Backing up and Restoring Eenvironments
+
+For more information about backing up and restoring Mendix on Azure environments, see [Backups in Mendix on Azure](/developerportal/deploy/mendix-on-azure/backups/).
 
 ## Adding a New Cluster Manager
 
