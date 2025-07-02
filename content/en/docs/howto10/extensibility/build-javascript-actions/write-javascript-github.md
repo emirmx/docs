@@ -10,6 +10,10 @@ description: "This advanced how-to teaches you to make a JavaScript action which
 
 Nanoflows are even more powerful with pluggable nanoflow actions — called JavaScript actions. [How to Build JavaScript Actions: Part 1 (Basic)](/howto10/extensibility/write-javascript-actions/) shows you how to create a JavaScript TextToSpeech action, expose it as a nanoflow action, and then use it in a demo. In this advanced how-to you will learn to call a REST service, use a generic return type, and make an API to enhance the power of your JavaScript actions.
 
+{{% alert color="warning" %}}
+The code on this page assumes you are using Mendix version 10.23.0 or above, the LTS version of Mendix 10. If you are using a previous version, you can refer to the code in the Mendix 9 version of [Build JavaScript Actions: Part 2 (Advanced)](/howto9/extensibility/write-javascript-github/).
+{{% /alert %}}
+
 This how-to teaches you how to do the following:
 
 * Create a JavaScript action

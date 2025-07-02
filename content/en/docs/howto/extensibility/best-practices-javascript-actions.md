@@ -287,7 +287,7 @@ Use the following code to employ an asynchronous return for when your nanoflow n
     }
 ```
 
-Many APIs and functions are designed in an asynchronous way, and use callback functions or promises. A JavaScript action expects a promise to be returned. The promise should be resolved with the return value as expected in the action.
+Many APIs and functions are designed in an asynchronous way, and use callback functions or [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). A JavaScript action expects a promise to be returned. The promise should be resolved with the return value as expected in the action.
 
 #### Understanding Promise API
 

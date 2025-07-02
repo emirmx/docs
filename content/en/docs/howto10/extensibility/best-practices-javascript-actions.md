@@ -180,7 +180,7 @@ For information on how to use *Big.js*, consult the [big.js API](https://mikemcl
 
 #### Creating Objects
 
-Use the following code to create objects:
+Use the following code to create objects in Mendix version 10.23 and above:
 
 ```javascript
 import { create } from "mx-api/data"
@@ -194,6 +194,8 @@ try {
 ```
 
 For more information on creating objects, consult the [Create](https://apidocs.rnd.mendix.com/10/client-mx-api/module-mx-api_data.html#.create) section of the *Mendix Client API*.
+
+If you are using Mendix version 10.22 or below, you will need to use [`mx.data.create`](https://apidocs.rnd.mendix.com/10/client/mx.data.html#.create).
 
 #### Changing Objects
 
@@ -294,6 +296,30 @@ Explaining the callback code:
 * Use the standard Mendix Client to show a confirmation dialog box with an **OK** and a **Cancel** button (the execution of the nanoflow halts until the user clicks one of the buttons) 
 * The resolve will return a Boolean value, which is used as the return value of the action 
 * In the nanoflow, the return variable can be used for an alternative flow for confirmation and cancel
+
+#### Understanding Promises
+
+If you are using Mendix version 10.23 or below, you will need to use promises. A `Promise` object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+Use the following code in Mendix versions 10.23 or below to wrap a callback API in a promise:
+
+```javascript
+function AskConfirmation(question) {
+    // BEGIN USER CODE
+    return new Promise(function (resolve) {
+        mx.ui.confirmation({
+            content: question,
+            handler: function() {
+                resolve(true);
+            },
+            onCancel: function() {
+                resolve(false);
+            }
+        });
+    });
+    // END USER CODE
+}
+```
 
 #### Understanding Promise API
 
