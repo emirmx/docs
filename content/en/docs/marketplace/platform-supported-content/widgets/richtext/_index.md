@@ -140,20 +140,24 @@ To configure this widget, follow these steps:
 For more information, see [Common Section](/refguide/common-widget-properties/#common-properties) in *Properties Common in the Page Editor*.
 
 
-## Advance configuration
+## Advance Configuration
 
-### Custom fonts
+### Custom Fonts
 
 This advance configuration allows you to add extra font list to the font family selection in Rich Text widget.
 
-#### Prerequisite
-Prior to adding new font, font files and font family have to be already included in your project.
+#### Prerequisites
+
+Prior to adding a new font, the font files and font family have to already be included in your project.
 
 * **Adding font files**
+
 To add font files into the project, you can put the font files inside your styles/web directory.
 
 * **Define font family in styling**
+
 You will need to define the new font by adding the font face custom styling.
+
 ```css
 @font-face {
   font-family: 'Your-font-family-name';
@@ -163,20 +167,24 @@ You will need to define the new font by adding the font face custom styling.
 }
 ```
 
-#### Adding a custom font into rich text
-{{% alert color="info" %}}This feature is available from Rich Text version 4.7.0 and above.{{% /alert %}}
+#### Adding a Custom Font 
+
+{{% alert color="info" %}}
+This feature is available from Rich Text version 4.7.0 and above.
+{{% /alert %}}
+
 To add a new custom font, simply go to advance tab and click new on custom font.
 
 * **Font name** – this is the font name that will be use to display the font on font-family selection in Rich Text toolbar.
 * **Font style** – this is the font-family declaration that you have set previously in font-face styling.
 
-#### Display custom font with correct styling in the toolbar
-This is an optional configuration that user can do to display the custom fonts in it's own styling on the font-family toolbar selection.
+#### Display Custom Font with Correct Styling in the Toolbar
+
+This is an optional configuration that user can employ to display custom fonts, in their own styling, on the font-family toolbar selection:
 
 * **Font name variable**
-The new font name will be display in the toolbar with data-value attribute as `data-value="your-font-name"`.
-The name will be derrived from **Font name** configuration by set it to lower case, and replace all space(" ") with dash("-").
-You can use this following custom styling to display it correctly in the toolbar:
+
+The new font name will be display in the toolbar with data-value attribute as `data-value="your-font-name"`. The name will be derived from **Font name** configuration by set it to lower case, and replace all spaces (" ") with dashes ("-"). You can use this custom styling to display it correctly in the toolbar:
 
 ```css
 .widget-rich-text .ql-toolbar [data-value=your-font-name]:before {
@@ -184,77 +192,89 @@ You can use this following custom styling to display it correctly in the toolbar
 }
 ```
 
-
 ### Image from entity
-{{% alert color="info" %}}This feature is available from Rich Text version 4.8.0 and above.{{% /alert %}}
-The default image upload and selection method of Rich Text is to use base64 string as the image source.\
-This has found to be troublesome if the image size is too large that causes the string value attribute to be big.
-By using image source from entity, Rich Text will use the image url instead of base64.
 
+{{% alert color="info" %}}
+This feature is available from Rich Text version 4.8.0 and above.
+{{% /alert %}}
 
-#### Using file uploader widget
+The default image upload and selection method of Rich Text is to use base64 string as the image source. This has found to be troublesome if the image size is too large that causes the string value attribute to be big. By using image source from entity, Rich Text will use the image URL instead of base64.
+
+#### Using File Uploader Widget
+
 The default and recommended way of uploading and selecting images from entity in Rich Text widget is to use [File Uploader](/appstore/modules/file-uploader/) module.
 
 ##### Prerequisite
+
 Entity that being used for Rich Text data source value attribute have to use FileUploadContext entity generalization.
+
 {{< figure src="/attachments/appstore/platform-supported-content/widgets/rich-text/entity-with-file-upload-context.png" alt="Rich text entity with FileUploadContext generalization" >}}
 
 ##### Configuration
-* **Selectable images**\
-    Rich text needs to know the source of image entity to be display.\
-    On the **advance tab > selectable images**, choose association to **UploadedImage_FileUploadContext/UploadedImage** entity.\
-    By selecting this, Rich Text will display a dropzone for image upload widget.
+
+Use following configuration information to set up the File Uploader widget:
+
+1. **Selectable images**
+    1. Rich text needs to know the source of image entity to be display. On the **advance tab > selectable images**, choose association to **UploadedImage_FileUploadContext/UploadedImage** entity.
+    1. By selecting this, Rich Text will display a dropzone for image upload widget.
 
 * **Configuring the image upload widget**
-    - Drag and drop File Uploader widget to the available image upload dropzone underneath Rich Text widget.
-    - Open File Uploader widget configuration and select Images as **Upload mode**
-    - On the advace tab of File Uploader widget, set **Enable custom buttons** "Yes" and add a custom buttons.
-    - Set **Default file action** to "Yes" on the custom button and call the [nanoflow to select images](#configuring-image-selection-nanoflow) as the action.
+    1. Drag and drop File Uploader widget to the available image upload dropzone underneath Rich Text widget.
+    1. Open File Uploader widget configuration and select Images as **Upload mode**.
+    1. On the advace tab of File Uploader widget, set **Enable custom buttons** to **Yes** and add a custom buttons.
+    1. Set **Default file action** to **Yes** on the custom button and call the [nanoflow to select images](#configuring-image-selection-nanoflow) as the action.
 
-#### Using other widget as image selector
-User can also configure to use another widget as the image selector for Rich Text.\
-This widget have to has access to the System.Image object.
+#### Using Another Widget as Image Selector
 
-##### Prerequisite
+User can also configure to use another widget as the image selector for Rich Text. This widget have to has access to the System.Image object.
 
-* Entity that being used for Rich Text data source value attribute have to use has association to System.Image entity.
+##### Prerequisites
 
-{{< figure src="/attachments/appstore/platform-supported-content/widgets/rich-text/entity-with-system-image.png" alt="Rich text entity with FileUploadContext generalization" >}}
+To use another widget as an image selector for Rich Text, ensure you meet the following prerequisites:
+
+* Entity that being used for Rich Text data source value attribute have to use has association to System.Image entity:
+
+    {{< figure src="/attachments/appstore/platform-supported-content/widgets/rich-text/entity-with-system-image.png" alt="Rich text entity with FileUploadContext generalization" >}}
 
 * The custom widget needs to have access to the System.Image object and able to call nanoflow action when image being selected.
 * It is not mandatory that the custom widget have upload image function (e.g, using gallery and [Image](/appstore/widgets/image/) widget with onClick is also possible), because Rich Text widget only need the selection action call.
 
 ##### Configuration
-* **Selectable images**
-    Rich text needs to know the source of image entity to be display.\
-    On the **advance tab > selectable images**, choose association to the **System.Image** entity.\
-    By selecting this, Rich Text will display a dropzone for image upload widget.
 
-* **Configuring the image upload widget**
-    - Drag and drop the custom widget to the available image upload dropzone underneath Rich Text widget.
-    - Use the same **System.Image** association as the datasource.
-    - Set the action to call the [nanoflow to select images](#configuring-image-selection-nanoflow) as necessary.
+Configuration instructions for using another widget as an image selector are as follows:
 
-#### Configuring image selection nanoflow
-The nanoflow is needed to trigger image object selection and returning the flow back to Rich Text widget.
+1. Selectable images:
+    1. Rich text needs to know the source of image entity to be display. So, after clicking **Advanced** > **Selectable images**, choose the association to the **System.Image** entity.
+    1. By selecting this, Rich Text will display a dropzone for image upload widget.
+
+1. Configuring the image upload widget:
+    1. Drag and drop the custom widget to the available image upload dropzone underneath Rich Text widget.
+    1. Use the same **System.Image** association as the datasource.
+    1. Set the action to call the [nanoflow to select images](#configuring-image-selection-nanoflow) as necessary.
+
+#### Configuring Image Selection Nanoflow
+
+The nanoflow is needed to trigger image object selection and returning the flow back to Rich Text widget:
 
 {{< figure src="/attachments/appstore/platform-supported-content/widgets/rich-text/image-selection-nanoflow.png" alt="Image selection nanoflow" >}}
 
-* **Nanoflow parameter**
-The nanoflow needs to have access to the **System.Image** entity. Set this as the parameter.
-In case of using File Uploader, this should be automatically set up when creating the nanoflow from custom action button.
+To configure the nanoflow, do the following:
 
-* **Getting the object GUID**
-The first step of the nanoflow is to get the GUID from the image object. Set call to javascript action GetGuid provided by [Nanoflow Commons](/appstore/modules/nanoflow-commons/) module.
+1. Set the nanoflow parameter:
+    1. The nanoflow needs to have access to the **System.Image** entity. Set this as the parameter.
+    1. In case of using File Uploader, this should be automatically set up when creating the nanoflow from custom action button.
 
-* **Trigger image selection javascript**
-This step is required to pass the GUID of the image object back to Rich Text.
-Create a new javascript action and add a string parameter.
-In this example, we will name the parameter *fileGuid* and *selectImage* as the Javascript action.
+1. Get the object GUID:
+    1. The first step of the nanoflow is to get the GUID from the image object. 
+    1. Set call to JavaScript action GetGuid provided by [Nanoflow Commons](/appstore/modules/nanoflow-commons/) module.
 
-{{< figure src="/attachments/appstore/platform-supported-content/widgets/rich-text/js-action-setup.png" alt="Javascript action configuration" >}}
+1. Trigger image selection JavaScript (required to pass the GUID of the image object back to Rich Text):
+    1. Create a new JavaScript action and add a string parameter.
+    1. In this example, we will name the parameter *fileGuid* and *selectImage* as the Javascript action:
 
-Use the following code in the javascript action:
+        {{< figure src="/attachments/appstore/platform-supported-content/widgets/rich-text/js-action-setup.png" alt="Javascript action configuration" >}}
+
+Use the following code in the JavaScript action:
 
 ```Javascript
 export async function selectImage(fileGuid) {
@@ -269,5 +289,4 @@ export async function selectImage(fileGuid) {
 }
 ```
 
-This code will trigger a new Event called "imageSelected" and bubble up the event back to Rich Text widget to continue the flow.
-User then can use the image id instead of base64 string as the image source.
+This code will trigger a new event called **imageSelected** and bubble up the event back to Rich Text widget to continue the flow. The user then can use the **image id** instead of **base64 string** as the image source.
