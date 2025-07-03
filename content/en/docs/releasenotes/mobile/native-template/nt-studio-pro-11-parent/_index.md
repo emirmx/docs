@@ -1,7 +1,7 @@
 ---
 title: "Studio Pro 11 Compatible"
 url: /releasenotes/mobile/nt-studio-pro-11-parent/
-weight: 10
+weight: 50
 description: "Studio Pro 11 compatible Native Template release notes."
 ---
 
