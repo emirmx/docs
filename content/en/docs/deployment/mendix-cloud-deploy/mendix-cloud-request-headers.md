@@ -18,6 +18,10 @@ Most of the request headers are added by the HTTP client (the web browser, for e
 
 Using custom Java code in the application, the full content of an incoming request can be inspected.
 
+Request header names are case-insensitive ([RFC 2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec4.html#sec4.2)) and must be processed in a case-insensitive way. For example, `X-Header-Key: value`, `x-header-key: value` and `X-HEADER-KEY: value` must be processed in the same way. When processing request header names in Mendix we advise to lowercase the header name to account for case-insensitivity (eg. `toLowerCase($HeaderKey) = 'x-header-key'`).
+
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/mendix-cloud-request-headers/tolowercase-header-name.png" alt="Lowercase Request Header Names" width=50% class="no-border" >}}
+
 ### Usually Available Request Headers Set by the HTTP Client
 
 The following headers are usually set by the HTTP client. Mendix Cloud does not touch the value of these headers. This also means that they might not be available if the HTTP client does not set them.
