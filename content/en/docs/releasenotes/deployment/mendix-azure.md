@@ -14,7 +14,7 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 
 ### Release date: July 3, 2025
 
-* Mendix on Azure users can now create and restore environment backups through Private Cloud Portal. For more information, see [Backups in Mendix on Azure](/developerportal/deploy/mendix-on-azure/backups).
+* Mendix on Azure users can now create and restore environment backups through Private Cloud Portal. For more information, see [Backups in Mendix on Azure](/developerportal/deploy/mendix-on-azure/backups/).
 * [Cloud tokens](/control-center/cloud-tokens/) are now required for cluster initialization and environment creation in Mendix on Azure, except when a trial is active. The preflight check now validates if you have sufficient valid cloud tokens.
 * The Mendix on Azure portal is now available in Japanese and Korean, enhancing user experience for native speakers. Language preferences can be adjusted in the **Work environment** tab under **Preferences**.
 * We have fixed a portal issue where error messages were incorrectly displayed despite successful resource provisioning.
