@@ -104,7 +104,7 @@ Here is an example inheritance:
 
 {{< figure src="/attachments/refguide/modeling/domain-model/associations/query-over/limitation.png" class="no-border" >}}
 
-In this example, if a standard by-association retrieve in a microflow is used starting from a `Specialization` this will return the `Specialization` that the starting point `Specialization` points to.
+In this example, if a standard by-association retrieve in a microflow is used starting from a `Specialization` this will return the `Specialization` that the starting point `Specialization` points to and not the list of `Generalization` which are associated via the `Generalization_Specialization` association.
 The list of `Generalization`'s that points to `Specialization` can be retrieved with a Java action using the Java API:
 
 ```java
