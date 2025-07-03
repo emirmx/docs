@@ -82,7 +82,7 @@ To restore a backup, perform the following steps:
    
 4. Click **Restore**.
 
-    {{< figure src="/attachments/deployment/mx-azure/backups/backup-restore.png" alt="Backup Restore" max-width=60% class="no-border" >}}
+    {{< figure src="/attachments/deployment/mx-azure/backups/backups-restore.png" alt="Backup Restore" max-width=60% class="no-border" >}}
 
 5. Choose the destination environment to which you want to restore the backup snapshot. This allows you to, for example, restore a production environment backup to an acceptance environment.
 
