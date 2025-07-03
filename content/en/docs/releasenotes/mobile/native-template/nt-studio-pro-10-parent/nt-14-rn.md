@@ -11,7 +11,7 @@ description: "Native Template 14"
 
 ### Fixes
 
-* We improved update process from an older version of Studio Pro to the Latest version(s).
+* We improved the update process when moving from an older version of Studio Pro to the latest version.
 
 ## 14.1.2 {#1412}
 
@@ -19,7 +19,7 @@ description: "Native Template 14"
 
 ### Fixes
 
-* We have fixed an issue where iOS apps built with Mendix 10.18 and above would not run when the React Client was enabled. Android was not affected.
+* We fixed an issue where iOS apps built with Mendix 10.18 and above would not run when the React Client was enabled. Android was not affected.
 
 ## 14.1.1 {#1411}
 
@@ -27,7 +27,7 @@ description: "Native Template 14"
 
 ### Fixes
 
-* We have fixed an issue where a user may face an error during build process because latest version 18 for playServices is not compatible with current gradle version.
+* We fixed an issue where users may face an error during the build process, because latest version 18 for playServices is not compatible with the current Gradle version.
 
 ## 14.1.0 {#1410}
 
@@ -35,10 +35,11 @@ description: "Native Template 14"
 
 ### Fixes
 
-* We have upgraded @mendix/native to version 9.0.1
+* We have upgraded **@mendix/native** to version 9.0.1
 
 #### Library Updates and Improvements
-* **@mendix/native:** 9.0.1
+
+* **@mendix/native**: 9.0.1
 
 ## 14.0.1 {#1401}
 
@@ -58,13 +59,13 @@ description: "Native Template 14"
 
 #### Library Updates and Improvements
 
-* **@op-engineering/op-sqlite:** 9.2.7
-* **@react-native-picker/picker:** 2.11.0
-* **@react-native-community/cli:** 16.0.2
-* **@react-native-community/cli-platform-android:** 16.0.2
-* **@react-native-community/cli-platform-ios:** 16.0.2
-* **react-native-gesture-handler:** 2.23.1
-* **react-native-safe-area-context:** 5.2.0
-* **react-native-screens:** 4.6.0
-* **react-native-svg:** 15.11.1
-* **react-native-video:** 6.10.0
+* **@op-engineering/op-sqlite**: 9.2.7
+* **@react-native-picker/picker**: 2.11.0
+* **@react-native-community/cli**: 16.0.2
+* **@react-native-community/cli-platform-android**: 16.0.2
+* **@react-native-community/cli-platform-ios**: 16.0.2
+* **react-native-gesture-handler**: 2.23.1
+* **react-native-safe-area-context**: 5.2.0
+* **react-native-screens**: 4.6.0
+* **react-native-svg**: 15.11.1
+* **react-native-video**: 6.10.0
