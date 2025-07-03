@@ -16,7 +16,7 @@ description: "Native Template 15"
 
 ### Removed
 
-* **@react-native-community/push-notification-ios:** 1.10.1
+* **@react-native-community/push-notification-ios**: 1.10.1
 
 ### New Libraries
 
@@ -25,8 +25,8 @@ description: "Native Template 15"
 
 ### Library Updates and Improvements
 
-* **react-native-device-info:** 13.0.0 -> 14.0.4
-* **@mendix/native:** 11.0.3 -> 11.0.7
+* **react-native-device-info**: 13.0.0 -> 14.0.4
+* **@mendix/native**: 11.0.3 -> 11.0.7
 
 ## 15.2.0 {#1520}
 
