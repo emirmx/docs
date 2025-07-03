@@ -1,14 +1,15 @@
 ---
 title: "MCP Server"
-url: /appstore/modules/genai/mcp-server/
+url: /appstore/modules/genai/genai-for-mx/mcp-server/
 linktitle: "MCP Server"
-description: "Describes the purpose, configuration and usage of the MCP Server module from the Mendix Marketplace that allows developers to expose Mendix logic to external MCP clients and AI systems."
+description: "This document describes the purpose, configuration, and usage of the MCP Server module from the Mendix Marketplace that allows developers to expose Mendix logic to external MCP clients and AI systems."
 weight: 20
 ---
 
 ## Introduction
 
-The [MCP Server](https://marketplace.mendix.com/link/component/240380) module provides easy low-code capability to set up MCP ([Model Context Protocol](/appstore/modules/genai/mcp)) server within a Mendix app. An MCP server can expose resources (such as tools or prompts) seamlessly to other, external AI applications that support MCP. The Mendix MCP Server module builds a bridge between Mendix and MCP client applications (such as Claude Desktop) through the [MCP Java SDK](https://github.com/modelcontextprotocol/java-sdk). With the current implementation it is possible to:
+The [MCP Server](https://marketplace.mendix.com/link/component/240380) module provides easy low-code capability to set up MCP ([Model Context Protocol](/appstore/modules/genai/mcp)) server within a Mendix app. An MCP server can seamlessly expose resources (such as tools or prompts) to other external AI applications that support MCP. The Mendix MCP Server module builds a bridge between Mendix and MCP client applications such as Claude Desktop, through the [MCP Java SDK](https://github.com/modelcontextprotocol/java-sdk). With the current implementation, it is possible to:
+
 * Expose reusable prompts including the ability to use prompt parameters
 * List and execute microflow implemented in the application as tools
 
@@ -16,10 +17,11 @@ To use function calling within the same Mendix application and integrating to an
 
 ### Limitations {#limitations}
 
-The following limitations exist for the current version:
-* Tools can only return a TextContent result.
-* The client connection is only kept alive for 15 minutes, because Mendix runtime does not support async requests yet.
-* User authorization can currently only be applied on request but not tool/prompt level. Therefore, the current user is not available in the tool/prompt microflows and entity access or xpath constraints can not be enabled out of the box. This is because we follow the capabilities offered by the official MCP Java SDK and cannot reuse a Mendix user session in the executed tools/prompts.
+The current version has the following limitations:
+
+* Tools can only return a `TextContent` result.
+* The client connection remains active for only 15 minutes, as the Mendix runtime currently does not support async requests.
+* User authorization can currently only be applied on request but not at the tool/prompt level. As a result, the current user is not available within tool/prompt microflows, and entity access or XPath constraints can not be enabled out of the box. This is due to the capabilities offered by the official MCP Java SDK which does not support reusing a Mendix user session in the executed tools/prompts.
 
 Note that the MCP Server module is still in its early version and thus (breaking) changes might be introduced with later versions. The open-source protocol as well as the Java SDK are still evolving and regularly updated which also affects this module.
 
@@ -27,7 +29,7 @@ Note that the MCP Server module is still in its early version and thus (breaking
 
 If you are starting from the [Blank GenAI app](https://marketplace.mendix.com/link/component/227934), the MCP Server module is already included and does not need to be downloaded manually.
 
-If you start from a blank app, or have an existing project, you must install the MCP Server module manually. Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to install the [MCP Server](https://marketplace.mendix.com/link/component/240380) module.
+If you start from a blank app, or have an existing project, you must install the MCP Server module manually. Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to install the [MCP Server](https://marketplace.mendix.com/link/component/240380) module from the Marketplace.
 
 ## Configuration
 
