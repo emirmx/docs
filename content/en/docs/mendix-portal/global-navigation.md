@@ -9,7 +9,7 @@ aliases:
 
 ## Introduction
 
-The global navigation top bar and menu are available throughout the Mendix Portal, and work the same across all Portal services. 
+The global navigation top bar and menu are available throughout Mendix Portal, and work the same across all Portal services. 
 
 ## Global Navigation Menu {#global-navigation}
 
@@ -17,7 +17,7 @@ On the left side of the top bar, click **Open Global Navigation** ({{% icon name
 
 {{< figure src="/attachments/developerportal/global-nav/navigation-menu.png" width="250" class="no-border" >}}
 
-Click the menu items to navigate to different parts of the Mendix Portal, or hover over the menu items to expand the sections for further access.
+Click the menu items to navigate to different parts of Mendix Portal, or hover over the menu items to expand the sections for further access.
 
 ## Search
 
@@ -53,7 +53,7 @@ To stop receiving notifications when new feedback is submitted for a specific ap
 
 Click **Open Profile Menu** ({{% icon name="user" %}}) to access your [Mendix Profile](/community-tools/mendix-profile/), enable **Dark Mode**, and access your [Account Settings](/community-tools/mendix-profile/user-settings/#settings). 
 
-You can also sign out from the Mendix Platform via this menu.
+You can also sign out from Mendix Portal via this menu.
 
 ## Maia in the Mendix Portal {#maia-mx-portal}
 
@@ -61,7 +61,7 @@ Mendix AI Assistance (Maia) refers to Mendix Platform capabilities that leverage
 
 {{< figure src="/attachments/developerportal/global-nav/maia-mendix-portal.jpg" width="500" >}}
 
-Below are the Maia capabilities that are available in the Mendix Portal:
+Below are the Maia capabilities that are available in Mendix Portal:
 
 * **Maia Chat**  – A built-in chat interface. For more information, refer to [Maia Chat](#maia-chat).
 * **Maia Rewrite** – An AI-assisted writing aid integrated within the Mendix Community posting interface, which helps you ask properly formatted questions that are more likely to be answered. For more information on how to use it, refer to the [Asking Your Question](/community-tools/mendix-community/#asking-question) section in *Mendix Community*.
@@ -96,6 +96,6 @@ Maia Chat supports asking follow-up questions based on your previous question an
 
 {{% alert color="info" %}}
 
-Maia Chat only keeps track of a conversation history within a session on a page in the Mendix Portal.
+Maia Chat only keeps track of a conversation history within a session on a page in Mendix Portal.
 
 {{% /alert %}}

@@ -1,5 +1,5 @@
 ---
-title: "The Mendix Portal Home Page"
+title: "Mendix Portal Home Page"
 url: /portal/mendix-portal/
 weight: 2
 description: "Learn about the Mendix Portal home page."

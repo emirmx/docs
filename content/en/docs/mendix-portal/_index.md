@@ -1,5 +1,5 @@
 ---
-title: "The Mendix Portal"
+title: "Mendix Portal"
 url: /portal/
 description: "Provides information on the Mendix Portal home page and navigation."
 weight: 20
@@ -11,7 +11,7 @@ cascade:
 
 ## Introduction
 
-The Mendix Portal is the online platform from Mendix. It allows you to create, share, and manage your resources, and provides access to the following:
+Mendix Portal is the online platform from Mendix. It allows you to create, share, and manage your resources, and provides access to the following:
 
 * [Apps](/developerportal/) — Create, deploy, and manage apps. 
 * [Deployment](/deployment/) — Deploy apps to various target platforms.
