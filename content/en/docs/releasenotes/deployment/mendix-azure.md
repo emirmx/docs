@@ -19,6 +19,7 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 * The Mendix on Azure portal is now available in Japanese and Korean, enhancing user experience for native speakers. Language preferences can be adjusted in the **Work environment** tab under **Preferences**.
 * We have fixed a portal issue where error messages were incorrectly displayed despite successful resource provisioning.
 * We have made improvements to the handling of cluster deployment retries.
+* We have upgraded managed Grafana to version 11.0.
 * We have added the option to enable managed Grafana with private access to the **Initialize** and **Edit** steps for the cluster.
 * The preflight check can now validate that the Azure account used to initialize the cluster has an Owner role assigned on the target subscription.
 
