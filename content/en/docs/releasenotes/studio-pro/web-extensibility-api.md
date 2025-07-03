@@ -10,4 +10,4 @@ These release notes cover changes to the [Extensibility API for Web Developers](
 
 ## Version 10.21.0
 
-* The first [beta](/releasenotes/beta-features/) release of the Web Extensibility API.
+* The first [beta](/releasenotes/release-status/) release of the Web Extensibility API.

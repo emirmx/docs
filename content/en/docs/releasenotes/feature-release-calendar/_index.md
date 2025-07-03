@@ -12,7 +12,7 @@ With the release of Mendix 11, you can look forward to more new and exciting fea
 The new features were divided into major themes, which are described in the sections below.
 
 {{% alert color="info" %}}
-"GA" means general availability for all users. A GA release is different than a beta or experimental release. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+"GA" means general availability for all users. A GA release is different than a beta or experimental release. For more information, see [Release Status](/releasenotes/release-status/).
 {{% /alert %}}
 
 ## Enterprise Low-Code
