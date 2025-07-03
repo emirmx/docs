@@ -65,6 +65,10 @@ Start from the [Agent Builder Starter App](https://marketplace.mendix.com/link/c
 
 Read more about [Agent Commons](/appstore/modules/genai/genai-for-mx/agent-commons/) in the GenAI reference guide.
 
+### GenAI Showcase App
+
+Check out example implementations of the previously mentioned patterns and multi-agent systems in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475).
+
 ### Additional Information
 
  Read the blog post on [Multi-agent systems in a Mendix app](https://www.mendix.com/blog/how-multi-agent-ai-systems-in-mendix-can-train-you-for-a-marathon/)
