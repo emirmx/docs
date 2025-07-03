@@ -359,7 +359,7 @@ We made the following improvements to the [access management](/control-center/po
 
 #### New Features
 
-* We released the Control Center [Dashboard](/control-center/dashboard/), which provides an overview of various activities for your company on the Mendix Platform. This feature is currently in [beta](/releasenotes/beta-features/), and you can provide feedback via the feedback button on the right of the page.
+* We released the Control Center [Dashboard](/control-center/dashboard/), which provides an overview of various activities for your company on the Mendix Platform. This feature is currently in [beta](/releasenotes/release-status/), and you can provide feedback via the feedback button on the right of the page.
 
 ### March 9, 2021
 
