@@ -51,7 +51,7 @@ Your journey to innovation goes through three major stages:
 
 You are now in the Start stage, where the goal is to lay the foundations for your innovation factory. Now is the time to develop apps that achieve value quickly. The reason for this is two-fold:
 
-* You’ll be spending a lot of time building a team and putting the necessary prerequisites in place in terms of infrastructure and process. Because of that... 
+* You’ll be spending a lot of time building a team and putting the necessary prerequisites in place in terms of infrastructure and process. 
 * You want quick wins. Quick wins are important because you will use these to prove the value of your new approach. Celebrating your first success will help you gain broader support around the company.
 
 ##### Structure
@@ -106,17 +106,17 @@ The following leadership roles are essential to the success of any new platform 
 
 * Center of Excellence (COE) lead – larger organizations appoint a Mendix COE to help define and enforce good governance, development, and enablement practices that can evolve with the business and technological changes over time. The COE lead ensures the Mendix COE is properly staffed to support, oversee, and enable development teams, and ensures the products are of high-quality, and follow best practices for high re-usability, maintainability, and return on investment. This person generally has sufficient senior-level technical and managerial skills to oversee the COE’s Enterprise and Solution Architects, DevOps technical leads, trainers, mentors, and other experienced staff.
 
-* Product owner – they have in-depth knowledge of the business, the product, and its users, as well as insight into the value that it will create. If possible, make sure that your first product owner comes from your own organization, and is familiar with the problem you are setting out to solve with your first app. The product owner does not hold a leadership role, but they are crucial for the success of your first app. They are also part of the agile scrum team, so will come up again in the [Identify Your First Mendix Project Team](#identify-first-mendix-team) section.
+* Product owner – they have in-depth knowledge of the business, the product, and its users, as well as insight into the value that it will create. If possible, make sure that your first product owner comes from your own organization, and is familiar with the problem you are setting out to solve with your first app. The product owner does not hold a leadership role, but they are crucial for the success of your first app. They are also part of the agile scrum team, so will come up again in the [Identify Your First Mendix Project Team](/start-program/#identify-first-mendix-team) section.
 
 * Architect – they help establish a target architecture, infrastructure, and governance. 
 
 * App development manager – they need to spearhead the initiative, and drive the program and the cross-functional teams who will deliver on those projects. 
 
-At first, it is likely that not all these people will come from your own organization—the [Review Options for Development Resources](#review-options-for-development-resources) section offers information about this.
+At first, it is likely that not all these people will come from your own organization—the [Review Options for Development Resources](/getting-started-plan/#review-options-for-development-resources) section offers information about this.
 
 It is important to keep your team small as you build your Mendix COE, which is your central repository of development expertise, reusable components, and governance guidance that business teams can access as they build their specialized solutions. With a small team, you can deliver new app quickly, avoiding much of the miscommunication and delays that often come with larger development teams. Smaller teams encourage productivity and creativity. Amazon CEO Jeff Bezos’ “two pizza rule” states that you should never have a meeting where two pizzas couldn’t feed the entire group. The smaller the team, the more room for brainstorming and peer review. 
 
-Mendix recommends that you start thinking about who you need to kick off building your first app, and that you start talking to them about it. More information about who you need is available in the [Identifying Your First Mendix Project Team](#identify-first-mendix-team) section.
+Mendix recommends that you start thinking about who you need to kick off building your first app, and that you start talking to them about it. More information about who you need is available in the [Identifying Your First Mendix Project Team](/start-program/#identify-first-mendix-team) section.
 
 ##### Process
 
