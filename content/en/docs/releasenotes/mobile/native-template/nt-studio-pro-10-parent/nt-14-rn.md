@@ -35,7 +35,7 @@ description: "Native Template 14"
 
 ### Fixes
 
-* We have upgraded **@mendix/native** to version 9.0.1
+* We upgraded **@mendix/native** to version 9.0.1
 
 #### Library Updates and Improvements
 
