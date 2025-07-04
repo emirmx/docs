@@ -1,6 +1,6 @@
 ---
-title: "Step 5: Getting Started With Your First Project"
-linktitle: "Step 5: Getting Started With Your First Project"
+title: "Getting Started With Your First Project"
+linktitle: "Getting Started With Your First Project"
 url: /first-project/
 weight: 95
 description: "Find out how to get started with your first Mendix project."

@@ -1,6 +1,6 @@
 ---
-title: "Step 3: Starting Your Mendix Program"
-linktitle: "Step 3: Starting Your Mendix Program"
+title: "Starting Your Mendix Program"
+linktitle: "Starting Your Mendix Program"
 url: /start-program/
 weight: 75
 description: "Find out how to kick off your Mendix program."

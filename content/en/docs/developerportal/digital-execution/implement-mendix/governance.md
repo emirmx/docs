@@ -1,6 +1,6 @@
 ---
-title: "Step 4: Setting Up Governance and Control in Mendix"
-linktitle: "Step 4: Setting Up Governance and Control in Mendix"
+title: "Setting Up Governance and Control in Mendix"
+linktitle: "Setting Up Governance and Control in Mendix"
 url: /governance-control/
 weight: 85
 description: "Find out how to incorporate governance in your process."

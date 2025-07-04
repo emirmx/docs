@@ -1,6 +1,6 @@
 ---
-title: "Step 2: Creating a Getting Started Plan"
-linktitle: "Step 2: Creating a Getting Started Plan"
+title: "Creating a Getting Started Plan"
+linktitle: "Creating a Getting Started Plan"
 url: /getting-started-plan/
 weight: 65
 description: "Learn why and how to create an effective getting started plan."
