@@ -5,11 +5,6 @@ description: "Describes the global navigation and top bar that is available thro
 weight: 3
 aliases: 
     - /developerportal/global-navigation/
-    - /developerportal/global-navigation/#global-navigation
-    - /developerportal/global-navigation/#notifications
-    - /developerportal/global-navigation/#maia-mx-portal
-    - /developerportal/global-navigation/#maia-chat
-
 ---
 
 ## Introduction
