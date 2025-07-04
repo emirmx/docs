@@ -16,6 +16,12 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
+### June 27, 2025
+
+#### Bug Fixes
+
+* We fixed a bug where users could not trigger the on commit trigger pipeline (Ticket 245653)
+
 ### June 12, 2025
 
 #### New Features
@@ -268,7 +274,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 #### New Features
 
 * We launched a new feature: Pipelines. Pipelines lets you build and deploy software in an automated way. You can design pipelines with a set of configurable, low-code steps. Activated pipelines run automatically according to your design. This new Pipelines feature is intended to make it quick and easy for teams to automate their CI/CD process. For more information, see [Pipelines](/developerportal/deploy/pipelines/).
-    * The Pipelines feature is in [public beta](/releasenotes/beta-features/). It is currently available for unlimited use with all licensed Mendix Cloud apps. Limitations may be put on its use in the future.
+    * The Pipelines feature is in [public beta](/releasenotes/release-status/). It is currently available for unlimited use with all licensed Mendix Cloud apps. Limitations may be put on its use in the future.
 
 ### February 19, 2024
 
@@ -442,7 +448,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 * We have added webhooks which can trigger endpoints when changes are committed to a Team Server Git repository, or a new deployment package is available for deployment to the Mendix Cloud. See [Webhooks](/developerportal/deploy/webhooks/) for more information.
 
-    {{% alert color="info" %}}This feature is currently in a [beta release](/releasenotes/beta-features/).{{% /alert %}}
+    {{% alert color="info" %}}This feature is currently in a [beta release](/releasenotes/release-status/).{{% /alert %}}
 
 ### February 23, 2023
 

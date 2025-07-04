@@ -12,6 +12,17 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2025
 
+### July 3, 2025
+
+#### Portal Improvements
+
+* We have fixed an issue where the Cluster Manager was unable to delete namespaces which were disconnected or pending installation.
+* PCLM releases are now displayed in descending order.
+
+#### Deploy API
+* We have fixed the issue where users other than the Technical Contact were unable to update the environment by using the Update environment API. (Ticket #250927)
+* We have improved the logging for the Deploy API when a JA exception occurs while reading the certificate content.
+
 ### June 25, 2025
 
 #### Mendix Operator v2.22.0 {#2.22.0}
@@ -508,7 +519,7 @@ We recommend regularly updating apps to ensure that they contain the latest secu
 * We have introduced a streamlined approach to installing the Operator within a namespace. With the [Global Operator installation](/developerportal/deploy/global-operator/), users only need to install a single Global Operator and Agent to efficiently manage applications across various namespaces. For more information, see the Global Operator installation documentation.
 
 {{% alert color="info" %}}
-This feature is currently in beta. For more information, see [Beta Releases](/releasenotes/beta-features/).
+This feature is currently in beta. For more information, see [Release Status](/releasenotes/release-status/).
 
 Some features, such as Private Cloud License Manager, are not fully supported yet. In addition, the Deploy API does not support the Global Operator yet.
 {{% /alert %}}
@@ -691,7 +702,7 @@ This tool is available as a technical preview. For documentation and download li
 * We have introduced [Private Cloud License Manager](/developerportal/deploy/private-cloud/private-cloud-license-manager/) which provides a repository of offline Mendix licenses. You can use Private Cloud License Manager to manage these licenses centrally, and to automatically configure the licenses for the Mendix Operator and its Runtime.
 
 {{% alert color="info" %}}
-This feature is currently in a [beta release](/releasenotes/beta-features/).
+This feature is currently in a [beta release](/releasenotes/release-status/).
 {{% /alert %}}
 
 #### Portal Improvements
