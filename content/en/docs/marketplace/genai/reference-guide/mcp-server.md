@@ -8,7 +8,7 @@ weight: 20
 
 ## Introduction
 
-The [MCP Server](https://marketplace.mendix.com/link/component/240380) module provides easy low-code capability to set up MCP ([Model Context Protocol](/appstore/modules/genai/mcp)) server within a Mendix app. An MCP server can seamlessly expose resources (such as tools or prompts) to other external AI applications that support MCP. The Mendix MCP Server module builds a bridge between Mendix and MCP client applications such as Claude Desktop, through the [MCP Java SDK](https://github.com/modelcontextprotocol/java-sdk). With the current implementation, it is possible to:
+The [MCP Server](https://marketplace.mendix.com/link/component/240380) module provides easy low-code capability to set up MCP ([Model Context Protocol](/appstore/modules/genai/mcp/)) server within a Mendix app. An MCP server can seamlessly expose resources (such as tools or prompts) to other external AI applications that support MCP. The Mendix MCP Server module builds a bridge between Mendix and MCP client applications such as Claude Desktop, through the [MCP Java SDK](https://github.com/modelcontextprotocol/java-sdk). With the current implementation, it is possible to:
 
 * Expose reusable prompts including the ability to use prompt parameters
 * List and execute microflow implemented in the application as tools
@@ -101,7 +101,7 @@ The **Documentation** pane displays the documentation for the currently selected
 
 ## Read More
 
-* Concept description of [Model Context Protocol (MCP)](/appstore/modules/genai/mcp)
+* Concept description of [Model Context Protocol (MCP)](/appstore/modules/genai/mcp/)
 * The [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) provides an example on how to expose microflows as tools via the MCP Server module. 
 * The official [MCP docs](https://modelcontextprotocol.io/introduction)
 * The [MCP Java SDK GitHub Repository](https://github.com/modelcontextprotocol/java-sdk)

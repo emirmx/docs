@@ -8,7 +8,7 @@ description: "This document describes the Model Context Protocol (MCP) and how i
 
 ## Introduction
 
-The [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) is an open protocol that standardizes how Large Language Models (LLMs) can autonomously connect to apps. Many AI platforms and third-party systems have already adopted MCP for easier integration and empowerment of LLMs. Mendix provides an [MCP Server](/appstore/modules/genai/mcp-server/) module to facilitate a MCP server from a Mendix app, enabling developers to expose tools and prompts to external MCP clients.
+The [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) is an open protocol that standardizes how Large Language Models (LLMs) can autonomously connect to apps. Many AI platforms and third-party systems have already adopted MCP for easier integration and empowerment of LLMs. Mendix provides an [MCP Server](/appstore/modules/genai/genai-for-mx/mcp-server/) module to facilitate a MCP server from a Mendix app, enabling developers to expose tools and prompts to external MCP clients.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mcpserver/mcp-client-server-architecture.jpg" >}}
 
@@ -52,7 +52,7 @@ An example for setting up an MCP server is available in the [GenAI Showcase App]
 
 ## Read More
 
-* The [MCP Server module](/appstore/modules/genai/mcp-server/)
+* The [MCP Server module](/appstore/modules/genai/genai-for-mx/mcp-server/)
 * The [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) provides an example on how to expose microflows as tools via the MCP Server module. 
 * The official [MCP docs](https://modelcontextprotocol.io/introduction)
 * The [MCP Java SDK GitHub Repository](https://github.com/modelcontextprotocol/java-sdk)
