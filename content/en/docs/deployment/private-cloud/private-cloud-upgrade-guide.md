@@ -1,5 +1,5 @@
 ---
-title: "Upgrading Private Cloud"
+title: "Upgrading Mendix on Kubernetes"
 url: /developerportal/deploy/private-cloud-upgrade-guide/
 description: "Describes how to upgrade the Mendix Operator"
 weight: 90

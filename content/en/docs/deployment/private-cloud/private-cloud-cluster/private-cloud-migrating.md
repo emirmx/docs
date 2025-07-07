@@ -20,11 +20,11 @@ To export components from the Mendix registry, you will need the following:
 
 * Access to the internet
 * A local or managed image registry
-* All the other prerequisites for creating a Mendix on Kubernetes cluster, as documented in the [Prerequisites for Creating a Cluster](/developerportal/deploy/private-cloud-cluster/#prerequisites) section of *Creating a Private Cloud Cluster*.
+* All the other prerequisites for creating a Mendix on Kubernetes cluster, as documented in the [Prerequisites for Creating a Cluster](/developerportal/deploy/private-cloud-cluster/#prerequisites) section of *Creating a Mendix on Kubernetes Cluster*.
 
 ## Download the Mendix Configuration Tool
 
-Follow the instructions in [Creating a Private Cloud Cluster](/developerportal/deploy/private-cloud-cluster/) using the configuration tool until you reach [Running the Configuration Tool](/developerportal/deploy/standard-operator/#running-the-tool).
+Follow the instructions in [Creating a Mendix on Kubernetes Cluster](/developerportal/deploy/private-cloud-cluster/) using the configuration tool until you reach [Running the Configuration Tool](/developerportal/deploy/standard-operator/#running-the-tool).
 
 ## Export Mendix Components{#export}
 
@@ -82,17 +82,17 @@ You can now create a new Mendix on Kubernetes cluster and namespace. To tell the
 If you have already installed and configured a namespace, skip directly to the [Upgrade cluster](#upgrade-cluster) section.
 {{% /alert %}}
 
-Continue following the instructions in [Creating a Private Cloud Cluster](/developerportal/deploy/private-cloud-cluster/) from [Running the Configuration Tool](/developerportal/deploy/standard-operator/#running-the-tool).
+Continue following the instructions in [Creating a Mendix on Kubernetes Cluster](/developerportal/deploy/private-cloud-cluster/) from [Running the Configuration Tool](/developerportal/deploy/standard-operator/#running-the-tool).
 
 In the section [Running the Configuration Tool](/developerportal/deploy/standard-operator/#running-the-tool), add the flag `--registry` to the command line that you paste into the terminal, before your press <kbd>Enter</kbd>.
 
 ### Base Installation
 
-With the `--registry` flag set, follow the instructions in the [Base Installation](/developerportal/deploy/standard-operator/#base-installation) section of *Creating a Private Cloud Cluster*.
+With the `--registry` flag set, follow the instructions in the [Base Installation](/developerportal/deploy/standard-operator/#base-installation) section of *Creating a Mendix on Kubernetes Cluster*.
 
 ### Configure Namespace
 
-With the `--registry` flag set, follow the instructions in the [Configure Namespace](/developerportal/deploy/standard-operator/#configure-namespace) section of *Creating a Private Cloud Cluster*.
+With the `--registry` flag set, follow the instructions in the [Configure Namespace](/developerportal/deploy/standard-operator/#configure-namespace) section of *Creating a Mendix on Kubernetes Cluster*.
 
 When you get to the stage [Review and Apply](/developerportal/deploy/standard-operator/#review-apply), the YAML file which you create will contain the location of your own registry instead of the default Mendix registry. The patched YAML file is stored in the subfolder `.mxpc-cli/<project name/<folder name>/kube` of your user home directory (for example `C:\Users\<User id>\.mxpc-cli\<project name\<folder name>\kube` in Windows or `/home/<User id>/.mxpc-cli/<project name/<folder name>/kube` for Mac and Linux). The **Installer output** panel will confirm the location of the saved file when you click **Write YAML**.
 
@@ -105,6 +105,6 @@ Make sure that you are in the right Kubernetes context before upgrading the name
 {{% /alert %}}
 
 If you have already installed and configured a namespace, but would like to upgrade it to the current Mendix on Kubernetes version, 
-follow the instructions in the [Upgrade cluster](/developerportal/deploy/private-cloud-upgrade-guide/#upgrade-cluster) section of *Upgrading Private Cloud*.
+follow the instructions in the [Upgrade cluster](/developerportal/deploy/private-cloud-upgrade-guide/#upgrade-cluster) section of *Upgrading Mendix on Kubernetes*.
 
 To use images from your private registry, set the `--registry` flag when running the Mendix Configuration Tool.

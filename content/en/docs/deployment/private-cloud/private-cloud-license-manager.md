@@ -19,7 +19,7 @@ When deploying your Mendix app for production use, it needs to be licensed. This
 
 Apps which are deployed to Mendix Cloud have access to the internet and have licenses which work on a subscription basis, contacting the Mendix license server to validate the license. This method is not appropriate for apps which are deployed using Mendix on Kubernetes, and may even be in standalone mode and not connected to the internet (air-gapped).
 
-Rather than having to apply and update licenses for each environment individually, the Mendix **Private Cloud License Manager** (PCLM) provides a repository of offline Mendix licenses to enable you to manage these centrally. This reduces the possibility of errors, and enables the production of license usage reports.
+Rather than having to apply and update licenses for each environment individually, the Mendix **Mendix on Kubernetes License Manager** (PCLM) provides a repository of offline Mendix licenses to enable you to manage these centrally. This reduces the possibility of errors, and enables the production of license usage reports.
 
 The PCLM runs as a Kubernetes service on your cluster. This means that it can be used by all your Mendix apps which run in namespaces within that cluster.
 
@@ -95,7 +95,7 @@ Where you need to supply the following parameters
 
 By default, static credentials are used for authentication, meaning that if `--db-auth-mode` is not specified, you must provide `--db-password`. For enhanced security, AWS providers can use Postgres IAM authentication, while Azure providers can use Postgres managed identity authentication. When the authentication mode is set to `aws-irsa`, you need to specify `--db-aws-iam-role`, and the `--db-password` is no longer required. Similarly, for `azure-wi`, `--db-azure-client-id` must be provided, and `--db-password` is not necessary.
 
-To set up Postgres with IAM authentication, refer to the [Prerequisites](/developerportal/deploy/private-cloud-storage-plans/#prerequisites-1) for configuring the server. For instructions on configuring the database, see [Private Cloud Storage Plans: RDS Database](/developerportal/deploy/private-cloud-storage-plans/#rds-database).
+To set up Postgres with IAM authentication, refer to the [Prerequisites](/developerportal/deploy/private-cloud-storage-plans/#prerequisites-1) for configuring the server. For instructions on configuring the database, see [Mendix on Kubernetes Storage Plans: RDS Database](/developerportal/deploy/private-cloud-storage-plans/#rds-database).
 
 For setting up Postgres with Azure workload identity, follow the guide in [Azure azwi Postgres setup](/developerportal/deploy/private-cloud-storage-plans/#database-postgres-azwi).
 
@@ -168,7 +168,7 @@ You can confirm that you can connect to the PCLM server using the following URLs
 
 ### Using the Kubernetes Service
 
-If PCLM is installed in the same Kubernetes cluster as the Private Cloud environments, the PCLM server can be reached at `http://mx-privatecloud-license-manager.<namespace>.svc.cluster.local`, where `<namespace>` is the namespace where the PCLM Server was installed.
+If PCLM is installed in the same Kubernetes cluster as the Mendix on Kubernetes environments, the PCLM server can be reached at `http://mx-privatecloud-license-manager.<namespace>.svc.cluster.local`, where `<namespace>` is the namespace where the PCLM Server was installed.
 
 You can confirm that you can connect to the PCLM server using the following URLs:
 
@@ -367,7 +367,7 @@ You will receive the result in the following format:
 
 ## Applying Licenses to Your Operator and Apps
 
-To use the licenses, you must add information to the operator configuration. For this, you need to have set up the operator in a namespace on your cluster. See [Installing and Configuring the Mendix Operator](/developerportal/deploy/private-cloud-cluster/#install-operator) in the *Private Cloud Cluster* documentation. Assume that the operator is running in the namespace `<operator-ns>`.
+To use the licenses, you must add information to the operator configuration. For this, you need to have set up the operator in a namespace on your cluster. See [Installing and Configuring the Mendix Operator](/developerportal/deploy/private-cloud-cluster/#install-operator) in the *Mendix on Kubernetes Cluster* documentation. Assume that the operator is running in the namespace `<operator-ns>`.
 
 ### Storing Operator User Credentials and Configuring the Mendix Operator
 

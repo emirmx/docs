@@ -482,10 +482,10 @@ This issue has been fixed in Mendix Operator [version 2.17.1](#2.17.1).
 * After closing the `mxpc-cli` installation and configuration tool, it is possible to resume a previous session and values of all filled in fields.
 * The log collection feature of the `mxpc-cli` installation and configuration tool has been expanded to include the saving of operator configuration, storage plans, storage instances, Mendix App CRs, build, pods, endpoint and services.
 * When upgrading to this version, configuration of managed namespaces (managed by Global Operator) will be upgraded to ensure that all managed namespaces use a configuration that is compatible with the Global Operator.
-* When removing an ingress or service annotation in the Private Cloud Portal or MendixApp CR, the Operator will remove this annotation from the Kubernetes ingress, route or service resource.
+* When removing an ingress or service annotation in the Mendix on Kubernetes Portal or MendixApp CR, the Operator will remove this annotation from the Kubernetes ingress, route or service resource.
 * We have fixed ARN validation in the `mxpc-cli` installation and configuration tool, and no longer mark ARNs from custom [AWS partition](https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/partitions.html) as invalid. This should improve support for AWS China and GovCloud.
 * We fixed an issue where a StorageInstance from a deleted an environment would still show in the StoragePlan status.
-* Kubernetes server information is now included in the Mendix operator version data, and in the near future will be available in the Additional Information tab in the Private Cloud Portal.
+* Kubernetes server information is now included in the Mendix operator version data, and in the near future will be available in the Additional Information tab in the Mendix on Kubernetes Portal.
 * We have updated components to use Go 1.21 and the latest dependency versions, in order to improve security score ratings for all container images.
 * Upgrading to Mendix Operator v2.15.0 from a previous version will restart environments managed by that version of the Operator.
 
@@ -506,7 +506,7 @@ We recommend regularly updating apps to ensure that they contain the latest secu
 * We have addressed an issue where changes in the data type and value of the model constants were not reflected in the application. (Ticket 205850)
 * We have addressed an issue where **Calendar dates** in **datetime** constants were not visible correctly in dark mode.
 * We have addressed an issue where only 10 namespaces were displayed in the **Cluster Overview** page (Ticket 20822.)
-* The **Cluster Manager** button has been removed from the top menu bar of the Private Cloud portal. You can now navigate to the **Cluster Overview** page using the **Mendix on Kubernetes** button.
+* The **Cluster Manager** button has been removed from the top menu bar of the Mendix on Kubernetes Portal. You can now navigate to the **Cluster Overview** page using the **Mendix on Kubernetes** button.
 * You can now export the app constants to an Excel file.
 
 #### Deploy API Improvements
@@ -714,8 +714,8 @@ This feature is currently in a [beta release](/releasenotes/release-status/).
 
 #### Portal Improvements
 
-* On the **Installation** page of Private Cloud Portal, we have added a section where you can download the CLI on Kubernetes License Manager.
-* On the **Namespace details** page of Private Cloud Portal, we have added a section which provides information on the Operator and Runtime Licenses and their usage claims. The section is only visible when Private Cloud License Manager is configured.
+* On the **Installation** page of Mendix on Kubernetes Portal, we have added a section where you can download the CLI on Kubernetes License Manager.
+* On the **Namespace details** page of Mendix on Kubernetes Portal, we have added a section which provides information on the Operator and Runtime Licenses and their usage claims. The section is only visible when Private Cloud License Manager is configured.
 
 ### June 5, 2023
 
@@ -766,7 +766,7 @@ This feature is currently in a [beta release](/releasenotes/release-status/).
 
 * We have improved the error message that displays when invalid values are provided in the custom core resources.
 * We have added a message in the namespace plan section that displays when a namespace is configured with a secret store.
-* We have improved the look and feel of the Private Cloud portal.
+* We have improved the look and feel of the Mendix on Kubernetes Portal.
 * We now allow the upload of deployment packages larger than 500 MB (up until 1024 MB) from the user interface. (Ticket 180884)
 
 #### Deploy API
@@ -869,7 +869,7 @@ Your build may fail if you try to deploy the same deployment package more than o
 * We have added a new status field indicating whether custom runtime setting and MxApp constants were loaded from CSI Secrets Storage.
 * We have added a notification on top of the Model Options and Runtime Settings page to indicate whether CSI Secrets Storage is enabled for a namespace.
 * We have removed the limit of eight characters for the MxAdmin password. You should set the password based on the policy set in Studio Pro.
-* We have fixed an issue where users were unable to update the datatype of constants in the Private Cloud portal. (Ticket 173999)
+* We have fixed an issue where users were unable to update the datatype of constants in the Mendix on Kubernetes Portal. (Ticket 173999)
 * We have fixed a bug where sometimes the log levels were not editable.
 * Unused deployment packages from your repository are now removed if they are older than two weeks.
 
@@ -1294,7 +1294,7 @@ To upgrade an existing installation of Private Cloud to this version, follow the
     * Migration of Mendix components to a Private Cloud registry no longer requires downloading and patching the installation script.
     * The process for upgrading to the next version of Mendix on Kubernetes has been completely automated. Instead of a manual process using a Bash terminal, an upgrade can be done with a click of the mouse.
     * It's now possible to install or upgrade to a specific version of Mendix Operator (1.9.0 and later). Previously, it was only possible to install the latest version of the Operator.
-* We have added reporting of the **Storage Provisioner Version** to the Private Cloud Portal.
+* We have added reporting of the **Storage Provisioner Version** to the Mendix on Kubernetes Portal.
 * We have added dedicated sections to configure scheduled events and app constants when using the Operator in standalone mode.
 
 To upgrade an existing installation of Private Cloud to this version, follow the [Upgrade instructions](/developerportal/deploy/private-cloud-upgrade-guide/).
@@ -1304,8 +1304,8 @@ To upgrade an existing installation of Private Cloud to this version, follow the
 #### Portal Improvements
 
 * We have improved instructions how to install Mendix on Kubernetes components from a Windows system.
-* For Mendix Operator v1.8.0 and later versions, the Private Cloud Portal will display versions of components currently running in a cluster.
-* The Private Cloud Portal now allows to download a version of the Configuration Tool that's compatible with the Mendix Operator installed in a cluster.
+* For Mendix Operator v1.8.0 and later versions, the Mendix on Kubernetes Portal will display versions of components currently running in a cluster.
+* The Mendix on Kubernetes Portal now allows to download a version of the Configuration Tool that's compatible with the Mendix Operator installed in a cluster.
 * We have fixed a UI layout issues that were sometimes visible when an environment failed to build a container image. (Ticket 114548)
 * We have fixed an issue with the feedback widget duplicating itself.
 
@@ -1313,7 +1313,7 @@ To upgrade an existing installation of Private Cloud to this version, follow the
 
 * We have improved dependency version management, so upgrading to future versions of the Mendix Operator will be easier.
 * We have introduced versioning for all components, instead of using the "latest" version. All components are now tested for compatibility, and once the Mendix Operator is installed, its behavior will remain unchanged. Components can only be updated through a manual update process.
-* We have added a feature to report installed component versions to the Private Cloud Portal. In the future, this will be used to indicate which Mendix on Kubernetes Operator version is installed and which features it supports.
+* We have added a feature to report installed component versions to the Mendix on Kubernetes Portal. In the future, this will be used to indicate which Mendix on Kubernetes Operator version is installed and which features it supports.
 * We have added a new S3 option, allowing the use of an existing IAM policy and S3 bucket. Each environment will still get its own account (AWS IAM user) and will not have access to files from other environments.
 * We have improved the S3 storage configuration UI in the Configuration Tool.
 * We have updated the Configuration Tool to run in fullscreen, so that it adapts better to smaller and larger screens.
@@ -1364,7 +1364,7 @@ To upgrade an existing installation of Private Cloud to this version, follow the
 * We have introduced a new, interactive, installation and configuration tool for the Mendix Operator. The previous installation scripts are still available, and you can choose between the new and previous installation tools.
 * We added access rules for namespaces to control access to the debugger and TLS.
 * We added activity log entries for TLS, the debugger, changing log levels, and uploading an mda locally.
-* We improved the stability of the Private Cloud Portal.
+* We improved the stability of the Mendix on Kubernetes Portal.
 * We added a warning message when the operator license has expired
 
 ### October 30, 2020

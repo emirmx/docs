@@ -1,20 +1,20 @@
 ---
-title: "Migrating Data in Private Cloud Environments (Preview)"
+title: "Migrating Data in Mendix on Kubernetes Environments (Preview)"
 linktitle: "Migrate Data (Preview)"
 url: /developerportal/deploy/private-cloud-data-transfer/
-description: "Describes how to migrate data between Private Cloud environments"
+description: "Describes how to migrate data between Mendix on Kubernetes environments"
 weight: 60
 ---
 ## Introduction
 
 {{% alert color="warning" %}}This tool is provided as-is, and no additional features or enhancements will be implemented in the future. {{% /alert %}}
 
-The Private Cloud data migration tool allows you to:
+The Mendix on Kubernetes data migration tool allows you to:
 
-* export the database and files from a Private Cloud environment into a backup file
+* export the database and files from a Mendix on Kubernetes environment into a backup file
 * import the database and files from a previously exported backup file into an environment
 
-The Private Cloud data migration tool is compatible with [backup files](/developerportal/operate/restore-backup/#format-of-backup-file) from Mendix Cloud, allowing you to transfer application data between Mendix Cloud and Mendix on Kubernetes.
+The Mendix on Kubernetes data migration tool is compatible with [backup files](/developerportal/operate/restore-backup/#format-of-backup-file) from Mendix Cloud, allowing you to transfer application data between Mendix Cloud and Mendix on Kubernetes.
 
 When exporting files from an environment, the export only includes files which are in use (that is, which are referenced by a `System.FileDocument` entity). Any files that are not used by the app are ignored.
 

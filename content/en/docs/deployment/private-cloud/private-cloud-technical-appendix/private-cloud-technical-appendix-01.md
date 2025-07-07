@@ -47,7 +47,7 @@ To find out more about Kubernetes operators, see the following links:
 
 Mendix on Kubernetes contains multiple components. The following components are not a part of the Mendix Operator, but can manage or control it through Mendix CRs:
 
-* The Mendix Gateway Agent allows the Private Cloud Portal to manage environments
+* The Mendix Gateway Agent allows the Mendix on Kubernetes Portal to manage environments
 * The Configuration Tool updates CRs that are used to configure the Mendix Operator
 
 ### What the Mendix Operator Offers
@@ -138,7 +138,7 @@ If you want to prevent developers from accessing secrets or other Kubernetes obj
 Mendix Operator is limited in scope to one namespace. If you need to use the Mendix Operator in multiple namespaces, you have to install it and configure it in each namespace. This allows the use of multiple versions of the Operator, with different configurations, in the same cluster — as long as each Operator runs in its own dedicated namespace.
 It is not possible to install one global instance of the Operator for the entire cluster.
 
-On the other hand, CRDs are global within the cluster. Since all Mendix Operators in a cluster will be using the same shared CRD, it is critical that the latest version of the CRDs are installed in a cluster.  See the [Private Cloud upgrade instructions](/developerportal/deploy/private-cloud-upgrade-guide/) for more information.
+On the other hand, CRDs are global within the cluster. Since all Mendix Operators in a cluster will be using the same shared CRD, it is critical that the latest version of the CRDs are installed in a cluster.  See the [Mendix on Kubernetes upgrade instructions](/developerportal/deploy/private-cloud-upgrade-guide/) for more information.
 
 Deleting any CRD from a cluster will also delete its CRs. Only run `kubectl delete crd` in a cluster where no Mendix app environments are installed.
 

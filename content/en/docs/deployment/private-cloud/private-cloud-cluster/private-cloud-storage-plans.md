@@ -1282,7 +1282,7 @@ This basic, on-demand option allows you to attach an existing S3 bucket and IAM 
 * Access/Secret keys used by existing environments can only be rotated manually.
 * No isolation between environments using this blob storage plan (if the **Share bucket between environments** option is checked).
 * Configuration parameters will not be validated and will be provided to the Mendix app as-is. If the arguments are not valid or there is an issue with permissions, the Mendix Runtime will fail to start the and deployment will appear to be stuck with **Replicas running** and **Runtime** showing a spinner.
-* To configure the **Autogenerate Prefix** option you need Mendix Operator version 2.7.0 or above. See [Upgrading Private Cloud](/developerportal/deploy/private-cloud-upgrade-guide/) for instructions on upgrading the Mendix Operator.
+* To configure the **Autogenerate Prefix** option you need Mendix Operator version 2.7.0 or above. See [Upgrading Mendix on Kubernetes](/developerportal/deploy/private-cloud-upgrade-guide/) for instructions on upgrading the Mendix Operator.
 
 ##### Environment Isolation
 

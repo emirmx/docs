@@ -1,8 +1,8 @@
 ---
-title: "CI/CD for Mendix for Standalone Private Cloud Using Tekton"
+title: "CI/CD for Mendix for Standalone Mendix on Kubernetes Using Tekton"
 linktitle: "CI/CD with Tekton"
 url: /developerportal/deploy/private-cloud-tekton/
-description: "Describes how to use Tekton to create a CI/CD solution for Mendix environments in the Private Cloud"
+description: "Describes how to use Tekton to create a CI/CD solution for Mendix environments in Mendix on Kubernetes"
 weight: 40
 ---
 {{% alert color="info" %}}
@@ -13,7 +13,7 @@ Please make a request to your Customer Success Manager (CSM) to arrange for acce
 
 ## Introduction
 
-Mendix recommends using [Tekton](https://tekton.dev/) to create a CI/CD (Continuous Integration and Delivery/Deployment) solution for your Mendix for Standalone Private Cloud apps. This document explains how to install:
+Mendix recommends using [Tekton](https://tekton.dev/) to create a CI/CD (Continuous Integration and Delivery/Deployment) solution for your Mendix for Standalone Mendix on Kubernetes apps. This document explains how to install:
 
 * Tekton
 * Pipelines containing the appropriate tasks and steps to manage apps and environments

@@ -57,7 +57,7 @@ Mendix deploys, operates and is responsible for overall service functionality of
 * Mendix Operator
 * Mendix Agent
 
-You cannot alter these managed components yourself beyond what is offered in the Mendix on Azure and Mendix Private Cloud self-service portals. Mendix limits customization to ensure a consistent, predictable, and scalable customer experience.
+You cannot alter these managed components yourself beyond what is offered in the Mendix on Azure and Mendix on Kubernetes self-service portals. Mendix limits customization to ensure a consistent, predictable, and scalable customer experience.
 
 ### Diagram
 

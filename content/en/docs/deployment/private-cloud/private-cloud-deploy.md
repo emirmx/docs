@@ -1,20 +1,20 @@
 ---
-title: "Deploying a Mendix App to a Private Cloud Cluster"
+title: "Deploying a Mendix App to a Mendix on Kubernetes Cluster"
 linktitle: "Deploy Mendix App"
 url: /developerportal/deploy/private-cloud-deploy/
-description: "Describes the processes for deploying a Mendix app in the Private Cloud"
+description: "Describes the processes for deploying a Mendix app in Mendix on Kubernetes"
 weight: 20
 ---
 
 ## Introduction
 
-To deploy apps to your private cloud cluster (for example to Red Hat OpenShift or AWS-EKS), the cluster needs to be registered in the Mendix Portal. This creates a link between the Mendix Portal and the cluster. See [Creating a Private Cloud Cluster](/developerportal/deploy/private-cloud-cluster/) for instructions on how to do this.
+To deploy apps to your private cloud cluster (for example to Red Hat OpenShift or AWS-EKS), the cluster needs to be registered in the Mendix Portal. This creates a link between the Mendix Portal and the cluster. See [Creating a Mendix on Kubernetes Cluster](/developerportal/deploy/private-cloud-cluster/) for instructions on how to do this.
 
 Once the cluster has been registered, and a namespace created, team members with *Deploy App* rights can create environments and deploy an app.
 
 This document explains how to use the Mendix Portal to deploy your **connected** app.
 
-To deploy to a namespace in a **standalone** cluster, you provide the CRs through the console or command line. This is described in [Using Command Line to Deploy a Mendix App to a Private Cloud Cluster](/developerportal/deploy/private-cloud-operator/).
+To deploy to a namespace in a **standalone** cluster, you provide the CRs through the console or command line. This is described in [Using Command Line to Deploy a Mendix App to a Mendix on Kubernetes Cluster](/developerportal/deploy/private-cloud-operator/).
 
 Within your namespace you can run one, or several, Mendix apps. You can see the relationship between the Mendix environments and the Kubernetes namespaces in the image below.
 
@@ -30,7 +30,7 @@ You can also create environments and deploy and manage apps using the [Mendix on
 
 To deploy an app to your private cloud platform, you need the following:
 
-* A Mendix account with **Deploy App** rights to an existing Cluster – see [Registering a Private Cloud Cluster](/developerportal/deploy/private-cloud-cluster/) for more information on setting up clusters and namespaces and adding members
+* A Mendix account with **Deploy App** rights to an existing Cluster – see [Registering a Mendix on Kubernetes Cluster](/developerportal/deploy/private-cloud-cluster/) for more information on setting up clusters and namespaces and adding members
 * Mendix Studio Pro 8.0.0 (build 56467) or above.
 * A Mendix app created with the version of Studio Pro you are using.
 * Make sure that the security of the app is set to Production. By default, all environments are set to Production mode when created. The DTAP mode is disabled by default. If you want to change it to Developer mode, the cluster manager can enable the DTAP mode from the Cluster Manager page.
@@ -489,7 +489,7 @@ If an application is in the Stopped state, the scaling does not come into effect
 
 ##### Clear Admin Password
 
-This allows you to clear the password for the [Mendix administration account](/refguide/administrator/) set in the Private Cloud environment. This means that there will be no password pushed to your environment when your app is deployed - any password currently set in the environment will be retained.
+This allows you to clear the password for the [Mendix administration account](/refguide/administrator/) set in the Mendix on Kubernetes environment. This means that there will be no password pushed to your environment when your app is deployed - any password currently set in the environment will be retained.
 
 ##### Change Admin Password
 
@@ -547,7 +547,7 @@ If you need to enter or change the subscription secret, then you can do that her
 
 Subscription secrets are obtained from [Mendix support](https://support.mendix.com/). You can use subscription secrets in [standalone mode](/developerportal/deploy/private-cloud-technical-appendix-02/).
 
-We have also released an alternate way of licensing your apps in the Private Cloud by using PCLM. For more information, see [Private Cloud License Manager](/developerportal/deploy/private-cloud/private-cloud-license-manager/).
+We have also released an alternate way of licensing your apps in Mendix on Kubernetes by using PCLM. For more information, see [Private Cloud License Manager](/developerportal/deploy/private-cloud/private-cloud-license-manager/).
 
 For users of the Private Cloud License Manager who wish to set the product type for the Runtime license in a particular environment, it can be done by editing the Product type. This ensures that the associated environment obtains the license from the license bundle with the specified Product type. By default, the value is set to the one defined in the Namespace configuration page.
 
@@ -681,7 +681,7 @@ All names beginning **openshift-** are reserved for use by OpenShift if you are 
 
 ### Deleting Your App
 
-Delete all environments before you delete an app. If you delete an app which has existing private cloud environments, you will not be able to reach the environments through the Mendix Portal.
+Delete all environments before you delete an app. If you delete an app which has existing Mendix on Kubernetes environments, you will not be able to reach the environments through the Mendix Portal.
 
 ### Deployment Package Size
 
@@ -894,7 +894,7 @@ If your application keeps restarting unexpectedly, check your application log fo
 
 ## How the Operator Deploys Your App {#how-operator-deploys}
 
-The Mendix Operator is another app within your private cloud namespace. It is triggered when you provide a CR file. This can either be through the Mendix Portal, for a connected cluster, or through the command line, for a standalone cluster. The process looks like this:
+The Mendix Operator is another app within your Mendix on Kubernetes namespace. It is triggered when you provide a CR file. This can either be through the Mendix Portal, for a connected cluster, or through the command line, for a standalone cluster. The process looks like this:
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/mx4pc-operator-deploy.png" class="no-border" >}}
 

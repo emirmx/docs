@@ -1,7 +1,7 @@
 ---
 title: "Running the Mendix Operator in Standard Mode"
 url: /developerportal/deploy/standard-operator/
-description: "Describes the processes of installing and configuring the Mendix Operator in the Private Cloud in Standard mode"
+description: "Describes the processes of installing and configuring the Mendix Operator for Mendix on Kubernetes in Standard mode"
 weight: 30
 ---
 
@@ -21,7 +21,7 @@ Before you can use the Mendix Operator in your namespace you need to install it 
 
 If you are not already on the installation tab for your namespace, go to it by following these instructions:
 
-1. Go to the Cluster Manager page by opening the [Global Navigation Menu](/portal/global-navigation/), and then clicking **Deployment** > **Private Cloud**.
+1. Go to the Cluster Manager page by opening the [Global Navigation Menu](/portal/global-navigation/), and then clicking **Deployment** > **Mendix on Kubernetes**.
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/cluster-manager.png" class="no-border" >}}
 
@@ -56,7 +56,7 @@ If you are not already on the installation tab for your namespace, go to it by f
 
 ## Signing in to the Platform {#openshift-signin}
 
-You will need to have administrator rights to your private cloud platform. This means you will have to log in before you run the Configuration Tool.
+You will need to have administrator rights to your Mendix on Kubernetes platform. This means you will have to log in before you run the Configuration Tool.
 
 These instructions are for the OpenShift platform; a similar process will be required for other platforms.
 
@@ -108,7 +108,7 @@ If the Mendix Operator and the Mendix Gateway Agent have not been installed in y
 
 2. Select the required **Cluster Mode** – *connected* or *standalone*.
 
-    For more information, see [Connected and Standalone Clusters](/developerportal/deploy/private-cloud/#connected-standalone) in the *Private Cloud* documentation.
+    For more information, see [Connected and Standalone Clusters](/developerportal/deploy/private-cloud/#connected-standalone) in the *Mendix on Kubernetes* documentation.
 
 3. Select the required **Cluster Type** – *openshift* or *generic*.
 

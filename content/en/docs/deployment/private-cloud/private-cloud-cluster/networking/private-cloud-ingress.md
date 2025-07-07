@@ -88,7 +88,7 @@ To configure the AWS Load Balancer for Mendix on Kubernetes, perform the followi
 
     * To update the settings for a specific app environment, use the Mendix Platform GUI:
 
-        1. In the **Global Navigation** top bar, click **Deployment** > **Private Cloud**.
+        1. In the **Global Navigation** top bar, click **Deployment** > **Mendix on Kubernetes**.
         2. Select your cluster and namespace.
         3. In the **Apps** section, click the **Configure App** icon.
 
@@ -171,7 +171,7 @@ To configure AGIC for Mendix on Kubernetes, perform the following steps:
 
     * To update the settings for a specific app environment, use the Mendix Platform GUI:
 
-        1. In the **Global Navigation** top bar, click **Deployment** > **Private Cloud**.
+        1. In the **Global Navigation** top bar, click **Deployment** > **Mendix on Kubernetes**.
         2. Select your cluster and namespace.
         3. In the **Apps** section, click the **Configure App** icon.
 

@@ -2,7 +2,7 @@
 title: "Air-Gapped Installation of Tekton CI/CD for Mendix on Kubernetes"
 linktitle: "Air-Gapped Tekton Installation"
 url: /developerportal/deploy/private-cloud-tekton-airgapped/
-description: "Describes how to use Tekton to create a CI/CD solution for Mendix environments in the Private Cloud"
+description: "Describes how to use Tekton to create a CI/CD solution for Mendix environments in Mendix on Kubernetes"
 weight: 10
 ---
 

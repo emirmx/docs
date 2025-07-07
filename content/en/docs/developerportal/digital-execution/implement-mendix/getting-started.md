@@ -257,7 +257,7 @@ With Mendix on Kubernetes, you can choose the cloud provider of your preference,
 
 For Private deployment, you need to be ready to start that process immediately in order to avoid development and go-live date delays. 
 
-This is the Private Cloud responsibility matrix:
+This is the Mendix on Kubernetes responsibility matrix:
 
 {{< figure src="/attachments/quickstarts/leading-mendix-implementation/responsibility-matrix.png"  >}}
 

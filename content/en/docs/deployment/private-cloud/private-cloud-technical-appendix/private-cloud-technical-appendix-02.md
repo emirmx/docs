@@ -93,7 +93,7 @@ For *Connected* clusters, Mendix on Kubernetes needs to be able to connect to [M
 
 ## Installation {#installation}
 
-The diagram below shows the steps which you need to take to install Mendix on Kubernetes in a namespace. It assumes that the Cluster Administrator has already set up the cluster so that the Mendix Portal knows about it. See [Creating a Private Cloud Cluster](/developerportal/deploy/private-cloud-cluster/#create-cluster) for more information.
+The diagram below shows the steps which you need to take to install Mendix on Kubernetes in a namespace. It assumes that the Cluster Administrator has already set up the cluster so that the Mendix Portal knows about it. See [Creating a Mendix on Kubernetes Cluster](/developerportal/deploy/private-cloud-cluster/#create-cluster) for more information.
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-technical-appendix/private-cloud-technical-appendix-02/mx4pc-installation.png" class="no-border" >}}
 
@@ -160,7 +160,7 @@ If the provisioner pod fails with an error, it is likely to be because of a conf
 
 When a new deployment package (MDA) is deployed from the Mendix Portal to an environment, the Mendix Portal will generate a new sourceURL (the URL where the MDA can be downloaded) and send it to the Mendix Gateway Agent. The Mendix Gateway Agent will then update the `MendixApp` CR's `spec.sourceURL` attribute.
 
-For a standalone environment, you need to create the `MendixApp` CR yourself and apply it to the namespace where it should be deployed. You can find further instructions in [Using Command Line to Deploy a Mendix App to a Private Cloud Cluster](/developerportal/deploy/private-cloud-operator/).
+For a standalone environment, you need to create the `MendixApp` CR yourself and apply it to the namespace where it should be deployed. You can find further instructions in [Using Command Line to Deploy a Mendix App to a Mendix on Kubernetes Cluster](/developerportal/deploy/private-cloud-operator/).
 
 The processing of the `MendixApp` CR is shown in the diagram below.
 

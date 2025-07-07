@@ -1,14 +1,14 @@
 ---
-title: "Private Cloud"
+title: "Mendix on Kubernetes"
 url: /developerportal/deploy/private-cloud/
-description: "Describes how to deploy to a Private Cloud."
+description: "Describes how to deploy to Mendix on Kubernetes."
 weight: 48
 #To update these screenshots, you can log in with credentials detailed in How to Update Screenshots Using Team Apps.
 ---
 
 ## Introduction
 
-Mendix on Kubernetes allows you to deploy and manage your Mendix apps in a Kubernetes private cloud cluster. It automates operations, such as database provisioning, that you would have to perform manually if you used the Mendix Docker buildpack. It also provides options for monitoring and logging through third-party tools. 
+Mendix on Kubernetes allows you to deploy and manage your Mendix apps in a Kubernetes private cluster. It automates operations, such as database provisioning, that you would have to perform manually if you used the Mendix Docker buildpack. It also provides options for monitoring and logging through third-party tools. 
 
 Your organization may have a requirement to use a private cloud, perhaps as part of a multi-cloud strategy. This could be because of legal requirements or a desire to have complete control over your data. Mendix on Kubernetes allows you to do this while keeping the familiar components of Docker and Kubernetes.
 
@@ -24,7 +24,7 @@ Mendix on Kubernetes is a premium offering from Mendix, and there are additional
 
 ### Registering Your Cluster and Namespace
 
-The first step is to register your private cloud cluster in the Mendix Portal. For more information see [Creating a Private Cloud Cluster](/developerportal/deploy/private-cloud-cluster/).
+The first step is to register your cluster in the Mendix Portal. For more information see [Creating a Mendix on Kubernetes Cluster](/developerportal/deploy/private-cloud-cluster/).
 
 This activity needs to be done by a systems administrator who has administration rights to the platform where the cluster is being created.
 
@@ -32,8 +32,8 @@ This activity needs to be done by a systems administrator who has administration
 
 To deploy your app, you have two options:
 
-1. You can deploy the app from within the Mendix Portal. For more information see [Deploying a Mendix App to a Private Cloud Cluster from Mendix Portal](/developerportal/deploy/private-cloud-deploy/).
-2. You can create a CI/CD pipeline and deploy your app from within the cluster. For more information see [Using Command Line to Deploy a Mendix App to a Private Cloud Cluster](/developerportal/deploy/private-cloud-operator/).
+1. You can deploy the app from within the Mendix Portal. For more information see [Deploying a Mendix App to a Mendix on Kubernetes Cluster from Mendix Portal](/developerportal/deploy/private-cloud-deploy/).
+2. You can create a CI/CD pipeline and deploy your app from within the cluster. For more information see [Using Command Line to Deploy a Mendix App to a Mendix on Kubernetes Cluster](/developerportal/deploy/private-cloud-operator/).
 
 When you deploy through the Mendix Portal, this can be done by any Mendix user who has been given the appropriate rights to the cluster which has been registered.
 
@@ -98,7 +98,7 @@ If the customer decided to use a [Vertical Pod autoscaler](/developerportal/depl
 
 When a user sets CPU and memory limits, the JVM (JRE 8u191+) will automatically detect the container requests and limits, and automatically set Java memory limits based on the container details.
 However, by default, the JVM will limit the heap memory to 25% of the container's memory limit. Mx4PC just sets the container limits, but does not go further into configuring the JVM. 
-This percentage can be adjusted by providing a custom value in Custom JVM Options in the [Runtime tab](/developerportal/deploy/private-cloud-deploy/#runtime-tab) in the Private Cloud Portal, for example: *-XX:MaxRAMPercentage=75.0*.
+This percentage can be adjusted by providing a custom value in Custom JVM Options in the [Runtime tab](/developerportal/deploy/private-cloud-deploy/#runtime-tab) in the Mendix on Kubernetes Portal, for example: *-XX:MaxRAMPercentage=75.0*.
 
 ## Licensing Mendix on Kubernetes{#licensing}
 
@@ -150,7 +150,7 @@ You can request a Runtime license by doing the following:
 
 5. Save the request.
 
-You will receive your Runtime license (or licenses) from Mendix Support. See [Online Private Cloud Apps](#activate-online) and [Offline Private Cloud Apps](#activate-offline), below, for instructions on how to configure them.
+You will receive your Runtime license (or licenses) from Mendix Support. See [Online Mendix on Kubernetes Apps](#activate-online) and [Offline Mendix on Kubernetes Apps](#activate-offline), below, for instructions on how to configure them.
 
 ### Request Both Operator and Runtime License
 
@@ -171,13 +171,13 @@ You can also request for both the Operator and Runtime license within the same r
 
 ### Activating Your License (or Licenses)
 
-#### Online Private Cloud Apps{#activate-online}
+#### Online Mendix on Kubernetes Apps{#activate-online}
 
 If your app is able to connect to the internet to contact the Mendix license server, you will receive a **Subscription Secret** from Mendix Support.
 
 If your app is **Connected** to the Mendix Portal, you can enter the subscription secret [in the Mendix Portal](/developerportal/deploy/private-cloud-deploy/#license-mendix)
 
-#### Standalone & Offline Private Cloud Apps{#activate-offline}
+#### Standalone & Offline Mendix on Kubernetes Apps{#activate-offline}
 
 If your app is **Standalone** or unable to contact the Mendix license server, you will receive a **LicenseId** and a **LicenseKey**. You will have to apply these by [editing the CR](/developerportal/deploy/private-cloud-operator/#edit-cr) in the cluster.
 

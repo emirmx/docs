@@ -1,7 +1,7 @@
 ---
-title: "Creating a Private Cloud Cluster"
+title: "Creating a Mendix on Kubernetes Cluster"
 url: /developerportal/deploy/private-cloud-cluster/
-description: "Describes the processes for creating a Private Cloud cluster in the Mendix Portal"
+description: "Describes the processes for creating a Mendix on Kubernetes cluster in the Mendix Portal"
 weight: 10
 ---
 
@@ -956,7 +956,7 @@ Mendix app container images are locked down by default - they run as a non-root 
 
 Starting from Mendix Operator version 2.21.0, all system containers and pods use `readOnlyRootFilesystem` by default. It is possible to specify if an environment's app container should also have a read-only filesystem. For Mendix apps, the `readOnlyRootFilesystem` option is off by default, as some Java actions in marketplace modules might expect some paths to be writable.
 
-If you enable the `runtimeReadOnlyRootFilesystem` option in the MendixApp CRD (for standalone clusters) or in the Private Cloud Portal, the Mendix app container also uses a read-only root filesystem. As Mendix apps needs certain paths to be writable, an [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) is used for writable paths. Each path is mounted as a separate `subPath` to keep data separated. The `emptyDir` size is set to the `ephemeral-storage` [resource limit](#advanced-resource-customization).
+If you enable the `runtimeReadOnlyRootFilesystem` option in the MendixApp CRD (for standalone clusters) or in the Mendix on Kubernetes Portal, the Mendix app container also uses a read-only root filesystem. As Mendix apps needs certain paths to be writable, an [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) is used for writable paths. Each path is mounted as a separate `subPath` to keep data separated. The `emptyDir` size is set to the `ephemeral-storage` [resource limit](#advanced-resource-customization).
 
 In addition to internal Mendix Runtime paths, `/tmp` is mounted for any temporary files that might be created through Java actions. For Java actions to work correctly, ensure that they only create files in `/tmp`, for example, by using the `File.createTempFile` or `File.createTempDirectory` Java methods.
 
@@ -974,7 +974,7 @@ In GKE Autopilot, one of the key features is its ability to automatically adjust
 
 As a result, there can be a continuous back-and-forth interaction between Mx4PC and GKE Autopilot, where both entities engage in a loop, attempting to counteract each other's modifications to deployments and pods.
 
-To address this issue, you can configure the Mendix Operator to align with GKE's requirements. This involves setting the resources (specifically, the CPU, memory, and ephemeral storage) to be equal to the limits defined in the `OperatorConfiguration` for both the `sidecar` and `metrics-sidecar` containers. Along with this, you must ensure that the resource limits for the CPU, memory, and ephemeral storage are equal to the resource requests in the Private Cloud Portal. For more information on setting the core resources on the Portal, see [Custom Core Resource Plan](#custom-core-resource-plan).
+To address this issue, you can configure the Mendix Operator to align with GKE's requirements. This involves setting the resources (specifically, the CPU, memory, and ephemeral storage) to be equal to the limits defined in the `OperatorConfiguration` for both the `sidecar` and `metrics-sidecar` containers. Along with this, you must ensure that the resource limits for the CPU, memory, and ephemeral storage are equal to the resource requests in the Mendix on Kubernetes Portal. For more information on setting the core resources on the Portal, see [Custom Core Resource Plan](#custom-core-resource-plan).
 
 You must also create a patch file for configuring the core resources in the `OperatorConfiguration`, as in the following example:
 
@@ -1273,7 +1273,7 @@ The new value for the annotation will only be applied when the application is re
 {{% /alert %}}
 
 {{% alert color="info" %}}
-Mendix Operator version 2.14.0 (and older) don't remove ingress or service annotations when an annotation is removed from the Private Cloud Portal or in the `MendixApp` CR.
+Mendix Operator version 2.14.0 (and older) don't remove ingress or service annotations when an annotation is removed from the Mendix on Kubernetes Portal or in the `MendixApp` CR.
 
 This is addressed in Mendix Operator version 2.15.0; if you need to remove an ingress or service annotation, please upgrade to the latest Mendix Operator version first.
 {{% /alert %}}
@@ -1625,4 +1625,4 @@ Within your cluster you can run one, or several, Mendix apps. Each app runs in a
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/mx4pc-containerized-architecture.png" class="no-border" >}}
 
-To ensure that every app deployed to a namespace has a unique name, the environment will have an **Environment UUID** added to the environment name when it is deployed to ensure that it is unique in the project. This also ensures the app cannot have the same name as the Mendix tools used to deploy the app. See [Deploying a Mendix App to a Private Cloud Cluster](/developerportal/deploy/private-cloud-deploy/) for more information.
+To ensure that every app deployed to a namespace has a unique name, the environment will have an **Environment UUID** added to the environment name when it is deployed to ensure that it is unique in the project. This also ensures the app cannot have the same name as the Mendix tools used to deploy the app. See [Deploying a Mendix App to a Mendix on Kubernetes Cluster](/developerportal/deploy/private-cloud-deploy/) for more information.

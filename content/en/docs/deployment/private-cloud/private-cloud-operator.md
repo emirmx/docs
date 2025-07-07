@@ -1,18 +1,18 @@
 ---
-title: "Using Command Line to Deploy a Mendix App to a Private Cloud Cluster"
+title: "Using Command Line to Deploy a Mendix App to a Mendix on Kubernetes Cluster"
 linktitle: "Use CLI to Deploy"
 url: /developerportal/deploy/private-cloud-operator/
-description: "Describes the processes for using the Mendix Operator directly to deploy a Mendix app in the Private Cloud"
+description: "Describes the processes for using the Mendix Operator directly to deploy a Mendix app in Mendix on Kubernetes"
 weight: 30
 ---
 
 ## Introduction
 
-Once you have the Mendix Operator installed in a namespace of your Red Hat OpenShift, or other Kubernetes cluster (see [Creating a Private Cloud Cluster](/developerportal/deploy/private-cloud-cluster/)), you can use it to control the deployment of your Mendix app using Mendix Custom Resources (CRs). The Mendix operator then creates the app container and builds the app inside the namespace, together with all the resources the app needs.
+Once you have the Mendix Operator installed in a namespace of your Red Hat OpenShift, or other Kubernetes cluster (see [Creating a Mendix on Kubernetes Cluster](/developerportal/deploy/private-cloud-cluster/)), you can use it to control the deployment of your Mendix app using Mendix Custom Resources (CRs). The Mendix operator then creates the app container and builds the app inside the namespace, together with all the resources the app needs.
 
 This document explains how to provide the CRs through the console or command line for a standalone cluster. This enables you to automate your deployment processes and perform deployments from behind a firewall which would prevent access to the Mendix Portal.
 
-Alternatively, you can create a connected cluster and use the Mendix Portal to deploy the app, as described in [Deploying a Mendix App to a Private Cloud Cluster](/developerportal/deploy/private-cloud-deploy/).
+Alternatively, you can create a connected cluster and use the Mendix Portal to deploy the app, as described in [Deploying a Mendix App to a Mendix on Kubernetes Cluster](/developerportal/deploy/private-cloud-deploy/).
 
 ## Prerequisites for Deploying a Mendix App
 
@@ -313,7 +313,7 @@ kubectl apply -f {File containing the CR} -n {namespace where app is being deplo
 
 To build and deploy your app using the OpenShift CLI, do the following:
 
-1. Paste the OpenShift login command into your command line terminal as described in the first few steps of the [Signing in to Open Shift](/developerportal/deploy/standard-operator/#openshift-signin) section of *Creating a Private Cloud Cluster*.
+1. Paste the OpenShift login command into your command line terminal as described in the first few steps of the [Signing in to Open Shift](/developerportal/deploy/standard-operator/#openshift-signin) section of *Creating a Mendix on Kubernetes Cluster*.
 2. Switch to the project where you've deployed the Mendix Operator using the command `oc project {my-project}` where {my-project} is the name of the project where the Mendix Operator is deployed.
 3. Paste the following command into your command line terminal:
 

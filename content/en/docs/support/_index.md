@@ -143,7 +143,7 @@ With our Multi-Cloud strategy, Mendix allows the apps that you build to be deplo
 
 The full stack is depicted in the table below. This indicates which components are **Mendix** supported, or supported by a **Mendix Partner** or a third party. If no support is indicated, then you will need to arrange support of this component yourself. Each of the components is described in more detail in [Components of the Mendix Stack](#components), below.
 
-| Stack (see [below](#components) for more information) | Mendix Cloud | Cloud Dedi&shy;cated | Private Cloud - Con&shy;nected | Private Cloud - Stand&shy;alone | Private Mendix Platform | SAP BTP | Cloud Foundry/ Docker & Kuber&shy;netes | Tradi&shy;tional³ |
+| Stack (see [below](#components) for more information) | Mendix Cloud | Cloud Dedi&shy;cated | Mendix on Kubernetes - Con&shy;nected | Mendix on Kubernetes - Stand&shy;alone | Private Mendix Platform | SAP BTP | Cloud Foundry/ Docker & Kuber&shy;netes | Tradi&shy;tional³ |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Appli&shy;cation** | | | | | | | | |
 | **Platform Support&shy;ed Marketplace content** | Mendix | Mendix | Mendix | Mendix | Mendix | Mendix | Mendix | Mendix |
@@ -176,7 +176,7 @@ Mendix Support has access to app health, logs, graphs and monitoring.
 
 ### Mendix on Kubernetes
 
-Mendix on Kubernetes is based on the Kubernetes-Native Operator Framework. You can check the supported Kubernetes platforms in our [Private Cloud](/developerportal/deploy/private-cloud/) documentation. Check our [System Requirements](/refguide/system-requirements/) for other supported components like database and storage. The Mendix Gateway Agent and Mendix Operator are supported by Mendix.
+Mendix on Kubernetes is based on the Kubernetes-Native Operator Framework. You can check the supported Kubernetes platforms in our [Mendix on Kubernetes](/developerportal/deploy/private-cloud/) documentation. Check our [System Requirements](/refguide/system-requirements/) for other supported components like database and storage. The Mendix Gateway Agent and Mendix Operator are supported by Mendix.
 Mendix Support does not have access to app health, logs, graphs and monitoring. If you run into issues or want to ask a question on these supported components, please always provide relevant logs, data, and your own analysis that explains why you suspect the issue is caused by one of our supported components.
 
 {{< figure src="/attachments/support/private-cloud.png"   width="75%"  class="no-border" >}}
@@ -187,7 +187,7 @@ Mendix Support does not have access to app health, logs, graphs and monitoring. 
 
 ### Private Mendix Platform
 
-Private Mendix Platform provides a platform experience in on-premises or (virtual) private cloud environments. It is dependent on Mendix on Kubernetes and Kubernetes, and integrates with tooling in the customer's landscape. Please refer to [Private Mendix Platform](/private-mendix-platform/) documentation for [prerequisites](/private-mendix-platform-prerequisites/) to install the platform and set up [configurations](/private-mendix-platform-configuration/), as well as [Mendix on Kubernetes](/developerportal/deploy/private-cloud/) documentation for [supported environments](/developerportal/deploy/private-cloud-supported-environments/). 
+Private Mendix Platform provides a platform experience in on-premises or (virtual) Mendix on Kubernetes environments. It is dependent on Mendix on Kubernetes and Kubernetes, and integrates with tooling in the customer's landscape. Please refer to [Private Mendix Platform](/private-mendix-platform/) documentation for [prerequisites](/private-mendix-platform-prerequisites/) to install the platform and set up [configurations](/private-mendix-platform-configuration/), as well as [Mendix on Kubernetes](/developerportal/deploy/private-cloud/) documentation for [supported environments](/developerportal/deploy/private-cloud-supported-environments/). 
 
 This offering is delivered, managed and supported by Certified Partners (or Certified Customers). If you run into issues regarding your private platform, please contact your Certified Partner for support.
 
@@ -250,7 +250,7 @@ If you want additional features or some other change in the Windows Service, you
 
 The application operation component is used for stopping and starting environments and configuring constants, scheduled events, and runtime settings.
 
-Mendix Support can analyze this component if your app is running on Mendix Cloud, Mendix Cloud Dedicated, Private Cloud Connected, or SAP BTP through the Mendix Portal.
+Mendix Support can analyze this component if your app is running on Mendix Cloud, Mendix Cloud Dedicated, Mendix on Kubernetes Connected, or SAP BTP through the Mendix Portal.
 
 ### Logs and Metrics
 
@@ -263,7 +263,7 @@ Mendix Support can analyze these components if your app is running on Mendix Clo
 
 The deployment pipeline takes care of creating and deploying deployment packages. Read more about deployment options in [Deploying Apps](/deployment/).
 
-Mendix Support can analyze this component if your app is running on Mendix Cloud, Mendix Cloud Dedicated, Private Cloud Connected, or SAP BTP through the Mendix Portal.
+Mendix Support can analyze this component if your app is running on Mendix Cloud, Mendix Cloud Dedicated, Mendix on Kubernetes Connected, or SAP BTP through the Mendix Portal.
 
 ### Runtime
 

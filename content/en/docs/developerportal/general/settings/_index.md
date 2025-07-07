@@ -74,7 +74,7 @@ Specific steps for configuring different cloud platforms are provided here:
 
 * [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/)
 * [SAP Business Technology Platform](/developerportal/deploy/sap-cloud-platform/)
-* [Mendix Private Cloud](/developerportal/deploy/private-cloud/)
+* [Mendix on Kubernetes](/developerportal/deploy/private-cloud/)
 
 ## Access Management {#managing-app-users}
 

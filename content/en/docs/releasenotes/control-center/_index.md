@@ -125,7 +125,7 @@ For more information, see [Allowing External User Invites to Projects](/control-
 
 #### New Features
 
-* We have added a new tab to the **Apps** page: the [Private Cloud](/control-center/apps-overview/#pc-connected) tab. Here you get an overview of all the apps deployed on Mendix Private Cloud Connected.
+* We have added a new tab to the **Apps** page: the [Mendix on Kubernetes](/control-center/apps-overview/#pc-connected) tab. Here you get an overview of all the apps deployed on Mendix on Kubernetes Connected.
 
 ### April 4, 2024
 

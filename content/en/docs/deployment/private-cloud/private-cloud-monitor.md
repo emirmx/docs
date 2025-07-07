@@ -2,7 +2,7 @@
 title: "Monitoring Environments in Mendix on Kubernetes"
 linktitle: "Monitor Environments"
 url: /developerportal/deploy/private-cloud-monitor/
-description: "Describes the processes for setting up a monitoring solution for Mendix environments in the Private Cloud"
+description: "Describes the processes for setting up a monitoring solution for Mendix environments in Mendix on Kubernetes"
 weight: 50
 ---
 
@@ -13,7 +13,7 @@ weight: 50
 Mendix on Kubernetes provides a [Prometheus](https://prometheus.io/) API that can be scraped by a local Prometheus server.
 This API can also be used by other monitoring solutions that support scraping the Prometheus API.
 
-The metrics API can only be accessed inside the Kubernetes cluster, and metrics are never sent to the Mendix Private Cloud Portal.
+The metrics API can only be accessed inside the Kubernetes cluster, and metrics are never sent to the Mendix on Kubernetes Portal.
 To collect, store, and display metrics, you will need to install a local monitoring solution.
 
 Mendix on Kubernetes writes all logs to the standard output (`stdout` and `stderr`).
@@ -351,7 +351,7 @@ If you would like to enable Prometheus scraping only for a specific environment,
 
 #### Enable Scraping in Standalone Mode
 
-{{% alert color="warning" %}}Do not use this approach in Connected mode - any annotations you set this way will be overridden by annotations set in the Private Cloud section of the Mendix Portal.{{% /alert %}}
+{{% alert color="warning" %}}Do not use this approach in Connected mode - any annotations you set this way will be overridden by annotations set in the Mendix on Kubernetes section of the Mendix Portal.{{% /alert %}}
 
 Open an environment's `MendixApp` CR [for editing](/developerportal/deploy/private-cloud-operator/#edit-cr) and add the following pod annotations:
 
@@ -542,7 +542,7 @@ In this mode, all other `runtimeMetricsConfiguration` attributes are ignored.
 
 #### Enable Compatibility Metrics in Standalone Mode
 
-{{% alert color="warning" %}}Do not use this approach in Connected mode. Any configuration you set this way will be overridden by the configuration set in the Private Cloud section of the Mendix Portal.{{% /alert %}}
+{{% alert color="warning" %}}Do not use this approach in Connected mode. Any configuration you set this way will be overridden by the configuration set in the Mendix on Kubernetes section of the Mendix Portal.{{% /alert %}}
 
 Open an environment's `MendixApp` CR [for editing](/developerportal/deploy/private-cloud-operator/#edit-cr) and set the `mode` attribute in `runtimeMetricsConfiguration` to `compatibility`:
 
@@ -592,7 +592,7 @@ To completely disable metrics collection, delete the `runtimeMetricsConfiguratio
 
 #### Disable Metrics in Standalone Mode
 
-{{% alert color="warning" %}}Do not use this approach in Connected mode. Any configuration you set this way will be overridden by the configuration set in the Private Cloud section of the Mendix Portal.{{% /alert %}}
+{{% alert color="warning" %}}Do not use this approach in Connected mode. Any configuration you set this way will be overridden by the configuration set in the Mendix on Kubernetes section of the Mendix Portal.{{% /alert %}}
 
 Open the environment's `MendixApp` CR [for editing](/developerportal/deploy/private-cloud-operator/#edit-cr) and delete the `runtimeMetricsConfiguration` block:
 
@@ -692,7 +692,7 @@ After an environment is [switched into native metrics mode](#enable-native-metri
 
 #### Enable Native Metrics in Standalone Mode
 
-{{% alert color="warning" %}}Do not use this approach in Connected mode. Any configuration you set this way will be overridden by the configuration set in the Private Cloud section of the Mendix Portal.{{% /alert %}}
+{{% alert color="warning" %}}Do not use this approach in Connected mode. Any configuration you set this way will be overridden by the configuration set in the Mendix on Kubernetes section of the Mendix Portal.{{% /alert %}}
 
 Open an environment's `MendixApp` CR [for editing](/developerportal/deploy/private-cloud-operator/#edit-cr) and set the `mode` attribute to `native`:
 

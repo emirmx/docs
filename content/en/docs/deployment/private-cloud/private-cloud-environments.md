@@ -16,7 +16,7 @@ This document discusses the recommended ways of configuring environments Mendix 
 
 ## Licensing Overview
 
-You need a copy of the Mendix Operator and (optionally) the Mendix Gateway Agent for each Namespace you create in your Private Cloud to create environments for Mendix apps. You can evaluate these without a license, but there are strict limitations on this.
+You need a copy of the Mendix Operator and (optionally) the Mendix Gateway Agent for each Namespace you create in Mendix on Kubernetes to create environments for Mendix apps. You can evaluate these without a license, but there are strict limitations on this.
 
 To run your Mendix apps using Mendix on Kubernetes, you need a license for the Mendix Operator. You will need to get one license for each namespace you want to manage and this license will be bound to the namespace. This license applies to the Mendix Operator only. You can get this license from [Mendix Support](https://support.mendix.com).
 
