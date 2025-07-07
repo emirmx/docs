@@ -218,7 +218,7 @@ We made the following improvements to the [access management](/control-center/po
 
 #### New Features 
 
-* We added the **Member ID** column to the **Active Members** and **Deactivated Members** lists on the [Members](/control-center/members/#active-deactive-members) page. The column also appears in the Excel file, when you export the member information from these lists.
+* We added the **Member ID** column to the **Active Members** and **Deactivated Members** lists on the [Members](/control-center/members/) page. The column also appears in the Excel file, when you export the member information from these lists.
 * We introduced **Member ID** search functionality on the **Member** page.
 
 #### Improvements
