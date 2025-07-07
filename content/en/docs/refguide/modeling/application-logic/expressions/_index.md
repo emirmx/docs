@@ -155,17 +155,17 @@ For performance reasons, this information is cached. If you need the current val
 
 ## Begin-of Date Function Calls
 
-* [`BeginOfDay`](/refguide/begin-of-date-function-calls/#beginOfDay) – calculates the beginning of the day compared to the initial date
-* [`BeginOfWeek`](/refguide/begin-of-date-function-calls/#beginOfWeek) – calculates the beginning of the week compared to the initial date
-* [`BeginOfMonth`](/refguide/begin-of-date-function-calls/#beginOfMonth) – calculates the beginning of the month compared to the initial date
-* [`BeginOfYear`](/refguide/begin-of-date-function-calls/#beginOfYear) – calculates the beginning of the year compared to the initial date
+* [`beginOfDay`](/refguide/begin-of-date-function-calls/#beginOfDay) – calculates the beginning of the day compared to the initial date
+* [`beginOfWeek`](/refguide/begin-of-date-function-calls/#beginOfWeek) – calculates the beginning of the week compared to the initial date
+* [`beginOfMonth`](/refguide/begin-of-date-function-calls/#beginOfMonth) – calculates the beginning of the month compared to the initial date
+* [`beginOfYear`](/refguide/begin-of-date-function-calls/#beginOfYear) – calculates the beginning of the year compared to the initial date
 
 ## End-of Date Function Calls
 
-* [`EndOfDay`](/refguide/end-of-date-function-calls/#endOfDay) – calculates the end of the day compared to the initial date
-* [`EndOfWeek`](/refguide/end-of-date-function-calls/#endOfWeek) – calculates the end of the week compared to the initial date
-* [`EndOfMonth`](/refguide/end-of-date-function-calls/#endOfMonth) – calculates the end of the month compared to the initial date
-* [`EndOfYear`](/refguide/end-of-date-function-calls/#endOfYear) – calculates the end of the year compared to the initial date
+* [`endOfDay`](/refguide/end-of-date-function-calls/#endOfDay) – calculates the end of the day compared to the initial date
+* [`endOfWeek`](/refguide/end-of-date-function-calls/#endOfWeek) – calculates the end of the week compared to the initial date
+* [`endOfMonth`](/refguide/end-of-date-function-calls/#endOfMonth) – calculates the end of the month compared to the initial date
+* [`endOfYear`](/refguide/end-of-date-function-calls/#endOfYear) – calculates the end of the year compared to the initial date
 
 ## Between Date Function Calls
 
