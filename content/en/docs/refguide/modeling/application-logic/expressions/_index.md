@@ -63,7 +63,7 @@ This way the first statement gets evaluated.
 
 Mendix provides you with a number of system items which describe the current user's session. You can use these in the same way as any other named item.
 
-### $currentUser
+### `$currentUser`
 
 This is an object of type `System.User` which contains the attributes for the currently signed-in user.
 
@@ -71,7 +71,7 @@ This is an object of type `System.User` which contains the attributes for the cu
 For performance reasons, this information is cached. If you need the current value of attributes which might have changed during the session, you should retrieve the latest data from the database.
 {{% /alert %}}
 
-### $currentSession
+### `$currentSession`
 
 This is an object of type `System.Session` which contains the attributes for the current user session.
 
