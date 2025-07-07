@@ -23,7 +23,7 @@ The **Members** tab lists all the users that have portfolio access. You can sear
 
 * **Status** – This shows whether the user is active or deactivated.
 
-  {{% alert color="info" %}}A Mendix Admin can activate or deactivate a user on the [Members](/control-center/members/#active-deactive-members) page in Control Center.{{% /alert %}}
+  {{% alert color="info" %}}A Mendix Admin can activate or deactivate a user on the [Members](/control-center/members/) page in Control Center.{{% /alert %}}
 
 * **Role** – This is the role of the user. A user can be a Portfolio Manager, Contributor, or Viewer. For more information about the permissions of each role, see the table below in this section.
 
