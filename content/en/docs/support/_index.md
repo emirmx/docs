@@ -139,7 +139,7 @@ Mendix supports the current major release and the two prior major releases (and 
 
 ## Support for Different Deployment Strategies {#support-by-strategy}
 
-With our Multi-Cloud strategy, Mendix allows the apps that you build to be deployed in any Cloud. This can be in [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/), Mendix Cloud Dedicated, [Mendix for Private Cloud](/developerportal/deploy/private-cloud/), [SAP Business Technology Platform](/developerportal/deploy/sap-cloud-platform/), or in other on-premises and Cloud architectures.
+With our Multi-Cloud strategy, Mendix allows the apps that you build to be deployed in any Cloud. This can be in [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/), Mendix Cloud Dedicated, [Mendix on Kubernetes](/developerportal/deploy/private-cloud/), [SAP Business Technology Platform](/developerportal/deploy/sap-cloud-platform/), or in other on-premises and Cloud architectures.
 
 The full stack is depicted in the table below. This indicates which components are **Mendix** supported, or supported by a **Mendix Partner** or a third party. If no support is indicated, then you will need to arrange support of this component yourself. Each of the components is described in more detail in [Components of the Mendix Stack](#components), below.
 
@@ -174,20 +174,20 @@ Mendix Support has access to app health, logs, graphs and monitoring.
 
 {{< figure src="/attachments/support/mendix-cloud.png"   width="75%"  class="no-border" >}}
 
-### Mendix for Private Cloud
+### Mendix on Kubernetes
 
-Mendix for Private Cloud is based on the Kubernetes-Native Operator Framework. You can check the supported Kubernetes platforms in our [Private Cloud](/developerportal/deploy/private-cloud/) documentation. Check our [System Requirements](/refguide/system-requirements/) for other supported components like database and storage. The Mendix Gateway Agent and Mendix Operator are supported by Mendix.
+Mendix on Kubernetes is based on the Kubernetes-Native Operator Framework. You can check the supported Kubernetes platforms in our [Private Cloud](/developerportal/deploy/private-cloud/) documentation. Check our [System Requirements](/refguide/system-requirements/) for other supported components like database and storage. The Mendix Gateway Agent and Mendix Operator are supported by Mendix.
 Mendix Support does not have access to app health, logs, graphs and monitoring. If you run into issues or want to ask a question on these supported components, please always provide relevant logs, data, and your own analysis that explains why you suspect the issue is caused by one of our supported components.
 
 {{< figure src="/attachments/support/private-cloud.png"   width="75%"  class="no-border" >}}
 
 ### Mendix on Azure
 
-[Mendix on Azure](/developerportal/deploy/mendix-on-azure/) is a deployment option that makes use of some of the features of Mendix for Private Cloud in an opinionated way. For detailed information about the support policy in place for Mendix on Azure, see [Support Policy for Mendix on Azure](/developerportal/deploy/mendix-on-azure/support/).
+[Mendix on Azure](/developerportal/deploy/mendix-on-azure/) is a deployment option that makes use of some of the features of Mendix on Kubernetes in an opinionated way. For detailed information about the support policy in place for Mendix on Azure, see [Support Policy for Mendix on Azure](/developerportal/deploy/mendix-on-azure/support/).
 
 ### Private Mendix Platform
 
-Private Mendix Platform provides a platform experience in on-premises or (virtual) private cloud environments. It is dependent on Mendix for Private Cloud and Kubernetes, and integrates with tooling in the customer's landscape. Please refer to [Private Mendix Platform](/private-mendix-platform/) documentation for [prerequisites](/private-mendix-platform-prerequisites/) to install the platform and set up [configurations](/private-mendix-platform-configuration/), as well as [Mendix for Private Cloud](/developerportal/deploy/private-cloud/) documentation for [supported environments](/developerportal/deploy/private-cloud-supported-environments/). 
+Private Mendix Platform provides a platform experience in on-premises or (virtual) private cloud environments. It is dependent on Mendix on Kubernetes and Kubernetes, and integrates with tooling in the customer's landscape. Please refer to [Private Mendix Platform](/private-mendix-platform/) documentation for [prerequisites](/private-mendix-platform-prerequisites/) to install the platform and set up [configurations](/private-mendix-platform-configuration/), as well as [Mendix on Kubernetes](/developerportal/deploy/private-cloud/) documentation for [supported environments](/developerportal/deploy/private-cloud-supported-environments/). 
 
 This offering is delivered, managed and supported by Certified Partners (or Certified Customers). If you run into issues regarding your private platform, please contact your Certified Partner for support.
 

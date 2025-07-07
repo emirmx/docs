@@ -20,7 +20,7 @@ To export components from the Mendix registry, you will need the following:
 
 * Access to the internet
 * A local or managed image registry
-* All the other prerequisites for creating a Mendix for Private Cloud cluster, as documented in the [Prerequisites for Creating a Cluster](/developerportal/deploy/private-cloud-cluster/#prerequisites) section of *Creating a Private Cloud Cluster*.
+* All the other prerequisites for creating a Mendix on Kubernetes cluster, as documented in the [Prerequisites for Creating a Cluster](/developerportal/deploy/private-cloud-cluster/#prerequisites) section of *Creating a Private Cloud Cluster*.
 
 ## Download the Mendix Configuration Tool
 
@@ -74,9 +74,9 @@ Perform the following steps.
 
     The components you selected will be uploaded from the folder on your local machine where they were saved, and imported into the selected registry. This will be from the folder `C:\Users\<User id>\.mxpc-cli\registry-migration` on Windows or `home/<User id>/.mxpc-cli/registry-migration` for Mac and Linux.
 
-## Create and Configure Mendix for Private Cloud Cluster and Namespace
+## Create and Configure Mendix on Kubernetes Cluster and Namespace
 
-You can now create a new Mendix for Private Cloud cluster and namespace. To tell the Configuration Tool that you want to use your own registry, you will use the configuration tool with the argument `--registry {registry_url}/{repository}` (use the **Registry URL** value specified in the previous step as the `{registry_url}` value, and **Repository** as the value for `{repository}`).
+You can now create a new Mendix on Kubernetes cluster and namespace. To tell the Configuration Tool that you want to use your own registry, you will use the configuration tool with the argument `--registry {registry_url}/{repository}` (use the **Registry URL** value specified in the previous step as the `{registry_url}` value, and **Repository** as the value for `{repository}`).
 
 {{% alert color="info" %}}
 If you have already installed and configured a namespace, skip directly to the [Upgrade cluster](#upgrade-cluster) section.
@@ -104,7 +104,7 @@ Click **Apply Configuration** to apply the configuration to your namespace, as n
 Make sure that you are in the right Kubernetes context before upgrading the namespace.
 {{% /alert %}}
 
-If you have already installed and configured a namespace, but would like to upgrade it to the current Mendix for Private Cloud version, 
+If you have already installed and configured a namespace, but would like to upgrade it to the current Mendix on Kubernetes version, 
 follow the instructions in the [Upgrade cluster](/developerportal/deploy/private-cloud-upgrade-guide/#upgrade-cluster) section of *Upgrading Private Cloud*.
 
 To use images from your private registry, set the `--registry` flag when running the Mendix Configuration Tool.

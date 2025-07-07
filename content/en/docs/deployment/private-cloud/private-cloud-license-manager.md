@@ -15,9 +15,9 @@ Mendix highly recommends that you upgrade to the latest available version to ens
 
 ## Introduction
 
-When deploying your Mendix app for production use, it needs to be licensed. This removes the restrictions which are placed on unlicensed apps. For more information, see [Licensing Mendix for Private Cloud](/developerportal/deploy/private-cloud/#licensing) in the *Private Cloud* documentation.
+When deploying your Mendix app for production use, it needs to be licensed. This removes the restrictions which are placed on unlicensed apps. For more information, see [Licensing Mendix on Kubernetes](/developerportal/deploy/private-cloud/#licensing) in the *Private Cloud* documentation.
 
-Apps which are deployed to Mendix Cloud have access to the internet and have licenses which work on a subscription basis, contacting the Mendix license server to validate the license. This method is not appropriate for apps which are deployed using Mendix for Private Cloud, and may even be in standalone mode and not connected to the internet (air-gapped).
+Apps which are deployed to Mendix Cloud have access to the internet and have licenses which work on a subscription basis, contacting the Mendix license server to validate the license. This method is not appropriate for apps which are deployed using Mendix on Kubernetes, and may even be in standalone mode and not connected to the internet (air-gapped).
 
 Rather than having to apply and update licenses for each environment individually, the Mendix **Private Cloud License Manager** (PCLM) provides a repository of offline Mendix licenses to enable you to manage these centrally. This reduces the possibility of errors, and enables the production of license usage reports.
 
@@ -27,9 +27,9 @@ The PCLM runs as a Kubernetes service on your cluster. This means that it can be
 
 To install and use the PCLM, you need the following prerequisites:
 
-* A Mendix for Private Cloud **Standalone** cluster 
+* A Mendix on Kubernetes **Standalone** cluster 
 * Mendix Operator in version 2.11.0 or above
-* Administrative rights to a Kubernetes namespace to install PCLM server (a dedicated namespace is recommended). This can be within your Mendix for Private Cloud cluster, or in another cluster which is accessible over HTTP
+* Administrative rights to a Kubernetes namespace to install PCLM server (a dedicated namespace is recommended). This can be within your Mendix on Kubernetes cluster, or in another cluster which is accessible over HTTP
 * A Postgres or SQLServer database server and within it:
     * A dedicated database with remote access which will be used to store your licenses, user authorization details, and usage information
         * The database server should be accessible to the cluster where the application is deployed.
@@ -211,7 +211,7 @@ Once the PCLM server is running, you can set up users.
 The PCLM server supports two **user types:**
 
 * Admin – this user type has read-write permissions of users and licenses resources. It should only be used from the cli.
-* Operator – this user type has only read-only permissions for license resources. This user is designed to allow the Mendix for Private Cloud Operator to obtain licenses.
+* Operator – this user type has only read-only permissions for license resources. This user is designed to allow the Mendix on Kubernetes Operator to obtain licenses.
 
 ### Administrator
 

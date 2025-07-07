@@ -96,9 +96,9 @@ You can filter the apps in the table. For details, see the [Filtering Apps in th
 
 You can export apps to an Excel file. For details, see the [Exporting Apps to an Excel File](#export-to-excel) section.
 
-## Private Cloud (Connected) {#pc-connected}
+## Mendix on Kubernetes (Connected) {#pc-connected}
 
-The **Mendix Private Cloud** tab shows all the apps that are deployed on the Mendix Private Cloud Connected.
+The **Mendix on Kubernetes** tab shows all the apps that are deployed on the Mendix on Kubernetes Connected.
 
 You can customize the columns of the table by clicking the column selector (the {{% icon name="view" %}} icon) on the upper-right corner of the table. The items selected are shown as columns in the table.
 
@@ -136,7 +136,7 @@ The description of the items that you can select are as follows:
 
 * **Namespace**: the Kubernetes namespace
 
-    {{% alert color="info" %}}For more information, see [How to Create a Cluster and Namespace](/developerportal/deploy/private-cloud-cluster/#create-cluster-namespace) in *Creating a Private Cloud Cluster*.{{% /alert %}}
+    {{% alert color="info" %}}For more information, see [How to Create a Cluster and Namespace](/developerportal/deploy/private-cloud-cluster/#create-cluster-namespace) in *Creating a Mendix on Kubernetes Cluster*.{{% /alert %}}
 
 * **Database Name**: the name of the database
 
@@ -188,7 +188,7 @@ You can export apps to an Excel file. For details, see the [Exporting Apps to an
 
 ## Other Apps
 
-The **Other Apps** tab shows the unlicensed apps that are not deployed and the apps that are deployed on a private cloud unconnected.
+The **Other Apps** tab shows the unlicensed apps that are not deployed and the apps that are deployed on an unconnected Mendix on Kubernetes environment.
 
 You can customize the columns of the table by clicking the column selector (the {{% icon name="view" %}} icon) on the upper-right corner of the table. The items selected are shown as columns in the table.
 
@@ -287,7 +287,7 @@ The consequences of deactivating and deleting an app are as below:
 | Cloud environment stays persistent                          | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="remove-circle-filled" color="red" >}} |
 
 {{% alert color="info" %}}
-Deleting and deactivating apps is currently not supported for licensed apps or apps that are not running on Mendix Cloud. Therefore, you do not see these options on the **Mendix Cloud** tab; and you also do not see these options on the **Other Apps** tab if you select apps that are deployed on a private cloud.
+Deleting and deactivating apps is currently not supported for licensed apps or apps that are not running on Mendix Cloud. Therefore, you do not see these options on the **Mendix Cloud** tab; and you also do not see these options on the **Other Apps** tab if you select apps that are deployed on a Mendix on Kubernetes environment.
 {{% /alert %}}
 
 ## Exporting the Information About Apps to an Excel File {#export-to-excel}

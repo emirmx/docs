@@ -8,18 +8,18 @@ weight: 48
 
 ## Introduction
 
-**Mendix for Private Cloud** allows you to deploy and manage your Mendix apps in a Kubernetes private cloud cluster. It automates operations, such as database provisioning, that you would have to perform manually if you used the Mendix Docker buildpack. It also provides options for monitoring and logging through third-party tools. 
+Mendix on Kubernetes allows you to deploy and manage your Mendix apps in a Kubernetes private cloud cluster. It automates operations, such as database provisioning, that you would have to perform manually if you used the Mendix Docker buildpack. It also provides options for monitoring and logging through third-party tools. 
 
-Your organization may have a requirement to use a private cloud, perhaps as part of a multi-cloud strategy. This could be because of legal requirements or a desire to have complete control over your data. Mendix for Private Cloud allows you to do this while keeping the familiar components of Docker and Kubernetes.
+Your organization may have a requirement to use a private cloud, perhaps as part of a multi-cloud strategy. This could be because of legal requirements or a desire to have complete control over your data. Mendix on Kubernetes allows you to do this while keeping the familiar components of Docker and Kubernetes.
 
-You can use Mendix for Private Cloud with the *connected* option to keep the simplicity of one-click deployments from the Mendix Portal, or utilize the *standalone* Mendix Operator to deploy Mendix apps through your own DevOps process, which is particularly useful for private clouds with an *air-gap* isolating them from the internet. See [Connected and Standalone Clusters](#connected-standalone), below, for more information.
+You can use Mendix on Kubernetes with the *connected* option to keep the simplicity of one-click deployments from the Mendix Portal, or utilize the *standalone* Mendix Operator to deploy Mendix apps through your own DevOps process, which is particularly useful for private clouds with an *air-gap* isolating them from the internet. See [Connected and Standalone Clusters](#connected-standalone), below, for more information.
 
-Please see [Supported Providers](/developerportal/deploy/private-cloud-supported-environments/) for a list of platforms supported by Mendix for Private Cloud.
+Please see [Supported Providers](/developerportal/deploy/private-cloud-supported-environments/) for a list of platforms supported by Mendix on Kubernetes.
 
 There are two steps required to achieve this, listed below.
 
 {{% alert color="info" %}}
-Mendix for Private Cloud is a premium offering from Mendix, and there are additional licensing and cost implications if you want to use it for applications in production. See [Licensing Mendix for Private Cloud](#licensing), below, for more information.
+Mendix on Kubernetes is a premium offering from Mendix, and there are additional licensing and cost implications if you want to use it for applications in production. See [Licensing Mendix on Kubernetes](#licensing), below, for more information.
 {{% /alert %}}
 
 ### Registering Your Cluster and Namespace
@@ -61,9 +61,9 @@ If you have chosen to register a standalone cluster, then all communication with
 
 ## Product Capability Comparison
 
-The table below shows the differences between the capabilities for apps deployed to Mendix Cloud, Mendix for Private Cloud Connected, and Mendix for Private Cloud Standalone.
+The table below shows the differences between the capabilities for apps deployed to Mendix Cloud, Mendix on Kubernetes Connected, and Mendix on Kubernetes Standalone.
 
-| Capability | Mendix Cloud | Mendix for Private Cloud Connected | Mendix for Private Cloud Standalone |
+| Capability | Mendix Cloud | Mendix on Kubernetes Connected | Mendix on Kubernetes Standalone |
 | --- | --- | --- | --- |
 | Environment provisioning | Fully automated | Provisioned with database and blob storage provided by the customer | Provisioned with database and blob storage provided by the customer|
 | Environment configuration<br/>*For example, constants and scheduled event* | Mendix Portal | Mendix Portal | Custom Resources via Mendix Operator |
@@ -74,7 +74,7 @@ The table below shows the differences between the capabilities for apps deployed
 | Remote debugging | Mendix Portal + Studio Pro | Mendix Portal + Studio Pro | Not supported |
 
 {{% alert color="info" %}}
-¹ No backup or restore functionality is installed automatically with Mendix for Private Cloud. You will need to choose and deploy your own solution, dependent on your choice of database, file storage, and cloud platform.
+¹ No backup or restore functionality is installed automatically with Mendix on Kubernetes. You will need to choose and deploy your own solution, dependent on your choice of database, file storage, and cloud platform.
 {{% /alert %}}
 
 ## Memory Allocation
@@ -100,11 +100,11 @@ When a user sets CPU and memory limits, the JVM (JRE 8u191+) will automatically 
 However, by default, the JVM will limit the heap memory to 25% of the container's memory limit. Mx4PC just sets the container limits, but does not go further into configuring the JVM. 
 This percentage can be adjusted by providing a custom value in Custom JVM Options in the [Runtime tab](/developerportal/deploy/private-cloud-deploy/#runtime-tab) in the Private Cloud Portal, for example: *-XX:MaxRAMPercentage=75.0*.
 
-## Licensing Mendix for Private Cloud{#licensing}
+## Licensing Mendix on Kubernetes{#licensing}
 
 ### Operator License
 
-Mendix for Private Cloud is a premium offering from Mendix, and you will need an additional license to use it for your applications. This **Operator license** allows you to manage Mendix apps in your cluster through the Mendix Operator and, optionally, the Mendix Gateway Agent.
+Mendix on Kubernetes is a premium offering from Mendix, and you will need an additional license to use it for your applications. This **Operator license** allows you to manage Mendix apps in your cluster through the Mendix Operator and, optionally, the Mendix Gateway Agent.
 
 You need one license for each namespace you want to manage.
 
@@ -114,13 +114,13 @@ You can request an Operator license by doing the following:
 
 2. Fill in the basic information, such as your company name and app name.
 
-3. For **Hosting Type**, select *Mendix for Private Cloud* and click **Next**.
+3. For **Hosting Type**, select *Mendix on Kubernetes* and click **Next**.
 
 4. Fill in the required information:
 
     * The name of your company (if requesting on behalf of a client, enter the name of their company).
     * License Type: Operator
-    * The Mendix for Private Cloud architecture type. See [Connected and Standalone Clusters](#connected-standalone), above, for more information — optionally, leave additional information in the **comment** field
+    * The Mendix on Kubernetes architecture type. See [Connected and Standalone Clusters](#connected-standalone), above, for more information — optionally, leave additional information in the **comment** field
     * The namespace (or namespaces) for which you want to request an Operator license
 
 5. Save the request.
@@ -131,7 +131,7 @@ You can run the Mendix Operator in trial mode for evaluation purposes. When the 
 
 ### Runtime License
 
-A runtime license per environment is required. In addition to that, the Operator license is independent of a Mendix Runtime license. The Mendix Runtime license removes [trial restrictions](/developerportal/deploy/licensing-apps-outside-mxcloud/) from a Mendix App itself. You need both types of licenses to manage and run an application through Mendix for Private Cloud.
+A runtime license per environment is required. In addition to that, the Operator license is independent of a Mendix Runtime license. The Mendix Runtime license removes [trial restrictions](/developerportal/deploy/licensing-apps-outside-mxcloud/) from a Mendix App itself. You need both types of licenses to manage and run an application through Mendix on Kubernetes.
 
 You can request a Runtime license by doing the following:
 
@@ -139,13 +139,13 @@ You can request a Runtime license by doing the following:
 
 2. Fill in the basic information, such as your company name and app name.
 
-3. For **Hosting Type**, select *Mendix for Private Cloud* and click **Next**.
+3. For **Hosting Type**, select *Mendix on Kubernetes* and click **Next**.
 
 4. Provide the required information:
 
     * The name of your company (if requesting on behalf of a client, enter the name of their company).
     * License Type: Runtime
-    * The Mendix for Private Cloud architecture type. See [Connected and Standalone Clusters](#connected-standalone), above, for more information — optionally, leave additional information in the **comment** field
+    * The Mendix on Kubernetes architecture type. See [Connected and Standalone Clusters](#connected-standalone), above, for more information — optionally, leave additional information in the **comment** field
     * If "Connected" please provide the namespace (or namespaces) for which you are requesting the runtime license (or licenses)
 
 5. Save the request.
@@ -160,13 +160,13 @@ You can also request for both the Operator and Runtime license within the same r
 
 2. Fill in the basic information, such as your company name and app name.
 
-3. For **Hosting Type**, select *Mendix for Private Cloud* and click **Next**
+3. For **Hosting Type**, select *Mendix on Kubernetes* and click **Next**
 
 4. Fill in the required information:
 
     * The name of your company (if requesting on behalf of a client, enter the name of their company).
     * License Type: Operator and Runtime
-    * The Mendix for Private Cloud architecture type. See [Connected and Standalone Clusters](#connected-standalone), above, for more information — optionally, leave additional information in the **comment** field
+    * The Mendix on Kubernetes architecture type. See [Connected and Standalone Clusters](#connected-standalone), above, for more information — optionally, leave additional information in the **comment** field
     * The namespace (or namespaces) for which you want to request an Operator license
 
 ### Activating Your License (or Licenses)

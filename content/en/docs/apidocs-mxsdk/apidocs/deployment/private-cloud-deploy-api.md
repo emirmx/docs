@@ -23,7 +23,7 @@ The Mendix on Kubernetes Deploy API allows you to manage application environment
 * Get the manifest file of one or more applications
 
 {{% alert color="info" %}}
-The Mendix for Private Cloud Deploy API is for connected private cloud clusters only.
+The Mendix on Kubernetes Deploy API is for connected clusters only.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -32,7 +32,7 @@ The Standard Operator conversion to Global Operator managed namespace is not yet
 
 ## Using the API
 
-To help you work with the Mendix for Private Cloud Build API, the following sections of this document describe how to authenticate for the API, how to manage asynchronous API calls, and what to keep in mind when assigning unique IDs for the resources.
+To help you work with the Mendix on Kubernetes Build API, the following sections of this document describe how to authenticate for the API, how to manage asynchronous API calls, and what to keep in mind when assigning unique IDs for the resources.
 
 ### Authentication
 
@@ -47,9 +47,9 @@ Select the following as scopes:
 * `mx:deployment:read` – to perform `GET` operations
 * `mx:deployment:write` – to perform all operations (`GET`, `POST`, `PUT`, and `DELETE`)
 
-For operations related to deployment packages (such as Create, Upload, Delete, and Retrieve), you need to create PAT tokens as specified in [Mendix for Private Cloud Build API: Using the PAT](/apidocs-mxsdk/apidocs/private-cloud-build-api/#using-the-pat).
+For operations related to deployment packages (such as Create, Upload, Delete, and Retrieve), you need to create PAT tokens as specified in [Mendix on Kubernetes Build API: Using the PAT](/apidocs-mxsdk/apidocs/private-cloud-build-api/#using-the-pat).
 
-Store the `{GENERATED_PAT}` value in a safe location, so you can use it to authorize your Mendix for Private Cloud API calls.
+Store the `{GENERATED_PAT}` value in a safe location, so you can use it to authorize your Mendix on Kubernetes API calls.
 
 #### Scopes Explanation
 
@@ -168,8 +168,8 @@ The following steps will create a cluster, create a namespace, and create an env
 9. Call `POST/cli/…` to download the correct version on mxpc-cli. This call will validate the provided path and query parameters and then redirect you to the CDN URL where the correct version of mxpc-cli is stored.
 10. After mxpc-cli has been downloaded use the command `./mxpc-cli installer -n new-operator -i {namespaceID} -s {secret}` to install and configure the Mendix operator in the namespace. `{secret}` is the secret you provided in the manifest when creating the namespace.
     Once the installer has run, the namespace is ready to use (namespace installed, agent connected, database and store plans configured, ingress configured, registry configured).
-11. Create a `DeploymentPackage` in the Private Cloud Portal.
-    You can create a deployment package by using the [Mendix for Private Cloud Build API](/apidocs-mxsdk/apidocs/private-cloud-build-api/). Once you create a deployment package, you can retrieve the `packageId` using the `GET /apps/{appId}/packages` response.
+11. Create a `DeploymentPackage` in the Mendix on Kubernetes Portal.
+    You can create a deployment package by using the [Mendix on Kubernetes Build API](/apidocs-mxsdk/apidocs/private-cloud-build-api/). Once you create a deployment package, you can retrieve the `packageId` using the `GET /apps/{appId}/packages` response.
 12. Prepare a manifest for your new environment. 
     Either use the model in the OpenAPI spec file or get the manifest of an existing environment (by calling `GET /apps/{appId}/namespaces/{namespaceId}/environments/{environmentId}`, for example) and change where required. Remember to use the `{clusterID}` and `{namespace}` values for the `provider` using the cluster and namespace you have just created, and use the ID of the deployment package you have just created as the `packageId`.
 13. Make the API call `POST /apps/{appId}/environments` using the environment manifest to create a new environment. 

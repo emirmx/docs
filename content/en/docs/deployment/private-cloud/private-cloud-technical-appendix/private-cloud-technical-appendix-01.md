@@ -2,13 +2,13 @@
 title: "Technical Appendix: 1. Introduction to Operators"
 linktitle: "1. Introduction to Operators"
 url: /developerportal/deploy/private-cloud-technical-appendix-01/
-description: "Describes which providers are supported by Mendix for Private Cloud"
+description: "Describes which providers are supported by Mendix on Kubernetes"
 weight: 10
 ---
 
 ## Introduction
 
-The deployment of apps to Mendix for Private Cloud is controlled by the Mendix Operator. This document provides information on how the Mendix Operator works and how it interacts with Kubernetes.
+The deployment of apps to Mendix on Kubernetes is controlled by the Mendix Operator. This document provides information on how the Mendix Operator works and how it interacts with Kubernetes.
 
 ## What Is an Operator?
 
@@ -43,9 +43,9 @@ To find out more about Kubernetes operators, see the following links:
 * [This Container Solutions blog post](https://blog.container-solutions.com/kubernetes-operators-explained)
 * [This blog by Ivan Velichko exploring the Kubernetes Operator Pattern](https://iximiuz.com/en/posts/kubernetes-operator-pattern/)
 
-## Mendix for Private Cloud Operator
+## Mendix on Kubernetes Operator
 
-Mendix for Private Cloud contains multiple components. The following components are not a part of the Mendix Operator, but can manage or control it through Mendix CRs:
+Mendix on Kubernetes contains multiple components. The following components are not a part of the Mendix Operator, but can manage or control it through Mendix CRs:
 
 * The Mendix Gateway Agent allows the Private Cloud Portal to manage environments
 * The Configuration Tool updates CRs that are used to configure the Mendix Operator
@@ -92,13 +92,13 @@ However, do not modify resources (deployments, services, or ConfigMaps) which ar
 
 ### Custom Resources
 
-Mendix for Private Cloud includes multiple Custom Resources (CRs).
+Mendix on Kubernetes includes multiple Custom Resources (CRs).
 
 #### CRs Which Control the Operator
 
 These CRs provide the configuration for the Operator:
 
-* `OperatorConfiguration` specifies a common configuration for all environments in a namespace. Most of the `OperatorConfiguration` can be managed with the Mendix for Private Cloud Configuration Tool `mxpc-cli`, with a few advanced options that can be updated manually.
+* `OperatorConfiguration` specifies a common configuration for all environments in a namespace. Most of the `OperatorConfiguration` can be managed with the Mendix on Kubernetes Configuration Tool `mxpc-cli`, with a few advanced options that can be updated manually.
 * `OperatorVersion` is used to specify Operator versions and the registry containing auxiliary container images. This CR should not be modified manually — it is updated automatically when the Operator is installed or upgraded.
 * `StoragePlan` provides the Operator with instructions on how to provide a database or file blob storage to a new environment, and how to clean up storage after an environment has been deleted. It is not meant to be edited manually, the `mxpc-cli` Cloud Configuration Tool creates and updates `StoragePlan` CRs and ensures that the configuration is valid.
 

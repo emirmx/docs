@@ -23,7 +23,7 @@ Within your namespace you can run one, or several, Mendix apps. You can see the 
 Because you can run several Mendix apps in the same namespace, each environment will have an **Internal Name** (UUID) added when the app is deployed to ensure that it is unique in the project. You should not use the same name as the Mendix tools used to deploy the app. See the section [Reserved Names for Mendix Apps](#reserved-names), below.
 
 {{% alert color="info" %}}
-You can also create environments and deploy and manage apps using the [Mendix for Private Cloud Deploy API](/apidocs-mxsdk/apidocs/private-cloud-deploy-api/).
+You can also create environments and deploy and manage apps using the [Mendix on Kubernetes Deploy API](/apidocs-mxsdk/apidocs/private-cloud-deploy-api/).
 {{% /alert %}}
 
 ## Prerequisites for Deploying an App
@@ -37,7 +37,7 @@ To deploy an app to your private cloud platform, you need the following:
 
 ## Deploying an App for the First Time
 
-### Selecting Mendix for Private Cloud
+### Selecting Mendix on Kubernetes
 
 When you first [create your app](/developerportal/#create-app), it will be set to deploy to Mendix Cloud. You need to change the target to be private cloud.
 
@@ -47,7 +47,7 @@ When you first [create your app](/developerportal/#create-app), it will be set t
 
 2. Open the **Settings** page.
 3. Click **Cloud Settings**.
-4. In the **Mendix for Private Cloud** section, click **Set up**.
+4. In the **Mendix on Kubernetes** section, click **Set up**.
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/SetupButton.png" class="no-border" >}}
 
@@ -345,7 +345,7 @@ See [Creating an Environment](#create-environment), above, for more information.
 
 The word **Trial Operator** indicates that the Operator managing that environment is unlicensed.
 
-When the Operator is running in trial mode, it will stop managing an environment ninety days (thirty days for Mendix Operator versions 1.12.0 and below) after the environment was created and the word changes to **Expired Operator**. In this case you will be unable to stop or start your app, or deploy an app to this environment. The only action you can take is to delete the environment. You can, however, create a new environment if you have not finished your evaluation of Mendix for Private Cloud.
+When the Operator is running in trial mode, it will stop managing an environment ninety days (thirty days for Mendix Operator versions 1.12.0 and below) after the environment was created and the word changes to **Expired Operator**. In this case you will be unable to stop or start your app, or deploy an app to this environment. The only action you can take is to delete the environment. You can, however, create a new environment if you have not finished your evaluation of Mendix on Kubernetes.
 
 The word **Licensed Operator** shows that the Operator managing that environment is licensed.
 
@@ -600,7 +600,7 @@ On the Runtime tab, you can change various runtime settings for your app environ
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/runtime-tab.png" class="no-border" >}}
 
 {{% alert color="info" %}}
-When you use some settings on the Runtime tab for Mendix for Private Cloud they may work differently from how they work in Mendix Cloud.
+When you use some settings on the Runtime tab for Mendix on Kubernetes they may work differently from how they work in Mendix Cloud.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -685,7 +685,7 @@ Delete all environments before you delete an app. If you delete an app which has
 
 ### Deployment Package Size
 
-Mendix for Private Cloud has a limit of 1024 MB on the size of a deployment package.
+Mendix on Kubernetes has a limit of 1024 MB on the size of a deployment package.
 
 ## Troubleshooting
 
@@ -770,7 +770,7 @@ If you change **App URL** in the **General** tab, you should update the `Applica
 ### Collecting Diagnostic Data for a Support Ticket
 
 {{% alert color="info" %}}
-For security reasons, Mendix for Private Cloud doesn't send any detailed logs from the cluster to the Mendix Portal.
+For security reasons, Mendix on Kubernetes doesn't send any detailed logs from the cluster to the Mendix Portal.
 Only generic status or error messages are sent back to the Mendix Portal and these messages don't contain enough details about the environment to understand the root cause of any problems.
 {{% /alert %}}
 

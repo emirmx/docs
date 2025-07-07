@@ -1,8 +1,8 @@
 ---
-title: "Install and Configure Mendix for Private Cloud Non-Interactive Mode"
+title: "Install and Configure Mendix on Kubernetes Non-Interactive Mode"
 linktitle: "Non-Interactive Mode"
 url: /developerportal/deploy/private-cloud-cli-non-interactive/
-description: "Describes how to install and configure Mendix for Private Cloud in non-interactive mode"
+description: "Describes how to install and configure Mendix on Kubernetes in non-interactive mode"
 weight: 5
 #To update these screenshots, you can log in with credentials detailed in How to Update Screenshots Using Team Apps.
 ---
@@ -40,7 +40,7 @@ To perform the [base installation](/developerportal/deploy/standard-operator/#ba
 ./mxpc-cli base-install --namespace <namespace> -i <namespace-id> -s <namespace-secret> --clusterMode <cluster-mode> --clusterType <cluster-type>
 ```
 
-The namespace-id and namespace-secret are only required when using Mendix for Private Cloud in connected mode.
+The namespace-id and namespace-secret are only required when using Mendix on Kubernetes in connected mode.
 
 ## Apply Configuration
 
@@ -50,7 +50,7 @@ To [configure a standard namespace](/developerportal/deploy/standard-operator/#c
 ./mxpc-cli apply-config -i <namespace-id> -s <namespace-secret> --file <config-file>
 ```
 
-The namespace-id and namespace-secret are only required when using Mendix for Private Cloud in connected mode. 
+The namespace-id and namespace-secret are only required when using Mendix on Kubernetes in connected mode. 
 
 In case of standalone mode, the namespace-id and namespace-secret are not required. Instead, use the following command:
 

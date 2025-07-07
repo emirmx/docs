@@ -10,7 +10,7 @@ Kubernetes allows to update an app without downtime by [performing a rolling upd
 
 The Private Cloud Operator uses a [recreate](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#recreate-deployment) strategy by default. That is, the current version (configuration) of an app stops, and then the new version starts. Alternatively, the Private Cloud Operator can use a **PreferRolling** strategy. That is, the Operator tries to perform a rolling update whenever possible. If the Operator detects that a database schema update is needed, it switches to a Recreate strategy to perform a full restart. If the new version of the app has model changes, deploying it requires a schema update. In this case, the Private Cloud Operator automatically stops all replicas of the app, causing downtime.
 
-This feature works with Mendix for Private Cloud version 2.20 and later.
+This feature works with Mendix on Kubernetes version 2.20 and later.
 
 ## Prerequisites
 
@@ -78,7 +78,7 @@ spec:
 
 For more information on the `MendixApp` CR, see [Editing CR](/developerportal/deploy/private-cloud-operator/#edit-cr).
 
-If the `deploymentStrategy` is not specified, the Operator will use the Recreate strategy and perform a complete restart on any changes, causing downtime. This follows how updates were processed by Mendix for Private Cloud versions before 2.19 and earlier.
+If the `deploymentStrategy` is not specified, the Operator will use the Recreate strategy and perform a complete restart on any changes, causing downtime. This follows how updates were processed by Mendix on Kubernetes versions before 2.19 and earlier.
 
 You can specify the following options:
 
