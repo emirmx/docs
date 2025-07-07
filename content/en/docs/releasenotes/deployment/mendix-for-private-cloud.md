@@ -12,6 +12,74 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2025
 
+### July 3, 2025
+
+#### Portal Improvements
+
+* We have fixed an issue where the Cluster Manager was unable to delete namespaces which were disconnected or pending installation.
+* PCLM releases are now displayed in descending order.
+
+#### Deploy API
+* We have fixed the issue where users other than the Technical Contact were unable to update the environment by using the Update environment API. (Ticket #250927)
+* We have improved the logging for the Deploy API when a JA exception occurs while reading the certificate content.
+
+### June 25, 2025
+
+#### Mendix Operator v2.22.0 {#2.22.0}
+
+* We have added an option to use regular Kubernetes secrets in place of Kubernetes CSI Secrets Store.
+  This option allows to use all features from [CSI Secrets Storage](/developerportal/deploy/secret-store-credentials/) without having to use an external CSI Secrets Store driver, or by using any Kubernetes secret management solution such as [External Secrets Operator](https://external-secrets.io/).
+* We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
+* Upgrading to Mendix Operator v2.22.0 from a previous version will restart environments managed by that version of the Operator. Environments with two or more replicas and a **PreferRolling** update strategy are restarted without downtime.
+
+### May 29, 2025
+
+#### Portal Improvements
+
+* We have added a new **Description** field in the Deploy Package flow to provide more information about the deployment package.
+
+#### Deploy API
+
+* It is now possible to enable the deployment strategy by using the Deploy APIs (Create environment, Update environment). This feature lets you apply or configure updates with minimized downtime in certain scenarios. For more information, see [Reduced Downtime Deployment](/developerportal/deploy/private-cloud-reduced-downtime/).
+
+### May 23, 2025
+
+#### Fixes
+
+* We addressed an issue with updating expired licenses in PCLM and the Mendix Operator.
+
+    If you are using the Mendix Operator with PCLM, it is **highly recommended** that you upgrade Mendix Operator to version 2.21.3 or above and PCLM to version 0.10.3 or above.
+
+#### License Manage CLI v0.10.3
+
+* We added support for uploading license bundles with an extended license expiration date. (Ticket 249344)
+
+#### Mendix Operator v2.21.3 {#2.21.3}
+
+* We fixed an issue where an overlapping `/tmp/mendix/img` path could cause issues with some Marketplace components, for example [Azure Application Insights](https://marketplace.mendix.com/link/component/108303). (Ticket 248704)
+* We updated the license refresh mechanism to automatically refresh expired licenses from PCLM. (Ticket 249344)
+* Upgrading to Mendix Operator v2.21.3 from a previous version now restarts environments managed by that version of the Operator. Environments with two or more replicas and a **PreferRolling** update strategy are restarted without downtime.
+
+### May 08, 2025
+
+#### Portal Improvements
+
+* Updating or setting an Environment Purpose is now logged in the activity logs.
+
+### April 24, 2025
+
+#### Deploy API Improvements
+
+* We have resolved an issue with the Get Environment Manifest where the environment's updated status was not properly reflected in the response.
+* The Deploy API now supports setting the Environment Purpose (for Create Environment, Update Environment, and Get Environment Manifest).
+* We have increased the error message limit when retrieving the latest feedback from the cluster (Ticket 245648).
+
+### April 10, 2025
+
+#### Documentation Improvements
+
+* We have published detailed documentation about network ingress settings. For more information, see [Network Ingress Settings in Mendix for Private Cloud](https://docs.mendix.com/developerportal/deploy/private-cloud-cluster/private-cloud-ingress-settings/).
+
 ### April 03, 2025
 
 #### Mendix Operator v2.21.2 {#2.21.2}
@@ -134,7 +202,7 @@ This issue has been fixed in Mendix Operator [version 2.21.1](#2.21.1).
 #### Mendix Operator v2.20.1 {#2.20.1}
 
 * We have updated the m2ee-sidecar lifecycle to no longer stop the Mendix Runtime if a `ping` times out or fails; an app will now only be restarted by the liveness probe (Ticket 230648).
-* We have adjusted AWS STS token expiration for envrionments using IRSA, which should prevent occasional *SQLState: 28000 Error code: 0 Message: "FATAL: PAM authentication failed for user …", retrying...(1/4)* errors (Ticket 234454).
+* We have adjusted AWS STS token expiration for environments using IRSA, which should prevent occasional *SQLState: 28000 Error code: 0 Message: "FATAL: PAM authentication failed for user …", retrying...(1/4)* errors (Ticket 234454).
 * We have switched the log format to JSON for the `build`, `database` and `file` pods, to help with parsing the logs and automatically assigning log levels and timestamps.
 * We have updated a library used to validate licenses to the latest non-alpha version.
 * We have updated documentation that OpenShift 4.17 and Postgres 17 are supported by the Mendix Operator.
@@ -145,7 +213,7 @@ This issue has been fixed in Mendix Operator [version 2.21.1](#2.21.1).
 
 At present, a Technical Contact can only be assigned to one application at a time instead of multiple applications. If an individual who is already a Technical Contact for an existing application creates another application, they are automatically assigned as the Technical Contact for the new application. However, this results in their removal as the Technical Contact for the previous application. 
 
-Additionally, being assigned as a Technical Contact grants the individual administrator-level access across all namespaces where environments are created. Consequently, in this scenario, the individual gaina administrator access to the namespaces for both applications with created environments.
+Additionally, being assigned as a Technical Contact grants the individual administrator-level access across all namespaces where environments are created. Consequently, in this scenario, the individual grants administrator access to the namespaces for both applications with created environments.
 
 We are working on a fix, which is expected to be available in next release. Once the fix is available, make sure to check your applications and assign the Technical Contact accordingly.
 
@@ -451,7 +519,7 @@ We recommend regularly updating apps to ensure that they contain the latest secu
 * We have introduced a streamlined approach to installing the Operator within a namespace. With the [Global Operator installation](/developerportal/deploy/global-operator/), users only need to install a single Global Operator and Agent to efficiently manage applications across various namespaces. For more information, see the Global Operator installation documentation.
 
 {{% alert color="info" %}}
-This feature is currently in beta. For more information, see [Beta Releases](/releasenotes/beta-features/).
+This feature is currently in beta. For more information, see [Release Status](/releasenotes/release-status/).
 
 Some features, such as Private Cloud License Manager, are not fully supported yet. In addition, the Deploy API does not support the Global Operator yet.
 {{% /alert %}}
@@ -634,7 +702,7 @@ This tool is available as a technical preview. For documentation and download li
 * We have introduced [Private Cloud License Manager](/developerportal/deploy/private-cloud/private-cloud-license-manager/) which provides a repository of offline Mendix licenses. You can use Private Cloud License Manager to manage these licenses centrally, and to automatically configure the licenses for the Mendix Operator and its Runtime.
 
 {{% alert color="info" %}}
-This feature is currently in a [beta release](/releasenotes/beta-features/).
+This feature is currently in a [beta release](/releasenotes/release-status/).
 {{% /alert %}}
 
 #### Portal Improvements

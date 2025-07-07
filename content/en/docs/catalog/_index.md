@@ -14,10 +14,6 @@ aliases:
     - /data-hub/data-hub-catalog/
 ---
 
-{{% alert color="info" %}}
-The Mendix Portal is the online platform of Mendix. It includes [Apps](/developerportal/), [Control Center](/control-center/), [Community](/community-tools/), [Marketplace](/appstore/), Catalog, and [Mendix Support](/support/).
-{{% /alert %}}
-
 ## Introduction
 
 The [Catalog](https://catalog.mendix.com) is a development tool provided in Mendix Cloud. 

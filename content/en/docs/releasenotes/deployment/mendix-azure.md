@@ -12,6 +12,31 @@ These release notes cover changes to deployment to [Mendix on Azure](/developerp
 
 For information on the current status of Mendix deployment, see [Mendix Status](https://status.mendix.com/).
 
+### Release date: July 3, 2025
+
+* Mendix on Azure users can now create and restore environment backups through Private Cloud Portal. For more information, see [Backups in Mendix on Azure](/developerportal/deploy/mendix-on-azure/backups/).
+* [Cloud tokens](/control-center/cloud-tokens/) are now required for cluster initialization and environment creation in Mendix on Azure, except when a trial is active. The preflight check now validates if you have sufficient valid cloud tokens.
+* The Mendix on Azure portal is now available in Japanese and Korean, enhancing user experience for native speakers. Language preferences can be adjusted in the **Work environment** tab under **Preferences**.
+* We have fixed a portal issue where error messages were incorrectly displayed despite successful resource provisioning.
+* We have made improvements to the handling of cluster deployment retries.
+* We have upgraded managed Grafana to version 11.0.
+* We have added the option to enable managed Grafana with private access to the **Initialize** and **Edit** steps for the cluster.
+* The preflight check can now validate that the Azure account used to initialize the cluster has an Owner role assigned on the target subscription.
+
+### Release date: May 29, 2025
+
+* We have strengthened the preflight check process to deliver a better user experience.
+
+### Release date: April 24, 2025
+
+* You can now update the **Additional Options** even after the clusters have been initialized.
+* We have enhanced our preflight check process to deliver a better user experience.
+* A back button has been added to the **Review and Initialize** screen, allowing users to return to the Provision screen.
+* A new dropdown filter has been introduced on the **Cluster Overview** page to filter clusters by status.
+* Users will now see a message indicating the deployment progress of provisioned resources within the cluster.
+* A Creator column has been added to the **Support Overview** page to display who created each support ticket.
+* We have resolved an issue by disabling the Zendesk ticket link for users who did not create the corresponding support ticket.
+
 ### Release date: March 20, 2025
 
 * We have introduced a Custom Tags option in the Initialization flow.

@@ -21,7 +21,7 @@ Before you can use the Mendix Operator in your namespace you need to install it 
 
 If you are not already on the installation tab for your namespace, go to it by following these instructions:
 
-1. Go to the Cluster Manager page by opening the [Global Navigation Menu](/developerportal/global-navigation/), and then clicking **Deployment** > **Private Cloud**.
+1. Go to the Cluster Manager page by opening the [Global Navigation Menu](/portal/global-navigation/), and then clicking **Deployment** > **Private Cloud**.
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/cluster-manager.png" class="no-border" >}}
 
@@ -250,6 +250,10 @@ To use this option, [upgrade](/developerportal/deploy/private-cloud-upgrade-guid
 
 {{% alert color="info" %}}
 In Operator version 2.7.0 and above, the build pod will trust certificates from the custom TLS trust secret.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+When using Global Operator, you must create the custom TLS secret in both namespaces (Global and Managed), otherwise the Operator will show an error because the secret cannot be mounted. The same secret must be added for both Global and Managed namespaces, because Mendix does not support different custom TLS on different Managed namespaces.
 {{% /alert %}}
 
 To use encryption and avoid [MITM attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack), communication with all external services should be done over TLS.

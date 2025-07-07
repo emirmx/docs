@@ -14,6 +14,31 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 ## 2025
 
+### June 12, 2025
+
+#### New Features
+
+* We are updating the **Entitlements** section to set the stage for powerful analytics. These are the first steps in this series of changes:
+
+    * We have moved **Entitlements** out of the **Apps** space, and have given it a section of its own.
+    * We have renamed the **Transactions** tab to **Cloud Tokens**, and have turned it into a standalone page within the **Entitlements** section.
+    * We have added the **Approval Requests** page, currently in beta, which allows you to manage all approval requests created for your company. For now, this covers plan change requests sent by Technical Contacts.   
+    For more information on approving or rejecting a plan change, refer to [Approval Requests](/control-center/approval-requests/).     
+    For more information on requesting a plan change, refer to [Changing Your Plan in Mendix Cloud](/developerportal/deploy/change-plan/).    
+
+### May 26, 2025
+
+#### New Features
+
+* You can now restrict people from outside your organization from being invited to projects. To do that, toggle off the **External User Invites** option on the **Security Settings** tab of the Control Center **Settings** page.    
+For more information, see [Allowing External User Invites to Projects](/control-center/security-settings/#allow-external-users).
+
+### May 22, 2025
+
+#### Improvements
+
+* We have replaced the [Marketplace Curation](/control-center/marketplace-curation/) <text class="badge badge-pill badge-recommended" style="margin-left:0px">RECOMMENDED</text> label with <text class="badge badge-pill badge-company-approved" style="margin-left:0px"> {{% icon name="checkmark-shield-filled" color="green" %}}COMPANY APPROVED</text>. The new label indicates Marketplace components that meet company policies and guidelines.
+
 ### March 18, 2025
 
 #### New Features
@@ -193,7 +218,7 @@ We made the following improvements to the [access management](/control-center/po
 
 #### New Features 
 
-* We added the **Member ID** column to the **Active Members** and **Deactivated Members** lists on the [Members](/control-center/members/#active-deactive-members) page. The column also appears in the Excel file, when you export the member information from these lists.
+* We added the **Member ID** column to the **Active Members** and **Deactivated Members** lists on the [Members](/control-center/members/) page. The column also appears in the Excel file, when you export the member information from these lists.
 * We introduced **Member ID** search functionality on the **Member** page.
 
 #### Improvements
@@ -334,7 +359,7 @@ We made the following improvements to the [access management](/control-center/po
 
 #### New Features
 
-* We released the Control Center [Dashboard](/control-center/dashboard/), which provides an overview of various activities for your company on the Mendix Platform. This feature is currently in [beta](/releasenotes/beta-features/), and you can provide feedback via the feedback button on the right of the page.
+* We released the Control Center [Dashboard](/control-center/dashboard/), which provides an overview of various activities for your company on the Mendix Platform. This feature is currently in [beta](/releasenotes/release-status/), and you can provide feedback via the feedback button on the right of the page.
 
 ### March 9, 2021
 

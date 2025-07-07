@@ -139,7 +139,13 @@ This authentication option is not available for Published Web Services and can o
 
 If you choose this option, the API will expect a "X-Csrf-Token" HTTP request header to be set on each incoming request. This authentication option is particularly interesting for custom JavaScript and widget implementations.
 
-The session token can be acquired by calling `mx.session.getConfig("csrftoken")` in JavaScript. This method call should be used before each API call to prevent cross-site request forgery (CSRF/XSRF).
+The session token can be acquired by calling a Mendix Client API method to get the current CSRF token. This method should be called before each API call in your widget or JavaScript action to prevent cross-site request forgery (CSRF/XSRF).
+
+```javascript
+import getCSRFToken from "mx-api/session";
+
+const token = getCSRFToken();
+```
 
 #### Authentication Option 3, Custom {#custom}
 
@@ -268,5 +274,5 @@ Security in Mendix does not include scanning files that end-users upload or down
 
 To scan uploaded files for malicious content, do one of the following:
 
-* Create a custom module and configure the functionality yourself, for example, by using a [before a commit event](/refguide/setting-up-data-validation/#validation-before-commit-event).
+* Create a custom module and configure the functionality yourself, for example, by using a [before commit event](/refguide/setting-up-data-validation/#validation-before-commit-event).
 * Check available modules in the [Mendix Marketplace](https://marketplace.mendix.com/). For more information on how to use the Mendix Marketplace content, see [How to Use Marketplace Content](/appstore/use-content/).
