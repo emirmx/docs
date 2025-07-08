@@ -71,7 +71,7 @@ The new features were divided into major themes, which are described in the sect
 
 | Capability or Feature | Expected Release |
 | --- | --- |
-| Private Connectivity for Mendix Cloud | Limited availability: Q4 2025 <br/>General availability: H1 2026 |
-| Landscape configuration management for Mendix Cloud | Limited availability: Q4 2025 <br/>General availability: H1 2026 |
-| Zero downtime deployment on Mendix Cloud | Limited availability: Q4 2025 <br/>General availability: H1 2026 |
-| REST GET and POST steps for Mendix Pipelines | Limited availability: Q4 2025 <br/>General availability: H1 2026 |
+| Private Connectivity for Mendix Cloud | Limited Availability: Q4 2025 <br/>General Availability: H1 2026 |
+| Landscape configuration management for Mendix Cloud | Limited Availability: Q4 2025 <br/>General Availability: H1 2026 |
+| Zero downtime deployment on Mendix Cloud | Limited Availability: Q4 2025 <br/>General Availability: H1 2026 |
+| REST GET and POST steps for Mendix Pipelines | Limited Availability: Q4 2025 <br/>General Availability: H1 2026 |
