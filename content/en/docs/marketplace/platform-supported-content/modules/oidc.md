@@ -1059,7 +1059,7 @@ End-users can access your app through the following endpoints when using the OID
 * `post_logout_redirect`: The URL to which users are redirected after they successfully log out from the application. This helps ensure a seamless user experience by taking them to a predefined page after logout.
 * `redirect_uri`: The callback URL that receives the authorization response from the IdP after the user successfully authenticates. This endpoint processes the returned authorization code or token to complete the login process.
     For example, `https://<YOUR_APP_URL>/oauth/v2/callback`.
-* `/.well-known/openid_configuration`: A standardized URL exposed by the IdP to initiate OAuth2 authorization.
+* `/.well-known/openid_configuration`: In the OpenID Connect (OIDC) protocol, the `.well-known` endpoint provides a standardized URL where clients can retrieve the OpenID Provider's configuration metadata, enabling dynamic discovery of important endpoints and capabilities.
 * `authorization_endpoint`: The URL on the IdP where the authorization request is sent to start the OIDC login process. It redirects the user to the IdP for authentication.
 * `token_endpoint`: The endpoint used by the Mendix app to exchange the received authorization code for tokens, such as access tokens, ID tokens.
 * `jwks_uri`: URL exposing the JSON Web Key Set (JWKS), which contains the public keys used to validate token signatures.
@@ -1139,3 +1139,7 @@ When using the OIDC SSO module with Mendix version 10.9 to 10.12.2, you may enco
 {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/runtime-failed.png" class="no-border" >}}
 
 If a user logs in on one tab and then attempts to log in on another tab, a `401` error may initially appear. However, after the browser reloads, the error will be resolved as the session is validated and synchronized.
+
+### Endpoints cannot be reached
+
+This issue can be caused by wrong configuration of your firewall. If you have a firewall between your application and your IdP, make sure it is properly configured for the consumption of the endpoints.
