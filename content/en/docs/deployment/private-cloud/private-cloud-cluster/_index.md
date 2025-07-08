@@ -1118,8 +1118,6 @@ If there are any environments associated with the namespace, you cannot delete t
 
 When you delete a namespace, this removes the namespace from the cluster in the Mendix Portal. However, it will not remove the namespace from your platform. You will need to explicitly delete the namespace using the tools provided by your platform.
 
-{{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/image26.png" class="no-border" >}}
-
 {{% alert color="info" %}}
 In the case of a Global Operator managed namespace, the managed namespace will not be deleted from the cluster. You must delete it from the cluster manually. Additionally, you also need to remove the managed namespace from the list of managed namespaces in the Operator configuration of the main namespace. 
 {{% /alert %}}
