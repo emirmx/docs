@@ -62,7 +62,7 @@ To configure the properties of a boundary event, double-click the event to open 
 
 #### Adding a Boundary Event to an Ongoing Activity
 
-When a boundary event is added to an ongoing activity, any workflow instances currently executing that activity will schedule the new boundary event accordingly. The only exception occurs when an ongoing boundary event is removed, the workflow is redeployed, and then the removal is reverted. In this case, the boundary event will not be rescheduled.
+When a boundary event is added to an ongoing activity, any workflow instances currently executing that activity will schedule the new boundary event accordingly. The only exception occurs when an ongoing boundary event is removed from the ongoing activity, the workflow is redeployed, and then the removal is reverted. In this case, the re-added boundary event will not be scheduled.
 
 #### Implications of Changing the Boundary Event Type
 
