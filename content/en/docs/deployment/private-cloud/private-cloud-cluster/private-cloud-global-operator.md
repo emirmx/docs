@@ -75,11 +75,11 @@ To install and configure the Global Operator, perform the following steps:
 
 10. Click **Namespaces** to go to the **Namespaces Overview** page.
 
-    {{< figure src="/attachments/deployment/private-cloud/global-operator/global-operator8.png" >}}
+    {{< figure src="/attachments/deployment/private-cloud/global-operator/global-operator9.png" >}}
 
 11. Once the Global Operator main namespace is connected, the **Convert Namespace** and **Add Managed Namespace** buttons are enabled and you can install the managed namespace under the Global Operator namespace by clicking **Add Managed Namespace**.
 
-    {{< figure src="/attachments/deployment/private-cloud/global-operator/global-operator9.png" class="no-border" >}}
+    {{< figure src="/attachments/deployment/private-cloud/global-operator/global-operator8.png" class="no-border" >}}
 
     {{% alert color="warning" %}}Ensure that you use the same name for the managed namespace in the Portal and in the cluster while running the command. Using different names may result in unwanted issues.{{% /alert %}}
 
