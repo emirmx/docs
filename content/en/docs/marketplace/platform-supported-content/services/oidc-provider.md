@@ -364,15 +364,18 @@ The scopes you configure are not added automatically to the "scopes_supported" a
 
 ##### Configuration of the OIDC Provider to Propagate the End-User’s Identity with Custom Claims{#propagate-custom-claims}
 
-Typically you want to propagate the end-user’s identity from the OIDC Provider to your Mendix app. Although the basic user attributes like ‘email address’ and ‘user name’ may be sufficient, your app may need more information about the end-user. User attributes like ‘department’ or ‘job-title’ may be used for business logic, including decentralized authorization.
+Typically you want to propagate the end-user’s identity from the OIDC Provider to your Mendix app. Although the basic user attributes such as email address and user name may be sufficient, your app may need additional user information. User attributes such as department or job-title may be used for business logic, including decentralized authorization.
 
 To pass this additional information, you need to create custom claims. You can do this as follows:
 
-1. Create a microflow which returns a value to the claim.
+1. Create a microflow starting with `OIDCP_` that returns a value to be used in the claim.
+
+    * Input: `Administration.Account`
+    * Output: Any custom Claim object
 
     From version 1.1.0, you can also pass an object from the Domain Model as the custom claim in an ID-token. To do this, your microflow should return the object.
 
-    The ID-token will be a nested JSON structure with the name of the object as the key and a list of attribute names of your object as the keys and the attribute values as the values.
+    The ID-token will be a nested JSON structure with the name of the object as the key, a list of attribute names of your object as the keys, and the attribute values as the values.
 
     ```json
     "MyObjectName": {
@@ -383,15 +386,21 @@ To pass this additional information, you need to create custom claims. You can d
 
     "MyObjectName" will be used as the claim name. See note about how to name custom claims in the [Propagate Custom Claims](#propagate-custom-claims) section, above.
 
-1. Run (publish) your app.
-1. Sign in to your app as an Administrator.
-1. Open the **Mx Objects** overview page and synchronize the required modules to see the new microflow.
-1. Follow the navigation item OpenID Connect to open the page `OpenIDConnectDashboard`.
-1. Switch to the Custom claims tab of your registered client.
-1. Create a new claim.
+    If you are already using custom claims in an earlier version of the module, you must:
+
+    * Rename existing microflows to begin with `OIDCP_`.
+
+    * Reconfigure the custom claim settings to point to the renamed microflows.
+
+2. Run (publish) your app.
+3. Sign in to your app as an Administrator.
+4. Open the **Mx Objects** overview page and synchronize the required modules to see the new microflow.
+5. Follow the navigation item OpenID Connect to open the page `OpenIDConnectDashboard`.
+6. Switch to the Custom claims tab of your registered client.
+7. Create a new claim.
     * Provide a name for claim
     * Select the microflow which returns the value to the claim
-1. Save the claim.
+8. Save the claim.
 
     When an authentication request is made to the OIDC Provider, the created custom claim will be added to the ID-token.
 
