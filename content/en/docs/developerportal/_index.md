@@ -38,7 +38,7 @@ To create a new app and start collaborating, you can perform the following proce
 
 3. Click **Next** in the lower-right corner to go to step 2.
 
-    {{< figure src="/attachments/developerportal/create-app-step-2.png" alt="Create App Step Two" >}}
+    {{< figure src="/attachments/developerportal/create-app-step-2.png" alt="Create App Step Two" max-width=50% >}}
 
 4. Select a starter app template on which the app will be based. The most used starter app templates are displayed.    
 
