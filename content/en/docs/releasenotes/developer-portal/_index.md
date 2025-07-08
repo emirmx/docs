@@ -21,6 +21,12 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
+### July 8, 2025
+
+#### New Features
+
+* When creating a new project using the Blank App starter app, you can now choose between the [Latest, MTS, or LTS version](/releasenotes/studio-pro/lts-mts/).
+
 ### June 19, 2025
 
 #### New Features
