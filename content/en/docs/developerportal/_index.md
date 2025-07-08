@@ -14,45 +14,46 @@ cascade:
 
 ## Introduction
 
-[Apps](https://sprintr.home.mendix.com) is one of the key components of the Mendix Portal. In **Apps**, you can create, deploy, and manage apps as well as collaborate with each other. After you open **Apps**, you will get a summary of your current apps, your company apps, and your pending invites.
+[Apps](https://sprintr.home.mendix.com) is one of the key components of the Mendix Portal. In **Apps**, you can create, deploy, and manage apps, as well as collaborate with others. **Apps** provides a summary of your current apps, your company apps, and your pending invites.
 
 {{< figure src="/attachments/developerportal/apps-overview.png" alt="Apps Overview" >}}
 
 ## Creating an App {#create-app}
 
-To create a new app and start collaborating, you can perform the following procedure.
+Follow these steps to create a new app and start collaborating:
 
-1. In Apps, click **Create App** in the upper-right corner. A screen opens to guide you through the process.
+1. In **Apps**, click **Create App** in the upper-right corner. A screen opens to guide you through the process.
 
     {{< figure src="/attachments/developerportal/create-app-step-1.png" alt="Create App Step One" >}}
 
 2. Enter the following information for your app:
 
-    * **App name** – Every app must have a name.
+    * **App name** – Every app must have a name that abides by these requirements:
 
-        The app name cannot be longer than 200 characters (but preferably, no more than 40 characters). The app name can contain letters, numbers, underscores (`_`), dashes (`-`), or white spaces (). The app name must not start with a white space.
+        * It cannot be longer than 200 characters, but Mendix recommends no more than 40 characters. 
+        * It can contain letters, numbers, underscores (`_`), dashes (`-`), or white spaces ().
+        * It must not start with a white space.
 
     * **App description (Optional)** – Give your app a short description. This is optional.
     
-    * **App icon** – Mendix has generated an icon for your app. You can change the color of the icon if you like. You can upload a custom icon in the [App Settings](/developerportal/collaborate/general-settings/#general) page after you created the app.
+    * **App icon** – Mendix has generated an icon for your app. You can change the color of the icon if you like. You can upload a custom icon in the [App Settings](/developerportal/collaborate/general-settings/#general) page once you have created the app.
 
 3. Click **Next** in the lower-right corner to go to step 2.
 
     {{< figure src="/attachments/developerportal/create-app-step-2.png" alt="Create App Step Two" >}}
 
-4. Select a starter app template on which the app will be based. Some most used starter app templates are shown.
+4. Select a starter app template on which the app will be based. A list of some of the most used starter app templates is displayed.
 
-    {{% alert color="info" %}}If you would like to choose a different starter app template than the ones shown here, click the **discover community starter apps** link at the top. This takes you to the Marketplace where you can browse through all available starter app templates and select one that suits your needs.{{% /alert %}}
+    {{% alert color="info" %}}If you would like to choose a different starter app template than the ones shown here, click the **discover community starter apps** link at the top. This takes you to the Marketplace, where you can browse through all available starter app templates and select one that suits your needs.{{% /alert %}}
 
-5. After selecting a starter app template, click **Create App**. Based on the starter app template you selected, it can take some time to set up the app, its repository, and access to the collaboration tools. After it is completed, the app is created.
+5. After selecting a starter app template, click **Create App**.    
+   Based on the starter app template you selected, it can take some time to set up the app, its repository, and access to the collaboration tools. Once those steps are completed, the app is created.
 
 ## My Apps {#my-apps}
 
 The **My Apps** tab displays all the apps for which you are a [Team](/developerportal/general/team/) member.
 
-If you pin an app, it stays on top.
-
-You can filter the overview to display only the apps that are marked for deletion. Read more about how we mark apps for deletion [here](/developerportal/deploy/mendix-cloud-deploy/#projects-deletion).
+You can filter the overview to display only the apps that are marked for deletion. Read more about how we mark apps for deletion in the [Deletion of Unused Projects](/developerportal/deploy/mendix-cloud-deploy/#projects-deletion) section of *Mendix Cloud*.
 
 Use the drop-down menu on the right side of the page to sort the apps by **Pinned**, **Recent Activity** or in alphabetical order of **App Name**.
 
@@ -87,7 +88,7 @@ The features in the navigation pane can also be accessed via APIs, enabling thir
 
 ### Pending Invitations {#pending-invitations}
 
-If you are invited to collaborate on an app, the invitation will appear at the top of the **My Apps** page. You can accept or decline the invitation.
+If you are invited to collaborate on an app, your invitation is displayed at the top of the **My Apps** page. You can accept or decline the invitation.
 
 {{% alert color="info" %}}
 You get an invitation only when someone invites you to an app from a different company. If someone invites you to an app from your company, you will be added automatically.
