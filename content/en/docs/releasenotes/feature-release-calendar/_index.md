@@ -66,3 +66,12 @@ The new features were divided into major themes, which are described in the sect
 | Capability or Feature | Expected Release |
 | --- | --- |
 | Mendix Workstation Client | Private beta: Release 2.0: March 14th, 2025 <br/>Release 2.1: June 13th, 2025 <br/>Release 2.2: August 1st, 2025<br/>Limited Availability:  Release 3.0 September 2025<br/>General Availability: TBD |
+
+## Deployment
+
+| Capability or Feature | Expected Release |
+| --- | --- |
+| Private Connectivity for Mendix Cloud | Limited Availability: Q4 2025 <br/>General Availability: H1 2026 |
+| Landscape configuration management for Mendix Cloud | Limited Availability: Q4 2025 <br/>General Availability: H1 2026 |
+| Zero downtime deployment on Mendix Cloud | Limited Availability: Q4 2025 <br/>General Availability: H1 2026 |
+| REST GET and POST steps for Mendix Pipelines | Limited Availability: Q4 2025 <br/>General Availability: H1 2026 |
