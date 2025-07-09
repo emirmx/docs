@@ -33,7 +33,7 @@ These are the hosting types that you can make requests for:
 
 * **Mendix Cloud** — Select this option for apps deployed to public Mendix Cloud.
 * **Mendix Cloud Dedicated** — Select this option for apps deployed to Mendix Cloud Dedicated.
-* **Mendix on Kubernetes** — Select this option for apps deployed to Kubernetes using the Mendix Operator. Refer to [Mendix on Kubernetes](/developerportal/deploy/private-cloud/) for more information.
+* **Mendix for Private Cloud** — Select this option for apps deployed to Kubernetes using the Mendix Operator. Refer to [Mendix on Kubernetes](/developerportal/deploy/private-cloud/) for more information.
 * **Server-based (Windows Server)** — Select this option for apps deployed to Windows. You are required to enter the Server ID, which you can retrieve by following the steps in the [Windows Server](/developerportal/deploy/licensing-apps-outside-mxcloud/#windows-server) section of *Licensing Apps*.
 * **Container-based (Docker, Cloud Foundry, Kubernetes)** — Select this option for apps deployed to Docker, Cloud Foundry, or Kubernetes, without Mendix Operator).
 * **SAP** — Select this option for apps deployed to SAP.

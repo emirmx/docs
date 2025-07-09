@@ -47,7 +47,7 @@ When you first [create your app](/developerportal/#create-app), it will be set t
 
 2. Open the **Settings** page.
 3. Click **Cloud Settings**.
-4. In the **Mendix on Kubernetes** section, click **Set up**.
+4. In the **Mendix for Private Cloud** section, click **Set up**.
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/SetupButton.png" class="no-border" >}}
 

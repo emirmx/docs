@@ -45,16 +45,16 @@ Should you consider using a connected environment, the following URLs should be 
 ### Creating a Cluster {#create-cluster}
 
 1. Click [Cloud Settings](/developerportal/collaborate/general-settings/#cloud-settings) on the **Settings** page of your Mendix app.
-2. Click **Mendix on Kubernetes**.
+2. Click **Mendix for Private Cloud**.
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/image3.png" class="no-border" >}}
 
-3. Click **Set up Mendix on Kubernetes**.
+3. Click **Set up Mendix for Private Cloud**.
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/image4.png" class="no-border" >}}
 
 4. Open the [Global Navigation menu](/portal/global-navigation/) and select **Deployment**.
-5. Select **Mendix on Kubernetes** from the top menu bar in the Mendix Portal.
+5. Select **Mendix for Private Cloud** from the top menu bar in the Mendix Portal.
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/cluster-manager.png" class="no-border" >}}
 
