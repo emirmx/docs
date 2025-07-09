@@ -40,9 +40,13 @@ After you install the connector, you can find it in the **App Explorer**, in the
 
 ### Configuring Authentication {#authentication}
 
-In order to use the Azure Blob Storage service, you must authenticate using a Shared Access Signature (SAS). To do so, you must create a SAS or ask your Azure admin to do that for you. The SAS is then added to a ConnectionDetails object on the SAS attribute. In addition you will need to set the storage account to the Connection details on the StorageAccount attribute.
+In order to use the Azure Blob Storage service, you must authenticate using a Shared Access Signature (SAS) or an Azure Entra ID Access Token.
 
-We plan to provide additional means of authentication soon.
+#### SAS authorization
+You or your admin needs to create a SAS for the container or blob you want to perform operations on. This SAS should then be added to a `SASCredentials` object on the `SASToken` attribute. Feed the `SASCredentials` object to the `AbstractCredentials` input parameter of the operation microflow you want to use.
+
+#### Azure Entra ID Access Token
+Set up SSO using the OIDC SSO marketplace module. When this is set up for your application you can use the `GetCurrentToken` microflow to get the access token needed for authenticationg the call. Create an `EntraCredentials` object and add the access token to the `BearerToken` attribute. Feed the `EntraCredentials` object to the `AbstractCredentials` input parameter of the operation microflow you want to use.
 
 ### Configuring a Microflow for an AWS Service
 
@@ -51,11 +55,11 @@ You can implement the operations of the connector by using them in microflows. F
 1. In the **App Explorer**, right-click on the name of your module, and then click **Add microflow**.
 2. Enter a name for your microflow, for example, *ACT_PutBlob*, and then click **OK**.
 3. In the **App Explorer**, in the **AzureBlobStorageConnector** section, find the **PUT_v1_Azure_PutBlob** operation microflow.
-4. In the **App Explorer**, in the **AWSAuthentication** section, find the **GetStaticCredentials** and **GetTemporaryCredentials** microflows.
+4. Create a **SASCredentials** or **EntrCredentials** object and add the SAS or access token to the **SASToken** or **BearerToken** attributes respectively. 
 5. Drag the **PUT_v1_Azure_PutBlob** microflow in to your microflow.
 6. Double-click the **PUT_v1_Azure_PutBlob** operation to configure the required parameters. 
     
-    For the `PUT_v1_Azure_PutBlob` operation, retrieve the `System.FileDocument` you want to store and provide a configured `ConnectionDetails` object. You must then create a `PutBlobRequest` object in your microflow as the last parameter. This entity requires the following parameters:
+    For the `PUT_v1_Azure_PutBlob` operation, retrieve the `System.FileDocument` you want to store and provide a configured `SASCredentials` or `EntrCredentials` object. You must then create a `PutBlobRequest` object in your microflow as the last parameter. This entity requires the following parameters:
 
     * `BlobName` - The BlobName attribute holds the name the blob will get in the Blob storage.
     * `ContainerName` - The ContainerName attribute holds the target container name where the blob will be stored.
