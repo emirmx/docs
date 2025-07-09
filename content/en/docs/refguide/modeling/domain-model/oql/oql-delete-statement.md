@@ -1,8 +1,11 @@
 ---
 title: "OQL DELETE Statement"
 url: /refguide/oql-delete-statement/
+beta: true
 weight: 210
 ---
+
+{{% alert color="warning" %}} This feature is experimental. For more information, see [Release Status](/releasenotes/release-status/). {{% /alert %}}
 
 ## Introduction
 
