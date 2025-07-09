@@ -100,7 +100,7 @@ Before you request to be onboarded to the IdP-managed Mendix Admins feature, ple
 
 1. You have a Premium platform license to use this feature.
 2. You have set up an active SSO or BYO-IdP configuration, as described in [Set Up an SSO (BYOIDP)](/control-center/security/set-up-sso-byoidp/).
-3. A user group in your IdP that includes your current Mendix Admins. Typically, your IT department should manage this group, possibly with a request/approval process.
+3. You have a user group in your IdP that includes your current Mendix Admins. Typically, your IT department should manage this group, possibly with a request/approval process.
 4. The ID token sent by your IdP to the Mendix platform during SSO must include a claim that indicates whether a user is a member of the Mendix Admin group. For configuration, Mendix needs to know the name of the claim and the expected value. When using Entra ID, a typical setup should have the following claim in the ID token:
 
 ```text
