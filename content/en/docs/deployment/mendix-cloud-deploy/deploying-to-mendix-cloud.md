@@ -75,7 +75,7 @@ To create a deployment package via Studio Pro, follow these steps:
 You can also create a deployment package through the Mendix Portal, using a model committed to the Team Server. To do this, follow these steps:
 
 1. From [Apps](https://sprintr.home.mendix.com), go to the **Environments** page of your app.
-2. On the [Deployment Packages tab](#deployment-packages-tab), click **Create a Package**. This launches the **Create Package** wizard.
+2. On the [Deployment Packages](/developerportal/deploy/environments/#deployment-packages-tab) tab, click **Create a Package**. This launches the **Create Package** wizard.
 3. On the **Select Branch** tab, select the branch on which to base the build.
 4. On the **Select Revision** tab, select the branch revision on which to base the package.
 5. On the **Choose a Tag** tab, specify the version tag. This includes the major, minor, and patch version numbers.
@@ -86,11 +86,12 @@ You can also create a deployment package through the Mendix Portal, using a mode
 The previous steps explained how to deploy a deployment package to Mendix Cloud, but the app based on the deployment package is not running yet. To deploy a deployment package to a node environment where you can run the app, follow these steps:
 
 1. From [Apps](https://sprintr.home.mendix.com), go to the **Environments** page of your app.
-2. On the [Deployment Packages tab](#deployment-packages-tab), choose your preferred deployment package and click **Deploy** ({{% icon name="deploy" %}}) to launch the deploy wizard.
-3. On the **Select Environment** tab of the wizard, choose the environment to which you want to deploy the package.
-4. On the **Configure Environment** tab, review the [constants](/refguide/constants/), and adjust them as required.
-5. On the **Other Options** tab, choose whether to stage the package without deploying, and when to create the backup: either before or after deploying the new package. The app is unavailable while the backup runs.
-6. On the **Deploy** tab, review the deployment settings:
+2. On the [Deployment Packages](/developerportal/deploy/environments/#deployment-packages-tab) tab, choose your preferred deployment package.
+3. Click **Deploy** ({{% icon name="deploy" %}}) to launch the deploy wizard.
+4. On the **Select Environment** tab of the wizard, choose the environment to which you want to deploy the package.
+5. On the **Configure Environment** tab, review the [constants](/refguide/constants/) and adjust them as required.
+6. On the **Other Options** tab, choose whether to stage the package without deploying, and when to create the backup: either before or after deploying the new package. The app is unavailable while the backup runs.
+7. On the **Deploy** tab, review the deployment settings:
     1. To see an overview of the configuration for this deployment, click **View Summary**. This summary displays the selected package, selected backup option, and any changed constants or [scheduled events](/refguide/scheduled-events/).
     2. Review this summary, then click **Deploy Now**.
 
