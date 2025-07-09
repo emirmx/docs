@@ -218,7 +218,7 @@ We made the following improvements to the [access management](/control-center/po
 
 #### New Features 
 
-* We added the **Member ID** column to the **Active Members** and **Deactivated Members** lists on the [Members](/control-center/members/#active-deactive-members) page. The column also appears in the Excel file, when you export the member information from these lists.
+* We added the **Member ID** column to the **Active Members** and **Deactivated Members** lists on the [Members](/control-center/members/) page. The column also appears in the Excel file, when you export the member information from these lists.
 * We introduced **Member ID** search functionality on the **Member** page.
 
 #### Improvements
@@ -359,7 +359,7 @@ We made the following improvements to the [access management](/control-center/po
 
 #### New Features
 
-* We released the Control Center [Dashboard](/control-center/dashboard/), which provides an overview of various activities for your company on the Mendix Platform. This feature is currently in [beta](/releasenotes/beta-features/), and you can provide feedback via the feedback button on the right of the page.
+* We released the Control Center [Dashboard](/control-center/dashboard/), which provides an overview of various activities for your company on the Mendix Platform. This feature is currently in [beta](/releasenotes/release-status/), and you can provide feedback via the feedback button on the right of the page.
 
 ### March 9, 2021
 

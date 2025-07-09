@@ -14,6 +14,18 @@ These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 
 ## 2025
 
+### June 27, 2025
+
+#### New Features
+
+* The [PDF Document Generation](/appstore/modules/document-generation/) module now supports the use of [private PDF document generation service instances](/appstore/modules/private-document-generation-service/). This flexible solution is based on Docker, and is hosted and managed by you. It allows you to run your own version of the PDF Document Generation service with additional control and configuration options, and it specifically targets air-gapped apps, or tailored performance and data sharing requirements.
+
+### June 25, 2025
+
+#### New Features
+
+* We have released [Mendix Data Loader](/appstore/modules/snowflake/mendix-data-loader/) version 2.3.0. This version allows you to configure a specific warehouse for your task, which is used as a compute resource when the task triggers data ingestion. This is controlled through two new options: **Use Specific Warehouse** and **Warehouse**.
+
 ### June 19, 2025
 
 #### Improvements
@@ -328,7 +340,7 @@ If you are using Studio Pro on a Mac with Parallels, see [this update](https://k
 
 #### Improvements
 
-* You are now able to download Studio Pro versions marked as [beta](/releasenotes/beta-features/) from a separate tab on the **Get Studio Pro** page named **Beta Releases**. The default download option (via the **Release Notes** tab) remains the latest stable release of Studio Pro.
+* You are now able to download Studio Pro versions marked as [beta](/releasenotes/release-status/) from a separate tab on the **Get Studio Pro** page named **Beta Releases**. The default download option (via the **Release Notes** tab) remains the latest stable release of Studio Pro.
 
 #### Fixes
 

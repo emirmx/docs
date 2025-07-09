@@ -17,8 +17,9 @@ Before starting the installation and implementation process, make sure that you 
 
 * Obtain and configure a Microsoft Azure account. For more information, refer to the the Microsoft Azure documentation.
 * Purchase the Mendix on Azure offering in the [Azure Marketplace](https://azuremarketplace.microsoft.com/).
-* You must sign in to the Mendix on Azure portal with the same Azure account that was used to purchasing the offering. If you sign in with another account, the cluster is not visible for initialization.
+* You must buy cloud tokens (min. 14 cloud tokens per environment) to consume Mendix on Azure platform services. Cloud tokens are not utilized during an active trial.
 * You must log in to [Private Cloud page](https://privatecloud.mendixcloud.com/) before starting the installation process in the Mendix on Azure portal.
+* You must sign in to the Mendix on Azure portal with the same Azure account that was used to purchase the offering. If you sign in with another account, the cluster is not visible for initialization.
 
 {{< figure src="/attachments/deployment/mx-azure/coadmin-permission.png" class="no-border" >}}
 
@@ -55,15 +56,21 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
 
 7. In the **Actions** column, click the icon, and then select **Initialize**. 
 
-    The preflight check launches to verify that the required resources can be registered in the cluster. Mendix apps are hosted with virtual images, so the preflight check determines whether the cluster contains the required type of virtual image. To view a list of the required resource providers, hover your cursor over the **Information** icon. If required, you can register any missing providers in the **Resource providers** section of the Microsoft Azure portal.
+    The preflight check launches to verify that the required resources can be registered in the cluster. The check also validates if there are valid (trial) service entitlements for Mendix on Azure assigned to your company, or sufficient cloud tokens to initialise the cluster. Finally, the preflight checks validates if the Azure account used for the initialization has the Owner role.
+
+   Mendix apps are hosted with virtual machines, so the preflight check determines whether the cluster contains the required type of virtual machine. To view a list of the required resource providers, hover your cursor over the **Information** icon. If required, you can register any missing providers in the **Resource providers** section of the Microsoft Azure portal.
 
     {{< figure src="/attachments/deployment/mx-azure/preflight-check.png" class="no-border" >}}
 
-8. In the **Preflight Check** screen, click **Next** to be redirected to the **Provision** screen. When all preflight checks are passed, the status is displayed as **Done** in the **Preflight Check** section, as in the following figure:
+    If the number of cloud tokens is not sufficient, the following error message is shown:
+
+    {{< figure src="/attachments/deployment/mx-azure/clusterInitializeFailedQuota.png" class="no-border" >}}
+
+9. In the **Preflight Check** screen, click **Next** to be redirected to the **Provision** screen. When all preflight checks are passed, the status is displayed as **Done** in the **Preflight Check** section, as in the following figure:
 
     {{< figure src="/attachments/deployment/mx-azure/preflight-check-successful.png" class="no-border" >}}
 
-9. In the **Provision** screen, add the custom tags if required and review the information in the **Advanced Options** section. If required, adjust any settings as needed. Note that selecting higher service tiers will also incur higher costs.
+10. In the **Provision** screen, add the custom tags if required and review the information in the **Advanced Options** section. If required, adjust any settings as needed. Note that selecting higher service tiers will also incur higher costs.
    
     You can update the following advanced options:
 
@@ -73,8 +80,11 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
     * Load Balancer Type
     * Postgres Flexible Server - Under this, you can update Compute Tier, Compute Size and Storage Performance Tier.
     * AKS Node IP Address 
+    * Managed Grafana
 
     {{% alert color="info" %}}If you plan to use [virtual network peering](#network-peering), you must set the **Load Balancer Type** to **Private (Internal)**.{{% /alert %}}
+
+    {{% alert color="info" %}}If **Managed Grafana** is set to **False**, private access to a Grafana dashboard is required. Make sure that the required network is set up to accomodate private access.{{% /alert %}}
 
     {{< figure src="/attachments/deployment/mx-azure/provision-additional-option.png" class="no-border" >}}
 
@@ -82,7 +92,7 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
 
     {{< figure src="/attachments/deployment/mx-azure/initializeCluster.png" class="no-border" >}}
 
-    The initialization process takes approximately 15 minutes. It creates a resource group in the managed app that you created in step 3 above as shwon below:
+    The initialization process takes approximately 15 minutes. It creates a resource group in the managed app that you created in step 3 above as shown below:
 
     {{< figure src="/attachments/deployment/mx-azure/resourceGroup.png" class="no-border" >}}
 
@@ -114,12 +124,13 @@ If required, you can change the following options for your cluster. The **Edit**
 * AKS node size
 * VM type
 * Load balancer type
+* Managed Grafana
 * Postgres compute SKU
 * Postgres Performance tier for storage IOPS
 * Postgres Compute tier
 * Postgres Compute size
 
-    {{< figure src="/attachments/deployment/mx-azure/editClusterPage.png" class="no-border" >}}
+{{< figure src="/attachments/deployment/mx-azure/editClusterPage.png" class="no-border" >}}
 
 ## Enabling Connections Between Different Azure Resource Groups
 
@@ -227,7 +238,15 @@ To enable private endpoints for your Mendix on Azure app, perform the following 
 
 ## Deploying an App to an Azure Cluster
 
-After creating your cluster in Microsoft Azure, you can deploy now deploy your applications to the cluster. The deployment process is the same as with Mendix for Private Cloud. For more information, see [Deploying a Mendix App to a Private Cloud Cluster](/developerportal/deploy/private-cloud-deploy/).
+After creating your cluster in Microsoft Azure, you can now deploy your applications to the cluster. The deployment process is the same as with Mendix for Private Cloud. However, in order to use the Mendix on Azure Platform service, you need to have a minimum of 14 cloud tokens to create an environment. For more information, see [Deploying a Mendix App to a Private Cloud Cluster](/developerportal/deploy/private-cloud-deploy/). 
+
+If the number of cloud tokens is insufficient, the following error message is shown:
+
+{{< figure src="/attachments/deployment/mx-azure/envCreationFailedQuota.png" class="no-border" >}}
+
+## Backing up and Restoring Eenvironments
+
+For more information about backing up and restoring Mendix on Azure environments, see [Backups in Mendix on Azure](/developerportal/deploy/mendix-on-azure/backups/).
 
 ## Adding a New Cluster Manager
 
@@ -236,3 +255,4 @@ Once the cluster is successfully created and initialized in the Mendix on the Az
 After being added, the new cluster manager has the ability to view and manage the cluster within the Mendix on the Azure portal. They can also access and update the support ticket associated with the cluster in the Mendix on Azure portal. However, the newly added cluster manager does not have access to the Zendesk ticket linked to the cluster's support ticket.  
 
 If a cluster manager is deleted, they can no longer view the associated cluster or its support ticket in the Mendix on Azure portal.
+

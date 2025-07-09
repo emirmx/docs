@@ -88,7 +88,7 @@ It is turned off by default. Scrum Master can switch it on in the Project Manage
 
 #### New Features
 
-* [Mendix AI Assistance Chat (Maia Chat)](/developerportal/global-navigation/#maia-chat), previously available in Studio Pro, is now accessible in Mendix Portal.
+* [Mendix AI Assistance Chat (Maia Chat)](/portal/global-navigation/#maia-chat), previously available in Studio Pro, is now accessible in Mendix Portal.
 
 ### January 29, 2025
 
@@ -793,7 +793,7 @@ We have made the following improvements to the **Access Management** page in Por
 #### Fixes
 
 * We fixed an issue in **Epics** where the unsaved changes pop-up window did not take you to the correct story after clicking **Leave**.
-* We updated the text in the [notifications](/developerportal/global-navigation/#notifications) when a story is assigned to you in **Epics**.
+* We updated the text in the [notifications](/portal/global-navigation/#notifications) when a story is assigned to you in **Epics**.
 
 ### February 13, 2023 {#feb-13-23}
 
@@ -1067,7 +1067,7 @@ We have made the following improvements to the **Access Management** page in Por
 
 #### Improvements
 
-* We improved the platform navigation. The [Switch to](/developerportal/global-navigation/) menu on the left side of the top bar now also provides access to your recently used apps.
+* We improved the platform navigation. The [Switch to](/portal/global-navigation/) menu on the left side of the top bar now also provides access to your recently used apps.
 
 ## 2021
 
@@ -1517,7 +1517,7 @@ We have made the following improvements to the **Access Management** page in Por
 
 #### Improvements
 
-* We redesigned the **Stories** page with a brand new UI and improved stability. The new UI can be accessed by clicking **Enable new UI**. This is a [beta version](/releasenotes/beta-features/).
+* We redesigned the **Stories** page with a brand new UI and improved stability. The new UI can be accessed by clicking **Enable new UI**. This is a [beta version](/releasenotes/release-status/).
 
 ### December 5, 2019
 
