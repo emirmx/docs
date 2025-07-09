@@ -22,7 +22,7 @@ We support running on Windows locally, or locally virtualized.
 Studio Pro 10.7 and above can run in beta mode on an ARM Mac and Intel Mac running macOS Sonoma 14.0 and above. For information on known limitation, see the [Known Limitations for Mac](#mac-limitations) section below. 
 
 {{% alert color="info" %}}
-While Studio Pro on Mac is in [public beta](/releasenotes/beta-features/), Mendix can only verify support for the latest macOS version available. Support for earlier versions is not guaranteed and it is best to update macOS to the newest version when using Studio Pro. 
+While Studio Pro on Mac is in [public beta](/releasenotes/release-status/), Mendix can only verify support for the latest macOS version available. Support for earlier versions is not guaranteed and it is best to update macOS to the newest version when using Studio Pro. 
 {{% /alert %}}
 
 {{% alert color="warning" %}}
