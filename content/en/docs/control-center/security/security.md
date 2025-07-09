@@ -96,7 +96,7 @@ As a result, the overview of [Mendix Admins](/control-center/company-settings/#m
 
 #### Onboarding Prerequisites
 
-Before requesting onboarding for the IdP-managed Mendix Admins feature, please ensure the following prerequisites are met:
+Before you request to be onboarded to the IdP-managed Mendix Admins feature, please ensure the following prerequisites are met:
 
 1. A Premium platform license to use this feature.
 2. An active SSO or BYO-IdP configuration as per [how to Set Up an SSO (BYOIDP)](/control-center/security/set-up-sso-byoidp/).
