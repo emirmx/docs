@@ -25,13 +25,16 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 #### New Features
 
-* In [Epics](/developerportal/project-management/epics/) You can now view the details of linked Feedback
-* Improved the flow of Maia when refining stories
-* Added lazy loading when opeining the planning page
+* In [Epics](/developerportal/project-management/epics/), you can now view the details of linked feedback.
+* We have implemented lazy loading when opening the [Planning](/developerportal/project-management/epics/planning/) page.
+
+#### Improvements
+
+* We have improved the flow used by Maia when refining stories.
 
 #### Fixes
 
-* Fixed a bug where in certain cases a PATCH operation on stories would result in a 500 error
+* We have fixed an issue which caused the `PATCH` operation on the `stories` endpoint in the [Epics API](/apidocs-mxsdk/apidocs/epics-api/) to result in a `500` error in certain scenarios.
 
 ### July 8, 2025
 
