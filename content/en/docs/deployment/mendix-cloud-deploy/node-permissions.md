@@ -50,13 +50,7 @@ To access the node permissions, do the following:
 
 1. Click **Environments** for your app.
 2. Switch to the **Permissions** tab.
-
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/node-permissions/permissions-tab.png" >}}
-
 3. From the drop-down list in the upper-right corner, select the environment for which you want to change permissions.
-
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/node-permissions/change-environments.png" alt="" width=25% class="no-border" >}}
-
 4. If prompted, complete two-factor authentication.
 
 ### Permissions
