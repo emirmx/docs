@@ -90,7 +90,7 @@ The IdP-managed Mendix Admin feature is currently in [Limited Availability](/rel
 Note that enabling this feature on the Mendix platform may affect your existing set of Mendix Admins. The changes will take place at login:
 
 * If a user logs in and is not a member of the Mendix-admin group in your IdP, Mendix will revoke their Mendix Admin role.
-* If a user logs in and is a member of that group in your IdP, Mendix will either assign the Mendix Admin role or retain the existing assignment.
+* If a user logs in and is a member of the Mendix-admin group in your IdP, Mendix will either assign the Mendix Admin role or retain the existing assignment.
 
 As a result, the overview of [Mendix Admins](/control-center/company-settings/#mendix-admins) will gradually synchronize with the Mendix-admin group in your IdP.
 
