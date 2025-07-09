@@ -25,8 +25,9 @@ This document describes the steps to set up a single sign-on configuration in Me
 The benefits of using BYOIDP SSO are:
 
 * **Security** – You are in control of the credentials and authentication of your platform users. You can, for example, apply password complexity rules and two-factor authentication (2FA). Users do not need to have separate credentials in the Mendix Platform to access the Mendix Portal.
-* **Access governance** – You are in control of denying access to the platform via SSO, for example when an employee has left the company or your corporate policy does not allow an employee to develop Mendix applications.
-* **Convenience** – Platform users have the convenience of SSO and don't have to manage credentials for the Mendix Platform.
+* **Access governance for platform users** – You are in control of denying access to the platform via SSO, for example when an employee has left the company or your corporate policy does not allow an employee to develop Mendix applications.
+* **Access governance for Mendix Admins** – Optionally, you can control who is a Mendix Admin on the Mendix platform using groups in your IdP, and you can synchronize that information during SSO. For more information, see [IdP-managed Mendix Admins](/control-center/security-settings/#idp-managed-mendix-admins).
+* **Convenience** – Platform users have the convenience of SSO and do not have to manage credentials for the Mendix Platform.
 
 ### Features
 
