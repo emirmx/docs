@@ -81,7 +81,7 @@ Once you have set up Single Sign-On (SSO) for the Mendix platform, you can exten
 If you want to automate the process of assigning project-level roles to project members, you can integrate the [Mendix Projects API](/apidocs-mxsdk/apidocs/projects-api/) into your IAM infrastructure.
 {{% /alert %}}
 
-You can use your IT processes and IT systems to request and approve the Mendix Admin role for certain employees and include the entitled employees in a user group in your IdP. The Mendix platform assigns or removes the Mendix Admin role from a user at the time of login, based on a group membership. When using 'IdP-managed admins', it will no longer be possible to manually assign the Mendix Admin via the Control Center application.
+You can use your IT processes and IT systems to request and approve the Mendix Admin role for certain employees, and include the entitled employees in a user group in your IdP. The Mendix platform assigns or removes the Mendix Admin role from a user at login time, based on a group membership. When using IdP-managed admins, Mendix Admins can no longer be manually assigned through the Control Center.
 
 {{% alert color="info" %}}
 The 'IdP-managed Mendix Admin' feature is currently in [Limited Availability](/releasenotes/release-status/#limited-availability) due to the lack of self-service configuration in the Control Center. As a result, it requires Mendix-assisted onboarding. To arrange onboarding, contact `jaap.francke@mendix.com`.
