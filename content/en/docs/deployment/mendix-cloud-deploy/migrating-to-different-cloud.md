@@ -74,13 +74,13 @@ Download the deployment package of your app hosted in the source node, and uploa
 To download a deployment package, follow these steps:
 
 1. From [Apps](https://sprintr.home.mendix.com), go to the **Environments** page of your app.
-2. On the [Deployment Packages tab](#deployment-packages-tab), choose your preferred deployment package.
+2. On the [Deployment Packages tab](/developerportal/deploy/environments/#deployment-packages-tab), choose your preferred deployment package.
 3. Click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) > **Download**.
 
 To upload the deployment package, follow these steps:
 
 1. From [Apps](https://sprintr.home.mendix.com), go to the **Environments** page of your app.
-2. On the [Deployment Packages tab](#deployment-packages-tab), click **Upload a Package**.
+2. On the [Deployment Packages tab](/developerportal/deploy/environments/#deployment-packages-tab), click **Upload a Package**.
 3. Browse and select the downloaded deployment package from your device.
 4. Deploy the uploaded package and confirm that it starts successfully. See [How to Deploy an App to Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/) for more details. 
 5. Stop the app so that you can upload the backup data.
