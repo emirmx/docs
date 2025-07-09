@@ -21,6 +21,18 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
+### July 10, 2025
+
+#### New Features
+
+* In [Epics](/developerportal/project-management/epics/) You can now view the details of linked Feedback
+* Improved the flow of Maia when refining stories
+* Added lazy loading when opeining the planning page
+
+#### Fixes
+
+* Fixed a bug where in certain cases a PATCH operation on stories would result in a 500 error
+
 ### July 8, 2025
 
 #### New Features
