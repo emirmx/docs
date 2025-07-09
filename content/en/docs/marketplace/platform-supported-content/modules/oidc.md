@@ -254,6 +254,12 @@ In the **Anonymous** tab of the app security settings, do the following:
 For multiple IdPs, you may have to add the *Anonymous* user role if it does not exist already.
 {{% /alert %}}
 
+
+{{% alert color="warning" %}}
+Enabling anonymous users introduces a broader attack surface. If you choose this option, follow [Mendix's guidelines](https://docs.mendix.com/howto10/security/set-up-anonymous-user-security/) on setting up anonymous user security to minimize risk.
+{{% /alert %}}
+
+
 ### Configuring Navigation{#configure-nav}
 
 The OIDC SSO module works without a specified sign-in page. Therefore, in the navigation section of your app, set **Sign-in page** (in the **Authentication** section) to *none*.
