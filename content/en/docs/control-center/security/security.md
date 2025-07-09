@@ -107,7 +107,7 @@ Before you request to be onboarded to the IdP-managed Mendix Admins feature, ple
 “roles” : “Mendix-admin”
 ```
 
-The Mendix platform is flexible to use any claim name and value.
+The Mendix platform has the flexibility of using any claim name and value.
 
 ## Security History Tab
 
