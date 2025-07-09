@@ -71,7 +71,7 @@ You can turn application data replication back on by clicking **Activate**.
 
 ### Single Sign-On Tab
 
-On the **Single Sign-On** tab, you can set up an identity federation between the Mendix Platform and your corporate identity provider. This feature is *Bring Your Own Identity Provider (BYOIDP)*, and you can find more information in [How to Set Up an SSO (BYOIDP)](/control-center/security/set-up-sso-byoidp/).
+On the **Single Sign-On** tab, you can set up an identity federation between the Mendix Platform and your corporate identity provider. This feature is called [Bring Your Own Identity Provider (BYOIDP)](/control-center/security/set-up-sso-byoidp/).
 
 ### IdP-managed Mendix Admins
 
