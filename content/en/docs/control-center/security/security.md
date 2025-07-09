@@ -75,7 +75,7 @@ On the **Single Sign-On** tab, you can set up an identity federation between the
 
 ### IdP-managed Mendix Admins
 
-Once you have set up Single Sign-On (SSO) for the Mendix platform, you can extend this Identity Provider (IdP) integration to control who is granted the Mendix Admin role. From an access management perspective, central management of privileged roles such as the Mendix Admin is a recognized best practice. This approach mitigates the risk of privilege creep, where existing Mendix admins can freely give admin rights to others without proper control.
+Once you have set up Single Sign-On (SSO) for the Mendix platform, you can extend this Identity Provider (IdP) integration to control who is granted the Mendix Admin role. From an access management perspective, central management of privileged roles, such as the Mendix Admin, is a recognized best practice. This approach mitigates the risk of privilege creep, where existing Mendix Admins can freely give admin rights to others without proper control.
 
 {{% alert color="info" %}}
 If you want to automate the process of assigning project-level roles to project members, you can integrate the [Mendix Projects API](/apidocs-mxsdk/apidocs/projects-api/) into your IAM infrastructure.
