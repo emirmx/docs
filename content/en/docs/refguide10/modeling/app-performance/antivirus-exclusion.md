@@ -16,6 +16,10 @@ If you are using Microsoft Defender, it is recommended to add the app folder to 
 
 {{< figure src="/attachments/refguide/modeling/app-performance/exclude-folder.png" class="no-border" width="300" >}}
 
+If you are using a different antivirus solution, refer to your antivirus documentation for instructions on how to add exclusions. Make sure to exclude the app folder to prevent performance issues:
+
+{{< figure src="/attachments/refguide/modeling/app-performance/antivirus-detected.png" class="no-border" width="300" >}}
+
 ### Excluding the App Folder
 
 {{% alert color="info" %}}
