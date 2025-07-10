@@ -1,7 +1,7 @@
 ---
 title: "Running the Mendix Operator in Global Mode"
 url: /developerportal/deploy/global-operator/
-description: "Describes the processes of installing and configuring the Mendix Operator in the Private Cloud in Global Mode"
+description: "Describes the processes of installing and configuring the Mendix Operator for Mendix on Kubernetes in Global Mode"
 weight: 30
 ---
 
@@ -23,7 +23,7 @@ After configuring the Global Operator namespace, you must configure the *managed
 
 To install and configure the Global Operator, perform the following steps:
 
-1. In the Private Cloud Portal, create a cluster and select **Global Installation** as the **Installation Type**.
+1. In the Mendix on Kubernetes Portal, create a cluster and select **Global Installation** as the **Installation Type**.
 
     {{< figure src="/attachments/deployment/private-cloud/global-operator/global-operator1.png" >}}
 
@@ -69,7 +69,7 @@ To install and configure the Global Operator, perform the following steps:
     kubectl -n {globalOperatorNamespace} get pods
     ```
 
-9. In the Private Cloud Portal, verify that the status of the Global Operator main namespace is *Connected*, as in the following figure:
+9. In the Mendix on Kubernetes Portal, verify that the status of the Global Operator main namespace is *Connected*, as in the following figure:
 
     {{< figure src="/attachments/deployment/private-cloud/global-operator/global-operator7.png" class="no-border" >}}
 

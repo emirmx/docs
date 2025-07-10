@@ -38,12 +38,14 @@ To create a new app and start collaborating, you can perform the following proce
 
 3. Click **Next** in the lower-right corner to go to step 2.
 
-    {{< figure src="/attachments/developerportal/create-app-step-2.png" alt="Create App Step Two" >}}
+    {{< figure src="/attachments/developerportal/create-app-step-2.png" alt="Create App Step Two" max-width=50% >}}
 
-4. Select a starter app template on which the app will be based. Some most used starter app templates are shown.
+4. Select a starter app template on which the app will be based. The most used starter app templates are displayed.    
 
-    {{% alert color="info" %}}If you would like to choose a different starter app template than the ones shown here, click the **discover community starter apps** link at the top. This takes you to the Marketplace where you can browse through all available starter app templates and select one that suits your needs.{{% /alert %}}
-
+    Some templates offer multiple versions for you to choose from, which are displayed as selectable options. By default, the stable version is pre-selected.    
+    
+    If you want to choose a different starter app template than the ones displayed, click the **discover community starter apps** link at the top. This takes you to the Marketplace, where you can browse through all available starter app templates and select one that suits your needs.
+    
 5. After selecting a starter app template, click **Create App**. Based on the starter app template you selected, it can take some time to set up the app, its repository, and access to the collaboration tools. After it is completed, the app is created.
 
 ## My Apps {#my-apps}

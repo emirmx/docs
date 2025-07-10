@@ -9,7 +9,11 @@ restapi: true
 
 ## Introduction
 
-The Mendix Projects API allows you to create, edit or delete your projects.
+The Mendix Projects API allows you to create, edit or delete your projects. It also allows you to manage members of those projects and assign project roles, such as Scrum Master.
+
+{{% alert color="warning" %}}
+If you want to automate the process of assigning the more coarse-grained Mendix Admin role, you can do so by configuring [Single Sign-On (SSO) to the platform (also known as BYOIdP)](/control-center/security/set-up-sso-byoidp/) and enabling the [IdP-managed Mendix Admins](/control-center/security-settings/#idp-managed-mendix-admins) feature.
+{{% /alert %}}
 
 ## Authentication {#authentication}
 
