@@ -24,7 +24,7 @@ The [PDF Document Generation](https://marketplace.mendix.com/link/component/2115
 
     * [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/)
     * [Mendix Cloud Dedicated](/developerportal/deploy/mendix-cloud-deploy/)
-    * [Mendix for Private Cloud Connected](/developerportal/deploy/private-cloud/)
+    * [Mendix on Kubernetes Connected](/developerportal/deploy/private-cloud/)
     * [On-Premises](/developerportal/deploy/on-premises-design/)
     * A privately hosted Docker containerized PDF Document Generation service. It is available starting with module versions 1.11.0 for Studio Pro 9 and 2.1.0 for Studio Pro 10. For more information, refer to [Private PDF Document Generation Service](/appstore/modules/private-document-generation-service/).
     {{% alert color="info" %}}We only support apps that allow bi-directional communication with the PDF Service in Mendix Cloud for all deployment types except for on-premises, and for the [Private PDF Document Generation Service](/appstore/modules/private-document-generation-service/).{{% /alert %}}
@@ -70,7 +70,7 @@ Follow the instructions in [How to Use Marketplace Content](/appstore/use-conten
     1. [Running on Mendix Cloud](#run-on-mendix-cloud) using the PDF service in the Mendix Public Platform. This option is available for apps that are deployed to the following environments:
         * [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/)
         * [Mendix Cloud Dedicated](/developerportal/deploy/mendix-cloud-deploy/)
-        * [Mendix for Private Cloud Connected](/developerportal/deploy/private-cloud/)
+        * [Mendix on Kubernetes Connected](/developerportal/deploy/private-cloud/)
 
     2. [Running On-Premises](#run-on-premises) using a local version of the PDF service. This option is available for apps that are deployed to the following environments:
         * [Microsoft Windows](/developerportal/deploy/deploy-mendix-on-microsoft-windows/)
@@ -100,7 +100,7 @@ To allow the module to send and receive document generation requests on your Men
 
 1. If your app is deployed on Mendix Cloud or Mendix Cloud Dedicated, [enable the DocGen request handler.]{#enable-docgen}
 
-   {{% alert color="info" %}}This step is required only for licensed apps on Mendix Cloud or Mendix Cloud Dedicated. If your app is deployed on [Mendix for Private Cloud Connected](/developerportal/deploy/private-cloud/), skip this step and make sure that the */docgen/* path is accessible.{{% /alert %}}
+   {{% alert color="info" %}}This step is required only for licensed apps on Mendix Cloud or Mendix Cloud Dedicated. If your app is deployed on [Mendix on Kubernetes Connected](/developerportal/deploy/private-cloud/), skip this step and make sure that the */docgen/* path is accessible.{{% /alert %}}
 
 2. [Register your app environments.](#register-app)
 3. If your app is configured to restrict access based on IP address, [add the IP addresses used by the DocGen service to the list of allowed addresses.](#allow-ip)
