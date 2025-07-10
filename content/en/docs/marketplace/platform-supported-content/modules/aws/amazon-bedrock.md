@@ -221,7 +221,7 @@ Some capabilities of the chat completions operations are currently only availabl
 
 **Function calling microflows**: A microflow used as a tool for function calling must satisfy the following conditions:
 
-1. One input parameter of type String or no input parameter.
+1. None, a single or multiple primitive input parameters, such as Boolean, Datetime, Decimal, Enumeration, Integer and String and/or the [Request](/appstore/modules/genai/genai-for-mx/commons/#request) and/or [Tool](/appstore/modules/genai/genai-for-mx/commons/#tool) object.
 2. Return value of type String.
 
 * **Vision** - This operation supports the *vision* capability for [supported models](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html). With vision, you can send image prompts, in addition to the traditional text prompts. You can use vision by adding a `FileCollection` with a `File` to the `Message` using the [Files: Initialize Collection with File](/appstore/modules/genai/genai-for-mx/commons/#initialize-filecollection) or the [Files: Add to Collection](/appstore/modules/genai/genai-for-mx/commons/#add-file-to-collection) operation. Make sure to set the `FileType` attribute to **image**.
