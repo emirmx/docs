@@ -9,7 +9,7 @@ weight: 20
 
 This how-to takes you through the process of deploying a Docker image of your Mendix app to [Minikube](https://kubernetes.io/docs/getting-started-guides/minikube/), a local version of [Kubernetes](https://kubernetes.io/docs/home/) which runs in a Windows container or virtual machine. Many of the operations you perform on Minikube are the same as those on a hosted environment and it provides a low-level entry to Kubernetes. For more information, see [Installing Kubernetes with Minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/) on the Kubernetes documentation site.
 
-Kubernetes is a standard container orchestration platform supported by Mendix. For details on supported version of Kubernetes see [Mendix System Requirements](/refguide/system-requirements/). When publishing to your cloud infrastructure, Mendix suggests you use [Mendix for Private Cloud](/developerportal/deploy/private-cloud/) to deploy Mendix apps to Kubernetes as this provides you with integration with the Mendix Portal and takes away much of the heavy lifting. 
+Kubernetes is a standard container orchestration platform supported by Mendix. For details on supported version of Kubernetes see [Mendix System Requirements](/refguide/system-requirements/). When publishing to your cloud infrastructure, Mendix suggests you use [Mendix on Kubernetes](/developerportal/deploy/private-cloud/) to deploy Mendix apps to Kubernetes as this provides you with integration with the Mendix Portal and takes away much of the heavy lifting. 
 
 This how-to teaches you how to do the following:
 
@@ -18,7 +18,7 @@ This how-to teaches you how to do the following:
 * Attach persistence storage to the app container
 
 {{% alert color="warning" %}}
-Do not use these instructions if you are using Mendix for Private Cloud — Mendix for Private Cloud performs many of the steps here for you. If deploying using Mendix for Private Cloud, follow the instructions in the [Mendix for Private Cloud](/developerportal/deploy/private-cloud/) documentation.
+Do not use these instructions if you are using Mendix on Kubernetes — Mendix on Kubernetes performs many of the steps here for you. If deploying using Mendix on Kubernetes, follow the instructions in the [Mendix on Kubernetes](/developerportal/deploy/private-cloud/) documentation.
 {{% /alert %}}
 
 ## Prerequisites

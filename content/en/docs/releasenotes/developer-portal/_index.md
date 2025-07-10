@@ -21,6 +21,12 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
+### July 8, 2025
+
+#### New Features
+
+* When creating a new project using the Blank App starter app, you can now choose between the [Latest, MTS, or LTS version](/releasenotes/studio-pro/lts-mts/).
+
 ### June 19, 2025
 
 #### New Features
@@ -243,7 +249,7 @@ It is turned off by default. Scrum Master can switch it on in the Project Manage
 
 #### New Features
 
-* We have launched the beta version of Software Composition, which provides visibility into component dependencies for every Mendix application environment. You can access the feature in [Control Center](/control-center/software-composition/) and [Apps navigation pane](/developerportal/deploy/software-composition/). This feature is available for select Studio Pro versions for free and licensed applications deployed on Mendix Public Cloud and Mendix for Private Cloud.
+* We have launched the beta version of Software Composition, which provides visibility into component dependencies for every Mendix application environment. You can access the feature in [Control Center](/control-center/software-composition/) and [Apps navigation pane](/developerportal/deploy/software-composition/). This feature is available for select Studio Pro versions for free and licensed applications deployed on Mendix Public Cloud and Mendix on Kubernetes.
 
 #### Improvements
 
