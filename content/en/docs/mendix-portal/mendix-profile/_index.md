@@ -1,19 +1,20 @@
 ---
 title: "Mendix Profile"
-url: /community-tools/mendix-profile/
-weight: 2
+url: /mendix-profile/
+weight: 4
 description: "Describes the personal profile page of the Mendix Portal."
 #To update these screenshots, you can log in with credentials detailed in How to Update Screenshots Using Team Apps.
 aliases:
     - /developerportal/community-tools/mendix-profile/
+    - /community-tools/mendix-profile/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-Your Mendix Profile is your main point of contact with members of the Mendix community. It displays your activities on the Mendix Platform and details about your background. To get more involved in the Mendix community, your profile is the best place to start. 
+Your Mendix Profile displays your activities on the Mendix Platform and includes details about your background. 
 
-You can access your Mendix profile by clicking your picture in the upper-right corner of any page in the Mendix Portal (for example, [Apps](https://sprintr.home.mendix.com/), the [Mendix Marketplace](https://marketplace.mendix.com/),[Control Center](https://controlcenter.mendix.com/)) and then selecting **See Your Profile**. 
+You can access your Mendix profile by clicking your picture in the upper-right corner of the Mendix Portal, then selecting **See Your Profile**. 
 
 {{% alert color="info" %}}
 By default, any newly created Mendix account comes with its own Mendix Profile.
@@ -23,7 +24,7 @@ By default, any newly created Mendix account comes with its own Mendix Profile.
 
 Your profile header displays a quick overview of information about you. Your Mendix experience in level and points, your number of [credits](#challenges), and your number of [connections](#connections) are all found here. You can also select up to four featured [badges](#badges) to display your progress on the Mendix Platform. If you have a certificate from the Mendix [Academy](https://academy.mendix.com), this will also be displayed. The **Personal Info** card presents other information.
 
-You can [edit your Mendix profile](/community-tools/mendix-profile/user-settings/) by clicking the settings ({{% icon name="cog" %}}) icon on the upper-right corner.
+You can [edit your Mendix profile](/mendix-profile/user-settings/) by clicking the settings ({{% icon name="cog" %}}) icon on the upper-right corner.
 
 ## Overview and Stats
 
