@@ -6,15 +6,22 @@ description: "Describes the Board page in Epics. This page looks different, depe
 ---
 ## Introduction
 
-The **Board** page gives an overview of all the stories that your team is currently working on. The stories are groups in different swimlanes based on their status.
+The **Board** page gives an overview of all the stories that your team is currently working on. The stories are grouped in swimlanes based on their status.
 
-On the upper-right corner of the page, you can find the following items:
+In the upper-right corner of the page, you can find the following items:
 
-* **Create Story** – Clicking this enables you to create a new story.
+* **Create Story** – Enables you to create a new story.    
+    You can also use **Maia Create User Story**, an AI-assisted tool, to create a user story for you. To access it, click **Create Story**, then choose the **Create with Maia** option.    
+    Note that this option is disabled by default. To enable it, open the **Settings** by clicking the **...** button next to **Create Story**, then, on the **Mendix AI Assistance** tab, toggle the option on. Only Scrum Masters can modify this setting.
 
-    {{% alert color="info" %}}You can also use **Maia Create User Story**, an AI-assisted tool, to create a user story for you. To access it, click **Create Story**, the option to **Create with Maia** appears at the left side of **Create Story**. It is disabled by default. To enable it, open the **Settings** by clicking the **...** next to **Create Story** and toggle the **Maia Assistance** option on. Note that only Scrum Masters can modify this setting.{{% /alert %}}
+* **Create Epic** – Enables you to create a new epic.
 
-* **Create Epic** – Clicking this enables you to create a new epic.
+* **Settings** — Enables you to configure board settings, as follows:
+
+    * Configure tags.
+    * Switch between the Scrum and Kanban board types.
+    * Configure toast notifications.
+    * Choose whether to use Maia in Epics.
   
 * Search box – You can search stories based on story title, tags, epic name, assignee (including unassigned stories), and story ID. You can use the search box in combination with the filter.
 
