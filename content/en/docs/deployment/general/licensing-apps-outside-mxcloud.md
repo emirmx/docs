@@ -121,7 +121,7 @@ To activate a license on your app running on Kubernetes, you need the license cr
 
 Two additional environment variables, `LICENSE_ID` and `LICENSE_KEY`, need to be set to the values of the **LicenseId** and **LicenseKey** provided by Mendix Support. To do this, add them to the deployment command for your app.
 
-For full instructions on how to do this and how to supply the keys using a **Secrets** file, see the [Deploying the Application](/developerportal/deploy/run-mendix-on-kubernetes/#deploy) section of *Use Docker with Minikube*.
+For full instructions on how to do this and how to supply the keys using a **Secrets** file, see the [Deploying the Application](/developerportal/deploy/run-mendix-on-minikube/#deploy) section of *Use Docker with Minikube*.
 
 ### Windows Server
 
