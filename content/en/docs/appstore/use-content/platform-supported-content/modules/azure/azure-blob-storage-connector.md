@@ -40,13 +40,22 @@ After you install the connector, you can find it in the **App Explorer**, in the
 
 ### Configuring Authentication {#authentication}
 
-In order to use the Azure Blob Storage service, you must authenticate using a Shared Access Signature (SAS) or an Azure Entra ID Access Token.
+To interact with Azure Blob Storage, authentication can be performed using either a Shared Access Signature (SAS) or an Azure Entra ID Access Token.
 
 #### SAS authorization
-You or your admin needs to create a SAS for the container or blob you want to perform operations on. This SAS should then be added to a `SASCredentials` object on the `SASToken` attribute. Feed the `SASCredentials` object to the `AbstractCredentials` input parameter of the operation microflow you want to use.
+A Shared Access Signature (SAS) provides secure, delegated access to resources in your storage account. Follow these steps:
+
+1. Have your administrator generate a SAS for the target container or blob
+2. Create a `SASCredentials` object and populate its `SASToken` attribute
+3. Pass the `SASCredentials` object to the `AbstractCredentials` parameter in your operation microflow
 
 #### Azure Entra ID Access Token
-Set up SSO using the OIDC SSO marketplace module. When this is set up for your application you can use the `GetCurrentToken` microflow to get the access token needed for authenticationg the call. Create an `EntraCredentials` object and add the access token to the `BearerToken` attribute. Feed the `EntraCredentials` object to the `AbstractCredentials` input parameter of the operation microflow you want to use.
+For Azure Entra ID authentication:
+
+1. Configure Single Sign-On (SSO) using the `OIDC SSO` marketplace module
+2. Utilize the `GetCurrentToken` microflow to obtain the required access token
+3. Create an `EntraCredentials` object and set its `BearerToken` attribute
+4. Supply the `EntraCredentials` object to the `AbstractCredentials` parameter in your operation microflow
 
 ### Configuring a Microflow for an AWS Service
 
@@ -55,19 +64,26 @@ You can implement the operations of the connector by using them in microflows. F
 1. In the **App Explorer**, right-click on the name of your module, and then click **Add microflow**.
 2. Enter a name for your microflow, for example, *ACT_PutBlob*, and then click **OK**.
 3. In the **App Explorer**, in the **AzureBlobStorageConnector** section, find the **PUT_v1_Azure_PutBlob** operation microflow.
-4. Create a **SASCredentials** or **EntrCredentials** object and add the SAS or access token to the **SASToken** or **BearerToken** attributes respectively. 
+4. Create a **SASCredentials** or **EntrCredentials** object and add the SAS or access token to the **SASToken** or **BearerToken** attribute. 
 5. Drag the **PUT_v1_Azure_PutBlob** microflow in to your microflow.
 6. Double-click the **PUT_v1_Azure_PutBlob** operation to configure the required parameters. 
     
     For the `PUT_v1_Azure_PutBlob` operation, retrieve the `System.FileDocument` you want to store and provide a configured `SASCredentials` or `EntrCredentials` object. You must then create a `PutBlobRequest` object in your microflow as the last parameter. This entity requires the following parameters:
 
-    * `BlobName` - The BlobName attribute holds the name the blob will get in the Blob storage.
-    * `ContainerName` - The ContainerName attribute holds the target container name where the blob will be stored.
-    * `BlobType` - The BlobType attribute holds the type of blob that will be created. For now we only support the BlockBlob option.
+    | Parameter | Description | Required |
+    |-----------|-------------|----------|
+    | `StorageAccount` | Storage account name you want to perform Blob storage operations on | Yes |
+    | `VersionAPI` | API version for the Azure Storage service (e.g., '2021-04-01') | Yes |
+    | `BlobName` | Desired name for the blob in storage | Yes |
+    | `ContainerName` | Target container for blob storage | Yes |
+    | `BlobType` | Type of blob (currently supports BlockBlob only) | Yes |
 
     The following parameters are optional:
-    * `ContentType` - Optional. The ContentType attribute can be used to specify the MIME content type of the blob. The default type is application/octet-stream.
-    * `StorageType` - Optional. The StorageType attribute specifies the storage tier to be set on the blob. For page blobs on a Premium Storage account only with version 2017-04-17 and later. For a full list of page blob-supported tiers, see https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types#premium-ssd. For block blobs, supported on blob storage or general purpose v2 accounts only with version 2018-11-09 and later. Valid values for block blob tiers are Hot, Cool, Cold, and Archive. Note: Cold tier is supported for version 2021-12-02 and later. For detailed information about block blob tiering, see https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview.
+
+    | Parameter | Description | Default |
+    |-----------|-------------|----------|
+    | `ContentType` | MIME content type specification | application/octet-stream |
+    | `StorageType` | Storage tier configuration | Varies by blob type |
     
 9. Configure a method to trigger the `ACT_PutBlob` microflow. 
     For example, you can call the microflow with a custom button on a page in your app. For an example of how this can be implemented, see [Creating a Custom Save Button with a Microflow](/refguide/creating-a-custom-save-button/).
