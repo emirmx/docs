@@ -26,7 +26,7 @@ To be able to see the software composition information, make sure that you meet 
 
 * Software composition visibility is only possible for deployment packages created via the platform services. It is not available if you manually upload the locally-created deployment package. SBOMs are created behind the scenes for each deployment package. For more information, see [Create Deployment Package](/refguide/create-deployment-package-dialog/).
 
-* You must be using free or licensed Mendix Cloud or Mendix Cloud Dedicated, or Mendix for Private Cloud. 
+* You must be using free or licensed Mendix Cloud or Mendix Cloud Dedicated, or Mendix on Kubernetes. 
 
 * If your deployment package was deployed before June 14, 2024, you must create and deploy a new deployment package in order to get the software composition information populated on this page.
 
@@ -60,7 +60,7 @@ The list contains the following information:
 * **Target Cloud** – This shows the type of the cloud where the deployment package is deployed. Currently, the following types of cloud are supported:
     * Mendix Free Cloud
     * Mendix Cloud (including Mendix Cloud Dedicated)
-    * Private Cloud (connected)
+    * Mendix on Kubernetes (connected)
 * Column customization ({{% icon name="view" %}}) – You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and adjusting the selection of the check boxes.
 * **View details** – Click this opens the [Component Summary](#component-summary) page, if it is available. The **View details** button is grayed out when an SBOM is not available for the selected application environment. Ensure you are on a compatible runtime version and create a new deployment package in order to get component visibility here.
 

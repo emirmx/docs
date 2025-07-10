@@ -243,7 +243,7 @@ Before activating BYOIDP, your developers should set up PATs for direct access t
 If developers have not created a PAT before BYOIDP SSO is activated, they can do so later, if needed.
 
 {{% alert color="info" %}}
-Access to Team Server through other mechanisms, such as via Studio Pro or using Mendix for Private Cloud, is not affected.
+Access to Team Server through other mechanisms, such as via Studio Pro or using Mendix on Kubernetes, is not affected.
 {{% /alert %}}
 
 ### Changing the Client Secret {#client-secret}
