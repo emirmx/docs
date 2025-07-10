@@ -1,12 +1,12 @@
 ---
-title: "Mendix on Kubernetes (Previously Mendix for Private Cloud) Release Notes"
+title: "Mendix on Kubernetes Release Notes"
 linktitle: "Mendix on Kubernetes"
 url: /releasenotes/developer-portal/mendix-for-private-cloud/
 weight: 20
 description: "Release notes for deployment using Mendix on Kubernetes"
 ---
 
-These release notes cover changes to deployment to [Mendix on Kubernetes](/developerportal/deploy/private-cloud/). There are separate release notes for other deployment targets; for more information, see the [Deployment](/releasenotes/developer-portal/deployment/) release notes page.
+These release notes cover changes to deployment to [Mendix on Kubernetes](/developerportal/deploy/private-cloud/) (previously known as Mendix for Private Cloud). There are separate release notes for other deployment targets; for more information, see the [Deployment](/releasenotes/developer-portal/deployment/) release notes page.
 
 For information on the current status of deployment to Mendix on Kubernetes and any planned releases, see [Mendix Status](https://status.mendix.com/).
 
