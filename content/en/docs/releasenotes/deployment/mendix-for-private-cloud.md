@@ -20,7 +20,7 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 #### Prometheus Metrics
 
-* We have improved environment dropdown selections in the [Grafana dashboard](/developerportal/deploy/private-cloud-monitor/#import-dashboard) to show Mendix app enviornments as soon as possible. If an environment needs some time to start, it will now appear in the dropdown, and partial metrics will be available until the app is fully started.
+* We have improved environment dropdown selections in the [Grafana dashboard](/developerportal/deploy/private-cloud-monitor/#import-dashboard) to show Mendix app enviornments as soon as possible. If an environment needs some time to start, it now appears in the dropdown, and partial metrics are available until the app is fully started.
 * We have updated instructions to work with version 2.10.2 of the `loki-stack` Helm chart.
 
 ### July 3, 2025
