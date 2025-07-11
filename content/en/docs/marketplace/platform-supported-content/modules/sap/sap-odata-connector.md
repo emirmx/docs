@@ -145,6 +145,30 @@ You can run OData actions asynchronously by using the [Mendix Task Queue](/refgu
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/sap-odata-connector/task-queue.png" class="no-border" >}}
 
+#### Batch Processing
+
+The SAP OData connector supports batch processing, which allows you to combine multiple operations, such as GET, CREATE, DELETE, UPDATE, and UPDATE_PATCH, into a single HTTP POST request.
+
+This reduces the number of service calls and improves performance, especially when handling multiple entity operations as a part of a same logical unit of work. SAP recommends using batch processing when operations are interdependent or must be processed as a group.  
+
+To execute a batch process, follow the steps below in sequence using batch actions from SAP OData connector.
+
+1. Initiate the batch processing by creating a batch context using **Initialize Batch Context** action. This sets up a temporary scope where multiple operations can be grouped together before execution.
+
+2. Add one or more batch operations to the batch context using **Add Batch Operation** action. Each operation can be a GET, CREATE, UPDATE, DELETE, or UPDATE_PATCH.
+
+3. After all operations have been added to the batch context, trigger the batch request to send all grouped operations in a single HTTP POST using **Invoke Batch**. This executes the batch.
+
+4. Once the batch call is executed, you can parse the batch response to retrieve individual responses for each operation using **Fetch Batch Responses** actions. According to the operation/query, you can use *Single* or *List* option.
+
+{{% alert color="info" %}}
+The batch processing solution is currently limited to OData V2.
+{{% /alert %}}
+
+When using batch processing with the OData connector, you must generate the SAP model for the service using the [SAP Model Creator](https://sap-model-creator.home.mendix.com/index.html). This process adds a new module to the Mendix project that lists all entities associated with the OData service.
+
+For more information, see the Batch Processing Actions section below.
+
 ## Troubleshooting
 
 If you encounter any issues while using the OData Connector for SAP solutions, use the following troubleshooting tips to help you solve them.
@@ -554,6 +578,87 @@ This creates a **CloudConnectorInfo** object and fills the values for **ProxyHos
 {{% alert color="warning" %}}
 If your app is not running on SAP BTP, this action will throw an error.
 {{% /alert %}}
+
+#### Batch Processing Actions
+
+You need the following actions to run the batch processing using OData Connector.
+
+##### Initialize Batch Context
+
+You need to initialize a batch context for every batch call, via a new action, Initialize Batch Context. 
+
+* Input
+
+Enable change set – When set to `true`, all consecutive write operations are included in a common change set. The default is `false`.
+
+* Output
+
+    * Return Type – SAPODataConnector.BatchContext
+    * Object name: The name of an object you set during activity initialization.
+
+##### Add Batch Operation
+
+You can include one or more of the GET, CREATE, DELETE, UPDATE (PUT), and UPDATE (PATCH) actions in the batch processing. For more details on these actions, refer to the [Entity and Attribute Manipulation](/appstore/modules/sap/sap-odata-connector/#EntityManipulation) section above:
+
+Use the Add Batch Operation action to add any of the above operations to the BatchContext.
+
+* Input
+
+    * Batch Context – The object created during the initialization of the batch context. See the section above for details.
+    * Operation Type – Select the type of operation to perform (e.g., GET, CREATE, UPDATE, DELETE, PATCH).
+    * Query – The OData query required for the operation (excluding the service URL).
+    * OData Object – This refers to the OData entity object used specifically for CREATE and UPDATE operations. It should be a generalization of the `ODataObject` entity.
+    
+* Output
+
+    * Return Type – String 
+    * Variable Name – The name you want to assign to the output string variable.
+
+The **Add Batch Operation** action appends an operation to the request body within the `BatchContext` and returns an `OperationID` associated with that operation. This Operation ID will be later used to fetch from the batch response.
+
+#####  Invoke Batch
+
+After all operations are added, use the **Invoke Batch** action to perform the batch request.
+
+* Input
+
+    * Batch context - The object created during the initialization of the batch context. See the section above for details.
+
+    * Service url – The URL of the OData service. This is optional if a destination is provided.
+
+    * Destination – The OData destination endpoint object, typically retrieved using the Get Destination action.
+
+    * Request parameters – Request parameters to control the request
+
+* Output
+
+    * Return type – List of SAPODataConnector.BatchResponse
+
+    * List name – Name of the batch response list 
+
+##### Fetch Batch Response
+
+The Invoke Batch action returns a list of BatchResponse objects, each containing the raw response for a corresponding batch operation.
+
+To retrieve the response as a specific OData entity (or list of entities), use the Fetch Batch Response action. This action takes the entity (or list) associated with a batch operation and extracts the relevant response.
+
+The result of the Fetch Batch Response may be either a single object or a list, depending on the action you choose below to fetch the batch response.
+
+* Fetch_Batch_Response_List
+* Fetch_Batch_Response_Single
+
+* Input
+
+    * Batch context - The object created during the initialization of the batch context. See the section above for details.
+
+    * Batch operation id – The ID of the batch operation, returned by the Add Batch Operation action. Also present in the BatchResponse entity from the Invoke Batch action.
+
+    * Response type – The type of OData object expected in the response.
+
+* Output
+
+    * Return type -  Response Type provided in the input.
+    * List name or Object name – The name to assign to the returned list or single object, depending on the return type.
 
 ### Parameters {#parameters}
 
