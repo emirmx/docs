@@ -19,7 +19,7 @@ Using a secret storage incorrectly may reduce the security of your app. Consult 
 
 ### Prerequisites {#prerequisites}
 
-Private Mendix Platform depends on Mendix for Private Cloud for the installation and deployment of Mendix apps.
+Private Mendix Platform depends on Mendix on Kubernetes for the installation and deployment of Mendix apps.
 
 Before starting the installation process, make sure that you have all the necessary prerequisites:
 

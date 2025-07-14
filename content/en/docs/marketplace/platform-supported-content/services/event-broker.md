@@ -93,7 +93,7 @@ From here, you can manage the default access settings:
 ## Mendix Event Broker Bridges {#manage-mx-broker-bridge}
 
 {{% alert color="warning" %}}
-This feature is currently in [Private Beta](/releasenotes/beta-features/). Contact your Customer Success Manager or Account Manager for further assistance.
+This feature is currently in [Private Beta](/releasenotes/release-status/). Contact your Customer Success Manager or Account Manager for further assistance.
 {{% /alert %}}
 
 Mendix Event Broker Bridges facilitate integration between the Mendix Event Broker and external technologies, such as AWS SQS and HTTP. These bridges enable the exchange of events between your Mendix Cloud environment and external systems, ensuring efficient communication across diverse technological landscapes.

@@ -10,7 +10,7 @@ description: "Describes how to change your plan in Mendix Cloud."
 ---
 
 {{% alert color="warning" %}}
-This feature is in Public Beta. For more information, see [Beta Releases](/releasenotes/beta-features/).
+This feature is in Public Beta. For more information, see [Release Status](/releasenotes/release-status/).
 {{% /alert %}}
 
 ## Introduction
@@ -34,7 +34,6 @@ Before requesting a plan change, verify the following:
 {{% alert color="info" %}}
 Changing your app environment's plan does not change the additional storage attached to it. To change the additional storage, you must request an [environment resize](/support/new-app-node-request-template/#resize) through [Mendix Support](https://support.mendix.com/).
 {{% /alert %}}
-
 
 ## Changing a Plan {#changing-plan}
 

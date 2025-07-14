@@ -55,7 +55,7 @@ The Mendix SSO module has the following limitations:
 
 Your app has to be deployed on Mendix Cloud in order to use this module. Mendix SSO is only activated when your app is deployed to Mendix Cloud.
 
-When you run your app locally, you will need to use local credentials. If it is deployed to a different cloud platform (for example, [Mendix for Private Cloud](/developerportal/deploy/private-cloud/) or [SAP BTP](/developerportal/deploy/sap-cloud-platform/)), you can use the Mendix [Administration](/appstore/modules/administration/) module, or connect to a central IdP using [OIDC SSO](/appstore/modules/oidc/) or [SAML](/appstore/modules/saml/).
+When you run your app locally, you will need to use local credentials. If it is deployed to a different cloud platform (for example, [Mendix on Kubernetes](/developerportal/deploy/private-cloud/) or [SAP BTP](/developerportal/deploy/sap-cloud-platform/)), you can use the Mendix [Administration](/appstore/modules/administration/) module, or connect to a central IdP using [OIDC SSO](/appstore/modules/oidc/) or [SAML](/appstore/modules/saml/).
 
 ## Installation and Configuration
 

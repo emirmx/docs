@@ -54,4 +54,4 @@ These release notes cover changes to the [Extensibility API for C# Developers](/
 
 ## Version 10.12.0
 
-* The first [beta](/releasenotes/beta-features/) release of the Extensibility API.
+* The first [beta](/releasenotes/release-status/) release of the Extensibility API.

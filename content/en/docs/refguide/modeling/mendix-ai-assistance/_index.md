@@ -56,7 +56,7 @@ Generators:
 
 ## Maia in Mendix Portal
 
-Various Maia features are available in Mendix Portal. For more information, see the [Maia in Mendix Portal](/developerportal/global-navigation/#maia-mx-portal) section in *Global Navigation*.
+Various Maia features are available in Mendix Portal. For more information, see the [Maia in Mendix Portal](/global-navigation/#maia-mx-portal) section in *Global Navigation*.
 
 ## Maia Third-Party Services {#maia-third-party-services}
 
