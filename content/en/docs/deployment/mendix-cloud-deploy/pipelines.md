@@ -7,7 +7,7 @@ description: "Describes how to design, implement, and review pipelines using the
 
 ## Introduction
 
-From the **Pipelines** page, you can set up automated build, test, and deployment pipelines for your app. Once you have designed and activated a pipeline, you can use it for automated, zero-click builds, testing and deployments. Each pipeline runs automatically according to the trigger conditions defined in your [Start Pipeline step](#pipeline-steps).
+From the **Pipelines** page, once you have designed and activated a pipeline, you can use it for automated, zero-click builds, testing and deploying your apps. Each pipeline runs automatically according to the trigger conditions defined in your [Start Pipeline](#pipeline-steps) step.
 
 To access the **Pipelines** page, open your app in [Apps](https://sprintr.home.mendix.com/). Then select **Pipelines** in the navigation pane. (To view this page, you must have a [role](/developerportal/general/team/) with cloud access.)
 
@@ -21,19 +21,17 @@ You need to configure your user settings so that you can run a pipeline for the 
 
 ## The Runs Tab{#runs-tab}
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/pipelines/runs_tab.png" alt="" >}}
-
 For each run, you can view the following information:
 
-* Status – Whether the run succeeded, failed, or is in progress
-* Run ID – The unique identifier of the run
-* Pipeline ID – The unique identifier of the pipeline design used for the run (column hidden by default)
-* Branch – The branch, if **Teamserver push (Git)** was used as the pipeline's trigger
-* Pipeline Name – The name of the pipeline design used for the run
-* Triggered by – The user who triggered the pipeline run
-* Run – The number of days since the pipeline run
-* Duration – The time the pipeline took to complete the run
-* Trigger – The trigger type for the run
+* **Status** – Whether the run succeeded, failed, or is in progress
+* **Run ID** – The unique identifier of the run
+* **Pipeline ID** – The unique identifier of the pipeline design used for the run (column hidden by default)
+* **Branch** – The branch, if **Teamserver push (Git)** was used as the pipeline's trigger
+* **Pipeline Name** – The name of the pipeline design used for the run
+* **Triggered By** – The user who triggered the pipeline run
+* **Triggered** – The number of days since the pipeline run
+* **Duration** – The time the pipeline took to complete the run
+* **Trigger Type** – The trigger type for the run
 
 Use the Column Selector ({{% icon name="view" %}}) at the top of the **Runs** table to customize which of these columns appear in the table.
 
@@ -45,11 +43,11 @@ The search and filter options allow you to review specific run types. You can do
 
 ### Run Results
 
-To see the results of a particular run, click **Results** ({{% icon name="paper-clipboard" %}}).
+To see the results of a particular run, click **Details** ({{% icon name="paper-clipboard" %}}).
 
 {{< figure src="/attachments/deployment/mendix-cloud-deploy/pipelines/run-details.png" alt="" >}}
 
-From this page, you can view an overview of the run. You can also expand each executed step to see more information about it; this is especially useful for debugging when a pipeline run fails. When you expand a step, you can also see a **View Parameters** button, which you can use to view the input and output parameters as well as the values of the step.
+This page provides an overview of the run details. You can also expand each executed step to see more information about it; this is especially useful for debugging when a pipeline run fails. When you expand a step, you can also see a **View Parameters** button, which you can use to view the input and output parameters as well as the values of the step.
 
 At the top of the page, there are several cards that display important information, such as whether the run succeeded or failed. If it failed, it includes information about the error that caused the run failure. There are two types of errors: step-level errors and system-level errors.
 
@@ -65,23 +63,21 @@ If a step fails, that step is flagged with an error icon ({{% icon name="alert-t
 
 System-level errors occur if [user settings](#configure-settings) have not been configured or if an internal Mendix component is down.
 
-If a system-level error occurs, the card in the upper-left corner of the **Results** page identifies the error that caused the run to fail. Click **See details** on the card to view more information about the error.
+If a system-level error occurs, the card in the upper-left corner of the **Details** page identifies the error that caused the run to fail. Click **See details** on the card to view more information about the error.
  
 ## The Designs Tab{#designs-tab}
-
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/pipelines/designs_tab.png" alt="" >}}
 
 On the **Designs** tab, you can see all existing pipeline designs.
 
 For each design, you can view the following information:
 
-* Pipeline Name – The name of the pipeline design
-* Trigger – The trigger type for the design
-* Branch – The branch, if **Teamserver push (Git)** is set as the design's trigger
-* Last modified by – The user who last modified the design
-* Last modified date/time – The date and time the design was last modified
-* Status – Whether the pipeline is active or inactive
-* Design ID – The unique identifier of the pipeline design
+* **Pipeline Name** – The name of the pipeline design
+* **Trigger Type** – The trigger type for the design
+* **Branch** – The branch, if **Teamserver push (Git)** is set as the design's trigger
+* **Last modified By** – The user who last modified the design
+* **Last modified** – The date and time the design was last modified
+* **Status** – Whether the pipeline is active or inactive
+* **Design ID** – The unique identifier of the pipeline design
 
 Click **Copy ID** ({{% icon name="copy" %}}) on a pipeline design to copy the design ID.
 
@@ -95,16 +91,16 @@ If you delete a pipeline design in the **Designs** tab, any run history associat
 
 ### Designing a New Pipeline{#design-pipeline}
 
-To design a new pipeline, click **Design a Pipeline** from any tab. That launches the **Design a Pipeline** dialog box. You can choose to start from a template pipeline or an empty pipeline.
+To design a new pipeline, click **Design a Pipeline** from any tab. That launches the **Design a Pipeline** dialog box. You can choose to start from a **Template Pipeline** or an **Empty Pipeline**.
 
 {{% alert color="info" %}}
 If you start from the template, you can still add, remove, and configure its steps to match your needs; it is just intended to help you get started quickly. The template pipeline is pre-populated with the following basic steps:
 
 1. Start Pipeline
-1. Checkout
-1. Build
-1. Publish
-1. Deploy
+2. Checkout
+3. Build
+4. Publish
+5. Deploy
 {{% /alert %}}
 
 Give your pipeline a name. You can use up to 40 alphanumeric characters in the name. Then click **Next** to go to your new pipeline design's **Details** page.
@@ -112,8 +108,6 @@ Give your pipeline a name. You can use up to 40 alphanumeric characters in the n
 ### Editing a Pipeline Design{#edit-pipeline}
 
 From your pipeline design's **Details** page, you can add, remove, and configure the steps in your pipeline. You can also click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) next to the pipeline name to edit the name.
-
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/pipelines/pipeline-design.png" alt="" >}}
 
 {{% alert color="info" %}}
 For pipelines that are currently running, the page shows the current state of the steps (finished, running, or not started).
@@ -155,7 +149,7 @@ Evaluate results of the [Maia Best Practice Recommender](/refguide/best-practice
 
 ##### Unit Testing{#unit-testing}
 
-[Unit Testing](/appstore/modules/unit-testing/) module can perform regression testing on an environment in which a new deployment package has been deployed. This step executes the Unit Testing module in a running environment. If any unit test fails, the pipeline will be marked as failed, with the run details and output parameters showing the failure count and relevant information. Ensure to add below prerequisites before you add the Unit Testing pipeline step:
+[Unit Testing](/appstore/modules/unit-testing/) module can perform regression testing on an environment in which a new deployment package has been deployed. This step executes the Unit Testing module in a running environment. If any unit test fails, the pipeline will be marked as failed, with the run details and output parameters showing the failure count and relevant information. Ensure to add the prerequisites below before you add the Unit Testing pipeline step:
 
 * Import the [Unit Testing](https://marketplace.mendix.com/link/component/390) module into your Mendix application from the Marketplace.
 * The environment in which Unit Testing needs to happen should be in a running state.
@@ -182,7 +176,7 @@ Create and store a backup of an existing environment before deploying a new depl
 
 ##### Deploy 
 
-Deploy to a selected environment. In this step's configuration, there is a **Use defaults for new constants** toggle that you can use to fetch the default values of new constants and scheduled events from Studio Pro and apply them to the environment. (To adjust an environment-specific configuration, see the [Environments](/developerportal/deploy/environments/) page.)
+Deploy to a selected environment. In this step's configuration, there is a **Use default values for new constants** toggle that you can use to fetch the default values of new constants and scheduled events from Studio Pro and apply them to the environment. (To adjust an environment-specific configuration, see the [Environments](/developerportal/deploy/environments/) page.)
 
 ##### Promote Package
 
@@ -192,7 +186,7 @@ Promote a deployment package from a source environment to a target environment. 
 
 If you select **Teamserver push (Git)** as the trigger in the Start Pipeline step, you need to specify the relevant branch (or branches) in the **Branch expression** field.
 
-If you want the pipeline to run when there is a push to one specific branch, you can type the name of that branch. Or, if you want to specify multiple branches, you can use an asterisk (`*`) as a wildcard in this field. The asterisk means "match zero or more of any character."
+If you want the pipeline to run when there is a push to one specific branch, you can type the name of that branch. Also, you can specify multiple branches by using an asterisk (`*`) as a wildcard in this field. The asterisk means "match zero or more of any character."
 
 Here are some examples of valid branch expressions:
 
@@ -255,15 +249,11 @@ The pipeline design's status (**Active** or **Inactive**) is displayed in the ov
 
 ## The Variables Tab{#variable-tab}
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/pipelines/variables-tab.png" alt="" >}}
-
 The **Variables** tab allows you to create user-defined pipeline variables, for example, Unit Testing Remote API Key which can be referenced in Pipeline designs for the application. It is useful when you want to use the same value in multiple pipelines or avoid storing secret credentials as plain text in your pipeline step.
 
 ### Creating a New Variable
 
 To create  a new variable, click **Create New Variable** from the **Variables** tab and open a dialog box. Enter a name for your variable in the **Name** field. The variable name must begin with a letter or underscore. (`_`) and must be unique from existing variables.
-
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/pipelines/create_variable.png" alt="" >}}
 
 Click **Save Variable** to save your variable. You can now select it in the unit testing step and in other steps that allow the use of variables in the future.
 
@@ -276,8 +266,6 @@ Select **Mask > Yes** for confidential values. It will never be printed in the l
 While editing a saved variable, selecting **Mask > No** will allow you to verify the value. Make sure to set it back to **Mask > Yes** before saving the variable.
 
 ## The Settings Tab{#settings-tab}
-
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/pipelines/the_settings_tab.png" >}}
 
 The **Settings** tab lets you configure user settings. You must add your API key and personal access token (PAT) before you can activate or run your first pipeline. If you still need to configure these user settings, the **Settings** tab is marked with an alert icon ({{% icon name="alert-circle-filled" color="red" %}}).
 
@@ -311,7 +299,7 @@ To change your API key and PAT, click **Delete** and then **Setup** to relaunch 
 
 ### Notifications
 
-If the pipeline fails, it sends a notification to the user who triggered the pipeline. The notification is sent via email or the **Notifications** ({{% icon name="alarm-bell" %}}) menu in the Mendix Portal, depending on the user's [notification settings](/community-tools/mendix-profile/user-settings/#notifications).
+If the pipeline fails, it sends a notification to the user who triggered the pipeline. The notification is sent via email or the **Notifications** ({{% icon name="alarm-bell" %}}) menu in the Mendix Portal, depending on the user's [notification settings](/mendix-profile/user-settings/#notifications).
 
 {{% alert color="warning" %}}
 Pipeline failure notifications only send if the user who triggered the pipeline has previously saved a pipeline or added their API key and PAT in the **Settings** tab.

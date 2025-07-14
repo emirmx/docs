@@ -35,7 +35,7 @@ The new features were divided into major themes, which are described in the sect
 | Software Composition Marketplace Outdated & Deprecated Findings | General Availability: September 2025                         |
 | Software Composition Marketplace Vulnerabilities             | General Availability: December 2025                          |
 | Policies                                                     | Public Beta: December 2025 <br/>General Availability: TBD    |
-| Optimised storage of association                             | General Availability: Mx 11.0                                |
+| Optimized storage of association                             | General Availability: Mx 11.0                                |
 | Bulk DML                                                     | General Availability: Q4 2025                             |
 | Increased decimal precision                                  | General Availability: Q4 2025                             |
 | Maia: text to OQL                                            | Public beta: Q2 2025<br/>General Availability: Q4 2025    |
@@ -44,7 +44,11 @@ The new features were divided into major themes, which are described in the sect
 | Improved OpenAPI generation for REST publish                 | Released for General Availability:                         |
 | Visual query editor for view entities                        | Currently PoC <br/>General Availability: Q4 2025          |
 | Event broker HTTP Bridge                                     | Released public beta <br/>General Availability: Q4 2025   |
-| Compass Maturity Assessment                                  | General Availability: July 28th 2025                      |
+| Compass Maturity Assessment                                  | General Availability: July 28, 2025                      |
+| IdP-managed Admins                                           | Limited Availability: July 11, 2025                      |
+| Usage of keypairs for OIDC-based SSO to Mendix apps (OIDC SSO) | General Availability: May 15, 2025                      |
+| Easy (automated) rotation of keypairs for SSO security (OIDC SSO) | General Availability: May 15, 2025                   |
+| OIDC Provider goes from Limited Availability to General Availability | General Availability: ETA July 15, 2025           |
 
 ## Agentic AI
 
@@ -66,3 +70,12 @@ The new features were divided into major themes, which are described in the sect
 | Capability or Feature | Expected Release |
 | --- | --- |
 | Mendix Workstation Client | Private beta: Release 2.0: March 14th, 2025 <br/>Release 2.1: June 13th, 2025 <br/>Release 2.2: August 1st, 2025<br/>Limited Availability:  Release 3.0 September 2025<br/>General Availability: TBD |
+
+## Deployment
+
+| Capability or Feature | Expected Release |
+| --- | --- |
+| Private Connectivity for Mendix Cloud | Limited Availability: Q4 2025 <br/>General Availability: H1 2026 |
+| Landscape configuration management for Mendix Cloud | Limited Availability: Q4 2025 <br/>General Availability: H1 2026 |
+| Zero downtime deployment on Mendix Cloud | Limited Availability: Q4 2025 <br/>General Availability: H1 2026 |
+| REST GET and POST steps for Mendix Pipelines | Limited Availability: Q4 2025 <br/>General Availability: H1 2026 |
