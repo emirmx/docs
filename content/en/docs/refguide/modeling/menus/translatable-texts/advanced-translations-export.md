@@ -10,28 +10,30 @@ weight: 60
 
 ## Using Advanced Translations Export
 
-To export languages, select **Language > Advanced Translations Export** from the main menu, and choose one of the following options:
-* **As Excel (.xlsx) file** – export translations to a Microsoft Excel (*.xlsx*) format file;
+To export languages, from the top-bar menu, select **Language > Advanced Translations Export** and choose one of the following options:
+
+* **As Excel (.xlsx) file** – export translations to a Microsoft Excel (*.xlsx*) format file
 * **As PO (.po) files** – export translations to PO (*.po*) format files.
 
 {{< figure src="/attachments/refguide/modeling/menus/translatable-texts/advanced-translations-export.png" alt="Advanced Translations Export" >}}
 
-After clicking an option, a directory selector appears. Select a directory containing you want to export the translations to.
+When you select an option, a directory selector appears. Select a directory containing the files you want to export.
 
 A pop-up will appear confirming the start of the export.
 
 ### Export as Excel
 
 Click **As Excel (*.xlsx) file** and select a directory for the export. Studio Pro will create a subdirectory named in the format `Export_{app-name}_Xlsx_{time-stamp}`. The translations will be saved as a Microsoft Excel (*.xlsx*) format file. The file will be named in the format `{app-name}-translations.xlsx` (e.g. *App-translations.xlsx*) and contain the following columns:
-* `Mendix Reference`;
-* `Module`;
-* `Document`;
-* `Path to element`;
-* `Element`;
-* `Source Text ({source_language})`;
-* `{translation_language 1}`;
+
+* `Mendix Reference`
+* `Module`
+* `Document`
+* `Path to element`
+* `Element`
+* `Source Text ({source_language})`
+* `{translation_language 1}`
 * ...
-* `{translation_language_n}`.
+* `{translation_language_n}`
 
 {{< figure src="/attachments/refguide/modeling/menus/translatable-texts/advanced-translations-excel.png" alt="Advanced Translations Export Excel" >}}
 
@@ -47,10 +49,8 @@ Click **As PO (`*.po*`) files** and select a directory for the export. Studio Pr
 The formats of the PO files for **Advanced Translations Export** and [Advanced Translations Import](/refguide/advanced-translations-import/) are similar.
 {{% /alert %}}
 
-<br>
-
 After completion, a confirmation pop-up appears. If the operation fails, a failure pop-up is displayed instead.
 
 {{% alert color="warning" %}}
-Please do not close the App while the export is running.
+Do not close the app while the export is running.
 {{% /alert %}}

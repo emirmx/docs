@@ -10,30 +10,32 @@ weight: 50
 
 ## Using Advanced Translations Import
 
-To import languages, select **Language > Advanced Translations Import** from the main menu, and choose one of the following options:
-* **From Excel (.xlsx) file** – import translations from a Microsoft Excel (*.xlsx*) format file;
+To import languages, from the top-bar menu, select **Language > Advanced Translations Import** and choose one of the following options:
+
+* **From Excel (.xlsx) file** – import translations from a Microsoft Excel (*.xlsx*) format file
 * **From PO (.po) files** – import translations from PO (*.po*) format files.
 
 {{< figure src="/attachments/refguide/modeling/menus/translatable-texts/advanced-translations-import.png" alt="Advanced Translations Import" >}}
 
-After clicking an option, a directory selector appears. Select a directory containing the files you want to import. 
+When you select an option, a directory selector appears. Select the directory containing the files you want to import. 
 
 A pop-up will appear confirming the start of the import.
 
 ### Import from Excel
 
 Click **From Excel (.xlsx) file** and select a directory containing a Microsoft Excel (*.xlsx*) format file. The file needs to meet the following requirements:
-* The file must be named in the format `{app-name}-translations.xlsx` (e.g. *App-translations.xlsx*);
+
+* The file must be named in the format `{app-name}-translations.xlsx` (e.g. *App-translations.xlsx*)
 * The file must have the following columns: 
-  * `Mendix Reference`;
-  * `Module`;
-  * `Document`;
-  * `Path to element`;
-  * `Element`;
-  * `Source Text ({source_language})`;
-  * `{translation_language 1}`;
-  * ...
-  * `{translation_language_n}`.
+    * `Mendix Reference`
+    * `Module`
+    * `Document`
+    * `Path to element`
+    * `Element`
+    * `Source Text ({source_language})`
+    * `{translation_language 1}`
+    * ...
+    * `{translation_language_n}`
 
 {{< figure src="/attachments/refguide/modeling/menus/translatable-texts/advanced-translations-excel.png" alt="Advanced Translations Import Excel" >}}
 
@@ -49,10 +51,8 @@ Click **From PO (.po) files** and select a directory containing PO (*.po*) forma
 The formats of the PO files for **Advanced Translations Import** and [Advanced Translations Export](/refguide/advanced-translations-export/) are similar.
 {{% /alert %}}
 
-<br>
-
 After completion, a confirmation pop-up appears. If the operation fails, a failure pop-up is displayed instead.
 
 {{% alert color="warning" %}}
-Please do not close the App while the import is running.
+Do not close the app while the import is running.
 {{% /alert %}}
