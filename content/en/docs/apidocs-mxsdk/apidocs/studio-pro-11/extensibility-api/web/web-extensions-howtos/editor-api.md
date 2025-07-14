@@ -10,15 +10,20 @@ This how-to describes how to open an existing document editor in Studio Pro from
 
 ## Prerequisites
 
-This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Please complete that how-to before starting this one. You should also be familiar with creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
+This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Complete that how-to before starting this one. You should also be familiar with creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
 
 ## Opening a Document Editor
 
 Create a menu item. This is done inside the `loaded` event in `Main`. For more information, see [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
 
-This menu action will look for the `Home_Page` document in `MyFirstModule` and it will then open it with the `editor-api`. Of course you can use any module or any document in your app. For more information, please look at the [model api](/apidocs-mxsdk/apidocs/web-extensibility-api-11/model-api/)
+This menu action will look for the `Home_Page` document in `MyFirstModule` (however, you can use any module or any document in your app). It will then open it with the editor API. For more information, see [Access a Mendix Model Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/model-api/).
 
-In this example, we add an event listener for the `menuItemActivated` event for when a menu gets clicked. When the event triggers, first we look for the page by its name and by the name of its containing module using the `studioPro.app.model.pages` api. Then, we call `studioPro.ui.editors.editDocument` to open the document by passing its ID. See the following code sample to see how this is done.
+For this example, add an event listener for the `menuItemActivated` event for when a menu is clicked. When the event triggers, do the following:
+
+1. Look for the page by its name, and by the name of its containing module using the `studioPro.app.model.pages` API. 
+2. Call `studioPro.ui.editors.editDocument` to open the document by passing its ID. 
+
+See the code sample below to see how this is done:
 
 ```typescript
 import { IComponent, studioPro, Menu, Primitives } from "@mendix/extensions-api";
@@ -48,9 +53,11 @@ export const component: IComponent = {
 ```
 
 ## Active Documents
-The editor api also supports notifying the extension when the active document tab gets activated in Studio Pro, via the `activeDocumentChanged` event.
-It also provides this information on demand, via the `studioPro.ui.editors.getActiveDocument` method.
-Both the `getActiveDocument` method and the `activeDocumentChanged` event args returns a `ActiveDocumentInfo` object, which contains the document's name, type, container module name and id.
+
+The editor API notifies the extension when the active document tab is activated in Studio Pro, via the `activeDocumentChanged` event. It also provides this information on demand, via the `studioPro.ui.editors.getActiveDocument` method.
+
+Both the `getActiveDocument` method and the `activeDocumentChanged` event args returns a `ActiveDocumentInfo` object, which contains the document's name, type, container, module name, and id.
+
 See the sample code below:
 
 ```typescript
