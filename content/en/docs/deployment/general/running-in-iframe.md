@@ -8,31 +8,33 @@ description: "Issues to take into consideration when running apps in an iframe"
 
 ## Introduction
 
-By default, a Mendix app is blocked from running inside an iframe. This is to protect the end-user from attacks using *clickjacking*. There is more information on this in the [Adding HTTP Headers](/howto/security/best-practices-security/#adding-http-header) section of *How To Implement Best Practices for App Security*.
+By default, a Mendix application is blocked from running inside an iframe. This is to protect the end-user from attacks using *clickjacking*. There is more information on this in the [Adding HTTP Headers](/howto/security/best-practices-security/#adding-http-header) section of *How To Implement Best Practices for App Security*.
 
-You can enable your app to run inside an iframe [by setting a Content Security Policy directive](/developerportal/deploy/running-in-an-iframe/#mendix-app).
+You can enable your application to run inside an iframe by setting a [Content Security Policy](#running-mendix-app) directive.
 
 There is more information about iframes on Mendix Cloud in the [Running Your App in an Iframe](/developerportal/deploy/environments-details/#iframe) section of *Environment Details*.
 
 You can also set the obsolete `X-Frame-Options` HTTP header if you need backward compatibility. 
 
-## Content Security Policy
+## Content Security Policy {#csp}
 
-When Content Security Policy (CSP) is enforced additional directives are needed for runnining a Mendix app in an iframe for both the host application and the Mendix app.
+When Content Security Policy (CSP) is enforced additional directives are needed for running a Mendix application in an iframe for both the host application and the Mendix application.
 
-### Host application
+### Host Application
+
 If the host application enforces CSP, it must be configured to explicitly allow loading frames and scripts from the Mendix application’s URL.
 
-### Mendix App {#mendix-app}
-To allow a Mendix App to run in an iframe the `frame-ancestors` directive of the `Content-Security-Policy` HTTP header for your node’s environment needs to be set. For Mendix Cloud, this can be done within the Mendix Portal, as described in the [HTTP Headers](/developerportal/deploy/environments-details/#http-headers) section of *Environment Details*.
+### Mendix Application {#running-mendix-app}
+
+To allow a Mendix application to run in an iframe, the `frame-ancestors` directive of the `Content-Security-Policy` HTTP header for your node’s environment needs to be set. For Mendix Cloud, this can be done within the Mendix Portal, as described in the [HTTP Headers](/developerportal/deploy/environments-details/#http-headers) section of *Environment Details*.
 
 ## Resolving Browser Issues
 
-Most browsers have additional security to ensure that iframes are only allowed when they are from the same domain as the main page. If your app does not have the same domain as the main page containing the iframe, it will only run if the *SameSite* cookie is set to allow this. You can find a good explanation of SameSite cookies in [SameSite cookies explained](https://web.dev/samesite-cookies-explained/) on the *web.dev* website.
+Most browsers have additional security to ensure that iframes are only allowed when they are from the same domain as the main page. If your application does not have the same domain as the main page containing the iframe, it will only run if the *SameSite* cookie is set to allow this. You can find a good explanation of SameSite cookies in [SameSite cookies explained](https://web.dev/samesite-cookies-explained/) on the *web.dev* website.
 
-When running your app in Mendix Cloud, you can set the SameSite cookie through a custom runtime setting as explained in the [Running Your App in an Iframe](/developerportal/deploy/environments-details/#iframe) section of *Environment Details*.
+When running your application in Mendix Cloud, you can set the SameSite cookie through a custom runtime setting as explained in the [Running Your App in an Iframe](/developerportal/deploy/environments-details/#iframe) section of *Environment Details*.
 
-If your app is deployed outside Mendix Cloud (on premises, for example), then you will need to configure your webserver to set the SameSite cookie to the correct value.
+If your application is deployed outside Mendix Cloud (on premises, for example), then you will need to configure your webserver to set the SameSite cookie to the correct value.
 
 ## Limitations
 
@@ -50,8 +52,10 @@ Mendix applications embedded in iframes do not inherit the session or user crede
 
 ### Responsiveness
 
-iframes are not natively responsive, meaning, by default an <iframe> does not automatically resize itself to fit different screen sizes or maintain an aspect ratio as the viewport changes. Custom CSS or JavaScript libraries are needed to accomplish this.
+Iframes are not natively responsive. This means that by default an `<iframe>` does not automatically resize itself to fit different screen sizes or maintain an aspect ratio as the viewport changes. Custom CSS or JavaScript libraries are needed to accomplish this.
 
-### Focus management and accessibility
-Focus management for iframes presents unique accessibility challenges, because iframes create a separate document context, and the parent page loses direct control over focus once it enters the iframe.
-iframes needs careful handling and thorough testing to ensure accessibility, especially for keyboard and screen reader users.
+### Focus Management and Accessibility
+
+Focus management for iframes presents unique accessibility challenges because iframes create a separate document context, and the parent page loses direct control over focus once it enters the iframe.
+
+Iframes need careful handling and thorough testing to ensure accessibility, especially for keyboard and screen reader users.

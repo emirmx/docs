@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "hugo server --environment development",
-    "build": "hugo server --environment development"
+    "build": "hugo server --environment development  --ignoreCache --cleanDestinationDir"
   },
   "repository": {
     "type": "git",
