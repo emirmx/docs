@@ -1,6 +1,7 @@
 ---
 title: "Advanced Translations Import"
 url: /refguide/advanced-translations-import/
+weight: 50
 ---
 
 ## Introduction
