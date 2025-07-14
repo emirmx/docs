@@ -7,7 +7,7 @@ cascade:
 ---
 
 {{% alert color="info" %}}
-View entities were introduced as a beta feature in Studio Pro 10.19, and released for general availability in Studio Pro 10.22 and above. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+View entities were introduced as a beta feature in Studio Pro 10.19, and released for general availability in Studio Pro 10.22 and above. For more information, see [Beta and Experimental Releases](/releasenotes/release-status/).
 {{% /alert %}}
 
 ## Introduction
