@@ -10,11 +10,21 @@ description: "Issues to take into consideration when running apps in an iframe"
 
 By default, a Mendix app is blocked from running inside an iframe. This is to protect the end-user from attacks using *clickjacking*. There is more information on this in the [Adding HTTP Headers](/howto/security/best-practices-security/#adding-http-header) section of *How To Implement Best Practices for App Security*.
 
-You can enable your app to run inside an iframe by setting the `frame-ancestors` directive of the `Content-Security-Policy` HTTP header for your node’s environment. For Mendix Cloud, this can be done within the Mendix Portal, as described in the [HTTP Headers](/developerportal/deploy/environments-details/#http-headers) section of *Environment Details*.
+You can enable your app to run inside an iframe [by setting a Content Security Policy directive](/developerportal/deploy/running-in-an-iframe/#mendix-app).
 
 There is more information about iframes on Mendix Cloud in the [Running Your App in an Iframe](/developerportal/deploy/environments-details/#iframe) section of *Environment Details*.
 
 You can also set the obsolete `X-Frame-Options` HTTP header if you need backward compatibility. 
+
+## Content Security Policy
+
+When Content Security Policy (CSP) is enforced additional directives are needed for runnining a Mendix app in an iframe for both the host application and the Mendix app.
+
+### Host application
+If the host application enforces CSP, it must be configured to explicitly allow loading frames and scripts from the Mendix application’s URL.
+
+### Mendix App {#mendix-app}
+To allow a Mendix App to run in an iframe the `frame-ancestors` directive of the `Content-Security-Policy` HTTP header for your node’s environment needs to be set. For Mendix Cloud, this can be done within the Mendix Portal, as described in the [HTTP Headers](/developerportal/deploy/environments-details/#http-headers) section of *Environment Details*.
 
 ## Resolving Browser Issues
 
@@ -38,6 +48,10 @@ Mendix does not support native messaging between the embedded application and th
 
 Mendix applications embedded in iframes do not inherit the session or user credentials from the host application. To enable shared authentication, a secure custom mechanism, such as JWT-based authentication, must be implemented.
 
-### Content Security Policy (CSP) Requirements
+### Responsiveness
 
-If the host application enforces a Content Security Policy, it must be configured to explicitly allow loading frames and scripts from the Mendix application’s URL.
+iframes are not natively responsive, meaning, by default an <iframe> does not automatically resize itself to fit different screen sizes or maintain an aspect ratio as the viewport changes. Custom CSS or JavaScript libraries are needed to accomplish this.
+
+### Focus management and accessibility
+Focus management for iframes presents unique accessibility challenges, because iframes create a separate document context, and the parent page loses direct control over focus once it enters the iframe.
+iframes needs careful handling and thorough testing to ensure accessibility, especially for keyboard and screen reader users.
