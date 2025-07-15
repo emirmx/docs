@@ -210,7 +210,7 @@ OpenAI does not call the function. The model returns a tool called JSON structur
 
 This is all part of the implementation that is executed by the GenAI Commons chat completions operations mentioned before. As a developer, you have to make the system aware of your functions and what these do by registering the function(s) to the request. This is done using the GenAI Commons operation [Tools: Add Function to Request](/appstore/modules/genai/genai-for-mx/commons/#add-function-to-request) once per function before passing the request to the chat completions operation.
 
-Function microflows can have none, a single or multiple primitive input parameters, such as Boolean, Datetime, Decimal, Enumeration, Integer and String and/or the [Request](/appstore/modules/genai/genai-for-mx/commons/#request) and/or [Tool](/appstore/modules/genai/genai-for-mx/commons/#tool) object and must return a string.
+Function microflows can have none, a single, or multiple primitive input parameters such as Boolean, Datetime, Decimal, Enumeration, Integer or String. Additionally, they may accept the [Request](/appstore/modules/genai/genai-for-mx/commons/#request) or [Tool](/appstore/modules/genai/genai-for-mx/commons/#tool) objects as inputs. The function microflow must return a String value.
 
 {{% alert color="warning" %}}
 Function calling is a very powerful capability and should be used with caution. Function microflows run in the context of the current user, without enforcing entity access. You can use `$currentUser` in XPath queries to ensure that you retrieve and return only information that the end-user is allowed to view; otherwise, confidential information may become visible to the current end-user in the assistant's response.
