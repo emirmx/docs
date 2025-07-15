@@ -140,7 +140,7 @@ Attachments added to Mendix Support requests will be automatically deleted after
 
 It is important to provide app logs when submitting a support request. This allows the support team to better assess and work towards fixing the issue. The following sections include information on retrieving logs per deployment model.
 
-#### Retrieving Logs for Windows-Deployed Apps
+#### Retrieving Logs for Apps Deployed to Windows
 
 Follow these steps to retrieve logs for an app deployed to Windows:
 
@@ -150,7 +150,7 @@ Follow these steps to retrieve logs for an app deployed to Windows:
 3. Navigate to that path, and access the **Apps** > **{AppName}** > **Log** folder. **{AppName}** stands for the name of the app for which you want to retrieve logs.    
     The app logs and M2EE logs are available in *.txt* format.
 
-#### Retrieving Logs for SAP-Deployed Apps
+#### Retrieving Logs for Apps Deployed to SAP
 
 Follow these steps to retrieve logs for an app deployed to SAP:
 
@@ -160,7 +160,15 @@ Follow these steps to retrieve logs for an app deployed to SAP:
 
 To retrieve **Debug**, **Info**, **Trace**, and **Warning** logs, [SAP Logging Connector](/appstore/modules/sap/sap-logger/) must be configured in your app.
 
-Alternatively, you can retrieve logs from the SAP BTP.
+Alternatively, you can retrieve logs from the SAP BTP. For more information, refer to the [Viewing the Logs](/developerportal/deploy/sap-cloud-platform/sap-monitoring/#viewing-the-logs) section in *Monitoring Environments in Mendix Apps on SAP BTP*. 
+
+#### Retrieving Logs for Apps Deployed to Mendix Cloud
+
+Follow the steps on the [Logs](/developerportal/operate/logs/) page to retrieve logs for an app deployed to Mendix Cloud.
+
+#### Retrieving Logs for Apps Deployed to Kubernetes
+
+Follow the steps in the [Collecting Diagnostic Data for a Support Ticket](/developerportal/deploy/private-cloud-deploy/#collecting-diagnostic-data-for-a-support-ticket) section of *Deploying a Mendix App to a Mendix on Kubernetes Cluster* to retrieve logs for an app deployed to Mendix on Kubernetes.
 
 ### Requirements for Security Support Tickets{#security-tickets}
 
