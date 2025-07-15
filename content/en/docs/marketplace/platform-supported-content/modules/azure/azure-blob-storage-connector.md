@@ -1,12 +1,8 @@
 ---
 title: "Azure Blob Storage"
-url: /appstore/modules/azure/azure-blob-storage/
+url: /appstore/azure-modules/azure-blob-storage/
 description: "Describes the configuration and usage of the Azure Blob Storage connector, which is available in the Mendix Marketplace. Azure Blob Storage is an object storage service offering industry-leading scalability, data availability, security, and performance."
 weight: 20
-aliases:
-    - /appstore/connectors/azure-blob-storage-connector/
-    - /appstore/connectors/azure/azure-blob-storage/
-#If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details. 
 ---
 
 ## Introduction
