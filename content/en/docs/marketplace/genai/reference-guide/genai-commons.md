@@ -517,8 +517,8 @@ Adds a new Function to a [ToolCollection](#toolcollection) that is part of a Req
 
 {{% alert color="info" %}}
 Since this microflow runs in the context of the user, you can make sure that it only shows data that is relevant to the current user.
-The microflow can have none, a single or multiple primitive input parameters, such as Boolean, Datetime, Decimal, Enumeration, Integer and String and/or the [Request](#request) and/or [Tool](#tool) object. The microflow can only return a String value. 
-Note that calling the microflow might fail if the model passes the wrong format for the parameters, e.g., a decimal number for an integer parameter. The error is logged and returned to the model which might inform the user or retry the toolcall. The model can also pass empty values, thus proper validation is recommended.
+The microflow can have none, a single, or multiple primitive input parameters such as Boolean, Datetime, Decimal, Enumeration, Integer or String. Additionally, they may accept the [Request](#request) or [Tool](#tool) objects as inputs. The microflow can only return a String value. 
+Note that calling the microflow may fail if the model passes parameters in the wrong format, for example, a decimal number for an integer parameter. Such errors are logged and returned to the model, which may either inform the user or retry the tool call. The model can also pass empty values, so proper validation is recommended.
 {{% /alert %}}
 
 ###### Return Value
