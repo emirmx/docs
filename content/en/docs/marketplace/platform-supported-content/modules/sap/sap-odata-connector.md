@@ -528,7 +528,7 @@ The result of the Fetch Batch Response may be either a single object or a list, 
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/sap-odata-connector/fetch-batch-list.png" >}}
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/sap-odata-connector/fetch-batch-single.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/sap-odata-connector/fetchbatch-single.png" >}}
 
 * Input
 
