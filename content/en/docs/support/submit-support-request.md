@@ -124,9 +124,9 @@ The [ticket priority](/support/ticket-priority/) that Mendix Support validates i
 
 {{< figure src="/attachments/support/submit-support-request/204371729-pic5.png" class="no-border" >}}
 
-## Providing Attachments and Additional Information
+## Providing Attachments, Logs, and Additional Information
 
-Depending on the type of request, providing attachments and additional information may be helpful. The scenarios below list what additional information should be provided.
+Providing attachments, logs, and additional information is helpful for streamlining the support process. The following scenarios list what additional information should be provided.
 
 ### Attachments
 
@@ -135,6 +135,32 @@ You can add large attachments such as app files to the request. Please note that
 {{% alert color="info" %}}
 Attachments added to Mendix Support requests will be automatically deleted after 365 days.
 {{% /alert %}}
+
+### Logs
+
+It is important to provide app logs when submitting a support request. This allows the support team to better assess and work towards fixing the issue. The following sections include information on retrieving logs per deployment model.
+
+#### Retrieving Logs for Windows-Deployed Apps
+
+Follow these steps to retrieve logs for an app deployed to Windows:
+
+1. In the Mendix Service Console, select the app for which you want to retrieve logs, then click **Preferences**.    
+    The **Preferences** dialog is displayed.
+2. In the **Preferences** dialog, look at the **Location of apps and server files** field. This is the path where your logs are located.
+3. Navigate to that path, and access the **Apps** > **{AppName}** > **Log** folder. **{AppName}** stands for the name of the app for which you want to retrieve logs.    
+    The app logs and M2EE logs are available in *.txt* format.
+
+#### Retrieving Logs for SAP-Deployed Apps
+
+Follow these steps to retrieve logs for an app deployed to SAP:
+
+1. On the Mendix Portal, go to your SAP-deployed app in [Apps](https://sprintr.home.mendix.com), and click **Environments**.
+2. Click **Details** ({{% icon name="notes-paper-edit" %}}) next to the environment you want to view details for.
+3. Click **View Recent Log**.
+
+To retrieve **Debug**, **Info**, **Trace**, and **Warning** logs, [SAP Logging Connector](/appstore/modules/sap/sap-logger/) must be configured in your app.
+
+Alternatively, you can retrieve logs from the SAP BTP.
 
 ### Requirements for Security Support Tickets{#security-tickets}
 
