@@ -47,9 +47,7 @@ These tips are recommended if you are an advanced user with admin privileges to 
 
 ### Antivirus Software (such as Windows Defender) {#antivirus-software}
 
-Add your app folder, or the folder containing all your apps, to the list of exclusions for your antivirus software. Only do this with app directories you trust. Do not add *studiopro.exe* itself to the ignored processes.
-
-Studio Pro uses different tools and subprocesses that are not covered if you only add Studio Pro to the list of exceptions for virus scanning, which is why it is best to mark the app directory for exclusion.
+Antivirus software can sometimes impact the performance of Studio Pro. To mitigate these issues, you can configure antivirus exclusions for Studio Pro. For more information, see [Antivirus Exclusion](/refguide10/antivirus-exclusion/).
 
 ## Read More
 
