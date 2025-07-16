@@ -49,7 +49,7 @@ To initialize the connector, do the following:
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/sap-logger/logger_edit_action.png" alt="log level is set to SapLogLevel" class="no-border" >}}
 
-6. To use the **cloud-logging** service, upgrade SapApplicationLogs to version 2.2.0. If you are using version 2.1.0 of SapApplicationLogs, follow these steps: 
+6. To use the **cloud-logging** service, upgrade **SapApplicationLogs** to version 2.2.0. If you are using version 2.1.0 of **SapApplicationLogs**, follow these steps: 
 
     * Rename the **ApplicationLoggingService** constant from *ApplicationLoggingService* to *LoggingService*.
     * Set its **Default value** to *cloud-logging* instead of *application-logs*.
