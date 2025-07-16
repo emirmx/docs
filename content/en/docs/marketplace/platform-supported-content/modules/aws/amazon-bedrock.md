@@ -767,7 +767,7 @@ The watermark detection feature will make it possible to tell if an image has be
 
 More information about guardrails can be found in this [AWS blogpost](https://aws.amazon.com/blogs/aws/guardrails-for-amazon-bedrock-helps-implement-safeguards-customized-to-your-use-cases-and-responsible-ai-policies-preview/) and in the [AWS documentation](https://aws.amazon.com/en/bedrock/guardrails/).
 
-### Advanced Prompts for Agents
+### Advanced Prompts for Agents {#adding-cri-model}
 
 By default, an agent is configured with the following base prompt templates, one for each step in the agent sequence:
 
@@ -779,6 +779,15 @@ By default, an agent is configured with the following base prompt templates, one
 By customizing the prompt templates and modifying these configurations, you can fine-tune your agent's accuracy. Additionally, you can provide custom examples for a technique known as few-shot prompting. This involves providing labeled examples for specific tasks, which further enhances the model's performance in targeted areas. For more information about advanced prompts, see [Advanced prompts](https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html) in the AWS documentation.
 
 You can also use placeholder variables in agent prompt templates. For example, in the orchestration prompt template, the *$prompt_session_attributes$* placeholder variable can be used to ingest the information from the `PromptSessionAttribute` entity into the prompt, if it was specified as part of the `InvokeAgentRequest`. For more information about placeholder variables available in agent prompt templates, see [Prompt placeholders](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html) in the AWS documentation.
+
+### Adding CRI models to your Bedrock configuration 
+
+When syncing your bedrock configuration, only publicly available foundation models can be retrieved using the List Foundation Models action of the Bedrock Connector. To be able to use the CRI models that you have setup in your AWS console, you will need to manually add these models to your database. To add a CRI model, follow the steps below:
+
+- Click on the "Add model" button on the Amazon Bedrock configuration page
+- Fill out the form with the relevant information of your CRI model, especially the display name, which will be shown in the model dropdowns while choosing a model to use, and the model id, which is a required field in order to actually use the model of your choice with Amazon Bedrock. The other fields must be filled out according to the functionalities the model can use.
+
+After the form is filled out and saved, the CRI model can be used with the actions of your choice.
 
 ## Troubleshooting
 
