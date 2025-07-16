@@ -12,6 +12,25 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2025
 
+### August ???, 2025
+
+#### Mendix Operator v2.23.0 {#2.23.0}
+
+* We added a new, **preview** mode for the `runtimeLeaderSelection` option - a `leaderless` deployment mode.
+   * This is a new option that can be used, in addition of the current `assigned` and `none` modes.
+   * Setting `runtimeLeaderSelection` to `leaderless` will only use one Deployment instead of `master` and `worker`. Mendix Runtime nodes will decide which one gets to run any exclusive task.
+   * This mode uses a simplified Java launch process and uses a more efficient way of generating JSON logs.
+   * To use `leaderless` mode, the Mendix app needs to be based on Mendix 10.24 or a higher version.
+* We have adjusted the Runtime liveness and readiness probes; in `leaderless` deployment mode, the Mendix Runtime's built-in self-test will be used for the liveness and readiness probes.
+* We have addressed a few redundant API calls to reduce API calls in a few scenarios.
+* We fixed an issue when a Prometheus metrics scaper would reject metrics from Mendix 11 apps.
+* We have added a workaround to improve handling of bucket prefixes containing `/` characters.
+* We have improved logging of some startup and other errors - to provide clearer error messages and more relevant context.
+* We have updated components to use Go 1.24 and the latest dependency versions in order to improve security score ratings for container images.
+* We have deprecated support for Tencent COS storage.
+* If an app pod crashes or restarts, the MendixApp CR will show the reason for the restart and the Mendix Runtime's UNIX exit code.
+* Upgrading to Mendix Operator v2.23.0 from a previous version will restart environments managed by that version of the Operator. Environments with two or more replicas and a **PreferRolling** update strategy are restarted without downtime.
+
 ### August 7, 2025
 
 #### Portal Improvements
