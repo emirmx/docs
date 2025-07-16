@@ -36,16 +36,18 @@ After you install the connector, you can find it in the **App Explorer**, in the
 
 ### Configuring Authentication {#authentication}
 
-To interact with Azure Blob Storage, authentication can be performed using either a Shared Access Signature (SAS) or an Azure Entra ID Access Token.
+To interact with Azure Blob Storage, authentication can be done using either a Shared Access Signature (SAS) or an Azure Entra ID Access Token.
 
-#### SAS authorization
+#### Configuring SAS Authorization
+
 A Shared Access Signature (SAS) provides secure, delegated access to resources in your storage account. Follow these steps:
 
 1. Have your administrator generate a SAS for the target container or blob
 2. Create a `SASCredentials` object and populate its `SASToken` attribute
 3. Pass the `SASCredentials` object to the `AbstractCredentials` parameter in your operation microflow
 
-#### Azure Entra ID Access Token
+#### Configuring an Azure Entra ID Access Token
+
 For Azure Entra ID authentication:
 
 1. Configure Single Sign-On (SSO) using the `OIDC SSO` marketplace module
