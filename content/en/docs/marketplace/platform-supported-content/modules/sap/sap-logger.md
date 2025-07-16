@@ -48,8 +48,10 @@ To initialize the connector, do the following:
 5. Double-click the **RegisterSubscriber** action make sure that **Log level** is set to the constant *SapLogLevel*:
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/sap-logger/logger_edit_action.png" alt="log level is set to SapLogLevel" class="no-border" >}}
+
+6. When using version 2.2.0 of SapApplicationLogs, rename the **ApplicationLoggingService** constant from *ApplicationLoggingService* to *LoggingService*. Set the **Default value** to *cloud-logging* instead of *application-logs*. Then, open the **LogNode** constant and set its **Default value** to *SAP Logging*.    
     
-6. Edit the constant **SapLogLevel** to select the minimum log level which you want to send to the *SAP Business Technology Platform Application Logging service*. The supported log levels (case-insensitive) are `Debug`, `Trace`, `Info`, `Warning`, `Error`, and `Critical`.
+7. Edit the constant **SapLogLevel** to select the minimum log level which you want to send to the *SAP Business Technology Platform Application Logging service*. The supported log levels (case-insensitive) are `Debug`, `Trace`, `Info`, `Warning`, `Error`, and `Critical`.
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/sap-logger/edit_log_level_constant.png" alt="SapLogLevel is set to Info" class="no-border" >}}
 
