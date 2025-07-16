@@ -59,8 +59,10 @@ The following artifact is available for installing the service:
 
 Follow these steps to install the service through Docker:
 
-1. Pull the Docker image using the following command: `docker pull private-cloud.registry.mendix.com/mendix/document-generation-service:1.0.0`.
-2. Run the Docker container using the following command: `docker run -p 8085:8085 --name document-generation private-cloud.registry.mendix.com/mendix/document-generation-service:1.0.0`. This creates a Docker container, which is exposed on port `8085`.
+1. Pull the Docker image using the following command: `docker pull private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`.
+2. Run the Docker container using the following command: `docker run -p 8085:8085 --name document-generation private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`. This creates a Docker container, which is exposed on port `8085`.    
+
+The `<tag>` component must be replaced with the version of the service, such as `1.0.0`. You can find all versions and their release notes in the [Private PDF Document Generation Service Release Notes](/releasenotes/marketplace/private-service/).
 
 ### Isolation
 
