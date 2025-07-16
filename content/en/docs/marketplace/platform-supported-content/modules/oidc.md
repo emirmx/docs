@@ -254,6 +254,10 @@ In the **Anonymous** tab of the app security settings, do the following:
 For multiple IdPs, you may have to add the *Anonymous* user role if it does not exist already.
 {{% /alert %}}
 
+{{% alert color="warning" %}}
+Enabling anonymous users introduces a broader attack surface. If you choose this option, follow Mendix guidelines for [setting up anonymous user security](/howto/security/set-up-anonymous-user-security/) to mitigate potential risks.
+{{% /alert %}}
+
 ### Configuring Navigation{#configure-nav}
 
 The OIDC SSO module works without a specified sign-in page. Therefore, in the navigation section of your app, set **Sign-in page** (in the **Authentication** section) to *none*.
@@ -1046,6 +1050,26 @@ authentication in your Mendix App.
 5. In the **Url** field, enter the location where your public key is stored. The following is the new endpoint in the OIDC SSO to fetch public keys based on the configured alias For example, `https:/`*`BASE_URL`*`/oauth/v2/jwks/`*`ALIAS`*. Here, *`ALIAS`* is the client alias configured in the OIDC application. For example, Okta.
 6. **Save** the configuration.
 
+## URLs
+
+The following diagram gives an overview of all endpoints that the OIDC SSO module exposes and consumes:
+
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/oidc-endpoints.png" class="no-border" >}}
+
+End-users can access your app through the following endpoints when using the OIDC SSO module:
+
+* SSO Endpoint: Initiates the authentication process by redirecting the user to the Identity Provider (IdP) login page. This is typically the starting point of the SSO login flow.
+    For example, `https://<YOUR_APP_URL>/oauth/v2/login`.
+* `post_logout_redirect`: The URL to which users are redirected after they successfully log out from the application. This helps ensure a seamless user experience by taking them to a predefined page after logout.
+* `redirect_uri`: The callback URL that receives the authorization response from the IdP after the user successfully authenticates. This endpoint processes the returned authorization code or token to complete the login process.
+    For example, `https://<YOUR_APP_URL>/oauth/v2/callback`.
+* `/.well-known/openid_configuration`: In the OpenID Connect (OIDC) protocol, the `.well-known` endpoint provides a standardized URL where clients can retrieve the OpenID Provider's configuration metadata, enabling dynamic discovery of important endpoints and capabilities.
+* `authorization_endpoint`: The URL on the IdP where the authorization request is sent to start the OIDC login process. It redirects the user to the IdP for authentication.
+* `token_endpoint`: The endpoint used by the Mendix app to exchange the received authorization code for tokens, such as access tokens, ID tokens.
+* `jwks_uri`: URL exposing the JSON Web Key Set (JWKS), which contains the public keys used to validate token signatures.
+* `introspection_endpoint` (optional): An endpoint provided by the IdP to validate or introspect tokens (optional, depending on the IdP).
+* `end_session_endpoint`: Used to initiate logout at the IdP. This endpoint ensures that the user is logged out from both the Mendix app and the IdP, effectively terminating the entire SSO session.
+
 ## Testing and Troubleshooting{#testing}
 
 Once you have your app deployed, you can test the SSO set-up by trying to login. If you have multiple IdPs set up, you will be able to choose which IdP to use for authentication. If you have only one IdP provider configured, then you will be taken directly to that IdP's sign in page.
@@ -1119,3 +1143,7 @@ When using the OIDC SSO module with Mendix version 10.9 to 10.12.2, you may enco
 {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/runtime-failed.png" class="no-border" >}}
 
 If a user logs in on one tab and then attempts to log in on another tab, a `401` error may initially appear. However, after the browser reloads, the error will be resolved as the session is validated and synchronized.
+
+### Endpoints cannot be reached
+
+This issue can be caused by wrong configuration of your firewall. If you have a firewall between your application and your IdP, make sure it is properly configured for the consumption of the endpoints.

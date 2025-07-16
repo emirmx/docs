@@ -12,7 +12,7 @@ aliases:
 
 The [Mendix Community](https://community.mendix.com/) is where Mendix community members come together to help each other with questions and answers, exchange information, and propose ideas for improving the Mendix Platform.
 
-The Mendix Community is closely integrated with the [Mendix Profile](/community-tools/mendix-profile/) so that Mendix community members can see all the interesting and useful information about who is participating in the Mendix Community. If someone clicks your name anywhere in the Mendix Community, your profile will open, so make sure to [make your Mendix Profile public](/community-tools/mendix-profile/user-settings/#profile) so everyone can see your details and progress!
+The Mendix Community is closely integrated with the [Mendix Profile](/mendix-profile/) so that Mendix community members can see all the interesting and useful information about who is participating in the Mendix Community. If someone clicks your name anywhere in the Mendix Community, your profile will open, so make sure to [make your Mendix Profile public](/mendix-profile/user-settings/#profile) so everyone can see your details and progress!
 
 Click **Create a Post** to ask a question, start an exchange with the community, or share an idea.
 
@@ -62,7 +62,7 @@ Each question has the following details:
 6. The number of views the question has received
 7. The number of answers to the question
 8. The number of emojis received 
-9. The name, avatar, and [points level](/community-tools/mendix-profile/#level) of the Mendix community member who asked the question
+9. The name, avatar, and [points level](/mendix-profile/#level) of the Mendix community member who asked the question
 10. The avatars of the Mendix community members who have answered and commented
 
 {{% alert color="info" %}}
@@ -161,7 +161,7 @@ Each exchange has the following details:
 6. The number of views the exchange has received
 7. The number of comments on the exchange
 8. The number of emojis received
-9. The name, avatar, and [points level](/community-tools/mendix-profile/#level) of the Mendix community member who posted the exchange
+9. The name, avatar, and [points level](/mendix-profile/#level) of the Mendix community member who posted the exchange
 10. The avatars of the Mendix community members who have commented
 
 #### Searching and Filtering Exchanges
@@ -262,7 +262,7 @@ Each idea has the following details:
 
 10. The number of emojis received
 
-11. The name, avatar, and [points level](/community-tools/mendix-profile/#level) of the Mendix community member who posted the idea
+11. The name, avatar, and [points level](/mendix-profile/#level) of the Mendix community member who posted the idea
 
 12. The avatars of the Mendix community members who have commented
 

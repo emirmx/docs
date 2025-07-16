@@ -95,6 +95,7 @@ The module contains one constant: `CommunityCommons.MergeMultiplePdfs_MaxAtOnce`
 * `commitWithoutEvents` – This commits an object but without events.
 * `copyAttributes` – This copies all common primitive attributes from source to target, which are not necessarily of the same type. This is useful to, for example, translate database object into view objects.
 * <a id="deepclone"></a>`DeepClone` – This clones the objects, their associations, and their referred objects. For more information, see the [Limitations](#limitations) section below.
+* `encryptMemberIfChanged` – This automatically encrypts the attributes of an object during, for example, a before commit.
 * `EndTransaction` – This commits the transaction. It will end this transaction or remove a save point from the queue if the transaction is nested.
 * `getCreatedByUser` – This returns the user who created an object.
 * `getGUID` – This returns the global unique identifier (GUID) or the ID of an object.
@@ -107,8 +108,6 @@ The module contains one constant: `CommunityCommons.MergeMultiplePdfs_MaxAtOnce`
 * `refreshClass` – This refreshes a certain domain object in the client. This is useful for enforcing a data grid to refresh, for example.
 * `refreshClassByObject` – This refreshes a certain class via the domain object type in the client. This is useful for enforcing a data grid to refresh, for example.
 * `StartTransaction` – This starts a transaction. If a transaction is already started for this context, a savepoint will be added.
-* `encryptMemberIfChanged` – This automatically encrypts the attributes of an object during, for example, a before commit.
-* `EndTransaction` – This commits the transaction, which will end the transaction or remove a save point from the queue if the transaction is nested.
 
 ### Regexes
 

@@ -15,9 +15,9 @@ Follow the links in the table below to see the release notes you want:
 
 | Type of Deployment | Last Updated |
 | --- | --- |
-| [Mendix Cloud](/releasenotes/developer-portal/mendix-cloud/) | June 27, 2025 |
-| [Mendix for Private Cloud](/releasenotes/developer-portal/mendix-for-private-cloud/) | June 25, 2025 |
-| [Mendix on Azure](/releasenotes/developer-portal/mendix-on-azure/) | April 24, 2025 |
+| [Mendix Cloud](/releasenotes/developer-portal/mendix-cloud/) | July 13, 2025 |
+| [Mendix on Kubernetes](/releasenotes/developer-portal/mendix-for-private-cloud/) | July 10, 2025 |
+| [Mendix on Azure](/releasenotes/developer-portal/mendix-on-azure/) | July 3, 2025 |
 | [SAP Business Technology Platform (SAP BTP)](/releasenotes/developer-portal/sap-cloud-platform/) | August 27, 2024 |
 | [Other Deployment Options](/releasenotes/developer-portal/on-premises/) | September 15, 2023 |
 
@@ -26,4 +26,4 @@ The release notes for the buildpacks are held in their respective GitHub repos:
 * [Mendix Cloud Foundry Buildpack – cf-mendix-buildpack](https://github.com/mendix/cf-mendix-buildpack/releases)
 * [Mendix Buildpack for Docker – docker-mendix-buildpack](https://github.com/mendix/docker-mendix-buildpack/releases)
 
-To see the current status of the Mendix Clouds and Mendix for Private Cloud, see [Mendix Status](https://status.mendix.com/). Here you can also see planned maintenance and past incidents.
+To see the current status of the Mendix Clouds and Mendix on Kubernetes, see [Mendix Status](https://status.mendix.com/). Here you can also see planned maintenance and past incidents.

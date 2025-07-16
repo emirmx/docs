@@ -22,7 +22,7 @@ We support running on Windows locally, or locally virtualized.
 Mendix Studio Pro 11 can run in beta mode on an ARM Mac and Intel Mac running macOS Sonoma 14.0 and above. For information on known limitation, see the [Known Limitations for Mac](#mac-limitations) section below. 
 
 {{% alert color="info" %}}
-While Studio Pro on Mac is in [public beta](/releasenotes/beta-features/), Mendix can only verify support for the latest macOS version available. Support for earlier versions is not guaranteed and it is best to update macOS to the newest version when using Studio Pro. 
+While Studio Pro on Mac is in [public beta](/releasenotes/release-status/), Mendix can only verify support for the latest macOS version available. Support for earlier versions is not guaranteed and it is best to update macOS to the newest version when using Studio Pro. 
 {{% /alert %}}
 
 {{% alert color="warning" %}}
@@ -81,6 +81,13 @@ Studio Pro needs access to the following URLs in order to work. If your firewall
 * `*.mendixcloud.com`
 * `*.teamserver.sprintr.com`
 * `*.api.mendix.com`
+
+If you have set up managed dependencies, you will need access to the following Gradle and Maven URLs:
+
+* `jcenter.bintray.com`
+* `plugins-artifacts.gradle.org`
+* `plugins.gradle.org`
+* `repo.maven.apache.org`
 
 If you have set up managed dependencies and are working behind a firewall or using a proxy, see the [Proxy Settings](/refguide/managed-dependencies/#proxy-settings) section of *Managed Dependencies* for advice on what you need to do to allow the managed dependencies to work.
 
@@ -244,7 +251,7 @@ For container-based deployments using Docker, Kubernetes, or Cloud Foundry, the 
 * SAP AWS S3 Object Storage
 * SAP Azure Blob Storage
 
-For container-mounted storage in Kubernetes, provided by an external storage class, see also [Use Docker with Minikube](/developerportal/deploy/run-mendix-on-kubernetes/).
+For container-mounted storage in Kubernetes, provided by an external storage class, see also [Use Docker with Minikube](/developerportal/deploy/run-mendix-on-minikube/).
 
 ### Storage Types for Servers
 
