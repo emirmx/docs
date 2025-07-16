@@ -1,8 +1,10 @@
 ---
 title: "Private PDF Document Generation Service"
-url: /appstore/modules/private-document-generation-service/
+url: /appstore/services/private-document-generation-service/
 description: "Describes the configuration and usage of the private PDF Document Generation service, which is used in combination with the PDF Document Generation module in the Marketplace."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
+aliases:
+    - /appstore/modules/private-document-generation-service/
 ---
 
 ## Introduction
