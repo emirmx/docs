@@ -52,9 +52,15 @@ The settings in this section configure the S3 bucket.
 
 ### Building an App with the Azure DevOps Pipeline
 
-In Admin mode, after input all correct settings include Azure DevOps URL, Organization, PAT, Blob or S3 Storage, Click Save to store all settings.
-Enter User mode, select one App to create package with Azure DevOps build utility, it's expected that App package is built successfully.
-If App package build failed, please access Azure DevOps Organization pipeline build page https://dev.azure.com/rax-mh/ProjectForPmpBuildAppMda/_build to check what error happen, if the error message "No hosted parallelism has been purchased or granted" reported in pipeline job, please buy or request a free parallelism grant from Microsoft Azure DevOps Service, by filling out and submit the form from the page  Illuminated by Isis , wait for Microsoft Azure approve your request and then retry your building.
+To build an app with the Azure DevOps pipeline, perform the following steps:
+
+1. In Admin mode, ensure that you have configured all required settings (Azure DevOps URL, Organization, PAT, Blob or S3 Storage), and then click **Save**.
+2. Switch to User mode
+3. Select the app where you want to create a package with the Azure DevOps build utility.
+
+#### Troubleshooting the App Package Build
+
+If the app package build fails, you can view the error message on the Pipeline Build page of [Azure DevOps](https://dev.azure.com). If the error message is *No hosted parallelism has been purchased or granted*, you must buy or request a free parallelism grant from the Microsoft Azure DevOps service. After the request is granted, re-run your build.
 
 ## Architecture of the CI/CD Pipeline
 
