@@ -6,15 +6,22 @@ description: "Describes the Board page in Epics. This page looks different, depe
 ---
 ## Introduction
 
-The **Board** page gives an overview of all the stories that your team is currently working on. The stories are groups in different swimlanes based on their status.
+The **Board** page gives an overview of all the stories that your team is currently working on. The stories are grouped in swimlanes based on their status.
 
-On the upper-right corner of the page, you can find the following items:
+In the upper-right corner of the page, you can find the following items:
 
-* **Create Story** – Clicking this enables you to create a new story.
+* **Create Story** – Enables you to create a new story.    
+    You can also use **Maia Create User Story**, an AI-assisted tool, to create a user story for you. To access it, click **Create Story**, then choose the **Create with Maia** option.    
+    Note that this option is disabled by default. To enable it, open the **Settings** by clicking the **...** button next to **Create Story**, then, on the **Mendix AI Assistance** tab, toggle the option on. Only Scrum Masters can modify this setting.
 
-    {{% alert color="info" %}}You can also use **Maia Create User Story**, an AI-assisted tool, to create a user story for you. To access it, click **Create Story**, the option to **Create with Maia** appears at the left side of **Create Story**. It is disabled by default. To enable it, open the **Settings** by clicking the **...** next to **Create Story** and toggle the **Maia Assistance** option on. Note that only Scrum Masters can modify this setting.{{% /alert %}}
+* **Create Epic** – Enables you to create a new epic.
 
-* **Create Epic** – Clicking this enables you to create a new epic.
+* **Settings** — Enables you to configure board settings, as follows:
+
+    * Configure tags.
+    * Switch between the Scrum and Kanban board types.
+    * Configure toast notifications.
+    * Choose whether to use Maia in Epics.
   
 * Search box – You can search stories based on story title, tags, epic name, assignee (including unassigned stories), and story ID. You can use the search box in combination with the filter.
 
@@ -26,15 +33,15 @@ You can add more custom swimlanes, such as **In Progress**, **In Review**, and *
 
 {{< figure src="/attachments/developerportal/project-management/epics/board/add-swimlane.png" width="500px" class="no-border" >}}
 
-You can rename, archive, or delete a swimlane as follows: click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) on the upper-right corner of the swimlane, and then select the corresponding option.
+You can rename, archive, or delete a swimlane by clicking **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) in the upper-right corner of the swimlane, then selecting the corresponding option.
 
 {{< figure src="/attachments/developerportal/project-management/epics/board/rename-archive-delete-swimlane.png" class="no-border" >}}
 
 However, it is not possible to do the following actions:
 
-* Delete a swimlane if it still contains stories
-* Archive a swimlane if it contains no stories
-* Delete the default swimlanes:  **To Do** and **Done**
+* Delete a swimlane if it still contains stories.
+* Archive a swimlane if it contains no stories.
+* Delete the default swimlanes:  **To Do** and **Done**.
 
 You can move a swimlane by dragging it to the new location.
 
@@ -68,7 +75,7 @@ You can click a story card to view the [story details](#story-details).
 
 When you click the card of a story, the story details dialog box opens.
 
-On the upper-right corner, you can click **Copy Link** ({{% icon name="hyperlink" %}}) to copy the link to the story. Click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) to open a menu that allows you to clone, archive, or delete the story.
+In the upper-right corner, you can click **Copy Link** ({{% icon name="hyperlink" %}}) to copy the link to the story. Click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) to open a menu that allows you to clone, archive, or delete the story.
 
 {{< figure src="/attachments/developerportal/project-management/epics/board/story-details-page-icons.png" class="no-border" >}}
 
@@ -76,8 +83,8 @@ The story details dialog box shows the following items:
 
 * **Description** – This is the description of the story:
     * You can edit the description of the story by clicking **Edit Description** and making changes in the WYSIWYG editor. The editor supports different text formats, including code blocks.
-    * You can link a story in the editor by typing *#* and the story title, and then selecting the right story from the list.
-    * You can type a person in the editor by typing *@*, and the person's name, and then selecting the right person from the list. Once you save the story, the system will send a notification to the tagged person.
+    * You can link a story in the editor by typing *#* and the story title, then selecting the story from the list.
+    * You can type a person in the editor by typing *@*, and the person's name, then selecting the person from the list. Once you save the story, the system sends a notification to the tagged person.
 
 * **Created by** – This shows the person who created the story.
 
@@ -87,7 +94,7 @@ The story details dialog box shows the following items:
 
 * **Tasks** – All the tasks are listed.
     * You can add a task by clicking **+ Add Task**.
-    * You can move a task upwards or downwards by dragging them around.
+    * You can move a task upwards or downwards by dragging it around.
     
 * **Story Type** – You can set the story type to **Bug** or **Feature**.
 
@@ -102,50 +109,34 @@ The story details dialog box shows the following items:
 * **Attached Files** – You can add attached files by clicking **+**.
 
 * **Audit Trail** – This gives information on all the updates related to the story, including who did the update and when:
+   
     * Story assigned to {user name}
-    
-    * Story assigned to {user name} from {user name}
-    
-    * Story unassigned from {user name}
-    
-    * Changed Status to {status}
-    
-    * Story type changed to {story type}
-    
-    * Task {task name} added
-    
-    * Task {task name} completed
-    
-    * Task {task name} deleted
-    
-    * Epic {epic name} linked
-    
-    * Epic {epic name} unlinked
-    
-    * Tag (or tags) {tag names} added
-    
-    * Tag (or tags) {tag names} removed
-    
-    * Story points changed to {story points}
-    
-    * File attached {file name}
-    
-    * File removed {file name}
-    
-    * Story archived
-    
-    * Comment Deleted
-    
+    * Story assigned to {user name} from {user name}   
+    * Story unassigned from {user name}   
+    * Changed Status to {status}    
+    * Story type changed to {story type}   
+    * Task {task name} added  
+    * Task {task name} completed  
+    * Task {task name} deleted  
+    * Epic {epic name} linked  
+    * Epic {epic name} unlinked 
+    * Tag (or tags) {tag names} added  
+    * Tag (or tags) {tag names} removed 
+    * Story points changed to {story points} 
+    * File attached {file name}   
+    * File removed {file name}   
+    * Story archived  
+    * Comment Deleted 
     * Comment Edited
     
     {{< figure src="/attachments/developerportal/project-management/epics/board/audit-trail.png" class="no-border" >}}
     
 * **Revision** – This shows the revision history of a story. This feature is only available for apps that use Git for version control.
 
-* **Comment** – You can type your comment in the text box and then click **Post Your Comments** to save and post the comment.
-    * You can sort the comments by clicking the **Newest** or **Oldest** button.
+* **Comment** – You can type your comment in the text box, then click **Post Your Comments** to save and post the comment.    
+    You can sort the comments by clicking the **Newest** or **Oldest** button.
 
-{{% alert color="info" %}}You can also edit the story in this story details dialog box. If you make any change, click **Save Story** at the bottom to save it.{{% /alert %}}
+{{% alert color="info" %}}You can also edit the story in this story details dialog box. If you make any changes, click **Save Story** at the bottom to save it.{{% /alert %}}
 
 ## Scrum Board vs Kanban Board {#different-boards}
 
@@ -163,7 +154,7 @@ The upper-left corner of the page shows the name of the current Sprint, when the
 
 The main area of the page gives an overview of all the stories in your current Sprint. When you commit changes in Studio Pro, you can link your commit to stories of the current Sprint in the [Commit](/refguide/commit-dialog/) dialog box.
 
-{{% alert color="info" %}}To edit or end the current Sprint, you should go to the [Planning](/developerportal/project-management/epics/planning/#scrum-planning) page, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) on the upper-right corner, and select the corresponding item.{{% /alert %}}
+{{% alert color="info" %}}To edit or end the current Sprint, you should go to the [Planning](/developerportal/project-management/epics/planning/#scrum-planning) page, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) in the upper-right corner, and select the corresponding item.{{% /alert %}}
 
 ### Kanban Board
 
