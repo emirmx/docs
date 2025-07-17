@@ -86,6 +86,10 @@ This pane displays the results of the latest find action. You can search for tex
 
 There are two **Find Results** panes. If you lock the results of the first pane, the second one is used for subsequent find operations until you unlock the first one.
 
+### Call Hierarchy
+
+This pane displays the call hierarchy of a document for examle, a page, a microflow, a nanoflow, and more. You can visualize both incoming and outgoing calls for documents. It helps developers understand the application connections, for example, what calls a page and what that page calls. For more information on the **Call Hierarchy** pane and how to interact with it, see [Call Hierarchy Pane](/refguide/call-hierarchy-pane/). 
+
 ### Integration {#data-hub}
 
 The [Integration pane](/refguide/integration-pane/) enables you to browse the [Catalog](/catalog/) and use registered data sources that are available for your organization in your app development. You can add [external entities](/refguide/external-entities/) and [external actions](/refguide/call-external-action/) to your app via this pane and see entities and data sources already consumed in your app. 
