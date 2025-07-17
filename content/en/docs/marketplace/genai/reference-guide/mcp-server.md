@@ -20,7 +20,9 @@ To use function calling within the same Mendix application and integrating to an
 The current version has the following limitations:
 
 * Tools can only return String values, either directly as String type or using the `TextContent` entity.
+* Prompts can only return a single message.
 * The client connection remains active for only 15 minutes, as the Mendix runtime currently does not support async requests.
+* Running an MCP Server is currently only supported on single-instance environments.
 * User authorization can currently only be applied on request but not at the tool/prompt level. As a result, the current user is not available within tool/prompt microflows, and entity access or XPath constraints can not be enabled out of the box. This is due to the capabilities offered by the official MCP Java SDK which does not support reusing a Mendix user session in the executed tools/prompts.
 
 Note that the MCP Server module is still in its early version and latest versions may include breaking changes. Since both the open-source protocol and the Java SDK are still evolving and regularly updated, these changes may also affect this module.
