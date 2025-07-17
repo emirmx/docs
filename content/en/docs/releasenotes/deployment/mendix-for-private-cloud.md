@@ -27,6 +27,7 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 * We have added a workaround to improve handling of bucket prefixes containing `/` characters.
 * We have improved logging of some startup and other errors - to provide clearer error messages and more relevant context.
 * We have updated components to use Go 1.24 and the latest dependency versions in order to improve security score ratings for container images.
+* We have updated documentation that OpenShift 4.19 is supported by the Mendix Operator.
 * We have deprecated support for Tencent COS storage.
 * If an app pod crashes or restarts, the MendixApp CR will show the reason for the restart and the Mendix Runtime's UNIX exit code.
 * Upgrading to Mendix Operator v2.23.0 from a previous version will restart environments managed by that version of the Operator. Environments with two or more replicas and a **PreferRolling** update strategy are restarted without downtime.
