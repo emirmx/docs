@@ -49,12 +49,8 @@ To initialize the connector, do the following:
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/sap-logger/logger_edit_action.png" alt="log level is set to SapLogLevel" class="no-border" >}}
 
-6. To use the **cloud-logging** service, upgrade **SapApplicationLogs** to version 2.2.0. If you are using version 2.1.0 of **SapApplicationLogs**, follow these steps: 
+6. Edit the **Default value** of the **LoggingService** constant to *cloud-logging* for SAP Cloud Logging, and to *application-logs* for SAP Application Logging.
 
-    * Rename the **ApplicationLoggingService** constant from *ApplicationLoggingService* to *LoggingService*.
-    * Set its **Default value** to *cloud-logging* instead of *application-logs*.
-    * Open the **LogNode** constant and set its **Default value** to *SAP Logging*.
-  
 7. Edit the constant **SapLogLevel** to select the minimum log level which you want to send to the *SAP Business Technology Platform Application Logging service*. The supported log levels (case-insensitive) are `Debug`, `Trace`, `Info`, `Warning`, `Error`, and `Critical`.
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/sap-logger/edit_log_level_constant.png" alt="SapLogLevel is set to Info" class="no-border" >}}
