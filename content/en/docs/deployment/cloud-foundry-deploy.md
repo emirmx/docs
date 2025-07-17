@@ -20,6 +20,8 @@ aliases:
 
 ## Introduction
 
+{{% alert color="warning" %}} Cloud Foundry deployment from Studio Pro is deprecated in version 10 and removed in version 11. {{% /alert %}}
+
 Mendix apps can be deployed to a variety of different environments, for example Mendix Cloud, on-premises, or Kubernetes.
 
 Mendix apps can also be deployed to any cloud platform which supports a version of Cloud Foundry, database, and cloud storage at or above the minimum required version which supports Mendix. For specific version numbers see [Mendix System Requirements](/refguide/system-requirements/). 
