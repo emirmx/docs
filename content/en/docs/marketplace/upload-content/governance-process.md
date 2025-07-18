@@ -32,10 +32,8 @@ It may sometimes take a few iterations for a component to be approved, depending
 
 {{% alert color="info" %}}
 Review and approval by Mendix is required only for the first version of a publicly-listed component. Subsequent versions of a public component do not need review or approval by Mendix.
-{{% /alert %}}
 
-{{% alert color="info" %}}
-[Private Marketplace](/appstore/submit-content/#private) content does not require any review or approval.
+Private Marketplace content does not require any review or approval.
 {{% /alert %}}
 
 ## Reviewing Outdated Components

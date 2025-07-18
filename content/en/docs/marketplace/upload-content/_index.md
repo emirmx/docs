@@ -48,7 +48,7 @@ Some only apply to specific component types, so follow the on-screen prompts for
 
     * **MPK File** – Upload your source MPK.    
     * **GitHub Link** – Follow the steps in the dialog box for copying the link of the release you want to import. For details, see the [Using a GitHub Repo](/appstore/guidelines-content-creators/#github) section in *Guidelines for Content Creators*.     
-      To include the repo's *README.md* file on the component's [Documentation](#doc) tab, make sure you have selected the **Import Documentation** box. 
+      To include the repo's *README.md* file on the component's [Media & Documentation](#doc) tab, make sure you have selected the **Import Documentation** box. 
 
     If you are uploading a solution, there will be no option to select the content source.    
     If you are uploading an industry template, selecting a content source is optional.    
@@ -104,7 +104,7 @@ On the **Support & Licensing** tab, add information about support, licensing, an
 
 5. In the **Development Team** field, add the email addresses of the developers who have contributed to and own the component.
 
-## Adding Media and Documentation
+## Adding Media and Documentation {#doc}
 
 On the **Media & Documentation** tab, add any resources to guide your users.
 
