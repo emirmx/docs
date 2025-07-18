@@ -9,8 +9,9 @@ aliases:
 
 ## Introduction
 
-{{% alert color="info" %}}
-To ensure continued compatibility with the latest mobile operating systems, native mobile apps must be updated at least once a year to the most recent [MTS or LTS version](/releasenotes/studio-pro/lts-mts/) of Mendix. Outdated apps may stop functioning as expected on newer OS versions. For more information, please see [this blog post](https://www.mendix.com/blog/empowering-mobile-innovation/).{{% /alert %}}
+{{% alert color="warning" %}}
+To ensure continued compatibility with the latest mobile operating systems, native mobile apps must be updated at least once a year to the most recent [MTS or LTS version](/releasenotes/studio-pro/lts-mts/) of Mendix. Outdated apps may stop functioning as expected on newer OS versions. For more information, please see [this blog post](https://www.mendix.com/blog/empowering-mobile-innovation/).
+{{% /alert %}}
 
 With Mendix you can build fully native mobile apps. Native mobile apps do not render inside a web view. Instead, they use native UI elements. This enables fast performance, smooth animations, like swipe gestures, and improved access to all native device capabilities.
 
