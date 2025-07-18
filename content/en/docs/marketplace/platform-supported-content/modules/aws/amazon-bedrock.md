@@ -51,6 +51,40 @@ Follow the instructions in [How to Use Marketplace Content](/appstore/use-conten
 
 After you install the connector, you can find it in the **App Explorer**, in the **AmazonBedrockConnector** section. The connector provides a [domain model and several activities](#technical-reference) that you can use to connect your app to Amazon Bedrock. Each activity can be implemented by using it in a microflow. To ensure that your app can connect to the AWS service, you must also configure AWS authentication for the connector. 
 
+### Configuring AWS Authentication {#configure-authentication}
+
+In order to use the Amazon Bedrock service, you must authenticate with AWS. To do so, you must set up a configuration profile in your Mendix app. After you set up the configuration profile, the connector module handles the authentication internally.
+
+As of version 3.0.0 of the [AWS Authentication Connector](https://marketplace.mendix.com/link/component/120333), all the resources and logic required to set up authentication are centralized inside the AWS Authentication Connector module.
+
+The AWS Authentication Connector supports both **static credentials** and **temporary credentials**. For more information and detailed instructions please refer to the [AWS Authentication Connector documentation page](/appstore/modules/aws/aws-authentication/).
+
+### Syncing available model, knowledge bases and agents
+
+You can use the Snippet `SNIP_Settings_Admin_ConfigOverview` (to be found in **_USE_ME > SyncBedrockMetadata > ReusableUI**) on an administrator page to sync models, knowledge bases and agents for the selected region at runtime. Admins on the page first need to configure the settings of the [AWS Authentication Connector](#configure-authentication) module, by selecting the AWS region and how to authenticate. When saving the settings or when you sync the models for the current region, AWS metadata services are called to create persistent objects in the database which you can view in the tables at the bottom of the snippet. Note that all models are shown regardless of having actual access to them which can only be configured in the AWS console.
+
+#### Syncing resources using microflows
+
+For use cases for which you do not want to configure the resources in an admin user interface, you can use the following actions in your custom microflows:
+* Sync Models & Knowledge Bases & Agents
+* [Sync Models](#sync-models) 
+* [Sync Knowledge Bases](#sync-knowledge-bases)
+* [Sync Agents](#sync-agents)
+
+The following actions only list the available resources as non-persistent objects:
+* List Foundation Models
+* List Agents
+* List Data Sources
+
+#### Adding custom models to your Bedrock configuration {#adding-custom-model}
+
+When syncing your bedrock configuration, only publicly available foundation models can be retrieved using the `List Foundation Models` action from the Bedrock Connector. To be able to use cross region inference (CRI) or provisioned-throughput models that you have setup in your AWS console, you will need to manually add these models to your database. To add a custom model, follow the steps below:
+
+- Click on the **Add model** button above the model's table
+- Fill out the form with the relevant information of your custom model, especially the display name, which will be shown in the model dropdowns while choosing a model to use, and the model id, which is a required field in order to actually use the model of your choice with Amazon Bedrock. The other fields must be filled out according to the functionalities the model can use.
+
+After the form is filled out and saved, the custom model can be used with the actions of your choice.
+
 ### Using Amazon Bedrock Models
 
 To use Amazon Bedrock models, keep in mind some specific requirements, as listed below.
@@ -59,17 +93,10 @@ To use Amazon Bedrock models, keep in mind some specific requirements, as listed
 
 Amazon Bedrock models have a lifecycle that consists of the Active, Legacy, and EOL stages. For more information, see [Model lifecycle](https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html). Models are no longer available for use after they reach the EOL state. To ensure that your application functions as intended, make sure that you regularly monitor the state of the model that you are using. For example, you may want to use an API call to retrieve the status of the model and alert you once it reaches the Legacy state. To programmatically get information about available models and their lifecycle status, you can use the **ListFoundationModels** operation.
 
-### Configuring AWS Authentication
-
-In order to use the Amazon Bedrock service, you must authenticate with AWS. To do so, you must set up a configuration profile in your Mendix app. After you set up the configuration profile, the connector module handles the authentication internally.
-
-As of version 3.0.0 of the [AWS Authentication Connector](https://marketplace.mendix.com/link/component/120333), all the resources and logic required to set up authentication are centralized inside the AWS Authentication Connector module.
-
-The AWS Authentication Connector supports both **static credentials** and **temporary credentials**. For more information and detailed instructions please refer to the [AWS Authentication Connector documentation page](/appstore/modules/aws/aws-authentication/).
-
 ### Configuring a Microflow for an AWS Service
 
-After you configure the authentication profile for Amazon Bedrock, you can implement the functions of the connector by using the provided activities in microflows. The **USE_ME** folder contains several subfolders containing operations that depend on the GenAI Commons module. The following example microflows have been created for each of these inside the **ExampleImplementations** folder:
+After you configure the authentication profile for Amazon Bedrock, you can implement the functions of the connector by using the provided activities in microflows. The most important actions are available in the toolbox or in the [GenAI Commons](/appstore/modules/genai/genai-for-mx/commons/#microflows) module.
+The **USE_ME** folder contains several subfolders containing operations. The following example microflows have been created for each of these inside the **ExampleImplementations** folder:
 
 * EXAMPLE_ChatCompletions_FunctionCalling
 * EXAMPLE_ChatCompletions_Vision
@@ -669,13 +696,7 @@ The Amazon Bedrock Connector offers a range of operations to retrieve and store 
 
 This can be useful to e.g. associate a chatbot configuration to an available model by selecting the model via dropdown in runtime. The persistent domain model allows for simple and efficient filtering capabilities on the available metadata. Further, the *SNIP_Settings_Admin_BedrockConfig* Snippet can be used to manage and view the synced data from an administrator perspective.
 
-Currently, there are operations available to sync metadata about:
-
-* Sync Models 
-* Sync Knowledge Bases
-* Sync Agents
-
-The syncing process works the same for all of these operations. 
+The syncing process works the same for all of these operations:
 
 1. Information about models, knowledge bases, and agents is persistent in the Mendix app's database on the initial sync.
 2. For knowledge base and agents, an association to the `AmazonBedrockRegion` object, that represents the AWS region used when syncing, is stored.
@@ -779,15 +800,6 @@ By default, an agent is configured with the following base prompt templates, one
 By customizing the prompt templates and modifying these configurations, you can fine-tune your agent's accuracy. Additionally, you can provide custom examples for a technique known as few-shot prompting. This involves providing labeled examples for specific tasks, which further enhances the model's performance in targeted areas. For more information about advanced prompts, see [Advanced prompts](https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html) in the AWS documentation.
 
 You can also use placeholder variables in agent prompt templates. For example, in the orchestration prompt template, the *$prompt_session_attributes$* placeholder variable can be used to ingest the information from the `PromptSessionAttribute` entity into the prompt, if it was specified as part of the `InvokeAgentRequest`. For more information about placeholder variables available in agent prompt templates, see [Prompt placeholders](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html) in the AWS documentation.
-
-### Adding cross region inference models to your Bedrock configuration {#adding-cri-model}
-
-When syncing your bedrock configuration, only publicly available foundation models can be retrieved using the List Foundation Models action of the Bedrock Connector. To be able to use the cross region inference (CRI) models that you have setup in your AWS console, you will need to manually add these models to your database. To add a CRI model, follow the steps below:
-
-- Click on the "Add model" button on the Amazon Bedrock configuration page
-- Fill out the form with the relevant information of your CRI model, especially the display name, which will be shown in the model dropdowns while choosing a model to use, and the model id, which is a required field in order to actually use the model of your choice with Amazon Bedrock. The other fields must be filled out according to the functionalities the model can use.
-
-After the form is filled out and saved, the CRI model can be used with the actions of your choice.
 
 ## Troubleshooting
 
