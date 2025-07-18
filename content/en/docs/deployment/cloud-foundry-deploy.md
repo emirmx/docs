@@ -164,7 +164,7 @@ You may need to configure your file store by using environment variables. See th
 
 ## ⚠ Deploy Your App to Cloud Foundry (Deprecated)
 
-1. Open Studio Pro
+1. Open Studio Pro.
 2. Open the app you want to deploy to Cloud Foundry.
 3. Choose the menu option **Run > Run on Cloud Foundry**:
 
@@ -172,7 +172,7 @@ You may need to configure your file store by using environment variables. See th
 
 The Mendix app will now be deployed to the configured Cloud Foundry app and started automatically
 
-{{% alert color="warning" %}}Deploying directly to Cloud Foundry from Studio Pro is deprecated. This functionality will be removed in Mendix 11.{{% /alert %}}
+{{% alert color="warning" %}} Cloud Foundry deployment from Studio Pro is deprecated in version 10 and removed in version 11. {{% /alert %}}
 
 ## Cloud Foundry Environment Variables
 
