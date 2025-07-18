@@ -36,5 +36,5 @@ Use the switch button in the pane to toggle between **Incoming calls** and **Out
 
 When you select **Show call hierarchy**, it is analyzed to receive its interactions with other documents.
 
-* For **Incoming calls**, it shows the call hierarchy for most common identifiable document types, including pages, microflows, nanoflows, JavaScript actions, Java actions, and more. 
-* For **Outgoing calls**, it shows the call hierarchy for pages, microflows, nanoflows, and rules.
+* For **Incoming calls**, it shows the call hierarchy for most common identifiable document types, including pages, microflows, nanoflows, JavaScript actions, Java actions, and more
+* For **Outgoing calls**, it shows the call hierarchy for pages, microflows, nanoflows, and rules
