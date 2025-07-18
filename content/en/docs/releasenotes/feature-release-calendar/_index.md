@@ -35,7 +35,10 @@ The new features were divided into major themes, which are described in the sect
 | Software Composition Marketplace Outdated & Deprecated Findings | General Availability: September 2025                         |
 | Software Composition Marketplace Vulnerabilities             | General Availability: December 2025                          |
 | Policies                                                     | Public Beta: December 2025 <br/>General Availability: TBD    |
-| Optimized storage of association                             | General Availability: Mx 11.0                                |
+| Cloud Tokens Dashboard                                      | General Availability: June 2025                              |
+| End Users Dashboard | Limited Availability: October 2025 |
+| Self-Service Provisioning & Deprovisioning of environments | General Availability: June 2025 |
+| Self-Service Resizing of environments | Limited Availability: July 2025 |
 | Bulk DML                                                     | General Availability: Q4 2025                             |
 | Increased decimal precision                                  | General Availability: Q4 2025                             |
 | Maia: text to OQL                                            | Public beta: Q2 2025<br/>General Availability: Q4 2025    |
