@@ -45,7 +45,8 @@ The Conversational UI module provides the following functionalities:
 
 ### Limitations {#limitations}
 
-This module is intended to enable building chat interactions between a human user and an AI model. It is not designed for conversations between two human users.
+* This module is intended to make building chat interactions between a human user and an AI model easier. It is not designed for conversations between two human users.
+* Currently, the chat interface cannot be used out of the box in Studio Pro 11, Atlas 4 and react client enabled with the Atlas_Topbar and Atlas_Sidebar layouts.
 
 ### Prerequisites {#prerequisites}
 
@@ -259,6 +260,10 @@ You may need to use the following classes when building a more complex custom pa
 | `card--full-height` | To be added to a `card` container, in case the chat interface snippet needs to be displayed as a card | 
 | `layoutgrid--full-height` | To be added to any layoutgrid (1 row is supported) around the chat UI components |
 | `dataview--display-contents` | To be added to any data view around chat components to prevent it from breaking the flex-flow on the page | 
+
+#### Using a Custom Layout
+
+You may need to use a different layout than Atlas_Default in your application, for example for the token consumption monitor. The module contains the Layout `Layout_MasterBase` which is used on every page of this module and which is based on Atlas_Default. You can overwrite the master layout in the properties of this layout in order to use a different layout. This change needs to happen for every update from the marketplace.
 
 ### Token Consumption Monitor Snippets {#snippet-token-monitor}
 
