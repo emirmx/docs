@@ -1,6 +1,7 @@
 ---
 title: "OSS Compliance for External Developers"
 url: /appstore/submit-content/oss-compliance/
+weight: 6
 description: "Describes the criteria that must be met to ensure that Marketplace content is OSS-compliant."
 ---
 

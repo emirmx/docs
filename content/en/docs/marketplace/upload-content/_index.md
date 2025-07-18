@@ -1,5 +1,5 @@
 ---
-title: "Uploading to the Marketplace"
+title: "Uploading Content to the Marketplace"
 url: /appstore/submit-content/
 weight: 3
 description_list: true
@@ -22,70 +22,114 @@ Before diving in, make sure you have read [Marketplace Overview](/appstore/overv
 
 ## Adding New Marketplace Content {#adding}
 
-To get started, click **Add Content** in the left pane of the Marketplace home screen. Follow the steps in these sections to add content.
+To get started, click **Add Content** in the left pane of the Marketplace home screen. You are presented with the **Before You Get Started** dialog, which outlines the resources you will need for uploading your component.
 
-{{% alert color="info" %}}
-<a id="draft"></a>On each page of the upload flow, click one of the following buttons:
+Once you make sure you have everything, click **Next**, then go through the steps in the following sections to add content.    
+Some fields are mandatory, while others are optional — this is indicated in the user interface.
 
-* **Save Draft** to save the details you have entered so far for the draft. You can access the draft via the [My Drafts](/appstore/home-page/#my-drafts) link in the top bar.
-* **Save & Continue** to go to the next page of the upload flow.
-{{% /alert %}}
+On each page of the upload flow, click one of these buttons:
 
-### General {#general}
+* **Save and Exit** — Save the details you have entered so far for the draft. You can access the draft via the [My Drafts](/appstore/home-page/#my-drafts) link in the top bar.
+* **Next** — Go to the next page of the upload flow.
 
-Provide key details about your component on the **General** page. 
+## Uploading a Component {#general}
 
-#### Describing Your Content
+On the **Upload Component** tab, add the source file, and provide general information about your component.
 
-Follow these steps to describe your content:
+Follow these steps to add information about your component.    
+Some only apply to specific component types, so follow the on-screen prompts for your particular scenario.
 
-1. Select a **Content Type** for your component. 
+1. Add a **Component Name**.
 
-    {{% alert color="warning" %}}You can only set the content type when creating the initial version of your content. You cannot change this setting after it is published.{{% /alert %}}
+2. Select the **Component Type**.      
+   You can only set the content type when creating the initial version of your content. You cannot change this setting after it is published.
 
-2. Select the **Visibility** of your component:
+3. Under **Select Component Source**, select one of the options for uploading the source file:     
 
-    * <a id="public"></a>**Public Marketplace (all Mendix users)** – Your component will be available to the entire Mendix community.
-        * This content must be reviewed and approved by Mendix before it is available.
-    * <a id="private"></a>**Private Marketplace (your company only)** – Your content will receive the **Private** label, and be available only via your [Company Content](/appstore/home-page/#company-content) page.
-        * Selected private content of a content group can also be made available to [content group guests](/appstore/home-page/#guests) for download.
-        * This content is not reviewed by Mendix.
-    {{% alert color="warning" %}}You can only set the visibility in the initial version of your content. You cannot change this setting by updating the Marketplace component later.{{% /alert %}}
+    * **MPK File** – Upload your source MPK.    
+    * **GitHub Link** – Follow the steps in the dialog box for copying the link of the release you want to import. For details, see the [Using a GitHub Repo](/appstore/guidelines-content-creators/#github) section in *Guidelines for Content Creators*.     
+      To include the repo's *README.md* file on the component's [Documentation](#doc) tab, make sure you have selected the **Import Documentation** box. 
+
+    If you are uploading a solution, there will be no option to select the content source.    
+    If you are uploading an industry template, selecting a content source is optional.    
+
+4. Select the **Studio Pro Version** on which you built the content.    
+
+5. If you are uploading a widget, select the **Compatible with Mendix React Client** checkbox to indicate compatibility.    
+   This checkbox is mandatory starting with Studio Pro 11.
+   
+6. Add a version for your component. If this is the first version of the component you are uploading, the number in the **Version** section will automatically be set to **1.0.0**. 
+
+7. Enter **Release Notes** for the component in the box provided, describing what is new in that release.
+
+8. If you are uploading a solution, enter an email address in the **Contact Sales** field. This will be used by customers to reach out to you.
+
+## Adding General Information
+
+On the **General Information** tab, add more details about your component.
+
+1. Upload a cover image.
+
+2. In the **Component Tagline**, include a short description of what your component does.
+
+3. In the **About** field, describe the purpose and use cases of your component in detail.    
+   You can use rich text in the editor. However, using rich text at the beginning of the description is not recommended, as it will not get rendered properly. You should add a few lines of regular text before using rich text.
+
+4. From the **Industry** drop-down list, select up to three industries that are applicable to your component.
+
+5. From the **Category** drop-down list, select up to three areas of expertise that are applicable to your component.
+
+## Configuring Support and Licensing
+
+On the **Support & Licensing** tab, add information about support, licensing, and visibility.
+
+1. Add your **Website**.
+
+2. Add the **Contact Email** of your support department.
+
+3. Select the **Visibility** of your component:
+
+    * **Public** – Your component will be available to the entire Mendix community.    
+      This content must be reviewed and approved by Mendix before it is available.
+    * **Private** – Your content will receive the **Private** label, and be available only via your [Company Content](/appstore/home-page/#company-content) page.    
+      Selected private content of a content group can also be made available to [content group guests](/appstore/home-page/#guests) for download.    
+      This content is not reviewed by Mendix.    
     
-3. Add between one and three categories in the **Category** field. A category groups together similar components or services that share common characteristics, functions, or purposes. Categories make it easier for Marketplace users to find what they are looking for.
-4. Enter a **Name** for your component.
-5. Enter a **Description** of your component.
+    You can only set the visibility in the initial version of your content. You cannot change this setting by updating the Marketplace component later.
 
-    {{% alert color="warning" %}} You can use rich text in the editor. However, using rich text at the beginning of the description is not recommended, as it will not get rendered properly. You should add a few lines of regular text before using rich text. {{% /alert %}}
+4. Select the type of **License** you want applied to your app.    
+   For details about the available open-source software licenses and their requirements, refer to [Open-Source Software Licenses](/appstore/licenses/).
+   
+<!-- does the proprietary licenses content still apply? is there still an option to **Request New License**? -->
 
-#### Providing License Details {#license}
+5. In the **Development Team** field, add the email addresses of the developers who have contributed to and own the component.
 
-Select the type of **License** you want applied to your app.
+## Adding Media and Documentation
 
-##### Open-Source Software Licenses
+On the **Media & Documentation** tab, add any resources to guide your users.
 
-{{% alert color="warning" %}}
-Open-source software licenses must abide by a set of compliance rules to ensure the safety of the Mendix ecosystem. Refer to [OSS Compliance for External Developers](/appstore/submit-content/oss-compliance/) for details.
-{{% /alert %}}
+1. Use the **Upload Screenshots** option to add a maximum of 10 screenshots of your component.
 
-These are the open-source software license options available and their requirements:
+2. In the **YouTube Video** field, add a URL for a demo of your component.
 
-| | **Notes** | **Commercial use allowed?** | **Component code needs to be in public repo?** | **License text required with copyright info in code and distribution artifact?** | **Can modify?** (Mention modifications to code) | **Can consuming apps use without making their code public?** | **Notice files should be distributed with artifact?** | **Original component source code to be distributed with consuming app?** | **Can sub-license?** |
-| --- | --- | --- | --- | --- | --- | --- |  --- | --- | --- |
-| [MIT](https://opensource.org/licenses/MIT) | Add a specific *license.txt* file in your artifacts, i.e. in the *.mpk* package. | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} |
-| **BSD 2.0, 3.0** | N/A | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} |
-| **Apache 1.0** | N/A | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} |
-| [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) | Add a specific *license.txt* file in your artifacts, i.e. in the *.mpk* package. | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="checkmark-circle-filled" color="green" >}}  |
-| **Creative Commons CC0 1.0 Universal (CC-0)** (Public Domain) | N/A | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} |
+3. In the **Documentation** field, add details on requirements and configuration for your component.   
+   Follow the template for the recommended content:
 
-{{% alert color="info" %}}
-The [GNU General Public License (GPL), version 3](https://www.gnu.org/licenses/gpl-3.0.en.html) is not available to use, as everything licensed under GNU GPL is public.    
-GNU GPL has a strong copyleft effect.    
-Modification has a strong copyleft effect.    
-All consuming apps should make their code public.
-{{% /alert %}}
+    * You must fill out the following sections in order to submit your component:
+        * The **Typical usage scenario** for the component
+        * The **Features and limitations** of the component
+    * These sections are optional:
+        * Any **Dependencies** (for example, the required Studio Pro version, modules, images, and styles)
+        * The **Installation** steps and details
+        * The **Configuration** steps and details
+        * Any **Known bugs**
+        * Any **Frequently Asked Questions**
 
-##### Proprietary Licenses {#proprietary-license}
+   The editor comes with a set of basic formatting tools, such as bold, bullet lists, and URL links.
+ 
+4. In the **Resources** section, add up to 5 URLs for resources that your users might find useful, such as a GitHub URL.
+
+## Proprietary Licenses {#proprietary-license} <!-- to check -->
 
 You can configure your own proprietary license for your company’s content. The license can be applied to multiple components, and it can be used by everyone within your organization. 
 
@@ -98,7 +142,7 @@ Follow these steps to configure a proprietary license for a new public component
 3. Add a **License URL**, which should lead the user to a web page that lists the terms and conditions for using the component. Users can navigate to this web page by clicking the license name on the component details page.
 4. Add a **Reason** for the new license. This is solely for Mendix review purposes, and will not be displayed on the component details page.
 
-#### Generating New Leads {#lead-generation}
+## Generating New Leads {#lead-generation} <!-- to check -->
 
 A lead is a potential sales contact that expresses interest in your product or service. Lead routing is the end-to-end process of collecting the leads and distributing them to you. It is possible to configure lead routing for the following content types in the Marketplace:
 
@@ -117,60 +161,7 @@ You can use one of these options as the name of your **Main call-to-action** but
 
 In the **How would you like to receive information on new leads?** field, you must specify the email address or addresses where notifications and information can be sent.
 
-#### Adding an Icon
-
-To finish the configuration on the **General** page, click **Upload Image** to upload a cover image for your component.
-
-{{< figure src="/attachments/appstore/submit-content/general.png" >}}
-
-### Package {#package}
-
-{{% alert color="info" %}}
-If you are using **Solutions**, you will not see the option to select your content source. If you are using **Industry Template**, selecting a content source is optional.
-{{% /alert %}}
-
-1. Select one of the options for uploading the source file: 
-
-* **Manual upload** – Follow the steps in the dialog box for uploading the package source file.    
-  When you are finished, click **Save**.
-* **GitHub URL** – Follow the steps in the dialog box for copying the link of the release you want to import. For details, see the [Using a GitHub Repo](/appstore/guidelines-content-creators/#github) section in *Guidelines for Content Creators*.    
-  To include the repo's *README.md* file on the component's [Documentation](#doc) tab, make sure you have selected the **Import Documentation** box.     
-  When you are finished, click **OK**.
-
-2. Select the **Studio Pro Version** on which you built the content.    
-   
-3. Add a version for your component. If this is the first version of the component you are uploading, the number in the **Version** section will be automatically set to **1.0.0**. 
-
-4. Enter **Release Notes** for the component in the box provided describing what is new in that release.
-
-### Enable {#doc}
-
-On the **Enable** page, in the **Documentation** section, you can enter details on requirements and configuration for your component. 
-
-{{% alert color="info" %}} For GitHub uploads, the documentation option is only available if the **Import Documentation** box has not been selected on the **Package** page. 
-{{% /alert %}}
-
-1. Follow the template for the recommended content:
-
-* You must fill out the following sections in order to submit your component:
-    * The **Typical usage scenario** for the component
-    * The **Features and limitations** of the component
-* These sections are optional:
-    * Any **Dependencies** (for example, the required Studio Pro version, modules, images, and styles)
-    * The **Installation** steps and details
-    * The **Configuration** steps and details
-    * Any **Known bugs**
-    * Any **Frequently Asked Questions**
-
-The editor comes with a set of basic formatting tools, such as bold, bullet lists, and URL links.
-
-<a id="screenshot"></a>2. Click **Upload Screenshot** to upload images of the component from your computer. This is required for submitting a new component, and is especially important for configuration steps:
-
-{{< figure src="/attachments/appstore/submit-content/enable.png"  >}}
-
-3. (Optional) Add a **YouTube URL** and a **Demo URL**.
-
-### Publish {#publish}
+## Publishing {#publish} <!-- to check and update -->
 
 Finally, on the **Publish** page, you can review all the details you entered so far, and edit them if necessary before publishing.
 
