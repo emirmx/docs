@@ -205,12 +205,12 @@ If you are using Studio Pro on a Mac with Parallels, see [this update](https://k
 
 * There are now user trials available for **Premium** app services, such as Email Service and Speech to Text. This self-service experience helps you to evaluate the capabilities offered with these components and realize the value of premium content.
 * User trial subscriptions are now listed under My Subscriptions, and company trial and paid subscriptions are now listed under Company Subscriptions.
-* For new uploads of public components, you can now optionally share a [virus scan report](/appstore/submit-content/#package) to speed up the governance process.
+* For new uploads of public components, you can now optionally share a virus scan report to speed up the governance process.
 * For solutions and solution templates, you can now add a use case relevant to the component. The use case is displayed in the component listing and includes header text and an external link.
 
 #### Improvements
 
-* We made performance improvements for when a large source file is [uploaded](/appstore/submit-content/#package), specifically on the navigation steps.
+* We made performance improvements for when a large source file is uploaded, specifically on the navigation steps.
 * We improved the UI for self-service uploading your component to the Marketplace.
 
 ### February 10, 2022
@@ -241,8 +241,8 @@ If you are using Studio Pro on a Mac with Parallels, see [this update](https://k
 
 #### Improvements
 
-* You can now add [release notes](/appstore/submit-content/#package) for your new component version without uploading a new source file.
-* You can now skip uploading a source file on the [Package](/appstore/submit-content/#package) page for **App Service** and **Solution Template** component types if your component is not downloadable.
+* You can now add [release notes](/appstore/submit-content/#general) for your new component version without uploading a new source file.
+* You can now skip uploading a source file on the [Upload Component](/appstore/submit-content/#general) tab for **App Service** and **Solution Template** component types if your component is not downloadable.
 
 ### September 7, 2021
 

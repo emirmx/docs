@@ -7,7 +7,7 @@ description: "Describes the Mendix processes for approving and reviewing Marketp
 
 ## Approval Process
 
-All components that are to be listed in the [Public Marketplace](/appstore/submit-content/#public) are subject to an approval process to ensure the quality and accuracy of the listing and that the component meets the expectations of users. Component submissions are processed in a queue and reviewed on a first-come, first-served basis within five working days after submission.
+All components that are to be listed in the [Public Marketplace](/appstore/submit-content/#support-licensing) are subject to an approval process to ensure the quality and accuracy of the listing and that the component meets the expectations of users. Component submissions are processed in a queue and reviewed on a first-come, first-served basis within five working days after submission.
 
 {{% alert color="warning" %}}
 Mendix strongly recommends performing the following checks before you submit your component for approval. This also speeds up the approval process.
@@ -19,7 +19,7 @@ Mendix checks the following:
 
 * The licenses used in the uploaded *.mpk* files, using the [Fossology](https://fossology.osuosl.org/repo/) tool .   
   There should be no use of GPL, LGPL, or MPL licenses.    
-  For more details, see the [Providing License Details](/appstore/submit-content/#license) section in *Uploading to the Marketplace*.
+  For more details, refer to [Open-Source Software Licenses](/appstore/licenses/).
 * For malware in the *.mpk* files, using the [VirusTotal](https://www.virustotal.com/gui/home/upload) tool.
 * For third-party vulnerabilities, using the [Snyk](https://snyk.io/) tool.
 * That the component can be used without errors in a specific Studio Pro version, if the component is a widget, a module, a connector, or an industry template.

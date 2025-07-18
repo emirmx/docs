@@ -79,7 +79,7 @@ On the **General Information** tab, add more details about your component.
 
 5. From the **Category** drop-down list, select up to three areas of expertise that are applicable to your component.
 
-## Configuring Support and Licensing
+## Configuring Support and Licensing {#support-licensing}
 
 On the **Support & Licensing** tab, add information about support, licensing, and visibility.
 
@@ -129,7 +129,7 @@ On the **Media & Documentation** tab, add any resources to guide your users.
  
 4. In the **Resources** section, add up to 5 URLs for resources that your users might find useful, such as a GitHub URL.
 
-## Proprietary Licenses {#proprietary-license} <!-- to check -->
+## Proprietary Licenses {#proprietary-license} 
 
 You can configure your own proprietary license for your company’s content. The license can be applied to multiple components, and it can be used by everyone within your organization. 
 
@@ -142,7 +142,9 @@ Follow these steps to configure a proprietary license for a new public component
 3. Add a **License URL**, which should lead the user to a web page that lists the terms and conditions for using the component. Users can navigate to this web page by clicking the license name on the component details page.
 4. Add a **Reason** for the new license. This is solely for Mendix review purposes, and will not be displayed on the component details page.
 
-## Generating New Leads {#lead-generation} <!-- to check -->
+## Generating New Leads {#lead-generation} 
+
+<!-- to check -->
 
 A lead is a potential sales contact that expresses interest in your product or service. Lead routing is the end-to-end process of collecting the leads and distributing them to you. It is possible to configure lead routing for the following content types in the Marketplace:
 
@@ -161,7 +163,9 @@ You can use one of these options as the name of your **Main call-to-action** but
 
 In the **How would you like to receive information on new leads?** field, you must specify the email address or addresses where notifications and information can be sent.
 
-## Publishing {#publish} <!-- to check and update -->
+## Publishing {#publish} 
+
+<!-- to check and update -->
 
 Finally, on the **Publish** page, you can review all the details you entered so far, and edit them if necessary before publishing.
 
