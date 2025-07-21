@@ -66,8 +66,8 @@ After the [Create MCP Server](#create-server) action, you can add one or multipl
 
 The selected microflow must adhere to the following principles:
 
-* Input needs to be the same as described in the `Schema` attribute (only primitives and/or an object of type `MCPServer.Tool` are supported). If no Schema is passed in the add tool action, it gets created automatically based on the microflow's input parameters.
-* The return value needs to either be of type String or of type `TextContent` which you can create inside of the microflow to return the relevant information to the model based on the outcome of the microflow.
+* Input needs to be the same as described in the `Schema` attribute (only primitives and/or an object of type `MCPServer.Tool` are supported). If no Schema is passed in the `Add tool` action, it will be automatically created based on the microflow's input parameters.
+* The return value must be either of type `String` or `TextContent`. You can create a `TextContent` object within the microflow to return the relevant information to the model based on the outcome of the microflow.
 
 For an example, see the `Example Implementations` folder inside of the module.
 
@@ -99,21 +99,21 @@ The **Documentation** pane displays the documentation for the currently selected
 1. In the [View menu](/refguide/view-menu/) of Studio Pro, select **Documentation**.
 2. Click the element for which you want to view the documentation.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" >}}#
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" >}}
 
+## Troubleshooting
 
-## Troubleshooting {#troubleshooting}
+### MCP Client Cannot Connect to the MCP Server
 
-### MCP Client cannot connect to MCP Server
+There are several possible reasons why the client cannot connect to your server. Check the logs of the MCP host application for the hint about what might be going wrong. Additionally, if the issue occurs on the Mendix side, the MCP Server module will log relevant errors.
 
-There are several reasons why the client cannot connect to your server. The logs of the MCP host application may hint what is going wrong. Additionally, the MCP Server module logs errors if the error happens on the Mendix-side.
+The error `Fatal error: SseError: SSE error: Could not convert argument of type symbol to string.` may indicate that you need to install or uninstall [Node.js](https://nodejs.org/en). After that, you may also need to clear your NPX cache by running the following command in a CLI (for example, PowerShell):
 
-The error `Fatal error: SseError: SSE error: Could not convert argument of type symbol to string.` may indicate that you need to (re)install [node.js](https://nodejs.org/en). Afterwards, you may need to clean your NPX cache by using the following command in a CLI (e.g., in Powershell): 
-
-    Remove-Item -Path "$env:LocalAppData\npm-cache\_npx" -Recurse -Force
-    npm cache clean --force
+```text
+Remove-Item -Path "$env:LocalAppData\npm-cache\_npx" -Recurse -Force
+npm cache clean --force
+```
    
-    
 ## Read More
 
 * Concept description of [Model Context Protocol (MCP)](/appstore/modules/genai/mcp/)
