@@ -93,7 +93,7 @@ Follow the steps below to get started:
 
 ## Operations
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/MxGenAIConnector_Configuration.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/mxgenaiconnector-configuration.png" >}}
 
 Configuration keys are stored persistently after they are imported (either via the UI or the exposed microflow). There are three different types of configurations that reflect the use cases this service supports. The specific operations are described below.
 
@@ -123,13 +123,17 @@ The microflow activity [Chat completions (with history)](/appstore/modules/genai
 
 #### Retrieve & Generate {#retrieve-and-generate}
 
-To use retrieval and generation in a single operation, an internally predefined tool can be added to the [Request](/appstore/modules/genai/genai-for-mx/commons/#request) via the `Tools: Add Knowledge Base` action . The model can then decide whether to use the [knowledge base retrieval](/appstore/modules/genai/genai-for-mx/commons/#knowledge-base-retrieval) tool when handling the request. This functionality is supported in both with-history and without-history operations. The (optional) `Description` helps the model to understand the knowledge base content and decide whether it should be called in the current chat context. Additionally, you may apply optional filters, such as `MaxNumberOfResults` or `MinimumSimilarity`, or pass a [MetadataCollection](/appstore/modules/genai/genai-for-mx/commons/#metadatacollection-entity). 
+To use retrieval and generation in a single operation, an internally predefined tool can be added to the [Request](/appstore/modules/genai/genai-for-mx/commons/#request) via the `Tools: Add Knowledge Base` action. The model can then decide whether to use the [knowledge base retrieval](/appstore/modules/genai/genai-for-mx/commons/#knowledge-base-retrieval) tool when handling the request. This functionality is supported in both with-history and without-history operations. The (optional) `Description` helps the model to understand the knowledge base content and decide whether it should be called in the current chat context. Additionally, you may apply optional filters, such as `MaxNumberOfResults` or `MinimumSimilarity`, or pass a [MetadataCollection](/appstore/modules/genai/genai-for-mx/commons/#metadatacollection-entity). 
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/MxGenAIConnector_ConfigureRAG.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/mxgenaiconnector-rag.png" >}}
 
-The returned `Response` includes [References](/appstore/modules/genai/genai-for-mx/commons/#reference) if the model used them to generate its response. In some cases, a knowledge chunk consists of two texts: one for the semantic search step (retrieval) and another for the generation step. For example, when solving a problem based on historical solutions, the semantic search identifies similar problems using their descriptions, while the generation step produces a solution based on the corresponding historical solutions. In those cases, you can add [MetaData](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection-add-knowledgebasechunk) with the key `knowledge` to the chunks during the insertion stage, allowing the model to base its response on the specified metadata rather than the input text (only the knowledge is passed to the model).
+The returned `Response` includes [References](/appstore/modules/genai/genai-for-mx/commons/#reference) for each retreived chunk from the knowledge base. 
 
-Additionally, to utilize the `Source` attribute of the references, you can include `MetaData` with the key `sourceUrl`. Finally, the `HumanReadableId` of a chunk is used to display the reference's title in the response.
+Optionally, you can control both reference creation and the output returned for the model during the insertion step:
+
+* The `HumanReadableId` of a chunk is used for the reference title in the response, which is shown to the end user in the [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/).
+* To utilize the `Source` attribute of the references, include `MetaData` with the key `sourceUrl`. In [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/), this will appear as a clickable link for the end user.
+* In some cases, a knowledge chunk consists of two texts: one for the semantic search (retrieval) step, and another for the generation step. For example, when solving a problem based on historical solutions, semantic search identifies similar problems using their descriptions, while the generation step produces a solution based on the corresponding historical solutions. In such cases, you can add [MetaData](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection-add-knowledgebasechunk) with the key `knowledge` to each chunk during insertion. This allows the model to generate its response using the specified metadata instead of the input text (only the value of `knowledge` is passed to the model).
 
 #### Function Calling{#function-calling}
 
