@@ -53,37 +53,47 @@ After you install the connector, you can find it in the **App Explorer**, in the
 
 ### Configuring AWS Authentication {#configure-authentication}
 
-In order to use the Amazon Bedrock service, you must authenticate with AWS. To do so, you must set up a configuration profile in your Mendix app. After you set up the configuration profile, the connector module handles the authentication internally.
+To use the Amazon Bedrock service, you must authenticate with AWS. To do so, you must set up a configuration profile in your Mendix app. After you set up the configuration profile, the connector module handles the authentication internally.
 
 As of version 3.0.0 of the [AWS Authentication Connector](https://marketplace.mendix.com/link/component/120333), all the resources and logic required to set up authentication are centralized inside the AWS Authentication Connector module.
 
 The AWS Authentication Connector supports both **static credentials** and **temporary credentials**. For more information and detailed instructions please refer to the [AWS Authentication Connector documentation page](/appstore/modules/aws/aws-authentication/).
 
-### Syncing available model, knowledge bases and agents
+### Syncing Available Models, Knowledge Bases, and Agents
 
-You can use the Snippet `SNIP_Settings_Admin_ConfigOverview` (to be found in **_USE_ME > SyncBedrockMetadata > ReusableUI**) on an administrator page to sync models, knowledge bases and agents for the selected region at runtime. Admins on the page first need to configure the settings of the [AWS Authentication Connector](#configure-authentication) module, by selecting the AWS region and how to authenticate. When saving the settings or when you sync the models for the current region, AWS metadata services are called to create persistent objects in the database which you can view in the tables at the bottom of the snippet. Note that all models are shown regardless of having actual access to them which can only be configured in the AWS console.
+You can use the `SNIP_Settings_Admin_ConfigOverview` snippet under **_USE_ME > SyncBedrockMetadata > ReusableUI** on an administrator page to sync models, knowledge bases and agents for the selected region at runtime. Admins on the page first need to configure the settings of the [AWS Authentication Connector](#configure-authentication) module, by selecting the AWS region and how to authenticate. When saving the settings or when you sync the models for the current region, AWS metadata services are called to create persistent objects in the database which you can view in the tables at the bottom of the snippet. 
 
-#### Syncing resources using microflows
+{{% alert color="info" %}}
+All models are shown, even those which you cannot accesss. Access to models must be configured in the AWS console.
+{{% /alert %}}
 
-For use cases for which you do not want to configure the resources in an admin user interface, you can use the following actions in your custom microflows:
+#### Syncing Resources Using Microflows
+
+If you do not want to configure the resources in an admin user interface, you can use the following actions in your custom microflows:
+
 * Sync Models & Knowledge Bases & Agents
 * [Sync Models](#sync-models) 
 * [Sync Knowledge Bases](#sync-knowledge-bases)
 * [Sync Agents](#sync-agents)
 
 The following actions only list the available resources as non-persistent objects:
+
 * List Foundation Models
 * List Agents
 * List Data Sources
 
-#### Adding custom models to your Bedrock configuration {#adding-custom-model}
+#### Adding Custom Models to your Bedrock Configuration {#adding-custom-model}
 
-When syncing your bedrock configuration, only publicly available foundation models can be retrieved using the `List Foundation Models` action from the Bedrock Connector. To be able to use cross region inference (CRI) or provisioned-throughput models that you have setup in your AWS console, you will need to manually add these models to your database. To add a custom model, follow the steps below:
+When syncing your Bedrock configuration, only publicly available foundation models can be retrieved using the `List Foundation Models` action from the Bedrock Connector. To use cross-region inference (CRI) or provisioned-throughput models that you have setup in your AWS console, you must manually add these models to your database. To add a custom model, follow the steps below:
 
-- Click on the **Add model** button above the model's table
-- Fill out the form with the relevant information of your custom model, especially the display name, which will be shown in the model dropdowns while choosing a model to use, and the model id, which is a required field in order to actually use the model of your choice with Amazon Bedrock. The other fields must be filled out according to the functionalities the model can use.
+1. Click **Add model** above the model's table.
+2. Fill out the form with the relevant information of your custom model.
 
-After the form is filled out and saved, the custom model can be used with the actions of your choice.
+    The display name is shown in the model dropdowns while choosing a model to use. The model ID is required to use the model with Amazon Bedrock. The other fields must be filled out according to the functionalities the model can use.
+
+3. Save the model.
+
+You can now use the custom model with the actions of your choice.
 
 ### Using Amazon Bedrock Models
 
