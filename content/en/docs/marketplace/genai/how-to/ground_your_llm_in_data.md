@@ -62,7 +62,7 @@ To start, create a microflow that allows you to upload data into your knowledge 
 
 1. Create a new microflow, for example, `ACT_TicketList_LoadAllIntoKnowledgeBase`.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/loaddataintokb_example_replace.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/loaddataintokb-example-replace.png" >}}
 
 2. Add the `Retrieve Objects` action. You can configure it as follows:
     
@@ -91,13 +91,13 @@ To start, create a microflow that allows you to upload data into your knowledge 
 
 6. Next, add the `DeployedKnowledgeBase: Get` action from the `Mendix Cloud Knowledge Base` category:
 
-    * **MxCloudKnowledgeBaseResource**: `MxCloudKnowledgeBaseResource` (as retrieved in step 5)
+    * **MxCloudKnowledgeBaseResource**: `MxCloudKnowledgeBaseResource` (as retrieved in the step above)
     * **CollectionName**: `HistoricalTickets`
     * Use return value: Yes, `DeployedKnowledgeBase`
 
 7. Add the `Embed & Replace` action to insert your knowledge into the knowledge base:
 
-    * **ChunkCollection**: `ChunkCollection` (as created in step 3)
+    * **ChunkCollection**: `ChunkCollection` (as created earlier)
     * **DeployedKnowledgeBase**: `DeployedKnowledgeBase`
 
 You have successfully implemented the knowledge base insertion microflow! If you do not have any data available in your app yet, you need to create a microflow to generate the dataset, as described in the [Data Set Microflow](#dataset) section below.
@@ -108,7 +108,7 @@ This microflow first checks whether a list of tickets already exists in the data
 
 1. Create a new microflow, for example, `Tickets_CreateDataset`.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/loaddataintokb_example_demodata.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/loaddataintokb-example-demodata.png" >}}
 
 2. Add a `Retrieve` action:
     
@@ -144,7 +144,7 @@ With both microflows created, they must be combined and added to the homepage to
 
 1. Create a new microflow `ACT_TicketList_CreateData_InsertIntoKnowledgeBase`.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/loaddataintokb_example_combine.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/loaddataintokb-example-combine.png" >}}
 
 2. Add a `Call Microflow` action where you call the `MyFirstModule.Tickets_CreateDataset` microflow created above. 
 
@@ -170,7 +170,7 @@ To use the knowledge in a chat interface, create and adjust certain microflows a
 
     With the `MyFirstBot.ACT_FullScreenChat_Open microflow` configured, the `MyFirstBot.ChatContext_ChatWithHistory_ActionMicroflow` can now be adjusted to handle user-submitted messages in the chat interface.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/chatcontext_microflow_example.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/chatcontext-microflow-example.png" >}}
 
 4. Open your `MyFirstBot.ChatContext_ChatWithHistory_ActionMicroflow` microflow in your **MyFirstBot** module.
 
@@ -184,7 +184,7 @@ To use the knowledge in a chat interface, create and adjust certain microflows a
 
 6. Add the `Tools: Add Knowledge Base` action with the settings shown in the image below:
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/tool_addknowledgebase_example.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-goundllm/tool-addknowledgebase-example.png" >}}
 
 The rest of the actions can remain as they are currently set. Now that everything is implemented, you can test the chat with enriched knowledge.
 
