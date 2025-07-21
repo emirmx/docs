@@ -129,10 +129,11 @@ To use retrieval and generation in a single operation, an internally predefined 
 
 The returned `Response` includes [References](/appstore/modules/genai/genai-for-mx/commons/#reference) for each retreived chunk from the knowledge base. 
 
-Optionally, you can control the reference creation as well as the to-be-returned output for the model at the insertion step:
-* The `HumanReadableId` of a chunk is used for the reference's title in the response which is shown in [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/) to the end-user.
-* To utilize the `Source` attribute of the references, you can include `MetaData` with the key `sourceUrl`. In [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/) the source is shown as clickable link to the end-user.
-* In some cases, a knowledge chunk consists of two texts: one for the semantic search step (retrieval) and another for the generation step. For example, when solving a problem based on historical solutions, the semantic search identifies similar problems using their descriptions, while the generation step produces a solution based on the corresponding historical solutions. In those cases, you can add [MetaData](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection-add-knowledgebasechunk) with the key `knowledge` to the chunks during the insertion stage, allowing the model to base its response on the specified metadata rather than the input text (only the knowledge is passed to the model).
+Optionally, you can control both reference creation and the output returned for the model during the insertion step:
+
+* The `HumanReadableId` of a chunk is used for the reference title in the response, which is shown to the end user in the [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/).
+* To utilize the `Source` attribute of the references, include `MetaData` with the key `sourceUrl`. In [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/), this will appear as a clickable link for the end user.
+* In some cases, a knowledge chunk consists of two texts: one for the semantic search (retrieval) step, and another for the generation step. For example, when solving a problem based on historical solutions, semantic search identifies similar problems using their descriptions, while the generation step produces a solution based on the corresponding historical solutions. In such cases, you can add [MetaData](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection-add-knowledgebasechunk) with the key `knowledge` to each chunk during insertion. This allows the model to generate its response using the specified metadata instead of the input text (only the value of `knowledge` is passed to the model).
 
 #### Function Calling{#function-calling}
 
