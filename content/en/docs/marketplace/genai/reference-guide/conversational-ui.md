@@ -263,7 +263,7 @@ You may need to use the following classes when building a more complex custom pa
 
 #### Using a Custom Layout
 
-You may need to use a different layout than Atlas_Default in your application, for example for the token consumption monitor. The module contains the Layout `Layout_MasterBase` which is used on every page of this module and which is based on Atlas_Default. You can overwrite the master layout in the properties of this layout in order to use a different layout. This change needs to happen for every update from the marketplace.
+If you are using a custom layout in your application, you may need to use a different layout than Atlas_Default. For such scenarios, the module provides `Layout_MasterBase`- an Atlas_Default-derived layout that is applied to every page in the module. You can overwrite the master layout in its properties in order to change its appearance. Please note: These customizations will need to be reapplied after each marketplace update.
 
 ### Token Consumption Monitor Snippets {#snippet-token-monitor}
 
