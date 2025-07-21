@@ -107,7 +107,7 @@ The **Documentation** pane displays the documentation for the currently selected
 
 There are several possible reasons why the client cannot connect to your server. Check the logs of the MCP host application for the hint about what might be going wrong. Additionally, if the issue occurs on the Mendix side, the MCP Server module will log relevant errors.
 
-The error `Fatal error: SseError: SSE error: Could not convert argument of type symbol to string.` may indicate that you need to install or uninstall [Node.js](https://nodejs.org/en). After that, you may also need to clear your NPX cache by running the following command in a CLI (for example, PowerShell):
+The error `Fatal error: SseError: SSE error: Could not convert argument of type symbol to string.` may indicate that you need to install or reinstall [Node.js](https://nodejs.org/en). After that, you may also need to clear your NPX cache by running the following command in a CLI (for example, PowerShell):
 
 ```text
 Remove-Item -Path "$env:LocalAppData\npm-cache\_npx" -Recurse -Force
