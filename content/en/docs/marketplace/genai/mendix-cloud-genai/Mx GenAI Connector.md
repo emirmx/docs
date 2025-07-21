@@ -93,7 +93,7 @@ Follow the steps below to get started:
 
 ## Operations
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/MxGenAIConnector_Configuration.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/mxgenaiconnector-configuration.png" >}}
 
 Configuration keys are stored persistently after they are imported (either via the UI or the exposed microflow). There are three different types of configurations that reflect the use cases this service supports. The specific operations are described below.
 
@@ -125,7 +125,7 @@ The microflow activity [Chat completions (with history)](/appstore/modules/genai
 
 To use retrieval and generation in a single operation, an internally predefined tool can be added to the [Request](/appstore/modules/genai/genai-for-mx/commons/#request) via the `Tools: Add Knowledge Base` action. The model can then decide whether to use the [knowledge base retrieval](/appstore/modules/genai/genai-for-mx/commons/#knowledge-base-retrieval) tool when handling the request. This functionality is supported in both with-history and without-history operations. The (optional) `Description` helps the model to understand the knowledge base content and decide whether it should be called in the current chat context. Additionally, you may apply optional filters, such as `MaxNumberOfResults` or `MinimumSimilarity`, or pass a [MetadataCollection](/appstore/modules/genai/genai-for-mx/commons/#metadatacollection-entity). 
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/MxGenAIConnector_ConfigureRAG.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/mxgenaiconnector-rag.png" >}}
 
 The returned `Response` includes [References](/appstore/modules/genai/genai-for-mx/commons/#reference) for each retreived chunk from the knowledge base. 
 
