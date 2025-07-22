@@ -100,8 +100,8 @@ The OIDC Provider has the following features and limitations:
 
 The following modules need to be imported into your app:
 
-* [Community Commons](https://marketplace.mendix.com/link/component/170) – see [Community Commons](/appstore/modules/community-commons-function-library/) documentation
-* [Mx Model reflection](https://marketplace.mendix.com/link/component/69) – see [Mx Model Reflection](/appstore/modules/model-reflection/) documentation
+* [Community Commons](https://marketplace.mendix.com/link/component/170) – see [Community Commons](/appstore/modules/community-commons-function-library/) documentation.
+* [Mx Model reflection](https://marketplace.mendix.com/link/component/69) – see [Mx Model Reflection](/appstore/modules/model-reflection/) documentation. (This module is not required if you are using OIDC Provider v5.0.0 and above.)
 
 ### Protocol Adherence
 
@@ -136,6 +136,10 @@ To install the OIDC Provider service in your IAM broker app, you need to import 
 
 {{% alert color="info" %}}
 To develop your IAM broker app more quickly, consider using the [Access Provider Template](https://marketplace.mendix.com/link/component/229790). This template facilitates the setup and integration of OIDC Provider and OIDC SSO modules, including all necessary dependencies. For more information, refer to the documentation tab of the Access Provider Template Marketplace module.
+{{% /alert %}}
+
+{{% alert color="warning" %}}
+When migrating from LA to GA version of the module (version 5.0.0 and above), there is a breaking change in the custom claim selection dropdown. You need to create a microflow with the appropriate prefix and reconfigure the custom claim microflow in the dropdown. For more information, see the [Configuration of the OIDC Provider to Propagate the End-User’s Identity with Custom Claims](#propagate-custom-claims) section below.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -368,7 +372,7 @@ Typically you want to propagate the end-user’s identity from the OIDC Provider
 
 To pass this additional information, you need to create custom claims. You can do this as follows:
 
-1. Create a microflow starting with `OIDCP_` that returns a value to be used in the claim.
+1. Create a microflow with prefix `OIDCP_` that returns a value to be used in the claim.
 
     * Input: `Administration.Account`
     * Output: Any custom Claim object
