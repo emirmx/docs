@@ -114,7 +114,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### New Features
 
-* We enhanced Software Composition to include marketplace-related metadata. You can now view this additional information on both the [All Components](/developerportal/deploy/software-composition/#all-components) tab and the [Company Summary](/developerportal/deploy/software-composition/#component-summary) page for a more comprehensive overview of your components.
+* We enhanced Software Composition to include marketplace-related metadata. You can now view this additional information on both the [All Components](/developerportal/deploy/software-composition/#all-components) tab and the [Application Environment Summary](/developerportal/deploy/software-composition/#app-env-summary) page for a more comprehensive overview of your components.
 
 ### November 17, 2024
 
