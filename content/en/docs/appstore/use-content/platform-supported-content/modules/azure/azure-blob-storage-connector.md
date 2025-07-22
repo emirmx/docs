@@ -49,12 +49,20 @@ A Shared Access Signature (SAS) provides secure, delegated access to resources i
 2. Create a `SASCredentials` object and populate its `SASToken` attribute
 3. Pass the `SASCredentials` object to the `AbstractCredentials` parameter in your operation microflow
 
-#### Azure Entra ID Access Token
-For Azure Entra ID authentication:
+#### User Based Azure Entra ID Access Token
+For user based Azure Entra ID authentication:
 
 1. Configure Single Sign-On (SSO) using the `OIDC SSO` marketplace module
 2. Utilize the `GetCurrentToken` microflow to obtain the required access token
 3. Create an `EntraCredentials` object and set its `BearerToken` attribute
+4. Supply the `EntraCredentials` object to the `AbstractCredentials` parameter in your operation microflow
+
+#### User Based Azure Entra ID Access Token
+For application based Azure Entra ID authentication:
+
+1. Set the ClientId, ClientSecret and TenantId constants of your registered application in Azure
+2. Create a `GetApplicationBearerTokenRequest` object
+3. Supply the `GetApplicationBearerTokenRequest` to the `POST_v1_Azure_GetApplicationBearerToken` operation to generate a token and return an `EntraCredentials` object
 4. Supply the `EntraCredentials` object to the `AbstractCredentials` parameter in your operation microflow
 
 ### Configuring a Microflow for an AWS Service
@@ -108,3 +116,4 @@ For additional reference, the available activities are listed below.
 The Azure Blob Storage connector contains the following activities:
 
 * `PutBlob` - Allows you to upload, as a Blob, a file of any type, to Azure Blob Storage. For more information, see [Put Blob to Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/put-blob).
+* `GetApplicationBearerToken` - Allows the application to request a bearer token. The response is mapped to a `EntraCredentials` object that can be used to authenticate calls to Blob Storage.
