@@ -10,6 +10,10 @@ aliases:
 
 ## Introduction
 
+View your App Settings by clicking **App Explorer** > **App** > **Settings**:
+
+{{< figure src="/attachments/refguide/modeling/app-explorer/app/app-settings/app-settings-location.png" width="200px"  >}}
+
 In the **App Settings** dialog box, you can alter the settings that are applicable to the whole app:
 
 {{< figure src="/attachments/refguide/modeling/app-explorer/app/app-settings/app-settings-configuration.png" width="300px" class="no-border" >}}
@@ -463,9 +467,3 @@ When enabled, the names that Studio Pro suggests in microflows will start with a
 ### Activity Default Colors
 
 This table allows you to select a default color for each microflow activity type that is available in your app. The selected color will be used as the background color for all microflow activities of that type in your app. It is possible to override this default value for individual activities in the microflow editor. If you change the default color for an activity type, and there are activities of that type present in the app that have an individual background color specified, a dialog will be shown that allows you to apply the new default color to these activities as well.
-
-### Automatically Encode Parameter Values in Send REST Request Microflow Activities
-
-You can disable the encoding of the URL parameters for the Send REST Request microflow activity. This allows parameter values to be used as provided.
-
-When enabled, the behavior will be inconsistent with the Consumed REST service.

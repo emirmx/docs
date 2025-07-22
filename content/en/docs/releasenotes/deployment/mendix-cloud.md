@@ -8,11 +8,33 @@ description: "Release notes for deployment to Mendix Cloud"
 
 These release notes cover changes to deployment to [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/).
 
+Mendix Cloud deployments are also dependent on the latest version of the [Mendix Cloud Foundry Buildpack](https://github.com/mendix/cf-mendix-buildpack). The [Mendix Cloud Foundry Buildpack release notes](https://github.com/mendix/cf-mendix-buildpack/releases) are published separately, as other deployment targets are also dependent on the buildpack.
+
 There are separate release notes for other deployment targets; for more information, see the [Deployment](/releasenotes/developer-portal/deployment/) release notes.
 
 For information on the current status of deployment to Mendix Cloud and any planned releases, see [Mendix Status](https://status.mendix.com/).
 
 ## 2025
+
+### July 13, 2025
+
+#### Bug Fixes
+
+* We have implemented strict validation on the [Upload Package API](https://docs.mendix.com/apidocs-mxsdk/apidocs/deploy-api-2/#upload-package). The request parameter keys now require exact name matching, especially for the file key.
+* We fixed an issue where the **Resource Mismatch** label was displayed incorrectly. This label will now appear only when the UI scale settings differ from the backend cloud resource settings.
+
+### June 27, 2025
+
+#### Bug Fixes
+
+* We fixed a bug where users could not trigger the on commit trigger pipeline (Ticket 245653)
+
+### June 12, 2025
+
+#### New Features
+
+* We have added a new beta feature in the [environment UI](/developerportal/deploy/environments/). This feature allows Technical Contacts to [change app's environment plan](/developerportal/deploy/change-plan/) to a higher-resource plan.
+    * Additionally, a new tab ([Request Overview](/developerportal/deploy/environments/#request-overview)) has been introduced where Technical Contacts can view and manage plan change requests and track the status of their pending requests awaiting a Mendix Admin review from the [Control Center](/control-center/approval-requests/).
 
 ### May 25, 2025
 
@@ -56,7 +78,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### New Features
 
-* We have added a number of new features which are all available as part of the [new UI](/developerportal/deploy/environments-redesign/). These are:
+* We have added a number of new features which are all available as part of the [new UI](/developerportal/deploy/environments/). These are:
 
     * Redesigned the **Environment Details** page to improve functionality and enhance the user experience.
     * Added staging support for apps in the deploy wizard.
@@ -65,7 +87,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Improvements
 
-* Based on user feedback, the [new UI](/developerportal/deploy/environments-redesign/) now also contains UX improvements to the **Environments Overview** page for paid apps.
+* Based on user feedback, the [new UI](/developerportal/deploy/environments/) now also contains UX improvements to the **Environments Overview** page for paid apps.
 
 ## 2024
 
@@ -80,7 +102,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Improvements
 
-* We introduced cloud tokens for your cloud resource pack purchases! Starting now, you will use [cloud tokens](/control-center/entitlements/#cloud-tokens) instead of cloud credits to complete your cloud resource purchases. With the transitioning from cloud credits to cloud tokens, Mendix is paving the way for a more streamlined and flexible approach to purchasing and switching between Mendix Cloud products.
+* We introduced cloud tokens for your cloud resource pack purchases! Starting now, you will use [cloud tokens](/control-center/cloud-tokens/#cloud-tokens) instead of cloud credits to complete your cloud resource purchases. With the transitioning from cloud credits to cloud tokens, Mendix is paving the way for a more streamlined and flexible approach to purchasing and switching between Mendix Cloud products.
 
 ### December 1, 2024
 
@@ -99,7 +121,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 #### Deployment Portal Fixes
 
 * We fixed a bug in the [Permissions tab of the legacy UI](/developerportal/deploy/environments/#permissions-tab), where changing an application's technical contact resulted in a blank page.
-* We fixed a bug in the [new UI](/developerportal/deploy/environments-redesign/), where the **scalable** tag was displayed for environments that were not scalable.
+* We fixed a bug in the [new UI](/developerportal/deploy/environments/), where the **scalable** tag was displayed for environments that were not scalable.
 * We fixed a number of other bugs related to dark mode.
 
 ### November 14, 2024
@@ -259,7 +281,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 #### New Features
 
 * We launched a new feature: Pipelines. Pipelines lets you build and deploy software in an automated way. You can design pipelines with a set of configurable, low-code steps. Activated pipelines run automatically according to your design. This new Pipelines feature is intended to make it quick and easy for teams to automate their CI/CD process. For more information, see [Pipelines](/developerportal/deploy/pipelines/).
-    * The Pipelines feature is in [public beta](/releasenotes/beta-features/). It is currently available for unlimited use with all licensed Mendix Cloud apps. Limitations may be put on its use in the future.
+    * The Pipelines feature is in [public beta](/releasenotes/release-status/). It is currently available for unlimited use with all licensed Mendix Cloud apps. Limitations may be put on its use in the future.
 
 ### February 19, 2024
 
@@ -433,7 +455,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 * We have added webhooks which can trigger endpoints when changes are committed to a Team Server Git repository, or a new deployment package is available for deployment to the Mendix Cloud. See [Webhooks](/developerportal/deploy/webhooks/) for more information.
 
-    {{% alert color="info" %}}This feature is currently in a [beta release](/releasenotes/beta-features/).{{% /alert %}}
+    {{% alert color="info" %}}This feature is currently in a [beta release](/releasenotes/release-status/).{{% /alert %}}
 
 ### February 23, 2023
 
