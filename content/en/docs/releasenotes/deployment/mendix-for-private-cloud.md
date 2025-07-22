@@ -26,6 +26,7 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 * We fixed an issue when a Prometheus metrics scaper would reject metrics from Mendix 11 apps.
 * We have added a workaround to improve handling of bucket prefixes containing `/` characters.
 * We have improved logging of some startup and other errors - to provide clearer error messages and more relevant context.
+* When enabling the *Prevent data deletion* option, Mendix 9.6 (or newer) apps will no longer try to delete files from unreferenced *System.FileDocument*, so that Mendix apps would be able to run without permissions to delete files.
 * We have updated components to use Go 1.24 and the latest dependency versions in order to improve security score ratings for container images.
 * We have updated documentation that OpenShift 4.19 is supported by the Mendix Operator.
 * We have deprecated support for Tencent COS storage.
