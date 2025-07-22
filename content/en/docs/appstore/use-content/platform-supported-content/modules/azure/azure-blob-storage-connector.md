@@ -57,7 +57,7 @@ For user based Azure Entra ID authentication:
 3. Create an `EntraCredentials` object and set its `BearerToken` attribute
 4. Supply the `EntraCredentials` object to the `AbstractCredentials` parameter in your operation microflow
 
-#### User Based Azure Entra ID Access Token
+#### Application Based Azure Entra ID Access Token
 For application based Azure Entra ID authentication:
 
 1. Set the ClientId, ClientSecret and TenantId constants of your registered application in Azure
