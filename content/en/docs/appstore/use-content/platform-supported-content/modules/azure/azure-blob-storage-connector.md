@@ -72,11 +72,11 @@ You can implement the operations of the connector by using them in microflows. F
 1. In the **App Explorer**, right-click on the name of your module, and then click **Add microflow**.
 2. Enter a name for your microflow, for example, *ACT_PutBlob*, and then click **OK**.
 3. In the **App Explorer**, in the **AzureBlobStorageConnector** section, find the **PUT_v1_Azure_PutBlob** operation microflow.
-4. Create a **SASCredentials** or **EntrCredentials** object and add the SAS or access token to the **SASToken** or **BearerToken** attribute. 
+4. Create a **SASCredentials** or **EntraCredentials** object and add the SAS or access token to the **SASToken** or **BearerToken** attribute. 
 5. Drag the **PUT_v1_Azure_PutBlob** microflow in to your microflow.
 6. Double-click the **PUT_v1_Azure_PutBlob** operation to configure the required parameters. 
     
-    For the `PUT_v1_Azure_PutBlob` operation, retrieve the `System.FileDocument` you want to store and provide a configured `SASCredentials` or `EntrCredentials` object. You must then create a `PutBlobRequest` object in your microflow as the last parameter. This entity requires the following parameters:
+    For the `PUT_v1_Azure_PutBlob` operation, retrieve the `System.FileDocument` you want to store and provide a configured `SASCredentials` or `EntraCredentials` object. You must then create a `PutBlobRequest` object in your microflow as the last parameter. This entity requires the following parameters:
 
     | Parameter | Description | Required |
     |-----------|-------------|----------|
@@ -96,6 +96,24 @@ You can implement the operations of the connector by using them in microflows. F
 9. Configure a method to trigger the `ACT_PutBlob` microflow. 
     For example, you can call the microflow with a custom button on a page in your app. For an example of how this can be implemented, see [Creating a Custom Save Button with a Microflow](/refguide/creating-a-custom-save-button/).
     
+* `GetBlob` – Retrieves the contents of a blob stored in Azure Blob Storage. This operation requires a valid `GetBlobRequest` object and an appropriate credentials object (either `SASCredentials` or `EntraCredentials`). For more information, see [Get Blob from Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/get-blob).
+
+To use this operation in your microflow:
+
+1. Create a `GetBlobRequest` object and populate the required attributes:
+
+   | Parameter        | Description                                                  | Required |
+   |------------------|--------------------------------------------------------------|----------|
+   | `BlobName`       | Name of the blob to retrieve                                 | Yes      |
+   | `ContainerName`  | Name of the container the blob is stored in                  | Yes      |
+   | `BlobType`       | Type of blob (currently supports BlockBlob only)             | Yes      |
+   | `ContentType`    | MIME content type of the blob (used for response header)     | No       |
+   | `RequestDateTime`| Optional timestamp used for request validation or logging    | No       |
+
+2. Provide a valid credentials object via the `AbstractCredentials` parameter.
+3. Call the `GET_v1_Azure_GetBlob` action in your microflow.
+4. The operation returns a Mendix `FileDocument` object containing the blob data.
+
 ## Technical Reference {#technical-reference}
 
 The module includes technical reference documentation for the available entities, enumerations, activities, and other items that you can use in your application. You can view the information about each object in context by using the **Documentation** pane in Studio Pro.
