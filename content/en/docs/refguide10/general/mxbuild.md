@@ -36,8 +36,8 @@ For details on the system requirements for MxBuild, see [System Requirements](/r
 The examples used in this document are for Windows, except when specifically mentioned otherwise.
 {{% /alert %}}
 
-{{% alert color="info" %}}
-Note for MXbuild and macOS users:
+{{% alert color="warning" %}}
+For MxBuild and macOS users:
 
 If you are using the macOS version of Studio Pro and you store your project files on an external drive not formatted using the Apple File System, macOS can generate hidden files and folders that can make Windows versions of Studio Pro or MxBuild not work as expected.
 {{% /alert %}}
