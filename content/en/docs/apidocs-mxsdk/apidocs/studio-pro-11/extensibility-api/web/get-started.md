@@ -16,7 +16,6 @@ For more information, see the [Mendix Studio Pro Web Extensibility API](http://a
 You will need the following prerequisites:
 
 * Mendix Studio Pro version 10.21.0 or higher [Mendix Studio Pro](https://marketplace.mendix.com/link/studiopro). 
-* Install the latest Studio Pro version from the Mendix [Marketplace](https://marketplace.mendix.com/link/studiopro/).
 * A development IDE to develop your extensions. We recommend using [Visual Studio Code](https://code.visualstudio.com/).
 * Install the latest version 22.x.x of Node: https://nodejs.org/en/download.
 
@@ -101,11 +100,11 @@ To test the extension, do the following in File Explorer.
 
     The extension files have now been added to the app.
     
-1. Start Studio Pro with the following command line parameters to tell it to use the extensions in the folder.
+1. Start Studio Pro with the following command line parameter to tell it to use the extensions in the folder.
 
-    `--enable-extension-development --webview-remote-debugging`
+    `--enable-extension-development`
 
-    These flags instruct Studio Pro to do the following:
+    This flag instructs Studio Pro to do the following:
 
     * Load extensions from the `extensions` folder
     * Enable web debugging tools which will be useful when developing your extension

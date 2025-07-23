@@ -44,7 +44,7 @@ Download [Studio Pro](https://marketplace.mendix.com/link/studiopro/) and add th
 
 1. Right-click the module you want to add the Consumed REST Service document to.
 2. Select **Add other** > **Consumed REST service**. 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/add-consumed-rest-service.png" width="500" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/rest-services/consumed-rest-service/add-consumed-rest-service.png" width="500" class="no-border" >}}
 3. Name the service.
 4. Under **Add request(s)**, choose whether you want to add your request **Manually**, or **From OpenAPI/Swagger contract**.  
 
@@ -72,19 +72,19 @@ Create a `GET`, `POST`, `PUT`, `PATCH`, or `DELETE` request to send data to your
 1. In the **Method & URL** field, use the drop-down to select the HTTP method you want to use.
 2. Add an endpoint and click **Send**.
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/general-section.png" class="no-border" width="500" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/rest-services/consumed-rest-service/general-section.png" class="no-border" width="500" >}}
 
 3. Click **Base URL**.
 4. Add a base URL to use the same URL across all requests in this consumed REST Service document. 
    
-   {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/base-url.png" class="no-border"  width="500" >}}
+   {{< figure src="/attachments/refguide/modeling/integration/rest-services/consumed-rest-service/base-url.png" class="no-border"  width="500" >}}
 
    To make the base URL dynamic, see the [Dynamic Base URL](#dynamic-base-url) section below.
 
 5. Click **Authentication**.
 6. Select an authentication method, then click **OK**. For more information, see [Authentication methods](#authentication).
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/configuration-screen.png" width="500" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/rest-services/consumed-rest-service/configuration-screen.png" width="500" >}}
 
 7. Click **Send**. 
 
@@ -96,11 +96,11 @@ To add more requests from your existing contract, do the following:
 
 1. In the **Request** field, click **Add Request**:
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/add-request-button.png" class="no-border" width="400" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/rest-services/consumed-rest-service/add-request-button.png" class="no-border" width="400" >}}
 
 2. In the **Add Request(s)** dialog box, select the additional requests you want to add to the document, then click **Add**.
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/add-request.png" class="no-border" width="400" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/rest-services/consumed-rest-service/add-request.png" class="no-border" width="400" >}}
 
 To create a new blank request, click **New** in the **Add Request(s)** dialog box.
 
@@ -111,7 +111,7 @@ You can configure basic authentication to use for all requests in your document.
 1. Click **Authentication**.
 2. In the **Authentication method** field, click the drop-down and select **Basic authentication**. 
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/authentication-setup.png" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/rest-services/consumed-rest-service/authentication-setup.png" >}}
 
 3. Select a constant or create a new one for your username and password. To create a new constant, follow these steps:
    1. Next to **Username** or **Password**, click **Select** > **New**.
@@ -142,7 +142,7 @@ You can add a Base URL as a parameter. To do this, follow these steps:
 2. In the Dynamic field, select **Yes**.
 3. Click **OK**
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/dynamic-base-url.png" class="no-border" width="600" >}}
+{{< figure src="/attachments/refguide/modeling/integration/rest-services/consumed-rest-service/dynamic-base-url.png" class="no-border" width="600" >}}
 
 Your base URL is now considered as a parameter. You can change its value in the [Send REST Request](/refguide/send-rest-request/) microflow activity. 
 
@@ -190,7 +190,7 @@ You can add a header for any HTTP request you have specified in your document. T
 
 1. Open the **Headers** tab and click **Add header**.
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/header-example.png" class="no-border"  width="300" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/rest-services/consumed-rest-service/header-example.png" class="no-border"  width="300" >}}
 
 2. In the **Key** field, click the drop-down and choose from the list of the most commonly used HTTP headers. You can also create a custom header by typing directly in the key field and adding a value in the **Value** field.
 
@@ -198,7 +198,7 @@ You can add a header for any HTTP request you have specified in your document. T
 
 You can also add a parameter as the test value of a header, as seen below. For example, you can define an Authorization header where the authentication token is dynamic.
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/parameters-for-header.png" class="no-border" width="300" >}}
+{{< figure src="/attachments/refguide/modeling/integration/rest-services/consumed-rest-service/parameters-for-header.png" class="no-border" width="300" >}}
 
 ### Adding a Request Body (for POST, PUT, and PATCH requests only) {#add-a-request-body}
 
@@ -208,13 +208,13 @@ You can also add a parameter as the test value of a header, as seen below. For e
 
 If the request body content is static, paste the text into the **Body** tab. This text will be included as the body content when you send the request.
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/json-example.png" class="no-border" width="300" >}}
+{{< figure src="/attachments/refguide/modeling/integration/rest-services/consumed-rest-service/json-example.png" class="no-border" width="300" >}}
 
 #### Adding a Request Body Using Parameters
 
 When the text in the Body tab contains a parameter name surrounded by curly braces, it is interpreted as a parameter. These parameters can be used to change the body content dynamically. 
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/body-structure-example.png" class="no-border"  width="500" >}}
+{{< figure src="/attachments/refguide/modeling/integration/rest-services/consumed-rest-service/body-structure-example.png" class="no-border"  width="500" >}}
 
 For example, if your body content is `product_curr={currency}&product_price={price}`, the parameters `currency` and `price` can be used to change the body content.
 
@@ -230,7 +230,7 @@ Create body entities from a JSON snippet to your request by doing the following:
 
 3. If you want to use the newly-created JSON string as an entity in your domain model, click **Use JSON Snippet**. The body string can be viewed in the **Body structure** tab.
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/body-structure-tab.png" class="no-border"  width="400" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/rest-services/consumed-rest-service/body-structure-tab.png" class="no-border"  width="400" >}}
 
    The entity name is prefilled, but you can change it to a custom name. 
 
@@ -240,13 +240,13 @@ Create body entities from a JSON snippet to your request by doing the following:
 
 You can check the response of your request in the **Response data** tab. 
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/response-tab.png" class="no-border"  width="500" >}}
+{{< figure src="/attachments/refguide/modeling/integration/rest-services/consumed-rest-service/response-tab.png" class="no-border"  width="500" >}}
 
 #### Response is in JSON Format {#create-entity}
 
 If the response is in JSON format and you want to use the response to create an entity, open the **Response structure** tab, which displays a preview of the response data:
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/response-structure-tab.png" class="no-border"  width="500" >}}
+{{< figure src="/attachments/refguide/modeling/integration/rest-services/consumed-rest-service/response-structure-tab.png" class="no-border"  width="500" >}}
 
 The entity name is prefilled, but you can change it to a custom name. To create an entity, do the following:
 
@@ -278,6 +278,6 @@ To select a request in the microflow, complete the following steps:
 1. Create a new microflow and drag the [Send REST request](/refguide/send-rest-request/) activity into it.
 2. Double-click the activity and click **Select** to choose the request you want to add, then click **Select** > **OK**.
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/send-request-activity.png" class="no-border" width="500" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/rest-services/consumed-rest-service/send-request-activity.png" class="no-border" width="500" >}}
 
 If you have defined parameters in the request, they will be added to the activity. Click **Edit** to change the parameter in the microflow. The parameter values in this activity are used by the runtime instead of the test value defined in the request.
