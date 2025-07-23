@@ -98,7 +98,7 @@ You can implement the operations of the connector by using them in microflows. F
     
 * `GetBlob` – Retrieves the contents of a blob stored in Azure Blob Storage. This operation requires a valid `GetBlobRequest` object and an appropriate credentials object (either `SASCredentials` or `EntraCredentials`). For more information, see [Get Blob from Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/get-blob).
 
-To use this operation in your microflow:
+To use the GetBlob operation in your microflow:
 
 1. Create a `GetBlobRequest` object and populate the required attributes:
 
@@ -116,7 +116,7 @@ To use this operation in your microflow:
 
 * `DeleteBlob` – Deletes a specified blob from Azure Blob Storage. This operation requires a valid `DeleteBlobRequest` object and an appropriate credentials object (either `SASCredentials` or `EntraCredentials`). For more information, see [Delete Blob from Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/delete-blob).
 
-To use this operation in your microflow:
+To use the DeleteBlob operation in your microflow:
 
 1. Create a `DeleteBlobRequest` object and populate the required attributes:
 
