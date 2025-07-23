@@ -14,9 +14,9 @@ This how-to uses the results of [Get Started with the Web Extensibility API](/ap
 
 ## Opening a Document Editor
 
-Create a menu item. This is done inside the `loaded` event in `Main`. For more information, see [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
+First, create a menu item. This is done inside the `loaded` event in `Main`. For more information, see [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
 
-This menu action will look for the `Home_Page` document in `MyFirstModule` (however, you can use any module or any document in your app). It will then open it with the editor API. For more information, see [Access a Mendix Model Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/model-api/).
+This menu action will look for the `Home_Page` document in `MyFirstModule` (however, you can use any module or document in your app). It will then open it with the editor API. For more information, see [Access a Mendix Model Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/model-api/).
 
 For this example, add an event listener for the `menuItemActivated` event for when a menu is clicked. When the event triggers, do the following:
 
