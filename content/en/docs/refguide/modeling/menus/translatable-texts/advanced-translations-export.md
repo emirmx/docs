@@ -13,11 +13,11 @@ weight: 60
 To export languages, from the top-bar menu, select **Language > Advanced Translations Export** and choose one of the following options:
 
 * **As Excel (.xlsx) file** – export translations to a Microsoft Excel (*.xlsx*) format file
-* **As PO (.po) files** – export translations to PO (*.po*) format files.
+* **As PO (.po) files** – export translations to PO (*.po*) format files
 
 {{< figure src="/attachments/refguide/modeling/menus/translatable-texts/advanced-translations-export.png" alt="Advanced Translations Export" >}}
 
-When you select an option, a directory selector appears. Select a directory containing the files you want to export.
+When you select an option, a directory selector appears. Select the directory containing the files you want to export.
 
 A pop-up will appear confirming the start of the export.
 

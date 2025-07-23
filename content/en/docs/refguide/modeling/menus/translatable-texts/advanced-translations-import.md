@@ -13,7 +13,7 @@ weight: 50
 To import languages, from the top-bar menu, select **Language > Advanced Translations Import** and choose one of the following options:
 
 * **From Excel (.xlsx) file** – import translations from a Microsoft Excel (*.xlsx*) format file
-* **From PO (.po) files** – import translations from PO (*.po*) format files.
+* **From PO (.po) files** – import translations from PO (*.po*) format files
 
 {{< figure src="/attachments/refguide/modeling/menus/translatable-texts/advanced-translations-import.png" alt="Advanced Translations Import" >}}
 
