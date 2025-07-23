@@ -149,13 +149,13 @@ Your base URL is now considered as a parameter. You can change its value in the 
 
 {{% alert color="info" %}}
 
-Query parameters are available for Studio Pro 11.0.0 GA and above. 
+Query parameters are available for Studio Pro 11.1 and above. 
 
 {{% /alert %}}
 
-Query parameters can be configured in the **Parameters** tab in the **Query Parameters** field. You can define them directly in the URL or add them manually in the Query parameters field.
+Query parameters can be configured in the **Parameters** tab in the **Query Parameters** table. You can define them directly in the URL or add them manually in the Query parameters field.
 
-##### Add Query Parameter to URL
+##### Adding Query Parameter to URL
 
 To add query parameters to the end of a URL, add a question mark (?), followed immediately by the query parameter. 
 
