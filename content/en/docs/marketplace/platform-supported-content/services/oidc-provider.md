@@ -372,7 +372,7 @@ Typically you want to propagate the end-user’s identity from the OIDC Provider
 
 To pass this additional information, you need to create custom claims. You can do this as follows:
 
-1. Create a microflow with prefix `OIDCP_` that returns a value to be used in the claim.
+1. Create a microflow with prefix `OIDCP_CustClaim` that returns a value to be used in the claim.
 
     * Input: `Administration.Account`
     * Output: Any custom Claim object
@@ -392,7 +392,7 @@ To pass this additional information, you need to create custom claims. You can d
 
     If you are already using custom claims in an earlier version of the module, you must:
 
-    * Rename existing microflows to begin with `OIDCP_`.
+    * Rename existing microflows to begin with `OIDCP_CustClaim`.
 
     * Reconfigure the custom claim settings to point to the renamed microflows.
 
