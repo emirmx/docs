@@ -127,15 +127,10 @@ Parameters are not supported in the Authentication section.
 
 Parameters are fully supported in the path and query part of the URL, in the header value, and in the body. They are defined within curly brackets. For example, in the URL, defining `number` as parameter would be `http://numbersapi.com/{number}`. The parameters that are configured for the URL, headers, or body within curly brackets are automatically added to the parameters grid.
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/get-header.png" class="no-border" >}}
-
 You can manually add new parameters to the parameters grid directly. To do so, follow these steps:
 
 1. Open the **Parameters** tab and click **Add parameter**.
 2. Name your parameter and add a test value.
-
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-service/adding-parameters.png" class="no-border" width="600" >}}
-
 3. To test the parameters, click **Send**. 
 
 #### Dynamic Base URL {#dynamic-base-url}
