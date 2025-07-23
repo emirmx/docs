@@ -32,6 +32,7 @@ The ability to import an OpenAPI/Swagger contract is currently in beta.
 ### Limitations
 
 * To use the request response to create a data structure automatically in your domain model, the response data should be in JSON format. It is possible to process other formats, such as XML or raw text, but you will need to extract the data you are looking for in a microflow.
+* It is currently not possible to configure parameters in the Query Parameters tab
 
 ### Prerequisites 
 
@@ -150,6 +151,12 @@ Your base URL is now considered as a parameter. You can change its value in the 
 {{% alert color="info" %}}
 
 Query parameters are available for Studio Pro 11.1 and above. 
+
+{{% /alert %}}
+
+{{% alert color="info" %}}
+
+Parameters are not supported in the Query Parameters table.
 
 {{% /alert %}}
 
