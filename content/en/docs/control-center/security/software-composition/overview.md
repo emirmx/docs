@@ -8,7 +8,7 @@ weight: 1
 
 ## Introduction
 
-On the **Overview** tab, you can see a list of all the deployed apps and their environments, if applicable. You can also see the number of findings for each severity level, as configured on the [Scoring Criteria](#scoring) tab.
+On the **Overview** tab, you can see a list of all the deployed apps and their environments, if applicable. You can also see the number of findings for each severity level, as configured on the [Scoring Criteria](/control-center/scoring-criteria-tab/) tab.
 
 {{< figure src="/attachments/control-center/security/software-composition/software_composition_overview.png" >}}
 
@@ -16,7 +16,7 @@ On the **Overview** tab, you can see a list of all the deployed apps and their e
 
 The **Insights** cards display the number of findings of each severity level. Each card also includes an indication of how that number has evolved over the past 28 days, under the form of a percentage.
 
-For details on severity levels, refer to the [Scoring Criteria](#scoring) section.
+For details on severity levels, refer to the [Scoring Criteria](/control-center/scoring-criteria-tab/) section.
 
 ## App List
 
