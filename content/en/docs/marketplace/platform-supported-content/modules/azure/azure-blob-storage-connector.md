@@ -13,7 +13,7 @@ The [Azure Blob Storage](https://marketplace.mendix.com/link/component/<insert w
 
 The Azure Blob Storage service is an object storage service offering industry-leading scalability, data availability, security, and performance. Customers of all sizes and industries can store and protect any amount of data for virtually any use case. With cost-effective storage types and easy-to-use management features, you can optimize costs, organize data, and configure fine-tuned access controls to meet specific business, organizational, and compliance requirements. Some typical use cases of Azure Blob Storage are:
 
-* Back up and restore critical data - Meet Recovery Time Objectives (RTO), Recovery Point Objectives (RPO), and compliance requirements with Bolb storage's robust replication features.
+* Back up and restore critical data - Meet Recovery Time Objectives (RTO), Recovery Point Objectives (RPO), and compliance requirements with Blob Storage's robust replication features.
 * Archive data at the lowest cost - Move data archives to the Azure Blob Storage to eliminate operational complexities, and gain new insights.
 
 ### Prerequisites {#prerequisites}
@@ -36,30 +36,33 @@ After you install the connector, you can find it in the **App Explorer**, in the
 
 ### Configuring Authentication {#authentication}
 
-To interact with Azure Blob Storage, authentication can be performed using either a Shared Access Signature (SAS) or an Azure Entra ID Access Token.
+To interact with Azure Blob Storage, authentication can be performed using either a Shared Access Signature (SAS) or an Azure Entra ID access token.
 
-#### SAS authorization
-A Shared Access Signature (SAS) provides secure, delegated access to resources in your storage account. Follow these steps:
+#### Configuring SAS Authorization
 
-1. Have your administrator generate a SAS for the target container or blob
-2. Create a `SASCredentials` object and populate its `SASToken` attribute
-3. Pass the `SASCredentials` object to the `AbstractCredentials` parameter in your operation microflow
+A Shared Access Signature (SAS) provides secure, delegated access to resources in your storage account. To configure SAS authorization, perform the following steps:
 
-#### User Based Azure Entra ID Access Token
-For user based Azure Entra ID authentication:
+1. Ask your administrator to generate an SAS for the target container or Blob.
+2. Create a **SASCredentials** object and populate its **SASToken** attribute.
+3. Pass the **SASCredentials** object to the **AbstractCredentials** parameter in your operation microflow.
 
-1. Configure Single Sign-On (SSO) using the `OIDC SSO` marketplace module
-2. Utilize the `GetCurrentToken` microflow to obtain the required access token
-3. Create an `EntraCredentials` object and set its `BearerToken` attribute
-4. Supply the `EntraCredentials` object to the `AbstractCredentials` parameter in your operation microflow
+#### Configuring an Azure Entra ID Access Token
 
-#### Application Based Azure Entra ID Access Token
-For application based Azure Entra ID authentication:
+To configure user-based Azure Entra ID authentication, perform the following steps:
 
-1. Set the ClientId, ClientSecret and TenantId constants of your registered application in Azure
-2. Create a `GetApplicationBearerTokenRequest` object
-3. Supply the `GetApplicationBearerTokenRequest` to the `POST_v1_Azure_GetApplicationBearerToken` operation to generate a token and return an `EntraCredentials` object
-4. Supply the `EntraCredentials` object to the `AbstractCredentials` parameter in your operation microflow
+1. Configure Single Sign-On (SSO) with the [OIDC SSO](https://marketplace.mendix.com/link/component/120371) module.
+2. Use the **GetCurrentToken** microflow to obtain the required access token.
+3. Create an **EntraCredentials** object and set its **BearerToken** attribute.
+4. Supply the **EntraCredentials** object to the **AbstractCredentials** parameter in your operation microflow.
+
+#### Configuring a Microflow for an AWS Service
+
+To configure application-based Azure Entra ID authentication, perform the following steps:
+
+1. In Microsoft Azure, set the **ClientId**, **ClientSecret**, and **TenantId** constants for your registered application.
+2. Create a **GetApplicationBearerTokenRequest** object.
+3. Supply the **GetApplicationBearerTokenRequest** to the **POST_v1_Azure_GetApplicationBearerToken** operation to generate a token and return an **EntraCredentials** object.
+4. Supply the **EntraCredentials** object to the **AbstractCredentials** parameter in your operation microflow.
 
 ### Configuring Operation Microflows
 
@@ -67,9 +70,9 @@ For application based Azure Entra ID authentication:
 
 The Azure Blob Storage connector contains the following operations:
 
-* `PutBlob` - Allows you to upload, as a Blob, a file of any type, to Azure Blob Storage. For more information, see [Put Blob to Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/put-blob).
+* `PutBlob` - Allows you to upload a file of any type to Azure Blob Storage as a Blob. For more information, see [Put Blob to Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/put-blob).
 * `GetBlob` - Allows you to retrieve a Blob. For more information, see [Get Blob to Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/get-blob).
-* `GetApplicationBearerToken` - Allows the application to request a bearer token. The response is mapped to a `EntraCredentials` object that can be used to authenticate calls to Blob Storage.
+* `GetApplicationBearerToken` - Allows the application to request a bearer token. The response is mapped to a **EntraCredentials** object that can be used to authenticate calls to Blob Storage.
 
 You can implement the operations of the connector by using them in microflows. 
 
@@ -77,7 +80,7 @@ You can implement the operations of the connector by using them in microflows.
 
 `PutBlob` – stores the contents of a document as a blob in Azure Blob Storage. This operation requires a valid `PutBlobRequest` object and an appropriate credentials object (either `SASCredentials` or `EntraCredentials`). For more information, see [Put Blob from Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/put-blob).
 
-To use this operation in your microflow:
+To use this operation in your microflow, perform the following steps:
 
 1. In the **App Explorer**, right-click on the name of your module, and then click **Add microflow**.
 2. Enter a name for your microflow, for example, *ACT_PutBlob*, and then click **OK**.
@@ -89,7 +92,7 @@ To use this operation in your microflow:
     For the `PUT_v1_Azure_PutBlob` operation, retrieve the `System.FileDocument` you want to store and provide a configured `SASCredentials` or `EntraCredentials` object. You must then create a `PutBlobRequest` object in your microflow as the last parameter. This entity requires the following parameters:
 
     | Parameter | Description | Required |
-    |-----------|-------------|----------|
+    | --- | --- | --- |
     | `StorageAccount` | Storage account name you want to perform Blob storage operations on | Yes |
     | `VersionAPI` | API version for the Azure Storage service (e.g., '2021-04-01') | Yes |
     | `BlobName` | Desired name for the blob in storage | Yes |
@@ -99,30 +102,31 @@ To use this operation in your microflow:
     The following parameters are optional:
 
     | Parameter | Description | Default |
-    |-----------|-------------|----------|
+    | --- | --- |----------|
     | `ContentType` | MIME content type specification | application/octet-stream |
     | `StorageType` | Storage tier configuration | Varies by blob type |
 
 7. Configure a method to trigger the `ACT_PutBlob` microflow. 
+    
     For example, you can call the microflow with a custom button on a page in your app. For an example of how this can be implemented, see [Creating a Custom Save Button with a Microflow](/refguide/creating-a-custom-save-button/).
 
 #### GET_v1_Azure_GetBlob
 
 `GetBlob` – Retrieves the contents of a blob stored in Azure Blob Storage. This operation requires a valid `GetBlobRequest` object and an appropriate credentials object (either `SASCredentials` or `EntraCredentials`). For more information, see [Get Blob from Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/get-blob).
 
-To use this operation in your microflow:
+To use this operation in your microflow, perform the following steps:
 
-1. Create a `GetBlobRequest` object and populate the required attributes:
+1. Create a **GetBlobRequest** object and populate the required attributes:
 
-   | Parameter        | Description                                                  | Required |
-   |------------------|--------------------------------------------------------------|----------|
-   | `BlobName`       | Name of the blob to retrieve                                 | Yes      |
-   | `ContainerName`  | Name of the container the blob is stored in                  | Yes      |
-   | `BlobType`       | Type of blob (currently supports BlockBlob only)             | Yes      |
-   | `ContentType`    | MIME content type of the blob (used for response header)     | No       |
+   | Parameter | Description | Required |
+   | --- | --- | --- |
+   | `BlobName` | Name of the Blob to retrieve | Yes |
+   | `ContainerName` | Name of the container the Blob is stored in | Yes |
+   | `BlobType` | Type of Blob (currently supports BlockBlob only) | Yes |
+   | `ContentType` | MIME content type of the Blob (used for response header) | No |
 
-2. Provide a valid credentials object via the `AbstractCredentials` parameter.
-3. Call the `GET_v1_Azure_GetBlob` action in your microflow.
+2. Provide a valid credentials object via the **AbstractCredentials** parameter.
+3. Call the **GET_v1_Azure_GetBlob** action in your microflow.
 4. The operation returns a Mendix `FileDocument` object containing the blob data.
 
 ## Technical Reference {#technical-reference}
