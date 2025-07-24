@@ -17,7 +17,7 @@ The **Scoring Criteria** tab allows you to adjust the conditions and severity fo
 This is the information available on the **Scoring Criteria** tab:
 
 * **Finding Type** — The type of vulnerability that components can have, along with its definition. This can be **Outdated** or **Deprecated**.
-* **Severity** — The severity level of a finding. These are color-coded for easy identification throughout Software Composition, and can be:
+* **Severity** — The severity level of a finding. These are color-coded for easy identification throughout **Software Compositio**n, and can be:
 
     * **Critical**
     * **High**

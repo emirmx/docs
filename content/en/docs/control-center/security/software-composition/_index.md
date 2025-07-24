@@ -43,6 +43,10 @@ You can find the component dependencies for each non-expired, deployment package
 
 After the creation of a deployment package, it may take up to a day for the **Software Composition** page to become visible. Mendix is working to improve the performance on this front.
 
+## Guidance
+
+Click the **{{% icon name="book-closed" %}} Guidance** option in the upper right corner of the **Software Composition** page to find a video outlining the main features, as well as links to detailed information.
+
 ## Software Composition Tabs
 
 The **Software Composition** page is made up of these tabs, which help view and manage findings:

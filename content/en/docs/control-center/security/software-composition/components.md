@@ -18,7 +18,7 @@ The **Insights** cards display the following details:
 
 * **Marketplace** — The number of private and public Marketplace components used throughout your apps.
 * **Support type** — The number of Marketplace components divided into content support categories.
-* **Summary** — The number of findings in each severity category, along with their evolution (increase or decrease) over the past 28 days.
+* **Summary** — The number of findings in each severity category, along with a rolling average of how the number of findings has evolved over the past 30 days, under the form of a percentage.
 
 ## Component List
 

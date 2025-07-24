@@ -14,7 +14,12 @@ On the **Overview** tab, you can see a list of all the deployed apps and their e
 
 ## Insights
 
-The **Insights** cards display the number of findings of each severity level. Each card also includes an indication of how that number has evolved over the past 28 days, under the form of a percentage.
+The **Insights** cards display the number of findings across all environments, broken down by severity level. For example, if a build package contains one critical finding and is deployed to the test and production environments, two findings are added to **Insights**.    
+
+Each card also displays a rolling average of how the number of findings has evolved over the past 30 days, under the form of a percentage.
+
+The calculations are refreshed once a day.    
+Changing the scoring criteria resets the trends.
 
 For details on severity levels, refer to the [Scoring Criteria](/control-center/scoring-criteria-tab/) section.
 
@@ -26,7 +31,7 @@ The following options are available above the list of apps:
 * A filter to display apps based on the type of cloud. 
 * The {{% icon name="office-sheet" %}}**Export All** option, which allows you to export all the information in the list to an Excel file.
 
-The app list contains the following information:
+The app list is sorted based on the number of findings and their severity, from highest to lowest. It contains the following information:
 
 * **App Name** — The name of the app.
 * **Environment** — The name of the environment.
@@ -44,7 +49,7 @@ To export the information corresponding to selected items in the list to an Exce
 
 ## Application Environment Summary {#app-env-summary}
 
-If you click **View Details** for an app in the list on the **Overview** tab, the **Application Environment Summary** page opens. This displays details about all the components used by the selected app.
+If you click **View Details** for an app in the list on the **Overview** tab, the **Application Environment Summary** page opens. This displays details about the findings identified in all the components used by the selected app.
 
 At the top of the page, you can find the following information:
 
@@ -77,9 +82,9 @@ The following options are available above the list:
 
 The finding list contains the following information:
 
-* **Severity** — The severity of the finding related to that component.
+* **Severity** — The severity level of the finding related to that component.
 * **Finding Type** — The type of finding, which can be **Outdated** or **Deprecated**.
-* **Component** — The component used in the app.
+* **Component** — The name of the component used in the app. Clicking this takes you to the corresponding Mendix Marketplace page.
 * **Version** — The version of the component that is used in the app.
 * **Type** — The type of component.
 * **Support type** — This shows the support type of the Marketplace component. It can be **Mendix**, **Partner**, or **Community**. For more information, refer to [Content Support Categories](/appstore/marketplace-content-support/#category).
@@ -88,6 +93,10 @@ The finding list contains the following information:
     * Deprecated components: the current date - the date when the component was deprecated    
     * Outdated components: the current date - the publish date of the first higher runtime compatible version
 
+* **Outdated since version** — The version that caused the currently used version to become outdated. This only applies to outdated components.
+* **Outdated since version publish date** — The release date of the version that caused the currently used version to become outdated. This only applies to outdated components.
+* **Deprecated since version** — The version when the component became deprecated.
+* **Deprecated since version** — The release date of the version when the component became deprecated.
 * Column customization ({{% icon name="view" %}}) — You can customize the columns in the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
 
 ### Component Usage {#component-usage}
