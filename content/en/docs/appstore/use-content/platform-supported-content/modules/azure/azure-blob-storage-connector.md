@@ -114,6 +114,21 @@ To use this operation in your microflow:
 3. Call the `GET_v1_Azure_GetBlob` action in your microflow.
 4. The operation returns a Mendix `FileDocument` object containing the blob data.
 
+* `DeleteBlob` – Deletes a specified blob from Azure Blob Storage. This operation requires a valid `DeleteBlobRequest` object and an appropriate credentials object (either `SASCredentials` or `EntraCredentials`). For more information, see [Delete Blob from Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/delete-blob).
+
+To use the DeleteBlob operation in your microflow:
+
+1. Create a `DeleteBlobRequest` object and populate the required attributes:
+
+   | Parameter        | Description                                                  | Required |
+   |------------------|--------------------------------------------------------------|----------|
+   | `BlobName`       | Name of the blob to delete                                   | Yes      |
+   | `ContainerName`  | Name of the container where the blob is stored               | Yes      |
+
+2. Provide a valid credentials object via the `AbstractCredentials` parameter.
+3. Call the `DELETE_v1_Azure_DeleteBlob` action in your microflow.
+4. The operation returns a `DeleteBlobResponse` object, which is a generalization of `AbstractResponse` and contains the StatusCode and ReasonPhrase.
+
 ## Technical Reference {#technical-reference}
 
 The module includes technical reference documentation for the available entities, enumerations, activities, and other items that you can use in your application. You can view the information about each object in context by using the **Documentation** pane in Studio Pro.
@@ -135,5 +150,6 @@ The Azure Blob Storage connector contains the following activities:
 
 * `PutBlob` - Allows you to upload, as a Blob, a file of any type, to Azure Blob Storage. For more information, see [Put Blob to Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/put-blob).
 * `GetBlob` - Allows you to retrieve a Blob. For more information, see [Get Blob to Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/get-blob).
+* `DeleteBlob` - Allows you to delete a Blob. For more information, see [Delete Blob from Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/delete-blob).
 * `ListBlobs` - Allows you to list the Blobs in a speciefied container. For more information, see [List Blobs from a Azure Blob Storage container](https://learn.microsoft.com/en-us/rest/api/storageservices/list-blobs?tabs=microsoft-entra-id).
 * `GetApplicationBearerToken` - Allows the application to request a bearer token. The response is mapped to a `EntraCredentials` object that can be used to authenticate calls to Blob Storage.
