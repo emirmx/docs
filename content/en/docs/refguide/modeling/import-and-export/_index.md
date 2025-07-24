@@ -26,6 +26,18 @@ You can import and export the following:
 ## Importing Various Elements
 
 {{% alert color="warning" %}}
+Studio Pro prevents packages from unpacking content to undesired locations. If you cannot change the location, contact the content publisher to get the issue fixed.
+Current undesired locations:
+
+* directories starting with '.'
+* releases/
+* packages/
+* deployment/
+* nativemobile/builds/
+* vendorlib/temp/
+{{% /alert %}}
+
+{{% alert color="warning" %}}
 Be careful when importing elements, as you can overwrite your existing work. Pay attention to prompts and warnings along the way!
 {{% /alert %}}
 
@@ -59,10 +71,6 @@ To import a complete app or solution package, follow these steps:
 The app is imported. 
 
 ### Importing Module Packages {#import-module}
-
-{{% alert color="warning" %}}
-Importing a module containing workflows is supported from Studio Pro 10.21.0 and above. In Studio Pro 10.20 and below, importing a module containing workflows will make all running workflow instances incompatible.
-{{% /alert %}}
 
 Mendix modules can either be stored in a Mendix package (*.mpk*) file or have an *.mxmodule* extension if they are [add-on or solution modules](/refguide/configure-add-on-and-solution-modules/). 
 

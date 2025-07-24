@@ -15,10 +15,6 @@ Use the Integration pane in Studio Pro to use available assets from the differen
 You can search in the Catalog through the Integration pane to discover assets that you can use in your app. You can connect to services in your landscape by dragging elements from this pane into your app. For example, you can add the entities that are published in the registered OData services to your app's domain model. These entities are called [external entities](/refguide/external-entities/) and are different because they enable the connection to the data associated with the entities in the originating app. Besides external entities, OData services can expose actions that can be called from within microflows, and can define non-persistable entities that can be used as parameters or return types of these actions. You can also connect with [business event services](/refguide/business-event-services/) by dragging an event unto your app's domain model. 
 To display the Integration pane, click **View** > **Integration**.
 
-{{% alert color="info" %}}
-The ability to search for Business Event services in the Catalog was added in Studio Pro 10.21. In earlier versions you can only find these in the **Used in this app** section, when they had been manually imported before.
-{{% /alert %}}
-
 ## Integration Pane Overview
 
 The following functionality is available in the pane:

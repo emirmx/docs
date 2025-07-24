@@ -37,9 +37,9 @@ When you select apps using the checkboxes in the table, a context menu appears a
 
 See the [Fields Glossary](#fields-glossary) section for descriptions of the table columns.
 
-## Private Cloud (Connected) {#pc-connected}
+## Mendix on Kubernetes (Connected) {#pc-connected}
 
-The **Private Cloud** tab shows all the apps deployed on the Mendix Private Cloud Connected.
+The **Mendix on Kubernetes** tab shows all the apps that are deployed on the Mendix on Kubernetes Connected.
 
 See the [Fields Glossary](#fields-glossary) section for descriptions of the table columns.
 

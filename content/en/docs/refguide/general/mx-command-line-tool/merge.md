@@ -157,7 +157,7 @@ At the end of the file, add a `[merge "custom"]` block like this:
     driver = [MX.EXE_PATH] merge %O %A %B
 ```
 
-Replace `[MX.EXE_PATH]` with a full path to your *mx.exe* file in the Unix format (for example, `'/C/Program Files/Mendix/10.0.0.8753/modeler/mx.exe'`).
+Replace `[MX.EXE_PATH]` with a full path to your *mx.exe* file in the Unix format (for example, `'/C/Program Files/Mendix/11.0.0.8753/modeler/mx.exe'`).
 
 {{% alert color="info" %}}
 The *.git* folder is a hidden folder in your computer file management system. You can view it when hidden items are visible.

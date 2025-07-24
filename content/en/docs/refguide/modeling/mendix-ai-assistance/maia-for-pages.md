@@ -11,18 +11,14 @@ aliases:
 ## Introduction
 
 {{% alert color="info" %}}
-Maia for Pages was introduced in Studio Pro 10.21.0.
-{{% /alert %}}
-
-{{% alert color="info" %}}
 To use Maia for Pages, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
-Maia for Pages is an AI-powered tool that you can use for generating a [page](/refguide/page/) as well as explaining and providing further improvements. It helps you add and configure widgets based on text input and optional image input. After a page is generated, you can continue in the same session to ask Maia for further improvements and explanations. Maia for Pages has some limitations. For example, Maia for Pages is currently intended only for use with empty pages. Using it on an existing page results in the removal of all existing widgets on that page. For more details, see the [Limitations](#limitation) section below.
+Maia for Pages helps you generate a [page](/refguide/page/) by adding and configuring widgets based on text input and optional image input. It can also be used to edit or remove existing widgets. Moreover, you can ask it to provide further improvements and explanations. For information on the current limitations of Maia for Pages, see the [Limitations](#limitation) section below.
 
 ## Using Maia for Pages
 
-To enable Maia for Pages, go to **Edit** > **Preferences** > the **New Features** tab > the **Maia** section.
+To enable Maia for Pages, go to **Edit** > **Preferences** > the **Maia** tab and select **Enable Maia for Pages**.
 
 Once enabled, you can find it in the the toolbar of a page:
 
@@ -40,7 +36,7 @@ Describe your page or its main goals in the chat. Maia uses this information to 
 
 You can also supplement text input with an image. Maia uses the image to interpret your request better. For example, it can recognize the layout of a page from the image and replicate it. The image can be a screenshot, photo, wireframe, or drawing. With text input, you can also specify differences between the provided image and how you would like the generated page to appear. For example, you might write: *Generate a page based on this image, but change the header to Welcome.*
 
-After a page is generated, you can continue asking Maia in the same session to further improve the page and provide explanations.
+On pages that have already been created, either by Maia for Pages or manually, you can ask Maia to further improve the page and provide explanations. For example, you can add extra widgets, edit widgets by changing their properties, or remove widgets.
 
 {{% alert color="info" %}}
 In this dedicated chat, only requests related to Pages will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide/maia-chat/) interface.
@@ -50,23 +46,23 @@ In this dedicated chat, only requests related to Pages will be properly handled.
 
 To achieve optimal results, provide context about your page by describing its main use cases, customer needs, or other relevant details. The more Maia knows about your page, the more tailored and accurate the generated page will be.
 
-Below are some examples of prompts you can use as a starting point:
+Below are examples of prompts you can use as a starting point:
 
 * The page will be used to ...
 * I need a page to be able to edit my entity ...
-* Create a page like the image.
+* Create a page based on the image.
 * Base the page on the image, but change ... to ...
 
-Below are some examples of prompts you can use to ask Maia for further explanations or suggestions to improve the generated page:
+Below are examples of prompts you can use to ask Maia to make further edits or request suggestions for improving a page:
 
 * Can you add a button called `BUTTON_NAME` to the page?
 * I want an area on the page where users can ...
+* Make the save button a primary button.
+* Change the page header to use Heading 1.
+* Remove the ... widget.
+* Delete all widgets on the page.
 * How can I make this page more user-friendly or visually appealing?
 * Could you suggest ways to optimize the performance of this page?
-
-{{% alert color="warning" %}}
-Requests for improvements or explanations currently only work within the same session where the page is generated. If you close the session and start a new session on that page, any attempts to make changes to the page will result in the removal of existing widgets.
-{{% /alert %}}
 
 ### Best Practices for Image Input
 
@@ -77,12 +73,6 @@ Keep in mind that Maia analyzes only the structure of the image. The theming of 
 ## Limitations {#limitation}
 
 Maia for Pages has some limitations.
-
-### Empty Pages Only
-
-Maia for Pages is currently intended only for use with empty pages. Using it on an existing page results in the removal of all existing widgets on that page. 
-
-Requests for improvements and explanations currently only work within the same session where a page has been generated. Once the session is closed, Maia for Pages loses the context. Any attempts to make changes to that page in a new session will also result in the removal of all existing widgets.
 
 ### Supported Widgets
 

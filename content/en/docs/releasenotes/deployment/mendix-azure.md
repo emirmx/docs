@@ -12,6 +12,21 @@ These release notes cover changes to deployment to [Mendix on Azure](/developerp
 
 For information on the current status of Mendix deployment, see [Mendix Status](https://status.mendix.com/).
 
+### Release date: July 3, 2025
+
+* Mendix on Azure users can now create and restore environment backups through Mendix on Kubernetes Portal. For more information, see [Backups in Mendix on Azure](/developerportal/deploy/mendix-on-azure/backups/).
+* [Cloud tokens](/control-center/cloud-tokens/) are now required for cluster initialization and environment creation in Mendix on Azure, except when a trial is active. The preflight check now validates if you have sufficient valid cloud tokens.
+* The Mendix on Azure portal is now available in Japanese and Korean, enhancing user experience for native speakers. Language preferences can be adjusted in the **Work environment** tab under **Preferences**.
+* We have fixed a portal issue where error messages were incorrectly displayed despite successful resource provisioning.
+* We have made improvements to the handling of cluster deployment retries.
+* We have upgraded managed Grafana to version 11.0.
+* We have added the option to enable managed Grafana with private access to the **Initialize** and **Edit** steps for the cluster.
+* The preflight check can now validate that the Azure account used to initialize the cluster has an Owner role assigned on the target subscription.
+
+### Release date: May 29, 2025
+
+* We have strengthened the preflight check process to deliver a better user experience.
+
 ### Release date: April 24, 2025
 
 * You can now update the **Additional Options** even after the clusters have been initialized.
@@ -25,7 +40,7 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 ### Release date: March 20, 2025
 
 * We have introduced a Custom Tags option in the Initialization flow.
-* We have resolved an issue where a deleted cluster manager could still access the cluster in the Mendix on Azure portal after being removed from the Private Cloud portal for a specific cluster.
+* We have resolved an issue where a deleted cluster manager could still access the cluster in the Mendix on Azure portal after being removed from the Mendix on Kubernetes Portal for a specific cluster.
 * The Postgress Compute SKU and Postgress Storage Performance Tier for IOPS can now be configured in the Initialization flow.
 
 ### Release date: March 3, 2025
