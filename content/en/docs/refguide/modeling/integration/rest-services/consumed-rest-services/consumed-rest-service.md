@@ -132,6 +132,9 @@ You can manually add new parameters to the parameters grid directly. To do so, f
 
 1. Open the **Parameters** tab and click **Add parameter**.
 2. Name your parameter and add a test value.
+
+    {{< figure src="/attachments/refguide/modeling/integration/rest-services/consumed-rest-service/adding-parameters.png" class="no-border" width="600" >}}
+
 3. To test the parameters, click **Send**. 
 
 #### Dynamic Base URL {#dynamic-base-url}
