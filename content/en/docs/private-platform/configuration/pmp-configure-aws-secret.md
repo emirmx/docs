@@ -18,3 +18,29 @@ Before configuring AWS Secrets Manager integration, prepare the following:
 * Access to the PPrivate Mendix Platform project admin panel with administrative privileges
 * Basic knowledge of AWS services, IAM roles, and Kubernetes (if using EKS deployment)
 * An existing EKS cluster (if your PMP deployment runs on Kubernetes)
+
+## Configuring External Secret Management
+
+To configure external secret management, you must first create a secret in AWS Secret Manager, configure the IAM permissions and service accounts, and then configure the required credentials in the Private Mendix Platform administrator panel. For more information, refer to the sections below.
+
+### Creating a Secret
+
+To create a secret in AWS Secret Manager, perform the following steps:
+
+1. Log in to the AWS Management Console.
+2. Navigate to the **AWS Secrets Manager** service.
+3. Click **"Store a new secret**.
+4. Choose the type of secret as **Other type of secret**.
+5. Select the **JSON** format for storing secrets.
+6. Enter the key-value pairs for your secrets using the PMP naming convention. You can get the complete template from [here](!!link tbd).
+7. Click **Next**.
+8. Enter a descriptive name for your secret, for example, *PMP-Production-Credentials* or *PMP-VCS-Credentials*.
+9. Optional: Add a description and tags for better organization and compliance tracking.
+10. Click **Next** to review your secret settings.
+11. Review the details and click **Store** to create the secret.
+
+Make note of the secret name and ARN. You will need these when configuring Private Mendix Platform to use the secret.
+
+### Configuring IAM Permissions and Service Accounts
+
+### Configuring the Credentials
