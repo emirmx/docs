@@ -9,7 +9,7 @@ aliases:
 
 ## Introduction
 
-% alert color="warning" %}}
+{{% alert color="warning" %}}
 Starting October 2025, Mendix 9 will no longer be supported for running native mobile applications. Please upgrade to the most recent [MTS or LTS version](/releasenotes/studio-pro/lts-mts/) of Mendix. Outdated apps may stop functioning as expected on newer OS versions. For more information, please see [this blog post](https://www.mendix.com/blog/empowering-mobile-innovation/).
 {{% /alert %}}
 
