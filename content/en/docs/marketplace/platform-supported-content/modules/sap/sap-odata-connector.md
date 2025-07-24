@@ -852,23 +852,24 @@ This domain model is part of the OData Connector for SAP solutions module and ca
     * AuthTokens
     * Root
 
-* **BatchContext** – initiates the batch processing by setting up a temporary scope to group single or multiple operations before their execution
+* **BatchContext** – contains batch context details to group single or multiple operations before their execution
     * **OperationCount** – total number of operations added so far in the **BatchContext**
     * **BatchSeparator** – the unique string used to separate each operation in the batch payload
-    * **EnableChangeSet** – a Boolean flag indicating whether write operations should be grouped in a change set
-    * **ChangeSetSeparator**  a string marking the start or end of the change set
-    * **RequestBody** – the complete raw HTTP body sent in the batch request
-    * **ResponseBody** – the complete raw HTTP response body from the OData service. Internally parsed by:
+    * **EnableChangeSet** – a Boolean flag indicating whether consecutive write operations should be grouped in the same change set
+    * **ChangeSetSeparator**  a string marking the start or end of the change set, used to create request body
+    * **RequestBody** – the complete raw HTTP body sent in the batch request when invoking the batch
+    * **ResponseBody** – the complete raw HTTP response body from the OData service after batch invoke. 
 
-        * Fetch Batch Response (Single) — for individual entity responses
-        * Fetch Batch Response (List) — for list-type responses
-
-* **BatchResponse** – contains a list of `BatchResponse` objects, one for each operation in your batch execution
+* **BatchResponse** – contains details of each operation executed in a batch
 
     * **OperationID** – a unique ID which identifies the operation in the batch
     * **Status** –  the HTTP status code returned by the OData service for the operation 
     * **Message** – the textual description or reason phrase from the HTTP status line
-    * **Payload** –  the raw HTTP response content for the operation
+    * **Payload** –  the raw HTTP response content for the operation. Internally parsed by:
+
+        * Fetch Batch Response (Single) — for individual entity responses
+        * Fetch Batch Response (List) — for list-type responses
+        
     * **ChangeSet** – indicates whether the **BatchResponse** is part of a ChangeSet, a grouped set of write operations
 
 ## Troubleshooting
