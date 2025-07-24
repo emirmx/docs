@@ -150,4 +150,5 @@ The Azure Blob Storage connector contains the following activities:
 
 * `PutBlob` - Allows you to upload, as a Blob, a file of any type, to Azure Blob Storage. For more information, see [Put Blob to Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/put-blob).
 * `GetBlob` - Allows you to retrieve a Blob. For more information, see [Get Blob to Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/get-blob).
+* `DeleteBlob` - Allows you to delete a Blob. For more information, see [Delete Blob from Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/delete-blob).
 * `GetApplicationBearerToken` - Allows the application to request a bearer token. The response is mapped to a `EntraCredentials` object that can be used to authenticate calls to Blob Storage.
