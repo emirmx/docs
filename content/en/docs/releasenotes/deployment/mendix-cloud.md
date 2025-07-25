@@ -16,6 +16,17 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
+### July 27, 2025
+
+#### New Features
+* We have enhanced the reliability of the health icon. As part of this update, we've introduced a new **Alerts** label to indicate critical or warning-level [alerts](https://docs.mendix.com/developerportal/operate/monitoring-application-health/) from the application logs. The health icon now exclusively reflects the environment's running status.
+
+#### Bug Fixes
+
+* We Fixed an issue where users couldn’t view backups of their Sandbox apps. (Ticket 252022)
+* We have improved the **Export to Excel** option in the [Model Options](https://docs.mendix.com/developerportal/deploy/environments-details/#model-options) tab. The exported file now uses a comma delimiter instead of a semicolon. (Feedback #1460)
+* We refined sorting behavior on the permissions page—items are now sorted by name and grouped by type (Role / Non-Role-based) (Feedback #1458)
+
 ### July 13, 2025
 
 #### Bug Fixes
