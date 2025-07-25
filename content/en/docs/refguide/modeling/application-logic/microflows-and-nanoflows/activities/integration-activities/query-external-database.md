@@ -33,6 +33,13 @@ In the **Connection** section are the following properties, they are used to pro
 * **DBUsername** – Enter Username you want to use for connection during runtime
 * **DBPassword** – Enter Password you want to use for connection during runtime
 
+If you are using SSL based authentication for Postgres, provide value for
+* **ClientCertificateIdentifier**
+
+If you are using Key-pair authentication for Snowflake, provide value for
+* **PrivateKey**
+* **Passphrase**
+
 In the **Output** section are the following properties:
 
 * **Return type** – the return type once the microflow is completed
