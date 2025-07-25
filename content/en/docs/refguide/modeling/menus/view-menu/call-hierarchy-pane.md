@@ -23,7 +23,11 @@ The Call Hierarchy tree visualizes the full call path in two directions: **Incom
 
 ## Show Call Hierarchy
 
-You can visualize the **Call Hierarchy** by right-clicking a document from the **App Explorer** or from within the document editor, then selecting **Show call hierarchy**. The data is calculated in the background and displayed in a tree view with the first level of the tree is expanded. Deeper levels are lazy loaded on expansion, which helps maintain performance in large projects.
+You can visualize the **Call Hierarchy** by right-clicking a document from the **App Explorer** or from within the document editor, then selecting **Show call hierarchy**.
+
+{{< figure src="/attachments/refguide/modeling/menus/view-menu/call-hierarchy-pane/right-click.png"width="300" >}}
+
+ The data is calculated in the background and displayed in a tree view with the first level of the tree is expanded. Deeper levels are lazy loaded on expansion, which helps maintain performance in large projects.
 
 ## Interacting with the Call Hierarchy Pane
 
