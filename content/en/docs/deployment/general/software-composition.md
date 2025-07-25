@@ -176,7 +176,47 @@ At the top of the page, you can find the following information:
 * The type of Marketplace
 * The component's license
 
-The page is divided into two tabs: **Findings** and **Component Usage**. For details on the available fields, refer to the Control Center documentation:
+The page is divided into two tabs: **Findings** and **Component Usage**. 
 
-* [Findings](/control-center/components-tab/#component-findings)
-* [Component Usage](/control-center/components-tab/#component-component-usage)
+#### Findings {#component-findings}
+
+The **Findings** tab lists all the findings which impact that particular version of the component.
+
+The following options are available above the list:
+
+* A search box to search for information within the list.
+* A filter to display list items according to the type of finding. 
+* The {{% icon name="office-sheet" %}}**Export All** option, which allows you to export all the information in the list to an Excel file.
+
+The finding list contains the following information:
+
+* **Severity** — The severity of the finding related to that component.
+* **Finding Type** — The type of finding, which can be **Outdated** or **Deprecated**.
+* **Deployment Package** — The deployment package in which the component is identified as a risk.
+* **Environment** — The name of the environment where the app is running.
+* **Target Cloud** — The type of cloud where the deployment package is deployed.
+* **Age** — The number of days that the finding has been applicable, computed as follows:
+
+    * Deprecated components: The current date - The date when the component was deprecated    
+    * Outdated components: The current date - The publish date of the first higher runtime compatible version
+
+* Column customization ({{% icon name="view" %}}) — You can customize the columns in the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
+
+#### Component Usage {#component-component-usage}
+
+The **Component Usage** tab displays a detailed view of all environments where the component is used.    
+
+The following options are available above the list:
+
+* A search box to search for information within the list.
+* A filter to display apps based on the type of cloud. 
+* The {{% icon name="office-sheet" %}}**Export All** option, which allows you to export all the information in the list to an Excel file.
+
+The component usage list contains the following information:
+
+* **Deployment Package** — The name of the deployment package where the component is used.
+* **Environment** — The name of the environment where the app using the component is deployed.
+* **Runtime** — The runtime version to which the component is compatible.
+* **Version** — The version of the impacted deployment package.
+* **Target Cloud** — The type of cloud where the deployment package is deployed.
+* Column customization ({{% icon name="view" %}}) — You can customize the columns in the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.

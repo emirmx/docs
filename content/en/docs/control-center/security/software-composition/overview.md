@@ -102,7 +102,7 @@ The finding list contains the following information:
 * **Outdated since version** — The version that caused the currently used version to become outdated. This only applies to outdated components.
 * **Outdated since version publish date** — The release date of the version that caused the currently used version to become outdated. This only applies to outdated components.
 * **Deprecated since version** — The version when the component became deprecated.
-* **Deprecated since version** — The release date of the version when the component became deprecated.
+* **Deprecated since version publish date** — The release date of the version when the component became deprecated.
 * Column customization ({{% icon name="view" %}}) — You can customize the columns in the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
 
 ### Component Usage {#overviw-component-usage}
