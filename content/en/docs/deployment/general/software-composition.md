@@ -48,13 +48,13 @@ Click the **{{% icon name="book-closed" %}} Guidance** option in the upper right
 
 ## Overview {#overview}
 
-On the **Overview** tab, you can see a list of all built packages and, if deployed, their environments.
+On the **Overview** tab, you can see a list of all deployment packages and, if applicable, their environments.
 
-{{< figure src="/attachments/control-center/security/software-composition/deployment_sw_comp_overview.png" >}}
+{{< figure src="/attachments/control-center/security/software-composition/deployment_sw_comp_overview2.png" >}}
 
 ### Insights
 
-The **Insights** cards display the number of findings across all environments, broken down by severity level. For example, if a build package contains one critical finding and is deployed to the test and production environments, two findings are added to **Insights**.    
+The **Insights** cards display the number of findings across all deployment packages, broken down by severity level. For example, if a build package contains one critical finding and is deployed to the test and production environments, two findings are added to **Insights**.    
 
 Each card also displays a rolling average of how the number of findings has evolved over the past 30 days, expressed as a percentage.
 
@@ -64,7 +64,7 @@ This is an example of how the evolution trend of **Critical** findings is calcul
 * December 1 rolling average for the last 30 days (average of **Critical** findings between November 1 and December 1) = 10
 * Evolution trend = (5 - 10)/10, which results in a 50% decrease in **Critical** findings
 
-The calculations are refreshed once a day.    
+The calculations are refreshed once a day. As such, newly built packages do not trigger an immediate update of the numbers on the **Insights** cards.   
 Changing the scoring criteria resets the trends.
 
 For details on severity levels, refer to [Scoring Criteria](/control-center/scoring-criteria-tab/).
@@ -81,7 +81,8 @@ The list contains the following information:
 * **Deployment Package** — The name of the deployment package.
 * **Environment** — The name of the environment where the package is deployed.
 * **Runtime** — The Mendix Runtime version.
-* **Findings** — The number of findings of each type, color-coded according to severity level.
+* **Findings** — The number of findings of each type, color-coded according to severity level.    
+  {{% alert color="warning" %}}Findings are calculated for all software packages that are built. However, if a package is not deployed, we will stop updating its findings after 30 days. These findings will be grayed out and displayed as 0.{{% /alert %}}
 * **Version** — The version of the deployment package on this app environment.
 * **Technical Contact** — The Technical Contact of the app.
 * **Target Cloud** —  The type of cloud where the deployment package is deployed. Currently, the following types of cloud are supported:
