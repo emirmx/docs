@@ -41,7 +41,7 @@ Click **View build output** in the deployment package details in the Mendix Port
 
 You can find the component dependencies for each non-expired, deployment package in the [Software Composition](/developerportal/deploy/software-composition/) page of **Apps** in the Mendix Portal. 
 
-After the creation of a deployment package, it may take up to a day for the **Software Composition** page to become visible. Mendix is working to improve the performance on this front.
+After the creation of a deployment package, the **Software Composition** page usually becomes visible within a few minutes. However, in rare cases, it can take up to a day. Mendix is working to improve the performance on this front.
 
 ## Guidance
 

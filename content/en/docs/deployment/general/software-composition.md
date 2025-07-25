@@ -40,7 +40,7 @@ First, when a new deployment package is created via the Mendix Portal with the c
 
 The component dependencies for each non-expired deployment package are available in the **Software Composition** page in **Apps**. 
 
-After the creation of a deployment package, it may take up to a day for the **Software Composition** page to become visible. Mendix is working to improve the performance on this front.
+After the creation of a deployment package, the **Software Composition** page usually becomes visible within a few minutes. However, in rare cases, it can take up to a day. Mendix is working to improve the performance on this front.
 
 ## Guidance
 
@@ -48,7 +48,7 @@ Click the **{{% icon name="book-closed" %}} Guidance** option in the upper right
 
 ## Overview {#overview}
 
-On the **Overview** tab, you can see a list of all the deployed packages and their environments, if applicable.
+On the **Overview** tab, you can see a list of all built packages and, if deployed, their environments.
 
 {{< figure src="/attachments/control-center/security/software-composition/deployment_sw_comp_overview.png" >}}
 
@@ -56,7 +56,13 @@ On the **Overview** tab, you can see a list of all the deployed packages and the
 
 The **Insights** cards display the number of findings across all environments, broken down by severity level. For example, if a build package contains one critical finding and is deployed to the test and production environments, two findings are added to **Insights**.    
 
-Each card also displays a rolling average of how the number of findings has evolved over the past 30 days, under the form of a percentage.
+Each card also displays a rolling average of how the number of findings has evolved over the past 30 days, expressed as a percentage.
+
+This is an example of how the evolution trend of **Critical** findings is calculated on January 1, 2025:
+
+* January 1 rolling average for the last 30 days (average of **Critical** findings between December 1 and January 1) = 5
+* December 1 rolling average for the last 30 days (average of **Critical** findings between November 1 and December 1) = 10
+* Evolution trend = (5 - 10)/10, which results in a 50% decrease in **Critical** findings
 
 The calculations are refreshed once a day.    
 Changing the scoring criteria resets the trends.
@@ -85,17 +91,17 @@ The list contains the following information:
 * Column customization ({{% icon name="view" %}}) — You can customize the columns in the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
 * **View details** — Clicking this opens the [Deployed Package Details](#deployed-package-details) page, if it is available. The **View details** button is grayed out when an SBOM is not available for the selected deployment package. Ensure you are on a compatible runtime version and create a new deployment package in order to get component visibility here.
 
-### Deployed Package Details {#deployed-package-details}
+### Deployment Package Details {#deployed-package-details}
 
-If you click **View Details** for an app in the list on the **Overview** tab, the **Deployed Package Details** page opens. This displays details about the findings identified in all the components used by the selected app package.
+If you click **View Details** for an app in the list on the **Overview** tab, the **Deployment Package Details** page opens. This displays details about the findings identified in all the components used by the selected app package.
 
 At the top of the page, you can find the following information:
 
 * A color-coded summary of the findings
-* The environment name
+* The environment name (if applicable)
 * The Mendix Runtime version
 * The Technical Contact
-* The type of cloud where the deployment package is deployed
+* The type of cloud where the deployment package is deployed (if applicable)
 * The version of the deployment package
 
 In the upper, right corner of the page, you can click {{% icon name="download-bottom" %}}**SBOM** to download the software bill of materials (SBOM).  
@@ -111,7 +117,7 @@ The page is divided into two tabs: **Findings** and **Component Usage**. For det
 
 ## Components {#all-components}
 
-The **Components** tab gives an overview of all the unique components used across your app landscape. 
+The **Components** tab gives an overview of all the unique components used in the selected package. 
 
 {{< figure src="/attachments/control-center/security/software-composition/deployment_sw_comp_components.png" >}}
 
@@ -121,7 +127,7 @@ The **Insights** cards display the following details:
 
 * **Marketplace** — The number of private and public Marketplace components used throughout your apps.
 * **Support type** — The number of Marketplace components divided into content support categories.
-* **Summary** — The number of findings in each severity category, along with a rolling average of how the number of findings has evolved over the past 30 days, under the form of a percentage.
+* **Summary** — The number of findings in each severity category, along with a rolling average of how the number of findings has evolved over the past 30 days, expressed as a percentage.
 
 ### Component List
 
@@ -136,8 +142,8 @@ The component list contains the following information:
 * **Component** — The name of the component.
 * **Type** — The type of component, which can be one of the following:
   
-    * **Module** — Standard marketplace module imported from the Marketplace, such as [Community Commons](https://marketplace.mendix.com/link/component/170).
-    * **Widget** — User interface elements downloaded from the Marketplace, such as [Charts](https://marketplace.mendix.com/link/component/105695).
+    * **Module** — Standard marketplace module imported from the Marketplace, such as [Community Commons](https://marketplace.mendix.com/link/component/170), or a module created by the developer.
+    * **Widget** — User interface elements downloaded from the Marketplace, such as [Charts](https://marketplace.mendix.com/link/component/105695), or a widget created by the developer.
     * **Framework** — The Mendix Runtime version, for example 10.12.0
     * **Jar** — Java libraries imported into your app using [Managed Dependencies](/refguide/managed-dependencies/), or those manually added in the **userlib** folder depending on the Studio Pro version used, such as `org.apache.commons.io`.
     * **npms** — `npm` libraries that are used in your [JavaScript actions](/refguide/javascript-actions/).
@@ -147,7 +153,7 @@ The component list contains the following information:
   For more information, refer to [Content Support Categories](/appstore/marketplace-content-support/#category).
 * **Version** — The version of the component that is being used.
 * **Findings** — This shows the number of findings of each type, color-coded according to severity level.
-* **License** — The end-user license for the component.
+* **License** — For components derived from the Mendix Marketplace, this is the end-user license for the component.
 * **Marketplace** – Whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the Marketplace, while a private component is available only via your [Company Content](/appstore/home-page/#company-content) page.
 * **Latest version** — The latest version of the component.
 * **Publisher** — The name of the organization that published the component.

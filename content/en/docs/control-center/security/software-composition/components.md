@@ -16,9 +16,14 @@ The **Components** tab gives an overview of all the unique components used acros
 
 The **Insights** cards display the following details:
 
-* **Marketplace** — The number of private and public Marketplace components used throughout your apps.
+* **Marketplace** — The number of private and public Marketplace components used throughout your apps. These can be:
+
+    * Modules
+    * Widgets
+    * Framework
+
 * **Support type** — The number of Marketplace components divided into content support categories.
-* **Summary** — The number of findings in each severity category, along with a rolling average of how the number of findings has evolved over the past 30 days, under the form of a percentage.
+* **Summary** — The number of findings in each severity category, along with a rolling average of how the number of findings has evolved over the past 30 days, expressed as a percentage.
 
 ## Component List
 
@@ -33,8 +38,8 @@ The component list contains the following information:
 * **Component** — The name of the component.
 * **Type** — The type of component, which can be one of the following:
   
-    * **Module** — Standard marketplace module imported from the Marketplace, such as [Community Commons](https://marketplace.mendix.com/link/component/170).
-    * **Widget** — User interface elements downloaded from the Marketplace, such as [Charts](https://marketplace.mendix.com/link/component/105695).
+    * **Module** — Standard marketplace module imported from the Marketplace, such as [Community Commons](https://marketplace.mendix.com/link/component/170), or a module created by the developer.
+    * **Widget** — User interface elements downloaded from the Marketplace, such as [Charts](https://marketplace.mendix.com/link/component/105695), or a widget created by the developer.
     * **Framework** — The Mendix Runtime version, for example 10.12.0
     * **Jar** — Java libraries imported into your app using [Managed Dependencies](/refguide/managed-dependencies/), or those manually added in the **userlib** folder depending on the Studio Pro version used, such as `org.apache.commons.io`.
     * **npms** — `npm` libraries that are used in your [JavaScript actions](/refguide/javascript-actions/).
@@ -44,7 +49,7 @@ The component list contains the following information:
   For more information, refer to [Content Support Categories](/appstore/marketplace-content-support/#category).
 * **Version** — The version of the component that is being used.
 * **Findings** — This shows the number of findings of each type, color-coded according to severity level.
-* **License** — The end-user license for the component.
+* **License** — For components derived from the Mendix Marketplace, this is the end-user license for the component.
 * **Marketplace** – Whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the Marketplace, while a private component is available only via your [Company Content](/appstore/home-page/#company-content) page.
 * **Apps using component** – The number of apps where the component is used.
 * **Latest version** — The latest version of the component.
@@ -60,7 +65,7 @@ If you click **View details** for a component on the **Components** tab, the **C
 
 ### Findings {#component-findings}
 
-The **Findings** tab lists all the findings which impact that particular component.
+The **Findings** tab lists all the findings which impact that particular version of the component.
 
 {{< figure src="/attachments/control-center/security/software-composition/components_findings.png" >}}
 
@@ -86,7 +91,8 @@ The finding list contains the following information:
 
 ### Component Usage {#component-component-usage}
 
-The **Component Usage** tab displays a detailed view of all apps and environments where the component is used.
+The **Component Usage** tab displays a detailed view of all apps and environments where the component is used.    
+If there is a component with a critical vulnerability, you can use this page to find out which apps use that component.
 
 {{< figure src="/attachments/control-center/security/software-composition/components_comp_usage.png" >}}
 

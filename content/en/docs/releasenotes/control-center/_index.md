@@ -18,7 +18,7 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 #### New Features
 
-* You can now view findings associated to each component in your app landscape. Findings represent vulnerabilities identified in the components of an app. They give you a clear view of potential vulnerabilities, so you can:
+* You can now view findings associated to each component in your app landscape. Findings represent issues identified in the components of an app. They give you a clear view of potential risks, so you can:
 
     * Spot issues early.
     * Reduce time spent troubleshooting by knowing exactly where to look for potential risks.

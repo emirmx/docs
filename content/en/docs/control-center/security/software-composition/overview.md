@@ -16,16 +16,22 @@ On the **Overview** tab, you can see a list of all the deployed apps and their e
 
 The **Insights** cards display the number of findings across all environments, broken down by severity level. For example, if a build package contains one critical finding and is deployed to the test and production environments, two findings are added to **Insights**.    
 
-Each card also displays a rolling average of how the number of findings has evolved over the past 30 days, under the form of a percentage.
+Each card also displays a rolling average of how the number of findings has evolved over the past 30 days, expressed as a percentage.    
+
+This is an example of how the evolution trend of **Critical** findings is calculated on January 1, 2025:
+
+* January 1 rolling average for the last 30 days (average of **Critical** findings between December 1 and January 1) = 5
+* December 1 rolling average for the last 30 days (average of **Critical** findings between November 1 and December 1) = 10
+* Evolution trend = (5 - 10)/10, which results in a 50% decrease in **Critical** findings
 
 The calculations are refreshed once a day.    
 Changing the scoring criteria resets the trends.
 
 For details on severity levels, refer to [Scoring Criteria](/control-center/scoring-criteria-tab/).
 
-## App List
+## Application Environment List
 
-The following options are available above the list of apps:
+The following options are available above the list of application environments:
 
 * A search box to search for information within the list.
 * A filter to display apps based on the type of cloud. 
@@ -126,7 +132,7 @@ The component usage list contains the following information:
     
 * **Support type** – The support type of the Marketplace component. This can be **Mendix**, **Partner**, or **Community**.    
   For more information, refer to [Content Support Categories](/appstore/marketplace-content-support/#category).
-* **License** – The end-user license for the component.
+* **License** – For components derived from the Mendix Marketplace, this is the end-user license for the component.
 * **Latest version** – The latest version of the component.
 * **Marketplace** – Whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the Marketplace, while a private component is available only via your [Company Content](/appstore/home-page/#company-content) page.
 * **Latest Runtime Compatible Version** — The most recent runtime version to which the component is compatible.
