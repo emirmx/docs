@@ -160,11 +160,13 @@ For MSSQL, for **INOUT** and **OUT** parameters of type Decimal, test values (in
 
 3. In the **Query** field, select the required query from the drop-down.
 
-4. Assign values to the parameters using the **Expression editor**.
+4. Assign values to the query parameters using the **Expression editor**.
+
+5. Assign values to the connection parameters that will be used to make a connection during runtime using the **Expression editor**.
 
 5. Output details for the selected query auto-populate.
 
-    {{< figure src="http://attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/7.png" width="600"  >}}
+    {{< figure src="http://attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/8.png" width="600"  >}}
 
 You are now ready to use data from an external database in your Mendix App.
 

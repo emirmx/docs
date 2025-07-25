@@ -27,6 +27,12 @@ In the **Query** section are the following properties:
 * **Query** – the saved SQL query from your configuration of the Database connector
 * **Parameters** – the saved parameters from your configuration of the Database connector
 
+In the **Connection** section are the following properties, they are used to provide dynamic connection parameter values:
+
+* **DBSource** – Enter JDBC URL you want to use for connection during runtime
+* **DBUsername** – Enter Username you want to use for connection during runtime
+* **DBPassword** – Enter Password you want to use for connection during runtime
+
 In the **Output** section are the following properties:
 
 * **Return type** – the return type once the microflow is completed
