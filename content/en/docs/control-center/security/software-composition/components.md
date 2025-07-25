@@ -49,12 +49,12 @@ The component list contains the following information:
 * **Apps using component** – The number of apps where the component is used.
 * **Latest version** — The latest version of the component.
 * **Publisher** — The name of the organization that published the component.
-* **View details** — Clicking this opens the [Component Details](#component-usage) page.
+* **View details** — Clicking this opens the [Component Details](#component-details) page.
 * Column customization ({{% icon name="view" %}}) – You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
 
 To export the information corresponding to selected items in the list to an Excel file, select the checkboxes of the items in the list, then click **Selection Export** that appears at the bottom of the page.
 
-## Component Details
+## Component Details {#component-details}
 
 If you click **View details** for a component on the **Components** tab, the **Component Details** page opens.
 

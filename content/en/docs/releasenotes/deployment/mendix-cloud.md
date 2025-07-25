@@ -20,14 +20,14 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### New Features
 
-* You can now view and set severity levels for findings associated to each component in your app landscape. Findings represent vulnerabilities identified in the components of an app. They give you a clear view of potential vulnerabilities, so you can:
+* You can now view findings associated to each component in your app landscape. Findings represent vulnerabilities identified in the components of an app. They give you a clear view of potential vulnerabilities, so you can:
 
     * Spot issues early.
     * Reduce time spent troubleshooting by knowing exactly where to look for potential risks.
     * Make smarter decisions by understanding the severity of each finding.
     * Improve security by acting on risks as soon as they appear.
 
-  For details on which data is available, where you can see it, and how you can set severity levels, refer to [Software Composition](/developerportal/deploy/software-composition/).
+  For details on which findings are available, where you can see them, and how you can set severity levels for them, refer to [Software Composition](/developerportal/deploy/software-composition/).
 
 ### July 13, 2025
 
@@ -127,7 +127,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### New Features
 
-* We enhanced Software Composition to include marketplace-related metadata. You can now view this additional information on both the [All Components](/developerportal/deploy/software-composition/#all-components) tab and the [Application Environment Summary](/developerportal/deploy/software-composition/#app-env-summary) page for a more comprehensive overview of your components.
+* We enhanced Software Composition to include marketplace-related metadata. You can now view this additional information on both the [All Components](/developerportal/deploy/software-composition/#all-components) tab and the [Deployed Package Details](/developerportal/deploy/software-composition/#deployed-package-details) page for a more comprehensive overview of your components.
 
 ### November 17, 2024
 
