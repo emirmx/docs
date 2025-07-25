@@ -7,7 +7,7 @@ description: "Describes the options of the mx command-line tool."
 
 ## Introduction
 
-The mx tool is a Windows, Linux and macOS command-line tool that can be used to perform various actions on a Mendix app.
+The mx tool is a Windows, Linux, and macOS command-line tool that can be used to perform various actions on a Mendix app.
 
 ## Location
 
