@@ -10,7 +10,7 @@ description: "Describes the Mendix Overview, which is the landing page for worki
 
 Located in the [navigation pane](/developerportal/#navigation-pane) of **Apps**, Overview lets you see your app activity as well as collaborate and share ideas with your team. 
 
-{{< figure src="/attachments/developerportal/general/buzz/app-buzz.png" >}}
+{{< figure src="/attachments/developerportal/general/overview/app-overview.png" >}}
 
 On the top of the page, you can find the following key information about your app:
 
