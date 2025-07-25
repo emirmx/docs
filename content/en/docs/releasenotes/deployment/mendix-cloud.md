@@ -19,6 +19,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 ### July 27, 2025
 
 #### New Features
+
 * We have enhanced the reliability of the health icon. As part of this update, we've introduced a new **Alerts** label to indicate critical or warning-level [alerts](https://docs.mendix.com/developerportal/operate/monitoring-application-health/) from the application logs. The health icon now exclusively reflects the environment's running status.
 
 #### Bug Fixes
