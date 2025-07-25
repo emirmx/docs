@@ -19,13 +19,13 @@ The Call Hierarchy pane consists of:
 
 The Call Hierarchy tree visualizes the full call path in two directions: **Incoming calls** and **Outgoing calls**. This allows you to see where the selected document is used throughout the app (**Incoming calls**) and which other documents it depends on (**Outgoing calls**).
 
-{{< figure src="/attachments/refguide/modeling/menus/view-menu/call-hierarchy-pane/call-hierarchy.png" alt="Call Hierarchy Pane" width="300" >}}
+{{< figure src="/attachments/refguide/modeling/menus/view-menu/call-hierarchy-pane/call-hierarchy.png" alt="Call Hierarchy Pane" width="200" >}}
 
 ## Show Call Hierarchy
 
 You can visualize the **Call Hierarchy** by right-clicking a document from the **App Explorer** or from within the document editor, then selecting **Show call hierarchy**.
 
-{{< figure src="/attachments/refguide/modeling/menus/view-menu/call-hierarchy-pane/right-click.png"width="300" >}}
+{{< figure src="/attachments/refguide/modeling/menus/view-menu/call-hierarchy-pane/right-click.png" width=200" >}}
 
  The data is calculated in the background and displayed in a tree view with the first level of the tree is expanded. Deeper levels are lazy loaded on expansion, which helps maintain performance in large projects.
 
