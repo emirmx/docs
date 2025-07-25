@@ -42,9 +42,15 @@ The component dependencies for each non-expired deployment package are available
 
 After the creation of a deployment package, it may take up to a day for the **Software Composition** page to become visible. Mendix is working to improve the performance on this front.
 
+## Guidance
+
+Click the **{{% icon name="book-closed" %}} Guidance** option in the upper right corner of the **Software Composition** page to find a video outlining the main features, as well as links to detailed information.
+
 ## Overview {#overview}
 
 On the **Overview** tab, you can see a list of all the deployed packages and their environments, if applicable.
+
+{{< figure src="/attachments/control-center/security/software-composition/deployment_sw_comp_overview.png" >}}
 
 ### Insights
 
@@ -71,26 +77,26 @@ The list contains the following information:
 * **Runtime** — The Mendix Runtime version.
 * **Findings** — The number of findings of each type, color-coded according to severity level.
 * **Version** — The version of the deployment package on this app environment.
-* **Technical Contact** —
-* **Target Cloud** — The Technical Contact of the app. The type of cloud where the deployment package is deployed. Currently, the following types of cloud are supported:
+* **Technical Contact** — The Technical Contact of the app.
+* **Target Cloud** —  The type of cloud where the deployment package is deployed. Currently, the following types of cloud are supported:
     * Mendix Free Cloud
     * Mendix Cloud (including Mendix Cloud Dedicated)
     * Mendix on Kubernetes (connected)
 * Column customization ({{% icon name="view" %}}) — You can customize the columns in the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
-* **View details** — Clicking this opens the [Application Environment Summary](#app-env-summary) page, if it is available. The **View details** button is grayed out when an SBOM is not available for the selected deployment package. Ensure you are on a compatible runtime version and create a new deployment package in order to get component visibility here.
+* **View details** — Clicking this opens the [Deployed Package Details](#deployed-package-details) page, if it is available. The **View details** button is grayed out when an SBOM is not available for the selected deployment package. Ensure you are on a compatible runtime version and create a new deployment package in order to get component visibility here.
 
-#### Application Environment Summary {#app-env-summary}
+### Deployed Package Details {#deployed-package-details}
 
-If you click **View Details** for an app in the list on the **Overview** tab, the **Application Environment Summary** page opens. This displays details about the findings identified in all the components used by the selected app.
+If you click **View Details** for an app in the list on the **Overview** tab, the **Deployed Package Details** page opens. This displays details about the findings identified in all the components used by the selected app package.
 
 At the top of the page, you can find the following information:
 
-* The app name
 * A color-coded summary of the findings
 * The environment name
 * The Mendix Runtime version
 * The Technical Contact
 * The type of cloud where the deployment package is deployed
+* The version of the deployment package
 
 In the upper, right corner of the page, you can click {{% icon name="download-bottom" %}}**SBOM** to download the software bill of materials (SBOM).  
 
@@ -98,9 +104,16 @@ A software bill of materials (SBOM) is a *.json* file in the CycloneDX format. I
 
 Different versions of Studio Pro support different component dependencies. For details on component dependencies supported per version, refer to the [Supported Features](/refguide/sbom-generation/#supported-features) section in *SBOM Generation*.
 
+The page is divided into two tabs: **Findings** and **Component Usage**. For details on the available fields, refer to the Control Center documentation:
+
+* [Findings](/control-center/overview-tab/#overview-findings)
+* [Component Usage](/control-center/overview-tab/#overviw-component-usage)
+
 ## Components {#all-components}
 
 The **Components** tab gives an overview of all the unique components used across your app landscape. 
+
+{{< figure src="/attachments/control-center/security/software-composition/deployment_sw_comp_components.png" >}}
 
 ### Insights
 
@@ -138,17 +151,26 @@ The component list contains the following information:
 * **Marketplace** – Whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the Marketplace, while a private component is available only via your [Company Content](/appstore/home-page/#company-content) page.
 * **Latest version** — The latest version of the component.
 * **Publisher** — The name of the organization that published the component.
-* **View details** — Clicking this opens the [Component Details](#component-usage) page.
+* **View details** — Clicking this opens the [Component App Details](#component-usage) page.
 * Column customization ({{% icon name="view" %}}) – You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
 
 To export the information corresponding to selected items in the list to an Excel file, select the checkboxes of the items in the list, then click **Selection Export** that appears at the bottom of the page.
 
-### Component Usage {#component-usage}
+### Component App Details {#component-usage}
 
-On the **All Components** tab, if you click **View details** for an item, the **Component Usage** page opens. This page lists the environments where the selected component is being used. If a security vulnerability is found in one of the components, then the component usage tab can be used to assess the impact radius.
+On the **Components** tab, if you click **View details** for an item, the **Component App Details** page opens. This page lists the environments where the selected component is being used. If a security vulnerability is found in one of the components, then the component usage tab can be used to assess the impact radius.
 
-{{< figure src="/attachments/deployment/general/software-composition/component-usage.png" >}}
+At the top of the page, you can find the following information:
 
-On the top of the page, you can find the component name, the component version, and the component type. 
+* A color-coded summary of the findings
+* The current version of the component
+* The type of component
+* The Marketplace support type of the component
+* The component's publisher
+* The type of Marketplace
+* The component's license
 
-For details on the information in the list and how to search, filter, and export information in the list, see the [Overview](#overview) section.
+The page is divided into two tabs: **Findings** and **Component Usage**. For details on the available fields, refer to the Control Center documentation:
+
+* [Findings](/control-center/components-tab/#component-findings)
+* [Component Usage](/control-center/components-tab/#component-component-usage)

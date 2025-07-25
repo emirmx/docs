@@ -68,7 +68,7 @@ Different versions of Studio Pro support different component dependencies. For d
 
 The page is divided into two tabs: **Findings** and **Component Usage**.
 
-### Findings
+### Findings {#overview-findings}
 
 The **Findings** tab lists all the findings which impact that particular app environment.
 
@@ -99,7 +99,7 @@ The finding list contains the following information:
 * **Deprecated since version** — The release date of the version when the component became deprecated.
 * Column customization ({{% icon name="view" %}}) — You can customize the columns in the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
 
-### Component Usage {#component-usage}
+### Component Usage {#overviw-component-usage}
 
 The **Component Usage** tab displays a detailed view of all components used within the app.
 

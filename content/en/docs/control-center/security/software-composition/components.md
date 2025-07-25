@@ -58,7 +58,7 @@ To export the information corresponding to selected items in the list to an Exce
 
 If you click **View details** for a component on the **Components** tab, the **Component Details** page opens.
 
-### Findings
+### Findings {#component-findings}
 
 The **Findings** tab lists all the findings which impact that particular component.
 
@@ -84,7 +84,7 @@ The finding list contains the following information:
 
 * Column customization ({{% icon name="view" %}}) — You can customize the columns in the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
 
-### Component Usage
+### Component Usage {#component-component-usage}
 
 The **Component Usage** tab displays a detailed view of all apps and environments where the component is used.
 

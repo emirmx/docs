@@ -14,6 +14,19 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 ## 2025
 
+### July 18, 2025
+
+#### New Features
+
+* You can now view and set severity levels for findings associated to each component in your app landscape. Findings represent vulnerabilities identified in the components of an app. They give you a clear view of potential vulnerabilities, so you can:
+
+    * Spot issues early.
+    * Reduce time spent troubleshooting by knowing exactly where to look for potential risks.
+    * Make smarter decisions by understanding the severity of each finding.
+    * Improve security by acting on risks as soon as they appear.
+
+  For details on which data is available, where you can see it, and how you can set severity levels, refer to [Software Composition](/control-center/software-composition/).
+
 ### July 17, 2025
 
 #### Improvements
