@@ -21,7 +21,7 @@ Each card also displays a rolling average of how the number of findings has evol
 The calculations are refreshed once a day.    
 Changing the scoring criteria resets the trends.
 
-For details on severity levels, refer to the [Scoring Criteria](/control-center/scoring-criteria-tab/) section.
+For details on severity levels, refer to [Scoring Criteria](/control-center/scoring-criteria-tab/).
 
 ## App List
 

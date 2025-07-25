@@ -18,7 +18,7 @@ The **Software Composition** page is visible to all members of the Mendix app.
 
 {{% alert color="warning" %}}Advanced software composition capabilities are currently available to all. In the future, access to these capabilities will be subject to your license.{{% /alert %}}
 
-### Prerequisites {#prerequisites}
+## Prerequisites {#prerequisites}
 
 To be able to see the software composition information, make sure that you meet the following prerequisites:
 
@@ -32,11 +32,11 @@ To be able to see the software composition information, make sure that you meet 
 
 * If your deployment package was deployed before June 14, 2024, you must create and deploy a new deployment package in order to get the software composition information populated on this page.
 
-### Software Composition Generation {#software-composition-generation}
+## Software Composition Generation {#software-composition-generation}
 
 Components are identified in the following manner:
 
-First, when a new deployment package is created via the Mendix Portal with the compatible Mendix Runtime version, a software bill of material (SBOM) is generated along with it. The log details can be viewed by clicking **View build output** in the deployment package details in the Mendix Portal. For details on SBOM generation, see [SBOM Generation](/refguide/sbom-generation/).
+First, when a new deployment package is created via the Mendix Portal with the compatible Mendix Runtime version, a software bill of materials (SBOM) is generated along with it. The log details can be viewed by clicking **View build output** in the deployment package details in the Mendix Portal. For details on SBOM generation, see [SBOM Generation](/refguide/sbom-generation/).
 
 The component dependencies for each non-expired deployment package are available in the **Software Composition** page in **Apps**. 
 
@@ -46,75 +46,102 @@ After the creation of a deployment package, it may take up to a day for the **So
 
 On the **Overview** tab, you can see a list of all the deployed packages and their environments, if applicable.
 
-{{< figure src="/attachments/deployment/general/software-composition/overview.png" >}}
+### Insights
 
-Above the list, you can use the search box to search for information in the list. Next to the search box, you can filter apps by selecting the environment type or the Mendix Runtime version. You can click {{% icon name="office-sheet" %}}**Export all** on the right side above the list to export all the information in the list to an Excel file.
+The **Insights** cards display the number of findings across all environments, broken down by severity level. For example, if a build package contains one critical finding and is deployed to the test and production environments, two findings are added to **Insights**.    
+
+Each card also displays a rolling average of how the number of findings has evolved over the past 30 days, under the form of a percentage.
+
+The calculations are refreshed once a day.    
+Changing the scoring criteria resets the trends.
+
+For details on severity levels, refer to [Scoring Criteria](/control-center/scoring-criteria-tab/).
+
+### Deployment Package List
+
+The following options are available above the list of deployment packages:
+
+* A search box to search for information within the list.
+* The {{% icon name="office-sheet" %}}**Export All** option, which allows you to export all the information in the list to an Excel file.
 
 The list contains the following information:
 
-* **Deployment Package** – This is the name of the deployment package.
-* **Environment** – This is the name of the environment.
-* **Runtime** – This shows the Mendix Runtime version.
-* **Version** – This shows the version of the deployment package on this app environment.
-* Column customization ({{% icon name="view" %}}) – You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and adjusting the selection of the check boxes.
-* **View details** – Clicking this opens the [Application Environment Summary](#app-env-summary) page, if it is available. The **View details** button is grayed out when an SBOM is not available for the selected deployment package. Ensure you are on a compatible runtime version and create a new deployment package in order to get component visibility here.
+* **Deployment Package** — The name of the deployment package.
+* **Environment** — The name of the environment where the package is deployed.
+* **Runtime** — The Mendix Runtime version.
+* **Findings** — The number of findings of each type, color-coded according to severity level.
+* **Version** — The version of the deployment package on this app environment.
+* **Technical Contact** —
+* **Target Cloud** — The Technical Contact of the app. The type of cloud where the deployment package is deployed. Currently, the following types of cloud are supported:
+    * Mendix Free Cloud
+    * Mendix Cloud (including Mendix Cloud Dedicated)
+    * Mendix on Kubernetes (connected)
+* Column customization ({{% icon name="view" %}}) — You can customize the columns in the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
+* **View details** — Clicking this opens the [Application Environment Summary](#app-env-summary) page, if it is available. The **View details** button is grayed out when an SBOM is not available for the selected deployment package. Ensure you are on a compatible runtime version and create a new deployment package in order to get component visibility here.
 
-### Application Environment Summary {#app-env-summary}
+#### Application Environment Summary {#app-env-summary}
 
-On the **Overview** tab, if you click **View Details** for a deployment package in the list, the **Application Environment Summary** page opens.
+If you click **View Details** for an app in the list on the **Overview** tab, the **Application Environment Summary** page opens. This displays details about the findings identified in all the components used by the selected app.
 
-{{< figure src="/attachments/deployment/general/software-composition/component-summary.png" >}}
+At the top of the page, you can find the following information:
 
-On the top of the page, you can find the name of the deployment package, the environment name, the Mendix Runtime version, and the version of the deployment package.
+* The app name
+* A color-coded summary of the findings
+* The environment name
+* The Mendix Runtime version
+* The Technical Contact
+* The type of cloud where the deployment package is deployed
 
-For details on the information in the list and how to search, filter, and export information in the list, see the [All Components](#all-components) section.
+In the upper, right corner of the page, you can click {{% icon name="download-bottom" %}}**SBOM** to download the software bill of materials (SBOM).  
 
-#### Downloading the Software Bill of Materials {#download-software-bill-of-materials}
+A software bill of materials (SBOM) is a *.json* file in the CycloneDX format. It contains a description about the Mendix app and the components (dependencies) put into it. For more information, see [SBOM Generation](/refguide/sbom-generation/).
 
-A software bill of materials (SBOM) is a *.json* file in the CycloneDX format. It contains a description of the Mendix app and the components (dependencies) put into it. For more information, see [SBOM Generation](/refguide/sbom-generation/).
+Different versions of Studio Pro support different component dependencies. For details on component dependencies supported per version, refer to the [Supported Features](/refguide/sbom-generation/#supported-features) section in *SBOM Generation*.
 
-In the list on the **Overview** tab, you can click the {{% icon name="download-bottom" %}} icon in the **Action** column to download the SBOM. Different versions of Studio Pro support different component dependencies. For details on component dependencies supported per version, see the [Supported Features](/refguide/sbom-generation/#supported-features) section in *SBOM Generation*.
+## Components {#all-components}
 
-## All Components {#all-components}
+The **Components** tab gives an overview of all the unique components used across your app landscape. 
 
-The **All Components** tab gives an overview of all the components used across your environments.
+### Insights
 
-{{% alert color="info" %}}To be able to see the software composition information, make sure that you meet the prerequisites. For more information, see the [Prerequisites](#prerequisites) section.{{% /alert %}}
+The **Insights** cards display the following details:
 
-{{< figure src="/attachments/deployment/general/software-composition/all-components.png" >}}
+* **Marketplace** — The number of private and public Marketplace components used throughout your apps.
+* **Support type** — The number of Marketplace components divided into content support categories.
+* **Summary** — The number of findings in each severity category, along with a rolling average of how the number of findings has evolved over the past 30 days, under the form of a percentage.
 
-Above the list, you can use the search box to search for a component. Next to the search box, you can filter components by selecting the component type. You can click {{% icon name="office-sheet" %}}**Export all to Excel** on the right side above the list to export all the information in the list to an Excel file.
+### Component List
 
-The list shows the following information about the component:
+The following options are available above the list of components:
 
-* **Component** – This is the name of the component.
+* A search box to search for information within the list.
+* A filter to display apps based on the type of cloud. 
+* The {{% icon name="office-sheet" %}}**Export All** option, which allows you to export all the information in the list to an Excel file.
 
-* **Type** – This shows the type of the component. The type could be modules, widgets, framework, Java libraries (JAR), etc. The descriptions of each type are as follows:
+The component list contains the following information:
 
-    * **Modules** – Standard marketplace modules imported from the Marketplace, for example [Community Commons](https://marketplace.mendix.com/link/component/170)
-    * **Widgets** – User interface elements downloaded from the Marketplace, for example [Charts](https://marketplace.mendix.com/link/component/105695)
-    * **Framework** – The Mendix Runtime version, for example 10.12.0
-    * **Jars** – Java libraries imported into your app using [Managed Dependencies](/refguide/managed-dependencies/), or those manually added in the **userlib** folder depending on the Studio Pro version used, for example `org.apache.commons.io`
-    * **npms** – npm libraries that are used in your [JavaScript actions](/refguide/javascript-actions/)
-    * **Unknown** – When the type of the component is none of the above and hence undetermined
-
-  For more information, refer to [SBOM Generation](/refguide/sbom-generation/).
+* **Component** — The name of the component.
+* **Type** — The type of component, which can be one of the following:
   
-* **Support type** – This shows the support type of the Marketplace component. It can be **Mendix**, **Partner**, or **Community**. For more information, see [Content Support Categories](/appstore/marketplace-content-support/#category).
+    * **Module** — Standard marketplace module imported from the Marketplace, such as [Community Commons](https://marketplace.mendix.com/link/component/170).
+    * **Widget** — User interface elements downloaded from the Marketplace, such as [Charts](https://marketplace.mendix.com/link/component/105695).
+    * **Framework** — The Mendix Runtime version, for example 10.12.0
+    * **Jar** — Java libraries imported into your app using [Managed Dependencies](/refguide/managed-dependencies/), or those manually added in the **userlib** folder depending on the Studio Pro version used, such as `org.apache.commons.io`.
+    * **npms** — `npm` libraries that are used in your [JavaScript actions](/refguide/javascript-actions/).
+    * **Unknown** — When the type of the component is none of the above and hence undetermined.
+    
+* **Support type** — The support type of the Marketplace component. This can be **Mendix**, **Partner**, or **Community**.    
+  For more information, refer to [Content Support Categories](/appstore/marketplace-content-support/#category).
+* **Version** — The version of the component that is being used.
+* **Findings** — This shows the number of findings of each type, color-coded according to severity level.
+* **License** — The end-user license for the component.
+* **Marketplace** – Whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the Marketplace, while a private component is available only via your [Company Content](/appstore/home-page/#company-content) page.
+* **Latest version** — The latest version of the component.
+* **Publisher** — The name of the organization that published the component.
+* **View details** — Clicking this opens the [Component Details](#component-usage) page.
+* Column customization ({{% icon name="view" %}}) – You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and selecting or deselecting options.
 
-* **Version** – This is the component version.
-
-* **License** – This shows the end-user license for the component.
-
-* **Marketplace** – This shows whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the  Marketplace, while a private component is available only via your [Compnay Content](/appstore/home-page/#company-content) page.
-
-* **Latest version** – This shows the lastest version of the component.
-
-* **Publisher** – This shows the name of the organization that published the component.
-
-* Column customization ({{% icon name="view" %}}) – You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and adjusting the selection of the checkboxes.
-
-* **View details** – Clicking this opens the [Component Usage](#component-usage) page.
+To export the information corresponding to selected items in the list to an Excel file, select the checkboxes of the items in the list, then click **Selection Export** that appears at the bottom of the page.
 
 ### Component Usage {#component-usage}
 
