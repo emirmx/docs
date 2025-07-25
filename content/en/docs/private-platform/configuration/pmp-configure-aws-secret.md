@@ -43,7 +43,8 @@ To create a secret in AWS Secret Manager, perform the following steps:
 Make note of the secret name and ARN. You will need these when configuring Private Mendix Platform to use the secret.
 {{% /alert %}}
 
-
 ### Configuring IAM Permissions and Service Accounts
+
+Private Mendix Platform uses [IRSA (IAM Roles for Service Accounts)](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html) to securely access AWS Secrets Manager without storing AWS credentials. This provides a secure, auditable way to access secrets. To enable this functionality, you must first create an [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html), and then configure the service account.
 
 ### Configuring the Credentials
