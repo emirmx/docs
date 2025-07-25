@@ -134,7 +134,8 @@ For supported knowledge bases registered in your app, you can connect them to ag
 
 * [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#configuration)
 * [Amazon Bedrock Connector](/appstore/modules/aws/amazon-bedrock/#sync-models)
-* [OpenAI Connector](/appstore/modules/genai/reference-guide/external-connectors/openai/#general-configuration) (for Azure knowledge bases, available in an upcoming release)
+* [OpenAI Connector](/appstore/modules/genai/reference-guide/external-connectors/openai/#azure-ai-search)
+* [PgVector Knowledge Base](/appstore/modules/genai/reference-guide/external-connectors/pgvector/#general-configuration)
 
 To allow an agent to perform semantic searches, add the knowledge base to the agent definition and configure the retrieval parameters, such as the number of chunks to retrieve, and the threshold similarity. Multiple knowledge bases can be added to the agent to pick from. Give each knowledge base a name and description (in human language) so that the model can decide which retrieves are necessary based on the input it gets.
 

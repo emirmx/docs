@@ -1,33 +1,34 @@
 ---
 title: "Mendix Profile"
-url: /community-tools/mendix-profile/
-weight: 2
+url: /mendix-profile/
+weight: 4
 description: "Describes the personal profile page of the Mendix Portal."
 #To update these screenshots, you can log in with credentials detailed in How to Update Screenshots Using Team Apps.
 aliases:
     - /developerportal/community-tools/mendix-profile/
+    - /community-tools/mendix-profile/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
-Your Mendix Profile is your main point of contact with members of the Mendix community. It displays your activities on the Mendix Platform and details about your background. To get more involved in the Mendix community, your profile is the best place to start. 
+Your Mendix Profile displays your activities on the Mendix Platform and includes details about your background. 
 
-You can access your Mendix profile by clicking your picture in the upper-right corner of any page in the Mendix Portal (for example, [Apps](https://sprintr.home.mendix.com/), the [Mendix Marketplace](https://marketplace.mendix.com/),[Control Center](https://controlcenter.mendix.com/)) and then selecting **See Your Profile**. 
+You can access your Mendix profile by clicking your picture in the upper-right corner of the Mendix Portal, then selecting **See Your Profile**. 
 
 {{% alert color="info" %}}
-By default, any newly created Mendix account comes with its own Mendix Profile.
+By default, all newly created Mendix accounts come with their own Mendix Profile.
 {{% /alert %}}
 
 ## Header {#header}
 
 Your profile header displays a quick overview of information about you. Your Mendix experience in level and points, your number of [credits](#challenges), and your number of [connections](#connections) are all found here. You can also select up to four featured [badges](#badges) to display your progress on the Mendix Platform. If you have a certificate from the Mendix [Academy](https://academy.mendix.com), this will also be displayed. The **Personal Info** card presents other information.
 
-You can [edit your Mendix profile](/community-tools/mendix-profile/user-settings/) by clicking the settings ({{% icon name="cog" %}}) icon on the upper-right corner.
+You can [edit your Mendix profile](/mendix-profile/user-settings/) by clicking the settings ({{% icon name="cog" %}}) icon in the upper-right corner.
 
 ## Overview and Stats
 
-Your profile opens to the **Overview** tab, which shows you at a quick glance how you are doing on the platform. You can see the following:
+Your profile opens to the **Overview** tab, which shows you at a quick glance how you are doing on the platform. You can see the following information in a card format:
 
 * Stats 
 * Badges in progress and the next badges to work towards
@@ -37,31 +38,35 @@ Your profile opens to the **Overview** tab, which shows you at a quick glance ho
 * Position on the leaderboard
 * Portfolio
 
-The first profile card below the header presents your **Stats**, which are your points divided between Mendix products and activities:
+Each card contains a link which allows you to open its corresponding tab or page for more details.
+
+## Stats
+
+The first profile card below the header presents your **Stats**, which are your points divided between Mendix products and activities.
 
 {{< figure src="/attachments/community-tools/mendix-profile/stats.png"   width="350"  class="no-border" >}}
 
 {{% alert color="warning" %}}
-Don't get disappointed about a low number of points, because everyone in the Mendix community started like that, even our Expert developers! There are plenty of opportunities to gain more points and climb the [Leaderboard](#leaderboard).
+Don't be disappointed if you have a low number of points — everyone in the Mendix community started that way, even our Expert developers. There are plenty of opportunities to gain more points and climb the [Leaderboard](#leaderboard).
 {{% /alert %}}
 
 ## Badges {#badges}
 
-In addition to the **Stats** chart, on the **Overview** tab you gain an overview of your **Badges**. These badges represent your achievements and progress on the Mendix Platform. You can see your **Badges in Progress** as well as **Next Badges**. The badges are color-coded based from green (least rare), to blue, purple, and orange (most rare).
+Badges represent your achievements and progress on the Mendix Platform. You can see your in progress **Badges**, as well as your **Next Badges**. The badges are color-coded from green (most frequent), to blue, purple, and orange (most rare).
 
-To see all your badges as well as the badges you can work towards, click **View all** to go to the **Badges** tab of your profile. On that tab, you can select up to four badges from the **Earned badges** section to make visible in your profile [header](#header) by clicking **Select as featured**.
+To see all your badges, as well as the badges you can work towards, click **View all** to go to the **Badges** tab of your profile. On that tab, you can select up to four badges from the **Earned badges** section to make visible in your profile [header](#header) by clicking **Select as featured**.
 
 {{% alert color="info" %}}
 In the **Earned badges** section, you find the badges you have completed. If the badge is a multi-level badge, only the highest completed badge is shown.
 {{% /alert %}}
 
-The percentage on the card of the **Badges in progress** shows how far you have come to earn that particular badge. If the badge is a multi-level badge, only the highest completed badge is shown, so don't get distracted while earning it!
+The percentage on the card of the **Badges in progress** shows how far you have come to earn that particular badge. If the badge is a multi-level badge, only the highest completed badge is shown.
 
 {{< figure src="/attachments/community-tools/mendix-profile/badges.png"   width="350"  class="no-border" >}}
 
 ## Challenges {#challenges}
 
-The **Challenge** card presents a featured challenge you can complete to gain credits. You can use the credits in the [Mendix Shop](https://shop.mendix.com) to order low-code t-shirts or other Mendix swag. Some challenges are going to be easy for you, whilst others might be harder to complete!
+The **Challenge** card presents a featured challenge you can complete to gain credits. You can use the credits in the [Mendix Shop](https://shop.mendix.com) to order low-code t-shirts or other Mendix swag. Some challenges are going to be easy for you, whilst others might be harder to complete.
 
 {{< figure src="/attachments/community-tools/mendix-profile/challenges.png"   width="350"  class="no-border" >}}
 
@@ -69,40 +74,40 @@ Click **View All** to go to the **Challenges** tab of your profile. This tab pre
 
 {{< figure src="/attachments/community-tools/mendix-profile/credits.png"   width="350"  class="no-border" >}}
 
-When you complete a challenge, click **Claim Credits** to claim the Mendix credits. You can then spend your credits on cool items in the Mendix Shop.
+When you complete a challenge, click **Claim Credits** to claim your Mendix credits. You can then spend your credits on cool items in the Mendix Shop.
 
 ## Connections {#connections}
 
 One of the greatest strengths of Mendix is our awesome developers community, and the **Connections** card is the perfect place to start connecting to other Mendix developers. When you get an invitation to connect, you can check out their profile and decide whether to accept or ignore it. 
 
-You can also see a list of people you may know so that you can add further connections to your profile. To connect with someone, click the plus icon to send an invitation.
+You can also see a list of people you may know, so that you can add further connections to your profile. To connect with someone, click the plus icon to send an invitation.
 
 {{< figure src="/attachments/community-tools/mendix-profile/connections.png"   width="350"  class="no-border" >}}
 
-Clicking **View All** on the card will bring you to the **Connections** tab of your profile. On this tab, you can invite friends and colleagues to Mendix in two ways:
+Clicking **View All** on the card brings you to the **Connections** tab of your profile. On this tab, you can invite friends and colleagues to Mendix in two ways:
 
-* **Share URL** – copy the personalized invite link and share it directly
-* **Send Invite** – send someone a Mendix invite by entering their email address
+* **Share URL** – Copy the personalized invite link and share it directly.
+* **Send Invite** – Send someone a Mendix invite by entering their email address.
 
 {{< figure src="/attachments/community-tools/mendix-profile/referral.png"   width="500"  class="no-border" >}}
 
 ## Leaderboard {#leaderboard}
 
-This card on your profile presents your points and ranking for the last 30 days:
+This card on your profile presents your points and ranking for the last 30 days.
 
 {{< figure src="/attachments/community-tools/mendix-profile/leaderboard.png" width="500px" alt="Leaderboard example" class="no-border" >}}
 
 Clicking **View All** takes you to the **Leaderboards** page, where you can view leaders per category, for the whole Mendix Platform, or for your company only.
 
-You can climb the leaderboard by earning points through various activities on the Mendix Platform. For example, let's say you have some time to spare while your app is deploying. You get a cup of coffee and check out the [Mendix Community](https://community.mendix.com/). One questions pops out because you came across a similar problem a few weeks back. You decide to help the community member and post an answer to their question. Not long after, the author marks your answer as accepted. Boom! 15 points right there.
+You can climb the leaderboard by earning points through various activities on the Mendix Platform. For example, let's say you have some time to spare while your app is deploying. You get a cup of coffee and check out the [Mendix Community](https://community.mendix.com/). One questions pops out because you came across a similar problem a few weeks back. You decide to help the community member and post an answer to their question. Not long after, the author marks your answer as accepted. This earns you 15 points.
 
-Check out the tables below for all the ways to earn points.
+Check out the following tables for all the ways to earn points.
 
 ### Community Points
 
 These are points you can gain through activity in the [Mendix Community](https://community.mendix.com/).
 
-| Activity | Points | Max. Points per Day |
+| Activity | Points | Maximum Points per Day |
 | --- | --- | --- |
 | Have your answer marked as accepted | 15 | N/A |
 | Receive an upvote | 10 | 50 |
@@ -114,7 +119,7 @@ These are points you can gain through activity in the [Mendix Community](https:/
 
 These are points you can gain through activity in the [Mendix Marketplace](https://marketplace.mendix.com/).
 
-| Activity | Points | Max. Points per Day |
+| Activity | Points | Maximum Points per Day |
 | --- | --- | --- |
 | Publish an app | 50 | N/A |
 | Publish a new app version | 25 | N/A |
@@ -124,7 +129,7 @@ These are points you can gain through activity in the [Mendix Marketplace](https
 
 ### Platform Points
 
-| Activity | Points | Max. Points per Day |
+| Activity | Points | Maximum Points per Day |
 | --- | --- | --- |
 | Be the first member of your company to sign up for Mendix | 25 | N/A |
 | Send an app invite | 10 | 50 |
@@ -141,7 +146,7 @@ These are points you can gain through activity in the [Mendix Marketplace](https
 
 ### Impact Points
 
-| Activity | Points | Max. per Day |
+| Activity | Points | Maximum Points per Day |
 | --- | --- | --- |
 | Win a Mendix Hackathon! | 300 | N/A |
 | Reach the [Mendix MVP](https://www.mendix.com/mvp-program/) status | 300 | N/A |
@@ -155,7 +160,7 @@ These are points you can gain through activity in the [Mendix Marketplace](https
 
 ### Learning Points
 
-| Activity | Points | Max. per Day |
+| Activity | Points | Maximum Points per Day |
 | --- | --- | --- |
 | Pass the [Expert Developer Certification](https://academy.mendix.com/link/certification/expert) exam | 100 | N/A |
 | Pass the [Advanced Developer Certification](https://academy.mendix.com/link/certification/advanced) exam | 50 | N/A |
@@ -188,11 +193,13 @@ When you earn enough points, you gain a level:
 
 ## Portfolio
 
-The **Portfolio** card presents a selection of Mendix apps you have worked on. Clicking an app name presents details about the customer, business need, solution, and results. You can also view other developers and their apps to get inspired. You can also click **View All Projects** to go to the **Portfolio** tab, which presents all of your apps.
+The **Portfolio** card presents a selection of Mendix apps you have worked on. Clicking an app name presents details about the customer, business need, solution, and results. You can also view other developers and their apps to get inspired. 
+
+Clicking **View All Projects** brings you to the **Portfolio** tab, which presents all of your apps.
 
 {{< figure src="/attachments/community-tools/mendix-profile/portfolio.png" width="500px" alt="Portfolio example" class="no-border" >}}
 
-To add an app to your portfolio, click **Add Project**, which will open the editor. There are tips in the editor for what you should put in each field. All the fields in the editor are required before submission.
+To add an app to your portfolio, click **Add Project**, which opens the editor. There are tips in the editor for what you should put in each field. All the fields are required before submission.
 
 If you cannot finish your portfolio entry or do not want to publish yet, click **Save as Draft** to finish it later. The draft will be visible only to you in the **Portfolio** tab for further editing.
 
@@ -202,4 +209,4 @@ On the **Activity** tab, you can see a list of the last 20 public events for you
 
 ## Point Penalties
 
-Abusing the Mendix Community, point system, or other community tools is not allowed. Any such action can result in a point penalty. Mendix reserves the right to penalize a user who bypasses or games the system without informing them.
+Abusing the Mendix Community, the point system, or other community tools is not allowed. Any such action can result in a point penalty. Mendix reserves the right to penalize a user who bypasses or games the system without informing them.

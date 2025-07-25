@@ -19,8 +19,10 @@ To use function calling within the same Mendix application and integrating to an
 
 The current version has the following limitations:
 
-* Tools can only return a `TextContent` result.
+* Tools can only return String values, either directly as String type or using the `TextContent` entity.
+* Prompts can only return a single message.
 * The client connection remains active for only 15 minutes, as the Mendix runtime currently does not support async requests.
+* Running an MCP Server is currently only supported on single-instance environments.
 * User authorization can currently only be applied on request but not at the tool/prompt level. As a result, the current user is not available within tool/prompt microflows, and entity access or XPath constraints can not be enabled out of the box. This is due to the capabilities offered by the official MCP Java SDK which does not support reusing a Mendix user session in the executed tools/prompts.
 
 Note that the MCP Server module is still in its early version and latest versions may include breaking changes. Since both the open-source protocol and the Java SDK are still evolving and regularly updated, these changes may also affect this module.
@@ -64,8 +66,8 @@ After the [Create MCP Server](#create-server) action, you can add one or multipl
 
 The selected microflow must adhere to the following principles:
 
-* Input needs to be the same as described in the `Schema` attribute (only primitives and/or an object of type `MCPServer.Tool` are supported)
-* The return value needs to be a `TextContent` object which you can create inside of the microflow to return the relevant information to the model based on the outcome of the microflow.
+* Input needs to be the same as described in the `Schema` attribute (only primitives and/or an object of type `MCPServer.Tool` are supported). If no Schema is passed in the `Add tool` action, it will be automatically created based on the microflow's input parameters.
+* The return value must be either of type `String` or `TextContent`. You can create a `TextContent` object within the microflow to return the relevant information to the model based on the outcome of the microflow.
 
 For an example, see the `Example Implementations` folder inside of the module.
 
@@ -99,6 +101,19 @@ The **Documentation** pane displays the documentation for the currently selected
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" >}}
 
+## Troubleshooting
+
+### MCP Client Cannot Connect to the MCP Server
+
+There are several possible reasons why the client cannot connect to your server. Check the logs of the MCP host application for the hint about what might be going wrong. Additionally, if the issue occurs on the Mendix side, the MCP Server module will log relevant errors.
+
+The error `Fatal error: SseError: SSE error: Could not convert argument of type symbol to string.` may indicate that you need to install or reinstall [Node.js](https://nodejs.org/en). After that, you may also need to clear your NPX cache by running the following command in a CLI (for example, PowerShell):
+
+```text
+Remove-Item -Path "$env:LocalAppData\npm-cache\_npx" -Recurse -Force
+npm cache clean --force
+```
+   
 ## Read More
 
 * Concept description of [Model Context Protocol (MCP)](/appstore/modules/genai/mcp/)

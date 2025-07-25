@@ -14,7 +14,7 @@ To understand the different types of versions and releases, consider the example
 
 In the 9.24.1 example, the first number (**9**) indicates the major version.
 
-Mendix supports three major versions at a time. To clarify our current offering and in relation to our SLA, today Mendix supports major versions 8, 9, and 10. 
+Mendix supports three major versions at a time. To clarify our current offering and in relation to our SLA, today Mendix supports major versions 9, 10, and 11. 
 
 As of Mendix 10, to make planning version upgrades easier for our users, Mendix will release in a two-year cadence, which means that every two years we plan to release a new major version in June. This will help in preparing and planning to adopt new releases and upgrade older Mendix versions. Each major version release will start with two public [beta releases](/releasenotes/release-status/).
 
@@ -22,13 +22,13 @@ For Mendix 10 and 11, we are planning to follow this release timeline:
 
 | Release | Date |
 | --- | --- |
-| 9.24 LTS | March 2023 |
 | 10.6 MTS | December 2023 |
 | 10.12 MTS | June 2024 |
 | 10.18 MTS | December 2024 |
-| 11 Public Beta 1, 10.22 | April 2025 |
-| 11 Public Beta 2, 10.23 | May 2025 |
-| 11.0 GA, 10.24 LTS | June 2025 |
+| 10.22 | April 2025 |
+| 10.23 | May 2025 |
+| 11.0 GA | June 2025 |
+| 10.24 LTS | June 2025 |
 
 ### Minor Version
 

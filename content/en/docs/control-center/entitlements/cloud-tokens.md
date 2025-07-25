@@ -20,7 +20,7 @@ These are the details available for each transaction that uses Mendix Cloud Toke
 * **App** – The app that triggered the transaction.
 * **Transaction** – The type of transaction.
 * **Cloud Resource Pack** – The Cloud Resource Pack that corresponds to the transaction. For more information, refer to [Cloud Resource Packs](#crps).
-* **Cloud Credits** – The number of Mendix Cloud Tokens consumed by the transaction.
+* **Cloud Tokens** – The number of Mendix Cloud Tokens consumed by the transaction.
 * **Tokens Remaining** – The number of Mendix Cloud Tokens remaining after the transaction was completed.
 
 ## Mendix Cloud Tokens {#cloud-tokens}

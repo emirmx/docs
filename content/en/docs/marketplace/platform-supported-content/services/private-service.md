@@ -1,8 +1,10 @@
 ---
 title: "Private PDF Document Generation Service"
-url: /appstore/modules/private-document-generation-service/
+url: /appstore/services/private-document-generation-service/
 description: "Describes the configuration and usage of the private PDF Document Generation service, which is used in combination with the PDF Document Generation module in the Marketplace."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
+aliases:
+    - /appstore/modules/private-document-generation-service/
 ---
 
 ## Introduction
@@ -34,7 +36,8 @@ These are the limitations of using the private PDF Document Generation service:
 Before you start using the private PDF Document Generation service, make sure you meet these prerequisites:
 
 * You have a good understanding of how to run and manage Docker containers. 
-* You are familiar with the PDF Document Generation module. For more information, refer to [PDF Document Generation](/appstore/modules/document-generation/).
+* You are familiar with the PDF Document Generation module. For more information, refer to [PDF Document Generation](/appstore/modules/document-generation/). 
+* You are using version 2.1.0 or higher of the PDF Document Generation module.
 * Your deployment environment needs to allow bidirectional communication between Mendix apps and the Docker containers running the private PDF Document Generation service.
 
 ## Installation {#installation}
@@ -59,7 +62,9 @@ The following artifact is available for installing the service:
 Follow these steps to install the service through Docker:
 
 1. Pull the Docker image using the following command: `docker pull private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`.
-2. Run the Docker container using the following command: `docker run -p 8085:8085 --name document-generation private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`. The `<tag>` component must be replaced with the version of the service, such as `1.0.0`. This creates a Docker container, which is exposed on port `8085`.
+2. Run the Docker container using the following command: `docker run -p 8085:8085 --name document-generation private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`. This creates a Docker container, which is exposed on port `8085`.    
+
+The `<tag>` component must be replaced with the version of the service, such as `1.0.0`. You can find all versions and their release notes in the [Private PDF Document Generation Service Release Notes](/releasenotes/marketplace/private-service/).
 
 ### Isolation
 

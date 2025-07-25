@@ -14,6 +14,12 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 ## 2025
 
+### July 17, 2025
+
+#### Improvements
+
+* We have changed the **Cloud Credits** field on the **Cloud Tokens** page to **Cloud Tokens**. This accurately represents its purpose and ensures consistency.
+
 ### June 12, 2025
 
 #### New Features

@@ -26,8 +26,8 @@ The [PDF Document Generation](https://marketplace.mendix.com/link/component/2115
     * [Mendix Cloud Dedicated](/developerportal/deploy/mendix-cloud-deploy/)
     * [Mendix on Kubernetes Connected](/developerportal/deploy/private-cloud/)
     * [On-Premises](/developerportal/deploy/on-premises-design/)
-    * A privately hosted Docker containerized PDF Document Generation service. It is available starting with module versions 1.11.0 for Studio Pro 9 and 2.1.0 for Studio Pro 10. For more information, refer to [Private PDF Document Generation Service](/appstore/modules/private-document-generation-service/).
-    {{% alert color="info" %}}We only support apps that allow bi-directional communication with the PDF Service in Mendix Cloud for all deployment types except for on-premises, and for the [Private PDF Document Generation Service](/appstore/modules/private-document-generation-service/).{{% /alert %}}
+    * A privately hosted Docker containerized PDF Document Generation service. It is available starting with module versions 1.11.0 for Studio Pro 9 and 2.1.0 for Studio Pro 10. For more information, refer to [Private PDF Document Generation Service](/appstore/services/private-document-generation-service/).
+    {{% alert color="info" %}}We only support apps that allow bi-directional communication with the PDF Service in Mendix Cloud for all deployment types except for on-premises, and for the [Private PDF Document Generation Service](/appstore/services/private-document-generation-service/).{{% /alert %}}
 * The maximum file size is 25 MB per document. If your document exceeds this limit, the action will result in an exception. We recommend compressing high-resolution images to reduce their file size.
 * If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using client certificates, our cloud service will not be able to reach your app, and the module will not work properly.
 * If your app uses a custom domain, you must configure a custom SSL/TLS domain certificate signed by a trusted public authority, including all intermediate certificates if applicable. Self-signed certificates will cause the service to fail. For more information, see [Obtaining a new signed certificate](/developerportal/deploy/custom-domains/#obtaining-a-new-signed-certificate).
@@ -444,7 +444,7 @@ If you encounter the message "Local service exited with error" in your runtime l
 
 ```
 com.mendix.modules.microflowengine.MicroflowException: com.mendix.systemwideinterfaces.MendixRuntimeException: java.lang.RuntimeException: Local service exited with error
-	at DocumentGenerationTest.ACT_TestDocument_WrongLayout (JavaAction : 'Generate PDF from page')
+    at DocumentGenerationTest.ACT_TestDocument_WrongLayout (JavaAction : 'Generate PDF from page')
 ```
 
 We recommend that you temporarily set the log level of the `DocumentGeneration` log node to [trace](/refguide/log-levels/#level). This should give more insight at what stage the action fails.
