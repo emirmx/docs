@@ -25,6 +25,10 @@ Operators and functions in OQL use expressions as inputs to perform mathematical
 
 This document details the use and syntax of expressions in an OQL query.
 
+The domain model used in the various examples is shown below:
+
+{{< figure src="/attachments/refguide/modeling/domain-model/oql/oql-expression-syntax-domain-model.png" >}}
+
 ## Data Types
 
 OQL supports a set of data types that differ slightly from [Mendix data types](/refguide/data-types/). The supported data types are:
@@ -544,7 +548,7 @@ Where `expression` is an expression of any datatype.
 The `IS` operator can be used to filter out rows with values that are NULL. For example:
 
 ```sql
-	SELECT Revenue, Cost FROM Sales.Finance WHERE Revenue IS NOT NULL 
+	SELECT Revenue, Cost FROM Sales.Finances WHERE Revenue IS NOT NULL 
 ```
 
 | Revenue | Cost |
@@ -1141,7 +1145,7 @@ For example, a space delimited list can be converted to one with commas to be us
 SELECT * FROM Sales.Raw
 ```
 
-| ID | Import            |                                                         
+| ID | RawImport            |                                                         
 |----|-------------------|
 | -  | "6 D10 machinery" |
 | -  | "1 A15 tools"     |
@@ -1149,10 +1153,10 @@ SELECT * FROM Sales.Raw
 The text can be converted with `REPLACE` as follows:
 
 ```sql
-SELECT REPLACE(Import, ' ', ',') FROM Sales.Raw
+SELECT REPLACE(RawImport, ' ', ',') FROM Sales.Raw
 ```
 
-| Import            |                                                         
+| RawImport            |                                                         
 |-------------------|
 | "6,D10,machinery" |
 | "1,A15,tools"     |
