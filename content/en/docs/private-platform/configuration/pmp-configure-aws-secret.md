@@ -39,7 +39,10 @@ To create a secret in AWS Secret Manager, perform the following steps:
 10. Click **Next** to review your secret settings.
 11. Review the details and click **Store** to create the secret.
 
+{{% alert color="info" %}}
 Make note of the secret name and ARN. You will need these when configuring Private Mendix Platform to use the secret.
+{{% /alert %}}
+
 
 ### Configuring IAM Permissions and Service Accounts
 
