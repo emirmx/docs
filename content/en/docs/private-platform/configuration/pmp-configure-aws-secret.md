@@ -34,7 +34,7 @@ To create a secret in AWS Secret Manager, perform the following steps:
 5. Select the **JSON** format for storing secrets.
 6. Enter the key-value pairs for your secrets using the Private Mendix Platform [naming convention](#naming-convention).
 7. Click **Next**.
-8. Enter a descriptive name for your secret, for example, *PMP-Production-Credentials* or *PMP-VCS-Credentials*.
+8. Enter a descriptive name for your secret, for example, *PMP-Production-Credentials*.
 9. Optional: Add a description and tags for better organization and compliance tracking.
 10. Click **Next** to review your secret settings.
 11. Review the details and click **Store** to create the secret.
