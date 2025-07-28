@@ -311,7 +311,7 @@ This setting, currently in beta, allows entities to be used in offline navigatio
 
 ### System Texts Editor
 
-The web version of the system texts editor is currently an experimental feature. Enable this option to use the web version of the editor. 
+This option allows you to use the web version of the system texts editor. It is enabled by default.
 
 If Translation Generator is also enabled, you can use it in this editor as well. For more information, see the [Generating Translation for System Texts](/refguide/translation-generator/#translate-system-text) section in *Translation Generator*.
 
