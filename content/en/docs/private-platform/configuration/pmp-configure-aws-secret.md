@@ -143,9 +143,9 @@ When creating a property to use as a key for external secret storage, use the fo
 
         * **Email.SMTPPassword** - Password for the SMTP server
 
-The following is an example JSON template:
+The following is a JSON template. Copy this template into your secret, and set the values that you want to use. Leave those you do not want to use empty.
 
-```text
+```json
 {
   "VCS": {
     "BitbucketProjectAdminPAT": "",
@@ -220,7 +220,7 @@ To create an IAM role, perform the following steps:
 3. Click **Next** to proceed to permissions.
 4. Create or attach a custom policy with the following permissions:
 
-    ```text
+    ```yaml
     {
         "Version": "2012-10-17",
         "Statement": [
