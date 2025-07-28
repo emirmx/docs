@@ -42,6 +42,6 @@ You can perform the following actions on this page:
 
 ## Read More
 
-* [Buzz](/developerportal/general/buzz/)
+* [Overview](/developerportal/general/overview/)
 * [Team](/developerportal/general/team/)
 * [Epics](/developerportal/project-management/epics/)
