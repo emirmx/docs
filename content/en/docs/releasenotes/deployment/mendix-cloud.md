@@ -28,19 +28,6 @@ For information on the current status of deployment to Mendix Cloud and any plan
 * We improved the **Export to Excel** option in the [Model Options](/developerportal/deploy/environments-details/#model-options) tab. The exported file now uses a comma delimiter instead of a semicolon. (Feedback #1460)
 * We refined the sorting behavior on the **Permissions** page. Items are now sorted by name and grouped by type (Role-based / Non-role-based) (Feedback #1458)
 
-### July 18, 2025
-
-#### New Features
-
-* You can now view findings associated to each component in your app landscape. Findings represent issues identified in the components of an app. They give you a clear view of potential risks, so you can:
-
-    * Spot issues early.
-    * Reduce time spent troubleshooting by knowing exactly where to look for potential risks.
-    * Make smarter decisions by understanding the severity of each finding.
-    * Improve security by acting on risks as soon as they appear.
-
-  For details on which findings are available, where you can see them, and how you can set severity levels for them, refer to [Software Composition](/developerportal/deploy/software-composition/).
-
 ### July 13, 2025
 
 #### Bug Fixes
