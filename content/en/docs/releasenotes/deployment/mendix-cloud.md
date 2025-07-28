@@ -16,6 +16,18 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
+### July 27, 2025
+
+#### New Features
+
+* We have enhanced the reliability of the health icon. As part of this update, we introduced a new **Alerts** label to indicate critical or warning-level [alerts](/developerportal/operate/monitoring-application-health/) from the application logs. The health icon now exclusively reflects the environment's running status.
+
+#### Bug Fixes
+
+* We fixed an issue where users were unable to view backups of their Sandbox apps. (Ticket 252022)
+* We improved the **Export to Excel** option in the [Model Options](/developerportal/deploy/environments-details/#model-options) tab. The exported file now uses a comma delimiter instead of a semicolon. (Feedback #1460)
+* We refined the sorting behavior on the **Permissions** page. Items are now sorted by name and grouped by type (Role-based / Non-role-based) (Feedback #1458)
+
 ### July 18, 2025
 
 #### New Features
@@ -33,7 +45,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Bug Fixes
 
-* We have implemented strict validation on the [Upload Package API](https://docs.mendix.com/apidocs-mxsdk/apidocs/deploy-api-2/#upload-package). The request parameter keys now require exact name matching, especially for the file key.
+* We have implemented strict validation on the [Upload Package API](/apidocs-mxsdk/apidocs/deploy-api-2/#upload-package). The request parameter keys now require exact name matching, especially for the file key.
 * We fixed an issue where the **Resource Mismatch** label was displayed incorrectly. This label will now appear only when the UI scale settings differ from the backend cloud resource settings.
 
 ### June 27, 2025
