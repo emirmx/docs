@@ -31,6 +31,19 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 * We have fixed an issue in the `GET` operation of the [Projects API](/apidocs-mxsdk/apidocs/projects-api/). This issue prevented some user roles from being retrieved correctly.
 
+### July 18, 2025
+
+#### New Features
+
+* You can now view findings associated to each component in your app. Findings represent issues identified in the components of an app. They give you a clear view of potential risks, so you can:
+
+    * Spot issues early.
+    * Reduce time spent troubleshooting by knowing exactly where to look for potential risks.
+    * Make smarter decisions by understanding the severity of each finding.
+    * Improve security by acting on risks as soon as they appear.
+
+  For details on which findings are available, where you can see them, and how you can set severity levels for them, refer to [Software Composition](/developerportal/deploy/software-composition/).
+
 ### July 10, 2025
 
 #### New Features
