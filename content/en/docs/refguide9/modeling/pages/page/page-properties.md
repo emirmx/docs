@@ -72,10 +72,11 @@ The title of the page that is shown using the [page title widget](/refguide9/pag
 
 The title can be overridden. For example, the [Create button](/refguide9/control-bar/) and the [Edit button](/refguide9/control-bar/) of a data grid can refer to the same page, but they override the titles to **New** and **Edit**, respectively.
 
-#### Autofocus
-The **Autofocus** property determines which element (if any) receives focus when users first arrive on a page. When enabled, it automatically sets focus to the first interactive element on the page, such as a text field, button, or dropdown menu. When an element receives focus, it typically shows a visible outline and can be immediately interacted with using keyboard controls. This feature is particularly beneficial for specific scenarios such as login forms.
+#### Autofocus {#autofocus}
 
-However, since autofocus can interfere with accessibility tools (particularly screen readers) and may disorient users by unexpectedly moving their focus position, it's recommended to disable it on most pages. Note that even with autofocus disabled, users can still navigate through interactive elements using the **Tab** key for keyboard navigation. You can choose to enable autofocus only for desktop platforms or across all devices, depending on your specific needs.
+The **Autofocus** property determines which element (if any) receives focus when users first arrive on a page. When enabled, it automatically sets focus to the first interactive element on the page, such as a text field, button, or dropdown menu. When an element receives focus, it typically shows a visible outline and can be immediately interacted with using keyboard controls. This feature is particularly beneficial for deterministic UX scenarios such as login forms.
+
+However, autofocus can interfere with accessibility tools (particularly screen readers) and may disorient users by unexpectedly moving their focus position. Therefore, we recommended disabling it on most pages. Note that even with autofocus disabled, users can still navigate through interactive elements using the **Tab** key for keyboard navigation. You can choose to enable autofocus only for desktop platforms or across all devices, depending on your specific needs.
 
 | Value | Behavior |
 |-------|----------|
