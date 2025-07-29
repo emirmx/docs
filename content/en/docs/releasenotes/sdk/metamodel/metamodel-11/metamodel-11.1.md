@@ -1,7 +1,7 @@
 ---
 title: "11.1"
 url: /releasenotes/sdk/metamodel-11.1/
-weight: 80
+weight: 76
 ---
 
 ## 11.1.0
