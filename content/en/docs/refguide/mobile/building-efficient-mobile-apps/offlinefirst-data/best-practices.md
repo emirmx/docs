@@ -140,12 +140,12 @@ Datagrids can not have columns with attributes from related entities in offline 
 
 Attribute paths can not be used in sort orderings in offline apps.
 
-## Enhancing persistent mode in file storage
+## Enhancing persistent mode in file storage {#persistent-mode}
 
 When using offline profiles, files are stored locally on a user's device in the browser Origin Private File System (OPFS).
-The OPFS can operate in two modes: 'persistent' and 'best-effort'. The 'persistent' mode is preferable because it offers
-greater storage capacity and better data durability. While 'persistent' mode is used by default, a browser may opt for
-'best-effort' mode if it assesses the site's importance as low. This assessment is made based on internal browser heuristics,
+The OPFS can operate in two modes: **persistent** and **best-effort**. The **persistent** mode is preferable because it offers
+greater storage capacity and better data durability. While **persistent** mode is used by default, a browser may opt for
+**best-effort** mode if it assesses the site's importance as low. This assessment is made based on internal browser heuristics,
 which include:
 * The level of site engagement
 * Whether the site has been bookmarked
@@ -155,5 +155,5 @@ To enhance the likelihood of operating the OPFS in 'persistent' mode, consider t
 * Bookmark the site
 * Enable notifications for the site
 
-Firefox does not utilize heuristics but instead displays a popup requesting permission to use 'persistent' mode.
-To proceed, simply click 'Allow' in the popup.
+Firefox does not utilize heuristics but instead displays a popup requesting permission to use **persistent** mode.
+To proceed, simply click **Allow** in the popup.
