@@ -18,12 +18,12 @@ Before starting the installation and implementation process, make sure that you 
 * Obtain and configure a Microsoft Azure account. For more information, refer to the the Microsoft Azure documentation.
 * Purchase the Mendix on Azure offering in the [Azure Marketplace](https://azuremarketplace.microsoft.com/).
 * You must buy cloud tokens (min. 14 cloud tokens per environment) to consume Mendix on Azure platform services. Cloud tokens are not utilized during an active trial.
-* You must log in to [Private Cloud page](https://privatecloud.mendixcloud.com/) before starting the installation process in the Mendix on Azure portal.
+* You must log in to the [Mendix on Kubernetes page](https://privatecloud.mendixcloud.com/) before starting the installation process in the Mendix on Azure portal.
 * You must sign in to the Mendix on Azure portal with the same Azure account that was used to purchase the offering. If you sign in with another account, the cluster is not visible for initialization.
 
 {{< figure src="/attachments/deployment/mx-azure/coadmin-permission.png" class="no-border" >}}
 
-* Familiarize yourself with the [Private Cloud](https://docs.mendix.com/developerportal/deploy/private-cloud/) concepts.
+* Familiarize yourself with the [Mendix on Kubernetes](https://docs.mendix.com/developerportal/deploy/private-cloud/) concepts.
 * Ensure that your Mendix Studio Pro is in version 10.10 or above.
 * As an optional best practice, add multiple cluster manager to your clusters.
 
@@ -31,7 +31,7 @@ Before starting the installation and implementation process, make sure that you 
 
 To create a cluster for your Mendix on Azure app, perform the following steps:
 
-1. In the Mendix Portal, in Private Cloud Cluster Manager, click **Mendix on Azure**.
+1. In the Mendix Portal, in Mendix on Kubernetes Cluster Manager, click **Mendix on Azure**.
 2. Connect to your Azure account by clicking **Connect Azure Account**, and then logging in with the same account that you used to purchase the Mendix on Azure offering. If required, you can also purchase an Azure offering after you log in.
 
     After you successfully connect the accounts, the Mendix Portal shows a list of available clusters (that is, any Azure clusters that you have already linked with Mendix), initializable clusters (that is, any clusters that you have not yet linked with Mendix), and clusters that failed to initialize for any reason. For initialized clusters, means that the all the required resources are provisioned on the cluster. For uninitialized clusters, no resources are provisioned yet.
@@ -96,9 +96,9 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
 
     {{< figure src="/attachments/deployment/mx-azure/resourceGroup.png" class="no-border" >}}
 
-12. Once the cluster is initialized successfully, a corresponding cluster and a namespace within it is created in the the Private Cloud portal. The namespace is configured automatically, as described in [Standard Operator: Running the Tool](https://docs.mendix.com/developerportal/deploy/standard-operator/#running-the-tool). 
+12. Once the cluster is initialized successfully, a corresponding cluster and a namespace within it is created in the the Mendix on Kubernetes Portal. The namespace is configured automatically, as described in [Standard Operator: Running the Tool](https://docs.mendix.com/developerportal/deploy/standard-operator/#running-the-tool). 
 
-    {{% alert color="info" %}}You cannot create additional namespaces for a Mendix on Azure cluster. You also cannot use APIs to create or modify the cluster. Also, the cluster cannot be deleted from the Private Cloud portal or the Mendix on Azure portal. If you want to remove it, you must delete the Managed application (created in Step 3) in the Microsoft Azure portal.{{% /alert %}}
+    {{% alert color="info" %}}You cannot create additional namespaces for a Mendix on Azure cluster. You also cannot use APIs to create or modify the cluster. Also, the cluster cannot be deleted from the Mendix on Kubernetes Portal or the Mendix on Azure portal. If you want to remove it, you must delete the Managed application (created in Step 3) in the Microsoft Azure portal.{{% /alert %}}
 
 13. Once the cluster is initialized successfully, the status of the cluster in the Portal changes to **INITIALIZED**.
 
@@ -238,7 +238,7 @@ To enable private endpoints for your Mendix on Azure app, perform the following 
 
 ## Deploying an App to an Azure Cluster
 
-After creating your cluster in Microsoft Azure, you can now deploy your applications to the cluster. The deployment process is the same as with Mendix for Private Cloud. However, in order to use the Mendix on Azure Platform service, you need to have a minimum of 14 cloud tokens to create an environment. For more information, see [Deploying a Mendix App to a Private Cloud Cluster](/developerportal/deploy/private-cloud-deploy/). 
+After creating your cluster in Microsoft Azure, you can now deploy your applications to the cluster. The deployment process is the same as with Mendix on Kubernetes. However, in order to use the Mendix on Azure Platform service, you need to have a minimum of 14 cloud tokens to create an environment. For more information, see [Deploying a Mendix App to a Mendix on Kubernetes Cluster](/developerportal/deploy/private-cloud-deploy/). 
 
 If the number of cloud tokens is insufficient, the following error message is shown:
 
