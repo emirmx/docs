@@ -32,7 +32,7 @@ On each page of the upload flow, click one of these buttons:
 * **Save and Exit** — Save the details you have entered so far for the draft. You can access the draft via the [My Drafts](/appstore/home-page/#my-drafts) link in the top bar.
 * **Next** — Go to the next page of the upload flow.
 
-## Uploading a Component {#general}
+### Uploading a Component {#general}
 
 On the **Upload Component** tab, add the source file, and provide general information about your component.
 
@@ -64,7 +64,7 @@ Some only apply to specific component types, so follow the on-screen prompts for
 
 8. If you are uploading a solution, enter an email address in the **Contact Sales** field. This will be used by customers to reach out to you.
 
-## Adding General Information
+### Adding General Information
 
 On the **General Information** tab, add more details about your component.
 
@@ -79,7 +79,7 @@ On the **General Information** tab, add more details about your component.
 
 5. From the **Category** drop-down list, select up to three areas of expertise that are applicable to your component.
 
-## Configuring Support and Licensing {#support-licensing}
+### Configuring Support and Licensing {#support-licensing}
 
 On the **Support & Licensing** tab, add information about support, licensing, and visibility.
 
@@ -99,12 +99,23 @@ On the **Support & Licensing** tab, add information about support, licensing, an
 
 4. Select the type of **License** you want applied to your app.    
    For details about the available open-source software licenses and their requirements, refer to [Open-Source Software Licenses](/appstore/licenses/).
-   
-<!-- does the proprietary licenses content still apply? is there still an option to **Request New License**? -->
 
 5. In the **Development Team** field, add the email addresses of the developers who have contributed to and own the component.
 
-## Adding Media and Documentation {#doc}
+#### Proprietary Licenses {#proprietary-license} 
+
+You can configure your own proprietary license for your company’s content. The license can be applied to multiple components, and it can be used by everyone within your organization. 
+
+This license can be created for a new **Public Marketplace (all Mendix users)** component by requesting a new license and submitting it alongside the component. The license needs to be approved by Mendix after you have created and submitted it the first time. Once it has been submitted for approval, you and the people within your organization can also use it for other components.
+
+Follow these steps to configure a proprietary license for a new public component:
+
+1. Click **Request New License**.
+2. Add a **License Name**, which will be displayed on the [component details page](/appstore/component-details/).
+3. Add a **License URL**, which should lead the user to a web page that lists the terms and conditions for using the component. Users can navigate to this web page by clicking the license name on the component details page.
+4. Add a **Reason** for the new license. This is solely for Mendix review purposes, and will not be displayed on the component details page.
+   
+### Adding Media and Documentation {#doc}
 
 On the **Media & Documentation** tab, add any resources to guide your users.
 
@@ -129,22 +140,9 @@ On the **Media & Documentation** tab, add any resources to guide your users.
  
 4. In the **Resources** section, add up to 5 URLs for resources that your users might find useful, such as a GitHub URL.
 
-## Proprietary Licenses {#proprietary-license} 
+### Generating New Leads {#lead-generation} 
 
-You can configure your own proprietary license for your company’s content. The license can be applied to multiple components, and it can be used by everyone within your organization. 
-
-This license can be created for a new **Public Marketplace (all Mendix users)** component by requesting a new license and submitting it alongside the component. The license needs to be approved by Mendix after you have created and submitted it the first time. Once it has been submitted for approval, you and the people within your organization can also use it for other components.
-
-Follow these steps to configure a proprietary license for a new public component:
-
-1. Click **Request New License**.
-2. Add a **License Name**, which will be displayed on the [component details page](/appstore/component-details/).
-3. Add a **License URL**, which should lead the user to a web page that lists the terms and conditions for using the component. Users can navigate to this web page by clicking the license name on the component details page.
-4. Add a **Reason** for the new license. This is solely for Mendix review purposes, and will not be displayed on the component details page.
-
-## Generating New Leads {#lead-generation} 
-
-<!-- to check -->
+<!-- to check and add under the correct heading -->
 
 A lead is a potential sales contact that expresses interest in your product or service. Lead routing is the end-to-end process of collecting the leads and distributing them to you. It is possible to configure lead routing for the following content types in the Marketplace:
 
@@ -163,7 +161,13 @@ You can use one of these options as the name of your **Main call-to-action** but
 
 In the **How would you like to receive information on new leads?** field, you must specify the email address or addresses where notifications and information can be sent.
 
-## Publishing {#publish} 
+### Previewing the Component
+
+You can preview your component before publishing. To do that, click **Show Preview** on the **Media & Documentation** tab.
+
+From the preview window, you can either return to the editing flow, or publish the component.
+
+### Publishing {#publish} 
 
 <!-- to check and update -->
 
