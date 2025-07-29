@@ -338,7 +338,7 @@ The best way to fix this error is to either change the microflow to accept *Phot
 
 ### Error Code: CE7007 {#error-code-ce7007}
 
-CE7007 error message: *Selected value is not valid for entity '{ENTITY_PATH}'. Please, select the value again.*
+CE7007 error message: *Selected value is not valid for entity '{ENTITY_PATH}'. Please select the value again.*
 
 You get CE7007 if you have added a data widget but the configured value is not valid for the entity.
 
@@ -368,7 +368,7 @@ To fix CE7005, configure the data source property of the widget with a variable 
 
 ### Error Code: CE7006 {#error-code-ce7006}
 
-CE7006 error message: *Selected value is not valid for attribute '{ATTRIBUTE_PATH}'. Please, select the value again.*
+CE7006 error message: *Selected value is not valid for attribute '{ATTRIBUTE_PATH}'. Please select the value again.*
 
 You get CE7006 if you have added an input widget but the selected value is no longer valid for the attribute path. This might be because the input widget is moved out of its configured data context.
 
