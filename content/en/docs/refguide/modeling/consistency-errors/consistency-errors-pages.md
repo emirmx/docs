@@ -344,8 +344,6 @@ You get CE7007 if you have added a data widget but the configured value is not v
 
 To fix CE7007, you need to make sure that the widget is placed inside the correct data context that its configuration refers to.
 
-{{% alert color="info" %}}
-
 ## Input Widget Consistency Errors
 
 The most common errors for input elements, their causes, and ways to fix them are described in the following sub-sections. For more information on input elements, see [Input Elements](/refguide/input-widgets/). 
