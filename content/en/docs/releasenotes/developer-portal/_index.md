@@ -132,7 +132,7 @@ It is turned off by default. Scrum Master can switch it on in the Project Manage
 
 #### New Features
 
-* [Mendix AI Assistance Chat (Maia Chat)](/global-navigation/#maia-chat), previously available in Studio Pro, is now accessible in Mendix Portal.
+* [Mendix AI Assistance Chat (Maia Chat)](/maia-mx-portal//#maia-chat), previously available in Studio Pro, is now accessible in Mendix Portal.
 
 ### January 29, 2025
 
