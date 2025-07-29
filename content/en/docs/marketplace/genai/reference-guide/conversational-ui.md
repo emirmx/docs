@@ -7,6 +7,7 @@ description: "Describes the Conversational UI marketplace module that assists de
 aliases:
    - /appstore/modules/genai/conversational-ui/
    - /appstore/modules/genai/conversational-ui-module/conversational-ui/
+   - /appstore/modules/genai/conversational-ui-module/
 ---
 
 ## Introduction {#introduction}
