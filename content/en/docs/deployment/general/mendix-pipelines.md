@@ -1,8 +1,10 @@
 ---
-title: "Pipelines"
-url: /developerportal/deploy/pipelines/
+title: "Mendix Pipelines"
+url: /developerportal/deploy/mendix-pipelines/
 weight: 8
 description: "Describes how to design, implement, and review pipelines using the Pipelines feature in the Mendix Portal"
+aliases:
+    - /developerportal/deploy/pipelines/
 ---
 
 ## Introduction
