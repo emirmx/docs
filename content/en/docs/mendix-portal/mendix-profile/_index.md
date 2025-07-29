@@ -1,7 +1,7 @@
 ---
 title: "Mendix Profile"
 url: /mendix-profile/
-weight: 4
+weight: 5
 description: "Describes the personal profile page of the Mendix Portal."
 #To update these screenshots, you can log in with credentials detailed in How to Update Screenshots Using Team Apps.
 aliases:
