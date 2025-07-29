@@ -9,9 +9,9 @@ weight: 85
 
 ## Introduction
 
-The Pipelines API lets you start a new pipeline run for a saved and activated pipeline design and retrieve the status of a pipeline run.
+The Pipelines API lets you start a new Mendix Pipeline run for a saved and activated Mendix Pipeline design and retrieve the status of a Mendix Pipeline run.
 
-For details on pipelines, see [Pipelines](/developerportal/deploy/pipelines/).
+For details on pipelines, see [Mendix Pipelines](/developerportal/deploy/mendix-pipelines/).
 
 ## Authentication {#authentication}
 
