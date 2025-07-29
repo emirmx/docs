@@ -360,7 +360,7 @@ To fix CE0544, place this widget into a data container such as a data view, list
 
 ### Error Code: CE7005 {#error-code-ce7005}
 
-CE7005 error message: *No data source selection has been made. Please, select a data source.*
+CE7005 error message: *No data source selection has been made. Please select a data source.*
 
 You get CE7005 if you have added an input widget but its data source is not configured. Input elements either need to refer to a variable or an attribute of a specific entity type.
 
