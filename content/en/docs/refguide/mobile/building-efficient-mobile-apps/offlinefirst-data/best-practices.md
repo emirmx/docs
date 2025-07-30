@@ -142,11 +142,7 @@ Attribute paths can not be used in sort orderings in offline apps.
 
 ## Enhancing Persistent Mode in File Storage {#persistent-mode}
 
-When using offline profiles, files are stored locally on a user's device in the browser Origin Private File System (OPFS).
-The OPFS can operate in two modes: **persistent** and **best-effort**. The **persistent** mode is preferable because it offers
-greater storage capacity and better data durability. While **persistent** mode is used by default, a browser may opt for
-**best-effort** mode if it assesses the site's importance as low. This assessment is made based on internal browser heuristics,
-which include:
+When using offline profiles, files are stored locally on a user's device in the browser Origin Private File System (OPFS). The OPFS can operate in two modes: **persistent** and **best-effort**. The **persistent** mode is preferable because it offers greater storage capacity and better data durability. While **persistent** mode is used by default, a browser may opt for **best-effort** mode if it assesses the site's importance as low. This assessment is made based on internal browser metrics, which include the following:
 * The level of site engagement
 * Whether the site has been bookmarked
 * Whether permission for site notifications has been granted
