@@ -97,3 +97,7 @@ Therefore, the approach we take is to create a new non-persistable entity, `User
     {{< figure src="/attachments/deployment/general/populate-user-type/user-type-report.png" class="no-border" >}}
 
 7. The report can be exported into an Excel file.
+
+## Read More
+
+* [User Classification Module](/appstore/modules/unit-classification)
