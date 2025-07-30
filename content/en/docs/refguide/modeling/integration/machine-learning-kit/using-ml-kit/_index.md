@@ -233,7 +233,7 @@ To learn more about design patterns that can be applied to the Inference process
 
 ### Model Building
 
-ML Kit comes with native support for the [ONNX Runtime](https://onnxruntime.ai/about.html) which means Mendix developers can use the native ONNX operators. However, Mendix developers are free to use their preferred machine learning framework or library such as Tensorflow, PyTorch, scikit-learn, and XGBoost to build their ML models, pre-processing, and post-processing actions.
+ML Kit comes with native support for the [ONNX Runtime](https://onnxruntime.ai/) which means Mendix developers can use the native ONNX operators. However, Mendix developers are free to use their preferred machine learning framework or library such as Tensorflow, PyTorch, scikit-learn, and XGBoost to build their ML models, pre-processing, and post-processing actions.
 
 Artifacts (including HDF5, protocol buffers, and pickle) should be converted to ONNX computation graphs in order to integrate them into Mendix. 
 
