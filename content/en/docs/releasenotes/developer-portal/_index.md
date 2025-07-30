@@ -21,13 +21,6 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
-### July 31, 2025
-
-#### New Features
-
-* You can now use Maia to create stories based on feedback. This helps clarify and expand on feedback items, turning them into actionable stories.    
-  For details, refer to the [Creating Stories with Maia](/developerportal/app-insights/feedback/#create-with-maia) section in *Feedback*.
-
 ### July 27, 2025
 
 #### Improvements
@@ -37,6 +30,13 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 #### Fixes
 
 * We have fixed an issue in the `GET` operation of the [Projects API](/apidocs-mxsdk/apidocs/projects-api/). This issue prevented some user roles from being retrieved correctly.
+
+### July 24, 2025
+
+#### New Features
+
+* You can now use Maia to create stories based on feedback. This helps clarify and expand on user input, turning it into actionable items.    
+  For details, refer to the [Creating Stories with Maia](/developerportal/app-insights/feedback/#create-with-maia) section in *Feedback*.
 
 ### July 18, 2025
 
@@ -92,6 +92,12 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 #### New Features
 
 * You can now select the frequency with which you receive feedback notifications. To do that, select the preferred frequency from the **Feedback** page settings. For more information, refer to [Receiving Notifications](/developerportal/app-insights/feedback/#notifications) in *Feedback*.
+
+### May 22, 2025
+
+#### New Features
+
+* You can now refine stories using Maia. This option is available through the [Board](/developerportal/project-management/epics/board/) and the [Planning](/developerportal/project-management/epics/planning/) pages under **Project Management**.
 
 ### April 24, 2025
 
