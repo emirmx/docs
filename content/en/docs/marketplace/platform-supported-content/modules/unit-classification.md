@@ -53,17 +53,18 @@ For users provisioned before the User Classification module is implemented, trig
 
 Based on your use case, choose the classification logic that best suits your needs:
 
-1. Role-based classification (default)
+1. Role-based classification
 2. Custom classification logic
 
 #### Role-based Classification
 
-The Role-based classification method classifies users as either internal or external based on predefined roles. By assigning roles such as the `ExternalRole` (or other custom roles) to the User Classification module, your application ensures accurate classification.
+The Role-based classification method classifies users as internal or external based on predefined roles. By assigning roles, for example, `ExternalRole` or other custom roles to the User Classification module, your application ensures accurate classification.
 
-To classify users based on their roles, follow the steps below:
+Use any microflow that returns a list of external roles. For example, set the `UserClassification.Custom_GetExternalUserRoles` microflow name in the constant to enable role-based classification in the User Classification module. For more information on the constants, see the [Configuring Microflow Constants](#microflow-constants) section below.
 
-1. Ensure that you have assigned the relevant user roles to the User Classification module.
-2. Use any microflow that returns a list of external roles. For example, set the `UserClassification.Custom_GetExternalUserRoles` microflow name in the constant to enable role-based classification in the User Classification module. For more information on the constants, see the [Configuring Microflow Constants](#microflow-constants) section below.
+{{% alert color="info" %}}
+Any roles defined in the role-based classification setup (for example, `ExternalRole` or other custom roles specified in the microflow) are treated as external, while all remaining roles are considered internal by default.
+{{% /alert %}}
 
 #### Custom Classification
 
@@ -78,6 +79,8 @@ To enable your classification logic, configure the following constants in your a
 1. `EXTERNAL_ROLES_MICROFLOW_NAME` (for role-based classification): specify the name of the microflow that returns a list of roles to be treated as external.
 
 2. `CUSTOM_MICROFLOW_NAME` (for custom classification logic): specify the name of the microflow that implements your custom logic to determine the user type.
+
+Based on your classification logic, use one of the above constants. If both constants are used, the role-based classification (`EXTERNAL_ROLES_MICROFLOW_NAME`) will take precedence and be executed.
 
 ## Read More
 
