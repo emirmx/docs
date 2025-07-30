@@ -17,7 +17,7 @@ For information on Mendix data storage policies and practices for Maia, see [Mai
 
 For information on what third-party services Maia uses and what data are sent to the third-party services, see the [Maia Third-Party Services](#maia-third-party-services) section below.
 
-Maia is subject to timeouts when generating responses with high output token counts. For more information, see the [Maia Output Token Generation Limits](#generation-token-limits) section below.
+For more information on how to ensure optimal performance of Maia, see the [Best Practice for Maia Performance](#maia-performance-best-practice) section below.
 
 ## Network Configuration Requirements {#maia-network-requirement}
 
@@ -83,6 +83,6 @@ The table below presents all the third-party services each Maia capability uses 
 | Maia Summarize | [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/) hosted in Mendix AWS environment | [Community](https://community.mendix.com/p/community) threads |
 | Maia Create User Story | [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/) hosted in Mendix AWS environment | User prompts |
 
-## Maia Output Token Generation Limits {#generation-token-limits}
+## Best Practice for Maia Performance {#maia-performance-best-practice}
 
-Maia is subject to timeouts when generating responses with high output token counts. Long or complex generations, especially those producing extensive text, are more likely to hit the constraints. To reduce the risk of timeouts, break large tasks into smaller, discrete steps where possible.
+For optimal performance, Maia works best when handling focused, well-scoped requests. When working on complex or lengthy content generation tasks, you will get faster and more reliable results by breaking them into smaller, manageable steps. This approach not only reduces the risk of network issues, but often leads to higher-quality outputs that better meet your specific needs.
