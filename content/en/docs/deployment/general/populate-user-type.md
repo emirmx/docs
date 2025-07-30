@@ -100,4 +100,4 @@ Therefore, the approach we take is to create a new non-persistable entity, `User
 
 ## Read More
 
-* [User Classification Module](/appstore/modules/unit-classification)
+* [User Classification Module](/appstore/modules/unit-classification/)

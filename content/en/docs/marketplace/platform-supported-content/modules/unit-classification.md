@@ -1,6 +1,6 @@
 ---
 title: "User Classification"
-url: /appstore/modules/unit-classification
+url: /appstore/modules/unit-classification/
 description: "Describes the configuration and usage of the User Classification module, which is available in the Mendix Marketplace."
 ---
 
