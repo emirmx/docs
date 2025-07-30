@@ -21,6 +21,13 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
+### July 31, 2025
+
+#### New Features
+
+* You can now use Maia to create stories based on feedback. This helps clarify and expand on feedback items, turning them into actionable stories.    
+  For details, refer to the [Creating Stories with Maia](/developerportal/app-insights/feedback/#create-with-maia) section in *Feedback*.
+
 ### July 27, 2025
 
 #### Improvements
