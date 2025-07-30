@@ -78,3 +78,7 @@ To enable your classification logic, configure the following constants in your a
 1. `EXTERNAL_ROLES_MICROFLOW_NAME` (for role-based classification): specify the name of the microflow that returns a list of roles to be treated as external.
 
 2. `CUSTOM_MICROFLOW_NAME` (for custom classification logic): specify the name of the microflow that implements your custom logic to determine the user type.
+
+## Read More
+
+* [Populate User Types](/developerportal/deploy/populate-user-type/)
