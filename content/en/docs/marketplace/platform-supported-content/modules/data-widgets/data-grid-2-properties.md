@@ -53,7 +53,9 @@ When set to **Yes**, the data grid displays a checkbox in the header that, when 
 
 #### Loading Type
 
-Controls how loading states are displayed during data operations such as pagination, filtering, and refresh. Available options include spinner (rotating overlay) and skeleton (placeholder content). Loading indicators automatically appear during initial data load, pagination navigation, filter operations, sorting, and export operations. The system includes smart timing to prevent flickering on fast operations and provides appropriate timeout handling for slow operations.
+This property controls how loading states are displayed during data operations such as pagination, filtering, and refresh. 
+
+Available options include spinner (rotating overlay) and skeleton (placeholder content). Loading indicators automatically appear during initial data load, pagination navigation, filter operations, sorting, and export operations. The system includes smart timing to prevent flickering on fast operations, and also provides appropriate timeout handling for slow operations.
 
 ### Columns Tab {#columns}
 
@@ -81,11 +83,13 @@ When the property is set to **Virtual scrolling**, then the navigation buttons a
 
 #### Show Paging Buttons
 
-This property controls the visibility of navigation buttons. If set to "Auto", navigation buttons are only visible when the number of elements in the data source exceeds the page size.
+This property controls the visibility of navigation buttons. If set to **Auto**, navigation buttons are only visible when the number of elements in the data source exceeds the page size.
 
 #### Show Number of Rows
 
-Displays the total number of rows in the pagination area, providing users with context about the dataset size. When enabled, shows information like "1 to 20 of 150". Works with virtual scrolling, load more pagination, and standard pagination modes. On large datasets, the total count calculation may impact initial load time.
+This property displays the total number of rows in the pagination area, providing users with context about the dataset size. 
+
+When enabled, it shows information such as **1 to 20 of 150**. It works with virtual scrolling, load more pagination, and standard pagination modes. On large datasets, the total count calculation may impact initial load time.
 
 #### Empty List Message
 
@@ -113,7 +117,9 @@ This property sets the action to be performed when the row is selected or unsele
 
 #### Filters Placeholder
 
-Container for filter widgets that operate on the entire grid. This placeholder provides a designated area for placing filter widgets (Text Filter, Date Filter, Number Filter, Drop-down Filter) that filter across all grid data rather than being limited to individual columns. Filter widgets placed here automatically link to the grid's datasource, and changes immediately affect the grid data. Still, widget should be configured to work properly. Multiple filters work together using AND logic by default.
+This placeholder acts as a container for filter widgets that operate on the entire grid. This placeholder provides a designated area for placing filter widgets (text filter, date filter, number filter, drop-down filter) that filter across all grid data rather than being limited to individual columns. 
+
+Filter widgets placed here automatically link to the grid's datasource, and changes immediately affect the grid data. Still, widgets should be configured to work properly. Multiple filters work together using **AND** logic by default.
 
 ### Column Capabilities Tab
 
@@ -137,7 +143,9 @@ This flag controls column hiding for the entire data grid. If set to **No**, the
 
 #### Store Filters in Personalization
 
-Controls whether filter states are saved as part of user personalization settings. When enabled, the system preserves filter input values, selected filter types, applied filter combinations, filter visibility states, and custom filter configurations in the user's personalization profile. Filter states can be stored in browser localStorage or database attributes depending on personalization configuration. When enabled, users' filter preferences persist across sessions and page refreshes. When disabled, filters reset to default values on every page load, useful for shared screens, dashboards, or public interfaces.
+This property controls whether filter states are saved as part of user personalization settings or not. When enabled, the system preserves filter input values, selected filter types, applied filter combinations, filter visibility states, and custom filter configurations in the user's personalization profile. 
+
+Filter states can be stored in browser localStorage or database attributes depending on personalization configuration. When enabled, users' filter preferences persist across sessions and page refreshes. When disabled, filters reset to default values on every page load — useful for shared screens, dashboards, or public interfaces.
 
 #### Attribute
 
@@ -173,7 +181,9 @@ Defines a string value that labels the checkbox of the row when the selection is
 
 #### Select All Rows
 
-Provides accessible label for the "Select All" checkbox in the grid header. This ARIA label is announced by screen readers when users navigate to the select all checkbox. The label integrates with three-state checkbox functionality (unchecked, checked, indeterminate) and supports localization through text templates. Screen readers announce appropriate state changes when the checkbox is toggled, improving accessibility compliance for bulk selection operations.
+This property provides an ARIA label for the **Select All** checkbox in the grid header. This ARIA label is announced by screen readers when users navigate to the select all checkbox. 
+
+The label integrates with three-state checkbox functionality (unchecked, checked, indeterminate) and supports localization through text templates. Screen readers announce appropriate state changes when the checkbox is toggled, improving accessibility compliance for bulk-selection operations.
 
 ## Column Properties {#column-properties}
 
