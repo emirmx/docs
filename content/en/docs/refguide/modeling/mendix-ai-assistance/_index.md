@@ -17,6 +17,8 @@ For information on Mendix data storage policies and practices for Maia, see [Mai
 
 For information on what third-party services Maia uses and what data are sent to the third-party services, see the [Maia Third-Party Services](#maia-third-party-services) section below.
 
+Maia is subject to timeouts when generating responses with high output token counts. For more information, see the [Maia Output Token Generation Limits](#generation-token-limits) section below.
+
 ## Network Configuration Requirements {#maia-network-requirement}
 
 To ensure the smooth operation of Mendix AI Assistance (Maia), the following network requirements must be met:
@@ -80,3 +82,7 @@ The table below presents all the third-party services each Maia capability uses 
 | Maia Rewrite | [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/) hosted in Mendix AWS environment | The draft question description from users |
 | Maia Summarize | [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/) hosted in Mendix AWS environment | [Community](https://community.mendix.com/p/community) threads |
 | Maia Create User Story | [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/) hosted in Mendix AWS environment | User prompts |
+
+## Maia Output Token Generation Limits {#generation-token-limits}
+
+Maia is subject to timeouts when generating responses with high output token counts. Long or complex generations, especially those producing extensive text, are more likely to hit the constraints. To reduce the risk of timeouts, break large tasks into smaller, discrete steps where possible.
