@@ -3,10 +3,12 @@ title: "Mendix Pipelines Release Notes"
 linktitle: "Mendix Pipelines"
 url: /releasenotes/developer-portal/mendix-pipelines/
 weight: 8
-description: "Release notes for deployment to Mendix Pipelines"
+description: "Release notes for Mendix Pipelines"
 ---
 
-These release notes cover changes to deployment to the [Mendix Pipelines](/developerportal/deploy/mendix-pipelines/).
+These release notes cover changes to the functionality and other features of the [Mendix Pipelines](/developerportal/deploy/mendix-pipelines/).
+
+To see the current status of the Mendix Pipelines, see [Mendix Status](https://status.mendix.com/). Here you can also see planned maintenance and past incidents.
 
 ## 2025
 
