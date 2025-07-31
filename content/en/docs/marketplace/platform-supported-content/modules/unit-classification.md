@@ -16,10 +16,13 @@ If external users are not classified, Mendix user metering will consider them as
 
 The User Classification module supports the following use cases:
 
-* Role-based classification automatically classifies users as internal or external based on customer-defined roles.
-* Custom classification logic automatically classifies users as internal or external using a custom-configured microflow.
-* Classification of new users created after the User Classification module is implemented. This is handled through the After Commit Event (ACO_EVT) on the user entity used for provisioning.
-* Classification of previously provisioned users allows users from non-SSO modules, who were provisioned earlier but do not yet have a defined user type, to be classified.
+* Role-based classification: automatically classifies users as internal or external based on customer-defined roles.
+
+* Custom classification logic: automatically classifies users as internal or external using a custom-configured microflow.
+
+* Classification of new users: Classifies users created after the User Classification module is implemented. This is triggered by the After Commit Event (ACO_EVT) on the user entity used for provisioning.
+
+* Classification of previously provisioned users: allows classification of users from non-SSO modules who were provisioned earlier but do not yet have a defined user type. These users require a one-time admin action for classification.
 
 ### Prerequisites
 
