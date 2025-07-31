@@ -6,7 +6,7 @@ description: "Describes the configuration and usage of the User Classification m
 
 ## Introduction
 
-The [User Classification]() module enables efficient categorization of users based on pre-defined roles or custom classification logic. This document guides you in implementing the classification logic and configuring the required elements within your Mendix application. Using this module, organizations can ensure reliable user classification and maintain accurate metering within their Mendix environment. 
+The [User Classification]() module enables efficient categorization of users based on customer-defined [user roles](/refguide/user-roles/) or custom classification logic. This document guides you in implementing the classification logic and configuring the required elements within your Mendix application. For details on the available classification logic options, see the [Configuring Classification Logic](#configure-classification-logic) section below. the Using this module, organizations can ensure reliable user classification and maintain accurate metering within their Mendix environment. 
 
 {{% alert color="info" %}}
 If external users are not classified, Mendix user metering will consider them as internal users.
@@ -16,7 +16,7 @@ If external users are not classified, Mendix user metering will consider them as
 
 The User Classification module supports the following use cases:
 
-* Role-based classification automatically classifies users as internal or external based on predefined roles.
+* Role-based classification automatically classifies users as internal or external based on customer-defined roles.
 * Custom classification logic automatically classifies users as internal or external using a custom-configured microflow.
 * Classification of previously provisioned users allows users from non-SSO modules, who were provisioned earlier but do not yet have a defined user type, to be classified.
 
@@ -43,13 +43,13 @@ The User Classification module supports both new users through an After Commit E
 For new users created after the User Classification module is implemented, configure the After Commit Event (ACO_EVT) on the user entity used for provisioning, using the event `ACO_EVT_StartUserClassification`.
 
 * If you are using the [Administration](/appstore/modules/administration/) module, implement the event on the `Administration.Account` entity. Reapply this configuration after every upgrade to the Administration module.
-* If you are not using the [Administration](/appstore/modules/administration/) module, configure the microflow on your custom user entity instead.
+* If you are not using the [Administration](/appstore/modules/administration/) module, configure the microflow on your custom user entity instead. If you are not using any specialization of `system.user`, you need to introduce such an entity.
 
 #### Classifying Existing Users
 
 For users provisioned before the User Classification module is implemented, trigger a one-time classification. You can do this by adding a button on an admin screen that triggers a `UserClassification.UpdateUsersClassificationType` microflow. The execution of this microflow may take some time, depending on the number of users to be classified.
 
-### Configuring Classification Logic
+### Configuring Classification Logic {#configure-classification-logic}
 
 Based on your use case, choose the classification logic that best suits your needs:
 
@@ -58,7 +58,7 @@ Based on your use case, choose the classification logic that best suits your nee
 
 #### Role-based Classification
 
-The Role-based classification method classifies users as internal or external based on predefined roles. By assigning roles, for example, `ExternalRole` or other custom roles to the User Classification module, your application ensures accurate classification.
+The Role-based classification method classifies users as internal or external based on customer-defined roles. By assigning roles, for example, `ExternalRole` or other custom roles to the User Classification module, your application ensures accurate classification.
 
 Use any microflow that returns a list of external roles. For example, set the `UserClassification.Custom_GetExternalUserRoles` microflow name in the constant to enable role-based classification in the User Classification module. For more information on the constants, see the [Configuring Microflow Constants](#microflow-constants) section below.
 
