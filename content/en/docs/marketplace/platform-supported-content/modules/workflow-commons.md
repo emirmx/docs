@@ -69,7 +69,7 @@ You can find the following pages in Workflow Commons:
     * **Assigned tasks** – Shows a list of tasks assigned to the selected user (possible actions are reassigning and unassigning the corresponding tasks).
     * **Targeted tasks** – Shows a list of all tasks that the selected user is a target user of (the administrator can retarget these tasks to another user).
 In the groups section, administrator can see which groups the user belongs to, as well as add the user to new groups or remove from existing ones.
-* **WorkflowGroup_Overview** - This page allows the workflow administrator to manage workflow groups and their members. The administrator can add or remove users from groups. Workflow groups can be used for task targeting, enabling members to view and pick up tasks targeted to their group.
+* **WorkflowGroup_Overview** - This page allows the workflow administrator to manage workflow groups and their members. The administrator can add or remove users from groups. Workflow groups can be used for task targeting, enabling members to view and pick up tasks targeted to their group. You can add groups to your project from the Studio Pro **App Settings** > **Workflows** tab, under the **Workflow groups** section. Note: Make sure to enable the Workflow groups feature in **Preferences** > **New features** to use the functionality. 
 
 ### Page Templates
 
