@@ -47,7 +47,7 @@ The User Classification module supports both new users through an After Commit E
 For new users created after the User Classification module is implemented, configure the After Commit Event (ACO_EVT) on the user entity used for provisioning, using the event `ACO_EVT_StartUserClassification`.
 
 * If you are using the [Administration](/appstore/modules/administration/) module, implement the event on the `Administration.Account` entity. Reapply this configuration after every upgrade to the Administration module.
-* If you are not using the [Administration](/appstore/modules/administration/) module, configure the microflow on your custom user entity instead. If you are not using any specialization of `system.user`, you need to introduce such an entity.
+* If you are not using the [Administration](/appstore/modules/administration/) module, configure the microflow on your custom user entity instead. If you are not using any specialization of `system.user`, you need to create such an entity first.
 
 #### Classifying Existing Users
 
