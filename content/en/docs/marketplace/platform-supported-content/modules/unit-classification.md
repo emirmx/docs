@@ -6,7 +6,7 @@ description: "Describes the configuration and usage of the User Classification m
 
 ## Introduction
 
-The [User Classification]() module enables efficient categorization of users based on customer-defined [user roles](/refguide/user-roles/) or custom classification logic. This document guides you in implementing the classification logic and configuring the required elements within your Mendix application. For details on the available classification logic options, see the [Configuring Classification Logic](#configure-classification-logic) section below. the Using this module, organizations can ensure reliable user classification and maintain accurate metering within their Mendix environment. 
+The [User Classification]() module enables efficient categorization of users based on customer-defined [user roles](/refguide/user-roles/) or custom classification logic. This document guides you in implementing the classification logic and configuring the required elements within your Mendix application. For details on the available classification logic options, see the [Configuring Classification Logic](#configure-classification-logic) section below. Using this module, organizations can ensure reliable user classification and maintain accurate metering within their Mendix environment. 
 
 {{% alert color="info" %}}
 If external users are not classified, Mendix user metering will consider them as internal users.
@@ -20,7 +20,7 @@ The User Classification module supports the following use cases:
 
 * Custom classification logic: automatically classifies users as internal or external using a custom-configured microflow.
 
-* Classification of new users: Classifies users created after the User Classification module is implemented. This is triggered by the After Commit Event (ACO_EVT) on the user entity used for provisioning.
+* Classification of new users: classifies users created after the User Classification module is implemented. This is triggered by the After Commit Event (ACO_EVT) on the user entity used for provisioning.
 
 * Classification of previously provisioned users: allows classification of users from non-SSO modules who were provisioned earlier but do not yet have a defined user type. These users require a one-time admin action for classification.
 
