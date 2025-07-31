@@ -1,7 +1,7 @@
 ---
 title: "Mendix Pipelines"
 url: /developerportal/deploy/mendix-pipelines/
-weight: 8
+weight: 80
 description: "Describes how to design, implement, and review pipelines using the Pipelines feature in the Mendix Portal"
 aliases:
     - /developerportal/deploy/pipelines/
@@ -125,7 +125,15 @@ Active Mendix Pipelines cannot be edited; if you want to edit an existing Mendix
 
 To add a step, launch the **Pipeline Steps** dialog box by clicking **Add Step** ({{% icon name="add" %}}). Expand each step to configure it, delete it, or view its outputs. You can expand or collapse any step in your Mendix Pipeline by clicking the step's name.
 
+{{% alert color="info" %}}
+Some steps are specific to particular target environments (Mendix Public Cloud or Mendix on Kubernetes and Azure), while others apply universally.
+{{% /alert %}}
+
 Your Mendix Pipeline can include the following steps:
+
+{{% alert color="info" %}}
+The following Mendix Pipeline steps are applicable across Mendix Public Cloud and Mendix on Kubernetes and Azure environments.
+{{% /alert %}}
 
 ##### Start Pipeline
 
@@ -153,6 +161,10 @@ Build a deployment package based on the latest major, minor, or patch version of
 
 Evaluate results of the [Maia Best Practice Recommender](/refguide/best-practice-recommender/) within your Mendix Pipeline. You can configure this step to fail the Mendix Pipeline if errors, warnings, deprecations, and/or recommendations are detected.
 
+{{% alert color="info" %}}
+The following Mendix Pipeline steps are exclusively for the Mendix Public Cloud environment.
+{{% /alert %}}
+
 ##### Unit Testing{#unit-testing}
 
 [Unit Testing](/appstore/modules/unit-testing/) module can perform regression testing on an environment in which a new deployment package has been deployed. This step executes the Unit Testing module in a running environment. If any unit test fails, the Mendix Pipeline will be marked as failed, with the run details and output parameters showing the failure count and relevant information. Ensure to add the prerequisites below before you add the Unit Testing Mendix Pipeline step:
@@ -164,27 +176,33 @@ Since a remote API password is required to trigger Unit Tests and it is not advi
 
 Using **Timeout (in seconds)** field, users can restrict the execution time of unit tests. If the tests exceed the predefined duration or timeout, the test step fails. It helps to avoid unnecessary waiting if tests are stuck in a loop.
 
-##### Publish
-
-Publish the newly built deployment package to a repository.
-
-##### Start Environment
-
-Start a selected environment.
-
-##### Stop Environment 
-
-Stop a selected environment.
-
 ##### Create Backup 
 
 Create and store a backup of an existing environment before deploying a new deployment package.
 
-##### Deploy 
+{{% alert color="info" %}}
+The following Mendix Pipeline steps are available in variations for both Mendix Public Cloud and Mendix on Kubernetes/Azure environments.
+
+Choose the appropriate step based on your target environment (e.g., **Publish** for Public Cloud, or **Publish For Mendix On Kubernetes/Azure** for Kubernetes/Azure).
+{{% /alert %}}
+
+##### Publish / Publish For Mendix On Kubernetes/Azure
+
+Publish the newly built deployment package to a repository.
+
+##### Start Environment / Start Environment For Mendix On Kubernetes/Azure
+
+Start a selected environment.
+
+##### Stop Environment / Stop Environment For Mendix On Kubernetes/Azure
+
+Stop a selected environment.
+
+##### Deploy / Deploy For Mendix On Kubernetes/Azure
 
 Deploy to a selected environment. In this step's configuration, there is a **Use default values for new constants** toggle that you can use to fetch the default values of new constants and scheduled events from Studio Pro and apply them to the environment. (To adjust an environment-specific configuration, see the [Environments](/developerportal/deploy/environments/) page.)
 
-##### Promote Package
+##### Promote Package / Promote For Mendix On Kubernetes/Azure
 
 Promote a deployment package from a source environment to a target environment. To configure this step, specify a source environment and a target environment.
 

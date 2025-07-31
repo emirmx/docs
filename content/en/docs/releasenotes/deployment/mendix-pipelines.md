@@ -38,7 +38,7 @@ To see the current status of the Mendix Pipelines, see [Mendix Status](https://s
 
 #### New Features
 
-* We released an API that lets you start a new Mendix Pipeline run for a saved and activated Mendix Pipeline design and retrieve the status of a Mendix Pipeline run. For more information, see [Pipelines API](/apidocs-mxsdk/apidocs/pipelines-api/).
+* We released an API that lets you start a new Mendix Pipeline run for a saved and activated Mendix Pipeline design and retrieve the status of a Mendix Pipeline run. For more information, see [Mendix Pipelines API](/apidocs-mxsdk/apidocs/pipelines-api/).
 * We added a new Mendix Pipeline step: [Best Practice Recommender](/developerportal/deploy/mendix-pipelines/#recommender) Check. This step lets you evaluate results of the Maia Best Practice Recommender within your Mendix Pipeline.
 
 ### September 3, 2024

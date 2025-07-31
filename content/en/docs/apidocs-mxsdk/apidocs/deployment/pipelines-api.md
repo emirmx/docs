@@ -1,21 +1,21 @@
 ---
-title: "Pipelines API"
+title: "Mendix Pipelines API"
 url: /apidocs-mxsdk/apidocs/pipelines-api/
 type: swagger
-description: "The Pipelines API sends requests to pipelines."
+description: "The Mendix Pipelines API sends requests to the Mendix Pipelines."
 restapi: true
 weight: 85
 ---
 
 ## Introduction
 
-The Pipelines API lets you start a new Mendix Pipeline run for a saved and activated Mendix Pipeline design and retrieve the status of a Mendix Pipeline run.
+The Mendix Pipelines API lets you start a new Mendix Pipeline run for a saved and activated Mendix Pipeline design and retrieve the status of a Mendix Pipeline run.
 
 For details on pipelines, see [Mendix Pipelines](/developerportal/deploy/mendix-pipelines/).
 
 ## Authentication {#authentication}
 
-Authentication for the Pipelines API uses a personal access token (PAT).
+Authentication for the Mendix Pipelines API uses a personal access token (PAT).
 
 ### Generating a PAT {#generate}
 
