@@ -12,6 +12,12 @@ To see the current status of the Mendix Pipelines, see [Mendix Status](https://s
 
 ## 2025
 
+### August 7, 2025
+
+#### New Features
+
+* We expanded Mendix Pipelines capabilities with new steps to support deployments and CI/CD automation for Mendix on Kubernetes and Azure. These configurable, low-code steps complement the existing Mendix Pipelines steps for Mendix Public Cloud, making it quicker and easier for your teams to streamline their development workflows. For more information, refer to the [Mendix Pipelines Steps](/developerportal/deploy/mendix-pipelines/#pipeline-steps).
+  
 ### June 27, 2025
 
 #### Bug Fixes
