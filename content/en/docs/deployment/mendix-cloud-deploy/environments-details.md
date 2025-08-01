@@ -57,10 +57,10 @@ During a [maintenance window](/developerportal/deploy/maintenance-windows/), you
 In the **Application Status** section of the **General** tab, you can find the following information about your environment:
 
 * **Status**
-    * {{% icon name="checkmark-circle-filled" color="green" %}} – The application in this environment is running.
-    * {{% icon name="subtract-circle-filled" color="gray" %}} – No application has been started yet in this environment, or it has been turned off.
-    * {{% icon name="alert-circle-filled" color="yellow" %}} – The application in this environment is experiencing some difficulties; check the alerts page or logs for more information.
-    * {{% icon name="remove-circle-filled" color="red" %}} – The application in this environment is unstable and probably not usable anymore.
+   * {{< icon name="checkmark-circle-filled" color="green" >}} – The application in this environment is running without any alerts.
+    * {{< icon name="subtract-circle-filled" color="gray" >}} – No application has been started yet in this environment, or the application has been turned off.
+    * {{< icon name="alert-circle-filled" color="yellow" >}} – The application in this environment is running, but has warning alerts, which might result in difficulties. Check the alerts page or logs for more information.
+    * {{< icon name="remove-circle-filled" color="red" >}} – The application in this environment is running, but has critical alerts, which might make it unstable and not usable anymore. Check the alerts page or logs for more information.anymore. Check the alerts page or logs for more information.
 * **Running since** – the date the app was started, if it is running
 * **Name** – the type of environment (Acceptance, Production, Test, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments)); for more information, see the [Naming of Environments](#naming) section below
 * **URL** – the URL of the app
