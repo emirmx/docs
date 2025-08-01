@@ -78,13 +78,13 @@ When creating a property to use as a key for external secret storage, use the fo
 
         * BuildPackage
 
-             * fileServerBasic
+            * fileServerBasic
                
                 * **BuildPackage.FileBasicAuthPassword** - Password for the file server
 
-             * AwsAKSK
+            * AwsAKSK
 
-                 * **BuildPackage.AwsSecretAccessKey** - AWS secret access key for the file server
+                * **BuildPackage.AwsSecretAccessKey** - AWS secret access key for the file server
 
         * RuntimeBaseImage
 

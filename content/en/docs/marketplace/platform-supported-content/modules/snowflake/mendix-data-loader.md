@@ -69,19 +69,19 @@ If you want to use specific resources, you should instead expose a new endpoint 
 9. Click **Back** to return to the **Details** page.
 10. Click the **Ingestion Configuration** tab to set up your ingestion destination table.
 11. Click **Create** to start setting up the Ingestion Configuration.
-    * **Target Database** – Name of the database for data ingestion
+    ***Target Database** – Name of the database for data ingestion
     * **Target Schema** – Target schema where all data will be ingested
 12. Click **Save**.
 13. Click the **Data Ingestion** tab, where you can start your data ingestion or set up a schedule.
 14. Click **Ingest Now** to start a data ingestion.
 15. Click **New Task** to create a CRON job for scheduled data ingestions.
-    * To schedule the data ingestion, specify the following parameters:
+    *To schedule the data ingestion, specify the following parameters:
         * **Ingestion Task Schedule** – Choose from custom CRON expression, every day at 00:00 AM UTC, every Monday at 00:00 AM UTC, or every first day of the month at 00:00 AM UTC.
-        * **Custom CRON Expression** – Use this field only when specifying a custom CRON expression.
+        ***Custom CRON Expression** – Use this field only when specifying a custom CRON expression.
         * **Timeout** – Optional setting to specify when a timeout exception should occur.
-        * **Number of Retry Attempts** – Number of retries for failed ingestion jobs.
+        ***Number of Retry Attempts** – Number of retries for failed ingestion jobs.
         * **Suspend Task After Failures** – Number of consecutive failures allowed before suspending the task.
-        * **Use Specific Warehouse** - Select this option if you want the task to use a specific warehouse. If selected, you need to run the provided script.
+        ***Use Specific Warehouse** - Select this option if you want the task to use a specific warehouse. If selected, you need to run the provided script.
         * **Warehouse** - Use this field to enter the name of the warehouse you want to use. This only applies when **Use Specific Warehouse** is selected.
 
 16. Click **Schedule Ingestion Task**.
