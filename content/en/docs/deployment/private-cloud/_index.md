@@ -104,6 +104,13 @@ This percentage can be adjusted by providing a custom value in Custom JVM Option
 
 ### Operator License
 
+{{% alert color="info" %}}
+Mendix Operator versions **before** 2.23.0 require an Operator licence.
+Starting from Operator version 2.23.0, Operator licenses are no longer needed.
+
+A valid subscription and support contract is still necessary to be receive technical support.
+{{% /alert %}}
+
 Mendix on Kubernetes is a premium offering from Mendix, and you will need an additional license to use it for your applications. This **Operator license** allows you to manage Mendix apps in your cluster through the Mendix Operator and, optionally, the Mendix Gateway Agent.
 
 You need one license for each namespace you want to manage.

@@ -169,7 +169,7 @@ All environments are defined as production environments, which means that [secur
     You can also filter the environment by the namespace name, environment ID, and environment name.
 
 {{% alert color="info" %}}
-If the Operator managing the environment is licensed, **Licensed Operator** is displayed. If the Operator is not licensed, the display shows **Trial Operator**.
+If the Operator managing the environment has a valid license attached, **Licensed Operator** is displayed. If the Operator has no valid license, the display shows **Trial Operator**.
 {{% /alert %}}
 
 ### Deploying the Deployment Package{#deploy-package}
@@ -353,6 +353,14 @@ The word **Licensed Operator** shows that the Operator managing that environment
 The Operator license is independent from a Mendix Runtime license. The Operator license allows you to manage Mendix apps in your cluster, while the Mendix Runtime license (configured through a [Subscription Secret](#license-mendix)) removes trial restrictions from a Mendix App itself.
 
 You can get an Operator license from [Mendix Support](https://support.mendix.com), together with instructions on how to configure it.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+Starting from version 2.23.0, the Operator no longer performs Operator license checks.
+
+The Operator will show as **Licensed Operator** even when no Operator license is installed.
+
+Environments still need subscription secrets to remove Mendix Runtime trial limitations from the app.
 {{% /alert %}}
 
 ##### Service Account
