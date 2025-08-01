@@ -1,12 +1,24 @@
 ---
-title: "Make It Native 10 App"
-url: /releasenotes/mobile/make-it-native-10/
+title: "Make It Native App"
+url: /releasenotes/mobile/make-it-native/
 weight: 8
 description: "These release notes showcase each release of the iOS and Android Make It Native app versions."
 #ki: "Augmented Reality (AR) Feature" - MOO-1312
 ---
 
 Depending on the Mendix version your app is developed in and the device you want to run on, you need a different Make It Native app. For more information on how to download the correct version, see the [Getting the Make It Native App](/refguide/mobile/getting-started-with-mobile/prerequisites/#get-min-app) section in *Native App Prerequisites and Troubleshooting*.
+
+## Make It Native 11.1.0
+
+**Release date: July 31, 2025**
+
+* Renamed the app to "Make It Native" and aligned its versioning with Studio Pro, so each Studio Pro version (e.g., 11.1.x) now uses the matching Make It Native version (e.g., 11.1.x).
+
+## Make It Native 10.24.0
+
+**Release date: July 31, 2025**
+
+* Renamed the app to "Make It Native" and aligned its versioning with Studio Pro, so each Studio Pro version (e.g., 10.24.x) now uses the matching Make It Native version (e.g., 10.24.x).
 
 ## Android 5.0.2 / iOS 5.0.2
 
