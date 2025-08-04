@@ -610,9 +610,9 @@ To achieve this behavior, set the **On click trigger** to **Double click**. When
 Legend:
 
 | Symbol | Meaning                                               |
-| ------ | ----------------------------------------------------- |
+| ------ | ---- |
 | 1      | Available only when selection is enabled.             |
-| 2      | Available only when selection mode should be "Multi". |
+| 2      | Available only when selection mode should be **Multi**. |
 
 ## Resetting Filters
 
