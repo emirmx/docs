@@ -627,7 +627,7 @@ The name of the filter or data grid can be found at **Properties** > **Common** 
 **Error**:
 > "The filter widget must be placed inside the column or header of the Data grid 2.0 or inside header of the Gallery widget."
 
-Widget placement is incorrect.
+* Widget placement is incorrect.
 
 **Solution**:
 Place widget inside Gallery header, Data Grid 2 header, or Data Grid 2 column.
@@ -635,7 +635,7 @@ Place widget inside Gallery header, Data Grid 2 header, or Data Grid 2 column.
 **Error**:
 > "Unable to get filter store. Check parent widget configuration."
 
-This error indicates that there is issue with widget settings. Most of the time this error happens when widget is placed in the header of Data Grid 2 or Gallery, but the **Filter attributes** setting is still set to **Auto**.
+* This error indicates that there is issue with widget settings. Most of the time this error happens when widget is placed in the header of Data Grid 2 or Gallery, but the **Filter attributes** setting is still set to **Auto**.
 
 **Solution**:
 Switch widget attributes setting to **Custom** and configure the attribute for filtering.
@@ -643,12 +643,12 @@ Switch widget attributes setting to **Custom** and configure the attribute for f
 **Error**:
 > "The [filter] is not compatible with [datatype] data type."
 
-This error indicates that attribute configured in the Data Grid 2 for column is not compatible with current filter type.
+* This error indicates that attribute configured in the Data Grid 2 for column is not compatible with current filter type.
 
 **Solution**: Change filter to appropriate filter type. For example for string attributes use text filter.
 
 > "The attribute is not filterable. Please choose a different attribute."
 
-This error indicates that it is not possible to use current attribute for filtering due to technical limitations. 
+* This error indicates that it is not possible to use current attribute for filtering due to technical limitations. 
 
 **Solution**: Read and understand why some attributes are filterable and other are not. Change the model or choose another attribute.
