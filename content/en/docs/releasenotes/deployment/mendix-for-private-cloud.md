@@ -16,13 +16,15 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 #### Portal Improvements
 
-* The Environment Details page in the portal now displays a new field, External Secret Store, indicating the source from which the secret was loaded.
-* Fixed an issue where starting an environment displayed an incorrect error message when the agent was in a disconnected state.
-* A date column has been added next to the Mendix Version in the deployment package creation pop-up, along with Latest Commit Date on the Branches page and Commit Date on the Revisions page..
+* The **Environment Details** page in the portal now displays a new field, **External Secret Store**, indicating the source from which the secret was loaded.
+* We have fixed an issue where starting an environment would display an incorrect error message when the agent was in a disconnected state.
+* The deployment package creation dialog now shows the date next to the Mendix version.
+* The **Branches** now shows the latest commit date for the branch.
+* The **Revisions** page now shows the commit date.
 
 #### Build API
 
-* Fixed an issue where the POST /apps/{appId}/packages/build endpoint in the v4 API returned location header containing v3, leading to 404 errors. The location header now correctly uses v4.
+* We have fixed an issue where the POST `/apps/{appId}/packages/build` endpoint in the v4 API returned a location header containing `v3`, leading to 404 errors. The location header now correctly uses `v4`.
 
 ### July 10, 2025
 
