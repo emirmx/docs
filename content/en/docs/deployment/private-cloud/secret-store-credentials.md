@@ -769,7 +769,7 @@ To use this feature, you need to:
 After completing the prerequisites, follow these steps to switch from password-based authentication to managed identity authentication:
 
 1. Remove or comment out `database-password` from the `SecretProviderClass` and the associated Key vault Secret.
-2. Write down the value of `database-username` - this username will need to be removed on step 6.
+2. Write down the value of `database-username` - this username will need to be removed in step 6.
 3. Change the value of `database-username` to the environment's **Managed Identity** **Client ID**.
 4. Edit the `database-jdbc-url` and add a `authentication=ActiveDirectoryManagedIdentity` parameter to the JDBC URL value: the URL should look like `jdbc:sqlserver://example.database.windows.net:1433;encrypt=true;trustServerCertificate=false;authentication=ActiveDirectoryManagedIdentity;`.
 5. Add yourself (or your Entra group) as an [Entra Admin user](https://learn.microsoft.com/en-us/azure/azure-sql/database/authentication-aad-configure?view=azuresql&tabs=azure-powershell#azure-portal-1) in the Azure SQL database.
