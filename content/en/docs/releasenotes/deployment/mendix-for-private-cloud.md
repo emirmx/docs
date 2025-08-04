@@ -17,7 +17,6 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 #### Portal Improvements
 
 * The Environment Details page in the portal now displays a new field, External Secret Store, indicating the source from which the secret was loaded.
-* The Backup dropdown now only displays environments from Mx on Azure. Additionally, backup restoration is now limited to environments within the same namespace.
 * Fixed an issue where starting an environment displayed an incorrect error message when the agent was in a disconnected state.
 * A date column has been added next to the Mendix Version in the deployment package creation pop-up, along with Latest Commit Date on the Branches page and Commit Date on the Revisions page..
 
