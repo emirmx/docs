@@ -16,11 +16,11 @@ For more information on using filter widgets, see [Data Grid 2](/appstore/module
 
 #### Filter Attributes
 
-Provides flexibility in how the filter determines which data to filter. **Auto** mode automatically detects filterable attributes from the parent grid when placed in grid columns. **Custom** mode allows manual specification of target datasource and attributes for more complex filtering scenarios including multi-attribute support and cross-entity filtering.
+Provides flexibility in how the filter determines which data to filter. **Auto** mode automatically detects filterable attributes from the parent grid when placed in grid columns. **Custom** mode allows manual specification of target data source and attributes for more complex filtering scenarios including multi-attribute support and cross-entity filtering.
 
-#### Datasource to Filter
+#### Data Source to Filter
 
-Specifies the target datasource that the filter should operate on when using Custom mode. Creates a direct reference to the specified datasource object, providing access to entity metadata and enabling real-time synchronization with datasource state changes. This property is required when Filter Attributes is set to Custom.
+Specifies the target data source that the filter should operate on when using custom mode. Creates a direct reference to the specified data source object, providing access to entity metadata and enabling real-time synchronization with data source state changes. This property is required when **Filter Attributes** is set to **Custom**.
 
 #### Attributes
 
@@ -32,29 +32,29 @@ Sets the initial date value that appears in the filter input when the page loads
 
 #### Default Start Date
 
-When the default filter is set to "Between", this property defines the initial start date for the date range. This value works in conjunction with the Default End Date to establish a default date range when the widget loads.
+When the default filter is set to **Between**, this property defines the initial start date for the date range. This value works in conjunction with the **Default End Date** to establish a default date range when the widget loads.
 
 #### Default End Date
 
-When the default filter is set to "Between", this property defines the initial end date for the date range. This value works in conjunction with the Default Start Date to establish a default date range when the widget loads.
+When the default filter is set to **Between**, this property defines the initial end date for the date range. This value works in conjunction with the **Default Start Date** to establish a default date range when the widget loads.
 
 #### Default Filter
 
-Determines the initial filter operation type when the widget loads. Available options include:
+Determines the initial filter operation type when the widget loads. Available options include the following:
 
-* **Between**: Matches records where the date falls within a specified range (requires both start and end dates)
-* **Greater than**: Matches records where the date is after the specified date
-* **Greater than or equal**: Matches records where the date is on or after the specified date
-* **Equal**: Matches records where the date exactly equals the specified date
-* **Not equal**: Matches records where the date does not equal the specified date
-* **Smaller than**: Matches records where the date is before the specified date
-* **Smaller than or equal**: Matches records where the date is on or before the specified date
-* **Empty**: Matches records where the date attribute has no value
-* **Not empty**: Matches records where the date attribute has any value
+* **Between**: matches records where the date falls within a specified range (requires both start and end dates)
+* **Greater than**: matches records where the date is after the specified date
+* **Greater than or equal**: matches records where the date is on or after the specified date
+* **Equal**: matches records where the date exactly equals the specified date
+* **Not equal**: matches records where the date does not equal the specified date
+* **Smaller than**: matches records where the date is before the specified date
+* **Smaller than or equal**: matches records where the date is on or before the specified date
+* **Empty**: matches records where the date attribute has no value
+* **Not empty**: matches records where the date attribute has any value
 
 #### Placeholder
 
-Displays hint text in the input field when no date is selected. Helps users understand the expected date format or provides guidance on date selection. Supports text templates for dynamic content and localization.
+Displays hint text in the input field when no date is selected. It can help users understand the expected date format, or can provide guidance on date selection. Supports text templates for dynamic content and localization.
 
 #### Adjustable by User
 
@@ -64,27 +64,27 @@ Controls whether users can change the filter operation type. When set to **Yes**
 
 #### Saved Attribute
 
-Specifies an entity attribute used to store the last filter value for persistence. The attribute must be of type DateTime. When configured, the filter automatically saves its current value to this attribute when changes occur. To restore previously saved values, configure the same attribute as the Default Value.
+Specifies an entity attribute used to store the last filter value for persistence. The attribute must be of type DateTime. When configured, the filter automatically saves its current value to this attribute when changes occur. To restore previously saved values, configure the same attribute as the **Default Value**.
 
 #### Saved Start Date Attribute
 
-Specifies an entity attribute used to store the start date when using "Between" filter mode. The attribute must be of type DateTime. This works in conjunction with the Saved End Date Attribute to persist date range selections across user sessions.
+Specifies an entity attribute used to store the start date when using the **Between** filter mode. The attribute must be of type DateTime. This works in conjunction with the **Saved End Date Attribute** to persist date range selections across user sessions.
 
 #### Saved End Date Attribute
 
-Specifies an entity attribute used to store the end date when using "Between" filter mode. The attribute must be of type DateTime. This works in conjunction with the Saved Start Date Attribute to persist date range selections across user sessions.
+Specifies an entity attribute used to store the end date when using **Between** filter mode. The attribute must be of type DateTime. This works in conjunction with the **Saved Start Date Attribute** to persist date range selections across user sessions.
 
 ### Events
 
 #### On Change
 
-Defines an action to be executed whenever the filter value or filter type changes. This event is triggered for every user interaction including date selection, changing filter operations, or clearing the filter. Can be used to trigger microflows, nanoflows, or other actions for custom business logic.
+Defines an action to be executed whenever the filter value or filter type changes. This event is triggered for every user interaction including date selection, changing filter operations, or clearing the filter. It can be used to trigger microflows, nanoflows, or other actions for custom business logic.
 
 ### Accessibility
 
 #### Comparison Button Caption
 
-Provides an accessible label for the filter type selection button. This label is announced by screen readers when users navigate to the dropdown that shows available filter operations (Between, Greater than, etc.). Essential for users relying on assistive technology to understand the purpose of the button.
+Provides an accessible label for the filter type selection button. This label is announced by screen readers when users navigate to the drop-down menu that shows available filter operations. Employing this correctly is essential for users relying on assistive technology.
 
 #### Calendar Button Caption
 
@@ -92,4 +92,4 @@ Defines the accessible label for the calendar picker button that opens the date 
 
 #### Input Caption
 
-Defines the accessible label for the date input field. Screen readers announce this label when users focus on the input field. Helps users understand that date input is expected and may include format guidance or context-specific information.
+Defines the accessible label for the date input field. Screen readers announce this label when users focus on the input field. This property users understand that date input is expected, and may include format guidance or context-specific information.
