@@ -13,7 +13,7 @@ This document focusing on explaining module features. For precise details on dat
 
 The data source determines which objects will be shown in a Data Grid 2 widget. In v2.3.0 and above, selecting the entity of the data source will automatically fill the contents, create columns with filters, and create buttons. You can also select which columns to use for the content generation.
 
-The widget uses a flexible, modular approach for filtering. You can place dedicated filter widgets (Text Filter, Date Filter, Number Filter, Dropdown Filter) in the filters placeholder above the grid or within individual column headers. These specialized filter widgets provide tailored behavior for different data types and use cases, replacing the previous built-in filtering system with a more maintainable and customizable architecture.
+The widget uses a flexible, modular approach for filtering. You can place dedicated filter widgets (text filter, date filter, number filter, dropdown filter) in the filters placeholder above the grid, or within individual column headers. These specialized filter widgets provide tailored behavior for different data types and use cases. This system is superior to a built-in filtering system in that it allows for a more maintainable and customizable architecture.
 
 Here is an example of a data grid using filters:
 
@@ -122,7 +122,7 @@ This option functions similarly to the **Virtual Scrolling** feature, but instea
 
 ### Row Count Display
 
-When enabled, the pagination area displays the total number of rows alongside navigation controls, providing users with context about the dataset size. The counter shows information like "1 to 20 of 150" and automatically updates when users navigate between pages, apply filters, or refresh data. This feature works with all pagination modes including virtual scrolling and load more.
+When enabled, the pagination area displays the total number of rows alongside navigation controls. This provides users with context about the data set size. The counter shows information such as "1 to 20 of 150", and automatically updates when users navigate between pages, apply filters, or refresh data. This feature works with all pagination modes including virtual scrolling and load more.
 
 ## Columns
 
@@ -203,10 +203,10 @@ This property is not available if you enable **Custom content** for the column
 ### Association Filter {#association-filter}
 
 {{% alert color="warning" %}}
-Association filtering configuration has been moved from column properties to the dedicated Dropdown Filter widget. Configure association filtering directly in the Dropdown Filter widget properties when using Custom mode.
+Association filtering configuration has been moved from column properties to the dedicated dropdown filter widget. Configure association filtering directly in the dropdown filter widget properties when using custom mode.
 {{% /alert %}}
 
-The Dropdown Filter widget supports association filtering when configured in Custom mode:
+The dropdown filter widget supports association filtering when configured in custom mode:
 
 * **Entity (Association)** — defines the association that will be used for filtering
 * **Selectable objects** — defines data source for filter options, returning list of all possible entities that could be associated
@@ -249,14 +249,13 @@ Triggers an action (such as a nanoflow, microflow, or Show page action) when the
 
 ## Filters {#filters}
 
-The Data Grid 2 uses a modular filtering system with dedicated filter widgets that can be placed in two locations:
+Data Grid 2 uses a modular filtering system with dedicated filter widgets that can be placed in two locations:
 
-1. **Column Headers**: Individual filters can be placed in column headers by enabling **Show column filters**. When this option is selected, a drop-zone appears in each column header where you can place the appropriate filter widget.
-
-2. **Filters Placeholder**: Grid-wide filters can be placed in the filters placeholder (located in the Events section of the grid properties). This allows for filtering across multiple attributes and more complex filtering scenarios.
+* **Column Headers**: Individual filters can be placed in column headers by enabling **Show column filters**. When this option is selected, a drop zone appears in each column header where you can place the appropriate filter widget.
+* **Filters Placeholder**: Grid-wide filters can be placed in the filters placeholder (located in the **Events** section of the grid properties). This allows for filtering across multiple attributes and more complex filtering scenarios.
 
 {{% alert color="warning" %}}
-The type of your selected attribute should match the filter type. For example, a **Text filter** should be used for a String attribute.
+The type of your selected attribute should match the filter type. For example, a **Text filter** should be used for a string attribute.
 
 Also the desired attribute must be filterable. For example, not a value which is calculated.
 {{% /alert %}}
@@ -266,7 +265,7 @@ Also the desired attribute must be filterable. For example, not a value which is
 All filter widgets support two configuration modes:
 
 * **Auto Mode**: Automatically detects filterable attributes from the parent grid (works when placed in grid columns)
-* **Custom Mode**: Allows manual specification of target datasource and attributes for more flexible filtering scenarios
+* **Custom Mode**: Allows manual specification of target data source and attributes for more flexible filtering scenarios
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/data-widgets/data-grid-2/settings-show-column-filters.png" alt="Settings for data grid 2" class="no-border" >}}
 
@@ -330,15 +329,15 @@ In this section you can select an action to be executed **On change** by the fil
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/data-widgets/data-grid-2/dropdown-filter.png" alt="Example of default drop-down filter" class="no-border" >}}
 
-**Drop-down filter** allows users to match enumeration values, Boolean attributes, or an association attribute. The filter can be configured to work in Auto mode (detecting attributes from grid context) or Custom mode (manual datasource and attribute specification).
+**Drop-down filter** allows users to match enumeration values, Boolean attributes, or an association attribute. The filter can be configured to work in Auto mode (detecting attributes from grid context) or custom mode (manual data source and attribute specification).
 
-In Custom mode, you can manually configure the datasource and attributes, while Auto mode automatically inherits configuration from the parent column. The filter supports both attribute-based filtering (enumerations, booleans) and association-based filtering (references to other entities).
+In custom mode, you can manually configure the data source and attributes, while Auto mode automatically inherits configuration from the parent column. The filter supports both attribute-based filtering (enumerations, booleans) and association-based filtering (references to other entities).
 
 For association filtering, you can configure:
 
 * **Filter by Association**: Set the filter to operate on entity associations
 * **Entity**: Select the target association for filtering
-* **Selectable objects**: Configure the datasource that provides available filter options
+* **Selectable objects**: Configure the data source that provides available filter options
 * **Use lazy load**: Control when options are loaded (immediate vs on-demand)
 * **Option caption**: Define how each option is displayed to users
 
@@ -347,7 +346,7 @@ The filter also supports enhanced features like multi-select, filterable options
 {{< figure src="/attachments/appstore/platform-supported-content/modules/data-widgets/data-grid-2/dropdown-filter-settings.png" alt="Example of settings for drop-down filter" class="no-border" >}}
 
 {{% alert color="info" %}}
-When using Custom mode, configure the target datasource and attributes directly in the filter widget properties. Auto mode automatically inherits configuration from the parent column when the filter is placed in a column header.
+When using custom mode, configure the target data source and attributes directly in the filter widget properties. Auto mode automatically inherits configuration from the parent column when the filter is placed in a column header.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
