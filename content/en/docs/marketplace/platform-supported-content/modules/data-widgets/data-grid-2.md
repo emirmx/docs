@@ -620,9 +620,9 @@ Resetting filters is possible using **Reset_Filter** and **Reset_All_Filters** a
 
 The name of the filter or data grid can be found at **Properties** > **Common** > **Name**.
 
-## Troubleshooting Runtime Errors
+## Troubleshooting Runtime Errors {#troubleshooting-runtime-errors}
 
-### Filter Widget Errors
+### Filter Widget Errors {#filter-widget-errors}
 
 **Error**:
 > "The filter widget must be placed inside the column or header of the Data grid 2.0 or inside header of the Gallery widget."
@@ -630,12 +630,12 @@ The name of the filter or data grid can be found at **Properties** > **Common** 
 Widget placement is incorrect.
 
 **Solution**:
-Place widget inside Gallery header, Data Grid 2 header or Data Grid 2 column.
+Place widget inside Gallery header, Data Grid 2 header, or Data Grid 2 column.
 
 **Error**:
 > "Unable to get filter store. Check parent widget configuration."
 
-This error indicates that there is issue with widget settings. Most of the time this error happens when widget is placed in the header of Data Grid 2 or Gallery, but "Filter attributes" settings is still set to **Auto**.
+This error indicates that there is issue with widget settings. Most of the time this error happens when widget is placed in the header of Data Grid 2 or Gallery, but the **Filter attributes** setting is still set to **Auto**.
 
 **Solution**:
 Switch widget attributes setting to **Custom** and configure the attribute for filtering.
