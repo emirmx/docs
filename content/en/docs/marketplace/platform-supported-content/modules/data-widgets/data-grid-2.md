@@ -264,8 +264,8 @@ Also the desired attribute must be filterable. For example, not a value which is
 
 All filter widgets support two configuration modes:
 
-* **Auto Mode**: Automatically detects filterable attributes from the parent grid (works when placed in grid columns)
-* **Custom Mode**: Allows manual specification of target data source and attributes for more flexible filtering scenarios
+* **Auto Mode**: automatically detects filterable attributes from the parent grid (works when placed in grid columns)
+* **Custom Mode**: allows manual specification of target data source and attributes for more flexible filtering scenarios
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/data-widgets/data-grid-2/settings-show-column-filters.png" alt="Settings for data grid 2" class="no-border" >}}
 
@@ -335,18 +335,18 @@ In custom mode, you can manually configure the data source and attributes, while
 
 For association filtering, you can configure:
 
-* **Filter by Association**: Set the filter to operate on entity associations
-* **Entity**: Select the target association for filtering
-* **Selectable objects**: Configure the data source that provides available filter options
-* **Use lazy load**: Control when options are loaded (immediate vs on-demand)
-* **Option caption**: Define how each option is displayed to users
+* **Filter by Association**: sets the filter to operate on entity associations
+* **Entity**: selects the target association for filtering
+* **Selectable objects**: configures the data source that provides available filter options
+* **Use lazy load**: controls when options are loaded (immediate vs on-demand)
+* **Option caption**: defines how each option is displayed to users
 
 The filter also supports enhanced features like multi-select, filterable options (combobox-style), and various selection methods (checkbox or row click).
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/data-widgets/data-grid-2/dropdown-filter-settings.png" alt="Example of settings for drop-down filter" class="no-border" >}}
 
 {{% alert color="info" %}}
-When using custom mode, configure the target data source and attributes directly in the filter widget properties. Auto mode automatically inherits configuration from the parent column when the filter is placed in a column header.
+When using **Custom** mode, you can configure the target data source and attributes directly in the filter widget properties. **Auto** mode automatically inherits configuration from the parent column when the filter is placed in a column header.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
@@ -501,11 +501,11 @@ The Data Grid 2 widget ships with built-in functionality to export data from the
 
 To export data from the data grid, create a new nanoflow that calls *Export_To_Excel*. The *Export_To_Excel* action has a set of inputs:
 
-* **Datagrid name** - the name of the data grid from which data should be exported (the name can be found and copied from the data grid's settings (**Properties** > **Common** > **Name**))
-* **File name** - the file name to use for the exported document (does not require an appended file extension)
-* **Sheet name** - the name to use for the Excel sheet of the exported document
-* **Include column names** - a Boolean expression that, if true, tells the action to include column captions as the first row in the exported document
-* **Chunk size** - the number of rows fetched from the backend to the browser at a time.
+* **Datagrid name**: the name of the data grid from which data should be exported (the name can be found and copied from the data grid's settings (**Properties** > **Common** > **Name**))
+* **File name**: the file name to use for the exported document (does not require an appended file extension)
+* **Sheet name**: the name to use for the Excel sheet of the exported document.
+* **Include column names**: a Boolean expression that, if true, tells the action to include column captions as the first row in the exported document
+* **Chunk size**: the number of rows fetched from the backend to the browser at a time.
 
 {{% alert color="info" %}}
 The recommended value for **Chunk Size** is 200. However, because each data grid has a unique set of columns and varying amounts of data per row, a different chunk size might result in better performance.
