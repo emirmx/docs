@@ -115,7 +115,7 @@ This property sets the action to be performed when the row is clicked.
 
 This property sets the action to be performed when the row is selected or unselected.
 
-#### Filters Placeholder
+#### Filters  {#filters-placeholder}
 
 This placeholder acts as a container for filter widgets that operate on the entire grid. This placeholder provides a designated area for placing filter widgets (text filter, date filter, number filter, drop-down filter) that filter across all grid data rather than being limited to individual columns. 
 
@@ -158,7 +158,7 @@ This property sets the action to be performed when the **Attribute** value is ch
 ### Grid Wide Filtering
 
 {{% alert color="warning" %}}
-Grid Wide Filtering has been deprecated and removed. Use the Filters Placeholder along with dedicated filter widgets (Text Filter, Date Filter, Number Filter, Dropdown Filter) for filtering functionality.
+Grid Wide Filtering has been deprecated and removed. Use the [Filters Placeholder](#filters-placeholder) along with dedicated filter widgets ([Text Filter](/appstore/modules/datagrid-text-filter/), [Date Filter](/appstore/modules/datagrid-date-filter/), [Number Filter](/appstore/modules/datagrid-number-filter/), and [Dropdown Filter](/appstore/modules/datagrid-dropdown-filter/)) for filtering functionality.
 {{% /alert %}}
 
 ### Aria Labels

@@ -252,7 +252,7 @@ Triggers an action (such as a nanoflow, microflow, or Show page action) when the
 Data Grid 2 uses a modular filtering system with dedicated filter widgets that can be placed in two locations:
 
 * **Column Headers**: Individual filters can be placed in column headers by enabling **Show column filters**. When this option is selected, a drop zone appears in each column header where you can place the appropriate filter widget.
-* **Filters Placeholder**: Grid-wide filters can be placed in the filters placeholder (located in the **Events** section of the grid properties). This allows for filtering across multiple attributes and more complex filtering scenarios.
+* **Filters Placeholder**: Grid-wide filters can be placed in the [filters placeholder](/appstore/modules/data-grid-2-properties/#filters-placeholder). This allows for filtering across multiple attributes and more complex filtering scenarios.
 
 {{% alert color="warning" %}}
 The type of your selected attribute should match the filter type. For example, a **Text filter** should be used for a string attribute.
