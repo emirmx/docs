@@ -48,7 +48,6 @@ An LTS version is the last minor release of a major version. Its release is alig
 
 These are the current LTS versions of Studio Pro:
 
-* [8.18](/releasenotes/studio-pro/8.18/) (started in March, 2021)
 * [9.24](/releasenotes/studio-pro/9.24/) (started in March, 2023)
 * [10.24](/releasenotes/studio-pro/10.24/) (started in June, 2025)
 
@@ -142,7 +141,7 @@ A monthly release only receives patches for critical/security issues if they can
 
 For example, if you are using version 9.1 after 9.2 has been released and you find a critical issue in 9.1, that fix will only be released in the next monthly release, which would be 9.3.
 
-If a bug is found in a monthly-release version for an older major version, it will only be fixed as a patch on the existing LTS (for example, a bug found in 8.16 will only be fixed for a patch release on the LTS version 8.18). 
+If a bug is found in a monthly-release version for an older major version, it will only be fixed as a patch on the existing LTS (for example, a bug found in 9.16 will only be fixed for a patch release on the LTS version 9.24). 
 
 ### Upgrading Impact
 
