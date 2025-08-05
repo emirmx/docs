@@ -55,7 +55,7 @@ The OIDC SSO module supports the following features:
 1. IdP Integration Capabilities:
 
     * Supports SSO and API-security.
-    * Can be used with OIDC/OAuth-compatible IdPs, such as AWS Cognito, Google, Salesforce, Apple, Okta, Ping, Microsoft's Entra ID (formerly known as Azure AD), and SAP Cloud Identity Services. Moreover, the module also works with the [OIDC Provider](placeholder) module.
+    * Can be used with OIDC/OAuth-compatible IdPs, such as AWS Cognito, Google, Salesforce, Apple, Okta, Ping, Microsoft's Entra ID (formerly known as Azure AD), and SAP Cloud Identity Services. Moreover, the module also works with the [OIDC Provider](https://marketplace.mendix.com/link/component/244687) module.
     * Comes with helper microflows (DELETE, GET, PATCH, POST, and PUT) which call an API with a valid token (and automate the token refresh process).
     * Easy configuration, by leveraging the so-called well-known discovery endpoint at your IdP.
         * For example, PKCE will be used automatically if it is detected.
