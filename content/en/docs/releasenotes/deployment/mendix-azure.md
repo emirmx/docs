@@ -15,7 +15,7 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 ### Release date: August 7, 2025
 
 * Users with the Owner or Contributor roles can now view all uninitialized clusters within their subscription, ensuring better visibility and coordination.
-* Fullstack status now reflects the combined status of all categories. We have also added a new category, **Other**. This category is marked as successful when all the remaining categories pass.
+* We fixed an issue so that cluster deployment progress status now more accurately reflects actual deployment status.
 * We have fixed an issue where new users had to first visit the Mendix on Kubernetes portal before initializing a cluster. They can now initialize a cluster directly in Mendix on Kubernetes.
 * We have improved the accuracy and consistency of Japanese and Korean translations in the Mendix on Azure portal.
 * Cluster initialization is now limited to users with the Owner role. This resolves a previous issue where users with the Contributor role were also able to initialize clusters.
