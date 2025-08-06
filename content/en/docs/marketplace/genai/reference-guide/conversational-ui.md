@@ -305,7 +305,7 @@ Make sure that any custom containers and layout grids that were added on your pa
 
 If needed, verify that no data view widget is breaking the flow; for example, use `dataview--display-contents`. See the example page `ConversationalUI_FullScreenChat` for a basic implementation of the mentioned elements.
 
-#### Example implementation of a full-screen chat:
+#### Example implementation of a full-screen chat
 
 Step 1:
 Add a container with the class `chat-page--fullheight` to the page.
