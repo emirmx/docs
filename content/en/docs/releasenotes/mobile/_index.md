@@ -7,7 +7,7 @@ cascade:
     - numberless_headings: true
 ---
 
-For details on maintaining native mobile apps see [/releasenotes/mobile/native-support/](Support Guidelines for Native Mobile Apps).
+For details on maintaining native mobile apps see [/releasenotes/mobile/native-support/](Support Guidelines for Native Mobile).
 
 This category includes the following release notes: 
 
