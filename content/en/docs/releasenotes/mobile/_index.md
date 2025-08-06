@@ -7,7 +7,7 @@ cascade:
     - numberless_headings: true
 ---
 
-For details on maintaining native mobile apps see [/releasenotes/mobile/native-support/](Support Guidelines for Native Mobile).
+Welcome to the mobile release notes. For details on support windows and maintaining native mobile apps, see [Support Guidelines for Native Mobile](/releasenotes/mobile/native-support/).
 
 This category includes the following release notes: 
 
