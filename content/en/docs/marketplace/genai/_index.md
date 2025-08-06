@@ -77,7 +77,7 @@ Mendix connectors offer direct support for the following models:
 | Amazon Bedrock | Amazon Titan Text G1 - Express, Amazon Titan Text G1 - Lite, Amazon Titan Text G1 - Premier | Chat Completions | text, document (except Titan Premier) | text | |
 | | AI21 Jamba-Instruct | Chat Completions | text | text |  |
 | | AI21 Labs Jurassic-2 (Text) | Chat Completions | text | text |  |
-| | Amazon Nova Pro, Amazon Nova Lite | Chat Completion | text, image, document | text | Function calling |
+| | Amazon Nova Pro, Amazon Nova Lite | Chat Completions | text, image, document | text | Function calling |
 | | Amazon Titan Image Generator G1 | Image generation | text | image | |
 | | Amazon Titan Embeddings Text v2 | Embeddings | text | embeddings| |
 | | Anthropic Claude 2.0, Anthropic Claude 2.1| Chat Completions | text, document | text | |
@@ -89,9 +89,10 @@ Mendix connectors offer direct support for the following models:
 | | DeepSeek, DeepSeek-R1 | Text | text | document | |
 | | Meta Llama 2, MetaLlama 3| Chat Completions | text, document | text | |
 | | Meta Llama 3.1| Chat Completions | text, document | text | Function calling |
-| | Mistral AI Instruct | Chat Completions | text. document | text | |
+| | Mistral AI Instruct | Chat Completions | text, document | text | |
 | | Mistral Large, Mistral Large 2 | Chat Completions | text, document | text | Function calling |
 | | Mistral Small | Chat Completions | text | text | Function calling |
+| | OpenAI gpt-oss-20B, gpt-oss-120b  | Chat Completions | text | text | Function calling |
 
 For more details on limitations and supported model capabilities for the Bedrock Converse API used in the ChatCompletions operations, see [Supported models and model features](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html) in the AWS documentation.
 
