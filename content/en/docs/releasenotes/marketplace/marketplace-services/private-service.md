@@ -9,6 +9,12 @@ numberless_headings: true
 
 ## 1.0.0
 
+**Release date: August 06, 2025**
+
+* We improved requests validation
+
+## 1.0.0
+
 **Release date: June 27, 2025**
 
 ### Private PDF Document Generation Service
