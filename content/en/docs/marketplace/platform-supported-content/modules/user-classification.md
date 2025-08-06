@@ -6,7 +6,9 @@ description: "Describes the configuration and usage of the User Classification m
 
 ## Introduction
 
-The [User Classification]() module enables efficient categorization of users based on customer-defined [user roles](/refguide/user-roles/) or custom classification logic. This document guides you in implementing the classification logic and configuring the required elements within your Mendix application. For details on the available classification logic options, see the [Configuring Classification Logic](#configure-classification-logic) section below. Using this module, organizations can ensure reliable user classification and maintain accurate metering within their Mendix environment. 
+The [User Classification]() module allows your Mendix application to accurately classify end-users—an essential capability for ensuring compliance with the Mendix Pricing Plan. The module provides logic to set the user type as external or internal based on the user roles in your app. If needed, you can implement custom logic instead. Keep in mind that Mendix’s user metering processes will count users as internal unless their user type is explicitly set to external, which may impact licensing calculations.
+
+This document guides you in implementing the classification logic and configuring the required elements within your Mendix application. For details on the available classification logic options, see the [Configuring Classification Logic](#configure-classification-logic) section below. Using this module, organizations can ensure reliable user classification and maintain accurate metering within their Mendix environment. 
 
 {{% alert color="info" %}}
 If external users are not classified, Mendix user metering will consider them as internal users.
