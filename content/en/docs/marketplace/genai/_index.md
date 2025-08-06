@@ -92,7 +92,7 @@ Mendix connectors offer direct support for the following models:
 | | Mistral AI Instruct | Chat Completions | text, document | text | |
 | | Mistral Large, Mistral Large 2 | Chat Completions | text, document | text | Function calling |
 | | Mistral Small | Chat Completions | text | text | Function calling |
-| | OpenAI gpt-oss-20B, gpt-oss-120b  | Chat Completions | text | text | Function calling |
+| | OpenAI gpt-oss-20B, gpt-oss-120b  | Chat Completions | text | text | |
 
 For more details on limitations and supported model capabilities for the Bedrock Converse API used in the ChatCompletions operations, see [Supported models and model features](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html) in the AWS documentation.
 
