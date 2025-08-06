@@ -159,15 +159,15 @@ Build a deployment package based on the latest major, minor, or patch version of
 
 ##### Maia Best Practice Recommender{##recommender}
 
-Evaluate results of the [Maia Best Practice Recommender](/refguide/best-practice-recommender/) within your Mendix Pipeline. You can configure this step to fail the Mendix Pipeline if errors, warnings, deprecations, and/or recommendations are detected.
+Evaluate the results of the [Maia Best Practice Recommender](/refguide/best-practice-recommender/) within your Mendix Pipeline. You can configure this step to fail the Mendix Pipeline if errors, warnings, deprecations, and/or recommendations are detected.
 
 {{% alert color="info" %}}
 The following Mendix Pipeline steps are exclusively for the Mendix Public Cloud environment.
 {{% /alert %}}
 
-##### Unit Testing{#unit-testing}
+##### Unit Test {#unit-testing}
 
-[Unit Testing](/appstore/modules/unit-testing/) module can perform regression testing on an environment in which a new deployment package has been deployed. This step executes the Unit Testing module in a running environment. If any unit test fails, the Mendix Pipeline will be marked as failed, with the run details and output parameters showing the failure count and relevant information. Ensure to add the prerequisites below before you add the Unit Testing Mendix Pipeline step:
+The [Unit Testing](/appstore/modules/unit-testing/) module can perform regression testing on an environment in which a new deployment package has been deployed. This step executes the Unit Testing module in a running environment. If any unit test fails, the Mendix Pipeline will be marked as failed, with the run details and output parameters showing the failure count and relevant information. Ensure to add the prerequisites below before you add the Unit Testing Mendix Pipeline step:
 
 * Import the [Unit Testing](https://marketplace.mendix.com/link/component/390) module into your Mendix application from the Marketplace.
 * The environment in which Unit Testing needs to happen should be in a running state.
@@ -178,33 +178,31 @@ Using **Timeout (in seconds)** field, users can restrict the execution time of u
 
 ##### Create Backup 
 
-Create and store a backup of an existing environment before deploying a new deployment package.
+Create and store a backup of an existing environment before deploying a new deployment package. This step is available only for Mendix Cloud.
 
 {{% alert color="info" %}}
-The following Mendix Pipeline steps are available in variations for both Mendix Public Cloud and Mendix on Kubernetes/Azure environments.
-
-Choose the appropriate step based on your target environment (e.g., **Publish** for Public Cloud, or **Publish For Mendix On Kubernetes/Azure** for Kubernetes/Azure).
+The following Mendix Pipeline steps are available in variations for both Mendix Public Cloud and Mendix on Kubernetes/Azure environments. They are automatically filtered based on the selected environment.
 {{% /alert %}}
 
-##### Publish / Publish For Mendix On Kubernetes/Azure
+##### Publish
 
-Publish the newly built deployment package to a repository.
+Publish the newly built deployment package to a repository on Mendix Cloud or Mendix on Kubernetes/Azure.
 
-##### Start Environment / Start Environment For Mendix On Kubernetes/Azure
+##### Start Environment
 
-Start a selected environment.
+Start a selected environment that is running on Mendix Cloud or Mendix on Kubernetes/Azure.
 
-##### Stop Environment / Stop Environment For Mendix On Kubernetes/Azure
+##### Stop Environment
 
-Stop a selected environment.
+Stop a selected environment that is running on Mendix Cloud or Mendix on Kubernetes/Azure.
 
-##### Deploy / Deploy For Mendix On Kubernetes/Azure
+##### Deploy
 
-Deploy to a selected environment. In this step's configuration, there is a **Use default values for new constants** toggle that you can use to fetch the default values of new constants and scheduled events from Studio Pro and apply them to the environment. (To adjust an environment-specific configuration, see the [Environments](/developerportal/deploy/environments/) page.)
+Deploy to a selected environment that is running on Mendix Cloud or Mendix on Kubernetes/Azure. In the step's configuration, there is a **Use default values for new constants** toggle that you can use to fetch the default values of new constants and scheduled events from Studio Pro and apply them to the environment. (To adjust an environment-specific configuration, see the [Environments](/developerportal/deploy/environments/) page.)
 
-##### Promote Package / Promote For Mendix On Kubernetes/Azure
+##### Promote Package
 
-Promote a deployment package from a source environment to a target environment. To configure this step, specify a source environment and a target environment.
+Promote a deployment package from a source environment to a target environment that is running on Mendix Cloud or Mendix on Kubernetes/Azure. To configure this step, specify a source environment and a target environment.
 
 #### Branch Expression{#branch-expression}
 
