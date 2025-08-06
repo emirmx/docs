@@ -63,7 +63,7 @@ The Make It Native app allows developers to preview, test, and debug native mobi
 
 Depending on the Mendix version used to build your app, you have to use a different version of Make It Native. The following list explains which version to use:
 
-* **Latest Mendix Version - 11.1.0** - Latest version of Make It Native ([Android](https://play.google.com/apps/testing/com.mendix.developerapp.mx10), [iOS](https://testflight.apple.com/join/bQfLf27w))
+* **Latest Mendix Version - 11.1.0 to 11.x.x** - Latest version of Make It Native ([Android](https://play.google.com/apps/testing/com.mendix.developerapp.mx10), [iOS](https://testflight.apple.com/join/bQfLf27w))
 * **10.24.x** - Make It Native LTS ([Android](https://play.google.com/store/apps/details?id=com.mendix.developerapp.mx10), [iOS](https://apps.apple.com/app/make-it-native-10/id6450037464))
 * **10.6.x to 10.23.x** – These versions are no longer supported by Make It Native. Please make your own [custom MIN app](/refguide/mobile/distributing-mobile-apps/use-min-older-sp/) from open source.
 * **Other** – [Creating a Custom Developer App](/refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/) or [Building Your Own Make It Native App](https://github.com/mendix/make-it-native)

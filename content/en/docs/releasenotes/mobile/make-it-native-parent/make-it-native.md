@@ -8,13 +8,13 @@ description: "These release notes showcase each release of the iOS and Android M
 
 Depending on the Mendix version your app is developed in and the device you want to run on, you need a different Make It Native app. For more information on how to download the correct version, see the [Getting the Make It Native App](/refguide/mobile/getting-started-with-mobile/prerequisites/#get-min-app) section in *Native App Prerequisites and Troubleshooting*.
 
-## Make It Native 11.1.0
+## Android 11.1.0 / iOS 11.1.0
 
 **Release date: July 31, 2025**
 
 * Renamed the app to "Make It Native" and aligned its versioning with Studio Pro, so each Studio Pro version (e.g., 11.1.x) now uses the matching Make It Native version (e.g., 11.1.x).
 
-## Make It Native 10.24.0
+## Android 10.24.0 / iOS 10.24.0
 
 **Release date: July 31, 2025**
 
