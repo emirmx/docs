@@ -7,6 +7,7 @@ description: "Describes the Conversational UI marketplace module that assists de
 aliases:
    - /appstore/modules/genai/conversational-ui/
    - /appstore/modules/genai/conversational-ui-module/conversational-ui/
+   - /appstore/modules/genai/conversational-ui-module/
 ---
 
 ## Introduction {#introduction}
@@ -45,7 +46,8 @@ The Conversational UI module provides the following functionalities:
 
 ### Limitations {#limitations}
 
-This module is intended to enable building chat interactions between a human user and an AI model. It is not designed for conversations between two human users.
+* This module is intended to simplify the process of building chat interactions between a human user and an AI model. It is not designed to support conversations between two human users.
+* Currently, the chat interface does not work out of the box in Studio Pro 11, Atlas 4, or in React client enabled with the **Atlas_Topbar** and **Atlas_Sidebar** layouts.
 
 ### Prerequisites {#prerequisites}
 
@@ -259,6 +261,10 @@ You may need to use the following classes when building a more complex custom pa
 | `card--full-height` | To be added to a `card` container, in case the chat interface snippet needs to be displayed as a card | 
 | `layoutgrid--full-height` | To be added to any layoutgrid (1 row is supported) around the chat UI components |
 | `dataview--display-contents` | To be added to any data view around chat components to prevent it from breaking the flex-flow on the page | 
+
+#### Using a Custom Layout
+
+If you are using a custom layout in your application, you may need to use a layout other than **Atlas_Default**. For such scenarios, the module provides **Layout_MasterBase**—a layout derived from **Atlas_Default** that is applied to every page in the module. You can modify the properties of the master layout to change its appearance. Note that you need to reapply these customizations after each marketplace update.
 
 ### Token Consumption Monitor Snippets {#snippet-token-monitor}
 

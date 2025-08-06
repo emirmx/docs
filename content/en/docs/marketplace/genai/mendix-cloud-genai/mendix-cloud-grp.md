@@ -66,6 +66,7 @@ The [Mendix Cloud GenAI connector](/appstore/modules/genai/mx-cloud-genai/MxGenA
 Mendix Cloud GenAI Resource Packs are available in the following regions of Mendix Cloud:
 
 * Europe (Frankfurt) - eu-central-1
+* Canada (Montreal) - ca-central-1
 
 ## Understanding Third-Party Requirements
 

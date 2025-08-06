@@ -19,4 +19,4 @@ numberless_headings: true
 
 ### Private PDF Document Generation Service
 
-The [PDF Document Generation](/appstore/modules/document-generation/) module now supports the use of [private PDF document generation service instances](/appstore/modules/private-document-generation-service/). This flexible solution is based on Docker, and is hosted and managed by you. It allows you to run your own version of the PDF Document Generation service with additional control and configuration options, and it specifically targets air-gapped apps, or tailored performance and data sharing requirements.
+The [PDF Document Generation](/appstore/modules/document-generation/) module now supports the use of [private PDF document generation service instances](/appstore/services/private-document-generation-service/). This flexible solution is based on Docker, and is hosted and managed by you. It allows you to run your own version of the PDF Document Generation service with additional control and configuration options, and it specifically targets air-gapped apps, or tailored performance and data sharing requirements.

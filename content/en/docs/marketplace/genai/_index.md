@@ -81,7 +81,7 @@ Mendix connectors offer direct support for the following models:
 | | Amazon Titan Image Generator G1 | Image generation | text | image | |
 | | Amazon Titan Embeddings Text v2 | Embeddings | text | embeddings| |
 | | Anthropic Claude 2.0, Anthropic Claude 2.1| Chat Completions | text, document | text | |
-| | Anthropic Claude 3 Sonnet, Anthropic Claude 3.5 Sonnet, Anthropic Claude 3.5 Sonnet v2, Anthropic Claude 3 Haiku, Anthropic Claude 3 Opus, Anthropic Claude 3.5 Haiku, Anthropic Claude 3.7 Sonnet  | Chat Completions | text, image, document | text | Function calling |
+| | Anthropic Claude 3 Sonnet, Anthropic Claude 3.5 Sonnet, Anthropic Claude 3.5 Sonnet v2, Anthropic Claude 3 Haiku, Anthropic Claude 3 Opus, Anthropic Claude 3.5 Haiku, Anthropic Claude 3.7 Sonnet, Anthropic Claude 4 Sonnet  | Chat Completions | text, image, document | text | Function calling |
 | | Cohere Command | Chat Completions | text, document | text | |
 | | Cohere Command Light | Chat Completions | text | text | |
 | | Cohere Command R, Cohere Command R+ | Chat Completions | text, document | text | Function calling |

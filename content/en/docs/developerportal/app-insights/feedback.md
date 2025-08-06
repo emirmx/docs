@@ -37,7 +37,7 @@ After a user reports feedback in the app using the feedback widget, they get an 
 * Submission date
 * Last activity on the feedback 
 
-##### What a User Can See on the Page
+##### What a User Cannot See on the Page
 
 * Metadata
 * Summary of the feedback that your team wrote
@@ -149,8 +149,9 @@ The **Feedback** tab shows the following items:
     * **Copy Link** ({{% icon name="hyperlink" %}}) – Click this button to copy the URL to the feedback. You can send the URL to other people.
     * **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) – Click this button to open a menu with the following items:
         * **Move** – Click this button to move the feedback to any other app of which you are a member. Whenever you move feedback, you also move all linked feedback. If you only want to move one feedback item, you need to unlink the feedback from the group first.
-        * **Create Story** – If your app is connected to [Epics](/developerportal/project-management/epics/) or [Jira](/developerportal/project-management/jira-connector/), clicking this button converts the feedback to a story on the designated board in Epics or Jira. Once the story is created, clicking this button brings you to the story on the board right away.
-        * **Delete** – Click this button to removee the feedback permanently from **Feedback**. The result is irreversible.
+        * **Create Story** – If your app is connected to [Epics](/developerportal/project-management/epics/) or [Jira](/developerportal/project-management/jira-connector/), clicking this button converts the feedback to a story on the designated board in Epics or Jira. Once the story is created, clicking this button brings you to the story on the board right away.    
+          You can also create feedback-based stories using Maia. For details, refer to the [Creating Stories with Maia](#create-with-maia) section.
+        * **Delete** – Click this button to remove the feedback permanently from **Feedback**. The result is irreversible.
     
 * **Last activity** – This shows when the last edit to the feedback was made.
 
@@ -197,6 +198,24 @@ The **Feedback** tab shows the following items:
 
 * **Communication** – This section shows all the comments on this feedback from your team. You can leave comments here and attach attachments to each comment. Comments submitted to this section are only visible to your team members.
 
+#### Creating Stories with Maia {#create-with-maia}
+
+You can use Maia to create a story based on one or more feedback items. To do that, follow these steps:
+
+1. Enable Maia in **Feedback**. To do that, access the {{% icon name="cog" %}}**Settings** menu, and toggle on the Maia option on the **Mendix AI Assistance** tab.
+2. Select a feedback item from the list.
+3. Click **Create Story**. The **Create Story** window is displayed.
+4. Click {{% icon name="sparkles" %}}**Create with Maia**. The **Create Story with Maia** window is displayed.
+5. Check the suggested story description.    
+   If you do not agree with the suggestion, click **Regenerate Response** to obtain a different suggestion.
+   If you agree with the suggestion, click **Apply to Story**.
+6. Check Maia's suggestions for the **Title**, **Type**, **Sprint**, and **Epic** fields, and edit them if necessary.
+7. Click **Create Story**. 
+
+A banner at the bottom of the window shows you that the story has been created. You can click **Open** to access the story on the **Planning** page.
+
+You can select several feedback items to create a story based on all of them.
+
 ### Reporter Comments Tab {#contact-reporter}
 
 The **Reporter Comments** tab allows you to read messages from the reporter and reply to them. Whenever the reporter sends a message, it is shown in this section. Once you reply to a message from the reporter, they receive an email. When multiple feedback items are linked, the system only sends an email to the reporter of this specific feedback item, not other associated feedback items in the same group.
@@ -209,7 +228,7 @@ From the [feedback details](#feedback-details) page, you can manage tags by clic
 
   {{< figure src="/attachments/developerportal/app-insights/feedback/tag-management-settings.png" alt="tag management setting" >}}
 
-  To create a new tag, do as follows:
+  To create a new tag, follow these steps:
 
   1. Click **Add Tag**. A text box appears, with a colored circle indicating the color of the new tag.
   2. In the text box, enter the name of the new tag.
