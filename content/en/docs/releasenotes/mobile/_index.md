@@ -7,6 +7,8 @@ cascade:
     - numberless_headings: true
 ---
 
+For details on maintaining native mobile apps see [/releasenotes/mobile/native-support/](Support Guidelines for Native Mobile Apps).
+
 This category includes the following release notes: 
 
 * Our [Make It Native Apps](/releasenotes/mobile/make-it-native-parent/) document links to all versions of the Make It Native app:
