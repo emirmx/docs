@@ -12,13 +12,13 @@ Depending on the Mendix version your app is developed in and the device you want
 
 **Release date: July 31, 2025**
 
-* Renamed the app to "Make It Native" and aligned its versioning with Studio Pro, so each Studio Pro version (e.g., 11.1.x) now uses the matching Make It Native version (e.g., 11.1.x).
+* Renamed the app to "Make It Native" and aligned its versioning with Studio Pro, so each Studio Pro version (for example, 11.1.x) now uses the matching Make It Native version (for example, 11.1.x).
 
 ## Android 10.24.0 / iOS 10.24.0
 
 **Release date: July 31, 2025**
 
-* Renamed the app to "Make It Native" and aligned its versioning with Studio Pro, so each Studio Pro version (e.g., 10.24.x) now uses the matching Make It Native version (e.g., 10.24.x).
+* Renamed the app to "Make It Native" and aligned its versioning with Studio Pro, so each Studio Pro version (for example, 10.24.x) now uses the matching Make It Native version (for example, 10.24.x).
 
 ## Android 5.0.2 / iOS 5.0.2
 
