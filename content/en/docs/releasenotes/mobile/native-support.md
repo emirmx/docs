@@ -40,4 +40,4 @@ Following this recommendation provides the following benefits:
 
 As an alternative, you can choose to skip every other MTS version and update your native mobile app once per year. With this approach, you must still update to the LTS version as soon as it is released.
 
-Consider this update path as an example of what you could do: Mendix 10 LTS → Second Mendix 11 MTS → Mendix 11 LTS
+Consider this update path as an example of what you could do: Mendix 10 LTS {{% icon name="chevron-right" %}} Second Mendix 11 MTS {{% icon name="chevron-right" %}} Mendix 11 LTS
