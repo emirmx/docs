@@ -201,8 +201,8 @@ export async function Hello(message) {
 
 ## Read More
 
-* [JavaScript Action Call](/refguide/javascript-action-call/)
+* [Call JavaScript Action](/refguide/call-javascript-action/)
 * [Nanoflows](/refguide/nanoflows/)
 * [Build JavaScript Actions](/howto/extensibility/build-javascript-actions/)
-* [Java Action Call](/refguide/java-action-call/)
-* [Microflow Call](/refguide/microflow-call/)
+* [Call Java Action](/refguide/call-java-action/)
+* [Call Microflow](/refguide/call-microflow/)

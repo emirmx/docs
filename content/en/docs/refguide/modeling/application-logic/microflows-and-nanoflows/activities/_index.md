@@ -39,13 +39,13 @@ Most activities can be used in both microflows and nanoflows. However, some can 
 | {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/create-list.png" alt="create list" link="/refguide/create-list/" max-width=65% class="no-border" >}} | [Create list](/refguide/create-list/) | Creates a (empty) list variable. |
 | {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/list-operation.png" alt="list operation" link="/refguide/list-operation/" max-width=65% class="no-border" >}} | [List operation](/refguide/list-operation/) | Combines or compares two lists with objects of the same entity. |
 
-## Action Call Activities
+## Call Activities
 
-[Action call activities](/refguide/action-call-activities/) can be used to call another microflow or to call a Java action.
+[Call activities](/refguide/call-activities/) can be used to call another microflow, or to call a Java or JavaScript action.
 
 | Graphic | Name | Description |
 | --- | --- | --- |
-| {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/call-java-action.png" alt="Java action call" link="/refguide/java-action-call/" max-width=65% class="no-border" >}} | [Call Java action](/refguide/java-action-call/) (microflows only) | Calls a Java action. Arguments can be passed to the action and the result can be stored in a variable. |
+| {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/call-java-action.png" alt="Java action call" link="/refguide/Call-Java-action/" max-width=65% class="no-border" >}} | [Call Java action](/refguide/call-java-action) (microflows only) | Calls a Java action. Arguments can be passed to the action and the result can be stored in a variable. |
 | {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/call-javascript-action.png" alt="javascript action call" link="/refguide/javascript-action-call/" max-width=65% class="no-border" >}} | [Call JavaScript action](/refguide/javascript-action-call/) (nanoflows only) | Calls a JavaScript action. Arguments can be passed to the action and the result can be stored in a variable. |
 | {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/call-microflow.png" alt="microflow call" link="/refguide/microflow-call/" max-width=65% class="no-border" >}} | [Microflow call](/refguide/microflow-call/) | Calls a microflow. Arguments can be passed to the microflow and the result can be stored in a variable. |
 

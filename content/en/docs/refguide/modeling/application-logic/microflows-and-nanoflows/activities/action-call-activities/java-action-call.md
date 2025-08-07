@@ -1,7 +1,9 @@
 ---
-title: "Java Action Call"
-url: /refguide/java-action-call/
+title: "Call Java Action"
+url: /refguide/call-java-action/
 weight: 10
+aliases:
+   - /refguide/java-action-call/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -19,7 +21,7 @@ There are two sets of properties for this activity, those in the dialog box on t
 
 {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/action-call-activities/java-action-call/java-action-call-properties.png" alt="Java Action Call Properties" max-width=80% class="no-border" >}}
 
-The **Java action call** properties pane consists of the following sections:
+The **Call Java action** properties pane consists of the following sections:
 
 * [Action](#action)
 * [Common](#common)

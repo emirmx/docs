@@ -315,7 +315,7 @@ Java action calls point to a specific Java action and have a parameter mapping w
 
 | Studio Pro Guide | Model SDK API docs |
 | --- | --- |
-| [Java Action Call](/refguide/java-action-call/) |[JavaAction](https://apidocs.rnd.mendix.com/modelsdk/latest/classes/javaactions.javaaction.html) |
+| [Call Java Action](/refguide/call-java-action/) |[JavaAction](https://apidocs.rnd.mendix.com/modelsdk/latest/classes/javaactions.javaaction.html) |
 | |[JavaActionParameter](https://apidocs.rnd.mendix.com/modelsdk/latest/classes/javaactions.javaactionparameter.html) |
 | |[JavaActionCallAction](https://apidocs.rnd.mendix.com/modelsdk/latest/classes/microflows.javaactioncallaction.html) |
 | |[JavaActionParameterMapping](https://apidocs.rnd.mendix.com/modelsdk/latest/classes/microflows.javaactionparametermapping.html) |
