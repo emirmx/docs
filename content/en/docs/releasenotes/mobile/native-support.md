@@ -1,6 +1,7 @@
 ---
 title: "Support Guidelines for Native Mobile"
 url: /releasenotes/mobile/native-support/
+description: "These guidlines explain the support guidelines specific to native mobile applications."
 weight: 5
 ---
 
