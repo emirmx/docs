@@ -301,9 +301,9 @@ The chat UI snippets from this module rely on the height property of the parent 
 
 #### Solution 
 
-Make sure that any custom containers and layout grids that were added on your page (or the page layout for that matter) around the Conversational UI components have their `height` property defined. Useful helper classes that could be used for this are `chat-container`, `chat-card--full-height`, and `layoutgrid--full-height`. 
+Make sure that any custom containers and layout grids that were added on your page (or the page layout for that matter) around the Conversational UI components have their `height` property defined. Useful helper classes that could be used for this are `chat-container`, `chat-card--full-height`, `chat-page--fullheight` and `layoutgrid--full-height`. 
 
-If needed, verify that no data view widget is breaking the flow; for example, use `dataview--display-contents`. See the example page `ConversationalUI_FullScreenChat` for a basic implementation of the mentioned elements.
+If needed, verify that no data view widget is breaking the flow; for example, use `dataview--display-contents` or `chat-dataview--display-contents` and set the Direction to `Vertical` and Footer to `No Footer`. See the example page `ConversationalUI_FullScreenChat` for a basic implementation of the mentioned elements.
 
 ### Cannot Export Usage Data for the Token Consumption Monitor
 
