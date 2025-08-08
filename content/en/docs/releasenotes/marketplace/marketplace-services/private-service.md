@@ -7,11 +7,12 @@ weight: 20
 numberless_headings: true
 ---
 
-## 1.0.0
+## 1.0.1
 
-**Release date: August 06, 2025**
+**Release date: August 08, 2025**
 
-* We improved requests validation
+* We improved request validation
+* We improved error handling
 
 ## 1.0.0
 
