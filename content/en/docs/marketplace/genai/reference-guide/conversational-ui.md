@@ -297,30 +297,13 @@ The messages that are sent and received do not show up in the user interface, ev
 
 #### Cause 
 
-The chat UI snippets from this module rely on the height property of the parent element(s) to be defined. Any additional custom containers around the Conversational UI components might cause the `messages-container` element to shrink to zero height, which makes the messages disappear even in successful interactions.
+The chat UI snippets from this module rely on the height property of the parent element(s) to be defined. Any additional custom containers around the Conversational UI components might cause the `messages-container` element to shrink to zero height, which makes the messages disappear even in successful interactions. 
 
 #### Solution 
 
 Make sure that any custom containers and layout grids that were added on your page (or the page layout for that matter) around the Conversational UI components have their `height` property defined. Useful helper classes that could be used for this are `chat-container`, `chat-card--full-height`, and `layoutgrid--full-height`. 
 
 If needed, verify that no data view widget is breaking the flow; for example, use `dataview--display-contents`. See the example page `ConversationalUI_FullScreenChat` for a basic implementation of the mentioned elements.
-
-#### Example implementation of a full-screen chat
-
-Step 1:
-Add a container with the class `chat-page--fullheight` to the page.
-
-Step 2:
-Add a Data View inside container, set the Direction to `Vertical` and Footer to `No Footer`.
-
-Step 3:
-Add the class `chat-dataview--display-contents` to the data view.
-
-Step 4:
-Inside the data view, add another container with the classes `card chat-container`.
-
-Verticall centered chat layout:
-Replace in Step 1 the class with `chat-page--fullheight-centered`
 
 ### Cannot Export Usage Data for the Token Consumption Monitor
 
