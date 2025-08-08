@@ -186,7 +186,7 @@ The example skips many features you would want to add to a real app, but is desi
 
 ### XPath in Microflow
 
-Firstly, a reminder of how this XPath could be implemented in a Retrieve activity. You can use this XPath in a Retrieve activity in a microflow using the following steps:
+Firstly, a reminder of how this XPath could be implemented in a Retrieve object(s) activity. You can use this XPath in a Retrieve object(s) activity in a microflow using the following steps:
 
 1. Create a new microflow in the **Products** module and name it *ListWithRetrieve*.
 2. Add a **Retrieve** activity and configure it as follows:

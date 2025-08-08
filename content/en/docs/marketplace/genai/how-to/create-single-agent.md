@@ -103,7 +103,7 @@ Mendix ticket data needs to be ingested into the knowledge base. You can find a 
 5. In `Tickets_CreateDataset`, open the `Retrieve Ticket from database` action and reselect the entity `Ticket`. Open the `Import from JSON` action and select the **IM_Ticket**.
 
 6. In the `ACT_TicketList_LoadAllIntoKnowledgeBase`:
-    * Edit the first retrieve action to retrieve objects from your new entity `Ticket`.
+    * Edit the first retrieve object(s) activity to retrieve objects from your new entity `Ticket`.
     * In the loop, delete the second action that adds metadata to the `MetadataCollection`.
     * In the last action of the loop `Chunks: Add KnowledgeBaseChunk to ChunkCollection` keep the **Human readable ID** field empty.
 

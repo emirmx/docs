@@ -87,7 +87,7 @@ After you configure the authentication profile for AWS IoT TwinMaker, you can im
 21. In the **Toolbox** pane, search for the **Retrieve** activity and drag it onto the microflow area.
 22. Position the **Retrieve** activity between the **ListWorkspaces** activity and the microflow end event.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/aws-iot-twinmaker/microflow.png" alt="The microflow with the Retrieve activity added" class="no-border" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/aws-iot-twinmaker/microflow.png" alt="The microflow with the Retrieve object(s) activity added" class="no-border" >}}
 
 23. Double-click the **Retrieve** activity.
 24. In the **Association** section, click **Select**, and then select **ListWorkspacesResponse_WorkspaceSummary** as the association.

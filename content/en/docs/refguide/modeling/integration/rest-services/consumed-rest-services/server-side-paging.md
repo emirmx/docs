@@ -10,7 +10,7 @@ aliases:
 
 ## Introduction
 
-Using server-side paging and sorting for a microflow data source, you can model out how you retrieve data to a single page and ensure it ends up in the correct sorting order. With this approach, you do not need to return all the data to the client — you can just return a single page. This can be helpful for getting data from external sources like a REST service, but can also be useful for a regular retrieve activity in a microflow. To do this, you must model the logic for getting the correct data in the microflow itself.
+Using server-side paging and sorting for a microflow data source, you can model out how you retrieve data to a single page and ensure it ends up in the correct sorting order. With this approach, you do not need to return all the data to the client — you can just return a single page. This can be helpful for getting data from external sources like a REST service, but can also be useful for a regular retrieve object(s) activity in a microflow. To do this, you must model the logic for getting the correct data in the microflow itself.
 
 This how-to teaches you how to do the following:
 

@@ -108,7 +108,7 @@ After you configure the authentication profile for Amazon DynamoDB, you can impl
 23. In the **Toolbox** pane, search for the **Retrieve** activity and drag it onto the microflow area.
 24. Position the **Retrieve** activity between the **ListTables** activity and the microflow end event.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/aws-dynamodb/microflow.png" alt="The microflow with the Retrieve activity added" class="no-border" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/aws-dynamodb/microflow.png" alt="The microflow with the Retrieve object(s) activity added" class="no-border" >}}
 
 25. Double-click the **Retrieve** activity.
 26. In the **Association** section, click **Select**.

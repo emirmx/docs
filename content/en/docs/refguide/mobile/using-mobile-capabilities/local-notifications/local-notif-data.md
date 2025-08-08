@@ -116,7 +116,7 @@ To make your page, do the following:
 Next you will learn how to pass data to pages after you have tapped a notification. First, make a nanoflow:
 
 1. Create a nanoflow named *ACT_PassGUIDToNotification*.
-2. Add a retrieve action to your nanoflow, set **Source** to **From Database**, and set **Range** to **First**. Click **Entity** > **Select** and select the **TestEntity**. In **Object name** type *FirstTestEntityObject*. Then click **OK**. This will be the object that gets the GUID: 
+2. Add a retrieve object(s) activity to your nanoflow, set **Source** to **From Database**, and set **Range** to **First**. Click **Entity** > **Select** and select the **TestEntity**. In **Object name** type *FirstTestEntityObject*. Then click **OK**. This will be the object that gets the GUID: 
 
     {{< figure src="/attachments/howto/mobile/native-mobile/implementation/notifications/local-notif-parent/local-notif-data/retrieve-object.png" alt="retrieve object" class="no-border" >}}
 
