@@ -7,6 +7,15 @@ weight: 20
 numberless_headings: true
 ---
 
+## 1.0.1
+
+**Release date: August 08, 2025**
+
+With this version of the private PDF Document Generation service, we have improved the following:
+
+* Request validation
+* Error handling
+
 ## 1.0.0
 
 **Release date: June 27, 2025**
