@@ -11,7 +11,7 @@ description: "Native Template 11 release notes."
 
 ### Fixes
 
-* We fixed a problem that caused SVGs to crash when using **borderRadius**. This was resolved by upgrading to version 15.11.2.
+* We have fixed a problem that caused SVGs to crash when using borderRadius. This was resolved by upgrading react-native-svg version to 15.11.2.
 
 ## 11.0.6 {#1005}
 
