@@ -10,6 +10,7 @@ aliases:
 ---
 
 ## 1. Introduction 
+
 This guide is a continuation of part one, and in it, you will recreate the web application you created in part one as a native mobile application.  The guide aims to get you started with Mendix Native Mobile and walks you through the steps on how to develop your first native app using the Studio Pro IDE.
 
 By following this guide, you will:
@@ -32,7 +33,11 @@ The Mendix Platform enables you to build apps of many different kinds, including
 
 ## 3. Prerequisites
 
-Before you begin, we advise completing part one of this guide. You will also need to **download** and **install** the [Make it Native App](https://docs.mendix.com/refguide/mobile/getting-started-with-mobile/prerequisites/#get-min-app) on your mobile device to test your app on a device.
+Before starting this tutorial, make sure you have completed the following prerequisites:
+* Download and install the [Make It Native](/refguide/getting-the-make-it-native-app/) app on your mobile device
+* Complete part one of this guide series, [Building a Responsive Web App](/quickstarts/responsive-web-app/)
+* If you are working on a Mac, complete [Configuring Parallels](/refguide/using-mendix-studio-pro-on-a-mac/) to install Studio Pro on your Mac
+
 
 ## 4. Creating the App
 

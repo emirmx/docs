@@ -57,10 +57,10 @@ During a [maintenance window](/developerportal/deploy/maintenance-windows/), you
 In the **Application Status** section of the **General** tab, you can find the following information about your environment:
 
 * **Status**
-    * {{% icon name="checkmark-circle-filled" color="green" %}} – The application in this environment is running.
-    * {{% icon name="subtract-circle-filled" color="gray" %}} – No application has been started yet in this environment, or it has been turned off.
-    * {{% icon name="alert-circle-filled" color="yellow" %}} – The application in this environment is experiencing some difficulties; check the alerts page or logs for more information.
-    * {{% icon name="remove-circle-filled" color="red" %}} – The application in this environment is unstable and probably not usable anymore.
+    * {{% icon name="checkmark-circle-filled" color="green" %}} – The application in this environment is running without any alerts.
+    * {{% icon name="subtract-circle-filled" color="gray" %}} – No application has been started yet in this environment, or the application has been turned off.
+    * {{% icon name="alert-circle-filled" color="yellow" %}} – The application in this environment is running, but has warning alerts, which might result in difficulties. For more information, refer to the [alerts page](/developerportal/operate/monitoring-application-health/#alerts-page) or [logs](/developerportal/operate/logs/).
+    * {{% icon name="remove-circle-filled" color="red" %}} – The application in this environment is running, but has critical alerts, which might make it unstable and unusable. Refer to the [alerts page](/developerportal/operate/monitoring-application-health/#alerts-page) or [logs](/developerportal/operate/logs/) for more information.
 * **Running since** – the date the app was started, if it is running
 * **Name** – the type of environment (Acceptance, Production, Test, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments)); for more information, see the [Naming of Environments](#naming) section below
 * **URL** – the URL of the app
@@ -488,9 +488,12 @@ Click **Add** and select **Supported** to choose from the following variables:
 * **JVM_GARBAGE_COLLECTOR** – This overrides the automatic configuration of the Java garbage collector. Accepted values are `Serial` or `G1`.
 * **METRICS_AGENT_CONFIG** – This passes a configuration JSON to control the metrics passed to Datadog.
 * **SAMESITE_COOKIE_PRE_MX812** – This sets `SameSite=None;Secure` for all cookies coming from the Mendix runtime, as described in the [Running Your App in an Iframe](#iframe) section.
-* **USAGE_METRICS_EMAIL_FIELDS** – If your app uses specializations of the `System.User` entity to store users, use this variable to point to them. This enables Mendix to identify [internal and external users](/developerportal/deploy/populate-user-type/) of your app.
+* **USAGE_METRICS_EMAIL_FIELDS** (deprecated) – If your app uses specializations of the `System.User` entity to store users, use this variable to point to them. This enables Mendix to identify [internal and external users](/developerportal/deploy/populate-user-type/) of your app.
+
     * The value of this variable is in the format `Module.Entity.Attribute`, where `Module` is the module of your app that contains the `Entity` that is a specialization of `System.User` and `Attribute` is the attribute that contains the email address of the user.
     * If you have multiple specializations of `System.User`, you can specify the values in comma-separated format (that is, `Module1.Entity1.Attribute1,Module2.Entity2.Attribute2,…,ModuleN.EntityN.AttributeN`). In the following example, there are two specializations identified: `Administration.Account.Email,MendixSSO.MendixSSOUser.EmailAddress`.
+
+    To ensure accurate user metering, it is important to distinguish external users from internal users. The recommended approach is to implement logic in your app to classify users (see [Populate User Types](/developerportal/deploy/populate-user-type/) and the [User Classification](/appstore/modules/user-classification/) module). A previous method relied on using email domains via the `USAGE_METRICS_EMAIL_FIELDS` constant, as described above. However, this method has now been deprecated. 
 
 To support features that are in beta, click **Add** and select **Unsupported**. Then, you can add an unsupported environment variable. Unsupported environment variables can only be used for controlling Mendix beta features. If you are involved in using a beta feature, you will be informed what **Name** and **Value** to enter.
 

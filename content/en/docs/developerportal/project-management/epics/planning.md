@@ -31,10 +31,9 @@ In the upper-left corner of the page, you can use the search box to search stori
 In the upper-right corner of the page, you can see two buttons:
 
 * **Create Story** – Clicking this enables you to create a new story.    
-    You can also use **Maia Create User Story**, an AI-assisted tool, to create a user story for you. To access it, click **Create Story**, then choose the **Create with Maia** option.    
-    Note that this option is disabled by default. To enable it, open the **Settings** by clicking the **...** button next to **Create Story**, then, on the **Mendix AI Assistance** tab, toggle the option on. Only Scrum Masters can modify this setting.
+    You can also use Maia to create a story. Refer to the [Creating and Refining Stories with Maia](#create-with-maia) section.
 
-* **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) – Clicking this shows the following options:
+* **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) – Clicking this displays the following options:
     * **Create Epic** – This enable you to create an epic.
     * **Edit Sprint** (only available for [a Scrum workflow](#scrum-planning)) – This enables you to edit the current Sprint.
     * **End Sprint** (only available for [a Scrum workflow](#scrum-planning)) – This enables you to the current Sprint.
@@ -44,7 +43,22 @@ In the upper-right corner of the page, you can see two buttons:
     * **Board Settings** – Clicking this enables you configure the board settings.
         * For more information, see the [Board Settings](#settings) section.
 
-### Selecting, Moving, Archiving, and Deleting Stories 
+## Creating and Refining Stories with Maia {#create-with-maia}
+
+Follow these steps to create a story with Maia:
+
+1. Enable Maia in Epics. To do that:
+    
+    1. Click the **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) button and select **Settings**.
+    2. On the **Mendix AI Assistance** tab, toggle the option on.
+{{% alert color="info" %}}Only Scrum Masters can modify this setting.{{% /alert %}}
+2. Click **Create Story**, then click {{% icon name="sparkles" %}}**Create with Maia**. The **Maia Create Story** window is displayed.
+3. Enter your input, then click **Generate Story**.
+4. Check the suggestion provided by Maia. You can click **Apply to Story** if you agree with the suggestion, or you can choose to regenerate it.
+
+To refine an existing story using Maia, open it, and click **Refine with Maia** ({{% icon name="sparkles" %}}).
+
+## Selecting, Moving, Archiving, and Deleting Stories 
 
 To select a story, select the checkbox for the story when the mouse pointer becomes a pointing hand:
 

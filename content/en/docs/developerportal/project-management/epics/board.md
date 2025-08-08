@@ -10,20 +10,35 @@ The **Board** page gives an overview of all the stories that your team is curren
 
 In the upper-right corner of the page, you can find the following items:
 
-* **Create Story** – Enables you to create a new story.    
-    You can also use **Maia Create User Story**, an AI-assisted tool, to create a user story for you. To access it, click **Create Story**, then choose the **Create with Maia** option.    
-    Note that this option is disabled by default. To enable it, open the **Settings** by clicking the **...** button next to **Create Story**, then, on the **Mendix AI Assistance** tab, toggle the option on. Only Scrum Masters can modify this setting.
+* **Create Story** — Enables you to create a new story.    
+    You can also use Maia to create a story. Refer to the [Creating and Refining Stories with Maia](#create-with-maia) section.
 
-* **Create Epic** – Enables you to create a new epic.
+* **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) — Clicking this displays the following options:
 
-* **Settings** — Enables you to configure board settings, as follows:
+    * **Create Epic** — Enables you to create a new epic.
+    * **Settings** — Enables you to configure board settings, as follows:
 
-    * Configure tags.
-    * Switch between the Scrum and Kanban board types.
-    * Configure toast notifications.
-    * Choose whether to use Maia in Epics.
+        * Configure tags.
+        * Switch between the Scrum and Kanban board types.
+        * Configure toast notifications.
+        * Choose whether to use Maia in Epics.
   
-* Search box – You can search stories based on story title, tags, epic name, assignee (including unassigned stories), and story ID. You can use the search box in combination with the filter.
+* Search box — You can search stories based on story title, tags, epic name, assignee (including unassigned stories), and story ID. You can use the search box in combination with the filter.
+
+## Creating and Refining Stories with Maia {#create-with-maia}
+
+Follow these steps to create a story with Maia:
+
+1. Enable Maia in Epics. To do that:
+    
+    1. Click the **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) button and select **Settings**.
+    2. On the **Mendix AI Assistance** tab, toggle the option on.
+{{% alert color="info" %}}Only Scrum Masters can modify this setting.{{% /alert %}}
+2. Click **Create Story**, then click {{% icon name="sparkles" %}}**Create with Maia**. The **Maia Create Story** window is displayed.
+3. Enter your input, then click **Generate Story**.
+4. Check the suggestion provided by Maia. You can click **Apply to Story** if you agree with the suggestion, or you can choose to regenerate it.
+
+To refine an existing story using Maia, open it, and click **Refine with Maia** ({{% icon name="sparkles" %}}).
 
 ## Swimlanes {#swimlane}
 
