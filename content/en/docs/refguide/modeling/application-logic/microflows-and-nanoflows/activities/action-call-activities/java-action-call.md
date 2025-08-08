@@ -13,13 +13,13 @@ This activity can only be used in microflows.
 
 ## Introduction
 
-The **Java action call** activity can be used to call a [Java action](/refguide/java-actions/). Arguments can be passed to the action and the result can be stored.
+The **Call Java action** activity can be used to call a [Java action](/refguide/java-actions/). Arguments can be passed to the action and the result can be stored.
 
 ## Properties
 
 There are two sets of properties for this activity, those in the dialog box on the left, and those in the properties pane on the right:
 
-{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/action-call-activities/java-action-call/java-action-call-properties.png" alt="Java Action Call Properties" max-width=80% class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/action-call-activities/java-action-call/java-action-call-properties.png" alt="Call Java Action Properties" max-width=80% class="no-border" >}}
 
 The **Call Java action** properties pane consists of the following sections:
 
