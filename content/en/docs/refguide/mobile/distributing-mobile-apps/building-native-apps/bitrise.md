@@ -50,11 +50,6 @@ To set up your build project, do the following:
     {{< figure src="/attachments/refguide/mobile/distributing-mobile-apps/building-native-apps/bitrise/select-repository.png" alt="Select repository" width="350" class="no-border" >}}
 
 1. Select the `master` branch and let Bitrise auto-detect the configuration.
-
-   {{% alert color="warning" %}}
-   Versions of Xcode 16.3 and above are not supported. Select XCode 16.2 or below in the **Build Stack** when targeting iOS. For more information, see see [Bitcode Deprecation](/refguide/mobile/introduction-to-mobile-technologies/native-mobile/#bitcode-deprecation)
-   {{% /alert %}} 
-
 1. Confirm that the correct configuration has been detected:
    * Project type: `React Native`
    * Project directory: `.`
