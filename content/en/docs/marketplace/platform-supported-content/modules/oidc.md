@@ -537,7 +537,7 @@ By default, end-users are provisioned using the `Administration.Account` entity.
 
 #### Deploy-time Configuration of End-user Onboarding{#custom-provisioning-dep}
 
-You can set up custom user provisioning by setting constants when you deploy your app. You do not need a local MxAdmin user to do the necessary configurations. This is an automatable configuration in the CICD pipeline. However, the configuration has the following limitations compared to setting up provisioning using a microflow or changing the settings at runtime:
+You can set up custom user provisioning by setting constants when you deploy your app. You do not need a local MxAdmin user to do the necessary configurations. This is an automatable configuration in the CI/CD pipeline. However, the configuration has the following limitations compared to setting up provisioning using a microflow or changing the settings at runtime:
 
 * You need to restart your app to apply changes to the constants
 * You cannot set custom mapping of IdP claims to attributes of your custom user entity

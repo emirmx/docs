@@ -71,6 +71,8 @@ This diagram illustrates the LTS concept with version and [end of support](#end)
 
 {{% alert color="info" %}}For details on extending support for an older major version, see the [Extended Support](/support/#extended-support) section in *Mendix Support*.{{% /alert %}}
 
+{{% alert color="info" %}}For details on the shorter support durations of native mobile apps, see [Support Guidelines for Native Mobile](/releasenotes/mobile/native-support/). We recommend updating native apps a bit more often than other mobile apps so you can advantage of evolving features. {{% /alert %}}
+
 ### Release Cycle
 
 An LTS starts with the release of a new higher major version for general availability. For a description of Mendix’s major release cadence, see the [Major Version](#major-version) section above.

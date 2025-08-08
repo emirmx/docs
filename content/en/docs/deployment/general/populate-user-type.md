@@ -110,3 +110,8 @@ For more information, refer to the User Provisioning section of the following mo
 ## Assigning user types using Custom logic
 
 You can classify users as Internal or External using your own business rules instead of only roles or IAM settings. With the User Classification module and a microflow, you can combine conditions like email domains, roles, SSO/IAM attributes, or contract status. This gives maximum flexibility to handle complex or unique scenarios and ensures accurate Mendix user metering.
+
+## Read More
+
+* [User Classification Module](/appstore/modules/user-classification/)
+
