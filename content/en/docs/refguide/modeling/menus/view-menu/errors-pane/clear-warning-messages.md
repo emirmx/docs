@@ -24,7 +24,7 @@ Warning messages can be seen in the **Error List** tab of Studio Pro (by default
 
 If this tab is not visible, it can be displayed via the **View** menu by selecting the **Error List** option:
 
-{{< figure src="/attachments/refguide/modeling/menus/view-menu/errors-pane/clear-warning-messages/18579991.png" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/menus/view-menu/errors-pane/clear-warning-messages/error-list.png" width="250" >}}
 
 To get more information, double-click or right-click the warning.
 
