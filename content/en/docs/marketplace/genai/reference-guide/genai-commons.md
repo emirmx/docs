@@ -918,3 +918,7 @@ The process may look like this:
 3. Download the module from the marketplace; note that the module is from now on located under the “Marketplace modules” category in the app explorer.
 4. Test your application locally and verify that everything works as before.
 5. Restore lost data on deployed environments. Usually incoming associations to the protected modules need to be reset.
+
+### Error message after upgrade: 'attribute or reference required'
+
+If you encounter an error where 'an attribute or reference is required' after an update, first upgrade all modules via an right-click on the error and the upgrade DataWidgets another time. 
