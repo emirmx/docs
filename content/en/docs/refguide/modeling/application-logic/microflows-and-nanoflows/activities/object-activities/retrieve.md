@@ -22,7 +22,7 @@ An example of retrieve object(s) activity properties is represented in the image
 
 There are two sets of properties for this activity, those in the dialog box on the left, and those in the properties pane on the right.
 
-The retrieve properties pane consists of the following sections:
+The retrieve object(s) properties pane consists of the following sections:
 
 * [Action](#action)
 * [Common](#common)
