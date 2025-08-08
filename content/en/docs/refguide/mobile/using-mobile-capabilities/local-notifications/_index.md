@@ -14,12 +14,7 @@ aliases:
 
 These step-by-step guides teach you how to build local notifications for native mobile applications. Local notifications will only allow you to schedule and send notifications confined to one mobile device. 
 
-These notifications do not use an internet connection, therefore local notifications only work with the following types of apps:
-
-* Native app (offline profile)
-* PWA (offline profile)
-
-One use of a local notification might be an alarm app which sends a notification after an amount of time has elapsed.
+These notifications do not use an internet connection, making them useful for internal app use-cases. For example, a local notification might be an alarm app which sends a local notification after an amount of time has elapsed.
 
 These guides teach you how to do the following:
 
