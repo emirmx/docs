@@ -22,7 +22,7 @@ In your Mendix Pricing Plan there is a distinction between Internal and External
 
 ## Background
 
-Every Mendix app has a system module containing an entity `UserReportInfo`. This entity has an attribute `UserType` that is used to classify end-users as External or Internal Users. This attribute needs to be maintained for all existing and new end-users of a Mendix app. If this attribute is not set, the end-user is classified as an Internal User.
+Every Mendix app has a system module containing an entity `UserReportInfo`. This entity has an attribute `UserType` that is used to classify end-users as `External` or `Internal` Users. This attribute needs to be maintained for all existing and new end-users of a Mendix app. If this attribute is not set, the end-user is classified as an Internal User.
 
 The *Mendix Metering* module relies on this attribute to ascertain the end-user type and report it back to us.
 
@@ -45,7 +45,7 @@ Therefore, the approach we take is to create a new non-persistable entity, `User
 
 {{< figure src="/attachments/deployment/general/populate-user-type/usertypereport-properties.png" class="no-border" >}}
 
-### Populating **UserType** for Existing Users of an App {#using-microflow}
+### Populating `UserType` for Existing Users of an App {#using-microflow}
 
 1. Create a microflow `User_RetrieveOrCreateUserReportInfo` which will ensure that a `UserReportInfo` object exists for a given `User`.
 
@@ -80,16 +80,18 @@ Therefore, the approach we take is to create a new non-persistable entity, `User
 
 7. The report can be exported into an Excel file.
 
-## Assigning User Type based on User roles
+## Assigning `UserType` based on User roles
 
-Instead of checking email domains or writing microflows, you can classify users as Internal or External using roles in the User Classification module. To do this:
+Instead of writing microflows, you can classify users as Internal or External using roles in the User Classification module. To do this:
 
-1. Define roles like InternalRole (for employees) and ExternalRole (for partners/customers).
-2. Use the [User Classification]() module to map these roles to the UserType field in UserReportInfo.
+1. Define roles like `ExternalRole` or other custom roles.
+2. Use the [User Classification](/appstore/modules/user-classification/) module to map these roles to the `UserType` field in the `UserReportInfo`.
 3. When a role is assigned to a user, the UserType updates automatically.
 4. This approach is simpler, more consistent, and easier to maintain than attribute-based logic.
 
-## Assigning UserType for Existing Users of IAM Modules
+For more information, see the [Role-based Classification](/appstore/modules/user-classification/#role-based-classification) section of *User Classification*.
+
+## Assigning `UserType` for Existing Users of IAM Modules
 
 The simplest method to set the user type is by using the Identity and Access Management (IAM) modules, which require only configuration without the need to develop a microflow. Mendix offers you the following IAM modules:
 
@@ -99,7 +101,7 @@ The simplest method to set the user type is by using the Identity and Access Man
 
 Alternatively, you can build a custom microflow as described in the [Populating UserType for Existing Users of an App](#using-microflow) section below.
 
-When connecting your app with an IdP, set up the user type through the capabilities of the OIDC SSO, SCIM, or SAML module. The user type is now configured in the User Provisioning, which is integrated into the OIDC SSO, SCIM, and SAML modules. This means you can directly configure end-users of your application as `internal` or `external` in the **User Provisioning** tab of your app. Based on this configuration, users are updated each time they log in. These modules allow you to set the user type per IdP as the source of your end-users, assuming that separate IdPs are used for `internal` and `external` users.
+When connecting your app with an IdP, set up the user type through the capabilities of the OIDC SSO, SCIM, or SAML module. The user type is now configured in the User Provisioning, which is integrated into the OIDC SSO, SCIM, and SAML modules. This means you can directly configure end-users of your application as `Internal` or `External` in the **User Provisioning** tab of your app. Based on this configuration, users are updated each time they log in. These modules allow you to set the user type per IdP as the source of your end-users, assuming that separate IdPs are used for `internal` and `external` users.
 
 For more information, refer to the User Provisioning section of the following modules:
 
@@ -107,11 +109,10 @@ For more information, refer to the User Provisioning section of the following mo
 * [SCIM](/appstore/modules/scim/#user-provisioning)
 * [SAML](/appstore/modules/saml/#custom-provisioning-rt)
 
-## Assigning user types using Custom logic
+## Assigning `UserTypes` Using Custom logic
 
-You can classify users as Internal or External using your own business rules instead of only roles or IAM settings. With the User Classification module and a microflow, you can combine conditions like email domains, roles, SSO/IAM attributes, or contract status. This gives maximum flexibility to handle complex or unique scenarios and ensures accurate Mendix user metering.
+You can classify users as `Internal` or `External` using your own business rules instead of only roles or IAM settings. With the User Classification module and a microflow, you can combine conditions like email domains. This gives maximum flexibility to handle complex or unique scenarios and ensures accurate Mendix user metering. For more information, see the [Custom Classification](/appstore/modules/user-classification/#custom-classification) section of *User Classification*.
 
 ## Read More
 
 * [User Classification Module](/appstore/modules/user-classification/)
-
