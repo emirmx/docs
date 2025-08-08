@@ -5,7 +5,7 @@ weight: 100
 ---
 
 {{% alert color="info" %}}
-This page describes the **Call workflow** activity you can use in your [workflow](/refguide/workflow-elements/). Looking for information on the **Call workflow** activity for [microflows](/refguide/workflow-activities/) instead? See [Call workflow](/refguide/workflow-call/).
+This page describes the **Call workflow** activity you can use in your [workflow](/refguide/workflow-elements/). Looking for information on the **Call workflow** activity for [microflows](/refguide/workflow-activities/) instead? See [Call workflow](/refguide/call-workflow/).
 {{% /alert %}}
 
 ## Introduction

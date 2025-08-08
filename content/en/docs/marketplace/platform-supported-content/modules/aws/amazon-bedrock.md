@@ -152,7 +152,7 @@ To build a simple microflow that uses the ChatCompletions operation to send a si
 
 1. Make sure that you [synced models](#sync-models) before running the microflow in the app.
 2. Create a new microflow and name it, for example, *AmazonBedrockChatCompletions*.
-3. Add a **Microflow call** from the **Toolbox** and choose microflow *AmazonBedrockConnector.BedrockDeployedModel_Get*
+3. Add a **Call microflow** activity from the **Toolbox** and choose microflow *AmazonBedrockConnector.BedrockDeployedModel_Get*
 4. Double-click it to configure its parameters.
     1. For the **ModelID** parameter, enter the model id of the LLM you want to send a message to. The model id of Claude 3.5 Sonnet is *anthropic.claude-3-5-sonnet-20240620-v1:0*.
     2. Click **OK**.

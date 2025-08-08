@@ -154,7 +154,7 @@ The final result for the function microflows used in this document can be found 
 
 1. Create a new microflow named `Ticket_GetNumberOfTicketsInStatus`. Add a *String* input parameter called `TicketStatus`.
 
-2. The model can now pass a status string to the microflow, but first convert the input into an enumeration. To achieve this, add a `Microflow call` action and create a new microflow named `Ticket_ParseStatus`. The input should be the same (*String* input `TicketStatus`).
+2. The model can now pass a status string to the microflow, but first convert the input into an enumeration. To achieve this, add a `Call Microflow` activity and create a new microflow named `Ticket_ParseStatus`. The input should be the same (*String* input `TicketStatus`).
 
 3. Inside of the sub-microflow, add a decision for each enumeration value and return the enumeration value in the **End event**. For example, the *Closed* value can be checked like this:
 

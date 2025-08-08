@@ -17,4 +17,4 @@ The following are the Call activities you can use in your microflow or nanoflow:
 ## Read More
 
 * [Activities](/refguide/activities/)
-* [Call Nanoflow](/refguide/nanoflow-call/)
+* [Call Nanoflow](/refguide/call-nanoflow/)

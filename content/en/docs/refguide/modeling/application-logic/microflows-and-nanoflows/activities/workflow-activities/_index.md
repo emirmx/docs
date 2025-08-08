@@ -15,7 +15,7 @@ The activities described in this document are in the **Workflow Activities** sec
 The following are the workflow activities you can use in your microflow:
 
 * [Apply jump-to option](/refguide/apply-jump-to-option/) – allows the workflow to continue from the selected workflow activity
-* [Call workflow](/refguide/workflow-call/) – calls a workflow
+* [Call workflow](/refguide/call-workflow/) – calls a workflow
 * [Change workflow state](/refguide/change-workflow-state/) – allows you to add **Abort**, **Continue**, **Pause**, **Restart**, and **Resume** operations to a workflow and control workflow instances
 * [Complete user task](/refguide/complete-user-task/) – sets which outcome the specified [user task](/refguide/user-task/) should follow
 * [Generate jump-to options](/refguide/generate-jump-to-options/) – generates a list of workflow activities as possible next steps where the workflow can jump to

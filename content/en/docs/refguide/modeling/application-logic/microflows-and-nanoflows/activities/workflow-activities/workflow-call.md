@@ -1,7 +1,9 @@
 ---
 title: "Call Workflow"
-url: /refguide/workflow-call/
+url: /refguide/call-workflow/
 weight: 10
+aliases:
+   - /refguide/workflow-call/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -48,7 +50,7 @@ The object which you want to use as a context. It should be of the entity type s
 
 ### Use Return Value 
 
-This property determines if the returned value from the called workflow should be available in the rest of the current microflow. If **Use return value** is set to **Yes**, you will need to fill in the [variable name](/refguide/microflow-call/#name) of the workflow object returned by the activity.
+This property determines if the returned value from the called workflow should be available in the rest of the current microflow. If **Use return value** is set to **Yes**, you will need to fill in the [variable name](/refguide/call-microflow/#name) of the workflow object returned by the activity.
 
 ### Variable Name {#name}
 
