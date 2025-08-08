@@ -67,11 +67,11 @@ Now, you can start calling the REST service from your microflow data source. To 
 
     {{< figure src="/attachments/refguide/modeling/integration/rest-services/consumed-rest-services/server-side-paging/call-rest-response.png" alt="variable result"   width="500"  class="no-border" >}}
 
-10. From the **Toolbox**, drag the **Retrieve** activity into the microflow and double-click it.
+10. From the **Toolbox**, drag the **Retrieve object(s)** activity into the microflow and double-click it.
 11. Click **Association** > **Select**.
 12. Click **Expand All** and select **JsonObject_Summary (List of NativeMobile.JsonObject)**. 
 13. Click **OK** to accept this association.
-14. Right-click the **Retrieve** activity and select **Set $JsonObjectList as return value**:
+14. Right-click the **Retrieve object(s)** activity and select **Set $JsonObjectList as return value**:
 
     {{< figure src="/attachments/refguide/modeling/integration/rest-services/consumed-rest-services/server-side-paging/call-rest-returned.png" alt="set return value"   width="500"  class="no-border" >}}
 

@@ -107,7 +107,7 @@ In some apps, it is necessary to evaluate large datasets in a microflow (for exa
 
 This section describes how Mendix Runtime optimizes **Aggregate list** activities with large datasets and some recommended approaches for optimization.
 
-When a database **Retrieve** activity is only used once in one **Aggregate list** activity, a custom range is not configured and the activity does not use an expression, the Mendix Runtime can automatically merge these two activities into a single action. This executes a single aggregate query on the database. So, if you retrieve all 100k log lines from a database and only do a count on the list, you will not receive a heap space. This is because the microflow never places all 100k records in memory.
+When a database **Retrieve object(s)** activity is only used once in one **Aggregate list** activity, a custom range is not configured and the activity does not use an expression, the Mendix Runtime can automatically merge these two activities into a single action. This executes a single aggregate query on the database. So, if you retrieve all 100k log lines from a database and only do a count on the list, you will not receive a heap space. This is because the microflow never places all 100k records in memory.
 
 For instance, in this microflow, the Mendix Runtime merges the two activities into one single count query:
 

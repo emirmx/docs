@@ -1,5 +1,5 @@
 ---
-title: "Retrieve"
+title: "Retrieve Object(s)"
 url: /refguide/retrieve/
 weight: 60
 #To update screenshots of these microflows in Studio Pro, use the Microflow Screenshots app.
@@ -12,7 +12,7 @@ This activity can be used in both microflows and nanoflows.
 
 ## Introduction
 
-A **Retrieve** activity can be used to get one or more objects, either by directly traversing an association of another object, or by retrieving objects from the database.
+A **Retrieve object(s)** activity can be used to get one or more objects, either by directly traversing an association of another object, or by retrieving objects from the database.
 
 ## Properties
 

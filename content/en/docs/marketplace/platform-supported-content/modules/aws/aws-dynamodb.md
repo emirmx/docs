@@ -105,12 +105,12 @@ After you configure the authentication profile for Amazon DynamoDB, you can impl
     * Click **Edit parameter value**.
     * Edit the **CreateBucketRequest** parameter and let it auto-fill.
 
-23. In the **Toolbox** pane, search for the **Retrieve** activity and drag it onto the microflow area.
-24. Position the **Retrieve** activity between the **ListTables** activity and the microflow end event.
+23. In the **Toolbox** pane, search for the **Retrieve object(s)** activity and drag it onto the microflow area.
+24. Position the **Retrieve object(s)** activity between the **ListTables** activity and the microflow end event.
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/aws-dynamodb/microflow.png" alt="The microflow with the Retrieve object(s) activity added" class="no-border" >}}
 
-25. Double-click the **Retrieve** activity.
+25. Double-click the **Retrieve object(s)** activity.
 26. In the **Association** section, click **Select**.
 27. In the **Select Association** dialog box, expand the **Variable** item, and then select **ListTablesResponse** as the association.
 

@@ -135,8 +135,8 @@ For operations that do not depend on the GenAI Commons, you can take a different
     2. Drag the one you would like to use to the beginning of your microflow.
     3. Double-click the microflow action to configure the required parameters and provide a value for the AWS Region. For the **ListFoundationModels** parameter, provide the `ListFoundationModelsRequest` created in step 3.
 9. The `ListFoundationModelsResponse` object is returned by the **ListFoundationModels** activity.
-10. From the **Toolbox**, drag a **Retrieve** activity to your microflow and place it after the **ListFoundationModels** activity.
-11. Double-click the **Retrieve** activity and make sure **By Association** is selected.
+10. From the **Toolbox**, drag a **Retrieve object(s)** activity to your microflow and place it after the **ListFoundationModels** activity.
+11. Double-click the **Retrieve object(s)** activity and make sure **By Association** is selected.
 12. Select the **FoundationModelSummary_ListFoundationModelsResponse** association, which will return a list of the type **FoundationModelSummary**.
 13. To further use the response information, you can create an implementation module with copies of the `ListFoundationModelsResponse` and `ModelSummary` Entities. This way, you can use your custom user roles and access rules for those entities and keep them when updating the connector.
 
