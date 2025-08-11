@@ -33,7 +33,7 @@ To fix this issue, do the following:
 
 ### Fixes
 
-* We fixed an issue that was causing slow initial build times when first using the Native Builder UI after launching it.
+* We fixed an issue that caused slow initial build times when first using the Native Builder UI.
 
 ## Release 1.0.137 {#10137}
 
