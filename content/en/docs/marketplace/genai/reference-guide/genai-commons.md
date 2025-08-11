@@ -919,6 +919,6 @@ The process may look like this:
 4. Test your application locally and verify that everything works as before.
 5. Restore lost data on deployed environments. Usually incoming associations to the protected modules need to be reset.
 
-### Error message after upgrade: 'attribute or reference required'
+### Attribute or Reference Required Error Message After Upgrade 
 
-If you encounter an error where 'an attribute or reference is required' after an update, first upgrade all modules via an right-click on the error and then upgrade DataWidgets specifically. 
+If you encounter an error stating that an attribute or a reference is required after an upgrade, first upgrade all modules by right-clicking the error, then upgrade Data Widgets. 
