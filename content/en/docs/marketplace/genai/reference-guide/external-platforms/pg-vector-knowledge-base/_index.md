@@ -182,12 +182,12 @@ For more inspiration and guidance on how to use these operations in your logic a
 For more information on how to set up a vector database for retrieval augmented generation (RAG), see the [Setting up a Vector Database](/appstore/modules/genai/pgvector-setup/) section and the [RAG Example Implementation in the GenAI Showcase App](/appstore/modules/genai/rag/) section.
 {{% /alert %}}
 
-## Read More {#read-more}
-
-* [pgvector: Open-Source Extension For Vector Similarity Search For PostgreSQL](https://github.com/pgvector/pgvector?tab=readme-ov-file#pgvector)
-
 ## Troubleshooting
 
 ### Error message after upgrade: 'attribute or reference required'
 
 If you encounter an error where 'an attribute or reference is required' after an update, first upgrade all modules via an right-click on the error and then upgrade DataWidgets specifically. 
+
+## Read More {#read-more}
+
+* [pgvector: Open-Source Extension For Vector Similarity Search For PostgreSQL](https://github.com/pgvector/pgvector?tab=readme-ov-file#pgvector)
