@@ -254,4 +254,3 @@ Once the cluster is successfully created and initialized in the Mendix on the Az
 After being added, the new cluster manager has the ability to view and manage the cluster within the Mendix on the Azure portal. They can also access and update the support ticket associated with the cluster in the Mendix on Azure portal. However, the newly added cluster manager does not have access to the Zendesk ticket linked to the cluster's support ticket.  
 
 If a cluster manager is deleted, they can no longer view the associated cluster or its support ticket in the Mendix on Azure portal.
-
