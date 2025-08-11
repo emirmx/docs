@@ -921,4 +921,4 @@ The process may look like this:
 
 ### Error message after upgrade: 'attribute or reference required'
 
-If you encounter an error where 'an attribute or reference is required' after an update, first upgrade all modules via an right-click on the error and the upgrade DataWidgets another time. 
+If you encounter an error where 'an attribute or reference is required' after an update, first upgrade all modules via an right-click on the error and then upgrade DataWidgets specifically. 
