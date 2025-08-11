@@ -26,9 +26,10 @@ These are the main features of the private PDF Document Generation service:
 
 These are the limitations of using the private PDF Document Generation service:
 
-* Setup, management, and monitoring of the service is your responsibility.
+* The setup, the management, and the monitoring of the service are your responsibility.
 * The service is open to all applications that can access it. If additional access restrictions are required, you need to set these up at the network level and configure them.
 * You cannot import custom certificate authorities. Apps that use a self-signed or internal certificate are only supported when you disable certificate validation in the service.
+* The service does not support apps that are published as Progressive Web Apps (PWA) when you use a self-signed certificate and you disable certificate validation in the service.
 * You are responsible for setting up a retry mechanism in the application to handle failures or timeouts of the service.
 
 ### Prerequisites {#prerequisites}
@@ -65,6 +66,11 @@ Follow these steps to install the service through Docker:
 2. Run the Docker container using the following command: `docker run -p 8085:8085 --name document-generation private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`. This creates a Docker container, which is exposed on port `8085`.    
 
 The `<tag>` component must be replaced with the version of the service, such as `1.0.0`. You can find all versions and their release notes in the [Private PDF Document Generation Service Release Notes](/releasenotes/marketplace/private-service/).
+
+#### Setting Up a Health Check (Optional)
+
+If you need to set up a health check, you can use the health check endpoint included in the service, at the `/health` path. This endpoint returns the `200` status code and the `OK` message if everything is working correctly.
+
 
 ### Isolation
 
