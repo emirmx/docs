@@ -57,7 +57,6 @@ The required resources depend on demand. For instance, to be able to generate 5 
 The following artifact is available for installing the service:
 
 * The Docker image for the PDF Document Generation service 
-* If you need to setup a health check you can use the health check endpoit included in the service at the path `/health`. This endpoint returns a status code of `200` and message `OK` if everything is working correctly.
 
 #### Installing through Docker
 
@@ -67,6 +66,11 @@ Follow these steps to install the service through Docker:
 2. Run the Docker container using the following command: `docker run -p 8085:8085 --name document-generation private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`. This creates a Docker container, which is exposed on port `8085`.    
 
 The `<tag>` component must be replaced with the version of the service, such as `1.0.0`. You can find all versions and their release notes in the [Private PDF Document Generation Service Release Notes](/releasenotes/marketplace/private-service/).
+
+#### Setup a Health Check (Optional)
+
+* If you need to setup a health check, you can use the health check endpoint included in the service at the path `/health`. This endpoint returns a status code of `200` and message `OK` if everything is working correctly.
+
 
 ### Isolation
 
