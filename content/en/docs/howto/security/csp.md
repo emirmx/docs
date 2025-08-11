@@ -174,6 +174,160 @@ After redeploying your app locally, it should function as normal. If your app do
 
 After you finish testing locally, remember to remove the line of code in the `head` tag.
 
-### Enabling the Header in the Cloud
+## CSP Support in Java Request Handlers
 
-To enable the header in the cloud, follow the instructions in the [HTTP Headers](/developerportal/deploy/environments-details/#http-headers) section of *Environment Details*.
+If you are developing Marketplace modules or custom Java actions that include request handlers, you may need to implement CSP support to ensure compatibility with strict CSP policies. 
+
+{{% alert color="info" %}}
+CSP support is only relevant for request handlers that serve static content such as HTML pages, not for API endpoints that return JSON or other data formats.
+{{% /alert %}}
+
+This section describes how to properly handle CSP headers in your Java request handlers when serving HTML content.
+
+### Available CSP APIs
+
+Mendix provides two APIs for CSP support in Java request handlers:
+
+#### IMxRuntimeResponse Methods
+
+The `IMxRuntimeResponse` interface provides basic CSP methods:
+
+* `addContentSecurityPolicyHeader()` - Adds the Content-Security-Policy header as configured in the application
+* `getNonce()` - Returns a uniquely generated secure nonce for the response that can be used in CSP directives
+* `addHeader(String key, String value)` - Adds a custom header to the response
+
+#### CspHelper Interface (Recommended)
+
+The `CspHelper` interface provides additional utility methods for more sophisticated CSP handling:
+
+* `getTemplate()` - Get the template used for the Content-Security-Policy header value
+* `getNonce(IMxRuntimeResponse response)` - Get the generated nonce of the current HTTP response
+* `hasNonce(IMxRuntimeResponse response)` - Returns true if the configured CSP template contains the `{{ NONCE }}` placeholder
+* `addHeader(IMxRuntimeResponse response)` - Add Content-Security-Policy header to the response using the configured template
+
+### Example Implementation
+
+Here's how to implement CSP support in a Java request handler using the `CspHelper`:
+
+```java
+package your.module.requesthandlers;
+
+import com.mendix.externalinterface.connector.RequestHandler;
+import com.mendix.m2ee.api.IMxRuntimeRequest;
+import com.mendix.m2ee.api.IMxRuntimeResponse;
+import com.mendix.http.CspHelper;
+import com.mendix.core.Core;
+
+public class YourRequestHandler extends RequestHandler {
+    
+    @Override
+    protected void processRequest(IMxRuntimeRequest request, IMxRuntimeResponse response, String path) throws Exception {
+        try {
+            // Add the configured CSP header from the application
+            Core.csp().addHeader(response);
+            
+            // Set response content type
+            response.setContentType("text/html");
+            
+            // Generate your response content with conditional nonce support
+            String htmlContent = generateHtmlWithCSP(response);
+            
+            // Write the response
+            response.getWriter().write(htmlContent);
+            
+        } catch (Exception e) {
+            logger.error("Error processing request: " + e.getMessage(), e);
+            response.setStatus(IMxRuntimeResponse.INTERNAL_SERVER_ERROR);
+            response.sendError("Internal server error");
+        }
+    }
+    
+    private String generateHtmlWithCSP(IMxRuntimeResponse response) {
+        StringBuilder html = new StringBuilder();
+        html.append("<!DOCTYPE html>\n");
+        html.append("<html>\n");
+        html.append("<head>\n");
+        html.append("    <title>Your Module</title>\n");
+        
+        // Only use nonce if it's configured in the CSP template
+        if (Core.csp().hasNonce(response)) {
+            String nonce = Core.csp().getNonce(response);
+            html.append("    <script nonce=\"").append(nonce).append("\">\n");
+            html.append("        // Your inline JavaScript here\n");
+            html.append("        console.log('This script is CSP-compliant with nonce');\n");
+            html.append("    </script>\n");
+        } else {
+            // Alternative approach when nonce is not configured
+            html.append("    <script src=\"/path/to/external/script.js\"></script>\n");
+        }
+        
+        html.append("</head>\n");
+        html.append("<body>\n");
+        html.append("    <h1>Your Module Content</h1>\n");
+        html.append("    <!-- Your content here -->\n");
+        html.append("</body>\n");
+        html.append("</html>\n");
+        
+        return html.toString();
+    }
+}
+```
+
+### Best Practices for CSP in Request Handlers
+
+When implementing CSP support in your request handlers, follow these best practices:
+
+1. **Use CspHelper for conditional nonce support** - Always check if nonce is configured before using it:
+   ```java
+   if (Core.csp().hasNonce(response)) {
+       String nonce = Core.csp().getNonce(response);
+       // Use nonce for inline content
+   } else {
+       // Use external resources or alternative approach
+   }
+   ```
+
+2. **Always add CSP headers** - Use `Core.csp().addHeader(response)` to ensure your module respects the application's CSP configuration when serving HTML content.
+
+3. **CSP is only needed for HTML content** - Only implement CSP support in request handlers that serve HTML pages. API endpoints returning JSON, XML, or other data formats do not need CSP headers.
+
+4. **Avoid inline scripts and styles when possible** - Prefer external files that can be loaded via `'self'` directive.
+
+5. **Test with strict CSP** - Test your request handlers with `default-src: 'self'` to ensure they work with the strictest CSP settings.
+
+### Common CSP Issues in Request Handlers
+
+When working with CSP in request handlers, you may encounter these common issues:
+
+#### Base64 Images
+If your request handler generates inline Base64 images, these will be blocked by strict CSP. Consider these alternatives:
+- Serving images as separate endpoints
+- Using external image hosting
+- Adding `data:` to `img-src` directive (less secure)
+
+#### Dynamic Script Generation
+Avoid generating `<script>` tags dynamically without nonces. Instead:
+- Use the provided nonce for any inline scripts
+- Move logic to external JavaScript files
+- Use data attributes and external scripts to handle dynamic behavior
+
+#### Third-party Resources
+If your module loads external resources, ensure they're allowed by the CSP or provide configuration options for developers to whitelist them.
+
+#### Error Handling
+When CSP violations occur, implement proper error handling:
+```java
+// Log CSP-related errors for debugging
+if (Core.csp().hasNonce(response)) {
+    logger.debug("Using CSP with nonce: " + Core.csp().getNonce(response));
+} else {
+    logger.debug("CSP configured without nonce support");
+}
+```
+
+## Enabling the Header in the Cloud
+
+There are two ways to enable the header in the Cloud:
+
+1. Using the [Headers](/refguide/configuration/#headers) custom runtime setting (Recommended ✅). Use this if you need nonce-based CSP support. You can configure this in the Developer Portal under [Custom Runtime Settings](/developerportal/deploy/environments-details/#custom-runtime-settings).
+2. Using the [HTTP Headers](/developerportal/deploy/environments-details/#http-headers) UI in the *Environment Details* section. Can be used for basic CSP support.

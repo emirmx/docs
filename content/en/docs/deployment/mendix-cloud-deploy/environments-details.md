@@ -323,6 +323,10 @@ document.cookie = "originURI=/login.html" + (window.location.protocol === "https
 
 A Content Security Policy informs the client (browser) where your page loads resources from. Setting this can make your app more secure by declaring trusted sources for your resources. For more information, see the W3C recommendation [Content Security Policy Level 2](https://www.w3.org/TR/CSP2/).
 
+{{% alert color="info" %}}
+For full CSP support including nonce-based CSP, use the [Headers](/refguide/configuration/#headers) custom runtime setting instead of the HTTP Headers UI. The custom runtime setting method is recommended as it provides more comprehensive CSP capabilities. For detailed implementation guidance, see [Content Security Policy](/howto/security/csp/).
+{{% /alert %}}
+
 The process for setting a full content security policy depends on what your app does. However, a starting point that declares the content security policy that works with a basic Mendix app is given below:
 
 ```text
