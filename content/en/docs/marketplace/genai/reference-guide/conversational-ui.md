@@ -316,3 +316,7 @@ The [Data Widgets](https://marketplace.mendix.com/link/component/116540) module 
 #### Solution 
 
 Update the [Data Widgets](https://marketplace.mendix.com/link/component/116540) module to version 2.22.0 or above.
+
+### Error message after upgrade: 'attribute or reference required'
+
+If you encounter an error where 'an attribute or reference is required' after an update, first upgrade all modules via an right-click on the error and then upgrade DataWidgets specifically. 
