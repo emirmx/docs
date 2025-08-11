@@ -42,7 +42,8 @@ Some only apply to specific component types, so follow the on-screen prompts for
 1. Add a **Component Name**.
 
 2. Select the **Component Type**.      
-   You can only set the content type when creating the initial version of your content. You cannot change this setting after it is published.
+   You can only set the component type when creating the initial version of your content. You cannot change this setting after it is published.    
+   Find out more about component types in the [Types of Marketplace Components](/appstore/#components-type) section of *Marketplace*.
 
 3. Under **Select Component Source**, select one of the options for uploading the source file:     
 
@@ -58,7 +59,7 @@ Some only apply to specific component types, so follow the on-screen prompts for
 5. If you are uploading a widget, select the **Compatible with Mendix React Client** checkbox to indicate compatibility.    
    This checkbox is mandatory starting with Studio Pro 11.
    
-6. Add a version for your component. If this is the first version of the component you are uploading, the number in the **Version** section will automatically be set to **1.0.0**. 
+6. Add a version for your component. If this is the first version of the component you are uploading, the number in the **Version** section is automatically set to **1.0.0**. 
 
 7. Enter **Release Notes** for the component in the box provided, describing what is new in that release.
 
