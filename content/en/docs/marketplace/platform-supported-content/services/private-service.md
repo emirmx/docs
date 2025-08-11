@@ -57,6 +57,7 @@ The required resources depend on demand. For instance, to be able to generate 5 
 The following artifact is available for installing the service:
 
 * The Docker image for the PDF Document Generation service 
+* If you need to setup a health check you can use the health check endpoit included in the service at the path `/health`. This endpoint returns a status code of `200` and message `OK` if everything is working correctly.
 
 #### Installing through Docker
 
