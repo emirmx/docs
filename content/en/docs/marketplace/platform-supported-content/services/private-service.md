@@ -29,7 +29,7 @@ These are the limitations of using the private PDF Document Generation service:
 * Setup, management, and monitoring of the service is your responsibility.
 * The service is open to all applications that can access it. If additional access restrictions are required, you need to set these up at the network level and configure them.
 * You cannot import custom certificate authorities. Apps that use a self-signed or internal certificate are only supported when you disable certificate validation in the service.
-* The service does not support apps with PWA enabled when using a self-signed and disabling certificate validation in the service.
+* The service does not support apps that are published as a Progressive Web App (PWA) when using a self-signed certificate and disabling certificate validation in the service.
 * You are responsible for setting up a retry mechanism in the application to handle failures or timeouts of the service.
 
 ### Prerequisites {#prerequisites}
