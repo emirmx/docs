@@ -113,6 +113,10 @@ The error `Fatal error: SseError: SSE error: Could not convert argument of type 
 Remove-Item -Path "$env:LocalAppData\npm-cache\_npx" -Recurse -Force
 npm cache clean --force
 ```
+
+### Error message after upgrade: 'attribute or reference required'
+
+If you encounter an error where 'an attribute or reference is required' after an update, first upgrade all modules via an right-click on the error and then upgrade DataWidgets specifically. 
    
 ## Read More
 
