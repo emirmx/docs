@@ -251,7 +251,7 @@ In case of version conflicts in models (or pre- / post-processors), try the [ver
 
 The table below presents the compatibility list for your models per Studio Pro version. Each model you create should be compatible with the version you use. Otherwise, you will not be able to import it.
 
-| Studio Pro Version | ONNX Version |
+| Studio Pro Version | ONNX Runtime Version |
 | --- | --- |
 | 10.6 MTS  | 1.14.0 |
 | 10.12 MTS (10.12.18 and above) | 1.22.0 |
