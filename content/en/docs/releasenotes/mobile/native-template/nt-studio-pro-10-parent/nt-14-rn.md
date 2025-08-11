@@ -5,6 +5,22 @@ weight: 6
 description: "Native Template 14"
 ---
 
+## 14.1.5 {#1415}
+
+**Release date: August 11, 2025**
+
+### Fixes
+
+* We upgraded React Native version to 0.77.3. This addresses an issue that caused the app to stop working after reload.
+
+## 14.1.4 {#1414}
+
+**Release date: July 10, 2025**
+
+### Fixes
+
+* We fixed an issue with **@mendix/native** that caused OTA updates to not work properly.
+
 ## 14.1.3 {#1413}
 
 **Release date: June 12, 2025**
