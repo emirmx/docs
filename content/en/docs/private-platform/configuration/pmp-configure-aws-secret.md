@@ -292,7 +292,7 @@ The following example shows how you can configure Private Mendix Platform to wor
 
     The secret template contains a sample key structure which you can use:
 
-        ```text
+    ```text
         {  //...other keys
             "VCS": {
                 // ...other keys
@@ -301,7 +301,7 @@ The following example shows how you can configure Private Mendix Platform to wor
                 },
             // ...other keys
         }
-        ```
+    ```
 
 8. Repeat the process for other credentials as needed, ensuring you follow the naming conventions for each service.
 

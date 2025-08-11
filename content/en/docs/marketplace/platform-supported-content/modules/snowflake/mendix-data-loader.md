@@ -42,15 +42,12 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
 4. Click **Create** to create a new data source.
     1. Enter a **Name** for your data source within the Data Loader.
     2. Enter an **API endpoint** – that is, the base endpoint for the OData resource in your Mendix application, for example, `https://yourmendixapp.mendixcloud.com/odata/snowflakedata/v1/`.
-
 {{% alert color="warning" %}}This must be the root URL, that is, it must end in `/v1/` or `/v2/` Adding anything to the root URL (such as a resource path) will prevent the Mendix Data Loader from working.
 
 If you want to use specific resources, you should instead expose a new endpoint that only contains the resources that you require. This is because it is only possible to use every resource that is exposed in the OData endpoint, and impossible to exclude certain resources.{{% /alert %}}
-
     3. Use the **Use Delta Ingestion** check box to specify if you want to ingest all exposed data with every ingestion, or if you want to ingest only data that was newly created or changed since the last ingestion for this data source.
     4. Click **Save**.
     5. Grant the application **CREATE DATABASE** and **EXECUTE TASK** privileges. This step is necessary for the application to create the staging database for data ingestion and to execute tasks.
-
 5. To view the status of your data source, check the **Details**.
 6. To view the configuration status, click the **Authentication Configuration** tab.
 7. To set up authentication, click **Edit**, and then provide the required information based on the selected authentication type:
@@ -69,19 +66,20 @@ If you want to use specific resources, you should instead expose a new endpoint 
 9. Click **Back** to return to the **Details** page.
 10. Click the **Ingestion Configuration** tab to set up your ingestion destination table.
 11. Click **Create** to start setting up the Ingestion Configuration.
-    ***Target Database** – Name of the database for data ingestion
+    * **Target Database** – Name of the database for data ingestion
     * **Target Schema** – Target schema where all data will be ingested
 12. Click **Save**.
 13. Click the **Data Ingestion** tab, where you can start your data ingestion or set up a schedule.
 14. Click **Ingest Now** to start a data ingestion.
 15. Click **New Task** to create a CRON job for scheduled data ingestions.
-    *To schedule the data ingestion, specify the following parameters:
+
+    * To schedule the data ingestion, specify the following parameters:
         * **Ingestion Task Schedule** – Choose from custom CRON expression, every day at 00:00 AM UTC, every Monday at 00:00 AM UTC, or every first day of the month at 00:00 AM UTC.
-        ***Custom CRON Expression** – Use this field only when specifying a custom CRON expression.
+        * **Custom CRON Expression** – Use this field only when specifying a custom CRON expression.
         * **Timeout** – Optional setting to specify when a timeout exception should occur.
-        ***Number of Retry Attempts** – Number of retries for failed ingestion jobs.
+        * **Number of Retry Attempts** – Number of retries for failed ingestion jobs.
         * **Suspend Task After Failures** – Number of consecutive failures allowed before suspending the task.
-        ***Use Specific Warehouse** - Select this option if you want the task to use a specific warehouse. If selected, you need to run the provided script.
+        * **Use Specific Warehouse** - Select this option if you want the task to use a specific warehouse. If selected, you need to run the provided script.
         * **Warehouse** - Use this field to enter the name of the warehouse you want to use. This only applies when **Use Specific Warehouse** is selected.
 
 16. Click **Schedule Ingestion Task**.

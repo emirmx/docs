@@ -99,10 +99,10 @@ While using Espresso in combination with Mendix apps, there have been occasional
 
 ```json
 {
-"toolsVersions": {
-    "compileSdk": "30"
-    ...
-}
+    "toolsVersions": {
+        "compileSdk": "30"
+        ...
+    }
 }
 ```
 
