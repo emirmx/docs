@@ -185,3 +185,9 @@ For more information on how to set up a vector database for retrieval augmented 
 ## Read More {#read-more}
 
 * [pgvector: Open-Source Extension For Vector Similarity Search For PostgreSQL](https://github.com/pgvector/pgvector?tab=readme-ov-file#pgvector)
+
+## Troubleshooting
+
+### Error message after upgrade: 'attribute or reference required'
+
+If you encounter an error where 'an attribute or reference is required' after an update, first upgrade all modules via an right-click on the error and then upgrade DataWidgets specifically. 
