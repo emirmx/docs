@@ -144,7 +144,7 @@ Microflows can call other microflows by defining a mapping of expressions to par
 
 | Studio Pro Guide | Model SDK API docs |
 | --- | --- |
-| [Call Microflow](/refguide/call-microflow/) |[MicroflowCallAction](https://apidocs.rnd.mendix.com/modelsdk/latest/classes/microflows.microflowcallaction.html) |
+| [Call Microflow](/refguide/microflow-call/) |[MicroflowCallAction](https://apidocs.rnd.mendix.com/modelsdk/latest/classes/microflows.microflowcallaction.html) |
 | |[MicroflowCall](https://apidocs.rnd.mendix.com/modelsdk/latest/classes/microflows.microflowcall.html) |
 | |[MicroflowCallParameterMapping](https://apidocs.rnd.mendix.com/modelsdk/latest/classes/microflows.microflowcallparametermapping.html) |
 

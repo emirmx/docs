@@ -1,9 +1,7 @@
 ---
 title: "Call Nanoflow"
-url: /refguide/call-nanoflow/
+url: /refguide/nanoflow-call/
 weight: 2
-aliases:
-   - /refguide/nanoflow-call/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 

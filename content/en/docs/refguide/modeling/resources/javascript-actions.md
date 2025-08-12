@@ -205,4 +205,4 @@ export async function Hello(message) {
 * [Nanoflows](/refguide/nanoflows/)
 * [Build JavaScript Actions](/howto/extensibility/build-javascript-actions/)
 * [Call Java Action](/refguide/call-java-action/)
-* [Call Microflow](/refguide/call-microflow/)
+* [Call Microflow](/refguide/microflow-call/)

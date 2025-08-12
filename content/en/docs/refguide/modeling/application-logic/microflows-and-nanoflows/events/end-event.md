@@ -56,5 +56,5 @@ When you update the return type, a default variable name is set based on the ret
 ## Read More
 
 * [Start Event](/refguide/start-event/)
-* [Call Microflow](/refguide/call-microflow/)
-* [Call Nanoflow](/refguide/call-nanoflow/)
+* [Call Microflow](/refguide/microflow-call/)
+* [Call Nanoflow](/refguide/nanoflow-call/)

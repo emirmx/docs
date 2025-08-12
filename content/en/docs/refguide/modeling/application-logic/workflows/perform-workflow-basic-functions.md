@@ -152,7 +152,7 @@ You have configured the button to trigger the workflow.
 
 ### Triggering a Workflow via a Microflow {#trigger-microflow}
 
-To trigger a workflow via a microflow, you can add a **Call workflow** activity to the microflow. For more information on this activity, see [Call Workflow](/refguide/call-workflow/).  
+To trigger a workflow via a microflow, you can add a **Call workflow** activity to the microflow. For more information on this activity, see [Call Workflow](/refguide/workflow-call/).  
 
 Do the following:
 
