@@ -14,7 +14,7 @@ The [MCP Client](https://marketplace.mendix.com/link/component/244893) module pr
 * Consume reusable prompts including the ability to use prompt arguments
 * Call external tools as part of an LLM interaction
 
-To use function calling within the same Mendix application and integrating to an LLM, consider [function calling](/appstore/modules/genai/function-calling/).
+To use function calling within the same Mendix application and integrating to an LLM, also consider pure [function calling](/appstore/modules/genai/function-calling/).
 
 ### Limitations {#limitations}
 
@@ -37,11 +37,11 @@ The module is currently not dependent on any other modules. However, if you like
 
 ### Client Connection Lifecycle {#client-connection-lifecycle}
 
-The `Create MCP Client` action creates a sync client that is connected to an (externally) running MCP server and returns the `MCPServer` object. The action requires an MCPClientConfig object that contains all required fields to faciliate the connection. If needed (for example for authentication), you can add HttpHeaders via the `Config: Add Http Header` action from the toolbox when creating the input object.
+The `Create MCP Client` action creates a sync client that is connected to an (externally) running MCP server and returns the `MCPServer` object. The action requires an MCPClientConfig object that contains all required fields to facilitate the connection. If needed (for example for authentication), you can add HttpHeaders via the `Config: Add Http Header` action from the toolbox when creating the input object.
 
-You can use the returned `MCPClient` object for all other actions, for example to discover tools and prompts or to get a prompt or call a tool. An MCP Client can be reused across multiple actions or for a whole chat conversation. It is recommended to clean-up the connections after usage by calling the `Close MCP Client` action.
+You can use the returned `MCPClient` object for all other actions, for example to discover tools and prompts or to get a specific prompt or call a tool. An MCP Client can be reused across multiple actions or for a whole chat conversation. It is recommended to clean-up the connections after usage by calling the `Close MCP Client` action.
 
-For examples, see the `Example Implementations` folder inside of the module which contains logic to connect to a server, use Http headers for authentication, and discover tools and prompts.
+For examples, see the `Example Implementations` folder inside of the module which contains logic to connect to a server, use Http Headers for authentication, and discover tools and prompts.
 
 #### Protocol Version
 
@@ -65,13 +65,13 @@ The MCP Client module does not depend on any other modules. However, to make it 
 
 In the `Map to GenAI Commons` folder you can find three microflows that are excluded. You can copy them to your own application and include them. You need to fix a few errors by reselecting the newly copied microflows again (the names are the same, only the module changed).
 
-1. `Request_AddMCPTools` lists all tools from an MCP server and adds them to the GenAI Commons request. This microflow can be called right before you call [Chat Completions (with history)](/appstore/modules/genai/genai-for-mx/commons/#chat-completions-with-history) either in your [Conversational UI action microflow](/appstore/modules/genai/genai-for-mx/conversational-ui/#action-microflow) or in your custom logic. An example action microflow can be found inside of the `Use in Conversational UI` folder.
-2. `Tool_OrchestrateToolCall` is an example microflow that is used inside of the Request_AddMCPTools microflow at the end when adding the tool to the request. Each MCP tool is registered with the orchestrate microflow. The microflow gets called once the LLM requests to use a tool. The microflow handles the orchestration by passing the arguments from the tool to the MCP server, indicating which tool should be executed. The `ToolResult's` content is returned to the model to further process the user's request.
+1. `Request_AddMCPTools` lists all tools from an MCP server and adds them to a `GenAICommons.Request` object. This microflow can be called right before you call [Chat Completions (with history)](/appstore/modules/genai/genai-for-mx/commons/#chat-completions-with-history) either in your [Conversational UI action microflow](/appstore/modules/genai/genai-for-mx/conversational-ui/#action-microflow) or in your custom logic. An example action microflow can be found inside of the `Use in Conversational UI` folder.
+2. `Tool_OrchestrateToolCall` is an example microflow that is used inside of the `Request_AddMCPTools` microflow at the end when adding the tool to the request. Each MCP tool is registered with the orchestrate microflow. The microflow gets called once the LLM requests to use a tool. The microflow handles the orchestration by passing the arguments from the tool to the MCP server, indicating which tool should be executed. The `ToolResult's` content is returned to the model to further process the user's request.
 3. `ToolCall_GetToolArgumentCollection` is a helper microflow to construct the ArgumentCollection for a tool based on a [Tool Call](/appstore/modules/genai/genai-for-mx/commons/#toolcall) and is called inside of the orchestrate microflow.
 
-For steps 1 and 2 you need to configure the [MCPClientConfig](#client-connection-lifecycle) first before establishing a connection. As the logic might be the same for both, you may create a sub-microflow to reuse logic. By using the above microflows, you can integrate existing logic in your app or from Conversational UI to faciliate a chat or any other GenAI usecase that involves tools.
+For steps 1 and 2 you need to configure the [MCPClientConfig](#client-connection-lifecycle) first before establishing a connection. As the logic might be the same for both, you may create a sub-microflow to reuse logic. By using the above microflows, you can integrate existing logic in your app or from Conversational UI to facilitate a chat or any other GenAI usecase that involves tools.
 
-In order to use prompts from MCP, there is currently no out of the box solution available. You can get inspired by the MCP Client example in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) where the prompts are displayed to the user to start a conversation in a chat interface.
+In order to use prompts from MCP, there is currently no out-of-the-box solution available. You can get inspired by the MCP Client example in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) where the prompts are displayed to the user to start a conversation in a chat interface.
 
 
 ## Technical Reference
