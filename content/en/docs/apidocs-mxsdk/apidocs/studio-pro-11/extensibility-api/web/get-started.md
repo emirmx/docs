@@ -137,7 +137,7 @@ If the last two questions of the extension generator were answered, and you have
 2. Select 'Run and Debug' side panel.
 3. Click on the play button on the top of the panel (or press F5)
 
-This will run Studio Pro in the extension development mode and open the configured application.
+This will run Studio Pro in the extension development mode and open the configured application. You will see a new `Extensions` item in the top menu.
 
 ## Conclusion
 
