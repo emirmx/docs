@@ -24,36 +24,36 @@ The code below will:
 Replace your `src/main/index.ts` file with the following:
 
 ```typescript
-import { IComponent, Menu, studioPro } from "@mendix/extensions-api";
+import { IComponent, Menu, getStudioProApi } from "@mendix/extensions-api";
 
-const menuApi = studioPro.ui.extensionsMenu;
+export const component: IComponent = {
+    async loaded(componentContext) {
+        const studioPro = getStudioProApi(componentContext);
+        const menuApi = studioPro.ui.extensionsMenu;
+        const messageBoxApi = studioPro.ui.messageBoxes;
 
-const messageBoxApi = studioPro.ui.messageBoxes;
-const menuId = "my-menu-unique-id";
-const caption = "My First Menu";
+        const menuId = "my-menu-unique-id";
+        const caption = "My First Menu";
 
-// Open a message box when the menu item is clicked
-studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", (args) => {
-  if (args.menuId === "my-menu-unique-id") {
-    messageBoxApi.show("info", `My menu '${args.menuId}' was clicked`);
-  }
-});
-class Main implements IComponent {
-  async loaded() {
-    const menu: Menu = {
-      caption: caption,
-      menuId: menuId,
-      subMenus: [],
-      hasSeparatorBefore: false,
-      hasSeparatorAfter: true,
-      enabled: true,
-    };
+        // Open a message box when the menu item is clicked
+        studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", (args) => {
+            if (args.menuId === "my-menu-unique-id") {
+                messageBoxApi.show("info", `My menu '${args.menuId}' was clicked`);
+            }
+        });
 
-    await menuApi.add(menu);
-  }
+        const menu: Menu = {
+            caption: caption,
+            menuId: menuId,
+            subMenus: [],
+            hasSeparatorBefore: false,
+            hasSeparatorAfter: true,
+            enabled: true,
+        };
+
+        await menuApi.add(menu);
+    }
 }
-
-export const component: IComponent = new Main();
 ```
 
 The code imports the following:
@@ -95,51 +95,51 @@ Parent menus (with `subMenus`) do not create `menuItemActivated` events. These o
 The following `src/main/index.ts` generates one menu item with sub menus and one menu item without sub menus.
 
 ```typescript
-import { IComponent, Menu, studioPro } from "@mendix/extensions-api";
+import { IComponent, Menu, getStudioProApi } from "@mendix/extensions-api";
 
-const menuApi = studioPro.ui.extensionsMenu;
-const messageBoxApi = studioPro.ui.messageBoxes;
+export const component: IComponent = {
+    async loaded(componentContext) {
+        const studioPro = getStudioProApi(componentContext);
+        const menuApi = studioPro.ui.extensionsMenu;
+        const messageBoxApi = studioPro.ui.messageBoxes;
 
-// Open a message box when the menu item is clicked
-studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", (args) => {
-  messageBoxApi.show("info", `Child menu '${args.menuId}' was clicked`);
-});
-class Main implements IComponent {
-  async loaded() {
-    const grandChild: Menu = {
-      caption: "Grandchild Menu",
-      menuId: "grandChild",
-    };
+        // Open a message box when the menu item is clicked
+        studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", (args) => {
+            messageBoxApi.show("info", `Child menu '${args.menuId}' was clicked`);
+        });
 
-    const childMenu1: Menu = {
-      caption: "Child Menu 1",
-      menuId: "child_1",
-      subMenus: [grandChild],
-    };
+        const grandChild: Menu = {
+            caption: "Grandchild Menu",
+            menuId: "grandChild",
+        };
 
-    const childMenu2: Menu = {
-      caption: "Child Menu 2",
-      menuId: "child_2",
-    };
+        const childMenu1: Menu = {
+            caption: "Child Menu 1",
+            menuId: "child_1",
+            subMenus: [grandChild],
+        };
 
-    const menu1: Menu = {
-      caption: "Menu 1",
-      menuId: "menu1",
-      subMenus: [childMenu1, childMenu2],
-    };
+        const childMenu2: Menu = {
+            caption: "Child Menu 2",
+            menuId: "child_2",
+        };
 
-    const menu2: Menu = {
-      caption: "Menu 2",
-      menuId: "menu2",
-      subMenus: [],
-    };
+        const menu1: Menu = {
+            caption: "Menu 1",
+            menuId: "menu1",
+            subMenus: [childMenu1, childMenu2],
+        };
 
-    await menuApi.add(menu1);
-    await menuApi.add(menu2);
-  }
+        const menu2: Menu = {
+            caption: "Menu 2",
+            menuId: "menu2",
+            subMenus: [],
+        };
+
+        await menuApi.add(menu1);
+        await menuApi.add(menu2);
+    }
 }
-
-export const component: IComponent = new Main();
 ```
 
 The menu hierarchy will then be displayed like this:
@@ -159,36 +159,36 @@ Only `caption` and `enabled` can be updated.
 You can test it by the following code as the contents of  `src/main/index.ts`.
 
 ```typescript
-import { IComponent, Menu, studioPro } from "@mendix/extensions-api";
+import { IComponent, Menu, getStudioProApi } from "@mendix/extensions-api";
 
-const menuApi = studioPro.ui.extensionsMenu;
+export const component: IComponent = {
+    async loaded(componentContext) {
+        const studioPro = getStudioProApi(componentContext);
+        const menuApi = studioPro.ui.extensionsMenu;
 
-const menuId = "my-menu-unique-id";
-const caption = "My First Menu";
+        const menuId = "my-menu-unique-id";
+        const caption = "My First Menu";
 
-menuApi.addEventListener("menuItemActivated", (args) => {
-  if (args.menuId !== menuId) return;
-  menuApi.update(menuId, {
-    caption: `${caption} (Disabled)`,
-    enabled: false,
-  });
-});
-class Main implements IComponent {
-  async loaded() {
-    const menu: Menu = {
-      caption: caption,
-      menuId: menuId,
-      subMenus: [],
-      hasSeparatorBefore: false,
-      hasSeparatorAfter: true,
-      enabled: true,
-    };
+        menuApi.addEventListener("menuItemActivated", (args) => {
+            if (args.menuId !== menuId) return;
+            menuApi.update(menuId, {
+                caption: `${caption} (Disabled)`,
+                enabled: false,
+            });
+        });
 
-    await menuApi.add(menu);
-  }
+        const menu: Menu = {
+            caption: caption,
+            menuId: menuId,
+            subMenus: [],
+            hasSeparatorBefore: false,
+            hasSeparatorAfter: true,
+            enabled: true,
+        };
+
+        await menuApi.add(menu);
+    }
 }
-
-export const component: IComponent = new Main();
 ```
 
 The disabled state is shown in the image below.
