@@ -23,25 +23,27 @@ For this example, add an event listener for the `menuItemActivated` event for wh
 1. Look for the page by its name, and by the name of its containing module using the `studioPro.app.model.pages` API. 
 2. Call `studioPro.ui.editors.editDocument` to open the document by passing its ID. 
 
-See the code sample below to see how this is done:
+See the code sample below (from `src\main\index.ts`) to see how this is done:
 
 ```typescript
-import { IComponent, studioPro, Menu, Primitives } from "@mendix/extensions-api";
+import { IComponent, Menu, Primitives, getStudioProApi } from "@mendix/extensions-api";
 
 const menuId = "open-home-page";
 
-studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", async args => {
-    if (args.menuId === menuId) {
-        const [page] = await studioPro.app.model.pages.loadAll(
-            (info: Primitives.UnitInfo) => info.moduleName === "MyFirstModule" && info.name === "Home_Web"
-        );
-
-        await studioPro.ui.editors.editDocument(page.$ID);
-    }
-});
-
 export const component: IComponent = {
-    async loaded() {
+    async loaded(componentContext) {
+        const studioPro = getStudioProApi(componentContext);
+
+        studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", async args => {
+            if (args.menuId === menuId) {
+                const [page] = await studioPro.app.model.pages.loadAll(
+                    (info: Primitives.UnitInfo) => info.moduleName === "MyFirstModule" && info.name === "Home_Web"
+                );
+
+                await studioPro.ui.editors.editDocument(page.$ID);
+            }
+        });
+
         const menu: Menu = {
             caption: "Open Home Page",
             menuId
@@ -49,7 +51,7 @@ export const component: IComponent = {
 
         await studioPro.ui.extensionsMenu.add(menu);
     }
-};
+}
 ```
 
 ## Active Documents
@@ -61,19 +63,19 @@ Both the `getActiveDocument` method and the `activeDocumentChanged` event args r
 See the sample code below:
 
 ```typescript
-studioPro.ui.editors.addEventListener("activeDocumentChanged", async ({ activeDocument }) => {
-    if (activeDocument) {
+studioPro.ui.editors.addEventListener("activeDocumentChanged", async ({ info }) => {
+    if (info) {
         studioPro.ui.notifications.show({
             title: "Document Changed Notification",
-            message: `Name: ${activeDocument.documentName}\nID: ${activeDocument.documentId}\nType: ${activeDocument.documentType}\nModule: ${activeDocument.moduleName}`,
+            message: `Name: ${info.documentName}\nID: ${info.documentId}\nType: ${info.documentType}\nModule: ${info.moduleName}`,
             displayDurationInSeconds: 5
         });
     }
 });
 
 studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", async args => {
-    if (args.menuId === "getActiveDocumentMenu") {
-        const activeDocument: ActiveDocumentInfo = studioPro.ui.editors.getActiveDocument();
+    if (args.menuId === "menu") {
+        const activeDocument: ActiveDocumentInfo | null = await studioPro.ui.editors.getActiveDocument();
 
         if (activeDocument) {
             studioPro.ui.notifications.show({
