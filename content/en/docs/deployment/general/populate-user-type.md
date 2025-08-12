@@ -74,7 +74,7 @@ Therefore, the approach we take is to create a new non-persistable entity, `User
     {{< figure src="/attachments/deployment/general/populate-user-type/grid-data-source.png" class="no-border" >}}
 
 5. Add the page to the **Navigation**.
-6. When you go to that page it will set the `UserType` as per your logic and show you the UserType report.
+6. When you go to that page it will set the `UserType` as per your logic and show you the user type report.
 
     {{< figure src="/attachments/deployment/general/populate-user-type/user-type-report.png" class="no-border" >}}
 
@@ -82,12 +82,13 @@ Therefore, the approach we take is to create a new non-persistable entity, `User
 
 ## Assigning `UserType` based on User roles
 
-Instead of writing microflows, you can classify users as Internal or External using roles in the User Classification module. To do this:
+Instead of writing microflows, you can classify users as `Internal` or `External` using roles in the [User Classification](https://marketplace.mendix.com/link/component/245015) module. To do this:
 
 1. Define roles like `ExternalRole` or other custom roles.
 2. Use the [User Classification](/appstore/modules/user-classification/) module to map these roles to the `UserType` field in the `UserReportInfo`.
-3. When a role is assigned to a user, the UserType updates automatically.
-4. This approach is simpler, more consistent, and easier to maintain than attribute-based logic.
+3. When a role is assigned to a user in your Mendix app, the User Classification module automatically updates the `UserType` field in the `UserReportInfo` entity for that user.
+
+This approach is simpler, more consistent, and easier to maintain than attribute-based logic.
 
 For more information, see the [Role-based Classification](/appstore/modules/user-classification/#role-based-classification) section of *User Classification*.
 
