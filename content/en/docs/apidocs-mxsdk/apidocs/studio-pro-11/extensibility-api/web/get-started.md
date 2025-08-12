@@ -7,7 +7,7 @@ weight: 2
 
 ## Introduction
 
-Studio Pro extensions can be developed using typescript and use standard web development technologies to extend the Studio Pro development environment. This guide shows you how to set up a basic development environment for building an extension using the web extensibility API.
+Studio Pro extensions can be developed using TypeScript and use standard web development technologies to extend the Studio Pro development environment. This guide shows you how to set up a basic development environment for building an extension using the web extensibility API.
 
 For more information, see the [Mendix Studio Pro Web Extensibility API](http://apidocs.rnd.mendix.com/11/extensions-api/index.html).
 
@@ -15,7 +15,7 @@ For more information, see the [Mendix Studio Pro Web Extensibility API](http://a
 
 You will need the following prerequisites:
 
-* Mendix Studio Pro version 10.21.0 or higher [Mendix Studio Pro](https://marketplace.mendix.com/link/studiopro). 
+* Mendix Studio Pro version 11.2.0 or higher [Mendix Studio Pro](https://marketplace.mendix.com/link/studiopro). 
 * A development IDE to develop your extensions. We recommend using [Visual Studio Code](https://code.visualstudio.com/).
 * Install the latest version 22.x.x of Node: https://nodejs.org/en/download.
 
@@ -34,9 +34,90 @@ This section will show you how to build and test an extension.
 ### Create a Test App
 
 1. Create a new app using the **Blank Web App** template.
-1. Install the [Studio Pro Web Extension Template](https://github.com/mendix/web-extension-template) from GitHub using the instructions in the repository.
+1. Make sure that you take note of the application directory (more precisely the application .mpr file)
+   where the application is stored on disk. 
+   {{% alert color="info" %}}
+   You can always open the application directory by choosing
+   **App** -> **Show App Directory in Explorer** (or **Show App Directory in Finder**) in Studio Pro.
+   {{% /alert %}}
 
-### Building the Extension
+### Creating the Extension
+
+To get you started faster with developing extensions, we have created an extension generator that will
+generate a sample extension that can be customized to your preferences.
+
+To use the generator, navigate to the folder where you would like to store the source code of the extension.
+Then, execute command `npm create @mendix/extension`. Then, `npm` will possibly ask you for a permission to install the
+generator, after which you will be presented with a series of questions that will help you generate an extension.
+
+You will have to choose the language (we will use TypeScript for our tutorials), extension name and
+whether you will use React for UI of the extension. The following two questions are optional, but highly recommended. They will allow you to debug and deploy the extension directly from Visual Studio Code,
+and we will further assume that you gave an answer to them. These two questions will ask you to provide Studio Pro executable path and path to the application `.mpr` package. The last question allows you to choose the Studio Pro version. Make sure you choose 11.
+{{% alert color="info" %}}
+The path to Studio Pro executable is usually `C:\Program Files\Mendix\<version>\modeler\studiopro.exe`, but you can get the exact location by running
+Studio Pro, right-clicking the taskbar icon, then right-clicking `Mendix Studio Pro 11.2.0` (version number can be different) and selecting 
+**Properties**. The 'Target' field contains the path to Studio Pro executable. 
+{{% /alert %}}
+After answering all the questions, a directory with the name of your extension will be created, containing the source code of the extension.
+
+### Exploring the Created Extension
+
+In the following, we assume the name of your extension is `myextension`:
+
+1. From the Explorer window navigate to `src/main/index.ts` select it to open the file.
+
+    Reading through the source code you should see the following:
+
+1. Line 8 adds a menu
+
+    ```typescript
+    await studioPro.ui.extensionsMenu.add({
+        menuId: "myextension.MainMenu",
+        caption: "MyExtension Menu",
+        subMenus: [
+            { menuId: "myextension.ShowMenu", caption: "Show tab" },
+        ],
+    });
+    ```
+
+1. Line 17 opens a tab
+
+    ```typescript
+    // Open a tab when the menu item is clicked
+    studioPro.ui.extensionsMenu.addEventListener(
+        "menuItemActivated",
+        (args) => {
+            if (args.menuId === "myextension.ShowMenu") {
+                studioPro.ui.tabs.open(
+                    {
+                        title: "MyExtension Tab"
+                    },
+                    {
+                        componentName: "extension/myextension",
+                        uiEntrypoint: "tab",
+                    }
+                );
+            }
+        }
+    );
+    ```
+
+  1. If you navigate to `build-extension.mjs` you can choose the directory to which the extension will be installed to
+     after being built in line 6:
+     ```typescript
+     const appDir = "C:\\TestApps\\AppTestExtensions"
+     ```
+
+  1. The file `.vscode\launch.json` specifies the launch configuration and enables debugging. Lines 8-9 specify
+     how the Studio Pro will be run:
+     ```json
+     "runtimeExecutable": "C:\\Users\\petar.vukmirovic\\source\\repos\\appdev\\modeler\\Mendix.StudioPro.Windows\\bin\\Debug\\studiopro.exe",
+     "runtimeArgs": ["C:\\TestApps\\AppTestExtensions\\AppTestExtensions.mpr", "--enable-extension-development", "--enable-web-extensions"],
+     ```
+
+When you install the extension you will see a new menu item within Studio Pro.
+
+### Building and Debugging the Extension
 
 From within Visual Studio Code:
 
@@ -47,84 +128,25 @@ From within Visual Studio Code:
 1. Now open a Terminal by selecting **Terminal** -> **New Terminal** from the top menu.
 1. From the Terminal type `npm install`. This installs all dependencies for the extension
 1. Build your extension using the command `npm run build` in the terminal.
+   If you provided the path to `.mpr` file in the previous step, this will install the extension into
+   the application directory.
 
-Once completed you should now have a build artifact which we can deploy to your Mendix app.
+If the last two questions of the extension generator were answered, and you have built and installed the extension, you can debug it as follows:
 
-You can explore the extension a bit more to understand what it will do when it is installed. Do the following:
+1. Open the extension source code in Visual Studio Code and set breakpoints.
+2. Select 'Run and Debug' side panel.
+3. Click on the play button on the top of the panel (or press F5)
 
-1. From the Explorer window navigate to `src/main/index.ts` select it to open the file.
-
-    Reading through the source code you should see the following:
-
-1. Line 7 adds a menu
-
-    ```typescript
-    await studioPro.ui.extensionsMenu.add({
-    menuId: "myextension.MainMenu",
-    caption: "MyExtension Menu",
-    subMenus: [{ menuId: "myextension.ShowTabMenuItem", caption: "Show tab" }],
-    });
-    ```
-
-1. Line 14 opens a tab
-
-    ```typescript
-    // Open a tab when the menu item is clicked
-    studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", (args) => {
-      if (args.menuId === "myextension.ShowTabMenuItem") {
-        studioPro.ui.tabs.open(
-          {
-            title: "My Extension Tab",
-          },
-          {
-            componentName: "extension/myextension",
-            uiEntrypoint: "tab",
-          }
-        );
-      }
-    });
-    ```
-
-When you install the extension you will see a new menu item within Studio Pro.
-
-### Testing the Extension
-
-To test the extension, do the following in File Explorer.
-
-1. Navigate to the folder where you extracted the extension source code.
-1. Open the `dist` folder.
-1. Copy the `myextension` folder.
-1. Navigate to the folder where you created your app.
-1. Create a new folder called `extensions`.
-1. Paste the `myextension` folder into the `extensions` folder you just created.
-
-    The extension files have now been added to the app.
-    
-1. Start Studio Pro with the following command line parameter to tell it to use the extensions in the folder.
-
-    `--enable-extension-development`
-
-    This flag instructs Studio Pro to do the following:
-
-    * Load extensions from the `extensions` folder
-    * Enable web debugging tools which will be useful when developing your extension
-
-1. In Studio Pro, open the new app. 
-
-    You will see a new `Extensions` item in the top menu.
-
-{{% alert color="warning" %}}
-Extension names used in place of `myextension` must only contain digits, letters, dashes, and underscores. Extensions with an invalid name will not be loaded and will display an error.
-{{% /alert %}}
+This will run Studio Pro in the extension development mode and open the configured application.
 
 ## Conclusion
 
 Using this guide we have:
 
 * Created a new app
-* Downloaded a new extension from GitHub
+* Used extension generator to get started with extension developmnt
 * Built the extension and installed it in our app
-* Tested our extension from within Studio Pro.
+* Tested and debugged our extension from within Visual Studio Code.
 
 ## Extensibility Feedback
 
