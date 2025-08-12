@@ -14,6 +14,25 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 ## 2025
 
+### July 18, 2025
+
+#### New Features
+
+* You can now view findings associated to each component in your app landscape. Findings represent issues identified in the components of an app. They give you a clear view of potential risks, so you can:
+
+    * Spot issues early.
+    * Reduce time spent troubleshooting by knowing exactly where to look for potential risks.
+    * Make smarter decisions by understanding the severity of each finding.
+    * Improve security by acting on risks as soon as they appear.
+
+  For details on which findings are available, where you can see them, and how you can set severity levels for them, refer to [Software Composition](/control-center/software-composition/).
+
+### July 17, 2025
+
+#### Improvements
+
+* We have changed the **Cloud Credits** field on the **Cloud Tokens** page to **Cloud Tokens**. This accurately represents its purpose and ensures consistency.
+
 ### June 12, 2025
 
 #### New Features
@@ -63,7 +82,7 @@ For more information, see [Allowing External User Invites to Projects](/control-
 
 #### New Features
 
-* We enhanced Software Composition to include marketplace-related metadata. You can now view this additional information on both the [All Components](/control-center/software-composition/#all-components) tab and the [Company Usage](/control-center/software-composition/#component-usage) page for a more comprehensive overview of your components.
+* We enhanced Software Composition to include marketplace-related metadata. You can now view this additional information on both the [Components](/control-center/components-tab/) tab and the [Component Usage](/control-center/components-tab/#component-component-usage) tab for a more comprehensive overview of your components.
 
 ### November 3, 2024
 
@@ -119,13 +138,13 @@ For more information, see [Allowing External User Invites to Projects](/control-
 
 #### New Features
 
-* We have launched the beta version of Software Composition, which provides visibility into component dependencies for every Mendix application environment. You can access the feature in [Control Center](/control-center/software-composition/) and [Apps navigation pane](/developerportal/deploy/software-composition/). This feature is available for select Studio Pro versions for free and licensed applications deployed on Mendix Public Cloud and Mendix for Private Cloud.
+* We have launched the beta version of Software Composition, which provides visibility into component dependencies for every Mendix application environment. You can access the feature in [Control Center](/control-center/software-composition/) and [Apps navigation pane](/developerportal/deploy/software-composition/). This feature is available for select Studio Pro versions for free and licensed applications deployed on Mendix Public Cloud and Mendix on Kubernetes.
 
 ### May 16, 2024
 
 #### New Features
 
-* We have added a new tab to the **Apps** page: the [Private Cloud](/control-center/apps-overview/#pc-connected) tab. Here you get an overview of all the apps deployed on Mendix Private Cloud Connected.
+* We have added a new tab to the **Apps** page: the [Mendix on Kubernetes](/control-center/apps-overview/#pc-connected) tab. Here you get an overview of all the apps deployed on Mendix on Kubernetes Connected.
 
 ### April 4, 2024
 
@@ -218,7 +237,7 @@ We made the following improvements to the [access management](/control-center/po
 
 #### New Features 
 
-* We added the **Member ID** column to the **Active Members** and **Deactivated Members** lists on the [Members](/control-center/members/#active-deactive-members) page. The column also appears in the Excel file, when you export the member information from these lists.
+* We added the **Member ID** column to the **Active Members** and **Deactivated Members** lists on the [Members](/control-center/members/) page. The column also appears in the Excel file, when you export the member information from these lists.
 * We introduced **Member ID** search functionality on the **Member** page.
 
 #### Improvements
@@ -359,7 +378,7 @@ We made the following improvements to the [access management](/control-center/po
 
 #### New Features
 
-* We released the Control Center [Dashboard](/control-center/dashboard/), which provides an overview of various activities for your company on the Mendix Platform. This feature is currently in [beta](/releasenotes/beta-features/), and you can provide feedback via the feedback button on the right of the page.
+* We released the Control Center [Dashboard](/control-center/dashboard/), which provides an overview of various activities for your company on the Mendix Platform. This feature is currently in [beta](/releasenotes/release-status/), and you can provide feedback via the feedback button on the right of the page.
 
 ### March 9, 2021
 

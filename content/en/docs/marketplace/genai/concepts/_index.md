@@ -92,7 +92,7 @@ In this case you will have to index and store your knowledge yourself, and index
 
 An example of how this can be done with OpenAI is described in [RAG Example Implementation in the GenAI Showcase App](/appstore/modules/genai/rag/).
 
-## The ReAct Pattern (Function Calling) {#react}
+### The ReAct Pattern (Function Calling) {#react}
 
 Another way to provide the LLM with additional information and capabilities is to use function calling, also known as tool use. With function calling you can make specific microflows available to the LLM. While evaluating the prompt, the LLM will, optionally, ask to execute a particular microflow. The Mendix application will execute this microflow and return additional information for the LLM to add to the prompt being processed.
 
@@ -104,6 +104,8 @@ This pattern is supported both by [OpenAI](https://platform.openai.com/docs/guid
 
 ## Agents and Assistants {#agents}
 
-Some vendors of generative AI solutions have the concept of an "Agent" or "Assistant" which can combine prompts, RAG, and ReAct in a single call. You can also specify multiple steps which the agent should follow, and ask the agent to create the prompts or API calls needed for those steps.
+The agent concept combines prompts, RAG (Retrieval Augmented Generation), and ReAct patterns in a single call. These components of agent-based logic are all supported by our Agents Kit. Using LLMs, business logic can be enriched by enabling AI agents to reason and autonomously execute actions while being grounded in domain-specific knowledge. With Mendix's Agents Kit, agents become a seamless part of your application's logic.
 
-For example, [Agents for Amazon Bedrock](https://aws.amazon.com/bedrock/agents/) provides this functionality for Amazon Bedrock. You can find out how to use this in your Mendix application in [Invoking an Agent with the InvokeAgent Operation](/appstore/modules/aws/amazon-bedrock/#invokeagent) section of the *Amazon Bedrock* module documentation.
+For an overview of the components that help you get started, refer to [the Agents Kit overview](/appstore/modules/genai/#architecture). 
+
+In addition, you can integrate agentic behavior in a Mendix app by leveraging external agents through cloud infrastructure providers. In this case, the Mendix app does not store the agent definition. Instead, it only calls the external agent. For example, [Agents for Amazon Bedrock](https://aws.amazon.com/bedrock/agents/) provides this functionality for Amazon Bedrock. You can find out how to use this in your Mendix application in [Invoking an Agent with the InvokeAgent Operation](/appstore/modules/aws/amazon-bedrock/#invokeagent) section of the *Amazon Bedrock* module documentation.

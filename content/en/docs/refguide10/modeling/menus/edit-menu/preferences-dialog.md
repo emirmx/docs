@@ -260,8 +260,6 @@ This option allows you to change the user interface language you work in while u
 | Korean                 | 10.17      | 10.24                |
 | Portuguese (Brazilian) | 10.23      | TBD                  |
 
-
-
 ### Editor Tabs Closing Policy {#closing-policy}
 
 It is recommended to limit the number of open tabs (open documents) to improve the performance of Studio Pro. This option is enabled by default and set to a limit of 15 tabs. However, you can disable this behavior completely or change the limit value.
@@ -356,7 +354,7 @@ This setting, introduced in 10.19 and currently in beta, allows entities to be u
 
 ### System Texts Editor
 
-In Studio Pro 10.14.0, the web version of the system texts editor was released as an experimental feature. Enable this option to use the web version of the editor. 
+This setting, introduced as an experimental feature in Studio Pro 10.14.0, allows you to use the web version of the system texts editor. In Studio Pro 10.17.0 and above, it is enabled by default.
 
 If Translation Generator is also enabled, you can use it in this editor as well. For more information, see the [Generating Translation for System Texts](/refguide10/translation-generator/#translate-system-text) section in *Translation Generator*.
 

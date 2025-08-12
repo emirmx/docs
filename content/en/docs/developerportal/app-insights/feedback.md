@@ -12,7 +12,7 @@ aliases:
 
 If your app uses the [Mendix Feedback](/appstore/modules/mendix-feedback/) module, users can report feedback to your team using the feedback widget in your app, and all their feedback goes to the **Feedback** page. **Feedback** enables your team to view all the feedback. It also allows team members with the right permissions to organize feedback and add feedback manually. 
 
-You can access the **Feedback** page by selecting your app in [Apps](https://sprintr.home.mendix.com/) and then clicking **Feedback** in the navigation pane. 
+You can access the **Feedback** page by selecting your app in [Apps](https://sprintr.home.mendix.com/), then clicking **Feedback** in the navigation pane. 
 
 The **Feedback** page contains two tabs: [Inbox](#inbox) and [Archive](#archive).
 
@@ -20,29 +20,38 @@ The **Feedback** page contains two tabs: [Inbox](#inbox) and [Archive](#archive)
 
 #### What Happens to Your Team
 
-After a user reports feedback in the app using the feedback widget, the feedback goes automatically to the [Inbox](#inbox) on the **Feedback** page, and the members in your team who are a Scrum Master or have the same permissions as the default permissions of a Scrum Master get a [notification](/developerportal/global-navigation/#notifications). If you no longer want to receive feedback notifications for a specific app, you can [stop watching](/developerportal/#my-apps) the app. 
+After a user reports feedback in the app using the feedback widget, the feedback goes automatically to the [Inbox](#inbox) on the **Feedback** page, and the members in your team who are a Scrum Master or have the same permissions as the default permissions of a Scrum Master get a [notification](/global-navigation/#notifications). If you no longer want to receive feedback notifications for a specific app, you can [stop watching](/developerportal/#my-apps) the app. 
 
 On top of getting a notification in the Mendix Portal, Scrum Masters of your team also receive an email with a link to the details of the new feedback.
 
 #### What Happens to the User
 
-After a user reports feedback in the app using the feedback widget, they get an email with a link to their submitted feedback. When the user opens the link, a page opens and shows their feedback details. See the table below:
+After a user reports feedback in the app using the feedback widget, they get an email with a link to their submitted feedback. When the user opens the link, a page opens and shows their feedback details.
 
-| What a User Can See on the Page                             | What a User Cannot See on the Page                          |
-| ----------------------------------------------------------- | ----------------------------------------------------------- |
-| Name of the feedback they submitted                         | Metadata                                                    |
-| Description of the feedback they wrote                      | Summary of the feedback that your team wrote                |
-| Screenshot (if they uploaded a screenshot for the feedback) | To which team member the feedback is assigned               |
-| Current status of the feedback                              | Tags that are assigned to the feedback                      |
-| Submission date                                             | Other feedback items that are associated with this feedback |
-| Last activity on the feedback                               | Attachments that you team uploaded for this feedback        |
-|                                                             | Team comments on this feedback                              |
+##### What a User Can See on the Page
+
+* Name of the feedback they submitted 
+* Description of the feedback they wrote 
+* Screenshot (if they uploaded a screenshot for the feedback)
+* Current status of the feedback
+* Submission date
+* Last activity on the feedback 
+
+##### What a User Cannot See on the Page
+
+* Metadata
+* Summary of the feedback that your team wrote
+* To which team member the feedback is assigned 
+* Tags that are assigned to the feedback
+* Other feedback items that are associated with this feedback
+* Attachments that you team uploaded for this feedback
+* Team comments on this feedback
 
 This page also has a message feature for the user to communicate with your team directly. Users can upload images in the messages. When the user posts a message, the assigned team member receives an email. When there is a reply from your team, the user gets an email notification.
 
-{{% alert color="warning" %}}Do not share the link to feedback details with someone unless it is necessary. Anyone who has this link can access the feedback details, including the title and the description of the feedback as well as the screenshot if there is one.{{% /alert %}}
+{{% alert color="warning" %}}Do not share the link to feedback details with someone unless it is necessary. Anyone who has this link can access the feedback details, including the title and the description of the feedback, as well as the screenshot if there is one.{{% /alert %}}
 
-If the user does not want to receive notifications anymore, they can clear the checkbox for the notification on the page, as shown in the image below: 
+If the user does not want to receive notifications anymore, they can clear the checkbox for the notification on the page. 
 
 {{< figure src="/attachments/developerportal/app-insights/feedback/user-notification.png" class="no-border" >}}
 
@@ -73,11 +82,16 @@ Clicking the filter bar opens the **Filter by** side panel. In this side panel, 
 
 ### Organizing Feedback in Inbox
 
-If your [role](/developerportal/general/app-roles/) has the permission that **Can edit ‘Stories, Documents and Feedback'**, you can also organize feedback items.
+If your [role](/developerportal/general/app-roles/) has the **Can edit ‘Stories, Documents and Feedback'** permission, you can also organize feedback items.
 
 You can add new feedback manually yourself. 
 
-To manually add feedback, click **Create new feedback** (if there is not any feedback yet on the **Inbox** tab) or click **Add feedback** (if there is already feedback on the **Inbox** tab), and then fill in the **Subject**, **Description**, and **Submitter Email** fields, and optionally **Upload Screenshots** in the **New Feedback** dialog box.
+To manually add feedback:
+
+* Click **Create new feedback** if there is not any feedback yet in the **Inbox** tab.
+* Click **Add feedback** if there is already feedback in the **Inbox** tab.
+
+Then, fill in the **Subject**, **Description**, and **Submitter Email** fields, and optionally **Upload Screenshots** in the **New Feedback** dialog box.
 
 If you select feedback, you can see the following items: 
 
@@ -125,18 +139,19 @@ On the [Inbox](#inbox) and [Archive](#archive) tabs, you can open feedback by cl
 
 ### Feedback Tab {#feedback}
 
-{{% alert color="info" %}}If your [role](/developerportal/general/app-roles/) has the permission that **Can edit ‘Stories, Documents and Feedback'**, you can edit the feedback details on the **Feedback** tab.{{% /alert %}}
+{{% alert color="info" %}}If your [role](/developerportal/general/app-roles/) has the **Can edit ‘Stories, Documents and Feedback'** permission, you can edit the feedback details on the **Feedback** tab.{{% /alert %}}
 
 The **Feedback** tab shows the following items: 
 
-* Buttons ({{% icon name="view-off" %}} {{% icon name="view" %}} {{% icon name="hyperlink" %}} {{% icon name="three-dots-menu-horizontal" %}}) on the upper-right corner
-    * {{% icon name="view-off" %}} – Clicking the button to start receiving [notifications](#notifications) for this feedback. You also automatically start receiving notifications for this feedback whenever you respond to the reporter of the feedback or leave a comment for your team in the **Communications** section within the feedback.
-    * {{% icon name="view" %}} – Clicking the button to stop receiving notifications for this feedback.
-    * **Copy Link** ({{% icon name="hyperlink" %}}) – Clicking this button copies the URL to the feedback. You can send the URL to other people.
-    * **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) – Clicking the button opens a menu with the following items:
-        * **Move** – Clicking this button moves the feedback to any other app of which you are a member. Whenever you move feedback, you also move all linked feedback. If you only want to move one feedback item, you need to unlink the feedback from the group first.
-        * **Create Story** – If your app is connected to [Epics](/developerportal/project-management/epics/) or [Jira](/developerportal/project-management/jira-connector/), clicking this button converts the feedback to a story on the designated board in Epics or Jira. Once the story is created, clicking this button brings you to the story on the board right away.
-        * **Delete** – Clicking this button removes the feedback permanently from **Feedback**. The result is irreversible.
+* Buttons ({{% icon name="view-off" %}} {{% icon name="view" %}} {{% icon name="hyperlink" %}} {{% icon name="three-dots-menu-horizontal" %}}) in the upper-right corner
+    * {{% icon name="view-off" %}} – Click this button to start receiving [notifications](#notifications) for this feedback. You also automatically start receiving notifications for this feedback whenever you respond to the reporter of the feedback or leave a comment for your team in the **Communications** section within the feedback.
+    * {{% icon name="view" %}} – Click this button to stop receiving notifications for this feedback.
+    * **Copy Link** ({{% icon name="hyperlink" %}}) – Click this button to copy the URL to the feedback. You can send the URL to other people.
+    * **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) – Click this button to open a menu with the following items:
+        * **Move** – Click this button to move the feedback to any other app of which you are a member. Whenever you move feedback, you also move all linked feedback. If you only want to move one feedback item, you need to unlink the feedback from the group first.
+        * **Create Story** – If your app is connected to [Epics](/developerportal/project-management/epics/) or [Jira](/developerportal/project-management/jira-connector/), clicking this button converts the feedback to a story on the designated board in Epics or Jira. Once the story is created, clicking this button brings you to the story on the board right away.    
+          You can also create feedback-based stories using Maia. For details, refer to the [Creating Stories with Maia](#create-with-maia) section.
+        * **Delete** – Click this button to remove the feedback permanently from **Feedback**. The result is irreversible.
     
 * **Last activity** – This shows when the last edit to the feedback was made.
 
@@ -159,7 +174,7 @@ The **Feedback** tab shows the following items:
 * **Metadata** – This shows a list of metadata of the feedback.
 
     * **Active Userrole** – This is the user role the reporter has in your app
-    * **Active form**– This is the page from which the reporter sent the feedback
+    * **Active form** – This is the page from which the reporter sent the feedback
     * **Screen Size** – This is the dimensions of the reporter’s screen in pixels
     * **Browser** – This is the version of the browser the reporter was using
     * **Application location** – This is the URL of the page from which the reporter sent the feedback
@@ -183,6 +198,24 @@ The **Feedback** tab shows the following items:
 
 * **Communication** – This section shows all the comments on this feedback from your team. You can leave comments here and attach attachments to each comment. Comments submitted to this section are only visible to your team members.
 
+#### Creating Stories with Maia {#create-with-maia}
+
+You can use Maia to create a story based on one or more feedback items. To do that, follow these steps:
+
+1. Enable Maia in **Feedback**. To do that, access the {{% icon name="cog" %}}**Settings** menu, and toggle on the Maia option on the **Mendix AI Assistance** tab.
+2. Select a feedback item from the list.
+3. Click **Create Story**. The **Create Story** window is displayed.
+4. Click {{% icon name="sparkles" %}}**Create with Maia**. The **Create Story with Maia** window is displayed.
+5. Check the suggested story description.    
+   If you do not agree with the suggestion, click **Regenerate Response** to obtain a different suggestion.
+   If you agree with the suggestion, click **Apply to Story**.
+6. Check Maia's suggestions for the **Title**, **Type**, **Sprint**, and **Epic** fields, and edit them if necessary.
+7. Click **Create Story**. 
+
+A banner at the bottom of the window shows you that the story has been created. You can click **Open** to access the story on the **Planning** page.
+
+You can select several feedback items to create a story based on all of them.
+
 ### Reporter Comments Tab {#contact-reporter}
 
 The **Reporter Comments** tab allows you to read messages from the reporter and reply to them. Whenever the reporter sends a message, it is shown in this section. Once you reply to a message from the reporter, they receive an email. When multiple feedback items are linked, the system only sends an email to the reporter of this specific feedback item, not other associated feedback items in the same group.
@@ -195,7 +228,7 @@ From the [feedback details](#feedback-details) page, you can manage tags by clic
 
   {{< figure src="/attachments/developerportal/app-insights/feedback/tag-management-settings.png" alt="tag management setting" >}}
 
-  To create a new tag, do as follows:
+  To create a new tag, follow these steps:
 
   1. Click **Add Tag**. A text box appears, with a colored circle indicating the color of the new tag.
   2. In the text box, enter the name of the new tag.
@@ -229,4 +262,4 @@ You can receive a notification when new feedback lands in **Inbox** or when a re
 
 ### Receiving Notifications for an Individual Feedback Item {#notifications-individual-feedback}
 
-You can also just receive notifications for an individual feedback item. Set this up by clicking the {{% icon name="view-off" %}} icon on the upper-right corner of the [Feedback](#feedback) tab after you open the feedback. You also automatically start receiving notifications for an individual feedback item once you [respond to the reporter](#contact-reporter) of the feedback or leave a comment for your team in the **Communications** section within the feedback.
+You can also just receive notifications for an individual feedback item. Set this up by clicking the {{% icon name="view-off" %}} icon in the upper-right corner of the [Feedback](#feedback) tab after you open the feedback. You also automatically start receiving notifications for an individual feedback item once you [respond to the reporter](#contact-reporter) of the feedback or leave a comment for your team in the **Communications** section within the feedback.

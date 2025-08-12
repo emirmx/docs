@@ -100,7 +100,6 @@ To create a CSR and an RSA (Rivest–Shamir–Adleman) encryption key, follow th
 
 4. Click **Generate**.
 
-
     An SSL/TLS private key and a certificate request is generated. The certificate request will be shown in PEM (Privacy-Enhanced Mail) format.
 
     {{< figure src="/attachments/deployment/mendix-cloud-deploy/custom-domains/new-pem-format.png" >}}

@@ -36,21 +36,35 @@ Generative Artificial Intelligence (GenAI) transforms business applications, emp
 
 * Basic documentation on [GenAI Concepts](/appstore/modules/genai/get-started/) is an essential resource for anyone beginning their GenAI journey.
 * The [GenAICommons](/appstore/modules/genai/genai-for-mx/commons/) module as a prerequisite for all GenAI components.
-* The [ConversationalUI](/appstore/modules/genai/conversational-ui-module/conversational-ui/) module that offers UI snippets for chat, token consumption monitoring and prompt management.
+* The [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/) module that offers UI snippets for chat, token consumption monitoring and prompt management.
 * The [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/) to learn how to quickly access GenAI capabilities from a Mendix app.
 * The [OpenAI](/appstore/modules/genai/openai/) provides essential information about the OpenAI connector.
 * The [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/) provides key information about the AWS Bedrock connector.
+* The [MCP Server Module](/appstore/modules/genai/genai-for-mx/mcp-server/) provides reusable operations to create and initialize an MCP server within a Mendix app to expose tools and prompts to external clients.
 * The [PGVector Knowledge Base](/appstore/modules/genai/pgvector/) offers the option for a private knowledge base outside of the LLM infrastructure.
 
 For any additional feedback, send a message in the [#genai-connectors](https://mendixcommunity.slack.com/archives/C07P8NRBLN9) channel on the Mendix Community Slack. You can sign up for the Mendix Community [here](https://mendixcommunity.slack.com/join/shared_invite/zt-270ys3pwi-kgWhJUwWrKMEMuQln4bqrQ#/shared-invite/email).
 
 ### Featured Blogposts
 
+#### Basics
+
 * [AI Model Training: What it is and How it Works](https://www.mendix.com/blog/ai-model-training/)
 * [What Are the Different Types of AI Models?](https://www.mendix.com/blog/what-are-the-different-types-of-ai-models/)
-* [OpenAI using the ‘GenAI for Mendix’ Module](https://www.mendix.com/blog/openai-using-the-genai-for-mendix-module/)
+* [OpenAI Using the ‘GenAI for Mendix’ Module](https://www.mendix.com/blog/openai-using-the-genai-for-mendix-module/)
 * [How to Configure Azure OpenAI Models in Mendix](https://www.mendix.com/blog/how-to-configure-azure-openai-models-in-mendix/)
+
+#### Building your own Connector
+
 * [How to Run Open-Source LLMs Locally with the OpenAI Connector and Ollama](https://www.mendix.com/blog/how-to-run-open-source-llms-locally-with-the-openai-connector-and-ollama/)
+
+#### AI Agents 
+
 * [How Multi-Agent AI Systems in Mendix Can Train You for a Marathon](https://www.mendix.com/blog/how-multi-agent-ai-systems-in-mendix-can-train-you-for-a-marathon/)
+* [Control a Virtual Computer from Your Mendix App Using Gen AI](https://www.mendix.com/blog/control-a-virtual-computer-from-your-mendix-app-using-gen-ai/)
+
+#### Model Context Protocol (MCP)
+
+* [Use MCP to Bring Mendix Business Logic into Claude for Desktop](https://www.mendix.com/blog/how-to-use-mcp-to-bring-mendix-business-logic-into-claude-for-desktop/)
 
 ## Documents in this Category

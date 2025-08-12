@@ -14,21 +14,21 @@ To understand the different types of versions and releases, consider the example
 
 In the 9.24.1 example, the first number (**9**) indicates the major version.
 
-Mendix supports three major versions at a time. To clarify our current offering and in relation to our SLA, today Mendix supports major versions 8, 9, and 10. 
+Mendix supports three major versions at a time. To clarify our current offering and in relation to our SLA, today Mendix supports major versions 9, 10, and 11. 
 
-As of Mendix 10, to make planning version upgrades easier for our users, Mendix will release in a two-year cadence, which means that every two years we plan to release a new major version in June. This will help in preparing and planning to adopt new releases and upgrade older Mendix versions. Each major version release will start with two public [beta releases](/releasenotes/beta-features/).
+As of Mendix 10, to make planning version upgrades easier for our users, Mendix will release in a two-year cadence, which means that every two years we plan to release a new major version in June. This will help in preparing and planning to adopt new releases and upgrade older Mendix versions. Each major version release will start with two public [beta releases](/releasenotes/release-status/).
 
 For Mendix 10 and 11, we are planning to follow this release timeline:
 
 | Release | Date |
 | --- | --- |
-| 9.24 LTS | March 2023 |
 | 10.6 MTS | December 2023 |
 | 10.12 MTS | June 2024 |
 | 10.18 MTS | December 2024 |
-| 11 Public Beta 1, 10.22 | April 2025 |
-| 11 Public Beta 2, 10.23 | May 2025 |
-| 11.0 GA, 10.24 LTS | June 2025 |
+| 10.22 | April 2025 |
+| 10.23 | May 2025 |
+| 11.0 GA | June 2025 |
+| 10.24 LTS | June 2025 |
 
 ### Minor Version
 
@@ -48,8 +48,8 @@ An LTS version is the last minor release of a major version. Its release is alig
 
 These are the current LTS versions of Studio Pro:
 
-* [8.18](/releasenotes/studio-pro/8.18/) (started in March, 2021)
 * [9.24](/releasenotes/studio-pro/9.24/) (started in March, 2023)
+* [10.24](/releasenotes/studio-pro/10.24/) (started in June, 2025)
 
 Release notes for the current LTS versions are marked with an LTS badge (<text class="badge badge-pill badge-lts" style="margin-left:0px">LTS</text>) in the left sidebar.
 
@@ -70,6 +70,8 @@ This diagram illustrates the LTS concept with version and [end of support](#end)
 {{< figure src="/attachments/releasenotes/studio-pro/lts-mts/lts.png" class="no-border" >}}
 
 {{% alert color="info" %}}For details on extending support for an older major version, see the [Extended Support](/support/#extended-support) section in *Mendix Support*.{{% /alert %}}
+
+{{% alert color="info" %}}For details on the shorter support durations of native mobile apps, see [Support Guidelines for Native Mobile](/releasenotes/mobile/native-support/). We recommend updating native apps a bit more often than other mobile apps so you can advantage of evolving features. {{% /alert %}}
 
 ### Release Cycle
 
@@ -141,7 +143,7 @@ A monthly release only receives patches for critical/security issues if they can
 
 For example, if you are using version 9.1 after 9.2 has been released and you find a critical issue in 9.1, that fix will only be released in the next monthly release, which would be 9.3.
 
-If a bug is found in a monthly-release version for an older major version, it will only be fixed as a patch on the existing LTS (for example, a bug found in 8.16 will only be fixed for a patch release on the LTS version 8.18). 
+If a bug is found in a monthly-release version for an older major version, it will only be fixed as a patch on the existing LTS (for example, a bug found in 9.16 will only be fixed for a patch release on the LTS version 9.24). 
 
 ### Upgrading Impact
 

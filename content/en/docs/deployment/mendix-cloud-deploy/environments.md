@@ -36,10 +36,10 @@ You can see the following details for each environment shown in the **Overview**
 * The Studio Pro Target ({{< icon name="mendix-browser" >}}) – This is displayed if the environment is the designated Studio Pro target. For more information, see [Studio Pro Deployment Settings](/developerportal/deploy/studio-deployment-settings/).
 * Licensed badge – This is displayed if the environment is licensed.
 * The environment's status:
-    * {{< icon name="checkmark-circle-filled" color="green" >}} – The application in this environment is running.
-    * {{< icon name="subtract-circle-filled" color="gray" >}} – No application has been started yet in this environment, or the application has been turned off.
-    * {{< icon name="alert-circle-filled" color="yellow" >}} – The application in this environment is experiencing some difficulties. Check the alerts page or logs for more information.
-    * {{< icon name="remove-circle-filled" color="red" >}} – The application in this environment is unstable and probably not usable anymore.
+    * {{% icon name="checkmark-circle-filled" color="green" %}} – The application in this environment is running without any alerts.
+    * {{% icon name="subtract-circle-filled" color="gray" %}} – No application has been started yet in this environment, or the application has been turned off.
+    * {{% icon name="alert-circle-filled" color="yellow" %}} – The application in this environment is running, but has warning alerts, which might result in difficulties. For more information, refer to the [alerts page](/developerportal/operate/monitoring-application-health/#alerts-page) or [logs](/developerportal/operate/logs/).
+    * {{% icon name="remove-circle-filled" color="red" %}} – The application in this environment is running, but has critical alerts, which might make it unstable and not usable anymore. Refer to the [alerts page](/developerportal/operate/monitoring-application-health/#alerts-page) or [logs](/developerportal/operate/logs/) for more information.
 * The date and time the app was started, if it is running. This is set in the user's time zone.
 * The version of the deployment package
 * The name of the deployment package
@@ -126,7 +126,7 @@ On a package:
 
 The **Create a Package** wizard walks you through creating deployment packages. To use the wizard, follow these steps:
 
-1. On the [Deployment Packages tab](#deployment-packages-tab), click **Create a Package**. This launches the **Create Package** wizard.
+1. On the [Deployment Packages](#deployment-packages-tab) tab, click **Create a Package**. This launches the **Create Package** wizard.
 2. On the **Select Branch** tab, select the branch on which to base the build.
 3. On the **Select Revision** tab, select the branch revision on which to base the package.
 4. On the **Choose a Tag** tab, specify the version tag. This includes the major, minor, and patch version numbers.
@@ -146,10 +146,10 @@ Follow these steps to deploy packages to selected environments using the **Deplo
 2. Perform one of the following actions, depending on whether you selected the package or the environment first:
     * If you launched the wizard by selecting an environment, the first screen of the wizard is the **Select Package** tab. Use it to select a package from the repository.
     * If you launched the wizard by selecting a package, the first screen of the wizard is the **Select Environment** tab. Use it to select the target environment for your package.
-3. On the **Configure Environment** tab, review the new constant values, and adjust them as required.
+3. On the **Configure Environment** tab, review the [constants](/refguide/constants/) and adjust them as required.
 4. In the **Other Options** tab, choose whether to stage the package without deploying, and when to create the backup: either before or after deploying the new package. The app is unavailable while the backup runs.
 5. On the **Deploy** tab, review the deployment settings:
-    1. To see an overview of the configuration for this deployment, click **View Summary**. This summary displays the selected package, selected backup option, and any changed constants or scheduled events.
+    1. To see an overview of the configuration for this deployment, click **View Summary**. This summary displays the selected package, selected backup option, and any changed constants or [scheduled events](/refguide/scheduled-events/).
     2. Review this summary, then click **Deploy Now**.
 
 ### Permissions Tab{#permissions-tab}

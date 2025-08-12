@@ -43,7 +43,7 @@ Version control systems like Git do not store a full copy of a document for ever
 #### MPRv2 Format {#mprv2}
 
 {{% alert color="info" %}}
-MPRv2 was released in Studio Pro 10.18.0 as [Public Beta](/releasenotes/beta-features/). In Studio Pro 10.21.0, MPRv2 was released for General Availability (GA) and is automatically used for new apps. When opening an existing app in Studio Pro 10.22 and above, it automatically converts to the MPRv2 format.
+MPRv2 was released in Studio Pro 10.18.0 as [Public Beta](/releasenotes/release-status/). In Studio Pro 10.21.0, MPRv2 was released for General Availability (GA) and is automatically used for new apps. When opening an existing app in Studio Pro 10.22 and above, it automatically converts to the MPRv2 format.
 {{% /alert %}}
 
 Studio Pro 10.18 introduced a new version of the *.mpr* format: MPRv2. The key difference is that all documents, such as microflows, are no longer stored as part of the *.mpr* file but as separate files in the *mprcontents* directory. The *.mpr* file functions as an index file pointing to all the different files on disk. 

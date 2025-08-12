@@ -6,7 +6,7 @@ description: "The web extensibility API allows your custom Studio Pro 10 extensi
 weight: 20
 ---
 
-{{% alert color="warning" %}} This feature is in beta. For more information, see [Beta Releases](/releasenotes/beta-features/). {{% /alert %}}
+{{% alert color="warning" %}} This feature is in beta. For more information, see [Release Status](/releasenotes/release-status/). {{% /alert %}}
 
 {{% alert color="info" %}}For information on new releases of the Extensibility API, see [Extensibility: Web API Release Notes](/releasenotes/studio-pro/web-extensibility-api/).
 {{% /alert %}}

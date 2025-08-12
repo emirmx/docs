@@ -19,17 +19,21 @@ The [PDF Document Generation](https://marketplace.mendix.com/link/component/2115
 
 ### Limitations {#limitations}
 
-* Currently, PDF is the only supported document export format.
-* For deployment, currently we support [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/), [Mendix Cloud Dedicated](/developerportal/deploy/mendix-cloud-deploy/), [Mendix for Private Cloud Connected](/developerportal/deploy/private-cloud/), and [On-Premises](/developerportal/deploy/on-premises-design/). Other deployment scenarios will be supported at a later stage.
+* PDF is the only supported document export format.
+* For deployment, we support: 
 
-    {{% alert color="info" %}}For all deployment types except for on-premises, we only support apps that allow bi-directional communication with the PDF Service in Mendix Cloud.{{% /alert %}}
-
+    * [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/)
+    * [Mendix Cloud Dedicated](/developerportal/deploy/mendix-cloud-deploy/)
+    * [Mendix on Kubernetes Connected](/developerportal/deploy/private-cloud/)
+    * [On-Premises](/developerportal/deploy/on-premises-design/)
+    * A privately hosted Docker containerized PDF Document Generation service. It is available starting with module versions 1.11.0 for Studio Pro 9 and 2.1.0 for Studio Pro 10. For more information, refer to [Private PDF Document Generation Service](/appstore/services/private-document-generation-service/).
+    {{% alert color="info" %}}We only support apps that allow bi-directional communication with the PDF Service in Mendix Cloud for all deployment types except for on-premises, and for the [Private PDF Document Generation Service](/appstore/services/private-document-generation-service/).{{% /alert %}}
 * The maximum file size is 25 MB per document. If your document exceeds this limit, the action will result in an exception. We recommend compressing high-resolution images to reduce their file size.
-* If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using client certificates, our cloud service will not be able to reach your app and the module will not work properly.
+* If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using client certificates, our cloud service will not be able to reach your app, and the module will not work properly.
 * If your app uses a custom domain, you must configure a custom SSL/TLS domain certificate signed by a trusted public authority, including all intermediate certificates if applicable. Self-signed certificates will cause the service to fail. For more information, see [Obtaining a new signed certificate](/developerportal/deploy/custom-domains/#obtaining-a-new-signed-certificate).
 * We use a fixed 30 second timeout for the page to finish loading and rendering. A timeout exception is thrown if the page content did not finish loading within 30 seconds.
 * Widgets or add-ons for your `index.html` file that perform long polling network requests are not supported. The document generation service waits until there are no more pending network requests.
-* Some widgets, such as the [Charts](/appstore/widgets/charts/) widget, might be rendered inconsistently in the generated PDF due to factors like animation.
+* Some widgets, such as [Charts](/appstore/widgets/charts/), might be rendered inconsistently in the generated PDF due to factors like animation.
 * Complex documents (for example, large tables) may run into memory limitations, separate from the file size limitation. Try to reduce the number of widgets inside repeatable widgets as much as possible.
 * We currently do not enforce strict rate limits. However, take into account the following guidelines:
     * Only set the `Wait for result` parameter to *true* for direct user actions. Do not set it to *true* for batch processing. Under heavy load, requests that wait for the result may fail due to strict timeout limitations.
@@ -41,8 +45,8 @@ The [PDF Document Generation](https://marketplace.mendix.com/link/component/2115
 * Setting the microflow property **Apply entity access** to *Yes* does not have any effect on the `Generate PDF from page` action. Regardless of the **Apply entity access** setting, the action does not require *Create* or *Write* access rights for the `FileDocument` object that gets created.
 * The `System.Owner` association is currently not set to the user which has run the microflow. Instead, the user that is configured for the `Generate as user` property of the `Generate PDF from page` action is used to set the association.
 * For local development, we use the Chrome or Chromium executable that is available on the development machine. Even though we have not observed these yet, there might be minor differences in PDF output locally versus when using the cloud service.
-* The access (and refresh) tokens used to secure requests to the cloud service are stored unencrypted in the app database. No user roles have read access to these tokens and all communication with the cloud service is encrypted by requiring HTTPS. However, do consider this when sharing a backup of the database with other developers. We will introduce encryption at a later stage.
-* If you have the [Application Performance Monitor (APM)](/appstore/partner-solutions/apd/) or [Application Performance Diagnostics (APD)](/appstore/partner-solutions/apd/) add-on enabled in your app, or set the log level of the **Services** log node to *Trace*, the PDF Document Generation module will not be able to generate documents when used in Mendix Cloud. This limitation is only applicable for apps built in Mendix 9.24.5 and below and Mendix 10.0.0.
+* The access and refresh tokens used to secure requests to the cloud service are stored unencrypted in the app database. No user roles have read access to these tokens, and all communication with the cloud service is encrypted by requiring HTTPS. However, do consider this when sharing a backup of the database with other developers. We will introduce encryption at a later stage.
+* If you have the [Application Performance Monitor (APM)](/appstore/partner-solutions/apd/) or [Application Performance Diagnostics (APD)](/appstore/partner-solutions/apd/) add-on enabled in your app, or the log level of the **Services** log node set to *Trace*, the PDF Document Generation module will not be able to generate documents when used in Mendix Cloud. This limitation is only applicable for apps built in Mendix 9.24.5 and below and Mendix 10.0.0.
 
 ### Dependencies
 
@@ -66,7 +70,7 @@ Follow the instructions in [How to Use Marketplace Content](/appstore/use-conten
     1. [Running on Mendix Cloud](#run-on-mendix-cloud) using the PDF service in the Mendix Public Platform. This option is available for apps that are deployed to the following environments:
         * [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/)
         * [Mendix Cloud Dedicated](/developerportal/deploy/mendix-cloud-deploy/)
-        * [Mendix for Private Cloud Connected](/developerportal/deploy/private-cloud/)
+        * [Mendix on Kubernetes Connected](/developerportal/deploy/private-cloud/)
 
     2. [Running On-Premises](#run-on-premises) using a local version of the PDF service. This option is available for apps that are deployed to the following environments:
         * [Microsoft Windows](/developerportal/deploy/deploy-mendix-on-microsoft-windows/)
@@ -96,7 +100,7 @@ To allow the module to send and receive document generation requests on your Men
 
 1. If your app is deployed on Mendix Cloud or Mendix Cloud Dedicated, [enable the DocGen request handler.]{#enable-docgen}
 
-   {{% alert color="info" %}}This step is required only for licensed apps on Mendix Cloud or Mendix Cloud Dedicated. If your app is deployed on [Mendix for Private Cloud Connected](/developerportal/deploy/private-cloud/), skip this step and make sure that the */docgen/* path is accessible.{{% /alert %}}
+   {{% alert color="info" %}}This step is required only for licensed apps on Mendix Cloud or Mendix Cloud Dedicated. If your app is deployed on [Mendix on Kubernetes Connected](/developerportal/deploy/private-cloud/), skip this step and make sure that the */docgen/* path is accessible.{{% /alert %}}
 
 2. [Register your app environments.](#register-app)
 3. If your app is configured to restrict access based on IP address, [add the IP addresses used by the DocGen service to the list of allowed addresses.](#allow-ip)
@@ -228,7 +232,8 @@ Rule | Name | Pattern | Rewrite URL
 
         {{% alert color="info" %}}Whenever there are multiple document requests for the same app environment, the document generation service will prioritize requests that have the **Wait for result** property set to *true* above requests that have the property set to *false*.{{% /alert %}}
 
-5. Verify that the user which you configured in the **Generate document as** property has access to the page microflow created in step 3, as well as access to all relevant data used in the page to be exported.
+5. Verify that the user that you configured in the **Generate document as** property has access to all relevant data used in the page. This ensure that the page is exported correctly.    
+    For all module versions below 1.11.1 for Studio Pro 9, and 2.1.1 for Studio Pro 10, the user configured in the **Generate document as** property must be assigned access to the page microflow.
 
 {{% alert color="info" %}}
 To see the generated document in the browser or download it, you can use the **Download file** microflow action. This will only work if you set the **Wait for result** property of the **Generate PDF from page** action to *true*.
@@ -439,7 +444,7 @@ If you encounter the message "Local service exited with error" in your runtime l
 
 ```
 com.mendix.modules.microflowengine.MicroflowException: com.mendix.systemwideinterfaces.MendixRuntimeException: java.lang.RuntimeException: Local service exited with error
-	at DocumentGenerationTest.ACT_TestDocument_WrongLayout (JavaAction : 'Generate PDF from page')
+    at DocumentGenerationTest.ACT_TestDocument_WrongLayout (JavaAction : 'Generate PDF from page')
 ```
 
 We recommend that you temporarily set the log level of the `DocumentGeneration` log node to [trace](/refguide/log-levels/#level). This should give more insight at what stage the action fails.
