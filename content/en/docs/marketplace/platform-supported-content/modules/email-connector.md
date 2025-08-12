@@ -10,18 +10,18 @@ aliases:
 
 ## Introduction
 
-The [Email Connector](https://marketplace.mendix.com/link/component/120739) enables you to send and receive emails using your own email server. It supports features like template-based emails as well as signed and encrypted email sending.
+The [Email Connector](https://marketplace.mendix.com/link/component/120739) enables you to send and receive emails using your own email server. It supports features like template-based emails, as well as signed and encrypted email sending.
 
 ### Features
 
 The Email connector includes the following features:
 
 * Configuration of multiple email accounts
-    * Supports Basic Authentication or OAuth 2.0 (Authorization Code Flow or Client Credentials Flow) for Microsoft Entra ID (formerly Azure Active Directory) accounts.
+    * Supports Basic Authentication or OAuth 2.0 (Authorization Code Flow or Client Credentials Flow) for Microsoft Entra ID (formerly Azure Active Directory) accounts
     * Supports shared mailboxes with both Basic Authentication and OAuth 2.0
 * Digital signatures and encryption
 * Email templates
-* Sending and receiving emails using OAuth 2.0 Authorization Code Grant or Client Credentials Flow.
+* Sending and receiving emails using OAuth 2.0 Authorization Code Grant or Client Credentials Flow
 
 The Email connector supports the following protocols:
 
@@ -37,8 +37,8 @@ Follow these prerequisites carefully. Missing a step can lead to errors.
 
 Before you use the Email connector in your app, do the following:
 
-* Download and configure the latest version of the [Mx Model Reflection](/appstore/modules/model-reflection/) module. If you have the module already, ensure that it is up to date.
-* Download and configure the latest version of the [Encryption](/appstore/modules/encryption/) module. If you have the module already, ensure that it is up to date.
+* Download and configure the latest version of the [Mx Model Reflection](/appstore/modules/model-reflection/) module. If you have the module already, ensure it is up to date.
+* Download and configure the latest version of the [Encryption](/appstore/modules/encryption/) module. If you have the module already, ensure it is up to date.
 * Download and configure the latest version of the [Community Commons](/appstore/modules/community-commons-function-library/) module. If you have the module already, ensure that it is up to date.
 * Remove any existing email modules (such as [IMAP/POP3](https://marketplace.mendix.com/link/component/1042/) and [Email Module with Templates](https://marketplace.mendix.com/link/component/259/)).
 * Remove any orphaned JAR files (including *javax.mail-1.6.2.jar*, *activation-1.1.jar*, and *commons-email.jar*) from any old email modules in the *userlib* subdirectory.
@@ -46,7 +46,7 @@ Before you use the Email connector in your app, do the following:
 
 ### Migrating from Another Module
 
-When migrating to the Email Connector from another email module, we recommend testing your configuration in a separate app first to ensure a smooth transition.
+When migrating to the Email Connector from another email module, it is recommended to test your configuration in a separate app first to ensure a smooth transition.
 
 It is recommended to use the community-supported [Email Connector Migration Utility](https://marketplace.mendix.com/link/component/205008) module to migrate data from the [Email Module with Templates](https://marketplace.mendix.com/link/component/259/) service.
 
@@ -64,9 +64,10 @@ The following widgets are bundled in the module:
 
 After you install the [Email](https://marketplace.mendix.com/link/component/120739) connector, configure the following in Studio Pro:
 
-1. Set a value for the **EncryptionKey** constant provided by the **Encryption** module, if you have not already configured it after downloading the module in the prerequisites.
-2. If you want to use the new user interface: Launch it via **USE_ME** > **New_UI** > **Email_Connector_Overview** and add this page to your app navigation.
-4. If you prefer to use the old user interface: Use the microflow **USE_ME** > **Microflows** > **ACT_EmailAccount_LaunchEmailConnectorOverview**.
+1. Set a value for the **EncryptionKey** constant provided by the **Encryption** module, if you have not already configured it in the [Prerequisites](#prerequisites).
+2. Launch the user interface.
+    * To use the new user interface, launch it via **USE_ME** > **New_UI** > **Email_Connector_Overview** and add this page to your app navigation.
+    * To use the old user interface, use the microflow **USE_ME** > **Microflows** > **ACT_EmailAccount_LaunchEmailConnectorOverview**.
 
 ### Module Security and Roles
 
@@ -114,9 +115,9 @@ Even if you do not select **Use SSL** or **Use TLS** when you configure the **Em
 
 You can choose to adjust the following account settings:
 
-* **Subscribe to incoming emails** – Disabled by default. Enable this option if you want to receive notifications for new incoming emails. For modeling purposes, use the SubscribeToIncomingEmail Java action. This feature is supported only for IMAP protocols, and some mail servers may not support it. For details, see [Subscribing to Incoming Email](#subscribe-incoming-email) section below.
+* **Subscribe to incoming emails** – Disabled by default. Enable this option if you want to receive notifications for new incoming emails. For modeling purposes, use the SubscribeToIncomingEmail Java action. This feature is supported only for IMAP protocols, and some mail servers may not support it. For more information, see [Subscribing to Incoming Email](#subscribe-incoming-email) section below.
 * **Sanitize email to prevent XSS attacks** – Disabled by default, but strongly recommended to enable. When turned on, the connector removes malicious scripts from email content to prevent XSS attacks. For more information, see [Sanitize Untrusted HTML (To Prevent XSS)](https://jsoup.org/cookbook/cleaning-html/safelist-sanitizer).
-* **Replicate everything in 'Inbox' folder** – Disabled by default. When turned off, the connector retrieves only the number of emails specified in the Number of emails to retrieve from server field, based on the chosen fetch strategy. When turned on, the connector replicates all emails from the specified folder (for example, Inbox) in batches defined by the **Email batch size** field. Emails are retrieved from oldest to newest.
+* **Replicate everything in 'Inbox' folder** – Disabled by default. When turned off, the connector retrieves only the number of emails specified in the **Number of emails to retrieve from server** field, based on the chosen fetch strategy. When turned on, the connector replicates all emails from the specified folder (for example, Inbox) in batches defined by the **Email batch size** field. Emails are retrieved from oldest to newest.
 * **Connection Timeout (milliseconds)** –  The default value is **20000**. Adjust this value in the account settings or the **EmailAccount** object if you want to change the timeout duration for sending and receiving emails.
 
 ## Usage
@@ -205,7 +206,7 @@ You can import the exported email template into the same or a different deployme
 
 ### Signed and Encrypted Emails
 
-You can optionally configure a **digital signature** and **email encryption** while the module is running. A digital signature allows the recipient to verify the authenticity of the sender, while encryption ensures the message content is securely scrambled and can only be read with the correct decryption key.
+You can optionally configure a digital signature and email encryption while the module is running. A digital signature allows the recipient to verify the authenticity of the sender, while encryption ensures the message content is securely scrambled and can only be read with the correct decryption key.
 
 #### Digital Signing
 
@@ -268,10 +269,10 @@ If no email accounts are configured, you can create a new OAuth configuration fr
 
 To configure an OAuth provider for the authentication code flow, provide the following details:
 
-* **Client ID** – Found in the [Microsoft Entra ID](https://portal.azure.com/) after registering your app.
-* **Client Secret** – Available in the Microsoft Entra ID once the app is registered.
-* **Callback Path** – Any string value; the system will auto-generate the callback URL based on this path.
-* **Callback URL** – Known as the **Redirect URI** in the Microsoft Entra ID. This is the URL where the OAuth provider redirects after providing the authorization code.
+* **Client ID** – Found in the [Microsoft Entra ID](https://portal.azure.com/) after registering your app
+* **Client Secret** – Available in the Microsoft Entra ID once the app is registered
+* **Callback Path** – Any string value; the system will auto-generate the callback URL based on this path
+* **Callback URL** – Known as the **Redirect URI** in the Microsoft Entra ID; this is the URL where the OAuth provider redirects after providing the authorization code
 
 To configure an OAuth provider for the client credentials grant flow, provide the following details, which are available on the Microsoft Entra ID once you have registered your app:
 
@@ -279,7 +280,7 @@ To configure an OAuth provider for the client credentials grant flow, provide th
 * **Client Secret**
 * **Tenant ID**
 
-With Email Connector version 5.2.0 and newer, you can send emails using a **client credentials** flow.
+With Email Connector version 5.2.0 and newer, you can send emails using a client credentials flow.
 
 #### Settings in the Microsoft Entra ID (Authentication Code Flow)
 
@@ -290,6 +291,7 @@ This connector contains functionality for sending and receiving emails, so durin
 On the [Microsoft Entra ID](https://portal.azure.com/), ensure you have the following permissions enabled under the **API permissions** tab on the sidebar:
 
 ##### Send Emails
+
 | Permission Name | Description |
 |-----------------|-------------|
 | SMTP.Send       | Send emails from mailboxes using SMTP AUTH. |
@@ -300,6 +302,7 @@ On the [Microsoft Entra ID](https://portal.azure.com/), ensure you have the foll
 | email           | View users' email address (optional but helpful). |
 
 ##### Receive Emails
+
 | Permission Name          | Description |
 |--------------------------|-------------|
 | IMAP.AccessAsUser.All    | Read and write access to mailboxes via IMAP. |
@@ -314,7 +317,7 @@ On the [Microsoft Entra ID](https://portal.azure.com/), ensure you have the foll
 
 To register your app in the Microsoft Entra ID portal, follow Microsoft's [Register an app with Microsoft Entra ID](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/walkthrough-register-app-azure-active-directory).
 
-This connector contains functionality for sending and receiving emails, so APIs related to Office 365 Exchange Online need to be given permission along with admin consent.
+This connector contains functionality for sending and receiving emails. APIs related to Office 365 Exchange Online need to be given permission along with admin consent.
 
 On the [Microsoft Entra ID](https://portal.azure.com/), ensure you have the following permissions enabled under **API permissions** tab on the sidebar:
 
@@ -341,7 +344,7 @@ Emails can be stored in the **Queued** folder to be sent later. You can manually
 
 ### Sending or Receiving Email
 
-If you have issues sending or receiving emails, first check the **Error logs** in **Account Settings** and the logs in Studio Pro. If an email you sent doesn’t appear in your app and there’s nothing in the logs, the problem is not with the connector.
+If you have issues sending or receiving emails, first check the **Error logs** in **Account Settings** and the logs in Studio Pro. If an email you sent does not appear in your app and there is nothing in the logs, the problem is not with the connector.
 
 ### Gmail Accounts {#gmail-accounts}
 
@@ -362,7 +365,7 @@ If you already have an email account configured using basic authentication in yo
 
 ### Deprecation of Basic authentication in Microsoft Exchange Online
 
-Since October 1, 2022, Microsoft has deprecated Basic Authentication, and it is no longer supported in Exchange Online, promoting Modern Authentication (OAuth 2.0) for enhanced security. From that date, Microsoft started disabling Basic Authentication for the following protocols: Outlook, EWS, RPS, POP, IMAP, and EAS., 
+As of October 1, 2022, Microsoft has deprecated Basic Authentication, and it is no longer supported in Exchange Online, promoting Modern Authentication (OAuth 2.0) for enhanced security. From that date, Microsoft started disabling Basic Authentication for the following protocols: Outlook, EWS, RPS, POP, IMAP, and EAS.
 
 ### Deploying to On-Premises Cloud Environments
 
