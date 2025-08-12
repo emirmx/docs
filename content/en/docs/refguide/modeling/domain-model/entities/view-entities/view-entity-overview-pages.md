@@ -137,7 +137,7 @@ On the Product overview page above, there is no button to add or modify a produc
 
 1. Create a microflow and name it *ACT_UpdateProduct*. 
 2. Add a parameter and in the entity field and select **ProductOverviewVE**.
-3. Add a [retrieve object(s)](/refguide/retrieve/) activity. In this activity, retrieve a *Product* object from the database. Configure the activity with the following details: 
+3. Add a [retrieve object(s)](/refguide/retrieve-objects/) activity. In this activity, retrieve a *Product* object from the database. Configure the activity with the following details: 
 
     * Use the following XPath constraint:
 

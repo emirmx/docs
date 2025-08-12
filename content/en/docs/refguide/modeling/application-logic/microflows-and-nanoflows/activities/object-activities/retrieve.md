@@ -1,7 +1,9 @@
 ---
 title: "Retrieve Object(s)"
-url: /refguide/retrieve/
+url: /refguide/retrieve-objects/
 weight: 60
+aliases:
+    - /refguide/retrieve/
 #To update screenshots of these microflows in Studio Pro, use the Microflow Screenshots app.
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---

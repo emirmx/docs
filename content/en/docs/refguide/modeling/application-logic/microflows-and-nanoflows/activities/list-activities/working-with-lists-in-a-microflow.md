@@ -67,7 +67,7 @@ Before you continue, you should first set up a test app, and populate it with te
 
 ## Retrieving and Filtering a List of Objects from the Database
 
-Use a microflow with a [Retrieve object(s)](/refguide/retrieve/) activity to retrieve a list of objects, and then filter that list by applying an [XPath constraint](/refguide/xpath-constraints/). For example, the microflow can retrieve all orders from the database, and then filter that list to only the orders with the **Processing** status.
+Use a microflow with a [Retrieve object(s)](/refguide/retrieve-objects/) activity to retrieve a list of objects, and then filter that list by applying an [XPath constraint](/refguide/xpath-constraints/). For example, the microflow can retrieve all orders from the database, and then filter that list to only the orders with the **Processing** status.
 
 1. Create a new microflow by right-clicking your module and selecting **Add** > **Microflow**.
 2. In the **Add Microflow** dialog box, in the **Name** field, enter *IVK_SetOrderToComplete*, and then click **OK**.

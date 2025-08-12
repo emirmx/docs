@@ -103,7 +103,7 @@ The name of the variable in which the result of the aggregation is stored. The v
 
 ## Optimizing Aggregate Activities
 
-In some apps, it is necessary to evaluate large datasets in a microflow (for example, for reporting purposes). If there are a lot of [retrieves](/refguide/retrieve/) and aggregates on large datasets in a microflow, it is easy to run into performance or memory problems.
+In some apps, it is necessary to evaluate large datasets in a microflow (for example, for reporting purposes). If there are a lot of [retrieves](/refguide/retrieve-objects/) and aggregates on large datasets in a microflow, it is easy to run into performance or memory problems.
 
 This section describes how Mendix Runtime optimizes **Aggregate list** activities with large datasets and some recommended approaches for optimization.
 
@@ -135,4 +135,4 @@ Since the Mendix Runtime merges list retrieve and aggregate activities, you do n
 
 ## Read More
 
-* [Retrieve Activities](/refguide/retrieve/)
+* [Retrieve Activities](/refguide/retrieve-objects/)
