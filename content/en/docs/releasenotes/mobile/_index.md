@@ -7,6 +7,8 @@ cascade:
     - numberless_headings: true
 ---
 
+Welcome to the mobile release notes. For details on support windows and maintaining native mobile apps, see [Support Guidelines for Native Mobile](/releasenotes/mobile/native-support/).
+
 This category includes the following release notes: 
 
 * Our [Make It Native Apps](/releasenotes/mobile/make-it-native-parent/) document links to all versions of the Make It Native app:

@@ -247,11 +247,16 @@ Use [ONNX versioning schemes](https://github.com/onnx/onnx/blob/main/docs/Versio
 
 In case of version conflicts in models (or pre- / post-processors), try the [version converter tool](https://github.com/onnx/onnx/blob/main/docs/VersionConverter.md) to align with the suggested IR and OpSets.
 
-The released versions of the *ML Kit* and supported ONNX Runtime versions can be found below.
+#### Supported ONNX Versions per Studio Pro Version
 
-| Mendix Studio Pro | ML Kit   | ONNX Runtime |
-| ----------------- | -------- | ------------ |
-| 9.23              | Public beta | 1.11.0       |
+The table below presents the compatibility list for your models per Studio Pro version. Each model you create should be compatible with the version you use. Otherwise, you will not be able to import it.
+
+| Studio Pro Version | ONNX Runtime Version |
+| --- | --- |
+| 11.0 | 1.17.3 |
+| 11.1 | 1.22.0 |
+
+ For more information on the required IR/ML opset versions, see [ONNX Runtime Compatibility](https://onnxruntime.ai/docs/reference/compatibility.html).
 
 ## Monitoring and Troubleshooting
 
