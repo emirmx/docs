@@ -11,7 +11,7 @@ description: "Native Template 14"
 
 ### Fixes
 
-* We upgraded React Native version to 0.77.3. This addresses an issue that caused the app to stop working after reload.
+* We fixed an issue that caused the app to stop working after reload by upgrading the React Native version to 0.77.3.
 
 ## 14.1.4 {#1414}
 
