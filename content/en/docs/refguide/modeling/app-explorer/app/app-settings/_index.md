@@ -16,7 +16,7 @@ View your App Settings by clicking **App Explorer** > **App** > **Settings**:
 
 In the **App Settings** dialog box, you can alter the settings that are applicable to the whole app:
 
-{{< figure src="/attachments/refguide/modeling/app-explorer/app/app-settings/app-settings-configuration.png" width="300px" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/app-explorer/app/app-settings/app-settings-configuration.png" width="400" >}}
 
 The categories described below are available.
 
@@ -48,13 +48,13 @@ The resources are downloaded to the device once for each deployment and are reus
 
 ### Optimize Network Calls {#optimize-network-calls}
 
-If this option is enabled (**true** by default), Mendix analyzes every microflow that can be triggered from the client to minimize the number of objects required to be sent. This speeds up your app significantly.
+If this option is enabled (**yes** by default), Mendix analyzes every microflow that can be triggered from the client to minimize the number of objects required to be sent. This speeds up your app significantly.
 
-If you experience an issue while running your app in which objects seem to be lost, this option can be disabled to resolve that issue. If this does resolve the issue, please file a bug report so that we can fix the issue in the platform.
+If you experience an issue while running your app in which objects seem to be lost, this option can be disabled to resolve that issue. If this does resolve the issue, file a bug report so the issue can be fixed in the platform.
 
 ### URL Prefix{#url-prefix}
 
-Here you have the option to change the default URL prefix for all pages and microflows in your application. The default prefix value is `/p/`.
+You have the option to change the default URL prefix for all pages and microflows in your application. The default prefix value is `/p/`.
 
 {{< figure src="/attachments/refguide/modeling/app-explorer/app/app-settings/url-prefix.png" width="300px" class="no-border" >}}
 
@@ -70,43 +70,43 @@ The URL prefix must be alphanumeric. It cannot be empty, contain whitespace, or 
 * "ws-doc"
 * "xas"
 
-Furthermore, static files are served on `/`. So any prefix that has the same name as a static folder located in `/deployment/web/` will cause an error.
+Furthermore, static files are served on `/`, so any prefix that has the same name as a static folder located in `/deployment/web/` will cause an error.
 
-If the URL prefix breaks any of the rules mentioned above, then you will get a consistency error.
+If the URL prefix breaks any of the rules mentioned above, you will get a consistency error.
 
 ### Java Version{#java-version}
 
-Here you can select which Java version to use for you application. For information on how the Java version can influence the behavior of an application, see [Java Version Migration](/refguide/java-version-migration/).
+You can select which Java version to use for you application. For information on how the Java version can influence the behavior of an application, see [Java Version Migration](/refguide/java-version-migration/).
 
 {{% alert color="info" %}}
 For Studio Pro 11, you should choose Java 21.
 {{% /alert %}}
 
-For local development the Java version configured here needs to have a corresponding JDK configured in the [Studio Pro preferences](/refguide/preferences-dialog/#jdk).
+For local development, the Java version configured here needs to have a corresponding JDK configured in the [Studio Pro preferences](/refguide/preferences-dialog/#jdk).
 
 Applications deployed to the cloud will use this setting to select which Java version to use.
 
 ### After Startup{#after-startup}
 
-Here you can select a microflow that is automatically executed immediately after the application has been started up.
+You can select a microflow that is automatically run immediately after the application has been started up.
 
 {{% alert color="warning" %}}
-There is a timeout of *11 minutes* on the after startup microflow. If your after startup microflow takes longer than 11 minutes your whole app will fail to start.
+There is a timeout of 11 minutes on the after startup microflow. If your after startup microflow takes longer than 11 minutes, your whole app will fail to start.
 
-**After startup** is designed to initialize the app and therefore runs *before* the app is able to respond to incoming service requests (for example, published REST services).
+After startup is designed to initialize the app and therefore runs before the app is able to respond to incoming service requests (for example, published REST services).
 {{% /alert %}}
 
 ### Before Shutdown
 
-Here you can select a microflow that is automatically executed when a shutdown command has been given, just before the application shuts down.
+You can select a microflow that is automatically run when a shutdown command has been given, just before the application shuts down.
 
 ### Health Check
 
-Here you can select a microflow which performs the checks on a running app that you think are required to assess the app's health.
+You can select a microflow which performs the checks on a running app that you think are required to assess the app's health.
 
 The result of each check is returned as a string, which is displayed in the [Mendix Portal](/developerportal/deploy/environments/). When the microflow returns an empty string, the application is healthy; otherwise, the string presents an explanation of why the application is not healthy.
 
-This microflow gets called every 10 seconds to check if the app is still healthy. This is done by executing it using m2ee on the admin port of your app. For more information, see the section [Health Check](/refguide/monitoring-mendix-runtime/#check-health) in *Monitoring Mendix Runtime*.
+This microflow is called every 10 seconds to check if the app is still healthy. This is done by executing it using m2ee on the admin port of your app. For more information, see [Health Check](/refguide/monitoring-mendix-runtime/#check-health) section *Monitoring Mendix Runtime*.
 
 {{% alert color="info" %}}
 
@@ -139,7 +139,7 @@ The **Scheduled event time zone** defines under which time zone scheduled events
 
 This affects time zone-related operations, such as parsing and formatting dates from/to strings and obtaining the beginning of the current day.
 
-If you run on-premises, then you can select the time zone to which the server is set. However, please note that no guarantees are given for the whereabouts of application servers in the cloud.
+If you run on-premises, you can select the time zone to which the server is set. However, note that no guarantees are given for the whereabouts of application servers in the cloud.
 
 ### Hash Algorithm{#hash-algorithm}
 
@@ -150,7 +150,7 @@ The **Hash algorithm** is used to generate hash values for attributes of the has
 | **BCrypt** (default, recommended) | Resistant to brute-force search attacks. |
 | **SSHA256** | Salted Secure Hash Algorithm 2, digest length 256 bits. |
 
-Mendix believes both algorithms are secure enough to store passwords within Mendix. The main difference between **BCrypt** and **SSHA256** is that the BCrypt algorithm has been configured so that it is relatively slow on purpose, since it was designed specifically to stop brute force attacks. That's why this results in a slight performance difference with the SSHA256 algorithm.
+Mendix believes both algorithms are secure enough to store passwords within Mendix. The main difference between **BCrypt** and **SSHA256** is that the BCrypt algorithm has been configured so it is relatively slow on purpose, since it was designed specifically to stop brute force attacks. That is why this results in a slight performance difference with the SSHA256 algorithm.
 
 #### BCrypt Cost {#bcrypt-cost}
 
