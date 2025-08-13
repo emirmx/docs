@@ -380,6 +380,10 @@ When you use Azure OpenAI, it is recommended to set the optional `MaxTokens` inp
 
 If you encounter an error stating that an attribute or a reference is required after an upgrade, first upgrade all modules by right-clicking the error, then upgrade Data Widgets. 
 
+###  Conflicted Lib Error after module import
+
+This is usually fixed by syncing all dependencies here: App > Synchronize dependencies.
+
 ## Read More {#read-more}
 
 * [Prompt Engineering – OpenAI Documentation](https://platform.openai.com/docs/guides/prompt-engineering)
