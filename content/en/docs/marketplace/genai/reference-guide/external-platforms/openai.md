@@ -382,7 +382,7 @@ If you encounter an error stating that an attribute or a reference is required a
 
 ###  Conflicted Lib Error after module import
 
-This is usually fixed by syncing all dependencies here: App > Synchronize dependencies.
+If an error occurs that indicates conflicting java libraries, such as `java.lang.NoSuchMethodError: 'com.fasterxml.jackson.annotation.OptBoolean com.fasterxml.jackson.annotation.JsonProperty.isRequired()'` you can sync all dependencies here: `App > Synchronize dependencies` and restart your application.
 
 ## Read More {#read-more}
 
