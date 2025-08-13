@@ -8,11 +8,11 @@ description: "This document describes the Model Context Protocol (MCP) and how i
 
 ## Introduction
 
-The [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) is an open protocol that standardizes how Large Language Models (LLMs) can autonomously connect to apps. Many AI platforms and third-party systems have already adopted MCP for easier integration and empowerment of LLMs. Mendix provides an [MCP Server](/appstore/modules/genai/genai-for-mx/mcp-server/) module to facilitate an MCP server from a Mendix app, enabling developers to expose tools and prompts to external MCP clients as well as an [MCP Client](https://marketplace.mendix.com/link/component/244893) module to connect to servers to discover and use tools and prompts.
+The [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) is an open protocol that standardizes how Large Language Models (LLMs) can autonomously connect to apps. Many AI platforms and third-party systems have already adopted MCP for easier integration and empowerment of LLMs. Mendix provides an [MCP Server](/appstore/modules/genai/genai-for-mx/mcp-server/) module to facilitate an MCP server from a Mendix app, enabling developers to expose tools and prompts to external MCP clients as well as an [MCP Client](https://marketplace.mendix.com/link/component/244893) module. The MCP Client module enables your app to connect to MCP servers, allowing it to discover and use tools and prompts.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mcp/mcp-client-server-architecture-mendix.png" >}}
 
-As described in the diagram above, a user can chat with a model in the MCP Host application (for example, in Mendix using Conversational UI), which connects to the MCP Server (a Mendix app or an external server) via MCP to discover available tools and prompts. If the user's request can be solved with any available tool, the LLM can call a tool which is executed in the server environment and returns the result. This approach allows developers to integrate their Mendix app with existing external AI systems.
+As described in the diagram above, a user can chat with a model in the MCP Host application (for example, in Mendix, using Conversational UI), which connects to the MCP Server (a Mendix app or an external server) via MCP to discover available tools and prompts. If the user's request can be solved with any available tool, the LLM can call a tool which is executed in the server environment and returns the result. This approach allows developers to integrate their Mendix app with existing external AI systems.
 
 MCP provides a vendor-agnostic approach to integrate third-party services with LLM interaction to enrich its context beyond training data and the current chat conversation. In Mendix, this enables developers to build microflows which can be exposed as tools to external AI tools and thus creating powerful AI-agentic systems using low-code or to build powerful user experiences by consuming external tools and prompts.
 
@@ -22,7 +22,7 @@ To understand the basics of MCP, it is important to know the common terminology.
 
 ### MCP Host
 
-The MCP host is typically the application that facilitates interaction with LLMs. While a chat interface is the most common use case, the host can support a variety of interaction use cases. The host takes care of the communication between users and models, while enabling users to manage their AI use, for example, managing credentials or historical chat conversations. A host can be a Mendix application that uses [GenAI Commons](/appstore/modules/genai/genai-for-mx/commons/) and a compatible connector to interact with LLMs, for example in a chat interface built with [Conversational UI](/appstore/modules/genai/genai-for-mx/conversational-ui/).
+The MCP host is typically the application that facilitates interaction with LLMs. While a chat interface is the most common use case, the host can support a variety of interaction use cases. The host takes care of the communication between users and models, while enabling users to manage their AI use, for example, managing credentials or historical chat conversations. A host can be a Mendix application that uses [GenAI Commons](/appstore/modules/genai/genai-for-mx/commons/) and a compatible connector to interact with LLMs, for example, a chat interface built with [Conversational UI](/appstore/modules/genai/genai-for-mx/conversational-ui/).
 
 ### MCP Client
 
@@ -40,7 +40,7 @@ The most common type of resource is [tool](https://modelcontextprotocol.io/speci
 
 #### Prompts
 
-[Prompts](https://modelcontextprotocol.io/specification/2025-06-18/server/prompts) can be exposed to define templates and to structure interactions between the user and the model, for example, by allowing specific input fields that fill placeholders. In Mendix MCP servers, prompts work similarly to tools, as they also execute a microflow. Both end-users and LLMs choose when to use a prompt based on the prompt's definition, for example via the audience information.
+[Prompts](https://modelcontextprotocol.io/specification/2025-06-18/server/prompts) can be exposed to define templates and to structure interactions between the user and the model, for example, by allowing specific input fields that fill placeholders. In Mendix MCP servers, prompts work similarly to tools, as they also execute a microflow. Both end-users and LLMs choose when to use a prompt based on the prompt's definition, for example, via the audience information.
 
 #### Resources
 
@@ -50,7 +50,7 @@ In general, generic [resources](https://modelcontextprotocol.io/specification/20
 
 An example for setting up an MCP server is available in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475). The app guides you through available tools and prompts that will be exposed when the server is started. Additionally, it shows an example for setting up authentication using username and password. You can use a Mendix application or third-party tools such as Claude Desktop as an MCP host to connect to the server.
 
-Furthermore, an MCP Client example teaches you how to establish a connection to a server, discover tools and prompts and finally uses them in a chat interface. The example can also be used to inspect MCP servers, similar as the [MCP Inspector](github.com/modelcontextprotocol/inspector) can do, by testing prompts and tools without any LLM integration.
+Furthermore, an MCP Client example teaches you how to establish a connection to a server, discover tools and prompts, and finally uses them in a chat interface. You can use this example to inspect MCP servers, similar as the [MCP Inspector](github.com/modelcontextprotocol/inspector) can do, by testing prompts and tools without any LLM integration.
 
 ## Read More
 
