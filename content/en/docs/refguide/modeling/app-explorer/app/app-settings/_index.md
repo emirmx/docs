@@ -162,16 +162,16 @@ If the BCrypt cost is low, the performance difference is hardly noticeable to a 
 
 #### Performance Tests
 
-A (web service) user will sign in to execute a web service operation, wait for the operation to finish, and finally get the result back (if any).
+A (web service) user will sign in to run a web service operation, wait for the operation to finish, and get the result back (if any).
 
-Imagine an empty microflow that returns nothing at all exposed as a published web service. We ask one user to execute this operation as many times as they can in one minute (simulated with SoapUI). First we set the hashing algorithm to **BCrypt** (with cost value 10), then we set it to **SSHA256**. Any extra overhead here (on top of establishing the connection, building the XML message and so forth) is basically the hashing algorithm, as the operation should take near zero milliseconds and there is no result. So that leaves only the login, or, more precisely, the hashing of the password.
+Imagine an empty microflow that returns nothing at all exposed as a published web service. We ask one user to execute this operation as many times as they can in one minute (simulated with SoapUI). First, we set the hashing algorithm to **BCrypt** (with cost value 10), then we set it to **SSHA256**. Any extra overhead here (on top of establishing the connection, building the XML message and so forth) is basically the hashing algorithm, as the operation should take near zero milliseconds and there is no result. So that leaves only the login, or, more precisely, the hashing of the password.
 
 | Hashing Algorithm | Total Operations Executed | Operation per Second | Overhead in Milliseconds |
 | --- | --- | --- | --- |
 | BCrypt | 654 | 10.88 | 91.9 |
 | SSHA256 | 7163 | 119.36 | 8.4 |
 
-So 80 milliseconds per operation is not that much, right? Well, that depends on how long the operation itself takes.
+80 milliseconds per operation does not appear to be much, but it depends on how long the operation itself takes.
 
 | Operation Duration in Seconds | Operations per Hour (BCrypt) | Operations per Hour (SSHA256) | Difference % |
 | --- | --- | --- | --- |
@@ -181,19 +181,19 @@ So 80 milliseconds per operation is not that much, right? Well, that depends on 
 | 5 | 707 | 719 | +1.67% |
 | 15 | 239 | 240 | +0.5% |
 
-The difference is noticeable when the operation takes less time. So if you expect a very high amount of concurrency in operations where hashing takes place (most commonly any place where login operations are involved), you might want to consider changing your hashing algorithm.
+The difference is noticeable when the operation takes less time. If you expect a very high amount of concurrency in operations where hashing takes place (most commonly any place where login operations are involved), you might want to consider changing your hashing algorithm.
 
 {{% alert color="info" %}}
 It is important to remember when changing hashing algorithms that any hashed attribute (like the `System$User` password attribute) has its algorithm set on hashing. In other words, for the hashing type to take effect, any existing hashed attribute will have to be reset using the new hashing type.
 {{% /alert %}}
 
-### Rounding Numbers{#rounding}
+### Round Numbers{#rounding}
 
 The **Round Numbers** setting is used to select how to round numbers when performing calculations.
 
 The rounding methods **Half away from zero** and **Half to the nearest even number** indicate how rounding is performed in the case of a tie (for example, 2.5).
 
-This table presents the results of rounding the input to one digit with the given method of rounding numbers:
+The table below presents the results of rounding the input to one digit with the given method of rounding numbers:
 
 | Input Number | Half Away from Zero  *(default)* | Half to the Nearest Even Number |
 | --- | --- | --- |
@@ -256,7 +256,7 @@ The **Default language** indicates the language that is used when a user has not
 
 This is the list of languages in which your application will be available for users.
 
-For each language, you can configure whether to check that all mandatory texts have a value. The default language is always checked. If a language is not checked and certain texts are not translated in Studio Pro, the default language is used as fall-back language. This means that you can run your application even though you have only partially translated your interface into a new language.
+For each language, you can configure whether to check that all mandatory texts have a value. The default language is always checked. If a language is not checked and certain texts are not translated in Studio Pro, the default language is used as fallback language. This means you can run your application even though you have only partially translated your interface into a new language.
 
 ## Certificates Tab
 
@@ -265,13 +265,13 @@ Certificates are used to connect to web services over HTTPS when the following r
 * The server uses a self-signed certificate authority, and/or
 * A client certificate (certificate with a private key) is required
 
-These certificates can be imported into Studio Pro using the **Import** button. Certificate authority files usually have a *.crt* extension, and client certificates usually have a *.p12* or *.pfx* extension. After importing, use **View details** to acquire more information concerning the certificate.
+These certificates can be imported into Studio Pro using the **Import** button. Certificate authority files usually have a *.crt* extension, and client certificates usually have a *.p12* or *.pfx* extension. After importing, use **View details** to get more information about the certificate.
 
 Client certificates added here will be used whenever a server accepts a client certificate. If you upload more than one client certificate, one of them will be chosen based on the requirements of the server. If you need more control over client certificates, you should not upload the certificates here, but use the [Runtime customization](/refguide/custom-settings/) *ClientCertificates*, *ClientCertificatePasswords*, and *ClientCertificateUsages* settings.
 
 {{% alert color="warning" %}}
 
-When running from Studio Pro or from Eclipse, the certificates will be used automatically to connect over *HTTPS*. When running on a server, the location of the certificate files has to be specified in the configuration file.
+When running from Studio Pro or from Eclipse, the certificates will be used automatically to connect over HTTPS. When running on a server, the location of the certificate files has to be specified in the configuration file.
 
 {{% /alert %}}
 {{% alert color="warning" %}}
@@ -318,13 +318,13 @@ Older apps may still use a theme ZIP file as the basis for their theme. In this 
 This practice is deprecated and will be removed in a future version.
 {{% /alert %}}
 
-Switching from a ZIP file to a UI resources package is straightforward:
+To switch from a ZIP file to a UI resources package, follow the steps below:
 
-1. Firstly, replace the contents of the theme folder with the contents of the desired ZIP file.
+1. Replace the contents of the theme folder with the contents of the desired ZIP file.
 
-2. Then, use the **UI resources package** setting described above to select a module. Ideally, this module should only contain UI documents, such as page templates and building blocks. This will allow you to export and import the module to other apps without worrying about reference errors.
+2. Use the **UI resources package** setting described above to select a module. Ideally, this module should only contain UI documents, such as page templates and building blocks. This will allow you to export and import the module to other apps without worrying about reference errors.
 
-3. Lastly, set the **Theme ZIP file** setting to **None**.
+3. Set the **Theme ZIP file** setting to **None**.
 
 ### Marking as a UI Resources Module
 
@@ -340,7 +340,7 @@ You can set an explicit order in the theme settings (**App Settings** > **Theme*
 
 {{< figure src="/attachments/refguide/modeling/app-explorer/app/app-settings/app-theme-settings.png" alt="app theme settings" class="no-border" >}}
 
-## Workflows Tab {#workflows}
+## Workflow Tab {#workflows}
 
 ### User Entity
 
@@ -348,7 +348,8 @@ You can set an explicit order in the theme settings (**App Settings** > **Theme*
 
 ### Optimization
 
-Allows you to configure the maximum number of workflow and microflow threads that can be executed simultaneously by the Runtime. This is an advanced setting that gives developers control over app performance. Change these settings when you face performance issues on executing workflow instances or workflow-initiated microflows. The two values indicate the amount of threads that process the queues containing workflow instances or workflow-initiated microflows, for more information see [Workflow Instance Threads](#workflow-instance-threads) and [Microflow Threads](#microflow-threads) sections below. 
+This section allows you to configure the maximum number of workflow and microflow threads that can be executed simultaneously by the Runtime. This is an advanced setting that gives developers control over app performance. Change these settings when you face performance issues on executing workflow instances or workflow-initiated microflows. The two values in this field indicate the amount of threads that process the queues containing workflow instances or workflow-initiated microflows. For more information, see the [Workflow Instance Threads](#workflow-instance-threads) and [Microflow Threads](#microflow-threads) sections below. 
+
 App performance can be tracked (from Mendix 9.19 and above) using the following Task Queue metrics:
 
 * `mx.runtime.stats.taskqueue.queue-wait-time` – the amount of time a task has to wait for execution
@@ -364,11 +365,11 @@ If the waiting time of the queue increases and active threads in the queue reach
 
 #### Workflow Instance Threads {#workflow-instance-threads}
 
-Defines the maximum number of threads that can process active workflow instances simultaneously. This setting does not relate to the amount of workflow instances that are active in the system.
+This defines the maximum number of threads that can process active workflow instances simultaneously. This setting does not relate to the amount of workflow instances that are active in the system.
 
 #### Microflow Threads {#microflow-threads}
 
-Defines the maximum number of workflow-initiated microflows that the Runtime executes simultaneously. Workflow-initiated microflows are microflows defined as event handlers or microflow call activities defined in workflows. This setting has no influence on microflows executed by pages or other parts of the system.
+This defines the maximum number of workflow-initiated microflows that the Runtime executes simultaneously. Workflow-initiated microflows are microflows defined as event handlers or microflow call activities defined in workflows. This setting has no influence on microflows executed by pages or other parts of the system.
 
 ### Event Handlers {#event-handlers}
 
@@ -409,15 +410,15 @@ This tab can be used to view the managed dependencies in your app in one place a
 
 ### Overview
 
-This shows all the direct managed dependencies in your app listed by group and artifact. It shows which versions of the dependencies you have and which modules they are coming from. If your app reports multiple versions of the same group and artifact then the highest version is used, so having multiple versions of a dependency is not necessarily a problem.
+This shows all the direct managed dependencies in your app listed by group and artifact. It shows which versions of the dependencies you have and which modules they are coming from. If your app reports multiple versions of the same group and artifact, the highest version is used, so having multiple versions of a dependency is not necessarily a problem.
 
 ### Managed Dependency Exclusions
 
-This shows all the managed dependencies in your app listed by package name. This overview includes both direct and transitive dependencies. If you have conflicts between different dependencies, you can uncheck here any files which you want to exclude. Ensure you leave at least one dependency which supports any calls made by your app or its dependencies.
+This shows all the managed dependencies in your app listed by package name. This overview includes both direct and transitive dependencies. If you have conflicts between different dependencies, you can uncheck any files that you want to exclude. Ensure you leave at least one dependency which supports any calls made by your app or its dependencies.
 
 ### Userlib Exclusions
 
-This shows the libraries from the userlib directory and allows you to exclude them from deployment. Use this, for example, if there is an add-on module that ships with a different version of a library that is already in your 'userlib' folder.
+This shows the libraries from the userlib directory and allows you to exclude them from deployment. Use this, for example, if there is an add-on module that ships with a different version of a library that is already in your userlib folder.
 
 ## Solution Tab {#solution}
 
@@ -427,7 +428,7 @@ If you want to distribute your app as an adaptable solution package and allow up
 
 A distributable app must have a **Solution version** that you can set on this tab.
 
-If you are implementing a solution, **Based on** setting shows the version of the solution package your app is currently based on.
+If you are implementing a solution, the **Based on** setting shows the version of the solution package your app is currently based on.
 
 ## Miscellaneous Tab {#miscellaneous}
 
@@ -453,7 +454,7 @@ See the list below for detailed information on which widgets are generated in va
 
 You can decide how associations are stored in the database.
 
-This option allows you to change the default for new associations. The initial defaults will be as follows:
+This option allows you to change the default for new associations. The initial defaults are as follows:
 
 * **New projects** – one-to-many and one-to-one associations are implemented as direct associations
 * **Upgraded projects** – for projects which are upgraded from an older version of Mendix, all new associations continue to be implemented as association tables
