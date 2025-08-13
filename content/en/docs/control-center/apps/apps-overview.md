@@ -77,7 +77,7 @@ You cannot deactivate or delete licensed apps or apps not hosted on Mendix Cloud
 
 ## App Management
 
-This section details common functionalities for managing apps, including filtering, exporting, and deactivating, and a comprehensive glossary of fields available across all the tabs tables.
+This section details common functionalities for managing apps, including filtering, exporting, and deactivating, and a glossary of all the fields available across all tabs.
 
 ### Fields Glossary {#fields-glossary}
 
