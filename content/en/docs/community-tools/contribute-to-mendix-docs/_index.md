@@ -1,5 +1,5 @@
 ---
-title: "Contribute to Mendix Docs"
+title: "Contributing to Mendix Docs"
 url: /community-tools/contribute-to-mendix-docs/
 weight: 70
 description: "Describes how to add and edit Mendix documentation as a community member."
