@@ -247,11 +247,18 @@ Use [ONNX versioning schemes](https://github.com/onnx/onnx/blob/main/docs/Versio
 
 In case of version conflicts in models (or pre- / post-processors), try the [version converter tool](https://github.com/onnx/onnx/blob/main/docs/VersionConverter.md) to align with the suggested IR and OpSets.
 
-The released versions of the *ML Kit* and supported ONNX Runtime versions can be found below.
+#### Supported ONNX Versions per Studio Pro Version
 
-| Mendix Studio Pro | ML Kit   | ONNX Runtime |
-| ----------------- | -------- | ------------ |
-| 9.23              | Public beta | 1.11.0       |
+The table below presents the compatibility list for your models per Studio Pro version. Each model you create should be compatible with the version you use. Otherwise, you will not be able to import it.
+
+| Studio Pro Version | ONNX Runtime Version |
+| --- | --- |
+| 10.6 MTS  | 1.14.0 |
+| 10.12 MTS (10.12.18 and above) | 1.22.0 |
+| 10.18 MTS (10.18.10 and above) | 1.22.0 |
+| 10.24 LTS (10.24.3 and above)  | 1.22.0 |
+
+ For more information on the required IR/ML opset versions, see [ONNX Runtime Compatibility](https://onnxruntime.ai/docs/reference/compatibility.html).
 
 ## Monitoring and Troubleshooting
 
@@ -375,17 +382,6 @@ Mendix recommends turning the logs to trace level, as the ML Engine provides a g
 ### My Model Runs Locally but Not in Production
     
 The model you can run is limited to the maximum memory and storage space available in your environment.
-
-### Supported Onnx Versions per Studio Pro Version
-
-The table below presents the compatibility list for your models per Studio Pro version. Each model you create should be compatible with the version you use. Otherwise, you will not be able to import it.
-
-| Studio Pro Version | ONNX Version |
-| --- | --- |
-| LTS | 1.14.0 |
-| Latest | 1.17.3 |
-
- For more information on the required IR/ML opset versions, see [ONNX Runtime Compatibility](https://onnxruntime.ai/docs/reference/compatibility.html).
 
 ## Read More {#readmore}
 

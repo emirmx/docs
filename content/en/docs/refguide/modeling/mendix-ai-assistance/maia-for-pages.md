@@ -70,13 +70,9 @@ The image size is limited to 512 KB. Make sure to select a clear image to help M
 
 Keep in mind that Maia analyzes only the structure of the image. The theming of your app, such as the color scheme, will not be changed. This can cause some differences between the provided image and the generated page.
 
-## Limitations {#limitation}
+## Limitation {#limitation}
 
-Maia for Pages has some limitations.
-
-### Supported Widgets
-
-Not all widgets are supported. Currently the following widgets are supported:
+Maia for Pages does not support all widgets. Currently the following widgets are supported:
 
 * [Container](/refguide/container/)
 * [Layout Grid](/refguide/layout-grid/)
