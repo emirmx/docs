@@ -14,7 +14,7 @@ This how-to uses the results of [Get Started with the Web Extensibility API](/ap
 
 ## Showing a Message Box
 
-Firstly, you need to create a menu which will display a dialog with text. This is done in the `loaded` event in `Main`.
+Firstly, you need to create a menu which will display a dialog with text. This is done in the `loaded` event of your main entry point (`src/main/index.ts`)
 
 You can learn how to do that in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
 
@@ -34,7 +34,7 @@ where
 * `<message>` is the message to display.
 * `<message-details>` is an optional extended message which is displayed in an expandable area which is initially collapsed.  
 
-The full typescript file (`src\main\index.ts`) to implement these three menu items and message boxes is as follows.
+The full TypeScript file (`src/main/index.ts`) to implement these three menu items and message boxes is as follows.
 
 ```typescript
 import { IComponent, Menu, getStudioProApi } from "@mendix/extensions-api";

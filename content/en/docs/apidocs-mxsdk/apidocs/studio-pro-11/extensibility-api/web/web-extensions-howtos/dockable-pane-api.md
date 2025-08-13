@@ -85,7 +85,7 @@ You will now add a menu that will open the pane when it is selected.
 
 1. Add a new submenu to the existing `extensionsMenu.add()` method on line 8.
 
-    ```typescript {linenos=table linenostart=8}
+    ```typescript {linenos=table linenostart=7}
     // Add a menu item to the Extensions menu
     await studioPro.ui.extensionsMenu.add({
       menuId: "myextension.MainMenu",
@@ -258,7 +258,7 @@ Alter the "ui" section by changing the `tab` endpoint and adding the `dockablepa
       }
 ```
 
-The `manifest.json file` should now look like this:
+The `manifest.json` file should now look like this:
 
 ```typescript {hl_lines=["5-8"]}
 {

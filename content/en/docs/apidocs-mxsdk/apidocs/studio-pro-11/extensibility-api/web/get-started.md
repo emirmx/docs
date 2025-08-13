@@ -34,7 +34,7 @@ This section will show you how to build and test an extension.
 ### Create a Test App
 
 1. Create a new app using the **Blank Web App** template.
-1. Make sure that you take note of the application directory (more precisely the application .mpr file)
+1. Make sure that you take note of the application directory (more precisely, the application `.mpr` file)
    where the application is stored on disk. 
    {{% alert color="info" %}}
    You can always open the application directory by choosing
@@ -58,9 +58,10 @@ containing the source code of the extension.
 
 ### Exploring the Created Extension
 
-In the following, we assume the name of your extension is `myextension`:
+In the following, we assume the name of your extension is `myextension` and that you are exploring it using
+Visual Studio Code.
 
-1. From the Explorer window navigate to `src/main/index.ts` select it to open the file.
+1. From the Explorer window navigate to `src/main/index.ts` and select it to open the file.
 
     Reading through the source code you should see the following:
 
@@ -107,7 +108,7 @@ In the following, we assume the name of your extension is `myextension`:
   1. The file `.vscode\launch.json` specifies the launch configuration and enables debugging. Lines 8-9 specify
      how the Studio Pro will be run:
      ```json
-     "runtimeExecutable": "C:\\Users\\petar.vukmirovic\\source\\repos\\appdev\\modeler\\Mendix.StudioPro.Windows\\bin\\Debug\\studiopro.exe",
+     "runtimeExecutable": "C:\\Program Files\\Mendix\\11.2.0\\modeler\\studiopro.exe",
      "runtimeArgs": ["C:\\TestApps\\AppTestExtensions\\AppTestExtensions.mpr", "--enable-extension-development", "--enable-web-extensions"],
      ```
 
