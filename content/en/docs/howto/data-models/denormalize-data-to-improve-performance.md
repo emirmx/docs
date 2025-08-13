@@ -96,7 +96,7 @@ Now the application is ready to store redundant data, but you still need to keep
 
     {{< figure src="/attachments/howto/data-models/denormalize-data-to-improve-performance/18582159.png" class="no-border" >}}
 
-12. Insert another retrieve object(s) activity (as you did in step #8), double-click it to open its properties on the **Retrieve** dialog box, and do the following:
+12. Insert another Retrieve object(s) activity (as you did in step #8), double-click it to open its properties on the **Edit Retrieve Object(s)** dialog box, and do the following:
     * Select **From Database** as **Source**
     * Click **Select...** to open the entity selector
 
