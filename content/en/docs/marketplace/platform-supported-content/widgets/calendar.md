@@ -1,11 +1,18 @@
 ---
 title: "Calendar"
 url: /appstore/widgets/calendar/
+deprecated: true
 description: "Describes the configuration and usage of the Calendar widget, which is available in the Mendix Marketplace."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
+
+{{% alert color="info" %}}
+This documentation applies to Calendar widget versions 1. 
+
+For documentation on Calendar version 2 and above, see [Calendar module](/appstore/modules/calendar/) documentation.
+{{% /alert %}}
 
 The [Calendar](https://marketplace.mendix.com/link/component/107954/) widget can be used to display and manage calendar events.
 
