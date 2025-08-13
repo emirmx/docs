@@ -19,7 +19,8 @@ Before you begin, make sure you have the following:
 
 * An active Mendix account
 * Partner status with Mendix 
-* Partner Admin rights—If you need Partner Admin rights, contact your Partner Manager.
+* Partner Admin rights    
+  If you need Partner Admin rights, contact your Partner Manager.
   
 ## Accessing the Partner Finder
 
