@@ -31,7 +31,7 @@ If you are starting from the [Blank GenAI app](https://marketplace.mendix.com/li
 
 If you start from a standard Mendix blank app or have an existing project, you must install the MCP Client module manually. Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to install the [MCP Client](https://marketplace.mendix.com/link/component/244893) module from the Marketplace.
 
-The module is currently not dependent on any other modules. However, if you like to use it with the existing GenAI modules, it includes examples (excluded) and further explanations in the [Use with GenAI Commons](#use-with-genai-commons) section below.
+The module is currently not dependent on any other modules. However, if you would like to use it with the existing GenAI modules, it includes examples (excluded) and further explanations in the [Use with GenAI Commons](#use-with-genai-commons) section below.
 
 ## Configuration
 
@@ -39,13 +39,13 @@ The module is currently not dependent on any other modules. However, if you like
 
 The `Create MCP Client` action creates a sync client that is connected to an (externally) running MCP server and returns the `MCPServer` object. The action requires an `MCPClientConfig` object that contains all required fields to facilitate the connection. If required (for example, for authentication), you can add HTTP headers via the `Config: Add Http Header` action from the toolbox when creating the input object.
 
-You can use the returned `MCPClient` object for all other actions, for example, to discover tools and prompts or to get a specific prompt or call a tool. An MCP Client can be reused across multiple actions or for a whole chat conversation. It is recommended to clean up the connections after usage by calling the `Close MCP Client` action.
+You can use the returned `MCPClient` object for all other actions, for example, to discover tools and prompts or to get a specific prompt or call a tool. An MCP Client can be reused across multiple actions or throughout an entire chat conversation. It is recommended to clean up connections after use by calling the `Close MCP Client` action.
 
 For example, see the **Example Implementations** folder inside the module containing logic to connect to a server, use HTTP Headers for authentication, and discover tools and prompts.
 
 #### Protocol Version
 
-When creating an MCP client, specify a `ProtocolVersion`. On the official MCP documentation, you can review the differences between the protocol versions in the [changelog](https://modelcontextprotocol.io/specification/2025-03-26/changelog). The MCP Client module currently only supports `v2024-11-05` and the HTTP+SSE transport. MCP servers should support the same version as the client. Note that Mendix supports the capabilities provided by the MCP Java SDK.
+When creating an MCP client, specify a `ProtocolVersion`. On the official MCP documentation, you can review the differences between the protocol versions in the [changelog](https://modelcontextprotocol.io/specification/2025-03-26/changelog). The MCP Client module currently supports only `v2024-11-05` and the HTTP+SSE transport. MCP servers should support the same version as the client. Note that Mendix supports the capabilities provided by the MCP Java SDK.
 
 ### Discovering Resources {#discover-resources}
 
@@ -59,7 +59,7 @@ To use a prompt from an MCP Server, you can use the `Get Prompt` action to recei
 
 For both actions, you can pass an `ArgumentCollection` if the prompt or tool requires arguments (the information is available from the [discovered resources](#discover-resources)). The actions `Initialize Argument Collection` and `Argument Collection: Add New Input` help you construct the input for those actions.
 
-### Using MCP Client module with GenAI Commons {#use-with-genai-commons}
+### Using MCP Client Module with GenAI Commons {#use-with-genai-commons}
 
 The MCP Client module does not depend on any other modules. However, to make it easy to connect MCP tools with [GenAI Commons](/appstore/modules/genai/genai-for-mx/commons/) (and thus all platform-supported connectors), the module contains some examples to facilitate an integration between the MCP Client and GenAI Commons (and, for chat cases, with [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/)).
 
@@ -71,7 +71,7 @@ In the **Map to GenAI Commons** folder, you can find three microflows that are e
 
 For `Request_AddMCPTools` and `Tool_OrchestrateToolCall` microflows above, configure the [MCPClientConfig](#client-connection-lifecycle) before establishing a connection. As the logic might be the same for both, you may create a sub-microflow to reuse it. By using the above microflows, you can integrate existing logic in your app or from the Conversational UI to facilitate a chat or any other GenAI use cases that involves tools.
 
-In order to use prompts from MCP, there is currently no out-of-the-box solution available. You can get inspired by the MCP Client example in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), where the prompts are displayed to the user to start a conversation in a chat interface.
+Currently, there is no out-of-the-box solution available for using prompts from MCP. You can get inspired by the MCP Client example in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), where the prompts are displayed to the user to start a conversation in a chat interface.
 
 ## Technical Reference
 
@@ -88,7 +88,7 @@ The **Documentation** pane displays the documentation for the currently selected
 
 ### MCP Client Cannot Connect to the MCP Server
 
-There are several possible reasons why the client cannot connect to your server. First, check the MCP Client logs. Then verify that the endpoint is set to the correct URL and that the server supports the same protocol version and transport method (HTTP + SSE) as the client. If authentication is required, make sure to pass the necessary information via HTTP headers.
+There are several possible reasons why the client cannot connect to your server. First, check the MCP Client logs. Then, verify that the endpoint is set to the correct URL and that the server supports the same protocol version and transport method (HTTP + SSE) as the client. If authentication is required, make sure to pass the necessary information via HTTP headers.
    
 ## Read More
 
