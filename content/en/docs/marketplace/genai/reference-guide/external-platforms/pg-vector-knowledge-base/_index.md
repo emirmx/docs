@@ -188,6 +188,14 @@ For more information on how to set up a vector database for retrieval augmented 
 
 If you encounter an error stating that an attribute or a reference is required after an upgrade, first upgrade all modules by right-clicking the error, then upgrade Data Widgets.
 
+### Attribute or Reference Required Error Message After Upgrade 
+
+If you encounter an error stating that an attribute or a reference is required after an upgrade, first upgrade all modules by right-clicking the error, then upgrade Data Widgets. 
+
+###  Conflicted Lib Error after module import
+
+This is usually fixed by syncing all dependencies here: App > Synchronize dependencies.
+
 ## Read More {#read-more}
 
 * [pgvector: Open-Source Extension For Vector Similarity Search For PostgreSQL](https://github.com/pgvector/pgvector?tab=readme-ov-file#pgvector)
