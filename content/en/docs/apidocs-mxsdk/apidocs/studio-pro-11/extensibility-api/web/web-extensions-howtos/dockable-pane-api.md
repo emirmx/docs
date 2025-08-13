@@ -198,7 +198,7 @@ entryPoints.push({
 });
 ```
 
-Your `build-extension.mjs` file should be like this:
+Your `build-extension.mjs` file should be like this (note that the variable `appDir` should retain its previous value):
 
 ```javascript {hl_lines=["16-23"]}
 import * as esbuild from 'esbuild'
@@ -206,7 +206,7 @@ import {copyToAppPlugin, copyManifestPlugin, commonConfig} from "./build.helpers
 import parseArgs from "minimist"
 
 const outDir = `dist/myextension`
-const appDir = "C:\\TestApps\\AppTestExtensions"
+const appDir = "<path to your application root directory>"
 const extensionDirectoryName = "extensions"
 
 const entryPoints = [
