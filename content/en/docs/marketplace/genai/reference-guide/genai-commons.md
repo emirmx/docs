@@ -919,10 +919,7 @@ The process may look like this:
 4. Test your application locally and verify that everything works as before.
 5. Restore lost data on deployed environments. Usually incoming associations to the protected modules need to be reset.
 
-### Attribute or Reference Required Error Message After Upgrade 
-
-If you encounter an error stating that an attribute or a reference is required after an upgrade, first upgrade all modules by right-clicking the error, then upgrade Data Widgets. 
 
 ###  Conflicted Lib Error after module import
 
-This is usually fixed by syncing all dependencies here: App > Synchronize dependencies.
+If an error occurs that indicates conflicting java libraries, such as `java.lang.NoSuchMethodError: 'com.fasterxml.jackson.annotation.OptBoolean com.fasterxml.jackson.annotation.JsonProperty.isRequired()'` you can sync all dependencies here: `App > Synchronize dependencies` and restart your application.
