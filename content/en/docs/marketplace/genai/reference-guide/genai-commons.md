@@ -198,12 +198,12 @@ For tools which are not executed in the same Mendix application, but still regis
 | Attribute | Description |
 | --- | --- |
 | `Name` | Name of the argument. |
-| `_Type` | Data type of the argument, for example: string, number, boolean, enum. |
+| `_Type` | Data type of the argument, for example, string, number, boolean, enum. |
 | `Required` | Indicates if the argument is required for calling the tool. |
 
 #### `EnumValue` {#enum-value}
 
-The EnumValue can specify which keys are available for "enum" [ArgumentInput](#argument-input) data types, so that the model is restricted in what to use as input.
+The `EnumValue` specifies available keys for "enum" [ArgumentInput](#argument-input) data types, so that the model is restricted to use valid input.
 
 | Attribute | Description |
 | --- | --- |
