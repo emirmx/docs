@@ -59,7 +59,7 @@ To use a prompt from an MCP Server, you can use the `Get Prompt` action to recei
 
 For both actions, you can pass an `ArgumentCollection` if the prompt or tool requires arguments (the information is available from the [discovered resources](#discover-resources)). The actions `Initialize Argument Collection` and `Argument Collection: Add New Input` help you construct the input for those actions.
 
-### Using with GenAI Commons {#use-with-genai-commons}
+### Using MCP Client module with GenAI Commons {#use-with-genai-commons}
 
 The MCP Client module does not depend on any other modules. However, to make it easy to connect MCP tools with [GenAI Commons](/appstore/modules/genai/genai-for-mx/commons/) (and thus all platform-supported connectors), the module contains some examples to facilitate an integration between the MCP Client and GenAI Commons (and, for chat cases, with [ConversationalUI](/appstore/modules/genai/genai-for-mx/conversational-ui/)).
 
