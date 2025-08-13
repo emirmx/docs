@@ -311,6 +311,10 @@ To do this, follow the steps below:
 ### Attribute or Reference Required Error Message After Upgrade 
 
 If you encounter an error stating that an attribute or a reference is required after an upgrade, first upgrade all modules by right-clicking the error, then upgrade Data Widgets. 
+
+###  Conflicted Lib Error after module import
+
+This is usually fixed by syncing all dependencies here: App > Synchronize dependencies.
   
 ## Read More {#readmore}
 
