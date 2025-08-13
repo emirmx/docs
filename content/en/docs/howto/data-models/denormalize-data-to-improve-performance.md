@@ -74,7 +74,7 @@ Now the application is ready to store redundant data, but you still need to keep
 
     {{< figure src="/attachments/howto/data-models/denormalize-data-to-improve-performance/18582163.png" class="no-border" >}}
 
-8. Drag a **Retrieve** activity from the toolbox to the line between the start and end event on the microflow, which will insert a new retrieve object(s) activity:
+8. Drag a **Retrieve object(s)** activity from the toolbox to the line between the start and end event on the microflow, which will insert a new retrieve object(s) activity:
 
     {{< figure src="/attachments/howto/data-models/denormalize-data-to-improve-performance/18582164.png" class="no-border" >}}
 
