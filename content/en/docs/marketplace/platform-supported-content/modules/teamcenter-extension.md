@@ -224,9 +224,11 @@ Set **Authentication** to one of the following methods.
 
     {{% alert color="info" %}}Although these settings generally align with those required to log in using SSO with the Teamcenter Connector in your Mendix application, the last two settings depend on the application registration with your Identity Server. Mendix recommends having a separate registration for the Teamcenter Extension on your Identity Server, distinct from your Mendix application’s registration. If you do not do this, conflicts might arise if your Mendix application is running.{{% /alert %}} 
 
-* **Teamcenter X SSO** – Allows you to use the SSO credentials of your Teamcenter X instance. Please work with you Siemens CApS representative to fill out the following:
+* **Teamcenter X SSO** – Allows you to use the SSO credentials of your Teamcenter X instance.
 
-<img width="1980" height="1710" alt="image" src="https://github.com/user-attachments/assets/7e1d6f85-b264-4d0d-9608-00925a03c5b6" />
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/teamcenter-extension/teamcenter_sso.png" class="no-border" max-width=75% >}}
+
+    Please work with you Siemens CApS representative to fill out the following:
 
     * **TcX Client ID**
     * **SAM Auth Base URL** 
@@ -234,8 +236,8 @@ Set **Authentication** to one of the following methods.
     * **SAM Auth Client Secret**
     * **Token Exchange Client ID**
     * **Token Exchange Client Secret**
-    * **Callback URL**
-      
+    * **Callback URL**      
+
 ##### Mendix Module
 
 **Mendix module** selects the module where the Entities and Microflows will be created. We recommend that this is a module which is initially empty.
