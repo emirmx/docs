@@ -208,9 +208,9 @@ While building your app and using Teamcenter Extension you need to provide the d
 
 Set **Authentication** to one of the following methods.
 
-* **Credentials** – if your Teamcenter instance supports logging in using provided credentials. You will be prompted for your Teamcenter credentials when you click the **Sign in** button in the **Settings** tab. This method prevents sharing of credentials among developers through versioning.
+* **Credentials** – Select this if your Teamcenter instance supports logging in using provided credentials. You will be prompted for your Teamcenter credentials when you click the **Sign in** button in the **Settings** tab. This method prevents sharing of credentials among developers through versioning.
 
-* **Teamcenter SSO** – allows you to use SSO if your Teamcenter instance is configured to use it. You can get these settings from your Teamcenter administrator.
+* **Teamcenter SSO** – Allows you to use SSO if your Teamcenter instance is configured to use it. You can get these settings from your Teamcenter administrator.
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/teamcenter-extension/teamcenter-sso.png" >}}
 
@@ -224,7 +224,7 @@ Set **Authentication** to one of the following methods.
 
     {{% alert color="info" %}}Although these settings generally align with those required to log in using SSO with the Teamcenter Connector in your Mendix application, the last two settings depend on the application registration with your Identity Server. Mendix recommends having a separate registration for the Teamcenter Extension on your Identity Server, distinct from your Mendix application’s registration. If you do not do this, conflicts might arise if your Mendix application is running.{{% /alert %}} 
 
-* **Teamcenter X SSO** – allows you to use SSO of your Teamcenter X instance. Please work with you Siemens CApS representative to fill out the following:
+* **Teamcenter X SSO** – Allows you to use the SSO credentials of your Teamcenter X instance. Please work with you Siemens CApS representative to fill out the following:
   
     * **TcX Client ID**
     * **SAM Auth Base URL** 
@@ -232,7 +232,7 @@ Set **Authentication** to one of the following methods.
     * **SAM Auth Client Secret**
     * **Token Exchange Client ID**
     * **Token Exchange Client Secret**
-    * **callback URL**
+    * **Callback URL**
       
 ##### Mendix Module
 
