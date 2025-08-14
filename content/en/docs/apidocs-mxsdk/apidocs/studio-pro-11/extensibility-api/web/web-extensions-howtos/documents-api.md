@@ -1,6 +1,6 @@
 ---
-title: "Using the App Explorer API"
-linktitle: "App Explorer API"
+title: "Using the Documents API"
+linktitle: "Documents API"
 url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/documents-api/
 ---
 
