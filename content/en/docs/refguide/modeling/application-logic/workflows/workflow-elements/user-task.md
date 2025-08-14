@@ -48,31 +48,68 @@ The **Due date** section properties are described in the table below:
 
 ### Targeted Users Section {#users}
 
-#### Target Users Using {#target-users}
+#### Target Users {#target-users}
 
-**Target users using** allows you to manage what users will the task be assigned to. You can filter users using XPath, or implement more flexible logic and add several checks using a microflow.
+**Target users** allows you to manage what users will see a user task in their inbox.
 
-Possible options of this property are described in the table below:
+There are three different ways to do this:
 
-| Option | Description |
-| --- | --- |
-| XPath | Allows you to filter users who should be assigned the user task. For example, you can assign a certain task only to users with the Manager user role. You can use attributes of the **User Entity** set in [App Settings](/refguide/app-settings/#workflows). |
-| Microflow | Allows you to assign the user task to certain users. Using microflow you can check, for example, which users have the right to approve user tasks and are currently not on vacation and assign the task only to users who passed the check.<br />The return type of the microflow should be the **User Entity** set in [App Settings](/refguide/app-settings/#workflows). |
-| No assignment | Allows you to not assign the user task to certain users immediately. This can be useful when you, for example, want the user task to be created but have an administrator assign it to certain users later. |
+- Target **User(s)** directly. You can use either an XPath or a Microflow, that result in a list of one or more **User Entity** objects.
+  These objects will be stored in the *WorkflowUserTask_TargetUsers* association, after which the user task will show up in the task inbox of those users.
+- Target users indirectly through **Workflow group(s)**. You can use either an XPath or Microflow, that result in a list of one or more *WorklowGroup* objects.
+  These objects will be stored in the *WorkflowUserTask_TargetGroups* association, after which the user task will show up in the task inbox of any user that is associated to those workflow groups.
+- Perform **No targeting** when the user task is created. Instead, you must set the targets manually by settings either *WorkflowUserTask_TargetUsers* or *WorkflowUserTask_TargetGroups* (or both) yourself.
+  Setting these associations can be done from the **On created** event handler or at some other time after the user task is created, for instance by an administrator.
 
-In case **Target users using** (an XPath or a microflow) results in an empty list of users (0 users), the workflow fails. For more information on how to handle this kind of issues, see the [Operation](/refguide/change-workflow-state/#operation) section in *Change Workflow State*.
+{{% alert color="info" %}}
+Group targeting exists as of Mendix 11.2.0 as an experimental feature.
+As such you must enable it in the [New Features Tab](/refguide/preferences-dialog#new-features) of the [Preferences Dialog](/refguide/preferences-dialog).
+See also [Workflow Groups](/refguide/workflow-groups).
+{{% /alert }}
+
+It is important to note that there is a fundamental difference between targeting **User(s)** and **Workflow group(s)**:
+
+- Targeting **User(s)** is static and associates only those users that match the targeting criteria at the time the user task is created.
+  After that, the targeted users are *not* updated when new users are created (or existing users are modified), even if these would match the criteria.
+- Targeting **Workflow group(s)** is not static and will dynamically change when users are added or removed to the targeted groups.
+  Note that the targeted groups themselves are still static and will not be changed when new groups are added.
+
+Possible options are described in the table below:
+
+| Target | Source | Description |
+| --- | --- | --- |
+| User(s) | XPath | Allows you to filter which users should see the user task in their inbox. For example, you can target a certain task only to users in a specific department (assuming such information is avalable in your domain model). You can use any attributes of the **User Entity** set in [App Settings](/refguide/app-settings/#workflows).|
+| User(s) | Microflow | Allows you to target the user task to certain users. Using a microflow you can check, for example, which users have the right to approve user tasks and are currently not on vacation and assign the task only to users who passed the check. <br/> The return type of the microflow should be a list of the **User Entity** set in [App Settings](/refguide/app-settings/#workflows). |
+| Workflow group(s) | XPath | Allows you to filter groups of users who should see the user task in their inbox. For example, you can target a specific *Managers* group, that associates only users with a management role. Use the following XPath: `[ id = '[%WorkflowGroup_Managers%]' ]`. |
+| Workflow group(s) | Microflow | Allows you to target the user tasks to specific groups. Using a microflow you can check, for example, which groups are associated to a specific department (assuming such information is available in your domain model). <br/> The return type of the microflow should be a list of *WorkflowGroup*.  |
+| No targeting | - | Allows you to not immediately target the user task. This can be useful when you, for example, want the user task to be created but have an administrator assign it to certain users and/or groups later. It should also be used if you want to have mixed targeting, containing both specific users and groups of users. |
+
+See the [Task Inbox](/refguide/workflow-engine/#task-inbox) section for more details on how access rules are used to include tasks in the current user's inbox.
+
+If an XPath or microflow results in an empty list (0 objects), the workflow fails. For more information on how to handle this kind of issues, see the [Operation](/refguide/change-workflow-state/#operation) section in *Change Workflow State*.
 
 #### XPath Constraint {#xpath-constraint}
 
-Specifies the expression used to assign the user task. This option is displayed only when the [Target users using](#target-users) is set to **XPath**. Click **Edit** to edit the [XPath constraint](/refguide/xpath-constraints/).
+Specifies the expression used to target the user task. This option is displayed only when the **Source** is set to **Database**. Click **Edit** to edit the [XPath constraint](/refguide/xpath-constraints/).
+
+Use workflow group tokens instead of the *Name* attribute. For instance, use `[ id = '[%WorkflowGroup_Managers%]' ]` instead of `[ Name = 'Managers' ]`.
+The latter would *not* be updated automatically if a group is renamed.
 
 #### Microflow
 
-Specifies the microflow used to assign the user task. This option is displayed only when the [Target users using](#target-users) is set to **Microflow**.
+Specifies the microflow used to target the user task. This option is displayed only when the **Source** is set to **Microflow**.
 
 #### Auto-Assign When Targeting Results In One User {#auto-assign}
 
-Enables automatically assigning a user task when a single user is targeted. This option is displayed only when the [Target users using](#target-users) is set to **XPath** or **Microflow**.
+Enables automatically assigning a user task when a single user is targeted. This option is displayed only when the [Target users](#target-users) is set to **User(s)**.
+
+#### FAQ
+
+| Question | Answer |
+| --- | --- |
+| When should I use user targeting and when group targeting? | In general we advise to always use group targeting as this provides the required flexibility most organizations need. Use user targeting when you want to select individual users that should be target for a user task. |
+| Can I set/change the group targeting at runtime? | Yes, similarly as with user targeting, you can change the groups targeting at runtime (e.g. by using the Workflow Commons module). |
+| How do I manage the users in a group? | The Workflow Commons module has a Groups function where you can managet group membership. You can build your own logic to add members to certain groups based on directory information. |
 
 ### Outcomes Section {#outcomes}
 
