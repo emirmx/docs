@@ -65,9 +65,7 @@ The following widgets are bundled in the module:
 After you install the [Email](https://marketplace.mendix.com/link/component/120739) connector, configure the following in Studio Pro:
 
 1. Set a value for the **EncryptionKey** constant provided by the **Encryption** module, if you have not already configured it in the [Prerequisites](#prerequisites).
-2. Launch the user interface.
-    * To use the new user interface, launch it via **USE_ME** > **New_UI** > **Email_Connector_Overview** and add this page to your app navigation.
-    * To use the old user interface, use the microflow **USE_ME** > **Microflows** > **ACT_EmailAccount_LaunchEmailConnectorOverview**.
+2. Launch the user interface by using the **ACT_EmailAccount_LaunchEmailConnectorOverview** microflow in the **USEME > Microflows** folder.
 
 ### Module Security and Roles
 
