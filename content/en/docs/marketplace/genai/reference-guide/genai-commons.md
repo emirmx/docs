@@ -191,6 +191,24 @@ A tool of the type *function*. This is a specialization of [Tool](#tool) and rep
 | `MinimumSimilarity` | Specifies the minimum similarity score (usually 0-1) of the passed chunk and the knowledge chunks in the knowledge base. |
 | `MaxNumberOfResults` | Specifies the maximum number of results that should be retrieved from the knowledge base. |
 
+#### `ArgumentInput` {#argument-input}
+
+For tools which are not executed in the same Mendix application, but still registered with the request and called from the application, `ArgumentInput` objects are added to the [Tool](#tool). When the tool is called, the arguments are not passed directly to the microflow, but can be extracted from the [Argument](#argument) of the [ToolCall](#toolcall).
+
+| Attribute | Description |
+| --- | --- |
+| `Name` | Name of the argument. |
+| `_Type` | Data type of the argument, for example, string, number, boolean, enum. |
+| `Required` | Indicates if the argument is required for calling the tool. |
+
+#### `EnumValue` {#enum-value}
+
+The `EnumValue` specifies available keys for "enum" [ArgumentInput](#argument-input) data types, so that the model is restricted to use valid input.
+
+| Attribute | Description |
+| --- | --- |
+| `Key` | Key of an enumeration. |
+
 #### `StopSequence` {#stopsequence}
 
 For many models, `StopSequence` can pass a list of character sequences (for example a word) along with the request. The model will stop generating content when a word of that list occurs next.
