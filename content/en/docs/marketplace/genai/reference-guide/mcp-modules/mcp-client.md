@@ -1,6 +1,6 @@
 ---
 title: "MCP Client"
-url: /appstore/modules/genai/model-context-protocol/mcp-client/
+url: /appstore/modules/genai/mcp-modules/mcp-client/
 linktitle: "MCP Client"
 description: "This document describes the purpose, configuration, and usage of the MCP Client module from the Mendix Marketplace that allows developers to consume tools and prompts from external MCP servers."
 weight: 20

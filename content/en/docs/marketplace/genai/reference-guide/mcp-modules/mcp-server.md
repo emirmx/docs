@@ -1,6 +1,6 @@
 ---
 title: "MCP Server"
-url: /appstore/modules/genai/model-context-protocol/mcp-server/
+url: /appstore/modules/genai/mcp-modules/mcp-server/
 linktitle: "MCP Server"
 description: "This document describes the purpose, configuration, and usage of the MCP Server module from the Mendix Marketplace that allows developers to expose Mendix logic to external MCP clients and AI systems."
 weight: 20,

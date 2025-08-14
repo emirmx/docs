@@ -1,6 +1,6 @@
 ---
 title: "Model Context Protocol (MCP)"
-url: /appstore/modules/genai/reference-guide/model-context-protocol/
+url: /appstore/modules/genai/reference-guide/mcp-modules/
 linktitle: "Model Context Protocol (MCP)"
 weight: 20
 description: "Provides information on modules that enable the implementation of the Model Context Protocl (MCP) in Mendix."
