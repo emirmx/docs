@@ -88,7 +88,9 @@ Maia for Pages has some limitations.
 
 ### Supported Widgets
 
-Not all widgets are supported. Currently the following widgets are supported:
+Not all widgets are supported. 
+
+Currently the following widgets are supported:
 
 * [Container](/refguide10/container/)
 * [Layout Grid](/refguide10/layout-grid/)
@@ -103,10 +105,10 @@ Not all widgets are supported. Currently the following widgets are supported:
 
 Starting with Studio Pro 10.24, the following widgets are supported if they have been installed:
 
-* [Data grid 2](/appstore/modules/data-grid-2)
-* [Combobox](/appstore/widgets/combobox)
+* [Data Grid 2](/appstore/modules/data-grid-2)
+* [Combo Box](/appstore/widgets/combobox)
 * [Image](/appstore/widgets/image)
-* [Custom Chart](/appstore/widgets/charts)
+* [Charts](/appstore/widgets/charts)
 
 ## Read More
 

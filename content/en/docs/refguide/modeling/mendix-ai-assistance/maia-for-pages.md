@@ -72,7 +72,9 @@ Keep in mind that Maia analyzes only the structure of the image. The theming of 
 
 ## Limitation {#limitation}
 
-Maia for Pages does not support all widgets. Currently the following widgets are supported:
+Maia for Pages does not support all widgets. 
+
+Currently the following widgets are supported:
 
 * [Container](/refguide/container/)
 * [Layout Grid](/refguide/layout-grid/)
@@ -87,10 +89,10 @@ Maia for Pages does not support all widgets. Currently the following widgets are
 
 The following widgets are supported if they have been installed:
 
-* [Data grid 2](/appstore/modules/data-grid-2)
-* [Combobox](/appstore/widgets/combobox)
+* [Data Grid 2](/appstore/modules/data-grid-2)
+* [Combo Box](/appstore/widgets/combobox)
 * [Image](/appstore/widgets/image)
-* [Custom Chart](/appstore/widgets/charts)
+* [Charts](/appstore/widgets/charts)
 * [Progress Bar](/appstore/widgets/progress-bar) (Studio Pro 11.1 and above)
 * [Progress Circle](/appstore/widgets/progress-circle) (Studio Pro 11.1 and above)
 
