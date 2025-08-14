@@ -51,7 +51,7 @@ When creating an MCP client, specify a `ProtocolVersion`. On the official MCP do
 
 The actions `List Prompts` and `List Tools` send a request to the MCP server to discover prompts and tools, respectively. Create the MCP Client beforehand and pass it as an input. Both actions create the necessary objects, such as `Prompt` and `PromptArgument` for prompts and `Tool`, `ToolArgument`, and `EnumValue` for tools. If the prompt or tool requires arguments, the objects help you understand what needs to be passed and how to format it.
 
-In general, prompts are often exposed to end-users in a chat to start or continue a conversation, while tools are passed to an LLM. You can learn more about this in the [Use with GenAI Commons](#use-with-genai-commons) section below.
+In general, prompts are often exposed to end-users in a chat to start or continue a conversation, while tools are passed to an LLM. You can learn more about this in the [Using MCP Client Module with GenAI Commons](#use-with-genai-commons) section below.
 
 ### Using Resources
 
