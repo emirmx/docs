@@ -105,10 +105,10 @@ Currently the following widgets are supported:
 
 Starting with Studio Pro 10.24, the following widgets are supported if they have been installed:
 
-* [Data Grid 2](/appstore/modules/data-grid-2)
-* [Combo Box](/appstore/widgets/combobox)
-* [Image](/appstore/widgets/image)
-* [Charts](/appstore/widgets/charts)
+* [Data Grid 2](/appstore/modules/data-grid-2/)
+* [Combo Box](/appstore/widgets/combobox/)
+* [Image](/appstore/widgets/image/)
+* [Charts](/appstore/widgets/charts/)
 
 ## Read More
 
