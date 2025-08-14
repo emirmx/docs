@@ -58,8 +58,8 @@ With the notifications API, you can show a pop-up notification when your extensi
 
     This code does the following:
     
-    * It imports the `notificationsApi` from `studioPro.ui.notifications` to allow you to use the notifications API.
-    * It implements a `loaded` event, which calls the `show` method to show a pop-up notification for five seconds with the title `Extension Loaded`, a message, and the `check.png` icon you set up earlier. For more information, see the [Full Reference for Show Method](#reference) section below.
+    * It uses the `notificationsApi` from `studioPro.ui.notifications` to allow you to use the notifications API.
+    * It implements a `loaded` method, which calls the `show` method to show a pop-up notification for five seconds with the title `Extension Loaded`, a message, and the `check.png` icon you set up earlier. For more information, see the [Full Reference for Show Method](#reference) section below.
 
 Now, when the extension loads, your notification will show in the top-right corner of Studio Pro:
 

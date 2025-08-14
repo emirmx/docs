@@ -83,9 +83,9 @@ After adding this call the `loaded()` method looks like this:
 
 You will now add a menu that will open the pane when it is selected.
 
-1. Add a new submenu to the existing `extensionsMenu.add()` method on line 8.
+1. Add a new submenu to the existing `extensionsMenu.add()` method on line 7.
 
-    ```typescript {linenos=table linenostart=7}
+    ```typescript {linenos=table linenostart=6}
     // Add a menu item to the Extensions menu
     await studioPro.ui.extensionsMenu.add({
       menuId: "myextension.MainMenu",
@@ -280,9 +280,9 @@ Now that you have registered a pane and can open, it would also be a good idea t
 
 You will close your pane using a new menu item.
 
-First add a new sub menu item to the menu on line 14.
+First add a new sub menu item to the menu on line 13.
 
-```typescript {linenos=table linenostart=14}
+```typescript {linenos=table linenostart=13}
                 { menuId: "myextension.HideDockMenuItem", caption: "Hide dock pane" },
 ```
 
@@ -314,7 +314,7 @@ You must also alter the event handler for the new menu at the end of the loaded 
         );
 ```
 
-The loaded method should now look like this:
+The `loaded` method should now look like this:
 
 ```typescript {hl_lines=["10","25-46"]}
     async loaded(componentContext) {

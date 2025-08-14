@@ -65,7 +65,7 @@ Visual Studio Code.
 
     Reading through the source code you should see the following:
 
-1. Line 8 adds a menu
+1. Line 7 adds a menu
 
     ```typescript
     await studioPro.ui.extensionsMenu.add({
@@ -77,7 +77,7 @@ Visual Studio Code.
     });
     ```
 
-1. Line 17 opens a tab
+1. Line 16 opens a tab
 
     ```typescript
     // Open a tab when the menu item is clicked
@@ -119,7 +119,7 @@ When you install the extension you will see a new menu item within Studio Pro.
 From within Visual Studio Code:
 
 1. Select **File** -> **Open Folder**
-1. Navigate to the folder you just extracted your extension source code to.
+1. Navigate to the folder where you just created your extensuion.
 1. Click **Select Folder**.
 1. Select **Yes** if you are asked whether you trust this folder.
 1. Now open a Terminal by selecting **Terminal** -> **New Terminal** from the top menu.

@@ -17,7 +17,7 @@ Before starting this how-to, ensure you have:
 
 ## Set Up the Extension Structure 
 
-Create a menu that will display a dialog with text. This is done in the `loaded` event in the main entry point (`src/main/index.ts`). This can be done by following the steps in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
+Create a menu that will display a dialog with text. This is done in the `loaded` method in the main entry point (`src/main/index.ts`). This can be done by following the steps in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
 
 In the example below, you create one menu item that will show a message box.
 
@@ -36,7 +36,7 @@ export const component: IComponent = {
         const caption = "My Preferences";
 
         // Open a message box when the menu item is clicked
-        studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", (args) => {
+        studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", async (args) => {
             if (args.menuId === menuId) {
                 await messageBoxApi.show("info", `User Preferences are:`);
             }

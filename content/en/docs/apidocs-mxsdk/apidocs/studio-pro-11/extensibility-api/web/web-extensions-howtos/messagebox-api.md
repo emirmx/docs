@@ -14,7 +14,7 @@ This how-to uses the results of [Get Started with the Web Extensibility API](/ap
 
 ## Showing a Message Box
 
-Firstly, you need to create a menu which will display a dialog with text. This is done in the `loaded` event of your main entry point (`src/main/index.ts`)
+Firstly, you need to create a menu which will display a dialog with text. This is done in the `loaded` method of your main entry point (`src/main/index.ts`)
 
 You can learn how to do that in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
 

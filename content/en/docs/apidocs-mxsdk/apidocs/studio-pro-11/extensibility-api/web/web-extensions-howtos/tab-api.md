@@ -14,7 +14,7 @@ This how-to uses the results of [Get Started with the Web Extensibility API](/ap
 
 ## Opening a Tab
 
-Firstly, create a menu item to open the tab. This is done inside the `loaded` event in `Main`. For more information see [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
+Firstly, create a menu item to open the tab. This is done inside the `loaded` method in `Main` class, as described below. For more information see [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
 
 In a listener event called `menuItemActivated` the `studioPro.ui.tabs.open(<tabinfo>, <uispec>)` call opens a new tab where:
 
