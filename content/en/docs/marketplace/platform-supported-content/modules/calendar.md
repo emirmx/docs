@@ -7,7 +7,7 @@ description: "Describes the configuration and usage of the Calendar module, whic
 
 ## Introduction
 
-The [Calendar](https://marketplace.mendix.com/link/component/107954/) module can be used to display and manage calendar events.
+The [Calendar](https://marketplace.mendix.com/link/component/245304) module can be used to display and manage calendar events.
 
 ### Features
 
