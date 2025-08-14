@@ -85,6 +85,15 @@ Maia for Pages does not support all widgets. Currently the following widgets are
 * [Radio Buttons](/refguide/radio-buttons/)
 * [Date Picker](/refguide/date-picker/)
 
+The following widgets are supported if they have been installed:
+
+* [Data grid 2](/appstore/modules/data-grid-2)
+* [Combobox](/appstore/widgets/combobox)
+* [Image](/appstore/widgets/image)
+* [Custom Chart](/appstore/widgets/charts)
+* [Progress Bar](/appstore/widgets/progress-bar) (Studio Pro 11.1 and above)
+* [Progress Circle](/appstore/widgets/progress-circle) (Studio Pro 11.1 and above)
+
 ## Read More
 
 * [Pages](/refguide/page/)
