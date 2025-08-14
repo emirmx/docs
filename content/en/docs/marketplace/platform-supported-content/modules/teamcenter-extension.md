@@ -228,7 +228,7 @@ Set **Authentication** to one of the following methods.
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/teamcenter-extension/teamcenter_sso.png" class="no-border" max-width=75% >}}
 
-    Please work with you Siemens CApS representative to fill out the following:
+    Please work with your Siemens CApS representative to fill out the following:
 
     * **TcX Client ID**
     * **SAM Auth Base URL** 
