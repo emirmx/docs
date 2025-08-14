@@ -202,7 +202,7 @@ The `CspHelper` interface provides additional utility methods for more sophistic
 
 * `getTemplate()` - Get the template used for the Content-Security-Policy header value
 * `getNonce(IMxRuntimeResponse response)` - Get the generated nonce of the current HTTP response
-* `hasNonce(IMxRuntimeResponse response)` - Returns true if the configured CSP template contains the `{{ NONCE }}` placeholder
+* `hasNonce(IMxRuntimeResponse response)` - Returns true if the configured CSP template contains the `{{ NONCE }}` placeholder, for example: `Content-Security-Policy: script-src 'nonce-{{ NONCE }}'`
 * `addHeader(IMxRuntimeResponse response)` - Add Content-Security-Policy header to the response using the configured template
 
 ### Example Implementation
