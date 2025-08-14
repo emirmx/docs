@@ -620,12 +620,12 @@ To do so, change the default **IdP Attribute** or the **Configured Entity Attrib
 
 IdP attributes will be automatically created from the list of `claims_supported` at the well-known endpoint. The module also allows manual creation of IdP attributes through the following steps:
 
-1. In the **Attribute Mapping** tab, click **New** to add a new mapping.
-2. In the **Edit Claim Map** dialog, click **Select**.
-3. Under **Claims for claim entity attribute**, click **New** to create a new claim.
-4. Enter the required details for the claim and click **Save**.
+1. In the **Attribute Mapping** of the **UserProvisioning** tab, click **New** to add a new mapping.
+2. In the **Edit Claim Map** dialog, click **Search**.
+3. Under the **Claims for claim entity attribute**, click **New** to create a new claim.
+4. In the **IdP Attribute**, select the newly created claim from the dropdown, and click **Save**.
 
-Select the newly created attribute to use it in your mapping.
+Select the required attribute to use it in your mapping.
 
 ##### User Provisioning Using Your Custom User Entity{#custom_user_entity}
 
