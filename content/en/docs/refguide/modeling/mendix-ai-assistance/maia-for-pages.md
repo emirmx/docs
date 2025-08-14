@@ -89,12 +89,12 @@ Currently the following widgets are supported:
 
 The following widgets are supported if they have been installed:
 
-* [Data Grid 2](/appstore/modules/data-grid-2)
-* [Combo Box](/appstore/widgets/combobox)
-* [Image](/appstore/widgets/image)
-* [Charts](/appstore/widgets/charts)
-* [Progress Bar](/appstore/widgets/progress-bar) (Studio Pro 11.1 and above)
-* [Progress Circle](/appstore/widgets/progress-circle) (Studio Pro 11.1 and above)
+* [Data Grid 2](/appstore/modules/data-grid-2/)
+* [Combo Box](/appstore/widgets/combobox/)
+* [Image](/appstore/widgets/image/)
+* [Charts](/appstore/widgets/charts/)
+* [Progress Bar](/appstore/widgets/progress-bar/) (Studio Pro 11.1 and above)
+* [Progress Circle](/appstore/widgets/progress-circle/) (Studio Pro 11.1 and above)
 
 ## Read More
 
