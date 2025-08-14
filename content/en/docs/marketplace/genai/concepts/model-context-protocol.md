@@ -50,12 +50,12 @@ In general, generic [resources](https://modelcontextprotocol.io/specification/20
 
 An example for setting up an MCP server is available in the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475). The app guides you through available tools and prompts that will be exposed when the server is started. Additionally, it shows an example for setting up authentication using username and password. You can use a Mendix application or third-party tools such as Claude Desktop as an MCP host to connect to the server.
 
-Furthermore, an MCP Client example teaches you how to establish a connection to a server, discover tools and prompts, and finally uses them in a chat interface. You can use this example to inspect MCP servers, similar as the [MCP Inspector](github.com/modelcontextprotocol/inspector) can do, by testing prompts and tools without any LLM integration.
+Furthermore, an MCP Client example teaches you how to establish a connection to a server, discover tools and prompts, and finally uses them in a chat interface. You can use this example to inspect MCP servers, similar as the [MCP Inspector](https://github.com/modelcontextprotocol/inspector) can do, by testing prompts and tools without any LLM integration.
 
 ## Read More
 
-* The [MCP Server module](/appstore/modules/genai/genai-for-mx/mcp-server/)
-* The [MCP Client module](/appstore/modules/genai/model-context-protocol/mcp-client/)
+* The [MCP Server module](/appstore/modules/genai/mcp-modules/mcp-server/)
+* The [MCP Client module](/appstore/modules/genai/mcp-modules/mcp-client/)
 * The [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) provides an example on how to expose microflows as tools via the MCP Server module. 
 * The official [MCP docs](https://modelcontextprotocol.io/introduction)
 * The [MCP Java SDK GitHub Repository](https://github.com/modelcontextprotocol/java-sdk)
