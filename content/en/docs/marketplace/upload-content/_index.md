@@ -45,7 +45,17 @@ Some only apply to specific component types, so follow the on-screen prompts for
    You can only set the component type when creating the initial version of your content. You cannot change this setting after it is published.    
    Find out more about component types in the [Types of Marketplace Components](/appstore/#components-type) section of *Marketplace*.
 
-3. Under **Select Component Source**, select one of the options for uploading the source file:     
+3. Select the **Visibility** of your component:
+
+    * **Public** – Your component will be available to the entire Mendix community.    
+      This content must be reviewed and approved by Mendix before it is available.
+    * **Private** – Your content will receive the **Private** label, and be available only via your [Company Content](/appstore/home-page/#company-content) page.    
+      Selected private content of a content group can also be made available to [content group guests](/appstore/home-page/#guests) for download.    
+      This content is not reviewed by Mendix.    
+    
+    You can only set the visibility in the initial version of your content. You cannot change this setting by updating the Marketplace component later.
+
+4. Under **Select Component Source**, select one of the options for uploading the source file:     
 
     * **MPK File** – Upload your source MPK.    
     * **GitHub Link** – Follow the steps in the dialog box for copying the link of the release you want to import. For details, see the [Using a GitHub Repo](/appstore/guidelines-content-creators/#github) section in *Guidelines for Content Creators*.     
@@ -54,16 +64,16 @@ Some only apply to specific component types, so follow the on-screen prompts for
     If you are uploading a solution, there will be no option to select the content source.    
     If you are uploading an industry template, selecting a content source is optional.    
 
-4. Select the **Studio Pro Version** on which you built the content.    
+5. Select the **Studio Pro Version** on which you built the content.    
 
-5. If you are uploading a widget, select the **Compatible with Mendix React Client** checkbox to indicate compatibility.    
+6. If you are uploading a widget, select the **Compatible with Mendix React Client** checkbox to indicate compatibility.    
    This checkbox is mandatory starting with Studio Pro 11.
    
-6. Add a version for your component. If this is the first version of the component you are uploading, the number in the **Version** section is automatically set to **1.0.0**. 
+7. Add a version for your component. If this is the first version of the component you are uploading, the number in the **Version** section is automatically set to **1.0.0**. 
 
-7. Enter **Release Notes** for the component in the box provided, describing what is new in that release.
+8. Enter **Release Notes** for the component in the box provided, describing what is new in that release.
 
-8. If you are uploading a solution, enter an email address in the **Contact Sales** field. This will be used by customers to reach out to you.
+9. If you are uploading a solution, enter an email address in the **Contact Sales** field. This will be used by customers to reach out to you.
 
 ### Adding General Information
 
@@ -88,20 +98,10 @@ On the **Support & Licensing** tab, add information about support, licensing, an
 
 2. Add the **Contact Email** of your support department.
 
-3. Select the **Visibility** of your component:
-
-    * **Public** – Your component will be available to the entire Mendix community.    
-      This content must be reviewed and approved by Mendix before it is available.
-    * **Private** – Your content will receive the **Private** label, and be available only via your [Company Content](/appstore/home-page/#company-content) page.    
-      Selected private content of a content group can also be made available to [content group guests](/appstore/home-page/#guests) for download.    
-      This content is not reviewed by Mendix.    
-    
-    You can only set the visibility in the initial version of your content. You cannot change this setting by updating the Marketplace component later.
-
-4. Select the type of **License** you want applied to your app.    
+3. Select the type of **License** you want applied to your app.    
    For details about the available open-source software licenses and their requirements, refer to [Open-Source Software Licenses](/appstore/licenses/).
 
-5. In the **Development Team** field, add the email addresses of the developers who have contributed to and own the component.
+4. In the **Development Team** field, add the email addresses of the developers who have contributed to and own the component.
 
 #### Proprietary Licenses {#proprietary-license} 
 
@@ -139,7 +139,7 @@ On the **Media & Documentation** tab, add any resources to guide your users.
 
    The editor comes with a set of basic formatting tools, such as bold, bullet lists, and URL links.
  
-4. In the **Resources** section, add up to 5 URLs for resources that your users might find useful, such as a GitHub URL.
+4. In the **Resources** section, add up to 5 URLs for resources that your users might find useful, such as a **GitHub URL**.
 
 ### Generating New Leads {#lead-generation} 
 
