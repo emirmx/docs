@@ -26,7 +26,7 @@ To learn how to create, configure, and use a JavaScript action, see these [Build
 
 ## General Settings
 
-After double-clicking a JavaScript action in your **App Explorer** you will see the JavaScript action's settings: 
+Double-click the JavaScript action in your **App Explorer** to open the action's settings: 
 
 {{< figure src="/attachments/refguide/modeling/resources/javascript-actions/javascript-action-settings-no-para.png" alt="javascript settings" width="600"  class="no-border" >}}
 
