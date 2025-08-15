@@ -27,11 +27,20 @@ location /my/sub/path/ {
     # Make the Mendix runtime aware of https, see documentation below for more information.
     proxy_set_header X-Forwarded-Proto "https";
 
+    # Forward the host to the Mendix runtime.
+    proxy_set_header X-Forwarded-Host $host;
+
+    # Forward the prefix `/my/sub/path` to the Mendix runtime.
+    proxy_set_header X-Forwarded-Prefix /my/sub/path
+
+    # Optional: forward a port when not running on standard ports.
+    # proxy_set_header X-Forwarded-Port 3000
+
     # Required for Mendix DevTools to work.
     proxy_http_version 1.1;
 
     # Proxy the request to the Mendix runtime.
-    proxy_pass http://mendix-runtim:8080/;
+    proxy_pass http://mendix-runtime:8080/;
 }
 ```
 
@@ -43,7 +52,7 @@ If you want to deploy several apps on the same domain, use different subdomains 
 
 ## Secure cookies for on-premise applications
 
-The Mendix runtime sets cookies with the `secure` attribute when the application is served over `https` However, in a scenario where the Mendix runtime is served from behind a loadbalancer using `http` for the internal communication, the Mendix runtime needs to be made aware that it is served over `https` to the end-users. This can be done by setting the [ApplicationRootUrl](/refguide/custom-settings/#applicationrooturl-section) Runtime setting to a `https://` link, or by setting the `X-Forwarded-Proto` or `X-Forwarded-Schema` header to `https` in the loadbalancer.
+The Mendix runtime sets cookies with the `secure` attribute when the application is served over `https`. However, in a scenario where the Mendix runtime is served from behind a loadbalancer using `http` for the internal communication, the Mendix runtime needs to be made aware that it is served over `https` to the end-users. This can be done by setting the [ApplicationRootUrl](/refguide/custom-settings/#applicationrooturl-section) Runtime setting to a `https://` link, or by setting the `X-Forwarded-Proto` or `X-Forwarded-Schema` header to `https` in the loadbalancer.
 
 {{% alert color="info" %}}
 For Mendix versions prior to Mendix 10.18 setting the [ApplicationRootUrl](/refguide/custom-settings/#applicationrooturl-section) Runtime setting to a `https://` link will not make the application aware of it being served via `https`. For Mendix 10.18 and later, setting the ApplicationRootUrl to a `http://` URL will take precedence over the `X-Forwarded-Proto` and `X-Forwarded-Schema` headers.
