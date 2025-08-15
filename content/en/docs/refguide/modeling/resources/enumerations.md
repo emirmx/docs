@@ -1,7 +1,7 @@
 ---
 title: "Enumerations"
 url: /refguide/enumerations/
-weight: 40
+weight: 60
 aliases:
     - /refguide/enumeration-values.html
     - /refguide/enumeration-values

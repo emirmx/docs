@@ -1,7 +1,7 @@
 ---
 title: "Task Queue"
 url: /refguide/task-queue/
-weight: 85
+weight: 40
 description: "Concepts and usage of the task queue"
 ---
 

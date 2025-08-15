@@ -1,7 +1,7 @@
 ---
 title: "JavaScript Actions"
 url: /refguide/javascript-actions/
-weight: 20
+weight: 30
 description: "This reference guide details the ways JavaScript Actions can extend the functionality of your Mendix app."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
