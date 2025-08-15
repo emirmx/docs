@@ -31,7 +31,7 @@ The **Resources** category contain various document types that can be used in di
 | [Dataset](/refguide/data-sets/) | Pages                                  | Datasets define the data shown in reports widgets.        |
 | [Java action](/refguide/java-actions/) | Microflows                             | Java actions can extend the functionality of your application. They can be called from microflows. |
 | [JavaScript action](/refguide/javascript-actions/) | Nanoflow                               | JavaScript actions can extend the functionality of your application. They can be called from nanoflows. |
-| [Task queue](/refguide/task-queue/) |  Microflows and Java actions                                 |     |
+| [Task queue](/refguide/task-queue/) |  Microflows and Java actions                                 | A Task queue allows you to run microflows or Java actions asynchronously while controlling the number of tasks that are active.   |
 | [Rule](/refguide/rules/)      | Microflows                             | Rules contain the application logic that should result in an enumeration or a Boolean. They are used in decisions in microflows. |
 | [Enumeration](/refguide/enumerations/) | Domain model                           | Enumerations are used to define attributes of an enumeration type. |
 | [Constant](/refguide/constants/) | Microflow expressions and Consumed web services | Constants are used to define configuration values.           |
