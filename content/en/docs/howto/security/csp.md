@@ -176,7 +176,7 @@ After you finish testing locally, remember to remove the line of code in the `he
 
 ## CSP Support in Java Request Handlers
 
-If you are developing Marketplace modules or custom Java actions that include request handlers, you may need to implement CSP support to ensure compatibility with strict CSP policies. 
+If you are developing Marketplace modules or custom Java actions that include request handlers, you may need to implement CSP support to ensure compatibility with strict CSP policies. This includes support for CSP Level 2+ features like nonces for inline scripts and styles. 
 
 {{% alert color="info" %}}
 CSP support is only relevant for request handlers that serve static content such as HTML pages, not for API endpoints that return JSON or other data formats.
