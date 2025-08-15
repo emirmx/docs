@@ -28,18 +28,19 @@ The **Resources** category contain various document types that can be used in di
 
 | Element            | Is used in                      | Description                                                  |
 | ------------------ | -------------------------------------- | ------------------------------------------------------------ |
+| [Dataset](/refguide/data-sets/) | Pages                                  | Datasets define the data shown in reports widgets.        |
 | [Java action](/refguide/java-actions/) | Microflows                             | Java actions can extend the functionality of your application. They can be called from microflows. |
 | [JavaScript action](/refguide/javascript-actions/) | Nanoflow                               | JavaScript actions can extend the functionality of your application. They can be called from nanoflows. |
+| [Task queue](/refguide/task-queue/) |  Microflows and Java actions                                 |     |
 | [Rule](/refguide/rules/)      | Microflows                             | Rules contain the application logic that should result in an enumeration or a Boolean. They are used in decisions in microflows. |
 | [Enumeration](/refguide/enumerations/) | Domain model                           | Enumerations are used to define attributes of an enumeration type. |
-| [Dataset](/refguide/data-sets/) | Pages                                  | Datasets define the data shown in reports widgets.        |
 | [Constant](/refguide/constants/) | Microflow expressions and Consumed web services | Constants are used to define configuration values.           |
 | [Regular expression](/refguide/regular-expressions/) | Domain model                           | Regular expressions are used in validation rules to define criteria that a string should match to pass the validation. They cannot be used in other places which require regular expressions (for example, the *isMatch()* function). |
 | [Scheduled event](/refguide/scheduled-events/) | Microflows                     | Scheduled events let the runtime execute a microflow at a specific moment in time. |
-| [Document template](/refguide/document-templates/) | Microflows                             | Document template is used to format the document in a client and to download or print it. |
+| [Document template](/refguide/document-templates/)(deprecated) | Microflows                             | Document template is used to format the document in a client and to download or print it. |
 
 ## Read More
 
 * [Microflows](/refguide/microflows/)
-* [Domain Model]
+* [Data in the Domain Model](/refguide/domain-model/)
 * [Pages](/refguide/pages/)
