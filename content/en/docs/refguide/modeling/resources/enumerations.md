@@ -144,7 +144,7 @@ To create a new enumeration, do the following:
 2. In the **Add Enumeration** dialog box, add the name of the enumeration.
 3. In the **Enumeration** dialog box, click **New** to create enumeration values:
 
-    1. Add **Name** and **Caption** for the enumeration value. You can set **Image** for it, if necessary. />
+    1. Add **Name** and **Caption** for the enumeration value. You can set **Image** for it, if necessary.
 
         {{< figure src="/attachments/refguide/modeling/resources/enumerations/add-enum-value.png" class="no-border" >}}
 
