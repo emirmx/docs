@@ -1,7 +1,7 @@
 ---
 title: "Document Templates"
 url: /refguide/document-templates/
-weight: 90
+weight: 100
 aliases:
     - /refguide/Document+Templates.html
     - /refguide/Document+Templates
