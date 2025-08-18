@@ -376,6 +376,14 @@ Azure OpenAI does not support the use of JSON mode and function calling in combi
 
 When you use Azure OpenAI, it is recommended to set the optional `MaxTokens` input parameter; otherwise, the response may be cut off. For more details, see the [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/gpt-with-vision?tabs=rest%2Csystem-assigned%2Cresource#call-the-chat-completion-apis).
 
+### Attribute or Reference Required Error Message After Upgrade 
+
+If you encounter an error stating that an attribute or a reference is required after an upgrade, first upgrade all modules by right-clicking the error, then upgrade Data Widgets. 
+
+### Conflicted Lib Error After Module Import
+
+If you encounter an error caused by conflicting Java libraries, such as `java.lang.NoSuchMethodError: 'com.fasterxml.jackson.annotation.OptBoolean com.fasterxml.jackson.annotation.JsonProperty.isRequired()'`, try synchronizing all dependencies (**App** > **Synchronize dependencies**) and then restart your application.
+
 ## Read More {#read-more}
 
 * [Prompt Engineering – OpenAI Documentation](https://platform.openai.com/docs/guides/prompt-engineering)
