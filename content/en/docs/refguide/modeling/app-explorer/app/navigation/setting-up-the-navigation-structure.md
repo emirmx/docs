@@ -23,7 +23,7 @@ Do the following:
 
     1. Click **Add navigation profile** and select the profile type depending on the type of the interface you are working on:
 
-        {{< figure src="/attachments/refguide/modeling/app-explorer/app/navigation/setting-up-the-navigation-structure/add-navigation-profile.jpg" class="no-border" >}}
+        {{< figure src="/attachments/refguide/modeling/app-explorer/app/navigation/setting-up-the-navigation-structure/add-navigation-profile.png" class="no-border" >}}
 
     2. Click **OK**.
 
