@@ -48,7 +48,7 @@ For more information about jumping rules in a boundary event path, see the [Jump
 
 ## Jumping from Current Activity to Itself
 
-In Studio Pro 11.2 and above, it is possible to jump from an active [Multi-user task](/refguide/multi-user-task/) back to itself. When this occurs, the following behavior applies:
+It is possible to jump from an active [Multi-user task](/refguide/multi-user-task/) back to itself. When this occurs, the following behavior applies:
 
 * All individually selected outcomes are reset.
 * Targeted and assigned users are cleared, and user targeting will be executed again.
