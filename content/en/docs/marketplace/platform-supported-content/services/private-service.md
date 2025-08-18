@@ -63,13 +63,13 @@ The following artifact is available for installing the service:
 Follow these steps to install the service through Docker:
 
 {{% alert color="info" %}}
-If you are using a self-signed certificate in your environment, skip the below step and see [Importing a Self-Signed Certificate](#importing-a-self-signed-certificate).
+If you are using a self-signed certificate in your environment, skip the below steps and see [Importing a Self-Signed Certificate](#importing-a-self-signed-certificate).
 {{% /alert %}}
 
-1. Pull the Docker image using the following command: `docker pull private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`.
-2. Run the Docker container using the following command: `docker run -p 8085:8085 --name document-generation private-cloud.registry.mendix.com/mendix/document-generation-service:<tag>`. This creates a Docker container, which is exposed on port `8085`.    
+1. Pull the Docker image using the following command: `docker pull private-cloud.registry.mendix.com/mendix/document-generation-service:latest`.
+2. Run the Docker container using the following command: `docker run -p 8085:8085 --name document-generation private-cloud.registry.mendix.com/mendix/document-generation-service:latest`. This creates a Docker container, which is exposed on port `8085`.    
 
-The `<tag>` component must be replaced with the version of the service, such as `1.0.0`. You can find all versions and their release notes in the [Private PDF Document Generation Service Release Notes](/releasenotes/marketplace/private-service/).
+The `latest` tag will use the most recent released version of the service. If you would like to use a specific version, replace `latest` tag with the desired version, such as `1.0.0`. You can find all versions and their release notes in the [Private PDF Document Generation Service Release Notes](/releasenotes/marketplace/private-service/).
 
 #### Setting Up a Health Check (Optional)
 
