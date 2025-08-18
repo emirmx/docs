@@ -48,11 +48,11 @@ For more information about jumping rules in a boundary event path, see the [Jump
 
 ## Jumping from Current Activity to Itself
 
-It is possible to jump from an active [Multi-user task](/refguide/multi-user-task/) back to itself. When this occurs, the following behavior applies:
+In Studio Pro 11.2 and above, it is possible to jump from an active [Multi-user task](/refguide/multi-user-task/) back to itself. When this occurs, the following behavior applies:
 
 * All individually selected outcomes are reset.
 * Targeted and assigned users are cleared, and user targeting will be executed again.
-* Any existing timer boundary events that have already been scheduled will continue running and will not be canceled. After the jump is executed, the same boundary events will be scheduled again. As a result, duplicate timer boundary events may be scheduled and waiting for their timers to expire at the same time. These duplicate events will remain pending until the originally scheduled events expire, at which point the newly scheduled ones are automatically aborted.
+* Any existing timer boundary events that were already scheduled will continue running and are not canceled. After the jump is executed, these same boundary events are scheduled again. This may result in duplicate timer events being scheduled. These duplicate events will remain pending until the original events expire, at which point the newly scheduled ones are automatically aborted.
 
 ## Read More
 
