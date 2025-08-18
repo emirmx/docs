@@ -8,7 +8,9 @@ aliases:
 
 ## Introduction
 
-In your Mendix Pricing Plan there is a distinction between Internal and External Named Users of a Mendix App. This document helps you to set up your apps to meter External Users correctly. It describes a sample solution that can help you in External User classification for existing users of your apps.
+In the Mendix Pricing Plan, a distinction is made between Internal and External Named Users of a Mendix app. As a customer, you purchase a license for a specific number of Internal users and, optionally, for External users (which are typically cheaper). For accurate user metering, External users must be correctly classified. If they are not, your company may exceed the licensed capacity for Internal users, and Mendix may require you to acquire additional Internal user licenses.
+
+This document helps you to set up your apps to meter External users correctly. It describes different sample solutions that can help you in External User classification for existing users of your apps.
 
 {{% alert color="info"  %}}
 **Definitions** 
