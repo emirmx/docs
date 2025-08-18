@@ -937,7 +937,6 @@ The process may look like this:
 4. Test your application locally and verify that everything works as before.
 5. Restore lost data on deployed environments. Usually incoming associations to the protected modules need to be reset.
 
+### Conflicted Lib Error After Module Import
 
-###  Conflicted Lib Error after module import
-
-If an error occurs that indicates conflicting java libraries, such as `java.lang.NoSuchMethodError: 'com.fasterxml.jackson.annotation.OptBoolean com.fasterxml.jackson.annotation.JsonProperty.isRequired()'` you can sync all dependencies here: `App > Synchronize dependencies` and restart your application.
+If you encounter an error caused by conflicting Java libraries, such as `java.lang.NoSuchMethodError: 'com.fasterxml.jackson.annotation.OptBoolean com.fasterxml.jackson.annotation.JsonProperty.isRequired()'`, try synchronizing all dependencies (**App** > **Synchronize dependencies**) and then restart your application.

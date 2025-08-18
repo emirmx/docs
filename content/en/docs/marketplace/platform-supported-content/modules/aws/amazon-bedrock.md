@@ -876,7 +876,6 @@ To solve this issue, verify the following:
 
 If you encounter an error stating that an attribute or a reference is required after an upgrade, first upgrade all modules by right-clicking the error, then upgrade Data Widgets.
 
-###  Conflicted Lib Error after module import
+### Conflicted Lib Error After Module Import
 
-If an error occurs that indicates conflicting java libraries, such as `java.lang.NoSuchMethodError: 'com.fasterxml.jackson.annotation.OptBoolean com.fasterxml.jackson.annotation.JsonProperty.isRequired()'` you can sync all dependencies here: `App > Synchronize dependencies` and restart your application.
- 
+If you encounter an error caused by conflicting Java libraries, such as `java.lang.NoSuchMethodError: 'com.fasterxml.jackson.annotation.OptBoolean com.fasterxml.jackson.annotation.JsonProperty.isRequired()'`, try synchronizing all dependencies (**App** > **Synchronize dependencies**) and then restart your application.

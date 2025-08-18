@@ -312,9 +312,9 @@ To do this, follow the steps below:
 
 If you encounter an error stating that an attribute or a reference is required after an upgrade, first upgrade all modules by right-clicking the error, then upgrade Data Widgets. 
 
-###  Conflicted Lib Error after module import
+### Conflicted Lib Error After Module Import
 
-This is usually fixed by syncing all dependencies here: App > Synchronize dependencies.
+To fix this error, try synchronizing all dependencies (**App** > **Synchronize dependencies**) and then restart your application.
   
 ## Read More {#readmore}
 
