@@ -51,16 +51,16 @@ Follow the steps below to create a role-based home page:
 4. In the **Role-based home pages** dialog box, click **New**.
 5. Select a user role to create a new setting. For example, select the **Administrator** role:
 
-    {{< figure src="/attachments/refguide/modeling/app-explorer/app/navigation/setting-up-the-navigation-structure/select-user-role.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/app-explorer/app/navigation/setting-up-the-navigation-structure/select-user-role.png" width="400" >}}
 
 6. Click **Select**.
 7. After you have selected the user role, click the **Select target** button.
 
-    {{< figure src="/attachments/refguide/modeling/app-explorer/app/navigation/setting-up-the-navigation-structure/select-target.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/app-explorer/app/navigation/setting-up-the-navigation-structure/select-target.png" width="400" >}}
 
 8. Select the home page for selected user role, for example, the **Account_Overview** page:
 
-    {{< figure src="/attachments/refguide/modeling/app-explorer/app/navigation/setting-up-the-navigation-structure/select-page.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/app-explorer/app/navigation/setting-up-the-navigation-structure/select-page.png" width="400" >}}
 
 9. Click **Select** > **OK**.
 
@@ -76,17 +76,17 @@ The fallback page will only be used for URLs that start with a [URL Prefix](/ref
 
 ## Setting a Nanoflow as a Home Page {#nanoflow-home-page}
 
-Instead of using a page, you can set a nanoflow as your app's home page as long as you are using a native profile. The nanoflow you selected will be executed during startup and will show your app's starting page. This is a normal nanoflow call, which means that you can implement custom logic that determines which page to show, creates objects, calls subnanoflows, uses JavaScript actions, and more.
+Instead of using a page, you can set a nanoflow as your app's home page as long as you are using a native profile. The nanoflow you selected will be executed during startup and will show your app's starting page. This is a normal nanoflow call, which means that you can implement custom logic that determines which page to show, creates objects, calls sub-nanoflows, uses JavaScript actions, and more.
 
 To make the best nanoflow home pages, keep the following information in mind:
 
-* The home page nanoflow is executed after the initial synchronization
-* While the nanoflow executes the app splash screen stays visible until the nanoflow reaches the first *Show Page* activity
-* If a nanoflow contains multiple *Show Page* activities they will be executed in order and each page will be shown respectively (the last page shown will stay open after the nanoflow finishes)
-* Make sure a *Show Page* activity is called from the startup nanoflow for each possible execution path, otherwise the app will keep showing the splash screen if the nanoflow finishes without executing a *Show Page* activity
-* Home page nanoflows should have no parameters
-* An error in the home page nanoflow can lead to an unusable app state — to avoid this, use error handling for activities that can fail, such as microflow calls
-* To improve user experience for long-running nanoflows, show a page as early as possible and then continue executing the rest while showing the progress on that page
+* The home page nanoflow is executed after the initial synchronization.
+* While the nanoflow executes, the app splash screen stays visible until the nanoflow reaches the first Show Page activity.
+* If a nanoflow contains multiple Show Page activities, they will be executed in order and each page will be shown respectively (the last page shown will stay open after the nanoflow finishes).
+* Make sure a Show Page activity is called from the startup nanoflow for each possible execution path, otherwise the app will keep showing the splash screen if the nanoflow finishes without executing a Show Page activity.
+* Home page nanoflows should have no parameters.
+* An error in the home page nanoflow can lead to an unusable app state. To avoid this, use error handling for activities that can fail, such as microflow calls.
+* To improve user experience for long-running nanoflows, show a page as early as possible, then continue executing the rest while showing the progress on that page.
 
 ## Creating Menu Items {#menu-items}
 
@@ -108,7 +108,7 @@ You can restructure the menu by dragging and dropping menu items.
 
 ## Adding Navigation Menu to Pages
 
-Now that you have created a menu structure, it is time to start using it on pages. Do the following:
+Now that you have created a menu structure, you can use it on pages. Do the following:
 
 1. Open a page.
 2. Click **Add widget** and select **Menu bar**:
