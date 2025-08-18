@@ -8,50 +8,48 @@ aliases:
 ---
 ## Introduction
 
-Once you created some pages, it is important that your users can access them. For this, you need to create a navigation menu. The navigation editor of Studio Pro allows you define the navigation menu for different type of apps and devices for example, for responsive, tablet browser, or native mobile apps. It also allows you to define which page is shown as a default home page depending on the user role.
+Once your app has some pages, create a navigation menu to give your users access to them. The navigation editor allows you define the navigation menu for different type of apps and devices (for example, for responsive, tablet browser, or native mobile apps). It also allows you to define which page is shown as a default home page depending on the user role.
 
 ## Setting a Default Home Page {#home}
 
-This section will explain how to set the default home page. 
-
 {{% alert color="info" %}}
-Note that the **Default home page** setting is overridden by a **Role-based home page** if you configure it. For more information, see the [Setting a Role-Based Home Page](#role-based-home-page).
+The **Default home page** setting is overridden by a **Role-based home page** if you configure it. For more information, see the [Setting a Role-Based Home Page](#role-based-home-page) section below.
 {{% /alert %}}
 
 Do the following:
 
 1. Open **App** > **Navigation**.
-2. Some navigation profiles are open in a tab by default, for example, the **Responsive** one. To open other navigation profiles, do the following:
+2. Some navigation profiles are open in a tab by default, for example, **Responsive web**. To open other navigation profiles, do the following:
 
-    1. Click **Add navigation profile**, select the profile type depending on the type of the interface you are working on:
+    1. Click **Add navigation profile** and select the profile type depending on the type of the interface you are working on:
 
         {{< figure src="/attachments/refguide/modeling/app-explorer/app/navigation/setting-up-the-navigation-structure/add-navigation-profile.jpg" class="no-border" >}}
 
     2. Click **OK**.
 
-3. In **Home pages** > **Default home page**, click **Select**.
+3. In the**Home pages** field, under **Default home page**, click **Select**.
 4. Select the page you want to use as the default home page. 
 5. Click **Select**.
 
 {{% alert color="info" %}}
-For online profiles you can set a microflow as a default home page. Make sure a *Show Page* activity is called from the startup microflow for each possible execution flow, or else the user will see nothing during execution paths where the activity is missing.
+For online profiles, you can set a microflow as a default home page. Make sure a [Show Page](/refguide/show-page/) activity is called from the startup microflow for each possible execution flow. Otherwise, the user will see nothing during execution paths where the activity is missing.
 
-For the native mobile profile you can set a nanoflow as a home page, either as a default or as a role-based. For more information, see the [Setting a Nanoflow as a Home Page](#nanoflow-home-page) section below.
+For the native mobile profile, you can set a nanoflow as a home page, either as a default or as a role-based. For more information, see the [Setting a Nanoflow as a Home Page](#nanoflow-home-page) section below.
 {{% /alert %}}
 
 Now every time a user signs in to the application, the selected page/microflow is shown/triggered.
 
 ## Setting a Role-Based Home Page {#role-based-home-page}
 
-In many cases you would like users with different roles to see different home pages. You can use role-based home pages for this. You do not need to configure home pages for every role, because the default home page works as a fall-back mechanism. 
+In many cases, you want users with different roles to see different home pages. You can use role-based home pages for this. You do not need to configure home pages for every role, because the default home page works as a fallback mechanism. 
 
-Follow the steps below:
+Follow the steps below to create a role-based home page:
 
 1. Open the **Navigation** editor.
-2. Open the profile type depending on the interface type you are working on. 
-3. In **Home pages** > **Role-based home pages**, click **Edit**.
+2. Open the profile type, depending on the interface type you are working on. 
+3. In the**Home pages** field, under **Role-based home pages**, click **Edit**.
 4. In the **Role-based home pages** dialog box, click **New**.
-5. Select a user role to create a new setting, for example, select the **Administrator** role:
+5. Select a user role to create a new setting. For example, select the **Administrator** role:
 
     {{< figure src="/attachments/refguide/modeling/app-explorer/app/navigation/setting-up-the-navigation-structure/select-user-role.png" class="no-border" >}}
 
@@ -64,7 +62,7 @@ Follow the steps below:
 
     {{< figure src="/attachments/refguide/modeling/app-explorer/app/navigation/setting-up-the-navigation-structure/select-page.png" class="no-border" >}}
 
-9. Click **Select**.
+9. Click **Select** > **OK**.
 
 Now every time a user with the **Administrator** user signs in to the application, the **Account_Overview** page is shown. Users with other roles will be redirected to the default home page.
 
