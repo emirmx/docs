@@ -19,11 +19,13 @@ For apps deployed to Mendix Cloud, you can customize a URL by adding [custom dom
 
 If you specify an app URL location on a (sub)path, the Mendix runtime needs to know the public URL of your application. This can be done by setting the [custom runtime setting](/refguide/custom-settings/#applicationrooturl-section) `ApplicationRootUrl`.
 
-When hosting a Mendix application on a subpath, the proxy needs to forward the request from `https://subdomain.domain/my/sub/path` to the internal address where the Mendix runtime is running. See the snippet below for an example Nginx config.
+When hosting a Mendix application on a subpath, the proxy needs to forward the request from `https://subdomain.domain/my/sub/path` to the internal address where the Mendix runtime is running. Refer to the code snippet below for an example Nginx Nginx configuration.
 
 ```
-# Location block for the subpath `/my/sub/path`.
+# Location block for the subpath "/my/sub/path".
+
 location /my/sub/path/ {
+
     # Make the Mendix runtime aware of https, see documentation below for more information.
     proxy_set_header X-Forwarded-Proto "https";
 
@@ -31,10 +33,10 @@ location /my/sub/path/ {
     proxy_set_header X-Forwarded-Host $host;
 
     # Forward the prefix `/my/sub/path` to the Mendix runtime.
-    proxy_set_header X-Forwarded-Prefix /my/sub/path
+    proxy_set_header X-Forwarded-Prefix /my/sub/path;
 
     # Optional: forward a port when not running on standard ports.
-    # proxy_set_header X-Forwarded-Port 3000
+    # proxy_set_header X-Forwarded-Port 3000;
 
     # Required for Mendix DevTools to work.
     proxy_http_version 1.1;
@@ -50,14 +52,21 @@ Routing based on a subpath is possible as of Studio Pro 10.3 (for details, see t
 If you want to deploy several apps on the same domain, use different subdomains to identify the app. For example, use `https://appA.apps.mydomain.com/`, not `https://mydomain.com/apps/appA`.
 {{% /alert %}}
 
-## Secure cookies for on-premise applications
+## Secure Cookies for On-Premise Applications
 
-The Mendix runtime sets cookies with the `secure` attribute when the application is served over `https`. However, in a scenario where the Mendix runtime is served from behind a loadbalancer using `http` for the internal communication, the Mendix runtime needs to be made aware that it is served over `https` to the end-users. This can be done by setting the [ApplicationRootUrl](/refguide/custom-settings/#applicationrooturl-section) Runtime setting to a `https://` link, or by setting the `X-Forwarded-Proto` or `X-Forwarded-Schema` header to `https` in the loadbalancer.
+The Mendix runtime automatically sets cookies with the `secure` attribute when applications are served over HTTPS. However, when deploying a Mendix application behind a load balancer that uses HTTP for internal communication, additional configuration is required.
+
+In this case, the Mendix runtime must be explicitly informed that end-users are accessing the application via HTTPS. This can be done through either of these methods:
+
+* Configure the [ApplicationRootUrl](/refguide/custom-settings/#applicationrooturl-section) runtime setting with an `https://` URL
+* Set the `X-Forwarded-Proto` or `X-Forwarded-Schema` header to `https` in the loadbalancer.
 
 {{% alert color="info" %}}
-For Mendix versions prior to Mendix 10.18 setting the [ApplicationRootUrl](/refguide/custom-settings/#applicationrooturl-section) Runtime setting to a `https://` link will not make the application aware of it being served via `https`. For Mendix 10.18 and later, setting the ApplicationRootUrl to a `http://` URL will take precedence over the `X-Forwarded-Proto` and `X-Forwarded-Schema` headers.
-{{% /alert %}}
 
+* For Mendix versions prior to Mendix 10.18, setting the [ApplicationRootUrl](/refguide/custom-settings/#applicationrooturl-section) runtime setting to an `https://` URL will not make the application aware of it being served via HTTPS. You must use the `X-Forwarded-Proto` and `X-Forwarded-Schema` headers instead.
+
+* For Mendix versions 10.18 and later, setting the [ApplicationRootUrl](/refguide/custom-settings/#applicationrooturl-section) runtime setting to an `http://` URL will take precedence over the `X-Forwarded-Proto` and `X-Forwarded-Schema` headers.
+{{% /alert %}}
 
 ## Main Domain Name
 
