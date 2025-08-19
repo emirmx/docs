@@ -26,6 +26,18 @@ You can import and export the following:
 ## Importing Various Elements
 
 {{% alert color="warning" %}}
+Studio Pro prevents packages from unpacking content to undesired locations. If you cannot change the location, contact the content publisher to get the issue fixed.
+Current undesired locations:
+
+* directories starting with '.'
+* releases/
+* packages/
+* deployment/
+* nativemobile/builds/
+* vendorlib/temp/
+{{% /alert %}}
+
+{{% alert color="warning" %}}
 Be careful when importing elements, as you can overwrite your existing work. Pay attention to prompts and warnings along the way!
 {{% /alert %}}
 
@@ -61,6 +73,10 @@ The app is imported.
 ### Importing Module Packages {#import-module}
 
 Mendix modules can either be stored in a Mendix package (*.mpk*) file or have an *.mxmodule* extension if they are [add-on or solution modules](/refguide/configure-add-on-and-solution-modules/). 
+
+{{% alert color="warning" %}}
+For Git on Windows, there is a limit of 260 characters for a path to a module package file. To prevent an error, try moving the module package file to a location with a shorter path or keep the file names no longer than 260 symbols. You can also set the `core.longpaths` configuration to `true` in your Git configuration file.
+{{% /alert %}}
 
 #### Importing a Module Package Through the App Explorer
 

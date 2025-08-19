@@ -2,7 +2,6 @@
 title: "Create a Menu Using Web API"
 linktitle: "Create Menu"
 url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/
-weight: 30
 ---
 
 ## Introduction
@@ -82,7 +81,6 @@ The menu has the following properties:
 * `enabled` (default: `true`) – indicates that this menu item notifies the listener when clicked
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/menus/grouped_menus.png" >}}
-
 
 ## Creating a Menu with Submenus
 

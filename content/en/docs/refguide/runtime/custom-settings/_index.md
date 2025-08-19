@@ -68,11 +68,11 @@ The following custom settings can be configured:
 | <a id="httpclientMaxConnectionsTotal" href="#httpclientMaxConnectionsTotal">http.<wbr>client.<wbr>MaxConnectionsTotal</a> | The [maximum number of connections allowed across all routes](https://hc.apache.org/httpcomponents-client-4.5.x/current/httpclient/apidocs/org/apache/http/impl/client/HttpClientBuilder.html#setMaxConnTotal(int)) for the call REST service and call web service activities.<br/>{{% alert color="warning" %}}If you change the value of `http.client. MaxConnectionsPerRoute`, you will need to increase this value in line with that, up to a maximum of 250.{{% /alert %}} | 20 |
 | <a id="JavaKeyStorePassword" href="#JavaKeyStorePassword">JavaKeyStorePassword</a> | Password for the default Java keystore. | changeit |
 | <a id="LongLivedSessionTimeout" href="#LongLivedSessionTimeout">LongLivedSessionTimeout</a> | This setting is the same as `SessionTimeout`, but specific to offline-first progressive web apps. | 604800000 (7 days) |
-| <a id="MicroflowsRemoveVariableOnDeleteObjectsActivity" href="#MicroflowsRemoveVariableOnDeleteObjectsActivity">Microflows.<wbr>RemoveVariableOnDeleteObjectsActivity</a> | Defines if the pre-Mendix 10.17 behavior should be enabled where list references were removed after execution of a **Delete object(s)** microflow activity in a loop.<br/><br/>Before Mendix 10.17 list references were silently unusable after a **Delete object(s)** microflow activity in a loop. Newly added items were not propagated to activities using these variables. That is fixed in Mendix 10.17. If this setting is 'true' it temporarily brings back the old behavior. | `false` |
 | <a id="MyScheduledEvents" href="#MyScheduledEvents">MyScheduledEvents</a> | A comma-separated string with the names of the events. Please don't forget the name of the module (a name can be, for example, `CRM.UpdateCustomerStatistics`). |   |
 | <a id="ScheduledEventExecution" href="#ScheduledEventExecution">ScheduledEventExecution</a> | Specify which scheduled events should be executed. Choices are `ALL`, `NONE`, or `SPECIFIED`. In the case of `SPECIFIED`, enumerate the scheduled events using the `MyScheduledEvents` configuration option described below. {{% alert color="warning" %}}This setting cannot be configured when running locally. To enable and disable scheduled events when running locally, please use the 'Enabled' setting on the [Scheduled Events execution properties](/refguide/scheduled-events/) in Studio Pro.{{% /alert %}} | NONE |
 | <a id="SessionKeepAliveUpdatesInterval" href="#SessionKeepAliveUpdatesInterval">SessionKeepAliveUpdatesInterval</a> | Defines how often a runtime writes session LastActive dates in its memory back to the database. | one sixth of the value configured for the `SessionTimeout` setting; if the `SessionTimeout` is not set, this value defaults to 100000 (100 seconds) |
-| <a id="SessionTimeout" href="#SessionTimeout">SessionTimeout</a> | Defines after how much time a session becomes invalid (in milliseconds). After that timeout,  a session becomes eligible for removal. The session will not be destroyed until the next time a scheduled task runs to clean up the active sessions. | 600000 (10 minutes) |
+| <a id="SessionTimeout" href="#SessionTimeout">SessionTimeout</a> | Defines after how much time a session becomes invalid (in milliseconds). After that timeout,  a session becomes eligible for removal. The session will not be destroyed until the next time a scheduled task runs to clean up the active sessions. <br> {{% alert color="warning" %}} Logging out can also be triggered by a query to the runtime after the session becomes eligible for removal. Navigating between pages is not enough to trigger a query to the runtime. To force a query to the runtime, use microflows. For example, create a microflow that shows the Home page, then configure your app's navigation to call this microflow rather than relying on the navigation to directly show the page itself. This will ensure the runtime is queried and the user is logged out of their session. {{% /alert %}} | 600000 (10 minutes) |
+| <a id="Headers" href="#Headers">Headers</a> | A JSON object containing custom headers as key/value pairs, and can be used to define a `Content-Security-Policy`. For example, `{ "Content-Security-Policy": "script-src 'nonce-{{ NONCE }}'" }`. | `{}` |
 | <a id="TaskQueueShutdownGracePeriod" href="#TaskQueueShutdownGracePeriod">TaskQueue.<wbr>ShutdownGracePeriod</a> | Time in ms to wait for task in a task queue to finish when shutting down. | 10000 (10 seconds) |
 | <a id="TempPath" href="#TempPath">TempPath</a> | The location of the temporary files. | [deployment folder]\data\tmp |
 | <a id="TrackWebServiceUserLastLogin" href="#TrackWebServiceUserLastLogin">TrackWebServiceUserLastLogin</a> | Defines whether to update a user's `LastLogin` field on each login when logging in to a published REST, OData, or web service. When this happens a database update query has to be sent and this can have performance consequences on heavy load systems. When this setting is set to false, no database interaction is necessary. | true |
@@ -181,7 +181,7 @@ Before the data copying process starts, the main database structure will be gene
 The settings described below influence the behavior of the Amazon S3 Storage Service module. This module can be used for both Amazon S3 Storage and IBM Cloud Object Storage.
 
 {{% alert color="warning" %}}
-For deployments to Mendix Cloud, SAP BTP, and Mendix for Private Cloud, these settings are managed for you and cannot be overwritten.
+For deployments to Mendix Cloud, SAP BTP, and Mendix on Kubernetes, these settings are managed for you and cannot be overwritten.
 {{% /alert %}}
 
 | Name | Description | Default Value |
@@ -208,7 +208,7 @@ For deployments to Mendix Cloud, SAP BTP, and Mendix for Private Cloud, these se
 These settings can be changed to use a Microsoft Azure SQL database for your Mendix application.
 
 {{% alert color="warning" %}}
-For deployments to Mendix Cloud, SAP BTP, and Mendix for Private Cloud, these settings are managed for you and cannot be overwritten.
+For deployments to Mendix Cloud, SAP BTP, and Mendix on Kubernetes, these settings are managed for you and cannot be overwritten.
 {{% /alert %}}
 
 First, you need to create an Azure SQL database (for information on how to do this, see this [SQL Database Tutorial](https://azure.microsoft.com/en-us/documentation/articles/sql-database-get-started/)). Make sure your Azure firewall settings allow your Mendix application to reach the Azure SQL database (by default, the Azure firewall does not allow external connections).
@@ -231,7 +231,7 @@ This will use the credential information present in the running environment to c
 These settings can be used to store files using the Microsoft Azure blob storage service. Server-side encryption can be configured through the Azure Portal (for more information, see [Azure Storage encryption for data at rest](https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/)).
 
 {{% alert color="warning" %}}
-For deployments to Mendix Cloud, SAP BTP, and Mendix for Private Cloud, these settings are managed for you and cannot be overwritten.
+For deployments to Mendix Cloud, SAP BTP, and Mendix on Kubernetes, these settings are managed for you and cannot be overwritten.
 {{% /alert %}}
 
 | Name | Description | Default Value |
