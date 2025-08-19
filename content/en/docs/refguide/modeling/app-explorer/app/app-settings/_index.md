@@ -434,13 +434,21 @@ If you are implementing a solution, the **Based on** setting shows the version o
 
 These settings determine the behavior of Studio Pro for this app. The settings apply to everyone that is working on this app.
 
-### Bundle Widgets When Running Locally
+### Bundle Widgets When Running Locally 
+
+{{% alert color="info" %}}
+This setting is only available in the Dojo Client version of Studio Pro, which is deprecated. For more information, see [Mendix Client](/refguide/mendix-client/).
+{{% /alert %}}
 
 When deploying to the cloud, custom widgets are bundled to optimize client-server communication. When deploying locally, this step is skipped to accelerate startup duration. In some cases, this may obfuscate errors triggered by faulty custom widgets.
 
 If this option is set, custom widgets will also be bundled locally. This mimics the production deployment, eliminating risk at the cost of start-up time.
 
-### Use Data Grid 2, Combo Box, and Image Widgets for Content Generation{#use-dg-cb-i}
+### Use Data Grid 2, Combo Box, and Image Widgets for Content Generation {#use-dg-cb-i}
+
+{{% alert color="info" %}}
+This setting is only available in the Dojo Client version of Studio Pro, which is deprecated. For more information, see [Mendix Client](/refguide/mendix-client/).
+{{% /alert %}}
 
 If this setting is enabled, modern widgets like [Data Grid 2](/appstore/modules/data-grid-2/), [Combo Box](/appstore/widgets/combobox/), and [Image](/appstore/widgets/image/) will be used when generating overview pages or the content of data views. Existing generated content remains as is. 
 
