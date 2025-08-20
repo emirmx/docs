@@ -9,7 +9,7 @@ weight: 2
 
 Studio Pro extensions can be developed using TypeScript and use standard web development technologies to extend the Studio Pro development environment. This guide shows you how to set up a basic development environment for building an extension using the web extensibility API.
 
-For more information, see the [Mendix Studio Pro Web Extensibility API](http://apidocs.rnd.mendix.com/11/extensions-api/index.html).
+For more detailed information, see the [Mendix Studio Pro Web Extensibility API Reference docs](http://apidocs.rnd.mendix.com/11/extensions-api/index.html).
 
 ### Prerequisites
 
