@@ -163,6 +163,40 @@ To use this operation in your microflow, perform the following steps:
 
 The operation returns a list of **Blob** objects associated to the **ListBlobResponse**, which is a generalization of **AbstractResponse** and contains the **StatusCode** and **ReasonPhrase**.
 
+#### POST_v1_Azure_GetApplicationBearerToken
+
+`GetApplicationBearerToken` – Retrieves a bearer token from the registered app you need configured on Entra Id. This operation requires a valid `GetApplicationBearerTokenRequest` object. For more information, see [Get Bearer Token](https://learn.microsoft.com/en-us/community/content/azure-rest-api-how-to-create-a-bearer-token).
+
+To use this operation in your microflow, perform the following steps:
+
+1. Create a **GetApplicationBearerToken** object and populate the following attributes:
+
+    * `TenantId` - Required; The TenantId attribute holds the Tenant ID of the registered app you have configured in your Microsoft Entra environment
+    * `ClientId` - Required; The ClientId attribute holds the Client ID of the registered app you configured in your Microsoft Entra environment
+    * `ClientSecret` - Required; The ClientSecret attribute holds the Client Secret you have created on the registered app you configured in your Microsoft Entra environment
+
+2. Call the **POST_v1_Azure_GetApplicationBearerToken** action in your microflow.
+
+The operation returns a **GetApplicationBearerTokenResponse** object with the returned **EntraCredentialsUsage** associated with it. The **EntraCredentialsUsage** entity is a specialization of the **EntraCredentials** entity so the returned object can be used for authentication of Blob operations.
+
+#### POST_v1_Azure_GetUserDelegationKey
+
+`GetUserDelegationKey` – Retrieves a user delegation key. This operation requires a valid `GetUserDelegationKeyRequest` object. For more information, see [Get Bearer Token](https://learn.microsoft.com/en-us/rest/api/storageservices/create-user-delegation-sas).
+
+To use this operation in your microflow, perform the following steps:
+
+1. Create a **GetUserDelegationKey** object and populate the following attributes:
+
+    * `ExpiryDateTime` - Required; Timestamp whent validity period of the user delegation token ends
+    * `OptionalStartDateTime` - Optional; Timestamp whent validity period of the user delegation token starts
+
+2. Provide a valid **EntraCredentials** object by using the **AEntraCredentials** parameter.
+3. Call the **POST_v1_Azure_GetUserDelegationKey** action in your microflow.
+
+The operation returns a **GetUserDelegationKeyResponse** object with the returned **UserDelegationKey** associated with it. This **UserDelegationKey** can be used in the **Create_SAS_Token_Blob**, **Create_SAS_Token_Container** and **Create_SAS_Token_Directory** operations.
+
+#### Create_SAS_Token_Blob, Create_SAS_Token_Container & Create_SAS_Token_Directory
+
 ## Technical Reference {#technical-reference}
 
 The module includes technical reference documentation for the available entities, enumerations, activities, and other items that you can use in your application. You can view the information about each object in context by using the **Documentation** pane in Studio Pro.
