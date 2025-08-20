@@ -27,6 +27,10 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 * We have added a workaround to improve handling of bucket prefixes containing `/` characters.
 * We have improved logging of some startup and other errors - to provide clearer error messages and more relevant context.
 * We removed license checks from the Mendix Operator. Starting version 2.23.0 of the Mendix Opeartor, only Runtime licenses are required (to remove [trial restrictions](/developerportal/deploy/licensing-apps-outside--mxcloud/) from the Mendix Runtime). The Operator will show its status as **Licensed** even when no Operator license is applied.
+* We updated internal handling logic for the `MendixApp`, `Build` and `Runtime` CRD controllers (Ticket 251404).
+  * The `Build` controller now only checks pod attributes that are necessary to complete a build.
+  * The `MendixApp` and `Runtime` controllers now allow processing of some chnages if a build fails.
+    For example, it's possible to start an environment or change the **MxAdmin** password even when the build fails - in this case, the previous build will be used instead.
 * When enabling the *Prevent data deletion* option, Mendix 9.6 (or newer) apps will no longer try to delete files from unreferenced *System.FileDocument*, so that Mendix apps would be able to run without permissions to delete files.
 * We have updated components to use Go 1.24 and the latest dependency versions in order to improve security score ratings for container images.
 * We have updated documentation that OpenShift 4.19 is supported by the Mendix Operator.
