@@ -21,6 +21,18 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
+### August 21, 2025
+
+#### What's New
+
+* Added the ability to unlink stories from feedback items. Navigate to the feedback details page and use the new unlink button to disconnect stories as needed.
+
+#### Improvements and Fixes
+
+* You can now unlink feedback from a story in Epics.
+* Updated user info is now properly shown in Epics.
+* Fixed a display issue where primary action buttons would become inaccessible (moved off-screen) during the story creation process when using Maia with feedback items
+
 ### July 27, 2025
 
 #### Improvements
