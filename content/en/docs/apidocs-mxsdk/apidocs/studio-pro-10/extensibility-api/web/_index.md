@@ -15,7 +15,7 @@ weight: 20
 
 Extensions can be written in Typescript or other web languages, described here, or using a C# API which is documented separately in [Extensibility API for C# Developers](/apidocs-mxsdk/apidocs/csharp-extensibility-api-10/).
 
-For more detailed information on the web api, see the [Mendix Studio Pro Web Extensibility API Reference docs](http://apidocs.rnd.mendix.com/11/extensions-api/index.html).
+For more detailed information on the web API, see the [Mendix Studio Pro Web Extensibility API reference documentation](http://apidocs.rnd.mendix.com/11/extensions-api/index.html).
 
 ## Prerequisites
 
