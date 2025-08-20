@@ -42,7 +42,7 @@ To interact with Azure Blob Storage, authentication can be performed using eithe
 
 A Shared Access Signature (SAS) provides secure, delegated access to resources in your storage account. To configure SAS authorization, perform the following steps:
 
-1. Ask your administrator to generate an SAS for the target container or Blob.
+1. Ask your administrator to generate an SAS for the target container or blob.
 2. Create a **SASCredentials** object and populate its **SASToken** attribute.
 3. Pass the **SASCredentials** object to the **AbstractCredentials** parameter in your operation microflow.
 
@@ -70,10 +70,10 @@ To configure application-based Azure Entra ID authentication, perform the follow
 
 The Azure Blob Storage connector contains the following operations:
 
-* `PutBlob` - Allows you to upload a file of any type to Azure Blob Storage as a Blob. For more information, see [Put Blob to Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/put-blob).
-* `GetBlob` - Allows you to retrieve a Blob. For more information, see [Get Blob to Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/get-blob).
-* `DeleteBlob` - Allows you to delete a Blob. For more information, see [Delete Blob from Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/delete-blob).
-* `ListBlobs` - Allows you to list the Blobs in a speciefied container. For more information, see [List Blobs from a Azure Blob Storage container](https://learn.microsoft.com/en-us/rest/api/storageservices/list-blobs?tabs=microsoft-entra-id).
+* `PutBlob` - Allows you to upload a file of any type to Azure Blob Storage as a blob. For more information, see [Put Blob to Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/put-blob).
+* `GetBlob` - Allows you to retrieve a blob. For more information, see [Get Blob to Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/get-blob).
+* `DeleteBlob` - Allows you to delete a blob. For more information, see [Delete Blob from Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/delete-blob).
+* `ListBlobs` - Allows you to list the blobs in a specified container. For more information, see [List Blobs from a Azure Blob Storage container](https://learn.microsoft.com/en-us/rest/api/storageservices/list-blobs?tabs=microsoft-entra-id).
 * `GetApplicationBearerToken` - Allows the application to request a bearer token. The response is mapped to a **EntraCredentials** object that can be used to authenticate calls to Blob Storage.
 
 You can implement the operations of the connector by using them in microflows. 
@@ -95,7 +95,7 @@ To use this operation in your microflow, perform the following steps:
 
     | Parameter | Description | Required |
     | --- | --- | --- |
-    | `StorageAccount` | Storage account name you want to perform Blob storage operations on | Yes |
+    | `StorageAccount` | Storage account name you want to perform blob storage operations on | Yes |
     | `VersionAPI` | API version for the Azure Storage service (e.g., '2021-04-01') | Yes |
     | `BlobName` | Desired name for the blob in storage | Yes |
     | `ContainerName` | Target container for blob storage | Yes |
@@ -121,8 +121,8 @@ To use this operation in your microflow, perform the following steps:
 
    | Parameter | Description | Required |
    | --- | --- | --- |
-   | `BlobName` | Name of the Blob to retrieve | Yes |
-   | `ContainerName` | Name of the container the Blob is stored in | Yes |
+   | `BlobName` | Name of the blob to retrieve | Yes |
+   | `ContainerName` | Name of the container the blob is stored in | Yes |
    | `BlobType` | Type of blob (currently supports BlockBlob only) | Yes |
    | `ContentType` | MIME content type of the blob (used for response header) | No |
 
@@ -140,8 +140,8 @@ To use the DeleteBlob operation in your microflow, perform the following steps:
 
    | Parameter | Description | Required |
    | --- | --- | --- |
-   | `BlobName` | Name of the Blob to delete | Yes |
-   | `ContainerName` | Name of the container where the Blob is stored | Yes |
+   | `BlobName` | Name of the blob to delete | Yes |
+   | `ContainerName` | Name of the container where the blob is stored | Yes |
 
 2. Provide a valid credentials object by using the **AbstractCredentials** parameter.
 3. Call the **DELETE_v1_Azure_DeleteBlob** action in your microflow.
@@ -157,10 +157,10 @@ To use the ListBlobs operation in your microflow:
 
    | Parameter | Description | Required |
    | --- | --- |
-   | `ContainerName` | Name of the container where the Blob is stored | Yes |
-   | `Prefix` | The prefix attribute is used to only list Blobsfrom from a folder within your container with the specified prefix | No |
-   | `MaxResults` | The max amount of results listed by the LisBlobs operaration | No |
-   | `ContainerName` | The marker used to get the next (sub)set of Blobs from the specified location | No |
+   | `ContainerName` | Name of the container where the blob is stored | Yes |
+   | `Prefix` | The prefix attribute is used to only list blobs from from a folder within your container with the specified prefix | No |
+   | `MaxResults` | The max amount of results listed by the ListBlobs operaration | No |
+   | `ContainerName` | The marker used to get the next (sub)set of blobs from the specified location | No |
 
 3. Provide a valid credentials object by using the **AbstractCredentials** parameter.
 4. Call the **GET_v1_Azure_ListBlobs** action in your microflow.
