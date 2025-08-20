@@ -36,7 +36,7 @@ The third pre-release of the Mendix Workstation Client is available under the co
 
 ##### Workstation Client 
 
-* The Workstation Client is now available in a Linux ARM 64 version for running the client on single-board computers such as Raspberry Pi.
+* The Workstation Client is now available in a [Linux ARM 64 version](https://marketplace.mendix.com/link/component/245627) for running the client on single-board computers such as Raspberry Pi.
 
 ##### Workstation Connector
 
