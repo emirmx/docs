@@ -153,7 +153,14 @@ For Postgres, Mendix supports the following parameters:
 * Time without timezone
 * Time with timezone
 
-For MSSQL, for **INOUT** and **OUT** parameters of type Decimal, test values (in design time) are rounded off. 
+For MSSQL, for **INOUT** and **OUT** parameters of type Decimal, test values (in design time) are rounded off.
+
+**How to use Ref Cursor as out parameter**
+
+{{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/ref01.png" width="600"  >}} 
+{{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/ref02.png" width="600"  >}}
+{{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/ref03.png" width="600"  >}}
+
 
 ## Use the Query External Database Activity
 
