@@ -307,6 +307,14 @@ To do this, follow the steps below:
 3. Download the updated module from the Marketplace. Note that the module is now listed under the **Marketplace modules** category in the **App Explorer**.
 4. Test your application locally to ensure everything functions as expected.
 5. Restore any lost data in deployed environments. Typically, keys and incoming associations to the protected module need to be reset.
+
+### Attribute or Reference Required Error Message After Upgrade 
+
+If you encounter an error stating that an attribute or a reference is required after an upgrade, first upgrade all modules by right-clicking the error, then upgrade Data Widgets. 
+
+### Conflicted Lib Error After Module Import
+
+To fix this error, try synchronizing all dependencies (**App** > **Synchronize dependencies**) and then restart your application.
   
 ## Read More {#readmore}
 

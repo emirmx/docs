@@ -1,9 +1,11 @@
 ---
 title: "MCP Server"
-url: /appstore/modules/genai/genai-for-mx/mcp-server/
+url: /appstore/modules/genai/mcp-modules/mcp-server/
 linktitle: "MCP Server"
 description: "This document describes the purpose, configuration, and usage of the MCP Server module from the Mendix Marketplace that allows developers to expose Mendix logic to external MCP clients and AI systems."
-weight: 20
+weight: 20,
+aliases:
+    - /appstore/modules/genai/genai-for-mx/mcp-server/
 ---
 
 ## Introduction
@@ -113,7 +115,11 @@ The error `Fatal error: SseError: SSE error: Could not convert argument of type 
 Remove-Item -Path "$env:LocalAppData\npm-cache\_npx" -Recurse -Force
 npm cache clean --force
 ```
-   
+
+### Conflicted Lib Error After Module Import
+
+If you encounter an error caused by conflicting Java libraries, such as `java.lang.NoSuchMethodError: 'com.fasterxml.jackson.annotation.OptBoolean com.fasterxml.jackson.annotation.JsonProperty.isRequired()'`, try synchronizing all dependencies (**App** > **Synchronize dependencies**) and then restart your application.
+
 ## Read More
 
 * Concept description of [Model Context Protocol (MCP)](/appstore/modules/genai/mcp/)
