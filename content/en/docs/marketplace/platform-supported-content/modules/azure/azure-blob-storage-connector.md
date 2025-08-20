@@ -173,3 +173,32 @@ The **Documentation** pane displays the documentation for the currently selected
 2. Click on the element for which you want to view the documentation.
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" class="no-border" >}}
+
+### Known Limitations
+
+This section lists all the known limitations of the Azure Blob Connector.
+
+#### Blob Size
+
+The maximum size for a blob uploaded through the connector is 1.49 GB. Larger files are not supported due to Mendix runtime and memory constraints.
+
+#### Blob Types
+
+The connector currently supports Block Blobs only. Other blob types such as Append Blobs and Page Blobs are not supported.
+
+#### Authentication
+
+* Shared Access Signature (SAS) tokens must be manually managed. The connector does not provide built-in functionality to refresh or regenerate SAS tokens when they expire.
+* When using Azure Entra ID authentication, the connector does not handle token refresh automatically. Applications must implement microflows to renew access tokens as needed.
+
+#### Metadata and Properties
+
+* Setting or retrieving custom metadata and blob properties is not yet supported. Only the blob content and a limited set of parameters (such as `ContentType`) can be handled.
+
+#### Operations
+
+The connector supports single-blob operations only. Advanced batch operations (such as bulk deletion or parallelized multi-blob uploads and downloads) are not included.
+
+#### Versioning and Snapshots
+
+Azure Blob Storage features such as blob versioning, soft delete, and snapshots are not exposed through the connector.
