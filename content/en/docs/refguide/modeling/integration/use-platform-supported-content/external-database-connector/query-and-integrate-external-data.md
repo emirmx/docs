@@ -60,7 +60,7 @@ You can typecast `String` into UUID, as shown below:
 
 2. In the **Response Structure** tab, you can choose **New Entity** or **Reuse Entity**.
 
-   a. If **New Entity** is selected, you can view the entity in the **Response structure** tab. Click **Save Query & Create Entity** to save the query and the newly created entity in the domain model. 
+   a. If **New Entity** is selected, you can view the entity in the **Response structure** tab. Click **Create Entity** to save the query and the newly created entity in the domain model. 
 
     {{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/5.png" width="600" >}}
 
@@ -72,7 +72,7 @@ You can typecast `String` into UUID, as shown below:
 
 1. For DML queries, *Number of affected rows* will be displayed as a response.
 
-    For example, `INSERT INTO classicmodels.productlines(productLine, requestedProductRequirement)VALUES({productLine}, {requestedProductRequirement})`
+    For example, `INSERT INTO classicmodels.productlines(productLine, textDescription) VALUES( {productLine}, {textDescription} )`
 
 2. Click **Save Query**.
 
@@ -87,8 +87,8 @@ You can use the existing entity when updating a existing query.
 For example, you can modify the query below to retrieve a list of `productLine`, `textDescription`, and `htmlDescription` columns from `productLines` where the `productLine` is **Planes**.
 
 SQL Query:
-Existing Query: `Select requestedProductRequirement from productlines where productLine = {productLine}`
-Modified Query: `Select productLine, textDescription, htmlDescription from productlines where productLine = {productLine}`
+Existing Query: `Select productLine, textDescription from productlines`
+Modified Query: `Select productLine, textDescription, htmlDescription from productlines`
 
 Do the following:
 
@@ -98,7 +98,7 @@ Do the following:
 
 3. Use the existing entity or create a new entity.
 
-   a. If **New Entity** is selected, you can view the entity in the **Response structure** tab. Click **Save Query & Create Entity** to save the query and the newly created entity in the domain model.
+   a. If **New Entity** is selected, you can view the entity in the **Response structure** tab. Click **Create Entity** to save the query and the newly created entity in the domain model.
 
    b. If **Update Entity** is selected, you can see changes that will be made to the existing entity. Click **Update Entity** to save the query and the changes made to the entity in the domain model.
 
@@ -120,9 +120,12 @@ To call a stored procedure, do the following:
 
 4. Click **Run Query**. This returns an entity with the number of affected rows and all INOUT and OUT parameters. If the stored procedure returns a **Result set**, an associated entity is created.
 
+    **OUT parameters**
     {{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/11.png" width="600"  >}}
+     **Result set**
+    {{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/11a.png" width="600" >}}
 
-5. Click **Use Response** > **Save Query & Create Entity** to save the query and the newly-created entities in the domain model.
+5. Click **Use Response** > **Create Entity** to save the query and the newly-created entities in the domain model.
    
     {{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/12.png" width="600"  >}}
 
