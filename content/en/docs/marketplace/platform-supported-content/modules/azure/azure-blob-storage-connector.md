@@ -66,7 +66,7 @@ To configure application-based Azure Entra ID authentication, perform the follow
 
 ### Configuring Operation Microflows
 
-[Operations](/refguide/Operations/) define the operations that are executed in a microflow or a nanoflow.
+[Operations](/refguide/operations/) define the operations that are executed in a microflow or a nanoflow.
 
 The Azure Blob Storage connector contains the following operations:
 
