@@ -93,20 +93,16 @@ To use this operation in your microflow, perform the following steps:
     
     For the `PUT_v1_Azure_PutBlob` operation, retrieve the `System.FileDocument` you want to store and provide a configured `SASCredentials` or `EntraCredentials` object. You must then create a `PutBlobRequest` object in your microflow as the last parameter. This entity requires the following parameters:
 
-    | Parameter | Description | Required |
-    | --- | --- | --- |
-    | `StorageAccount` | Storage account name you want to perform blob storage operations on | Yes |
-    | `VersionAPI` | API version for the Azure Storage service (e.g., '2021-04-01') | Yes |
-    | `BlobName` | Desired name for the blob in storage | Yes |
-    | `ContainerName` | Target container for blob storage | Yes |
-    | `BlobType` | Type of blob (currently supports BlockBlob only) | Yes |
+    * `StorageAccount` - Storage account name you want to perform blob storage operations on
+    * `VersionAPI` - API version for the Azure Storage service (for example, `2021-04-01`)
+    * `BlobName` - Desired name for the blob in storage
+    * `ContainerName` - Target container for blob storage
+    * `BlobType` - Type of blob (currently supports BlockBlob only)
 
     The following parameters are optional:
 
-    | Parameter | Description | Default |
-    | --- | --- | --- |
-    | `ContentType` | MIME content type specification | application/octet-stream |
-    | `StorageType` | Storage tier configuration | Varies by blob type |
+    * `ContentType` - MIME content type specification; the default value is `application/octet-stream`
+    * `StorageType` - Storage tier configuration; the default value varies by blob type
     
 7. Configure a method to trigger the `ACT_PutBlob` microflow. 
     For example, you can call the microflow with a custom button on a page in your app. For an example of how this can be implemented, see [Creating a Custom Save Button with a Microflow](/refguide/creating-a-custom-save-button/).
@@ -117,54 +113,55 @@ To use this operation in your microflow, perform the following steps:
 
 To use this operation in your microflow, perform the following steps:
 
-1. Create a **GetBlobRequest** object and populate the required attributes:
+1. Create a **GetBlobRequest** object and populate the following attributes:
 
-   | Parameter | Description | Required |
-   | --- | --- | --- |
-   | `BlobName` | Name of the blob to retrieve | Yes |
-   | `ContainerName` | Name of the container the blob is stored in | Yes |
-   | `BlobType` | Type of blob (currently supports BlockBlob only) | Yes |
-   | `ContentType` | MIME content type of the blob (used for response header) | No |
+    * `BlobName` - Required; name of the blob to retrieve
+    * `ContainerName` - Required; name of the container the blob is stored in
+    * `BlobType` - Required; type of blob (currently supports BlockBlob only)
+    * `ContentType` - Optional; MIME content type of the blob (used for response header)
 
-2. Provide a valid credentials object via the **AbstractCredentials** parameter.
+2. Provide a valid credentials object by using the **AbstractCredentials** parameter.
 3. Call the **GET_v1_Azure_GetBlob** action in your microflow.
-4. The operation returns a **GetBlobResponse** object with the returned Blob associated with it.
+
+The operation returns a **GetBlobResponse** object with the returned Blob associated with it.
 
 #### DELETE_v1_Azure_DeleteBlob
 
 Deletes a specified blob from Azure Blob Storage. This operation requires a valid `DeleteBlobRequest` object and an appropriate credentials object (either `SASCredentials` or `EntraCredentials`). For more information, see [Delete Blob from Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/delete-blob).
 
-To use the DeleteBlob operation in your microflow, perform the following steps:
+To use this operation in your microflow, perform the following steps:
 
-1. Create a **DeleteBlobRequest** object and populate the required attributes:
+1. Create a **DeleteBlobRequest** object and populate the following attributes:
 
-   | Parameter | Description | Required |
-   | --- | --- | --- |
-   | `BlobName` | Name of the blob to delete | Yes |
-   | `ContainerName` | Name of the container where the blob is stored | Yes |
+    * `StorageAccount` - Required; storage account name you want to perform Blob Storage operations on
+    * `VersionAPI` - Required; API version for the Azure Storage service (for example, `2021-04-01`)
+    * `BlobName` - Required; name of the blob to delete
+    * `ContainerName` - Required; name of the container where the blob is stored
 
-2. Provide a valid credentials object by using the **AbstractCredentials** parameter.
-3. Call the **DELETE_v1_Azure_DeleteBlob** action in your microflow.
-4. The operation returns a **DeleteBlobResponse** object, which is a generalization of **AbstractResponse** and contains the **StatusCode** and **ReasonPhrase**.
+3. Provide a valid credentials object by using the **AbstractCredentials** parameter.
+4. Call the **DELETE_v1_Azure_DeleteBlob** action in your microflow.
+
+The operation returns a **DeleteBlobResponse** object, which is a generalization of **AbstractResponse** and contains the **StatusCode** and **ReasonPhrase**.
 
 #### GET_v1_Azure_ListBlobs
 
 Lists the blobs contained in your specified Azure Blob Storage container. This operation requires a valid `ListBlobsRequest` object and an appropriate credentials object (either `SASCredentials` or `EntraCredentials`). For more information, see [List Blobs from Azure Blob Storage](https://learn.microsoft.com/en-us/rest/api/storageservices/list-blobs).
 
-To use the ListBlobs operation in your microflow:
+To use this operation in your microflow, perform the following steps:
 
-1. Create a **ListBlobsRequest** object and populate the required attributes:
+1. Create a **ListBlobsRequest** object and populate the following attributes:
 
-   | Parameter | Description | Required |
-   | --- | --- |
-   | `ContainerName` | Name of the container where the blob is stored | Yes |
-   | `Prefix` | The prefix attribute is used to only list blobs from from a folder within your container with the specified prefix | No |
-   | `MaxResults` | The max amount of results listed by the ListBlobs operaration | No |
-   | `ContainerName` | The marker used to get the next (sub)set of blobs from the specified location | No |
+    * `StorageAccount` - Required; storage account name you want to perform Blob Storage operations on
+    * `VersionAPI` - Required; API version for the Azure Storage service (for example, `2021-04-01`)
+    * `ContainerName` - Required; name of the container where the blob is stored
+    * `Prefix` - Optional; used to list only blobs from a folder within your container that match the specified prefix
+    * `MaxResults` - Optional; the maximum number of results listed by the **ListBlobs** operation
+    * `Marker` - Optional; the marker used to get the next (sub)set of blobs from the specified location.
 
 3. Provide a valid credentials object by using the **AbstractCredentials** parameter.
 4. Call the **GET_v1_Azure_ListBlobs** action in your microflow.
-5. The operation returns a list of **Blob** objects associated to the **ListBlobResponse**, which is a generalization of **AbstractResponse** and contains the **StatusCode** and **ReasonPhrase**.
+
+The operation returns a list of **Blob** objects associated to the **ListBlobResponse**, which is a generalization of **AbstractResponse** and contains the **StatusCode** and **ReasonPhrase**.
 
 ## Technical Reference {#technical-reference}
 
