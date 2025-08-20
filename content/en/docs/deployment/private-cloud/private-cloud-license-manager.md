@@ -498,8 +498,7 @@ Where:
 * `<page-number>` specifies the page number to load, in case the number of licenses exceeds `<max-licenses-per-page>`. These parameters are optional and allow to list license usage in batches.
 
 {{% alert color="info" %}}
-To get a full list of licenses with one command, use `--page 0 --limit 10000` to load 10000 licenses in one go.
-This can be useful when using a text editor to check if licenses are loaded correctly, or when collecting data for a support case.
+To get a full list of licenses with one command, use `--page 0 --limit 10000` to load 10000 licenses in one go. This can be useful when using a text editor to check if licenses are loaded correctly, or when collecting data for a support case.
 {{% /alert %}}
 
 Which would reply with something similar to this:
