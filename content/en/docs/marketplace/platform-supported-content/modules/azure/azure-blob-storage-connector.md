@@ -88,7 +88,7 @@ To use this operation in your microflow, perform the following steps:
 2. Enter a name for your microflow, for example, *ACT_PutBlob*, and then click **OK**.
 3. In the **App Explorer**, in the **AzureBlobStorageConnector** section, find the **PUT_v1_Azure_PutBlob** operation microflow.
 4. Create a **SASCredentials** or **EntraCredentials** object and add the SAS or access token to the **SASToken** or **BearerToken** attribute. 
-5. Drag the **PUT_v1_Azure_PutBlob** microflow in to your microflow.
+5. Drag the **PUT_v1_Azure_PutBlob** microflow into your microflow.
 6. Double-click the **PUT_v1_Azure_PutBlob** operation to configure the required parameters. 
     
     For the `PUT_v1_Azure_PutBlob` operation, retrieve the `System.FileDocument` you want to store and provide a configured `SASCredentials` or `EntraCredentials` object. You must then create a `PutBlobRequest` object in your microflow as the last parameter. This entity requires the following parameters:
