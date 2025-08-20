@@ -7,7 +7,7 @@ weight: 20
 
 ## Introduction
 
-The [Azure Blob Storage](https://marketplace.mendix.com/link/component/<insert when published>) connector enables you to connect your app to [Azure Blob Storage](https://azure.microsoft.com/en-us/products/storage/blobs) and easily store objects.
+The [Azure Blob Storage](https://marketplace.mendix.com/link/component/244401) connector enables you to connect your app to [Azure Blob Storage](https://azure.microsoft.com/en-us/products/storage/blobs) and easily store objects.
 
 ### Typical Use Cases
 
