@@ -128,7 +128,7 @@ To use this operation in your microflow, perform the following steps:
 
 2. Provide a valid credentials object via the **AbstractCredentials** parameter.
 3. Call the **GET_v1_Azure_GetBlob** action in your microflow.
-4. The operation returns a Mendix **FileDocument** object containing the blob data.
+4. The operation returns a **GetBlobResponse** object with the returned Blob associated with it.
 
 #### DELETE_v1_Azure_DeleteBlob
 
