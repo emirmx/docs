@@ -32,7 +32,9 @@ The ability to import an OpenAPI/Swagger contract is currently in beta.
 ### Limitations
 
 * To use the request response to create a data structure automatically in your domain model, the response data should be in JSON format. It is possible to process other formats, such as XML or raw text, but you will need to extract the data you are looking for in a microflow.
-* It is currently not possible to configure parameters in the Query Parameters tab
+* It is currently not possible to configure parameters in the Query Parameters tab.
+* Streaming responses from APIs are currently not supported.
+* Implicit response-mapping is performed only for responses with status code `200`.
 
 ### Prerequisites 
 
