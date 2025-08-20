@@ -195,7 +195,7 @@ The **Feedback** tab shows the following items:
   You can unlink a feedback item by hovering over the feedback and clicking the **Remove** ({{% icon name="remove" %}}) button. Once the feedback is not linked anymore, it appears again in the list on the **Inbox** or **Archive** tab.
 
 * **Story** – This displays any stories that are linked to that feedback item.    
-    You can unlink a story by clicking its corresponding {{% icon name="unlink" %}} **unlink** button.    
+    To unlink a story from a feedback item, click its corresponding {{% icon name="unlink" %}} **unlink** button.    
     If there are no linked stories, you have the following options:
     
     * **Add to Story** – Add the feedback item to an existing story.

@@ -123,7 +123,7 @@ The story details dialog box shows the following items:
 
 * **Attached Files** – You can add attached files by clicking **+**.
 
-* **Feedback** – This displays any feedback items that have been linked to the story.     
+* **Feedback** – This displays any feedback items that are linked to the story.     
     To unlink a feedback item from a story, click its corresponding {{% icon name="unlink" %}} **unlink** button.
 
 * **Audit Trail** – This gives information on all the updates related to the story, including who did the update and when:
