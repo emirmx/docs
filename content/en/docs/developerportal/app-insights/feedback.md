@@ -72,7 +72,7 @@ In the list on the **Inbox** tab, you can find the following information for eac
 * **Priority** – the priority that the feedback has
 * **Date** – the date when the feedback was submitted
 
-{{% alert color="info" %}}For more information about each bullet item above, see the list in the [Feedback Details](#feedback-details) section.{{% /alert %}}
+For more information about each item, refer to the [Feedback Details](#feedback-details) section.
 
 To export all feedback into one CSV file, click **Export**.
 
@@ -133,9 +133,9 @@ To search by **Subject** and **ID**, type the keywords in the search bar.
 
 Clicking the filter bar opens the **Filter by** side panel. In this side panel, you can filter the feedback using the **Environment**, **Closed date**, **Submission date**, and **Assignees**. The filters are saved until the page is refreshed.
 
-## Opening Feedback in Inbox or Archive{#feedback-details}
+## Feedback Details {#feedback-details}
 
-On the [Inbox](#inbox) and [Archive](#archive) tabs, you can open feedback by clicking it in the list. If you click the **ID** of the feedback, the feedback details page opens. If you click a place other than the **ID** of the feedback, a side panel opens. Either the feedback details page or the side panel contains two tabs: [Feedback](#feedback) and [Reporter Comments](#contact-reporter).
+On the [Inbox](#inbox) and [Archive](#archive) tabs, you can open a feedback item by clicking it in the list. If you click the **ID** of the feedback, the feedback details page opens. If you click a place other than the **ID** of the feedback, a side panel opens. Either the feedback details page or the side panel contains two tabs: [Feedback](#feedback) and [Reporter Comments](#contact-reporter).
 
 ### Feedback Tab {#feedback}
 
@@ -193,6 +193,13 @@ The **Feedback** tab shows the following items:
   {{% alert color="info" %}}When you open a linked feedback item, you can click **Make [the linked feedback item] the Primary feedback** to make this feedback the primary feedback of the feedback group instead.{{% /alert %}}
 
   You can unlink a feedback item by hovering over the feedback and clicking the **Remove** ({{% icon name="remove" %}}) button. Once the feedback is not linked anymore, it appears again in the list on the **Inbox** or **Archive** tab.
+
+* **Story** – This displays any stories that are linked to that feedback item.    
+    You can unlink a story by clicking its corresponding {{% icon name="unlink" %}} **unlink** button.    
+    If there are no linked stories, you have the following options:
+    
+    * **Add to Story** – Add the feedback item to an existing story.
+    * **Create Story** – Create a new story based on the feedback item.
 
 * **Attachments** – This contains attachments to this feedback. To upload an attachment, click **Add** ({{% icon name="add" %}}) and select the file. The following formats are supported: .*peg*, *.png*, and *.gif*. Each attachment can be a maximum of 5 MB in size. Once an attachment is uploaded, only your team members can view, download, and delete the attachment.
 
