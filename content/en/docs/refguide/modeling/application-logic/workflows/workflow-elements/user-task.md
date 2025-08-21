@@ -62,10 +62,8 @@ There are three different ways to do this:
   Setting these associations can be done from the **On created** event handler or at some other time after the user task is created, for instance by an administrator.
 
 {{% alert color="info" %}}
-Group targeting exists as of Mendix 11.2.0 as an experimental feature.
-As such you must enable it in the [New Features Tab](/refguide/preferences-dialog#new-features) of the [Preferences Dialog](/refguide/preferences-dialog).
-See also [Workflow Groups](/refguide/workflow-groups).
-{{% /alert }}
+Group targeting exists as of Mendix 11.2.0 as an experimental feature. As such you must enable it in the [New Features Tab](/refguide/preferences-dialog#new-features) of the [Preferences Dialog](/refguide/preferences-dialog). See also [Workflow Groups](/refguide/workflow-groups).
+{{% /alert %}}
 
 It is important to note that there is a fundamental difference between targeting **User(s)** and **Workflow group(s)**:
 
