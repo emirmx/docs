@@ -8,6 +8,17 @@ numberless_headings: true
 
 These release notes cover changes to the [Extensibility API for Web Developers](/apidocs-mxsdk/apidocs/extensibility-api/).
 
+## Version 11.2.0
+
+* We introduced a new Command registration Api check out our guide at [Commands Api](/apidocs-mxsdk/apidocs/web-extensibility-api-11/command-api/)
+
+* We included a new method for initializing the studio Pro api (this is a breaking change) Please check out the getting started guide for usage at [Getting started](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/)
+
+## Version 11.1.0
+
+* We added a new Editors api under `studioPro.ui.editors` which allows you to get the active document and open the default editor for a document.
+You can check out our guide on the new api at [Editors Api](/apidocs-mxsdk/apidocs/web-extensibility-api-11/editor-api/).
+
 ## Version 11.0.0
 
 * We introduced a new API for showing modal dialogs from web extensions. It is available under `studioPro.ui.dialogs` in the web extensibility API. For more details and practical examples, see [Open a Modal Dialog](/apidocs-mxsdk/apidocs/web-extensibility-api-11/dialog-api/).
