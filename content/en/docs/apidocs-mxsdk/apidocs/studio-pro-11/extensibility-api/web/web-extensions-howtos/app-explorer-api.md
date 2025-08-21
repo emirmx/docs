@@ -6,7 +6,7 @@ url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/app-explorer-api/
 
 ## Introduction
 
-This how-to describes how to interact with the app explorer in Studio Pro.
+This how-to describes how to interact with the App Explorer in Studio Pro.
 
 ## Prerequisites
 
@@ -14,9 +14,13 @@ This how-to uses the results of [Get Started with the Web Extensibility API](/ap
 
 ## Creating a Context Menu
 
-In this example, we'll create a menu which will show for each `Microflow` in the App Explorer of Studio Pro. In order to specify which type of document a menu should belong to, we need to use the full name of the document type, i.e. `Microflows$Microflow` for Microflows, or `Pages$Page` for pages, etc. The documentation for these document type names can be found here [Access a Mendix Model Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/model-api/).
+In this example, you will create a menu which will show for each microflow in the App Explorer. Use the full name of the document type to specify which type of document a menu should belong to (for example, `Microflows$Microflow` for microflows or `Pages$Page` for pages). The documentation for these document type names can be found at [Access a Mendix Model Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/model-api/).
 
-First, a command must be registered through the [Commands API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/command-api/), then the `commandId` can be attached to the new menu. Then, using the `appExplorer` api's `addContextMenu` method, the menu can be added to all `Microflow` document nodes.
+Follow the steps below:
+
+1. Register a command through the [Command API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/command-api/).
+2. Attach the `commandId` to the new menu. 
+3. Using the `appExplorer` API's `addContextMenu` method, add the menu to all `Microflow` document nodes.
 
 ```typescript
 import { ComponentContext, IComponent, Menu, StudioProApi, getStudioProApi } from "@mendix/extensions-api";
@@ -45,10 +49,10 @@ export const component: IComponent = {
 }
 ```
 
-As you can see, the expected payload of the command will be an object containing a document id (`{ documentId: string }`). Registering the command requires the exact type of the payload, or your extension will not compile. The `documentId` will be the id of the document the menu is attached to, in this case, the exact `Microflow` node in the app explorer.
+As you can see, the expected payload of the command will be an object containing a document Id (`{ documentId: string }`). Registering the command requires the exact type of the payload, or your extension will not compile. The `documentId` will be the Id of the document the menu is attached to (in this scenario, the exact `Microflow` node in the App Explorer).
 
 {{% alert color="info" %}}
-It is important to remember that the command must be registered before creating the menu.
+Be sure to remember that the command must be registered before creating the menu.
 {{% /alert %}}
 
 ## Conclusion
@@ -57,6 +61,6 @@ You have seen how to create context menus for a document node in the app explore
 
 ## Extensibility Feedback
 
-If you would like to provide us with some additional feedback you can complete a small [Survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback)
+If you would like to provide us with additional feedback, you can complete a small [survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback).
 
-Any feedback is much appreciated.
+Any feedback is appreciated.
