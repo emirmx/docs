@@ -181,7 +181,7 @@ The operation returns a **GetApplicationBearerTokenResponse** object with the re
 
 #### POST_v1_Azure_GetUserDelegationKey
 
-`GetUserDelegationKey` – Retrieves a user delegation key. This operation requires a valid `GetUserDelegationKeyRequest` object. For more information, see [Get Bearer Token](https://learn.microsoft.com/en-us/rest/api/storageservices/create-user-delegation-sas).
+`GetUserDelegationKey` – Retrieves a user delegation key. This operation requires a valid `GetUserDelegationKeyRequest` object. For more information, see [Create User Delegation Key](https://learn.microsoft.com/en-us/rest/api/storageservices/create-user-delegation-sas).
 
 To use this operation in your microflow, perform the following steps:
 
@@ -195,7 +195,106 @@ To use this operation in your microflow, perform the following steps:
 
 The operation returns a **GetUserDelegationKeyResponse** object with the returned **UserDelegationKey** associated with it. This **UserDelegationKey** can be used in the **Create_SAS_Token_Blob**, **Create_SAS_Token_Container** and **Create_SAS_Token_Directory** operations.
 
-#### Create_SAS_Token_Blob, Create_SAS_Token_Container & Create_SAS_Token_Directory
+#### Create_SAS_Token_Blob 
+
+`Create_SAS_Token_Blob` – Uses the **UserDelegationKey** generated with **POST_v1_Azure_GetUserDelegationKey** to create a Shared Access Signature (SAS) that can be used to access the specified Blob. For more information, see [Create SAS](https://learn.microsoft.com/en-us/rest/api/storageservices/create-user-delegation-sas).
+
+To use this operation in your microflow, perform the following steps:
+
+1. Execute on the steps in the `POST_v1_Azure_GetUserDelegationKey` section and use the accuired **UserDelegationKey** as input for the **Create_SAS_Token_Blob** operation microflow.
+2. Create a **CreateSASTokenBlobInputFields** object and populate the following attributes:
+
+    * `BlobName` - Required; The BlobName attribute holds the name the blob will delete in the Blob storage
+    * `StorageAccount` - Required; The StorageAccount attribute holds the storage account you want to perform Blob storage operations on
+    * `ContainerName` - Required; The ContainerName attribute holds the target container name where the blob will be stored
+    * `OptionalStartDateTime` - Optional; Timestamp whent validity period of the user delegation token starts
+    * `ExpiryDateTime` - Required; Timestamp whent validity period of the user delegation token ends
+    
+3. Create a **StoragePermissions** object to specify the permissions you want the SAS to grant, to that end populate the following attributes:
+
+    * `Read` - Required; Read the content, properties, and metadata of a specific blob
+    * `Add` - Required; Add a block to an append blob
+    * `Create` - Required; Write a new blob, snapshot a blob, or copy a blob to a new blob
+    * `Write` - Required; Create or write content, properties, metadata, or blocklist. Snapshot or lease the blob. Resize the blob (page blob only). Use the blob as the destination of a copy operation
+    * `Delete` - Required; Delete a blob. For version 2017-07-29 and later, the Delete permission also allows breaking a lease on a blob
+    * `DeleteVersion` - Required; Delete a blob version
+    * `PermanentDelete` - Required; Permanently delete a blob snapshot or version
+    * `List` - Required; List blobs non-recursively (Always False for the **Create_SAS_Token_Blob** operation)
+    * `Tags` - Required; Read or write the tags on a blob
+    * `Move` - Required; Move a blob to a new location
+    * `Execute` - Required; Get the system properties and, if the hierarchical namespace is enabled for the storage account, get the POSIX ACL of a blob. If the hierarchical namespace is enabled and the caller is the owner of a blob, this permission grants the ability to set the owning group, POSIX permissions, and POSIX ACL of the blob. It doesn't permit the caller to read user-defined metadata
+    * `Ownership` - Required; When the hierarchical namespace is enabled, this permission enables the caller to set the owner or the owning group, or to act as the owner when the caller renames or deletes a blob within a directory that has the sticky bit set
+    * `Permissions` - Required; When the hierarchical namespace is enabled, this permission allows the caller to set permissions and POSIX ACLs on directories and blobs
+    * `Immutability` - Required; Set or delete the immutability policy or legal hold on a blob
+
+The operation returns a **SASCredentials** object. This **SASCredentials** object can be used to authenticate blob storage API calls on specified blob.
+
+#### Create_SAS_Token_Container
+
+`Create_SAS_Token_Blob` – Uses the **UserDelegationKey** generated with **POST_v1_Azure_GetUserDelegationKey** to create a Shared Access Signature (SAS) that can be used to access the specified Container. For more information, see [Create SAS](https://learn.microsoft.com/en-us/rest/api/storageservices/create-user-delegation-sas).
+
+To use this operation in your microflow, perform the following steps:
+
+1. Execute on the steps in the `POST_v1_Azure_GetUserDelegationKey` section and use the accuired **UserDelegationKey** as input for the **Create_SAS_Token_Container** operation microflow.
+2. Create a **CreateSASTokenContainerInputFields** object and populate the following attributes:
+
+    * `StorageAccount` - Required; The StorageAccount attribute holds the storage account you want to perform Blob storage operations on
+    * `ContainerName` - Required; The ContainerName attribute holds the target container name where the blob will be stored
+    * `OptionalStartDateTime` - Optional; Timestamp whent validity period of the user delegation token starts
+    * `ExpiryDateTime` - Required; Timestamp whent validity period of the user delegation token ends
+    
+3. Create a **StoragePermissions** object to specify the permissions you want the SAS to grant, to that end populate the following attributes:
+
+    * `Read` - Required; Read the content, blocklist, properties, and metadata of any blob in the container. Use a blob as the source of a copy operation
+    * `Add` - Required; Add a block to an append blob
+    * `Create` - Required; Write a new blob, snapshot a blob, or copy a blob to a new blob
+    * `Write` - Required; Create or write content, properties, metadata, or blocklist. Snapshot or lease the blob. Resize the blob (page blob only). Use the blob as the destination of a copy operation.
+    * `Delete` - Required; Delete a blob. For version 2017-07-29 and later, the Delete permission also allows breaking a lease on a blob
+    * `DeleteVersion` - Required; Delete a blob version
+    * `PermanentDelete` - Required; Permanently delete a blob snapshot or version (Always False for the **Create_SAS_Token_Container** operation)
+    * `List` - Required; List blobs non-recursively
+    * `Tags` - Required; Read or write the tags on a blob (Always False for the **Create_SAS_Token_Container** operation)
+    * `Move` - Required; Move a blob to a new location.
+    * `Execute` - Required; Get the system properties and, if the hierarchical namespace is enabled for the storage account, get the POSIX ACL of a blob. If the hierarchical namespace is enabled and the caller is the owner of a blob, this permission grants the ability to set the owning group, POSIX permissions, and POSIX ACL of the blob. It doesn't permit the caller to read user-defined metadata
+    * `Ownership` - Required; When the hierarchical namespace is enabled, this permission enables the caller to set the owner or the owning group, or to act as the owner when the caller renames or deletes a blob within a directory that has the sticky bit set
+    * `Permissions` - Required; When the hierarchical namespace is enabled, this permission allows the caller to set permissions and POSIX ACLs on directories and blobs
+    * `Immutability` - Required; Set or delete the immutability policy or legal hold on a blob
+
+The operation returns a **SASCredentials** object. This **SASCredentials** object can be used to authenticate blob storage API calls on specified container.
+
+#### Create_SAS_Token_Directory
+
+`Create_SAS_Token_Directory` – Uses the **UserDelegationKey** generated with **POST_v1_Azure_GetUserDelegationKey** to create a Shared Access Signature (SAS) that can be used to access the specified directory. For more information, see [Create SAS](https://learn.microsoft.com/en-us/rest/api/storageservices/create-user-delegation-sas).
+
+To use this operation in your microflow, perform the following steps:
+
+1. Execute on the steps in the `POST_v1_Azure_GetUserDelegationKey` section and use the accuired **UserDelegationKey** as input for the **Create_SAS_Token_Directory** operation microflow.
+2. Create a **CreateSASTokenDirectoryInputFields** object and populate the following attributes:
+
+    * `DirectoryName` - Required; Name of the folder/directory you have within a specific container
+    * `StorageAccount` - Required; The StorageAccount attribute holds the storage account you want to perform Blob storage operations on
+    * `ContainerName` - Required; The ContainerName attribute holds the target container name where the blob will be stored
+    * `OptionalStartDateTime` - Optional; Timestamp whent validity period of the user delegation token starts
+    * `ExpiryDateTime` - Required; Timestamp whent validity period of the user delegation token ends
+    
+3. Create a **StoragePermissions** object to specify the permissions you want the SAS to grant, to that end populate the following attributes:
+
+    * `Read` - Required; Read the content, blocklist, properties, and metadata of any blob in the directory. Use a blob as the source of a copy operation
+    * `Add` - Required; Add a block to an append blob
+    * `Create` - Required; Write a new blob, snapshot a blob, or copy a blob to a new blob
+    * `Write` - Required; Create or write content, properties, metadata, or blocklist. Snapshot or lease the blob. Resize the blob (page blob only). Use the blob as the destination of a copy operation.
+    * `Delete` - Required; Delete a blob. For version 2017-07-29 and later, the Delete permission also allows breaking a lease on a blob
+    * `DeleteVersion` - Required; Delete a blob version (Always False for the **Create_SAS_Token_Directory** operation)
+    * `PermanentDelete` - Required; Permanently delete a blob snapshot or version (Always False for the **Create_SAS_Token_Directory** operation)
+    * `List` - Required; List blobs non-recursively
+    * `Tags` - Required; Read or write the tags on a blob (Always False for the **Create_SAS_Token_Directory** operation)
+    * `Move` - Required; Move a blob to a new location.
+    * `Execute` - Required; Get the system properties and, if the hierarchical namespace is enabled for the storage account, get the POSIX ACL of a blob. If the hierarchical namespace is enabled and the caller is the owner of a blob, this permission grants the ability to set the owning group, POSIX permissions, and POSIX ACL of the blob. It doesn't permit the caller to read user-defined metadata
+    * `Ownership` - Required; When the hierarchical namespace is enabled, this permission enables the caller to set the owner or the owning group, or to act as the owner when the caller renames or deletes a blob within a directory that has the sticky bit set
+    * `Permissions` - Required; When the hierarchical namespace is enabled, this permission allows the caller to set permissions and POSIX ACLs on directories and blobs
+    * `Immutability` - Required; Set or delete the immutability policy or legal hold on a blob (Always False for the **Create_SAS_Token_Directory** operation)
+
+The operation returns a **SASCredentials** object. This **SASCredentials** object can be used to authenticate blob storage API calls for the specified directory.
 
 ## Technical Reference {#technical-reference}
 
