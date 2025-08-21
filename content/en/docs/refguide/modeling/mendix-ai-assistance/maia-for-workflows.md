@@ -26,7 +26,7 @@ After clicking **Maia for Workflow**, a dedicated chat interface appears at the 
 
 {{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/maia-for-workflows/chat-interface.png" max-width=42% >}}
 
-Describe a business process which you want to model and Maia uses this information to add relevant workflow activities, and tries to configure them where possible. You can also supplement text input with a maximal of one image and one PDF file, which Maia uses to interpret your request more effectively. For more information, see the [Attachment Requirements](#attachment-requirements) section below. 
+Describe a business process which you want to model and Maia uses this information to add relevant workflow activities, and tries to configure them where possible. You can also supplement text input with a maximum of one image and one PDF file, which Maia uses to interpret your request more effectively. For more information, see the [Attachment Requirements](#attachment-requirements) section below. 
 
 After a workflow is generated, you can continue asking Maia in the same session to further improve the workflow and provide explanations.
 
