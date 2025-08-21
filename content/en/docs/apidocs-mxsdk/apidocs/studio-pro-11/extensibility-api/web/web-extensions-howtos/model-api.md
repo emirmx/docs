@@ -24,8 +24,8 @@ The model is split in several components exposed via `studioPro.app.model` objec
 * snippets
 
 You can include these components using syntax as shown below, which includes pages and domain models.
-In the following, we assume that you obtained `studioPro` object by calling the factory function
-`getStudioProApi`, as in other tutorials. 
+
+In the following, it is assumed you obtained the `studioPro` object by calling the factory function `getStudioProApi`, as in other tutorials. 
 
 ```ts
 const studioPro = getStudioProApi(componentContext);

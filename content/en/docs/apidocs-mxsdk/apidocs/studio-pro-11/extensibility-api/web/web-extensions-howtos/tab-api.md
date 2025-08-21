@@ -14,7 +14,7 @@ This how-to uses the results of [Get Started with the Web Extensibility API](/ap
 
 ## Opening a Tab
 
-Firstly, create a menu item to open the tab. This is done inside the `loaded` method in `Main` class, as described below. For more information see [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
+First, create a menu item to open the tab. This is done inside the `loaded` method in `Main` class, as described below. For more information see [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
 
 In a listener event called `menuItemActivated` the `studioPro.ui.tabs.open(<tabinfo>, <uispec>)` call opens a new tab where:
 
@@ -205,8 +205,8 @@ To do this, follow these steps:
     }
     ```
 
-1. Update `build-extension.mjs` to match the manifest with an entry for each tab. More precisely, you need to add entry points for each tab to
-   `entryPoints` array and make sure that the variable `appDir` stays unaltered, as follows:
+1. Update `build-extension.mjs` to match the manifest with an entry for each tab. Specifically, you need to add entry points for each tab to
+   `entryPoints` array and make sure the variable `appDir` stays unaltered, as follows:
 
     ```javascript{hl_lines=["16-20"]}
       import * as esbuild from 'esbuild'

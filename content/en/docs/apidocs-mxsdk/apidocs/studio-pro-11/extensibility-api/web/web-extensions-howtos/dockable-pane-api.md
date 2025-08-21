@@ -179,7 +179,7 @@ You must now create a new web view endpoint where the user interface to be rende
 1. Rename `ui/index.tsx` to `ui/tab.tsx`
 1. Add the new endpoint file, `ui/dockablepane.tsx` by copying `ui/tab.tsx`.
 
-You must also alter the `build-extension.mjs` and `manifest.json` files to make sure that the new endpoint is built and bound to a name referenced in `uiEntrypoint` property in extensibility APIs, as described in the following sections:
+You must also alter the `build-extension.mjs` and `manifest.json` files to make sure the new endpoint is built and bound to a name referenced in `uiEntrypoint` property in extensibility APIs, as described in the following sections:
 
 ### Altering `build-extension.mjs`
 
@@ -276,11 +276,11 @@ The `manifest.json` file should now look like this:
 
 ## Closing the Dockable Pane
 
-Now that you have registered a pane and can open, it would also be a good idea to close it.
+Now that you have registered a pane and can open it, you can also close it.
 
 You will close your pane using a new menu item.
 
-First add a new sub menu item to the menu on line 13.
+First, add a new sub menu item to the menu on line 13.
 
 ```typescript {linenos=table linenostart=13}
                 { menuId: "myextension.HideDockMenuItem", caption: "Hide dock pane" },

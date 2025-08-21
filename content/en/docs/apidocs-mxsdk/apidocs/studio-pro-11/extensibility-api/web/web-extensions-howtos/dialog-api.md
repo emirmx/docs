@@ -93,8 +93,8 @@ In the previous example, the `uiEntryPoint` property of the `<uispec>` object ha
 }
 ```
 
-1. Update `build-extension.mjs` to match the manifest with an entry for the new dialog entry point. More precisely, you need to add
-the `src/ui/dialog.tsx` endpoint to your build script, and make sure the variable `appDir` stays unaltered. For example:
+1. Update `build-extension.mjs` to match the manifest with an entry for the new dialog entry point. Specifically, you need to add
+the `src/ui/dialog.tsx` endpoint to your build script and make sure the variable `appDir` stays unaltered. For example:
 
    ```typescript{hl_lines=["16-19"]}
     import * as esbuild from 'esbuild'
