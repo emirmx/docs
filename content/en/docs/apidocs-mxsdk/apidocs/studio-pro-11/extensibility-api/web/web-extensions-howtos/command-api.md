@@ -14,8 +14,13 @@ This how-to uses the results of [Get Started with the Web Extensibility API](/ap
 
 ## Register Commands
 
-With the Commands api, it is possible to register a command that can be executed when a menu is clicked, or a document (Home Page, Microflows in the App Explorer, etc), or inside an editor (i.e. Entities, Annotations, etc). This can be done through the commands api's `registerCommand`.
-In the sample code below, we register a command and then attach it to a menu, by setting the property `commandId` to the `Menu` object. It is important to note that, when using a command in a menu, it is no longer necessary to listen to the `menuItemActivated` event which triggers when the menu was clicked and returning the menu id. Now, with commands, you can simply register your action and set the command id on the menu itself.
+The Commands api allows users to register a reusable command. These commands can be attached to menus and context menus. Currently two api's make use of this feature please check out:
+
+[Documents API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/)
+[App Explorer API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/app-explorer-api/)
+
+To create commands a user can call the commands api's `registerCommand`.
+In the sample code below, we register a command and then attach it to a menu, by setting the property `commandId` to the `Menu` object. It is important to note that, when using a command in a menu it is no longer necessary to listen to the `menuItemActivated` event. Now, with commands, you can simply register your action and set the command id on the menu itself.
 
 Also note that the `registerCommand` requires a generic type for the command payload once executed. For standalone menus that have a command without payload, you can simply register it with `<void>`. When using `void` the generic type declaration can also be left out, i.e. `registerCommand<void>(commandId...)` becomes `registerCommand(commandId...)`.
 For commands that require payload, you must make sure you register the command with the exact expected payload object type. See the [App Explorer API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/app-explorer-api/) and [Documents API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/documents-api/) documentations for clear examples.
