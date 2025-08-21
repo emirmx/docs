@@ -63,9 +63,15 @@ containing the source code of the extension.
 In the following example, the name of your extension is `myextension` and you are exploring it using
 Visual Studio Code.
 
-1. From the Explorer window, navigate to `src/main/index.ts` and select it to open the file.
+As a first step your extension will have to get an instance of the Studio Pro api. From the Explorer window, navigate to src/main/index.ts and select it to open the file.
 
-    Reading through the source code you should see the following:
+Reading through the source code you should see the following:
+
+1. Line 6 gets an instance of the Studio Pro api by calling getStudioProApi
+    ```typescript
+    export const component: IComponent = {
+        async loaded(componentContext) {
+            const studioPro = getStudioProApi(componentContext);
 
 2. Line 7 adds a menu
 
