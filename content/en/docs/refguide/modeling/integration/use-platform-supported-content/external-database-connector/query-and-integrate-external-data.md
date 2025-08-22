@@ -166,11 +166,25 @@ For Postgres, Mendix supports the following parameters:
 
 For MSSQL, for **INOUT** and **OUT** parameters of type Decimal, test values (in design time) are rounded off.
 
-### Use Ref Cursor as OUT Parameter
+**How to Use a Ref Cursor as an OUT Parameter**
 
-{{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/ref01.png" width="600"  >}} 
+1. Select the **Stored procedure** checkbox.
+
+2. Enter the query to call a stored procedure.<br>
+For example, `CALL GET_SCHEMA_DATA( {num_products}, {ref_regions}, {ref_countries}, {ref_products}, {ref_orders})`. 
+
+{{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/ref00.png" width="600"  >}}
+
+3. Create **IN**, **OUT**, and **INOUT** parameters for all parameters present in the stored procedure. Ensure that the **Name in DB** matches the parameter name in the stored procedure. To use a *Ref cursor*, select **OUT** in the Data Type column.
+
+{{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/ref01.png" width="600"  >}}
+
+4. Click **Run Query**. This returns an entity with the number of affected rows and all INOUT and OUT parameters. To view the result set of the *Ref cursor*, select the appropriate item from the drop-down list. The drop-down includes an entity with all OUT parameters and Ref cursors as associated entities.
 
 {{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/ref02.png" width="600"  >}}
+{{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/ref02a.png" width="600"  >}}
+
+5. Click **Use Response** > **Create Entity** to save the query and the newly-created entities in the domain model. To modify the entity name, click the pen icon.
 
 {{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/ref03.png" width="600"  >}}
 
