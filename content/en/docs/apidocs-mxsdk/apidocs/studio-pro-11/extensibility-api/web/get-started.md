@@ -60,20 +60,20 @@ containing the source code of the extension.
 
 ### Exploring the Created Extension
 
-In the following example, the name of your extension is `myextension` and you are exploring it using
-Visual Studio Code.
+In the following example, the name of your extension is `myextension` and you are exploring it using Visual Studio Code.
 
-As a first step your extension will have to get an instance of the Studio Pro api. From the Explorer window, navigate to src/main/index.ts and select it to open the file.
+Before you begin, your extension will have to get an instance of the Studio Pro API. to do this, from the Explorer window, navigate to `src/main/index.ts` and select it to open the file.
 
-Reading through the source code you should see the following:
+In the source code, you should see the following:
 
-1. Line 6 gets an instance of the Studio Pro api by calling getStudioProApi
+1. Line 6 gets an instance of the Studio Pro API by calling `getStudioProApi`.
+   
     ```typescript
     export const component: IComponent = {
         async loaded(componentContext) {
             const studioPro = getStudioProApi(componentContext);
 
-2. Line 7 adds a menu
+2. Line 7 adds a menu:
 
     ```typescript
     await studioPro.ui.extensionsMenu.add({
@@ -85,7 +85,7 @@ Reading through the source code you should see the following:
     });
     ```
 
-3. Line 16 opens a tab
+3. Line 16 opens a tab.
 
     ```typescript
     // Open a tab when the menu item is clicked
