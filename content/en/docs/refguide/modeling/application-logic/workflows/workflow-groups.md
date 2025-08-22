@@ -51,7 +51,7 @@ Before workflow groups can be used effectively, they must first be populated wit
 
 This is done by setting the **WorkflowGroup_User** association between the **System.WorkflowGroup** object and the **User** objects that should belong to the workflow group. The [Workflow Commons](/appstore/modules/workflow-commons/) module provides default pages to do so.
 
-## Using Groups in XPath
+## Using Workflow Groups in XPath
 
 For each workflow group that is defined in app settings, an XPath token is defined, which you can use to select the group.
 
