@@ -114,6 +114,8 @@ Do the following:
 
 ## Call Stored Procedure
 
+{{% alert color="info" %}} Stored procedures with primitive datatype parameters and Ref Cursors are supported on databases that allow this feature.{{% /alert %}}
+
 To call a stored procedure, do the following:
 
 1. Select the **Stored procedure** checkbox.
@@ -141,8 +143,6 @@ To call a stored procedure, do the following:
     {{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/12.png" width="600"  >}}
 
 {{% alert color="info" %}}DML commands within a stored procedure are rolled back if they are not committed by a stored procedure, but DDL commands are not.{{% /alert %}}
-
-{{% alert color="info" %}} Only stored procedures with primitive datatype parameters are supported.{{% /alert %}}
 
 For Postgres, Mendix supports the following parameters:
 
