@@ -10,14 +10,12 @@ These release notes cover changes to the [Extensibility API for Web Developers](
 
 ## Version 11.2.0
 
-* We introduced a new Command registration Api check out our guide at [Commands Api](/apidocs-mxsdk/apidocs/web-extensibility-api-11/command-api/)
-
-* We included a new method for initializing the studio Pro api (this is a breaking change) Please check out the getting started guide for usage at [Getting started](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/)
+* We included a new method for initializing the studio Pro API. (this is a breaking change) For more information, see [Getting Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/).
+* We introduced a new command registration API. For more information, see [Commands API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/command-api/).
 
 ## Version 11.1.0
 
-* We added a new Editors api under `studioPro.ui.editors` which allows you to get the active document and open the default editor for a document.
-You can check out our guide on the new api at [Editors Api](/apidocs-mxsdk/apidocs/web-extensibility-api-11/editor-api/).
+* We introduced a new Editors API under `studioPro.ui.editors`, which allows you to get the active document and open the default editor for a document. For more information, see [Editor API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/editor-api/).
 
 ## Version 11.0.0
 
