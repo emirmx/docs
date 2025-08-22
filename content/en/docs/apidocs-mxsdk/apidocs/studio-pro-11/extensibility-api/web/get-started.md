@@ -33,7 +33,7 @@ This section will show you how to build and test an extension.
 
 ### Create a Test App
 
-Create a new app using the **Blank Web App** template. Make sure to take note of the application directory (more precisely, the application *.mpr* file) where the application is stored on disk. 
+Create a new app using the **Blank Web App** template.
 
 {{% alert color="info" %}}
 You can also open the application directory by clicking the **App** menu > **Show App Directory in Explorer** (or **Show App Directory in Finder**) in Studio Pro.
