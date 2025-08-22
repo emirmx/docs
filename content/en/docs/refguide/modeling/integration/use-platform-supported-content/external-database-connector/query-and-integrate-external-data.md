@@ -86,9 +86,17 @@ You can use the existing entity when updating a existing query.
 
 For example, you can modify the query below to retrieve a list of `productLine`, `textDescription`, and `htmlDescription` columns from `productLines` where the `productLine` is **Planes**.
 
-SQL Query:
-Existing Query: `Select productLine, textDescription from productlines`
-Modified Query: `Select productLine, textDescription, htmlDescription from productlines`
+Existing Query: 
+
+```sql
+Select productLine, textDescription from productlines
+``` 
+
+Modified Query: 
+
+```sql
+Select productLine, textDescription, htmlDescription from productlines
+```
 
 Do the following:
 
@@ -120,9 +128,12 @@ To call a stored procedure, do the following:
 
 4. Click **Run Query**. This returns an entity with the number of affected rows and all INOUT and OUT parameters. If the stored procedure returns a **Result set**, an associated entity is created.
 
-    **OUT parameters**
+    **OUT parameters**:
+
     {{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/11.png" width="600"  >}}
-     **Result set**
+
+     **Result set**:
+
     {{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/11a.png" width="600" >}}
 
 5. Click **Use Response** > **Create Entity** to save the query and the newly-created entities in the domain model.
@@ -155,10 +166,12 @@ For Postgres, Mendix supports the following parameters:
 
 For MSSQL, for **INOUT** and **OUT** parameters of type Decimal, test values (in design time) are rounded off.
 
-**How to use Ref Cursor as out parameter**
+### Use Ref Cursor as OUT Parameter
 
 {{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/ref01.png" width="600"  >}} 
+
 {{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/ref02.png" width="600"  >}}
+
 {{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/ref03.png" width="600"  >}}
 
 
