@@ -46,7 +46,7 @@ The **Due date** section properties are described in the table below:
 | Duration | You can set the deadline for the user task with the **Due in** option, which indicates the number of hours, days, or weeks the task is due in. Possible values of the property are the following ones:<br /><ul><li>Hours</li><li>Days</li><li>Weeks</li> </ul> |
 | Expression | You can set a due date for the user task writing an expression. For example, to set a due date to tomorrow, you can use `addDays([%CurrentDateTime%], 1)`. |
 
-### Targeted Users Section {#users}
+### Targeted Users Section {#targeted-users}
 
 Targeted users are the users who can access and work on the user task. The **Targeted Users** section allows you to manage which users should see a user task in their inbox.
 
@@ -84,7 +84,7 @@ When enabled, you can automatically assign a user task when a single user is tar
 {{% alert color="info" %}}
 **Target Workflow group(s)** was introduced in Studio Pro 11.2.0 as a beta feature. To enable this option, go to **Edit** > **Preferences** > the **New features** tab > the **Workflow** section. 
 
-For more information on how to configure workflow groups, see [Workflow Groups](/refguide/workflow-groups).
+For more information on how to configure workflow groups, see [Workflow Groups](/refguide/workflow-groups/).
 {{% /alert %}}
 
 This option lets you target users indirectly through **Workflow group(s)**. You can use either an XPath constraint or a microflow, which results in a list of one or more **System.WorkflowGroup** objects. These objects are stored in the **WorkflowUserTask_TargetGroups** association, after which the user task will show up in the task inbox of any user that is associated to those workflow groups.
