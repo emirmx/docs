@@ -57,7 +57,7 @@ export const component: IComponent = {
 
 It is also possible to create a context menu that belongs to a document in the App Explorer or a document editor, and that menu can have a registered command attached to it. To do so, you can use the [App Explorer API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/app-explorer-api/) or the [Documents API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/documents-api/). 
 
-The command registration for commands that interact with documents are slightly different. They require a payload of type `{ documentId: string }`; the backend will return the menu when it is  clicked. The `documentId` is the id of the exact document that was interacted with by the menu.
+The command registration for commands that interact with documents are slightly different. They require a payload of type `{ documentId: string }`; the backend will return the menu when it is clicked. The `documentId` is the id of the exact document that was interacted with by the menu.
 
 {{% alert color="info" %}}
 The command must be registered before creating any menus that might be attached to it.
