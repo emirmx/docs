@@ -51,8 +51,8 @@ export const component: IComponent = {
 
 The payload of the command must be an object containing a document Id (`{ documentId: string }`). Registering the command requires the exact type of the payload, or your extension will not compile. The `documentId` will be the Id of the document the menu is attached to (in this scenario, the exact `Microflow` node in the App Explorer).
 
-{{% alert color="info" %}}
-Be sure to remember that the command must be registered before creating the menu.
+{{% alert color="warning" %}}
+The command must be registered before creating the menu.
 {{% /alert %}}
 
 ## Conclusion
