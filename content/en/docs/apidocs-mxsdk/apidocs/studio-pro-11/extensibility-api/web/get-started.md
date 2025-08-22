@@ -122,7 +122,7 @@ In the source code, you should see the following:
 
 When you install the extension, you will see a new menu item within Studio Pro.
 
-### Building and Debugging the Extension
+### Building, Installing, and Debugging the Extension
 
 The following steps occur within Visual Studio Code:
 
