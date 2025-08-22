@@ -18,14 +18,14 @@ To configure workflow groups, open **App** > **Settings** and select the **Workf
 
 A Workflow group can be defined with the following properties:
 
-* **Name**: The name of the group. The name can only contain letters, digits and underscores, and cannot start with a digit.
+* **Name**: The name of the group. It must be unique. The name can only contain letters, digits and underscores, and cannot start with a digit. 
 * **Documentation**: A description of the group. The description can contain any free-form text.
 
 ## The System.WorkflowGroup Entity
 
 The **System.WorkflowGroup** entity represents the defined workflow groups in the database. It has the following attributes and association:
 
-* **Name**: The name of the workflow group. It must be unique.
+* **Name**: The name of the workflow group.
 * **Description**: The description of the workflow group.
 * **WorkflowGroup_User**: The users that are part of the workflow group. The multiplicity is a many-to-many association.
 
