@@ -44,7 +44,6 @@ For MxBuild and macOS users:
 If you are using the macOS version of Studio Pro and you store your project files on an external drive not formatted using the Apple File System, macOS can generate hidden files and folders that can make Windows versions of Studio Pro or MxBuild not work as expected.
 {{% /alert %}}
 
-
 ## Command Line
 
 To build your package, specify the Mendix app file (*.mpr*) for which you want to build the deployment package (*.mda*) on the command-line. The file name may be preceded by a relative or absolute path. The app file should be located inside a Mendix app directory.

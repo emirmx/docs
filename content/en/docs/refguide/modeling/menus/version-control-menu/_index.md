@@ -23,10 +23,6 @@ The **Commit** option commits all local changes made to the app since the previo
 
 The **Push** option sends your local changes to the version control server. For more information, see the [Commit/Push](/refguide/version-control/#commit) section in *Version Control*.
 
-## Show Changes on Disk {#show-changes}
-
-**Show Changes on Disk** opens a dialog that shows which files on disk have been changed since the last commit.  
-
 ## History
 
 The **History** option shows the history of committed revisions of the app. For more information on what is displayed in **History**, see [History](/refguide/history-dialog/).

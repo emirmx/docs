@@ -182,6 +182,16 @@ For more inspiration and guidance on how to use these operations in your logic a
 For more information on how to set up a vector database for retrieval augmented generation (RAG), see the [Setting up a Vector Database](/appstore/modules/genai/pgvector-setup/) section and the [RAG Example Implementation in the GenAI Showcase App](/appstore/modules/genai/rag/) section.
 {{% /alert %}}
 
+## Troubleshooting
+
+### Attribute or Reference Required Error Message After Upgrade 
+
+If you encounter an error stating that an attribute or a reference is required after an upgrade, first upgrade all modules by right-clicking the error, then upgrade Data Widgets.
+
+### Conflicted Lib Error After Module Import
+
+If you encounter an error caused by conflicting Java libraries, such as `java.lang.NoSuchMethodError: 'com.fasterxml.jackson.annotation.OptBoolean com.fasterxml.jackson.annotation.JsonProperty.isRequired()'`, try synchronizing all dependencies (**App** > **Synchronize dependencies**) and then restart your application.
+
 ## Read More {#read-more}
 
 * [pgvector: Open-Source Extension For Vector Similarity Search For PostgreSQL](https://github.com/pgvector/pgvector?tab=readme-ov-file#pgvector)

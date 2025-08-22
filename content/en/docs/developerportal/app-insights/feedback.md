@@ -37,7 +37,7 @@ After a user reports feedback in the app using the feedback widget, they get an 
 * Submission date
 * Last activity on the feedback 
 
-##### What a User Can See on the Page
+##### What a User Cannot See on the Page
 
 * Metadata
 * Summary of the feedback that your team wrote
@@ -72,7 +72,7 @@ In the list on the **Inbox** tab, you can find the following information for eac
 * **Priority** – the priority that the feedback has
 * **Date** – the date when the feedback was submitted
 
-{{% alert color="info" %}}For more information about each bullet item above, see the list in the [Feedback Details](#feedback-details) section.{{% /alert %}}
+For more information about each item, refer to the [Feedback Details](#feedback-details) section.
 
 To export all feedback into one CSV file, click **Export**.
 
@@ -133,9 +133,9 @@ To search by **Subject** and **ID**, type the keywords in the search bar.
 
 Clicking the filter bar opens the **Filter by** side panel. In this side panel, you can filter the feedback using the **Environment**, **Closed date**, **Submission date**, and **Assignees**. The filters are saved until the page is refreshed.
 
-## Opening Feedback in Inbox or Archive{#feedback-details}
+## Feedback Details {#feedback-details}
 
-On the [Inbox](#inbox) and [Archive](#archive) tabs, you can open feedback by clicking it in the list. If you click the **ID** of the feedback, the feedback details page opens. If you click a place other than the **ID** of the feedback, a side panel opens. Either the feedback details page or the side panel contains two tabs: [Feedback](#feedback) and [Reporter Comments](#contact-reporter).
+On the [Inbox](#inbox) and [Archive](#archive) tabs, you can open a feedback item by clicking it in the list. If you click the **ID** of the feedback, the feedback details page opens. If you click a place other than the **ID** of the feedback, a side panel opens. Either the feedback details page or the side panel contains two tabs: [Feedback](#feedback) and [Reporter Comments](#contact-reporter).
 
 ### Feedback Tab {#feedback}
 
@@ -149,8 +149,9 @@ The **Feedback** tab shows the following items:
     * **Copy Link** ({{% icon name="hyperlink" %}}) – Click this button to copy the URL to the feedback. You can send the URL to other people.
     * **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) – Click this button to open a menu with the following items:
         * **Move** – Click this button to move the feedback to any other app of which you are a member. Whenever you move feedback, you also move all linked feedback. If you only want to move one feedback item, you need to unlink the feedback from the group first.
-        * **Create Story** – If your app is connected to [Epics](/developerportal/project-management/epics/) or [Jira](/developerportal/project-management/jira-connector/), clicking this button converts the feedback to a story on the designated board in Epics or Jira. Once the story is created, clicking this button brings you to the story on the board right away.
-        * **Delete** – Click this button to removee the feedback permanently from **Feedback**. The result is irreversible.
+        * **Create Story** – If your app is connected to [Epics](/developerportal/project-management/epics/) or [Jira](/developerportal/project-management/jira-connector/), clicking this button converts the feedback to a story on the designated board in Epics or Jira. Once the story is created, clicking this button brings you to the story on the board right away.    
+          You can also create feedback-based stories using Maia. For details, refer to the [Creating Stories with Maia](#create-with-maia) section.
+        * **Delete** – Click this button to remove the feedback permanently from **Feedback**. The result is irreversible.
     
 * **Last activity** – This shows when the last edit to the feedback was made.
 
@@ -193,9 +194,34 @@ The **Feedback** tab shows the following items:
 
   You can unlink a feedback item by hovering over the feedback and clicking the **Remove** ({{% icon name="remove" %}}) button. Once the feedback is not linked anymore, it appears again in the list on the **Inbox** or **Archive** tab.
 
+* **Story** – This displays any stories that are linked to that feedback item.    
+    To unlink a story from a feedback item, click its corresponding {{% icon name="unlink" %}} **unlink** button.    
+    If there are no linked stories, you have the following options:
+    
+    * **Add to Story** – Add the feedback item to an existing story.
+    * **Create Story** – Create a new story based on the feedback item.
+
 * **Attachments** – This contains attachments to this feedback. To upload an attachment, click **Add** ({{% icon name="add" %}}) and select the file. The following formats are supported: .*peg*, *.png*, and *.gif*. Each attachment can be a maximum of 5 MB in size. Once an attachment is uploaded, only your team members can view, download, and delete the attachment.
 
 * **Communication** – This section shows all the comments on this feedback from your team. You can leave comments here and attach attachments to each comment. Comments submitted to this section are only visible to your team members.
+
+#### Creating Stories with Maia {#create-with-maia}
+
+You can use Maia to create a story based on one or more feedback items. To do that, follow these steps:
+
+1. Enable Maia in **Feedback**. To do that, access the {{% icon name="cog" %}}**Settings** menu, and toggle on the Maia option on the **Mendix AI Assistance** tab.
+2. Select a feedback item from the list.
+3. Click **Create Story**. The **Create Story** window is displayed.
+4. Click {{% icon name="sparkles" %}}**Create with Maia**. The **Create Story with Maia** window is displayed.
+5. Check the suggested story description.    
+   If you do not agree with the suggestion, click **Regenerate Response** to obtain a different suggestion.
+   If you agree with the suggestion, click **Apply to Story**.
+6. Check Maia's suggestions for the **Title**, **Type**, **Sprint**, and **Epic** fields, and edit them if necessary.
+7. Click **Create Story**. 
+
+A banner at the bottom of the window shows you that the story has been created. You can click **Open** to access the story on the **Planning** page.
+
+You can select several feedback items to create a story based on all of them.
 
 ### Reporter Comments Tab {#contact-reporter}
 
@@ -209,7 +235,7 @@ From the [feedback details](#feedback-details) page, you can manage tags by clic
 
   {{< figure src="/attachments/developerportal/app-insights/feedback/tag-management-settings.png" alt="tag management setting" >}}
 
-  To create a new tag, do as follows:
+  To create a new tag, follow these steps:
 
   1. Click **Add Tag**. A text box appears, with a colored circle indicating the color of the new tag.
   2. In the text box, enter the name of the new tag.
