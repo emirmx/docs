@@ -19,13 +19,15 @@ The Commands API allows users to register a reusable command. These commands can
 * [Documents API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/)
 * [App Explorer API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/app-explorer-api/)
 
-To create commands, you can call the Commands API `registerCommand`.
+To register commands, you can call the Commands API `registerCommand`.
 
-In the sample code below, we register a command, then attach it to a menu by setting the property `commandId` to the `Menu` object. Keep in mind that when using a command in a menu, it is no longer necessary to listen to the `menuItemActivated` event. With commands, you can simply register your action and set the command Id on the menu itself.
+In the sample code below, we register a command, then attach it to a menu by setting the property `commandId` to the `Menu` object.
 
-In addition, note that the `registerCommand` requires a generic type for the command payload once executed. For standalone menus that have a command without payload, you can register it with `<void>`. When using `void`, the generic type declaration can also be left out (for example, `registerCommand<void>(commandId...)` becomes `registerCommand(commandId...)`).
+{{% alert color="info" %}}
+The `registerCommand` requires a generic type for the command payload once executed. For standalone menus that have a command without payload, you can register it with `<void>`. When using `void`, the generic type declaration can also be left out (for example, `registerCommand<void>(commandId...)` becomes `registerCommand(commandId...)`).
+{{% /alert %}}
 
-For commands that require payload, you must make sure you register the command with the exact expected payload object type. See the [App Explorer API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/app-explorer-api/) and [Documents API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/documents-api/) documentations for clear examples.
+For commands that require payload, you must make sure you register the command with the exact expected payload object type. See the [App Explorer API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/app-explorer-api/) and [Documents API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/documents-api/) documentation for clear examples.
 
 ```typescript
 import { ComponentContext, IComponent, Menu, StudioProApi, getStudioProApi } from "@mendix/extensions-api";
@@ -58,7 +60,7 @@ It is also possible to create a context menu that belongs to a document in the A
 The command registration for commands that interact with documents are slightly different. They require a payload of type `{ documentId: string }`; the backend will return the menu when it is  clicked. The `documentId` is the id of the exact document that was interacted with by the menu.
 
 {{% alert color="info" %}}
-Be sure to remember that the command must be registered before creating any menus that might be attached to it.
+The command must be registered before creating any menus that might be attached to it.
 {{% /alert %}}
 
 ## Conclusion
