@@ -107,7 +107,7 @@ Reading through the source code you should see the following:
     );
     ```
 
-4. If you navigate to `build-extension.mjs`, you can choose the directory to which the extension will be installed to after being built in line 6:
+4. If you navigate to `build-extension.mjs`, you can choose the directory to which the extension will be installed to after being built by changing line 6:
 
      ```typescript
      const appDir = "C:\\TestApps\\AppTestExtensions"
