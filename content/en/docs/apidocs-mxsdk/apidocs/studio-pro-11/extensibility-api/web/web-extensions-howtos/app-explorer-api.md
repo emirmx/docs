@@ -16,11 +16,11 @@ This how-to uses the results of [Get Started with the Web Extensibility API](/ap
 
 In this example, you will create a menu which will show for each microflow in the App Explorer. Use the full name of the document type to specify which type of document a menu should belong to (for example, `Microflows$Microflow` for microflows or `Pages$Page` for pages). The documentation for these document type names can be found at [Access a Mendix Model Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/model-api/).
 
-Follow the steps below:
+The code below does the following:
 
-1. Register a command through the [Command API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/command-api/).
-2. Attach the `commandId` to the new menu. 
-3. Using the `appExplorer` API's `addContextMenu` method, add the menu to all `Microflow` document nodes.
+1. Registers a command through the [Command API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/command-api/).
+2. Attaches the `commandId` to the new menu. 
+3. Uses the `appExplorer` API's `addContextMenu` method to add the menu to all `Microflow` document nodes.
 
 ```typescript
 import { ComponentContext, IComponent, Menu, StudioProApi, getStudioProApi } from "@mendix/extensions-api";
