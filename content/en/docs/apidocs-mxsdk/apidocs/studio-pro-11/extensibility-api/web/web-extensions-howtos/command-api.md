@@ -25,7 +25,7 @@ In the sample code below, we register a command, then attach it to a menu by set
 
 In addition, note that the `registerCommand` requires a generic type for the command payload once executed. For standalone menus that have a command without payload, you can register it with `<void>`. When using `void`, the generic type declaration can also be left out (for example, `registerCommand<void>(commandId...)` becomes `registerCommand(commandId...)`).
 
-For commands that require payload, you must make sure you register the command with the exact expected payload object type. See the [App Explorer API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/app-explorer-api/) and [Documents API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/documents-api/) documentations for clear examples.
+For commands that require payload, you must make sure you register the command with the exact expected payload object type. See the [App Explorer API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/app-explorer-api/) and [Documents API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/documents-api/) documentation for clear examples.
 
 ```typescript
 import { ComponentContext, IComponent, Menu, StudioProApi, getStudioProApi } from "@mendix/extensions-api";
