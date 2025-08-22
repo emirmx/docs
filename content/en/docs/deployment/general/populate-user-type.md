@@ -10,7 +10,7 @@ aliases:
 
 In the Mendix Pricing Plan, a distinction is made between Internal and External Named Users of a Mendix app. As a customer, you purchase a license for a specific number of Internal users and, optionally, for External users (which are typically cheaper). For accurate user metering, External users must be correctly classified. If they are not, your company may exceed the licensed capacity for Internal users, and Mendix may require you to acquire additional Internal user licenses.
 
-This document helps you to set up your apps to meter External users correctly. It describes different sample solutions that can help you in External User classification for existing users of your apps.
+This document helps you set up your apps to ensure accurate metering for your External users. It describes different sample solutions that can help you in External User classification for existing users of your apps.
 
 {{% alert color="info"  %}}
 **Definitions** 
@@ -24,9 +24,9 @@ This document helps you to set up your apps to meter External users correctly. I
 
 ## Background
 
-Every Mendix app has a system module containing an entity `UserReportInfo`. This entity has an attribute `UserType` that is used to classify end-users as `External` or `Internal` Users. This attribute needs to be maintained for all existing and new end-users of a Mendix app. If this attribute is not set, the end-user is classified as an Internal User.
+Every Mendix app has a system module containing an entity `UserReportInfo`. This entity has an attribute `UserType` that is used to classify end-users as `External` or `Internal` Users. Your application must set the attribute for all existing and new (external) end users. If it does not, Mendix will classify those users as Internal.
 
-The *Mendix Metering* module relies on this attribute to ascertain the end-user type and report it back to us.
+The metering relies on this attribute to ascertain the end-user type and report it back to us.
 
 {{< figure src="/attachments/deployment/general/populate-user-type/user-type-enumeration.png" class="no-border" >}}
 
