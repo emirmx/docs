@@ -33,7 +33,7 @@ This section will show you how to build and test an extension.
 
 ### Create a Test App
 
-Create a new app using the **Blank Web App** template. Make sure to take note of the application directory (more precisely, the application *.mpr* file) where the application is stored on disk. 
+Create a new app using the **Blank Web App** template.
 
 {{% alert color="info" %}}
 You can also open the application directory by clicking the **App** menu > **Show App Directory in Explorer** (or **Show App Directory in Finder**) in Studio Pro.
@@ -107,7 +107,7 @@ In the source code, you should see the following:
     );
     ```
 
-4. If you navigate to `build-extension.mjs`, you can choose the directory to which the extension will be installed to after being built in line 6:
+4. If you navigate to `build-extension.mjs`, you can choose the directory to which the extension will be installed to after being built by changing line 6:
 
      ```typescript
      const appDir = "C:\\TestApps\\AppTestExtensions"
@@ -140,7 +140,7 @@ If the last two questions of the extension generator were answered and you have 
 2. Select **Run and Debug** from the side panel.
 3. Click the play button on the top of the panel (or press F5).
 
-This will run Studio Pro in the extension development mode and open the configured application. You will see a new `Extensions` item in the top menu.
+This will run Studio Pro in extension development mode and open the configured application. You will see a new `Extensions` item in the top menu.
 
 ## Conclusion
 

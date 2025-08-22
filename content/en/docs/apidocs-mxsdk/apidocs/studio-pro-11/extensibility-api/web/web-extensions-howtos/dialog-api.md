@@ -68,7 +68,7 @@ export const component: IComponent = {
                         await studioPro.ui.messageBoxes.show(
                             "info",
                             JSON.stringify(result)
-                        );
+                    );
                 }
             }
         );
