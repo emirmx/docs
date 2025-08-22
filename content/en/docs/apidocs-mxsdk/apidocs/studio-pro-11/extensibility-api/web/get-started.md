@@ -45,7 +45,13 @@ To accelerate your extension development, we provide an extension generator that
 
 To use the generator, navigate to your desired source code directory and run the command `npm create @mendix/extension`. You may be prompted by `npm` to grant permission to install the generator. After installation, you will be guided through a series of questions to help configure your extension.
 
-You will be asked to select the programming language (TypeScript is used in our tutorials), specify the extension name, and choose whether to use React for the extension’s UI. The next two questions, while optional, are highly recommended, as they enable direct debugging and deployment from Visual Studio Code. These questions request the path to the Studio Pro executable and the application `.mpr` package. The final question allows you to select the Studio Pro version; be sure to choose version 11.
+You will be asked the following:
+
+* Select the programming language (TypeScript is used in our tutorials)
+* Specify the extension name
+* Choose if you  will use React for the extension’s UI
+  
+The next two questions, while optional, are highly recommended, as they enable direct debugging and deployment from Visual Studio Code. These questions request the path to the Studio Pro executable and the application `.mpr` package. The final question allows you to select the Studio Pro version; be sure to choose version 11.
 
 {{% alert color="info" %}}
 The Studio Pro executable is typically located at `C:\Program Files\Mendix\<version>\modeler\studiopro.exe`. To find the exact path, follow these steps:
