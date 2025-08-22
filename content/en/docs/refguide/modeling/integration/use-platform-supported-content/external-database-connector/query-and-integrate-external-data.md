@@ -64,7 +64,7 @@ You can typecast `String` into UUID, as shown below:
 
     {{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/5.png" width="600" >}}
 
-   b. If **Reuse Entity** is selected, all entities mapped to other queries of same document are listed in the drop-down list. Select the entity you want to reuse and click **Save Query**.
+   b. If **Reuse Entity** is selected, all entities mapped to other queries of same document are listed in the drop-down list. Select the entity you want to reuse and click **Reuse Entity**.
 
     {{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/5a.png" width="600" >}}
 
@@ -74,7 +74,7 @@ You can typecast `String` into UUID, as shown below:
 
     For example, `INSERT INTO classicmodels.productlines(productLine, textDescription) VALUES( {productLine}, {textDescription} )`
 
-2. Click **Save Query**.
+2. Click **Update Query**.
 
     {{< figure src="/attachments/refguide/modeling/integration/use-platform-supported-content/use-the-external-database-connector/6.png" width="600" >}}
 
