@@ -113,7 +113,7 @@ In the source code, you should see the following:
      const appDir = "C:\\TestApps\\AppTestExtensions"
      ```
 
-5. The file `.vscode\launch.json` specifies the launch configuration and enables debugging. Lines 8-9 specify how Studio Pro will be run:
+5. The file `.vscode\launch.json` specifies the launch configuration and enables debugging. The following lines specify how Studio Pro will be run:
      
      ```json
      "runtimeExecutable": "C:\\Program Files\\Mendix\\11.2.0\\modeler\\studiopro.exe",
