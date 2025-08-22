@@ -81,7 +81,11 @@ When enabled, you can automatically assign a user task when a single user is tar
 
 #### Target Workflow Group(s) {#workflow-group}
 
-{{% alert color="info" %}}**Target Workflow group(s)** was introduced in Studio Pro 11.2.0 as a beta feature. To enable this option, go to **Edit** > **Preferences** > the **New features** tab > the **Workflow** section. For more information on how to configure workflow groups, see [Workflow Groups](/refguide/workflow-groups).{{% /alert %}}
+{{% alert color="info" %}}
+**Target Workflow group(s)** was introduced in Studio Pro 11.2.0 as a beta feature. To enable this option, go to **Edit** > **Preferences** > the **New features** tab > the **Workflow** section. 
+
+For more information on how to configure workflow groups, see [Workflow Groups](/refguide/workflow-groups).
+{{% /alert %}}
 
 This option lets you to target users indirectly through **Workflow group(s)**. You can use either an XPath constraint or a microflow, which results in a list of one or more **System.WorkflowGroup** objects. These objects are stored in the **WorkflowUserTask_TargetGroups** association, after which the user task will show up in the task inbox of any user that is associated to those workflow groups.
 

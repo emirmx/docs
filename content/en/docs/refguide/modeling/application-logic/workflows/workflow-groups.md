@@ -6,9 +6,9 @@ weight: 40
 
 ## Introduction
 
-A workflow group provides the means to group users for [user task targeting](/refguide/user-task#target-users).
+A workflow group provides the means to group users for [user task targeting](/refguide/user-task/#workflow-group).
 
-The advantage of targeting users through groups is that it is a dynamic concept: when users are added or removed from the group, the targeted users of a user task change accordingly. This does not happen when targeting users directly. For example, when a new user "John" is created and added to a group "Managers", he will instantly see all current tasks that are targeting this group. Similarly, those tasks will disappear from his inbox when he is removed from the group.
+The advantage of targeting users through groups is that it is a dynamic concept: when users are added or removed from the group, the targeted users of a user task change accordingly. This does not happen when targeting users directly. For example, when a new user "John" is created and added to a "Managers" group, he will instantly see all the current tasks that are targeting this group. Similarly, those tasks will disappear from his inbox when he is removed from the group.
 
 ## Configuration
 

@@ -344,7 +344,11 @@ You can set an explicit order in the theme settings (**App Settings** > **Theme*
 
 ### User Entity
 
-**User entity** defines the entity which is used in [target-users-using](/refguide/user-task/#target-users). If you assign a user task using an XPath, you can use attributes of this entity. If you are using a microflow, the entity defines the return type the microflows expects. For more information, see the [Targeted Users Section](/refguide/user-task/#users) section in *User Task*.
+**User entity** defines the entity which is used in [user targeting](/refguide/user-task/#users). If you assign a user task using an XPath, you can use attributes of this entity. If you are using a microflow, the entity defines the return type the microflows expects. For more information, see the [Target User(s)](/refguide/user-task/#users) section in *User Task*.
+
+### Workflow Groups
+
+**Workflow group(s)** defines groups of users for [user task targeting](/refguide/user-task/#workflow-group). When users are added or removed from the group, the targeted users of a user task change accordingly. For more information, see [Workflow Groups](/refguide/workflow-groups/).
 
 ### Optimization
 
