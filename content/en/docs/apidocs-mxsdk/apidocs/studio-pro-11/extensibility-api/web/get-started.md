@@ -24,7 +24,7 @@ Extensions can be built on any operating system as the underlying framework is c
 {{% /alert %}}
 
 {{% alert color="info" %}}
-Please note that extension development is only possible by starting Studio Pro with the `--enable-extension-development` feature flag.
+Extension development is only possible by starting Studio Pro with the `--enable-extension-development` feature flag.
 {{% /alert %}}
 
 ## Creating Your First Extension
@@ -36,7 +36,7 @@ This section will show you how to build and test an extension.
 Create a new app using the **Blank Web App** template.
 
 {{% alert color="info" %}}
-You can also open the application directory by clicking the **App** menu > **Show App Directory in Explorer** (or **Show App Directory in Finder**) in Studio Pro.
+You can also open the application directory containing the application `.mpr` file by clicking the **App** menu > **Show App Directory in Explorer** (or **Show App Directory in Finder**) in Studio Pro.
 {{% /alert %}}
 
 ### Creating the Extension
