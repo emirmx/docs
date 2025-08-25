@@ -13,6 +13,14 @@ description: "Native Template 11 release notes."
 
 * We have fixed deprecated Kotlin extension function used in react-native-screens package.
 
+## 11.0.7 {#1005}
+
+**Release date: August 4, 2025**
+
+### Fixes
+
+* We fixed a problem that caused SVGs to crash when using **borderRadius**. This was resolved by upgrading the **react-native-svg** version to 15.11.2.
+
 ## 11.0.6 {#1005}
 
 **Release date: June 5, 2025**
