@@ -540,9 +540,9 @@ An app will return a successful health check status if all of these conditions a
 {{% /alert %}}
 
 {{% alert color="info" %}}
-Starting from Mendix Operator 2.23.0, environments running in `leaderless` mode will use the Mendix Runtime's built-in liveness and readiness checks.
+Starting from Mendix Operator 2.23.0, environments running in `leaderless` mode use the Mendix Runtime's built-in liveness and readiness checks.
 
-When another **runtimeLeaderSelection** mode is used (default, unspecified `assigned` mode or `none`), the healthcheck microflow will be used, as described above.
+When another **runtimeLeaderSelection** mode is used (default, unspecified `assigned` mode, or `none`), the healthcheck microflow is used, as described above.
 {{% /alert %}}
 
 #### Customize Liveness Probe to Resolve Crash Loopback Scenarios
