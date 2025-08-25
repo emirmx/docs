@@ -52,6 +52,23 @@ For more information, refer to the User Provisioning section of the following mo
 * [SCIM](/appstore/modules/scim/#user-provisioning)
 * [SAML](/appstore/modules/saml/#custom-provisioning-rt)
 
+#### Prerequisites for IdP-Based User Classification
+
+1. Mendix version: this method requires Mendix version 9.24.2 and above.
+
+2. Module versions: ensure you are using the following minimum module versions:
+
+    * OIDC SSO: v3.0.0 or above
+    * SCIM: v1.0.2 or above
+    * SAML: v4.0.0 or above
+
+3. IdP Setup: use separate IdPs for `Internal` and `External` users.
+
+    {{% alert color="info" %}}It is possible to set up two separate connections between your app and your IdP. In this scenario, the IdP sees your app as two distinct clients/services. The Mendix app sees them as two distinct IdPs, each with its own provisioning configuration. This allows assigning different `UserType` values per IdP connection.
+    {{% /alert %}}
+
+4. Classification on login: classification of user happens when they login. If your application has limited user buckets (for example, license restrictions for internal/external users), and timely classification is critical, ensure all external users log in before the limits are evaluated.
+
 ### Role-Based User Classification
 
 Role-based classification relies on the distinct user roles defined within the application itself. This method is particularly effective for scenarios where an application needs to differentiate between user types, such as internal employees versus external users, by assigning them specific roles. Mendix offers the [User Classification](https://marketplace.mendix.com/link/component/245015) module, which aims to streamline the implementation of user role-based classification, thereby minimizing the development effort required within the application.
@@ -76,7 +93,7 @@ This option lets you build custom logic while still using the framework from the
 
 You can classify users as `Internal` or `External` using your own business rules instead of only roles or IAM settings. With the User Classification module and a microflow, you can combine conditions like email domains. This gives maximum flexibility to handle complex or unique scenarios and ensures accurate Mendix user metering. For more information, see the [Custom Classification](/appstore/modules/user-classification/#custom-classification) section of *User Classification*.
 
-#### Custom Classification Using Your Own Microflows
+#### Custom Classification Using Your Own Microflow
 
 For maximum control, developers can create user classification entirely from scratch using custom microflows. This gives full flexibility to define any classification rules and processes, making it the most customized approach.
 
