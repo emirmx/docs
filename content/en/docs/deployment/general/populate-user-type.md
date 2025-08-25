@@ -69,7 +69,7 @@ For more information, refer to the User Provisioning section of the following mo
         
 2. IdP Setup: Use separate IdPs for `Internal` and `External` users.
 
-    {{% alert color="info" %}}It may be possible to enhance configurations in your IdP by settting-up two separate connections between your app and your IdP. In this scenario, the IdP sees your app as two distinct clients/services. The Mendix app sees them as two distinct IdPs, each with its own provisioning configuration. This allows assigning different `UserType` values per IdP connection. Configurations in your IdP have to ensure that each client only addresses internal or exetrnal users.
+    {{% alert color="info" %}}It may be possible to enhance configurations in your IdP by settting-up two separate connections between your app and your IdP. In this scenario, the IdP sees your app as two distinct clients/services. The Mendix app sees them as two distinct IdPs, each with its own provisioning configuration. This allows assigning different `UserType` values per IdP connection. Configurations in your IdP have to ensure that each client only addresses internal or external users.
     {{% /alert %}}
 
 3. Classification on login: Classification of users happens when they log in. If your application has limited user buckets (for example, license restrictions for internal/external users), and timely classification is critical, ensure all (external) users log in before your limit on internal users is reached, as external users have not been classified as `External` users yet.
