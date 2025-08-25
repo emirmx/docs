@@ -16,7 +16,7 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 #### Mendix Operator v2.23.0 {#2.23.0}
 
-* We added a new, **preview** mode for the `runtimeLeaderSelection` option - a `leaderless` deployment mode.
+* We added a  new `leaderless` deployment mode for the `runtimeLeaderSelection` option. This mode is currently in preview.
    * This is a new option that can be used, in addition of the current `assigned` and `none` modes.
    * Setting `runtimeLeaderSelection` to `leaderless` will only use one Deployment instead of `master` and `worker`. Mendix Runtime nodes will decide which one gets to run any exclusive task.
    * This mode uses a simplified Java launch process and uses a more efficient way of generating JSON logs.
