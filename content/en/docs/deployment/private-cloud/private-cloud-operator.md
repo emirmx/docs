@@ -232,7 +232,7 @@ You must make the following changes:
 * **runtimeLeaderSelection** - Specify how the leader replica should be selected. The following options are available:
     * `assigned` (default mode) - The `master` deployment runs one leader replica, while the `worker` deployment runs all additional replicas.
     * `none` - Do not run any leader replicas, `master` deployment is scaled down to zero. This mode requires a specific infrastructure configuration. Contact Mendix Expert Services before using this feature.
-    * `leaderless` - A mode where the nodes dynamically choose a leader. This feature is in preview mode. It requires Mendix Runtime 10.24 or higher, and Mendix Operator 2.23 or higher.
+    * `leaderless` - A mode where the nodes dynamically choose a leader. This feature is in preview mode. It requires Mendix Runtime 10.24 or newer, and Mendix Operator 2.23 or newer.
 * **customPodLabels** - Specify additional pod labels. Avoid using labels that start with the `privatecloud.mendix.com/` prefix.
     * **general** - Specify additional labels for all pods of the app.
 * **deploymentStrategy** - Specify parameters for the deployment strategy. For more information, see the reduced downtime deployment documentation.
