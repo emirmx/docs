@@ -105,8 +105,7 @@ This percentage can be adjusted by providing a custom value in Custom JVM Option
 ### Operator License
 
 {{% alert color="info" %}}
-Mendix Operator versions **before** 2.23.0 require an Operator licence.
-Starting from Operator version 2.23.0, Operator licenses are no longer needed.
+Mendix Operator versions older than 2.23.0 require an Operator licence. Starting from Operator version 2.23.0, Operator licenses are no longer needed.
 
 A valid subscription and support contract is still necessary to be receive technical support.
 {{% /alert %}}
