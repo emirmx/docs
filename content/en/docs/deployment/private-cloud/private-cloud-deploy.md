@@ -356,9 +356,7 @@ You can get an Operator license from [Mendix Support](https://support.mendix.com
 {{% /alert %}}
 
 {{% alert color="info" %}}
-Starting from version 2.23.0, the Operator no longer performs Operator license checks.
-
-The Operator will show as **Licensed Operator** even when no Operator license is installed.
+Starting from version 2.23.0, the Operator no longer performs Operator license checks. The Operator shows as **Licensed Operator** even when no Operator license is installed.
 
 Environments still need subscription secrets to remove Mendix Runtime trial limitations from the app.
 {{% /alert %}}
