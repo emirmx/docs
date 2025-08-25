@@ -11,7 +11,7 @@ description: "Native Template 11 release notes."
 
 ### Fixes
 
-* We have fixed deprecated Kotlin extension function used in react-native-screens package.
+* We fixed an issue in a deprecated Kotlin extension function used in the **react-native-screens** package.
 
 ## 11.0.7 {#1005}
 
