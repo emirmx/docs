@@ -36,13 +36,13 @@ There are several approaches to classify users as `Internal` or `External`, rang
 
 ### IdP-Based User Classification
 
-The simplest method to set the `UserType` is by using the Identity and Access Management (IAM) modules, which require only configuration without the need to develop a microflow. This approach leverages an existing Identity Provider (IdP) to classify users. The primary benefit of IdP-based classification is its efficiency, as it often only requires configuration within the IAM modules already in use. Mendix offers you the following IAM modules:
+The simplest method to set the `UserType` is by using the Identity and Access Management (IAM) modules, which require only configuration without the need to develop a microflow. This approach leverages an existing Identity Provider (IdP) to classify users. The primary benefit of IdP-based classification is its efficiency, as it typically only requires configuration within the existing IAM modules. Mendix offers you the following IAM modules:
 
 * [OIDC](https://docs.mendix.com/appstore/modules/oidc/)
 * [SCIM](https://docs.mendix.com/appstore/modules/scim/)
 * [SAML](https://docs.mendix.com/appstore/modules/saml/)
 
-Alternatively, you can build a custom microflow described in the [Populating UserType for Existing Users of an App](#using-microflow) section below.
+Alternatively, you can build a custom microflow as described in the [Populating UserType for Existing Users of an App](#using-microflow) section below.
 
 When connecting your app with an IdP, set up the `UserType` through the capabilities of the OIDC SSO, SCIM, or SAML module. The `UserType` is now configured in the User Provisioning, which is integrated into the OIDC SSO, SCIM, and SAML modules. This means you can directly configure end-users of your application as `Internal` or `External` in the **UserProvisioning** tab of your app. Based on this configuration, users are updated each time they log in. These modules allow you to set the `UserType` per IdP as the source of your end-users, assuming that separate IdPs are used for `internal` and `external` users.
 
@@ -54,18 +54,18 @@ For more information, refer to the User Provisioning section of the following mo
 
 #### Prerequisites for IdP-Based User Classification
 
-1. Mendix version: this method requires Mendix version 9.24.2 and above.
-2. Module versions: ensure you are using the following minimum module versions:
+1. Mendix version: This method requires Mendix version 9.24.2 and above.
+2. Module versions: Ensure you are using the following minimum module versions:
 
     * OIDC SSO: v3.0.0 or above
     * SCIM: v1.0.2 or above
     * SAML: v4.0.0 or above
-3. IdP Setup: use separate IdPs for `Internal` and `External` users.
+3. IdP Setup: Use separate IdPs for `Internal` and `External` users.
 
     {{% alert color="info" %}}It is possible to set up two separate connections between your app and your IdP. In this scenario, the IdP sees your app as two distinct clients/services. The Mendix app sees them as two distinct IdPs, each with its own provisioning configuration. This allows assigning different `UserType` values per IdP connection.
     {{% /alert %}}
 
-4. Classification on login: classification of user happens when they login. If your application has limited user buckets (for example, license restrictions for internal/external users), and timely classification is critical, ensure all external users log in before the limits are evaluated.
+4. Classification on login: Classification of users happens when they log in. If your application has limited user buckets (for example, license restrictions for internal/external users), and timely classification is critical, ensure all external users log in before the limits are evaluated.
 
 ### Role-Based User Classification
 
