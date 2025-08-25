@@ -5,6 +5,14 @@ weight: 50
 description: "Native Template 11 release notes."
 ---
 
+## 11.1.4 {#1114}
+
+**Release date: August 25, 2025**
+
+### Fixes
+
+* We have fixed deprecated Kotlin extension function used in react-native-screens package.
+
 ## 11.0.6 {#1005}
 
 **Release date: June 5, 2025**
