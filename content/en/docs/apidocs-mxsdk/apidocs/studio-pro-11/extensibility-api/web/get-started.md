@@ -51,7 +51,12 @@ You will be asked the following:
 * Specify the extension name
 * Choose if you  will use React for the extension’s UI
   
-The next two questions, while optional, are highly recommended, as they enable direct debugging and deployment from Visual Studio Code. These questions request the path to the Studio Pro executable and the application `.mpr` package. The final question allows you to select the Studio Pro version; be sure to choose version 11.
+The next two questions, while optional, are highly recommended, as they enable direct debugging and deployment from Visual Studio Code.
+
+1. Optionally specify the path to the Studio Pro executable (this allows visual studio code to automatically attach to Studio Pro for debugging)
+2. Optionally specify the location of the application `.mpr` package. (This allows for automatic deployment of your extension build to your app)
+
+ The final question allows you to select the Studio Pro version you are targeting; we recommend you choose version 11.
 
 {{% alert color="info" %}}
 The Studio Pro executable is typically located at `C:\Program Files\Mendix\<version>\modeler\studiopro.exe`. To find the exact path, follow these steps:
