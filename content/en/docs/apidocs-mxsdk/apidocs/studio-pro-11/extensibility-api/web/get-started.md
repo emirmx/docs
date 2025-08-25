@@ -122,8 +122,10 @@ In the source code, you should see the following:
 5. The file `.vscode\launch.json` specifies the launch configuration and enables debugging. The following lines specify how Studio Pro will be run:
      
      ```json
+     …
      "runtimeExecutable": "C:\\Program Files\\Mendix\\11.2.0\\modeler\\studiopro.exe",
      "runtimeArgs": ["C:\\TestApps\\AppTestExtensions\\AppTestExtensions.mpr", "--enable-extension-development", "--enable-web-extensions"],
+     …
      ```
 
 When you install the extension, you will see a new menu item within Studio Pro.
