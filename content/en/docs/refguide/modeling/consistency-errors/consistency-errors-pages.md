@@ -376,6 +376,16 @@ To fix CE7006, you need to make sure that the input widget is placed inside the 
 Input widgets can directly use the page and snippet parameters without the need of a data container widget.
 {{% /alert %}}
 
+### Error Code: CE9900 {#error-code-ce9900}
+
+CE9900 error message: *Selection pages are not supported in the React client.*
+
+You get CE9900 if you enable the React client and have an association widget, such as a Reference selector, configured with a selection page.
+
+The selector widgets are not supported in the React client. And if you attempt to convert them to their React client replacement, the Combo box, no configured selection page is going to be transferred. To prevent any leftover stale pages after converting your project, you can repurpose and use the pages in other parts or delete them.
+
+To fix CE9900, you need to configure the selector widget without a selection page. You can right-click on the error to see the usages of the selection page.
+
 ### Incorrect Multiplicity for a Reference Selector {#incorrect-multiplicity-reference}
 
 Error message: *Association {Name} must be a reference (not a reference set).*
