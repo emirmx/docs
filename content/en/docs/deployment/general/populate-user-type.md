@@ -55,13 +55,11 @@ For more information, refer to the User Provisioning section of the following mo
 #### Prerequisites for IdP-Based User Classification
 
 1. Mendix version: this method requires Mendix version 9.24.2 and above.
-
 2. Module versions: ensure you are using the following minimum module versions:
 
     * OIDC SSO: v3.0.0 or above
     * SCIM: v1.0.2 or above
     * SAML: v4.0.0 or above
-
 3. IdP Setup: use separate IdPs for `Internal` and `External` users.
 
     {{% alert color="info" %}}It is possible to set up two separate connections between your app and your IdP. In this scenario, the IdP sees your app as two distinct clients/services. The Mendix app sees them as two distinct IdPs, each with its own provisioning configuration. This allows assigning different `UserType` values per IdP connection.
@@ -82,6 +80,15 @@ Instead of writing microflows, you can classify users as `Internal` or `External
 This approach is simpler, more consistent, and easier to maintain than attribute-based logic.
 
 For more information, see the [Role-based Classification](/appstore/modules/user-classification/#role-based-classification) section of *User Classification*.
+
+#### Prerequisites for Role-Based Classification
+
+1. Use distinct user roles for external and internal users.
+2. Include the User Classification module in your app model. To use it, your app must be running on one of the following Mendix versions:
+
+    * Mx9 LTS
+    * Mx10 LTS
+    * Mx11 and above
 
 ### Custom Classification
 
