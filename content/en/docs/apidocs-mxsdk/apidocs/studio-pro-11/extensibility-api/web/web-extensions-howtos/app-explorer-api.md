@@ -57,7 +57,7 @@ The command must be registered before creating the menu.
 
 ## Conclusion
 
-You have seen how to create context menus for a document node in the app explorer inside Studio Pro. The menu executes a previously registered command.
+You have seen how to create context menus for a document node in the App Explorer. The menu executes a previously registered command.
 
 ## Extensibility Feedback
 
