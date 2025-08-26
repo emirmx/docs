@@ -725,9 +725,9 @@ The table below describes which `CAST` conversions are supported:
 
 | From \ To | BOOLEAN | DATETIME | DECIMAL | INTEGER | LONG | STRING (unlimited) | STRING (limited) |
 |------| :------: | :------: | :------: | :------: | :------: | :------: | :------: |
-| BOOLEAN | ✔ | ✘ | ✘ | ✘ | ✘ | ✔* | ✔*¹ |
-| DATETIME | ✘ | ✔ | ✘ | ✘ | ✘ | ✔* | ✔*² |
-| DECIMAL | ✘ | ✘ | ✔* | ✔* | ✔* | ✔* | ✔*² |
+| BOOLEAN | ✔ | ✘ | ✘ | ✘ | ✘ | ✔*³ | ✔*¹ ³ |
+| DATETIME | ✘ | ✔ | ✘ | ✘ | ✘ | ✔*³ | ✔*² ³ |
+| DECIMAL⁴ | ✘ | ✘ | ✔* | ✔* | ✔* | ✔* | ✔*² |
 | INTEGER | ✘ | ✘ | ✔ | ✔ | ✔ | ✔ | ✔ |
 | LONG | ✘ | ✘ | ✔ | ✔ | ✔ | ✔ | ✔ |
 | STRING | ✘ | ✘ | ✔ | ✔ | ✔ | ✔ | ✔ |
@@ -736,15 +736,17 @@ The table below describes which `CAST` conversions are supported:
 
 ²The conversion of DATETIME and DECIMAL to STRING (limited) is supported only if the value fully fits into the string length. The conversion can fail if the resulting string length is less than 20.
 
-Converting `DATETIME` or `BOOLEAN` to `STRING` returns different format per database.
+³Converting `DATETIME` or `BOOLEAN` to `STRING` returns different format per database.
 
-##### `DECIMAL` precision
+⁴See [`DECIMAL` precision](#dec-prec), below, for further information.
 
-`DECIMAL` data type can have precision and scale as parameters:
+##### `DECIMAL` precision{#dec-prec}
 
-- `DECIMAL(<precision>, <scale>)` — in the case when both parameters are specified, those values are used as precision and scale of the resulting data type
-- `DECIMAL(<precision>)` — when only precision is specified, scaale is set to 0. The resulting data type in that case is `DECIMAL(<precision>, 0)`
-- `DECIMAL` — when no parameters are specified, default values are used. Precision is set to 28, and scale is set to 8: `DECIMAL(28, 8)`
+`DECIMAL` data type can have precision and scale as parameters. This will have the following impact on the way data is converted:
+
+* `DECIMAL(<precision>, <scale>)` – when both parameters are specified, those values are used as precision and scale of the resulting data type
+* `DECIMAL(<precision>)` – when only precision is specified, scale is set to 0. The resulting data type in that case is `DECIMAL(<precision>, 0)`
+* `DECIMAL` – when no parameters are specified, default values are used. Precision is set to 28, and scale is set to 8: `DECIMAL(28, 8)`
 
 If the original value has more digits in the fractional part than required scale, the fractional part is rounded to the required scale. In that case, rounding is done according to the database configuration.
 
@@ -768,7 +770,7 @@ SELECT (Number : 2) as Normal, (Cast(Number AS DECIMAL) : 2) as Casted FROM Sale
 | 1      | 1.0      |
 | 1      | 1.5    |
 
-In case of conversion to `DECIMAL`, scale and precision can be specified
+In the case of conversion to `DECIMAL`, scale and precision can be specified
 
 ```sql
 SELECT
