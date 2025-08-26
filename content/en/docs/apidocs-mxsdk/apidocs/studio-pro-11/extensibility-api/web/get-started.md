@@ -59,7 +59,7 @@ The next two questions, while optional, are highly recommended, as they enable d
  The final question allows you to select the Studio Pro version you are targeting; we recommend you choose version 11.
 
 {{% alert color="info" %}}
-The Studio Pro executable is typically located at `C:\Program Files\Mendix\<version>\modeler\studiopro.exe`. To find the exact path, follow these steps:
+On a Windows machine, the Studio Pro executable is typically located at `C:\Program Files\Mendix\<version>\modeler\studiopro.exe`. To find the exact path, follow these steps:
 
 1. Launch Studio Pro.
 2. Right-click its taskbar icon, then right-click `Mendix Studio Pro 11.2.0` (your version may differ).
