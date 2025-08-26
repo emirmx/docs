@@ -313,3 +313,7 @@ MxBuild is a Windows and Linux command-line tool that can be used to build a Men
 The **mx** command-line tool is a Windows and Linux command-line tool that can be used to do useful things with your Mendix app. For more information, see [mx Command-Line Tool](/refguide/mx-command-line-tool/).
 
 * Mono v5.20.x or .NET v4.7.2
+
+## Geographic Limitations
+
+The Mendix platform is commercially available in China. However [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/) and [Mendix Portal](/portal/) are not offered in China.
