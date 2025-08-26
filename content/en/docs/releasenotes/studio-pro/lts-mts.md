@@ -157,4 +157,4 @@ If a new major version is nearing release, that means an older major version is 
 
 Furthermore, you should uninstall old versions for which support has ended. If you continue to use versions for which support has ended, you do so at your own risk for your applications, data, and security. Mendix does not recommend using versions for which support has ended unless you have purchased the [Extended Support](/support/#extended-support) product.
 
-If you have purchased the Extended Support package you can request Mendix Support for Studio Pro installation files covered under the Extended Support product.
+If you have purchased the Extended Support package, you can request the Studio Pro installation files from Mendix Support that are covered under the Extended Support product.
