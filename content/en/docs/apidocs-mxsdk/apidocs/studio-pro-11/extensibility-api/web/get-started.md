@@ -53,8 +53,8 @@ You will be asked the following:
   
 The next two questions, while optional, are highly recommended, as they enable direct debugging and deployment from Visual Studio Code.
 
-1. Optionally specify the path to the Studio Pro executable (this allows visual studio code to automatically attach to Studio Pro for debugging)
-2. Optionally specify the location of the application `.mpr` package. (This allows for automatic deployment of your extension build to your app)
+* Specify the path to the Studio Pro executable (this allows Visual Studio Code to automatically attach to Studio Pro for debugging)
+* Specify the location of the application `.mpr` package. (This allows for automatic deployment of your extension build to your app)
 
  The final question allows you to select the Studio Pro version you are targeting; we recommend you choose version 11.
 
