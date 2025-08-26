@@ -156,3 +156,5 @@ The "end of support" for a version means that fixes (including fixes for securit
 If a new major version is nearing release, that means an older major version is nearing its end of support. If you are still using a major version for which support will end, Mendix recommends that you stop using that version and move to a newer LTS version that is supported. 
 
 Furthermore, you should uninstall old versions for which support has ended. If you continue to use versions for which support has ended, you do so at your own risk for your applications, data, and security. Mendix does not recommend using versions for which support has ended unless you have purchased the [Extended Support](/support/#extended-support) product.
+
+If you have purchased the Extended Support package, you can request the Studio Pro installation files from Mendix Support that are covered under the Extended Support product.
