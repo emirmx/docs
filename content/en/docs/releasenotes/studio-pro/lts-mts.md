@@ -25,10 +25,12 @@ For Mendix 10 and 11, we are planning to follow this release timeline:
 | 10.6 MTS | December 2023 |
 | 10.12 MTS | June 2024 |
 | 10.18 MTS | December 2024 |
-| 10.22 | April 2025 |
-| 10.23 | May 2025 |
 | 11.0 GA | June 2025 |
 | 10.24 LTS | June 2025 |
+| 11.6 MTS | December 2025 |
+| 11.12 MTS | June 2026 |
+| 11.18 MTS | December 2026 |
+| 11.24 LTS | June 2027 |
 
 ### Minor Version
 
@@ -44,7 +46,7 @@ A patch version is released on an as-needed basis. It includes security fixes an
 
 ## Long-Term Support Version (LTS) {#lts}
 
-An LTS version is the last minor release of a major version. Its release is aligned with the GA release of the next major version. For example, the 10.24 LTS version will be released in the same month as Mendix 11 GA. Once a minor version becomes an LTS, it will not have new features added to it. 
+An LTS version is the last minor release of a major version. Its release is aligned with the GA release of the next major version. For example, the 10.24 LTS version was released in the same month as Mendix 11 GA. Once a minor version becomes an LTS, it will not have new features added to it. 
 
 These are the current LTS versions of Studio Pro:
 
@@ -91,7 +93,7 @@ The impact of upgrading from an LTS to an LTS is often the lowest of these optio
 
 An MTS is a minor version released approximately every 6 months after a new major version release for general availability.
 
-This is the current MTS version of Studio Pro:
+These are the current MTS version of Studio Pro:
 
 * [10.6](/releasenotes/studio-pro/10.6/) (started in December, 2023)
 * [10.12](/releasenotes/studio-pro/10.12/) (started in June, 2024)
