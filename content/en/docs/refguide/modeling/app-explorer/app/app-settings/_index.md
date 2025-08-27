@@ -152,7 +152,7 @@ The **Hash algorithm** is used to generate hash values for attributes of the has
 
 {{% alert color="warning" %}}
 
-MD5 and SHA256 are only provided for backwards compatibility. They should never be used due to known vulnerabilities. 
+MD5 and SHA256 are only provided for backwards compatibility. They should not be used due to known vulnerabilities. 
 
 {{% /alert %}}
 
