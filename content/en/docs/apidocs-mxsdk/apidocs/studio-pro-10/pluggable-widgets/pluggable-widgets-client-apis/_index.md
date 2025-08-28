@@ -89,7 +89,7 @@ onClick.execute({
 ```
 
 {{% alert color="info" %}}
-Action Variables were introduced in Mendix [10.21](/releasenotes/studio-pro/10.21/#pluggable-widget-api-action-variables). Earlier versions of Mendix take 0 arguments for `execute()` and don't offer a direct way to pass variables to actions. Instead, use [attribute properties](/apidocs-mxsdk/apidocs/pluggable-widgets-property-types-10/#attribute) to set relevant values before calling `execute()`.
+Action variables were introduced in Mendix [10.21](/releasenotes/studio-pro/10.21/#pluggable-widget-api-action-variables). Earlier versions of Mendix take 0 arguments for `execute()` and do not offer a direct way to pass variables to actions. Instead, use [attribute properties](/apidocs-mxsdk/apidocs/pluggable-widgets-property-types-10/#attribute) to set relevant values before calling `execute()`.
 {{% /alert %}}
 
 ### DynamicValue {#dynamic-value}

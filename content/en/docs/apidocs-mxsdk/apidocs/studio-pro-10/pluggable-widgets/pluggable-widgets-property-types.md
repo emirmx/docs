@@ -488,10 +488,10 @@ When a `dataSource` attribute is specified and configured by the user, it is pas
 #### XML Elements {#action-xml-elements}
 
 {{% alert color="info" %}}
-Action Variables were introduced in Mendix [10.21](/releasenotes/studio-pro/10.21/#pluggable-widget-api-action-variables).
+Action variables were introduced in Mendix [10.21](/releasenotes/studio-pro/10.21/#pluggable-widget-api-action-variables).
 {{% /alert %}}
 
-`<actionVariables>` — Defines variables a widget provides when calling [execute() on an ActionValue](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-10/#execute). The variables are made available in Studio Pro when configuring [Call a Microflow](/refguide/on-click-event/#call-microflow) and [Call a Nanoflow](/refguide/on-click-event/#call-nanoflow) actions.
+`<actionVariables>` — Defines the variables a widget provides when calling [execute() on an ActionValue](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis-10/#execute). The variables are made available in Studio Pro when configuring [Call a Microflow](/refguide/on-click-event/#call-microflow) and [Call a Nanoflow](/refguide/on-click-event/#call-nanoflow) actions.
 
 `<actionVariable>` (required one or more) — Represents a primitive value provided by the widget as an argument when calling `ActionValue.execute()`. The variable is defined by the following attributes:
 
