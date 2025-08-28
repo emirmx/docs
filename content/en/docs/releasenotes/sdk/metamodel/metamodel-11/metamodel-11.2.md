@@ -1,6 +1,7 @@
 ---
 title: "11.2"
-parent: "metamodel-11"
+url: /releasenotes/sdk/metamodel-11.2/
+weight: 74
 ---
 
 ## 11.2.0
@@ -70,6 +71,5 @@ parent: "metamodel-11"
 * We introduced this element. 
 
 #### EmailMessage (Element)
-* We introduced this element. 
+* We introduced this element.
 
-This page has been generated automatically.
