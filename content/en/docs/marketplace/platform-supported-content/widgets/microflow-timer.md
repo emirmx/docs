@@ -7,12 +7,12 @@ description: "Describes the configuration and usage of the Microflow Timer widge
 ---
 
 {{% alert color="warning" %}}
-This widget is deprecated. For handling actions when a component loads or context changes use the [Events](/appstore/widgets/events/) widget. 
+This widget is deprecated. For handling actions when a component loads or context changes use the [Events](/appstore/widgets/events/) widget.
 {{% /alert %}}
 
 ## Introduction
 
-The [Microflow Timer](https://marketplace.mendix.com/link/component/27/) widget can be used to time and execute a microflow or nanoflow as long as a certain page is open. The microflow or nanoflow can be executed once or repeatedly, in which case it will not stop until it returns false or until the page is closed. 
+The [Microflow Timer](https://marketplace.mendix.com/link/component/27/) widget can be used to time and execute a microflow or nanoflow as long as a certain page is open. The microflow or nanoflow can be executed once or repeatedly, in which case it will not stop until it returns false or until the page is closed.
 
 {{% alert color="warning" %}}
 In offline apps, you cannot use microflows, but you can use nanoflows.
