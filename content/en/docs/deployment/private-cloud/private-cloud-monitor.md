@@ -119,7 +119,7 @@ You might need to adjust some parameters to match the scale and requirements of 
 * **loki.config.table_manager.retention_period** – specifies the maximum retention period for storing logs in indexed tables;
 * **promtail.enabled** – specifies whether the Promtail component should be installed (required for collecting Mendix app environment logs).
 
-For more details see the [Loki installation guide](https://grafana.com/docs/loki/latest/installation/microservices-helm/).
+For more details see the [Loki installation guide](https://grafana.com/docs/loki/latest/setup/install/).
 
 If your Kubernetes cluster requires a StorageClass to be specified, add the following arguments to the `helm upgrade` command (replace `{class}` with a storage class name, for example, `gp2`):
 
