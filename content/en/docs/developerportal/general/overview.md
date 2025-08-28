@@ -10,17 +10,13 @@ aliases:
 
 ## Introduction
 
-Located in the [navigation pane](/developerportal/#navigation-pane) of **Apps**, **Overview** lets you see your app activity and see the most important project information at a glance.
+Located in the [navigation pane](/developerportal/#navigation-pane) of **Apps**, **Overview** lets you see your app activity and the most important information about your project at a glance.
 
-{{< figure src="/attachments/developerportal/general/overview/app-overview.png" >}}
+{{< figure src="/attachments/developerportal/general/overview/overview.png" >}}
 
-At the top of the page, you can find the following key information about your app:
+At the top of the page, you will find key information about your app, such as its logo, name, and description. If no description is provided, there is a placeholder text. With the **App Settings** permission, you can change the logo, name, and description of the app on the [Settings](/developerportal/collaborate/general-settings/) page.
 
-* The logo, name, and description of the app.    
-    If no description is provided, there is a placeholder text.    
-    If you have the **App Settings** permission, you can change the logo, name, and description of the app on the [Settings](/developerportal/collaborate/general-settings/) page.
-
-In the panel on the right hand side of the page, you can find the following information about your app:
+On the right side of the page, you can find the following information about your app:
 
 * The size of your **Team** and your team members. Up to 5 team members can be displayed here at a time.
 * The name of the **Company** owning the app.
@@ -30,15 +26,15 @@ In the panel on the right hand side of the page, you can find the following info
 
 Click **Invite someone to your team** ({{% icon name="add-circle" %}}) to invite new members to your team directly. 
 
-Click **Show All** to go to the [Team](/developerportal/general/team/) page for the app.
+Click **View All Members** to go to the application's [Team](/developerportal/general/team/) page.
 
 ## Project Management
 
-This section contains a list of the latest active stories in your board and their status. This is compatible with Epics and Jira.
+This section contains a list of the latest active stories on your board and their status. It is compatible with both [Epics](/developerportal/project-management/epics/) and [Jira](/developerportal/project-management/jira/). Click **View Board** to access the **Board** page, where you will see all the stories your team is currently working on.
 
 ## Project Activity
 
-This section contains a list of the relevant events in your project and when they took place.
+This section displays a list of relevant events in your project, including the date and time they occurred.
 
 ## Read More
 
