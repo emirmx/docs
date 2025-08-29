@@ -12,7 +12,7 @@ aliases:
 
 Located in the [navigation pane](/developerportal/#navigation-pane) of **Apps**, **Overview** lets you see your app activity and the most important information about your project at a glance.
 
-{{< figure src="/attachments/developerportal/general/overview/overview.png" >}}
+{{< figure src="/attachments/developerportal/general/overview/project-overview.png" >}}
 
 At the top of the page, you will find key information about your app, such as its logo, name, and description. If no description is provided, there is a placeholder text. With the **App Settings** permission, you can change the logo, name, and description of the app on the [Settings](/developerportal/collaborate/general-settings/) page.
 
@@ -30,11 +30,17 @@ Click **View All Members** to go to the application's [Team](/developerportal/ge
 
 ## Project Management
 
-This section contains a list of the latest active stories on your board and their status. It is compatible with both [Epics](/developerportal/project-management/epics/) and [Jira](/developerportal/project-management/jira/). Click **View Board** to access the **Board** page, where you will see all the stories your team is currently working on.
+This section contains a list of the latest active stories on your board and their status. It is compatible with both [Epics](/developerportal/project-management/epics/) and [Jira](/developerportal/project-management/jira-connector/). Click **View Board** to access the **Board** page, where you will see all the stories your team is currently working on.
 
 ## Project Activity
 
-This section displays a list of relevant events in your project, including the date and time they occurred.
+This section displays a list of relevant events in your project, each logged with the date and time they occurred. The activities shown include:
+
+* Team member joining or leaving the project
+* Changes to the target cloud, such as Mendix Public Cloud, Mendix Free, or Mendix for Private Cloud
+* Changes to the project's name or description
+* Changes to the story service (Epics, Jira)
+* Project activation or deactivation
 
 ## Read More
 
