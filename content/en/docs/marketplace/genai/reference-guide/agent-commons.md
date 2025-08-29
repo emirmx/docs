@@ -45,7 +45,7 @@ The Agent Commons module offers the following features:
 
 ### Dependencies {#dependencies}
 
-The Agent Commons module requires Mendix Studio Pro version [10.24.0](/releasenotes/studio-pro/10.21/#10210) or above.
+The Agent Commons module requires Mendix Studio Pro version 10.24.0 or above.
 
 In addition, install the following modules:
 
