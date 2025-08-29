@@ -99,7 +99,7 @@ To interact with LLMs using Agent Commons, you need at least one GenAI connector
 
 ### Defining the Agent {#define-agent}
 
-When the app is running, a user with the `AgentAdmin` role can set up agents, write prompts, link microflows as tools, and provide access to knowledge bases. Once an agent version is associated with a deployed model, it can be tested in an isolated environment, separate from the rest of the app’s logic, to validate its behavior effectively.
+When the app is running, a user with the `AgentAdmin` role can set up agents, write prompts, link microflows or MCP servers as tools, and provide access to knowledge bases. Once an agent version is associated with a deployed model, it can be tested in an isolated environment, separate from the rest of the app’s logic, to validate its behavior effectively.
 
 Users can create two types of agents:
 
@@ -123,11 +123,19 @@ The `AgentAdmin` will see warnings on the Agent Version Details page if:
 
 * The attribute length is insufficient to hold the actual values when logic is executed in the running app.
 
-#### Adding Microflows as Tools
+#### Adding Tools
+
+To extend an agent's capabilities, you can provide an LLM with tools so that it becomes truly agentic. Mendix currently supports adding microflows or all exposed tools from an MCP (Model Context Protocol) server to an agent version.
+
+##### Adding Microflows as Tools
 
 To allow your agent to act dynamically and autonomously or to access specific data based on input it determines, microflows can be added as tools. When the agent is invoked, it uses the function calling pattern to execute the required microflows, using the input specified in the model’s response.
 
 For more technical details, see the [Function Calling](/appstore/modules/genai/function-calling/) documentation.
+
+##### Adding tools from MCP servers
+
+Besides microflow tools, exposed tools from MCP servers are supported. To add MCP tools to an agent version, you need to select an MCP server configuration from the [MCP client module](/appstore/modules/genai/reference-guide/mcp-modules/mcp-client). Once the agent is called, all currently available tools are added to the request from the server and are thus available to the model.
 
 #### Adding Knowledge Bases
 
