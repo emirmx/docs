@@ -77,13 +77,15 @@ On the **Content** page, you can find information on adding knowledge to your Kn
 Currently, you have the following options for adding data to a Knowledge Base:
 
 * Add files (for example, TXT or PDF)
-* Add data from a Mendix application
+* Add data from a Mendix application.
 
 #### Add Files 
 
 When you select the **Add Files Like .TXT or .PDF** option, you can upload documents directly to the GenAI portal. Before uploading, you also have the option to add metadata. For more information, see the [metadata](#metadata) section below.
 
 {{% alert color="info" %}} Only TXT and PDF files are supported. {{% /alert %}} 
+
+You can decide for yourself, whether to upload data to a new, the default or a different existing collection inside of the resource. Since collections correspond to GenIICommons.DeployedKnowledgebases, they provide separation inside of the same knowledge base resource into several objects. However, it is not a best practice to create many collections inside of the same resource and usually not required. Instead, metadata can also be used to 'label' data and provide a more performant way to separate data inside of the same collection. 
 
 ##### Metadata {#metadata}
 
