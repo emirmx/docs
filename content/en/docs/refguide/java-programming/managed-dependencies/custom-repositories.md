@@ -87,11 +87,11 @@ Once you have set up your remote repository, you need to add a few configuration
 
 For scenarios where you have absolutely no access to the internet (air-gapped), you can create a folder on your local system which will contain all the project dependencies. Then you can configure Studio Pro to resolve dependencies from this folder.
 
-#### Downloading the M2 repository
+#### Downloading the M2 Repository
 
 You should use the [CycloneDx Gradle Plugin](https://github.com/CycloneDX/cyclonedx-gradle-plugin) to generate the `vendorlib-sbom.json` file. This is to meet compliance and security requirements. You will have to create an `m2` (Maven) style directory which will contain this plugin. You can download it from the [Mendix GitHub repo](https://github.com/mendix/m2Repo-with-cycloneDX)
 
-### Configuring the repository
+### Configuring the Repository
 
 Create a folder containing your project dependencies. You can download them from [Maven Central](https://mvnrepository.com/repos/central). Make sure you store this on your local system where Studio Pro has read/write access to it.
 
@@ -99,7 +99,7 @@ Create a folder containing your project dependencies. You can download them from
 One option is to open Studio Pro from a device which has internet access and allow the dependencies to sync. You can then combine the `userlib` and `vendorlib` into a folder and share it with everyone in your team.
 {{% /alert %}}
 
-### Configuring Studio Pro to use local repository
+### Configuring Studio Pro to Use Local Repository
 
 Once you have set up your local repository, you need to add a few configuration settings in Studio Pro. This will enable Studio Pro to resolve dependencies from the local repository.
 
