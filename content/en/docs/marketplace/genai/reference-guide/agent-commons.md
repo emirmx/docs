@@ -33,6 +33,8 @@ The Agent Commons module offers the following features:
 
 * Drag and drop operations for calling both single-call and conversational agents from microflows and workflows.
 
+* Adding tools and knowledge bases to enhance the agent's capabilities
+
 * Prompt placeholders, allowing dynamic insertion of values based on user or context objects at runtime.
 
 * Logic to define and run tests individually or in bulk, with result comparisons.
@@ -41,19 +43,18 @@ The Agent Commons module offers the following features:
 
 * The ability to manage the active agent version used by the app logic in the app environment eliminates the need for redeployment.
 
-{{% alert color="info" %}} The current scope of the module focuses on LLM invocations using a variety of prompts, optionally enhanced with placeholders (variables). Agents can be further extended by integrating microflows with a single parameter as tools using the [Function Calling](/appstore/modules/genai/function-calling/) setup, and by connecting to knowledge bases provided through [Mendix Cloud GenAI Resources](/appstore/modules/genai/mx-cloud-genai/resource-packs/#knowledge-bases). {{% /alert %}}
-
 ### Dependencies {#dependencies}
 
 The Agent Commons module requires Mendix Studio Pro version 10.24.0 or above.
 
 In addition, install the following modules:
 
+* [Administration] (https://marketplace.mendix.com/link/component/23513)
 * [Community Commons](https://marketplace.mendix.com/link/component/170)
 * [Conversational UI](https://marketplace.mendix.com/link/component/239450)
 * [GenAI Commons](https://marketplace.mendix.com/link/component/239448)
 * [MCP Client](https://marketplace.mendix.com/link/component/244893)
-* [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449)
+* [Nanoflow Commons](https://marketplace.mendix.com/link/component/109515)
 
 ## Installation
 
