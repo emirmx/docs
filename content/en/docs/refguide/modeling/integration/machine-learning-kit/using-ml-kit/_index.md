@@ -13,6 +13,19 @@ Studio Pro supports machine learning (ML) model integration in Mendix apps. Coll
 For further information on working with ML models in Mendix, check out a demo app and Jupyter Notebook examples in the [Demo for Mendix ML Kit](https://github.com/mendix/mlkit-example-app) repository.
 {{% /alert %}}
 
+### System Requirements
+
+If you are using Studio Pro 11.2.0 and above **on Windows**, you need to install **OpenJDK 21.0.8 LTS** to use ML Kit with ONNX models:
+
+1. Install [OpenJDK 21.0.8 LTS](https://aka.ms/download-jdk/microsoft-jdk-21.0.8-windows-x64.msi) from Microsoft.
+2. Quit and reopen Studio Pro.
+3. Go to **Edit** > **Preferences** > **Deployment**.
+4. Make sure the newly installed JDK 21.0.8 is selected.
+
+{{% alert color="info" %}}
+This requirement is specific to Windows. Mac users can continue using ML Kit with ONNX models without needing to install a specific JDK version.
+{{% /alert %}}
+
 For information on troubleshooting several general issues with importing and running your ML model, see the [FAQs](#FAQs) section below. 
 
 For information on ML Kit known issues, see the [Known Issues](#known-issues) section below. 

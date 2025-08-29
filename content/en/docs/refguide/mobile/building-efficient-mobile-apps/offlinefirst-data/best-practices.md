@@ -15,7 +15,7 @@ To ensure the best user experience for your Mendix application, follow these bes
 * Synchronize large files or images using selective synchronization
 * Use an `isDeleted` Boolean attribute for delete functionality so that conflicts can be handled correctly on the server
 * Use before- and after-commit microflows to pre- or post-process data
-* Use a [microflow call](/refguide/microflow-call/) in your nanoflows to perform additional server-side logic such as retrieving data from a REST service, or accessing and using complex logic such as Java actions
+* Use a [Call microflow](/refguide/microflow-call/) activity in your nanoflows to perform additional server-side logic such as retrieving data from a REST service, or accessing and using complex logic such as Java actions
 * Help your user remember to synchronize their data so it is processed as soon as possible: you can check for connectivity and automatically synchronize in the nanoflow that commits your object, or remind a user to synchronize while using a notification or before signing out to ensure no data is lost
 
 ## Preventing Synchronization Issues
@@ -41,7 +41,7 @@ Mendix helps developers build rich offline-first apps. However, there are some l
 
 ### Microflows {#microflows}
 
-Microflows can be called from offline apps by using [microflow call](/refguide/microflow-call/) action in your nanoflows to perform logic on the server. However, it works a bit different from when used in online profiles, these differences are explained below:
+Microflows can be called from offline apps by using [Call microflow](/refguide/microflow-call/) activities in your nanoflows to perform logic on the server. However, it works a bit different from when used in online profiles, these differences are explained below:
 
 #### Microflow Arguments Type
 

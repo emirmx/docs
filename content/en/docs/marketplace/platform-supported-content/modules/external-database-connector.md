@@ -153,7 +153,7 @@ In the **Response Structure** tab, there is a preview of the queried data in an 
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/external-database-connector/response-structure.png" class="no-border" >}}
 
-Click **Save Query & Create Entity** to create the entity and add it to your domain model:
+Click **Create Entity** to create the entity and add it to your domain model:
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/external-database-connector/entity-created-from-database.png" class="no-border" >}}
 
