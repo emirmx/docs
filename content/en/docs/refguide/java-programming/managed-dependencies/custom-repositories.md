@@ -89,7 +89,7 @@ For scenarios where you have absolutely no access to the internet (air-gapped), 
 
 #### Downloading the M2 Repository
 
-You should use the [CycloneDx Gradle Plugin](https://github.com/CycloneDX/cyclonedx-gradle-plugin) to generate the `vendorlib-sbom.json` file. This is to meet compliance and security requirements. You will have to create an `m2` (Maven) style directory which will contain this plugin. You can download it from the [Mendix GitHub repo](https://github.com/mendix/m2Repo-with-cycloneDX)
+You will have to create an `m2` (Maven) style directory which will contain the [CycloneDx Gradle Plugin](https://github.com/CycloneDX/cyclonedx-gradle-plugin). You can download the content for this directory from the [Mendix GitHub repo](https://github.com/mendix/m2Repo-with-cycloneDX). The CycloneDx Gradle plugin is used to meet compliance and security requirements when generating the `vendorlib-sbom.json` file.
 
 ### Configuring the Repository
 
