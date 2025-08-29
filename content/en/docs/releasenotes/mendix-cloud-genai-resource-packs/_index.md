@@ -1,6 +1,6 @@
 ---
 title: "Mendix Cloud GenAI Resource Packs Release Notes"
-linktitle: "Mendix Cloud GenAI Resource Packs"
+linktitle: "Mendix GenAI Resources"
 url: /releasenotes/genai-resource-packs/
 description: "Release notes for Mendix Cloud GenAI Resource Packs"
 weight: 25
