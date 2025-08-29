@@ -135,8 +135,8 @@ For operations that do not depend on the GenAI Commons, you can take a different
     2. Drag the one you would like to use to the beginning of your microflow.
     3. Double-click the microflow action to configure the required parameters and provide a value for the AWS Region. For the **ListFoundationModels** parameter, provide the `ListFoundationModelsRequest` created in step 3.
 9. The `ListFoundationModelsResponse` object is returned by the **ListFoundationModels** activity.
-10. From the **Toolbox**, drag a **Retrieve** activity to your microflow and place it after the **ListFoundationModels** activity.
-11. Double-click the **Retrieve** activity and make sure **By Association** is selected.
+10. From the **Toolbox**, drag a **Retrieve object(s)** activity to your microflow and place it after the **ListFoundationModels** activity.
+11. Double-click the **Retrieve object(s)** activity and make sure **By Association** is selected.
 12. Select the **FoundationModelSummary_ListFoundationModelsResponse** association, which will return a list of the type **FoundationModelSummary**.
 13. To further use the response information, you can create an implementation module with copies of the `ListFoundationModelsResponse` and `ModelSummary` Entities. This way, you can use your custom user roles and access rules for those entities and keep them when updating the connector.
 
@@ -152,7 +152,7 @@ To build a simple microflow that uses the ChatCompletions operation to send a si
 
 1. Make sure that you [synced models](#sync-models) before running the microflow in the app.
 2. Create a new microflow and name it, for example, *AmazonBedrockChatCompletions*.
-3. Add a **Microflow call** from the **Toolbox** and choose microflow *AmazonBedrockConnector.BedrockDeployedModel_Get*
+3. Add a **Call microflow** activity from the **Toolbox** and choose microflow *AmazonBedrockConnector.BedrockDeployedModel_Get*
 4. Double-click it to configure its parameters.
     1. For the **ModelID** parameter, enter the model id of the LLM you want to send a message to. The model id of Claude 3.5 Sonnet is *anthropic.claude-3-5-sonnet-20240620-v1:0*.
     2. Click **OK**.
