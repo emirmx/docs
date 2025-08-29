@@ -41,7 +41,10 @@ Knowledge bases are often used for:
 1. [Retrieval Augmented Generation (RAG)](/appstore/modules/genai/rag/) retrieves relevant knowledge from the knowledge base, incorporates it into a prompt, and sends it to the model to generate a response.
 2. Semantic search enables advanced search capabilities by considering the semantic meaning of the text, going beyond exact and approximate matching. It allows the knowledge base to be searched for similar chunks effectively.
 
-If you are looking for a step-by-step guide on how to get your application data into a Mendix Cloud Knowledge Base, refer [Grounding Your Large Language Model in Data – Mendix Cloud GenAI](/appstore/modules/genai/how-to/howto-groundllm/). Note that the Mendix Portal also provides options for importing data into your knowledge base, such as file uploads. For more information, see [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/). This documentation focuses solely on adding data from an application using the connector.
+If you are looking for a step-by-step guide on how to get your application data into a Mendix Cloud Knowledge Base, refer [Grounding Your Large Language Model in Data – Mendix Cloud GenAI](/appstore/modules/genai/how-to/howto-groundllm/). Note that the Mendix Portal also provides options for importing data into your knowledge base, such as file uploads. For more information, see [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/). This documentation focuses solely on adding data from an application using the connector. 
+
+##### Architecture
+Each Knowledge Base resource may exist out of several collections where each collection corresponds to a `GenAICommons.DeployedKnowledgebase`. This offers a way of data separation into different objects, one object per collection. However, adding a large number of collections to the same knowledge base resource is not a best practice. Separation can also be achieved in a more performant and practical way through the addition of metadata. You can read more about this below, in the section about [Retrieve and Generate](/appstore/modules/genai/MxGenAI/#retrieve-and-generate).
 
 #### Embeddings
 
