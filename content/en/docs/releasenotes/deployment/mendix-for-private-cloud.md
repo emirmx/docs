@@ -25,7 +25,7 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 * We have fixed an issue when a Prometheus metrics scaper would reject metrics from Mendix 11 apps.
 * We have added a workaround to improve handling of bucket prefixes containing `/` characters.
 * To provide clearer error messages and more relevant context, we have improved the logging of some startup and other errors.
-* We have removed license checks from the Mendix Operator. Starting version 2.23.0 of the Mendix Opeartor, only Runtime licenses are required (to remove [trial restrictions](/developerportal/deploy/licensing-apps-outside--mxcloud/) from the Mendix Runtime). The Operator will show its status as **Licensed** even when no Operator license is applied.
+* We have removed license checks from the Mendix Operator. Starting version 2.23.0 of the Mendix Opeartor, only Runtime licenses are required (to remove [trial restrictions](/developerportal/deploy/licensing-apps-outside-mxcloud/) from the Mendix Runtime). The Operator will show its status as **Licensed** even when no Operator license is applied.
 * We updated internal handling logic for the `MendixApp`, `Build` and `Runtime` CRD controllers (Ticket 251404).
 
     * The `Build` controller now only checks pod attributes that are necessary to complete a build.
