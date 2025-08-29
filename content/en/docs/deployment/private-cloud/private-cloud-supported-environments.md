@@ -18,7 +18,7 @@ We currently support deploying to the following Kubernetes cluster types:
 
 * [Amazon Elastic Kubernetes Service](https://aws.amazon.com/eks/) (EKS)
 {{% alert color="info" %}}
-If you want to deploy your app to Amazon EKS, consider using the Mendix for Amazon EKS Reference Deployment. For more information, see [Mendix for Amazon EKS—Terraform module](https://aws.amazon.com/solutions/partners/terraform-modules/mendix-eks/).
+If you want to deploy your app to Amazon EKS, consider using the Mendix for Amazon EKS Reference Deployment. For more information, see [Mendix for Amazon EKS—Terraform module](https://registry.terraform.io/modules/aws-ia/mendix-private-cloud/aws/latest).
 {{% /alert %}}
 * [Azure Kubernetes Service](https://azure.microsoft.com/en-us/services/kubernetes-service/)
 * [Red Hat OpenShift Container Platform](https://www.openshift.com/)
@@ -37,7 +37,7 @@ If deploying to Red Hat OpenShift, you need to specify that specifically when cr
 Mendix on Kubernetes Operator `v2.*.*` is the latest version which officially supports:
 
 * Kubernetes versions 1.19 through 1.33
-* OpenShift 4.6 through 4.18
+* OpenShift 4.6 through 4.19
 
 {{% alert color="warning" %}}
 Kubernetes 1.22 is a [new release](https://kubernetes.io/blog/2021/08/04/kubernetes-1-22-release-announcement/) which removes support for several deprecated APIs and features.
