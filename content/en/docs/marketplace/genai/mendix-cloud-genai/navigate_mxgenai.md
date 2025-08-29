@@ -85,7 +85,7 @@ When you select the **Add Files Like .TXT or .PDF** option, you can upload docum
 
 {{% alert color="info" %}} Only TXT and PDF files are supported. {{% /alert %}} 
 
-You can decide for yourself, whether to upload data to a new, the default or a different existing collection inside of the resource. Since collections correspond to GenIICommons.DeployedKnowledgebases, they provide separation inside of the same knowledge base resource into several objects. However, it is not a best practice to create many collections inside of the same resource and usually not required. Instead, metadata can also be used to 'label' data and provide a more performant way to separate data inside of the same collection. 
+You can decide for yourself, whether to upload data to a new, the default or a different existing collection inside of the resource. Since collections correspond to [GenAICommons.DeployedKnowledgebases](/appstore/modules/genai-commons/#deployed-knowledge-base), they provide separation inside of the same knowledge base resource into several objects. However, it is not a best practice to create many collections inside of the same resource and usually not required. Instead, metadata can also be used to 'label' data and provide a more performant way to separate data inside of the same collection. 
 
 ##### Metadata {#metadata}
 
