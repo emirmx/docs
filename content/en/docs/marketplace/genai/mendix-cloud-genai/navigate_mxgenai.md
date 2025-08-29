@@ -85,7 +85,7 @@ When you select the **Add Files Like .TXT or .PDF** option, you can upload docum
 
 {{% alert color="info" %}} Only TXT and PDF files are supported. {{% /alert %}} 
 
-You can decide for yourself, whether to upload data to a new, the default or a different existing collection inside of the resource. Since collections correspond to [GenAICommons.DeployedKnowledgebases](/appstore/modules/genai-commons/#deployed-knowledge-base), they provide separation inside of the same knowledge base resource into several objects. However, it is not a best practice to create many collections inside of the same resource and usually not required. Instead, metadata can also be used to 'label' data and provide a more performant way to separate data inside of the same collection. 
+Before the upload, you can decide for yourself, whether to upload data to a new, the default or a different existing collection inside of the resource. A Knowledge Base resource can comprise several collections. Each collection is specifically designed to hold numerous documents, serving as a logical grouping for related information based on their shared domain, purpose, or thematic focus. While collections provide a mechanism for data separation—with each corresponding to a [GenAICommons.DeployedKnowledgebases](/appstore/modules/genai-commons/#deployed-knowledge-base) — it is not best practice to create a large number of collections within a single Knowledge Base resource. A more performant and practical approach for achieving fine-grained data separation is through the strategic use of metadata.   
 
 ##### Metadata {#metadata}
 
