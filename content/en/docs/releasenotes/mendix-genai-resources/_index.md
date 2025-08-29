@@ -1,14 +1,14 @@
 ---
-title: "Mendix GenAI Resources Release Notes"
-linktitle: "Mendix GenAI Resources"
-url: /releasenotes/genai-resources/
-description: "Release notes for Mendix GenAI Resources"
+title: "Mendix Cloud GenAI Resource Packs Release Notes"
+linktitle: "Mendix Cloud GenAI Resource Packs"
+url: /releasenotes/genai-resource-packs/
+description: "Release notes for Mendix Cloud GenAI Resource Packs"
 weight: 25
 numberless_headings: true
 #This document is mapped to the landing page, update the link there if renaming or moving the doc file.
 ---
 
-These release notes cover changes made to the Mendix GenAI Resource Packs and Mendix Cloud GenAI Portal.
+These release notes cover changes made to the Mendix Cloud GenAI Resource Packs.
 
 ## 2025
 
