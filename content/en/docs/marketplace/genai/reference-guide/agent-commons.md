@@ -45,14 +45,15 @@ The Agent Commons module offers the following features:
 
 ### Dependencies {#dependencies}
 
-The Agent Commons module requires Mendix Studio Pro version [10.21.0](/releasenotes/studio-pro/10.21/#10210) or above.
+The Agent Commons module requires Mendix Studio Pro version [10.24.0](/releasenotes/studio-pro/10.21/#10210) or above.
 
 In addition, install the following modules:
 
 * [Community Commons](https://marketplace.mendix.com/link/component/170)
-* [GenAI Commons](https://marketplace.mendix.com/link/component/239448)
-* [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449)
 * [Conversational UI](https://marketplace.mendix.com/link/component/239450)
+* [GenAI Commons](https://marketplace.mendix.com/link/component/239448)
+* [MCP Client](https://marketplace.mendix.com/link/component/244893)
+* [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449)
 
 ## Installation
 
