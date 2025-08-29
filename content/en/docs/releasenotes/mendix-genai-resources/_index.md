@@ -1,7 +1,7 @@
 ---
 title: "Mendix GenAI Resources Release Notes"
 linktitle: "Mendix GenAI Resources"
-url: /releasenotes/genai-portal/
+url: /releasenotes/genai-resources/
 description: "Release notes for Mendix GenAI Resources"
 weight: 25
 numberless_headings: true
