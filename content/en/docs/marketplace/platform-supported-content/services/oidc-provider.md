@@ -373,7 +373,6 @@ Typically you want to propagate the end-user’s identity from the OIDC Provider
 To pass this additional information, you need to create custom claims. You can do this as follows:
 
 1. Create a microflow with prefix `OIDCP_CustClaim` that returns a value to be used in the claim.
-
     * Input: `Administration.Account`
     * Output: Any custom Claim object
 
@@ -382,19 +381,16 @@ To pass this additional information, you need to create custom claims. You can d
     The ID-token will be a nested JSON structure with the name of the object as the key, a list of attribute names of your object as the keys, and the attribute values as the values.
 
     ```json
-    "MyObjectName": {
-        "MyObjectAttribute1Name" : "MyObjectAttribute1Value",
-        "MyObjectAttribute2Name" : "MyObjectAttribute2Value"
-    }
+        "MyObjectName": {
+            "MyObjectAttribute1Name" : "MyObjectAttribute1Value",
+            "MyObjectAttribute2Name" : "MyObjectAttribute2Value"
+        }
     ```
 
     "MyObjectName" will be used as the claim name. See note about how to name custom claims in the [Propagate Custom Claims](#propagate-custom-claims) section, above.
 
-    If you are already using custom claims in an earlier version of the module, you must:
-
-    * Rename existing microflows to begin with `OIDCP_CustClaim`.
-
-    * Reconfigure the custom claim settings to point to the renamed microflows.
+    {{% alert color="info" %}}If you are already using custom claims with a version below 5.0.0 of the module, you must rename existing microflows to begin with `OIDCP_CustClaim` and reconfigure the custom claim settings to point to the renamed microflows.
+    {{% /alert %}}
 
 2. Run (publish) your app.
 3. Sign in to your app as an Administrator.
@@ -402,7 +398,7 @@ To pass this additional information, you need to create custom claims. You can d
 5. Follow the navigation item OpenID Connect to open the page `OpenIDConnectDashboard`.
 6. Switch to the Custom claims tab of your registered client.
 7. Create a new claim.
-    * Provide a name for claim
+    * Provide a name for a claim
     * Select the microflow which returns the value to the claim
 8. Save the claim.
 
