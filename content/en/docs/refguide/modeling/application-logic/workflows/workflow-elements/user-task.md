@@ -22,7 +22,7 @@ User task properties consist of the following sections:
 
 * [General](#general)
 * [Due date](#due-date)
-* [Targeted users](#users)
+* [Targeted users](#targeted-users)
 * [Outcomes](#outcomes)
 * [Task page](#task-page)
 * [Display information](#display-info)
