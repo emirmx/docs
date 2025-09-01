@@ -21,6 +21,14 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
+### August 31, 2025
+
+#### Improvements
+
+* We have added two new sections to the **Overview** page to give you a clearer view of your project's progress and activities:
+    * **Project Management** – Instantly see the latest user stories your team is working on and follow progress at a glance, with full support for Epics and Jira.
+    * **Project Activity** – Keep track of all key project events in one place.
+
 ### August 21, 2025
 
 #### New Features
