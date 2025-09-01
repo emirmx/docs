@@ -84,9 +84,9 @@ The generator will ask you a few questions during setup. Answer the questions by
 * End-to-end tests: **No**
 
 {{% alert color="warning" %}}
-At this time the **Organization Name** cannot include a dash "`-`" character. This will result in an  error when running your app, asking to check if the widgets "were  generated with the latest version of the pluggable-widgets-tools and are ES6 modules."
+Currently, **Organization Name** cannot include a dash "-" character. Dashes in the organization name will result in an error when running your app, asking to check if the widgets "were  generated with the latest version of the pluggable-widgets-tools and are ES6 modules."
 
-To fix this in an existing widget, modify the `packagePath` property of its `package.json` file and rebuild the widget.
+To fix this in an existing widget, modify the `packagePath` property of its **package.json** file and rebuild the widget.
 {{% /alert %}}
 
 {{< figure src="/attachments/howto/extensibility/pluggable-widgets/create-a-pluggable-widget-one/generatorblack-new.png" alt="The Mendix Widget generator with the prompts answered according to the list above." class="no-border" >}}
