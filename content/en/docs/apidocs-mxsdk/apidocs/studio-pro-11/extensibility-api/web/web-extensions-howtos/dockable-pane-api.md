@@ -183,7 +183,6 @@ You must also alter the `build-extension.mjs` and `manifest.json` files to make 
 
 ### Altering `build-extension.mjs`
 
-
 To instruct esbuild to produce JavaScript modules that correspond to `src/ui/tab.tsx` and `src/ui/dockablepane.tsx`,
 change the call to `entryPoints.push` in line 16 as follows:
 
