@@ -82,7 +82,7 @@ To use this connector, you need to either sign up for an [OpenAI account](https:
 
 ### Dependencies {#dependencies}
 
-* Mendix Studio Pro version 10.24.0 or higher
+* Mendix Studio Pro version 10.24.0 or above
 * [GenAI Commons module](/appstore/modules/genai/commons/)
 * [Encryption module](/appstore/modules/encryption/)
 * [Community Commons module](/appstore/modules/community-commons-function-library/)

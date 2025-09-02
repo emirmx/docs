@@ -49,7 +49,7 @@ The Agent Commons module requires Mendix Studio Pro version 10.24.0 or above.
 
 In addition, install the following modules:
 
-* [Administration] (https://marketplace.mendix.com/link/component/23513)
+* [Administration](https://marketplace.mendix.com/link/component/23513)
 * [Community Commons](https://marketplace.mendix.com/link/component/170)
 * [Conversational UI](https://marketplace.mendix.com/link/component/239450)
 * [GenAI Commons](https://marketplace.mendix.com/link/component/239448)
@@ -100,7 +100,7 @@ To interact with LLMs using Agent Commons, you need at least one GenAI connector
 
 ### Defining the Agent {#define-agent}
 
-When the app is running, a user with the `AgentAdmin` role can set up agents, write prompts, link microflows or MCP servers as tools, and provide access to knowledge bases. Once an agent version is associated with a deployed model, it can be tested in an isolated environment, separate from the rest of the app’s logic, to validate its behavior effectively.
+When the app is running, a user with the `AgentAdmin` role can set up agents, write prompts, link microflows or MCP servers as tools, and provide access to knowledge bases. Once an agent version is associated with a deployed model, it can be tested in an isolated environment, separate from the rest of the app’s logic, to effectively validate its behavior.
 
 Users can create two types of agents:
 
@@ -136,7 +136,7 @@ For more technical details, see the [Function Calling](/appstore/modules/genai/f
 
 ##### Adding tools from MCP servers
 
-Besides microflow tools, exposed tools from MCP servers are supported. To add MCP tools to an agent version, you need to select an MCP server configuration from the [MCP client module](/appstore/modules/genai/reference-guide/mcp-modules/mcp-client). Once the agent is called, all currently available tools are added to the request from the server and are thus available to the model.
+Besides microflow tools, exposed tools from MCP servers are supported. To add MCP tools to an agent version, you need to select an MCP server configuration from the [MCP client module](/appstore/modules/genai/mcp-modules/mcp-client/). Once the agent is called, all currently available tools are added to the request from the server and are thus available to the model.
 
 #### Adding Knowledge Bases
 
