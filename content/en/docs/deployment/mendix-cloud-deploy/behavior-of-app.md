@@ -47,3 +47,6 @@ Apps running in Mendix Cloud are subject to certain limitations. These behaviors
 ## Instance Restarts
 
 * The platform automatically restarts application instances during routine platform updates, which can occur several times a week. If your application logs indicate a series of instance restarts for no apparent reason, the restarts are probably due to platform updates. This is normal and OK! The platform usually starts a new instance of your application before stopping the old one, thus ensuring that there is no downtime. You can verify this in your application logs.
+
+## Websocket connections
+* Mendix Cloud supports long-running websocket connections. However, there are more more network components involved in websocket connections, between the app in Mendix Cloud and the client. These components could have a timeout. Network components an also fail, resulting in the drop of your connection. You should therefor never assume that the will remain open forever once it is established. Makre sure you enable periodic WebSocket keepalive checks (e.g., every 25–30s) so the connection sees activity. Lack of activity can let NATs/firewalls drop long-idle tunnels. Properly handle the loss of connectivity to make sure the connection is re-established automatically.
