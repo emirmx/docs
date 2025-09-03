@@ -23,7 +23,7 @@ The current scope of the module is focused on text and image generation, as well
 
 ### Dependencies {#dependencies}
 
-The GenAI Commons module requires Mendix Studio Pro version [9.24.2](/releasenotes/studio-pro/9.24/#9242) or above.
+The GenAI Commons module requires Mendix Studio Pro version 10.24.0 or above.
 
 You must also download the [Community Commons](/appstore/modules/community-commons-function-library/) module.
 
@@ -190,6 +190,24 @@ A tool of the type *function*. This is a specialization of [Tool](#tool) and rep
 | --- | --- |
 | `MinimumSimilarity` | Specifies the minimum similarity score (usually 0-1) of the passed chunk and the knowledge chunks in the knowledge base. |
 | `MaxNumberOfResults` | Specifies the maximum number of results that should be retrieved from the knowledge base. |
+
+#### `ArgumentInput` {#argument-input}
+
+For tools which are not executed in the same Mendix application, but still registered with the request and called from the application, `ArgumentInput` objects are added to the [Tool](#tool). When the tool is called, the arguments are not passed directly to the microflow, but can be extracted from the [Argument](#argument) of the [ToolCall](#toolcall).
+
+| Attribute | Description |
+| --- | --- |
+| `Name` | Name of the argument. |
+| `_Type` | Data type of the argument, for example, string, number, boolean, enum. |
+| `Required` | Indicates if the argument is required for calling the tool. |
+
+#### `EnumValue` {#enum-value}
+
+The `EnumValue` specifies available keys for "enum" [ArgumentInput](#argument-input) data types, so that the model is restricted to use valid input.
+
+| Attribute | Description |
+| --- | --- |
+| `Key` | Key of an enumeration. |
 
 #### `StopSequence` {#stopsequence}
 
@@ -918,3 +936,7 @@ The process may look like this:
 3. Download the module from the marketplace; note that the module is from now on located under the “Marketplace modules” category in the app explorer.
 4. Test your application locally and verify that everything works as before.
 5. Restore lost data on deployed environments. Usually incoming associations to the protected modules need to be reset.
+
+### Conflicted Lib Error After Module Import
+
+If you encounter an error caused by conflicting Java libraries, such as `java.lang.NoSuchMethodError: 'com.fasterxml.jackson.annotation.OptBoolean com.fasterxml.jackson.annotation.JsonProperty.isRequired()'`, try synchronizing all dependencies (**App** > **Synchronize dependencies**) and then restart your application.

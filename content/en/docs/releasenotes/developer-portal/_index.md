@@ -21,6 +21,31 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
+### August 31, 2025
+
+#### Improvements
+
+* We have added two new sections to the **Overview** page to give you a clearer view of your project's progress and activities:
+    * **Project Management** – Instantly see the latest user stories your team is working on and follow progress at a glance, with full support for Epics and Jira.
+    * **Project Activity** – Keep track of all key project events in one place.
+
+### August 21, 2025
+
+#### New Features
+
+* You can now disconnect linked stories and feedback items:
+
+    * To unlink a story from a feedback item, click {{% icon name="unlink" %}} **unlink** on the [feedback details](/developerportal/app-insights/feedback/#feedback-details) page. The story is updated accordingly.
+    * To unlink a feedback item from a story, click {{% icon name="unlink" %}} **unlink** in the **Feedback** section of the [story details](/developerportal/project-management/epics/board/#story-details) page. The feedback item is updated accordingly.
+  
+#### Improvements
+
+* Updated user information is now properly displayed in Epics.
+
+#### Fixes
+
+* We have fixed a display issue that caused primary action buttons to become inaccessible, i.e. to be moved off-screen, during the story creation process. This occurred while using Maia with feedback items.
+
 ### July 27, 2025
 
 #### Improvements
