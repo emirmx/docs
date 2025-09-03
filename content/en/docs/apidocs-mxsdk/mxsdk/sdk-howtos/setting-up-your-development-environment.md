@@ -19,10 +19,10 @@ Set up a new `node` project and install the dependencies using the following ste
 $ mkdir my-app-generator
 $ cd my-app-generator
 $ npm init --yes
-$ npm install -g typescript
 $ npm install mendixmodelsdk mendixplatformsdk --save
-$ tsc --init --target es2020
+$ npm install typescript@~4.6.2 @types/node@~22.0.3 --save-dev
 ```
+You can now proceed directly to step 6 in the detailed instructions to configure TypeScript.
 
 ## Setting Up Your Development Tools {#setting}
 
@@ -34,7 +34,7 @@ To set up your development tools, follow these steps:
 
     ```bash
     $ node --version
-    v18.20.8
+    v22.15.0
     ```
 
     For Debian-based Linux distributions such as Ubuntu, please refer to [NodeSource Node.js Binary Distributions](https://github.com/nodesource/distributions#user-content-installation-instructions) to properly set up your apt-get sources.
@@ -42,20 +42,7 @@ To set up your development tools, follow these steps:
     In the rest of the how-tos, in blocks such as the above, lines starting with a `$` represent commands to type into a terminal. Sometimes a line follows without a $, represents output of the command.
 
 3. Install [Visual Studio Code](https://code.visualstudio.com/) (not to be confused with Visual Studio), a text editor/IDE with good support for [TypeScript](https://www.typescriptlang.org/). Make sure you have a recent version (v1.11.0+); check the version you are using through Help > About when you have Code opened.
-4. Install TypeScript 4.6.2 or higher with [`npm`](https://www.npmjs.com/) (or [`yarn`](https://yarnpkg.com/)), Node.js's package manager:
 
-    ```bash
-    $ npm install -g typescript
-    ```
-
-5. Use the following command to check the TypeScript compiler version on your PATH:
-
-    ```bash
-    $ tsc --version
-    Version 4.6.2 (or higher)
-    ```
-
-    If the version number is much lower, it could be that you also have an outdated TypeScript SDK on your system, left over from a previous installation. You can either uninstall the old TypeScript SDK, or bypass it by removing the old TypeScript SDK from your system's PATH environment variable.
 
 ## Setting Up a Working Directory for Your Script
 
@@ -82,14 +69,24 @@ To set up a working directory for your script, follow these steps:
 
     ```json
     "dependencies": {
-      "mendixmodelsdk": "^4.56.0",
-      "mendixplatformsdk": "^5.0.0"
+      "mendixmodelsdk": "^4.102.0",
+      "mendixplatformsdk": "^5.2.0"
     }
     ```
 
     When a new major version of the Mendix SDK is released (as in, 1.0.0 to 2.0.0) and you run `npm update` in your project folder, the `^` in front of the version number makes sure that the installed version of the SDK will not be upgraded automatically. Only minor and patch releases (as in, 1.1.1) of the SDK will be automatically upgraded; otherwise, your script could inadvertently be broken. You may, of course, edit the dependency by hand yourself.
 
-4. Save your changes and then execute the following to install the dependencies:
+4. Add `typescript`, and `@types/node` as dev dependencies. 
+    Packages like TypeScript, testing libraries, linters, and type definitions (@types/...) are not required for your app to run in production—they're only needed while writing and testing code.
+
+    ```json
+    "devDependencies": {
+      "typescript": "~4.6.2",
+      "@types/node": "~22.0.3"
+    }
+    ```
+
+5. Save your changes and then execute the following to install the dependencies:
 
     ```bash
     $ npm install
@@ -97,18 +94,19 @@ To set up a working directory for your script, follow these steps:
 
     If you are using version control, make sure to ignore the `node_modules` directory, otherwise you end up committing dependencies.
 
-5. In Code, create a [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) file next to your *package.json*. The *tsconfig.json* file is used by the TypeScript compiler to compile your code in the proper manner to a JS file. Create it with the following contents. 
+6. In Code, create a [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) file next to your *package.json*. The *tsconfig.json* file is used by the TypeScript compiler to compile your code in the proper manner to a JS file. Create it with the following contents. 
 
     ```json
     {
-    	"compilerOptions" : {
-    		"module" : "commonjs",
-    		"target" : "es2020",
-            "strict": true
-    	},
-    	"files" : [
-    		"script.ts"
-    	]
+    "compilerOptions": {
+        "target": "es2020",
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true
+    },
+    "files": ["script.ts"]
     }
     ```
 

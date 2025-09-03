@@ -92,24 +92,20 @@ Once you are done with the model changes, you can flush the changes to make sure
 
 ## Compiling and Running the Script
 
-1. Compile the script with the TypeScript compiler into JavaScript using the following command:
+1. Add the following section to `package.json` 
 
-    ```bash
-    $ tsc
+    ```json
+    "scripts": {
+        "start": "tsc && node script.js"
+    }
     ```
 
-    A file named `script.js` should appear (or, if you named the original TypeScript file for example, `app.ts`, then it would be named `app.js`.
+    This command will first compile your TypeScript code into JavaScript using the TypeScript compiler. After compilation, a file named `script.js` will be generated. The script will then be executed using Node.js.
 
-    The TypeScript compiler will execute in a single run to compile all files configured in *tsconfig.json*. While developing your script, it can be practical to have the compiler immediately run once you make changes to your code. Use the `--watch` flag for `tsc` to monitor the files configured in the *tsconfig.json* file for changes and immediately run the compiler when you save the file:
-
-    ```bash
-    $ tsc --watch
-    ```
-
-2. Run the script with `node` to see the results:
+2. Run the script to see the results:
 
     ```text
-    $ node script.js
+    $ npm run start
     Creating new app 'NewApp-1637595970665'...
     Successfully created app with id '64760e41-9507-42d3-99da-3950454dd40a'
     Creating temporary working copy for branch 'main'...
