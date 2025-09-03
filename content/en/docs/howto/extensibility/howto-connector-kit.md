@@ -269,7 +269,7 @@ public ImportString(
 	}
 ```
 
-## Some Development Tips
+## Development Tips
 
 ### Unit Testing
 
