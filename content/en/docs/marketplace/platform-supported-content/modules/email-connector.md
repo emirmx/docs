@@ -76,8 +76,8 @@ Configuration supports two authentication methods: **Basic Authentication** and 
 ### Account setup
 
 #### Enable Microsoft Entra ID Authentication:
-* **Yes**: Enables OAuth 2.0 authentication through Microsoft Entra ID
-* **No**: Uses basic authentication with username and password (default)
+* **Yes** - Enables OAuth 2.0 authentication through Microsoft Entra ID
+* **No** - Uses basic authentication with username and password (default)
 
 #### Basic Authentication
 
@@ -154,12 +154,9 @@ Configuration supports two authentication methods: **Basic Authentication** and 
 
 ### Account setup
 
-The Email Connector allows you to configure incoming email accounts to receive and process emails within your Mendix application. This configuration supports multiple authentication methods and email protocols for flexible email integration.
-Authentication Methods
-
 #### Enable Microsoft Entra ID Authentication:
-* **Yes**: Enables OAuth 2.0 authentication through Microsoft Entra ID
-* **No**: Uses basic authentication with username and password (default)
+* **Yes** - Enables OAuth 2.0 authentication through Microsoft Entra ID
+* **No** - Uses basic authentication with username and password (default)
 
 #### Basic Authentication
 
@@ -183,8 +180,8 @@ Authentication Methods
 * **POP3S** - POP3 over SSL/TLS for secure email downloading
 
 **Server Configuration** :
-* **Server Host**: The hostname or IP address of the incoming mail server
-* **Server Port**: The port number for the email protocol
+* **Server Host** - The hostname or IP address of the incoming mail server
+* **Server Port** - The port number for the email protocol
   * **IMAP** - Port 143 (non-encrypted) or Port 993 (SSL/TLS)
   * **IMAPS** - Port 993 (SSL/TLS encrypted)
   * **POP3** - Port 110 (non-encrypted) or Port 995 (SSL/TLS)
