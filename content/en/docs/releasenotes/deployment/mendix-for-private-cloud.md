@@ -12,6 +12,17 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2025
 
+### September 4, 2025
+
+#### Portal Improvements
+
+* We have updated the **Details** icon in the **Cluster Management**, **Environment Overview**, and **Environment Details** pages.
+* We have fixed an issue where the browser console for the **Environment Overview** page was spammed with multiple log warnings.
+
+#### Build API
+
+* We have fixed an intermittent issue where the authentication failed with a 401 error when valid PAT tokens were provided in the API requests (Ticket 256946,Ticket 257444, Ticket 258196).
+
 ### August 29, 2025
 
 #### Mendix Operator v2.23.0 {#2.23.0}
