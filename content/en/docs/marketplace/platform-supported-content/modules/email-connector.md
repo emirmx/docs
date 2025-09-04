@@ -484,7 +484,7 @@ For more information, see the [Reverse Proxy Inbound Rules](/developerportal/dep
 Configuring local clients, such as [Papercut](https://github.com/ChangemakerStudios/Papercut-SMTP), is supported. If you are using a tool like Papercut, do the following:
 
 1. Follow the steps for [adding an email account](#adding-email-account).
-2. Continue with manual configuration in the wizard (Automatic configuration does not work for local clients).
+2. Continue with manual configuration in the wizard (automatic configuration does not work for local clients).
 3. Select the **Send emails** checkbox.
 4. Select **SMTP** for the **Protocol**, and enter *localhost* for the **Server host**. Enter the **Server port** number (for example, *25*).
   
