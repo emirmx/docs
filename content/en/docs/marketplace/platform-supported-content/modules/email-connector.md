@@ -14,7 +14,7 @@ The [Email Connector](https://marketplace.mendix.com/link/component/120739) enab
 
 ### Features
 
-The Email connector includes the following features:
+The Email Connector includes the following features:
 
 * Configuration of multiple email accounts
     * Supports Basic Authentication or OAuth 2.0 (Authorization Code Flow or Client Credentials Flow) for Microsoft Entra ID (formerly Azure Active Directory) accounts
@@ -23,7 +23,7 @@ The Email connector includes the following features:
 * Email templates
 * Sending and receiving emails using OAuth 2.0 Authorization Code Grant or Client Credentials Flow
 
-The Email connector supports the following protocols:
+The Email Connector supports the following protocols:
 
 * POP3 and POP3S
 * IMAP and IMAPS
@@ -35,7 +35,7 @@ The Email connector supports the following protocols:
 Follow these prerequisites carefully. Missing a step can lead to errors.
 {{% /alert %}}
 
-Before you use the Email connector in your app, do the following:
+Before you use the Email Connector in your app, do the following:
 
 * Download and configure the latest version of the [Mx Model Reflection](/appstore/modules/model-reflection/) module.
 * Download and configure the latest version of the [Encryption](/appstore/modules/encryption/) module.
@@ -194,7 +194,7 @@ This option will solely set up your shared mailbox and will require the use of y
 **Email Protocol** – Choose from available email protocols for receiving emails. Common options include:
 
 * **IMAP** – Internet Message Access Protocol for email retrieval and management
-* **IMPAS** –  IMAP over SSL/TLS for secure email access
+* **IMAPS** –  IMAP over SSL/TLS for secure email access
 * **POP3** – Post Office Protocol for email downloading
 * **POP3S** – POP3 over SSL/TLS for secure email downloading
 
@@ -393,7 +393,7 @@ Choose the email template you wish to export and select **Export** from **Pop-up
 An exported email template can be imported into the current deployment environment or a different one. To begin the import process, follow these steps:
 
 1. Click **Import Template**.
-2. Select the template file (*.xml*) you want to important.
+2. Select the template file (*.xml*) you want to import.
 3. Click **Import Template**.
 
 ## Troubleshooting
@@ -404,10 +404,10 @@ If you have issues sending or receiving emails, first check the **Error logs** i
 
 ### Gmail Accounts {#gmail-accounts}
 
-Gmail no longer supports basic authentication (usernames and password), but you may still be able to set up an account in the Email connector by doing the following:
+Gmail no longer supports basic authentication (usernames and password), but you may still be able to set up an account in the Email Connector by doing the following:
 
 1. Read [Less secure apps & your Google Account](https://support.google.com/accounts/answer/6010255) and turn off the **Less secure app access** setting in your Google account.
-2. Set up an app password to sign in to the Email connector. For more information, see [Sign in with app passwords](https://support.google.com/accounts/answer/185833).
+2. Set up an app password to sign in to the Email Connector. For more information, see [Sign in with app passwords](https://support.google.com/accounts/answer/185833).
 
 ### Adding OAuth 2.0 Configuration to an App with Basic Authentication
 
@@ -475,7 +475,7 @@ To add inline attachments to an email message, use the Rich text editor to inser
 
 ### Page Styling
 
-If the **Email connector** page styling is affected as you select and view email messages, it likely due to errors in the email message CSS. To resolve the errors, turn on **Sanitize email to prevent XSS attacks** in [Account Settings](#other-account-settings).
+If the **Email Connector** page styling is affected as you select and view email messages, it likely due to errors in the email message CSS. To resolve the errors, turn on **Sanitize email to prevent XSS attacks** in [Account Settings](#other-account-settings).
 
 ### Importing Emails with Long Attachment Names
 
