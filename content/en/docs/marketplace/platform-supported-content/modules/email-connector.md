@@ -62,183 +62,204 @@ The module includes the following bundled widgets:
 
 ## Setup in Studio Pro {#setup}
 
-1. To launch the user interface, Add the **Email_Connector_Overview** page located in the **USE_ME > Pages** to your app Navigation.
+To launch the user interface, add the **Email_Connector_Overview** page located in the **USE_ME > Pages** to your app Navigation.
 
-### Configuring the Roles
+### Configuring Roles
 
-The module includes a default **EmailConnectorAdmin** module role with preconfigured access rights for common use cases. Review and verify that these access rights align with your specific requirements and security policies before assigning this module role to user roles in [App Security](/refguide/app-security/).
+The module includes a default **EmailConnectorAdmin** module role with pre-configured access rights for common use cases. Review and verify that these access rights align with your specific requirements and security policies before assigning this module role to user roles in [App Security](/refguide/app-security/).
 
 ## Send Email {#send-email}
 
 After launching your Studio Pro application, you can begin setting up your **Send Email** accounts through the Email Connector user interface.
-Configuration supports two authentication methods: **Basic Authentication** and **OAuth 2.0**.
+Configuration supports two authentication methods: 
 
-### Account setup
+* **Basic Authentication** 
+* **OAuth 2.0**
 
-#### Enable Microsoft Entra ID Authentication:
-* **Yes** - Enables OAuth 2.0 authentication through Microsoft Entra ID
-* **No** - Uses basic authentication with username and password (default)
+### Account Setup
+
+#### Enable Microsoft Entra ID Authentication
+
+* **Yes** – Enables OAuth 2.0 authentication through Microsoft Entra ID
+* **No** (default) – Uses basic authentication with username and password 
 
 #### Basic Authentication
 
 ##### Primary Account Details
 
-* **Display Name** - The name that appears to email recipients when they receive messages
-* **Email or Username** - The email address or username for the sending account
-* **Password** - The account password for basic authentication, Field is masked for security.
+* **Display Name** – The name that email recipients see when they receive messages
+* **Email or Username** – The email address or username for the sending account
+* **Password** – The account password for basic authentication; the field is masked for security
 
 ##### Shared Mailbox Configuration
 
-* Optional feature for setting up shared mailbox access.
-* When enabled, uses the primary account details for configuration
-* This option will solely set up your shared mailbox and will require the use of your primary account Details for configuration
+This is an optional feature for setting up shared mailbox access. When enabled, it uses the primary account details for configuration.
+
+{{% alert color="info" %}}
+This option will solely set up your shared mailbox and will require the use of your primary account details for configuration.
+{{% /alert %}}
 
 ##### Email Protocol Settings
 
-**Email Protocol** : Currently supports SMTP for outbound email transmission
+**Email Protocol** currently supports SMTP for outbound email transmission.
 
-**Server Configuration** :
-* **Server Host**: The SMTP server hostname or IP address 
-* **Server Port**: The port number for SMTP communication
+**Server Configuration** 
 
-**Security Options** : 
-* **SSL**: Enable Secure Sockets Layer encryption 
-* **TLS**: Enable Transport Layer Security encryption
+* **Server Host** – The SMTP server hostname or IP address 
+* **Server Port** – The port number for SMTP communication
+
+**Security Options** 
+
+* **SSL** – Enable Secure Sockets Layer encryption 
+* **TLS** – Enable Transport Layer Security encryption
 
 #### OAuth Authentication
+
 You can configure your account to authenticate with Microsoft Entra ID OAuth 2.0. Multiple OAuth 2.0 providers can be configured per app.
 
-If no email accounts are configured, you can create a new OAuth configuration from. Otherwise, select OAuth Configurations to add, delete, and edit OAuth configurations. For detailed OAuth configuration steps and implementation guidance, refer to the [OAuth configuration] (#oauth-config-details) section.
+Select **OAuth Configurations** to add, delete, and edit OAuth configurations. If no email accounts are configured, you can create a new OAuth configuration form. For detailed OAuth configuration steps and implementation guidance, see the [OAuth Configurations](#oauth-config-details) section below.
 
 ### Sending Email
 
-* Use the **SUB_SendEmail microflow** as it provides a standardized, Mendix-compliant method for email delivery with proper error handling and configuration management.
+Use the **SUB_SendEmail microflow** as it provides a standardized, Mendix-compliant method for email delivery with proper error handling and configuration management.
 
-* When working with email templates, reference the following sample microflows for implementation guidance:
+When working with email templates, refer to the following sample microflows for implementation guidance:
 
-  * **Sample_ACT_CreateEmailFromTemplateAndThenSend** - demonstrates creating emails from templates with additional customization
-  * **Sample_ACT_SendEmailWithTemplate** - shows direct email sending using predefined templates
+* **Sample_ACT_CreateEmailFromTemplateAndThenSend** – demonstrates creating emails from templates with additional customization
+* **Sample_ACT_SendEmailWithTemplate** – shows direct email sending using predefined templates
 
-Recommended Approach: Use **Sample_ACT_SendEmailWithTemplate** for most email template scenarios, as it provides a streamlined implementation for sending templated emails with minimal configuration overhead.
+{{% alert color="info" %}}
+It is recommended to use **Sample_ACT_SendEmailWithTemplate** for most email template scenarios, as it provides a streamlined implementation for sending templated emails with minimal configuration overhead.
+{{% /alert %}}
 
 ### Additional Account Settings
 
 #### Server Connection Settings
-* **Use SSL check server identity** - Optional security feature to verify server identity during SSL connections. Also, enhances connection security by validating server certificates
-* **Connection Timeout** - Configure the maximum time to wait for server connections. Default value: 20000 milliseconds (20 seconds)
+
+* **Use SSL check server identity** – An optional security feature to verify server identity during SSL connections and enhance connection security by validating server certificates
+* **Connection Timeout** – Configure the maximum time to wait for server connections; the default value is 20000 milliseconds (20 seconds)
 
 #### Send Email Configuration
-* **Full Name** - Specify the display name for outgoing emails. This name appears in the **From** field of sent messages
-* **Max. send attempts** - Configure the maximum number of retry attempts for failed email sends
-  Default value: 0 (no retry attempts)
+
+* **Full Name** – Specify the display name for outgoing emails; this name appears in the **From** field of sent messages
+* **Max. send attempts** – Configure the maximum number of retry attempts for failed email sends; the default value is 0 (no retry attempts)
 
 #### Digital Signature Settings
-* **Configure Digital Signature** - Enable this option to digitally sign outgoing email messages during send email actions. Once configured, provides message authentication and integrity verification
-* **Certificate (PKCS#12)** - Upload a PKCS#12 certificate file for digital signing. Supports standard PKCS#12 format certificates
-* **Passphrase** - Enter the passphrase required to access the PKCS#12 certificate. This field is mandatory when using certificate-based digital signatures
+
+* **Configure Digital Signature** – Enable this option to digitally sign outgoing email messages during send email actions; once configured,it provides message authentication and integrity verification
+* **Certificate (PKCS#12)** – Upload a PKCS#12 certificate file for digital signing; this supports standard PKCS#12 format certificates
+* **Passphrase** – Enter the passphrase required to access the PKCS#12 certificate; this field is mandatory when using certificate-based digital signatures
 
 #### Email Encryption Settings
-* **Configure Email Encryption** - Enable this option to encrypt outgoing email messages during send email actions. Provides additional security for sensitive email communications
-* **LDAP Configuration** - 
-  * **LDAP Host** - Specify the LDAP server hostname for certificate lookup
-  * **LDAP Port** - Configure the LDAP server port (default: 389)
-* **Authentication Method** -
-  The system supports two authentication methods for LDAP access:
 
-  * **No Authentication**: Connect to LDAP server without credentials
-  * **Basic Authentication**: Use username and password for LDAP server access
+* **Configure Email Encryption** – Enable this option to encrypt outgoing email messages during send email actions; it provides additional security for sensitive email communications
+* **LDAP Configuration**  
+    * **LDAP Host** – Specify the LDAP server hostname for certificate lookup
+    * **LDAP Port** – Configure the LDAP server port (default: 389)
+* **Authentication Method** – The system supports two authentication methods for LDAP access:
+    * **No Authentication** – Connect to LDAP server without credentials
+    * **Basic Authentication** – Use username and password for LDAP server access
 
 ## Receive Email {#receive-email}
-After launching your Studio Pro application, you can begin setting up your **Receive Email** accounts through the Email Connector user interface.
-Configuration supports two authentication methods: **Basic Authentication** and **OAuth 2.0**.
 
-### Account setup
+After launching your application, you can set up your **Receive Email** accounts through the Email Connector user interface. Configuration supports two authentication methods:
 
-#### Enable Microsoft Entra ID Authentication:
-* **Yes** - Enables OAuth 2.0 authentication through Microsoft Entra ID
-* **No** - Uses basic authentication with username and password (default)
+* **Basic Authentication** 
+* **OAuth 2.0**
+
+### Account Setup
+
+#### Enable Microsoft Entra ID Authentication
+
+* **Yes** – Enables OAuth 2.0 authentication through Microsoft Entra ID
+* **No** (default) – Uses basic authentication with username and password 
 
 #### Basic Authentication
 
 ##### Primary Account Details
 
-* **Email or Username** - The email address or username for the sending account
-* **Password** - The account password for basic authentication, Field is masked for security.
+* **Email or Username** – The email address or username for the sending account
+* **Password** – The account password for basic authentication; the field is masked for security
 
 ##### Shared Mailbox Configuration
 
-* Optional feature for setting up shared mailbox access.
-* When enabled, uses the primary account details for configuration
-* This option will solely set up your shared mailbox and will require the use of your primary account Details for configuration
+This is an optional feature for setting up shared mailbox access. When enabled, it uses the primary account details for configuration.
+
+{{% alert color="info" %}}
+This option will solely set up your shared mailbox and will require the use of your primary account details for configuration.
+{{% /alert %}}
 
 ##### Email Protocol Settings
 
-**Email Protocol** : Choose from available email protocols for receiving emails. Common options include:
-* **IMAP** - Internet Message Access Protocol for email retrieval and management
-* **IMPAS** -  IMAP over SSL/TLS for secure email access
-* **POP3** - Post Office Protocol for email downloading
-* **POP3S** - POP3 over SSL/TLS for secure email downloading
+**Email Protocol** – Choose from available email protocols for receiving emails. Common options include:
 
-**Server Configuration** :
-* **Server Host** - The hostname or IP address of the incoming mail server
-* **Server Port** - The port number for the email protocol
-  * **IMAP** - Port 143 (non-encrypted) or Port 993 (SSL/TLS)
-  * **IMAPS** - Port 993 (SSL/TLS encrypted)
-  * **POP3** - Port 110 (non-encrypted) or Port 995 (SSL/TLS)
-  * **POP3S** - Port 995 (SSL/TLS encrypted)
+* **IMAP** – Internet Message Access Protocol for email retrieval and management
+* **IMPAS** –  IMAP over SSL/TLS for secure email access
+* **POP3** – Post Office Protocol for email downloading
+* **POP3S** – POP3 over SSL/TLS for secure email downloading
 
-**Recommendation**: Use the encrypted ports (993 for IMAPS, 995 for POP3S) for enhanced security and data protection.
+**Server Configuration** 
+
+* **Server Host** – The hostname or IP address of the incoming mail server
+* **Server Port** – The port number for the email protocol
+    * **IMAP** – Port 143 (non-encrypted) or Port 993 (SSL/TLS)
+    * **IMAPS** – Port 993 (SSL/TLS encrypted)
+    * **POP3** – Port 110 (non-encrypted) or Port 995 (SSL/TLS)
+    * **POP3S** – Port 995 (SSL/TLS encrypted)
+
+{{% alert color="info" %}} It is recommended to use the encrypted ports (993 for IMAPS, 995 for POP3S) for enhanced security and data protection. {{% /alert %}}
 
 #### OAuth Authentication
+
 You can configure your account to authenticate with Microsoft Entra ID OAuth 2.0. Multiple OAuth 2.0 providers can be configured per app.
 
-If no email accounts are configured, you can create a new OAuth configuration from. Otherwise, select OAuth Configurations to add, delete, and edit OAuth configurations. For detailed OAuth configuration steps and implementation guidance, refer to the [OAuth configuration] (#oauth-config-details) section.
+Select **OAuth Configurations** to add, delete, and edit OAuth configurations. If no email accounts are configured, you can create a new OAuth configuration form. For detailed OAuth configuration steps and implementation guidance, see the [OAuth Configurations](#oauth-config-details) section below.
 
 ### Additional Account Settings
 
 #### Server Connection Settings
-* **Use SSL check server identity** - Optional security feature to verify server identity during SSL connections. Also, enhances connection security by validating server certificates
-* **Connection Timeout** - Configure the maximum time to wait for server connections. Default value: 20000 milliseconds (20 seconds)
+
+* **Use SSL check server identity** – An optional security feature to verify server identity during SSL connections and enhance connection security by validating server certificates
+* **Connection Timeout** – Configure the maximum time to wait for server connections; the default value is 20000 milliseconds (20 seconds)
 
 #### Receive Email Configuration
 
-* **Folder to replicate E-mails from** - Specify the email folder to monitor for incoming messages Default: "INBOX"
-* **Subscribe to incoming emails** - Enable real-time email monitoring for the specified folder. Provides immediate notification of new email arrivals
-* **Number of emails to retrieve from server** - Set the maximum number of emails to fetch in a single operation. Default value: 50
-* **Fetch strategy** - Controls the order in which emails are retrieved from the server 
-  * **Latest** - Retrieves the most recent emails first 
-  * **Oldest** - Retrieves emails starting from the oldest first
+* **Folder to replicate E-mails from** – Specify the email folder to monitor for incoming messages; the default is "INBOX"
+* **Subscribe to incoming emails** – Enable real-time email monitoring for the specified folder; it provides immediate notification of new email arrivals
+* **Number of emails to retrieve from server** – Set the maximum number of emails to fetch in a single operation; the default value is 50
+* **Fetch strategy** – Controls the order in which emails are retrieved from the server 
+    * **Latest** – Retrieves the most recent emails first 
+    * **Oldest** – Retrieves emails starting from the oldest first
 
 #### Server Email Management
 
 ##### Email handling on server after replication
 
-This setting determines what happens to emails on the server after they have been successfully replicated to your Mendix application:
+This setting determines what happens to emails on the server after they have been successfully replicated to your Mendix application.
 
 * **None**
-  * Leaves emails unchanged on the server after replication 
-  * Suitable for read-only processing or when multiple systems access the same emails
-
+    * Leaves emails unchanged on the server after replication 
+    * Suitable for read-only processing or when multiple systems access the same emails
 * **Remove original emails from server** 
-  * Permanently deletes emails from the server after successful replication 
-  * Helps manage server storage space 
-  * Use with caution as this action is irreversible
+    * Permanently deletes emails from the server after successful replication 
+    * Helps manage server storage space 
+  
+{{% alert color="warning" %}} Use this setting with caution, as the action is irreversible. {{% /alert %}}
 
 * **Move emails on server to another (existing folder)**
-  * Transfers processed emails to a different folder on the server 
-  * Maintains email history while organizing processed messages 
-  * Requires specifying an existing target folder on the server
+    * Transfers processed emails to a different folder on the server 
+    * Maintains email history while organizing processed messages 
+    * Requires specifying an existing target folder on the server
 
 ##### Email Security and Processing
 
-* **Inline image rendering (HTML emails will have images visible in browser)** -
-  * Controls how HTML email images are displayed 
-  * When enabled, images embedded in HTML emails are rendered in the browser 
-  * Enhances readability but may have security implications
-
-* **Sanitize email to prevent XSS attacks** -
-  * Enables security filtering to prevent cross-site scripting attacks 
-  * Removes potentially malicious scripts and content from email messages 
+* **Inline image rendering (HTML emails will have images visible in browser)** 
+    * Controls how HTML email images are displayed 
+    * When enabled, images embedded in HTML emails are rendered in the browser 
+    * Enhances readability but may have security implications
+* **Sanitize email to prevent XSS attacks** 
+    * Enables security filtering to prevent cross-site scripting attacks 
+    * Removes potentially malicious scripts and content from email messages 
 
 ## OAuth Configurations {#oauth-config-details}
 
