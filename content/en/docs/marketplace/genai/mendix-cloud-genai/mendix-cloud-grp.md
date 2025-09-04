@@ -76,8 +76,8 @@ The Mendix Portal allows easy access to manage the resources, through the GenAI 
 
 ## Mendix Cloud GenAI Connector
 
-The [Mendix Cloud GenAI connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/) lets you utilize Mendix Cloud GenAI resource packs directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox. Please make sure to use no older versions of this connector as 
-* contained in GenAI for Mendix bundle v2.4.1 (Mendix 9) or
+The [Mendix Cloud GenAI connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/) lets you utilize Mendix Cloud GenAI resource packs directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox. Please note that versions older than the ones listed below do no longer work:  
+* GenAI for Mendix bundle v2.4.1 (Mendix 9) (contains Mendix Cloud GenAI connector) or
 * Mendix Cloud GenAI connector v3.1.1 (no DeployedKnowledgeBase support) or
 * Mendix Cloud GenAI connector v4.4.0 (DeployedKnowledgeBase support).
 
