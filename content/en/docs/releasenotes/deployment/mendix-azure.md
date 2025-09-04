@@ -12,7 +12,7 @@ These release notes cover changes to deployment to [Mendix on Azure](/developerp
 
 For information on the current status of Mendix deployment, see [Mendix Status](https://status.mendix.com/).
 
-### Release date: September 4, 2025
+### Release date: ???, 2025
 
 * We have improved the translations by adding support for error messages in the **Cluster Overview** page.
 * We have fixed a translation issue where **Logging and Monitoring** was displayed twice in Cluster Details page.
