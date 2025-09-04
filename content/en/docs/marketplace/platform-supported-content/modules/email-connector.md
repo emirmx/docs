@@ -296,16 +296,18 @@ To configure an OAuth provider for the Authentication Code Flow, provide the fol
 * **Callback Path** – Custom string used to autogenerate the callback URL
 * **Callback URL** – **Redirect URI** where the OAuth provider returns after authorization
 
-{{% alert color="info" %}} When deploying [on premises](/developerportal/deploy/on-premises-design/) on [Microsoft Windows](/developerportal/deploy/deploy-mendix-on-microsoft-windows/), add the following rule to the *web.config* file:
+{{% alert color="info" %}} 
+When deploying [on premises](/developerportal/deploy/on-premises-design/) on [Microsoft Windows](/developerportal/deploy/deploy-mendix-on-microsoft-windows/), add the following rule to the *web.config* file:
 
-  ```
-  <rule name="mxecoh">
-    <match url="^(mxecoh/)(.*)" />
-    <action type="Rewrite" url="http://localhost:8080/{R:1}{R:2}" />
-  </rule>
-  ```
+```
+<rule name="mxecoh">
+<match url="^(mxecoh/)(.*)" />
+<action type="Rewrite" url="http://localhost:8080/{R:1}{R:2}" />
+</rule>
+```
 
-For more information, see the [Reverse Proxy Inbound Rules](/developerportal/deploy/deploy-mendix-on-microsoft-windows/#reverse-proxy-rules) section of *Microsoft Windows*. {{% /alert %}}
+For more information, see the [Reverse Proxy Inbound Rules](/developerportal/deploy/deploy-mendix-on-microsoft-windows/#reverse-proxy-rules) section of *Microsoft Windows*. 
+{{% /alert %}}
 
 To configure an OAuth provider for the **Client Credentials Flow**, provide the following details from Microsoft Entra ID after app registration:
 
