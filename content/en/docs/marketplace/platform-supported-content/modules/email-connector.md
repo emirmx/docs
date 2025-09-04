@@ -273,17 +273,17 @@ To configure an OAuth provider for the authentication code flow, provide the fol
 
 * **Client ID** – Application identifier obtained from [Microsoft Entra ID](https://portal.azure.com/) after app registration
 * **Client Secret** – Authentication key generated during Microsoft Entra ID app registration
-* **Callback Path** – Custom string value used to auto-generate the callback URL
+* **Callback Path** – Custom string value used to autogenerate the callback URL
 * **Callback URL** – **Redirect URI** where the OAuth provider returns after authorization
 
 {{% alert color="info" %}} When deploying [on premises](/developerportal/deploy/on-premises-design/) running [Microsoft Windows](/developerportal/deploy/deploy-mendix-on-microsoft-windows/), you need to add a rule for a URL redirect. Add the following rule to the *web.config* file where the on-premises application is installed:
 
-```
-<rule name="mxecoh">
-   <match url="^(mxecoh/)(.*)" />
-   <action type="Rewrite" url="http://localhost:8080/{R:1}{R:2}" />
-</rule>
-```
+  ```
+  <rule name="mxecoh">
+    <match url="^(mxecoh/)(.*)" />
+    <action type="Rewrite" url="http://localhost:8080/{R:1}{R:2}" />
+  </rule>
+  ```
 
 For more information, see the [Reverse Proxy Inbound Rules](/developerportal/deploy/deploy-mendix-on-microsoft-windows/#reverse-proxy-rules) section of *How to Deploy Mendix on Microsoft Windows*. {{% /alert %}}
 
@@ -293,7 +293,7 @@ To configure an OAuth provider for the **client credentials grant flow**, provid
 * **Client Secret** - Authentication key generated for your application
 * **Tenant ID** - Directory identifier for your Microsoft Entra ID tenant
 
-With Email Connector version 5.2.0 and newer, you can send emails using a client credentials flow.
+With the Email Connector version 5.2.0 and above, you can send emails using a client credentials flow.
 
 ### Settings in the Microsoft Entra ID (Authentication Code Flow) {#auth-code-flow}
 
@@ -352,44 +352,49 @@ On the [Microsoft Entra ID](https://portal.azure.com/), ensure you have the foll
 Admin status is given on the added API permissions. The tenant admin must register the Microsoft Entra ID application's service principal in Exchange via Exchange Online PowerShell, as described in [Register service principals in Exchange](https://learn.microsoft.com/en-us/exchange/client-developer/legacy-protocols/how-to-authenticate-an-imap-pop-smtp-application-by-using-oauth#register-service-principals-in-exchange).
 
 ## Email Templates
+
 You can create and use templates with any email account.
 
 ### Creating an Email Template{#create-template}
 
-* In Studio Pro, use the **SNIP_EmailTemplate_Overview** snippet located in **Private** > **Snippets**. Add the snippet to a page and save it on a button click.
+In Studio Pro, use the **SNIP_EmailTemplate_Overview** snippet located in **Email_Connector** > **Private** > **Snippets**. Add the snippet directly to a page and save it.
 
-  {{% alert color="info" %}} [Mx Model Reflection](/appstore/modules/model-reflection/)module needs to be installed and properly configured in your app prior to creating placeholder tokens and before exporting or importing email templates containing placeholder tokens.{{% /alert %}}
+  {{% alert color="info" %}} The [Mx Model Reflection](/appstore/modules/model-reflection/) module needs to be installed and properly configured in your app prior to creating placeholder tokens and before exporting or importing email templates containing placeholder tokens.{{% /alert %}}
 
 ### Creating an Email Message from a Template
 
-Within Mendix Studio Pro, utilize the **CreateEmailFromTemplate** Java action to generate a draft email message that allows for preview and customization. After finalizing your message content, you can send it using the **SendEmail** action. The input parameters are the following:
+In Studio Pro, use the **CreateEmailFromTemplate** Java action to generate a draft email message that can be previewed and customized. When you have finalized your message content, you can send it using the **Send email** action. The input parameters are as follows:
 
-* **DataObject** – This represents the entity object from which placeholder tokens will be extracted. To retrieve data from multiple objects, you should create a [non-persistable entity](/refguide/persistability/#non-persistable).
-* **EmailTemplate** – This represents the email template that will be used to construct and send an EmailMessage object.
-* **Queued** – When enabled (**true**), the email message gets stored in the **EmailMessage** entity with a **Queued** status. This configuration enables later transmission via scheduled events. You can leverage the **SE_SendQueuedEmails** microflow to set up the necessary scheduled events. You can also create a [task queue](/refguide/task-queue/) and run this microflow in that task queue to minimize system resource usage. Using a task queue, you can set the number of threads, node or cluster-wide scope, time intervals, and other parameters.
+* **DataObject** – This represents the entity object from which placeholder tokens will be extracted. To retrieve data from multiple objects, create a [non-persistable entity](/refguide/persistability/#non-persistable).
+* **EmailTemplate** – This represents the email template used to construct and send an **EmailMessage** object.
+* **Queued** – When enabled (**true**), the email message is stored in the **EmailMessage** entity with a **Queued** status. This configuration enables later transmission via [scheduled events](/refguide/scheduled-events/). You can leverage the **SE_SendQueuedEmails** microflow to set up the necessary scheduled events. You can also create a [task queue](/refguide/task-queue/) and run the microflow in that task queue to minimize system resource usage. With a task queue, you can set the number of threads, node or cluster-wide scope, time intervals, and other parameters.
 
-Review the demonstration microflow **Sample_ACT_CreateEmailFromTemplateAndThenSend** as a reference implementation. This microflow showcases how to implement the **CreateEmailFromTemplate** Java action while managing attachments for the **EmailMessage**, incorporating both existing **EmailTemplate** attachments and supplementary files.
+Review the demonstration microflow **Sample_ACT_CreateEmailFromTemplateAndThenSend** as a reference. This microflow showcases how to implement the **CreateEmailFromTemplate** Java action while managing attachments for the **EmailMessage**, incorporating both existing **EmailTemplate** attachments and supplementary files.
 
 ### Sending an Email with a Template
 
-Within Mendix Studio Pro, use the **SendEmailWithTemplate** Java action to send an email from a template. The input parameters are the following:
+In Studio Pro, use the **SendEmailWithTemplate** Java action to send an email from a template. The input parameters are as follows:
 
-* **Data Object** – This represents the entity object from which placeholder tokens will be extracted. To retrieve data from multiple objects, you should create a [non-persistable](/refguide/persistability/#non-persistable) entity.
+* **Data Object** – This represents the entity object from which placeholder tokens will be extracted. To retrieve data from multiple objects, create a [non-persistable](/refguide/persistability/#non-persistable) entity.
 * **EmailAccount** – This defines an email account with the necessary send email configuration details.
-* **EmailTemplate** – This represents the email template used to construct and transmit an **EmailMessage** object.
-* **Queued** – When enabled (**true**), the email message gets stored in the **EmailMessage** entity with a **Queued** status. This configuration enables later transmission via scheduled events. You can leverage the **SE_SendQueuedEmails** microflow to set up the necessary scheduled events. You can also create a [task queue](/refguide/task-queue/) and run the microflow in that task queue to minimize system resource usage. Using a task queue, you can set the number of threads, node or cluster-wide scope, time intervals, and other parameters.
+* **EmailTemplate** – This represents the email template used to construct and send an **EmailMessage** object.
+* **Queued** – When enabled (**true**), the email message is stored in the **EmailMessage** entity with a **Queued** status. This configuration enables later transmission via [scheduled events](/refguide/scheduled-events/). You can leverage the **SE_SendQueuedEmails** microflow to set up the necessary scheduled events. You can also create a [task queue](/refguide/task-queue/) and run the microflow in that task queue to minimize system resource usage. With a task queue, you can set the number of threads, node or cluster-wide scope, time intervals, and other parameters.
 
-Review the demonstration microflow **Sample_ACT_SendEmailWithTemplate** as a guide. For dynamic configuration of **To**, **CC**, or **BCC** fields during execution, update the EmailTemplate object with the required attribute values and provide this modified EmailTemplate object as input to the Java action.
+Review the demonstration microflow **Sample_ACT_SendEmailWithTemplate** as a reference. For dynamic configuration of **To**, **CC**, or **BCC** fields during execution, update the EmailTemplate object with the required attribute values and provide this modified EmailTemplate object as input to the Java action.
 
 ### Export Email Template
 
-Email template export capability is available in the Email Connector, streamlining the process of template recreation across various environments including development, acceptance, and production.
+You can export an email template using the Email Connector, streamlining the process of template recreation across various environments including development, acceptance, and production.
 
-Choose the email template you wish to export and select **Export** from **Pop-up Menu**. An XML file will be generated with a filename that combines the template name and current datetime, and it will be saved directly to your default downloads folder. The following image illustrates the downloaded XML file after completing the email template export.
+Choose the email template you wish to export and select **Export** from **Pop-up Menu**. An XML file will be generated with a filename that combines the template name and current datetime, and will be saved directly to your default downloads folder. The following image illustrates the downloaded XML file after completing the email template export.
 
 ### Import Email Template
 
-The exported email template can be imported into the current deployment environment or a different one. To begin the import process, click **Import Template**, which will open a pop-up window where you can browse and select the template file (.xml) for import. Complete the process by clicking **Import Template**.
+An exported email template can be imported into the current deployment environment or a different one. To begin the import process, follow these steps:
+
+1. Click **Import Template**.
+2. Select the template file (*.xml*) you want to important.
+3. Click **Import Template**.
 
 ## Troubleshooting
 
@@ -439,7 +444,8 @@ Configuring local clients, such as [Papercut](https://github.com/ChangemakerStud
 2. Continue with manual configuration in the wizard. (Automatic configuration does not work for local clients.)
 3. Select the **Send emails** checkbox.
 4. Select **SMTP** for the **Protocol**, and enter *localhost* for the **Server host**. Enter the **Server port** number (for example, *25*).
-5. Email and password both are not required.
+  
+Both email and password are not required.
 
 ### Adding Attachments
 
