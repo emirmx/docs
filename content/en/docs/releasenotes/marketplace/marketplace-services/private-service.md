@@ -7,12 +7,11 @@ weight: 20
 numberless_headings: true
 ---
 
-## 1.0.2
-`latest`
+## 1.0.2 (`latest`)
 
 **Release date: September 04, 2025**
 
-We fixed an issue where document generation fails with wait for content exception if any network request fails while opening the document page.
+We fixed an issue where document generation fails with a `wait for content` exception if any network request fails while opening the document page.
 
 ## 1.0.1
 
