@@ -90,17 +90,13 @@ Configuration supports two authentication methods:
 
 ##### Primary Account Details
 
-* **Display Name** – The name that email recipients see when they receive messages
+* **Display Name** – The name shown to email recipients
 * **Email or Username** – The email address or username for the sending account
 * **Password** – The account password for basic authentication; the field is masked for security
 
-##### Shared Mailbox Configuration
+##### Configure Shared Mailbox
 
-This is an optional feature for setting up shared mailbox access. When enabled, it uses the primary account details for configuration.
-
-{{% alert color="info" %}}
-This option will solely set up your shared mailbox and will require the use of your primary account details for configuration.
-{{% /alert %}}
+This is an optional feature for setting up shared mailbox access. It requires using the primary account details for configuration. Enable this feature by clicking the checkbox **Shared mailbox**.
 
 ##### Email Protocol Settings
 
@@ -122,8 +118,8 @@ You can configure your account to authenticate with Microsoft Entra ID OAuth 2.0
 
 To manage configurations:
 
-* Select **OAuth Configurations** to add, delete, and edit OAuth configurations
-* If no email accounts are configured, you can create a new OAuth configuration form
+* Select the **Configure OAuth** tab to add, delete, and edit OAuth configurations
+* If no email accounts are configured, you can create a new OAuth configuration
 
 For detailed steps and implementation guidance, see the [OAuth Configurations](#oauth-config-details) section below.
 
@@ -190,16 +186,13 @@ Configuration supports two authentication methods:
 
 ##### Primary Account Details
 
+* **Display Name** – The name shown to email recipients
 * **Email or Username** – The email address or username for the sending account
 * **Password** – The account password for basic authentication; the field is masked for security
 
-##### Shared Mailbox Configuration
+##### Configure Shared Mailbox
 
-This is an optional feature for setting up shared mailbox access. When enabled, it uses the primary account details for configuration.
-
-{{% alert color="info" %}}
-This option will solely set up your shared mailbox and will require the use of your primary account details for configuration.
-{{% /alert %}}
+This is an optional feature for setting up shared mailbox access. It requires using the primary account details for configuration. Enable this feature by clicking the checkbox **Shared mailbox**.
 
 ##### Email Protocol Settings
 
@@ -227,8 +220,8 @@ You can configure your account to authenticate with Microsoft Entra ID OAuth 2.0
 
 To manage configurations:
 
-* Select **OAuth Configurations** to add, delete, and edit OAuth configurations
-* If no email accounts are configured, you can create a new OAuth configuration form
+* Select the **Configure OAuth** tab to add, delete, and edit OAuth configurations
+* If no email accounts are configured, you can create a new OAuth configuration
 
 For detailed steps and implementation guidance, see the [OAuth Configurations](#oauth-config-details) section below.
 
