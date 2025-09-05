@@ -32,7 +32,7 @@ The Mendix Cloud GenAI Connector is commonly used for text generation, embedding
     * Simulate characters for games
     * Image to text
  
-#### Embeddings generation
+#### Embeddings Generation
 
 Convert strings into vector embeddings for various purposes based on the relatedness of texts.
 
@@ -51,8 +51,6 @@ You can combine embeddings with text generation capabilities and leverage specif
 The Mendix Cloud GenAI Connector module generates embeddings internally when interacting with a knowledge base. Pure embedding operations are only required if additional processes, such as using the generated vectors instead of text, are needed. For example, a similar search algorithm could use vector distances to calculate relatedness.
 {{% /alert %}}
 
-
-
 #### Knowledge Base
 
 The module enables tailoring generated responses to specific contexts by grounding them in data inside of a collection belonging to a Mendix Cloud GenAI knowledge base resource. This allows for the secure use of private company data or other non-public information when interacting with GenAI models within the Mendix app. It provides a low-code solution to store discrete data (commonly called chunks) in the knowledge base and retrieves relevant information for end-user actions or application processes.
@@ -65,9 +63,8 @@ Knowledge bases are often used for:
 If you are looking for a step-by-step guide on how to get your application data into a Mendix Cloud Knowledge Base, refer [Grounding Your Large Language Model in Data – Mendix Cloud GenAI](/appstore/modules/genai/how-to/howto-groundllm/). Note that the Mendix Portal also provides options for importing data into your knowledge base, such as file uploads. For more information, see [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/). This documentation focuses solely on adding data from an application using the connector. 
 
 ##### Architecture
-A Knowledge Base resource can comprise several collections. Each collection is specifically designed to hold numerous documents, serving as a logical grouping for related information based on their shared domain, purpose, or thematic focus. While collections provide a mechanism for data separation—with each corresponding to a [GenAICommons.DeployedKnowledgebase](/appstore/modules/genai-commons/#deployed-knowledge-base) — it is not best practice to create a large number of collections within a single Knowledge Base resource. A more performant and practical approach for achieving fine-grained data separation is through the strategic use of metadata. You can learn about this in [Retrieve and Generate](/appstore/modules/genai/MxGenAI/#retrieve-and-generate).
 
-
+A Knowledge Base resource can comprise several collections. Each collection is specifically designed to hold numerous documents, serving as a logical grouping for related information based on its shared domain, purpose, or thematic focus. While collections provide a mechanism for data separation, with each corresponding to a [DeployedKnowledgebase](/appstore/modules/genai/genai-for-mx/commons/#deployed-knowledge-base), it is not best practice to create a large number of collections within a single Knowledge Base resource. A more performant and practical approach for achieving fine-grained data separation is through the strategic use of metadata. To learn more, see [Retrieve and Generate](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#retrieve-and-generate).
 
 ### Features
 
