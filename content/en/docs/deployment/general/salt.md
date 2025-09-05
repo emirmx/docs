@@ -39,10 +39,15 @@ Upon purchase, your SALT-based license file is sent to you by email.
 
 ## Installing the Siemens License Server
 
-The Siemens License Server (SLS) is required to validate SALT-based licenses. This server must be installed within the same environment where your Mendix applications are deployed. All Mendix applications which use a SALT license must be able to access the license server. The license server must also have access to your SALT license file, which is used to validate the Mendix application licenses at runtime.
+The Siemens License Server (SLS) is required to validate SALT-based licenses. For proper license validation, ensure you meet the following requirements:
 
-To install the Siemens License Server and configure your licnese file, please follow this guide from the [Siemens Support Portal](https://support.sw.siemens.com/en-US/product/1586485382):
+* The SLS must be installed within the same environment as your deployed Mendix applications
+* All Mendix applications using a SALT license must be able to access the SLS
+* The license server must have access to your SALT license file in order to validate the Mendix application licenses at runtime.
 
+For detailed instructions on how to install the Siemens License Server and configure your license file, refer to the following Siemens support resources:
+
+* [Siemens License Server](https://support.sw.siemens.com/en-US/product/1586485382)
 * [Getting Started with Siemens Advanced Licensing Technology (SALT) and the Siemens License Server (SLS)](https://support.sw.siemens.com/en-US/product/1586485382/knowledge-base/MG612613)
 
 ## Configuring your Mendix Application
@@ -56,4 +61,4 @@ License.SaltLicenseLocation = port@host
 * `port`: The port number specified during the license server installation.
 * `host`: The hostname or IP address of the machine running the license server.
 
-After you configure the runtime setting and starting the Mendix application, the application connects to the Siemens License Server to validate the SALT license.
+After you configure the runtime setting and start the Mendix application, the application connects to the Siemens License Server to validate the SALT license.
