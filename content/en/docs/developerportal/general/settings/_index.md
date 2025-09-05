@@ -132,6 +132,14 @@ If you manage your projects in Jira, you can connect your apps in **Apps** to Ji
 
 {{< figure src="/attachments/developerportal/general/settings/story-switcher.png" width="700"  class="no-border" >}}
 
+## Maia settings {#maia-settings}
+
+{{% alert color="info" %}}
+Only users with the **App Settings** permission can view the history.
+{{% /alert %}}
+
+The **Maia settings** tab presents the option to enable or disable Maia features for your app. When enabling Maia, you will be requested to provide a description for your project, so that our AI assisted responses are more accurate and relevant to your app.
+
 ## History {#history}
 
 {{% alert color="info" %}}
