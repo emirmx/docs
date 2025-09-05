@@ -25,7 +25,7 @@ The **Logs** page in your Mendix app shows all the environments for this app. Cl
 
 You may be asked to provide your SAP credentials before you can see the log in Kibana.
 
-To view the logs of an environment using the SAP Cloud Logging service, click **Show Credentials**, copy them, then click **Logs** and paste the credentials to open the environment's logs in a new window. 
+To view the logs of an environment using the SAP Cloud Logging service, click **Show Credentials**, copy the credentials, then click **Logs** and paste them to open the environment's logs in a new window. 
 
 ## Troubleshooting
 
