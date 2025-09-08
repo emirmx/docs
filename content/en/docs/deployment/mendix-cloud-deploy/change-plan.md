@@ -58,7 +58,7 @@ To change an environment's plan, follow these steps:
     * To compare plans, click **Show Comparison**. This opens a comparison page where the Technical Contact can evaluate the current plan against other available options. The last selected comparison will populate the form. Alternatively, select a new plan directly from the **Plan** dropdown without comparing.
     * Enter a reason for plan change.
 
-9. All submitted plan change requests appear in the [Control Center](/control-center/approval-requests/) for the [Mendix Admin](/control-center/company-settings/#mendix-admins) review. To view the list of approvers, click **Mendix Admin** at the bottom of the **New Plan** form. When ready, click **Submit Request** to submit your plan change request. 
+9. All submitted plan change requests appear in the [Control Center](/control-center/approval-requests/) for the [Mendix Admin](/control-center/mendix-admins-page/) review. To view the list of approvers, click **Mendix Admin** at the bottom of the **New Plan** form. When ready, click **Submit Request** to submit your plan change request. 
 
     {{% alert color="info" %}}Approval from a Mendix Admin only authorizes the plan change but does not immediately apply it. As a result, the environment will remain on its current plan until the new plan is [approved](/control-center/approval-requests/#approving-a-request), [scheduled](#scheduling-a-plan-change) and [successfully applied](#after-schedule).
     {{% /alert %}}
