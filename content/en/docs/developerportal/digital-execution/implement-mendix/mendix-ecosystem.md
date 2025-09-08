@@ -31,7 +31,7 @@ Your company needs at least one Admin. This is normally someone from the company
 
 If you already have at least one Admin, you can see them in the list when you open [Control Center](https://controlcenter.mendix.com/index.html).
 
-If you do not have an Admin, you can assign one through [Mendix Support](https://support.mendix.com/hc/en-us/requests/new), by selecting **Standard Change: Assign Mendix Admin** from the drop-down list. This first admin can then [add other admins](/control-center/company-settings/#mendix-admins). 
+If you do not have an Admin, you can assign one through [Mendix Support](https://support.mendix.com/hc/en-us/requests/new), by selecting **Standard Change: Assign Mendix Admin** from the drop-down list. This first admin can then [add other admins](/control-center/mendix-admins-page/). 
 
 ### Digital Execution Practice (DEP)
 
