@@ -41,11 +41,19 @@ Although GenAI Commons technically defines additional capabilities typically fou
 
 ### Token Usage
 
-GenAI Commons can help store usage data which allows admins to understand the token usage. Usage data is only persisted if the constant `StoreUsageMetrics` is set to `true` and the GenAI connector of choice has implemented the operation to store token usage. In general, this is only supported for chat completions and embedding operations.
+GenAI Commons can help store usage data which allows admins to understand the token usage. Usage data is only persisted if the constant `StoreUsageMetrics` is set to `true` (exception: if [StoreTraces](#traceability) is set to `true`, Usages data is stored as well). In general, this is only supported for chat completions and embedding operations.
 
 To clean up usage data in a deployed app, you can enable the daily scheduled event `ScE_Usage_Cleanup` in the Mendix Cloud Portal. Use the `Usage_CleanUpAfterDays` constant to control for how long token usage data should be persisted. 
 
 Lastly, the [Conversational UI module](/appstore/modules/genai/conversational-ui/) provides pages, snippets, and logic to display and export token usage information. For this to work, the module roles `UsageMonitoring` from both Conversational UI as well as GenAI Commons need to be assigned to the applicable project roles.
+
+### Traceability {#traceability}
+
+The chat completions operations of GenAI Commons store data for traceability reasons in your application's database by default. This can be used to understand the usage of GenAI in your app and why the model behaved in certain ways, for example by reviewing the usage of tools.  Trace data is only persisted if the constant `StoreTraces` is set to `true`. As traces may contain sensitive and personally-identifiable information, it should be decided per use case if storing such data is compliant.
+
+To clean up traces data in a deployed app, you can enable the daily scheduled event `ScE_Trace_Cleanup` in the Mendix Cloud Portal. Use the `Trace_CleanUpAfterDays` constant to control for how long trace data should be persisted. 
+
+There are currently no out of the box UI snippets or building blocks available. In a future release those will be covered. To enable read-access to a user (typically an admin user), the module role `TraceMonitoring` needs to be granted to the applicable project roles.
 
 ## Technical Reference {#technical-reference}
 
@@ -55,7 +63,7 @@ The technical purpose of the GenAI Commons module is to define a common domain m
 
 The domain model in Mendix is a data model that describes the information in your application domain in an abstract way. For more general information, see the [Data in the Domain Model](/refguide/domain-model/) documentation. To learn about where the entities from the domain model are used and relevant during implementation, see the [Microflows](#microflows) section below.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genaicommons/demain-model.png" alt="" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genaicommons/domain-model.png" alt="" >}}
 
 #### `DeployedModel` {#deployed-model}
 
@@ -101,7 +109,7 @@ Accepted input modality of the associated deployed model.
 
 This entity represents usage statistics of a call to an LLM. It refers to a complete LLM interaction; in case there are several iterations (e.g. recursive processing of function calls), everything should be aggregated into one Usage record.
 
-Following the principles of GenAI Commons, it must be stored based on the response for every successful call to a system of an LLM provider. This is only applicable to text & file operations and embedding operations. It is the responsibility of connector developers implementing the GenAI principles in their GenAI operations to include the right microflows to ensure the storage of Usage details after successful calls.
+Following the principles of GenAI Commons, it must be stored based on the response for every successful call to a system of an LLM provider. This is only applicable to text & file operations and embedding operations.
 
 The data stored in this entity is to be used later on for token consumption monitoring.
 
@@ -115,9 +123,65 @@ The data stored in this entity is to be used later on for token consumption moni
 | `DurationMilliseconds` | The duration in milliseconds of the technical part of the call to the system of the LLM provider. This excludes custom pre and postprocessing but corresponds to a complete LLM interaction. |
 | `_DeploymentIdentifier` | Internal object used to identify the DeployedModel used. |
 
-#### `Connection` {#connection}
+#### `Trace` {#trace}
 
-The Connection entity was previously used as an input parameter for Chat completions, Embeddings, and Image Generation operations, but it has been replaced by the `DeployedModel` entity. It was also used as a general connection entity for Knowledge Base interactions, which is now replaced with the `DeployedKnowledgeBase` entity.
+A trace represents the whole LLM interaction from the first user message until the final assistant's response was returned, including tool calls.
+The data stored in this entity is to be used later on for traceability use cases.
+
+| Attribute | Description |
+| --- | --- |
+| `TraceId` | The trace id is set internally to identify a trace. |
+| `StartTime` | The start time of the initial model invocation. |
+| `EndTime` | The end time after the final model invocation is completed. |
+| `DurationMilliseconds` | The duration between start and end of the whole model invocation. |
+| `Input` | The initial input of the model invocation (usually a user prompt). |
+| `Output` | The response of the final message sent by the model (usually an assistant message). |
+| `_AgentVersionId` | The id of the agent version (if applicable) as sent via the request. |
+| `_ConversationId` | The id of the conversation (if applicable) as sent via the request. This usually is created by the model provider. |
+
+#### `Span` {#span}
+
+A span is created for each interaction between Mendix and the LLM (chat completions, tool calling, ...). The generalized object is usually not used, but only it's specializations.
+
+| Attribute | Description |
+| --- | --- |
+| `SpanId` | The span id is set internally to identify a span. |
+| `StartTime` | The start time of the model invocation. |
+| `EndTime` | The end time after the model invocation is completed. |
+| `DurationMilliseconds` | The duration between start and end of the whole model invocation. |
+| `Output` | The output of the span. |
+
+#### `ModelSpan` {#model-span}
+
+A model span is created for each interaction between Mendix and the LLM where content is generated (sent as the assistant's message). In addition to the [Span's](#span) attributes, it also contains the following:
+
+| Attribute | Description |
+| --- | --- |
+| `InputTokens` | Number of tokens in the request. |
+| `OutputTokens` | Number of tokens in the generated response. |
+| `_DeploymentIdentifier` | Internal object used to identify the DeployedModel that was used. |
+
+#### `ToolSpan` {#tool-span}
+
+A tool span is created for each tool call that the LLM requested. The tool call is processed in GenAI Commons and the result is sent back to the model. In addition to the [Span's](#span) attributes, it also contains the following:
+
+| Attribute | Description |
+| --- | --- |
+| `ToolName` | The name of the tool that was called. |
+| `_ToolCallId` | The id of the tool call used by the model to map an assistant message containing a tool call with the output of the tool call (tool message). |
+| `Input` | The input of the tool call as passed by the LLM. |
+| `IsError` | Indicates if the tool call failed. If so, the span's output will contain the error message that was also logged and sent to the LLM as tool result. |
+
+#### `KnowledgeBaseSpan` {#knowledge-base-span}
+
+A knowledge base span is created for each knowledge base retrieval tool call that the LLM requested. The tool call is processed in GenAI Commons and the result is sent back to the model. It does not contain any additional attributes compared to [ToolSpan](#tool-span) 
+
+| Attribute | Description |
+| --- | --- |
+| `ToolName` | The name of the tool that was called. |
+| `_ToolCallId` | The id of the tool call used by the model to map an assistant message containing a tool call with the output of the tool call (tool message). |
+| `Input` | The input of the tool call as passed by the LLM. |
+| `IsError` | Indicates if the tool call failed. If so, the span's output will contain the error message that was also logged and sent to the LLM as tool result. |
 
 #### `Request` {#request} 
 
@@ -125,11 +189,13 @@ The `Request` is an input object for the chat completions operations defined in 
 
 | Attribute | Description |
 | --- | --- |
+| `_Id` | The Id attribute describes the unique identifier of the session. Reuse the same value to continue the same session. |
 | `SystemPrompt` | A `SystemPrompt` provides the model with context, instructions, or guidelines. |
 | `MaxTokens` | Maximum number of tokens per request. |
 | `Temperature` | `Temperature` controls the randomness of the model response. Low values generate a more predictable output, while higher values allow creativity and diversity. It is recommended to steer either the temperature or `TopP`, but not both. |
 | `TopP` | `TopP` is an alternative to temperature for controlling the randomness of the model response. `TopP` defines a probability threshold so that only words with probabilities greater than or equal to the threshold will be included in the response. It is recommended to steer either the temperature or `TopP`, but not both. |
 | `ToolChoice` | Controls which (if any) tool is called by the model. For more information, see the [ENUM_ToolChoice](#enum-toolchoice) section containing a description of the possible values. |
+| `_AgentVersionId` | The AgentVersionId is set if the execution of the request was called from an Agent. |
 
 #### `Message` {#message}
 
@@ -223,6 +289,7 @@ The response returned by the model contains usage metrics and a response message
 
 | Attribute | Description |
 | --- | --- |
+| `_ID_` | The ID attribute describes the unique identifier of the session. Reuse the same value to continue the same session. If no ID was set by the LLM connector, an internal ID is created. | 
 | `RequestTokens` | Number of tokens in the request. | 
 | `ResponseTokens` | Number of tokens in the generated response. |
 | `TotalTokens` | Total number of tokens (request + response). |
@@ -259,6 +326,7 @@ An optional reference for a response message.
 | `Content` | The content of the reference. |
 | `Source` | The source of the reference, e.g. a URL. | 
 | `SourceType` | The type of the source. For more information, see [ENUM_SourceType](#enum-sourcetype). |
+| `Index` | Used to make references identifiable and sortable.| 
 
 #### `Citation` {#citation}
 
