@@ -48,5 +48,9 @@ Apps running in Mendix Cloud are subject to certain limitations. These behaviors
 
 * The platform automatically restarts application instances during routine platform updates, which can occur several times a week. If your application logs indicate a series of instance restarts for no apparent reason, the restarts are probably due to platform updates. This is normal and OK! The platform usually starts a new instance of your application before stopping the old one, thus ensuring that there is no downtime. You can verify this in your application logs.
 
-## Websocket connections
-* Mendix Cloud supports long-running websocket connections. However, there are more more network components involved in websocket connections, between the app in Mendix Cloud and the client. These components could have a timeout. Network components an also fail, resulting in the drop of your connection. You should therefor never assume that the will remain open forever once it is established. Makre sure you enable periodic WebSocket keepalive checks (e.g., every 25–30s) so the connection sees activity. Lack of activity can let NATs/firewalls drop long-idle tunnels. Properly handle the loss of connectivity to make sure the connection is re-established automatically.
+## WebSocket Connections
+
+* Mendix Cloud supports long-running WebSocket connections. However, multiple network components are involved in the WebSocket connections between your Mendix Cloud application and the client. These components can time out or the networks can fail, causing connections to drop.
+Therefore, do not assume that an established WebSocket connection will remain open indefinitely. To ensure connection stability and prevent unexpected disconnections:
+    * Enable periodic keepalive checks (for example, every 25–30 seconds). This ensures the connection remains active and prevents Network Address Translators (NATs) and firewalls from dropping long-idle tunnels.
+    * Implement robust reconnection logic to gracefully handle connectivity loss and automatically reestablish dropped connections.
