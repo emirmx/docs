@@ -227,6 +227,12 @@ If you have any issues related to accessing Datadog, contact their support on th
 
 Metrics on Datadog can include an additional namespace, `datadog`, which contains metrics on Datadog usage.
 
+### Datadog host billing
+
+Every instance of your application will run its own Datadog agent; they will show up as separate hosts in Datadog. Single-instance applications will count as one host, multi-instance applications will count for as many hosts as instances it is scaled to. Datadog uses host-based pricing, so you will be billed for every instance of your application.
+In the past, when Mendix Cloud ran on Cloud Foundry, Datadog didn't always correctly identify and bill each host. On Kubernetes, this process works correctly, which might result in more hosts showing up in Datadog if your applications run on Kubernetes.
+You will only be billed by Datadog if your application sends metrics to Datadog. If you add a `DD_LOGS_COLLECTION_ONLY` custom environment variable with value `true`, the application will only send logs to Datadog, and you won't be billed for the host(s).
+
 ## Read More
 
 * [Monitor Your Mendix Apps with Datadog](https://www.mendix.com/blog/monitor-your-mendix-apps-with-datadog/) – a Mendix blog about the capabilities of Datadog and using Datadog with Mendix
