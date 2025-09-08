@@ -12,22 +12,28 @@ aliases:
 
 The [Email Connector](https://marketplace.mendix.com/link/component/120739) allows you to send and receive emails using your own email server. It supports features like template-based emails, digital signatures, and encrypted email sending.
 
-### Features
+### Key Features
 
 The Email Connector includes the following capabilities:
-
-* Configuration of multiple email accounts
-    * Support for Basic Authentication or OAuth 2.0 (Authorization Code Flow or Client Credentials Flow) for Microsoft Entra ID (formerly Azure Active Directory) accounts
-    * Support for shared mailboxes with both Basic Authentication and OAuth 2.0
-* Digital signatures and encryption
-* Email templates
-* Sending and receiving emails using OAuth 2.0 Authorization Code Grant or Client Credentials Flow
-
-The Email Connector supports the following protocols:
-
-* POP3 and POP3S
-* IMAP and IMAPS
-* SMTP
+* **Multiple email accounts** configuration 
+* **Authentication support**:
+  * Basic Authentication (username/password)
+  * OAuth 2.0 (Authorization Code Flow & Client Credentials Flow)
+  * Microsoft Entra ID integration 
+  * Shared mailbox support 
+ 
+* **Email protocols**:
+  * POP3 and POP3S 
+  * IMAP and IMAPS 
+  * SMTP
+* **Security features**:
+  * Digital signatures (PKCS#12 certificates)
+  * Email encryption with LDAP integration 
+  * SSL/TLS encryption 
+  * XSS attack prevention
+* **Email Templates** with rich text editor and placeholder tokens 
+* **Real-time email monitoring** and folder management 
+* **Attachment support** (normal and inline)
 
 ### Prerequisites {#prerequisites}
 
@@ -62,13 +68,71 @@ The module includes the following bundled widgets:
 
 ## Setup in Studio Pro {#setup}
 
-To launch the user interface, add the **Email_Connector_Overview** page located in the **USE_ME > Pages** to your app navigation.
+{{% alert color="info" %}}
+The Email Connector is a toolkit providing reusable components (snippets, microflows, entities, and Java actions) for building custom email functionality. This documentation covers setup and configuration of these components in your Mendix application.
+{{% /alert %}}
+
+To launch the user interface and configure email accounts, add the **Email_Connector_Overview** page located in the **USE_ME > Pages** to your app navigation. This overview page provides access to configure and manage below configurations and settings:
+* **Send Email**
+* **Receive Email**
+* **Templates**
+* **Configure OAuth**
 
 ### Configuring Roles
 
 The module includes a default **EmailConnectorAdmin** module role with pre-configured access rights for common use cases. Review and verify that the access rights align with your specific requirements and security policies before assigning this module role to user roles in [App Security](/refguide/app-security/).
 
-## Send Email {#send-email}
+### Building Email Functionality {#building-email-functionality}
+
+The Email Connector provides building blocks that you assemble to create email functionality:
+
+* **Entities** - Represents a class of real-world objects, such as EmailAccount, EmailMessage, EmailTemplate, etc.
+* **Snippets** - Reusable interface components that can be used across pages, layouts, and other snippets
+* **Microflows** - Express application logic through actions such as creating objects, updating data, showing pages, and making decisions.
+* **Java Actions** - Extend application functionality beyond what's possible with microflows alone.
+
+#### Snippets
+They allow you to make interface changes in one place that automatically apply everywhere the snippet is used, reducing maintenance effort and ensuring consistency. Located in the **USE_ME > Snippets**
+
+##### Authentication & Configuration
+* **SNIP_Configure_OAuth** - Select OAuth provider from configured list when setting up email accounts
+* **SNIP_Configure_PrimaryUser_Login** - Configure primary user login details for an email account
+* **SNIP_Configure_Shared_Mailbox** - Option to set up shared mailbox access using primary account details
+* **SNIP_OAuthProvider_CreateEdit** - Create or modify OAuth provider configuration
+
+##### Account Management
+* **SNIP_EmailAccount_SendAccountSettings** - Configure outgoing email account settings and preferences
+* **SNIP_EmailAccount_ReceiveAccountSettings** - Configure incoming email account settings and preferences
+
+##### Email Operations
+* **SNIP_EmailTemplate_CreateEdit** - Create or edit email templates with rich text and placeholder tokens
+* **SNIP_Incoming_Email_Config** - Manage incoming email settings including folders and processing options
+* **SNIP_EmailLog_Overview** - View email sending and receiving activity logs
+
+##### Protocol & Security
+* **SNIP_Send_ProtocolDetails** - Configure outgoing/send email protocol (SMTP) details
+* **SNIP_Receive_ProtocolDetails** - Configure incoming/receive email protocol details
+* **SNIP_Send_EmailSecurity_Edit** - Manage email security features including digital signatures and encryption
+
+#### Microflows
+
+##### Core Microflows
+* **SUB_SendEmail** - Send emails using selected email account
+* **SUB_RetrieveEmails** - Fetch emails from selected email account
+* **SUB_EmailAccount_CheckServerConnection** - Validate email server connectivity and account configuration
+
+##### Sample Microflows
+* **Sample_ASU_SubscribeForEmailNotification** - Set up email notification subscriptions 
+* **SUB_GetSystemError** - Retrieve system error information
+
+#### Java Actions
+* **SendEmail** - Accepts EmailMessage and EmailAccount objects to send an email
+* **RetrieveEmailMessages** - Fetches emails from the server based on specified EmailAccount
+* **GetAutoConfig** - Automatically discover email server settings for common providers 
+* **GetFolderNames** - Retrieve available email folders from the server 
+* **GetBaseDNList** - Get directory service base distinguished names for LDAP integration
+
+## Send Email Configuration {#send-email}
 
 After launching your Studio Pro application, you can begin setting up your **Send Email** accounts through the Email Connector user interface.
 
@@ -123,7 +187,7 @@ To manage configurations:
 
 For detailed steps and implementation guidance, see the [OAuth Configurations](#oauth-config-details) section below.
 
-### Sending Email
+### Sending Email via Microflow
 
 Use the **SUB_SendEmail microflow** for standardized, Mendix-compliant email delivery with proper error handling and configuration management.
 
@@ -164,7 +228,7 @@ It is recommended to use **Sample_ACT_SendEmailWithTemplate** for most email tem
     * **No Authentication** – Connect to LDAP server without credentials
     * **Basic Authentication** – Use username and password for LDAP server access
 
-## Receive Email {#receive-email}
+## Receive Email Configuration {#receive-email}
 
 After launching your application, you can set up your **Receive Email** accounts through the Email Connector user interface. 
 
@@ -271,7 +335,7 @@ This setting determines what happens to emails on the server after they have bee
     * Enables security filtering to prevent cross-site scripting attacks 
     * Removes potentially malicious scripts and content from email messages 
 
-## OAuth Configurations {#oauth-config-details}
+## OAuth Configuration {#oauth-config-details}
 
 Configure your email account to authenticate using Microsoft Entra ID OAuth 2.0. Multiple OAuth 2.0 providers can be configured within a single application.
 
