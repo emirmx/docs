@@ -53,9 +53,13 @@ To import a complete app or solution package, follow these steps:
 
     {{< figure src="/attachments/refguide/modeling/import-and-export/file-import-app-project.png" class="no-border" >}}
 
-2. Select your Mendix app package file and click **Open**. The **Import App Package** dialog box will appear:
+2. Select your Mendix app package file and click **Open**. If you select a *.mpk file*, the **Import App Package** dialog box will appear.
 
     {{< figure src="/attachments/refguide/modeling/import-and-export/import-app-package.png" class="no-border" >}}
+
+   If you select a solution package (*.mxsolution*), it will open the **Import Solution App Package**.
+
+   {{< figure src="/attachments/refguide/modeling/import-and-export/import-app-solution-package.png" class="no-border" >}}
 
     You have the following options in this dialog box:
 
