@@ -21,6 +21,12 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
+### September xx, 2025
+
+#### New Features
+
+* We have added a new section to the app **Settings** page, namely [Maia Settings](/developerportal/collaborate/general-settings/#maia-settings). This consolidates and replaces the **Mendix AI Assistance** sections which were previously available in the **Board**, **Planning**, and **Feedback** settings. Now, you can enable Maia assistance for your app from one unified location.
+
 ### August 31, 2025
 
 #### Improvements

@@ -136,7 +136,7 @@ If you manage your projects in Jira, you can connect your apps in **Apps** to Ji
 Only users with the **App Settings** permission can toggle this setting.
 {{% /alert %}}
 
-The **Maia Settings** tab allows you to to enable or disable Maia features for your app.    
+The **Maia Settings** tab allows you to enable or disable Maia features for your app.    
 
 When you enable Maia, you are prompted to provide a description for your project. That way, the Mendix AI assisted responses will be more accurate and more relevant to your app.
 
