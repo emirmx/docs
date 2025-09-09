@@ -37,6 +37,19 @@ In the diagrams below, the following colors are used:
 
 {{< figure src="/attachments/support/legend.png"   width="50%"  class="no-border" >}}
 
+The concepts in the diagrams are described in the [Components of the Mendix Stack](/support/#components) section of *Mendix Support*, as follows:   
+ 
+* <sup>1</sup>[Database, File Storage, and Network](/support/#database-file-storage-and-network)    
+* <sup>2</sup>[Infrastructure](/support/#infrastructure)    
+* <sup>3</sup>[Container Runtime Platform](/support/#container-runtime-platform)    
+* <sup>4</sup>[Buildpack, m2ee, and Service Console](/support/#buildpack-m2ee-and-service-console)    
+* <sup>5</sup>[Application Operation](/support/#application-operation)    
+* <sup>6</sup>[Logs and Metrics](/support/#logs-and-metrics)    
+* <sup>7</sup>[Deployment Pipeline](/support/#deployment-pipeline)    
+* <sup>8</sup>[Runtime](/support/#runtime)    
+* <sup>9</sup>[Marketplace Components](/support/#marketplace-components)    
+* <sup>10</sup>[Application](/support/#application)     
+
 ## Mendix Public and Dedicated Cloud
 
 The Mendix Public and Dedicated Clouds are an integrated part of the Mendix Platform and are therefore fully supported as described in the SLA.
