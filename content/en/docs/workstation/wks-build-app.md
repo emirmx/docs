@@ -1,5 +1,6 @@
 ---
 title: "Building an App for Mendix Workstation"
+linktitle: "Building an App"
 url: /mendix-workstation/build-app/
 description: "Describes how to install the Workstation Connector and build an app to work with Mendix Workstation."
 weight: 30

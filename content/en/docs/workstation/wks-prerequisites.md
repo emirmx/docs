@@ -1,5 +1,6 @@
 ---
 title: "Getting Started with Mendix Workstation"
+linktitle: "Getting Started"
 url: /mendix-workstation/prerequisites/
 description: "Documents the requirements for the Mendix Workstation."
 weight: 10
@@ -50,8 +51,7 @@ As you begin your work with Mendix Workstation, keep in mind the following best 
 
 ### Security Recommendations
 
-* Regularly update the Workstation Client to the latest version.
-* Enable security in your Mendix app and assign the appropriate roles to the modules to ensure proper access control.
+For more information, see [Security Best Practices for Mendix Workstation](/mendix-workstation/security/).
 
 ### Performance Optimization
 
