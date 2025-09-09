@@ -24,7 +24,7 @@ Specify where the parameter comes from. Possible values are the following:
 * **Header** – The value of a header parameter is taken from the (first) request header with that name.
 {{% alert color="info" %}}
 
-Certain reserved keywords in **OpenAPI 3.0** cannot be used as header parameter names. For example, using `Authorization` as a custom header key can cause conflicts since it is already reserved by the specification. Using those reserved keywords only impacts OpenAPI v3 in Swagger UI and not the actual API endpoints. For more details and alternatives names, see [OpenAPI 3.0: Reserved header parameter names](https://swagger.io/docs/specification/v3_0/describing-parameters/#header-parameters).
+Certain reserved keywords in **OpenAPI 3.0** cannot be used as header parameter names. For example, using `Authorization` as a custom header key can cause conflicts since it is already reserved by the specification. Using those reserved keywords only impacts OpenAPI v3 in Swagger UI and not the actual API endpoints. For more details and alternative names, see [OpenAPI 3.0: Reserved header parameter names](https://swagger.io/docs/specification/v3_0/describing-parameters/#header-parameters).
 
 {{% /alert %}}
 * **Form** – The value of a form parameter is taken from the body part with that name (these are available for `multipart/form-data` requests).
