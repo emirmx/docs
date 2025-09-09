@@ -49,11 +49,13 @@ Lastly, the [Conversational UI module](/appstore/modules/genai/conversational-ui
 
 ### Traceability {#traceability}
 
-The chat completions operations of GenAI Commons store data for traceability reasons in your application's database by default. This can be used to understand the usage of GenAI in your app and why the model behaved in certain ways, for example by reviewing the usage of tools.  Trace data is only persisted if the constant `StoreTraces` is set to `true`. As traces may contain sensitive and personally-identifiable information, it should be decided per use case if storing such data is compliant.
+The chat completions operations of GenAI Commons store data for traceability reasons in your application's database by default. This helps to understand the usage of GenAI in your app and why the model behaved in certain ways, for example by reviewing the usage of tools.  Trace data is only persisted if the constant `StoreTraces` is set to `true`. 
+
+As traces may contain sensitive and personally-identifiable information, it should be decided per use case whether it is compliant to store such data.
 
 To clean up traces data in a deployed app, you can enable the daily scheduled event `ScE_Trace_Cleanup` in the Mendix Cloud Portal. Use the `Trace_CleanUpAfterDays` constant to control for how long trace data should be persisted. 
 
-There are currently no out of the box UI snippets or building blocks available. In a future release those will be covered. To enable read-access to a user (typically an admin user), the module role `TraceMonitoring` needs to be granted to the applicable project roles.
+There are currently no out of the box UI snippets or building blocks available. In a future release those will be covered. For now, you can just add a data grid to a page of your choice to display them. To enable read-access to a user (typically an admin user), the module role `TraceMonitoring` needs to be granted to the applicable project roles.
 
 ## Technical Reference {#technical-reference}
 
@@ -153,7 +155,7 @@ A span is created for each interaction between Mendix and the LLM (chat completi
 
 #### `ModelSpan` {#model-span}
 
-A model span is created for each interaction between Mendix and the LLM where content is generated (sent as the assistant's message). In addition to the [Span's](#span) attributes, it also contains the following:
+A model span is created for each interaction between Mendix and the LLM where content is generated (sent as the assistant's message). Typically, this is requests for text generation. In addition to the [Span's](#span) attributes, it also contains the following:
 
 | Attribute | Description |
 | --- | --- |
@@ -163,7 +165,7 @@ A model span is created for each interaction between Mendix and the LLM where co
 
 #### `ToolSpan` {#tool-span}
 
-A tool span is created for each tool call that the LLM requested. The tool call is processed in GenAI Commons and the result is sent back to the model. In addition to the [Span's](#span) attributes, it also contains the following:
+A tool span is created for each tool call requested by the LLM. The tool call is processed in GenAI Commons and the result is sent back to the model. In addition to the [Span's](#span) attributes, it also contains the following:
 
 | Attribute | Description |
 | --- | --- |
@@ -174,7 +176,7 @@ A tool span is created for each tool call that the LLM requested. The tool call 
 
 #### `KnowledgeBaseSpan` {#knowledge-base-span}
 
-A knowledge base span is created for each knowledge base retrieval tool call that the LLM requested. The tool call is processed in GenAI Commons and the result is sent back to the model. It does not contain any additional attributes compared to [ToolSpan](#tool-span) 
+A knowledge base span is created for each knowledge base retrieval tool call requested by the LLM. The tool call is processed in GenAI Commons and the result is sent back to the model. It does not contain any additional attributes compared to [ToolSpan](#tool-span) 
 
 | Attribute | Description |
 | --- | --- |
