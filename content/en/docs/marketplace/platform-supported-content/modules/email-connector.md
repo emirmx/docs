@@ -12,49 +12,61 @@ aliases:
 
 The [Email Connector](https://marketplace.mendix.com/link/component/120739) allows you to send and receive emails using your own email server. It supports features like template-based emails, digital signatures, and encrypted email sending.
 
+The Email Connector is a toolkit providing reusable components (snippets, microflows, entities, and Java actions) for building custom email functionality. This documentation covers the setup and configuration of these components in your Mendix application.
+
+{{% alert color="info" %}}
+This document describes versions 6.x.x of the Email Connector module.
+{{% /alert %}}
+
 ### Key Features
 
 The Email Connector includes the following capabilities:
-* **Multiple email accounts** configuration 
+
+* **Multiple email accounts** 
 * **Authentication support**:
-  * Basic Authentication (username/password)
-  * OAuth 2.0 (Authorization Code Flow & Client Credentials Flow)
-  * Microsoft Entra ID integration 
-  * Shared mailbox support 
+
+    * Basic Authentication (username/password)
+    * OAuth 2.0 (Authorization Code Flow & Client Credentials Flow)
+    * Microsoft Entra ID integration 
+    * Shared mailbox support 
  
 * **Email protocols**:
-  * POP3 and POP3S 
-  * IMAP and IMAPS 
-  * SMTP
+
+    * POP3 and POP3S 
+    * IMAP and IMAPS 
+    * SMTP
+
 * **Security features**:
-  * Digital signatures (PKCS#12 certificates)
-  * Email encryption with LDAP integration 
-  * SSL/TLS encryption 
-  * XSS attack prevention
+
+    * Digital signatures (PKCS#12 certificates)
+    * Email encryption with LDAP integration 
+    * SSL/TLS encryption 
+    * XSS attack prevention
+
 * **Email Templates** with rich text editor and placeholder tokens 
 * **Real-time email monitoring** and folder management 
 * **Attachment support** (normal and inline)
 
 ### Prerequisites {#prerequisites}
 
+Before using the Email Connector in your app, make sure to complete the following steps in the order described.
+
 {{% alert color="warning" %}}
-Follow these prerequisites carefully. Missing a step can lead to errors.
+Missing a step, or changing the order can lead to errors.
 {{% /alert %}}
 
-Before using the Email Connector in your app, make sure to complete the following:
-
-* Download and configure the latest version of the [Mx Model Reflection](/appstore/modules/model-reflection/) module.
-* Download and configure the latest version of the [Encryption](/appstore/modules/encryption/) module.
-* Download and configure the latest version of the [Community Commons](/appstore/modules/community-commons-function-library/) module.
-* Uninstall any previously installed email modules, such as [IMAP/POP3](https://marketplace.mendix.com/link/component/1042/) and [Email Module with Templates](https://marketplace.mendix.com/link/component/259/).
-* Remove any unused JAR files from older email modules (for example, *javax.mail-1.6.2.jar*, *activation-1.1.jar*, and *commons-email.jar*) that may still be present in the userlib folder.
-* [Clean the deployment directory](/refguide/app-menu/#clean-deployment-directory).
+1. Download and configure the latest version of the [Mx Model Reflection](/appstore/modules/model-reflection/) module.
+1. Download and configure the latest version of the [Encryption](/appstore/modules/encryption/) module.
+1. Download and configure the latest version of the [Community Commons](/appstore/modules/community-commons-function-library/) module.
+1. Uninstall any previously installed email modules, such as [IMAP/POP3](https://marketplace.mendix.com/link/component/1042/) and [Email Module with Templates](https://marketplace.mendix.com/link/component/259/).
+1. Remove any JAR files still be present in the userlib folder from older email modules which are now unused (for example, `javax.mail-1.6.2.jar`, `activation-1.1.jar`, and `commons-email.jar`).
+1. [Clean the deployment directory](/refguide/app-menu/#clean-deployment-directory).
 
 ### Migrating from Another Module
 
 When migrating to the Email Connector from a different email module, it is recommended to test your configuration in a separate app before applying it to your main project.
 
-It is recommended to use the community-supported [Email Connector Migration Utility](https://marketplace.mendix.com/link/component/205008) module to migrate data from the [Email Module with Templates](https://marketplace.mendix.com/link/component/259/) service.
+Mendix recommends that you use the community-supported [Email Connector Migration Utility](https://marketplace.mendix.com/link/component/205008) module to migrate data from the [Email Module with Templates](https://marketplace.mendix.com/link/component/259/) service.
 
 ### Included Widgets {#included-widgets}
 
@@ -64,15 +76,14 @@ The module includes the following bundled widgets:
 * [Rich Text](/appstore/widgets/rich-text/)
 * [Pop-Up Menu](/appstore/widgets/popup-menu/)
 
-{{% alert color="info" %}}If you already have these widgets in your app and they are not up to date, you will get a "Some widgets can not be read" error.{{% /alert %}}
-
-## Setup in Studio Pro {#setup}
-
 {{% alert color="info" %}}
-The Email Connector is a toolkit providing reusable components (snippets, microflows, entities, and Java actions) for building custom email functionality. This documentation covers setup and configuration of these components in your Mendix application.
+If you already have these widgets in your app and they are not up to date, you will get a "Some widgets can not be read" error.
 {{% /alert %}}
 
-To launch the user interface and configure email accounts, add the **Email_Connector_Overview** page located in the **USE_ME > Pages** to your app navigation. This overview page provides access to configure and manage below configurations and settings:
+## Setting up the Email Connector in Studio Pro {#setup}
+
+To launch the user interface and configure email accounts, add the **EmailConnector_Overview** page located in the **USE_ME > Pages** to your app navigation. This overview page provides access to configure and manage the following configurations and settings:
+
 * **Send Email**
 * **Receive Email**
 * **Templates**
@@ -86,55 +97,71 @@ The module includes a default **EmailConnectorAdmin** module role with pre-confi
 
 The Email Connector provides building blocks that you assemble to create email functionality:
 
-* **Entities** - Represents a class of real-world objects, such as EmailAccount, EmailMessage, EmailTemplate, etc.
-* **Snippets** - Reusable interface components that can be used across pages, layouts, and other snippets
-* **Microflows** - Express application logic through actions such as creating objects, updating data, showing pages, and making decisions.
-* **Java Actions** - Extend application functionality beyond what's possible with microflows alone.
+* **[Entities](#entities)** - Represents a class of real-world objects, such as EmailAccount, EmailMessage, EmailTemplate, etc.
+* **[Snippets](#snippets)** - Reusable interface components that can be used across pages, layouts, and other snippets
+* **[Microflows](#microflows)** - Express application logic through actions such as creating objects, updating data, showing pages, and making decisions.
+* **[Java Actions](#java-actions)** - Extend application functionality beyond what's possible with microflows alone.
 
-#### Snippets
-They allow you to make interface changes in one place that automatically apply everywhere the snippet is used, reducing maintenance effort and ensuring consistency. Located in the **USE_ME > Snippets**
+#### Entities {#entities}
+
+You can find the entities and their associations in the domain model of the Email Connector.
+
+#### Snippets {#snippets}
+
+Snippets allow you to make interface changes in one place that automatically apply everywhere the snippet is used, reducing maintenance effort and ensuring consistency. You can find the following snippets in the **USE_ME > Snippets** of the Email Connector module.
 
 ##### Authentication & Configuration
+
 * **SNIP_Configure_OAuth** - Select OAuth provider from configured list when setting up email accounts
 * **SNIP_Configure_PrimaryUser_Login** - Configure primary user login details for an email account
 * **SNIP_Configure_Shared_Mailbox** - Option to set up shared mailbox access using primary account details
 * **SNIP_OAuthProvider_CreateEdit** - Create or modify OAuth provider configuration
 
 ##### Account Management
+
 * **SNIP_EmailAccount_SendAccountSettings** - Configure outgoing email account settings and preferences
 * **SNIP_EmailAccount_ReceiveAccountSettings** - Configure incoming email account settings and preferences
 
 ##### Email Operations
+
 * **SNIP_EmailTemplate_CreateEdit** - Create or edit email templates with rich text and placeholder tokens
 * **SNIP_Incoming_Email_Config** - Manage incoming email settings including folders and processing options
 * **SNIP_EmailLog_Overview** - View email sending and receiving activity logs
 
 ##### Protocol & Security
+
 * **SNIP_Send_ProtocolDetails** - Configure outgoing/send email protocol (SMTP) details
 * **SNIP_Receive_ProtocolDetails** - Configure incoming/receive email protocol details
 * **SNIP_Send_EmailSecurity_Edit** - Manage email security features including digital signatures and encryption
 
-#### Microflows
+#### Microflows {#microflows}
+
+The Email Connector module contains a number of pre-written microflows which you can use to carry out various email-related functions.
 
 ##### Core Microflows
+
 * **SUB_SendEmail** - Send emails using selected email account
 * **SUB_RetrieveEmails** - Fetch emails from selected email account
 * **SUB_EmailAccount_CheckServerConnection** - Validate email server connectivity and account configuration
 
 ##### Sample Microflows
+
 * **Sample_ASU_SubscribeForEmailNotification** - Set up email notification subscriptions 
 * **SUB_GetSystemError** - Retrieve system error information
 
-#### Java Actions
+#### Java Actions{#java-actions}
+
+The Email Connector module contains a number of Java actions which you can use to carry out various email-related functions.
+
 * **SendEmail** - Accepts EmailMessage and EmailAccount objects to send an email
 * **RetrieveEmailMessages** - Fetches emails from the server based on specified EmailAccount
 * **GetAutoConfig** - Automatically discover email server settings for common providers 
 * **GetFolderNames** - Retrieve available email folders from the server 
 * **GetBaseDNList** - Get directory service base distinguished names for LDAP integration
 
-## Send Email Configuration {#send-email}
+## Configuring to Send Email {#send-email}
 
-After launching your Studio Pro application, you can begin setting up your **Send Email** accounts through the Email Connector user interface.
+Deploy your application to set up your **Send Email** accounts through the Email Connector user interface.
 
 ### Authentication Methods
 
@@ -615,9 +642,9 @@ To clean up these duplicate Mx Reflection records, a microflow is delivered as p
 
 To perform the cleanup, follow these steps:
 
-1.Call the **DEL_DuplicateMxReflectionObjects** microflow from a page using the **Call microflow** button. This should preferably be executed by an Admin user as a one-time activity.
+1. Call the **DEL_DuplicateMxReflectionObjects** microflow from a page using the **Call microflow** button. This should preferably be executed by an Admin user as a one-time activity.
 
-This microflow identifies and removes duplicate records from the backend. Upon completion, a pop-up dialog confirms the process has finished. The Console log displays the number of records removed from each respective table.
+    This microflow identifies and removes duplicate records from the backend. Upon completion, a pop-up dialog confirms the process has finished. The Console log displays the number of records removed from each respective table.
 
    {{< figure src="/attachments/appstore/platform-supported-content/modules/email-connector/mx-reflection-objs-cleanup-logs.png" class="no-border" width="700" >}}
 
