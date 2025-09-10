@@ -20,7 +20,7 @@ $ mkdir my-app-generator
 $ cd my-app-generator
 $ npm init --yes
 $ npm install mendixmodelsdk mendixplatformsdk --save
-$ npm install typescript@~4.6.2 @types/node@~22.0.3 --save-dev
+$ npm install typescript@~4.6.2 @types/node@^22 --save-dev
 ```
 You can now proceed directly to step 6 in the detailed instructions to configure TypeScript.
 
@@ -82,7 +82,7 @@ To set up a working directory for your script, follow these steps:
     ```json
     "devDependencies": {
       "typescript": "~4.6.2",
-      "@types/node": "~22.0.3"
+      "@types/node": "^22.0.3"
     }
     ```
 
@@ -98,15 +98,15 @@ To set up a working directory for your script, follow these steps:
 
     ```json
     {
-    "compilerOptions": {
-        "target": "es2020",
-        "module": "commonjs",
-        "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true,
-        "strict": true,
-        "skipLibCheck": true
-    },
-    "files": ["script.ts"]
+        "compilerOptions": {
+            "target": "es2020",
+            "module": "commonjs",
+            "esModuleInterop": true,
+            "forceConsistentCasingInFileNames": true,
+            "strict": true,
+            "skipLibCheck": true
+        },
+        "files": ["script.ts"]
     }
     ```
 
