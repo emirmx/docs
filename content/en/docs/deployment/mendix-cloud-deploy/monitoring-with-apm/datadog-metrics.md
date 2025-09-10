@@ -234,7 +234,7 @@ Datadog uses host-based pricing, so you will be billed for every instance of you
 * A single-instance application counts as one host
 * A multi-instance application counts for as many hosts as it has scaled instances
 
-Previously, when Mendix Cloud ran on Cloud Foundry, Datadog did not always accurately identify and bill every host. With the transition to Kubernetes, this process now works correctly and may result in more hosts showing up in Datadog for your Kubernetes-based applications. However, billing occurs only when your application sends metrics to Datadog. If you add a `DD_LOGS_COLLECTION_ONLY` custom environment variable with value `true`, the application will only send logs to Datadog, and you will not be billed for the host(s).
+Previously, when Mendix Cloud ran on Cloud Foundry, hosts were incorrectly registered and billed. With the transition to Kubernetes, this process now works correctly and may result in more hosts showing up in Datadog for your Kubernetes-based applications. However, billing occurs only when your application sends metrics to Datadog. If you add a `DD_LOGS_COLLECTION_ONLY` custom environment variable with value `true`, the application will only send logs to Datadog, and you will not be billed for the host(s).
 
 ## Read More
 
