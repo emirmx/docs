@@ -16,11 +16,15 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
-### September 10, 2025
+### September 9, 2025
+
+#### New Features
+
+* We have added support for sending logs to Splunk for apps deployed on Kubernetes. This enables apps using Splunk to be migrated from Cloud Foundry to Kubernetes.
 
 #### Improvements
 
-* We removed the `SPLUNK_LOGS_REDACTION` environment variable. You now have to use the `LOGS_REDACTION` variable.
+* For Kubernetes deployments, the `SPLUNK_LOGS_REDACTION` environment variable is not available. Use the `LOGS_REDACTION` variable instead.
 
 ### July 27, 2025
 
