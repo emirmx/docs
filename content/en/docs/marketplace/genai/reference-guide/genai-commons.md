@@ -138,6 +138,7 @@ The data stored in this entity is to be used later on for traceability use cases
 | `DurationMilliseconds` | The duration between the start and end of the whole model invocation. |
 | `Input` | The initial input of the model invocation (usually a user prompt). |
 | `Output` | The response of the final message sent by the model (usually an assistant message). |
+| `HasError` | Indicates if any span call has failed. |
 | `_AgentVersionId` | The id of the agent version (if applicable) as sent via the request. |
 | `_ConversationId` | The id of the conversation (if applicable) as sent via the request. This is usually created by the model provider. |
 
