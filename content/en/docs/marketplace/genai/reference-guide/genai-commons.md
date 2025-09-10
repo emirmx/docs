@@ -41,7 +41,7 @@ Although GenAI Commons technically defines additional capabilities typically fou
 
 ### Token Usage
 
-GenAI Commons can help store usage data which allows admins to understand the token usage. Usage data is persisted only if the constant `StoreUsageMetrics` is set to *true* (exception: if [StoreTraces](#traceability) is set to *true*, Usages data is stored as well). In general, this is only supported for chat completions and embedding operations.
+GenAI Commons can help store usage data, allowing admins to understand token usage. Usage data is persisted only if the constant `StoreUsageMetrics` is set to *true* (exception: if [StoreTraces](#traceability) is set to *true*, Usage data is stored as well). In general, this is only supported for chat completions and embedding operations.
 
 To clean up usage data in a deployed app, you can enable the daily scheduled event `ScE_Usage_Cleanup` in the Mendix Cloud Portal. Use the `Usage_CleanUpAfterDays` constant to control for how long token usage data should be persisted. 
 
@@ -49,9 +49,9 @@ Lastly, the [Conversational UI module](/appstore/modules/genai/conversational-ui
 
 ### Traceability {#traceability}
 
-By default, the chat completions operations of GenAI Commons store data in your application's database for traceability reasons. This makes it easier understand the usage of GenAI in your app and why the model behaved in certain way, for example, by reviewing tool usage. Trace data is only persisted if the constant `StoreTraces` is set to *true*. 
+By default, the chat completions operations of GenAI Commons store data in your application's database for traceability reasons. This makes it easier to understand the usage of GenAI in your app and why the model behaved in a certain way, for example, by reviewing tool usage. Trace data is only persisted if the constant `StoreTraces` is set to *true*. 
 
-As traces may contain sensitive and personally identifiable information, you should decide per use case whether storing this data is compliant.
+As traces may contain sensitive and personally identifiable information, you should determine, on a case-by-case basis, whether storing this data is compliant.
 
 To clean up trace data in a deployed app, you can enable the daily scheduled event `ScE_Trace_Cleanup` in the [Mendix Cloud Portal](https://genai.home.mendix.com/). Use the `Trace_CleanUpAfterDays` constant to control the retention period of the trace data.
 
@@ -109,7 +109,7 @@ Accepted input modality of the associated deployed model.
 
 #### `Usage` {#Usage}
 
-This entity represents usage statistics of a call to an LLM. It refers to a complete LLM interaction; in case there are several iterations (e.g. recursive processing of function calls), everything should be aggregated into one Usage record.
+This entity represents usage statistics of a call to an LLM. It refers to a complete LLM interaction; in case there are several iterations (for example, recursive processing of function calls), everything should be aggregated into one Usage record.
 
 Following the principles of GenAI Commons, it must be stored based on the response for every successful call to a system of an LLM provider. This is only applicable to text and file operations and embedding operations.
 
@@ -132,30 +132,30 @@ The data stored in this entity is to be used later on for traceability use cases
 
 | Attribute | Description |
 | --- | --- |
-| `TraceId` | The trace id is set internally to identify a trace. |
+| `TraceId` | The trace ID is set internally to identify a trace. |
 | `StartTime` | The start time of the initial model invocation. |
 | `EndTime` | The end time after the final model invocation is completed. |
-| `DurationMilliseconds` | The duration between start and end of the whole model invocation. |
+| `DurationMilliseconds` | The duration between the start and end of the whole model invocation. |
 | `Input` | The initial input of the model invocation (usually a user prompt). |
 | `Output` | The response of the final message sent by the model (usually an assistant message). |
 | `_AgentVersionId` | The id of the agent version (if applicable) as sent via the request. |
-| `_ConversationId` | The id of the conversation (if applicable) as sent via the request. This usually is created by the model provider. |
+| `_ConversationId` | The id of the conversation (if applicable) as sent via the request. This is usually created by the model provider. |
 
 #### `Span` {#span}
 
-A span is created for each interaction between Mendix and the LLM (such as chat completions, tool calling, etc.). The generalized object is typically not used instead, its specializations are used.
+A span is created for each interaction between Mendix and the LLM (such as chat completions, tool calling, etc.). The generalized object is typically not used; instead, its specializations are used.
 
 | Attribute | Description |
 | --- | --- |
-| `SpanId` | The span id is set internally to identify a span. |
+| `SpanId` | The span ID is set internally to identify a span. |
 | `StartTime` | The start time of the model invocation. |
 | `EndTime` | The end time after the model invocation is completed. |
-| `DurationMilliseconds` | The duration between start and end of the whole model invocation. |
+| `DurationMilliseconds` | The duration between the start and end of the whole model invocation. |
 | `Output` | The output of the span. |
 
 #### `ModelSpan` {#model-span}
 
-A model span is created for each interaction between Mendix and the LLM where content is generated (sent as the assistant's message). Typically, this is request for text generation. In addition to the [Span's](#span) attributes, it also contains the following:
+A model span is created for each interaction between Mendix and the LLM where content is generated (sent as the assistant's message). Typically, this is a request for text generation. In addition to the [Span's](#span) attributes, it also contains the following:
 
 | Attribute | Description |
 | --- | --- |
@@ -165,25 +165,25 @@ A model span is created for each interaction between Mendix and the LLM where co
 
 #### `ToolSpan` {#tool-span}
 
-A tool span is created for each tool call requested by the LLM. The tool call is processed in GenAI Commons and the result is sent back to the model. In addition to the [Span's](#span) attributes, it also contains the following:
+A tool span is created for each tool call requested by the LLM. The tool call is processed in GenAI Commons, and the result is sent back to the model. In addition to the [Span's](#span) attributes, it also contains the following:
 
 | Attribute | Description |
 | --- | --- |
 | `ToolName` | The name of the tool that was called. |
 | `_ToolCallId` | The ID of the tool call used by the model to map an assistant message containing a tool call with the output of the tool call (tool message). |
 | `Input` | The input of the tool call as passed by the LLM. |
-| `IsError` | Indicates if the tool call failed. If so, the span's output will contain the error message that was also logged and sent to the LLM as tool result. |
+| `IsError` | Indicates if the tool call failed. If so, the span's output will contain the error message that was also logged and sent to the LLM as a tool result. |
 
 #### `KnowledgeBaseSpan` {#knowledge-base-span}
 
-A knowledge base span is created for each knowledge base retrieval tool call requested by the LLM. The tool call is processed in GenAI Commons and the result is sent back to the model. It does not contain any additional attributes compared to [ToolSpan](#tool-span) 
+A knowledge base span is created for each knowledge base retrieval tool call requested by the LLM. The tool call is processed in GenAI Commons, and the result is sent back to the model. It does not contain any additional attributes compared to [ToolSpan](#tool-span). 
 
 | Attribute | Description |
 | --- | --- |
 | `ToolName` | The name of the tool that was called. |
-| `_ToolCallId` | The id of the tool call used by the model to map an assistant message containing a tool call with the output of the tool call (tool message). |
+| `_ToolCallId` | The ID of the tool call used by the model to map an assistant message containing a tool call with the output of the tool call (tool message). |
 | `Input` | The input of the tool call as passed by the LLM. |
-| `IsError` | Indicates if the tool call failed. If so, the span's output will contain the error message that was also logged and sent to the LLM as tool result. |
+| `IsError` | Indicates if the tool call failed. If so, the span's output will contain the error message that was also logged and sent to the LLM as a tool result. |
 
 #### `Request` {#request} 
 
