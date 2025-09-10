@@ -1,5 +1,6 @@
 ---
 title: "Troubleshooting Mendix Workstation"
+linktitle: "Troubleshooting"
 url: /mendix-workstation/troubleshooting/
 description: "Describes how to solve potential issues with Mendix Workstation."
 weight: 40
