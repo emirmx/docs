@@ -152,6 +152,7 @@ A span is created for each interaction between Mendix and the LLM (such as chat 
 | `EndTime` | The end time after the model invocation is completed. |
 | `DurationMilliseconds` | The duration between the start and end of the whole model invocation. |
 | `Output` | The output of the span. |
+| `IsError` | Indicates if the call failed. If so, the span's output will contain the error message that was also logged. |
 
 #### `ModelSpan` {#model-span}
 
@@ -172,7 +173,6 @@ A tool span is created for each tool call requested by the LLM. The tool call is
 | `ToolName` | The name of the tool that was called. |
 | `_ToolCallId` | The ID of the tool call used by the model to map an assistant message containing a tool call with the output of the tool call (tool message). |
 | `Input` | The input of the tool call as passed by the LLM. |
-| `IsError` | Indicates if the tool call failed. If so, the span's output will contain the error message that was also logged and sent to the LLM as a tool result. |
 
 #### `KnowledgeBaseSpan` {#knowledge-base-span}
 
