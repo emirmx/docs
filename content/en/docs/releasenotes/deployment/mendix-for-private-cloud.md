@@ -51,6 +51,7 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 * If an app pod crashes or restarts, the MendixApp CR now shows the reason for the restart and the Mendix Runtime's UNIX exit code.
 * We have addressed a rare bug where the Agent sometimes crashed with a panic when a network connection was lost.
 * Upgrading to Mendix Operator v2.23.0 from a previous version will restart environments managed by that version of the Operator. Environments with two or more replicas and a **PreferRolling** update strategy are restarted without downtime.
+* Emails are now supported in Japanese and Korean languages, based on the language set in **User Settings**.
 
 ### August 7, 2025
 
