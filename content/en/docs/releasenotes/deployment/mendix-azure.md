@@ -12,7 +12,7 @@ These release notes cover changes to deployment to [Mendix on Azure](/developerp
 
 For information on the current status of Mendix deployment, see [Mendix Status](https://status.mendix.com/).
 
-### Release date: ???, 2025
+### Release date: September 11, 2025
 
 * We have improved the translations by adding support for error messages in the **Cluster Overview** page.
 * We have fixed a translation issue where **Logging and Monitoring** was displayed twice in Cluster Details page.
@@ -22,6 +22,7 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 
  * Currently, the **updated** or **created** tags in the **Edit** screen of the cluster are not attached to the cluster resources.
  * Support ticket visibility is currently limited to tickets created by the individual user, rather than all tickets within their subscription.
+ * Currently, it is not possible to create new environments in the Mendix on Azure cluster. We are working on releasing a fix for this issue soon.
 
 ### Release date: August 7, 2025
 
