@@ -77,7 +77,7 @@ The module includes the following bundled widgets:
 * [HTML Element](/appstore/widgets/htmlelement/)
 * [Rich Text](/appstore/widgets/rich-text/)
 * [Pop-Up Menu](/appstore/widgets/popup-menu/)
-
+    
 {{% alert color="info" %}}
 If you already have these widgets in your app and they are not up to date, you will get a "Some widgets can not be read" error.
 {{% /alert %}}
@@ -161,7 +161,7 @@ The Email Connector module contains a number of Java actions which you can use t
 * **GetFolderNames** - Retrieve available email folders from the server 
 * **GetBaseDNList** - Get directory service base distinguished names for LDAP integration
 
-## Configuring to Send Email {#send-email}
+## Send Email {#send-email}
 
 1. Deploy your application to set up your **Send Email** accounts through the Email Connector user interface.
 1. Navigate to the **Email Connector Overview** page.
@@ -270,14 +270,14 @@ When working with email templates, refer to the following sample microflows:
 It is recommended to use **Sample_ACT_SendEmailWithTemplate** for most email template scenarios. It provides a streamlined implementation for sending templated emails with minimal configuration overhead.
 {{% /alert %}}
 
-## Receive Email Configuration {#receive-email}
+## Receive Email {#receive-email}
 
-1. Deploy your application to set up your **Send Email** accounts through the Email Connector user interface.
+1. Deploy your application to set up your **Receive Email** accounts through the Email Connector user interface.
 1. Navigate to the **Email Connector Overview** page.
 1. Select the **Receive Email** tab.
 1. Click **Add New Configuration** or edit an existing one using the **Action**.
 
-You can now set up your account for sending email by providing the following details:
+You can now set up your account for receiving email by providing the following details:
 
 ### Authentication Methods 
 
@@ -285,7 +285,6 @@ Configuration supports two authentication methods:
 
 * **Basic Authentication** 
 * **OAuth 2.0**
-
 
 You can set these up using the **Enable Microsoft Entra ID Authentication**:
 
