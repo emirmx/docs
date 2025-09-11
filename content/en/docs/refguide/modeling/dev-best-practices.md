@@ -350,6 +350,14 @@ Applications exceeding these guidelines may still function, depending on your sy
 Project size impacts IDE performance. Choose a development strategy that aligns with your system's capabilities and Mendix's recommended guidelines.
 {{% /alert %}}
 
+### ModelSDK
+
+* The Mendix ModelSDK imposes a strict limit of 20,000 units during working copy creation.
+  
+A unit represents a single document or element found in the app explorer. 
+This limitation helps ensure stable performance and efficient resource handling when working with large Mendix applications and models through the SDK. 
+When building solutions or automation using the ModelSDK, ensure that working copies do not exceed the 20,000-unit threshold to avoid errors or incomplete processing.
+
 ### Domain Models
 
 #### Attributes {#attributes}
