@@ -15,7 +15,8 @@ The [Email Connector](https://marketplace.mendix.com/link/component/120739) allo
 The Email Connector is a toolkit providing reusable components (snippets, microflows, entities, and Java actions) for building custom email functionality. This documentation covers the setup and configuration of these components in your Mendix application.
 
 {{% alert color="info" %}}
-This document describes versions 6.x.x of the Email Connector module.
+
+This document describes versions 6.3.1 and above of the Email Connector module.
 {{% /alert %}}
 
 ### Key Features
@@ -61,6 +62,7 @@ Missing a step, or changing the order can lead to errors.
 1. Uninstall any previously installed email modules, such as [IMAP/POP3](https://marketplace.mendix.com/link/component/1042/) and [Email Module with Templates](https://marketplace.mendix.com/link/component/259/).
 1. Remove any JAR files still be present in the userlib folder from older email modules which are now unused (for example, `javax.mail-1.6.2.jar`, `activation-1.1.jar`, and `commons-email.jar`).
 1. [Clean the deployment directory](/refguide/app-menu/#clean-deployment-directory).
+1. Add the **Email_Connector_Overview** page located in the **USE_ME > Pages** to your app navigation.
 
 ### Migrating from Another Module
 
@@ -82,7 +84,7 @@ If you already have these widgets in your app and they are not up to date, you w
 
 ## Setting up the Email Connector in Studio Pro {#setup}
 
-To launch the user interface and configure email accounts, add the **EmailConnector_Overview** page located in the **USE_ME > Pages** to your app navigation. This overview page provides access to configure and manage the following configurations and settings:
+The **Email_Connector_Overview** page which you added to the navigation launches the user interface which allows you to configure email accounts. This overview page provides access to configure and manage the following configurations and settings:
 
 * **Send Email**
 * **Receive Email**
@@ -161,7 +163,12 @@ The Email Connector module contains a number of Java actions which you can use t
 
 ## Configuring to Send Email {#send-email}
 
-Deploy your application to set up your **Send Email** accounts through the Email Connector user interface.
+1. Deploy your application to set up your **Send Email** accounts through the Email Connector user interface.
+1. Navigate to the **Email Connector Overview** page.
+1. Select the **Send Email** tab.
+1. Click **Add New Configuration** or edit an existing one using the **Action**.
+
+You can now set up your account for sending email by providing the following details:
 
 ### Authentication Methods
 
@@ -170,26 +177,24 @@ Configuration supports two authentication methods:
 * **Basic Authentication** 
 * **OAuth 2.0**
 
-### Account Setup
+You can set these up using the **Enable Microsoft Entra ID Authentication**:
 
-#### Enable Microsoft Entra ID Authentication
+* Select **Yes** to enable OAuth 2.0 authentication through Microsoft Entra ID – you will need to fill in the details described under [Basic Authentication](#send-basic-authentication)
+* Select **No** (*default*) to use  basic authentication with username and password – you will need to fill in the details described under [OAuth Authentication](#send-oauth-authentication)
 
-* **Yes** – Enables OAuth 2.0 authentication through Microsoft Entra ID
-* **No** (*default*) – Uses basic authentication with username and password 
+### Basic Authentication {#send-basic-authentication}
 
-#### Basic Authentication
-
-##### Primary Account Details
+#### Primary Account Details
 
 * **Display Name** – The name shown to email recipients
 * **Email or Username** – The email address or username for the sending account
 * **Password** – The account password for basic authentication; the field is masked for security
 
-##### Configure Shared Mailbox
+#### Configure Shared Mailbox
 
 This is an optional feature for setting up shared mailbox access. It requires using the primary account details for configuration. Enable this feature by clicking the checkbox **Shared mailbox**.
 
-##### Email Protocol Settings
+#### Email Protocol
 
 **Email Protocol** currently supports SMTP for outbound email transmission.
 
@@ -203,7 +208,7 @@ This is an optional feature for setting up shared mailbox access. It requires us
 * **SSL** – Enable Secure Sockets Layer encryption 
 * **TLS** – Enable Transport Layer Security encryption
 
-#### OAuth Authentication
+### OAuth Authentication {#send-oauth-authentication}
 
 You can configure your account to authenticate with Microsoft Entra ID OAuth 2.0. Multiple OAuth 2.0 providers can be configured per app.
 
@@ -212,11 +217,49 @@ To manage configurations:
 * Select the **Configure OAuth** tab to add, delete, and edit OAuth configurations
 * If no email accounts are configured, you can create a new OAuth configuration
 
-For detailed steps and implementation guidance, see the [OAuth Configurations](#oauth-config-details) section below.
+For detailed steps and implementation guidance, see the [Configure OAuth](#oauth-config-details) section below.
+
+### Additional Account Settings
+
+You can view and change the following settings by clicking **View Settings** as the **Action** of an existing account.
+
+#### Email Settings Tab
+
+##### Server Identity
+
+* **Use SSL check server identity** – Select this to turn on the optional security feature to verify server identity during SSL connections and enhance connection security by validating server certificates
+* **Connection Timeout (Milliseconds)** – Configure the maximum time to wait for server connections; default is 20000 milliseconds (20 seconds)
+
+#### Outgoing Emails
+
+* **Full Name** – The display name for outgoing emails; this name appears in the **From** field of sent messages
+* **Max. send attempts** – Maximum number of retry attempts for failed email sends; default is 0 (no retry attempts)
+
+#### Email Security Tab
+
+##### Configure Digital Signature
+
+* **Configure Digital Signature** – Check this option to digitally sign outgoing email messages during send email actions using the following settings; once configured,it provides message authentication and integrity verification
+    * **Certificate (PKCS#12)** – Upload a PKCS#12 certificate file for digital signing; this supports standard PKCS#12 format certificates
+    * **Passphrase** – Required to access the PKCS#12 certificate; this field is mandatory when using certificate-based digital signatures
+
+##### Configure Email Encryption
+
+* **Configure Email Encryption** – Check this option to encrypt outgoing email messages during send email actions using the following settings; it provides additional security for sensitive email communications
+    * **LDAP Configuration**  
+        * **LDAP Host** – LDAP server hostname for certificate lookup
+        * **LDAP Port** – LDAP server port (default: 389)
+    * **Authentication Method** – The system supports two authentication methods for LDAP access:
+        * *No Authentication* – Connect to LDAP server without credentials
+        * *Basic Authentication* – Use username and password for LDAP server access
+
+#### Error Logs Tab
+
+This tab displays a list of any log entries related to errors in the Email Connector module.
 
 ### Sending Email via Microflow
 
-Use the **SUB_SendEmail microflow** for standardized, Mendix-compliant email delivery with proper error handling and configuration management.
+Use the **SUB_SendEmail microflow** for standardized, Mendix-compliant email delivery with proper error handling and configuration management. For this you will need to create your message as an object of type `Email_Connector.EmailMessage` and associate it with the `Email_Connector.EmailAccount` object containing the send mail account.
 
 When working with email templates, refer to the following sample microflows:
 
@@ -227,37 +270,14 @@ When working with email templates, refer to the following sample microflows:
 It is recommended to use **Sample_ACT_SendEmailWithTemplate** for most email template scenarios. It provides a streamlined implementation for sending templated emails with minimal configuration overhead.
 {{% /alert %}}
 
-### Additional Account Settings
-
-#### Server Connection Settings
-
-* **Use SSL check server identity** – Optional security feature to verify server identity during SSL connections and enhance connection security by validating server certificates
-* **Connection Timeout** – Configure the maximum time to wait for server connections; default is 20000 milliseconds (20 seconds)
-
-#### Send Email Configuration
-
-* **Full Name** – The display name for outgoing emails; this name appears in the **From** field of sent messages
-* **Max. send attempts** – Maximum number of retry attempts for failed email sends; default is 0 (no retry attempts)
-
-#### Digital Signature Settings
-
-* **Configure Digital Signature** – Enable to digitally sign outgoing email messages during send email actions; once configured,it provides message authentication and integrity verification
-* **Certificate (PKCS#12)** – Upload a PKCS#12 certificate file for digital signing; this supports standard PKCS#12 format certificates
-* **Passphrase** – Required to access the PKCS#12 certificate; this field is mandatory when using certificate-based digital signatures
-
-#### Email Encryption Settings
-
-* **Configure Email Encryption** – Enable to encrypt outgoing email messages during send email actions; it provides additional security for sensitive email communications
-* **LDAP Configuration**  
-    * **LDAP Host** – LDAP server hostname for certificate lookup
-    * **LDAP Port** – LDAP server port (default: 389)
-* **Authentication Method** – The system supports two authentication methods for LDAP access:
-    * **No Authentication** – Connect to LDAP server without credentials
-    * **Basic Authentication** – Use username and password for LDAP server access
-
 ## Receive Email Configuration {#receive-email}
 
-After launching your application, you can set up your **Receive Email** accounts through the Email Connector user interface. 
+1. Deploy your application to set up your **Send Email** accounts through the Email Connector user interface.
+1. Navigate to the **Email Connector Overview** page.
+1. Select the **Receive Email** tab.
+1. Click **Add New Configuration** or edit an existing one using the **Action**.
+
+You can now set up your account for sending email by providing the following details:
 
 ### Authentication Methods 
 
@@ -266,14 +286,13 @@ Configuration supports two authentication methods:
 * **Basic Authentication** 
 * **OAuth 2.0**
 
-### Account Setup
 
-#### Enable Microsoft Entra ID Authentication
+You can set these up using the **Enable Microsoft Entra ID Authentication**:
 
-* **Yes** – Enables OAuth 2.0 authentication through Microsoft Entra ID
-* **No** (*default*) – Uses basic authentication with username and password 
+* Select **Yes** to enable OAuth 2.0 authentication through Microsoft Entra ID – you will need to fill in the details described under [Basic Authentication](#receive-basic-authentication)
+* Select **No** (*default*) to use  basic authentication with username and password – you will need to fill in the details described under [OAuth Authentication](#receive-oauth-authentication)
 
-#### Basic Authentication
+#### Basic Authentication {#receive-basic-authentication}
 
 ##### Primary Account Details
 
@@ -285,7 +304,7 @@ Configuration supports two authentication methods:
 
 This is an optional feature for setting up shared mailbox access. It requires using the primary account details for configuration. Enable this feature by clicking the checkbox **Shared mailbox**.
 
-##### Email Protocol Settings
+##### Email Protocol
 
 **Email Protocol** – Choose from available email protocols for receiving emails:
 
@@ -297,15 +316,17 @@ This is an optional feature for setting up shared mailbox access. It requires us
 **Server Configuration** 
 
 * **Server Host** – The hostname or IP address of the incoming mail server
-* **Server Port** – The port number for the email protocol:
+* **Server Port** – The port number for the email protocol – by convention these are usually the following:
     * **IMAP** – Port 143 (non-encrypted) or Port 993 (SSL/TLS)
     * **IMAPS** – Port 993 (SSL/TLS encrypted)
     * **POP3** – Port 110 (non-encrypted) or Port 995 (SSL/TLS)
     * **POP3S** – Port 995 (SSL/TLS encrypted)
 
-{{% alert color="info" %}} It is recommended to use encrypted ports (993 for IMAPS, 995 for POP3S) for enhanced security and data protection. {{% /alert %}}
+{{% alert color="info" %}}
+Mendix recommends that you use encrypted ports (993 for IMAPS, 995 for POP3S) for enhanced security and data protection.
+{{% /alert %}}
 
-#### OAuth Authentication
+### OAuth Authentication {#receive-oauth-authentication}
 
 You can configure your account to authenticate with Microsoft Entra ID OAuth 2.0. Multiple OAuth 2.0 providers can be configured per app.
 
@@ -314,73 +335,75 @@ To manage configurations:
 * Select the **Configure OAuth** tab to add, delete, and edit OAuth configurations
 * If no email accounts are configured, you can create a new OAuth configuration
 
-For detailed steps and implementation guidance, see the [OAuth Configurations](#oauth-config-details) section below.
+For detailed steps and implementation guidance, see the [Configure OAuth](#oauth-config-details) section below.
 
 ### Additional Account Settings
 
-#### Server Connection Settings
+You can view and change the following settings by clicking **View Settings** as the **Action** of an existing account.
+
+#### Email Settings Tab
+
+##### Server Identity
 
 * **Use SSL check server identity** – Optional security feature to verify server identity during SSL connections and enhance connection security by validating server certificates
 * **Connection Timeout** – Maximum time to wait for server connections; default is 20000 milliseconds (20 seconds)
 
-#### Receive Email Configuration
+##### Incoming Emails
 
-* **Folder to replicate emails from** – Specify the email folder to monitor for incoming messages; default is "INBOX"
-* **Subscribe to incoming emails** – Enable real-time monitoring for new email arrivals
+* **Folder to replicate E-mails from** – Specify the email folder to monitor for incoming messages; default is "INBOX" – click **Select…** to choose any existing email folder on the account
+* **Subscribe to incoming emails** – check this to enable real-time monitoring for new email arrivals
+{{% todo %}}What does this do?{{% /todo %}}
+* **Replicate everything in 'INBOX' folder** – ????????
 * **Number of emails to retrieve from server** – Set the maximum number of emails to fetch in a single operation; default is 50
 * **Fetch strategy** – Controls the order in which emails are retrieved from the server 
-    * **Latest** – Retrieves most recent emails first 
-    * **Oldest** – Retrieves oldest emails first
-
-#### Server Email Management
-
-##### Email handling on server after replication
-
-This setting determines what happens to emails on the server after they have been replicated to your Mendix application.
-
-* **None**
-    * Leaves emails unchanged on the server after replication 
-    * Suitable for read-only processing or multi-system access
-* **Remove original emails from server** 
-    * Permanently deletes emails after replication 
-    * Helps manage server storage space 
-  
-{{% alert color="warning" %}} Use this setting with caution, as this action is irreversible. {{% /alert %}}
-
-* **Move emails on server to another (existing folder)**
-    * Transfers processed emails to a different folder 
-    * Maintains email history while organizing processed messages 
-    * Requires specifying an existing target folder
-
-##### Email Security and Processing
-
-* **Inline image rendering (HTML emails will have images visible in browser)** 
+    * *Latest* – Retrieves most recent emails first 
+    * *Oldest* – Retrieves oldest emails first
+* **Email handling on server after replication** – This setting determines what happens to emails on the server after they have been replicated to your Mendix application.
+    * *None* *(default)* – does the following:
+        * Leaves emails unchanged on the server after replication 
+        * Suitable for read-only processing or multi-system access
+    * *Remove original emails from server* – does the following:
+        {{% alert color="warning" %}} Use this setting with caution, as this action is irreversible. {{% /alert %}}
+        * Permanently deletes emails after replication 
+        * Helps manage server storage space 
+    * *Move emails on server to another (existing folder)* – does the following:
+        * Transfers processed emails to a different folder 
+        * Maintains email history while organizing processed messages 
+        * Requires specifying an existing target folder
+* **Inline image rendering (HTML emails will have images visible in browser)** – does the following:
     * Controls how HTML email images are displayed 
     * When enabled, images embedded in HTML emails are rendered in the browser 
     * Enhances readability but may have security implications
-* **Sanitize email to prevent XSS attacks** 
+* **Sanitize email to prevent XSS attacks** – does the following:
     * Enables security filtering to prevent cross-site scripting attacks 
     * Removes potentially malicious scripts and content from email messages 
 
-## OAuth Configuration {#oauth-config-details}
+#### Error Logs Tab
+
+This tab displays a list of any log entries related to errors in the Email Connector module.
+
+
+## Configure OAuth {#oauth-config-details}
 
 Configure your email account to authenticate using Microsoft Entra ID OAuth 2.0. Multiple OAuth 2.0 providers can be configured within a single application.
 
-The Email Connector supports both:
+The Email Connector supports two sorts of OAuth authentication. Under **Choose Authentication** select one of the following:
 
-* OAuth 2.0 [Authorization Code Flow](#auth-code-flow)
-* [Client Credentials Flow](#{#client-credentials-flow}) for Microsoft Entra ID (formerly Azure Active Directory) accounts
+* [*Auth code grant flow*](#auth-code-flow) – OAuth 2.0 Authorization Code Flow
+* [*Client credential grant Flow*](#client-credentials-flow) – for Microsoft Entra ID (formerly Azure Active Directory) accounts
 
-### OAuth Provider Configuration Details
+### Auth Code Grant Flow {#auth-code-flow}
 
-To configure an OAuth provider for the Authentication Code Flow, provide the following details:
+To configure an OAuth provider for the *Auth code grant flow*, provide the following details:
 
+* **OAuth Configuration Name** – A name to identify this configuration
 * **Client ID** – Application identifier obtained from [Microsoft Entra ID](https://portal.azure.com/) after app registration
 * **Client Secret** – Authentication key generated during Microsoft Entra ID app registration
 * **Callback Path** – Custom string used to autogenerate the callback URL
 * **Callback URL** – **Redirect URI** where the OAuth provider returns after authorization
+* **Token endpoint URL** – ????
 
-{{% alert color="info" %}} 
+{{% alert color="info" %}}
 When deploying [on premises](/developerportal/deploy/on-premises-design/) on [Microsoft Windows](/developerportal/deploy/deploy-mendix-on-microsoft-windows/), add the following rule to the *web.config* file:
 
 ```
@@ -393,27 +416,19 @@ When deploying [on premises](/developerportal/deploy/on-premises-design/) on [Mi
 For more information, see the [Reverse Proxy Inbound Rules](/developerportal/deploy/deploy-mendix-on-microsoft-windows/#reverse-proxy-rules) section of *Microsoft Windows*. 
 {{% /alert %}}
 
-To configure an OAuth provider for the **Client Credentials Flow**, provide the following details from Microsoft Entra ID after app registration:
+#### Configuring Microsoft Entra ID
 
-* **Client ID** - Application identifier from your registered app
-* **Client Secret** - Authentication key generated for your application
-* **Tenant ID** - Directory identifier for your Microsoft Entra ID tenant
-
-With the Email Connector version 5.2.0 and above, you can send emails using the Client Credentials Flow.
-
-### Settings in the Microsoft Entra ID (Authentication Code Flow) {#auth-code-flow}
-
-Follow Microsoft's tutorial [Register an app with Microsoft Entra ID](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/walkthrough-register-app-azure-active-directory) to register your app on the Microsoft Entra ID. As mentioned above in [OAuth Provider Configuration Details](#oauth-config-details), make sure to set the **Redirect URI** as the **Callback URL**.
+Follow Microsoft's tutorial [Register an app with Microsoft Entra ID](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/walkthrough-register-app-azure-active-directory) to register your app on the Microsoft Entra ID. As mentioned above, make sure to set the **Redirect URI** to the **Callback URL**.
 
 This connector contains functionality for sending and receiving emails, so during the OAuth process, the connector will ask for permissions for sending and receiving emails.
 
-#### API Permissions
+##### API Permissions
 
 On the [Microsoft Entra ID](https://portal.azure.com/), ensure you have the following permissions enabled under the **API permissions** tab on the sidebar.
 
 Depending on your use case, modify the **azure_defaultConfig** constant to specify the required OAuth scopes for your application.
 
-##### Send Emails 
+###### Send Emails 
 
 | Permission Name | Description |
 |-----------------|-------------|
@@ -424,7 +439,7 @@ Depending on your use case, modify the **azure_defaultConfig** constant to speci
 | profile         | View users' basic profile (often used during sign-in). |
 | email           | View users' email address (optional but helpful). |
 
-##### Receive Emails 
+###### Receive Emails 
 
 | Permission Name          | Description |
 |--------------------------|-------------|
@@ -436,7 +451,17 @@ Depending on your use case, modify the **azure_defaultConfig** constant to speci
 | profile                  | View users' basic profile (often used during sign-in). |
 | email                    | View users' email address (optional but helpful). |
 
-### Settings in the Microsoft Entra ID (Client Credentials Flow) {#client-credentials-flow}
+### Client Credential Grant Flow{#client-credentials-flow}
+
+To configure an OAuth provider for the **Client Credentials Flow**, provide the following details from Microsoft Entra ID after app registration:
+
+* **OAuth Configuration Name** – A name to identify this configuration
+* **Client ID** - Application identifier from your registered app
+* **Client Secret** - Authentication key generated for your application
+* **Tenant ID** - Directory identifier for your Microsoft Entra ID tenant
+* **Token endpoint URL** – ????
+
+With the Email Connector version 5.2.0 and above, you can send emails using the Client Credentials Flow.
 
 Follow Microsoft's [Register an app with Microsoft Entra ID](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/walkthrough-register-app-azure-active-directory) to register your app in the Microsoft Entra ID portal.
 
@@ -535,7 +560,7 @@ Gmail no longer supports basic authentication (usernames and password). However,
 
 If you already have an email account configured using basic authentication in your app, and you want to use OAuth 2.0 authentication without removing that email account, do the following:
 
-1. On the overview page, click **OAuth Configurations** and add a new configuration. For more information, see [OAuth Provider Configuration Details](#oauth-config-details).
+1. On the overview page, click **Configure OAuth** and add a new configuration. For more information, see [OAuth Provider Configuration Details](#oauth-config-details).
 2. For the desired email account, set the **isOAuthUsed** attribute of the **EmailAccount** entity to **True**.
 3. Associate the email account with your newly created OAuth provider.
 4. Navigate to the overview page, click **Manage Accounts**, and select the account.
