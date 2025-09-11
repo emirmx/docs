@@ -351,9 +351,8 @@ You can view and change the following settings by clicking **View Settings** as 
 ##### Incoming Emails
 
 * **Folder to replicate E-mails from** – Specify the email folder to monitor for incoming messages; default is "INBOX" – click **Select…** to choose any existing email folder on the account
-* **Subscribe to incoming emails** – check this to enable real-time monitoring for new email arrivals
-{{% todo %}}What does this do?{{% /todo %}}
-* **Replicate everything in 'INBOX' folder** – ????????
+* **Subscribe to incoming emails** – Disabled by default. Enable this option if you want to receive notifications for new incoming emails. For modeling purposes, use the **SubscribeToIncomingEmail** Java action. This feature is supported only for **IMAP** protocols, and some mail servers may not support it.
+* **Replicate everything in 'INBOX' folder** – Disabled by default. When off, retrieves only the specified number of emails based on the fetch strategy. When enabled, replicates all emails from the specified folder in batches (oldest to newest) using the configured batch size.
 * **Number of emails to retrieve from server** – Set the maximum number of emails to fetch in a single operation; default is 50
 * **Fetch strategy** – Controls the order in which emails are retrieved from the server 
     * *Latest* – Retrieves most recent emails first 
