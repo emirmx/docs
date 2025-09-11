@@ -74,7 +74,7 @@ To set up a working directory for your script, follow these steps:
     }
     ```
 
-    When a new major version of the Mendix SDK is released (as in, 1.0.0 to 2.0.0) and you run `npm update` in your project folder, the `^` in front of the version number makes sure that the installed version of the SDK will not be upgraded automatically. Only minor and patch releases (as in, 1.1.1) of the SDK will be automatically upgraded; otherwise, your script could inadvertently be broken. You may, of course, edit the dependency yourself.
+    When a new major version of the Mendix SDK is released (as in, 1.0.0 to 2.0.0) and you run `npm update` in your project folder, the `^` in front of the version number makes sure that the installed version of the SDK is not upgraded automatically. Only minor and patch releases (as in, 1.1.1) of the SDK will be automatically upgraded; otherwise, your script could inadvertently be broken. You may, of course, edit the dependency yourself.
 
 4. Add `typescript` and `@types/node` as dev dependencies. 
     Packages like TypeScript, testing libraries, linters, and type definitions (@types/...) are not required for your app to run in production—they are only needed while writing and testing code.
