@@ -45,7 +45,7 @@ After setting up all the prerequisites, you can start writing a first script tha
     main().catch(console.error);
     ```
 
-Don't forget to [set up your personal access token](/apidocs-mxsdk/mxsdk/set-up-your-pat/) before executing the script.
+Do not forget to [set up your personal access token](/apidocs-mxsdk/mxsdk/set-up-your-pat/) before executing the script.
 
 {{% alert color="warning" %}}
 Working copy creation is a resource-intensive process. Consider reusing previously-created ones by invoking `app.getOnlineWorkingCopy(workingCopyId)`. All working copies are automatically deleted after 24 hours.
@@ -53,7 +53,7 @@ Working copy creation is a resource-intensive process. Consider reusing previous
 
 ### Code Explanation
 
-Here are some explanations about the script:
+Here are some explanations about the script.
 
 ```ts
 const client = new MendixPlatformClient();
@@ -92,7 +92,7 @@ Once you are done with the model changes, you can flush the changes to make sure
 
 ## Compiling and Running the Script
 
-1. Add the following section to `package.json` 
+1. Add the following section to `package.json`:
 
     ```json
     "scripts": {
@@ -100,7 +100,7 @@ Once you are done with the model changes, you can flush the changes to make sure
     }
     ```
 
-    This command will first compile your TypeScript code into JavaScript using the TypeScript compiler. After compilation, a file named `script.js` will be generated. The script will then be executed using Node.js.
+    This command first compiles your TypeScript code into JavaScript using the TypeScript compiler. After the compilation, a file named `script.js` is generated. The script will then be executed using Node.js.
 
 2. Run the script to see the results:
 
@@ -114,7 +114,7 @@ Once you are done with the model changes, you can flush the changes to make sure
     Successfully committed the working copy with id 'c70b078e-a323-42a7-b95d-7407a0e611d3' to branch 'main'
     ```
 
-Note that the steps for app creation and committing to the Team Server can take some time, so please be patient.
+The steps for app creation and committing to the Team Server can take some time. Please be patient.
 
 ## Next Step
 
