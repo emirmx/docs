@@ -401,7 +401,7 @@ To configure an OAuth provider for the *Auth code grant flow*, provide the follo
 * **Client Secret** – Authentication key generated during Microsoft Entra ID app registration
 * **Callback Path** – Custom string used to autogenerate the callback URL
 * **Callback URL** – **Redirect URI** where the OAuth provider returns after authorization
-* **Token endpoint URL** –  Used by client to exchange an authorization grant or refresh token for an access token. https://login.microsoftonline.com/<issuer>/oauth2/v2.0/token
+* **Token endpoint URL** – Used by client to exchange an authorization grant or refresh token for an access token. https://login.microsoftonline.com/<issuer>/oauth2/v2.0/token
 
 {{% alert color="info" %}}
 When deploying [on premises](/developerportal/deploy/on-premises-design/) on [Microsoft Windows](/developerportal/deploy/deploy-mendix-on-microsoft-windows/), add the following rule to the *web.config* file:
