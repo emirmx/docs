@@ -48,7 +48,9 @@ In the upper-right corner of the page, you can see two buttons:
 Follow these steps to create a story with Maia:
 
 1. Enable Maia in the app [Settings](/developerportal/collaborate/general-settings/#maia-settings) page.
-2. Click **Create Story**, then click {{% icon name="sparkles" %}}**Create with Maia**. The **Maia Create Story** window is displayed.
+2. Click **Create Story**, then click {{% icon name="sparkles" %}}**Create with Maia**.     
+   If Maia is enabled, the **Create Story with Maia** window is displayed.    
+   If Maia is not enabled, you are given the option to activate it on the spot, from the **Enable Maia** window.
 3. Enter your input, then click **Generate Story**.
 4. Check the suggestion provided by Maia. You can click **Apply to Story** if you agree with the suggestion, or you can choose to regenerate it.
 
