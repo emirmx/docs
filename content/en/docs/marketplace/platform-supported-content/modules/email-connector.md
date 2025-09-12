@@ -84,12 +84,7 @@ If you already have these widgets in your app, and they are not up to date, you 
 
 ## Setting up the Email Connector in Studio Pro {#setup}
 
-The **Email_Connector_Overview** page which you added to the navigation launches the user interface which allows you to configure email accounts. This overview page provides access to configure and manage the following configurations and settings:
 
-* **Send Email**
-* **Receive Email**
-* **Templates**
-* **Configure OAuth**
 
 ### Configuring Roles
 
@@ -99,10 +94,117 @@ The module includes a default **EmailConnectorAdmin** module role with pre-confi
 
 The Email Connector provides building blocks that you assemble to create email functionality:
 
+#### Domain Model {#domain-model}
 
-#### Entities {#entities}
+The domain model in Mendix is a data model that describes the information in your application domain in an abstract way. For more general information, see the [Data in the Domain Model](/refguide/domain-model/) documentation. To learn more about entities and their associations in the domain model of the Email Connector see the section below.
 
-You can find the entities and their associations in the domain model of the Email Connector.
+##### EmailAccount {#email-account}
+
+Entity managing email account configurations, authentication methods, and security settings for both incoming and outgoing email operations.
+
+| Attribute                    | Description                                                    |
+|------------------------------|----------------------------------------------------------------|
+| Username                     | Account login credentials for email server authentication      |
+| MailAddress                  | Primary email address associated with the account              |
+| Password                     | Authentication password (used when isOAuthUsed is false)       |
+| Timeout                      | Server connection timeout in seconds                           |
+| sanitizeEmailBodyForXSSSc... | Prevents XSS attacks by sanitizing email content               |
+| isP12Configured              | Indicates P12 certificate configuration for digital signatures |
+| isLDAPConfigured             | Indicates LDAP directory service integration status            |
+| isIncomingEmailConfigure...  | Indicates if email account is configured for retrieve emails   |
+| isOutgoingEmailConfigure...  | Indicates if email account is configured for send emails       |
+| FromDisplayName              | Sender display name for outgoing emails                        |
+| UseSSLCheckServerIdentity... | Enables SSL certificate verification for secure connections    |
+| IsSharedMailbox              | Designates account as shared mailbox with delegated access     |
+| isOAuthUsed                  | Indicates OAuth 2.0 authentication method is enabled           |
+| isEmailConfigAutoDetect      | Enables automatic server configuration discovery               |
+
+##### IncomingEmailConfiguration {#incoming-email-configuration}
+
+Configuration entity managing email retrieval settings, processing options, and server connection parameters for incoming messages.
+
+| Attribute          | Description                                       |
+|--------------------|---------------------------------------------------|
+| IncomingProtocol   | Email retrieval protocol (IMAP/POP3)              |
+| Folder             | Server folder for email retrieval                 |
+| UseBatchImport     | Enables batch processing for large email volumes  |
+| BatchSize          | Number of emails processed per batch operation    |
+| Handling           | Post-retrieval action (keep, move, delete emails) |
+| MoveFolder         | Destination folder for processed emails           |
+| ProcessInlineImage | Processes embedded images in email content        |
+| FetchStrategy      | Email retrieval method (Latest, Oldest            |
+| NotifyOnNewEmails  | Triggers notifications for incoming emails        |
+| ServerHost         | Incoming mail server hostname or IP address       |
+| ServerPort         | Incoming mail server port                         |
+
+
+##### OutgoingEmailConfiguration {#outgoing-email-configuration}
+
+Configuration entity defining Send Protocol settings, security protocols, and reliability options for sending emails.
+
+| Attribute        | Description                                          |
+|------------------|------------------------------------------------------|
+| OutgoingProtocol | Email sending protocol (SMTP)                        |
+| SSL              | Enables SSL encryption for secure email transmission |
+| TLS              | Enables TLS encryption for enhanced security         |
+| SendMaxAttempts  | Maximum retry attempts for failed email sends        |
+| ServerHost       | Send email hostname or IP address                    |
+| ServerPort       | Send email server port                               |
+
+##### EmailMessage {#email-message}
+
+Entity representing individual email messages with complete metadata, content, and processing status tracking. This entity is used for both sending and receiving emails.
+
+| Attribute         | Description                                                       |
+|-------------------|-------------------------------------------------------------------|
+| Subject           | Email subject line text                                           |
+| SentDate          | Original send timestamp from email headers                        |
+| RetrieveDate      | Local retrieval timestamp                                         |
+| From              | Sender's email address                                            |
+| To                | Primary recipient email addresses (comma-separated)               |
+| CC                | Carbon copy recipients (visible to all recipients)                |
+| BCC               | Blind carbon copy recipients (hidden from other recipients)       |
+| Content           | Rich HTML email body content                                      |
+| UseOnlyPlainText  | Forces plain text format, disabling HTML                          |
+| hasAttachments    | Indicates presence of file attachments                            |
+| Size              | Total email size including attachments (bytes)                    |
+| FromDisplayName   | Sender's friendly display name                                    |
+| ReplyTo           | Alternative reply address if different from sender                |
+| PlainBody         | Plain text version of email content                               |
+| QueuedForSending  | Marks email for outbound processing queue                         |
+| ResendAttempts    | Tracks retry attempts for failed sends                            |
+| LastSendError     | Stores error message from last failed send attempt                |
+| LastSendAttemptAt | Timestamp of most recent send attempt                             |
+| Status            | Current processing status (Queued, Sent, Failed, Error, Received) |
+| isSigned          | Indicates digital signature application                           |
+| isEncrypted       | Enables encryption for email                                      |
+
+##### EmailTemplate {#email-template}
+
+Entity enabling reusable email designs with dynamic content placeholders for consistent and efficient messaging.
+
+| Attribute        | Description                                            |
+|------------------|--------------------------------------------------------|
+| TemplateName     | Unique template identifier for selection               |
+| CreationDate     | Template creation timestamp                            |
+| Subject          | Email subject line text                                |
+| SentDate         | Last usage timestamp for template                      |
+| FromAddress      | Default sender email address for template              |
+| To               | Primary recipient email addresses                      |
+| CC               | Default carbon copy recipients                         |
+| BCC              | Default blind carbon copy recipients                   |
+| Content          | HTML template with dynamic placeholder tokens          |
+| UseOnlyPlainText | Restricts template to plain text format                |
+| hasAttachment    | Indicates default attachment inclusion                 |
+| ReplyTo          | Default reply-to address for template emails           |
+| PlainBody        | Plain text version of template content                 |
+| FromDisplayName  | Default sender display name                            |
+| Signed           | Applies digital signature to template-generated emails |
+| Encrypted        | Enables encryption for template-based emails           |
+
+##### Attachment {#attachment}
+
+Specialized file attachment entity extending Mendix **System.FileDocument** to provide comprehensive file handling capabilities for email communications.
 
 #### Snippets {#snippets}
 
@@ -117,8 +219,8 @@ Snippets allow you to make interface changes in one place that automatically app
 
 ##### Account Management
 
-* **SNIP_EmailAccount_SendAccountSettings** - Configure outgoing email account settings and preferences
-* **SNIP_EmailAccount_ReceiveAccountSettings** - Configure incoming email account settings and preferences
+* **SNIP_EmailAccount_SendAccountSettings** - Configure outgoing **EmailAccount** settings and preferences
+* **SNIP_EmailAccount_ReceiveAccountSettings** - Configure incoming **EmailAccount** settings and preferences
 
 ##### Email Operations
 
@@ -138,8 +240,8 @@ The Email Connector module contains a number of pre-written microflows which you
 
 ##### Core Microflows
 
-* **SUB_SendEmail** - Send emails using selected email account
-* **SUB_RetrieveEmails** - Fetch emails from selected email account
+* **SUB_SendEmail** - Send emails using selected **EmailAccount**
+* **SUB_RetrieveEmails** - Fetch emails from selected **EmailAccount**
 * **SUB_EmailAccount_CheckServerConnection** - Validate email server connectivity and account configuration
 
 ##### Sample Microflows
@@ -157,12 +259,20 @@ The Email Connector module contains a number of Java actions which you can use t
 * **GetFolderNames** - Retrieve available email folders from the server 
 * **GetBaseDNList** - Get directory service base distinguished names for LDAP integration
 
+
+The **Email_Connector_Overview** page which you added to the navigation launches the user interface which allows you to configure email accounts. This overview page provides access to configure and manage the following configurations and settings:
+
+* **Send Email**
+* **Receive Email**
+* **Templates**
+* **Configure OAuth**
+
 ## Send Email {#send-email}
 
 1. Deploy your application to set up your **Send Email** accounts through the Email Connector user interface.
-1. Navigate to the **Email Connector Overview** page.
-1. Select the **Send Email** tab.
-1. Click **Add New Configuration** or edit an existing one using the **Action**.
+2. Navigate to the **Email Connector Overview** page.
+3. Select the **Send Email** tab.
+4. Click **Add New Configuration** or edit an existing one using the **Action**.
 
 You can now set up your account for sending email by providing the following details:
 
@@ -380,17 +490,17 @@ You can view and change the following settings by clicking **View Settings** as 
 
 ### Receiving Email
 
-When modeling your app in Studio Pro, use the RetrieveEmailMessages Java action. Once this Java action is called in the background, emails are fetched over multiple Java threads and returned asynchronously. Email fetching continues until the conditions defined in the email account settings are met. For example, you could set the app to fetch the latest 1,000 emails. For more information, see Additional Account Settings.
+To receive emails in your Mendix app, use the **RetrieveEmailMessages** Java action. This action fetches emails asynchronously in batches using multiple threads and returns a list of **EmailMessage** objects. Email retrieval continues until the criteria specified in the email account settings are met (for example, fetching the latest 1,000 emails). For details, see Additional Account Settings.
 
 The input parameters for receiving email are the following:
 
 * **EmailAccount** – This is an email account consisting of the incoming email configuration.
 
-* **onEmailFetchMicroflow**** – This is a microflow that is triggered when List of EmailMessage is fetched from the email server, as per the batch size specified in the email account settings. You can process the list according to your needs.
+* **onEmailFetchMicroflow**** – This is a microflow that is triggered when List of **EmailMessage** is fetched from the email server, as per the batch size specified in the email account settings. You can process the list according to your needs.
 
   {{% alert color="warning" %}}If duplicating the **onEmailFetchMicroflow** microflow, do not change the input parameter name or data type. To prevent errors, make sure you have **List of Email_Connector.EmailMessage** as a parameter to this microflow.{{% /alert %}}
 
-* **onFetchCompleteMicroflow** – This is a microflow that is triggered when the fetch action is successfully completed.
+* **onFetchCompleteMicroflow** – This is a microflow that is triggered when the email fetch action is successfully completed.
 
 * **onFetchErrorMicroflow** – This is a microflow that is triggered if there are errors while fetching from the email server.
 
@@ -401,7 +511,10 @@ This tab displays a list of any log entries related to errors in the Email Conne
 
 ## Configure OAuth {#oauth-config-details}
 
-Configure your email account to authenticate using Microsoft Entra ID OAuth 2.0. Multiple OAuth 2.0 providers can be configured within a single application.
+1. Deploy your application to set up your **OAuth Configuration** through the Email Connector user interface.
+2. Navigate to the **Email Connector Overview** page.
+3. Select the **Configure OAuth** tab.
+4. Click **Add New Configuration** or edit an existing one using the **Action**.
 
 The Email Connector supports two sorts of OAuth authentication. Under **Choose Authentication** select one of the following:
 
@@ -506,7 +619,7 @@ Admin status is given on the added API permissions. The tenant admin must regist
 
 1. Deploy your application to set up your **Email Templates** through the Email Connector user interface.
 2. Navigate to the **Email Connector Overview** page.
-3. Select the **Templates** tab.
+3. Select the **Email Templates** tab.
 4. Click **Add New Template** or edit an existing one using the **Action**.
 
 {{% alert color="info" %}} The [Mx Model Reflection](/appstore/modules/model-reflection/) must be installed and properly configured in your app prior to creating placeholder tokens and before exporting/importing email templates containing placeholder tokens.{{% /alert %}}
@@ -570,16 +683,6 @@ Gmail no longer supports basic authentication (usernames and password). However,
 
 1. Read [Less secure apps & your Google Account](https://support.google.com/accounts/answer/6010255) and turn off the **Less secure app access** setting in your Google account.
 2. Set up an app password to sign in to the Email Connector. For more information, see [Sign in with app passwords](https://support.google.com/accounts/answer/185833).
-
-### Adding OAuth 2.0 Configuration to an App with Basic Authentication
-
-If you already have an email account configured using basic authentication in your app, and you want to use OAuth 2.0 authentication without removing that email account, do the following:
-
-1. On the overview page, click **Configure OAuth** and add a new configuration. For more information, see [OAuth Provider Configuration Details](#oauth-config-details).
-2. For the desired email account, set the **isOAuthUsed** attribute of the **EmailAccount** entity to **True**.
-3. Associate the email account with your newly created OAuth provider.
-4. Navigate to the overview page, click **Manage Accounts**, and select the account.
-5. Go to the **Server Settings** tab in **Account Settings** and select **Re-authenticate Access**.
 
 ### Deprecation of Basic authentication in Microsoft Exchange Online
 
