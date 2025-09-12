@@ -1,5 +1,6 @@
 ---
 title: "Installing and Configuring Mendix Workstation"
+linktitle: "Installation and Configuration"
 url: /mendix-workstation/installation/
 description: "Documents the installation process for Mendix Workstation."
 weight: 20

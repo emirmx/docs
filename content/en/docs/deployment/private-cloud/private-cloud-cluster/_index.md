@@ -417,7 +417,7 @@ spec:
         livenessProbe:
           failureThreshold: 3
           httpGet:
-            path: /m2ee-sidecar/v1/healthz
+            path: /m2ee-sidecar/v1/livez
             port: 8800
             scheme: HTTP
           initialDelaySeconds: 60
@@ -427,8 +427,8 @@ spec:
         readinessProbe:
           failureThreshold: 3
           httpGet:
-            path: /
-            port: mendix-app
+            path: /m2ee-sidecar/v1/readyz
+            port: 8800
             scheme: HTTP
           initialDelaySeconds: 5
           periodSeconds: 1
@@ -539,6 +539,12 @@ An app will return a successful health check status if all of these conditions a
 3. If the Runtime is `running`, and a healthcheck microflow is configured, the healthcheck microflow needs to return a `healthy` state. If there is no `check_health` microflow configured, or the Runtime's state is not `running`, this condition is ignored.
 {{% /alert %}}
 
+{{% alert color="info" %}}
+Starting from Mendix Operator 2.23.0, environments running in `leaderless` mode use the Mendix Runtime's built-in liveness and readiness checks.
+
+When another **runtimeLeaderSelection** mode is used (default, unspecified `assigned` mode, or `none`), the healthcheck microflow is used, as described above.
+{{% /alert %}}
+
 #### Customize Liveness Probe to Resolve Crash Loopback Scenarios
 
 The `liveness probe` informs the cluster whether the pod is dead or alive. If the pod fails to respond to the liveness probe, the pod will be restarted (this is called a `crash loopback`).
@@ -555,7 +561,7 @@ Let us now analyze the `liveness probe` section from the application deployment 
 livenessProbe:
   failureThreshold: 3
   httpGet:
-    path: /m2ee-sidecar/v1/healthz
+    path: /m2ee-sidecar/v1/readyz
     port: 8800
     scheme: HTTP
   initialDelaySeconds: 60

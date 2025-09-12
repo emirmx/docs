@@ -130,10 +130,6 @@ The list of variables is described below:
 * `$ParentTask` – the parent user task of the attached boundary event
 * `$CalledWorkflowInstance` – the parent Call workflow activity of the attached boundary event
 
-## Current Limitation {#limitation}
-
-* The already-scheduled timer boundary event will not be cancelled when a new one is scheduled for the same boundary event definition. For example, if a workflow instance has a scheduled timer boundary event, and you make a manual jump from a [Multi-User Task](/refguide/multi-user-task/) to itself, or a jump from the parent activity to another activity earlier in the executed path that causes it to run a second time, the timer boundary event will be scheduled again while the original timer is still pending. When the original timer expires, the boundary event will be triggered and the new timer will be disregarded. This is a limitation that will be fixed in the future.
-
 ## Read more
 
 * [Workflows](/refguide/workflows/)
