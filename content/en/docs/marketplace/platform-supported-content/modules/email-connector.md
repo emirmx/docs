@@ -263,19 +263,32 @@ Use the **SUB_SendEmail microflow** for standardized, Mendix-compliant email del
 
 When working with email templates, refer to the following sample microflows:
 
-* **Sample_ACT_CreateEmailFromTemplateAndThenSend** – Demonstrates creating emails from templates with additional customization
-* **Sample_ACT_SendEmailWithTemplate** – Shows direct email sending using predefined templates
+* **Sample_ACT_CreateEmailFromTemplateAndThenSend** – Demonstrates how to create an email from a template, customize it, and then send it
+* **Sample_ACT_SendEmailWithTemplate** – Demonstrates how to send an email directly using a predefined template
 
 {{% alert color="info" %}}
 It is recommended to use **Sample_ACT_SendEmailWithTemplate** for most email template scenarios. It provides a streamlined implementation for sending templated emails with minimal configuration overhead.
 {{% /alert %}}
 
+### Sending Email via Java Action
+
+When the module is running, click New Email to compose and send new emails.
+
+When modeling your app in Studio Pro, use the SendEmail Java action to send emails. The input parameters are as follows:
+
+* **EmailAccount** – The entity containing the configuration details for the outgoing email account
+* **EmailMessage** – The entity instance containing the content and details of the email to be sent
+
+The return type is a Boolean value. This Java action uses the provided details to connect to the email server and send an email. It returns True if successful and displays the error object and cause if it fails.
+
+When sending an email, the To and Content fields are mandatory. In To, CC, and BCC, you can optionally specify multiple email addresses, each separated by a semicolon (;).
+
 ## Receive Email {#receive-email}
 
 1. Deploy your application to set up your **Receive Email** accounts through the Email Connector user interface.
-1. Navigate to the **Email Connector Overview** page.
-1. Select the **Receive Email** tab.
-1. Click **Add New Configuration** or edit an existing one using the **Action**.
+2. Navigate to the **Email Connector Overview** page.
+3. Select the **Receive Email** tab.
+4. Click **Add New Configuration** or edit an existing one using the **Action**.
 
 You can now set up your account for receiving email by providing the following details:
 
@@ -375,6 +388,22 @@ You can view and change the following settings by clicking **View Settings** as 
 * **Sanitize email to prevent XSS attacks** – does the following:
     * Enables security filtering to prevent cross-site scripting attacks 
     * Removes potentially malicious scripts and content from email messages 
+
+### Receiving Email
+
+When modeling your app in Studio Pro, use the RetrieveEmailMessages Java action. Once this Java action is called in the background, emails are fetched over multiple Java threads and returned asynchronously. Email fetching continues until the conditions defined in the email account settings are met. For example, you could set the app to fetch the latest 1,000 emails. For more information, see Additional Account Settings.
+
+The input parameters for receiving email are the following:
+
+* **EmailAccount** – This is an email account consisting of the incoming email configuration.
+
+* **onEmailFetchMicroflow**** – This is a microflow that is triggered when List of EmailMessage is fetched from the email server, as per the batch size specified in the email account settings. You can process the list according to your needs.
+
+  {{% alert color="warning" %}}If duplicating the **onEmailFetchMicroflow** microflow, do not change the input parameter name or data type. To prevent errors, make sure you have **List of Email_Connector.EmailMessage** as a parameter to this microflow.{{% /alert %}}
+
+* **onFetchCompleteMicroflow** – This is a microflow that is triggered when the fetch action is successfully completed.
+
+* **onFetchErrorMicroflow** – This is a microflow that is triggered if there are errors while fetching from the email server.
 
 #### Error Logs Tab
 
@@ -486,13 +515,12 @@ Admin status is given on the added API permissions. The tenant admin must regist
 
 ## Email Templates
 
-You can create and use templates with any email account.
+1. Deploy your application to set up your **Email Templates** through the Email Connector user interface.
+2. Navigate to the **Email Connector Overview** page.
+3. Select the **Templates** tab.
+4. Click **Add New Template** or edit an existing one using the **Action**.
 
-### Creating an Email Template{#create-template}
-
-Use the **SNIP_EmailTemplate_Overview** snippet located in **Email_Connector** > **Private** > **Snippets**. Add the snippet directly to a page and save it.
-
-  {{% alert color="info" %}} The [Mx Model Reflection](/appstore/modules/model-reflection/) must be installed and properly configured in your app prior to creating placeholder tokens and before exporting/importing email templates containing placeholder tokens.{{% /alert %}}
+{{% alert color="info" %}} The [Mx Model Reflection](/appstore/modules/model-reflection/) must be installed and properly configured in your app prior to creating placeholder tokens and before exporting/importing email templates containing placeholder tokens.{{% /alert %}}
 
 ### Creating an Email Message from a Template
 
