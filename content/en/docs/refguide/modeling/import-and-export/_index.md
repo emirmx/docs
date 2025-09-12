@@ -53,15 +53,17 @@ To import a complete app or solution package, follow these steps:
 
     {{< figure src="/attachments/refguide/modeling/import-and-export/file-import-app-project.png" class="no-border" >}}
 
-2. Select your Mendix app package file and click **Open**. If you select a *.mpk file*, the **Import App Package** dialog box will appear.
+2. Select your Mendix app package file and click **Open**. 
 
-    {{< figure src="/attachments/refguide/modeling/import-and-export/import-app-package.png" class="no-border" >}}
+    * If you select a *.mpk file*, the **Import App Package** dialog box appears:
 
-   If you select a solution package (*.mxsolution*), it will open the **Import Solution App Package**.
+        {{< figure src="/attachments/refguide/modeling/import-and-export/import-app-package.png" >}}
 
-   {{< figure src="/attachments/refguide/modeling/import-and-export/import-app-solution-package.png" class="no-border" >}}
+    * If you select a solution package (*.mxsolution*), the **Import Solution App Package** dialog box appears:
 
-    You have the following options in this dialog box:
+       {{< figure src="/attachments/refguide/modeling/import-and-export/import-solution-app-package.png" >}}
+
+    You have the following options in the dialog box:
 
     * Decide whether to store your app in a **New Mendix Team Server** (recommended), an **Existing Mendix Team Server**, **Private server**, or **Locally on disk**
 
