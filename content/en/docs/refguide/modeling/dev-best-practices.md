@@ -335,12 +335,14 @@ You can define the [home pages](/refguide/show-home-page/) per device and role i
 
 #### Project Size
 
-Mendix apps are best built in a way that they are easily scalable through a microservice architecture.
+Mendix apps are best built in a way that they are easily scalable through a microservice architecture. They are ideally designed for a single purpose, focusing each app on a distinct business domain to keep functionality clear and manageable. 
+
+By applying a microservice architecture, each app operates autonomously and communicates via APIs, enabling independent development, deployment, and scaling. This not only simplifies maintenance and upgrades, but also provides the highest degree of scalability, flexibility, and resilience, as each microservice can be tailored and scaled according to demand without impacting the rest of the system. Following this approach helps development teams build robust and future-proof solutions, accelerates deployment cycles, and ensures Mendix apps remain efficient and adaptable to evolving business requirements.
 
 To ensure maintainability and performance, it is recommended to keep your app within: 
 
-* 3,000 microflows and 750 entities if using a high end machine
-* 2,000 microflows and 500 entities on a lower specced machine
+* 3,000 microflows and 750 entities if using a high-end machine
+* 2,000 microflows and 500 entities on a lower-spec machine
 
 Staying within these limits helps maintain optimal performance in Studio Pro, while ensuring your app remains manageable and scalable over time. If your app exceeds these limits, consider breaking your app into smaller services to improve maintainability and performance.
 
