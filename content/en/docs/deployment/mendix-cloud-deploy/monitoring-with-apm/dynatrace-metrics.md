@@ -59,9 +59,9 @@ What Dynatrace calls "dimensions," other monitoring tools call "tags." The Mendi
 
 For metrics that are pushed to Dynatrace, Mendix attaches these default dimensions:
 
-* `app` – The environment ID of your Mendix environment
+* `app` - The environment ID of your Mendix environment
 * `pod_name` - The instance to which the metrics belong (available only in Kubernetes deployments)
-* `instance_index` – Instance index that the metrics belong to (available only in Cloud Foundry deployments)
+* `instance_index` - The instance index to which the metrics (available only in Cloud Foundry deployments)
 
 #### Extra Dimensions
 
