@@ -52,3 +52,40 @@ The Java Agent can be configured through system properties, which can be added t
 | `otel.exporter.otlp.traces.certificate` | The path to the file containing trusted certificates to use when verifying a trace server's TLS credentials. The file should contain one or more X.509 certificates in PEM format. | By default the host platform's trusted root certificates are used. |
 | `otel.exporter.otlp.traces.client.key` | The path to the file containing the private client key to use when verifying a trace client's TLS credentials. The file should contain one private key in PKCS8 PEM format. | By default no client key file is used. |
 | `otel.exporter.otlp.traces.client.certificate` | The path to the file containing trusted certificates to use when verifying a trace client's TLS credentials. The file should contain one or more X.509 certificates in PEM format. | By default no certificate file is used. |
+
+## Enabling Tracing for Deployed Applications
+
+To enable tracing in your deployed Mendix application, configure the following JVM parameters:
+
+```
+-javaagent:mxinstallation/runtime/agents/opentelemetry-javaagent.jar
+-Dotel.javaagent.extensions=mxinstallation/runtime/agents/mendix-opentelemetry-agent-extension.jar
+-Dotel.service.name=MyServiceName
+```
+
+{{% alert color="info" %}}
+Replace MyServiceName with a meaningful identifier for your service.
+{{% /alert %}}
+
+
+If the OpenTelemetry Collector is **not running on the same host** as your application, you must also specify the trace export endpoint:
+
+```
+-Dotel.exporter.otlp.traces.endpoint=http://collector-host:port
+```
+
+{{% alert color="info" %}}
+Replace collector-host and port with the host and port of your OpenTelemetry collector.
+{{% /alert %}}
+
+### Docker-Based Deployment
+
+For Docker deployments, you can set the JVM parameters using the `JAVA_TOOL_OPTIONS` environment variable. Example:
+
+```
+docker run MyMendixApp \
+  -e JAVA_TOOL_OPTIONS="-javaagent:mxinstallation/runtime/agents/opentelemetry-javaagent.jar \
+  -Dotel.javaagent.extensions=mxinstallation/runtime/agents/mendix-opentelemetry-agent-extension.jar \
+  -Dotel.service.name=MyServiceName \
+  -Dotel.exporter.otlp.traces.endpoint=http://collector-host:port"
+```
