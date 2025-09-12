@@ -176,31 +176,31 @@ Entity representing individual email messages with complete metadata, content, a
 | LastSendError     | Stores error message from last failed send attempt                |
 | LastSendAttemptAt | Timestamp of most recent send attempt                             |
 | Status            | Current processing status (Queued, Sent, Failed, Error, Received) |
-| isSigned          | Indicates digital signature application                           |
+| isSigned          | Enables digital signature for email                               |
 | isEncrypted       | Enables encryption for email                                      |
 
 ##### EmailTemplate {#email-template}
 
 Entity enabling reusable email designs with dynamic content placeholders for consistent and efficient messaging.
 
-| Attribute        | Description                                            |
-|------------------|--------------------------------------------------------|
-| TemplateName     | Unique template identifier for selection               |
-| CreationDate     | Template creation timestamp                            |
-| Subject          | Email subject line text                                |
-| SentDate         | Last usage timestamp for template                      |
-| FromAddress      | Default sender email address for template              |
-| To               | Primary recipient email addresses                      |
-| CC               | Default carbon copy recipients                         |
-| BCC              | Default blind carbon copy recipients                   |
-| Content          | HTML template with dynamic placeholder tokens          |
-| UseOnlyPlainText | Restricts template to plain text format                |
-| hasAttachment    | Indicates default attachment inclusion                 |
-| ReplyTo          | Default reply-to address for template emails           |
-| PlainBody        | Plain text version of template content                 |
-| FromDisplayName  | Default sender display name                            |
-| Signed           | Applies digital signature to template-generated emails |
-| Encrypted        | Enables encryption for template-based emails           |
+| Attribute        | Description                                   |
+|------------------|-----------------------------------------------|
+| TemplateName     | Unique template identifier for selection      |
+| CreationDate     | Template creation timestamp                   |
+| Subject          | Email subject line text                       |
+| SentDate         | Last usage timestamp for template             |
+| FromAddress      | Default sender email address for template     |
+| To               | Primary recipient email addresses             |
+| CC               | Default carbon copy recipients                |
+| BCC              | Default blind carbon copy recipients          |
+| Content          | HTML template with dynamic placeholder tokens |
+| UseOnlyPlainText | Restricts template to plain text format       |
+| hasAttachment    | Indicates presence of file attachments        |
+| ReplyTo          | Default reply-to address for template emails  |
+| PlainBody        | Plain text version of template content        |
+| FromDisplayName  | Default sender display name                   |
+| Signed           | Enables digital signature for email template  |
+| Encrypted        | Enables encryption for email template         |
 
 ##### Attachment {#attachment}
 
