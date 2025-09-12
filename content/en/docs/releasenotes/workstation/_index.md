@@ -10,6 +10,73 @@ cascade:
 
 These release notes cover changes made to the [Mendix Workstation](/mendix-workstation/).
 
+## 2.6.0
+
+### Release date: September 12, 2025
+
+{{% alert color="info" %}}
+The fourth pre-release of the Mendix Workstation Client is available under the conditions of the Mendix Workstation Client Pre-Release Program. Support is available only to members of the program. To become a program member, contact Mendix Sales.
+{{% /alert %}}
+
+#### New features
+
+##### Mendix Workstation Management is available for all Mendix users
+
+##### Limitation for users of a company without Mendix Workstation Client license:
+It is not possible to add a member to a workspace owned by a user belonging to a company not entitled to a Mendix Workstation Client license.
+
+Workstation Client and all other related marketplace items are only available for members of the pre-release program.
+
+##### Workstation Client developer mode
+
+For each station, developer mode can be switched on/off to control the availability of the following functions on Workstation Client:
+
+*   Quit Workstation Client is not available in non-developer mode.
+*   Unlink Workstation Client is not available in non-developer mode.
+*   Developer tool shortcut is not available in non-developer mode.
+
+It is recommended to disable developer mode for clients used in a production environment.
+
+##### Workstation Sample App
+
+The Mendix Workstation Client Sample App showcases how to build applications interacting with multiple peripheral devices.
+
+The app includes reusable peripheral modules for:
+
+*   PC/SC Smartcard Reader (ADPU protocol)
+    *   e.g. Omnikey 5427 G2, ACR122U
+*   Barcode Scanner (configured on Serial Port)
+    *   e.g. NETUM C750
+*   Industrial Scale (MT-SICS protocol)
+    *   e.g. Mettler Toledo ICS425, OHAUS Scout STX 620, 6200
+*   Label Printer (ZPL protocol)
+    *   e.g. Zebra ZD421D
+*   USB Andon tower / Stack light
+    *   e.g. ANDONT USB Stack LED Andon Tower Lights
+
+Each module includes a peripheral emulator to build apps without a physical device.
+
+The Sample App is available in the marketplace.
+
+#### Improvements
+
+##### Workstation Management
+
+*   Addition of the Mendix Portal Global Navigation Menu top bar and menu.
+*   Usability improvements.
+
+##### Workstation Client
+
+*   Add a button to paste the registration token.
+
+##### Workstation Connector
+
+*   The security role `SecurityAdministrator` is added: only users with this role can Regenerate KeyPair in Station connector Security of an App.
+
+#### Fixes
+
+We fixed an issue in Workstation Client where, when the client app closed and re-opened a connection, data buffered from the previous session was sent to the new session. The data buffer now is cleared when the connection is closed.
+
 ## 2.4.0
 
 ### Release date: August 20, 2025
