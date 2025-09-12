@@ -28,8 +28,7 @@ The Email Connector includes the following capabilities:
 
     * Basic Authentication (username/password)
     * OAuth 2.0 (Authorization Code Flow & Client Credentials Flow)
-    * Microsoft Entra ID integration 
-    * Shared mailbox support 
+    * Microsoft Entra ID integration
  
 * **Email protocols**:
 
@@ -44,6 +43,7 @@ The Email Connector includes the following capabilities:
     * SSL/TLS encryption 
     * XSS attack prevention
 
+* **Shared mailbox** support
 * **Email Templates** with rich text editor and placeholder tokens 
 * **Real-time email monitoring** and folder management 
 * **Attachment support** (normal and inline)
@@ -57,12 +57,12 @@ Missing a step, or changing the order can lead to errors.
 {{% /alert %}}
 
 1. Download and configure the latest version of the [Mx Model Reflection](/appstore/modules/model-reflection/) module.
-1. Download and configure the latest version of the [Encryption](/appstore/modules/encryption/) module.
-1. Download and configure the latest version of the [Community Commons](/appstore/modules/community-commons-function-library/) module.
-1. Uninstall any previously installed email modules, such as [IMAP/POP3](https://marketplace.mendix.com/link/component/1042/) and [Email Module with Templates](https://marketplace.mendix.com/link/component/259/).
-1. Remove any JAR files still be present in the userlib folder from older email modules which are now unused (for example, `javax.mail-1.6.2.jar`, `activation-1.1.jar`, and `commons-email.jar`).
-1. [Clean the deployment directory](/refguide/app-menu/#clean-deployment-directory).
-1. Add the **Email_Connector_Overview** page located in the **USE_ME > Pages** to your app navigation.
+2. Download and configure the latest version of the [Community Commons](/appstore/modules/community-commons-function-library/) module.
+3. Download and configure the latest version of the [Encryption](/appstore/modules/encryption/) module. The EncryptionKey constant must be set up in your application settings.
+4. Uninstall any previously installed email modules, such as [IMAP/POP3](https://marketplace.mendix.com/link/component/1042/) and [Email Module with Templates](https://marketplace.mendix.com/link/component/259/).
+5. Remove any JAR files still be present in the userlib folder from older email modules which are now unused (for example, `javax.mail-1.6.2.jar`, `activation-1.1.jar`, and `commons-email.jar`).
+6. [Clean the deployment directory](/refguide/app-menu/#clean-deployment-directory).
+7. Add the **Email_Connector_Overview** page located in the **USE_ME > Pages** to your app navigation.
 
 ### Migrating from Another Module
 
@@ -79,7 +79,7 @@ The module includes the following bundled widgets:
 * [Pop-Up Menu](/appstore/widgets/popup-menu/)
     
 {{% alert color="info" %}}
-If you already have these widgets in your app and they are not up to date, you will get a "Some widgets can not be read" error.
+If you already have these widgets in your app, and they are not up to date, you will get a "Some widgets can not be read" error.
 {{% /alert %}}
 
 ## Setting up the Email Connector in Studio Pro {#setup}
@@ -99,10 +99,6 @@ The module includes a default **EmailConnectorAdmin** module role with pre-confi
 
 The Email Connector provides building blocks that you assemble to create email functionality:
 
-* **[Entities](#entities)** - Represents a class of real-world objects, such as EmailAccount, EmailMessage, EmailTemplate, etc.
-* **[Snippets](#snippets)** - Reusable interface components that can be used across pages, layouts, and other snippets
-* **[Microflows](#microflows)** - Express application logic through actions such as creating objects, updating data, showing pages, and making decisions.
-* **[Java Actions](#java-actions)** - Extend application functionality beyond what's possible with microflows alone.
 
 #### Entities {#entities}
 
@@ -261,14 +257,7 @@ This tab displays a list of any log entries related to errors in the Email Conne
 
 Use the **SUB_SendEmail microflow** for standardized, Mendix-compliant email delivery with proper error handling and configuration management. For this you will need to create your message as an object of type `Email_Connector.EmailMessage` and associate it with the `Email_Connector.EmailAccount` object containing the send mail account.
 
-When working with email templates, refer to the following sample microflows:
-
-* **Sample_ACT_CreateEmailFromTemplateAndThenSend** – Demonstrates how to create an email from a template, customize it, and then send it
-* **Sample_ACT_SendEmailWithTemplate** – Demonstrates how to send an email directly using a predefined template
-
-{{% alert color="info" %}}
-It is recommended to use **Sample_ACT_SendEmailWithTemplate** for most email template scenarios. It provides a streamlined implementation for sending templated emails with minimal configuration overhead.
-{{% /alert %}}
+When sending emails using templates, refer to the [Email Templates](#email-templates) section below.
 
 ### Sending Email via Java Action
 
@@ -457,26 +446,26 @@ Depending on your use case, modify the **azure_defaultConfig** constant to speci
 
 ###### Send Emails 
 
-| Permission Name | Description |
-|-----------------|-------------|
-| SMTP.Send       | Send emails from mailboxes using SMTP AUTH. |
-| User.Read       | Sign in and read user profile (required for authentication). |
-| openid          | Sign users in (required for OAuth/OpenID Connect). |
+| Permission Name | Description                                                               |
+|-----------------|---------------------------------------------------------------------------|
+| SMTP.Send       | Send emails from mailboxes using SMTP AUTH.                               |
+| User.Read       | Sign in and read user profile (required for authentication).              |
+| openid          | Sign users in (required for OAuth/OpenID Connect).                        |
 | offline_access  | Maintain access to data you have given it access to (for refresh tokens). |
-| profile         | View users' basic profile (often used during sign-in). |
-| email           | View users' email address (optional but helpful). |
+| profile         | View users' basic profile (often used during sign-in).                    |
+| email           | View users' email address (optional but helpful).                         |
 
 ###### Receive Emails 
 
-| Permission Name          | Description |
-|--------------------------|-------------|
-| IMAP.AccessAsUser.All    | Read and write access to mailboxes via IMAP. |
-| POP.AccessAsUser.All     | Read and write access to mailboxes via POP. |
-| User.Read                | Sign in and read user profile (required for authentication). |
-| openid                   | Sign users in (required for OAuth/OpenID Connect). |
-| offline_access           | Maintain access to data you have given it access to (for refresh tokens). |
-| profile                  | View users' basic profile (often used during sign-in). |
-| email                    | View users' email address (optional but helpful). |
+| Permission Name       | Description                                                               |
+|-----------------------|---------------------------------------------------------------------------|
+| IMAP.AccessAsUser.All | Read and write access to mailboxes via IMAP.                              |
+| POP.AccessAsUser.All  | Read and write access to mailboxes via POP.                               |
+| User.Read             | Sign in and read user profile (required for authentication).              |
+| openid                | Sign users in (required for OAuth/OpenID Connect).                        |
+| offline_access        | Maintain access to data you have given it access to (for refresh tokens). |
+| profile               | View users' basic profile (often used during sign-in).                    |
+| email                 | View users' email address (optional but helpful).                         |
 
 ### Client Credential Grant Flow{#client-credentials-flow}
 
@@ -506,14 +495,14 @@ On the [Microsoft Entra ID](https://portal.azure.com/), ensure you have the foll
 
 ##### Receive Emails (Application Permissions)
 
-| Permission Name    | Type        | Description |
-|--------------------|-------------|-------------|
-| IMAP.AccessAsApp   | Application | Read and write access to all mailboxes via IMAP. |
-| POP.AccessAsApp    | Application | Read and write access to all mailboxes via POP. |
+| Permission Name  | Type        | Description                                      |
+|------------------|-------------|--------------------------------------------------|
+| IMAP.AccessAsApp | Application | Read and write access to all mailboxes via IMAP. |
+| POP.AccessAsApp  | Application | Read and write access to all mailboxes via POP.  |
 
 Admin status is given on the added API permissions. The tenant admin must register the Microsoft Entra ID application's service principal in Exchange via Exchange Online PowerShell, as described in [Register service principals in Exchange](https://learn.microsoft.com/en-us/exchange/client-developer/legacy-protocols/how-to-authenticate-an-imap-pop-smtp-application-by-using-oauth#register-service-principals-in-exchange).
 
-## Email Templates
+## Email Templates {#email-templates}
 
 1. Deploy your application to set up your **Email Templates** through the Email Connector user interface.
 2. Navigate to the **Email Connector Overview** page.
@@ -655,7 +644,7 @@ To add inline attachments to an email message, use the Rich text editor to inser
 
 ### Page Styling
 
-If the **Email Connector** page styling is affected as you select and view email messages, it likely due to errors in the email message CSS. 
+If the **Email Connector** page styling is affected as you select and view email messages, it is likely due to errors in the email message CSS. 
 
 To resolve the errors, turn on **Sanitize email to prevent XSS attacks** in [Account Settings](#other-account-settings).
 
