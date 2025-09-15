@@ -28,13 +28,13 @@ The most common errors which can occur when configuring a list view, the causes 
 
 ### Error Code: CE0488
 
-CE0488 error message in a list view : *No entity configured for the data source of this list view. Select an entity or change the data source.*
+CE0488 error message in a list view: **No entity configured for the data source of this list view. Select an entity or change the data source.**
 
-You get CE0488 in a list view if the **Database/XPath/Association** option is selected as a data source for a list view, but no entity is specified. 
+You incur error CE0488 if the **Database/XPath/Association** option is selected as a data source for a list view, but no entity is specified. 
 
-To fix CE0488, do one of the following:
+To fix CE0488, do **one** of the following:
 
-* Open the list view's properties > **Data source** and select an entity in the **Entity (path)** field.
+* Open the list view's **Properties** > **Data source** and select an entity in the **Entity (path)** field.
 * Change the type of the data source.
 
 ### Error Code: CE2633
