@@ -38,7 +38,7 @@ These are the steps involved in the escalation process:
 7. The Mendix support team works towards finding a solution.
 8. Once a solution is found and implemented, the escalation is closed.
 
-{{< figure src="/attachments/support/escalation-management-process/support_escalation_diagram.png" class="no-border" max-width=100% >}}
+{{< figure src="/attachments/support/escalation-management-process/support_escalation_diagram.png" class="no-border" >}}
 
 ## When to Initiate an Escalation
 
