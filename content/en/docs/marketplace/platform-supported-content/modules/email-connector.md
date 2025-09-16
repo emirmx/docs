@@ -58,11 +58,18 @@ Missing a step, or changing the order can lead to errors.
 
 1. Download and configure the latest version of the [Mx Model Reflection](/appstore/modules/model-reflection/) module.
 2. Download and configure the latest version of the [Community Commons](/appstore/modules/community-commons-function-library/) module.
-3. Download and configure the latest version of the [Encryption](/appstore/modules/encryption/) module. The EncryptionKey constant must be set up in your application settings.
+3. Download and configure the latest version of the [Encryption](/appstore/modules/encryption/) module. The `EncryptionKey` constant must be set up in your application settings.
 4. Uninstall any previously installed email modules, such as [IMAP/POP3](https://marketplace.mendix.com/link/component/1042/) and [Email Module with Templates](https://marketplace.mendix.com/link/component/259/).
-5. Remove any JAR files still be present in the userlib folder from older email modules which are now unused (for example, `javax.mail-1.6.2.jar`, `activation-1.1.jar`, and `commons-email.jar`).
+5. Remove any JAR files still present in the userlib folder from older email modules which are now unused (for example, `javax.mail-1.6.2.jar`, `activation-1.1.jar`, and `commons-email.jar`).
 6. [Clean the deployment directory](/refguide/app-menu/#clean-deployment-directory).
 7. Add the **Email_Connector_Overview** page located in the **USE_ME > Pages** to your app navigation.
+
+    The **Email_Connector_Overview** page launches the user interface which allows you to configure email accounts. This overview page provides access to configure and manage the following configurations and settings:
+
+    * [**Send Email**](#send-email)
+    * [**Receive Email**](#receive-email)
+    * [**Templates**](#email-templates)
+    * [**Configure OAuth**](#oauth-config-details)
 
 ### Migrating from Another Module
 
@@ -84,8 +91,6 @@ If you already have these widgets in your app, and they are not up to date, you 
 
 ## Setting up the Email Connector in Studio Pro {#setup}
 
-
-
 ### Configuring Roles
 
 The module includes a default **EmailConnectorAdmin** module role with pre-configured access rights for common use cases. Review and verify that the access rights align with your specific requirements and security policies before assigning this module role to user roles in [App Security](/refguide/app-security/).
@@ -100,7 +105,7 @@ The domain model in Mendix is a data model that describes the information in you
 
 ##### EmailAccount {#email-account}
 
-Entity managing email account configurations, authentication methods, and security settings for both incoming and outgoing email operations.
+EmailAccount is the entity which manages email account configurations, authentication methods, and security settings for both incoming and outgoing email operations.
 
 | Attribute                    | Description                                                    |
 |------------------------------|----------------------------------------------------------------|
@@ -121,7 +126,7 @@ Entity managing email account configurations, authentication methods, and securi
 
 ##### IncomingEmailConfiguration {#incoming-email-configuration}
 
-Configuration entity managing email retrieval settings, processing options, and server connection parameters for incoming messages.
+The IncomingEmailConfiguration entity manages email retrieval settings, processing options, and server connection parameters for incoming messages.
 
 | Attribute          | Description                                       |
 |--------------------|---------------------------------------------------|
@@ -131,9 +136,9 @@ Configuration entity managing email retrieval settings, processing options, and 
 | BatchSize          | Number of emails processed per batch operation    |
 | Handling           | Post-retrieval action (keep, move, delete emails) |
 | MoveFolder         | Destination folder for processed emails           |
-| ProcessInlineImage | Processes embedded images in email content        |
-| FetchStrategy      | Email retrieval method (Latest, Oldest            |
-| NotifyOnNewEmails  | Triggers notifications for incoming emails        |
+| ProcessInlineImage | Whether to process embedded images in email content        |
+| FetchStrategy      | Email retrieval method (Latest, Oldest)            |
+| NotifyOnNewEmails  | Whether to trigger notifications for incoming emails        |
 | ServerHost         | Incoming mail server hostname or IP address       |
 | ServerPort         | Incoming mail server port                         |
 
@@ -208,7 +213,7 @@ Specialized file attachment entity extending Mendix **System.FileDocument** to p
 
 #### Snippets {#snippets}
 
-Snippets allow you to make interface changes in one place that automatically apply everywhere the snippet is used, reducing maintenance effort and ensuring consistency. You can find the following snippets in the **USE_ME > Snippets** of the Email Connector module.
+Snippets allow you to make interface changes in one place that automatically apply on every page where the snippet is used, reducing maintenance effort and ensuring consistency. You can find the following snippets in the **USE_ME > Snippets** of the Email Connector module.
 
 ##### Authentication & Configuration
 
@@ -258,14 +263,6 @@ The Email Connector module contains a number of Java actions which you can use t
 * **GetAutoConfig** - Automatically discover email server settings for common providers 
 * **GetFolderNames** - Retrieve available email folders from the server 
 * **GetBaseDNList** - Get directory service base distinguished names for LDAP integration
-
-
-The **Email_Connector_Overview** page which you added to the navigation launches the user interface which allows you to configure email accounts. This overview page provides access to configure and manage the following configurations and settings:
-
-* **Send Email**
-* **Receive Email**
-* **Templates**
-* **Configure OAuth**
 
 ## Send Email {#send-email}
 
@@ -367,7 +364,7 @@ This tab displays a list of any log entries related to errors in the Email Conne
 
 Use the **SUB_SendEmail** microflow for standardized, Mendix-compliant email delivery with proper error handling and configuration management. For this you will need to create your message as an object of type `Email_Connector.EmailMessage` and associate it with the `Email_Connector.EmailAccount` object containing the send mail account.
 
-When sending an email, the To, From and Content fields are mandatory. When sending emails using templates, refer to the [Email Templates](#email-templates) section below.
+When sending an email, the To, From and Content fields are mandatory. When sending emails using templates, refer to the [Templates](#email-templates) section below.
 
 ### Sending Email via Java Action
 
@@ -446,7 +443,7 @@ To manage configurations:
 
 For detailed steps and implementation guidance, see the [Configure OAuth](#oauth-config-details) section below.
 
-### Additional Account Settings
+### Additional Account Settings{#retrieve-additional}
 
 You can view and change the following settings by clicking **View Settings** as the **Action** of an existing account.
 
@@ -486,26 +483,25 @@ You can view and change the following settings by clicking **View Settings** as 
     * Enables security filtering to prevent cross-site scripting attacks 
     * Removes potentially malicious scripts and content from email messages 
 
+#### Error Logs Tab
+
+This tab displays a list of any log entries related to errors in the Email Connector module.
+
 ### Receiving Email
 
-To receive emails in your Mendix app, use the **RetrieveEmailMessages** Java action. This action fetches emails asynchronously in batches using multiple threads and returns a list of **EmailMessage** objects. Email retrieval continues until the criteria specified in the email account settings are met (for example, fetching the latest 1,000 emails). For details, see Additional Account Settings.
+To receive emails in your Mendix app, use the **RetrieveEmailMessages** Java action. This action fetches emails asynchronously in batches using multiple threads and returns a list of **EmailMessage** objects. Email retrieval continues until the criteria specified in the email account settings are met (for example, fetching the latest 1,000 emails). For details, see [Additional Account Settings](#retrieve-additional).
 
 The input parameters for receiving email are the following:
 
-* **EmailAccount** – This is an email account consisting of the incoming email configuration.
+* **EmailAccount** – This is an email account containing the incoming email configuration.
 
-* **onEmailFetchMicroflow**** – This is a microflow that is triggered when List of **EmailMessage** is fetched from the email server, as per the batch size specified in the email account settings. You can process the list according to your needs.
+* **onEmailFetchMicroflow** – This is a microflow that is triggered when a list of **EmailMessage** is fetched from the email server, as per the batch size specified in the email account settings. You can process the list according to your needs.
 
   {{% alert color="warning" %}}If duplicating the **onEmailFetchMicroflow** microflow, do not change the input parameter name or data type. To prevent errors, make sure you have **List of Email_Connector.EmailMessage** as a parameter to this microflow.{{% /alert %}}
 
 * **onFetchCompleteMicroflow** – This is a microflow that is triggered when the email fetch action is successfully completed.
 
 * **onFetchErrorMicroflow** – This is a microflow that is triggered if there are errors while fetching from the email server.
-
-#### Error Logs Tab
-
-This tab displays a list of any log entries related to errors in the Email Connector module.
-
 
 ## Configure OAuth {#oauth-config-details}
 
@@ -613,11 +609,13 @@ On the [Microsoft Entra ID](https://portal.azure.com/), ensure you have the foll
 
 Admin status is given on the added API permissions. The tenant admin must register the Microsoft Entra ID application's service principal in Exchange via Exchange Online PowerShell, as described in [Register service principals in Exchange](https://learn.microsoft.com/en-us/exchange/client-developer/legacy-protocols/how-to-authenticate-an-imap-pop-smtp-application-by-using-oauth#register-service-principals-in-exchange).
 
-## Email Templates {#email-templates}
+## Templates {#email-templates}
+
+This tab allows you to configure templates you can use to send your emails.
 
 1. Deploy your application to set up your **Email Templates** through the Email Connector user interface.
 2. Navigate to the **Email Connector Overview** page.
-3. Select the **Email Templates** tab.
+3. Select the **Templates** tab.
 4. Click **Add New Template** or edit an existing one using the **Action**.
 
 {{% alert color="info" %}} The [Mx Model Reflection](/appstore/modules/model-reflection/) must be installed and properly configured in your app prior to creating placeholder tokens and before exporting/importing email templates containing placeholder tokens.{{% /alert %}}
