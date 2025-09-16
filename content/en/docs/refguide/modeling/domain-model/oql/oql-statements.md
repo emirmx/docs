@@ -11,7 +11,9 @@ aliases:
 
 ## Introduction
 
-From Mendix version 11.1, you can delete objects in bulk using OQL `DELETE` statements. From Mendix version 11.3, it is also possible to update object attributes in bulk using OQL `UPDATE` statements.
+From Mendix version 11.1, you can delete objects in bulk using OQL `DELETE` statements.
+
+From Mendix version 11.3, you can also update object attributes in bulk using OQL `UPDATE` statements.
 
 OQL statements are translated to SQL statements that are sent to the database.
 This can be much faster than retrieving the objects in a microflow and then updating or deleting the resulting list.
@@ -50,7 +52,7 @@ DELETE FROM <entity> WHERE <condition>
 
 * You cannot use OQL `DELETE` with entities that have associations with non-default delete behavior. These are associations that use either "Delete as well" or "Delete only if not associated".
 * You cannot use OQL DELETE to delete objects of type `System.FileDocument` or any specialization of it.
-* General [limitations](#oql-limitations) for OQL statements apply.
+* The general limitations for OQL statements also apply. See [General Limitations for OQL Statements](#oql-limitations), below.
 
 ## `UPDATE` Statement {#oql-update}
 
@@ -89,12 +91,14 @@ SET
 
 * At the moment, it is only possible to update attributes, not associations.
 * If a subquery or a long path over a many-to-one or many-to-many association is used as `expression`, it can result in multiple values. In that case, a database-level exception will occur when running the statement.
-* In case of inheritance, it is not possible to simultaneously update an attribute and use that attribute in an expression to update an attribute on another inheritance level. See example in the section below.
-* General [limitations](#oql-limitations) for OQL statements apply.
+* In the case of inheritance, it is not possible to simultaneously update an attribute and use that attribute in an expression to update an attribute on another inheritance level. See the example in [Mixed Attribute Update](#inheritance), below.
+* The general limitations for OQL statements also apply. See [General Limitations for OQL Statements](#oql-limitations), below.
 
-#### Example of mixed attribute update
+#### Example of Mixed Attribute Update{#inheritance}
 
 To clarify the limitation on simultaneous update of different levels of inheritance, let's use the following model as an example.
+
+An entity `SuperEntity` with an integer attribute `GeneralizationAttribute` has a specialization entity `SubEntity` with an integer attribute `SpecializationAttribute`. They are both in module `Module`.
 
 {{< figure src="/attachments/refguide/modeling/domain-model/oql/oql-update-mixed-attr.png" >}}
 
@@ -138,7 +142,7 @@ WHERE ID IN (
         WHERE Module.Customer/Name = 'Mary' )
 ```
 
-## General limitations for OQL statements {#oql-limitations}
+## General Limitations for OQL Statements {#oql-limitations}
 
 * OQL statements can be used only with persistable entities.
 * Entity access rules are not applied to any OQL statements.
