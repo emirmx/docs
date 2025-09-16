@@ -68,7 +68,7 @@ WHERE <condition>
 
 `attribute` is an attribute of the entity that is being updated. Multiple attributes can be updated in the same statement.
 
-`expression` is a new value of an attribute. Any [OQL expression](/refguide/oql-expressions) is allowed. The value type of the expression should match the attribute type according to [type coercion precedence](/refguide/oql-expression-syntax/#type-coercion).
+`expression` is a new value of an attribute. Any [OQL expression](/refguide/oql-expressions/) is allowed. The value type of the expression should match the attribute type according to [type coercion precedence](/refguide/oql-expression-syntax/#type-coercion).
 
 `condition` can be anything that can appear in an OQL [WHERE clause](/refguide/oql-clauses/#where).
 
