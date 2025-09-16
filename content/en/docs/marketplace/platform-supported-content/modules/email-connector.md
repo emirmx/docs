@@ -365,13 +365,11 @@ This tab displays a list of any log entries related to errors in the Email Conne
 
 ### Sending Email via Microflow
 
-Use the **SUB_SendEmail microflow** for standardized, Mendix-compliant email delivery with proper error handling and configuration management. For this you will need to create your message as an object of type `Email_Connector.EmailMessage` and associate it with the `Email_Connector.EmailAccount` object containing the send mail account.
+Use the **SUB_SendEmail** microflow for standardized, Mendix-compliant email delivery with proper error handling and configuration management. For this you will need to create your message as an object of type `Email_Connector.EmailMessage` and associate it with the `Email_Connector.EmailAccount` object containing the send mail account.
 
-When sending emails using templates, refer to the [Email Templates](#email-templates) section below.
+When sending an email, the To, From and Content fields are mandatory. When sending emails using templates, refer to the [Email Templates](#email-templates) section below.
 
 ### Sending Email via Java Action
-
-When the module is running, click New Email to compose and send new emails.
 
 When modeling your app in Studio Pro, use the SendEmail Java action to send emails. The input parameters are as follows:
 
@@ -380,7 +378,7 @@ When modeling your app in Studio Pro, use the SendEmail Java action to send emai
 
 The return type is a Boolean value. This Java action uses the provided details to connect to the email server and send an email. It returns True if successful and displays the error object and cause if it fails.
 
-When sending an email, the To and Content fields are mandatory. In To, CC, and BCC, you can optionally specify multiple email addresses, each separated by a semicolon (;).
+When sending an email, the To, From and Content fields are mandatory. In To, CC, and BCC, you can optionally specify multiple email addresses, each separated by a semicolon (;).
 
 ## Receive Email {#receive-email}
 
@@ -712,10 +710,11 @@ For more information, see the [Reverse Proxy Inbound Rules](/developerportal/dep
 
 Configuring local clients, such as [Papercut](https://github.com/ChangemakerStudios/Papercut-SMTP), is supported. If you are using a tool like Papercut, do the following:
 
-1. Follow the steps for [adding an email account](#adding-email-account).
-2. Continue with manual configuration in the wizard (automatic configuration does not work for local clients).
-3. Select the **Send emails** checkbox.
-4. Select **SMTP** for the **Protocol**, and enter *localhost* for the **Server host**. Enter the **Server port** number (for example, *25*).
+1. Deploy your application to set up your **Send Email** accounts through the Email Connector user interface.
+2. Navigate to the **Email Connector Overview** page.
+3. Select the **Send Email** tab.
+4. Click **Add New Configuration** or edit an existing one using the **Action**.
+5. Select **SMTP** for the **Protocol**, and enter *localhost* for the **Server host**. Enter the **Server port** number (for example, *25*).
   
 Both email and password are not required.
 
@@ -740,7 +739,7 @@ To add inline attachments to an email message, use the Rich text editor to inser
     ```
     'before inline image<br><img src="cid:mxcid:test.png" width="530" height="110"><br>after inline image'
     ```
-
+   
 2. Specify the image's tag source using the **cid:mxcid** prefix before the source file to have the image added as inline image.
 3. Create the attachment with the Position attribute set to **ENUM_AttachmentPosition.Inline**.
 4. Associate the attachment with EmailMessage. You can then send the email using the **SUB_SendEmail** microflow.
