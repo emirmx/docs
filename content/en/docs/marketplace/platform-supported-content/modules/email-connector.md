@@ -10,13 +10,13 @@ aliases:
 
 ## Introduction
 
-The [Email Connector](https://marketplace.mendix.com/link/component/120739) allows you to send and receive emails using your own email server. It supports features like template-based emails, digital signatures, and encrypted email sending.
+The [Email Connector](https://marketplace.mendix.com/link/component/120739) allows you to **Send** and **Receive** emails using your own email server. It supports features like template-based emails, digital signatures, and encrypted email sending.
 
 The Email Connector is a toolkit providing reusable components (snippets, microflows, entities, and Java actions) for building custom email functionality. This documentation covers the setup and configuration of these components in your Mendix application.
 
 {{% alert color="info" %}}
 
-This document describes versions 6.3.1 and above of the Email Connector module.
+This document describes versions **6.3.1** and above of the Email Connector module.
 {{% /alert %}}
 
 ### Key Features
@@ -58,7 +58,7 @@ Missing a step, or changing the order can lead to errors.
 
 1. Download and configure the latest version of the [Mx Model Reflection](/appstore/modules/model-reflection/) module.
 2. Download and configure the latest version of the [Community Commons](/appstore/modules/community-commons-function-library/) module.
-3. Download and configure the latest version of the [Encryption](/appstore/modules/encryption/) module. The `EncryptionKey` constant must be set up in your application settings.
+3. Download and configure the latest version of the [Encryption](/appstore/modules/encryption/) module. The `EncryptionKey` constant must be set up in your application settings. Refer [EncryptionKey Constant](/appstore/modules/encryption/#encryptionkey-constant)
 4. Uninstall any previously installed email modules, such as [IMAP/POP3](https://marketplace.mendix.com/link/component/1042/) and [Email Module with Templates](https://marketplace.mendix.com/link/component/259/).
 5. Remove any JAR files still present in the userlib folder from older email modules which are now unused (for example, `javax.mail-1.6.2.jar`, `activation-1.1.jar`, and `commons-email.jar`).
 6. [Clean the deployment directory](/refguide/app-menu/#clean-deployment-directory).
@@ -93,7 +93,7 @@ If you already have these widgets in your app, and they are not up to date, you 
 
 ### Configuring Roles
 
-The module includes a default **EmailConnectorAdmin** module role with pre-configured access rights for common use cases. Review and verify that the access rights align with your specific requirements and security policies before assigning this module role to user roles in [App Security](/refguide/app-security/).
+The module includes a default **EmailConnectorAdmin** role with pre-configured access rights for common use cases. Review and verify that the access rights align with your specific requirements and security policies before assigning this module role to user roles in [App Security](/refguide/app-security/). Also configure required module roles of prerequisite modules as needed.
 
 ### Building Email Functionality {#building-email-functionality}
 
@@ -105,7 +105,7 @@ The domain model in Mendix is a data model that describes the information in you
 
 ##### EmailAccount {#email-account}
 
-EmailAccount is the entity which manages email account configurations, authentication methods, and security settings for both incoming and outgoing email operations.
+**EmailAccount** is the entity which manages email account configurations, authentication methods, and security settings for both incoming and outgoing email operations.
 
 | Attribute                    | Description                                                    |
 |------------------------------|----------------------------------------------------------------|
@@ -126,26 +126,26 @@ EmailAccount is the entity which manages email account configurations, authentic
 
 ##### IncomingEmailConfiguration {#incoming-email-configuration}
 
-The IncomingEmailConfiguration entity manages email retrieval settings, processing options, and server connection parameters for incoming messages.
+The **IncomingEmailConfiguration** entity manages email retrieval settings, processing options, and server connection parameters for incoming messages.
 
-| Attribute          | Description                                       |
-|--------------------|---------------------------------------------------|
-| IncomingProtocol   | Email retrieval protocol (IMAP/POP3)              |
-| Folder             | Server folder for email retrieval                 |
-| UseBatchImport     | Enables batch processing for large email volumes  |
-| BatchSize          | Number of emails processed per batch operation    |
-| Handling           | Post-retrieval action (keep, move, delete emails) |
-| MoveFolder         | Destination folder for processed emails           |
-| ProcessInlineImage | Whether to process embedded images in email content        |
-| FetchStrategy      | Email retrieval method (Latest, Oldest)            |
-| NotifyOnNewEmails  | Whether to trigger notifications for incoming emails        |
-| ServerHost         | Incoming mail server hostname or IP address       |
-| ServerPort         | Incoming mail server port                         |
+| Attribute          | Description                                          |
+|--------------------|------------------------------------------------------|
+| IncomingProtocol   | Email retrieval protocol (IMAP/POP3)                 |
+| Folder             | Server folder for email retrieval                    |
+| UseBatchImport     | Enables batch processing for large email volumes     |
+| BatchSize          | Number of emails processed per batch operation       |
+| Handling           | Post-retrieval action (keep, move, delete emails)    |
+| MoveFolder         | Destination folder for processed emails              |
+| ProcessInlineImage | Whether to process embedded images in email content  |
+| FetchStrategy      | Email retrieval method (Latest, Oldest)              |
+| NotifyOnNewEmails  | Whether to trigger notifications for incoming emails |
+| ServerHost         | Incoming mail server hostname or IP address          |
+| ServerPort         | Incoming mail server port                            |
 
 
 ##### OutgoingEmailConfiguration {#outgoing-email-configuration}
 
-Configuration entity defining Send Protocol settings, security protocols, and reliability options for sending emails.
+The **OutgoingEmailConfiguration** entity manages Send Protocol settings, security protocols, and reliability options for sending emails.
 
 | Attribute        | Description                                          |
 |------------------|------------------------------------------------------|
@@ -158,7 +158,7 @@ Configuration entity defining Send Protocol settings, security protocols, and re
 
 ##### EmailMessage {#email-message}
 
-Entity representing individual email messages with complete metadata, content, and processing status tracking. This entity is used for both sending and receiving emails.
+The **EmailMessage** entity represent individual email messages with complete metadata, content, and processing status tracking. This entity is used for both sending and receiving emails.
 
 | Attribute         | Description                                                       |
 |-------------------|-------------------------------------------------------------------|
@@ -186,7 +186,7 @@ Entity representing individual email messages with complete metadata, content, a
 
 ##### EmailTemplate {#email-template}
 
-Entity enabling reusable email designs with dynamic content placeholders for consistent and efficient messaging.
+The **EmailTemplate** enables reusable email designs with dynamic content placeholders for consistent and efficient messaging.
 
 | Attribute        | Description                                   |
 |------------------|-----------------------------------------------|
@@ -209,7 +209,7 @@ Entity enabling reusable email designs with dynamic content placeholders for con
 
 ##### Attachment {#attachment}
 
-Specialized file attachment entity extending Mendix **System.FileDocument** to provide comprehensive file handling capabilities for email communications.
+Specialized file **Attachment** entity extending Mendix **System.FileDocument** to provide comprehensive file handling capabilities for email communications.
 
 #### Snippets {#snippets}
 
@@ -282,8 +282,8 @@ Configuration supports two authentication methods:
 
 You can set these up using the **Enable Microsoft Entra ID Authentication**:
 
-* Select **Yes** to enable OAuth 2.0 authentication through Microsoft Entra ID – you will need to fill in the details described under [Basic Authentication](#send-basic-authentication)
-* Select **No** (*default*) to use  basic authentication with username and password – you will need to fill in the details described under [OAuth Authentication](#send-oauth-authentication)
+* Select **Yes** to enable OAuth 2.0 authentication through Microsoft Entra ID – you will need to fill in the details described under  [OAuth Authentication](#send-oauth-authentication)
+* Select **No** (*default*) to use  basic authentication with username and password – you will need to fill in the details described under [Basic Authentication](#send-basic-authentication)
 
 ### Basic Authentication {#send-basic-authentication}
 
@@ -318,7 +318,7 @@ You can configure your account to authenticate with Microsoft Entra ID OAuth 2.0
 To manage configurations:
 
 * Select the **Configure OAuth** tab to add, delete, and edit OAuth configurations
-* If no email accounts are configured, you can create a new OAuth configuration
+* If no OAuth configuration are configured, you can create a new configuration
 
 For detailed steps and implementation guidance, see the [Configure OAuth](#oauth-config-details) section below.
 
@@ -358,24 +358,24 @@ You can view and change the following settings by clicking **View Settings** as 
 
 #### Error Logs Tab
 
-This tab displays a list of any log entries related to errors in the Email Connector module.
+This tab displays a list of any log entries related to errors occurred during send email operation in the Email Connector module.
 
 ### Sending Email via Microflow
 
 Use the **SUB_SendEmail** microflow for standardized, Mendix-compliant email delivery with proper error handling and configuration management. For this you will need to create your message as an object of type `Email_Connector.EmailMessage` and associate it with the `Email_Connector.EmailAccount` object containing the send mail account.
 
-When sending an email, the To, From and Content fields are mandatory. When sending emails using templates, refer to the [Templates](#email-templates) section below.
+When sending an email, the **To**, **From** and **Content** fields are mandatory. When sending emails using templates, refer to the [Templates](#email-templates) section below.
 
 ### Sending Email via Java Action
 
-When modeling your app in Studio Pro, use the SendEmail Java action to send emails. The input parameters are as follows:
+When modeling your app in Studio Pro, use the **SendEmail** Java action to send emails. The input parameters are as follows:
 
 * **EmailAccount** – The entity containing the configuration details for the outgoing email account
 * **EmailMessage** – The entity instance containing the content and details of the email to be sent
 
 The return type is a Boolean value. This Java action uses the provided details to connect to the email server and send an email. It returns True if successful and displays the error object and cause if it fails.
 
-When sending an email, the To, From and Content fields are mandatory. In To, CC, and BCC, you can optionally specify multiple email addresses, each separated by a semicolon (;).
+When sending an email, the **To**, **From** and **Content** fields are mandatory. In **To**,**CC**, and **BCC**, you can optionally specify multiple email addresses, each separated by a semicolon (;).
 
 ## Receive Email {#receive-email}
 
@@ -395,8 +395,8 @@ Configuration supports two authentication methods:
 
 You can set these up using the **Enable Microsoft Entra ID Authentication**:
 
-* Select **Yes** to enable OAuth 2.0 authentication through Microsoft Entra ID – you will need to fill in the details described under [Basic Authentication](#receive-basic-authentication)
-* Select **No** (*default*) to use  basic authentication with username and password – you will need to fill in the details described under [OAuth Authentication](#receive-oauth-authentication)
+* Select **Yes** to enable OAuth 2.0 authentication through Microsoft Entra ID – you will need to fill in the details described under [OAuth Authentication](#receive-oauth-authentication)
+* Select **No** (*default*) to use  basic authentication with username and password – you will need to fill in the details described under [Basic Authentication](#receive-basic-authentication)
 
 #### Basic Authentication {#receive-basic-authentication}
 
@@ -485,7 +485,7 @@ You can view and change the following settings by clicking **View Settings** as 
 
 #### Error Logs Tab
 
-This tab displays a list of any log entries related to errors in the Email Connector module.
+This tab displays a list of any log entries related to errors occurred during receive email operation in the Email Connector module.
 
 ### Receiving Email
 
@@ -624,7 +624,7 @@ This tab allows you to configure templates you can use to send your emails.
 
 Use the **CreateEmailFromTemplate** Java action to generate a draft email message that can be previewed and customized. Once finalized, send it using the **Send email** action. The input parameters are as follows:
 
-* **DataObject** – Entity object from which placeholder tokens are extracted. To retrieve data from multiple objects, create a [non-persistable entity](/refguide/persistability/#non-persistable).
+* **DataObject** – Entity object from which placeholder tokens are extracted. To retrieve data from multiple objects, create a [non-persistable entity](/refguide/persistability/#non-persistable). This is an optional parameter; it is required only if the template contains placeholder tokens.
 * **EmailTemplate** – Email template used to construct and send an **EmailMessage** object.
 * **Queued** – When enabled (**true**), the email message is stored in the **EmailMessage** entity with a **Queued** status. This configuration enables later transmission via [scheduled events](/refguide/scheduled-events/). 
 
