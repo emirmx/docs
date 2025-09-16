@@ -24,20 +24,21 @@ Our Support Organization does its very best to abide by the objectives stated in
 
 These are the steps involved in the escalation process:
 
-1. You open a support ticket, where you explain the business impact.
-2. The SLA is breached or you are not satisfied with the level of service you received.
-3. You escalate the ticket through one of the methods described in the [How to Escalate a Ticket](#how-to-escalate) section:
+1. You open a support ticket.
+2. For the purposes of the escalation, you explain the business impact within that ticket.
+3. The SLA is breached or you are not satisfied with the level of service you received.
+4. You escalate the ticket through one of the methods described in the [How to Escalate a Ticket](#how-to-escalate) section:
 
      * Via the escalation email address
      * Via the support ticket
      * Via your Customer Success Manager
 
-4. The Mendix support team validates and acknowledges the escalation.
-5. The Mendix regional support manager reaches out to you to discuss the details of the ticket.
-6. The Mendix support team works towards finding a solution.
-7. Once a solution is found and implemented, the escalation is closed.
+5. The Mendix support team validates and acknowledges the escalation.
+6. The Mendix regional support manager reaches out to you to discuss the details of the ticket.
+7. The Mendix support team works towards finding a solution.
+8. Once a solution is found and implemented, the escalation is closed.
 
-{{< figure src="/attachments/support/escalation-management-process/support_escalation_diagram.png" class="no-border" max-width=20% >}}
+{{< figure src="/attachments/support/escalation-management-process/support_escalation_diagram.png" class="no-border" max-width=100% >}}
 
 ## When to Initiate an Escalation
 
