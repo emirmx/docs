@@ -16,9 +16,11 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 #### Mendix Operator v2.23.1 {#2.23.1}
 
-* We've updated storage provisioners that create Azure Workload identitites - to correctly detect and handle _Cannot validate Microsoft Entra ID user ... because the OID isn't found in the tenant_ errors.
-  * After creating a new workload identity, it might take some time before the workload identity (user) becomes fully functional; this error is not an issue (just a temporary status) and in this situation the Mendix Operator can just retry after waiting for some time.
-  * Azure changed the error text and older Operator versions might not correct this error.
+* We have updated storage provisioners that create Azure Workload identitites. This update helps ensure that errors like *Cannot validate Microsoft Entra ID user ... because the OID isn't found in the tenant* are detected and handled correctly.
+
+    After creating a new workload identity, it might take some time before the workload identity (user) becomes fully functional. This error is not an issue (just a temporary status) and in this situation the Mendix Operator can just retry after waiting for some time.
+
+  Because Microsoft Azure previously changed the error text, older Mendix Operator versions might not correct this error.
 
 ### September 4, 2025
 
