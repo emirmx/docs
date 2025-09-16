@@ -55,7 +55,7 @@ The Java Agent can be configured through system properties, which can be added t
 
 ## Enabling Tracing for Deployed Applications
 
-To enable tracing in your deployed Mendix application, configure the following JVM parameters:
+To enable tracing for your deployed Mendix application, configure the following JVM parameters:
 
 ```
 -javaagent:mxinstallation/runtime/agents/opentelemetry-javaagent.jar
@@ -64,23 +64,24 @@ To enable tracing in your deployed Mendix application, configure the following J
 ```
 
 {{% alert color="info" %}}
-Replace MyServiceName with a meaningful identifier for your service.
+Replace `MyServiceName` with a meaningful identifier for your service.
 {{% /alert %}}
 
+### OpenTelemetry Collector on Different Host
 
-If the OpenTelemetry Collector is **not running on the same host** as your application, you must also specify the trace export endpoint:
+If the OpenTelemetry Collector is not running on the same host as your application, you must also specify the trace export endpoint:
 
 ```
 -Dotel.exporter.otlp.traces.endpoint=http://collector-host:port
 ```
 
 {{% alert color="info" %}}
-Replace collector-host and port with the host and port of your OpenTelemetry collector.
+Replace `collector-host` and `port` with the host and port of your OpenTelemetry collector.
 {{% /alert %}}
 
 ### Docker-Based Deployment
 
-For Docker deployments, you can set the JVM parameters using the `JAVA_TOOL_OPTIONS` environment variable. Example:
+For Docker deployments, you can set the JVM parameters using the `JAVA_TOOL_OPTIONS` environment variable. For example:
 
 ```
 docker run MyMendixApp \
@@ -89,3 +90,7 @@ docker run MyMendixApp \
   -Dotel.service.name=MyServiceName \
   -Dotel.exporter.otlp.traces.endpoint=http://collector-host:port"
 ```
+
+{{% alert color="info" %}}
+Replace `MyServiceName` with a meaningful identifier for your service and `collector-host` and `port` with the host and port of your OpenTelemetry collector.
+{{% /alert %}}
