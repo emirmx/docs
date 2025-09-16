@@ -10,13 +10,13 @@ aliases:
 
 ## Introduction
 
-The [Email Connector](https://marketplace.mendix.com/link/component/120739) allows you to **Send** and **Receive** emails using your own email server. It supports features like template-based emails, digital signatures, and encrypted email sending.
+The [Email Connector](https://marketplace.mendix.com/link/component/120739) allows you to send and receive emails using your own email server. It supports features like template-based emails, digital signatures, and encrypted email sending.
 
 The Email Connector is a toolkit providing reusable components (snippets, microflows, entities, and Java actions) for building custom email functionality. This documentation covers the setup and configuration of these components in your Mendix application.
 
 {{% alert color="info" %}}
 
-This document describes versions **6.3.1** and above of the Email Connector module.
+This document describes versions 6.3.1 and above of the Email Connector module.
 {{% /alert %}}
 
 ### Key Features
@@ -58,7 +58,7 @@ Missing a step, or changing the order can lead to errors.
 
 1. Download and configure the latest version of the [Mx Model Reflection](/appstore/modules/model-reflection/) module.
 2. Download and configure the latest version of the [Community Commons](/appstore/modules/community-commons-function-library/) module.
-3. Download and configure the latest version of the [Encryption](/appstore/modules/encryption/) module. The `EncryptionKey` constant must be set up in your application settings. Refer [EncryptionKey Constant](/appstore/modules/encryption/#encryptionkey-constant)
+3. Download and configure the latest version of the [Encryption](/appstore/modules/encryption/) module. The `EncryptionKey` constant must be set up in your application settings. See the  [EncryptionKey Constant](/appstore/modules/encryption/#encryptionkey-constant) section of *Encryption*.
 4. Uninstall any previously installed email modules, such as [IMAP/POP3](https://marketplace.mendix.com/link/component/1042/) and [Email Module with Templates](https://marketplace.mendix.com/link/component/259/).
 5. Remove any JAR files still present in the userlib folder from older email modules which are now unused (for example, `javax.mail-1.6.2.jar`, `activation-1.1.jar`, and `commons-email.jar`).
 6. [Clean the deployment directory](/refguide/app-menu/#clean-deployment-directory).
@@ -93,7 +93,7 @@ If you already have these widgets in your app, and they are not up to date, you 
 
 ### Configuring Roles
 
-The module includes a default **EmailConnectorAdmin** role with pre-configured access rights for common use cases. Review and verify that the access rights align with your specific requirements and security policies before assigning this module role to user roles in [App Security](/refguide/app-security/). Also configure required module roles of prerequisite modules as needed.
+The module includes a default **EmailConnectorAdmin** role with pre-configured access rights for common use cases. Review and verify that the access rights align with your specific requirements and security policies before assigning this module role to user roles in [App Security](/refguide/app-security/). Also configure any required module roles for the prerequisite modules you are using.
 
 ### Building Email Functionality {#building-email-functionality}
 
@@ -318,7 +318,7 @@ You can configure your account to authenticate with Microsoft Entra ID OAuth 2.0
 To manage configurations:
 
 * Select the **Configure OAuth** tab to add, delete, and edit OAuth configurations
-* If no OAuth configuration are configured, you can create a new configuration
+* If no OAuth configurations are configured, you can create a new configuration
 
 For detailed steps and implementation guidance, see the [Configure OAuth](#oauth-config-details) section below.
 
@@ -358,7 +358,7 @@ You can view and change the following settings by clicking **View Settings** as 
 
 #### Error Logs Tab
 
-This tab displays a list of any log entries related to errors occurred during send email operation in the Email Connector module.
+This tab displays a list of any log entries related to errors which occurred during a send email operation in the Email Connector module.
 
 ### Sending Email via Microflow
 
@@ -485,7 +485,7 @@ You can view and change the following settings by clicking **View Settings** as 
 
 #### Error Logs Tab
 
-This tab displays a list of any log entries related to errors occurred during receive email operation in the Email Connector module.
+This tab displays a list of any log entries related to errors which occurred during a receive email operation in the Email Connector module.
 
 ### Receiving Email
 
