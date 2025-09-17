@@ -93,7 +93,7 @@ The method `executeInBackground` takes two parameters: a context and a queue nam
 
 #### In Studio Pro
 
-In Studio Pro, a [Call Java action](/refguide/microflow-call/) activity can start a Java action in a Task Queue.
+In Studio Pro, a [Call Java action](/refguide/call-java-action/) activity can start a Java action in a Task Queue.
 
 1. Edit the **Call Java Action** activity.
 2. Check the box **Execute this Java action in a Task Queue**.

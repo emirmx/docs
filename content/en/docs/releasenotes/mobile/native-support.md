@@ -19,7 +19,7 @@ The reduced support durations for native mobile apps do not apply to progressive
 
 ### Long-Term Support Version (LTS)
 
-Native mobile apps built using a Mendix LTS version are supported for 15 months from the official release date. This support period is approximately one year shorter than standard Mendix support durations.
+Native mobile apps built using a Mendix LTS version are supported for 15 months from the official release date. This support period is much shorter than standard Mendix support durations.
 
 ### Mid-Term Support Version (MTS)
 

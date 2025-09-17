@@ -71,7 +71,7 @@ In this way, you can configure the following settings:
 
 ## Configuring Headers in NGINX Ingress
 
-For NGINX Ingress, you can set headers globally for all apps in a namespace by using a configuration snippet in the OperatorConfiguration object. Alternatively, you can configure headers for individual app environments by adding the `nginx.ingress.kubernetes.io/configuration-snippet` annotation in the Mendix on Kubernetes Portal.
+For NGINX Ingress, you can set headers in a namespace which will further be propagated across all apps in that namespace by using a configuration snippet in the OperatorConfiguration object. Alternatively, you can configure headers for individual app environments by adding the `nginx.ingress.kubernetes.io/configuration-snippet` annotation in the Mendix on Kubernetes Portal.
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/private-cloud-networking/advanced-headers.png" class="no-border" >}}
 

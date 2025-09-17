@@ -23,9 +23,9 @@ Amazon Bedrock is a fully managed service that makes foundation models (FMs) fro
 
 ### Prerequisites {#prerequisites}
 
-The Amazon Bedrock connector requires Mendix Studio Pro version 9.24.2 or above.
+The Amazon Bedrock connector requires Mendix Studio Pro version 10.24.0 or above.
 
-To authenticate with Amazon Web Service (AWS), you must install and configure the [AWS Authentication connector version 3.0.0 or higher](https://marketplace.mendix.com/link/component/120333). It is crucial for the Amazon Bedrock connector to function correctly. For more information about installing and configuring the AWS Authentication connector, see [AWS Authentication](/appstore/modules/aws/aws-authentication/).
+To authenticate with Amazon Web Service (AWS), you must install and configure the [AWS Authentication connector version 4.1.1 or above](https://marketplace.mendix.com/link/component/120333). It is crucial for the Amazon Bedrock connector to function correctly. For more information about installing and configuring the AWS Authentication connector, see [AWS Authentication](/appstore/modules/aws/aws-authentication/).
 
 You must have the latest [GenAI Commons](https://marketplace.mendix.com/link/component/239448) version. To make integration of generative AI capabilities as easy as possible, the Amazon Bedrock connector depends on the generic domain model and operations provided by the GenAI Commons module.
 
@@ -135,8 +135,8 @@ For operations that do not depend on the GenAI Commons, you can take a different
     2. Drag the one you would like to use to the beginning of your microflow.
     3. Double-click the microflow action to configure the required parameters and provide a value for the AWS Region. For the **ListFoundationModels** parameter, provide the `ListFoundationModelsRequest` created in step 3.
 9. The `ListFoundationModelsResponse` object is returned by the **ListFoundationModels** activity.
-10. From the **Toolbox**, drag a **Retrieve** activity to your microflow and place it after the **ListFoundationModels** activity.
-11. Double-click the **Retrieve** activity and make sure **By Association** is selected.
+10. From the **Toolbox**, drag a **Retrieve object(s)** activity to your microflow and place it after the **ListFoundationModels** activity.
+11. Double-click the **Retrieve object(s)** activity and make sure **By Association** is selected.
 12. Select the **FoundationModelSummary_ListFoundationModelsResponse** association, which will return a list of the type **FoundationModelSummary**.
 13. To further use the response information, you can create an implementation module with copies of the `ListFoundationModelsResponse` and `ModelSummary` Entities. This way, you can use your custom user roles and access rules for those entities and keep them when updating the connector.
 
@@ -152,7 +152,7 @@ To build a simple microflow that uses the ChatCompletions operation to send a si
 
 1. Make sure that you [synced models](#sync-models) before running the microflow in the app.
 2. Create a new microflow and name it, for example, *AmazonBedrockChatCompletions*.
-3. Add a **Microflow call** from the **Toolbox** and choose microflow *AmazonBedrockConnector.BedrockDeployedModel_Get*
+3. Add a **Call microflow** activity from the **Toolbox** and choose microflow *AmazonBedrockConnector.BedrockDeployedModel_Get*
 4. Double-click it to configure its parameters.
     1. For the **ModelID** parameter, enter the model id of the LLM you want to send a message to. The model id of Claude 3.5 Sonnet is *anthropic.claude-3-5-sonnet-20240620-v1:0*.
     2. Click **OK**.
@@ -871,3 +871,11 @@ To solve this issue, verify the following:
 
 1. Ensure that you have selected an AWS Region where the targeted model exists. You can see an overview of the models accessible to you in the AWS Management Console, on the [Overview page](https://us-west-2.console.aws.amazon.com/bedrock/home?#/overview) of your Amazon Bedrock environment. Make sure the region specified in the AWS Console matches the region you have configured in Mendix. 
 2. Ensure that the model that you have selected is not deprecated and that the *model-id* is currently available in Amazon Bedrock.
+
+### Attribute or Reference Required Error Message After Upgrade 
+
+If you encounter an error stating that an attribute or a reference is required after an upgrade, first upgrade all modules by right-clicking the error, then upgrade Data Widgets.
+
+### Conflicted Lib Error After Module Import
+
+If you encounter an error caused by conflicting Java libraries, such as `java.lang.NoSuchMethodError: 'com.fasterxml.jackson.annotation.OptBoolean com.fasterxml.jackson.annotation.JsonProperty.isRequired()'`, try synchronizing all dependencies (**App** > **Synchronize dependencies**) and then restart your application.

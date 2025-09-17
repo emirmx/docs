@@ -227,12 +227,12 @@ Mendix tries to support the most recent and patched database server versions fro
 
 Current support:
 
-* [MariaDB](/refguide/mysql/): 10.4, 10.5, 10.6, 10.11, 11.4
+* [MariaDB](/refguide/mysql/): 10.6, 10.11, 11.4, 11.8
 * [Microsoft SQL Server](/developerportal/deploy/mendix-on-windows-microsoft-sql-server/): 2019, 2022
 * [Azure SQL](https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-compatibility-level?view=sql-server-2017): v12 compatibility mode 140 or higher
-* [MySQL](/refguide/mysql/): 8.0, 8.4
+* [MySQL](/refguide/mysql/): 8.4
 * [Oracle Database](/refguide/oracle/): 19, 21c
-* PostgreSQL: 12, 13, 14, 15, 16, 17
+* PostgreSQL: 13, 14, 15, 16, 17
 * [SAP HANA](/refguide/saphana/): 2.00.076.00.1705400033
 
 {{% alert color="warning" %}}
@@ -303,13 +303,17 @@ Developing native mobile apps with Mendix comes with special requirements explai
 
 ## MxBuild {#mxbuild}
 
-MxBuild is a Windows and Linux command-line tool that can be used to build a Mendix Deployment Package. For more information, see [MxBuild](/refguide/mxbuild/).
+MxBuild is a Windows, Linux, and macOS command-line tool that can be used to build a Mendix Deployment Package. For more information, see [MxBuild](/refguide/mxbuild/).
 
 * .NET 8
 * JDK 21
 
 ## mx Command-Line Tool {#mxtool}
 
-The **mx** command-line tool is a Windows and Linux command-line tool that can be used to do useful things with your Mendix app. For more information, see [mx Command-Line Tool](/refguide/mx-command-line-tool/).
+The **mx** command-line tool is a Windows, Linux, and macOS command-line tool that can be used to do useful things with your Mendix app. For more information, see [mx Command-Line Tool](/refguide/mx-command-line-tool/).
 
 * Mono v5.20.x or .NET v4.7.2
+
+## Geographic Limitations
+
+The Mendix platform is commercially available in China. However [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/) and [Mendix Portal](/portal/) are not offered in China.
