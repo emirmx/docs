@@ -1,8 +1,8 @@
 ---
-title: "Mendix Workstation Release Notes"
-linktitle: Mendix Workstation
+title: "Mendix Workstation Client Release Notes"
+linktitle: Mendix Workstation Client
 url: /releasenotes/workstation/
-description: "Release notes for updates to the Mendix Workstation"
+description: "Release notes for updates to the Mendix Workstation Client"
 weight: 40
 cascade:
     - numberless_headings: true
