@@ -2,7 +2,7 @@
 title: "OQL Statements"
 url: /refguide/oql-statements/
 beta: true
-weight: 210
+weight: 50
 aliases:
     - /refguide/oql-delete-statement/
 ---
