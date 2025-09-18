@@ -46,7 +46,7 @@ A Shared Access Signature (SAS) provides secure, delegated access to resources i
 2. Create a **SASCredentials** object and populate its **SASToken** attribute.
 3. Pass the **SASCredentials** object to the **AbstractCredentials** parameter in your operation microflow.
 
-You can also generate an SAS by combining the **POST_v1_Azure_GetUserDelegationKey** operation with one of the following:
+You can also generate an SAS by performing the **POST_v1_Azure_GetUserDelegationKey** operation in combination with one of the following:
 
 * **Create_SAS_Token_Blob**
 * **Create_SAS_Token_Directory**
