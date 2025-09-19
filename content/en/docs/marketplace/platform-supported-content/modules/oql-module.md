@@ -61,6 +61,7 @@ It returns the following:
 * A list of Mendix objects of type `returnEntity` using the following rules:
     * Each query result column is stored in an attribute or association of the same name
     * Attributes and associations of the `returnEntity` that are not present in the query are given the default value
+    * If there is a query result column which cannot be matched to an attribute or association, then the module will throw an error
     * Only associations owned by the `returnEntity` are considered when setting associations
 
 ### CountRowsOQLStatement {#countrowsoqlstatement}
