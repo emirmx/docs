@@ -97,7 +97,7 @@ This action takes the following parameters:
 * `exportHeaders`: Indicates if the first line of the result should contain a header with the names of each column
 * `separatorChar`: Indicates what character should be used to separate columns in the result
 * `quoteChar`: Indicates what character should be used to quote string values. May be left empty if `escapeChar` is defined
-* `escapeChar`: Indicates what character should be used to escape spaces and other special characters if string values are unquoted. Only applicable if `escapeChar` is not defined
+* `escapeChar`: Indicates what character should be used to escape spaces and other special characters if string values are unquoted. Only applicable if `quoteChar` is not defined
 
 It returns the following:
 
