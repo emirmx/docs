@@ -61,7 +61,7 @@ For metrics that are pushed to Dynatrace, Mendix attaches these default dimensio
 
 * `app` - The environment ID of your Mendix environment
 * `pod_name` - The instance to which the metrics belong (available only in Kubernetes deployments)
-* `instance_index` - The instance index to which the metrics (available only in Cloud Foundry deployments)
+* `instance_index` - The instance index to which the metrics belong (available only in Cloud Foundry deployments)
 
 #### Extra Dimensions
 
