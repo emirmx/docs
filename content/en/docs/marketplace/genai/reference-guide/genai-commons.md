@@ -49,7 +49,9 @@ Lastly, the [Conversational UI module](/appstore/modules/genai/conversational-ui
 
 ### Traceability {#traceability}
 
-By default, the chat completions operations of GenAI Commons store data in your application's database for traceability reasons. This makes it easier to understand the usage of GenAI in your app and why the model behaved in a certain way, for example, by reviewing tool usage. In version 5.3.0 and above, trace data is only persisted if the constant `StoreTraces` is set to *true*. 
+Traceability was introduced in version 5.3.0 of the GenAI Commons module.
+
+By default, the chat completions operations of GenAI Commons store data in your application's database for traceability reasons. This makes it easier to understand the usage of GenAI in your app and why the model behaved in a certain way, for example, by reviewing tool usage. Trace data is only persisted if the constant `StoreTraces` is set to *true*. 
 
 As traces may contain sensitive and personally identifiable information, you should determine, on a case-by-case basis, whether storing this data is compliant.
 
