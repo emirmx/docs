@@ -96,8 +96,8 @@ This action takes the following parameters:
 * `zipResult`: Indicates if the resulting file should be compressed inside a ZIP file
 * `exportHeaders`: Indicates if the first line of the result should contain a header with the names of each column
 * `separatorChar`: Indicates what character should be used to separate columns in the result
-* `quoteChar`: Indicates what character should be used to quote string values. May be left empty if `escapeChar` is defined
-* `escapeChar`: Indicates what character should be used to escape spaces and other special characters if string values are unquoted. Only applicable if `quoteChar` is not defined. If no escape character is defined, then the quote character is escaped in a quoted string by repeating it, following [RFC4180](https://www.ietf.org/rfc/rfc4180.txt)
+* `quoteChar`: Indicates what character should be used to quote string values. Should be left empty if you wish to use `escapeChar`. The quote character is escaped in a quoted string by repeating it, following [RFC4180](https://www.ietf.org/rfc/rfc4180.txt)
+* `escapeChar`: Indicates what character should be used to escape spaces and other special characters if string values are unquoted. Only applicable if `quoteChar` is not defined.
 
 It returns the following:
 
