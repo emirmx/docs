@@ -19,9 +19,10 @@ General Availability means that a feature is available for all users. This type 
 
 | Capability or Feature | Expected Release |
 | --- | --- |
-| Module updates while retaining customizations                | General Availability: Q4 2025                             |
-| Easy comparison of revisions                                   | Public beta: 2026                                            |
-| Pull requests                                                | Public beta: 2026                                            |
+| Searchable commit history                                    | Public beta: Q4 2025                                         |
+| Module updates while retaining customizations                | General Availability: Q1 2026                                |
+| Easy comparison of revisions                                 | Public beta: Q1 2026                                         |
+| Pull requests                                                | Public beta: H2 2026                                         |
 | Mendix on Azure                                              | Limited Availability: March 2025 <br/>General Availability: Summer 2025 |
 | Security Recommendations                                     | General Availability: 2026                                   |
 | OpenTelemetry Tracing                                        | General Availability: 2026                                   |
@@ -32,10 +33,10 @@ General Availability means that a feature is available for all users. This type 
 | Modernized Mendix unit testing                               | General Availability: April 2025                             |
 | Speed up role-based access                                   | General Availability: February 2025                          |
 | Software Composition                                         | General Availability: March 2025                             |
-| Software Composition Marketplace Outdated & Deprecated Findings | General Availability: September 2025                         |
+| Software Composition Marketplace Outdated & Deprecated Findings | General Availability: September 2025                      |
 | Software Composition Marketplace Vulnerabilities             | General Availability: December 2025                          |
 | Policies                                                     | Public beta: December 2025 <br/>General Availability: TBD    |
-| Cloud Tokens Dashboard                                      | General Availability: June 2025                              |
+| Cloud Tokens Dashboard                                      | General Availability: June 2025                               |
 | End Users Dashboard | Limited Availability: October 2025 |
 | Self-Service Provisioning & Deprovisioning of environments | General Availability: June 2025 |
 | Self-Service Resizing of environments | Limited Availability: July 2025 |
