@@ -7,6 +7,10 @@ weight: 50
 
 Use the **History** dialog box to look at all the changes that have been committed to a development line of an app. You can open this dialog box from the **Version Control** > **History…** menu item. This dialog box is also used when selecting a revision to merge from, create a branch line off, or to create a deployment archive from.
 
+{{% alert color="info" %}}
+In Studio Pro 11.4 the non-blocking, searchable History Pane beta has been released. Open this through **View** > **History** or set this feature as your default history view in the [New Features](/refguide/preferences-dialog/#history-pane) preferences.
+{{% /alert %}}
+
 The **History** dialog can display up to 250 commits at once, making it easy to look at the detailed project history. If the app was only partially copied, it may need to download missing data from the server. While the data is being downloaded, a progress bar will be shown. This initial download could take a little time, but once the data is saved locally, future access to the **History** dialog will be significantly faster — almost instant.
 
 ## Revisions

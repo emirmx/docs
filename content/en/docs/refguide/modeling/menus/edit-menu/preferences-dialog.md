@@ -287,6 +287,10 @@ When the **Do not show antivirus exclusion notifications** setting is enabled, S
 
 Select this option to use the modernized version of the App Explorer. You must restart Studio Pro to use this feature.
 
+### History Pane {#history-pane}
+
+Select this option to use the non-blocking, searchable History Pane instead of the blocking History Window.
+
 ### Errors Pane
 
 Select this option to use the modernized version of the Errors Pane. You must restart Studio Pro to use this feature.
