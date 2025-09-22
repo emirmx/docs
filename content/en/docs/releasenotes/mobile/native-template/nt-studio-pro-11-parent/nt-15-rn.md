@@ -5,6 +5,14 @@ weight: 10
 description: "Native Template 15"
 ---
 
+## 15.3.1 {#1530}
+
+**Release date: August 15, 2025**
+
+### Fixes
+
+* We removed the `USE_EXACT_ALARM` permission from the manifest to comply with updated Google Play policies.
+
 ## 15.3.0 {#1530}
 
 **Release date: June 23, 2025**

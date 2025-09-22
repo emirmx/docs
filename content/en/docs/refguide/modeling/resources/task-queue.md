@@ -50,7 +50,7 @@ Running in the background is done in so called **Task Queues**. They can be crea
     * **Cluster-wide** — the maximum thread count will be limited cluster-wide. When this option is selected, total thread count in the cluster will be fixed and adding/removing new nodes will not have any impact on the thread count.
 
 Task queues have a number of threads. Each of these threads can process one task at a time. That is, a queue will pick up as many concurrent tasks as it has threads. Whenever a task is finished, the next one will be picked up.
-    
+
 #### Thread Count Recommendation 
 
 In general, one or two threads should be enough, unless there is a large number of tasks or tasks take a long time and need to run in parallel. Having many threads will put additional load on the database and should not be done if not needed.

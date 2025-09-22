@@ -616,6 +616,17 @@ You may need a different or custom attribute mapping, for example, if you are co
 In this case, you can modify the default attribute mapping.
 To do so, change the default **IdP Attribute** or the **Configured Entity Attribute**, by editing the mapping in the **Attribute Mapping** section within the **UserProvisioning** tab. 
 
+##### Creating IdP Attribute Manually
+
+IdP attributes will be automatically created from the list of `claims_supported` at the well-known endpoint. The module also allows manual creation of IdP attributes through the following steps:
+
+1. In the **Attribute Mapping** of the **UserProvisioning** tab, click **New** to add a new mapping.
+2. In the **Edit Claim Map** dialog, click **Search**.
+3. Under the **Claims for claim entity attribute**, click **New** to create a new claim.
+4. In the **IdP Attribute**, select the newly created claim from the dropdown, and click **Save**.
+
+Select the required attribute to use it in your mapping.
+
 ##### User Provisioning Using Your Custom User Entity{#custom_user_entity}
 
 If you want to use your custom user entity which is a specialization of the `System.User` entity to store user information, select it in the **Custom user Entity (extension of System.User)** field by replacing the `Administration.Account` entity.

@@ -19,6 +19,8 @@ Extensions can be written in Typescript or other web languages, described here, 
 Please note that extension development is only possible by starting Studio Pro with the `--enable-extension-development` feature flag.
 {{% /alert %}}
 
+For more detailed information on the web API, see the [Mendix Studio Pro Web Extensibility API reference documentation](http://apidocs.rnd.mendix.com/11/extensions-api/index.html).
+
 ## Prerequisites
 
 * You need at least a basic understanding of the Mendix platform.
