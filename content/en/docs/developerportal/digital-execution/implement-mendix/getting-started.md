@@ -257,9 +257,19 @@ With Mendix on Kubernetes, you can choose the cloud provider of your preference,
 
 For Private deployment, you need to be ready to start that process immediately in order to avoid development and go-live date delays. 
 
-This is the Mendix on Kubernetes responsibility matrix:
+This table outlines the Mendix on Kubernetes responsibility matrix:
 
-{{< figure src="/attachments/quickstarts/leading-mendix-implementation/responsibility-matrix.png"  >}}
+| Service | Mendix | Customer |
+| --- | --- | --- |
+| Mendix for Private Cloud | {{< icon name="remove-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} |
+| Mendix Operator | {{< icon name="remove-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} |
+| Online Platform Services | {{< icon name="remove-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} |
+| Mendix Gateway Agent | {{< icon name="remove-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} |
+| Kubernetes-based Cluster | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="remove-circle-filled" color="green" >}} |
+| Data Storage | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="remove-circle-filled" color="green" >}} |
+| Networking | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="remove-circle-filled" color="green" >}} |
+| Monitoring and Logging | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="remove-circle-filled" color="green" >}} |
+| Registry | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="remove-circle-filled" color="green" >}} |
 
 ### Options for Development Resources {#review-options-for-development-resources}
 
