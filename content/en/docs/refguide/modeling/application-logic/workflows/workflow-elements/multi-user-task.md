@@ -78,7 +78,7 @@ Specifies the microflow used to assign the multi-user task. This option is displ
 
 #### Participant Input {#participant-input}
 
-This property determines the maximum number of participants that are required to select an outcome to complete the multi-user task. The participants are the targeted users of the user task and the assigned users of the user task.
+This property determines the maximum number of participants that are required to select an outcome to complete the multi-user task. The participants are the targeted and assigned users of the user task.
 
 Possible options of participant input are described in the table below:
 
