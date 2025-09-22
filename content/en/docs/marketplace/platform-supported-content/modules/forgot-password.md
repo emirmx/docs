@@ -19,7 +19,7 @@ There are below versions of the Forgot Password module, depending on whether you
 
 | Mendix Version | Forgot Password Version |
 | --- | --- |
-| 10.21.01 and above | 6.3.0 |
+| 10.21.01 and above | 6.4.0 |
 | 10.12.10 and above | 6.1.0 |
 | 10.6.0 and above | 6.0.0 |
 | 9.20.0 and above | 5.1.0 |
@@ -36,6 +36,7 @@ The Forgot Password module has the following dependencies:
 * [Deep Link](/appstore/modules/deep-link/) – Version of the Forgot Password module 6.0.0 and above (for Mendix 10.6.0 and above) does not require Deep Link module as a dependency.
 * [Encryption](/appstore/modules/encryption/)
 * [Mx Model Reflection](/appstore/modules/model-reflection/)
+* [Community Commons](/appstore/modules/community-commons-function-library/) (For Email Connector module v6.3.0 and above)
 
 ### Features
 
@@ -44,9 +45,6 @@ The Forgot Password module has the following dependencies:
 * Supports email aliases, in other words, the from address in email templates can be different from the SMTP account used to send the email
 * Supports multi-language email templates for sending password reset emails
 
-### Limitation
-
-The Forgot Password module does not support multiple instances if any are present in the node.
 
 ## Installing the Forgot Password Module{#installing}
 
@@ -62,7 +60,7 @@ In these instructions, it is assumed that your main module is **MyFirstModule**.
 1. Open the [App Settings](/refguide/app-settings/) and make the following changes:
     * In the [Configurations](/refguide/configuration/) tab, edit the current configuration to add a 32-character string value for the constant **Encryption.EncryptionKey**.
         {{< figure src="/attachments/appstore/platform-supported-content/modules/forgot-password/encryption-key.png" class="no-border" >}}
-    * In the **Runtime** tab, add the microflow **Deeplink.StartDeeplink** as the **After startup** microflow or as a sub-microflow to an existing after startup microflow.
+    * In the **Runtime** tab, add the microflow **Deeplink.StartDeeplink** and **ForgotPassword.ASU_Startup** as the **After startup** microflow or as a sub-microflow to an existing after startup microflow.
     {{% alert color="warning" %}}For the Forgot Password module version 6.0.0 (Mendix 10.6.0 and above), do not add the **Deeplink.StartDeeplink** microflow as the **After startup** microflow.{{% /alert %}}
     * If you are changing the **URL prefix** value in the **Runtime** tab, ensure that you use the same value in the URLPrefix constant of the Forgot Password module. Otherwise, the signup and reset URLs will not work.
 1. Open [App Security](/refguide/app-security/) and do the following:
@@ -76,7 +74,7 @@ In these instructions, it is assumed that your main module is **MyFirstModule**.
             * **Email_Connector.EmailConnectorAdmin** or **EmailTemplate.Administrator** - **Email_Connector** permissions are needed if you are using version 4.1.0 or above (for Mendix 8) or version 5.1.0 or above (for Mendix 9 and above). **EmailTemplate** permissions are only needed if using a version which uses the deprecated [Email Module with Templates](https://marketplace.mendix.com/link/component/259/) module
             * **Encryption.user**
             * **ForgotPassword.Administrator**
-            * **MxModelReflection.ModeAdministrator**
+            * **MxModelReflection.ModelAdministrator**
             * **System.Administrator**
             * **MyFirstModule.Administrator**
         * Guest
