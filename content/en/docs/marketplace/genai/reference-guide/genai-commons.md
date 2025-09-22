@@ -41,7 +41,7 @@ Although GenAI Commons technically defines additional capabilities typically fou
 
 ### Token Usage
 
-GenAI Commons can help store usage data, allowing admins to understand token usage. Usage data is persisted only if the constant `StoreUsageMetrics` is set to *true* (exception: if [StoreTraces](#traceability) is set to *true*, Usage data is stored as well). In general, this is only supported for chat completions and embedding operations.
+GenAI Commons can help store usage data, allowing admins to understand token usage. Usage data is persisted only if the constant `StoreUsageMetrics` is set to *true* (exception in version 5.3.0 and above: if [StoreTraces](#traceability) is set to *true*, Usage data is stored as well). In general, this is only supported for chat completions and embedding operations.
 
 To clean up usage data in a deployed app, you can enable the daily scheduled event `ScE_Usage_Cleanup` in the Mendix Cloud Portal. Use the `Usage_CleanUpAfterDays` constant to control for how long token usage data should be persisted. 
 
@@ -49,7 +49,7 @@ Lastly, the [Conversational UI module](/appstore/modules/genai/conversational-ui
 
 ### Traceability {#traceability}
 
-By default, the chat completions operations of GenAI Commons store data in your application's database for traceability reasons. This makes it easier to understand the usage of GenAI in your app and why the model behaved in a certain way, for example, by reviewing tool usage. Trace data is only persisted if the constant `StoreTraces` is set to *true*. 
+By default, the chat completions operations of GenAI Commons store data in your application's database for traceability reasons. This makes it easier to understand the usage of GenAI in your app and why the model behaved in a certain way, for example, by reviewing tool usage. In version 5.3.0 and above, trace data is only persisted if the constant `StoreTraces` is set to *true*. 
 
 As traces may contain sensitive and personally identifiable information, you should determine, on a case-by-case basis, whether storing this data is compliant.
 
@@ -130,6 +130,8 @@ The data stored in this entity is to be used later on for token consumption moni
 A trace represents the whole LLM interaction from the first user message until the final assistant's response was returned, including tool calls.
 The data stored in this entity is to be used later on for traceability use cases.
 
+`Trace` was introduced in version 5.3.0.
+
 | Attribute | Description |
 | --- | --- |
 | `TraceId` | The trace ID is set internally to identify a trace. |
@@ -146,6 +148,8 @@ The data stored in this entity is to be used later on for traceability use cases
 
 A span is created for each interaction between Mendix and the LLM (such as chat completions, tool calling, etc.). The generalized object is typically not used; instead, its specializations are used.
 
+`Span` was introduced in version 5.3.0.
+
 | Attribute | Description |
 | --- | --- |
 | `SpanId` | The span ID is set internally to identify a span. |
@@ -159,6 +163,8 @@ A span is created for each interaction between Mendix and the LLM (such as chat 
 
 A model span is created for each interaction between Mendix and the LLM where content is generated (sent as the assistant's message). Typically, this is a request for text generation. In addition to the [Span's](#span) attributes, it also contains the following:
 
+`ModelSpan` was introduced in version 5.3.0.
+
 | Attribute | Description |
 | --- | --- |
 | `InputTokens` | Number of tokens in the request. |
@@ -169,6 +175,8 @@ A model span is created for each interaction between Mendix and the LLM where co
 
 A tool span is created for each tool call requested by the LLM. The tool call is processed in GenAI Commons, and the result is sent back to the model. In addition to the [Span's](#span) attributes, it also contains the following:
 
+`ToolSpan` was introduced in version 5.3.0.
+
 | Attribute | Description |
 | --- | --- |
 | `ToolName` | The name of the tool that was called. |
@@ -177,7 +185,9 @@ A tool span is created for each tool call requested by the LLM. The tool call is
 
 #### `KnowledgeBaseSpan` {#knowledge-base-span}
 
-A knowledge base span is created for each knowledge base retrieval tool call requested by the LLM. The tool call is processed in GenAI Commons, and the result is sent back to the model. It does not contain any additional attributes compared to [ToolSpan](#tool-span). 
+A knowledge base span is created for each knowledge base retrieval tool call requested by the LLM. The tool call is processed in GenAI Commons, and the result is sent back to the model. It does not contain any additional attributes compared to [ToolSpan](#tool-span).
+
+`KnowledgebaseSpan` was introduced in version 5.3.0.
 
 | Attribute | Description |
 | --- | --- |
