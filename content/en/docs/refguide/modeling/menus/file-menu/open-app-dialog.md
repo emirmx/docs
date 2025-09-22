@@ -53,7 +53,7 @@ Clicking **Preferences** opens a dialog box with a subset of the preferences you
 
 ### Open Studio Pro
 
-You can open the full Studio Pro IDE directly by clicking **Open Studio Pro** without selecting or creating an app, enabling immediate access to development tools such as the Log Directory and the Preferences dialog.
+Open the full Studio Pro IDE directly by clicking **Open Studio Pro** without selecting or creating an app. This gives you immediate access to development tools such as the Log Directory and the **Preferences** dialog.
 
 ## Read More
 
