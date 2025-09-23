@@ -1,9 +1,11 @@
 ---
 title: "Creating a Getting Started Plan"
 linktitle: "Creating a Getting Started Plan"
-url: /getting-started-plan/
+url: /developerportal/digital-execution/getting-started-plan/
 weight: 65
 description: "Learn why and how to create an effective getting started plan."
+aliases:
+    - /getting-started-plan/
 ---
 
 ## Introduction
