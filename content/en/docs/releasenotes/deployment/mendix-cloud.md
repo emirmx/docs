@@ -20,7 +20,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Improvements
 
-We have renamed the **Request Overview** tab on the **Environments** page to **Change Requests**.
+* We have renamed the **Request Overview** tab on the **Environments** page to **Change Requests**.
 
 ### September 9, 2025
 
