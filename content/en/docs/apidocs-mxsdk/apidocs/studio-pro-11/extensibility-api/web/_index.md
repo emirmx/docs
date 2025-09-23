@@ -33,17 +33,17 @@ For detailed explanation on how to get started with extensions, check out [Get S
 
 ## How-tos
 
-Here is a list of how-tos for you to begin with:
+Below is a list of how-tos for you to begin with:
 
-* [How to Create a Dockable Pane Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/dockable-pane-api/)
-* [How to Interact With Local App Files Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/local-app-files-api/)
-* [How to Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/)
-* [How to Show a Message Box Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/messagebox-api/)
-* [How to Access a Mendix Model Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/model-api/)
-* [How to Open a Tab Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/tab-api/)
-* [How to Show a Popup Notification Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/notification-api/)
-* [How to View User Preferences Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/preference-api/)
-* [How to Show a Modal Dialog Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/dialog-api/)
-* [How to Open Documents Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/editor-api/)
-* [How to Exchange Information Between Active Views Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/message-passing-api/)
+* [How to Create a Dockable Pane](/apidocs-mxsdk/apidocs/web-extensibility-api-11/dockable-pane-api/)
+* [How to Interact With Local App Files](/apidocs-mxsdk/apidocs/web-extensibility-api-11/local-app-files-api/)
+* [How to Create a Menu](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/)
+* [How to Show a Message Box](/apidocs-mxsdk/apidocs/web-extensibility-api-11/messagebox-api/)
+* [How to Access a Mendix Model](/apidocs-mxsdk/apidocs/web-extensibility-api-11/model-api/)
+* [How to Open a Tab](/apidocs-mxsdk/apidocs/web-extensibility-api-11/tab-api/)
+* [How to Show a Popup Notification](/apidocs-mxsdk/apidocs/web-extensibility-api-11/notification-api/)
+* [How to View User Preferences](/apidocs-mxsdk/apidocs/web-extensibility-api-11/preference-api/)
+* [How to Show a Modal Dialog](/apidocs-mxsdk/apidocs/web-extensibility-api-11/dialog-api/)
+* [How to Open Documents](/apidocs-mxsdk/apidocs/web-extensibility-api-11/editor-api/)
+* [How to Exchange Information Between Active Views](/apidocs-mxsdk/apidocs/web-extensibility-api-11/message-passing-api/)
 * [How to Show Version Control Information](/apidocs-mxsdk/apidocs/web-extensibility-api-11/version-control-api/)
