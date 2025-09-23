@@ -16,13 +16,14 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 #### Portal Improvements
 
-* The Mendix on Kubernetes portal is now available in Japanese and Korean, enhancing user experience for native speakers. Language preferences can be adjusted in the Work environment tab under Preferences.
+* The Mendix on Kubernetes portal is now available in Japanese and Korean, enhancing the user experience for native speakers. Language preferences can be adjusted in the **Work Environment** tab under **Preferences**.
 * The side navigation in the portal is also available in Japanese and Korean languages
-* The Mendix on Kubernetes portal now supports the import of constants from a csv file.
-* Exporting constants is now possible in CSV format, replacing xlsx format
+* The Mendix on Kubernetes portal now supports the import of constants from a CSV file.
+* Exporting constants is now possible in CSV format, replacing the XLSX format.
 
-#### Known Issues:
-* Translations in the Mendix on Kubernetes portal are not yet 100% complete and some content may still appear in English.
+#### Known Issues
+
+* Translations in the Mendix on Kubernetes Portal are not yet fully complete and some content may still appear in English.
 
 ### September 16, 2025
 
