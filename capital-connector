@@ -1,0 +1,68 @@
+---
+title: "Capital Connector"
+url: /appstore/modules/siemens-plm/capital-connector/
+description: "Describes the configuration and usage of the Siemens Capital connector. Capital is a Siemens software suite used for creating and designing E/E systems."
+
+---
+
+## Introduction
+
+The [Capital](https://plm.sw.siemens.com/en-US/capital/) electrical and electronics (E/E) systems development software portfolio encompasses E/E system and software architectures, network communications and embedded software development capabilities. You can use the operations available in the [Capital connector](https://marketplace.mendix.com/) to effortlessly get Capital data in your Mendix app and build custom implementations tailored to your needs.
+
+### Features
+
+The Capital connector consists of microflows that enable you to authenticate with Capital and get Capital data in your Mendix app.
+
+### License
+
+The Capital connector is licensed under the [Apache V2.0 License](https://www.apache.org/licenses/LICENSE-2.0).
+
+### Pre-requisites
+ 
+* Studio Pro version 10.24.3 or above
+* A Capital instance
+
+### Dependencies
+
+You must have the following Marketplace modules installed:
+
+* [Community Commons](https://marketplace.mendix.com/link/component/170)
+* [Encryption](https://marketplace.mendix.com/link/component/1011)
+
+## Installation
+
+1. Install the dependencies.
+2. Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the Capital connector into your app.
+
+## Configuring the Connection to Capital
+
+This section shows you how to configure a connection to your Capital instance.
+
+1. Navigate to App > Settings > Configurations
+2. Double-click your configuration, go to Constants tab, and enter your Capital username and password for `CapitalConnector.CONST_Username` and `CapitalConnector.CONST_Password` respectively
+3. Ensure these credentials are set to private for data security
+4. Set the `CapitalConnector.CONST_AuthenticationBaseURL` for authenticating with the Capital Service. This URL is typically of the following format: {protocol}://{host}:{port}/capital/login
+5. Set the `CapitalConnector.CONST_BaseURL` for getting data from the Capital Service. This URL is typically of the following format: {protocol}://{host}:{port}/capital/rest/v1
+6. Adjust `CapitalConnector.CONST_CapitalSession_ExpirationInSeconds` if your Capital instance has a custom session time out
+
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens-plm/capital-connector/constants.png"  >}}
+
+## Using the connector
+
+Find the available operations in the microflow toolbox or check the use me folder. The operations are ready to be dragged into your implementation microflows after you've set up the credentials necessary for authentication.
+
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens-plm/capital-connector/operations.png"  >}}
+
+### Building filters
+
+Some Capital REST operations support filtering capabilities. In the connector, these operations have an optional filter parameter of type string. There are available microflows in the toolbox to build a filter under the Filtering category. For guidance on how to implement these, go to the App explorer view and check the example microflow in the Filtering folder.
+
+For details about how the filter needs to be defined, consult the REST API docs of your Capital instance.
+
+### Capital object IDs
+
+Some operations take an object ID as parameter. Many Capital objects have a BaseID attribute. For those that don't have this attribute, please use the ID getter microflow available in the toolbox. This takes the link attribute available on the associated Metadata object and returns the ID of the parent object.
+
+## Other Resources
+
+Please consult the REST API docs of your Capital instance for information about the Capital REST API. These can be reached at {protocol}://{host}:{port}/restapidocs/ 
