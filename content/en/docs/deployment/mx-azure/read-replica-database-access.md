@@ -1,7 +1,7 @@
 ---
 title: "Read Replicas for Postgres Databases"
 url: /developerportal/deploy/mendix-on-azure/read-replica-database-access/
-description: "Provides details about the read replica for Postgres database."
+description: "Provides details about the read replica for Postgres databases."
 weight: 30
 ---
 
@@ -9,40 +9,37 @@ weight: 30
 
 ## Introduction
 
-This document describes the documentation on how to enable read replica for Postgres database and examples on how to read data from the read replica database.
+This document describes how you can enable read replicas for the Postgres database and provides examples on how to read data from the read replica database.
 
-What is Read Replica of Database?
+### What is a Read Replica?
 
-Read replicas are copies of your database that are kept in sync with the primary database. They are used to serve read-only queries and can be used to offload read traffic from the primary database.
+Read replicas are copies of your database that are kept in sync with the primary database. They are used to serve read-only queries and can be used to offload read traffic from the primary database. You can enable a read replica and use it to serve all the read-only queries, while keeping the main database focused on Write operations.
 
-With the above set up:
- 1. Use the read replica to serve all the read-only queries
- 2. Keep the main DB focused on write operations
+## Prerequisites
 
-{{% alert color="info" %}}Before you begin, familiarize yourself with some concepts on read replica for Postgres database and vnet peering.{{% /alert %}}
+Before you begin, refer to Postgres documentation to familiarize yourself concepts related to read replicas and VNET peering.
 
-## Enable Read Replica in the Mendix on Azure Portal
+## Enabling Read Replicas in the Mendix on Azure Portal
 
-{{% alert color="info" %}}By default, the read replica for Postgres database is disabled.{{% /alert %}}
+By default, the read replica for Postgres database is disabled. To enable it, perform the following steps:
 
 1. Under the Provision section of Initialize Cluster page, under **Database Settings** select **Yes** for **Enable Read Replica** option. Click **Next**. and initialize the cluster.
 
-{{< figure src="/attachments/deployment/mx-azure/enableReadReplica.png" class="no-border" >}}
+    {{< figure src="/attachments/deployment/mx-azure/enableReadReplica.png" class="no-border" >}}
 
  {{% alert color="info" %}}If you plan to use read replica, only **General Purpose** or **Memory Optimized** compute tier settings are supported for Postgres db. {{% /alert %}}
 
 2. Once the cluster is initialized, the read replica for Postgres database is enabled and a read replica for the postgres database is created in the managed cluster. 
 
-{{< figure src="/attachments/deployment/mx-azure/readReplicaEnabled.png" class="no-border" >}}
+    {{< figure src="/attachments/deployment/mx-azure/readReplicaEnabled.png" class="no-border" >}}
 
 3. After successful cluster initialization, copy the address value from the record set within the Private DNS zone created for your Postgres database.
 
-{{< figure src="/attachments/deployment/mx-azure/copyAddressValue.png" class="no-border" >}}
+    {{< figure src="/attachments/deployment/mx-azure/copyAddressValue.png" class="no-border" >}}
 
 4. Add the user who wanted to access the replica database by going to the replica database created under managed app. Go to Security -> Authentication and add the user.
 
-{{< figure src="/attachments/deployment/mx-azure/adduser.png" class="no-border" >}}  
-
+    {{< figure src="/attachments/deployment/mx-azure/adduser.png" class="no-border" >}}  
 
 5. If your Mendix managed app is in a different Azure resource group than the user machines which must connect to it, you may need to perform additional steps to enable connections between these resource groups.One of the potential solution to access the read replica is using the vnet peering. This allows to connect two virtual networks (VNets) so resources can talk to each other using private IPs. 
 
