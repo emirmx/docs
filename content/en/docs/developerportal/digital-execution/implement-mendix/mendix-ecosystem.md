@@ -1,9 +1,11 @@
 ---
 title: "Delving Into the Mendix Ecosystem"
 linktitle: "Delving Into the Mendix Ecosystem"
-url: /mendix-ecosystem/
+url: /developerportal/digital-execution/mendix-ecosystem/
 weight: 55
 description: "Find out about the 3 S's and the 5 P's of digital execution."
+aliases:
+    - /mendix-ecosystem/
 ---
 
 ## Introduction
