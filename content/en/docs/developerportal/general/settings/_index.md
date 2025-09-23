@@ -37,15 +37,13 @@ The page header displays the following information:
 * The company that owns the app.
 * The **Watch** / **Stop Watching** toggle – You can enable or disable notifications for this app.
 
-{{< figure src="/attachments/developerportal/general/settings/general-information.png"  class="no-border" >}}
-
 {{% alert color="info" %}}
 Only users with the **App Settings** permission can edit the image and the app name.
 {{% /alert %}}
 
 ## General {#general}
 
-In this tab, you can find the following items:
+On this tab, you can find the following items:
 
 * Logo of the project
 * **Description** of the project

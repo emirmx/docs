@@ -9,7 +9,7 @@ description: "Describes the Planning page in Epics. This page looks different, d
 
 The **Planning** page shows all your stories.
 
-The main area of the **Planning** page lists all the stories in different categories. Each row represents a story:
+The main area of the **Planning** page lists all the stories in different categories. Each row represents a story.
 
 {{< figure src="/attachments/developerportal/project-management/epics/planning/story-kanban.png" class="no-border" >}}
 
@@ -74,7 +74,7 @@ To move multiple stories, select these stories, choose the category name where t
 
 {{< figure src="/attachments/developerportal/project-management/epics/planning/move-multiple-stories.png" class="no-border" >}}
 
-To [archive](/developerportal/project-management/epics/archive/) or delete a story, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) at the end of the row, then select the corresponding option:
+To [archive](/developerportal/project-management/epics/archive/) or delete a story, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) at the end of the row, then select the corresponding option.
 
 {{< figure src="/attachments/developerportal/project-management/epics/planning/archive-delete-story-kanban.png" class="no-border" >}}
 
@@ -101,7 +101,8 @@ The **Planning** page offers different features to accommodate two different wor
 
 If your board style is Scrum, you can find the features below which accommodate your Scrum workflow.
 
-If there is an active Sprint, on the upper-left corner, you can find the name of the Sprint, when it ends, and how many stories and points it has. If you hover over the goal icon, you can see the goal of the Sprint:
+If there is an active Sprint, in the upper-left corner, you can find the name of the Sprint, when it ends, and how many stories and points it has.     
+If you hover over the goal icon, you can see the goal of the Sprint.
 
 {{< figure src="/attachments/developerportal/project-management/epics/planning/scrum-planning.png" class="no-border" >}}
 
@@ -118,7 +119,8 @@ On the upper-right corner, you can find these Scrum items if you click **More Op
 
 ### Kanban Planning {#kanban-planning}
 
-If your board type is Kanban, the stories are grouped in these categories: **To Do**, **Refinement**, and **Backlog**. At the top of each category, you can see the total number of stories and points.
+If your board type is Kanban, the stories are grouped in these categories: **To Do**, **Refinement**, and **Backlog**.     
+At the top of each category, you can see the total number of stories and points.
 
 {{< figure src="/attachments/developerportal/project-management/epics/planning/kanban-planning.png" class="no-border" >}}
 
@@ -126,10 +128,7 @@ If your board type is Kanban, the stories are grouped in these categories: **To 
 
 You can import your stories using an Excel file to Epics as follows:
 
-1. In the upper-right corner of the **Planning** page, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) and then click **Import Stories**.
-
-   {{< figure src="/attachments/developerportal/project-management/epics/planning/import-stories.png" class="no-border" >}}
-
+1. In the upper-right corner of the **Planning** page, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}), then click **Import Stories**.    
    The **Import Stories From Excel** dialog box opens.
 
 2. Click **Download** to download the Excel file template.
@@ -172,9 +171,7 @@ You can find all the imported stories in the **Backlog**.
 
 You can export your stories on the **Planning** page to an Excel file as follows:
 
-1. On the upper-right corner of the **Planning** page, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}), then click **Export Stories**.
-
-   {{< figure src="/attachments/developerportal/project-management/epics/planning/export-stories.png" class="no-border" >}}
+1. In the upper-right corner of the **Planning** page, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}), then click **Export Stories**.
 2. Select where you want to export stories from.
 3. Click **Continue** to see a preview of the Excel file.
 4. Click **Export to Excel**.
@@ -209,6 +206,6 @@ On this tab, you can switch between a Scrum workflow and Kanban workflow. The wo
 
 ### Toast Settings
 
-On this tab, you can enable or disable the toast notifications that appear like this:
+On this tab, you can enable or disable the toast notifications that are displayed along the screen.
 
 {{< figure src="/attachments/developerportal/project-management/epics/planning/toast-notification.png" width="500px" class="no-border" >}}
