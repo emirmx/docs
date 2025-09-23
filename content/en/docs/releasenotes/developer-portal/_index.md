@@ -25,7 +25,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 #### Improvements
 
-* We have updated the look of side panel where [feedback details](/developerportal/app-insights/feedback/#feedback-details) are displayed 
+* We have updated the look of the [feedback details](/developerportal/app-insights/feedback/#feedback-details) side panel. 
 
 ### September 11, 2025
 
