@@ -12,6 +12,19 @@ These release notes cover changes to deployment to [Mendix on Azure](/developerp
 
 For information on the current status of Mendix deployment, see [Mendix Status](https://status.mendix.com/).
 
+### Release date: September 25, 2025
+
+* In order to ensure app availability during infrastructure upgrades, the default replicas for the newly created Mendix app is set to 2.
+* To provide greater flexibility and optimize database performance, we've added a new feature that allows you to **Enable Read Replica Database access** when creating new clusters. Please note that this feature is set to 'No' (disabled) by default. For details on how to enable it, please refer to our documentation: [Read replica database access](/developerportal/deploy/mendix-on-azure/read-replica-database-access/).
+* We have improved the labels on the default Grafana dashboard to better reflect the metrics being displayed.
+* We've fixed the problem where support tickets created by users were not visible to other users in the same subscription
+* Improved Clarity: We've rephrased some wording and updated the structure on the "Initialize Cluster" and "Edit Cluster" pages for better readability and understanding.
+* We've resolved an issue from the previous release that caused database provisioning to fail when creating new environments.
+
+### Known issues:
+
+ * Currently, the **updated** or **created** tags in the **Edit** screen of the cluster are not attached to the cluster resources.
+
 ### Release date: September 11, 2025
 
 * We have improved the translations by adding support for error messages in the **Cluster Overview** page.

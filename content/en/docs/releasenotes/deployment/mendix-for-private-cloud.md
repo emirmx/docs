@@ -12,6 +12,18 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2025
 
+### September 25, 2025
+
+#### Portal Improvements
+
+* The Mendix on Kubernetes portal is now available in Japanese and Korean, enhancing user experience for native speakers. Language preferences can be adjusted in the Work environment tab under Preferences.
+* The side navigation in the portal is also available in Japanese and Korean languages
+* The Mendix on Kubernetes portal now supports the import of constants from a csv file.
+* Exporting constants is now possible in CSV format, replacing xlsx format
+
+#### Known Issues:
+* Translations in the Mendix on Kubernetes portal are not yet 100% complete and some content may still appear in English.
+
 ### September 16, 2025
 
 #### Mendix Operator v2.23.1 {#2.23.1}
