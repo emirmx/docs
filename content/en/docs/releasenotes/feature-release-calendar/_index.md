@@ -21,7 +21,7 @@ General Availability means that a feature is available for all users. This type 
 | --- | --- |
 | Searchable commit history                                    | Public beta: Q4 2025                                         |
 | Module updates while retaining customizations                | General Availability: Q1 2026                                |
-| Easy comparison of revisions                                 | Public beta: Q1 2026                                         |
+| Easy revision comparison                                     | Public beta: Q1 2026                                         |
 | Pull requests                                                | Public beta: H2 2026                                         |
 | Mendix on Azure                                              | Limited Availability: March 2025 <br/>General Availability: Summer 2025 |
 | Security Recommendations                                     | General Availability: 2026                                   |
@@ -33,7 +33,7 @@ General Availability means that a feature is available for all users. This type 
 | Modernized Mendix unit testing                               | General Availability: April 2025                             |
 | Speed up role-based access                                   | General Availability: February 2025                          |
 | Software Composition                                         | General Availability: March 2025                             |
-| Software Composition Marketplace Outdated & Deprecated Findings | General Availability: September 2025                      |
+| Software Composition Marketplace Outdated and Deprecated Findings | General Availability: September 2025                      |
 | Software Composition Marketplace Vulnerabilities             | General Availability: December 2025                          |
 | Policies                                                     | Public beta: December 2025 <br/>General Availability: TBD    |
 | Cloud Tokens Dashboard                                      | General Availability: June 2025                               |
