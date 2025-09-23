@@ -170,7 +170,6 @@ spec:
       azure.workload.identity/use: "true" # Example: enable Azure Workload Identity
   runtimeLicenseProduct: # Optional: Specify the type of product required for the Runtime License. This is applicable when PCLM is used for licensing. By default, the value is set to Standard, if left empty
   deploymentStrategy: # Optional: Specify a deployment strategy to reduce app downtime
-    type: PreferRolling
     switchoverThreshold: 50%
     rollingUpdate:
       maxSurge: 0
@@ -235,7 +234,7 @@ You must make the following changes:
     * `leaderless` - A mode where the nodes dynamically choose a leader. This feature is in preview mode. It requires Mendix Runtime 10.24 or newer, and Mendix Operator 2.23 or newer.
 * **customPodLabels** - Specify additional pod labels. Avoid using labels that start with the `privatecloud.mendix.com/` prefix.
     * **general** - Specify additional labels for all pods of the app.
-* **deploymentStrategy** - Specify parameters for the deployment strategy. For more information, see the reduced downtime deployment documentation.
+* **deploymentStrategy** - Specify parameters for the deployment strategy. For more information, see the [reduced downtime deployment](/developerportal/deploy/private-cloud-reduced-downtime/#deployment-strategy-in-standalone) documentation.
 * **runtimeReadOnlyRootFilesystem** - Specify if the Runtime container should mount the root filesystem in [read-only mode](/developerportal/deploy/private-cloud-cluster/#readonlyrootfs).
 
 #### Setting App Constants{#set-app-constants}

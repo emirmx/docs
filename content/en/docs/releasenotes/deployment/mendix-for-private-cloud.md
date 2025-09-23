@@ -12,6 +12,14 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2025
 
+### October ???, 2025
+
+#### Mendix Operator v2.24.0 {#2.24.0}
+
+* We've simplified the approach of handling Rolling updates by the Operator. Any app with 2 or more replicas will be updated without downtime, as long as the app is running the same MDA and base OS image.
+* Starting from this version, all Operator upgrades will run without causing downtime (in environments that 2 or more replicas).
+* We've made a few adjustments to support changes in upcoming Studio Pro version numbers.
+
 ### September 25, 2025
 
 #### Portal Improvements
