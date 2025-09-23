@@ -17,31 +17,38 @@ Read replicas are copies of your database that are kept in sync with the primary
 
 ## Prerequisites
 
-Before you begin, refer to Postgres documentation to familiarize yourself concepts related to read replicas and VNET peering.
+Before you begin, make sure to fulfill the following prerequisites:
+
+* Refer to Postgres documentation to familiarize yourself concepts related to read replicas and VNet peering.
+* Ensure that your Postgres database has the **General Purpose** or **Memory Optimized** compute tier settings.
 
 ## Enabling Read Replicas in the Mendix on Azure Portal
 
 By default, the read replica for Postgres database is disabled. To enable it, perform the following steps:
 
-1. Under the Provision section of Initialize Cluster page, under **Database Settings** select **Yes** for **Enable Read Replica** option. Click **Next**. and initialize the cluster.
+1. On the **Provision > Database Settings** section of the **Initialize Cluster** page, set the **Enable Read Replica** option to **Yes**.
+2. Click **Next** to initialize the cluster.
 
     {{< figure src="/attachments/deployment/mx-azure/enableReadReplica.png" class="no-border" >}}
 
- {{% alert color="info" %}}If you plan to use read replica, only **General Purpose** or **Memory Optimized** compute tier settings are supported for Postgres db. {{% /alert %}}
+    After the cluster is initialized, the read replica for Postgres database is enabled, and a read replica for the Postgres database is created in the managed cluster. 
 
-2. Once the cluster is initialized, the read replica for Postgres database is enabled and a read replica for the postgres database is created in the managed cluster. 
+        {{< figure src="/attachments/deployment/mx-azure/readReplicaEnabled.png" class="no-border" >}}
 
-    {{< figure src="/attachments/deployment/mx-azure/readReplicaEnabled.png" class="no-border" >}}
-
-3. After successful cluster initialization, copy the address value from the record set within the Private DNS zone created for your Postgres database.
+3. Copy the address value from the record set within the private DNS zone created for your Postgres database.
 
     {{< figure src="/attachments/deployment/mx-azure/copyAddressValue.png" class="no-border" >}}
 
-4. Add the user who wanted to access the replica database by going to the replica database created under managed app. Go to Security -> Authentication and add the user.
+4. Add the users who should be able to access the replica database by performing the following steps:
+
+    1. In the replica database created under managed app, go to **Security > Authentication**
+    2. Add the required users.
 
     {{< figure src="/attachments/deployment/mx-azure/adduser.png" class="no-border" >}}  
 
-5. If your Mendix managed app is in a different Azure resource group than the user machines which must connect to it, you may need to perform additional steps to enable connections between these resource groups.One of the potential solution to access the read replica is using the vnet peering. This allows to connect two virtual networks (VNets) so resources can talk to each other using private IPs. 
+## Enabling Virtual Network Peering
+
+If your Mendix managed app is in a different Azure resource group than the user machines which must connect to it, you may need to perform additional steps to enable connections between these resource groups. One of the potential solution to access the read replica is by using the VNet peering. This allows to connect two virtual networks (VNets) so resources can talk to each other using private IPs. 
 
 The following diagram shows one potential solution to the access issue. Bi-directional [virtual network peering](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview) has been configured between the two resource groups.
 
@@ -49,20 +56,16 @@ The following diagram shows one potential solution to the access issue. Bi-direc
 
 To enable virtual network peering for your Mendix on Azure app, perform the following steps:
 
-    5.1. In the Microsoft Azure portal, [add a new bi-directional virtual peering](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering?tabs=peering-portal) in the resource group where your Mendix app is deployed.
+1. In the Microsoft Azure portal, [add a new bi-directional virtual peering](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering?tabs=peering-portal) in the resource group where your Mendix app is deployed.
 
     {{< figure src="/attachments/deployment/mx-azure/virtual-network-peerings-add.png" class="no-border" >}}
 
-    5.2. Create a [Azure Private DNS zone](https://learn.microsoft.com/en-us/azure/dns/private-dns-privatednszone) in another resource group from where you need to connect to the replica database.  Private DNS zone resolves domain names in a managed app to a private IP addresses.
+2. Create a [Azure Private DNS zone](https://learn.microsoft.com/en-us/azure/dns/private-dns-privatednszone) in another resource group from where you need to connect to the replica database.  Private DNS zone resolves domain names in a managed app to a private IP addresses.
+3. In the **Instance details** section, in the **Name** field, enter the domain of your Mendix app, for example, *azure.mendixapps.io*. 
+4. Create a [DNS record](https://learn.microsoft.com/en-us/azure/dns/dns-operations-recordsets-portal) for the Mendix application. The record set maps a host name to a private IP.
 
-    5.3. In the **Instance details** section, in the **Name** field, enter the domain of your Mendix app, for example, *azure.mendixapps.io*. 
+    1. In the **Name** field, enter the name of our Mendix app, for example, *myapp*.
+    2. In the **IP** field, enter the IP address of the read replica. Refer to the value of the record set in step 3 above.
+    3. Create a [virtual network link](https://learn.microsoft.com/en-us/azure/dns/private-dns-virtual-network-links) to connect the Postgres database's private DNS zone with your custom virtual network. This enables seamless name resolution within your VNet.
 
-    5.4. Create a [DNS record](https://learn.microsoft.com/en-us/azure/dns/dns-operations-recordsets-portal) for the Mendix application. Record set maps a hostname to a private IP.
-
-    5.4.1. In the **Name** field, enter the name of our Mendix app, for example, *myapp*.
-
-    5.4.2. In the **IP** field, enter the IP address of the read replica. Check the value of the record set in Step 3
-
-    5.5. Create a [virtual network link](https://learn.microsoft.com/en-us/azure/dns/private-dns-virtual-network-links) to connect the Postgres database's Private DNS zone with your custom virtual network. This enables seamless name resolution within your VNet.
-
-    Users in the other virtual network can now connect to your Mendix app.
+Users in the other virtual network can now connect to your Mendix app.
