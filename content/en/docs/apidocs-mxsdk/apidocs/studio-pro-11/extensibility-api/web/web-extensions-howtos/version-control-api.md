@@ -10,20 +10,25 @@ This how-to describes how to display version control information in Studio Pro. 
 
 ## Prerequisites
 
-This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Complete that how-to before starting this one. You should also be familiar with creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
+Before starting this how-to, make sure you have completed the following prerequisites:
+
+* This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Complete that how-to before starting this one. 
+* Make sure you are familiar with creating menus, as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
 
 ## Showing Version Control Information
 
-The extension creates a menu item labeled **Current version control system**. When the menu is activated, it fetches version control details (system type, branch, last commit) and displays them in a message box.
+The extension creates a menu item named **Current version control system**. When the menu is activated, it fetches version control details (system type, branch, last commit) and displays them in a message box.
 
 ### Set Up the Extension Structure 
+
 In the example below, you create one menu item that will show version control details in a message box.
 
 It performs the following actions:
-1. Creates a menu item labeled "Current version control system"
+
+1. Creates a menu item named **Current version control system**
 2. Listens for when the menu item is clicked
-3. When clicked, retrieves the version control information which includes:
-   * The type of version control system (like Git)
+3. When clicked, it retrieves the version control information which includes:
+   * The type of version control system (for example, Git)
    * Current branch name
    * Last commit details (SHA, author, message, and date)
 4. Displays this information in a message box
@@ -76,10 +81,6 @@ export const component: IComponent = {
     }
 }
 ```
-
-## Conclusion
-
-You have seen how to add a menu in Studio Pro that shows version control details for your app, making it easy for users to see the branch and head commit information.
 
 ## Extensibility Feedback
 
