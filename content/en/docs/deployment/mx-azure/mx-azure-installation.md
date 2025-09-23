@@ -55,7 +55,7 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
 
 7. In the **Actions** column, click the icon, and then select **Initialize**. 
 
-    The preflight check launches to verify that the required resources can be registered in the cluster.  Finally, the preflight checks validates if the Azure account used for the initialization has the Owner role.
+    The preflight check launches to verify that the required resources can be registered in the cluster.  The check also validates if the Azure account used for the initialization has the Owner role.
 
    Mendix apps are hosted with virtual machines, so the preflight check determines whether the cluster contains the required type of virtual machine. To view a list of the required resource providers, hover your cursor over the **Information** icon. If required, you can register any missing providers in the **Resource providers** section of the Microsoft Azure portal.
 
