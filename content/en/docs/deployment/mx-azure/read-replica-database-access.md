@@ -1,5 +1,5 @@
 ---
-title: "Read Replica for Postgres Database"
+title: "Read Replicas for Postgres Databases"
 url: /developerportal/deploy/mendix-on-azure/read-replica-database-access/
 description: "Provides details about the read replica for Postgres database."
 weight: 30
