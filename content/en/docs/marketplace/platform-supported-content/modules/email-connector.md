@@ -71,7 +71,7 @@ Missing a step, or changing the order can lead to errors.
     * [**Templates**](#email-templates)
     * [**Configure OAuth**](#oauth-config-details)
 
-### Migrating from Another Module
+### Migrating From Another Module
 
 When migrating to the Email Connector from a different email module, it is recommended to test your configuration in a separate app before applying it to your main project.
 
@@ -86,26 +86,26 @@ The module includes the following bundled widgets:
 * [Pop-Up Menu](/appstore/widgets/popup-menu/)
     
 {{% alert color="info" %}}
-If you already have these widgets in your app, and they are not up to date, you will get a "Some widgets can not be read" error.
+If you already have these widgets in your app, and they are not up to date, you will get a "Some widgets cannot be read" error.
 {{% /alert %}}
 
-## Setting up the Email Connector in Studio Pro {#setup}
+## Setting Up the Email Connector in Studio Pro {#setup}
 
 ### Configuring Roles
 
-The module includes a default **EmailConnectorAdmin** role with pre-configured access rights for common use cases. Review and verify that the access rights align with your specific requirements and security policies before assigning this module role to user roles in [App Security](/refguide/app-security/). Also configure any required module roles for the prerequisite modules you are using.
+The module includes a default **EmailConnectorAdmin** role with preconfigured access rights for common use cases. Review and verify that the access rights align with your specific requirements and security policies before assigning this module role to user roles in [App Security](/refguide/app-security/). In addition, configure any required module roles for the prerequisite modules you are using.
 
 ### Building Email Functionality {#building-email-functionality}
 
-The Email Connector provides building blocks that you assemble to create email functionality:
+The Email Connector provides building blocks you can assemble to create email functionality. 
 
 #### Domain Model {#domain-model}
 
-The domain model in Mendix is a data model that describes the information in your application domain in an abstract way. For more general information, see the [Data in the Domain Model](/refguide/domain-model/) documentation. To learn more about entities and their associations in the domain model of the Email Connector see the section below.
+The domain model in Mendix is a data model that describes the information in your application domain in an abstract way. For more general information, see [Data in the Domain Model](/refguide/domain-model/). To learn more about entities and their associations in the domain model of the Email Connector, see the section below.
 
 ##### EmailAccount {#email-account}
 
-**EmailAccount** is the entity which manages email account configurations, authentication methods, and security settings for both incoming and outgoing email operations.
+The **EmailAccount** entity manages email account configurations, authentication methods, and security settings for both incoming and outgoing email operations.
 
 | Attribute                    | Description                                                    |
 |------------------------------|----------------------------------------------------------------|
@@ -141,7 +141,6 @@ The **IncomingEmailConfiguration** entity manages email retrieval settings, proc
 | NotifyOnNewEmails  | Whether to trigger notifications for incoming emails |
 | ServerHost         | Incoming mail server hostname or IP address          |
 | ServerPort         | Incoming mail server port                            |
-
 
 ##### OutgoingEmailConfiguration {#outgoing-email-configuration}
 
@@ -209,60 +208,60 @@ The **EmailTemplate** enables reusable email designs with dynamic content placeh
 
 ##### Attachment {#attachment}
 
-Specialized file **Attachment** entity extending Mendix **System.FileDocument** to provide comprehensive file handling capabilities for email communications.
+Specialized file **Attachment** entity extend Mendix **System.FileDocument** to provide comprehensive file handling capabilities for email communications.
 
 #### Snippets {#snippets}
 
-Snippets allow you to make interface changes in one place that automatically apply on every page where the snippet is used, reducing maintenance effort and ensuring consistency. You can find the following snippets in the **USE_ME > Snippets** of the Email Connector module.
+Snippets allow you to make interface changes in one place that automatically apply to every page where the snippet is used, reducing maintenance effort and ensuring consistency. You can find the following snippets in the **USE_ME > Snippets** of the Email Connector module:
 
 ##### Authentication & Configuration
 
-* **SNIP_Configure_OAuth** - Select OAuth provider from configured list when setting up email accounts
-* **SNIP_Configure_PrimaryUser_Login** - Configure primary user login details for an email account
-* **SNIP_Configure_Shared_Mailbox** - Option to set up shared mailbox access using primary account details
-* **SNIP_OAuthProvider_CreateEdit** - Create or modify OAuth provider configuration
+* **SNIP_Configure_OAuth** – Select OAuth provider from configured list when setting up email accounts
+* **SNIP_Configure_PrimaryUser_Login** – Configure primary user login details for an email account
+* **SNIP_Configure_Shared_Mailbox** – Option to set up shared mailbox access using primary account details
+* **SNIP_OAuthProvider_CreateEdit** – Create or modify OAuth provider configuration
 
 ##### Account Management
 
-* **SNIP_EmailAccount_SendAccountSettings** - Configure outgoing **EmailAccount** settings and preferences
-* **SNIP_EmailAccount_ReceiveAccountSettings** - Configure incoming **EmailAccount** settings and preferences
+* **SNIP_EmailAccount_SendAccountSettings** – Configure outgoing **EmailAccount** settings and preferences
+* **SNIP_EmailAccount_ReceiveAccountSettings** – Configure incoming **EmailAccount** settings and preferences
 
 ##### Email Operations
 
-* **SNIP_EmailTemplate_CreateEdit** - Create or edit email templates with rich text and placeholder tokens
-* **SNIP_Incoming_Email_Config** - Manage incoming email settings including folders and processing options
-* **SNIP_EmailLog_Overview** - View email sending and receiving activity logs
+* **SNIP_EmailTemplate_CreateEdit** – Create or edit email templates with rich text and placeholder tokens
+* **SNIP_Incoming_Email_Config** – Manage incoming email settings including folders and processing options
+* **SNIP_EmailLog_Overview** – View email sending and receiving activity logs
 
 ##### Protocol & Security
 
-* **SNIP_Send_ProtocolDetails** - Configure outgoing/send email protocol (SMTP) details
-* **SNIP_Receive_ProtocolDetails** - Configure incoming/receive email protocol details
-* **SNIP_Send_EmailSecurity_Edit** - Manage email security features including digital signatures and encryption
+* **SNIP_Send_ProtocolDetails** – Configure outgoing/send email protocol (SMTP) details
+* **SNIP_Receive_ProtocolDetails** – Configure incoming/receive email protocol details
+* **SNIP_Send_EmailSecurity_Edit** – Manage email security features including digital signatures and encryption
 
 #### Microflows {#microflows}
 
-The Email Connector module contains a number of pre-written microflows which you can use to carry out various email-related functions.
+The Email Connector module contains a number of pre-written microflows you can use to carry out various email-related functions.
 
 ##### Core Microflows
 
-* **SUB_SendEmail** - Send emails using selected **EmailAccount**
-* **SUB_RetrieveEmails** - Fetch emails from selected **EmailAccount**
-* **SUB_EmailAccount_CheckServerConnection** - Validate email server connectivity and account configuration
+* **SUB_SendEmail** – Send emails using selected **EmailAccount**
+* **SUB_RetrieveEmails** – Fetch emails from selected **EmailAccount**
+* **SUB_EmailAccount_CheckServerConnection** – Validate email server connectivity and account configuration
 
 ##### Sample Microflows
 
-* **Sample_ASU_SubscribeForEmailNotification** - Set up email notification subscriptions 
-* **SUB_GetSystemError** - Retrieve system error information
+* **Sample_ASU_SubscribeForEmailNotification** – Set up email notification subscriptions 
+* **SUB_GetSystemError** – Retrieve system error information
 
 #### Java Actions{#java-actions}
 
 The Email Connector module contains a number of Java actions which you can use to carry out various email-related functions.
 
-* **SendEmail** - Accepts EmailMessage and EmailAccount objects to send an email
-* **RetrieveEmailMessages** - Fetches emails from the server based on specified EmailAccount
-* **GetAutoConfig** - Automatically discover email server settings for common providers 
-* **GetFolderNames** - Retrieve available email folders from the server 
-* **GetBaseDNList** - Get directory service base distinguished names for LDAP integration
+* **SendEmail** – Accepts EmailMessage and EmailAccount objects to send an email
+* **RetrieveEmailMessages** – Fetches emails from the server based on specified EmailAccount
+* **GetAutoConfig** – Automatically discover email server settings for common providers 
+* **GetFolderNames** – Retrieve available email folders from the server 
+* **GetBaseDNList** – Get directory service base distinguished names for LDAP integration
 
 ## Send Email {#send-email}
 
@@ -611,7 +610,7 @@ Admin status is given on the added API permissions. The tenant admin must regist
 
 ## Templates {#email-templates}
 
-This tab allows you to configure templates you can use to send your emails.
+The **Templates** tab allows you to configure templates you can use to send your emails.
 
 1. Deploy your application to set up your **Email Templates** through the Email Connector user interface.
 2. Navigate to the **Email Connector Overview** page.
