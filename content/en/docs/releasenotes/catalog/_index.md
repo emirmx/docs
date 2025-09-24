@@ -18,7 +18,11 @@ These release notes cover changes made to the [Catalog](/catalog/).
 
 #### Features
 
-* We added support to parse relevant metadata from OpenAPI contracts and improved storage, indexing, and discoverability to promote more advanced use cases.
+* We added support to parse relevant metadata from OpenAPI contracts. 
+
+#### Fixes
+
+* We improved storage, indexing, and discoverability to promote more advanced use cases.
 
 ### January 30, 2025
 
