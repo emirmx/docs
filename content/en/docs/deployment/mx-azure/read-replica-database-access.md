@@ -44,14 +44,16 @@ By default, the read replica for Postgres database is disabled. To enable it, pe
 
 4. Add the users who should be able to access the replica database by performing the following steps:
 
-    1. In Azure portal, Go to Resource group where managed app is created. Under the resource group, go to managed resource group and click on the replica database resource. Go to **Security > Authentication**
-    2. Add the required users.
+    1. In the Azure portal, go to the resource group where you created the managed app.
+    2. Under the resource group, go to the managed resource group and click on the replica database resource.
+    3. Go to **Security > Authentication**
+    4. Add the required users.
 
     {{< figure src="/attachments/deployment/mx-azure/adduser.png" class="no-border" >}}  
 
 ## Enabling Virtual Network Peering
 
-VNet peering to the Mendix on Azure vNet is required to access the database and should be setup if it hasn’t been already. This allows to connect two virtual networks (VNets) so resources can talk to each other using private IPs. 
+VNet peering to the Mendix on Azure vNet is required to access the database. It enables connections between two virtual networks (VNets) so resources can talk to each other using private IPs. If you have not already configured VNet peering, you should do it now.
 
 The following diagram shows one potential solution to the access issue. Bi-directional [virtual network peering](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview) has been configured between the two resource groups.
 
