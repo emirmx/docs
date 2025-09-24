@@ -36,7 +36,7 @@ The Forgot Password module has the following dependencies:
 * [Deep Link](/appstore/modules/deep-link/) – Version of the Forgot Password module 6.0.0 and above (for Mendix 10.6.0 and above) does not require Deep Link module as a dependency.
 * [Encryption](/appstore/modules/encryption/)
 * [Mx Model Reflection](/appstore/modules/model-reflection/)
-* [Community Commons](/appstore/modules/community-commons-function-library/) (For Email Connector module v6.3.0 and above)
+* [Community Commons](/appstore/modules/community-commons-function-library/) (For Email Connector module version 6.3.0 and above)
 
 ### Features
 
