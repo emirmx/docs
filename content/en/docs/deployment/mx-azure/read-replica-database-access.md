@@ -7,13 +7,13 @@ weight: 30
 
 ## Introduction
 
-This document describes how you can enable read replicas for the Postgres database and provides examples on how to read data from the read replica database. The read replica is the database instance holding the Mendix app databases
+This document describes how you can enable read replicas for the Postgres database and provides examples on how to read data from the read replica database. The read replica is the database instance holding the Mendix app databases.
 
-### What is a Read Replica and Why is it needed?
+### What is a Read Replica and Why Is It Needed?
 
 Read replicas are synchronized copies of the primary database. They are commonly used to serve read-only queries, reducing load on the primary database by separating reads from writes.
-In our case, read queries still go to the primary database, but the read replica is created specifically to give customers secure, read-only access to the data.
-This feature will particularly be useful for data ingestion (datalake) purpose and when customer need to have read-only access to Mendix app data in a secure manner that does not impact app performance.
+
+In the case of Mendix on Azure, read queries still go to the primary database, but the read replica is created specifically to give customers secure, read-only access to the data. This feature is particularly useful for data ingestion (data lake) purposes, and when the customer needs to have read-only access to Mendix app data in a secure manner that does not impact app performance.
 
 ## Prerequisites
 
