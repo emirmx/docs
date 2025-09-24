@@ -321,7 +321,7 @@ To manage configurations:
 
 For detailed steps and implementation guidance, see the [Configure OAuth](#oauth-config-details) section below.
 
-### Additional Account Settings
+### Additional Account Settings {#other-account-settings}
 
 You can view and change the following settings by clicking **View Settings** as the **Action** of an existing account.
 
@@ -745,7 +745,7 @@ To add inline attachments to an email message, use the Rich text editor to inser
 
 If the **Email Connector** page styling is affected as you select and view email messages, it is likely due to errors in the email message CSS. 
 
-To resolve the errors, turn on **Sanitize email to prevent XSS attacks** in [Account Settings](#other-account-settings).
+To resolve the errors, turn on **Sanitize email to prevent XSS attacks** in Account Settings.
 
 ### Importing Emails with Long Attachment Names
 
