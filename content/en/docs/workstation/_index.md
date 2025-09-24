@@ -9,7 +9,7 @@ cascade:
     - content_type: "Mendix Workstation"
 ---
 {{% alert color="info" %}}
-Mendix Workstation Client is available only for members of the Mendix Workstation Client Pre-Release Program. Support is available only to members of the program. To become a program member, contact Mendix Sales.
+Mendix Workstation Client is [Limited Availability](https://docs.mendix.com/releasenotes/release-status/#limited-availability) for production use. Support will be provided according to your Mendix SLA if you purchased a Workstation. Please contact your CSM. Without a license you can use it for development, but Workspaces are individual and cannot be shared.
 {{% /alert %}}
 
 ## Introduction
