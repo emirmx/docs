@@ -13,7 +13,7 @@ This document describes how you can enable read replicas for the Postgres databa
 
 ### What is a Read Replica?
 
-Read replicas are copies of your database that are kept in sync with the primary database. They are used to serve read-only queries and can be used to offload read traffic from the primary database. You can enable a read replica and use it to serve all the read-only queries, while keeping the main database focused on Write operations.
+Read replicas are copies of your database that are kept in sync with the primary database. They are used to serve read-only queries and thus helps to restrict data access to the replica database. You can enable a read replica and use it to serve all the read-only queries, while keeping the main database focused on Write operations.
 
 ## Prerequisites
 
