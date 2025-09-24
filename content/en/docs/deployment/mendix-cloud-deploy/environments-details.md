@@ -20,7 +20,7 @@ The **Environment Details** page shows information about the selected environmen
 
 ## Actions {#actions}
 
-On the top right side of the screen, there are buttons and a **More Options** ({{% icon name="three-dots-menu-horizontal"%}}) menu that you can use to perform various actions. Some action buttons are visible when your app is running, some are visible when your app is stopped, and some are always visible.
+On the top right side of the screen, there are a number of action buttons and a **More Options** ({{% icon name="three-dots-menu-horizontal"%}}) menu that you can use to perform various actions. Some action buttons are visible when your app is running, some are visible when your app is stopped, and some are always visible.
 
 {{% alert color="info" %}}Depending on your permissions, you may see only some of the action buttons described below. You can adjust your permissions settings on the [Permissions](/developerportal/deploy/node-permissions/) tab of your app's **Environments** page.{{% /alert %}}
 
@@ -129,7 +129,8 @@ In this section, you can find information about the deployment package that is l
 
 ### Plan Details
 
-This section shows details of the plan that applies to this environment:
+This section shows details of the plan that applies to this environment.    
+It also includes the option to change your plan. For details, refer to [Changing Plan](/developerportal/deploy/change-plan/).
 
 * **Name** – the type of plan associated with your license
 * **Instances** – the number and memory allocation of instances in the environment (for more information, see the [Scaling](#scaling))
@@ -320,7 +321,11 @@ document.cookie = "originURI=/login.html" + (window.location.protocol === "https
 
 #### Content Security Policy {#csp}
 
-A Content Security Policy informs the client (browser) where your page loads resources from. Setting this can make your app more secure by declaring trusted sources for your resources. For more information, see the W3C recommendation [Content Security Policy Level 2](https://www.w3.org/TR/CSP2/).
+A Content Security Policy (CSP) informs the client (browser) where your page loads resources from. Setting this can make your app more secure by declaring trusted sources for your resources. For more information, see the W3C recommendation [Content Security Policy Level 2](https://www.w3.org/TR/CSP2/).
+
+{{% alert color="info" %}}
+For complete CSP support, including nonce-based CSP, use the [Headers](/refguide/configuration/#headers) custom runtime setting instead of the HTTP Headers UI. For detailed implementation instructions, see [Content Security Policy](/howto/security/csp/).
+{{% /alert %}}
 
 The process for setting a full content security policy depends on what your app does. However, a starting point that declares the content security policy that works with a basic Mendix app is given below:
 
@@ -483,9 +488,12 @@ Click **Add** and select **Supported** to choose from the following variables:
 * **JVM_GARBAGE_COLLECTOR** – This overrides the automatic configuration of the Java garbage collector. Accepted values are `Serial` or `G1`.
 * **METRICS_AGENT_CONFIG** – This passes a configuration JSON to control the metrics passed to Datadog.
 * **SAMESITE_COOKIE_PRE_MX812** – This sets `SameSite=None;Secure` for all cookies coming from the Mendix runtime, as described in the [Running Your App in an Iframe](#iframe) section.
-* **USAGE_METRICS_EMAIL_FIELDS** – If your app uses specializations of the `System.User` entity to store users, use this variable to point to them. This enables Mendix to identify [internal and external users](/developerportal/deploy/populate-user-type/) of your app.
+* **USAGE_METRICS_EMAIL_FIELDS** (deprecated) – If your app uses specializations of the `System.User` entity to store users, use this variable to point to them. This enables Mendix to identify [internal and external users](/developerportal/deploy/populate-user-type/) of your app.
+
     * The value of this variable is in the format `Module.Entity.Attribute`, where `Module` is the module of your app that contains the `Entity` that is a specialization of `System.User` and `Attribute` is the attribute that contains the email address of the user.
     * If you have multiple specializations of `System.User`, you can specify the values in comma-separated format (that is, `Module1.Entity1.Attribute1,Module2.Entity2.Attribute2,…,ModuleN.EntityN.AttributeN`). In the following example, there are two specializations identified: `Administration.Account.Email,MendixSSO.MendixSSOUser.EmailAddress`.
+
+    To ensure accurate user metering, it is important to distinguish external users from internal users. The recommended approach is to implement logic in your app to classify users (see [Populate User Types](/developerportal/deploy/populate-user-type/) and the [User Classification](/appstore/modules/user-classification/) module). A previous method relied on using email domains via the `USAGE_METRICS_EMAIL_FIELDS` constant, as described above. However, this method has now been deprecated. 
 
 Unsupported environment variables can only be used to control Mendix beta features. To configure an unsupported variable, click **Add** and select **Unsupported**. If you are using a beta feature, you will be informed what **Name** and **Value** to enter.
 
@@ -541,9 +549,7 @@ If you want to add, edit, or delete a tag, make the change on the **Tags** tab a
 
 ## The Services Tab {#services}
 
-In the **Services** tab, the [Technical Contact](/developerportal/general/app-roles/#technical-contact) decides the custom services for each environment. You can then enable and disable these services for individual environments as needed. 
-
-The [Technical Contact](/developerportal/general/app-roles/#technical-contact) must first enable a service for the app before you can use it. For more information, see [Services](/developerportal/deploy/environments/#services).
+In the **Services** tab, the [Technical Contact](/developerportal/general/app-roles/#technical-contact) decides the custom services for each environment. The Technical Contact must first enable a service for the app, after which you can then activate or deactivate these services for individual environments as needed. For more information, see [Services](/developerportal/deploy/environments/#services). 
 
 ### Available Services
 
