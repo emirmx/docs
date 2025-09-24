@@ -9,7 +9,7 @@ cascade:
     - content_type: "Mendix Workstation"
 ---
 {{% alert color="info" %}}
-Mendix Workstation Client is [Limited Availability](https://docs.mendix.com/releasenotes/release-status/#limited-availability) for production use. Support will be provided according to your Mendix SLA if you purchased a Workstation. Please contact your CSM. Without a license you can use it for development, but Workspaces are individual and cannot be shared.
+Mendix Workstation Client is [Limited Availability](https://docs.mendix.com/releasenotes/release-status/#limited-availability) for production use. Support will be provided according to your Mendix SLA if you purchased a Workstation license. If you desire to take a Workstation Client into production, please contact your CSM to see which arrangements are possible. Without a license you can use it for development, but Workspaces are individual and cannot be shared.
 {{% /alert %}}
 
 ## Introduction
