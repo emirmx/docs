@@ -69,11 +69,10 @@ The tab page is hidden if there are no disk changes. Often, there are model chan
 
 ### Synchronizing Commit Content {#sync-commit-content}
 
-There are several components in StudioPro where files on disk need to be generated for the App to function. such as theme cache, JavaScript actions, Java Actions. 
+There are several components in Studio Pro where files on disk need to be generated for the App to function. For example: theme cache, JavaScript actions, and Java Actions. 
 
-These files are generated based on the Documents in the app. In some cases generation of these files takes a long time (typically proportional to the app size). This is why Mendix cannot add these generated files to *.gitignore* file – it might slow down app opening and cause errors. 
-Due to the above Mendix has introduced an additional step in **Prepare commit process** that ensures generated content is up to date and generation is complete before committing the changes to the repository. 
+These files are generated based on the Documents in the app. In some cases generation of these files takes a long time. Typically, the time taken is proportional to the app size. This is why Mendix cannot add these generated files to *.gitignore* file – it might slow down app opening and cause errors.
 
-The last step on the dialog below calls synchronization commit content. The **Progress** section shows the current type of syncronization:
+To ensure generated content is up to date and generation is complete before committing the changes to the repository, Mendix has introduced an additional step in **Prepare commit process**. This last step of the commit synchronizes the commit content. The **Progress** section shows the current type of synchronization.
 
-If any synchronization fails during this step the dialog below is displayed asking if it should continue or cancel commit process explaining the failures and statuses. The dialog lists only the synchronizers that have failed. 
+If any synchronization fails during this step, you are asked if the commit should continue or be cancelled, along with an explanation of the failures and statuses. Only synchronizations that have failed are shown.
