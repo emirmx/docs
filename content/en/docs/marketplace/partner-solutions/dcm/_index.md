@@ -9,10 +9,10 @@ beta: true
 
 ## Introduction
 
-[Mendix Dynamic Case Management](add link to Marketplace) (Mendix DCM) is an add-on module developed by Mendix in collaboration with CaseFabric.
-Mendix DCM enables complex process management, orchestration, and dynamic case management directly within Mendix apps using the CaseFabric case engine.
-Dynamic case management (DCM) is the process of using technology to facilitate complex cases.
-DCM helps organizations:
+[Mendix Dynamic Case Management](https://marketplace.mendix.com/link/component/242816) (Mendix DCM) is an add-on module developed by Mendix in collaboration with CaseFabric.
+Mendix DCM enables complex process management, orchestration, and dynamic case management directly within Mendix apps using the CaseFabric case engine.    
+
+Dynamic case management (DCM) is the process of using technology to facilitate complex cases. It helps organizations:
 
 * Act upon insights by managing dynamic business processes.
 * Eliminate inefficiencies caused by legacy systems.
