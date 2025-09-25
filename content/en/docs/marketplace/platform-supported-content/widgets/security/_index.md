@@ -35,6 +35,11 @@ You can enable `allowlist` CSP for [Color Picker](/appstore/widgets/color-picker
 style-src 'self' 'unsafe-inline';
 ```
 
+### Document viewer
+
+You can enable CSP for document viewer by setting up pdfjs worker url to local path.
+See document viewer [advanced](/appstore/widgets/document-viewer/#advanced) configuration for more detail.
+
 ### HTML/JavaScript Snippet
 
 For information on HTML/JavaScript Snippet widget CSP configurations, see [HTML/JavaScript Snippet CSP](/appstore/widgets/security/content-security-policy/html-javascript-snippet-csp/).
