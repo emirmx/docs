@@ -44,7 +44,7 @@ The Mendix DCM module is fully embedded into the Mendix application and runtime.
 
 ## Licensing and Availability
 
-* To obtain or renew a Mendix DCM license, fill in [this form](https://addon.mendix.com/index.html).
+* To obtain or renew a Mendix DCM license, contact your Mendix account manager.
 * Mendix DCM is available for projects based on Studio Pro 10.24 and above.
 * Mendix DCM is part of the Mendix price list. For more information or activation, contact your Mendix Customer Success Manager or your Sales representative.
 
