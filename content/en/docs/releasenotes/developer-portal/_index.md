@@ -21,6 +21,16 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
+### September 28, 2025
+
+#### Improvements
+
+* We have updated our Sidebar Navigation to logically group items and better align with our Software Development Lifecycle (SDLC) vision, making it even easier to find what you need.
+
+#### Fixes
+
+* We have resolved an issue that prevented users from saving a project with an empty description.
+
 ### September 25, 2025
 
 #### Improvements
