@@ -177,6 +177,24 @@ If the app has more than one instance, you will see lines on the graph for each 
 
 ## Additional Information{#additional-info}
 
+### Log Levels (`DD_LOG_LEVEL`){#log-levels}
+
+This variable is specific to the Datadog agent and controls the verbosity of the Datadog agent's own logs. It does not affect the [log level set in your app](/howto/monitoring-troubleshooting/log-levels/).
+
+Valid values are:
+
+* CRITICAL
+* ERROR
+* WARNING
+* INFO
+* DEBUG
+
+{{% alert color="info" %}}
+Use log levels such as `DEBUG` or `TRACE` only temporarily for troubleshooting purposes.
+{{% /alert %}}
+
+To control which logs are published to your APM tools, configure the settings on the [Log Levels](developerportal/operate/monitoring-with-apm/#tuning-log-levels) tab. 
+
 ### Datadog Regions (`DD_SITE`){#dd-regions}
 
 By default, the Datadog integration defaults to the US region (`datadoghq.com`). If you want to use a Datadog site that is in another region, go to the [Custom Environment Variables](/developerportal/deploy/environments-details/#custom-environment-variables) section of your Mendix app environment and add a `DD_SITE` custom environment variable. Set the variable's value to the relevant site. For example, for the EU Datadog site, set `DD_SITE` to `datadoghq.eu`.
