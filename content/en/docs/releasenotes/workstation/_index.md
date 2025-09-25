@@ -16,7 +16,7 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 
 {{% alert color="info" %}}
 
-**Limited Available Release of Mendix Workstation Client.**
+This is a Limited Availability release of the Mendix Workstation Client.
 
 Mendix Workstation Client is available for all Mendix users for development use. 
 
@@ -26,25 +26,23 @@ Mendix Workstation Client is [Limited Availability](https://docs.mendix.com/rele
 
 ### Improvements
 
-Improvements compared to version 2.4:
+#### Logging Is Configurable in Workspace Settings
 
-#### Logging is configurable in Workspace settings
-
-The level of logs written to log files and visible in the client is configurable in Workspace settings. It includes configuration of:
+The level of logs written to log files and visible in the client is configurable in Workspace Settings. You can configure the following:
 
 * Log level: Info, Warn, Error, Debug.
-* Log retention policy: Maximum log folder zize (in MB) and maximum number of stored days.
+* Log retention policy: Maximum log folder size (in MB) and maximum number of stored days.
 
-The workspace log level is overridden to ‘debug’ for a station configured in developer mode.
+The workspace log level is overridden to *Debug* for a station configured in developer mode.
 
-#### Edit Device in side panel
+#### Editing Devices in the Side Panel
 
 When editing a device, device settings are edited in a side panel. It makes device configure easier as all setting parameters are in one view and other device configurations can be viewed while editing.
 
-### Limitation and known bugs
+### Known Bugs and Limitations
 
-* Windows Workstation Client hangs when Smartcard reader detection is enabled and the ‘Smart Cards for Windows Service’ is disabled.
-* Workstation Client window is not visible when it was opened on a secondary screen and the secondary screen is no longer available.
+* Windows Workstation Client hangs when Smartcard reader detection is enabled and the *Smart Cards for Windows Service* is disabled.
+* The Workstation Client window is not visible when opened on a secondary screen and the secondary screen is no longer available.
 
 ## 2.6.0
 
