@@ -193,7 +193,7 @@ Valid values are:
 Use log levels such as `DEBUG` or `TRACE` only temporarily for troubleshooting purposes.
 {{% /alert %}}
 
-To control which logs are published to your APM tools, configure the settings on the [Log Levels](developerportal/operate/monitoring-with-apm/#tuning-log-levels) tab. 
+To control which logs are published to your APM tools, configure the settings on the [Log Levels](/developerportal/operate/monitoring-with-apm/#tuning-log-levels) tab. 
 
 ### Datadog Regions (`DD_SITE`){#dd-regions}
 
