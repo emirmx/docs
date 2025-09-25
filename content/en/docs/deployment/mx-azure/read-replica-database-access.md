@@ -45,11 +45,13 @@ By default, the read replica for Postgres database is disabled. To enable it, pe
 4. Add the users who should be able to access the replica database by performing the following steps:
 
     1. In the Azure portal, go to the resource group where you created the managed app.
-    2. Under the resource group, go to the managed resource group and click on the replica database resource.
+    2. Under the resource group, go to the managed resource group and click on the Postgres master database resource.
     3. Go to **Security > Authentication**
-    4. Add the required users.
+    4. Add a Microsoft Entra administrator.
 
     {{< figure src="/attachments/deployment/mx-azure/adduser.png" class="no-border" >}}  
+
+{{% alert color="info" %}}Do not delete the existing ServicePrincipal user.{{% /alert %}}
 
 ## Enabling Virtual Network Peering
 
