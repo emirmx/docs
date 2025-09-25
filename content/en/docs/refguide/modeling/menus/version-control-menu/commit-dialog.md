@@ -71,7 +71,7 @@ The tab page is hidden if there are no disk changes. Often, there are model chan
 
 There are several components in Studio Pro where files on disk need to be generated for the App to function. For example: theme cache, JavaScript actions, and Java Actions. 
 
-These files are generated based on the Documents in the app. In some cases generation of these files takes a long time. Typically, the time taken is proportional to the app size. This is why Mendix cannot add these generated files to *.gitignore* file – it might slow down app opening and cause errors.
+These files are generated based on the Documents in the app. In some cases generation of these files takes a long time. Typically, the time taken is proportional to the app size. These files are included as part of the commit so that the existing version can be used when the app is opened, preventing errors or delays in testing the app locally while new versions of the files are being generated.
 
 To ensure generated content is up to date and generation is complete before committing the changes to the repository, Mendix has introduced an additional step in **Prepare commit process**. This last step of the commit synchronizes the commit content. The **Progress** section shows the current type of synchronization.
 
