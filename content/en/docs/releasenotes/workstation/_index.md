@@ -15,13 +15,11 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 ### Release date: September 25, 2025
 
 {{% alert color="info" %}}
-
 This is a Limited Availability release of the Mendix Workstation Client.
 
 Mendix Workstation Client is available for all Mendix users for development use. 
 
 Mendix Workstation Client is [Limited Availability](https://docs.mendix.com/releasenotes/release-status/#limited-availability) for production use. Support is provided according to your Mendix SLA if you purchased a Workstation license. If you want to take the Mendix Workstation Client into production, contact your CSM to see what arrangements are possible. Without a license you can use the Mendix Workstation Client for development, but workspaces are individual and cannot be shared.
-
 {{% /alert %}}
 
 ### Improvements
