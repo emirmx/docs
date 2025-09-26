@@ -123,6 +123,7 @@ The following configurations are available:
 * **On change** – executes an action when the attribute value changes
 * **On enter action** – executes an action when the user sets focus on the widget
 * **On leave action** – executes an action when the user moves focus away from the widget
+* **On filter input change** – executes an action when the filter input value changes
 
 ### Accessibility Tab {#accessibility}
 
@@ -159,7 +160,7 @@ Using a **caption type** expression disables lazy load due to a technical limita
 
 * **Filter**
     * **Filter type** – allows the user to type into the input and filter displayable options on the combo box.
-    * **Debounce interval** – The debounce interval (default 200 ms) delays applying filters while the user types to reduce server requests and unnecessary filtering. It debounces both datasource filter operations (lazy-loading database queries) and custom "on filter input change" nanoflows/microflows, and applies to all search types (contains, starts-with, etc.).
+    * **Debounce interval** – The debounce interval (default 200 ms) delays applying filters while the user types to reduce server requests and unnecessary filtering. It debounces both datasource filter operations (lazy-loading database queries) and "on filter input change" events action trigger.
 
 ### Common Tab {#common}
 
