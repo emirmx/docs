@@ -69,11 +69,11 @@ Some only apply to specific component types, so follow the on-screen prompts for
 6. If you are uploading a widget, select the **Compatible with Mendix React Client** checkbox to indicate compatibility.    
    This checkbox is mandatory starting with Studio Pro 11.
    
-7. Add a version for your component. If this is the first version of the component you are uploading, the number in the **Version** section is automatically set to **1.0.0**. 
+7. Add a version for your component. If this is the first version of the component you are uploading, the number in the **Release Version** section is automatically set to **1.0.0**. 
 
 8. Enter **Release Notes** for the component in the box provided, describing what is new in that release.
 
-9. If you are uploading a solution, enter an email address in the **Contact Sales** field. This will be used by customers to reach out to you.
+9. If you are uploading a solution or an industry template, enter one or more email addresses in the **Contact Email(s)** field, then click **Add Email**. These email addresses will be used by customers to reach out to you.    
 
 ### Adding General Information
 
@@ -81,7 +81,7 @@ On the **General Information** tab, add more details about your component.
 
 1. Upload a cover image.
 
-2. In the **Component Tagline**, include a short description of what your component does.
+2. In the **Component Tagline** field, include a short description of what your component does.
 
 3. In the **About** field, describe the purpose and use cases of your component in detail.    
    You can use rich text in the editor. However, using rich text at the beginning of the description is not recommended, as it will not get rendered properly. You should add a few lines of regular text before using rich text.
@@ -164,7 +164,7 @@ In the **How would you like to receive information on new leads?** field, you mu
 
 ### Previewing the Component
 
-You can preview your component before publishing. To do that, click **Show Preview** on the **Media & Documentation** tab.
+Once all steps of the upload flow are completed, you can preview your component before publishing. To do that, click **Next** on the **Media & Documentation** tab.
 
 From the preview window, you can either return to the editing flow, or publish the component.
 
@@ -172,13 +172,9 @@ From the preview window, you can either return to the editing flow, or publish t
 
 <!-- to check and update -->
 
-Finally, on the **Publish** page, you can review all the details you entered so far, and edit them if necessary before publishing.
-
-{{< figure src="/attachments/appstore/submit-content/publish.png"   width="600" >}}
-
 After you click **Publish Content**, your draft will be reviewed by Mendix before it is visible in the Marketplace. 
 
-For details on the approval process, see [Governance Process](/appstore/submit-content/governance-process/).
+For details on the approval process, refer to [Governance Process](/appstore/submit-content/governance-process/).
 
 ## Updating Existing Marketplace Content {#updating}
 
