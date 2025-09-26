@@ -179,19 +179,7 @@ If the app has more than one instance, you will see lines on the graph for each 
 
 ### Log Levels (`DD_LOG_LEVEL`){#log-levels}
 
-This variable is specific to the Datadog agent and controls the verbosity of the Datadog agent's own logs. It does not affect the [log level set in your app](/howto/monitoring-troubleshooting/log-levels/).
-
-Valid values are:
-
-* CRITICAL
-* ERROR
-* WARNING
-* INFO
-* DEBUG
-
-{{% alert color="info" %}}
-Use log levels such as `DEBUG` or `TRACE` only temporarily for troubleshooting purposes.
-{{% /alert %}}
+`DD_LOG_LEVEL` controls the verbosity of Datadog agent logs. Use it solely for [troubleshooting Datadog agent](https://docs.datadoghq.com/agent/troubleshooting/debug_mode/) issues.
 
 To control which logs are published to your APM tools, configure the settings on the [Log Levels](/developerportal/operate/monitoring-with-apm/#tuning-log-levels) tab. 
 
