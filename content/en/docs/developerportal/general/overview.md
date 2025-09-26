@@ -1,5 +1,5 @@
 ---
-title: "Project Overview"
+title: "Overview"
 url: /developerportal/general/overview/
 weight: 1
 description: "Describes the Mendix Overview, which is the landing page for working on a Mendix app."

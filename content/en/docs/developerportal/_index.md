@@ -68,12 +68,14 @@ To go to the [licensed environments](/developerportal/deploy/environments/) of y
 
 You can open an app in [Apps](https://sprintr.home.mendix.com/) by clicking the app tile. After an app is open, you can navigate between sections using the navigation pane on the left side of the screen. 
 
-The navigation pane is divided into four main categories:
+The navigation pane is divided into these main categories:
 
 * [General](/developerportal/general/)
 * [Project Management](/developerportal/project-management/)
 * [App Insights](/developerportal/app-insights/)
+* [Repository]()
 * [Deployment](/developerportal/deploy/general/)
+* [Monitoring]()
 
 {{% alert color="info" %}}
 The features in the navigation pane can also be accessed via APIs, enabling third-party developers to integrate their own widgets and plugins. For more information, see [API Documentation](/apidocs-mxsdk/apidocs/).

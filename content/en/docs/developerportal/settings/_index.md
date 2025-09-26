@@ -1,7 +1,7 @@
 ---
 title: "Settings"
 url: /developerportal/collaborate/general-settings/
-weight: 14
+weight: 11
 description: "Describes the Settings page of your app."
 aliases:
     - /developerportal/settings/general-settings

@@ -8,7 +8,7 @@ weight: 10
 
 ## Introduction
 
-The App Repository API enables retrieving information (branches, commits) of application models stored in our [Team Server](/developerportal/general/team-server/).
+The App Repository API enables retrieving information (branches, commits) of application models stored in our [Team Server](/developerportal/repository/team-server/).
 
 ## Base URL
 

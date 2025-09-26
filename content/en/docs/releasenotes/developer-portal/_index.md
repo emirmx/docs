@@ -25,11 +25,11 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 #### Improvements
 
-* We have updated our Sidebar Navigation to logically group items and better align with our Software Development Lifecycle (SDLC) vision, making it even easier to find what you need.
+* We have updated our [navigation pane](/developerportal/#navigation-pane) in an effort to logically group items and better align with our Software Development Lifecycle (SDLC) vision. The new layout makes it even easier to find what you need at a glance. Check out the [Apps](/developerportal/) section for details.
 
 #### Fixes
 
-* We have resolved an issue that prevented users from saving a project with an empty description.
+* We have fixed an issue that prevented you from saving a project with an empty description.
 
 ### September 25, 2025
 
@@ -293,7 +293,7 @@ It is turned off by default. Scrum Master can switch it on in the Project Manage
 
 #### Fixes
 
-* We fixed a bug where the commit dates for git-enabled apps on the [Team Server](https://docs.mendix.com/developerportal/general/team-server/#revision-history) page were not correctly localized in some cases.
+* We fixed a bug where the commit dates for git-enabled apps on the [Team Server](https://docs.mendix.com/developerportal/repository/team-server/#revision-history) page were not correctly localized in some cases.
 
 ### September 26, 2024
 
@@ -309,7 +309,7 @@ It is turned off by default. Scrum Master can switch it on in the Project Manage
 
 #### Fixes
 
-* We fixed a bug where the commit dates for git-enabled apps on the [Team Server](/developerportal/general/team-server/#revision-history) page were not localized.
+* We fixed a bug where the commit dates for git-enabled apps on the [Team Server](/developerportal/repository/team-server/#revision-history) page were not localized.
 
 ### August 22, 2024
 
@@ -585,7 +585,7 @@ We have made the following improvements to the **Access Management** page in Por
 
 #### Improvements
 
-* When your company has connected its own [Identity Provider](/control-center/security/set-up-sso-byoidp/) to the Developer Portal, you should be using [personal access tokens](/mendix-profile/user-settings/#pat) to connect to the Team Server. To reflect this, we show a different URL on the [Team Server](/developerportal/general/team-server/) page.
+* When your company has connected its own [Identity Provider](/control-center/security/set-up-sso-byoidp/) to the Developer Portal, you should be using [personal access tokens](/mendix-profile/user-settings/#pat) to connect to the Team Server. To reflect this, we show a different URL on the [Team Server](/developerportal/repository/team-server/) page.
 
 #### Fixes
 
@@ -815,7 +815,7 @@ We have made the following improvements to the **Access Management** page in Por
 
 #### New Features
 
-* You can now use a [Personal Access Token](/mendix-profile/user-settings/#pat) to access SVN repositories in [Team Server](/developerportal/general/team-server/) without using your personal Mendix credentials.
+* You can now use a [Personal Access Token](/mendix-profile/user-settings/#pat) to access SVN repositories in [Team Server](/developerportal/repository/team-server/) without using your personal Mendix credentials.
 
 ### May 4, 2023
 
@@ -1243,7 +1243,7 @@ We have made the following improvements to the **Access Management** page in Por
 #### Improvements
 
 * We noticed our **API Keys** overview was not telling the exact truth and made some changes accordingly. Because API keys are cached by our user-provisioning system, when you revoke an API key, it takes a certain amount of time before this is reflected across the platform. A new confirmation message warns you of this.
-* We added a [Team Server revision history](/developerportal/general/team-server/#revision-history) overview page for your Git-enabled apps. This allows you to have an overview of the last 40 commits made in your app. You can filter the overview per branch. When a revision is linked to a user story, the Team Server page can bring you to the story details page.
+* We added a [Team Server revision history](/developerportal/repository/team-server/#revision-history) overview page for your Git-enabled apps. This allows you to have an overview of the last 40 commits made in your app. You can filter the overview per branch. When a revision is linked to a user story, the Team Server page can bring you to the story details page.
 
 #### Fixes
 
@@ -1317,7 +1317,7 @@ We have made the following improvements to the **Access Management** page in Por
 
 #### Fixes
 
-* We fixed a broken link to the documentation on the [Team Server](/developerportal/general/team-server/) page.
+* We fixed a broken link to the documentation on the [Team Server](/developerportal/repository/team-server/) page.
 
 ### June 1, 2021
 
