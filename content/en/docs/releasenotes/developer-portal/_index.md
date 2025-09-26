@@ -1000,7 +1000,7 @@ We have made the following improvements to the **Access Management** page in Por
 
 #### Improvements
 
-* You can now see your app history under the [General Settings](/#history) page. Previously this was located under the **Stories** page.
+* You can now see your app history under the [Settings](/developerportal/general-settings/#history) page. Previously, this was located under the **Stories** page.
 
 #### Fixes
 
