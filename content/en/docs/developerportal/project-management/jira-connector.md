@@ -47,7 +47,7 @@ To connect your app to Jira, perform the following steps:
 
 1. In [Apps](https://sprintr.home.mendix.com/), open your app.
 
-2. Go to the [Settings](/developerportal/collaborate/general-settings/) page.
+2. Go to the [Settings](/developerportal/general-settings/) page.
 
 3. Go to the **Project Management** tab.
 
