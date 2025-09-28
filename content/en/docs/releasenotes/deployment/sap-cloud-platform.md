@@ -14,6 +14,13 @@ For information on the current status of deployment to SAP BTP and any planned r
 
 ## 2025
 
+### September 28, 2025
+
+#### Portal Improvements
+
+* The Mendix on Kubernetes portal is now available in Japanese and Korean, enhancing the user experience for native speakers. Language preferences can be adjusted from [User Setting](https://user-settings.mendix.com/link/profile) Profile's Language Option.
+* The new side navigation in the portal is also available in Japanese and Korean languages.
+
 ### July 17, 2025
 
 #### New Features
