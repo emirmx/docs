@@ -21,38 +21,11 @@ To adopt Mendix on Azure, you need to have the following:
     * Permission to grant admin consent on the Mendix on Azure portal app registration
     * Owner role assigned on the target subscription
 
-{{% alert color="info" %}} To comply with the principle of least privilege, you can also create a custom role for the Mendix Operator instead of assigning the Owner or Contributor role. For the required permissions, see below:
+## Next Steps
 
-```text
-{
-    "properties": {
-        "roleName": "Mendix on Azure Operator",
-        "description": "",
-        "assignableScopes": [
-            "/subscriptions/<yoursubscriptionid>"
-    ],
-    "permissions": [
-        {
-            "actions": [
-            "*/register/action",
-            "Microsoft.Solutions/applications/*",
-            "Microsoft.Solutions/locations/operationstatuses/*",
-            "Microsoft.Resources/subscriptions/resourceGroups/*",
-            "Microsoft.Resources/deployments/*",
-            "Microsoft.Monitor/accounts/*",
-            "Microsoft.Authorization/roleAssignments/write",
-            "Microsoft.Authorization/roleAssignments/read"
-        ],
-        "notActions": [],
-        "dataActions": [],
-        "notDataActions": []
-        }
-    ]
-     }
-}
-```
+Once all the prerequisites are met, you will be granted access to the [Mendix on Azure](https://portal.azure.com/#create/mendixtechbv.mxonazure) offering in Azure Marketplace. You must use this listing to purchase and deploy to a resource group of your choice.
 
-{{% /alert %}}
+After purchasing the offering, you can initialize your first Mendix on Azure cluster by following the [installation instructions](https://docs.mendix.com/developerportal/deploy/mendix-on-azure/installation/).
 
 ## Licensing
 

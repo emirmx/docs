@@ -56,9 +56,13 @@ The [App Explorer](/refguide/app-explorer/) pane displays the complete structure
 
 For details on this virtual AI assistant, see [Best Practice Recommender](/refguide/best-practice-recommender/).
 
+### Call Hierarchy
+
+The **Call Hierarchy** pane displays the call hierarchy of a document (for example, a page, a microflow, a nanoflow, and more). This pane helps you understand the application connections, allowing you to visualize both incoming and outgoing calls. For more information on the **Call Hierarchy** pane and how to interact with it, see [Call Hierarchy Pane](/refguide/call-hierarchy-pane/). 
+
 ### Changes
 
-For version control-enabled apps (meaning, those with [Team Server](/developerportal/general/team-server/) or other Git servers), the [Changes pane](/refguide/changes-pane/) shows the local changes to the app since the last commit. You can commit changes, update to the latest revision, and view the history from here. 
+For version control-enabled apps (meaning, those with [Team Server](/developerportal/repository/team-server/) or other Git servers), the [Changes pane](/refguide/changes-pane/) shows the local changes to the app since the last commit. You can commit changes, update to the latest revision, and view the history from here. 
 
 This pane has two levels, so when you zoom into a changed document, you can review all the changes within that document without going back and forth between levels. The zoomed-in level of the pane is split into two grids, with elements on the left and properties on the right. Selecting an element on the left presents the changed properties on the right:
 
@@ -90,9 +94,9 @@ There are two **Find Results** panes. If you lock the results of the first pane,
 
 The [Integration pane](/refguide/integration-pane/) enables you to browse the [Catalog](/catalog/) and use registered data sources that are available for your organization in your app development. You can add [external entities](/refguide/external-entities/) and [external actions](/refguide/call-external-action/) to your app via this pane and see entities and data sources already consumed in your app. 
 
-### OpenAPI Documentation
+### OpenAPI Documentation {#api-documentation}
 
-The **OpenAPI Documentation** pane displays the auto-generated OpenAPI documentation for the currently opened [Published OData service](/refguide/published-odata-services/). This allows you to preview the REST operations that will be available once your app is published.
+The **OpenAPI Documentation** pane displays the auto-generated OpenAPI documentation for the currently opened [Published OData service](/refguide/published-odata-services/) or [Published REST service](/refguide/published-rest-service/). This allows you to preview the REST operations that will be available once your app is published.
 
 ### Maia
 
@@ -112,7 +116,7 @@ The **Properties** pane displays the properties of the currently selected elemen
 
 ### Stories
 
-For [Team Server](/developerportal/general/team-server/) app, the **Stories** pane shows the [stories](/developerportal/project-management/epics/planning/) of the current [Sprint](/developerportal/project-management/epics/planning/). For more information on the **Stories** pane and how to interact with it, see [Stories Pane](/refguide/stories-pane/). 
+For [Team Server](/developerportal/repository/team-server/) app, the **Stories** pane shows the [stories](/developerportal/project-management/epics/planning/) of the current [Sprint](/developerportal/project-management/epics/planning/). For more information on the **Stories** pane and how to interact with it, see [Stories Pane](/refguide/stories-pane/). 
 
 ### Toolbox {#toolbox}
 

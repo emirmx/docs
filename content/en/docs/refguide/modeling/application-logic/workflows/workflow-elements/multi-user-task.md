@@ -64,7 +64,7 @@ In case **Target users using** (an XPath or a microflow) results in an empty lis
 
 Specifies the expression used to assign the multi-user task. This option is displayed only when the [Target users using](#target-users) is set to **XPath**. Click **Edit** to edit the [XPath constraint](/refguide/xpath-constraints/).
 
-#### Microflow
+#### Microflow {#microflow-targeting}
 
 Specifies the microflow used to assign the multi-user task. This option is displayed only when the [Target users using](#target-users) is set to **Microflow**.
 
@@ -303,10 +303,6 @@ As an example, consider the trivial case where the quickest participant decides,
 {{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-elements/multi-user-task/microflow-decision.png" alt="Custom Microflow Decision Method" class="no-border" >}}
 
 #### Completion Moment {#completion-moment}
-
-{{% alert color="warning" %}}
-This property was added in Studio Pro 10.2. In Studio Pro 10.0 and 10.1, the multi-user task is marked as completed as soon as its outcome is known, and adding additional votes is not possible once the outcome is known. 
-{{% /alert %}}
 
 This property determines when the multi-user task is marked as completed. That can either be as soon as the outcome is known, meaning that sufficient participants have completed their task so that the final outcome is already determined, or after all participants have completed their task. This property has no influence on the final outcome of the multi-user task. 
 

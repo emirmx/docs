@@ -1,5 +1,5 @@
 ---
-title: "Set Up an SSO (BYOIDP)"
+title: "Setting Up an SSO (BYOIDP)"
 url: /control-center/security/set-up-sso-byoidp/
 weight: 30
 description: "Describes how you can use your company IdP to authenticate to Mendix."
@@ -25,8 +25,9 @@ This document describes the steps to set up a single sign-on configuration in Me
 The benefits of using BYOIDP SSO are:
 
 * **Security** – You are in control of the credentials and authentication of your platform users. You can, for example, apply password complexity rules and two-factor authentication (2FA). Users do not need to have separate credentials in the Mendix Platform to access the Mendix Portal.
-* **Access governance** – You are in control of denying access to the platform via SSO, for example when an employee has left the company or your corporate policy does not allow an employee to develop Mendix applications.
-* **Convenience** – Platform users have the convenience of SSO and don't have to manage credentials for the Mendix Platform.
+* **Access governance for platform users** – You are in control of denying access to the platform via SSO, for example when an employee has left the company or your corporate policy does not allow an employee to develop Mendix applications.
+* **Access governance for Mendix Admins** – Optionally, you can control who is a Mendix Admin on the Mendix platform using groups in your IdP, and you can synchronize that information during SSO. For more information, see [IdP-managed Mendix Admins](/control-center/security-settings/#idp-managed-mendix-admins).
+* **Convenience** – Platform users have the convenience of SSO and do not have to manage credentials for the Mendix Platform.
 
 ### Features
 
@@ -65,7 +66,7 @@ BYOIDP SSO has the following limitations.
 * If the user's email address is changed in your IdP, Mendix may not recognize it as the same account and will ask the user to set up a new Mendix account.
 * `login_hint` is not optional and is always sent as part of authentication requests to the IdP.
 * BYOIDP SSO only supports OIDC and does not support other protocols such as SAML.
-* Once BYOIDP is activated, direct access to the [Team Server](/developerportal/general/team-server/) is no longer possible using a username and password. To access code repositories from a pipeline, you need to use a personal access token (PAT).
+* Once BYOIDP is activated, direct access to the [Team Server](/developerportal/repository/team-server/) is no longer possible using a username and password. To access code repositories from a pipeline, you need to use a personal access token (PAT).
 * Mendix Platform APIs which require a PAT can use one which is created by a platform user. You cannot directly set up service accounts within Mendix once BYOIDP SSO is activated. You can set up a service-like account to consume Mendix Platform APIs in one of the following ways:
     * Use a personal account as if it were a service account
     * Create a service account in the company IdP
@@ -235,14 +236,14 @@ Existing users of the Mendix Portal can continue to use their accounts, but they
 
 ### BYOIDP and Team Server {#team-server}
 
-Once BYOIDP is activated, direct access to the Team Server is no longer possible. To access code repositories from a pipeline, you need to use a [PAT](/community-tools/mendix-profile/user-settings/#pat).
+Once BYOIDP is activated, direct access to the Team Server is no longer possible. To access code repositories from a pipeline, you need to use a [PAT](/mendix-profile/user-settings/#pat).
 
 Before activating BYOIDP, your developers should set up PATs for direct access to repos (for example, from CI/CD pipelines and/or Tortoise SVN) instead of using usernames and passwords.
 
 If developers have not created a PAT before BYOIDP SSO is activated, they can do so later, if needed.
 
 {{% alert color="info" %}}
-Access to Team Server through other mechanisms, such as via Studio Pro or using Mendix for Private Cloud, is not affected.
+Access to Team Server through other mechanisms, such as via Studio Pro or using Mendix on Kubernetes, is not affected.
 {{% /alert %}}
 
 ### Changing the Client Secret {#client-secret}

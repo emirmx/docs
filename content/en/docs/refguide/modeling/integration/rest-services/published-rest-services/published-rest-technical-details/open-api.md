@@ -15,10 +15,6 @@ Many of the popular API tools support OpenAPI 3.0, including [Postman](https://w
 
 A technical description is presented below, of which parts of the *openapi.json* file are generated.
 
-{{% alert color="info" %}}
-Exporting OpenAPI documentation in version 3.0 of the specification was introduced in Studio Pro [10.1.0](/releasenotes/studio-pro/10.1/).
-{{% /alert %}}
-
 ## Schema
 
 The main schema object documents the service.
@@ -54,3 +50,4 @@ Each operation generates an `Operation` object:
 | `parameters` | The path, query, and header parameters and their location and type information. |
 | `responses` | The OK response. If security is enabled, this is also the unauthorized response. |
 | `deprecated` | Set to true when the operation is marked as deprecated. |
+

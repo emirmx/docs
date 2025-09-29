@@ -55,7 +55,7 @@ To prevent your Free App going into sleep mode, upgrade to a licensed app runnin
 
 #### Archiving of Free Apps {#free-apps-archival}
 
-If a Free App has been in sleep mode for three months or longer, it may be archived. For Free Apps that are going to be archived, the [Technical Contact](/developerportal/general/app-roles/#technical-contact) is informed two weeks beforehand. Upon archiving, the project on the Mendix Platform and repository on the [Team Server](/developerportal/general/team-server/) are retained and will remain active and accessible, but the running app, database, files, and backups for the Free App are deleted.
+If a Free App has been in sleep mode for three months or longer, it may be archived. For Free Apps that are going to be archived, the [Technical Contact](/developerportal/general/app-roles/#technical-contact) is informed two weeks beforehand. Upon archiving, the project on the Mendix Platform and repository on the [Team Server](/developerportal/repository/team-server/) are retained and will remain active and accessible, but the running app, database, files, and backups for the Free App are deleted.
 
 There are two ways to prevent your Free App from being archived:
 
@@ -113,7 +113,7 @@ Apps that run on Mendix Cloud are automatically assigned their own URLs. The for
 | Licensed app | Test, acceptance, flexible environments | Depends on the region:<br /> `{app-name}-{environment-type}.mendixcloud.com`<br />or<br />`{app-name}-{environment-type}.apps.{region}.mendixcloud.com` | `myappname-accp.mendixcloud.com`, <br /> `myappname-accp.apps.ap-3a.mendixcloud.com` |
 | Free App     | N/A         | `{app-name}-sandbox.mxapps.io`<br />or<br />`{app-name}.mxapps.io` | `myfreeappname.mxapps.io` |
 
-{{% alert color="info" %}}Licensed apps run in Cloud Foundry clusters deployed on AWS. You can select the region for your app, but not for the cluster. Note that there can be multiple clusters in a region, and the URL of an app on some clusters in a region contains `apps.{region}`.{{% /alert %}}
+{{% alert color="info" %}}Licensed apps run in clusters deployed on AWS. You can select the region for your app, but not for the cluster. Note that there can be multiple clusters in a region, and the URL of an app on some clusters in a region contains `apps.{region}`.{{% /alert %}}
 
 For licensed apps, you can customize a URL by adding [custom domains](/developerportal/deploy/custom-domains/).
 
@@ -121,7 +121,7 @@ Mendix apps cannot use custom ports. They communicate on the standard HTTP and H
 
 ### Number of End-Users for Licensed Apps
 
-The number of end-users supported for your licensed app depends on your [pricing plan](#plans). End-users of your app are classified as either internal or external. You need to report this for licensing purposes, using either the [USAGE_METRICS_EMAIL_FIELDS custom variable](/developerportal/deploy/environments-details/#custom-environment-variables) (if you are using email domains to distinguish between end-users) or by [populating the user type](/howto/monitoring-troubleshooting/populate-user-type/) for each end-user of your app. Only end-users whose Mendix accounts are marked as **Active** are counted towards the number of end-users of the app.
+The number of end-users supported for your licensed app depends on your [pricing plan](#plans). End-users of your app are classified as either internal or external. You need to report this for licensing purposes, using either the [USAGE_METRICS_EMAIL_FIELDS custom variable](/developerportal/deploy/environments-details/#custom-environment-variables) (if you are using email domains to distinguish between end-users) or by [populating the user type](/developerportal/deploy/populate-user-type/) for each end-user of your app. Only end-users whose Mendix accounts are marked as **Active** are counted towards the number of end-users of the app.
 
 ### Supported Mendix Versions {#mendix-cloud-supported-versions}
 
@@ -149,7 +149,7 @@ For more information, see [Pricing](https://www.mendix.com/pricing/).
 
 ### Cloud Resource Packs {#resource-pack}
 
-Mendix environments are sized by reference to cloud resource packs. These resources are used for application runtime as well as anything else required to run your application, such as agents for any third-party integrations that you have added. The table below shows the current cloud resource packs for Standard, Premium, and Premium Plus plans. Resources for the Basic plan are fixed as described in [Mendix Basic Package](/developerportal/deploy/basic-package/).
+Mendix environments are sized by reference to cloud resource packs. These resources are used for application runtime as well as anything else required to run your application, such as agents for any third-party integrations that you have added. The table below shows the current cloud resource packs for Standard, Premium, and Premium Plus plans.
 
 If you have a Standard, Premium, or Premium Plus plan, you can redeem virtual credits known as cloud tokens to purchase cloud resource packs on the Mendix Platform. For more information about how this works, see [Entitlements](/control-center/entitlements/).
 
@@ -219,9 +219,9 @@ With Regional Fallback, a copy of your database and FileDocuments is maintained 
 
 Because this is designed for a catastrophic regional failure, there are some limitations to your normal operations. For example, you cannot deploy a new version of the app while it is running in the secondary region. The decision to switch to the secondary region is completely under your control.
 
-#### On-Premises and Private Cloud
+#### On-Premises and Mendix on Kubernetes
 
-If you want to deploy your Mendix apps to other environments, you can add these to your Mendix plan. For example, you can deploy to [SAP BTP](/developerportal/deploy/sap-cloud-platform/) or your own cloud using [Mendix for Private Cloud](/developerportal/deploy/private-cloud/).
+If you want to deploy your Mendix apps to other environments, you can add these to your Mendix plan. For example, you can deploy to [SAP BTP](/developerportal/deploy/sap-cloud-platform/) or your own cloud using [Mendix on Kubernetes](/developerportal/deploy/private-cloud/).
 
 ## Read More
 

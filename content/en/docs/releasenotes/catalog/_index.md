@@ -14,6 +14,16 @@ These release notes cover changes made to the [Catalog](/catalog/).
 
 ## 2025
 
+### September 25, 2025
+
+#### Features
+
+* We added support to parse relevant metadata from OpenAPI contracts. 
+
+#### Fixes
+
+* We improved storage, indexing, and discoverability to promote more advanced use cases.
+
 ### January 30, 2025
 
 #### Fixes
@@ -335,7 +345,7 @@ These release notes cover changes made to the [Catalog](/catalog/).
 
 #### Features
 
-* We added [beta](/releasenotes/beta-features/) support for published REST services (OpenAPI) to the Catalog. REST services in your Mendix app are now automatically registered when you deploy to Mendix Cloud. Have a look and [let us know what you think](https://community.mendix.com/link/space/catalog).
+* We added [beta](/releasenotes/release-status/) support for published REST services (OpenAPI) to the Catalog. REST services in your Mendix app are now automatically registered when you deploy to Mendix Cloud. Have a look and [let us know what you think](https://community.mendix.com/link/space/catalog).
 
 #### Improvements
 
