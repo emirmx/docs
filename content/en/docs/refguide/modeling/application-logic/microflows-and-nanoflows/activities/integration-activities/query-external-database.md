@@ -19,6 +19,10 @@ To learn how to use this activity in a microflow and configure other aspects of 
 
 ## Properties
 
+{{% alert color="info" %}}
+Prior to Mendix 11.3.0, some of these properties were grouped in different sections.
+{{% /alert %}}
+
 Double-click the **Query External Database** activity to view its properties.
 
 The **General** section contains the following properties, which are used to provide dynamic connection parameter values:
