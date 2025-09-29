@@ -20,9 +20,9 @@ The Mendix Marketplace is driven by contributions from community members who sha
 
 Before diving in, make sure you have read [Marketplace Overview](/appstore/overview/) and [Using Marketplace Content](/appstore/use-content/).
 
-## Adding New Marketplace Content {#adding}
+## Creating New Marketplace Content {#adding}
 
-To get started, click **Add Content** in the left pane of the Marketplace home screen. You are presented with the **Before You Get Started** dialog, which outlines the resources you will need for uploading your component.
+To get started, click **Create Content** in the left pane of the Marketplace home screen. You are presented with the **Before You Get Started** dialog, which outlines the resources you will need for uploading your component.
 
 Once you make sure you have everything, click **Next**, then go through the steps in the following sections to add content.    
 Some fields are mandatory, while others are optional — this is indicated in the user interface.
