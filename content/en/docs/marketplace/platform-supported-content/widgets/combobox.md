@@ -162,7 +162,7 @@ Using a **caption type** expression disables lazy load due to a technical limita
 
 * **Filter**
     * **Filter type** – Allows the user to type into the input and filter displayable options on the combo box.
-    * **Debounce interval** – The debounce interval (default 200 ms) delays applying filters while the user types to reduce server requests and unnecessary filtering. It debounces both data source filter operations (lazy-loading database queries) and "on filter input change" events action trigger.
+    * **Debounce interval** – The debounce interval (default 200 ms) delays applying filters while the user types to reduce server requests and unnecessary filtering. It debounces both data source filter operations (lazy-loading database queries), and **On filter input change** event action triggers.
 
 ### Common Tab {#common}
 
