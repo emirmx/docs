@@ -9,7 +9,7 @@ description: "Describes the configuration and usage of the Siemens Capital conne
 
 The Siemens [Capital](https://plm.sw.siemens.com/en-US/capital/) electrical and electronics (E/E) software tools help design and develop electrical and electronic systems, including system architecture, communication networks, and embedded software. 
 
-The Mendix [Capital connector](https://marketplace.mendix.com/) consists of microflows that help you authenticate with Capital, effortlessly get Capital data into your Mendix app, and build custom implementations tailored to your needs.    
+The Mendix [Capital connector](https://marketplace.mendix.com/link/component/247337) consists of microflows that help you authenticate with Capital, effortlessly get Capital data into your Mendix app, and build custom implementations tailored to your needs.    
 
 ### Licensing
 
