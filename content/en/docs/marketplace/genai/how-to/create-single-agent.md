@@ -36,7 +36,7 @@ Before building an agent in your app, make sure your scenario meets the followin
 
 * It is recommended to start in Mendix Studio Pro 10.24.0 or above to use the latest versions of the GenAI modules.
 
-* Installation: install the [GenAI Commons](https://marketplace.mendix.com/link/component/239448), [Agent Commons](https://marketplace.mendix.com/link/component/240371), [MxGenAI Connector](https://marketplace.mendix.com/link/component/239449), and [ConversationalUI](https://marketplace.mendix.com/link/component/239450) modules from the Mendix Marketplace. If you want to empower your agent with tools available via the Model Context Protocol (MCP), you need to download [MCP CLient module](https://marketplace.mendix.com/link/component/244893), too. If you start from the Blank GenAI App, you can skip installing any of specified modules.
+* Installation: install the [GenAI Commons](https://marketplace.mendix.com/link/component/239448), [Agent Commons](https://marketplace.mendix.com/link/component/240371), [MxGenAI Connector](https://marketplace.mendix.com/link/component/239449), and [ConversationalUI](https://marketplace.mendix.com/link/component/239450) modules from the Mendix Marketplace. If you want to empower your agent with tools available via the Model Context Protocol (MCP), you need to download [MCP Client module](https://marketplace.mendix.com/link/component/244893), too. If you start from the Blank GenAI App, you can skip installing any of specified modules.
 
 * Intermediate understanding of Mendix: knowledgeable of simple page building, microflow modelling, domain model creation and import/export mappings.
 
@@ -496,7 +496,7 @@ As a second function, the model can pass an identifier if the user asked for det
   
 #### Connect Functions via MCP 
 
-Instead of using local functions, you can also add functions available via MCP. To add them in `ACT_TicketHelper_CallAgent`, you have two options available inside of the MCP CLient module's **USE_ME** folder: 
+Instead of using local functions, you can also add functions available via MCP. To add them in `ACT_TicketHelper_CallAgent`, you have two options available inside of the MCP Client module's **USE_ME** folder: 
  
 * Use `Request_AddAllMCPToolsFromServer` to add all functions available on a selected MCP server to the request
 * Use `Request_AddSpecificMCPToolFromServer` to specify individual functions by name (e.g., RetrieveTicketByIdentifier) and optionally override their tool descriptions
