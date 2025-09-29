@@ -47,11 +47,11 @@ These are the dimension configurations for document viewer:
 
 ## Advanced {#advanced}
 
-The **Advanced** tab allows you to configure settings for features that is beyond the normal configurations.
+The **Advanced** tab allows you to configure settings for features beyond the normal configurations:
 
-* **PDF.js worker URL** — Configure the path for pdfjs worker script. This worker script is needed to render PDF type document using [pdfjs](https://github.com/mozilla/pdf.js?tab=readme-ov-file#including-via-a-cdn) library. 
-    * If left empty, the document viewer widget will retrieve pdfjs from CDN `http://unpkg.com/pdfjs-dist@4.8.69/build/pdf.worker.min.mjs`.
-    * Alternatively, user can grab `pdf.worker.mjs` from `[Local Development Project Folder]/deployment/web/widgets/com/mendix/shared/pdfjs/pdf.worker.mjs` and put it into their own `App Module -> Styling/web/js/pdf.worker.mjs` and set "`./js/pdf.worker.mjs`" as the worker URL configurations. This is recommended practice to support [CSP](/howto/security/csp/).
+* **PDF.js worker URL** — Configures the path for PDF.js worker script. This worker script is needed to render PDF type document using a [PDF.js](https://github.com/mozilla/pdf.js?tab=readme-ov-file#including-via-a-cdn) library. 
+    * If left empty, the document viewer widget will retrieve PDF.js from CDN `http://unpkg.com/pdfjs-dist@4.8.69/build/pdf.worker.min.mjs`.
+    * Alternatively, users can grab `pdf.worker.mjs` from `{LOCAL DEV PROJECT FOLDER HERE}/deployment/web/widgets/com/mendix/shared/pdfjs/pdf.worker.mjs`, put it into their own `App Module -> Styling/web/js/pdf.worker.mjs` file, and then set `./js/pdf.worker.mjs` as the worker URL configuration. This is the recommended practice to support [CSP](/howto/security/csp/).
 
 
 ### Common Tab
