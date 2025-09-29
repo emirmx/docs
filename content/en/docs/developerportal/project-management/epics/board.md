@@ -10,20 +10,32 @@ The **Board** page gives an overview of all the stories that your team is curren
 
 In the upper-right corner of the page, you can find the following items:
 
-* **Create Story** – Enables you to create a new story.    
-    You can also use **Maia Create User Story**, an AI-assisted tool, to create a user story for you. To access it, click **Create Story**, then choose the **Create with Maia** option.    
-    Note that this option is disabled by default. To enable it, open the **Settings** by clicking the **...** button next to **Create Story**, then, on the **Mendix AI Assistance** tab, toggle the option on. Only Scrum Masters can modify this setting.
+* **Create Story** — Enables you to create a new story.    
+    You can also use Maia to create a story. Refer to the [Creating and Refining Stories with Maia](#create-with-maia) section.
 
-* **Create Epic** – Enables you to create a new epic.
+* **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) — Clicking this displays the following options:
 
-* **Settings** — Enables you to configure board settings, as follows:
+    * **Create Epic** — Enables you to create a new epic.
+    * **Settings** — Enables you to configure board settings, as follows:
 
-    * Configure tags.
-    * Switch between the Scrum and Kanban board types.
-    * Configure toast notifications.
-    * Choose whether to use Maia in Epics.
+        * Configure tags.
+        * Switch between the Scrum and Kanban board types.
+        * Configure toast notifications.
   
-* Search box – You can search stories based on story title, tags, epic name, assignee (including unassigned stories), and story ID. You can use the search box in combination with the filter.
+* Search box — You can search stories based on story title, tags, epic name, assignee (including unassigned stories), and story ID. You can use the search box in combination with the filter.
+
+## Creating and Refining Stories with Maia {#create-with-maia}
+
+Follow these steps to create a story with Maia:
+
+1. Enable Maia in the app [Settings](/developerportal/general-settings/#maia-settings) page.
+2. Click **Create Story**, then click {{% icon name="sparkles" %}}**Create with Maia**.     
+   If Maia is enabled, the **Create Story with Maia** window is displayed.    
+   If Maia is not enabled, you are given the option to activate it on the spot, from the **Enable Maia** window.
+3. Enter your input, then click **Generate Story**.
+4. Check the suggestion provided by Maia. You can click **Apply to Story** if you agree with the suggestion, or you can choose to regenerate it.
+
+To refine an existing story using Maia, open it, and click **Refine with Maia** ({{% icon name="sparkles" %}}).
 
 ## Swimlanes {#swimlane}
 
@@ -47,7 +59,7 @@ You can move a swimlane by dragging it to the new location.
 
 ### Story Cards {#story-card}
 
-Each card in a swimlane represents a story:
+Each card in a swimlane represents a story.
 
 {{< figure src="/attachments/developerportal/project-management/epics/board/story-card.png" class="no-border" >}}
 
@@ -63,7 +75,7 @@ A story card shows the following details:
 * ⑧ Points of the story
 * ⑨ To whom the story is assigned
 
-You can [archive](/developerportal/project-management/epics/archive/) or delete a story as follows: click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) on the upper-right corner of the card, and then select the corresponding option:
+You can [archive](/developerportal/project-management/epics/archive/) or delete a story by clicking **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) in the upper-right corner of the card, then selecting the corresponding option.
 
 {{< figure src="/attachments/developerportal/project-management/epics/board/archive-delete-story.png" class="no-border" >}}
 
@@ -107,6 +119,9 @@ The story details dialog box shows the following items:
 * **Story Points** – You can set the story points to an integer.
 
 * **Attached Files** – You can add attached files by clicking **+**.
+
+* **Feedback** – This displays any feedback items that are linked to the story.     
+    To unlink a feedback item from a story, click its corresponding {{% icon name="unlink" %}} **unlink** button.
 
 * **Audit Trail** – This gives information on all the updates related to the story, including who did the update and when:
    

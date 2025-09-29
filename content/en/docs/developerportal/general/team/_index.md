@@ -17,7 +17,7 @@ To view and manage your team members, follow these steps:
 
 ## Managing the Team {#managing}
 
-Team members with the [Scrum Master](/developerportal/general/app-roles/#team-roles) role or [Mendix Administrators](/control-center/company-settings/#mendix-admins) can manage the app team.
+Team members with the [Scrum Master](/developerportal/general/app-roles/#team-roles) role or [Mendix Admins](/control-center/mendix-admins-page/) can manage the app team.
 
 {{< figure src="/attachments/developerportal/general/team/team.png" >}}
 
@@ -31,11 +31,11 @@ Navigate to the **Pending Invites** tab for an overview of all sent and unaccept
 
 ## Inviting Team Members {#inviting}
 
-Anyone with invitation permissions in their app role can invite new team members. When you invite a new team member, you can select a role with the same or less permissions as your own. The notable exception is when [Mendix Admins](/control-center/company-settings/#mendix-admins) invite new team members. They can appoint any role to any team member.
+Anyone with invitation permissions in their app role can invite new team members. When you invite a new team member, you can select a role with the same or less permissions as your own. The notable exception is when [Mendix Admins](/control-center/mendix-admins-page/) invite new team members. They can appoint any role to any team member.
 
 To invite new team members, follow these steps:
 
-1. Click **Invite Member** on the **Team** page, or **Invite someone to your team** ({{% icon name="add-circle" %}}) next to the team in the [app Buzz](/developerportal/general/buzz/).
+1. Click **Invite Member** on the **Team** page or **Invite someone to your team** ({{% icon name="add-circle" %}}) next to the team in the [app Overview](/developerportal/general/overview/).
 2. Enter the email address for the Mendix users you want to invite to the team.
 3. Select an **Access Role** for the new members, and click **Add**.
 4. Send the invitation.

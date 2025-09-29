@@ -24,8 +24,6 @@ Follow these steps to create a new app and start collaborating:
 
 1. In **Apps**, click **Create App** in the upper-right corner. A screen opens to guide you through the process.
 
-    {{< figure src="/attachments/developerportal/create-app-step-1.png" alt="Create App Step One" >}}
-
 2. Enter the following information for your app:
 
     * **App name** – Every app must have a name that abides by these requirements:
@@ -36,11 +34,9 @@ Follow these steps to create a new app and start collaborating:
 
     * **App description (Optional)** – Give your app a short description. This is optional.
     
-    * **App icon** – Mendix has generated an icon for your app. You can change the color of the icon if you like. You can upload a custom icon in the [App Settings](/developerportal/collaborate/general-settings/#general) page once you have created the app.
+    * **App icon** – Mendix has generated an icon for your app. You can change the color of the icon if you like. You can upload a custom icon in the [App Settings](/developerportal/general-settings/#general) page once you have created the app.
 
-3. Click **Next** in the lower-right corner to go to step 2.
-
-    {{< figure src="/attachments/developerportal/create-app-step-2.png" alt="Create App Step Two" max-width=50% >}}
+3. Click **Next** to go to step 2.
 
 4. Select a starter app template on which the app will be based. The most used starter app templates are displayed.    
 
@@ -66,22 +62,20 @@ To stop watching an app and disable notifications for that app, click the {{% ic
 
 By clicking **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) in the app tile, you can quickly perform the actions **Edit in Mendix Studio Pro** and **Leave App**.
 
-{{< figure src="/attachments/developerportal/quick-action-menu.png" alt="Quick actions menu for an app" width="50%" >}}
-
 To go to the [licensed environments](/developerportal/deploy/environments/) of your deployed app, click **Environments** at the bottom of the app tile.
 
 ### Navigation Pane {#navigation-pane}
 
 You can open an app in [Apps](https://sprintr.home.mendix.com/) by clicking the app tile. After an app is open, you can navigate between sections using the navigation pane on the left side of the screen. 
 
-The navigation pane is divided into four main categories:
+The navigation pane is divided into these main categories:
 
 * [General](/developerportal/general/)
 * [Project Management](/developerportal/project-management/)
 * [App Insights](/developerportal/app-insights/)
+* [Repository]()
 * [Deployment](/developerportal/deploy/general/)
-
-{{< figure src="/attachments/developerportal/navigation-pane.png" alt="The navigation pane" width="45%" >}}
+* [Monitoring]()
 
 {{% alert color="info" %}}
 The features in the navigation pane can also be accessed via APIs, enabling third-party developers to integrate their own widgets and plugins. For more information, see [API Documentation](/apidocs-mxsdk/apidocs/).

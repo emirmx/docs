@@ -9,7 +9,7 @@ description: "Describes the Planning page in Epics. This page looks different, d
 
 The **Planning** page shows all your stories.
 
-The main area of the **Planning** page lists all the stories in different categories. Each row represents a story:
+The main area of the **Planning** page lists all the stories in different categories. Each row represents a story.
 
 {{< figure src="/attachments/developerportal/project-management/epics/planning/story-kanban.png" class="no-border" >}}
 
@@ -31,10 +31,9 @@ In the upper-left corner of the page, you can use the search box to search stori
 In the upper-right corner of the page, you can see two buttons:
 
 * **Create Story** – Clicking this enables you to create a new story.    
-    You can also use **Maia Create User Story**, an AI-assisted tool, to create a user story for you. To access it, click **Create Story**, then choose the **Create with Maia** option.    
-    Note that this option is disabled by default. To enable it, open the **Settings** by clicking the **...** button next to **Create Story**, then, on the **Mendix AI Assistance** tab, toggle the option on. Only Scrum Masters can modify this setting.
+    You can also use Maia to create a story. Refer to the [Creating and Refining Stories with Maia](#create-with-maia) section.
 
-* **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) – Clicking this shows the following options:
+* **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) – Clicking this displays the following options:
     * **Create Epic** – This enable you to create an epic.
     * **Edit Sprint** (only available for [a Scrum workflow](#scrum-planning)) – This enables you to edit the current Sprint.
     * **End Sprint** (only available for [a Scrum workflow](#scrum-planning)) – This enables you to the current Sprint.
@@ -44,7 +43,20 @@ In the upper-right corner of the page, you can see two buttons:
     * **Board Settings** – Clicking this enables you configure the board settings.
         * For more information, see the [Board Settings](#settings) section.
 
-### Selecting, Moving, Archiving, and Deleting Stories 
+## Creating and Refining Stories with Maia {#create-with-maia}
+
+Follow these steps to create a story with Maia:
+
+1. Enable Maia in the app [Settings](/developerportal/general-settings/#maia-settings) page.
+2. Click **Create Story**, then click {{% icon name="sparkles" %}}**Create with Maia**.     
+   If Maia is enabled, the **Create Story with Maia** window is displayed.    
+   If Maia is not enabled, you are given the option to activate it on the spot, from the **Enable Maia** window.
+3. Enter your input, then click **Generate Story**.
+4. Check the suggestion provided by Maia. You can click **Apply to Story** if you agree with the suggestion, or you can choose to regenerate it.
+
+To refine an existing story using Maia, open it, and click **Refine with Maia** ({{% icon name="sparkles" %}}).
+
+## Selecting, Moving, Archiving, and Deleting Stories 
 
 To select a story, select the checkbox for the story when the mouse pointer becomes a pointing hand:
 
@@ -62,7 +74,7 @@ To move multiple stories, select these stories, choose the category name where t
 
 {{< figure src="/attachments/developerportal/project-management/epics/planning/move-multiple-stories.png" class="no-border" >}}
 
-To [archive](/developerportal/project-management/epics/archive/) or delete a story, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) at the end of the row, then select the corresponding option:
+To [archive](/developerportal/project-management/epics/archive/) or delete a story, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) at the end of the row, then select the corresponding option.
 
 {{< figure src="/attachments/developerportal/project-management/epics/planning/archive-delete-story-kanban.png" class="no-border" >}}
 
@@ -89,7 +101,8 @@ The **Planning** page offers different features to accommodate two different wor
 
 If your board style is Scrum, you can find the features below which accommodate your Scrum workflow.
 
-If there is an active Sprint, on the upper-left corner, you can find the name of the Sprint, when it ends, and how many stories and points it has. If you hover over the goal icon, you can see the goal of the Sprint:
+If there is an active Sprint, in the upper-left corner, you can find the name of the Sprint, when it ends, and how many stories and points it has.     
+If you hover over the goal icon, you can see the goal of the Sprint.
 
 {{< figure src="/attachments/developerportal/project-management/epics/planning/scrum-planning.png" class="no-border" >}}
 
@@ -106,7 +119,8 @@ On the upper-right corner, you can find these Scrum items if you click **More Op
 
 ### Kanban Planning {#kanban-planning}
 
-If your board type is Kanban, the stories are grouped in these categories: **To Do**, **Refinement**, and **Backlog**. At the top of each category, you can see the total number of stories and points.
+If your board type is Kanban, the stories are grouped in these categories: **To Do**, **Refinement**, and **Backlog**.     
+At the top of each category, you can see the total number of stories and points.
 
 {{< figure src="/attachments/developerportal/project-management/epics/planning/kanban-planning.png" class="no-border" >}}
 
@@ -114,10 +128,7 @@ If your board type is Kanban, the stories are grouped in these categories: **To 
 
 You can import your stories using an Excel file to Epics as follows:
 
-1. In the upper-right corner of the **Planning** page, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) and then click **Import Stories**.
-
-   {{< figure src="/attachments/developerportal/project-management/epics/planning/import-stories.png" class="no-border" >}}
-
+1. In the upper-right corner of the **Planning** page, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}), then click **Import Stories**.    
    The **Import Stories From Excel** dialog box opens.
 
 2. Click **Download** to download the Excel file template.
@@ -160,9 +171,7 @@ You can find all the imported stories in the **Backlog**.
 
 You can export your stories on the **Planning** page to an Excel file as follows:
 
-1. On the upper-right corner of the **Planning** page, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}), then click **Export Stories**.
-
-   {{< figure src="/attachments/developerportal/project-management/epics/planning/export-stories.png" class="no-border" >}}
+1. In the upper-right corner of the **Planning** page, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}), then click **Export Stories**.
 2. Select where you want to export stories from.
 3. Click **Continue** to see a preview of the Excel file.
 4. Click **Export to Excel**.
@@ -197,6 +206,6 @@ On this tab, you can switch between a Scrum workflow and Kanban workflow. The wo
 
 ### Toast Settings
 
-On this tab, you can enable or disable the toast notifications that appear like this:
+On this tab, you can enable or disable the toast notifications that are displayed along the screen.
 
 {{< figure src="/attachments/developerportal/project-management/epics/planning/toast-notification.png" width="500px" class="no-border" >}}

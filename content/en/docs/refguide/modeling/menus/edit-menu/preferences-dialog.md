@@ -173,7 +173,7 @@ This setting allows users to specify a path for Git installation in their system
 
 #### Enable Private Version Control with Git {#enable-with-Git}
 
-Select this option when you want to work on an app that is not stored in [Mendix Team Server](/developerportal/general/team-server/), but in a private Git server, which you have access to. This allows you to specify the location of the app on the Git server when opening, downloading, or uploading the app. With this setting you also need to specify [name and email](#name) that will be used to identify your commits with Git.
+Select this option when you want to work on an app that is not stored in [Mendix Team Server](/developerportal/repository/team-server/), but in a private Git server, which you have access to. This allows you to specify the location of the app on the Git server when opening, downloading, or uploading the app. With this setting you also need to specify [name and email](#name) that will be used to identify your commits with Git.
 
 #### Name and Email {#name}
 
@@ -239,9 +239,7 @@ This option sets the default page editor mode that your page opens in: **Structu
 
 ### Language {#language}
 
-This feature is currently in beta.
-
-This option allows you to change the user interface language you work in while using Studio Pro. At this time, English, Japanese, Chinese, Korean, and Brazilian Portuguese are supported. You must restart Studio Pro in order to use this feature.
+This option allows you to change the user interface language you work in while using Studio Pro. At this time, English, Japanese, Chinese, Korean, and Brazilian Portuguese (Beta) are supported. You must restart Studio Pro in order to use this feature.
 
 ### Editor Tabs Closing Policy {#closing-policy}
 
@@ -311,7 +309,7 @@ This setting, currently in beta, allows entities to be used in offline navigatio
 
 ### System Texts Editor
 
-The web version of the system texts editor is currently an experimental feature. Enable this option to use the web version of the editor. 
+This option allows you to use the web version of the system texts editor. It is enabled by default.
 
 If Translation Generator is also enabled, you can use it in this editor as well. For more information, see the [Generating Translation for System Texts](/refguide/translation-generator/#translate-system-text) section in *Translation Generator*.
 

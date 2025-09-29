@@ -20,7 +20,7 @@ The **Environments** page has the following tabs:
 * **Deployment Packages**
 * **Permissions**
 * **Activity**
-* **Request Overview**
+* **Change Requests**
     
 ### Overview Tab{#overview-tab}
 
@@ -36,10 +36,10 @@ You can see the following details for each environment shown in the **Overview**
 * The Studio Pro Target ({{< icon name="mendix-browser" >}}) – This is displayed if the environment is the designated Studio Pro target. For more information, see [Studio Pro Deployment Settings](/developerportal/deploy/studio-deployment-settings/).
 * Licensed badge – This is displayed if the environment is licensed.
 * The environment's status:
-    * {{< icon name="checkmark-circle-filled" color="green" >}} – The application in this environment is running.
-    * {{< icon name="subtract-circle-filled" color="gray" >}} – No application has been started yet in this environment, or the application has been turned off.
-    * {{< icon name="alert-circle-filled" color="yellow" >}} – The application in this environment is experiencing some difficulties. Check the alerts page or logs for more information.
-    * {{< icon name="remove-circle-filled" color="red" >}} – The application in this environment is unstable and probably not usable anymore.
+    * {{% icon name="checkmark-circle-filled" color="green" %}} – The application in this environment is running without any alerts.
+    * {{% icon name="subtract-circle-filled" color="gray" %}} – No application has been started yet in this environment, or the application has been turned off.
+    * {{% icon name="alert-circle-filled" color="yellow" %}} – The application in this environment is running, but has warning alerts, which might result in difficulties. For more information, refer to the [alerts page](/developerportal/operate/monitoring-application-health/#alerts-page) or [logs](/developerportal/operate/logs/).
+    * {{% icon name="remove-circle-filled" color="red" %}} – The application in this environment is running, but has critical alerts, which might make it unstable and not usable anymore. Refer to the [alerts page](/developerportal/operate/monitoring-application-health/#alerts-page) or [logs](/developerportal/operate/logs/) for more information.
 * The date and time the app was started, if it is running. This is set in the user's time zone.
 * The version of the deployment package
 * The name of the deployment package
@@ -172,9 +172,9 @@ If you are the [Technical Contact](/developerportal/general/app-roles/#technical
 2. Select the period for which you want to download log entries.
 3. Click **Download**.
 
-### Request Overview Tab {#request-overview}
+### Change Requests Tab {#change-requests}
 
-On the **Request Overview** tab, the Technical Contact can view details of all past and current [Change Plan](/developerportal/deploy/change-plan/) requests and perform certain actions based on the current request status.
+On the **Change Requests** tab, the Technical Contact can view details of all past and current [Change Plan](/developerportal/deploy/change-plan/) requests and perform certain actions based on the current request status.
 
 For each submitted plan change request you can see the following information:
 
@@ -191,9 +191,9 @@ For each submitted plan change request you can see the following information:
     * **Completed** – Mendix Admin has approved the change, Technical Contact has scheduled and applied the changes, and the new plan has been successfully applied to the environment
     * **Rejected** – Request was denied
     * **Failed** – Plan change did not complete successfully
-* **Action** – Shows more details of each plan request and provides options based on the request status. For more information, see [Request Overview Action](#request-overview-action)
+* **Action** – Shows more details of each plan request and provides options based on the request status. For more information, see [Change Requests Action](#change-requests-action)
 
-#### Request Overview Action {#request-overview-action}
+#### Change Requests Action {#change-requests-action}
 
  Click **Details** on any request to view the **name** of the requester and the reviewer and other request details, including:
 

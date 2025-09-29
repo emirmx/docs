@@ -103,10 +103,9 @@ Mendix ticket data needs to be ingested into the knowledge base. You can find a 
 5. In `Tickets_CreateDataset`, open the `Retrieve Ticket from database` action and reselect the entity `Ticket`. Open the `Import from JSON` action and select the **IM_Ticket**.
 
 6. In the `ACT_TicketList_LoadAllIntoKnowledgeBase`:
-    * Edit the first retrieve action to retrieve objects from your new entity `Ticket`.
+    * Edit the first **Retrieve object(s)** activity to retrieve objects from your new entity `Ticket`.
     * In the loop, delete the second action that adds metadata to the `MetadataCollection`.
     * In the last action of the loop `Chunks: Add KnowledgeBaseChunk to ChunkCollection` keep the **Human readable ID** field empty.
-    * Near the end of the microflow, edit the `DeployedKnowledgeBase` retrieve action to change the XPath constraint for name from *example* to `HistoricalTickets`.
 
 7. Finally, create a microflow `ACT_CreateDemoData_IngestIntoKnowledgeBase` that first calls the `Tickets_CreateDataset` microflow, followed by the `ACT_TicketList_LoadAllIntoKnowledgeBase` microflow. Add this `ACT_CreateDemoData_IngestIntoKnowledgeBase` new microflow to your navigation or homepage and ensure that it is accessible to admins (add the admin role under **Allowed Roles** in the microflow properties).
 
@@ -155,7 +154,7 @@ The final result for the function microflows used in this document can be found 
 
 1. Create a new microflow named `Ticket_GetNumberOfTicketsInStatus`. Add a *String* input parameter called `TicketStatus`.
 
-2. The model can now pass a status string to the microflow, but first convert the input into an enumeration. To achieve this, add a `Microflow call` action and create a new microflow named `Ticket_ParseStatus`. The input should be the same (*String* input `TicketStatus`).
+2. The model can now pass a status string to the microflow, but first convert the input into an enumeration. To achieve this, add a `Call Microflow` activity and create a new microflow named `Ticket_ParseStatus`. The input should be the same (*String* input `TicketStatus`).
 
 3. Inside of the sub-microflow, add a decision for each enumeration value and return the enumeration value in the **End event**. For example, the *Closed* value can be checked like this:
 

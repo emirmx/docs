@@ -189,7 +189,7 @@ If you are using the Intel® UHD Graphics 630 graphics processor, please ensure 
 
 ## Team Server {#ts}
 
-The [Team Server](/developerportal/general/team-server/) is implemented using Git, and Studio Pro uses the HTTPS protocol to communicate with that server. To access the Team Server from within Studio Pro, the network at your location needs the following settings:
+The [Team Server](/developerportal/repository/team-server/) is implemented using Git, and Studio Pro uses the HTTPS protocol to communicate with that server. To access the Team Server from within Studio Pro, the network at your location needs the following settings:
 
 * The HTTPS port (TCP 443) needs to be open
 * The HTTP port (TCP 80) needs to be open
@@ -240,12 +240,12 @@ Mendix tries to support the most recent and patched database server versions fro
 
 Current support:
 
-* [MariaDB](/refguide10/mysql/): 10.4, 10.5, 10.6, 10.11, 11.4
+* [MariaDB](/refguide10/mysql/): 10.6, 10.11, 11.4, 11.8
 * [Microsoft SQL Server](/developerportal/deploy/mendix-on-windows-microsoft-sql-server/): 2019, 2022
 * [Azure SQL](https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-compatibility-level?view=sql-server-2017): v12 compatibility mode 140 or higher
-* [MySQL](/refguide10/mysql/): 8.0, 8.4
+* [MySQL](/refguide10/mysql/): 8.4
 * [Oracle Database](/refguide10/oracle/): 19, 21c
-* PostgreSQL: 12, 13, 14, 15, 16, 17
+* PostgreSQL: 13, 14, 15, 16, 17
 * [SAP HANA](/refguide10/saphana/): 2.00.076.00.1705400033
 
 {{% alert color="warning" %}}
