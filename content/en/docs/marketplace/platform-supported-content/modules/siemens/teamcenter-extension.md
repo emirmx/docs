@@ -2,6 +2,8 @@
 title: "Teamcenter Extension"
 url: /appstore/modules/siemens-plm/teamcenter-extension/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
+aliases:
+    - /appstore/modules/teamcenter-extension/
 ---
 
 ## Introduction {#introduction}
