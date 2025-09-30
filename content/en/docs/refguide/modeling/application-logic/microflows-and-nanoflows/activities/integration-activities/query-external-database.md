@@ -46,8 +46,8 @@ The **General** section contains the following properties, which are used to pro
 The **Query** section contains the following properties:
 
 * **Query** – the saved SQL query from your configuration of the Database connector
-* **Dynamic** – Choose **Yes** to update the query with variables during runtime
-  * **SQL** – When **Yes** is selected, the SQL field appears prepopulated with the selected query. You can modify this query using expressions.
+* **Dynamic** – Choose **Yes** to update the query with variables during runtime—*this option is available in Mendix 11.3.0 and above*
+    * **SQL** – When **Yes** is selected, the SQL field appears prepopulated with the selected query. You can modify this query using expressions.
 * **Parameters** – the saved parameters from your configuration of the Database connector
 
 In the **Output** section are the following properties:
