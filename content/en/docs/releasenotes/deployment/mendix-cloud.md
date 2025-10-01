@@ -16,6 +16,41 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
+### October 1, 2025
+
+#### Announcement – Deprecation of HTTPS SSL/TLS Weak Ciphers from February 1, 2026
+
+To improve the security of HTTPS connections to applications in Mendix Cloud v4, we are deprecating and stopping support for the following block ciphers that are considered weak:
+
+* `TLS_DHE_RSA_WITH_AES_128_GCM_SHA256`
+* `TLS_DHE_RSA_WITH_AES_256_GCM_SHA384`
+
+**What this means for your Mendix applications**
+
+Clients that only support DHE (Diffie-Hellman Ephemeral) ciphers with RSA key exchange will no longer be able to connect to your Mendix application.
+
+**What we continue to support**
+
+We will also introduce new, recommended SSL/TLS ciphers. These additions will finalize the list of ciphers that will continue to be supported for HTTPS connections after February 1, 2026:
+
+**TLSv1.3**
+
+* `TLS_AES_128_GCM_SHA256`
+* `TLS_AES_256_GCM_SHA384`
+* `TLS_CHACHA20_POLY1305_SHA256`
+
+**TLSv1.2**
+
+* `TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`
+* `TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384`
+* `TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256`
+* `TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`
+* `TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384`
+* `TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256`
+* `TLS_ECDHE_PSK_WITH_AES_128_GCM_SHA256`
+* `TLS_ECDHE_PSK_WITH_AES_256_GCM_SHA384`
+* `TLS_ECDHE_PSK_WITH_CHACHA20_POLY1305_SHA256`
+  
 ### September 21, 2025
 
 #### Improvements
