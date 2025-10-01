@@ -36,7 +36,7 @@ Before building an agent in your app, make sure your scenario meets the followin
 
 * It is recommended to start in Mendix Studio Pro 10.24.0 or above to use the latest versions of the GenAI modules.
 
-* Installation: install the [GenAI Commons](https://marketplace.mendix.com/link/component/239448), [Agent Commons](https://marketplace.mendix.com/link/component/240371), [MxGenAI Connector](https://marketplace.mendix.com/link/component/239449), and [ConversationalUI](https://marketplace.mendix.com/link/component/239450) modules from the Mendix Marketplace. If you want to empower your agent with tools available through the Model Context Protocol (MCP), you will also need to download the [MCP Client module](https://marketplace.mendix.com/link/component/244893). However, if you start with a Blank GenAI App, you can skip installing the specified modules.
+* Installation: install the [GenAI Commons](https://marketplace.mendix.com/link/component/239448), [Agent Commons](https://marketplace.mendix.com/link/component/240371), [MxGenAI Connector](https://marketplace.mendix.com/link/component/239449), and [ConversationalUI](https://marketplace.mendix.com/link/component/239450) modules from the Mendix Marketplace. If you want to empower your agent with tools available through the Model Context Protocol (MCP), you will also need to download the [MCP Client](https://marketplace.mendix.com/link/component/244893) module. However, if you start with a Blank GenAI App, you can skip installing the specified modules.
 
 * Intermediate understanding of Mendix: knowledgeable of simple page building, microflow modelling, domain model creation and import/export mappings.
 
@@ -209,8 +209,8 @@ Instead of (or alongside) configuring functions directly within your application
 
 To get started:
 
-* Review the Model Context Protocol (MCP) Server example in our showcase app to learn how to expose functions.
-* Check the Model Context Protocol (MCP) Client showcase for configuration details and implementation guidance.
+* Review the MCP Server example in our showcase app to learn how to expose functions.
+* Check the MCP Client showcase for configuration details and implementation guidance.
 
 This method provides greater flexibility in managing and sharing functions across different applications and environments.
 
