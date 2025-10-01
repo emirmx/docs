@@ -176,6 +176,8 @@ After you click **Publish Content**, your draft will be reviewed by Mendix befor
 
 For details on the approval process, refer to [Governance Process](/appstore/submit-content/governance-process/).
 
+Every new public component or component version is scanned through QSM, and, if no vulnerabilities are found, it is automatically uploaded. In case of vulnerabilities, Mendix manually checks the component or component version.
+
 ## Updating Existing Marketplace Content {#updating}
 
 After you publish a component in the Mendix Marketplace, it is your responsibility to make sure that the component is updated on a regular cadence. This is important to ensure compatibility with the latest versions of dependencies, especially Mendix Studio Pro. It is also required so Mendix can ensure the quality of components in the Marketplace.   

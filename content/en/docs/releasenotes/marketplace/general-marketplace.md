@@ -12,6 +12,25 @@ aliases:
 
 These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 
+### October 9, 2025
+
+#### Improvements
+
+We have made several improvements aimed at streamlining the experience of uploading content to the Marketplace and improving quality control:
+
+* The upload flow is now completely revamped, featuring a new interface and additional features, such as:
+
+    * Adding multiple resource links, such as websites, to provide additional information.
+    * Assigning multiple developers from your company as component owners.
+    * Adding support information.
+    * Control over the image size, allowing you to crop screenshots for a better visual experience.
+    * Support for rich text in the release notes field.
+    * A new **Component Tagline** field, allowing you to add a short description that will be displayed on your component's card in the Marketplace.
+    * A new preview page, allowing you to see exactly what the component will look like once published.
+
+* New component versions are now also scanned, and automatically uploaded if no vulnerabilities are found.
+* The email announcing a new version of a component now also includes release notes.
+
 ### September 8, 2025
 
 #### Improvements
