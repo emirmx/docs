@@ -311,7 +311,6 @@ Before adding tools via MCP, ensure you have at least one `MCPClient.MCPServerCo
    4. If you selected import type `tools`, you can choose to enable all available tools or select only the specific ones you need.
    5. Click **Save**. The connected server or your selected tools will now appear in the agent's tool section.
 
-
 #### Include Knowledge Base Retrieval: Similar Tickets
 
 You will also connect the agent to our knowledge base, so that it can use historical ticket data, such as problem descriptions, reproduction steps and solutions, to generate answers. The agent will execute one or more retrievals when it deems it necessary based on the user input.
@@ -469,7 +468,7 @@ In this section, you will enable the agent to call two microflows as functions, 
 
 All components used in this document can be found in the **ExampleMicroflows** folder of the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) for reference. This example focuses only on retrieval functions, but you can also expose functions that perform actions on behalf of the user. An example of this is creating a new ticket, as demonstrated in the [Agent Builder Starter App](https://marketplace.mendix.com/link/component/240369).
 
-#### Connect Function: Get Number of Tickets by Status (without MCP server)
+#### Connect Function: Get Number of Tickets by Status (Without MCP Server)
 
 The first function enables the user to ask questions about the ticket dataset, for example, how many tickets are in a specific status. Since this is private data specific to your application, an LLM cannot answer such questions on its own. Instead, the model acts as an agent by calling a designated microflow within your application to retrieve the information. For more information, see [Function Calling](/appstore/modules/genai/function-calling/).
 
@@ -482,7 +481,7 @@ The first function enables the user to ask questions about the ticket dataset, f
 
 When you restart the app and ask the agent "How many tickets are open?", a log should appear in your Studio Pro console indicating that your microflow was executed.
 
-#### Connect Function: Get Ticket by Identifier (without MCP server)
+#### Connect Function: Get Ticket by Identifier (Without MCP Server)
 
 As a second function, the model can pass an identifier if the user asked for details of a specific ticket and the function returns the whole object as JSON to the model.
 
@@ -496,10 +495,10 @@ As a second function, the model can pass an identifier if the user asked for det
   
 #### Connect Functions via MCP 
 
-Instead of using local functions, you can also add functions available via MCP. To add them in `ACT_TicketHelper_CallAgent`, you have two options available inside of the MCP Client module's **USE_ME** folder: 
+Instead of using local functions, you can also add functions available via MCP. To add them in `ACT_TicketHelper_CallAgent`, you have two options available in the **USE_ME** folder of the MCP Client module.
  
-* Use `Request_AddAllMCPToolsFromServer` to add all functions available on a selected MCP server to the request
-* Use `Request_AddSpecificMCPToolFromServer` to specify individual functions by name (e.g., RetrieveTicketByIdentifier) and optionally override their tool descriptions
+* Use `Request_AddAllMCPToolsFromServer` to add all functions available on a selected MCP server to the request.
+* Use `Request_AddSpecificMCPToolFromServer` to specify individual functions by name (for example, `RetrieveTicketByIdentifier`) and optionally override their tool descriptions.
 
 For both approaches, you need an `MCPClient.MCPServerConfiguration` object containing the connection details to your MCP server. This object must be in scope and selected as input to access the desired tools.
 
