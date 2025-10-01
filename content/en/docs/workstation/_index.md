@@ -63,8 +63,8 @@ Mendix Workstation Client can be used to create apps that handle use cases such 
 Mendix Workstation Client consists of the following components:
 
 * [Workstation Management](https://workstation.home.mendix.com/) - Allows centralized configuration.
-* [Workstation Client](https://marketplace.mendix.com/link/component/241063) - Allows real-time communication with local hardware.
-* [Workstation Connector](https://marketplace.mendix.com/link/component/241058) - Allows app integration. 
+* [Workstation Client](https://marketplace.mendix.com/link/component/247448) - Allows real-time communication with local hardware.
+* [Workstation Connector](https://marketplace.mendix.com/link/component/247460) - Allows app integration.
 
 Together, these components enable Mendix applications to securely and efficiently integrate with local devices, bridging the gap between digital workflows and physical operations.
 
