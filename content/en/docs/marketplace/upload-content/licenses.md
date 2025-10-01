@@ -1,7 +1,7 @@
 ---
 title: "Open-Source Software Licenses"
 url: /appstore/licenses/
-weight: 4
+weight: 5
 description: "Describes the open-source software license options available and their requirements."
 ---
 
