@@ -20,7 +20,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Improvements
 
-We have renamed the **Request Overview** tab on the **Environments** page to **Change Requests**.
+* We have renamed the **Request Overview** tab on the **Environments** page to **Change Requests**.
 
 ### September 9, 2025
 
@@ -339,7 +339,7 @@ You can now change your plan from the [Plan Details](/developerportal/deploy/env
 
 #### Improvements
 
-* To improve the security of [Team Server](/developerportal/general/team-server/) for apps versioned with SVN, we have dropped support for TLS v1.0 and TLS v1.1 when connecting to the SVN Team Server.
+* To improve the security of [Team Server](/developerportal/repository/team-server/) for apps versioned with SVN, we have dropped support for TLS v1.0 and TLS v1.1 when connecting to the SVN Team Server.
 
 ### September 14, 2023 
 
