@@ -77,7 +77,7 @@ This offering is delivered, managed and supported by Certified Partners (or Cert
 ## SAP Business Technology Platform
 
 Mendix provides an integration with the SAP Cloud Foundry environment of SAP Business Technology Platform (SAP BTP). Mendix applications are built to run on SAP BTP using the Mendix Cloud Foundry buildpack. Please check out the supported components in [SAP Business Technology Platform](/developerportal/deploy/sap-cloud-platform/).
-Mendix Support does not have access to app health, logs, graphs and monitoring – for support on these components, please contact [SAP Support](https://launchpad.support.sap.com/#/incident/create/prefilled/comp_name=XX-PART-MDX-RAD). If you run into issues or want to ask a question on the supported components, please always provide relevant logs, data, and your own analysis that explains why you suspect the issue is caused by one of our supported components
+Mendix Support does not have access to app health, logs, graphs and monitoring – for support on these components, please contact [SAP Support](https://launchpad.support.sap.com/#/incident/create/prefilled/comp_name=XX-PART-MDX-RAD). If you run into issues or want to ask a question on the supported components, please always provide relevant logs, data, and your own analysis that explains why you suspect the issue is caused by one of our supported components.
 
 {{< figure src="/attachments/support/sap-cloud-platform.png"   width="40%"  class="no-border" >}}
 

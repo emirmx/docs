@@ -1,14 +1,111 @@
 ---
-title: "Mendix Workstation Release Notes"
-linktitle: Mendix Workstation
+title: "Mendix Workstation Client Release Notes"
+linktitle: Mendix Workstation Client
 url: /releasenotes/workstation/
-description: "Release notes for updates to the Mendix Workstation"
+description: "Release notes for updates to the Mendix Workstation Client"
 weight: 40
 cascade:
     - numberless_headings: true
 ---
 
 These release notes cover changes made to the [Mendix Workstation](/mendix-workstation/).
+
+## 3.0.0
+
+### Release date: September 25, 2025
+
+{{% alert color="info" %}}
+This is a Limited Availability release of the Mendix Workstation Client.
+
+Mendix Workstation Client is available for all Mendix users for development use. 
+
+Mendix Workstation Client is [Limited Availability](https://docs.mendix.com/releasenotes/release-status/#limited-availability) for production use. Support is provided according to your Mendix SLA if you purchased a Workstation license. If you want to take the Mendix Workstation Client into production, contact your CSM to see what arrangements are possible. Without a license you can use the Mendix Workstation Client for development, but workspaces are individual and cannot be shared.
+{{% /alert %}}
+
+### Improvements
+
+#### Logging Is Configurable in Workspace Settings
+
+The level of logs written to log files and visible in the client is configurable in Workspace Settings. You can configure the following:
+
+* Log level: Info, Warn, Error, Debug.
+* Log retention policy: Maximum log folder size (in MB) and maximum number of stored days.
+
+The workspace log level is overridden to *Debug* for a station configured in developer mode.
+
+#### Editing Devices in the Side Panel
+
+When editing a device, device settings are edited in a side panel. It makes device configure easier as all setting parameters are in one view and other device configurations can be viewed while editing.
+
+### Known Bugs and Limitations
+
+* Windows Workstation Client hangs when Smartcard reader detection is enabled and the *Smart Cards for Windows Service* is disabled.
+* The Workstation Client window is not visible when opened on a secondary screen and the secondary screen is no longer available.
+
+## 2.6.0
+
+### Release date: September 12, 2025
+
+{{% alert color="info" %}}
+The fourth pre-release of the Mendix Workstation Client is available under the conditions of the Mendix Workstation Client Pre-Release Program. Support is available only to members of the program. To become a program member, contact Mendix Sales.
+{{% /alert %}}
+
+### New Features
+
+#### Mendix Workstation Management Availability
+
+Mendix Workstation Management is now available for all Mendix users.
+
+{{% alert color="info" %}}
+Users from companies which does not have a Mendix Workstation Client license cannot add members to a workspace that they own.
+
+The Workstation Client and all other related Mendix Marketplace items are only available for members of the pre-release program.
+{{% /alert %}}
+
+#### Workstation Client Developer Mode
+
+For each station, developer mode can be switched on or off to control the availability of the following functions on Workstation Client:
+
+* **Quit Workstation Client** is not available in non-developer mode.
+* **Unlink Workstation Client** is not available in non-developer mode.
+* The **Developer tool** shortcut is not available in non-developer mode.
+
+It is recommended to disable developer mode for clients used in a production environment.
+
+#### Workstation Sample App
+
+The Mendix Workstation Client Sample App showcases how to build applications interacting with multiple peripheral devices.
+
+The app includes reusable peripheral modules for:
+
+* PC/SC Smartcard Reader (ADPU protocol), for example Omnikey, 5427 G2, ACR122U
+* Barcode Scanner (configured on Serial Port), for example, NETUM C750
+* Industrial Scale (MT-SICS protocol), for example, Mettler Toledo ICS425, OHAUS Scout STX 620, 6200
+* Label Printer (ZPL protocol), for example, Zebra ZD421D
+* USB Andon tower / Stack light, for example, ANDONT USB Stack LED Andon Tower Lights
+
+Each module includes a peripheral emulator to build apps without a physical device.
+
+The Sample App is available in the Mendix Marketplace.
+
+### Improvements
+
+#### Workstation Management
+
+* We have added the Mendix Portal Global Navigation Menu top bar and menu.
+* We have made other usability improvements.
+
+#### Workstation Client
+
+* We have added a button to paste the registration token.
+
+#### Workstation Connector
+
+* We have added the SecurityAdministrator security role. Only users with this role can regenerate the `KeyPair` in the **Station connector Security** of an app.
+
+### Fixes
+
+* We have fixed an issue in the Workstation Client where, when the client app closed and re-opened a connection, data buffered from the previous session was sent to the new session. The data buffer now is cleared when the connection is closed.
 
 ## 2.4.0
 
@@ -18,9 +115,9 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 The third pre-release of the Mendix Workstation Client is available under the conditions of the Mendix Workstation Client Pre-Release Program. Support is available only to members of the program. To become a program member, contact Mendix Sales.
 {{% /alert %}}
 
-#### New Features
+### New Features
 
-##### Workstation Management
+#### Workstation Management
 
 * The **Team** page enables users to share workspaces and assign individual permissions, facilitating collaborative deployment of Workstation projects across multiple environments and sites at scale.
 * Apps are managed at workspace level on the **Apps** page. Each app can be enabled or disabled individually - per station, for a group of stations, or for all stations within a workspace.
@@ -34,28 +131,28 @@ The third pre-release of the Mendix Workstation Client is available under the co
     * Read, write, and watch permissions are configurable.
     * Environment variables are supported to define folder path.
 
-##### Workstation Client 
+#### Workstation Client 
 
 * The Workstation Client is now available in a [Linux ARM 64 version](https://marketplace.mendix.com/link/component/245627) for running the client on single-board computers such as Raspberry Pi.
 
-##### Workstation Connector
+#### Workstation Connector
 
 * The new **Unsubscribe by Device** nanoflow action removes all subscriptions on a device.
 * The new **Disconnect Device** nanoflow action disconnects the device, unlike the unsubscribe actions which keep the connection open.
 
-##### Other
+#### Other
 
 * The **Get Started** app includes a step-by-step guide on how to get started with Mendix Workstation and build a device messenger.
 * Workstation documentation now available on [Mendix Docs](/mendix-workstation/).
 
-#### Improvements
+### Improvements
 
-##### Workstation Management 
+#### Workstation Management 
 
 * The main device connection parameters are displayed in the list of Devices in a connection string.
 * The Workstation Client version is updated in the **Station** view.
 
-##### Workstation Client
+#### Workstation Client
 
 * Client configuration is maintained after upgrading the Workstation Client.
 * Detected smart card readers are shown in the list of devices. Detection happens dynamically, without having to restart or refresh configuration.
@@ -70,25 +167,25 @@ The third pre-release of the Mendix Workstation Client is available under the co
 * Logs are visible in the Workstation Client.
 * An End User License Agreement has been added to the Workstation Client installer.
 
-##### Workstation Connector
+#### Workstation Connector
 
 * The workspace name is available in Workstation Connector, together with the station and client computer names.
 * The Workstation Client version is available in Workstation Connector.
 
-#### Fixes
+### Fixes
 
-##### Workstation Client
+#### Workstation Client
 
 * We have fixed an issue where connecting, sending a message, and disconnecting quickly on a serial port would result in a *Port not open* error.
 
-##### Workstation Connector
+#### Workstation Connector
 
 * We have fixed the security model so that private key of the app is only available to admin users.
 * We have fixed an issue where a Device object was deleted when user was using the cancel button of a page on which Device was a parameter.
 * Detected card reader devices are set to the class `CardReader`.
 * Windows Hello for Business is no longer detected as a card reader.
 
-#### Upgrade
+### Upgrade
 
 To upgrade from a previous version, perform the following steps:
 

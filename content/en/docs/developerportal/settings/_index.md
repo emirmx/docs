@@ -1,11 +1,12 @@
 ---
 title: "Settings"
-url: /developerportal/collaborate/general-settings/
-weight: 14
+url: /developerportal/general-settings/
+weight: 11
 description: "Describes the Settings page of your app."
 aliases:
     - /developerportal/settings/general-settings
     - /developerportal/settings/api-key
+    - /developerportal/collaborate/general-settings
 #To update these screenshots, you can log in with credentials detailed in How to Update Screenshots Using Team Apps.
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 #The anchor #managing-app-users below is mapped from App > General > Settings > Manage App Users and the Mendix SSO module, so it should not be removed or changed.
@@ -37,15 +38,13 @@ The page header displays the following information:
 * The company that owns the app.
 * The **Watch** / **Stop Watching** toggle – You can enable or disable notifications for this app.
 
-{{< figure src="/attachments/developerportal/general/settings/general-information.png"  class="no-border" >}}
-
 {{% alert color="info" %}}
 Only users with the **App Settings** permission can edit the image and the app name.
 {{% /alert %}}
 
 ## General {#general}
 
-In this tab, you can find the following items:
+On this tab, you can find the following items:
 
 * Logo of the project
 * **Description** of the project

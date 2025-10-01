@@ -1,20 +1,20 @@
 ---
-title: "Installing and Configuring Mendix Workstation"
+title: "Installing and Configuring Mendix Workstation Client"
 linktitle: "Installation and Configuration"
 url: /mendix-workstation/installation/
-description: "Documents the installation process for Mendix Workstation."
+description: "Documents the installation process for Mendix Workstation Client."
 weight: 20
 ---
 
 ## Introduction
 
-This document provides a quick start guide for installing Mendix Workstation, and then configuring its basic settings. Mendix Workstation is available for the following operating systems:
+This document provides a quick start guide for installing Mendix Workstation Client, and then configuring its basic settings. Mendix Workstation Client is available for the following operating systems:
 
-* [Microsoft Windows (global installer)](https://marketplace.mendix.com/link/component/241063)
-* [Microsoft Windows (portable)](https://marketplace.mendix.com/link/component/242552)
-* [Linux ARM 64](https://marketplace.mendix.com/link/component/245627)
+* [Microsoft Windows (global installer)](https://marketplace.mendix.com/link/component/247448)
+* [Microsoft Windows (portable)](https://marketplace.mendix.com/link/component/247456)
+* [Linux ARM 64](https://marketplace.mendix.com/link/component/247459)
 
-To configure Mendix Workstation, perform the following steps:
+To configure Mendix Workstation Client, perform the following steps:
 
 ### Creating a Workspace and Station
 
@@ -43,13 +43,13 @@ A *station* represents a workstation on the shopfloor. It can connect to one or 
 
 ## Downloading and Running the Workstation Client
 
-The Mendix Workstation Client is a connector between the devices and your local PC. You can download and enable the client by performing the following steps:
+The Workstation Client is a connector between the devices and your local PC. You can download and enable the client by performing the following steps:
 
 1. Open a station and click **Register Computer**.
 
     {{< figure src="/attachments/workstation/wks-install5.png" class="no-border" >}}
 
-2. In the **Computer Registration** dialog, click **Download**. The [Mendix Workstation Client](https://marketplace.mendix.com/link/component/241063) page on the Mendix Marketplace opens for the Windows installer. Alternatively, you can find the component on the Mendix Marketplace by searching for "Workstation Client". You can also find the [portable](https://marketplace.mendix.com/link/component/242552) and [Linux](https://marketplace.mendix.com/link/component/245627) version by using the search, or navigate to them through the above links. 
+2. In the **Computer Registration** dialog, click **Download**. The [Workstation Client](https://marketplace.mendix.com/link/component/247448) page on the Mendix Marketplace opens for the Windows installer. Alternatively, you can find the component on the Mendix Marketplace by searching for "Workstation Client". You can also find the [portable](https://marketplace.mendix.com/link/component/247456) and [Linux](https://marketplace.mendix.com/link/component/247459) version by using the search, or navigate to them through the above links. 
 
     {{< figure src="/attachments/workstation/wks-install6.png" class="no-border" >}}
 
@@ -57,14 +57,20 @@ The Mendix Workstation Client is a connector between the devices and your local 
 
     * For Windows:
 
-        * If you have administrator rights for your computer, click **Download** and run the Workstation Client installer in the form of an NSIS installer package. If you get a prompt from Windows Access Control, click **Yes** to allow Mendix Workstation Client to be installed; for a silent installation, you can also run the installer as an administrator with the `/S` argument, that is, `MendixWorkstationX.Y.Z.exe /S`. The default installation folder is *C:\Program Files\Mendix Workstation*. The app data folder can be found at *C:\ProgramData\Mendix Workstation*. The client runs automatically after the installation is completed.
-        * If you do not have administrator rights for your computer, download the [Mendix Workstation Client Portable](https://marketplace.mendix.com/link/component/242552) instead. As a best practice, put the portable client in  a new folder in your Documents folders, and then click the .exe file to run the client.
+        * If you have administrator rights for your computer, click **Download** and run the Workstation Client installer in the form of an NSIS installer package. If you get a prompt from Windows Access Control, click **Yes** to allow Workstation Client to be installed; for a silent installation, you can also run the installer as an administrator with the `/S` argument, that is, `MendixWorkstationX.Y.Z.exe /S`. The default installation folder is *C:\Program Files\Mendix Workstation*. The app data folder can be found at *C:\ProgramData\Mendix Workstation*. The client runs automatically after the installation is completed.
+        * If you do not have administrator rights for your computer, download the [Workstation Client Portable](https://marketplace.mendix.com/link/component/247456) instead. As a best practice, put the portable client in  a new folder in your Documents folders, and then click the .exe file to run the client.
     
-    * For Linux - Download and install the [Linux](https://marketplace.mendix.com/link/component/245627) version of the client.
+    * For Linux:
+        * Download the [Linux](https://marketplace.mendix.com/link/component/245641) version of the Client
+        * Install: `sudo apt install ./workstation_X.X.X_arm64.deb`
+        * Install card reader dependencies: `sudo apt install pcscd libcap2-bin`
+        * Enable card reader dependencies: `sudo systemctl enable pcscd --now`
+        * Start the application from the applications menu > Accessories > Mendix Workstation
+        * Bluetooth support requires starting the application with `CAP_NET_RAW` privilege: `sudo capsh --user=$(whoami) --iab="^cap_net_raw" -- -c "'/opt/Mendix Workstation/Mendix Workstation'"`
     
 ## Registering your Computer
 
-With the Mendix Workstation Client running on your computer, you must now register your computer in the Workstation Management.
+With the Workstation Client running on your computer, you must now register your computer in the Workstation Management.
 
 1. Go to [Mendix Workstation Management](https://workstation.home.mendix.com/) and navigate to the **Station Overview** in the workspace which contains the station that you want to register to your computer. 
 2. Click the menu in the overview and select **Register computer**.

@@ -12,6 +12,29 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2025
 
+### September 25, 2025
+
+#### Portal Improvements
+
+* The Mendix on Kubernetes portal is now available in Japanese and Korean, enhancing the user experience for native speakers. Language preferences can be adjusted in the **Work Environment** tab under **Preferences**.
+* The side navigation in the portal is also available in Japanese and Korean languages
+* The Mendix on Kubernetes portal now supports the import of constants from a CSV file.
+* Exporting constants is now possible in CSV format, replacing the XLSX format.
+
+#### Known Issues
+
+* Translations in the Mendix on Kubernetes Portal are not yet fully complete and some content may still appear in English.
+
+### September 16, 2025
+
+#### Mendix Operator v2.23.1 {#2.23.1}
+
+* We have updated storage provisioners that create Azure Workload identitites. This update helps ensure that errors like *Cannot validate Microsoft Entra ID user ... because the OID isn't found in the tenant* are detected and handled correctly.
+
+    After creating a new workload identity, it might take some time before the workload identity (user) becomes fully functional. This error is not an issue (just a temporary status) and in this situation the Mendix Operator can just retry after waiting for some time.
+
+  Because Microsoft Azure previously changed the error text, older Mendix Operator versions might not correct this error.
+
 ### September 4, 2025
 
 #### Portal Improvements

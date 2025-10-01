@@ -1,8 +1,8 @@
 ---
-title: "Security Best Practices for Mendix Workstation"
+title: "Security Best Practices for Mendix Workstation Client"
 linktitle: "Security Best Practices"
 url: /mendix-workstation/security/
-description: "Provides information about best-practice security configuration for the Mendix Workstation."
+description: "Provides information about best-practice security configuration for the Mendix Workstation Client."
 weight: 15
 ---
 
