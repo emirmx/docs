@@ -56,7 +56,7 @@ To install and configure the Workstation Connector, perform the following steps:
     8. Enter your apps URL (for example, `http://localhost:8080`, which is the default when running an app locally) and paste the copied public key into the **Public Key** field. Select **Enable in all stations** or follow step 9 if you only want to enable it for a specific station. 
     9. After creating the app, go to **Stations** and navigate to your station. You will find the created app under the **Apps** section. Here you can enable the application just for this station by pressing the toggle.
     10. Refresh the Workstation Client.
-    11. Optional: To create the created key pair, additionally assign the module role **StationConnector.SecurityAdministrator** to your Administrator role. This will add a button **Regenerate KeyPair** to the **StationConnector_Security** page.  
+    11. Optional: To recreate the key pair, additionally assign the module role **StationConnector.SecurityAdministrator** to your Administrator role. This will add a button **Regenerate KeyPair** to the **StationConnector_Security** page. Be mindful when using this button in a production scenario to avoid the need to reconfigure the App in the Management and refresh all Workstation Clients.  
 
 ## Managing Apps
 
