@@ -127,7 +127,7 @@ Even though the query is using a view that also includes address information, th
 If you set the `DataStorage_QueryPlan` log node to Trace, you see the query plan for all your queries in the Mendix Runtime log.
 
 {{% alert color="warning" %}}
-The `DataStorage_QueryPlan` log node has a very large performance impact and should not be enabled in production.
+The `DataStorage_QueryPlan` log node has a very large performance impact and should never be enabled in production.
 {{% /alert %}}
 
 ## Read More
