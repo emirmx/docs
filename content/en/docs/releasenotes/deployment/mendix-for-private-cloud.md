@@ -12,6 +12,84 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2025
 
+### September 25, 2025
+
+#### Portal Improvements
+
+* The Mendix on Kubernetes portal is now available in Japanese and Korean, enhancing the user experience for native speakers. Language preferences can be adjusted in the **Work Environment** tab under **Preferences**.
+* The side navigation in the portal is also available in Japanese and Korean languages
+* The Mendix on Kubernetes portal now supports the import of constants from a CSV file.
+* Exporting constants is now possible in CSV format, replacing the XLSX format.
+
+#### Known Issues
+
+* Translations in the Mendix on Kubernetes Portal are not yet fully complete and some content may still appear in English.
+
+### September 16, 2025
+
+#### Mendix Operator v2.23.1 {#2.23.1}
+
+* We have updated storage provisioners that create Azure Workload identitites. This update helps ensure that errors like *Cannot validate Microsoft Entra ID user ... because the OID isn't found in the tenant* are detected and handled correctly.
+
+    After creating a new workload identity, it might take some time before the workload identity (user) becomes fully functional. This error is not an issue (just a temporary status) and in this situation the Mendix Operator can just retry after waiting for some time.
+
+  Because Microsoft Azure previously changed the error text, older Mendix Operator versions might not correct this error.
+
+### September 4, 2025
+
+#### Portal Improvements
+
+* We have updated the **Details** icon in the **Cluster Management**, **Environment Overview**, and **Environment Details** pages.
+* We have fixed an issue where the browser console for the **Environment Overview** page was spammed with multiple log warnings.
+
+#### Build API
+
+* We have fixed an intermittent issue where the authentication failed with a 401 error when valid PAT tokens were provided in the API requests (Ticket 256946,Ticket 257444, Ticket 258196).
+
+### August 29, 2025
+
+#### Mendix Operator v2.23.0 {#2.23.0}
+
+* In addition to the current `assigned` and `none` modes, we have added a new `leaderless` deployment mode for the `runtimeLeaderSelection` option. This mode is currently in preview.
+
+    Setting `runtimeLeaderSelection` to `leaderless` uses only one Deployment instead of `master` and `worker`. Mendix Runtime nodes decide which one gets to run any exclusive task. The mode uses a simplified Java launch process and uses a more efficient way of generating JSON logs. To use `leaderless` mode, the Mendix app needs to be based on Mendix 10.24 or a higher version.
+  
+* We have adjusted the Runtime liveness and readiness probes. In `leaderless` deployment mode, the Mendix Runtime's built-in self-test is now used for the liveness and readiness probes.
+* We have addressed a few redundant API calls to reduce API calls in a small number of scenarios.
+* We have fixed an issue when a Prometheus metrics scaper would reject metrics from Mendix 11 apps.
+* We have added a workaround to improve handling of bucket prefixes containing `/` characters.
+* To provide clearer error messages and more relevant context, we have improved the logging of some startup and other errors.
+* We have removed license checks from the Mendix Operator. Starting version 2.23.0 of the Mendix Opeartor, only Runtime licenses are required (to remove [trial restrictions](/developerportal/deploy/licensing-apps-outside-mxcloud/) from the Mendix Runtime). The Operator will show its status as **Licensed** even when no Operator license is applied.
+* We updated internal handling logic for the `MendixApp`, `Build` and `Runtime` CRD controllers (Ticket 251404).
+
+    * The `Build` controller now only checks pod attributes that are necessary to complete a build.
+    * The `MendixApp` and `Runtime` controllers now allow processing of some chnages if a build fails.
+
+        For example, it is possible to start an environment or change the **MxAdmin** password even when the build fails - in this case, the previous build will be used instead.
+
+* When enabling the **Prevent data deletion** option, Mendix 9.6 (or newer) apps will no longer try to delete files from unreferenced *System.FileDocument*, so that Mendix apps would be able to run without permissions to delete files.
+* We have updated components to use Go 1.24 and the latest dependency versions in order to improve security score ratings for container images.
+* We have updated documentation that OpenShift 4.19 is supported by the Mendix Operator.
+* We have deprecated support for Tencent COS storage.
+* If an app pod crashes or restarts, the MendixApp CR now shows the reason for the restart and the Mendix Runtime's UNIX exit code.
+* We have addressed a rare bug where the Agent sometimes crashed with a panic when a network connection was lost.
+* Upgrading to Mendix Operator v2.23.0 from a previous version will restart environments managed by that version of the Operator. Environments with two or more replicas and a **PreferRolling** update strategy are restarted without downtime.
+* Emails are now supported in Japanese and Korean languages, based on the language set in **User Settings**.
+
+### August 7, 2025
+
+#### Portal Improvements
+
+* The **Environment Details** page in the portal now displays a new field, **External Secret Store**, indicating the source from which the secret was loaded.
+* We have fixed an issue where starting an environment would display an incorrect error message when the agent was in a disconnected state.
+* The deployment package creation dialog now shows the date next to the Mendix version.
+* The **Branches** now shows the latest commit date for the branch.
+* The **Revisions** page now shows the commit date.
+
+#### Build API
+
+* We have fixed an issue where the POST `/apps/{appId}/packages/build` endpoint in the v4 API returned a location header containing `v3`, leading to 404 errors. The location header now correctly uses `v4`.
+
 ### July 10, 2025
 
 #### General

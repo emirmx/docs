@@ -16,6 +16,63 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
+### October 1, 2025
+
+#### Announcement – Deprecation of HTTPS SSL/TLS Weak Ciphers from February 1, 2026
+
+To improve the security of HTTPS connections to applications in Mendix Cloud v4, we are deprecating and stopping support for the following block ciphers that are considered weak:
+
+* `TLS_DHE_RSA_WITH_AES_128_GCM_SHA256`
+* `TLS_DHE_RSA_WITH_AES_256_GCM_SHA384`
+
+**What this means for your Mendix applications**
+
+Clients that only support DHE (Diffie-Hellman Ephemeral) ciphers with RSA key exchange will no longer be able to connect to your Mendix application.
+
+**What we continue to support**
+
+We will also introduce new, recommended SSL/TLS ciphers. These additions will finalize the list of ciphers that will continue to be supported for HTTPS connections after February 1, 2026:
+
+**TLSv1.3**
+
+* `TLS_AES_128_GCM_SHA256`
+* `TLS_AES_256_GCM_SHA384`
+* `TLS_CHACHA20_POLY1305_SHA256`
+
+**TLSv1.2**
+
+* `TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`
+* `TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384`
+* `TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256`
+* `TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`
+* `TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384`
+* `TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256`
+* `TLS_ECDHE_PSK_WITH_AES_128_GCM_SHA256`
+* `TLS_ECDHE_PSK_WITH_AES_256_GCM_SHA384`
+* `TLS_ECDHE_PSK_WITH_CHACHA20_POLY1305_SHA256`
+  
+### September 21, 2025
+
+#### Improvements
+
+* We have renamed the **Request Overview** tab on the **Environments** page to **Change Requests**.
+
+### September 9, 2025
+
+#### New Features
+
+* We have added support for sending logs to Splunk for apps deployed on Kubernetes. This enables apps using Splunk to be migrated from Cloud Foundry to Kubernetes.
+
+#### Improvements
+
+* For Kubernetes deployments, the `SPLUNK_LOGS_REDACTION` environment variable is not available. Use the `LOGS_REDACTION` variable instead.
+
+### August 17, 2025
+
+#### New Features
+
+You can now change your plan from the [Plan Details](/developerportal/deploy/environments-details/#plan-details) section in the **Environment Details** window. To do that, click **Change Plan** next to the plan name.
+
 ### July 27, 2025
 
 #### New Features
@@ -35,18 +92,12 @@ For information on the current status of deployment to Mendix Cloud and any plan
 * We have implemented strict validation on the [Upload Package API](/apidocs-mxsdk/apidocs/deploy-api-2/#upload-package). The request parameter keys now require exact name matching, especially for the file key.
 * We fixed an issue where the **Resource Mismatch** label was displayed incorrectly. This label will now appear only when the UI scale settings differ from the backend cloud resource settings.
 
-### June 27, 2025
-
-#### Bug Fixes
-
-* We fixed a bug where users could not trigger the on commit trigger pipeline (Ticket 245653)
-
 ### June 12, 2025
 
 #### New Features
 
 * We have added a new beta feature in the [environment UI](/developerportal/deploy/environments/). This feature allows Technical Contacts to [change app's environment plan](/developerportal/deploy/change-plan/) to a higher-resource plan.
-    * Additionally, a new tab ([Request Overview](/developerportal/deploy/environments/#request-overview)) has been introduced where Technical Contacts can view and manage plan change requests and track the status of their pending requests awaiting a Mendix Admin review from the [Control Center](/control-center/approval-requests/).
+    * Additionally, a new tab ([Change Requests](/developerportal/deploy/environments/#change-requests)) has been introduced where Technical Contacts can view and manage plan change requests and track the status of their pending requests awaiting a Mendix Admin review from the [Control Center](/control-center/approval-requests/).
 
 ### May 25, 2025
 
@@ -72,13 +123,6 @@ For information on the current status of deployment to Mendix Cloud and any plan
 #### Improvements
 
 * We have added new environment variables which allow you to control the buffer size and buffer memory for the Fluentbit agent for Splunk and New Relic.
-
-### February 27, 2025
-
-#### Improvements
-
-* We have added a validation mechanism for pipeline designs, which prevents users from deleting a design if any pipelines using that design are currently running. For more information, see [Pipelines: Editing a Pipeline Design](/developerportal/deploy/pipelines/#edit-pipeline). 
-* You can now access the **Details** page of a pipeline at any point, also while the pipeline is running. For more information, see [Pipelines: Run Results](/developerportal/deploy/pipelines/#run-results).
 
 ### February 20, 2025
 
@@ -136,13 +180,6 @@ For information on the current status of deployment to Mendix Cloud and any plan
 * We fixed a bug in the [new UI](/developerportal/deploy/environments/), where the **scalable** tag was displayed for environments that were not scalable.
 * We fixed a number of other bugs related to dark mode.
 
-### November 14, 2024
-
-#### Pipelines New Features
-
-* We added a new **Variables** tab that allows you to create user-defined pipeline variables. For more information, see [The Variables Tab](/developerportal/deploy/pipelines/#variable-tab) in the *Pipelines* documentation.
-* We added a new pipeline step: [Unit Testing](/developerportal/deploy/pipelines/#unit-testing). This step executes the Unit Testing module in a running environment to perform a regression testing and marks the pipeline as failed if any tests fail, providing the failure count and details.
-
 ### November 6, 2024
 
 #### New Features
@@ -160,13 +197,6 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 * We have made performance improvements to [Software Composition](/developerportal/deploy/software-composition/). Software Bills of Materials (SBOMs) generated automatically upon the creation of deployment packages now show up on the **Software Composition** page within minutes.
 
-### September 19, 2024
-
-#### Pipelines New Features
-
-* We released an API that lets you start a new pipeline run for a saved and activated pipeline design and retrieve the status of a pipeline run. For more information, see [Pipelines API](/apidocs-mxsdk/apidocs/pipelines-api/).
-* We added a new pipeline step: [Best Practice Recommender](/developerportal/deploy/pipelines/#recommender) Check. This step lets you evaluate results of the Maia Best Practice Recommender within your pipeline.
-
 ### September 5, 2024
 
 #### New Features
@@ -181,24 +211,6 @@ For information on the current status of deployment to Mendix Cloud and any plan
   
     Previously supported Studio Pro versions (9.24.22 to 9.24.25, 10.6.9 to 10.6.11, 10.10.0 to 10.12.2, and 10.13) will no longer result in SBOM generation and visibility in [Software Composition](/developerportal/deploy/software-composition/). To continue using Software Composition, upgrade to a compatible Studio Pro version. Any historical data within Software Composition remains accessible regardless of the upgrade.
 
-* Deployment packages generated via Mendix Pipelines now generate a Software Bill of Material (SBOM) under the hood; this is visible in Software Composition for Studio Pro LTS and MTS versions 9.24.26 and above, 10.6.12 and above, and 10.12.3 and above.
-
-### August 22, 2024
-
-#### Fixes
-
-* We fixed a bug that had been causing an incorrect pipeline run status to display for the first few seconds on manually triggered pipelines.
-
-#### Improvements
-
-* In the **Pipelines** page's **Runs** tab, we changed a column name from **Last Run** to **Run** because this more accurately reflects what the column shows: it indicates when a pipeline run occurred.
-
-### August 15, 2024
-
-#### Improvements
-
-* We added a Pipeline ID column to the **Designs** tab of the **Pipelines** page.
-
 ### July 16, 2024
 
 #### Improvements
@@ -209,21 +221,6 @@ For information on the current status of deployment to Mendix Cloud and any plan
     * S (Legacy): The critical alert threshold changed from 10% to 5% freeable memory.
     * Strato (Legacy): The critical alert threshold changed from 10% to 5% freeable memory.
 
-### July 4, 2024
-
-#### Pipelines New Features
-
-* We added two new pipeline steps:
-    * You can use the Start Environment step to start a selected environment.
-    * You can use the Promote Package step to move a deployment package from a specified source environment to a specified target environment.
-* It is now possible to trigger pipelines manually. To use this new trigger type in your pipeline, select **Manual** as the **Trigger** in the Start Pipeline step of your pipeline design.
-* We will be launching a mini survey for Pipelines soon, asking you some questions about what you like and dislike.
-
-#### Pipelines Improvements
-
-* Pipeline names are no longer editable while a pipeline is active. If you want to edit a pipeline name, deactivate the pipeline first.
-* We implemented deep links for all three tabs on the Pipelines page. This facilitates easy sharing of record-specific details on the **Runs**, **Designs**, and **Settings** tabs; you can simply copy and paste the URL.
-
 ### May 14, 2024
 
 #### New Features
@@ -231,14 +228,6 @@ For information on the current status of deployment to Mendix Cloud and any plan
 * We now use Arm-based AWS Graviton 2 processors for databases of new environments on all plans in Mendix Public Cloud for best performance. Graviton 2 processors can provide significant performance improvements over previous generation instances. For database operations, this means faster processing of queries and better handling of concurrent requests.
 
     Existing environments will not automatically use Graviton 2 processors for their databases. Graviton 2 processors will be used for new environments and those which are cleared, downsized, or resized.
-
-### May 9, 2024
-
-#### Pipelines Improvements
-
-* We added a Feedback Widget to the Pipelines pages so that customers can directly provide feedback, enhancement requests, and other ideas.
-* We improved the performance of the **Runs** page's search and filtering.
-* We added a column selector to the table on the **Runs** page, so it is now possible to customize which columns appear in the table. We also added a new column: Pipeline ID.
 
 ### April 25, 2024
 
@@ -251,18 +240,6 @@ For information on the current status of deployment to Mendix Cloud and any plan
 ### Deprecations
 
 * We stopped supporting the *Application Container CPU Percentage* alert, because it triggered too often to be useful. The CPU usage data can still be seen on the **Metrics** page.
-
-### April 4, 2024
-
-#### Pipelines Fixes
-
-* We fixed an issue that was causing pipelines to fail at the Checkout step for selected pipeline runs. (Ticket 211117)
-* We fixed an issue preventing user settings from saving for select users.
-* We fixed an issue where the branches were not being fetched for the Checkout step when designing a pipeline. We also fixed an issue where the Checkout step was not dynamically changing upon the change of the trigger.
-
-#### Pipelines Improvements
-
-* We made a variety of user experience improvements, including improving the styling and implementing a pipeline name character limit of 40 characters.
 
 ### March 26, 2024
 
@@ -287,13 +264,6 @@ For information on the current status of deployment to Mendix Cloud and any plan
 #### Improvements
 
 * To make it easier to reset the two-factor authentication settings when needed, we added a link to these settings on the **Logs** and **Metrics** pages. This link appears whenever you try to access a page that you need 2FA to view.
-
-### February 29, 2024
-
-#### New Features
-
-* We launched a new feature: Pipelines. Pipelines lets you build and deploy software in an automated way. You can design pipelines with a set of configurable, low-code steps. Activated pipelines run automatically according to your design. This new Pipelines feature is intended to make it quick and easy for teams to automate their CI/CD process. For more information, see [Pipelines](/developerportal/deploy/pipelines/).
-    * The Pipelines feature is in [public beta](/releasenotes/release-status/). It is currently available for unlimited use with all licensed Mendix Cloud apps. Limitations may be put on its use in the future.
 
 ### February 19, 2024
 
@@ -404,7 +374,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Improvements
 
-* To improve the security of [Team Server](/developerportal/general/team-server/) for apps versioned with SVN, we have dropped support for TLS v1.0 and TLS v1.1 when connecting to the SVN Team Server.
+* To improve the security of [Team Server](/developerportal/repository/team-server/) for apps versioned with SVN, we have dropped support for TLS v1.0 and TLS v1.1 when connecting to the SVN Team Server.
 
 ### September 14, 2023 
 
