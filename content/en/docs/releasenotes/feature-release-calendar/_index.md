@@ -21,52 +21,30 @@ General Availability means that a feature is available for all users. This type 
 
 | Capability or Feature | Expected Release |
 | --- | --- |
-| Searchable commit history                                    | Public beta: Q4 2025                                         |
-| Module updates while retaining customizations                | General Availability: Q1 2026                                |
-| Easy revision comparison                                     | Public beta: Q1 2026                                         |
-| Pull requests                                                | Public beta: H2 2026                                         |
-| Mendix on Azure                                              | Limited Availability: March 2025 <br/>General Availability: Summer 2025 |
-| Security Recommendations                                     | General Availability: 2026                                   |
-| OpenTelemetry Tracing                                        | General Availability: 2026                                   |
-| Progressive Web Apps Store Publishing                        | Public beta: 2026                                            |
-| Maia Explain for Logic                                       | General Availability: March 2025                             |
-| Start with Maia                                              | General Availability: Mx 11.0                                |
-| Menditect UI testing                                         | Public beta: Q2 2025<br/>General Availability H2 2025        |
-| Modernized Mendix unit testing                               | General Availability: April 2025                             |
-| Speed up role-based access                                   | General Availability: February 2025                          |
-| Software Composition                                         | General Availability: March 2025                             |
-| Software Composition Marketplace Outdated and Deprecated Findings | General Availability: September 2025                      |
-| Software Composition Marketplace Vulnerabilities             | General Availability: December 2025                          |
-| Policies                                                     | Public beta: December 2025 <br/>General Availability: TBD    |
-| Cloud Tokens Dashboard                                      | General Availability: June 2025                               |
-| End Users Dashboard | Limited Availability: October 2025 |
-| Self-Service Provisioning & Deprovisioning of environments | General Availability: June 2025 |
-| Self-Service Resizing of environments | Limited Availability: July 2025 |
-| Bulk DML                                                     | General Availability: Q4 2025                             |
-| Increased decimal precision                                  | General Availability: Q4 2025                             |
-| Maia: text to OQL                                            | Public beta: Q2 2025<br/>General Availability: Q4 2025    |
-| Maia: generate test data                                     | Private beta: 2026                                           |
-| Consumed OpenAPI and API discovery                           | Public beta: Q2 2025<br/>General Availability: Q4 2025 |
-| Improved OpenAPI generation for REST publish                 | General Availability: June 2025                         |
-| Visual query editor for view entities                        | Proof of Concept: June 2025 <br/>General Availability: Q4 2025          |
-| Event broker HTTP Bridge                                     | Public beta: June 2025 <br/>General Availability: Q4 2025   |
-| Compass Maturity Assessment                                  | General Availability: July 28, 2025                      |
-| IdP-managed Admins                                           | Limited Availability: July 11, 2025                      |
-| Usage of keypairs for OIDC-based SSO to Mendix apps (OIDC SSO) | General Availability: May 15, 2025                      |
-| Easy (automated) rotation of keypairs for SSO security (OIDC SSO) | General Availability: May 15, 2025                   |
-| OIDC Provider goes from Limited Availability to General Availability | General Availability: ETA July 15, 2025           |
+| Start with Maia                                              | General Availability: Mx 11.0  |
+| Start with Maia from Project Plan                            | Private Beta: Mx 11.6  |
+| Maia: Plan — Gathering requirements with AI,<br/>bridging plan to build               | Private Beta: Mx 11.6  |
+| Maia: Text to OQL                                            | Public Beta: Q2 2025 <br/>General Availability: Q4 2025 |
+| Maia: Generate test data                                     | Private Beta: 2026   |
+| Maia for Workflows                                           | Public Beta: Mx 11.0  |
+| Maia for Microflows                                          | Public Beta: Mx 11.6 |
+| Maia Feedback Story Creation (App Insights)                  | General Availability: Mx 11.0 |
+| Maia Feedback Grouping (App Insights)                        | General Availability: Mx 11.6 |
+| Maia for Pipeline Logs                                       | General Availability: Mx 11.9  |
+| MCP Client for Maia                                          | General Availability: Mx 11.4 |
+| Maia Learning Assistant                                      | Private Beta: Mx 11.6 |
 
-## Agentic AI
+## Agentic Applications
 
 | Capability or Feature | Expected Release |
 | --- | --- |
-| Mendix Agents Kit                 | General Availability: Mx 11.0 + Mx 10.24 |
-| MCP Server                        | General Availability: Mx 11.0 + Mx 10.24 |
-| MCP Client                        | General Availability: Mx 11.2 + Mx 10.24 |
-| Mendix Cloud GenAI Resource Packs | General Availability: Mx 11.2 + Mx 10.24 |
+| Mendix Agents Kit                             | General Availability: Mx 11.0 + Mx 10.24 |
+| MCP Server                                    | General Availability: Mx 11.0 + Mx 10.24 |
+| MCP Client                                    | General Availability: Mx 11.2 + Mx 10.24 |
+| Mendix Cloud GenAI Resource Packs             | General Availability: Mx 11.2 + Mx 10.24 |
 | Mendix Cloud GenAI Resource Packs Guardrails  | Public Beta: Mx 11.9 |
-| Agent Builder in Studio Pro | Public Beta: Mx 11.6 |
-| Agent Observability | Public Beta: Mx 11.9 |
+| Agent Builder in Studio Pro                   | Public Beta: Mx 11.6 |
+| Agent Observability                           | Public Beta: Mx 11.9 |
 
 ## Developer Experience (Studio Pro)
 
