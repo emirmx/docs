@@ -25,7 +25,6 @@ The current version has the following limitations:
 * Prompts can only return a single message.
 * The client connection remains active for only 15 minutes, as the Mendix runtime currently does not support async requests.
 * Running an MCP Server is currently only supported on single-instance environments.
-* User authorization can currently only be applied on request but not at the tool/prompt level. As a result, the current user is not available within tool/prompt microflows, and entity access or XPath constraints can not be enabled out of the box. This is due to the capabilities offered by the official MCP Java SDK which does not support reusing a Mendix user session in the executed tools/prompts.
 
 Note that the MCP Server module is still in its early version and latest versions may include breaking changes. Since both the open-source protocol and the Java SDK are still evolving and regularly updated, these changes may also affect this module.
 
@@ -56,7 +55,9 @@ The selected microflow must adhere to the following principles:
 * The Input type should be `MCPServer` and/or `System.HttpRequest`, to extract required values, such as HttpHeaders from the request.
 * The return value needs to be a `System.User` object which represents the user who sent the request.
 
-Inside of your microflow, you can implement your custom logic to authenticate the user. For example, you can use username and password (basic auth), Mendix SSO, or external identity providers (IdP) as long as a `User` is returned. Note that the example authentication microflow within the module only implements the most basic authentication.
+Inside of your microflow, you can implement your custom logic to authenticate the user. For example, you can use username and password (basic auth), Mendix SSO, or external identity providers (IdP) as long as a `User` is returned. Note that the example authentication microflow within the module only implements basic authentication.
+
+The user that is returned in the microflow is used for all prompt and tool microflows that follow in the same session. The `currentUser` and `currentSession` variables become available, and it is possible to apply entity access for user-based access control, taking into account the default Mendix entity access settings.
 
 #### Protocol Version
 
@@ -74,7 +75,7 @@ The selected microflow must adhere to the following principles:
 For an example, see the `Example Implementations` folder inside of the module.
 
 {{% alert color="warning" %}}
-Function calling is a highly effective capability and should be used with caution. Tool microflows currently do not run in the context of the authenticated user, and thus cannot apply entity access. 
+Function calling is a highly effective capability and should be used with caution.
 
 Mendix strongly recommends keeping the user in the loop (such as by using confirmation logic which is integrated into many MCP clients), if the tool microflows have a potential impact on the real world on behalf of the end-user. Examples include sending emails, posting content online, or making purchases. In such cases, evaluate the use cases and implement security measures when exposing these tools to external AI systems via MCP.
 {{% /alert %}}
