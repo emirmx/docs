@@ -97,7 +97,7 @@ If a backup restore fails, the failure is logged in your app's **Backup Activity
 
 Your database must be large enough to hold the decompressed size of the database as stored in your backup file's [db folder](#db-folder), plus additional free space for overhead during the restoration process. For example, if you run your app in an S21 Cloud Resource Pack, then your database size is 10 GB. To restore a backup, the size of your decompressed database in the **db** folder must not exceed 7.75 GB to allow for 2.25 GB of overhead. 
 
-While a minimum of 2.25 GB is often sufficient for smaller backups, the actual required free space varies significantly based on the backup's size. To ensure a successful restore, Mendix recommends that your database has ample free space, well beyond the decompressed backup size to accommodate the restoration process. For more information on the resource pack sizes Mendix offers, see [Cloud Resource Packs](/developerportal/deploy/mendix-cloud-deploy/#resource-pack). 
+While a minimum of 2.25 GB is often sufficient for smaller backups, the actual required free space varies significantly based on the backup's size. To ensure a successful restore, Mendix recommends that your database has free space substantially exceeding the decompressed backup size to accommodate the restoration process. For more information on the resource pack sizes Mendix offers, see [Cloud Resource Packs](/developerportal/deploy/mendix-cloud-deploy/#resource-pack). 
 
 In the event that a backup restore fails in this way, you will need to retry the backup restore. Before you retry, ensure your database meets the size requirements detailed above.
 
