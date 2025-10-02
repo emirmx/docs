@@ -235,4 +235,12 @@ To update content that has already been published, follow these steps:
 
 5. On the **Publish** page, you can review all the details of your component entered so far and edit as necessary using the **Edit** button in each section before clicking **Publish Content**.
 
+These fields cannot be edited while updating a component:
+
+* **Component Type**
+* **Visibility**
+* **Component Source**
+* **Studio Pro Version**
+* **Release Version**
+* **License Type**
 
