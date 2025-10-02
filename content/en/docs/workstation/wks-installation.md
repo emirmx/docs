@@ -61,7 +61,7 @@ The Workstation Client is a connector between the devices and your local PC. You
         * If you do not have administrator rights for your computer, download the [Workstation Client Portable](https://marketplace.mendix.com/link/component/247456) instead. As a best practice, put the portable client in  a new folder in your Documents folders, and then click the .exe file to run the client.
     
     * For Linux:
-        * Download the [Linux](https://marketplace.mendix.com/link/component/245641) version of the Client
+        * Download the [Linux](https://marketplace.mendix.com/link/component/247459) version of the Client
         * Install: `sudo apt install ./workstation_X.X.X_arm64.deb`
         * Install card reader dependencies: `sudo apt install pcscd libcap2-bin`
         * Enable card reader dependencies: `sudo systemctl enable pcscd --now`
