@@ -40,7 +40,7 @@ You can refine search results using the following filters:
 For details on finding and installing Marketplace content in Studio Pro, see the [Finding and Downloading Content in Studio Pro](/appstore/use-content/#downloading) section of *Using Marketplace Content*.
 {{% /alert %}}
 
-## Create Content
+## Add Content
 
 Share new Marketplace content you have developed.
 
