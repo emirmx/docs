@@ -79,7 +79,7 @@ STRING_AGG ( attribute_path, separator )
 `separator` is any expression of type `STRING`. 
 
 {{% alert color="info" %}}
-This aggregate function is only supported in Java actions.
+This aggregate function is only supported in Java actions and View entities.
 {{% /alert %}}
 
 ### Examples
