@@ -79,19 +79,17 @@ You now have a class library that can be loaded as an extension by Studio Pro. H
     }
     ```
 
-    Within the *manifest.json* file, you specify which assemblies Studio Pro needs to load for the different execution contexts your extension needs to provide. If your extension only needs access to design time features and requires a user interface, then you can add it to the `mx_extensions` option. However, if your extension needs access to runtime information or perhaps needs to translate design time concepts into runtime concepts, then you will add it to `mx_build_extensions`.
+    Within the *manifest.json* file, you specify which assemblies Studio Pro needs to load for the different contexts your extension needs to provide. If your extension only needs access to design time features and requires a user interface, you can add it to the `mx_extensions` option. However, if your extension needs access to runtime information or needs to translate design time concepts into runtime concepts, add it to `mx_build_extensions`.
 
-    {{% alert color="warning" %}}Build extensions specified in `mx_build_extensions` will not have access to any user interfaces and attempting to link to user interface libraries will fail. Similarly, extensions loaded from `mx_extensions` cannot access any runtime features and are strictly design time only.{{% /alert %}}
+    This instructs Studio Pro to load `Mendix.ToDoExtension.dll`, whenever it loads Studio Pro extensions for your app. Adjust your local project names as needed.
 
-    This will instruct Studio Pro to load `Mendix.ToDoExtension.dll`, whenever it loads Studio Pro extensions for your app. Adjust your local project names as needed.
+    {{% alert color="warning" %}}Build extensions specified in `mx_build_extensions` will not have access to any user interfaces. Attempting to link to user interface libraries will fail. Similarly, extensions loaded from `mx_extensions` cannot access any runtime features and are strictly design time only.{{% /alert %}}
 
 6. Delete the `Class1.cs` file, as it is not needed.
 
-## Adding a Dockable Pane to Host Your User Interface
+## Add a Dockable Pane for the UI
 
-In this section, you will host a dockable pane within Studio Pro. This will provide you with a window where you can render the User Interface of the extension.
-
-1. Add a new file to the solution called `ToDoListDockablePaneExtension.cs`.
+1. Add a new file named `ToDoListDockablePaneExtension.cs`.
 2. Replace the contents of the file with the following code:
 
     ```csharp
@@ -123,7 +121,7 @@ In this section, you will host a dockable pane within Studio Pro. This will prov
     ```
 
 {{% alert color="info" %}}
-You are expected to get an error at this point around the `ToDoListDockablePaneViewModel`.
+You will see an error around the `ToDoListDockablePaneViewModel`—this is expected.
 {{% /alert %}}
 
 ### Explanation
