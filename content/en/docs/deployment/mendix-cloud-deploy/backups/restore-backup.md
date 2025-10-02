@@ -93,7 +93,7 @@ If the app is still running, you have to stop it by clicking **Stop Application*
 
 ## Restoring After a Backup Fails{#restore-after-fail}
 
-If a backup restore fails, the failure is logged in your app's **Backup Activity** log, which you can view on the **Backups** page when you open your app in [Apps](https://sprintr.home.mendix.com/). If this happens, all data that was restored until the point of failure will be present in your database. This leaves the database only partially restored as not all data from the backup file will be present in your database. 
+If a backup restore fails, the failure is logged in your app's **Backup Activity** log, which you can view on the **Backups** page when you open your app in [Apps](https://sprintr.home.mendix.com/). If this happens, only data that was restored until the point of failure will be present in your database, leaving the database only partially restored.
 
 Your database must be large enough to hold the decompressed size of the database as stored in your backup file's [db folder](#db-folder), plus additional free space for overhead during the restoration process. For example, if you run your app in an S21 Cloud Resource Pack, then your database size is 10 GB. To restore a backup, the size of your decompressed database in the **db** folder must not exceed 7.75 GB to allow for 2.25 GB of overhead. 
 
