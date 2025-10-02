@@ -25,6 +25,7 @@ The current version has the following limitations:
 * Prompts can only return a single message.
 * The client connection remains active for only 15 minutes, as the Mendix runtime currently does not support async requests.
 * Running an MCP Server is currently only supported on single-instance environments.
+* It was noticed that tool responses which contain a large payload are not returned successfully to the client. The issue is currently under investigation.
 
 Note that the MCP Server module is still in its early version and latest versions may include breaking changes. Since both the open-source protocol and the Java SDK are still evolving and regularly updated, these changes may also affect this module.
 
