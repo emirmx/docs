@@ -7,31 +7,33 @@ weight: 20
 
 ## Introduction
 
-This document describes how to build an example extension that adds a simple todo list extension to Studio Pro. With this example extension, you can add new todo items to a list. The example extension will be added to the main menu of Studio Pro and you will add a user interface for the example extension by using a dockable pane and some web content. 
+This document describes how to build a simple to-do list extension for Studio Pro. 
+
+The extension allows you to add new to-do items to a list, which integrate with Studio Pro's main menu. You will also create a user interface for the extension using a dockable pane and web content. 
 
 This document covers the following topics:
 
-* How to create an extension project and configure it for use as an extension in Studio Pro
-* How to create a web-based user interface for Studio Pro
-* How to store information in a local storage JSON file
-* How to interact with the Mendix metamodel
-* How to host your user interface within the Studio Pro IDE
+* Creating and configuring an extension project in Studio Pro
+* Building a web-based user interface
+* Storing data in a local JSON file
+* Interacting with the Mendix metamodel
+* Hosting the UI within the Studio Pro IDE
 
 ## Prerequisites
 
-Before you start the procedure, make sure that you have installed the following tools on your local development environment:
+Ensure the following tools are installed on local development environment before starting:
 
-* Microsoft Visual Studio 2022 or another equivalent development environment, such as visual studio code or JetBrains Rider. This example will assume that you are using Microsoft Visual Studio 2022.
-* Studio Pro version 10.6 or higher
+* Microsoft Visual Studio 2022 (or equivalent, such as Visual Studio Code or JetBrains Rider). This example assumes you are using Microsoft Visual Studio 2022.
+* Studio Pro version 10.6 or above
 
-## Creating the Project and Configuring It as an Extension
+## Creating the Project and Configuring the Extension Project
 
-### Creating the Project
+### Create the Project
 
-In order for your extension to be loaded correctly as an extension in Studio Pro, you will first need to create a project:
+Create a new project to ensure your extension is loaded correctly in Studio Pro. Follow the steps below:
 
-1. In Visual Studio, create a new project.
-2. Select the *Class Library* project template and click **Next**.
+1. Open Visual Studio and create a new project.
+2. Select the **Class Library** project template and click **Next**.
 
     {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/extensibility-api-howtos/build-todo-example-extension/step-one.png" >}}
 
@@ -40,22 +42,13 @@ In order for your extension to be loaded correctly as an extension in Studio Pro
 
     {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/extensibility-api-howtos/build-todo-example-extension/step-two.png" >}}
 
-5. Set **Framework** to *.NET 8.0 (Long Term Support)* and click **Create**.
+5. Set the **Framework** to *.NET 8.0 (Long Term Support).
 
     {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/extensibility-api-howtos/build-todo-example-extension/step-three.png" max-width=80%  >}}
 
-Now you have an empty project.
+6. Click **Create**.
 
-### Installing Extensions API NuGet Package
-
-You must do the following steps to configure the project so that it can be used as an extension in Studio Pro:
-
-1. Reference the extensibility API NuGet package
-2. Add a `manifest.json` file to the solution.
-
-The details of each step are described below.
-
-#### Referencing the Extensibility API NuGet Package
+### Install the Extensions API NuGet Package
 
 1. In Visual Studio, go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution**.
 
@@ -69,15 +62,15 @@ The details of each step are described below.
 
     {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/extensibility-api-howtos/build-todo-example-extension/step-six.png"  max-width=50%  >}}
 
-#### Adding a `manifest.json` File
+### Add the `manifest.json` File
 
-You now have a class library that can be loaded as an extension by Studio Pro. However, Studio Pro still needs some help in determining how to load the assemblies of your class library. Studio Pro reads a special file called *manifest.json*. This file instructs Studio Pro on which assemblies to load into each execution context.
+You now have a class library that can be loaded as an extension by Studio Pro. However, it still needs to determine how to load the assemblies of your class library. Studio Pro reads a special file called *manifest.json*, which instructs it on which assemblies to load into each execution context.
 
-1. In Visual Studio, go to **View** > **Solution Explorer** to open the Solution Explorer. 
+1. In Visual Studio, open the Solution Explorer by clicking **View** > **Solution Explorer**. 
 2. Right-click in the Solution Explorer and add a new file called *manifest.json*.
 3. Right-click in the Solution Explorer and select **Properties**.
-4. Ensure that you set the **Copy to Output Directory** property to **Copy always** to ensure that this file is included in your extensions output files.
-5. Replace the contents of your manifest.json file with the following code:
+4. Set the **Copy to Output Directory** property to **Copy always** to ensure the file is included in your extensions output files.
+5. Replace the contents of your `manifest.json` file with the following code:
 
     ```json
     {
@@ -92,7 +85,7 @@ You now have a class library that can be loaded as an extension by Studio Pro. H
 
     This will instruct Studio Pro to load `Mendix.ToDoExtension.dll`, whenever it loads Studio Pro extensions for your app. Adjust your local project names as needed.
 
-6. Remove the `Class1.cs` file, as you will not need it anymore.
+6. Delete the `Class1.cs` file, as it is not needed.
 
 ## Adding a Dockable Pane to Host Your User Interface
 
