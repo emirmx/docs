@@ -14,6 +14,10 @@ SCIM is an abbreviation for System for Cross-domain Identity Management; a proto
 
 The SCIM module allows you to integrate your app with the Joiner, Mover, Leaver (JML) process in your organization. It enables the assignment of tasks to users before their first login to the app. Additionally, based on the information in your IdP (for example, user groups), the SCIM module automatically creates and deactivates users in your app. This functionality helps you to control Mendix user licensing costs.
 
+{{% alert color="warning" %}}
+SCIM module versions 1.0.0 to 2.0.0 were released as protected modules. Starting from version 3.0.0, the module is unprotected and treated as a new module. Direct migration unprotected version of the module is not supported. As a result, transitioning requires manual reconfiguration.
+{{% /alert %}}
+
 {{% alert color="info" %}}
 Before you include the SCIM module in your app, you need to check if your IdP supports SCIM protocol. If you want to integrate with an on-premises AD or similar, you may need to use the [LDAP module](/appstore/modules/ldap/) instead.
 {{% /alert %}}
@@ -65,7 +69,6 @@ The SCIM module has the following limitations:
 * The SCIM module does not sync groups (or group memberships) to your app. This means you cannot use the SCIM module to assign user roles to your app’s users. Instead, you can assign user roles using the features offered by [SAML SSO](/appstore/modules/saml/) or [OIDC SSO](/appstore/modules/oidc/) modules.
 * If you want to do **Provision on demand** from Entra ID to test the SCIM integration of your app you cannot trigger a partial sync based on a group. This will trigger Entra ID to invoke a `/groups` endpoint, which is not yet supported.
 * The module does not support the development of a SCIM client application.
-* By default, the SCIM module’s admin screen is displayed in English. Users cannot add additional languages to the module, as it is protected and does not support language modification. 
 * Multiple clients can be configured only at runtime via the admin screen.
 
 ### SCIM Protocol Adherence
@@ -131,13 +134,13 @@ If you are using Mendix version 10.21.1, use User Commons module version 2.1.0 o
 This section provides an overview of updates for the SCIM and UserCommons modules across different versions. It includes several key updates to ensure a smooth transition while migrating to higher module versions.
 
 {{% alert color="info" %}}
-When upgrading to version 2.0.0 of the SCIM module, ensure you are also using version 2.0.0 of the UserCommons module.
+When upgrading to version 4.0.0 of the SCIM module, ensure you are also using version 2.0.0 of the UserCommons module.
 {{% /alert %}}
 
 | Mendix Version | SCIM Module Version | UserCommons Version | SCIM Information|
 | --- | --- | --- | --- |
-| 10.12.10 and above | 2.0.0 | 2.0.0 | SCIM module is ready for the React client. |
-| 9.24.2 and above | 1.0.2 | 1.0.2 | – |
+| 10.12.10 and above | 4.0.0 | 2.0.0 | SCIM module is ready for the React client. |
+| 9.24.2 and above | 3.0.0 | 1.0.2 | – |
 
 ## Configuration
 
@@ -278,7 +281,7 @@ This selection can be blank if you do not want to add custom logic. Save this co
 
 ### Deploy-time Configuration {#deploy-time}
 
-Starting from version 1.0.2, you can configure the SCIM module using app [constants](https://docs.mendix.com/refguide/constants/) instead of the app administration pages. As an app developer that uses SCIM, you can set default values. These values can be overridden at deploy-time using the app constants.
+Starting from version 3.0.0, you can configure the SCIM module using app [constants](https://docs.mendix.com/refguide/constants/) instead of the app administration pages. As an app developer that uses SCIM, you can set default values. These values can be overridden at deploy-time using the app constants.
 
 To enable app constants for configuring the SCIM module, set your app to run the after-startup microflow in the OIDC module (`SCIM.ASU_StartUp`).
 
@@ -289,12 +292,15 @@ Use the following security best practices when setting up your constants:
 
 #### Customizing Default Deploy-time Configuration
 
+In this configuration, you have several options to customize the Identity Provider (IdP) settings. Firstly, you can configure the IdP using constants. Additionally, the SCIM module supports further customization of the IdP configuration through the implementation of a custom microflow. Use the `IdPConfiguration_MicroflowName` constant and configure your custom microflow name in it. The custom microflow must return a list of configured IdPs (`Dep_IdPConfiguration.return`), which the SCIM module then uses to generate the necessary IdP Configurations for multiple IdPs. The default value of the `IdPConfiguration_MicroflowName` constant is `SCIM.Default_CreateIDPConfiguration`.
+
 The table below lists all supported constants. Mandatory constants must be set at deploy-time, while optional constants can typically be set at design time but, if necessary, can be overridden at deploy-time.
 
 | Constants | Description | Mandatory/Optional | Default Value |
 | --- | --- | --- | --- |
 | `Default_APIKey_Value` | **API Key** (token) for the authentication | Mandatory | No default value |
 | `Default_IdPConfiguration_Name` | default IdP Configuration name. Since only one default deploy-time configuration constant is supported, it cannot be modified or deleted.| Mandatory | No default Value |
+| **IdPConfiguration_MicroflowName** | This constant specifies a custom microflow that returns a list of IdP configurations and is used to create SCIM IdP configurations at deploy time. | Optional | `SCIM.Default_CreateIDPConfiguration` |
 | `Default_AllowCreateUsers` | allows to create users in the application | Optional | `True` |
 | `Default_CustomEntity_Name` | custom Entity name that can be specified for provisioning | Optional | `Administration.Account` |
 | `Default_DeleteUserPermanently` | a flag to delete users permanently or not | Optional | `False` |
@@ -307,6 +313,7 @@ The table below lists all supported constants. Mandatory constants must be set a
 | `Default_UserRole` | sets the mapping entity attribute to the Identity provider attribute | Optional | `User` |
 | `Default_UserType` | sets the mapping entity attribute to the Identity provider attribute | Optional | `Internal` |
 | `DisableMxAdmin` | deactivates Mx admin | Optional | `True` |
+| `RefreshCustomModule` | synchronizes the specified module | Optional | |
 
 {{% alert color="info" %}}
 You may have a requirement that users log in to your application only via SSO. However, when you deploy your app on the Mendix Cloud, the platform may still create an MxAdmin user with a local password. From version 2.1.0 of the UserCommons module, if the flag for the `DisableMxAdmin` constant is set to `True`, the MxAdmin user will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
