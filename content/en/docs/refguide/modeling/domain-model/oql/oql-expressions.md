@@ -78,6 +78,8 @@ STRING_AGG ( attribute_path, separator )
 
 `separator` is any expression of type `STRING`. 
 
+This aggregate function is supported in View Entities and Datasets starting from Mendix 11.2.0, whereas previously it was only available in Java actions.
+
 ### Examples
 
 In the following examples, the `Sales.Product` entity has five objects with `Name` and `Stock` attributes:
