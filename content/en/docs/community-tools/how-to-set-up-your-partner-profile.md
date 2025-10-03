@@ -1,5 +1,5 @@
 ---
-title: "Setting Up Your Partner Profile"
+title: "Finding a Partner Setting Up Your Profile"
 url: /community-tools/how-to-set-up-your-partner-profile/
 weight: 5
 description: "Describes how to configure the various parts of your Mendix Partner Profile."
@@ -9,9 +9,9 @@ aliases:
 
 ## Introduction
 
-The Partner Finder allows Mendix partners to showcase their organization, services, and successful customer projects.  
-
-A Partner Profile within the Partner Finder is a simple and clear way for each partner to present themselves through such details as the number of developers in the organization, the company's projects, customer reviews, contact information, a company video, and a description.
+The Partner Finder is a central tool for the Mendix ecosystem:
+* If you are a customer or prospect looking for a Mendix partner (for example, “I’m looking for a partner in Brazil”), you can use the Partner Finder to search and connect with certified partners worldwide. It allows you to filter by country, industry, expertise, and view detailed profiles to find the right partner for your needs.
+* If you are a Mendix partner, the Partner Finder allows you to showcase your organisation, services, and successful projects. A Partner Profile is a simple and clear way to present your company, including number of developers, customer reviews, contact details, videos, and more.
 
 ## Prerequisites
 
@@ -79,3 +79,11 @@ For technical support or questions, contact partnerfinder@mendix.com.
 
 * [Mendix Profile](/mendix-profile/)
 * [Mendix Community](/community-tools/mendix-community/)
+
+## FAQ
+**Q: I’m looking for a Mendix partner in Brazil (or another country). How can I find one?**
+A: Use the Mendix Partner Finder. You can filter by country, industry, and area of expertise to connect with certified partners worldwide.
+**Q: Does Mendix provide a tool to search for partners?**
+A: Yes. The Mendix Partner Finder is the official tool to discover and contact partners.
+**Q: Where can I see details about a partner (for example, services or projects)?**
+A: In the Partner Finder, each certified partner has a profile with details such as competencies, experience, customer projects, and contact information.
