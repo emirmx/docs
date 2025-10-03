@@ -65,10 +65,10 @@ After you configure the runtime setting and start the Mendix application, the ap
 
 ## FAQ
 
-**When does a Mendix application connect to the license server?**
+### When Does a Mendix Application Connect to the License Server?
 
-Mendix applications connect to the license server during startup to retrieve the license. Beyond that, there are no ongoing connections to the license server.
+Mendix applications connect to the license server during startup to retrieve the license. After this initial connection, the applications do not maintain ongoing connections to the license serve
 
-**What happens if the license server is unavailable?**
+### What Happens If the License Server Is Unavailable?
 
-If the license server becomes unavailable while a Mendix application is running, nothing will happen. If the license server is unavailable during startup of a Mendix application, it will start in trial mode. This can be resolved by restarting the Mendix application while the license server is available.
+If the license server becomes unavailable while a Mendix application is running, the application's current operation will not be affected. However, if the license server is unavailable during startup, the Mendix application will launch in trial mode. To resolve this, restart the Mendix application once the license server is available.
