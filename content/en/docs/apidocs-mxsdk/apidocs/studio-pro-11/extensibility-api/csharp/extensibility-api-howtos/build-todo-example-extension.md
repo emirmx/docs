@@ -576,10 +576,10 @@ You also need to implement methods to load and save the to-do list:
 
 ## Adding a Menu Item to Launch the Extension
 
-In this section, you will add a menu item to the toolbar that will allow you to select the ToDo list from a menu item.
+Add a menu item to make the extension accessible from the Studio Pro toolbar.
 
 1. Create a `MenuExtension`.
-2. Add another class and call it `ToDoListMenuExtension.cs`.
+2. Add a new class file named `ToDoListMenuExtension.cs`.
 3. Replace the contents of the file with the following code:
 
     ```csharp
@@ -612,18 +612,18 @@ In this section, you will add a menu item to the toolbar that will allow you to 
 
 ## Adding a Web-based User Interface
 
-Up to now you have been adding all the logic that will allow your extension to run inside Studio Pro. In this section, you will add a user interface for the extension. In Studio Pro, you need to load your user interface elements as web content. This web content is then rendered from within an isolated web view in Studio Pro.
+Now that the logic is in place, add a user interface that Studio Pro can render as web content.
 
-{{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/extensibility-api-howtos/build-todo-example-extension/add-web-items.png"  >}}
+{{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/extensibility-api-howtos/build-todo-example-extension/add-web-items.png" width="300" >}}
 
-1. Add a new folder to the solution and call it `wwwroot`.
-2. In the folder, add two files:
+1. Add a new folder to the solution named `wwwroot`.
+2. In the folder, add:
 
-    * A HTML page that contains the layout of the user interface. Call it `index.html`
-    * A JavaScript file that contains the client side logic for the user interface. Call it `main.js`
+    * `index.html` – ab HTML page that contains the layout of the user interface 
+    * `main.js` – A JavaScript file that contains the client-side logic
 
 3. Open `index.html`.
-4. Replace its contents with the following:
+4. Replace its contents with the following code:
 
     ```html
     <html lang="en">
@@ -669,7 +669,8 @@ Up to now you have been adding all the logic that will allow your extension to r
     </html>
     ```
 
-5. Open `main.js` and add the JavaScript logic by replacing the contents of the file with the following:
+5. Open `main.js`
+6. Add the JavaScript logic by replacing the contents of the file with the following code:
 
     ```js
     function postMessage(message, data) {
@@ -743,11 +744,11 @@ Up to now you have been adding all the logic that will allow your extension to r
 
 ### Explanation
 
-This HTML page is self-explanatory, as you are providing a very simple interface with some added CSS styling provided by Tailwind CSS.
+This HTML page provides a simple interface styled with Tailwind CSS. The JavaScript file enables communication between your web view and extension logic.
 
-Within the JavaScript file, you need to add some logic so that the web view can communicate with your extension logic correctly.
+#### JavaScript Setup
 
-You add a small helper function to simplify the call to the browser API:
+1. Add a helper function to simplify the call to the browser API:
 
 ```javascript
 function postMessage(message, data) {
@@ -755,7 +756,7 @@ function postMessage(message, data) {
 }
 ```
 
-You also need to perform some initialization to ensure that you can respond to messages send to JavaScript and 
+2. Initialize message handling and respond to incoming messages: 
 
 ```javascript
 // Register message handler.
@@ -771,14 +772,18 @@ async function handleMessage(event) {
 }
 ```
 
-It is important to set these two `index.html` and `main.js` files to *Copy always* or *Copy if newer* in their **Copy to Output Directory** property; otherwise, they will not be present in the build output folder when you are ready to start using the extension.
+{{% alert color="warning" %}}
+
+Set `index.html` and `main.js` to **Copy always** or **Copy if newer** in their **Copy to Output Directory** property. Otherwise, they will not be included in the build output.
+
+{{% /alert %}}
 
 ## Setting up Communication Between the User Interface and Extension {#set-up-communication}
 
-So far you have configured the extension to be usable in Studio Pro. You added support for storing the to do items. You also added a user interface that users can interact with. The last step in this process is to link the extension c# logic with the web-based JavaScript logic.
+Link the extension C# logic with the JavaScript UI by adding a utility class for handling web responses.
 
-1. Start with adding a utility class to help simplify the way you interact with web responses. Call the file `HttpListenerResponseUtils.cs`.
-2. Replace the contents of the file with the following:
+1. Add a new filed named `HttpListenerResponseUtils.cs`.
+1. Replace the contents of the file with the following:
 
     ```csharp
     using System.Net;
@@ -834,21 +839,18 @@ So far you have configured the extension to be usable in Studio Pro. You added s
 
 ### Explanation
 
-Your web-based user interface is hosted inside Studio Pro in an isolated web container. As such to communicate with it you are adding some utility functionality to help you improve the code.
+Your web-based user interface is hosted inside Studio Pro in an isolated web container. This utility class simplifies communication between the extension and web view:
 
-The first method you add is `SendFileAndClose`. This function will allow you to send the contents of a file located on your hard drive to the webpage where your user interface is hosted.
+* `SendFileAndClose` – send the contents of a file to the UI
+* `SendJsonAndClose` – Sends a JSON stream
+* `SendNoBodyAndClose` – Sends an empty response with a status code
+* `AddDefaultHeaders` – adds default HTTP headers to the requests
 
-Next you add `SendJsonAndClose`. This method functions similarly to `SendFileAndClose`, but will accept a json stream instead of a file path.
+## Adding a Web Server Extension
 
-After that you add `SendNoBodyAndClose`. This sends an empty response with just a status code to the webpage.
+This extension type allows you to serve web content easily within Studio Pro.
 
-The final method `AddDefaultHeaders` is a utility method that adds some default http headers to the requests.
-
-## Next Steps
-
-In this section, you will add a web server extension. This extension type allows you to serve web content easily within extensions.
-
-1. Add a new file called: `ToDoListWebServerExtension.cs`.
+1. Add a new file named `ToDoListWebServerExtension.cs`.
 2. Replace the contents of the file with the following code:
 
     ```csharp
@@ -909,30 +911,36 @@ In this section, you will add a web server extension. This extension type allows
     }
     ```
 
-This class is the web container that allows Studio Pro to interact with your user interface. Within this class you will serve the web content to your extension logic.
+### Explanation
 
-Note that you inherit from `WebServerExtension`.  `WebServerExtension` serves web content to Studio Pro.
+This class is the web container that allows Studio Pro to interact with your UI. It:
 
-Additionally, you override the `InitializeWebServer` method. Studio Pro will call this method during startup, and you should place all your initialization logic in here. This implementation adds three web routes. These web routes are the locations where your user interface can be accessed from.
-
-`ServeIndex`, `ServeMainJs`, and `ServeToDos` serve the contents of the 3 routes to your extension logic.
+* Inherits from `WebServerExtension`, which serves content to Studio Pro
+* Overrides `InitializeWebServer`, where you define three routes:
+    * `ServeIndex`
+    * `ServeMainJs`
+    * `ServeToDos`
+  
+These web routes are the locations where your UI can be accessed from.
 
 ## Hosting the Extension in Studio Pro
 
-All the code you need should now be complete. The last step in the process is building your solution and adding your binary output as an extension inside your app.
+With everything in place, follow the steps below to build and deploy your extension.
 
-To do this you will need to do the following:
+### Build and Deploy
 
-1. Build your solution in Visual Studio by selecting the **Build** > **Build Solution**.
+1. In Visual Studio, select **Build** > **Build Solution**.
 2. Navigate to the Mendix app where your extension will be hosted. 
-3. Create a new folder and name it `extensions`.
-4. Add a subfolder and name it `TodoExtension`. You now have a folder with a path similar to this `[Mendix App]/extensions/MyTodoExtension`/.
-5. Copy the files from your Visual Studio extension projects `bin/debug` subfolder into your mendix app extension folder: [`Mendix App]/extensions/MyTodoExtension`.
-6. Run Studio Pro. 
+3. Create a new folder named `extensions`.
+4. Inside it, add a sub-folder named `TodoExtension`. Your path should look like this: `[Mendix App]/extensions/MyTodoExtension/`.
+5. Copy the content from your Visual Studio project's `bin/debug` sub-folder into your app extension folder.
+6. Run Studio Pro.
 
-While developing extensions, also use command line flag to enable extensions as follows:
+### Enable Extension Development
 
-1. Navigate to your Studio Pro Installation folder.
-2. From the command line, call the following command: `.\studiopro.exe --enable-extension-development`.
+Use a command-line flag to enable extensions:
 
-This will start an instance of Studio Pro and load your extension. You can now view your new extension interface from the **View** > **Todo** menu item.
+1. Open the Studio Pro Installation folder.
+2. From the command-line, run: `.\studiopro.exe --enable-extension-development`.
+
+This will launch Studio Pro and load your extension. You can now access it from the **View** > **Todo** menu item.
