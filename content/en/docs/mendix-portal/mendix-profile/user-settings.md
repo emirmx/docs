@@ -20,7 +20,7 @@ This is what you can do on the [Profile](https://user-settings.mendix.com/link/p
 * Enter your name.
 * Add your work details, meaning **Job Title** and **Department**.
 * Select your **Country of Residence**.
-* Select the **Language** in which to display Mendix Portal content. Language selection is applied after signing out and singing back in.       
+* Select the **Language** in which to display Mendix Portal content. Language selection is applied after signing out and signing back in.       
   {{% alert color="info" %}}
   User-created content and system-generated content, such as app logs, is not translated. 
   {{% /alert %}}
