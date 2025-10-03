@@ -1,5 +1,5 @@
 ---
-title: "Build a Todo Example Extension Using C#"
+title: "Build a To-do Example Extension Using C#"
 linktitle: "ToDo Example"
 url: /apidocs-mxsdk/apidocs/csharp-extensibility-api-11/build-todo-example-extension/
 weight: 20
@@ -126,7 +126,7 @@ You will see an error around the `ToDoListDockablePaneViewModel`—this is expec
 
 ### Key Features
 
-There are a few notable features of the class in the code above:
+There are a few notable features in the code above:
 
 * `Export` attribute:
 
@@ -180,9 +180,9 @@ There are a few notable features of the class in the code above:
 
 ## Creating a View Model to Host Your View Data
 
-In this section, you will add a view model to store our view data:
+Add a view model to store view data by following the steps below:
 
-1. Add a new file to the solution and name it `ToDoListDockablePaneViewModel.cs`.
+1. Add a new file to the solution named `ToDoListDockablePaneViewModel.cs`.
 2. Replace the contents of the file with the following code: 
 
     ```csharp
@@ -275,7 +275,18 @@ In this section, you will add a view model to store our view data:
 
 ### Explanation
 
-The first important thing to note about this view model class is that you do not decorate this class with the export attribute. This means that the extension will be responsible for instantiating this type within the extension. This also means that you can specify any type you like within the constructor. You already set up the instantiation of this class in the previous section. The important bit here is that you pass in the `baseUri`, `getCurrentApp` lambda expression and an instance of the logging class.
+#### Instantiation and Constructor 
+
+Unlike the other extension class, this view model is not decorated with the `export` attribute. This means:
+
+* The extension is responsible for instantiating this class
+* You can specify any type of constructor you need
+
+You must pass the following parameters:
+
+* `baseUri` – the base address for the web interface
+* `getCurrentApp` – a lambda expression to retrieve the current app instance
+* `logService` – an instance of the logging service
 
 ```csharp
     public ToDoListDockablePaneViewModel(Uri baseUri, Func<IModel?> getCurrentApp, ILogService logService)
@@ -286,7 +297,13 @@ The first important thing to note about this view model class is that you do not
     }
 ```
 
-In order to host a web interface inside Studio Pro, your viewmodel must implement `InitWebView`. Within this method you are passed an instance of `IWebView`. This is your application's isolated webview. You now need to provide the webview some information so that it will render its data correctly.
+You have already configured instantiation in the previous section.
+
+#### Implementation 
+
+To host a web interface inside Studio Pro, the view model must implement `InitWebView`. This method receives an instance of `IWebView`, which represents your application's isolated webview. 
+
+Provide the webview with the following code so the data is rendered correctly:
 
 ```csharp
     public override void InitWebView(IWebView webView)
@@ -327,15 +344,17 @@ In order to host a web interface inside Studio Pro, your viewmodel must implemen
 {{% snippet file="/static/_includes/apidocs-mxsdk/warning-wwwroot.md" %}}
 {{% /alert %}}
 
-Firstly, you set the default address to `new Uri(_baseUri, "index")`. You will delve a bit deeper into where this index comes from later in the guide. If you want to skip ahead, see [Setting up Communication Between the User Interface and Extension](#set-up-communication)
+#### WebView Setup and Message Handling
 
-Secondly, you add an event handler for the `MessageReceived` event. You will be using this method send and respond to messages from the webview. Within Studio Pro, use a two-way message bus as the primary communication method between your web based user interface and your extension logic.
+Set the default address to `new Uri(_baseUri, "index")`. You will explore the origin of this index below in [Setting up Communication Between the User Interface and Extension](#set-up-communication).
 
-Inside the message received event handler, add some code to handle the tasks you need to perform:
+The `MessageReceived` event handler enables two-way communication between the webview and your extension logic. Studio Pro uses a message bus for the interaction.
 
-* `AddToDo` will add a Todo Item to the list.
-* `ChangeToDoStatus` will change the status of a Todo item.
-* `ClearDone` will remove all items flagged as done.
+Within the event handler, you define the logic for three message types:
+
+* `AddToDo` – adds a new to-do item
+* `ChangeToDoStatus` – updates the status of a to-do item
+* `ClearDone` – removes all completed items
 
 ```csharp
     var currentApp = _getCurrentApp();
@@ -364,7 +383,9 @@ Inside the message received event handler, add some code to handle the tasks you
     }
 ```
 
-Now, create the methods responsible for performing the logic:
+#### Logic Methods
+
+These methods perform the actual data manipulation based on the received messages:
 
 ```csharp
     private void AddToDo(IModel currentApp, string toDoText)
@@ -396,11 +417,13 @@ Now, create the methods responsible for performing the logic:
     }
 ```
 
-## Creating a Model to Store the Todo Information
+## Creating a Model to Store the To-do Information
 
-In order to store the information to disk, add some model classes that will be able to store the Todo information.
+To store to-do data on disk, create model classes that represent individual items and the overall list. 
 
-1. Add a new class that will host the To do information itself. Call the file `ToDoModel.cs`
+### Create the To-do Item Model
+
+1. Add a new class file named `ToDoModel.cs`.
 2. Replace the contents of the file with the following code:
 
     ```csharp
@@ -429,10 +452,10 @@ In order to store the information to disk, add some model classes that will be a
     }
     ```
 
-    You will also need a model class that will store a list of all the todos that you have available.
+ ### Create the To-do List Model
 
-3. Add another class and name it `ToDoListModel.cs`.
-4. Replace the contents of this file with the following code:
+1. Add another class file nameed`ToDoListModel.cs`.
+2. Replace the contents of this file with the following code:
 
     ```csharp
     using System.Text.Json.Serialization;
@@ -453,9 +476,11 @@ In order to store the information to disk, add some model classes that will be a
 
 ## Creating a Storage Handler to Store the Todo Information
 
-With the models created, you can now create a storage handler that will manage storing these models to disk.
+With the models in place, create a storage handler that will manage reading and writing to disk.
 
-1. Add a new class file and call it `ToDoStorage.cs`.
+### Add the Storage Handler Class
+
+1. Add a new class file named `ToDoStorage.cs`.
 2. Replace the contents of the file with the following code: 
 
     ```csharp
@@ -506,9 +531,9 @@ With the models created, you can now create a storage handler that will manage s
     }
     ```
 
-### Explanation
+#### Explanation
 
-The `ToDoStorage` class will be responsible for storing the todo information to disk. In order to store the file in the correct path, you need to request the path from the `CurrentApp` instance. 
+The `ToDoStorage` class is responsible for storing the to-do information to disk. In order to store the file in the correct path, request the path from the `CurrentApp` instance:
 
 ```csharp
     public ToDoStorage(IModel currentApp, ILogService logService)
@@ -518,7 +543,7 @@ The `ToDoStorage` class will be responsible for storing the todo information to 
     }
 ```
 
-You also need to handle loading and saving of the todo data.
+You also need to implement methods to load and save the to-do list:
 
 ```csharp
     public ToDoListModel LoadToDoList()
@@ -549,7 +574,7 @@ You also need to handle loading and saving of the todo data.
     }
 ```
 
-## Adding a Menu Item to Open the Extension from the Main Menu
+## Adding a Menu Item to Launch the Extension
 
 In this section, you will add a menu item to the toolbar that will allow you to select the ToDo list from a menu item.
 
