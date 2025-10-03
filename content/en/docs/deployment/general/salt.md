@@ -62,3 +62,13 @@ License.SaltLicenseLocation = port@host
 * `host`: The hostname or IP address of the machine running the license server.
 
 After you configure the runtime setting and start the Mendix application, the application connects to the Siemens License Server to validate the SALT license.
+
+## FAQ
+
+**When does a Mendix application connect to the license server?**
+
+Mendix applications connect to the license server during startup to retrieve the license. Beyond that, there are no ongoing connections to the license server.
+
+**What happens if the license server is unavailable?**
+
+If the license server becomes unavailable while a Mendix application is running, nothing will happen. If the license server is unavailable during startup of a Mendix application, it will start in trial mode. This can be resolved by restarting the Mendix application while the license server is available.
