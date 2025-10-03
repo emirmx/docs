@@ -124,57 +124,59 @@ You now have a class library that can be loaded as an extension by Studio Pro. H
 You will see an error around the `ToDoListDockablePaneViewModel`—this is expected.
 {{% /alert %}}
 
-### Explanation
+### Key Features
 
 There are a few notable features of the class in the code above:
-First, the top of the class is decorated with an `Export` attribute:
 
-```csharp
-[Export(typeof(DockablePaneExtension))]
-```
+* `Export` attribute:
 
-Studio Pro uses this attribute to identify which extension type to inject this class into. If you do not specify this attribute, Studio Pro will not load your extension type. Additionally, the extension descends from `DockablePaneExtension`. Studio Pro uses abstract classes to enforce behavior for your extensions.
+    ```csharp
+    [Export(typeof(DockablePaneExtension))]
+    ```
 
-```csharp
-public class ToDoListDockablePaneExtension : DockablePaneExtension
-```
+    Studio Pro uses this attribute to identify which extension type to inject this class into. If you do not specify this attribute, Studio Pro will not load your extension type. The extension descends from `DockablePaneExtension`. Studio Pro uses abstract classes to enforce behavior for your extensions.
 
-In order for your type to be loaded, you will need to add a `ImportingConstructor` attribute to the preferred constructor. Studio Pro will use this constructor when instantiating your extension class. 
+    ```csharp
+    public class ToDoListDockablePaneExtension : DockablePaneExtension
+    ```
 
-When instantiating your class, Studio Pro will attempt to perform dependency injection for any of the types that you define in the constructor.
+* `ImportingConstructor` attribute
 
-If you wish to inject your own custom types, they will also need to be decorated with the `Export` attribute.
+    This attribute must be added to the preferred constructor in order for your type to be loaded. Studio Pro uses this constructor when instantiating your extension class. 
 
-```csharp
-    [ImportingConstructor]
-    public ToDoListDockablePaneExtension(ILogService logService)
-    {
-        _logService = logService;
-    }
-```
+    When instantiating your class, Studio Pro will attempt to perform dependency injection for any of the types that you define in the constructor.
 
-In this constructor, you will note that you request an instance of the `ILogService` and then save the instance in a private field.
+* `ILogService`
 
-```csharp
-    public override string Id => PaneId;
+    If you want to inject your own custom types, they will also need to be decorated with the `Export` attribute:
 
-    public override DockablePaneViewModelBase Open()
-    {
-        return new ToDoListDockablePaneViewModel(WebServerBaseUrl, () => CurrentApp, _logService) { Title = "To Do List" };
-    }
-```
+    ```csharp
+        [ImportingConstructor]
+        public ToDoListDockablePaneExtension(ILogService logService)
+        {
+            _logService = logService;
+        }
+    ```
 
-In the final portion of the class, provide some necessary information to Studio Pro:
+    In this constructor, you request an instance of the `ILogService`, then save it in a private field:
 
-First, you override the `Id` property. This property provides Studio Pro with a way to uniquely identify your dockable pane extension. Second, you override the `Open` method. Within this method you need to return a valid implementation of `DockablePaneViewModelBase` which studio Pro will use to render your pane's contents.
+    ```csharp
+        public override string Id => PaneId;
 
-In summary, in this section you performed the following:
+        public override DockablePaneViewModelBase Open()
+        {
+            return new ToDoListDockablePaneViewModel(WebServerBaseUrl, () => CurrentApp, _logService) { Title = "To Do List" };
+        }
+    ```
 
-1. Create a new class that descends from `DockablePaneExtension`.
-2. Decorate your class with the `Export` attribute.
-3. Decorate your preferred constructor with the `ImportingConstructor` attribute.
-4. Inject the `ILogService`.
-5. Return a valid view model from the open method.
+* Override properties
+
+    Provide the following information to Studio Pro:
+
+    * Override the `Id` property
+        * This property provides Studio Pro a way to uniquely identify your dockable pane extension
+    * Override the `Open` method.
+        * Within this method you need to return a valid implementation of `DockablePaneViewModelBase` which studio Pro will use to render your pane's contents
 
 ## Creating a View Model to Host Your View Data
 
