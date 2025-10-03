@@ -81,9 +81,21 @@ This configuration sets a limit on how many files can be uploaded at once.
 
 This configuration sets a maximum limit on the file size of uploaded files.
 
-#### Text Tab {#general}
+#### Text Tab {#texttab}
 
 Configures the displayed text used in **File Uploader**.
+
+#### Advanced Tab {#advanced}
+
+* **Object creation timeout** - Configure the timeouts to wait until object creation considered as failed. The value is in seconds.
+* **Enable custom buttons** - Allows to use custom action buttons that will be displayed on the right side of file list instead of the standard 
+buttons. If set to **yes**, the default action buttons will be hidden.
+* **Custom buttons** - Add custom buttons that will be used in file uploader.
+    * **Caption** - caption text configuration for the custom button.
+    * **Icon** - icon configuration for the custom button.
+    * **Action** - onclick action configuration for the custom button.
+    * **Default file action** - if set to **yes**, the action in the button will be use as default click action for the file.
+    * **Visible** - if set to **false**, the button will be hidden.
 
 ### Nanoflows
 
