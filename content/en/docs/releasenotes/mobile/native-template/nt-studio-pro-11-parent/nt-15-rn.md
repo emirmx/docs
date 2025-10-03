@@ -5,23 +5,18 @@ weight: 10
 description: "Native Template 15"
 ---
 
-## 15.4.0 {#1530}
+## 15.4.0 {#1540}
 
 **Release date: October 2, 2025**
 
 ### Improvements
 
-- We have migrated from react-native-push-notification to @notifee/react-native for better new architecture compatibility and enhanced push notification features
-
-- We have upgraded `react-native-permissions` to version 5.4.2
-
-- We have removed `react-native-schedule-exact-alarm-permission` dependency
-
-- We have added a USE_BIOMETRIC permission in Android.
-
-- We have migrated from react-native-fast-image to @d11/react-native-fast-image for new architecture compatibility.
-
-- We have upgraded react-native-reanimated to v3.16.7.
+- We migrated from `react-native-push-notification` to `@notifee/react-native` for improved architecture compatibility and enhanced push notification features.
+- We upgraded `react-native-permissions` to version 5.4.2.
+- We removed `react-native-schedule-exact-alarm-permission` dependency.
+- We added a `USE_BIOMETRIC` permission in Android.
+- We migrated from `react-native-fast-image` to `@d11/react-native-fast-image` for new architecture compatibility.
+- We upgraded `react-native-reanimated` to v3.16.7.
 
 ## 15.3.1 {#1530}
 
