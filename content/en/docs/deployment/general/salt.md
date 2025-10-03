@@ -63,7 +63,7 @@ License.SaltLicenseLocation = port@host
 
 After you configure the runtime setting and start the Mendix application, the application connects to the Siemens License Server to validate the SALT license.
 
-## FAQ
+## FAQs
 
 ### When Does a Mendix Application Connect to the License Server?
 
