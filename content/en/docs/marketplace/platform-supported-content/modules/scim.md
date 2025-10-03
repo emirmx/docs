@@ -15,7 +15,7 @@ SCIM is an abbreviation for System for Cross-domain Identity Management; a proto
 The SCIM module allows you to integrate your app with the Joiner, Mover, Leaver (JML) process in your organization. It enables the assignment of tasks to users before their first login to the app. Additionally, based on the information in your IdP (for example, user groups), the SCIM module automatically creates and deactivates users in your app. This functionality helps you to control Mendix user licensing costs.
 
 {{% alert color="warning" %}}
-SCIM module versions 1.0.0 to 2.0.0 were released as protected modules. Starting from version 3.0.0, the module is unprotected and treated as a new module. Direct migration unprotected version of the module is not supported. As a result, transitioning requires manual reconfiguration.
+SCIM module versions 1.0.0 to 2.0.0 were released as protected modules. Starting from version 3.0.0, the module is unprotected and treated as a new module. Direct migration to unprotected version of the module is not supported. As a result, transitioning requires manual reconfiguration.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -239,7 +239,7 @@ Ensure that only legitimate SCIM clients can interact with your app via the SCIM
 
     * **API Key**: Used as a token for header-based authentication. IdP will send this as the authorization header parameter in the request.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/scim/alias.png" class="no-border" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/scim/alias-api-key.png" >}}
 
 2. Configuring API-Key via Pipeline
 
@@ -249,7 +249,7 @@ Another option is to generate an API key yourself and submit it to the SCIM modu
 
 #### User Provisioning
 
-In the **Provisioning** tab of the SCIM server configuration, you need to configure the following fields:
+In the **Provisioning** section of the SCIM server configuration, you need to configure the following fields:
 
 * **Custom user Entity (extension of System.User)**: the entity in which you will store and look up the user account. If you are using the Administration module this would be `Administration.Account`.
 * **The attribute where the user principal is stored** (primary attribute): unique identifier associated with an authenticated user.
@@ -275,7 +275,7 @@ The custom microflow name must begin with the string `UC_CustomProvisioning` and
 
  The microflow must return a **System.User** object to ensure proper user provisioning and updates. It will be executed after user creation or update of user. However, starting from version 2.0.0 of the UserCommons module, this is no longer mandatory. If you have added a new microflow, you need to refresh the module containing your microflow as described in the [Mx Model Reflection](/appstore/modules/model-reflection/).
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/scim/user_commons.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/scim/user-commons.png" >}}
 
 This selection can be blank if you do not want to add custom logic. Save this configuration. Double-click on the **Alias** name and you will be able to copy the generated **API Key**.
 
@@ -331,7 +331,7 @@ Setting up connectivity with an IdP varies depending on the vendor. The followin
 3. Configure the SCIM server (Mendix SCIM Application) with the following details:
 
     * **Tenant URL**: `https://{host name}/scim/v2`. Replace `{host name}` with your intranet domain. For example, `https://intranet.acme.com/scim/v2`.
-    * **Secret Token**: copy the **API Key** (token) from the **IdPConfiguration** page of User Commons, as described in the [API Security](#api_security) section above.
+    * **Secret Token**: copy the **API Key** (token) from the **IdPConfiguration** section of User Commons, as described in the [API Security](#api_security) section above.
     * Click **Test Connection**.
 
 4. Configure **Mappings** and **Settings**.
