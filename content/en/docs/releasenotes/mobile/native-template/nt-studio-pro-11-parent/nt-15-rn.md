@@ -18,7 +18,7 @@ description: "Native Template 15"
 - We migrated from `react-native-fast-image` to `@d11/react-native-fast-image` for new architecture compatibility.
 - We upgraded `react-native-reanimated` to v3.16.7.
 
-## 15.3.1 {#1530}
+## 15.3.1 {#1531}
 
 **Release date: August 15, 2025**
 
