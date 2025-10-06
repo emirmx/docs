@@ -20,11 +20,11 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### New Features
 
-* We have added support for IP blocklisting in the Access Restriction Profile for apps deployed on Kubernetes, allowing you to block incoming requests from specific IPs that match the configured profile.
+* We have added support for IP blocklisting in the **Access Restriction Profile** for apps deployed on Kubernetes, allowing you to block incoming requests from specific IPs that match the configured profile.
 
 #### Bug Fixes
 
-* We have fixed an issue where duplicate paths were added in Path-based Access Restriction and caused deployment failures for apps on Kubernetes. The fix prevents new duplicates, but existing ones must be manually removed.
+* We have fixed an issue where duplicate paths were added in **Path Based Access Restriction** and caused deployment failures for apps on Kubernetes. The fix prevents new duplicates, but existing ones must be manually removed.
 
 ### October 1, 2025
 
