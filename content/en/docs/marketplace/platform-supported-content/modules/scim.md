@@ -15,7 +15,7 @@ SCIM is an abbreviation for System for Cross-domain Identity Management; a proto
 The SCIM module allows you to integrate your app with the Joiner, Mover, Leaver (JML) process in your organization. It enables the assignment of tasks to users before their first login to the app. Additionally, based on the information in your IdP (for example, user groups), the SCIM module automatically creates and deactivates users in your app. This functionality helps you to control Mendix user licensing costs.
 
 {{% alert color="warning" %}}
-SCIM module versions 1.0.0 to 2.0.0 were released as protected modules. Starting from version 3.0.0, the module is unprotected and treated as a new module. Direct migration to unprotected version of the module is not supported. As a result, transitioning requires manual reconfiguration.
+SCIM module versions 1.0.0 to 2.0.0 were released as protected modules. Starting from version 3.0.0, the module is unprotected, and Studio Pro treats this unprotected version as a new module within your app model. Direct migration to the unprotected version of the module is not supported. As a result, transitioning requires you to remove the existing SCIM module and configure version 3.0.0 as a new module.
 {{% /alert %}}
 
 {{% alert color="info" %}}
