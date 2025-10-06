@@ -107,6 +107,10 @@ However, a Mendix commit is not the same as a database commit. For an object of 
 
 Mendix mimics this behavior for non-persistable entities. Committing a non-persistable entity means that you cannot use a rollback object activity to go back to the previous values, although the rollback error handling in a microflow rolls back to the original values.
 
+{{% alert color="warning" %}}
+Please note that deleting an object and then committing it can have different outcomes based on if the object is already committed or not. If the object is already committed then the delete will remove the object from the database and so the commit after will not do anything. If the object is new (and so not committed before) then the delete will not do anything but the commit will store the object in the database. So this order of events (a delete and then a commit) may have unexpected results if the object is not committed before.
+{{% /alert %}}
+
 ### Autocommit and Associated Objects {#autocommit-and-associated-objects}
 
 When an object is committed through a default **Save** button, a commit activity, or web services, it always triggers the commit events. The platform also evaluates all associated objects. To guarantee data consistency, the platform may also autocommit associated objects.
