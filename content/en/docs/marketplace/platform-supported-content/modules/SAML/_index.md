@@ -467,7 +467,7 @@ You can set up custom user provisioning by selecting the **IdP Configuration** t
     * The IdP Attribute is one of the fixed claims supported by the [OIDC SSO](/appstore/modules/oidc/) module.
     * **IdP Attributes**(Claims) cannot be of type enum, autonumber, or an association.
 
-3. Optionally, you can use the custom logic in the **User Provisioning**. In the **Custom UserProvisioning** field, select a microflow you want to run for custom user provisioning. The custom microflow name must begin with the string `UC_CustomProvisioning` and requires the following parameters:
+3. Optionally, you can use the custom logic in the **User Provisioning**. In the **Custom UserProvisioning** field, select a microflow you want to run for custom user provisioning. The custom microflow name must begin with the string `UC_CustomProvisioning`. Starting from version 4.0.3 and 4.1.2 of the module, you can find a reference microflow (`SAML.UC_CustomProvisioning`) in the **MOVE ME** folder. The custom microflow requires the following parameters:
 
     1. **UserInfoParameter(UserCommons.UserInfoParam)**: A Mendix object containing user claims information through its associated objects. You can use this  parameter to retrieve user provisioning configuration information.
     2. **User(System.User)**: A Mendix object representing the user to be provisioned. Ensure that the selected microflow matches this parameter signature.
