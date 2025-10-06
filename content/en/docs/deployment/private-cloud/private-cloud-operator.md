@@ -174,6 +174,11 @@ spec:
     rollingUpdate:
       maxSurge: 0
       maxUnavailable: 50%
+  podDisruptionBudget: # Optional: Specify a pod disruption budget to reduce app downtime
+    # Kubernetes doesn't allow specifying both maxUnavailable and minAvailable at the same time:
+    # https://kubernetes.io/docs/tasks/run-application/configure-pdb/#specifying-a-poddisruptionbudget
+    maxUnavailable: 2 # Example: do not disrupt more than 2 pods at the same time
+    # minAvailable: 50% # Example: make sure that at least 50% of pods are available
   runtimeReadOnlyRootFilesystem: true # Optional: specify if the Mendix Runtime container should use a read-only root filesystem
 ```
 
@@ -235,6 +240,7 @@ You must make the following changes:
 * **customPodLabels** - Specify additional pod labels. Avoid using labels that start with the `privatecloud.mendix.com/` prefix.
     * **general** - Specify additional labels for all pods of the app.
 * **deploymentStrategy** - Specify parameters for the deployment strategy. For more information, see the [reduced downtime deployment](/developerportal/deploy/private-cloud-reduced-downtime/#deployment-strategy-in-standalone) documentation.
+* **podDisruptionBudget** - Specify parameters for the pod disruption budget. For more information, see the [reduced downtime deployment](/developerportal/deploy/private-cloud-reduced-downtime/#pod-disruption-budget-in-standalone) documentation.
 * **runtimeReadOnlyRootFilesystem** - Specify if the Runtime container should mount the root filesystem in [read-only mode](/developerportal/deploy/private-cloud-cluster/#readonlyrootfs).
 
 #### Setting App Constants{#set-app-constants}

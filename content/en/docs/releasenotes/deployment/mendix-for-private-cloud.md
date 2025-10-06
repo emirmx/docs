@@ -18,6 +18,8 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 * We've simplified the approach of handling Rolling updates by the Operator. Any app with 2 or more replicas will be updated without downtime, as long as the app is running the same MDA and base OS image.
 * Starting from this version, all Operator upgrades will run without causing downtime (in environments that 2 or more replicas).
+* The Mendix Operator will now manage PodDisruptionBudgets. For apps that have 2 or more replicas, a PodDisruptionBudget will be automatically created, so that cluster OS upgrades and scaling down nodes will happen in a controlled way, without causing disruption or downtime.
+* We've added a fallback license for Connected environments using Subscription Secrets. If an environment fails to communicate with the licensing server, it will use the fallback license instead of switching into Trial mode.
 * We have updated documentation that Kubernetes 1.34 is supported by the Mendix Operator.
 * We've made a few adjustments to support changes in upcoming Studio Pro version numbers.
 
