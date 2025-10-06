@@ -83,7 +83,7 @@ For easy configuration, the SAML module offers the following:
 * The SAML module keeps a log/audit trail of login attempts. These can be downloaded.
 * The SAML module allows you to have an SSO connection with multiple SAML IdPs. Each IdP can have its own keypair.
 * SAML module versions 3.5.0 and above (compatible with Mendix version 9.22.0 and above) support multiple keypairs.
-* The SAML module supports multi-instance apps (horizontal scaling).
+* Starting from version 4.2.0, the SAML module supports multi-instance apps (horizontal scaling).
 
 ### Limitations{#limitations}
 
@@ -206,7 +206,7 @@ The table below introduces you to several key updates when you upgrade the SAML 
 
 | Feature | Changes in Version 4.X |
 | --- | --- |
-| SSO Configuration | You can perform SSO configuration during design time and deploy time. <br>For versions below 4.2.0, the module introduced deploy-time configuration and `Custom_Create_IdPConfiguration` microflow for customized SSO configuration. <br> From the version 4.2.0, you can instead use the `IdPConfiguration_MicroflowName` constant and configure your custom microflow name in it. |
+| SSO Configuration | You can perform SSO configuration during design time and deploy time. <br>For versions below 4.2.0, the module introduced deploy-time configuration and `Custom_Create_IdPConfiguration` microflow for customized SSO configuration. <br> From version 4.2.0 onwards, you can instead use the `IdPConfiguration_MicroflowName` constant and configure your custom microflow name in it. |
 | Admin Screen Restructuring | The **Mapping** tab has been removed. Equivalent configurations can now be completed on the **User Provisioning configuration** tab. <br> `evaluateMultipleUserMatches` microflow is now moved to the **User Commons**. |
 | User Commons Module Integration | 1. From versions 4.0.0 and above, SAML2.0 is compatible with the UserCommons v2.0.0. <br> 2. The SAML module now integrates with the User Commons module, offering a more uniform experience with the OIDC SSO module. <br> 3. A new method for creating custom user provisioning microflows using User Commons simplifies development and allows you to automatically set the user-type for users <br> 4. Deprecated: SAML 3.x provisioning flows will be unsupported in future versions. It’s recommended to create new provisioning flows using User Commons after upgrading.<br> 5. From UserCommons 2.0.0, new users without IdP-specified time zone or language will use default App settings; existing users retain their previously set values.|
 | InCommon Federation Support | Pre-configured support for InCommon Federation has been removed. You now need to create custom user provisioning microflows in version 4.0.0 |
@@ -287,7 +287,9 @@ After configuring the eight constants, you need to deploy the application. For d
 
 The [Easy Default Flow](#easy-flow) section above, gives you an overview of the default settings. If you have requirements to deviate from these defaults, for example, to enable Force Authentication, change encryption settings from the default, or support multiple Identity Providers (IdPs), Non-default configuration setup offers advanced options for your SAML integration needs. With these features, you can customize the SAML configuration to meet your specific requirements.
 
-In this configuration, you have several options to customize the Identity Provider (IdP) settings. Firstly, you can configure the IdP using constants. Additionally, the SAML module supports further customization of the IdP configuration through the implementation of a custom microflow called `Custom_Create_IdPConfiguration`. However, this microflow is deprecated from the version 4.2.0 of the module. From version 4.2.0 onward, use the `IdPConfiguration_MicroflowName` constant instead and configure your custom microflow name in it. The custom microflow must return a list of configured IdPs (`Dep_IdPConfiguration.return`), which the SAML module then uses to generate the necessary SSO configurations for multiple IdPs. The default value of the `IdPConfiguration_MicroflowName` constant is `SAML.Default_CreateIDPConfiguration`.
+In this configuration, you have several options to customize the Identity Provider (IdP) settings. Firstly, you can configure the IdP using constants. Additionally, the SAML module supports further customization of the IdP configuration. From version 4.2.0 onward, you can define your custom microflow name in the `IdPConfiguration_MicroflowName` constant. The custom microflow must return a list of configured IdPs (`Dep_IdPConfiguration.return`), which the SAML module then uses to generate the necessary SSO configurations for multiple IdPs. The default value of the `IdPConfiguration_MicroflowName` constant is `SAML.Default_CreateIDPConfiguration`.
+
+In versions earlier than 4.2.0, IdP customization was supported through the implementation of a custom microflow called `Custom_Create_IdPConfiguration`. However, this microflow has been deprecated as of version 4.2.0.
 
 In this configuration, users have the flexibility to introduce their own constants by creating custom IdP configurations. To enable this configuration, you need the IdP metadata obtained by creating an SSO app in the IdP without complete dependency on SP metadata.
 
