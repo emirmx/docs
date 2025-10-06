@@ -47,7 +47,7 @@ Test your extension by creating or using a Mendix app.
 
 ## Creating Your First Extension
 
-To introduce a simple extension that adds a menu item to Studio Pro, add the following class:
+To add a menu item to Studio Pro, add the following class:
 
 ```csharp
 using System.ComponentModel.Composition;
@@ -67,7 +67,7 @@ public class MyMenuExtension(IMessageBoxService messageBoxService) : MenuExtensi
 }
 ```
 
-Build your extension and press <kbd>F4</kbd> in Studio Pro. Extension menu items are placed under a corresponding menu with the extensions name. If your extension is named "My Extension", then your menu items will be located under the **Extensions** > **My Company** submenu.
+Build your extension and press <kbd>F4</kbd> in Studio Pro. Menu items are placed under a corresponding menu with the extensions name. For example, if your extension is named *My Extension*, your menu items will be located under the **Extensions** > **My Company** sub-menu.
 
 The Extensibility API provides you with several services you can use and they are injected into your extension classes by using the `ImportingConstructor` attribute.
 
