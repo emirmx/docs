@@ -7,17 +7,17 @@ weight: 8
 
 ## Introduction
 
-This how-to describes how you can create microflows which perform some calculations and return the result.
+This how-to describes how to create microflows that perform calculations and return the result.
 
-You can download the example in this how-to in [this GitHub repository](https://github.com/mendix/ExtensionAPI-Samples).
+You can download the example in this how-to from [this GitHub repository](https://github.com/mendix/ExtensionAPI-Samples).
 
-## Creating an Extension Class that Creates Microflows
+## Creating an Extension Class That Creates Microflows
 
-1. Open the project that you previously created when you [created a menu extension](/apidocs-mxsdk/apidocs/csharp-extensibility-api-11/create-menu-extension/).
-2. Add a new folder *MicroflowTutorial* to your solution.
+1. Open the project you created when following [Create a Menu Extension](/apidocs-mxsdk/apidocs/csharp-extensibility-api-11/create-menu-extension/).
+2. Add a new folder named *MicroflowTutorial* to your solution.
 3. Create a `MenuExtension` class.
-4. Add a new class to the project and call it `CreateMicroflowsMenu.cs`.
-5. Replace the code in the file with the code below. 
+4. Add a new class named `CreateMicroflowsMenu.cs`.
+5. Replace the code in the file with the code below: 
 
     ```csharp
     using Mendix.StudioPro.ExtensionsAPI.UI.Menu;
@@ -43,11 +43,14 @@ You can download the example in this how-to in [this GitHub repository](https://
     }
     ```
 
-    As you can see, the `GetMenus` method is overridden to add your own menus to Studio Pro. The class `CalculationsMicroflowCreator` (which you will add shortly) will be called from the action of your menu. You can see that this class has been injected in the constructor of your menu extension.
+    The code overrides the `GetMenus` method to add your custom menus into Studio Pro. The `CalculationsMicroflowCreator` class (added in the next step) is injected via the constructor and triggered by the menu action.
 
-## Microflow Creator
+## Add the Microflow Creator Class
 
-In this section, you will add the class `CalculationsMicroflowCreator.cs`, which will be injected into your menu extension so that it can be called from your menu action. Make sure to add the `Export` attribute to the class; otherwise, it will not be injected into your menu extension. The `ImportingConstructor` attribute on the constructor is also very important, as this allows the class to receive any required services via dependency injection.
+Add the `CalculationsMicroflowCreator.cs` class and follow the steps below:
+
+1. Add the `Export` attribute to allow injection.
+2. Add the `ImportingConstructor` attribute to support dependency injection.
 
 ```csharp
 using Mendix.StudioPro.ExtensionsAPI.Model;
@@ -67,7 +70,11 @@ class CalculationsMicroflowCreator(IMicroflowService microflowService, IMicroflo
 }
 ```
 
-This class contains one public method, which is the one called by your menu. The method `CreateMicroflows` requires the current app as the parameter. The `CreateMicroflowsMenu` extension has access to the `CurrentApp` property, so it will pass it to the method when calling it from the menu action. The `CurrentApp` property is the `IModel` for the app that is currently open in Studio Pro. Every extension that inherits the type `UIExtensionBase` (such as a `MenuBarExtension`) has access to the `CurrentApp` property and can interact and modify the model.
+This class includes one public method called `CreateMicroflows`, which is triggered when you click your custom menu. It needs the current app as a parameter to work.
+
+The `CreateMicroflowsMenu` extension can access the current app through the `CurrentApp` property. When the menu is clicked, it passes `CurrentApp` to `CreateMicroflows`. 
+
+The `CurrentApp` is the `IModel` that represents the app currently open in Studio Pro. Every extension that inherits from `UIExtensionBase` (like `MenuBarExtension`) has access to `CurrentApp`, which allows it to interact with and change the app's model. 
 
 Add the method as follows:
 
@@ -84,22 +91,32 @@ public void CreateMicroflows(IModel currentApp)
 }
 ```
 
-As you can see, the `CreateMicroflows` method starts a new transaction, by calling `currentApp.StartTransaction`, which is the only way an extension can modify the model of the app. If your class tried to create microflows outside of a transaction, an error will be thrown. For more information, see [Interact with the Model API Using C#](/apidocs-mxsdk/apidocs/interact-with-model-api-11/).
+The `CreateMicroflows` method starts a new transaction by calling `currentApp.StartTransaction`, which is required to modify the model. If your class attempts to create microflows outside a transaction, it will result in an error. For more details, see [Interact with the Model API Using C#](/apidocs-mxsdk/apidocs/interact-with-model-api-11/).
 
- `IMicroflowService` enables creating microflows. For details, see [Create a Microflow and Add Activities Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api-11/create-microflow-add-activities/). It requires the current model (`IModel`), the containing module or folder inside a module (`IFolderBase`), a name, and an optional `MicroflowReturnValue`. The return value is actually used in the example, so you will see how to create one as well.
+Use `IMicroflowService` to create microflows. For more information, see [Create a Microflow and Add Activities Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api-11/create-microflow-add-activities/). It requires:
 
-A microflow returns a value with `IMicroflowExpression`. This can be achieved by using your `IMicroflowExpressionService`, which returns an expression from a String input, and set that expression as the microflow's return value.
+* `IModel` (the current mode), 
+* `IFolderBase` (module or folder)
+* Microflow name
+* `MicroflowReturnValue` (optional)
 
-A very simple `MicroflowReturnValue` can be created as follows:
+A microflow returns a value with `IMicroflowExpression`. This can be done by using `IMicroflowExpressionService`, which returns an expression from a string input, and sets the expression as the microflow's return value.
+
+An example simple return value is seen below:
 
 ```csharp
 new MicroflowReturnValue(DataType.Boolean, microflowExpressionService.CreateFromString("true or false"));
 ```
 
 However, the example will have more complicated expressions, which use parameter names. These parameter names match the return values from called microflows.
-This simple extension will create three microflows. Two of them will perform mathematical calculations (multiplication and addition) and each of them will return their result. The other microflow will call these two microflows in sequence, compute their two results (subtract the addition result from the multiplication result), and return true or false if the value is larger than 0.
 
-The method `CreateMicroflowsInFolder` will create the two microflows and the return values. Add the method.
+This extension creates three microflows:
+
+1. Multiplication microflow – multiplies integers and returns the result
+2. Addition microflow – adds decimals and returns the result
+3. Main microflow – Calls the above two microflows in sequence, subtracts the addition result from the multiplication result, and returns `true` or `false` if the value is larger than 0.
+
+Use the `CreateMicroflowsInFolder` method to create the two microflows and their return values:
 
 ```csharp
 void CreateMicroflowsInFolder(IModel currentApp, IFolderBase folder)
@@ -117,9 +134,9 @@ void CreateMicroflowsInFolder(IModel currentApp, IFolderBase folder)
 }
 ```
 
-To create a microflow which performs a multiplication between two input parameters (two numbers in this case), you can use the code below. As you can see, the String `multiplication1` and the String `multiplication2` match the parameters used in the expression for the return value. Note that for an expression, the dollar sign `$` must be put in front of the parameter name in order to be recognized as a variable input.
+### Multiplication Microflow
 
-You can also see that the `DataType` of both parameters is integer.
+To create a microflow that performs multiplication between two input parameters, use the code below.
 
 ```csharp
 void CreateMultiplicationMicroflow(IModel currentApp, IFolderBase folder, IMicroflow callingMicroflow, string outputVariableName)
@@ -142,9 +159,15 @@ void CreateMultiplicationMicroflow(IModel currentApp, IFolderBase folder, IMicro
 }
 ```
 
+The strings `multiplication1` and `multiplication2` match the parameters used in the expression for the return value. Note that for an expression, the dollar sign `$` must be put in front of the parameter name in order to be recognized as a variable input.
+
+You can also see that the `DataType` of both parameters is integer.
+
  {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/multiplication-microflow.png" >}}
 
-To create a microflow that performs an addition between two decimal values, you can use the code below. Just like the multiplication microflow example above, you can see that the String `addition1` and the String `addition2` match the parameters used in the expression for the return value. You can also see that their `DataType` is decimal.
+ ### Addition Microflow
+
+To create a microflow that performs addition between two decimal values, use the code below.
 
 ```csharp
 void CreateAdditionMicroflow(IModel currentApp, IFolderBase folder, IMicroflow callingMicroflow, string outputVariableName)
@@ -167,9 +190,13 @@ void CreateAdditionMicroflow(IModel currentApp, IFolderBase folder, IMicroflow c
 }
 ```
 
+Like the multiplication microflow example above, the strings `addition1` and `addition2` match the parameters used in the expression for the return value. Their `DataType` is decimal.
+
  {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/addition-microflow.png" >}}
 
-Once a microflow is created, in order to enable this microflow to be called by other microflows, you need to add a call activity (`IActionActivity`). In the example, you have a method called `CreatMicroflowCallActivity` that can be used by both your multiplication and addition microflows.
+## Create Microflow Activities That Call Java Actions
+
+Once a microflow is created, you need to add a call activity (`IActionActivity`). In the example, you have a method called `CreatMicroflowCallActivity` that can be used by both your multiplication and addition microflows.
 
 There are a few prerequisites that you must complete before a microflow can be called by another microflow. This method can be broken down into parts:
 
