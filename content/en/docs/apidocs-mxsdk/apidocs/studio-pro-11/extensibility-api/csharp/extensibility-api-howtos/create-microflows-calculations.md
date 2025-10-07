@@ -194,11 +194,11 @@ Like the multiplication microflow example above, the strings `addition1` and `ad
 
  {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/addition-microflow.png" >}}
 
-## Create Microflow Activities That Call Java Actions
+## Create Call Activities 
 
-Once a microflow is created, you need to add a call activity (`IActionActivity`). In the example, you have a method called `CreatMicroflowCallActivity` that can be used by both your multiplication and addition microflows.
+After you create a microflow, you need to add a call activity (`IActionActivity`) so it can be used by other microflows. In the example, there is a method called `CreatMicroflowCallActivity` that works for both your multiplication and addition microflows.
 
-There are a few prerequisites that you must complete before a microflow can be called by another microflow. This method can be broken down into parts:
+Before one microflow can call another, you need to complete some prerequisites. This method can be broken down into parts:
 
 ```csharp
 var microflowCallActivity = currentApp.Create<IActionActivity>();
@@ -210,17 +210,15 @@ microflowCallActivity.Action = microflowCallAction;
 microflowCallAction.OutputVariableName = outputVariableName;
 ```
 
-In order to create `IActionActivity`, `IMicroflowCallAction` must also be created, and set as the `Action` property of the `IActionActivity`.
+1. Create `IActionActivity`. This is the activity that will call another microflow.
+2. Create `IMicroflowCallAction` and set it as the `Action` property of the `IActionActivity`.
+3. Create `IMicroflowCall` and set as the `MicroflowCall` property of the `IMicroflowCallAction`.
+4. Set `QualifiedName` of the microflow you want to call as the `Microflow` property of the `MicroflowCall` object.
+5. Set the `OutputVariableName` on so the calling microflow can use the result returned by the called microflow.
 
-Then, for `IMicroflowCallAction`, `IMicroflowCall` must also be created and set as the `MicroflowCall` property of the `IMicroflowCallAction`.
+## Passing Parameters to Called Microflows
 
-Next, `QualifiedName` of the microflow, which is to be called by this activity, must be set as the `Microflow` property of the `MicroflowCall` object.
-
-Finally, you can set `OutputVariableName` on `IActionActivity`, which is what the calling microflow will read from the called microflow.
-
-## Passing Parameters
-
-It is also possible to pass a set of parameters to the action activity, which will be the inputs for the called microflow. This set of parameters is a simple `Tuple` of a name and an expression. In the example, these parameters are the two integers for the multiplication microflow and the two decimals for the addition microflow.
+You can pass parameters to the action activity, which will be the input for the called microflow. This set of parameters is a `Tuple` of a name and an expression. In the example, these parameters are the two integers for the multiplication microflow and the two decimals for the addition microflow.
 
 ```csharp
 foreach (var (parameterName, expression) in parameters)
@@ -233,7 +231,7 @@ foreach (var (parameterName, expression) in parameters)
 }
 ```
 
-The method in its entirety is below and can be pasted into your `CalculationsMicroflowCreator` class.
+Paste the complete into your `CalculationsMicroflowCreator` class.
 
 ```csharp
 void CreateMicroflowCallActivity(IModel currentApp,
@@ -262,7 +260,7 @@ void CreateMicroflowCallActivity(IModel currentApp,
 }
 ```
 
-To create a call activity for your multiplication and addition microflows, you can use something like the code below. As you can see, the parameter names for the activity match the parameter name from the microflow and their values are also passed in for integers and decimals.
+To create a call activity for your multiplication and addition microflows, use code similar to the following: 
 
 ```csharp
 CreateMicroflowCallActivity(currentApp, callingMicroflow, mathMicroflow,
@@ -276,15 +274,24 @@ CreateMicroflowCallActivity(currentApp, callingMicroflow, additionMicroflow,
    ("addition2", "2.2"));
 ```
 
-The calling microflow looks as follows:
+As you can see, the parameter names for the activity match the parameter name from the microflow. Their values are passed in for integers and decimals.
+
+The calling microflow looks as seen below:
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/main-microflow.png" >}}
 
 ## Java Actions
 
-Outside of this calculation examples, you might want to create a microflow activity that calls a Java action file. See below for how to add an activity, and action and a call to the microflow to achieve that. Same as in the previous examples, you have to do this inside a transaction (`IModel.StartTransaction`).
+You can create a microflow activity that calls a Java Action. This must be done inside a transaction (`IModel.StartTransaction`).
 
-First, create an `IActionActivity`, just like the calculation example above, but then, its `Action` property will have the type `IJavaActionCallAction` instead of `IMicroflowCallAction`. This `IJavaActionCallAction` will need to know which `IJavaAction` is linked to. You can achieve this by setting the property `JavaAction` on the `IJavaActionCallAction` object to the `IQualifiedName` of the `IJavaAction`. If you are creating a brand new `IJavaAction`, it is important to add it to the module before accessing its `IQualifiedName`. If you have `IJavaAction` already, and you want to set up a call for that one, find it in the app and pass along its `IQualifiedName`. See below for an example.
+1. Start a transaction using `IModel.StartTransaction`.
+2. Create an `IActionActivity`.
+3. Set the `Action` property to `IJavaActionCallAction`.
+4. Link `IJavaActionCallAction` to the `IJavaAction`.
+5. Set the `JavaAction` property to the `IQualifiedName` of the `IJavaAction`.
+6. For `IJavaAction`:
+   1. For a new `IJavaAction` – add it to the module. Only access its `IQualifiedName` after it has been added.
+   2. For an existing `IJavaAction` – find it in the app and pass its `IQualifiedName` to the `IJavaAction` property of `IJavaActionCallAction`.
 
 ```csharp
 public void CreateMicroflowAndJavaAction(IModule module, IModel currentApp)
@@ -310,7 +317,7 @@ public void CreateMicroflowAndJavaAction(IModule module, IModel currentApp)
 }
 ```
 
-If you already have a Java action file that you previously created, simply pass its `IQualifiedName` to the Java action. You will need to query the model in order to retrieve the actual object. You can do so as follows:
+If you already previously created a Java action file, you can pass its `IQualifiedName` to the Java action. You will need to query the model to retrieve the actual object. You can do so as follows:
 
 ```csharp
 IQualifiedName FindJavaAction(string name, IModule module)
@@ -320,4 +327,4 @@ IQualifiedName FindJavaAction(string name, IModule module)
 }
 ```
 
-Download the [whole code](https://github.com/mendix/ExtensionAPI-Samples) to see the way it works in its entirety.
+Download the [whole code](https://github.com/mendix/ExtensionAPI-Samples) to see the full implementation. 
