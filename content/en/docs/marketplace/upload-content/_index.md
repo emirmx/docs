@@ -22,7 +22,7 @@ Before diving in, make sure you have read [Marketplace Overview](/appstore/overv
 
 ## Adding New Marketplace Content {#adding}
 
-To get started, click **Add Content** in the left pane of the Marketplace home screen. You are presented with the **Before You Get Started** dialog, which outlines the resources you will need for uploading your component.
+To get started, click **Add Content** in the left panel of the Marketplace home screen. You are presented with the **Before You Get Started** dialog, which outlines the resources you will need for uploading your component.
 
 Once you make sure you have everything, click **Next**, then go through the steps in the following sections to add content.    
 Some fields are mandatory, while others are optional — this is indicated in the user interface.
@@ -36,9 +36,8 @@ On each page of the upload flow, click one of these buttons:
 ### Uploading a Component {#general}
 
 On the **Upload Component** tab, add the source file, and provide general information about your component.
-
-Follow these steps to add information about your component.    
-Some only apply to specific component types, so follow the on-screen prompts for your particular scenario.
+  
+Some fields only apply to specific component types, so follow the on-screen prompts for your particular scenario.
 
 1. Add a **Component Name**.
 
@@ -62,26 +61,25 @@ Some only apply to specific component types, so follow the on-screen prompts for
     * **GitHub Link** – Follow the steps in the dialog box for copying the link of the release you want to import. For details, see the [Using a GitHub Repo](/appstore/guidelines-content-creators/#github) section in *Guidelines for Content Creators*.    
        If you choose to import the source file from GitHub, the GitHub URL will automatically be displayed in the **Resources** section in Marketplace.    
 
-    If you are uploading a solution, there will be no option to select the content source.    
-    If you are uploading an industry template, selecting a content source is optional.    
+    If you are uploading a solution, the **Upload Component Source** section is not displayed.    
+    If you are uploading an industry template, selecting a component source in the **Upload Component Source** section is optional.    
 
 5. Select the **Studio Pro Version** on which you built the content.    
 
 6. If you are uploading a widget, select the **Compatible with Mendix React Client** checkbox to indicate compatibility.    
    This checkbox is mandatory starting with Studio Pro 11.
    
-7. Add a version for your component. If this is the first version of the component you are uploading, the number in the **Release Version** section is automatically set to **1.0.0**. 
+7. Add a version for your component.  
 
 8. Enter **Release Notes** for the component in the box provided, describing what is new in that release. This field supports rich text.
 
-9. If you are uploading a solution or an industry template, enter one or more email addresses in the **Contact Email(s)** field, then click **Add Email**. These email addresses will be used by customers to reach out to you.  
+9. If you are uploading a solution or an industry template, the **Business Connect** section is displayed. Enter one or more email addresses in the **Contact Email(s)** field, then click **Add Email**. These email addresses will be used by prospects to reach out to you.     
+   This field is only available for public components.    
+   {{% alert color="warning" %}}Please note that potential customers can contact you directly. If you start talking to the customer, it is your responsibility to provide access to the product for them. Mendix is not involved in such customer interactions. {{% /alert %}}
 
-#### Connecting with Prospects
 
-A prospect is a potential sales contact that expresses interest in your product or service. If you create a solution or an industry template, you can use the **Business Connect** section of the **Upload Component** step to connect directly with new prospects.    
-To do that, enter up to ten email addresses in the **Contact Email(s)** field. Prospects can use these email addresses to get in touch with you.
 
-{{% alert color="warning" %}}Please note that potential customers can contact you directly. If you start talking to the customer, it is your responsibility to provide access to the product for them. Mendix is not involved in such customer interactions. {{% /alert %}}
+
 
 ### Adding General Information
 
@@ -100,7 +98,7 @@ On the **General Information** tab, add more details about your component.
 
 ### Configuring Support and Licensing {#support-licensing}
 
-On the **Support & Licensing** tab, add information about support, licensing, and visibility.
+On the **Support & Licensing** tab, select your license type, and add contact details.
 
 1. Select the **License Type** you want applied to your app.    
    For details about the available open-source software licenses and their requirements, refer to [Open-Source Software Licenses](#license).     
@@ -189,10 +187,11 @@ If you choose to publish the component, you will see one of these two buttons:
 
 ### Publishing {#publish} 
 
-<!-- to check and update -->
+If the component is public, once you click **Publish Content**, your draft will be reviewed by Mendix before it becomes visible in the Marketplace.
 
-After you click **Publish Content**, your draft will be reviewed by Mendix before it is visible in the Marketplace. > only if the component is public.
-If the component is private, it is either checked by the company admin or it gets published automatically (depending on your choice). It may take a short while before the component is visible.
+If the component is private, the draft is either checked by the company admin, or it is published automatically, depending on your choice. 
+
+Note that it may take a short while before the component becomes visible.
 
 For details on the approval process, refer to [Governance Process](/appstore/submit-content/governance-process/).
 
@@ -222,7 +221,11 @@ To update content that has already been published, follow these steps:
     * **Content Group**
     {{% alert color="info" %}}If an existing Marketplace component is assigned to a [content group](/appstore/home-page/#content-groups) as specific content group [content](/appstore/home-page/#group-content), you can only update the component if you are a member of that group.{{% /alert %}}
 
-2. Click the menu item next to the component you want to update and select **Manage Draft**.
+2. Click the menu item next to the component you want to update and select the appropriate option, depending on your access rights: 
+
+   * **Edit**
+   * **Unpublish Component**
+   * **Add New Version**
 
     {{% alert color="info" %}}Only one draft version of a component can exist at a time, so when one draft version is in progress, another draft cannot be started. If there is a draft version in progress, click **Edit Draft** on the page where you manage the component in order to see the draft.{{% /alert %}}
 
@@ -233,7 +236,7 @@ To update content that has already been published, follow these steps:
     * **Minor update** – new features that do not break existing usage.
     * **Patch** – a small change that fixes bugs or security issues.
 
-5. On the **Publish** page, you can review all the details of your component entered so far and edit as necessary using the **Edit** button in each section before clicking **Publish Content**.
+5. On the **Preview** page, you can review all the details of your component entered so far, and edit as necessary using the **Back to Edit** button. Once done, click **Publish Content**.
 
 These fields cannot be edited while updating a component:
 
@@ -243,4 +246,3 @@ These fields cannot be edited while updating a component:
 * **Studio Pro Version**
 * **Release Version**
 * **License Type**
-
