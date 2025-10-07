@@ -14,7 +14,7 @@ description: "Native Template 14"
 * We added support for Android devices that use a 16 KB memory page size, ensuring compatibility with the upcoming Android 16 KB page size requirement.
 
 {{% alert color="info" %}}
-This update ensures compatibility for Mendix platform-provided widgets. Any third-party widget that includes precompiled native Android libraries (*.so files) must be updated separately by its author to support 16 KB page size devices.
+This update ensures compatibility for Mendix platform-provided widgets. Any third-party widget that includes precompiled native Android libraries (*.so* files) must be updated separately by the widget's author to support 16 KB page size devices.
 {{% /alert %}}
 
 ## 14.1.5 {#1415}
