@@ -334,7 +334,7 @@ In this case, the OIDC client is the app you are making.
     The options are:
     * `client_secret_basic`: Your app will use the HTTP Basic Authentication scheme to authenticate itself at your IdP. This is the default. The `client_secret_basic` makes use of the `client-id` and `client-secret`.
     * `client_secret_post`: Your app will authenticate itself by including its `client_id` and `client_secret` in the payload of token requests. (Older versions of the OIDC SSO module used this method.)
-    * `private_key_jwt`: This method, introduced in version 4.1.0, uses asymmetric key cryptography (algorithm) for authentication. This is the best option for security. When you select the `private key` option, you can configure the following fields:
+    * `private_key_jwt`: This method, introduced in version 4.1.0, uses asymmetric key cryptography (algorithm) for authentication. This is the best option for security. However, Entra ID does not support this method. When you select the `private key` option, you can configure the following fields:
         * **Key Pair Expiration Days**: (default `90`)
         * **JWT ALG(Signing Algorithm)**: (default `RS256`)
  
