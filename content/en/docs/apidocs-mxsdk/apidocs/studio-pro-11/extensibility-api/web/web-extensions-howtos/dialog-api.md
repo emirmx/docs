@@ -7,6 +7,7 @@ url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/dialog-api/
 ## Introduction
 
 This how-to describes how to open a modal dialog in Studio Pro from an extension. This dialog will contain your web content.
+It will also describe how to show a progress dialog which contains a sequence of steps and return a result for the whole process.
 
 ## Prerequisites
 
@@ -16,7 +17,7 @@ This how-to uses the results of [Get Started with the Web Extensibility API](/ap
 
 Create a menu item to open the dialog. This is done inside the `loaded` event in the main entry point (`src/main/index.ts`). For more information, see [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
 
-In a listener event called `menuItemActivated`, the `studioPro.ui.dialogs.showModal(<dialogInfo>, <uiSpec>)` call opens a new tab where:
+In a listener event called `menuItemActivated`, the `studioPro.ui.dialogs.showModal(<dialogInfo>, <uiSpec>)` call opens a new dialog where:
 
 * `<dialogInfo>` is an object containing the `title` of the dialog, which is shown in the title bar of your dialog in Studio Pro. It also contains the `contentSize` object, where `height` and `width` dimensions for the dialog can be provided.
 * `<uiSpec>` is an object containing two required properties and one optional property:

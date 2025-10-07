@@ -44,6 +44,7 @@ Below is a list of how-tos for you to begin with:
 * [How to Show a Popup Notification](/apidocs-mxsdk/apidocs/web-extensibility-api-11/notification-api/)
 * [How to View User Preferences](/apidocs-mxsdk/apidocs/web-extensibility-api-11/preference-api/)
 * [How to Show a Modal Dialog](/apidocs-mxsdk/apidocs/web-extensibility-api-11/dialog-api/)
+* [How to Show a Progress Dialog](/apidocs-mxsdk/apidocs/web-extensibility-api-11/progress-dialogs/)
 * [How to Open Documents](/apidocs-mxsdk/apidocs/web-extensibility-api-11/editor-api/)
 * [How to Exchange Information Between Active Views](/apidocs-mxsdk/apidocs/web-extensibility-api-11/message-passing-api/)
 * [How to Show Version Control Information](/apidocs-mxsdk/apidocs/web-extensibility-api-11/version-control-api/)
