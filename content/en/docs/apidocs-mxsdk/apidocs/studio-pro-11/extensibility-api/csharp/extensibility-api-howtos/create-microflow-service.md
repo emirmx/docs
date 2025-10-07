@@ -7,19 +7,18 @@ weight: 14
 
 ## Introduction
 
-The `IMicroflowService` is the service used to perform actions related to microflows. This how-to describes how you can create a new microflow and add some activities to it.
+ This how-to describes how to create a new microflow and add activities to it. The `IMicroflowService` is used to perform actions related to microflows.
 
-## `Initialize`
+## Creating and Initializing a Microflow Using `Initialize`
 
-The `Initialize` method initializes a microflow that was previously created. It is part of a series of steps required for adding a microflow to the model:
+The `Initialize` method initializes a microflow that was previously created. Follow the steps below:
 
-1. Start a transaction (`IModel.StartTransaction`).
-2. Create a microflow and add it to the module (`IModel.Create<IMicroflow>`).
-3. Call `IMicroflowService.Initialize`. 
+1. Start a transaction using `IModel.StartTransaction`.
+2. Create a microflow and add it to the module. Use `IModel.Create<IMicroflow>` to create the microflow and add it to the desired module.
+3. Initialize the microflow by calling `IMicroflowService.Initialize`. The `Initialize` method sets up the start and end flows, and adds any parameters (for example, `boolParameter` of `DataType.Boolean`).
+4. Insert activities into the microflow using `IMicroflowService.TryInsertAfterStart` to add the first activity, and `IMicroflowService.TryInsertBeforeActivity` to insert subsequent activities.
 
-Internally, the `Initialize` method sets up the start and end flows, and adds any parameters that might be passed in (in the example below, you are passing a single parameter `boolParameter` of `DataType.Boolean`).
-
-In the example below, you also add activities to the microflow, with `IMicroflowService.TryInsertAfterStart` (adding an activity as the first) or `IMicroflowService.TryInsertBeforeActivity` (adding an activity before another).
+### Example
 
 ```csharp
 public void Initialize(IModel currentApp, params IActionActivity[] actionActivities)
@@ -47,16 +46,22 @@ public void Initialize(IModel currentApp, params IActionActivity[] actionActivit
 }
 ```
 
-As you can see, this `IMicroflowService.Initialize` method can be cumbersome to use, since it is only part of the whole process of creating a new microflow. To have an easier method of creating microflows, use the `MicroflowService.CreateMicroflow` method. This method is described in the next section.
+Note that this `IMicroflowService.Initialize` method requires multiple manual steps. For a simpler approach, use the `MicroflowService.CreateMicroflow`, described in the section below.
 
-## `CreateMicroflow`
+## Creating a Microflow Using `CreateMicroflow`
 
-The `CreateMicroflow` method is the more advanced and comprehensive method to create microflows. It is a good alternative to the `IMicroflowService.Initialize` method.
-The `CreateMicroflow` takes care of initialization and adding everything to the model in one single step. It requires the current `IModel`, the `IFolderBase` (module or folder) in which to save the microflow, a name, an optional `MicroflowReturnValue`, and an optional list of parameters. See the code below for a few examples.
+The `CreateMicroflow` method is the more advanced and comprehensive method to create microflows. It is an alternative to the `IMicroflowService.Initialize` method. The `CreateMicroflow` method handles initialization and model integration in one step. It requires:
+
+* The current `IModel`
+* `IFolderBase` (module or folder)
+* A name, 
+* Optional: 
+    * `MicroflowReturnValue`
+    * List of parameters
 
 ### Creating a Simple Microflow
 
-As shown in the code below, all that is required to create a microflow and add it to the model is the `IModel`, the `IFolderBase` in which to add the microflow, and its name.
+As seen in the code below, the only requirements are `IModel`, the `IFolderBase`, and its name.
 
 ```csharp
 public void CreateMicroflow(IModel currentApp)
@@ -73,7 +78,7 @@ public void CreateMicroflow(IModel currentApp)
 
 ### Creating Microflow with Return Type and Parameters
 
-In this more advanced example, you will see the `IMicroflowExpressionService.CreateFromString` method, which allows you to create expressions that can be then used as the `MicroflowReturnValue` of the microflow. Here, the expression is a simple addition of two values, and the return type is of `DataType.Integer`.
+In this more advanced example, you see the `IMicroflowExpressionService.CreateFromString` method, which allows you to create expressions that can be then used as the `MicroflowReturnValue` of the microflow. Here, the expression is a simple addition of two values, and the return type is of `DataType.Integer`.
 
 ```csharp
  void CreateMicroflow(IModel currentApp)
