@@ -87,9 +87,9 @@ You can define IP profiles to specify which IP addresses or ranges are explicitl
 
 To manage these profiles:
 
-* In the **IP Filtering Profiles** section, click **Create New Profile** to add a new IP range.
-* To modify an existing profile, select it and click **Edit**({{% icon name="pencil" %}}).
-* To delete a profile, select it and click **Delete**({{% icon name="trash-can" %}}).
+* In the **IP Filtering Profiles** section, click **Create New Profile** to add a new IP range
+* To modify an existing profile, select it and click **Edit**({{% icon name="pencil" %}})
+* To delete a profile, select it and click **Delete**({{% icon name="trash-can" %}})
 
 For each profile, specify the following details:
 
@@ -104,9 +104,9 @@ You can define IP profiles to specify which IP addresses or ranges are explicitl
 
 To manage these profiles:
 
-* In the **Denied IP Profiles** section, click **Create New Profile** to add a new IP range.
-* To modify an existing profile, select it and click **Edit**({{% icon name="pencil" %}}).
-* To delete a profile, select it and click **Delete**({{% icon name="trash-can" %}}).
+* In the **Denied IP Profiles** section, click **Create New Profile** to add a new IP range
+* To modify an existing profile, select it and click **Edit**({{% icon name="pencil" %}})
+* To delete a profile, select it and click **Delete**({{% icon name="trash-can" %}})
 
 For each profile, specify the following details:
 
