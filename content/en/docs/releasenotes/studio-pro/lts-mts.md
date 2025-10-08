@@ -93,11 +93,7 @@ The impact of upgrading from an LTS to an LTS is often the lowest of these optio
 
 An MTS is a minor version released approximately every 6 months after a new major version release for general availability.
 
-These are the current MTS version of Studio Pro:
-
-* [10.6](/releasenotes/studio-pro/10.6/) (started in December, 2023)
-* [10.12](/releasenotes/studio-pro/10.12/) (started in June, 2024)
-* [10.18](/releasenotes/studio-pro/10.18/) (started in December, 2024)
+There are currently no MTS versions of Studio Pro. The next one that will occur is 11.6, planned for release in [December, 2025](#major-version).
 
 Release notes for the current MTS version are marked with an MTS badge (<text class="badge badge-pill badge-mts" style="margin-left:0px">MTS</text>) in the left sidebar.
 
