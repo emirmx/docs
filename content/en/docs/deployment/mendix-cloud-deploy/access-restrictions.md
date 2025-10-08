@@ -32,7 +32,7 @@ When configuring an access restriction profile, keep the following consideration
 
 * Access restriction profiles are configured at the application level. They can be reused in all the environments (for example test, acceptance, production) of an app.
 * Access restriction profiles can contain any number of IPv4 address ranges, client CAs, or both.
-* If an access restriction profile contains both IP address ranges and client CAs, then any match on either the IP range or the client certificate will grant access.
+* If an access restriction profile contains both IP address ranges and client CAs, then any match on either the IP range or the client certificate will grant or deny access.
 
 ### Configuring Access Restriction Profiles {#access-restriction}
 
@@ -54,7 +54,7 @@ To rename an access restriction profile. follow these steps:
 1. Locate the profile of interest from the **Access Restriction Profiles** page.
 2. Click the **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) icon.
 3. Click **Edit**.
-4. In the edit page enter the new name.
+4. In the edit page enter the new **Profile Name**.
 5. Click **Save** to apply your changes.
 
 #### Specifying TLS Client Certificate Verification
@@ -81,14 +81,39 @@ Click **Save** to save the current certificate profile.
 Your CA for TLS client certificate verification should be different from the CA used to sign the SSL certificate configured for any custom domain of the app. Using the same CA for both can result in browsers requesting client certificates on all paths of your application.
 {{% /alert %}}
 
-#### Specifying IP Ranges {#ip-ranges}
+#### Configuring Allowed IP Ranges {#ip-ranges}
 
-You can specify a number of different IP ranges. Click **Create New Profile** to add a new IP range, or use **Edit** or **Delete** to modify an existing IP range.
+You can define IP profiles to specify which IP addresses or ranges are explicitly allowed to access your application.
 
-For each IP range, you can do the following:
+To manage these profiles:
 
-* Enter a **Profile  Name** 
-* Specify a range of addresses. Mendix Cloud supports both IPv4 and IPv6 format addresses.
+* In the **IP Filtering Profiles** section, click **Create New Profile** to add a new IP range.
+* To modify an existing profile, select it and click **Edit**({{% icon name="pencil" %}}).
+* To delete a profile, select it and click **Delete**({{% icon name="trash-can" %}}).
+
+For each profile, specify the following details:
+
+* **Profile Name**: Enter a descriptive name for the IP range
+* **IPv4/IPv6 range**: Enter the specific IP address range. Mendix Cloud supports both IPv4 and IPv6 formats
+
+Requests originating from an IP address within these allowed profiles will be granted access to your application.
+
+#### Configuring Denied IP Ranges {#denied-ip-ranges}
+
+You can define IP profiles to specify which IP addresses or ranges are explicitly denied access to your application.
+
+To manage these profiles:
+
+* In the **Denied IP Profiles** section, click **Create New Profile** to add a new IP range.
+* To modify an existing profile, select it and click **Edit**({{% icon name="pencil" %}}).
+* To delete a profile, select it and click **Delete**({{% icon name="trash-can" %}}).
+
+For each profile, specify the following details:
+
+* **Profile Name**: Enter a descriptive name for the IP range
+* **IPv4/IPv6 range**: Enter the specific IP address range. Mendix Cloud supports both IPv4 and IPv6 formats
+
+Requests originating from an IP address within these denied profiles will be blocked from accessing your application.
 
 ## Applying a Restriction to an Application Environment
 
@@ -130,7 +155,7 @@ To restrict access to the app to an IP range, follow these steps:
 3. Switch to the **Access Restriction Profiles** tab.
 
 4. Create an access restriction profile.
-5. Add one or more IP ranges to the access restriction profile.
+5. Add one or more IP ranges to the **Denied IP Profiles**.
 
 6. Save the access restriction profile.
 7. Go to the **Deploy** tab of the **Environments** page. Click **Details** ({{% icon name="notes-paper-edit" %}}) on the desired environment.
