@@ -19,7 +19,7 @@ Mendix checks the following:
 
 * The licenses used in the uploaded *.mpk* files, using the [Fossology](https://fossology.osuosl.org/repo/) tool .   
   There should be no use of GPL, LGPL, or MPL licenses.    
-  For more details, refer to [Open-Source Software Licenses](/appstore/licenses/).
+  For more details, refer to [Open-Source Software Licenses](/appstore/submit-content/#license).
 * For malware in the *.mpk* files, using the [VirusTotal](https://www.virustotal.com/gui/home/upload) tool.
 * For third-party vulnerabilities, using the [Snyk](https://snyk.io/) tool.
 * That the component can be used without errors in a specific Studio Pro version, if the component is a widget, a module, a connector, or an industry template.

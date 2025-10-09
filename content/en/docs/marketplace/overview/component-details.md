@@ -43,7 +43,7 @@ The **Publisher** section includes the following information, depending on the t
 The **Requirements** section includes the following:
 
 * The Studio Pro version required for the component to work
-* The type of [license](/appstore/licenses/) for the component
+* The type of [license](/appstore/submit-content/#license) for the component
 
 The **Support** section presents the category of support Mendix offers for the component (for more details, see the [Marketplace Content Support](/appstore/marketplace-content-support/) section below).
 

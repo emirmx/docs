@@ -77,10 +77,6 @@ Some fields only apply to specific component types, so follow the on-screen prom
    This field is only available for public components.    
    {{% alert color="warning" %}}Please note that potential customers can contact you directly. If you start talking to the customer, it is your responsibility to provide access to the product for them. Mendix is not involved in such customer interactions. {{% /alert %}}
 
-
-
-
-
 ### Adding General Information
 
 On the **General Information** tab, add more details about your component.
