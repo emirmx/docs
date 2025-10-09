@@ -31,12 +31,12 @@ You can access them through the [Mendix Cloud GenAI Portal](https://genai.home.m
 
 #### New Features
 
-* Admins can now view the **Last Used** date for all configuration keys in a single overview.
+* Admins can now view the **Last Used Date** for all configuration keys in the **Configuration Key Overview** page.
 
 #### Improvements
 
 * Users can now sort columns on the **Keys Management** page, making it easier to locate and manage configuration keys.
-* We added an activity log to the **Content** section, improving traceability of updates and changes.
+* We added an activity log to the **Content** page, improving traceability of updates and changes.
 * Users will now receive a notification when attempting to upload a file to the knowledge base that does not contain text, reducing confusion and upload errors.
 * Users can now track the token consumption by subscription period, improving visibility into usage patterns.
-* The resource sorting on the new **Developer Landing** page now aligns with the regular resources overview, ensuring a more consistent user experience.
+* The resource sorting on the new developer landing page now aligns with the regular resources overview, ensuring a more consistent user experience.
