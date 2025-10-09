@@ -26,3 +26,17 @@ You can access them through the [Mendix Cloud GenAI Portal](https://genai.home.m
 #### Fixes
 
 * We fixed an issue where uploading a file to the **Knowledge Base** in the Mendix Cloud GenAI Portal failed when creating a new collection.
+
+### October 9, 2025
+
+#### New Features
+
+* Admins can now view the **Last Used** date for all configuration keys in a single overview.
+
+#### Improvements
+
+* Users can now sort columns on the **Keys Management** page, making it easier to locate and manage configuration keys.
+* We added an activity log to the **Content** section, improving traceability of updates and changes.
+* Users will now receive a notification when attempting to upload a file to the knowledge base that does not contain text, reducing confusion and upload errors.
+* Users can now track the token consumption by subscription period, improving visibility into usage patterns.
+* The resource sorting on the new **Developer Landing** page now aligns with the regular resources overview, ensuring a more consistent user experience.
