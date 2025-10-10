@@ -23,7 +23,7 @@ If you are migrating to the OIDC module version 3.0.0 and above, include the [U
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-OIDC SSO module 4.1.0 is the latest version and includes all new features. The module version 4.1.1 is a special release intended only for Mendix version 10.21.0. If you are using Mendix 10.21.1 or above, use the OIDC SSO module 4.1.0.
+The module version 4.1.1 is a special release intended only for Mendix version 10.21.0. If you are using Mendix 10.21.1 or above, use the OIDC SSO module 4.1.0.
 {{% /alert %}}
 
 {{% alert color="info" %}}
