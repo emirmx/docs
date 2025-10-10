@@ -5,6 +5,14 @@ weight: 10
 description: "Native Template 15"
 ---
 
+## 15.4.1 {#1541}
+
+**Release date: October 7, 2025**
+
+### Improvements
+
+- We migrated from `react-native-camera` to `react-native-vision-camera` for new architecture compatibility.
+
 ## 15.4.0 {#1540}
 
 **Release date: October 2, 2025**
