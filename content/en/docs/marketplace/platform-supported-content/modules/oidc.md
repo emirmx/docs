@@ -205,6 +205,7 @@ This section provides an overview of updates for the OIDC SSO module across diff
 
 | Mendix Version | OIDC SSO Module Version | Important Migration Changes | Additional Information|
 | --- | --- | --- | --- |
+| 10.21.01 and above | 4.2.0 | In version 4.2.0, the module no longer automatically executes the UserCommons migration in the startup microflow. The migration step has been moved to a dedicated microflow, which you can trigger via a widget. | The `ASU_STARTUP` microflow has been moved under the **USE_ME** folder. |
 | 10.12.10 and above | 4.0.0 | Set `OIDC.ASU_OIDC_Startup` microflow as part of the after-startup microflow | From UserCommons 2.0.0, new users without IdP-specified time zone or language will use default App settings; existing users retain their previously set values. |
 | | | For module version 4.0.0 and above, use User Commons module version 2.0.0 and above, and vice versa. | Deprecated Mx Model Reflection module; maintained for compatibility but will be removed in future versions. |
 | | | | Default user roles in UserProvisioning will be assigned along with roles from the access token. |
