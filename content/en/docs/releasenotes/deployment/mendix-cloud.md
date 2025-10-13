@@ -21,7 +21,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Bug Fixes
 
-* We have fixed an issue the environment activity for deployments was not displaying in [Activity Tab](developerportal/deploy/environments/#activity-tab). (Ticket 261878, 260967, 260605)
+* We have fixed an issue that prevented environment deployment activities from being displayed on the [Activity Tab](/developerportal/deploy/environments/#activity-tab).
 
 ### October 5, 2025
 
