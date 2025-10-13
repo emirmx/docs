@@ -12,6 +12,10 @@ These release notes cover changes to deployment to [Mendix on Azure](/developerp
 
 For information on the current status of Mendix deployment, see [Mendix Status](https://status.mendix.com/).
 
+### Release date: October 16, 2025
+
+* A [cluster manager](/developerportal/deploy/mendix-on-azure/installation/#adding-a-new-cluster-manager), once added to a [Mendix on Azure](/developerportal/deploy/mendix-on-azure/) cluster in the Mendix on Kubernetes Portal, can now view and edit it from the Mendix on Azure Portal.
+
 ### Release date: September 25, 2025
 
 * In order to ensure app availability during infrastructure upgrades, the number of default replicas for newly created Mendix apps is set to 2.
