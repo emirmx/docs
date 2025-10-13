@@ -6,8 +6,9 @@ url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/dialog-api/
 
 ## Introduction
 
-This how-to describes how to open a modal dialog in Studio Pro from an extension. This dialog will contain your web content.
-It will also describe how to show a progress dialog which contains a sequence of steps and return a result for the whole process.
+This how-to describes how to open a modal dialog in Studio Pro from an extension, allowing you to display web content.
+
+It also covers how to show a progress dialog that follows a sequence of steps and returns a result upon completion.
 
 ## Prerequisites
 

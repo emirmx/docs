@@ -79,8 +79,8 @@ The menu has the following properties:
 * `hasSeparatorBefore` (default: `false`) – shows a visual separator before this menu item
 * `hasSeparatorAfter` (default: `false`) – shows a visual separator after this menu item
 * `enabled` (default: `true`) – indicates that this menu item notifies the listener when clicked
-* `commandId` (optional) - the id of the previously registered command which will execute when the menu is clicked
-* `action` (optional) - the action that will execute when the menu is clicked
+* `commandId` (optional) - the id of the previously registered command, which executes when the menu is clicked
+* `action` (optional) - the action that executes when the menu is clicked
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/menus/grouped_menus.png" >}}
 
@@ -205,7 +205,7 @@ For a full explanation on how to register commands, see the [Commands API](/apid
 
 ## Setting the Action Property on the Menu
 
-It is also possible to set the `action` property on the menu directly.
+You can also set the `action` property on the menu directly.
 
 ```typescript
 import { IComponent, Menu, getStudioProApi } from "@mendix/extensions-api";
