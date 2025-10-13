@@ -3,10 +3,19 @@ title: "Show a Progress Dialog Using Web API"
 linktitle: "Show a Progress Dialog"
 url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/progress-dialogs/
 ---
+
+## Introduction
+
+This how-to describes how to show a progress dialog that follows a sequence of steps and returns a result upon completion.
+
+## Prerequisites
+
+Before starting this how-to, ensure you have:
+
+1. Completed the steps in [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/).
+2. Become familiar with creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
  
  ## Showing a Progress Dialog
- First, create a menu that you will use to open the progress dialog. 
-
  To show a progress dialog, you will need to call the method `studioPro.ui.dialogs.showProgressDialog(<title>, <steps>)`, where:
 
 * `<title>` is a string which will be displayed in the title bar of the dialog.
@@ -28,7 +37,7 @@ The `FailedProgressStepResult` object contains the following properties:
 * `stepTitle` - the title of the step that has failed, causing the whole process to fail
 * `error` - a string which describes the error or exception that has occurred during the step execution
 
-In this example, we will create a menu to show the modal progress dialog, and run three steps. This is done inside the `loaded` event in the main entry point (`src/main/index.ts`). For more information, see [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
+In this example, we will create a menu to show the modal progress dialog, and run three steps. This is done inside the `loaded` event in the main entry point (`src/main/index.ts`).
 
 ```typescript
 import { ComponentContext, IComponent, ProgressDialogStep, getStudioProApi } from "@mendix/extensions-api";
