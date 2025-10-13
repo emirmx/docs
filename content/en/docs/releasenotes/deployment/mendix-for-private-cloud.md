@@ -12,7 +12,7 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2025
 
-### October ???, 2025
+### October 20, 2025
 
 #### Mendix Operator v2.24.0 {#2.24.0}
 
