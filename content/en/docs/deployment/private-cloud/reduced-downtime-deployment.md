@@ -6,26 +6,25 @@ weight: 35
 ---
 ## Introduction
 
-Kubernetes allows to update an app without downtime by [performing a rolling update](https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/). Instead of stopping an app and then starting it with an updated configuration, Kubernetes can replace pods (replicas) one by one.
+Kubernetes allows you to update an app without downtime by [performing a rolling update](https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/). Instead of stopping an app and then starting it with an updated configuration, Kubernetes can replace pods (replicas) one by one.
 
 The Mendix on Kubernetes Operator uses a [recreate](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#recreate-deployment) strategy by default. That is, the current version (configuration) of an app stops, and then the new version starts.
 
-Starting from version 2.24.0, the Operator will automatically perform a Rolling update for any environment that meets the [prerequisites](#prerequisites-2.24.0).
+Starting from version 2.24.0, the Operator will automatically perform a Rolling update for any environment that meets the [prerequisites](#prerequisites-2.24.0):
 
-1. The environment has 2 or more replicas.
+1. The environment has two or more replicas.
 2. The configuration update does not modify the app source code (MDA or container image).
 
 {{% alert color="info" %}}
 Versions 2.20.0 to 2.23.1 of the Operator had an option to manually enable a **PreferRolling** strategy. That is, the Operator tried to perform a rolling update whenever possible. If the Operator detected that a database schema update was needed, it switched to a Recreate strategy to perform a full restart. If the new version of the app had model changes, deploying it required a schema update. In that case, the Mendix on Kubernetes Operator automatically stopped all replicas of the app, causing downtime.
 {{% /alert %}}
 
-In addition Operator version 2.24.0 will automatically assign a PodDisruptionBudget to environments with 2 or more replicas.
-Any environment with 2 or more replicas will be configured with a PodDisruptionBudget that ensures that no more than 1 replicas are stopped by Kubernetes when scaling down a cluster node or preparing an OS upgrade.
+In addition Operator version 2.24.0 will automatically assign a PodDisruptionBudget to environments with 2 or more replicas. Any environment with two or more replicas will be configured with a PodDisruptionBudget that ensures that no more than 1 replicas are stopped by Kubernetes when scaling down a cluster node or preparing an OS upgrade.
 
 {{% alert color="info" %}}
-Previous versions of the Operator didn't manage PodDisruptionBudgets.
-Instead, any manually created PodDisruptionBudget would apply to a Mendix app.
-If you're manually created PodDisruptionBudgets for an app, delete it and instead specify the PodDisruptionBudget parameters [in the MendixApp CR](#pod-disruption-budget-in-standalone).
+Previous versions of the Operator did not manage PodDisruptionBudgets. Instead, any manually created PodDisruptionBudget would apply to a Mendix app.
+
+If you have manually created PodDisruptionBudgets for an app, delete it and instead specify the PodDisruptionBudget parameters [in the MendixApp CR](#pod-disruption-budget-in-standalone).
 {{% /alert %}}
 
 ## Prerequisites
