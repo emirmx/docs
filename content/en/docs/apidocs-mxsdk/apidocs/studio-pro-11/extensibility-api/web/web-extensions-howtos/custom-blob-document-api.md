@@ -255,8 +255,7 @@ The next call to the Studio Pro API in `src/main/index.ts` registers an editor f
 * It registers the `editor` entry point of the extension to the document type, so the editor is shown when users interacts with the document in Studio Pro (for example, through the **App Explorer** or **Find Results**).
 * This editor is shown as a tab, but you can also configure it to be shown as a modal dialog. 
 * Icons for both the light and dark themes are registered; these icons appear wherever a document icon is needed.
-* Note that this editor will behave like editors for other, built-in, document types. For example, `studioPro.ui.editors.editDocument` call will open the registered editor for 
-custom documents.
+* Note that this editor will behave like editors for other, built-in document types. For example, the `studioPro.ui.editors.editDocument` call will open the registered editor for custom documents.
 
 ### Changes in the Editor
 
