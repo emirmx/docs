@@ -15,9 +15,7 @@ This guide aims to get you started with the Mendix Platform and walks you throug
 By following this guide, you will:
 
 * Learn how to install and navigate Studio Pro
-
 * Explore the platform's key features
-
 * Find resources and learning materials to deepen your knowledge
 
 ## 2. Getting to know Mendix

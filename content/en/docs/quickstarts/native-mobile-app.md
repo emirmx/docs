@@ -15,12 +15,9 @@ This guide is a continuation of part one, and in it, you will recreate the web a
 
 By following this guide, you will:
 
-* Learn how to **create, run, and deploy** a native mobile application.
-
-* Use **nanoflows** to build logic.
-
-* Learn about **offline-first** development and **data synchronization**.
-
+* Learn how to **create, run, and deploy** a native mobile application
+* Use **nanoflows** to build logic
+* Learn about **offline-first** development and **data synchronization**
 * Test your native app using the **Make it Native app**
 
 ## 2. Mobile development essentials
@@ -34,7 +31,7 @@ The Mendix Platform enables you to build apps of many different kinds, including
 ## 3. Prerequisites
 
 Before starting this tutorial, make sure you have completed the following prerequisites:
-* Download and install the [Make It Native](/refguide/getting-the-make-it-native-app/) app on your mobile device
+* Download and install the [Make It Native](/refguide/getting-the-make-it-native-app/) app on your mobile device, and confirm that the Mendix version you are using is [compatible](/refguide/mobile/getting-started-with-mobile/prerequisites/#get-min-app) with your Make It Native app version
 * Complete part one of this guide series, [Building a Responsive Web App](/quickstarts/responsive-web-app/)
 * If you are working on a Mac, complete [Configuring Parallels](/refguide/using-mendix-studio-pro-on-a-mac/) to install Studio Pro on your Mac
 
