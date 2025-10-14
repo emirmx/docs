@@ -12,8 +12,8 @@ The Mendix on Kubernetes Operator uses a [recreate](https://kubernetes.io/docs/c
 
 Starting from version 2.24.0, the Operator will automatically perform a Rolling update for any environment that meets the [prerequisites](#prerequisites-2.24.0):
 
-1. The environment has two or more replicas.
-2. The configuration update does not modify the app source code (MDA or container image).
+* The environment has two or more replicas.
+* The configuration update does not modify the app source code (MDA or container image).
 
 {{% alert color="info" %}}
 Versions 2.20.0 to 2.23.1 of the Operator had an option to manually enable a **PreferRolling** strategy. That is, the Operator tried to perform a rolling update whenever possible. If the Operator detected that a database schema update was needed, it switched to a Recreate strategy to perform a full restart. If the new version of the app had model changes, deploying it required a schema update. In that case, the Mendix on Kubernetes Operator automatically stopped all replicas of the app, causing downtime.
@@ -29,26 +29,25 @@ If you have manually created PodDisruptionBudgets for an app, delete it and inst
 
 ## Prerequisites
 
-## Prerequisites for Operator version 2.24.0 and higher{#prerequisites-2.24.0}
+## Prerequisites for Operator version 2.24.0 and Higher{#prerequisites-2.24.0}
 
-The Operator will automatically perform a Rolling update for any environment that meets the following conditions:
+The Operator automatically performs a Rolling update for any environment that meets the following conditions:
 
-* The environment has 2 or more replicas.
+* The environment has two or more replicas.
 * The configuration update does not modify the app source code (MDA or container image).
 
 {{% alert color="warning" %}}
-Mendix Operator versions 2.20.0 to 2.23.1 had a experimental feature that also performed database schema upgrades with a Rolling strategy.
-This feature was removed in Operator 2.24.0, as it doesn't work well with the latest Mendix Runtime security features.
+Mendix Operator versions 2.20.0 to 2.23.1 had an experimental feature that also performed database schema upgrades with a Rolling strategy. This feature was removed in Operator 2.24.0, as it does not work well with the latest Mendix Runtime security features.
 {{% /alert %}}
 
-## How the Operator chooses a deployment strategy
+## How the Operator Chooses a Deployment Strategy
 
-If any of the following conditions is true, the Operator will always use a **Recreate** strategy, performing a full stop of all of the app's replicas:
+If any of the following conditions is true, the Operator always uses a **Recreate** strategy, performing a full stop of all of the app's replicas:
 
 * There are app pods that are running a different (older) version of the app image: there are changes in the app MDA or base OS image.
-* The app environment has 1 replica.
+* The app environment has one replica.
 
-Otherwise, the Operator will perform a **Rolling** update automatically.
+Otherwise, the Operator performs a **Rolling** update automatically.
 
 As a **Rolling** strategy can run multiple versions of the app at the same time, requests from the browser must be routed to a matching app version (that is, an app that has the same microflow or nanoflow parameters). The Operator uses Kubernetes service labels to perform an atomic switch, and instantly switch all clients to the updated version. This is done automatically once the number of updated replicas reaches a certain threshold. By default the threshold is 50% of all replicas. The value is specified in the [switchoverThreshold](#prefer-rolling-in-standalone) parameter.
 
