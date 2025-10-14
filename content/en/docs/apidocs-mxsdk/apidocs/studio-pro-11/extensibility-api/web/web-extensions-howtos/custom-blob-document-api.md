@@ -6,7 +6,7 @@ url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/custom-blob-document-api/
 
 ## Introduction
 
-This how-to describes how to introduce a new document type and provide a custom editor to allow users to edit new documents of the introduced type.
+This how-to describes how to introduce a new document type and provide a custom editor so users can edit documents of that type.
 
 ## Prerequisites
 
@@ -16,15 +16,12 @@ Before starting this how-to, make sure you have completed the following prerequi
 
 ## Custom Document Model
 
-Studio Pro provides you with possibility to extend its metamodel by introducing your own document types. These new documents are allowed to store arbitrary data,
-which must be serializable as strings. If an editor, which is a user-defined UI component, is registered for a document, new document will appear in UI as any other
-built-in document type (e.g., constants, Java Actions or pages). In particular, it will appear in New Document and Find Advanced dialogs, context menus for adding
-new documents, App explorer and other UI elements that show Studio Pro documents. Custom editors can be registered as either tabs or modal dialogs.
+Studio Pro lets you extend its metamodel by introducing custom document types. These documents can store arbitrary data that must be serializable as strings. If an editor (a user-defined UI component) is registered for a document type, documents of that type will appear in the UI like any other built-in document type (for example, constants, Java Actions, or pages). In particular, they will appear in the New Document and Find Advanced dialogs, context menus for adding documents, the App Explorer, and other UI elements that show Studio Pro documents. Custom editors can be registered to appear either as tabs or as modal dialogs.
 
 ## Registering a New Document Type
 
-To start with registering a new document type, generate a new extension called `myextension`, as described in [getting started guide](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/).
-We will explain which files of the generated extension to edit and then explain what the edits achieve.
+To register a new document type, generate a new extension called `myextension` as described in the [Getting started guide](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/).
+Below we explain which files of the generated extension to edit and what those edits achieve.
 
 First, replace the contents of `src/main/index.ts` with:
 
@@ -58,7 +55,7 @@ export const component: IComponent = {
 }
 ```
 
-Then add a new file `src/model/contants.ts` with contents:
+Then add a new file `src/model/constants.ts` with the following contents:
 
 ```typescript
 export const personDocumentType = 'myextension.Person';
@@ -77,7 +74,7 @@ export type PersonInfo = {
 }
 ```
 
-Then rename the file `src/ui/index.tsx` to `src/ui/editor.tsx` and paste the following contents into it:
+Rename the file `src/ui/index.tsx` to `src/ui/editor.tsx` and paste the following contents into it:
 
 ```typescript {hl_lines=["16-22", "24-35", "37-43"]}
 import React, { StrictMode, useCallback, useEffect, useState } from "react";
@@ -101,7 +98,7 @@ function PersonEditor(input : { studioPro: StudioProApi, documentId: string }) {
                 setDocumentVersion(v => v + 1); // Trigger re-fetch of the document
             }
         });
-    }, [studioPro]);
+    }, [studioPro, documentId]);
 
     useEffect(() => {
         studioPro.app.model.customBlobDocuments
@@ -188,7 +185,7 @@ export const component: IComponent = {
 };
 ```
 
-Lastly, we need to update the build instructions and manifest. To do so, replace the contents of `build-extension.mjs` with 
+Lastly, update the build instructions and manifest. To do so, replace the contents of `build-extension.mjs` with
 
 ```javascript {hl_lines=["16-19"]}
 import * as esbuild from 'esbuild'
@@ -228,7 +225,7 @@ else {
 }
 ```
 
-and the contents of `manifest.json` with 
+and replace the contents of `manifest.json` with
 
 ```json {hl_lines=["6"]}
 {
@@ -245,23 +242,13 @@ and the contents of `manifest.json` with
 
 ### Walking through the example code
 
-In `src/main/index.ts`, we are first registering a new document type. When a new document type is registered, you can perform all
-CRUD operations on this document type, but it will not yet be shown in the UI since no editor for it has yet been registered. Note
-that you can optionally provide `readableTypeName` which will be shown instead of full type name in every user-facing context such
-as in logs and in the Studio Pro UI. You can optionally customize the (de)serialization of the document contents to string, which
-defaults to `JSON.stringify` and `JSON.parse`. The next call to `studioPro` API registers editor for our document type. It registers
-`editor` entry point of our extension as the editor that will be shown when user interacts with the document in StudioPro (for example 
-through App Explorer or Find Results). This editor will be shown as a tab, but you can also register editors to be shown as 
-modal dialogs. Lastly, icons for both light and dark theme are registered. Those icons will be shown in all UI elements where 
-document icon is needed.
+In `src/main/index.ts`, we first register a document type. When a document type is registered, you can perform all CRUD operations on it, but it won't appear in the UI until an editor is registered for it. Note that you can optionally provide `readableTypeName`, which will be shown instead of the full type name in user-facing contexts such as logs and the Studio Pro UI. You can also customize serialization of the document contents to a string; by default the API uses `JSON.stringify` for serialization and `JSON.parse` for deserialization.
 
-The first highlighted block of code in `src/ui/editor.tsx` listens for changes in documents to make sure that the last version of currently 
-active document is shown. Note that the document can be changed outside currently open editor by calls to custom blob document API,
-as well as by some Studio Pro operations such as undoing changes. In the next highlighted block, we fetch the document contents 
-whenever new document is open or updated. Lastly, we make sure that the current changes can be saved.
+The next call to the Studio Pro API registers an editor for our document type. It registers the `editor` entry point of our extension as the editor that will be shown when a user interacts with the document in Studio Pro (for example, through the App Explorer or Find Results). This editor will be shown as a tab, but you can also register editors to be shown as modal dialogs. Finally, icons for both the light and dark themes are registered; those icons appear wherever a document icon is needed.
 
-We also highlighted changes that need to be made to `build-extension.mjs` and `manifest.json` to make sure that `editor` entry point
-is properly built and loaded.
+The first highlighted block of code in `src/ui/editor.tsx` listens for changes to documents to ensure that the most recent version of the currently active document is shown. Note that the document can be changed outside the currently open editor by calls to the custom blob document API, or by some Studio Pro operations such as undo. In the next highlighted block, we fetch the document contents whenever a new document is opened or an existing document is updated. Finally, we provide a way to save changes.
+
+We also highlighted the changes needed in `build-extension.mjs` and `manifest.json` to ensure that the `editor` entry point is built and loaded properly.
 
 ## Extensibility Feedback
 
