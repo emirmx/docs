@@ -185,7 +185,7 @@ To register a new document type, follow the steps below:
     };
     ```
 
-6. Update the build instructions and manifest by replacing the contents of `build-extension.mjs` with the code below:
+6. Update the build instructions by replacing the contents of `build-extension.mjs` with the code below:
 
     ```javascript {hl_lines=["16-19"]}
     import * as esbuild from 'esbuild'
@@ -229,14 +229,14 @@ To register a new document type, follow the steps below:
 
     ```json {hl_lines=["6"]}
     {
-    "mendixComponent": {
+      "mendixComponent": {
         "entryPoints": {
-        "main": "main.js",
-        "ui": {
+          "main": "main.js",
+          "ui": {
             "editor": "editor.js"
+          }
         }
-        }
-    }
+      }
     }
     ```
 
@@ -244,17 +244,19 @@ To register a new document type, follow the steps below:
 
 ### Register the Document Type
 
-In `src/main/index.ts`, you begin by registering a new document type. Once registered, you can perform all CRUD operations on it. However, will not appear in the UI until an editor is also registered. 
+In `src/main/index.ts`, you begin by registering a new document type. Once registered, you can perform all CRUD operations on it. However, it will not appear in the UI until an editor is also registered. 
 
 Optionally, you can provide a `readableTypeName` to display a user-friendly name in logs and the Studio Pro UI instead of the full type name. You can also customize serialization of the document contents to a string. By default, the API uses `JSON.stringify` for serialization and `JSON.parse` for deserialization.
 
 ### Register the Editor
 
-Make a call to the Studio Pro API to register an editor for the document type. This does the following:
+The next call to the Studio Pro API in `src/main/index.ts` registers an editor for the document type. This does the following:
 
-* It registers the `editor` entry point of the extension to the document type, so the editor is shown when users interacts with the document in Studio Pro (for example, through the App Explorer or **Find Results**).
+* It registers the `editor` entry point of the extension to the document type, so the editor is shown when users interacts with the document in Studio Pro (for example, through the **App Explorer** or **Find Results**).
 * This editor is shown as a tab, but you can also configure it to be shown as a modal dialog. 
 * Icons for both the light and dark themes are registered; these icons appear wherever a document icon is needed.
+* Note that this editor will behave like editors for other, built-in, document types. For example, `studioPro.ui.editors.editDocument` call will open the registered editor for 
+custom documents.
 
 ### Changes in the Editor
 
@@ -266,7 +268,7 @@ We then provide a way to save changes.
 
 ### Update Build and Manifest Files
 
-Highlight the necessary changes in `build-extension.mjs` and `manifest.json` to ensure the `editor` entry point is built and loaded properly.
+Highlighted text in `build-extension.mjs` and `manifest.json` shows changes necessary to ensure the `editor` entry point is built and loaded properly.
 
 ## Extensibility Feedback
 
