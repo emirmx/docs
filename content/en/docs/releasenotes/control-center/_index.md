@@ -14,6 +14,20 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 ## 2025
 
+### September 29, 2025
+
+#### New Features
+
+* The Mendix platform is now generally available in Korean and Japanese.    
+  You can set the language from the [User Settings](/mendix-profile/user-settings/) page of your Mendix Profile. The language you choose is then applied once you sign out and sign back in.    
+  Note that user-created content and system-generated content, such as app logs, is not translated.
+
+### September 4, 2025
+
+#### Improvements
+
+We have moved the **Mendix Admins** tab out of **Company Settings**, and into its own page. The new [Mendix Admins](/control-center/mendix-admins-page/) page is available under the **Company** menu in Control Center.
+
 ### July 18, 2025
 
 #### New Features

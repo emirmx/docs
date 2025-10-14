@@ -47,15 +47,12 @@ To connect your app to Jira, perform the following steps:
 
 1. In [Apps](https://sprintr.home.mendix.com/), open your app.
 
-2. Go to the [Settings](/developerportal/collaborate/general-settings/) page.
+2. Go to the [Settings](/developerportal/general-settings/) page.
 
 3. Go to the **Project Management** tab.
 
-4. Click **Connect Jira**. The **Set Up Jira Configuration** dialog box opens.
-
-    {{< figure src="/attachments/developerportal/project-management/jira-connector/set-up-jira-configuration.png"   class="no-border" >}}
-
-    Fill in the information as follows:
+4. Click **Connect Jira**. The **Set Up Jira Configuration** dialog box opens.    
+   Fill in the information as follows:
 
     * **URL Jira Environment**: This is the URL of your company’s environment within the Jira platform, as provided by Jira. This URL usually looks like this: `https://my-company.atlassian.net`.
     * **Project Key**: This is the unique key of your project within the Jira platform.
@@ -65,8 +62,6 @@ To connect your app to Jira, perform the following steps:
 5. Click **Next**. 
 
 6. If your Jira project has several boards configured, from the drop-down list, select one of the Jira boards to connect. We support the Scrum, simplified Scrum, and Kanban board types.
-
-    {{< figure src="/attachments/developerportal/project-management/jira-connector/connect-jira-board.png" >}}
 
 7. Click **Activate** to activate the connection. 
 
@@ -81,12 +76,12 @@ Once the activation is completed, your app is connected to Jira. You can see the
     * If you do not wish to see backlog stories in Studio Pro, consider setting up your board without a backlog, and using a separate board to manage your backlog.
     * The list of stories is ordered by the Jira story key.
 
-* After you commit your changes in Studio Pro, you can see the associated Jira stories in the details of the corresponding [revision](/developerportal/general/team-server/#revision-details) in the **Team Server** page after opening your app in **Apps**.
+* After you commit your changes in Studio Pro, you can see the associated Jira stories in the details of the corresponding [revision](/developerportal/repository/team-server/#revision-details) in the **Team Server** page after opening your app in **Apps**.
 * You can see the link to your Jira board in the **Project Management** section in the **Apps** [navigation pane](/developerportal/#navigation-pane).
 
     {{< figure src="/attachments/developerportal/project-management/jira-connector/navigation-jira.png" >}}
 
-## View Settings
+## Viewing Settings
 
 After you activated the Jira connector, you can review the configuration details any time.
 

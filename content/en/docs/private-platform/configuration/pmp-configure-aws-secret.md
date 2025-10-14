@@ -78,13 +78,13 @@ When creating a property to use as a key for external secret storage, use the fo
 
         * BuildPackage
 
-             * fileServerBasic
+            * fileServerBasic
                
                 * **BuildPackage.FileBasicAuthPassword** - Password for the file server
 
-             * AwsAKSK
+            * AwsAKSK
 
-                 * **BuildPackage.AwsSecretAccessKey** - AWS secret access key for the file server
+                * **BuildPackage.AwsSecretAccessKey** - AWS secret access key for the file server
 
         * RuntimeBaseImage
 
@@ -292,7 +292,7 @@ The following example shows how you can configure Private Mendix Platform to wor
 
     The secret template contains a sample key structure which you can use:
 
-        ```text
+    ```text
         {  //...other keys
             "VCS": {
                 // ...other keys
@@ -301,7 +301,7 @@ The following example shows how you can configure Private Mendix Platform to wor
                 },
             // ...other keys
         }
-        ```
+    ```
 
 8. Repeat the process for other credentials as needed, ensuring you follow the naming conventions for each service.
 

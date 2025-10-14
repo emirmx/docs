@@ -5,6 +5,34 @@ weight: 6
 description: "Native Template 14"
 ---
 
+## 14.1.6 {#1416}
+
+**Release date: October 6, 2025**
+
+### Improvements
+
+* We added support for Android devices that use a 16 KB memory page size, ensuring compatibility with the upcoming Android 16 KB page size requirement.
+
+{{% alert color="info" %}}
+This update ensures compatibility for Mendix platform-provided widgets. Any third-party widget that includes precompiled native Android libraries (*.so* files) must be updated separately by the widget's author to support 16 KB page size devices.
+{{% /alert %}}
+
+## 14.1.5 {#1415}
+
+**Release date: August 11, 2025**
+
+### Fixes
+
+* We fixed an issue that caused the app to stop working after reload by upgrading the React Native version to 0.77.3.
+
+## 14.1.4 {#1414}
+
+**Release date: July 10, 2025**
+
+### Fixes
+
+* We fixed an issue with **@mendix/native** that caused OTA updates to not work properly.
+
 ## 14.1.3 {#1413}
 
 **Release date: June 12, 2025**

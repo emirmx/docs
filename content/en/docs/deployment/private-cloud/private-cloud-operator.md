@@ -229,7 +229,10 @@ You must make the following changes:
 * **environmentVariables** - Set the environment variables for the Mendix app container, and JVM arguments through the `JAVA_TOOL_OPTIONS` environment variable.
 * **clientCertificates** - Specify client certificates to be used for TLS calls to Web Services and REST services.
 * **runtimeMetricsConfiguration** - Specify how metrics should be collected. Any non-empty values override the [default values](/developerportal/deploy/private-cloud-cluster/#customize-runtime-metrics) from `OperatorConfiguration`. Refer to [Monitoring Environments in Mendix on Kubernetes](/developerportal/deploy/private-cloud-monitor/) for details on how to monitor your environment.
-* **runtimeLeaderSelection** - Specify how the leader replica should be selected. Valid options are `assigned` (default mode; the `master` deployment will run one leader replica) and `none` (do not run any leader replicas, `master` deployment is scaled down to zero; this mode requires a specific infrastructure configuration, make sure to consult with Mendix Expert Services before using this feature).
+* **runtimeLeaderSelection** - Specify how the leader replica should be selected. The following options are available:
+    * `assigned` (default mode) - The `master` deployment runs one leader replica, while the `worker` deployment runs all additional replicas.
+    * `none` - Do not run any leader replicas, `master` deployment is scaled down to zero. This mode requires a specific infrastructure configuration. Contact Mendix Expert Services before using this feature.
+    * `leaderless` - A mode where the nodes dynamically choose a leader. This feature is in preview mode. It requires Mendix Runtime 10.24 or newer, and Mendix Operator 2.23 or newer.
 * **customPodLabels** - Specify additional pod labels. Avoid using labels that start with the `privatecloud.mendix.com/` prefix.
     * **general** - Specify additional labels for all pods of the app.
 * **deploymentStrategy** - Specify parameters for the deployment strategy. For more information, see the reduced downtime deployment documentation.
