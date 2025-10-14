@@ -271,4 +271,5 @@ You can receive a notification when new feedback lands in **Inbox** or when a re
 
 ### Receiving Notifications for an Individual Feedback Item {#notifications-individual-feedback}
 
-You can also just receive notifications for an individual feedback item. Set this up by clicking the {{% icon name="view-off" %}} icon in the upper-right corner of the [Feedback](#feedback) tab after you open the feedback. You also automatically start receiving notifications for an individual feedback item once you [respond to the reporter](#contact-reporter) of the feedback or leave a comment for your team in the **Communications** section within the feedback.
+You can receive notifications for an individual feedback item. To set this up, click the {{% icon name="view-off" %}} icon in the upper-right corner of the **Feedback** tab after you open the feedback item.     
+You also automatically start receiving notifications for an individual feedback item once you respond to the reporter of the feedback or leave a comment for your team in the **Communications** section of the feedback details window.
