@@ -14,8 +14,8 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 
 ### Release date: October 16, 2025
 
-* A [cluster manager](/developerportal/deploy/mendix-on-azure/installation/#adding-a-new-cluster-manager), once added to a [Mendix on Azure](/developerportal/deploy/mendix-on-azure/) cluster in the Mendix on Kubernetes Portal, can now view and edit the cluster from the Mendix on Azure Portal.
-* The validation error for PostgreSQL tiers has been resolved when enabling Read replicas on existing clusters
+* After being added to a [Mendix on Azure](/developerportal/deploy/mendix-on-azure/) cluster in the Mendix on Kubernetes Portal, a [cluster manager](/developerportal/deploy/mendix-on-azure/installation/#adding-a-new-cluster-manager) can now view and edit the cluster from the Mendix on Azure Portal.
+* We have resolved the validation error for PostgreSQL tiers that occurred when enabling Read replicas on existing clusters. 
 
 ### Release date: September 25, 2025
 
