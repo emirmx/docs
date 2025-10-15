@@ -252,6 +252,6 @@ Once the cluster is successfully created and initialized in the Mendix on the Az
 
 After being added, the new cluster manager has the ability to view and manage the cluster within the Mendix on the Azure portal. They can also access and update the support ticket associated with the cluster in the Mendix on Azure portal. However, the newly added cluster manager does not have access to the Zendesk ticket linked to the cluster's support ticket.
 
-{{% alert color="info" %}}Before adding a cluster manager, kindly ensure that the invited user must sign in to the Mendix on Azure portal (https://mendixonazure.mendix.com) before accepting the invitation. If they don’t, the invitation may show as “Accepted” but the user will not have access to resources on Mendix on Azure.{{% /alert %}}
+{{% alert color="info" %}}Before adding a cluster manager, ensure that the invited user signs in to the Mendix on Azure portal (https://mendixonazure.mendix.com) before accepting the invitation. If they do not, the invitation may show as accepted, but the user will not have access to resources on Mendix on Azure.{{% /alert %}}
 
 If a cluster manager is deleted, they can no longer view the associated cluster or its support ticket in the Mendix on Azure portal.
