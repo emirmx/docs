@@ -8,21 +8,26 @@ description: "Describes an introduction on accessibility in general and how to g
 
 ## Introduction
 
-In this guide, we'll go over what accessibility is, what the Web Content Accessibility Guidelines (WCAG) are, and how they're relevant to you. We'll also go over the accessibility options in Studio Pro.
+This guide will give an overview on what accessibility is, what the Web Content Accessibility Guidelines (WCAG) are, and how they are relevant to you. This guide will also cover the accessibility options in Studio Pro.
 
-## What is accessibility?
+## Accessibility Overview
 
-Accessibility in our context refers to enabling everyone to use your application and designing it specifically for that. To achieve this, you must consider people with all levels of ability. The example that springs to mind the most is people who are blind to any degree. Being blind means being dependent on assistive technologies, such as screen readers, to read the website out to you. However, screen readers must be able to programmatically understand the website to accurately read it out to the user and convey the information as intended by the website maker. An example of what can hinder this is if the component only looks like something, like a div styled and scripted like a button. This button would be inaccessible to visually impaired users because screen readers would not detect it. To fix this, you can either use ARIA ([ARIA - Accessibility | MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)) to add to that div to patch that functionality back in. Ideally, though, you'd add a semantic HTML button instead.
+Accessibility enables various types of people to use your application, leading to wider user bases and easier development. To achieve an accessible app, consider people with all levels of ability. Take blindness (partial or full) as an example. Being blind means being dependent on assistive technologies, such as screen readers, to read websites out to you. However, screen readers must be able to programmatically understand the website to accurately read it out to the user. Something that can hinder this is if the component only looks like something, like a `div` styled and scripted like a button. This button would be inaccessible to visually-impaired users, because screen readers would not detect it. To fix this, you can either use ARIA ([ARIA - Accessibility | MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)) to add to that `div` and patch that functionality back in. Ideally, though, you should add a semantic HTML button instead.
 
 ```html
 <button>this is a semantic html button</button>
 ```
 
-Screen readers would pick it up, and no extra configuration is needed to help them understand it.
+Screen readers would pick the button up, and no extra configuration is needed to help them understand it.
 
-However, accessibility goes further than that; it also includes people who are deaf or hard of hearing and rely on subtitles to understand a video. Or people with a cognitive disability who struggle to recall the required information they need to enter. Or people who get too distracted by flashy animations on your webpage, and therefore can't read what it says. It also includes neurodivergent individuals who may encounter barriers that make it difficult, if not impossible, to use a website.
+However, accessibility serves more than visually-impaired users; it also includes (but is not limited to) users such as:
 
-Another often overlooked accessibility concern is situational accessibility. For instance, people trying to use their laptops outside in the sun usually have trouble reading the page. The WCAG also covers those kinds of scenarios, requiring websites to have enough contrast so that they're readable in all sorts of contexts. New parents probably recognize the situational disability from having a child on their arm and trying to use a touchscreen.
+* People who are deaf or hard of hearing and rely on subtitles to understand a video
+* People with a cognitive disability who struggle to recall the required information they need to enter
+* People who get too distracted by flashy animations on your webpage, and therefore cannot read it
+* Neurodivergent people who may encounter barriers that make it difficult, if not impossible, to use a website
+
+Another often overlooked accessibility concern is situational accessibility. For instance, people trying to use their laptops outside in the sun usually have trouble reading webpages. WCAG also covers those kinds of scenarios, requiring websites to have enough contrast so that they are readable in various contexts. New parents, for example, probably recognize the situational disability of having a child on their arm and trying to use a touchscreen.
 
 ## The Web Content Accessibility Guidelines (WCAG)
 
