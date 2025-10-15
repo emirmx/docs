@@ -53,7 +53,17 @@ If your app does not wake up after a few minutes, contact [Mendix Support](https
 
 To prevent your Free App going into sleep mode, upgrade to a licensed app running on a node in Mendix Cloud. For more information, see [Licensing Mendix Cloud Apps](/developerportal/deploy/licensing-apps/).
 
-#### Archiving of Free Apps {#free-apps-archival}
+#### Deleting Free Apps
+
+##### Manually Deleting Free Apps {#free-apps-manual-deletion}
+If you want to delete a Free App after publishing it from Studio Pro, the [Technical Contact](/developerportal/general/app-roles/#technical-contact) can do this from the Environments page of your Free App.
+1. From [Apps](https://sprintr.home.mendix.com), go to the **Environments** page of your app.
+2. Click More Options ({{< icon name="three-dots-menu-horizontal" >}}) on the Sandbox environment.
+3. Click **Delete**.
+
+Upon deleting, the project on the Mendix Platform and repository on the [Team Server](/developerportal/repository/team-server/) are retained and will remain active and accessible, but the running app, database, files, and backups for the Free App are deleted.
+
+##### Automatic archiving of Free Apps {#free-apps-archival}
 
 If a Free App has been in sleep mode for three months or longer, it may be archived. For Free Apps that are going to be archived, the [Technical Contact](/developerportal/general/app-roles/#technical-contact) is informed two weeks beforehand. Upon archiving, the project on the Mendix Platform and repository on the [Team Server](/developerportal/repository/team-server/) are retained and will remain active and accessible, but the running app, database, files, and backups for the Free App are deleted.
 
@@ -62,7 +72,7 @@ There are two ways to prevent your Free App from being archived:
 * Visit the Free App
 * Deploy a new version of your app to your Free App environment
 
-#### Deletion of Unused Projects {#projects-deletion}
+##### Automatic deletion of Unused Projects {#projects-deletion}
 
 If a project has never seen any activity since it was created, it is kept on the Team Server for a maximum of one year. After this, the project on the Mendix Platform, its repository on the Team Server, and any Mendix Cloud resources associated with the project will be permanently deleted.
 
