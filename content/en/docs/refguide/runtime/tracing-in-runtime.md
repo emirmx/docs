@@ -96,3 +96,15 @@ docker run MyMendixApp \
 {{% alert color="info" %}}
 Replace `MyServiceName` with a meaningful identifier for your service and `collector-host` and `port` with the host and port of your OpenTelemetry collector.
 {{% /alert %}}
+
+## Sending Traces to Datadog
+
+For exporting OpenTelemetry traces to Datadog there are two options: using Datadog Distribution of OpenTelemetry (DDOT) or OpenTelemetry's collector. DDOT can be deployed to Kubernetes or Linux (Preview). OpenTelemetry collector can be installed on a variety of environments, including Windows, MacOS, Linux.
+
+** Datadog Distribution of OpenTelemetry (DDOT)
+
+Install Datadog Distribution of OpenTelemetry (DDOT) following the official [documentation](https://docs.datadoghq.com/opentelemetry/setup/ddot_collector/install). The default setup contains minimal configuration that allows receiving OpenTelemetry traces/logs from your Mendix app and sending them to Datadog. With default configuration the collector listens on default ports which are also the ones used by your Mendix app by default.
+
+** Using OpenTelemetry collector
+
+Install OpenTelemetry collector following the [documentation](https://opentelemetry.io/docs/collector/installation/). Install `otelcol_contrib` instead of `otelcol` package for Datadog support. Then, run the collector with (appropriate configuration)[https://docs.datadoghq.com/opentelemetry/setup/collector_exporter/install/#2---configure-the-datadog-exporter-and-connector] adapted for Datadog.
