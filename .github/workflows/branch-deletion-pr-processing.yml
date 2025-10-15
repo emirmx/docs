@@ -1,4 +1,4 @@
-name: Process Branch Deletion
+name: Branch Deletion Phase Two (PR Processing)
 on:
   pull_request:
     types:

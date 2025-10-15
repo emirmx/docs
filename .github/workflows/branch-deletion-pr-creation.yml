@@ -1,4 +1,4 @@
-name: Stale Branch Deletion Approval
+name: Branch Deletion Phase One (PR Creation)
 permissions:
   contents: write
   pull-requests: write
