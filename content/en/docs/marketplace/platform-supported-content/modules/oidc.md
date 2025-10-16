@@ -1158,6 +1158,14 @@ When using the OIDC SSO module with Mendix version 10.9 to 10.12.2, you may enco
 
 If a user logs in on one tab and then attempts to log in on another tab, a `401` error may initially appear. However, after the browser reloads, the error will be resolved as the session is validated and synchronized.
 
-### Endpoints cannot be reached
+### Endpoints Cannot Be Reached
 
 This issue can be caused by wrong configuration of your firewall. If you have a firewall between your application and your IdP, make sure it is properly configured for the consumption of the endpoints.
+
+### Could Not Render Widget `UserCommons.Configuration_Overview.referenceSelector4`
+
+After importing the module into your application, users may encounter the following error on the **UserProvisioning** tab of the Configuration page after running the app: 
+
+`Could not render widget 'UserCommons.Configuration_Overview.referenceSelector4`
+
+To resolve this error, upgrade the Combo Box widget to the latest version.
