@@ -38,7 +38,9 @@ The Widget Conversion dialog displays:
 
 ### Handling Conversion Limitations
 
-Some widgets may not be in a convertible state due to specific configurations or properties. In such cases, Studio Pro will attempt to convert as many widgets as possible and will inform you about how many widgets could not be converted automatically. You can then choose to convert the remaining widgets manually by finding them through the error pane. 
+Some widgets may not be in a convertible state due to specific configurations or properties. In such cases, Studio Pro will attempt to convert as many widgets as possible and will inform you about how many widgets could not be converted automatically. You can then choose to convert the remaining widgets manually by finding them through the error pane.
+
+This manual conversion means using the context menu conversion option on each individual widget. This will bring up a dialog providing you with the specific reasons why that particular widget could not be converted automatically during the batch process.
 
 {{% alert color="info" %}}
 For detailed information about conversion limitations, see [Widget Conversion Limitations](/refguide/mendix-client/widget-conversion-limitations/).
