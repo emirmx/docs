@@ -29,42 +29,47 @@ However, accessibility serves more than visually-impaired users; it also include
 
 Another often overlooked accessibility concern is situational accessibility. For instance, people trying to use their laptops outside in the sun usually have trouble reading webpages. WCAG also covers those kinds of scenarios, requiring websites to have enough contrast so that they are readable in various contexts. New parents, for example, probably recognize the situational disability of having a child on their arm and trying to use a touchscreen.
 
-## The Web Content Accessibility Guidelines (WCAG)
+## Web Content Accessibility Guidelines (WCAG)
 
 Considering all these things is a lot, and if everyone had to start from scratch, it would take a significant amount of time. That's why the World Wide Web Consortium (W3C) created the Web Content Accessibility Guidelines (WCAG). These guidelines help you make your application accessible to a larger audience and improve its usability for everyone else. (Improving accessibility for a small group and finding out that a considerable group benefits from it is called the [curb cut effect](https://en.wikipedia.org/wiki/Curb_cut_effect).)
 
 These guidelines are also the basis for various laws, including those of the EU and the US. The European Accessibility Act (EAA) is based on version 2.1 level AA.
 
-Currently, version 2.2 of these guidelines is available; the expectation is that you will adopt this version over version 2.1 in the near future. Since the difference between 2.1 and 2.2 is minimal, that's the version you want to target. You can find the WCAG 2.2 here: [Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/).
+Currently, version 2.2 of these guidelines is available; the expectation is that you will adopt this version over version 2.1 in the near future. Since the difference between 2.1 and 2.2 is minimal, that is the version you want to target. You can find the WCAG 2.2 here: [Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/).
 
 The version currently used by the EAA is Web Content Accessibility Guidelines (WCAG) 2.1
 
 The guidelines are organized into four distinct categories. Each category has a subset of Success Criteria (SC), which are the specific rules you have to comply with.
 
 ### Perceivable
-SCs that fall under the [Perceivable Principle](https://www.w3.org/TR/WCAG22/#perceivable) are about contrast, correctly labeling your interactive components, and providing text alternatives for things that are only visual (for example, an informative image that gives context to a page needs to have a description in the alt text attribute).
+
+Software components (SCs) that fall under the [Perceivable Principle](https://www.w3.org/TR/WCAG22/#perceivable) are about contrast, correctly labeling your interactive components, and providing text alternatives for things that are only visual (for example, an informative image that gives context to a page needs to have a description in the alt text attribute).
 
 ### Operable
+
 SCs that fall under the [Operable Principle](https://www.w3.org/TR/WCAG22/#operable) are about being able to operate your application. This concerns focus, keyboard navigability, and supporting different types of input devices.
 
 ### Understandable
-SCs that fall under the [Understandable Principle](https://www.w3.org/TR/WCAG22/#understandable) make the page or action as easy to understand as possible. If you have a menu bar, for example, it should function consistently across all pages. If you encounter errors on your page, the system should provide you with as much information as possible. The instruction "Please fill out all the input fields" is insufficient for someone to understand what's happening quickly. They might be under the impression that they've already done so, and will therefore not understand this as an error message. Something like "Error: The required field' address' was not provided" gives more information on where and how that user made an error.
+
+SCs that fall under the [Understandable Principle](https://www.w3.org/TR/WCAG22/#understandable) make the page or action as easy to understand as possible. If you have a menu bar, for example, it should function consistently across all pages. If you encounter errors on your page, the system should provide you with as much information as possible. 
+
+The instruction *"Please fill out all the input fields"* is insufficient for someone to quickly understand what is happening. They might think they have already done so, and will therefore not understand this as an error message. A message like *"Error: The required field' address' was not provided"* gives more information on where and how that user made an error.
 
 ### Robust
 
-The [Robust Principle](https://www.w3.org/TR/WCAG22/#robust) SCs are specifically about compatibility with assistive technology, like the previously mentioned screenreader.
+The [Robust Principle](https://www.w3.org/TR/WCAG22/#robust) SCs are specifically about compatibility with assistive technology, like the previously mentioned screen reader.
 
-## Using Mendix' accessibility options
+## Using Mendix's Accessibility Options
 
 ### Labels
 
 When a screen reader reaches an input field, it will read the label text aloud. This label must clearly describe the information required.
 
-### Aria-required
+### Aria-Required
 
 <add image of this setting>
 
-Various input widgets have the option to add aria-required to the input field. It will inform users of screen readers that this is a required field. Usually, you'd have this information in styling (for example, using a star to indicate required fields). Adding this attribute makes sure the programming of your application matches the visuals required by [Success Criterion 1.3.1 Info and Relationships](https://www.w3.org/TR/WCAG22/#info-and-relationships).
+Various input widgets have the option to add aria-required to the input field. It will inform users of screen readers that this is a required field. Usually, you would have this information in styling (for example, using a star to indicate required fields). Adding this attribute makes sure the programming of your application matches the visuals required by [Success Criterion 1.3.1 Info and Relationships](https://www.w3.org/TR/WCAG22/#info-and-relationships).
 
 Tip: Do not set the Validation Type to "Required." If you do, a validation message will appear as soon as the user exits the input field. Instead, validation for required fields should occur only when the user submits the form or attempts to proceed to the next step.
 
@@ -77,13 +82,9 @@ Adding autocomplete to input fields can help individuals with reduced cognitive 
 You should avoid using autocomplete in the following situations:
 
 * **Sensitive Information**: Fields that collect sensitive data, such as credit card numbers, government IDs, or personal identification numbers. It helps protect user privacy and prevents unauthorized access to sensitive information.
-
 * **Public Computers**: If forms are likely to be filled out on public or shared computers, disabling autocomplete can prevent users from accessing previously entered information.
-
 * **One-Time Inputs**: For fields that require unique, one-time entries (like a temporary PIN), autocomplete can be unnecessary and may confuse users.
-
 * **Complex Forms**: In lengthy or complex forms, autocomplete might lead to incorrect autofill suggestions, which can frustrate users and lead to errors.
-
 * **Regulatory Compliance**: Certain regulations may require that sensitive information not be stored or autofilled. Disabling autocomplete can help ensure compliance with such regulations.
 
 ### Aria-labels
