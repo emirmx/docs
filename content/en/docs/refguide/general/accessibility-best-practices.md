@@ -71,7 +71,9 @@ When a screen reader reaches an input field, it will read the label text aloud. 
 
 Various input widgets have the option to add aria-required to the input field. It will inform users of screen readers that this is a required field. Usually, you would have this information in styling (for example, using a star to indicate required fields). Adding this attribute makes sure the programming of your application matches the visuals required by [Success Criterion 1.3.1 Info and Relationships](https://www.w3.org/TR/WCAG22/#info-and-relationships).
 
-Tip: Do not set the Validation Type to "Required." If you do, a validation message will appear as soon as the user exits the input field. Instead, validation for required fields should occur only when the user submits the form or attempts to proceed to the next step.
+{{% alert color="info" %}}
+Do not set the **Validation Type** to **Required**. If you do, a validation message will appear as soon as the user exits the input field. Instead, validation for required fields should occur only when the user submits the form or attempts to proceed to the next step.
+{{% /alert %}}
 
 ### Autocomplete
 
@@ -87,7 +89,7 @@ You should avoid using autocomplete in the following situations:
 * **Complex Forms**: In lengthy or complex forms, autocomplete might lead to incorrect autofill suggestions, which can frustrate users and lead to errors.
 * **Regulatory Compliance**: Certain regulations may require that sensitive information not be stored or autofilled. Disabling autocomplete can help ensure compliance with such regulations.
 
-### Aria-labels
+### Aria-Labels
 
 <add image of this setting>
 
@@ -95,17 +97,17 @@ Aria labels are available in several widgets. Aria-labels take precedent over an
 
 **Important**: While aria-labels are very useful for adding context, using them excessively can even hurt accessibility. An example could be a situation where you have a button that says "Send ", if you add an aria-label with a description such as "Click this button to reserve your spot in line! "that new text takes precedent over the "Send "text of the button. It would impact voice control. If a user who uses voice control said "press send ", it would no longer activate that button.
 
-### Alternative text (Image widget)
+### Alternative Text (Image widget)
 
 <add image of image widget>
 
 Adding an alternative text that explains the image helps visually impaired users understand the page as required by [Success Criterion 1.1.1 Non-text Content](https://www.w3.org/TR/WCAG22/#non-text-content). It should be left empty if the image is purely decorative. Informative images require alt text, which should be a brief description explaining what's happening in the image. If there's text in the image that's not available in another form, it should be included in the alt text.
 
-#### Decorative vs informative images
+#### Decorative vs. Informative Images
 
 For images, there's a difference between decorative images and informative images. Decorative images add no extra context to the page. An extreme example would be a festive page with images of confetti all over it; they don't need to all be tagged as "Piece of confetti ". It doesn't add to the user's understanding of the page. It would actually make it harder to navigate since they would hear "Piece of confetti" continually as they're trying to read the page.
 
-### Tab index
+### Tab Index
 
 The tabindex helps users who only use a keyboard navigate the page (as required by [Guideline 2.1 Keyboard Accessible](https://www.w3.org/TR/WCAG22/#keyboard-accessible)). The Tab key allows users to navigate through interactive elements on a website, such as links, buttons, and form fields. Any element that can be interacted with should have a tab index.
 
@@ -117,24 +119,28 @@ To ensure that all interactive elements are accessible via the Tab key:
 
 Tip: Avoid using positive tabindex values, as they can confuse users by altering the natural focus order.
 
-### Role type
+### Role Type
 
 Changing the role type helps screen readers understand the kind of element you've added ([Success Criterion 4.1.2 Name, Role, Value](https://www.w3.org/TR/WCAG22/#name-role-value)). You may have added a link, but the function performed is that of a button (instead of navigating to a new page, it performs an action on that page). In this case, it is better to change the element to a button. Changing role types can lead to confusion for users of assistive technologies, as incorrect roles may misrepresent the function of an element, making it harder for users to navigate and interact with content. Whenever possible, always choose semantic HTML over [ARIA (Accessible Rich Internet Applications)](https://www.w3.org/TR/wai-aria/) roles.
 
-### Accessibility helper
+### Accessibility Helper
 
 If you need additional settings or attributes for your page, you can add them using the accessibility helper. It allows you to add attributes to widgets that are not available in the settings. It ensures you can add the necessary extra attributes without needing access to the codebase of that widget.
-## What to look out for with styling
+
+## Key Styling Considerations
 
 The key elements to consider when styling are contrast and the focus indicator.
+
 ### Contrast
 
 There are two specific requirements related to contrast: [Success Criterion 1.4.3 Contrast (Minimum)](https://www.w3.org/TR/WCAG22/#contrast-minimum) for text contrast, and [Success Criterion 1.4.11 Non-text Contrast](https://www.w3.org/TR/WCAG22/#non-text-contrast) for user interface components and graphical objects.
 
-#### Text contrast
+#### Text Contrast
+
 In the WCAG, you can find the calculation method, and there are many contrast checkers available, such as the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/). There are some exceptions, such as for 'big text', but to err on the side of caution, it's best to stick to 4.5:1. 
 
 In custom-variables.scss, you can find the following for font color:
+
 ```css
 // Default Font Size & Color
 $font-size-default: 14px;
@@ -142,6 +148,7 @@ $font-color-default: #0a1325;
 ```
 
 Further on in the same document, the background color should be defined:
+
 ```css
 // Background Colors
 // Backgrounds
@@ -151,11 +158,12 @@ $bg-color-secondary: #fff;
 
 In this case with the text color being “`#0a1325`“ and background color being “`#f8f8f8`” the contrast ratio here is 17.45:1, well over 4.5:1.
 
-#### Non-text contrast
+#### Non-Text Contrast
 
 Non-text contrast needs to be 3:1; this means that any critical inputs or buttons need to have this contrast with the background. An example could be an input field. There needs to be sufficient contrast so that the input field is clearly visible. It could be the contrast of the field itself with the background, or a border line around the input field with the background.
 
 In custom-variables.scss, you could define the button background as such:
+
 ```css
 //== Step 1: Brand Colors
 $brand-default: $gray-primary;
@@ -192,32 +200,38 @@ The rules as described in "Non-text contrast" also apply to the focus indicator.
 ...
 $form-input-border-focus-color: $brand-primary;
 ```
-## Other quick wins
-### Page titled
 
-[Page titled](https://www.w3.org/TR/WCAG22/#page-titled): Every page needs a meaningful name that describes the page. Having just "Page," for example, isn't enough to make the page easy to find among other tabs. 
+## Other Accessibility Quick Wins
+
+### Page Titled
+
+[Page titled](https://www.w3.org/TR/WCAG22/#page-titled): Every page needs a meaningful name that describes the page. Having just "Page," for example, is not enough to make the page easy to find among other tabs. 
 
 <add general page title input thing>
 
-### Error messages
+### Error Messages
 
-Make sure you've got comprehensive error messages. Do they describe the situation clearly? Do they provide sufficient guidance on how to resolve the error? An example of a poor error message would be "Please fill in all required fields." Since the user might be under the impression that they have already done that, saying "Please fill in address" would give the user more information on how they can resolve the error.
+Make sure you app has comprehensive error messages. Do they describe the situation clearly? Do they provide sufficient guidance on how to resolve the error? An example of a poor error message would be "Please fill in all required fields." Since the user might be under the impression that they have already done that, saying "Please fill in address" would give the user more information on how they can resolve the error.
 
 More information on this can be found in the following SCs:
 [WCAG Error Identification](https://www.w3.org/TR/WCAG22/#error-identification), [WCAG Error Suggestion](https://www.w3.org/TR/WCAG22/#error-suggestion), [WCAG Error Prevention](https://www.w3.org/TR/WCAG22/#error-prevention-legal-financial-data)
 
-### Link purpose
+### Link Purpose
+
 [Link purpose](https://www.w3.org/TR/WCAG22/#link-purpose-in-context), instead of using "click here", the link's destination should be clear from the surrounding text. Ideally, that description would be part of the link itself. It would help users understand the purpose of each link, enabling them to decide whether to follow it. Also, assistive technology can provide users with a list of links on the website.
 
-## How to test whether your app is accessible
-### Automated accessibility testing
+## Testing Accessibility
+
+### Automated Accessibility Testing
 
 There are multiple options to run automatic tests on your pages. These tools are great for indicating the accessibility of your website and suggesting areas for improvement. W3C offers a [list of tools for checking if your web content meets accessibility guidelines.](https://www.w3.org/WAI/test-evaluate/tools/list/)
-### Manual accessibility testing
+
+### Manual Accessibility Testing
 
 Although it is the most time-consuming, a manual test is a good way to assess your application's accessibility when you don't have access to users with different abilities. The best way to test your application is with real users.
 
 Doing just a few checks already goes a long way:
+
 * Keyboard navigability: Can you reach all the input elements with your keyboard? Does your Tab key take you through all the elements of your page?
 * Screen reader: Is all the information that's clear to a sighted person also available to a low vision or non-sighted person? Are labels of input fields being read out correctly?
 * Color contrast: Does both text and non-text content have enough contrast?
@@ -226,11 +240,6 @@ Find more info on this in [the W3C Easy Checks – A First Review of Web Accessi
 
 ## Read more
 
-For a more in depth look at the accessibility, there's a learning path at the [Academy Accessibility learning path](https://academy.mendix.com/link/paths/141/Improve-Your-App-Accessibility).
-
-Mendix' full accessibility report can be found here: 
-[Mendix Accessibility Conformance: Ensure Your Apps Are Accessible](https://www.mendix.com/evaluation-guide/app-lifecycle/develop/ux-multi-channel-apps/accessibility/) 
-
-
-
+* [Mendix Academy's Accessibility Learning Path](https://academy.mendix.com/link/paths/141/Improve-Your-App-Accessibility).
+* [Mendix Accessibility Conformance: Ensure Your Apps Are Accessible](https://www.mendix.com/evaluation-guide/app-lifecycle/develop/ux-multi-channel-apps/accessibility/) 
 
