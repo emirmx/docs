@@ -6,15 +6,19 @@ url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/app-explorer-api/
 
 ## Introduction
 
-This how-to describes how to interact with the App Explorer in Studio Pro.
+This how-to describes how to interact with the App Explorer in Studio Pro. In this example, you create a menu which will show for each microflow in the App Explorer.
 
 ## Prerequisites
 
-This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Please complete that how-to before starting this one. You should also be familiar with command registration as described in [Register a Command Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/command-api/).
+Before starting this how-to, make sure you have completed the following prerequisites:
+
+* This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Complete that how-to before starting this one. 
+* Make sure you are familiar with command registration, as described in [Register a Command Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/command-api/).
 
 ## Creating a Context Menu
 
-In this example, you will create a menu which will show for each microflow in the App Explorer. Use the full name of the document type to specify which type of document a menu should belong to (for example, `Microflows$Microflow` for microflows or `Pages$Page` for pages). The documentation for these document type names can be found at [Access a Mendix Model Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/model-api/).
+{{% alert color="info" %}}
+Use the full name of the document type to specify which type of document a menu should belong to (for example, `Microflows$Microflow` for microflows or `Pages$Page` for pages). For more information about these document type names, see [Access a Mendix Model Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/model-api/).
 
 The code below does the following:
 
@@ -55,12 +59,8 @@ The payload of the command must be an object containing a document Id (`{ docume
 The command must be registered before creating the menu.
 {{% /alert %}}
 
-## Conclusion
-
-You have seen how to create context menus for a document node in the App Explorer. The menu executes a previously registered command.
-
 ## Extensibility Feedback
 
-If you would like to provide us with additional feedback, you can complete a small [survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback).
+If you would like to provide additional feedback, you can complete a small [survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback).
 
 Any feedback is appreciated.
