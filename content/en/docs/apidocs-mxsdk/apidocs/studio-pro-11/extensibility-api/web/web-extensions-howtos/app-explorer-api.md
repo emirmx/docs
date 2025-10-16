@@ -19,6 +19,7 @@ Before starting this how-to, make sure you have completed the following prerequi
 
 {{% alert color="info" %}}
 Use the full name of the document type to specify which type of document a menu should belong to (for example, `Microflows$Microflow` for microflows or `Pages$Page` for pages). For more information about these document type names, see [Access a Mendix Model Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/model-api/).
+{{% /alert %}}
 
 The code below does the following:
 
