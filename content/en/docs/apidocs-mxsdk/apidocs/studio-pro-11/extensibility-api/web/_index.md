@@ -13,23 +13,25 @@ weight: 20
 
 ## Introduction
 
-Extensions can be written in Typescript or other web languages, described here, or using a C# API which is documented separately in [Extensibility API for C# Developers](/apidocs-mxsdk/apidocs/csharp-extensibility-api-11/).
+Extensions can be written in TypeScript or other web languages, described here, or using a C# API, which is documented in [Extensibility API for C# Developers](/apidocs-mxsdk/apidocs/csharp-extensibility-api-11/).
 
 {{% alert color="info" %}}
-Please note that extension development is only possible by starting Studio Pro with the `--enable-extension-development` feature flag.
+At this time, extension development is only possible with the `--enable-extension-development` feature flag.
 {{% /alert %}}
 
 For more detailed information on the web API, see the [Mendix Studio Pro Web Extensibility API reference documentation](http://apidocs.rnd.mendix.com/11/extensions-api/index.html).
 
 ## Prerequisites
 
-* You need at least a basic understanding of the Mendix platform.
-* You need some understanding of the Mendix Model.
-* You need to have some TypeScript development experience.
+To use the Web Extensibility API, you must have:
+
+* A basic understanding of the Mendix platform
+* Some understanding of the Mendix Model
+* Some TypeScript development experience
 
 ## Getting Started
 
-For detailed explanation on how to get started with extensions, check out [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/).
+For detailed information on how to get started with extensions, see [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/).
 
 ## How-tos
 
