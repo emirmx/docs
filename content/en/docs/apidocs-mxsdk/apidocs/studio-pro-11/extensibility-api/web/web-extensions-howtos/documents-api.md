@@ -27,32 +27,32 @@ The code below does the following:
 2. Attaches the `commandId` to the new menu
 3. Uses the `documents` API's `addContextMenu` method to add the menu to an entity inside the domain model editor
 
-```typescript
-import { ComponentContext, IComponent, Menu, StudioProApi, getStudioProApi } from "@mendix/extensions-api";
+    ```typescript
+    import { ComponentContext, IComponent, Menu, StudioProApi, getStudioProApi } from "@mendix/extensions-api";
 
-const extensionId = "myextension";
+    const extensionId = "myextension";
 
-export const component: IComponent = {
-    async loaded(componentContext: ComponentContext) {
-        const studioPro = getStudioProApi(componentContext);
+    export const component: IComponent = {
+        async loaded(componentContext: ComponentContext) {
+            const studioPro = getStudioProApi(componentContext);
 
-        const commandId = `${extensionId}.entity.command`;
-        const menuId = `${commandId}.menu`;
+            const commandId = `${extensionId}.entity.command`;
+            const menuId = `${commandId}.menu`;
 
-        await studioPro.app.commands.registerCommand<{ documentId: string }>(commandId, async (args: { documentId: string }) => {
-            await studioPro.ui.notifications.show({
-                title: `Entity command executed`,
-                message: `You clicked a context menu for an Entity! (${args.documentId})`,
-                displayDurationInSeconds: 4
+            await studioPro.app.commands.registerCommand<{ documentId: string }>(commandId, async (args: { documentId: string }) => {
+                await studioPro.ui.notifications.show({
+                    title: `Entity command executed`,
+                    message: `You clicked a context menu for an Entity! (${args.documentId})`,
+                    displayDurationInSeconds: 4
+                });
             });
-        });
 
-        const microflowMenu: Menu = { caption: `Entity command menu`, menuId, commandId };
+            const microflowMenu: Menu = { caption: `Entity command menu`, menuId, commandId };
 
-        await studioPro.ui.documents.addContextMenu(microflowMenu, "DomainModels$Entity");
+            await studioPro.ui.documents.addContextMenu(microflowMenu, "DomainModels$Entity");
+        }
     }
-}
-```
+    ```
 
 As you can see from the example above, the expected payload of the command is an object containing a document id (`{ documentId: string }`). Registering the command requires the exact type of the payload, otherwise your extension will not compile. The `documentId` will be the id of the document the menu is attached to, in this case, the exact entity in the Domain Model editor canvas.
 

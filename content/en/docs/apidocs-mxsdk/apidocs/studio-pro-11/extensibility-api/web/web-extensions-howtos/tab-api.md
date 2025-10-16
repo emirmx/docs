@@ -131,7 +131,7 @@ If you want multiple tabs in your extension, you need to structure the folders a
 
     In this example, you will add three tabs: **tab1**, **tab2**, and **tab3**.
 
-    {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/tabs/ui_folder_structure.png" >}}
+    {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/tabs/ui_folder_structure.png" width="200" >}}
 
 5. Create listener events in the `Main` class to open each of the three tabs. The `Main` class will then look like this:
 
