@@ -116,6 +116,7 @@ The `tabindex` helps users who only use a keyboard navigate the page (as require
 The way someone with a screen reader navigates the page involves more than just the tab. There's a special key to navigate the page and have it read out paragraphs (i.e, VoiceOver key + arrows in Mac OS). Assigning a `tabindex` to every element on the page is unnecessary, as it makes the page more challenging to navigate.
 
 To ensure that all interactive elements are accessible via the <kbd>Tab</kbd> key:
+
 * Make sure all clickable elements are focusable.
 * Use the `tabindex` attribute correctly. A value of 0 allows an element to be part of the default tab order.
 
@@ -164,7 +165,7 @@ In this case with the text color being “`#0a1325`“ and background color bein
 
 Non-text contrast needs to be 3:1; this means that any critical inputs or buttons need to have this contrast with the background. An example could be an input field. There needs to be sufficient contrast so that the input field is clearly visible. It could be the contrast of the field itself with the background, or a border line around the input field with the background.
 
-In custom-variables.scss, you could define the button background as such:
+In **custom-variables.scss**, you could define the button background as such:
 
 ```css
 //== Step 1: Brand Colors
@@ -233,13 +234,13 @@ There are multiple options to run automatic tests on your pages. These tools are
 
 ### Manual Accessibility Testing
 
-Although it is the most time-consuming, a manual test is a good way to assess your application's accessibility when you don't have access to users with different abilities. The best way to test your application is with real users.
+Although it is the most time-consuming, a manual test is a good way to assess your application's accessibility when you lack access to users with different abilities. The best way to test your application is with real users.
 
 Doing just a few checks already goes a long way:
 
-* Keyboard navigability: Can you reach all the input elements with your keyboard? Does your <kbd>Tab</kbd> key take you through all the elements of your page?
-* Screen reader: Is all the information that's clear to a sighted person also available to a low vision or non-sighted person? Are labels of input fields being read out correctly?
-* Color contrast: Does both text and non-text content have enough contrast?
+* **Keyboard navigability** — Can you reach all the input elements with your keyboard? Does your <kbd>Tab</kbd> key take you through all the elements of your page?
+* **Screen reader** — Is all the information that's clear to a sighted person also available to a low vision or non-sighted person? Are labels of input fields being read out correctly?
+* **Color contrast** — Does both text and non-text content have enough contrast?
 
 Find more info on this in [the W3C Easy Checks – A First Review of Web Accessibility](https://www.w3.org/WAI/test-evaluate/preliminary/)
 
