@@ -283,7 +283,7 @@ When the **Do not show antivirus exclusion notifications** setting is enabled, S
 
 ### Extension Development 
 
-When **Extension Development** mode is enabled, you can start Studio Pro without using the extensibility feature flag. You must restart Studio Pro to use this feature.
+When **Extension Development** mode is enabled, you can start Studio Pro without using the extensibility feature flag, which allows you to develop extensions for Studio Pro. You must restart Studio Pro to use this feature.
 
 ## New Features Tab {#new-features}
 
