@@ -16,14 +16,13 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
-
-### October 17, 2025
+### October 19, 2025
 
 #### New Features
 
-* We have added a new feature in the **Environment Details** page for flexible apps. Users can now use non-Latin characters in the display name of their environment. The display name of an environment can be changed independent of the subdomain of the environment.
+* We have added a new feature in the **Environment Details** page for flexible environments. Users can now use non-Latin characters in the display name of their environment. The display name of an environment can be changed independent of the environment's subdomain.
 
-* We have added support for email internationalization. The emails sent by developer portal will now be translated to the language set in user's profile.
+* We have added support for email internationalization. The emails sent by the Developer Portal will now be translated to the language set in user's profile.
 
 #### Bug Fixes
 
