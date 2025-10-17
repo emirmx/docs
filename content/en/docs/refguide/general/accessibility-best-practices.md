@@ -111,11 +111,11 @@ For images, there is a difference between decorative images and informative imag
 
 ### Tab Index
 
-The `tabindex` helps users who only use a keyboard navigate the page (as required by [Guideline 2.1 Keyboard Accessible](https://www.w3.org/TR/WCAG22/#keyboard-accessible)). The Tab key allows users to navigate through interactive elements on a website, such as links, buttons, and form fields. Any element that can be interacted with should have a tab index.
+The `tabindex` helps users who only use a keyboard navigate the page (as required by [Guideline 2.1 Keyboard Accessible](https://www.w3.org/TR/WCAG22/#keyboard-accessible)). The <kbd>Tab</kbd> key allows users to navigate through interactive elements on a website, such as links, buttons, and form fields. Any element that can be interacted with should have a tab index.
 
 The way someone with a screen reader navigates the page involves more than just the tab. There's a special key to navigate the page and have it read out paragraphs (i.e, VoiceOver key + arrows in Mac OS). Assigning a `tabindex` to every element on the page is unnecessary, as it makes the page more challenging to navigate.
 
-To ensure that all interactive elements are accessible via the Tab key:
+To ensure that all interactive elements are accessible via the <kbd>Tab</kbd> key:
 * Make sure all clickable elements are focusable.
 * Use the `tabindex` attribute correctly. A value of 0 allows an element to be part of the default tab order.
 
@@ -133,15 +133,15 @@ If you need additional settings or attributes for your page, you can add them us
 
 The key elements to consider when styling are contrast and the focus indicator.
 
-### Contrast
+### Contrast {#contrast}
 
 There are two specific requirements related to contrast: [Success Criterion 1.4.3 Contrast (Minimum)](https://www.w3.org/TR/WCAG22/#contrast-minimum) for text contrast, and [Success Criterion 1.4.11 Non-text Contrast](https://www.w3.org/TR/WCAG22/#non-text-contrast) for user interface components and graphical objects.
 
-#### Text Contrast
+#### Text Contrast {#non-textcontrast}
 
 In the WCAG, you can find the calculation method, and there are many contrast checkers available, such as the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/). There are some exceptions, such as for 'big text', but to err on the side of caution, it's best to stick to 4.5:1. 
 
-In custom-variables.scss, you can find the following for font color:
+In **custom-variables.scss**, you can find the following for font color:
 
 ```css
 // Default Font Size & Color
@@ -195,7 +195,7 @@ The focus indicator helps users identify where the focus currently is on the pag
 
 [Use of color](https://www.w3.org/TR/WCAG22/#use-of-color): This indicates that a single sensory characteristic alone is insufficient to convey meaning. It counts for everything and thus also applies to the focus indicator. Using only color to indicate a focus change would fail this criterion. The focus indicator should use an alternative method. The most common thing is to change the shape of the element while it's focused. It could be something as simple as a box around the element that counts as changing the shape of the component.
 
-The rules as described in "Non-text contrast" also apply to the focus indicator. You can set the color of the input focus indicator here: 
+The rules as described in [Non-Text Contrast](#non-textcontrast) also apply to the focus indicator. You can set the color of the input focus indicator here: 
 
 ```css
 // Form Input styling
@@ -207,20 +207,23 @@ $form-input-border-focus-color: $brand-primary;
 
 ### Page Titled
 
-[Page titled](https://www.w3.org/TR/WCAG22/#page-titled): Every page needs a meaningful name that describes the page. Having just "Page," for example, is not enough to make the page easy to find among other tabs. 
+[Page titled](https://www.w3.org/TR/WCAG22/#page-titled): Every page needs a meaningful name that describes the page. Entitling one just **Page**, for example, is not enough to make the page easy to find among other tabs. 
 
 <add general page title input thing>
 
 ### Error Messages
 
-Make sure you app has comprehensive error messages. Do they describe the situation clearly? Do they provide sufficient guidance on how to resolve the error? An example of a poor error message would be "Please fill in all required fields." Since the user might be under the impression that they have already done that, saying "Please fill in address" would give the user more information on how they can resolve the error.
+Make sure you app has comprehensive error messages. Do they describe the situation clearly? Do they provide sufficient guidance on how to resolve the error? An example of a poor error message would be **Please fill in all required fields**. Since the user might be under the impression that they have already done that, saying **Please fill in address** would give the user more information on how they can resolve the error.
 
 More information on this can be found in the following SCs:
-[WCAG Error Identification](https://www.w3.org/TR/WCAG22/#error-identification), [WCAG Error Suggestion](https://www.w3.org/TR/WCAG22/#error-suggestion), [WCAG Error Prevention](https://www.w3.org/TR/WCAG22/#error-prevention-legal-financial-data)
+
+* [WCAG Error Identification](https://www.w3.org/TR/WCAG22/#error-identification)
+* [WCAG Error Suggestion](https://www.w3.org/TR/WCAG22/#error-suggestion)
+* [WCAG Error Prevention](https://www.w3.org/TR/WCAG22/#error-prevention-legal-financial-data)
 
 ### Link Purpose
 
-[Link purpose](https://www.w3.org/TR/WCAG22/#link-purpose-in-context), instead of using "click here", the link's destination should be clear from the surrounding text. Ideally, that description would be part of the link itself. It would help users understand the purpose of each link, enabling them to decide whether to follow it. Also, assistive technology can provide users with a list of links on the website.
+[Link purpose](https://www.w3.org/TR/WCAG22/#link-purpose-in-context), instead of using **Click here**, the link's destination should be clear from the surrounding text. Ideally, that description would be part of the link itself. It would help users understand the purpose of each link, enabling them to decide whether to follow it. Also, assistive technology can provide users with a list of links on the website.
 
 ## Testing Accessibility
 
@@ -234,7 +237,7 @@ Although it is the most time-consuming, a manual test is a good way to assess yo
 
 Doing just a few checks already goes a long way:
 
-* Keyboard navigability: Can you reach all the input elements with your keyboard? Does your Tab key take you through all the elements of your page?
+* Keyboard navigability: Can you reach all the input elements with your keyboard? Does your <kbd>Tab</kbd> key take you through all the elements of your page?
 * Screen reader: Is all the information that's clear to a sighted person also available to a low vision or non-sighted person? Are labels of input fields being read out correctly?
 * Color contrast: Does both text and non-text content have enough contrast?
 
