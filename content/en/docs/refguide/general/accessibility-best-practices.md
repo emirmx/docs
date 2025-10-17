@@ -79,7 +79,7 @@ Do not set the **Validation Type** to **Required**. If you do, a validation mess
 
 <add image of this setting>
 
-Adding autocomplete to input fields can help individuals with reduced cognitive abilities by reducing the effort needed to fill out forms ([Success Criterion 1.3.5 Identify Input Purpose](https://www.w3.org/TR/WCAG22/#identify-input-purpose)). When the first name and last name fields are correctly tagged, browsers can auto-fill these inputs. However, while beneficial for some, autocomplete can hinder users of assistive technologies, as it complicates the form-filling process. In such cases, it may be better to turn off this feature.
+Adding autocomplete to input fields can help individuals with reduced cognitive abilities by reducing the effort needed to fill out forms (per the [Success Criterion 1.3.5 Identify Input Purpose](https://www.w3.org/TR/WCAG22/#identify-input-purpose)). When the first name and last name fields are correctly tagged, browsers can auto-fill these inputs. However, while beneficial for some, autocomplete can hinder users of assistive technologies, as it complicates the form-filling process. In such cases, it may be better to turn off this feature.
 
 You should avoid using autocomplete in the following situations:
 
@@ -93,31 +93,33 @@ You should avoid using autocomplete in the following situations:
 
 <add image of this setting>
 
-Aria labels are available in several widgets. Aria-labels take precedent over anything else that's available for that element. It should describe the element the user is currently interacting with. It is helpful in situations where a visible label would be redundant due to the context of the input field. The aria-label provides an opportunity to add extra context for [Success Criterion 4.1.2 Name, Role, Value](https://www.w3.org/TR/WCAG22/#name-role-value). 
+Aria labels are available in several widgets. Aria-labels take precedent over anything else available for that element. A good aria-label should describe the element the user is currently interacting with. It is helpful in situations where a visible label would be redundant due to the context of the input field. The aria-label provides an opportunity to add extra context for [Success Criterion 4.1.2 Name, Role, Value](https://www.w3.org/TR/WCAG22/#name-role-value). 
 
-**Important**: While aria-labels are very useful for adding context, using them excessively can even hurt accessibility. An example could be a situation where you have a button that says "Send ", if you add an aria-label with a description such as "Click this button to reserve your spot in line! "that new text takes precedent over the "Send "text of the button. It would impact voice control. If a user who uses voice control said "press send ", it would no longer activate that button.
+{{% alert color="info" %}}
+While aria-labels are very useful for adding context, using them excessively can even hurt accessibility. An example could be a situation where you have a button that says **Send**, if you add an aria-label with a description such as **Click this button to reserve your spot in line!** that new text takes precedent over the **Send** text of the button. It would impact voice control. If a user who uses voice control said *Press send*, it would no longer activate that button.
+{{% /alert %}}
 
 ### Alternative Text (Image widget)
 
 <add image of image widget>
 
-Adding an alternative text that explains the image helps visually impaired users understand the page as required by [Success Criterion 1.1.1 Non-text Content](https://www.w3.org/TR/WCAG22/#non-text-content). It should be left empty if the image is purely decorative. Informative images require alt text, which should be a brief description explaining what's happening in the image. If there's text in the image that's not available in another form, it should be included in the alt text.
+Adding alternative text that explains an image helps visually impaired users understand the page (as required by [Success Criterion 1.1.1 Non-text Content](https://www.w3.org/TR/WCAG22/#non-text-content)). It should be left empty if the image is purely decorative. Informative images require alt text, which should be a brief description explaining what is happening in the image. If there is text in the image that is not available in another form, it should be included in the alt text.
 
 #### Decorative vs. Informative Images
 
-For images, there's a difference between decorative images and informative images. Decorative images add no extra context to the page. An extreme example would be a festive page with images of confetti all over it; they don't need to all be tagged as "Piece of confetti ". It doesn't add to the user's understanding of the page. It would actually make it harder to navigate since they would hear "Piece of confetti" continually as they're trying to read the page.
+For images, there is a difference between decorative images and informative images. Decorative images add no extra context to the page. An extreme example would be a festive page with images of confetti all over it; they do not each ne to be tagged as **Piece of confetti**. That would not enhance the user's understanding of the page. It would actually make it harder to navigate since they would hear **Piece of confetti** repeatedly as they are trying to read the page.
 
 ### Tab Index
 
-The tabindex helps users who only use a keyboard navigate the page (as required by [Guideline 2.1 Keyboard Accessible](https://www.w3.org/TR/WCAG22/#keyboard-accessible)). The Tab key allows users to navigate through interactive elements on a website, such as links, buttons, and form fields. Any element that can be interacted with should have a tab index.
+The `tabindex` helps users who only use a keyboard navigate the page (as required by [Guideline 2.1 Keyboard Accessible](https://www.w3.org/TR/WCAG22/#keyboard-accessible)). The Tab key allows users to navigate through interactive elements on a website, such as links, buttons, and form fields. Any element that can be interacted with should have a tab index.
 
-The way someone with a screen reader navigates the page involves more than just the tab. There's a special key to navigate the page and have it read out paragraphs (i.e, VoiceOver key + arrows in Mac OS). Assigning a tabindex to every element on the page is unnecessary, as it makes the page more challenging to navigate.
+The way someone with a screen reader navigates the page involves more than just the tab. There's a special key to navigate the page and have it read out paragraphs (i.e, VoiceOver key + arrows in Mac OS). Assigning a `tabindex` to every element on the page is unnecessary, as it makes the page more challenging to navigate.
 
 To ensure that all interactive elements are accessible via the Tab key:
 * Make sure all clickable elements are focusable.
-* Use the tabindex attribute correctly. A value of 0 allows an element to be part of the default tab order.
+* Use the `tabindex` attribute correctly. A value of 0 allows an element to be part of the default tab order.
 
-Tip: Avoid using positive tabindex values, as they can confuse users by altering the natural focus order.
+Tip: Avoid using positive `tabindex` values, as they can confuse users by altering the natural focus order.
 
 ### Role Type
 
