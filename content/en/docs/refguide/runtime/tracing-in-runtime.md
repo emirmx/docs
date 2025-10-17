@@ -99,12 +99,23 @@ Replace `MyServiceName` with a meaningful identifier for your service and `colle
 
 ## Sending Traces to Datadog
 
-For exporting OpenTelemetry traces to Datadog there are two options: using Datadog Distribution of OpenTelemetry (DDOT) or OpenTelemetry's collector. DDOT can be deployed to Kubernetes or Linux (Preview). OpenTelemetry collector can be installed on a variety of environments, including Windows, MacOS, Linux.
+There are two options for exporting OpenTelemetry traces to Datadog: 
 
-** Datadog Distribution of OpenTelemetry (DDOT)
+* Datadog Distribution of OpenTelemetry (DDOT) 
+* OpenTelemetry collector
 
-Install Datadog Distribution of OpenTelemetry (DDOT) following the official [documentation](https://docs.datadoghq.com/opentelemetry/setup/ddot_collector/install). The default setup contains minimal configuration that allows receiving OpenTelemetry traces/logs from your Mendix app and sending them to Datadog. With default configuration the collector listens on default ports which are also the ones used by your Mendix app by default.
+### Datadog Distribution of OpenTelemetry (DDOT)
 
-** Using OpenTelemetry collector
+DDOT can be deployed to Kubernetes or Linux (Preview). The default setup provides minimal configuration, allowing it to receive OpenTelemetry traces or logs from your Mendix app and send them to Datadog. With this default configuration, the collector listens on the same ports that your Mendix application uses.
 
-Install OpenTelemetry collector following the [documentation](https://opentelemetry.io/docs/collector/installation/). Install `otelcol_contrib` instead of `otelcol` package for Datadog support. Then, run the collector with (appropriate configuration)[https://docs.datadoghq.com/opentelemetry/setup/collector_exporter/install/#2---configure-the-datadog-exporter-and-connector] adapted for Datadog.
+For installation instructions, refer to the official [DDOT documentation](https://docs.datadoghq.com/opentelemetry/setup/ddot_collector/install).
+
+### OpenTelemetry Collector
+
+The OpenTelemetry Collector can be installed on a variety of environments, including Windows, MacOS, Linux. 
+
+To use the OpenTelemetry Collector with Datadog, follow these steps:  
+
+1. Install the OpenTelemetry Collector by following the official [installation guide](https://opentelemetry.io/docs/collector/installation/).
+2. Install the `otelcol_contrib` package instead of `otelcol` to include Datadog support. 
+3. Run the collector with the [appropriate configuration](https://docs.datadoghq.com/opentelemetry/setup/collector_exporter/install/#2---configure-the-datadog-exporter-and-connector) adapted for Datadog.
