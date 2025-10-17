@@ -153,13 +153,13 @@ Mendix Support can analyze this component if your app is running on Mendix Cloud
 
 The infrastructure component includes all web servers, runtime servers, and database servers, with their Operating Systems and configuration.
 
-Mendix Support can analyze this component if your app is running on Mendix Cloud or Mendix Cloud Dedicated.
+Mendix Support can analyze this component if your app is running on Mendix Cloud or Mendix Cloud Dedicated. Mendix is responsible for setting up and maintaining the component, as well as applying default configuration. This component can't be customized or optimized for individual customers or applications, outside of the supported configuration options that are available to our customers.
 
 ### Container Runtime Platform
 
 The container runtime platform refers to the platform for managing, creating, destroying, and scaling of runtime containers. In Mendix Cloud and Mendix Cloud Dedicated, Kubernetes is used.
 
-Mendix Support can analyze this component if your app is running on Mendix Cloud or Mendix Cloud Dedicated. If it is running on SAP BTP instead, the selected third party can analyze this component.
+Mendix Support can analyze this component if your app is running on Mendix Cloud or Mendix Cloud Dedicated. Mendix is responsible for setting up and maintaining the component, as well as applying default configuration. This component can't be customized or optimized for individual customers or applications, outside of the supported configuration options that are available to our customers. If it is running on SAP BTP instead, the selected third party can analyze this component.
 
 ### Buildpack, m2ee, and Service Console
 
@@ -167,7 +167,7 @@ The Mendix buildpacks for [Cloud Foundry](https://github.com/mendix/cf-mendix-bu
 
 If you want to run Mendix apps on a Unix-like server you will need the [m2ee tools](https://github.com/mendix/m2ee-tools), available on GitHub. Read more about installing on systems running Unix-like operating systems in [Linux Deployment](/developerportal/deploy/linux/).
 
-Mendix Support can analyze these components if your app is running on Mendix Cloud or Mendix Cloud Dedicated. Because Mendix has no control over the context in which the buildpack or m2ee tools are run outside of Mendix Cloud and Mendix Cloud Dedicated, you will have to demonstrate that the bug is in the supported component by showing the behavior independently from the context in which you are using it.
+Mendix Support can analyze these components if your app is running on Mendix Cloud or Mendix Cloud Dedicated. Mendix is responsible for setting up and maintaining the component, as well as applying default configuration. This component can't be customized or optimized for individual customers or applications, outside of the supported configuration options that are available to our customers. Because Mendix has no control over the context in which the buildpack or m2ee tools are run outside of Mendix Cloud and Mendix Cloud Dedicated, you will have to demonstrate that the bug is in the supported component by showing the behavior independently from the context in which you are using it.
 
 If you want additional features or some other change in a buildpack or m2ee tools, you can make a Pull Request, create an Issue in the GitHub repository, or contact [Mendix Support](https://support.mendix.com/).
 
@@ -179,14 +179,14 @@ If you want additional features or some other change in the Windows Service, you
 
 The application operation component is used for stopping and starting environments and configuring constants, scheduled events, and runtime settings.
 
-Mendix Support can analyze this component if your app is running on Mendix Cloud, Mendix Cloud Dedicated, Mendix on Kubernetes Connected, or SAP BTP through the Mendix Portal.
+Mendix Support can analyze this component if your app is running on Mendix Cloud, Mendix Cloud Dedicated, Mendix on Kubernetes Connected, or SAP BTP through the Mendix Portal. Mendix is responsible for setting up and maintaining the component, as well as applying default configuration. This component can't be customized or optimized for individual customers or applications, outside of the supported configuration options that are available to our customers.
 
 ### Logs and Metrics
 
 The logs component takes care of viewing and downloading application log files.
 The metrics component refers to viewing application metrics.
 
-Mendix Support can analyze these components if your app is running on Mendix Cloud or Mendix Cloud Dedicated.
+Mendix Support can analyze these components if your app is running on Mendix Cloud or Mendix Cloud Dedicated. Mendix is responsible for setting up and maintaining the component, as well as applying default configuration. This component can't be customized or optimized for individual customers or applications, outside of the supported configuration options that are available to our customers.
 
 ### Deployment Pipeline
 
