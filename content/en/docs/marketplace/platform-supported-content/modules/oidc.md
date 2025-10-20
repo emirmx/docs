@@ -23,7 +23,7 @@ If you are migrating to the OIDC module version 3.0.0 and above, include the [U
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-OIDC SSO module 4.1.0 is the latest version and includes all new features. The module version 4.1.1 is a special release intended only for Mendix version 10.21.0. If you are using Mendix 10.21.1 or above, use the OIDC SSO module 4.1.0.
+The module version 4.1.1 is a special release intended only for Mendix version 10.21.0. If you are using Mendix 10.21.1 or above, use the OIDC SSO module 4.1.0.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -98,7 +98,7 @@ For readers with more knowledge of the OAuth and OIDC protocol:
 
 * Stores an access token for each end-user that can be used to make API calls on their behalf
 * Can be configured to use either `client_secret_post`, `client_secret_basic`, or `private_key_jwt` as the client authentication method.
-* It supports nine signing algorithms (ES256, ES384, ES512, PS256, PS384, PS512, RS256, RS384, RS512) and automatically regenerates a new key pair upon expiry.
+* It supports nine signing algorithms: ECC SHA-256 (ES256), ECC SHA-384 (ES384), ECC SHA-512 (ES512), RSASSA-PSS SHA-256 (PS256), RSASSA-PSS SHA-384 (PS384), RSASSA-PSS SHA-512 (PS512), RSA SHA-256 (RS256), RSA SHA-384 (RS384), RSA SHA-512 (RS512), and automatically regenerates a new key pair upon expiry.
 * Supports ACR in authorization requests. The ACR in OIDC protocol is used to indicate the desired level of assurance or strength of authentication during the authentication process. It allows the relying party (your application) to request a specific level of authentication assurance from the identity provider (IdP) (version 2.3.0 and above)
 * Supports response_mode=query and response_mode=form_post
 * Helps you implement an OAuth Resource Server that receives an Access Token which is obtained by a client via either Authorization Code grant or Client Credential grant.
@@ -205,6 +205,7 @@ This section provides an overview of updates for the OIDC SSO module across diff
 
 | Mendix Version | OIDC SSO Module Version | Important Migration Changes | Additional Information|
 | --- | --- | --- | --- |
+| 10.21.01 and above | 4.2.0 | In version 4.2.0, the module no longer automatically executes the UserCommons migration in the startup microflow. The migration step has been moved to a dedicated microflow, which you can trigger via a widget. | The `ASU_STARTUP` microflow has been moved under the **USE_ME** folder. |
 | 10.12.10 and above | 4.0.0 | Set `OIDC.ASU_OIDC_Startup` microflow as part of the after-startup microflow | From UserCommons 2.0.0, new users without IdP-specified time zone or language will use default App settings; existing users retain their previously set values. |
 | | | For module version 4.0.0 and above, use User Commons module version 2.0.0 and above, and vice versa. | Deprecated Mx Model Reflection module; maintained for compatibility but will be removed in future versions. |
 | | | | Default user roles in UserProvisioning will be assigned along with roles from the access token. |
@@ -1157,6 +1158,14 @@ When using the OIDC SSO module with Mendix version 10.9 to 10.12.2, you may enco
 
 If a user logs in on one tab and then attempts to log in on another tab, a `401` error may initially appear. However, after the browser reloads, the error will be resolved as the session is validated and synchronized.
 
-### Endpoints cannot be reached
+### Endpoints Cannot Be Reached
 
 This issue can be caused by wrong configuration of your firewall. If you have a firewall between your application and your IdP, make sure it is properly configured for the consumption of the endpoints.
+
+### Could Not Render Widget `UserCommons.Configuration_Overview.referenceSelector4`
+
+After importing the module into your application, users may encounter the following error on the **UserProvisioning** tab of the Configuration page after running the app: 
+
+`Could not render widget 'UserCommons.Configuration_Overview.referenceSelector4`
+
+To resolve this error, upgrade the Combo Box widget to the latest version.
