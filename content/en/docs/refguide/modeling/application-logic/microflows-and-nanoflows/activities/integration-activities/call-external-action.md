@@ -67,7 +67,7 @@ The **Edit External Action Parameter Mapping** dialog allows you to set the valu
 
 Every parameter must have a value specified unless the service indicates that the parameter is optional (with the `Org.OData.Core.V1.OptionalParameter` annotation).
 
-When the service indicates that a value cannot be empty (with `Nullable="false"`) then the microflow will throw an error if the value evaluates to `empty`.
+When the service indicates that a value cannot be empty (with `Nullable="false"`), the microflow will throw an error if the value evaluates to `empty`.
 
 If you have selected a variable for an entity that has associations, you can select which associations you want to include in the arguments that you call the external action with.
 
