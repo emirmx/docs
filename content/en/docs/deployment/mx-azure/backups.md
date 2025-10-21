@@ -8,7 +8,7 @@ description: "Describes the backups functionality for apps running on Mendix on 
 
 ## Introduction
 
-For apps running in Mendix on Azure, the [Backups](/developerportal/operate/backups/) functionality enables you to create and restore database or file document backups. Other backup functionalities, such as uploading and downloading backup snapshots, or scheduling nightly backups, are not yet supported for Mendix on Azure. 
+For apps running in Mendix on Azure, the [Backups](/developerportal/operate/backups/) functionality enables you to create/restore database or file document backups. Other backup functionalities, such as uploading and downloading backup snapshots, scheduling nightly/weekly/monthly backups, are also supported for Mendix on Azure environments.
 
 Backup snapshots contain both the database and file documents referred to in the database.
 
@@ -91,6 +91,52 @@ Do not update the environment while the restore process is in progress.
 {{% /alert %}}
 
 Your environment details page displays a message while the backup is being restored. After the restore process is completed, the environment activity log shows the status as **FINISHED**. If a backup restore fails, the backup activity log of your environment shows the status as **FAILED**.
+
+## Uploading a Backup {#upload-backup}
+
+To upload a backup, click **Upload Backup** and then select the backup archive you want to upload. For information on downloading backup archives, see [Download Backup](#download-backup), below.
+
+You can upload archives contains Full Snapshot.
+
+Uploading a backup creates a new backup item in your backup list. You can then restore the new backup item via the regular restore process (as described in [Restore Backup](#restore-backup), below). This ensures less downtime for your application.
+
+## Downloading a Backup {#download-backup}
+
+To download a backup, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) > **Download** on the backup you want to download.
+
+You can download a backup archive containing Full Snapshot.
+
+{{% alert color="info" %}}
+Because the download archive is generated on request, it is not possible to estimate the file size before requesting a download.
+{{% /alert %}}
+
+To download a backup of an App, follow these steps:
+
+1. Go to [Apps](https://sprintr.home.mendix.com) and open your app.
+2. In the [navigation pane](/developerportal/#navigation-pane), click **Backups**.
+3. On the backup you want to download, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}). Select **Download** from the drop-down list.
+4. Click **Start** to submit a backup download request. 
+5. Once the download request is processed and the backup is completed, click on the **Download** button to retrieve the backup file.
+6. You can click on the **Show URL** button to view/copy the download link.
+
+## Nightly/Weekly/Monthly Backups
+
+Backups are created and retained as follows:
+
+| Frequency | Timing                                                     | Type                    | Retention Period                     |
+| --------- | ---------------------------------------------------------- | ----------------------- | -------------------------------------|
+| Nightly   | Each night                                                 | Automatic               | Two weeks (counting from yesterday)  |
+| Weekly    | Each Sunday                                                | Automatic               | Three months(counting from yesterday)|
+| Monthly   | First Sunday of each month                                 | Automatic               | One year(1st Sunday of each month)   |
+| On demand | On demand                                                  | Manual (user initiated) | Three months                         |
+
+Each backup is automatically deleted when its retention period is over, but you can always manually delete it before then. By default, backups are retained for exactly the specified period; for example, a weekly backup created at on October 22nd expires at January 22nd. If you want to keep a backup for longer than scheduled, you can download the backup to your computer.
+
+{{% alert color="info" %}}Automatic backups are only created when the app is deployed.{{% /alert %}}
+
+### Notes on Retention
+
+The monthly backup occurs on the first Sunday of the month. If the first nightly backup takes place after the first Sunday in the month, then there is no monthly backup retained for that month. In this case, you can download a copy of a nightly or weekly backup if you need to retain a backup for longer than three months.
 
 ## Known Limitations
  

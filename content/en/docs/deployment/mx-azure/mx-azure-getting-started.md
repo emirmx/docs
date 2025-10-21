@@ -5,8 +5,6 @@ description: "Documents the pre-implementation tasks for Mendix on Azure."
 weight: 10
 ---
 
-{{% alert color="info" %}} This feature is currently available to participating customers. For more information, contact your Customer Success Manager. {{% /alert %}}
-
 ## Introduction
 
 Before you can deploy your Mendix app on Azure, you must plan and complete a number of pre-implementation tasks.
