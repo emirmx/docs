@@ -107,24 +107,26 @@ Adding alternative text that explains an image helps visually impaired users und
 
 #### Decorative vs. Informative Images
 
-For images, there is a difference between decorative images and informative images. Decorative images add no extra context to the page. An extreme example would be a festive page with images of confetti all over it; they do not each ne to be tagged as **Piece of confetti**. That would not enhance the user's understanding of the page. It would actually make it harder to navigate since they would hear **Piece of confetti** repeatedly as they are trying to read the page.
+There is a key difference between decorative images and informative images. Decorative images add no extra context to the page. Informative images do contain information the user is intended to learn. One decorative example would be a festive page with images of confetti all over it; they do not each ne to be tagged as **Piece of confetti**. That would not enhance the user's understanding of the page. It would actually make it harder to navigate since they would hear **Piece of confetti** repeatedly as they are trying to read the page.
 
 ### Tab Index
 
 The `tabindex` helps users who only use a keyboard navigate the page (as required by [Guideline 2.1 Keyboard Accessible](https://www.w3.org/TR/WCAG22/#keyboard-accessible)). The <kbd>Tab</kbd> key allows users to navigate through interactive elements on a website, such as links, buttons, and form fields. Any element that can be interacted with should have a tab index.
 
-The way someone with a screen reader navigates the page involves more than just the tab. There's a special key to navigate the page and have it read out paragraphs (i.e, VoiceOver key + arrows in Mac OS). Assigning a `tabindex` to every element on the page is unnecessary, as it makes the page more challenging to navigate.
+The way someone with a screen reader navigates the page involves more than just the tab. There's a special key to navigate the page and have it read out paragraphs (for example with the <kbd>VoiceOver</kbd> key + arrows in Mac OS). Assigning a `tabindex` to every element on the page is unnecessary, as it makes the page more challenging to navigate.
 
 To ensure that all interactive elements are accessible via the <kbd>Tab</kbd> key:
 
 * Make sure all clickable elements are focusable.
 * Use the `tabindex` attribute correctly. A value of 0 allows an element to be part of the default tab order.
 
-Tip: Avoid using positive `tabindex` values, as they can confuse users by altering the natural focus order.
+{{% alert color="info" %}}
+Avoid using positive `tabindex` values, as they can confuse users by altering the natural focus order.
+{{% /alert %}}
 
 ### Role Type
 
-Changing the role type helps screen readers understand the kind of element you've added ([Success Criterion 4.1.2 Name, Role, Value](https://www.w3.org/TR/WCAG22/#name-role-value)). You may have added a link, but the function performed is that of a button (instead of navigating to a new page, it performs an action on that page). In this case, it is better to change the element to a button. Changing role types can lead to confusion for users of assistive technologies, as incorrect roles may misrepresent the function of an element, making it harder for users to navigate and interact with content. Whenever possible, always choose semantic HTML over [ARIA (Accessible Rich Internet Applications)](https://www.w3.org/TR/wai-aria/) roles.
+Changing the role type helps screen readers understand the kind of element you added ([Success Criterion 4.1.2 Name, Role, Value](https://www.w3.org/TR/WCAG22/#name-role-value)). You may have added a link, but the function performed is that of a button (instead of navigating to a new page, it performs an action on that page). In this case, it is better to change the element to a button. Changing role types can lead to confusion for users of assistive technologies, as incorrect roles may misrepresent the function of an element, making it harder for users to navigate and interact with content. Whenever possible, always choose semantic HTML over [ARIA (Accessible Rich Internet Applications)](https://www.w3.org/TR/wai-aria/) roles.
 
 ### Accessibility Helper
 
@@ -230,7 +232,7 @@ More information on this can be found in the following SCs:
 
 ### Automated Accessibility Testing
 
-There are multiple options to run automatic tests on your pages. These tools are great for indicating the accessibility of your website and suggesting areas for improvement. W3C offers a [list of tools for checking if your web content meets accessibility guidelines.](https://www.w3.org/WAI/test-evaluate/tools/list/)
+There are multiple options for running automatic tests on your pages. These tools are great for indicating the accessibility of your website and suggesting areas for improvement. W3C offers a [list of tools for checking if your web content meets accessibility guidelines.](https://www.w3.org/WAI/test-evaluate/tools/list/)
 
 ### Manual Accessibility Testing
 
