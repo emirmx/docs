@@ -31,7 +31,7 @@ Another often overlooked accessibility concern is situational accessibility. For
 
 ## Web Content Accessibility Guidelines (WCAG)
 
-Considering all these things is a lot, and if everyone had to start from scratch, it would take a significant amount of time. That's why the World Wide Web Consortium (W3C) created the Web Content Accessibility Guidelines (WCAG). These guidelines help you make your application accessible to a larger audience and improve its usability for everyone else. (Improving accessibility for a small group and finding out that a considerable group benefits from it is called the [curb cut effect](https://en.wikipedia.org/wiki/Curb_cut_effect).)
+Considering all these things is a lot, and if everyone had to start from scratch, it would take a significant amount of time. That is why the World Wide Web Consortium (W3C) created the Web Content Accessibility Guidelines (WCAG). These guidelines help you make your application accessible to a larger audience and improve its usability for everyone else. (Improving accessibility for a small group and finding out that a considerable group benefits from it is called the [curb cut effect](https://en.wikipedia.org/wiki/Curb_cut_effect).)
 
 These guidelines are also the basis for various laws, including those of the EU and the US. The European Accessibility Act (EAA) is based on version 2.1 level AA.
 
@@ -113,7 +113,7 @@ There is a key difference between decorative images and informative images. Deco
 
 The `tabindex` helps users who only use a keyboard navigate the page (as required by [Guideline 2.1 Keyboard Accessible](https://www.w3.org/TR/WCAG22/#keyboard-accessible)). The <kbd>Tab</kbd> key allows users to navigate through interactive elements on a website, such as links, buttons, and form fields. Any element that can be interacted with should have a tab index.
 
-The way someone with a screen reader navigates the page involves more than just the tab. There's a special key to navigate the page and have it read out paragraphs (for example with the <kbd>VoiceOver</kbd> key + arrows in Mac OS). Assigning a `tabindex` to every element on the page is unnecessary, as it makes the page more challenging to navigate.
+The way someone with a screen reader navigates the page involves more than just the tab. There is a special key to navigate the page and have it read out paragraphs (for example with the <kbd>VoiceOver</kbd> key + arrows in Mac OS). Assigning a `tabindex` to every element on the page is unnecessary, as it makes the page more challenging to navigate.
 
 To ensure that all interactive elements are accessible via the <kbd>Tab</kbd> key:
 
@@ -142,7 +142,7 @@ There are two specific requirements related to contrast: [Success Criterion 1.4.
 
 #### Text Contrast {#non-textcontrast}
 
-In the WCAG, you can find the calculation method, and there are many contrast checkers available, such as the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/). There are some exceptions, such as for 'big text', but to err on the side of caution, it's best to stick to 4.5:1. 
+In the WCAG, you can find the calculation method, and there are many contrast checkers available, such as the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/). There are some exceptions, such as for big text, but we recommend sticking to 4.5:1. 
 
 In **custom-variables.scss**, you can find the following for font color:
 
@@ -196,7 +196,7 @@ The focus indicator helps users identify where the focus currently is on the pag
 
 [Focus visible](https://www.w3.org/TR/WCAG22/#focus-visible) The focus should be visible at all times; however, this criterion does not specify how. In theory, for this SC, it could be a single pixel on the right of the element. However, other criteria provide more specific guidance on what it should look like.
 
-[Use of color](https://www.w3.org/TR/WCAG22/#use-of-color): This indicates that a single sensory characteristic alone is insufficient to convey meaning. It counts for everything and thus also applies to the focus indicator. Using only color to indicate a focus change would fail this criterion. The focus indicator should use an alternative method. The most common thing is to change the shape of the element while it's focused. It could be something as simple as a box around the element that counts as changing the shape of the component.
+[Use of color](https://www.w3.org/TR/WCAG22/#use-of-color): This indicates that a single sensory characteristic alone is insufficient to convey meaning. It counts for everything and thus also applies to the focus indicator. Using only color to indicate a focus change would fail this criterion. The focus indicator should use an alternative method. The most common thing is to change the shape of the element while it has focus. It could be something as simple as a box around the element that counts as changing the shape of the component.
 
 The rules as described in [Non-Text Contrast](#non-textcontrast) also apply to the focus indicator. You can set the color of the input focus indicator here: 
 
@@ -241,12 +241,12 @@ Although it is the most time-consuming, a manual test is a good way to assess yo
 Doing just a few checks already goes a long way:
 
 * **Keyboard navigability** — Can you reach all the input elements with your keyboard? Does your <kbd>Tab</kbd> key take you through all the elements of your page?
-* **Screen reader** — Is all the information that's clear to a sighted person also available to a low vision or non-sighted person? Are labels of input fields being read out correctly?
+* **Screen reader** — Is all the information clear to a sighted person also available to a low vision or non-sighted person? Are labels of input fields being read out correctly?
 * **Color contrast** — Does both text and non-text content have enough contrast?
 
 Find more info on this in [the W3C Easy Checks – A First Review of Web Accessibility](https://www.w3.org/WAI/test-evaluate/preliminary/)
 
-## Read more
+## Read More
 
 * [Mendix Academy's Accessibility Learning Path](https://academy.mendix.com/link/paths/141/Improve-Your-App-Accessibility).
 * [Mendix Accessibility Conformance: Ensure Your Apps Are Accessible](https://www.mendix.com/evaluation-guide/app-lifecycle/develop/ux-multi-channel-apps/accessibility/) 
