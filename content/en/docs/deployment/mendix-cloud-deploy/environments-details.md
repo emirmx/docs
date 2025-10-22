@@ -218,6 +218,8 @@ For more information, see [Scheduled Events](/refguide/scheduled-events/).
 
 On the **Network** tab, you can manage the elements described below.
 
+### Connections
+
 ### Custom Domains {#custom-domains}
 
 * **Domain Name**
