@@ -96,7 +96,7 @@ Your environment details page displays a message while the backup is being resto
 
 To upload a backup, click **Upload Backup** and then select the backup archive you want to upload. For information on downloading backup archives, see [Download Backup](#download-backup), below.
 
-You can upload archives contains Full Snapshot.
+You can upload archives containing a Full Snapshot.
 
 Uploading a backup creates a new backup item in your backup list. You can then restore the new backup item via the regular restore process (as described in [Restore Backup](#restore-backup), below). This ensures less downtime for your application.
 
@@ -125,10 +125,10 @@ Backups are created and retained as follows:
 
 | Frequency | Timing                                                     | Type                    | Retention Period                     |
 | --------- | ---------------------------------------------------------- | ----------------------- | -------------------------------------|
-| Nightly   | Each night                                                 | Automatic               | Two weeks (counting from yesterday)  |
+| Nightly   | Each night                                                 | Automatic               | 14 days (counting from yesterday)    |
 | Weekly    | Each Sunday                                                | Automatic               | Three months(counting from yesterday)|
 | Monthly   | First Sunday of each month                                 | Automatic               | One year(1st Sunday of each month)   |
-| On demand | On demand                                                  | Manual (user initiated) | Three months                         |
+| On demand | On demand                                                  | Manual (user initiated) | 14 days (counting from yesterday)    |
 
 Each backup is automatically deleted when its retention period is over, but you can always manually delete it before then. By default, backups are retained for exactly the specified period; for example, a weekly backup created at on October 22nd expires at January 22nd. If you want to keep a backup for longer than scheduled, you can download the backup to your computer.
 
