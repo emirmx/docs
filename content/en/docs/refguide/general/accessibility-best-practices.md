@@ -226,7 +226,15 @@ More information on this can be found in the following SCs:
 
 ### Link Purpose
 
-[Link purpose](https://www.w3.org/TR/WCAG22/#link-purpose-in-context), instead of using **Click here**, the link's destination should be clear from the surrounding text. Ideally, that description would be part of the link itself. It would help users understand the purpose of each link, enabling them to decide whether to follow it. Also, assistive technology can provide users with a list of links on the website.
+[Link purpose](https://www.w3.org/TR/WCAG22/#link-purpose-in-context) refers to the naming of links in text. For example:
+
+`<a href="url">Click here</a> to learn more about Nanoflows.`
+
+This is not good for accessibility, since the link itself only says 'Click here' and does not give information on what page the link will take you to. For example:
+
+`To learn more, you can visit our <a href="url">Nanoflow explanation page</a>.`
+
+ For ideal accessibility instead of using 'Click here' to be the link text, the link's destination should be clear from the link text ('Nanoflow explanation page' in the previous example). This would help users understand the purpose of each link, enabling them to decide whether to follow it. Also, assistive technology can provide users with a list of links on the website. Having the destination of the link in the link itself helps it stand out in that list and makes it clear where that link would take the user.
 
 ## Testing Accessibility
 
