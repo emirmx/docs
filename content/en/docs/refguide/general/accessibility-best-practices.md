@@ -61,13 +61,14 @@ The [Robust Principle](https://www.w3.org/TR/WCAG22/#robust) SCs are specificall
 
 ## Using Mendix's Accessibility Options
 
+
+{{< figure src="/attachments/refguide/general/accessibility-best-practices/text-box-label.png" width="300" >}}
+alt text: text box widget properties showing label, aria-required and autocomplete options.
 ### Labels
 
 When a screen reader reaches an input field, it will read the label text aloud. This label must clearly describe the information required.
 
 ### Aria-Required
-
-<add image of this setting>
 
 Various input widgets have the option to add aria-required to the input field. It will inform users of screen readers that this is a required field. Usually, you would have this information in styling (for example, using a star to indicate required fields). Adding this attribute makes sure the programming of your application matches the visuals required by [Success Criterion 1.3.1 Info and Relationships](https://www.w3.org/TR/WCAG22/#info-and-relationships).
 
@@ -76,8 +77,6 @@ Do not set the **Validation Type** to **Required**. If you do, a validation mess
 {{% /alert %}}
 
 ### Autocomplete
-
-<add image of this setting>
 
 Adding autocomplete to input fields can help individuals with reduced cognitive abilities by reducing the effort needed to fill out forms (per the [Success Criterion 1.3.5 Identify Input Purpose](https://www.w3.org/TR/WCAG22/#identify-input-purpose)). When the first name and last name fields are correctly tagged, browsers can auto-fill these inputs. However, while beneficial for some, autocomplete can hinder users of assistive technologies, as it complicates the form-filling process. In such cases, it may be better to turn off this feature.
 
@@ -91,9 +90,10 @@ You should avoid using autocomplete in the following situations:
 
 ### Aria-Labels
 
-<add image of this setting>
+{{< figure src="/attachments/refguide/general/accessibility-best-practices/combobox-aria-labels.png" width="300" >}}
+alt text: combobox widget properties showing aria-labels options.
 
-Aria labels are available in several widgets. Aria-labels take precedent over anything else available for that element. A good aria-label should describe the element the user is currently interacting with. It is helpful in situations where a visible label would be redundant due to the context of the input field. The aria-label provides an opportunity to add extra context for [Success Criterion 4.1.2 Name, Role, Value](https://www.w3.org/TR/WCAG22/#name-role-value). 
+Aria-labels are available in several widgets. Aria-labels take precedent over anything else available for that element. A good aria-label should describe the element the user is currently interacting with. It is helpful in situations where a visible label would be redundant due to the context of the input field. The aria-label provides an opportunity to add extra context for [Success Criterion 4.1.2 Name, Role, Value](https://www.w3.org/TR/WCAG22/#name-role-value). 
 
 {{% alert color="info" %}}
 While aria-labels are very useful for adding context, using them excessively can even hurt accessibility. An example could be a situation where you have a button that says **Send**, if you add an aria-label with a description such as **Click this button to reserve your spot in line!** that new text takes precedent over the **Send** text of the button. It would impact voice control. If a user who uses voice control said *Press send*, it would no longer activate that button.
@@ -101,7 +101,8 @@ While aria-labels are very useful for adding context, using them excessively can
 
 ### Alternative Text (Image widget)
 
-<add image of image widget>
+{{< figure src="/attachments/refguide/general/accessibility-best-practices/static-image-alt-text.png" width="300" >}}
+alt text: Static Image widget properties showing Alternative Text option
 
 Adding alternative text that explains an image helps visually impaired users understand the page (as required by [Success Criterion 1.1.1 Non-text Content](https://www.w3.org/TR/WCAG22/#non-text-content)). It should be left empty if the image is purely decorative. Informative images require alt text, which should be a brief description explaining what is happening in the image. If there is text in the image that is not available in another form, it should be included in the alt text.
 
@@ -110,6 +111,9 @@ Adding alternative text that explains an image helps visually impaired users und
 There is a key difference between decorative images and informative images. Decorative images add no extra context to the page. Informative images do contain information the user is intended to learn. One decorative example would be a festive page with images of confetti all over it; they do not each ne to be tagged as **Piece of confetti**. That would not enhance the user's understanding of the page. It would actually make it harder to navigate since they would hear **Piece of confetti** repeatedly as they are trying to read the page.
 
 ### Tab Index
+
+{{< figure src="/attachments/refguide/general/accessibility-best-practices/static-image-alt-text.png" width="300" >}}
+alt text: Static Image widget properties showing Tab index option
 
 The `tabindex` helps users who only use a keyboard navigate the page (as required by [Guideline 2.1 Keyboard Accessible](https://www.w3.org/TR/WCAG22/#keyboard-accessible)). The <kbd>Tab</kbd> key allows users to navigate through interactive elements on a website, such as links, buttons, and form fields. Any element that can be interacted with should have a tab index.
 
@@ -126,9 +130,15 @@ Avoid using positive `tabindex` values, as they can confuse users by altering th
 
 ### Role Type
 
+{{< figure src="/attachments/refguide/general/accessibility-best-practices/action-button-role-type.png" width="300" >}}
+alt text: Action button widget properties showing role type option
+
 Changing the role type helps screen readers understand the kind of element you added ([Success Criterion 4.1.2 Name, Role, Value](https://www.w3.org/TR/WCAG22/#name-role-value)). You may have added a link, but the function performed is that of a button (instead of navigating to a new page, it performs an action on that page). In this case, it is better to change the element to a button. Changing role types can lead to confusion for users of assistive technologies, as incorrect roles may misrepresent the function of an element, making it harder for users to navigate and interact with content. Whenever possible, always choose semantic HTML over [ARIA (Accessible Rich Internet Applications)](https://www.w3.org/TR/wai-aria/) roles.
 
 ### Accessibility Helper
+
+{{< figure src="/attachments/refguide/general/accessibility-best-practices/accessibility-helper.png" width="300" >}}
+alt text: Accessibility helper widget
 
 If you need additional settings or attributes for your page, you can add them using the accessibility helper. It allows you to add attributes to widgets that are not available in the settings. It ensures you can add the necessary extra attributes without needing access to the codebase of that widget.
 
@@ -190,9 +200,10 @@ A situation where this would fail would be if you change your button color to `$
 
 ### Focus
 
-The focus indicator helps users identify where the focus currently is on the page. There are a few success criteria that describe what the focus indicator should look like.
+{{< figure src="/attachments/refguide/general/accessibility-best-practices/group-box-focus-indicator.png" width="300" >}}
+alt text: group box with active focus indicator
 
-<add image example of a focus indicator>
+The focus indicator helps users identify where the focus currently is on the page. There are a few success criteria that describe what the focus indicator should look like.
 
 [Focus visible](https://www.w3.org/TR/WCAG22/#focus-visible) The focus should be visible at all times; however, this criterion does not specify how. In theory, for this SC, it could be a single pixel on the right of the element. However, other criteria provide more specific guidance on what it should look like.
 
@@ -210,9 +221,10 @@ $form-input-border-focus-color: $brand-primary;
 
 ### Page Titled
 
-[Page titled](https://www.w3.org/TR/WCAG22/#page-titled): Every page needs a meaningful name that describes the page. Entitling one just **Page**, for example, is not enough to make the page easy to find among other tabs. 
+{{< figure src="/attachments/refguide/general/accessibility-best-practices/page-properties-title.png" width="300" >}}
+alt text: Page properties title option
 
-<add general page title input thing>
+[Page titled](https://www.w3.org/TR/WCAG22/#page-titled): Every page needs a meaningful name that describes the page. Entitling one just **Page**, for example, is not enough to make the page easy to find among other tabs. 
 
 ### Error Messages
 
