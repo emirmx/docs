@@ -7,7 +7,7 @@ weight: 20
 
 ## Introduction
 
-TMendix on Azure supports various ingress and egress network configurations that allow customers to integrate Mendix applications seamlessly within their existing network infrastructure. This document explains the available configuration options and summarises them in cluster networking modes for easier comprehension.
+Mendix on Azure supports various ingress and egress network configurations that allow customers to integrate Mendix applications seamlessly within their existing network infrastructure. This document explains the available configuration options and summarises them in cluster networking modes for easier comprehension.
 
 ### Key Concepts and Terminology {#key-concepts}
 
