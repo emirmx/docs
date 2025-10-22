@@ -83,6 +83,7 @@ For easy configuration, the SAML module offers the following:
 * The SAML module keeps a log/audit trail of login attempts. These can be downloaded.
 * The SAML module allows you to have an SSO connection with multiple SAML IdPs. Each IdP can have its own keypair.
 * SAML module versions 3.5.0 and above (compatible with Mendix version 9.22.0 and above) support multiple keypairs.
+* Starting from version 4.2.0, the SAML module supports multi-instance apps (horizontal scaling).
 
 ### Limitations{#limitations}
 
@@ -203,9 +204,9 @@ If you use this method, do not forget to set the **SSOLandingPage** constant to 
 
 The table below introduces you to several key updates when you upgrade the SAML module from V3.x to V4.x.
 
-| Feature | Changes in Version 4.0.0 |
+| Feature | Changes in Version 4.X |
 | --- | --- |
-| SSO Configuration | You can now perform SSO configuration during design time and deploy time. <br>Introduced deploy-time configuration and `Custom_Create_IdPConfiguration` microflow for customized SSO configuration. |
+| SSO Configuration | You can perform SSO configuration during design time and deploy time. <br>For versions below 4.2.0, the module introduced deploy-time configuration and `Custom_Create_IdPConfiguration` microflow for customized SSO configuration. <br> From version 4.2.0 onwards, you can instead use the `IdPConfiguration_MicroflowName` constant and configure your custom microflow name in it. |
 | Admin Screen Restructuring | The **Mapping** tab has been removed. Equivalent configurations can now be completed on the **User Provisioning configuration** tab. <br> `evaluateMultipleUserMatches` microflow is now moved to the **User Commons**. |
 | User Commons Module Integration | 1. From versions 4.0.0 and above, SAML2.0 is compatible with the UserCommons v2.0.0. <br> 2. The SAML module now integrates with the User Commons module, offering a more uniform experience with the OIDC SSO module. <br> 3. A new method for creating custom user provisioning microflows using User Commons simplifies development and allows you to automatically set the user-type for users <br> 4. Deprecated: SAML 3.x provisioning flows will be unsupported in future versions. It’s recommended to create new provisioning flows using User Commons after upgrading.<br> 5. From UserCommons 2.0.0, new users without IdP-specified time zone or language will use default App settings; existing users retain their previously set values.|
 | InCommon Federation Support | Pre-configured support for InCommon Federation has been removed. You now need to create custom user provisioning microflows in version 4.0.0 |
@@ -286,7 +287,9 @@ After configuring the eight constants, you need to deploy the application. For d
 
 The [Easy Default Flow](#easy-flow) section above, gives you an overview of the default settings. If you have requirements to deviate from these defaults, for example, to enable Force Authentication, change encryption settings from the default, or support multiple Identity Providers (IdPs), Non-default configuration setup offers advanced options for your SAML integration needs. With these features, you can customize the SAML configuration to meet your specific requirements.
 
-In this configuration, you have several options to customize the Identity Provider (IdP) settings. Firstly, you can configure the IdP using constants. Additionally, the SAML module supports further customization of the IdP configuration through the implementation of a custom microflow called `Custom_Create_IdPConfiguration`. To do this, create a new object in the `Custom_Create_IdPConfiguration` microflow and add your own custom values to it. `Dep_IdPConfiguration.return` microflow returns a list of configured IdPs, which the SAML module then uses to generate the necessary SSO configurations for multiple IdPs.
+In this configuration, you have several options to customize the Identity Provider (IdP) settings. Firstly, you can configure the IdP using constants. Additionally, the SAML module supports further customization of the IdP configuration. From version 4.2.0 onward, you can define your custom microflow name in the `IdPConfiguration_MicroflowName` constant. The custom microflow must return a list of configured IdPs (`Dep_IdPConfiguration.return`), which the SAML module then uses to generate the necessary SSO configurations for multiple IdPs. The default value of the `IdPConfiguration_MicroflowName` constant is `SAML.Default_CreateIDPConfiguration`.
+
+In versions earlier than 4.2.0, IdP customization was supported through the implementation of a custom microflow called `Custom_Create_IdPConfiguration`. However, this microflow has been deprecated as of version 4.2.0.
 
 In this configuration, users have the flexibility to introduce their own constants by creating custom IdP configurations. To enable this configuration, you need the IdP metadata obtained by creating an SSO app in the IdP without complete dependency on SP metadata.
 
@@ -310,6 +313,8 @@ The below table shows you the different attributes and their values for quick re
 | IDPConfiguration(Non-Persistable entity) | Description | Default Value |
 | --- | --- | --- |
 | **Alias** (mandatory) | This represents IdPconfiguration Alias | |
+| **IdPMetadataURL** (mandatory) | This represents the URL of the IdPMetadataURL | |
+| **IdPConfiguration_MicroflowName**  | This constant specifies a custom microflow that returns a list of IdP configurations and is used to create SAML IdP configurations at deploy time. | `SAML.Default_CreateIDPConfiguration` |
 | **ResponseProtocolBinding**  | Response protocol binding contains a caption value of SAML20.Enum_ProtocolBinding | POST_BINDING |
 | **EnableAssertionConsumerServiceIndex** | EnableAssertionConsumerService Concept contains caption value of SAML20.Enum_AssertionConsumerServiceIndex | NO |
 | **AssertionConsumerServiceIndex** | This should hold the same value for the SAML configuration and the IdPs. | 0 |
@@ -321,7 +326,6 @@ The below table shows you the different attributes and their values for quick re
 | **InSessionServiceName** | It represents the In-Session Attribute Consuming Service name | Service2 |  
 | **InSessionAttributeConsumingServiceIndex** |  It represents the In-Session Attribute Consuming Service Index | 2 | 
 | **InSessionDep_SPAttribute_Dep_IdPConfiguration**| It will display the details of Value, Name, IsRequired details | | 
-| **IdPMetadataURL** (mandatory) | This represents the URL of the IdPMetadataURL | | 
 | **PreferredEntityDescriptor** | It represents the entityID of the EntityDescriptor | | 
 | **AllowIdpInitiatedAuthentication** | Authentication should start at this application, which generates an ID. The authenticated response should match this generated Id. If no request can be found that matches the response Id the information is rejected. If your IdP can initiate a new transaction (with a new or no Id) and you want to allow this you can check this box. | FALSE |
 | **EnableForceAuthentication** | will force the SAML IdP to (re)authenticate end-users, even if they are already signed in at the SAML IdP. | FALSE |
@@ -463,7 +467,7 @@ You can set up custom user provisioning by selecting the **IdP Configuration** t
     * The IdP Attribute is one of the fixed claims supported by the [OIDC SSO](/appstore/modules/oidc/) module.
     * **IdP Attributes**(Claims) cannot be of type enum, autonumber, or an association.
 
-3. Optionally, you can use the custom logic in the **User Provisioning**. In the **Custom UserProvisioning** field, select a microflow you want to run for custom user provisioning. The custom microflow name must begin with the string `UC_CustomProvisioning` and requires the following parameters:
+3. Optionally, you can use the custom logic in the **User Provisioning**. In the **Custom UserProvisioning** field, select a microflow you want to run for custom user provisioning. The custom microflow name must begin with the string `UC_CustomProvisioning`. Starting from version 4.0.3 and 4.1.2 of the module, you can find a reference microflow (`SAML.UC_CustomProvisioning`) in the **MOVE ME** folder. The custom microflow requires the following parameters:
 
     1. **UserInfoParameter(UserCommons.UserInfoParam)**: A Mendix object containing user claims information through its associated objects. You can use this  parameter to retrieve user provisioning configuration information.
     2. **User(System.User)**: A Mendix object representing the user to be provisioned. Ensure that the selected microflow matches this parameter signature.
