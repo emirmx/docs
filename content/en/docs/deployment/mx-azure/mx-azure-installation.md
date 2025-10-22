@@ -63,19 +63,21 @@ To create a cluster for your Mendix on Azure app, perform the following steps:
 
     {{< figure src="/attachments/deployment/mx-azure/preflight-check-successful.png" class="no-border" >}}
 
+    The Platform account check is used to validate that only one platform account should be associated to the customer id.
+
 10. In the **Provision** screen, add the custom tags if required and review the information in the **Advanced Options** section. If required, adjust any settings as needed. Note that selecting higher service tiers will also incur higher costs.
    
     You can update the following advanced options:
 
     * AKS Service Tier
-    * AKS Node Size
-    * VM Type
+    * AKS Node VM Size
+    * AKS Maximum Node Count
     * Load Balancer Type
-    * Postgres Flexible Server - Under this, you can update Compute Tier, Compute Size and Storage Performance Tier.
-    * AKS Node IP Address 
-    * Managed Grafana
-    * Enable Read Replica
-
+    * AKS Node CIDR IP Range
+    * AKS Network Isolated Cluster
+    * Managed Grafana    
+    * Postgres Flexible Server - Under this, you can update Enable Read Replica,Compute Tier, Compute Size and Storage Performance Tier.
+ 
     {{% alert color="info" %}}If you plan to use [virtual network peering](#network-peering), you must set the **Load Balancer Type** to **Private (Internal)**.{{% /alert %}}
 
     {{% alert color="info" %}}If **Managed Grafana** is set to **False**, private access to a Grafana dashboard is required. Make sure that the required network is set up to accomodate private access.{{% /alert %}}

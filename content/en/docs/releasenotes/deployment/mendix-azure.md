@@ -21,6 +21,7 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 * Mendix on Azure users can now upload and download environment backups through Mendix on Kubernetes Portal. For more information, see [Backups in Mendix on Azure](/developerportal/deploy/mendix-on-azure/backups/).
 * We have added a new feature which performs automatic nightly/weekly/monthly backups of the environment. For more information, see [Backups in Mendix on Azure](/developerportal/deploy/mendix-on-azure/backups/).
 * [Cloud tokens](/control-center/cloud-tokens//) are now required for environment creation in Mendix on Azure, after the trial is expired (120 days).
+* 
 
 ### Release date: October 16, 2025
 
