@@ -238,9 +238,6 @@ To enable private endpoints for your Mendix on Azure app, perform the following 
 
 After creating your cluster in Microsoft Azure, you can now deploy your applications to the cluster. The deployment process is the same as with Mendix on Kubernetes. However, in order to use the Mendix on Azure Platform service, you need to have a minimum of 14 cloud tokens to create an environment. For more information, see [Deploying a Mendix App to a Mendix on Kubernetes Cluster](/developerportal/deploy/private-cloud-deploy/). 
 
-If the number of cloud tokens is insufficient, the following error message is shown:
-
-{{< figure src="/attachments/deployment/mx-azure/envCreationFailedQuota.png" class="no-border" >}}
 
 ## Backing up and Restoring Eenvironments
 
