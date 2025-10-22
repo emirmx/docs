@@ -7,7 +7,7 @@ weight: 30
 
 ## Introduction
 
-When migrating your application to the [React client](/refguide/mendix-client/react/), you may need to convert multiple widgets that are not compatible with React client. Studio Pro's batch conversion feature allows you to efficiently convert multiple unsupported widgets at once, rather than converting them individually.
+When migrating your application to the [React client](/refguide/mendix-client/react/), you may need to convert multiple widgets that are not compatible with the React client. Studio Pro's batch conversion feature allows you to efficiently convert multiple unsupported widgets at once, rather than converting them individually.
 
 The batch conversion feature automatically identifies all widgets in your application that need to be converted for React client compatibility and provides options to convert them in bulk. This significantly reduces the time and effort required to migrate large applications to the React client.
 
@@ -29,19 +29,16 @@ The batch conversion feature supports the following widget conversions:
 
 To start the batch conversion process you can either:
 
-1. Right-click on an incompatible widget in Studio Pro and select **Convert all to [target widget]**
-2. Right-click on an error or a deprecation for an incompatible widget and select **Convert all to [target widget]**
+1. Right-click on an incompatible widget in Studio Pro and select **Convert all to {THE WIDGET YOU WANT TO CONVERT INTO}**
+1. Right-click on an error or a deprecation for an incompatible widget and select **Convert all to {THE WIDGET YOU WANT TO CONVERT INTO}**
 
-The Widget Conversion dialog displays:
+The widget conversion mechanism looks like this:
 
 {{< figure src="/attachments/refguide/runtime/mendix-client/batch-conversion-dialog.png" class="no-border" >}}
 
 ### Handling Conversion Limitations
 
-Some widgets may not be in a convertible state due to specific configurations or properties. In such cases, Studio Pro will attempt to convert as many widgets as possible and will inform you about how many widgets could not be converted automatically. You can then choose to convert the remaining widgets manually by finding them through the error pane.
+Some widgets may not be in a convertible state due to specific configurations or properties. In such cases, Studio Pro will attempt to convert as many widgets as possible and will inform you about how many widgets could not be converted automatically. You can then choose to convert the remaining widgets manually by finding them through the **Error** pane.
 
-This manual conversion means using the context menu conversion option on each individual widget. This will bring up a dialog providing you with the specific reasons why that particular widget could not be converted automatically during the batch process.
-
-{{% alert color="info" %}}
+This manual conversion requires using the context menu conversion option on each individual widget. The context menu will bring up a dialog box providing you with the specific reasons why that particular widget could not be converted automatically during the batch process.
 For detailed information about conversion limitations, see [Widget Conversion Limitations](/refguide/mendix-client/widget-conversion-limitations/).
-{{% /alert %}}
