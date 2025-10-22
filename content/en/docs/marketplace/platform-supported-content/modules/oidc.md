@@ -137,7 +137,7 @@ It requires the following Marketplace modules to be included in your app:
 If you are using Mendix version 10.21.1, use User Commons module version 2.1.0 or upgrade to version 2.1.2. Version 2.1.1 of the module is a special release intended solely for Mendix version 10.21.0.
     {{% /alert %}}
 
-* [Events](https://marketplace.mendix.com/link/component/224259) – see [Events](/appstore/widgets/events/) documentation (for version 4.0.0 and above).
+* [Events](https://marketplace.mendix.com/link/component/224259) – see [Events](/appstore/widgets/events/) documentation (applicable to version 4.0.0 and above for Mx10 and version 3.3.0 and above for Mx9).
 
 Versions below 2.3.0 also require [Native Mobile Resources](https://marketplace.mendix.com/link/component/109513) – see [Native Mobile Resources](/appstore/modules/native-mobile-resources/) documentation.
 
