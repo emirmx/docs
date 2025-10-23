@@ -61,7 +61,7 @@ Your Mendix app will be deployed with and run by the Mendix on Kubernetes Operat
 | OS | Linux distribution | Any capable of supporting Kubernetes | |
 | Container orchestration | Kubernetes | See [Supported Providers](/developerportal/deploy/private-cloud-supported-environments/) | |
 | Container registry | Any supported registry | See [Supported Providers](/developerportal/deploy/private-cloud-supported-environments/) | |
-| Database | PostgreSQL | 12 | |
+| Database | PostgreSQL | See [Supported Providers](/developerportal/deploy/private-cloud-supported-environments/) | |
 | Object storage | S3-type Bucket | S3 API compatible | |
 | Application management | Mendix on Kubernetes Operator | 2.12 or above | Will be installed by Private Mendix Platform installer |
 | Runtime | Mendix | 9.18.3.58938 | Will be installed by Private Mendix Platform installer |
