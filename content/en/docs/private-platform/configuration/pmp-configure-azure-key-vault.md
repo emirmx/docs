@@ -1,51 +1,54 @@
 ---
-title: "Configuring External Secret Management with AWS Secret Manager"
-url: /private-mendix-platform/configure-aws-secret-manager/
-description: "Documents the configuration of AWS Secret Manager for the Private Mendix Platform."
+title: "Configuring External Secret Management with Azure Key Vault"
+url: /private-mendix-platform/configure-azure-key-vault/
+description: "Documents the configuration of Azure Key Vault for the Private Mendix Platform."
 weight: 40
 ---
 
 ## Introduction
 
-The Private Mendix Platform offers enhanced security and flexibility for credential management by supporting [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) as an external secret management solution, alongside the traditional database storage option. In the legacy database storage approach, the credentials are encrypted and stored directly in the Private Mendix Platform database. With AWS Secrets Manager, credentials are instead stored in AWS Secrets Manager and accessed securely via IAM roles for improved security, centralized management, and compliance with enterprise security policies. This document describes how you can configure AWS Secrets Manager integration for your Private Mendix Platform project.
+The Private Mendix Platform offers enhanced security and flexibility for credential management by supporting [Azure Key Vault](https://azure.microsoft.com/en-us/products/key-vault) as an external secret management solution, alongside the traditional database storage option. In the legacy database storage approach, the credentials are encrypted and stored directly in the Private Mendix Platform database. With Azure Key Vault, credentials are instead stored in a secure vault and accessed securely via for improved security, centralized management, and compliance with enterprise security policies. This document describes how you can configure Azure Key Vault integration for your Private Mendix Platform project.
 
 ## Prerequisites
 
-Before configuring AWS Secrets Manager integration, prepare the following:
+Before configuring Azure Key Vault integration, prepare the following:
 
-* An AWS account with appropriate permissions to create and manage secrets
-* IAM permissions to create roles and policies for AWS Secrets Manager access
-* Access to the PPrivate Mendix Platform project admin panel with administrative privileges
-* Basic knowledge of AWS services, IAM roles, and Kubernetes (if using EKS deployment)
-* An existing EKS cluster (if your PMP deployment runs on Kubernetes)
+* An Azure subscription with appropriate permissions to create and manage Key Vaults.
+* Permissions in Azure Active Directory (Azure AD) to create User-Assigned Managed Identities and grant role assignments.
+* Access to the Private Mendix Platform project admin panel with administrative privileges.
+* Basic knowledge of Azure services, Azure AD, and Kubernetes (if using AKS deployment).
+* An existing AKS (Azure Kubernetes Service) cluster with the OIDC Issuer feature enabled.
 
 ## Configuring External Secret Management
 
-To configure external secret management, you must first create a secret in AWS Secret Manager, configure the IAM permissions and service accounts, and then configure the required credentials in the Private Mendix Platform administrator panel. For more information, refer to the sections below.
+To configure external secret management, you must first create a Key Vault and a secret, configure Azure AD Workload Identity, and then configure the required credentials in the Private Mendix Platform administrator panel. For more information, refer to the sections below.
 
 ### Creating a Secret
 
-To create a secret in AWS Secret Manager, perform the following steps:
+To create a secret in Azure Key Vault, perform the following steps:
 
-1. Log in to the AWS Management Console.
-2. Navigate to the **AWS Secrets Manager** service.
-3. Click **"Store a new secret**.
-4. Choose the type of secret as **Other type of secret**.
-5. Select the **JSON** format for storing secrets.
-6. Enter the key-value pairs for your secrets using the Private Mendix Platform [naming convention](#naming-convention).
-7. Click **Next**.
-8. Enter a descriptive name for your secret, for example, *PMP-Production-Credentials*.
-9. Optional: Add a description and tags for better organization and compliance tracking.
-10. Click **Next** to review your secret settings.
-11. Review the details and click **Store** to create the secret.
+1. Log in to the Azure Portal.
+2. Navigate to the **Key Vaults** service.
+3. Click **Create** and configure a new Key Vault:
+
+    1. Select your **Subscription** and **Resource Group**.
+    2. Enter a Key Vault name (for example, *PMP-Production-Vault*). This name must be globally unique.
+    3. Select a **Region**.
+    4. On the **Access configuration** tab, select **Azure role-based access control (RBAC)** as the permission model.
+
+4. Review and create the Key Vault.
+5. Once deployed, navigate to your new Key Vault.
+6. Go to the **Secrets** section and click **Generate/Import**.
+7. Enter a **Name** for your secret (for example, *PMP-Credentials*).
+8. Click **Create** to store the secret.
 
 {{% alert color="info" %}}
-Make note of the secret name and ARN. You will need these when configuring Private Mendix Platform to use the secret.
+Make note of the Vault Name (for example, *PMP-Production-Vault*). You will need this when configuring Private Mendix Platform.
 {{% /alert %}}
 
 #### Naming Convention for Key Properties {#naming-convention}
 
-When creating a property to use as a key for external secret storage, use the following naming conventions:
+When creating the JSON structure for your secret, you must use a flat key-value format. The key names use a hyphen to separate the module from the credential name (for example, *Email-SMTPPassword*).
 
 * All the key names are read-only. You should not change them.
 * Create the keys in the external secret storage with the same names as in the Private Mendix Platform configuration.
@@ -141,72 +144,13 @@ When creating a property to use as a key for external secret storage, use the fo
 
         * **Email.SMTPPassword** - Password for the SMTP server
 
-The following is a JSON template. Copy this template into your secret, and set the values that you want to use. Leave those you do not want to use empty.
+### Configuring Azure AD Workload Identity
 
-```json
-{
-  "VCS": {
-    "BitbucketProjectAdminPAT": "",
-    "BitbucketAdminPassword": "",
-    "GitlabGroupOwnerPAT": "",
-    "GitlabAdminPAT": "",
-    "GithubOrgOwnerPAT": "",
-    "GithubAdminPAT": "",
-    "GithubEnterpriseClientSecret": "",
-    "AzureDevOpsOrgAdminPAT": "",
-    "AzureAuthSecret": ""
-  },
-  "BuildPackage": {
-    "FileBasicAuthPassword": "",
-    "AwsSecretAccessKey": ""
-  },
-  "RuntimeBaseImage": {
-    "PrivateRegistryPassword": "",
-    "S3CompatibleAccessKey": ""
-  },
-  "MDAStorage": {
-    "FileBasicAuthPassword": "",
-    "AwsSecretAccessKey": ""
-  },
-  "OCIRegistry": {
-    "PrivateRegistryPassword": "",
-    "S3CompatibleAccessKey": ""
-  },
-  "BuildCluster": {
-    "KubernetesConfigureToken": ""
-  },
-  "CIAdmin": {
-    "JenkinsConfigureAPIToken": "",
-    "JenkinsTriggerAuthToken": "",
-    "AzureOrgAdminPAT": "",
-    "AzureBlobStorageToken": "",
-    "AzureAwsS3SK": ""
-  },
-  "ClusterManager": {
-    "KubernetesApiToken": ""
-  },
-  "ClusterSettings": {
-    "KubernetesAdminPassword": "",
-    "GrafanaAPIKey": "",
-    "MDAAWSS3AccessKey": "",
-    "OCIRegistryPassword": ""
-  },
-  "Marketplace": {
-    "ImportCDNPassword": ""
-  },
-  "Email": {
-    "SMTPPassword": ""
-  }
-}
-```
+Private Mendix Platform uses Azure AD Workload Identity to securely access Azure Key Vault without storing credentials. This requires creating a User-Assigned Managed Identity, granting it permissions to the Key Vault, and linking it to the Kubernetes Service Account used by the Private Mendix Platform.
 
-### Configuring IAM Permissions and Service Accounts
+#### Creating a User-Assigned Managed Identity
 
-Private Mendix Platform uses [IRSA (IAM Roles for Service Accounts)](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html) to securely access AWS Secrets Manager without storing AWS credentials. This provides a secure, auditable way to access secrets. To enable this functionality, you must first create an [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html), and then configure the service account.
-
-#### Creating an IAM Role
-
-To create an IAM role, perform the following steps:
+To create a User-Assigned Managed Identity, perform the following steps:
 
 1. Navigate to the IAM service in the AWS Management Console.
 2. Click **Create role** and configure the following:
