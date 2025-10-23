@@ -8,7 +8,7 @@ description: "Describes the backups functionality for apps running on Mendix on 
 
 ## Introduction
 
-For apps running in Mendix on Azure, the [Backups](/developerportal/operate/backups/) functionality enables you to create/restore database or file document backups. Other backup functionalities, such as uploading and downloading backup snapshots, scheduling nightly/weekly/monthly backups, are also supported for Mendix on Azure environments.
+For apps running in Mendix on Azure, the [Backups](/developerportal/operate/backups/) functionality enables you to create/restore database or file document backups. Other backup functionalities are also supported for Mendix on Azure environments. This includes functionalities such as uploading and downloading backup snapshots and scheduling nightly, weekly, or monthly backups.
 
 Backup snapshots contain both the database and file documents referred to in the database.
 
