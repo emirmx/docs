@@ -152,101 +152,127 @@ Private Mendix Platform uses Azure AD Workload Identity to securely access Azure
 
 To create a User-Assigned Managed Identity, perform the following steps:
 
-1. Navigate to the IAM service in the AWS Management Console.
-2. Click **Create role** and configure the following:
+1. In the Azure Portal, search for and select **Managed Identities**.
+2. Click **Create**.
+3. Select your **Subscription** and **Resource Group**.
+4. Choose a **Region**.
+5. Enter a **Name** (for example, *PMP-KeyVault-Identity*).
+6. Review and click **Create**.
+7. Once deployed, navigate to the new identity. 
+8. From the **Overview** page, make note of the **Client ID**. This will be needed later to configure the service account.
 
-    * **Trusted entity** - Select **Web identity**
-    * **Identity provider** - Choose your EKS cluster's OIDC provider
-    * **Audience** - `sts.amazonaws.com`
+#### Grant the Managed Identity Access to Key Vault
 
-3. Click **Next** to proceed to permissions.
-4. Create or attach a custom policy with the following permissions:
+To grant the Managed Identity access to the Key Vault, perform the following steps:
 
-    ```yaml
-    {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Effect": "Allow",
-                "Action": [
-                    "secretsmanager:GetSecretValue",
-                    "secretsmanager:DescribeSecret"
-                ],
-                "Resource": "arn:aws:secretsmanager:*:*:secret:PMP-*"
-            }
-        ]
-    }
-    ```
+1. Navigate to the Key Vault you created earlier.
+2. Go to the **Access control (IAM)** section.
+3. Click **Add > Add role assignment**.
+4. Select the **Key Vault Secrets User** role. This role allows Get and List operations for secrets.
+5. Click **Next**. 
+6. For **Assign access to**, select **Managed identity**.
+7. Click **Select members** and search for the **User-Assigned Managed Identity** you created (for example, **PMP-KeyVault-Identity**).
+8. Select the identity, and then click **Review + assign**.
 
-5. Name the role, for example, *PMP-SecretsManager-Role*.
-6. Make a note of the **Role ARN** for the next steps.
+#### Configuring the Federated Identity
 
-#### Configuring the EKS Service Account
+To configure the federated identity, perform the following steps:
 
-To configure the EKS service account, perform the following steps:
+1. Navigate back to your User-Assigned Managed Identity (for example, **PMP-KeyVault-Identity**) in the Azure Portal.
+2. Go to the **Federated credentials** section.
+3. Click **Add credential**.
+4. From the **Federated credential scenario** list, select **Kubernetes accessing Azure resources**.
+5. Enter the following details:
 
-1. Navigate to your EKS cluster in the AWS Management Console.
-2. In the **Configuration** tab, select **Service accounts**.
-3. Click **Create** to create a new service account.
-4. Enter a name for the service account, for example, *pmp-secrets-access*.
-5. Under **IAM role**, select the role you created above.
-6. Click **Create** to finalize the service account creation.
-7. Update your Kubernetes deployment to use the new service account by adding the following annotation to your deployment YAML:
+    * **Kubernetes namespace** - The namespace where your Private Mendix Platform is deployed (for example, **pmp-prod**).
+    * **Service account name** - The name of the Kubernetes service account your PMP deployment will use (for example, **pmp-secret-accessor**).
+    * **Issuer** - The OIDC Issuer URL of your AKS cluster.
 
-    ```text
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-        name: pmp-deployment
-        annotations:
-            eks.amazonaws.com/role-arn: arn:aws:iam::<your-account-id>:role/pmp-secret-access
-    spec:
-        template:
-            spec:
-                serviceAccountName: pmp-secret-access
-    ```
+Click **Add**.
 
-8. Apply the changes to your Kubernetes cluster using the following command: `kubectl apply -f <your-deployment-file>.yaml`.
-9. Verify that the service account is correctly configured by checking the logs of your application.
+#### Modifying the Operation Configuration
 
-    It should be able to access the secrets stored in AWS Secret Manager.
+For more information about advanced configuration settings, see [Advanced Operator Configuration](/developerportal/deploy/private-cloud-cluster/#advanced-operator-configuration).
+
+To modify the configuration, perform the following steps:
+
+1. Update the configuration to [use the service token](https://docs.mendix.com/developerportal/deploy/private-cloud-cluster/#advanced-deployment-settings). 
+
+    Set `runtimeAutomountServiceAccountToken: true` to allow Mendix app pods to get a Kubernetes Service Account token.
+
+```text
+apiVersion: privatecloud.mendix.com/v1alpha1
+kind: OperatorConfiguration
+spec:
+  # Optional: provide Mendix app Pods to get a Kubernetes Service Account token
+  runtimeAutomountServiceAccountToken: true
+```
+
+2. Add a custom pod label which informs the Operator to use workload identities. For more information, see [General Pod Labels](https://docs.mendix.com/developerportal/deploy/private-cloud-cluster/#general-pod-labels).
+
+```text
+apiVersion: privatecloud.mendix.com/v1alpha1
+kind: OperatorConfiguration
+spec:
+  # ...
+  # Other configuration options values
+  # Optional: custom pod labels
+  customPodLabels:
+    # Optional: general pod labels (applied to all app-related pods)
+    general:
+      # Example: enable Azure Workload Identity
+      azure.workload.identity/use: "true"
+```
+
+#### Configuring the Kubernetes Service Account
+
+To configure the Kubernetes service account, perform the following steps:
+
+1. Create a Kubernetes service account with the name you specified above (for example, **pmp-secret-accessor**).
+2. Annotate this service account to link it to your User-Assigned Managed Identity.
+
+```text
+kubectl -n <{Kubernetes namespace}> create serviceaccount <{environment name}>
+kubectl -n <{Kubernetes namespace}> annotate serviceaccount <{environment name}> privatecloud.mendix.com/environment-account=true
+kubectl -n <{Kubernetes namespace}> annotate serviceaccount <{environment name}> azure.workload.identity/client-id=<{managed identity client id}>
+```
+
+3. Apply this service account to your cluster by using the following command: `kubectl apply -f <your-service-account-file>.yaml`.
+4. Update your Private Mendix Platform deployment YAML to use this service account:
+
+```text
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: pmp-deployment
+spec:
+    template:
+        spec:
+            serviceAccountName: pmp-secret-accessor
+```
+
+5. Apply the changes to your deployment by using the following command: `kubectl apply -f <your-deployment-file>.yaml`.
 
 ### Configuring the Credentials
-
+ 
 Private Mendix Platform supports multiple secret storage backends. You can configure different types of credentials (VCS PAT, email server credentials, and so on) to use your preferred secret management solution.
 
-#### Example Configuration - AWS Secrets Manager and VCS PAT
-
-The following example shows how you can configure Private Mendix Platform to work with AWS Secrets Manager and VCS PAT.
+#### Example Configuration - Azure Key Vault and VCS PAT
+ 
+The following example shows how you can configure Private Mendix Platform to work with Azure Key Vault and VCS PAT.
 
 1. Navigate to the Private Mendix Platform administrator panel.
 2. Go to the **Version Control** settings.
 3. Select the service which you want to configure (for example, GitHub, GitLab, or Bitbucket).
 4. Enter all required configuration details.
-5. In the **Credentials** section, select **AWS Secrets Manager**.
-6. Enter the name of the secret that you created earlier, for example, *PMP-Credentials*.
+5. In the **Credentials** section, select **Azure Key Vault**.
+6. Enter the **Secret Name (Vault Name)** of your Key Vault (for example, **PMP-Production-Vault**).
 
-    The **Key name** field displays the auto-generated key path in read-only format.
+    The Key name field displays the auto-generated key path in read-only format. For example, if you are using Bitbucket, the key name for Project Admin PAT would be *VCS-BitbucketProjectAdminPAT*.
 
-7. Ensure that your AWS Secrets Manager secret contains the credential using the proper key structure.
-
-    For example, if you are using Bitbucket, the key name for `Project Admin PAT` would be `VCS.BitbucketProjectAdminPAT`, where `VCS` is the module name, and `BitbucketProjectAdminPAT` is the credential name.
-
-    The secret template contains a sample key structure which you can use:
-
-    ```text
-        {  //...other keys
-            "VCS": {
-                // ...other keys
-                "BitbucketProjectAdminPAT": "your-bitbucket-pat",
-                // ...other keys
-                },
-            // ...other keys
-        }
-    ```
-
+7. Ensure that your Azure Key Vault secret's **Value** contains the correct credential value for that particular key.
 8. Repeat the process for other credentials as needed, ensuring you follow the naming conventions for each service.
 
-## Storing the Credentials Directly in the Database
-
-Instead of using the AWS Secret Manager, you can still use the legacy option to store the credentials in the Private Mendix Platform database. To do this, you must select **Database** from the storage options dropdown, and then enter the credentials directly in an input field. The credentials are encrypted and stored in the Private Mendix Platform database.
+### Storing the Credentials Directly in the Database
+ 
+Instead of using the Azure Key Vault, you can still use the legacy option to store the credentials in the Private Mendix Platform database. To do this, you must select **Database** from the list of storage options, and then enter the credentials directly in an input field. The credentials are encrypted and stored in the Private Mendix Platform database.
