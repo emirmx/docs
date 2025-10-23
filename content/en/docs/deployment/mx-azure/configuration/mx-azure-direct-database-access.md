@@ -1,8 +1,8 @@
 ---
-title: "Read Replicas for Postgres Databases"
-url: /developerportal/deploy/mendix-on-azure/read-replica-database-access/
-description: "Provides details about the read replica for Postgres databases."
-weight: 30
+title: "Direct app database access"
+url: /developerportal/deploy/mendix-on-azure/advanced-configuration/read-replica-database-access/
+description: "Provides details about obtaining Direct Database Access using the read replica feature."
+weight: 40
 ---
 
 ## Introduction

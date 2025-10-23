@@ -3,7 +3,6 @@ title: "Backups for Mendix on Azure"
 url: /developerportal/deploy/mendix-on-azure/backups/
 weight: 13
 description: "Describes the backups functionality for apps running on Mendix on Azure."
-#To update these screenshots, you can log in with credentials detailed in How to Update Screenshots Using Team Apps.
 ---
 
 ## Introduction

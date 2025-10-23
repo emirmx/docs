@@ -1,11 +1,9 @@
 ---
-title: "Support Policy for Mendix on Azure"
+title: "Support for Mendix on Azure"
 url: /developerportal/deploy/mendix-on-azure/support/
 description: "Provides information about the support model for Mendix on Azure."
 weight: 30
 ---
-
-{{% alert color="info" %}} This feature is currently available to participating customers. For more information, contact your Customer Success Manager. {{% /alert %}}
 
 ## Introduction
 
