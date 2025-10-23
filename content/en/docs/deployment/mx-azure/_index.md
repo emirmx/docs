@@ -7,8 +7,6 @@ no_list: false
 description_list: true
 ---
 
-{{% alert color="info" %}} This feature is currently available to participating customers. For more information, contact your Customer Success Manager. {{% /alert %}}
-
 ## Introduction
 
 Mendix on Azure provides a simplified, integrated way to deploy Mendix applications to a Microsoft Azure environment. With this solution, users are empowered to deploy their Mendix applications in Azure environments without the need for intricate infrastructure setup in cloud services. They can also seamlessly manage infrastructure services through an intuitive user interface. No matter their IT skills, users can realize their project value quickly and securely with Azure.
