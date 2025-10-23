@@ -12,7 +12,7 @@ These release notes cover changes to deployment to [Mendix on Azure](/developerp
 
 For information on the current status of Mendix deployment, see [Mendix Status](https://status.mendix.com/).
 
-### Release date: October 26, 2025 - [General Availability (GA) Release](/releasenotes/release-status/#general-availability)
+### Release date: October 23, 2025 - [General Availability (GA) Release](/releasenotes/release-status/#general-availability)
 
 * In order to minimize the risk of security breaches and networking issues, we have added a new **Enable AKS Network Isolation** feature when creating new clusters. Please note that this feature can be enabled in the Initialize cluster and Edit cluster flow. However, once enabled in Initialize flow, it cannot be disabled in the Edit Cluster flow.
 * We have improved the log level handling in the Grafana dashboard. The logs are now available in JSON format.
