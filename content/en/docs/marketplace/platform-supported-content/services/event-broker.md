@@ -275,6 +275,47 @@ To run the HTTP bridge from your client, include a Bearer token in the request h
 2, Add the **Bearer token**
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/http/event_broker_bridges_create_7_http.png" class="no-border" >}}
+#### Edit an HTTP Bridge
+
+After creating an HTTP Bridge, you can modify its event configuration by adding or removing events as your integration requirements evolve, without needing to recreate the bridge.
+
+To edit an HTTP Bridge:
+
+1. Navigate to the **Event Broker Bridges** tab on the [Event Broker Manager](https://broker.mendix.com/) page.
+2. Click the HTTP Bridge you want to modify in the overview.
+3. Click the **Edit** button to enter editing mode.
+
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/edit-bridge/http_overview-edit.png" class="no-border" >}}
+
+4. In editing mode, you can perform the following actions:
+
+**Adding Events:**
+
+* Click **Add Business Events** to open a dialog displaying available events.
+* Select the events you want to add and click **Select**.
+* Added events will display an **Added** badge and can be removed before applying changes.
+
+**Removing Events:**
+
+* Click **Remove** next to an event you want to remove.
+* Removed events will display a **Removed** badge, and their name and metadata will appear grayed out.
+* You can re-add a removed event by clicking **Add** before applying changes.
+
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/edit-bridge/http_edit_mode.png" class="no-border" >}}
+
+5. Once you have made your changes, you can:
+   * Click **Apply** to save and apply the changes. A confirmation message will indicate whether the changes were successful.  
+   * Click **Cancel** to exit editing mode without saving any changes.
+
+{{% alert color="info" %}}
+The **Apply** button is only enabled when changes have been made to the bridge configuration.
+{{% /alert %}}
+
+Changes to the event configuration take effect after applying.
+
+{{% alert color="warning" %}}
+If an error occurs during the editing process, the bridge will automatically roll back to its previous **running state** to ensure continuity of service.
+{{% /alert %}}
 
 ## Externally Defined Events {#externally-defined-events}
 
