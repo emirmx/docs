@@ -6,8 +6,6 @@ description: "Release notes for Mendix on Azure"
 weight: 25
 ---
 
-{{% alert color="info" %}} This feature is currently available to participating customers. For more information, contact your Customer Success Manager. {{% /alert %}}
-
 These release notes cover changes to deployment to [Mendix on Azure](/developerportal/deploy/mendix-on-azure/). There are separate release notes for other deployment targets; for more information, see the [Deployment](/releasenotes/developer-portal/deployment/) release notes page.
 
 For information on the current status of Mendix deployment, see [Mendix Status](https://status.mendix.com/).
