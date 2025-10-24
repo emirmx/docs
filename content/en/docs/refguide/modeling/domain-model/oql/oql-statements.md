@@ -94,9 +94,9 @@ SET
 ```
 
 {{% alert color="info" %}}
-Updating attributes was introduced in Mendix 11.3
+Updating attributes was introduced in Mendix 11.3.
 
-Updating associations was added in Mendix 11.4
+Updating associations was added in Mendix 11.4.
 {{% /alert %}}
 
 ### OQL `UPDATE` Limitations
