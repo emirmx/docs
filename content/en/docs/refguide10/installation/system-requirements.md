@@ -235,7 +235,7 @@ Studio Pro 10.21 and above (including the future 10.24 LTS) does not support Jav
 {{% /alert %}}
 
 {{% alert type="info" %}}
-A Java Runtime Environment (JRE) is the environment needed to run Mendix on a server. This is not to be confused with a Java Development Kit (JDK), which is supported by some versions of Studio Pro and used to create and develop apps. To learn more about JDKs, see 
+A Java Runtime Environment (JRE) is the environment needed to run Mendix on a server. This is not to be confused with a Java Development Kit (JDK), which is supported by Studio Pro and used to create and develop apps. To learn more about JDKs, see 
 [Getting Started with Java](https://dev.java/learn/getting-started/). For information on installing a JDK to use with your Mendix app, see [JDK Installation](/refguide10/jdk-installation/).
 {{% /alert %}} 
 
