@@ -11,14 +11,20 @@ aliases:
 
 ## Introduction
 
-From Mendix version 11.1, you can delete objects in bulk using OQL `DELETE` statements.
-
-From Mendix version 11.3, you can also update object attributes in bulk using OQL `UPDATE` statements.
 
 OQL statements are translated to SQL statements that are sent to the database.
 This can be much faster than retrieving the objects in a microflow and then updating or deleting the resulting list.
 
 This feature is experimental and currently only accessible through the Java API by writing a Java action.
+
+{{% alert color="info" %}}
+From Mendix version 11.1, you can delete objects in bulk using OQL `DELETE` statements.
+
+From Mendix version 11.3, you can also update object attributes in bulk using OQL `UPDATE` statements.
+
+From Mendix version 11.4, you can update object associations as well as attributes in bulk using OQL `UPDATE` statements.
+
+{{% /alert %}}
 
 ## Java API for OQL updates
 
@@ -87,9 +93,14 @@ SET
     Name = UPPER(Name)
 ```
 
+{{% alert color="info" %}}
+Updating attributes was introduced in Mendix 11.3
+
+Updating associations was added in Mendix 11.4
+{{% /alert %}}
+
 ### OQL `UPDATE` Limitations
 
-* At the moment, it is only possible to update attributes, not associations.
 * If a subquery or a long path over a many-to-one or many-to-many association is used as `expression`, it can result in multiple values. In that case, a database-level exception will occur when running the statement.
 * In the case of inheritance, it is not possible to simultaneously update an attribute and use that attribute in an expression to update an attribute on another inheritance level. See the example in [Mixed Attribute Update](#inheritance), below.
 * The general limitations for OQL statements also apply. See [General Limitations for OQL Statements](#oql-limitations), below.
