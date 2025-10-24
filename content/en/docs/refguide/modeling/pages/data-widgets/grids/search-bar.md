@@ -12,6 +12,14 @@ aliases:
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
+{{% alert color="warning" %}}
+The **search bar** widget is a Dojo widget. It is not supported in the [React client](/refguide/mendix-client/react/) or on native mobile pages. If you [switch to the React client](/refguide/app-settings/#react-client), the widget will not appear in the **Toolbox**.
+
+To upgrade it to the recommended React-compliant widget ([Gallery](/appstore/widgets/gallery/)), see the Mendix React Client's [Migration Guide](/refguide/mendix-client/react/#migration-guide).
+
+The Dojo client is deprecated and will be removed in a future version of Mendix.
+{{% /alert %}}
+
 ## Introduction
 
 The search bar contains search fields that allow the end-user to quickly find the information they need in a [data grid](/refguide/data-grid/) or [template grid](/refguide/template-grid/).
