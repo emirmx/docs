@@ -223,7 +223,7 @@ When running Mendix on a server, you will need Java Runtime Environment 21 (JRE)
 
 {{% alert type="info" %}}
 A Java Runtime Environment (JRE) is the environment needed to run Mendix on a server. This is not to be confused with a Java Development Kit (JDK), which is supported by some versions of Studio Pro and used to create and develop apps. To learn more about JDKs, see 
-[Getting Started with Java](https://dev.java/learn/getting-started/.) For information on installing a JDK to use with your Mendix app, see [JDK Installation](/refguide/jdk-installation/).
+[Getting Started with Java](https://dev.java/learn/getting-started/). For information on installing a JDK to use with your Mendix app, see [JDK Installation](/refguide/jdk-installation/).
 {{% /alert %}} 
 
 ## Databases {#databases}
