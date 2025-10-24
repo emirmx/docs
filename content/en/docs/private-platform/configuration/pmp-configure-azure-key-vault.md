@@ -21,7 +21,7 @@ Before configuring Azure Key Vault integration, prepare the following:
 
 ## Configuring External Secret Management
 
-To configure external secret management, you must first create a Key Vault and a secret, configure Azure AD Workload Identity, and then configure the required credentials in the Private Mendix Platform administrator panel. For more information, refer to the sections below.
+To configure external secret management, you must first create a Key Vault and store your sensitive credentials as secrets, configure Azure AD Workload Identity, and then configure the required credentials in the Private Mendix Platform administrator panel. For more information, refer to the sections below.
 
 ### Creating a Secret
 
