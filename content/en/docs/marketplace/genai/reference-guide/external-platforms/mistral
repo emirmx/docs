@@ -71,79 +71,37 @@ To use this connector, you need to sign up for a Mistral account and create an A
 * [GenAI Commons](https://marketplace.mendix.com/link/component/239448) module
 * [Encryption](https://marketplace.mendix.com/link/component/1011) module
 * [Community Commons](https://marketplace.mendix.com/link/component/170) module
+* [OpenAI connector](https://marketplace.mendix.com/link/component/220472) module
 
-To import the OpenAI Connector into your app, follow the instructions in [How to Use Marketplace Content](/appstore/use-content/).
+To import the Mistral Connector into your app, follow the instructions in [How to Use Marketplace Content](/appstore/use-content/).
 
 ## Configuration {#configuration}
 
-After you install the OpenAI Connector, you can find it in the **App Explorer**, in the **Marketplace Modules** section. The connector provides a domain model and several activities that you can use to connect your app to OpenAI. To implement an activity, use it in a microflow. To ensure that your app can connect to OpenAI, you must also [configure the Encryption module](/appstore/modules/encryption/#configuration). 
+After you install the Mistral Connector and OpenAI connector, you can find both in the **App Explorer**, in the **Marketplace Modules** section. The Mistral connector provides a domain model and several pages, all activities that you can use to connect your app to Mistral can be reused from the OpenAI connector. To implement an activity, use it in a microflow. To ensure that your app can connect to Mistral, you must also [configure the Encryption module](/appstore/modules/encryption/#configuration). 
 
 ### General Configuration {#general-configuration}
 
-1. Add the module role **OpenAIConnector.Administrator** to your Administrator user role in the security settings of your app. 
-2. Add the **Configuration_Overview** page (**USE_ME > Configuration**) to your navigation, or add the **Snippet_Configurations** to a page that is already part of your navigation. 
-3. Continue setting up your OpenAI configuration at runtime. Follow the instructions in either [OpenAI Configuration](#openai-configuration) or [Azure OpenAI Configuration](#azure-openai-configuration), depending on which platform you are using.
+1. Add the module roles **OpenAIConnector.Administrator** and **MistralConnector.Administrator** to your Administrator user role in the security settings of your app. 
+2. Add the **MistralConfiguration_Overview** page inside of the Mistral connector module (**USE_ME > MistralConfiguration**) to your navigation, or add the **Snippet_MistralConfigurations** to a page that is already part of your navigation. 
+3. Continue setting up your Mistral configuration at runtime. You can just follow the instructions in [Mistral Configuration](#mistral-configuration).
 4. Configure the models you need to use for your use case.
 
-#### OpenAI Configuration {#openai-configuration} 
+#### Mistral Configuration {#mistral-configuration} 
 
-The following inputs are required for the OpenAI configuration: 
+The following inputs are required for the Mistral configuration: 
 
 | Parameter   | Value                                                        |
 | ----------- | ------------------------------------------------------------ |
 | Display name | This is the name identifier of a configuration (for example, *MyConfiguration*). |
-| API type    | Select `OpenAI`. |
-| Endpoint    | This is the API endpoint (for example, `https://api.openai.com/v1`)   |
-| Token     | This is the access token to authorize your API call. <br />To get an API, follow these steps:<ol><li>Create an account and sign in at [OpenAI](https://platform.openai.com/).</li><li> Go to the [API key page](https://platform.openai.com/account/api-keys) to create a new secret key. </li><li>Copy the API key and save this somewhere safe.</li></ol> |
+| Endpoint    | This is the API endpoint (for example, `https://api.mistral.ai/v1/`)   |
+| Token     | This is the access token to authorize your API call. <br />To get an API key, you can follow the steps [here](https://docs.mistral.ai/getting-started/quickstart).
 
-#### Azure OpenAI Configuration {#azure-openai-configuration} 
 
-The following inputs are required for the Azure OpenAI configuration: 
+#### Configuring the Mistral Deployed Models
 
-| Parameter      | Value                                                        |
-| -------------- | ------------------------------------------------------------ |
-| Display name | This is the name identifier of a configuration (for example, *MyConfiguration*). |
-| API type | Select `AzureOpenAI`. |
-| Endpoint | This is the API endpoint (for example, `https://your-resource-name.openai.azure.com/openai/deployments/`).<br />For details on how to obtain `your-resource-name`, see the [Obtaining Azure OpenAI Resource Name](#azure-resource-name) section below. |
-| Azure key type | This is the type of token that is entered in the API key field. For Azure OpenAI, two types of keys are currently supported: Microsoft Entra token and API key. <br />For details on how to generate a Microsoft Entra access token, see [How to Configure Azure OpenAI Service with Managed Identities](https://learn.microsoft.com/en-gb/azure/ai-services/openai/how-to/managed-identity). Alternatively, if your organization allows it, you could use the Azure `api-key` authentication mechanism. For details on how to obtain an API key, see the [Obtaining Azure OpenAI API keys](#azure-api-keys) section below. For more information, see the [Technical Reference](#technical-reference) section. |
-| Token / API key | This is the access token to authorize your API call. |
+A [Deployed Model](/appstore/modules/genai/genai-for-mx/commons/#deployed-model) represents a GenAI model instance that can be used by the app to generate text, embeddings, or images. For every model you want to invoke from your app, you need to create a `MistralDeployedModel` record, a specialization of `DeployedModel` (and `OpenAIDeployedModel`). In addition to the model display name and a technical name/identifier, a Mistral deployed model contains a reference to the additional connection details as configured in the previous step. 
 
-##### Obtaining the Azure OpenAI Resource Name {#azure-resource-name}
-
-1. Go to the [Azure OpenAI portal](https://oai.azure.com/) and sign in.
-2. In the upper-right corner, next to your Avatar, click on the scope dropdown. 
-3. The tab shows your Directory, Subscription, and Azure OpenAI resource.
-4. Make sure the right Azure OpenAI resource is selected.
-5. Use the copy icon ({{% icon name="copy" %}}) and use it as your resource name in the endpoint URL.
-
-##### Obtaining the Azure OpenAI API Keys {#azure-api-keys}
-
-1. Go to the [Azure OpenAI portal](https://oai.azure.com/) and sign in.
-2. In the upper-right corner, next to your Avatar, click on the scope dropdown. 
-3. The tab shows your Directory, Subscription, and Azure OpenAI resource.
-4. Make sure the right Azure OpenAI resource is selected.
-5. You can now view ({{% icon name="view" %}}) and copy ({{% icon name="copy" %}}) the value of the **key1** or **key2** field as your API key while setting up the configuration. Note that these keys might not be visible for everyone in the Azure OpenAI Portal, depending on your organization's security settings. 
-
-##### Adding Azure AI Search Resources {#azure-ai-search}  
-
-| Parameter      | Value                                                        |
-| -------------- | ------------------------------------------------------------ |
-| Display name | This is the name identifier of a Azure AI Search Resource (for example, *MySearchResource*). |
-| Endpoint URL | This is the API endpoint (for example, `https://your-resource-name.search.windows.net`).<br />For details on how to obtain `your-resource-name`, see [Azure AI Search service in the Azure portal](https://learn.microsoft.com/en-us/azure/search/search-create-service-portal). |
-| API version | This is the version of the REST API. |
-| API key | This is the access token to authorize your API call. |
-
-After saving, the indexes in this resource will be automatically synced and displayed in the configuration page. They will all be separate indexes that can be added to the request when using Chat completions.
-
-{{% alert color="warning" %}}
-Currently, the only supported authorization method for Azure AI Search resources is the API key.
-{{% /alert %}}
-
-#### Configuring the OpenAI Deployed Models
-
-A [Deployed Model](/appstore/modules/genai/genai-for-mx/commons/#deployed-model) represents a GenAI model instance that can be used by the app to generate text, embeddings, or images. For every model you want to invoke from your app, you need to create a `OpenAIDeployedModel` record, a specialization of `DeployedModel`. In addition to the model display name and a technical name/identifier, an OpenAI deployed model contains a reference to the additional connection details as configured in the previous step. For OpenAI, a set of common models will be prepopulated automatically upon saving the configuration. If you want to use additional models that are made available by OpenAI you need to configure additional OpenAI deployed models in your Mendix app. For Azure OpenAI no deployed models are created by default. The technical model names depend on the deployment names that were chosen while deploying the models in the [Azure Portal](https://oai.azure.com/resource/deployments). Therefore in this case you always need to configure the deployed models manually in your Mendix app.
-
-1. If needed, click the three dots for an OpenAI configuration to open the "Manage Deployed Models" pop-up.
+1. Click the three dots for a Mistral configuration to open the "Manage Deployed Models" pop-up. It is possible to use a predefined syncing method, where all available models are retrieved for the specified API key and then filtered. If you want to use additional models that are made available by Mistral you can add them manually, too by using the `New` button instead.
 2. For every additional model, add a record. The following fields are required:
 
     | Field      | Description                                                        |
@@ -152,9 +110,9 @@ A [Deployed Model](/appstore/modules/genai/genai-for-mx/commons/#deployed-model)
     | Deployment name / Model name | This is the technical reference for the model. For OpenAI this is equal to the [model aliases](https://platform.openai.com/docs/models#current-model-aliases). For Azure OpenAI this is the deployment name from the [Azure Portal](https://oai.azure.com/resource/deployments).
     | Output modality| Describes what the output of the model is. This connector currently supports Text, Embedding, and Image.
     | Input modality| Describes what input modalities are accepted by the model. This connector currently supports Text and Image.
-    | Azure API version    | Azure OpenAI only. This is the API version to use for this operation. It follows the `yyyy-MM-dd` format. For supported versions, see [Azure OpenAI documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference). The supported versions can vary depending on the type of model, so make sure to look for the right section (such as Chat Completions, Image Generation, or Embeddings) on that page. |
-
+    
 3. Close the popup and test the configuration with the newly created deployed models.
+
 
 ### Using GenAI Commons Operations {#genai-commons-operations} 
 
