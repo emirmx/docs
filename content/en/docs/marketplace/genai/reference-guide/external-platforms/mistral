@@ -13,20 +13,20 @@ aliases:
 
 The [Mistral Connector](LINK!) allows you to integrate generative AI into your Mendix app. Since the Mistral API is compatible with [OpenAI's API](https://platform.openai.com/), this module mainly contains Mistral specific UI since the operations inside of the OpenAI connector can just be reused. 
 
-The current scope covers text generation use cases based on the [Chat Completions API](https://docs.mistral.ai/api/endpoint/chat#operation-chat_completion_v1_chat_completions_post) and embedding use cases based on the [Embeddings API](https://docs.mistral.ai/api/endpoint/embeddings#operation-embeddings_v1_embeddings_post). 
+The current scope covers text generation use cases based on the [Chat Completions API](https://docs.mistral.ai/api/endpoint/chat) and embedding use cases based on the [Embeddings API](https://docs.mistral.ai/api/endpoint/embeddings). 
 
 
 
 ### Typical Use Cases {#use-cases}
 
-The OpenAI Connector is commonly used for text generation, image generation, and embeddings. These use cases are described in more detail below.
+The Mistral Connector is commonly used for text generation and embeddings. These use cases are described in more detail below.
 
 #### Text Generation {#use-cases-text}
 
 * Develop interactive AI chatbots and virtual assistants that can carry out conversations in a natural and engaging manner. 
-* Use OpenAI’s large language models (LLMs) for text comprehension and analysis use cases such as summarization, synthesis, and answering questions about large amounts of text.
-* Fine-tune the OpenAI models on a specific task or domain by training them on custom data to improve their performance. 
-* Integrate more easily with OpenAI’s platform. By providing text generation models, this allows you to build applications with the following features:
+* Use Mistral’s large language models (LLMs) for text comprehension and analysis use cases such as summarization, synthesis, and answering questions about large amounts of text.
+* Tailor the Mistral models on a specific task or domain by adding custom data to improve their performance. 
+* Integrate more easily with Mistral’s platform. By providing text generation models, this allows you to build applications with the following features:
     * Draft documents 
     * Write computer code 
     * Answer questions about a knowledge base 
@@ -37,34 +37,11 @@ The OpenAI Connector is commonly used for text generation, image generation, and
     * Simulate characters for games
     * Image to text
 
-OpenAI provides market-leading LLM capabilities with GPT-4:
-
-* Advanced reasoning – Follow complex instructions in natural language and solve difficult problems with accuracy. 
-* Creativity – Generate, edit, and iterate with end-users on creative and technical writing tasks, such as composing songs, writing screenplays, or learning an end-user’s writing style.
-* Longer context – GPT-4 can handle over 25,000 words of text, allowing for use cases like long-form content creation, extended conversations, and document search and analysis. 
+Find more information about Mistral models [here](https://docs.mistral.ai/getting-started/models).
 
 #### Image Generation {#use-cases-images}
 
-Generate one or more completely new, original images and art from a text description. Powered by the OpenAI DALL-E models, the connector enables developers to generate these images by combining concepts, attributes, and styles.
-
-#### Embeddings {#use-cases-embeddings}
-
-Convert strings into vector embeddings for various purposes based on the relatedness of texts.
-
-Embeddings are commonly used for the following:
-
-* Search 
-* Clustering 
-* Recommendations 
-* Anomaly detection 
-* Diversity measurement 
-* Classification 
-
-Combine embeddings with text generation capabilities and leverage specific sources of information to create a smart chat functionality tailored to your own knowledge base.
-
-{{% alert color="info" %}}
-For more information on how to set up a vector database, see [Retrieval Augmented Generation (RAG)](/appstore/modules/genai/rag/). Also, check out the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) from the Marketplace for an example implementation.
-{{% /alert %}}
+Mistral does currently not offer image generation models out of the box. It is possible to equip a Mistral agent with an image generation tool, see [Image generation](https://docs.mistral.ai/agents/connectors/image_generation/), however this is not suppoeted by this connector.
 
 #### Knowledge Base
 
