@@ -16,7 +16,6 @@ The [Mistral Connector](LINK!) allows you to integrate generative AI into your M
 The current scope covers text generation use cases based on the [Chat Completions API](https://docs.mistral.ai/api/endpoint/chat) and embedding use cases based on the [Embeddings API](https://docs.mistral.ai/api/endpoint/embeddings). 
 
 
-
 ### Typical Use Cases {#use-cases}
 
 The Mistral Connector is commonly used for text generation and embeddings. These use cases are described in more detail below.
@@ -45,17 +44,17 @@ Mistral does currently not offer image generation models out of the box. It is p
 
 #### Knowledge Base
 
-By integrating Azure AI Search, the OpenAI Connector allows for knowledge base retrieval from Azure datsources. The most common use case is retrieval augmented generation (RAG) to retrieve relevant knowledge from the knowledge base, incorporating it into a prompt, and sending it to the model to generate a response.
+The Mistral connector supports Knowledge bases from providers such as pgVector, Mendix Cloud, Amazon Bedrock and Azure AI Search to be added to a conversation.
+
 
 ### Features {#features}
 
-Mendix provides dual-platform support for both [OpenAI](https://platform.openai.com/) and [Azure OpenAI](https://oai.azure.com/). 
+With the current version, Mendix supports the Chat Completions API for [text generation](https://docs.mistral.ai/api/endpoint/chat) and the Embeddings API for [vector embeddings](https://docs.mistral.ai/api/endpoint/embeddings).
 
-With the current version, Mendix supports the Chat Completions API for [text generation](https://platform.openai.com/docs/guides/text-generation), the Image Generations API for [images](https://platform.openai.com/docs/guides/images), the Embeddings API for [vector embeddings](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings), and indexes via [Azure AI Search](https://learn.microsoft.com/en-us/azure/search/) for knowledge base retrieval.
 
 ### Prerequisites {#prerequisites}
 
-To use this connector, you need to either sign up for an [OpenAI account](https://platform.openai.com/) or have access to deployments at [Azure OpenAI](https://oai.azure.com/).
+To use this connector, you need to sign up for a Mistral account and create an API key. You can follow this [quickstart guide](https://docs.mistral.ai/getting-started/quickstart).
 
 ### Dependencies {#dependencies}
 
@@ -63,6 +62,7 @@ To use this connector, you need to either sign up for an [OpenAI account](https:
 * [GenAI Commons module](/appstore/modules/genai/commons/)
 * [Encryption module](/appstore/modules/encryption/)
 * [Community Commons module](/appstore/modules/community-commons-function-library/)
+* [OpenAI connector](/appstore/modules/genai/external-platforms/openai/)
 
 ## Installation {#installation}
 
