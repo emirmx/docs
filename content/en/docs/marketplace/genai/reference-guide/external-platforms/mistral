@@ -242,18 +242,18 @@ The **Documentation** pane displays the documentation for the currently selected
 
 ### Tool Choice
 
-All [tool choice types](/appstore/modules/genai/genai-for-mx/commons/#enum-toolchoice) of GenAI Commons for the [Tools: Set Tool Choice](/appstore/modules/genai/genai-for-mx/commons/#set-toolchoice) action are supported. For API mapping reference, see the table below:
+Mistral supports the following [tool choice types](/appstore/modules/genai/genai-for-mx/commons/#enum-toolchoice) of GenAI Commons for the [Tools: Set Tool Choice](/appstore/modules/genai/genai-for-mx/commons/#set-toolchoice) action are supported. For API mapping reference, see the table below:
 
-| GenAI Commons (Mendix) | OpenAI  |
+| GenAI Commons (Mendix) | Mistral |
 | -----------------------| ------- |
 | auto                   | auto    |
-| any                    | required|
+| any                    | any     |
 | none                   | none    |
-| tool                   | tool    |
+
 
 ### Knowledge Base Retrieval
 
-When adding a [KnowledgeBaseRetrieval](/appstore/modules/genai/genai-for-mx/commons/#add-knowledge-base-to-request) object to your request, there are some optional parameters. Currently, only the MaxNumberOfResults parameter can be added to the search call and the others (`MinimumSimilarity` and `MetadataCollection`) are not compatible with the OpenAI Connector.
+When adding a [KnowledgeBaseRetrieval](/appstore/modules/genai/genai-for-mx/commons/#add-knowledge-base-to-request) object to your request, there are some optional parameters. Currently, only the MaxNumberOfResults parameter can be added to the search call and the others (`MinimumSimilarity` and `MetadataCollection`) are not compatible with the Mistral API.
 
 ## GenAI showcase Application {#showcase-application}
 
@@ -285,13 +285,7 @@ To check your JDK version and update it if necessary, follow these steps:
     2. You may also need to update Gradle. To do this, go to **Edit** > **Preferences** > **Deployment** > **Gradle directory**. Click **Browse** and select the appropriate Gradle version from the Mendix folder. For Mendix 10.10 and above, use Gradle 8.5. For Mendix 10 versions below 10.10, use Gradle 7.6.3. Then save your settings by clicking **OK**.
     3. Rerun the project.
 
-### Chat Completions with Vision and JSON Mode (Azure OpenAI)
 
-Azure OpenAI does not support the use of JSON mode and function calling in combination with image (vision) input and will return a `400 - model error`. Make sure the optional input parameters `ResponseFormat` and `FunctionCollection` are set to `empty` for all chat completion operations if you want to use vision with Azure OpenAI.
-
-### Chat Completions with Vision Response is Cut Off (Azure OpenAI)
-
-When you use Azure OpenAI, it is recommended to set the optional `MaxTokens` input parameter; otherwise, the response may be cut off. For more details, see the [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/gpt-with-vision?tabs=rest%2Csystem-assigned%2Cresource#call-the-chat-completion-apis).
 
 ### Attribute or Reference Required Error Message After Upgrade 
 
