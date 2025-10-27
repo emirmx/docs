@@ -99,7 +99,7 @@ The following inputs are required for the Mistral configuration:
 
 #### Configuring the Mistral Deployed Models
 
-A [Deployed Model](/appstore/modules/genai/genai-for-mx/commons/#deployed-model) represents a GenAI model instance that can be used by the app to generate text, embeddings, or images. For every model you want to invoke from your app, you need to create a `MistralDeployedModel` record, a specialization of `DeployedModel` (and `OpenAIDeployedModel`). In addition to the model display name and a technical name/identifier, a Mistral deployed model contains a reference to the additional connection details as configured in the previous step. 
+A [Deployed Model](/appstore/modules/genai/genai-for-mx/commons/#deployed-model) represents a GenAI model instance that can be used by the app to generate text, embeddings, or images. For every model you want to invoke from your app, you need to create a `MistralDeployedModel` record, a specialization of `DeployedModel` (and also of specialization of `OpenAIDeployedModel`). In addition to the model display name and a technical name/identifier, a Mistral deployed model contains a reference to the additional connection details as configured in the previous step. 
 
 1. Click the three dots for a Mistral configuration to open the "Manage Deployed Models" pop-up. It is possible to use a predefined syncing method, where all available models are retrieved for the specified API key and then filtered. If you want to use additional models that are made available by Mistral you can add them manually, too by using the `New` button instead.
 2. For every additional model, add a record. The following fields are required:
