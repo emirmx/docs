@@ -9,6 +9,10 @@ description: "Describes the configuration and usage of the Selection Helper widg
 
 The [Selection Helper](https://marketplace.mendix.com/link/component/116540) widget provides bulk selection controls for data widgets, enabling users to quickly select all or clear all items when multi-selection is enabled. While primarily often used for Gallery widgets, it also supports Data Grid 2 applications.
 
+Here is an example of a Selection Helper widget in a Gallery:
+
+{{< figure src="/attachments/appstore/platform-supported-content/modules/data-widgets/selection-helper/example-selection-helper.png" alt="Example of Selection Helper in a Gallery widget" width="400" class="no-border" >}}
+
 Use the Selection Helper widget when you need to provide users with efficient bulk selection capabilities in your data widgets. This is particularly useful for:
 
 - **Gallery bulk operations**: Enable users to select multiple items in gallery layouts for batch processing like delete, update, or export operations
@@ -53,6 +57,10 @@ Available when `Style = Custom` . Define custom widgets that display based on th
 - **None Selected Widget**: Widget displayed when no items are currently selected. Usually contains "Select all" controls or empty state indicators.
 - **Some Selected Widget**: Widget displayed when some (but not all) items are selected. Often used to show "Select all" controls or partial selection indicators.
 - **All Selected Widget**: Widget displayed when all visible items in the grid are selected. Typically used to show "Clear selection" controls or indicators.
+
+Here is an example of a Selection Helper with custom style configured:
+
+{{< figure src="/attachments/appstore/platform-supported-content/modules/data-widgets/selection-helper/style-custom-selection-helper.png" alt="Example of Selection Helper with custom style configured" width="400" class="no-border" >}}
 
 #### Selection States and Behavior
 
