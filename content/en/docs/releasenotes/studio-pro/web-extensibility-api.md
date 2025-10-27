@@ -11,13 +11,13 @@ These release notes cover changes to the [Extensibility API for Web Developers](
 
 ## Version 11.4.0
 
-* We introduced a new Progress Dialog API under `studioPro.ui.dialogs.showProgressDialog(<title>, <steps>)`, which opens a modal containing a series of steps that perform actions in sequence.
-* We introduced a new Custom Document Model API under `studioPro.app.model.customBlobDocuments`. This allows extensions to register new document types in Studio Pro, which can store arbitrary data and appear in the App Explorer, New Document dialog, and other UI elements.
+* We introduced a new Progress Dialog API under `studioPro.ui.dialogs.showProgressDialog(<title>, <steps>)`, which opens a modal containing a series of steps that perform actions in sequence. For more information, see the [Showing a Progress Dialog](/apidocs-mxsdk/apidocs/web-extensibility-api-11/dialog-api/#process-dialog) section of *Open a Modal Dialog Using Web API*. 
+* We introduced a new Custom Document Model API under `studioPro.app.model.customBlobDocuments`. This allows extensions to register new document types in Studio Pro, which can store arbitrary data and appear in the App Explorer, New Document dialog, and other UI elements. For more information, see [Register New Document Types With a Corresponding Editor](/apidocs-mxsdk/apidocs/web-extensibility-api-11/custom-blob-document-api/).
 
 ## Version 11.3.0
 
 * We introduced a new Version Control API under `studioPro.ui.versionControl`, which allows you to display version control information about the current version control system, branch, and last commit in Studio Pro. For more information, see [Version Control API](/apidocs/web-extensibility-api-11/version-control-api/).
-* Users can use an option in the preferences menu to enable extension development without using the --enable-extension-development feature flag. It requires a restart of Studio Pro.
+* We introduced an option in the [Preferences](/refguide/preferences-dialog/#extension-development) menu to enable extension development without using the --enable-extension-development feature flag. It requires a restart of Studio Pro.
 * We introduced a new Message Passing API under `studioPro.ui.messagePassing`, to pass information between different active contexts within an extension. This API supports two communication patterns: request-reply and message broadcasting. For more information, see [Communicaton Between Views API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/command-api/).
 
 ## Version 11.2.0
