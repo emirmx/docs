@@ -56,14 +56,13 @@ If this is the first connection approved for an application environment, you mus
 
 This diagram shows the progress of the request status from when the connection request is submitted to when it is completed (approved or rejected):
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/connecting-to-external-services/connection-request-flow.png" >}}
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/connecting-to-external-services/connection-request-status-flow.png" >}}
 
 {{% alert color="info" %}}
 Mendix Admins can revoke an approved connection.
 {{% /alert %}}
 
-
-## Managing Connections {#manage-plan-requests}
+## Managing Connections {#manage-connection-requests}
 
 The [Connections](/developerportal/deploy/environments-details/#connections) section on the application's **Network** tab allows Technical Contacts to view all connections for the environment, track pending request statuses, and delete established connections.
 
