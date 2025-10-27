@@ -18,8 +18,6 @@ Click **Create a Post** to ask a question, start an exchange with the community,
 
 ## Personal
 
-Under **PERSONAL**, you can find [Community Feed](#community-feed), [Saved](#bookmarks), and [Posts](#posts).
-
 ### Community Feed {#community-feed}
 
 Clicking **Community Feed** brings you back to the home page of the Mendix Community.
@@ -321,6 +319,12 @@ To submit your own idea to the Mendix Community, follow these steps:
     * The **Tags** that reflect the idea topic. Users can filter the list of ideas by tag.
 3. To save the post as a draft, click **Save as Draft**. To check your draft, go to [Posts](#posts), then **Drafts**.
 4. To publish the idea, click **Share Idea**.
+
+### Tags
+
+The **Tags** page includes all tags used to categorize posts. They are displayed as cards, and can be sorted by usage or name.  
+
+You can choose to be notified of any changes to posts flagged with a specific tag. To do that, click **Notify Me** on the card corresponding to the tag that interests you.
 
 ## Spaces
 

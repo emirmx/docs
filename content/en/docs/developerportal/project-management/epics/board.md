@@ -28,7 +28,7 @@ In the upper-right corner of the page, you can find the following items:
 
 Follow these steps to create a story with Maia:
 
-1. Enable Maia in the app [Settings](/developerportal/collaborate/general-settings/#maia-settings) page.
+1. Enable Maia in the app [Settings](/developerportal/general-settings/#maia-settings) page.
 2. Click **Create Story**, then click {{% icon name="sparkles" %}}**Create with Maia**.     
    If Maia is enabled, the **Create Story with Maia** window is displayed.    
    If Maia is not enabled, you are given the option to activate it on the spot, from the **Enable Maia** window.
@@ -59,7 +59,7 @@ You can move a swimlane by dragging it to the new location.
 
 ### Story Cards {#story-card}
 
-Each card in a swimlane represents a story:
+Each card in a swimlane represents a story.
 
 {{< figure src="/attachments/developerportal/project-management/epics/board/story-card.png" class="no-border" >}}
 
@@ -75,7 +75,7 @@ A story card shows the following details:
 * ⑧ Points of the story
 * ⑨ To whom the story is assigned
 
-You can [archive](/developerportal/project-management/epics/archive/) or delete a story as follows: click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) on the upper-right corner of the card, and then select the corresponding option:
+You can [archive](/developerportal/project-management/epics/archive/) or delete a story by clicking **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) in the upper-right corner of the card, then selecting the corresponding option.
 
 {{< figure src="/attachments/developerportal/project-management/epics/board/archive-delete-story.png" class="no-border" >}}
 

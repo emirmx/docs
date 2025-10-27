@@ -6,11 +6,37 @@ description: "Release notes for Mendix on Azure"
 weight: 25
 ---
 
-{{% alert color="info" %}} This feature is currently available to participating customers. For more information, contact your Customer Success Manager. {{% /alert %}}
-
 These release notes cover changes to deployment to [Mendix on Azure](/developerportal/deploy/mendix-on-azure/). There are separate release notes for other deployment targets; for more information, see the [Deployment](/releasenotes/developer-portal/deployment/) release notes page.
 
 For information on the current status of Mendix deployment, see [Mendix Status](https://status.mendix.com/).
+
+### Release date: October 23, 2025 - [General Availability (GA) Release](/releasenotes/release-status/#general-availability)
+
+* In order to minimize the risk of security breaches and networking issues, we have added a new **Enable AKS Network Isolation** feature when creating new clusters. Please note that this feature can be enabled in the Initialize cluster and Edit cluster flow. However, once enabled in Initialize flow, it cannot be disabled in the Edit Cluster flow.
+* We have improved the log level handling in the Grafana dashboard. The logs are now available in JSON format.
+* We have fixed the issue where the cluster tags were not added to the read replicas database.
+* We have added a new preflight check in Cluster Initialization flow to validate that only one platform account should be used to initialize the cluster.
+* Mendix on Azure users can now upload and download environment backups through Mendix on Kubernetes Portal. For more information, see [Backups in Mendix on Azure](/developerportal/deploy/mendix-on-azure/backups/).
+* We have added a new feature which performs automatic nightly, weekly, or monthly backups of the environment. For more information, see [Backups in Mendix on Azure](/developerportal/deploy/mendix-on-azure/backups/).
+* [Cloud tokens](/control-center/cloud-tokens//) are now required for environment creation in Mendix on Azure after the trial period (120 days).
+
+### Release date: October 16, 2025
+
+* After being added to a [Mendix on Azure](/developerportal/deploy/mendix-on-azure/) cluster in the Mendix on Kubernetes Portal, a [cluster manager](/developerportal/deploy/mendix-on-azure/installation/#adding-a-new-cluster-manager) can now view and edit the cluster from the Mendix on Azure Portal.
+* We have resolved the validation error for PostgreSQL tiers that occurred when enabling Read replicas on existing clusters. 
+
+### Release date: September 25, 2025
+
+* In order to ensure app availability during infrastructure upgrades, the number of default replicas for newly created Mendix apps is set to 2.
+* To provide greater flexibility in data access, we have added a new feature that allows you to **Enable Read Replica Database access** when creating new clusters. Please note that this feature is set to **No** (disabled) by default. For details on how to enable it, see [Read Replicas for Postgres Databases](/developerportal/deploy/mendix-on-azure/read-replica-database-access/).
+* We have improved the labels on the default Grafana dashboard to better reflect the metrics being displayed.
+* We have fixed an issue where support tickets created by users were not visible to other users in the same subscription.
+* We have rephrased some wording and updated the structure on the **Initialize Cluster** and **Edit Cluster** pages for better readability and understanding.
+* We have resolved an issue from the previous release that caused database provisioning to fail when creating new environments.
+
+### Known issues:
+
+* Currently, the **updated** or **created** tags in the **Edit** screen of the cluster are not attached to the cluster resources.
 
 ### Release date: September 11, 2025
 
@@ -20,9 +46,9 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 
 ### Known issues:
 
- * Currently, the **updated** or **created** tags in the **Edit** screen of the cluster are not attached to the cluster resources.
- * Support ticket visibility is currently limited to tickets created by the individual user, rather than all tickets within their subscription.
- * Currently, it is not possible to create new environments in the Mendix on Azure cluster. We are working on releasing a fix for this issue soon.
+* Currently, the **updated** or **created** tags in the **Edit** screen of the cluster are not attached to the cluster resources.
+* Support ticket visibility is currently limited to tickets created by the individual user, rather than all tickets within their subscription.
+* Currently, it is not possible to create new environments in the Mendix on Azure cluster. We are working on releasing a fix for this issue soon.
 
 ### Release date: August 7, 2025
 

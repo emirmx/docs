@@ -33,6 +33,10 @@ To create a cluster in your OpenShift context, you need the following:
 
 Should you consider using a connected environment, the following URLs should be safelisted in your cluster's operating system, as these URLs point to services or resources required by the *Connected Environments'* infrastructure.
 
+{{% alert color="info" %}}
+All services listed in the table below use the HTTPS protocol (port 443).
+{{% /alert %}}
+
 | URL | Description |
 |-----|-------------|
 | `https://interactor-bridge.private-cloud.api.mendix.com` | Websocket based main communication API |
@@ -44,7 +48,7 @@ Should you consider using a connected environment, the following URLs should be 
 
 ### Creating a Cluster {#create-cluster}
 
-1. Click [Cloud Settings](/developerportal/collaborate/general-settings/#cloud-settings) on the **Settings** page of your Mendix app.
+1. Click [Cloud Settings](/developerportal/general-settings/#cloud-settings) on the **Settings** page of your Mendix app.
 2. Click **Mendix for Private Cloud**.
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/image3.png" class="no-border" >}}

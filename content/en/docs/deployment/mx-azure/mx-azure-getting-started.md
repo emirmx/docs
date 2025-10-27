@@ -5,8 +5,6 @@ description: "Documents the pre-implementation tasks for Mendix on Azure."
 weight: 10
 ---
 
-{{% alert color="info" %}} This feature is currently available to participating customers. For more information, contact your Customer Success Manager. {{% /alert %}}
-
 ## Introduction
 
 Before you can deploy your Mendix app on Azure, you must plan and complete a number of pre-implementation tasks.
@@ -20,8 +18,6 @@ To adopt Mendix on Azure, you need to have the following:
 * An Azure account with the following permissions:
     * Permission to grant admin consent on the Mendix on Azure portal app registration
     * Owner role assigned on the target subscription
-
-After you obtain an Azure subscription, you can [find your Subsciption ID](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id#find-your-azure-subscription) and provide this information to the Mendix representative.
 
 ## Next Steps
 

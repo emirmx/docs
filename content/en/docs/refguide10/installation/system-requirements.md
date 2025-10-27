@@ -189,7 +189,7 @@ If you are using the Intel® UHD Graphics 630 graphics processor, please ensure 
 
 ## Team Server {#ts}
 
-The [Team Server](/developerportal/general/team-server/) is implemented using Git, and Studio Pro uses the HTTPS protocol to communicate with that server. To access the Team Server from within Studio Pro, the network at your location needs the following settings:
+The [Team Server](/developerportal/repository/team-server/) is implemented using Git, and Studio Pro uses the HTTPS protocol to communicate with that server. To access the Team Server from within Studio Pro, the network at your location needs the following settings:
 
 * The HTTPS port (TCP 443) needs to be open
 * The HTTP port (TCP 80) needs to be open
@@ -233,6 +233,11 @@ When running Mendix on a server, you need Java Runtime Environment (JRE). To dow
 {{% alert color="warning" %}}
 Studio Pro 10.21 and above (including the future 10.24 LTS) does not support Java 11. Upgrade your application to Java 21 before migrating.
 {{% /alert %}}
+
+{{% alert type="info" %}}
+A Java Runtime Environment (JRE) is the environment needed to run Mendix on a server. This is not to be confused with a Java Development Kit (JDK), which is supported by Studio Pro and used to create and develop apps. To learn more about JDKs, see 
+[Getting Started with Java](https://dev.java/learn/getting-started/). For information on installing a JDK to use with your Mendix app, see [JDK Installation](/refguide10/jdk-installation/).
+{{% /alert %}} 
 
 ## Databases {#databases}
 

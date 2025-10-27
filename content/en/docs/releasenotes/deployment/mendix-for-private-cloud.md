@@ -12,6 +12,40 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2025
 
+### October 21, 2025
+
+#### Mendix Operator v2.24.0 {#2.24.0}
+
+* We have simplified the approach of handling Rolling updates by the Operator. Any app with two or more replicas will be updated without downtime, as long as the app is running the same MDA and base OS image.
+* Starting from this version, all Operator upgrades will run without causing downtime (in environments that have two or more replicas).
+* The Mendix Operator now manages **PodDisruptionBudgets**. For apps that have two or more replicas, a PodDisruptionBudget will be automatically created, so that cluster OS upgrades and scaling down nodes will happen in a controlled way, without causing disruption or downtime.
+* We have added a fallback license for Connected environments using Subscription Secrets. If an environment fails to communicate with the licensing server, it will use the fallback license instead of switching into Trial mode. This feature will become available for use with a future release of the Mendix on Kubernetes portal.
+* We have updated documentation to indicate that Kubernetes 1.34 is supported by the Mendix Operator.
+* We have made a few adjustments to support changes in upcoming Studio Pro version numbers.
+
+### September 25, 2025
+
+#### Portal Improvements
+
+* The Mendix on Kubernetes portal is now available in Japanese and Korean, enhancing the user experience for native speakers. Language preferences can be adjusted in the **Work Environment** tab under **Preferences**.
+* The side navigation in the portal is also available in Japanese and Korean languages
+* The Mendix on Kubernetes portal now supports the import of constants from a CSV file.
+* Exporting constants is now possible in CSV format, replacing the XLSX format.
+
+#### Known Issues
+
+* Translations in the Mendix on Kubernetes Portal are not yet fully complete and some content may still appear in English.
+
+### September 16, 2025
+
+#### Mendix Operator v2.23.1 {#2.23.1}
+
+* We have updated storage provisioners that create Azure Workload identitites. This update helps ensure that errors like *Cannot validate Microsoft Entra ID user ... because the OID isn't found in the tenant* are detected and handled correctly.
+
+    After creating a new workload identity, it might take some time before the workload identity (user) becomes fully functional. This error is not an issue (just a temporary status) and in this situation the Mendix Operator can just retry after waiting for some time.
+
+  Because Microsoft Azure previously changed the error text, older Mendix Operator versions might not correct this error.
+
 ### September 4, 2025
 
 #### Portal Improvements
