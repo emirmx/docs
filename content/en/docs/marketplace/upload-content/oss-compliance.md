@@ -95,4 +95,8 @@ If you are unsure about OSS usage or license compatibility, you can use these re
 
 By submitting a component to the Mendix Marketplace, you confirm that your submission meets all open-source licensing requirements, and that you have disclosed any use of restrictive licenses.
 
+{{% alert color="warning" %}}
+The responsibility for ensuring compliance with all applicable software license terms rests solely with the external developer or vendor, as the party providing or deploying the software.
+{{% /alert %}}
+
 We appreciate your efforts to contributing responsibly and securely to the Mendix ecosystem.

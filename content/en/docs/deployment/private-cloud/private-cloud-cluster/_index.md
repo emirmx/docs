@@ -33,6 +33,10 @@ To create a cluster in your OpenShift context, you need the following:
 
 Should you consider using a connected environment, the following URLs should be safelisted in your cluster's operating system, as these URLs point to services or resources required by the *Connected Environments'* infrastructure.
 
+{{% alert color="info" %}}
+All services listed in the table below use the HTTPS protocol (port 443).
+{{% /alert %}}
+
 | URL | Description |
 |-----|-------------|
 | `https://interactor-bridge.private-cloud.api.mendix.com` | Websocket based main communication API |
