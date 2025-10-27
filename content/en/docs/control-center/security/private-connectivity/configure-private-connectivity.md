@@ -27,10 +27,10 @@ Mendix Private Connectivity networks are the bridge between Mendix Cloud and you
 
 On the **Networks** tab of the **Private Connectivity** page, you can see all the networks associated to your company. The page shows the following information for each network:
 
-* **Network** — The name of the network.
-* **External Agents** — The number of agents that are installed on your internal infrastructure, and that are connected to the network.
-* **Environments** — The number of app environments on Mendix Cloud that have at least one connection using the network.
-* **Actions** — A list of actions that you can take on the network:
+* **Network** – The name of the network.
+* **External Agents** – The number of agents that are installed on your internal infrastructure, and that are connected to the network.
+* **Environments** – The number of app environments on Mendix Cloud that have at least one connection using the network.
+* **Actions** – A list of actions that you can take on the network:
 
     * **Details**    
     * **Add DNS**
@@ -62,13 +62,13 @@ To view and edit an existing network, follow these steps:
 2. Click **More Options** ({{< icon name="three-dots-menu-horizontal" >}}).
 3. Select **Details**. The details of that network are displayed:
 
-    * **Network** — The name you gave to the network. This field is editable.
-    * **Network ID** — The internal ID of your network. You can copy this, for example, if you want to provide it in a support ticket for any issues with the network.
-    * **External Agents** — A list of all external agents that run on your own internal infrastructure, and that have access to the network.    
+    * **Network** – The name you gave to the network. This field is editable.
+    * **Network ID** – The internal ID of your network. You can copy this, for example, if you want to provide it in a support ticket for any issues with the network.
+    * **External Agents** – A list of all external agents that run on your own internal infrastructure, and that have access to the network.    
 	  This field also displays the status of each agent.
-    * **DNS Details** — A list of domains for which you have [configured DNS](#private-connectivity-networks-dns).
-    * **Environment Details** — A list of app environments that are using the network to connect to a resource, as well as the environment's status.
-    * **Show Logs** — This allows you to see [the flow logs](https://tailscale.com/kb/1219/network-flow-logs) for your network. They can help you troubleshoot issues with connectivity on your network.
+    * **DNS Details** – A list of domains for which you have [configured DNS](#private-connectivity-networks-dns).
+    * **Environment Details** – A list of app environments that are using the network to connect to a resource, as well as the environment's status.
+    * **Show Logs** – This allows you to see [the flow logs](https://tailscale.com/kb/1219/network-flow-logs) for your network. They can help you troubleshoot issues with connectivity on your network.
 
 4. Click **Save** to save any changes you have made.
 
@@ -84,8 +84,8 @@ To configure split DNS for a new domain on your network, follow these steps:
 2. In the **Edit DNS** dialog box, click **Add New Domain**.
 3. Provide the following information:
 
-    * **Domain** — Provide the domain for which the nameservers should be used, such as `myinternalnetwork.net`.
-    * **Nameservers** — Provide the IP address of the nameserver to use to resolve DNS queries for the provided domain. You can add multiple nameserver IP addresses for high availability.
+    * **Domain** – Provide the domain for which the nameservers should be used, such as `myinternalnetwork.net`.
+    * **Nameservers** – Provide the IP address of the nameserver to use to resolve DNS queries for the provided domain. You can add multiple nameserver IP addresses for high availability.
 
 4. Click **Save** to save changes.
 
@@ -101,7 +101,7 @@ To add a nameserver for a domain that you have already added to your network, fo
 2. In the **Edit DNS** dialog box, find the domain you want to add a nameserver for, then click **Add New Nameserver**.
 3. Provide the following information:
 
-    * **Nameservers** - Provide the IP address of the nameserver to use to resolve DNS queries for the provided domain. You can add multiple nameserver IP addresses for high availability.
+    * **Nameservers** – Provide the IP address of the nameserver to use to resolve DNS queries for the provided domain. You can add multiple nameserver IP addresses for high availability.
 
 4. Click **Save** to save changes.
 
@@ -139,13 +139,13 @@ At least one agent is necessary to be able to connect from a Mendix app to your 
 
 On the **Agents** tab of the **Private Connectivity** page, you can see all the agents associated to your company. The page displays the following information for each agent:
 
-* **Agent** — The name of the agent.
-* **Network** — The network to which the agent is connected.
-* **Resources** — The number of resources exposed through the agent.
-* **Status (Last seen)** — The status of the agent, or the last time it was connected to the network:
+* **Agent** – The name of the agent.
+* **Network** – The network to which the agent is connected.
+* **Resources** – The number of resources exposed through the agent.
+* **Status (Last seen)** – The status of the agent, or the last time it was connected to the network:
 
-    * **Connected** — The agent is currently connected to the network.
-	* Date and time — The last time the agent was connected to the network. The agent is not connected at this time.
+    * **Connected** – The agent is currently connected to the network.
+	* Date and time – The last time the agent was connected to the network. The agent is not connected at this time.
 
 ### Adding an Agent {#private-connectivity-agents-add}
 
@@ -171,18 +171,18 @@ To view and edit an existing agent, follow these steps:
 1. On the **Agents** tab, find the agent for which you want to view details, or that you want to edit.
 2. Click **More Options** ({{< icon name="three-dots-menu-horizontal" >}}), then select **Details**. The details of that agent are displayed:
 
-    * **Agent Name** — The name you gave to the agent. This field is editable.
-    * **Agent ID** — The internal ID of your agent. You can copy this, for example, if you want to provide it in a support ticket for any issues with the agent.
-    * **Agent Key** — The authentication key of your agent. You can copy this authentication key for use when [starting an agent](#private-connectivity-agents-run).     
+    * **Agent Name** – The name you gave to the agent. This field is editable.
+    * **Agent ID** – The internal ID of your agent. You can copy this, for example, if you want to provide it in a support ticket for any issues with the agent.
+    * **Agent Key** – The authentication key of your agent. You can copy this authentication key for use when [starting an agent](#private-connectivity-agents-run).     
 	  This key should be treated as confidential.
-    * **Network** — The network to which the agent is connected.
-    * **Status (Last seen)** — The status of the agent, or the last time it was connected to the network:
+    * **Network** – The network to which the agent is connected.
+    * **Status (Last seen)** – The status of the agent, or the last time it was connected to the network:
 
-        * **Connected** — The agent is currently connected to the network.
-        * Date and time — The last time the agent was connected to the network. The agent is not connected at this time.
+        * **Connected** – The agent is currently connected to the network.
+        * Date and time – The last time the agent was connected to the network. The agent is not connected at this time.
 
-    * **Resource Details** — A list of the resources exposed via the agent.
-    * **DERP Details** — Information on the preferred Tailscale [Designated Encrypted Relay for Packets (DERP) server](https://tailscale.com/kb/1232/derp-servers).
+    * **Resource Details** – A list of the resources exposed via the agent.
+    * **DERP Details** – Information on the preferred Tailscale [Designated Encrypted Relay for Packets (DERP) server](https://tailscale.com/kb/1232/derp-servers).
 
 3. Click **Save** to save any changes you have made.
 
@@ -298,15 +298,15 @@ Resources are services, such as databases or applications, on your infrastructur
 On the **Resources** tab of the **Private Connectivity** page, you can see all the exposed resources of your company.     
 The page displays the following information for each resource:
 
-* **Resource** — The name of the resource.
-* **Agent** — The name of the agent that exposes the resource.
-* **Network** — The name of the network to which the agent exposing the resource is connected.
-* **Status** — The status of the resource. This can be one of the following:
+* **Resource** – The name of the resource.
+* **Agent** – The name of the agent that exposes the resource.
+* **Network** – The name of the network to which the agent exposing the resource is connected.
+* **Status** – The status of the resource. This can be one of the following:
 
-    * Enabled — Technical Contacts can request connections to the resource.
-	* Disabled — Technical Contacts cannot request connections to the resource.
+    * Enabled – Technical Contacts can request connections to the resource.
+	* Disabled – Technical Contacts cannot request connections to the resource.
 
-* **Environments** — The number of app environments on Mendix Cloud that have an approved connection to the resource.
+* **Environments** – The number of app environments on Mendix Cloud that have an approved connection to the resource.
 
 ### Viewing and Editing Resources {#private-connectivity-resources-details}
 
@@ -316,21 +316,21 @@ To view and edit a resource, follow these steps:
 2. Click **More Options** ({{< icon name="three-dots-menu-horizontal" >}}), then select **Details**. 
    The details of that resource are displayed:
 
-    * **Resource Name** — The name you gave to the resource. This field is editable.
-    * **Resource ID** — The internal ID of your resource. You can copy this, for example, if you want to provide it in a support ticket for any issues with the agent.
-    * **Resource Type** — The type of resource, which can be:
+    * **Resource Name** – The name you gave to the resource. This field is editable.
+    * **Resource ID** – The internal ID of your resource. You can copy this, for example, if you want to provide it in a support ticket for any issues with the agent.
+    * **Resource Type** – The type of resource, which can be:
 
-        * **Route** — The resource is an exposed subnet route.
+        * **Route** – The resource is an exposed subnet route.
 
-    * **Route** — The exposed IP range. This is only displayed if the resource type is **Route**.
-    * **Agent** — The name of the agent that exposes the resource.
-    * **Network** — The name of the network to which the agent exposing the resource is connected.
-    * **Status** — The status of the resource. This can be one of the following:
+    * **Route** – The exposed IP range. This is only displayed if the resource type is **Route**.
+    * **Agent** – The name of the agent that exposes the resource.
+    * **Network** – The name of the network to which the agent exposing the resource is connected.
+    * **Status** – The status of the resource. This can be one of the following:
 
-	    * **Enabled** — Users can request connections to the resource.
-	    * **Disabled** — Users cannot request connections to the resource.
+	    * **Enabled** – Users can request connections to the resource.
+	    * **Disabled** – Users cannot request connections to the resource.
 
-    * **Environment Details** — A list of app environments that have an approved connection to the resource.
+    * **Environment Details** – A list of app environments that have an approved connection to the resource.
 
 3. Click **Save** to save any changes you have made.
 
@@ -395,15 +395,15 @@ An application on Mendix Cloud can have multiple connections to multiple resourc
 
 On the **Connections** tab of the **Private Connectivity** page, you can see all the connections associated to your company. The page displays the following information for each connection: 
 
-* **App** — The name of the app for the connection.
-* **Environment** — The name of the environment for the connection.
-* **Network** — The network for the connection.
-* **Resource** — The name of the resource for the connection.
-* **Status** — The status of the connection. This can be one of the following:
+* **App** – The name of the app for the connection.
+* **Environment** – The name of the environment for the connection.
+* **Network** – The network for the connection.
+* **Resource** – The name of the resource for the connection.
+* **Status** – The status of the connection. This can be one of the following:
 
-    * **Pending** — The connection was requested, but not yet approved. The app environment cannot connect to the resource using this connection.
-	* **Approved** — The connection is approved. The app environment can connect to the resource using this connection.
-	* **Rejected** — The connection is rejected. The app environment cannot connect to the resource using this connection.
+    * **Pending** – The connection was requested, but not yet approved. The app environment cannot connect to the resource using this connection.
+	* **Approved** – The connection is approved. The app environment can connect to the resource using this connection.
+	* **Rejected** – The connection is rejected. The app environment cannot connect to the resource using this connection.
 
 	For details on how Technical Contacts request connections for a specific environment, refer to [Connecting to External Resources](/developerportal/deploy/connecting-to-external-resource/).
 
@@ -414,26 +414,26 @@ To view an existing connection, follow these steps:
 1. On the **Connections** tab, find the connection for which you want to view details.
 2. Click **More Options** ({{< icon name="three-dots-menu-horizontal" >}}), then select **Details**. The details of that connection are displayed:
 
-    * **Request Details** — The details of the connections request:
+    * **Request Details** – The details of the connections request:
 
-	    * **Name** — The name of the user that requested this connection.
-	    * **Status** — The status of the connection request. This can be one of the following:
+	    * **Name** – The name of the user that requested this connection.
+	    * **Status** – The status of the connection request. This can be one of the following:
 
-		    * **Pending** — The connection was requested, but not yet approved. The app environment cannot connect to the resource using this connection.
-		    * **Approved** — The connection is approved. The app environment can connect to the resource using this connection.
-		    * **Rejected** — The connection is rejected. The app environment cannot connect to the resource using this connection.
+		    * **Pending** – The connection was requested, but not yet approved. The app environment cannot connect to the resource using this connection.
+		    * **Approved** – The connection is approved. The app environment can connect to the resource using this connection.
+		    * **Rejected** – The connection is rejected. The app environment cannot connect to the resource using this connection.
 
-	    * **Date** — The date and time when the connection was requested.
+	    * **Date** – The date and time when the connection was requested.
 
-    * **App** — The name of the app for the connection.
-    * **Environment** — The name of the environment for the connection.
-    * **Network** — The network for the connection.
-    * **Resource** — The name of the resource for the connection.
-    * **Resource ID** — The internal ID of your resource. You can copy this, for example, if you want to provide it in a support ticket.
-    * **Agent** — The name of the agent for the connection.
-    * **Agent ID** — The internal ID of the agent. You can copy this, for example, if you want to provide it in a support ticket.
-    * **Network** — The name of the network for the connection.
-    * **Network ID** — The internal ID of the network. You can copy this, for example, if you want to provide it in a support ticket.
+    * **App** – The name of the app for the connection.
+    * **Environment** – The name of the environment for the connection.
+    * **Network** – The network for the connection.
+    * **Resource** – The name of the resource for the connection.
+    * **Resource ID** – The internal ID of your resource. You can copy this, for example, if you want to provide it in a support ticket.
+    * **Agent** – The name of the agent for the connection.
+    * **Agent ID** – The internal ID of the agent. You can copy this, for example, if you want to provide it in a support ticket.
+    * **Network** – The name of the network for the connection.
+    * **Network ID** – The internal ID of the network. You can copy this, for example, if you want to provide it in a support ticket.
 
 ## Approving and Rejecting Connections {#private-connectivity-connections}
 
