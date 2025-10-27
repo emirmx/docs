@@ -293,7 +293,7 @@ Select this option to use the modernized version of the App Explorer. You must r
 
 ### History Pane {#history-pane}
 
-Select this option to use the non-blocking, searchable History Pane instead of the blocking History Window.
+Select this option to use the non-blocking, searchable History Pane instead of the blocking History Window. This feature is currently in public beta.
 
 ### Errors Pane
 
