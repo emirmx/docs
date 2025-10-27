@@ -6,11 +6,24 @@ description: "Release notes for Mendix on Azure"
 weight: 25
 ---
 
-{{% alert color="info" %}} This feature is currently available to participating customers. For more information, contact your Customer Success Manager. {{% /alert %}}
-
 These release notes cover changes to deployment to [Mendix on Azure](/developerportal/deploy/mendix-on-azure/). There are separate release notes for other deployment targets; for more information, see the [Deployment](/releasenotes/developer-portal/deployment/) release notes page.
 
 For information on the current status of Mendix deployment, see [Mendix Status](https://status.mendix.com/).
+
+### Release date: October 23, 2025 - [General Availability (GA) Release](/releasenotes/release-status/#general-availability)
+
+* In order to minimize the risk of security breaches and networking issues, we have added a new **Enable AKS Network Isolation** feature when creating new clusters. Please note that this feature can be enabled in the Initialize cluster and Edit cluster flow. However, once enabled in Initialize flow, it cannot be disabled in the Edit Cluster flow.
+* We have improved the log level handling in the Grafana dashboard. The logs are now available in JSON format.
+* We have fixed the issue where the cluster tags were not added to the read replicas database.
+* We have added a new preflight check in Cluster Initialization flow to validate that only one platform account should be used to initialize the cluster.
+* Mendix on Azure users can now upload and download environment backups through Mendix on Kubernetes Portal. For more information, see [Backups in Mendix on Azure](/developerportal/deploy/mendix-on-azure/backups/).
+* We have added a new feature which performs automatic nightly, weekly, or monthly backups of the environment. For more information, see [Backups in Mendix on Azure](/developerportal/deploy/mendix-on-azure/backups/).
+* [Cloud tokens](/control-center/cloud-tokens//) are now required for environment creation in Mendix on Azure after the trial period (120 days).
+
+### Release date: October 16, 2025
+
+* After being added to a [Mendix on Azure](/developerportal/deploy/mendix-on-azure/) cluster in the Mendix on Kubernetes Portal, a [cluster manager](/developerportal/deploy/mendix-on-azure/installation/#adding-a-new-cluster-manager) can now view and edit the cluster from the Mendix on Azure Portal.
+* We have resolved the validation error for PostgreSQL tiers that occurred when enabling Read replicas on existing clusters. 
 
 ### Release date: September 25, 2025
 

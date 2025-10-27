@@ -12,7 +12,10 @@ It also describes how to show a progress dialog that follows a sequence of steps
 
 ## Prerequisites
 
-This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Please complete that how-to before starting this one. You should also be familiar with creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
+Before starting this how-to, make sure you have completed the following prerequisites:
+
+* This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Complete that how-to before starting this one. 
+* Make sure you are familiar with creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
 
 ## Opening a Modal Dialog
 
@@ -28,7 +31,7 @@ In a listener event called `menuItemActivated`, the `studioPro.ui.dialogs.showMo
     * `queryParams` (optional) — a key-value pair object for passing data to your web content inside the dialog
 
 {{% alert color="info" %}}
-When the dialog's API `showModal` method is called, a `Promise` of `unknown` or `null` is returned. This return value represents anything the web content determines should be returned when the dialog gets closed. It is currently unknown by the API, since it can be anything. 
+When the dialog's API `showModal` method is called, a `Promise` of `unknown` or `null` is returned. This return value represents anything the web content determines should be returned when the dialog is closed. It is currently unknown by the API, since it can be anything. 
 
 In the example below, the dialog will contain a form where an object is modified, then returned at closing time.
 {{% /alert %}}
@@ -95,8 +98,7 @@ In the previous example, the `uiEntryPoint` property of the `<uispec>` object ha
 }
 ```
 
-1. Update `build-extension.mjs` to match the manifest with an entry for the new dialog entry point. Specifically, you need to add
-the `src/ui/dialog.tsx` endpoint to your build script and make sure the variable `appDir` stays unaltered. For example:
+1. Update `build-extension.mjs` to match the manifest with an entry for the new dialog entry point. Specifically, add the `src/ui/dialog.tsx` endpoint to your build script and make sure the variable `appDir` stays unaltered. For example:
 
    ```typescript{hl_lines=["16-19"]}
     import * as esbuild from 'esbuild'
@@ -209,7 +211,7 @@ After building and installing the extension in Studio Pro, the dialog opens when
 
 ## Modifying a Modal Dialog
 
-You can also modify the dimensions of a dialog using the dialog API's `update` method. To do this, add a button to the form contained in `dialog.tsx` file, as follows:
+You can modify the dimensions of a dialog using the dialog API's `update` method. To do this, add a button to the form contained in `dialog.tsx` file, as follows:
 
 ```typescript
 <button
@@ -225,7 +227,7 @@ You can also modify the dimensions of a dialog using the dialog API's `update` m
 </button>
 ```
 
- You can also modify the dialog's dimensions while it is open.
+You can also modify the dialog's dimensions while it is open.
 
 ## Showing a Progress Dialog
 
@@ -341,6 +343,6 @@ When running, the progress dialog will look like this:
 
 ## Extensibility Feedback
 
-If you would like to provide us with additional feedback, you can complete a small [survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback).
+If you would like to provide additional feedback, you can complete a small [survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback).
 
 Any feedback is appreciated.

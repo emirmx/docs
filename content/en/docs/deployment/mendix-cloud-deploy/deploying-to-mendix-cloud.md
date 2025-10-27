@@ -135,4 +135,4 @@ To resolve this issue, try one of the following solutions:
 This option is not available for Free or Sandbox apps.
 {{% /alert %}}
 * **Update your Mendix application** – Update your Mendix application to use Studio Pro version 9.17.x or higher.
-* **When using the Build API** – If your application uses Git for version control, specify a full commit hash for the `Revision` value in the [Build API](//apidocs-mxsdk/apidocs/backups-api/).
+* **When using the Build API** – If your application uses Git for version control, specify a full commit hash for the `Revision` value in the [Build API](/apidocs-mxsdk/apidocs/build-api/#payload).
