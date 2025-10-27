@@ -179,29 +179,13 @@ For more information on vision, see [Mistral](https://docs.mistral.ai/capabiliti
 
 #### Document Chat {#chatcompletions-document}
 
-Document chat enables the model to interpret and analyze PDF documents, allowing it to answer questions and perform tasks based on the document content. To use document chat, you can send an optional [FileCollection](/appstore/modules/genai/genai-for-mx/commons/#filecollection) containing one or more documents along with a single message.
+Document chat enables the model to interpret and analyze PDF documents, allowing it to answer questions and perform tasks based on the document content. Document chat is currently not supported by the Mistral connector as it requires its own API. Check out [Document AI](https://docs.mistral.ai/capabilities/document_ai) documentation if you want to learn about Mistral's OCR capabilities.
 
-For [Chat Completions (without history)](/appstore/modules/genai/genai-for-mx/commons/#chat-completions-without-history), `OptionalFileCollection` is an optional input parameter. For [Chat completions (with history)](/appstore/modules/genai/genai-for-mx/commons/#chat-completions-with-history), a `FileCollection` can optionally be added to individual user messages using [Add Message to Request](/appstore/modules/genai/genai-for-mx/commons/#chat-add-message-to-request).
-
-You can send up to 100 pages across multiple files, with a maximum combined size of 32 MB per conversation.  Currently, processing multiple files with OpenAI is not always guaranteed and can lead to unexpected behavior (for example, only one file being processed).
-
-{{% alert color="info" %}}
-Azure OpenAI does not currently support file input.
-
-Note that the model uses the file name when analyzing documents, which may introduce a potential vulnerability to prompt injection. To reduce this risk, consider modifying the string or not passing it at all.
-{{% /alert %}}
 
 #### Image Generations {#image-generations-configuration}
 
-OpenAI also provides image generation capabilities which can be invoked using this connector module. The `OpenAIDeployedModel` entity is compatible with the [image generation operation from GenAI Commons](/appstore/modules/genai/genai-for-mx/commons/#generate-image).
+Image generation is currently not supported by the Mistral connector. You can learn more about image generation with Mistral [here](https://docs.mistral.ai/agents/connectors/image_generation/).
 
-To implement image generation into your Mendix application, you can use the Image generation microflow action from GenAI Commons directly. When developing your microflow, you can drag and drop it from the toolbox: find it under the **GenAI (Generate)** category in the **Toolbox** in Mendix Studio Pro:
-
-* Generate Image
-
-When you drag this operation into your app microflow logic, use the `user prompt` to describe the desired image, and for the `DeployedModel` pass the relevant `OpenAIDeployedModel` that supports image generation. Additional parameters like the height and the width can be configured using [Image Generation: Create ImageOptions](/appstore/modules/genai/genai-for-mx/commons/#imageoptions-create). To configure OpenAI-specific options, like quality and style an extension to the ImageOptions can be added using [Image Generation: Set ImageOptions Extension](#set-imageoptions-extension). 
-
-A generated image needs to be stored in a custom entity that inherits from the `System.Image` entity. The `Response` from the single image operation can be processed using [Get Generated Image (Single)](/appstore/modules/genai/genai-for-mx/commons/#image-get-single) to store the image in your custom `Image` entity.
 
 #### Embeddings Generation {#embeddings-configuration}
 
