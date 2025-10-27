@@ -29,6 +29,10 @@ When you are running your app locally, you can set these values in a [Configurat
 
 There is more information on how this is done in the Cloud Foundry buildpack in [Custom Runtime Settings](https://github.com/mendix/cf-mendix-buildpack#custom-runtime-settings) in the GitHub repo.
 
+For Docker-based deployments, runtime configurations are set using environment variables as explained in the [GitHub repo](https://github.com/mendix/docker-mendix-buildpack?tab=readme-ov-file#configuring-custom-runtime-settings)
+
+For Windows-based deployments, runtime configurations are set from the Mendix Service Console under **Configuration** > **Advanced Settings** > **Custom Mendix settings**.
+
 ### Duration/Interval Settings
 
 Durations and intervals can be specified in the following formats:
