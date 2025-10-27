@@ -229,7 +229,7 @@ You can modify the dimensions of a dialog using the dialog API's `update` method
 
 You can also modify the dialog's dimensions while it is open.
 
-## Showing a Progress Dialog
+## Showing a Progress Dialog {#process-dialog}
 
  To show a progress dialog, call the method `studioPro.ui.dialogs.showProgressDialog(<title>, <steps>)`, where:
 
