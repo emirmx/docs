@@ -8,39 +8,85 @@ beta: true
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
+{{% alert color="warning" %}}
+This feature is in Public Beta. For more information, see [Release Status](/releasenotes/release-status/).
+{{% /alert %}}
+
 ## Introduction
 
-[Mendix Cloud Private Connectivity](/control-center/private-connectivity/) can help you with connecting your applications on Mendix Cloud to your internal resources (on-premises and in the cloud) securely and privately. That means that the connection will not go over the public internet, but through a private tunnel.
+[Mendix Cloud Private Connectivity](/control-center/private-connectivity/) enables your Mendix applications to securely and privately connect to internal resources, whether they are on-premises or in the cloud. This ensures that the connection bypasses the public internet and instead goes through a private tunnel, enhancing security and compliance.
+
+This document guides [Technical Contacts](/developerportal/general/app-roles/#technical-contact) through the process of requesting and managing connections to external resources using Mendix Cloud Private Connectivity.
+
+## Prerequisites {#prerequisites}
+
+Before requesting a connection, the following conditions must be met:
+
+* You are the [Technical Contact](/developerportal/general/app-roles/#technical-contact) for the Mendix application.
+* A Mendix Admin has created and configured the necessary private network in the [Control Center](/control-center/configure-private-connectivity/). This includes installing agents and exposing the specific external resource you want to connect to.
 
 ## Connections {#connections}
 
-Mendix Cloud Connect Connections allow applications on Mendix Cloud to connect to Mendix Cloud Connect Resources over Mendix Cloud Connect Networks. A Connection has to be requested and approved, before an application on Mendix Cloud can connect to the Resource. An application on Mendix Cloud can have multiple Connections to multiple Resources.
+Mendix Cloud Connect Connections allow applications on Mendix Cloud to connect to Mendix Cloud Connect Resources over Mendix Cloud Connect Networks. Each connection request must be initiated by a Technical Contact and approved by a Mendix Admin before the application on Mendix Cloud can connect to the Resource. 
 
-The [Connections](/developerportal/deploy/environments-details/#connections) section on your application environment's Details page allows Technical Contacts to view all submitted connection requests and track request status.
+An application on Mendix Cloud can establish multiple connections to various resources. You can view and manage all connections and their statuses within the [Connections](/developerportal/deploy/environments-details/#connections) section on the application's **Network** tab.
 
-### Requesting a New Connection {#connections-add}
+### Requesting a New Connection {#connection-request}
 
-Once a network has been created, agents have been added and installed, and Resources have been exposed and enabled, you can request a Connection from an application environment to of the approved Resources.
+As a Technical Contact, you can request a new connection from your application environment to an approved external resource.
 
-To request a new Connection for a specific application environment, follow these steps:
+Follow these steps to request a new connection:
+
 1. From [Apps](https://sprintr.home.mendix.com), go to the app's **Environments** page.
-2. Click **Details** ({{% icon name="notes-paper-edit" %}}) on the desired environment.
+2. Click **Details** ({{% icon name="notes-paper-edit" %}}) on the preferred environment.
 3. Go to the **Network** tab.
-4. The **Connections** section allows for managing connections for a single environment.
-5. Click **Add** to request a new connection.
-6. On the **Add Connection** dialog, select an available network to view the resources exposed on that network.
-7. Select the resource you would like to connect to from the application environment.
-8. All submitted connection requests appear in the Control Center for the Mendix Admin review. Click **Send Request**.
-9. Track and manage your connection requests from the [Connections](/developerportal/deploy/environments-details/#connections) section on your application environment's Details page. 
+4. In the **Connections** section, click **Add** to initiate a new connection request.
 
-###  Cancelling a Connection Request {#connections-cancel}
+    {{% alert color="info" %}} Contact your Mendix Admin if the resource you want is not available on the list.
+    {{% /alert %}}
 
-To cancel a pending connection request, follow these steps:
-1. On the [Connections](/developerportal/deploy/environments-details/#connections) section on your application environment's Details page, click **Cancel**.
+5. In the **Add Connection** dialog, select an available network. This action displays the resources exposed on that network.
+6. Select the specific resource you want your application environment to connect to.
+7. Click **Send Request** to submit your connection request for approval. All submitted connection requests appear in the [Control Center](/control-center/configure-private-connectivity/) for the Mendix Admin review.
+8. Track and manage your connection requests from the [Connections](/developerportal/deploy/environments-details/#connections) section on the application's **Network** tab.
+
+{{% alert color="info" %}}
+If this is the first connection approved for an application environment, you must redeploy that environment for the connection to become active and usable.
+{{% /alert %}}
+
+This diagram shows the progress of the request status from when the connection request is submitted to when it is completed (approved or rejected):
+
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/connecting-to-external-services/connection-request-flow.png" >}}
+
+{{% alert color="info" %}}
+Mendix Admins can revoke an approved connection.
+{{% /alert %}}
+
+
+## Managing Connections {#manage-plan-requests}
+
+The [Connections](/developerportal/deploy/environments-details/#connections) section on the application's **Network** tab allows Technical Contacts to view all connections for the environment, track pending request statuses, and delete established connections.
+
+Depending on the connection's status, you can perform the following actions:
+
+### Cancelling a Connection Request {#cancel-connection}
+
+As a Technical Contact, you can cancel a connection request if its status is **Pending Approval**.
+
+To cancel a pending connection request:
+
+1. On the [Connections](/developerportal/deploy/environments-details/#connections) section of the Network tab, locate the connection request with the status **Pending Approval**.
+2. Click **Cancel Request** next to that connection.
 
 ### Deleting a Connection
 
-To delete an approved connection, follow these steps:
-1. On the [Connections](/developerportal/deploy/environments-details/#connections) section on your application environment's Details page, click **Delete**.
+After a connection request is approved, you can delete the connection at any time. 
 
-Deleting a connection, will immediately break the connection between the application environment and the resource.
+To delete an approved connection:
+
+1. On the [Connections](/developerportal/deploy/environments-details/#connections) section of the **Network** tab, locate the approved connection you want to remove.
+2. Click **Delete** next to that connection.
+
+{{% alert color="info" %}}
+Deleting a connection immediately breaks the connection between your application environment and the resource.
+{{% /alert %}}
