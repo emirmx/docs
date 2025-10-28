@@ -18,7 +18,7 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 * We have added a new preflight check in Cluster Initialization flow to validate that only one platform account should be used to initialize the cluster.
 * Mendix on Azure users can now upload and download environment backups through Mendix on Kubernetes Portal. For more information, see [Backups in Mendix on Azure](/developerportal/deploy/mendix-on-azure/backups/).
 * We have added a new feature which performs automatic nightly, weekly, or monthly backups of the environment. For more information, see [Backups in Mendix on Azure](/developerportal/deploy/mendix-on-azure/backups/).
-* [Cloud tokens](/control-center/cloud-tokens//) are now required for environment creation in Mendix on Azure after the trial period (120 days).
+* [Cloud tokens](/control-center/cloud-tokens/) are now consumed by environments which have been created more than 120 days ago. This effectively means that after the first 120 days (4 months) after app environment creation, Mendix starts charging for the use of Mendix on Azure via Cloud Tokens. In case insufficient Cloud Tokens are available, the customer will be contacted by Mendix.
 
 ### Release date: October 16, 2025
 

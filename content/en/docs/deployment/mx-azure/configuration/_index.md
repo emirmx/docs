@@ -6,31 +6,33 @@ weight: 6
 ---
 ## Introduction
 
-Mendix on Azure is delivered with a set of default configuration settings optimized for evaluation and initial deployment. These defaults provide a seamless experience for trying out the solution.
+Mendix on Azure is delivered with default configuration settings optimized for evaluation and initial deployments, providing a seamless experience for trying out the solution.
 
-For production environments or to align with specific organizational requirements, additional configuration is typically required.
+For production environments or to meet specific organizational requirements, additional configuration is typically needed.
 
-Mendix on Azure offers advanced configuration capabilities through the following methods:
+Mendix on Azure offers advanced configuration through the following methods:
 
 1. Self-service configuration via Mendix on Azure Portal  
-2. Self-service configuration via Microsoft Azure Portal
+2. Self-service configuration via Microsoft Azure Portal  
 3. Self-service configuration via Mendix on Kubernetes Portal  
-3. Configuration assistance upon request by submitting a support ticket through the Mendix on Azure Portal  
+4. Configuration assistance upon request by submitting a support ticket through the Mendix on Azure Portal  
 
-This document outlines the available configuration options and describes their functionality.
+This document outlines the available configuration options and their functionalities.
+
 
 ## Self-service configuration available via Mendix on Azure portal
 
-The [Mendix on Azure Portal](https://mendixonazure.mendix.com) provides a range of self-service configuration options that can be modified at any time or specified once during the initial cluster setup. The following sections list the available options by theme:
+The [Mendix on Azure Portal](https://mendixonazure.mendix.com) provides a variety of self-service configuration options that can be modified anytime or specified once during initial cluster setup. The following sections categorize available options:
 
-### Networking options
+### Networking settings {#networking-settings}
 
 | Advanced Option              | Description                                                                                                                                                                                                                                                                                                                                                                                    | Editable after initial creation |
 |------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|
-| Load Balancer Type           | This option controls whether your applications will be reachable from the public internet or only privately via your own (Virtual) Network and/or Private Endpoints.                                                                                                                                                                                                                           | Yes                             |
-| AKS Node CIDR IP Range       | The IP address range used on the VNet that will host AKS cluster nodes. This setting can only be changed at initial deployment and should match the IP address plan of your organization in case you intend to connect the Mendix on Azure environment to the rest of your network(s) via peering. The default value can be accepted when interconnection with other networks is not required. | No                              |
-| AKS Network Isolated Cluster | Please see [network isolated cluster] for more information                                                                                                                                                                                                                                                                                                                                     | No                              |
+| Load Balancer Type           | Controls whether your applications are reachable publicly or only privately via your own (Virtual) Network and/or Private Endpoints.  Endpoints.                                                                                                                                                                                                                           | Yes                             |
+| AKS Node CIDR IP Range       | Defines the IP address range on the VNet hosting AKS cluster nodes. This can only be set during initial deployment and should align with your organization's IP plan if you plan to connect Mendix on Azure to other networks via peering. Default is acceptable when no interconnection is required.  | No                              |
+| AKS Network Isolated Cluster | When set to true will lead to a cluster without egress configuration, please carefully read the [documentation on cluster networking modes ](/developerportal/deploy/mendix-on-azure/configuration/ingress-egress) to understand the implications                                                                                                                                                                                                                                                                                                                                     | No                              |
 
+Please consult the documentation on [configuring Ingress and Egress](/developerportal/deploy/mendix-on-azure/configuration/ingress-egress) to ensure you deeply understand the interplay of above three options.
 
 ### Application Cluster Settings
 
@@ -45,55 +47,60 @@ The [Mendix on Azure Portal](https://mendixonazure.mendix.com) provides a range 
 
 | Advanced Option          	| Description                                                                                                                                                                                                                                                                                           	| Editable after initial creation 	|
 |--------------------------	|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|---------------------------------	|
-| Enable Read Replica      	| Enables a read replica for direct app database access. Please review the detailed documentation for instructions on how to access this read replica.                                                                                                                                                  	| Yes                             	|
-| Compute Tier & Size      	| The DB Compute Tier applied to the shared PostgreSQL database instance used by all Mendix application environments in this cluster. This might need to be increased in case of application performance issues. Please consult Microsoft documentation for an [overview of the compute options](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-compute).         	| Yes                             	|
-| Storage Performance Tier 	| The Storage Performance Tier used for the shared PostgreSQL database instance used by all Mendix application environments in this cluster. This might needs to be increased in case of application performance issues. Please consult Microsoft documentation for an [overview of the storage options](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-storage).	| Yes                             	|
+| Enable Read Replica      	| Enables a read replica for direct app database access. Please review the [detailed documentation](/developerportal/deploy/mendix-on-azure/configuration/direct-database-access/) for instructions on how to access this read replica.                                                                                                                                                  	| Yes                             	|
+| Compute Tier & Size      	| Specifies the DB Compute Tier for the shared PostgreSQL database used by all Mendix app environments. You may need to increase it for better app performance. See Microsoft’s [compute options overview](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-compute).                	| Yes                             	|
+| Storage Performance Tier 	| Specifies the Storage Performance Tier for the shared PostgreSQL database. Consider increasing if performance issues arise. See Microsoft’s [storage options overview](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-storage).        	| Yes                             	|
 
 ### Observability Settings
 
 | Advanced Option               	| Description                                                                                                                                                                                                                                    	| Editable after initial creation 	|
 |-------------------------------	|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|---------------------------------	|
-| Managed Grafana Accessibility 	| Determines whether observability dashboard delivered via Managed Grafana will be accessible from the public internet or only via your private endpoints. Virtual network integration is required to access a private Managed Grafana instance. 	| Yes                             	|
+| Managed Grafana Accessibility 	| Determines whether the Managed Grafana observability dashboard is accessible publicly or only via private endpoints. [Virtual network peering](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks#network-peering) is required for private access.     	| Yes                             	|
 
 
 ## Self-service configuration available via Microsoft Azure Portal
 
-The following confgiuration options are available to the customer directly via [Microsoft Azure portal](https://portal.azure.com). These options can be modified directly on the resources deployed in the Managed Resource Group belonging to the Mendix on Azure Managed Application:
+The following configurations can be modified directly through the [Microsoft Azure portal](https://portal.azure.com) on resources within the Managed Resource Group of your Mendix on Azure Managed Application:
 
-| Configuration Option                                                                      	| Description                                                                                                   	|
-|-------------------------------------------------------------------------------------------	|---------------------------------------------------------------------------------------------------------------	|
-| Configure virtual network peering on the vNet hosting Mendix on Azure                     	| See [Configuring virtual network peering] for more information                                                	|
-| Ovwride DNS configuration on the vNet hosting Mendix on Azure                             	| See [Configuring virtual network peering] for more information                                                	|
-| Deploy Private Link Service to expose Mendix apps in other Azure virtual networks         	| See [using Private Link Services to expose Mendix apps in other Azure virtual networks] for more information  	|
-| Deploy Private Endpoints to establish connectivity between Mendix apps and other services 	| See [accessing private services via Private Endpoints] for more information                                   	|
+| Configuration Option                                                                            | Description                                                                                                             |
+|------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Configure virtual network peering on the vNet hosting Mendix on Azure                           | See [Implementing private connectivity using Azure Virtual Network Peering](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks#network-peering) |
+| Deploy Private Link Service to expose Mendix apps in other Azure virtual networks               | See [Using Private Link Service to expose Mendix apps in other Azure virtual networks](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks#pls) |
+| Deploy Private Endpoints to establish connectivity between Mendix apps and other services       | See [Accessing private services via Private Endpoints](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks#pe-internal)                          |
+| Override DNS configuration on the vNet hosting Mendix on Azure                                  | See [DNS name resolution towards resources in other networks](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks#name-resolution-dns-override)  |
 
-## Self-service configuration available via Mendix on Kubernetes Portal:
+### The Mendix on Azure Managed Resource Group {#mrg}
 
-Next to a  large range of options for configuring individiual app environments, the [Mendix on Kubernetes Portal](https://privatecloud.mendixcloud.com) also provides several cluster-wide options that are applicable to Mendix on Azure environments:
+Many Azure Portal configurations require modifying Azure resources located within the Managed Resource Group (MRG) of your Mendix on Azure environment. This resource group can be found via the Mendix on Azure Managed Application:
+
+{{< figure src="/attachments/deployment/mx-azure/mrg.png" class="no-border" >}}
+
+## Self-service configuration available via Mendix on Kubernetes Portal
+
+In addition to extensive individual app environment configuration options, the [Mendix on Kubernetes Portal](https://privatecloud.mendixcloud.com) also offers cluster-wide settings applicable to Mendix on Azure clusters:
  
-#### Adding additional Cluster Managers
+### Adding additional Cluster Managers
 
-After the initial cluster initialization, the Mendix account that performed the initialization automatically receives the Cluster Manager role on the newly created cluster.
+The Mendix account that initializes the cluster automatically gains the Cluster Manager role.
 
-The Mendix on Kubernetes portal allows you to add additional cluster managers to your Mendix on Azure cluster.
+The Mendix on Kubernetes portal lets you add additional cluster managers. These users can view and manage the cluster through both the Mendix on Azure and Mendix on Kubernetes portals, provided they have an Owner or Contributor role on the Azure Managed Application hosting the cluster.
 
-Once added, additional cluster managers can view and manage the cluster through both the Mendix on Azure portal and the Mendix on Kubernetes portal, as long as they hold an Owner or Contributor role on the Azure Managed Application hosting the cluster. These cluster managers have the same level of access to adjust cluster configuration as the user who originally created the cluster.
+Additional cluster managers have the same configuration privileges as the original initializer. They can also view and comment on support tickets related to the cluster via the Mendix on Azure portal but cannot access the full Zendesk ticket.
 
-In addition, they can access support tickets associated with the cluster via the Mendix on Azure portal and add additional comments. However, note that newly added cluster managers cannot access the full Zendesk ticket linked to the cluster’s support case.
-
-{{% alert color="info" %}}
-Before adding a cluster manager, ensure that the invited user signs in to the Mendix on Azure portal before accepting the invitation. If they have not signed in beforehand, the invitation may appear as accepted, but the user will not have access to any Mendix on Azure resources.
+{{% alert color="info" %}}  
+Before adding a cluster manager, ensure the invited user signs in to the Mendix on Azure portal prior to accepting the invitation. Otherwise, the invitation might show as accepted, but the user won't have access to any Mendix on Azure resources.  
 {{% /alert %}}
 
 ## Configuration assistance available by submitting a support ticket through the Mendix on Azure Portal
 
-The following configuration changes can only be manually executed by Mendix on your behalf and should be requested via a Support Tickets submitted through Mendix on Azure portal:
+Certain configuration changes require Mendix intervention and can only be performed by submitting a support ticket via the Mendix on Azure portal:
 
-| Configuration Change          	| Description                                                                                                                                                                                                                                                                                                                                                                                                                                       	|
-|-------------------------------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| PostgreSQL Maintenance Window 	| You can configure a dedicated maintenance window for the PostgreSQL database instance that hosts your Mendix app databases. Since maintenance activities during these windows may result in temporary app unavailability, you have the option to request a change from the default system-managed schedule to a custom schedule. For more information, please refer to the [Microsoft Documentation on configuring PostgreSQL maintenance windows](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-maintenance). 	|
+| Configuration Change           | Description                                                                                                                                                                                                                                                                                                                                                                                     |
+|-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PostgreSQL Maintenance Window | Configure a dedicated maintenance window for the PostgreSQL database hosting your Mendix app databases. Since maintenance might cause temporary app downtime, you can request a custom schedule instead of the default system-managed one. For more details, see the [Microsoft documentation on PostgreSQL maintenance windows](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-maintenance). |
 
-{{% alert color="info" %}} Please only submit Mendix on Azure support tickets through the Mendix on Azure portal. Tickets created via this portal automatically capture important contextual details, such as cluster identifiers and relevant logs, helping our support team address your issue swiftly and minimizing the likelihood of errors or delays {{% /alert %}}
-
+{{% alert color="info" %}}  
+Please submit Mendix on Azure support tickets exclusively through the Mendix on Azure portal. Tickets created here automatically capture vital context such as cluster identifiers and logs, enabling faster, more accurate support.  
+{{% /alert %}}
 
 

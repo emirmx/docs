@@ -5,158 +5,140 @@ description: "Provides information about the support model for Mendix on Azure."
 weight: 30
 ---
 
+{{% alert color="info" %}}  
+To facilitate sharing this information with internal stakeholders, a downloadable PDF version is available [here](https://blob.mendix.technology/mxonazure/MXonAzure-Support-Policy-for-Mendix-on-Azure.pdf). If discrepancies arise between this document and the PDF, the PDF version takes precedence.  
+{{% /alert %}}
+
 ## Introduction
 
-This document describes the technical support policies and limitations for Mendix on Azure, based on the shared responsibility model underlying the offering.
+This document outlines the technical support policies and limitations for Mendix on Azure, based on the shared responsibility model that underpins the offering.
 
-{{% alert color="info" %}}Before you begin, familiarize yourself with the general Mendix support policies, as outlined in [Mendix Support](/support/).{{% /alert %}}
+{{% alert color="info" %}}  
+Before proceeding, familiarize yourself with the general Mendix support policies available in [Mendix Support](/support/).  
+{{% /alert %}}
 
 ## Shared Responsibility Model for Mendix on Azure
 
-Under the shared responsibility model for Mendix on Azure deployments, Mendix, Microsoft, and customer organizations all have their own responsibilities in the deployment process and business-as-usual operations. Familiarize yourself with the responsibilities listed below:
+Mendix on Azure deployments follow a shared responsibility model where Mendix, Microsoft, and customers have distinct roles throughout deployment and ongoing operations. Below are the key responsibilities:
 
 ### Microsoft Responsibilities
 
-Microsoft is responsible for operating and securing the Azure services underlying the Mendix on Azure service. This includes the following services:
+Microsoft manages and secures the Azure services that underlie Mendix on Azure. This includes:
 
-* Compute
-    * Azure Kubernetes service
-* Storage
-    * Azure Blob Storage
-    * Azure Container Registry
-* Database
-    * PostgreSQL Flexible Server
-* Networking
-    * Virtual networks
-    * Load balancer
-    * Private endpoints
-* Monitoring
-    * Managed Grafana and Prometheus
+- **Compute:** Azure Kubernetes Service (AKS)  
+- **Storage:** Azure Blob Storage, Azure Container Registry  
+- **Database:** PostgreSQL Flexible Server  
+- **Networking:** Virtual Networks, Load Balancer, Private Endpoints  
+- **Monitoring:** Managed Grafana and Prometheus  
 
 ### Mendix Responsibilities
 
-Mendix is responsible for orchestrating, operating, maintaining, securing, and supporting the Mendix on Azure service. This includes the following tasks:
+Mendix is responsible for orchestrating, operating, maintaining, securing, and supporting the Mendix on Azure service, including:
 
-* Orchestrating - Ensure that the underlying Azure services function together as one cohesive offering.
-* Operating - Resolve regressions in how the underlying Azure services come together as one service.
-* Maintaining - Ensure that the service absorbs changes in the underlying Azure services without impact on customers.
-* Securing - Ensure that the service remains compliant with relevant security best practices and frameworks.
-* Supporting - Reactively address customer issues with using the service.
+- **Orchestrating:** Ensuring Azure services work cohesively as a single offering  
+- **Operating:** Fixing regressions in service integration  
+- **Maintaining:** Adapting to Azure service changes without affecting customers  
+- **Securing:** Maintaining compliance with security best practices and frameworks  
+- **Supporting:** Reactively resolving customer issues with the service  
 
 ### Customer Responsibilities
 
-Customers are responsible for developing, deploying, operating, integrating, and securing apps on top of the Mendix on Azure service. This includes the following tasks:
+Customers are accountable for developing, deploying, operating, integrating, and securing Mendix applications running on Mendix on Azure, including:
 
-* Developing - Create apps that deliver business outcomes.
-* Deploying - Deploy apps.
-* Operating - Monitor app behavior and address deviations.
-* Integrating - Securely integrate apps with backend services and IAM.
-* Securing - Comply with Mendix best practices for secure apps.
+- **Developing:** Building apps that achieve business goals  
+- **Deploying:** Deploying applications  
+- **Operating:** Monitoring app behavior and addressing issues  
+- **Integrating:** Securing integrations with backend services and IAM  
+- **Securing:** Following Mendix best practices for secure apps  
 
 ## Available Customizations
 
-When a Mendix on Azure cluster is initialized, all components that are required to host Mendix apps are automatically deployed inside an Azure Resource group of your choosing. Mendix and Microsoft regularly push all required updates to your cluster to ensure that it remains compliant and secure.
+During cluster initialization, all components needed to host Mendix apps are deployed automatically inside an Azure Resource Group you select. Mendix and Microsoft regularly apply mandatory automated updates to keep clusters compliant and secure.
 
-Because the updates are automated for all Mendix on Azure customers, you cannot modify any of these components directly in Azure. You also cannot influence the upgrade process. Because of that, you can only implement customizations that are offered in the Mendix on Azure and Mendix on Kubernetes portals. Currently this includes the following customizations:
+Due to this automation, direct modification of these components in Azure or control over the upgrade process is not possible. Customizations are limited to options exposed via the Mendix on Azure, Microsoft Azure, and Mendix on Kubernetes portals. Current allowed customizations include those documented in the [Configuration section](/developerportal/deploy/mendix-on-azure/configuration).
 
-* Adding custom tags to Azure resources
-* Changing the Azure Kubernetes Service tier
-* Changing the Azure Kubernetes agent node VM type
-* Overriding the maximum AKS agent node pool (upper autoscaling limit)
-* Changing the Azure for PostgreSQL Flexible server computing SKU and storage performance tier
-* Switching to internal load balancer exposure to enable apps that can only be reached privately
-* Changing IP address prefix of the subnet hosting AKS nodes (only at initial deployment)
-
-Any customization beyond what is offered as self-service through the Mendix on Azure and Mendix on Kubernetes portal is not possible.
+Any modifications outside this documented scope are not supported.
 
 ## Support Tickets
 
-Since your Mendix on Azure resources contain private and sensitive data, Mendix Support cannot access your resources. To be able to troubleshoot incidents on your behalf, the Mendix on Azure portal allows you to raise a support ticket that includes recent logs for your environment, as well as provide consent to Mendix personnel for accessing your resources temporarily while processing your support ticket.
+Since Mendix on Azure resources contain sensitive data, Mendix Support does not have direct access. To enable effective troubleshooting, you can create support tickets through the Mendix on Azure portal, which automatically include recent logs.
 
 ### Raising Support Tickets
 
-To raise a support ticket, press **Support Center** on the **Cluster Overview** page, as shown in the following figure:
+Open the [Mendix on Azure Portal](https://mendixonazure.mendix.com) and select **Support Center** on the **Cluster Overview** page:
 
 {{< figure src="/attachments/deployment/mx-azure/support-center-option.png" class="no-border" >}}
 
-This opens the **Support Tickets** page, which shows your current and past support issues. To open a new ticket, click **Open a Ticket** and fill out the required information.
+This opens the **Support Tickets** page, where you can view existing tickets or create a new one by clicking **Open a Ticket** and completing the form.
 
 {{% alert color="info" %}}  
-By opening a support ticket, you consent to sharing the relevant logs with the Mendix Support team for the purpose of troubleshooting the reported issue.
+By submitting a support ticket, you consent to sharing the pertinent logs with the Mendix Support team to assist in issue resolution.  
 {{% /alert %}}
 
-When you create a support ticket in the Mendix on Azure portal, a Zendesk ticket is automatically created for you. To view it, click **Go to ticket**. You can then add additional comments on the Zendesk ticket if required.
+After submitting, a Zendesk ticket is automatically created. Access it by clicking **Go to ticket** to add comments or check status.
 
 {{< figure src="/attachments/deployment/mx-azure/support-overview.png" class="no-border" >}}
 
-Your tickets can have the following statuses:
+Ticket statuses include:
 
-* **On Hold**
-* **Awaiting your reply**
-* **Solved**
+- **On Hold**  
+- **Awaiting your reply**  
+- **Solved**
 
-The status is updated based on the current status of the ticket in the Zendesk. To see the latest status of the ticket, click the **Refresh** button.
+Status updates reflect the current Zendesk ticket state. Refresh to view the latest.
 
 {{% alert color="info" %}}  
-If you delete a cluster, all support tickets opened for that cluster are also deleted.
+If you [offboard](/developerportal/deploy/mendix-on-azure/offboarding) your Mendix on Azure cluster, all related support tickets will be deleted.  
 {{% /alert %}}
 
 ### Automatic Support Tickets {#tickets-automatic}
 
-Mendix on Azure can also automatically create support tickets for you. If a cluster fails to initialize and rerunning it manually does not resolve the issue, a support request is automatically created in the Support Center. Mendix Support is notified about the issue through Zendesk. You can follow the link from the support ticket to Zendesk to view its status or add additional comments.
+If cluster initialization fails and manual retries do not resolve the issue, Mendix on Azure automatically creates a support ticket. Mendix Support is notified and will reach out to you. You can follow ticket progress or add comments via Zendesk.
 
 ## Service Updates and Releases
 
-All components in Mendix on Azure are managed and are upgraded to newly available versions on a quarterly basis by Mendix and Microsoft. Mendix conducts pro-active regression testing to ensure the updated set of components keep working well together.
+Mendix and Microsoft manage all components, applying upgrades quarterly with proactive regression testing to ensure stability.
 
-All node-level OS components in Mendix on Azure receive weekly security patches (as per Microsoft's NodeImage auto-upgrade Node OS upgrade channel). In case critical security patches are found in the Mendix components running in your cluster (i.e. Operator and Agent) these will be patched as soon as possible (but at the end of the quarter latest). 
+Node-level OS components receive weekly security patches through Microsoft's NodeImage auto-upgrade process. Critical security patches for Mendix components (e.g., Operator, Agent) are applied promptly but no later than quarter-end.
 
-These quarterly and weekly upgrade cadences are fully automatic and cannot be influenced by the customer.
+These automated upgrade cadences cannot be modified by customers.
 
-## Mendix Support Coverage
+## Mendix Support Coverage Examples
 
-Mendix provides technical support for the following example scenarios:
+Supported scenarios:
 
-* Cluster initialization fails despite passing pre-flight validation checks.
-* The customer is impacted by issues with service availability and is unable to recover the situation using the self-service recovery option.
+- Cluster initialization failures despite passing pre-flight checks  
+- Service availability issues not resolvable via self-service recovery  
 
-Mendix does not provide technical support in the following example scenarios:
+Not supported scenarios:
 
-* Requests about how to integrate with other Azure Services that are beyond the scope of the product. Such requests can be supported by Mendix Expert Services or Mendix (infra) partners as part of (paid) consultancy engagements.
-* Requests to make configuration changes to underlying Azure services beyond what is offered as self-service in the Mendix on Azure and Mendix on Kubernetes Portal. Since such changes are not possible with this service, customer may consider to adopt Mendix on Kubernetes instead.
-* Requests for any other type of customization on the resources deployed in customer's Azure subscription. Since such customization is not possible with this service, customer may consider to adopt Mendix on Kubernetes instead.
-* Requests to fix security vulnerabilities in one of the managed components beyond what is automatically pushed during the weekly and quarterly update cycles. 
+- Consultations on integrations with other Azure services outside the Mendix on Azure scope; consider Mendix Expert Services or partners for consultancy  
+- Configuration changes to Azure services beyond self-service options; Mendix on Kubernetes may offer more flexibility  
+- Customizations to Azure subscription resources beyond the supported scope  
+- Manual fixes for security vulnerabilities beyond the automated update cycles  
 
 ## Customer Responsibilities for Mendix on Azure Resources
 
-The customer is responsible for optionally integrating the solution with the rest of their internal network (for example, to access backend services) by correctly configuring VNet Peerings, routing tables and DNS name resolution as per documentation.
+Customers must manage integration with internal networks by properly configuring VNet Peerings, routing, and DNS as documented.
 
-The customer is responsible for reporting service availability issues to Mendix in the case these cannot be resolved using self-service options.
-
-If the customer chooses to deploy the solution into a network that limits egress, it is the customer's responsibility that appropriate egress exceptions are made for the underlying Azure services (particularly AKS).
+Customers should report service availability issues to Mendix if self-service options do not resolve them.
 
 ## Issues and Bugs in Underlying Azure Services
 
-Because Mendix on Azure relies on several rapidly evolving underlying Azure services (especially AKS), bugs and issues may arise in those services. Some of these limitations and bugs cannot be worked around within Mendix on Azure itself, but must be fixed in the underlying Azure services.
+Mendix on Azure depends on evolving Azure services (notably AKS). Some bugs may require upstream fixes beyond Mendix control.
 
-Mendix strives to minimize the impact of such bugs and issues for our customers in the following ways:
+Mendix mitigates these impacts by:
 
-* By conducting quarterly testing to detect regressions early and work around them to the degree that we can.
-* By working with Microsoft Support and engineering teams in case a bug or issue needs to be resolved upstream.
-* By communicating to our customers why an upstream bug or issue affects their Mendix on Azure cluster, and providing workarounds where possible.
+- Quarterly regression testing and workarounds where feasible  
+- Collaboration with Microsoft Support and engineering for upstream fixes  
+- Transparent communication and guidance on workarounds for affected customers  
 
 ## Compliance Frameworks
 
-The solution is being benchmarked against SOC2 Azure Policy Compliance controls. Security highlights include the following:
-
-* Deploys a managed Mendix environment within the customer's Azure subscription.
-* Incorporates built-in security features and adheres to Azure Best Practices.
-* Utilizes reporting tools to prove compliance.
-
-There are some exceptions; for more information, see [SOC 2 Type 2 Compliance Exceptions](https://docs.mendix.com/developerportal/deploy/mendix-on-azure/#soc-2-type-2-compliance-exceptions).
+Mendix on Azure aligns with SOC 2 Azure Policy automated controls. See [SOC 2 Type 2 Compliance Exceptions](/developerportal/deploy/mendix-on-azure/security-and-compliance/#soc2) for details.
 
 ## Known Limitations
 
-* Mendix on Azure only supports hosting apps on Mendix versions 10.10 or later. Any app on an earlier version will fail to deploy successfully.
-* Due to the managed nature of this product, the following Mendix on Kubernetes Deploy APIs are irrelevant and thus unavailable to customers: Create/Edit/Delete cluster and Create/Update/Delete namespace. All other build and deploy APIs are available and function as usual.
-* Because Mendix on Azure is directly dependent on Mendix on Kubernetes, issues that affect the Mendix on Kubernetes may also affect Mendix on Azure deployments. For example, if the Mendix on Kubernetes is down, it is not possible to create new Mendix on Azure clusters.
+- Only apps on Mendix version 10.10 or later are supported; earlier versions will fail deployment  
+- Certain Mendix on Kubernetes APIs (Create/Edit/Delete cluster and namespace operations) are unavailable in Mendix on Azure due to managed architecture; other APIs function normally  
+- Downtime or issues with Mendix on Kubernetes may affect Mendix on Azure availability (e.g., cluster creation not possible)

@@ -17,7 +17,7 @@ To deploy Mendix on Azure, make sure you have the following available:
 * An Azure account with the following permissions:
     * Permission to grant admin consent on the Mendix on Azure portal app registration (e.g. Global Administrator in Entra ID)
     * Owner role assigned on the target subscription (temporary elevated Privileged Identity Management - PIM - access does not suffice)
-* In case you want to integrate the Mendix on Azure environment into your existing corporate network, be sure to consider the [network configuration options](advanced-configuration/#networking-options) that cannot be changed after initial environment deployment
+* In case you want to integrate the Mendix on Azure environment into your existing corporate network, be sure to consider the [network configuration options](/developerportal/deploy/mendix-on-azure/configuration/#networking-settings) that cannot be changed after initial environment deployment
 
 ## Deploying the Mendix on Azure offering from Azure Marketplace
 
@@ -55,7 +55,7 @@ After successfully connecting the accounts, the Mendix Portal shows a list of cl
 
     {{< figure src="/attachments/deployment/mx-azure/preflight-check-successful.png" class="no-border" >}}
 
-10. In the **Provision** screen, optionally add any custom tags that will be used to tag deployed resoources and optionally review the configuration in the **Advanced Options** section. Please read the Advanced Configuration documentation for more information on the options provided. The default settings suffice for a test deployment. Note that certain settings have influence on the Azure costs charged by Microsoft.
+10. In the **Provision** screen, optionally add any custom tags that will be used to tag deployed resoources and optionally review the configuration in the **Advanced Options** section. Please read the [configuration documentation](/developerportal/deploy/mendix-on-azure/configuration/) for more information on the options provided. The default settings suffice for a test deployment. Note that certain settings have influence on the Azure costs charged by Microsoft.
 
 11. In the **Review & Initialize** screen, review the information and click **Initialize**.
 
@@ -82,11 +82,11 @@ Some issues can be resolved by retrying the deployment. You can do this by click
 
 {{% alert color="info" %}} Due to the managed nature of Mendix on Azure, creating additional namespaces within a Mendix on Azure cluster is not supported. Similarly, it is not possible to create a Mendix on Azure cluster using APIs. Furthermore, Mendix on Azure clusters cannot be deleted through either the Mendix on Kubernetes Portal or the Mendix on Azure Portal. 
 
-For detailed steps on how to properly delete a Mendix on Azure cluster, see [Deleting Mendix on Azure](mx-azure-delete.md). {{% /alert %}}
+For detailed steps on how to properly delete a Mendix on Azure cluster, see [Offboarding Mendix on Azure](/developerportal/deploy/mendix-on-azure/offboarding/). {{% /alert %}}
 
 ## Deploying an Mendix app to a Mendix on Azure Cluster
 
 After creating your cluster in Microsoft Azure, you can proceed to deploy your applications to it. The deployment process is identical to that used with Mendix on Kubernetes. For more information, see [Deploying a Mendix App to a Mendix on Kubernetes Cluster](/developerportal/deploy/private-cloud-deploy/).
 
-{{% alert color="info" %}} Mendix on Azure app environments will begin to consume cloud tokens starting from 120 days after their creation. For more information, read [Licensing Mendix on Azure](mx-azure-licensing.md).  {{% /alert %}}
+{{% alert color="info" %}} Mendix on Azure app environments will begin to consume cloud tokens starting from 120 days after their creation. For more information, see [Licensing Mendix on Azure](/developerportal/deploy/mendix-on-azure/license/).  {{% /alert %}}
 

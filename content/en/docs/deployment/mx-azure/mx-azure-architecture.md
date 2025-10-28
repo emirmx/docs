@@ -1,7 +1,7 @@
 ---
 title: "Architecture"
 url: /developerportal/deploy/mendix-on-azure/architecture/
-weight: 10
+weight: 6
 description: "Describes the security & compliance considerations for apps running on Mendix on Azure."
 ---
 ## Architecture
