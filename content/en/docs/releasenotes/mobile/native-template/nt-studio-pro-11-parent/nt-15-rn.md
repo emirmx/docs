@@ -5,6 +5,14 @@ weight: 10
 description: "Native Template 15"
 ---
 
+## 15.4.2 {#1542}
+
+**Release date: October 27, 2025**
+
+### Improvements
+
+- We have installed react-native-edge-to-edge to ensure proper layout behavior and visual consistency on Android 15 and newer devices.
+
 ## 15.4.1 {#1541}
 
 **Release date: October 7, 2025**
