@@ -63,6 +63,16 @@ These are the known limitations for Mac:
 * Start from spreadsheet cannot be used at this time 
 * If you have already installed JDK previously, it may not be picked up properly during installation. You can either configure this manually or remove all references to JDK and run the installer again.
 
+#### Known Issues with Windows Patches
+
+##### Unexpected Error `ERR_CONNECTION_RESET` in Panels and Editors
+
+With the October 14, 2025 update of Windows 11, Studio Pro 9, 10, and 11 can become unusable. Studio Pro shows errors in different panels (for example design properties and toolbox) and editors (for example page, microflow, nanoflow, and rule editor).
+
+If you see the message `Hmmm... can't reach this page` with an error code of `ERR_CONNECTION_RESET`, in a tool panel or editor, your workstation is probably affected.
+
+The fix for this is to install *Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.439.210.0 or above)*.
+
 ### Hardware Specifications {#hardware}
 
 Mendix Studio Pro will run on any machine which can run the [minimum requirements for running Windows 10 64-bit](https://www.microsoft.com/en-gb/windows/windows-10-specifications#primaryR2), with the following additional requirements:
