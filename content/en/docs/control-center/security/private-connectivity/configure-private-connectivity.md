@@ -107,7 +107,7 @@ To add a nameserver for a domain that you have already added to your network, fo
 
 To remove a nameserver for a domain that you have already added to your network, follow these steps:
 
-1. Click **More Options** ({{< icon name="three-dots-menu-horizontal" >}}) for a network, then select **Add DNS**.
+1. Click **More Options** ({{< icon name="three-dots-menu-horizontal" >}}) for a network, then select **Edit DNS**.
 2. In the **Edit DNS** dialog box, find the domain that you want to delete a nameserver for.
 3. Click **Delete Nameserver** for the nameserver you want to delete.
 4. Confirm that you want to delete the nameserver.
