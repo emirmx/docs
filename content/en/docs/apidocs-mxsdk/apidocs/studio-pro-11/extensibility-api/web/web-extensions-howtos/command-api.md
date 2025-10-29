@@ -19,7 +19,7 @@ Before starting this how-to, make sure you have completed the following prerequi
 
 The Commands API allows you to register a reusable command that can be attached to menus and context menus. At this time, two APIs support this feature:
 
-* [Documents API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/)
+* [Documents API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/documents-api/)
 * [App Explorer API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/app-explorer-api/)
 
 ## Using `registerCommand` API
