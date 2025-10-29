@@ -15,15 +15,15 @@ Mendix on Azure offers a streamlined, fully integrated approach to deploying Men
 
 By eliminating manual setup and maintenance, Mendix on Azure enables your teams to:
 
-* Deliver business value faster instead of managing infrastructure
-* Accelerate time-to-market and reduce deployment bottlenecks
-* Minimize cross-team dependencies and technical complexity
-* Deploy applications in under 30 minutes without specialized cloud expertise
-* Lower operational costs while maintaining security, compliance, and consistency
+* Deliver business value faster instead of managing infrastructure.
+* Accelerate time-to-market and reduce deployment bottlenecks.
+* Minimize cross-team dependencies and technical complexity.
+* Deploy applications in under 30 minutes without specialized cloud expertise.
+* Lower operational costs while maintaining security, compliance, and consistency.
 
 ## Comparing Mendix on Azure and Mendix on Kubernetes
 
-Mendix on Azure is a deployment option that uses the same core Mendix engine as Mendix on Kubernetes but is delivered in a standardized way within Azure environments.
+Mendix on Azure is a deployment option that uses the same core Mendix engine as Mendix on Kubernetes, but is delivered in a standardized way within Azure environments.
 
 While Mendix on Kubernetes gives organizations flexibility and the ability to host applications securely behind their own firewall, it demands more hands-on configuration and can take longer to realize full value when compared to deployments managed by public Mendix Cloud.​
 
