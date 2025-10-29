@@ -22,13 +22,13 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 
 ### Release date: October 16, 2025
 
-* After being added to a [Mendix on Azure](/developerportal/deploy/mendix-on-azure/) cluster in the Mendix on Kubernetes Portal, a [cluster manager](/developerportal/deploy/mendix-on-azure/installation/#adding-a-new-cluster-manager) can now view and edit the cluster from the Mendix on Azure Portal.
+* After being added to a [Mendix on Azure](/developerportal/deploy/mendix-on-azure/) cluster in the Mendix on Kubernetes Portal, a cluster manager can now view and edit the cluster from the Mendix on Azure Portal.
 * We have resolved the validation error for PostgreSQL tiers that occurred when enabling Read replicas on existing clusters. 
 
 ### Release date: September 25, 2025
 
 * In order to ensure app availability during infrastructure upgrades, the number of default replicas for newly created Mendix apps is set to 2.
-* To provide greater flexibility in data access, we have added a new feature that allows you to **Enable Read Replica Database access** when creating new clusters. Please note that this feature is set to **No** (disabled) by default. For details on how to enable it, see [Read Replicas for Postgres Databases](/developerportal/deploy/mendix-on-azure/read-replica-database-access/).
+* To provide greater flexibility in data access, we have added a new feature that allows you to **Enable Read Replica Database access** when creating new clusters. Please note that this feature is set to **No** (disabled) by default.
 * We have improved the labels on the default Grafana dashboard to better reflect the metrics being displayed.
 * We have fixed an issue where support tickets created by users were not visible to other users in the same subscription.
 * We have rephrased some wording and updated the structure on the **Initialize Cluster** and **Edit Cluster** pages for better readability and understanding.
