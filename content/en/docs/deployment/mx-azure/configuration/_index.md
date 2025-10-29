@@ -29,9 +29,9 @@ The [Mendix on Azure Portal](https://mendixonazure.mendix.com) provides a variet
 | --- | --- | --- |
 | Load Balancer Type | Controls whether your applications are reachable publicly or only privately via your own (Virtual) Network or Private Endpoints. | Yes |
 | AKS Node CIDR IP Range | Defines the IP address range on the VNet hosting AKS cluster nodes. This can only be set during initial deployment and should align with your organization's IP plan if you plan to connect Mendix on Azure to other networks via peering. Default is acceptable when no interconnection is required. | No |
-| AKS Network Isolated Cluster | When set to true will lead to a cluster without egress configuration, please carefully read the [documentation on cluster networking modes ](/developerportal/deploy/mendix-on-azure/configuration/ingress-egress) to understand the implications | No |
+| AKS Network Isolated Cluster | When set to true will lead to a cluster without egress configuration, please carefully read the [documentation on cluster networking modes ](/developerportal/deploy/mendix-on-azure/configuration/ingress-egress/) to understand the implications | No |
 
-For more information, see [Configuring Ingress and Egress](/developerportal/deploy/mendix-on-azure/configuration/ingress-egress).
+For more information, see [Configuring Ingress and Egress](/developerportal/deploy/mendix-on-azure/configuration/ingress-egress/).
 
 ### Application Cluster Settings
 
@@ -53,7 +53,7 @@ For more information, see [Configuring Ingress and Egress](/developerportal/depl
 
 | Advanced Option | Description	| Editable after initial creation |
 | ---	| ---	| ---	|
-| Managed Grafana Accessibility 	| Determines whether the Managed Grafana observability dashboard is accessible publicly or only via private endpoints. [Virtual network peering](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks#network-peering) is required for private access.	| Yes |
+| Managed Grafana Accessibility 	| Determines whether the Managed Grafana observability dashboard is accessible publicly or only via private endpoints. [Virtual network peering](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks/#network-peering) is required for private access.	| Yes |
 
 ## Self-service configuration available via Microsoft Azure Portal
 
@@ -61,10 +61,10 @@ The following configurations can be modified directly through the [Microsoft Azu
 
 | Configuration Option | Description |
 | --- | --- |
-| Configure virtual network peering on the vNet hosting Mendix on Azure | For more information, see [Implementing private connectivity using Azure Virtual Network Peering](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks#network-peering). |
-| Deploy Private Link Service to expose Mendix apps in other Azure virtual networks | For more information, see [Using Private Link Service to expose Mendix apps in other Azure virtual networks](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks#pls). |
-| Deploy Private Endpoints to establish connectivity between Mendix apps and other services | For more information, see [Accessing private services via Private Endpoints](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks#pe-internal). |
-| Override DNS configuration on the vNet hosting Mendix on Azure | For more information, see [DNS name resolution towards resources in other networks](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks#name-resolution-dns-override). |
+| Configure virtual network peering on the vNet hosting Mendix on Azure | For more information, see [Implementing private connectivity using Azure Virtual Network Peering](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks/#network-peering). |
+| Deploy Private Link Service to expose Mendix apps in other Azure virtual networks | For more information, see [Using Private Link Service to expose Mendix apps in other Azure virtual networks](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks/#pls). |
+| Deploy Private Endpoints to establish connectivity between Mendix apps and other services | For more information, see [Accessing private services via Private Endpoints](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks/#pe-internal). |
+| Override DNS configuration on the vNet hosting Mendix on Azure | For more information, see [DNS name resolution towards resources in other networks](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks/#name-resolution-dns-override). |
 
 ### The Mendix on Azure Managed Resource Group {#mrg}
 
