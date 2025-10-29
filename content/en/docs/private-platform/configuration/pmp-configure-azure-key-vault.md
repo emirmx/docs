@@ -226,6 +226,10 @@ spec:
 
 #### Configuring the Kubernetes Service Account
 
+To enable Azure AD Workload Identity, the Kubernetes Service Account used by your Private Mendix Platform application needs specific annotations to link it to the Azure User-Assigned Managed Identity. You have two options: use a dedicated custom Service Account or use the existing default Service Account in your application's namespace.
+
+Using a Custom Service Account is recommended for better isolation. This involves creating a new Service Account specifically for your Mendix application to access secrets. The default service account already exists in every Kubernetes namespace. It's simpler but provides less isolation if other applications in the same namespace also use the default Service Account.
+
 To configure the Kubernetes service account, perform the following steps:
 
 1. Create a Kubernetes service account with the name you specified above (for example, **pmp-secret-accessor**).
