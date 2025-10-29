@@ -7,13 +7,13 @@ weight: 20
 
 ---
 
-## Introduction {#introduction}
+## Introduction
 
-The [Mistral Connector](LINK!) allows you to integrate generative AI capabilities into your Mendix application. Since the Mistral API is compatible with [OpenAI API](https://platform.openai.com/), this module mainly focuses on Mistral specific UI while reusing the operations inside of the OpenAI connector. 
+The [Mistral Connector](https://marketplace.mendix.com/link/component/248276) allows you to integrate generative AI capabilities into your Mendix application. Since the Mistral API is compatible with [OpenAI API](https://platform.openai.com/), this module mainly focuses on Mistral specific UI while reusing the operations inside of the OpenAI connector. 
 
 The current scope covers text generation use cases based on the [Chat Completions API](https://docs.mistral.ai/api/endpoint/chat) and embedding use cases based on the [Embeddings API](https://docs.mistral.ai/api/endpoint/embeddings). 
 
-### Typical Use Cases {#use-cases}
+### Typical Use Cases
 
 The Mistral Connector is commonly used for text generation and embeddings. These use cases are described in more detail below.
 
@@ -47,9 +47,9 @@ The Mistral connector supports Knowledge bases from providers such as pgVector, 
 
 With the current version, Mendix supports the Chat Completions API for [text generation](https://docs.mistral.ai/api/endpoint/chat) and the Embeddings API for [vector embeddings](https://docs.mistral.ai/api/endpoint/embeddings).
 
-### Prerequisites {#prerequisites}
+### Prerequisites
 
-To use this connector, you need to sign up for a Mistral account and create an API key. For more information, see the [quickstart guide](https://docs.mistral.ai/getting-started/quickstart).
+To use this connector, you need to sign up for a Mistral account and create an API key. For more information, see the [Quickstart guide](https://docs.mistral.ai/getting-started/quickstart).
 
 ### Dependencies {#dependencies}
 
@@ -57,13 +57,13 @@ To use this connector, you need to sign up for a Mistral account and create an A
 * [GenAI Commons module](/appstore/modules/genai/commons/)
 * [Encryption module](/appstore/modules/encryption/)
 * [Community Commons module](/appstore/modules/community-commons-function-library/)
-* [OpenAI connector](/appstore/modules/genai/external-platforms/openai/)
+* [OpenAI connector](/appstore/modules/genai/reference-guide/external-connectors/openai/)
 
-## Installation {#installation}
+## Installation
 
 Install all required modules from the Mendix Marketplace as listed in the [Dependencies](#dependencies) section above.
 
-To import the [Mistral Connector](add) into your app, follow the instructions in [How to Use Marketplace Content](/appstore/use-content/).
+To import the [Mistral Connector](https://marketplace.mendix.com/link/component/248276) into your app, follow the instructions in [How to Use Marketplace Content](/appstore/use-content/).
 
 ## Configuration {#configuration}
 
@@ -96,7 +96,7 @@ A [Deployed Model](/appstore/modules/genai/genai-for-mx/commons/#deployed-model)
     | Field | Description |
     | -------------- | ------------------------------------------------------------ |
     | Display name | This is the reference for app users when selecting the appropriate model to use. |
-    | Model name | This is the technical reference of the model. For Mistral, this is equal to the [model ids](https://docs.mistral.ai/getting-started/models), for example `mistral-medium-2508`. |
+    | Model name | This is the technical reference of the model. For Mistral, this is equal to the [model IDs](https://docs.mistral.ai/getting-started/models), for example `mistral-medium-2508`. |
     | Output modality | Describes the output of the model. This connector currently supports text, embedding, and image. |
     | Input modality| Describes the input modalities accepted by the model. This connector currently supports text and image. |
     
@@ -143,7 +143,7 @@ Mendix also strongly advises that you build user confirmation logic into functio
 
 For more information, see [Function Calling](/appstore/modules/genai/function-calling/).
 
-#### Adding knowledge {#chatcompletions-add-knowledge-base}
+#### Adding Knowledge {#chatcompletions-add-knowledge-base}
 
 Adding knowledge bases to a call enables LLMs to retrieve information when a related topics are mentioned. Including knowledge bases in the request object along with a name and description, enables the model to intelligently decide when to let the Mendix app call one or more predefined knowledge bases. This allows the assistant to include the additional information in its response.
 
@@ -195,7 +195,7 @@ Purely to generate embeddings, it does not matter whether the ChunkCollection co
 
 Note that, currently, the knowledge base interaction (e.g. inserting or retrieving chunks) is not supported for OpenAI compatible APIs. For more information on possible ways to work with knowledge bases for embedding generation, see [PgVector Knowledge Base](/appstore/modules/pgvector-knowledge-base/) and [setting up a Vector Database](/appstore/modules/genai/pgvector-setup/).
 
-### Exposed Microflow Actions for OpenAI compatible APIs {#exposed-microflows}
+### Exposed Microflow Actions for OpenAI-compatible APIs {#exposed-microflows}
 
 T exposed microflow actions used to construct requests via drag-and-drop specifically for OpenAI-compatible APIs are listed below. You can find these microflows in the **Toolbox** of Studio Pro. Note that these flows are only required if you need to add Mistral-specific options to your requests. For generic functionality, can use the GenAI Commons toolbox actions to [create the required Request](/appstore/modules/genai/genai-for-mx/commons/#genai-request-building) and [handle the Response](/appstore/modules/genai/genai-for-mx/commons/#genai-response-handling). These actions are available under the **GenAI (Request Building)** and **GenAI (Response Handling)** categories in the Toolbox.
 
@@ -236,12 +236,11 @@ Mistral supports the following [tool choice types](/appstore/modules/genai/genai
 | any                    | any     |
 | none                   | none    |
 
-
 ### Knowledge Base Retrieval
 
 When adding a [KnowledgeBaseRetrieval](/appstore/modules/genai/genai-for-mx/commons/#add-knowledge-base-to-request) object to your request, there are some optional parameters. Currently, only the MaxNumberOfResults parameter can be added to the search call and the others (`MinimumSimilarity` and `MetadataCollection`) are not compatible with the Mistral API.
 
-## GenAI showcase Application {#showcase-application}
+## GenAI Showcase Application {#showcase-application}
 
 For more inspiration or guidance on how to use those microflows in your logic, Mendix recommends downloading the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of example use cases.
 
