@@ -155,13 +155,13 @@ Note that the retrieval process is independent of the model provider and can be 
 
 #### Vision {#chatcompletions-vision}
 
-Vision enables models like Mistral Medium 3.1 and Mistral Small 3.2 to interpret and analyze images, allowing them to answer questions and perform tasks related to visual content. This integration of computer vision and language processing enhances the model's comprehension and makes it valuable for tasks involving visual information. To make use of vision with Mistral, an optional [FileCollection](/appstore/modules/genai/genai-for-mx/commons/#filecollection) containing one or multiple images must be sent along with a single message.
+Vision enables models like Mistral Medium 3.1 and Mistral Small 3.2 to interpret and analyze images, allowing them to answer questions and perform tasks related to visual content. This integration of computer vision and language processing enhances the model's comprehension and makes it valuable for tasks involving visual information. To make use of vision with Mistral connector, an optional [FileCollection](/appstore/modules/genai/genai-for-mx/commons/#filecollection) containing one or multiple images must be sent along with a single message.
 
 For `Chat Completions without History`, `FileCollection` is an optional input parameter. 
 
 For `Chat Completions with History`, `FileCollection` can optionally be added to individual user messages using [Chat: Add Message to Request](/appstore/modules/genai/genai-for-mx/commons/#chat-add-message-to-request).
 
-Use the two microflow actions from the OpenAI specific toolbox [Files: Initialize Collection with OpenAI File](#initialize-filecollection) and [Files: Add OpenAIFile to Collection](#add-file) to construct the input with either `FileDocuments` (for vision, it needs to be of type `Image`) or `URLs`. There are similar file operations exposed by the GenAI commons module that can be used for vision requests with the OpenAIConnector for Mistral; however, these generic operations do not support the optional `Detail` attribute which is specific for OpenAI compatible APIs.
+Use the two microflow actions from the OpenAI specific toolbox [Files: Initialize Collection with OpenAI File](#initialize-filecollection) and [Files: Add OpenAIFile to Collection](#add-file) to construct the input with either `FileDocuments` (for vision, it needs to be of type `Image`) or `URLs`. There are similar file operations exposed by the GenAI commons module that can be used for vision requests with the OpenAIConnector for Mistral. However, these generic operations do not support the optional OpenAI API-specific `Detail` attribute.
 
 For more information on vision, see [Mistral](https://docs.mistral.ai/capabilities/vision) documentation.
 
@@ -169,11 +169,9 @@ For more information on vision, see [Mistral](https://docs.mistral.ai/capabiliti
 
 Document chat enables the model to interpret and analyze PDF documents, allowing it to answer questions and perform tasks based on the document content. Document chat is currently not supported by the Mistral connector as it requires its own API. Check out [Document AI](https://docs.mistral.ai/capabilities/document_ai) documentation if you want to learn about Mistral's OCR capabilities.
 
-
 #### Image Generations {#image-generations-configuration}
 
-Image generation is currently not supported by the Mistral connector. You can learn more about image generation with Mistral [here](https://docs.mistral.ai/agents/connectors/image_generation/).
-
+Image generation is currently not supported by the Mistral connector. You can learn more about image generation with Mistral in the [Image Generation](https://docs.mistral.ai/agents/connectors/image_generation/) section.
 
 #### Embeddings Generation {#embeddings-configuration}
 
@@ -187,35 +185,35 @@ In order to implement embeddings generation into your Mendix application, you ca
 Depending on the operation you use in the microflow, an `InputText` String or a [ChunkCollection](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection) needs to be provided. The current version of this operation only supports the float representation of the resulting vector.
 
 {{% alert color="info" %}}
-The Mistral API limits the amount of chunks to embed within the same API call. If a larger amount of chunks needs to be embedded, it is recommended to process them in batches. An example of this can be found in the Clustering example of the [GenAI showcase](https://marketplace.mendix.com/link/component/220475) application.
+The Mistral API limits the amount of chunks that can be embedded within the single API call. To embed a larger amount of chunks, it is recommended to process them in batches. You can find the example of this use case in the Clustering example of the [GenAI showcase](https://marketplace.mendix.com/link/component/220475) application.
 {{% /alert %}}
 
 The microflow action  `Generate Embeddings (String)` supports scenarios where the vector embedding of a single string must be generated, e.g. to use for a nearest neighbor search across an existing knowledge base. This input string can be passed directly as the `InputText` parameter of this microflow. Additionally, [EmbeddingsOptions](/appstore/modules/genai/genai-for-mx/commons/#embeddingsoptions-entity) is optional and can be instantiated using [Embeddings: Create EmbeddingsOptions](/appstore/modules/genai/genai-for-mx/commons/#embeddingsoptions-create) from GenAI Commons. Use the GenAI Commons toolbox action [Embeddings: Get First Vector from Response](/appstore/modules/genai/genai-for-mx/commons/#embeddings-get-first-vector) to retrieve the generated embeddings vector. Both mentioned operations can be found under **GenAI Knowledge Base (Content)** in the **Toolbox** in Mendix Studio Pro.
 
 The microflow action `Generate Embeddings (Chunk Collection)` supports the more complex scenario where a collection of string inputs is vectorized in a single API call, such as when converting a collection of texts (chunks) into embeddings to be inserted into a knowledge base. Instead of calling the API for each string, executing a single call for a list of strings can significantly reduce HTTP overhead. Use the exposed microflows of GenAI Commons [Chunks: Initialize ChunkCollection](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection-create) to create the wrapper and [Chunks: Add Chunk to ChunkCollection](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection-add-chunk), or [Chunks: Add KnowledgeBaseChunk to ChunkCollection](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection-add-knowledgebasechunk) to construct the input. The resulting embedding vectors returned after a successful API call will be stored in the `EmbeddingVector` attribute in the same `Chunk` object. \
-Purely to generate embeddings, it does not matter whether the ChunkCollection contains Chunks or its specialization KnowledgeBaseChunks. However, if the end goal is to store the generated embedding vectors in a knowledge base (e.g. using the [PgVector Knowledge Base](/appstore/modules/pgvector-knowledge-base/) module), then Mendix recommends adding `KnowledgeBaseChunks` to the `ChunkCollection` and using these as an input for the embeddings operations, so they can afterward directly be used to populate the knowledge base with.
+Purely to generate embeddings, it does not matter whether the ChunkCollection contains Chunks or its specialization KnowledgeBaseChunks. However, if the end goal is to store the generated embedding vectors in a knowledge base (e.g. using the [PgVector Knowledge Base](/appstore/modules/pgvector-knowledge-base/) module), then Mendix recommends adding `KnowledgeBaseChunks` to the `ChunkCollection` and using these as an input for the embeddings operations, so they can later be used directly to populate the knowledge base.
 
-Note that currently, the knowledge base interaction (e.g. inserting or retrieving chunks) is not supported for OpenAI compatible APIs. For more information on possible ways to work with knowledge bases for embedding generation, read more about [PgVector Knowledge Base](/appstore/modules/pgvector-knowledge-base/) and [setting up a Vector Database](/appstore/modules/genai/pgvector-setup/).
+Note that, currently, the knowledge base interaction (e.g. inserting or retrieving chunks) is not supported for OpenAI compatible APIs. For more information on possible ways to work with knowledge bases for embedding generation, see [PgVector Knowledge Base](/appstore/modules/pgvector-knowledge-base/) and [setting up a Vector Database](/appstore/modules/genai/pgvector-setup/).
 
 ### Exposed Microflow Actions for OpenAI compatible APIs {#exposed-microflows}
 
-Exposed microflow actions to construct requests via drag-and-drop specifically for OpenAI compatible APIs are listed below. These microflows can be found in the **Toolbox** in Studio Pro. Note that using these flows is only required if you need to add options to the request that are specific to Mistral. For the generic part can use the GenAI Commons toolbox actions to [create the required Request](/appstore/modules/genai/genai-for-mx/commons/#genai-request-building) and [handle the Response](/appstore/modules/genai/genai-for-mx/commons/#genai-response-handling), which can be found under the **GenAI (Request Building)** and **GenAI (Response Handling)** categories in the Toolbox.
+T exposed microflow actions used to construct requests via drag-and-drop specifically for OpenAI-compatible APIs are listed below. You can find these microflows in the **Toolbox** of Studio Pro. Note that these flows are only required if you need to add Mistral-specific options to your requests. For generic functionality, can use the GenAI Commons toolbox actions to [create the required Request](/appstore/modules/genai/genai-for-mx/commons/#genai-request-building) and [handle the Response](/appstore/modules/genai/genai-for-mx/commons/#genai-response-handling). These actions are available under the **GenAI (Request Building)** and **GenAI (Response Handling)** categories in the Toolbox.
 
 #### Set Response Format {#set-responseformat-chat}
 
-This microflow changes the `ResponseFormat` of the `OpenAIRequest_Extension` object, which will be created for a `Request` if not present. This describes the format that the chat completions model must output. The default behavior for models compatible with the OpenAI API currently is `Text`. This operation must be used to enable JSON mode by providing the value `JSONObject` as input.
+This microflow changes the `ResponseFormat` of the `OpenAIRequest_Extension` object, which will be created for a `Request` if not already present. This describes the format that the chat completions model must output. By default, models compatible with the OpenAI API return `Text`. To enable JSON mode, you must set the input value as *JSONObject*.
 
 #### Files: Initialize Collection with OpenAI Image {#initialize-filecollection}
 
-This operation is currently not relevant for Mistral.
+This operation is currently not relevant for Mistral connector.
 
 #### Files: Add OpenAI Image to Collection {#add-file}
 
-This operation is currently not relevant for Mistral.
+This operation is currently not relevant for Mistral connector.
 
 #### Image Generation: Set ImageOptions Extension {#set-imageoptions-extension}
 
-This operation is currently not relevant for Mistral.
+This operation is currently not relevant for Mistral connector.
 
 ## Technical Reference {#technical-reference}
 
