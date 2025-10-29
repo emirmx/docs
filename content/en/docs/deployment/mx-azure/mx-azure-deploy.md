@@ -21,9 +21,9 @@ To deploy Mendix on Azure, make sure you have the following available:
 
 ## Deploying the Mendix on Azure offering from Azure Marketplace
 
-Once above prerequisites are met, you may proceed with deploying the solution:
+To deploy the solution, perform the following steps:
 
-1. Please open the [Mendix on Azure marketplace offering](https://portal.azure.com/#create/mendixtechbv.mxonazure) on Azure Portal while being signed into the correct Azure account.
+1. Open the [Mendix on Azure marketplace offering](https://portal.azure.com/#create/mendixtechbv.mxonazure) in the Azure Portal while signed into the correct Azure account.
 2. Choose the **Standard** plan and proceed to the next step by clicking **Create**.
 
     {{< figure src="/attachments/deployment/mx-azure/create-managed-app.png" class="no-border" >}}
@@ -32,32 +32,34 @@ Once above prerequisites are met, you may proceed with deploying the solution:
 
     {{< figure src="/attachments/deployment/mx-azure/resource-group-name.png" class="no-border" >}}
 
-5. Finish the wizard by clicking **Create** in order to start the deployment of the managed application.
+4. Finish the wizard by clicking **Create** in order to start the deployment of the managed application.
+5. After deployment of the Mendix on Azure managed application has succesfully completed,  please navigate to the Mendix on Azure portal by clicking on the **Mendix on Azure Portal** button or, alternatively, by using [this](https://mendixonazure.mendix.com) direct link.
+6. Connect to your Azure account by clicking **Connect Azure Account**, and then login with the same account that you used to deploy the Mendix on Azure offering.
 
-3. After deployment of the Mendix on Azure managed application has succesfully completed,  please navigate to the Mendix on Azure portal by clicking on the **Mendix on Azure Portal** button or, alternatively, by using [this](https://mendixonazure.mendix.com) direct link.
-4. Connect to your Azure account by clicking **Connect Azure Account**, and then login with the same account that you used to deploy the Mendix on Azure offering.
-
-After successfully connecting the accounts, the Mendix Portal shows a list of clusters with the following possible statuses: 
-- Ready to initialize clusters (=clusters that have not been initialized yet to start hosting Mendix apps)
-- Initialized cluster (=clusters ready to start hosting Mendix apps)
-- Failed clusters (= cluster that failed to initialize for any reason). 
+    After successfully connecting the accounts, the Mendix Portal shows a list of clusters with the following possible statuses: 
+    
+    * Ready to initialize clusters (=clusters that have not been initialized yet to start hosting Mendix apps)
+    * Initialized cluster (=clusters ready to start hosting Mendix apps)
+    * Failed clusters (= cluster that failed to initialize for any reason). 
 
     {{< figure src="/attachments/deployment/mx-azure/available-clusters.png" class="no-border" >}}
 
 
-5. Identify the entry belonging to the Managed Application you deployed in previous steps. In the **Actions** column, click the dropdown menu icon, and then select **Initialize**. 
+7. Identify the entry belonging to the Managed Application you deployed in previous steps. In the **Actions** column, click the dropdown menu icon, and then select **Initialize**. 
 
-6. The preflight check launches to verify the conditions are in place to successfully initialize a Mendix on Azure cluster. 
+    The preflight check launches to verify the conditions are in place to successfully initialize a Mendix on Azure cluster. 
 
     {{< figure src="/attachments/deployment/mx-azure/preflight-check.png" class="no-border" >}}
 
-9. In the **Preflight Check** screen, click **Next** to be redirected to the **Provision** screen. When all preflight checks have passed, the status is displayed as **Done** in the **Preflight Check** section, as shown below:
+8. In the **Preflight Check** screen, click **Next** to be redirected to the **Provision** screen. When all preflight checks have passed, the status is displayed as **Done** in the **Preflight Check** section, as shown below:
 
     {{< figure src="/attachments/deployment/mx-azure/preflight-check-successful.png" class="no-border" >}}
 
-10. In the **Provision** screen, optionally add any custom tags that will be used to tag deployed resoources and optionally review the configuration in the **Advanced Options** section. Please read the [configuration documentation](/developerportal/deploy/mendix-on-azure/configuration/) for more information on the options provided. The default settings suffice for a test deployment. Note that certain settings have influence on the Azure costs charged by Microsoft.
+9. In the **Provision** screen, optionally add any custom tags that will be used to tag deployed resoources and optionally review the configuration in the **Advanced Options** section.
 
-11. In the **Review & Initialize** screen, review the information and click **Initialize**.
+    For more information, refer to the [configuration documentation](/developerportal/deploy/mendix-on-azure/configuration/). The default settings suffice for a test deployment. Note that certain settings have influence on the Azure costs charged by Microsoft.
+
+10. In the **Review & Initialize** screen, review the information and click **Initialize**.
 
     {{< figure src="/attachments/deployment/mx-azure/initializeCluster.png" class="no-border" >}}
 
@@ -65,28 +67,24 @@ After successfully connecting the accounts, the Mendix Portal shows a list of cl
 
     {{< figure src="/attachments/deployment/mx-azure/resourceGroup.png" class="no-border" >}}
 
-
-12. You can view the cluster’s initialization progress by selecting **Details** in the **Actions** column.  
+11. To view the cluster's initialization progress, click **Details** in the **Actions** column.  
 
     {{< figure src="/attachments/deployment/mx-azure/infrastructure-details.png" class="no-border" >}}
 
-13. The cluster will enter status "Failed" in case of deployment issues. To view details about which component(s) failed (if available), click **Details**.
+12. If there are deployment issues, the cluster status is **Failed**. To view details about which component(s) failed (if available), click **Details**.
 
-{{< figure src="/attachments/deployment/mx-azure/failed-cluster.png" class="no-border" >}}
+    {{< figure src="/attachments/deployment/mx-azure/failed-cluster.png" class="no-border" >}}
 
-Some issues can be resolved by retrying the deployment. You can do this by clicking **Rerun** to manually re-trigger the cluster deployment. If the cluster still fails after a second rerun, a support ticket is automatically created with Mendix Support, and the Mendix team will contact you to resolve the issue.
+    Some issues can be resolved by retrying the deployment. You can do this by clicking **Rerun** to manually re-trigger the cluster deployment. If the cluster still fails after a second rerun, a support ticket is automatically created with Mendix Support, and the Mendix team will contact you to resolve the issue.
 
-14. Once the cluster is initialized successfully, the status of the cluster in the Portal changes to **INITIALIZED**.
-
-15. Now that the cluster is initialized successfully, the cluster and its namespace are immediately available for deploying apps.
+    After the cluster is initialized successfully, the status of the cluster in the Portal changes to **INITIALIZED**. The cluster and its namespace are immediately available for deploying apps.
 
 {{% alert color="info" %}} Due to the managed nature of Mendix on Azure, creating additional namespaces within a Mendix on Azure cluster is not supported. Similarly, it is not possible to create a Mendix on Azure cluster using APIs. Furthermore, Mendix on Azure clusters cannot be deleted through either the Mendix on Kubernetes Portal or the Mendix on Azure Portal. 
 
 For detailed steps on how to properly delete a Mendix on Azure cluster, see [Offboarding Mendix on Azure](/developerportal/deploy/mendix-on-azure/offboarding/). {{% /alert %}}
 
-## Deploying an Mendix app to a Mendix on Azure Cluster
+## Deploying a Mendix App to a Mendix on Azure Cluster
 
 After creating your cluster in Microsoft Azure, you can proceed to deploy your applications to it. The deployment process is identical to that used with Mendix on Kubernetes. For more information, see [Deploying a Mendix App to a Mendix on Kubernetes Cluster](/developerportal/deploy/private-cloud-deploy/).
 
-{{% alert color="info" %}} Mendix on Azure app environments will begin to consume cloud tokens starting from 120 days after their creation. For more information, see [Licensing Mendix on Azure](/developerportal/deploy/mendix-on-azure/license/).  {{% /alert %}}
-
+{{% alert color="info" %}} Mendix on Azure app environments will begin to consume cloud tokens starting from 120 days after their creation. For more information, see [Licensing Mendix on Azure](/developerportal/deploy/mendix-on-azure/license/). {{% /alert %}}
