@@ -143,7 +143,7 @@ Mendix also strongly advises that you build user confirmation logic into functio
 
 For more information, see [Function Calling](/appstore/modules/genai/function-calling/).
 
-#### Adding Knowledge {#chatcompletions-add-knowledge-base}
+#### Adding Knowledge Bases {#chatcompletions-add-knowledge-base}
 
 Adding knowledge bases to a call enables LLMs to retrieve information when a related topics are mentioned. Including knowledge bases in the request object along with a name and description, enables the model to intelligently decide when to let the Mendix app call one or more predefined knowledge bases. This allows the assistant to include the additional information in its response.
 
