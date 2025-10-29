@@ -12,14 +12,14 @@ For production environments or to meet specific organizational requirements, add
 
 Mendix on Azure offers advanced configuration through the following methods:
 
-* Self-service configuration via Mendix on Azure Portal 
-* Self-service configuration via Microsoft Azure Portal 
-* Self-service configuration via Mendix on Kubernetes Portal 
+* Self-service configuration in the Mendix on Azure Portal 
+* Self-service configuration in the Microsoft Azure Portal 
+* Self-service configuration in the Mendix on Kubernetes Portal 
 * Configuration assistance upon request by submitting a support ticket through the Mendix on Azure Portal 
 
 This document outlines the available configuration options and their functionalities.
 
-## Self-service Configuration Available in the Mendix on Azure portal
+## Self-service Configuration Available in the Mendix on Azure Portal
 
 The [Mendix on Azure Portal](https://mendixonazure.mendix.com) provides a variety of self-service configuration options that can be modified anytime or specified once during initial cluster setup. The following sections categorize available options:
 
@@ -51,7 +51,7 @@ For more information, see [Configuring Ingress and Egress](/developerportal/depl
 
 ### Observability Settings
 
-| Advanced Option 	| Description 	| Editable after initial creation 	|
+| Advanced Option | Description	| Editable after initial creation |
 | ---	| ---	| ---	|
 | Managed Grafana Accessibility 	| Determines whether the Managed Grafana observability dashboard is accessible publicly or only via private endpoints. [Virtual network peering](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks#network-peering) is required for private access.	| Yes |
 
