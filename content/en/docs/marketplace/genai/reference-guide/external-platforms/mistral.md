@@ -4,17 +4,14 @@ url: /appstore/modules/genai/reference-guide/external-connectors/mistral/
 linktitle: "Mistral"
 description: "Describes the configuration and usage of the Mistral Connector, which allows you to integrate generative AI into your Mendix app."
 weight: 20
-aliases:
-    - /appstore/connectors/mistral-connector/
-    - /appstore/modules/genai/mistral/
+
 ---
 
 ## Introduction {#introduction}
 
-The [Mistral Connector](LINK!) allows you to integrate generative AI into your Mendix app. Since the Mistral API is compatible with [OpenAI's API](https://platform.openai.com/), this module mainly contains Mistral specific UI since the operations inside of the OpenAI connector can just be reused. 
+The [Mistral Connector](LINK!) allows you to integrate generative AI capabilities into your Mendix application. Since the Mistral API is compatible with [OpenAI API](https://platform.openai.com/), this module mainly focuses on Mistral specific UI while reusing the operations inside of the OpenAI connector. 
 
 The current scope covers text generation use cases based on the [Chat Completions API](https://docs.mistral.ai/api/endpoint/chat) and embedding use cases based on the [Embeddings API](https://docs.mistral.ai/api/endpoint/embeddings). 
-
 
 ### Typical Use Cases {#use-cases}
 
@@ -36,25 +33,23 @@ The Mistral Connector is commonly used for text generation and embeddings. These
     * Simulate characters for games
     * Image to text
 
-Find more information about Mistral models [here](https://docs.mistral.ai/getting-started/models).
+For more information, see [Mistral models](https://docs.mistral.ai/getting-started/models).
 
 #### Image Generation {#use-cases-images}
 
-Mistral does currently not offer image generation models out of the box. It is possible to equip a Mistral agent with an image generation tool, see [Image generation](https://docs.mistral.ai/agents/connectors/image_generation/), however this is not suppoeted by this connector.
+Mistral does not currently offer image generation models out of the box. It is possible to equip a Mistral agent with an image generation tool (see [Image generation](https://docs.mistral.ai/agents/connectors/image_generation/)), however, this functionality is not supported by the Mistral Connector.
 
 #### Knowledge Base
 
-The Mistral connector supports Knowledge bases from providers such as pgVector, Mendix Cloud, Amazon Bedrock and Azure AI Search to be added to a conversation.
-
+The Mistral connector supports Knowledge bases from providers such as pgVector, Mendix Cloud, Amazon Bedrock, and Azure AI Search to be added to a conversation.
 
 ### Features {#features}
 
 With the current version, Mendix supports the Chat Completions API for [text generation](https://docs.mistral.ai/api/endpoint/chat) and the Embeddings API for [vector embeddings](https://docs.mistral.ai/api/endpoint/embeddings).
 
-
 ### Prerequisites {#prerequisites}
 
-To use this connector, you need to sign up for a Mistral account and create an API key. You can follow this [quickstart guide](https://docs.mistral.ai/getting-started/quickstart).
+To use this connector, you need to sign up for a Mistral account and create an API key. For more information, see the [quickstart guide](https://docs.mistral.ai/getting-started/quickstart).
 
 ### Dependencies {#dependencies}
 
@@ -66,24 +61,19 @@ To use this connector, you need to sign up for a Mistral account and create an A
 
 ## Installation {#installation}
 
- The following modules from the Marketplace need to be installed:
+Install all required modules from the Mendix Marketplace as listed in the [Dependencies](#dependencies) section above.
 
-* [GenAI Commons](https://marketplace.mendix.com/link/component/239448) module
-* [Encryption](https://marketplace.mendix.com/link/component/1011) module
-* [Community Commons](https://marketplace.mendix.com/link/component/170) module
-* [OpenAI connector](https://marketplace.mendix.com/link/component/220472) module
-
-To import the Mistral Connector into your app, follow the instructions in [How to Use Marketplace Content](/appstore/use-content/).
+To import the [Mistral Connector](add) into your app, follow the instructions in [How to Use Marketplace Content](/appstore/use-content/).
 
 ## Configuration {#configuration}
 
-After you install the Mistral Connector and OpenAI connector, you can find both in the **App Explorer**, in the **Marketplace Modules** section. The Mistral connector provides a domain model and several pages, all activities that you can use to connect your app to Mistral can be reused from the OpenAI connector. To implement an activity, use it in a microflow. To ensure that your app can connect to Mistral, you must also [configure the Encryption module](/appstore/modules/encryption/#configuration). 
+After you install the Mistral and OpenAI connector, you can find them in the **Marketplace Modules** section of the **App Explorer**. The Mistral connector provides a domain model and several pages. You can reuse all activities to connect your app to Mistral from the OpenAI connector. To implement an activity, use it in a microflow. Configure the [Encryption module](/appstore/modules/encryption/#configuration) to ensure the connection of your app to Mistral is secure.
 
 ### General Configuration {#general-configuration}
 
-1. Add the module roles **OpenAIConnector.Administrator** and **MistralConnector.Administrator** to your Administrator user role in the security settings of your app. 
-2. Add the **MistralConfiguration_Overview** page inside of the Mistral connector module (**USE_ME > MistralConfiguration**) to your navigation, or add the **Snippet_MistralConfigurations** to a page that is already part of your navigation. 
-3. Continue setting up your Mistral configuration at runtime. You can just follow the instructions in [Mistral Configuration](#mistral-configuration).
+1. Add the module roles `OpenAIConnector.Administrator` and `MistralConnector.Administrator` to your Administrator **User roles** in the **Security** settings of your app. 
+2. Add the **MistralConfiguration_Overview** page from the Mistral connector module (**USE_ME > MistralConfiguration**) to your navigation, or add the `Snippet_MistralConfigurations` to a page that is already part of your navigation. 
+3. Continue setting up your Mistral configuration at runtime. For more information, follow the instructions in the [Mistral Configuration](#mistral-configuration) section below.
 4. Configure the models you need to use for your use case.
 
 #### Mistral Configuration {#mistral-configuration} 
@@ -93,9 +83,8 @@ The following inputs are required for the Mistral configuration:
 | Parameter   | Value                                                        |
 | ----------- | ------------------------------------------------------------ |
 | Display name | This is the name identifier of a configuration (for example, *MyConfiguration*). |
-| Endpoint    | This is the API endpoint (for example, `https://api.mistral.ai/v1/`)   |
-| Token     | This is the access token to authorize your API call. <br />To get an API key, you can follow the steps [here](https://docs.mistral.ai/getting-started/quickstart).
-
+| Endpoint | This is the API endpoint (for example, `https://api.mistral.ai/v1/`) |
+| Token | This is the access token to authorize your API call. <br />To get an API key, follow the steps mentioned in the [Quickstart](https://docs.mistral.ai/getting-started/quickstart). |
 
 #### Configuring the Mistral Deployed Models
 
