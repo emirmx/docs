@@ -108,6 +108,10 @@ After following the general setup above, you are all set to use the microflow ac
 
 For more inspiration or guidance on how to use the microflow actions in your logic, Mendix recommends downloading [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of examples that cover all the operations mentioned.
 
+You can use the GenAI Commons toolbox actions to [create the required Request](/appstore/modules/genai/genai-for-mx/commons/#genai-request-building) and [handle the Response](/appstore/modules/genai/genai-for-mx/commons/#genai-response-handling) for your use case. 
+
+The internal chat completion logic supports [JSON mode](#chatcompletions-json-mode), [function calling](#chatcompletions-functioncalling), and [vision](#chatcompletions-vision) for Mistral. Make sure to check the actual compatibility of the available models with these functionalities, as this changes over time. The following sections list toolbox actions which are specifically for OpenAI compatible APIs (especially Mistral).
+
 #### Chat Completions
 
 Operations for chat completions focus on the generation of text based on a certain input. In this context, system prompts and user prompts are two key components that help guide the language model in generating relevant and contextually appropriate responses. For more information on the type of prompts and message roles, see the [ENUM_MessageRole](/appstore/modules/genai/genai-for-mx/commons/#enum-messagerole) enumeration. To learn more about how to create the right prompts for your use case, see the [Read More](#read-more) section below
@@ -116,10 +120,6 @@ The `MistralDeployedModel` is compatible with the two [Chat Completions operatio
 
 * Chat Completions (with history) 
 * Chat Completions (without history)
-
-You can use the GenAI Commons toolbox actions to [create the required Request](/appstore/modules/genai/genai-for-mx/commons/#genai-request-building) and [handle the Response](/appstore/modules/genai/genai-for-mx/commons/#genai-response-handling) for your use case. 
-
-The internal chat completion logic supports [JSON mode](#chatcompletions-json-mode), [function calling](#chatcompletions-functioncalling), and [vision](#chatcompletions-vision) for Mistral. Make sure to check the actual compatibility of the available models with these functionalities, as this changes over time. Any specific toolbox actions for OpenAI compatible APIs (especially Mistral) are listed below.
 
 #### JSON Mode {#chatcompletions-json-mode}
 
@@ -149,7 +149,7 @@ Adding knowledge bases to a call enables LLMs to retrieve information when a rel
 
 Mistral does not directly connect to the knowledge resources. The model returns a tool call JSON structure that is used to build the input of the retrievals so that they can be executed as part of the chat completions operation. The OpenAI connector takes care of handling the tool call response for Mistral as well as executing the function microflows until the API returns the assistant's final response.
 
-This functionality is part of the implementation executed by the GenAI Commons Chat Completions operations mentioned earlier. As a developer, you need to make the system aware of your indexes and their purpose by registering them with the request. This is done using the GenAI Commons operation [Tools: Add Knowledge Base](/appstore/modules/genai/genai-for-mx/commons/#add-knowledge-base-to-request), which must be called once per index before passing the request to the Chat Completions operation.
+This functionality is part of the implementation executed by the GenAI Commons Chat Completions operations mentioned earlier. As a developer, you need to make the system aware of your indexes and their purpose by registering them with the request. This is done using the GenAI Commons operation [Tools: Add Knowledge Base](/appstore/modules/genai/genai-for-mx/commons/#add-knowledge-base-to-request), which must be called once per knowledge resource before passing the request to the Chat Completions operation.
 
 Note that the retrieval process is independent of the model provider and can be used with any model that supports function calling.
 
