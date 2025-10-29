@@ -88,32 +88,31 @@ The following inputs are required for the Mistral configuration:
 
 #### Configuring the Mistral Deployed Models
 
-A [Deployed Model](/appstore/modules/genai/genai-for-mx/commons/#deployed-model) represents a GenAI model instance that can be used by the app to generate text, embeddings, or images. For every model you want to invoke from your app, you need to create a `MistralDeployedModel` record, a specialization of `DeployedModel` (and also a specialization of `OpenAIDeployedModel`). In addition to the model display name and a technical name/identifier, a Mistral deployed model contains a reference to the additional connection details as configured in the previous step. 
+A [Deployed Model](/appstore/modules/genai/genai-for-mx/commons/#deployed-model) represents a GenAI model instance that can be used by the app to generate text, embeddings, or images. For every model you want to invoke from your app, you need to create a `MistralDeployedModel` record, a specialization of `DeployedModel` (and also a specialization of `OpenAIDeployedModel`). In addition to the model display name and a technical name or identifier, a Mistral deployed model contains a reference to the additional connection details as configured in the previous step. 
 
-1. Click the three dots for a Mistral configuration to open the "Manage Deployed Models" pop-up. It is possible to use a predefined syncing method, where all available models are retrieved for the specified API key and then filtered according to their capabilities. If you want to use additional models that are made available by Mistral you can add them manually, too by using the `New` button instead.
+1. Click the three dots ({{% icon name="three-dots-menu-horizontal" %}}) icon for a Mistral configuration and open **Manage Deployed Models**. It is possible to use a predefined syncing method, where all available models are retrieved for the specified API key and then filtered according to their capabilities. If you want to use additional models that are made available by Mistral you can add them manually by clicking the **New** button instead.
 2. For every additional model, add a record. The following fields are required:
 
-    | Field      | Description                                                        |
+    | Field | Description |
     | -------------- | ------------------------------------------------------------ |
-    | Display name | This is the reference to the model for app users in case they have to select which one is to be used. |
-    | Model name | This is the technical reference for the model. For Mistral this is equal to the [model ids](https://docs.mistral.ai/getting-started/models), for example `mistral-medium-2508`. 
-    | Output modality| Describes what the output of the model is. This connector currently supports Text, Embedding, and Image.
-    | Input modality| Describes what input modalities are accepted by the model. This connector currently supports Text and Image.
+    | Display name | This is the reference for app users when selecting the appropriate model to use. |
+    | Model name | This is the technical reference of the model. For Mistral, this is equal to the [model ids](https://docs.mistral.ai/getting-started/models), for example `mistral-medium-2508`. |
+    | Output modality | Describes the output of the model. This connector currently supports text, embedding, and image. |
+    | Input modality| Describes the input modalities accepted by the model. This connector currently supports text and image. |
     
-3. Close the popup and test the configuration with the newly created deployed models.
-
+3. Close the **Manage Deployed Models** popup and test the configuration with the newly created deployed models.
 
 ### Using GenAI Commons Operations {#genai-commons-operations} 
 
-After following the general setup above, you are all set to use the microflow actions under the **GenAI (Generate)** category from the toolbox. These operations are part of GenAI Commons. Since OpenAI (and therefor Mistral) is compatible with the principles of GenAI Commons, you can pass a `MistralDeployedModel` to all GenAI Commons operations that expect the generalization `DeployedModel`. All actions under **GenAI (Generate)** will take care of executing the right provider-specific logic, based on the type of specialization passed, in this case Mistral. From an implementation perspective, it is not needed to inspect the inner workings of this operation. The input, output, and behavior are as described in the [GenAICommons documentation](/appstore/modules/genai/genai-for-mx/commons/#microflows). Applicable operations and some Mistral-specific aspects are listed below.
+After following the general setup above, you are all set to use the microflow actions under the **GenAI (Generate)** category from the toolbox. These operations are part of GenAI Commons. Since OpenAI (and therefor Mistral) is compatible with the principles of GenAI Commons, you can pass a `MistralDeployedModel` to all GenAI Commons operations that expect the generalization of `DeployedModel`. All actions under **GenAI (Generate)** will take care of executing the right provider-specific logic, based on the type of specialization passed, in this case, Mistral. From an implementation perspective, it is not needed to required the inner workings of this operation. The input, output, and behavior are described in the [GenAICommons](/appstore/modules/genai/genai-for-mx/commons/#microflows) documentation. Applicable operations and some Mistral-specific aspects are listed in the sections below.
 
-For more inspiration or guidance on how to use the microflow actions in your logic, Mendix recommends downloading our [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of examples that cover all the operations mentioned.
+For more inspiration or guidance on how to use the microflow actions in your logic, Mendix recommends downloading [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of examples that cover all the operations mentioned.
 
 #### Chat Completions
 
-Operations for chat completions focus on the generation of text based on a certain input. In this context, system prompts and user prompts are two key components that help guide the language model in generating relevant and contextually appropriate responses. For more information on the type of prompts and message roles, see the [ENUM_MessageRole](/appstore/modules/genai/genai-for-mx/commons/#enum-messagerole) enumeration. To learn more about how to create the right prompts for your use case, see the prompt engineering links in the [Read More](#read-more) section.
+Operations for chat completions focus on the generation of text based on a certain input. In this context, system prompts and user prompts are two key components that help guide the language model in generating relevant and contextually appropriate responses. For more information on the type of prompts and message roles, see the [ENUM_MessageRole](/appstore/modules/genai/genai-for-mx/commons/#enum-messagerole) enumeration. To learn more about how to create the right prompts for your use case, see the [Read More](#read-more) section below
 
-The `MistralDeployedModel` is compatible with the two [Chat Completions operations from GenAI Commons](/appstore/modules/genai/genai-for-mx/commons/#genai-generate). While developing your custom microflow, you can drag and drop the following operations from the toolbox in Studio Pro, see category **GenAI (Generate)**: 
+The `MistralDeployedModel` is compatible with the two [Chat Completions operations from GenAI Commons](/appstore/modules/genai/genai-for-mx/commons/#genai-generate). While developing your custom microflow, you can drag and drop the following operations from the toolbox in Studio Pro. See category **GenAI (Generate)**: 
 
 * Chat Completions (with history) 
 * Chat Completions (without history)
@@ -124,7 +123,7 @@ The internal chat completion logic supports [JSON mode](#chatcompletions-json-mo
 
 #### JSON Mode {#chatcompletions-json-mode}
 
-When JSON mode is used, the model is programmatically instructed to return valid JSON. For Mistral you have to explicitly mention the necessity of a JSON structure in a message in the conversation, e.g. the system prompt. Additionally after creating the request, but before passing it to the chat completions operation, use the toolbox action `Set Response Format` to set the required response format to JSON. 
+When JSON mode is used, the model is programmatically instructed to return valid JSON. For Mistral connector, you have to explicitly mention the necessity of a JSON structure in a message in the conversation, e.g. the system prompt. Additionally, after creating the request, but before passing it to the chat completions operation, use the toolbox action `Set Response Format` to set the required response format to JSON. 
 
 #### Function Calling {#chatcompletions-functioncalling}
 
