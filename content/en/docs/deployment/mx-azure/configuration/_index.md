@@ -1,7 +1,7 @@
 ---
 title: "Configuring Mendix on Azure"
 url: /developerportal/deploy/mendix-on-azure/configuration/
-description: "Mendix on Azure configuration."
+description: "Describes Mendix on Azure configuration."
 weight: 6
 ---
 ## Introduction
