@@ -8,7 +8,7 @@ weight: 10
 ## Introduction
 
 {{% alert color="warning" %}}
-Dojo Client will still be availaible until Mendix 12. It will continue receiving security and stability updates until the end of support of Mendix 11.24. 
+The Dojo client is deprecated and will be removed in Mendix 12. It continues receiving security and stability updates throughout the lifetime of Mendix 10.24 LTS. 
 {{% /alert %}}
 
 In Studio Pro versions 10.7.0 and above, there is an alternative version of the Mendix Client written in React. You can enable this React client in [App Settings](/refguide10/app-settings/#react-client).
