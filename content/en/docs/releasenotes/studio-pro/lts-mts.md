@@ -22,11 +22,8 @@ For Mendix 10 and 11, we are planning to follow this release timeline:
 
 | Release | Date |
 | --- | --- |
-| 10.6 MTS | December 2023 |
-| 10.12 MTS | June 2024 |
-| 10.18 MTS | December 2024 |
-| 11.0 GA | June 2025 |
 | 10.24 LTS | June 2025 |
+| 11.0 GA | June 2025 |
 | 11.6 MTS | December 2025 |
 | 11.12 MTS | June 2026 |
 | 11.18 MTS | December 2026 |
@@ -87,7 +84,7 @@ For the support duration, the LTS will receive patch releases only.
 
 ### Upgrading Impact
 
-The impact of upgrading from an LTS to an LTS is often the lowest of these options. That is because an LTS has the longest support duration and only gets critical fixes, which results in high stability over time. In addition, depending on how rigorous your application update/release process is, the upgrade would only have to be done once, as opposed to multiple times between MTS versions or monthly release versions.
+Upgrading from an LTS to an LTS often has the lowest impact compared to other upgrade options. That is because an LTS has the longest support duration and only gets critical fixes, which results in high stability over time. In addition, depending on how rigorous your application update/release process is, the upgrade would only have to be done once, as opposed to multiple times between MTS versions or monthly release versions.
 
 ## Medium-Term Support Version (MTS) {#mts}
 
@@ -95,13 +92,13 @@ An MTS is a minor version released approximately every 6 months after a new majo
 
 There are currently no MTS versions of Studio Pro. The next one that will occur is 11.6, planned for release in [December, 2025](#major-version).
 
-Release notes for the current MTS version are marked with an MTS badge (<text class="badge badge-pill badge-mts" style="margin-left:0px">MTS</text>) in the left sidebar.
+Release notes for any current MTS versions are marked with an MTS badge (<text class="badge badge-pill badge-mts" style="margin-left:0px">MTS</text>) in the left sidebar.
 
 Mendix MTS versions offer a balance between getting the latest and greatest Mendix has to offer every month, and security and stability.
 
 {{% alert color="info" %}}
 
-Mendix recommends using the latest patch version of the release as the latest version will contain the latest fixes.
+Mendix recommends using the latest patch version of the release as this will contain the latest fixes.
 
 {{% /alert %}}
 
