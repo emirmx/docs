@@ -25,7 +25,7 @@ The **Settings** tab contains the details of a GenAI resource. It shows the foll
 * **Display Name**: indicates the name of the resource.
 * **ID**: indicates the resource ID.
 * **Region(s)**: the region where the resource is hosted.
-* **Cross Region Inference (CRI)**: shows if the model supports cross-region inference.
+* **Cross Region Inference (CRI)**: shows if the model supports cross-region inference*.
 * **Cloud Provider**: indicates the cloud provider, for example, AWS.
 * **Type**: this is the type of resource, for example, Text Generation, Embedding, Knowledge Base, etc.
 * **Model**: indicates which model is used, for example, Anthropic Claude Sonnet 3.5.
@@ -34,13 +34,7 @@ The **Settings** tab contains the details of a GenAI resource. It shows the foll
 
 When you are looking at the knowledge base resource settings, you will also see details of the associated embeddings resource and vice versa. To learn more about embeddings, see the [Embedding vector](/appstore/modules/genai/rag/#embedding-vector) section of *RAG in a Mendix App*.
 
-#### Cross-Region Inference (CRI)
-
-Cross-region inference (CRI) allows a model to redirect requests to another region, helping to distribute the load across multiple regions. Connecting to a cross-region inference profile does not change how the request is sent; the redirection happens on the server side, determining the region to handle the request to get the fastest response.
-
-For more details on how CRI can help increase throughput, see [Increase throughput with cross-Region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html). 
-
-CRI profiles can be selected during modle resource provisioning only, so this setting is ineditable for resource members. 
+\* Cross-region inference (CRI) allows a model to redirect requests to another region, helping to distribute the load across multiple regions. Connecting to a cross-region inference profile does not change how the request is sent; the redirection happens on the server side, determining the region to handle the request to get the fastest response, see also [Increase throughput with cross-Region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html). If applicable, CRI profiles are selected during model resource provisioning. 
 
 ### Team
 
