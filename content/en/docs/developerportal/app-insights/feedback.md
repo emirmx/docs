@@ -43,7 +43,7 @@ After a user reports feedback in the app using the feedback widget, they get an 
 * Summary of the feedback that your team wrote
 * To which team member the feedback is assigned 
 * Tags that are assigned to the feedback
-* Other feedback that are associated with this feedback
+* Other feedback that is associated to this feedback
 * Attachments that you team uploaded for this feedback
 * Team comments on this feedback
 
@@ -61,17 +61,17 @@ On the **Inbox** tab, everyone from your team can view all the unarchived feedba
 
 {{< figure src="/attachments/developerportal/app-insights/feedback/feedback-items.png" alt="inbox tab" >}}
 
-In the list on the **Inbox** tab, you can find the following information for each feedback:
+In the list on the **Inbox** tab, you can find the following information for each piece of feedback:
 
-* **ID** – the unique number that is assigned to the feedback
-* **Subject** – the title of the feedback given by the reporter
-* **Submitter** – the email address of the reporter
-* **Tags** – tags that your team has assigned to the feedback
-* **Status** – the status that your team has set to the feedback
-* **Group** – the group that the feedback belongs to
-* **Stories** – the story that the feedback is linked to
-* **Priority** – the priority that the feedback has
-* **Date** – the date when the feedback was submitted
+* **ID** – The unique number that is assigned to the feedback
+* **Subject** – The title of the feedback given by the reporter
+* **Group** – The group that the feedback belongs to
+* **Submitter** – The email address of the reporter
+* **Tags** – Tags that your team has assigned to the feedback
+* **Status** – The status that your team has set to the feedback
+* **Date** – The date when the feedback was submitted
+* **Stories** – The story that the feedback is linked to
+* **Priority** – The priority that the feedback has
 
 For more information about each item, refer to the [Feedback Details](#feedback-details) section.
 
@@ -83,48 +83,51 @@ Clicking the filter bar opens the **Filter by** side panel. In this side panel, 
 
 ### Organizing Feedback in Inbox
 
-You can add new feedback manually yourself. 
+You can add new feedback manually yourself. To do that, follow these steps:
 
-To manually add feedback:
+1. Click **Create new feedback** if there is no feedback yet in the **Inbox** tab.    
+   Click **Add feedback** if there is already feedback in the **Inbox** tab.
 
-* Click **Create new feedback** if there is not any feedback yet in the **Inbox** tab.
-* Click **Add feedback** if there is already feedback in the **Inbox** tab.
+2. Fill in the **Subject**, **Description**, and **Submitter Email** fields, and optionally **Upload Screenshots** in the **New Feedback** dialog box.
 
-Then, fill in the **Subject**, **Description**, and **Submitter Email** fields, and optionally **Upload Screenshots** in the **New Feedback** dialog box.
+If you select feedback from the list, you can see the following options: 
 
-If you select feedback, you can see the following items: 
+* **Group Items** – Clicking this button reveals two options:
 
-{{< figure src="/attachments/developerportal/app-insights/feedback/bulk-actions-bar.png" alt="bulk-actions-bar" >}}
+    * **Create New Group** – You can create a new group for the selected feedback.
+    * **Add to Group** – You can add the selected feedback to an existing group.
 
-* **Group Items** – Clicking this button will show you two options:
-  * **Create New Group** – You can create a new group for the selected feedback.
-  * **Add to Group** – You can add the selected feedback to an existing group.
+* **Create Story** – If your app is connected to [Epics](/developerportal/project-management/epics/) or [Jira](/developerportal/project-management/jira-connector/), clicking this button converts the selected feedback to stories on the designated board in Epics or Jira.     
+   The following options are available:
 
-* **Move** – Clicking this moves the selected feedback to any other app of which you are a member. This action will remove the link to the group if the feedback is part of a feedback group.
+    * **Create Story** – Create a new story based on the feedback.
+    * **Add to Story** – Add the feedback to an existing story.
 
-* **Create Stories** – If your app is connected to [Epics](/developerportal/project-management/epics/) or [Jira](/developerportal/project-management/jira-connector/), clicking this button converts the selected feedback to stories on the designated board in Epics or Jira.
+* **Change Status** – Change the status of the selected feedback.
 
-* Status drop-down list – You can select a status from the drop-down list and then click **Apply** to change the status of the selected feedback.
+* **Move to App** – Move the selected feedback to any other app of which you are a member. This action removes the link to the group if the feedback is part of a feedback group.
 
-* **Archive** – Clicking this sets the selected feedback as archived.
+* **Archive** – Set the selected feedback as archived.
 
-* **Delete** – Clicking this deletes the selected feedback permanently. The result is irreversible.
+* **Delete** – Delete the selected feedback permanently. The result is irreversible.
 
 ## Groups {#groups}
 
-On the **Groups** tab, everyone in your team can view all the feedback groups in your app.
+On the **Groups** tab, everyone on your team can view all feedback groups in your app.
 
 In the list on the **Groups** tab, you can find the following information for each group:
 
-* **Group Name** – the name of the group
-* **Status** – the status of the group
-* **Priority** – the priority of the group
-* **Assignee** – the assignee of the group
-* **Number of Items** – the number of feedback that the group has
+* **Group Name** – The name of the group
+* **Status** – The status of the group
+* **Priority** – The priority of the group
+* **Assignee** – The assignee of the group
+* **Number of Items** – How many pieces of feedback the group contains
 
-You can use the search bar in the list. You can search by group name, assignee, status and priority.
+Clicking the group opens its details, which you can edit if needed.
 
-You can add a new group from this page by clicking **Add Group** button below the list
+You can use the search bar above the list to find group by name, assignee, status, and priority.
+
+You can also create a new group from this page by clicking **Add Group** button.
 
 ## Archive {#archive}
 
@@ -195,7 +198,7 @@ The following items are available:
     * **Submission date** – This shows the date when the feedback was submitted
 
 * **Story** – This displays any stories that are linked to that feedback.    
-    To unlink a story from a feedback, click its corresponding {{% icon name="unlink" %}} **unlink** button.    
+    To unlink a story from a piece of feedback, click its corresponding {{% icon name="unlink" %}} **unlink** button.    
     If there are no linked stories, you have the following options:
     
     * **Add to Story** – Add the feedback to an existing story.
@@ -215,7 +218,7 @@ The following items are available:
 You can use Maia to create a story based on one or more feedback. To do that, follow these steps:
 
 1. Enable Maia in the app [Settings](/developerportal/general-settings/#maia-settings) page.
-2. Select a feedback from the list.
+2. Select a piece of feedback from the list.
 3. Click **Create Story**. The **Create Story** window is displayed.
 4. Click {{% icon name="sparkles" %}}**Create with Maia**.     
    If Maia is enabled, the **Create Story with Maia** window is displayed.    
