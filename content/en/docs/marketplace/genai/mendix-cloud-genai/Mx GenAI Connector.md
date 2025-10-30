@@ -14,7 +14,7 @@ The [Mendix Cloud GenAI connector](https://marketplace.mendix.com/link/component
 
 ### Typical Use Cases
 
-The Mendix Cloud GenAI Connector is commonly used for text generation, embeddings generation, and knowledge bases. These use cases are described in more detail below:
+Like the connectors to other providers such as Amazon Bedrock and OpenAI, the Mendix Cloud GenAI Connector is commonly used for text generation, embeddings generation, and knowledge bases. These use cases are described in more detail below:
 
 #### Text Generation
 
@@ -53,14 +53,14 @@ The Mendix Cloud GenAI Connector module generates embeddings internally when int
 
 #### Knowledge Base
 
-The module enables tailoring generated responses to specific contexts by grounding them in data inside of a collection belonging to a Mendix Cloud GenAI knowledge base resource. This allows for the secure use of private company data or other non-public information when interacting with GenAI models within the Mendix app. It provides a low-code solution to store discrete data (commonly called chunks) in the knowledge base and retrieves relevant information for end-user actions or application processes.
+The module helps to tailor response generation to specific contexts by grounding them in data. Each knowledge base resource is logically isolated into collections and full control over the added data is possible as selected collections are added as context specifically and not the knowledge base resource as a whole. This allows for the secure use of private company data or other non-public information when interacting with GenAI models within the Mendix app. It provides a low-code solution to store discrete data (commonly called chunks) in the knowledge base and retrieves relevant information for end-user actions or application processes.
 
 Knowledge bases are often used for:
 
 1. [Retrieval Augmented Generation (RAG)](/appstore/modules/genai/rag/) retrieves relevant knowledge from the knowledge base, incorporates it into a prompt, and sends it to the model to generate a response.
 2. Semantic search enables advanced search capabilities by considering the semantic meaning of the text, going beyond exact and approximate matching. It allows the knowledge base to be searched for similar chunks effectively.
 
-If you are looking for a step-by-step guide on how to get your application data into a Mendix Cloud Knowledge Base, refer [Grounding Your Large Language Model in Data – Mendix Cloud GenAI](/appstore/modules/genai/how-to/howto-groundllm/). Note that the Mendix Portal also provides options for importing data into your knowledge base, such as file uploads. For more information, see [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/). This documentation focuses solely on adding data from an application using the connector. 
+If you are looking for a step-by-step guide on how to get your application data into a collection inside of a Mendix Cloud Knowledgebase Resource, refer to [Grounding Your Large Language Model in Data – Mendix Cloud GenAI](/appstore/modules/genai/how-to/howto-groundllm/). Note that the Mendix Portal also provides options for importing data into your knowledge base, such as file uploads. For more information, see [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/). This documentation focuses solely on adding data from inside of a Mendix application and using the connector. 
 
 ##### Architecture
 
@@ -72,7 +72,7 @@ In the current version, Mendix supports text generation (including function/tool
 
 ### Prerequisites
 
-To use this connector, you need configuration keys to authenticate to the Mendix Cloud GenAI services. You can generate keys in the [Mendix portal](https://genai.home.mendix.com) or ask someone with access to either generate them for you or add you to the team so you can generate keys yourself. 
+To use this connector, you need configuration keys to authenticate to the Mendix Cloud GenAI services. You can generate keys in the [Mendix portal](https://genai.home.mendix.com) or ask someone with access to either generate them for you or add you to their team so you can generate keys yourself. 
 
 ### Dependencies {#dependencies}
 
