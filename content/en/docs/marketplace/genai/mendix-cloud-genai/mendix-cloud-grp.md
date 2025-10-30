@@ -35,7 +35,7 @@ The Mendix Cloud GenAI Resource Packs provide access to the following models:
 
 The models are available through the Mendix Cloud, leveraging AWS's highly secure Amazon Bedrock multi-tenant architecture. This architecture employs advanced logical isolation techniques to effectively segregate customer data, requests, and responses, ensuring a level of data protection that aligns with global security compliance requirements. Customer prompts, requests, and responses are neither stored nor used for model training. Your data remains your data.
 
-Customers looking to leverage other models in addition to the above can also take advantage of Mendix's [(Azure) OpenAI Connector](/appstore/modules/genai/reference-guide/external-connectors/openai/) and Amazon [Bedrock Connector](/appstore/modules/genai/reference-guide/external-connectors/bedrock/) to integrate numerous other models into their apps.
+Customers looking to leverage other models in addition to the above can also take advantage of Mendix's [(Azure) OpenAI Connector](/appstore/modules/genai/reference-guide/external-connectors/openai/), Amazon [Bedrock Connector](/appstore/modules/genai/reference-guide/external-connectors/bedrock/) and [Mistral Connector](/appstore/modules/genai/reference-guide/external-connectors/mistral/) to integrate numerous other models into their apps.
 
 ### Technical Details for Model Resource Packs
 
@@ -67,13 +67,15 @@ Knowledge Bases are based on elastically scaling, serverless OpenSearch vector d
 
 ## Mendix Portal
 
-The Mendix Portal allows easy access to manage the resources, through the GenAI Resources section in the portal.
+The Mendix Portal allows easy access to manage the resources, through the GenAI Resources section [here](https://genai.home.mendix.com/).
 
 * Get insight into the consumption of input/output tokens against entitlements for Models
 * Manage content for Knowledge Bases
 * Manage team access to all resources
 * Create and manage connection keys to connect your apps with all resources
 * Track activity logs for team access and connection key management
+
+More documentation about this portal section can be found [here](/appstore/modules/genai/mx-cloud-genai/navigate_mxgenAI/).
 
 ## Mendix Cloud GenAI Connector
 
@@ -89,6 +91,8 @@ Mendix Cloud GenAI Resource Packs are available in the following regions of Mend
 
 * Europe (Frankfurt) - eu-central-1
 * Canada (Montreal) - ca-central-1
+
+The availability of model versions depends on the selected region.
 
 ## Understanding Third-Party Requirements
 
