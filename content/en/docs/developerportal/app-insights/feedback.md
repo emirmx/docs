@@ -43,7 +43,7 @@ After a user reports feedback in the app using the feedback widget, they get an 
 * Summary of the feedback that your team wrote
 * To which team member the feedback is assigned 
 * Tags that are assigned to the feedback
-* Other feedback items that are associated with this feedback
+* Other feedback that are associated with this feedback
 * Attachments that you team uploaded for this feedback
 * Team comments on this feedback
 
@@ -61,14 +61,15 @@ On the **Inbox** tab, everyone from your team can view all the unarchived feedba
 
 {{< figure src="/attachments/developerportal/app-insights/feedback/feedback-items.png" alt="inbox tab" >}}
 
-In the list on the **Inbox** tab, you can find the following information for each feedback item:
+In the list on the **Inbox** tab, you can find the following information for each feedback:
 
 * **ID** – the unique number that is assigned to the feedback
 * **Subject** – the title of the feedback given by the reporter
 * **Submitter** – the email address of the reporter
 * **Tags** – tags that your team has assigned to the feedback
 * **Status** – the status that your team has set to the feedback
-* **Linked** – the number of the feedback items that are linked to this feedback
+* **Group** – the group that the feedback belongs to
+* **Stories** – the story that the feedback is linked to
 * **Priority** – the priority that the feedback has
 * **Date** – the date when the feedback was submitted
 
@@ -82,7 +83,7 @@ Clicking the filter bar opens the **Filter by** side panel. In this side panel, 
 
 ### Organizing Feedback in Inbox
 
-If your [role](/developerportal/general/app-roles/) has the **Can edit ‘Stories, Documents and Feedback'** permission, you can also organize feedback items.
+If your [role](/developerportal/general/app-roles/) has the **Can edit ‘Stories, Documents and Feedback'** permission, you can also organize feedback.
 
 You can add new feedback manually yourself. 
 
@@ -97,27 +98,41 @@ If you select feedback, you can see the following items:
 
 {{< figure src="/attachments/developerportal/app-insights/feedback/bulk-actions-bar.png" alt="bulk-actions-bar" >}}
 
-* **Link** – Clicking this links the feedback together into one feedback group.
+* **Group Items** – Clicking this button will show you two options:
+  * **Create New Group** – You can create a new group for the selected feedback.
+  * **Add to Group** – You can add the selected feedback to an existing group.
 
-  You need to choose which item is the primary item of the group. After the feedback items are linked, only the primary feedback item appears in the list. The feedback items that are linked to the primary item disappear from the list. You can only access these linked feedback items from their primary item. If you change the status of the primary feedback item, all the linked items get the same status automatically.
+* **Move** – Clicking this moves the selected feedback to any other app of which you are a member. This action will remove the link to the group if the feedback is part of a feedback group.
 
-  {{% alert color="info" %}}When you open a linked feedback, you can click **Make [the linked feedback] the Primary feedback** to make this feedback the primary feedback of the feedback group instead.{{% /alert %}}
+* **Create Stories** – If your app is connected to [Epics](/developerportal/project-management/epics/) or [Jira](/developerportal/project-management/jira-connector/), clicking this button converts the selected feedback to stories on the designated board in Epics or Jira.
 
-* **Move** – Clicking this moves the selected feedback item to any other app of which you are a member. Whenever you move feedback, you also move all linked feedback. If you only want to move one feedback item, you need to unlink the feedback from the group first.
+* Status drop-down list – You can select a status from the drop-down list and then click **Apply** to change the status of the selected feedback.
 
-* **Create Stories** – If your app is connected to [Epics](/developerportal/project-management/epics/) or [Jira](/developerportal/project-management/jira-connector/), clicking this button converts the selected feedback item to stories on the designated board in Epics or Jira.
+* **Archive** – Clicking this sets the selected feedback as archived.
 
-* Status drop-down list – You can select a status from the drop-down list and then click **Apply** to change the status of the selected feedback item.
+* **Delete** – Clicking this deletes the selected feedback permanently. The result is irreversible.
 
-* **Archive** – Clicking this sets the selected feedback item as archived.
+## Groups {#groups}
 
-* **Delete** – Clicking this deletes the selected feedback item permanently. The result is irreversible.
+On the **Groups** tab, everyone in your team can view all the feedback groups in your app.
+
+In the list on the **Groups** tab, you can find the following information for each group:
+
+* **Group Name** – the name of the group
+* **Status** – the status of the group
+* **Priority** – the priority of the group
+* **Assignee** – the assignee of the group
+* **Number of Items** – the number of feedback that the group has
+
+You can use the search bar in the list. You can search by group name, assignee, status and priority.
+
+You can add a new group from this page by clicking **Add Group** button below the list
 
 ## Archive {#archive}
 
 On the **Archive** tab, everyone in your team can view all the archived feedback.
 
-In the list on the **Archive** tab, you can find the following information for each feedback item:
+In the list on the **Archive** tab, you can find the following information for each feedback:
 
 * **ID** – the unique number that is assigned to the feedback
 * **Subject** – the title of the feedback given by the reporter
@@ -135,12 +150,10 @@ Clicking the filter bar opens the **Filter by** side panel. In this side panel, 
 
 ## Feedback Details {#feedback-details}
 
-On the [Inbox](#inbox) and the [Archive](#archive) tabs, you can open feedback details by clicking the feedback item in the list:
+On the [Inbox](#inbox) and the [Archive](#archive) tabs, you can open feedback details by clicking the feedback in the list:
 
-* If you click the **ID** of the feedback item, the feedback details open in a new page. 
-* If you click a place other than the **ID** of the feedback item, the feedback details open as a side panel. 
-
-{{% alert color="info" %}}If your [role](/developerportal/general/app-roles/) has the **Can edit ‘Stories, Documents and Feedback'** permission, you can edit the feedback details on the **Feedback** tab.{{% /alert %}}
+* If you click the **ID** of the feedback, the feedback details open in a new page. 
+* If you click a place other than the **ID** of the feedback, the feedback details open as a side panel. 
 
 The following items are available: 
 
@@ -149,7 +162,7 @@ The following items are available:
     * {{% icon name="view" %}} – Click this button to stop receiving notifications for this feedback.
     * **Copy Link** ({{% icon name="hyperlink" %}}) – Click this button to copy the URL to the feedback. You can send the URL to other people.
     * **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) – Click this button to open a menu with the following items:
-        * **Move** – Click this button to move the feedback to any other app of which you are a member. Whenever you move feedback, you also move all linked feedback. If you only want to move one feedback item, you need to unlink the feedback from the group first.
+        * **Move** – Click this button to move the feedback to any other app of which you are a member. This action will remove the link to the group if the feedback is part of a feedback group.
         * **Create Story** – If your app is connected to [Epics](/developerportal/project-management/epics/) or [Jira](/developerportal/project-management/jira-connector/), clicking this button converts the feedback to a story on the designated board in Epics or Jira. Once the story is created, clicking this button brings you to the story on the board right away.    
           You can also create feedback-based stories using Maia. For details, refer to the [Creating Stories with Maia](#create-with-maia) section.
         * **Delete** – Click this button to remove the feedback permanently from **Feedback**. The result is irreversible.
@@ -159,7 +172,7 @@ The following items are available:
 * **Priority** – This shows the priority that the feedback has.
 
 * **Status** – This is the status of the feedback. There are two default statuses: **New** and **Closed**. Whenever feedback arrives in the app, it is set to **New**. When you close feedback, it is set to **Closed** and moved to the **Archived** page.    
-   You can add custom statuses by clicking **Manage Statuses** ({{% icon name="cog" %}}) and adding the new statuses in the dialog box. Custom statuses can only be used for feedback items that are not archived. You can filter your feedback based on the status.    
+   You can add custom statuses by clicking **Manage Statuses** ({{% icon name="cog" %}}) and adding the new statuses in the dialog box. Custom statuses can only be used for feedback that are not archived. You can filter your feedback based on the status.    
     You can edit the default status name by clicking **Manage Statuses** ({{% icon name="cog" %}}), then clicking the status name.
 
 * **Tags** – These are the tags assigned to the feedback. You can select a tag from the drop-down list or create new tags by typing the tag name inside the text box and then clicking **create [the tag name]**. A tag should contain maximum 50 characters. You can assign multiple tags.
@@ -183,24 +196,12 @@ The following items are available:
     * **Submitter email** – This shows the email of the reporter
     * **Submission date** – This shows the date when the feedback was submitted
 
-* **Linked Feedback** – This shows which feedback items are linked to this feedback.
-
-  You can link a feedback item by selecting it from the drop-down list.
-
-  {{< figure src="/attachments/developerportal/app-insights/feedback/linked-feedback.png" class="no-border" >}}
-
-  Once the feedback is linked, it disappears from the list on the **Inbox** or **Archive** tab. You can only access the linked feedback from its primary feedback to which it is linked. If you change the status of the primary feedback, all the linked feedback gets the same status automatically.
-
-  {{% alert color="info" %}}When you open a linked feedback item, you can click **Make [the linked feedback item] the Primary feedback** to make this feedback the primary feedback of the feedback group instead.{{% /alert %}}
-
-  You can unlink a feedback item by hovering over the feedback and clicking the **Remove** ({{% icon name="remove" %}}) button. Once the feedback is not linked anymore, it appears again in the list on the **Inbox** or **Archive** tab.
-
-* **Story** – This displays any stories that are linked to that feedback item.    
-    To unlink a story from a feedback item, click its corresponding {{% icon name="unlink" %}} **unlink** button.    
+* **Story** – This displays any stories that are linked to that feedback.    
+    To unlink a story from a feedback, click its corresponding {{% icon name="unlink" %}} **unlink** button.    
     If there are no linked stories, you have the following options:
     
-    * **Add to Story** – Add the feedback item to an existing story.
-    * **Create Story** – Create a new story based on the feedback item.
+    * **Add to Story** – Add the feedback to an existing story.
+    * **Create Story** – Create a new story based on the feedback.
 
 * **Attachments** – This contains attachments to this feedback. To upload an attachment, click **Add** ({{% icon name="add" %}}) and select the file. The following formats are supported: .*peg*, *.png*, and *.gif*. Each attachment can be a maximum of 5 MB in size. Once an attachment is uploaded, only your team members can view, download, and delete the attachment.
 
@@ -208,15 +209,15 @@ The following items are available:
 
     * **Team Comments** — Displays all the comments left by your team for this feedback. You can leave comments here and add attachments to each comment.     
       Comments submitted to this tab are only visible to your team members.
-    * **Contact Submitter** — Allows you to read messages from the reporter and reply to them. Whenever the reporter sends a message, it is shown in this section. Once you reply to a message from the reporter, they receive an email. When multiple feedback items are linked, the system only sends an email to the reporter of this specific feedback item, not other associated feedback items in the same group.    
+    * **Contact Submitter** — Allows you to read messages from the reporter and reply to them. Whenever the reporter sends a message, it is shown in this section. Once you reply to a message from the reporter, they receive an email.   
       For more information, see the [What Happens to a User After They Submit Feedback](#what-happens-to-user) section.
 
 ### Creating Stories with Maia {#create-with-maia}
 
-You can use Maia to create a story based on one or more feedback items. To do that, follow these steps:
+You can use Maia to create a story based on one or more feedback. To do that, follow these steps:
 
 1. Enable Maia in the app [Settings](/developerportal/general-settings/#maia-settings) page.
-2. Select a feedback item from the list.
+2. Select a feedback from the list.
 3. Click **Create Story**. The **Create Story** window is displayed.
 4. Click {{% icon name="sparkles" %}}**Create with Maia**.     
    If Maia is enabled, the **Create Story with Maia** window is displayed.    
@@ -229,7 +230,7 @@ You can use Maia to create a story based on one or more feedback items. To do th
 
 A banner at the bottom of the window shows you that the story has been created. You can click **Open** to access the story on the **Planning** page.
 
-You can select several feedback items to create a story based on all of them.
+You can select several feedback to create a story based on all of them.
 
 ### Managing Tags {#manage-tags}
 
@@ -255,6 +256,46 @@ From the [feedback details](#feedback-details) page, you can manage tags by clic
   2. Click **Delete**. The **Confirmation** dialog box opens.
   3. Click **Delete Tag**.
 
+## Group Details {#group-details}
+
+On the [Groups](#groups) tab, you can open group details by clicking the group in the list:
+
+The following items are available: 
+
+* Buttons 
+    * **Ungroup** Click this button to ungroup all feedback in the group. This action doesn't delete the group .
+    * **Delete Group** Click this button to delete the group and all feedback in this group. This action is destructive and once you delete a group with feedback, you delete both of them.
+
+* **Group Name** – This is the name of the group. You can edit the name by click on the name. It will show a input panel where you can edit the name
+  
+* **Description** – This is the description of the group.
+
+* **Tags** – These are the tags assigned to the group. You can select a tag from the drop-down list or create new tags by typing the tag name inside the text box and then clicking **create [the tag name]**. A tag should contain maximum 50 characters. You can assign multiple tags.
+
+    {{< figure src="/attachments/developerportal/app-insights/feedback/tags.png" class="no-border" >}}
+
+    {{% alert color="info" %}}For more information about how to manage tags, refer to the [Managing Tags](#manage-tags) section.{{% /alert %}}
+
+* **Status** – This is the status of the group. There are two default statuses: **New** and **Closed**. Whenever you create a new group in the app, it is set to **New**. 
+   You can add custom statuses by clicking **Manage Statuses** ({{% icon name="cog" %}}) and adding the new statuses in the dialog box. Custom statuses can only be used for feedback that are not archived or for groups. You can filter your feedback based on the status.    
+    You can edit the default status name by clicking **Manage Statuses** ({{% icon name="cog" %}}), then clicking the status name.
+
+* **Assigned To** – This shows to whom the group is assigned. When you assign a group to someone, they get an email notification.
+
+* **Priority** – This shows the priority that the group has.
+
+* **Reply To All** – You can reply to the submitters of all the feedback in the group. The same message will be sent to all of the feedback.
+
+* **Grouped Feedback** – This shows a list of the feedback that are linked to the group. If you click on an item in the list it will show you the feedback details in side panel.
+
+  * **ID** – the unique number that is assigned to the feedback. Clicking the ID will open another page with the feedback details
+  * **Subject** – the title of the feedback given by the reporter
+  * **Action** – This column contains actions just for the feedback in the row.
+    * **Reply to Submitter** - You can reply to the submitter of the feedback.
+    * **Ungroup feedback** - You can ungroup the feedback from the group
+    * **Group Team Comments** — Displays all the comments left by your team for this group. You can leave comments here and add attachments to each comment.     
+      Comments submitted here are only visible to your team members.
+
 ## Receiving Notifications {#notifications}
 
 You can receive a notification when new feedback lands in **Inbox** or when a reporter replies to their feedback. To receive notifications, follow these steps:
@@ -269,7 +310,7 @@ You can receive a notification when new feedback lands in **Inbox** or when a re
     * **Daily email update**
     * **Weekly email update**
 
-### Receiving Notifications for an Individual Feedback Item {#notifications-individual-feedback}
+### Receiving Notifications for an Individual Feedback {#notifications-individual-feedback}
 
-You can receive notifications for an individual feedback item. To set this up, click the {{% icon name="view-off" %}} icon in the upper-right corner of the **Feedback** tab after you open the feedback item.     
-You also automatically start receiving notifications for an individual feedback item once you respond to the reporter of the feedback or leave a comment for your team in the **Communications** section of the feedback details window.
+You can receive notifications for an individual feedback. To set this up, click the {{% icon name="view-off" %}} icon in the upper-right corner of the **Feedback** tab after you open the feedback.     
+You also automatically start receiving notifications for an individual feedback once you respond to the reporter of the feedback or leave a comment for your team in the **Communications** section of the feedback details window.
