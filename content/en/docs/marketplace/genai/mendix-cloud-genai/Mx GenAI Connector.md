@@ -10,7 +10,7 @@ aliases:
 
 ## Introduction
 
-The [Mendix Cloud GenAI connector](https://marketplace.mendix.com/link/component/239449) lets you utilize Mendix Cloud GenAI resource packs directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox. 
+The [Mendix Cloud GenAI connector](https://marketplace.mendix.com/link/component/239449) lets you utilize [Mendix Cloud GenAI resource packs](/appstore/modules/genai/mx-cloud-genai/mendix-cloud-grp/) directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox. 
 
 ### Typical Use Cases
 
@@ -72,7 +72,7 @@ In the current version, Mendix supports text generation (including function/tool
 
 ### Prerequisites
 
-To use this connector, you need configuration keys to authenticate to the Mendix Cloud GenAI services. You can generate keys in the [developer portal](https://genai.home.mendix.com) or ask someone with access to either generate them for you or be added to the team to generate keys yourself. 
+To use this connector, you need configuration keys to authenticate to the Mendix Cloud GenAI services. You can generate keys in the [Mendix portal](https://genai.home.mendix.com) or ask someone with access to either generate them for you or add you to the team so you can generate keys yourself. 
 
 ### Dependencies {#dependencies}
 
