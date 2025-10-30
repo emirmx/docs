@@ -123,11 +123,50 @@ In the list on the **Groups** tab, you can find the following information for ea
 * **Assignee** – The assignee of the group
 * **Number of Items** – How many pieces of feedback the group contains
 
-Clicking the group opens its details, which you can edit if needed.
-
 You can use the search bar above the list to find group by name, assignee, status, and priority.
 
 You can also create a new group from this page by clicking **Add Group** button.
+
+### Group Details {#group-details}
+
+On the **Groups** tab, you can open group details by clicking the group in the list.    
+The following options are available: 
+ 
+* **Ungroup** – Ungroup all feedback in the group. This action does not delete the group.
+* **Delete Group** – Delete the group and all feedback within it. This action is destructive and, once you delete a group with feedback, the feedback is also deleted.
+* Group Name – The name of the group, which you can edit by clicking it.
+  * **Description** – The description of the group.
+* **Tags** – Any tags assigned to the group.     
+  You can either select a tag from the drop-down list, or create a new tag by typing its name inside the text box, then clicking **Create [the tag name]**.     
+  A tag should contain maximum 50 characters.     
+  You can assign multiple tags.
+
+    {{< figure src="/attachments/developerportal/app-insights/feedback/tags.png" class="no-border" >}}
+
+  For more information on tags, refer to the [Managing Tags](#manage-tags) section.
+
+* **Status** – The status of the group. There are two default statuses: **New** and **Closed**.     
+  Whenever you create a new group in the app, it is set to **New**.     
+  You can add custom statuses by clicking **Manage Statuses** ({{% icon name="cog" %}}), and adding the new statuses in the dialog box. Custom statuses can only be used for feedback that is not archived or for groups. You can filter your feedback based on the status.    
+  You can edit the default status name by clicking **Manage Statuses** ({{% icon name="cog" %}}), then clicking the status name.
+
+* **Assigned To** – The person to whom the group is assigned. When you assign a group to someone, they get an email notification.
+
+* **Priority** – The priority that the group has.
+
+* **Reply To All** – You can reply to the submitters of all the feedback in the group. The same message is sent to all of them.
+
+* **Grouped Feedback** – This displays a list of the pieces of feedback that are linked to the group. If you click an item in the list, it will show you the feedback details in the side panel.
+
+    * **ID** – The unique number that is assigned to the feedback. Clicking the ID opens the feedback details in a new page.
+    * **Subject** – The title of the feedback given by the reporter
+    * **Action** – This column contains the following actions for each piece of feedback:
+
+        * **Reply to Submitter** – Reply to the submitter of the feedback.
+        * **Ungroup feedback** – Ungroup the feedback from the group.
+
+* **Group Team Comments** – Displays all the comments left by your team for this group. You can leave comments here and add attachments to each comment.         
+  Comments submitted here are only visible to your team members.
 
 ## Archive {#archive}
 
@@ -256,46 +295,6 @@ From the [feedback details](#feedback-details) page, you can manage tags by clic
   1. Hover over the row where the tag is listed. A **Delete** button ({{% icon name="trash-can" %}}) appears at the end of the row.
   2. Click **Delete**. The **Confirmation** dialog box opens.
   3. Click **Delete Tag**.
-
-## Group Details {#group-details}
-
-On the [Groups](#groups) tab, you can open group details by clicking the group in the list:
-
-The following items are available: 
-
-* Buttons 
-    * **Ungroup** Click this button to ungroup all feedback in the group. This action doesn't delete the group .
-    * **Delete Group** Click this button to delete the group and all feedback in this group. This action is destructive and once you delete a group with feedback, you delete both of them.
-
-* **Group Name** – This is the name of the group. You can edit the name by click on the name. It will show a input panel where you can edit the name
-  
-* **Description** – This is the description of the group.
-
-* **Tags** – These are the tags assigned to the group. You can select a tag from the drop-down list or create new tags by typing the tag name inside the text box and then clicking **create [the tag name]**. A tag should contain maximum 50 characters. You can assign multiple tags.
-
-    {{< figure src="/attachments/developerportal/app-insights/feedback/tags.png" class="no-border" >}}
-
-    {{% alert color="info" %}}For more information about how to manage tags, refer to the [Managing Tags](#manage-tags) section.{{% /alert %}}
-
-* **Status** – This is the status of the group. There are two default statuses: **New** and **Closed**. Whenever you create a new group in the app, it is set to **New**. 
-   You can add custom statuses by clicking **Manage Statuses** ({{% icon name="cog" %}}) and adding the new statuses in the dialog box. Custom statuses can only be used for feedback that are not archived or for groups. You can filter your feedback based on the status.    
-    You can edit the default status name by clicking **Manage Statuses** ({{% icon name="cog" %}}), then clicking the status name.
-
-* **Assigned To** – This shows to whom the group is assigned. When you assign a group to someone, they get an email notification.
-
-* **Priority** – This shows the priority that the group has.
-
-* **Reply To All** – You can reply to the submitters of all the feedback in the group. The same message will be sent to all of the feedback.
-
-* **Grouped Feedback** – This shows a list of the feedback that are linked to the group. If you click on an item in the list it will show you the feedback details in side panel.
-
-  * **ID** – the unique number that is assigned to the feedback. Clicking the ID will open another page with the feedback details
-  * **Subject** – the title of the feedback given by the reporter
-  * **Action** – This column contains actions just for the feedback in the row.
-    * **Reply to Submitter** - You can reply to the submitter of the feedback.
-    * **Ungroup feedback** - You can ungroup the feedback from the group
-    * **Group Team Comments** — Displays all the comments left by your team for this group. You can leave comments here and add attachments to each comment.     
-      Comments submitted here are only visible to your team members.
 
 ## Receiving Notifications {#notifications}
 
