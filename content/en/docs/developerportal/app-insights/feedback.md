@@ -83,8 +83,6 @@ Clicking the filter bar opens the **Filter by** side panel. In this side panel, 
 
 ### Organizing Feedback in Inbox
 
-If your [role](/developerportal/general/app-roles/) has the **Can edit ‘Stories, Documents and Feedback'** permission, you can also organize feedback.
-
 You can add new feedback manually yourself. 
 
 To manually add feedback:
