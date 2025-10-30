@@ -26,6 +26,6 @@ There are three different types of resources:
 
 1. Learn about GenAI Resource Packs and how to acquire them [here](/appstore/modules/genai/mx-cloud-genai/mendix-cloud-grp/).
 2. Once you have access to GenAI resources, log into the [GenAI Resources portal](https://genai.home.mendix.com/) to generate access keys for your resources. The GenAI Resources portal provides an overview of all the resources you have access to and you can also request new GenAI Resources there. More guidance can be found [here](https://docs.mendix.com/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/).
-3. Use a starter app containing the [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449) (e.g. the [BlankGenAI starter app](https://marketplace.mendix.com/link/component/227934) or implement the connector in a Mendix application according to its documentation. Once you have imported access key in its configuraton overview you are connected to Mendix Cloud GenAI and can access available resources inside of your application. 
+3. Use a starter app containing the [Mendix Cloud GenAI Connector](https://marketplace.mendix.com/link/component/239449) (e.g. the [BlankGenAI starter app](https://marketplace.mendix.com/link/component/227934)) or implement the connector in a Mendix application according to its documentation. Once you have imported access key in its configuraton overview you are connected to Mendix Cloud GenAI and can access available resources inside of your application. 
 
 ## Relevant Sources
