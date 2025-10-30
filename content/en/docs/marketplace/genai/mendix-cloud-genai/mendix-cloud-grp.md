@@ -65,25 +65,6 @@ Knowledge Bases are based on elastically scaling, serverless OpenSearch vector d
 | Memory                                | Elastic       |
 | Disk Space                            | 10 GB         |
 
-## Mendix Portal
-
-The Mendix Portal allows easy access to manage the resources, through the GenAI Resources section [here](https://genai.home.mendix.com/).
-
-* Get insight into the consumption of input/output tokens against entitlements for Models
-* Manage content for Knowledge Bases
-* Manage team access to all resources
-* Create and manage connection keys to connect your apps with all resources
-* Track activity logs for team access and connection key management
-
-More documentation about this portal section can be found [here](/appstore/modules/genai/mx-cloud-genai/navigate_mxgenAI/).
-
-## Mendix Cloud GenAI Connector
-
-The [Mendix Cloud GenAI connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/) lets you utilize Mendix Cloud GenAI resource packs directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox. Note that any versions older than the ones listed below are no longer functional:  
-
-* GenAI for Mendix bundle v2.4.1 (Mendix 9) (contains Mendix Cloud GenAI connector) or
-* Mendix Cloud GenAI connector v3.1.1 (no `DeployedKnowledgeBase` support) or
-* Mendix Cloud GenAI connector v4.4.0 (`DeployedKnowledgeBase` support).
 
 ## Regional Availability
 
@@ -112,6 +93,28 @@ Save these links for future reference. Always review the terms before starting d
 {{% alert color="warning" %}}
 Compliance with these terms is mandatory to maintain access to the services.
 {{% /alert %}}
+
+## More resources
+
+### Mendix Portal
+
+The Mendix Portal allows easy access to manage the resources, through the GenAI Resources section [here](https://genai.home.mendix.com/).
+
+* Get insight into the consumption of input/output tokens against entitlements for Models
+* Manage content for Knowledge Bases
+* Manage team access to all resources
+* Create and manage connection keys to connect your apps with all resources
+* Track activity logs for team access and connection key management
+
+More documentation about this portal section can be found [here](/appstore/modules/genai/mx-cloud-genai/navigate_mxgenAI/).
+
+### Mendix Cloud GenAI Connector
+
+The [Mendix Cloud GenAI connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/) lets you utilize Mendix Cloud GenAI resource packs directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox. Note that any versions older than the ones listed below are no longer functional:  
+
+* GenAI for Mendix bundle v2.4.1 (Mendix 9) (contains Mendix Cloud GenAI connector) or
+* Mendix Cloud GenAI connector v3.1.1 (no `DeployedKnowledgeBase` support) or
+* Mendix Cloud GenAI connector v4.4.0 (`DeployedKnowledgeBase` support).
 
 ## FAQ
 
