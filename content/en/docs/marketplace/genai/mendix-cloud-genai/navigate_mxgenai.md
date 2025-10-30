@@ -8,12 +8,12 @@ weight: 30
 
 ## Introduction
 
-The [Mendix Cloud GenAI portal](https://genai.home.mendix.com/) is an online platform that provides access to Mendix Cloud GenAI resource packs. These resource packs on Mendix Cloud enable seamless integration with Generative AI technology, provisioned and hosted by Mendix: 
+The [Mendix Cloud GenAI portal](https://genai.home.mendix.com/) is the part of the Mendix portal that provides access to [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/). Is different parts are described below.
 
-* GenAI Model Resource Packs provide access to model resources: Anthropic's  Claude and Cohere's Embed. 
-* GenAI Knowledge Base Resource Packs provide the infrastructure to deliver retrieval-augmented generation (RAG) architecture and other GenAI use cases requiring a vector database. 
+## Resource Overview / Landing page
 
-GenAI resource packs accelerate the delivery of complete generative AI solutions within Mendix apps that seamlessly integrate with GenAI technology. Learn more by following these links to [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/) and the [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/). To start with a GenAI-infused Mendix application, see [creating a chatbot using the AI Bot Starter App](/appstore/modules/genai/using-genai/starter-template/) or [building a GenAI app from scratch with the Blank GenAI App](/appstore/modules/genai/using-genai/blank-app/). 
+TBD
+New Screenshots needed 
 
 ## Resource Details 
 
@@ -40,7 +40,7 @@ Cross-region inference (CRI) allows a model to redirect requests to another regi
 
 For more details on how CRI can help increase throughput, see [Increase throughput with cross-Region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html). 
 
-Currently, CRI is available for a limited number of models and can only be enabled for new resources. In some cases, certain models are available only through cross-region inference.
+CRI profiles can be selected during modle resource provisioning only, so this setting is ineditable for resource members. 
 
 ### Team
 
@@ -85,15 +85,19 @@ When you select the **Add Files Like .TXT or .PDF** option, you can upload docum
 
 {{% alert color="info" %}} Only TXT and PDF files are supported. {{% /alert %}} 
 
-Before uploading, you can choose to upload the data to a new collection, the default collection, or another existing collection within the resource. A Knowledge Base resource can comprise several collections. Each collection is specifically designed to hold numerous documents, serving as a logical grouping for related information based on its shared domain, purpose, or thematic focus. While collections provide a mechanism for data separation, with each corresponding to a [DeployedKnowledgebase](/appstore/modules/genai/genai-for-mx/commons/#deployed-knowledge-base), it is not best practice to create a large number of collections within a single Knowledge Base resource. A more performant and practical approach for achieving fine-grained data separation is through the strategic use of metadata.   
+Before uploading, you can choose to upload the data to a new collection, the default collection, or another existing collection within the resource. A Knowledge Base resource can comprise several collections. Each collection is specifically designed to hold numerous documents, serving as a logical grouping for related information based on its shared domain, purpose, or thematic focus.
+
+ADD IMAGE
+
+While collections provide a mechanism for data separation, with each corresponding to a [DeployedKnowledgebase](/appstore/modules/genai/genai-for-mx/commons/#deployed-knowledge-base), it is not best practice to create a large number of collections within a single Knowledge Base resource. A more performant and practical approach for achieving fine-grained data separation is through the strategic use of metadata.   
 
 ##### Metadata {#metadata}
 
-Metadata is additional information that can be attached to data in a GenAI knowledge base. Unlike the actual content, metadata provides structured details that help in organizing, searching, and filtering information more efficiently. It helps manage large datasets by allowing to retrieve of relevant data based on specific attributes rather than relying solely on similarity-based searches.  
+Metadata is additional information that can be attached to data in a GenAI knowledge base. Unlike the actual content, metadata provides structured details that help in organizing, searching, and filtering information more efficiently. It helps manage large datasets by allowing to retrieve relevant data based on specific attributes rather than relying solely on similarity-based searches.  
 
 Metadata consists of key-value pairs and serves as additional information connected to the data, though it is not part of the vectorization itself.
 
-For example, a GenAI Knowledge Base could be used to store customer support tickets. Each ticket may have associated metadata such as Ticket Type, Status, and Priority. Instead of relying solely on similarity-based searches of ticket descriptions, users can filter for specific tickets, such as 'bug' tickets with the status set to 'solved'.
+For example, a GenAI Knowledge Base could be used to store customer support tickets. Each ticket may have associated metadata such as Ticket Type (key: `Ticket Type`, value: `Bug`), Status (key: `Status`, value: `Solved`), and Priority (key: `Priority`, value: `High`). Instead of relying solely on similarity-based searches of ticket descriptions, users can filter for specific tickets, such as 'Bug' tickets with the status set to 'Solved'.
 
 #### Add Data from a Mendix Application
 
