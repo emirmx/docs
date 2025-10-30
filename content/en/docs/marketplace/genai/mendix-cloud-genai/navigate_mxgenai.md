@@ -8,7 +8,7 @@ weight: 30
 
 ## Introduction
 
-The [Mendix Cloud GenAI portal](https://genai.home.mendix.com/) is the part of the Mendix portal that provides access to [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/). Is different parts are described below.
+The [Mendix Cloud GenAI portal](https://genai.home.mendix.com/) is the part of the Mendix portal that provides access to [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/). Its different parts are described below.
 
 ## Resource Overview / Landing page
 
@@ -99,9 +99,9 @@ Metadata consists of key-value pairs and serves as additional information connec
 
 For example, a GenAI Knowledge Base could be used to store customer support tickets. Each ticket may have associated metadata such as 
 
-* key: `Ticket Type`, value: `Bug`,
-* key: `Status`, value: `Solved`,
-* key: `Priority`, value: `High`.
+* key: `Ticket Type`, value: `Bug`
+* key: `Status`, value: `Solved`
+* key: `Priority`, value: `High`
 
 Instead of relying solely on similarity-based searches of ticket descriptions, users can then filter for specific tickets, such as 'Bug' tickets with the status set to 'Solved'.
 
