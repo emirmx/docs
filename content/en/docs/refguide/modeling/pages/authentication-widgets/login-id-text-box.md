@@ -11,9 +11,9 @@ This widget is not supported in the [React client](/refguide/mendix-client/react
 
 This widget is not supported on native mobile pages.
 
-If you [switch to the React client](/refguide/app-settings/#react-client), the widget will not appear in the **Toolbox**.
-
 Upgrade it to the normal input and action widgets as shown in the Atlas login page template. See the Mendix React Client's [Migration Guide](/refguide/mendix-client/react/#sign-in-widgets) for more information.
+
+If you [switch to the React client](/refguide/app-settings/#react-client), the widget will not appear in the **Toolbox**.
 
 The Dojo client is deprecated and will be removed in Mendix 12. It continues receiving security and stability updates until the end of support of Mendix 11.24.
 {{% /alert %}}

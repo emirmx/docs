@@ -6,11 +6,17 @@ weight: 90
 ---
 
 {{% alert color="warning" %}}
-The **input reference set selector** widget is a Dojo widget. It is not supported in the [React client](/refguide/mendix-client/react/) or on native mobile pages. If you [switch to the React client](/refguide/app-settings/#react-client), the widget will not appear in the **Toolbox**.
+The **input reference set selector** widget is a Dojo widget.
+
+This widget is not supported in the [React client](/refguide/mendix-client/react/).
+
+This widget is not supported on native mobile pages.
 
 To upgrade it to the recommended React-compliant widget ([Combo Box](/appstore/widgets/combobox/)), see the Mendix React Client's [Migration Guide](/refguide/mendix-client/react/#reference-selectors-drop-down).
 
-The Dojo client is deprecated and will be removed in a future version of Mendix.
+If you [switch to the React client](/refguide/app-settings/#react-client), the widget will not appear in the **Toolbox**.
+
+The Dojo client is deprecated and will be removed in Mendix 12. It continues receiving security and stability updates until the end of support of Mendix 11.24.
 {{% /alert %}}
 
 ## Introduction
