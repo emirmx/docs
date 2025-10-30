@@ -97,7 +97,13 @@ Metadata is additional information that can be attached to data in a GenAI knowl
 
 Metadata consists of key-value pairs and serves as additional information connected to the data, though it is not part of the vectorization itself.
 
-For example, a GenAI Knowledge Base could be used to store customer support tickets. Each ticket may have associated metadata such as Ticket Type (key: `Ticket Type`, value: `Bug`), Status (key: `Status`, value: `Solved`), and Priority (key: `Priority`, value: `High`). Instead of relying solely on similarity-based searches of ticket descriptions, users can filter for specific tickets, such as 'Bug' tickets with the status set to 'Solved'.
+For example, a GenAI Knowledge Base could be used to store customer support tickets. Each ticket may have associated metadata such as 
+
+* key: `Ticket Type`, value: `Bug`,
+* key: `Status`, value: `Solved`,
+* key: `Priority`, value: `High`.
+
+Instead of relying solely on similarity-based searches of ticket descriptions, users can then filter for specific tickets, such as 'Bug' tickets with the status set to 'Solved'.
 
 #### Add Data from a Mendix Application
 
