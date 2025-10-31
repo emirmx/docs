@@ -68,13 +68,15 @@ For more information on how to set up a vector database, see [Retrieval Augmente
 
 #### Knowledge Base
 
-By integrating Azure AI Search, the OpenAI Connector allows for knowledge base retrieval from Azure datsources. The most common use case is retrieval augmented generation (RAG) to retrieve relevant knowledge from the knowledge base, incorporating it into a prompt, and sending it to the model to generate a response.
+By integrating Azure AI Search, the OpenAI Connector allows for knowledge base retrieval from Azure datsources. Knowledge bases by other providers such as Mendix Cloud can be used , too.
 
 ### Features {#features}
 
 Mendix provides dual-platform support for both [OpenAI](https://platform.openai.com/) and [Azure OpenAI](https://oai.azure.com/). 
 
 With the current version, Mendix supports the Chat Completions API for [text generation](https://platform.openai.com/docs/guides/text-generation), the Image Generations API for [images](https://platform.openai.com/docs/guides/images), the Embeddings API for [vector embeddings](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings), and indexes via [Azure AI Search](https://learn.microsoft.com/en-us/azure/search/) for knowledge base retrieval.
+
+Typical use cases are described in more detail [here](/appstore/modules/genai/get-started/#llm-use-cases).
 
 ### Prerequisites {#prerequisites}
 
