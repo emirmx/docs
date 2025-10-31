@@ -8,18 +8,15 @@ weight: 30
 
 ## Introduction
 
-The [Mendix Cloud GenAI portal](https://genai.home.mendix.com/) is the part of the Mendix portal that provides access to [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/). Its different parts are described below.
-
-## Resource Overview / Landing page
-
-TBD
-New Screenshots needed 
+The [Mendix Cloud GenAI portal](https://genai.home.mendix.com/) is the part of the Mendix portal that provides access to [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/). After logging into the [Mendix Cloud GenAI portal](https://genai.home.mendix.com/), you can navigate to the overview of all resources. You can see all resources, that you are a team member of and access their details.
 
 ## Resource Details 
 
+After clicking on a specific resource, you land on 
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIResource_Details.png" >}}
+
 ### Settings
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIResource_Settings.png" >}}
 The **Settings** tab contains the details of a GenAI resource. It shows the following:
 
 * **Display Name**: indicates the name of the resource.
@@ -34,7 +31,7 @@ The **Settings** tab contains the details of a GenAI resource. It shows the foll
 
 When you are looking at the knowledge base resource settings, you will also see details of the associated embeddings resource and vice versa. To learn more about embeddings, see the [Embedding vector](/appstore/modules/genai/rag/#embedding-vector) section of *RAG in a Mendix App*.
 
-\* Cross-region inference (CRI) allows a model to redirect requests to another region, helping to distribute the load across multiple regions. Connecting to a cross-region inference profile does not change how the request is sent; the redirection happens on the server side, determining the region to handle the request to get the fastest response, see also [Increase throughput with cross-Region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html). If applicable, CRI profiles are selected during model resource provisioning. 
+\* Cross-region inference (CRI) allows a model to redirect requests to another region, helping to distribute the load across multiple regions. Connecting to a cross-region inference profile does not change how the request is sent; the redirection happens on the server side, determining the region to handle the request to get the fastest response, see also [Increase throughput with cross-Region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html). If applicable, CRI profiles are selected during provisioning of a model resource. 
 
 ### Team
 
