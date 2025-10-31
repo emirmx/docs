@@ -101,9 +101,9 @@ Instead of relying solely on similarity-based searches of ticket descriptions, u
 
 You can upload data directly from Mendix to the Knowledge Base. To do so, several operations of the Mendix Cloud GenAI Connector are required. For a detailed guide on this process, see the [Add Data Chunks to Your Knowledge Base](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#add-data-chunks-to-your-knowledge-base) section of **Mendix Cloud GenAI Connector**.
 
-## Token Consumption Monitor
+## Consumption
 
-The **Token Consumption Monitor** shows detailed graphs of the token consumption used by the GenAI resource. Use this overview to see the current usage, insights on the usage per day, and to compare the current month with previous months.
+The **Consumption** section provides outcomones of token consumption monitoring for each GenAI resource in a graphical way. Use this overview to see the current usage, insights on the usage per day, and to compare the current month with previous months.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIResource_TokenConsumptionMonitor.png" >}}
 
