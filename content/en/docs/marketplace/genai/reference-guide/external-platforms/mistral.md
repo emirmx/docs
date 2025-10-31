@@ -15,7 +15,7 @@ The current scope covers text generation use cases based on the [Chat Completion
 
 ### Typical Use Cases
 
-The Mistral Connector is commonly used for text generation and embeddings. These use cases are described in more detail below.
+The Mistral Connector is commonly used for text generation and embeddings. These use cases are described in more detail [here](/appstore/modules/genai/reference-guide/).
 
 #### Text Generation {#use-cases-text}
 
