@@ -25,7 +25,7 @@ For example, you can use an LLM to do:
 * **Text Generation:** Creating coherent and contextually relevant text from a prompt.
 * **Data Generation:** Generating Mendix objects by combining JSON generation and [Import mappings](/refguide/import-mapping-action/).
 
-### Typical LLM Use Cases
+### Typical LLM Use Cases {#llm-use-cases}
 
 #### Text Generation
 
