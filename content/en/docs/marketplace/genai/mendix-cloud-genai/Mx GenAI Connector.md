@@ -51,6 +51,10 @@ Follow the steps below to get started:
 * Add the `Configuration_Overview` page (**USE_ME** > **Configuration**) to your navigation, or add the `Snippet_Configuration` to a page that is already part of your navigation. Alternatively, you can register your key by using the `Configuration_RegisterByString` microflow.
 * Complete the runtime setup of Mendix Cloud GenAI configuration by navigating to the page mentioned above. Import a key generated in the [portal](https://genai.home.mendix.com) or provided to you and click **Test Key** to validate its functionality. Note that this key establishes a connection between the Mendix Cloud resources and your application. It contains all the information required to set up the connection.
 
+{{% alert color="info" %}}
+When using an Embeddings Mdel Resource in combination with a Knowledge Base Resource, there is no need to import both keys: the connection details for the embeddings generation model will be generated automatically on import of the Knowledge Base Resource key.
+{{% /alert %}}
+
 ## Operations
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/mxgenaiconnector-configuration.png" >}}
