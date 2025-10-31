@@ -83,7 +83,7 @@ When you select the **Add Files Like .TXT or .PDF** option, you can upload docum
 
 {{% alert color="info" %}} Only TXT and PDF files are supported. {{% /alert %}} 
 
-Before uploading, you can choose to upload the data to a new collection, the default collection, or another existing collection within the resource. A Knowledge Base resource can comprise several collections. Each collection is specifically designed to hold numerous documents, serving as a logical grouping for related information based on its shared domain, purpose, or thematic focus.
+Before uploading, you can choose to upload the data to a new collection, the default collection, or another existing collection within the resource. A Knowledge Base resource can comprise several collections. Each collection is specifically designed to hold numerous documents, serving as a logical grouping for related information based on its shared domain, purpose, or thematic focus. Below, you can find a diagram displaying the separation of a resource into different collections. Like this, different use cases (e.g. 'Employee Onboarding' and 'IT Ticket Support') can be powered by the same resource while still providing the option to only add the required collections to the conversation context.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIKnowledgeBaseResource.png" >}}
 
