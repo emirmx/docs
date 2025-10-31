@@ -55,7 +55,7 @@ After you install the Mistral and OpenAI connector, you can find them in the **M
 1. Add the module roles `OpenAIConnector.Administrator` and `MistralConnector.Administrator` to your Administrator **User roles** in the **Security** settings of your app. 
 2. Add the **MistralConfiguration_Overview** page from the Mistral connector module (**USE_ME > MistralConfiguration**) to your navigation, or add the `Snippet_MistralConfigurations` to a page that is already part of your navigation. 
 3. Continue setting up your Mistral configuration at runtime. For more information, follow the instructions in the [Mistral Configuration](#mistral-configuration) section below.
-4. Configure the models you need to use for your use case.
+4. Configure the models you need for your use case.
 
 #### Mistral Configuration {#mistral-configuration} 
 
