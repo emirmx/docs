@@ -12,7 +12,8 @@ The [Mendix Cloud GenAI portal](https://genai.home.mendix.com/) is the part of t
 
 ## Resource Details 
 
-After clicking on a specific resource, you land on 
+After clicking on a specific resource, you land on its details page, offering short cuts to consumption insights, key generation, team management and helpful documentation. 
+
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIResource_Details.png" >}}
 
 ### Settings
