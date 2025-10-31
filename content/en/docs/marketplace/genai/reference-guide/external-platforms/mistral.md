@@ -13,9 +13,7 @@ The [Mistral Connector](https://marketplace.mendix.com/link/component/248276) al
 
 ### Features {#features}
 
-The Mistral Connector is commonly used for text generation based on the [Chat Completions API](https://docs.mistral.ai/api/endpoint/chat) and embeddings generation with the [Embeddings API](https://docs.mistral.ai/api/endpoint/embeddings). 
-
-Use cases for both text and embeddings generation are described in more detail [here](/appstore/modules/genai/get-started/#llm-use-cases).
+The Mistral Connector is commonly used for text generation based on the [Chat Completions API](https://docs.mistral.ai/api/endpoint/chat) and embeddings generation with the [Embeddings API](https://docs.mistral.ai/api/endpoint/embeddings). Typical use cases for generative AI are described in more detail [here](/appstore/modules/genai/get-started/#llm-use-cases).
 
 For more information about the models, see [Mistral models](https://docs.mistral.ai/getting-started/models).
 
