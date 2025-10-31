@@ -30,9 +30,11 @@ The **Settings** tab contains the details of a GenAI resource. It shows the foll
 * **Plan**: indicates the subscription plan used for compute resources (for example, embedding or text generation resources).
 * **Environment**: shows which environment is used, for example, test, acceptance, or production.
 
-When you are looking at the knowledge base resource settings, you will also see details of the associated embeddings resource and vice versa. To learn more about embeddings, see the [Embedding vector](/appstore/modules/genai/rag/#embedding-vector) section of *RAG in a Mendix App*.
-
 \* Cross-region inference (CRI) allows a model to redirect requests to another region, helping to distribute the load across multiple regions. Connecting to a cross-region inference profile does not change how the request is sent; the redirection happens on the server side, determining the region to handle the request to get the fastest response, see also [Increase throughput with cross-Region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html). If applicable, CRI profiles are selected during provisioning of a model resource. 
+
+#### Additional Details for Knowledge Base Resources
+
+For knowledge base resources, you will also see details of the associated embeddings resource and vice versa. To learn more about embeddings, see the [Embedding vector](/appstore/modules/genai/rag/#embedding-vector) section of *RAG in a Mendix App*.
 
 ### Team
 
@@ -56,7 +58,11 @@ Make sure to store it securely, as it will only be shown once.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIResource_KeyGeneration.png" >}}
 
-Once created, the key can be used in the Mendix application via the Mendix Cloud GenAI Connector. When you create a key for a knowledge base, an embedding key is automatically generated and marked accordingly in the keys overview.
+Once created, the key can be used in the Mendix application via the Mendix Cloud GenAI Connector. 
+
+#### Additional Information for Knowledge Base Resource Keys
+
+When you create a key for a knowledge base, an embeddings resource key is automatically generated for the selected embeddings model and marked accordingly in the keys overview. To configure a knowledge base connection from a Mendix application, you then only need to import the knowledge base resource key as connection details for the embeddings model are created automatically.
 
 ### Content (Only for Knowledge Bases)
 
@@ -101,7 +107,7 @@ Instead of relying solely on similarity-based searches of ticket descriptions, u
 
 You can upload data directly from Mendix to the Knowledge Base. To do so, several operations of the Mendix Cloud GenAI Connector are required. For a detailed guide on this process, see the [Add Data Chunks to Your Knowledge Base](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#add-data-chunks-to-your-knowledge-base) section of **Mendix Cloud GenAI Connector**.
 
-## Consumption
+## Consumption (Only for Model Resources)
 
 The **Consumption** section provides outcomones of token consumption monitoring for each GenAI resource in a graphical way. Use this overview to see the current usage, insights on the usage per day, and to compare the current month with previous months.
 
