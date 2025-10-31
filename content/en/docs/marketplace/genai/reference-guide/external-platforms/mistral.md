@@ -11,7 +11,7 @@ weight: 20
 
 The [Mistral Connector](https://marketplace.mendix.com/link/component/248276) allows you to integrate generative AI capabilities into your Mendix application. Since the Mistral API is compatible with [OpenAI API](https://platform.openai.com/), this module mainly focuses on Mistral specific UI while reusing the operations inside of the OpenAI connector. 
 
-### Typical Use Cases
+### Features {#features}
 
 The Mistral Connector is commonly used for text generation based on the [Chat Completions API](https://docs.mistral.ai/api/endpoint/chat) and embeddings generation with the [Embeddings API](https://docs.mistral.ai/api/endpoint/embeddings). 
 
@@ -27,9 +27,6 @@ Mistral does not currently offer image generation models out of the box. It is p
 
 The Mistral connector supports Knowledge bases from providers such as pgVector, Mendix Cloud, Amazon Bedrock, and Azure AI Search to be added to a conversation.
 
-### Features {#features}
-
-With the current version, Mendix supports the Chat Completions API for [text generation](https://docs.mistral.ai/api/endpoint/chat) and the Embeddings API for [vector embeddings](https://docs.mistral.ai/api/endpoint/embeddings).
 
 ### Prerequisites
 
