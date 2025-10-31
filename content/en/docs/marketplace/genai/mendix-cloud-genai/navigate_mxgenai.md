@@ -85,9 +85,9 @@ When you select the **Add Files Like .TXT or .PDF** option, you can upload docum
 
 Before uploading, you can choose to upload the data to a new collection, the default collection, or another existing collection within the resource. A Knowledge Base resource can comprise several collections. Each collection is specifically designed to hold numerous documents, serving as a logical grouping for related information based on its shared domain, purpose, or thematic focus.
 
-ADD IMAGE
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIKnowledgeBaseResource.png" >}}
 
-While collections provide a mechanism for data separation, with each corresponding to a [DeployedKnowledgebase](/appstore/modules/genai/genai-for-mx/commons/#deployed-knowledge-base), it is not best practice to create a large number of collections within a single Knowledge Base resource. A more performant and practical approach for achieving fine-grained data separation is through the strategic use of metadata.   
+{{% alert color="info" %}} While collections provide a mechanism for data separation, it is not best practice to create a large number of collections within a single Knowledge Base resource. A more performant and practical approach for achieving fine-grained data separation is through the strategic use of metadata. {{% alert %}} 
 
 ##### Metadata {#metadata}
 
@@ -108,6 +108,8 @@ Instead of relying solely on similarity-based searches of ticket descriptions, u
 You can upload data directly from Mendix to the Knowledge Base. To do so, several operations of the Mendix Cloud GenAI Connector are required. For a detailed guide on this process, see the [Add Data Chunks to Your Knowledge Base](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#add-data-chunks-to-your-knowledge-base) section of **Mendix Cloud GenAI Connector**.
 
 ## Consumption (Only for Model Resources)
+
+{{% alert color="info" %}} The **Content** tab is available for Model resources only.{{% /alert %}} 
 
 The **Consumption** section provides outcomones of token consumption monitoring for each GenAI resource in a graphical way. Use this overview to see the current usage, insights on the usage per day, and to compare the current month with previous months.
 
