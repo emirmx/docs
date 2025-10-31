@@ -11,29 +11,13 @@ weight: 20
 
 The [Mistral Connector](https://marketplace.mendix.com/link/component/248276) allows you to integrate generative AI capabilities into your Mendix application. Since the Mistral API is compatible with [OpenAI API](https://platform.openai.com/), this module mainly focuses on Mistral specific UI while reusing the operations inside of the OpenAI connector. 
 
-The current scope covers text generation use cases based on the [Chat Completions API](https://docs.mistral.ai/api/endpoint/chat) and embedding use cases based on the [Embeddings API](https://docs.mistral.ai/api/endpoint/embeddings). 
-
 ### Typical Use Cases
 
-The Mistral Connector is commonly used for text generation and embeddings. These use cases are described in more detail [here](/appstore/modules/genai/reference-guide/).
+The Mistral Connector is commonly used for text generation based on the [Chat Completions API](https://docs.mistral.ai/api/endpoint/chat) and embeddings generation with the [Embeddings API](https://docs.mistral.ai/api/endpoint/embeddings). 
 
-#### Text Generation {#use-cases-text}
+Use cases for both text and embeddings generation are described in more detail [here](/appstore/modules/genai/get-started/#llm-use-cases).
 
-* Develop interactive AI chatbots and virtual assistants that can carry out conversations in a natural and engaging manner. 
-* Use Mistral’s large language models (LLMs) for text comprehension and analysis use cases such as summarization, synthesis, and answering questions about large amounts of text.
-* Tailor the Mistral models on a specific task or domain by adding custom data to improve their performance. 
-* Integrate more easily with Mistral’s platform. By providing text generation models, this allows you to build applications with the following features:
-    * Draft documents 
-    * Write computer code 
-    * Answer questions about a knowledge base 
-    * Analyze texts
-    * Give software a natural language interface 
-    * Tutor in a range of subjects 
-    * Translate languages 
-    * Simulate characters for games
-    * Image to text
-
-For more information, see [Mistral models](https://docs.mistral.ai/getting-started/models).
+For more information about the models, see [Mistral models](https://docs.mistral.ai/getting-started/models).
 
 #### Image Generation {#use-cases-images}
 
