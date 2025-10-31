@@ -25,7 +25,7 @@ Mendix provides dual-platform support for both [OpenAI](https://platform.openai.
 
 With the current version, Mendix supports the Chat Completions API for [text generation](https://platform.openai.com/docs/guides/text-generation), the Image Generations API for [images](https://platform.openai.com/docs/guides/images), the Embeddings API for [vector embeddings](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings), and indexes via [Azure AI Search](https://learn.microsoft.com/en-us/azure/search/) for knowledge base retrieval.
 
-Typical use cases are described in more detail [here](/appstore/modules/genai/get-started/#llm-use-cases).
+Typical use cases for generative AI are described in more detail [here](/appstore/modules/genai/get-started/#llm-use-cases).
 
 #### Knowledge Base
 
