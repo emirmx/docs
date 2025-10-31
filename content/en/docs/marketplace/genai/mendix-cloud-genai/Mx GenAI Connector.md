@@ -59,7 +59,7 @@ Configuration keys are stored persistently after they are imported (either via t
 
 To use the operations, either a `DeployedModel` (text, embeddings) or a `DeployedKnowledgeBase` must always be passed as input. The DeployedModel will be created automatically when importing keys at runtime and needs to be retrieved from the database. To initialize a knowledge base operation, use the `DeployedKnowledgeBase: Get` toolbox action to retrieve the DeployedKnowledgeBase object for a specified collection. It requires the collection's Name (string) as input. 
 
-In Mendix Cloud GenAI, a single knowledge base resource (MxCloudKnowledgeBaseResource) can contain multiple collections (tables). As a result, several DeployedKnowledgeBase objects may belong to the same resource.
+In Mendix Cloud GenAI, a single knowledge base resource (MxCloudKnowledgeBaseResource) can contain multiple collections (tables). As a result, several DeployedKnowledgeBase objects (each corresponding to a collection) may belong to the same resource.
 
 ### Chat Completions Operation
 
