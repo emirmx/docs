@@ -8,7 +8,7 @@ weight: 30
 
 ## Introduction
 
-The [Mendix Cloud GenAI portal](https://genai.home.mendix.com/) is the part of the Mendix portal that provides access to [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/). After logging into the [Mendix Cloud GenAI portal](https://genai.home.mendix.com/), you can navigate to the overview of all resources. You can see all resources, that you are a team member of and access their details.
+The [Mendix Cloud GenAI portal](https://genai.home.mendix.com/) is the part of the Mendix portal that provides access to [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/). After logging in, you can navigate to the overview of all resources. You can see all resources, that you are a team member of and access their details.
 
 ## Resource Details 
 
