@@ -136,9 +136,9 @@ The model uses the file name when analyzing documents, which may introduce a pot
 
 A Knowledge Base resource can comprise several collections. Each collection is specifically designed to hold numerous documents, serving as a logical grouping for related information based on its shared domain, purpose, or thematic focus.
 
-Below, you can find a diagram displaying the saparation of a resource into different collections. Different use cases (e.g. 'Employee Onboarding' and 'IT Ticket Support' can be powered by the same resource by cherry-picking required collections.
+Below, you can find a diagram displaying the separation of a resource into different collections. Like this, different use cases (e.g. 'Employee Onboarding' and 'IT Ticket Support') can be powered by the same resource while still providing the option to only add the required collections to the conversation context.
 
-
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIKnowledgeBaseResource.png" >}}
 
 While collections provide a mechanism for data separation, it is not best practice to create a large number of collections within a single Knowledge Base resource. A more performant and practical approach for achieving fine-grained data separation is through the strategic use of metadata. To learn more, see [Retrieve and Generate](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#retrieve-and-generate).
 
