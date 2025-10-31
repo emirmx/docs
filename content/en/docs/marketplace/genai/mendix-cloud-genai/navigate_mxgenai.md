@@ -109,7 +109,7 @@ You can upload data directly from Mendix to the Knowledge Base. To do so, severa
 
 ## Consumption (Only for Model Resources)
 
-{{% alert color="info" %}} The **Content** tab is available for Model resources only.{{% /alert %}} 
+{{% alert color="info" %}} The **Consumption** tab is available for Model resources only.{{% /alert %}} 
 
 The **Consumption** section provides outcomones of token consumption monitoring for each GenAI resource in a graphical way. Use this overview to see the current usage, insights on the usage per day, and to compare the current month with previous months.
 
