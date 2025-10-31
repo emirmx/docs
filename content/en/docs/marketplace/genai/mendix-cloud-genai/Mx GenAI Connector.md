@@ -12,54 +12,6 @@ aliases:
 
 The [Mendix Cloud GenAI connector](https://marketplace.mendix.com/link/component/239449) lets you utilize [Mendix Cloud GenAI resource packs](/appstore/modules/genai/mx-cloud-genai/mendix-cloud-grp/) directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox. 
 
-### Typical Use Cases
-
-Like the connectors to other providers such as Amazon Bedrock and OpenAI, the Mendix Cloud GenAI Connector is commonly used for text generation, embeddings generation, and knowledge bases. These use cases are described in more detail below:
-
-#### Text Generation
-
-* Develop interactive AI chatbots and virtual assistants that can carry out conversations naturally and engagingly.
-* Use state-of-the-art large language models (LLMs) by providers like Anthropic for text comprehension and analysis use cases such as summarization, synthesis, and answering questions about large amounts of text.
-* By using text generation models, you can build applications with features such as:
-
-    * Draft documents
-    * Write computer code
-    * Answer questions about a knowledge base
-    * Analyze texts
-    * Give the software a natural language interface
-    * Tutor in a range of subjects
-    * Translate languages
-    * Simulate characters for games
-    * Image to text
- 
-#### Embeddings Generation
-
-Convert strings into vector embeddings for various purposes based on the relatedness of texts.
-
-Embeddings are commonly used for the following:
-
-* Search 
-* Clustering 
-* Recommendations 
-* Anomaly detection 
-* Diversity measurement 
-* Classification 
-
-You can combine embeddings with text generation capabilities and leverage specific sources of information to create a smart chat functionality tailored to your knowledge base.
-
-{{% alert color="info" %}}
-The Mendix Cloud GenAI Connector module generates embeddings internally when interacting with a knowledge base. Pure embedding operations are only required if additional processes, such as using the generated vectors instead of text, are needed. For example, a similar search algorithm could use vector distances to calculate relatedness.
-{{% /alert %}}
-
-#### Knowledge Base
-
-The module helps to tailor response generation to specific contexts by grounding them in data. Each knowledge base resource is logically isolated into collections and full control over the added data is possible as selected collections are added as context specifically and not the knowledge base resource as a whole. This allows for the secure use of private company data or other non-public information when interacting with GenAI models within the Mendix app. It provides a low-code solution to store discrete data (commonly called chunks) in the knowledge base and retrieves relevant information for end-user actions or application processes.
-
-Knowledge bases are often used for:
-
-1. [Retrieval Augmented Generation (RAG)](/appstore/modules/genai/rag/) retrieves relevant knowledge from the knowledge base, incorporates it into a prompt, and sends it to the model to generate a response.
-2. Semantic search enables advanced search capabilities by considering the semantic meaning of the text, going beyond exact and approximate matching. It allows the knowledge base to be searched for similar chunks effectively.
-
 If you are looking for a step-by-step guide on how to get your application data into a collection inside of a Mendix Cloud Knowledgebase Resource, refer to [Grounding Your Large Language Model in Data – Mendix Cloud GenAI](/appstore/modules/genai/how-to/howto-groundllm/). Note that the Mendix Portal also provides options for importing data into your knowledge base, such as file uploads. For more information, see [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/). This documentation focuses solely on adding data from inside of a Mendix application and using the connector. 
 
 ##### Architecture
