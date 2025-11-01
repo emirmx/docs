@@ -44,7 +44,6 @@ To deploy the solution, perform the following steps:
 
     {{< figure src="/attachments/deployment/mx-azure/available-clusters.png" class="no-border" >}}
 
-
 7. Identify the entry belonging to the Managed Application you deployed in previous steps. In the **Actions** column, click the dropdown menu icon, and then select **Initialize**. 
 
     The preflight check launches to verify the conditions are in place to successfully initialize a Mendix on Azure cluster. 
