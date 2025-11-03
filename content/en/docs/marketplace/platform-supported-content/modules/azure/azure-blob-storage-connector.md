@@ -392,8 +392,7 @@ To use this operation in your microflow, perform the following steps:
 2. Provide a valid **EntraCredentials** object by using the **EntraCredentials** parameter.
 3. Call the **POST_v1_Azure_RevokeAllUserDelegationKeys** action in your microflow.
 
-The operation returns a **RevokeAllUserDelegationKeysResponse** object, which is empty on itself, only its generization AbstractResponse entity contains the http status code and optional the http reason phrase.
-
+The operation returns a **RevokeAllUserDelegationKeysResponse** object, which is empty on itself. Its generalization AbstractResponse entity contains the HTTP status code, and optionally the HTTP reason phrase.
 
 ## Technical Reference {#technical-reference}
 
