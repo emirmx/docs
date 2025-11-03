@@ -11,7 +11,7 @@ description: "Native Template 14"
 
 ### Improvements
 
-- We have installed react-native-edge-to-edge to ensure proper layout behavior and visual consistency on Android 15 and newer devices.
+* We have installed react-native-edge-to-edge to ensure proper layout behavior and visual consistency on Android 15 and newer devices.
 
 ## 14.1.6 {#1416}
 

@@ -29,31 +29,31 @@ The [Mendix on Azure Portal](https://mendixonazure.mendix.com) provides a variet
 | --- | --- | --- |
 | Load Balancer Type | Controls whether your applications are reachable publicly or only privately via your own (Virtual) Network or Private Endpoints. | Yes |
 | AKS Node CIDR IP Range | Defines the IP address range on the VNet hosting AKS cluster nodes. This can only be set during initial deployment and should align with your organization's IP plan if you plan to connect Mendix on Azure to other networks via peering. Default is acceptable when no interconnection is required. | No |
-| AKS Network Isolated Cluster | When set to true will lead to a cluster without egress configuration, please carefully read the [documentation on cluster networking modes ](/developerportal/deploy/mendix-on-azure/configuration/ingress-egress/) to understand the implications | No |
+| AKS Network Isolated Cluster | When set to true will lead to a cluster without egress configuration, please carefully read the [documentation on cluster networking modes](/developerportal/deploy/mendix-on-azure/configuration/ingress-egress/) to understand the implications | No |
 
 For more information, see [Configuring Ingress and Egress](/developerportal/deploy/mendix-on-azure/configuration/ingress-egress/).
 
 ### Application Cluster Settings
 
-| Advanced Option	| Description	| Editable after Initial Creation |
-| ---	| ---	| ---	|
+| Advanced Option    | Description    | Editable after Initial Creation |
+| ---    | ---    | ---    |
 | AKS Node VM Size | The VM size used on the AKS application cluster. Default should suffice in most circumstances. You can change the default size in case of performance issues (for example, using non-burstable instances can improve Mendix Runtime performance), or if your Mendix app environment instances require more RAM than available under current selection. In case a Mendix app environment instance is configured to require more RAM than available on the current VM size, switching to a larger VM size might be required to have the app instance start at all. | Yes |
-| AKS Maximum Node Count | The number of available cluster nodes will be increased and decreased automatically based on the combined capacity requirement of all deployed Mendix apps. This setting controls the upper limit to the number of available nodes in order to avoid cost surprises.	| Yes	|
-| AKS Service Tier	| The [AKS service tier](https://learn.microsoft.com/en-us/azure/aks/free-standard-pricing-tiers) determines the service level Microsoft provides on the Mendix on Azure Kubernetes cluster control plane. This does not impact application performance, only Microsoft's SLA. The Free tier is sufficient in most situations. Standard can be considered by organizations that value a financially backed SLA. For information about the associated costs, refer to Microsoft documentation. The Premium tier does not offer any additional value in combination with Mendix on Azure and is not recommended. | Yes |
+| AKS Maximum Node Count | The number of available cluster nodes will be increased and decreased automatically based on the combined capacity requirement of all deployed Mendix apps. This setting controls the upper limit to the number of available nodes in order to avoid cost surprises.    | Yes    |
+| AKS Service Tier    | The [AKS service tier](https://learn.microsoft.com/en-us/azure/aks/free-standard-pricing-tiers) determines the service level Microsoft provides on the Mendix on Azure Kubernetes cluster control plane. This does not impact application performance, only Microsoft's SLA. The Free tier is sufficient in most situations. Standard can be considered by organizations that value a financially backed SLA. For information about the associated costs, refer to Microsoft documentation. The Premium tier does not offer any additional value in combination with Mendix on Azure and is not recommended. | Yes |
 
 ### Database Settings
 
-| Advanced Option | Description	| Editable after initial creation |
-| ---	| ---	| ---	|
-| Enable Read Replica	| Enables a read replica for direct app database access. For more information, see [Direct Database Access](/developerportal/deploy/mendix-on-azure/configuration/direct-database-access/). | Yes |
-| Compute Tier and Size | Specifies the DB Compute Tier for the shared PostgreSQL database used by all Mendix app environments. You may need to increase it for better app performance. For more information, see [Compute options in Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-compute) in Microsoft documentation. 	| Yes 	|
-| Storage Performance Tier 	| Specifies the Storage Performance Tier for the shared PostgreSQL database. Consider increasing if performance issues arise. For more information, see [Storage in Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-storage) in Microsoft documentation. | Yes |
+| Advanced Option | Description    | Editable after initial creation |
+| ---    | ---    | ---    |
+| Enable Read Replica    | Enables a read replica for direct app database access. For more information, see [Direct Database Access](/developerportal/deploy/mendix-on-azure/configuration/direct-database-access/). | Yes |
+| Compute Tier and Size | Specifies the DB Compute Tier for the shared PostgreSQL database used by all Mendix app environments. You may need to increase it for better app performance. For more information, see [Compute options in Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-compute) in Microsoft documentation.     | Yes     |
+| Storage Performance Tier     | Specifies the Storage Performance Tier for the shared PostgreSQL database. Consider increasing if performance issues arise. For more information, see [Storage in Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-storage) in Microsoft documentation. | Yes |
 
 ### Observability Settings
 
-| Advanced Option | Description	| Editable after initial creation |
-| ---	| ---	| ---	|
-| Managed Grafana Accessibility 	| Determines whether the Managed Grafana observability dashboard is accessible publicly or only via private endpoints. [Virtual network peering](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks/#network-peering) is required for private access.	| Yes |
+| Advanced Option | Description    | Editable after initial creation |
+| ---    | ---    | ---    |
+| Managed Grafana Accessibility     | Determines whether the Managed Grafana observability dashboard is accessible publicly or only via private endpoints. [Virtual network peering](/developerportal/deploy/mendix-on-azure/configuration/interconnecting-networks/#network-peering) is required for private access.    | Yes |
 
 ## Self-service configuration available via Microsoft Azure Portal
 
