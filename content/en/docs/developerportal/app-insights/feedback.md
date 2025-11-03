@@ -134,7 +134,7 @@ The following options are available:
  
 * **Ungroup** – Ungroup all feedback in the group. This action does not delete the group.
 * **Delete Group** – Delete the group and all feedback within it. This action is destructive and, once you delete a group with feedback, the feedback is also deleted.
-* Group Name – The name of the group, which you can edit by clicking it.
+* **Group Name** – The name of the group, which you can edit by clicking it.
     * **Description** – The description of the group.
 * **Tags** – Any tags assigned to the group.     
   You can either select a tag from the drop-down list, or create a new tag by typing its name inside the text box, then clicking **Create [the tag name]**.     
