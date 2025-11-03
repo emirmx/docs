@@ -32,14 +32,14 @@ When using Bitrise to build your native mobile app in the cloud, you can configu
 1. Open the **Android Build** workflow step
 1. Set the **Variant** to `devDebug`.
 
-   {{< figure src="/attachments/howto/mobile/native-mobile/distribution/build-native-apps/how-to-devapps/custom-developer-app-bitrise-android.png" alt="Screenshot of the Bitrise dialog to enable a custom developer app" width="350" >}}
+   {{< figure src="/attachments/howto/mobile/native-mobile/distribution/build-native-apps/how-to-devapps/custom-developer-app-bitrise-android.png" alt="Screenshot of the Bitrise dialog to enable a custom developer app">}}
 
 ### iOS
 
 1. Open the **Xcode Archive & Export for iOS** workflow step.
 1. Set the **Scheme** to `Dev`.
 
-   {{< figure src="/attachments/howto/mobile/native-mobile/distribution/build-native-apps/how-to-devapps/custom-developer-app-bitrise-xcode.png" alt="Screenshot of the Bitrise dialog to enable a custom developer app" width="350" >}}
+   {{< figure src="/attachments/howto/mobile/native-mobile/distribution/build-native-apps/how-to-devapps/custom-developer-app-bitrise-xcode.png" alt="Screenshot of the Bitrise dialog to enable a custom developer app">}}
 
 ## Building Your Developer App Locally
 
@@ -48,9 +48,14 @@ If you are building your release app locally using Android Studio or Xcode, you 
 ### Android
 
 1. Open the Android project within your native template in **Android Studio**.
-1. Change the AppVariant to `devDebug`.
+1. Open the **Build Variants** (View > Tool Windows > Build Variants).
+1. Set the **Active Build Variant** of the Module **:app **to `devDebug`.
+
+   {{< figure src="/attachments/howto/mobile/native-mobile/distribution/build-native-apps/how-to-devapps/custom-developer-app-android.png" alt="Screenshot of the Bitrise dialog to enable a custom developer app">}}
 
 ## iOS
 
 1. Open the iOS project within your native template in **XCode**.
-1. Change the Target to `Dev`.
+1. Set the Target to `Dev`.
+
+   {{< figure src="/attachments/howto/mobile/native-mobile/distribution/build-native-apps/how-to-devapps/custom-developer-app-xcode.png" alt="Screenshot of the Bitrise dialog to enable a custom developer app">}}
