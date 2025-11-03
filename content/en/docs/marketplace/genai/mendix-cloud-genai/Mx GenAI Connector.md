@@ -167,7 +167,7 @@ Dealing with knowledge bases involves two main stages:
 1. [Insertion of knowledge](#knowledge-base-insertion)
 2. [Retrieval of knowledge (Nearest neighbor)](#knowledge-base-retrieval)
 
-You do not need to manually add embeddings to a chunk, as the connector handles this internally. To see all existing knowledge bases for a configuration, go to the **Knowledge Base** tab on the [Mendix Cloud GenAI Configuration](#configuration) page and refresh the view on the right. Alternatively, use the `Get Collections` action to retrieve a synchronized list of collections inside of your knowledge base resource to include in your module. Lastly, you can delete a collection using the `Delete Collection` action.
+You do not need to manually add embeddings to a chunk, as the connector handles this internally. To see all existing collections for a knowledge base configuration, go to the **Knowledge Base** tab on the [Mendix Cloud GenAI Configuration](#configuration) page and refresh the view on the right. Alternatively, use the `Get Collections` action to retrieve a synchronized list of collections inside of your knowledge base resource to include in your module. Lastly, you can delete a collection using the `Delete Collection` action.
 
 {{% alert color="warning" %}}
 The knowledge chunks are stored in an AWS OpenSearch Serverless database to ensure scalable and high-performance vector calculations—for example, retrieving the nearest neighbors of a given input. Inserted or modified chunks are only available for read operations (retrieval) in the knowledge base within 60-120 seconds. For more information, see [AWS documentation](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vector-search.html#serverless-vector-limitations).
