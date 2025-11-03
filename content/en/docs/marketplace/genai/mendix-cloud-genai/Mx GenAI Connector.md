@@ -13,14 +13,6 @@ aliases:
 The [Mendix Cloud GenAI connector](https://marketplace.mendix.com/link/component/239449) lets you utilize [Mendix Cloud GenAI resource packs](/appstore/modules/genai/mx-cloud-genai/mendix-cloud-grp/) directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox. 
 
 
-{{% alert color="info" %}}
-
-
-The Mendix Cloud GenAI Connector module generates embeddings internally when interacting with a knowledge base. Pure embedding operations are only required if additional processes, such as using the generated vectors instead of text, are needed. For example, a similar search algorithm could use vector distances to calculate relatedness.
-
-
-{{% /alert %}}
-
 ### Features
 
 In the current version, Mendix supports text generation (including function/tool calling, chat with images, and chat with documents), vector embedding generation, knowledge base storage, and retrieval of knowledge base chunks.
@@ -30,6 +22,12 @@ Typical use cases for generative AI are described in more detail [here](/appstor
 ### Prerequisites
 
 To use this connector, you need configuration keys to authenticate to the Mendix Cloud GenAI services. You can generate keys in the [Mendix portal](https://genai.home.mendix.com) or ask someone with access to either generate them for you or add you to their team so you can generate keys yourself. 
+
+{{% alert color="info" %}}
+
+The Mendix Cloud GenAI Connector module generates embeddings internally when interacting with a knowledge base. This means that you do not need to create embedding keys yourself when interacting with a Menidx Cloud knowledge base. Pure embedding operations are only required if additional processes, such as using the generated vectors instead of text, are needed. For example, a similar search algorithm could use vector distances to calculate relatedness.
+
+{{% /alert %}}
 
 ### Dependencies {#dependencies}
 
