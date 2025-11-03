@@ -25,7 +25,7 @@ To use this connector, you need configuration keys to authenticate to the Mendix
 
 {{% alert color="info" %}}
 
-The Mendix Cloud GenAI Connector module generates embeddings internally when interacting with a knowledge base. This means that you do not need to create embedding keys yourself when interacting with a Menidx Cloud knowledge base. Pure embedding operations are only required if additional processes, such as using the generated vectors instead of text, are needed. For example, a similar search algorithm could use vector distances to calculate relatedness.
+The Mendix Cloud GenAI Connector module generates embeddings internally when interacting with a knowledge base. This means that you do not need to create embedding keys yourself when interacting with a Mendix Cloud knowledge base. Pure embedding operations are only required if additional processes, such as using the generated vectors instead of text, are needed. For example, a similar search algorithm could use vector distances to calculate relatedness.
 
 {{% /alert %}}
 
@@ -60,9 +60,16 @@ When using an Embeddings Mdel Resource in combination with a Knowledge Base Reso
 
 Configuration keys are stored persistently after they are imported (either via the UI or the exposed microflow). There are three different types of configurations that reflect the use cases this service supports. The specific operations are described below.
 
-To use the operations, either a `DeployedModel` (text, embeddings) or a `DeployedKnowledgeBase` must always be passed as input. The DeployedModel will be created automatically when importing keys at runtime and needs to be retrieved from the database. To initialize a knowledge base operation, use the `DeployedKnowledgeBase: Get` toolbox action to retrieve the DeployedKnowledgeBase object for a specified collection. It requires the collection's Name (string) as input. 
+To use the operations, either a `DeployedModel` (text, embeddings) or a `DeployedKnowledgeBase` must always be passed as input. 
 
-In Mendix Cloud GenAI, a single knowledge base resource (MxCloudKnowledgeBaseResource) can contain multiple collections (tables). As a result, several DeployedKnowledgeBase objects (each corresponding to a collection) may belong to the same resource.
+#### How to get the Deployed Model in scope
+
+The DeployedModel will be created automatically when importing keys at runtime and needs to be retrieved from the database. 
+
+#### How to get the Deployed Knowledge Base in scope 
+
+In Mendix Cloud GenAI, a single knowledge base resource (`MxCloudKnowledgeBaseResource`) can contain multiple `DeployedKnowledgeBase` objects (tables, referred to as 'collections'). As a result, several collections may belong to the same resource. You can use the `DeployedKnowledgeBase: Get` toolbox action to retrieve the right collection and initialize a knowledge base operation. It requires the `Collection.Name` (string) as input (which is usually different from the `Collection.DisplayName` attribute).
+
 
 ### Chat Completions Operation
 
@@ -141,7 +148,7 @@ The model uses the file name when analyzing documents, which may introduce a pot
 
 A Knowledge Base resource can comprise several collections. Each collection is specifically designed to hold numerous documents, serving as a logical grouping for related information based on its shared domain, purpose, or thematic focus.
 
-Below, you can find a diagram displaying the separation of a resource into different collections. Like this, different use cases (e.g. 'Employee Onboarding' and 'IT Ticket Support') can be powered by the same resource while still providing the option to only add the required collections to the conversation context.
+Below, you can find a diagram displaying the separation of a resource into different collections. Like this, different use cases (e.g. 'Employee Onboarding' and 'IT Ticket Support') can share the same resource while preserving the option to only add the required collections to the conversation context.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIKnowledgeBaseResource.png" >}}
 
