@@ -36,7 +36,7 @@ For example, you can use an LLM to do:
     * Write computer code
     * Answer questions about a knowledge base or (large) texts
     * Analyze texts
-    * Give the software a natural language interface
+    * Give software a natural language interface
     * Tutor in a range of subjects
     * Translate languages
     * Simulate characters for games
