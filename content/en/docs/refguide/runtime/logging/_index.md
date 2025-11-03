@@ -89,7 +89,7 @@ This list is currently incomplete and is being updated.
 | MicroflowDebugger | Logs messages related to the status of the microflow debugger (for example, connection status, incoming and outgoing requests). |
 | MicroflowEngine | Logs messages related to microflow execution (for example, which microflow or microflow action is being executed and errors that occur during the execution). |
 | MicroflowStructureOptimizer | Logs messages related to microflow structure optimization performed during startup. |
-| ML Engine |  |
+| ML Engine | Log messages produced by ML Kit activities. |
 | ModelStore | Logs debug messages related to synchronizing User Role and language information to the system tables. |
 | Module | Logs messages for modules that are loaded on-demand in the core runtime like the microflow-engine. |
 | ObjectManagement | Logs errors relating to attempts to make associations to non-existent object |
