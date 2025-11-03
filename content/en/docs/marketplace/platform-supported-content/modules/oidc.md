@@ -600,7 +600,7 @@ Fields below are available in the **UserProvisioning** tab for the User Provisio
 
     * Select the identifier in the **User Metering Named Identifier** field to be used for metering. Click **Save** to save the configuration.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/default_provisioning.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/default-provisioning.png" >}}
 
 {{% alert color="info" %}}
 If you are using module version 3.2.0 and below, you will need to refresh the module containing your microflow as described in the [Installing Mx Model Reflection](/appstore/modules/oidc/#mxmodelreflection) and select the microflow in the **Custom UserProvisioning** field.
