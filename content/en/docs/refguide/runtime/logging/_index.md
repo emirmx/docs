@@ -83,7 +83,6 @@ This list is currently incomplete and is being updated.
 | Jetty | Logs messages from the internal Jetty webserver that handles HTTP requests between the runtime and the outside world. |
 | LicenseService | Logs messages related to the licensing of the app. |
 | Logging | Logs messages related to the logging framework used by Mendix. |
-| MaterializedView |  |
 | M2EE | Logs messages from the administration interface with the Mendix Runtime. |
 | Metrics | Logs messages related to the runtime metrics reporting infrastructure. |
 | MicroflowDebugger | Logs messages related to the status of the microflow debugger (for example, connection status, incoming and outgoing requests). |
