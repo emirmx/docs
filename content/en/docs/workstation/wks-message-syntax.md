@@ -51,8 +51,8 @@ This device type requires the following message and response:
 3. Add a `File Device` with the following configuration to this Station:
     * "Device Name": `Write files to test folder` 
     * "Allowed Folder": `C:\MyTestFolder` (assuming test on a Windows computer)
-    * "Allow reading files": `Yes`
     * "Allow writing files": `Yes`
+    * Use the default values for everything else 
 4. Register the Station to your computer (assumping the Workstation Client is installed).
 5. In your Workspace, navigate to **Test Your Station** and click on the configured file device.
 6. Enter `3#test.txt#Hello from Mendix` in the "Send Message" field and press **Send Message**. It should show a response `S#3#C:\MyTestFolder\test.txt` to indicate that the text file `test.txt` was succesfully written to `MyTestFolder`. Go to `C:\MyTestFolder`. It should contain the text file. Open the file. It should contain `Hello from Mendix`.
