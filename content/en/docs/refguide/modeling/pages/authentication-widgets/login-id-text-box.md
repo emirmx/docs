@@ -2,7 +2,7 @@
 title: "Login ID Text Box"
 url: /refguide/login-id-text-box/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
----s
+---
 
 {{% alert color="warning" %}}
 The **login ID text box** widget is a Dojo widget.
