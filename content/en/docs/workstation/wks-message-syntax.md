@@ -1,7 +1,7 @@
 ---
 title: "Message Syntax for File, Smart Card, and Bluetooth Devices"
-linktitle: "Message Syntax"
-url: /mendix-workstation/message-syntax/
+linktitle: "Device Syntax"
+url: /mendix-workstation/device-syntax/
 description: "Provides information about the message syntax required for different device types."
 weight: 40
 ---
