@@ -44,18 +44,25 @@ This device type requires the following message and response:
 * `E#Error` - `Error` message from operating system
 * `S#{0,1,2,3}#directory` - The command `{0,1,2,3}` on `directory` was successful.
 
-### Example Test 
+### Example Test
+
+The section below shows a sample test that you can run to verify the configuration.
 
 1. Create a new Workspace in the Workstation Management.
 2. Create a new Station.
 3. Add a `File Device` with the following configuration to this Station:
-    * "Device Name": `Write files to test folder` 
-    * "Allowed Folder": `C:\MyTestFolder` (assuming test on a Windows computer)
-    * "Allow writing files": `Yes`
+    * **Device Name** - *Write files to test folder* 
+    * **Allowed Folder** - For example, on a Windows computer you can use a path like `C:\MyTestFolder`
+    * **Allow writing files** - **Yes**
     * Use the default values for everything else 
-4. Register the Station to your computer (assumping the Workstation Client is installed).
+4. Register the Station to your computer (assuming the Workstation Client is installed there).
 5. In your Workspace, navigate to **Test Your Station** and click on the configured file device.
-6. Enter `3#test.txt#Hello from Mendix` in the "Send Message" field and press **Send Message**. It should show a response `S#3#C:\MyTestFolder\test.txt` to indicate that the text file `test.txt` was succesfully written to `MyTestFolder`. Go to `C:\MyTestFolder`. It should contain the text file. Open the file. It should contain `Hello from Mendix`.
+6. Enter `3#test.txt#Hello from Mendix` in the **Send Message** field, and then press **Send Message**.
+
+    The test should show a response like `S#3#C:\MyTestFolder\test.txt` to indicate that the text file *test.txt* was succesfully written to *MyTestFolder*. 
+
+7. Go to *C:\MyTestFolder* and verify that it contains the text file.
+8. Open the test file and verify that it contains the text *Hello from Mendix*.
 
 ## Smart Cards
 
