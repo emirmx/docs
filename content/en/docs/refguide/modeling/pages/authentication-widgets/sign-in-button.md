@@ -7,9 +7,9 @@ url: /refguide/sign-in-button/
 {{% alert color="warning" %}}
 The **sign-in button** widget is a Dojo widget.
 
-This widget is not supported in the [React client](/refguide/mendix-client/react/).
-
 This widget is not supported on native mobile pages.
+
+This widget is not supported in the [React client](/refguide/mendix-client/react/).
 
 Upgrade it to the normal input and action widgets as shown in the Atlas login page template. See the Mendix React Client's [Migration Guide](/refguide/mendix-client/react/#sign-in-widgets) for more information.
 

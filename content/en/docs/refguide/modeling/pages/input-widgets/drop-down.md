@@ -11,9 +11,9 @@ aliases:
 {{% alert color="warning" %}}
 The **drop-down** widget is a Dojo widget.
 
-This widget is not supported in the [React client](/refguide/mendix-client/react/).
-
 This widget is not supported on native mobile pages.
+
+This widget is not supported in the [React client](/refguide/mendix-client/react/).
 
 To upgrade it to the recommended React-compliant widget ([Combo Box](/appstore/widgets/combobox/)), see the Mendix React Client's [Migration Guide](/refguide/mendix-client/react/#reference-selectors-drop-down).
 

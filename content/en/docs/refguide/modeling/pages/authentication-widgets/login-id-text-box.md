@@ -2,14 +2,14 @@
 title: "Login ID Text Box"
 url: /refguide/login-id-text-box/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
----
+---s
 
 {{% alert color="warning" %}}
 The **login ID text box** widget is a Dojo widget.
 
-This widget is not supported in the [React client](/refguide/mendix-client/react/).
-
 This widget is not supported on native mobile pages.
+
+This widget is not supported in the [React client](/refguide/mendix-client/react/).
 
 Upgrade it to the normal input and action widgets as shown in the Atlas login page template. See the Mendix React Client's [Migration Guide](/refguide/mendix-client/react/#sign-in-widgets) for more information.
 
