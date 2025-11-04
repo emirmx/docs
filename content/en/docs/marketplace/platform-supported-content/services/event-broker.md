@@ -279,6 +279,8 @@ To run the HTTP bridge from your client, include a Bearer token in the request h
 
 After creating an HTTP Bridge, you can modify its event configuration by adding or removing events as your integration requirements evolve, without needing to recreate the bridge.
 
+{{% alert color="info" %}}You can only edit an HTTP Bridge when its status is **Running**.{{% /alert %}}
+
 To edit an HTTP Bridge:
 
 1. Navigate to the **Event Broker Bridges** tab on the [Event Broker Manager](https://broker.mendix.com/) page.
@@ -316,6 +318,8 @@ Changes to the event configuration take effect after applying.
 {{% alert color="warning" %}}
 If an error occurs during the editing process, the bridge will automatically roll back to its previous **running state** to ensure continuity of service.
 {{% /alert %}}
+
+
 
 ## Externally Defined Events {#externally-defined-events}
 
