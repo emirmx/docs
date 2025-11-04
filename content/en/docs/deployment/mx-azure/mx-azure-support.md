@@ -13,8 +13,28 @@ To facilitate sharing this information with internal stakeholders, a downloadabl
 
 This document outlines the technical support policies and limitations for Mendix on Azure, based on the shared responsibility model that underpins the offering.
 
+{{< figure src="/attachments/deployment/mx-azure/SharedResponsibility.png" class="no-border" >}}
+
+## Managed nature of Mendix on Azure
+With Mendix on Azure, you get a managed service to host Mendix apps in an Azuresubscription you own. The Mendix on Azure service is comprised of several underlying Azure services combined with three Mendix-specific components (the Mendix Runtime, Operator and Agent). Mendix deploys and operates all services and components within the scope of the Mendix on Azure service for you.
+
+Hosting Mendix apps on underlying Azure services you deploy and operate yourself (as can be done by adopting our Mendix on Kubernetes offering) provides you maximal low-level choice, control and customization options with regards to these underlying services. By contrast, Mendix on Azure only provides you a relatively limited set of customization options with regards to these underlying services. 
+In exchange, you don’t need to worry about deploying or managing these underlying Azure services yourself. In this manner, Mendix onAzure provides you a turnkey solution for hosting Mendix apps on Azure.
+
+Mendix deploys and manages the following components and services as part of Mendix on Azure: 
+* Azure Kubernetes Service with Managed NGINX Ingress Controller (app routing add-on)
+* Azure PostgreSQL Flexible Server and Azure PostgreSQL Flexible Server replica (if enabled)
+* Azure Container Registry
+* Azure Blob Storage
+* Azure Managed Grafana
+* Azure Managed Prometheus
+* Azure Virtual Network including Private Endpoints 
+* Mendix Runtime 
+* Mendix Operator
+* Mendix Agent 
+
 {{% alert color="info" %}}  
-Before proceeding, familiarize yourself with the general Mendix support policies available in [Mendix Support](/support/).  
+These components are managed in the sense that Mendix deploys and operates them in such a manner that they work together to form a Mendix app hosting service. As a consequence, customers cannot alter these underlying components themselves beyond what is described in the next paragraph.
 {{% /alert %}}
 
 ## Shared Responsibility Model for Mendix on Azure
@@ -27,7 +47,7 @@ Microsoft manages and secures the Azure services that underlie Mendix on Azure. 
 
 * Compute - Azure Kubernetes Service (AKS)  
 * Storage - Azure Blob Storage, Azure Container Registry  
-* Database - PostgreSQL Flexible Server  
+* Database - PostgreSQL Flexible Server, Postgres replica
 * Networking - Virtual Networks, Load Balancer, Private Endpoints  
 * Monitoring - Managed Grafana and Prometheus  
 
@@ -51,13 +71,42 @@ Customers are accountable for developing, deploying, operating, integrating, and
 * Integrating - Securing integrations with backend services and IAM
 * Securing - Following Mendix best practices for secure apps
 
-## Available Customizations
 
-During cluster initialization, all components needed to host Mendix apps are deployed automatically inside an Azure Resource Group you select. Mendix and Microsoft regularly apply mandatory automated updates to keep clusters compliant and secure.
+## Limited customizabilty
 
-Due to this automation, direct modification of these components in Azure or control over the upgrade process is not possible. Customizations are limited to options exposed via the Mendix on Azure, Microsoft Azure, and Mendix on Kubernetes portals. Current allowed customizations include those documented in the [Configuration section](/developerportal/deploy/mendix-on-azure/configuration/).
+When a Mendix on Azure cluster is initialized, all components that are required to host Mendix apps are automatically deployed inside an Azure resource group in the subscription of your choosing. Regularly, Mendix and Microsoft will push all required updates to this resource group to ensure it remains compliant and secure. 
 
-Any modifications outside this documented scope are not supported.
+In order to be able to push these updates to all Mendix on Azure customers in an automated, predictable and consistent manner, you as a customer will not be able to modify any of these components directly in Azure nor can you influence this upgrade process. As a consequence, any customization beyond what is described below is not possible. 
+
+Currently the following customizations are offered self-service via the Mendix on Azure portal:
+
+* Custom tags on deployed Azure resources 
+* Set Azure Kubernetes Service tier 
+* Set Azure Kubernetes agent node VM type 
+* Set maximum AKS agent node pool size (i.e. upper autoscaling limit) 
+* Set Azure for PostgreSQL Flexible server computing SKU and storage performance tier 
+* Switch to internal load balancer exposure to enable apps that can only be reached privately 
+* Switch to internal Grafana exposure to prevent exposure to the public internet 
+* Change IP address prefix of the subnet hosting AKS nodes (only at initial deployment)
+
+Currently the following customizations are allowed to be done by the customer directly via Microsoft Azure Portal in order to establish connectivity to/from other networks and/or Azure services:
+
+* Configure virtual network peerings with the subnet hosting AKS nodes 
+* Override DNS configuration on the subnet hosting AKS nodes 
+* Configure Private Link Service to expose Mendix apps in other Azure virtual networks 
+* Configure Private Endpoints to establish connectivity between Mendix apps and other services 
+
+Mendix limits customization to what is described above to ensure a consistent, predictable and scalable customer experience.
+
+## Access to your environment by Mendix
+
+By deploying Mendix on Azure from the Azure Marketplace you provide consent for Mendix to deploy and operate the resources required for Mendix on Azure in the chosen resource group. The mechanism used by Mendix to fulfil this access is provided by Microsoft - i.e. publisher access to a Managed Application - and by definition limits the access Mendix has to your Azure subscription to the resources deployed. 
+
+Mendix will use this access for the following purposes:
+* Initial initialisation of the cluster (as initiated by the customer from Mendix on Azure portal) 
+* Pushing regular service updates (automatically, see description in the next paragraph) 
+* Pushing ad-hoc emergency updates or configuration changes to avoid service disruptions (by exception and at discretion of Mendix) 
+* To troubleshoot incidents on behalf of the customer (after raising of a support ticket by the customer)
 
 ## Support Tickets
 
@@ -110,17 +159,21 @@ These automated upgrade cadences cannot be modified by customers.
 
 ## Mendix Support Coverage Examples
 
-The following scenarios are supported:
+Mendix provides technical support for the following example scenarios: 
 
-* Cluster initialization fails despite passing pre-flight checks.
-* Service availability issues are not resolvable through self-service recovery.
+* Cluster initialization fails despite passing pre-flight validation checks 
+* Customer is experiencing service availability issues and is unable to recover the situation using the self-service recovery option.
 
-The following scenarios are not supported:
+## Mendix does not provide technical support in the following example scenarios: 
 
-* Consultations on integrations with other Azure services outside the Mendix on Azure scope; consider Mendix Expert Services or partners for consultancy.
-* Configuration changes to Azure services beyond self-service options; Mendix on Kubernetes may offer more flexibility.
-* Customizations to Azure subscription resources beyond the supported scope.
-* Manual fixes for security vulnerabilities beyond the automated update cycles.
+* Requests about how to integrate with other Azure Services that are beyond the scope of the product. Such requests can be supported by Mendix Expert Services or Mendix (infra) partners as part of (paid) consultancy engagements. 
+* Requests to make configuration changes to underlying Azure services beyond what is offered as self-service in the Mendix on Azure and Mendix Private Cloud Portal. Since such changes are not possible with this service, customer may consider to adopt Mendix on Kubernetes (formerly Mendix for Private Cloud) instead.
+* Requests for any other type of customization on the resources deployed in customer’s Azure subscription. Since such customization is not possible with this service, customer may consider to adopt Mendix for Kubernetes (formerly Mendix for Private Cloud) instead. 
+* Requests to fix security vulnerabilities in one of the managed components beyond what is automatically pushed during the weekly and quarterly update cycles.
+
+{{% alert color="warning" %}}  
+The state of the resources in the customer subscription nor overall service availability are proactively monitored by Mendix. As a consequence, any degradation in service will only reactively be addressed by Mendix after customer has notified Mendix of such degradation by filing a support ticket.
+{{% /alert %}}
 
 ## Customer Responsibilities for Mendix on Azure Resources
 
@@ -137,6 +190,15 @@ Mendix mitigates these impacts by:
 * Quarterly regression testing and workarounds where feasible  
 * Collaboration with Microsoft Support and engineering for upstream fixes  
 * Transparent communication and guidance on workarounds for affected customers  
+
+## Backup, restore, data migration & disaster recovery
+
+Mendix on Azure provides the following features to allow customers to self-service their needs with regards to backup, restore, data migration & disaster recovery: 
+
+* Mendix on Azure provides per-app environment snapshotting capabilities that allow customers to backup & restore all relevant app data from/to an environment via selfservice on the Mendix Private Cloud Portal. 
+* Mendix on Azure creates automated nightly backup snapshots for every Mendix app environment (feature is under development and to be released in the third quarter of 2025). 
+* All backup snapshots are stored in an Azure Storage Account hosted on the customer’s Azure subscription. Mendix has prepared an emergency procedure which can be performed in collaboration with the customer in case the Azure Storage Account holding the backup snapshots would accidentally get deleted from Azure. 
+* Individual backup snapshots can be downloaded and uploaded from/into a customer’s Mendix on Azure environment by the customer under self-service via the Mendix Private Cloud Portal. This provides the customer the ability to use such snapshots for disaster recovery scenarios as well as data migration scenarios to/from other deployment models. Mendix (Expert Services) is available to support customers in such scenarios, when desired.
 
 ## Compliance Frameworks
 

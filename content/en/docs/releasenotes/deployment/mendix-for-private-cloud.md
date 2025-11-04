@@ -12,6 +12,18 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2025
 
+### Novembet 6, 2025
+
+#### Portal Improvements
+
+* Reduced Downtime Feature is Now Production Ready. This enhancement ensures your Mendix applications can achieve uninterrupted availability during updates. It will be automatically activated when:
+
+    * Your Mendix Operator version is 2.24 or higher.
+    * Your application is configured with 2 or more replicas.
+    
+Under these conditions, you can expect no downtime during the update process, as long as the application is using the same MDA and base OS image.
+*   Exporting **Scheduled events**, **Application details**, **PCLM Statistics** is now possible in CSV format, replacing the XLSX format.
+
 ### October 21, 2025
 
 #### Mendix Operator v2.24.0 {#2.24.0}
