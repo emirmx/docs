@@ -31,10 +31,10 @@ This device type requires the following message and response:
  
 ### Message
 
-* `0# Directory` - Watch for changes in `Directory`. If `Directory` is a file path, then watch for changes in the file. `Directory` is relative to the folder configured in Workspace management. Environment variables (for example, `%public%`) are supported.
-* `1# Directory` - Stop watching for changes in `Directory`.  
-* `2# File path` - Read file at `File path`.
-* `3# File path # Data # flag` - Write to file at `File path`. The `flag` can be `w` for overwrite, `a` for append If left blank, the value defaults to `w`.
+* `0#Directory` - Watch for changes in `Directory`. If `Directory` is a file path, then watch for changes in the file. `Directory` is relative to the folder configured in Workspace management. Environment variables (for example, `%public%`) are supported.
+* `1#Directory` - Stop watching for changes in `Directory`.  
+* `2#File path` - Read file at `File path`.
+* `3#File path#Data#flag` - Write to file at `File path`. The `flag` can be `w` for overwrite, `a` for append If left blank, the value defaults to `w`.
 
 ### Response
 
