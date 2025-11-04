@@ -5,10 +5,6 @@ description: "Provides information about the support model for Mendix on Azure."
 weight: 30
 ---
 
-{{% alert color="info" %}}  
-To facilitate sharing this information with internal stakeholders, a downloadable PDF version is available [here](https://blob.mendix.technology/mxonazure/MXonAzure-Support-Policy-for-Mendix-on-Azure.pdf). If discrepancies arise between this document and the PDF, the PDF version takes precedence.  
-{{% /alert %}}
-
 ## Introduction
 
 This document outlines the technical support policies and limitations for Mendix on Azure, based on the shared responsibility model that underpins the offering.
@@ -203,6 +199,55 @@ Mendix on Azure provides the following features to allow customers to self-servi
 ## Compliance Frameworks
 
 Mendix on Azure aligns with SOC 2 Azure Policy automated controls. For more information, see [SOC 2 Type 2 Compliance Exceptions](/developerportal/deploy/mendix-on-azure/security-and-compliance/#soc2).
+
+| Service | Exception | Rationale |
+| --- | --- | --- |
+| Azure Kubernetes Service | [Azure Policy Addon for Kubernetes service (AKS) should be installed and enabled on your clusters](https://www.azadvertizer.net/azpolicyadvertizer 0a15ec92-a229-4763-bb14-0ea34a568f8d.html) | The cluster and all workloads are deployed and managed by Mendix so enforcing policy does not add any value.|
+| Azure Kubernetes Service | [Azure Kubernetes Service clusters should have Defender profile enabled](https://www.azadvertizer.net/azpolicyadvertizer/a1840de2-8088-4ea8-b153-b4c723e9cb01.html) | Defender is not enabled for costsaving reasons.|
+| Azure Kubernetes Service | [All Internet traffic should be routed via your deployed Azure Firewall](https://www.azadvertizer.net/azpolicyadvertizer/fc5e4038-4584-4632-8c85-c0448d374b2c.html) | This is not part of the product scope but can be added by the customer postdeployment.|
+| Azure Container Registry | [Container registries should be encrypted with a customer-managed key](https://www.azadvertizer.net/azpolicyadvertizer/5b9159ae-1701-4a6f-9a7a-aa9c8ddd0580.html) | The standard Microsoft key is used to enable deployment without key creation in Azure.|
+| Storage Account | [Storage accounts should use customer-managed key for encryption](https://www.azadvertizer.net/azpolicyadvertizer/6fac406b-40ca-413b-bf8e-0bf964659c25.html) | The standard Microsoft key is used to enable deployment without key creation in Azure|
+
+## Severity Baselines for Support Tickets
+To ensure consistent and prioritised support, we classify issues based on the following severity levels:
+
+### Critical: 
+Production environment is inaccessible or severely impaired, preventing critical changes.
+Core application functionality is completely unavailable.
+
+Response Time: < 2 Office Hours
+Resolution Time: Best efforts
+
+### High:
+Inability to provision new clusters.
+Inability to modify existing clusters via the Mx on Azure portal.
+
+Response Time: < 8 Office Hours
+Resolution Time: Best efforts
+
+### Medium:
+Non-production environments (Test/Acceptance) experience significant disruption to operational functionality.
+Operational functionality in production is moderately impacted but not critical.
+
+Response Time: Next Business Day
+Resolution Time: Best efforts
+
+### Low:
+Minor issues with minimal impact on operational functionality.
+Cosmetic issues, minor performance degradation, or general inquiries.
+
+Response Time: Reasonable effort
+Resolution Time: Best efforts
+
+## Off-boarding from the service
+
+Customer can completely off-board from the service by deleting the Managed Application from their Azure subscription (e.g. using Azure Portal). This will immediately:
+
+* Remove all resources related to Mendix on Azure from the customer’s subscription. 
+* Remove any access Mendix has to the customer’s environment. 
+* Delete the cluster registration from the Mendix on Azure & Mendix Private Cloud Portal portals. 
+* While Mendix does have an emergency procedure available to help revive an environment and restore data in case the Managed Application gets deleted by accident, it is a higheffort manual process requiring close collaboration between Mendix & the customer. Given this, we advise customers to exercise extreme caution when deleting the Managed Application from their Azure subscription to avoid the need of this emergency procedure to be executed.
+
 
 ## Known Limitations
 
