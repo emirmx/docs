@@ -107,7 +107,7 @@ Instead of relying solely on similarity-based searches of ticket descriptions, u
 
 You can upload data directly from Mendix to the Knowledge Base. To do so, several operations of the Mendix Cloud GenAI Connector are required. For a detailed guide on this process, see the [Add Data Chunks to Your Knowledge Base](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#add-data-chunks-to-your-knowledge-base) section of **Mendix Cloud GenAI Connector**.
 
-### Consumption (Only for Model Resources)
+### Consumption (Only for Text and Embeddings Generation Resources)
 
 {{% alert color="info" %}} The **Consumption** tab is available for Model resources only.{{% /alert %}} 
 
