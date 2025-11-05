@@ -25,11 +25,11 @@ To connect your Mendix application to Databricks with the External Database conn
     * To have the dependency downloaded automatically on running your project, add a **Java Dependency** in the **Settings** of you module and provide the following information:    
         * **Group ID** - set to **com.databricks**
         * **Artifact ID** - set to **databricks-jdbc**
-        * **Version** - set to **2.7.1**
+        * **Version** - set to the latest **2.x** version
    
    {{< figure src="/attachments/appstore/platform-supported-content/modules/databricks/JavaDependency.png" >}}
    
-   * To install the dependency manually, download version 2.7.1 of the [JDBC driver](https://www.databricks.com/spark/jdbc-drivers-archive) that Databricks provides and put the .jar file into the *userlib* of your Mendix project.
+   * To install the dependency manually, download the latest 2.x version of the [JDBC driver](https://www.databricks.com/spark/jdbc-drivers-archive) that Databricks provides and put the .jar file into the *userlib* of your Mendix project.
 
 3. Run you Mendix project and run the [Connect to Database wizard](/appstore/modules/external-database-connector/#configuration), selecting **Other** as the database type.
 

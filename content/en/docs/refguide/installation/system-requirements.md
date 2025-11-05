@@ -63,6 +63,16 @@ These are the known limitations for Mac:
 * Start from spreadsheet cannot be used at this time 
 * If you have already installed JDK previously, it may not be picked up properly during installation. You can either configure this manually or remove all references to JDK and run the installer again.
 
+#### Known Issues with Windows Patches
+
+##### Unexpected Error `ERR_CONNECTION_RESET` in Panels and Editors
+
+With the October 14, 2025 update of Windows 11, Studio Pro 9, 10, and 11 can become unusable. Studio Pro shows errors in different panels (for example design properties and toolbox) and editors (for example page, microflow, nanoflow, and rule editor).
+
+If you see the message `Hmmm... can't reach this page` with an error code of `ERR_CONNECTION_RESET`, in a tool panel or editor, your workstation is probably affected.
+
+The fix for this is to install *Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.439.210.0 or above)*.
+
 ### Hardware Specifications {#hardware}
 
 Mendix Studio Pro will run on any machine which can run the [minimum requirements for running Windows 10 64-bit](https://www.microsoft.com/en-gb/windows/windows-10-specifications#primaryR2), with the following additional requirements:
@@ -233,10 +243,10 @@ Mendix tries to support the most recent and patched database server versions fro
 Current support:
 
 * [MariaDB](/refguide/mysql/): 10.6, 10.11, 11.4, 11.8
-* [Microsoft SQL Server](/developerportal/deploy/mendix-on-windows-microsoft-sql-server/): 2019, 2022
+* [Microsoft SQL Server](/developerportal/deploy/mendix-on-windows-microsoft-sql-server/): 2022
 * [Azure SQL](https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-compatibility-level?view=sql-server-2017): v12 compatibility mode 140 or higher
 * [MySQL](/refguide/mysql/): 8.4
-* [Oracle Database](/refguide/oracle/): 19, 21c
+* [Oracle Database](/refguide/oracle/): 19, 21c, 23ai
 * PostgreSQL: 13, 14, 15, 16, 17
 * [SAP HANA](/refguide/saphana/): 2.00.076.00.1705400033
 

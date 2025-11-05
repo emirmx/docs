@@ -16,6 +16,14 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
+### October 29, 2025
+
+#### New Features
+
+* Apps deployed to Kubernetes now support New Relic, enabling them to be migrated from Cloud Foundry to Kubernetes.
+
+* For Kubernetes deployments using New Relic, the `instance_index` tag is no longer provided within metadata. Use the `pod_name` tag instead.
+
 ### October 19, 2025
 
 #### New Features

@@ -21,6 +21,12 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
+### October 30
+
+#### New Features
+
+* You can now group feedback for easier management. This new option is available by selecting feedback on the **Inbox** tab, then clicking **Group Items**. All resulting feedback groups within an app are listed on the new **Groups** tab of the [Feedback](/developerportal/app-insights/feedback/) page.
+
 ### October 26, 2025
 
 #### Improvements

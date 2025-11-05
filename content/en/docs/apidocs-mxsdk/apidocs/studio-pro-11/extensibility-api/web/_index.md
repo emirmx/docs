@@ -49,3 +49,4 @@ Below is a list of how-tos for you to begin with:
 * [How to Open Documents](/apidocs-mxsdk/apidocs/web-extensibility-api-11/editor-api/)
 * [How to Exchange Information Between Active Views](/apidocs-mxsdk/apidocs/web-extensibility-api-11/message-passing-api/)
 * [How to Show Version Control Information](/apidocs-mxsdk/apidocs/web-extensibility-api-11/version-control-api/)
+* [How to Introduce a New Document Type](/apidocs-mxsdk/apidocs/web-extensibility-api-11/custom-blob-document-api/)

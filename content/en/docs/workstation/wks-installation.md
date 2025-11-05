@@ -143,7 +143,7 @@ After configuring the server and client pair, test their connectivity by perform
 8. In the same way, send a message from the **Test Server** to the **Test Client** device.
 
 {{% alert color="info" %}}
-Different device types have different requirements for the message syntax. For more information, see [Message Syntax for File, Smart Card, and Bluetooth Devices](/mendix-workstation/message-syntax/).
+Different device types have different requirements for the message syntax. For more information, see [Message Syntax for File, Smart Card, and Bluetooth Devices](/mendix-workstation/device-syntax/).
 {{% /alert %}}
 
 ## Quitting the Workstation Client

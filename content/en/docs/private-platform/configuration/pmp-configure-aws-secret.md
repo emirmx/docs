@@ -118,9 +118,7 @@ When creating a property to use as a key for external secret storage, use the fo
 
     * Build Cluster Settings
 
-        * **kubernetesConfigureToken**
         * **BuildCluster.KubernetesConfigureToken** - Token for the Kubernetes cluster configuration
-        * **JenkinsConfigureAPIToken**
         * **CIAdmin.JenkinsConfigureAPIToken** - Token for the Jenkins configuration
         * **CIAdmin.JenkinsTriggerAuthToken** - Token for the Jenkins trigger configuration
         * **CIAdmin.AzureOrgAdminPAT** - Personal access token for the Azure DevOps configuration

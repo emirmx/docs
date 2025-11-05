@@ -29,7 +29,6 @@ This is what you can do on the [Profile](https://user-settings.mendix.com/link/p
 * Choose to make your profile public by clicking **Make Profile Public**. This allows the Mendix community to view your profile.    
   To make your public profile private again, click **Make Profile Private**. 
 
-
 * Add a **Recovery Email** address, which is useful if you lose access to your account or Mendix Profile. You can provide a non-business email address for this.
 
 ### Merging Profiles {#merging-profiles}
