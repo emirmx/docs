@@ -13,13 +13,16 @@ To facilitate sharing this information with internal stakeholders, a downloadabl
 
 This document outlines the technical support policies and limitations for Mendix on Azure, based on the shared responsibility model that underpins the offering.
 
-## Managed nature of Mendix on Azure
+## Managed Nature of Mendix on Azure
+
 With Mendix on Azure, you get a managed service to host Mendix apps in an Azure subscription you own. The Mendix on Azure service is comprised of several underlying Azure services combined with three Mendix-specific components (the Mendix Runtime, Operator and Agent). Mendix deploys and operates all services and components within the scope of the Mendix on Azure service for you.
 
-Hosting Mendix apps on underlying Azure services you deploy and operate yourself (as can be done by adopting our Mendix on Kubernetes offering) provides you maximal low-level choice, control and customization options with regards to these underlying services. By contrast, Mendix on Azure only provides you a relatively limited set of customization options with regards to these underlying services. 
-In exchange, you don’t need to worry about deploying or managing these underlying Azure services yourself. In this manner, Mendix onAzure provides you a turnkey solution for hosting Mendix apps on Azure.
+Hosting Mendix apps on underlying Azure services you deploy and operate yourself (as can be done by adopting our Mendix on Kubernetes offering) provides you with the most low-level choice, control, and customization options with regards to these underlying services. By contrast, Mendix on Azure only provides you a relatively limited set of customization options with regards to these underlying services.
 
-Mendix deploys and manages the following components and services as part of Mendix on Azure: 
+In exchange, you do not need to worry about deploying or managing these underlying Azure services yourself. In this manner, Mendix onAzure provides you a turnkey solution for hosting Mendix apps on Azure.
+
+Mendix deploys and manages the following components and services as part of Mendix on Azure:
+
 * Azure Kubernetes Service with Managed NGINX Ingress Controller (app routing add-on)
 * Azure PostgreSQL Flexible Server and Azure PostgreSQL Flexible Server replica (if enabled)
 * Azure Container Registry
@@ -32,7 +35,7 @@ Mendix deploys and manages the following components and services as part of Mend
 * Mendix Agent
 
 {{% alert color="info" %}}  
-These components are managed in the sense that Mendix deploys and operates them in such a manner that they work together to form a Mendix app hosting service. As a consequence, customers cannot alter these underlying components themselves beyond what is described in the next paragraph.
+These components are managed in the sense that Mendix deploys and operates them in such a manner that they work together to form a Mendix app hosting service. As a consequence, customers cannot alter these underlying components themselves beyond what is described in the next paragraphs.
 {{% /alert %}}
 
 {{< figure src="/attachments/deployment/mx-azure/SharedResponsibility.png" class="no-border" >}}
