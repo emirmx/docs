@@ -95,7 +95,7 @@ Metadata is additional information that can be attached to data in a GenAI knowl
 
 Metadata consists of key-value pairs and serves as additional information connected to the data, though it is not part of the vectorization itself.
 
-For example, a GenAI Knowledge Base could be used to store customer support tickets. Each ticket may have associated metadata such as 
+For example, a GenAI Knowledge Base could be used to store historical customer support tickets. Each ticket may have associated metadata such as 
 
 * key: `Ticket Type`, value: `Bug`
 * key: `Status`, value: `Solved`
@@ -111,7 +111,7 @@ You can upload data directly from Mendix to the Knowledge Base. To do so, severa
 
 {{% alert color="info" %}} The **Consumption** tab is available for Model resources only.{{% /alert %}} 
 
-The **Consumption** section provides outcomones of token consumption monitoring for each GenAI resource in a graphical way. Use this overview to see the current usage, insights on the usage per day, and to compare the current month with previous months.
+The **Consumption** section provides outcomones of token consumption monitoring for each GenAI resource in a graphical way. Use this overview to see the current usage, insights on the usage per day, and to compare the current month with previous months. Please note, that months respresent bundle months here, which is the period during which token consumption is tracked, beginning on the date of your last GenAI Resource plan entitlement reset and ending on the next reset date. This creates a recurring monthly cycle based on your plan activation date, not the calendar month.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIResource_TokenConsumptionMonitor.png" >}}
 
