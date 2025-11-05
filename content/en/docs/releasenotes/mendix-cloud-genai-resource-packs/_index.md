@@ -40,3 +40,9 @@ You can access them through the [Mendix Cloud GenAI Portal](https://genai.home.m
 * Users will now receive a notification when attempting to upload a file to the knowledge base that does not contain text, reducing confusion and upload errors.
 * Users can now track the token consumption by subscription period, improving visibility into usage patterns.
 * The resource sorting on the new developer landing page now aligns with the regular resources overview, ensuring a more consistent user experience.
+
+### October 28, 2025
+
+#### New Features
+
+* We introduced new capabilities for Company Admins to manage GenAI resources directly within Control Center, including provisioning, deprovisioning, and an overview of all GenAI resources.

@@ -291,6 +291,10 @@ When **Extension Development** mode is enabled, you can start Studio Pro without
 
 Select this option to use the modernized version of the App Explorer. You must restart Studio Pro to use this feature.
 
+### History Pane {#history-pane}
+
+Select this option to use the non-blocking, searchable History pane instead of the blocking History window. This feature is currently in beta.
+
 ### Errors Pane
 
 Select this option to use the modernized version of the Errors Pane. You must restart Studio Pro to use this feature.

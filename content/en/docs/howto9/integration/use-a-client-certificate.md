@@ -78,4 +78,3 @@ To configure client certificates in Mendix Cloud, follow these steps:
     3. Close the **Details** screen.
 
 6. Click **Stop application** and then **Start application**.
-

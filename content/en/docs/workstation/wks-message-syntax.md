@@ -1,7 +1,7 @@
 ---
 title: "Message Syntax for File, Smart Card, and Bluetooth Devices"
-linktitle: "Message Syntax"
-url: /mendix-workstation/message-syntax/
+linktitle: "Device Syntax"
+url: /mendix-workstation/device-syntax/
 description: "Provides information about the message syntax required for different device types."
 weight: 40
 ---
@@ -31,10 +31,10 @@ This device type requires the following message and response:
  
 ### Message
 
-* `0# Directory` - Watch for changes in `Directory`. If `Directory` is a file path, then watch for changes in the file. `Directory` is relative to the folder configured in Workspace management. Environment variables (for example, `%public%`) are supported.
-* `1# Directory` - Stop watching for changes in `Directory`.  
-* `2# File path` - Read file at `File path`.
-* `3# File path # Data # flag` - Write to file at `File path`. The `flag` can be `w` for overwrite, `a` for append If left blank, the value defaults to `w`.
+* `0#Directory` - Watch for changes in `Directory`. If `Directory` is a file path, then watch for changes in the file. `Directory` is relative to the folder configured in Workspace management. Environment variables (for example, `%public%`) are supported.
+* `1#Directory` - Stop watching for changes in `Directory`.  
+* `2#File path` - Read file at `File path`.
+* `3#File path#Data#flag` - Write to file at `File path`. The `flag` can be `w` for overwrite, `a` for append If left blank, the value defaults to `w`.
 
 ### Response
 
@@ -43,6 +43,26 @@ This device type requires the following message and response:
 * `D#Data` - `Data` from file read
 * `E#Error` - `Error` message from operating system
 * `S#{0,1,2,3}#directory` - The command `{0,1,2,3}` on `directory` was successful.
+
+### Example Test
+
+The section below shows a sample test that you can run to verify the configuration.
+
+1. Create a new Workspace in the Workstation Management.
+2. Create a new Station.
+3. Add a `File Device` with the following configuration to this Station:
+    * **Device Name** - *Write files to test folder* 
+    * **Allowed Folder** - For example, on a Windows computer you can use a path like `C:\MyTestFolder`
+    * **Allow writing files** - **Yes**
+    * Use the default values for everything else 
+4. Register the Station to your computer (assuming the Workstation Client is installed there).
+5. In your Workspace, navigate to **Test Your Station** and click on the configured file device.
+6. Enter `3#test.txt#Hello from Mendix` in the **Send Message** field, and then press **Send Message**.
+
+    The test should show a response like `S#3#C:\MyTestFolder\test.txt` to indicate that the text file *test.txt* was succesfully written to *MyTestFolder*. 
+
+7. Go to *C:\MyTestFolder* and verify that it contains the text file.
+8. Open the test file and verify that it contains the text *Hello from Mendix*.
 
 ## Smart Cards
 

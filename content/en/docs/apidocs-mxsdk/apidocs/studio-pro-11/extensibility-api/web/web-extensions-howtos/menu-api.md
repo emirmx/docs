@@ -28,7 +28,8 @@ A menu has the following properties:
 | `hasSeparatorBefore` <br> (default: `false`)  | Adds a visual separator before the item              |
 | `hasSeparatorAfter` <br> (default: `false`)  | Adds a visual separator after the item                |
 | `enabled`  <br> (default: `true`)  | Indicates that the menu item notifies the listener when clicked |
-
+| `commandId` (optional) | The id of the previously registered command, which executes when the menu is clicked |
+| `action` (optional) | The action that executes when the menu is clicked |
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/menus/grouped_menus.png" width="300" >}}
 
@@ -205,6 +206,37 @@ The disabled state is shown in the image below:
 Instead of listening to the `menuItemActivated` event, it is possible to register a command, then attach the `commandId` of the new command to your menu. When the menu is clicked, if its `commandId` property has been set, the backend will execute the command instead of firing the `menuItemActivated` event. 
 
 For more information on how to register commands, see the [Commands API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/command-api/).
+
+## Setting the Action Property on the Menu
+
+You can also set the `action` property on the menu directly.
+
+```typescript
+import { IComponent, Menu, getStudioProApi } from "@mendix/extensions-api";
+
+export const component: IComponent = {
+    async loaded(componentContext) {
+        const studioPro = getStudioProApi(componentContext);
+        const menuApi = studioPro.ui.extensionsMenu;
+
+        const menuId = "my-menu-unique-id";
+        const caption = "Menu with Action";
+
+        const menu: Menu = {
+            caption: caption,
+            menuId: menuId,
+            action: async () => {
+                await menuApi.update(menuId, {
+                    caption: `${caption} (Disabled)`,
+                    enabled: false
+                });
+            }
+        };
+
+        await menuApi.add(menu);
+    }
+}
+```
 
 ## Extensibility Feedback
 
