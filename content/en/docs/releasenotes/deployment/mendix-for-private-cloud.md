@@ -12,7 +12,13 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2025
 
-### Novembet 6, 2025
+### November 6, 2025
+
+#### Mendix Operator v2.24.1 {#2.24.1}
+
+* We have updated components to use Go 1.25 and the latest dependency versions in order to improve security score ratings for container images.
+
+### November 6, 2025
 
 #### Portal Improvements
 
