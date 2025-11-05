@@ -12,14 +12,14 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 
 ### Release date: November 6, 2025
 
-* We've resolved an issue where the AKS Node VM Size field sometimes appeared empty if the corresponding Microsoft endpoint was unavailable. Now, in such cases, the field will not be available for selection, and the value chosen during the cluster's initialization will be automatically considered.
+* We have resolved an issue where the AKS Node VM Size field sometimes appeared empty if the corresponding Microsoft endpoint was unavailable. Now, in such cases, the field will not be available for selection, and the value chosen during the cluster's initialization will be automatically considered.
 * You can now easily view both the AKS Node VM Size and Postgres Compute Size directly within the Cluster Details section, giving you more immediate insight into your cluster's configuration.
-* We've resolved an issue where newly added Cluster Managers couldn't view clusters in Mendix on Azure Portal until after their initial visit to the portal.
+* We have resolved an issue where newly added Cluster Managers could not view clusters in Mendix on Azure Portal until after their initial visit to the portal.
 * The AKS Network Isolation feature has been disabled within the Edit Cluster flow.
-* For better clarity, we've updated the text from **Managed Grafana** to **Managed Grafana Accessibility** on both the **Initialize Cluster** and **Edit Cluster** pages.
-* If your PostgreSQL quota isn't available in a chosen region, you'll now receive a clear error message, helping you understand and resolve the situation more quickly.
-* In the **Initialize Cluster** flow, we've updated the labels for Preflight checks from **Provisioning** to **Checking** for more accurate status indication.
-* We've resolved an issue that prevented cluster initialization from proceeding when two or more clusters were being initialized concurrently within the same subscription. Now, you can initialize multiple clusters without a hitch.
+* For better clarity, we have updated the text from **Managed Grafana** to **Managed Grafana Accessibility** on both the **Initialize Cluster** and **Edit Cluster** pages.
+* If your PostgreSQL quota is not available in a chosen region, you will now receive a clear error message, helping you understand and resolve the situation more quickly.
+* In the **Initialize Cluster** flow, we have updated the labels for Preflight checks from **Provisioning** to **Checking** for more accurate status indication.
+* We have resolved an issue that prevented cluster initialization from proceeding when two or more clusters were being initialized concurrently within the same subscription. Now, you can initialize multiple clusters without issue.
 
 ### Release date: October 23, 2025 - [General Availability (GA) Release](/releasenotes/release-status/#general-availability)
 
