@@ -12,6 +12,10 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2025
 
+#### License Manage CLI v0.10.5
+
+* We have updated components to use Go 1.25 and the latest dependency versions in order to improve security score ratings for container images.
+
 ### October 21, 2025
 
 #### Mendix Operator v2.24.0 {#2.24.0}
@@ -47,6 +51,10 @@ For information on the current status of deployment to Mendix on Kubernetes and 
   Because Microsoft Azure previously changed the error text, older Mendix Operator versions might not correct this error.
 
 ### September 4, 2025
+
+#### License Manage CLI v0.10.4
+
+* We have updated components to use Go 1.24 and the latest dependency versions in order to improve security score ratings for container images.
 
 #### Portal Improvements
 
