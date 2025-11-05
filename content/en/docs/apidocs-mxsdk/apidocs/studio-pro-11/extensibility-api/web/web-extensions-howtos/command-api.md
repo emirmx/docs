@@ -29,28 +29,25 @@ To register commands, use the Commands API `registerCommand`.
 In the sample code below, we register a command, then attach it to a menu by setting the property `commandId` to the `Menu` object.
 
 ```typescript
-import { ComponentContext, IComponent, Menu, StudioProApi, getStudioProApi } from "@mendix/extensions-api";
-
+import { ComponentContext, IComponent, StudioProApi, getStudioProApi } from "@mendix/extensions-api";
 const extensionId = "myextension";
 
 export const component: IComponent = {
     async loaded(componentContext: ComponentContext) {
         const studioPro = getStudioProApi(componentContext);
 
-        await this.createMenuWithCommand(studioPro);
+        await createMenuWithCommand(studioPro);
     }
+};
+async function createMenuWithCommand(studioPro: StudioProApi) {
+    const commandId = `${extensionId}.menu-command`;
+    const menuId = `${commandId}.menu`;
 
-    async createMenuWithCommand(studioPro: StudioProApi) {
-        const commandId = `${extensionId}.menu-command`;
-        const menuId = `${commandId}.menu`;
-
-        await studioPro.app.commands.registerCommand<void>(
-            commandId,
-            async () => await studioPro.ui.messageBoxes.show("info", `This menu executed a command with id '${commandId}'`)
-        );
-
-        await studioPro.ui.extensionsMenu.add({ caption: "Menu with command", menuId, commandId });
-    }
+    await studioPro.app.commands.registerCommand(
+        commandId,
+        async () => await studioPro.ui.messageBoxes.show("info", `This menu executed a command with id '${commandId}'`)
+    );
+    await studioPro.ui.extensionsMenu.add({ caption: "Menu with command", menuId, commandId });
 }
 ```
 
