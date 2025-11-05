@@ -49,7 +49,7 @@ Convert strings into vector embeddings for various purposes based on the related
 
 Embeddings are commonly used for the following:
 
-* Search 
+* Semantic Search (Meaning-based Similarity)
 * Clustering 
 * Recommendations 
 * Anomaly detection 
