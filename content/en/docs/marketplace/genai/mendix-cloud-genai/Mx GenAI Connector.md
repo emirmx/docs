@@ -144,7 +144,9 @@ The model uses the file name when analyzing documents, which may introduce a pot
 
 ### About Knowledge Bases
 
-#### Data Separation with Collections
+#### Data Separation with Collections and Metadata
+
+##### Collections 
 
 A Knowledge Base resource can comprise several collections. Each collection is specifically designed to hold numerous documents, serving as a logical grouping for related information based on its shared domain, purpose, or thematic focus.
 
@@ -152,7 +154,21 @@ Below, you can find a diagram displaying the separation of a resource into diffe
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIKnowledgeBaseResource.png" >}}
 
-While collections provide a mechanism for data separation, it is not best practice to create a large number of collections within a single Knowledge Base resource. A more performant and practical approach for achieving fine-grained data separation is through the strategic use of metadata. To learn more, see [Retrieve and Generate](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#retrieve-and-generate). 
+While collections provide a mechanism for data separation, it is not best practice to create a large number of collections within a single Knowledge Base resource. A more performant and practical approach for achieving fine-grained data separation is through the strategic use of metadata. 
+
+##### Metadata 
+
+Metadata is additional information that can be attached to data in a GenAI knowledge base. Unlike the actual content, metadata provides structured details that help in organizing, searching, and filtering information more efficiently. It helps manage large datasets by allowing to retrieve relevant data based on specific attributes rather than relying solely on similarity-based searches.
+
+Metadata consists of key-value pairs and serves as additional information connected to the data, though it is not part of the vectorization itself.
+
+For example, a GenAI Knowledge Base could be used to store customer support tickets. Each ticket may have associated metadata such as
+
+* key: `Ticket Type`, value: `Bug`
+* key: `Status`, value: `Solved`
+* key: `Priority`, value: `High`
+
+Instead of relying solely on similarity-based searches of ticket descriptions, users can then filter for specific tickets, such as 'Bug' tickets with the status set to 'Solved'. You can add [MetaData](/appstore/modules/genai/genai-for-mx/commons/#chunkcollection-add-knowledgebasechunk) with the respective key to each chunk during insertion. This allows the model to generate its response using the specified metadata instead of the input text (only the value of e.g. `Status` is passed to the model).
 
 #### How to get data into a knowledge base 
 
