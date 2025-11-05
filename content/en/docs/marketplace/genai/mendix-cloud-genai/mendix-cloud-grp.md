@@ -100,7 +100,7 @@ Compliance with these terms is mandatory to maintain access to the services.
 
 The Mendix Portal allows easy access to manage the resources, through the GenAI Resources section [here](https://genai.home.mendix.com/).
 
-* Get insight into the consumption of input/output tokens against entitlements for Models
+* Get insight into the consumption of input/output tokens for Text and Embeddings Generation Resources
 * Manage content for Knowledge Bases
 * Manage team access to all resources
 * Create and manage connection keys to connect your apps with all resources
