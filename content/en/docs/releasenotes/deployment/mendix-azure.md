@@ -19,7 +19,7 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 * For better clarity, we have updated the text from **Managed Grafana** to **Managed Grafana Accessibility** on both the **Initialize Cluster** and **Edit Cluster** pages.
 * If your PostgreSQL quota is not available in a chosen region, you will now receive a clear error message, helping you understand and resolve the situation more quickly.
 * In the **Initialize Cluster** flow, we have updated the labels for Preflight checks from **Provisioning** to **Checking** for more accurate status indication.
-* We have resolved an issue that prevented cluster initialization from proceeding when two or more clusters were being initialized concurrently within the same subscription. Now, you can initialize multiple clusters without issue.
+* We have resolved an issue that prevented cluster initialization from proceeding when two or more clusters were being initialized concurrently within the same subscription. You can now initialize multiple clusters without issue.
 
 ### Release date: October 23, 2025 - [General Availability (GA) Release](/releasenotes/release-status/#general-availability)
 
