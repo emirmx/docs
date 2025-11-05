@@ -74,42 +74,42 @@ Customers are accountable for developing, deploying, operating, integrating, and
 * Integrating - Securing integrations with backend services and IAM
 * Securing - Following Mendix best practices for secure apps
 
-
-## Limited customizabilty
+## Limited Customizabilty
 
 When a Mendix on Azure cluster is initialized, all components that are required to host Mendix apps are automatically deployed inside an Azure resource group in the subscription of your choosing. Regularly, Mendix and Microsoft will push all required updates to this resource group to ensure it remains compliant and secure. 
 
-In order to be able to push these updates to all Mendix on Azure customers in an automated, predictable and consistent manner, you as a customer will not be able to modify any of these components directly in Azure nor can you influence this upgrade process. As a consequence, any customization beyond what is described below is not possible. 
+In order to be able to push these updates to all Mendix on Azure customers in an automated, predictable and consistent manner, you as a customer are not able to modify any of these components directly in Azure nor can you influence this upgrade process. As a consequence, any customization beyond what is described below is not possible. 
 
-Currently the following customizations are offered self-service via the Mendix on Azure portal:
+The following customizations are offered as self-service in the Mendix on Azure portal:
 
-* Custom tags on deployed Azure resources 
-* Set Azure Kubernetes Service tier 
-* Set Azure Kubernetes agent node VM type 
-* Set maximum AKS agent node pool size (i.e. upper autoscaling limit) 
-* Set Azure for PostgreSQL Flexible server computing SKU and storage performance tier 
-* Switch to internal load balancer exposure to enable apps that can only be reached privately 
-* Switch to internal Grafana exposure to prevent exposure to the public internet 
-* Change IP address prefix of the subnet hosting AKS nodes (only at initial deployment)
+* Apply custom tags to deployed Azure resources.
+* Set the Azure Kubernetes Service tier.
+* Set the VM type for the Azure Kubernetes agent node. 
+* Set the maximum node pool size (that is, the upper autoscaling limit) for the AKS agent.
+* Set the Azure for PostgreSQL Flexible server computing SKU and storage performance tier. 
+* Switch to internal load balancer exposure to enable apps that can only be reached privately.
+* Switch to internal Grafana exposure to prevent exposure to the public internet.
+* Change IP address prefix of the subnet hosting AKS nodes (only at initial deployment).
 
-Currently the following customizations are allowed to be done by the customer directly via Microsoft Azure Portal in order to establish connectivity to/from other networks and/or Azure services:
+The following customizations are related to establishing connectivity to and from other networks and Azure services. They can be done by the customer directly in the Microsoft Azure Portal:
 
-* Configure virtual network peerings with the subnet hosting AKS nodes 
-* Override DNS configuration on the subnet hosting AKS nodes 
-* Configure Private Link Service to expose Mendix apps in other Azure virtual networks 
-* Configure Private Endpoints to establish connectivity between Mendix apps and other services 
+* Configure virtual network peerings with the subnet hosting AKS nodes.
+* Override DNS configuration on the subnet hosting AKS nodes.
+* Configure Private Link Service to expose Mendix apps in other Azure virtual networks.
+* Configure Private Endpoints to establish connectivity between Mendix apps and other services.
 
-Mendix limits customization to what is described above to ensure a consistent, predictable and scalable customer experience.
+Mendix limits customization to what is described above to ensure a consistent, predictable, and scalable customer experience.
 
-## Access to your environment by Mendix
+## Access to your Environment by Mendix
 
-By deploying Mendix on Azure from the Azure Marketplace you provide consent for Mendix to deploy and operate the resources required for Mendix on Azure in the chosen resource group. The mechanism used by Mendix to fulfil this access is provided by Microsoft - i.e. publisher access to a Managed Application - and by definition limits the access Mendix has to your Azure subscription to the resources deployed. 
+By deploying Mendix on Azure from the Azure Marketplace, you provide consent for Mendix to deploy and operate the resources required for Mendix on Azure in the chosen resource group. The mechanism used by Mendix to fulfil this access is provided by Microsoft - that is, publisher access to a Managed Application - and by definition limits the access Mendix has to your Azure subscription to the resources deployed. 
 
 Mendix will use this access for the following purposes:
-* Initial initialisation of the cluster (as initiated by the customer from Mendix on Azure portal) 
-* Pushing regular service updates (automatically, see description in the next paragraph) 
+
+* Initial initialisation of the cluster (as initiated by the customer from Mendix on Azure portal)
+* Pushing regular service updates (automatically, see description in the next paragraph)
 * Pushing ad-hoc emergency updates or configuration changes to avoid service disruptions (by exception and at discretion of Mendix) 
-* To troubleshoot incidents on behalf of the customer (after raising of a support ticket by the customer)
+* Troubleshooting incidents on behalf of the customer (after raising of a support ticket by the customer)
 
 ## Support Tickets
 
