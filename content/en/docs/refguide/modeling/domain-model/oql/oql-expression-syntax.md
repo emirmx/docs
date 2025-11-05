@@ -780,10 +780,10 @@ COALESCE ( expression [ ,...n ] )
 
 #### Examples {#coalesce-expression-examples}
 
-Assume entity `Sales.Customer` entity now has some `NULL` values:
+Assume entity `Sales.CustomerInfo` entity now has some `NULL` values:
 
 ```sql
-SELECT * FROM Sales.Customer
+SELECT * FROM Sales.CustomerInfo
 ```
 
 | ID | LastName | FirstName | Age  | TotalOrderAmount |
@@ -794,7 +794,7 @@ SELECT * FROM Sales.Customer
 Selecting a non-null name for a customer, ignoring if it is the first name or last name, can be done with `COALESCE`:
 
 ```sql
-SELECT COALESCE(LastName, FirstName) AS Name FROM Sales.Customer
+SELECT COALESCE(LastName, FirstName) AS Name FROM Sales.CustomerInfo
 ```
 
 | Name |                                                         
@@ -808,7 +808,7 @@ If all arguments have different numeric types, the data type of the expression r
 SELECT
 	COALESCE(Age, TotalOrderAmount) AS AgeOrAmount,
 	COALESCE(TotalOrderAmount, Age) AS AmountOrAge,
-FROM Sales.Customer
+FROM Sales.CustomerInfo
 ```
 
 | AgeOrAmount (type: Decimal) | AmountOrAge (type: Decimal²) |
