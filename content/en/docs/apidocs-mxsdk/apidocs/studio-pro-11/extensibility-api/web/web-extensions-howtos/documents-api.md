@@ -6,7 +6,7 @@ url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/documents-api/
 
 ## Introduction
 
-This how-to describes how to create context menus for a document editor that execute previously registered commands.
+This how-to describes how to create context menus for a document editor that execute previously registered commands. In the example below, you create a menu which is shown for each entity in the domain model of Studio Pro.
 
 ## Prerequisites
 
@@ -17,36 +17,42 @@ Before starting this how-to, make sure you have completed the following prerequi
 
 ## Creating a Context Menu
 
-In the example below, you create a menu which is shown for each entity in the Domain model editor of Studio Pro. In order to specify which type of document a menu should belong to, you need to use the full name of the document type, i.e. `DomainModels$Entity` for entities, `DomainModels$Annotation` for annotations, or  `DomainModels$DomainModel` for the editor canvas itself. For more information on these document types, see [Access a Mendix Model Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/model-api/).
+{{% alert color="info" %}}
+Use the full name of the document type (for example, `DomainModels$Entity` for entities, `DomainModels$Annotation` for annotations, or  `DomainModels$DomainModel` for the editor canvas itself). For more information about these document type names, see [Access a Mendix Model Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/model-api/).
+{{% /alert %}}
 
-First, a command must be registered through the [Commands API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/command-api/), then the `commandId` can be attached to the new menu. Afterwards, using the `documents` API's `addContextMenu` method, the menu can be added to an entity inside the Domain model editor.
+The code below does the following:
 
-```typescript
-import { ComponentContext, IComponent, Menu, StudioProApi, getStudioProApi } from "@mendix/extensions-api";
+1. Registers a command through the [Commands API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/command-api/)
+2. Attaches the `commandId` to the new menu
+3. Uses the `documents` API's `addContextMenu` method to add the menu to an entity inside the domain model editor
 
-const extensionId = "myextension";
+    ```typescript
+    import { ComponentContext, IComponent, Menu, StudioProApi, getStudioProApi } from "@mendix/extensions-api";
 
-export const component: IComponent = {
-    async loaded(componentContext: ComponentContext) {
-        const studioPro = getStudioProApi(componentContext);
+    const extensionId = "myextension";
 
-        const commandId = `${extensionId}.entity.command`;
-        const menuId = `${commandId}.menu`;
+    export const component: IComponent = {
+        async loaded(componentContext: ComponentContext) {
+            const studioPro = getStudioProApi(componentContext);
 
-        await studioPro.app.commands.registerCommand<{ documentId: string }>(commandId, async (args: { documentId: string }) => {
-            await studioPro.ui.notifications.show({
-                title: `Entity command executed`,
-                message: `You clicked a context menu for an Entity! (${args.documentId})`,
-                displayDurationInSeconds: 4
+            const commandId = `${extensionId}.entity.command`;
+            const menuId = `${commandId}.menu`;
+
+            await studioPro.app.commands.registerCommand<{ documentId: string }>(commandId, async (args: { documentId: string }) => {
+                await studioPro.ui.notifications.show({
+                    title: `Entity command executed`,
+                    message: `You clicked a context menu for an Entity! (${args.documentId})`,
+                    displayDurationInSeconds: 4
+                });
             });
-        });
 
-        const microflowMenu: Menu = { caption: `Entity command menu`, menuId, commandId };
+            const microflowMenu: Menu = { caption: `Entity command menu`, menuId, commandId };
 
-        await studioPro.ui.documents.addContextMenu(microflowMenu, "DomainModels$Entity");
+            await studioPro.ui.documents.addContextMenu(microflowMenu, "DomainModels$Entity");
+        }
     }
-}
-```
+    ```
 
 As you can see from the example above, the expected payload of the command is an object containing a document id (`{ documentId: string }`). Registering the command requires the exact type of the payload, otherwise your extension will not compile. The `documentId` will be the id of the document the menu is attached to, in this case, the exact entity in the Domain Model editor canvas.
 
@@ -56,6 +62,6 @@ The command must be registered before creating the menu.
 
 ## Extensibility Feedback
 
-If you would like to provide us with some additional feedback, please complete a short [survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback)
+If you would like to provide additional feedback, you can complete a short [survey](https://survey.alchemer.eu/s3/90801191/Extensibility-Feedback).
 
-Any feedback is much appreciated.
+Any feedback is appreciated.

@@ -36,7 +36,7 @@ If deploying to Red Hat OpenShift, you need to specify that specifically when cr
 
 Mendix on Kubernetes Operator `v2.*.*` is the latest version which officially supports:
 
-* Kubernetes versions 1.19 through 1.33
+* Kubernetes versions 1.19 through 1.34
 * OpenShift 4.6 through 4.19
 
 {{% alert color="warning" %}}

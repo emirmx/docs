@@ -16,6 +16,32 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
+### October 29, 2025
+
+#### New Features
+
+* Apps deployed to Kubernetes now support New Relic, enabling them to be migrated from Cloud Foundry to Kubernetes.
+
+* For Kubernetes deployments using New Relic, the `instance_index` tag is no longer provided within metadata. Use the `pod_name` tag instead.
+
+### October 19, 2025
+
+#### New Features
+
+* We have added a new feature in the **Environment Details** page for flexible environments. Users can now use non-Latin characters in the display name of their environment. The display name of an environment can be changed independent of the environment's subdomain.
+
+* We have added support for email internationalization. The emails sent by the Developer Portal will now be translated to the language set in user's profile.
+
+#### Bug Fixes
+
+* We have fixed an issue where apps were getting stuck in the "starting" state instead of failing gracefully due to missing package metadata.
+
+### October 12, 2025
+
+#### Bug Fixes
+
+* We have fixed an issue that prevented environment deployment activities from being displayed on the [Activity tab](/developerportal/deploy/environments/#activity-tab).
+
 ### October 5, 2025
 
 #### New Features
