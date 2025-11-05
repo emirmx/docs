@@ -13,7 +13,7 @@ aliases:
 {{% alert color="warning" %}}
 The **sort bar** widget is a Dojo widget.
 
-This widget is not supported on native mobile pages. Mendix recommends that you use the [Gallery](/appstore/widgets/gallery/) or [List View](/refguide/list-view/) instead to display data. See the Mendix React Client's [Migration Guide](/refguide/mendix-client/react/#data-grid).
+This widget is not supported on native mobile pages. Mendix recommends that you use the [Gallery](/appstore/modules/gallery/) or [List View](/refguide/list-view/) instead to display data. See the Mendix React Client's [Migration Guide](/refguide/mendix-client/react/#data-grid).
 
 This widget is not supported in the [React client](/refguide/mendix-client/react/). To upgrade it to the recommended React widget ([Data Grid 2](/appstore/modules/data-grid-2/)), see the Mendix React Client's [Migration Guide](/refguide/mendix-client/react/#data-grid).
 
