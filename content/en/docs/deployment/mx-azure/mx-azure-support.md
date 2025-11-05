@@ -5,6 +5,7 @@ description: "Provides information about the support model for Mendix on Azure."
 weight: 30
 ---
 
+{{% alert color="info" %}}
 To facilitate sharing this information with internal stakeholders, a downloadable PDF version is available [here](https://blob.mendix.technology/mxonazure/MXonAzure-Support-Policy-for-Mendix-on-Azure.pdf). If discrepancies arise between this document and the PDF, the PDF version takes precedence.  
 {{% /alert %}}
 
