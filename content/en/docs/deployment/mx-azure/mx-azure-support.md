@@ -12,7 +12,7 @@ This document outlines the technical support policies and limitations for Mendix
 {{< figure src="/attachments/deployment/mx-azure/SharedResponsibility.png" class="no-border" >}}
 
 ## Managed nature of Mendix on Azure
-With Mendix on Azure, you get a managed service to host Mendix apps in an Azuresubscription you own. The Mendix on Azure service is comprised of several underlying Azure services combined with three Mendix-specific components (the Mendix Runtime, Operator and Agent). Mendix deploys and operates all services and components within the scope of the Mendix on Azure service for you.
+With Mendix on Azure, you get a managed service to host Mendix apps in an Azure subscription you own. The Mendix on Azure service is comprised of several underlying Azure services combined with three Mendix-specific components (the Mendix Runtime, Operator and Agent). Mendix deploys and operates all services and components within the scope of the Mendix on Azure service for you.
 
 Hosting Mendix apps on underlying Azure services you deploy and operate yourself (as can be done by adopting our Mendix on Kubernetes offering) provides you maximal low-level choice, control and customization options with regards to these underlying services. By contrast, Mendix on Azure only provides you a relatively limited set of customization options with regards to these underlying services. 
 In exchange, you don’t need to worry about deploying or managing these underlying Azure services yourself. In this manner, Mendix onAzure provides you a turnkey solution for hosting Mendix apps on Azure.
@@ -27,7 +27,7 @@ Mendix deploys and manages the following components and services as part of Mend
 * Azure Virtual Network including Private Endpoints 
 * Mendix Runtime 
 * Mendix Operator
-* Mendix Agent 
+* Mendix Agent
 
 {{% alert color="info" %}}  
 These components are managed in the sense that Mendix deploys and operates them in such a manner that they work together to form a Mendix app hosting service. As a consequence, customers cannot alter these underlying components themselves beyond what is described in the next paragraph.
@@ -192,7 +192,7 @@ Mendix mitigates these impacts by:
 Mendix on Azure provides the following features to allow customers to self-service their needs with regards to backup, restore, data migration & disaster recovery: 
 
 * Mendix on Azure provides per-app environment snapshotting capabilities that allow customers to backup & restore all relevant app data from/to an environment via selfservice on the Mendix Private Cloud Portal. 
-* Mendix on Azure creates automated nightly backup snapshots for every Mendix app environment (feature is under development and to be released in the third quarter of 2025). 
+* Mendix on Azure creates automated nightly backup snapshots for every Mendix app environment. 
 * All backup snapshots are stored in an Azure Storage Account hosted on the customer’s Azure subscription. Mendix has prepared an emergency procedure which can be performed in collaboration with the customer in case the Azure Storage Account holding the backup snapshots would accidentally get deleted from Azure. 
 * Individual backup snapshots can be downloaded and uploaded from/into a customer’s Mendix on Azure environment by the customer under self-service via the Mendix Private Cloud Portal. This provides the customer the ability to use such snapshots for disaster recovery scenarios as well as data migration scenarios to/from other deployment models. Mendix (Expert Services) is available to support customers in such scenarios, when desired.
 
