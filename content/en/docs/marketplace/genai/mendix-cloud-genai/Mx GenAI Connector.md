@@ -162,7 +162,7 @@ Metadata is additional information that can be attached to data in a GenAI knowl
 
 Metadata consists of key-value pairs and serves as additional information connected to the data, though it is not part of the vectorization itself.
 
-To come back to the previous example, a collection inside of a Mendix Cloud GenAI resource could be used to store both customer support tickets and IT Equipment. To be able to retrieve only the tickets from this collection, metadata like 
+To come back to the previous example, a collection inside of a Mendix Cloud GenAI resource could be used to store both customer support tickets and IT Equipment, instead of storing the data in two different collections. To be able to retrieve only the tickets from this collection, metadata like 
 * key: `Item Type`, value: `Ticket`
 
 can be added. The model then generates its response using the specified metadata instead of solely the input text. Using metadata, even more fine-grained filtering becomes feasible. Each ticket may have associated metadata such as
