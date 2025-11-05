@@ -5,11 +5,12 @@ description: "Provides information about the support model for Mendix on Azure."
 weight: 30
 ---
 
+To facilitate sharing this information with internal stakeholders, a downloadable PDF version is available [here](https://blob.mendix.technology/mxonazure/MXonAzure-Support-Policy-for-Mendix-on-Azure.pdf). If discrepancies arise between this document and the PDF, the PDF version takes precedence.  
+{{% /alert %}}
+
 ## Introduction
 
 This document outlines the technical support policies and limitations for Mendix on Azure, based on the shared responsibility model that underpins the offering.
-
-{{< figure src="/attachments/deployment/mx-azure/SharedResponsibility.png" class="no-border" >}}
 
 ## Managed nature of Mendix on Azure
 With Mendix on Azure, you get a managed service to host Mendix apps in an Azure subscription you own. The Mendix on Azure service is comprised of several underlying Azure services combined with three Mendix-specific components (the Mendix Runtime, Operator and Agent). Mendix deploys and operates all services and components within the scope of the Mendix on Azure service for you.
@@ -32,6 +33,8 @@ Mendix deploys and manages the following components and services as part of Mend
 {{% alert color="info" %}}  
 These components are managed in the sense that Mendix deploys and operates them in such a manner that they work together to form a Mendix app hosting service. As a consequence, customers cannot alter these underlying components themselves beyond what is described in the next paragraph.
 {{% /alert %}}
+
+{{< figure src="/attachments/deployment/mx-azure/SharedResponsibility.png" class="no-border" >}}
 
 ## Shared Responsibility Model for Mendix on Azure
 
@@ -163,7 +166,7 @@ Mendix provides technical support for the following example scenarios:
 ## Mendix does not provide technical support in the following example scenarios: 
 
 * Requests about how to integrate with other Azure Services that are beyond the scope of the product. Such requests can be supported by Mendix Expert Services or Mendix (infra) partners as part of (paid) consultancy engagements. 
-* Requests to make configuration changes to underlying Azure services beyond what is offered as self-service in the Mendix on Azure and Mendix Private Cloud Portal. Since such changes are not possible with this service, customer may consider to adopt Mendix on Kubernetes (formerly Mendix for Private Cloud) instead.
+* Requests to make configuration changes to underlying Azure services beyond what is offered as self-service in the Mendix on Azure and Mendix on Kubernetes Portal. Since such changes are not possible with this service, customer may consider to adopt Mendix on Kubernetes (formerly Mendix for Private Cloud) instead.
 * Requests for any other type of customization on the resources deployed in customer’s Azure subscription. Since such customization is not possible with this service, customer may consider to adopt Mendix for Kubernetes (formerly Mendix for Private Cloud) instead. 
 * Requests to fix security vulnerabilities in one of the managed components beyond what is automatically pushed during the weekly and quarterly update cycles.
 
@@ -191,10 +194,10 @@ Mendix mitigates these impacts by:
 
 Mendix on Azure provides the following features to allow customers to self-service their needs with regards to backup, restore, data migration & disaster recovery: 
 
-* Mendix on Azure provides per-app environment snapshotting capabilities that allow customers to backup & restore all relevant app data from/to an environment via selfservice on the Mendix Private Cloud Portal. 
+* Mendix on Azure provides per-app environment snapshotting capabilities that allow customers to backup & restore all relevant app data from/to an environment via selfservice on the Mendix on Kubernetes  Portal. 
 * Mendix on Azure creates automated nightly backup snapshots for every Mendix app environment. 
 * All backup snapshots are stored in an Azure Storage Account hosted on the customer’s Azure subscription. Mendix has prepared an emergency procedure which can be performed in collaboration with the customer in case the Azure Storage Account holding the backup snapshots would accidentally get deleted from Azure. 
-* Individual backup snapshots can be downloaded and uploaded from/into a customer’s Mendix on Azure environment by the customer under self-service via the Mendix Private Cloud Portal. This provides the customer the ability to use such snapshots for disaster recovery scenarios as well as data migration scenarios to/from other deployment models. Mendix (Expert Services) is available to support customers in such scenarios, when desired.
+* Individual backup snapshots can be downloaded and uploaded from/into a customer’s Mendix on Azure environment by the customer under self-service via the Mendix on Kubernetes Portal. This provides the customer the ability to use such snapshots for disaster recovery scenarios as well as data migration scenarios to/from other deployment models. Mendix (Expert Services) is available to support customers in such scenarios, when desired.
 
 ## Compliance Frameworks
 
@@ -211,33 +214,12 @@ Mendix on Azure aligns with SOC 2 Azure Policy automated controls. For more info
 ## Severity Baselines for Support Tickets
 To ensure consistent and prioritised support, we classify issues based on the following severity levels:
 
-### Critical: 
-Production environment is inaccessible or severely impaired, preventing critical changes.
-Core application functionality is completely unavailable.
-
-Response Time: < 2 Office Hours
-Resolution Time: Best efforts
-
-### High:
-Inability to provision new clusters.
-Inability to modify existing clusters via the Mx on Azure portal.
-
-Response Time: < 8 Office Hours
-Resolution Time: Best efforts
-
-### Medium:
-Non-production environments (Test/Acceptance) experience significant disruption to operational functionality.
-Operational functionality in production is moderately impacted but not critical.
-
-Response Time: Next Business Day
-Resolution Time: Best efforts
-
-### Low:
-Minor issues with minimal impact on operational functionality.
-Cosmetic issues, minor performance degradation, or general inquiries.
-
-Response Time: Reasonable effort
-Resolution Time: Best efforts
+| SeverityLevel | Response Time | Resolution Time | Examples |
+| --- | --- | --- | --- |
+| Critical | < 2 Office Hours | Best Effort | Production environment is inaccessible or severely impaired, preventing critical changes. Core application functionality is completely unavailable. |
+| High | < 8 Office Hours | Best Effort | Inability to provision new clusters. Inability to modify existing clusters via the Mx on Azure portal. |
+| Medium | Next Business Day | Best Effort | Non-production environments (Test/Acceptance) experience significant disruption to operational functionality. Operational functionality in production is moderately impacted but not critical. |
+| Low | Reasonable effort | Best Effort | Minor issues with minimal impact on operational functionality. Cosmetic issues, minor performance degradation, or general inquiries. |
 
 ## Off-boarding from the service
 
@@ -245,7 +227,7 @@ Customer can completely off-board from the service by deleting the Managed Appli
 
 * Remove all resources related to Mendix on Azure from the customer’s subscription. 
 * Remove any access Mendix has to the customer’s environment. 
-* Delete the cluster registration from the Mendix on Azure & Mendix Private Cloud Portal portals. 
+* Delete the cluster registration from the Mendix on Azure & Mendix on Kubernetes Portals. 
 * While Mendix does have an emergency procedure available to help revive an environment and restore data in case the Managed Application gets deleted by accident, it is a higheffort manual process requiring close collaboration between Mendix & the customer. Given this, we advise customers to exercise extreme caution when deleting the Managed Application from their Azure subscription to avoid the need of this emergency procedure to be executed.
 
 
