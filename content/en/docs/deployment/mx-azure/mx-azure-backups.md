@@ -27,6 +27,7 @@ You must have **Manage Apps Backups** permission for the namespace to use this f
 
 {{% alert color="info" %}} 
 Backups cannot be created while the environment is in any of these states:
+
 * Creation in progress
 * Creation failed
 * Deployment package is being deployed

@@ -29,7 +29,6 @@ A menu has the following properties:
 | `hasSeparatorAfter` <br> (default: `false`)  | Adds a visual separator after the item                |
 | `enabled`  <br> (default: `true`)  | Indicates that the menu item notifies the listener when clicked |
 
-
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/menus/grouped_menus.png" width="300" >}}
 
 ## Creating a Simple Menu

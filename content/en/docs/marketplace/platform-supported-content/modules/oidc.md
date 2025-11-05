@@ -287,9 +287,7 @@ To connect your App with your IdP, you need to configure both your IdP (as descr
 
 1. In your IdP, provision a new OpenID client application. You will receive a ClientID and Client Secret.
 2. You will also need the OIDC configuration endpoint (for example: [https://accounts.google.com/.well-known/openid-configuration](https://accounts.google.com/.well-known/openid-configuration))
-3. Register the following callback URLs:
-    * `https://<your-app-url>/oauth/v2/callback`
-    * `makeitnative://<your-app-url>/oauth/callback`
+3. Register the following callback URL: `https://<your-app-url>/oauth/v2/callback`
 
 #### Microsoft Entra ID Provider Configuration for APIs{#azure-portal}
 

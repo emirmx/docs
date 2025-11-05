@@ -67,11 +67,11 @@ Implement the code described in the [Code Descriptions](#code-descriptions) sect
     };
     ```
 
-  ## Code Descriptions {#code-descriptions}
+## Code Descriptions {#code-descriptions}
 
   The following sections explain the various parts of the code.
 
-  ### saveFile
+### saveFile
 
   The `saveFile` callback calls the `putFile` API. It sets the file name to `HelloWorld.txt` and the content to `Hello world from a file!`.
 
@@ -85,7 +85,7 @@ Implement the code described in the [Code Descriptions](#code-descriptions) sect
   };
   ```
 
-  ### loadFile
+### loadFile
 
   The `loadFile` callback calls the `getFile` API. It requests to load `HelloWorld.txt`, then shows a message box that displays the content of the file.
 
@@ -99,7 +99,7 @@ Implement the code described in the [Code Descriptions](#code-descriptions) sect
   };
   ```
 
-  ### deleteFile
+### deleteFile
 
   The `deleteFile` callback calls the `deleteFile` API. It requests to delete `HelloWorld.txt`.
 
@@ -110,7 +110,7 @@ Implement the code described in the [Code Descriptions](#code-descriptions) sect
   };
   ```
 
-  ### Adding Buttons
+### Adding Buttons
 
   The final part of the code adds three new buttons which, when clicked, call the callbacks described above.
 
