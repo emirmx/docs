@@ -76,7 +76,7 @@ The non-blocking History pane shows commits in your repository and allows you to
 
 ### Connector {#connector}
 
-The **Connector** pane displays elements that can be connected to the currently selected element. For example, when a button is a selected, the **Connector** shows microflows that you can drag onto the button to connect them.
+The **Connector** pane displays elements that can be connected to the currently selected element. For example, when a button is selected, the **Connector** shows microflows that you can drag onto the button to connect them.
 
 ### Console {#console}
 
