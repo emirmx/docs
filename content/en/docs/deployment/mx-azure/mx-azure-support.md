@@ -162,16 +162,20 @@ These automated upgrade cadences cannot be modified by customers.
 
 ## Mendix Support Coverage Examples
 
-Mendix provides technical support for the following example scenarios: 
+### Example Supported Scenarios
 
-* Cluster initialization fails despite passing pre-flight validation checks 
-* Customer is experiencing service availability issues and is unable to recover the situation using the self-service recovery option.
+Mendix provides technical support for the following example scenarios:
 
-## Mendix does not provide technical support in the following example scenarios: 
+* Cluster initialization fails despite passing pre-flight validation checks.
+* The customer is experiencing service availability issues and is unable to recover the situation using the self-service recovery option.
+
+### Example Unsupported Scenarios
+
+Mendix does not provide technical support in the following example scenarios: 
 
 * Requests about how to integrate with other Azure Services that are beyond the scope of the product. Such requests can be supported by Mendix Expert Services or Mendix (infra) partners as part of (paid) consultancy engagements. 
 * Requests to make configuration changes to underlying Azure services beyond what is offered as self-service in the Mendix on Azure and Mendix on Kubernetes Portal. Since such changes are not possible with this service, customer may consider to adopt Mendix on Kubernetes (formerly Mendix for Private Cloud) instead.
-* Requests for any other type of customization on the resources deployed in customer’s Azure subscription. Since such customization is not possible with this service, customer may consider to adopt Mendix for Kubernetes (formerly Mendix for Private Cloud) instead. 
+* Requests for any other type of customization on the resources deployed in the customer's Azure subscription. Since such customization is not possible with this service, customer may consider to adopt Mendix for Kubernetes (formerly Mendix for Private Cloud) instead. 
 * Requests to fix security vulnerabilities in one of the managed components beyond what is automatically pushed during the weekly and quarterly update cycles.
 
 {{% alert color="warning" %}}  
@@ -194,14 +198,14 @@ Mendix mitigates these impacts by:
 * Collaboration with Microsoft Support and engineering for upstream fixes  
 * Transparent communication and guidance on workarounds for affected customers  
 
-## Backup, restore, data migration & disaster recovery
+## Backup, Restore, Data Migration and Disaster Recovery
 
-Mendix on Azure provides the following features to allow customers to self-service their needs with regards to backup, restore, data migration & disaster recovery: 
+Mendix on Azure provides the following features to allow customers to self-service their needs with regards to backup, restore, data migration, and disaster recovery: 
 
-* Mendix on Azure provides per-app environment snapshotting capabilities that allow customers to backup & restore all relevant app data from/to an environment via selfservice on the Mendix on Kubernetes  Portal. 
+* Mendix on Azure provides per-app environment snapshotting capabilities that allow customers to backup and restore all relevant app data from/to an environment via selfservice on the Mendix on Kubernetes  Portal. 
 * Mendix on Azure creates automated nightly backup snapshots for every Mendix app environment. 
-* All backup snapshots are stored in an Azure Storage Account hosted on the customer’s Azure subscription. Mendix has prepared an emergency procedure which can be performed in collaboration with the customer in case the Azure Storage Account holding the backup snapshots would accidentally get deleted from Azure. 
-* Individual backup snapshots can be downloaded and uploaded from/into a customer’s Mendix on Azure environment by the customer under self-service via the Mendix on Kubernetes Portal. This provides the customer the ability to use such snapshots for disaster recovery scenarios as well as data migration scenarios to/from other deployment models. Mendix (Expert Services) is available to support customers in such scenarios, when desired.
+* All backup snapshots are stored in an Azure Storage Account hosted on the customer's Azure subscription. Mendix has prepared an emergency procedure which can be performed in collaboration with the customer in case the Azure Storage Account holding the backup snapshots is accidentally deleted from Azure. 
+* Individual backup snapshots can be downloaded and uploaded from and into a customer's Mendix on Azure environment by the customer under self-service through the Mendix on Kubernetes Portal. This provides the customer the ability to use such snapshots for disaster recovery scenarios as well as data migration scenarios to and from other deployment models. Mendix Expert Services is available to support customers in such scenarios, when desired.
 
 ## Compliance Frameworks
 
@@ -209,34 +213,34 @@ Mendix on Azure aligns with SOC 2 Azure Policy automated controls. For more info
 
 | Service | Exception | Rationale |
 | --- | --- | --- |
-| Azure Kubernetes Service | [Azure Policy Addon for Kubernetes service (AKS) should be installed and enabled on your clusters](https://www.azadvertizer.net/azpolicyadvertizer 0a15ec92-a229-4763-bb14-0ea34a568f8d.html) | The cluster and all workloads are deployed and managed by Mendix so enforcing policy does not add any value.|
-| Azure Kubernetes Service | [Azure Kubernetes Service clusters should have Defender profile enabled](https://www.azadvertizer.net/azpolicyadvertizer/a1840de2-8088-4ea8-b153-b4c723e9cb01.html) | Defender is not enabled for costsaving reasons.|
-| Azure Kubernetes Service | [All Internet traffic should be routed via your deployed Azure Firewall](https://www.azadvertizer.net/azpolicyadvertizer/fc5e4038-4584-4632-8c85-c0448d374b2c.html) | This is not part of the product scope but can be added by the customer postdeployment.|
-| Azure Container Registry | [Container registries should be encrypted with a customer-managed key](https://www.azadvertizer.net/azpolicyadvertizer/5b9159ae-1701-4a6f-9a7a-aa9c8ddd0580.html) | The standard Microsoft key is used to enable deployment without key creation in Azure.|
-| Storage Account | [Storage accounts should use customer-managed key for encryption](https://www.azadvertizer.net/azpolicyadvertizer/6fac406b-40ca-413b-bf8e-0bf964659c25.html) | The standard Microsoft key is used to enable deployment without key creation in Azure|
+| Azure Kubernetes Service | [Azure Policy Addon for Kubernetes service (AKS) should be installed and enabled on your clusters](https://www.azadvertizer.net/azpolicyadvertizer 0a15ec92-a229-4763-bb14-0ea34a568f8d.html) | The cluster and all workloads are deployed and managed by Mendix so enforcing policy does not add any value. |
+| Azure Kubernetes Service | [Azure Kubernetes Service clusters should have Defender profile enabled](https://www.azadvertizer.net/azpolicyadvertizer/a1840de2-8088-4ea8-b153-b4c723e9cb01.html) | Defender is not enabled for costsaving reasons. |
+| Azure Kubernetes Service | [All Internet traffic should be routed via your deployed Azure Firewall](https://www.azadvertizer.net/azpolicyadvertizer/fc5e4038-4584-4632-8c85-c0448d374b2c.html) | This is not part of the product scope but can be added by the customer postdeployment. |
+| Azure Container Registry | [Container registries should be encrypted with a customer-managed key](https://www.azadvertizer.net/azpolicyadvertizer/5b9159ae-1701-4a6f-9a7a-aa9c8ddd0580.html) | The standard Microsoft key is used to enable deployment without key creation in Azure. |
+| Storage Account | [Storage accounts should use customer-managed key for encryption](https://www.azadvertizer.net/azpolicyadvertizer/6fac406b-40ca-413b-bf8e-0bf964659c25.html) | The standard Microsoft key is used to enable deployment without key creation in Azure. |
 
 ## Severity Baselines for Support Tickets
+
 To ensure consistent and prioritised support, we classify issues based on the following severity levels:
 
 | SeverityLevel | Response Time | Resolution Time | Examples |
 | --- | --- | --- | --- |
-| Critical | < 2 Office Hours | Best Effort | Production environment is inaccessible or severely impaired, preventing critical changes. Core application functionality is completely unavailable. |
-| High | < 8 Office Hours | Best Effort | Inability to provision new clusters. Inability to modify existing clusters via the Mx on Azure portal. |
-| Medium | Next Business Day | Best Effort | Non-production environments (Test/Acceptance) experience significant disruption to operational functionality. Operational functionality in production is moderately impacted but not critical. |
-| Low | Reasonable effort | Best Effort | Minor issues with minimal impact on operational functionality. Cosmetic issues, minor performance degradation, or general inquiries. |
+| Critical | Less than 2 office hours | Best effort | Production environment is inaccessible or severely impaired, preventing critical changes. Core application functionality is completely unavailable. |
+| High | Less than 8 office hours | Best effort | Inability to provision new clusters. Inability to modify existing clusters via the Mx on Azure portal. |
+| Medium | Next business day | Best effort | Non-production environments (Test or Acceptance) experience significant disruption to operational functionality. Operational functionality in production is moderately impacted but not critical. |
+| Low | Reasonable effort | Best effort | Minor issues with minimal impact on operational functionality. Cosmetic issues, minor performance degradation, or general inquiries. |
 
-## Off-boarding from the service
+## Off-boarding from the Service
 
-Customer can completely off-board from the service by deleting the Managed Application from their Azure subscription (e.g. using Azure Portal). This will immediately:
+Customers can completely off-board from the service by deleting the Managed Application from their Azure subscription (for example by using the Azure Portal). This will immediately perform the following actions:
 
-* Remove all resources related to Mendix on Azure from the customer’s subscription. 
-* Remove any access Mendix has to the customer’s environment. 
-* Delete the cluster registration from the Mendix on Azure & Mendix on Kubernetes Portals. 
-* While Mendix does have an emergency procedure available to help revive an environment and restore data in case the Managed Application gets deleted by accident, it is a higheffort manual process requiring close collaboration between Mendix & the customer. Given this, we advise customers to exercise extreme caution when deleting the Managed Application from their Azure subscription to avoid the need of this emergency procedure to be executed.
-
+* Remove all resources related to Mendix on Azure from the customer's subscription. 
+* Remove any access Mendix has to the customer's environment. 
+* Delete the cluster registration from the Mendix on Azure and Mendix on Kubernetes Portals. 
+* While Mendix does have an emergency procedure available to help revive an environment and restore data in case the Managed Application gets deleted by accident, it is a higheffort manual process requiring close collaboration between Mendix and the customer. Given this, we advise customers to exercise extreme caution when deleting the Managed Application from their Azure subscription to avoid the need of this emergency procedure to be executed.
 
 ## Known Limitations
 
-* Only apps on Mendix version 10.10 or later are supported; deployment for earlier versions will fail.
+* Only apps on Mendix version 10.10 or later are supported. Deployment for earlier versions will fail.
 * Certain Mendix on Kubernetes APIs (Create, Edit, or Delete cluster and namespace operations) are unavailable in Mendix on Azure due to managed architecture. Other APIs function normally.
-* Downtime or issues with Mendix on Kubernetes may affect Mendix on Azure availability (for example, cluster creation may notbe  possible).
+* Downtime or issues with Mendix on Kubernetes may affect Mendix on Azure availability (for example, cluster creation may not be  possible).
