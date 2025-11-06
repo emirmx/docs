@@ -163,9 +163,13 @@ Metadata is additional information that can be attached to data in a GenAI knowl
 Metadata consists of key-value pairs and serves as additional information connected to the data, though it is not part of the vectorization itself.
 
 To come back to the previous example for collections: Instead of having two different collections, such as 'IT Setup & Equipment' and 'Historical Support tickets', there could be one named 'Company IT'. To be able to retrieve only tickets and no other information from this collection, metadata like 
-* key: `Item Type`, value: `Ticket`
+* key: `Category`, value: `Ticket`
 
-can be added during insertion. The model then generates its response using the specified metadata instead of solely the input text. Using metadata, even more fine-grained filtering becomes feasible. Each ticket may have associated metadata such as
+can be added during insertion. The model then generates its response using the specified metadata instead of solely the input text. 
+
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIKBMetadataSeparation.png" >}}
+
+Using metadata, even more fine-grained filtering becomes feasible. Each ticket may have associated metadata such as
 
 * key: `Ticket Type`, value: `Bug`
 * key: `Status`, value: `Solved`
