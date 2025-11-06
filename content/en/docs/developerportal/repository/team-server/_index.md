@@ -20,6 +20,8 @@ When you commit your app model changes to the Team Server in Studio Pro, you can
 
 After opening your app in [Apps](https://sprintr.home.mendix.com/), on the **Team Server** page, you can see a URL to access you app, revision history, and revision details.
 
+Team Server is hosted on AWS in Frankfurt, Germany.
+
 ## Versioning with Git
 
 In the **Versioning with Git** section, Scrum Masters can migrate apps from SVN version control system to Git. For more information, see [Migrate to Git](/developerportal/general/migrate-to-git/). 
