@@ -16,6 +16,17 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
+### November 9, 2025
+
+#### New Features
+
+* We have added a new feature to blocklist the IP addresses at root level of the app URL. In 'Cloud settings' page, there is a new tab 'IP Restriction Profile' where the IP to be blocked can be configured. This profile can be attached in 'Networks page' under the section 'IP Access Restrictions' similar to 'Path Based Access Restrictions'. 
+
+#### Bug Fixes
+
+* We have fixed an issue where custom domain routes were not removed entirely, even when they were deleted from the App.
+  
+
 ### October 29, 2025
 
 #### New Features
