@@ -30,6 +30,17 @@ Tracing can be enabled from the `App Settings` -> `Configuration` dialog. In the
 
 {{< figure src="/attachments/refguide/runtime/tracing-in-runtime/tracing-configuration.png" >}}
 
+### Filtering
+
+For filtering out specific traces, `mendix.tracing.filter` system property can be used. The specified spans and their sub-spans will be filtered out. `matchType` specifies how the name of the span is matched. Currently only `partial` is supported for `matchType` which checks if the span name contains the provided value. 
+```json
+[
+  {
+    "type": "drop", "matchType": "partial", "spanName": "Loop"
+  }
+]
+```
+
 ### Testing
 
 To test the tracing you can use [Jaeger](https://www.jaegertracing.io/). For example, the all-in-one binary or Docker image. Jaeger will listen to the above endpoint by default.
