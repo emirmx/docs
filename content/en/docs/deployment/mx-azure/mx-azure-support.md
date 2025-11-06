@@ -38,8 +38,6 @@ Mendix deploys and manages the following components and services as part of Mend
 These components are managed in the sense that Mendix deploys and operates them in such a manner that they work together to form a Mendix app hosting service. As a consequence, customers cannot alter these underlying components themselves beyond what is described in the next paragraphs.
 {{% /alert %}}
 
-{{< figure src="/attachments/deployment/mx-azure/SharedResponsibility.png" class="no-border" >}}
-
 ## Shared Responsibility Model for Mendix on Azure
 
 Mendix on Azure deployments follow a shared responsibility model where Mendix, Microsoft, and customers have distinct roles throughout deployment and ongoing operations. Below are the key responsibilities:
