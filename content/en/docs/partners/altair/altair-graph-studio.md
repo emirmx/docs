@@ -8,29 +8,27 @@ description: "Describes how to use graph data from Altair Graph Studio in your M
 
 ## Introduction
 
-Altair Graph Studio provides a highly scalable graph database suitable for analytical queries, offering access to data from different backend systems. It is an extremely powerful tool to unify data from multiple backend systems and link data from different sources into one unified data model. Graph Studio provides both virtualized and replicated access to data, with powerful data ingestion facilities to ingest, transform, clean, and correlate data from different sources. 
+Altair Graph Studio provides you a highly scalable graph database suitable for analytical queries, offering access to data from different backend systems. It is an extremely powerful tool to unify data from multiple backend systems and link it from different sources into one unified data model. Graph Studio provides both virtualized and replicated access to data, with powerful data ingestion facilities to ingest, transform, clean, and correlate data from different sources. 
 
-This guide will walk you through the process of creating a graphmart in Altair Graph Studio, loading data, and querying that data from a Mendix application using OData REST endpoints and SPARQL queries.
+This guide helps you understand the process of creating a graphmart in the Altair Graph Studio, loading data, and querying that data from a Mendix application using OData REST endpoints and SPARQL queries.
 
 ## Prerequisites
 
 Before you begin, make sure you have:
 
 * Access to an Altair Graph Studio instance
-* A Mendix Studio Pro development environment (version 9.x or 10.x recommended)
+* A Mendix Studio Pro development environment (Mx9 or Mx10 recommended)
 * Sample JSON data to import (or use the example data provided)
 * Basic understanding of REST APIs and microflows in Mendix
 * Graph Studio credentials (username and password for API authentication)
 
-## Setup Graph Studio with an Ontology and Data
+## Setting Up Graph Studio with an Ontology and Data
 
-### Create a New Graphmart
+### Creating a New Graphmart
 
 A graphmart in Altair Graph Studio is a logical container for your data and ontologies. It provides a unified view of data from one or more sources.
    
-   {{< figure src="/attachments/howto/integration/howto-ags/ags-1.png" class="no-border" >}}
-
-### Add a Source Layer
+### Adding a Source Layer
 
 A source layer allows you to import data from various sources or start from a JSON document. Source layers can:
 
@@ -40,44 +38,38 @@ A source layer allows you to import data from various sources or start from a JS
 
 {{< figure src="/attachments/howto/integration/howto-ags/ags-2.png" class="no-border" >}}
 
-### Upload and Validate JSON Data
+### Uploading and Validating JSON Data
 
-We will start by uploading an example test dataset in JSON format. You can ask an LLM like ChatGPT to generate some sample data. This how-to uses a test set with PLM (Product Lifecycle Management) and BOM (Bill of Materials) data.
+You can start by uploading an example test dataset in JSON format. You can ask an LLM (for example, ChatGPT) to generate some sample data. This document uses a test set with PLM (Product Lifecycle Management) and BOM (Bill of Materials) data.
 
 Upload the JSON source data into the source layer.
-
-{{< figure src="/attachments/howto/integration/howto-ags/ags-4.png" class="no-border" >}}
 
 You can review the JSON structure and the data in the file you just uploaded in Graph Studio. It will show you a tree structure of your JSON file, data types, and sample values.
 
 {{< figure src="/attachments/howto/integration/howto-ags/ags-5.png" class="no-border" >}}
 
-### Review the Generated Ontology
+### Reviewing the Generated Ontology
 
-When you save the source layer, an ontology will be automatically created based on the JSON structure. You can review it in:
+When you save the source layer, an ontology will be automatically generated based on the JSON structure. You can review it in:
 
 * The **Graph** tab for visual representation
 * The **Ontology Models** section for detailed class and property definitions
 
-{{< figure src="/attachments/howto/integration/howto-ags/ags-3.png" class="no-border" >}}
-
-**Tip:** You can customize the generated ontology by adding descriptions, constraints, and relationships between classes to better model your domain.
+{{% alert color="info" %}}
+You can customize the generated ontology by adding descriptions, constraints, and relationships between classes to better model your domain.
+{{% /alert %}}
 
 The **Ontologies** section will contain a definition based on the graph of the uploaded JSON data. The ontology defines the structure and main concepts of your data model.
 
-### Create and Test a SPARQL Query
+### Creating and Testing a SPARQL Query
 
 Now that you have data and an ontology in Graph Studio, create a SPARQL query to retrieve data from the graph. While Graph Studio also provides OData and SQL access, SPARQL is the most flexible way to work with graph data.
 
-Create a new query in the Query Playground:
-
-{{< figure src="/attachments/howto/integration/howto-ags/ags-6.png" class="no-border" >}}
-
-Enter the SPARQL query and test the result.
+Create a new query in the Query Playground. Enter the SPARQL query and test the result.
 
 {{< figure src="/attachments/howto/integration/howto-ags/ags-7.png" class="no-border" >}}
 
-**Example SPARQL query for customers:**
+The following is an example SPARQL query for customers:
 
 ```sparql
 PREFIX dt: <http://cambridgesemantics.com/SourceLayer/YOUR_SOURCE_ID/Model#>
@@ -97,13 +89,13 @@ WHERE {
 ORDER BY ?customerName
 ```
 
-**Note:** Replace `YOUR_SOURCE_ID` with your actual source layer ID. You can find this ID in Graph Studio by navigating to your source layer and copying the ID from the URL or source layer details.
+Replace `YOUR_SOURCE_ID` with your actual source layer ID. You can find this ID in Graph Studio by navigating to your source layer and copying the ID from the URL or source layer details.
 
 You now have a graph ontology in Altair Graph Studio with data and a SPARQL query that returns customers.
 
-Altair Graph Studio allows you to do much more, such as ingesting data from data lakes or APIs and linking siloed data into one unified ontology, but for now we'll focus on this basic graph.
+Altair Graph Studio allows you to do much more, such as ingesting data from data lakes or APIs and linking siloed data into one unified ontology, but for now you can focus on this basic graph.
 
-## Expose the Data via an OData REST Endpoint
+## Exposing the Data via an OData REST Endpoint
 
 The simplest way to use Graph data in a Mendix application is by using an OData endpoint. In Altair Graph Studio, you can export an entire graph via OData. This will create an OData endpoint allowing flexible OData queries on the data in your graph database.
 
