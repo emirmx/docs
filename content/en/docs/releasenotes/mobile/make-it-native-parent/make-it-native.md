@@ -10,7 +10,7 @@ Depending on the Mendix version your app is developed in and the device you want
 
 ## Android 11.4.1 / iOS 11.4.1
 
-**Release date: November 6, 2025**
+**Release date: November 7, 2025**
 
 * We updated the version of @mendix/native to 10.3.1 to update op-sqlite version to 15.0.7.
 

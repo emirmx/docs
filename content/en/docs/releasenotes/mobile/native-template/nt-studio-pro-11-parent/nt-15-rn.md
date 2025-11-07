@@ -7,7 +7,7 @@ description: "Native Template 15"
 
 ## 15.4.4 {#1544}
 
-**Release date: November 6, 2025**
+**Release date: November 7, 2025**
 
 * We updated the version of @mendix/native to 10.3.1 to update op-sqlite version to 15.0.7.
 
