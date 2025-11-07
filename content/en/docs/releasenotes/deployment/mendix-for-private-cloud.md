@@ -16,7 +16,7 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 #### Portal Hotfix
 
-* We have fixed an issue where, in older Operator versions (below 2.24.0), runtime licenses were being converted to trial licenses. This hotfix resolves the problem and introduces a new field, **Enable Fallback License**, in the Environment Details section. When enabled, this option allows Connected environments using Subscription Secrets to use a fallback license if communication with the licensing server fails, preventing the system from switching to Trial mode. This option should only be enabled if your Operator version is 2.24.0 and above.
+* We have fixed an issue where, in Operator versions older than 2.24.0, runtime licenses were being converted to trial licenses. This hotfix resolves the problem and introduces a new field, **Enable Fallback License**, in the **Environment Details** section. When enabled, this option allows Connected environments using subscription secrets to use a fallback license if communication with the licensing server fails, preventing the system from switching to Trial mode. This option should only be enabled if your Operator version is 2.24.0 and above.
 
 ### November 6, 2025
 
