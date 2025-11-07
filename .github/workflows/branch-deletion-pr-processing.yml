@@ -13,7 +13,7 @@ jobs:
   process-approved-deletion:
     if: |
       github.event.pull_request.merged == true &&
-      startsWith(github.event.pull_request.title, '[AUTO] Branch Deletion Candidates') &&
+      startsWith(github.event.pull_request.title, '[Auto] Branch Deletion Candidates') &&
       contains(github.event.pull_request.labels.*.name, 'Internal WIP')
     runs-on: ubuntu-latest
     steps:

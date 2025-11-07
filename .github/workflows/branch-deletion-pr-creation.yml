@@ -30,7 +30,7 @@ jobs:
 
       - name: Create timestamp file
         run: |
-          echo "Last scan: $(date)" > branch-cleanup-timestamp.txt
+          echo "Last scan for stale merged branches: $(TZ='Europe/Amsterdam' date +'%Y-%m-%d %H:%M:%S %Z (UTC%:z)')" > branch-cleanup-timestamp.txt
 
       - name: Fetch all branches
         run: |
@@ -92,7 +92,7 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          title: "[AUTO] Branch Deletion Candidates - ${{ env.CURRENT_DATE }}"
+          title: "[Auto] Branch Deletion Candidates - ${{ env.CURRENT_DATE }}"
           body: |
             ### Branches for Deletion
             ${{ fromJSON(env.BRANCHES_TO_DELETE) }}
@@ -101,8 +101,8 @@ jobs:
             ${{ fromJSON(env.ALL_NON_DELETED) }}
           base: development
           labels: Internal WIP
-          assignees: OlufunkeMoronfolu
-          reviewers: OlufunkeMoronfolu
+          assignees: MarkvanMents,OlufunkeMoronfolu
+          reviewers: MarkvanMents,OlufunkeMoronfolu
           commit-message: "Add branch cleanup candidates for ${{ env.CURRENT_DATE }}"
           add-paths: |
             branch-cleanup-timestamp.txt
