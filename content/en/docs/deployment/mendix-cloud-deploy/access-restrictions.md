@@ -98,25 +98,49 @@ For each profile, specify the following details:
 
 Requests originating from an IP address within these allowed profiles will be granted access to your application.
 
+### Applying Access Restriction to an Application Environment
+
+To apply access restrictions to a specific application environment, follow these steps:
+
+1. From [Apps](https://sprintr.home.mendix.com), go to the app's **Environments** page.
+2. Click **Details** ({{% icon name="notes-paper-edit" %}}) on the desired environment.
+3. Go to the **Network** tab.
+4. Navigate to the [Path Based Access Restrictions](/developerportal/deploy/environments-details/#path-based-restrictions) section to apply access restrictions to a single environment.
+
+{{% alert color="info" %}}
+
+* The top-level path (`/`) restricts access to the entire application
+* The settings for specific paths override the implicitly inherited profile for the top level
+* Besides being able to apply a customized access restriction profile, there are also presets available for simply allowing or denying all access
+
+{{% /alert %}}
+
+#### Default Settings
+
+These are the default settings:
+
+* When deploying a deployment package to an environment using the **Deploy** or **Transport** functionality, paths representing known functionality in the Mendix version that is used are automatically added to the list of paths
+* All paths ending in `-doc` have a preset **Deny all access** profile set by default
+* All the remaining paths have no restriction applied by default
+
 ## IP Restriction Profiles {#ip-restriction-profiles}
 
-Ip Restriction profiles allows you to deny access to specific ip or ip ranges to your application.
-You can specify multiple ip restriction profiles for your application, each with a descriptive name that reflects its purpose.
+IP restriction profiles allow you to deny access to your application from specific IP addresses or IP ranges. You can configure multiple profiles, each with a descriptive name that clearly reflects its purpose.
 
-To view or manage ip restriction profiles, follow these steps:
+To view or manage IP restriction profiles, follow these steps:
 
 1. From [Apps](https://sprintr.home.mendix.com), go to your app's **Environments** page.
 2. Click **Cloud Settings** ({{< icon name="settings-slider-1" >}}) from any of the [available tabs](/developerportal/deploy/environments/#available-tabs) to open the **Manage Cloud Settings** page.
 3. Switch to the **IP Restriction Profiles** tab.
 
-When configuring an ip restriction profile, keep the following considerations in mind:
+When configuring an IP restriction profile, keep the following considerations in mind:
 
 * IP restriction profiles are configured at the application level. They can be reused in all the environments (for example test, acceptance, production) of an app.
 * IP restriction profiles can contain any number of IPv4 or IPv6 address ranges
 
 ### Configuring IP Restriction Profiles {#access-restriction}
 
-To configure ip restriction profiles, from the **IP Restriction Profiles** page, you can either:
+To configure IP restriction profiles, from the **IP Restriction Profiles** page, you can either:
 
 * Create a new profile by clicking **New Profile**
 * Modify an existing profile by selecting the profile:
@@ -144,45 +168,20 @@ For each profile, specify the following details:
 
 Requests originating from an IP address within these denied profiles will be blocked from accessing your application.
 
-## Applying Access Restriction to an Application Environment
-
-To apply access restrictions to a specific application environment, follow these steps:
-
-1. From [Apps](https://sprintr.home.mendix.com), go to the app's **Environments** page.
-2. Click **Details** ({{% icon name="notes-paper-edit" %}}) on the desired environment.
-3. Go to the **Network** tab.
-4. The **Path Based Access Restrictions** section allows for applying access restrictions to a single environment.
-
-{{% alert color="info" %}}
-
-* The top-level path (`/`) restricts access to the entire application
-* The settings for specific paths override the implicitly inherited profile for the top level
-* Besides being able to apply a customized access restriction profile, there are also presets available for simply allowing or denying all access
-
-{{% /alert %}}
-
-### Default Settings
-
-These are the default settings:
-
-* When deploying a deployment package to an environment using the **Deploy** or **Transport** functionality, paths representing known functionality in the Mendix version that is used are automatically added to the list of paths
-* All paths ending in `-doc` have a preset **Deny all access** profile set by default
-* All the remaining paths have no restriction applied by default
-
-## Applying IP Restriction to an Application Environment
+### Applying IP Restriction to an Application Environment
 
 To apply IP restrictions to a specific application environment, follow these steps:
 
 1. From [Apps](https://sprintr.home.mendix.com), go to the app's **Environments** page.
 2. Click **Details** ({{% icon name="notes-paper-edit" %}}) on the desired environment.
 3. Go to the **Network** tab.
-4. The **IP Access Restrictions** section allows for applying access restrictions to a single environment.
+4. Navigate to the **IP Access Restrictions** section to apply access restrictions to a single environment.
 
 {{% alert color="info" %}}
 Following the migration from Cloud Foundry to Kubernetes, access rule violations are now logged in the **Access Log** instead of the **App Log**. For more details on logs, refer to the [Apps Deployed to Mendix Cloud](/developerportal/operate/logs/#apps-deployed-to-mendix-cloud) section of *Logs*.
 {{% /alert %}}
 
-## Use Cases for Access Restrictions
+## Use Cases {#use-cases-for-access-restrictions}
 
 Two scenarios in which you can use access restrictions are described below.
 
