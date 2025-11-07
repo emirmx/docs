@@ -98,13 +98,42 @@ For each profile, specify the following details:
 
 Requests originating from an IP address within these allowed profiles will be granted access to your application.
 
+## IP Restriction Profiles {#ip-restriction-profiles}
+
+Ip Restriction profiles allows you to deny access to specific ip or ip ranges to your application.
+You can specify multiple ip restriction profiles for your application, each with a descriptive name that reflects its purpose.
+
+To view or manage ip restriction profiles, follow these steps:
+
+1. From [Apps](https://sprintr.home.mendix.com), go to your app's **Environments** page.
+2. Click **Cloud Settings** ({{< icon name="settings-slider-1" >}}) from any of the [available tabs](/developerportal/deploy/environments/#available-tabs) to open the **Manage Cloud Settings** page.
+3. Switch to the **IP Restriction Profiles** tab.
+
+When configuring an ip restriction profile, keep the following considerations in mind:
+
+* IP restriction profiles are configured at the application level. They can be reused in all the environments (for example test, acceptance, production) of an app.
+* IP restriction profiles can contain any number of IPv4 or IPv6 address ranges
+
+### Configuring IP Restriction Profiles {#access-restriction}
+
+To configure ip restriction profiles, from the **IP Restriction Profiles** page, you can either:
+
+* Create a new profile by clicking **New Profile**
+* Modify an existing profile by selecting the profile:
+    * Click the **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) icon
+    * Click the **Edit** option to modify the profile
+    * Click **Delete** to delete an existing certificate profile
+    * Click **Clone** to copy and duplicate an existing certificate profile
+
+When you create or edit a profile, you can add IP ranges as described below.
+
 #### Configuring Denied IP Ranges {#denied-ip-ranges}
 
 You can define IP profiles to specify which IP addresses or ranges are explicitly denied access to your application.
 
 To manage these profiles:
 
-* In the **Denied IP Profiles** section, click **Create New Profile** to add a new IP range
+* Click **Create New Profile** to add a new IP range
 * To modify an existing profile, select it and click **Edit**({{% icon name="pencil" %}})
 * To delete a profile, select it and click **Delete**({{% icon name="trash-can" %}})
 
@@ -115,9 +144,9 @@ For each profile, specify the following details:
 
 Requests originating from an IP address within these denied profiles will be blocked from accessing your application.
 
-## Applying a Restriction to an Application Environment
+## Applying Access Restriction to an Application Environment
 
-To apply a restriction to a specific application environment, follow these steps:
+To apply access restrictions to a specific application environment, follow these steps:
 
 1. From [Apps](https://sprintr.home.mendix.com), go to the app's **Environments** page.
 2. Click **Details** ({{% icon name="notes-paper-edit" %}}) on the desired environment.
@@ -139,6 +168,15 @@ These are the default settings:
 * When deploying a deployment package to an environment using the **Deploy** or **Transport** functionality, paths representing known functionality in the Mendix version that is used are automatically added to the list of paths
 * All paths ending in `-doc` have a preset **Deny all access** profile set by default
 * All the remaining paths have no restriction applied by default
+
+## Applying IP Restriction to an Application Environment
+
+To apply IP restrictions to a specific application environment, follow these steps:
+
+1. From [Apps](https://sprintr.home.mendix.com), go to the app's **Environments** page.
+2. Click **Details** ({{% icon name="notes-paper-edit" %}}) on the desired environment.
+3. Go to the **Network** tab.
+4. The **IP Access Restrictions** section allows for applying access restrictions to a single environment.
 
 ## Use Cases for Access Restrictions
 
