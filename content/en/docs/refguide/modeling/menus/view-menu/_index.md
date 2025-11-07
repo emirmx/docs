@@ -68,9 +68,15 @@ This pane has two levels, so when you zoom into a changed document, you can revi
 
 <video width="640" height="360" controls src="/attachments/refguide/view-menu/changes.mp4">VIDEO</video>
 
+### History {#history-pane}
+
+### History
+
+The non-blocking History pane shows commits in your repository and allows you to search and navigate to modified documents without closing the history view.
+
 ### Connector {#connector}
 
-The **Connector** pane displays elements that can be connected to the currently selected element. For example, when a button is a selected, the **Connector** shows microflows that you can drag onto the button to connect them.
+The **Connector** pane displays elements that can be connected to the currently selected element. For example, when a button is selected, the **Connector** shows microflows that you can drag onto the button to connect them.
 
 ### Console {#console}
 

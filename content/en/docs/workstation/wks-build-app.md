@@ -81,7 +81,7 @@ To change a user's role, or remove them from the workspace, click the three dot 
 Now that you are ready to start using Mendix Workstation Client, you can implement your own custom logic for interacting with devices. The following nanoflows and Java actions are essential for establishing connections, sending or receiving messages, and managing device interactions:
 
 * **GetStation** - Retrieves the computer information connected to the Client.
-* **SendMessage** - Sends data or commands to the connected device. For more information about the supported message syntax, see [Message Syntax for File, Smart Card, and Bluetooth Devices](/mendix-workstation/message-syntax/).
+* **SendMessage** - Sends data or commands to the connected device. For more information about the supported message syntax, see [Message Syntax for File, Smart Card, and Bluetooth Devices](/mendix-workstation/device-syntax/).
 * **SubscribeToMessages** - Subscribe a nanoflow to be called when the device is sending a message.
 * **SubscribeToErrors** - Subscribe a nanoflow to be called on device connection errors. 
 * **Unsubscribe** - End the subscription to device messages or errors.

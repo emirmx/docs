@@ -281,11 +281,19 @@ When the **Show feedback survey periodically** setting is enabled, Studio Pro wi
 
 When the **Do not show antivirus exclusion notifications** setting is enabled, Studio Pro will not display notifications related to antivirus exclusions. For more information, see [Antivirus Exclusion](/refguide/antivirus-exclusion/).
 
+### Extension Development 
+
+When **Extension Development** mode is enabled, you can start Studio Pro without using the extensibility feature flag, which allows you to develop extensions for Studio Pro. You must restart Studio Pro to use this feature.
+
 ## New Features Tab {#new-features}
 
 ### App Explorer
 
 Select this option to use the modernized version of the App Explorer. You must restart Studio Pro to use this feature.
+
+### History Pane {#history-pane}
+
+Select this option to use the non-blocking, searchable History pane instead of the blocking History window. This feature is currently in beta.
 
 ### Errors Pane
 

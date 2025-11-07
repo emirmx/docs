@@ -178,6 +178,10 @@ To apply IP restrictions to a specific application environment, follow these ste
 3. Go to the **Network** tab.
 4. The **IP Access Restrictions** section allows for applying access restrictions to a single environment.
 
+{{% alert color="info" %}}
+Following the migration from Cloud Foundry to Kubernetes, access rule violations are now logged in the **Access Log** instead of the **App Log**. For more details on logs, refer to the [Apps Deployed to Mendix Cloud](/developerportal/operate/logs/#apps-deployed-to-mendix-cloud) section of *Logs*.
+{{% /alert %}}
+
 ## Use Cases for Access Restrictions
 
 Two scenarios in which you can use access restrictions are described below.
