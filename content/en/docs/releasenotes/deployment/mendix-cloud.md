@@ -20,13 +20,12 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### New Features
 
-* We have added a new feature to blocklist the IP addresses at root level of the app URL. In 'Cloud settings' page, there is a new tab 'IP Restriction Profile' where the IP to be blocked can be configured. This profile can be attached in 'Networks page' under the section 'IP Access Restrictions' similar to 'Path Based Access Restrictions'. 
+* We have added a new feature on the **Cloud Settings** page, called [IP Restriction Profiles](/developerportal/deploy/access-restrictions/#ip-restriction-profiles), to block IP addresses at the root level of your application URL. Once configured, profiles can be applied in the [IP Access Restriction](/developerportal/deploy/environments-details/#ip-access-restrictions) section on the **Networks** tab.
 
 #### Bug Fixes
 
-* We have fixed an issue where custom domain routes were not removed entirely, even when they were deleted from the App.
+* We have fixed an issue where custom domain routes were not removed entirely, even when they were deleted from the application.
   
-
 ### October 29, 2025
 
 #### New Features
