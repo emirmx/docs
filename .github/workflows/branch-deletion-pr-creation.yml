@@ -101,8 +101,8 @@ jobs:
             ${{ fromJSON(env.ALL_NON_DELETED) }}
           base: development
           labels: Internal WIP
-          assignees: OlufunkeMoronfolu
-          reviewers: OlufunkeMoronfolu
+          assignees: MarkvanMents,OlufunkeMoronfolu
+          reviewers: MarkvanMents,OlufunkeMoronfolu
           commit-message: "Add branch cleanup candidates for ${{ env.CURRENT_DATE }}"
           add-paths: |
             branch-cleanup-timestamp.txt
