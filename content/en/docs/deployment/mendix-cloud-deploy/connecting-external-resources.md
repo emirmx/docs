@@ -57,8 +57,8 @@ Contact your Mendix Admin if the resource you want is not available on the list.
 {{% /alert %}}
 
 6. Select the specific resource you want your application environment to connect to.
-7. Click **Send Request** to submit your connection request for approval. All submitted connection requests appear in the [Control Center](/control-center/configure-private-connectivity/) for the Mendix Admin review.
-8. [Track and manage](#manage-connection-requests) your connection requests from the [Connections](/developerportal/deploy/environments-details/#connections) section on the application's **Network** tab.
+7. Click **Save** to submit your connection request for approval. All submitted connection requests appear in the [Control Center](/control-center/configure-private-connectivity/) for the Mendix Admin review.
+8. [Track and manage](#manage-connection-requests) your connection requests from the [Change Requests](/developerportal/deploy/environments/#change-requests) tab on your app's environment's page.
 
 {{% alert color="info" %}}
 If this is the first connection approved for an application environment, you must redeploy that environment for the connection to become active and usable.
@@ -73,10 +73,10 @@ This diagram shows the progress of the request status from when the connection r
 Once a Technical Contact submits a connection request, it enters a **Pending Approval** status. The request is then sent to a Mendix Admin for review:
 
 * If the Mendix Admin rejects the request, its status becomes **Rejected**.
-* If the Mendix Admin approves the request, its status becomes **Approved**, and the connection becomes active.
+* If the Mendix Admin approves the request:
+    * In the **Change Requests** tab of the Environments page, the status becomes **Completed**.
+    * In the **Connections** section of the **Network** tab, its status becomes **Approved**.
 * A Mendix Admin can also revoke an already approved connection, which will change its status back to **Rejected**.
-
-The connection status is visible in the **Connections** section of the **Network** tab.
 
 ## Managing Connections {#manage-connection-requests}
 
