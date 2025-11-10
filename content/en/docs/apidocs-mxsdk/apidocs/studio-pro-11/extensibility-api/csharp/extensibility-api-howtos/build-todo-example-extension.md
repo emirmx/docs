@@ -21,9 +21,9 @@ This document covers the following topics:
 
 ## Prerequisites
 
-Ensure the following tools are installed on local development environment before starting:
+Ensure the following tools are installed on your local development environment before starting:
 
-* Microsoft Visual Studio 2022 (or equivalent, such as Visual Studio Code or JetBrains Rider). This example assumes you are using Microsoft Visual Studio 2022.
+* Microsoft Visual Studio 2022 (or equivalent, such as Visual Studio Code or JetBrains Rider); this example assumes you are using Microsoft Visual Studio 2022
 * Studio Pro version 10.6 or above
 
 ## Creating the Project and Configuring the Extension Project
@@ -38,11 +38,11 @@ Create a new project to ensure your extension is loaded correctly in Studio Pro.
     {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/extensibility-api-howtos/build-todo-example-extension/step-one.png" >}}
 
 3. Name the project *Mendix.ToDoExtension*.
-4. Choose a location to store your extension, and click **Next**.
+4. Choose a location to store your extension, then click **Next**.
 
     {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/extensibility-api-howtos/build-todo-example-extension/step-two.png" >}}
 
-5. Set the **Framework** to *.NET 8.0 (Long Term Support).
+5. Set the **Framework** to *.NET 8.0 (Long Term Support)*.
 
     {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/extensibility-api-howtos/build-todo-example-extension/step-three.png" max-width=80%  >}}
 
@@ -134,7 +134,7 @@ There are a few notable features in the code above:
     [Export(typeof(DockablePaneExtension))]
     ```
 
-    Studio Pro uses this attribute to identify which extension type to inject this class into. If you do not specify this attribute, Studio Pro will not load your extension type. The extension descends from `DockablePaneExtension`. Studio Pro uses abstract classes to enforce behavior for your extensions.
+   Studio Pro uses this attribute to identify which extension type to inject this class into. If you do not specify this attribute, Studio Pro will not load your extension type. The extension descends from `DockablePaneExtension`. Studio Pro uses abstract classes to enforce behavior for your extensions.
 
     ```csharp
     public class ToDoListDockablePaneExtension : DockablePaneExtension
@@ -175,8 +175,8 @@ There are a few notable features in the code above:
 
     * Override the `Id` property
         * This property provides Studio Pro a way to uniquely identify your dockable pane extension
-    * Override the `Open` method.
-        * Within this method you need to return a valid implementation of `DockablePaneViewModelBase` which studio Pro will use to render your pane's contents
+    * Override the `Open` method
+        * Within this method, you need to return a valid implementation of `DockablePaneViewModelBase`, which Studio Pro will use to render your pane's contents
 
 ## Creating a View Model to Host Your View Data
 
@@ -423,7 +423,7 @@ To store to-do data on disk, create model classes that represent individual item
 
 ### Create the To-do Item Model
 
-1. Add a new class file named `ToDoModel.cs`.
+1. Add a new class file named *ToDoModel.cs*.
 2. Replace the contents of the file with the following code:
 
     ```csharp
@@ -454,7 +454,7 @@ To store to-do data on disk, create model classes that represent individual item
 
  ### Create the To-do List Model
 
-1. Add another class file nameed`ToDoListModel.cs`.
+1. Add another class file named *ToDoListModel.cs*.
 2. Replace the contents of this file with the following code:
 
     ```csharp
@@ -480,7 +480,7 @@ With the models in place, create a storage handler that will manage reading and 
 
 ### Add the Storage Handler Class
 
-1. Add a new class file named `ToDoStorage.cs`.
+1. Add a new class file named *ToDoStorage.cs*.
 2. Replace the contents of the file with the following code: 
 
     ```csharp
@@ -616,10 +616,10 @@ Now that the logic is in place, add a user interface that Studio Pro can render 
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/extensibility-api-howtos/build-todo-example-extension/add-web-items.png" width="300" >}}
 
-1. Add a new folder to the solution named `wwwroot`.
+1. Add a new folder to the solution named *wwwroot*.
 2. In the folder, add:
 
-    * `index.html` – ab HTML page that contains the layout of the user interface 
+    * `index.html` – an HTML page that contains the layout of the user interface 
     * `main.js` – A JavaScript file that contains the client-side logic
 
 3. Open `index.html`.
@@ -669,7 +669,7 @@ Now that the logic is in place, add a user interface that Studio Pro can render 
     </html>
     ```
 
-5. Open `main.js`
+5. Open `main.js`.
 6. Add the JavaScript logic by replacing the contents of the file with the following code:
 
     ```js
@@ -782,7 +782,7 @@ Set `index.html` and `main.js` to **Copy always** or **Copy if newer** in their 
 
 Link the extension C# logic with the JavaScript UI by adding a utility class for handling web responses.
 
-1. Add a new filed named `HttpListenerResponseUtils.cs`.
+1. Add a new filed named *HttpListenerResponseUtils.cs*.
 1. Replace the contents of the file with the following:
 
     ```csharp
@@ -850,7 +850,7 @@ Your web-based user interface is hosted inside Studio Pro in an isolated web con
 
 This extension type allows you to serve web content easily within Studio Pro.
 
-1. Add a new file named `ToDoListWebServerExtension.cs`.
+1. Add a new file named *ToDoListWebServerExtension.cs*.
 2. Replace the contents of the file with the following code:
 
     ```csharp
@@ -931,8 +931,8 @@ With everything in place, follow the steps below to build and deploy your extens
 
 1. In Visual Studio, select **Build** > **Build Solution**.
 2. Navigate to the Mendix app where your extension will be hosted. 
-3. Create a new folder named `extensions`.
-4. Inside it, add a sub-folder named `TodoExtension`. Your path should look like this: `[Mendix App]/extensions/MyTodoExtension/`.
+3. Create a new folder named *extensions*.
+4. Inside it, add a sub-folder named *TodoExtension*. Your path should look like this: `[Mendix App]/extensions/MyTodoExtension/`.
 5. Copy the content from your Visual Studio project's `bin/debug` sub-folder into your app extension folder.
 6. Run Studio Pro.
 
