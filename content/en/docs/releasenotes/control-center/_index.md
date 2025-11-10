@@ -21,6 +21,12 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 * We have introduced **Private Connectivity**, a zero-trust security infrastructure which helps you manage connections between your Mendix Cloud apps and internal resources, bypassing the public internet. It allows you to create secure networks through which your apps can safely access internal databases and services hosted on-premises or in cloud environments, without exposing them publicly.     
   Refer to [Private Connectivity](/control-center/private-connectivity/) for background details and architecture, then read through [Configuring and Using Private Connectivity](/control-center/configure-private-connectivity/) to learn how to create and manage your own private networks.
 
+### November 9, 2025
+
+#### Improvements
+
+* The [Approval Requests](/control-center/approval-requests/) page is now divided into two distinct tabs: **Active Requests** and **Resolved Requests**. This allows you to easily stay on top of all approval requests created for your company.
+
 ### September 29, 2025
 
 #### New Features
