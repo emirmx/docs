@@ -21,25 +21,18 @@ It is made up of the **Active Requests** and **Resolved Requests** tabs.
 This tab displays all requests that have not yet been acted upon, with the following details for each request:
 
 * **Request ID** – The unique identification code of the request.
-* **Request Type** – The type of request being submitted.     
-  Currently, this is **Plan Upgrade**.
+* **Request Type** – The type of request being submitted. 
 * **Requester** – The name of the person who made the request.
 * **Requested Date** – The date when the request was submitted.
 * **Actions** – Allows you to **Reject** or **Approve** the request.    
-    Click the **Details** button next to the request to access further details, such as the request description, and the environment for which the request was made.
-
-You can filter requests by status and type.
+    Click the **Details** button next to the request to access further details.
 
 ## Resolved Requests
 
 This tab displays all requests that have been acted upon, with the following details for each request:
 
 * **Request ID** – The unique identification code of the request.
-* **Request Type** – The type of request being submitted, which can be one of the following:
-
-    * **Plan Upgrade**
-    * **Private Connectivity**
-
+* **Request Type** – The type of request being submitted.
 * **Requester** – The name of the person who made the request.
 * **Requested Date** – The date when the request was submitted.
 * **Status** – The status of the request, which can be one of the following:
@@ -51,7 +44,7 @@ This tab displays all requests that have been acted upon, with the following det
 
 * **Reviewer** – The name of the person who reviewed and approved, canceled, or rejected the request.
 * **Resolved Date** – The date when the request was acted upon, and its status was changed.
-* **Action** – Click the **Details** button next to the request to access further details, such as the request description, and the environment for which the request was made.
+* **Action** – Click the **Details** button next to the request to access further details.
 
 ## Approving a Request
 
