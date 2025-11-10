@@ -31,7 +31,7 @@ General Availability means that a feature is available for all users. This type 
 | Maia Feedback Story Creation (App Insights)                  | General Availability: Mx 11.0 |
 | Maia Feedback Grouping (App Insights)                        | General Availability: Mx 11.6 |
 | Maia for Pipeline Logs                                       | General Availability: Mx 11.9  |
-| MCP Client for Maia                                          | General Availability: Mx 11.4 |
+| MCP Client for Maia                                          | General Availability: Mx 11.9 |
 | Maia Learning Assistant                                      | Private Beta: Mx 11.6 |
 
 ## Agentic Applications

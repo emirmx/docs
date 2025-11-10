@@ -23,6 +23,16 @@ For information on the current status of deployment to Mendix Cloud and any plan
 * We have added a new beta feature in the **Network tab** of the **Environment Details** page that enables Technical Contacts to securely [connect Mendix applications to external resources](/developerportal/deploy/connecting-to-external-resource/) through [Mendix Cloud Private Connectivity](/control-center/private-connectivity/).
     * From the [Connections](/developerportal/deploy/environments-details/#connections) section of the **Network** tab, Technical Contacts can now request new private connections, track the status of their pending connection requests, connect to external resources, and delete existing connections.
 
+### November 9, 2025
+
+#### New Features
+
+* We have added a new feature on the **Cloud Settings** page, called [IP Restriction Profiles](/developerportal/deploy/access-restrictions/#ip-restriction-profiles), to block IP addresses at the root level of your application URL. Once configured, profiles can be applied in the [IP Access Restriction](/developerportal/deploy/environments-details/#ip-access-restrictions) section on the **Networks** tab.
+
+#### Bug Fixes
+
+* We have fixed an issue where custom domain routes were not removed entirely, even when they were deleted from the application.
+  
 ### October 29, 2025
 
 #### New Features

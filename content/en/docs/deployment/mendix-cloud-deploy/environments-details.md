@@ -391,6 +391,19 @@ IP addresses must be within the following ranges:
 | 172.32.0.0  | 192.167.255.255 |
 | 192.169.0.0 | 255.255.255.255 |
 
+### IP Access Restrictions {#ip-access-restrictions}
+
+You can define IP profiles to deny access to your application from specific IP addresses or ranges.
+
+The **IP Access Restrictions** overview contains the following information:
+
+* **Current Restriction Profile**
+* **New Restriction Profile**
+
+You can also **Delete**, **Add**, or **Edit** an IP based access restriction.
+
+For more information, refer to the [IP Restriction Profile](/developerportal/deploy/access-restrictions/#ip-restriction-profiles) section of *Restricting Access for Incoming Requests*.
+
 ### Path-Based Access Restrictions {#path-based-restrictions}
 
 You can restrict access to your application using Client Certificates or IP ranges.
@@ -412,7 +425,7 @@ You can **Delete** a path or you can **Add** and **Edit** a path with the follow
 * Custom Profile for Client Certificates and/or IP ranges
 * N/A (inherit)
 
-For more information, see [How to Restrict Access for Incoming Requests](/developerportal/deploy/access-restrictions/).
+For more information, refer to the [Access Restriction Profiles](/developerportal/deploy/access-restrictions/#access-restriction-profiles) section of *Restricting Access for Incoming Requests*.
 
 ### Outgoing Connections Certificates
 
