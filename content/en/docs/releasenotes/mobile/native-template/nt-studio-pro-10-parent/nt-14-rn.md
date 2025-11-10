@@ -5,6 +5,26 @@ weight: 6
 description: "Native Template 14"
 ---
 
+## 14.1.7 {#1417}
+
+**Release date: October 27, 2025**
+
+### Improvements
+
+* We have installed react-native-edge-to-edge to ensure proper layout behavior and visual consistency on Android 15 and newer devices.
+
+## 14.1.6 {#1416}
+
+**Release date: October 6, 2025**
+
+### Improvements
+
+* We added support for Android devices that use a 16 KB memory page size, ensuring compatibility with the upcoming Android 16 KB page size requirement.
+
+{{% alert color="info" %}}
+This update ensures compatibility for Mendix platform-provided widgets. Any third-party widget that includes precompiled native Android libraries (*.so* files) must be updated separately by the widget's author to support 16 KB page size devices.
+{{% /alert %}}
+
 ## 14.1.5 {#1415}
 
 **Release date: August 11, 2025**

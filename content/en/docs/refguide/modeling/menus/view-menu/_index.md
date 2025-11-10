@@ -62,15 +62,21 @@ The **Call Hierarchy** pane displays the call hierarchy of a document (for examp
 
 ### Changes
 
-For version control-enabled apps (meaning, those with [Team Server](/developerportal/general/team-server/) or other Git servers), the [Changes pane](/refguide/changes-pane/) shows the local changes to the app since the last commit. You can commit changes, update to the latest revision, and view the history from here. 
+For version control-enabled apps (meaning, those with [Team Server](/developerportal/repository/team-server/) or other Git servers), the [Changes pane](/refguide/changes-pane/) shows the local changes to the app since the last commit. You can commit changes, update to the latest revision, and view the history from here. 
 
 This pane has two levels, so when you zoom into a changed document, you can review all the changes within that document without going back and forth between levels. The zoomed-in level of the pane is split into two grids, with elements on the left and properties on the right. Selecting an element on the left presents the changed properties on the right:
 
 <video width="640" height="360" controls src="/attachments/refguide/view-menu/changes.mp4">VIDEO</video>
 
+### History {#history-pane}
+
+### History
+
+The non-blocking History pane shows commits in your repository and allows you to search and navigate to modified documents without closing the history view.
+
 ### Connector {#connector}
 
-The **Connector** pane displays elements that can be connected to the currently selected element. For example, when a button is a selected, the **Connector** shows microflows that you can drag onto the button to connect them.
+The **Connector** pane displays elements that can be connected to the currently selected element. For example, when a button is selected, the **Connector** shows microflows that you can drag onto the button to connect them.
 
 ### Console {#console}
 
@@ -116,7 +122,7 @@ The **Properties** pane displays the properties of the currently selected elemen
 
 ### Stories
 
-For [Team Server](/developerportal/general/team-server/) app, the **Stories** pane shows the [stories](/developerportal/project-management/epics/planning/) of the current [Sprint](/developerportal/project-management/epics/planning/). For more information on the **Stories** pane and how to interact with it, see [Stories Pane](/refguide/stories-pane/). 
+For [Team Server](/developerportal/repository/team-server/) app, the **Stories** pane shows the [stories](/developerportal/project-management/epics/planning/) of the current [Sprint](/developerportal/project-management/epics/planning/). For more information on the **Stories** pane and how to interact with it, see [Stories Pane](/refguide/stories-pane/). 
 
 ### Toolbox {#toolbox}
 

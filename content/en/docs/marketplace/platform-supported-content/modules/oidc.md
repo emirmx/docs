@@ -23,7 +23,7 @@ If you are migrating to the OIDC module version 3.0.0 and above, include the [U
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-OIDC SSO module 4.1.0 is the latest version and includes all new features. The module version 4.1.1 is a special release intended only for Mendix version 10.21.0. If you are using Mendix 10.21.1 or above, use the OIDC SSO module 4.1.0.
+The module version 4.1.1 is a special release intended only for Mendix version 10.21.0. If you are using Mendix 10.21.1 or above, use the OIDC SSO module 4.1.0.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -57,8 +57,7 @@ The OIDC SSO module supports the following features:
     * Supports SSO and API-security.
     * Can be used with OIDC/OAuth-compatible IdPs, such as AWS Cognito, Google, Salesforce, Apple, Okta, Ping, Microsoft's Entra ID (formerly known as Azure AD), and SAP Cloud Identity Services. Moreover, the module also works with the [OIDC Provider](https://marketplace.mendix.com/link/component/244687) module.
     * Comes with helper microflows (DELETE, GET, PATCH, POST, and PUT) which call an API with a valid token (and automate the token refresh process).
-    * Easy configuration, by leveraging the so-called well-known discovery endpoint at your IdP.
-        * For example, PKCE will be used automatically if it is detected.
+    * Easy configuration, by leveraging the so-called well-known discovery endpoint at your IdP. PKCE will be used automatically if the IdP supports it.
     * Configuration can be controlled through constants set during your deployment (version 2.3.0 and above).
     * Supports multiple OIDC IdPs by allowing configuration of user provisioning and access token parsing microflows per IdP.
     * Supports Authentication Context Class Reference (ACR) to allow your app to suggest the desired method or level of authentication for user login to the Identity Provider (IdP) (version 2.3.0 and above).
@@ -85,10 +84,10 @@ The OIDC SSO module supports the following features:
 
 For readers with more knowledge of the OAuth and OIDC protocol:
 
-* Helps you build an OAuth client that initiates the Authorization Code grant flow to sign the end-user in via the browser
-* Uses the `nonce` parameter to defend against replay attacks
-* Validates ID-token signatures
-* Uses the Proof Key for Code Exchange (PKCE – pronounced “pixie") security enhancement as per RFC 7636. If your IdP’s well-known endpoint indicates “S256” as value for “code_challenge_methods_supported”, the OIDC Module will automatically apply the PKCE feature. PKCE can be seen as a security add-on to the original OAuth protocol. It is generally recommended to use this feature to be better protected against hackers who try to get access to your app.
+* Helps you build an OAuth client that initiates the Authorization Code grant flow to sign the end-user in via the browser.
+* Uses the `nonce` parameter to defend against replay attacks.
+* Validates ID-token signatures.
+* Uses the Proof Key for Code Exchange (PKCE – pronounced “pixie") security enhancement as per RFC 7636. If your IdP’s well-known endpoint indicates *S256* as value for `code_challenge_methods_supported`, the OIDC Module will automatically apply the PKCE feature. PKCE can be seen as a security add-on to the original OAuth protocol. It is generally recommended to use this feature to be better protected against hackers who try to get access to your app. Customers using EntraID may need to update their well-known endpoint, as EntraID does not automatically publish the `code_challenge_methods_supported` parameter. As a result, PKCE will not be enabled automatically.
 * When authenticating APIs, it validates access tokens in one of two ways:
 
     * If the IdP supports token introspection, exposing the `/introspect` endpoint of the IdP, the OIDC module will introspect the access token to see if it is valid.
@@ -96,11 +95,11 @@ For readers with more knowledge of the OAuth and OIDC protocol:
 
     For signing into the app, the OIDC SSO module will not use token introspection and will always validate against the published `jwks` endpoint.
 
-* Stores an access token for each end-user that can be used to make API calls on their behalf
+* Stores an access token for each end-user that can be used to make API calls on their behalf.
 * Can be configured to use either `client_secret_post`, `client_secret_basic`, or `private_key_jwt` as the client authentication method.
-* It supports nine signing algorithms (ES256, ES384, ES512, PS256, PS384, PS512, RS256, RS384, RS512) and automatically regenerates a new key pair upon expiry.
-* Supports ACR in authorization requests. The ACR in OIDC protocol is used to indicate the desired level of assurance or strength of authentication during the authentication process. It allows the relying party (your application) to request a specific level of authentication assurance from the identity provider (IdP) (version 2.3.0 and above)
-* Supports response_mode=query and response_mode=form_post
+* It supports nine signing algorithms: ECC SHA-256 (ES256), ECC SHA-384 (ES384), ECC SHA-512 (ES512), RSASSA-PSS SHA-256 (PS256), RSASSA-PSS SHA-384 (PS384), RSASSA-PSS SHA-512 (PS512), RSA SHA-256 (RS256), RSA SHA-384 (RS384), RSA SHA-512 (RS512), and automatically regenerates a new key pair upon expiry.
+* Supports ACR in authorization requests. The ACR in OIDC protocol is used to indicate the desired level of assurance or strength of authentication during the authentication process. It allows the relying party (your application) to request a specific level of authentication assurance from the identity provider (IdP) (version 2.3.0 and above).
+* Supports `response_mode=query` and `response_mode=form_post`.
 * Helps you implement an OAuth Resource Server that receives an Access Token which is obtained by a client via either Authorization Code grant or Client Credential grant.
 * When the OIDC SSO module secures an API with the Client Credential grant, the `sub` as claim (which contains either user-id or client-id) should always be available in the access token as per [RFC 9068](https://datatracker.ietf.org/doc/html/rfc9068#name-data-structure).  If it is not included, the module will look for `client_id`. To be compliant with Microsoft's Entra ID and Okta, it will use `app_id` or `cid` as alternatives to `client_id`. Any of these client identifiers are used to create a user in the Mendix application, allowing the Mendix security model to apply not only to users (human identities) but also to clients (machine identities).
 * Supports [OpenID Connect RP-Initiated Logout 1.0](https://openid.net/specs/openid-connect-rpinitiated-1_0.html). When sending a logout request to the IdP's `end_session_endpoint`, the parameters `id_token_hint` and `post_logout_redirect_uri` are supported for the logout request.
@@ -118,8 +117,9 @@ The OIDC SSO module also has the following limitations:
 
 * If an end-user accesses your app via a deeplink, the end-user is not already signed in, and you have configured multiple IdPs, only one IdP can be used to sign the end-user in.
 * If you use both the [SAML](/appstore/modules/saml/) module and the OIDC SSO module in the same app, each end-user can only authenticate using one IdP.
-* If OIDC SSO is used for API security, it does not validate the value of the "aud" claim, as suggested by [RFC 9068](https://datatracker.ietf.org/doc/html/rfc9068#section-4). Customers should prevent cross-JWT confusion by using unique scope values.
+* If OIDC SSO is used for API security, it does not validate the value of the `aud` claim, as suggested by [RFC 9068](https://datatracker.ietf.org/doc/html/rfc9068#section-4). Customers should prevent cross-JWT confusion by using unique scope values.
 * The Admin screens have separate tabs for configuring clients that use the Client Credential grant for API security and for situations where your app is used for both SSO and API security. If the first version of your app uses only OIDC SSO for API security and you want to introduce SSO in a later version, the IdP configuration needs to be re-entered on the other tab.
+* Customers using EntraID may need to update their well-known endpoint, as EntraID does not automatically publish the `code_challenge_methods_supported` parameter. As a result, PKCE will not be enabled automatically.
 
 ## Dependencies
 
@@ -137,7 +137,7 @@ It requires the following Marketplace modules to be included in your app:
 If you are using Mendix version 10.21.1, use User Commons module version 2.1.0 or upgrade to version 2.1.2. Version 2.1.1 of the module is a special release intended solely for Mendix version 10.21.0.
     {{% /alert %}}
 
-* [Events](https://marketplace.mendix.com/link/component/224259) – see [Events](/appstore/widgets/events/) documentation (for version 4.0.0 and above).
+* [Events](https://marketplace.mendix.com/link/component/224259) – see [Events](/appstore/widgets/events/) documentation (applicable to version 4.0.0 and above for Mx10 and version 3.3.0 and above for Mx9).
 
 Versions below 2.3.0 also require [Native Mobile Resources](https://marketplace.mendix.com/link/component/109513) – see [Native Mobile Resources](/appstore/modules/native-mobile-resources/) documentation.
 
@@ -205,6 +205,7 @@ This section provides an overview of updates for the OIDC SSO module across diff
 
 | Mendix Version | OIDC SSO Module Version | Important Migration Changes | Additional Information|
 | --- | --- | --- | --- |
+| 10.21.01 and above | 4.2.0 | In version 4.2.0, the module no longer automatically executes the UserCommons migration in the startup microflow. The migration step has been moved to a dedicated microflow, which you can trigger via a widget. | The `ASU_STARTUP` microflow has been moved under the **USE_ME** folder. |
 | 10.12.10 and above | 4.0.0 | Set `OIDC.ASU_OIDC_Startup` microflow as part of the after-startup microflow | From UserCommons 2.0.0, new users without IdP-specified time zone or language will use default App settings; existing users retain their previously set values. |
 | | | For module version 4.0.0 and above, use User Commons module version 2.0.0 and above, and vice versa. | Deprecated Mx Model Reflection module; maintained for compatibility but will be removed in future versions. |
 | | | | Default user roles in UserProvisioning will be assigned along with roles from the access token. |
@@ -286,9 +287,7 @@ To connect your App with your IdP, you need to configure both your IdP (as descr
 
 1. In your IdP, provision a new OpenID client application. You will receive a ClientID and Client Secret.
 2. You will also need the OIDC configuration endpoint (for example: [https://accounts.google.com/.well-known/openid-configuration](https://accounts.google.com/.well-known/openid-configuration))
-3. Register the following callback URLs:
-    * `https://<your-app-url>/oauth/v2/callback`
-    * `makeitnative://<your-app-url>/oauth/callback`
+3. Register the following callback URL: `https://<your-app-url>/oauth/v2/callback`
 
 #### Microsoft Entra ID Provider Configuration for APIs{#azure-portal}
 
@@ -337,6 +336,8 @@ In this case, the OIDC client is the app you are making.
     * `private_key_jwt`: This method, introduced in version 4.1.0, uses asymmetric key cryptography (algorithm) for authentication. This is the best option for security. When you select the `private key` option, you can configure the following fields:
         * **Key Pair Expiration Days**: (default `90`)
         * **JWT ALG(Signing Algorithm)**: (default `RS256`)
+
+        {{% alert color="info" %}}`private_key_jwt` is not yet supported with Entra ID due to the specific way of Microsoft's implementation, which requires enhancements to the OIDC SSO module.{{% /alert %}}
  
     Once you **Save** the configuration, a key pair is automatically generated. Before you set up the private key authentication in your Mendix App, complete the JWKS configuration at your IdP. Check the documentation of your IdP for details. If you are using Okta, you can refer to the [Configuring JWKS at Your IdP (Okta)](#jwks-okta) section. 
 
@@ -1155,6 +1156,14 @@ When using the OIDC SSO module with Mendix version 10.9 to 10.12.2, you may enco
 
 If a user logs in on one tab and then attempts to log in on another tab, a `401` error may initially appear. However, after the browser reloads, the error will be resolved as the session is validated and synchronized.
 
-### Endpoints cannot be reached
+### Endpoints Cannot Be Reached
 
 This issue can be caused by wrong configuration of your firewall. If you have a firewall between your application and your IdP, make sure it is properly configured for the consumption of the endpoints.
+
+### Could Not Render Widget `UserCommons.Configuration_Overview.referenceSelector4`
+
+After importing the module into your application, users may encounter the following error on the **UserProvisioning** tab of the Configuration page after running the app: 
+
+`Could not render widget 'UserCommons.Configuration_Overview.referenceSelector4`
+
+To resolve this error, upgrade the Combo Box widget to the latest version.

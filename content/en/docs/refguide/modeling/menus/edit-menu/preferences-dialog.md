@@ -173,7 +173,7 @@ This setting allows users to specify a path for Git installation in their system
 
 #### Enable Private Version Control with Git {#enable-with-Git}
 
-Select this option when you want to work on an app that is not stored in [Mendix Team Server](/developerportal/general/team-server/), but in a private Git server, which you have access to. This allows you to specify the location of the app on the Git server when opening, downloading, or uploading the app. With this setting you also need to specify [name and email](#name) that will be used to identify your commits with Git.
+Select this option when you want to work on an app that is not stored in [Mendix Team Server](/developerportal/repository/team-server/), but in a private Git server, which you have access to. This allows you to specify the location of the app on the Git server when opening, downloading, or uploading the app. With this setting you also need to specify [name and email](#name) that will be used to identify your commits with Git.
 
 #### Name and Email {#name}
 
@@ -281,11 +281,19 @@ When the **Show feedback survey periodically** setting is enabled, Studio Pro wi
 
 When the **Do not show antivirus exclusion notifications** setting is enabled, Studio Pro will not display notifications related to antivirus exclusions. For more information, see [Antivirus Exclusion](/refguide/antivirus-exclusion/).
 
+### Extension Development 
+
+When **Extension Development** mode is enabled, you can start Studio Pro without using the extensibility feature flag, which allows you to develop extensions for Studio Pro. You must restart Studio Pro to use this feature.
+
 ## New Features Tab {#new-features}
 
 ### App Explorer
 
 Select this option to use the modernized version of the App Explorer. You must restart Studio Pro to use this feature.
+
+### History Pane {#history-pane}
+
+Select this option to use the non-blocking, searchable History pane instead of the blocking History window. This feature is currently in beta.
 
 ### Errors Pane
 

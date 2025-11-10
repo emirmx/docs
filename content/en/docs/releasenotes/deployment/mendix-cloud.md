@@ -16,6 +16,85 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
+### November 9, 2025
+
+#### New Features
+
+* We have added a new feature on the **Cloud Settings** page, called [IP Restriction Profiles](/developerportal/deploy/access-restrictions/#ip-restriction-profiles), to block IP addresses at the root level of your application URL. Once configured, profiles can be applied in the [IP Access Restriction](/developerportal/deploy/environments-details/#ip-access-restrictions) section on the **Networks** tab.
+
+#### Bug Fixes
+
+* We have fixed an issue where custom domain routes were not removed entirely, even when they were deleted from the application.
+  
+### October 29, 2025
+
+#### New Features
+
+* Apps deployed to Kubernetes now support New Relic, enabling them to be migrated from Cloud Foundry to Kubernetes.
+
+* For Kubernetes deployments using New Relic, the `instance_index` tag is no longer provided within metadata. Use the `pod_name` tag instead.
+
+### October 19, 2025
+
+#### New Features
+
+* We have added a new feature in the **Environment Details** page for flexible environments. Users can now use non-Latin characters in the display name of their environment. The display name of an environment can be changed independent of the environment's subdomain.
+
+* We have added support for email internationalization. The emails sent by the Developer Portal will now be translated to the language set in user's profile.
+
+#### Bug Fixes
+
+* We have fixed an issue where apps were getting stuck in the "starting" state instead of failing gracefully due to missing package metadata.
+
+### October 12, 2025
+
+#### Bug Fixes
+
+* We have fixed an issue that prevented environment deployment activities from being displayed on the [Activity tab](/developerportal/deploy/environments/#activity-tab).
+
+### October 5, 2025
+
+#### New Features
+
+* We have added support for IP blocklisting in the **Access Restriction Profile** for apps deployed on Kubernetes, allowing you to block incoming requests from specific IPs that match the configured profile.
+
+#### Bug Fixes
+
+* We have fixed an issue where duplicate paths were added in **Path Based Access Restriction** and caused deployment failures for apps on Kubernetes. The fix prevents new duplicates, but existing ones must be manually removed.
+
+### October 1, 2025
+
+#### Announcement – Deprecation of HTTPS SSL/TLS Weak Ciphers from February 1, 2026
+
+To improve the security of HTTPS connections to applications in Mendix Cloud v4, we are deprecating and stopping support for the following block ciphers that are considered weak:
+
+* `TLS_DHE_RSA_WITH_AES_128_GCM_SHA256`
+* `TLS_DHE_RSA_WITH_AES_256_GCM_SHA384`
+
+**What this means for your Mendix applications**
+
+Clients that only support DHE (Diffie-Hellman Ephemeral) ciphers with RSA key exchange will no longer be able to connect to your Mendix application.
+
+**What we continue to support**
+
+We will also introduce new, recommended SSL/TLS ciphers. These additions will finalize the list of ciphers that will continue to be supported for HTTPS connections after February 1, 2026:
+
+**TLSv1.3**
+
+* `TLS_AES_128_GCM_SHA256`
+* `TLS_AES_256_GCM_SHA384`
+* `TLS_CHACHA20_POLY1305_SHA256`
+
+**TLSv1.2**
+
+* `TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`
+* `TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384`
+* `TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256`
+* `TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`
+* `TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384`
+* `TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256`
+* `TLS_ECDHE_PSK_WITH_CHACHA20_POLY1305_SHA256`
+  
 ### September 21, 2025
 
 #### Improvements
@@ -339,7 +418,7 @@ You can now change your plan from the [Plan Details](/developerportal/deploy/env
 
 #### Improvements
 
-* To improve the security of [Team Server](/developerportal/general/team-server/) for apps versioned with SVN, we have dropped support for TLS v1.0 and TLS v1.1 when connecting to the SVN Team Server.
+* To improve the security of [Team Server](/developerportal/repository/team-server/) for apps versioned with SVN, we have dropped support for TLS v1.0 and TLS v1.1 when connecting to the SVN Team Server.
 
 ### September 14, 2023 
 
