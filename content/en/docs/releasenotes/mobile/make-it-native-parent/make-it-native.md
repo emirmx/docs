@@ -18,7 +18,7 @@ Depending on the Mendix version your app is developed in and the device you want
 
 **Release date: November 5, 2025**
 
-* We updated the version of @mendix/native to 10.3.0 to fix the components.json errors.
+* We updated the version of @mendix/native to 10.3.0 to fix the `components.json` errors.
 * We updated Firebase packages to newer versions.
 
 ## Android 11.3.1 / iOS 11.3.1
