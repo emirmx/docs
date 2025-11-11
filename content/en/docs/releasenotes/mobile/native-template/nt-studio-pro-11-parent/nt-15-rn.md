@@ -15,7 +15,7 @@ description: "Native Template 15"
 
 **Release date: November 5, 2025**
 
-* We updated the version of @mendix/native to 10.3.0 to fix the components.json errors.
+* We updated the version of @mendix/native to 10.3.0 to fix the `components.json` errors.
 
 ## 15.4.2 {#1542}
 
