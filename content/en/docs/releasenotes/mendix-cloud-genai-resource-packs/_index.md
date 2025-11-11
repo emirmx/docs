@@ -53,4 +53,4 @@ You can access them through the [Mendix Cloud GenAI Portal](https://genai.home.m
 
 * Users can now open GenAI resources directly in a new tab for easier access from the Control Center.
 * The default CRI settings is now enabled when creating text generation resources.
-* When creating a knowledge base resource, users can open the **Create Embedding flow** in a new tab to help prevent data loss.
+* When creating a knowledge base resource, users can open the **Create Embeddings Resource** in a new tab to help prevent data loss.
