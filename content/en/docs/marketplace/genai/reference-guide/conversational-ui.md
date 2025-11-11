@@ -49,7 +49,6 @@ The Conversational UI module provides the following functionalities:
 ### Limitations {#limitations}
 
 * This module is intended to simplify the process of building chat interactions between a human user and an AI model. It is not designed to support conversations between two human users.
-* Currently, the chat interface does not work out of the box in Studio Pro 11, Atlas 4, or in React client enabled with the **Atlas_Topbar** and **Atlas_Sidebar** layouts.
 
 ### Prerequisites {#prerequisites}
 
