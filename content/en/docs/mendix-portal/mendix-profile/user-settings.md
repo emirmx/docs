@@ -270,7 +270,7 @@ Content-Type: application/json
 For information on other PAT usages, see the [App Repository API](/apidocs-mxsdk/apidocs/app-repository-api/) and [Projects API](/apidocs-mxsdk/apidocs/projects-api/).
 
 {{% alert color="warning" %}}
-To ensure robust security, Mendix strongly recommends updating or regenerating your configured PAT every six months.
+To ensure robust security, Mendix recommends checking the policy your company has for credential renewal and updating or regenerating your configured PAT every six months.
 {{% /alert %}}
 
 ## Personal Data
