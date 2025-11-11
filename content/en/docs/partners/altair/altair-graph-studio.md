@@ -8,7 +8,7 @@ description: "Describes how to use graph data from Altair Graph Studio in your M
 
 ## Introduction
 
-Altair Graph Studio provides you a highly scalable graph database suitable for analytical queries, offering access to data from different backend systems. It is an extremely powerful tool to unify data from multiple backend systems and link it from different sources into one unified data model. Graph Studio provides both virtualized and replicated access to data, with powerful data ingestion facilities to ingest, transform, clean, and correlate data from different sources. 
+Altair Graph Studio (AGS) provides a highly scalable graph database suitable for analytical queries, offering access to data from different backend systems. It is an extremely powerful tool to unify data from multiple backend systems and link it from different sources into one unified data model. Graph Studio provides both virtualized and replicated access to data, with powerful data ingestion facilities to ingest, transform, clean, and correlate data from different sources. 
 
 This guide helps you understand the process of creating a graphmart in the Altair Graph Studio, loading data, and querying that data from a Mendix application using OData REST endpoints and SPARQL queries.
 
@@ -36,7 +36,7 @@ A source layer allows you to import data from various sources or start from a JS
 * Transform and map data to your ontology
 * Keep data synchronized with source systems
 
-{{< figure src="/attachments/partners/altair/howto-ags/ags-2.png" class="no-border" >}}
+{{< figure src="/attachments/partners/altair/howto-ags/add-layer.png" >}}
 
 ### Uploading and Validating JSON Data
 
@@ -46,14 +46,14 @@ Upload the JSON source data into the source layer.
 
 You can review the JSON structure and the data in the file you just uploaded in Graph Studio. It will show you a tree structure of your JSON file, data types, and sample values.
 
-{{< figure src="/attachments/partners/altair/howto-ags/ags-5.png" class="no-border" >}}
+{{< figure src="/attachments/partners/altair/howto-ags/sample-data-plm.png" class="no-border" >}}
 
 ### Reviewing the Generated Ontology
 
 When you save the source layer, an ontology will be automatically generated based on the JSON structure. You can review it in:
 
 * The **Graph** tab for visual representation
-* The **Ontology Models** section for detailed class and property definitions
+* The **Ontology Models** section provides detailed class and property definitions
 
 {{% alert color="info" %}}
 You can customize the generated ontology by adding descriptions, constraints, and relationships between classes to better model your domain.
@@ -67,7 +67,7 @@ Now that you have data and an ontology in Graph Studio, create a SPARQL query to
 
 Create a new query in the Query Playground. Enter the SPARQL query and test the result.
 
-{{< figure src="/attachments/partners/altair/howto-ags/ags-7.png" class="no-border" >}}
+{{< figure src="/attachments/partners/altair/howto-ags/sparql.png" >}}
 
 The following is an example SPARQL query for customers:
 
@@ -93,17 +93,17 @@ Replace `YOUR_SOURCE_ID` with your actual source layer ID. You can find this ID 
 
 You now have a graph ontology in Altair Graph Studio with data and a SPARQL query that returns customers.
 
-Altair Graph Studio allows you to do much more, such as ingesting data from data lakes or APIs and linking siloed data into one unified ontology, but for now you can focus on this basic graph.
+Altair Graph Studio allows you to do much more, such as ingesting data from data lakes or APIs and linking siloed data into one unified ontology, but for now, you can focus on this basic graph.
 
 ## Exposing Graph Data in the Mendix Application
 
-Altair Graph Studio (AGS) allows you to store and retrieve graph data structures. Using either OData REST endpoints or SPARQL queries via the SPARQL API endpoint, you can retrieve this data into your Mendix application.
+Altair Graph Studio allows you to store and retrieve graph data structures. Using either OData REST endpoints or SPARQL queries via the SPARQL API endpoint, you can retrieve this data into your Mendix application.
 
-The OData approach provides the easiest integration with automatic entity mapping and association handling, while the SPARQL approach offers more control for complex graph queries. Both methods enable you to build powerful applications that leverage the scalability and flexibility of graph databases. 
+The [OData](#odata-rest-endpoint) approach provides the easiest integration with automatic entity mapping and association handling, while the [SPARQL](#query-sparql) approach offers more control for complex graph queries. Both methods enable you to build powerful applications that leverage the scalability and flexibility of graph databases. 
 
-### Exposing the Data via an OData REST Endpoint
+### Exposing the Data via an OData REST Endpoint {#odata-rest-endpoint}
 
-The simplest way to use Graph data in a Mendix application is by using an OData endpoint. In Altair Graph Studio, you can export an entire graph via OData. This will create an OData endpoint allowing flexible OData queries on the data in your graph database.
+The simplest way to use graph data in a Mendix application is by using an OData endpoint. In Altair Graph Studio, you can export an entire graph via OData. This will create an OData endpoint allowing flexible OData queries on the data in your graph database.
 
 #### Creating an OData API in Graph Studio
 
@@ -111,7 +111,7 @@ Create a new OData API in your graphmart. To do this, follow the steps below.
 
 1. Go **Graphmarts** > **Exports** and select **Create OData REST Endpoint**.
 
-    {{< figure src="/attachments/partners/altair/howto-ags/ags-17.png" class="no-border" >}}
+    {{< figure src="/attachments/partners/altair/howto-ags/create-odata-rest.png" >}}
 
 2. Choose **Auto generated Endpoint**. This is a one-click method to expose your entire graph through an OData API.
 
@@ -165,13 +165,13 @@ Altair Graph Studio automatically provides associations for linked entities in y
 
 {{< figure src="/attachments/partners/altair/howto-ags/ags-26.png" class="no-border" >}}
 
-This example page shows a tree that retrieves BOMs from the graph database. It will only load required data: first, the top-level BOMs, then when you open one, its components will be retrieved over the association. Only when you open a component will it load the subcomponents.
+This example page shows a tree that retrieves BOMs from the graph database. It will only load required data: first, the top-level BOMs, then, when you open one, its components will be retrieved over the association. Only when you open a component will it load the subcomponents.
 
 This is done automatically when you set the external entities as the data source for the widgets in your tree.
 
 {{< figure src="/attachments/partners/altair/howto-ags/ags-27.png" class="no-border" >}}
 
-### Query SPARQL in Mendix
+### Query SPARQL in Mendix {#query-sparql}
 
 If you need full control over your graph queries, you can use [consumed REST services](/refguide/consumed-rest-service/) to execute SPARQL queries in your graph database.
 
@@ -227,6 +227,6 @@ You can now run your application to validate the result. It should have a data g
 
 {{< figure src="/attachments/partners/altair/howto-ags/ags-15.png" class="no-border" >}}
 
-You should also see detail pages that show data from a single concept in your graph database:
+You should also see the detail pages that show data from a single concept in your graph database:
 
 {{< figure src="/attachments/partners/altair/howto-ags/ags-16.png" class="no-border" >}}
