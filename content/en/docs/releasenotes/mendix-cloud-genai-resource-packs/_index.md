@@ -47,7 +47,7 @@ You can access them through the [Mendix Cloud GenAI Portal](https://genai.home.m
 
 * We introduced new capabilities for Company Admins to manage GenAI resources directly within Control Center, including provisioning, deprovisioning, and an overview of all GenAI resources.
 
-### November 11, 2025
+### November 5, 2025
 
 #### Improvements
 
