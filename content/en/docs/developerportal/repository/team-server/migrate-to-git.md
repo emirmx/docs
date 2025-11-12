@@ -136,6 +136,28 @@ To set up your local SVN repository, follow these steps:
 
     {{% alert color="info" %}}To inspect files from a historical revision, use **TortoiseSVN** and select **Update to revision** to check a specific revision.{{% /alert %}}
 
+#### Workaround to Retain Branch Contents
+
+During a migration without history, all branches except for the main branch are removed. As it is not always possible to converge all branches by merging them into the main branch, you can manually backup branch contents and recreate them post-migration. 
+
+{{% alert color="info" %}}
+
+We recommend first attempting these steps on a dummy project to familiarize yourself with the process.
+
+{{% /alert %}}
+
+Follow these steps:
+
+1. For each branch you want to retain:
+    * Check out the SVN branch.
+    * Merge the latest state of the main branch into the branch you want to retain. This ensures there is a common base, so conflict resolution on this branch will work post-migration.
+    * Zip the entire project folder (except the *.svn* folder). Clearly name this so you recognize which branch it represents afterwards.
+2. Migrate to Git without history.
+3. Recreate the branches you wanted to retain. Do this **before** upgrading the main branch to a different Mendix version. For each branch:
+    * Create a new branch from the main branch in Studio Pro and clone it locally.
+    * Overwrite the contents of the project folder (except the *.git* folder) with the contents from the zip.
+    * From Studio Pro, commit "Branch recreated" and push to server.
+
 ### Migrating With History {#with-history}
 
 During migration with history, all app history, including revisions for all branches, is copied from SVN to Git. 
