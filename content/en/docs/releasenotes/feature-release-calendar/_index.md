@@ -53,10 +53,10 @@ General Availability means that a feature is available for all users. This type 
 | Studio Pro Enhancements | Included in monthly releases.<br/>Refer to release blogs. |
 | Multilingual Studio Pro and Platform: Chinese, Japanese, Korean | General Availability: Mx 11.0 |
 | Multilingual Studio Pro and Platform: Portuguese | Public Beta: Mx 11.0 |
-| Module updates while retaining customizations | General Availability: Mx 11.9 |
-| Easy comparison of revisions (textual diffing) | Public Beta: Mx 11.0 |
-| Searchable commit history | Public Beta: Mx 11.5 |
-| Pull requests | Public Beta: H2 2026 |
+| Module updates while retaining customizations | General Availability: Mx 11.12 |
+| Easy comparison of revisions (textual diffing) | Public Beta: Mx 11.7 |
+| Searchable commit history | Public Beta: Mx 11.4 <br/>General Availability: Mx 11.6 |
+| Merge Requests (aka Pull requests) | Public Beta: H2 2026 |
 | OpenTelemetry Tracing | General Availability: Mx 11.6 |
 | Atlas 4 UI Framework | General Availability: Mx 11.0 |
 | Progressive Web Apps Store Publishing | Public Beta: Mx 11.6 |
