@@ -229,7 +229,7 @@ To ensure consistent and prioritised support, we classify issues based on the fo
 | Low | Reasonable effort | Best effort | Minor issues with minimal impact on operational functionality. Cosmetic issues, minor performance degradation, or general inquiries. |
 
 {{% alert color="warning" %}}  
-The above SLA differs from the standard Mendix Platform Support SLA, as issues related to Mendix on Azure are handled on a best-effort basis.
+The above SLA differs from the standard Mendix Platform Support SLA, as issues related to Mendix on Azure are resolved on a best-effort basis.
 {{% /alert %}}
 
 ## Off-boarding from the Service
