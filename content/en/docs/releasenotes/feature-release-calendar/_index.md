@@ -81,10 +81,11 @@ General Availability means that a feature is available for all users. This type 
 
 | Capability or Feature | Expected Release |
 | --- | --- |
-| Workflow Groups | Public Beta: Mx 11.1 |
+| Workflow Groups | General Availability: Mx 11.6 |
 | Dynamic Case Management | Private Beta: Mx 11.3 + Mx 10.24 |
-| Global Inbox | Public Beta: Mx 11.6 |
-| Ad-hoc tasks/event subprocesses | Public Beta: Mx 11.6 |
+| Global Inbox | Public Beta: Mx 11.9 |
+| Workflow Event Subprocesses | Public Beta: Mx 11.6 |
+| Workflow Message Events | General Availability Mx 11.9 |
 
 ## Governance
 
