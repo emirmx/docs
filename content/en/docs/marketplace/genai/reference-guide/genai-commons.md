@@ -196,6 +196,8 @@ A knowledge base span is created for each knowledge base retrieval tool call req
 | `Architecture` | The architecture of the knowledge base, defined by the [DeployedKnowledgeBase](#deployed-knowledge-base) specialization. |
 | `MinimumSimilarity` | The minimum similarity score that was specified during the retrieval (usually 0,0 - 1,0). |
 | `MaxNumberOfResults` | The maximum number of results that was specified during the retrieval. |
+| `KBDisplayName` | The display name of the deployed knowledge base that was specified during the retrieval. |
+
 
 `KnowledgebaseSpan` was introduced in version 5.3.0.
 
@@ -265,6 +267,7 @@ A tool in the tool collection. This is sent along with the request to expose a l
 | `Description` | An optional description of the tool, used by the model in addition to the name attribute to choose when and how to call the tool. | 
 | `ToolType` | The type of the tool. Refer to the documentation supplied by your AI provider for information about the supported types. |
 | `Microflow` | The name (string) of the microflow that this tool represents. |
+| `MCPServerName` | The name of the MCP server if the tool added is an MCP tool. |
 
 #### `Function` {#function}
 
