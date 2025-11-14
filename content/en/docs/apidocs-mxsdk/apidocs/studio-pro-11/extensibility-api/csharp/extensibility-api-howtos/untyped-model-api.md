@@ -92,7 +92,7 @@ class Sample4(IUntypedModelAccessService untypedModelAccessService, IModel curre
 
 ## Getting Model Unit's Properties
 
-To extract data out of a model element or unit,access its properties:
+To extract data out of a model element or unit, access its properties:
 
 ```csharp
 class Sample5(IUntypedModelAccessService untypedModelAccessService, IModel currentApp)
