@@ -34,8 +34,8 @@ Test your extension by creating or using a Mendix app.
 
 1. Create a new Mendix app using a starter template, or use an existing app.
 2. In Studio Pro, go to **App** > **Show App Directory in Explorer** to open the app directory.
-3. Inside the app directory, create a new folder named `extensions`.
-4. Inside the `extensions` folder, create a sub-folder named after your extension (for example, `MyCompany`).
+3. Inside the app directory, create a new folder named *Extensions*.
+4. Inside the **Extensions** folder, create a sub-folder named after your extension (for example, *MyCompany*).
 5. Copy the full path of the sub-folder:
    1. Press <kbd>Shift</kbd> and right-click at the same time
    2. Select **Copy as path**.
@@ -67,7 +67,7 @@ public class MyMenuExtension(IMessageBoxService messageBoxService) : MenuExtensi
 }
 ```
 
-Build your extension and press <kbd>F4</kbd> in Studio Pro. Menu items are placed under a corresponding menu with the extensions name. For example, if your extension is named *My Extension*, your menu items will be located under the **Extensions** > **My Company** sub-menu.
+Build your extension and press <kbd>F4</kbd> in Studio Pro. Menu items are placed under a corresponding menu with the extensions name. For example, if your extension is named *My Extension*, your menu items will be located under the **Extensions** > **MyCompany** sub-menu.
 
 The Extensibility API provides several services you can use and are injected into your extension classes by using the `ImportingConstructor` attribute.
 
