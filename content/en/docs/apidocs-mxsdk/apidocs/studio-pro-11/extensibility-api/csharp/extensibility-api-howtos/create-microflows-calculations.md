@@ -95,12 +95,12 @@ The `CreateMicroflows` method starts a new transaction by calling `currentApp.St
 
 Use `IMicroflowService` to create microflows. For more information, see [Create a Microflow and Add Activities Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api-11/create-microflow-add-activities/). It requires:
 
-* `IModel` (the current mode), 
+* `IModel` (the current mode)
 * `IFolderBase` (module or folder)
 * Microflow name
 * `MicroflowReturnValue` (optional)
 
-A microflow returns a value with `IMicroflowExpression`. This can be done by using `IMicroflowExpressionService`, which returns an expression from a string input, and sets the expression as the microflow's return value.
+A microflow returns a value with `IMicroflowExpression`. This can be done by using `IMicroflowExpressionService`, which returns an expression from a string input and sets the expression as the microflow's return value.
 
 An example simple return value is seen below:
 
@@ -136,7 +136,7 @@ void CreateMicroflowsInFolder(IModel currentApp, IFolderBase folder)
 
 ### Multiplication Microflow
 
-To create a microflow that performs multiplication between two input parameters, use the code below.
+To create a microflow that performs multiplication between two input parameters, use the code below:
 
 ```csharp
 void CreateMultiplicationMicroflow(IModel currentApp, IFolderBase folder, IMicroflow callingMicroflow, string outputVariableName)
@@ -167,7 +167,7 @@ You can also see that the `DataType` of both parameters is integer.
 
  ### Addition Microflow
 
-To create a microflow that performs addition between two decimal values, use the code below.
+To create a microflow that performs addition between two decimal values, use the code below:
 
 ```csharp
 void CreateAdditionMicroflow(IModel currentApp, IFolderBase folder, IMicroflow callingMicroflow, string outputVariableName)
@@ -214,7 +214,7 @@ microflowCallAction.OutputVariableName = outputVariableName;
 2. Create `IMicroflowCallAction` and set it as the `Action` property of the `IActionActivity`.
 3. Create `IMicroflowCall` and set as the `MicroflowCall` property of the `IMicroflowCallAction`.
 4. Set `QualifiedName` of the microflow you want to call as the `Microflow` property of the `MicroflowCall` object.
-5. Set the `OutputVariableName` on so the calling microflow can use the result returned by the called microflow.
+5. Set the `OutputVariableName` on `IActionActivity` so the calling microflow can use the result returned by the called microflow.
 
 ## Passing Parameters to Called Microflows
 
@@ -231,7 +231,7 @@ foreach (var (parameterName, expression) in parameters)
 }
 ```
 
-Paste the complete into your `CalculationsMicroflowCreator` class.
+Paste the code into your `CalculationsMicroflowCreator` class.
 
 ```csharp
 void CreateMicroflowCallActivity(IModel currentApp,
