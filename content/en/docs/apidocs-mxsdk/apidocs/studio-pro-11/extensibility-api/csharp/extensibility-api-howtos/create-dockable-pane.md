@@ -18,8 +18,8 @@ Before you start this how-to, it is recommended to [Create a Menu Extension Usin
 ## Creating a Dockable Pane Extension Class
 
 1. Open the project you previously created by following [Create a Menu Extension Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api-11/create-menu-extension/).
-2. Add a new class to the project named `MyDockablePaneExtension.cs`.
-3. Replace the code in the file with the following code:
+2. Add a new class to the project named *MyDockablePaneExtension.cs*.
+3. Replace the code in the file with the following:
 
     ```csharp
     using System.ComponentModel.Composition;
@@ -41,7 +41,7 @@ Before you start this how-to, it is recommended to [Create a Menu Extension Usin
 
 The dockable pane has content, which is provided through a view model. The view model is an implementation of `WebViewDockablePaneViewModel`. 
 
-Override the `InitWebView` method, where you can set up the content of your web view inside the dockable pane. In this example, it contains the`http://mendix.com` home page.
+Override the `InitWebView` method, where you can set up the content of your web view inside the dockable pane. In this example, it contains the `http://mendix.com` home page.
 
 Below is a code example of the view model:
 
@@ -89,7 +89,7 @@ public class MyMenuExtension(IDockingWindowService dockingWindowService, IMessag
 The code above introduces the following concepts:
 
 * The `IDockingWindowService` is injected to allow opening the dockable pane
-* A new menu item named **Open My Dockable Pane** is added to trigger the pane using the `IDockingWindow` service
+* A new menu item named *Open My Dockable Pane* is added to trigger the pane using the `IDockingWindow` service
 
 Once you have made these changes, build your project. If you have opted to not automatically copy the output to the destination folder, manually copy the bin output from your project to your extension folder you created when you followed the [Create a Menu Extension Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api-11/create-menu-extension/) process.
 
@@ -97,7 +97,7 @@ Once you have made these changes, build your project. If you have opted to not a
 
 If you prefer to not add a separate menu item to open the docking pane, you can override the `ViewMenuCaption` property in the `DockablePaneExtension` implementation. 
 
-This places the menu under the `View` top-level menu in Studio Pro and using the caption provided. In this case, you do not need a separate `MenuExtension` class.
+This places the menu under the `View` top-level menu in Studio Pro using the caption provided. In this case, you do not need a separate `MenuExtension` class.
 
 ```csharp
 public override string? ViewMenuCaption => "My pane without custom menu";
