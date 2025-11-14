@@ -170,5 +170,5 @@ class MyMenuExtension(MyModalWebViewController myModalWebViewController) : MenuE
 This code injects your controller class into the `MyMenuExtension` class. It adds a new menu item called `Create Entity From Dialog` and calls the controller's `ShowDialog` method.
 
 {{% alert type="info" %}}
-In this example, the `currentApp` parameter is required if the dialog needs to interact with the model. Additionally, `WebServerBaseUrl` is crucial;without the base path, navigating to the route defined in the web server extension would not be possible.
+In this example, the `currentApp` parameter is required if the dialog needs to interact with the model. Additionally, `WebServerBaseUrl` is crucial; without the base path, navigating to the route defined in the web server extension would not be possible.
 {{% /alert %}}
