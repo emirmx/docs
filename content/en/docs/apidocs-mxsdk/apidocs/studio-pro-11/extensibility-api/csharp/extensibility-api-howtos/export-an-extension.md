@@ -15,7 +15,7 @@ Before exporting an extension add-on module, ensure the following feature flag i
 
 For more information, see [Get Started with the Extensibility API](/apidocs-mxsdk/apidocs/csharp-extensibility-api-11/get-started/).
 
-## Steps
+## Export an Extension
 
 1. In Studio Pro, open the app that contains your development extension.
 2. Create a new module with the same name as your extension folder. For example, if your extension folder is named *MyFirstExtension*, your module must also be named *MyFirstExtension*.
