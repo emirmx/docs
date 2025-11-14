@@ -18,8 +18,8 @@ You can download the example in this how-to in [this GitHub repository](https://
 ## Creating an Entity Context Menu Extension Class
 
 1. Open the project you previously created by following [Create a Menu Extension Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api-11/create-menu-extension/).
-2. Add a new class to the project named `MyEntityContextMenuExtension.cs`.
-3. Replace the code in the file with the following code:
+2. Add a new class to the project named *MyEntityContextMenuExtension.cs*.
+3. Replace the code in the file with the following:
 
     ```csharp
     namespace MyCompany.MyProject.MendixExtension;
