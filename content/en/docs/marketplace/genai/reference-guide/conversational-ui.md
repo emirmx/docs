@@ -317,7 +317,7 @@ The ConversationalUI module includes a dedicated page in the **USE_ME > Traceabi
 These pages are designed for administrators and developers who need to monitor GenAI usage and investigate specific interactions. They provide the primary interface for accessing traceability data without requiring custom development.
 
 {{% alert color="info" %}}
-If you have been using the GenAI Commons module in version 5.3.0 and set the StoreTraces constant to true, traces that contain errors might not be shown in the traceability UI. To migrate existing data, you need to create Usage objects for those [Traces](/appstore/modules/genai/genai-for-mx/commons/#trace) via the `UsageCreate` microflow from GenAICommons, setting the tokens to 0, passing the DeployedModel that was used and associating them to the trace.
+If you have been using the GenAI Commons module in version 5.3.0 and set the StoreTraces constant to true, traces that contain errors might not be shown in the traceability UI. To migrate existing data, you need to create Usage objects for those [Traces](/appstore/modules/genai/genai-for-mx/commons/#trace), setting the tokens to 0 and associating them to the trace.
 {{% /alert %}}
 
 ## Technical Reference {#technical-reference}
