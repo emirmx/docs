@@ -157,3 +157,66 @@ Use the exact key names specified by Private Mendix Platform, with dots (`.`) as
 ...
 
 ### Configuring Kubernetes for Private Mendix Platform
+
+To configure Kubernetes for Private Mendix Platform, ensure that your Mendix application runs with the Service Account specified in the Vault Role, and then perform the actions described below.
+
+#### Configuring the Mendix Operator
+
+To configure the Mendix Operator, perform the following steps:
+
+1. To ensure that the Mendix Operator allows pods to mount their Service Account token, edit the `OperatorConfiguration`:
+
+        ```bash
+        # Replace <your-operator-ns> with the namespace where the Mendix Operator runs
+        kubectl edit operatorconfiguration mendix-operator-configuration -n <your-operator-ns>
+        ```
+
+2. Add or confirm the following line in the `spec:` section:
+
+        ```yaml
+        spec:
+            runtimeAutomountServiceAccountToken: true
+            # ... other existing spec fields ...
+        ```
+
+#### Choosing and Configuring the Service Account
+
+To configure the Service Account, select one of the following options.
+
+##### Custom Service Account
+
+{{% alert color="info" %}}
+Ensure that you used `bound_service_account_names=pmp-secret-accessor` when creating the Vault Role.
+{{% /alert %}}
+
+Using a custom Service Account, for example, `pmp-secret-accessor`, is recommended for better isolation. To use a custom account, perform the following steps:
+
+1. Create the Service Account in your Mendix application's namespace (replace `feature-test` with your own value if required):
+
+    ```bash
+    kubectl create serviceaccount pmp-secret-accessor --namespace feature-test --dry-run=client -o yaml | kubectl apply -f -
+    ```
+2. Assign the Service Account to your Mendix app by editing the Mendix Runtime custom resource. Replace `mxplatform` and `feature-test` with your own values if needed.
+
+    ```bash
+    kubectl edit runtime mxplatform -n feature-test
+    ```
+
+3. Find the pod template section within the spec (for example, `spec.template.spec`), and add or modify the `serviceAccountName` field:
+
+    ```yaml
+    # ... inside spec: template: spec: ...
+    serviceAccountName: pmp-secret-accessor # Set your custom SA name
+    ```
+
+4. Save the changes. The Mendix Operator updates the deployment.
+
+##### Default Service Account
+
+No specific Kubernetes action is needed for the Service Account itself. Pods use the `default` Service Account if none is specified.
+
+{{% alert color="info" %}}
+Ensure that you used `bound_service_account_names=default` when creating the Vault Role.
+
+Ensure the **serviceAccountName** field in the template specification of your Mendix Runtime custom resource pod is either not set, or explicitly set to `default`.
+{{% /alert %}}
