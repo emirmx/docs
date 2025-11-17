@@ -59,7 +59,7 @@ When you save the source layer, an ontology will be automatically generated base
 You can customize the generated ontology by adding descriptions, constraints, and relationships between classes to better model your domain.
 {{% /alert %}}
 
-The **Ontologies** section will contain a definition based on the graph of the uploaded JSON data. The ontology defines the structure and main concepts of your data model.
+The **Ontology Models** section contains a definition based on the graph of the uploaded JSON data. The ontology defines the structure and main concepts of your data model.
 
 ### Creating and Testing a SPARQL Query
 
