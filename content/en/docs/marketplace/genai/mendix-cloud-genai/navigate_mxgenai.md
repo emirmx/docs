@@ -87,7 +87,7 @@ Before uploading, you can choose to upload the data to a new collection, the def
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIKnowledgeBaseResource.png" >}}
 
-{{% alert color="info" %}} While collections provide a mechanism for data separation, it is not best practice to create a large number of collections within a single Knowledge Base resource. A more performant and practical approach for achieving fine-grained data separation is through the strategic use of [metadata]{/appstore/modules/genai/mx-cloud-genai/navigate_mxgenai/#metadata}. {{% alert %}} 
+{{% alert color="info" %}} While collections provide a mechanism for data separation, it is not best practice to create a large number of collections within a single Knowledge Base resource. A more performant and practical approach for achieving fine-grained data separation is through the strategic use of [metadata]{/appstore/modules/genai/mx-cloud-genai/navigate_mxgenai/#metadata}. {{% /alert %}} 
 
 ##### Metadata {#metadata}
 
