@@ -82,9 +82,7 @@ On this page, you can see the Marketplace content for which you have created at 
 
 Click the name of the component to access its [details page](/appstore/component-details/).
 
-Click the context menu to access options for managing your content:
-
-{{< figure src="/attachments/appstore/marketplace-home-page/my-content.png"  width="400"  class="no-border" >}}
+Click the contextual **Action** menu to access options for managing your content:
 
 * **Manage Drafts** – Manage the drafts of the component.
     * Only one draft version of a component can exist at a time, so when one draft version is in progress, you cannot initiate another.
