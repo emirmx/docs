@@ -1,6 +1,6 @@
 ---
 title: "Build a To-do Example Extension Using C#"
-linktitle: "ToDo Example"
+linktitle: "To-do Example"
 url: /apidocs-mxsdk/apidocs/csharp-extensibility-api-11/build-todo-example-extension/
 weight: 20
 ---
@@ -26,7 +26,7 @@ Ensure the following tools are installed on your local development environment b
 * Microsoft Visual Studio 2022 (or equivalent, such as Visual Studio Code or JetBrains Rider); this example assumes you are using Microsoft Visual Studio 2022
 * Studio Pro version 10.6 or above
 
-## Creating the Project and Configuring the Extension Project
+## Creating the Project and Configuring the Extension
 
 ### Create the Project
 
@@ -79,7 +79,7 @@ You now have a class library that can be loaded as an extension by Studio Pro. H
     }
     ```
 
-    Within the *manifest.json* file, you specify which assemblies Studio Pro needs to load for the different contexts your extension needs to provide. If your extension only needs access to design time features and requires a user interface, you can add it to the `mx_extensions` option. However, if your extension needs access to runtime information or needs to translate design time concepts into runtime concepts, add it to `mx_build_extensions`.
+    Within the `manifest.json` file, you specify which assemblies Studio Pro needs to load for the different contexts your extension needs to provide. If your extension only needs access to design time features and requires a user interface, you can add it to the `mx_extensions` option. However, if your extension needs access to runtime information or needs to translate design time concepts into runtime concepts, add it to `mx_build_extensions`.
 
     This instructs Studio Pro to load `Mendix.ToDoExtension.dll`, whenever it loads Studio Pro extensions for your app. Adjust your local project names as needed.
 
@@ -89,7 +89,7 @@ You now have a class library that can be loaded as an extension by Studio Pro. H
 
 ## Add a Dockable Pane for the UI
 
-1. Add a new file named `ToDoListDockablePaneExtension.cs`.
+1. Add a new file named *ToDoListDockablePaneExtension.cs*.
 2. Replace the contents of the file with the following code:
 
     ```csharp
@@ -182,7 +182,7 @@ There are a few notable features in the code above:
 
 Add a view model to store view data by following the steps below:
 
-1. Add a new file to the solution named `ToDoListDockablePaneViewModel.cs`.
+1. Add a new file to the solution named *ToDoListDockablePaneViewModel.cs*.
 2. Replace the contents of the file with the following code: 
 
     ```csharp
@@ -344,7 +344,7 @@ Provide the webview with the following code so the data is rendered correctly:
 {{% snippet file="/static/_includes/apidocs-mxsdk/warning-wwwroot.md" %}}
 {{% /alert %}}
 
-#### WebView Setup and Message Handling
+#### Webview Setup and Message Handling
 
 Set the default address to `new Uri(_baseUri, "index")`. You will explore the origin of this index below in [Setting up Communication Between the User Interface and Extension](#set-up-communication).
 
@@ -579,7 +579,7 @@ You also need to implement methods to load and save the to-do list:
 Add a menu item to make the extension accessible from the Studio Pro toolbar.
 
 1. Create a `MenuExtension`.
-2. Add a new class file named `ToDoListMenuExtension.cs`.
+2. Add a new class file named *ToDoListMenuExtension.cs*.
 3. Replace the contents of the file with the following code:
 
     ```csharp

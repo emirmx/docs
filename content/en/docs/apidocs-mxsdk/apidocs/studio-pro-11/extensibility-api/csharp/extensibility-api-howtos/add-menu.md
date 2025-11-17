@@ -18,7 +18,7 @@ This how-to uses the results of [Create a Menu Extension Using C#](/apidocs-mxsd
 ## Creating Menu Extension Class
 
 1. Open the project you created when following [Create a Menu Extension Using C#](/apidocs-mxsdk/apidocs/csharp-extensibility-api-11/create-menu-extension/).
-2. Add a new class to the project and name it `MyMenuExtension.cs`.
+2. Add a new class to the project and name it *MyMenuExtension.cs*.
 3. Replace the code in the file with the following:
 
     ```csharp
