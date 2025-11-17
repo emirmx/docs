@@ -35,6 +35,6 @@ The following services require you to download an external module from the Mendi
 
 ## Integrating Altair Graph Studio
 
-In addition to the integration capabilities available in the Studio Pro, Mendix also supports integration with external systems through Altair Graph  Studio. Altair Graph Studio provides a scalable environment for connecting, managing, and analyzing graph-based data. For more information, see Integrating Mendix with Altair Graph Studio.   
+In addition to the integration capabilities available in the Studio Pro, Mendix also supports integration with external systems through Altair Graph  Studio. Altair Graph Studio provides a scalable environment for connecting, managing, and analyzing graph-based data. For more information, see [Integrating Mendix with Altair Graph Studio](/refguide/altair-graph-studio/).   
 
 ## Documents in This Category

@@ -1,8 +1,8 @@
 ---
 title: "Integrating Mendix with Altair Graph Studio"
 linktitle: "Altair Graph Studio"
-url: /partners/altair/integrate-mendix-altair-graph-studio
-weight: 10
+url: /refguide/altair-graph-studio
+weight: 27
 description: "Describes how to use graph data from Altair Graph Studio in your Mendix application."
 ---
 
