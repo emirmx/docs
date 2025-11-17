@@ -16,7 +16,7 @@ You can download the example in this how-to from [this GitHub repository](https:
 1. Open the project you created when following [Create a Menu Extension](/apidocs-mxsdk/apidocs/csharp-extensibility-api-11/create-menu-extension/).
 2. Add a new folder named *MicroflowTutorial* to your solution.
 3. Create a `MenuExtension` class.
-4. Add a new class named `CreateMicroflowsMenu.cs`.
+4. Add a new class named *CreateMicroflowsMenu.cs*.
 5. Replace the code in the file with the code below: 
 
     ```csharp
