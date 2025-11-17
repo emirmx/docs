@@ -53,11 +53,9 @@ Traceability was introduced in version 5.3.0 of the GenAI Commons module.
 
 By default, the chat completions operations of GenAI Commons store data in your application's database for traceability reasons. This makes it easier to understand the usage of GenAI in your app and why the model behaved in a certain way, for example, by reviewing tool usage. Trace data is only persisted if the constant `StoreTraces` is set to *true*. 
 
-As traces may contain sensitive and personally identifiable information, you should determine, on a case-by-case basis, whether storing this data is compliant.
+As traces may contain sensitive and personally identifiable information, you should determine, on a case-by-case basis, whether storing this data is compliant. To enable read-access to a user (typically an admin user), grant the module role `TraceMonitoring` to the applicable project roles.
 
 To clean up trace data in a deployed app, you can enable the daily scheduled event `ScE_Trace_Cleanup` in the [Mendix Cloud Portal](https://genai.home.mendix.com/). Use the `Trace_CleanUpAfterDays` constant to control the retention period of the trace data.
-
-Currently, there are no out of the box UI snippets or building blocks available to view the traces. A future release will include them. For now, you can just add a data grid to any page to display the data. To enable read-access to a user (typically an admin user), grant the module role `TraceMonitoring` to the applicable project roles.
 
 ## Technical Reference {#technical-reference}
 
