@@ -32,7 +32,7 @@ For example, you can use an LLM to do:
 * Develop interactive AI chatbots and virtual assistants that can carry out conversations naturally and engagingly.
 * By using text generation models, you can build applications with features such as:
 
-    * Draft documents (e.g. content creation: Assist in writing articles, stories, and marketing copy)
+    * Draft documents (for example, content creation: Assist in writing articles, stories, and marketing copy)
     * Write computer code
     * Answer questions about a knowledge base or (large) texts
     * Analyze texts
@@ -66,7 +66,6 @@ Knowledge bases are often used for:
 
 1. [Retrieval Augmented Generation (RAG)](/appstore/modules/genai/rag/) retrieves relevant knowledge from the knowledge base, incorporates it into a prompt, and sends it to the model to generate a response.
 2. Semantic search enables advanced search capabilities by considering the semantic meaning of the text, going beyond exact and approximate matching. It allows the knowledge base to be searched for similar chunks effectively.
-
 
 ### What is an LLM Not?
 
