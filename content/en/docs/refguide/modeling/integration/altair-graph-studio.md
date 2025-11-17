@@ -36,7 +36,7 @@ A source layer allows you to import data from various sources or start from a JS
 * Transform and map data to your ontology
 * Keep data synchronized with source systems
 
-{{< figure src="/attachments/partners/altair/howto-ags/add-layer.png" >}}
+{{< figure src="/attachments/refguide/modeling/integration/altair/add-layer.png" >}}
 
 ### Uploading and Validating JSON Data
 
@@ -46,7 +46,7 @@ Upload the JSON source data into the source layer.
 
 You can review the JSON structure and the data in the file you just uploaded in Graph Studio. It will show you a tree structure of your JSON file, data types, and sample values.
 
-{{< figure src="/attachments/partners/altair/howto-ags/sample-data-plm.png" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/integration/altair/sample-data-plm.png" class="no-border" >}}
 
 ### Reviewing the Generated Ontology
 
@@ -67,7 +67,7 @@ Now that you have data and an ontology in Graph Studio, create a SPARQL query to
 
 Create a new query in the Query Playground. Enter the SPARQL query and test the result.
 
-{{< figure src="/attachments/partners/altair/howto-ags/sparql.png" >}}
+{{< figure src="/attachments/refguide/modeling/integration/altair/sparql.png" >}}
 
 The following is an example SPARQL query for customers:
 
@@ -111,19 +111,19 @@ Create a new OData API in your graphmart. To do this, follow the steps below.
 
 1. Go **Graphmarts** > **Exports** and select **Create OData REST Endpoint**.
 
-    {{< figure src="/attachments/partners/altair/howto-ags/create-odata-rest.png" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/altair/create-odata-rest.png" >}}
 
 2. Choose **Auto generated Endpoint**. This is a one-click method to expose your entire graph through an OData API.
 
-    {{< figure src="/attachments/partners/altair/howto-ags/auto-generated-endpoint.png" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/altair/auto-generated-endpoint.png" >}}
 
 3. Provide a name and a description for the endpoint.
 
-    {{< figure src="/attachments/partners/altair/howto-ags/endpoint-title.png" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/altair/endpoint-title.png" >}}
 
     The **ODBC (SQL)** endpoint listed on this page can be used to access the endpoint. You should now be able to open this endpoint in a browser and see the OData response.
 
-    {{< figure src="/attachments/partners/altair/howto-ags/odbc-endpoint.png" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/altair/odbc-endpoint.png" >}}
 
 4. To see the contract of the endpoint, use the endpoint URL displayed in the endpoint configuration page under **ODBC (SQL)** and append `/$metadata` to this URL. You will need it when using the endpoint in Studio Pro.
 
@@ -131,11 +131,11 @@ Create a new OData API in your graphmart. To do this, follow the steps below.
 
 Add a [consumed OData service](/refguide/consumed-odata-service/) in your project by opening Studio Pro and right-clicking your module > **Add other** > **Consumed OData service**. In the **Add Consumed OData Service** dialog, provide the location of the endpoint `$metadata` contract, as well as your username and password credentials. Studio Pro will read the contract to determine all the entities and actions provided by this endpoint.
 
-{{< figure src="/attachments/partners/altair/howto-ags/add-consumed-odata.png" >}}
+{{< figure src="/attachments/refguide/modeling/integration/altair/add-consumed-odata.png" >}}
 
 In the consumed OData service document, you can provide configuration for the endpoint location and credentials. The **Location** is the root endpoint URL you copied from Graph Studio (without the `$metadata` suffix).
 
-{{< figure src="/attachments/partners/altair/howto-ags/endpoint-location.png" >}}
+{{< figure src="/attachments/refguide/modeling/integration/altair/endpoint-location.png" >}}
 
 #### Creating External Entities for Datasets from the OData Endpoint
 
@@ -143,19 +143,19 @@ The [Integration pane](/refguide/integration-pane/) in the right column displays
 
 Select which classes you need for your application and drag and drop them into a domain model. Here, they will be displayed as purple external entities. This indicates that the data is available to your application but is retrieved from an external service (in this case, the Altair Graph Database).
 
-{{< figure src="/attachments/partners/altair/howto-ags/create-external-entities.png" >}}
+{{< figure src="/attachments/refguide/modeling/integration/altair/create-external-entities.png" >}}
 
 #### Building Pages Using External Entities
 
 You can use these external entities in your pages and microflows similarly to persistent entities. For this example, create your overview pages by right-clicking the entity and selecting **Generate overview pages**. 
 
-{{< figure src="/attachments/partners/altair/howto-ags/building-pages.png" >}}
+{{< figure src="/attachments/refguide/modeling/integration/altair/building-pages.png" >}}
 
 #### Running the Application and Test
 
 You can now start the application and test the results. Whenever you open a page using external entities from the Integration pane, the data will automatically be retrieved from Altair Graph Studio via an OData REST call.
 
-{{< figure src="/attachments/partners/altair/howto-ags/testing.png" >}}
+{{< figure src="/attachments/refguide/modeling/integration/altair/testing.png" >}}
 
 Filtering, sorting, and pagination are automatically done server-side by your graph database. This is essential for large datasets to avoid overloading the front-end with too many objects.
 
@@ -163,13 +163,13 @@ Filtering, sorting, and pagination are automatically done server-side by your gr
 
 Altair Graph Studio automatically provides associations for linked entities in your graph. These graph associations are part of the OData endpoint and part of your external entities. When you drag your OData datasets into your domain model, the resulting external entities will show associations from the OData endpoint.
 
-{{< figure src="/attachments/partners/altair/howto-ags/tree-widget.png" >}}
+{{< figure src="/attachments/refguide/modeling/integration/altair/tree-widget.png" >}}
 
 This example page shows a tree that retrieves BOMs from the graph database. It will only load required data: first, the top-level BOMs, then, when you open one, its components will be retrieved over the association. Only when you open a component will it load the subcomponents.
 
 This is done automatically when you set the external entities as the data source for the widgets in your tree.
 
-{{< figure src="/attachments/partners/altair/howto-ags/data-source.png" >}}
+{{< figure src="/attachments/refguide/modeling/integration/altair/data-source.png" >}}
 
 ### Query SPARQL in Mendix {#query-sparql}
 
@@ -181,7 +181,7 @@ Run SPARQL queries from Mendix by using the SPARQL API in Altair Graph Studio. T
 
 1. Create a new consumed REST service document and paste the query in the request body.
 
-    {{< figure src="/attachments/partners/altair/howto-ags/paste-query.png" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/altair/paste-query.png" >}}
 
     The endpoint contains two main parts: the endpoint of the SPARQL API, and the graphmart you want to work with. You can define these in the endpoint.
 
@@ -190,19 +190,19 @@ Run SPARQL queries from Mendix by using the SPARQL API in Altair Graph Studio. T
       * Set **Accept** to `application/sparql-results+json`
       * Set **Content-Type** to `application/sparql-query`
 
-      {{< figure src="/attachments/partners/altair/howto-ags/content-type.png" >}}
+      {{< figure src="/attachments/refguide/modeling/integration/altair/content-type.png" >}}
 
 3. Run the API call and validate the resulting response message. The **Response** table will show the response JSON payload provided by your graph database.
 
-    {{< figure src="/attachments/partners/altair/howto-ags/response.png" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/altair/response.png" >}}
 
 4. View the resulting entities in the **Response structure** tab. Here, you can rename and generate entities to capture the data in Studio Pro.
 
-    {{< figure src="/attachments/partners/altair/howto-ags/response-structure.png" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/altair/response-structure.png" >}}
 
     The resulting domain model should look like this:
 
-    {{< figure src="/attachments/partners/altair/howto-ags/domain-model.png" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/altair/domain-model.png" >}}
 
 #### Microflow to Execute the SPARQL Query
 
@@ -213,20 +213,20 @@ Define a microflow that will execute the API call with the SPARQL query and retu
 
 By using constants, you can override these on deployment to match the environment you are deploying to.
 
-{{< figure src="/attachments/partners/altair/howto-ags/microflow-sparql.png" >}}
+{{< figure src="/attachments/refguide/modeling/integration/altair/microflow-sparql.png" >}}
 
 #### Customers Overview Page
 
 Create a page that will show the retrieved data. This example uses a [Data Grid 2](/appstore/modules/data-grid-2/) with a microflow data source. The microflow data source is configured to use the microflow that was created in the previous step.
 
-{{< figure src="/attachments/partners/altair/howto-ags/overview-page.png" >}}
+{{< figure src="/attachments/refguide/modeling/integration/altair/overview-page.png" >}}
 
 #### Testing the Result
 
 You can now run your application to validate the result. It should have a data grid showing all objects and a detail form showing the details of one specific object, as seen below:
 
-{{< figure src="/attachments/partners/altair/howto-ags/result.png" >}}
+{{< figure src="/attachments/refguide/modeling/integration/altair/result.png" >}}
 
 You should also see the detail pages that show data from a single concept in your graph database:
 
-{{< figure src="/attachments/partners/altair/howto-ags/detail-page.png" >}}
+{{< figure src="/attachments/refguide/modeling/integration/altair/detail-page.png" >}}
