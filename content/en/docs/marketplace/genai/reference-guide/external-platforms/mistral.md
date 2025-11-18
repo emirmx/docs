@@ -236,9 +236,6 @@ Mistral supports the following [tool choice types](/appstore/modules/genai/genai
 | any                    | any     |
 | none                   | none    |
 
-### Knowledge Base Retrieval
-
-When adding a [KnowledgeBaseRetrieval](/appstore/modules/genai/genai-for-mx/commons/#add-knowledge-base-to-request) object to your request, there are some optional parameters. Currently, only the MaxNumberOfResults parameter can be added to the search call and the others (`MinimumSimilarity` and `MetadataCollection`) are not compatible with the Mistral API.
 
 ## GenAI Showcase Application {#showcase-application}
 
@@ -260,10 +257,4 @@ If you encounter an error caused by conflicting Java libraries, such as `java.la
 
 ## Read More {#read-more}
 
-* [Prompt Engineering – OpenAI Documentation](https://platform.openai.com/docs/guides/prompt-engineering)
-* [Introduction to Prompt Engineering – Microsoft Azure Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/prompt-engineering)
-* [Prompt Engineering Techniques – Microsoft Azure Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions)
-* [ChatGPT Prompt Engineering for Developers - DeepLearning.AI](https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers)
-* [Function Calling - OpenAI Documentation](https://platform.openai.com/docs/guides/function-calling)
-* [Vision - OpenAI Documentation](https://platform.openai.com/docs/guides/vision)
-* [Vision - Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/gpt-with-vision)
+* [Mistral Cookbooks](https://docs.mistral.ai/cookbooks)
