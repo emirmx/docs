@@ -12,20 +12,19 @@ aliases:
 
 The [Mendix Cloud GenAI connector](https://marketplace.mendix.com/link/component/239449) lets you utilize [Mendix Cloud GenAI resource packs](/appstore/modules/genai/mx-cloud-genai/mendix-cloud-grp/) directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox. 
 
-
 ### Features
 
 In the current version, Mendix supports text generation (including function/tool calling, chat with images, and chat with documents), vector embedding generation, knowledge base storage, and retrieval of knowledge base chunks.
 
-Typical use cases for generative AI are described in more detail [here](/appstore/modules/genai/get-started/#llm-use-cases).
+Typical use cases for generative AI are described in more detail in the [Typical LLM Use Cases](/appstore/modules/genai/get-started/#llm-use-cases) section of the *GenAI Concepts*.
 
 ### Prerequisites
 
-To use this connector, you need configuration keys to authenticate to the Mendix Cloud GenAI services. You can generate keys in the [Mendix portal](https://genai.home.mendix.com) or ask someone with access to either generate them for you or add you to their team so you can generate keys yourself. 
+To use this connector, you need configuration keys to authenticate to the Mendix Cloud GenAI services. You can generate keys in the [Mendix Cloud GenAI Portal](https://genai.home.mendix.com) or ask someone with access to either generate them for you or add you to their team so you can generate keys yourself. 
 
 {{% alert color="info" %}}
 
-The Mendix Cloud GenAI Connector module generates embeddings internally when interacting with a knowledge base. This means that you do not need to create embedding keys yourself when interacting with a Mendix Cloud knowledge base. Pure embedding operations are only required if additional processes, such as using the generated vectors instead of text, are needed. For example, a similar search algorithm could use vector distances to calculate relatedness.
+The Mendix Cloud GenAI Connector module generates embeddings internally when interacting with a knowledge base. This means that you do not need to create embedding keys yourself when interacting with a Mendix Cloud knowledge base. Direct embedding operations are only required if additional processes, such as, using the generated vectors instead of text, are needed. For example, a similar search algorithm could use vector distances to calculate relatedness.
 
 {{% /alert %}}
 
@@ -48,10 +47,10 @@ Follow the steps below to get started:
 * Make sure to configure the [Encryption module](/appstore/modules/encryption/#configuration) before you connect your app to Mendix Cloud GenAI.
 * Add the module role `MxGenAIConnector.Administrator` to your Administrator **User roles** in the **Security** settings of your app. 
 * Add the `Configuration_Overview` page (**USE_ME** > **Configuration**) to your navigation, or add the `Snippet_Configuration` to a page that is already part of your navigation. Alternatively, you can register your key by using the `Configuration_RegisterByString` microflow.
-* Complete the runtime setup of Mendix Cloud GenAI configuration by navigating to the page mentioned above. Import a key generated in the [portal](https://genai.home.mendix.com) or provided to you and click **Test Key** to validate its functionality. Note that this key establishes a connection between the Mendix Cloud resources and your application. It contains all the information required to set up the connection.
+* Complete the runtime setup of Mendix Cloud GenAI configuration by navigating to the page mentioned above. Import a key generated in the [Mendix Cloud GenAI Portal](https://genai.home.mendix.com) or provided to you and click **Test Key** to validate its functionality. Note that this key establishes a connection between the Mendix Cloud resources and your application. It contains all the information required to set up the connection.
 
 {{% alert color="info" %}}
-When using an Embeddings Mdel Resource in combination with a Knowledge Base Resource, there is no need to import both keys: the connection details for the embeddings generation model will be generated automatically on import of the Knowledge Base Resource key.
+When using an Embeddings Model Resource together with a Knowledge Base Resource, you do not need to import both keys. Importing the Knowledge Base Resource key automatically generates the connection details for the embeddings generation model.
 {{% /alert %}}
 
 ## Operations
@@ -62,14 +61,13 @@ Configuration keys are stored persistently after they are imported (either via t
 
 To use the operations, either a `DeployedModel` (text, embeddings) or a `DeployedKnowledgeBase` must always be passed as input. 
 
-#### How to get the Deployed Model in scope
+### How to get the `DeployedModel` in scope
 
-The DeployedModel will be created automatically when importing keys at runtime and needs to be retrieved from the database. 
+The `DeployedModel` object will be created automatically when importing keys at runtime and needs to be retrieved from the database. 
 
-#### How to get the Deployed Knowledge Base in scope 
+### How to get the `DeployedKnowledgeBase` in scope 
 
 In Mendix Cloud GenAI, a single knowledge base resource (`MxCloudKnowledgeBaseResource`) can contain multiple `DeployedKnowledgeBase` objects (tables, referred to as 'collections'). As a result, several collections may belong to the same resource. You can use the `DeployedKnowledgeBase: Get` toolbox action to retrieve the right collection and initialize a knowledge base operation. It requires the `Collection.Name` (string) as input (which is usually different from the `Collection.DisplayName` attribute).
-
 
 ### Chat Completions Operation
 
@@ -150,7 +148,7 @@ The model uses the file name when analyzing documents, which may introduce a pot
 
 A Knowledge Base resource can comprise several collections. Each collection is specifically designed to hold numerous documents, serving as a logical grouping for related information based on its shared domain, purpose, or thematic focus.
 
-Below, you can find a diagram displaying the separation of a resource into different collections. Like this, different use cases can share the same resource while the option to only add the required collections to the conversation context is preserved. In example of this is the use cases 'Employee Onboarding' and 'IT Ticket Support' where both of them require knowledge about IT Setup & Equipment but Company Culture & Values knowledge is relevant for onboarding only and Historical Support ticket information only for IT support.
+Below is a diagram showing how resources are organized into separate collections. This approach allows multiple use cases to share common resource while the option to only add the required collections to the conversation context is preserved. For example, both employee onboarding and IT ticket support require information about IT setup and equipment. However, only, onboarding needs knowledge about the company culture and values, while only IT support requires access to historical support ticket data.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIKnowledgeBaseResource.png" >}}
 
@@ -162,10 +160,13 @@ Metadata is additional information that can be attached to data in a GenAI knowl
 
 Metadata consists of key-value pairs and serves as additional information connected to the data, though it is not part of the vectorization itself.
 
-To come back to the previous example for collections: Instead of having two different collections, such as 'IT Setup & Equipment' and 'Historical Support tickets', there could be one named 'Company IT'. To be able to retrieve only tickets and no other information from this collection, metadata like 
-* key: `Category`, value: `Ticket`
+In the employee onboarding and IT ticket support example, instead of having two different collections, such as IT setup and equipment and historical support tickets, there could be one named 'Company IT'. To retrieve tickets only and no other information from this collection, add the below metadata during insertion.
 
-can be added during insertion. The model then generates its response using the specified metadata instead of solely the input text. 
+```text
+key: `Category`, value: `Ticket`
+```
+
+The model then generates its response using the specified metadata instead of solely the input text. 
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIKBMetadataSeparation.png" >}}
 
