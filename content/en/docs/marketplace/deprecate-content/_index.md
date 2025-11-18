@@ -12,7 +12,7 @@ You can deprecate components that are no longer supported or maintained, or that
 
 Follow these steps to deprecate a component:
 
-1. Access the **My Content** page by clicking **Components** in the Marketplace **Personal** section.
+1. Access the **My Content** page by clicking **My Content** in the Marketplace **Personal** section.
 2. In the **Actions** menu of the component you want to deprecate, click **Deprecate**.
 3. In the **Deprecate Component** window that opens, fill in the following information:
 
