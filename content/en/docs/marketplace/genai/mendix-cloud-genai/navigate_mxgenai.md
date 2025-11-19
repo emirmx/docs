@@ -12,7 +12,7 @@ The [Mendix Cloud GenAI portal](https://genai.home.mendix.com/) is the part of t
 
 ## Resource Details 
 
-After clicking on a specific resource, you land on its details page, offering short cuts to consumption insights, key generation, team management and helpful documentation. 
+After clicking on a specific resource, you land on its details page, offering shortcut to consumption insights, key generation, team management, and helpful documentation. 
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIResource_Details.png" >}}
 
@@ -30,11 +30,11 @@ The **Settings** tab contains the details of a GenAI resource. It shows the foll
 * **Plan**: indicates the subscription plan used for compute resources (for example, embedding or text generation resources).
 * **Environment**: shows which environment is used, for example, test, acceptance, or production.
 
-\* Cross-region inference (CRI) allows a model to redirect requests to another region, helping to distribute the load across multiple regions within the same area - so EU requests always stay within EU regions. Connecting to a cross-region inference profile does not change how the request is sent; the redirection happens on the server side, determining the region to handle the request to get the fastest response, see also [Increase throughput with cross-Region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html). If applicable, CRI profiles are selected during provisioning of a model resource. 
+\* Cross-region inference (CRI) allows a model to redirect requests to another region, helping to distribute the load across multiple regions within the same area. So, EU requests always stay within EU regions. Connecting to a cross-region inference profile does not change how the request is sent; the redirection happens on the server side, determining the region to handle the request to get the fastest response. For more information, see [Increase throughput with cross-Region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html). If applicable, CRI profiles are selected during provisioning of a model resource. 
 
 #### Additional Details for Knowledge Base Resources
 
-For knowledge base resources, you will also see details of the associated embeddings resource and vice versa. To learn more about embeddings, see the [Embedding vector](/appstore/modules/genai/rag/#embedding-vector) section of *RAG in a Mendix App*.
+For knowledge base resources, you can also see details of the associated embeddings resource and vice versa. To learn more about embeddings, see the [Embedding vector](/appstore/modules/genai/rag/#embedding-vector) section of *RAG in a Mendix App*.
 
 ### Team
 
@@ -62,7 +62,7 @@ Once created, the key can be used in the Mendix application via the Mendix Cloud
 
 #### Additional Information for Knowledge Base Resource Keys
 
-When you create a key for a knowledge base, an embeddings resource key is automatically generated for the selected embeddings model and marked accordingly in the keys overview. To configure a knowledge base connection from a Mendix application, you then only need to import the knowledge base resource key as connection details for the embeddings model are created automatically.
+When you create a key for a knowledge base, an embeddings resource key is automatically generated for the selected embeddings model and marked accordingly in the keys overview. To configure a knowledge base connection from a Mendix application, you only need to import the knowledge base resource key. The connection details for the embeddings model are created automatically.
 
 ### Content (Only for Knowledge Bases)
 
@@ -83,26 +83,29 @@ When you select the **Add Files Like .TXT or .PDF** option, you can upload docum
 
 {{% alert color="info" %}} Only TXT and PDF files are supported. {{% /alert %}} 
 
-Before uploading, you can choose to upload the data to a new collection, the default collection, or another existing collection within the resource. A Knowledge Base resource can comprise several collections. Each collection is specifically designed to hold numerous documents, serving as a logical grouping for related information based on its shared domain, purpose, or thematic focus. Below, you can find a diagram displaying the separation of a resource into different collections. Like this, different use cases (e.g. 'Employee Onboarding' and 'IT Ticket Support') can share the same resource while preserving the option to only add the required collections to a conversation context.
+Before uploading, you can choose to upload the data to a new collection, the default collection, or another existing collection within the resource. A Knowledge Base resource can comprise several collections. Each collection is specifically designed to hold numerous documents, serving as a logical grouping for related information based on its shared domain, purpose, or thematic focus. Below is a diagram showing how resources are organized into separate collections. This approach allows multiple use cases to share a common resource while the option to only add the required collections to the conversation context is preserved.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIKnowledgeBaseResource.png" >}}
 
-{{% alert color="info" %}} While collections provide a mechanism for data separation, it is not best practice to create a large number of collections within a single Knowledge Base resource. A more performant and practical approach for achieving fine-grained data separation is through the strategic use of [metadata]{/appstore/modules/genai/mx-cloud-genai/navigate_mxgenai/#metadata}. {{% /alert %}} 
+{{% alert color="info" %}} While collections provide a mechanism for data separation, it is not best practice to create a large number of collections within a single Knowledge Base resource. A more performant and practical approach for achieving fine-grained data separation is through the strategic use of [Metadata](#metadata). {{% /alert %}} 
 
 ##### Metadata {#metadata}
 
-Metadata is additional information that can be attached to data in a GenAI knowledge base. Unlike the actual content, metadata provides structured details that help in organizing, searching, and filtering information more efficiently. It helps manage large datasets by allowing to retrieve relevant data based on specific attributes rather than relying solely on similarity-based searches.  
+Metadata is additional information that can be attached to data in a GenAI knowledge base. Unlike the actual content, metadata provides structured details that help in organizing, searching, and filtering information more efficiently. It helps manage large datasets by allowing the retrieval of relevant data based on specific attributes rather than relying solely on similarity-based searches.
 
 Metadata consists of key-value pairs and serves as additional information connected to the data, though it is not part of the vectorization itself.
 
-To come back to the previous example for collections: Instead of having two different collections, such as 'IT Setup & Equipment' and 'Historical Support tickets', there could be one named 'Company IT'. To be able to retrieve only tickets and no other information from this collection, metadata like 
-* key: `Category`, value: `Ticket`
+In the employee onboarding and IT ticket support example, instead of having two different collections, such as IT setup, and equipment and historical support tickets, there could be one named 'Company IT'. To retrieve tickets only and no other information from this collection, add the metadata below during insertion.
 
-can be added during insertion. The model then generates its response using the specified metadata instead of solely the input text. 
+```text
+key: `Category`, value: `Ticket`
+```
+
+The model then generates its response using the specified metadata instead of solely the input text. 
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIKBMetadataSeparation.png" >}}
 
-Using metadata, even more fine-grained filtering becomes feasible. Each ticket may have associated metadata such as
+Using metadata, even more fine-grained filtering becomes feasible. Each ticket may have associated metadata, such as
 
 * key: `Ticket Type`, value: `Bug`
 * key: `Status`, value: `Solved`
@@ -118,7 +121,7 @@ You can upload data directly from Mendix to the Knowledge Base. To do so, severa
 
 {{% alert color="info" %}} The **Consumption** tab is available for Model resources only.{{% /alert %}} 
 
-The **Consumption** section provides outcomones of token consumption monitoring for each GenAI resource in a graphical way. Use this overview to see the current usage, insights on the usage per day, and to compare the current month with previous months. Please note, that months respresent bundle months here, which is the period during which token consumption is tracked, beginning on the date of your last GenAI Resource plan entitlement reset and ending on the next reset date. This creates a recurring monthly cycle based on your plan activation date, not the calendar month.
+The **Consumption** section provides outcomes of token consumption monitoring for each GenAI resource in a graphical way. Use this overview to see the current usage, insights on the usage per day, and to compare the current month with previous months. Note that months represent bundle months here, which is the period during which token consumption is tracked, beginning on the date of your last GenAI Resource plan entitlement reset and ending on the next reset date. This creates a recurring monthly cycle based on your plan activation date, not the calendar month.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/navigate_mxgenai/GenAIResource_TokenConsumptionMonitor.png" >}}
 
