@@ -10,7 +10,7 @@ aliases:
 
 ## Introduction
 
-The [Mendix Cloud GenAI connector](https://marketplace.mendix.com/link/component/239449) lets you utilize [Mendix Cloud GenAI resource packs](/appstore/modules/genai/mx-cloud-genai/mendix-cloud-grp/) directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox. 
+The [Mendix Cloud GenAI connector](https://marketplace.mendix.com/link/component/239449) lets you utilize [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/) directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox. 
 
 ### Features
 

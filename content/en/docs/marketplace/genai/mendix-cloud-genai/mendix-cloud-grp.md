@@ -105,7 +105,7 @@ The [Mendix Cloud GenAI Portal](https://genai.home.mendix.com/) allows easy acce
 * Create and manage connection keys to connect your apps with all resources.
 * Track activity logs for team access and connection key management.
 
-More documentation about this portal section can be found [here](/appstore/modules/genai/mx-cloud-genai/navigate_mxgenAI/).
+For more information, see [Navigate through the Mendix Cloud GenAI Portal](/appstore/modules/genai/mx-cloud-genai/Navigate-MxGenAI/).
 
 ### Mendix Cloud GenAI Connector
 
