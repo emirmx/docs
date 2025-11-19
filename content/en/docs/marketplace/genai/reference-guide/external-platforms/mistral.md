@@ -13,7 +13,7 @@ The [Mistral Connector](https://marketplace.mendix.com/link/component/248276) al
 
 ### Features {#features}
 
-The Mistral Connector is commonly used for text generation based on the [Chat Completions API](https://docs.mistral.ai/api/endpoint/chat) and embeddings generation with the [Embeddings API](https://docs.mistral.ai/api/endpoint/embeddings). Typical use cases for generative AI are described in more detail [here](/appstore/modules/genai/get-started/#llm-use-cases).
+The Mistral Connector is commonly used for text generation based on the [Chat Completions API](https://docs.mistral.ai/api/endpoint/chat) and embeddings generation with the [Embeddings API](https://docs.mistral.ai/api/endpoint/embeddings). Typical use cases for generative AI are described in the [Typical LLM Use Cases](/appstore/modules/genai/get-started/#llm-use-cases).
 
 For more information about the models, see [Mistral models](https://docs.mistral.ai/getting-started/models).
 
@@ -24,7 +24,6 @@ Mistral does not currently offer image generation models out of the box. It is p
 #### Knowledge Base
 
 The Mistral connector supports Knowledge bases from providers such as pgVector, Mendix Cloud, Amazon Bedrock, and Azure AI Search to be added to a conversation.
-
 
 ### Prerequisites
 
@@ -130,7 +129,7 @@ Mistral does not directly connect to the knowledge resources. The model returns 
 
 This functionality is part of the implementation executed by the GenAI Commons Chat Completions operations mentioned earlier. As a developer, you need to make the system aware of your indexes and their purpose by registering them with the request. This is done using the GenAI Commons operation [Tools: Add Knowledge Base](/appstore/modules/genai/genai-for-mx/commons/#add-knowledge-base-to-request), which must be called once per knowledge resource before passing the request to the Chat Completions operation.
 
-Note that the retrieval process is independent of the model provider and can be used with any model that supports function calling, thanks to the generalized `GenAICommons.DeployedKnowledgeBase` input parameter.
+Note that the retrieval process is independent of the model provider and can be used with any model that supports function calling, as it relies on the generalized `GenAICommons.DeployedKnowledgeBase` input parameter.
 
 #### Vision {#chatcompletions-vision}
 

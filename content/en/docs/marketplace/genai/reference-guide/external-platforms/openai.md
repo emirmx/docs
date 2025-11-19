@@ -25,11 +25,11 @@ Mendix provides dual-platform support for both [OpenAI](https://platform.openai.
 
 With the current version, Mendix supports the Chat Completions API for [text generation](https://platform.openai.com/docs/guides/text-generation), the Image Generations API for [images](https://platform.openai.com/docs/guides/images), the Embeddings API for [vector embeddings](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings), and indexes via [Azure AI Search](https://learn.microsoft.com/en-us/azure/search/) for knowledge base retrieval.
 
-Typical use cases for generative AI are described in more detail [here](/appstore/modules/genai/get-started/#llm-use-cases).
+Typical use cases for generative AI are described in the [Typical LLM Use Cases](/appstore/modules/genai/get-started/#llm-use-cases).
 
 #### Knowledge Base
 
-By integrating Azure AI Search, the OpenAI Connector allows for knowledge base retrieval from Azure datsources. For Retrieval Augmented Generation (RAG) scenarios, chat completions with (Azure) OpenAI can also be combined with knowledge bases by other provider such as Mendix Cloud.
+By integrating Azure AI Search, the OpenAI Connector enables knowledge base retrieval from Azure data sources. For Retrieval Augmented Generation (RAG) scenarios, chat completions with (Azure) OpenAI can also be combined with knowledge bases by other provider such as Mendix Cloud.
 
 ### Prerequisites {#prerequisites}
 
@@ -183,7 +183,7 @@ OpenAI does not directly connect to the Azure AI Search resource. The model retu
 
 This functionality is part of the implementation executed by the GenAI Commons Chat Completions operations mentioned earlier. As a developer, you need to make the system aware of your indexes and their purpose by registering them with the request. This is done using the GenAI Commons operation [Tools: Add Knowledge Base](/appstore/modules/genai/genai-for-mx/commons/#add-knowledge-base-to-request), which must be called once per index before passing the request to the Chat Completions operation.
 
-Note that the retrieval process is independent of the model provider and can be used with any model that supports function calling, thanks to the generalized `GenAICommons.DeyploedKnowledgeBase`entity.
+Note that the retrieval process is independent of the model provider and can be used with any model that supports function calling, as it relies on the generalized `GenAICommons.DeyploedKnowledgeBase`entity.
 
 #### Vision {#chatcompletions-vision}
 

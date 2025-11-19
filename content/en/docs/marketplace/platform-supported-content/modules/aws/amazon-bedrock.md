@@ -21,7 +21,7 @@ Amazon Bedrock is a fully managed service that makes foundation models (FMs) fro
 * Generating images based on text prompts and displaying them in the Mendix app.
 * Generating embedding vectors for text inputs.
 
-Typical use cases for generative AI are described in more detail [here](/appstore/modules/genai/get-started/#llm-use-cases).
+Typical use cases for generative AI are described in the [Typical LLM Use Cases](/appstore/modules/genai/get-started/#llm-use-cases).
 
 ### Prerequisites {#prerequisites}
 
