@@ -160,9 +160,11 @@ The **Distraction Free Mode** does the same as the **Full Screen** mode above, b
 
 Shortcut key: <kbd>Shift</kbd> + <kbd>F11</kbd>
 
-### Reset Layout {#reset-layout}
+### Restore Default Layout {#restore-default-layout}
 
-Resets the layout of dockable window panes to factory defaults.
+This option allows you to reset the following layout settings to their default values:
+* The size, location and visibility of the dockable window panes.
+* The sizes of popup dialogs that are stored after they are resized manually.
 
 ## Read More
 
