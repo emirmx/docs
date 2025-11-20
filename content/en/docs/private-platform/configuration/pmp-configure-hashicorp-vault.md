@@ -154,7 +154,7 @@ Use the exact key names specified by Private Mendix Platform, with dots (`.`) as
 
 ### Configuring the Kubernetes Authentication Method {#configure-k8s-auth}
 
-...
+This allows pods to authenticate using their Kubernetes Service Account token.
 
 ### Configuring Kubernetes for Private Mendix Platform
 
