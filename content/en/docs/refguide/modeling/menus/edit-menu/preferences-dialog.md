@@ -255,7 +255,7 @@ This setting allows you to move forward and backward through your editing histor
 
 ### Dialogs {#dialogs}
 
-When a popup dialog is resized, Studio Pro will remember the new size and use that when the same dialog is opened again. This option makes it possible to disable that behavior and always show the dialogs at their default size.
+When a pop-up dialog is resized, Studio Pro will remember the new size and use it when the same dialog is opened again. This option allows you to disable this behavior and always show the dialogs at their default size.
 
 ## Advanced Tab
 

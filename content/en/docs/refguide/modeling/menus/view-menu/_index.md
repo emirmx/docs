@@ -163,8 +163,9 @@ Shortcut key: <kbd>Shift</kbd> + <kbd>F11</kbd>
 ### Restore Default Layout {#restore-default-layout}
 
 This option allows you to reset the following layout settings to their default values:
-* The size, location and visibility of the dockable window panes.
-* The sizes of popup dialogs that are stored after they are resized manually.
+
+* The size, location, and visibility of the dockable window panes
+* The sizes of pop-up dialogs that are stored after they are resized manually
 
 ## Read More
 
