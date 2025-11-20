@@ -20,11 +20,11 @@ Business events are supported in Studio Pro [9.18](/releasenotes/studio-pro/9.18
 
 ### Typical Use Cases
 
-Business events help you automate the resulting actions when something happens in your organization. The following are examples of when business events can be useful:
+Business events help you automate the resulting actions when something happens in your organization. They can be useful in a variety of situations, such as: 
 
 * Uploading a payment receipt in one app, while another app processes the outgoing payment in the company's ledger
 * Making an appointment with a service provider in an appointment app, then needing it to be added to the scheduling app of the service provider
-* Customers placing an order in a web shop, and other apps need to take follow-up actions like scheduling shipments, sending the invoice, and reordering inventory stock
+* Customers placing an order in a web shop, and other apps need to take follow-up actions like scheduling shipments, sending an invoice, and reordering inventory stock
 
 ### Prerequisites
 
@@ -41,35 +41,33 @@ The Mendix Business Events service itself does not require a license, but it dep
 
 ## Configuration
 
-To work with business events, import the [Mendix Business Events](https://marketplace.mendix.com/link/component/202649) service into your app. See the [Installing Marketplace Content](/appstore/use-content/#install) section in *Using Marketplace Content*.
+To work with business events, import the [Mendix Business Events](https://marketplace.mendix.com/link/component/202649) service into your app. See the [Installing Marketplace Content](/appstore/use-content/#install) section in *Using Marketplace Content* for more details.
 
 ### Configuring Local Deployments {#config-local-deployment}
 
 To test on your development workstation, run the Event Broker on your machine using [Docker](https://www.docker.com/). The required configuration can be found in the [local setup for the event broker tool](https://github.com/mendix/event-broker-tools).
 
-For local deployment, you need to set the **ChannelName** and **ServerUrl** constants. These constants are best configured by going to **App Settings** > **Configuration**. Click **New**, and in the **Constants** tab, you can set the required values.
+For local deployment, you need to set the **ChannelName** and **ServerUrl** constants. These constants are best configured by following these steps:
 
-Set the constants as follows:
+1. Open the **App Settings**.
+2. On the **Configuration** tab, click **New**.
+3. Open the **Constants** tab and set the constants as follows:
 
-* **ChannelName**: `local`
-* **ServerUrl**:
-    * On Windows: `localhost:9092`
-    * Running Docker on MacOS and Studio Pro on Windows via Parallels: `10.211.55.2:9094`
-    * Running Docker on Linux and Studio Pro on Windows via VirtualBox/KVM: `<IP ADDRESS>:9094`
+   * **ChannelName**: `local`
+   * **ServerUrl**:
+       * On Windows: `localhost:9092`
+       * Running Docker on MacOS and Studio Pro on Windows via Parallels: `10.211.55.2:9094`
+       * Running Docker on Linux and Studio Pro on Windows via VirtualBox/KVM: `<IP ADDRESS>:9094`
 
 ### Changing Logging Interval (Optional)
 
 Optionally, you can set **SummaryLogIntervalSeconds** to a different value. The default value 120, which means if events are consumed or produced, an overview of what was consumed or produced will be logged at `INFO` level every 120 seconds. When configured with 0 or a negative number, this additional logging will not take place at all.
 
-## Usage
-
-This section explains how to use business events in Mendix apps with the Mendix Business Events service.
-
-### Using Business Events {#two-way-be}
+## Using Business Events {#two-way-be}
 
 Studio Pro 9.24 and above supports newer behavior of business events, sometimes called two-way business events. In these versions, business events are published by an app and one or more apps consume, or subscribe to, the events. A publisher can also consume a business event of some other publishing app, and a subscriber can publish a business event to another app.
 
-#### Creating a New Business Event Service {#two-way-be-create}
+### Creating a New Business Event Service {#two-way-be-create}
 
 In your defining app, you can create a new service by doing the following:
 
@@ -84,7 +82,7 @@ The business event service document is open in Studio Pro:
 
 In the next section, you will define the information included in your events, as well as what the service will implement.
 
-#### Adding Event Definitions {#add-be-definitions}
+### Adding Event Definitions {#add-be-definitions}
 
 To define what information is included in your events, as well as what the service will implement, click **Add** in the open service document:
 
@@ -114,7 +112,7 @@ To define what information is included in your events, as well as what the servi
 
     **Export AsyncAPI Document** exports the YAML file of the business event service so other apps can [use your newly created service](#two-way-be-existing).
 
-#### Attribute Types {#attribute-types}
+### Attribute Types {#attribute-types}
 
 Attribute types for business events relate to attribute types of entities, but not all attribute types are supported for business events. The following attribute types are not supported:
 
@@ -125,13 +123,13 @@ Attribute types for business events relate to attribute types of entities, but n
 
 In Studio Pro 9.24 and below, all types were supported implicitly because a business event was defined by an entity. The unsupported types were from the perspective of the consumer received as a string.
 
-##### Enumeration Attribute Type {#enum-att-type}
+#### Enumeration Attribute Type {#enum-att-type}
 
 In Studio Pro [9.24](/releasenotes/studio-pro/9.24/), consumers see enumerations as a plain string. The names of the enumeration items are the values that are transmitted by the event broker to the subscribers. Enumerations cannot be modeled for new services in Studio Pro [9.24](/releasenotes/studio-pro/9.24/), but for converted earlier apps, the functionality is maintained.
 
 In Studio Pro [10.0](/releasenotes/studio-pro/10.0/) and above, enumerations are fully supported. The enumeration attribute type can be modeled. The enumeration items are stored in the exported AsyncAPI document, and when imported, a new enumeration document will be created with the name *<attributeName>Enum*. The **Caption** and **Image** fields are not transmitted to the importer of the AsyncAPI document. Captions and images can be provided manually and will not cause conflicts when an AsyncAPI document is re-imported.
 
-#### Using an Existing Business Event Service {#two-way-be-existing}
+### Using an Existing Business Event Service {#two-way-be-existing}
 
 To use an existing business service in Studio Pro 9.24 and above, do the following:
 
@@ -145,7 +143,7 @@ The business event service document is open in Studio Pro:
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/business-events/existing-business-event-service.png" class="no-border" >}}
 
-#### Publishing and Subscribing to Business Events
+### Publishing and Subscribing to Business Events
 
 After following the instructions in [Using an Existing Business Event Service](#two-way-be-create), you can publish or subscribe (or both, depending on the [service definitions](#add-be-definitions)) in the following ways:
 
@@ -154,13 +152,13 @@ After following the instructions in [Using an Existing Business Event Service](#
 
 To publish a business event service, you need to use it in a microflow.
 
-### Automatically Created Event Handler Microflow and Entity {#two-way-be-handler}
+## Automatically Created Event Handler Microflow and Entity {#two-way-be-handler}
 
 When you click **Add** to add the events from the document into your service, Studio Pro will automatically create a persistable consumed entity within your domain model and an **Event Handler** microflow (**Handle_BE**) to manage the flow of the event after delivery. The **Event Handler** microflow is created in the same directory as your service.
 
 Currently, Mendix does not support multiple subscribers to the same business event within the same app.
 
-### Modeling with Business Events (All Supported Studio Pro Versions) {#be-modelling}
+## Modeling with Business Events (All Supported Studio Pro Versions) {#be-modelling}
 
 Once you have created a service in [Studio Pro 9.24 and above](#two-way-be), you can start modeling with them in your app.
 
@@ -175,7 +173,7 @@ The text with the blue background above the entity tells you it is a specialized
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/business-events/specialized-entity.png" class="no-border" >}}
 
-#### Using the Publish Business Event Activity
+### Using the Publish Business Event Activity
 
 After defining your business events and adding them to a published service, you can publish the events in your microflows whenever a noticeable event occurs.
 
@@ -197,7 +195,7 @@ Do this using the **Publish business event** activity:
 The **Publish Business Event** activity will commit all event objects at the start of the publishing process as an **Outbox** entity. This is an implementation detail. In case something goes wrong during the publishing process, a retry mechanism will be triggered for up to 48 hours.  If the publishing microflow fails, the entity in the **Outbox** will be rolled back as well. See the [Business Event Entities](#be-entities) section for more information on the **Outbox** entity.
 {{% /alert %}}
 
-#### Business Event Entities {#be-entities}
+### Business Event Entities {#be-entities}
 
 The **PublishedBusinessEvent** and **ConsumedBusinessEvent** entities are necessary to include in your domain model to publish business events. The **DeadLetterQueue** and **Outbox** are part of the Mendix Business Events service.
 
@@ -208,7 +206,7 @@ The **PublishedBusinessEvent** and **ConsumedBusinessEvent** entities are necess
 * **DeadLetterQueue** - This persistable entity within the domain model of the Business Events service is used for generating a historical record of events that are generated for business event activities that were not successful or had errors when received by the consumer and can be referred to for troubleshooting. You can query the DeadLetterQueue entity to determine which received events could not be processed.
 * **Outbox** - This entity is used to store the event prior to being sent.  This entity is connected to the microflow where a business event is triggered.  If the microflow fails, the entity will be removed as part of the same transaction. If the event broker is down at runtime, business events will accumulate in the **Outbox**. They will be retried at increasing intervals for 48 hours and will fail after that time. Once an event is successfully delivered, it gets deleted from the **Outbox**.
 
-#### Dead Letter Queue for Failed Messages {#dead-letter-queue}
+### Dead Letter Queue for Failed Messages {#dead-letter-queue}
 
 Every time a business event is received, it is transformed to match the entity created as part of the subscription. When the entity within the business event has changed based on the imported AsyncAPI document, it can render the entity unable to be processed. In such a scenario, the business event will fail into a **Dead Letter Queue**, which contains the representation of the entity within the data column.
 
