@@ -50,7 +50,7 @@ You can filter out specific traces using the `mendix.tracing.filter` system prop
 
 ### Testing
 
-You can test the tracing you using [Jaeger](https://www.jaegertracing.io/). For example, you can use the all-in-one binary or Docker image. Jaeger will listen to endpoint `http://localhost:4318/v1/traces` by default.
+You can test the tracing using [Jaeger](https://www.jaegertracing.io/). For example, you can use the all-in-one binary or Docker image. Jaeger will listen to endpoint `http://localhost:4318/v1/traces` by default.
 
 Alternatively, you can set up the [OpenTelemetry collector](https://opentelemetry.io/docs/collector/), which will also listen to the default endpoint and can be configured to send to backends which support OpenTelemetry. Check with your APM vendor to confirm that OpenTelemetry is supported. The free online collector configuration tool [OTelBin](https://github.com/dash0hq/otelbin) can help with collector configuration.
 
