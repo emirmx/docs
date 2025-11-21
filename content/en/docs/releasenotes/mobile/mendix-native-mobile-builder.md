@@ -27,6 +27,14 @@ To fix this issue, do the following:
 4. Remove **config.json**.
 5. Reopen the Mendix Native Mobile Builder.
 
+## Release 1.0.143 {#10143}
+
+**Release date: November 21, 2025**
+
+## Fixes
+
+- We fixed an issue where the native build failed with the error "@notifee/react-native is not a known dependency."
+
 ## Release 1.0.142 {#10142}
 
 **Release date: November 19, 2025**
