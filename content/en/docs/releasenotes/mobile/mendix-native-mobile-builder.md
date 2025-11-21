@@ -33,7 +33,7 @@ To fix this issue, do the following:
 
 ## Fixes
 
-- We fixed an issue where the native build failed with the error "@notifee/react-native is not a known dependency."
+- We fixed an issue where native builds failed with the error "`@notifee/react-native` is not a known dependency."
 
 ## Release 1.0.142 {#10142}
 
@@ -49,7 +49,7 @@ To fix this issue, do the following:
 
 ### Fixes
 
-* We updated react-native-firebase dependencies.
+* We updated `react-native-firebase` dependencies.
 
 ## Release 1.0.138 {#10138}
 
