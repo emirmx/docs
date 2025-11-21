@@ -34,7 +34,7 @@ The URL can have the following form:
 * `https://svn.home.mendix.com/<your AppID>/` if it is an SVN-enabled app 
 
 {{% alert color="warning" %}}
-The endpoint `https://teamserver.sprintr.com/<your AppID>/` is deprecated.
+The `https://teamserver.sprintr.com/<your AppID>/` endpoint is deprecated.
 {{% /alert %}}
 
 {{% alert color="info" %}}
