@@ -147,7 +147,7 @@ To publish a business event service, you need to use it in a microflow.
 
 ## Automatically Created Event Handler Microflow and Entity {#two-way-be-handler}
 
-When you click **Add** to add the events from the document into your service, Studio Pro will automatically create a persistable consumed entity within your domain model and an **Event Handler** microflow (**Handle_BE**) to manage the flow of the event after delivery. The **Event Handler** microflow is created in the same directory as your service.
+When you click **Add** to add the events from the document into your service, Studio Pro will automatically create a persistable consumed entity within your domain model and an [Event Handler](/refguide/event-handlers/) microflow (**Handle_BE**) to manage the flow of the event after delivery. The **Event Handler** microflow is created in the same directory as your service.
 
 Currently, Mendix does not support multiple subscribers to the same business event within the same app.
 
@@ -180,12 +180,12 @@ Do this using the **Publish business event** activity:
 3. In the **Toolbox**, search for the **Publish business event** action, drag it, and place it in your microflow.
 4. Double-click **Publish business event** to display the **Publish Business Event** property box.
 5. Enter the following information:
-    * **Subject** - This can be anything you consider useful, like a short description of what can be expected in the payload, similar to email subject. It will help subscribed apps decide if the event is useful to them.
-    * **Event Data** - Enter the entity representing the business event that you want to publish.
-    * **Task Queue/Output** - These values are not currently used for business events and should be left unchanged.
+    * **Subject** – This can be anything you consider useful, like a short description of what can be expected in the payload, similar to email subject. It will help subscribed apps decide if the event is useful to them.
+    * **Event Data** – Enter the entity representing the business event that you want to publish.
+    * **Task Queue/Output** – These values are not currently used for business events and should be left unchanged.
 
 {{% alert color="info" %}}
-The **Publish Business Event** activity will commit all event objects at the start of the publishing process as an **Outbox** entity. This is an implementation detail. In case something goes wrong during the publishing process, a retry mechanism will be triggered for up to 48 hours.  If the publishing microflow fails, the entity in the **Outbox** will be rolled back as well. See the [Business Event Entities](#be-entities) section for more information on the **Outbox** entity.
+The **Publish Business Event** activity will commit all event objects at the start of the publishing process as an **Outbox** entity. This is an implementation detail. If something goes wrong during the publishing process, a retry mechanism will be triggered for up to 48 hours.  If the publishing microflow fails, the entity in the **Outbox** will be rolled back as well. See the [Business Event Entities](#be-entities) section for more information on the **Outbox** entity.
 {{% /alert %}}
 
 ### Business Event Entities {#be-entities}
