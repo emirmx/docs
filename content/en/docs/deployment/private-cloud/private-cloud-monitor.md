@@ -10,6 +10,8 @@ weight: 50
 
 ## Introduction
 
+{{% alert color="info" %}}To monitor Mendix on Kubernetes environments, install Mendix Operator v2.1.0 or above..{{% /alert %}}
+
 Mendix on Kubernetes provides a [Prometheus](https://prometheus.io/) API that can be scraped by a local Prometheus server.
 This API can also be used by other monitoring solutions that support scraping the Prometheus API.
 
