@@ -304,9 +304,9 @@ For further explanation on topics and channels, see [Topics and Channels](#topic
 
 As operating your own Kafka cluster falls outside of the scope of the Mendix Cloud environment, the following `DevOps` tasks should be taken into consideration (this list is not extensive):
 
-* Client user name and password provision on Kafka - The creation of usernames and password on the Kafka cluster will need to be managed by the customer.
-* Topic creation on Kafka - Unless the Kafka cluster is configured with `auto.create.topics.enable` set to true (default setting in Apache Kafka), topics will need to be created by the customer. See [Topics and Channels](#topics-channels).
-* Access Control - Unless the Kafka cluster is configured with `allow.everyone.if.no.acl.found` is set to true (default setting in Apache Kafka), the ACLs need to be maintained by the customer.
+* Client user name and password provision on Kafka – The creation of usernames and password on the Kafka cluster will need to be managed by the customer.
+* Topic creation on Kafka – Unless the Kafka cluster is configured with `auto.create.topics.enable` set to true (default setting in Apache Kafka), topics will need to be created by the customer. See [Topics and Channels](#topics-channels) for more details.
+* Access Control – Unless the Kafka cluster is configured with `allow.everyone.if.no.acl.found` is set to true (default setting in Apache Kafka), the ACLs need to be maintained by the customer.
 
 #### Managing Topics on Own Kafka Cluster
 
@@ -330,7 +330,7 @@ You can configure the app running in Studio Pro to use the Postgres database cre
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/business-events/postgres.png" class="no-border" >}}
 
-Here is an example of a Postgres service that you can add to your `docker-compose.yml` file.
+Below is an example of a Postgres service that you can add to your `docker-compose.yml` file.
 
 ``` yml
   postgres:
