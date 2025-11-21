@@ -65,7 +65,7 @@ The technical purpose of the GenAI Commons module is to define a common domain m
 
 The domain model in Mendix is a data model that describes the information in your application domain in an abstract way. For more general information, see the [Data in the Domain Model](/refguide/domain-model/) documentation. To learn about where the entities from the domain model are used and relevant during implementation, see the [Microflows](#microflows) section below.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genaicommons/GenAICommons_domain_model.png" alt="" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genaicommons/GenAICommons_domain_model.png" >}}
 
 #### `DeployedModel` {#deployed-model}
 
@@ -196,12 +196,11 @@ A knowledge base span is created for each knowledge base retrieval tool call req
 | `MaxNumberOfResults` | The maximum number of results that was specified during the retrieval. |
 | `KBDisplayName` | The display name of the deployed knowledge base that was specified during the retrieval. |
 
-
 `KnowledgebaseSpan` was introduced in version 5.3.0.
 
 #### `MCPSpan` {#mcp-span}
 
-An MCP span is created for each tool invokation over the Model Context Protocol via the [MCP Client module](/appstore/modules/genai/mcp-modules/mcp-client/). The tool call is processed on the MCP server, usually outside of this application, and the result is sent back to the model. In addition to the [ToolSpan's](#tool-span) attributes, it also contains the following:
+An MCP span is created for each tool invocation over the Model Context Protocol via the [MCP Client module](/appstore/modules/genai/mcp-modules/mcp-client/). The tool call is processed on the MCP server, usually outside of this application, and the result is sent back to the model. In addition to the [ToolSpan's](#tool-span) attributes, it also contains the following:
 
 | Attribute | Description |
 | --- | --- |
@@ -265,7 +264,7 @@ A tool in the tool collection. This is sent along with the request to expose a l
 | `Description` | An optional description of the tool, used by the model in addition to the name attribute to choose when and how to call the tool. | 
 | `ToolType` | The type of the tool. Refer to the documentation supplied by your AI provider for information about the supported types. |
 | `Microflow` | The name (string) of the microflow that this tool represents. |
-| `MCPServerName` | The name of the MCP server if the tool added is an MCP tool. |
+| `MCPServerName` | The name of the MCP server if the MCP is added. |
 
 #### `Function` {#function}
 
