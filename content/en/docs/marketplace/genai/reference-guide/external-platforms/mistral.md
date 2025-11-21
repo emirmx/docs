@@ -236,7 +236,6 @@ Mistral supports the following [tool choice types](/appstore/modules/genai/genai
 | any                    | any     |
 | none                   | none    |
 
-
 ## GenAI Showcase Application {#showcase-application}
 
 For more inspiration or guidance on how to use those microflows in your logic, Mendix recommends downloading the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of example use cases.
@@ -257,4 +256,4 @@ If you encounter an error caused by conflicting Java libraries, such as `java.la
 
 ## Read More {#read-more}
 
-* [Mistral Cookbooks](https://docs.mistral.ai/cookbooks)
+* [Mistral AI Cookbooks](https://docs.mistral.ai/cookbooks)
