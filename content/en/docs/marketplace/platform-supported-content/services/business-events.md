@@ -194,10 +194,10 @@ The **PublishedBusinessEvent** and **ConsumedBusinessEvent** entities are necess
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/business-events/four-entities-in-domain-model.png" class="no-border" >}}
 
-* **PublishedBusinessEvent** - This non-persistable entity has the fields settings that every published event will include. Every published business event will inherit from this entity. The three fields can be set from the Java Action. This is used to define what your published business events look like.
-* **ConsumedBusinessEvent** - This entity has the fields that every consumed event will include. Every consumed business event will inherit from this entity. These fields will be set from the service, as will any additional fields that match with the payload of the event. This defines what you want to receive from the business events you subscribe to.
-* **DeadLetterQueue** - This persistable entity within the domain model of the Business Events service is used for generating a historical record of events that are generated for business event activities that were not successful or had errors when received by the consumer and can be referred to for troubleshooting. You can query the DeadLetterQueue entity to determine which received events could not be processed.
-* **Outbox** - This entity is used to store the event prior to being sent.  This entity is connected to the microflow where a business event is triggered.  If the microflow fails, the entity will be removed as part of the same transaction. If the event broker is down at runtime, business events will accumulate in the **Outbox**. They will be retried at increasing intervals for 48 hours and will fail after that time. Once an event is successfully delivered, it gets deleted from the **Outbox**.
+* **PublishedBusinessEvent** – This non-persistable entity has the fields settings that every published event will include. Every published business event will inherit from this entity. The three fields can be set from the Java Action. This is used to define what your published business events look like.
+* **ConsumedBusinessEvent** – This entity has the fields that every consumed event will include. Every consumed business event will inherit from this entity. These fields will be set from the service, as will any additional fields that match with the payload of the event. This defines what you want to receive from the business events you subscribe to.
+* **DeadLetterQueue** – This persistable entity within the domain model of the Business Events service is used for generating a historical record of events that are generated for business event activities that were not successful or had errors when received by the consumer and can be referred to for troubleshooting. You can query the DeadLetterQueue entity to determine which received events could not be processed.
+* **Outbox** – This entity is used to store the event prior to being sent.  This entity is connected to the microflow where a business event is triggered.  If the microflow fails, the entity will be removed as part of the same transaction. If the event broker is down at runtime, business events will accumulate in the **Outbox**. They will be retried at increasing intervals for 48 hours and will fail after that time. Once an event is successfully delivered, it gets deleted from the **Outbox**.
 
 ### Dead Letter Queue for Failed Messages {#dead-letter-queue}
 
@@ -218,7 +218,7 @@ Within Mendix Cloud, a Mendix Event Broker is available for easy application dep
 
 ### Topics and Channels {#topics-channels}
 
-Events are placed in channels, sometimes called topics. Apps subscribed to a channel will receive events published to this channel.
+Events are placed in channels (also known as topics). Apps subscribed to a channel will receive events published to this channel.
 
 Events published by Free Apps are published to one shared company channel on a multitenant free Event Broker. Events published by apps running on licensed nodes are published to their own channels on the company Event Broker. These channels, implemented as topics on Kafka, are automatically created upon deployment of the app publishing the events.
 
@@ -241,7 +241,7 @@ Business Events offers four different deployment models:
 * Deploying locally with the [Local Setup Tool](https://github.com/mendix/event-broker-tools)
 * Free apps using a free multitenant event broker
 * Production apps using the [Mendix Event Broker](#mendix-event-broker) running in Mendix Cloud
-* Apps running their own Kafka cluster (bring your own Kafka)
+* Apps running their own Kafka cluster (Bring Your Own Kafka)
 
 ### Local Deployment
 
@@ -293,8 +293,8 @@ All the constants are part of the Mendix Business Events service.
 * `BusinessEvents.ServerUrl` – Configure your Kafka bootstrap servers here as `host1:port1,host2:port2,...`. The setting is used to connect the app.
 * `BusinessEvents.Username` and `BusinessEvents.Password` – The service supports Kafka’s SASL/SCRAM SHA-512 authentication mechanism, and the Kafka cluster should be set up to authenticate clients with this. See [Configuring Kafka Brokers](https://kafka.apache.org/documentation/#security_sasl_scram_brokerconfig) in the Apache Kafka documentation for further instructions.
 * `BusinessEvents.EventBrokerSpace` – This setting helps you group events into Kafka [topics](#topics-channels). With this setting, each business event will be put in its own topic. Set the `EventBrokerSpace` value to your environment names (or Kubernetes namespaces) like `test` or `production`. Doing so ensures that when each business event that is defined in an app is deployed to a specific environment, it will have its own topic. For example, an `OrdersReceived` business event defined in an app when deployed to two different environments will have two topics. A topic is named in the form of `businessevents.<channel>.<EventBrokerSpace>`. A channel is written as a UUID and is used to group events.
-* `TruststoreLocation` and `TruststorePassword` - [OPTIONAL] The service supports adding a Truststore and password in order to allow for SSL verification of the server.
-* `ConsumerStartupDelaySeconds` - [OPTIONAL] Business Event consumers are started automatically as part of the after startup microflow. Delaying their startup is possible by setting this constant. The startup happens in a separate thread, which means the after startup microflow can finish even though the Business Event consumers are still waiting to be started. Only values above 1 will have any effect.
+* `TruststoreLocation` and `TruststorePassword` (optional) – The service supports adding a Truststore and password in order to allow for SSL verification of the server.
+* `ConsumerStartupDelaySeconds` (optional) – Business Event consumers are started automatically as part of the after startup microflow. Delaying their startup is possible by setting this constant. The startup happens in a separate thread, which means the after startup microflow can finish even though the Business Event consumers are still waiting to be started. Only values above 1 will have any effect.
 
 {{% alert color="warning" %}} Special characters are not allowed in the `BusinessEvents.EventBrokerSpace` constant. {{% /alert %}}
 
