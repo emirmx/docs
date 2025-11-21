@@ -19,7 +19,7 @@ The **Settings** page in the **Security** category in Control Center allows you 
 
 ### Password Policy
 
-The Mendix Platform enforces a 90-day password validity period for all platform passwords used to sign in to the Mendix Platform or Studio Pro. 
+Mendix enforces a 90-day password validity period for all platform passwords used to sign in to the Mendix Platform or Studio Pro. 
 If Mendix Admins [set up an SSO (BYOIDP)](/control-center/security/set-up-sso-byoidp/), the organization's IdP manages all sign-ins and passwords. In this case, the Mendix Platform's password validity policy no longer applies. 
 
 {{% alert color="info" %}}
