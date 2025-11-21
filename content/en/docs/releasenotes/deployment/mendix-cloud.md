@@ -16,6 +16,14 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
+### November 23, 2025
+
+#### New Features
+
+* It is now possible to deploy Mendix apps with Zero DownTime or without any service interruption in certain cases. User can do so by using the  “Deploy without downtime” option in the Cloud Portal deployment flow on UI. It is applicable for changes that do not rebuild or replace your app package 
+* To ensure consistency across customer environments and avoid unexpected deployment behaviour, we introduce Version Pinning for deployment components on Kubernetes. This can be done using promote option to move an application to a higher environment.
+
+  
 ### November 9, 2025
 
 #### New Features
