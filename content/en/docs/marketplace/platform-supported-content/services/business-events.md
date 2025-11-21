@@ -80,27 +80,24 @@ The business event service document is open in Studio Pro:
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/business-events/new-business-event-service.png" class="no-border" >}}
 
-In the next section, you will define the information included in your events, as well as what the service will implement.
-
 ### Adding Event Definitions {#add-be-definitions}
 
-To define what information is included in your events, as well as what the service will implement, click **Add** in the open service document:
+To define what information is included in your events and what the service will implement, click **Add** in the open service document:
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/business-events/add-event-definition.png" class="no-border" >}}
 
-1. Define what information is included in this event
+1. Define what information is included in this event.
 
-    In the **General** section, provide the **Event name** and **Description** to let others know what the service is about.
-
-    In the **Attributes** section, click **Add** to define attributes. Changes you make here later might lead to breaking changes if the entity the attribute belongs to is consumed, though related entities will be updated automatically.
+* In the **General** field, provide the **Event name** and **Description** to let others know what the service is about.
+* In the **Attributes** field, click **Add** to define attributes. 
+    * Changes you make here later could lead to breaking changes if the entity the attribute belongs to is consumed. Related entities will be updated automatically.
 
     {{< figure src="/attachments/appstore/platform-supported-content/services/business-events/wizard-step-1.png" class="no-border" >}}
 
-2. Decide what other apps can do and what service this will implement
+2. Decide what other apps can do and what service this will implement.
 
-    Under **Other apps can**, you can select how other apps can use the service. **This Business Events service implements** section defines whether the service will be responsible for publishing events, subscribing to events, or both.
-
-    Below is an explanation of the possibilities for what other apps can do and what the service implements:
+* In the **Other apps can** field, you can select how other apps can use the service. The **This Business Events service implements** field defines whether the service will be responsible for publishing events, subscribing to events, or both.
+* Below is an explanation of the possibilities for what other apps can do and what the service implements:
 
     | If you say that other apps can: | Then the service itself must implement: | The service could also implement: | The following are automatically created: |
     | ---------- | ---------- | ---------- | ---------- |
@@ -110,7 +107,7 @@ To define what information is included in your events, as well as what the servi
 
 3. Click **Done** to exit the wizard and view the defined service document.
 
-    **Export AsyncAPI Document** exports the YAML file of the business event service so other apps can [use your newly created service](#two-way-be-existing).
+* **Export AsyncAPI Document** exports the YAML file of the business event service so other apps can [use your newly created service](#two-way-be-existing).
 
 ### Attribute Types {#attribute-types}
 
@@ -139,16 +136,12 @@ To use an existing business service in Studio Pro 9.24 and above, do the followi
 4. Enter a **Document name**, or use the default name, for the [business event service document](/refguide/business-event-services/).
 5. Click **OK**.
 
-The business event service document is open in Studio Pro:
-
-{{< figure src="/attachments/appstore/platform-supported-content/services/business-events/existing-business-event-service.png" class="no-border" >}}
-
 ### Publishing and Subscribing to Business Events
 
-After following the instructions in [Using an Existing Business Event Service](#two-way-be-create), you can publish or subscribe (or both, depending on the [service definitions](#add-be-definitions)) in the following ways:
+After following the instructions in [Using an Existing Business Event Service](#two-way-be-existing), you can publish or subscribe (or both, depending on the [service definitions](#add-be-definitions)) in the following ways:
 
 * Open the business service document and click **Add**
-* Drag and drop the business event from the [Integration Pane](/refguide/integration-pane/) to your domain model
+* Drag and drop the business event from the [Integration pane](/refguide/integration-pane/) to your domain model
 
 To publish a business event service, you need to use it in a microflow.
 
