@@ -48,7 +48,7 @@ The Conversational UI module provides the following functionalities:
 
 ### Limitations {#limitations}
 
-* This module is intended to simplify the process of building chat interactions between a human user and an AI model. It is not designed to support conversations between two human users.
+This module is intended to simplify the process of building chat interactions between a human user and an AI model. It is not designed to support conversations between two human users.
 
 ### Prerequisites {#prerequisites}
 
@@ -294,10 +294,10 @@ Traceability allows you to track the complete lifecycle of GenAI interactions, i
 
 The traceability data is stored in your application's database and can be used for:
 
-* **Monitoring and Analytics**: Understanding how users interact with your GenAI features
-* **Debugging**: Investigating issues with model responses or tool calls
-* **Compliance**: Maintaining audit trails for GenAI usage in regulated environments
-* **Performance Analysis**: Optimizing response times and token usage
+* Monitoring and Analytics: Understanding how users interact with your GenAI features
+* Debugging: Investigating issues with model responses or tool calls
+* Compliance: Maintaining audit trails for GenAI usage in regulated environments
+* Performance Analysis: Optimizing response times and token usage
 
 {{% alert color="warning" %}}
 Trace data may contain sensitive and personally identifiable information. You should determine, on a case-by-case basis, whether storing this data is compliant with your data governance and privacy requirements.
@@ -305,20 +305,20 @@ Trace data may contain sensitive and personally identifiable information. You sh
 
 #### Configuration {#traceability-configuration}
 
-Traceability is controlled by the `StoreTraces` constant in the GenAI Commons module. When set to *true*, detailed trace information will be stored for all GenAI operations. For more information about configuring traceability, see the [GenAI Commons traceability documentation](/appstore/modules/genai/genai-for-mx/commons/#traceability).
+Traceability is controlled by the `StoreTraces` constant in the GenAI Commons module. When set to *true*, detailed trace information will be stored for all GenAI operations. For more information about configuring traceability, see the [Traceability](/appstore/modules/genai/genai-for-mx/commons/#traceability) section of *GenAI Commons*.
 
 To enable users to view traceability data, grant the `TraceMonitoring` module role to the applicable user roles.
 
-To manage trace data retention, you can enable the daily scheduled event `ScE_Trace_Cleanup` in the Mendix Cloud Portal. Use the `Trace_CleanUpAfterDays` constant in GenAI Commons to control how long trace data should be persisted. For more information, see the [GenAI Commons traceability documentation](/appstore/modules/genai/genai-for-mx/commons/#traceability). 
+To manage trace data retention, you can enable the daily scheduled event `ScE_Trace_Cleanup` in the [Mendix Cloud GenAI Portal](https://genai.home.mendix.com). Use the `Trace_CleanUpAfterDays` constant in GenAI Commons to control how long trace data should be persisted. 
 
-#### Traceability {#traceability-pages}
+#### Traceability Page {#traceability-pages}
 
-The ConversationalUI module includes a dedicated page in the **USE_ME > Traceability** folder for viewing trace data: the page **Trace_Overview** provides a high-level view of all traces in the system, allowing administrators to browse and search through GenAI traces. It displays key information such as trace ID, agent information (if applicable) start time, duration. You can filter for specific traces and agents' invocations. The data can be visualized over time to identify patterns or anamolies. By double-clicking, users are navigated to the details page to learn more about a particular trace, including all associated spans, tool calls, and performance metrics.
+The ConversationalUI module includes a dedicated page in the **USE_ME > Traceability** folder for viewing trace data. the page **Trace_Overview** provides a high-level view of all traces in the system, allowing administrators to browse and search through GenAI traces. It displays key information such as trace ID, agent information (if applicable), start time, duration. You can filter for specific traces and agents' invocations. The data can be visualized over time to identify patterns or anomalies. By double-clicking, users are navigated to the details page to learn more about a particular trace, including all associated spans, tool calls, and performance metrics.
 
 These pages are designed for administrators and developers who need to monitor GenAI usage and investigate specific interactions. They provide the primary interface for accessing traceability data without requiring custom development.
 
 {{% alert color="info" %}}
-If you have been using the GenAI Commons module in version 5.3.0 and set the StoreTraces constant to true, traces that contain errors might not be shown in the traceability UI. To migrate existing data, you need to create Usage objects for those [Traces](/appstore/modules/genai/genai-for-mx/commons/#trace), setting the tokens to 0 and associating them to the trace.
+If you are using the GenAI Commons module version 5.3.0 and set the `StoreTraces` constant to true, traces that contain errors might not be shown in the traceability UI. To migrate existing data, you need to create Usage objects for those [Traces](/appstore/modules/genai/genai-for-mx/commons/#trace), setting the tokens to 0 and associating them to the trace.
 {{% /alert %}}
 
 ## Technical Reference {#technical-reference}
