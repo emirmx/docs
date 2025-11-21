@@ -264,7 +264,7 @@ A tool in the tool collection. This is sent along with the request to expose a l
 | `Description` | An optional description of the tool, used by the model in addition to the name attribute to choose when and how to call the tool. | 
 | `ToolType` | The type of the tool. Refer to the documentation supplied by your AI provider for information about the supported types. |
 | `Microflow` | The name (string) of the microflow that this tool represents. |
-| `MCPServerName` | The name of the MCP server if the MCP is added. |
+| `MCPServerName` | The name of the MCP server (only appliable for MCP Tools). |
 
 #### `Function` {#function}
 
