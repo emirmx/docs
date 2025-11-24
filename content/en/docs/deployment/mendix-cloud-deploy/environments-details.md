@@ -92,7 +92,7 @@ In the **Application Status** section of the **General** tab, you can find the f
 * **Project ID** – the unique identifier of the app
 * **Environment ID** – the unique identifier of the environment
 * **Running Since** – the date the app was started, if it is running
-* **Display Name** – the type of environment (Acceptance, Production, Test, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments)); for more information, see the [Naming of Environments](#naming) section below
+* **Display Name** – the type of environment (Acceptance, Production, Test, or the name of a [flexible licensed node](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments)); for more information, see the [Naming of Environments](#naming) section below
 * **Subdomain Suffix** – the application's subdomain name
 * **URL** – the URL of the app
 * **Custom Domains** – any [custom domains](/developerportal/deploy/custom-domains/) of the app; to add a new domain, click **Add Custom Domain**
@@ -102,7 +102,11 @@ In the **Application Status** section of the **General** tab, you can find the f
 * **Region** – the data center region where the app is hosted (for the full list of Mendix Cloud regions, see [Outgoing IP](/developerportal/deploy/mendix-ip-addresses/#outgoing))
 * **Data Backup Secondary Location** – the region where the backup is stored (for more information, see [Data Location](/developerportal/operate/backups/#data-location) in the *Backups* documentation)
 
-#### Naming of Environments – Flexible Environments in Mendix Cloud {#naming}
+#### Naming of Environments - Flexible Applications in Mendix Cloud {#naming}
+
+{{% alert color="info" %}}
+Renaming an environment's subdomain suffix or display names is only applicable to flexible applications.
+{{% /alert %}}
 
 If you are the app's [Technical Contact](/developerportal/general/app-roles/#technical-contact), you can rename the environment’s **Subdomain Suffix** or **Display Name** by clicking **Change** next to either of the options.
 

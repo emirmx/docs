@@ -49,7 +49,7 @@ In a node in Mendix Cloud, you may have one or more of these environments.
 
 For a Free App, your app has a single environment where you can test your app. However, it comes with restrictions on how long it will run. In addition, you cannot scale the app, and the operational capabilities are limited. For details on the restrictions of a Free App, see [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/#free-app).
 
-In a licensed node, you have everything you need to stage and deploy your app. You can have several different environments to support development; for example, you can have test, acceptance, and production environments. With [Flexible Environments](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments) in Mendix Cloud, you can even specify the number and names of your environments. You can scale licensed environments by providing more memory or multiple instances, and you can configure and monitor them using the tools in the Mendix Portal.
+In a licensed node, you have everything you need to stage and deploy your app. You can have several different environments to support development; for example, you can have test, acceptance, and production environments. With [Flexible Licensed Nodes](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments) in Mendix Cloud, you can even specify the number and names of your environments. You can scale licensed environments by providing more memory or multiple instances, and you can configure and monitor them using the tools in the Mendix Portal.
 
 ## Prerequisites
 

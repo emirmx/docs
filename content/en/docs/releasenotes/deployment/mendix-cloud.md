@@ -46,7 +46,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### New Features
 
-* We have added a new feature in the **Environment Details** page for flexible environments. Users can now use non-Latin characters in the display name of their environment. The display name of an environment can be changed independent of the environment's subdomain.
+* We have added a new feature in the **Environment Details** page for flexible licensed nodes. Users can now use non-Latin characters in the display name of their environment. The display name of an environment can be changed independent of the environment's subdomain.
 
 * We have added support for email internationalization. The emails sent by the Developer Portal will now be translated to the language set in user's profile.
 
@@ -1409,11 +1409,11 @@ If you run services that connect to a `*.mendixcloud.com` endpoint AND use a sta
 
 #### Improvements
 
-* We have introduced *Flexible Environments* for Mendix Cloud v4. This means that you can have more than three environments for your licensed node. More information is available [here](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments). If you need more than three environments, contact [Mendix Support](/support/). Features of Flexible Environments include the following:
+* We have introduced *Flexible Licensed Nodes* for Mendix Cloud v4. This means that you can have more than three environments for your licensed node. More information is available [here](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments). If you need more than three environments, contact [Mendix Support](/support/). Features of Flexible Licensed Nodes include the following:
     * You can search for the environment for which you want to see details
     * The Technical Contact can rename the environments
     * The Technical Contact can re-order the environments
-* As part of support for Flexible Environments, we have made the following changes:
+* As part of support for Flexible Licensed Nodes, we have made the following changes:
     * When deploying your application via the Developer Portal, you can choose the destination environment
     * When viewing metrics, logs, backups, etc., you will have to choose the environment using a drop-down rather than clicking directly on the environment you want
 

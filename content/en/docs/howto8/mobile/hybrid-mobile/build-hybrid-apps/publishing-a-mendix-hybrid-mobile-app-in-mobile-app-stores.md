@@ -73,7 +73,7 @@ To start the packaging process, follow these steps:
 
     * For Free Apps, the only option is **Sandbox**
     * For apps running on a licensed cloud node, you can choose from **Test**, **Acceptance**, and **Production** (depending on what is available on your cloud node)
-    * For apps using [Flexible Environments](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments) you will be able to select the environment from a drop-down list of environments.
+    * For apps using [Flexible Licensed Nodes](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments) you will be able to select the environment from a drop-down list of environments.
 
 10. Leave the default choice of how to build the package **Build Mobile App Store packages for me by sending the build configuration to Adobe PhoneGap Build** selected. 
     You can use the alternate option to manually download a PhoneGap Build package, which you can then inspect, modify, and upload manually to Adobe PhoneGap Build (for more information, see [Customizing Local Build Packages](/howto8/mobile/customizing-phonegap-build-packages/)). This is unnecessary in most scenarios.
