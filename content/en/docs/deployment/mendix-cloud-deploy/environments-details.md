@@ -105,7 +105,7 @@ In the **Application Status** section of the **General** tab, you can find the f
 #### Naming of Environments - Flexible Applications in Mendix Cloud {#naming}
 
 {{% alert color="info" %}}
-Renaming an environment's subdomain suffix or display names is only applicable to flexible applications.
+Renaming an environment's subdomain suffix or display name is only applicable to flexible applications.
 {{% /alert %}}
 
 If you are the app's [Technical Contact](/developerportal/general/app-roles/#technical-contact), you can rename the environment’s **Subdomain Suffix** or **Display Name** by clicking **Change** next to either of the options.
