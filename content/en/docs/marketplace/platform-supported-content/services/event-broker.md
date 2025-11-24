@@ -321,9 +321,9 @@ The Mendix Event Broker allows users to upload an AsyncAPI document for these ex
 
 Technical Contacts with a license to the Mendix Event Broker can manage this feature from the **Uploaded Events** tab on the [Event Broker Manager](https://broker.mendix.com/) page.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_get_started.png" >}}
+To begin, click **Get Started** or **Upload AsyncAPI Document**.
 
-To begin, click **Get Started** or **Upload AsyncAPI Document**, which involves uploading a file, verifying event information, and selecting spaces.
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_get_started.png" >}}
 
 #### Upload an AsyncAPI File
 
@@ -331,11 +331,9 @@ Upload an AsyncAPI contract based on the [AsyncAPI format](#asyncapi-format). If
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_create_1.png" >}}
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_create_1_errors.png" >}}
-
 #### Verify File Information
 
-The details of the uploaded file are extracted in the Verify section. This allows you to confirm that all information is accurate and meets the required expectations.
+The details of the uploaded file are extracted in the **Verify** section. This allows you to confirm that all information is accurate and meets the required expectations.
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_create_2.png" >}}
 
@@ -391,11 +389,11 @@ To use an uploaded event in a Bridge, you must configure a [Bridge with AWS SQS]
 
 To use an uploaded event in an application, download the AsyncAPI contract for Studio Pro and import it as a new business event in your Mendix application. The download button is available on the [Service Details](#service-details) page.
 
-After downloading the file, open your Studio Pro app and import the file as a new business event using the **Use an existing business event service** option.
+Use the **Use an existing business event service** option to import the file as a new business event.
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_import_file.png" >}}
 
-Click **OK**, and the new business event is created and ready to be used with the same features as any other imported event.
+Click **OK**. This creates the new business event that is ready to be used with the same features as any other imported event.
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_ede_imported_file.png" >}}
 
@@ -415,13 +413,13 @@ Externally defined events are provided to the Event Broker via an AsyncAPI docum
 
 The mandatory information required in the file includes:
 
-* **Title** - the service name.
-* **Message** - represents the business events. 
-* **Payload** - the attributes that form the message.
+* **Title** – the service name
+* **Message** – represents the business events
+* **Payload** – the attributes that form the message
 
 {{% alert color="info" %}}
 
-Message names must be unique. Duplicate events cannot be uploaded even if it is deployed anywhere in the Mendix space or uploaded before.
+Message names must be unique. Duplicate events cannot be uploaded if it is deployed anywhere in the Mendix space or uploaded before.
 
 {{% /alert %}}
 
