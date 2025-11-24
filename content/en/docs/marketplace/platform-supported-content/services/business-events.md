@@ -92,7 +92,7 @@ To define what information is included in your events and what the service will 
 * In the **Attributes** field, click **Add** to define attributes. 
     * Changes you make here later could lead to breaking changes if the entity the attribute belongs to is consumed. Related entities will be updated automatically.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/services/business-events/wizard-step-1.png" class="no-border" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/services/business-events/wizard-step-1.png" class="no-border" width="400" >}}
 
 2. Decide what other apps can do and what service this will implement.
 
@@ -164,7 +164,7 @@ The base values for your entity are taken from the **PublishedBusinessEvent**, a
 
 The text with the blue background above the entity tells you it is a specialized entity based on the **PublishedBusinessEvent** entity in the **BusinessEvents** service:
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/business-events/specialized-entity.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/business-events/specialized-entity.png" class="no-border" width="200" >}}
 
 ### Using the Publish Business Event Activity
 
