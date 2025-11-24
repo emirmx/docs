@@ -39,11 +39,11 @@ Users within the company's email domain that have a Mendix login can participate
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_internal_user.png" >}}
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_internal_user_2.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_internal_user_2.png" width="300" >}}
 
 Users that are not part of the customer organization (not within the email domain of the customer) can be invited with the same levels of access. Such users still require a standard Mendix login.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_external_user.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_external_user.png" width="300" >}}
 
 #### Spaces and Environments{#spaces}
 
@@ -51,7 +51,7 @@ Spaces define which applications can exchange events with each other. When Busin
 
 Spaces are created and assigned based on the app environment name and allow isolation of your business events. The default behavior can be changed if needed. Contact [Mendix Support](https://support.mendix.com/) if you would like to change the space of a specific app environment.
 
-See [Enabling the Mendix Event Broker Service](#enable-mx-event-broker), above, for more information.
+See the [Enabling the Mendix Event Broker Service](#enable-mx-event-broker) section above for more information.
 
 #### Topics and Channels {#topics-channels}
 
@@ -63,10 +63,12 @@ Events published by Free Apps are published to one shared company channel on a m
 
 The Mendix Event Broker allows access control to be applied down to the event level. Each application can be granted or denied access to events using the [Event Broker Manager](https://broker.mendix.com/).
 
+##### Types of Access
+
 The overview page contains a list of applications by environment within the organization's event landscape. The table contains columns that provide cases with exceptions:
 
-* **Implemented but no access** - an application has implemented an event that it is not allowed to access, guaranteeing a failure to subscribe to and/or publish the event
-* **Has access but not implemented** - an application has been provided with more access than is required and you could make it more secure.
+* **Implemented but no access** – an application has implemented an event that it is not allowed to access, guaranteeing a failure to subscribe to and/or publish the event
+* **Has access but not implemented** – an application has been provided with more access than is required and you could make it more secure.
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_access_control_overview.png" >}}
 
@@ -76,16 +78,18 @@ Selecting the specific application provides an overview of the application's imp
 
 From this view, access to the individual events can be configured. Changes take effect immediately when **Apply Changes** is clicked.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_access_control_overview_3.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_access_control_overview_3.png" width="300" >}}
 
-From the main overview page, an administrator can assign the default behavior of applications when they deploy to an environment for the first time by changing the configuration in the **Manage Default Access** dialog box.
+##### Default Behavior
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_access_control_defaults.png" >}}
+From the main overview page, an administrator can assign the default application behavior when they deploy to an environment for the first time by changing the configuration in the **Manage Default Access** dialog box.
+
+{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/event_broker_access_control_defaults.png" width="300" >}}
 
 From here, you can manage the default access settings:
 
-* Allowing **An app can access events defined in it** – allows newly-deployed applications to always have access to any events defined within that application (see [Creating a New Business Event Service](/appstore/services/business-events/#two-way-be-create) for more information)
-* Administrators can check two options under **For other events, in all environments, the app can:**
+* **An app can access events defined in it** – enabling this setting allows newly-deployed applications to always have access to any events defined within that application (see [Creating a New Business Event Service](/appstore/services/business-events/#two-way-be-create) for more information)
+* **For other events, in all environments, the app can:**
 
     * **Publish events it implements**
     * **Subscribe to events it implements**
