@@ -76,7 +76,7 @@ It is also possible to force the client to use a specific profile by adding a `p
 
 A profile can be added with the **Add navigation profile** button. Only one profile per type is allowed. While adding the profile, it is possible to copy the settings from an existing profile.
 
-{{< figure src="/attachments/refguide/modeling/app-explorer/app/navigation/add-navigation-profile.png" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/app-explorer/app/navigation/add-navigation-profile.png" class="no-border" width="600" >}}
 
 ### General
 
@@ -103,6 +103,10 @@ The default home page is visible to all unauthenticated users.
 By using role-based home pages, you can show different home pages for different users. If a user logs in, the first role-based home page of which the user role matches the user role of the user is displayed. If no match is found, the default home page is used.
 
 For each role-based home page, you can specify the user role it applies to and the target (page or microflow) that will be opened.
+
+#### Fallback Page
+
+The fallback page is a page or microflow that can be used to customize the application's behavior when trying to access a [microflow](/refguide/microflow/#url) or [page](/refguide/page-properties/#url) URL that does not exist. For more information, see [Setting a Fallback Page](/refguide/setting-up-the-navigation-structure/#fallback) in *Setting Up Navigation*.
 
 ### Authentication {#authentication}
 
@@ -132,7 +136,9 @@ This deletes the profile. If [Menus and Navigation](/refguide/menu-widgets/) are
 
 Only available on profiles supporting offline synchronization.
 
-This opens the **Customize offline synchronization** dialog box that is used for overriding offline synchronization settings for specific entities. For each entity the download setting is shown. A default is automatically determined by analyzing the model, but can be overridden in which case the setting will appear in boldface. For more details on the settings and when to use them, see the [Offline-First Reference Guide](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/synchronization/#customizable-synchronization).
+This opens the **Customize offline synchronization** dialog box that is used for overriding offline synchronization settings for specific entities. For each entity the download setting is shown. A default is automatically determined by analyzing the model, but can be overridden by the developer in which case the setting will appear in boldface. 
+
+For more details on the settings and when to use them, see the [Offline-First Reference Guide](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/synchronization/#customizable-synchronization).
 
 {{< figure src="/attachments/refguide/modeling/app-explorer/app/navigation/customize-offline-synchronization.png" class="no-border" >}}
 

@@ -10,7 +10,7 @@ aliases:
 
 ## Introduction
 
-When developing Mendix applications, changes to these applications are stored in a version control system. This system is called [Team Server](/developerportal/general/team-server/) and is part of the Mendix Platform. This means that the application's files are stored in the Mendix online environment. For more information, see the [Version Control Reference Guide](/refguide9/version-control/).
+When developing Mendix applications, changes to these applications are stored in a version control system. This system is called [Team Server](/developerportal/repository/team-server/) and is part of the Mendix Platform. This means that the application's files are stored in the Mendix online environment. For more information, see the [Version Control Reference Guide](/refguide9/version-control/).
 
 While using Team Server is the recommended for most Mendix developers, you may prefer to store your application's files in a system controlled by your own organization. For version control, Mendix uses the [Subversion](https://subversion.apache.org) system (also known as SVN) and [Git](/refguide9/on-premises-git/). This document describes how to work with Git version control system.
 
@@ -140,7 +140,7 @@ For the previous local disk method do the following:
 Once you have an unversioned app, you can upload it to your private team server. 
 
 {{% alert color="warning" %}}
-The repository has to be completely empty (including README.md and. gitignore files), or the upload will fail.
+The repository has to be completely empty (including README.md and .gitignore files), or the upload will fail.
 {{% /alert %}}
 
 To upload your app, do the following:
@@ -204,5 +204,5 @@ Note that your previous app still exists, **Studio Pro** will simply make an unv
 ## Read More
 
 * [Version Control Reference Guide](/refguide9/version-control/)
-* [Team Server](/developerportal/general/team-server/)
+* [Team Server](/developerportal/repository/team-server/)
 * [Upload to Version Control Server Reference Guide](/refguide9/upload-to-version-control-dialog/)

@@ -61,10 +61,11 @@ OTA updates are useful in the following app development cases:
 * Style changes
 * Static image, text, or other static asset changes
 * Layout changes
-* Nanoflow changes
+* Adding/Editing Nanoflow or Microflow
 * JavaScript action changes
 * Widgets added or removed
-* A new custom JavaScript-only widget or module added
+* You added a new custom JavaScript-only widget or module 
+* You added a page with no additional logic
 * Non-destructive model changes (for more information, see [Offline-First](/refguide9/offline-first/))
 
 ### When a Full Release Is Required

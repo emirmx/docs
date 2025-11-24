@@ -61,10 +61,11 @@ OTA updates are useful in the following app development cases:
 * Style changes
 * Static image, text, or other static asset changes
 * Layout changes
-* Nanoflow changes
+* Adding/Editing Nanoflow or Microflow
 * JavaScript action changes
 * Widgets added or removed
-* A new custom JavaScript-only widget or module added
+* You added a new custom JavaScript-only widget or module 
+* You added a page with no additional logic
 * Non-destructive model changes (for more information, see [Offline-First](/refguide/offline-first/))
 
 ### When a Full Release Is Required
@@ -78,6 +79,7 @@ If you have made any changes directly to your iOS or Android app, you will have 
 * The app has been renamed
 * The app's launcher icons have been changed
 * The splash screen has been changed
+* The native template was updated (NT patch updates also require a full release)
 
 ## Enabling and Building an App with Mendix OTA Updates Enabled {#build-with-ota-support}
 

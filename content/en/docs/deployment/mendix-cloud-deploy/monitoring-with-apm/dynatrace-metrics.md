@@ -33,6 +33,7 @@ To start sending your Mendix app's metrics to Dynatrace, you need to set some en
 1. Click **Details** on the environment you wish to monitor with Dynatrace. 
 1. Switch to the [**Runtime** tab](/developerportal/deploy/environments-details/#runtime-tab).
 1. Add the following **Custom Environment Variables**.
+
     | Variable | Required? | Description | Details |
     | --- | --- | --- | --- |
     | `DT_SAAS_URL` | Yes | The URL of Dynatrace environment | The format when using the Dynatrace SaaS environment is similar to `https://<your-environment-id>.live.dynatrace.com`. If you are using a Dynatrace managed environment, just provide the full URL of the Dynatrace domain, like `https://<your-dynatrace-domain>`. |
@@ -58,8 +59,9 @@ What Dynatrace calls "dimensions," other monitoring tools call "tags." The Mendi
 
 For metrics that are pushed to Dynatrace, Mendix attaches these default dimensions:
 
-* `app` – The environment ID of your Mendix environment
-* `instance_index` – Instance index that the metrics belong to
+* `app` - The environment ID of your Mendix environment
+* `pod_name` - The instance to which the metrics belong (available only in Kubernetes deployments)
+* `instance_index` - The instance index to which the metrics belong (available only in Cloud Foundry deployments)
 
 #### Extra Dimensions
 

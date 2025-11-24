@@ -69,11 +69,25 @@ The **App Explorer** shows an icon in front of items (such as documents, folders
 In the **App Explorer**, there is only room for one icon for each item. If an item is both modified and moved, it is shown as modified with a yellow icon.
 {{% /alert %}}
 
-For example, say that the microflow **ChangePassword** has been modified. Also a new folder called **Flows** was added and all microflows, including the modified microflow, were moved into this folder. The new folder gets a green icon, and the module containing those changes is depicted with a yellow icon. The microflows which were moved but had not been modified get a blue icon. The modified microflow **ChangePassword** gets a yellow icon. This helps you to quickly see where in the app the changes are.
+For example, the microflow **ChangePassword** has been modified. Also a new folder called **Flows** was added and all microflows, including the modified microflow, were moved into this folder. The new folder gets a green icon, and the module containing those changes is depicted with a yellow icon. The microflows which were moved but had not been modified get a blue icon. The modified microflow **ChangePassword** gets a yellow icon. This helps you to quickly see where in the app the changes are.
 
 In the **Changes** pane, you can find more detailed information. There is an entry for each change to an item. If a document is both modified and moved, there are two lines for that document. The pane also shows items that were deleted, something the app explorer cannot do. For more information, see [Changes Pane](/refguide/changes-pane/).
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/changes-pane.png" max-width=80% >}}
+
+If you also changed Java source code, added widgets, or made other changes that affect files other than the app file, you will see entry for each changed file. You can right-click the entry and click **Open containing folder** to open the folder with the file on disk. For files with the **Modified** status, you can use **Compare with original** that opens an external tool to show the differences.
+
+{{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/changes-pane-file-changes.png" >}}
+
+{{% alert color="info" %}}
+An external file comparison tool can be set in **Preferences** > **Version control** > **General** > **File comparison** > **Executable**. 
+
+A tool you can consider using is TortoiseGitMerge, shipped as part of [TortoiseGit](https://tortoisegit.org/download/). It is installed by default on this path: *C:\Program Files\TortoiseGit\bin\TortoiseGitMerge.exe*.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+Comparing files on disk with the original is currently not supported on macOS.
+{{% /alert %}}
 
 {{% alert color="info" %}}
 When you successfully commit your app, this becomes the new original and all the change information is removed from the **App Explorer** and the **Changes** pane.
@@ -115,9 +129,21 @@ Studio Pro also attaches some information automatically:
 * The list of changed documents, folders, and modules along with the type of the change (for example, **modify** or **add**)
 * The version of Studio Pro that was used to commit
 
-If you also changed Java source code, added widgets, or made other changes that affect files other than the app file, you will see a **Changes on disk** tab page that shows you what disk changes you are about to commit.
+If you also changed Java source code, added widgets, or made other changes that affect files other than the app file, you will see a **Changes on disk** tab that shows you what disk changes you are about to commit. **Open containing folder** opens the folder with the file on disk. For files with the **Modified** status, you can use **Compare with original** that opens an external tool to show the differences.
 
-Committing is only allowed if your working copy is up to date with the repository. If someone else committed a change since the last time you pulled, you will have to pull first. This is because the revision you create with the commit should incorporate both your changes and the changes by the other person. Updating will combine the latest changes in the repository with your changes. After reviewing the result and fixing any conflicts, you can commit again.
+{{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/commit-git-changes-on-disk.png" >}}
+
+{{% alert color="info" %}}
+An external file comparison tool can be set in **Preferences** > **Version control** > **General** > **File comparison** > **Executable**. 
+
+A tool you can consider using is TortoiseGitMerge, shipped as part of [TortoiseGit](https://tortoisegit.org/download/). It is installed by default on this path: *C:\Program Files\TortoiseGit\bin\TortoiseGitMerge.exe*.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+Comparing files on disk with the original is currently not supported on macOS.
+{{% /alert %}}
+
+Committing is only allowed if your working copy is up to date with the repository. If someone else committed a change since the last time you pulled, you will have to pull first (this process is called **Commit and Combine** in the [Commit](/refguide/commit-dialog/#combine) dialog box). This is because the revision you create with the commit should incorporate both your changes and the changes by the other person. Updating will combine the latest changes in the repository with your changes. After reviewing the result and fixing any conflicts, you can commit again. 
 
 ### Pushing {#pushing}
 
@@ -167,7 +193,13 @@ The history of the app is a list of all revisions that have been committed. To v
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/history-button.png" max-width=60% alt="History Button" >}}
 
-For Git-based applications, revisions are sorted according to the commit history, which sometimes does not reflect the chronological order due to Git's decentralized nature and local commits. The history dialog shows you revision number, date, time, author, and message of each revision.
+For Git-based applications, revisions are sorted according to the commit history, which sometimes does not reflect the chronological order due to Git's decentralized nature and local commits. The **History** dialog box shows the revision number, date, time, author, and message of each revision.
+
+{{% alert color="warning" %}}
+
+The [Name and Email settings](/refguide/preferences-dialog/#name) can be adjusted by the user and are not used for authenticating with the version control server. If you notice a suspicious value in the commit history, it is likely a private email address set through another tool in the global Git configuration, but the user has been authenticated as usual.
+
+{{% /alert %}}
 
 Select a revision to see additional details, such as related stories, changed documents, Studio Pro version, and changes on disk. Icons summarize the kinds of changes that happened in the app.
 
@@ -175,13 +207,44 @@ Select a revision to see additional details, such as related stories, changed do
 
 ## Reverting Changes {#revert-changes}
 
-Changes that have not yet been committed can be reverted. Say, for example, that you have made a lot of changes to a page and you are not happy with the result. You can revert the page to the original state, that is, the state of the page before you started making changes.
+In case you want to undo changes that have been made, it is important to understand the difference between uncommitted changes, and committed changes that have been pushed to the server. Uncommitted work can simply be reverted, while committed work requires a new **Reverse commit** to undo.
 
-Deletes of documents, folders, and modules can also be reverted. This brings them back into the app. Note that you will get back the latest version you have committed. For example, if you commit, make some changes to a microflow, and then delete the microflow, reverting the delete gives you the microflow without the changes that you made.
+### Reverting Uncommitted Changes
+
+Changes that have not yet been committed can be reverted. For example, that you have made a lot of changes to a page and you are not happy with the result. You can revert the page to the original state, that is, the state of the page before you started making changes.
+
+Deletes of documents, folders, and modules can also be reverted. This brings them back into the app. Note that you will get back the latest version you have committed. For example, if you commit, make some changes to a microflow, and then delete the microflow, reverting the delete restores the microflow without the changes that you made.
 
 You can revert changes in the **Changes** pane, from **Version Control** > **Revert All Changes**, or from the right-click menu on the document you want to revert.
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/revertx2.png" alt="Two ways of reverting" class="no-border" >}}
+
+{{% alert color="info" %}}
+You can also **Revert All Changes** while [merging](#merge). This will restore your app to the most recent commit, discarding changes creating by the merging process.
+{{% /alert %}}
+
+### Reverting a Previous Commit
+
+Changes that have been committed and pushed to the server can never be deleted from the history. However, you can make another commit to revert the changes. This is called **Reverse commit** in Studio Pro.
+
+Select the **Version Control** menu > **Revert a Commit...** to revert a commit. This will create original changes "in reverse", which you can commit and push to the server.
+
+{{% alert color="warning" %}}
+Reverting a commit creates a new commit that undoes the changes introduced by the original commit. This may lead to unexpected results depending on the context of the original commit.
+
+* **Cherry picking and reverting** – If you used [Cherry Pick](/refguide/merge-dialog/#cherry-pick) to apply a commit from another branch to the current branch, and then you revert that commit, the changes from the cherry-pick will not be reapplied when merging the full branch. This happens because the revert commit explicitly negates the cherry-picked changes, and Git recognizes them as already addressed.
+* **Merging and reverting** – If you [merged another branch](/refguide/version-control/#merging-branches) into the current branch and then reverted the merge commit, merging the same branch again will not reapply its changes. Git identifies that the merge was undone and prevents those changes from being reapplied.
+{{% /alert %}}
+
+Reverting changes is done with one commit at a time. If you want to revert multiple commits, you can do that by reverting the latest commit, then the previous one, etc, one by one.
+
+{{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/revert-changes-git.png" class="no-border" >}}
+
+#### Reverse Merging
+
+You can also revert a commit where another branch was merged into the current branch. Reverting a merge removes the changes introduced by that merge, making it appear as if they never happened. For example, if the merge added a new page, reverting it will remove the page locally. 
+
+Just like with a normal merge, conflicts can occur when reverting a merge. For example, if later commits change the new page, the reverse merge will result in a conflict. Once you resolved the conflict, you can commit the changes and push them to the remote repository.
 
 ## Dealing With Conflicts {#conflicts}
 
@@ -198,6 +261,8 @@ A repository (remote or local) can contain a number of development lines. Each d
 It is often convenient to have more than one development line. For example, one development line is for fixing bugs in the currently deployed version of your app and another line is where you develop new functionality. If you then find a bug in the deployed version, you can fix it in the corresponding development line irrespective of the state of the development line where new functionality is developed. For more information about branches, see the [Branches](/refguide/version-control/#branches) section in *Version Control*. 
 
 ### Working with Branches in Studio Pro
+
+This section outlines how to create branches in Studio Pro. It also recommends some [Branching Best-Practices](#branching-best-practices) when developing Mendix apps.
 
 #### Branching
 
@@ -246,19 +311,7 @@ If you have multiple development lines, you sometimes want to merge changes from
 
 Merging is always done while you have a working copy open. The merge will result in extra local changes in that working copy. It is advisable to commit local changes first before merging extra changes into a working copy. Otherwise, the uncommitted local changes and the changes caused by the merge will be combined and it is very hard to untangle them if you are unhappy with the merge. Studio Pro will warn you if you have uncommitted changes.
 
-Select **Version Control** > **Merge Changes Here**, after that you can select **Port fix** or **Merge feature branch** options. For more information on merge settings, see [Merge Dialog](/refguide/merge-dialog/).
-
-#### Reverting a Commit
-
-[Reverting changes](#revert-changes) works for changes that have not been committed yet. Changes that have been committed and pushed to the server can never be deleted from the history. However, you can make another commit to revert the changes. This feature is called **Reverse commit** in Studio Pro.
-
-Choose the **Version Control** menu > **Revert a Commit...** to revert a commit.
-
-Reverting changes is done with one commit at a time. If you want to revert multiple commits, you can do that by reverting the latest commit, then the previous one, only one by one.
-
-{{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/revert-changes-git.png" class="no-border" >}}
-
-After a reverse merge the app will look like the changes never happened; if you reverse merge adding a new page, the page will be deleted locally. Just like when you are doing a normal merge, conflicts can arise. For example, if later commits change the new page, the reverse merge will result in a conflict. After resolving the conflict, you can commit and push the results to the remote repository.
+Select **Version Control** > **Merge Changes Here**, after that you can select **Cherry Pick** or **Merge feature branch** options. For more information on merge settings, see [Merge Dialog](/refguide/merge-dialog/).
 
 #### Replacing the Main Line with a Branch Line
 
@@ -309,6 +362,92 @@ After setting up the driver either locally or globally, create a *.gitattributes
 
 Save the files and now when **git merge** is run and it involves *.mpr* files, the *mx.exe* merge will run Studio Pro merge algorithm before Git finishes the merge.
 
+### Branching Best-Practices {#branching-best-practices}
+
+Depending on your team's size and preferences, you may find some branching strategies better suited than others. Mendix suggests using one of the following three strategies which have increasing complexity and control and different pros and cons.
+
+* [Trunk-Based (Single Branch Line)](#branching-trunk): straightforward, easy to start with, well-suited for small teams
+* [Trunk-Based with Feature Branches](#branching-trunk-and-feature): reduces risk of merge conflicts, well-suited for larger teams and a regular release cadence
+* [Advanced Branching](#branching-advanced): guarding quality becomes easier, well-suited for large teams and structured processes
+
+We recommend starting trunk-based and adopting trunk-based with feature branches next, if needed. Getting a lot of merge conflicts or releasing a first version to production are sensible triggers to move away from solely trunk-based development.
+
+For experienced teams, or for organizations with stricter processes and/or auditability criteria, the advanced branching approach is recommended.
+
+In the [tips and tricks](#branching-tricks) section you will find suggestions on how to work with, and manage, branches in an effective way.
+
+#### Trunk-Based (Single Branch Line) {#branching-trunk}
+
+In trunk-based development, all developers work on a single branch, typically the "trunk" or "main" branch. Changes are frequently committed to this branch, and developers continuously push  their work to the remote repository. 
+
+{{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/branching-trunk.png" >}}
+
+Benefits are:
+
+* Simplicity: Trunk-based development is straightforward and easy to understand, making it suitable for small teams or projects with less complex requirements.
+* Fast feedback: Developers receive immediate feedback on the impact of their changes, helping to identify and resolve issues quickly.
+* Reduced merge conflicts: Since developers frequently push their code, the chances of encountering significant merge conflicts are minimized.
+
+Disadvantages are:
+
+* Risk of instability: Constant changes to the main branch can introduce instability, especially if proper testing and quality assurance practices are not in place.
+* Limited parallel development: The single branch model can limit parallel development efforts, making it challenging to work on multiple features concurrently.
+* Difficulty to mitigate issues: When encountering issues on production, it is not possible to deploy a hotfix without also publishing other changes to your app, without creating a branch.
+
+This approach is best-suited for small teams.
+
+#### Trunk-Based with Feature Branches {#branching-trunk-and-feature}
+
+[Trunk-based](#branching-trunk) can also be combined with short-lived feature branches. Developers work on feature branches, which are created from the main branch. Once a feature is complete, it is merged back into the main branch.
+
+{{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/branching-trunk-and-feature.png" >}}
+
+Benefits are:
+
+* Limited complexity: This approach is still relatively straightforward and easy to understand for most developers.
+* Isolation of changes: Working on feature branches allows developers to isolate their changes, reducing the risk of disrupting the mainline codebase.
+
+Disadvantages are:
+
+* Overhead: Separate feature branches can lead to overhead in terms of merging, code review, and testing.
+
+This approach is the most-used among Mendix customers, and is best-suited for teams with some experience, or teams running into the limitations of trunk-based development.
+
+#### Advanced Branching {#branching-advanced}
+
+In branch-based development, there are typically two types of branches:
+
+* Long-lived branches: main branch, development branch, release branch
+* Short-lived branches: feature branches
+
+Developers work on feature branches, which are merged into the development branch for integration and testing. The release branch is used to prepare for a stable release, while the main branch represents the production-ready codebase.
+
+{{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/branching-advanced.png" >}}
+
+Benefits are:
+
+* Isolation of changes: Working on feature branches allows developers to isolate their changes, reducing the risk of disrupting the mainline codebase.
+* Parallel development: Multiple features can be developed simultaneously, enhancing productivity.
+* Granular control: Different branches provide granular control over the development and release process.
+* Stability and quality: The main and release branches are stable and thoroughly tested, ensuring high-quality releases.
+* Scalability: This strategy scales well with larger teams and complex projects
+
+Disadvantages are:
+
+* Complexity: Managing multiple long-lived branches and their interactions requires careful planning and coordination.
+* Overhead: Maintaining separate branches can lead to overhead in terms of merging, code review, and testing.
+
+This approach is best-suited to large teams or teams preferring a more rigid process. Projects with strict release cycles can also benefit from this approach, as the release branch is always stable.
+
+#### Tips and Tricks for Working with Branches {#branching-tricks}
+
+There are several recommendations that make it easier to work with and manage multiple branches.
+
+* Periodically merge higher-level branches, such as 'development' or 'main', to lower-level branches, such as feature branches. This ensures you already take the most recent stable work into account when developing a feature, preventing larger merge conflicts down the road.
+* Note which branch is being used for development in the stories that you are working on, to avoid confusion. You can also implement a naming convention for branch names, such as `feature_[issueNumber]`.
+* Where possible, keep different branches on the same version of Studio Pro.
+* Make sure that old branches are cleaned up, to prevent accumulating them over time. Ideally you should delete a branch as part of the process of completing a feature. In cases where branches aren't merged in the end, consider cleaning them up periodically.
+
 ## Versioning an App Deployed to the Cloud {#versioning-app}
 
 ### Deploying Locally
@@ -333,7 +472,7 @@ When it creates the package, Studio Pro will also create a tag representing this
 
 #### Deploying a Specific Version to a Mendix Licensed Cloud Node
 
-If you are using the Mendix Cloud, you can choose **App** > **Deploy to Licensed Cloud Node** to deploy a specific version.
+If you are using Mendix Cloud, you can choose **App** > **Deploy to Licensed Cloud Node** to deploy a specific version.
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/deploy-to-cloud.png" class="no-border" >}}
 
@@ -354,7 +493,11 @@ We advise you to always commit and update/pull inside Studio Pro, because, in th
 If you are doing more advanced changes to files, like adding Java actions or resources to your app, you will have to install a separate tool on your computer and perform some operations yourself: you can use [TortoiseGit](https://tortoisegit.org/) (can be downloaded for free).
 
 {{% alert color="info" %}}
-Studio Pro adds metadata on the Mendix version of your app to each revision when you commit or create a branch. Therefore, when committing or merging using third-party tools, it may no longer be possible to deploy to the Mendix Cloud. This can be fixed by making a commit using Studio Pro so that the correct metadata is present again.
+Studio Pro adds metadata on the Mendix version of your app to each revision when you commit or create a branch. Therefore, when committing or merging using third-party tools, it may no longer be possible to deploy to Mendix Cloud. This can be fixed by making a commit using Studio Pro so that the correct metadata is present again.
+{{% /alert %}}
+
+{{% alert color="warning" %}}
+Manually modifying files belonging to the  [*.mpr* storage format](/refguide/version-control/#mpr-format) such as the *.mpr* file or the *mprcontents* directory (for example, when resolving file conflicts through third-party tooling), will lead to a corrupted state. To recover from a corrupted state a previous commit will need to be restored.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
@@ -365,7 +508,7 @@ Studio Pro automatically performs the necessary post-processing steps when you d
 
 When using external tools, you might be asked to authenticate separately to Team Server.
 
-Connecting to Git is done using a personal access token (PAT). For more information on how to create a PAT, see the [Personal Access Tokens](/community-tools/mendix-profile/user-settings/#pat) section of *Mendix Profile*.
+Connecting to Git is done using a personal access token (PAT). For more information on how to create a PAT, see the [Personal Access Tokens](/mendix-profile/user-settings/#pat) section of *Mendix Profile*.
 
 To connect to Git, you need to use the following URL and credentials:
 

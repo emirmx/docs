@@ -19,7 +19,7 @@ Before starting this how-to, make sure you complete the following prerequisites:
 * Ensure that your Mendix Service Console version is 4.7.4 or above.
 * Familiarize yourself with the update process for Mendix apps running on Windows. For more information, see [MS Windows: Update a Mendix App](/developerportal/deploy/updating-a-mendix-application/).
 
-## Importing Mendix-Specific Cmdlets into Windows PowerShell
+## Importing Mendix-Specific Cmdlets into Windows PowerShell {#powershell}
 
 To install Mendix-specific cmdlets that you can use to script your app deployment, follow these steps:
 
@@ -38,6 +38,10 @@ To install Mendix-specific cmdlets that you can use to script your app deploymen
     For more information about each command and its parameters, add `-?` after the command, for example, `Start-MxApp -?`.
 
 After installing the Mendix-specific cmdlets, you can use them to write your own scripts that start, stop, or update your Mendix app.
+
+{{% alert color="info" %}}
+The [Service Console GUI](/developerportal/deploy/deploy-mendix-on-microsoft-windows/#service-console) will not show the updated service status automatically if you use a PowerShell cmdlet to change the status, for example, by using 'Start-MxApp'. The correct status will be shown when you restart the Service Console.
+{{% /alert %}}
 
 ## Sample Scripts
 
@@ -71,18 +75,43 @@ Update-MxApp $appName -LiteralPath $literalPath
 Start-MxApp $appName -SynchronizeDatabase
 ```
 
-{{% alert color="info" %}}
-To start your app as a local process instead of a service, add a `-NoService` argument to the `Start-MxApp` cmdlet, as in the following example:
+{{% alert color="warning" %}}
+Stopping your app before you update it is a necessary part of the process. Do not attempt to extract the deployment package from your app while it is running.
+{{% /alert %}}
 
-```
+You can find the parameters for `Start-MxApp` cmdlet in the sections below:
+
+#### `NoService`
+
+To start your app as a local process instead of a service, add a `NoService` argument to the `Start-MxApp` cmdlet, as in the following example:
+
+```text
 Start-MxApp $appName -NoService -SynchronizeDatabase 
 ```
 
-{{% /alert %}}
+#### `EnableDebugger`
 
-{{% alert color="warning" %}}
-Stopping your app before you update it is a necessary part of the process. Do not attempt to extract the deployment package into your app while the app is running.
-{{% /alert %}}
+The `EnableDebugger` allows Studio Pro to connect to a Mendix app for debugging.
+
+```text
+Start-MxApp $appName -EnableDebugger "Abcd@1234"
+```
+
+#### `LicenseKey`
+
+The `LicenseKey` parameter allows you to activate the license for a Mendix app.
+
+```text
+Start-MxApp $appName -LicenseKey "Abcd@1234"
+```
+
+#### `AdminPassword`
+
+The `AdminPassword` parameter to the Start-MxApp cmdlet sets the administrator password for a Mendix app.
+
+```text
+Start-MxApp $appName -AdminPassword "Abcd@1234"
+```
 
 ### Sample Script - Determine the Mendix Runtime Version
 
@@ -138,6 +167,17 @@ $level = 'Log level which needs to be assigned'
 
 # Set log level for all nodes of a log subscriber at once
 Set-MxLogLevel $appName -SubscriberName $subscriberName -Level $level
+```
+
+### Sample Script - Create a Windows Service for Mendix app
+
+The following script example demonstrates how to create a Windows service for a Mendix app.
+
+```text
+$appName = 'Name of Mendix app'
+
+# Create new Windows service
+Install-MxService $appName
 ```
 
 ## Troubleshooting

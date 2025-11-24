@@ -12,6 +12,8 @@ cascade:
     - notsitemap: true
     - sitemap:
         priority: 0.4
+    - banner: ""
+# Empty banner added to get around bug in Hugo 0.123.0 (https://github.com/gohugoio/hugo/issues/12465) which is not fixed until 0.143.0 (https://github.com/gohugoio/hugo/releases/tag/v0.143.0)
 ---
 
 ## Introduction
@@ -40,7 +42,7 @@ When it comes to testing your application, you first need to decide what you are
 
 Studio Pro allows you to run and view your app locally or in the default environment.
 
-For more information on options for deploying your app, see [Deployment](/deployment/).
+For more information on options for deploying your app, see [Deploying Apps](/deployment/).
 
 ## Version Control
 

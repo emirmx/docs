@@ -1,20 +1,20 @@
 ---
-title: "Deploying a Mendix App to a Private Cloud Cluster"
+title: "Deploying a Mendix App to a Mendix on Kubernetes Cluster"
 linktitle: "Deploy Mendix App"
 url: /developerportal/deploy/private-cloud-deploy/
-description: "Describes the processes for deploying a Mendix app in the Private Cloud"
+description: "Describes the processes for deploying a Mendix app in Mendix on Kubernetes"
 weight: 20
 ---
 
 ## Introduction
 
-To deploy apps to your private cloud cluster (for example to Red Hat OpenShift or AWS-EKS), the cluster needs to be registered in the Mendix Portal. This creates a link between the Mendix Portal and the cluster. See [Creating a Private Cloud Cluster](/developerportal/deploy/private-cloud-cluster/) for instructions on how to do this.
+To deploy apps to your private cloud cluster (for example to Red Hat OpenShift or AWS-EKS), the cluster needs to be registered in the Mendix Portal. This creates a link between the Mendix Portal and the cluster. See [Creating a Mendix on Kubernetes Cluster](/developerportal/deploy/private-cloud-cluster/) for instructions on how to do this.
 
 Once the cluster has been registered, and a namespace created, team members with *Deploy App* rights can create environments and deploy an app.
 
 This document explains how to use the Mendix Portal to deploy your **connected** app.
 
-To deploy to a namespace in a **standalone** cluster, you provide the CRs through the console or command line. This is described in [Using Command Line to Deploy a Mendix App to a Private Cloud Cluster](/developerportal/deploy/private-cloud-operator/).
+To deploy to a namespace in a **standalone** cluster, you provide the CRs through the console or command line. This is described in [Using Command Line to Deploy a Mendix App to a Mendix on Kubernetes Cluster](/developerportal/deploy/private-cloud-operator/).
 
 Within your namespace you can run one, or several, Mendix apps. You can see the relationship between the Mendix environments and the Kubernetes namespaces in the image below.
 
@@ -23,23 +23,23 @@ Within your namespace you can run one, or several, Mendix apps. You can see the 
 Because you can run several Mendix apps in the same namespace, each environment will have an **Internal Name** (UUID) added when the app is deployed to ensure that it is unique in the project. You should not use the same name as the Mendix tools used to deploy the app. See the section [Reserved Names for Mendix Apps](#reserved-names), below.
 
 {{% alert color="info" %}}
-You can also create environments and deploy and manage apps using the [Mendix for Private Cloud Deploy API](/apidocs-mxsdk/apidocs/private-cloud-deploy-api/).
+You can also create environments and deploy and manage apps using the [Mendix on Kubernetes Deploy API](/apidocs-mxsdk/apidocs/private-cloud-deploy-api/).
 {{% /alert %}}
 
 ## Prerequisites for Deploying an App
 
 To deploy an app to your private cloud platform, you need the following:
 
-* A Mendix account with **Deploy App** rights to an existing Cluster – see [Registering a Private Cloud Cluster](/developerportal/deploy/private-cloud-cluster/) for more information on setting up clusters and namespaces and adding members
+* A Mendix account with **Deploy App** rights to an existing Cluster – see [Registering a Mendix on Kubernetes Cluster](/developerportal/deploy/private-cloud-cluster/) for more information on setting up clusters and namespaces and adding members
 * Mendix Studio Pro 8.0.0 (build 56467) or above.
 * A Mendix app created with the version of Studio Pro you are using.
-* Make sure that the security of the app is set to Production. By default, all environments are set to Production mode when created. If you want to change it to Developer mode, the Cluster Manager can do this from the cluster manager page.
+* Make sure that the security of the app is set to Production. By default, all environments are set to Production mode when created. The DTAP mode is disabled by default. If you want to change it to Developer mode, the cluster manager can enable the DTAP mode from the Cluster Manager page.
 
 ## Deploying an App for the First Time
 
-### Selecting Mendix for Private Cloud
+### Selecting Mendix on Kubernetes
 
-When you first create your app, it will be set to deploy to the Mendix Cloud. You need to change the target to be private cloud.
+When you first [create your app](/developerportal/#create-app), it will be set to deploy to Mendix Cloud. You need to change the target to be private cloud.
 
 1. Open your app in [Apps](https://sprintr.home.mendix.com/).
 
@@ -57,6 +57,10 @@ Before you can create an environment, you will need to create a deployment packa
 
 {{% alert color="warning" %}}
 Deployment package creation for Mendix versions 7 and below is no longer supported. Upgrade to version 8 or above in order to build and deploy.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+The deployment package created with Java 17/21 support requires the Mendix Operator to be in version 2.15.0 or above.
 {{% /alert %}}
 
 1. Open your app in [Apps](https://sprintr.home.mendix.com/).
@@ -118,17 +122,17 @@ All environments are defined as production environments, which means that [secur
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/customizeEnvironmentNamespaceSelection.png" class="no-border" >}}
 
-6. Enter a **Subscription Secret** if you want your app to run as a licensed app. Without a license, your app will be subjected to restrictions very similar to those listed in the [Free Apps](/developerportal/deploy/mendix-cloud-deploy/#free-app) section of *Mendix Cloud*.
+6. Select the **Environment Purpose** to select the purpose of the environment.
 
-    If you have configured **PCLM** in your namespace, the license from your license bundle will be automatically applied in the environment (with a condition that licenses should be available in the license bundle and not claimed in other environments). For more information, see [Private Cloud License Manager](/developerportal/deploy/private-cloud/private-cloud-license-manager/).
+    {{% alert color="info" %}} Currently, it is only possible to set the Environment Purpose in the portal. {{% /alert %}}
 
-    {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/PCLM.png" class="no-border" >}}
+7. Enter a **Subscription Secret** if you want your app to run as a licensed app. Without a license, your app will be subjected to restrictions very similar to those listed in the [Free Apps](/developerportal/deploy/mendix-cloud-deploy/#free-app) section of *Mendix Cloud*.
 
-7. Click **Next**.
+8. Click **Next**.
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/configureEnvResources.png" class="no-border" >}}
 
-8. Select **Core Resources**.
+9. Select **Core Resources**.
 
     For core resources, there are two sets of values. The **Request** value is the amount of core resources which are initially requested. The **Limit** value is the maximum amount of resource that the environment can use.
 
@@ -145,18 +149,18 @@ All environments are defined as production environments, which means that [secur
 
     {{% alert color="info" %}}If the cluster manager has added and enabled customized core resource plan on Cluster manager page, only the configured custom core resource plans will be visible for selection. Once the custom core resources plans are enabled, environments cannot be created using the default plans until all the associated environments using the custom core resource plan are deleted and the custom resource plan is disabled on the **Cluster manager** page.{{% /alert %}}
 
-9. Select a **Database plan** from the list of plans set up in the namespace.
+10. Select a **Database plan** from the list of plans set up in the namespace.
 
     {{% alert color="info" %}}If the Cluster Manager has configured a secret store for this namespace, this option will be disabled. You can find more information on configuring the secret store in [Integrate Kubernetes with Secret Stores](/developerportal/deploy/secret-store-credentials/).{{% /alert %}}
 
-10. Select a **Storage plan** from the list of plans set up in the namespace.
+11. Select a **Storage plan** from the list of plans set up in the namespace.
 
     {{% alert color="info" %}}If the Cluster Manager has configured a secret store for this namespace, this option will be disabled. You can find more information on configuring the secret store in [Integrate Kubernetes with Secret Stores](/developerportal/deploy/secret-store-credentials/).{{% /alert %}}
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/image7.png" class="no-border" >}}
 
-11. Click **Create Environment**.
-12. You will see your new environment listed. An *in-progress* icon will be shows next to the resource plans until they have been provisioned.
+12. Click **Create Environment**.
+13. You will see your new environment listed. An *in-progress* icon will be shows next to the resource plans until they have been provisioned.
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/image8.png" class="no-border" >}}
 
@@ -165,7 +169,7 @@ All environments are defined as production environments, which means that [secur
     You can also filter the environment by the namespace name, environment ID, and environment name.
 
 {{% alert color="info" %}}
-The word **Licensed** shows that the Operator managing that environment is licensed, otherwise its *Trial*
+If the Operator managing the environment has a valid license attached, **Licensed Operator** is displayed. If the Operator has no valid license, the display shows **Trial Operator**.
 {{% /alert %}}
 
 ### Deploying the Deployment Package{#deploy-package}
@@ -225,9 +229,11 @@ There are five buttons:
 
 * Refresh
 * Upload
-* Create Package From Teamserver
+* Create Deployment Package
+* Lock
 * Details
 * Deploy
+* Delete
 
 These are described in more detail below.
 
@@ -241,9 +247,13 @@ Using the browser refresh button will take you away from this environments page,
 
 #### Upload
 
-This allows you to upload an MDA package you have already created, using Studio Pro for instance. The uploaded package is added to the list of packages for the app and can be deployed in the same way as a package created using **Create Package From Teamserver**.
+This allows you to upload an MDA package you have already created, using Studio Pro for instance. The uploaded package is added to the list of packages for the app and can be deployed in the same way as a package created using **Create Deployment Package**.
 
-#### Create Package From Teamserver
+#### Lock
+
+This button allows you to lock the deployment package so it cannot be deleted or modified. If unlocked, the package can be deleted. The deployment packages if deployed in an environment will be automatically locked. If the environment is deleted, the deployment package will be unlocked.
+
+#### Create Deployment Package
 
 This creates a new package as described in [Creating a Deployment Package](#create-deployment-package), above.
 
@@ -278,9 +288,10 @@ For each environment, you can see a summary of the status of the resources and d
 
 You can perform the following actions:
 
-* **Add Environment**
+* **Create Environment**
 * View **Details**
 * Perform **Actions**
+* **Environment Settings**
 
 These are described in more detail, below.
 
@@ -312,6 +323,16 @@ The **Database** indicator has the following values:
 * Cross – the database is not provisioned
 * Spinner – the database is being provisioned
 
+##### Service Account
+
+The **Service Account** is specified in namespace configuration for [Workload Identity](/developerportal/deploy/private-cloud-storage-plans/#configuring-the-plan-6) or [IRSA mode](/developerportal/deploy/private-cloud-storage-plans/#configuring-a-postgres-plan-1). If no values are specified, it uses the default Service account.
+
+The **Service Account** indicator has the following values:
+
+* Tick – the service account is successfully attached to the environment. 
+* Cross – the service account failed to attach
+* Spinner – the service account creation is in progress
+
 ##### Development
 
 The word **Development** indicates that this environment is set up for development.
@@ -320,13 +341,13 @@ The word changes to **Production** if the environment is set up for production.
 
 See [Creating an Environment](#create-environment), above, for more information.
 
-##### Trial
+##### Trial Operator
 
-The word **Trial** indicates that the Operator managing that environment is unlicensed.
+The word **Trial Operator** indicates that the Operator managing that environment is unlicensed.
 
-When the Operator is running in trial mode, it will stop managing an environment ninety days (thirty days for Mendix Operator versions 1.12.0 and below) after the environment was created and the word changes to **Expired**. In this case you will be unable to stop or start your app, or deploy an app to this environment. The only action you can take is to delete the environment. You can, however, create a new environment if you have not finished your evaluation of Mendix for Private Cloud.
+When the Operator is running in trial mode, it will stop managing an environment ninety days (thirty days for Mendix Operator versions 1.12.0 and below) after the environment was created and the word changes to **Expired Operator**. In this case you will be unable to stop or start your app, or deploy an app to this environment. The only action you can take is to delete the environment. You can, however, create a new environment if you have not finished your evaluation of Mendix on Kubernetes.
 
-The word **Licensed** shows that the Operator managing that environment is licensed.
+The word **Licensed Operator** shows that the Operator managing that environment is licensed.
 
 {{% alert color="info" %}}
 The Operator license is independent from a Mendix Runtime license. The Operator license allows you to manage Mendix apps in your cluster, while the Mendix Runtime license (configured through a [Subscription Secret](#license-mendix)) removes trial restrictions from a Mendix App itself.
@@ -334,11 +355,17 @@ The Operator license is independent from a Mendix Runtime license. The Operator 
 You can get an Operator license from [Mendix Support](https://support.mendix.com), together with instructions on how to configure it.
 {{% /alert %}}
 
+{{% alert color="info" %}}
+Starting from version 2.23.0, the Operator no longer performs Operator license checks. The Operator shows as **Licensed Operator** even when no Operator license is installed.
+
+Environments still need subscription secrets to remove Mendix Runtime trial limitations from the app.
+{{% /alert %}}
+
 ##### Service Account
 
 The word **Service Account** indicates that this environment is successfully attached to a service account. If no service accounts are created specific to this environment, then this environment will be attached to the default service account.
 
-#### Add Environment
+#### Create Environment
 
 This adds a new environment as described in [Creating an Environment](#create-environment), above.
 
@@ -350,21 +377,45 @@ This opens the **Environment Details** page which is described in more detail in
 
 This button contains a list of actions which you can perform quickly on the environment. Most of these actions will be disabled if the app is currently starting or stopping. These actions are:
 
-* **Start Application** (only shown if app is stopped) – allows you to start a stopped application
+* **Start Application** – allows you to start a stopped application
 * **Transport Package** – allows you to deploy the deployment package in the current environment to another environment within the app, or to redeploy it in the current environment
 * **Environment Logs** – takes you to the log page defined by the cluster manager when they registered the namespace
 * **Model Options** – allows you to change the running of scheduled events and the values of constants for your app by taking you to the **Model Options** tab of the **Environment Details** page
-* **Stop Application** (only shown if at least one replica is running) — stops the application by reducing the number of replicas to zero
-* **Delete Environment** – this deletes the environment (see [Current Limitations](#limitations), below, for additional details about what is deleted) — you will be asked to confirm this action
-* **Set as Studio Pro Deployment target** - this allows you to select the default target environment for Studio Pro deployment.
+* **Stop Application** — stops the application by reducing the number of replicas to zero; when you restart the application, the number of replicas set in the application will be started
+* **Delete Environment** – allows you to delete the environment (see [Current Limitations](#limitations) for additional details about what is deleted); if you select this action, you must confirm your choice before the environment is deleted
+* **Set as Studio Pro Deployment target** – allows you to select the default target environment for Studio Pro deployment
 
-### Activity
+### Activity Log
 
-This section shows all the activities, such as creating environments and deploying apps, which have taken place in this environment. You can sort the activities in either descending or ascending date and time order.
+This section shows all the activities which have taken place in this environment, for example, creating environments, changing the Technical Contact, or deploying apps. You can sort the activities in either descending or ascending date and time order.
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/image20.png" class="no-border" >}}
 
-## Managing Your Environments from the Environment Details Page{#environment-details}
+### Application Settings
+
+#### Technical Contact
+
+This section allows you to designate the Technical Contact for the application. The Technical Contact serves as the point of contact for any app-related inquiries and should have the capability to manage all environments within the app.
+
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/technicalContact.png" class="no-border" >}}
+
+For applications created before December 12, the Technical Contact field is empty by default. It can be set by a user with cloud access permissions for the application.
+
+{{% alert color="warning" %}}  
+Once a Technical Contact is assigned, they automatically receive administrative permissions for all namespaces associated with environments in the application. This means that the Technical Contact can perform all actions on all environments in the application. The Administrative permissions will be intact even when the Technical Contact is changed. Hence, the cluster manager must either manually assign a new role to the developer if they do not want all the permissions assigned to the developer, or remove the role assigned to the developer if they want all the permissions to be revoked for the developer.
+{{% /alert %}}
+
+For applications created on or after December 12, the Technical Contact is automatically set to the application's creator. In such cases, whenever a new environment is added, the Technical Contact receives administrative permissions for the namespaces associated with that environment.
+
+The Technical Contact can be changed later, but only by the current Technical Contact.
+
+#### Environment Purpose {#environment-purpose}
+
+This section allows you to edit the Environment Purpose for the environments within the application. Setting the purpose of your environment does not affect its operational state. However, it helps ensure the environment is used as intended, providing clarity for both you and us. We strongly recommend setting this field, as future features may be tailored to specific environment purposes. For applications where the Technical Contact is not set, this section is not visible.
+
+When creating a new environment, the Technical Contact can set the environment purpose. The field is not visible when some one else other than the Technical Contact is creating the environment. It is also possible to change the purpose in **Application Settings** after environment creation. However, the purpose can only be edited by the Technical Contact.
+
+## Managing Your Environments from the Environment Details Page {#environment-details}
 
 Each environment you create has an **Environment Details** page which allows you to monitor and manage your environments. You can reach this by clicking the **Details** button next to the environment you want to manage.
 
@@ -388,7 +439,7 @@ These tabs are described below.
 
 The general tab shows information about your running app.
 
-{{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/image22.png" class="no-border" >}}
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/generalTab.png" class="no-border" >}}
 
 Most of the information is self-explanatory, but the status information gives you a quick summary of the status of the environment and the app deployed there. The **Source** field shows how the environment was created - by using the Portal or the [API](/apidocs-mxsdk/apidocs/private-cloud-deploy-api/)
 
@@ -396,19 +447,17 @@ Most of the information is self-explanatory, but the status information gives yo
 
 This status shows you the following information – how many replicas are running, whether there was a successful build, and how long since the app was last started.
 
-In order to get more detailed information per replica in the application, you can click on **More Info** button.
+In order to get more detailed information per replica in the application, you can click on **More Info** button. This shows information about the runtime status, license status and sources for the Database, Storage, MxAdmin password, Debugger password, App constants and Custom Runtime settings. 
 
-You can get the information related to Runtime status, License status and Sources w.r.t to Database, Storage, MxAdmin password, Debugger password, App constants and Custom Runtime settings. Along with this, from Operator version 2.15.0 onwards, you can also specifically collect information w.r.t to pods running in the application. Below is the brief explanation of the fields in the section:
+If no runtime license is applied to the environment, the license status shows **0/n Licensed Runtime**, where **n** is the number of replicas running. The license status is **Not licensed**. Once a runtime license has been applied to the environment, the license status shows **n/n Licensed Runtime**, where **n/n** indicates the number of licenses applied to the number of replicas.
 
-1. **deletionInitiated**: This indicates whether the deletion of the pod has been initiated (pod is stopping). If it's `false`, it means the pod is not currently being deleted.
+Starting in Operator version 2.15.0, you can also specifically collect information about pods running in the application. Below is a brief explanation of the fields in the section:
 
-2. **ready**: This shows whether the pod is ready to serve requests. If it's `false`, it means the pod is not ready to serve requests, possibly due to containers within the pod not being ready or other issues.
-
-3. **restartCount**: This represents the number of times the containers within the pod have been restarted.
-
-4. **started**: This indicates whether the pod has started. If it's `false`, it means the pod has not yet started successfully.
-
-5. **state**: This describes the current state of the pod. In this case, it indicates that the pod is in a waiting state, which means it is not running but waiting for something to happen, such as a container to become ready or other conditions to be met before it can start running.
+* **deletionInitiated** - This indicates whether the deletion of the pod has been initiated (pod is stopping). If **false**, the pod is not currently being deleted.
+* **ready** - This shows whether the pod is ready to serve requests. If **false**, the pod is not ready to serve requests, possibly due to containers within the pod not being ready or other issues.
+* **restartCount** - This represents the number of times the containers within the pod have been restarted.
+* **started** - This indicates whether the pod has started. If**false**, the pod has not yet started successfully.
+* **state** - This describes the current state of the pod. In this case, it indicates that the pod is in a waiting state, which means it is not running but waiting for something to happen, such as a container to become ready or other conditions to be met before it can start running.
 
 #### Environment Details > Status
 
@@ -418,9 +467,15 @@ This shows you the status of the environment and is the same as the status shown
 
 There are also buttons which allow you to perform various actions on your app and environment. These are described in the sections below.
 
+#### Reorder Environments > Environment Settings
+
+You can adjust the order of the environments on the **Environment Overview** page. To move the environments up or down, press the arrow. You can navigate to the ordering page by clicking the **Environment Settings** button next to **Create Environment** button.
+
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/RedorderEnvironment.png" class="no-border" >}}
+
 ##### Stop/Start Application
 
-If the app is not currently running (**Replicas Running** is set to *None*) you will see **Start** Application. Clicking this will immediately trigger the app to begin running by increasing the number of replicas.
+If the app is not currently running (**Replicas Running** is set to *None*), the **Start Application** option is available. Clicking this option starts the app by increasing the number of replicas.
 
 If the app is currently running, clicking **Stop Application** immediately stops the application by reducing the number of replicas to zero.
 
@@ -440,7 +495,7 @@ If an application is in the Stopped state, the scaling does not come into effect
 
 ##### Clear Admin Password
 
-This allows you to clear the password for the [Mendix administration account](/refguide/administrator/) set in the Private Cloud environment. This means that there will be no password pushed to your environment when your app is deployed - any password currently set in the environment will be retained.
+This allows you to clear the password for the [Mendix administration account](/refguide/administrator/) set in the Mendix on Kubernetes environment. This means that there will be no password pushed to your environment when your app is deployed - any password currently set in the environment will be retained.
 
 ##### Change Admin Password
 
@@ -484,13 +539,23 @@ Images are not deleted from the container registry. You should delete those imag
 If any of these garbage collection steps fail, you will no longer see the environment in the Mendix Portal, and will have to [delete the storage instances](#delete-storage) manually.
 {{% /alert %}}
 
+##### Read-Only Root Filesystem
+
+[Read-only Root file system](/developerportal/deploy/private-cloud-cluster/#readonlyrootfs) can be enabled per environment. By default, this option is disabled. 
+
+##### Deployment Strategy 
+
+Starting from Operator 2.20.0 onwards, it is now also possible to set the deployment strategy for an environment on the cluster details page. This stategy can be enabled by the cluster manager. This feature allows to update an app with reduced downtime by performing a rolling update. By default, it is set to Recreate strategy.
+
 ##### License Mendix{#license-mendix}
 
 If you need to enter or change the subscription secret, then you can do that here.
 
-Subscription secrets are obtained from [Mendix support](https://support.mendix.com/).
+Subscription secrets are obtained from [Mendix support](https://support.mendix.com/). You can use subscription secrets in [standalone mode](/developerportal/deploy/private-cloud-technical-appendix-02/).
 
-We have also released an alternate way of licensing your apps in the Private Cloud by using PCLM. For more information, see [Private Cloud License Manager](/developerportal/deploy/private-cloud/private-cloud-license-manager/).
+For Operator version 2.24.0 and newer, we have introduced a new field, **Enable Fallback License**, in the **Environment Details** section. When enabled, this option allows Connected environments using subscription secrets to use a fallback license if communication with the licensing server fails, preventing the system from switching to Trial mode. 
+
+We have also released an alternate way of licensing your apps in Mendix on Kubernetes by using PCLM. For more information, see [Private Cloud License Manager](/developerportal/deploy/private-cloud/private-cloud-license-manager/).
 
 For users of the Private Cloud License Manager who wish to set the product type for the Runtime license in a particular environment, it can be done by editing the Product type. This ensures that the associated environment obtains the license from the license bundle with the specified Product type. By default, the value is set to the one defined in the Namespace configuration page.
 
@@ -532,18 +597,18 @@ If you change the data type and value in the .mpr file, the changes are visible 
 
 ### Network Tab
 
-On the Network tab, you add client certificates (in the PKCS12 format) or certificate authorities (in the PEM format) for outgoing connections. These will be used when your application initiates SSL/TLS connections. This works in the same way as the Network tab for deployments to the Mendix Cloud. For more details on these, see the [Network Tab](/developerportal/deploy/environments-details/#network-tab) section of *Environment Details*.
+On the Network tab, you add client certificates (in the PKCS12 format) or certificate authorities (in the PEM format) for outgoing connections. These will be used when your application initiates SSL/TLS connections. This works in the same way as the Network tab for deployments to Mendix Cloud. For more details on these, see the [Network Tab](/developerportal/deploy/environments-details/#network-tab) section of *Environment Details*.
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/network-tab.png" class="no-border" >}}
 
 ### Runtime Tab {#runtime-tab}
 
-On the Runtime tab, you can change various runtime settings for your app environment. This works in the same way as the Runtime tab for deployments to the Mendix Cloud. For more details on these, see the [Runtime Tab](/developerportal/deploy/environments-details/#runtime-tab) section of *Environment Details*.
+On the Runtime tab, you can change various runtime settings for your app environment. This works in the same way as the Runtime tab for deployments to Mendix Cloud. For more details on these, see the [Runtime Tab](/developerportal/deploy/environments-details/#runtime-tab) section of *Environment Details*.
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/runtime-tab.png" class="no-border" >}}
 
 {{% alert color="info" %}}
-When you use some settings on the Runtime tab for Mendix for Private Cloud they may work differently from how they work in the Mendix Cloud.
+When you use some settings on the Runtime tab for Mendix on Kubernetes they may work differently from how they work in Mendix Cloud.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -624,11 +689,11 @@ All names beginning **openshift-** are reserved for use by OpenShift if you are 
 
 ### Deleting Your App
 
-Delete all environments before you delete an app. If you delete an app which has existing private cloud environments, you will not be able to reach the environments through the Mendix Portal.
+Delete all environments before you delete an app. If you delete an app which has existing Mendix on Kubernetes environments, you will not be able to reach the environments through the Mendix Portal.
 
 ### Deployment Package Size
 
-Mendix for Private Cloud has a limit of 1024 MB on the size of a deployment package.
+Mendix on Kubernetes has a limit of 1024 MB on the size of a deployment package.
 
 ## Troubleshooting
 
@@ -713,7 +778,7 @@ If you change **App URL** in the **General** tab, you should update the `Applica
 ### Collecting Diagnostic Data for a Support Ticket
 
 {{% alert color="info" %}}
-For security reasons, Mendix for Private Cloud doesn't send any detailed logs from the cluster to the Mendix Portal.
+For security reasons, Mendix on Kubernetes doesn't send any detailed logs from the cluster to the Mendix Portal.
 Only generic status or error messages are sent back to the Mendix Portal and these messages don't contain enough details about the environment to understand the root cause of any problems.
 {{% /alert %}}
 
@@ -837,7 +902,7 @@ If your application keeps restarting unexpectedly, check your application log fo
 
 ## How the Operator Deploys Your App {#how-operator-deploys}
 
-The Mendix Operator is another app within your private cloud namespace. It is triggered when you provide a CR file. This can either be through the Mendix Portal, for a connected cluster, or through the command line, for a standalone cluster. The process looks like this:
+The Mendix Operator is another app within your Mendix on Kubernetes namespace. It is triggered when you provide a CR file. This can either be through the Mendix Portal, for a connected cluster, or through the command line, for a standalone cluster. The process looks like this:
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/mx4pc-operator-deploy.png" class="no-border" >}}
 

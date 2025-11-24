@@ -14,7 +14,7 @@ This information is for standalone Mendix application which are not fully integr
 If you have your own user management or SSO solution, but want to gather insights via the Insights Hub APIs, this page explains how you can achieve it. It describes how you can authenticate Insights Hub API REST calls with the help of a **Technical User** and the **Siemens Insights Hub API Authenticator**.
 Please note that this way is not a full integration with Insights Hub and has the following limitations:
 
-* You cannot make your app multi-tenant – see [Multi-tenancy](/partners/siemens/mindsphere-development-considerations/#multitenancy) in *Insights Hub Development Considerations* for more information on multi-tenancy
+* You cannot make your app multitenant – see [Multi-tenancy](/partners/siemens/mindsphere-development-considerations/#multitenancy) in *Insights Hub Development Considerations* for more information on multitenancy
 * Your app cannot be deployed to the Insights Hub platform and cannot be added to the Insights Hub Developer Cockpit
 * End-users cannot use Insights Hub credentials to sign in to your app, so Insights Hub does not know anything about individual app end-users — you must design your app to handle any required security for each end-user
 * You cannot use the fine grain access control on asset level via SDS.
@@ -90,7 +90,7 @@ For security, the values of the **ClientSecret** should not be included when you
 
 When you deploy your app, you should remove the values of **ClientID** and **ClientSecret** from the app model for security reasons. You should then set the correct value as a constant (Cloud Foundry / Kubernetes environment variable) during the deployment.
 
-For the Mendix Cloud, this can be done by setting the value of the constants on the [Model Options](/developerportal/deploy/environments-details/#model-options) tab of the **Environment Details**. See [Constants](/refguide/constants/) for information on how to set these values on other deployment platforms.
+For Mendix Cloud, this can be done by setting the value of the constants on the [Model Options](/developerportal/deploy/environments-details/#model-options) tab of the **Environment Details**. See [Constants](/refguide/constants/) for information on how to set these values on other deployment platforms.
 
 ## Insights Hub Widgets
 

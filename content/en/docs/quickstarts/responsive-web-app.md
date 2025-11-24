@@ -65,7 +65,7 @@ To select the best app template, follow these steps:
 
     {{< figure src="/attachments/quickstarts/responsive-web-app/3-createnameapp3.png" width="400px" alt="Create app" class="no-border" >}}
 
-4. Wait a few minutes for your app to be created, its [Team Server](/developerportal/general/team-server/) to be initialized, and a local copy of the app to be downloaded to your machine. After that, the app opens with your app’s home page called **Home_Web**.
+4. Wait a few minutes for your app to be created, its [Team Server](/developerportal/repository/team-server/) to be initialized, and a local copy of the app to be downloaded to your machine. After that, the app opens with your app’s home page called **Home_Web**.
 
     {{< figure src="/attachments/quickstarts/responsive-web-app/home-web.png" width="400px" alt="Home Web page" class="no-border" >}}
     
@@ -300,7 +300,7 @@ You have now finished developing your responsive app! You can run your photo alb
 {{< figure src="/attachments/quickstarts/responsive-web-app/7-closepageaction6.png" width="450px" alt="Run your app" class="no-border" >}}
 
 {{% alert type="info" %}}
-Running your app compiles it locally on your development machine (your local host). Publishing your app pushes it to a cloud environment or web container connected to the app. If none exists, an environment is initialized for your app on the Mendix Cloud Free Tier EU.
+Running your app compiles it locally on your development machine (your local host). Publishing your app pushes it to a cloud environment or web container connected to the app. If none exists, an environment is initialized for your app on Mendix Cloud Free Tier EU.
 {{% /alert %}}
 
 Congratulations! You successfully completed this quickstart tutorial. You have your first Mendix app to prove it, and it works on almost any device. Well done! 

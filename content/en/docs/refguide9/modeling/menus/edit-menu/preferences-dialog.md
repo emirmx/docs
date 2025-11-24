@@ -116,7 +116,7 @@ This is the pattern from which the arguments are derived that are passed to the 
 
 #### Enable Private Version Control with Subversion {#enable}
 
-Select this option when you want to work on an app that is not stored in [Mendix Team Server](/developerportal/general/team-server/), but in another Subversion server to which you have access. This will allow you to specify the location of the app on the Subversion server when opening, downloading, or uploading the app.
+Select this option when you want to work on an app that is not stored in [Mendix Team Server](/developerportal/repository/team-server/), but in another Subversion server to which you have access. This will allow you to specify the location of the app on the Subversion server when opening, downloading, or uploading the app.
 
 ### Git 
 
@@ -128,6 +128,14 @@ Specify your name for Git to use it in commit messages and make them more inform
 
 Specify your email for Git to use it in commit messages and make them more informative.
 
+#### Clone {#clone}
+
+{{% alert color="info" %}}
+Different clone types are available when using Git in Studio Pro version 9.24.28 and above.
+{{% /alert %}}
+
+Select a [Clone type](/refguide9/clone-type/) to use for future clone operations, such as downloading an app or checking out another branch of an app you already downloaded. Changing this setting does not affect apps that you have already downloaded.
+
 #### Enable Automatic Repository Optimization {#optimization}
 
 Select **Enable automatic repository optimization** to run Git repository optimization automatically on a regular basis. This helps you maintain the storage structure providing benefits from both performance and repository size perspectives. 
@@ -138,7 +146,7 @@ This option is available when [Enable automatic repository optimization](#optimi
 
 #### Enable Private Version Control with Git 
 
-Select this option when you want to work on an app that is not stored in [Mendix Team Server](/developerportal/general/team-server/), but in a private Git server to which you have access. This will allow you to specify the location of the app on the Git server when opening, downloading, or uploading the app. In this section, you also need to specify name and email values that will be used to identify your commits with Git.
+Select this option when you want to work on an app that is not stored in [Mendix Team Server](/developerportal/repository/team-server/), but in a private Git server to which you have access. This will allow you to specify the location of the app on the Git server when opening, downloading, or uploading the app. In this section, you also need to specify name and email values that will be used to identify your commits with Git.
 
 ## Advanced Tab
 
@@ -161,6 +169,10 @@ Hardware and driver issues may cause performance problems when running Studio Pr
 {{% alert color="info" %}}
 This functionality is currently available in Studio Pro 9.24.
 {{% /alert %}}
+
+### Feedback Survey
+
+When the **Show feedback survey periodically** setting is enabled, Studio Pro will periodically display a feedback survey to gather input on your experience. This helps Mendix improve the product based on user feedback. For more information, see [Feedback Survey](/refguide9/feedback-survey/).
 
 ## Work Environment Tab
 
@@ -185,7 +197,7 @@ Default: *enabled*
 ### Dark Mode Preview {#dark-mode}
 
 {{% alert color="info" %}}
-This functionality is currently in [beta](/releasenotes/beta-features/).
+This functionality is currently in [beta](/releasenotes/release-status/).
 {{% /alert %}}
 
 The **Dark mode** option allows you to preview to the dark mode of the Studio Pro user interface. 
@@ -205,7 +217,7 @@ Default: *enabled*
 ### Properties Pane {#properties}
 
 {{% alert color="info" %}}
-This functionality is currently in [beta](/releasenotes/beta-features/).
+This functionality is currently in [beta](/releasenotes/release-status/).
 {{% /alert %}}
 
 The **New Properties pane preview** option allows you to enable the overhauled UI for viewing and changing properties in Studio Pro.

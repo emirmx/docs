@@ -1,9 +1,11 @@
 ---
 title: "Content API"
+linktitle: "Marketplace Content"
 url: /apidocs-mxsdk/apidocs/content-api/
 type: swagger
-description: "This API allows you to access both public and company-specific Marketplace content information."
-weight: 35
+description: "The Content API accesses both public and company-specific Marketplace content information."
+restapi: true
+weight: 45
 ---
 
 ## Introduction
@@ -20,7 +22,7 @@ If you have Marketplace content, this API can help you get the following informa
 
 ### Generating a PAT
 
-For details on how to generate a PAT, see the [Personal Access Tokens](/community-tools/mendix-profile/user-settings/#pat) section of *User Settings*.
+For details on how to generate a PAT, see the [Personal Access Tokens](/mendix-profile/user-settings/#pat) section of *User Settings*.
 
 Select at least the following as the **Marketplace** scope:
 
@@ -41,4 +43,8 @@ To authenticate calls when using the OpenAPI specification below, click **Author
 
 ## API Reference
 
-{{< swaggerui src="/openapi-spec/marketplace-content.yaml"  >}}
+{{% alert color="warning" %}}
+You cannot call endpoints in the Swagger UI below on this page.
+{{% /alert %}}
+
+{{< swaggerui-disable-try-it-out src="/openapi-spec/marketplace-content.yaml"  >}}

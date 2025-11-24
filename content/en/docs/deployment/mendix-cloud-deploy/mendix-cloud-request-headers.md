@@ -18,6 +18,18 @@ Most of the request headers are added by the HTTP client (the web browser, for e
 
 Using custom Java code in the application, the full content of an incoming request can be inspected.
 
+Request header names are case-insensitive, as defined by [RFC 2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec4.html#sec4.2). This means that headers such as `X-Header-Key`, `x-header-key`, and `X-HEADER-KEY` must be processed in the same way. 
+
+When processing request headers, Mendix recommends converting all request headers names to lowercase to account for case-insensitivity. For example:
+
+```bash
+toLowerCase($HeaderKey) = 'x-header-key'
+```
+
+This ensures consistent handling regardless of the casing used in incoming requests and supports compliance with HTTP standards.
+
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/mendix-cloud-request-headers/tolowercase-header-name.png" alt="Lowercase Request Header Names" width=50%  >}}
+
 ### Usually Available Request Headers Set by the HTTP Client
 
 The following headers are usually set by the HTTP client. Mendix Cloud does not touch the value of these headers. This also means that they might not be available if the HTTP client does not set them.
@@ -34,7 +46,7 @@ The following headers are set by Mendix Cloud. If any of these are present in th
 | Header name                                 | Example values                                             | Description
 | ------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **X-Real-IP**                               | `192.0.2.66`, `2001:db8::31:3024:37:487`                     | The IPv4 or IPv6 address of the endpoint of the HTTP connection at the client side. |
-| **SSL-Protocol**                            | `TLSv1.3`, `TLSv1.2`, `TLSv1.1`, `TLSv1`                     | The TLS encryption protocol used for the HTTPS connection. |
+| **SSL-Protocol**                            | `TLSv1.3`, `TLSv1.2`                                         | The TLS encryption protocol used for the HTTPS connection. |
 | **SSL-Cipher**                              | `ECDHE-RSA-AES256-GCM-SHA384`                                | The TLS ciphers used for the HTTPS connection. |
 | **SSL-Client-S-DN**                         | `CN=Hans van Kranenburg,OU=RnD,O=Mendix,C=NL`                | The Subject DN string of the client certificate for an established TLS connection according to [RFC 2253](https://tools.ietf.org/html/rfc2253). |
 | **SSL-Client-Fingerprint**                  | `74e034c13a38003b433605f5a13062eb816e467e`                   | The SHA1 fingerprint of the client certificate for an established TLS connection. |

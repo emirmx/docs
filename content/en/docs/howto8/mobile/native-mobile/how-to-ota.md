@@ -8,6 +8,12 @@ description: A tutorial for pushing over the air updates (OTA) using App Center'
 
 ## Introduction
 
+{{% alert color="warning" %}}
+In Studio Pro 10.6 and above, Mendix has discontinued support for CodePush. If your app relies on CodePush for over-the-air updates, please note that it will no longer be available.
+
+We recommend migrating your app to a higher version that supports [Mendix OTA](/refguide/mobile/distributing-mobile-apps/overtheair-updates/) for managing over-the-air updates.
+{{% /alert %}}
+
 Using Native Mobile Builder and Mendix Studio Pro, you can update your Mendix Native Apps over the air (OTA). OTA updates are a fast and painless way of updating things like layouts, pages, assets, or even you app's business logic (such as nanoflows and JavaScript actions).
 
 Native apps are separated into two parts: a wrapper that is basically a native iOS or Android app and a bundle that is being loaded dynamically by said wrapper. Things like your business logic and static assets are part of this dynamically-loaded bundle. When you have changes you want to deploy, the Native Mobile Builder can bundle them in a new, updated bundle and painlessly deploy them. On the next app restart, your app's users will be updated to the latest version and continue their business as usual.
@@ -50,7 +56,8 @@ It is good practice to *always* redeploy your Mendix App before pushing a new ov
 * Nanoflow changes
 * JavaScript action changes
 * Widgets shipped with Mendix added or removed
-* A new custom JavaScript-only widget or module was added
+* You added a new custom JavaScript-only widget or module 
+* You added a page with no additional logic 
 * Non-destructive model changes (for more information, see the [Offline First Reference Guide](/refguide8/offline-first/))
 
 ### When a Full Release Is Required
@@ -62,6 +69,7 @@ If you have made any changes directly to your iOS or Android project, you will h
 * You fundamentally changed your app's functionality (this is an Apple App Store limitation, and will require a re-release and re-review of your app by Apple — your app might be removed if you do not comply)
 * A new native module has been added
 * The app has been renamed
+* You added a new microflow or nanoflow
 * The app's launcher icons have been changed
 * The splash screen has been changed
 

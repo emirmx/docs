@@ -13,7 +13,7 @@ These functions are for use in Java code only and must contain full XPath querie
 {{% /alert %}}
 
 {{% alert color="info" %}}
-The functions `avg`, `max`, `min`, and `sum` functions must specify a column in the query to aggregate (for example, `/TotalPrice`).
+The functions `avg`, `max`, `min`, and `sum` functions must specify an attribute in the query to aggregate (for example, `/TotalPrice`).
 
 The functions `avg`, `max`, `min`, and `sum` functions must also specify an attribute that has a numeric type.
 {{% /alert %}}

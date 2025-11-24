@@ -1,5 +1,6 @@
 ---
-title: "Private Mendix Platform"
+title: "Private Mendix Platform Release Notes"
+linktitle: Private Mendix Platform
 url: /releasenotes/private-platform/
 description: "Release notes for updates to the Private Mendix Platform"
 weight: 40
@@ -11,6 +12,17 @@ These release notes cover changes made to the [Private Mendix Platform](/private
 
 Release notes are available for the following versions of Private Mendix Platform:
 
+* [1.24](/releasenotes/private-platform/1-24/)
+* [1.23](/releasenotes/private-platform/1-23/)
+* [1.22](/releasenotes/private-platform/1-22/)
+* [1.21](/releasenotes/private-platform/1-21/)
+* [1.20](/releasenotes/private-platform/1-20/)
+* [1.19](/releasenotes/private-platform/1-19/)
+* [1.18](/releasenotes/private-platform/1-18/)
+* [1.17](/releasenotes/private-platform/1-17/)
+* [1.16](/releasenotes/private-platform/1-16/)
+* [1.15](/releasenotes/private-platform/1-15/)
+* [1.14](/releasenotes/private-platform/1-14/)
 * [1.13](/releasenotes/private-platform/1-13/)
 * [1.12](/releasenotes/private-platform/1-12/)
 * [1.11](/releasenotes/private-platform/1-11/)

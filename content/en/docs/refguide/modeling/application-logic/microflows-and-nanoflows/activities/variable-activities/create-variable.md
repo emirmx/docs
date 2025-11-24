@@ -14,6 +14,12 @@ The **Create variable** activity allows you to create a new variable and assign 
 
 For example, you can create a *$Discount* variable and assign a value of *0.5* to give customers a 50% discount and use this value to calculate a price for a customer.
 
+### Variable Scope
+
+A variable will be in scope for the entire flow and can be used by all activities following the create variable activity in the flow.
+
+Variables created inside a loop are not accessible outside the loop. In this case the variable will persist within the loop but the value will be reset to the initial value for each iteration.
+
 ## Properties
 
 There are two sets of properties for this activity, those in the dialog box on the left, and those in the properties pane on the right:
@@ -43,7 +49,7 @@ Defines the initial value of the variable. The value is entered using an [expres
 
 ### Variable Name
 
-Variable defines the name of the resulting variable. The variable can be used by all activities following this activity in the flow.
+Variable name defines the name of the resulting variable. The variable can be used by all activities following this activity in the flow. Each variable you create must have a different name.
 
 ## Common Section {#common}
 

@@ -6,7 +6,7 @@ weight: 10
 ---
 
 {{% alert color="warning" %}}
-In Studio Pro 9, add-on modules and solution modules were previously available in preview for select customers and partners as part of an early access program. In Studio Pro 10, this functionality is generally available for all users. For more information, see this page in the [Studio Pro 10 Guide](/refguide/module-settings/).
+In Studio Pro 9, add-on modules and solution modules were previously available in preview for select customers and partners as part of an early access program. In Studio Pro 10, this functionality is generally available for all users. For more information, see this page in the [Studio Pro 10 Guide](/refguide10/module-settings/).
 {{% /alert %}}
 
 ## Introduction
@@ -35,7 +35,7 @@ An **App module** is exported as a package file (*.mpk* ) that includes the full
 
 ### Add-on Module {#add-on-module}
 
-An **add-on module** is a stand-alone module that is not dependent on other modules and is used as a separate element, for example, as a connector. 
+An **add-on module** is a standalone module that is not dependent on other modules and is used as a separate element, for example, as a connector. 
 
 An add-on module is exported as an module file (*.mxmodule*) that only exposes the elements with the **Usable** export level. For more information on Export levels, see [Configuring Add-on and Solution Modules for Publishing](/refguide9/configure-add-on-and-solution-modules/). Its source cannot be inspected by the consumer of the module.
 

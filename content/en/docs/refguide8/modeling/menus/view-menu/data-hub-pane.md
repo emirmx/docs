@@ -7,13 +7,9 @@ description: "Describes the Data Hub pane in Mendix Studio Pro."
 
 ## Introduction 
 
-[Mendix Data Hub](/data-hub/) enables integration of available data sources from the different applications in an organization into your Mendix apps. This means that new apps can be created using shared datasets that are registered in the [Catalog](/catalog/). In Studio Pro, this is possible using the integrated functionality of Catalog through the **Data Hub** pane.
+The [Catalog](/catalog/) enables integration of available data sources from the different applications in an organization into your Mendix apps. This means that new apps can be created using shared datasets that are registered in the Catalog. In Studio Pro, this is possible using the integrated functionality of Catalog through the **Data Hub** pane.
 
-You can search in the Catalog through the **Data Hub** pane to discover data sources that you can use in your project. Via this pane you can add the entities that are exposed in the registered OData services—called **Data Sources** in Data Hub—into your app's domain model. These entities are called [external entities](/refguide8/external-entities/) and are different because they enable the connection to the data associated with the entities in the originating app.
-
-{{% alert color="info" %}}
-In the Catalog, registered published services are referred to as *data sources*. Exposed entities will show the **Entity set** name and are called *datasets.*
-{{% /alert %}}
+You can search in the Catalog through the **Data Hub** pane to discover data sources that you can use in your project. Via this pane you can add the entities that are exposed in the registered OData services into your app's domain model. These entities are called [external entities](/refguide8/external-entities/) and are different because they enable the connection to the data associated with the entities in the originating app.
 
 To display the **Data Hub** pane, click **View** > **Data Hub**:
 
@@ -94,11 +90,11 @@ The search results and Project pane will show the following at a service level:
     * **View in Catalog** – click this to go to the **Data Source Details** page in the Catalog
     * **Go to connection settings** – click this to open the [consumed OData service](/refguide8/consumed-odata-service/) document
 
-* **Blue** **Update Service** icon to indicate that there is another version of the consumed service available in the Data Hub. Click to update the service that is consumed in the project to the contract that is now available:
+* **Blue** **Update Service** icon to indicate that there is another version of the consumed service available in the Catalog. Click to update the service that is consumed in the project to the contract that is now available:
 
     {{< figure src="/attachments/refguide8/modeling/integration/consumed-odata-services/data-hub-pane-update.png" alt="Data Hub Pane update" class="no-border" >}}
 
-    {{% alert color="info" %}}If there is an OData Service update available, then the entities that are listed are those that are available in that version of the OData service. These entities will be "grayed-out" to indicate that they cannot be dragged into the domain model as the *current* contract that is consumed in the project does not have these entities. You will have to update the contract to the version shown in the search results by clicking the **Update**. arrow. {{% /alert %}}
+    {{% alert color="info" %}}If there is an OData Service update available, then the entities that are listed are those that are available in that version of the OData service. These entities will be "grayed-out" to indicate that they cannot be dragged into the domain model as the *current* contract that is consumed in the project does not have these entities. You will have to update the contract to the version shown in the search results by clicking the **Update** arrow. {{% /alert %}}
 
     {{% alert color="info" %}}The version number that is shown for the OData service is the latest one that is available in the Catalog at the service endpoint—in the example above version 1.0.11 of **Theatre_service** is currently consumed in the project, but version **1.0.12** is now available in the Catalog. The search results display the entities available in the new service (also showing one that is locally consumed) however they are greyed-out and cannot be selected until the local service is **Updated** to this one.{{% /alert %}}
 
@@ -126,7 +122,7 @@ If you right-click a consumed entity and **Go to entity**, it will take you to t
 
 The associations that are exposed in the services are listed before attributes in alphabetical order. You can click on the **+** to see the entity that the association is with.
 
-**Mulitple association**s between the same entities are shown before single associations.
+**Multiple association**s between the same entities are shown before single associations.
 
 In the following example the entity **Customer** has multiple associations with the entity **Order** however, these associations are not supported and cannot be used in your model"
 

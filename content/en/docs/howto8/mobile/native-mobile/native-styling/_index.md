@@ -5,6 +5,10 @@ weight: 30
 description: General information for native styling in Mendix.
 ---
 
+{{% alert color="info" %}}
+The Atlas UI Resources module is deprecated, as is Atlas 2. If you are still using Atlas 2, Mendix recommends that you [migrate from Atlas 2 To Atlas 3](/refguide9/moving-from-atlas-2-to-3/).
+{{% /alert %}}
+
 ## Introduction
 
 With Mendix 8, you can build native mobile apps with custom styling in Mendix Studio Pro. Styling native mobile apps uses JavaScript style sheets, which are new to Mendix Studio Pro. Consult the guidelines below for information on theme folder structure, classes, and design properties.

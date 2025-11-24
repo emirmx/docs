@@ -1,8 +1,8 @@
 ---
-title: "Use Velero to Back Up Private Cloud Namespaces"
+title: "Use Velero to Back Up Mendix on Kubernetes Namespaces"
 linktitle: "Use Velero to Back Up Namespaces"
 url: /developerportal/deploy/private-cloud-velero/
-description: "Describes the process for using Velero to create and restore backups of your Mendix app namespaces in private cloud"
+description: "Describes the process for using Velero to create and restore backups of your Mendix app namespaces in Mendix on Kubernetes"
 weight: 25
 ---
 
@@ -21,10 +21,10 @@ Velero enables you to back up and restore the following Mendix objects:
 
 Before starting this how-to, make sure you have completed the following prerequisites:
 
-* Ensure that the [Mendix Operator](/developerportal/deploy/private-cloud-technical-appendix-01/) for your private cloud cluster is in version 2.7.0 or above.
+* Ensure that the [Mendix Operator](/developerportal/deploy/private-cloud-technical-appendix-01/) for your Mendix on Kubernetes cluster is in version 2.7.0 or above.
 * Install the Velero client and server in version 1.9 or above. For more information, see [Velero documentation](https://velero.io/docs/).
 * Create a recovery cluster.
-    {{% alert color="info" %}}The process of creating a recovery cluster may vary depending on the platform that you use to host your private cloud. For more information, refer to the documentation supplied by your cloud provider.{{% /alert %}}
+    {{% alert color="info" %}}The process of creating a recovery cluster may vary depending on the platform that you use to host your Mendix on Kubernetes. For more information, refer to the documentation supplied by your cloud provider.{{% /alert %}}
 
 ## Creating a Velero Backup
 
@@ -78,7 +78,9 @@ To restore a backup that you created with Velero, follow these steps:
 3. Optional: After restoring the backup, add finalizers to `StorageInstances` by entering the following command:
 
     ```text
-    kubectl patch storageinstances $(kubectl get storageinstances --no-headers -o custom-columns=":metadata.name") -p '{"metadata":{"finalizers":["finalizer.privatecloud.mendix.com"]}}' --type=merge
+    kubectl patch storageinstances $(kubectl get storageinstances --no-headers -o custom-columns=":metadata.name") -p '{"metadata":{"finalizers":["privatecloud.mendix.com/storage-provisioner"]}}' --type=merge
     ```
 
     {{% alert color="info" %}}Adding finalizers is not required, but it is recommended as a best practice. It ensures that the Kubernetes garbage collection cleans up the storage from deleted environments.{{% /alert %}}
+
+    {{% alert color="info" %}}For Mendix Operator versions earlier than 2.20, use `finalizer.privatecloud.mendix.com` instead of `privatecloud.mendix.com/storage-provisioner` in the command above.{{% /alert %}}

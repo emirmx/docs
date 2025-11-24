@@ -114,7 +114,9 @@ The **Committing** state of the **IMendixObject** is deprecated.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-The **Delete object(s)** activity also removes the variable from the microflow. Be careful not to use the variable anymore after using it in a **Delete object(s)** activity.
+The **Delete object(s)** activity also removes the object or list reference from the microflow. Be careful not to use the object or list anymore after using it in a **Delete object(s)** activity.
+
+There is an exception to this in the case of lists in loops. When **Delete object(s)** is used on a list in a loop, the reference is not removed, but is changed to an empty list. This means that you can add new objects to the list within the loop and the following activities can act on the objects in these lists. 
 {{% /alert %}}
 
 * Events:
@@ -156,10 +158,10 @@ No before or after delete events will be executed in this case.
 1. Searches the device database for all objects that reference the deleted object.
 1. Clears all references to the deleted object from all objects found previously.
 1. Deletes the object from the device database.
-1. Marks the object as deleted in the offline database, which makes it possible to synchronize the deletion with the server.
+1. Marks the object as deleted in the offline database, which makes it possible to synchronize the deletion with the server using [Synchronize unsynchronized objects](/refguide/synchronize/#unsynchronized-objects) or [Synchronize all objects](/refguide/synchronize/#all-objects).
 
 Before and after events for the deleted object will be executed upon synchronization.
 
 #### Deleting a Non-Persistable Object
 
-Deleting a NPE is not supported in a nanoflow in an offline-first app.
+Deleting an NPE is not supported in a nanoflow in an offline-first app.

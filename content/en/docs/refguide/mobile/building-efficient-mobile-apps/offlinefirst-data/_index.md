@@ -9,7 +9,7 @@ aliases:
     - /refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/
 ---
 
-## Introduction
+## Introduction{#intro}
 
 The Mendix platform offers support to build fully offline-first applications, whether it is a native mobile app or a progressive web app.
 
@@ -19,7 +19,19 @@ Offline-first applications work regardless of the connection to provide a contin
 It is essential to understand that offline-first is an architectural concept and not an approach based on the device's network state. Offline-first apps do not rely on a connection. Still, they can use network connections (for example, you can call microflows, use a Google Maps widget, or use push notifications).
 {{% /alert %}}
 
-Mendix supports building offline-first applications for [native mobile](/refguide/native-mobile/) and [progressive web apps](/refguide/mobile/introduction-to-mobile-technologies/progressive-web-app/). Both native and progressive web apps (PWAs) share the same core, giving them the same offline-first capabilities. Native mobile apps are always offline-first, but for progressive web apps this is optional. You can configure your PWA to be offline-first by adding an offline-first PWA navigation profile to your app. For more information, see [Progressive Web Apps](/refguide/mobile/introduction-to-mobile-technologies/progressive-web-app/).
+Mendix supports building offline-first applications for [native mobile](/refguide/native-mobile/) and [progressive web apps](/refguide/mobile/introduction-to-mobile-technologies/progressive-web-app/). Both native and progressive web apps (PWAs) share the same core, giving them the same offline-first capabilities. 
+
+Starting in Studio Pro 11.0.0, the feature of adding online date in offline apps is generally available. This means developers have more flexibility than ever when building apps and configuring when and how they pass data.
+
+Native mobile apps are always offline-first, but for progressive web apps this is optional. You can configure your PWA to be offline-first by adding an offline-first PWA navigation profile to your app. For more information, see [Progressive Web Apps](/refguide/mobile/introduction-to-mobile-technologies/progressive-web-app/).
+
+{{% alert color="info" %}}
+**Online Synchronization Mode**
+
+This mode allows app developers to use entity data on pages without synchronizing the data of those entities to the offline database. Using this mode requires an available connection to the server. 
+
+For more details, see [Online Synchronization Mode](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/online-sync-mode/).
+{{% /alert %}}
 
 ## Synchronization
 
@@ -39,7 +51,7 @@ Changes made by the user are stored in this offline-first database, too. This me
 
 Another important aspect of developing offline-first apps is backwards-compatibility. Typically when you deploy a new version of a web app to the cloud, all users immediately have access to the latest model. However, that is not the case with offline-first apps. Some parts of your app model are distributed as part of the native mobile app package, such as pages, nanoflows and JavaScript actions. This means even if you change and deploy new versions of these parts, your users do not have access to the latest version until they update their native mobile apps through an OTA package or an online app store such as Google Play or App Store.
 
-Imagine that you have deployed the first version of your native mobile app, your users have downloaded it, and now they are using it. At this point you should be thoughtful of the changes you introduce to the model. For example, assume you rename an entity and deploy it to the Mendix Cloud. The local databases in your users' devices will still be using the old entity name. This may cause synchronization errors if your users attempt to synchronize a new object of the entity you renamed, because the server no longer has an entity with the old name. Even after your users update the apps on their devices, there may be data created using the old model domain that needs to be synchronized with the server. Issues like this are why you need to ensure that your app's model changes are backward-compatible.
+Imagine that you have deployed the first version of your native mobile app, your users have downloaded it, and now they are using it. At this point you should be thoughtful of the changes you introduce to the model. For example, assume you rename an entity and deploy it to Mendix Cloud. The local databases in your users' devices will still be using the old entity name. This may cause synchronization errors if your users attempt to synchronize a new object of the entity you renamed, because the server no longer has an entity with the old name. Even after your users update the apps on their devices, there may be data created using the old model domain that needs to be synchronized with the server. Issues like this are why you need to ensure that your app's model changes are backward-compatible.
 
 A similar issue may occur regarding changes to other app elements, including microflows and constants available to the client. For example, if your new deployment renames a microflow or modifies its parameters, users who have not updated their apps will be working with the previous model of the app where it references the microflow with the old name. 
 

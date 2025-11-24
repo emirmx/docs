@@ -629,8 +629,7 @@ The created bundles need to be copied to the right place in the Native Template 
 
 ## Deriving the App's Native Dependencies
 
-Mendix Studio Pro 9 introduced Native Dependency resolution for pluggable widgets and JavaScript actions. For more information, see [Declaring Native Dependencies
-](/apidocs-mxsdk/apidocs/pluggable-widgets-native-dependencies/). Prior to Studio Pro 9 Mendix Studio Pro was shipping with a set of core dependencies which are now are removed. 
+Mendix Studio Pro 9 introduced Native Dependency resolution for pluggable widgets and JavaScript actions. For more information, see [Declaring Native Dependencies](/apidocs-mxsdk/apidocs/pluggable-widgets-native-dependencies/). Prior to Studio Pro 9 Mendix Studio Pro was shipping with a set of core dependencies which are now are removed. 
 
 As you develop, you may add more Mendix Studio Pro 9 compatible modules, widgets, and actions to your app. This means and more dependencies 
 will be added that will also need be declared in your app's Native Template prior to building the native apps. 
@@ -653,8 +652,7 @@ A CI environment needs to be able to do the following to successfully configure 
 * Set up the configuration and move assets as needed (this can be done with simple shell scripts or any other solution, and is the implementer's choice) 
 * Run `npm i` and `npm run configure` to configure the app using Mendix Mobile Toolkit before the build.
 
-How to build the apps is a choice for the implementer. Mendix Native App Builder use App Center for convenience. There are multiple other 
-solutions, on premise or as a service, that can be used for this purpose. We do not endorse one over the other.
+How to build the apps is a choice for the implementer.There are multiple solutions, on premise or as a service, that can be used for this purpose. We do not endorse one over the other.
 
 ## Read More
 

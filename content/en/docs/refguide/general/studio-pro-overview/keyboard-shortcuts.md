@@ -11,6 +11,8 @@ description: "Describes the shortcut keys available in Studio Pro."
 
 This document summarizes the shortcut keys available in Studio Pro. This document is divided into sections which indicate where you can use the keys.
 
+The Windows shortcuts are provided as a reference PDF, available in both [dark](https://www.mendix.com/wp-content/uploads/Windows-Keyboard-Shortcuts-dark-mode.pdf) and [light](https://www.mendix.com/wp-content/uploads/Windows-Keyboard-Shortcuts-light-mode.pdf) versions.
+
 ## General Shortcut Keys
 
 These keys are available in multiple places within Studio Pro and work generically.
@@ -46,9 +48,9 @@ The following key combinations work in the editors, such as the Domain Model, Pa
 | <kbd>Ctrl</kbd> + <kbd>Y</kbd> | <kbd>Command</kbd> + <kbd>Y</kbd> | Redo the last undone action in an editor pane. |
 | <kbd>Ctrl</kbd> + <kbd>Z</kbd> | <kbd>Command</kbd> + <kbd>Z</kbd> | Undo the last action in an editor pane. |
 | <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> | Not Available | Navigate between open editors (opens pane navigation dialog where editors are called *active files*). |
-| <kbd>Ctrl</kbd> + Mouse scroll wheel | <kbd>Command</kbd> + Mouse scroll wheel | Zooms in or out. |
-| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Minus&nbsp;sign</kbd> | Not available | Zooms in or out. |
-| <kbd>Shift</kbd> + Mouse&nbsp;scroll&nbsp;wheel | <kbd>Shift</kbd> + Mouse&nbsp;scroll&nbsp;wheel | Scrolls left or right. Works as if you were using the horizontal scroll bar. |
+| <kbd>Ctrl</kbd> + Mouse scroll wheel | <kbd>Command</kbd> + Mouse scroll wheel | Zoom in or out. |
+| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Plus&nbsp;sign</kbd>/<kbd>Minus&nbsp;sign</kbd> | Not available | Zoom in or out. |
+| <kbd>Shift</kbd> + Mouse scroll wheel | <kbd>Shift</kbd> + Mouse scroll wheel | Scroll left or right. Works as if you were using the horizontal scroll bar. |
 | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd> | Not available | Copy the inline styles, classes, and design properties of a widget. |
 | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd> | Not available | Paste the widget styling onto another selected widget. |
 
@@ -103,9 +105,57 @@ The following shortcut keys are available in the page editor:
 | <kbd>Enter</kbd> | <kbd>Enter</kbd> | Edits the properties of the currently selected object in a dialog box. |
 | <kbd>F2</kbd> | <kbd>Fn</kbd> + <kbd>F2</kbd> | Edits the caption of a label or button, or the contents of text, inline on the page. You can also just start typing a letter or a digit and the caption will be replaced by what you type. |
 
-## Microflow and Nanoflow Editor Shortcut Keys
+## Microflow, Nanoflow, and Rule Editor Shortcut Keys {#logic-editor-keyboard-support}
 
-For an overview of the supported shortcut keys in the microflow and nanoflow editors, see the [Keyboard Support](/refguide/microflows/#keyboard) section in *Microflows*. The supported shortcut keys are the same in the microflow, nanoflow, and rule editors. 
+The tables in the following sub-sections present the shortcut keys that can be used in the microflow, nanoflow, and rule editors.
+
+### Selection
+
+| Windows | Mac | Description |
+| --- | --- | --- |
+| Arrow Keys | Arrow Keys | Select nearby element (activity, event, loop or parameter) in the direction of the arrow. |
+| <kbd>Home</kbd> | <kbd>Fn</kbd> + Left arrow | Select the start event. |
+| <kbd>End</kbd> | <kbd>Fn</kbd> + Right arrow | Cycle through the end events. |
+| <kbd>Ctrl</kbd> + <kbd>A</kbd> | <kbd>Command</kbd> + <kbd>A</kbd> | Select all elements. |
+| <kbd>Ctrl</kbd> | <kbd>Command</kbd> | When pressing <kbd>Ctrl</kbd>/<kbd>Command</kbd>, you can select additional elements. Clicking a selected element or selecting it with a selection rectangle while holding <kbd>Ctrl</kbd>/<kbd>Command</kbd> will deselect it. |
+| <kbd>Tab</kbd> | <kbd>Tab</kbd> | If a loop is selected, the first element inside the loop will be selected. |
+| <kbd>Shift</kbd> + <kbd>Tab</kbd> | <kbd>Shift</kbd> + <kbd>Tab</kbd> | If an element inside a loop is selected, the loop itself will be selected. |
+
+### Navigation
+
+| Windows | Mac | Description |
+| --- | --- | --- |
+| Mouse scroll wheel | Mouse scroll wheel | Scroll up or down. |
+| <kbd>Shift</kbd> + Mouse scroll wheel | <kbd>Shift</kbd> + Mouse scroll wheel | Scroll left or right. |
+| <kbd>Space</kbd> + Mouse button | <kbd>Space</kbd> + Mouse button | Drag screen. |
+| <kbd>Ctrl</kbd> + Mouse scroll wheel | <kbd>Command</kbd> + Mouse scroll wheel | Zoom in or out. |
+| <kbd>Ctrl</kbd> + <kbd>Plus&nbsp;sign</kbd>/<kbd>Minus&nbsp;sign</kbd> | <kbd>Command</kbd> + <kbd>Plus&nbsp;sign</kbd>/<kbd>Minus&nbsp;sign</kbd> | Zoom in or out.  |
+| <kbd>Ctrl</kbd> + <kbd>0</kbd> | <kbd>Command</kbd> + <kbd>0</kbd> | Reset zoom level to 100%. |
+
+### Element Manipulation
+
+| Windows | Mac | Description |
+| --- | --- | --- |
+| <kbd>Enter</kbd> - on an element | <kbd>Enter</kbd> - on an element | If an element is selected, edit its properties. |
+| <kbd>Enter</kbd> - on a Logic Recommender suggestion list item | <kbd>Enter</kbd> - on a Logic Recommender suggestion list item | The selected item is added on the sequence flow. The Logic Recommender dialog box is shown again for the next action to be added. |
+| <kbd>Shift</kbd> + <kbd>Enter</kbd> (or <kbd>Shift</kbd> + Mouse button) - on a Logic Recommender suggestion list item| <kbd>Shift</kbd> + <kbd>Enter</kbd> (or <kbd>Shift</kbd> + Mouse button) - on a Logic Recommender suggestion list item | The selected item is added on the sequence flow. The element’s property dialog box is opened. |
+| <kbd>F2</kbd> | <kbd>Fn</kbd> + <kbd>F2</kbd> | Rename the variable returned by the selected element. |
+| <kbd>Shift</kbd> + <kbd>F2</kbd> or just start typing | <kbd>Shift</kbd> + <kbd>Fn</kbd> + <kbd>F2</kbd> or just start typing | Open the **Properties** pane and edit the caption of the selected element. |
+| Context-menu key or <kbd>Shift</kbd> + <kbd>F10</kbd> | <kbd>Shift</kbd> + <kbd>Fn</kbd> + <kbd>F10</kbd> | Open the context-menu for the currently selected element. |
+| <kbd>Shift</kbd> | <kbd>Shift</kbd> | When holding <kbd>Shift</kbd>, connection points are shown while hovering over elements.<br><br>{{% alert color="info" %}}This keyboard shortcut does not work out of the box when running Studio Pro in Parallels on MacOS. To resolve the issue, navigate to the virtual machine **configuration** > **Hardware** > **Mouse & Keyboard** and enable the **Optimize for games** option. This ensures that an event is sent to the virtual machine whenever a modifier key is pressed.{{% /alert %}}|
+
+## Workflow Editor Shortcut Keys {#workflow-editor-shortcut-keys}
+
+The following shortcut keys are available in the workflow editor:
+
+| Windows | Mac | Description |
+| --- | --- | --- |
+| Mouse scroll wheel| Mouse scroll wheel | Scroll up or down. |
+| <kbd>Shift</kbd> + Mouse scroll wheel | <kbd>Shift</kbd> + Mouse scroll wheel | Scroll left or right. |
+|<kbd>Ctrl</kbd> + Mouse scroll wheel | <kbd>Command</kbd> + Mouse scroll wheel | Zoom in or out. |
+| <kbd>Ctrl</kbd> + <kbd>Plus&nbsp;sign</kbd>/<kbd>Minus&nbsp;sign</kbd> | <kbd>Command</kbd> + <kbd>Plus&nbsp;sign</kbd>/<kbd>Minus&nbsp;sign</kbd> | Zoom in or out.  |
+| <kbd>Ctrl</kbd> + <kbd>0</kbd> | <kbd>Command</kbd> + <kbd>0</kbd> | Reset zoom level to 100%. |
+| <kbd>Ctrl</kbd> + Left/Right arrow | <kbd>Command</kbd> + Left/Right arrow | Move a [boundary event](/refguide/workflow-boundary-events/) left or right. |
 
 ## Debugger Shortcut Keys {#debugger-shortcuts}
 
@@ -123,7 +173,7 @@ The following shortcut keys are available for the debugger:
 
 The following shortcut keys are assigned to menu actions that can be used in all panes. These are also shown in the menus and listed on the documentation page for each menu under [Menus](/refguide/menus/).
 
-| Windows | Mac                                                          | Description |
+| Windows | Mac | Description |
 | --- | --- | --- |
 | <kbd>F1</kbd> | <kbd>Fn</kbd> + <kbd>F1</kbd> | Help. |
 | <kbd>F3</kbd> | <kbd>Fn</kbd> + <kbd>F3</kbd> | Highlights the next find result in the **Find Results** pane and open it in an editor. |
@@ -155,6 +205,25 @@ The following shortcut keys are assigned to menu actions that can be used in all
 | <kbd>Ctrl</kbd> + <kbd>W</kbd> | <kbd>Command</kbd> + <kbd>W</kbd> | Closes the current document. |
 | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>W</kbd> | <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>W</kbd> | Closes all document tabs. |
 | <kbd>Delete</kbd> | <kbd>Delete</kbd> | Deletes the selected element. |
+
+## Maia Chat Shortcut Keys {#maia-chat-shortcuts}
+
+You can use the following shortcut keys in [Maia Chat](/refguide/maia-chat/), including on the feedback page:
+
+| Windows | Mac | Description |
+| --- | --- | --- |
+| <kbd>Enter</kbd> | <kbd>Enter</kbd> | Send your question in the chat. |
+| <kbd>Shift</kbd> + <kbd>Enter</kbd> | <kbd>Shift</kbd> + <kbd>Enter</kbd> | Add a new line to your question. |
+| <kbd>Delete</kbd> | <kbd>Delete</kbd> | Delete the selected text. |
+| <kbd>Ctrl</kbd> + <kbd>C</kbd> | <kbd>Command</kbd> + <kbd>C</kbd> | Copy the selected text to the clipboard. |
+| <kbd>Ctrl</kbd> + <kbd>X</kbd> | <kbd>Command</kbd> + <kbd>X</kbd> | Cut the selected text to the clipboard. |
+| <kbd>Ctrl</kbd> + <kbd>V</kbd> | <kbd>Command</kbd> + <kbd>V</kbd> | Paste the text of the clipboard. |
+| <kbd>Ctrl</kbd> + <kbd>Z</kbd> | <kbd>Command</kbd> + <kbd>Z</kbd> | Undo the previous action. |
+| <kbd>Ctrl</kbd> + <kbd>Y</kbd> | Not available | Redo the previous action. |
+
+{{% alert color="warning" %}}
+In some scenarios, Mac-supported shortcut keys might not work.
+{{% /alert %}}
 
 ## Read More
 

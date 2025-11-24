@@ -9,6 +9,10 @@ aliases:
     - /howto8/ux/create-a-custom-theme-with-the-mendix-ui-framework
 ---
 
+{{% alert color="info" %}}
+The Atlas UI Resources module is deprecated, as is Atlas 2. If you are still using Atlas 2, Mendix recommends that you [migrate from Atlas 2 To Atlas 3](/refguide9/moving-from-atlas-2-to-3/).
+{{% /alert %}}
+
 ## Introduction
 
 Mendix Atlas UI is the design framework that makes building elegant user experiences a rapid process. It was built upon three design principles: simplicity, harmony, and flexibility. Simplicity helps you focus on what is important. We’ve simplified the design process with readymade page templates, building blocks, and widgets that can be arranged and customized to suit your app. Our design elements are harmonious, bringing a unified aesthetic to your app landscape. Atlas UI is built to be fully responsive, ensuring quality across scale without losing functionality. 

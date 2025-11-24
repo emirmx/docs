@@ -2,15 +2,15 @@
 title: "Jumping to Different Activities in a Workflow"
 url: /refguide/jump-to/
 linktitle: "Jump to Different Activities"
-weight: 55
+weight: 60
 ---
 ## Introduction
 
-Running workflow instances can be manually changed while they are in progress. This means that you can manually select what activity the workflow will continue from. This can be useful to correct wrong decisions or to continue a workflow when it is in incompatible state. You can use the [Generate Jump-to Option](/refguide/generate-jump-to-options/) microflow action to generate a list of activities the workflow can jump to and the [Apply Jump-To Option](/refguide/apply-jump-to-option/) microflow action to apply the desired changes to the workflow instance. The information is captured in a set of non-persistent entities.
+Running workflow instances can be manually changed while they are in progress. This means that you can manually select what activity the workflow will continue from. This can be useful to correct wrong decisions or to continue a workflow when it is in incompatible state. You can use the [Generate Jump-to Option](/refguide/generate-jump-to-options/) microflow action to generate a list of activities the workflow can jump to and the [Apply Jump-To Option](/refguide/apply-jump-to-option/) microflow action to apply the desired changes to the workflow instance. The information is captured in a set of non-persistable entities.
 
 {{% alert color="info" %}}
 
-This functionality is different from the [Jump activity](/refguide/jump-activity/) in workflows, which you can add from the **Toolbox** when you configure the workflow. The jumping to different activities functionality is something that you configure via microflow activities. 
+This functionality is different from the [Jump activity](/refguide/jump-activity/) in workflows, which you can add from the **Toolbox** when you configure the workflow. The jumping to different activities functionality is something that you configure via microflow activities.
 
 {{% /alert %}}
 
@@ -20,7 +20,7 @@ The [Generate Jump-to Option](/refguide/generate-jump-to-options/) microflow act
 
 {{< figure src="/attachments/refguide/modeling/application-logic/workflows/jump-to/jump-to-entities.jpg" class="no-border" >}}
 
-The **System.WorkflowJumpToDetails** object is associated with the **System.Workflow** through the **System.WorkflowJumpToDetails_Workflow** association, reflecting the workflow instance for which the information is generated. It also contains **System.WorkflowCurrentActivity** objects through the **System.WorkflowJumpToDetails_CurrentActivities** association. 
+The **System.WorkflowJumpToDetails** object is associated with the **System.Workflow** through the **System.WorkflowJumpToDetails_Workflow** association, reflecting the workflow instance for which the information is generated. It also contains **System.WorkflowCurrentActivity** objects through the **System.WorkflowJumpToDetails_CurrentActivities** association.
 
 The **System.WorkflowCurrentActivity** reflects the current activities of the workflow instance and gets the description of the current activity through the **System.WorkflowCurrentActivity_ActivityDetails** association. It also contains a list of activities which this activity can jump to through the **System.WorkflowCurrentActivity_ApplicableTargets** association. The **System.WorkflowCurrentActivity_JumpToTarget** association is empty.
 
@@ -40,9 +40,19 @@ When the **Action** attribute is set to *JumpTo*, the **System.WorkflowCurrentAc
 
 After setting the objects, changes can be applied by calling a microflow containing the [Apply jump-to option](/refguide/apply-jump-to-option/). This will change the current activities of the associated workflow instance and queue the workflow for execution (as this happens asynchronously, execution may not happen instantly). If the workflow was in incompatible state because of versioning conflicts, the workflow is set to its previous state (for example *In Progress* or *Paused*).
 
-## Jumping to Other Activities in Parallel Splits
+## Jumping to Other Activities in Parallel Splits or in Boundary Event Paths
 
-Jumping to other activities has a limitation in parallel splits: it is not possible to jump into or out of a current parallel split path. However, it is possible to jump to other activities in a current parallel split path including the end of the path. Activities in other parallel split paths and activities outside of the current parallel split path will not be available in the **System.WorkflowCurrentActivity_ApplicableTargets** association.
+Jumping to other activities has a limitation in parallel splits and in boundary event paths: it is not possible to jump into or out of a current parallel split or boundary event path. However, it is possible to jump to other activities within a current parallel split or boundary event path, including the end of the path. Also, it is possible to jump from an interrupting boundary event path to its parent or grandparent path, since they are considered part of the same path. Activities in other parallel splits or boundary event paths, as well as activities outside the current path, are not available in the **System.WorkflowCurrentActivity_ApplicableTargets** association.
+
+For more information about jumping rules in a boundary event path, see the [Jump Rules](/refguide/workflow-boundary-events/#jump-rules) section in *Boundary Events*.
+
+## Jumping from Current Activity to Itself
+
+It is possible to jump from an active [Multi-user task](/refguide/multi-user-task/) back to itself. When this occurs, the following behavior applies:
+
+* All individually selected outcomes are reset.
+* Targeted and assigned users are cleared, and user targeting will be executed again.
+* Any existing timer boundary events that were already scheduled will continue running and are not canceled. After the jump is executed, these same boundary events are scheduled again. This may result in duplicate timer events being scheduled. These duplicate events will remain pending until the original events expire, at which point the newly scheduled ones are automatically aborted.
 
 ## Read More
 

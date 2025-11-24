@@ -2,7 +2,7 @@
 title: "Performing Workflow Basic Functions"
 linktitle: "Perform Basic Functions"
 url: /refguide/perform-workflow-basic-functions/
-weight: 20
+weight: 50
 ---
 
 ## Introduction
@@ -53,12 +53,12 @@ There are several ways to add an element to a workflow:
     1. Open the **Toolbox**.
     2. Select an element you would like to add and drag this element into the working area.
 
-* You can add an element via an path in your workflow (available from Studio Pro 10.4.0):
+* You can add an element via an path in your workflow:
 
     1. Place your mouse on any path you would like to add an element to. A plus icon appears to indicate that a new element can be added.
     2. Click the plus icon and select an element from the pop-up menu.
 
-* You can also add an element by right-clicking an existing element (available from Studio Pro 10.4.0):
+* You can also add an element by right-clicking an existing element:
 
     1. Right-click an existing element and go to **Insert after**.
     2. Select an element from the menu.
@@ -77,7 +77,8 @@ You can move elements around in your workflow. To do so, drag and drop an elemen
 
 This moves the whole structure of the dragged element, meaning that the element and its underlying elements are moved too.
 
-You cannot move the first (and only) start event and the last end event.
+* You cannot move the first (and only) start event and the last end event.
+* You cannot move the end of a boundary event path
 
 ### Moving Outgoing Paths in a Workflow
 
@@ -101,6 +102,9 @@ When using cut/copy/paste, note the following:
 * When the clipboard contents has an **Annotation**, it can only be pasted into the workflow or into individual activities that support annotations.
 * Pasting an activity after an **End** or **Jump** activity results in a consistency error as an **End** or **Jump** activity should be placed at the end of a flow.
 * Pasting activity can result in a consistency error when the next activity becomes unreachable by either placing an **End** or **Jump** activity in front of it or when all flows before a merge end with an **End** or **Jump** activity.
+* Pasting a boundary event on an activity adds it to the activity. You can add maximum five boundary events to one activity. For more information, see [a list of activities that support adding boundary events](/refguide/workflow-boundary-events/#supported-activities).
+* Pasting a **Jump** activity in a boundary event is only allowed when there are multiple paths going to the boundary event's ending path, otherwise a consistency error is thrown.
+* Pasting an **End** event inside a non-interrupting boundary event path is not allowed. This is because an **End** event is only allowed if no other paths will be executed, which is not the case in a non-interrupting timer boundary event.
 
 ### Elements that Cannot be Cut, Copied or Pasted
 
@@ -108,9 +112,10 @@ The following elements cannot be cut, copied or pasted in the workflow editor:
 
 * Workflow (this can be only be done in the [App Explorer](/refguide/app-explorer/#basic-functions))
 * WorkflowContext
-* Start activity
-* End activity (the final **End activity** which is at the end of the workflow)
+* Start event
+* End event  (the final End event which is at the end of the workflow)
 * Outcomes (meaning outcomes of different outgoing flows from an activity that can have several flows, for example, a Decision)
+* End of boundary path (the end of a boundary event path)
 
 ## Viewing Element Properties {#view-element-properties}
 
@@ -119,6 +124,12 @@ To view properties of an element, do one of the following:
 * Select an element and open **Properties** pane to view its properties.
 * Right-click an element and select **Properties** from the list of options that opens.
 * Double-click an element.
+
+### Elements that do not have any properties
+
+The following element does not have any properties and context menu.
+
+* End of boundary path
 
 ## Triggering a Workflow {#trigger-workflow}
 

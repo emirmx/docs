@@ -1,7 +1,7 @@
 ---
 title: "Multi-User Task"
 url: /refguide/multi-user-task/
-weight: 30
+weight: 80
 ---
 
 ## Introduction
@@ -24,6 +24,8 @@ Multi-user task properties consist of the following sections:
 * [Outcomes](#outcomes)
 * [Task page](#task-page)
 * [Display information](#display-info)
+* [Events](#events)
+* [Boundary events](#boundary-events)
 * [Common](#common)
 
 ### General Section {#general}
@@ -41,10 +43,6 @@ The **Due date** section properties are described in the table below:
 | None | No due date is set. |
 | Duration | You can set the deadline for the multi-user task with the **Due in** option, which indicates the number of hours, days, or weeks the task is due in. Possible values of the property are the following ones:<br /><ul><li>Hours</li><li>Days</li><li>Weeks</li> </ul> |
 | Expression | You can set a due date for the multi-user task writing an expression. For example, to set a due date to tomorrow, you can use `addDays([%CurrentDateTime%], 1)`. |
-
-### Events Section {#events}
-
-**On Created** event allows you to select a microflow that is executed immediately after users have been determined for a newly created task instance. You can use this setting for a microflow that will send an email notification about the multi-user task to the assigned users.
 
 ### Targeted Users Section {#users}
 
@@ -66,7 +64,7 @@ In case **Target users using** (an XPath or a microflow) results in an empty lis
 
 Specifies the expression used to assign the multi-user task. This option is displayed only when the [Target users using](#target-users) is set to **XPath**. Click **Edit** to edit the [XPath constraint](/refguide/xpath-constraints/).
 
-#### Microflow
+#### Microflow {#microflow-targeting}
 
 Specifies the microflow used to assign the multi-user task. This option is displayed only when the [Target users using](#target-users) is set to **Microflow**.
 
@@ -80,18 +78,18 @@ Specifies the microflow used to assign the multi-user task. This option is displ
 
 #### Participant Input {#participant-input}
 
-This property determines the maximum number of targeted users that are required to select an outcome to complete the multi-user task. The targeted users that are required to select an outcome for the multi-user task are participants of the multi-user task.
+This property determines the maximum number of participants that are required to select an outcome to complete the multi-user task. The participants are the targeted and assigned users of the user task.
 
 Possible options of participant input are described in the table below:
 
 | Participant Input | Description |
 | --- | --- |
-| All target users | All targeted users should select an outcome to complete the multi-user task. |
-| Absolute number | The specified amount of targeted users who should select an outcome to complete the multi-user task.<br><br>**Amount**: The property that defines the absolute number. |
-| Percentage | The specified percentage of targeted users who should select an outcome to complete the multi-user task. The result of applying the percentage will be rounded upwards to the nearest mathematical integer value.<br><br>For example, when there are 19 targeted users and the **Percentage** is set to `50%`, then 10 targeted users need to select an outcome to complete the multi-user task. |
+| All target users | All participants should select an outcome to complete the multi-user task. |
+| Absolute number | The specified amount of participants who should select an outcome to complete the multi-user task.<br><br>**Amount**: The property that defines the absolute number. |
+| Percentage | The specified percentage of participants who should select an outcome to complete the multi-user task. The result of applying the percentage will be rounded upwards to the nearest mathematical integer value.<br><br>For example, when there are 19 participants and the **Percentage** is set to `50%`, then 10 participants need to select an outcome to complete the multi-user task. |
 
 {{% alert color="warning" %}}
-If the number of [targeted users](#users) is less than the absolute number specified in the [Participant input](#participant-input) section, it is impossible to complete the multi-user task and the workflow will fail.
+If the number of [particpants](#users) is less than the absolute number specified in the [Participant input](#participant-input) section, it is impossible to complete the multi-user task and the workflow will fail.
 {{% /alert %}}
 
 #### Decision Method {#decision-method}
@@ -306,10 +304,6 @@ As an example, consider the trivial case where the quickest participant decides,
 
 #### Completion Moment {#completion-moment}
 
-{{% alert color="warning" %}}
-This property was added in Studio Pro 10.2. In Studio Pro 10.0 and 10.1, the multi-user task is marked as completed as soon as its outcome is known, and adding additional votes is not possible once the outcome is known. 
-{{% /alert %}}
-
 This property determines when the multi-user task is marked as completed. That can either be as soon as the outcome is known, meaning that sufficient participants have completed their task so that the final outcome is already determined, or after all participants have completed their task. This property has no influence on the final outcome of the multi-user task. 
 
 Possible options are described in the table below:
@@ -395,6 +389,14 @@ In addition to adding new parameters, you can perform the following actions on p
 * **Edit** – double-click a parameter to edit it or click **Edit**
 * **Move up** – to move a parameter up in the list of parameters and also to change its index, click **Move up**
 * **Move down** – to move a parameter down in the list of parameters and also to change its index, click **Move down**
+
+### Events Section {#events}
+
+**On Created** event allows you to select a microflow that is executed immediately after users have been determined for a newly created task instance. You can use this setting for a microflow that will send an email notification about the multi-user task to the assigned users.
+
+### Boundary Events Section {#boundary-events}
+
+For more information, see [Boundary Events](/refguide/workflow-boundary-events/).
 
 ### Common Section {#common}
 

@@ -1,5 +1,6 @@
 ---
-title: "Control Center"
+title: "Control Center Release Notes"
+linktitle: "Control Center"
 url: /releasenotes/control-center/
 description: "Release notes for Control Center"
 weight: 30
@@ -11,15 +12,141 @@ These release notes cover changes to the app management functionality and other 
 
 To see the current status of the Mendix Control Center, see [Mendix Status](https://status.mendix.com/). Here you can also see planned maintenance and past incidents.
 
-## 2024
+## 2025
 
-### Sep 3, 2024
+### November 9, 2025
 
 #### Improvements
 
-* Recently, performance issues were identified in the Software Bill of Materials (SBOM) generation process, which occurs during deployment package creation. Mendix has resolved these issues, ensuring that SBOM generation and the associated Software Composition capabilities are now fully compatible with the following versions of Studio Pro: 9.24.26 and above, 10.6.12 and above, 10.12.3 and above, and 10.14.0 and above. 
+* The [Approval Requests](/control-center/approval-requests/) page is now divided into two distinct tabs: **Active Requests** and **Resolved Requests**. This allows you to easily stay on top of all approval requests created for your company.
 
-    Previously supported Studio Pro versions (9.24.22 to 9.24.25, 10.6.9 to 10.6.11, 10.10.0 to 10.12.2, and 10.13) will no longer result in SBOM generation and visibility in Software Composition. Make sure you upgrade to a compatible Studio Pro version to continue to use Software Composition. Any historical data within Software Composition remains accessible regardless of the upgrade.
+### September 29, 2025
+
+#### New Features
+
+* The Mendix platform is now generally available in Korean and Japanese.    
+  You can set the language from the [User Settings](/mendix-profile/user-settings/) page of your Mendix Profile. The language you choose is then applied once you sign out and sign back in.    
+  Note that user-created content and system-generated content, such as app logs, is not translated.
+
+### September 4, 2025
+
+#### Improvements
+
+We have moved the **Mendix Admins** tab out of **Company Settings**, and into its own page. The new [Mendix Admins](/control-center/mendix-admins-page/) page is available under the **Company** menu in Control Center.
+
+### July 18, 2025
+
+#### New Features
+
+* You can now view findings associated to each component in your app landscape. Findings represent issues identified in the components of an app. They give you a clear view of potential risks, so you can:
+
+    * Spot issues early.
+    * Reduce time spent troubleshooting by knowing exactly where to look for potential risks.
+    * Make smarter decisions by understanding the severity of each finding.
+    * Improve security by acting on risks as soon as they appear.
+
+  For details on which findings are available, where you can see them, and how you can set severity levels for them, refer to [Software Composition](/control-center/software-composition/).
+
+### July 17, 2025
+
+#### Improvements
+
+* We have changed the **Cloud Credits** field on the **Cloud Tokens** page to **Cloud Tokens**. This accurately represents its purpose and ensures consistency.
+
+### June 12, 2025
+
+#### New Features
+
+* We are updating the **Entitlements** section to set the stage for powerful analytics. These are the first steps in this series of changes:
+
+    * We have moved **Entitlements** out of the **Apps** space, and have given it a section of its own.
+    * We have renamed the **Transactions** tab to **Cloud Tokens**, and have turned it into a standalone page within the **Entitlements** section.
+    * We have added the **Approval Requests** page, currently in beta, which allows you to manage all approval requests created for your company. For now, this covers plan change requests sent by Technical Contacts.   
+    For more information on approving or rejecting a plan change, refer to [Approval Requests](/control-center/approval-requests/).     
+    For more information on requesting a plan change, refer to [Changing Your Plan in Mendix Cloud](/developerportal/deploy/change-plan/).    
+
+### May 26, 2025
+
+#### New Features
+
+* You can now restrict people from outside your organization from being invited to projects. To do that, toggle off the **External User Invites** option on the **Security Settings** tab of the Control Center **Settings** page.    
+For more information, see [Allowing External User Invites to Projects](/control-center/security-settings/#allow-external-users).
+
+### May 22, 2025
+
+#### Improvements
+
+* We have replaced the [Marketplace Curation](/control-center/marketplace-curation/) <text class="badge badge-pill badge-recommended" style="margin-left:0px">RECOMMENDED</text> label with <text class="badge badge-pill badge-company-approved" style="margin-left:0px"> {{% icon name="checkmark-shield-filled" color="green" %}}COMPANY APPROVED</text>. The new label indicates Marketplace components that meet company policies and guidelines.
+
+### March 18, 2025
+
+#### New Features
+
+* Software Composition is now generally available. It helps you easily manage security risk by providing visibility and insights into the dependencies of each application across your application landscape. You can access the feature in [Control Center](/control-center/software-composition/) and [Apps navigation pane](/developerportal/deploy/software-composition/).
+
+### February 13, 2025
+
+#### New Features
+
+* We have re-released the company **Onboarding** functionality in Control Center. This allows you to set up Mendix onboarding specifically for all new members of your company. You can set up an onboarding email that new users get as soon as they create their Mendix accounts and a company onboarding page that new users land on.
+
+### January 30th, 2025
+
+#### Fixes
+
+* We fixed an issue where the export to Excel from the AppsOverview was wrongly setting the DBRam value. (Ticket 239384)
+
+## 2024
+
+### November 29, 2024
+
+#### New Features
+
+* We enhanced Software Composition to include marketplace-related metadata. You can now view this additional information on both the [Components](/control-center/components-tab/) tab and the [Component Usage](/control-center/components-tab/#component-component-usage) tab for a more comprehensive overview of your components.
+
+### November 3, 2024
+
+#### New Features
+
+* Mendix Admins can now centrally manage cloud permissions through the Control Center for apps deployed in the Mendix Cloud. This enhancement provides greater oversight over user roles and actions within different environments. This feature is available to companies that use [Company Roles](/control-center/roles-and-permissions/).
+
+### October 31, 2024
+
+#### Improvements
+
+* Control center has a new menu structure to make it easier to find the pages. **Roles and Permissions** still shows the flat menu, but this will be updated soon.
+
+### October 24, 2024
+
+#### New Features
+
+* On the [Apps](/control-center/apps/) page, we added a search bar that allows you to find an app using either the app ID or the app name.
+
+### October 17, 2024
+
+#### Improvements
+
+* We have made performance improvements to [Software Composition](/control-center/software-composition/). Software Bills of Materials (SBOMs) generated automatically upon the creation of deployment packages now show up on the **Software Composition** page within minutes.
+
+### September 29, 2024
+
+#### New Features
+
+* We have centralized project roles at the company level. This enhances your ability to govern access across all Mendix projects and also enables the programmatic assignment of project roles via [the Mendix Projects API](/apidocs-mxsdk/apidocs/projects-api/). You can migrate your project roles to the centralized company-level project roles on the **Roles & Permissions** page. We expect you to complete the migration by January 1, 2025.
+
+### September 5, 2024
+
+#### New Features
+
+* Deep links have been added to the [Software Composition](/control-center/software-composition/) page to enable unique identification and easy shareability.
+
+### September 3, 2024
+
+#### Improvements
+
+* Recently, performance issues were identified in the Software Bill of Materials (SBOM) generation process, which occurs during deployment package creation. Mendix has resolved these issues, ensuring that SBOM generation and the associated Software Composition capabilities are now fully compatible with the following versions of Studio Pro: 9.24.26 and above, 10.6.12 and above, 10.12.3 and above. 
+
+    Previously supported Studio Pro versions (9.24.22 to 9.24.25, 10.6.9 to 10.6.11, 10.10.0 to 10.12.2, and 10.13) will no longer result in SBOM generation and visibility in [Software Composition](/control-center/software-composition/). Make sure you upgrade to a compatible Studio Pro version to continue to use Software Composition. Any historical data within Software Composition remains accessible regardless of the upgrade.
 
 ### July 29, 2024
 
@@ -31,13 +158,13 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 #### New Features
 
-* We have launched the beta version of Software Composition, which provides visibility into component dependencies for every Mendix application environment. You can access the feature in [Control Center](/control-center/software-composition/) and [Apps navigation pane](/developerportal/deploy/software-composition/). This feature is available for select Studio Pro versions for free and licensed applications deployed on Mendix Public Cloud and Mendix for Private Cloud.
+* We have launched the beta version of Software Composition, which provides visibility into component dependencies for every Mendix application environment. You can access the feature in [Control Center](/control-center/software-composition/) and [Apps navigation pane](/developerportal/deploy/software-composition/). This feature is available for select Studio Pro versions for free and licensed applications deployed on Mendix Public Cloud and Mendix on Kubernetes.
 
 ### May 16, 2024
 
 #### New Features
 
-* We have added a new tab to the **Apps** page: the [Private Cloud](/control-center/apps/#pc-connected) tab. Here you get an overview of all the apps deployed on Mendix Private Cloud Connected.
+* We have added a new tab to the **Apps** page: the [Mendix on Kubernetes](/control-center/apps-overview/#pc-connected) tab. Here you get an overview of all the apps deployed on Mendix on Kubernetes Connected.
 
 ### April 4, 2024
 
@@ -80,7 +207,7 @@ We upgraded the [Apps](/control-center/apps/) page as follows:
 * You can check the Mendix version deployed in your repository to check whether your Mendix version is up to date.
 * You can now update Technical Contact on the **Apps** page.
 * You can deactivate multiple free apps in one go.
-* You can [export the information of apps to an Excel file](/control-center/apps/#export-to-excel).
+* You can [export the information of apps to an Excel file](/control-center/apps-overview/#export-to-excel).
 
 ### December 7, 2023
 
@@ -105,7 +232,7 @@ We made the following improvements to the [access management](/control-center/po
 
 #### New Features
 
-* On the **Security** page, Mendix Admins can now [disable the digital signing](/control-center/security/#disable-enable-digital-signing-emails) of the content of emails from Mendix, if it interferes with other email safety measures.
+* On the **Security** page, Mendix Admins can now [disable the digital signing](/control-center/security-settings/#disable-enable-digital-signing-emails) of the content of emails from Mendix, if it interferes with other email safety measures.
 
 ### September 7, 2023
 
@@ -130,7 +257,7 @@ We made the following improvements to the [access management](/control-center/po
 
 #### New Features 
 
-* We added the **Member ID** column to the **Active Members** and **Deactivated Members** lists on the [Members](/control-center/members/#active-deactive-members) page. The column also appears in the Excel file, when you export the member information from these lists.
+* We added the **Member ID** column to the **Active Members** and **Deactivated Members** lists on the [Members](/control-center/members/) page. The column also appears in the Excel file, when you export the member information from these lists.
 * We introduced **Member ID** search functionality on the **Member** page.
 
 #### Improvements
@@ -211,11 +338,11 @@ We made the following improvements to the [access management](/control-center/po
 
 #### New Features
 
-* The free Mendix Cloud environment of an app can now be deleted from the [app details](/control-center/apps/#app-details) page.
+* The free Mendix Cloud environment of an app can now be deleted from the [app details](/control-center/apps-overview/#app-details) page.
 
 #### Improvements
 
-* The free and licensed Mendix Cloud environments of an app are now visualized on the [app details](/control-center/apps/#app-details) page.
+* The free and licensed Mendix Cloud environments of an app are now visualized on the [app details](/control-center/apps-overview/#app-details) page.
 
 ### April 21, 2022
 
@@ -271,7 +398,7 @@ We made the following improvements to the [access management](/control-center/po
 
 #### New Features
 
-* We released the Control Center [Dashboard](/control-center/dashboard/), which provides an overview of various activities for your company on the Mendix Platform. This feature is currently in [beta](/releasenotes/beta-features/), and you can provide feedback via the feedback button on the right of the page.
+* We released the Control Center [Dashboard](/control-center/dashboard/), which provides an overview of various activities for your company on the Mendix Platform. This feature is currently in [beta](/releasenotes/release-status/), and you can provide feedback via the feedback button on the right of the page.
 
 ### March 9, 2021
 

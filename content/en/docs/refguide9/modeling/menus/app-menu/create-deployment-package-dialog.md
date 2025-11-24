@@ -5,7 +5,7 @@ url: /refguide9/create-deployment-package-dialog/
 
 ## Introduction
 
-A deployment package can be deployed to the Mendix Cloud, another cloud provider (for example SAP BTP), or on a server that is configured to run Mendix software. While developing you can deploy and run on your local machine, but once you are ready to deploy your app elsewhere you will need to create a deployment package. For some platforms, this is done automatically as part of the deploy process but, for others, you will need to explicitly create the deployment package.
+A deployment package can be deployed to Mendix Cloud, another cloud provider (for example SAP BTP), or on a server that is configured to run Mendix software. While developing you can deploy and run on your local machine, but once you are ready to deploy your app elsewhere you will need to create a deployment package. For some platforms, this is done automatically as part of the deploy process but, for others, you will need to explicitly create the deployment package.
 
 {{< figure src="/attachments/refguide9/modeling/menus/app-menu/create-deployment-package-dialog/create-deployment-package.png" alt="Create Deployment Package dialog" class="no-border" >}}
 
@@ -16,7 +16,7 @@ Most deployment targets have a limit on the uncompressed size of deployment pack
 | --- | --- |
 | Mendix Cloud | 1 GB |
 | SAP BTP | 1.5 GB |
-| Mendix for Private Cloud | 512 MB |
+| Mendix on Kubernetes | 512 MB |
 
 This is the uncompressed size of the deployment package (.mda file). You can find the uncompressed size by opening your package file in a file archiving program such as [7-Zip](https://www.7-zip.org/) and look at the file properties or **Info**.
 

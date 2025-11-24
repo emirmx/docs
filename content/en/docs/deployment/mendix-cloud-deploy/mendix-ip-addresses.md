@@ -29,9 +29,11 @@ You can retrieve this IP address by performing a DNS lookup for the domain. To d
 
 This is the IP address other servers see when the Mendix application initiates the connection. You normally need to add it to your firewall if you want your Mendix application to contact one of your firewalled servers.
 
-Mendix uses the following static IP addresses. If you need more information, file a support ticket with Mendix Support.
+## Ranges
 
-#### Mendix Cloud
+### Mendix Cloud
+
+Mendix uses the following static IP addresses. If you need more information, file a support ticket with Mendix Support.
 
 | Region | Location | IP Addresses | Default URL |
 | ------ | -------- | ------------ | ----------- |
@@ -45,9 +47,9 @@ Mendix uses the following static IP addresses. If you need more information, fil
 | Mendix Cloud Asia Pacific  | Seoul (ap-northeast-2) | `3.35.61.175` <br /> `3.35.153.90` <br /> `43.200.98.224` | `{app-name}.apps.ap-4a.mendixcloud.com`<br/>or<br/>`{app-name}-{environment-type}.apps.ap-4a.mendixcloud.com` |
 | Mendix Cloud Asia Pacific  | Jakarta (ap-southeast-3) | `108.137.164.156` <br /> `43.218.102.86` <br /> `43.218.75.101` | `{app-name}.apps.ap-5a.mendixcloud.com`<br/>or<br/>`{app-name}-{environment-type}.apps.ap-5a.mendixcloud.com` |
 | Mendix Cloud Canada | Canada (ca-central-1) | `3.97.111.124` <br /> `3.98.194.54` <br /> `35.182.171.81` | `{app-name}.apps.ca-1a.mendixcloud.com`<br/>or<br/>`{app-name}-{environment-type}.apps.ca-1a.mendixcloud.com` |
-| Mendix Cloud EU | Frankfurt (eu-central-1) |  `35.156.112.28` <br /> `35.157.102.14` <br /> `52.58.42.15`| `{app-name}.mendixcloud.com`<br/>or<br/>`{app-name}-{environment-type}.mendixcloud.com` |
-| Mendix Cloud EU | Frankfurt-2 (eu-central-1) | `3.76.96.252` <br /> `3.125.228.151` <br /> `54.93.126.19` | `{app-name}.apps.eu-1c.mendixcloud.com`<br/>or<br/>`{app-name}-{environment-type}.apps.eu-1c.mendixcloud.com` |
-| Mendix Cloud IE | Ireland (eu-west-1) | `52.18.10.62` <br /> `52.208.39.99` <br /> `99.80.177.69` | `{app-name}.mendixcloud.com`<br/>or<br/>`{app-name}-{environment-type}.mendixcloud.com` |
+| Mendix Cloud EU: AWS Frankfurt | Frankfurt (eu-central-1) |  `35.156.112.28` <br /> `35.157.102.14` <br /> `52.58.42.15`| `{app-name}.mendixcloud.com`<br/>or<br/>`{app-name}-{environment-type}.mendixcloud.com` |
+| Mendix Cloud EU: AWS Frankfurt | Frankfurt-2 (eu-central-1) | `3.76.96.252` <br /> `3.125.228.151` <br /> `54.93.126.19` | `{app-name}.apps.eu-1c.mendixcloud.com`<br/>or<br/>`{app-name}-{environment-type}.apps.eu-1c.mendixcloud.com` |
+| Mendix Cloud EU: AWS Ireland | Ireland (eu-west-1) | `52.18.10.62` <br /> `52.208.39.99` <br /> `99.80.177.69` | `{app-name}.mendixcloud.com`<br/>or<br/>`{app-name}-{environment-type}.mendixcloud.com` |
 | Mendix Cloud Middle East | Bahrain (me-south-1) | `15.184.118.253`<br /> `16.24.5.102`<br /> `157.241.15.222` | `{app-name}.apps.me-1a.mendixcloud.com`<br/>or<br/>`{app-name}-{environment-type}.apps.me-1a.mendixcloud.com` |
 | Mendix Cloud Middle East | UAE (me-central-1) | `3.29.53.85` <br /> `3.29.155.3` <br /> `3.29.189.106` | `{app-name}.apps.me-2a.mendixcloud.com`<br/>or<br/>`{app-name}-{environment-type}.apps.me-2a.mendixcloud.com` |
 | Mendix Cloud SA | São Paulo (sa-east-1) | `15.229.194.124` <br /> `54.232.11.167` <br /> `177.71.150.202` | `{app-name}.apps.sa-1a.mendixcloud.com`<br/>or<br/>`{app-name}-{environment-type}.apps.sa-1a.mendixcloud.com` |
@@ -55,18 +57,45 @@ Mendix uses the following static IP addresses. If you need more information, fil
 | Mendix Cloud US | North Virginia (us-east-1) | `34.197.224.250` <br /> `52.55.243.62` <br /> `52.205.207.103` | `{app-name}.mendixcloud.com`<br/>or<br/>`{app-name}-{environment-type}.mendixcloud.com` |
 | Mendix Cloud US | Oregon (us-west-2) | `35.160.4.29` <br /> `44.236.131.88` <br /> `54.190.172.197` | `{app-name}.apps.us-2a.mendixcloud.com`<br/>or<br/>`{app-name}-{environment-type}.apps.us-2a.mendixcloud.com` |
 
-##### Accessing AWS Services in Mendix Cloud
+#### Accessing AWS Services in Mendix Cloud
 
-Mendix Cloud uses [VPC endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html) to privately access AWS services.
+Mendix Cloud uses [VPC endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html) to privately access AWS services. The [aws:VpcSourceIp](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-vpcsourceip) condition
+key can be used in a policy to allow principals (Mendix apps and end-users) to make requests only from within a specified IP range.
 
-AWS API requests can, therefore, originate from the following IP ranges:
+If you apply IP restrictions to your AWS IAM user or role, you must ensure that the following IP ranges for API requests are allowed in your policy:
+
+For Mendix apps deployed to the Cloud Foundry infrastructure:
 
 * `10.10.128.0/21`
 * `10.10.136.0/21`
 * `10.10.144.0/21`
 
-The [aws:VpcSourceIp](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-vpcsourceip) condition
-key can be used in a policy to allow principals (Mendix apps and end-users) to make requests only from within a specified IP range. If you apply IP restrictions to your AWS IAM user or role, make sure that the IP ranges for AWS API requests (above) are allowed in your policy.
+For Mendix apps deployed to the Kubernetes infrastructure:
+
+* `10.11.64.0/18`
+* `10.11.128.0/18`
+* `10.11.192.0/18`
+
+To find whether your app uses Kubernetes or Cloud Foundry, go to [Apps](https://sprintr.home.mendix.com/link/myapps) and check the **Infrastructure** label for your environment.
+
+### Global Platform {#global-platform-ips}
+
+Some services running on our global platform infrastructure (such as the PDF Document Generation service) use a fixed set of inbound and outbound IP addresses. If you use these services and you apply IP restrictions to your app, you must ensure that the IP addresses listed below are allowed in your policy.
+
+{{% alert color="info" %}}
+While these IP addresses are static, there may still change under exceptional circumstances. In these cases, a notification will be listed on [Mendix Platform Status](https://status.mendix.com) at least 48 hours ahead of time.
+{{% /alert %}}
+
+#### Outgoing IP {#global-platform-ips-outbound}
+
+* 18.194.214.35
+* 52.59.169.126
+* 3.64.82.159
+
+#### Incoming IP {#global-platform-ips-inbound}
+
+* 52.223.19.148
+* 76.223.74.135
 
 ## Frequently Asked Questions
 

@@ -1,7 +1,7 @@
 ---
 title: "Workflow Versioning and Conflict Mitigation"
 url: /refguide/workflow-versioning/
-weight: 60
+weight: 120
 ---
 
 ## Introduction
@@ -72,6 +72,7 @@ Conflicts with the possible mitigations listed above can be summarized in the fo
 | Activities Introduced in Executed Path              | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | Executed Activities Moved to Re-executable Position | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | Parallel Split Path Removed                       | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} |
+| Non-Interrupting Boundary Event Path Removed                       | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} |
 
 #### Context Entity Replaced
 
@@ -150,7 +151,7 @@ You can do one of the following:
 
 #### Current Activity Moved out of Path
 
-When an app developer moves activities out of a **Parallel Split** path, currently running workflow instances that are executing the moved activity cannot complete the **Parallel Split**.
+When an app developer moves activities out of a **Parallel Split** path or a non-interrupting boundary event path, currently running workflow instances that are executing the moved activity cannot complete the **Parallel Split** or the non-interrupting boundary event. Similarly, if an activity is moved from the parent path into a boundary event path, the currently running workflow instances may not be able to complete properly.
 
 You can do one of the following:
 
@@ -233,3 +234,14 @@ You can do one of the following:
 * The workflow can be restarted, for example, by using the **DefaultWorkflowAdmin** page in the Workflow Commons.
 * The Administrator can use **Mark-as-Resolved** to fix this issue (the currently running activity within the removed path will be aborted).
 * The app developer can revert the change (which adds the path back) and deploy it.
+
+#### Non-Interrupting Boundary Event Path Removed
+
+When an app developer removes an ongoing non-interrupting boundary event and then deploys this change, the currently running workflow instances that are executing activities within that path cannot be continued.
+
+You can do one of the following:
+
+* The workflow can be aborted, for example, by using the **DefaultWorkflowAdmin** page in the Workflow Commons.
+* The workflow can be restarted, for example, by using the **DefaultWorkflowAdmin** page in the Workflow Commons.
+* The Administrator can use **Mark-as-Resolved** to fix this issue (the currently running activity within the removed boundary event path will be aborted).
+* The app developer can revert the change (which adds the boundary event path back) and deploy it.

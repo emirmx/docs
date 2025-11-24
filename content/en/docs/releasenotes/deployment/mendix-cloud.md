@@ -14,31 +14,246 @@ There are separate release notes for other deployment targets; for more informat
 
 For information on the current status of deployment to Mendix Cloud and any planned releases, see [Mendix Status](https://status.mendix.com/).
 
+## 2025
+
+### November 9, 2025
+
+#### New Features
+
+* We have added a new feature on the **Cloud Settings** page, called [IP Restriction Profiles](/developerportal/deploy/access-restrictions/#ip-restriction-profiles), to block IP addresses at the root level of your application URL. Once configured, profiles can be applied in the [IP Access Restriction](/developerportal/deploy/environments-details/#ip-access-restrictions) section on the **Networks** tab.
+
+#### Bug Fixes
+
+* We have fixed an issue where custom domain routes were not removed entirely, even when they were deleted from the application.
+  
+### October 29, 2025
+
+#### New Features
+
+* Apps deployed to Kubernetes now support New Relic, enabling them to be migrated from Cloud Foundry to Kubernetes.
+
+* For Kubernetes deployments using New Relic, the `instance_index` tag is no longer provided within metadata. Use the `pod_name` tag instead.
+
+### October 19, 2025
+
+#### New Features
+
+* We have added a new feature in the **Environment Details** page for flexible environments. Users can now use non-Latin characters in the display name of their environment. The display name of an environment can be changed independent of the environment's subdomain.
+
+* We have added support for email internationalization. The emails sent by the Developer Portal will now be translated to the language set in user's profile.
+
+#### Bug Fixes
+
+* We have fixed an issue where apps were getting stuck in the "starting" state instead of failing gracefully due to missing package metadata.
+
+### October 12, 2025
+
+#### Bug Fixes
+
+* We have fixed an issue that prevented environment deployment activities from being displayed on the [Activity tab](/developerportal/deploy/environments/#activity-tab).
+
+### October 5, 2025
+
+#### New Features
+
+* We have added support for IP blocklisting in the **Access Restriction Profile** for apps deployed on Kubernetes, allowing you to block incoming requests from specific IPs that match the configured profile.
+
+#### Bug Fixes
+
+* We have fixed an issue where duplicate paths were added in **Path Based Access Restriction** and caused deployment failures for apps on Kubernetes. The fix prevents new duplicates, but existing ones must be manually removed.
+
+### October 1, 2025
+
+#### Announcement – Deprecation of HTTPS SSL/TLS Weak Ciphers from February 1, 2026
+
+To improve the security of HTTPS connections to applications in Mendix Cloud v4, we are deprecating and stopping support for the following block ciphers that are considered weak:
+
+* `TLS_DHE_RSA_WITH_AES_128_GCM_SHA256`
+* `TLS_DHE_RSA_WITH_AES_256_GCM_SHA384`
+
+**What this means for your Mendix applications**
+
+Clients that only support DHE (Diffie-Hellman Ephemeral) ciphers with RSA key exchange will no longer be able to connect to your Mendix application.
+
+**What we continue to support**
+
+We will also introduce new, recommended SSL/TLS ciphers. These additions will finalize the list of ciphers that will continue to be supported for HTTPS connections after February 1, 2026:
+
+**TLSv1.3**
+
+* `TLS_AES_128_GCM_SHA256`
+* `TLS_AES_256_GCM_SHA384`
+* `TLS_CHACHA20_POLY1305_SHA256`
+
+**TLSv1.2**
+
+* `TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`
+* `TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384`
+* `TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256`
+* `TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`
+* `TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384`
+* `TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256`
+* `TLS_ECDHE_PSK_WITH_CHACHA20_POLY1305_SHA256`
+  
+### September 21, 2025
+
+#### Improvements
+
+* We have renamed the **Request Overview** tab on the **Environments** page to **Change Requests**.
+
+### September 9, 2025
+
+#### New Features
+
+* We have added support for sending logs to Splunk for apps deployed on Kubernetes. This enables apps using Splunk to be migrated from Cloud Foundry to Kubernetes.
+
+#### Improvements
+
+* For Kubernetes deployments, the `SPLUNK_LOGS_REDACTION` environment variable is not available. Use the `LOGS_REDACTION` variable instead.
+
+### August 17, 2025
+
+#### New Features
+
+You can now change your plan from the [Plan Details](/developerportal/deploy/environments-details/#plan-details) section in the **Environment Details** window. To do that, click **Change Plan** next to the plan name.
+
+### July 27, 2025
+
+#### New Features
+
+* We have enhanced the reliability of the health icon. As part of this update, we introduced a new **Alerts** label to indicate critical or warning-level [alerts](/developerportal/operate/monitoring-application-health/) from the application logs. The health icon now exclusively reflects the environment's running status.
+
+#### Bug Fixes
+
+* We fixed an issue where users were unable to view backups of their Sandbox apps. (Ticket 252022)
+* We improved the **Export to Excel** option in the [Model Options](/developerportal/deploy/environments-details/#model-options) tab. The exported file now uses a comma delimiter instead of a semicolon. (Feedback #1460)
+* We refined the sorting behavior on the **Permissions** page. Items are now sorted by name and grouped by type (Role-based / Non-role-based) (Feedback #1458)
+
+### July 13, 2025
+
+#### Bug Fixes
+
+* We have implemented strict validation on the [Upload Package API](/apidocs-mxsdk/apidocs/deploy-api-2/#upload-package). The request parameter keys now require exact name matching, especially for the file key.
+* We fixed an issue where the **Resource Mismatch** label was displayed incorrectly. This label will now appear only when the UI scale settings differ from the backend cloud resource settings.
+
+### June 12, 2025
+
+#### New Features
+
+* We have added a new beta feature in the [environment UI](/developerportal/deploy/environments/). This feature allows Technical Contacts to [change app's environment plan](/developerportal/deploy/change-plan/) to a higher-resource plan.
+    * Additionally, a new tab ([Change Requests](/developerportal/deploy/environments/#change-requests)) has been introduced where Technical Contacts can view and manage plan change requests and track the status of their pending requests awaiting a Mendix Admin review from the [Control Center](/control-center/approval-requests/).
+
+### May 25, 2025
+
+#### New Features
+
+* We have added a new warning message about required overhead (database disk space) before starting a backup restore.
+  
+#### Improvements
+
+* We have updated the validation rules for creating custom domain names. Instead of 53 characters limit, it is now set to 63 characters limit in compliance with DNS standards.
+* Old UI is deprecated and will be removed on June 1. Users will automatically be switched to the new UI if not already done before.
+
+#### Bug Fixes
+
+* We fixed a bug where user got an error while opening the permissions tab for production environment (Ticket 241675).
+
+#### Temporary Deprecations
+
+* Basic plan offering is being temporarily paused.
+
+### April 17, 2025
+
+#### Improvements
+
+* We have added new environment variables which allow you to control the buffer size and buffer memory for the Fluentbit agent for Splunk and New Relic.
+
+### February 20, 2025
+
+#### Improvements
+
+* We have updated the custom JMX metrics prefix from `jmx` to `mx`. This change ensures that these metrics are not indexed as `custom metrics` in Datadog.
+
+### February 2, 2025
+
+#### New Features
+
+* We have added a number of new features which are all available as part of the [new UI](/developerportal/deploy/environments/). These are:
+
+    * Redesigned the **Environment Details** page to improve functionality and enhance the user experience.
+    * Added staging support for apps in the deploy wizard.
+    * Added the ability to compare and edit model options across environments.
+    * Redesigned the **Environments** page for Free Apps.
+
+#### Improvements
+
+* Based on user feedback, the [new UI](/developerportal/deploy/environments/) now also contains UX improvements to the **Environments Overview** page for paid apps.
+
 ## 2024
+
+### December 12, 2024
+
+#### Improvements
+
+* We improved the layout and display of the Alerts page. The new layout allows sorting and filtering of alerts based on the severity and date together with a free text search. 
+* You can now subscribe to alerts emails in the settings tab. For more information, see [Alerts](/developerportal/operate/monitoring-application-health/).
+
+### December 5, 2024
+
+#### Improvements
+
+* We introduced cloud tokens for your cloud resource pack purchases! Starting now, you will use [cloud tokens](/control-center/cloud-tokens/#cloud-tokens) instead of cloud credits to complete your cloud resource purchases. With the transitioning from cloud credits to cloud tokens, Mendix is paving the way for a more streamlined and flexible approach to purchasing and switching between Mendix Cloud products.
+
+### December 1, 2024
+
+#### API Retirement
+
+* We retired the Team Server API. You will now have to use the [App Repository API](/apidocs-mxsdk/apidocs/app-repository-api/) instead.
+
+### November 29, 2024
+
+#### New Features
+
+* We enhanced Software Composition to include marketplace-related metadata. You can now view this additional information on both the [All Components](/developerportal/deploy/software-composition/#all-components) tab and the [Deployed Package Details](/developerportal/deploy/software-composition/#deployed-package-details) page for a more comprehensive overview of your components.
+
+### November 17, 2024
+
+#### Deployment Portal Fixes
+
+* We fixed a bug in the [Permissions tab of the legacy UI](/developerportal/deploy/environments/#permissions-tab), where changing an application's technical contact resulted in a blank page.
+* We fixed a bug in the [new UI](/developerportal/deploy/environments/), where the **scalable** tag was displayed for environments that were not scalable.
+* We fixed a number of other bugs related to dark mode.
+
+### November 6, 2024
+
+#### New Features
+
+* Cloud permissions are now included in project roles.
+* You can now manage all project roles centrally, on a company level, if you have switched to using company-level roles.
+
+#### Improvements
+
+* We have made improvements to the [permissions tab](/developerportal/deploy/node-permissions/#permissions-tab). The **Receive alerts** permission has also been removed from the permissions tab. You can subscribe to alerts using the **Email Alerts** option on the **Alerts** page.
+
+### October 17, 2024
+
+#### Improvements
+
+* We have made performance improvements to [Software Composition](/developerportal/deploy/software-composition/). Software Bills of Materials (SBOMs) generated automatically upon the creation of deployment packages now show up on the **Software Composition** page within minutes.
+
+### September 5, 2024
+
+#### New Features
+
+* Deep links have been added to the [Software Composition](/developerportal/deploy/software-composition/) page to enable unique identification and easy shareability.
 
 ### September 3, 2024
 
 #### Improvements
 
-* Recently, performance issues were identified in the Software Bill of Materials (SBOM) generation process, which occurs during deployment package creation. Mendix has resolved these issues, ensuring that SBOM generation and the associated Software Composition capabilities are now fully compatible with the following versions of Studio Pro: 9.24.26 and above, 10.6.12 and above, 10.12.3 and above, and 10.14.0 and above.
-    
-    Previously supported Studio Pro versions (9.24.22 to 9.24.25, 10.6.9 to 10.6.11, 10.10.0 to 10.12.2, and 10.13) will no longer result in SBOM generation and visibility in Software Composition. To continue using Software Composition, upgrade to a compatible Studio Pro version. Any historical data within Software Composition remains accessible regardless of the upgrade.
-
-### August 22, 2024
-
-#### Fixes
-
-* We fixed a bug that had been causing an incorrect pipeline run status to display for the first few seconds on manually triggered pipelines.
-
-#### Improvements
-
-* In the **Pipelines** page's **Runs** tab, we changed a column name from **Last Run** to **Run** because this more accurately reflects what the column shows: it indicates when a pipeline run occurred.
-
-### August 15, 2024
-
-#### Improvements
-
-* We added a Pipeline ID column to the **Designs** tab of the **Pipelines** page.
+* Recently, performance issues were identified in the Software Bill of Materials (SBOM) generation process, which occurs during deployment package creation. Mendix has resolved these issues, ensuring that SBOM generation and the associated Software Composition capabilities are now fully compatible with the following versions of Studio Pro: 9.24.26 and above, 10.6.12 and above, 10.12.3 and above.
+  
+    Previously supported Studio Pro versions (9.24.22 to 9.24.25, 10.6.9 to 10.6.11, 10.10.0 to 10.12.2, and 10.13) will no longer result in SBOM generation and visibility in [Software Composition](/developerportal/deploy/software-composition/). To continue using Software Composition, upgrade to a compatible Studio Pro version. Any historical data within Software Composition remains accessible regardless of the upgrade.
 
 ### July 16, 2024
 
@@ -50,21 +265,6 @@ For information on the current status of deployment to Mendix Cloud and any plan
     * S (Legacy): The critical alert threshold changed from 10% to 5% freeable memory.
     * Strato (Legacy): The critical alert threshold changed from 10% to 5% freeable memory.
 
-### July 4, 2024
-
-#### Pipelines New Features
-
-* We added two new pipeline steps:
-    * You can use the Start Environment step to start a selected environment.
-    * You can use the Promote Package step to move a deployment package from a specified source environment to a specified target environment.
-* It is now possible to trigger pipelines manually. To use this new trigger type in your pipeline, select **Manual** as the **Trigger** in the Start Pipeline step of your pipeline design.
-* We will be launching a mini survey for Pipelines soon, asking you some questions about what you like and dislike.
-
-#### Pipelines Improvements
-
-* Pipeline names are no longer editable while a pipeline is active. If you want to edit a pipeline name, deactivate the pipeline first.
-* We implemented deep links for all three tabs on the Pipelines page. This facilitates easy sharing of record-specific details on the **Runs**, **Designs**, and **Settings** tabs; you can simply copy and paste the URL.
-
 ### May 14, 2024
 
 #### New Features
@@ -72,14 +272,6 @@ For information on the current status of deployment to Mendix Cloud and any plan
 * We now use Arm-based AWS Graviton 2 processors for databases of new environments on all plans in Mendix Public Cloud for best performance. Graviton 2 processors can provide significant performance improvements over previous generation instances. For database operations, this means faster processing of queries and better handling of concurrent requests.
 
     Existing environments will not automatically use Graviton 2 processors for their databases. Graviton 2 processors will be used for new environments and those which are cleared, downsized, or resized.
-
-### May 9, 2024
-
-#### Pipelines Improvements
-
-* We added a Feedback Widget to the Pipelines pages so that customers can directly provide feedback, enhancement requests, and other ideas.
-* We improved the performance of the **Runs** page's search and filtering.
-* We added a column selector to the table on the **Runs** page, so it is now possible to customize which columns appear in the table. We also added a new column: Pipeline ID.
 
 ### April 25, 2024
 
@@ -92,18 +284,6 @@ For information on the current status of deployment to Mendix Cloud and any plan
 ### Deprecations
 
 * We stopped supporting the *Application Container CPU Percentage* alert, because it triggered too often to be useful. The CPU usage data can still be seen on the **Metrics** page.
-
-### April 4, 2024
-
-#### Pipelines Fixes
-
-* We fixed an issue that was causing pipelines to fail at the Checkout step for selected pipeline runs. (Ticket 211117)
-* We fixed an issue preventing user settings from saving for select users.
-* We fixed an issue where the branches were not being fetched for the Checkout step when designing a pipeline. We also fixed an issue where the Checkout step was not dynamically changing upon the change of the trigger.
-
-#### Pipelines Improvements
-
-* We made a variety of user experience improvements, including improving the styling and implementing a pipeline name character limit of 40 characters.
 
 ### March 26, 2024
 
@@ -128,13 +308,6 @@ For information on the current status of deployment to Mendix Cloud and any plan
 #### Improvements
 
 * To make it easier to reset the two-factor authentication settings when needed, we added a link to these settings on the **Logs** and **Metrics** pages. This link appears whenever you try to access a page that you need 2FA to view.
-
-### February 29, 2024
-
-#### New Features
-
-* We launched a new feature: Pipelines. Pipelines lets you build and deploy software in an automated way. You can design pipelines with a set of configurable, low-code steps. Activated pipelines run automatically according to your design. This new Pipelines feature is intended to make it quick and easy for teams to automate their CI/CD process. For more information, see [Pipelines](/developerportal/deploy/pipelines/).
-    * The Pipelines feature is in [public beta](/releasenotes/beta-features/). It is currently available for unlimited use with all licensed Mendix Cloud apps. Limitations may be put on its use in the future.
 
 ### February 19, 2024
 
@@ -245,7 +418,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Improvements
 
-* To improve the security of [Team Server](/developerportal/general/team-server/) for apps versioned with SVN, we have dropped support for TLS v1.0 and TLS v1.1 when connecting to the SVN Team Server.
+* To improve the security of [Team Server](/developerportal/repository/team-server/) for apps versioned with SVN, we have dropped support for TLS v1.0 and TLS v1.1 when connecting to the SVN Team Server.
 
 ### September 14, 2023 
 
@@ -281,7 +454,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Portal Enhancements
 
-* The webhooks feature is now released for GA. Webhooks can trigger endpoints when changes are committed to a Team Server Git repository, or when a new deployment package is available for deployment to the Mendix Cloud. For more information, see [Webhooks](/developerportal/deploy/webhooks/).
+* The webhooks feature is now released for GA. Webhooks can trigger endpoints when changes are committed to a Team Server Git repository, or when a new deployment package is available for deployment to Mendix Cloud. For more information, see [Webhooks](/developerportal/deploy/webhooks/).
 
 #### Improvements
 
@@ -308,7 +481,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 * We have added webhooks which can trigger endpoints when changes are committed to a Team Server Git repository, or a new deployment package is available for deployment to the Mendix Cloud. See [Webhooks](/developerportal/deploy/webhooks/) for more information.
 
-    {{% alert color="info" %}}This feature is currently in a [beta release](/releasenotes/beta-features/).{{% /alert %}}
+    {{% alert color="info" %}}This feature is currently in a [beta release](/releasenotes/release-status/).{{% /alert %}}
 
 ### February 23, 2023
 
@@ -755,7 +928,7 @@ In connected environments, this usage information will be sent back to Mendix au
 
 ### March 3, 2021
 
-* We updated the [deploy API](/apidocs-mxsdk/apidocs/deploy-api/), [Build API](/apidocs-mxsdk/apidocs/build-api/), [Team Server API](/apidocs-mxsdk/apidocs/team-server-api/), [Backups API v2](/apidocs-mxsdk/apidocs/backups-api/), and [Backups API v1](/apidocs-mxsdk/apidocs/backups-api-v1/) to:
+* We updated the [deploy API](/apidocs-mxsdk/apidocs/deploy-api/), [Build API](/apidocs-mxsdk/apidocs/build-api/), Team Server API, [Backups API v2](/apidocs-mxsdk/apidocs/backups-api/), and [Backups API v1](/apidocs-mxsdk/apidocs/backups-api-v1/) to:
     * add json validation
     * add stricter API path validation (for example, a trailing `/` on the API path will result in `API not found`)
     * return differently formatted error messages for unhandled or unexpected errors
@@ -931,7 +1104,7 @@ SSL/TLS ciphers that are still supported for HTTPS connections after December 1,
 
 #### Fixes
 
-* We fixed an issue where some customers were unable to manually add certificates to [access restriction profiles](/developerportal/deploy/environments/#asp). (Ticket 102615)
+* We fixed an issue where some customers were unable to manually add certificates to [access restriction profiles](/developerportal/deploy/environments/#access-restriction-profiles). (Ticket 102615)
 
 ### August 7, 2020
 
@@ -1234,7 +1407,7 @@ If you run services that connect to a `*.mendixcloud.com` endpoint AND use a sta
     * The Technical Contact can re-order the environments
 * As part of support for Flexible Environments, we have made the following changes:
     * When deploying your application via the Developer Portal, you can choose the destination environment
-    * When viewing metrics, logs, backups, etc. you will have to choose the environment using a drop-down rather than clicking directly on the environment you want
+    * When viewing metrics, logs, backups, etc., you will have to choose the environment using a drop-down rather than clicking directly on the environment you want
 
 #### Other Improvements
 

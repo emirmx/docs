@@ -5,16 +5,53 @@ url: /refguide/mobile/getting-started-with-mobile/prerequisites/
 weight: 10
 description: Troubleshoot common issues associated with building and running native mobile apps.
 aliases:
+    - /refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-min-versions/
     - /refguide/getting-the-make-it-native-app/
     - /howto/mobile/common-issues/
 ---
 
 ## Introduction
 
-While developing Mendix apps, you will need to test and iterate to make the best products possible. You may also occasionally run into issues which require troubleshooting. This guide addresses both of those needs:
+Developing mobile apps with Mendix requires some additional considerations. This guide explains the prerequisites of mobile development and helps you get started:
 
-* The [Getting the Make It Native App](#get-min-app) section explains how to download the Make It Native App, which you can use to test your apps using a simple QR code
+* The [Prerequisites](#prerequisites) section explains how to prepare for developing, deploying, and accessing mobile apps with Mendix
+* The [Getting the Make It Native App](#get-min-app) section explains how to download the Make It Native App, which you can use to test your native mobile apps during development
 * The [Troubleshooting Common Mobile Issues](#troubleshooting) section explains port forwarding, WiFi settings, and other common troubleshooting issues
+
+## Prerequisites {#prerequisites}
+
+### Progressive Web Apps
+
+There are no special requirements for developing, deploying, and accessing Progressive Web Apps (PWAs) with Mendix.
+
+### Native Mobile Apps
+
+Native mobile apps are not run in the device browser like web-based Mendix apps. Instead, a native app is built for each mobile operating system it should run on resulting in an APK or IPA file, which are then installed on the device. This introduces several special considerations:
+
+* **Developer Preview**: When developing a native mobile app, a special app called [Make It Native](/refguide/mobile/getting-started-with-mobile/prerequisites/) is required to preview the app. It is not possible to preview it in the browser or directly in Studio Pro using Design Mode.
+* **Build Native App**: For building native apps, we provide a tool called Build Native App. This tool must be configured and run each time a new build is created. Build Native App is not supported on Studio Pro for Mac. Build Native App updates itself automatically by downloading new versions from AWS.
+* **Native Template**: Build Native App needs to download the Native Template from [GitHub](https://github.com/mendix/native-template). This template contains the React Native project that is used to build the native app for iOS and Android.
+* **Dependencies**: The Native Template makes use of several open-source projects, including React Native. These must be downloaded from several external services including npm, gradle, and Cocoapods.
+* **Building**: Once prepared using Build Native App, the Native Template can be built for each target mobile operating system. Building can be done [locally](/refguide/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/) by downloading the mobile operating system's IDE or [remotely](/refguide/mobile/distributing-mobile-apps/building-native-apps/bitrise/) using a third-party continuous integration and delivery (CI/CD) platform. For building remotely, a [GitHub account](https://github.com/) is required.
+* **Deploying**: Most mobile devices refuse to install APK/IPA files without additional steps. At minimum, the file must be signed to identify its developer and prevent manipulation. Furthermore, for iOS and recent versions of Android, the app must be published via the official mobile operating system's store or a mobile device management (MDM) system.
+* **Connectivity**: When running a Mendix native mobile app, it must connect to the Mendix Runtime at least once during startup. If no connection can be established, an error is shown. Connectivity is also needed to run microflows and to synchronize data.
+
+### Air-Gapped Development
+
+Developing and building native mobile apps requires access to several online resources. Without safelisting these resources, a native mobile build will fail.
+
+For development:
+
+* To preview their apps, developers need to be able to connect their mobile device running Make It Native to their Laptop running Studio Pro on ports 8080 and 8083.
+
+For building:
+
+* Download updates from AWS: `https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe`
+* Determine which native template version to download: `https://raw.githubusercontent.com/mendix/native-template/master/mendix_version.json`
+* Download the native template from GitHub: `https://github.com/mendix/native-template/archive/refs/tags/*.zip`
+* Upload the project to GitHub (optional): `https://api.github.com/`
+
+In some situations, it can be beneficial to designate a single machine for building native mobile apps or outsourcing the process to a partner.
 
 ## Getting the Make It Native App {#get-min-app}
 
@@ -22,26 +59,26 @@ The Make It Native app allows developers to preview, test, and debug native mobi
 
 Depending on the Mendix version used to build your app, you have to use a different version of Make It Native. The following list explains which version to use:
 
-* **Latest Mendix Version** - Latest version of Make It Native 10 ([Android](https://play.google.com/apps/testing/com.mendix.developerapp.mx10), [iOS](https://testflight.apple.com/join/bQfLf27w))
-    * Please note that the latest version of Make It Native 10 is offered in online stores' beta version programs. Simply follow the instructions on those sites to download and install the latest version of MIN 10.
-* **10.12.x** – Make It Native 10 MTS ([Android](https://play.google.com/store/apps/details?id=com.mendix.developerapp.mx10), [iOS](https://apps.apple.com/app/make-it-native-10/id6450037464))
-* **10.6.x to 10.11.x** – These versions are no longer supported by Make It Native. Please use MIN 9 LTS (below) or 10 MTS (above) instead, or make your own [custom MIN app](/refguide/mobile/distributing-mobile-apps/use-min-older-sp/) from open source.
-* **9.24.0 to 10.5.x** – Make It Native 9 LTS ([Android](https://play.google.com/store/apps/details?id=com.mendix.developerapp.mx9), [iOS](https://apps.apple.com/app/make-it-native-9/id1542182000))
-* **8.18.x** – Make It Native 8 LTS ([iOS](https://apps.apple.com/app/make-it-native-8/id1334081181))
-* **Other** – [Creating a Custom Developer App](/refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/) or [Building Your Own Make It Native App](https://github.com/mendix/make-it-native)
+* Mendix 11 (11.0.0 is not supported):
+    * **11.1.0 to 11.x.x** - Latest version of Make It Native ([Android](https://play.google.com/apps/testing/com.mendix.developerapp.mx10), [iOS](https://testflight.apple.com/join/bQfLf27w))
 
-For information on which mobile operating systems are supported by the Mendix native mobile apps, see the [Mobile Operating Systems](/refguide/system-requirements/#mobileos) section of *System Requirements*.
+* Mendix 10:
+    * **10.24.x** - Make It Native LTS ([Android](https://play.google.com/store/apps/details?id=com.mendix.developerapp.mx10), [iOS](https://apps.apple.com/app/make-it-native-10/id6450037464))
+    * **10.6.x to 10.23.x** – These versions are no longer supported by Make It Native. Please make your own [custom MIN app](/refguide/mobile/distributing-mobile-apps/use-min-older-sp/) from open source.
+    * **Other** – [Creating a Custom Developer App](/refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/) or [Building Your Own Make It Native App](https://github.com/mendix/make-it-native)
+
+For information on which mobile operating systems are supported by the Mendix native mobile apps, see the [Mobile Operating Systems](/refguide/system-requirements/#mobile) section of *System Requirements*.
 
 ### Direct Download Links {#direct-links}
 
-Download the latest version of Make It Native 10 using these QR codes:
+Download the latest version of Make It Native using these QR codes:
 
 |                                  Android                                  |                                iOS                                |
 | :-----------------------------------------------------------------------: | :---------------------------------------------------------------: |
 | {{< figure src="/attachments/refguide/mobile/native-mobile/getting-the-make-it-native-app/android-min-10.png" alt="Android QR Code" class="no-border" >}} | {{< figure src="/attachments/refguide/mobile/native-mobile/getting-the-make-it-native-app/ios-min-10.png" alt="iOS QR Code" class="no-border" >}} |
 |   [Latest Version](https://play.google.com/apps/testing/com.mendix.developerapp.mx10)    |        [Latest Version](https://testflight.apple.com/join/bQfLf27w)         |
 
-Download the MTS version of Make it Native 10 using these QR codes:
+Download the LTS version of Make it Native using these QR codes:
 
 |                                  Android                                  |                                iOS                                |
 | :-----------------------------------------------------------------------: | :---------------------------------------------------------------: |

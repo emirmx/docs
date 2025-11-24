@@ -1,7 +1,7 @@
 ---
 title: "Two-Factor Authentication"
 url: /developerportal/deploy/two-factor-authentication/
-weight: 1
+weight: 30
 description: "Describes the purpose and functionality of 2FA in the Mendix Portal."
 #To update these screenshots, you can log in with credentials detailed in How to Update Screenshots Using Team Apps.
 ---
@@ -87,7 +87,7 @@ Once you have 2FA configured to use an authenticator app, you can use it to comp
 
 To change your 2FA method, phone number, or authenticator app, you need to deactivate your 2FA and then set it up again with your new details.
 
-To deactivate your 2FA, go to **User Settings** > [Developer Settings](/community-tools/mendix-profile/user-settings/#dev-settings). Then, in the **Two-Factor Authentication (2FA)** section, click **Deactivate**.
+To deactivate your 2FA, go to **User Settings** > [Developer Settings](/mendix-profile/user-settings/#dev-settings). Then, in the **Two-Factor Authentication (2FA)** section, click **Deactivate**.
 
 {{< figure src="/attachments/deployment/general/two-factor-authentication/deactivate.png" alt="" >}}
 

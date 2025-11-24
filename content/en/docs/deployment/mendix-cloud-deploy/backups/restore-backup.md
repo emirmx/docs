@@ -93,11 +93,11 @@ If the app is still running, you have to stop it by clicking **Stop Application*
 
 ## Restoring After a Backup Fails{#restore-after-fail}
 
-If a backup restore fails, the failure is logged in your app's **Backup Activity** log, which you can view on the **Backups** page when you open your app in [Apps](https://sprintr.home.mendix.com/). If this happens, all data that was restored until the point of failure will be present in your database. This will leave the database only partially restored; not all data from the backup file will be present in your database. 
+If a backup restore fails, the failure is logged in your app's **Backup Activity** log, which you can view on the **Backups** page when you open your app in [Apps](https://sprintr.home.mendix.com/). If this happens, only data that was restored until the point of failure will be present in your database, leaving the database only partially restored.
 
-Your database must be large enough to hold the decompressed size of the database as stored in your backup file's [db folder](#db-folder), plus an overhead of 2.25 GB. This overhead is employed during the restoration process. 
+Your database must be large enough to hold the decompressed size of the database as stored in your backup file's [db folder](#db-folder), plus additional free space for overhead during the restoration process. For example, if you run your app in an S21 Cloud Resource Pack, then your database size is 10 GB. To restore a backup, the size of your decompressed database in the **db** folder must not exceed 7.75 GB to allow for 2.25 GB of overhead. 
 
-For example, if you run your app in a S21 Cloud Resource Pack, then your database size is 10 GB. To be able to restore a backup, the size of your decompressed database in the **db** folder must not be larger than 7.75 GB to allow for the overhead of 2.25 GB. For more information on the resource pack sizes Mendix offers, see [Cloud Resource Packs](/developerportal/deploy/mendix-cloud-deploy/#resource-pack). 
+While a minimum of 2.25 GB is often sufficient for smaller backups, the actual required free space varies significantly based on the backup's size. To ensure a successful restore, Mendix recommends that your database has free space substantially exceeding the decompressed backup size to accommodate the restoration process. For more information on the resource pack sizes Mendix offers, see [Cloud Resource Packs](/developerportal/deploy/mendix-cloud-deploy/#resource-pack). 
 
 In the event that a backup restore fails in this way, you will need to retry the backup restore. Before you retry, ensure your database meets the size requirements detailed above.
 
@@ -106,6 +106,10 @@ Contact [Mendix Support](https://support.mendix.com/) if you need further assist
 ## Format of a Backup File{#format-of-backup-file}
 
 You may want to restore a backup that has been created on another platform (for example, an on-premises deployment). In this case, you will have to construct a backup file that Mendix Cloud will recognize. It is possible to upload a **Database Only** or **Full Snapshot** backup file.
+
+{{% alert color="warning" %}}
+Any local manipulation you perform after creating a backup is at your own risk. You may end up with a backup file which cannot be restored.
+{{% /alert %}}
 
 ### Database Only Format{#database-only}
 
@@ -158,7 +162,9 @@ This folder contains the *db.backup* file, which is a PostgreSQL dump file creat
 {{% alert color="warning" %}}
 If the dump does not use the custom format, then the restore will fail.
 
-The dump must be created with `pg_dump` version 1.14 or below, which is currently bundled with PostgreSQL 12, 13, 14, and 15. If it is created with a later version, then the upload will fail.
+The dump must be created with `pg_dump` version 1.15 or below, which is currently bundled with PostgreSQL 13, 14, and 15. If it is created with a later version, then the upload will fail.
+
+You can find the exact version of PostgreSQL each environment of your application is using on the [General](/developerportal/deploy/environments-details/#general-tab) tab of each environment's  **Environment Details** page.
 {{% /alert %}}
 
 #### tree Folder{#tree-folder}

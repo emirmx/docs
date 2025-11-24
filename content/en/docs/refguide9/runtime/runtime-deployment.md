@@ -7,7 +7,7 @@ weight: 30
 
 ## Introduction
 
-To convert your Mendix model into an app running in the cloud, it needs to be deployed. This document describes the concepts behind the deployment of your app, and the processes it goes through to begin running in the cloud. For technical details on how to deploy your app, see [Deployment](/deployment/).
+To convert your Mendix model into an app running in the cloud, it needs to be deployed. This document describes the concepts behind the deployment of your app, and the processes it goes through to begin running in the cloud. For technical details on how to deploy your app, see [Deploying Apps](/deployment/).
 
 This description of deployment is based on an app running in the cloud. You can also run Mendix locally for testing, but this is conceptually the same.
 
@@ -34,10 +34,6 @@ This is the app model as created by Studio Pro. It cannot be directly interprete
 ### MX Build
 
 This converts an app in mpk format to the mda format which can be interpreted by the Mendix Runtime.
-
-### Cloud Foundry
-
-This is the command line interpreter which allows Cloud Foundry environments to be created, and code to be pushed into the environments to be executed.
 
 ### Buildpack
 

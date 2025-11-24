@@ -2,7 +2,7 @@
 title: "Secure Outgoing Connections from Your App"
 linktitle: "Secure Outgoing Connections"
 url: /developerportal/deploy/securing-outgoing-connections-from-your-application/
-weight: 50
+weight: 20
 description: "Describes which methods are available for securing connections from your app to the outside world."
 #To update these screenshots, you can log in with credentials detailed in How to Update Screenshots Using Team Apps.
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
@@ -68,7 +68,7 @@ The following disadvantages apply:
 
 * DNS is not available
 * With failover data centers, VPN becomes extremely difficult to manage
-* Connections are added to (virtual) machines, this makes deployment to multi-tenant public-cloud environments based on containerization a challenge
+* Connections are added to (virtual) machines, this makes deployment to multitenant public-cloud environments based on containerization a challenge
 * VPN gateways potentially add two more single points of failure
 
 {{< figure src="/attachments/deployment/general/securing-outgoing-connections-from-your-application/19399048.png" class="no-border" >}}

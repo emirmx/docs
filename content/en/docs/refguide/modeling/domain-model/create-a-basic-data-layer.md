@@ -27,7 +27,11 @@ This document also presents [an example for defining the domain model](#example-
 
 ## Creating Entities and Attributes {#create-entity}
 
-To create entities and their attributes, follow these steps:
+To create entities and their attributes, follow the steps below.
+
+{{% alert color="info" %}}
+You can also use the Maia domain model generator to create a domain model based on a description of your requirements. For more information, see [Maia Domain Model Generator](/refguide/domain-model-generator/). 
+{{% /alert %}}
 
 1. Open your [domain model](/refguide/domain-model/).
 2. Go to **Toolbox** and drag **Entity** into your domain model.

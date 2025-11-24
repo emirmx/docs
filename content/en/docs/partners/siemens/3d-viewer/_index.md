@@ -10,7 +10,7 @@ aliases:
 
 ## Introduction
 
-The [3D Viewer](https://marketplace.mendix.com/link/component/118345) service lets you upload, visualize, and operate on 3D files (JT, OBJ, glTF, and STL formats) in your web applications, using Mendix file storage to store models. The app service contains out-of-the-box Java actions, JavaScript actions, [domain models](/refguide/domain-model/), [nanoflows](/refguide/nanoflows/), [microflows](/refguide/microflows/), and a set of 3D widgets that enable you to build apps to work with 3D models. Also included are whole functionalities and integrations that can be very helpful when building your own 3D applications. All you need to do is drag and drop items and configure them.
+The [3D Viewer](https://marketplace.mendix.com/link/component/118345) service lets you upload, visualize, and operate on JT files in your web applications, using Mendix file storage to store models. The app service contains out-of-the-box Java actions, JavaScript actions, [domain models](/refguide/domain-model/), [nanoflows](/refguide/nanoflows/), [microflows](/refguide/microflows/), and a set of 3D widgets that enable you to build apps to work with 3D models. Also included are whole functionalities and integrations that can be very helpful when building your own 3D applications. All you need to do is drag and drop items and configure them.
 
 This app service does the heavy-lifting for you so you do not have to build a 3D-rendering engine from scratch.
 
@@ -63,7 +63,7 @@ The 3D Viewer app service includes a few 3D widgets. These are some limitations 
 
 * One **Container3D** widget can only contain one **Viewer** widget. If multiple Viewer widgets are placed inside a Container3D widget, you will see error message in **Design mode**. 
 * The **Viewer** widget is used to display a 3D model. All other 3D widgets (except the **Uploader** and **Container3D** widgets) need a Viewer widget present on the page to interact with.
-* Currently, supports glTF, STL, OBJ, and JT (JT version 9 and above) formats.
+* Supports the JT format (version 9 and above).
 * Before uploading a shattered JT *.zip* file, make sure you are using UTF-8 encode to zip the JT files. For example, if you are using 7-Zip, make sure you enter *cu* in **Parameters**.
 
     {{< figure src="/attachments/partners/siemens/3d-viewer/shatteredjt-utf8.png" alt="shatteredjt-utf8" class="no-border" >}}
@@ -236,7 +236,6 @@ On the **General** tab, the following options are available:
 * **Show search** – used to toggle a search bar that enables the end-user to enter a part name and search for the part in the widget
 * **Show search options** – determines whether to display all node search results in the drop-down list
   
-
 {{< figure src="/attachments/partners/siemens/3d-viewer/pstree-showsearchoptions.jpg" max-width=50% alt="show search options in PS Tree" >}}
 
 * **Show leaf structure** – determines if the sub-part data should be displayed in the widget
@@ -323,9 +322,9 @@ The **Toolbar** widgets do not require additional configuration. Simply place th
 
 You can deploy 3D Viewer locally or in a Mendix Free App for free. However, to deploy 3D Viewer on the cloud, it will need to be licensed, and you need to obtain a license token as described in [Obtaining a License Token](#obtain-license-token), above, and then configure it as follows:
 
-#### For an App Deployed in the Mendix Cloud
+#### For an App Deployed in Mendix Cloud
 
-If you deploy your app in the Mendix Cloud, configure the license token in the [Mendix Portal](/developerportal/deploy/environments-details/).
+If you deploy your app in Mendix Cloud, configure the license token in the [Mendix Portal](/developerportal/deploy/environments-details/).
 
 Before you deploy your app, configure the app **Constants** in the deployment package.
 
@@ -337,7 +336,7 @@ If you have already deployed your app, change the existing **LicenseToken** cons
 
 #### For an App Deployed in Your Own Environment
 
-If you deploy your app in your own environment, you need to configure the license token in your own environment. For more information, see [Deployment](/deployment/).
+If you deploy your app in your own environment, you need to configure the license token in your own environment. For more information, see [Deploying Apps](/deployment/).
 
 ## Usage
 
@@ -469,7 +468,7 @@ There are four main types of events that can be picked up on the Viewer widget, 
 
 #### On Selection Change {#on-selection-change}
 
-By selecting one attribute to set **Selection**, you can get information on the selected part (for this you might need to work with Viewer APIs; if you have inquiries on how to use the Viewer APIs, please contact [Mendix Support](https://support.mendix.com/)).
+By selecting one attribute to set **Selection**, you can get information on the selected part (for this you might need to work with Viewer APIs; if you have inquiries on how to use the Viewer APIs, please contact [Siemens Support](https://support.sw.siemens.com/en-US/)).
 
 **Selection** takes a String attribute. You can define an attribute and bind that attribute to Selection property. In a running app, when user select on a model part, the selection event will be triggered, and the selected part info will be populated to this Selection attribute. You can easily get this selected object information (psid and viewer)and use it in the actions. 
 
@@ -590,16 +589,6 @@ The sections below describe these tools.
 
 * **Delete** – select one measurement result, then click **Delete** and the selected measurement result will be removed from the scene
 * **Clear** – clear all the measurement results in the scene
-
-### Checking Statistics on the Usage Dashboard {#check-usage}
-
-The **Usage Dashboard** shows the real-time statistics about the usage of an app service. Perform the following steps to check the real-time statistics:
-
-1. Log into the Marketplace.
-2. Go to the Marketplace home page.
-3. On the left navigation menu, click [Company Subscriptions](https://marketplace.mendix.com/link/company/subscriptions). This page gives an overview of all the subscriptions of your organization.
-4. Find **3D Viewer** in the list.
-5. Click **Usage Dashboard** to show the usage details.
 
 ### Setting Preferences {#set-preferences}
 
