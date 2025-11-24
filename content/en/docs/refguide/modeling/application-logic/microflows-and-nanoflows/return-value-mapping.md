@@ -13,7 +13,7 @@ Return values can be mapped to available variables on the page or snippet. Both 
 
 You can add more than one return value mapping to the same flow call. This is particularly useful when assigning multiple computed values to different variables from the same return value.
 
-{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/parameter/return-value-mapping-list.png" width="500px" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/return-value-mapping/return-value-mapping-list.png" max-width=80% >}}
 
 ## Supported Return Values
 
@@ -34,7 +34,7 @@ The following primitive types can be mapped directly:
 
 When a microflow or nanoflow returns an object, you can select specific attributes from that object. This allows you to extract individual values from the returned object without needing to work with the entire object on the page.
 
-{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/parameter/variable-return-value-mapping.png" width="500px" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/return-value-mapping/variable-return-value-mapping.png" max-width=80% >}}
 
 ### Lists Not Supported
 
@@ -46,7 +46,7 @@ You can use expressions to transform return values before they are assigned. In 
 
 When the microflow or nanoflow returns an object, you can access attributes using `$ActionReturnValue/AttributeName`. This allows you to apply transformations to attributes, before assigning the value.
 
-{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/parameter/expression-return-value-mapping.png" width="500px" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/return-value-mapping/expression-return-value-mapping.png" max-width=80% >}}
 
 **Example:**
 
@@ -73,6 +73,7 @@ The following targets are available for return value mapping:
 The target variable or attribute must have a compatible data type with the return value. When using expressions, the result type of the expression must match the target type.
 
 For example:
+
 * A decimal return value can be assigned directly to a decimal page variable
 * A decimal return value can be transformed with an expression like `formatDecimal($ActionReturnValue, '#,##0.00')` and assigned to a string page variable
 * An object attribute can be extracted and assigned to a matching primitive variable
