@@ -7,9 +7,9 @@ weight: 60
 
 ## Introduction
 
-In Studio Pro 11.5 and above, pages and snippets can use [return values](/refguide/end-event/#return-value) when calling microflows or nanoflows by specifying a return value mapping. This feature enhances microflow and nanoflow reusability by allowing pages to decide how to use return values. In previous versions, modifying values on the page from a microflow or nanoflow required an additional entity passed as a parameter, resulting in many page-specific variations of the same logic.
+In Studio Pro 11.5 and above, pages and snippets can use [return values](/refguide/end-event/#return-value) when calling microflows or nanoflows by specifying a return value mapping. This feature enhances microflow and nanoflow reusability by allowing pages to decide how to use return values. In previous versions, modifying values on a page from a microflow or nanoflow require an additional entity passed as a parameter, resulting in many page-specific variations of the same logic.
 
-Return values can be mapped to available variables on the page or snippet. Both primitive and object return value types are supported. Using an expression, the return value can be transformed as needed before assignment.
+Return values can be mapped to available variables on a page or snippet. Both primitive and object return value types are supported. By using an expression, the return value can be transformed as needed before assignment.
 
 You can add more than one return value mapping to the same flow call. This is particularly useful when assigning multiple computed values to different variables from the same return value.
 
@@ -48,9 +48,7 @@ When the microflow or nanoflow returns an object, you can access attributes usin
 
 {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/return-value-mapping/expression-return-value-mapping.png" max-width=80% >}}
 
-**Example:**
-
-If a microflow returns an **Order** object with a **TotalAmount** attribute (Decimal), you can format it as currency before assigning it to a string page variable:
+For example, if a microflow returns an **Order** object with a **TotalAmount** attribute (Decimal), you can format it as currency before assigning it to a string page variable:
 
 ```
 formatDecimal($ActionReturnValue/TotalAmount, '$#,##0.00')
