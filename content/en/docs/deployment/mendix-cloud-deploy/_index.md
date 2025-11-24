@@ -103,15 +103,15 @@ Pinning a project that has been marked for deletion unmarks it immediately. Chan
 
 ### Licensed App
 
-A licensed app runs on a node with at least two environments: production and acceptance. If required, you can also add a test environment or use [Flexible Licensed Nodes](#flexible-environments). Your licensed app is linked to a node and can be deployed to any of these environments. It is possible to specify different [resource packs](#resource-pack) for each of these environments, but Mendix recommends that you make your production and acceptance environments the same size.
+A licensed app runs on a node with at least two environments: production and acceptance. If required, you can also add a test environment or use [Flexible Environments](#flexible-environments). Your licensed app is linked to a node and can be deployed to any of these environments. It is possible to specify different [resource packs](#resource-pack) for each of these environments, but Mendix recommends that you make your production and acceptance environments the same size.
 
 {{% alert color="info" %}}
 Each environment can only run a single version of an app. Additionally, all the environments of a node should be used to run versions of the same app that is linked to the node.
 {{% /alert %}}
 
-#### Flexible Licensed Nodes {#flexible-environments}
+#### Flexible Environments {#flexible-environments}
 
-If the standard environments that you get with a licensed app do not meet your requirements, you can request a Mendix Cloud node with flexible licensed nodes. With flexible licensed nodes, you can specify how many environments you want in your node. You can also decide what to call them.
+If the standard environments that you get with a licensed app do not meet your requirements, you can request a Mendix Cloud node with Flexible Environments. With Flexible Environments, you can specify how many environments you want in your node. You can also decide what to call them.
 
 ### Database
 
@@ -126,7 +126,7 @@ Apps that run on Mendix Cloud are automatically assigned their own URLs. The for
 | License Type | Environment | URL Format | Example URL |
 | ------------ | ----------- | ---------- | ----------- |
 | Licensed app | Production  | Depends on the region:<br /> `{app-name}.mendixcloud.com`<br />or<br />`{app-name}.apps.{region}.mendixcloud.com` | `myappname.mendixcloud.com`, <br /> `myappname.apps.ap-3a.mendixcloud.com` |
-| Licensed app | Test, acceptance, flexible licensed nodes | Depends on the region:<br /> `{app-name}-{environment-type}.mendixcloud.com`<br />or<br />`{app-name}-{environment-type}.apps.{region}.mendixcloud.com` | `myappname-accp.mendixcloud.com`, <br /> `myappname-accp.apps.ap-3a.mendixcloud.com` |
+| Licensed app | Test, acceptance, flexible environments | Depends on the region:<br /> `{app-name}-{environment-type}.mendixcloud.com`<br />or<br />`{app-name}-{environment-type}.apps.{region}.mendixcloud.com` | `myappname-accp.mendixcloud.com`, <br /> `myappname-accp.apps.ap-3a.mendixcloud.com` |
 | Free App     | N/A         | `{app-name}-sandbox.mxapps.io`<br />or<br />`{app-name}.mxapps.io` | `myfreeappname.mxapps.io` |
 
 {{% alert color="info" %}}Licensed apps run in clusters deployed on AWS. You can select the region for your app, but not for the cluster. Note that there can be multiple clusters in a region, and the URL of an app on some clusters in a region contains `apps.{region}`.{{% /alert %}}

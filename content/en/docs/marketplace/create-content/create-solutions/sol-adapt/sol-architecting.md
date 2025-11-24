@@ -68,7 +68,7 @@ The customer model instances run with [IP protection](/appstore/creating-content
 
 ### Customers Without Adaptation
 
-Not all customers might require model adaptation. This means they can run on an unmodified version of the original solution model. In this case, Mendix recommends distributing and deploying a deployment package (MDA), which also prevents inspection in the Mendix model and ensures seamless upgrades. This can be combined with [flexible licensed nodes](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments) and/or a multi-tenancy setup.
+Not all customers might require model adaptation. This means they can run on an unmodified version of the original solution model. In this case, Mendix recommends distributing and deploying a deployment package (MDA), which also prevents inspection in the Mendix model and ensures seamless upgrades. This can be combined with [flexible environments](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments) and/or a multi-tenancy setup.
 
 If you need to adapt the model for a customer after it goes live, you can initialize a solution. If a database backup is restored to the newly created environment after initialization, no data is lost.
 

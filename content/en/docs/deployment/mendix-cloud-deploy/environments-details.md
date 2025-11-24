@@ -92,7 +92,7 @@ In the **Application Status** section of the **General** tab, you can find the f
 * **Project ID** – the unique identifier of the app
 * **Environment ID** – the unique identifier of the environment
 * **Running Since** – the date the app was started, if it is running
-* **Display Name** – the type of environment (Acceptance, Production, Test, or the name of a [flexible licensed node](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments)); for more information, see the [Naming of Environments](#naming) section below
+* **Display Name** – the type of environment (Acceptance, Production, Test, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments)); for more information, see the [Naming of Environments](#naming) section below
 * **Subdomain Suffix** – the application's subdomain name
 * **URL** – the URL of the app
 * **Custom Domains** – any [custom domains](/developerportal/deploy/custom-domains/) of the app; to add a new domain, click **Add Custom Domain**
