@@ -1,25 +1,14 @@
 ---
-title: Use Excel Documents
-url: /refguide/use-excel-documents/
-aliases: /howto/integration/use-excel-documents/
-weight: 70
-#If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details. 
+title: "Altair RapidMiner Platform"
+url: /refguide/altair-rapidminer
+description: "Presents information about the Altair RapidMiner and its integration into the Mendix applications."
+weight: 100
+no_list: false
+description_list: true
 ---
 
-## Introduction 
+## Introduction
 
-Use Excel to import and export large amounts of data to your Mendix application.  
+In addition to the integration capabilities available in the Studio Pro, Mendix also supports integration with external systems through Altair RapidMiner Platform. Using Altair AI Studio and AI Hub, developers can quickly build enterprise-grade applications that seamlessly integrate with Altair's powerful machine learning models capabilities. Altair Graph Studio further provides a scalable environment for connecting, managing, and analyzing graph-based data. 
 
-Documents available for this topic:
-
-* [Import Excel Documents](/refguide/importing-excel-documents/)
-
-    Describes how to set up import templates and import data into your app using the Excel Importer module.
-
-* [Import a Large Excel File](/refguide/import-a-large-excel-file/)
-
-    Describes how to use XML-to-domain mapping to create a new import entity from an Excel sheet.
-
-* [Export to Excel](/refguide/using-the-excel-exporter/)
-
-    Describes how to create custom Excel documents from your app based on configurable templates.
+## Documents in this Category 
