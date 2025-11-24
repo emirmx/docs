@@ -8,10 +8,6 @@ description: ""
 #Do NOT remove any of the anchors in this document as they are all referenced from other documents
 ---
 
-{{% alert color="warning" %}}
-This feature is in Limited Availability. For more information, see [Release Status](/releasenotes/release-status/#limited-availability).
-{{% /alert %}}
-
 ## Introduction
 
 Zero-Downtime Deployment (ZDT) is a deployment capability that enables Mendix applications to apply certain configuration updates without any service interruption. This feature ensures continuous application availability during configuration changes, allowing end users to remain connected throughout the deployment process.
