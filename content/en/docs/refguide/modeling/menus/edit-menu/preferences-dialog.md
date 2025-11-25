@@ -229,7 +229,7 @@ This option is available when the [Enable automatic repository optimization](#op
 
 ## Work Environment Tab
 
-### Theme {#theme}
+### Theme {#studio-pro-theme}
 
 This option allows user to choose between Studio Pro themes: **Auto (System theme)**, **Light**, or **Dark**. The default is **Auto (System theme)**, which detects the theme set in the operating system and uses an appropriate theme for Studio Pro (**Light** or **Dark**). Changing this option requires a restart of Studio Pro to take effect.
 
