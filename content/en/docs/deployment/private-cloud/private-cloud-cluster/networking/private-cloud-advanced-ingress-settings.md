@@ -75,7 +75,7 @@ You can configure HTTP headers for NGINX Ingress and for Mendix Runtime. For mor
 
 ### Configuring Headers in NGINX Ingress
 
-For NGINX Ingress, you can use a configuration snippet in the `OperatorConfiguration` object to set headers in a namespace. The headers that you set are then further propagated across all apps in that namespace. Alternatively, you can configure headers for individual app environments by adding the `nginx.ingress.kubernetes.io/configuration-snippet` annotation in the Mendix on Kubernetes Portal.
+For NGINX Ingress (from F5 Networks), you can use a configuration snippet in the `OperatorConfiguration` object to set headers in a namespace. The headers that you set are then further propagated across all apps in that namespace. Alternatively, you can configure headers for individual app environments by adding the `nginx.org/location-snippets` annotation in the Mendix on Kubernetes Portal.
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/private-cloud-networking/advanced-headers.png" class="no-border" >}}
 
@@ -101,21 +101,7 @@ Starting from Mendix 10.24.1, the Mendix Runtime can set headers natively, witho
 
 This allows specifying security headers such as `Content-Security-Policy` with any Ingress controller, not just NGINX Ingress.
 
-To set headers, use the [Headers](/refguide/custom-settings/#Headers) Custom Runtime Setting on the [Runtime Tab](/developerportal/deploy/private-cloud-deploy/#runtime-tab) (for Connected environments) or in the [.spec.runtime.customConfiguration field](/developerportal/deploy/private-cloud-operator/#edit-cr) in the MendixApp CR.
-
-The `Headers` Custom Runtime Setting accepts a JSON map where the keys are header names and values are header values.
-
-The `Content-Security-Policy` header supports [additional custom handling](/refguide/configuration/#headers) to process `nonce` values.
-
-The following is an example value of the `Headers` Custom Runtime Setting that can be used how to specify a few typical security headers:
-
-```json
-{
-    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
-    "X-Frame-Options": "SAMEORIGIN",
-    "Content-Security-Policy": "script-src 'nonce-{{ NONCE }}'"
-}
-```
+To set headers, use the [Network Tab](/developerportal/deploy/private-cloud-deploy/#network-tab) (for Connected environments) or the [Headers](/refguide/custom-settings/#Headers) Custom Runtime Setting the [.spec.runtime.customConfiguration field](/developerportal/deploy/private-cloud-operator/#edit-cr) in the MendixApp CR.
 
 ## Istio Service Mesh Integration with Ingress Controller
 
