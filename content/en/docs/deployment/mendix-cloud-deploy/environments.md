@@ -147,7 +147,7 @@ Follow these steps to deploy packages to selected environments using the **Deplo
     * If you launched the wizard by selecting an environment, the first screen of the wizard is the **Select Package** tab. Use it to select a package from the repository.
     * If you launched the wizard by selecting a package, the first screen of the wizard is the **Select Environment** tab. Use it to select the target environment for your package.
 3. On the **Configure Environment** tab, review the [constants](/refguide/constants/) and adjust them as required.
-4. In the **Other Options** tab, choose whether to stage the package without deploying, and when to create the backup: either before or after deploying the new package. The app is unavailable while the backup runs.
+4. In the **Other Options** tab, choose whether to stage the package without deploying, and when to create the backup: either before or after deploying the new package. The app is unavailable while the backup runs. You can also choose to deploy with [zero-downtime](/developerportal/deploy/zero-downtime/).
 5. On the **Deploy** tab, review the deployment settings:
     1. To see an overview of the configuration for this deployment, click **View Summary**. This summary displays the selected package, selected backup option, and any changed constants or [scheduled events](/refguide/scheduled-events/).
     2. Review this summary, then click **Deploy Now**.
@@ -215,3 +215,7 @@ The Technical Contact can only see services that have been licensed for their co
 Team members who have a role with **Cloud Access** can see which services are enabled or disabled.
 
 Once a service has been enabled for an app, Technical Contacts can selectively enable it for each environment. For more information, refer to the [Services](/developerportal/deploy/environments-details/#services) section of the *Environment Details* page.
+
+## Read More
+
+* [Version Pinning](/developerportal/deploy/version-pinning/)

@@ -16,12 +16,13 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
-### November 15, 2025
+### November 23, 2025
 
 #### New Features
 
-* We have added a new beta feature in the **Network tab** of the **Environment Details** page that enables Technical Contacts to securely [connect Mendix applications to external resources](/developerportal/deploy/connecting-to-external-resource/) through [Mendix Cloud Private Connectivity](/control-center/private-connectivity/).
-    * From the [Connections](/developerportal/deploy/environments-details/#connections) section of the **Network** tab, Technical Contacts can now request new private connections, track the status of their pending connection requests, connect to external resources, and delete existing connections.
+* We have introduced [Version Pinning](/developerportal/deploy/version-pinning/) for deployment components on Kubernetes to ensure consistency across customer environments and avoid unexpected deployment behavior. You can use this feature by promoting an application from one environment to a higher environment.
+
+* It is now possible to deploy Mendix applications with [Zero-Downtime](/developerportal/deploy/zero-downtime/) without any service interruption in certain cases. You can enable this by selecting the **Deploy without downtime** option in the **Options Tab** of the [Deploy Wizard](/developerportal/deploy/environments/#deploy-wizard). This feature applies to changes that do not rebuild or replace your app package.
 
 ### November 9, 2025
 
