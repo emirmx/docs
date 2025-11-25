@@ -12,6 +12,15 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2025
 
+### November 27, 2025
+
+#### Portal Improvements
+
+* We have enhanced the "Apps" page under the Namespace Overview page to display the technical contact's name and email address next to each application. This makes it easier to find the technical person for inquiries or support.
+* We have added deep links for application url in Environment Overview page, allowing for quicker, direct navigation to application page. 
+* We have added Enhanced Deployment Strategy UI within the deployment options, featuring new "Min Available" and "Max Unavailable" fields for more precise control over your application's availability.
+* Now we can directly configure HTTP headers via a new key/value UI in the Network tab to manage headers like Content-Security-Policy within Mendix Runtime and reduce ingress reliance. It supports Mendix 10.24.1+ onwards.
+
 ### November 7, 2025
 
 #### Portal Hotfix
