@@ -16,6 +16,12 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
+### December 1, 2025
+
+#### New Features
+
+* We have added a new beta feature that enables Technical Contacts to securely [connect Mendix applications to external resources](/developerportal/deploy/connecting-to-external-resource/) through [Mendix Cloud Private Connectivity](/control-center/private-connectivity/).
+
 ### November 23, 2025
 
 #### New Features

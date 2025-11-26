@@ -222,24 +222,6 @@ For more information, see [Scheduled Events](/refguide/scheduled-events/).
 
 On the **Network** tab, you can manage the elements described below.
 
-### Connections {#connections}
-
-You can connect from your applications on Mendix Cloud to resources on your own infrastructure using Mendix Cloud Private Connectivity.
-
-The **Connections** tab contains the following information:
-
-* **Resource** – The name of the service such as databases being connected
-* **Network** – The name of the network associated with the connection
-* **Status (Last seen)** – The connection's current state, such as **Pending Approval**, **Approved** or **Rejected**
-
-You can perform the following actions for connections:
-
-* **Add** a new connection
-* **Cancel** a connection request
-* **Delete** a connection
-
-For more information, refer to [Connecting to External Resources](/developerportal/deploy/connecting-to-external-resource/).
-
 ### Custom Domains {#custom-domains}
 
 * **Domain Name**
