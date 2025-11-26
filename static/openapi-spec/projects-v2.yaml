@@ -7,7 +7,6 @@ info:
   contact:
     name: Mendix Support
     url: 'https://support.mendix.com'
-    email: support@mendix.com
 servers:
   - url: 'https://projects-api.home.mendix.com/v2'
 paths:
@@ -84,6 +83,59 @@ paths:
           $ref: '#/components/responses/Http404'
         '409':
           $ref: '#/components/responses/Http409'
+        '500':
+          $ref: '#/components/responses/Http500'
+    patch:
+      tags:
+        - Projects
+      summary: 'Update project attributes'
+      description: >
+        Updates project attributes.</br></br>Requests must be authenticated by a Personal Access Token containing the scope `mx:app:write`
+      operationId: patch-project
+      parameters:
+        - $ref: '#/components/parameters/project-id'
+      requestBody:
+        description: 'Object containing a categories array used to update project categories.'
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                categories:
+                  type: array
+                  description: 'Array of category assignments. Each item identifies a company custom field (fieldId) and the Code/Value to assign. Used when updating `category`.'
+                  items:
+                    type: object
+                    required:
+                      - fieldId
+                      - value
+                    properties:
+                      fieldId:
+                        type: string
+                        description: 'Identifier of the company custom field'
+                        maxLength: 36
+                      value:
+                        type: string
+                        description: 'The Code or Value to assign to the custom field. An empty string clears the assignment.'
+                        maxLength: 500
+            examples:
+              category-update:
+                value:
+                  categories:
+                    - fieldId: '123456789'
+                      value: 'NLD'
+                    - fieldId: '987654321'
+                      value: ''
+      responses:
+        '204':
+          $ref: '#/components/responses/Http204'
+        '400':
+          $ref: '#/components/responses/Http400'
+        '401':
+          $ref: '#/components/responses/Http401'
+        '404':
+          $ref: '#/components/responses/Http404'
         '500':
           $ref: '#/components/responses/Http500'
   '/projects/{project-id}/members':
@@ -590,7 +642,7 @@ components:
   securitySchemes:
     PersonalAccessToken:
       type: apiKey
-      description: "For more information about requesting and using a token see the [documentation](https://docs.mendix.com/mendix-profile/user-settings/#pat).<br/>The header must be set to `MxToken <Your PAT>`."
+      description: "For more information about requesting and using a token see the [documentation](https://docs.mendix.com/community-tools/mendix-profile/user-settings/#pat).<br/>The header must be set to `MxToken <Your PAT>`."
       name: Authorization
       in: header
   responses:
@@ -755,6 +807,34 @@ components:
                 $ref: '#/components/schemas/User'
               account: 
                 $ref: '#/components/schemas/Account'
+              categories:
+                type: array
+                description: Array of categories associated with the project
+                items:
+                  type: object
+                  properties:
+                    categoryName:
+                      type: string
+                      description: Name of the category
+                      maxLength: 500
+                    categoryId:
+                      type: string
+                      description: ID of the category (also known as FieldId)
+                      maxLength: 36
+                    values:
+                      type: array
+                      description: Array of assigned category values
+                      items:
+                        type: object
+                        properties:
+                          code:
+                            type: string
+                            description: Code of the value
+                            maxLength: 3
+                          value:
+                            type: string
+                            description: Value of the value
+                            maxLength: 500
           examples:
             Example 1:
               value:
@@ -803,6 +883,12 @@ components:
                 account:
                   accountId: "123e4567-e89b-12d3-a456-426614174004"
                   accountName: "Example Account"
+                categories:
+                  - categoryName: "Country"
+                    categoryId: "123e4567-e89b-12d3-a456-426614174007" 
+                    values:
+                      - code: "NLD"
+                        value: "The Netherlands"
     ProjectMembersResponse:
       description: List of project members
       content:
