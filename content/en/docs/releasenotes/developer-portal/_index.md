@@ -21,6 +21,17 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
+### November 26
+
+#### Improvements
+
+* Deleting Groups in [Feedback](/developerportal/app-insights/feedback/) now only deletes the group and not the feedback that was inside the group.
+
+#### Fixes
+
+* Fixed a bug where users would sometimes run into errors while clicking around on the [Feedback](/developerportal/app-insights/feedback/) page.
+* Fixed an issue where users would no longer get notifications for newly received feedback items.
+ 
 ### October 30
 
 #### New Features
