@@ -80,7 +80,7 @@ For more information about the requirements for other releases, see the releases
 
 3D Viewer is a premium Siemens product which requires a valid purchase and commercial license for production use.
 
-You can use 3D Viewer without a license in your local development environment with [Mendix Studio Pro](/releasenotes/studio-pro/). For details, refer to [Run Locally or Preview](/deployment/#run-locally-or-preview/).
+You can use 3D Viewer without a license in your local development environment with [Mendix Studio Pro](/releasenotes/studio-pro/). For details, refer to [Run Locally or Preview](/deployment/#run-locally-or-preview).
 However, a license is required to deploy your application to any server environment. This includes:
 
 * [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/)
