@@ -1295,9 +1295,10 @@ The deployment strategy now includes the following options under the **Deploymen
 - **Max Surge**: Specifies the maximum number of Pods that can be created above the desired number of Pods during a rolling update.
 - **Max Unavailable**: Specifies the maximum number of Pods that can be unavailable during a rolling update.
 
-A new **Pod Disruption Budget** subheader has also been added, which includes:
-- **Min Available**: Specifies the minimum number of Pods that must be available at any time. This can be set as a percentage.
-- **Max Unavailable**: Specifies the maximum number of Pods that can be unavailable at any time. This can also be set as a percentage. 
+Along with this, its also possible to update the **Pod Disruption Budget** fields which includes:
+- **Min Available**: Specifies the minimum number of Pods that must be available at any time.
+- **Max Unavailable**:  Specifies the maximum number of Pods that can be unavailable at any time. 
+**Information**: Pod Disruption Budget will already be enabled by default if the application has more than 1 replica and operator version is 2.24.0 onwards
 For more information, see [Deployment Strategy](/developerportal/deploy/private-cloud-reduced-downtime/)
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/deploymentStrategy.png" class="no-border" >}}
