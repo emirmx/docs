@@ -14,8 +14,9 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 
 * Operator, Agent, Build, Sidecars and NGINX logs are now directly accessible within Grafana for monitoring and troubleshooting.
 * We can now easily set up and manage custom Certificate Authorities (CAs) directly through the Mendix on Azure portal, simplifying secure certificate management.
-*  We have introduced a new Infrastructure Redundancy configuration option, available during cluster initialization and updates, to enhance resilience and provide clearer control over VM, Storage, and Database redundancy.
+* We have introduced a new Infrastructure Redundancy configuration option, available during cluster initialization and updates, to enhance resilience and provide clearer control over VM, Storage, and Database redundancy.
 * We have fixed the issue where Terraform apply fails when read replica is enabled.
+* We have added Spacelift label/description with company name to the stack, making it easy to determine which customer a stack belongs to.
 
 ### Release date: November 6, 2025
 
