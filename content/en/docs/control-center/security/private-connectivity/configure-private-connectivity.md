@@ -405,9 +405,7 @@ On the **Connections** tab of the **Private Connectivity** page, you can see all
 	* **Approved** – The connection is approved. The app environment can connect to the resource using this connection.
 	* **Rejected** – The connection is rejected. The app environment cannot connect to the resource using this connection.
 
-	<!-- Hidden for the first iteration
     For details on how Technical Contacts request connections for a specific environment, refer to [Connecting to External Resources](/developerportal/deploy/connecting-to-external-resource/).
-    -->
 
 ### Viewing Connection Details {#private-connectivity-connections-details}
 
