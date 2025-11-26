@@ -47,25 +47,7 @@ Before starting the installation process, make sure that you have all the necess
     * An optional Redis server version 6.2.0 or higher, for the task queue and cache. Using Redis is recommended for high availability, where you expect a high volume of webhook calls, or if you have multiple Svix servers. As a best practice, enable persistence in Redis so that tasks are persisted across Redis server restarts and upgrades.
 
 * If you plan to use the AWS Secret Manager, install an AWS provider at your cluster, as described in [Kubernetes Secrets Store CSI Driver](https://secrets-store-csi-driver.sigs.k8s.io/).
-* If you plan to use the Hashicorp Vault, prepare the following information. All the listed properties are required unless otherwise noted:
-
-    * `mx-admin-password` - The Mendix admin password.
-    * `pclm-admin-password` - The PCLM admin password.
-    * `database-type` - The database type, for example, SQLSERVER, or PostgreSQL.
-    * `database-jdbc-url` - The database Jdbc URL, for example, `jdbc:postgresql://test.database.azure.com:5432/testpmp?sslmode=prefer`.
-    * `database-host` - The database host URL, for example, `test.database.azure.com:5432`.
-    * `database-name` - The database name, for example, `testpmp`.
-    * `database-username` - The database user name.
-    * `database-password` - The database user password.
-    * `storage-service-name` - The storage service name, for example, `com.mendix.storage.azure`. 
-    * `storage-azure-account-name` - The name of the Azure storage account. This value is required only for Azure Blob Storage with the static authentication method.
-    * `storage-azure-account-key` - The key of the Azure storage account. This value is required only for Azure Blob Storage with the static authentication method.
-    * `storage-azure-container` - The Azure storage container name.
-    * `storage-use-ca-certificates` - Set to `true` to use the configured CA trust for file storage.
-    * `storage-azure-use-https` - Set to `true` to use HTTP for Azure.
-    * `storage-perform-delete` - Set to `true` to delete files from storage when they are deleted in the app.
-    * `storage-azure-use-default-azure-credential` - Set to `true` to use managed identity authentication for Azure Blob Storage.
-    * `storage-azure-blob-endpoint` The Azure Blob Storage endpoint, for example, `https://example.blob.core.windows.net/`.
+* If you plan to use the Azure Key Vault, see [Configuring a Secret Store with Azure Key Vault](/developerportal/deploy/secret-store-credentials/#azure-key-vault).
 
 ## Installing and Configuring the Mendix Operator {#install-operator}
 
