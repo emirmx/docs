@@ -47,7 +47,7 @@ Before starting the installation process, make sure that you have all the necess
     * An optional Redis server version 6.2.0 or higher, for the task queue and cache. Using Redis is recommended for high availability, where you expect a high volume of webhook calls, or if you have multiple Svix servers. As a best practice, enable persistence in Redis so that tasks are persisted across Redis server restarts and upgrades.
 
 * If you plan to use the AWS Secret Manager, install an AWS provider at your cluster, as described in [Kubernetes Secrets Store CSI Driver](https://secrets-store-csi-driver.sigs.k8s.io/).
-* If you plan to use the Azure Key Vault, see [Configuring a Secret Store with Azure Key Vault](/developerportal/deploy/secret-store-credentials/#azure-key-vault).
+* If you plan to use Azure Key Vault, see [Configuring a Secret Store with Azure Key Vault](/developerportal/deploy/secret-store-credentials/#azure-key-vault).
 
 ## Installing and Configuring the Mendix Operator {#install-operator}
 
@@ -157,7 +157,7 @@ To use the secret provider option for your database plan or storage plan, config
 | Data Type | Key | Example Value |
 | --- | --- | --- |
 | Database type (for example, PostgreSQL) | **database-type** | `PostgreSQL` |
-| Database Jdbc Url    | **database-jdbc-url**    | `jdbc:postgresql://pg.example.com:5432/my-app-1?sslmode=prefer` |
+| Database Jdbc URL | **database-jdbc-url**    | `jdbc:postgresql://pg.example.com:5432/my-app-1?sslmode=prefer` |
 | Database host | **database-host**    | `pg.example.com:5432` |
 | Database name    | **database-name** | `my-app-1` |
 | Database user name | **database-username** | `my-app-user-1` |
@@ -184,7 +184,43 @@ Currently, only AWS S3 or S3-compatible providers are supported.
 | PCLM admin password | **pclm-admin-password** |
 | Private Mendix Platform admin password | **mx-admin-password** |
 
-### Installing Private Cloud License Manager {#install-pclm}
+## Optional: Configuring Azure Key Vault
+
+To use the secret provider option for your database plan or storage plan, configure the following keys in your Azure Key Vault. All keys are required unless noted otherwise.
+
+### Database Plan Keys
+
+| Data Type | Key | Example Value |
+| --- | --- | --- |
+| Database type (for example, SQLSERVER or PostgreSQL) | **database-type** | `PostgreSQL` |
+| Database Jdbc URL | **database-jdbc-url** | `jdbc:postgresql://test.database.azure.com:5432/testpmp?sslmode=prefer` |
+| Database host | **database-host** | `test.database.azure.com:5432` |
+| Database name | **database-name** | `testpmp` |
+| Database user name | **database-username** | `pxx` |
+| Database password | **database-password**    | `passxx` |
+
+### Storage Plan Keys
+
+| Data Type | Key | Example Value | Notes |
+| --- | --- | --- | --- |
+| Storage service name | **storage-service-name** | `com.mendix.storage.azure` | |
+| Azure storage account | **storage-azure-account-name** | `examplename` | This value is required only for Azure Blob Storage with the static authentication method. |
+| Azure storage account key | **storage-azure-account-key** | `examplekey` | This value is required only for Azure Blob Storage with the static authentication method. |
+| Azure storage container name | **storage-azure-container** | `examplecontainer` | |
+| Use configured CA trust for file storage | **storage-use-ca-certificates** | `true` | |
+| Use HTTP for Azure | **storage-azure-use-https** | `true` | |
+| Delete files from storage when deleted in the app | **storage-perform-delete** | `true` | |
+| Use managed identity authentication for Azure Blob Storage | **storage-azure-use-default-azure-credential** | `false` | Set to `true` to use managed identity authentication for Azure Blob Storage. |
+| Azure Blob Storage endpoint | **storage-azure-blob-endpoint** | `https://example.blob.core.windows.net/` | |
+
+### Administrator Passwords
+
+| Data Type | Key |
+| --- | --- |
+| PCLM admin password | **pclm-admin-password** |
+| Private Mendix Platform admin password | **mx-admin-password** |
+
+## Installing Private Cloud License Manager {#install-pclm}
 
 Private Cloud License Manager is a required component of Private Mendix Platform. Before you install the Platform, install PCLM by doing the following steps:
 
