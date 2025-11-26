@@ -43,7 +43,7 @@ Depending on the Mendix version your app is developed in and the device you want
 
 **Release date: November 25, 2025**
 
-* We migrated to react-native-vision-camera to fix barcode scanner issues on Android.
+* We migrated to `react-native-vision-camera` to fix barcode scanner issues on Android.
 
 ## Android 10.24.3
 
@@ -61,7 +61,7 @@ Depending on the Mendix version your app is developed in and the device you want
 
 **Release date: July 31, 2025**
 
-* Renamed the app to "Make It Native" and aligned its versioning with Studio Pro, so each Studio Pro version (for example, 10.24.x) now uses the matching Make It Native version (for example, 10.24.x).
+* We renamed the app to "Make It Native" and aligned its versioning with Studio Pro, so each Studio Pro version (for example, 10.24.x) now uses the matching Make It Native version (for example, 10.24.x).
 
 ## Android 5.0.2 / iOS 5.0.2
 
@@ -69,7 +69,7 @@ Depending on the Mendix version your app is developed in and the device you want
 
 ### Improvements
 
-* This new version is compatible with Mendix 10.24.
+* We made this new version is compatible with Mendix 10.24.
 
 ## Android 5.0.1 / iOS 5.0.1
 
