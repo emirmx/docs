@@ -743,9 +743,11 @@ For more information about collecting metrics in Mendix on Kubernetes, see [Moni
 
 ### Customize Service Account {#customize-service-account}
 
-The Mendix environment can be configured to use a specific Kubernetes ServiceAccount instead of the default ServiceAccount.
+The Mendix environment can be configured to use a specific Kubernetes ServiceAccount instead of the default ServiceAccount. 
 
-To achieve this, you need to add the annotation `privatecloud.mendix.com/environment-account: true` (for security reasons, any account matching an environment name but without this annotation cannot be attached to environments).
+In order to ensure that every environment uses a unique account, the Kubernetes service account must have the same name as the Mendix App environment name (environment ID). This ensures that one service account cannot be used for multiple environments.
+
+To achieve this, you need to add the annotation `privatecloud.mendix.com/environment-account: true`. For security reasons, any account matching an environment name but without this annotation cannot be attached to environments.
 
 {{% alert color="info" %}}
 The service account can be customized Mendix on Kubernetes Operator version 2.7.0 and above.
