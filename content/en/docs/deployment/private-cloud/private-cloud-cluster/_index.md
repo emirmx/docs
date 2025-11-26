@@ -1297,13 +1297,6 @@ The deployment strategy now includes the following options under the **Deploymen
 * **Max Surge** - Specifies the maximum number of pods that can be created above the desired number of pods during a rolling update.
 * **Max Unavailable** - Specifies the maximum number of pods that can be unavailable during a rolling update.
 
-You can also update the following **Pod Disruption Budget** fields:
-
-* **Min Available** - Specifies the minimum number of Pods that must be available at any time.
-* **Max Unavailable** - Specifies the maximum number of Pods that can be unavailable at any time. 
-
-The Pod Disruption Budget is enabled by default if the application has more than 1 replica, and the Mendix Operator version is 2.24.0 or newer. For more information, see [Deployment Strategy](/developerportal/deploy/private-cloud-reduced-downtime/).
-
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/deploymentStrategy.png" class="no-border" >}}
 
 #### Members
