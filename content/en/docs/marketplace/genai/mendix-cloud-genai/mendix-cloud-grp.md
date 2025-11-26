@@ -45,6 +45,27 @@ Customers looking to leverage other models in addition to the above can also tak
 | Anthropic Claude (any version) (Tokens out/month)   | 1.25 million   | 2.5 million       | 5 million         |
 | Cohere Embed V3 (Tokens in/month)                   | 5 million      | 10 million        | 20 million        |
 
+## Accessing GenAI Resources
+
+The process of accessing GenAI Resources has been enhanced and streamlined. Developers can easily obtain access through a self-service capability, enabling them to access and manage GenAI Resources independently. 
+Developers with the required prerequisites can use the self-service capability to provision, deprovision, and manage GenAI Resources directly from the Control Center. This enables faster provisioning and reduces manual dependency. 
+For developers who do not have self-service capabilities, GenAI Resources can still be provisioned or deprovisioned by contacting sales representatives or CSM to order an existing SKU. 
+Both approaches allow users to scale GenAI resources efficiently and explore more generative AI solutions with Mendix.
+
+### Provisioning GenAI Resources using self-service capability
+
+When using self-service capability, Mendix admins can manage the provisioning and deprovisioning of GenAI Resources directly through the Control Center. They can provision the new resource, review it, and open it in a new tab of the Mendix Cloud GenAI portal. For more information, see the GenAI Resources(link)
+
+To provision GenAI Resources successfully using self-service, ensure that you meet the requirements below:
+
+Mendix Admins can access the Control Center to provision or deprovision the GenAI resources. 
+Make sure you have sufficient free Mendix cloud tokens entitlements. These tokens are required to allocate GenAI capacity.  For more information, see Entitlements (link)
+For more information, see the Prerequisites (link) section of GenAI Resources.
+
+### Provisioning GenAI Resources without using the self-service capability
+
+If the self-service capability is not available in your environment, you can still provision your GenAI Resources by ordering the existing SKU associated with your Mendix subscription. To do so, you can contact your sales representative or CSM. 
+
 ## Knowledge Bases
 
 Mendix Cloud Knowledge Base Resource Packs provide customers with an elastic, logically isolated vector database, to use for standard Generative AI architectural patterns such as Retrieval-Augmented Generation (RAG), semantic similarity search, and other Generative AI use cases. The Knowledge Bases on Mendix Cloud are based on AWS's highly secure Amazon Bedrock Knowledge Bases capability, combined with AWS' OpenSearch Serverless database— a widely adopted standard infrastructure for Generative AI Knowledge Bases on AWS, ensuring fast & accurate information retrieval.
