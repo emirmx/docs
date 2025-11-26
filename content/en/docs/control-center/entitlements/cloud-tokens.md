@@ -114,7 +114,7 @@ GenAI Resource Packs provide turn-key access to Generative AI technology, delive
 
 | GenAI Knowledge Base Resource Packs | Mendix Cloud Tokens |
 | --- | --: |
-| S | 48 |
+| Standard | 48 |
 
 ## Key Takeaways
 
