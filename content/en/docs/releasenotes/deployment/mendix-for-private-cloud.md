@@ -21,6 +21,10 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 * We have added **Enhanced Deployment Strategy UI** to the deployment options, featuring new **Min Available** and **Max Unavailable** fields for more precise control over your application's availability.
 * You can now directly configure HTTP headers by using a new key/value UI in the **Network** tab to manage headers like Content-Security-Policy within Mendix Runtime and reduce ingress reliance. This feature supports Mendix 10.24.1 and newer.
 
+#### Known Issues
+
+* Currently, if you adjust your Pod Disruption Budget settings, those modifications will not take effect until our next Operator release (2.25.0).
+
 ### November 7, 2025
 
 #### Portal Hotfix
