@@ -78,9 +78,15 @@ For more information about the requirements for other releases, see the releases
 
 ### Obtaining a License Token {#obtain-license-token}
 
-3D Viewer is a premium Mendix product that is subject to a purchase and subscription fee. You can deploy 3D Viewer locally or in a Mendix Free App for free. However, to deploy the 3D Viewer on the cloud, you need to get a license token which you will need when you configure it as described in [Configuring the License Token](#configure-license-token), below.
+3D Viewer is a **premium** Siemens product and requires a valid **purchase and commercial license** for production use.
 
-You can request a license token by clicking the **Contact Us** button on the [3D Viewer](https://marketplace.mendix.com/link/component/118345) Marketplace page.
+- You can use 3D Viewer **without** a license in your **local development environment** with [Mendix Studio Pro](/releasenotes/studio-pro/), for more details see [Run Locally or Preview](/deployment/#run-locally-or-preview/).
+
+- A license is **required** to deploy your application to any **server environment**. This includes [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/) as well as all self-managed or [on-premises](/developerportal/deploy/on-premises-design/) infrastructures(such as [Kubernetes](/developerportal/deploy/private-cloud/), [Docker](/developerportal/deploy/docker-deploy/), [Azure](/developerportal/deploy/mendix-on-azure/), [SAP BTP](/developerportal/deploy/sap-cloud-platform/) etc.), for more details see [Deploying Apps](/deployment/).
+
+To request a **trial license token**, click the **Contact Us** button on the [3D Viewer Marketplace page](https://marketplace.mendix.com/link/component/118345) or send an email to MX3DViewerHelp.sisw@siemens.com.
+
+Once you have obtained a license token, configure it as described in [Configuring the License Token](#configure-license-token).
 
 ### Installing the Component in Your App
 
@@ -320,8 +326,6 @@ The **Toolbar** widgets do not require additional configuration. Simply place th
 
 ### Configuring the License Token {#configure-license-token}
 
-You can deploy 3D Viewer locally or in a Mendix Free App for free. However, to deploy 3D Viewer on the cloud, it will need to be licensed, and you need to obtain a license token as described in [Obtaining a License Token](#obtain-license-token), above, and then configure it as follows:
-
 #### For an App Deployed in Mendix Cloud
 
 If you deploy your app in Mendix Cloud, configure the license token in the [Mendix Portal](/developerportal/deploy/environments-details/).
@@ -330,7 +334,7 @@ Before you deploy your app, configure the app **Constants** in the deployment pa
 
 {{< figure src="/attachments/partners/siemens/3d-viewer/licensetoken-cloudportal.jpg" alt="licensetoken-cloudportal" class="no-border" >}}
 
-If you have already deployed your app, change the existing **LicenseToken** constant value on the **Model Options** tab and restart the app.
+If you have already deployed your app, change the existing **LicenseToken** constant value on the **[Model Options](/developerportal/deploy/environments-details/#model-options)** tab and restart the app.
 
 {{< figure src="/attachments/partners/siemens/3d-viewer/licensetoken-envdetails.jpg" alt="licensetoken-envdetails" class="no-border" >}}
 
