@@ -331,9 +331,9 @@ The second method should be used if the first method is not possible for some re
 
 #### Merging Using Git in the Command Line
 
-Merging using Git in the command line or a third-party tool is not supported after the introduction of [MPRv2](/refguide/troubleshoot-repository-size/#mpr-format). External tooling can't correctly merge the *.mpr* and *.mxunit* files, which can lead to a corrupted branch.
+Merging using Git in the command line or a third-party tool is not supported after the introduction of [MPRv2](/refguide/troubleshoot-repository-size/#mpr-format). External tools cannot correctly merge the *.mpr* and *.mxunit* files, which can lead to a corrupted branch.
 
-On the roadmap we're planning to introduce a separate command as part of the [mx Command-Line Tool](/refguide/mx-command-line-tool/) to allow merging on the command line.
+In a future release, we are planning to introduce a separate command as part of the [mx Command-Line Tool](/refguide/mx-command-line-tool/) to allow merging on the command line.
 
 ### Branching Best-Practices {#branching-best-practices}
 
