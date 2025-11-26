@@ -7,7 +7,7 @@ weight: 60
 ---
 ## Introduction
 
-{{% alert color="warning" %}}This tool is provided as-is, and no additional features or enhancements will be implemented in the future. Our recommendation for migrating data is reaching out to Expert Services or using [MendixOnAzure](/developerportal/deploy/mendix-on-azure/backups/).{{% /alert %}}
+{{% alert color="warning" %}}This tool is provided as-is, and no additional features or enhancements will be implemented in the future. If you want to migrate data, we recommend that you reach out to Expert Services, or use [MendixOnAzure](/developerportal/deploy/mendix-on-azure/backups/).{{% /alert %}}
 
 The Mendix on Kubernetes data migration tool allows you to:
 
