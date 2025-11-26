@@ -43,19 +43,23 @@ For more information, see [Configuring Ingress and Egress](/developerportal/depl
 
 ### Redundancy
 
-| Advanced Option    | Description    | Editable after Initial Creation |
-| ---    | ---    | ---    |
+| Advanced Option | Description | Editable after Initial Creation |
+| --- | --- | --- |
 | Application Layer Redundancy | Defines Azure Availability Zones for AKS node pools to enhance resilience by distributing nodes across zones. | Yes |
-| Database Layer Redundancy | Configures high availability (HA) for the PostgreSQL database by setting the Azure Availability Zone for the standby replica. <br>**HA Modes**: <br>- **SameZone**: Primary and standby in the same zone (protects against instance failure). <br>- **ZoneRedundant**: Primary and standby in different zones (protects against zone-wide failures).| Yes |
-| Storage Layer Redundancy | Defines the data replication strategy for the application's storage account to ensure durability and availability. <br> **Options**:  <br> - **LRS(Locally Redundant Storage)**: 3 copies in one datacenter (same region).  <br> - **ZRS(Zone-Redundant Storage)**: 3 copies across 3 availability zones (same region).  <br> - **GRS(Geo-Redundant Storage)**: 3 LRS copies in the primary region + 3 asynchronous copies in the paired secondary region.  <br> - **RA-GRS(Read-Access Geo-Redundant Storage)**: GRS with read access to the secondary region.  <br> - **GZRS(Geo-Zone-Redundant Storage)**: ZRS in the primary region + 3 asynchronous copies in the paired secondary region.  <br> - **RA-GZRS(Read-Access Geo-Zone-Redundant Storage)**: GZRS with read access to the secondary region  <br> **Upgrade Paths (No Recreation)**: - LRS → GRS → RA-GRS - ZRS → GZRS → RA-GZRS | Yes |
-| Backup Storage Redundancy | Specifies the replication strategy for the backup storage account. <br> **Options**: Same as application storage redundancy (LRS, ZRS, GRS, RA-GRS, GZRS, RA-GZRS). | Yes |
+| Database Layer Redundancy | Configures high availability (HA) for the PostgreSQL database by setting the Azure Availability Zone for the standby replica. **HA Modes**: **SameZone** (Primary and standby in the same zone, protects against instance failure); **ZoneRedundant** (Primary and standby in different zones protects against zone-wide failures). | Yes |
+| Storage Layer Redundancy | Defines the data replication strategy for the application's storage account to ensure durability and availability. **Options**: **LRS** (Locally Redundant Storage, 3 copies in one datacenter in the same region); **ZRS** (Zone-Redundant Storage, 3 copies across 3 availability zones in the same region); **GRS** (Geo-Redundant Storage, 3 LRS copies in the primary region and 3 asynchronous copies in the paired secondary region);  **RA-GRS** (Read-Access Geo-Redundant Storage, GRS with read access to the secondary region); **GZRS** (Geo-Zone-Redundant Storage, ZRS in the primary region and 3 asynchronous copies in the paired secondary region); **RA-GZRS** (Read-Access Geo-Zone-Redundant Storage, GZRS with read access to the secondary region). **Upgrade Paths (No Recreation)**: - LRS → GRS → RA-GRS - ZRS → GZRS → RA-GZRS | Yes |
+| Backup Storage Redundancy | Specifies the replication strategy for the backup storage account. **Options**: Same as application storage redundancy (LRS, ZRS, GRS, RA-GRS, GZRS, RA-GZRS). | Yes |
 
-**Restrictions/Limitations during Editing cluster**
-<br> 1. Database Layer cannot change from Zone Redundant to Same Zone(First need to disable HA then enable it with Same Zone)
-<br> 2. Cannot change Database Layer to HA(High availibility) and Compute tier of postgres to Burstable at same edit. (First upgrade to GP/MO then turn on HA in next edit)
-<br> 3. Both Storage Layer & Backup Layer Redundancy cannot upgrade apart from below set
-<br>&nbsp;&nbsp;3.1 Set 1: LRS → GRS → RAGRS
-<br>&nbsp;&nbsp;3.2 Set 2: ZRS → GZRS → RAGZRS
+#### Restrictions and Limitations when Editing a Cluster
+
+The following restrictions and limitations apply:
+
+* You cannot change the database layer cannot change from Zone Redundant to Same Zone. You must first disable High Availability (HA), and then enable it with Same Zone.
+* You cannot change the database layer to HA and the Postgres Compute tier to Burstable during same edit. You must first upgrade to GP/MO, and then enable HA in the next edit.
+* You can only upgrade the storage layer and backup layer redundancy in the following ways:
+
+    * LRS → GRS → RAGRS
+    * ZRS → GZRS → RAGZRS
 
 {{< figure src="/attachments/deployment/mx-azure/infraredundancy.png" class="no-border" >}}
 
