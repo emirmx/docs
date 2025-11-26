@@ -331,9 +331,9 @@ The second method should be used if the first method is not possible for some re
 
 #### Merging Using Git in the Command Line
 
-Merging using Git in the command line or a third-party tool is not supported after the introduction of [MPRv2](/refguide/troubleshoot-repository-size/#mpr-format), which is the default format as of Studio Pro 10.22. External tooling can't correctly merge the *.mpr* and *.mxunit* files, which can lead to a corrupted branch.
+Merging using Git in the command line or a third-party tool is not supported after the introduction of [MPRv2](/refguide/troubleshoot-repository-size/#mpr-format), which is the default format as of Studio Pro 10.22. External tools cannot correctly merge the *.mpr* and *.mxunit* files, which can lead to a corrupted branch.
 
-Within Mendix 11 a command as part of the [mx Command-Line Tool](/refguide/mx-command-line-tool/) will be introduced to allow merging on the command line.
+For Mendix 11, a command will be introduced as part of the [mx Command-Line Tool](/refguide/mx-command-line-tool/) to allow merging on the command line.
 
 ### Branching Best-Practices {#branching-best-practices}
 
