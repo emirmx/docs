@@ -12,9 +12,9 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 
 ### Release date: November 27, 2025
 
-* Operator, Agent, Build, Sidecars and NGINX logs are now directly accessible within Grafana for monitoring and troubleshooting.
+* Operator, Agent, Build, Sidecars, and NGINX logs are now directly accessible within Grafana for monitoring and troubleshooting.
 * We have introduced a new Infrastructure Redundancy configuration option, available during cluster initialization and cluster edit, to enhance resilience and provide clearer control over VM, Storage, and Database redundancy.
-* We have fixed the issue where Terraform apply fails when read replica is enabled. (Ticket 458)
+* We have fixed an issue where Terraform apply fails when Read replica is enabled. (Ticket 458)
 
 ### Release date: November 6, 2025
 
