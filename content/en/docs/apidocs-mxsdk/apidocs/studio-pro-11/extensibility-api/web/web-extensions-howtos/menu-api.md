@@ -14,24 +14,9 @@ This how-to describes how to create menus using the web extensibility API. In th
 
 ## Prerequisites
 
-This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Make sure to complete that how-to before starting this one.
+* This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Make sure to complete that how-to before starting this one.
+* Read up on how menus work in the Extensibility API [here](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu/)
 
-## Menu Properties
-
-A menu has the following properties:
-
-| Property             | Description                                                                   |
-|----------------------|-------------------------------------------------------------------------------|
-| `caption`            | The text of the menu item                                                     |
-| `menuId`             | A unique identifier for the menu item                                         |
-| `subMenus`           | A list of sub-menu items                                                      |
-| `hasSeparatorBefore` <br> (default: `false`)  | Adds a visual separator before the item              |
-| `hasSeparatorAfter` <br> (default: `false`)  | Adds a visual separator after the item                |
-| `enabled`  <br> (default: `true`)  | Indicates that the menu item notifies the listener when clicked |
-| `commandId` (optional) | The id of the previously registered command, which executes when the menu is clicked |
-| `action` (optional) | The action that executes when the menu is clicked |
-
-{{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/menus/grouped_menus.png" width="300" >}}
 
 ## Creating a Simple Menu
 

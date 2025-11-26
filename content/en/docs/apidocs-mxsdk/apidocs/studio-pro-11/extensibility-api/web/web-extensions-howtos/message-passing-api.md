@@ -16,6 +16,7 @@ Before starting this how-to, make sure you have completed the following prerequi
 * Make sure you are familiar with:
     * Creating [menus](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/)
     * Creating different kinds of views, such as [tabs](/apidocs-mxsdk/apidocs/web-extensibility-api-11/tab-api/) and [panes](/apidocs-mxsdk/apidocs/web-extensibility-api-11/dockable-pane-api/)
+    * Creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/)
 
 ## Communication Patterns
 
@@ -36,17 +37,33 @@ export const component: IComponent = {
     async loaded(componentContext) {
         const studioPro = getStudioProApi(componentContext);
         let counter = 0;
+
         // Add a menu item to the Extensions menu
         await studioPro.ui.extensionsMenu.add({
             menuId: "message-passing.MainMenu",
             caption: "Message passing",
             subMenus: [
-                { menuId: "message-passing.ShowTab", caption: "Show tab" },
-            ],
+                {
+                    menuId: "message-passing.ShowTab",
+                    caption: "Show tab",
+                    action: async () => {
+                        await studioPro.ui.tabs.open(
+                            {
+                                title: "MyExtension Tab"
+                            },
+                            {
+                                componentName: "extension/message-passing",
+                                uiEntrypoint: "tab"
+                            }
+                        );
+                    }
+                }
+            ]
         });
 
-        await studioPro.ui.messagePassing.addMessageHandler<{type:string}>(async messageInfo => {
+        await studioPro.ui.messagePassing.addMessageHandler<{ type: string }>(async messageInfo => {
             const messageData = messageInfo.message;
+
             if (messageData.type === "incrementCounter") {
                 counter++;
                 await studioPro.ui.messagePassing.sendResponse(messageInfo.messageId, {
@@ -55,26 +72,8 @@ export const component: IComponent = {
                 });
             }
         });
-
-        // Open a tab when the menu item is clicked
-        studioPro.ui.extensionsMenu.addEventListener(
-            "menuItemActivated",
-            async (args) => {
-                if (args.menuId === "message-passing.ShowTab") {
-                    await studioPro.ui.tabs.open(
-                        {
-                            title: "MyExtension Tab"
-                        },
-                        {
-                            componentName: "extension/message-passing",
-                            uiEntrypoint: "tab",
-                        }
-                    );
-                }
-            }
-        );
     }
-}
+};
 ```
 
 Insert the following code into `src/ui/index.tsx`:
@@ -134,53 +133,56 @@ In the broadcast pattern, one context sends a messages to all other contexts tha
 
 1. Copy the following code into `src/main/index.ts`:
 
-    ```typescript
-    import { IComponent, getStudioProApi } from "@mendix/extensions-api";
+```typescript
+import { IComponent, getStudioProApi } from "@mendix/extensions-api";
 
-    export const component: IComponent = {
-        async loaded(componentContext) {
-            const studioPro = getStudioProApi(componentContext);
-            let counter = 0;
-            // Add a menu item to the Extensions menu
-            await studioPro.ui.extensionsMenu.add({
-                menuId: "message-passing.MainMenu",
-                caption: "Message Passing",
-                subMenus: [
-                    { menuId: "message-passing.ShowTab", caption: "Show tab" },
-                    { menuId: "message-passing.ShowPane", caption: "Show pane" },
-                ],
-            });
+export const component: IComponent = {
+    async loaded(componentContext) {
+        const studioPro = getStudioProApi(componentContext);
 
-            const paneHandle = await studioPro.ui.panes.register({
-                title: 'Message Passing Pane',
-                initialPosition: 'right',
-            }, {
+        const paneHandle = await studioPro.ui.panes.register(
+            {
+                title: "Message Passing Pane",
+                initialPosition: "right"
+            },
+            {
                 componentName: "extension/message-passing",
                 uiEntrypoint: "pane"
-            })
+            }
+        );
 
-            // Open a tab when the menu item is clicked
-            studioPro.ui.extensionsMenu.addEventListener(
-                "menuItemActivated",
-                async (args) => {
-                    if (args.menuId === "message-passing.ShowTab") {
+        // Add a menu item to the Extensions menu
+        await studioPro.ui.extensionsMenu.add({
+            menuId: "message-passing.MainMenu",
+            caption: "Message Passing",
+            subMenus: [
+                {
+                    menuId: "message-passing.ShowTab",
+                    caption: "Show tab",
+                    action: async () => {
                         await studioPro.ui.tabs.open(
                             {
                                 title: "MyExtension Tab"
                             },
                             {
                                 componentName: "extension/message-passing",
-                                uiEntrypoint: "tab",
+                                uiEntrypoint: "tab"
                             }
                         );
-                    } else if (args.menuId === "message-passing.ShowPane") {
+                    }
+                },
+                {
+                    menuId: "message-passing.ShowPane",
+                    caption: "Show pane",
+                    action: async () => {
                         await studioPro.ui.panes.open(paneHandle);
                     }
                 }
-            );
-        }
+            ]
+        });
     }
-    ```
+};
+```
 
 2. Rename `src/ui/index.tsx` to `src/ui/tab.tsx` and paste the following code into it:
 
@@ -199,7 +201,7 @@ In the broadcast pattern, one context sends a messages to all other contexts tha
         const [name, setName] = useState<string>("");
         useEffect(() => {
             studioPro.ui.messagePassing.sendMessage({ type: "nameChanged", name });
-        }, [name]);
+        }, [name, studioPro.ui.messagePassing]);
 
         return (
             <div>
@@ -241,7 +243,7 @@ In the broadcast pattern, one context sends a messages to all other contexts tha
                     setName(messageData.name);
                 }
             });
-        }, [componentContext]);
+        }, [componentContext, studioPro.ui.messagePassing]);
 
         return (
             <div>

@@ -13,7 +13,7 @@ This how-to describes how to open an existing document editor in Studio Pro from
 Before starting this how-to, make sure you have completed the following prerequisites:
 
 * This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Complete that how-to before starting this one.
-* Make sure you are familiar with creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
+* Make sure you are familiar with creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/)
 
 ## Opening a Document Editor
 
@@ -21,7 +21,7 @@ Create a menu item following the steps in [Create a Menu Using Web API](/apidocs
 
 This menu action will look for the `Home_Page` document in `MyFirstModule` (however, you can use any module or document in your app). It will then open it with the editor API. For more information, see [Access a Mendix Model Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/model-api/).
 
-For this example, add an event listener for the `menuItemActivated` event for when a menu is clicked. When the event triggers, do the following:
+For this example, create a menu with an action that performs the following steps:
 
 1. Look for the page by its name, and by the name of its containing module using the `studioPro.app.model.pages` API. 
 2. Call `studioPro.ui.editors.editDocument` to open the document by passing its ID. 
@@ -31,30 +31,25 @@ See the code sample below (from `src/main/index.ts`) to see how this is done:
 ```typescript
 import { IComponent, Menu, Primitives, getStudioProApi } from "@mendix/extensions-api";
 
-const menuId = "open-home-page";
-
 export const component: IComponent = {
     async loaded(componentContext) {
         const studioPro = getStudioProApi(componentContext);
 
-        studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", async args => {
-            if (args.menuId === menuId) {
+        const menu: Menu = {
+            caption: "Open Home Page",
+            menuId: "open-home-page",
+            action: async () => {
                 const [page] = await studioPro.app.model.pages.loadAll(
                     (info: Primitives.UnitInfo) => info.moduleName === "MyFirstModule" && info.name === "Home_Web"
                 );
 
                 await studioPro.ui.editors.editDocument(page.$ID);
             }
-        });
-
-        const menu: Menu = {
-            caption: "Open Home Page",
-            menuId
         };
 
         await studioPro.ui.extensionsMenu.add(menu);
     }
-}
+};
 ```
 
 ## Active Documents
@@ -63,7 +58,8 @@ The editor API notifies the extension when the active document tab is activated 
 
 Both the `getActiveDocument` method and the `activeDocumentChanged` event args returns a `ActiveDocumentInfo` object, which contains the document's name, type, container, module name, and id.
 
-See the sample code below:
+See the sample code below, where we register an event listener for getting notified when the active document is changed. Also here we add a menu to get this information on demand.
+Don't forget to import `ActiveDocumentInfo` from `@mendix/extensions-api`.
 
 ```typescript
 studioPro.ui.editors.addEventListener("activeDocumentChanged", async ({ info }) => {
@@ -76,8 +72,10 @@ studioPro.ui.editors.addEventListener("activeDocumentChanged", async ({ info }) 
     }
 });
 
-studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", async args => {
-    if (args.menuId === menuId) {
+const getActiveDocumentMenu: Menu = {
+    caption: "Get Active Document",
+    menuId: "get-active-document.menu",
+    action: async () => {
         const activeDocument: ActiveDocumentInfo | null = await studioPro.ui.editors.getActiveDocument();
 
         if (activeDocument) {
@@ -88,7 +86,9 @@ studioPro.ui.extensionsMenu.addEventListener("menuItemActivated", async args => 
             });
         }
     }
-});
+};
+
+await studioPro.ui.extensionsMenu.add(getActiveDocumentMenu);
 ```
 
 ## Extensibility Feedback

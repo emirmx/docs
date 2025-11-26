@@ -37,6 +37,7 @@ For detailed information on how to get started with extensions, see [Get Started
 
 Below is a list of how-tos for you to begin with:
 
+* [How Menus Work](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu/)
 * [How to Create a Dockable Pane](/apidocs-mxsdk/apidocs/web-extensibility-api-11/dockable-pane-api/)
 * [How to Interact With Local App Files](/apidocs-mxsdk/apidocs/web-extensibility-api-11/local-app-files-api/)
 * [How to Create a Menu](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/)

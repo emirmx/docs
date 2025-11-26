@@ -26,12 +26,11 @@ In the example below, you create one menu item that will show version control de
 It performs the following actions:
 
 1. Creates a menu item named **Current version control system**
-2. Listens for when the menu item is clicked
-3. When clicked, it retrieves the version control information which includes:
+2. When clicked, it retrieves the version control information which includes:
    * The type of version control system (for example, Git)
    * Current branch name
    * Last commit details (SHA, author, message, and date)
-4. Displays this information in a message box
+3. Displays this information in a message box
 
 Replace your `src/main/index.ts` file with the following:
 
@@ -41,44 +40,38 @@ import { IComponent, getStudioProApi } from "@mendix/extensions-api";
 export const component: IComponent = {
     async loaded(componentContext) {
         const studioPro = getStudioProApi(componentContext);
+        const versionControlApi = studioPro.ui.versionControl;
+        const messageBoxApi = studioPro.ui.messageBoxes;
         const menuId = "version-control-menu";
 
         await studioPro.ui.extensionsMenu.add({
             menuId,
-            caption: "Current version control system"
-        });
+            caption: "Current version control system",
+            action: async () => {
+                const versionControlSystemInfo = await versionControlApi.getVersionControlInfo();
 
-        studioPro.ui.extensionsMenu.addEventListener(
-            "menuItemActivated",
-            async (args) => {
-                if (args.menuId === menuId) {
-                    const versionControlApi = studioPro.ui.versionControl;
-                    const messageBoxApi = studioPro.ui.messageBoxes;
-                    const versionControlSystemInfo = await versionControlApi.getVersionControlInfo();
-
-                    if (versionControlSystemInfo == null) {
-                        messageBoxApi.show("info", "This app is not version controlled");
-                        return;
-                    }
-
-                    let message = `The system is ${versionControlSystemInfo.versionControlSystem}. Branch: ${versionControlSystemInfo.branch}.`;
-
-                    if (versionControlSystemInfo.lastCommit == null) {
-                        message += "\n\nLast Commit: No commit information available.";
-                    } else {
-                        message += "\n\nLast Commit:\n";
-                        message += `SHA: ${versionControlSystemInfo.lastCommit.sha}\n`;
-                        message += `Author: ${versionControlSystemInfo.lastCommit.author}\n`;
-                        message += `Message: ${versionControlSystemInfo.lastCommit.message}\n`;
-                        message += `Date: ${versionControlSystemInfo.lastCommit.date}`;
-                    }
-
-                    messageBoxApi.show("info", message);
+                if (versionControlSystemInfo == null) {
+                    messageBoxApi.show("info", "This app is not version controlled");
+                    return;
                 }
+
+                let message = `The system is ${versionControlSystemInfo.versionControlSystem}. Branch: ${versionControlSystemInfo.branch}.`;
+
+                if (versionControlSystemInfo.lastCommit == null) {
+                    message += "\n\nLast Commit: No commit information available.";
+                } else {
+                    message += "\n\nLast Commit:\n";
+                    message += `SHA: ${versionControlSystemInfo.lastCommit.sha}\n`;
+                    message += `Author: ${versionControlSystemInfo.lastCommit.author}\n`;
+                    message += `Message: ${versionControlSystemInfo.lastCommit.message}\n`;
+                    message += `Date: ${versionControlSystemInfo.lastCommit.date}`;
+                }
+
+                await messageBoxApi.show("info", message);
             }
-        );
+        });
     }
-}
+};
 ```
 
 ## Extensibility Feedback

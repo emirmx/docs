@@ -51,34 +51,23 @@ export const component: IComponent = {
         await studioPro.ui.extensionsMenu.add({
             menuId: menuId,
             caption: "Show modal dialog",
-        });
+            action: async () => {
+                const result = await studioPro.ui.dialogs.showModal(
+                    {
+                        title: "Modal Dialog",
+                        contentSize: { height: 170, width: 400 }
+                    },
+                    {
+                        componentName: "extension/myextension",
+                        uiEntrypoint: "dialog"
+                    }
+                );
 
-        // Open a modal dialog when the menu item is clicked
-        studioPro.ui.extensionsMenu.addEventListener(
-            "menuItemActivated",
-            async (args) => {
-                if (args.menuId === menuId) {
-                    const result = await studioPro.ui.dialogs.showModal(
-                        {
-                            title: "Modal Dialog",
-                            contentSize: { height: 170, width: 400 },
-                        },
-                        {
-                            componentName: "extension/myextension",
-                            uiEntrypoint: "dialog",
-                        }
-                    );
-
-                    if (result !== null)
-                        await studioPro.ui.messageBoxes.show(
-                            "info",
-                            JSON.stringify(result)
-                    );
-                }
+                if (result !== null) await studioPro.ui.messageBoxes.show("info", JSON.stringify(result));
             }
-        );
+        });
     }
-}
+};
 ```
 
 ## Filling the Dialog With Content

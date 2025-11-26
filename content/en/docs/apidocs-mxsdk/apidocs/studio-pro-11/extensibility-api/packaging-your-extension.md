@@ -10,7 +10,7 @@ After completing development on your extension, you can package it into an add-o
 
 To package your extension, follow the steps below:
 
-1. Make sure the`--enable-extension-development` command-line option is enabled.
+1. Make sure the setting for enabling extension development is checked in the Preferences form. Alternatively, you can start Studio Pro with the `--enable-extension-development` command-line option.
 2. In your Studio Pro app, create a new module and include your development extension.
 3. Give the module a name. 
 4. Open the module's settings and in the **Export** tab, choose **Add-on module**. 
