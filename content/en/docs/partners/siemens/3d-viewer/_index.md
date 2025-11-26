@@ -78,13 +78,22 @@ For more information about the requirements for other releases, see the releases
 
 ### Obtaining a License Token {#obtain-license-token}
 
-3D Viewer is a **premium** Siemens product and requires a valid **purchase and commercial license** for production use.
+3D Viewer is a premium Siemens product which requires a valid purchase and commercial license for production use.
 
-- You can use 3D Viewer **without** a license in your **local development environment** with [Mendix Studio Pro](/releasenotes/studio-pro/), for more details see [Run Locally or Preview](/deployment/#run-locally-or-preview/).
+You can use 3D Viewer without a license in your local development environment with [Mendix Studio Pro](/releasenotes/studio-pro/). For details, refer to [Run Locally or Preview](/deployment/#run-locally-or-preview/).
+However, a license is required to deploy your application to any server environment. This includes:
 
-- A license is **required** to deploy your application to any **server environment**. This includes [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/) as well as all self-managed or [on-premises](/developerportal/deploy/on-premises-design/) infrastructures(such as [Kubernetes](/developerportal/deploy/private-cloud/), [Docker](/developerportal/deploy/docker-deploy/), [Azure](/developerportal/deploy/mendix-on-azure/), [SAP BTP](/developerportal/deploy/sap-cloud-platform/) etc.), for more details see [Deploying Apps](/deployment/).
+* [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/)
+* Self-managed or [on-premises](/developerportal/deploy/on-premises-design/) infrastructures, such as:    
 
-To request a **trial license token**, click the **Contact Us** button on the [3D Viewer Marketplace page](https://marketplace.mendix.com/link/component/118345) or send an email to MX3DViewerHelp.sisw@siemens.com.
+    * [Kubernetes](/developerportal/deploy/private-cloud/)
+    * [Docker](/developerportal/deploy/docker-deploy/)
+    * [Azure](/developerportal/deploy/mendix-on-azure/)
+    * [SAP BTP](/developerportal/deploy/sap-cloud-platform/)
+    
+For details, refer to [Deploying Apps](/deployment/).
+
+To request a trial license token, click the **Contact Us** button on the [3D Viewer Marketplace page](https://marketplace.mendix.com/link/component/118345) or send an email to MX3DViewerHelp.sisw@siemens.com.
 
 Once you have obtained a license token, configure it as described in [Configuring the License Token](#configure-license-token).
 
@@ -325,6 +334,8 @@ The **Toolbar** widgets do not require additional configuration. Simply place th
 | Tool Bar Item Snapshot | Provides the ability to take a snapshot of the current Viewer and save the snapshot to a local machine. |
 
 ### Configuring the License Token {#configure-license-token}
+
+Follow this guidance to configure a license token depending on your environment.
 
 #### For an App Deployed in Mendix Cloud
 
