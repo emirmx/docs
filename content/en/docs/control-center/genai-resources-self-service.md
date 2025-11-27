@@ -7,7 +7,7 @@ weight: 20
 
 ## Introduction
 
-The GenAI Resources section provides a detailed overview of all Mendix GenAI resources available within your company. This feature enables users to seamlessly provision and deprovision GenAI resources as needed. With this feature, company admins can efficiently manage all GenAI resources directly within the [Control Center](https://controlcenter.mendix.com/index.html) through a self-service capability, ensuring streamlined operations and improved governance. For more information, see [Accessing GenAI Resources](link).
+The GenAI Resources section provides a detailed overview of all Mendix GenAI resources available within your company. This feature enables users to seamlessly provision and deprovision GenAI resources as needed. With this feature, company admins can efficiently manage all GenAI resources directly within the [Control Center](https://controlcenter.mendix.com/index.html) through a self-service capability, ensuring streamlined operations and improved governance. For more information, see [Accessing GenAI Resources](/appstore/modules/genai/mx-cloud-genai/resource-packs/#accessing-genai-resources).
 
 ## Prerequisites
 
