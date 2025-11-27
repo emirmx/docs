@@ -1292,7 +1292,12 @@ You can configure the runtime metrics for the environment in the **Runtime** sec
 
 You can also configure the pod labels for the environment in the **Labels** section. For more information, see [App Pod Labels](#pod-labels).
 
-Starting from Operator 2.20.0 onwards, it is now also possible to set the deployment strategy for an environment. This allows you to update an app with reduced downtime by performing a rolling update. To use this feature, you must enable the **Reduced App Downtime Strategy** option.  For more information, see [Deployment Strategy](/developerportal/deploy/private-cloud-reduced-downtime/)
+Starting from Operator 2.20.0 onwards, you can set the deployment strategy for an environment. This allows you to update an app with reduced downtime by performing a rolling update. To use this feature, you must enable the **Custom Options** under Reduced downtime options.
+
+The deployment strategy now includes the following options under the **Deployment Strategy Options** subheader:
+
+* **Max Surge** - Specifies the maximum number of pods that can be created above the desired number of pods during a rolling update.
+* **Max Unavailable** - Specifies the maximum number of pods that can be unavailable during a rolling update.
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/deploymentStrategy.png" class="no-border" >}}
 
