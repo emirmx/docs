@@ -65,7 +65,7 @@ For more information, see the [Prerequisites](/control-center/genai-resources-se
 
 ### Provisioning GenAI Resources Without Using the Self-Service Capability
 
-If the self-service capability is not available in your environment, you can still provision your GenAI resources by ordering the existing SKU associated with your Mendix subscription. To do so, you can contact your sales representative or CSM.
+If the self-service capability is not available in your environment, you can still provision your GenAI resources by ordering the existing stock keeping unit (SKU) associated with your Mendix subscription. To do so, you can contact your sales representative or CSM.
 
 ## Knowledge Bases
 
