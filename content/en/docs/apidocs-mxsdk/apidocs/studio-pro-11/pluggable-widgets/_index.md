@@ -11,9 +11,9 @@ weight: 90
 
 Mendix comes with a wide variety of [Widgets](/refguide/pages/#widgets-categories), but sometimes your app requires a widget outside of this set. To support a more advanced UI pattern or create app-specific interactions, you will need to make your own pluggable widget. This documentation will help you achieve that in Studio Pro 11. See these links for other versions' documentation:
 
-* [Mendix 10](/apidocs-mxsdk/apidocs/pluggable-widgets-10/)
-* [Mendix 9](/apidocs-mxsdk/apidocs/pluggable-parent-9/)
-* [Mendix 8](/apidocs-mxsdk/apidocs/pluggable-parent-8/)
+- [Mendix 10](/apidocs-mxsdk/apidocs/pluggable-widgets-10/)
+- [Mendix 9](/apidocs-mxsdk/apidocs/pluggable-parent-9/)
+- [Mendix 8](/apidocs-mxsdk/apidocs/pluggable-parent-8/)
 
 Your new pluggable widget can be used while modeling pages alongside standard Mendix components. It can also be shared between multiple apps and distributed through the [Marketplace](/appstore/).
 
@@ -23,7 +23,7 @@ Pluggable widgets, like core widgets, can have properties which a Mendix develop
 
 Pluggable widgets can also include a preview component for when they are previewed in Studio Pro's **Design mode**.
 
-For information on which libraries Mendix supports when developing pluggable widgets, see the [Pluggable Widgets](/refguide/mendix-client/#pluggable-widgets) section of *Mendix Client*.
+For information on which libraries Mendix supports when developing pluggable widgets, see the [Pluggable Widgets](/refguide/mendix-client/#pluggable-widgets) section of _Mendix Client_.
 
 For information on how to update Pluggable Widgets Tools to a newer version, see [Updating Pluggable Widgets Tools](/howto/extensibility/update-pluggable-widgets-tools/)
 
@@ -42,38 +42,38 @@ A widget component is [mounted](https://en.reactjs.org/docs/react-component.html
 A prop value is often not just a primitive value, but an object whose structure depends on the [`type`](#type-attribute) of its widget's property. A prop's values can expose data, metadata, and associated actions — whatever is applicable for the property. Here is an example of one interface. It is a value for an action property, such as the type you would find in the [On click](/refguide/on-click-event/#on-click) property of an action button:
 
 ```ts
-    export interface ActionValue {
-        readonly canExecute: boolean;
-        readonly isExecuting: boolean;
-        execute(): void;
-    }
+export interface ActionValue {
+  readonly canExecute: boolean;
+  readonly isExecuting: boolean;
+  execute(): void;
+}
 ```
 
-The above interface could be used this way: a component uses a `canExecute` flag to decide whether it should be enabled, uses an `isExecuting`  flag to show an inline progress indicator, and triggers `execute()` method in a reaction to user click. Normally, after `execute()` has been triggered, the component will be re-rendered with a new value that has the `isExecuting` flag set, and when an action, for example a microflow, completes, the component is re-rendered again without `isExecuting`.
+The above interface could be used this way: a component uses a `canExecute` flag to decide whether it should be enabled, uses an `isExecuting` flag to show an inline progress indicator, and triggers `execute()` method in a reaction to user click. Normally, after `execute()` has been triggered, the component will be re-rendered with a new value that has the `isExecuting` flag set, and when an action, for example a microflow, completes, the component is re-rendered again without `isExecuting`.
 
 ## Widget Package {#widget-package}
 
-A pluggable widget is distributed as single widget package file with an *.mpk* extension. This file should be placed in your app's `widgets` directory. Mendix Studio Pro discovers all widgets in your app when you open your app, add a widget through the Marketplace, or click **App** > **Synchronize App Directory**.
+A pluggable widget is distributed as single widget package file with an _.mpk_ extension. This file should be placed in your app's `widgets` directory. Mendix Studio Pro discovers all widgets in your app when you open your app, add a widget through the Marketplace, or click **App** > **Synchronize App Directory**.
 
 Manually building a widget package can be difficult, so Mendix recommends you use scripts provided by the [Mendix Pluggable Widget Generator](https://www.npmjs.com/package/@mendix/generator-widget). For more information on how to use a generator, see [How To Build a Text Box Pluggable Widget: Part 1](/howto/extensibility/create-a-pluggable-widget-one/).
 
 A widget package file is just a ZIP archive containing the following things:
 
-* A *package.xml* file describing the whole package
-* A widget definition XML file, preferably located in *{widgetName}.xml* where `widgetName` is the last part of widget [ID](#widget-id)
-* A client component of a widget located, for example, in  *com/mendix/widget/MyProgressCircle.js* for a widget with the ID `com.mendix.widget.MyProgressCircle`
-* Optionally, a widget preview Studio Pro’s **Design mode** located in *{widgetName}.editorPreview.js*
-* Optionally, widget icons (which must be the PNG format):
-    * *{widgetName}.icon.png* sets the widget icon inside the Studio Pro toolbox in list view (the ideal image size is 64x64 pixels, but other sizes will be resized to fit)
-    * *{widgetName}.icon.dark.png* sets the dark-mode equivalent to *{widgetName}.icon.png*
-    * *{widgetName}.tile.png* sets the tile image inside the Studio Pro toolbox in tile view (the ideal image size is 256x192 pixels, but other sizes will be resized to fit)
-    * *{widgetName}.tile.dark.png* sets the dark-mode equivalent to *{widgetName}.tile.png*
-* Optionally, some widget-related resources, preferably located next to the file which contains the client component
-    * Note that all CSS files you add (except the one located in the **lib** sub-directory) will automatically be loaded in an app via the widget
+- A _package.xml_ file describing the whole package
+- A widget definition XML file, preferably located in _{widgetName}.xml_ where `widgetName` is the last part of widget [ID](#widget-id)
+- A client component of a widget located, for example, in _com/mendix/widget/MyProgressCircle.js_ for a widget with the ID `com.mendix.widget.MyProgressCircle`
+- Optionally, a widget preview Studio Pro’s **Design mode** located in _{widgetName}.editorPreview.js_
+- Optionally, widget icons (which must be the PNG format):
+  - _{widgetName}.icon.png_ sets the widget icon inside the Studio Pro toolbox in list view (the ideal image size is 64x64 pixels, but other sizes will be resized to fit)
+  - _{widgetName}.icon.dark.png_ sets the dark-mode equivalent to _{widgetName}.icon.png_
+  - _{widgetName}.tile.png_ sets the tile image inside the Studio Pro toolbox in tile view (the ideal image size is 256x192 pixels, but other sizes will be resized to fit)
+  - _{widgetName}.tile.dark.png_ sets the dark-mode equivalent to _{widgetName}.tile.png_
+- Optionally, some widget-related resources, preferably located next to the file which contains the client component
+  - Note that all CSS files you add (except the one located in the **lib** sub-directory) will automatically be loaded in an app via the widget
 
-Naming your widget package file after the `widgetName` is best practice. Also, a widget package can include multiple widgets by putting several of the above items in the same widget package. However, creating such packages is *not recommended*. 
+Naming your widget package file after the `widgetName` is best practice. Also, a widget package can include multiple widgets by putting several of the above items in the same widget package. However, creating such packages is _not recommended_.
 
-The *package.xml* file has the following structure:
+The _package.xml_ file has the following structure:
 
 ```xml
 	<?xml version="1.0" encoding="utf-8" ?>
@@ -123,20 +123,20 @@ Here is an example of a widget’s attributes section:
 
 This section is generated based on options chosen while running the Mendix Pluggable Widget Generator. You will rarely need to modify it after it is generated. This sample widget features several widget attributes:
 
-* `id`<a id="widget-id"></a> — This the fully qualified name of the widget called widget ID. Using widget ID, the Mendix Platform distinguishes widgets from each other. Widget ID should never be changed after a widget is used in an app or is published in the Marketplace. Reverse domain-style names, as in example above, are recommended.
-* `pluginWidget`  — This should always be set to `true`. This way, the Mendix Platform can distinguish between the newer pluggable widgets and the older custom widgets.
-* `offlineCapable` — This shows if a widget can work while an app is offline. For more information on offline apps, see the [Offline-First](/refguide/offline-first/) guide. A widget that fetches information from a third-party API, for example a widget that fetches airline ticket prices, could not function without an internet connection. If a widget cannot work offline, Mendix Studio Pro will forbid its use on pages that must be available offline.
-* `supportedPlatform` — This shows the platforms a widget is compatible with.  `Web` describes widgets that are only compatible with web and hybrid mobile apps. `Native` describes widgets that are compatible with native mobile apps.
+- `id`<a id="widget-id"></a> — This the fully qualified name of the widget called widget ID. Using widget ID, the Mendix Platform distinguishes widgets from each other. Widget ID should never be changed after a widget is used in an app or is published in the Marketplace. Reverse domain-style names, as in example above, are recommended.
+- `pluginWidget` — This should always be set to `true`. This way, the Mendix Platform can distinguish between the newer pluggable widgets and the older custom widgets.
+- `offlineCapable` — This shows if a widget can work while an app is offline. For more information on offline apps, see the [Offline-First](/refguide/offline-first/) guide. A widget that fetches information from a third-party API, for example a widget that fetches airline ticket prices, could not function without an internet connection. If a widget cannot work offline, Mendix Studio Pro will forbid its use on pages that must be available offline.
+- `supportedPlatform` — This shows the platforms a widget is compatible with. `Web` describes widgets that are only compatible with web and hybrid mobile apps. `Native` describes widgets that are compatible with native mobile apps.
 
 ### Widget Description {#widget-description}
 
-The presentation of the widget in Studio Pro is determined by the first set of elements inside the widget tag. The order of these descriptive tags is important, and is demonstrated in the list below. Only the name and description tags are mandatory — the others are optional. The description can be omitted with a self-closing tag: `<description />`: 
+The presentation of the widget in Studio Pro is determined by the first set of elements inside the widget tag. The order of these descriptive tags is important, and is demonstrated in the list below. Only the name and description tags are mandatory — the others are optional. The description can be omitted with a self-closing tag: `<description />`:
 
-* `name` — The display name of the widget.
-* `description` — A short written description of the widget.
-* `studioProCategory` — See [Toolbox Category](#toolbox-category).
-* `helpUrl` — See [Help Page](#help).
-* `icon` — See [Icon](#icon).
+- `name` — The display name of the widget.
+- `description` — A short written description of the widget.
+- `studioProCategory` — See [Toolbox Category](#toolbox-category).
+- `helpUrl` — See [Help Page](#help).
+- `icon` — See [Icon](#icon).
 
 ```xml
     <name>My Progress Card</name>
@@ -151,9 +151,9 @@ In Mendix Studio Pro, the widget described above would look like this:
 
 #### Toolbox Category {#toolbox-category}
 
-To provide more clarity for Studio Pro users you can specify a toolbox category for your widgets. When provided, it determines a toolbox category for a widget in Studio Pro. It is possible to specify existing built-in categories such as **Data** or **Input** as well as new arbitrary categories like **Maps**. 
+To provide more clarity for Studio Pro users you can specify a toolbox category for your widgets. When provided, it determines a toolbox category for a widget in Studio Pro. It is possible to specify existing built-in categories such as **Data** or **Input** as well as new arbitrary categories like **Maps**.
 
-When an existing category is specified, then your widget is placed in it next to existing built-in widgets. When a new category is specified, then your widget placed in that new category. 
+When an existing category is specified, then your widget is placed in it next to existing built-in widgets. When a new category is specified, then your widget placed in that new category.
 
 A category can be provided through the `studioProCategory` tag:
 
@@ -181,9 +181,9 @@ A URL of a help page can be provided through the `helpUrl` property after the `d
 
 For more complex help pages you can link to a markdown page. For security reasons, URLs have the following restrictions:
 
-* Must use HTTPS protocol
-* Host name must end with *.mendix.com* or *github.com*
-* If host name is *github.com* the full URL must end with *.md*
+- Must use HTTPS protocol
+- Host name must end with _.mendix.com_ or _github.com_
+- If host name is _github.com_ the full URL must end with _.md_
 
 #### Icon {#icon}
 
@@ -250,6 +250,94 @@ This section is represented by the `properties` tag in the widget XML file. It d
     </properties>
 ```
 
+### How to Enhance Your Pluggable Widget for MAIA by Using `<prompt>`
+
+MAIA can help developers and users work more effectively with pluggable widgets by understanding their purpose and configuration options. To enable this, you can enhance your widget definition XML file with prompt elements that describe your widget's functionality in natural language.
+
+MAIA uses these prompts to understand what your widget does and how its properties should be configured, allowing it to provide better assistance when users are building their applications.
+
+#### Adding Prompts to Widgets
+
+You can add a `<prompt>` element to describe the overall purpose and functionality of your widget. This prompt should be placed after the widget description and before the properties section:
+
+```xml
+<widget id="com.mendix.widget.web.datagrid.Datagrid" pluginWidget="true" offlineCapable="true" xmlns="http://www.mendix.com/widget/1.0/">
+    <name>Data grid 2</name>
+    <description />
+    <prompt>Add a data grid 2 widget to the page.</prompt>
+    <properties>
+        <!-- Properties definition -->
+    </properties>
+</widget>
+```
+
+#### Adding Prompts to Properties
+
+Individual properties can also have `<prompt>` elements that explain their purpose and expected values. Property prompts are particularly useful for complex configuration options that might not be immediately clear from the caption alone:
+
+```xml
+<property key="itemSelection" type="selection" dataSource="datasource">
+    <caption>Selection</caption>
+    <description />
+    <prompt>Determines whether the user can select rows in the grid.</prompt>
+    <selectionTypes>
+        <selectionType name="None" />
+        <selectionType name="Single" />
+        <selectionType name="Multi" />
+    </selectionTypes>
+</property>
+```
+
+### Best Practices for Writing Prompts {#prompt-best-practices}
+
+Well-written prompts help MAIA provide accurate and helpful assistance to developers using your pluggable widget. Follow these best practices when writing prompts for your widgets:
+
+#### Guidelines for Widget Prompts
+
+- **Be concise and action-oriented**: Start with an action verb and keep the prompt under 20 words when possible
+- **Focus on use cases**: Describe when and why someone would use this widget
+- **Use plain language**: Avoid technical jargon that might confuse users
+- **Be specific**: Instead of "displays data," write "displays tabular data with sorting and filtering capabilities"
+
+**Good examples:**
+
+- `"Add a data grid widget to display tabular data with sorting and pagination."`
+- `"Create a progress bar to show task completion status."`
+- `"Insert a chart widget to visualize numerical data as graphs."`
+
+**Poor examples:**
+
+- `"Widget for data"` (too vague)
+- `"Implements advanced data visualization paradigms using reactive patterns"` (too technical)
+
+#### Guidelines for Property Prompts
+
+- **Explain the impact**: Describe how the property affects the widget's behavior or appearance
+- **Mention key values**: If the property has important values or ranges, include them
+- **Use present tense**: Write as if describing current behavior, not future actions
+- **Be specific about relationships**: If a property depends on others, mention that relationship
+
+**Good examples:**
+
+- `"Determines whether users can select single or multiple rows in the table."`
+- `"Sets the refresh interval in seconds; 0 disables automatic refresh."`
+- `"Controls the color of the progress bar using CSS color values."`
+
+**Poor examples:**
+
+- `"Selection stuff"` (too vague)
+- `"Will configure selection"` (wrong tense)
+- `"Property for selection configuration management"` (too wordy)
+
+#### General Writing Guidelines
+
+- **Use consistent terminology**: Match the language used in Mendix documentation and Studio Pro
+- **Avoid redundancy**: Don't repeat information already clear from the caption
+- **Test with users**: Consider how a new developer would interpret your prompts
+- **Keep it updated**: Update prompts when widget functionality changes
+
+By following these guidelines, you help MAIA understand your widget's capabilities and provide better assistance to developers using your pluggable widget.
+
 ## Property Groups {#property-groups}
 
 Before examining properties themselves, it is useful to understand property groups. Property groups are formed by properties wrapped in a `propertyGroup` tag. Studio Pro uses the property groups to render how the widget configuration UI appears in Studio Pro. Grouping can be used to help the modeling developer understand the configuration of a more complex widget. It is best practice to both use property groups and group properties based on their purposes. The property groups from the code in [Widget Properties Definition](#properties-definition) above forms the following structure:
@@ -297,10 +385,10 @@ This section will explain the shape of the widget property. For more detailed in
 
 Some properties can or must have more attributes or tags. This depends on the `type` property. The following elements should be present for every property:
 
-* `key`<a id="key-attribute"></a> — This element is a property's unique, single-word identifier. The `key` elements are used internally to identify properties, so they should never change after a widget is used in an app or is published in the Marketplace. A `key` element also identifies a property value when it is passed to a pluggable widget’s client component.
-* `type`<a id="type-attribute"></a> — This element is a property's type. The `type` element defines which values can be configured for a property, which UI is used in the Mendix Studio Pro, and what type of value a pluggable widget’s client component receives.
-* `caption` —  This element is a short label identifying a property to a modeling developer. The first letter of a caption should be capitalized.
-* `description` — This element is a longer description of a property. A description should be capitalized and limited to one or two sentences.
+- `key`<a id="key-attribute"></a> — This element is a property's unique, single-word identifier. The `key` elements are used internally to identify properties, so they should never change after a widget is used in an app or is published in the Marketplace. A `key` element also identifies a property value when it is passed to a pluggable widget’s client component.
+- `type`<a id="type-attribute"></a> — This element is a property's type. The `type` element defines which values can be configured for a property, which UI is used in the Mendix Studio Pro, and what type of value a pluggable widget’s client component receives.
+- `caption` — This element is a short label identifying a property to a modeling developer. The first letter of a caption should be capitalized.
+- `description` — This element is a longer description of a property. A description should be capitalized and limited to one or two sentences.
 
 Here is how a caption and description look in Studio Pro:
 
