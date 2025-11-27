@@ -47,25 +47,25 @@ Customers looking to leverage other models in addition to the above can also tak
 
 ## Accessing GenAI Resources
 
-The process of accessing GenAI resources has been enhanced and streamlined. Developers can easily obtain access through a self-service capability, enabling them to access and manage GenAI resources independently. 
+Developers can easily obtain access to GenAI resources through a self-service capability, enabling them to access and manage GenAI resources independently. 
 Developers with the required prerequisites can use the self-service capability to provision, deprovision, and manage GenAI resources directly from the Control Center. This enables faster provisioning and reduces manual dependency. 
-For developers who do not have self-service capabilities, GenAI resources can still be provisioned or deprovisioned by contacting sales representatives or CSM to order an existing SKU. 
+For developers who do not have self-service capabilities, GenAI resources can still be provisioned or deprovisioned by contacting sales representatives or customer success manager (CSM) to order an existing stock keeping unit (SKU). 
 Both approaches allow users to scale GenAI resources efficiently and explore more generative AI solutions with Mendix.
 
-### Provisioning GenAI Resources Using Self-Service Capability
+### Provisioning GenAI Resources Using the Self-Service Capability
 
-When using self-service capability, Mendix admins can manage the provisioning and deprovisioning of GenAI resources directly through the [Control Center](https://controlcenter.mendix.com/index.html). They can provision the new resource, review it, and open it in a new tab of the [Mendix Cloud GenAI portal](https://genai.home.mendix.com/p/homepage). For more information, see the [GenAI Resources](/control-center/genai-resources-self-service) document. 
+When using the self-service capability, Mendix Admins can manage the provisioning and deprovisioning of GenAI resources directly through the [Control Center](https://controlcenter.mendix.com/index.html). They can provision the new resource, review it, and open it in a new tab of the [Mendix Cloud GenAI portal](https://genai.home.mendix.com/p/homepage). For more information, refer to [GenAI Resources](/control-center/genai-resources-self-service/). 
 
 To provision GenAI resources successfully using self-service, ensure that you meet the requirements below:
 
 1. Mendix Admins can access the Control Center to provision or deprovision the GenAI resources. 
-2. Make sure you have sufficient free Mendix cloud tokens entitlements. These tokens are required to allocate GenAI capacity.  For more information, see [Cloud Tokens](/control-center/cloud-tokens/).
+2. You have sufficient free Mendix Cloud Tokens. These tokens are required to allocate GenAI capacity. For more information, refer to [Cloud Tokens](/control-center/cloud-tokens/).
 
-For more information, see the [Prerequisites](/control-center/genai-resources-self-service/#prerequisites) section of *GenAI Resources*.
+For further details, refer to the [Prerequisites](/control-center/genai-resources-self-service/#prerequisites) section of *GenAI Resources*.
 
 ### Provisioning GenAI Resources Without Using the Self-Service Capability
 
-If the self-service capability is not available in your environment, you can still provision your GenAI resources by ordering the existing stock keeping unit (SKU) associated with your Mendix subscription. To do so, you can contact your sales representative or CSM.
+If the self-service capability is not available in your environment, you can still provision your GenAI resources by ordering the existing SKU associated to your Mendix subscription. To do so, you can contact your sales representative or CSM.
 
 ## Knowledge Bases
 

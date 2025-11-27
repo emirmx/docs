@@ -30,7 +30,7 @@ The **Settings** tab contains the details of a GenAI resource. It shows the foll
 * **Plan**: indicates the subscription plan used for compute resources (for example, embedding or text generation resources).
 * **Environment**: shows which environment is used, for example, test, acceptance, or production.
 
-¹ Cross-region inference (CRI) allows a model to redirect requests to another region, helping to distribute the load across multiple regions within the same area. So, EU requests always stay within EU regions. Connecting to a cross-region inference profile does not change how the request is sent; the redirection happens on the server side, determining the region to handle the request to get the fastest response. For more information, see [Increase throughput with cross-Region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html). If applicable, CRI profiles are selected during provisioning of a model resource. 
+¹ Cross-region inference (CRI) allows a model to redirect requests to another region, helping to distribute the load across multiple regions within the same area. So, EU requests always stay within EU regions. Connecting to a cross-region inference profile does not change how the request is sent; the redirection happens on the server side, determining the region to handle the request to get the fastest response. For more information, see [Increase throughput with cross-Region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html). If applicable, CRI profiles are selected during provisioning of a model resource.     
 
 #### Additional Details for Knowledge Base Resources
 
