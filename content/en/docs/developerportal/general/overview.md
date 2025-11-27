@@ -19,7 +19,7 @@ At the top of the page, you can find key information about your app, such as its
 On the right side of the page, you can find the following information about your app:
 
 * The size of your **Team** and your team members. Up to 5 team members can be displayed here at a time.
-* The **Project Details** containting the assigned catogories of the project. The assigned projects improve classification and searchability on the [Settings](/developerportal/) page. With the **App Settings* permission you can change the assigned categories on the [Settings](/developerportal/general-settings/) page.
+* The **Project Details** containting the assigned catogories of the project. The assigned categories improve classification and searchability on the [Apps](/developerportal/) page. With the **App Settings** permission you can change the assigned categories on the [Settings](/developerportal/general-settings/) page.
 
 Click **Invite someone to your team** ({{% icon name="add-circle" %}}) to invite new members to your team directly. 
 
