@@ -7,26 +7,18 @@ weight: 50
 
 ## Introduction
 
-The Company Onboarding page allows you to customize the Mendix experience for your new team members to help them learn about how your company uses Mendix, where they can find resources, and how they can get started.
+The Project Categories page allows you to manage the Project Categories which can be assigned to your companies projects to improve classification and searchability. Project Categories can be assigned to each Project individually in the [Project Settings](/developerportal/general-settings/). Additionally, you can use the [Projects API](/apidocs-mxsdk/apidocs/projects-api/) to patch the category assignment.
 
-## Landing Page Tab
+## Category Management
 
-On the **Landing Page** tab of this page, you can customize your company's onboarding landing page. Once you publish it, a tile on the Mendix home page will link to your company onboarding page for all users in your company. This helps users to understand your company’s way of working on the Mendix Platform and enables them to get started more quickly. You can share your company’s best practices on Mendix Platform usage, and you can link to videos, company documentation, and other content.
+On the landing page, you can manage the Project Categories. A list of configured categories is shown, together with all values per category. Next to the preconfigured Country category, you can configure a maximum of five categories with 250 values each. 
 
-You can start configuring the sections and blocks of your landing page from a standard template or from scratch. You can work on drafts and preview how the page looks before publishing for your company's new platform users.
+Use the **Add Country Category** to make the preconfigured country category available. The country category contains a list of 250 countries.
 
-{{< figure src="/attachments/control-center/company/company-onboarding/onboarding-landing.png" >}}
+{{% alert color="info" %}}
+It is not possible to edit the pre-configured Country field.
+{{% /alert %}}
 
-When you configure the landing page, if you turn on the **Include company logo** toggle and the **Include company header image** toggle on the left side, and then click the **Update Company Branding** button on the top, then the **Company Logo** and **Cover Image** currently set in the [Company Brand](/control-center/company-brand/) page will be used on your landing page.
+By clicking the **Add Category** button or the **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) inside a category you open the category wizard in which you can manage a category. You can manage the category name and its entries. Each entry exists of a unique name and code. Whenever you add a new value without a code, the system will automatically generate an unique code for you. It is possible to add new values in a comma seperated list. 
 
-{{< figure src="/attachments/control-center/company/company-onboarding/update-company-branding.png" >}}
-
-Once you publish your landing page, it will be available to all Mendix users in your company. A tile which links to the page is added to the Mendix Home page in the **Get Started with Mendix** section. The tile is called **[Your Company Name] First Steps**.
-
-If you cannot see it, click **Customize home page** ({{% icon name="cog" %}}) on the Mendix Home page and make sure the **Get Started with Mendix** section has **Show on Home** checked.
-
-## Onboarding Email Tab
-
-On the **Onboarding Email** tab, you can customize the onboarding email that users of your domains receive when they join the Mendix Platform. You can provide a link to your company's onboarding page, share a welcome message, or present company guidelines for using Mendix. You can create a draft email before sending it.
-
-{{< figure src="/attachments/control-center/company/company-onboarding/onboarding-email.png" >}}
+Additionally, a Mendix Admin can manage the Project Categories through the [Project Category API](/apidocs-mxsdk/apidocs/project-category-api/).
