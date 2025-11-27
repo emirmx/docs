@@ -37,7 +37,7 @@ For performance reasons, Mendix recommends at least the following minimum hardwa
 
 | Tool | Version |
 | --- | --- |
-| Grafana | 10.3.3 |
+| Grafana | 12.2.1 |
 | Prometheus | 2.41.0 |
 
 ## General Requirements
