@@ -54,6 +54,8 @@ You can filter the overview to display only the apps that are marked for deletio
 
 Use the drop-down menu on the right side of the page to sort the apps by **Pinned**, **Recent Activity** or in alphabetical order of **App Name**.
 
+You can filter on the assigned **Project Categories** by clicking the Filter ({{% icon name="filter" %}}) button on the right side. A side panel will open with the available categories. Categories are maintainend by the [Mendix Admins](/control-center/mendix-admins-page/) of your company
+
 ### App Tiles {#app-tiles}
 
 You can pin an app tile by clicking **Pin** ({{% icon name="pin" %}}). Pinned apps appear at the top of the list.
