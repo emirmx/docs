@@ -17,6 +17,7 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 * We have fixed an issue where Terraform apply fails when Read replica is enabled. (Ticket 458)
 
 ### Known issues:
+
 * In some scenarios, the initialized cluster may be visible to other users under the same subscription immediately after creation, depending on the logged-in account. We are actively working on a fix for this issue.
 
 ### Release date: November 6, 2025
