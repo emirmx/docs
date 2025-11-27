@@ -22,7 +22,3 @@ Follow these steps to deprecate a component:
 4. Click **Deprecate Component**.
 
 A badge is now displayed across the component's Marketplace page, letting users know why it was deprecated, and what alternative components are recommended by Mendix.
-
-## Permissions
-
-[Who can deprecate components?]
