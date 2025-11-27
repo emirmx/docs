@@ -18,7 +18,7 @@ Self-service provisioning of GenAI resources using Mendix Cloud tokens is availa
 3. Single account ownership: Users should have a single account. Accounts with multiple accounts are also not supported for self-service GenAI provisioning.
 4. Enterprise platform subscription: The user should have a single active enterprise platform subscription. If no active subscription is found, the system will display the warning message below:
 
-{{< figure src="/attachments/control-center/.jpg" >}}
+{{< figure src="/attachments/control-center/genai-resources/warning-message.png" >}}
 
 ## Overview of Deployed Resources
 
@@ -30,7 +30,7 @@ Model: indicates which model is used, for example, Anthropic Claude Sonnet 4.0.
 Plan: indicates the subscription plan used for resources (for example, small, medium, or large).
 Created for: for whom it is created.
 
-{{< figure src="/attachments/control-center/.jpg" >}}
+{{< figure src="/attachments/control-center/genai-resources/overview-genai-resources.png" >}}
 
 ## Provisioning GenAI Resources
 
@@ -61,7 +61,7 @@ Click **Provision Resource** to finalize the process. You will return to the **G
 If you want to deprovision the resource, click the three dots ({{% icon name="three-dots-menu-horizontal" %}}) icon next to the selected resource and select **Deprovision Resource**. 
 A confirmation pop-up will appear displaying a message and the details of the selected resource, as shown in the example below.
 
-{{< figure src="/attachments/control-center/.jpg" >}}
+{{< figure src="/attachments/control-center/genai-resources/deprovisioning.png" >}}
 
 Click **Deprovision** to proceed. After confirmation, the resource status will update on the **GenAI Resource** page to reflect that deprovisioning is scheduled. 
 
