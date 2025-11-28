@@ -296,7 +296,7 @@ Well-written prompts help Maia provide accurate and helpful assistance to develo
 
 - **Be concise and action-oriented**: Start with an action verb and keep the prompt under 20 words when possible
 - **Focus on use cases**: Describe when and why someone would use this widget
-- **Use plain language**: Avoid technical jargon that might confuse users
+- **Use plain language**: Avoid technical jargon
 - **Be specific**: Instead of "displays data," write "displays tabular data with sorting and filtering capabilities"
 
 **Good examples:**
@@ -333,7 +333,6 @@ Well-written prompts help Maia provide accurate and helpful assistance to develo
 
 - **Use consistent terminology**: Match the language used in Mendix documentation and Studio Pro
 - **Avoid redundancy**: Don't repeat information already clear from the caption
-- **Test with users**: Consider how a new developer would interpret your prompts
 - **Keep it updated**: Update prompts when widget functionality changes
 
 By following these guidelines, you help Maia understand your widget's capabilities and provide better assistance to developers using your pluggable widget.
