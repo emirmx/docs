@@ -250,11 +250,11 @@ This section is represented by the `properties` tag in the widget XML file. It d
     </properties>
 ```
 
-### How to Enhance Your Pluggable Widget for MAIA by Using `<prompt>`
+### How to Enhance Your Pluggable Widget for Maia by Using `<prompt>`
 
-MAIA can help developers and users work more effectively with pluggable widgets by understanding their purpose and configuration options. To enable this, you can enhance your widget definition XML file with prompt elements that describe your widget's functionality in natural language.
+Maia can help developers and users work more effectively with pluggable widgets by understanding their purpose and configuration options. To enable this, you can enhance your widget definition XML file with prompt elements that describe your widget's functionality in natural language.
 
-MAIA uses these prompts to understand what your widget does and how its properties should be configured, allowing it to provide better assistance when users are building their applications.
+Maia uses these prompts to understand what your widget does and how its properties should be configured, allowing it to provide better assistance when users are building their applications.
 
 #### Adding Prompts to Widgets
 
@@ -290,7 +290,7 @@ Individual properties can also have `<prompt>` elements that explain their purpo
 
 ### Best Practices for Writing Prompts {#prompt-best-practices}
 
-Well-written prompts help MAIA provide accurate and helpful assistance to developers using your pluggable widget. Follow these best practices when writing prompts for your widgets:
+Well-written prompts help Maia provide accurate and helpful assistance to developers using your pluggable widget. Follow these best practices when writing prompts for your widgets:
 
 #### Guidelines for Widget Prompts
 
@@ -336,7 +336,7 @@ Well-written prompts help MAIA provide accurate and helpful assistance to develo
 - **Test with users**: Consider how a new developer would interpret your prompts
 - **Keep it updated**: Update prompts when widget functionality changes
 
-By following these guidelines, you help MAIA understand your widget's capabilities and provide better assistance to developers using your pluggable widget.
+By following these guidelines, you help Maia understand your widget's capabilities and provide better assistance to developers using your pluggable widget.
 
 ## Property Groups {#property-groups}
 
