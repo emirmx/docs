@@ -60,7 +60,7 @@ On this tab, you can find the following items:
 Only users with the **App Settings** permission can do the following:
 
 * Change the description of the project.
-* Change the category assigment of the project.
+* Change the category assignment of the project.
 * Deactivate or delete a project. For details, see [Leaving, Deleting, or Deactivating an App](/developerportal/general/leave-delete-app/).
 {{% /alert %}}
 
