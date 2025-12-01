@@ -64,7 +64,7 @@ You can explore the extension to understand what it does when it is installed. D
       });
       ```
 
-      2. Line 14 opens a tab
+      1. Line 14 opens a tab
    
         ```typescript
         // Open a tab when the menu item is clicked

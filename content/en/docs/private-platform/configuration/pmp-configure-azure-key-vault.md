@@ -208,7 +208,7 @@ spec:
   runtimeAutomountServiceAccountToken: true
 ```
 
-2. Add a custom pod label which informs the Operator to use workload identities. For more information, see [General Pod Labels](https://docs.mendix.com/developerportal/deploy/private-cloud-cluster/#general-pod-labels).
+1. Add a custom pod label which informs the Operator to use workload identities. For more information, see [General Pod Labels](https://docs.mendix.com/developerportal/deploy/private-cloud-cluster/#general-pod-labels).
 
 ```text
 apiVersion: privatecloud.mendix.com/v1alpha1
@@ -241,8 +241,8 @@ kubectl -n <{Kubernetes namespace}> annotate serviceaccount <{environment name}>
 kubectl -n <{Kubernetes namespace}> annotate serviceaccount <{environment name}> azure.workload.identity/client-id=<{managed identity client id}>
 ```
 
-3. Apply this service account to your cluster by using the following command: `kubectl apply -f <your-service-account-file>.yaml`.
-4. Update your Private Mendix Platform deployment YAML to use this service account:
+1. Apply this service account to your cluster by using the following command: `kubectl apply -f <your-service-account-file>.yaml`.
+2. Update your Private Mendix Platform deployment YAML to use this service account:
 
 ```text
 apiVersion: apps/v1
@@ -255,7 +255,7 @@ spec:
             serviceAccountName: pmp-secret-accessor
 ```
 
-5. Apply the changes to your deployment by using the following command: `kubectl apply -f <your-deployment-file>.yaml`.
+1. Apply the changes to your deployment by using the following command: `kubectl apply -f <your-deployment-file>.yaml`.
 
 ### Configuring the Credentials
  

@@ -139,7 +139,7 @@ Technical Contacts with a license to the Mendix Event Broker can manage this fea
 
 * An AWS SQS bridge uses the [Amazon Simple Queue Service](https://aws.amazon.com/sqs/). The HTTP Bridge uses HTTP requests to send events from external systems to the Mendix Event Broker. The HTTP bridge is one-way: **HTTP to Event Broker**.
 
-3. Click **Next** to continue with creating your bridge.
+1. Click **Next** to continue with creating your bridge.
 
     * For instructions on configuring for AWS SQS, see [Configuring a Bridge with AWS SQS](#bridge-with-aws-sqs)
     * For instructions on configuring for HTTP, see [Configuring a Bridge with HTTP](#bridge-with-http)
@@ -154,7 +154,7 @@ The creation process for AWS SQS bridges includes two further steps on the Mendi
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/event_broker_bridges_create_3_sqs.png" class="no-border" >}}
 
-2. Click **Next** to continue the configuration.
+1. Click **Next** to continue the configuration.
 
 #### Choose the Business Events to Integrate
 

@@ -259,7 +259,7 @@ You will close your pane using a new menu item. Follow the steps below:
                 { menuId: "myextension.HideDockMenuItem", caption: "Hide dock pane" },
 ```
 
-2. Alter the event handler for the new menu at the end of the loaded method:
+1. Alter the event handler for the new menu at the end of the loaded method:
 
 ```typescript
         // Open a tab when the menu item is clicked

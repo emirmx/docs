@@ -53,7 +53,7 @@ To install and configure the Global Operator, perform the following steps:
 
     {{< figure src="/attachments/deployment/private-cloud/global-operator/global-operator6.png" class="no-border" >}}
 
-    4. You can apply the custom TLS and proxy settings in the Global Operator main namespace by just selecting only the **Custom TLS** and **Proxy** options in the Configuration Tool.
+    1. You can apply the custom TLS and proxy settings in the Global Operator main namespace by just selecting only the **Custom TLS** and **Proxy** options in the Configuration Tool.
 
     {{% alert color="info" %}}Base installation can only be performed on the Global Operator main namespace. Along with base installation, you can also apply custom TLS and proxy settings. However, other configurations such as storage plan, database plan, ingress configuration, or registry configuration are not supported in Global Operator main namespace.{{% /alert %}}
 

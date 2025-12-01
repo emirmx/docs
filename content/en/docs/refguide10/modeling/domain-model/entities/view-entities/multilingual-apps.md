@@ -109,6 +109,6 @@ FROM
 WHERE (l.Code = cp.LanguageCode)
 ```
 
-5. Generate an overview page for the view entity by right-clicking **TranslatedProductVE** > **Generate overview pages**. 
-6. Open the new page and remove the columns you do not need from the data grid.
-7. Run your app locally. You should see the product description in the language that corresponds to the user’s current language. 
+1. Generate an overview page for the view entity by right-clicking **TranslatedProductVE** > **Generate overview pages**. 
+2. Open the new page and remove the columns you do not need from the data grid.
+3. Run your app locally. You should see the product description in the language that corresponds to the user’s current language. 

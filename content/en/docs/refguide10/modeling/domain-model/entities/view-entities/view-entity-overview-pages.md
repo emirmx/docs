@@ -49,15 +49,15 @@ This query uses OQL to take the four attributes of each product and combines the
 
 {{% /alert %}}
 
-4. Click **OK**. The view entity is added to your domain model.
+1. Click **OK**. The view entity is added to your domain model.
 
     {{< figure src="/attachments/refguide10/modeling/domain-model/view-entities/create-overview-pages/product-overview-ve.png" width="150" >}}
 
-5. Generate an overview page by right-clicking the view entity > **Generate overview pages**.
+2. Generate an overview page by right-clicking the view entity > **Generate overview pages**.
    
-6. Add the new overview page to the navigation.
+3. Add the new overview page to the navigation.
 
-7. Run your app locally, then click **View App**. You should see the data grid populated with the information that was previously added.
+4. Run your app locally, then click **View App**. You should see the data grid populated with the information that was previously added.
 
     {{< figure src="/attachments/refguide10/modeling/domain-model/view-entities/create-overview-pages/live-data-grid.png"  >}}
 
@@ -127,9 +127,9 @@ This results in a view entity that shows the total value of every order.
 Notice the quotation marks in `Shop.”Order”`. This is because `Order` is a reserved keyword in OQL. To avoid ambiguity, quotation marks are put around the word. 
 {{% /alert %}}
 
-3. Generate an overview page by right-clicking the view entity > **Generate overview pages**.
-4. Add the new overview page to the navigation.
-5. Run your app locally, then click **View App**. This results in a view entity that shows the total value of every order.
+1. Generate an overview page by right-clicking the view entity > **Generate overview pages**.
+2. Add the new overview page to the navigation.
+3. Run your app locally, then click **View App**. This results in a view entity that shows the total value of every order.
 
 ## Update Underlying Persistent Entities
 

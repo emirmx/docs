@@ -71,6 +71,6 @@ Use the new view entity to create a chart. Follow the steps below:
 
   {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/charting-with-view-entities/chart-final.png" width="400" >}}
 
-6. Click **OK** to save.
+1. Click **OK** to save.
 
-7. Run your app locally and you should see the chart populated with your data. 
+2. Run your app locally and you should see the chart populated with your data. 

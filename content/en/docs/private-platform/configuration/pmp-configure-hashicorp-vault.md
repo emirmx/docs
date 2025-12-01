@@ -55,6 +55,7 @@ Do not use a nested `value=` key structure.
 ```bash
 vault secrets enable -path=pmp-dev kv-v2
 ```
+
     If the path is already in use, the command fails safely.
 
 3. Run the `vault kv put` command once for the central secret path (for example, `pmp-dev/admin`), listing all non-empty key-value pairs as arguments.
@@ -164,13 +165,13 @@ Configure the Kubernetes authentication method to allows pod to authenticate usi
 vault auth enable kubernetes
 ```
 
-2. Configure the following properties to enable Vault to find and trust your Kubernetes cluster's API server and OIDC issuer:
+1. Configure the following properties to enable Vault to find and trust your Kubernetes cluster's API server and OIDC issuer:
 
     * **Kubernetes Host URL (K8S_HOST)** - The address of the Kubernetes API server endpoint reachable by Vault.
     * **Kubernetes CA Certificate (K8S_CA_CERT)** - The CA certificate bundle Vault uses to verify the Kubernetes API server.
     * **Token Validation Method** - Either the OIDC Issuer URL (**K8S_ISSUER**, preferred for Kubernetes 1.21 and newer) or a Token Reviewer JWT (**TOKEN_REVIEWER_JWT**).
 
-3. Choose one of the following options, according to your Kubernetes distribution.
+2. Choose one of the following options, according to your Kubernetes distribution.
 
     Carefully replace all placeholders like `<YOUR_EKS_CLUSTER_NAME>` with your actual values. 
     
@@ -370,7 +371,7 @@ For AKS without OIDC, if OIDC Issuer is unavailable, use the Token Reviewer JWT 
    vault policy write pmp-secret-access pmp-policy.hcl
    ```
 
-6. Bind the desired Kubernetes Service Account (custom `pmp-secret-accessor` or `default`) in your Mendix application's namespace to the Vault policy.
+1. Bind the desired Kubernetes Service Account (custom `pmp-secret-accessor` or `default`) in your Mendix application's namespace to the Vault policy.
 
     * **bound_service_account_names** - Set to your chosen SA name (`pmp-secret-accessor` or `default`). This must match the Service Account your Mendix app will use.
     * **bound_service_account_namespaces** - Set to the namespace where your Mendix app runs (for example, `feature-test`).
@@ -440,6 +441,7 @@ Using a custom Service Account, for example, `pmp-secret-accessor`, is recommend
     ```bash
     kubectl create serviceaccount pmp-secret-accessor --namespace feature-test --dry-run=client -o yaml | kubectl apply -f -
     ```
+
 2. Assign the Service Account to your Mendix app by editing the Mendix Runtime custom resource. Replace `mxplatform` and `feature-test` with your own values if needed.
 
     ```bash

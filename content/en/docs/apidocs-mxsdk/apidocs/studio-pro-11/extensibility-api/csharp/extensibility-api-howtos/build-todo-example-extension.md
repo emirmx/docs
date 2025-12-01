@@ -452,7 +452,7 @@ To store to-do data on disk, create model classes that represent individual item
     }
     ```
 
- ### Create the To-do List Model
+### Create the To-do List Model
 
 1. Add another class file named *ToDoListModel.cs*.
 2. Replace the contents of this file with the following code:
@@ -756,7 +756,7 @@ function postMessage(message, data) {
 }
 ```
 
-2. Initialize message handling and respond to incoming messages: 
+1. Initialize message handling and respond to incoming messages: 
 
 ```javascript
 // Register message handler.

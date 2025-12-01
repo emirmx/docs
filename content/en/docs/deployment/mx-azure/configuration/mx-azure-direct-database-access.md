@@ -32,7 +32,7 @@ By default, the read replica for Postgres database is disabled. To enable it, pe
 
 {{% alert color="info" %}} For existing clusters, you can also enable or disable the read replica in the **Edit Cluster** flow.{{% /alert %}}
 
-2. Click **Next** to initialize the cluster.
+1. Click **Next** to initialize the cluster.
 
     {{< figure src="/attachments/deployment/mx-azure/enableReadReplica.png" class="no-border" >}}
 
@@ -40,11 +40,11 @@ By default, the read replica for Postgres database is disabled. To enable it, pe
 
     {{< figure src="/attachments/deployment/mx-azure/readReplicaEnabled.png" class="no-border" >}}
 
-3. Copy the address value from the record set within the private DNS zone created for your PostgreSQL database. You can find this private DNS zone in the [Managed Resource Group of your Mendix on Azure environment](/developerportal/deploy/mendix-on-azure/configuration/#mrg).
+2. Copy the address value from the record set within the private DNS zone created for your PostgreSQL database. You can find this private DNS zone in the [Managed Resource Group of your Mendix on Azure environment](/developerportal/deploy/mendix-on-azure/configuration/#mrg).
 
     {{< figure src="/attachments/deployment/mx-azure/copyAddressValue.png" class="no-border" >}}
 
-4. Add Entra ID users who should be able to access the replica database by performing the following steps:
+3. Add Entra ID users who should be able to access the replica database by performing the following steps:
 
     1. In the Azure portal, go to the [Managed Resource Group of your Mendix on Azure environment](/developerportal/deploy/mendix-on-azure/configuration/#mrg).
     2. Select the PostgreSQL master database resou.rce (type: Azure Database for PostgreSQL Flexible Server).

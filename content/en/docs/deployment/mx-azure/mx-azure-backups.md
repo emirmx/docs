@@ -34,8 +34,8 @@ Backups cannot be created while the environment is in any of these states:
 * Environment is in transition state (runtime processing) 
 {{% /alert %}}
 
-4. Click **Create Backup**.
-5. Monitor progress in the **Status** column.
+1. Click **Create Backup**.
+2. Monitor progress in the **Status** column.
 
 {{% alert color="info" %}} 
 Tables are locked during backup creation, so if you attempt to start the environment while a backup is in progress, you may encounter a timeout error. Wait for backup completion before restarting. 

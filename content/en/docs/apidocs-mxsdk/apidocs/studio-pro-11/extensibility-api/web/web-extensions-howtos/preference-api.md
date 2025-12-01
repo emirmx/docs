@@ -91,7 +91,7 @@ Import the preferences API and use it to fetch the user’s preferences.
 The function is `async` in order for you to use `await` when fetching the preferences.
 {{% /alert %}}
 
-3. Use the fetched preferences to update the text in the message box so you can see the user's current theme and language.
+1. Use the fetched preferences to update the text in the message box so you can see the user's current theme and language.
 
 The `getPreferences()` function returns an object with two properties:
 

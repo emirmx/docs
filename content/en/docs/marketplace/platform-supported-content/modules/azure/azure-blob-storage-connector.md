@@ -157,8 +157,8 @@ To use this operation in your microflow, perform the following steps:
     * `BlobName` - Required; name of the blob to delete
     * `ContainerName` - Required; name of the container where the blob is stored
 
-3. Provide a valid credentials object by using the **AbstractCredentials** parameter.
-4. Call the **DELETE_v1_Azure_DeleteBlob** action in your microflow.
+2. Provide a valid credentials object by using the **AbstractCredentials** parameter.
+3. Call the **DELETE_v1_Azure_DeleteBlob** action in your microflow.
 
 The operation returns a **DeleteBlobResponse** object, which is a generalization of **AbstractResponse** and contains the **StatusCode** and **ReasonPhrase**.
 Its generization AbstractResponse entity contains the http status code and optional the http reason phrase.
@@ -178,8 +178,8 @@ To use this operation in your microflow, perform the following steps:
     * `MaxResults` - Optional; the maximum number of results listed by the **ListBlobs** operation.
     * `Marker` - Optional; the marker used to get the next (sub)set of blobs from the specified location..
 
-3. Provide a valid credentials object by using the **AbstractCredentials** parameter.
-4. Call the **GET_v1_Azure_ListBlobs** action in your microflow.
+2. Provide a valid credentials object by using the **AbstractCredentials** parameter.
+3. Call the **GET_v1_Azure_ListBlobs** action in your microflow.
 
 The operation returns a list of **Blob** objects associated to the **ListBlobResponse**, which is a generalization of **AbstractResponse** and contains the **StatusCode** and **ReasonPhrase**.
 Its generization AbstractResponse entity contains the http status code and optional the http reason phrase.

@@ -35,14 +35,14 @@ Create a single view entity and expose it as an OData resource. To do this, foll
     JOIN p/Shop.Product_Category/Shop.Category as c
   ```
 
-3. Right-click this entity and select **Publish in OData service**. Name this service *POS_ProductCategory*.
-4. Add `ProductId` as a key attribute, then click **OK**.
+1. Right-click this entity and select **Publish in OData service**. Name this service *POS_ProductCategory*.
+2. Add `ProductId` as a key attribute, then click **OK**.
 
      {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/decoupling-apis/key-attribute.png" >}}
 
-5. In the **Entity** field, double-click the **ProductId** attribute. 
-6. Uncheck the box **Can be empty**, then click **OK**. 
+3. In the **Entity** field, double-click the **ProductId** attribute. 
+4. Uncheck the box **Can be empty**, then click **OK**. 
    
     {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/decoupling-apis/can-be-empty.png" >}}
 
-7. Run your app locally and test the functionality. 
+5. Run your app locally and test the functionality. 

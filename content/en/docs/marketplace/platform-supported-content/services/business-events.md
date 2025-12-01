@@ -94,7 +94,7 @@ To define what information is included in your events and what the service will 
 
     {{< figure src="/attachments/appstore/platform-supported-content/services/business-events/wizard-step-1.png" class="no-border" width="400" >}}
 
-2. Decide what other apps can do and what service this will implement.
+1. Decide what other apps can do and what service this will implement.
 
 * In the **Other apps can** field, you can select how other apps can use the service. The **This Business Events service implements** field defines whether the service will be responsible for publishing events, subscribing to events, or both.
 * Below is an explanation of the possibilities for what other apps can do and what the service implements:
@@ -105,7 +105,7 @@ To define what information is included in your events and what the service will 
     | Subscribe to events | Publishing events | Subscribing to events | When publishing, **PublishedBusinessEvent** entity and handler microflow <br>If subscribing, a **ConsumedBusinessEvent** entity |
     | Publish events and<br>Subscribe to events | [Nothing required: if apps can do both, there is no obligation for the service to implement anything] | Publishing events and/or subscribing to events | If no service implementations are selected, then nothing created <br>If publishing, **PublishedBusinessEvent** entity and handler microflow <br>If subscribing, a **ConsumedBusinessEvent** entity <br>If both, then both entities and the handler microflow are created|
 
-3. Click **Done** to exit the wizard and view the defined service document.
+1. Click **Done** to exit the wizard and view the defined service document.
 
 * **Export AsyncAPI Document** exports the YAML file of the business event service so other apps can [use your newly created service](#two-way-be-existing).
 
