@@ -12,7 +12,7 @@ aliases:
 
 These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 
-### December __, 2025
+### December 4, 2025
 
 ### New Features
 

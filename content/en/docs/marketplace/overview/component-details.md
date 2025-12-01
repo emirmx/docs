@@ -52,9 +52,9 @@ The **Requirements** section includes the following:
 * The Studio Pro version required for the component to work
 * The type of [license](/appstore/submit-content/#license) for the component
 
-The **Support** section presents the category of support Mendix offers for the component (for more details, see the [Marketplace Content Support](/appstore/marketplace-content-support/) section below).
+The **Support** section presents the category of support Mendix offers for the component. For more details, refer to the [Marketplace Content Support](/appstore/marketplace-content-support/) section.
 
-A **GitHub** link will take you to the GitHub source files of the component.
+A **GitHub** link takes you to the GitHub source files of the component.
 
 ## Component Tabs
 

@@ -114,7 +114,7 @@ Click the contextual menu to access options for managing this component:
 
 ### Reviews {#my-reviews}
 
-Clicking **Reviews** opens the **My Reviews** page, which contains reviews of [My Content](#my-content) by other users, as well as **My reviews** that you have written for other content.
+Clicking **Reviews** opens the **My Reviews** page, which contains reviews of [My Components](#my-content) by other users, as well as **My reviews** that you have written for other content.
 
 ## Company {#company}
 
@@ -128,7 +128,7 @@ Click the name of the component to access its [details page](/appstore/component
 
 Click the contextual menu to access options for managing this content.
 
-The options in this menu are the same as those for the [My Content](#my-content) section.
+The options in this menu are the same as those for the [My Components](#my-content) section.
 
 ### Groups {#content-groups}
 
@@ -156,7 +156,7 @@ A component can only be assigned to one content group at a time. If a component 
 
 Click the contextual menu to access options for managing this content.
 
-The options in this menu are the same as those for the [My Content](#my-content) section. The **Unassign from Group** button is only available for [Group Admins](#members), and can be used to remove content from the content group.
+The options in this menu are the same as those for the [My Components](#my-content) section. The **Unassign from Group** button is only available for [Group Admins](#members), and can be used to remove content from the content group.
 
 #### Members Tab {#members}
 
