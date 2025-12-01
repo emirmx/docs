@@ -86,6 +86,7 @@ Click the contextual **Actions** menu to access options for managing your conten
     * If the component is [protected](#group-content) within a [content group](#content-groups), a [group member](#members) can unpublish any version.
     * If the component is not protected within a content group, you can only unpublish a version that you have published yourself.
     * Select **Unpublish All My Versions** to remove all your versions of the component.
+    * The option to unpublish is only available for deprecated components.
 
     For details on editing, refer to the [Adding New Marketplace Content](/appstore/submit-content/#adding) section of *Uploading to the Marketplace*.    
     
@@ -138,7 +139,7 @@ You can configure content groups for various levels of access to your company co
 
 This table breaks down the roles and permissions for content groups:
 
-| Roles                                       | Manage Groups (Create & Delete) | Manage Group Members | Assign Content to Group | Manage Content (Add New Release, Manage Versions, Deprecate Component, Edit, Unpublish) | View & Download Group Content | View Group List |
+| Roles                                       | Manage Groups (Create & Delete) | Manage Group Members | Assign Content to Group | Manage Content (Add New Release, Manage Versions) | View & Download Group Content | View Group List |
 | ------------------------------------------- | ------------------------------- | -------------------- | ----------------------- | -------------------------------------------------- | ----------------------------- | --------------- |
 | Mendix Admin                                | ✔                               | ✔                    | ✔                       | ✔                                                  | ✔                             | ✔               |
 | Group Admin                                 | ✘                               | ✔                    | ✔                       | ✔                                                  | ✔                             | ✔               |
