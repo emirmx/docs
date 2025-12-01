@@ -48,3 +48,17 @@ The attribute right-click menu items are described in the table below.
 | Delete  | Delete the entity         | <kbd>Del</kbd> |
 | Properties | Open the attribute’s properties   | <kbd>Alt</kbd>+<kbd>6 </kbd>  |
 
+## Association Menu Overview
+
+The association right-click menu items are described in the table below.
+
+| Menu item        | Description                     | Shortcut key |
+|------------------|---------------------------------|--------------|
+| Reverse direction  |  Reverse the direction of the association | |
+| Find changes |              | |
+| Find usages |           | |
+| Cut  | Remove the association from the domain model while keeping the structure in the clipboard   | <kbd>Ctrl</kbd> + <kbd>X</kbd> |
+| Copy | Create a duplicate of the association   | <kbd>Ctrl</kbd> + <kbd>C</kbd> |
+| Paste | Paste a duplicate of the association into the domain model         | <kbd>Ctrl</kbd> + <kbd>V</kbd> | 
+| Delete  | Delete the association         | <kbd>Del</kbd> |
+| Properties | Open the association's properties   | <kbd>Alt</kbd>+<kbd>6 </kbd>  |
