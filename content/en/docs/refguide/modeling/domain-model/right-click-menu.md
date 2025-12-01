@@ -19,6 +19,7 @@ The entity right-click menu items are described in the table below.
 Select Generalization |                   | |
 | Add | Add an attribute, association, or validation rule to your entity          | |
 | Move to  | Move the entity to the domain model of one of the following locations: <br><ul><li> Adminsitration</li><li>Atlas_Core</li><li>Atlas_Web_content</li><li>BusinessEvents</li><li>DataWidgets</li><li>FeedbackModule</li><li> NanoflowCommons</li><li>WebActions</li> | |
+| Select association | Select an association between entities.    | |
 | Find specialization |                   | |
 | Find usages in actions | Find where an entity has object activities in them         | |
 | Publish in REST service | Publish the entity in a REST service     | |
