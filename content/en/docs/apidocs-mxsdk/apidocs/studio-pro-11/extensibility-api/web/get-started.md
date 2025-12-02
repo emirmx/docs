@@ -24,7 +24,7 @@ Extensions can be built on any operating system, as the underlying framework is 
 {{% /alert %}}
 
 {{% alert color="info" %}}
-Extension development is only possible enabling the setting in `Extension Development` under `Advanced` in the Studio Pro preferences form, or by starting Studio Pro using the `--enable-extension-development` feature flag.
+Extension development is only possible by enabling the [Extension Development](/refguide/preferences-dialog/#extension-development) setting in your app's Preferences, or by starting Studio Pro with the `--enable-extension-development` feature flag.
 {{% /alert %}}
 
 ## Creating Your First Extension
@@ -75,14 +75,14 @@ Before you begin, your extension will have to get an instance of the Studio Pro 
 
 In the source code, you should see the following:
 
-1. We get an instance of the Studio Pro API by calling `getStudioProApi`.
+1. You get an instance of the Studio Pro API by calling `getStudioProApi`.
    
     ```typescript
     export const component: IComponent = {
         async loaded(componentContext) {
             const studioPro = getStudioProApi(componentContext);
 
-2. We add a menu that opens a tab:
+2. A menu is added that opens a tab:
 
     ```typescript
     await studioPro.ui.extensionsMenu.add({
@@ -109,7 +109,7 @@ In the source code, you should see the following:
     });
     ```
 
-3. If you navigate to `build-extension.mjs`, you can choose the directory to which the extension will be installed to after being built by changing line 6:
+3. If you navigate to `build-extension.mjs`, you can choose the directory where the extension will be installed to after being built by changing line 6:
 
      ```typescript
      const appDir = "C:\\TestApps\\AppTestExtensions"
