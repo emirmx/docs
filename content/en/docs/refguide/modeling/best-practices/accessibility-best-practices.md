@@ -71,7 +71,7 @@ When a screen reader reaches an input field, it will read the label text aloud. 
 
 ### Aria-Required
 
-Various input widgets have the option to add aria-required to the input field. It will inform users of screen readers that this is a required field. Usually, you would have this information in styling (for example, using a star to indicate required fields). Adding this attribute makes sure the programming of your application matches the visuals required by [Success Criterion 1.3.1 Info and Relationships](https://www.w3.org/TR/WCAG22/#info-and-relationships).
+Various input widgets have the option to add `aria-required` to the input field. It will inform users of screen readers that this is a required field. Usually, you would have this information in styling (for example, using a star to indicate required fields). Adding this attribute makes sure the programming of your application matches the visuals required by [Success Criterion 1.3.1 Info and Relationships](https://www.w3.org/TR/WCAG22/#info-and-relationships).
 
 {{% alert color="info" %}}
 Do not set the **Validation Type** to **Required**. If you do, a validation message will appear as soon as the user exits the input field. Instead, validation for required fields should occur only when the user submits the form or attempts to proceed to the next step.
