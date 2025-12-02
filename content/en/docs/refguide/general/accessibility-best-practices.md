@@ -8,11 +8,13 @@ description: "Describes an introduction on accessibility in general and how to g
 
 ## Introduction
 
-This guide will give an overview on what accessibility is, what the Web Content Accessibility Guidelines (WCAG) are, and how they are relevant to you. This guide will also cover the accessibility options in Studio Pro.
+This guide will give an overview on what accessibility is, what the Web Content Accessibility Guidelines (WCAG) are, and how they apply to you. This guide will also cover the accessibility options in Studio Pro.
 
 ## Accessibility Overview
 
-Accessibility enables various types of people to use your application, leading to wider user bases and easier development. To achieve an accessible app, consider people with all levels of ability. Take blindness (partial or full) as an example. Being blind means being dependent on assistive technologies, such as screen readers, to read websites out to you. However, screen readers must be able to programmatically understand the website to accurately read it out to the user. Something that can hinder this is if the component only looks like something, like a `div` styled and scripted like a button. This button would be inaccessible to visually-impaired users, because screen readers would not detect it. To fix this, you can either use ARIA ([ARIA - Accessibility | MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)) to add to that `div` and patch that functionality back in. Ideally, though, you should add a semantic HTML button instead.
+Accessibility enables various types of people to use your application, leading to wider user bases and easier development. To achieve an accessible app, consider people with all levels of ability. Take blindness (partial or full) as an example. Being blind means being dependent on assistive technologies, such as screen readers, to read websites out to you. 
+
+However, screen readers must be able to programmatically understand the website to accurately read it out to the user. Something that can hinder this is if the component only looks like something, like a `div` styled and scripted like a button. This button would be inaccessible to visually-impaired users, because screen readers would not detect it. To fix this, you can either use ARIA ([ARIA - Accessibility | MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)) to add to that `div` and patch that functionality back in. Ideally, though, you should add a semantic HTML button instead:
 
 ```html
 <button>this is a semantic html button</button>
@@ -31,11 +33,11 @@ Another often overlooked accessibility concern is situational accessibility. For
 
 ## Web Content Accessibility Guidelines (WCAG)
 
-Considering all these things is a lot, and if everyone had to start from scratch, it would take a significant amount of time. That is why the World Wide Web Consortium (W3C) created the Web Content Accessibility Guidelines (WCAG). These guidelines help you make your application accessible to a larger audience and improve its usability for everyone else. (Improving accessibility for a small group and finding out that a considerable group benefits from it is called the [curb cut effect](https://en.wikipedia.org/wiki/Curb_cut_effect).)
+Considering all these aspects of accessibility is significant. If everyone had to start from scratch, making apps accessible would take significant time. That is why the World Wide Web Consortium (W3C) created the Web Content Accessibility Guidelines (WCAG). These guidelines help you make your application accessible to a larger audience and improve its usability for everyone else. (Improving accessibility for a small group and finding out that a considerable group benefits from it is called the [curb cut effect](https://en.wikipedia.org/wiki/Curb_cut_effect).)
 
 These guidelines are also the basis for various laws, including those of the EU and the US. The European Accessibility Act (EAA) is based on version 2.1 level AA.
 
-Currently, version 2.2 of these guidelines is available; the expectation is that you will adopt this version over version 2.1 in the near future. Since the difference between 2.1 and 2.2 is minimal, that is the version you want to target. You can find the WCAG 2.2 here: [Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/).
+Version 2.2 of these guidelines is available, and the expectation is that you will adopt 2.2 over 2.1 in the near future. Since the difference between 2.1 and 2.2 is minimal, 2.2 is the version you want to target. For more information, see the [Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/).
 
 The version currently used by the EAA is Web Content Accessibility Guidelines (WCAG) 2.1
 
@@ -43,7 +45,7 @@ The guidelines are organized into four distinct categories. Each category has a 
 
 ### Perceivable
 
-Software components (SCs) that fall under the [Perceivable Principle](https://www.w3.org/TR/WCAG22/#perceivable) are about contrast, correctly labeling your interactive components, and providing text alternatives for things that are only visual (for example, an informative image that gives context to a page needs to have a description in the alt text attribute).
+Software components (SCs) that fall under the [perceivable](https://www.w3.org/TR/WCAG22/#perceivable) principle are about contrast, correctly labeling your interactive components, and providing text alternatives for things that are only visual (for example, an informative image that gives context to a page needs to have a description in the alt text attribute).
 
 ### Operable
 
@@ -81,20 +83,20 @@ Adding autocomplete to input fields can help individuals with reduced cognitive 
 
 You should avoid using autocomplete in the following situations:
 
-* **Sensitive Information**: Fields that collect sensitive data, such as credit card numbers, government IDs, or personal identification numbers. It helps protect user privacy and prevents unauthorized access to sensitive information.
-* **Public Computers**: If forms are likely to be filled out on public or shared computers, disabling autocomplete can prevent users from accessing previously entered information.
-* **One-Time Inputs**: For fields that require unique, one-time entries (like a temporary PIN), autocomplete can be unnecessary and may confuse users.
-* **Complex Forms**: In lengthy or complex forms, autocomplete might lead to incorrect autofill suggestions, which can frustrate users and lead to errors.
-* **Regulatory Compliance**: Certain regulations may require that sensitive information not be stored or auto-filled. Disabling autocomplete can help ensure compliance with such regulations.
+* **Sensitive Information** — Fields that collect sensitive data, such as credit card numbers, government IDs, or personal identification numbers. It helps protect user privacy and prevents unauthorized access to sensitive information.
+* **Public Computers** — If forms are likely to be filled out on public or shared computers, disabling autocomplete can prevent users from accessing previously entered information.
+* **One-Time Inputs** — For fields that require unique, one-time entries (like a temporary PIN), autocomplete can be unnecessary and may confuse users.
+* **Complex Forms** — In lengthy or complex forms, autocomplete might lead to incorrect autofill suggestions, which can frustrate users and lead to errors.
+* **Regulatory Compliance** — Certain regulations may require that sensitive information not be stored or auto-filled. Disabling autocomplete can help ensure compliance with such regulations.
 
-### Aria-Labels
+### Aria Labels
 
-Aria-labels are available in several widgets. Aria-labels take precedent over anything else available for that element. A good aria-label should describe the element the user is currently interacting with. It is helpful in situations where a visible label would be redundant due to the context of the input field. The aria-label provides an opportunity to add extra context for [Success Criterion 4.1.2 Name, Role, Value](https://www.w3.org/TR/WCAG22/#name-role-value):
+ARIA labels are available in several widgets. ARIA labels take precedent over anything else available for that element. A good ARIA label should describe the element the user is currently interacting with. It is helpful in situations where a visible label would be redundant due to the context of the input field. The ARIA label provides an opportunity to add extra context for [Success Criterion 4.1.2 Name, Role, Value](https://www.w3.org/TR/WCAG22/#name-role-value):
 
-{{< figure src="/attachments/refguide/general/accessibility-best-practices/combobox-aria-labels.png" alt="Combobox widget properties showing aria-labels options." width="300" >}}
+{{< figure src="/attachments/refguide/general/accessibility-best-practices/combobox-aria-labels.png" alt="Combobox widget properties showing ARIA labels options." width="300" >}}
 
 {{% alert color="info" %}}
-While aria-labels are very useful for adding context, using them excessively can even hurt accessibility. An example could be a situation where you have a button that says **Send**, if you add an aria-label with a description such as **Click this button to reserve your spot in line!** that new text takes precedent over the **Send** text of the button. It would impact voice control. If a user who uses voice control said *Press send*, it would no longer activate that button.
+While ARIA labels are very useful for adding context, using them excessively can even hurt accessibility. An example could be a situation where you have a button that says **Send**, if you add an ARIA label with a description such as **Click this button to reserve your spot in line!** that new text takes precedent over the **Send** text of the button. It would impact voice control. If a user who uses voice control said *Press send*, it would no longer activate that button.
 {{% /alert %}}
 
 ### Alternative Text (Image widget)
