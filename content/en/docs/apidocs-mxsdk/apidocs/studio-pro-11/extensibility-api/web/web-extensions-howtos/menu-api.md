@@ -15,7 +15,7 @@ This how-to describes how to create menus using the web extensibility API. In th
 ## Prerequisites
 
 * This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Make sure to complete that how-to before starting this one.
-* Read up on how menus work in the Extensibility API [here](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu/)
+* Review [how menus work](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu/) in the Web Extensibility API.
 
 
 ## Creating a Simple Menu

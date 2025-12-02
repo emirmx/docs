@@ -13,11 +13,12 @@ This how-to describes how to show a message box to a user. In this example, you 
 Before starting this how-to, make sure you have completed the following prerequisites:
 
 * This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Complete that how-to before starting this one.
-* Make sure you are familiar with creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/)
+* Make sure you are familiar with creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
 
 ## Showing a Message Box
 
-Create menus that will display a dialog with text, one for each type. This is done in the `loaded` method of your main entry point (`src/main/index.ts`).
+Create menus that will display a dialog with text (one for each type). This is done in the `loaded` method of your main entry point (`src/main/index.ts`).
+
 The message has the format `messageBoxApi.show(<message-type>, <message>, <message-details>)`, where:
 
 * `<message-type>` is the type of message, indicated in the pane title and indicated by an icon. Values are "information" {{% icon name="info-circle" color="blue" %}}, "warning" {{% icon name="alert-triangle" color="yellow" %}}, and "error" {{% icon name="remove-circle" color="red" %}}.
