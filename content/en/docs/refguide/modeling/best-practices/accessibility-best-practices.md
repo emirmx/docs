@@ -2,7 +2,7 @@
 title: "Introduction to Accessibility in Mendix"
 linktitle: "Accessibility Introduction"
 url: /refguide/accessibility-introduction/
-weight: 10
+weight: 20
 description: "Describes an introduction on accessibility in general and how to get started making your apps more accessible."
 ---
 
