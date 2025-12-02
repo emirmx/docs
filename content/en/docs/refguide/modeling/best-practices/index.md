@@ -1,11 +1,15 @@
 ---
-title: "Modelling Best Practices"
-linktitle: "Modelling Best Practices"
-url: /refguide/modelling-best-practices/
+title: "Modeling Best Practices"
+linktitle: "Modeling Best Practices"
+url: /refguide/modeling-best-practices/
 weight: 9
 description: "Guides which help you understand the most efficient ways to model."
+no_list: false
+description_list: true
 ---
 
 ## Introduction
+
+Modeling with Mendix is faster than traditional development. But by learning these best practices, you can model apps more quickly and effectively than other Mendix developers.
 
 ## Documents in this Category
