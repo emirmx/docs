@@ -1,7 +1,8 @@
 ---
-title: "10. Get Structure"
-url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/get-structure/
+title: "Action Menu"
+url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
+weight: 3
 ---
 
 ## Introduction {#introduction}

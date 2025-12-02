@@ -1,7 +1,8 @@
 ---
-title: "6. Get Datasets for Item Revision"
-url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/get-datasets-for-item-revision/
+title: "Update Item with Item Revision"
+url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/update-item-with-item-revision/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
+weight: 3
 ---
 
 ## Introduction {#introduction}

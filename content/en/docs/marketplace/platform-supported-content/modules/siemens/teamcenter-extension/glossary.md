@@ -1,7 +1,8 @@
 ---
-title: "7. Attach Datasets to Item Revision"
-url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/attach-datasets-to-item-revision/
+title: "Glossary"
+url: /appstore/modules/siemens-plm/teamcenter-extension/glossary/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
+weight: 4
 ---
 
 ## Introduction {#introduction}

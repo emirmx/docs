@@ -1,7 +1,8 @@
 ---
-title: "1. Search Item Revisions"
-url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/search-item-revisions/
+title: "How to login to Teamcenter"
+url: /appstore/modules/siemens-plm/teamcenter-extension/how-to-login-to-teamcenter/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
+weight: 2
 ---
 
 ## Introduction {#introduction}

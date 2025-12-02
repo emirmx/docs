@@ -1,7 +1,8 @@
 ---
-title: "3. Update Item with Item Revision"
-url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/update-item-with-item-revision/
+title: "Get Structure"
+url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/get-structure/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
+weight: 10
 ---
 
 ## Introduction {#introduction}

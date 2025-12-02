@@ -1,7 +1,8 @@
 ---
-title: "1. Teamcenter Integration"
-url: /appstore/modules/siemens-plm/teamcenter-extension/teamcenter-integration/
+title: "Search Datasets"
+url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/search-datasets/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
+weight: 5
 ---
 
 ## Introduction {#introduction}

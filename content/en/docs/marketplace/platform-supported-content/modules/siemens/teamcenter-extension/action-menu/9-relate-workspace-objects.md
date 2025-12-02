@@ -1,7 +1,8 @@
 ---
-title: "4. Glossary"
-url: /appstore/modules/siemens-plm/teamcenter-extension/glossary/
+title: "Relate Workspace Objects"
+url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/relate-workspace-objects/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
+weight: 9
 ---
 
 ## Introduction {#introduction}

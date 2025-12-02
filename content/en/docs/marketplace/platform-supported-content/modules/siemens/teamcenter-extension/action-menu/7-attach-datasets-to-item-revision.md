@@ -1,7 +1,8 @@
 ---
-title: "9. Relate Workspace Objects"
-url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/relate-workspace-objects/
+title: "Attach Datasets to Item Revision"
+url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/attach-datasets-to-item-revision/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
+weight: 7
 ---
 
 ## Introduction {#introduction}

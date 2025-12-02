@@ -1,7 +1,8 @@
 ---
-title: "2. How to login to Teamcenter"
-url: /appstore/modules/siemens-plm/teamcenter-extension/how-to-login-to-teamcenter/
+title: "Search Workspace Object"
+url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/search-workspace-object/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
+weight: 8
 ---
 
 ## Introduction {#introduction}

@@ -1,7 +1,8 @@
 ---
-title: "8. Search Workspace Object"
-url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/search-workspace-object/
+title: "Revise Item Revision"
+url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/revise-item-revision/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
+weight: 4
 ---
 
 ## Introduction {#introduction}

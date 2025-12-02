@@ -1,7 +1,8 @@
 ---
-title: "3. Action Menu"
-url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/
+title: "Search Item Revisions"
+url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/search-item-revisions/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
+weight: 1
 ---
 
 ## Introduction {#introduction}
