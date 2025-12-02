@@ -7,7 +7,7 @@ description: "Native Template 14"
 
 ## 14.1.9 {#1419}
 
-**Release date: November 30, 2025**
+**Release date: December 3, 2025**
 
 ### Improvements
 

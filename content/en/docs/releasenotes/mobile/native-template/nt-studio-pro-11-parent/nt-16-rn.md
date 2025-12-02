@@ -7,7 +7,7 @@ description: "Native Template 16"
 
 ## 16.1.0 {#1610}
 
-**Release date: November 30, 2025**
+**Release date: December 3, 2025**
 
 ### Improvements
 
