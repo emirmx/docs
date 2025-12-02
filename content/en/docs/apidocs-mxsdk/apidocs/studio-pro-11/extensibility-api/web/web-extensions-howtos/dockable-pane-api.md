@@ -16,7 +16,7 @@ This how-to describes how to create and manage a dockable pane using the web ext
 ## Prerequisites
 
 * This how-to uses the app created in [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Make sure to complete that how-to before starting this one.
-* Make sure you are familiar with creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/)
+* Make sure you are familiar with creating menus as described in [Create a Menu Using Web API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu-api/).
 
 ## Creating a Dockable Pane
 
@@ -36,7 +36,7 @@ To open a dockable pane, you must first register the dockable pane handle with t
             });
 ```
 
-You can then create two menus that will respectively open and close the pane by calling the `panes` API:
+You can then create two menus that will open and close the pane by calling the `panes` API:
 
 ```typescript
 import { IComponent, getStudioProApi } from "@mendix/extensions-api";
