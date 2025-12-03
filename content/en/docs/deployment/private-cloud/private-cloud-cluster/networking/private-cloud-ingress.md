@@ -299,38 +299,36 @@ To configure Traefik for Mendix on Kubernetes, set up the following settings:
 
 ### Istio Ingress Controller
 
-Istio is a well-known service mesh that includes a simple [ingress contoller](https://istio.io/latest/docs/tasks/traffic-management/ingress/kubernetes-ingress/).
+Istio is a service mesh that includes a simple [ingress contoller](https://istio.io/latest/docs/tasks/traffic-management/ingress/kubernetes-ingress/).
 
 #### Installing Istio
 
-To install Istio, follow the official [installation instructions](https://istio.io/latest/docs/overview/quickstart/).
+To install Istio, follow the [installation instructions](https://istio.io/latest/docs/overview/quickstart/).
 
-You will also need to install an Istio [IngressClass](https://istio.io/latest/docs/tasks/traffic-management/ingress/kubernetes-ingress/).
+Ensure that you also install an [Istio IngressClass](https://istio.io/latest/docs/tasks/traffic-management/ingress/kubernetes-ingress/).
 
 {{% alert color="info" %}}
-Istio is a feature-rich system with many configuration options. To validate an Istio configuration, it's highly recommended to test with a simple (non-Mendix) app to validate configuration.
+Istio is a feature-rich system with many configuration options. To validate an Istio configuration, it is highly recommended to test with a simple (non-Mendix) app to validate configuration.
 {{% /alert %}}
 
 #### Configuring Istio in the Mxpc-cli Tool
 
-To configure Istio for Mendix on Kubernetes, set up the following settings:
+To configure Istio for Mendix on Kubernetes, configure the following settings:
 
 * **Ingress Type** - Select **kubernetes-ingress**; this option configures the Ingress according to the additional domain name you supply.
 * **Ingress Domain Name** - Provide the domain name which was registered for Istio
 * **Ingress Path** - Set to `/*`.
 * **Enable TLS** - Enable or disable TLS for your app's Ingress.
 * **Custom Ingress Class** - Set to **enabled**.
-* **Ingress Class Name** - Enter **istio**. This setting requires Custom Ingress Class to be enabled.
+* **Ingress Class Name** - Enter **istio**. This setting requires **Custom Ingress Class** to be enabled.
 * **Set Ingress Class as Annotation** - Set to **disabled**. This option adds the legacy `kubernetes.io/ingress.class` annotation to set the Ingress class, instead of using the Ingress class name.
 
-### DEPRECATED NGINX Ingress Controller
+### NGINX Ingress Controller (Deprecated)
 
 {{% alert color="warning" %}}
 The [Kubernetes Ingress NGINX Controller](https://kubernetes.github.io/ingress-nginx/) will be supported [until March 2026](https://kubernetes.io/blog/2025/11/11/ingress-nginx-retirement/).
 
-We recommend switching to another ingress controller.
-The [NGINX Ingress Controller](https://github.com/nginx/kubernetes-ingress) from the NGINX project (F5 Networks) has a similar feature set.
-In most cases, switching from the deprecated Kubernetes controller to controller from F5 Networks would only require renaming ingress annotations.
+We recommend switching to another Ingress controller. The [NGINX Ingress Controller](https://github.com/nginx/kubernetes-ingress) from the NGINX project (F5 Networks) has a similar feature set. In most cases, switching from the deprecated Kubernetes controller to controller from F5 Networks only requires renaming Ingress annotations.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -339,14 +337,14 @@ NGINX path based routing is supported for Operator version 2.19.0 and newer, and
 
 ##### Configuring the NGINX in the Mxpc-cli Tool
 
-To configure the *deprecated* NGINX ingress controller with Mendix on Kubernetes, set up the following settings:
+To configure the deprecated NGINX ingress controller with Mendix on Kubernetes, set up the following settings:
 
 * **Ingress Type** - Select **kubernetes-ingress**; this option configures the Ingress according to the additional domain name you supply.
 * **Ingress Domain Name** - Provide the domain name which you want to set for the Ingress resource file.
 * **Ingress Path** - Optional. You can use this option to specify the Ingress path. The default value is `/`.
 * **Enable TLS** - Enable or disable TLS for your app's Ingress.
 * **Custom Ingress Class** - Set to **enabled**.
-* **Ingress Class Name** - Enter **nginx**. This setting requires Custom Ingress Class to be enabled.
+* **Ingress Class Name** - Enter **nginx**. This setting requires **Custom Ingress Class** to be enabled.
 * **Set Ingress Class as Annotation** - Set to **disabled**. This option adds the legacy `kubernetes.io/ingress.class` annotation to set the Ingress class, instead of using the Ingress class name.
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/private-cloud-networking/configure-nginx.png" class="no-border" >}}
