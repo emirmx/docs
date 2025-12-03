@@ -354,11 +354,7 @@ Mendix on Kubernetes will use the existing ingress controller.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-The [Kubernetes Ingress NGINX Controller](https://kubernetes.github.io/ingress-nginx/) will be supported [until March 2026](https://kubernetes.io/blog/2025/11/11/ingress-nginx-retirement/).
-
-We recommend switching to another ingress controller.
-The [NGINX Ingress Controller](https://github.com/nginx/kubernetes-ingress) from the NGINX project (F5 Networks) has a similar feature set.
-In most cases, switching from the deprecated Kubernetes controller to controller from F5 Networks would only require renaming ingress annotations.
+The [Kubernetes Ingress NGINX Controller](https://kubernetes.github.io/ingress-nginx/) will be supported [until March 2026](https://kubernetes.io/blog/2025/11/11/ingress-nginx-retirement/). We recommend switching to another Ingress controller. The [NGINX Ingress Controller](https://github.com/nginx/kubernetes-ingress) from the NGINX project (F5 Networks) has a similar feature set. In most cases, switching from the deprecated Kubernetes controller to controller from F5 Networks only requires renaming Ingress annotations.
 {{% /alert %}}
 
 ### OpenShift Route
