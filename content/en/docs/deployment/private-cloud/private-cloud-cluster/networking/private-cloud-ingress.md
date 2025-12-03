@@ -272,29 +272,30 @@ To configure AGIC for Mendix on Kubernetes, perform the following steps:
 
 4. Optional: To set up TLS certificates, see [Appgw ssl certificate](https://azure.github.io/application-gateway-kubernetes-ingress/features/appgw-ssl-certificate/).
 
-### HAProxy Ingress Controller
+### Traefik Ingress Controller
+
+Traefik is a cloud-native reverse proxy and a load balancer. When deployed as an Ingress Controller in Kubernetes, it manages HTTP and HTTPS traffic to services running within the cluster. It automatically discovers services using Kubernetes' native APIs, based on Kubernetes Ingress resources and other configurations. One of the main advantages of using Traefik is its built-in [Let's Encrypt](https://doc.traefik.io/traefik/https/acme/) support.
+
+#### Installing Traefik
+
+For information about installing the Traefik Ingress Controller, see [Traefik & Kubernetes](https://doc.traefik.io/traefik/providers/kubernetes-ingress/).
 
 {{% alert color="info" %}}
-This section documents how to use the [HAProxy Kubernetes Ingress Controller](https://github.com/haproxytech/kubernetes-ingress).
+Traefik uses 2 types of providers: CRDs or Kubernetes Ingress. Ensure that you install Kubernetes Ingress one, as it is the only one supported by Mendix on Kubernetes.
 {{% /alert %}}
 
-#### Installing HAProxy Ingress Controller
+#### Configuring Traefik in the Mxpc-cli Tool
 
-For more information about the recommended installation process, see [installation instructions for your platform](https://www.haproxy.com/documentation/kubernetes-ingress/community/installation/).
-
-##### Configuring HAProxy Ingress in the Mxpc-cli Tool
-
-To configure HAProxy Ingress for Mendix on Kubernetes, set up the following settings:
-
+To configure Traefik for Mendix on Kubernetes, set up the following settings:
 * **Ingress Type** - Select **kubernetes-ingress**; this option configures the Ingress according to the additional domain name you supply.
-* **Ingress Domain Name** - Provide the domain name which you want to set for the Ingress resource file.
-* **Ingress Path** - Select `/` from the dropdown.
+* **Ingress Domain Name** - Provide the domain name which was registered for Traefik
+* **Ingress Path** - Set to `/*`.
 * **Enable TLS** - Enable or disable TLS for your app's Ingress.
 * **Custom Ingress Class** - Set to **enabled**.
-* **Ingress Class Name** - Enter **haproxy**. This setting requires Custom Ingress Class to be enabled.
+* **Ingress Class Name** - Enter **traefik**. This setting requires Custom Ingress Class to be enabled.
 * **Set Ingress Class as Annotation** - Set to **disabled**. This option adds the legacy `kubernetes.io/ingress.class` annotation to set the Ingress class, instead of using the Ingress class name.
 
-Additionally, you can add HAProxy-specific annotations to the **Ingress** section of your configuration. The following section shows example annotations. Adjust them as needed based on your specific requirements.
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/private-cloud-networking/configure-traefik.png" class="no-border" >}}
 
 ### Istio Ingress Controller
 
@@ -312,11 +313,11 @@ Istio is a feature-rich system with many configuration options. To validate an I
 
 #### Configuring Istio in the Mxpc-cli Tool
 
-To configure Traefik for Mendix on Kubernetes, set up the following settings:
+To configure Istio for Mendix on Kubernetes, set up the following settings:
 
 * **Ingress Type** - Select **kubernetes-ingress**; this option configures the Ingress according to the additional domain name you supply.
 * **Ingress Domain Name** - Provide the domain name which was registered for Istio
-* **Ingress Path** - Set to `/*`. 
+* **Ingress Path** - Set to `/*`.
 * **Enable TLS** - Enable or disable TLS for your app's Ingress.
 * **Custom Ingress Class** - Set to **enabled**.
 * **Ingress Class Name** - Enter **istio**. This setting requires Custom Ingress Class to be enabled.
