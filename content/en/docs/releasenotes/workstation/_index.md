@@ -12,25 +12,28 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 
 ## 3.2.0
 
-#### Release date: December 4, 2025
+### Release date: December 4, 2025
 
-### **Workstation Management**
+### Workstation Management
 
-### New features
+#### New Features
+
 * Export and Import Station Configurations: You can now export the configurations of a list of stations from a workspace to a file and import them into the same or a different workspace. This feature includes options to export all stations, with or without applications and devices.
 
 *Note: This feature is available only for Mendix Workstation Client licensed accounts.*
 
 * Remote Workstation Client Refresh: A new "Refresh Client" action has been added to the station view, allowing you to remotely trigger a refresh of a Workstation Client's configuration.
 
-### Fixes
+#### Fixes
+
 * Dark Mode Display: Resolved display issues encountered when using Workstation Management in dark mode.
 
 * Workspace Sorting: Corrected an issue affecting the sorting behavior of workspaces.
 
 * Application Configuration Duplication: Fixed a problem that could lead to users inadvertently creating duplicate application configurations by adding a space before or after the key/URL.
 
-### Known Bugs and Limitations
+#### Known Bugs and Limitations
+
 * Importing Duplicate App Configurations: Attempting to import a configuration that includes applications already defined (e.g., with an existing URL and Public Key) will result in UI errors.
 
 *Workaround: For now, you can import the configuration by excluding the applications and then manually setting them up afterward.*
@@ -39,26 +42,29 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 
 * Duplicate Application Creation on Import: When importing multiple stations that all utilize the same application, and applications are included in the import, the application will be created multiple times (once for each station).
 
-### **Workstation Client**
+### Workstation Client
 
-### New features
+#### New Features
+
 * Configuration Refresh on Start-up: Upon each start-up, the Workstation Client will now automatically check for updates to its configuration, ensuring it's always running with the latest settings.
 
 * Automatic Client Reset: The Workstation Client will automatically reset on the next refresh when its associated computer is unregistered from Workstation Management.
 
-### Fixes and other changes
+#### Fixes and Other Changes
+
 * Linux ARM64 Executable Name: Spaces have been removed from the Workstation Client Linux ARM64 version executable name for improved consistency.
 
 * Bluetooth LE Device Discovery: Addressed an issue where the discovery process for Bluetooth LE devices did not correctly recognize the full device name, which previously led to failed connection attempts. The Workstation Client now accurately matches Bluetooth BT advertisement names.
 
-### **Workstation Connector**
+### Workstation Connector
 
-### Fixes
+#### Fixes
+
 * Refresh of the updated device list: A problem has been fixed where updates to the device list were not immediately sent to the web application after a configuration update, requiring a manual refresh. The list is now updated immediately.
 
 ## 3.1.0
 
-#### Release date: November 7, 2025
+### Release date: November 7, 2025
 
 ### Workstation Management
 
