@@ -18,19 +18,23 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 
 #### New Features
 
-* Export and Import Station Configurations: You can now export the configurations of a list of stations from a workspace to a file and import them into the same or a different workspace. This feature includes options to export all stations, with or without applications and devices.
+##### Exporting and Importing Station Configuration
 
-*Note: This feature is available only for Mendix Workstation Client licensed accounts.*
+You can now export the configurations of a list of stations from a workspace to a file and import them into the same or a different workspace. This feature includes options to export all stations, with or without applications and devices.
 
-* Remote Workstation Client Refresh: A new "Refresh Client" action has been added to the station view, allowing you to remotely trigger a refresh of a Workstation Client's configuration.
+{{% alert color="info" %}}
+This feature is available only for accounts which have a license for Mendix Workstation Client.
+{{% /alert %}}
+
+##### Remote Workstation Client Refresh
+
+On the **Station** page, have added a new **Refresh Client** action. You can use this action to remotely trigger a refresh of a Workstation Client's configuration.
 
 #### Fixes
 
-* Dark Mode Display: Resolved display issues encountered when using Workstation Management in dark mode.
-
-* Workspace Sorting: Corrected an issue affecting the sorting behavior of workspaces.
-
-* Application Configuration Duplication: Fixed a problem that could lead to users inadvertently creating duplicate application configurations by adding a space before or after the key/URL.
+* Dark mode display - We have resolved some display issues which could occur when using Workstation Management in dark mode.
+* Workspace sorting - We have corrected an issue affecting the sorting behavior of workspaces.
+* Application configuration duplication - We have fixed a problem that could lead to users inadvertently creating duplicate application configurations by adding a space before or after the key or URL.
 
 #### Known Bugs and Limitations
 
