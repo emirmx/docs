@@ -91,6 +91,33 @@ After the upgrade, your app may report the following new error: `A microflow tha
 
 You can resolve the error by enabling entity access for the microflow that calls the **ShowHomePage** microflow. However, this may not always align with your intended access control strategy. Alternatively, you can create a custom microflow that includes the [Show home page](/refguide/show-home-page/) activity without enabling entity access. You can then call this new microflow instead of the one in the **System** module. Another approach is to call the **Show home page** activity directly within your microflow.
 
+### Amazon S3 SDK Upgrade
+
+With Mendix 10.6 we started using new version of AWS SDK for accessing S3 storage. New SDK has some differences which affects our S3 storage implementation. 
+
+#### `com.mendix.storage.s3.Region` / `com.mendix.storage.s3.EndPoint` settings
+
+New SDK is stricter with these settings. `com.mendix.storage.s3.Region` setting should be always set to the region matching the region of the bucket.
+`com.mendix.storage.s3.EndPoint` setting should be either not set or set to an endpoint matching the region, for example: `s3.eu-west-1.amazonaws.com`.
+
+When the region is not specified or there is incompatibility between above settings, error logs will contain entries similar to following:
+- Unable to load region from any of the providers in the chain
+- The bucket you are attempting to access must be addressed using the specified endpoint.
+- The authorization header is malformed; the region 'us-east-1' is wrong
+
+#### AWS Signature V2 support (`com.mendix.storage.s3.UseV2Auth` setting)
+
+New SDK does not support AWS Signature v2 which is enabled by `UseV2Auth` setting. According to official docs this signature type is deprecated anyway and is not supported by new regions. We do not expect this have any effect when Amazon S3 is used. This will prevent use of S3 compatible solutions that only supports v2 signature type. For these cases you need to switch to either Amazon S3 or a compatible solution that supports newer signature types.  
+
+#### Client Side Encryption Changes
+
+Client side encryption can be enabled by `com.mendix.storage.s3.EncryptionKeys` setting. Previously any encryption algorithm supported by JDK could be used. With the new SDK only AES is supported.
+
+The following error will be printed in logs when an algorithm other than AES is used: 
+- unsupported algorithm: DES
+
+If an encryption algorithm other than `AES` is used then all existing files should be migrated to use `AES` before upgrading to Mendix 10.6. This can be done by configuring a new `AES` key and rewriting all file documents.
+
 ### Other
 
 * Studio Pro 10.21 and above requires your application to use Java 21. The Java version of an application can be configured in the runtime settings. Java 21 is available in 9.24.23 and above. Please consider the Java Version Migration guide for a list of changes between Java versions. For on-premises deployments, ensure that JDK 21 is installed in the environments where Mendix 10 applications are deployed.
