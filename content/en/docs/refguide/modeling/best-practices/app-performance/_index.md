@@ -13,7 +13,7 @@ aliases:
 ## Introduction
 
 {{% alert color="info" %}}
-This document is created by and for the Mendix community. It collects performance best practices in the form of "Dos" and "Don'ts".
+This document is created by and for the Mendix community. It collects performance best practices in the form of "Do's" and "Don'ts".
 {{% /alert %}}
 
 A must-have for your app is that it performs well. Your users will not accept anything else, and they will choose alternatives if the performance is not good. This document outlines various best practices that should be used throughout development to produce an app that performs better.
