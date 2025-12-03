@@ -1,8 +1,8 @@
 ---
-title: "Glossary"
-url: /appstore/modules/siemens-plm/teamcenter-extension/glossary/
+title: "Teamcenter X SSO"
+url: /appstore/modules/siemens-plm/teamcenter-extension/extension-configuration/teamcenter-x-sso/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
-weight: 5
+weight: 3
 ---
 
 ## Introduction {#introduction}

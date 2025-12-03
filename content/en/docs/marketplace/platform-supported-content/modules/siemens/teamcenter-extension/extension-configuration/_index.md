@@ -1,7 +1,8 @@
 ---
-title: "Credentials based sign in"
-url: /appstore/modules/siemens-plm/teamcenter-extension/how-to-login-to-teamcenter/credentials-based-sign-in/
+title: "Extension configuration"
+url: /appstore/modules/siemens-plm/teamcenter-extension/extension-configuration/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
+weight: 1
 ---
 
 ## Introduction {#introduction}

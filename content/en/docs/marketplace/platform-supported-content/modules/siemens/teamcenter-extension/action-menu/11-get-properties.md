@@ -1,8 +1,8 @@
 ---
-title: "Teamcenter Integration"
-url: /appstore/modules/siemens-plm/teamcenter-extension/teamcenter-integration/
+title: "Get Properties"
+url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/get-properties/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
-weight: 1
+weight: 11
 ---
 
 ## Introduction {#introduction}

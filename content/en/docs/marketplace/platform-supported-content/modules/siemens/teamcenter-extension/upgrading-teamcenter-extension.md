@@ -1,8 +1,8 @@
 ---
-title: "Glossary"
-url: /appstore/modules/siemens-plm/teamcenter-extension/glossary/
+title: "Upgrading Teamcenter Extension V1.0.0 to V3.0.0"
+url: /appstore/modules/siemens-plm/teamcenter-extension/upgrading-teamcenter-extension/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
-weight: 5
+weight: 4
 ---
 
 ## Introduction {#introduction}
