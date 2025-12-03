@@ -10,6 +10,6 @@ description_list: true
 
 ## Introduction
 
-Modeling with Mendix is faster than traditional development. But by learning these best practices, you can model apps more quickly and effectively than other Mendix developers.
+Modeling with Mendix is faster than traditional development. But by learning these best practices, you can model apps more quickly and effectively than other Mendix developers. See the documents below for advice on modeling tools, how make apps more accessible, and more.
 
 ## Documents in this Category
