@@ -26,9 +26,9 @@ This is also the recommended setup when there is limited or no access to the int
 
 ## Custom Repositories and the Build Process
 
-When building Mendix applications in the Mendix public cloud, dependencies are not downloaded. Instead, the build process relies on the dependencies being present in the vendorlib folder.
+When building Mendix applications in Mendix Cloud, dependencies are not downloaded. Instead, the build process relies on the dependencies being present in the `vendorlib` folder.
 
-Studio Pro manages this by downloading dependencies from the configured repositories using Gradle and then committing the vendorlib folder to version control. When you set up a custom Gradle repository, it is used during this download phase, meaning all dependencies stored in vendorlib originate from that repository.
+Studio Pro manages this by downloading dependencies from the configured repositories using Gradle and then committing the `vendorlib` folder to version control. When you set up a custom Gradle repository, this is used during the download phase, meaning all dependencies stored in vendorlib originate from that repository.
 
 ## How to Set up a Remote Repository 
 
