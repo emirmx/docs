@@ -14,9 +14,9 @@ Mendix Workstation Client is [Limited Availability](https://docs.mendix.com/rele
 
 ## Introduction
 
-Mendix Workstation Client is designed to help you build smarter, faster, and more operator-friendly applications for shopfloor operators. It enables Mendix cloud applications to directly interact with peripheral devices on a local workstation, without relying on intermediate servers or heavy network traffic.
+Mendix Workstation Client is designed to help you build smarter, faster, and more operator-friendly applications for shop floor operators. It enables Mendix cloud applications to directly interact with peripheral devices on a local workstation, without relying on intermediate servers or heavy network traffic.
 
-By connecting applications directly to the PC's local resources, Workstation allows for near real-time communication with devices like printers, barcode scanners, smartcard readers, and industrial scales, all from within a Mendix app. This setup ensures low-latency performance and reduces infrastructure complexity.
+By connecting applications directly to the PC's local resources, Workstation allows for near real-time communication with devices like printers, barcode scanners, smart card readers, and industrial scales, all from within a Mendix app. This setup ensures low-latency performance and reduces infrastructure complexity.
 
 Workstation is especially valuable in manufacturing and industrial environments where precision, speed, and reliability are key to operator efficiency.
 
@@ -31,7 +31,7 @@ Mendix Workstation Client has the following features:
 * Interactions with the local PC, such as sending and receiving on-event messages, are handled with Mendix nanoflows.
 * Supports multiple interfaces:
 
-    * PCSC (Smartcard Reader) - APDU protocol
+    * PCSC (smart card Reader) - APDU protocol
     * Serial Port (COM Port) RS232 standard
     * TCP-IP (Ethernet)
     * Bluetooth LE (BLE) - ATT protocol
@@ -53,7 +53,7 @@ Mendix Workstation Client has the following features:
 Mendix Workstation Client can be used to create apps that handle use cases such as the following:
 
 * Printing labels on an industrial thermal label printer (for example, a Zebra printer)
-* Badge operators with an NFC smartcard reader and PC/SC specification
+* Badge operators with an NFC smart card reader and PC/SC specification
 * Scanning and parsing barcodes (for example, GS1 specifications)
 * Weighing materials with an industrial scale (for example, a Mettler Toledo SICS-compatible scale)
 * Connected smart tools (for example, screwdrivers with torque control)
@@ -88,9 +88,9 @@ Used by Mendix developers. The App Connector is a plug-and-play Mendix module th
 
 The connector handles the following tasks:
 
-* Retrieving local station configuration (name and device list).
-* Connecting and disconnecting devices.
-* Exchanging messages with the device.
-* Subscribing for triggering app logic on event when receiving messages from the device.
+* Retrieving local station configuration (name and device list)
+* Connecting and disconnecting devices
+* Exchanging messages with devices
+* Subscribing for triggering app logic on event when receiving messages from a device
 
 ## Read More

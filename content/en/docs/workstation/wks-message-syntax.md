@@ -25,7 +25,7 @@ This device type requires the following message and response:
 
 * `CharacteristicUUID#Response`
 
-## File System
+## File Device
 
 This device type requires the following message and response:
  
@@ -59,18 +59,18 @@ The section below shows a sample test that you can run to verify the configurati
 5. In your Workspace, navigate to **Test Your Station** and click on the configured file device.
 6. Enter `3#test.txt#Hello from Mendix` in the **Send Message** field, and then press **Send Message**.
 
-    The test should show a response like `S#3#C:\MyTestFolder\test.txt` to indicate that the text file *test.txt* was succesfully written to *MyTestFolder*. 
+    The test should show a response like `S#3#C:\MyTestFolder\test.txt` to indicate that the text file *test.txt* was successfully written to *MyTestFolder*. 
 
 7. Go to *C:\MyTestFolder* and verify that it contains the text file.
 8. Open the test file and verify that it contains the text *Hello from Mendix*.
 
-## Smart Cards
+## Card Readers
 
 This device type requires the following message and response:
 
 ### Message
 
-Send instruction in hexadecimal as a string, for example, *FFCA000000*. The messages exchanged with the smart card are APDU messages. For more information, refer to the documentation of the APDU command for your smart card reader.
+Send instruction in hexadecimal as a string, for example, *FFCA000000* to read the smart card ID. The messages exchanged with the smart card are APDU messages. For more information, refer to the documentation of the APDU command for your smart card reader.
 
 ### Response
 
