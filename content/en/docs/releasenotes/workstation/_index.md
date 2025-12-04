@@ -38,33 +38,37 @@ On the **Station** page, have added a new **Refresh Client** action. You can use
 
 #### Known Bugs and Limitations
 
-* Importing Duplicate App Configurations: Attempting to import a configuration that includes applications already defined (e.g., with an existing URL and Public Key) will result in UI errors.
+* Importing duplicate app configurations - Attempting to import a configuration that includes applications already defined (for example, with an existing URL and Public Key) results in UI errors.
 
-*Workaround: For now, you can import the configuration by excluding the applications and then manually setting them up afterward.*
+{{% alert color="info" %}}
+To work around this issue, you can can import the configuration by excluding the applications and then manually setting them up afterward.
+{{% /alert %}}
 
-* Indistinguishable Station Duplicates: Importing the same station multiple times will create duplicates that are currently not distinguishable within the system.
-
-* Duplicate Application Creation on Import: When importing multiple stations that all utilize the same application, and applications are included in the import, the application will be created multiple times (once for each station).
+* Indistinguishable station duplicates - Importing the same station multiple times creates duplicates that are currently not distinguishable within the system.
+* Duplicate application creation on import - When importing multiple stations that all use the same application, and applications are included in the import, the application is created multiple times (once for each station).
 
 ### Workstation Client
 
 #### New Features
 
-* Configuration Refresh on Start-up: Upon each start-up, the Workstation Client will now automatically check for updates to its configuration, ensuring it's always running with the latest settings.
+##### Configuration Refresh on Launch
 
-* Automatic Client Reset: The Workstation Client will automatically reset on the next refresh when its associated computer is unregistered from Workstation Management.
+Upon each launch, the Workstation Client now automatically checks for updates to its configuration, ensuring it is always running with the latest settings.
+
+##### Automatic Client Reset
+
+The Workstation Client automatically resets on the next refresh when its associated computer is unregistered from Workstation Management.
 
 #### Fixes and Other Changes
 
-* Linux ARM64 Executable Name: Spaces have been removed from the Workstation Client Linux ARM64 version executable name for improved consistency.
-
-* Bluetooth LE Device Discovery: Addressed an issue where the discovery process for Bluetooth LE devices did not correctly recognize the full device name, which previously led to failed connection attempts. The Workstation Client now accurately matches Bluetooth BT advertisement names.
+* Linux ARM64 executable name - For improved consistency, we have removed the spaces from the executable name of the Workstation Client (Linux ARM64 version).
+* Bluetooth LE device discovery - We have addressed an issue where the discovery process for Bluetooth LE devices did not correctly recognize the full device name, which previously led to failed connection attempts. The Workstation Client now accurately matches Bluetooth BT advertisement names.
 
 ### Workstation Connector
 
 #### Fixes
 
-* Refresh of the updated device list: A problem has been fixed where updates to the device list were not immediately sent to the web application after a configuration update, requiring a manual refresh. The list is now updated immediately.
+* Refresh of the updated device list - We have fixed an issue where updates to the device list were not immediately sent to the web application after a configuration update, requiring a manual refresh. The list is now updated immediately.
 
 ## 3.1.0
 
