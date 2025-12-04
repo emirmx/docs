@@ -44,12 +44,12 @@ await studioPro.ui.extensionsMenu.add({
     });
 ```
 
-The `menuItemActivated` event no longer exist, so you cannot listen to it anymore.
+The `menuItemActivated` event no longer exists, so you cannot listen to it anymore.
 
 ## Registering Commands
 
 {{%alert type="info" %}}
-The command registration API has been removed and it is no longer available for Studio Pro 11.6 and above.
+The command registration API has been removed and is no longer available for Studio Pro 11.6 and above.
 {{% /alert%}}
 
 If your extension created menus by using a command Id of a pre-registered command, the action that is sent to the command registration API when registering the command can now be used directly as the action of the menu.
