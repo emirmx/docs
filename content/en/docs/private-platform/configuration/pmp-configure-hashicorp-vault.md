@@ -52,9 +52,9 @@ Do not use a nested `value=` key structure.
 1. Log in to the Vault CLI with appropriate permissions (for example, `set VAULT_ADDR` and `VAULT_TOKEN`).
 2. If your target mount path (for example, `pmp-dev/`) does not exist, or is not a KV v2 engine, run the following command:
 
-```bash
-vault secrets enable -path=pmp-dev kv-v2
-```
+    ```bash
+    vault secrets enable -path=pmp-dev kv-v2
+    ```
 
     If the path is already in use, the command fails safely.
 
@@ -160,18 +160,18 @@ Configure the Kubernetes authentication method to allows pod to authenticate usi
 
 1. Enable the Kubernetes authentication method by running the following command:
 
-```bash
-# Ensure VAULT_ADDR and VAULT_TOKEN are set appropriately
-vault auth enable kubernetes
-```
+    ```bash
+    # Ensure VAULT_ADDR and VAULT_TOKEN are set appropriately
+    vault auth enable kubernetes
+    ```
 
-1. Configure the following properties to enable Vault to find and trust your Kubernetes cluster's API server and OIDC issuer:
+2. Configure the following properties to enable Vault to find and trust your Kubernetes cluster's API server and OIDC issuer:
 
     * **Kubernetes Host URL (K8S_HOST)** - The address of the Kubernetes API server endpoint reachable by Vault.
     * **Kubernetes CA Certificate (K8S_CA_CERT)** - The CA certificate bundle Vault uses to verify the Kubernetes API server.
     * **Token Validation Method** - Either the OIDC Issuer URL (**K8S_ISSUER**, preferred for Kubernetes 1.21 and newer) or a Token Reviewer JWT (**TOKEN_REVIEWER_JWT**).
 
-2. Choose one of the following options, according to your Kubernetes distribution.
+3. Choose one of the following options, according to your Kubernetes distribution.
 
     Carefully replace all placeholders like `<YOUR_EKS_CLUSTER_NAME>` with your actual values. 
     
@@ -236,9 +236,8 @@ vault auth enable kubernetes
             kubernetes_ca_cert="$K8S_CA_CERT"
         ```
 
-{{% alert color="info" %}}
-For AKS without OIDC, if OIDC Issuer is unavailable, use the Token Reviewer JWT method. For more information, see *For generic Kubernetes* below.
-{{% /alert %}}
+        {{% alert color="info" %}} For AKS without OIDC, if OIDC Issuer is unavailable, use the Token Reviewer JWT method. For more information, see *For generic Kubernetes* below.
+        {{% /alert %}}
 
     * For Openshift:
 
@@ -354,7 +353,6 @@ For AKS without OIDC, if OIDC Issuer is unavailable, use the Token Reviewer JWT 
         ```
 
 4. Create a `pmp-policy.hcl` Vault Terraform policy.
-
     Grant read-only access to the single central secret path. If the central path is pmp-dev/admin, the policy path is pmp-dev/data/admin.
 
     ```terraform
@@ -371,7 +369,7 @@ For AKS without OIDC, if OIDC Issuer is unavailable, use the Token Reviewer JWT 
    vault policy write pmp-secret-access pmp-policy.hcl
    ```
 
-1. Bind the desired Kubernetes Service Account (custom `pmp-secret-accessor` or `default`) in your Mendix application's namespace to the Vault policy.
+6. Bind the desired Kubernetes Service Account (custom `pmp-secret-accessor` or `default`) in your Mendix application's namespace to the Vault policy.
 
     * **bound_service_account_names** - Set to your chosen SA name (`pmp-secret-accessor` or `default`). This must match the Service Account your Mendix app will use.
     * **bound_service_account_namespaces** - Set to the namespace where your Mendix app runs (for example, `feature-test`).
@@ -411,18 +409,18 @@ To configure the Mendix Operator, perform the following steps:
 
 1. To ensure that the Mendix Operator allows pods to mount their Service Account token, edit the `OperatorConfiguration`:
 
-        ```bash
-        # Replace <your-operator-ns> with the namespace where the Mendix Operator runs
-        kubectl edit operatorconfiguration mendix-operator-configuration -n <your-operator-ns>
-        ```
+    ```bash
+    # Replace <your-operator-ns> with the namespace where the Mendix Operator runs
+    kubectl edit operatorconfiguration mendix-operator-configuration -n <your-operator-ns>
+    ```
 
 2. Add or confirm the following line in the `spec:` section:
 
-        ```yaml
-        spec:
-            runtimeAutomountServiceAccountToken: true
-            # ... other existing spec fields ...
-        ```
+    ```yaml
+    spec:
+        runtimeAutomountServiceAccountToken: true
+        # ... other existing spec fields ...
+    ```
 
 #### Choosing and Configuring the Service Account
 

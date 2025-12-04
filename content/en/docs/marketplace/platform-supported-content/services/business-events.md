@@ -88,16 +88,16 @@ To define what information is included in your events and what the service will 
 
 1. Define what information is included in this event.
 
-* In the **General** field, provide the **Event name** and **Description** to let others know what the service is about.
-* In the **Attributes** field, click **Add** to define attributes. 
-    * Changes you make here later could lead to breaking changes if the entity the attribute belongs to is consumed. Related entities will be updated automatically.
+    * In the **General** field, provide the **Event name** and **Description** to let others know what the service is about.
+    * In the **Attributes** field, click **Add** to define attributes. 
+        * Changes you make here later could lead to breaking changes if the entity the attribute belongs to is consumed. Related entities will be updated automatically.
 
     {{< figure src="/attachments/appstore/platform-supported-content/services/business-events/wizard-step-1.png" class="no-border" width="400" >}}
 
-1. Decide what other apps can do and what service this will implement.
+2. Decide what other apps can do and what service this will implement.
 
-* In the **Other apps can** field, you can select how other apps can use the service. The **This Business Events service implements** field defines whether the service will be responsible for publishing events, subscribing to events, or both.
-* Below is an explanation of the possibilities for what other apps can do and what the service implements:
+    * In the **Other apps can** field, you can select how other apps can use the service. The **This Business Events service implements** field defines whether the service will be responsible for publishing events, subscribing to events, or both.
+    * Below is an explanation of the possibilities for what other apps can do and what the service implements:
 
     | If you say that other apps can: | Then the service itself must implement: | The service could also implement: | The following are automatically created: |
     | ---------- | ---------- | ---------- | ---------- |
@@ -105,9 +105,9 @@ To define what information is included in your events and what the service will 
     | Subscribe to events | Publishing events | Subscribing to events | When publishing, **PublishedBusinessEvent** entity and handler microflow <br>If subscribing, a **ConsumedBusinessEvent** entity |
     | Publish events and<br>Subscribe to events | [Nothing required: if apps can do both, there is no obligation for the service to implement anything] | Publishing events and/or subscribing to events | If no service implementations are selected, then nothing created <br>If publishing, **PublishedBusinessEvent** entity and handler microflow <br>If subscribing, a **ConsumedBusinessEvent** entity <br>If both, then both entities and the handler microflow are created|
 
-1. Click **Done** to exit the wizard and view the defined service document.
+3. Click **Done** to exit the wizard and view the defined service document.
 
-* **Export AsyncAPI Document** exports the YAML file of the business event service so other apps can [use your newly created service](#two-way-be-existing).
+    * **Export AsyncAPI Document** exports the YAML file of the business event service so other apps can [use your newly created service](#two-way-be-existing).
 
 ### Attribute Types {#attribute-types}
 

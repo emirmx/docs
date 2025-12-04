@@ -43,21 +43,19 @@ Create a view entity that combines only the relevant attributes of the entities 
       JOIN p/Shop.Product_Category/Shop.Category as c
     ```
 
-{{% alert color="info" %}}
+    {{% alert color="info" %}} This query uses OQL to take the four attributes of each product and combines them with the associated supplier and category. If there is no supplier or category, the product will not be included. For more information, see [OQL Expressions](/refguide/oql-expressions/).
 
-This query uses OQL to take the four attributes of each product and combines them with the associated supplier and category. If there is no supplier or category, the product will not be included. For more information, see [OQL Expressions](/refguide/oql-expressions/).
+    {{% /alert %}}
 
-{{% /alert %}}
-
-1. Click **OK**. The view entity is added to your domain model.
+4. Click **OK**. The view entity is added to your domain model.
 
     {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/product-overview-ve.png" width="150" >}}
 
-2. Generate an overview page by right-clicking the view entity > **Generate overview pages**.
+5. Generate an overview page by right-clicking the view entity > **Generate overview pages**.
    
-3. Add the new overview page to the navigation.
+6. Add the new overview page to the navigation.
 
-4. Run your app locally, then click **View App**. You should see the data grid populated with the information that was previously added.
+7. Run your app locally, then click **View App**. You should see the data grid populated with the information that was previously added.
 
     {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/live-data-grid.png"  >}}
 
@@ -120,16 +118,15 @@ You can calculate the total value of an order by joining the `OrderLine` and `Or
       JOIN o/Shop.OrderLine_Order/Shop.OrderLine as ol
     GROUP BY o.OrderId, o.OrderDate, o.RequiredDate, o.ShippedDate
     ```
- 
-This results in a view entity that shows the total value of every order.  
+    
+    This results in a view entity that shows the total value of every order.  
 
-{{% alert color="info" %}} 
-Notice the quotation marks in `Shop.”Order”`. This is because `Order` is a reserved keyword in OQL. To avoid ambiguity, quotation marks are put around the word. 
-{{% /alert %}}
+    {{% alert color="info" %}} Notice the quotation marks in `Shop.”Order”`. This is because `Order` is a reserved keyword in OQL. To avoid ambiguity, quotation marks are put around the word. 
+    {{% /alert %}}
 
-1. Generate an overview page by right-clicking the view entity > **Generate overview pages**.
-2. Add the new overview page to the navigation.
-3. Run your app locally, then click **View App**. This results in a view entity that shows the total value of every order.
+3. Generate an overview page by right-clicking the view entity > **Generate overview pages**.
+4. Add the new overview page to the navigation.
+5. Run your app locally, then click **View App**. This results in a view entity that shows the total value of every order.
 
 ## Update Underlying Persistent Entities
 

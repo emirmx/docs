@@ -51,14 +51,12 @@ Create a view entity that shows each order together with its total value, calcul
     GROUP BY o.OrderId, o.OrderDate, o.RequiredDate, o.ShippedDate
     ```
 
-{{% alert color="info" %}}
+    {{% alert color="info" %}} With view entities, you can take the relevant component of `DateTime` as a column using the `DATEPART` function. For more information, see the [`DATEPART` and `DATEDIFF`](/refguide10/oql-v2/#date-validations) section of *OQL Version 2 Features*.
 
-With view entities, you can take the relevant component of `DateTime` as a column using the `DATEPART` function. For more information, see the [`DATEPART` and `DATEDIFF`](/refguide10/oql-v2/#date-validations) section of *OQL Version 2 Features*.
+    {{% /alert %}}
 
-{{% /alert %}}
-
-1. Add another view entity to the domain model and name it *OrderQuarterlyPivotVE*. This entity will show a table, similar to the format above.
-2. Add the following query to the OQL editor:
+3. Add another view entity to the domain model and name it *OrderQuarterlyPivotVE*. This entity will show a table, similar to the format above.
+4. Add the following query to the OQL editor:
 
     ```sql
     SELECT
@@ -71,9 +69,9 @@ With view entities, you can take the relevant component of `DateTime` as a colum
     GROUP BY o.OrderYear
     ```
 
-3. Click **Run Query** to preview the data.
+5. Click **Run Query** to preview the data.
 
     {{< figure src="/attachments/refguide10/modeling/domain-model/view-entities/pivot-table-view-entities/orderpivotve.png" >}}
 
-4. Click **OK** to save. 
-5. Create a page that shows the pivot table by right-clicking the new entity > **Generate overview pages**.
+6. Click **OK** to save. 
+7. Create a page that shows the pivot table by right-clicking the new entity > **Generate overview pages**.

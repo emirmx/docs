@@ -121,7 +121,7 @@ To use this operation in your microflow, perform the following steps:
 7. Configure a method to trigger the `ACT_PutBlob` microflow. 
     For example, you can call the microflow with a custom button on a page in your app. For an example of how this can be implemented, see [Creating a Custom Save Button with a Microflow](/refguide/creating-a-custom-save-button/).
 
-The operation returns a **PutBlobRequestResponse** object, which is empty on itself, only its generization AbstractResponse entity contains the http status code and optional the http reason phrase.
+The operation returns a **PutBlobRequestResponse** object, which is empty on itself, only its generalization AbstractResponse entity contains the http status code and optional the http reason phrase.
 
 #### GET_v1_Azure_GetBlob
 
@@ -142,7 +142,7 @@ To use this operation in your microflow, perform the following steps:
 3. Call the **GET_v1_Azure_GetBlob** action in your microflow.
 
 The operation returns a **GetBlobResponse** object with the returned Blob associated with it.
-Its generization AbstractResponse entity contains the http status code and optional the http reason phrase.
+Its generalization AbstractResponse entity contains the http status code and optional the http reason phrase.
 
 #### DELETE_v1_Azure_DeleteBlob
 
@@ -161,7 +161,7 @@ To use this operation in your microflow, perform the following steps:
 3. Call the **DELETE_v1_Azure_DeleteBlob** action in your microflow.
 
 The operation returns a **DeleteBlobResponse** object, which is a generalization of **AbstractResponse** and contains the **StatusCode** and **ReasonPhrase**.
-Its generization AbstractResponse entity contains the http status code and optional the http reason phrase.
+Its generalization AbstractResponse entity contains the http status code and optional the http reason phrase.
 
 #### GET_v1_Azure_ListBlobs
 
@@ -182,7 +182,7 @@ To use this operation in your microflow, perform the following steps:
 3. Call the **GET_v1_Azure_ListBlobs** action in your microflow.
 
 The operation returns a list of **Blob** objects associated to the **ListBlobResponse**, which is a generalization of **AbstractResponse** and contains the **StatusCode** and **ReasonPhrase**.
-Its generization AbstractResponse entity contains the http status code and optional the http reason phrase.
+Its generalization AbstractResponse entity contains the http status code and optional the http reason phrase.
 
 #### GET_v1_Azure_ListContainers
 
@@ -202,7 +202,7 @@ To use this operation in your microflow, perform the following steps:
 3. Call the **GET_v1_Azure_ListContainers** action in your microflow.
 
 The operation returns a list of **Container** objects associated to the **ListContainersResponse**, which is a generalization of **AbstractResponse** and contains the **StatusCode** and **ReasonPhrase**.
-Its generization AbstractResponse entity contains the http status code and optional the http reason phrase.
+Its generalization AbstractResponse entity contains the http status code and optional the http reason phrase.
 
 #### POST_v1_Azure_GetApplicationBearerToken
 
@@ -219,7 +219,7 @@ To use this operation in your microflow, perform the following steps:
 2. Call the **POST_v1_Azure_GetApplicationBearerToken** action in your microflow.
 
 The operation returns a **GetApplicationBearerTokenResponse** object with the returned **EntraCredentialsUsage** associated to it. The **EntraCredentialsUsage** entity is a specialization of the **EntraCredentials** entity so the returned object can be used to authenticate Blob operations.
-Its generization AbstractResponse entity contains the http status code and optional the http reason phrase.
+Its generalization AbstractResponse entity contains the http status code and optional the http reason phrase.
 
 #### POST_v1_Azure_GetUserDelegationKey{#get-user-delegation-key}
 
