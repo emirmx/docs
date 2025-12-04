@@ -1,5 +1,5 @@
 ---
-title: "Right-Click Menu"
+title: "Right-Click Menus in the Domain Model"
 url: /refguide/right-click-menu/
 weight: 80
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
@@ -7,7 +7,7 @@ weight: 80
 
 ## Introduction
 
-The entity right-click menu allows you to manage your entity by, for example, reviewing its properties, find usages within your app, and generating overview pages based on its data. You can also right-click an entity’s attributes to manage its data.
+The right-click menu in the domain model allows you to manage an entity, as well as its attributes and associations. For example, you can use the menus to review properties, find usages within your app, and generating overview pages based on an entity's data.
 
 ## Entity Menu Overview
 
