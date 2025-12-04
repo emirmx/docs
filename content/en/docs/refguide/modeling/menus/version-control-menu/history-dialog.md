@@ -5,15 +5,15 @@ weight: 50
 ---
 ## Introduction
 
-Use the **History** to look at all the changes that have been committed to a development line of an app. You can open this from the **Version Control** > **History…** menu item. The History is also used when selecting a revision to revert, to merge from, create a branch line off, or to create a deployment archive from.
+Use the **History pane** to look at all the changes that have been committed to a development line of an app. You can open this pane from the **Version Control** > **History…** menu item. The **History** pane displays all revisions at once in a searchable grid, making it easy to look at the detailed project history.
 
 {{% alert color="info" %}}
 In Studio Pro 11.6 a new default view for History was introduced. Partially cloned apps automatically get the older blocking dialog and through the [Version Control Preferences](/refguide/preferences-dialog/#history-pane) you can choose to keep using the blocking dialog for all apps.
 
-For more information on the older blocking dialog, please refer to the [Mendix 10 documentation](/refguide10/history-dialog/).
-{{% /alert %}}
+When using the Revision Selector to select a revision to revert, to merge from, create a branch line off, or to create a deployment archive from, the blocking dialog is still used.
 
-The **History** pane displays all revisions at once in a searchable grid, making it easy to look at the detailed project history.
+For more information on the blocking dialog, please refer to the [Mendix 10 documentation](/refguide10/history-dialog/).
+{{% /alert %}}
 
 ## Revisions
 
@@ -25,7 +25,7 @@ Each line in the grid represents a revision in the repository.
 
 There are different filter options available to help finding specific revisions. 
 
-* The search bar looks in all fields of the revisions grid, as well as in the details of the commit such as the Model changes and Disk changes.
+* The search bar looks in all fields of the revisions grid, as well as in the details of the commit such as the Model changes, Disk changes and Stories.
 * The date filter allows specifying a date range for revisions. The available presets help to quickly select a range.
 * The document filter allows selecting a document, such as a specific microflow, to filter all revisions on.
 
