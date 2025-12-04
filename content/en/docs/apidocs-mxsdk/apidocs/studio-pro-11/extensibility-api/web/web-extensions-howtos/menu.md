@@ -4,7 +4,7 @@ linktitle: "Menus"
 url: /apidocs-mxsdk/apidocs/web-extensibility-api-11/menu/
 ---
 
-# Menu Properties
+## Menu Properties
 
 A menu has the following properties:
 
@@ -21,19 +21,26 @@ A menu has the following properties:
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/menus/grouped_menus.png" width="300" >}}
 
 {{% alert color="info" %}}
-It is important to note that a menu can only have an action or submenus. It cannot have both. A parent menu is not a clickable menu, it can only contain sub menus that are clickable or more parent menus. If you try to add both submenus and an action to a menu, the code will not compile.
+A menu can only have an action or sub-menus—it cannot have both. A parent menu is not a clickable menu, it can only contain sub-menus that are clickable or more parent menus. If you try to add both sub-menus and an action to a menu, the code will not compile.
 {{% /alert %}}
 
-# Menu action payload
-The menu can have a context or no context. When adding a context menu to a document or an entity through our [appExplorer](/apidocs-mxsdk/apidocs/web-extensibility-api-11/app-explorer-api/) or [documents](/apidocs-mxsdk/apidocs/web-extensibility-api-11/documents-api/) APIs, Studio Pro will send the document id back to the menu, which then will invoke the action passing this document id as the argument. Which means the menu will need to be a `Menu<DocumentContext>`. So when you create the menu with this context, the action needs to have a `DocumentContext` as its argument, or the action will not receive the document id when the context menu gets clicked.
-**The code will not compile if your action has the wrong payload** (e.g. if you pass a number or a different object), but it is perfectly fine for your action to have no payload at all, since your context menu might not need to do anything with the ID of the document.
+## Menu Action Payload
+
+A menu can either have a context or no context. When adding a context menu to a document or an entity through the [appExplorer](/apidocs-mxsdk/apidocs/web-extensibility-api-11/app-explorer-api/) or [documents](/apidocs-mxsdk/apidocs/web-extensibility-api-11/documents-api/) APIs, Studio Pro sends the document Id back to the menu. The menu then invokes the action and passes this document Id as the argument. Because of this, the menu must be identified as `Menu<DocumentContext>`. When you create the menu with this context, the action needs to have a `DocumentContext` argument; otherwise, the action will not receive the document Id when the context menu is clicked.
+
+{{% alert="info" %}}
+The code will not compile if your action has the wrong payload (for example, if you pass a number or a different object). However, it is valid for your action to have no payload at all if your context menu does not need to use the document Id.
+{{% /alert %}}
 
 The `DocumentContext` type has only one property, the `documentId` string:
+
 ```typescript
 type DocumentContext = { documentId: string };
 ```
 
-Here you can see the different ways to use menus:
+## Menu Usage Examples
+
+Below are the different ways to use menus:
 
 ```typescript
 import { DocumentContext, IComponent, Menu, getStudioProApi } from "@mendix/extensions-api";
