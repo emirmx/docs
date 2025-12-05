@@ -18,9 +18,9 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ### December 06, 2025
 
-#### Upgrades
+#### Improvements
 
-* We have upgraded the MxDoc version to facilitate contact expiry banners in future
+* We have upgraded Mendix Dock to support contract expiry banners. The system can now provide timely information when contracts are approaching their expiry dates.
 
 ### November 23, 2025
 
