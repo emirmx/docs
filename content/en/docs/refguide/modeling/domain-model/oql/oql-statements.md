@@ -71,9 +71,9 @@ WHERE <condition>
 
 `entity` is the entity whose objects are being updated.
 
-`attribute` is an attribute of the entity that is being updated. `association` is an association that is being updated. Multiple attributes and associations can be updated in the same statement.
+`attribute` is an attribute of the entity that is being updated. `association` is an association that is being updated. Multiple attributes and associations can be updated in the same statement. An attribute of type `autonumber` can not be updated. The `ID` field of an entity can not be updated.
 
-`expression` is a new value of an attribute or association. Any [OQL expression](/refguide/oql-expressions/) is allowed. When updating attributes, the value type of the expression should match the attribute type according to [type coercion precedence](/refguide/oql-expression-syntax/#type-coercion). In the case of associations, association and entity expressions must match the target association type. Values of type LONG can also be used as association values, but they must be valid ids of associations which are of the target association type.
+`expression` is a new value of an attribute or association. Any [OQL expression](/refguide/oql-expressions/) is allowed. When updating attributes, the value type of the expression should match the attribute type according to [type coercion precedence](/refguide/oql-expression-syntax/#type-coercion). When updating an enumeration attribute using a literal, the literal must be a valid value for the enumeration. When updating an enumeration attribute using another enumeration, the expression enumeration must be a subset of the attribute enumeration. When updating a string attribute using a string literal, the literal length must be equal or lower than the length of the attribute. In the case of associations, association and entity expressions must match the target association type. Values of type LONG can also be used as association values, but they must be valid ids of associations which are of the target association type.
 
 `condition` can be anything that can appear in an OQL [WHERE clause](/refguide/oql-clauses/#where).
 
