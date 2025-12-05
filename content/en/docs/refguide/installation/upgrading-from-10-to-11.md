@@ -93,11 +93,11 @@ You can resolve the error by enabling entity access for the microflow that calls
 
 ### Amazon S3 SDK Upgrade
 
-With Mendix 10.6 we started using new version of AWS SDK for accessing S3 storage. New SDK has some differences which affects our S3 storage implementation. 
+With Mendix 10.6, we started using a new version of the AWS SDK for accessing S3 storage. The new SDK version has some differences which affects our S3 storage implementation. 
 
-#### `com.mendix.storage.s3.Region` / `com.mendix.storage.s3.EndPoint` settings
+#### com.mendix.storage.s3.Region / com.mendix.storage.s3.EndPoint Settings
 
-New SDK is stricter with these settings. `com.mendix.storage.s3.Region` setting should be always set to the region matching the region of the bucket.
+SDK version ___ is stricter with these settings. `com.mendix.storage.s3.Region` setting should be always set to the region matching the region of the bucket.
 `com.mendix.storage.s3.EndPoint` setting should be either not set or set to an endpoint matching the region, for example: `s3.eu-west-1.amazonaws.com`.
 
 When the region is not specified or there is incompatibility between above settings, error logs will contain entries similar to following:
@@ -105,7 +105,7 @@ When the region is not specified or there is incompatibility between above setti
 - The bucket you are attempting to access must be addressed using the specified endpoint.
 - The authorization header is malformed; the region 'us-east-1' is wrong
 
-#### AWS Signature V2 support (`com.mendix.storage.s3.UseV2Auth` setting)
+#### AWS Signature V2 support (com.mendix.storage.s3.UseV2Auth Setting)
 
 New SDK does not support AWS Signature v2 which is enabled by `UseV2Auth` setting. According to official docs this signature type is deprecated anyway and is not supported by new regions. We do not expect this have any effect when Amazon S3 is used. This will prevent use of S3 compatible solutions that only supports v2 signature type. For these cases you need to switch to either Amazon S3 or a compatible solution that supports newer signature types.  
 
