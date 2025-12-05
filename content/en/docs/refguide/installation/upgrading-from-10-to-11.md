@@ -97,17 +97,18 @@ With Mendix 10.6, we started using a new version of the AWS SDK for accessing S3
 
 #### com.mendix.storage.s3.Region / com.mendix.storage.s3.EndPoint Settings
 
-SDK version ___ is stricter with these settings. `com.mendix.storage.s3.Region` setting should be always set to the region matching the region of the bucket.
-`com.mendix.storage.s3.EndPoint` setting should be either not set or set to an endpoint matching the region, for example: `s3.eu-west-1.amazonaws.com`.
+SDK version ___ is stricter with these settings. The `com.mendix.storage.s3.Region` setting should be always set to the region matching the region of the bucket.
+The `com.mendix.storage.s3.EndPoint` setting should be either not set or set to an endpoint matching the region, for example: `s3.eu-west-1.amazonaws.com`.
 
 When the region is not specified or there is incompatibility between above settings, error logs will contain entries similar to following:
-- Unable to load region from any of the providers in the chain
+
+- Unable to load region from any of the providers in the chain.
 - The bucket you are attempting to access must be addressed using the specified endpoint.
-- The authorization header is malformed; the region 'us-east-1' is wrong
+- The authorization header is malformed; the region 'us-east-1' is wrong.
 
 #### AWS Signature V2 support (com.mendix.storage.s3.UseV2Auth Setting)
 
-New SDK does not support AWS Signature v2 which is enabled by `UseV2Auth` setting. According to official docs this signature type is deprecated anyway and is not supported by new regions. We do not expect this have any effect when Amazon S3 is used. This will prevent use of S3 compatible solutions that only supports v2 signature type. For these cases you need to switch to either Amazon S3 or a compatible solution that supports newer signature types.  
+SDK version ___ does not support AWS Signature v2 which is enabled by `UseV2Auth` setting. This signature type is deprecated, and is not supported by new regions. For more information, see AWS's ____ Documentation. We do not expect this have any effect when Amazon S3 is used. This will prevent use of S3 compatible solutions that only supports v2 signature type. For these cases you need to switch to either Amazon S3 or a compatible solution that supports newer signature types.  
 
 #### Client Side Encryption Changes
 
