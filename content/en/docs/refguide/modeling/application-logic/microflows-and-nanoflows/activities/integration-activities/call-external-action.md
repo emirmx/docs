@@ -100,12 +100,12 @@ An additional attribute can have one of the following types:
 
 For types **Enumeration** and **List of Enumeration**, Studio Pro lets you choose the enumeration. This must be an external enumeration of the action's service.
 
-For types that are not a list you type an expression of the given type.
+For types that are not a list, you type an expression of the given type.
 
 For list types, you:
 
-1. Choose an entity,
-2. Type an expression that is a list of that entity, and
+1. Choose an entity.
+2. Type an expression that is a list of that entity.
 3. Choose an attribute of that entity with the given type.
 
 {{% alert color="info" %}}
