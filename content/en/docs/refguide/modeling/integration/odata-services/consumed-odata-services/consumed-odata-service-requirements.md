@@ -133,6 +133,8 @@ Take for example a `Product` entity type has an attribute `Tags` with type `Coll
 
 For entity sets these properties are not supported. This means that they can only be used in parameters and return values of external actions.
 
+Collection properties are not supported for services using OData v3.
+
 {{% alert color="info" %}}
 Collection properties were introduced in [Studio Pro 11.6.0](/releasenotes/studio-pro/11.6/).
 {{% /alert %}}
