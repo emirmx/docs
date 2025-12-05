@@ -125,7 +125,7 @@ Currently, the binary data can only be accessed by Java actions.
 
 ### Collection Attributes {#collection-attributes}
 
-Collection attributes (mendix supported primitive-types) are supported in OData entity type when consumed as an external entity. 
+Collection attributes (Mendix-supported primitive types) are supported in OData entity type when consumed as an external entity. 
 When an entity type with supported Collection attribute(s) is added to the domain model, each of its Collection attributes is represented as a non-persistable entity (associated as a one-way navigable Reference-set to original attribute containing entity type). The domain model entity corresponding to the collection attribute contains a single attribute (having same primitive type as the type of Collection in the OData metadata).
 
 {{% alert color="info" %}}
@@ -174,7 +174,7 @@ Note that the only supported Collection type is a Collection of Entities, Collec
 
 ³ Objects that contain attributes of complex types are not currently supported in actions.
 
-⁴ Collection of mendix-supported primtive types, see more details in [Using Collection-type attributes in Call External Action](/refguide/call-external-action/#collection-attributes)
+⁴ Collection of Mendix-supported primtive types, see more details in [Using Collection-type attributes in Call External Action](/refguide/call-external-action/#collection-attributes)
 
 {{% alert color="warning" %}}
 When the OData endpoint contains functions, these are not imported in the consumed OData service. You can use a [Call REST service](/refguide/call-rest-action/) activity to call these functions.

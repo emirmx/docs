@@ -87,7 +87,7 @@ The ability to add additional attributes was introduced in [Studio Pro 11.5.0](/
 
 ### Collection Attributes {#collection-attributes}
 
-When assigning a value to an entity type parameter that has collection attributes (mendix supported primitive-types; e.g., a list of strings), select the corresponding attribute of matching type from list variable (list of objects) — Mendix will automatically use the whole list to populate the collection values.
+When assigning a value to an entity type parameter that has collection attributes (Mendix-supported primitive types; e.g., a list of strings), select the corresponding attribute of matching type from list variable (list of objects) — Mendix will automatically use the whole list to populate the collection values.
 
 {{% alert color="info" %}}
 The support for OData actions with parameter entity type having Collection attribute(s) of supported primitive types, was introduced in [Studio Pro 11.6.0](/releasenotes/studio-pro/11.6/).
