@@ -52,7 +52,7 @@ Controls how the selection control appears to users:
 
 #### Custom style
 
-Available when `Style = Custom` . Define custom widgets that display based on the current selection state:
+Available when `Style` is set to `Custom`. Define custom widgets that display based on the current selection state:
 
 - **None Selected Widget**: Widget displayed when no items are currently selected. Usually contains "Select all" controls or empty state indicators.
 - **Some Selected Widget**: Widget displayed when some (but not all) items are selected. Often used to show "Select all" controls or partial selection indicators.
