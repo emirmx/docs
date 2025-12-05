@@ -54,9 +54,10 @@ Supercharge your applications with Mendix's Agents Kit. This powerful set of com
 | [Conversational UI](/appstore/modules/genai/conversational-ui/) | Create a Conversational UI or monitor token consumption in your app. | UI Module | 10.24 |
 | [GenAI Commons](/appstore/modules/genai/commons/) | Common capabilities that allow all GenAI connectors to be integrated with the other modules. You can also implement your own connector based on this. | Common Module | 10.24 |
 | [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) | Understand what you can build with generative AI. Understand how to implement the Mendix Cloud GenAI, OpenAI, and Amazon Bedrock connectors and how to integrate them with the Conversational UI module. |Showcase App | 10.24 |
-| [MCP Client](https://marketplace.mendix.com/link/component/244893) | Access tools and prompts available via MCP (Model Context Protocol) inside of your Mendix app and add them to LLM requests. | Connector Module | 10.24 |
-| [MCP Server](https://marketplace.mendix.com/link/component/240380) | Make your Mendix business logic available to any agent in your enterprise landscape with the Mendix MCP Server module. Expose reusable prompts, including the ability to use prompt parameters. List and run actions implemented in the application as a tool. | Module | 10.24 |
+| [MCP Client](/appstore/modules/genai/mcp-modules/mcp-client/) | Access tools and prompts available via MCP (Model Context Protocol) inside of your Mendix app and add them to LLM requests. | Connector Module | 10.24 |
+| [MCP Server](/appstore/modules/genai/mcp-modules/mcp-server/) | Make your Mendix business logic available to any agent in your enterprise landscape with the Mendix MCP Server module. Expose reusable prompts, including the ability to use prompt parameters. List and run actions implemented in the application as a tool. | Module | 10.24 |
 | [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/) | Connect to Mendix Cloud and utilize Mendix Cloud GenAI resource packs directly within your Mendix application. | Connector Module | 10.24 |
+| [Mistral Connector](/appstore/modules/genai/reference-guide/external-connectors/mistral/) | Connect to Mistral AI. | Connector Module | 10.24 |
 | [OpenAI Connector](/appstore/modules/genai/openai/) | Connect to (Azure) OpenAI. | Connector Module | 10.24 |
 | [PgVector Knowledge Base](/appstore/modules/genai/pgvector/) | Manage and interact with a PostgreSQL *pgvector* Knowledge Base. | Connector Module | 10.24 |
 | [RFP Assistant Starter App / Questionnaire Assistant Starter App](https://marketplace.mendix.com/link/component/235917) | The RFP Assistant Starter App and the Questionnaire Assistant Starter App leverage historical question-answer pairs (RFPs) and a continuously updated knowledge base to generate and assist in editing responses to RFPs. This offers a time-saving alternative to manually finding similar responses and enhancing the knowledge management process.  | Starter App | 10.24 |
@@ -75,6 +76,9 @@ Mendix connectors offer direct support for the following models:
 | Azure / OpenAI | gpt-4, gpt-4-turbo, gpt-4o, gpt-4o mini, gpt-4.1, gpt-4.1-mini, gpt-4.1-nano, gpt-5.0, gpt-5.0-mini, gpt-5.0-nano | Chat completions | text, image, document (OpenAI only) | text | Function calling |
 | | DALL·E 2, DALL·E 3, gpt-image-1 | Image generation | text | image | |
 | | text-embedding-ada-002, text-embedding-3-small, text-embedding-3-large     | Embeddings | text | embeddings| |
+| Mistral | Mistral Large 3, Mistral Medium 3.1, Mistral Small 3.2, Ministral 3 (3B, 8B, 14B), Magistral (Small, Medium) | Chat Completions | text, image | text | Function calling |
+| | Codestral, Devstral (Small, Medium), Open Mistral 7B, Mistral Nemo 12B | Chat Completions | text | text | Function calling |
+| | Mistral Embed, Codestral Embed | Embeddings | text | embeddings | |
 | Amazon Bedrock | Amazon Titan Text G1 - Express, Amazon Titan Text G1 - Lite, Amazon Titan Text G1 - Premier | Chat Completions | text, document (except Titan Premier) | text | |
 | | AI21 Jamba-Instruct | Chat Completions | text | text |  |
 | | AI21 Labs Jurassic-2 (Text) | Chat Completions | text | text |  |
