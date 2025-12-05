@@ -78,17 +78,18 @@ Attributes marked as `FC_KeepInContent=false` cannot be used.
 
 The most commonly used attribute types can be used in your app. The types of the attributes are be based on the types of the attributes in the OData metadata, as given in the following table:
 
-| OData Type                     | Mendix Type                           |
-| ---                            | ---                                   |
-| Binary                         | Binary (see [Binary Attributes](#binary-attributes) below) |
-| Boolean                        | Boolean ¹ |
-| Byte, SByte, Int16, Int32      | Integer |
-| DateTime, DateTimeOffset, Time | Date/time |
-| Decimal, Double, Single        | Decimal ² |
-| Enumeration                    | Enumeration |
-| Int64                          | Long |
-| String, Guid                   | String |
-| (Other)                        | (Ignored) |
+| OData Type                                      | Mendix Type                           |
+| ---                                             | ---                                   |
+| Binary                                          | Binary (see [Binary Attributes](#binary-attributes) below) |
+| Boolean                                         | Boolean ¹ |
+| Byte, SByte, Int16, Int32                       | Integer |
+| DateTime, DateTimeOffset, Time                  | Date/time |
+| Decimal, Double, Single                         | Decimal ² |
+| Enumeration                                     | Enumeration |
+| Int64                                           | Long |
+| String, Guid                                    | String |
+| Collection(Any Mendix-supported primitive type) | List (see [Collection Attributes](#collection-attributes) below)|
+| (Other)                                         | (Ignored) |
 
 ¹ In Studio Pro, Booleans cannot be null. If the service returns null, the app will use the value `false`.
 
@@ -121,6 +122,15 @@ When a generalization and a specialized entity are published in the same service
 The binary data format is supported in the form of *media entities*. When a media entity is dragged into the domain model, a corresponding external entity is created. The entity will have a `contents` attribute with the binary data.
 
 Currently, the binary data can only be accessed by Java actions.
+
+### Collection Attributes {#collection-attributes}
+
+Collection attributes (mendix supported primitive-types) are supported in OData entity type when consumed as an external entity. 
+When an entity type with supported Collection attribute(s) is added to the domain model, each of its Collection attributes is represented as a non-persistable entity (associated as a one-way navigable Reference-set to original attribute containing entity type). The domain model entity corresponding to the collection attribute contains a single attribute (having same primitive type as the type of Collection in the OData metadata).
+
+{{% alert color="info" %}}
+The support for OData actions with parameter entity type having Collection attribute(s) of supported primitive types, was introduced in [Studio Pro 11.6.0](/releasenotes/studio-pro/11.6/).
+{{% /alert %}}
 
 ### Associations
 
