@@ -88,7 +88,7 @@ The most commonly used attribute types can be used in your app. The types of the
 | Enumeration                    | Enumeration |
 | Int64                          | Long |
 | String, Guid                   | String |
-| Collection                     | List (see [Collection Attributes](#collection-attributes) below)|
+| Collection                     | List (see [Collection Attributes](#collection-properties) below) |
 | (Other)                        | (Ignored) |
 
 ¹ In Studio Pro, Booleans cannot be null. If the service returns null, the app will use the value `false`.
@@ -123,13 +123,18 @@ The binary data format is supported in the form of *media entities*. When a medi
 
 Currently, the binary data can only be accessed by Java actions.
 
-### Collection Attributes {#collection-attributes}
+### Collection Properties {#collection-properties}
 
-Collection attributes (Mendix-supported primitive types) are supported in OData entity type when consumed as an external entity. 
-When an entity type with supported Collection attribute(s) is added to the domain model, each of its Collection attributes is represented as a non-persistable entity (associated as a one-way navigable Reference-set to original attribute containing entity type). The domain model entity corresponding to the collection attribute contains a single attribute (having same primitive type as the type of Collection in the OData metadata).
+Entity type properties that are a collection of a supported attribute type are supported through the use of a associated non-persistable entity. 
+
+Take for example a `Product` entity type has an attribute `Tags` with type `Collection(Edm.String)`. The resulting domain model looks as follows:
+
+{{< figure src="/attachments/refguide/modeling/integration/odata-services/consumed-odata-service/collection-of-primitives.png" alt="A product entity with an associated ProductTag entity. The ProductTag entity has a Tag attribute" width="531" class="no-border" >}}
+
+For entity sets these properties are not supported. This means that they can only be used in parameters and return values of external actions.
 
 {{% alert color="info" %}}
-The support for OData actions with parameter entity type having Collection attribute(s) of supported primitive types, was introduced in [Studio Pro 11.6.0](/releasenotes/studio-pro/11.6/).
+Collection properties were introduced in [Studio Pro 11.6.0](/releasenotes/studio-pro/11.6/).
 {{% /alert %}}
 
 ### Associations
@@ -164,17 +169,14 @@ Supported types, and their corresponding type in Mendix, are:
 | Entity                            | Object ³ |
 | Enumeration                       | Enumeration |
 | String, Guid                      | String |
-| Collection                        | List ⁴ |
 
-Note that the only supported Collection type is a Collection of Entities, Collection of mendix-supported primitives, and that binary parameters or return values are not supported for consumed OData actions.
+Note that the only supported Collection type is a Collection of Entities, and that binary parameters or return values are not supported for consumed OData actions.
 
 ¹ In Mendix, Booleans cannot be null. If the action returns null, the value will be false in Mendix.
 
 ² Decimal values outside of the range of a Mendix [Decimal](/refguide/attributes/#type) are currently not supported. If the action returns a value outside of the range, the action will return an error.
 
 ³ Objects that contain attributes of complex types are not currently supported in actions.
-
-⁴ Collection of Mendix-supported primtive types, see more details in [Using Collection-type attributes in Call External Action](/refguide/call-external-action/#collection-attributes)
 
 {{% alert color="warning" %}}
 When the OData endpoint contains functions, these are not imported in the consumed OData service. You can use a [Call REST service](/refguide/call-rest-action/) activity to call these functions.

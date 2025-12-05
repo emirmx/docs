@@ -55,10 +55,6 @@ The **Output** section shows what the action returns and allows you to rename it
 
 If the action returns an entity that has associations, you can select the associations that you want to have populated in the resulting variable. You can then use the **Retrieve object(s)** activity to retrieve the associated objects over the association. 
 
-{{% alert color="info" %}}
-The support for OData actions that return entity type having Collection attribute(s) of supported primitive types, was introduced in [Studio Pro 11.6.0](/releasenotes/studio-pro/11.6/).
-{{% /alert %}}
-
 ## Documentation Tab {#public-documentation}
 
 In the **Documentation** tab, you can find a **Summary** and a **Description**. These fields contain public documentation provided by the author of the service.
@@ -83,14 +79,6 @@ If you have selected a variable for an entity that is an open type (`OpenType="t
 
 {{% alert color="info" %}}
 The ability to add additional attributes was introduced in [Studio Pro 11.5.0](/releasenotes/studio-pro/11.5/).
-{{% /alert %}}
-
-### Collection Attributes {#collection-attributes}
-
-When assigning a value to an entity type parameter that has collection attributes (Mendix-supported primitive types; e.g., a list of strings), select the corresponding attribute of matching type from list variable (list of objects) — Mendix will automatically use the whole list to populate the collection values.
-
-{{% alert color="info" %}}
-The support for OData actions with parameter entity type having Collection attribute(s) of supported primitive types, was introduced in [Studio Pro 11.6.0](/releasenotes/studio-pro/11.6/).
 {{% /alert %}}
 
 ### Associations to Include
