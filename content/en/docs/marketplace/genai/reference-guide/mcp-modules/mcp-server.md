@@ -23,9 +23,8 @@ The current version has the following limitations:
 
 * Tools can only return String values, either directly as String type or using the `TextContent` entity.
 * Prompts can only return a single message.
-* The client connection remains active for only 15 minutes, as the Mendix runtime currently does not support async requests.
 * Running an MCP Server is currently only supported on single-instance environments.
-* The tool fails to return responses with large payloads to the client successfully. This issue is currently under investigation.
+* For HTTP+SSE transport (protocol version `v2024-11-05`), tool execution with large payloads are not returned successfully
 
 Note that the MCP Server module is still in its early version and latest versions may include breaking changes. Since both the open-source protocol and the Java SDK are still evolving and regularly updated, these changes may also affect this module.
 
@@ -39,7 +38,7 @@ If you start from a standard Mendix blank app, or have an existing project, you 
 
 ### Create MCP Server {#create-server}
 
-The `Create MCP Server` action initializes an MCP server in the Mendix runtime, creates and returns the `MCPServer` object. You can use the created `MCPServer` to add tools or prompts. The `Path` attribute determines how external systems can reach the MCP server, that means this value needs to be known to the the MCP Client (usually set in a configuration file). After the action gets triggered, the server becomes available for external clients to connect. As mentioned in the [limitations](#limitations) section above, the connection remains active for only 15 minutes.
+The `Create MCP Server` action initializes an MCP server in the Mendix runtime, creates and returns the `MCPServer` object. You can use the created `MCPServer` to add tools or prompts. The `Path` attribute determines how external systems can reach the MCP server, that means this value needs to be known to the the MCP Client (usually set in a configuration file). After the action gets triggered, the server becomes available for external clients to connect. Note that the path cannot be `sse` nor `mcp` and cannot end on `/sse` nor `/mcp`, because those are reserved endpoints. 
 
 Based on your use case, this action can be triggered manually by an admin if wrapped around a microflow accessible in the UI, via an after start-up microflow, or by any other microflow such as a scheduled event.
 
@@ -62,7 +61,7 @@ The `User` returned in the microflow is used for all subsequent prompt and tool 
 
 #### Protocol Version
 
-When creating an MCP server, you need to specify a `ProtocolVersion`. On the official MCP documentation, you can review the differences between the protocol versions in the [changelog](https://modelcontextprotocol.io/specification/2025-03-26/changelog). The MCP Server module currently only supports `v2024-11-05` and the HTTP+SSE transport. MCP Clients, that need to connect to a Mendix MCP server, should support the same version. Note that Mendix follows the offered capabilities of the MCP Java SDK.
+When creating an MCP server, you need to specify a `ProtocolVersion`. On the official MCP documentation, you can review the differences between the protocol versions in the [changelog](https://modelcontextprotocol.io/specification/2025-03-26/changelog). The MCP Server module currently only supports `v2024-11-05` with the HTTP+SSE transport and `v2025-03-25` with the Streamable HTTP transport, which is the new standard transport. MCP Clients, that need to connect to a Mendix MCP server, should support the same version. Note that Mendix follows the offered capabilities of the MCP Java SDK.
 
 ### Add Tools
 
@@ -76,7 +75,7 @@ The selected microflow must adhere to the following principles:
 For an example, see the `Example Implementations` folder inside of the module.
 
 {{% alert color="warning" %}}
-Function calling is a highly effective capability and should be used with caution.
+Function / tool calling is a highly effective capability and should be used with caution.
 
 Mendix strongly recommends keeping the user in the loop (such as by using confirmation logic which is integrated into many MCP clients), if the tool microflows have a potential impact on the real world on behalf of the end-user. Examples include sending emails, posting content online, or making purchases. In such cases, evaluate the use cases and implement security measures when exposing these tools to external AI systems via MCP.
 {{% /alert %}}

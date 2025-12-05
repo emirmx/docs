@@ -21,7 +21,6 @@ If the tool resides within the same Mendix application, you can integrate it wit
 The current version has the following limitations:
 
 * Tools and prompt messages can only return String content.
-* Only HTTP+SSE transport is currently supported to communicate with MCP servers.
 
 {{% alert color="info" %}}
 Note that the MCP Client module is still in its early version, and newer versions may include breaking changes. Since both the open-source protocol and the Java SDK are still evolving and regularly updated, these changes may also affect this module.
@@ -52,7 +51,7 @@ See the **Example Implementations** folder inside the module containing example 
 
 #### Protocol Version
 
-When creating an MCP client, specify a `ProtocolVersion`. On the official MCP documentation, you can review the differences between the protocol versions in the [changelog](https://modelcontextprotocol.io/specification/2025-03-26/changelog). The MCP Client module currently only supports `v2024-11-05` and the HTTP+SSE transport. MCP servers should support the same version as the client. Note that Mendix supports the capabilities provided by the MCP Java SDK.
+When creating an MCP client, specify a `ProtocolVersion`. On the official MCP documentation, you can review the differences between the protocol versions in the [changelog](https://modelcontextprotocol.io/specification/2025-03-26/changelog). The MCP Client module currently only supports `v2024-11-05` with the HTTP+SSE transport and `v2025-03-25` with the Streamable HTTP transport, which is the new standard transport. MCP servers should support the same version as the client. Note that Mendix supports the capabilities provided by the MCP Java SDK.
 
 ### Discovering Resources {#discover-resources}
 
@@ -64,7 +63,7 @@ In general, prompts are often exposed to end-users in a chat to start or continu
 
 To use a prompt from an MCP Server, you can use the `Get Prompt` action to receive one or multiple `PromptMessages` from the server associated with the `PromptResult` object. Similarly, to use a tool, you can use the `Call Tool` action to receive a `ToolResult` object that contains the return message of the tool.
 
-For both actions, you can pass an `ArgumentCollection` if the prompt or tool requires arguments (the information is available from the [discovered resources](#discover-resources)). The actions `Initialize Argument Collection` and `Argument Collection: Add New Input` help you construct the input for those actions.
+For both actions, you can pass an `ArgumentCollection` if the prompt or tool requires arguments (the information is available from the [discovered resources](#discover-resources)). The actions `Argument Collection: Initialize` and `Argument Collection: Add New Input` help you construct the input for those actions.
 
 ### Using MCP Client Module with GenAI Commons and Conversational UI {#use-with-genai-commons}
 
@@ -89,7 +88,7 @@ The **Documentation** pane displays the documentation for the currently selected
 
 ### MCP Client Cannot Connect to the MCP Server
 
-There are several possible reasons why the client cannot connect to your server. First, check the MCP Client logs. Then, verify that the endpoint is set to the correct URL and that the server supports the same protocol version and transport method (HTTP + SSE) as the client. If authentication is required, make sure to pass the necessary information via HTTP headers.
+There are several possible reasons why the client cannot connect to your server. First, check the MCP Client logs. Then, verify that the endpoint is set to the correct URL and that the server supports the same protocol version and transport method (HTTP + SSE or Streamable HTTP) as the client. If authentication is required, make sure to pass the necessary information via HTTP headers.
    
 ## Read More
 
