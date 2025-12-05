@@ -102,22 +102,29 @@ The `com.mendix.storage.s3.EndPoint` setting should be either not set or set to 
 
 When the region is not specified or there is incompatibility between above settings, error logs will contain entries similar to following:
 
+```
 - Unable to load region from any of the providers in the chain.
 - The bucket you are attempting to access must be addressed using the specified endpoint.
 - The authorization header is malformed; the region 'us-east-1' is wrong.
+```
 
-#### AWS Signature V2 support (com.mendix.storage.s3.UseV2Auth Setting)
+#### AWS Signature V2 Support (com.mendix.storage.s3.UseV2Auth Setting)
 
-SDK version ___ does not support AWS Signature v2 which is enabled by `UseV2Auth` setting. This signature type is deprecated, and is not supported by new regions. For more information, see AWS's ____ Documentation. We do not expect this have any effect when Amazon S3 is used. This will prevent use of S3 compatible solutions that only supports v2 signature type. For these cases you need to switch to either Amazon S3 or a compatible solution that supports newer signature types.  
+SDK version ___ does not support AWS Signature v2 which is enabled by `UseV2Auth` setting. This signature type is deprecated, and is not supported by new regions. For more information, see AWS's ____ Documentation. 
+
+We do not expect this have any effect when using Amazon S3. This will prevent use of S3 compatible solutions which only support the v2 signature type. In situations like that, you need to switch to either Amazon S3 or a compatible solution that supports newer signature types.  
 
 #### Client Side Encryption Changes
 
 Client side encryption can be enabled by `com.mendix.storage.s3.EncryptionKeys` setting. Previously any encryption algorithm supported by JDK could be used. With the new SDK only AES is supported.
 
 The following error will be printed in logs when an algorithm other than AES is used: 
-- unsupported algorithm: DES
 
-If an encryption algorithm other than `AES` is used then all existing files should be migrated to use `AES` before upgrading to Mendix 10.6. This can be done by configuring a new `AES` key and rewriting all file documents.
+```
+- Unsupported algorithm: DES
+```
+
+If you use an encryption algorithm other than `AES`, then all existing files should be migrated to use `AES` before upgrading to Mendix 10.6. This can be done by configuring a new `AES` key and rewriting all file documents.
 
 ### Other
 
