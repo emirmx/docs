@@ -85,7 +85,7 @@ If you have selected a variable for an entity that is an open type (`OpenType="t
 The ability to add additional attributes was introduced in [Studio Pro 11.5.0](/releasenotes/studio-pro/11.5/).
 {{% /alert %}}
 
-### Collection Attributes
+### Collection Attributes {#collection-attributes}
 
 When assigning a value to an entity type parameter that has collection attributes (e.g., a list of strings), select the corresponding attribute of matching type from list variable (list of objects) — Mendix will automatically use the whole list to populate the collection values.
 

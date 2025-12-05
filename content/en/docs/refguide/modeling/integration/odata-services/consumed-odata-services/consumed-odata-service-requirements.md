@@ -78,18 +78,18 @@ Attributes marked as `FC_KeepInContent=false` cannot be used.
 
 The most commonly used attribute types can be used in your app. The types of the attributes are be based on the types of the attributes in the OData metadata, as given in the following table:
 
-| OData Type                                      | Mendix Type                           |
-| ---                                             | ---                                   |
-| Binary                                          | Binary (see [Binary Attributes](#binary-attributes) below) |
-| Boolean                                         | Boolean ¹ |
-| Byte, SByte, Int16, Int32                       | Integer |
-| DateTime, DateTimeOffset, Time                  | Date/time |
-| Decimal, Double, Single                         | Decimal ² |
-| Enumeration                                     | Enumeration |
-| Int64                                           | Long |
-| String, Guid                                    | String |
-| Collection(Any Mendix-supported primitive type) | List (see [Collection Attributes](#collection-attributes) below)|
-| (Other)                                         | (Ignored) |
+| OData Type                     | Mendix Type                           |
+| ---                            | ---                                   |
+| Binary                         | Binary (see [Binary Attributes](#binary-attributes) below) |
+| Boolean                        | Boolean ¹ |
+| Byte, SByte, Int16, Int32      | Integer |
+| DateTime, DateTimeOffset, Time | Date/time |
+| Decimal, Double, Single        | Decimal ² |
+| Enumeration                    | Enumeration |
+| Int64                          | Long |
+| String, Guid                   | String |
+| Collection                     | List (see [Collection Attributes](#collection-attributes) below)|
+| (Other)                        | (Ignored) |
 
 ¹ In Studio Pro, Booleans cannot be null. If the service returns null, the app will use the value `false`.
 
@@ -164,14 +164,17 @@ Supported types, and their corresponding type in Mendix, are:
 | Entity                            | Object ³ |
 | Enumeration                       | Enumeration |
 | String, Guid                      | String |
+| Collection                        | List ⁴ |
 
-Note that the only supported Collection type is a Collection of Entities, and that binary parameters or return values are not supported for consumed OData actions.
+Note that the only supported Collection type is a Collection of Entities, Collection of mendix-supported primitives, and that binary parameters or return values are not supported for consumed OData actions.
 
 ¹ In Mendix, Booleans cannot be null. If the action returns null, the value will be false in Mendix.
 
 ² Decimal values outside of the range of a Mendix [Decimal](/refguide/attributes/#type) are currently not supported. If the action returns a value outside of the range, the action will return an error.
 
 ³ Objects that contain attributes of complex types are not currently supported in actions.
+
+⁴ Collection of mendix-supported primtive types, see more details in [Using Collection-type attributes in Call External Action](/refguide/call-external-action/#collection-attributes)
 
 {{% alert color="warning" %}}
 When the OData endpoint contains functions, these are not imported in the consumed OData service. You can use a [Call REST service](/refguide/call-rest-action/) activity to call these functions.
