@@ -16,6 +16,12 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
+### December 06, 2025
+
+#### Upgrades
+
+* We have upgraded the MxDoc version to facilitate contact expiry banners in future
+
 ### November 23, 2025
 
 #### New Features
