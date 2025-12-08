@@ -207,6 +207,10 @@ Use the **On selection change** action to trigger custom logic when selection ch
 - Load additional data for selected items
 - Validate selection before allowing operations
 
+### Keep Selection
+
+If this setting is enabled, then selected items persist across page navigation, data refreshes, filtering, and sorting operations. By default, Keep selection is disabled and the selection is cleared when the datasource changes. When enabled, selected items remain selected until manually cleared by the user.
+
 ## Keyboard Navigation and Selection
 
 In the Gallery widget it is possible to navigate and select items using the keyboard. Keyboard navigation can increase user speed, as well as makes the widget more accessible.
