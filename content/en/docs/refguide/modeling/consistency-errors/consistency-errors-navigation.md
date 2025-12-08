@@ -56,7 +56,7 @@ To fix CE0529, you can use a microflow as the home page that opens the preferred
 
 If you set a page that expects required parameter(s) to be passed to it as a home page for a [navigation profile](/refguide/navigation/#properties), you will get a consistency error.
 
-For example, you have added a data view that expects a required object of type *Customer* to the home page of the responsive profile, and you get a consistency error. Optional parameters will not trigger a consistency error if not passed.
+For example, you have added a data view that expects a required object of type *Customer* to the home page of the responsive profile, and you get a consistency error. Optional parameters will not trigger a consistency error if they are not passed.
 
 {{< figure src="/attachments/refguide/modeling/consistency-errors/consistency-errors-navigation/home-page-error.png" alt="Home Page Error" class="no-border" >}}
 
