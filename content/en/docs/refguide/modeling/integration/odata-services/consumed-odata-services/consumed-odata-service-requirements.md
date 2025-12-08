@@ -88,7 +88,7 @@ The most commonly used attribute types can be used in your app. The types of the
 | Enumeration                    | Enumeration |
 | Int64                          | Long |
 | String, Guid                   | String |
-| Collection                     | List (see [Collection Attributes](#collection-properties) below) |
+| Collection                     | List (see [Collection Properties](#collection-properties) below) |
 | (Other)                        | (Ignored) |
 
 ¹ In Studio Pro, Booleans cannot be null. If the service returns null, the app will use the value `false`.
@@ -125,19 +125,19 @@ Currently, the binary data can only be accessed by Java actions.
 
 ### Collection Properties {#collection-properties}
 
-Entity type properties that are a collection of a supported attribute type are supported through the use of a associated non-persistable entity. 
-
-Take for example a `Product` entity type has an attribute `Tags` with type `Collection(Edm.String)`. The resulting domain model looks as follows:
-
-{{< figure src="/attachments/refguide/modeling/integration/odata-services/consumed-odata-service/collection-of-primitives.png" alt="A product entity with an associated ProductTag entity. The ProductTag entity has a Tag attribute" width="531" class="no-border" >}}
-
-For entity sets these properties are not supported. This means that they can only be used in parameters and return values of external actions.
-
-Collection properties are not supported for services using OData v3.
-
 {{% alert color="info" %}}
 Collection properties were introduced in [Studio Pro 11.6.0](/releasenotes/studio-pro/11.6/).
 {{% /alert %}}
+
+Entity type properties that are a collection of a supported attribute type are supported through the use of an associated non-persistable entity. 
+
+Take, for example, a `Product` entity type has an attribute `Tags` with type `Collection(Edm.String)`. The resulting domain model looks as follows:
+
+{{< figure src="/attachments/refguide/modeling/integration/odata-services/consumed-odata-service/collection-of-primitives.png" alt="A product entity with an associated ProductTag entity. The ProductTag entity has a Tag attribute" width="531" class="no-border" >}}
+
+For entity sets, these properties are not supported. This means they can only be used in parameters and return values of external actions.
+
+Collection properties are not supported for services using OData v3.
 
 ### Associations
 
