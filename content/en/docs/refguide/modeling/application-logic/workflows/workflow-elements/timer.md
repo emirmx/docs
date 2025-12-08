@@ -57,8 +57,8 @@ The **Timer** properties are described in the table below:
 | Expression | You can set a certain date and time for the timer by writing an expression via the **Continue at** setting.<br><br>For example, you can write `addDays([%CurrentDateTime%], 1)` to set tomorrow as the due date and time. To set a static date and time, you can use the expression `parseDateTimeUTC('2023-12-10T17:12:00.000', 'yyyy-MM-dd''T''HH:mm:ss.SSS')`.<br><br>You can also create a more complex timer. For example, you can set a timer based on a Boolean value (in this example, `isVIPUser`) from the provided workflow context entity: `if $WorkflowContext/isVIPUser then addDays([%CurrentDateTime%], 2) else addWeeks([%CurrentDateTime%], 2])`.<br><br>For more information on available expressions in Mendix, see [Expressions](/refguide/expressions/). |
 
 {{% alert color="info" %}}
-When the expression evaluates to `empty` or `null`, then no timer will be scheduled. In case of a standalone activity, execution continues at the next activity. In case of a timer boundary event, the boundary event is simply skipped.
-{{% /alert %}}|
+When the expression evaluates to `empty` or `null`, no timer is scheduled. If the timer is a standalone activity, execution continues with the next activity. If it is a timer boundary event, the boundary event is skipped.
+{{% /alert %}}
 
 ### Recurrence Section {#recurrence}
 
