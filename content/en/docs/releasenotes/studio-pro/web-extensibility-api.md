@@ -10,7 +10,8 @@ These release notes cover changes to the [Extensibility API for Web Developers](
 
 ## Version 11.6.0
 
-We introduced a breaking change in the Web Extensibility API. Menus will no longer support commands and will instead allow users to define their own actions. This change will affect extension developers upgrading from Studio Pro 11.5 to 11.6. Review the [Migration Guide](/apidocs-mxsdk/apidocs/web-extensibility-api-11/migration-guide/) to learn how to safely convert your code for the latest version. 
+* We introduced a breaking change in the Web Extensibility API. Menus will no longer support commands and will instead allow users to define their own actions. This change will affect extension developers upgrading from Studio Pro 11.5 to 11.6. Review the [Migration Guide](/apidocs-mxsdk/apidocs/web-extensibility-api-11/migration-guide/) to learn how to safely convert your code for the latest version.
+* We have added the possibility for registered Custom Blob documents to be passed as parameters to Java Actions.
 
 ## Version 11.5.0
 
