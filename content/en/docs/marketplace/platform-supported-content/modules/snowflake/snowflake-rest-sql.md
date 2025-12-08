@@ -56,10 +56,6 @@ To use the Snowflake REST SQL connector, you must also install and configure the
 * [Encryption](https://marketplace.mendix.com/link/component/1011) – This module is a required dependency for the Snowflake REST SQL connector. The EncryptionKey constant must be set up in your application settings.
 * GenAI Commons module ver. 3.x from the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle – Only required for the Snowflake REST Connector version 2.x. This module is a required dependency for the Snowflake Cortex Analyst.
 
-{{% alert color="info" %}}
-The Snowflake REST SQL connector currently requires version 3.x of the GenAI Commons module. Newer versions of the module are not supported yet.
-{{% /alert %}}
-
 ### Licensing and Cost
 
 This connector is available as a free download from the Mendix Marketplace, but the services in Snowflake to which is connects may incur a usage cost. For more information, refer to the [Snowflake documentation](https://www.snowflake.com/en/data-cloud/pricing-options/).
