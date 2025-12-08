@@ -20,7 +20,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Improvements
 
-* We have upgraded Mendix Dock to support contract expiry banners. The system can now provide timely information when contracts are approaching their expiry dates.
+* We have upgraded Mendix Dock to support contract expiry banners. Mendix Cloud can now provide timely information when contracts are approaching their expiry dates.
 
 ### November 23, 2025
 
