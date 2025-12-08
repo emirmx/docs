@@ -10,6 +10,10 @@ This how-to describes how to interact with the App Explorer in Studio Pro. In th
 
 ## Prerequisites
 
+{{% alert="info" %}}
+If you are using Studio Pro 11.0–11.5 and your extension includes menus, your existing menu code will not work when you upgrade to Studio Pro 11.6. To restore full functionality and support, upgrade to the Extensibility API 11.6 and follow the steps in the [Migration Guide](/apidocs-mxsdk/apidocs/web-extensibility-api-11/migration-guide/).
+{{% /alert%}}
+
 Before starting this how-to, make sure you have completed the following prerequisites:
 
 * Review [how menus work](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu/) in the Web Extensibility API

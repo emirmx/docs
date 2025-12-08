@@ -12,6 +12,10 @@ It also describes how to show a progress dialog that follows a sequence of steps
 
 ## Prerequisites
 
+{{% alert="info" %}}
+If you are using Studio Pro 11.0–11.5 and your extension includes menus, your existing menu code will not work when you upgrade to Studio Pro 11.6. To restore full functionality and support, upgrade to the Extensibility API 11.6 and follow the steps in the [Migration Guide](/apidocs-mxsdk/apidocs/web-extensibility-api-11/migration-guide/).
+{{% /alert%}}
+
 Before starting this how-to, make sure you have completed the following prerequisites:
 
 * This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Complete that how-to before starting this one. 
