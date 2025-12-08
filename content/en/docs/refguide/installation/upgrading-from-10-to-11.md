@@ -93,11 +93,11 @@ You can resolve the error by enabling entity access for the microflow that calls
 
 ### Amazon S3 SDK Upgrade
 
-With Mendix 10.6, we started using a new version of the AWS SDK for accessing S3 storage. The new SDK version has some differences which affects our S3 storage implementation. 
+With Mendix 11.6 we upgraded AWS SDK used for accessing S3 storage from version 1 to version 2. SDK version 2 has some [differences](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/migration-s3.html) which affects our S3 storage implementation.
 
 #### com.mendix.storage.s3.Region / com.mendix.storage.s3.EndPoint Settings
 
-SDK version ___ is stricter with these settings. The `com.mendix.storage.s3.Region` setting should be always set to the region matching the region of the bucket.
+SDK version 2 is stricter with these settings. The `com.mendix.storage.s3.Region` setting should be always set to the region matching the region of the bucket.
 The `com.mendix.storage.s3.EndPoint` setting should be either not set or set to an endpoint matching the region, for example: `s3.eu-west-1.amazonaws.com`.
 
 When the region is not specified or there is incompatibility between above settings, error logs will contain entries similar to following:
@@ -110,9 +110,9 @@ When the region is not specified or there is incompatibility between above setti
 
 #### AWS Signature V2 Support (com.mendix.storage.s3.UseV2Auth Setting)
 
-SDK version ___ does not support AWS Signature v2 which is enabled by `UseV2Auth` setting. This signature type is deprecated, and is not supported by new regions. For more information, see AWS's ____ Documentation. 
+SDK version 2 does not support AWS Signature v2 which is enabled by `UseV2Auth` setting. This signature type is deprecated, and is not supported by new regions. For more information, see [AWS's Documentation](https://docs.aws.amazon.com/AmazonS3/latest/API/specify-signature-version.html).
 
-We do not expect this have any effect when using Amazon S3. This will prevent use of S3 compatible solutions which only support the v2 signature type. In situations like that, you need to switch to either Amazon S3 or a compatible solution that supports newer signature types.  
+We do not expect this to have any effect when using Amazon S3. This will prevent use of S3 compatible solutions which only support the v2 signature type. In situations like that, you need to switch to either Amazon S3 or a compatible solution that supports newer signature types.  
 
 #### Client Side Encryption Changes
 
@@ -124,7 +124,7 @@ The following error will be printed in logs when an algorithm other than AES is 
 - Unsupported algorithm: DES
 ```
 
-If you use an encryption algorithm other than `AES`, then all existing files should be migrated to use `AES` before upgrading to Mendix 10.6. This can be done by configuring a new `AES` key and rewriting all file documents.
+If you use an encryption algorithm other than `AES`, then all existing files should be migrated to use `AES` before upgrading to Mendix 11.6. This can be done by configuring a new `AES` key and rewriting all file documents.
 
 ### Other
 
@@ -135,7 +135,7 @@ If you use an encryption algorithm other than `AES`, then all existing files sho
 * The Task Queue setting `System context tasks` (**Runtime** tab in App Settings) is removed. This setting was deprecated in Mendix 9.6. Queued tasks are now always executed in a context equivalent to the one in which they were created. If an app still has this setting enabled, this results in a consistency check error. There is a quick fix option available in the error's context menu to disable the setting and resolve the error.
 * The `Core.getRuntimeVersion()` no longer contains the build number:
     * The format used to be `<major>.<minor>.<patch>.<build>`
-    * The current format is `<major>.<minor>.<patch>`. 
+    * The current format is `<major>.<minor>.<patch>`.
 * The type parameter for `EventActionInfoclass` has been removed, as it was superfluous. This means `EventActionInfo<..> info = new EventActionInfo<..>(..)` will no longer compile. To fix this, remove the `<..>` code.
 * String concatenation in expressions for empty/null values has changed. These values are no longer concatenated as 'null', instead they are omitted from the string. The old behavior can be achieved by using an if-else expression (for example 'Value: ' + (if $value != empty then $value else 'null') instead of 'Value: ' + $value).
 * The default value of the custom runtime setting **DataStorage.OptimizeSecurityColumns** was changed to true.
@@ -145,7 +145,7 @@ If you use an encryption algorithm other than `AES`, then all existing files sho
 * SELECT * in combination with UNION and ORDER BY is no longer allowed in runtime, as it leads to queries that are not accepted by most database engines.
 * We fixed the issue where SELECT * in combination with UNION and ORDER BY would fail on most database engines.
 * When COALESCE function in OQL has attributes of different numeric types, the result type is defined according to type precedence. Before, the result type would match the type of the first argument.
-* Client API `mx.logger` is no longer supported. All calls to it should be replaced with standard `console.log`, `console.warn`, and other such standard calls. All widgets that use the `mx.logger` need to be updated. 
+* Client API `mx.logger` is no longer supported. All calls to it should be replaced with standard `console.log`, `console.warn`, and other such standard calls. All widgets that use the `mx.logger` need to be updated.
 * We no longer convert `empty` values sent to the client into empty strings. All client side expressions must be adjusted accordingly.
 * We no longer support the runtime API class `com.mendix.modules.email.EmailModule` which was deprecated in [Mendix 10.12](https://docs.mendix.com/releasenotes/studio-pro/10.12/#deprecate-email). We recommend using the [Email Connector](https://marketplace.mendix.com/link/component/120739) module instead.
 * The [Deep Link module](https://marketplace.mendix.com/link/component/43) is deprecated, and no longer receives active support starting with Studio Pro 11. The functionality this module offers has been replaced with built-in features of the Mendix Platform, such as Page URLs and Microflow URLs. Refer to the [Migrating to Page and Microflow URLs](/appstore/modules/deep-link/#migrate-page-micro) section in *Deep Link* for details on how to migrate to these built-in features.
