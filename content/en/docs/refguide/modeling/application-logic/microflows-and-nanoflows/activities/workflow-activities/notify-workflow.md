@@ -51,6 +51,10 @@ The ([caption](/refguide/wait-for-notification/#general) of the) [wait for notif
 ### Variable Name
 
 The name of the variable returned by the activity. This variable will be a Boolean that indicates whether the notification is received or not by the workflow instance.
+It will return false in the following situations:
+
+* The [wait for notification](/refguide/wait-for-notification/) workflow activity is not suspended at the time of the **Notify workflow** (i.e. it is not waiting).
+* The [wait for notification](/refguide/wait-for-notification/) workflow activity has already been notified.
 
 For more information on the return values, see the [Introduction](#introduction) section above.
 
