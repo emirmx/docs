@@ -77,7 +77,8 @@ Follow the instructions in [How to Use Marketplace Content](/appstore/use-conten
         * Using [Private PDF Document Generation Service](#run-private-service) (recommended)
         * Using a local version of the PDF Service, available for [Microsoft Windows](/developerportal/deploy/deploy-mendix-on-microsoft-windows/) and [Linux](/developerportal/deploy/linux/)
 
-   {{% alert color="info" %}}The PDF Service in the Mendix Public Platform is also available for any other deployment type that allows bi-directional communication with the PDF Service. In this case, [submit a support request](/support/submit-support-request/) with the details of the app environment(s) to register your app.{{% /alert %}}
+   {{% alert color="info" %}}The PDF Service in the Mendix Public Platform is also available for any other deployment type that allows bidirectional communication with the PDF Service. In this case, [submit a support request](/support/submit-support-request/) with the details of the app environment(s) to register your app.{{% /alert %}}
+
 ### Running Locally from Studio Pro {#run-locally}
 
 To be able to test PDF document generation when using **Run Locally** inside Studio Pro, you need to have Chrome or Chromium installed on your local machine.
@@ -162,9 +163,9 @@ If your app is configured to [restrict access for incoming requests](/developerp
 
 #### Running Private PDF Document Generation Service {#run-private-service}
 
-When access to the public Mendix PDF generation service is restricted, particularly in isolated or air-gapped environments, company policies or high document generation need, Mendix offers a privately hosted, Docker containerized PDF Document Generation service as an alternative. With this deployment type, you can host the document generation service on your own infrastructure and have full control over resources, availability and scalability. In addition, this option offers configurable limits such as the maximum file size and maximum page rendering time.
+When access to the public Mendix PDF generation Service is restricted, particularly in isolated or airgapped environments, Mendix offers a privately hosted, Docker containerized PDF Document Generation Service as an alternative. With this deployment type, you can host the document generation service on your own infrastructure and have full control over resources, availability and scalability. In addition, this option offers configurable limits, such as the maximum file size and maximum page rendering time.
 
-It is available starting with module versions 1.11.0 for Studio Pro 9 and 2.1.0 for Studio Pro 10. For more detailed information, installation guide and configuration, refer to [Private PDF Document Generation Service](/appstore/services/private-document-generation-service/).
+It is available starting with module versions 1.11.0 for Studio Pro 9, and 2.1.0 for Studio Pro 10. For more detailed information, installation guide and configuration, refer to [Private PDF Document Generation Service](/appstore/services/private-document-generation-service/).
 
 #### Running a local version of the PDF Service on Windows or Linux {#run-on-premises}
 
