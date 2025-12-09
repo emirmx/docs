@@ -64,7 +64,7 @@ The section below shows a sample test that you can run to verify the configurati
 7. Go to *C:\MyTestFolder* and verify that it contains the text file.
 8. Open the test file and verify that it contains the text *Hello from Mendix*.
 
-## Card Readers {card-readers}
+## Card Readers {#card-readers}
 
 This device type requires the following message and response:
 
