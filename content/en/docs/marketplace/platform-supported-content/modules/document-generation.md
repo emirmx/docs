@@ -25,8 +25,9 @@ The [PDF Document Generation](https://marketplace.mendix.com/link/component/2115
     * [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/)
     * [Mendix Cloud Dedicated](/developerportal/deploy/mendix-cloud-deploy/)
     * [Mendix on Kubernetes Connected](/developerportal/deploy/private-cloud/)
+    * [Private PDF Document Generation Service](#run-private-service)
     * [On-Premises](/developerportal/deploy/on-premises-design/)
-    * A privately hosted Docker containerized PDF Document Generation service. It is available starting with module versions 1.11.0 for Studio Pro 9 and 2.1.0 for Studio Pro 10. For more information, refer to [Private PDF Document Generation Service](/appstore/services/private-document-generation-service/).
+
     {{% alert color="info" %}}We only support apps that allow bi-directional communication with the PDF Service in Mendix Cloud for all deployment types except for on-premises, and for the [Private PDF Document Generation Service](/appstore/services/private-document-generation-service/).{{% /alert %}}
 * The maximum file size is 25 MB per document. If your document exceeds this limit, the action will result in an exception. We recommend compressing high-resolution images to reduce their file size.
 * If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using client certificates, our cloud service will not be able to reach your app, and the module will not work properly.
@@ -67,14 +68,16 @@ Follow the instructions in [How to Use Marketplace Content](/appstore/use-conten
 5. To test the module locally, perform the procedure as described in the [Running locally from Studio Pro](#run-locally) section. 
 6. When deploying your app, consider that we currently support two types of deployments:
 
-    1. [Running on Mendix Cloud](#run-on-mendix-cloud) using the PDF service in the Mendix Public Platform. This option is available for apps that are deployed to the following environments:
+    1. [Running on Mendix Cloud](#run-on-mendix-cloud) using the PDF Service in the Mendix Public Platform. This option is available for apps that are deployed to the following environments:
         * [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/)
         * [Mendix Cloud Dedicated](/developerportal/deploy/mendix-cloud-deploy/)
         * [Mendix on Kubernetes Connected](/developerportal/deploy/private-cloud/)
 
-    2. [Running On-Premises](#run-on-premises) using a local version of the PDF service. This option is available for apps that are deployed to the following environments:
-        * [Microsoft Windows](/developerportal/deploy/deploy-mendix-on-microsoft-windows/)
-        * [Linux](/developerportal/deploy/linux/)
+    2. [Running on self-hosted for airgapped and on-premises](#run-private-service-and-on-premises) using a self-hosted version of the PDF Service:
+        * Using [Private PDF Document Generation Service](#run-private-service) (recommended)
+        * Using a local version of the PDF Service, available for [Microsoft Windows](/developerportal/deploy/deploy-mendix-on-microsoft-windows/) and [Linux](/developerportal/deploy/linux/)
+
+   {{% alert color="info" %}}The PDF Service in the Mendix Public Platform is also available for any other deployment type that allows bidirectional communication with the PDF Service. In this case, [submit a support request](/support/submit-support-request/) with the details of the app environment(s) to register your app.{{% /alert %}}
 
 ### Running Locally from Studio Pro {#run-locally}
 
@@ -156,7 +159,15 @@ To allow the module to send and receive document generation requests on your Men
 
 If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using IP restrictions, you must add the [outbound IP addresses of the DocGen service](/developerportal/deploy/mendix-ip-addresses/#global-platform-ips-outbound) to the list of allowed addresses.
 
-### Running On-Premises {#run-on-premises}
+### Running on self-hosted for airgapped and on-premises {#run-private-service-and-on-premises}
+
+#### Running Private PDF Document Generation Service {#run-private-service}
+
+When access to the public Mendix PDF generation Service is restricted, particularly in isolated or airgapped environments, Mendix offers a privately hosted, Docker containerized PDF Document Generation Service as an alternative. With this deployment type, you can host the document generation service on your own infrastructure and have full control over resources, availability and scalability. In addition, this option offers configurable limits, such as the maximum file size and maximum page rendering time.
+
+It is available starting with module versions 1.11.0 for Studio Pro 9, and 2.1.0 for Studio Pro 10. For more detailed information, installation guide and configuration, refer to [Private PDF Document Generation Service](/appstore/services/private-document-generation-service/).
+
+#### Running a local version of the PDF Service on Windows or Linux {#run-on-premises}
 
 To configure the module to generate documents on your on-premises environments, you need to perform the following steps:
 
@@ -164,23 +175,23 @@ To configure the module to generate documents on your on-premises environments, 
 2. Configure the module to use the local service.
 3. Enable the DocGen request handler.
 
-#### Installing the Prerequisite Software {#install-prerequisites}
+##### Installing the Prerequisite Software {#install-prerequisites}
 
 You should pre-install and actively maintain the following software. Mendix does not provide support for the installation, configuration, and maintenance of these packages.
 
-##### Chromium
+###### Chromium
 
 You should have installed a stable release of the Chromium browser. The currently supported stable release is 112.0.5615.0 ([Windows](https://storage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win_x64/1109252/). [Linux](https://storage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Linux_x64/1109252/)).
 
 {{% alert color="info" %}}Even though we advise using Chromium, you can also use Google Chrome instead. The configuration remains the same.{{% /alert %}}
 
-##### Node.js
+###### Node.js
 
 You should have installed a stable release of [Node.js](https://nodejs.org/).  Mendix recommends installing the same version that is shipped with the Studio Pro version that is used to build the project. You can find this version by locating and executing the `node` executable within the `modeler/tools/node` folder of your Studio Pro installation.
 
 {{% alert color="info" %}}Make sure that the Mendix Runtime has the applicable permissions to run the *node* executable.{{% /alert %}}
 
-#### Configuring the Module to use the Local Service {#configure-local-service}
+##### Configuring the Module to use the Local Service {#configure-local-service}
 
 1. Set the **OverrideServiceType** constant to *Local* in the **_UseMe** > **Configuration** folder. This enforces the use of the local service instead of the cloud service.
 
@@ -188,7 +199,7 @@ You should have installed a stable release of [Node.js](https://nodejs.org/).  M
 
 3. Configure the path to the *node* executable in the **CustomNodePath** constant in the **_UseMe** > **Configuration** folder. 
 
-#### Enabling the DocGen Request Handler {#setup-inbound-rules}
+##### Enabling the DocGen Request Handler {#setup-inbound-rules}
 
 In case you deploy on [Microsoft Windows](/developerportal/deploy/deploy-mendix-on-microsoft-windows/), you need to add the following rules when configuring the [reverse proxy inbound rules](/developerportal/deploy/deploy-mendix-on-microsoft-windows/#reverse-proxy-rules):
 
