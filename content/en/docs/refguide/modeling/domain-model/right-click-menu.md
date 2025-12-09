@@ -38,7 +38,7 @@ The attribute right-click menu items are described in the table below.
 
 | Menu item        | Description                     | Shortcut key |
 |------------------|---------------------------------|--------------|
-| Select microflow  |              | |
+| Select microflow  | Select an existing [microflow](/refguide/microflows/) or create a new one to connect to the attribute.        | |
 | Add validation rule | Add a [validation rule](/refguide/validation-rules/) to the attribute.             | |
 | Find changes |              | |
 | Find usages |  Find where the attribute is used within your app. This option only finds places where the attribute is selected itself—it will not find instances where the attribute is derived implicitly. For more information, see [Find, Find Advanced, and Find Usages](/refguide/find-and-find-advanced/).   | |
