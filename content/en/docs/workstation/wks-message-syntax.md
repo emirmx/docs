@@ -10,7 +10,7 @@ weight: 40
 
 To enable Mendix Workstation Client to communicate with your devices, you must ensure that the messages you send have the correct syntax. This syntax varies depending on the type of device. The following sections show the required syntax for file system, smart card, and Bluetooth devices.
 
-## Bluetooth
+## Bluetooth {#bluetooth}
 
 This device type requires the following message and response:
 
@@ -25,7 +25,7 @@ This device type requires the following message and response:
 
 * `CharacteristicUUID#Response`
 
-## File Device
+## File Device {#file-device}
 
 This device type requires the following message and response:
  
@@ -64,7 +64,7 @@ The section below shows a sample test that you can run to verify the configurati
 7. Go to *C:\MyTestFolder* and verify that it contains the text file.
 8. Open the test file and verify that it contains the text *Hello from Mendix*.
 
-## Card Readers
+## Card Readers {card-readers}
 
 This device type requires the following message and response:
 

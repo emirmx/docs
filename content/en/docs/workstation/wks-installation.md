@@ -153,7 +153,7 @@ Different device types have different requirements for the message syntax. For m
 
 ### Quitting the Workstation Client
 
-The **Close** button closes the Client window but does not terminate the application; it continues to run in the background. To completely quit the Client, right-click its icon in the Windows systray and select **Quit**. This action is only available if [Developer Mode](/mendix-workstation/installation#developer-mode) is enabled. Alternatively, the Workstation Client process can always be stopped via Windows Task Manager.
+The **Close** button closes the Client window but does not terminate the application; it continues to run in the background. To completely quit the Client, right-click its icon in the Windows systray and select **Quit**. This action is only available if [Developer Mode](#developer-mode) is enabled. Alternatively, the Workstation Client process can always be stopped via Windows Task Manager.
 
 ## Advanced Configurations
 
@@ -204,7 +204,7 @@ All members except for the Workspace owner can leave a workspace.
 
 ### Advanced Station Settings
 
-#### Station Developer Mode
+#### Station Developer Mode {#developer-mode}
 
 Developer mode can be configured on a **Station** page by toggling **Enable Developer Mode**. 
 
@@ -224,11 +224,11 @@ Card reader devices cannot be configured as separate devices in the **Devices** 
 
 Auto detecting card readers is enabled by default. This setting can be configured on a **Station** page by toggling **Detect Card Readers**. 
 
-Refer to [Message Syntax - Card Readers](mendix-workstation/device-syntax/#card-readers) for a more in-depth explaination how to communicate with card readers.
+Refer to [Message Syntax - Card Readers](/mendix-workstation/device-syntax/#card-readers) for a more in-depth explaination how to communicate with card readers.
 
 ##### File Device
 
-This section explains the configuration of a file device. Refer to [Message Syntax - File Device](mendix-workstation/device-syntax/#file-device) for a more in-depth explaination how to communicate with file devices.
+This section explains the configuration of a file device. Refer to [Message Syntax - File Device](/mendix-workstation/device-syntax/#file-device) for a more in-depth explaination how to communicate with file devices.
 
 ###### Allowed Folder Configuration
 
@@ -257,4 +257,4 @@ The administrator can choose to allow either one or a combination of the followi
 
 Simply add Bluetooth LE (BLE) devices that use the ATT protocol by entering the exact device name as displayed in your OS' device manager 
 
-Refer to [Message Syntax - Bluetooth](mendix-workstation/device-syntax/#bluetooth) for a more in-depth explaination how to communicate with bluetooth devices.
+Refer to [Message Syntax - Bluetooth](/mendix-workstation/device-syntax/#bluetooth) for a more in-depth explaination how to communicate with bluetooth devices.
