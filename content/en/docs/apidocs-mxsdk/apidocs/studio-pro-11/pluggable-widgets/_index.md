@@ -250,7 +250,7 @@ This section is represented by the `properties` tag in the widget XML file. It d
     </properties>
 ```
 
-### How to Enhance Your Pluggable Widget for Maia by Using `<prompt>`
+### How to Enhance Your Pluggable Widget for Maia by Using `<prompt>` {#using-prompt-for-maia}
 
 Maia can help developers and users work more effectively with pluggable widgets when it understands their purpose and configuration options. To enable this, you can enhance your widget definition XML file with prompt elements that describe your widget's functionality in natural language.
 
@@ -294,46 +294,46 @@ Well-written prompts help Maia provide accurate and helpful assistance to develo
 
 #### Guidelines for Widget Prompts
 
-- **Be concise and action-oriented**: Start with an action verb and keep the prompt under 20 words when possible
-- **Focus on use cases**: Describe when and why someone would use this widget
-- **Use plain language**: Avoid technical jargon
-- **Be specific**: Instead of "displays data," write "displays tabular data with sorting and filtering capabilities"
+* **Be concise and action-oriented**: Start with an action verb and keep the prompt under 20 words when possible
+* **Focus on use cases**: Describe when and why someone would use this widget
+* **Use plain language**: Avoid technical jargon
+* **Be specific**: Instead of "displays data," write "displays tabular data with sorting and filtering capabilities"
 
 **Good examples:**
 
-- `"Add a data grid widget to display tabular data with sorting and pagination."`
-- `"Create a progress bar to show task completion status."`
-- `"Insert a chart widget to visualize numerical data as graphs."`
+* `"Add a data grid widget to display tabular data with sorting and pagination."`
+* `"Create a progress bar to show task completion status."`
+* `"Insert a chart widget to visualize numerical data as graphs."`
 
 **Poor examples:**
 
-- `"Widget for data"` (too vague)
-- `"Implements advanced data visualization paradigms using reactive patterns"` (too technical)
+* `"Widget for data"` (too vague)
+* `"Implements advanced data visualization paradigms using reactive patterns"` (too technical)
 
 #### Guidelines for Property Prompts
 
-- **Explain the impact**: Describe how the property affects the widget's behavior or appearance
-- **Mention key values**: If the property has important values or ranges, include them
-- **Use present tense**: Write as if describing current behavior, not future actions
-- **Be specific about relationships**: If a property depends on others, mention that relationship
+* **Explain the impact**: Describe how the property affects the widget's behavior or appearance
+* **Mention key values**: If the property has important values or ranges, include them
+* **Use present tense**: Write as if describing current behavior, not future actions
+* **Be specific about relationships**: If a property depends on others, mention that relationship
 
 **Good examples:**
 
-- `"Determines whether users can select single or multiple rows in the table."`
-- `"Sets the refresh interval in seconds; 0 disables automatic refresh."`
-- `"Controls the color of the progress bar using CSS color values."`
+* `"Determines whether users can select single or multiple rows in the table."`
+* `"Sets the refresh interval in seconds; 0 disables automatic refresh."`
+* `"Controls the color of the progress bar using CSS color values."`
 
 **Poor examples:**
 
-- `"Selection stuff"` (too vague)
-- `"Will configure selection"` (wrong tense)
-- `"Property for selection configuration management"` (too wordy)
+* `"Selection stuff"` (too vague)
+* `"Will configure selection"` (wrong tense)
+* `"Property for selection configuration management"` (too wordy)
 
 #### General Writing Guidelines
 
-- **Use consistent terminology**: Match the language used in Mendix documentation and Studio Pro
-- **Avoid redundancy**: Don't repeat information already clear from the caption
-- **Keep it updated**: Update prompts when widget functionality changes
+* **Use consistent terminology**: Match the language used in Mendix documentation and Studio Pro
+* **Avoid redundancy**: Do not repeat information that is already clear from the caption
+* **Keep it updated**: Update prompts when widget functionality changes
 
 By following these guidelines, you help Maia understand your widget's capabilities and provide better assistance to developers using your pluggable widget.
 
