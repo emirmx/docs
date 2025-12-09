@@ -68,16 +68,16 @@ Follow the instructions in [How to Use Marketplace Content](/appstore/use-conten
 5. To test the module locally, perform the procedure as described in the [Running locally from Studio Pro](#run-locally) section. 
 6. When deploying your app, consider that we currently support two types of deployments:
 
-    1. [Running on Mendix Cloud](#run-on-mendix-cloud) using the PDF service in the Mendix Public Platform. This option is available for apps that are deployed to the following environments:
+    1. [Running on Mendix Cloud](#run-on-mendix-cloud) using the PDF Service in the Mendix Public Platform. This option is available for apps that are deployed to the following environments:
         * [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/)
         * [Mendix Cloud Dedicated](/developerportal/deploy/mendix-cloud-deploy/)
         * [Mendix on Kubernetes Connected](/developerportal/deploy/private-cloud/)
 
-    2. [Running on self-hosted for airgapped and on-premises](#run-private-service-and-on-premises) using a self-hosted version of the PDF service:
+    2. [Running on self-hosted for airgapped and on-premises](#run-private-service-and-on-premises) using a self-hosted version of the PDF Service:
         * Using [Private PDF Document Generation Service](#run-private-service) (recommended)
-        * Using a local version of the PDF service, available for [Microsoft Windows](/developerportal/deploy/deploy-mendix-on-microsoft-windows/) and [Linux](/developerportal/deploy/linux/)
+        * Using a local version of the PDF Service, available for [Microsoft Windows](/developerportal/deploy/deploy-mendix-on-microsoft-windows/) and [Linux](/developerportal/deploy/linux/)
 
-   {{% alert color="info" %}}The PDF service in the Mendix Public Platform is also available for any other deployment type that allows bi-directional communication with the PDF Service. In this case, [submit a support request](/support/submit-support-request/) with the details of the app environment(s) to register your app.{{% /alert %}}
+   {{% alert color="info" %}}The PDF Service in the Mendix Public Platform is also available for any other deployment type that allows bi-directional communication with the PDF Service. In this case, [submit a support request](/support/submit-support-request/) with the details of the app environment(s) to register your app.{{% /alert %}}
 ### Running Locally from Studio Pro {#run-locally}
 
 To be able to test PDF document generation when using **Run Locally** inside Studio Pro, you need to have Chrome or Chromium installed on your local machine.
@@ -166,7 +166,7 @@ When access to the public Mendix PDF generation service is restricted, particula
 
 It is available starting with module versions 1.11.0 for Studio Pro 9 and 2.1.0 for Studio Pro 10. For more detailed information, installation guide and configuration, refer to [Private PDF Document Generation Service](/appstore/services/private-document-generation-service/).
 
-#### Running a local version of the PDF service on Windows or Linux {#run-on-windows-or-linux}
+#### Running a local version of the PDF Service on Windows or Linux {#run-on-premises}
 
 To configure the module to generate documents on your on-premises environments, you need to perform the following steps:
 
