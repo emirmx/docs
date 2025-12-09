@@ -15,12 +15,12 @@ The entity right-click menu items are described in the table below.
 
 | Menu item        | Description                     | Shortcut key |
 |------------------|---------------------------------|--------------|
-| Go to Generalization |                  | |
-Select Generalization |                   | |
+| Go to Generalization | Open the correct domain model and select the generalization entity of an entity when it has a [generalization](/refguide/entities/#generalization). | |
+| Select Generalization | Add, change, or remove a [generalization](/refguide/entities/#generalization) from this entity. | |
 | Add | Add an attribute, association, or validation rule to your entity.          | |
-| Move to  | Move the entity to the domain model of one of the following locations: <br><ul><li> Adminsitration</li><li>Atlas_Core</li><li>Atlas_Web_content</li><li>BusinessEvents</li><li>DataWidgets</li><li>FeedbackModule</li><li> NanoflowCommons</li><li>WebActions</li> | |
+| Move to  | Move the entity to the domain model of one of the other modules in your app. | |
 | Select association | Select an [association](/refguide/associations/) between entities.    | |
-| Find specialization |                   | |
+| Find specialization | List (in the [**Find Results**](/refguide/view-menu/#find-results) pane) all entities for which this entity is the generalization. The list will be empty if there are no specializations of this entity. | |
 | Find usages in actions | Find where an entity has object activities in them. For more information, see [Find, Find Advanced, and Find Usages](/refguide/find-and-find-advanced/).  | |
 | Publish in REST service | Publish the entity in a [REST service](/refguide/publish-a-rest-service/).     | |
 | Publish in OData service | Publish the entity in an [OData service](/refguide/published-odata-services/). | |
