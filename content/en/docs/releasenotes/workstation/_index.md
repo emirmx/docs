@@ -99,7 +99,7 @@ You can now copy the station configuration to the clipboard, or download it to a
 #### Fixes
 
 * Computer registration: We fixed an issue where the Workstation Client could not connect to Workstation Management over a network connection that required a certificate. With this new release, the Workstation Client now uses the client operating system's certificates to establish a connection with Workstation Management.
-* Smartcard reader interface: We fixed an issue in the Workstation Client where the client would freeze if **Detect card readers** was enabled and the operating system's smartcard service was stopped.
+* smart card reader interface: We fixed an issue in the Workstation Client where the client would freeze if **Detect card readers** was enabled and the operating system's smart card service was stopped.
 * Bluetooth LE interface: We fixed issues in the Workstation Client and Connector when subscribing to Bluetooth properties. Wait and sleep times between subscriptions are no longer required, and multiple series of subscriptions and unsubscriptions are supported.
 
 ## 3.0.0
@@ -131,7 +131,7 @@ When editing a device, device settings are edited in a side panel. It makes devi
 
 ### Known Bugs and Limitations
 
-* Windows Workstation Client hangs when Smartcard reader detection is enabled and the *Smart Cards for Windows Service* is disabled.
+* Windows Workstation Client hangs when smart card reader detection is enabled and the *Smart Cards for Windows Service* is disabled.
 * The Workstation Client window is not visible when opened on a secondary screen and the secondary screen is no longer available.
 
 ## 2.6.0
@@ -170,7 +170,7 @@ The Mendix Workstation Client Sample App showcases how to build applications int
 
 The app includes reusable peripheral modules for:
 
-* PC/SC Smartcard Reader (ADPU protocol), for example Omnikey, 5427 G2, ACR122U
+* PC/SC smart card Reader (ADPU protocol), for example Omnikey, 5427 G2, ACR122U
 * Barcode Scanner (configured on Serial Port), for example, NETUM C750
 * Industrial Scale (MT-SICS protocol), for example, Mettler Toledo ICS425, OHAUS Scout STX 620, 6200
 * Label Printer (ZPL protocol), for example, Zebra ZD421D
