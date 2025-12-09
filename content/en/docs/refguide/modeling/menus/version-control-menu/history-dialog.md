@@ -5,14 +5,14 @@ weight: 50
 ---
 ## Introduction
 
-Use the **History pane** to look at all the changes that have been committed to a development line of an app. You can open this pane from the **Version Control** > **History…** menu item. The **History** pane displays all revisions at once in a searchable grid, making it easy to look at the detailed project history.
+Use the **History** pane to see the changes that have been committed to a development line of an app. You can open this pane from the **Version Control** > **History…** menu item. The **History** pane displays all revisions at once in a searchable grid, making it easy to view the detailed project history.
 
 {{% alert color="info" %}}
-In Studio Pro 11.6 a new default view for History was introduced. Partially cloned apps automatically get the older blocking dialog and through the [Version Control Preferences](/refguide/preferences-dialog/#history-pane) you can choose to keep using the blocking dialog for all apps.
+In Studio Pro 11.6, a new default view for History was introduced. Partially-cloned apps automatically get the older blocking dialog and through the [Version Control Preferences](/refguide/preferences-dialog/#history-pane), you can choose to keep using the blocking dialog for all apps.
 
 When using the Revision Selector to select a revision to revert, to merge from, create a branch line off, or to create a deployment archive from, the blocking dialog is still used.
 
-For more information on the blocking dialog, please refer to the [Mendix 10 documentation](/refguide10/history-dialog/).
+For more information on the blocking dialog, refer to the [Mendix 10 documentation](/refguide10/history-dialog/).
 {{% /alert %}}
 
 ## Revisions
@@ -23,9 +23,9 @@ Each line in the grid represents a revision in the repository.
 
 ### Search and Filters
 
-There are different filter options available to help finding specific revisions. 
+There are different filter options available to help find specific revisions:
 
-* The search bar looks in all fields of the revisions grid, as well as in the details of the commit such as the Model changes, Disk changes and Stories.
+* The search bar looks in all fields of the revisions grid and in the details of the commit, such as the Model changes, Disk changes and Stories.
 * The date filter allows specifying a date range for revisions. The available presets help to quickly select a range.
 * The document filter allows selecting a document, such as a specific microflow, to filter all revisions on.
 
@@ -50,9 +50,9 @@ A unique alphanumeric identifier of the revision in the repository. The revision
 
 Shows the state of the revision in relation to the server. It can have one of the following values:
 
-* **Synced** - shown when revision exists locally as well as on the server.
-* **Local** - shown when the revision is only available locally, because a local commit was made.
-* **On server** - shown when the revision is only available on the server. This is an indicator there is incoming work that will have to be merged before being able to push new commits to the server.
+* **Synced** – shown when revision exists locally as well as on the server
+* **Local** – shown when the revision is only available locally, because a local commit was made
+* **On server** – shown when the revision is only available on the server; this is an indicator there is incoming work that will have to be merged before being able to push new commits to the server
 
 #### Author{#author}
 
@@ -64,7 +64,7 @@ The date the revision was created.
 
 #### Message{#message}
 
-The message saved with the commit. If the message is long, you can read it more easily in the Message tab page by selecting the revision.
+The message saved with the commit. If the message is long, you can read it more easily in the **Message** tab page by selecting the revision.
 
 ## Details of Revisions
 
