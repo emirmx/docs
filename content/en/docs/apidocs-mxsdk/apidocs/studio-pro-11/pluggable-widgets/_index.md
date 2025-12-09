@@ -252,7 +252,7 @@ This section is represented by the `properties` tag in the widget XML file. It d
 
 ### How to Enhance Your Pluggable Widget for Maia by Using `<prompt>`
 
-Maia can help developers and users work more effectively with pluggable widgets by understanding their purpose and configuration options. To enable this, you can enhance your widget definition XML file with prompt elements that describe your widget's functionality in natural language.
+Maia can help developers and users work more effectively with pluggable widgets when it understands their purpose and configuration options. To enable this, you can enhance your widget definition XML file with prompt elements that describe your widget's functionality in natural language.
 
 Maia uses these prompts to understand what your widget does and how its properties should be configured, allowing it to provide better assistance when users are building their applications.
 
