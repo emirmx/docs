@@ -1,7 +1,7 @@
 ---
 title: "Create Item with Item Revision"
 url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/create-item-with-item-revision/
-description: "Provide step by step guide to use \"Create Item with Item Revision\" action in Teamcenter Extension."
+description: "Provides step by step guide to use \"Create Item with Item Revision\" action in Teamcenter Extension."
 weight: 2
 ---
 
