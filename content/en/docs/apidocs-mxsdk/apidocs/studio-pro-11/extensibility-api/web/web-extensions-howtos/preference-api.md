@@ -63,9 +63,8 @@ The code uses the:
 * `messageBoxApi` from `studioPro.ui.messageBoxes` to show a dialog
 * `preferencesApi` from `studioPro.ui.preferences` to retrieve the current configuration
 
-{{% alert color="info" %}}
-The function is `async` in order for you to use `await` when fetching the preferences.
-{{% /alert %}}
+    {{% alert color="info" %}} The function is `async` in order for you to use `await` when fetching the preferences.
+    {{% /alert %}}
 
 The `getPreferences()` function returns an object with two properties:
 
