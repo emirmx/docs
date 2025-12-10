@@ -35,7 +35,6 @@ For each revision the following information is shown, more information about eac
 
 * [Revision](#revision)
 * [Status](#status)
-* [Changes](#changes)
 * [Author](#author)
 * [Date/Time](#datetime)
 * [Message](#message)
