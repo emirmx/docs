@@ -7,7 +7,7 @@ description: "Describes the Teamcenter Connector domain model."
 
 ## Introduction
 
-The Domain Model is a data model that describes the information in your application domain in an abstract way. It is central to the architecture of your application. The Domain Model consists of [entities](/refguide/entities/) and their relations that are represented by [associations](refguide/associations/).
+The Domain Model is a data model that describes the information in your application domain in an abstract way. It is central to the architecture of your application. The Domain Model consists of [entities](/refguide/entities/) and their relations that are represented by [associations](/refguide/associations/).
 
 The Teamcenter Connector for Mendix Domain Model represents Teamcenter business object types and their properties.
 
