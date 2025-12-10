@@ -161,7 +161,7 @@ If your app is configured to [restrict access for incoming requests](/developerp
 
 ### Running on self-hosted for airgapped and on-premises {#run-private-service-and-on-premises}
 
-{{% alert color="info" %}}When self-hosting the Document Generation Service in an airgapped environment, the browser will not have access to the internet. Be aware that any external dependencies such as fonts, stylesheets, or images will not be loaded, and could cause the document generation to fail or result in incomplete documents.{{% /alert %}}
+{{% alert color="info" %}} When self-hosting the Document Generation Service in an airgapped environment, the browser does not have access to the internet. As such, note that any external dependencies such as fonts, stylesheets, or images are not loaded. This could cause the document generation process to fail or result in incomplete documents. {{% /alert %}}
 
 #### Running Private PDF Document Generation Service {#run-private-service}
 
@@ -181,21 +181,23 @@ To configure the module to generate documents on your on-premises environments, 
 
 You should pre-install and actively maintain the following software. Mendix does not provide support for the installation, configuration, and maintenance of these packages.
 
-###### Chromium
+**Chromium**
 
 You should have installed a stable release of the Chromium browser. The currently supported stable release is 112.0.5615.0 ([Windows](https://storage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win_x64/1109252/). [Linux](https://storage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Linux_x64/1109252/)).
 
 {{% alert color="info" %}}Even though we advise using Chromium, you can also use Google Chrome instead. The configuration remains the same.{{% /alert %}}
 
-###### Node.js
+**Node.js**
 
 You should have installed a stable release of [Node.js](https://nodejs.org/).  Mendix recommends installing the same version that is shipped with the Studio Pro version that is used to build the project. You can find this version by locating and executing the `node` executable within the `modeler/tools/node` folder of your Studio Pro installation.
 
 {{% alert color="info" %}}Make sure that the Mendix Runtime has the applicable permissions to run the *node* executable.{{% /alert %}}
 
-###### Certificate Requirements
+##### Certificate Requirements
 
-Both the Mendix and Node.js runtime need to trust the SSL/TLS certificate that is used to secure connections to the Mendix app. In case you are using a custom Certificate Authority (CA), make sure that the Node.js runtime trusts the CA. If Node.js does not recognize the CA by default, set the `NODE_EXTRA_CA_CERTS` environment variable to point to the applicable certificate file (`.cert` or `.pem` format). Be aware that the user account that is used to execute the Mendix runtime needs read access to this file.
+Both the Mendix and Node.js runtime need to trust the SSL/TLS certificate that is used to secure connections to the Mendix app. If you are using a custom Certificate Authority (CA), make sure that the Node.js runtime trusts the CA. If Node.js does not recognize the CA by default, set the `NODE_EXTRA_CA_CERTS` environment variable to point to the applicable certificate file, which should be in a `.cert` or `.pem` format. 
+
+The user account that is used to execute the Mendix runtime needs read access to the certificate file.
 
 ##### Configuring the Module to use the Local Service {#configure-local-service}
 
