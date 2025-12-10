@@ -48,7 +48,6 @@ The [PDF Document Generation](https://marketplace.mendix.com/link/component/2115
 * For local development, we use the Chrome or Chromium executable that is available on the development machine. Even though we have not observed these yet, there might be minor differences in PDF output locally versus when using the cloud service.
 * The access and refresh tokens used to secure requests to the cloud service are stored unencrypted in the app database. No user roles have read access to these tokens, and all communication with the cloud service is encrypted by requiring HTTPS. However, do consider this when sharing a backup of the database with other developers. We will introduce encryption at a later stage.
 * If you have the [Application Performance Monitor (APM)](/appstore/partner-solutions/apd/) or [Application Performance Diagnostics (APD)](/appstore/partner-solutions/apd/) add-on enabled in your app, or the log level of the **Services** log node set to *Trace*, the PDF Document Generation module will not be able to generate documents when used in Mendix Cloud. This limitation is only applicable for apps built in Mendix 9.24.5 and below and Mendix 10.0.0.
-* When running the Document Generation Service in an air-gapped environment, Chromium cannot access the internet, so external dependencies such as fonts, stylesheets, or images will not load. Only resources included in the Mendix app or available on the internal network will work.
 
 ### Dependencies
 
@@ -162,6 +161,8 @@ If your app is configured to [restrict access for incoming requests](/developerp
 
 ### Running on self-hosted for airgapped and on-premises {#run-private-service-and-on-premises}
 
+{{% alert color="info" %}}When self-hosting the Document Generation Service in an airgapped environment, the browser will not have access to the internet. Be aware that any external dependencies such as fonts, stylesheets, or images will not be loaded, and could cause the document generation to fail or result in incomplete documents.{{% /alert %}}
+
 #### Running Private PDF Document Generation Service {#run-private-service}
 
 When access to the public Mendix PDF generation Service is restricted, particularly in isolated or airgapped environments, Mendix offers a privately hosted, Docker containerized PDF Document Generation Service as an alternative. With this deployment type, you can host the document generation service on your own infrastructure and have full control over resources, availability and scalability. In addition, this option offers configurable limits, such as the maximum file size and maximum page rendering time.
@@ -194,9 +195,7 @@ You should have installed a stable release of [Node.js](https://nodejs.org/).  M
 
 ###### Certificate Requirements
 
-Both the Mendix Runtime user and the Node.js component used by the DocGen Service must trust the Certificate Authority (CA). The user account running the Mendix Runtime needs read access to the CA certificate to verify the domain name, and the Node.js installation must also trust the same CA certificate.
-
-If Node.js does not have access to the certificate CA by default, set the `NODE_EXTRA_CA_CERTS` environment variable to point to your certificate file (`.cert` or `.pem` format).
+Both the Mendix and Node.js runtime need to trust the SSL/TLS certificate that is used to secure connections to the Mendix app. In case you are using a custom Certificate Authority (CA), make sure that the Node.js runtime trusts the CA. If Node.js does not recognize the CA by default, set the `NODE_EXTRA_CA_CERTS` environment variable to point to the applicable certificate file (`.cert` or `.pem` format). Be aware that the user account that is used to execute the Mendix runtime needs read access to this file.
 
 ##### Configuring the Module to use the Local Service {#configure-local-service}
 
