@@ -7,31 +7,31 @@ weight: 70
 
 ## Introduction
 
-Parameters are the means by which you pass data to your logic. When a page is loaded, the parameters are filled with the current values.
+Parameters are the means by which you pass data to your page. When a page is loaded, the parameters are filled with the current values.
 
-If you want to use an object or primitive in your page, use the parameter. In the image below, the parameter name is **CustomerName** is of **Type** `string`, is not **Required** and has a **Default value** shown in string empty.
+If you want to use an object or primitive in your page, use a parameter. In the image below, the parameter's name is **CustomerName** is of **Type** `string`, is not **Required** and has a **Default value** shown in string empty.
 
 {{< figure src="/attachments/refguide/modeling/pages/page/page-parameter.png" class="no-border" >}}
 
-## Common Section
-
-The **Documentation** property can be used to store developer documentation. This can be used to explain to other developers about the parameter. End-users will never see this documentation.
-
 ## Output Section
+
+### Name
+
+**Name** refers to the name of the parameter.
 
 ### Data Type
 
-The data type of a parameter defines the type of the value that it expects. See [Data Types](/refguide/data-types/) for the possible data types.
+The data type of a parameter defines the type of the value that it expects. Possible data types are **objects**, and **primitives** such as `Boolean`, `Date and time`, `Decimal`, `Enumeration`, `Integer/Long`, and `String`.
 
 Default: *Object*
 
 ### Argument {#argument}
 
-Determines whether the argument is optional or required. When the argument is set to be **Optional**, it can be omitted when opening the page. When the argument is set to be **Required**, an argument must be passed.
+The page has a parameter, which can be made required or optional. If it is required it is mandatory to supply an argument for that parameter when opening a page.
 
 #### Default Value
 
-When an argument is set to **optional**, a default value can be set:
+When an argument is set to **optional**, a default value can be set. When a default value is set if the parameter is omitted, the default value will be used. In the example below, if the parameter is omitted by the user an empty string `''` will be used for the parameter. 
 
 {{< figure src="/attachments/refguide/modeling/pages/page/page-parameter-default-value.png" max-width=70% >}}
 
@@ -39,9 +39,11 @@ When an argument is set to **optional**, a default value can be set:
  The default value is used when the argument is omitted, not when the argument value is `empty`.
 {{% /alert %}}
 
-### Name
+## Passing Arguments from a caller
 
-**Name** refers to the name of the parameter.
+When using an **Show page** action form a microflow, nanoflow or button, you can pass arguments in two primary ways, depending on the data type of the argument.
+
+{{< figure src="/attachments/refguide/modeling/pages/page/page-parameter-mappings.png" width="500px" >}}
 
 ### Variable Arguments
 
