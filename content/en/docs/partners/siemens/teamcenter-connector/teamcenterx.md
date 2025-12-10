@@ -1,7 +1,7 @@
 ---
 title: "Configuring the Connection to Teamcenter X"
 url: /partners/siemens/teamcenterx/
-weight: 3
+weight: 2
 description: "Describes the steps to connect to Teamcenter X."
 ---
 

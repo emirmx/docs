@@ -2,7 +2,7 @@
 title: "Designing Mendix Applications with Single or Multiple Active Teamcenter Configurations"
 linktitle: "Designing Mendix applications"
 url: /partners/siemens/designing-applications/
-weight: 2
+weight: 3
 description: "Describes the process of designing Mendix application with single of multiple active Teamcenter configurations."
 ---
 
