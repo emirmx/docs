@@ -48,6 +48,7 @@ The [PDF Document Generation](https://marketplace.mendix.com/link/component/2115
 * For local development, we use the Chrome or Chromium executable that is available on the development machine. Even though we have not observed these yet, there might be minor differences in PDF output locally versus when using the cloud service.
 * The access and refresh tokens used to secure requests to the cloud service are stored unencrypted in the app database. No user roles have read access to these tokens, and all communication with the cloud service is encrypted by requiring HTTPS. However, do consider this when sharing a backup of the database with other developers. We will introduce encryption at a later stage.
 * If you have the [Application Performance Monitor (APM)](/appstore/partner-solutions/apd/) or [Application Performance Diagnostics (APD)](/appstore/partner-solutions/apd/) add-on enabled in your app, or the log level of the **Services** log node set to *Trace*, the PDF Document Generation module will not be able to generate documents when used in Mendix Cloud. This limitation is only applicable for apps built in Mendix 9.24.5 and below and Mendix 10.0.0.
+* When running the Document Generation Service in an air-gapped environment, Chromium cannot access the internet, so external dependencies such as fonts, stylesheets, or images will not load. Only resources included in the Mendix app or available on the internal network will work.
 
 ### Dependencies
 
@@ -190,6 +191,12 @@ You should have installed a stable release of the Chromium browser. The currentl
 You should have installed a stable release of [Node.js](https://nodejs.org/).  Mendix recommends installing the same version that is shipped with the Studio Pro version that is used to build the project. You can find this version by locating and executing the `node` executable within the `modeler/tools/node` folder of your Studio Pro installation.
 
 {{% alert color="info" %}}Make sure that the Mendix Runtime has the applicable permissions to run the *node* executable.{{% /alert %}}
+
+###### Certificate Requirements
+
+Both the Mendix Runtime user and the Node.js component used by the DocGen Service must trust the Certificate Authority (CA). The user account running the Mendix Runtime needs read access to the CA certificate to verify the domain name, and the Node.js installation must also trust the same CA certificate.
+
+If Node.js does not have access to the certificate CA by default, set the `NODE_EXTRA_CA_CERTS` environment variable to point to your certificate file (`.cert` or `.pem` format).
 
 ##### Configuring the Module to use the Local Service {#configure-local-service}
 
