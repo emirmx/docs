@@ -8,7 +8,7 @@ weight: 7
 ## Introduction {#introduction}
 The “Attach Dataset to Item Revision” action allows you to generate the domain model and microflows to create and attach Teamcenter datasets (or its specializations) containing file documents to an Item Revision in Teamcenter. For those not familiar with Teamcenter, a dataset essentially is a container for files and related metadata. If you want to attach a document to a Teamcenter object, you do this using datasets. 
 
-Let us walk through a use case where we want to attach a PDF document to an Item Revision with a Specification relation.
+This document takes you through a use case where we want to attach a PDF document to an Item Revision with a Specification relation. 
 
 ## Step-by-step Guide {#step-by-step-guide}
 1. Make sure you have set up your credentials in the settings tab before following these instructions. For more instructions on how to configure your settings, follow the steps [here]. 
@@ -17,8 +17,8 @@ Let us walk through a use case where we want to attach a PDF document to an Item
 3. You will land on the [import mapping page](https://docs.mendix.com/refguide/import-mappings/). This determines what data is retrieved from Teamcenter and what type of objects are created in Mendix.  
 Click on one of the placeholder entities to start the import mapping.
  {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/attach-datasets-to-item-revision/import-mapping.png">}}
-4. In the object mapping dialog that opens, the left side shows Teamcenter dataset objects (out of the box and custom) retrieved from the Teamcenter instance. For this use case, select “Dataset” 
-The right side shows the relevant Mendix entities that can serve as input parameters for the microflow to attach datasets. In our case, we want to have an entity specifically for Datasets. Hence, we select *TcConnector.Dataset* and then click on the checkbox to *Create new Specialization of selected Entity*. The entity will automatically be named Dataset after the Teamcenter Object name, but it can be renamed here if required. Now click on OK, to finish the object mapping and close the object mapping dialog.
+4. In the object mapping dialog that opens, the left side shows Teamcenter dataset objects (out of the box and custom) retrieved from the Teamcenter instance. For this use case, select `Dataset` 
+The right side shows the relevant Mendix entities that can serve as input parameters for the microflow to attach datasets. In our case, we want to have an entity specifically for `Datasets`. Hence, we select `TcConnector.Dataset` and then click on the checkbox to *Create new Specialization of selected Entity*. The entity will automatically be named Dataset after the Teamcenter Object name, but it can be renamed here if required. Now click on *OK*, to finish the object mapping and close the object mapping dialog.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/attach-datasets-to-item-revision/object-mapping.png">}}
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/attach-datasets-to-item-revision/object-mapping-result.png">}}
 5. Closing the object mapping dialog opens the attributes and associations sidebar. Here you can select from all properties available on the selected object. For our use case, we will not be adding any additional properties so you can close the panel by clicking on the backdrop
@@ -39,11 +39,11 @@ Close the panel
 ## Result {#result}
 ### Domain Model {#domain-model}
 The extension generated the following entities in your domain model. 
-* `Dataset` – This is an entity to represent a Dataset object from Teamcenter. This serves as an input to microflow that attaches datasets.  
+* `Dataset` – This is an entity to represent a `Dataset` object from Teamcenter. This serves as an input to microflow that attaches datasets.  
 
 ### Microflows {#microflows}
 Since we chose specific options in Step 6, the following microflow is generated 
-* `Dataset_AttachDataset` – This microflow implements the logic to create and attach PDF dataset type with PDF_Reference file type and Specification relations to an Item Revision 
+* `Dataset_AttachDataset` – This microflow implements the logic to create and attach PDF dataset type with `PDF_Reference` file type and Specification relations to an `Item Revision` 
 
 Depending on what options are chosen in the configure panel (step 7), additional microflows are generated.  
 * `GetAvailableDatasetTypes` – This microflow implements the logic to retrieve all available dataset types
