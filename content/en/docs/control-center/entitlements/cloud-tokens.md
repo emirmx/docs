@@ -112,6 +112,10 @@ GenAI Resource Packs provide turn-key access to Generative AI technology, delive
 | M | 12 |
 | L | 24 |
 
+| GenAI Knowledge Base Resource Packs | Mendix Cloud Tokens |
+| --- | --: |
+| Standard | 48 |
+
 ## Key Takeaways
 
 * Mendix Cloud Tokens are a specific type of Token used to access Cloud Resources in the Mendix Platform.
