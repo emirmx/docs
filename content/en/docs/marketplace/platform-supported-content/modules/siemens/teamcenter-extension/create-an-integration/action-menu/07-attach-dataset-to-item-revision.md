@@ -1,7 +1,7 @@
 ---
-title: "Attach Datasets to Item Revision"
-url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/attach-datasets-to-item-revision/
-description: "Provides step by step guide to use \"Attach Datasets to Item Revision\" action in Teamcenter Extension."
+title: "Attach Dataset to Item Revision"
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/attach-dataset-to-item-revision/
+description: "Provides step by step guide to use \"Attach Dataset to Item Revision\" action in Teamcenter Extension."
 weight: 7
 ---
 
@@ -13,16 +13,16 @@ This document takes you through a use case where we want to attach a PDF documen
 ## Step-by-step Guide {#step-by-step-guide}
 1. Make sure you have set up your credentials in the settings tab before following these instructions. For more instructions on how to configure your settings, follow the steps [here]. 
 2. Click on the Attach Dataset to Item Revision button on the home page to start configuring your integration.
-{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/attach-datasets-to-item-revision/attach-datasets-to-item-revision.png">}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/attach-dataset-to-item-revision/attach-dataset-to-item-revision.png">}}
 3. You will land on the [import mapping page](https://docs.mendix.com/refguide/import-mappings/). This determines what data is retrieved from Teamcenter and what type of objects are created in Mendix.  
 Click on one of the placeholder entities to start the import mapping.
- {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/attach-datasets-to-item-revision/import-mapping.png">}}
+ {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/attach-dataset-to-item-revision/import-mapping.png">}}
 4. In the object mapping dialog that opens, the left side shows Teamcenter dataset objects (out of the box and custom) retrieved from the Teamcenter instance. For this use case, select `Dataset` 
 The right side shows the relevant Mendix entities that can serve as input parameters for the microflow to attach datasets. In our case, we want to have an entity specifically for `Datasets`. Hence, we select `TcConnector.Dataset` and then click on the checkbox to *Create new Specialization of selected Entity*. The entity will automatically be named Dataset after the Teamcenter Object name, but it can be renamed here if required. Now click on *OK*, to finish the object mapping and close the object mapping dialog.
-{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/attach-datasets-to-item-revision/object-mapping.png">}}
-{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/attach-datasets-to-item-revision/object-mapping-result.png">}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/attach-dataset-to-item-revision/object-mapping.png">}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/attach-dataset-to-item-revision/object-mapping-result.png">}}
 5. Closing the object mapping dialog opens the attributes and associations sidebar. Here you can select from all properties available on the selected object. For our use case, we will not be adding any additional properties so you can close the panel by clicking on the backdrop
-{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/attach-datasets-to-item-revision/property-mapping.png">}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/attach-dataset-to-item-revision/property-mapping.png">}}
 6. Double Click on the annotation “Attach any dataset” to open the configure panel. 
 This panel lets you choose if you want to configure settings such as dataset type, file type and relation name, needed to upload datasets, inside the extension or have them provided as input parameters to the generated microflows  
 Since we are particularly interested in building the logic to attach a PDF document to item revision, make the following selections by turning on the switches. 
@@ -30,11 +30,11 @@ Since we are particularly interested in building the logic to attach a PDF docum
    * File Type –> PDF_Reference (*.pdf)
    * Relation Name –> Specifications
      
-   {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/attach-datasets-to-item-revision/configure-dataset-attachment.png">}}
+   {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/attach-dataset-to-item-revision/configure-dataset-attachment.png">}}
 Close the panel 
 7. Click on the Generate button to generate the appropriate domain model and microflows  
 8. Once the generation is done, you will be redirected to the History tab which shows a summary of what has been generated.
-{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/attach-datasets-to-item-revision/history.png">}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/attach-dataset-to-item-revision/history.png">}}
 
 ## Result {#result}
 ### Domain Model {#domain-model}
