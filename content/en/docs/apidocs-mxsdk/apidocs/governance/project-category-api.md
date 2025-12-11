@@ -34,4 +34,4 @@ Authorization: MxToken 7LJE…vk
 
 ## API Reference{#api-reference}
 
-{{< swaggerui-disable-try-it-out src="/openapi-spec/categories-api-spec.yaml"  >}}
+{{< swaggerui-disable-try-it-out src="/openapi-spec/categories-v1.yaml"  >}}
