@@ -14,6 +14,14 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 ## 2025
 
+### December 15, 2025
+
+#### New Features
+
+* The Control Center **Company** section now includes a new page, **Project Categories**. It allows you to manage the categories that can be assigned to your company's apps, thus facilitating classification and searchability. You can also manage categories using the new [Project Category API](/apidocs-mxsdk/apidocs/project-category-api/).    
+    For details on the new page, refer to [Project Categories](/control-center/project-categories/).    
+    For details on the corresponding app filter, refer to [Apps](/developerportal/).
+
 ### November 9, 2025
 
 #### Improvements
