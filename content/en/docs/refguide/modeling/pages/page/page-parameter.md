@@ -9,7 +9,7 @@ weight: 70
 
 Parameters are the means by which you pass data to your page. When a page is loaded, the parameters are filled with the current values.
 
-To use an object or primitive value in your page, define a parameter. In the image below, the parameter is named CustomerName, is of type string, is not required, and has a default value of an empty string `''`.
+To use an object or primitive value in your page, define a parameter. In the image below, the parameter is named **CustomerName**, is of type string, is not required, and has a default value of an empty string `''`.
 
 {{< figure src="/attachments/refguide/modeling/pages/page/page-parameter.png" class="no-border" >}}
 
@@ -27,7 +27,7 @@ Default: *Object*
 
 ### Argument {#argument}
 
-Determines whether it is **required** or **optional** to [pass an argument](/refguide/page-parameter/#passing-arguments) to the parameter when opening the page. If it is required it is mandatory to supply an argument for that parameter when opening a page.
+Argument determines whether it is **required** or **optional** to [pass an argument](/refguide/page-parameter/#passing-arguments) to the parameter when opening the page. If it is required it is mandatory to supply an argument for that parameter when opening a page.
 
 ### Default Value
 
@@ -36,7 +36,7 @@ When an argument is set to **optional**, a default value can be set. When a defa
 {{< figure src="/attachments/refguide/modeling/pages/page/page-parameter-default-value.png" max-width=70% >}}
 
 {{% alert color="info" %}}
-  The default value is used when the argument is omitted during **modeling**. Not when the argument value is `empty` during **runtime**.
+The default value is used when the argument is omitted during **modeling**. Not when the argument value is `empty` during **runtime**.
 {{% /alert %}}
 
 ## Passing Arguments {#passing-arguments}
@@ -53,6 +53,6 @@ Variable arguments are used to pass parameters from the context to the page. Thi
 
 ### Expression-Based Arguments
 
-Objects and primitive values, such as `Boolean`, `Date and time`, `Decimal`, `Enumeration`, `Integer/Long`, and `String`, can be passed and used in expressions. This method allows users to use functions and follow associations within the expression to set the argument values. Using expressions for arguments provides flexibility in setting values and improves the functionality of pages. In the example below, the page has a parameter **AnimalName** which is populated by an expression extracting the **Name** member of the provided **Animal** object.
+Objects and primitive values, such as `Boolean`, `Date and time`, `Decimal`, `Enumeration`, `Integer/Long`, and `String`, can be passed and used in expressions. This method allows users to use functions and follow associations within the expression to set the argument values. Using expressions for arguments provides flexibility in setting values and improves the functionality of pages. In the example below, the page has a parameter **AnimalName** which is populated by an expression extracting the **Name** member of the provided **Animal** object:
 
 {{< figure src="/attachments/refguide/modeling/pages/page/page-parameter-expression.png" width="500px" >}}
