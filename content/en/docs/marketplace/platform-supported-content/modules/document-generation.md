@@ -133,7 +133,9 @@ To allow the module to send and receive document generation requests on your Men
     
     5. Fill in the fields as follows:
         * In the **Path** field, enter */docgen/*.
-        * From the **New Restriction Type** drop-down list, select *Allow all access*.
+        * From the **New Restriction Type** drop-down list, select one of the following options:
+            * **Allow all access** – Allows unrestricted bi-directional access to the `/docgen/` path.
+            * **Custom Profile for Client Certificates and/or IP ranges** – Applies a custom access restriction profile to the `/docgen/` path. When you select this option, choose your access restriction profile from the **New Restriction Profile** drop-down list. Ensure that the selected profile allows bi-directional access to the `/docgen/` path. For more information on creating and managing access restriction profiles, see [Access Restrictions](/developerportal/deploy/access-restrictions/).
     
     6. Click **Save**. The **/docgen/** path is added to the list.
     
