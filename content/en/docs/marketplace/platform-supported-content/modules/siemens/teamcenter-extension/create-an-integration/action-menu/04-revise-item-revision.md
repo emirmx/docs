@@ -1,6 +1,6 @@
 ---
 title: "Revise Item Revision"
-url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/revise-item-revision/
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/revise-item-revision/
 description: "Provides step by step guide to use \"Revise Item Revision\" action in Teamcenter Extension."
 weight: 4
 ---

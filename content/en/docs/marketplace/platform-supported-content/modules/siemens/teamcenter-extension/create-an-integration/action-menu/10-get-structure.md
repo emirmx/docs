@@ -1,8 +1,8 @@
 ---
-title: "Get Datasets for Item Revision"
-url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/get-datasets-for-item-revision/
+title: "Get Structure"
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/get-structure/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
-weight: 6
+weight: 10
 ---
 
 ## Introduction {#introduction}

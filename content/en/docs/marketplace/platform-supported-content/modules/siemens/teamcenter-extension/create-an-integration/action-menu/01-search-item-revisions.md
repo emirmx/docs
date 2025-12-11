@@ -1,6 +1,6 @@
 ---
 title: "Search Item Revisions"
-url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/search-item-revisions/
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/search-item-revisions/
 description: "Provides step by step guide to use \"Search Item Revisions\" action in Teamcenter Extension."
 weight: 1
 ---

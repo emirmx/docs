@@ -1,8 +1,8 @@
 ---
-title: "Search Workspace Object"
-url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/search-workspace-object/
+title: "Get Datasets for Item Revision"
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/get-datasets-for-item-revision/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
-weight: 8
+weight: 6
 ---
 
 ## Introduction {#introduction}

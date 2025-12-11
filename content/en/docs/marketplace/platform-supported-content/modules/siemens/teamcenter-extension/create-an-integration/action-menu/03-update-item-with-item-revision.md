@@ -1,6 +1,6 @@
 ---
 title: "Update Item with Item Revision"
-url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/update-item-with-item-revision/
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/update-item-with-item-revision/
 description: "Provides step by step guide to use \"Update Item with Item Revision\" action in Teamcenter Extension."
 weight: 3
 ---

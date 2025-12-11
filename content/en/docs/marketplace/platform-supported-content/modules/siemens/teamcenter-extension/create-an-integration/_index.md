@@ -2,7 +2,7 @@
 title: "Create an Integration"
 url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
-weight: 2
+weight: 1
 ---
 
 ## Main Menu {#main-menu}

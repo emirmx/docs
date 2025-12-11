@@ -1,6 +1,6 @@
 ---
 title: "Attach Datasets to Item Revision"
-url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/attach-datasets-to-item-revision/
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/attach-datasets-to-item-revision/
 description: "Provides step by step guide to use \"Attach Datasets to Item Revision\" action in Teamcenter Extension."
 weight: 7
 ---

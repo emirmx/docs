@@ -1,6 +1,6 @@
 ---
 title: "Search Datasets"
-url: /appstore/modules/siemens-plm/teamcenter-extension/action-menu/search-datasets/
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/search-datasets/
 description: "Provides step by step guide to use \"Search Datasets\" action in Teamcenter Extension."
 weight: 5
 ---

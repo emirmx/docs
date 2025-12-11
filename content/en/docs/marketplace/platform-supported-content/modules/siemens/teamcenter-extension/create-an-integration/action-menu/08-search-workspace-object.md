@@ -1,8 +1,8 @@
 ---
-title: "Extension Configuration"
-url: /appstore/modules/siemens-plm/teamcenter-extension/extension-configuration/
+title: "Search Workspace Object"
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/search-workspace-object/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
-weight: 1
+weight: 8
 ---
 
 ## Introduction {#introduction}
