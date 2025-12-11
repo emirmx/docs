@@ -116,7 +116,7 @@ To allow the module to send and receive document generation requests on your Men
 
 2. Make sure that you have the application [deployed to the desired Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/).
 
-3. To allow the module to send and receive document generation requests in your Mendix Cloud environments, enable the DocGen request handler as follows:
+3. If the app does not have any access restrictions, you can skip this step. If the app has a configured Access Restriction Profile that disables communication with the internet, you need to make sure that the app can communicate with the Document Generation service in the Public Cloud. To allow the module to send and receive document generation requests in your Mendix Cloud environments, enable the DocGen request handler as follows:
 
     1. Go to the **Environments** page for the app as follows:
 
@@ -134,14 +134,18 @@ To allow the module to send and receive document generation requests on your Men
     5. Fill in the fields as follows:
         * In the **Path** field, enter */docgen/*.
         * From the **New Restriction Type** drop-down list, select one of the following options:
-            * **Allow all access** – Allows unrestricted bi-directional access to the `/docgen/` path.
-            * **Custom Profile for Client Certificates and/or IP ranges** – Applies a custom access restriction profile to the `/docgen/` path. When you select this option, choose your access restriction profile from the **New Restriction Profile** drop-down list. Ensure that the selected profile allows bi-directional access to the `/docgen/` path. For more information on creating and managing access restriction profiles, see [Access Restrictions](/developerportal/deploy/access-restrictions/).
+            * **Allow all access** - Allows unrestricted bi-directional access to the `/docgen/` path. This is less secure and will enable the internet to reach the app on this path.
+            * **Custom Profile for Client Certificates and/or IP ranges** - Applies a custom access restriction profile to the `/docgen/` path. When you select this option, choose your access restriction profile from the **New Restriction Profile** drop-down list. Ensure that the selected profile allows bi-directional access to the `/docgen/` path. To configure the required IP addresses, follow the [Allowing the Document Generation Service IP Addresses](#allow-ip) section. For more information on managing access restriction profiles, see [Access Restrictions](/developerportal/deploy/access-restrictions/).
     
     6. Click **Save**. The **/docgen/** path is added to the list.
     
     7. Restart your application for the new request handler to take effect.
     
     8. Now you can [register your app environments](#register-app).
+
+#### Allowing the Document Generation Service IP Addresses {#allow-ip}
+
+If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using IP restrictions, you must add the [outbound IP addresses of the DocGen service](/developerportal/deploy/mendix-ip-addresses/#global-platform-ips-outbound) to the list of allowed addresses.    
 
 #### Registering Your App Environments {#register-app}
 
@@ -157,9 +161,6 @@ To allow the module to send and receive document generation requests on your Men
 
 {{% alert color="info" %}}Each of your app environments needs to be registered separately. A successful app registration is limited to the app URL that was provided during the registration. Note that a change in the app URL, or restoring a database backup from one environment to another, will require you to register the affected app environments again.{{% /alert %}}
 
-#### Allowing the Document Generation Service IP Addresses {#allow-ip}
-
-If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using IP restrictions, you must add the [outbound IP addresses of the DocGen service](/developerportal/deploy/mendix-ip-addresses/#global-platform-ips-outbound) to the list of allowed addresses.
 
 ### Running on self-hosted for airgapped and on-premises {#run-private-service-and-on-premises}
 
