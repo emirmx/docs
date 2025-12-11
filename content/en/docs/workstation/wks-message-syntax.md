@@ -28,18 +28,27 @@ This device type requires the following message and response:
 ## File Device {#file-device}
 
 This device type requires the following message and response:
+
+### Important Considerations
+
+Before sending messages to the File Device, please review these important points:
+
+* **Path Handling:** Paths can be provided either as absolute paths (e.g., /var/log/app.log or C:\Data\report.txt) or as relative paths.
+* **Relative Paths:** Relative paths are always interpreted relative to the allowed folder configured in the Workstation Management.
+* **Delimiter:** The # character is used as a delimiter within messages. Paths and data are not allowed to contain the # character. 
+* **Case Sensitivity:** File and directory paths may be case-sensitive depending on the underlying operating system (e.g., Linux paths are typically case-sensitive, Windows paths are not).
  
 ### Message
 
-* `0#Directory` - Watch for changes in `Directory`. If `Directory` is a file path, then watch for changes in the file. `Directory` is relative to the folder configured in Workspace management. Environment variables (for example, `%public%`) are supported.
-* `1#Directory` - Stop watching for changes in `Directory`.  
-* `2#File path` - Read file at `File path`.
-* `3#File path#Data#flag` - Write to file at `File path`. The `flag` can be `w` for overwrite, `a` for append If left blank, the value defaults to `w`.
+* `0#Path` - Initiate watching for changes in the specified `Path`. If `Path` is a directory, the device will watch for changes within that directory (creation, deletion, renaming, or modification of files/subdirectories). If Path is a file, the device will watch for changes to that specific file (modification, deletion, or renaming).
+* `1#Path` - Stop watching for changes in the specified `Path`.
+* `2#File path` - Read the content of the file at the specified `File Path`.
+* `3#File path#Data#flag` - Write `Data` to the file at the specified `File Path`. The `flag` can be `w` for overwrite, `a` for append If left blank, the value defaults to `w`.
 
 ### Response
 
-* `R#File name` - `File name` was renamed (also triggered when file is created and deleted)
-* `C#File name` - `File name` was changed
+* `R#Path` - File or directory at the specified `Path` was renamed (also triggered when file/directory is created or deleted)
+* `C#Path` - File or directory at the specified `Path` was changed. This is triggered both when a file is modified and when the contents of a directory changes. 
 * `D#Data` - `Data` from file read
 * `E#Error` - `Error` message from operating system
 * `S#{0,1,2,3}#directory` - The command `{0,1,2,3}` on `directory` was successful.
