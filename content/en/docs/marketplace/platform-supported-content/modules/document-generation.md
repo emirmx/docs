@@ -116,16 +116,16 @@ To allow the module to send and receive document generation requests on your Men
 
 2. Make sure that you have the application [deployed to the desired Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/).
 
-3. To allow the module to send and receive document generation requests in your Mendix Cloud environments, enable the DocGen request handler as follows:
+3. If the app does not have any access restrictions, you can skip this step. If the app has a configured [access restriction profile](/developerportal/deploy/environments/#access-restriction-profiles) that disables communication with the internet, you need to make sure that the app can communicate with the Document Generation service in the Public Cloud. To allow the module to send and receive document generation requests in your Mendix Cloud environments, enable the DocGen request handler as follows:
 
     1. Go to the **Environments** page for the app as follows:
 
-       * Go to the [Nodes](https://cloud.home.mendix.com/) page, then in the **My Nodes** list, find the desired app, and then click **Environments**.
-       * Alternatively, go to [Apps](https://sprintr.home.mendix.com), then in the **My Apps** list, find the desired app, and then click **Environments**.
+       * Go to the [Nodes](https://cloud.home.mendix.com/) page, then, in the **Public Cloud - Nodes** list, find the desired app, then click **Environments**.
+       * Alternatively, go to [Apps](https://sprintr.home.mendix.com), then in the **My Apps** list, find the desired app, then click **Environments**.
 
-        The app's **Environments** page opens. The **Deploy** tab shows a list of available environments for your app.
+        The app's **Environments** page opens. The **Overview** tab shows a list of available environments for your app.
     
-    2. On the **Deploy** tab, click **Details** for the respective environment.
+    2. On the **Overview** tab, click **Details** for the respective environment.
     
     3. In the specific **Environment Details** page, select the **Network** tab.
     
@@ -133,13 +133,22 @@ To allow the module to send and receive document generation requests on your Men
     
     5. Fill in the fields as follows:
         * In the **Path** field, enter */docgen/*.
-        * From the **New Restriction Type** drop-down list, select *Allow all access*.
+        * From the **New Restriction Type** drop-down list, select one of the following options:
+
+            * **Allow all access** – Allows unrestricted bidirectional access to the `/docgen/` path. This is less secure and gives full internet access to this path.
+            * **Custom Profile for Client Certificates and/or IP ranges** – Applies a custom access restriction profile to the `/docgen/` path. When you select this option, choose your access restriction profile from the **New Restriction Profile** drop-down list. Ensure that the selected profile allows bidirectional access to the `/docgen/` path.     
+            To configure the required IP addresses, follow the [Allowing the Document Generation Service IP Addresses](#allow-ip) section.     
+            For more information on managing access restriction profiles, refer to [Access Restrictions](/developerportal/deploy/access-restrictions/).
     
     6. Click **Save**. The **/docgen/** path is added to the list.
     
     7. Restart your application for the new request handler to take effect.
     
     8. Now you can [register your app environments](#register-app).
+
+#### Allowing the Document Generation Service IP Addresses {#allow-ip}
+
+If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using IP restrictions, you must add the [outbound IP addresses of the DocGen service](/developerportal/deploy/mendix-ip-addresses/#global-platform-ips-outbound) to the list of allowed addresses.    
 
 #### Registering Your App Environments {#register-app}
 
@@ -155,9 +164,6 @@ To allow the module to send and receive document generation requests on your Men
 
 {{% alert color="info" %}}Each of your app environments needs to be registered separately. A successful app registration is limited to the app URL that was provided during the registration. Note that a change in the app URL, or restoring a database backup from one environment to another, will require you to register the affected app environments again.{{% /alert %}}
 
-#### Allowing the Document Generation Service IP Addresses {#allow-ip}
-
-If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using IP restrictions, you must add the [outbound IP addresses of the DocGen service](/developerportal/deploy/mendix-ip-addresses/#global-platform-ips-outbound) to the list of allowed addresses.
 
 ### Running on self-hosted for airgapped and on-premises {#run-private-service-and-on-premises}
 
