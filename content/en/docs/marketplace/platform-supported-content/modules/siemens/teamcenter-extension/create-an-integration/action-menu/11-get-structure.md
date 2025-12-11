@@ -1,6 +1,6 @@
 ---
-title: "Get Properties"
-url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/get-properties/
+title: "Get Structure"
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/get-structure/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
 weight: 11
 ---
