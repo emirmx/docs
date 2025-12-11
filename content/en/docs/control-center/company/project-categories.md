@@ -30,7 +30,7 @@ Follow these steps to add a category:
 2. In the **Category Name** field, enter a name for the new category.
 3. Click **Add Value** to add one or more values for the new category.   
     You can add multiple values as a comma-separated list.    
-    Each entry consists of a unique name and code and an unique code will automatically generate a unique code for you. It is possible to edit the code after creation under the limitation that a new unique code is provided.
+    Each entry consists of a unique name and code. The unique code is automatically generated for you. You can edit it afterwards, as long as you provide a new unique code.
 
 ### Editing Categories
 
