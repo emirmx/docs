@@ -21,7 +21,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
-### December 15, 2025
+### December 14, 2025
 
 #### New Features
 
