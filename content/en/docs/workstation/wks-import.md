@@ -22,6 +22,8 @@ To transfer multiple station configurations, along with their associated applica
 2. Click the workspace whose stations you want to export.
 3. On the **Stations** page, click the three-dot menu in the top right corner of the screen, and then click **Export Stations**.
 
+    {{< figure src="/attachments/workstation/wks-import1.png" class="no-border" >}}
+
     The **Dowload Stations** dialog opens. You can either download all the stations created for the workspace, or select individual stations from the list.
 
 4. Click **Download**.
@@ -37,7 +39,17 @@ After the import finishes, your target workspace has the same apps and devices a
 
 To transfer the contents of a single station, perform the following steps:
 
-1. On the **Stations** page, click the three-dot menu in the top right corner of the screen, and then click **Copy Station to Clipboard**.
+1. On the **Stations** page, click the three-dot menu by the station which you want to copy, and then click **Copy Station to Clipboard**.
 
-2. Click **Create Station > Copy from Clipboard**.
-3. Click **Create Station**.
+    {{< figure src="/attachments/workstation/wks-import2.png" class="no-border" >}}
+
+    Alternatively, you can click **Download Station File** to download the configuration to your computer in JSON format for later use.
+
+2. Click **Create Station**, and then select **Create station from clipboard**.
+3. Paste the configuration into the **Paste Station Configuration** field.
+
+    {{< figure src="/attachments/workstation/wks-import3.png" class="no-border" >}}
+
+4. Click **Continue**.
+5. On the **Summary** screen, review the information and optionally select a group to categorize it, such as *Assembly*.
+6. Click **Create Station**.
