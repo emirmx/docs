@@ -22,6 +22,10 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 * For Mendix on Azure, we've added an option to remove custom TLS trust certificates.
 * We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
 
+#### License Manager CLI v0.10.6{#0.10.6}
+
+* We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
+
 ### November 27, 2025
 
 #### Portal Improvements
