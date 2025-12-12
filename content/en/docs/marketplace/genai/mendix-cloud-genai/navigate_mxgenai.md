@@ -38,12 +38,12 @@ For knowledge base resources, you can also see details of the associated embeddi
 
 #### Upgrading the Text Model Version{#upgrade-model}
 
-Model version upgrades allow you to move your Text Generation Resources to a newer, non-deprecated model within the same model family. For example, GenAI Resources offer the Claude Sonnet family, ranging from Claude Sonnet 3.7 to Claude Sonnet 4.5. Upgrading to the latest version ensures you benefit from the newest performance improvements and enhanced AI capabilities. In the **Settings** tab of your Text Generation Resource, click **Change Model** to see the available model versions for your resource and select the desired version.
+Model version upgrades let you migrate your Text Generation Resources to a newer, non-deprecated model within the same model family. For example, GenAI Resources offer the Claude Sonnet family, ranging from Claude Sonnet 3.7 to Claude Sonnet 4.5. Upgrading ensures you gain the latest performance improvements and AI capabilities. In the **Settings** tab of your Text Generation Resource, click **Change Model** to view and select available model versions.
 
 {{% alert color="warning" %}}
 While changing the model version, note the following:
 
-* Changing a model version in production requires careful evaluation. Even within the same model family, newer versions can behave differently and may impact how your LLM-driven applications, such as agents, perform.
+* Changing a model version in production requires careful evaluation. Even within the same model family, newer versions can behave differently, and may affect how your LLM-driven applications, such as agents, perform.
 
 * Always validate a new model version in a test environment before using it for your use case, and downgrade to the previous version if required.
 {{% /alert %}}
