@@ -29,11 +29,14 @@ Mendix Cloud Model Resource Packs provide customers with a monthly quota of inpu
 
 The Mendix Cloud GenAI Resource Packs provide access to the following models:
 
-* Anthropic Claude 3.7 Sonnet (Cross-region inference profile)
-* Anthropic Claude 4 Sonnet (Cross-region inference profile)
-* Anthropic Claude 4.5 Sonnet (Cross-region inference profile)
-* Cohere Embed v3 (English and multilingual options)
-* Cohere Embed v4 (Cross-region inference profile)
+| Model                       | Model Type | Region(s)                             | Support for Cross-region inference profile | AWS inference regions |
+| ---------------------------- | ---------- | ------------------------------------- | ------------------------------------------ | ---------------------- |
+| Anthropic Claude 4.5 Sonnet | Text       |  Mendix Cloud EU (Frankfurt, Germany) | YES | eu-north-1, Europe (Paris), eu-south-1, eu-south-2, Europe (Ireland), Europe (Frankfurt) |
+| Anthropic Claude 4 Sonnet   | Text       |  Mendix Cloud EU (Frankfurt, Germany) | YES | Europe (Frankfurt), eu-north-1, eu-south-1, eu-south-2, Europe (Ireland), Europe (Paris) |
+| Anthropic Claude 3.7 Sonnet | Text       |  Mendix Cloud EU (Frankfurt, Germany) | YES | Europe (Frankfurt), eu-north-1, Europe (Ireland), Europe (Paris) |
+| Anthropic Claude 3 Sonnet   | Text       |  Mendix Cloud Canada (Montreal)       | NO | ca-central-1 |
+| Cohere Embed v4             | Embeddings |  Mendix Cloud EU (Frankfurt, Germany) | YES | eu-north-1, Europe (Paris), eu-south-1, eu-south-2, Europe (Ireland), Europe (Frankfurt) |
+| Cohere Embed v3 <br> English and multilingual      | Embeddings      |  Mendix Cloud EU (Frankfurt, Germany) <br> Mendix Cloud Canada (Montreal) | NO | Europe (Frankfurt), ca-central-1 |
 
 The models are available through the Mendix Cloud, leveraging AWS's highly secure Amazon Bedrock multi-tenant architecture. This architecture employs advanced logical isolation techniques to effectively segregate customer data, requests, and responses, ensuring a level of data protection that aligns with global security compliance requirements. Customer prompts, requests, and responses are neither stored nor used for model training. Your data remains your data.
 
@@ -88,15 +91,6 @@ Knowledge Bases are based on elastically scaling, serverless OpenSearch vector d
 | Compute                               | Elastic       |
 | Memory                                | Elastic       |
 | Disk Space                            | 10 GB         |
-
-## Regional Availability
-
-Mendix Cloud GenAI Resource Packs are available in the following regions of Mendix Cloud:
-
-* Europe (Frankfurt) - eu-central-1
-* Canada (Montreal) - ca-central-1
-
-The availability of model versions depends on the selected region.
 
 ## Understanding Third-Party Requirements
 
