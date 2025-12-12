@@ -41,7 +41,7 @@ The attribute right-click menu items are described in the table below.
 |------------------|---------------------------------|--------------|
 | Select microflow  | Select an existing [microflow](/refguide/microflows/) or create a new one to connect to the attribute.        | |
 | Add validation rule | Add a [validation rule](/refguide/validation-rules/) to the attribute.             | |
-| Find changes |              | |
+| Find changes |  List (in the [**Find Results**](/refguide/view-menu/#find-results) pane) all the places the attribute is set/changed in the app.           | |
 | Find usages |  Find where the attribute is used within your app. This option only finds places where the attribute is selected itself—it will not find instances where the attribute is derived implicitly. For more information, see [Find, Find Advanced, and Find Usages](/refguide/find-and-find-advanced/).   | |
 | Cut  | Remove the attribute from the entity while keeping the attribute’s structure in the clipboard.   | <kbd>Ctrl</kbd> + <kbd>X</kbd> |
 | Copy | Create a duplicate of the attribute.  | <kbd>Ctrl</kbd> + <kbd>C</kbd> |
@@ -56,7 +56,7 @@ The association right-click menu items are described in the table below.
 | Menu item        | Description                     | Shortcut key |
 |------------------|---------------------------------|--------------|
 | Reverse direction  |  Reverse the direction of the association. | |
-| Find changes |              | |
+| Find changes |    List (in the [**Find Results**](/refguide/view-menu/#find-results) pane) all the places the association is set/changed in the app.             | |
 | Find usages |   Find where the association is used within your app. This option only finds places where the association is selected itself—it will not find instances where the association is derived implicitly. For more information, see [Find, Find Advanced, and Find Usages](/refguide/find-and-find-advanced/).     | |
 | Cut  | Remove the association from the domain model while keeping the structure in the clipboard   | <kbd>Ctrl</kbd> + <kbd>X</kbd> |
 | Copy | Create a duplicate of the association.   | <kbd>Ctrl</kbd> + <kbd>C</kbd> |
