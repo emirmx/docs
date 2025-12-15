@@ -29,7 +29,7 @@ Mendix Cloud Model Resource Packs provide customers with a monthly quota of inpu
 
 The Mendix Cloud GenAI Resource Packs provide access to the following models:
 
-| Model                       | Model Type | Region(s)                             | Support for Cross-region Inference Profile | AWS Inference Regions |
+| Model                       | Model Type | Region(s)                             | Available Only via Cross-Region Inference (CRI) | AWS Inference Regions |
 | ---------------------------- | ---------- | ------------------------------------- | ------------------------------------------ | ---------------------- |
 | Anthropic Claude 4.5 Sonnet | Text       |  Mendix Cloud EU (Frankfurt, Germany) | YES | eu-north-1,<br> Europe (Paris),<br> eu-south-1,<br> eu-south-2,<br> Europe (Ireland),<br> Europe (Frankfurt) |
 | Anthropic Claude 4 Sonnet   | Text       |  Mendix Cloud EU (Frankfurt, Germany) | YES | Europe (Frankfurt),<br> eu-north-1,<br> eu-south-1,<br> eu-south-2,<br> Europe (Ireland),<br> Europe (Paris) |
