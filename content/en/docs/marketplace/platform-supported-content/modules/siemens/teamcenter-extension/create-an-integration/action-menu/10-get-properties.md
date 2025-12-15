@@ -13,7 +13,7 @@ This document takes you through a use case where we want to retrieve additional 
 ## Step-by-step Guide {#step-by-step-guide}
 1. Make sure you have set up your credentials in the settings tab before following these instructions. For more instructions on how to configure your settings, follow the steps [here].
 2. Click on the Get Properties button on the home page to start configuring your integration.
-{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/get-properties/get-properties.png">}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/get-properties/icon.png">}}
 3. You will land on the [import mapping page](https://docs.mendix.com/refguide/import-mappings/). This determines what data is retrieved from Teamcenter and what type of objects are created in Mendix. You’ll also notice the “Get Properties Configuration” side bar opens by default.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/get-properties/import-mapping.png">}}
 4. By default, this option is turned on. This means it will generate a microflow to create and populate Mendix Model Objects for a given list of Teamcenter product `UIDs`. If the option is turned off, the extension will generate a microflow to update and overwrite a list of existing Mendix Model Objects based on the selections made in the import mapping page.
