@@ -18,6 +18,7 @@ These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 
 * You can now deprecate Marketplace components that are no longer maintained. This helps keep a clean and reliable Marketplace ecosystem, with full visibility into the content that is no longer supported, as well as its recommended alternatives.    
   For details, refer to [Deprecating Marketplace Content](/appstore/deprecate-content/).
+* The **My Components** and **Company Components** pages allow access to Marketplace content under the form of tabs. In an effort to improve focus and reduce complexity, we are consolidating the navigation by removing unnecessary menu items. As a result, the **Shared with Me** page is no longer available.
 
 ### October 9, 2025
 

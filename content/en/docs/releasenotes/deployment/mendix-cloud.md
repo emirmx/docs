@@ -22,6 +22,12 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 * Software Composition is now enhanced with the ability to view details on components marked as **Vulnerable**. This is available on the **Overview** and the **Components** tabs of [Software Composition](/developerportal/deploy/software-composition/), and provides valuable information about the severity and CVSS score of the finding.
 
+### December 14, 2025
+
+#### Improvements
+
+* We enhanced the security infrastructure with stronger access controls for internal data objects
+
 ### December 06, 2025
 
 #### Improvements

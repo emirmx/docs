@@ -21,6 +21,14 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
+### December 14, 2025
+
+#### New Features
+
+* You can now filter apps based on a series of categories which are managed by Mendix Admins on the Control Center **Project Categories** page. This ensures that apps are efficiently classified and easily searchable.    
+    For details on the new Control Center page, refer to [Project Categories](/control-center/project-categories/).      
+    For details on the new **Apps** filter, refer to the [My Apps](/developerportal/#my-apps) section in *Apps*.
+
 ### December 4
 
 #### Improvements

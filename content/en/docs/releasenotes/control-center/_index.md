@@ -20,6 +20,14 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 * Software Composition is now enhanced with the ability to view details on components marked as **Vulnerable**. This is available on the [Overview](/control-center/overview-tab/#finding-and-component-details) and the [Components](/control-center/components-tab/#finding-and-component-details) tabs of **Software Composition**, and provides valuable information about the severity and CVSS score of the finding.    
     This release also includes a new finding type on the [Scoring Criteria](/control-center/scoring-criteria-tab/#vulnerable) tab, namely **Vulnerable**. 
+    
+### December 14, 2025
+
+#### New Features
+
+* The Control Center **Company** section now includes a new page, **Project Categories**. It allows admins to create and manage the categories that can be assigned to your company's apps. When apps are assigned their categories, either by the company admins or the admins of specific apps, the categories are then visible to all company members on My Apps and My Company Apps pages in the Mendix Portal, which enables better classification and searchability. Categories can also be managed using the new [Project Category API](/apidocs-mxsdk/apidocs/project-category-api/).     
+    For details on the new page, refer to [Project Categories](/control-center/project-categories/).     
+    For details on the corresponding app filter, refer to [Apps](/developerportal/).
 
 ### November 9, 2025
 
