@@ -13,7 +13,7 @@ This document takes you through a use case where we need to create a revision of
 ## Step-by-step Guide {#step-by-step-guide}
 1. Make sure you have set up your credentials in the settings tab before following these instructions. For more instructions on how to configure your settings, follow the steps [here].
 2. Click on the Revise Item Revision button on the home page to start configuring your integration
-{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/revise-item-revision/revise-item-revision.png">}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/revise-item-revision/icon.png">}}
 3. You will land on the [import mapping page](https://docs.mendix.com/refguide/import-mappings/). This determines which Mendix entity will be used to create what type of revised Teamcenter Item Revision.
 Click on one of the top placeholder entities to start the import mapping. 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/revise-item-revision/object-mapping.png">}}
