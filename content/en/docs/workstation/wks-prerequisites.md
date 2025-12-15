@@ -10,6 +10,14 @@ weight: 10
 
 This document presents the system requirements for Mendix Workstation Client.
 
+## Workstation Client Download Links
+
+Mendix Workstation Client can be downloaded from the Mendix Marketplace:
+
+* [Microsoft Windows (global installer)](https://marketplace.mendix.com/link/component/247448)
+* [Microsoft Windows (portable)](https://marketplace.mendix.com/link/component/247456)
+* [Linux ARM 64](https://marketplace.mendix.com/link/component/247459)
+
 ## System Requirements
 
 * Operating System - Windows 10 or Windows 11 (64-bit);  Linux ARM64
@@ -19,7 +27,7 @@ This document presents the system requirements for Mendix Workstation Client.
 ## Access Requirements
 
 * A Mendix account
-* Access to the Mendix Workstation Management for configuration
+* Access to Mendix Workstation Management for configuration
 
 ## Network Configuration
 
@@ -28,6 +36,16 @@ Before implementing Mendix Workstation Client, perform the following steps:
 1. Ensure that the Workstation user can access the Mendix Cloud.
 2. Open the required ports for communication (for example, TCP 443 for HTTPS).
 3. Add the Workstation Client to the Allow list for any firewall or antivirus software, if applicable.
+
+### Custom Certificates and Proxy Settings
+
+The Workstation Client uses the operating system's certificates and proxy environment variables to establish a connection with Workstation Management. In most controlled corporate environments, these settings are preconfigured on employee computers by IT departments.
+
+To use a custom proxy configuration, you must start the Workstation Client from the command line and set the environment variables as described [here](https://github.com/nodejs/undici/blob/main/docs/docs/api/EnvHttpProxyAgent.md#class-envhttpproxyagent). For example, from the Windows Command Prompt, run the following command:
+
+```
+set HTTPS_PROXY=[PROXY_IP_ADDRESS] && "C:\Program Files\Mendix Workstation\Mendix Workstation.exe"
+```
 
 ## Device Connectivity
 
