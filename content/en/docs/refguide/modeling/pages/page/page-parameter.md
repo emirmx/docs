@@ -21,17 +21,17 @@ To use an object or primitive value in your page, define a parameter. In the ima
 
 ### Data Type
 
-The data type of a parameter defines the type of the value that it expects. Possible data types are **objects**, and **primitives** such as `Boolean`, `Date and time`, `Decimal`, `Enumeration`, `Integer/Long`, and `String`.
+The data type of a parameter defines the type of the value that it expects. Possible data types are **Objects**, and **Primitives** such as `Boolean`, `Date and time`, `Decimal`, `Enumeration`, `Integer/Long`, and `String`.
 
 Default: *Object*
 
 ### Argument {#argument}
 
-Argument determines whether it is **required** or **optional** to [pass an argument](#passing-arguments) to the parameter when opening the page. If it is required it is mandatory to supply an argument for that parameter when opening a page.
+Argument determines whether it is **Required** or **Optional** to [pass an argument](#passing-arguments) to the parameter when opening the page. If it is required it is mandatory to supply an argument for that parameter when opening a page.
 
 ### Default Value
 
-When argument is set to **optional**, a default value can be set. The default value is used if no [argument is passed](#passing-arguments) to the parameter. Given the example below, if no argument is passed for **CustomerName**, the page will open with the parameter set to `''`:
+When argument is set to **Optional**, a default value can be set. The default value is used if no [argument is passed](#passing-arguments) to the parameter. Given the example below, if no argument is passed for `CustomerName`, the page will open with the parameter set to `''`:
 
 {{< figure src="/attachments/refguide/modeling/pages/page/page-parameter-default-value.png" alt="no argument example" max-width=70% >}}
 
