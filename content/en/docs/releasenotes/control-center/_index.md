@@ -14,6 +14,13 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 ## 2025
 
+### December 18, 2025
+
+#### New Features
+
+* Software Composition is now enhanced with the ability to view details on components marked as **Vulnerable**. This is available on the [Overview](/control-center/overview-tab/#finding-and-component-details) and the [Components](/control-center/components-tab/#finding-and-component-details) tabs of **Software Composition**, and provides valuable information about the severity and CVSS score of the finding.    
+    This release also includes a new finding type on the [Scoring Criteria](/control-center/scoring-criteria-tab/#vulnerable) tab, namely **Vulnerable**. 
+
 ### November 9, 2025
 
 #### Improvements

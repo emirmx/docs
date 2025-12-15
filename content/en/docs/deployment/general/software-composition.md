@@ -114,7 +114,7 @@ Different versions of Studio Pro support different component dependencies. For d
 The page is divided into two tabs: **Findings** and **Component Usage**. For details on the available fields, refer to the Control Center documentation:
 
 * [Findings](/control-center/overview-tab/#overview-findings)
-* [Component Usage](/control-center/overview-tab/#overviw-component-usage)
+* [Component Usage](/control-center/overview-tab/#overview-component-usage)
 
 #### Finding and Component Details
 
@@ -124,7 +124,7 @@ If a finding is marked as **Vulnerable**, its corresponding component has a **Vi
 
     * **Severity** – The severity of the finding, as computed on the [Scoring Criteria](/control-center/scoring-criteria-tab/) tab.
     * **CVE-ID** – The unique ID which identifies the finding on the **Security Advisories** page.
-    * **CVSS Score** – The CVSS score, as computed based on the [NVD Vulnerability Metrics](https://nvd.nist.gov/vuln-metrics) framework.
+    * **CVSS Score 3.1** and **CVSS Score 4.0** – The CVSS score, as computed based on the [NVD Vulnerability Metrics](https://nvd.nist.gov/vuln-metrics) framework.
     * **Age** – The number of days since the date when the CVSS score was computed.
     * **Created on** – The date when the component was created.
     * **Description** – The reason why the component was marked as vulnerable.
@@ -230,7 +230,7 @@ If a finding is marked as **Vulnerable**, its corresponding component has a **Vi
 
     * **Severity** – The severity of the finding, as computed on the [Scoring Criteria](/control-center/scoring-criteria-tab/) tab.
     * **CVE-ID** – The unique ID which identifies the finding on the **Security Advisories** page.
-    * **CVSS Score** – The CVSS score, as computed based on the [NVD Vulnerability Metrics](https://nvd.nist.gov/vuln-metrics) framework.
+    * **CVSS Score 3.1** and **CVSS Score 4.0** – The CVSS score, as computed based on the [NVD Vulnerability Metrics](https://nvd.nist.gov/vuln-metrics) framework.
     * **Age** – The number of days since the date when the CVSS score was computed.
     * **Created on** – The date when the component was created.
     * **Description** – The reason why the component was marked as vulnerable.
