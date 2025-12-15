@@ -13,7 +13,7 @@ This document takes you through a use-case where you want to create Problem Repo
 ## Step-by-step Guide {#step-by-step-guide}
 1. Make sure you have set up your credentials in the settings tab before following these instructions. For more instructions on how to configure your settings, follow the steps [here]. 
 2. Click on the Create Item w/ Item Revision button on the home page to start configuring your integration.
-{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/create-item-with-item-revision/create-item-with-item-revision.png">}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/create-item-with-item-revision/icon.png">}}
 3. You will land on the [import mapping page](https://docs.mendix.com/refguide/import-mappings/). This determines what data is retrieved from Teamcenter and what type of objects are created in Mendix.
 When creating a Problem Report object in Teamcenter, two objects are created: Problem Report (sub-class of Item) and its associated Problem Report Revision (sub-class of Item Revision). Hence, in the import mapping page, we have placeholders to map both the objects with Mendix entities.
 Click on one of the top placeholder entities to start the import mapping.
