@@ -18,11 +18,13 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 * We have fixed an issue when it would be impossible to set the `maxUnavailable` attribute for Pod Disruption Budgets.
 * We have fixed an issue where using regular Kubernetes secrets in place of Kubernetes CSI Secrets Store would only work if a CSI Secrets Store driver is installed in the cluster.
-  With this release, installing the CSI Secrets Store driver is not necessary to use a Kubernets secret (Ticket 265568).
-* For Mendix on Azure, we've added an option to remove custom TLS trust certificates.
+
+    With this release, installing the CSI Secrets Store driver is not necessary to use a Kubernets secret (Ticket 265568).
+
+* For Mendix on Azure, we have added an option to remove custom TLS trust certificates.
 * We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
 
-#### License Manager CLI v0.10.6{#0.10.6}
+#### License Manager CLI v0.10.6 {#0.10.6}
 
 * We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
 
