@@ -16,11 +16,17 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
-### December 1, 2025
+### December 14, 2025
 
-#### New Features
+#### Improvements
 
-* We have added a new beta feature that enables Technical Contacts to securely [connect Mendix applications to external resources](/developerportal/deploy/connecting-to-external-resource/) through [Mendix Cloud Private Connectivity](/control-center/private-connectivity/).
+* We enhanced the security infrastructure with stronger access controls for internal data objects
+
+### December 06, 2025
+
+#### Improvements
+
+* We have upgraded Mendix Dock to support contract expiry banners. Mendix Cloud can now provide timely information when contracts are approaching their expiry dates.
 
 ### November 23, 2025
 

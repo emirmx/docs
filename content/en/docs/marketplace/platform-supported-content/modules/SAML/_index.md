@@ -524,20 +524,6 @@ Page URLs and Microflow URLs are supported with SAML for Mendix version 10.6 and
 1. In the **Runtime** tab of the **App Settings**, configure the page **URL prefix** to **link** instead of the default **P** to maintain compatibility with existing URLs.
 2. Ensure to remove the Deep Link module from your app to start the app successfully. For more information, see the [Migrating to Page and Microflow URLs](/appstore/modules/deep-link/#migrate-page-micro) section of the *Deep Link*.
 
-#### Steps for SAML Versions Below v3.6.15 and v4.0.0
-
-1. To implement the SSO redirection, add the following lines of code to your login page (for example, `login.html`):
-    * Extract the return URL: `var returnURL = window.location.hash.substring(1) + window.location.search;`
-    * For automatic redirection: use `window.onload` to automatically redirect users to the SSO login page.
-    `window.location.href = 'sso/login' + (returnURL ? '?cont=link' + encodeURIComponent(returnURL) : '');` or, 
-    * For manual redirection: add an onclick event to the button that manually triggers the SSO login.
-    `this.href = 'sso/login' + (returnURL ? '?cont=link' + encodeURIComponent(returnURL) : '');`
-2. To allow the end users to navigate to the desired page, URL can be formed as follows:
-    * If a single IdP is configured, the URL will be the base URL of your application followed by `SSO/login?cont={page/Microflowurl}`.
-    For example, `http://localhost:8080/SSO/login?cont=link/pagepath`.
-    * If Multiple IdPs are configured, you can specify which IdP should be used by adding the alias (MyIdPAlias) `SSO/login?_idp_id={MyIdPAlias}&cont={page/Microflowurl}`.
-    For example, `http://localhost:8080/SSO/login?_idp_id=Okta&cont=link/pagepath`.
-
 #### Steps for SAML Versions above v3.6.17 and v4.0.1
 
 1. To use the Page URL functionality, replace the content of *login.html* with the content of *login-with-mendixsso-automatically.html* (located in the **resources** > **mendixsso** > **templates** folder) without changing the file name. 
