@@ -13,7 +13,7 @@ This document takes you through a use case where we want to retrieve Part Revisi
 ## Step-by-step guide {#step-by-step-guide}
 1. Make sure you have set up your credentials in the settings tab before following these instructions. For more instructions on how to configure your settings, follow the steps [here](https://marketplace.mendix.com/link/component/111627).
 2. Click on the Search Item Revision button on the home page to start configuring your integration.
-{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/search-item-revisions/search-item-revisions.png">}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/search-item-revisions/icon.png">}}
 3. You will land on the [import mapping page](https://docs.mendix.com/refguide/import-mappings/). This determines what data is retrieved from Teamcenter and what type of objects are created in Mendix.
 Click on one of the placeholder entities to start the import mapping.  
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/search-item-revisions/import-mapping.png">}}
