@@ -190,12 +190,6 @@ The disabled state is shown in the image below:
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/menus/disabled_menu.png" width="300" >}}
 
-## Attaching a Command to the Menu
-
-Instead of listening to the `menuItemActivated` event, it is possible to register a command, then attach the `commandId` of the new command to your menu. When the menu is clicked, if its `commandId` property has been set, the backend will execute the command instead of firing the `menuItemActivated` event. 
-
-For more information on how to register commands, see the [Commands API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/command-api/).
-
 ## Setting the Action Property on the Menu
 
 You can also set the `action` property on the menu directly.
