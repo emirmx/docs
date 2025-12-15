@@ -32,7 +32,7 @@ These release notes cover changes to the [Extensibility API for Web Developers](
 ## Version 11.2.0
 
 * We included a new method for initializing the studio Pro API. (this is a breaking change) For more information, see [Getting Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/).
-* We introduced a new command registration API. For more information, see [Commands API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/command-api/).
+* We introduced a new command registration API. 
 
 ## Version 11.1.0
 
