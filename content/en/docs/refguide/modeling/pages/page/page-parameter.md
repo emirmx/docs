@@ -17,7 +17,7 @@ To use an object or primitive value in your page, define a parameter. In the ima
 
 ### Name
 
-**Name** refers to the name of the parameter.
+* **Name** — The name of the parameter.
 
 ### Data Type
 
@@ -53,6 +53,8 @@ Variable arguments are used to pass parameters from the context to the page. Thi
 
 ### Expression-Based Arguments
 
-This method allows users to use functions and follow associations within the expression to set the argument values. Using expressions for arguments provides flexibility in setting values and improves the functionality of pages. In the example below, the page has a parameter **AnimalName** which is populated by an expression extracting the **Name** member of the provided **Animal** object:
+This method allows users to use functions and follow associations within the expression to set the argument values. Using expressions for arguments provides flexibility in setting values and improves the functionality of pages. 
+
+In the example below, the page has a parameter **AnimalName** which is populated by an expression extracting the **Name** member of the provided **Animal** object:
 
 {{< figure src="/attachments/refguide/modeling/pages/page/page-parameter-expression.png" alt="example expression-based arguments" width="500px" >}}
