@@ -13,7 +13,7 @@ This document takes you through a use case where we want to create the logic to 
 ## Step-by-step Guide {#step-by-step-guide}
 1. Make sure you have set up your credentials in the settings tab before following these instructions. For more instructions on how to configure your settings, follow the steps [here].
 2. Click on the Search Datasets icon on the home page to start configuring your integration.
-{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/search-datasets/search-datasets.png">}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/search-datasets/icon.png">}}
 3. You will land on the [import mapping page](https://docs.mendix.com/refguide/import-mappings/). This determines what data is retrieved from Teamcenter and what type of objects are created in Mendix.  
 Click on one of the placeholder entities to start the import mapping.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/search-datasets/import-mapping.png">}}
