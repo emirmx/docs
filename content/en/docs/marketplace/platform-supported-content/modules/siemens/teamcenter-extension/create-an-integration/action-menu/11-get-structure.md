@@ -13,7 +13,7 @@ This document takes you through a use case where we want create logic using the 
 ## Step-by-step Guide {#step-by-step-guide}
 1. Make sure you have set up your credentials in the settings tab before following these instructions. For more instructions on how to configure your settings, follow the steps [here].
 2. Click on the Get Structure button on the home page to start configuring your integration.
-{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/get-structure/get-structure.png">}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/get-structure/icon.png">}}
 3. When you click on this action for the very first time, you’ll see a popup warning indicating that Mendix should be used to display small BOM structures. For larger BOM structures, it is recommended to use Teamcenter Active Workspace. Click *OK* to proceed further. This warning shows only the first time you click the action.
 4. You will land on the [import mapping page](https://docs.mendix.com/refguide/import-mappings/). This determines what data is retrieved from Teamcenter and what type of objects are created in Mendix. You’ll also notice the “configure structure” side bar opens by default. This gives you the ability to configure the BOM structure at design time or have the extension generate microflows where the BOM configurations are input parameters.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/get-structure/import-mapping.png">}}
