@@ -48,6 +48,10 @@ The values for the platform property are:
 
 **Snippet Parameters** works the same way as [Page Parameter](/refguide/page-properties/#parameters) with the difference that a snippet's parameter can be accessed at the top level, for example when creating expressions or selecting attributes.
 
+{{% alert color="info" %}}
+Snippets do not support **optional** and **primitive** types as [parameters](/refguide/page-parameter/).
+{{% /alert %}}
+
 #### Variables {#variables}
 
 The list of **Variables** defined on the snippet. Variables are non-persistent, primitive values that can be used as attributes by widgets in the snippet. They behave the same as [variables on pages](/refguide/page-properties/#variables), with the exception that default values cannot reference snippet parameters.
