@@ -13,7 +13,7 @@ This document takes you through a use-case where you want to update the properti
 ## Step-by-step Guide {#step-by-step-guide}
 1. Make sure you have set up your credentials in the settings tab before following these instructions. For more instructions on how to configure your settings, follow the steps [here].
 2. Click on the Update Item and Item Revision button on the home page to start configuring your integration
-{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/update-item-with-item-revision/update-item-with-item-revision.png">}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/update-item-with-item-revision/icon.png">}}
 3. You will land on the [import mapping page](https://docs.mendix.com/refguide/import-mappings/). This determines what data is retrieved from Teamcenter and what type of objects are created in Mendix. Click on the one of placeholder entities to start import mapping
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/update-item-with-item-revision/import-mapping.png">}}
 4. In the object mapping dialog that opens, the left side shows Teamcenter objects (both out of the box and custom) retrieved from the Teamcenter instance. Since we are interested in updating CAE 3D Analysis Revision, look for `CAE 3D Analysis`. 
