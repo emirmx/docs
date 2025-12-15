@@ -13,7 +13,7 @@ This document takes you through a use case where we want to relate a CAE 3D Anal
 ## Step-by-step Guide {#step-by-step-guide}
 1. Make sure you have set up your credentials in the Settings tab before following these instructions. For more instructions on how to configure your settings, follow the steps [here].
 2.	Click on the Search Item Revision button on the home page to start configuring your integration.
-{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/relate-workspace-objects/relate-workspace-objects.png">}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/relate-workspace-objects/icon.png">}}
 3. You will be presented with the [import mapping page](https://docs.mendix.com/refguide/import-mappings/). Here we can determine what data is retrieved from Teamcenter and what type of objects should be created in Mendix.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/relate-workspace-objects/import-mapping.png">}}
 4. When defining a relationship between two objects in Teamcenter, the object from which the relationship originates is called the `Primary Object` while the object to which it’s referenced is called the `Secondary Object`. For this reason, you’re seeing two placeholder entities on the import mapping page – `Primary entity` and `Secondary entity`. In our case, our primary object will be `Item Revision` while the secondary object will be `CAE 3D Analysis Revision`.
