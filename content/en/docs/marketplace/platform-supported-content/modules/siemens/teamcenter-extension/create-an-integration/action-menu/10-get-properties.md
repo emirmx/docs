@@ -22,6 +22,7 @@ This document takes you through a use case where we want to retrieve additional 
 7. The right side shows the relevant Mendix entities that can serve as input parameters for the microflow to retrieve additional properties. In our case, we want to have an entity specifically for `Part Revision`. Hence, we select `TcConnector.WorkspaceObject` and then click on the checkbox to *Create new Specialization of selected Entity*. The entity will be automatically named `PartRevision` after the Teamcenter Object name, but it can be renamed here if required. Now click on *OK*, to finish the object mapping and close the object mapping dialog.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/get-properties/object-mapping.png">}}
 8. Closing the object mapping dialog opens the attributes and associations sidebar. Here you can select from all properties available on the selected object. In this case, we will not be selecting any additional properties. Close the sidebar by clicking on the import mapping page.
+{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/get-properties/property-mapping.png">}}
 9. Click on “Generate” button to generate the appropriate domain model and microflows
 10. Once the generation is done, you will be redirected to the History tab which shows a summary of what has been generated.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/get-properties/history.png">}}
