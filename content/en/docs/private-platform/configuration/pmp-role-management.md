@@ -88,11 +88,11 @@ The Group Management page also provides real-time statistics to help administrat
 
 ### Overview
 
-Permission synchronization ensures that role changes in groups (admin mode) are automatically reflected in user mode, impacting the resources owned or associated with those groups. This mechanism guarantees consistency between governance configurations and actual user access.
+Permission synchronization ensures that role changes in groups are automatically applied to the resources owned or associated with those groups. This mechanism guarantees consistency between governance configurations and actual user access.
 
 ### Role Change Propagation
 
-When a member's role changes in a specific group through admin mode, the update is immediately synchronized to user mode. The change affects all resources owned by or associated with that group (for example, apps, or namespaces). This synchronization eliminates manual updates and ensures governance policies are enforced consistently.
+When a member's role changes in a specific group through admin mode, the update is immediately synchronized across all resources owned by or associated with that group (for example, apps, or namespaces). This synchronization eliminates manual updates and ensures governance policies are enforced consistently.
 
 ### Combined Permission Calculation
 
@@ -102,7 +102,7 @@ The calculation is performed as a scope union of all roles assigned and inherite
 
 This ensures that the member's effective permissions cover all capabilities granted by any of the roles.
 
-## User Mode
+## Roles for Users
 
 ### Login and Portal Creation
 
@@ -140,7 +140,7 @@ Roles for inherited members are determined by the **Group Management** page and 
 
 {{< figure src="/attachments/private-platform/pmp-roles7.png" class="no-border" >}}
 
-### Role Assignment in User Mode
+### Role Assignment for Users
 
 Direct members receive roles explicitly assigned by the app owner.
 
