@@ -14,7 +14,7 @@ Scoring criteria reflect your company's risk preference.
 
 The settings on this tab determine how each such vulnerability is calculated for apps, environments, and components.
 
-{{< figure src="/attachments/control-center/security/software-composition/scoring_criteria.png" >}}
+{{< figure src="/attachments/control-center/security/software-composition/scoring_criteria_complete.png" >}}
 
 The default values are strict, but you can adjust them to reflect the practice of your company.
 
