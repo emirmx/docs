@@ -23,6 +23,8 @@ From Mendix version 11.3, you can also update object attributes in bulk using OQ
 
 From Mendix version 11.4, you can update object associations as well as attributes in bulk using OQL `UPDATE` statements.
 
+From Mendix version 11.6, you can insert new objects with attributes in bulk using OQL `INSERT` statements.
+
 {{% /alert %}}
 
 ## Java API for OQL updates
@@ -159,6 +161,36 @@ WHERE ID IN (
         INNER JOIN Module.Customer ON Module.Customer/CustomerID = Module.Order/CustomerID
         WHERE Module.Customer/Name = 'Mary' )
 ```
+
+## `INSERT` Statement {#oql-insert}
+
+The syntax of `INSERT` statements is:
+
+```sql
+INSERT INTO <entity> ( <attribute> [ ,...n ] ) <oql-query>
+```
+
+`entity` is the entity for which new objects will be created.
+
+`attribute` is an attribute of the entity that will be inserted.
+
+`oql-query` is any OQL query that returns same number of columns as the number of attributes that will be inserted.
+This query can select data from persistable entities and/or [view entities](/refguide/view-entities/).
+
+Example:
+
+```sql
+INSERT INTO Module.Order ( OrderNumber, CustomerNumber )
+SELECT NewOrderNumber, Loader.TemporaryData_Customer/Loader.Customer/Number FROM Loader.TemporaryData
+```
+
+### OQL `INSERT` Limitations
+
+* It is not yet possible to insert associations. As a workaround, they can be added after the `INSERT` using an OQL `UPDATE` statement.
+* Attributes of type "Date and time" with a default value of `'[%CurrentDateTime%]'` will not have their default values set when the `INSERT` statement does not specify them.
+  As a workaround, explicitly insert the attribute with a value of `'[%CurrentDatetime%]'` in the `SELECT` part.
+* When using Oracle, due to database limitations, inserting attributes of type unlimited string or binary is not supported.
+* The general limitations for OQL statements also apply. See [General Limitations for OQL Statements](#oql-limitations), below.
 
 ## General Limitations for OQL Statements {#oql-limitations}
 
