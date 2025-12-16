@@ -48,7 +48,7 @@ Customers looking to leverage other models in addition to the above can also tak
 | ------------------------------------------ | ----------------- | ----------------- | ----------------- |
 | Anthropic Claude (any version) (Tokens in/month)    | 2.5 million    | 5 million         | 10 million        |
 | Anthropic Claude (any version) (Tokens out/month)   | 1.25 million   | 2.5 million       | 5 million         |
-| Cohere Embed V3 (Tokens in/month)                   | 5 million      | 10 million        | 20 million        |
+| Cohere Embed (any version) (Tokens in/month)        | 5 million      | 10 million        | 20 million        |
 
 ## Accessing GenAI Resources
 
