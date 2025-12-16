@@ -15,8 +15,8 @@ The entity right-click menu items are described in the table below.
 
 | Menu item        | Description                     | Shortcut key |
 |------------------|---------------------------------|--------------|
-| Go to Generalization | Go to the [generalization](/refguide/entities/#generalization) entity of the chosen entity. | |
-| Select Generalization | Choose the entity the selected entity should [inherit](/refguide/generalization-and-association/#generalization-specialization-and-inheritance) from. | |
+| Go to generalization | Go to the [generalization](/refguide/entities/#generalization) entity of the chosen entity. | |
+| Select generalization | Choose the entity the selected entity should [inherit](/refguide/generalization-and-association/#generalization-specialization-and-inheritance) from. | |
 | Go to event microflow | Open the event microflow attached to the entity.      | |
 | Add | Add an attribute, association, or validation rule to your entity.          | |
 | Move to  | Move the entity to the domain model of one of the other modules in your app. | |
