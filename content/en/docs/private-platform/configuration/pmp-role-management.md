@@ -16,10 +16,10 @@ To access the **Role Management** page, go to the **Admin > Manage** section of 
 
 Private Mendix Platform 2.0 ships with a set of predefined roles to cover common responsibilities:
 
-* **Developer** - Full access to application development features.
-* **Contributor** - Limited access, typically for business users or domain experts contributing to projects.
-* **Operator** - Focused on operational tasks such as deployments, monitoring, and cluster management.
-* **Administrator** - Highest level of access, with full governance and configuration rights.
+* **Developer** - Full access to application development features
+* **Contributor** - Limited access, typically for business users or domain experts contributing to projects
+* **Operator** - Focused on operational tasks such as deployments, monitoring, and cluster management
+* **Administrator** - Highest level of access, with full governance and configuration rights
 
 Admins can create new custom roles tailored to organizational needs.
 
@@ -54,7 +54,7 @@ The following resources are currently supported:
 * Apps - Application-level access control.
 * Namespace purposes - Permissions tied to namespaces for deployment or operational segregation.
 
-#### Ownership and Association Rules
+The following ownership and association rules apply:
 
 * Apps - An app can only be owned by one group. Ownership is exclusive to ensure clear accountability.
 * Namespaces - A namespace can be associated with multiple groups non-exclusively, allowing flexible sharing of operational responsibilities across teams.
@@ -86,8 +86,6 @@ The Group Management page also provides real-time statistics to help administrat
 
 ## Permission Synchronization
 
-### Overview
-
 Permission synchronization ensures that role changes in groups are automatically applied to the resources owned or associated with those groups. This mechanism guarantees consistency between governance configurations and actual user access.
 
 ### Role Change Propagation
@@ -96,15 +94,11 @@ When a member's role changes in a specific group through admin mode, the update 
 
 ### Combined Permission Calculation
 
-When multiple roles apply to a member, Private Mendix Platform calculates a combined permission set.
-
-The calculation is performed as a scope union of all roles assigned and inherited.
+When multiple roles apply to a member, Private Mendix Platform calculates a combined permission set based on all assigned and inherited roles.
 
 This ensures that the member's effective permissions cover all capabilities granted by any of the roles.
 
 ## Roles for Users
-
-### Login and Portal Creation
 
 When a user logs in, they can create a new app in Private Mendix Platform.
 
@@ -142,8 +136,6 @@ Roles for inherited members are determined by the **Group Management** page and 
 
 ### Role Assignment for Users
 
-Direct members receive roles explicitly assigned by the app owner.
-
-Inherited members retain the roles defined in their group context.
+Direct members receive roles explicitly assigned by the app owner. Inherited members retain the roles defined in their group context.
 
 This approach ensures consistency. Direct roles can be managed with app-specific assignments, while inherited roles can have governance-driven assignments from group hierarchy.
