@@ -41,6 +41,6 @@ As mentioned above, the scale of a decimal is configurable between the values of
 
 {{< figure src="/attachments/refguide/modeling/data-types/decimal-scale-setting.png" >}}
 
-When you adjust the scale of a decimal precision, you will also need to adjust usages of the decimal in frontend elements such as datagrids to respond to the changes.  By default, frontend components format decimals with a fixed scale of 2.  When specifying `fixed` formatting, the UI will display the value rounded or padded to fit into the fixed format.  For example, `1.2345` will result `1.20` when selecting 2 and `1.23450` when selecting 5.  When `Auto` formatting is specified, the UI will display the value as it is stored.
+When you adjust the scale of a decimal precision, you will also need to adjust usages of the decimal in frontend elements such as datagrids to respond to the changes.  By default, frontend components format decimals with a fixed scale of 2.  When specifying `fixed` formatting, the UI will display the value rounded or padded to fit into the fixed format.  For example, `1.2345` will result in `1.23` when selecting 2 and `1.23450` when selecting 5.  When `Auto` formatting is specified, the UI will display the value as it is stored.
 
 {{< figure src="/attachments/refguide/modeling/data-types/decimal-scale-formatting.png" >}}
