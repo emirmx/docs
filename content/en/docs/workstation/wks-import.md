@@ -10,7 +10,7 @@ weight: 30
 
 You can manage and share station and workspace data across various workspaces and environments by exporting and importing the configuration of a single station, or of multiple stations at the same time. If performed by the workspace admin, the import includes applications and devices associated with the station. In this way, you can replicate or migrate of station setups, supporting efficient and consistent data handling.
 
-## Importing and Importing Stations in Bulk
+## Importing and Exporting Stations in Bulk
 
 {{% alert color="info" %}}
 This option is only available to licensed users. For more information, see [Mendix Workstation Client](/mendix-workstation/).
@@ -18,7 +18,7 @@ This option is only available to licensed users. For more information, see [Mend
 
 To transfer multiple station configurations, along with their associated applications and devices, between workspaces, perform the following steps:
 
-1. Open the [Workspaces](https://workstation.home.mendix.com/) page as the workspace admin.
+1. Open the [Workspaces](https://workstation.home.mendix.com/) page.
 2. Click the workspace whose stations you want to export.
 3. On the **Stations** page, click the three-dot menu in the top right corner of the screen, and then click **Export Stations**.
 
@@ -31,6 +31,9 @@ To transfer multiple station configurations, along with their associated applica
     The export is saved to your computer in JSON format.
 
 5. Go to the workspace where you want to import the stations.
+
+    This can be the workspace from which you exported the stations, or a different one.
+
 6. On the **Stations** page, click the three-dot menu in the top right corner of the screen, and then click **Import Stations**.
 
 After the import finishes, your target workspace has the same apps and devices as the source workspace.
