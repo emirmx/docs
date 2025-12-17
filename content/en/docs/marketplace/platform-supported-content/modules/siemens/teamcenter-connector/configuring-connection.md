@@ -1,6 +1,6 @@
 ---
 title: "Configuring the Connection to Teamcenter"
-url: /partners/siemens/configuring-connection/
+url: /appstore/modules/siemens-plm/configuring-connection/
 weight: 1
 description: "Describes the connection configuration steps for Teamcenter."
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Using Teamcenter Services Included with the Teamcenter Connector"
 linktitle: "Using Included Teamcenter Services"
-url: /partners/siemens/using-included-services/
+url: /appstore/modules/siemens-plm/using-included-services/
 weight: 5
 description: "Describes how to use Teamcenter services that are included in the connector."
 ---

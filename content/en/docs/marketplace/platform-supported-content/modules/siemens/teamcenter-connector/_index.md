@@ -1,7 +1,6 @@
 ---
 title: "Teamcenter Connector"
-url: /partners/siemens/teamcenter-connector/
-weight: 30
+url: /appstore/modules/siemens-plm/teamcenter-connector/
 description: "Describes the configuration and usage of the Teamcenter Connector, which allows the digital management of product and manufacturing data in the context of a product lifecycle."
 ---
 

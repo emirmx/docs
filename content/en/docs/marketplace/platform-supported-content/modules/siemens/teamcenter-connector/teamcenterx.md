@@ -1,6 +1,6 @@
 ---
 title: "Configuring the Connection to Teamcenter X"
-url: /partners/siemens/teamcenterx/
+url: /appstore/modules/siemens-plm/teamcenterx/
 weight: 2
 description: "Describes the steps to connect to Teamcenter X."
 ---

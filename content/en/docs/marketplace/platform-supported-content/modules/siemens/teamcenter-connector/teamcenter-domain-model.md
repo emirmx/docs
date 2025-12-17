@@ -1,6 +1,6 @@
 ---
 title: "Teamcenter Connector Domain Model"
-url: /partners/siemens/teamcenter-domain-model/
+url: /appstore/modules/siemens-plm/teamcenter-domain-model/
 weight: 4
 description: "Describes the Teamcenter Connector domain model."
 ---
