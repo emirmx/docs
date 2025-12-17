@@ -9,7 +9,7 @@ description: "Provides information on obtaining additional documentation."
 
 Teamcenter Connector services are provided through JAVA actions.
 
-You can refer to the Teamcenter Connector for Mendix - Domain Model, Microflows, and Services Reference documentation on Support Center. <!-- add html reference? -->
+You can refer to the [Teamcenter Connector Reference](/partners/siemens/teamcenter-reference/) page.
 
 ## Generating the SOA API Documentation Used in Active Workspace
 
