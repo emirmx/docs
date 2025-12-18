@@ -1,0 +1,1 @@
+Last scan for stale merged branches: 2025-12-01 23:24:23 CET (UTC+01:00)

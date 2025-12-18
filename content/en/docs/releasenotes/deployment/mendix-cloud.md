@@ -16,6 +16,55 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
+### December 14, 2025
+
+#### Improvements
+
+* We enhanced the security infrastructure with stronger access controls for internal data objects
+
+### December 06, 2025
+
+#### Improvements
+
+* We have upgraded Mendix Dock to support contract expiry banners. Mendix Cloud can now provide timely information when contracts are approaching their expiry dates.
+
+### November 23, 2025
+
+#### New Features
+
+* We have introduced [Version Pinning](/developerportal/deploy/version-pinning/) for deployment components on Kubernetes to ensure consistency across customer environments and avoid unexpected deployment behavior. You can use this feature by promoting an application from one environment to a higher environment.
+
+* It is now possible to deploy Mendix applications with [Zero-Downtime](/developerportal/deploy/zero-downtime/) without any service interruption in certain cases. You can enable this by selecting the **Deploy without downtime** option in the **Options Tab** of the [Deploy Wizard](/developerportal/deploy/environments/#deploy-wizard). This feature applies to changes that do not rebuild or replace your app package.
+
+### November 9, 2025
+
+#### New Features
+
+* We have added a new feature on the **Cloud Settings** page, called [IP Restriction Profiles](/developerportal/deploy/access-restrictions/#ip-restriction-profiles), to block IP addresses at the root level of your application URL. Once configured, profiles can be applied in the [IP Access Restriction](/developerportal/deploy/environments-details/#ip-access-restrictions) section on the **Networks** tab.
+
+#### Bug Fixes
+
+* We have fixed an issue where custom domain routes were not removed entirely, even when they were deleted from the application.
+  
+### October 29, 2025
+
+#### New Features
+
+* Apps deployed to Kubernetes now support New Relic, enabling them to be migrated from Cloud Foundry to Kubernetes.
+
+* For Kubernetes deployments using New Relic, the `instance_index` tag is no longer provided within metadata. Use the `pod_name` tag instead.
+
+### October 19, 2025
+
+#### New Features
+
+* We have added a new feature in the **Environment Details** page for flexible environments. Users can now use non-Latin characters in the display name of their environment. The display name of an environment can be changed independent of the environment's subdomain.
+
+* We have added support for email internationalization. The emails sent by the Developer Portal will now be translated to the language set in user's profile.
+
+#### Bug Fixes
+
+* We have fixed an issue where apps were getting stuck in the "starting" state instead of failing gracefully due to missing package metadata.
 
 ### October 12, 2025
 

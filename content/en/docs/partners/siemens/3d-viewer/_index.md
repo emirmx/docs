@@ -10,7 +10,7 @@ aliases:
 
 ## Introduction
 
-The [3D Viewer](https://marketplace.mendix.com/link/component/118345) service lets you upload, visualize, and operate on 3D files (JT, OBJ, glTF, and STL formats) in your web applications, using Mendix file storage to store models. The app service contains out-of-the-box Java actions, JavaScript actions, [domain models](/refguide/domain-model/), [nanoflows](/refguide/nanoflows/), [microflows](/refguide/microflows/), and a set of 3D widgets that enable you to build apps to work with 3D models. Also included are whole functionalities and integrations that can be very helpful when building your own 3D applications. All you need to do is drag and drop items and configure them.
+The [3D Viewer](https://marketplace.mendix.com/link/component/118345) service lets you upload, visualize, and operate on JT files in your web applications, using Mendix file storage to store models. The app service contains out-of-the-box Java actions, JavaScript actions, [domain models](/refguide/domain-model/), [nanoflows](/refguide/nanoflows/), [microflows](/refguide/microflows/), and a set of 3D widgets that enable you to build apps to work with 3D models. Also included are whole functionalities and integrations that can be very helpful when building your own 3D applications. All you need to do is drag and drop items and configure them.
 
 This app service does the heavy-lifting for you so you do not have to build a 3D-rendering engine from scratch.
 
@@ -63,7 +63,7 @@ The 3D Viewer app service includes a few 3D widgets. These are some limitations 
 
 * One **Container3D** widget can only contain one **Viewer** widget. If multiple Viewer widgets are placed inside a Container3D widget, you will see error message in **Design mode**. 
 * The **Viewer** widget is used to display a 3D model. All other 3D widgets (except the **Uploader** and **Container3D** widgets) need a Viewer widget present on the page to interact with.
-* Currently, supports glTF, STL, OBJ, and JT (JT version 9 and above) formats.
+* Supports the JT format (version 9 and above).
 * Before uploading a shattered JT *.zip* file, make sure you are using UTF-8 encode to zip the JT files. For example, if you are using 7-Zip, make sure you enter *cu* in **Parameters**.
 
     {{< figure src="/attachments/partners/siemens/3d-viewer/shatteredjt-utf8.png" alt="shatteredjt-utf8" class="no-border" >}}
@@ -78,9 +78,24 @@ For more information about the requirements for other releases, see the releases
 
 ### Obtaining a License Token {#obtain-license-token}
 
-3D Viewer is a premium Mendix product that is subject to a purchase and subscription fee. You can deploy 3D Viewer locally or in a Mendix Free App for free. However, to deploy the 3D Viewer on the cloud, you need to get a license token which you will need when you configure it as described in [Configuring the License Token](#configure-license-token), below.
+3D Viewer is a premium Siemens product which requires a valid purchase and commercial license for production use.
 
-You can request a license token by clicking the **Contact Us** button on the [3D Viewer](https://marketplace.mendix.com/link/component/118345) Marketplace page.
+You can use 3D Viewer without a license in your local development environment with [Mendix Studio Pro](/releasenotes/studio-pro/). For details, refer to [Run Locally or Preview](/deployment/#run-locally-or-preview).
+However, a license is required to deploy your application to any server environment. This includes:
+
+* [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/)
+* Self-managed or [on-premises](/developerportal/deploy/on-premises-design/) infrastructures, such as:    
+
+    * [Kubernetes](/developerportal/deploy/private-cloud/)
+    * [Docker](/developerportal/deploy/docker-deploy/)
+    * [Azure](/developerportal/deploy/mendix-on-azure/)
+    * [SAP BTP](/developerportal/deploy/sap-cloud-platform/)
+    
+For details, refer to [Deploying Apps](/deployment/).
+
+To request a trial license token, click the **Contact Us** button on the [3D Viewer Marketplace page](https://marketplace.mendix.com/link/component/118345) or send an email to MX3DViewerHelp.sisw@siemens.com.
+
+Once you have obtained a license token, configure it as described in [Configuring the License Token](#configure-license-token).
 
 ### Installing the Component in Your App
 
@@ -320,7 +335,7 @@ The **Toolbar** widgets do not require additional configuration. Simply place th
 
 ### Configuring the License Token {#configure-license-token}
 
-You can deploy 3D Viewer locally or in a Mendix Free App for free. However, to deploy 3D Viewer on the cloud, it will need to be licensed, and you need to obtain a license token as described in [Obtaining a License Token](#obtain-license-token), above, and then configure it as follows:
+Follow this guidance to configure a license token depending on your environment.
 
 #### For an App Deployed in Mendix Cloud
 
@@ -330,7 +345,7 @@ Before you deploy your app, configure the app **Constants** in the deployment pa
 
 {{< figure src="/attachments/partners/siemens/3d-viewer/licensetoken-cloudportal.jpg" alt="licensetoken-cloudportal" class="no-border" >}}
 
-If you have already deployed your app, change the existing **LicenseToken** constant value on the **Model Options** tab and restart the app.
+If you have already deployed your app, change the existing **LicenseToken** constant value on the **[Model Options](/developerportal/deploy/environments-details/#model-options)** tab and restart the app.
 
 {{< figure src="/attachments/partners/siemens/3d-viewer/licensetoken-envdetails.jpg" alt="licensetoken-envdetails" class="no-border" >}}
 

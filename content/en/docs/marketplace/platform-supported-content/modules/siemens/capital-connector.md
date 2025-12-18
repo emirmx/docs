@@ -18,7 +18,7 @@ The Capital connector is licensed under the [Apache V2.0 License](https://www.ap
 ### Prerequisites
  
 * Studio Pro version 10.24.3 or above
-* A Capital instance
+* A Capital instance, with licensed Capital Integration Server (CIS) enabled and running
 
 ### Dependencies {#dependencies}
 

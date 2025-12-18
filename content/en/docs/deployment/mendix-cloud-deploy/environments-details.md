@@ -7,7 +7,7 @@ aliases:
     - /developerportal/deploy/environments-details-redesign/
 #To update these screenshots, you can log in with credentials detailed in How to Update Screenshots Using Team Apps.
 #The anchor #connection-safelist below is mapped from the Mendix Portal (Mendix Cloud Environment Details), so it should not be removed or changed.
-#The anchor #services below is mapped from the Mendix Portal (Mendix Cloud Environment Details), so it should not be removed or changed.
+#The anchor #services below is mapped from the Mendix Portal (Mendix Cloud Environment Details), so it should not be removed or changed. 
 ---
 
 ## Introduction
@@ -92,7 +92,8 @@ In the **Application Status** section of the **General** tab, you can find the f
 * **Project ID** – the unique identifier of the app
 * **Environment ID** – the unique identifier of the environment
 * **Running Since** – the date the app was started, if it is running
-* **Name** – the type of environment (Acceptance, Production, Test, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments)); for more information, see the [Naming of Environments](#naming) section below
+* **Display Name** – the type of environment (Acceptance, Production, Test, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments)); for more information, see the [Naming of Environments](#naming) section below
+* **Subdomain Suffix** – the application's subdomain name
 * **URL** – the URL of the app
 * **Custom Domains** – any [custom domains](/developerportal/deploy/custom-domains/) of the app; to add a new domain, click **Add Custom Domain**
 * **Studio Pro Target** – a **Yes** or **No** value indicating whether the environment is the designated deployment target from Studio Pro; for more information, see [Studio Pro Deployment Settings](/developerportal/deploy/studio-deployment-settings/)
@@ -101,20 +102,25 @@ In the **Application Status** section of the **General** tab, you can find the f
 * **Region** – the data center region where the app is hosted (for the full list of Mendix Cloud regions, see [Outgoing IP](/developerportal/deploy/mendix-ip-addresses/#outgoing))
 * **Data Backup Secondary Location** – the region where the backup is stored (for more information, see [Data Location](/developerportal/operate/backups/#data-location) in the *Backups* documentation)
 
-#### Naming of Environments – Flexible Environments in Mendix Cloud {#naming}
-
-If you are the app's [Technical Contact](/developerportal/general/app-roles/#technical-contact), you can rename the environments.
-
-To rename an environment, follow these steps:
-
-1. Click **Change** next to the name of the environment.
-2. Enter the new name, which must meet the following requirements:
-    * Consists of at least two characters.
-    * Consists of only alphanumeric characters and hyphens (`a-z`, `A-Z`, `0-9`, and `-`).
-    * Does not begin or end with a hyphen.
+#### Naming of Environments - Flexible Applications in Mendix Cloud {#naming}
 
 {{% alert color="info" %}}
-After you rename an environment, it may take up to 15 minutes before you can access an app via its URL. This is because the URL includes the name of the environment, and the old value needs to be removed from the DNS cache. It may take considerably longer for the change to be visible worldwide.
+Renaming an environment's subdomain suffix or display name is only applicable to flexible applications.
+{{% /alert %}}
+
+If you are the app's [Technical Contact](/developerportal/general/app-roles/#technical-contact), you can rename the environment’s **Subdomain Suffix** or **Display Name** by clicking **Change** next to either of the options.
+
+* **Display Name requirements**:
+    * Must start and end with an alphanumeric or non-latin character
+    * Must contain two or more alphanumeric or non-latin characters and hyphens (–)
+    * Maximum of 200 characters are allowed
+* **Subdomain Suffix requirements** 
+    * Consists of at least two characters
+    * Consists of only alphanumeric characters and hyphens (`a-z`, `A-Z`, `0-9`, and `-`)
+    * Does not begin or end with a hyphen
+
+{{% alert color="info" %}}
+After you rename an environment’s subdomain suffix, it may take up to 15 minutes before you can access an app via its URL. This is because the URL includes the subdomain name of the environment, and the old value needs to be removed from the DNS cache. It may take considerably longer for the change to be visible worldwide.
 {{% /alert %}}
 
 ### Deployment Package Details
@@ -139,7 +145,6 @@ It also includes the option to change your plan. For details, refer to [Changing
 * **Database Plan Space** – the storage capacity of the database
 * **Database Plan Memory** – the database's RAM size
 * **File Storage** – available size for storing blobs
-* **Backup Storage** – total size available for database backup files
 * **Multi-AZ Enabled** –  a **Yes** or **No** value indicating whether multiple availability zones are enabled
 
 #### Scaling {#scaling}
@@ -372,6 +377,19 @@ IP addresses must be within the following ranges:
 | 172.32.0.0  | 192.167.255.255 |
 | 192.169.0.0 | 255.255.255.255 |
 
+### IP Access Restrictions {#ip-access-restrictions}
+
+You can define IP profiles to deny access to your application from specific IP addresses or ranges.
+
+The **IP Access Restrictions** overview contains the following information:
+
+* **Current Restriction Profile**
+* **New Restriction Profile**
+
+You can also **Delete**, **Add**, or **Edit** an IP based access restriction.
+
+For more information, refer to the [IP Restriction Profile](/developerportal/deploy/access-restrictions/#ip-restriction-profiles) section of *Restricting Access for Incoming Requests*.
+
 ### Path-Based Access Restrictions {#path-based-restrictions}
 
 You can restrict access to your application using Client Certificates or IP ranges.
@@ -393,7 +411,7 @@ You can **Delete** a path or you can **Add** and **Edit** a path with the follow
 * Custom Profile for Client Certificates and/or IP ranges
 * N/A (inherit)
 
-For more information, see [How to Restrict Access for Incoming Requests](/developerportal/deploy/access-restrictions/).
+For more information, refer to the [Access Restriction Profiles](/developerportal/deploy/access-restrictions/#access-restriction-profiles) section of *Restricting Access for Incoming Requests*.
 
 ### Outgoing Connections Certificates
 

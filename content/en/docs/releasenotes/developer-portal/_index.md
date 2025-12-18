@@ -21,6 +21,37 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
+### December 14, 2025
+
+#### New Features
+
+* You can now filter apps based on a series of categories which are managed by Mendix Admins on the Control Center **Project Categories** page. This ensures that apps are efficiently classified and easily searchable.    
+    For details on the new Control Center page, refer to [Project Categories](/control-center/project-categories/).      
+    For details on the new **Apps** filter, refer to the [My Apps](/developerportal/#my-apps) section in *Apps*.
+
+### December 4
+
+#### Improvements
+
+* We have changed the behavior of deleting [feedback](/developerportal/app-insights/feedback/) groups. Now, when you delete a feedback group, the group itself is deleted, but the feedback included in it is not.
+
+#### Fixes
+
+* We have fixed an issue where clicking through the [Feedback](/developerportal/app-insights/feedback/) page would sometimes result in errors.
+* We have fixed an issue where you were no longer notified of newly received feedback items.
+ 
+### October 30
+
+#### New Features
+
+* You can now group feedback for easier management. This new option is available by selecting feedback on the **Inbox** tab, then clicking **Group Items**. All resulting feedback groups within an app are listed on the new **Groups** tab of the [Feedback](/developerportal/app-insights/feedback/) page.
+
+### October 26, 2025
+
+#### Improvements
+
+* We have implemented security and performance improvements.
+
 ### September 29, 2025
 
 #### New Features

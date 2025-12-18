@@ -40,3 +40,27 @@ You can access them through the [Mendix Cloud GenAI Portal](https://genai.home.m
 * Users will now receive a notification when attempting to upload a file to the knowledge base that does not contain text, reducing confusion and upload errors.
 * Users can now track the token consumption by subscription period, improving visibility into usage patterns.
 * The resource sorting on the new developer landing page now aligns with the regular resources overview, ensuring a more consistent user experience.
+
+### October 28, 2025
+
+#### New Features
+
+* We introduced new capabilities for Company Admins to manage GenAI resources directly within Control Center, including provisioning, deprovisioning, and an overview of all GenAI resources.
+
+### November 5, 2025
+
+#### Improvements
+
+* Users can now open GenAI resources directly in a new tab for easier access from the Control Center.
+* The default **Cross Region Inference** (CRI) settings is now enabled when creating text generation resources.
+* When creating a knowledge base resource, users can open the **Create Embeddings Resource** in a new tab to help prevent data loss.
+
+### December 11, 2025
+
+#### New Features
+
+* Users can now change the model for Text Generation Resources, selecting only those available in the same region and supported by their subscription plan.
+
+#### Fixes
+
+* We fixed an issue that prevented the consumption page from loading in some cases.
