@@ -146,7 +146,7 @@ In this example, Mendix will handle string concatenation correctly no matter if 
 In this particular example, if you want to prevent the generation of email addresses without the first part you should add a validation check before doing concatenation: 
 
 ```
-if trim($User/Name) = '' then $User/Name + "@mendix.com" else ''
+if trim($User/Name) = '' then '' else $User/Name + "@mendix.com"
 ```
 
 ### Using the **ShowHomePage** Microflow in the **System** Module {#apply-entity-access}
