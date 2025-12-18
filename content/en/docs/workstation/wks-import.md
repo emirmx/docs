@@ -10,6 +10,10 @@ weight: 30
 
 You can manage and share station and workspace data across various workspaces and environments by exporting and importing the configuration of a single station, or of multiple stations at the same time. If performed by the workspace admin, the import includes applications and devices associated with the station. In this way, you can replicate or migrate of station setups, supporting efficient and consistent data handling.
 
+## Workspace Roles and Permissions
+
+Depending on their role, 
+
 ## Importing and Exporting Stations in Bulk
 
 {{% alert color="info" %}}
@@ -36,7 +40,7 @@ To transfer multiple station configurations, along with their associated applica
 
 6. On the **Stations** page, click the three-dot menu in the top right corner of the screen, and then click **Import Stations**.
 
-After the import finishes, your target workspace has the same apps and devices as the source workspace.
+After the import finishes, your target workspace has the same applications and station configurations as the source workspace, but the stations are not yet registered to computers.
 
 ## Importing and Exporting a Single Station
 
@@ -46,9 +50,12 @@ To transfer the contents of a single station, perform the following steps:
 
     {{< figure src="/attachments/workstation/wks-import2.png" class="no-border" >}}
 
-    Alternatively, you can click **Download Station File** to download the configuration to your computer in JSON format for later use.
+    Alternatively, you can click **Download Station File** to download the configuration to your computer in JSON format for later use or for sharing it with others.
 
 2. Click **Create Station**, and then select **Create station from clipboard**.
+
+    Alternatively, if you downloaded a file in step 1, click **Create station from file**.
+
 3. Paste the configuration into the **Paste Station Configuration** field.
 
     {{< figure src="/attachments/workstation/wks-import3.png" class="no-border" >}}
