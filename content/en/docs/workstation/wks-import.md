@@ -10,9 +10,9 @@ weight: 30
 
 You can manage and share station and workspace data across various workspaces and environments by exporting and importing the configuration of a single station, or of multiple stations at the same time. If performed by the workspace admin, the import includes applications and devices associated with the station. In this way, you can replicate or migrate of station setups, supporting efficient and consistent data handling.
 
-## Workspace Roles and Permissions
+### Workspace Roles and Permissions
 
-Depending on their role, 
+Different user roles are granted various levels of access to import and export tasks. For more information, see [Workspace Team and Collaboration](/mendix-workstation/installation/#collaboration).
 
 ## Importing and Exporting Stations in Bulk
 

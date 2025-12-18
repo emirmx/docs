@@ -194,11 +194,38 @@ Note: Collaborating with other users in a workspace requires a Workstation licen
 
 Invite and manage members of a Workspace on the Team page. Only users who have signed into Workstation Management can be invited via email. One of the following roles can be assigned:
 
-* Owner - The owner has full rights to manage the workspace. They can read and edit configurations, manage the team, register computers, and manage workspace settings. They can also delete a workspace or transfer ownership to a new owner. By default, the user who created a workspace is assigned the owner role. Contact Mendix Support if a Workspace owner has left the company to transfer the ownership.
+* Owner - The owner has full rights to manage the workspace. They can perform the following tasks:
+
+    * Reading and editing configurations
+    * Managing the team
+    * Registering computers
+    * Managing workspace settings
+    * Deleting a workspace or transfering ownership to a new owner
+    
+        By default, the user who created a workspace is assigned the owner role. Contact Mendix Support if a Workspace owner has left the company to transfer the ownership. 
+    
+    * Exporting and importing stations (single and in bulk)
+    * Linking imported stations to existing workspace apps
+    * Creating apps during station import.
+
 * Workspace admin - The workspace admin can manage the workspace in the same way as the owner, but they cannot delete the workspace or change its ownership.
-* Station admin - Station admins can view and edit station configurations. They can also register computers to stations. They cannot manage any other settings.
-* Computer admin - Computer admins can view configurations without editing them. They can also register computers to stations.
-* View only - This role grants access to viewing the configuration but cannot perform any actions.
+* Station admin - Station admins can perform the following tasks:
+
+    * Viewing and editing station configurations
+    * Registering computers to stations
+    * Exporting and importing stations (single and in bulk)
+    * Linking imported stations to existing workspace apps. 
+
+* Computer admin - Computer admins can perform the following tasks:
+
+    * Viewing configurations without editing them
+    * Registering computers to stations
+    * Exporting stations (single and in bulk).
+
+* View only - This role can perform the following tasks:
+
+    * Viewing configurations without editing them
+    * Exporting stations (single and in bulk).
 
 All members except for the Workspace owner can leave a workspace. 
 
