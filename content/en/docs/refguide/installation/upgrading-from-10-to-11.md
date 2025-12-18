@@ -91,17 +91,17 @@ Consider the following expression:
 $NewEntity/Attribute = ''
 ```
 
-where `$NewEntity/Attribute` contains `empty` value.  
+where `$NewEntity/Attribute` contains an `empty` value.  
 
-In a Nanoflow, this expression would be evaluated to `true` because on the client side we did not distinguish between empty strings `''` and `empty` value.
+In a Nanoflow, this expression would be evaluated to `true` because, on the client side, we did not distinguish between empty strings `''` and an `empty` value.
 
 In a Microflow, this distinction exists and the expression would yield `false`.
 
-Moreover, on the client side, a String attribute with a value set to `empty` would be treated as if it contains `''`. This makes it impossible to check in a Nanoflow whether an attribute is `empty` or if it has an empty String value `''`.
+Moreover, on the client side a String attribute with a value set to `empty` would be treated as if it contains `''`. This made it impossible to check in a Nanoflow whether an attribute is `empty` or if it has an empty String value `''`.
 
 In Mendix 11.0.0, we have made this behavior consistent. Now, strings are handled in the same way no matter where you use them. 
 
-We understand that this change might cause unexpected changes in existing applications migrating from older versions of Mendix. 
+We understand that this change might cause unexpected changes in existing applications migrated from older versions of Mendix. 
 
 We recommend carefully analyzing all expressions that are comparing strings against `''` or `empty` and doing extensive testing after the migration. 
 
@@ -113,7 +113,7 @@ Below is an example of a check that might lead to unexpected behavior.
 $NewEntity/Attribute = ''
 ```
 
-If you used the expression to check if an attribute of an object was not filled in, we recommend using the [trim](https://docs.mendix.com/refguide/string-function-calls/#trim) function. Trim will automatically convert `empty` to `''` and remove all surrounding whitespace in a string.
+If you used this expression to check if an attribute of an object was not filled in, we recommend using the [trim](https://docs.mendix.com/refguide/string-function-calls/#trim) function. Trim will automatically convert `empty` to `''` and remove all surrounding whitespace in a string.
 
 ```
 trim($NewEntity/Attribute) = ''
@@ -141,9 +141,9 @@ In Mendix 11.0 you won’t run into any ambiguity around this anymore.
 $User/Name + "@mendix.com"
 ```
 
-In this example, Mendix will handle string concatination correctly no matter if `$User/Name` is `empty` or `''`. The resulting string will be `@mendix.com`.
+In this example, Mendix will handle string concatenation correctly no matter if `$User/Name` is `empty` or `''`. The resulting string will be `@mendix.com`.
 
-In this particular example, if you want to prevent the generation of email addresses without the first part, you should add a validation check before doing concatenation: 
+In this particular example, if you want to prevent the generation of email addresses without the first part you should add a validation check before doing concatenation: 
 
 ```
 if trim($User/Name) = '' then $User/Name + "@mendix.com" else ''
