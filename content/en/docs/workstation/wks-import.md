@@ -42,7 +42,7 @@ To transfer multiple station configurations, along with their associated applica
 7. Optionally, specify if the import should include the apps and devices:
 
     * **Include Apps** - If you select this option, the import creates any apps that are linked to the exported stations but do not yet exist in the workspace with the same URL and public key. This option is only available to [Workspace Owners and Admins](/mendix-workstation/installation/#collaboration).
-    * **Include Devices** - If you select this option, import includes any exported device configurations.
+    * **Include Devices** - If you select this option, the import includes any exported device configurations.
 
 After the import finishes, your target workspace has the same applications and station configurations as the source workspace, but the stations are not yet registered to computers.
 
