@@ -1,12 +1,12 @@
 ---
 title: "Search Workspace Objects"
-url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/search-workspace-objects/
-description: "Provides step by step guide to use \"Search Workspace Objects\" action in Teamcenter Extension."
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/integrations/search-workspace-objects/
+description: "Provides step by step guide to use \"Search Workspace Objects\" integration in Teamcenter Extension."
 weight: 8
 ---
 
 ## Introduction {#introduction}
-The **Search Workspace Objects** action allows you to generate the domain model and microflow to search for **Workspace Objects** or its specialization. For those familiar with Teamcenter, the resulting microflow implements the out of the box saved query `General...` from Teamcenter.  
+The **Search Workspace Objects** integration allows you to generate the domain model and microflow to search for **Workspace Objects** or its specialization. For those familiar with Teamcenter, the resulting microflow implements the out of the box saved query `General...` from Teamcenter.  
 
 This document takes you through a use case where we want to retrieve **FMEA (Failure Modes and Effects Analysis)** object types from Teamcenter. The purpose of **FMEA** is to proactively identify risks involved in product design /process and mitigate/eliminate them by defining prevention and detection actions.  
 

@@ -1,12 +1,12 @@
 ---
 title: "Revise Item Revision"
-url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/revise-item-revision/
-description: "Provides step by step guide to use \"Revise Item Revision\" action in Teamcenter Extension."
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/integrations/revise-item-revision/
+description: "Provides step by step guide to use \"Revise Item Revision\" integration in Teamcenter Extension."
 weight: 4
 ---
 
 ## Introduction {#introduction}
-The **Revise Item Revision** action allows you to configure and generate the domain model and microflow to revise an **Item Revision** or its specializations in Teamcenter. The resulting microflow implements the **Revise Object** and **Update Properties** actions from the Teamcenter Connector.  
+The **Revise Item Revision** integration allows you to configure and generate the domain model and microflow to revise an **Item Revision** or its specializations in Teamcenter. The resulting microflow implements the **Revise Object** and **Update Properties** actions from the Teamcenter Connector.  
 
 This document takes you through a use case where we need to create a revision of a **Requirement Revision** object. The **Requirements** object in Teamcenter facilitates the capture, organization, and tracking of various product requirements throughout the product lifecycle. **Requirements** undergo changes during the product's lifecycle and as such new revisions of this object are created.  
 

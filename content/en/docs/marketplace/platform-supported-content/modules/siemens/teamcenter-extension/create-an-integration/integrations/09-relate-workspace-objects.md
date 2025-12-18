@@ -1,12 +1,12 @@
 ---
 title: "Relate Workspace Objects"
-url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/relate-workspace-objects/
-description: "Provides step by step guide to use \"Relate Workspace Objects\" action in Teamcenter Extension."
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/integrations/relate-workspace-objects/
+description: "Provides step by step guide to use \"Relate Workspace Objects\" integration in Teamcenter Extension."
 weight: 9
 ---
 
 ## Introduction {#introduction}
-The **Relate Workspace Objects** action allows you to generate the domain model and microflow to relate two **Workspace Objects** or their specialization from Teamcenter. The resulting microflow implements the `Create relation action` from the TcConnector module.
+The **Relate Workspace Objects** integration allows you to generate the domain model and microflow to relate two **Workspace Objects** or their specialization from Teamcenter. The resulting microflow implements the `Create relation` action from the TcConnector module.
 This document takes you through a use case where we want to relate a **CAE 3D Analysis** object with an **Item Revision**. A **CAE 3D Analysis** object typically contains simulation files of a **CAE (Computer Aided Engineering) 3D Analysis**. It can also contain results after the simulation has completed. The **Item Revision** contains the **CAD Parts** on which the simulation is to be performed. Users would want to relate the two objects to trace for which parts a 3D simulation has been performed. The relation type that will be created between the two objects is `CAE Target`. 
 
 

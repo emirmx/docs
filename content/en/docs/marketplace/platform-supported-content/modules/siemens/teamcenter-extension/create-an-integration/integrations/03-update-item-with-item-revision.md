@@ -1,12 +1,12 @@
 ---
 title: "Update Item with Item Revision"
-url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/update-item-with-item-revision/
-description: "Provides step by step guide to use \"Update Item with Item Revision\" action in Teamcenter Extension."
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/integrations/update-item-with-item-revision/
+description: "Provides step by step guide to use \"Update Item with Item Revision\" integration in Teamcenter Extension."
 weight: 3
 ---
 
 ## Introduction {#introduction}
-The **Update Item and Item Revision** action allows you to generate the domain model and microflow to update an Item with ItemRevision or their specializations in Teamcenter. The resulting microflows implement the Update Properties action from the Teamcenter Connector. 
+The **Update Item and Item Revision** integration allows you to generate the domain model and microflow to update an Item with ItemRevision or their specializations in Teamcenter. The resulting microflows implement the Update Properties action from the Teamcenter Connector. 
 
 This document takes you through a use-case where you want to update the properties (e.g. `description`) of **CAE 3D Analysis Revision Reports** in Teamcenter. **CAE 3D Analysis Revision** business object are utilized to manage files associated from a 3D simulation study (CFD, Structural, etc.) 
 

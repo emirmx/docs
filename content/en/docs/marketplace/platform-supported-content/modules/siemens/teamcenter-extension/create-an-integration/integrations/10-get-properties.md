@@ -1,12 +1,12 @@
 ---
 title: "Get Properties"
-url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/get-properties/
-description: "Provides step by step guide to use \"Get Properties\" action in Teamcenter Extension."
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/integrations/get-properties/
+description: "Provides step by step guide to use \"Get Properties\" integration in Teamcenter Extension."
 weight: 10
 ---
 
 ## Introduction {#introduction}
-The **Get Properties** action allows you to generate a microflow to retrieve additional properties of a Teamcenter **Workspace Object** or specializations thereof and the corresponding domain model. The resulting microflow implements the `Get Properties` action from Teamcenter Connector.
+The **Get Properties** integration allows you to generate a microflow to retrieve additional properties of a Teamcenter **Workspace Object** or specializations thereof and the corresponding domain model. The resulting microflow implements the `Get Properties` action from Teamcenter Connector.
 
 This document takes you through a use case where we want to retrieve additional properties of a **Part Revision** object. **Part Revisions** are specific iterations of a part of a product that is managed using Teamcenter. A P**art Revision** contains essential information like the schematics of the **Part**. As a **Part Revision** is a sub-type of an **Item Revision**, it can be revised. 
 

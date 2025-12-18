@@ -1,12 +1,12 @@
 ---
 title: "Get Structure"
-url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/get-structure/
-description: "Provides step by step guide to use \"Get Structure\" action in Teamcenter Extension."
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/integrations/get-structure/
+description: "Provides step by step guide to use \"Get Structure\" integration in Teamcenter Extension."
 weight: 11
 ---
 
 ## Introduction {#introduction}
-The **Get Structure** action allows you to generate the domain model and microflows to configure a Bill-of-Material (BOM) window and retrieve **BOM structures** from Teamcenter. A **BOM window** is what displays a **BOM structure** inside a Mendix application. 
+The **Get Structure** integration allows you to generate the domain model and microflows to configure a Bill-of-Material (BOM) window and retrieve **BOM structures** from Teamcenter. A **BOM window** is what displays a **BOM structure** inside a Mendix application. 
 
 This document takes you through a use case where we want create logic using the Teamcenter Extension to display a simple **BOM structure** with options to configure it according to our needs. 
 
@@ -14,7 +14,7 @@ This document takes you through a use case where we want create logic using the 
 1. Make sure you have set up your credentials in the **Settings tab** before following these instructions. For more instructions on how to configure your settings, follow the steps [here](/appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/#settings-tab).
 2. Click on the **Get Structure** button on the home page to start configuring your integration.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/get-structure/icon.png">}}
-3. When you click on this action for the very first time, you’ll see a popup warning indicating that Mendix should be used to display small **BOM structures**. For larger **BOM structures**, it is recommended to use **Teamcenter Active Workspace**. Click **OK** to proceed further. This warning shows only the first time you click the action.
+3. When you click on this integration for the very first time, you’ll see a popup warning indicating that Mendix should be used to display small **BOM structures**. For larger **BOM structures**, it is recommended to use **Teamcenter Active Workspace**. Click **OK** to proceed further. This warning shows only the first time you click the integration.
 4. You will land on the [import mapping page](/refguide/import-mappings/). This determines what data is retrieved from Teamcenter and what type of objects are created in Mendix. You’ll also notice the **Configure structure** side bar opens by default. This gives you the ability to configure the **BOM structure** at design time or have the Extension generate microflows where the BOM configurations are input parameters.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/get-structure/import-mapping.png">}}
    1. Turn on **Revision Rule**. This will generate a microflow to retrieve **Structure** with **Revision Rule** as the input parameter and a microflow to retrieve **Revision Rules**. In other words, this lets you build a feature in your app where you can give the end-users the ability to select a **Revision Rule** at run-time and configure the BOM with the selected **Revision Rule**.  

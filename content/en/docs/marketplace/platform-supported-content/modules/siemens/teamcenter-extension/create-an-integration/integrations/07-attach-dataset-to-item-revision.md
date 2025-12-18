@@ -1,12 +1,12 @@
 ---
 title: "Attach Dataset to Item Revision"
-url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/attach-dataset-to-item-revision/
-description: "Provides step by step guide to use \"Attach Dataset to Item Revision\" action in Teamcenter Extension."
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/integrations/attach-dataset-to-item-revision/
+description: "Provides step by step guide to use \"Attach Dataset to Item Revision\" integration in Teamcenter Extension."
 weight: 7
 ---
 
 ## Introduction {#introduction}
-The **Attach Dataset to Item Revision** action allows you to generate the domain model and microflows to create and attach Teamcenter **Datasets** (or its specializations) containing file documents to an **Item Revision** in Teamcenter. For those not familiar with Teamcenter, a **Dataset** essentially is a container for files and related metadata. If you want to attach a document to a Teamcenter object, you do this using datasets. 
+The **Attach Dataset to Item Revision** integration allows you to generate the domain model and microflows to create and attach Teamcenter **Datasets** (or its specializations) containing file documents to an **Item Revision** in Teamcenter. For those not familiar with Teamcenter, a **Dataset** essentially is a container for files and related metadata. If you want to attach a document to a Teamcenter object, you do this using datasets. 
 
 This document takes you through a use case where we want to attach a PDF document to an **Item Revision** with a **Specification** relation. 
 

@@ -1,12 +1,12 @@
 ---
 title: "Search Item Revisions"
-url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/search-item-revisions/
-description: "Provides step by step guide to use \"Search Item Revisions\" action in Teamcenter Extension."
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/integrations/search-item-revisions/
+description: "Provides step by step guide to use \"Search Item Revisions\" integration in Teamcenter Extension."
 weight: 1
 ---
 
 ## Introduction {#introduction}
-The  **Search Item Revisions** action allows you to generate the domain model and microflow to search for Item Revisions or its specialization. For those familiar with Teamcenter, the resulting microflow implements the out of the box saved query `Item Revision...` from Teamcenter.  
+The  **Search Item Revisions** integration allows you to generate the domain model and microflow to search for Item Revisions or its specialization. For those familiar with Teamcenter, the resulting microflow implements the out of the box saved query `Item Revision...` from Teamcenter.  
 
 This document takes you through a use case where we want to retrieve **Part Revisions** from Teamcenter. **Part Revisions** are specific iterations of a part of a product that is managed using Teamcenter. A **Part Revision** contains essential information like the schematics of the **Part**. As a **Part Revision** is a sub-type of an **Item Revision**, it can be revised.
 

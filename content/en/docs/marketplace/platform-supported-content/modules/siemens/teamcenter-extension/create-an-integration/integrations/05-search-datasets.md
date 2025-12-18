@@ -1,12 +1,12 @@
 ---
 title: "Search Datasets"
-url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/search-datasets/
-description: "Provides step by step guide to use \"Search Datasets\" action in Teamcenter Extension."
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/integrations/search-datasets/
+description: "Provides step by step guide to use \"Search Datasets\" integration in Teamcenter Extension."
 weight: 5
 ---
 
 ## Introduction {#introduction}
-The **Search Datasets** action allows you to generate the domain model and microflow to search for **Datasets** or its specialization in Teamcenter. The resulting microflow implements the Teamcenter out of the box saved query **Datasets**.  
+The **Search Datasets** integration allows you to generate the domain model and microflow to search for **Datasets** or its specialization in Teamcenter. The resulting microflow implements the Teamcenter out of the box saved query **Datasets**.  
 
 This document takes you through a use case where we want to create the logic to search datasets with the option of choosing different dataset types e.g. PDF, MS Word, etc.) 
 

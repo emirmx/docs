@@ -1,12 +1,12 @@
 ---
 title: "Create Item with Item Revision"
-url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/create-item-with-item-revision/
-description: "Provides step by step guide to use \"Create Item with Item Revision\" action in Teamcenter Extension."
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/integrations/create-item-with-item-revision/
+description: "Provides step by step guide to use \"Create Item with Item Revision\" integration in Teamcenter Extension."
 weight: 2
 ---
 
 ## Introduction {#introduction}
-The **Create Item with Item Revision** action allows you to configure and generate the domain model and microflow to create an **Item** with **ItemRevision** or its specializations in Teamcenter. The resulting microflow implements the **Create Object** and U**pdate Properties** actions from the Teamcenter Connector.  
+The **Create Item with Item Revision** integration allows you to configure and generate the domain model and microflow to create an **Item** with **ItemRevision** or its specializations in Teamcenter. The resulting microflow implements the **Create Object** and **Update Properties** actions from the Teamcenter Connector.  
 
 This document takes you through a use-case where you want to create **Problem Reports** in Teamcenter. **Problem Reports**, represented by the **Problem Report Revision** business object, are utilized to manage the documentation or reproduction of an issue. They can also be used to determine the severity and priority of the issue. 
 

@@ -1,12 +1,12 @@
 ---
 title: "Get Datasets for Item Revision"
-url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/action-menu/get-datasets-for-item-revision/
-description: "Provides step by step guide to use \"Get Datasets for Item Revision\" action in Teamcenter Extension."
+url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/integrations/get-datasets-for-item-revision/
+description: "Provides step by step guide to use \"Get Datasets for Item Revision\" integration in Teamcenter Extension."
 weight: 6
 ---
 
 ## Introduction {#introduction}
-The **Get Dataset for Item Revision** action allows you to generate domain model and microflow to retrieve **Datasets** for an **Item Revision** and subsequently download files present inside the dataset. For those not familiar with Teamcenter, a **Dataset** is a container for files and related metadata. They are typically attached to a business object such as **Item Revision**. 
+The **Get Dataset for Item Revision** integration allows you to generate domain model and microflow to retrieve **Datasets** for an **Item Revision** and subsequently download files present inside the dataset. For those not familiar with Teamcenter, a **Dataset** is a container for files and related metadata. They are typically attached to a business object such as **Item Revision**. 
 
 This document takes you through a use case where we want to retrieve PDF, MS Word and Excel documents stored inside a dataset that is attached to an **Item Revision**.
 
