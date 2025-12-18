@@ -44,6 +44,29 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
     2. Enter an **API endpoint** – that is, the base endpoint for the OData resource in your Mendix application, for example, `https://yourmendixapp.mendixcloud.com/odata/snowflakedata/v1/`.
 {{% alert color="warning" %}}This must be the root URL, that is, it must end in `/v1/` or `/v2/` Adding anything to the root URL (such as a resource path) will prevent the Mendix Data Loader from working.
 
+{{% alert color="info" %}}
+#### Pagination Base URL Resolution for Published OData Services (Mendix 10)
+
+Starting with **Mendix 10**, changes in how the Mendix runtime resolves the application base URL can affect the pagination URLs (`@odata.nextLink`) returned by published OData services.
+
+When the Mendix Data Loader consumes a published OData service, the URL used for pagination is determined by the Mendix runtime and may differ from the base URL that was originally used by the caller. This behavior may become visible when upgrading an application from **Mendix 9 to Mendix 10**.
+
+In scenarios where a Mendix application is accessible through multiple URLs (for example, the default Mendix Cloud URL and a custom domain), the next page URL returned by the OData service may use a different base URL than the one configured in the Mendix Data Loader.
+
+The base URL for pagination links is resolved using the following algorithm:
+
+1. **ApplicationRootURL**, if it is configured in the Mendix application  
+2. **`X-Forwarded-*` headers**, if present (for example, when running behind a reverse proxy or load balancer)  
+3. The **`Host` header** of the incoming request  
+
+As a result, after upgrading to Mendix 10, if the Mendix Data Loader is configured to use one base URL (for example, the default Mendix Cloud URL), but the OData service generates pagination links using another base URL (for example, a custom domain), pagination requests may fail if the returned URL is not reachable or allowed by the Snowflake network configuration.
+
+To avoid pagination issues after upgrading to Mendix 10.x, ensure that:
+* The configured API endpoint matches the URL that the Mendix runtime resolves for pagination, or
+* The relevant base URL is consistently configured using **ApplicationRootURL** or appropriate **`X-Forwarded-*` headers**.
+
+{{% /alert %}}
+
 If you want to use specific resources, you should instead expose a new endpoint that only contains the resources that you require. This is because it is only possible to use every resource that is exposed in the OData endpoint, and impossible to exclude certain resources.{{% /alert %}}
     3. Use the **Use Delta Ingestion** check box to specify if you want to ingest all exposed data with every ingestion, or if you want to ingest only data that was newly created or changed since the last ingestion for this data source.
     4. Click **Save**.
