@@ -30,7 +30,7 @@ Teamcenter Extension offers the following integration options:
 * Search workspace objects
 * Relate workspace objects
 * Get structure
-* Get Properties
+* Get properties
 
 ### License {#license}
 
