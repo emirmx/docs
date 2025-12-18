@@ -9,7 +9,8 @@ cascade:
 # This document is mapped to the landing page, update the link there if renaming or moving the doc file.
 ---
 
-These release notes cover changes to the app management functionality and other features of the [Apps](/developerportal/). Click the link corresponding to the year for which you want to see release notes:
+These release notes cover changes to the app management functionality and other features of [Apps](/developerportal/) in the Mendix Portal.     
+Click the link corresponding to the year for which you want to see release notes:
 
 * [2025](/releasenotes/developer-portal/2025/)
 * [2024](/releasenotes/developer-portal/2024/)
