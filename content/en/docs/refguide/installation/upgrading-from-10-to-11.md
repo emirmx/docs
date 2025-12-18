@@ -149,6 +149,14 @@ In this particular example, if you want to prevent the generation of email addre
 if trim($User/Name) = '' then '' else $User/Name + "@mendix.com"
 ```
 
+### React 19 {#react-19}
+
+In Studio Pro 11.6.0, React.js was updated to version 19.0.0. This change affects both web and mobile applications. All platform supported widgets have been made compatible with React 19.0.0. Please upgrade all installed widgets to the latest published versions. 
+
+React 19 features some breaking changes to its APIs. Notably, the previously deprecated `findDOMNode` API is now removed. Please refer to the [official React.js upgrade guide](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-deprecated-react-dom-apis) to make sure that widgets you are developing are compatible with Studio Pro 11.6.0 and React 19.0.0.
+
+Keep in mind that incompatibility with React 19.0.0 won't prevent your pluggable widget from compiling or your React client application from bundling. To be sure that it's compatible make sure to check the source code and test the widget in the browser or in the mobile app.
+
 ### Using the **ShowHomePage** Microflow in the **System** Module {#apply-entity-access}
 
 In Studio Pro versions prior to 11, the default configuration was insecure: **Apply entity access** was set to `false`. In Studio Pro version 11, the **ShowHomePage** microflow in the **System** module now enforces a secure default for entity access. As a result, after upgrading to version 11, your application may report errors that were previously not detected.
