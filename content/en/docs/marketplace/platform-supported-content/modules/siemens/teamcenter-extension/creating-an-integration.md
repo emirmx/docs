@@ -1,5 +1,5 @@
 ---
-title: "Create an Integration"
+title: "Creating an Integration"
 url: /appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/
 description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamcenter Extension facilitates a low-code approach to integrating with Siemens Teamcenter."
 weight: 1
@@ -46,8 +46,8 @@ You can set up the following information. It will be saved when you click **Save
 
 While building your app and using Teamcenter Extension you need to provide the details of the Teamcenter instance to connect to. To do this provide the following information under **Teamcenter instance**:
 
-* **TC URL** –the URL to which calls will be made to sign in and retrieve data. Teamcenter Extension supports both HTTP and HTTPS connections.
-* **Certificate Path** – the path to certificates that have .crt and .pfx file extensions. The path should be relative to the app directory.
+* **TC URL** – The URL to which calls will be made to sign in and retrieve data. Teamcenter Extension supports both HTTP and HTTPS connections.
+* **Certificate Path** – The path to certificates that have .crt and .pfx file extensions. The path should be relative to the app directory.
 
 ## Import Mapping {#import-mapping}
 
@@ -101,7 +101,7 @@ You can select and deselect the properties, references, and relations depending 
 
 ## Generating Artifacts {#generating-artifacts}
 
-Once you finished import mapping, click **Generate** to create microflows for the selected use case and its corresponding domain model. These artifacts can be used in your app logic.
+Once you have finished import mapping, click **Generate** to create microflows for the selected use case and its corresponding domain model. These artifacts can be used in your app logic.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/teamcenter-extension/microflow.png" >}}
 
