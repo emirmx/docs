@@ -2,6 +2,7 @@
 title: "Optimistic Locking"
 url: /refguide/optimistic-locking/
 description: "Describes optimistic locking support."
+beta: true
 ---
 
 ## Introduction
