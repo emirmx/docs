@@ -28,7 +28,7 @@ There are below versions of the Mobile SSO module, compatible with Mendix and OI
 ### Typical Usage Scenarios
 
 * **B2E app:** Your app is aimed at your company’s employees, and you want these employees to sign in to your app using corporate credentials hosted by your identity provider (IdP) that supports the OIDC protocol. In this case, your app may have its own logic to assign user roles, or you may use authorization information from your IdP as provided to your app using an access token.
-* **B2C app:** Your app is aimed at your customers, which could be consumers or employees of the other companies. Consumers may have an identity at a social IdP which uses OIDC, such as Google.
+* **B2C app:** Your app is aimed at your customers, which could be consumers or employees of the other companies. Consumers may have an identity at a social IdP which uses OIDC, such as Azure.
 
 ### Features and Limitations
 
