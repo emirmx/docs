@@ -8,7 +8,7 @@ weight: 30
 
 ## Introduction
 
-You can manage and share station and workspace data across various workspaces and environments by exporting and importing the configuration of a single station, or of multiple stations at the same time. If performed by the workspace admin, the import includes applications and devices associated with the station. In this way, you can replicate or migrate of station setups, supporting efficient and consistent data handling.
+You can manage and share station and workspace data across various workspaces and environments by exporting and importing the configuration of a single station, or of multiple stations at the same time. In this way, you can easily manage different stages and versions of your station configurations by keeping them in separate workspaces.
 
 ### Workspace Roles and Permissions
 
@@ -41,7 +41,7 @@ To transfer multiple station configurations, along with their associated applica
 6. On the **Stations** page, click the three-dot menu in the top right corner of the screen, and then click **Import Stations**.
 7. Optionally, specify if the import should include the apps and devices:
 
-    * **Include Apps** - If you select this option, the import creates any apps that are linked to the exported stations but do not yet exist in the workspace with the same URL and public key. This option is only available to [Workspace Owners and Admins](/mendix-workstation/installation/#collaboration).
+    * **Include Apps** - If you select this option, the import creates any apps that are linked to the exported stations but do not yet exist in the workspace with the same URL and public key.
     * **Include Devices** - If you select this option, the import includes any exported device configurations.
 
 After the import finishes, your target workspace has the same applications and station configurations as the source workspace, but the stations are not yet registered to computers.

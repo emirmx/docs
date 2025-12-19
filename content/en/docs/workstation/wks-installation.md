@@ -190,7 +190,9 @@ By default, the Workstation Management is pre-configured as an allowed app to co
 
 ### Workspace Team and Collaboration {#collaboration}
 
-Note: Collaborating with other users in a workspace requires a Workstation license. 
+{{% alert color="info" %}}
+Collaborating with other users in a workspace requires a Workstation license.
+{{% /alert %}}
 
 Invite and manage members of a Workspace on the Team page. Only users who have signed into Workstation Management can be invited via email. One of the following roles can be assigned:
 
