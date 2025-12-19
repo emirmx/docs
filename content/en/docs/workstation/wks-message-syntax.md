@@ -46,10 +46,10 @@ Before sending messages to the File Device, review the following points:
 
 ### Response
 
-* `R#Path` - File or directory at the specified `Path` was renamed (also triggered when file/directory is created or deleted)
+* `R#Path` - File or directory at the specified `Path` was renamed, created, or deleted.
 * `C#Path` - File or directory at the specified `Path` was changed. This is triggered both when a file is modified and when the contents of a directory changes. 
-* `D#Data` - `Data` from file read
-* `E#Error` - `Error` message from operating system
+* `D#Data` - `Data` from file read.
+* `E#Error` - `Error` message from operating system.
 * `S#{0,1,2,3}#directory` - The command `{0,1,2,3}` on `directory` was successful.
 
 ### Example Test
