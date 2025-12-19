@@ -31,12 +31,11 @@ This device type requires the following message and response:
 
 ### Important Considerations
 
-Before sending messages to the File Device, please review these important points:
+Before sending messages to the File Device, review the following points:
 
-* **Path Handling:** Paths can be provided either as absolute paths (e.g., */var/log/app.log* or *C:\Data\report.txt*) or as relative paths.
-* **Relative Paths:** Relative paths are always interpreted relative to the allowed folder configured in the Workstation Management.
-* **Delimiter:** The *#* character is used as a delimiter within messages. Paths and data are not allowed to contain the *#* character. 
-* **Case Sensitivity:** File and directory paths may be case-sensitive depending on the underlying operating system (e.g., Linux paths are typically case-sensitive, Windows paths are not).
+* Path handling - You can provide the paths either as absolute (for example, `/var/log/app.log` or `C:\Data\report.txt`), or as relative paths. Relative paths are always interpreted relative to the allowed folder configured in Workstation Management.
+* Delimiter - The `#` character is used as a delimiter within messages. Paths and data may not contain the `#` character. 
+* Case sensitivity - File and directory paths may be case-sensitive depending on the underlying operating system. For example, Linux paths are typically case-sensitive, while Windows paths are not.
  
 ### Message
 
