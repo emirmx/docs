@@ -33,14 +33,14 @@ This device type requires the following message and response:
 
 Before sending messages to the File Device, please review these important points:
 
-* **Path Handling:** Paths can be provided either as absolute paths (e.g., /var/log/app.log or C:\Data\report.txt) or as relative paths.
+* **Path Handling:** Paths can be provided either as absolute paths (e.g., */var/log/app.log* or *C:\Data\report.txt*) or as relative paths.
 * **Relative Paths:** Relative paths are always interpreted relative to the allowed folder configured in the Workstation Management.
-* **Delimiter:** The # character is used as a delimiter within messages. Paths and data are not allowed to contain the # character. 
+* **Delimiter:** The *#* character is used as a delimiter within messages. Paths and data are not allowed to contain the *#* character. 
 * **Case Sensitivity:** File and directory paths may be case-sensitive depending on the underlying operating system (e.g., Linux paths are typically case-sensitive, Windows paths are not).
  
 ### Message
 
-* `0#Path` - Initiate watching for changes in the specified `Path`. If `Path` is a directory, the device will watch for changes within that directory (creation, deletion, renaming, or modification of files/subdirectories). If Path is a file, the device will watch for changes to that specific file (modification, deletion, or renaming).
+* `0#Path` - Initiate watching for changes in the specified `Path`. If `Path` is a directory, the device will watch for changes within that directory (creation, deletion, renaming, or modification of files/subdirectories). If `Path` is a file, the device will watch for changes to that specific file (modification, deletion, or renaming).
 * `1#Path` - Stop watching for changes in the specified `Path`.
 * `2#File path` - Read the content of the file at the specified `File Path`.
 * `3#File path#Data#flag` - Write `Data` to the file at the specified `File Path`. The `flag` can be `w` for overwrite, `a` for append If left blank, the value defaults to `w`.
