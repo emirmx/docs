@@ -47,13 +47,18 @@ The `execute()` method returns the number of objects that were affected by the s
 
 ## `DELETE` Statement {#oql-delete}
 
+{{% alert color="info" %}}
+Available from Mendix version 11.1.0
+{{% /alert %}}
+
 The syntax of `DELETE` statements is:
 
 ```sql
 DELETE FROM <entity> WHERE <condition>
 ```
 
-`condition` can be anything that can appear in an OQL [WHERE clause](/refguide/oql-clauses/#where).
+* `entity` is the entity whose objects are being deleted.
+* `condition` can be anything that can appear in an OQL [WHERE clause](/refguide/oql-clauses/#where).
 
 ### OQL `DELETE` Limitations
 
@@ -63,21 +68,39 @@ DELETE FROM <entity> WHERE <condition>
 
 ## `UPDATE` Statement {#oql-update}
 
+{{% alert color="info" %}}
+Available from Mendix version 11.3.0
+{{% /alert %}}
+
 The syntax of `UPDATE` statements is:
 
 ```sql
 UPDATE <entity>
-SET { { <attribute> | <association> } = <expression> } [ ,...n ]
+SET { { <attribute> | <association> } = <expression> } [ , …n ]
 WHERE <condition>
 ```
 
-`entity` is the entity whose objects are being updated.
+* `entity` is the entity whose objects are being updated.
 
-`attribute` is an attribute of the entity that is being updated. `association` is an association that is being updated. Multiple attributes and associations can be updated in the same statement. An attribute of type `autonumber` can not be updated. The `ID` field of an entity cannot be updated.
+* `attribute` is an attribute of the entity that is being updated.
 
-`expression` is a new value of an attribute or association. Any [OQL expression](/refguide/oql-expressions/) is allowed. When updating attributes, the value type of the expression should match the attribute type according to [type coercion precedence](/refguide/oql-expression-syntax/#type-coercion). When updating an enumeration attribute using a literal, the literal must be a valid value for the enumeration. When updating an enumeration attribute using another enumeration, the expression enumeration must be a subset of the attribute enumeration. When updating a string attribute using a string literal, the literal length must be equal to or less than the length of the attribute. In the case of associations, association and entity expressions must match the target association type. Values of type LONG can also be used as association values, but they must be valid ids of associations which are of the target association type.
+    An attribute of type `autonumber` can not be updated. The `ID` attribute of an entity cannot be updated.
 
-`condition` can be anything that can appear in an OQL [WHERE clause](/refguide/oql-clauses/#where).
+* `association` is an association that is being updated. Associations can be updated in Mendix version 11.4.0 and above.
+
+    Multiple attributes and associations can be updated in the same statement. 
+
+* `expression` is a new value of an attribute or association. Any [OQL expression](/refguide/oql-expressions/) is allowed.
+
+    * When updating attributes, the value type of the expression should match the attribute type according to [type coercion precedence](/refguide/oql-expression-syntax/#type-coercion).
+    * When updating an enumeration attribute using a literal, the literal must be a valid value for the enumeration.
+    * When updating an enumeration attribute using another enumeration, the expression enumeration must be a subset of the attribute enumeration.
+    * When updating a string attribute using a string literal, the literal length must be equal to or less than the length of the attribute.
+    * In the case of associations, association and entity expressions must match the target association type.
+    
+        Values of type LONG can also be used as association values, but they must be valid ids of associations which are of the target association type.
+
+* `condition` can be anything that can appear in an OQL [WHERE clause](/refguide/oql-clauses/#where).
 
 Example:
 
@@ -141,40 +164,23 @@ SET
     SpecializationAttribute = 1
 ```
 
-## Joins
-
-You cannot directly join other entities in the `FROM` clause of OQL `DELETE` or in the `UPDATE` clause of OQL `UPDATE`. However, you can achieve the same result using long paths or subqueries. For example:
-
-```sql
-DELETE FROM Module.Order
-WHERE Module.Order_Customer/Module.Customer/Name = 'Mary'
-```
-
-or
-
-```sql
-UPDATE Module.Order
-SET CustomerName = 'Mary'
-WHERE ID IN (
-        SELECT ID
-        FROM Module.Order
-        INNER JOIN Module.Customer ON Module.Customer/CustomerID = Module.Order/CustomerID
-        WHERE Module.Customer/Name = 'Mary' )
-```
-
 ## `INSERT` Statement {#oql-insert}
+
+{{% alert color="info" %}}
+Available from Mendix version 11.6.0
+{{% /alert %}}
 
 The syntax of `INSERT` statements is:
 
 ```sql
-INSERT INTO <entity> ( <attribute> [ ,...n ] ) <oql-query>
+INSERT INTO <entity> ( <attribute> [ , …n ] ) <oql-query>
 ```
 
-`entity` is the entity for which new objects will be created.
+* `entity` is the entity for which new objects will be created.
 
-`attribute` is an attribute of the entity that will be inserted.
+* `attribute` is an attribute of the entity that will be inserted.
 
-`oql-query` is any OQL query that returns same number of columns as the number of attributes that will be inserted.
+* `oql-query` is any OQL query that returns same number of columns as the number of attributes that will be inserted.
 This query can select data from persistable entities and/or [view entities](/refguide/view-entities/).
 
 Example:
@@ -198,3 +204,26 @@ SELECT NewOrderNumber, Loader.TemporaryData_Customer/Loader.Customer/Number FROM
 * Entity access rules are not applied to any OQL statements.
 * No event handlers will be executed.
 * Runtime and client state will not be updated with the changes.
+
+### Joins
+
+You cannot directly join other entities in the `FROM` clause of OQL `DELETE` or in the `UPDATE` clause of OQL `UPDATE`. However, you can achieve the same result using long paths or subqueries. For example:
+
+```sql
+DELETE FROM Module.Order
+WHERE Module.Order_Customer/Module.Customer/Name = 'Mary'
+```
+
+or
+
+```sql
+UPDATE Module.Order
+SET CustomerName = 'Mary'
+WHERE ID IN (
+        SELECT ID
+        FROM Module.Order
+        INNER JOIN Module.Customer ON Module.Customer/CustomerID = Module.Order/CustomerID
+        WHERE Module.Customer/Name = 'Mary' )
+```
+
+
