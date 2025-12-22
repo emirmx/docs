@@ -51,7 +51,7 @@ See the **Example Implementations** folder inside the module containing example 
 
 #### Protocol Version
 
-When creating an MCP client, specify a `ProtocolVersion`. On the official MCP documentation, you can review the differences between the protocol versions in the [changelog](https://modelcontextprotocol.io/specification/2025-03-26/changelog). The MCP Client module currently only supports `v2024-11-05` with the HTTP+SSE transport and `v2025-03-25` with the Streamable HTTP transport, which is the new standard transport. MCP servers should support the same version as the client. Note that Mendix supports the capabilities provided by the MCP Java SDK.
+When creating an MCP client, specify a `ProtocolVersion`. On the official MCP documentation, you can review the differences between the protocol versions in the [changelog](https://modelcontextprotocol.io/specification/2025-03-26/changelog). The MCP Client module currently supports `v2024-11-05` with the HTTP+SSE transport and `v2025-03-26` with the Streamable HTTP transport, which is the new standard method. MCP servers should support the same version as the client. Note that Mendix supports the capabilities provided by the MCP Java SDK.
 
 ### Discovering Resources {#discover-resources}
 
