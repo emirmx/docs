@@ -223,7 +223,7 @@ You can revert changes in the **Changes** pane, from **Version Control** > **Rev
 You can also **Revert All Changes** while [merging](#merge). This will restore your app to the most recent commit, discarding changes creating by the merging process.
 {{% /alert %}}
 
-### Reverting a Previous Commit
+### Reverting a Previous Commit {#revert-previous-commit}
 
 Changes that have been committed and pushed to the server can never be deleted from the history. However, you can make another commit to revert the changes. This is called **Reverse commit** in Studio Pro.
 
