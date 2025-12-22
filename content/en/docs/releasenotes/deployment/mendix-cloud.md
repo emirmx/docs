@@ -16,6 +16,18 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2025
 
+### December 14, 2025
+
+#### Improvements
+
+* We enhanced the security infrastructure with stronger access controls for internal data objects
+
+### December 06, 2025
+
+#### Improvements
+
+* We have upgraded Mendix Dock to support contract expiry banners. Mendix Cloud can now provide timely information when contracts are approaching their expiry dates.
+
 ### November 23, 2025
 
 #### New Features
