@@ -17,7 +17,7 @@ To access the **Merge** dialog box, open [Version Control](/refguide/version-con
 {{< figure src="/attachments/refguide/modeling/menus/version-control-menu/merge-dialog/merge-dialog.png" alt="Merge Dialog" class="no-border" >}}
 
 {{% alert color="info" %}}
-Git will ensure that changes are not applied incorrectly. This may lead to unexpected results if your branch reverts a previous commit. See [Reverting Uncommitted Changes](/refguide/using-version-control-in-studio-pro/#revert-previous-commit) in *Using Version Control in Studio Pro* for more information.
+Git ensures that changes are not applied incorrectly. This may lead to unexpected results if your branch reverts a previous commit. See [Reverting Uncommitted Changes](/refguide/using-version-control-in-studio-pro/#revert-previous-commit) in *Using Version Control in Studio Pro* for more information.
 {{% /alert %}}
 
 Available scenarios are described in sections below.
