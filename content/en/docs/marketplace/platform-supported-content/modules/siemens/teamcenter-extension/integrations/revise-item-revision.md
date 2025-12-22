@@ -21,14 +21,15 @@ This document takes you through a use case of creating a revision of a `Requirem
 3. The [Import Mapping page](/refguide/import-mappings/) is displayed. This determines what data is retrieved from Teamcenter, and what type of objects are created in Mendix. Click one of the placeholder entities to start import mapping. 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/revise-item-revision/object-mapping.png">}}
 
-4. In the object mapping window that opens, follow these steps:
+4. In the object mapping panel that opens, follow these steps:
 
     1. The left side shows all Teamcenter objects retrieved from the Teamcenter instance. These can be out-of-the-box or custom. For this use case, you want to revise `Requirements Revisions`, so select `Requirement Revision`, which is available under `Item Revision`.
     {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/revise-item-revision/object-mapping.png">}}
-    2. The right side shows the Mendix entities that can be used to create the new Revision of the Item Revision in Teamcenter. You want to have an entity specifically for `Requirement Revisions` so you can choose custom properties to be set when revising the `Item Revision`. As such, select `TcConnector.ItemRevision`, then select the **Create new specialization of selected entity** checkbox. The entity is automatically named `RequirementRevision` after the Teamcenter Object name, but it can be renamed here if required.    
-    Click **OK** to finish the object mapping and close the object mapping window.
+    2. The right side shows the Mendix entities that can be used to create the new Revision of the Item Revision in Teamcenter. You want to have an entity specifically for `Requirement Revisions` so you can choose custom properties to be set when revising the `Item Revision`. As such, select `TcConnector.ItemRevision`. 
+    3. Select the **Create new specialization of selected entity** checkbox. The entity is automatically named `RequirementRevision` after the Teamcenter Object name, but it can be renamed here if required.    
+    4. Click **OK** to finish the object mapping and close the object mapping panel.
 
-5. Once you close the object mapping window, the attributes and associations sidebar is displayed. From here, select the properties you want to have within your Mendix app. For this use case, you want `Name`, `Item ID`, and `Description` to be provided as attributes that can be modified when revising the `Item Revision`. As such, make sure to select the write option for these attributes. Since it is already selected, no further actions are required in the sidebar.
+5. Once you close the object mapping panel, the attributes and associations sidebar is displayed. From here, select the properties you want to have within your Mendix app. For this use case, you want `Name`, `Item ID`, and `Description` to be provided as attributes that can be modified when revising the `Item Revision`. As such, make sure to select the write option for these attributes. Since it is already selected, no further actions are required in the sidebar.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/revise-item-revision/property-mapping.png">}}
 
 6. Click the **Generate** button to generate the appropriate domain model and microflows.    

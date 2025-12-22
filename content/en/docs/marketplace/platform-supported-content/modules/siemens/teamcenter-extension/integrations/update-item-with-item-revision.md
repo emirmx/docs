@@ -21,11 +21,12 @@ This document takes you through a use case of updating the properties, such as `
 3. The [Import Mapping page](/refguide/import-mappings/) is displayed. This determines what data is retrieved from Teamcenter, and what type of objects are created in Mendix. Click one of the placeholder entities to start import mapping.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/update-item-with-item-revision/import-mapping.png">}}
 
-4. In the object mapping window that opens, follow these steps:
+4. In the object mapping panel that opens, follow these steps:
 
     1. The left side shows all Teamcenter objects retrieved from the Teamcenter instance. These can be out-of-the-box or custom. For this use case, you want to update `CAE 3D Analysis Revision`, so look for `CAE 3D Analysis`.
-    2. The right side shows the Mendix entities that can serve as input parameters for the microflow to update an Item with Item Revision. If you create your own entity here, you can ensure that additional attributes are set in Teamcenter upon creation. As such, select `TcConnector.Item`, then select the **Create new specialization of selected entity** checkbox. The entity is automatically named `CAEAnalysis` after the Teamcenter Object name, but it can be renamed here if required.    
-    Click **OK** to finish the object mapping and close the object mapping window.
+    2. The right side shows the Mendix entities that can serve as input parameters for the microflow to update an Item with Item Revision. If you create your own entity here, you can ensure that additional attributes are set in Teamcenter upon creation. As such, select `TcConnector.Item`.
+    3. Select the **Create new specialization of selected entity** checkbox. The entity is automatically named `CAEAnalysis` after the Teamcenter Object name, but it can be renamed here if required.    
+    4. Click **OK** to finish the object mapping and close the object mapping panel.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/update-item-with-item-revision/object-mapping.png">}}
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/update-item-with-item-revision/object-mapping-result.png">}}
 

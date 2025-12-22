@@ -24,14 +24,15 @@ Follow these steps to create the integration:
 Click one of the placeholder entities to start the import mapping.  
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/search-item-revisions/import-mapping.png">}}
 
-4. In the object mapping window that opens, follow these steps: 
+4. In the object mapping panel that opens, follow these steps: 
 
     1. The left side shows all Teamcenter objects retrieved from the Teamcenter instance. These can be out-of-the-box or custom. For this use case, select `Part Revision (Part Revision)`, which can be found under `Item Revision`.     
-    2. The right side shows the relevant Mendix entities for which objects can be created when retrieving Item Revisions from Teamcenter. For this use case, you want to have an entity specifically for `Part Revisions`, so you can make changes and add new attributes to it. As such, select `TcConnector.ItemRevision`, then select the **Create new Specialization of selected entity** checkbox. The entity is automatically named `PartRevision` after the Teamcenter Object name, but it can be renamed here if required.    
-    Click **OK** to finish the object mapping and close the object mapping window. 
+    2. The right side shows the relevant Mendix entities for which objects can be created when retrieving Item Revisions from Teamcenter. For this use case, you want to have an entity specifically for `Part Revisions`, so you can make changes and add new attributes to it. As such, select `TcConnector.ItemRevision`.
+    3. Select the **Create new Specialization of selected entity** checkbox. The entity is automatically named `PartRevision` after the Teamcenter Object name, but it can be renamed here if required.    
+    4. Click **OK** to finish the object mapping and close the object mapping panel. 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/search-item-revisions/object-mapping.png">}}
 
-5. Once you close the object mapping window, the attributes and associations sidebar is displayed. From here, select the properties you want to have within your Mendix app. For this use case, you want to create an integration to retrieve additional Part Revision details. From the side panel, select the following attributes to add to the `Part Revision` entity:
+5. Once you close the object mapping panel, the attributes and associations sidebar is displayed. From here, select the properties you want to have within your Mendix app. For this use case, you want to create an integration to retrieve additional Part Revision details. From the side panel, select the following attributes to add to the `Part Revision` entity:
 
     * `Finish Type`
     * `Multi-body`

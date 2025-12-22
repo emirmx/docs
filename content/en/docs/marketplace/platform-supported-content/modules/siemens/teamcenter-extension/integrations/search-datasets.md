@@ -21,14 +21,15 @@ This document takes you through a use case of creating the logic to search datas
 3. The [Import Mapping page](/refguide/import-mappings/) is displayed. This determines what data is retrieved from Teamcenter, and what type of objects are created in Mendix. Click one of the placeholder entities to start import mapping.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/search-datasets/import-mapping.png">}}
 
-4. In the object mapping window that opens, follow these steps:
+4. In the object mapping panel that opens, follow these steps:
 
     1. The left side shows all Teamcenter Datasets retrieved from the Teamcenter instance. These can be out-of-the-box or custom. For this use case, you want to search the different types of Datasets, so select `Dataset`.
-    2. The right side shows the relevant Mendix entities for which objects can be created when we retrieve Datasets from Teamcenter. You want to have an entity specifically for `Database`. As such, select `TcConnector.Dataset`, then select the **Create new specialization of selected entity** checkbox. The entity is automatically named `Dataset` after the Teamcenter Object name, but it can be renamed here if required.    
-    Click **OK** to finish the object mapping and close the object mapping window.
+    2. The right side shows the relevant Mendix entities for which objects can be created when we retrieve Datasets from Teamcenter. You want to have an entity specifically for `Database`, so you select `TcConnector.Dataset`.
+    3. Select the **Create new specialization of selected entity** checkbox. The entity is automatically named `Dataset` after the Teamcenter Object name, but it can be renamed here if required.    
+    4. Click **OK** to finish the object mapping and close the object mapping panel.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/search-datasets/object-mapping.png">}}
 
-5. COnce you close the object mapping window, the attributes and associations sidebar is displayed. From here, select the properties you want to have within your Mendix app. For this use case, you do not need to add any additional properties, so no selections are necessary.
+5. Once you close the object mapping panel, the attributes and associations sidebar is displayed. From here, select the properties you want to have within your Mendix app. For this use case, you do not need to add any additional properties, so no selections are necessary.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/search-datasets/property-mapping.png">}}
 
 6. Click the **Generate** button to generate the appropriate domain model and microflows.    

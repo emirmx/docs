@@ -25,18 +25,19 @@ Follow these steps to create the integration:
     Click one of the top placeholder entities to start the import mapping.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/create-item-with-item-revision/import-mapping.png">}}
 
-4. In the object mapping window that opens, follow these steps:
+4. In the object mapping panel that opens, follow these steps:
 
     1. The left side shows all Teamcenter objects retrieved from the Teamcenter instance. These can be out-of-the-box or custom. For this use case, you want to create Problem Reports, so you select `Problem Report`, which can be found under `Item` > `Change Item` > `Generic Problem Report`.
-    2. The right side shows the Mendix entities that can serve as input parameters for the microflow to create an Item with Item Revision. If you create your own entity here, you can ensure that additional attributes are set in Teamcenter upon creation. As such, select `TcConnector.ItemRevision`, then select the **Create new specialization of selected entity** checkbox. The entity is automatically named `PartRevision` after the Teamcenter Object name, but it can be renamed here if required.    
-    Click **OK** to finish the object mapping and close the object mapping window.
+    2. The right side shows the Mendix entities that can serve as input parameters for the microflow to create an Item with Item Revision. If you create your own entity here, you can ensure that additional attributes are set in Teamcenter upon creation. As such, select `TcConnector.ItemRevision`.
+    3. Select the **Create new specialization of selected entity** checkbox. The entity is automatically named `PartRevision` after the Teamcenter Object name, but it can be renamed here if required.    
+    4. Click **OK** to finish the object mapping and close the object mapping panel.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/create-item-with-item-revision/object-mapping.png">}}
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/create-item-with-item-revision/object-mapping-result.png">}}
 
 5. For this use case, you also want to create a Problem Report Revision, so repeat this process to select `Problem Report Revision` with another specialized entity.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/create-item-with-item-revision/property-mapping.png">}}
 
-6. Once you close the object mapping window, the attributes and associations sidebar is displayed. From here, select the properties you want to have within your Mendix app. For this use case, you want to create an integration to retrieve additional Problem Report Revision details. From the side panel, select the following attributes to add to the `Problem Report Revision` entity:
+6. Once you close the object mapping panel, the attributes and associations sidebar is displayed. From here, select the properties you want to have within your Mendix app. For this use case, you want to create an integration to retrieve additional Problem Report Revision details. From the side panel, select the following attributes to add to the `Problem Report Revision` entity:
 
     * `Severity Rating`
 
