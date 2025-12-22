@@ -30,7 +30,7 @@ The navigation bar has the following changes making your app's bottom navigation
 
 ## What This Means for You
 
-Mendix 11.6.0 automatically provides you with an edge-to-edge display experience with the following features.
+Mendix Native template 16.1.0 automatically provides you with an edge-to-edge display experience with the following features.
 
 * **No Manual Calculations**: You don't need to worry about calculating insets or adjusting for different device configurations
 * **Automatic Adaptation**: The bottom bar automatically adjusts its height based on whether the navigation bar is visible
