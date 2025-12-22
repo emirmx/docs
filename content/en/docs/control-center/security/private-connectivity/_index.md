@@ -6,6 +6,10 @@ description: "Describes the Private Connectivity section in the Mendix Control C
 weight: 30
 ---
 
+{{% alert color="warning" %}}
+This feature is in Public Beta. For more information, refer to [Release Status](/releasenotes/release-status/).
+{{% /alert %}}
+
 ## Introduction
 
 The **Private Connectivity** page allows you to view and manage your company's Private Connectivity assets: networks, agents, resources, and connections.
@@ -34,22 +38,22 @@ The following sections provide an overview of the components which make up the P
 
 ### Networks
 
-Mendix has an enterprise account with Tailscale. Within the Mendix-owned Tailscale account, Mendix creates a dedicated network for you. You can have multiple networks if you want to, for example, isolate production traffic from non-production traffic.    
+Mendix has an enterprise account with Tailscale. Within the Mendix-owned Tailscale account, Mendix creates a dedicated private connectivity network for you. You can have multiple networks if, for example, you want to isolate production traffic from non-production traffic.    
 
 ### Agents
 
-Next, you need to install agents on your own infrastructure. These agents are connectivity tools that initiate an outgoing connection to the network Mendix created for you.    
+Next, you need to install agents on your own infrastructure. These agents are connectivity tools that initiate an outgoing connection to the private connectivity network Mendix created for you.    
 
 Agents require authentication keys that are managed on the Mendix platform, and can only connect to the network to which their authentication key is linked.     
-Agents can be installed directly on the network which hosts the resources to which you want to connect. Alternatively, they can be installed on a separate network from where they have access to the resources.     
+Each agent must be installed on a server that has access to the resources to which you want to connect.     
 
-An agent can connect to only one network, but you can install multiple agents that connect to the same network. For example, you can install an agent in your on-premises data center and another agent in your AWS account, so that your Mendix apps can connect to resources on both infrastructures.
+An agent can connect to a single private connectivity network, but you can install multiple agents that connect to the same private connectivity network. For example, you can install an agent in your on-premises data center and another agent in your AWS account, so that your Mendix apps can connect to resources on both infrastructures.
 
 ### Resources
 
 Once agents are installed, you need to use them to expose resources. These resources are subnets of a network. They are available through the agent, and not through the public internet.    
 
-Resources exposed via agents must always be enabled on the Mendix platform before they can be connected to from your Mendix apps. This gives you full control over what resources are accessible.
+Resources exposed via agents must always be enabled on the Mendix platform before your Mendix apps can connect to them. This gives you full control over what resources are accessible.
 
 ### Connections
 

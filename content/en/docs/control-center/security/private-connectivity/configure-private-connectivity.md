@@ -17,15 +17,15 @@ To connect from a Mendix app to a resource on your internal network, you need to
 6. Enable resources. This is done on the Mendix platform.
 7. Request a connection. This is done on the Mendix platform.
 8. Approve the connection. This is done on the Mendix platform.
-9. Configure DNS (optional). This is done on the Mendix platform.
+<!-- 9. Configure DNS (optional). This is done on the Mendix platform. -->
 
 The following sections provide details on each of the steps.
 
 ## Networks {#private-connectivity-networks}
 
-Mendix Private Connectivity networks are the bridge between Mendix Cloud and your own infrastructure. You need at least one network to be able to connect from a Mendix app to your own infrastructure. You can, however, create multiple networks, for example, to isolate your production traffic from non-production traffic.
+Mendix Private Connectivity networks are the bridge between Mendix Cloud and your own infrastructure. You need at least one network to be able to connect from a Mendix app to your own infrastructure. You can, however, create multiple networks if, for example, you want to isolate your production traffic from non-production traffic.
 
-On the **Networks** tab of the **Private Connectivity** page, you can see all the networks associated to your company. The page shows the following information for each network:
+On the **Networks** tab of the **Private Connectivity** page, you can see all the private connectivity networks associated to your company. The page shows the following information for each network:
 
 * **Network** – The name of the network.
 * **External Agents** – The number of agents that are installed on your internal infrastructure, and that are connected to the network.
@@ -33,14 +33,14 @@ On the **Networks** tab of the **Private Connectivity** page, you can see all th
 * **Actions** – A list of actions that you can take on the network:
 
     * **Details**    
-    * **Add DNS**
+    <!-- * **Add DNS** -->
 	* **Add Agent**
-	* **Edit**
-	* **Delete**
+	<!-- * **Edit**
+	* **Delete** -->
 
 ### Adding a Network {#private-connectivity-networks-add}
 
-To add a new network for your company, follow these steps:
+To add a new private connectivity network for your company, follow these steps:
 
 1. On the **Private Connectivity** page, click one of these buttons, depending on your scenario:
 
@@ -52,7 +52,7 @@ To add a new network for your company, follow these steps:
 4. On the **Add Agent** tab, provide a descriptive and recognizable name for the new agent, then click **Add**.    
    Refer to [Adding an Agent](#private-connectivity-agents-add) for details.
 
-Your network and agent are now added. You can continue with [installing the agent](#private-connectivity-agents-install) on your infrastructure and [configuring the DNS](#private-connectivity-networks-dns) for your network.
+Your network and agent are now added. You can continue with [installing the agent](#private-connectivity-agents-install) on your infrastructure. <!-- and [configuring the DNS](#private-connectivity-networks-dns) for your network. -->
 
 ### Viewing and Editing Networks {#private-connectivity-networks-details}
 
@@ -63,16 +63,16 @@ To view and edit an existing network, follow these steps:
 3. Select **Details**. The details of that network are displayed:
 
     * **Network** – The name you gave to the network. This field is editable.
-    * **Network ID** – The internal ID of your network. You can copy this, for example, if you want to provide it in a support ticket for any issues with the network.
+    * **Network ID** – The internal ID of your network. You can copy this if, for example, you want to provide it in a support ticket for any issues with the network.
     * **External Agents** – A list of all external agents that run on your own internal infrastructure, and that have access to the network.    
 	  This field also displays the status of each agent.
-    * **DNS Details** – A list of domains for which you have [configured DNS](#private-connectivity-networks-dns).
+    <!-- * **DNS Details** – A list of domains for which you have [configured DNS](#private-connectivity-networks-dns). -->
     * **Environment Details** – A list of app environments that are using the network to connect to a resource, as well as the environment's status.
-    * **Show Logs** – This allows you to see [the flow logs](https://tailscale.com/kb/1219/network-flow-logs) for your network. They can help you troubleshoot issues with connectivity on your network.
+    <!-- * **Show Logs** – This allows you to see [the flow logs](https://tailscale.com/kb/1219/network-flow-logs) for your network. They can help you troubleshoot issues with connectivity on your network. -->
 
 4. Click **Save** to save any changes you have made.
 
-### Configuring DNS for your Network {#private-connectivity-networks-dns}
+<!-- ### Configuring DNS for your Network {#private-connectivity-networks-dns}
 
 If your Mendix app connects to external resources, you probably want to do this using host names. DNS (Domain Name System) servers, also known as nameservers, translate a host name, like `www.mendix.com` to an IP address, like `192.168.1.1`. If the DNS record with that translation is on a public nameserver, Mendix apps can access those by default with no issues. However, if you want to connect to a private host name, like `mydatabase.myinternalnetwork.net`, where the DNS record for this host name is stored on a private nameserver, your Mendix app will not be able to resolve the host name to an IP address, thus making the host inaccessible for the Mendix application.
 
@@ -130,11 +130,11 @@ When you delete a network, the following actions also occur:
 {{% alert color="warning" %}}
 When you delete a network, agents that are connected to your infrastructure are not uninstalled.    
 Refer to the instructions for [uninstalling an agent](#private-connectivity-agents-uninstall). 
-{{% /alert %}}
+{{% /alert %}} -->
 
 ## Agents {#private-connectivity-agents}
 
-To connect your infrastructure to your Mendix Private Connectivity networks, you need agents.     
+To connect your infrastructure to your private connectivity networks, you need agents.     
 At least one agent is necessary to be able to connect from a Mendix app to your infrastructure, but you can connect multiple agents to each network.
 
 On the **Agents** tab of the **Private Connectivity** page, you can see all the agents associated to your company. The page displays the following information for each agent:
@@ -145,11 +145,11 @@ On the **Agents** tab of the **Private Connectivity** page, you can see all the 
 * **Status (Last seen)** – The status of the agent, or the last time it was connected to the network:
 
     * **Connected** – The agent is currently connected to the network.
-	* Date and time – The last time the agent was connected to the network. The agent is not connected at this time.
+    * Date and time – The last time the agent was connected to the network. The agent is not connected at this time.
 
 ### Adding an Agent {#private-connectivity-agents-add}
 
-You can only add agents if you have at least one network. Refer to [Adding a Network](#private-connectivity-networks-add) to create a network if you have not done so already.
+You can only add agents if you have at least one private connectivity network. Refer to [Adding a Network](#private-connectivity-networks-add) to create a network if you have not done so already.
 
 To add a new agent to a network, follow these steps:
 
@@ -157,6 +157,7 @@ To add a new agent to a network, follow these steps:
 
     * On the **Networks** tab, select a network to which you want to add an agent, then click **More Options** ({{< icon name="three-dots-menu-horizontal" >}}), and select **Add Agent**.
     * On the **Agents** tab, click **Add Agent**.
+
 2. On the **Add Agent** tab, select the network to which you want to add the agent.
 3. Provide a descriptive and recognizable name for the agent.
 4. Select the infrastructure type for your agent.
@@ -172,7 +173,7 @@ To view and edit an existing agent, follow these steps:
 2. Click **More Options** ({{< icon name="three-dots-menu-horizontal" >}}), then select **Details**. The details of that agent are displayed:
 
     * **Agent Name** – The name you gave to the agent. This field is editable.
-    * **Agent ID** – The internal ID of your agent. You can copy this, for example, if you want to provide it in a support ticket for any issues with the agent.
+    * **Agent ID** – The internal ID of your agent. You can copy this if, for example, you want to provide it in a support ticket for any issues with the agent.
     * **Agent Key** – The authentication key of your agent. You can copy this authentication key for use when [starting an agent](#private-connectivity-agents-run).     
 	  This key should be treated as confidential.
     * **Network** – The network to which the agent is connected.
@@ -242,7 +243,7 @@ You need to replace `AUTH_KEY` with the authentication key of your agent.
 tailscale up --auth-key=<AUTH_KEY>
 ```
 
-### Uninstalling an Agent on your Infrastructure {#private-connectivity-agents-uninstall}
+### Uninstalling an Agent from your Infrastructure {#private-connectivity-agents-uninstall}
 
 After [deleting an agent](#private-connectivity-agents-delete), you can uninstall it from your infrastructure. Uninstalling an agent is typically done by your internal IT department, Infra department, or Network team.
 
@@ -316,8 +317,8 @@ To view and edit a resource, follow these steps:
 2. Click **More Options** ({{< icon name="three-dots-menu-horizontal" >}}), then select **Details**. 
    The details of that resource are displayed:
 
-    * **Resource Name** – The name you gave to the resource. This field is editable.
-    * **Resource ID** – The internal ID of your resource. You can copy this, for example, if you want to provide it in a support ticket for any issues with the agent.
+    * **Resource** – The name you gave to the resource. This field is editable.
+    * **Resource ID** – The internal ID of your resource. You can copy this if, for example, you want to provide it in a support ticket for any issues with the agent.
     * **Resource Type** – The type of resource, which can be:
 
         * **Route** – The resource is an exposed subnet route.
@@ -338,9 +339,9 @@ To view and edit a resource, follow these steps:
 
 Before you can connect to resources running on your own infrastructure, you have to expose these resources through an agent. This requires you to install an agent on the machine running the resource, or on a machine that has access to the resource.
 
-Mendix Cloud Private Connectivity currently supports exposing physical [subnet routes](https://tailscale.com/kb/1019/subnets) to your network via an agent. You can expose a single IP range, such as `192.0.2.0/24`, or multiple IP ranges separated by a semicolon, such as `192.0.2.0/24,198.51.100.0/24`.
+Mendix Cloud Private Connectivity currently supports exposing physical [subnet routes](https://tailscale.com/kb/1019/subnets) to your network via an agent. You can expose a single IP range, such as `192.0.2.0/24`, or multiple IP ranges separated by a colon, such as `192.0.2.0/24,198.51.100.0/24`.
 
-#### Exposing Subnet Routes on a Windows server {#private-connectivity-resources-expose-routes-windows}
+#### Exposing Subnet Routes on a Windows Server {#private-connectivity-resources-expose-routes-windows}
 
 To expose subnet routes for an agent that is already running, run the following script on the machine where the agent is installed.    
 Replace `IP_RANGE` with the IP ranges you want to expose:
@@ -356,7 +357,7 @@ In that case, use the following script, replacing `AUTH_KEY` with the authentica
 tailscale up --auth-key=<AUTH_KEY> --advertise-routes=<IP_RANGE>
 ```
 
-#### Exposing Subnet Routes on a Linux server {#private-connectivity-resources-expose-routes-linux}
+#### Exposing Subnet Routes on a Linux Server {#private-connectivity-resources-expose-routes-linux}
 
 To expose subnet routes for an agent on a Linux server, follow these steps:
 
@@ -373,7 +374,7 @@ You can also configure the exposed subnet routes when starting the agent. In tha
 sudo tailscale up --auth-key=<AUTH_KEY> --advertise-routes=<IP_RANGE>
 ```
 
-### Enabling and disabling Resources {#private-connectivity-resources-enable-disable}
+### Enabling and Disabling Resources {#private-connectivity-resources-enable-disable}
 
 Once resources are [exposed](#private-connectivity-resources-expose), they must be enabled by a Mendix Admin. Users can only request connections to resources once they have been enabled.
 
@@ -429,11 +430,11 @@ To view an existing connection, follow these steps:
     * **Environment** – The name of the environment for the connection.
     * **Network** – The network for the connection.
     * **Resource** – The name of the resource for the connection.
-    * **Resource ID** – The internal ID of your resource. You can copy this, for example, if you want to provide it in a support ticket.
+    * **Resource ID** – The internal ID of your resource. You can copy this if, for example, you want to provide it in a support ticket.
     * **Agent** – The name of the agent for the connection.
-    * **Agent ID** – The internal ID of the agent. You can copy this, for example, if you want to provide it in a support ticket.
+    * **Agent ID** – The internal ID of the agent. You can copy this if, for example, you want to provide it in a support ticket.
     * **Network** – The name of the network for the connection.
-    * **Network ID** – The internal ID of the network. You can copy this, for example, if you want to provide it in a support ticket.
+    * **Network ID** – The internal ID of the network. You can copy this if, for example, you want to provide it in a support ticket.
 
 ## Approving and Rejecting Connections {#private-connectivity-connections}
 
@@ -453,6 +454,6 @@ To disable a connection, follow these steps:
 1. On the **Connections** tab, find the connection you want to disable.
 2. Click **Reject**.
 
-## Activities
+<!-- ## Activities
 
-On the **Activities** tab, you can view a log of activities performed on your Private Connectivity assets.
+On the **Activities** tab, you can view a log of activities performed on your Private Connectivity assets. -->
