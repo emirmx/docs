@@ -98,6 +98,10 @@ A **Private** label on a component means the component is your company's private
 
 A component assigned as [group content](#group-content) will have a label for the [content group](#content-groups) to which it is assigned.
 
+### Shared with Me {#shared-with-me}
+
+This page contains private content shared with you by other companies who have marked you as a [guest](#guests).
+
 ### Saved {#saved-components}
 
 Clicking **Saved** opens the **Saved Content** page, which presents the Marketplace content you have [saved](/appstore/component-details/). 
@@ -168,6 +172,8 @@ To remove a member, click **Remove** next to their name.
 A guest is a Mendix Platform user from outside your organization who can download the selected private [content](#group-content) of this group. 
 
 To add a guest, enter their email address in the box and click **Add Guest**. They will receive an email notifying them of access to the private content. 
+
+The guest can then see all the private Marketplace content shared with them on their [Shared with Me](#shared-with-me) page.
 
 {{% alert color="info" %}}
 The guest must be a registered Mendix Platform user. Otherwise, they will not be able to access the shared content.
