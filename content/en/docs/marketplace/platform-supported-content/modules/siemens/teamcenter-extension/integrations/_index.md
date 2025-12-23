@@ -9,14 +9,14 @@ description: "Overview with step by step guides for various integrations support
 
 Follow these step-by-step guides for various integrations supported by the Teamcenter Extension:
 
-* Search Item Revisions
-* Create Item with Item Revision
-* Update Item with Item Revision
-* Revise Item Revision
-* Search Datasets
-* Get Datasets for Item Revision
-* Attach Dataset to Item Revision
-* Search Workspace Objects
-* Relate Workspace Objects
-* Get Properties
-* Get Structure
+* [Search Item Revisions](/appstore/modules/siemens-plm/teamcenter-extension/integrations/search-item-revisions/)
+* [Create Item with Item Revision](/appstore/modules/siemens-plm/teamcenter-extension/integrations/create-item-with-item-revision/)
+* [Update Item with Item Revision](/appstore/modules/siemens-plm/teamcenter-extension/integrations/update-item-with-item-revision/)
+* [Revise Item Revision](/appstore/modules/siemens-plm/teamcenter-extension/integrations/revise-item-revision/)
+* [Search Datasets](/appstore/modules/siemens-plm/teamcenter-extension/integrations/search-datasets/)
+* [Get Datasets for Item Revision](/appstore/modules/siemens-plm/teamcenter-extension/integrations/get-datasets-for-item-revision/)
+* [Attach Dataset to Item Revision](/appstore/modules/siemens-plm/teamcenter-extension/integrations/attach-dataset-to-item-revision/)
+* [Search Workspace Objects](/appstore/modules/siemens-plm/teamcenter-extension/integrations/search-workspace-objects/)
+* [Relate Workspace Objects](/appstore/modules/siemens-plm/teamcenter-extension/integrations/relate-workspace-objects/)
+* [Get Properties](/appstore/modules/siemens-plm/teamcenter-extension/integrations/get-properties/)
+* [Get Structure](/appstore/modules/siemens-plm/teamcenter-extension/integrations/get-structure/)

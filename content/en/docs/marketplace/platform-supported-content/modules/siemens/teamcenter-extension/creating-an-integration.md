@@ -10,7 +10,7 @@ weight: 1
 To open Teamcenter Extension in Studio Pro, go to **Extensions** > **Teamcenter Extension** > **Teamcenter Extension**. If you use Studio Pro versions 10.7 or lower, Teamcenter Extension is available under **View** > **Teamcenter Extension**.
 
 {{% alert color="info" %}}
-For details on the version dependencies between Studio Pro and Teamcenter Extension, see the [Dependencies](#dependencies) section.
+For details on the version dependencies between Studio Pro and Teamcenter Extension, refer to the [Dependencies](/appstore/modules/siemens-plm/teamcenter-extension/#dependencies) section in *Teamcenter Extension*.
 {{% /alert %}}
 
 The landing page has with three tabs: **Menu**, **History**, and **Settings**.
@@ -31,8 +31,8 @@ The tab indicates whether you currently have an active Teamcenter session, or wh
 
 There are two buttons:
 
-* **Edit** – allows you to change the settings
-* **Sign in** – signs you in to Teamcenter if **Authentication** is set to *Credentials* (see [Signin Configuration](#signin-configuration), below)
+* **Edit** – Allows you to change the settings.
+* **Sign in** – Signs you in to Teamcenter if **Authentication** is set to *Credentials*. For details, refer to [Signin Configuration](#signin-configuration).
 
 #### Editing Settings {#editing-settings}
 
@@ -48,6 +48,39 @@ While building your app and using Teamcenter Extension you need to provide the d
 
 * **TC URL** – The URL to which calls will be made to sign in and retrieve data. Teamcenter Extension supports both HTTP and HTTPS connections.
 * **Certificate Path** – The path to certificates that have .crt and .pfx file extensions. The path should be relative to the app directory.
+
+##### Signin Configuration {#signin-configuration}
+
+Set **Authentication** to one of the following methods:
+
+* **Credentials** – Select this if your Teamcenter instance supports logging in using provided credentials. You will be prompted for your Teamcenter credentials when you click the **Sign in** button on the **Settings** tab. This method prevents sharing of credentials among developers through versioning.
+* **Teamcenter SSO** – Allows you to use SSO if your Teamcenter instance is configured to use it. You can get these settings from your Teamcenter administrator.
+
+{{< figure src="/attachments/appstore/platform-supported-content/modules/teamcenter-extension/teamcenter-sso.png" >}}
+
+You need to fill in the following:
+
+* **SSO Login Server URL** – the endpoint where your authentication request is sent. It acts as the main entry point for users trying to log in using SSO. This URL is typically associated with the Identity Provider (IdP) and is responsible for handling login requests and directing users through the authentication process
+* **SSO Identity Server URL** – the URL of the Identity Server where the Teamcenter Extension application should be registered
+* **Teamcenter Application ID** – the existing Teamcenter Application ID obtained from the Teamcenter Security Services Identity Service configuration.
+* **Studio Pro Application ID** – the registered ID of the Teamcenter Extension at the Identity Server.
+* **Callback Port**: The port of the callback URL. For the registration, the callback URL should be set to http://localhost:[PortNumber]/, for example, http://localhost:12345/.
+
+    {{% alert color="info" %}}Although these settings generally align with those required to log in using SSO with the Teamcenter Connector in your Mendix application, the last two settings depend on the application registration with your Identity Server. Mendix recommends having a separate registration for the Teamcenter Extension on your Identity Server, distinct from your Mendix application’s registration. If you do not do this, conflicts might arise if your Mendix application is running.{{% /alert %}} 
+
+* **Teamcenter X SSO** – Allows you to use the SSO credentials of your Teamcenter X instance.
+
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/teamcenter-extension/teamcenter_sso.png" class="no-border" max-width=75% >}}
+
+Please work with your Siemens CApS representative to fill out the following:
+
+* **TcX Client ID**
+* **SAM Auth Base URL** 
+* **SAM Auth Client ID**
+* **SAM Auth Client Secret**
+* **Token Exchange Client ID**
+* **Token Exchange Client Secret**
+* **Callback URL**   
 
 ## Import Mapping {#import-mapping}
 

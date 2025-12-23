@@ -56,7 +56,7 @@ Teamcenter Extension is not compatible with Studio Pro versions between 10.8 and
 {{% /alert %}}
 
 {{% alert color="info" %}}
-If you use Teamcenter Extension V 1.0.0 with Teamcenter Connector V 3.6.1 or below and want to upgrade to Teamcenter Extension V 3.0.0 and Teamcenter Connector V 2406.3.0, see the [Upgrading Teamcenter Extension V 1.0.0 to V 3.0.0](#upgrade) section.
+If you use Teamcenter Extension V 1.0.0 with Teamcenter Connector V 3.6.1 or below and want to upgrade to Teamcenter Extension V 3.0.0 and Teamcenter Connector V 2406.3.0, refer to the [Upgrading Teamcenter Extension V 1.0.0 to V 3.0.0](/appstore/modules/siemens-plm/teamcenter-extension/upgrading-teamcenter-extension/#upgrade) section in *Upgrading Teamcenter Extension*.
 {{% /alert %}}
 
 ### Demo App {#demo-app}
