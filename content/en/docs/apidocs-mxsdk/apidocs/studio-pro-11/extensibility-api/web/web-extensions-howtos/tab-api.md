@@ -10,6 +10,10 @@ This how-to describes how to open a tab in Studio Pro from an extension. This ta
 
 ## Prerequisites
 
+{{% alert="info" %}}
+If you are using Studio Pro 11.0–11.5 and your extension includes menus, your existing menu code will not work when you upgrade to Studio Pro 11.6. To restore full functionality and support, upgrade to the Extensibility API 11.6 and follow the steps in the [Migration Guide](/apidocs-mxsdk/apidocs/web-extensibility-api-11/migration-guide/).
+{{% /alert%}}
+
 Before starting this how-to, make sure you have completed the following prerequisites:
 
 * This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Complete that how-to before starting this one. 
@@ -34,55 +38,49 @@ Whenever the tabs API `open` method is called, the `TabHandle` returned must be 
 To open a tab called **My Extension Tab**, add the following code to the main entry point (`src/main/index.ts`):
 
 ```typescript
-import { IComponent, getStudioProApi, TabHandle, ComponentContext } from "@mendix/extensions-api";
+import { IComponent, TabHandle, getStudioProApi } from "@mendix/extensions-api";
 
-class Main implements IComponent {
-  tabs: { [menuId: string]: TabHandle } = {};
-  async loaded(componentContext: ComponentContext) {
-    const studioPro = getStudioProApi(componentContext);
+export const component: IComponent = {
+    async loaded(componentContext) {
+        const tabs: { [menuId: string]: TabHandle } = {};
+        const studioPro = getStudioProApi(componentContext);
 
-    // Add menu items to the Extensions menu to open and close our tab
-    await studioPro.ui.extensionsMenu.add({
-      menuId: "myextension.MainMenu",
-      caption: "MyExtension Menu",
-      subMenus: [
-        { menuId: "myextension.ShowTabMenuItem", caption: "Show tab" },
-        {
-          menuId: "myextension.CloseTabMenuItem",
-          caption: "Close tab",
-        },
-      ],
-    });
+        // Add menu items to the Extensions menu to open and close our tab
+        await studioPro.ui.extensionsMenu.add({
+            menuId: "myextension.MainMenu",
+            caption: "MyExtension Menu",
+            subMenus: [
+                {
+                    menuId: "myextension.ShowTabMenuItem",
+                    caption: "Show tab",
+                    action: async () => {
+                        // Open a tab when the menu item is clicked
+                        const handle = await studioPro.ui.tabs.open(
+                            {
+                                title: "My Extension Tab"
+                            },
+                            {
+                                componentName: "extension/myextension",
+                                uiEntrypoint: "tab"
+                            }
+                        );
 
-    studioPro.ui.extensionsMenu.addEventListener(
-      "menuItemActivated",
-      async (args) => {
-        // Open a tab when the menu item is clicked
-        if (args.menuId === "myextension.ShowTabMenuItem") {
-          const handle = await studioPro.ui.tabs.open(
-            {
-              title: "My Extension Tab",
-            },
-            {
-              componentName: "extension/myextension",
-              uiEntrypoint: "tab",
-            }
-          );
-
-          // Track the open tab
-          this.tabs["myextension.MainMenu"] = handle;
-        }
-
-        // Close the tab opened previously
-        if (args.menuId === "myextension.CloseTabMenuItem") {
-          studioPro.ui.tabs.close(this.tabs["myextension.MainMenu"]);
-        }
-      }
-    );
-  }
-}
-
-export const component: IComponent = new Main();
+                        // Track the open tab
+                        tabs["myextension.MainMenu"] = handle;
+                    }
+                },
+                {
+                    menuId: "myextension.CloseTabMenuItem",
+                    caption: "Close tab",
+                    // Close the tab opened previously
+                    action: async () => {
+                        await studioPro.ui.tabs.close(tabs["myextension.MainMenu"]);
+                    }
+                }
+            ]
+        });
+    }
+};
 ```
 
 {{% alert color="info" %}}
