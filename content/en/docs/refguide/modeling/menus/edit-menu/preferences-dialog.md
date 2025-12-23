@@ -299,6 +299,10 @@ Select this option to use the modernized version of the App Explorer. You must r
 
 Select this option to use the non-blocking, searchable History pane instead of the blocking History window. This feature is currently in beta.
 
+### Runtime Console
+
+Select this option to use the modernized (web) Runtime console. You must restart Studio Pro to use this feature. 
+
 ### Errors Pane
 
 Select this option to use the modernized version of the Errors Pane. You must restart Studio Pro to use this feature.
