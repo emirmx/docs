@@ -18,9 +18,7 @@ If the tool resides within the same Mendix application, you can integrate it wit
 
 ### Limitations {#limitations}
 
-The current version has the following limitations:
-
-* Tools and prompt messages can only return String content.
+The current version has the following limitation: Tools and prompt messages can only return String content.
 
 {{% alert color="info" %}}
 Note that the MCP Client module is still in its early version, and newer versions may include breaking changes. Since both the open-source protocol and the Java SDK are still evolving and regularly updated, these changes may also affect this module.
@@ -51,7 +49,7 @@ See the **Example Implementations** folder inside the module containing example 
 
 #### Protocol Version
 
-When creating an MCP client, specify a `ProtocolVersion`. On the official MCP documentation, you can review the differences between the protocol versions in the [changelog](https://modelcontextprotocol.io/specification/2025-03-26/changelog). The MCP Client module currently supports `v2024-11-05` with the HTTP+SSE transport and `v2025-03-26` with the Streamable HTTP transport, which is the new standard method. MCP servers should support the same version as the client. Note that Mendix supports the capabilities provided by the MCP Java SDK.
+When creating an MCP client, specify a `ProtocolVersion`. On the official MCP documentation, you can review the differences between the protocol versions in the [changelog](https://modelcontextprotocol.io/specification/2025-03-26/changelog). The MCP Client module currently supports `v2024-11-05` with the HTTP+SSE transport and `v2025-03-26` with the streamable HTTP transport, which is the new standard method. MCP servers should support the same version as the client. Note that Mendix supports the capabilities provided by the MCP Java SDK.
 
 ### Discovering Resources {#discover-resources}
 

@@ -49,7 +49,7 @@ While changing the model version, note the following:
 {{% /alert %}}
 
 {{% alert color="info" %}}
-Ensure you are using Mendix Cloud GenAI Connector version 5.3.0 to support the latest Cohere Embed v4 model. Also, note that model changes will be reflected in the keys inside of your Mendix Cloud GenAI powered application from Mendix Cloud GenAI Connector version 5.4.0 only.
+Ensure you are using Mendix Cloud GenAI Connector version 5.3.0 and above to support the latest Cohere Embed v4 model. To see the upgraded model version reflected in your GenAI Connector after upgrading, make sure you are using Mendix Cloud GenAI Connector version 5.4.0 and above.
 {{% /alert %}}
 
 ### Team
