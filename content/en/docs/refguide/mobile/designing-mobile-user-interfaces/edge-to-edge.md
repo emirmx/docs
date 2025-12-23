@@ -11,7 +11,7 @@ Edge-to-edge display is a modern Android design approach where your app's conten
 
 ## How Does Mendix Support Edge-to-Edge Display?
 
-From Native template version 16.1.0 and Mendix Studio Pro version 11.6.0, Mendix automatically implements edge-to-edge display following Google's recommendations to ensure your app looks modern and polished on Android devices. This means the Android status bar and navigation bar are transparent, allowing your app's design to shine through. System UI elements blend seamlessly with your app's design, creating a cohesive, polished appearance.
+From Native template version 17.0.0 and Mendix Studio Pro version 11.6.0, Mendix automatically implements edge-to-edge display following Google's recommendations to ensure your app looks modern and polished on Android devices. This means the Android status bar and navigation bar are transparent, allowing your app's design to shine through. System UI elements blend seamlessly with your app's design, creating a cohesive, polished appearance.
 
 ### Status Bar Changes
 
@@ -30,7 +30,7 @@ The navigation bar has the following changes making your app's bottom navigation
 
 ## What This Means for You
 
-Mendix Native template 16.1.0 automatically provides you with an edge-to-edge display experience with the following features.
+Mendix Native template 17.0.0 automatically provides you with an edge-to-edge display experience with the following features.
 
 * **No Manual Calculations**: You don't need to worry about calculating insets or adjusting for different device configurations
 * **Automatic Adaptation**: The bottom bar automatically adjusts its height based on whether the navigation bar is visible
