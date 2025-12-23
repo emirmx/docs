@@ -30,11 +30,6 @@ disableKinds = ["taxonomy", "term"]
     quality = 75
     anchor = "smart"
 
-[services]
-    [services.googleAnalytics]
-        # Marketing Google Tag ID
-        id = 'UA-163813-1'
-
 # Language configuration
 
 [languages]
@@ -161,7 +156,7 @@ replacements = "github.com/FortAwesome/Font-Awesome -> ., github.com/twbs/bootst
         sidebar_menu_truncate = 100
         
     # Adds a H2 section titled "Feedback" to the bottom of each doc. The responses are sent to Google Analytics as events.
-    # This feature depends on [services.googleAnalytics] and will be disabled if "services.googleAnalytics.id" is not set.
+    # This feature used to depend on [services.googleAnalytics],but that is now become obsolete.
     # If you want this feature, but occasionally need to remove the "Feedback" section from a single page,
     # add "hide_feedback: true" to the page's front matter.
     [params.ui.feedback]
