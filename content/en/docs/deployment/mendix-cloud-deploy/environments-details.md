@@ -358,6 +358,14 @@ default-src 'self' ; script-src 'self' 'unsafe-inline' 'unsafe-eval' ; connect-s
 
 If you have issues that appear to be related to a content security policy, you can use the console of your browser to investigate them.
 
+### Outgoing Connections Certificates
+
+Add client certificates (in the PKCS12 format) or certificate authorities (in the PEM format). These are used when your application initiates SSL/TLS connections.
+
+## The Connectivity Tab {#connectivity-tab}
+
+On the **Connectivity** tab, you can manage the elements described below.
+
 ### Outgoing Connections Safelisting (Mendix Cloud Dedicated) {#connection-safelist}
 
 If you are deploying your apps to [Mendix Cloud Dedicated](/deployment/#mendix-cloud-dedicated), all outgoing IP addresses are allowed by default.
@@ -430,10 +438,6 @@ You can **Delete** a path or you can **Add** and **Edit** a path with the follow
 * N/A (inherit)
 
 For more information, refer to the [Access Restriction Profiles](/developerportal/deploy/access-restrictions/#access-restriction-profiles) section of *Restricting Access for Incoming Requests*.
-
-### Outgoing Connections Certificates
-
-Add client certificates (in the PKCS12 format) or certificate authorities (in the PEM format). These are used when your application initiates SSL/TLS connections.
 
 ## The Log Levels Tab {#log-levels}
 
