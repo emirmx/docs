@@ -82,7 +82,7 @@ When enabled, you can automatically assign a user task when a single user is tar
 #### Target Workflow Group(s) {#workflow-group}
 
 {{% alert color="info" %}}
-**Target Workflow group(s)** was introduced in Studio Pro 11.2.0 as a beta feature. To enable this option, go to **Edit** > **Preferences** > the **New features** tab > the **Workflow** section. 
+**Target Workflow group(s)** was introduced in Studio Pro 11.2.0 as a beta feature and was released for GA in 11.6.0.
 
 For more information on how to configure workflow groups, see [Workflow Groups](/refguide/workflow-groups/).
 {{% /alert %}}

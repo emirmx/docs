@@ -14,24 +14,13 @@ This how-to describes how to create menus using the web extensibility API. In th
 
 ## Prerequisites
 
-This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Make sure to complete that how-to before starting this one.
+{{% alert="info" %}}
+If you are using Studio Pro 11.0–11.5 and your extension includes menus, your existing menu code will not work when you upgrade to Studio Pro 11.6. To restore full functionality and support, upgrade to the Extensibility API 11.6 and follow the steps in the [Migration Guide](/apidocs-mxsdk/apidocs/web-extensibility-api-11/migration-guide/).
+{{% /alert%}}
 
-## Menu Properties
+* This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Make sure to complete that how-to before starting this one.
+* Review [how menus work](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu/) in the Web Extensibility API.
 
-A menu has the following properties:
-
-| Property             | Description                                                                   |
-|----------------------|-------------------------------------------------------------------------------|
-| `caption`            | The text of the menu item                                                     |
-| `menuId`             | A unique identifier for the menu item                                         |
-| `subMenus`           | A list of sub-menu items                                                      |
-| `hasSeparatorBefore` <br> (default: `false`)  | Adds a visual separator before the item              |
-| `hasSeparatorAfter` <br> (default: `false`)  | Adds a visual separator after the item                |
-| `enabled`  <br> (default: `true`)  | Indicates that the menu item notifies the listener when clicked |
-| `commandId` (optional) | The id of the previously registered command, which executes when the menu is clicked |
-| `action` (optional) | The action that executes when the menu is clicked |
-
-{{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/menus/grouped_menus.png" width="300" >}}
 
 ## Creating a Simple Menu
 
@@ -200,12 +189,6 @@ export const component: IComponent = {
 The disabled state is shown in the image below:
 
 {{< figure src="/attachments/apidocs-mxsdk/apidocs/extensibility-api/web/menus/disabled_menu.png" width="300" >}}
-
-## Attaching a Command to the Menu
-
-Instead of listening to the `menuItemActivated` event, it is possible to register a command, then attach the `commandId` of the new command to your menu. When the menu is clicked, if its `commandId` property has been set, the backend will execute the command instead of firing the `menuItemActivated` event. 
-
-For more information on how to register commands, see the [Commands API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/command-api/).
 
 ## Setting the Action Property on the Menu
 
