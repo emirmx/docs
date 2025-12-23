@@ -27,6 +27,16 @@ To fix this issue, do the following:
 4. Remove **config.json**.
 5. Reopen the Mendix Native Mobile Builder.
 
+## Release 1.0.144 {#10143}
+
+**Release date: December 23, 2025**
+
+## Fixes
+
+* We fixed an issue after building in iOS where the RUNTIME_URL would not get the slash separator properly escaped if it included extra path parts.
+
+* Notifee is now installed for push notifications when using Studio Pro 11 and above. This does not affect previous versions.
+
 ## Release 1.0.143 {#10143}
 
 **Release date: November 21, 2025**
