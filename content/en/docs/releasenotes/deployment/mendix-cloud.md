@@ -20,8 +20,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### New Features
 
-* We have added logging support to Dynatrace integration. 
-
+* We have added logging support to Dynatrace integration.
 
 ### December 14, 2025
 

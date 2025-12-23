@@ -16,7 +16,6 @@ In addition to auto-instrumented built-in metrics collected by OneAgent, Mendix 
 
 For Dynatrace SaaS customers, application logs can also be viewed by setting environment variable `DT_ENABLE_LOGS` to `true`.
 
-
 ## Prerequisites
 
 To use Dynatrace and send data to Dynatrace from your Mendix app, you need the following:
@@ -33,9 +32,9 @@ To use Dynatrace and send data to Dynatrace from your Mendix app, you need the f
 To start sending your Mendix app's metrics to Dynatrace, you need to set some environment variables in the Mendix Portal. Follow these steps:
 
 1. From [Apps](https://sprintr.home.mendix.com), go to the **Environments** page of your app.
-1. Click **Details** on the environment you wish to monitor with Dynatrace. 
-1. Switch to the [**Runtime** tab](/developerportal/deploy/environments-details/#runtime-tab).
-1. Add the following **Custom Environment Variables**.
+2. Click **Details** on the environment you wish to monitor with Dynatrace. 
+3. Switch to the [**Runtime** tab](/developerportal/deploy/environments-details/#runtime-tab).
+4. Add the following **Custom Environment Variables**.
 
     | Variable | Required? | Description | Details |
     | --- |-----------| --- | --- |
@@ -47,7 +46,7 @@ To start sending your Mendix app's metrics to Dynatrace, you need to set some en
     | `DT_CLUSTER_ID` | No        | You can use this to tag your cluster, process group, or deployment group. | |
     | `DT_CUSTOM_PROP` | No        | This can be used to provide metadata for your process group. | For more information, see [Define Your Own Process Group Metadata](https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/process-groups/configuration/define-your-own-process-group-metadata). |
 
-1. Return to the **General** tab and restart your environment.
+5. Return to the **General** tab and restart your environment.
 
 ## Additional Information {#additional-info}
 
@@ -74,10 +73,10 @@ You can set extra dimensions as tags in the Mendix Portal. Mendix recommends at 
 To set this tag, do the following:
 
 1. From [Apps](https://sprintr.home.mendix.com), go to the **Environments** page of your app.
-1. Click **Details** ({{% icon name="notes-paper-edit" %}}) on an environment you are monitoring with Dynatrace. 
-1. Switch to the **Tags** tab.
-1. Click **Add** and type in a string to be sent to Dynatrace as a dimension. For more information, see the [**Tags** tab](/developerportal/deploy/environments-details/#tags) documentation in *Environment Details*.
-1. Restart the app.
+2. Click **Details** ({{% icon name="notes-paper-edit" %}}) on an environment you are monitoring with Dynatrace. 
+3. Switch to the **Tags** tab.
+4. Click **Add** and type in a string to be sent to Dynatrace as a dimension. For more information, see the [**Tags** tab](/developerportal/deploy/environments-details/#tags) documentation in *Environment Details*.
+5. Restart the app.
 
 Setting this value for your app causes all metrics from this environment of your app to have these tags. For example, the tags for `mx.microflow.time.avg` for this set of metrics include `env:accp`.
 
