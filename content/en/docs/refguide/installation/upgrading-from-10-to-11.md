@@ -81,6 +81,74 @@ We recommend you also upgrade Atlas Web Content if it is in your app.
 
 For optimal implementation, ensure all UI modules either use CSS variables or have their variables defined within the module. If an app uses CSS variables inside **theme/web/custom-variables.scss** while some UI modules still rely on old Atlas SASS variables, those usages will fallback to Atlas default values. Therefore, we recommend you to transition to CSS variables only after confirming that all company design modules no longer depend on Atlas SASS variables.
 
+### Empty Strings Handling {#empty-strings-handling}
+
+Historically, in Mendix we had an inconsistency in how we handled String type attributes and variables on the client side (for example, Nanoflows, Page expressions, widgets) and on the server side (for example, Microflows). 
+
+Consider the following expression:
+
+```
+$NewEntity/Attribute = ''
+```
+
+where `$NewEntity/Attribute` contains an `empty` value.  
+
+In a Nanoflow, this expression would be evaluated to `true` because, on the client side, we did not distinguish between empty strings `''` and an `empty` value.
+
+In a Microflow, this distinction exists and the expression would yield `false`.
+
+Moreover, on the client side a String attribute with a value set to `empty` would be treated as if it contains `''`. This made it impossible to check in a Nanoflow whether an attribute is `empty` or if it has an empty String value `''`.
+
+In Mendix 11.0.0, we have made this behavior consistent. Now, strings are handled in the same way no matter where you use them. 
+
+We understand that this change might cause unexpected changes in existing applications migrated from older versions of Mendix. 
+
+We recommend carefully analyzing all expressions that are comparing strings against `''` or `empty` and doing extensive testing after the migration. 
+
+#### Example 1
+
+Below is an example of a check that might lead to unexpected behavior.
+
+```
+$NewEntity/Attribute = ''
+```
+
+If you used this expression to check if an attribute of an object was not filled in, we recommend using the [trim](https://docs.mendix.com/refguide/string-function-calls/#trim) function. Trim will automatically convert `empty` to `''` and remove all surrounding whitespace in a string.
+
+```
+trim($NewEntity/Attribute) = ''
+```
+
+Alternatively, if you just want to check for `empty` and `''` you can rewrite it to:
+
+```
+$NewEntity/Attribute = empty or $NewEntity/Attribute = ''
+```
+
+#### Example 2
+
+In case you want to compare your string attribute against `empty`, you only need to write
+
+```
+$NewEntity/Attribute = empty
+```
+
+In Mendix 11.0 you won’t run into any ambiguity around this anymore. 
+
+#### Example 3
+
+```
+$User/Name + "@mendix.com"
+```
+
+In this example, Mendix will handle string concatenation correctly no matter if `$User/Name` is `empty` or `''`. The resulting string will be `@mendix.com`.
+
+In this particular example, if you want to prevent the generation of email addresses without the first part you should add a validation check before doing concatenation: 
+
+```
+if trim($User/Name) = '' then '' else $User/Name + "@mendix.com"
+```
+
 ### Using the **ShowHomePage** Microflow in the **System** Module {#apply-entity-access}
 
 In Studio Pro versions prior to 11, the default configuration was insecure: **Apply entity access** was set to `false`. In Studio Pro version 11, the **ShowHomePage** microflow in the **System** module now enforces a secure default for entity access. As a result, after upgrading to version 11, your application may report errors that were previously not detected.
@@ -111,6 +179,5 @@ You can resolve the error by enabling entity access for the microflow that calls
 * We fixed the issue where SELECT * in combination with UNION and ORDER BY would fail on most database engines.
 * When COALESCE function in OQL has attributes of different numeric types, the result type is defined according to type precedence. Before, the result type would match the type of the first argument.
 * Client API `mx.logger` is no longer supported. All calls to it should be replaced with standard `console.log`, `console.warn`, and other such standard calls. All widgets that use the `mx.logger` need to be updated. 
-* We no longer convert `empty` values sent to the client into empty strings. All client side expressions must be adjusted accordingly.
 * We no longer support the runtime API class `com.mendix.modules.email.EmailModule` which was deprecated in [Mendix 10.12](https://docs.mendix.com/releasenotes/studio-pro/10.12/#deprecate-email). We recommend using the [Email Connector](https://marketplace.mendix.com/link/component/120739) module instead.
 * The [Deep Link module](https://marketplace.mendix.com/link/component/43) is deprecated, and no longer receives active support starting with Studio Pro 11. The functionality this module offers has been replaced with built-in features of the Mendix Platform, such as Page URLs and Microflow URLs. Refer to the [Migrating to Page and Microflow URLs](/appstore/modules/deep-link/#migrate-page-micro) section in *Deep Link* for details on how to migrate to these built-in features.
