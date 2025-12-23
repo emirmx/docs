@@ -12,6 +12,35 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2025
 
+### December 15, 2025
+
+#### Mendix Operator v2.24.2 {#2.24.2}
+
+* We have fixed an issue when it would be impossible to set the `maxUnavailable` attribute for Pod Disruption Budgets.
+* We have fixed an issue where using regular Kubernetes secrets in place of Kubernetes CSI Secrets Store would only work if a CSI Secrets Store driver is installed in the cluster.
+
+    With this release, installing the CSI Secrets Store driver is not necessary to use a Kubernets secret (Ticket 265568).
+
+* For Mendix on Azure, we have added an option to remove custom TLS trust certificates.
+* We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
+
+#### License Manager CLI v0.10.6 {#0.10.6}
+
+* We have updated components to use the latest dependency versions in order to improve security score ratings for container images.
+
+### November 27, 2025
+
+#### Portal Improvements
+
+* We have enhanced the **Apps** section of the **Namespace Overview** page to display the technical contact's name and email address next to each application. This makes it easier to find the technical contact for inquiries or support.
+* We have added deep links for the application URL to the **Environment Overview** page, allowing for quicker, direct navigation to the application page. 
+* We have added **Enhanced Deployment Strategy UI** to the deployment options, featuring new **Min Available** and **Max Unavailable** fields for more precise control over your application's availability.
+* You can now directly configure HTTP headers by using a new key/value UI in the **Network** tab to manage headers like Content-Security-Policy within Mendix Runtime and reduce ingress reliance. This feature supports Mendix 10.24.1 and newer.
+
+#### Known Issues
+
+* Currently, if you adjust your Pod Disruption Budget settings, those modifications will not take effect until our next Operator release (2.24.2).
+
 ### November 7, 2025
 
 #### Portal Hotfix
@@ -37,8 +66,8 @@ For information on the current status of deployment to Mendix on Kubernetes and 
     
     Under these conditions, you can expect no downtime during the update process, as long as the application is using the same MDA and base OS image.
 
-*   Exporting **Scheduled events**, **Application details**, **PCLM Statistics** is now possible in CSV format, replacing the XLSX format.
-*   We have incorporated the use of fallback license for Connected environments using Subscription Secrets. If an environment fails to communicate with the licensing server, it will use the fallback license instead of switching into Trial mode. This option is enabled by default.
+* Exporting **Scheduled events**, **Application details**, **PCLM Statistics** is now possible in CSV format, replacing the XLSX format.
+* We have incorporated the use of fallback license for Connected environments using Subscription Secrets. If an environment fails to communicate with the licensing server, it will use the fallback license instead of switching into Trial mode. This option is enabled by default.
 
 ### October 21, 2025
 
@@ -50,6 +79,10 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 * We have added a fallback license for Connected environments using Subscription Secrets. If an environment fails to communicate with the licensing server, it will use the fallback license instead of switching into Trial mode. This feature will become available for use with a future release of the Mendix on Kubernetes portal.
 * We have updated documentation to indicate that Kubernetes 1.34 is supported by the Mendix Operator.
 * We have made a few adjustments to support changes in upcoming Studio Pro version numbers.
+
+#### Known Issues
+
+* Currently, if you adjust your Pod Disruption Budget settings, those modifications will not take effect until our next Operator release (2.24.2).
 
 ### September 25, 2025
 

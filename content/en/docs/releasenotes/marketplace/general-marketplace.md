@@ -12,6 +12,13 @@ aliases:
 
 These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 
+### December 11, 2025
+
+### New Features
+
+* You can now deprecate Marketplace components that are no longer maintained. This helps keep a clean and reliable Marketplace ecosystem, with full visibility into the content that is no longer supported, as well as its recommended alternatives.    
+  For details, refer to [Deprecating Marketplace Content](/appstore/deprecate-content/).
+
 ### October 9, 2025
 
 #### Improvements

@@ -1292,7 +1292,12 @@ You can configure the runtime metrics for the environment in the **Runtime** sec
 
 You can also configure the pod labels for the environment in the **Labels** section. For more information, see [App Pod Labels](#pod-labels).
 
-Starting from Operator 2.20.0 onwards, it is now also possible to set the deployment strategy for an environment. This allows you to update an app with reduced downtime by performing a rolling update. To use this feature, you must enable the **Reduced App Downtime Strategy** option.  For more information, see [Deployment Strategy](/developerportal/deploy/private-cloud-reduced-downtime/)
+Starting from Operator 2.20.0 onwards, you can set the deployment strategy for an environment. This allows you to update an app with reduced downtime by performing a rolling update. To use this feature, you must enable the **Custom Options** under Reduced downtime options.
+
+The deployment strategy now includes the following options under the **Deployment Strategy Options** subheader:
+
+* **Max Surge** - Specifies the maximum number of pods that can be created above the desired number of pods during a rolling update.
+* **Max Unavailable** - Specifies the maximum number of pods that can be unavailable during a rolling update.
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/deploymentStrategy.png" class="no-border" >}}
 
@@ -1354,14 +1359,14 @@ You can invite additional members to the namespace, and configure their role dep
     2. **Administrator** – a standard set of rights needed by an administrator, these are listed on the screen
     3. **Custom** – This option is now deprecated.
 
-{{% alert color="info" %}}
-The custom permission if needed to be edited, a role need to be assigned with appropriate permissions. See [Roles and Permissions](/developerportal/deploy/private-cloud-cluster/#rolesandpermissions) for more information.
-{{% /alert %}}
+    {{% alert color="info" %}}
+    The custom permission if needed to be edited, a role need to be assigned with appropriate permissions. See [Roles and Permissions](/developerportal/deploy/private-cloud-cluster/#rolesandpermissions) for more information.
+    {{% /alert %}}
 
-{{% alert color="info" %}}
-If an application is in the Stopped state, the scaling does not come into effect until the application is Started. This means that you have to click **Start application** in order for the changes to be sent to the cluster.
-Along with this, we have also decoupled the permission for modifying the MxAdmin password and managing environments.
-{{% /alert %}}
+    {{% alert color="info" %}}
+    If an application is in the Stopped state, the scaling does not come into effect until the application is Started. This means that you have to click **Start application** in order for the changes to be sent to the cluster.
+    Along with this, we have also decoupled the permission for modifying the MxAdmin password and managing environments.
+    {{% /alert %}}
 
 6. Click **Send Invite** to send an invite to this person.
 

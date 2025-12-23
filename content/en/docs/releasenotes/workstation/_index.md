@@ -10,9 +10,69 @@ cascade:
 
 These release notes cover changes made to the [Mendix Workstation](/mendix-workstation/).
 
+## 3.2.0
+
+### Release date: December 4, 2025
+
+### Workstation Management
+
+#### New Features
+
+##### Exporting and Importing Station Configuration
+
+You can now export the configurations of a list of stations from a workspace to a file and import them into the same or a different workspace. This feature includes options to export all stations, with or without applications and devices.
+
+{{% alert color="info" %}}
+This feature is available only for accounts which have a license for Mendix Workstation Client.
+{{% /alert %}}
+
+##### Remote Workstation Client Refresh
+
+On the **Station** page, have added a new **Refresh Client** action. You can use this action to remotely trigger a refresh of a Workstation Client's configuration.
+
+#### Fixes
+
+* Dark mode display - We have resolved some display issues which could occur when using Workstation Management in dark mode.
+* Workspace sorting - We have corrected an issue affecting the sorting behavior of workspaces.
+* Application configuration duplication - We have fixed a problem that could lead to users inadvertently creating duplicate application configurations by adding a space before or after the key or URL.
+
+#### Known Bugs and Limitations
+
+* Importing duplicate app configurations - Attempting to import a configuration that includes applications already defined (for example, with an existing URL and Public Key) results in UI errors.
+
+{{% alert color="info" %}}
+To work around this issue, you can can import the configuration by excluding the applications and then manually setting them up afterward.
+{{% /alert %}}
+
+* Indistinguishable station duplicates - Importing the same station multiple times creates duplicates that are currently not distinguishable within the system.
+* Duplicate application creation on import - When importing multiple stations that all use the same application, and applications are included in the import, the application is created multiple times (once for each station).
+
+### Workstation Client
+
+#### New Features
+
+##### Configuration Refresh on Launch
+
+Upon each launch, the Workstation Client now automatically checks for updates to its configuration, ensuring it is always running with the latest settings.
+
+##### Automatic Client Reset
+
+The Workstation Client automatically resets on the next refresh when its associated computer is unregistered from Workstation Management.
+
+#### Fixes and Other Changes
+
+* Linux ARM64 executable name - For improved consistency, we have removed the spaces from the executable name of the Workstation Client (Linux ARM64 version).
+* Bluetooth LE device discovery - We have addressed an issue where the discovery process for Bluetooth LE devices did not correctly recognize the full device name, which previously led to failed connection attempts. The Workstation Client now accurately matches Bluetooth BT advertisement names.
+
+### Workstation Connector
+
+#### Fixes
+
+* Refresh of the updated device list - We have fixed an issue where updates to the device list were not immediately sent to the web application after a configuration update, requiring a manual refresh. The list is now updated immediately.
+
 ## 3.1.0
 
-#### Release date: November 7, 2025
+### Release date: November 7, 2025
 
 ### Workstation Management
 
@@ -39,7 +99,7 @@ You can now copy the station configuration to the clipboard, or download it to a
 #### Fixes
 
 * Computer registration: We fixed an issue where the Workstation Client could not connect to Workstation Management over a network connection that required a certificate. With this new release, the Workstation Client now uses the client operating system's certificates to establish a connection with Workstation Management.
-* Smartcard reader interface: We fixed an issue in the Workstation Client where the client would freeze if **Detect card readers** was enabled and the operating system's smartcard service was stopped.
+* smart card reader interface: We fixed an issue in the Workstation Client where the client would freeze if **Detect card readers** was enabled and the operating system's smart card service was stopped.
 * Bluetooth LE interface: We fixed issues in the Workstation Client and Connector when subscribing to Bluetooth properties. Wait and sleep times between subscriptions are no longer required, and multiple series of subscriptions and unsubscriptions are supported.
 
 ## 3.0.0
@@ -71,7 +131,7 @@ When editing a device, device settings are edited in a side panel. It makes devi
 
 ### Known Bugs and Limitations
 
-* Windows Workstation Client hangs when Smartcard reader detection is enabled and the *Smart Cards for Windows Service* is disabled.
+* Windows Workstation Client hangs when smart card reader detection is enabled and the *Smart Cards for Windows Service* is disabled.
 * The Workstation Client window is not visible when opened on a secondary screen and the secondary screen is no longer available.
 
 ## 2.6.0
@@ -110,7 +170,7 @@ The Mendix Workstation Client Sample App showcases how to build applications int
 
 The app includes reusable peripheral modules for:
 
-* PC/SC Smartcard Reader (ADPU protocol), for example Omnikey, 5427 G2, ACR122U
+* PC/SC smart card Reader (ADPU protocol), for example Omnikey, 5427 G2, ACR122U
 * Barcode Scanner (configured on Serial Port), for example, NETUM C750
 * Industrial Scale (MT-SICS protocol), for example, Mettler Toledo ICS425, OHAUS Scout STX 620, 6200
 * Label Printer (ZPL protocol), for example, Zebra ZD421D
