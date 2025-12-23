@@ -7,7 +7,7 @@ description: "Native Template 17"
 
 ## 17.0.0 {#1700}
 
-**Release date: December 10, 2025**
+**Release date: December 22, 2025**
 
 ### Improvements
 
