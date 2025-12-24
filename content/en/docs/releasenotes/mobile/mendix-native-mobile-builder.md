@@ -31,11 +31,13 @@ To fix this issue, do the following:
 
 **Release date: December 23, 2025**
 
-## Fixes
-
-* We fixed an issue after building in iOS where the RUNTIME_URL would not get the slash separator properly escaped if it included extra path parts.
+## Improvements
 
 * Notifee is now installed for push notifications when using Studio Pro 11 and above. This does not affect previous versions.
+
+## Fixes
+
+* We fixed an issue where, after building in iOS, `RUNTIME_URL` would not get the slash separator properly escaped if it included extra path parts.
 
 ## Release 1.0.143 {#10143}
 
