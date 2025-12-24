@@ -11,7 +11,7 @@ description: "Native Template 14"
 
 ### Improvements
 
-* We changed NSAppTransportSecurity of the production version of the project to false. For dev testing, we added Info-dev.plist.
+* We changed `NSAppTransportSecurity` in **production** versions of projects to false. For **dev** testing, we added **Info-dev.plist**.
 
 ## 14.1.9 {#1419}
 
