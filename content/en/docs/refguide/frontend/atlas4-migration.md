@@ -28,43 +28,39 @@ Use this guide when:
 * Implementing dynamic theming, or white-labeling features
 
 {{% alert color="warning" %}}
-**Migration is Optional:** You do not need to migrate to Atlas UI 4 when upgrading to Studio Pro 11 or later. Your existing Atlas UI 3 theme will continue to work. Only proceed with this migration if you want to use Atlas 4's new capabilities.
+**Migration is Optional.** You do not need to migrate to Atlas UI 4 when upgrading to Studio Pro 11 or above. Your existing Atlas UI 3 theme will continue to work. Only proceed with this migration if you want to use Atlas 4's new capabilities.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-**Estimated Time:** The migration effort can range from **a few hours to multiple days**, depending on the complexity of your custom theme, the number of custom modules, and the extent of your styling customizations. Factor in additional time for thorough testing across all pages, modules, and browsers.
+The migration effort can range from **a few hours to multiple days**, depending on the complexity of your custom theme, your number of custom modules, and the extent of your styling customizations. Please also factor in testing time across all pages, modules, and browsers.
 {{% /alert %}}
 
 ### Overview of Changes
 
-This fundamental change enables powerful new capabilities like **dynamic theming at runtime**, making **white-labeling** of applications significantly easier, and allowing seamless integration with Mendix's new **Design Properties** which can directly set or consume CSS variables for highly flexible design systems.
+Atlas 4 brings with it powerful new capabilities like **dynamic theming at runtime**, making **white-labeling** of applications significantly easier, and allowing seamless integration with Mendix's new [design properties](/howto/front-end/extend-design-properties/) which can directly set or consume CSS variables for highly flexible design systems.
 
-This guide will walk you through understanding this change, migrating your existing themes, and ensuring your UI modules are compatible.
+This guide will explain the changes between v3-v4, help you migrate your existing themes to v4, and help you confirm your UI modules are compatible with v4.
 
 ### Prerequisites
 
-Before starting this migration, ensure you have:
+Before starting this guide, make sure you have completed the following prerequisites:
 
-* **Mendix Studio Pro 11 or later** installed
-* **A backup** of your current Mendix project
-* **Atlas UI module** updated to version 4.x or later (available via Marketplace)
-* **Basic knowledge** of SASS/SCSS and CSS
-* **Access to your project's theme files** in `theme/web/` and any custom modules in `themesource/`
+* Have Mendix Studio Pro 11 or higher installed
+* Have a backup of your current Mendix project
+* Update your [Atlas UI module]() to version 4.x or higher 
+* Have basic knowledge of SASS/SCSS and CSS
+* Have user access to your project's theme files** in `theme/web/` and any custom modules in `themesource/`
 
 {{% alert color="warning" %}}
-**Important:** Always create a full backup of your Mendix project before beginning this migration. Test thoroughly in a development environment before deploying to production.
+Always create a full backup of your Mendix project before beginning this migration. Test thoroughly in a development environment before deploying to production.
 {{% /alert %}}
 
-### Why the Change? The Power of CSS Variables
+### The Power of CSS Variables
 
-To understand the shift, it is important to grasp the difference between SASS and CSS variables:
+To understand the major change between v3 and v4, it is important to grasp the difference between SASS and CSS variables:
 
-*   **SASS (Syntactically Awesome Style Sheets):** SASS is a **pre-processor**. This means your SASS code, including its variables, is processed and compiled into standard CSS *before* your application is deployed and run in a web browser. SASS variables are essentially placeholders that get replaced with their final values during this compilation step. The browser never "sees" a SASS variable.
-*   **CSS Custom Properties (CSS Variables):** CSS variables are a native feature of web browsers. They are **interpreted at runtime**, meaning the browser understands and can directly work with them as your application is running.
-
-{{% alert color="info" %}}
-**Key Difference:** SASS variables are replaced at compile-time, while CSS variables exist at runtime and can be dynamically changed.
-{{% /alert %}}
+*   **SASS (Syntactically Awesome Style Sheets)**: SASS is a **pre-processor**. This means your SASS code, including its variables, is processed and compiled into standard CSS **before** your application is deployed and run in a web browser. SASS variables are essentially placeholders that get replaced with their final values during this compilation step. The browser never "sees" a SASS variable.
+*   **CSS Custom Properties (CSS Variables)**: CSS variables are a native feature of web browsers. They are **interpreted at runtime**, meaning the browser understands and can directly work with them as your application is running.
 
 This distinction is crucial because it unlocks powerful capabilities:
 
