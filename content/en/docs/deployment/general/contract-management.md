@@ -19,7 +19,7 @@ Your Mendix subscription is categorized into three main statuses: Active, Expiri
 |---------------|----------|--------------------|
 | **Active (Green)** | Until 30 days before contract expiry | Your account is fully active, with all services available and application runtimes functioning normally. This is the optimal state for uninterrupted Mendix usage. |
 | **Expiring (Orange)** | From 30 days before contract expiry until contract end date | All services continue to function normally. You receive email reminders, notifications, and platform banner alerts about your upcoming renewal. |
-| **Expired (Red)** | From the day after contract expiry up to 60 days | Your account is downgraded to **Unlicensed** mode. Platform features such as **Control Center** are revoked, and you can no longer deploy new versions of applications on Mendix Cloud. |
+| **Expired (Red)** | From the day after contract expiry up to 60 days | Your account and applications are downgraded to **Unlicensed** mode, revoking platform features such as **Control Center**. You can still deploy and manually restart apps, but they will automatically shut down after 2-4 hours and are limited to 6 concurrent users.|
 
 ## Contract Timeline and Milestones
 
