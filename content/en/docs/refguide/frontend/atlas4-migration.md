@@ -49,7 +49,7 @@ Before starting this guide, make sure you have completed the following prerequis
 * Have a backup of your current Mendix project
 * Update your [Atlas UI module]() to version 4.x or higher 
 * Have basic knowledge of SASS/SCSS and CSS
-* Have user access to your project's theme files** in `theme/web/` and any custom modules in `themesource/`
+* Have user access to your project's theme files in `theme/web/` and any custom modules in `themesource/`
 
 {{% alert color="warning" %}}
 Always create a full backup of your Mendix project before beginning this migration. Test thoroughly in a development environment before deploying to production.
@@ -64,13 +64,13 @@ To understand the major change between v3 and v4, it is important to grasp the d
 
 This distinction is crucial because it unlocks powerful capabilities:
 
-*   **Dynamic Theming & White-labeling:** Since CSS variables are interpreted at runtime, their values can be changed dynamically using JavaScript. This allows you to easily implement features like dark mode, user-selected themes, or even completely change branding (white-labeling) without recompiling your application's SASS.
-*   **Integration with Mendix Design Properties:** Mendix Studio Pro's Design Properties can directly set CSS variables or use them as values, providing a more intuitive and flexible way to customize components and layouts directly within the IDE.
-*   **Easier Debugging:** You can inspect and modify CSS variables directly in your browser's developer tools, making debugging styling issues much more straightforward.
-*   **Modern Web Standards:** Aligning with the latest web technologies ensures better long-term compatibility, performance, and maintainability.
+* **Dynamic Theming & White-labeling:** — Since CSS variables are interpreted at runtime, their values can be changed dynamically using JavaScript. This allows you to easily implement features like dark mode, user-selected themes, or even completely changed branding (white-labeling) without recompiling your application's SASS.
+* **Integration with Mendix Design Properties** — Mendix Studio Pro's [design properties](/howto/front-end/extend-design-properties/) can directly set CSS variables or use them as values, providing a more intuitive and flexible way to customize components and layouts directly within the IDE.
+* **Easier Debugging** — You can inspect and modify CSS variables directly in your browser's developer tools, which makes debugging styling issues more straightforward.
+* **Modern Web Standards** — CSS variables align with the latest web technologies ensures better long-term compatibility, performance, and maintainability.
 
 {{% alert color="info" %}}
-**Browser Compatibility:** CSS variables are supported in all modern browsers (Chrome, Firefox, Safari, Edge). Note that Internet Explorer 11 does not support CSS variables. If you need to support IE11, you'll need to maintain a separate fallback stylesheet or consider an alternative approach.
+CSS variables are supported in all modern browsers (Chrome, Firefox, Safari, Edge). Internet Explorer 11 does not support CSS variables. If you need to support IE11, you must maintain a separate fallback stylesheet or consider an alternate approach.
 {{% /alert %}}
 
 ## Part 1: Understanding the Shift from SASS to CSS Variables
