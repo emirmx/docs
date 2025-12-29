@@ -85,6 +85,8 @@ The following custom settings can be configured:
 | <a id="UploadedFilesPath" href="#UploadedFilesPath">UploadedFilesPath</a> | The location of the uploaded files. A valid path can be: `\\FileServer\CustomerPortalFiles`. | [deployment folder]\data\files |
 | <a id="EnableFileDocumentCaching" href="#EnableFileDocumentCaching">EnableFileDocumentCaching</a> | Defines whether file documents should be cached. Only enable this if you are sure that the file documents will not contain sensitive information. Images are always cached. | false |
 | <a id="mapping.import.MaxJsonReadingLength" href="#mapping.import.MaxJsonReadingLength">mapping.import.MaxJsonReadingLength</a> | The maximum length of the JSON string received from the remote which can be processed with import mapping. Use this setting when you expect a string which is longer than the default. See [Import Mappings](/refguide/import-mappings/#troubleshooting) for more information. | 20000000 *(dependent on library version)* |
+| <a id="LastActionExecutionUpdateBatchSize" href="#LastActionExecutionUpdateBatchSize">LastActionExecutionUpdateBatchSize</a> | This setting specifies how many sessions should be updated per batch when update the `LastActionExecution` attribute in the periodic system task. | 1000 *Introduced in Mendix 11.6.1 and 11.7.0.* |
+| <a id="SessionKeepAliveUpdateBatchSize" href="#SessionKeepAliveUpdateBatchSize">SessionKeepAliveUpdateBatchSize</a> | This setting specifies how many sessions should be updated per batch when update the `LastActive` attribute in the periodic system task. | 1000 *Introduced in Mendix 11.6.1 and 11.7.0.* |
 
 ### ApplicationRootUrl {#applicationrooturl-section}
 
