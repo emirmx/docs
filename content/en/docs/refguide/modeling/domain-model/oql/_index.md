@@ -85,5 +85,5 @@ In OQL, `FLOAT` is a reserved word for legacy reasons. Mendix no longer supports
 {{% /alert %}}
 
 {{% alert color="info" %}}
-In OQL, `DELETE`, `INSERT`, `REPLACE`, `UPDATE`, `UPSERT`, `INTO`, `SET`, `VALUES`, `IGNORE`, `MATCHED`, `DUPLICATE`, `KEY`, `CONFLICT`, `MERGE`, `USING`, `SOURCE`, `TARGET`, and `WITH` are reserved but not yet used.
+In OQL, `REPLACE`, `UPSERT`, `SET`, `VALUES`, `IGNORE`, `MATCHED`, `DUPLICATE`, `KEY`, `CONFLICT`, `MERGE`, `USING`, `SOURCE`, `TARGET`, and `WITH` are reserved but not yet used.
 {{% /alert %}}
