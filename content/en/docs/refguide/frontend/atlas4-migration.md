@@ -8,24 +8,24 @@ tags: ["atlas", "atlas ui", "theming", "css", "css variables", "sass", "migratio
 
 ## Introduction
 
-Atlas UI 4 marks a significant evolution in Mendix theming, bringing modern web standards and enhanced flexibility to your application's design. The most impactful change for custom styling is the shift from **SASS variables** to **native CSS variables**.
+Atlas UI 4 marks a significant evolution in Mendix theming, bringing modern web standards and enhanced flexibility to your application's design. The most significant change to custom styling in Atlas 4 is the shift from **SASS variables** to **native CSS variables**.
 
 ### Who Should Use This Guide
 
 This guide is intended for:
 
-* **Developers** who have chosen to migrate their custom themes from Atlas UI 3 to Atlas UI 4
-* **Module creators** who want to make their custom UI modules compatible with Atlas UI 4
-* **Teams** who want to adopt the latest Atlas UI features and theming standards
+* **Developers** choosing to migrate their custom themes from Atlas UI 3 to Atlas UI 4
+* **Module creators** making their custom UI modules compatible with Atlas UI 4
+* **Teams** adopting the latest Atlas UI features and theming standards
 
 ### When to Use This Guide
 
 Use this guide when:
 
-* You **choose to migrate** your Mendix project from Atlas UI 3 to Atlas UI 4
+* Migrating your Mendix project from Atlas UI 3 to Atlas UI 4
 * Updating custom modules to be compatible with Atlas UI 4
-* Converting existing SASS-based themes to use CSS variables
-* Implementing dynamic theming or white-labeling features
+* Converting existing SASS-based themes so they use CSS variables
+* Implementing dynamic theming, or white-labeling features
 
 {{% alert color="warning" %}}
 **Migration is Optional:** You do not need to migrate to Atlas UI 4 when upgrading to Studio Pro 11 or later. Your existing Atlas UI 3 theme will continue to work. Only proceed with this migration if you want to use Atlas 4's new capabilities.
