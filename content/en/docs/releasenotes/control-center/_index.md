@@ -10,7 +10,7 @@ numberless_headings: true
 
 These release notes cover changes to the app management functionality and other features of the [Mendix Control Center](/control-center/).
 
-Click the link corresponding to the year for which you want to see release notes:
+Click the link corresponding to the year for which you want to read release notes:
 
 * [2025](/releasenotes/control-center/2025/)
 * [2024](/releasenotes/control-center/2024/)
