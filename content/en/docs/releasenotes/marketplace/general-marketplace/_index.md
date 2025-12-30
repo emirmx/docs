@@ -12,7 +12,7 @@ aliases:
 
 These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 
-Click the link corresponding to the year for which you want to see release notes:
+Click the link corresponding to the year for which you want to read release notes:
 
 * [2025](/releasenotes/marketplace/2025/)
 * [2024](/releasenotes/marketplace/2024/)
