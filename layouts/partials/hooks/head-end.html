@@ -1,8 +1,8 @@
 <!-- Olu: Added analytics as defined by Marketing/Legal. Read more here: https://github.com/mendix-web/mendix-analytics-package. You need access from the Mendix Web team -->
-{{- if eq hugo.Environment "production" -}}
+{{- if and (eq hugo.Environment "production") (not .Params.disable_usercentrics) -}}
 <script src="https://assets.adobedtm.com/5dfc7d97c6fb/f76097206fad/launch-a8be6e5af390.min.js" async></script> {{- end -}}
 
-{{- if eq hugo.Environment "development" -}}
+{{- if and (eq hugo.Environment "development") (not .Params.disable_usercentrics) -}}
 <script src="https://assets.adobedtm.com/5dfc7d97c6fb/f76097206fad/launch-ef5f6245245b-staging.min.js" async></script> {{- end -}}
 
 <!-- Not using Docsy Algolia - nothing needs to go here-->
