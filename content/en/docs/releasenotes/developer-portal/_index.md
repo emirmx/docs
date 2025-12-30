@@ -10,7 +10,8 @@ cascade:
 ---
 
 These release notes cover changes to the app management functionality and other features of [Apps](/developerportal/) in the Mendix Portal.     
-Click the link corresponding to the year for which you want to see release notes:
+
+Click the link corresponding to the year for which you want to read release notes:
 
 * [2025](/releasenotes/developer-portal/2025/)
 * [2024](/releasenotes/developer-portal/2024/)
