@@ -21,7 +21,6 @@ If you are using Studio Pro 11.0–11.5 and your extension includes menus, your 
 * This how-to uses the results of [Get Started with the Web Extensibility API](/apidocs-mxsdk/apidocs/web-extensibility-api-11/getting-started/). Make sure to complete that how-to before starting this one.
 * Review [how menus work](/apidocs-mxsdk/apidocs/web-extensibility-api-11/menu/) in the Web Extensibility API.
 
-
 ## Creating a Simple Menu
 
 The code below adds a simple menu to your extension. The code will:

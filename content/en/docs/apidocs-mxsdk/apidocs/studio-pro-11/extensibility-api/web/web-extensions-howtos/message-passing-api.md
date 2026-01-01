@@ -188,7 +188,7 @@ export const component: IComponent = {
 };
 ```
 
-2. Rename `src/ui/index.tsx` to `src/ui/tab.tsx` and paste the following code into it:
+1. Rename `src/ui/index.tsx` to `src/ui/tab.tsx` and paste the following code into it:
 
     ```typescript {hl_lines=["13-15"]}
     import React, { StrictMode, useCallback, useEffect, useState } from "react";
@@ -225,7 +225,7 @@ export const component: IComponent = {
     }
     ```
 
-3. Create a new file `src/ui/pane.tsx` and paste the following code into it:
+2. Create a new file `src/ui/pane.tsx` and paste the following code into it:
 
     ```typescript {hl_lines=["14-19"]}
     import React, { StrictMode, useCallback, useEffect, useState } from "react";
@@ -267,7 +267,7 @@ export const component: IComponent = {
     }
     ```
 
-4. Update `build-extension.mjs` by replacing the `entryPoints` array with:
+3. Update `build-extension.mjs` by replacing the `entryPoints` array with:
 
     ```javascript
     const entryPoints = [
@@ -288,7 +288,7 @@ export const component: IComponent = {
     })
     ```
 
-5. Replace the contents of `manifest.json` with:
+4. Replace the contents of `manifest.json` with:
 
     ```
     {

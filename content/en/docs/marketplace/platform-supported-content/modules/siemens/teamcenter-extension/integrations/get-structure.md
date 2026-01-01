@@ -48,7 +48,7 @@ This document takes you through a use case of creating logic using the Teamcente
     For details on BOM Window properties, refer to the Teamcenter Documentation. 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/get-structure/import-mapping-2.png">}}
   
-   4. Click **Close** to close the stucture configuration panel.
+   1. Click **Close** to close the stucture configuration panel.
 
 5. On the import mapping page, click the `BOMLine` entity. This opens the **Object mapping** window.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/get-structure/import-mapping-empty.png">}}
@@ -86,7 +86,6 @@ This document takes you through a use case of creating logic using the Teamcente
     * `Last Saved Date`
     * `Maturity`
     
-
 14. Click **Close** to close the panel.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/get-structure/object-mapping-result.png">}}
 

@@ -164,7 +164,6 @@ If your app is configured to [restrict access for incoming requests](/developerp
 
 {{% alert color="info" %}}Each of your app environments needs to be registered separately. A successful app registration is limited to the app URL that was provided during the registration. Note that a change in the app URL, or restoring a database backup from one environment to another, will require you to register the affected app environments again.{{% /alert %}}
 
-
 ### Running on self-hosted for airgapped and on-premises {#run-private-service-and-on-premises}
 
 {{% alert color="info" %}} When self-hosting the Document Generation Service in an airgapped environment, the browser does not have access to the internet. As such, note that any external dependencies such as fonts, stylesheets, or images are not loaded. This could cause the document generation process to fail or result in incomplete documents. {{% /alert %}}
