@@ -20,8 +20,8 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### New Features
 
-* We have added a new feature in the **Network tab** of the **Environment Details** page that enables Technical Contacts to securely [connect Mendix applications to external resources](/developerportal/deploy/connecting-to-external-resource/) through [Mendix Cloud Private Connectivity](/control-center/private-connectivity/).
-    * From the [Connections](/developerportal/deploy/environments-details/#connections) section of the **Network** tab, Technical Contacts can now request new private connections, track the status of their pending connection requests, connect to external resources, and delete existing connections.
+* We have added a new feature in the **Connectivity** tab of the **Environment Details** page that enables Technical Contacts to securely [connect Mendix applications to external resources](/developerportal/deploy/connecting-to-external-resource/) through [Mendix Cloud Private Connectivity](/control-center/private-connectivity/).
+    * From the [Connections](/developerportal/deploy/environments-details/#connections) section of the **Connectivity** tab, Technical Contacts can now request new private connections, track the status of their pending connection requests, connect to external resources, and delete existing connections.
 
 ## 2025
 
