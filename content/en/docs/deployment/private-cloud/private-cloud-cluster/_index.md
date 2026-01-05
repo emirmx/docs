@@ -1542,6 +1542,10 @@ If Global Operator is configured with [Private Cloud License Manager](/developer
 
 ## Current Limitations
 
+### Environment Limitation
+
+Please note that assigning a single standard or global Operator to manage 350 or more environments may lead to reduced performance.
+
 ### Storage Provisioning
 
 If the Operator fails to provision or deprovision storage (a database or file storage), it will not retry the operation. If there is a failed `*-database` or `*-file` pod, you'll need to do the following:
