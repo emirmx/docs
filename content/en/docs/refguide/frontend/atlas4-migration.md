@@ -162,9 +162,9 @@ SASS offers many built-in functions (like `mix()`, `darken()`, `lighten()`) that
 
 #### Example: The `mix()` Function and `color-mix()`
 
-In SASS, `mix()` blends two colors. The CSS equivalent is `color-mix()`.
+In SASS, `mix()` blends two colors. The CSS equivalent is `color-mix()`. For more information, see the code samples below:
 
-*   **SASS `mix()` Example:**
+* SASS `mix()` example:
     ```scss
     // SASS variables
     $link-color: #264ae5;
@@ -175,7 +175,7 @@ In SASS, `mix()` blends two colors. The CSS equivalent is `color-mix()`.
       background-color: mix($link-color, $gray-light, 50%);
     }
     ```
-*   **CSS `color-mix()` Example:**
+* CSS `color-mix()` example,
     ```css
     :root {
       --link-color: #264ae5;
@@ -187,17 +187,17 @@ In SASS, `mix()` blends two colors. The CSS equivalent is `color-mix()`.
       background-color: color-mix(in srgb, var(--link-color) 50%, var(--gray-light));
     }
     ```
-    
-    **Understanding `color-mix()` syntax:**
-    *   `in srgb`: Specifies the color space for mixing. `srgb` is a common and safe choice for web.
-    *   `var(--link-color) 50%`: The first color and its percentage contribution.
-    *   `var(--gray-light)`: The second color (gets the remaining percentage, i.e., 50%).
 
-#### Other Commonly Used SASS Functions (`darken()`, `lighten()`, `rgba()`)
+Understanding `color-mix()` syntax:
+  * `in srgb`: specifies the color space for mixing. `srgb` is a common and safe choice for web
+  * `var(--link-color) 50%`: the first color and its percentage contribution
+  * `var(--gray-light)`: the second color (gets the remaining percentage, for example: 50%)
 
-For other SASS functions like `darken()`, `lighten()`, `rgba()`, `transparentize()`, etc.:
+#### Other Commonly Used SASS Functions 
 
-*   **`rgba()` / `hsla()`:** These have direct CSS equivalents and can be used with CSS variables:
+For other SASS functions like `darken()`, `lighten()`, `rgba()`, `transparentize()`, and others, please browse the guidance below:
+
+* **`rgba()` / `hsla()`:** These have direct CSS equivalents and can be used with CSS variables:
     ```css
     :root { 
       --my-red-rgb: 255, 0, 0; /* Store as comma-separated RGB values */
@@ -208,7 +208,7 @@ For other SASS functions like `darken()`, `lighten()`, `rgba()`, `transparentize
     }
     ```
     
-*   **`darken()` / `lighten()`:** Native CSS equivalents are not as direct, but you can use `color-mix()` in combination with `black` or `white` to achieve similar results:
+* **`darken()` / `lighten()`:** Native CSS equivalents are not as direct, but you can use `color-mix()` in combination with `black` or `white` to achieve similar results:
     
     **To darken a color:**
     ```css
@@ -223,6 +223,7 @@ For other SASS functions like `darken()`, `lighten()`, `rgba()`, `transparentize
     ```
     
     {{% alert color="info" %}}
+
 **Note:** The Atlas core theme (`themesource/atlas_core/web/themes/_theme-default.scss`) extensively uses `color-mix()` for color variations. Review it for real-world examples.
     {{% /alert %}}
 
