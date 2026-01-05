@@ -405,9 +405,9 @@ Now, you can acquire tokens which can be validated using JWKS URI.
 
 For more information about configuring your app for OIDC with Amazon Cognito, see [Amazon Cognito: Configuring the Required Settings in Your Mendix App](/appstore/modules/aws/amazon-cognito/#cognito).
 
-### Deploy-time Configuration of Your IdP at Your App{#deploytime-idp-configuration}
+### Deploy-Time Configuration of Your IdP at Your App{#deploytime-idp-configuration}
 
-#### Automated Deploy-time SSO Configuration{#deploy-time}
+#### Automated Deploy-Time SSO Configuration{#deploy-time}
 
 In version 2.3.0 and above, you can configure the OIDC SSO module using app [constants](/refguide/constants/) rather than using the app administration pages. As the developer of an app using OIDC SSO, you can set default values. These values can be overridden using the app constants.
 
@@ -437,7 +437,7 @@ In this configuration, you have several options to customize the Identity Provid
 
 In this non-default configuration method, users have the flexibility to introduce your own constants by creating custom IdP configurations.
 
-##### Deploy-time IdPs for SSO and API Security Configuration
+##### Deploy-Time IdP Configuration for SSO and API Security
 
 {{% alert color="info" %}}
 **IdPs for SSO and API security** configuration supports both Authorization code and Client Credential grant type.
@@ -578,7 +578,7 @@ Fields below are available in the **UserProvisioning** tab for the User Provisio
     * By default, the value is set to ***Yes***.
 * **User role** (optional) – the role which will be assigned to newly created users. This is optional and will be applied to all IdPs. You can select any user role as a default or keep the field empty. User Provisioning does not allow you to assign user roles dynamically. It can only set a default role. If you need additional user roles, use the Access Token Parsing microflow to assign multiple roles. For more information, see the [Dynamic Assignment of Userroles (Access Token Parsing)](#access-token-parsing) section below.
     * By default, the value is set to ***User***.
-* **User Type** – this allows you to configure end-users of your application as internal or external. It is created upon the creation of the user and updated each time the user logs in.
+* **User Type** – this allows you to configure end-users of your application as internal or external. It is created upon the creation of the user and updated each time the user logs in. It is a setting configured per IdP. If two IdPs are connected, one IdP may have the user type set to ***Internal*** while the other may have the user type set to ***External***.
     * By default, the value is set to ***Internal***.
 
 * Under **Attribute Mapping**, for each piece of information you want to add to your custom user entity, select an **IdP Attribute** (claim) and specify the **Configured Entity Attribute** where you want to store the information.
