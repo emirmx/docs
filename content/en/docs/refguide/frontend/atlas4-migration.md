@@ -77,49 +77,51 @@ CSS variables are supported in all modern browsers (Chrome, Firefox, Safari, Edg
 
 ### 1.1 SASS Variables vs. CSS Variables: The Core Difference
 
-Imagine you have a specific shade of blue you use throughout your app.
+Imagine you have a specific shade of blue you use throughout your app. Perhaps its key to your company's theme.
 
-*   **In SASS (Atlas 3 and earlier):** You would define it like this:
-    ```scss
-    // Define the SASS variable
-    $brand-primary: #264ae5;
+In SASS (Atlas 3 and earlier), you define it like this:
+
+```scss
+// Define the SASS variable
+$brand-primary: #264ae5;
+
+// Use the variable
+.my-button {
+  background-color: $brand-primary;
+}
+```
+
+When your Mendix app is built, `$brand-primary` is replaced with `#264ae5` **before** the browser ever sees the code. The browser only sees `background-color: #264ae5;`.
     
-    // Use the variable
-    .my-button {
-      background-color: $brand-primary;
-    }
-    ```
-    When your Mendix app is built, `$brand-primary` is replaced with `#264ae5` *before* the browser ever sees the code. The browser only sees `background-color: #264ae5;`.
-    
-*   **In CSS (Atlas 4):** You define it like this:
-    ```css
-    /* :root means these variables are available globally */
-    :root {
-      --brand-primary: #264ae5; /* Define the CSS variable */
-    }
-    
-    /* Use the variable */
-    .my-button {
-      background-color: var(--brand-primary);
-    }
-    ```
-    The browser directly understands `--brand-primary`. It can even change its value dynamically using JavaScript!
+In CSS (Atlas 4), you define it like this:
+
+```css
+/* :root means these variables are available globally */
+:root {
+  --brand-primary: #264ae5; /* Define the CSS variable */
+}
+
+/* Use the variable */
+.my-button {
+  background-color: var(--brand-primary);
+}
+```
+
+The browser directly understands `--brand-primary`. It can even change its value dynamically using JavaScript!
 
 ### 1.2 The New `theme/web/custom-variables.scss` File
 
-In Atlas 4, your `theme/web/custom-variables.scss` file (or any custom SASS file where you define global variables) needs to declare **CSS variables** instead of SASS variables.
+In Atlas 4, your `theme/web/custom-variables.scss` file (or any custom SASS file where you define global variables) needs to declare **CSS variables** instead of SASS variables. See the key changes in the code samples below:
 
-**Key Changes:**
-
-*   **Declaration Syntax:**
-    *   **Atlas 3 (SASS variables):**
+* Declaration Syntax:
+    * Atlas 3 (SASS variables):
         ```scss
         // SASS variables at the file root level
         $brand-primary: #264ae5;
         $font-size-default: 14px;
         $bg-color: #f8f8f8;
         ```
-    *   **Atlas 4 (CSS variables):**
+    * Atlas 4 (CSS variables):
         ```scss
         // All global CSS variables must be within :root block
         :root {
@@ -128,8 +130,8 @@ In Atlas 4, your `theme/web/custom-variables.scss` file (or any custom SASS file
           --bg-color: #f8f8f8;
         }
         ```
-*   **Usage Syntax:**
-    *   **Atlas 3 (SASS variables):**
+* Usage Syntax:
+    * Atlas 3 (SASS variables):
         ```scss
         .my-element {
           color: $brand-primary;
@@ -137,7 +139,7 @@ In Atlas 4, your `theme/web/custom-variables.scss` file (or any custom SASS file
           font-size: $font-size-default;
         }
         ```
-    *   **Atlas 4 (CSS variables):**
+    * Atlas 4 (CSS variables):
         ```css
         .my-element {
           color: var(--brand-primary); /* Use var() function to reference CSS variables */
@@ -146,11 +148,12 @@ In Atlas 4, your `theme/web/custom-variables.scss` file (or any custom SASS file
         }
         ```
 
-**Important Note on Imports:**
-If your `custom-variables.scss` previously imported other SASS files that defined variables (e.g., `_my-design-system-colors.scss`), those imported files *also* need to be updated to declare CSS variables within a `:root` block.
+{{% alert color="info" %}}
+If your `custom-variables.scss` previously imported other SASS files that defined variables (for example, `_my-design-system-colors.scss`), those imported files **also** need to be updated to declare CSS variables within a `:root` block.
+{{% /alert %}}
 
 {{% alert color="warning" %}}
-**Caveat:** If you omit the `$use-css-variables: true;` declaration, your theme may not function correctly. Always include this at the top of your `custom-variables.scss` file.
+If you omit the `$use-css-variables: true;` declaration, your theme may not function correctly. Always include this at the top of your `custom-variables.scss` file.
 {{% /alert %}}
 
 ### 1.3 SASS Functions vs. CSS Functions
