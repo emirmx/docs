@@ -641,7 +641,7 @@ If you want to use your custom user entity which is a specialization of the `Sys
 To configure custom JIT user provisioning, set up the fields listed in the [Runtime Configuration of End-user Onboarding](#custom-provisioning-rt) section above and save the configuration.
 
 {{% alert color="info" %}}
-If you connect multiple IdPs to your Mendix app, you can use separate custom user entities for each IdP, each with its own attribute mapping.
+If you connect multiple IdPs to your Mendix app, you can use separate custom user entities for each IdP, each with its own attribute mapping. In addition, each IdP configuration can have its own default user role and its own JIT user provisioning configuration, rather than being applied across all IdPs.
 {{% /alert %}}
 
 ##### User Provisioning Using a Microflow at Runtime{#microflow-at-runtime}
