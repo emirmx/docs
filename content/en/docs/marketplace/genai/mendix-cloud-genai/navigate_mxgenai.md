@@ -23,18 +23,34 @@ The **Settings** tab contains the details of a GenAI resource. It shows the foll
 * **Display Name**: indicates the name of the resource.
 * **ID**: indicates the resource ID.
 * **Region(s)**: the region where the resource is hosted.
-* **Cross Region Inference (CRI)**: shows if the model supports cross-region inference*.
+* **Cross Region Inference (CRI)**: shows if the model supports cross-region inference ¹.
 * **Cloud Provider**: indicates the cloud provider, for example, AWS.
 * **Type**: this is the type of resource, for example, Text Generation, Embedding, Knowledge Base, etc.
-* **Model**: indicates which model is used, for example, Anthropic Claude Sonnet 3.5.
+* **Model**: indicates which model is used, for example, Anthropic Claude Sonnet 3.5. For more information, see the [Upgrading the Text Model Version](#upgrade-model) section below.
 * **Plan**: indicates the subscription plan used for compute resources (for example, embedding or text generation resources).
 * **Environment**: shows which environment is used, for example, test, acceptance, or production.
 
-\* Cross-region inference (CRI) allows a model to redirect requests to another region, helping to distribute the load across multiple regions within the same area. So, EU requests always stay within EU regions. Connecting to a cross-region inference profile does not change how the request is sent; the redirection happens on the server side, determining the region to handle the request to get the fastest response. For more information, see [Increase throughput with cross-Region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html). If applicable, CRI profiles are selected during provisioning of a model resource. 
+¹ Cross-region inference (CRI) allows a model to redirect requests to another region, helping to distribute the load across multiple regions within the same area. So, EU requests always stay within EU regions. Connecting to a cross-region inference profile does not change how the request is sent; the redirection happens on the server side, determining the region to handle the request to get the fastest response. For more information, see [Increase throughput with cross-Region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html). If applicable, CRI profiles are selected during provisioning of a model resource. New models are available under the CRI inferencing type by default. 
 
 #### Additional Details for Knowledge Base Resources
 
 For knowledge base resources, you can also see details of the associated embeddings resource and vice versa. To learn more about embeddings, see the [Embedding vector](/appstore/modules/genai/rag/#embedding-vector) section of *RAG in a Mendix App*.
+
+#### Upgrading the Text Model Version{#upgrade-model}
+
+Model version upgrades let you migrate your Text Generation Resources to a newer, non-deprecated model within the same model family. For example, GenAI Resources offer the Claude Sonnet family, ranging from Claude Sonnet 3.7 to Claude Sonnet 4.5. Upgrading ensures you gain the latest performance improvements and AI capabilities. In the **Settings** tab of your Text Generation Resource, click **Change Model** to view and select the available model version.
+
+{{% alert color="warning" %}}
+While changing the model version, note the following:
+
+* Changing a model version in production requires careful evaluation. Even within the same model family, newer versions can behave differently, and may affect how your LLM-driven applications, such as agents, perform.
+
+* Always validate a new model version in a test environment before using it for your use case, and downgrade to the previous version if required.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+Ensure you are using Mendix Cloud GenAI Connector version 5.3.0 and above to support the latest Cohere Embed v4 model. To see the upgraded model version reflected in your GenAI Connector after upgrading, make sure you are using Mendix Cloud GenAI Connector version 5.4.0 and above.
+{{% /alert %}}
 
 ### Team
 

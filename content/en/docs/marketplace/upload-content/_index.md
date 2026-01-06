@@ -3,7 +3,7 @@ title: "Uploading Content to the Marketplace"
 url: /appstore/submit-content/
 weight: 3
 description_list: true
-description: "Describes how to submit content to the Mendix Marketplace content."
+description: "Describes how to submit content to the Mendix Marketplace."
 tags: ["marketplace", "public marketplace", "private marketplace", widget", "module"]
 aliases:
     - /appstore/overview/share-content/

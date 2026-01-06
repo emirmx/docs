@@ -14,7 +14,34 @@ There are separate release notes for other deployment targets; for more informat
 
 For information on the current status of deployment to Mendix Cloud and any planned releases, see [Mendix Status](https://status.mendix.com/).
 
+## 2026
+
+### January 5, 2026
+
+#### New Features
+
+* We have added a new feature in the **Connectivity** tab of the **Environment Details** page that enables Technical Contacts to securely [connect Mendix applications to external resources](/developerportal/deploy/connecting-to-external-resource/) through [Mendix Cloud Private Connectivity](/control-center/private-connectivity/).
+    * From the [Connections](/developerportal/deploy/environments-details/#connections) section of the **Connectivity** tab, Technical Contacts can now request new private connections, track the status of their pending connection requests, connect to external resources, and delete existing connections.
+
 ## 2025
+
+### December 23, 2025
+
+#### New Features
+
+* We have added logging support to Dynatrace integration.
+
+### December 14, 2025
+
+#### Improvements
+
+* We enhanced the security infrastructure with stronger access controls for internal data objects
+
+### December 06, 2025
+
+#### Improvements
+
+* We have upgraded Mendix Dock to support contract expiry banners. Mendix Cloud can now provide timely information when contracts are approaching their expiry dates.
 
 ### November 23, 2025
 

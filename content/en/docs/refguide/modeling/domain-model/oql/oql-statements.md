@@ -23,6 +23,8 @@ From Mendix version 11.3, you can also update object attributes in bulk using OQ
 
 From Mendix version 11.4, you can update object associations as well as attributes in bulk using OQL `UPDATE` statements.
 
+From Mendix version 11.6, you can insert new objects with attributes in bulk using OQL `INSERT` statements.
+
 {{% /alert %}}
 
 ## Java API for OQL updates
@@ -45,13 +47,18 @@ The `execute()` method returns the number of objects that were affected by the s
 
 ## `DELETE` Statement {#oql-delete}
 
+{{% alert color="info" %}}
+Available from Mendix version 11.1.0
+{{% /alert %}}
+
 The syntax of `DELETE` statements is:
 
 ```sql
 DELETE FROM <entity> WHERE <condition>
 ```
 
-`condition` can be anything that can appear in an OQL [WHERE clause](/refguide/oql-clauses/#where).
+* `entity` is the entity whose objects are being deleted.
+* `condition` can be anything that can appear in an OQL [WHERE clause](/refguide/oql-clauses/#where).
 
 ### OQL `DELETE` Limitations
 
@@ -61,21 +68,39 @@ DELETE FROM <entity> WHERE <condition>
 
 ## `UPDATE` Statement {#oql-update}
 
+{{% alert color="info" %}}
+Available from Mendix version 11.3.0
+{{% /alert %}}
+
 The syntax of `UPDATE` statements is:
 
 ```sql
 UPDATE <entity>
-SET { { <attribute> | <association> } = <expression> } [ ,...n ]
+SET { { <attribute> | <association> } = <expression> } [ , …n ]
 WHERE <condition>
 ```
 
-`entity` is the entity whose objects are being updated.
+* `entity` is the entity whose objects are being updated.
 
-`attribute` is an attribute of the entity that is being updated. `association` is an association that is being updated. Multiple attributes and associations can be updated in the same statement.
+* `attribute` is an attribute of the entity that is being updated.
 
-`expression` is a new value of an attribute or association. Any [OQL expression](/refguide/oql-expressions/) is allowed. When updating attributes, the value type of the expression should match the attribute type according to [type coercion precedence](/refguide/oql-expression-syntax/#type-coercion). In the case of associations, association and entity expressions must match the target association type. Values of type LONG can also be used as association values, but they must be valid ids of associations which are of the target association type.
+    An attribute of type `autonumber` can not be updated. The `ID` attribute of an entity cannot be updated.
 
-`condition` can be anything that can appear in an OQL [WHERE clause](/refguide/oql-clauses/#where).
+* `association` is an association that is being updated. Associations can be updated in Mendix version 11.4.0 and above.
+
+    Multiple attributes and associations can be updated in the same statement. 
+
+* `expression` is a new value of an attribute or association. Any [OQL expression](/refguide/oql-expressions/) is allowed.
+
+    * When updating attributes, the value type of the expression should match the attribute type according to [type coercion precedence](/refguide/oql-expression-syntax/#type-coercion).
+    * When updating an enumeration attribute using a literal, the literal must be a valid value for the enumeration.
+    * When updating an enumeration attribute using another enumeration, the expression enumeration must be a subset of the attribute enumeration.
+    * When updating a string attribute using a string literal, the literal length must be equal to or less than the length of the attribute.
+    * In the case of associations, association and entity expressions must match the target association type.
+    
+        Values of type LONG can also be used as association values, but they must be valid ids of associations which are of the target association type.
+
+* `condition` can be anything that can appear in an OQL [WHERE clause](/refguide/oql-clauses/#where).
 
 Example:
 
@@ -139,7 +164,48 @@ SET
     SpecializationAttribute = 1
 ```
 
-## Joins
+## `INSERT` Statement {#oql-insert}
+
+{{% alert color="info" %}}
+Available from Mendix version 11.6.0
+{{% /alert %}}
+
+The syntax of `INSERT` statements is:
+
+```sql
+INSERT INTO <entity> ( <attribute> [ , …n ] ) <oql-query>
+```
+
+* `entity` is the entity for which new objects will be created.
+
+* `attribute` is an attribute of the entity that will be inserted.
+
+* `oql-query` is any OQL query that returns same number of columns as the number of attributes that will be inserted.
+This query can select data from persistable entities and/or [view entities](/refguide/view-entities/).
+
+Example:
+
+```sql
+INSERT INTO Module.Order ( OrderNumber, CustomerNumber )
+SELECT NewOrderNumber, Loader.TemporaryData_Customer/Loader.Customer/Number FROM Loader.TemporaryData
+```
+
+### OQL `INSERT` Limitations
+
+* It is not yet possible to insert associations. As a workaround, they can be added after the `INSERT` using an OQL `UPDATE` statement.
+* Attributes of type "Date and time" with a default value of `'[%CurrentDateTime%]'` will not have their default values set when the `INSERT` statement does not specify them.
+  As a workaround, explicitly insert the attribute with a value of `'[%CurrentDatetime%]'` in the `SELECT` part.
+* When using Oracle, due to database limitations, inserting attributes of type unlimited string or binary is not supported.
+* The general limitations for OQL statements also apply. See [General Limitations for OQL Statements](#oql-limitations), below.
+
+## General Limitations for OQL Statements {#oql-limitations}
+
+* OQL statements can be used only with persistable entities.
+* Entity access rules are not applied to any OQL statements.
+* No event handlers will be executed.
+* Runtime and client state will not be updated with the changes.
+
+### Joins
 
 You cannot directly join other entities in the `FROM` clause of OQL `DELETE` or in the `UPDATE` clause of OQL `UPDATE`. However, you can achieve the same result using long paths or subqueries. For example:
 
@@ -159,10 +225,3 @@ WHERE ID IN (
         INNER JOIN Module.Customer ON Module.Customer/CustomerID = Module.Order/CustomerID
         WHERE Module.Customer/Name = 'Mary' )
 ```
-
-## General Limitations for OQL Statements {#oql-limitations}
-
-* OQL statements can be used only with persistable entities.
-* Entity access rules are not applied to any OQL statements.
-* No event handlers will be executed.
-* Runtime and client state will not be updated with the changes.

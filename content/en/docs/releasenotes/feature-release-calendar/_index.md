@@ -43,8 +43,8 @@ General Availability means that a feature is available for all users. This type 
 | MCP Client                                    | General Availability: Mx 11.2 + Mx 10.24 |
 | Mendix Cloud GenAI Resource Packs             | General Availability: Mx 11.2 + Mx 10.24 |
 | Mendix Cloud GenAI Resource Packs Guardrails  | Public Beta: Mx 11.9 |
-| Agent Builder in Studio Pro                   | Private Beta: Mx 11.6 |
-| Agent Observability                           | Public Beta: Mx 11.9 |
+| Agent Builder in Studio Pro                   | Private Preview: Mx 11.9 |
+| Agent Observability                           | General Availability: Mx 11.5 + Mx 10.24 |
 
 ## Developer Experience (Studio Pro)
 
@@ -54,7 +54,7 @@ General Availability means that a feature is available for all users. This type 
 | Multilingual Studio Pro and Platform: Chinese, Japanese, Korean | General Availability: Mx 11.0 |
 | Multilingual Studio Pro and Platform: Portuguese | Public Beta: Mx 11.0 |
 | Module updates while retaining customizations | General Availability: Mx 11.12 |
-| Easy comparison of revisions (textual diffing) | Public Beta: Mx 11.7 |
+| Easy comparison of revisions (textual diffing) | Public Beta: Mx 11.9 |
 | Searchable commit history | Public Beta: Mx 11.4 <br/>General Availability: Mx 11.6 |
 | Merge Requests (aka Pull requests) | Public Beta: H2 2026 |
 | OpenTelemetry Tracing | General Availability: Mx 11.6 |
@@ -113,9 +113,9 @@ General Availability means that a feature is available for all users. This type 
 | Capability or Feature | Expected Release |
 | --- | --- |
 | Private Connectivity for Mendix Cloud | Public Beta: Mx 11.6 |
-| Mendix Cloud: Runtime Patching | General Availability: Mx 11.9 |
-| Mendix Cloud: Self Service App Upgrades<br/>and Cloud Resource Pack Recommender | Public Beta: Mx 11.9 |
-| Operations Home | General Availability: Mx 11.6 |
+| Mendix Cloud: Runtime Patching | General Availability: Mx 11.12 |
+| Mendix Cloud: Self Service App Upgrades<br/>and Cloud Resource Pack Recommender | Public Beta: Mx 11.12 |
+| Operations Home | General Availability: Mx 11.12 |
 | Mendix on Azure | General Availability: Mx 11.4 |
 | Workstation Client | General Availability: Mx 11.3 + Mx 10.24 |
 

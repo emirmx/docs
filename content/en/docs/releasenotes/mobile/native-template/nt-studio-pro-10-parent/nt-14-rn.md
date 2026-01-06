@@ -5,6 +5,22 @@ weight: 6
 description: "Native Template 14"
 ---
 
+## 14.1.10 {#1420}
+
+**Release date: December 18, 2025**
+
+### Improvements
+
+* We changed `NSAppTransportSecurity` in **production** versions of projects to false. For **dev** testing, we added **Info-dev.plist**.
+
+## 14.1.9 {#1419}
+
+**Release date: December 3, 2025**
+
+### Improvements
+
+* We improved the styling when edge-to-edge mode is enabled.
+
 ## 14.1.8 {#1418}
 
 **Release date: November 21, 2025**

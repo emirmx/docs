@@ -12,7 +12,24 @@ These release notes cover changes to the app management functionality and other 
 
 To see the current status of the Mendix Control Center, see [Mendix Status](https://status.mendix.com/). Here you can also see planned maintenance and past incidents.
 
+## 2026
+
+### January 5, 2026
+
+#### New Features
+
+* We have introduced **Private Connectivity**, a zero-trust security infrastructure which helps you manage connections between your Mendix Cloud apps and internal resources, bypassing the public internet. It allows you to create secure networks through which your apps can safely access internal databases and services hosted on-premises or in cloud environments, without exposing them publicly.     
+  Refer to [Private Connectivity](/control-center/private-connectivity/) for background details and architecture, then read through [Configuring and Using Private Connectivity](/control-center/configure-private-connectivity/) to learn how to create and manage your own private networks.
+
 ## 2025
+
+### December 14, 2025
+
+#### New Features
+
+* The Control Center **Company** section now includes a new page, **Project Categories**. It allows admins to create and manage the categories that can be assigned to your company's apps. When apps are assigned their categories, either by the company admins or the admins of specific apps, the categories are then visible to all company members on My Apps and My Company Apps pages in the Mendix Portal, which enables better classification and searchability. Categories can also be managed using the new [Project Category API](/apidocs-mxsdk/apidocs/project-category-api/).     
+    For details on the new page, refer to [Project Categories](/control-center/project-categories/).     
+    For details on the corresponding app filter, refer to [Apps](/developerportal/).
 
 ### November 9, 2025
 
