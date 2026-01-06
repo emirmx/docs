@@ -1544,7 +1544,7 @@ If Global Operator is configured with [Private Cloud License Manager](/developer
 
 ### Environment Limitation
 
-Please note that assigning a single standard or global Operator to manage 350 or more environments may lead to reduced performance.
+Assigning a single standard or global Operator to manage 350 or more environments may lead to reduced performance.
 
 ### Storage Provisioning
 
