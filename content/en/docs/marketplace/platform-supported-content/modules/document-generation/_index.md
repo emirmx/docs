@@ -25,7 +25,7 @@ The [PDF Document Generation](https://marketplace.mendix.com/link/component/2115
     * [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/)
     * [Mendix Cloud Dedicated](/developerportal/deploy/mendix-cloud-deploy/)
     * [Mendix on Kubernetes Connected](/developerportal/deploy/private-cloud/)
-    * [Private PDF Document Generation Service](#run-private-service)
+    * [Private PDF Document Generation Service](/appstore/modules/document-generation/installation-configuration/#run-private-service)
     * [On-Premises](/developerportal/deploy/on-premises-design/)
 
     {{% alert color="info" %}}We only support apps that allow bi-directional communication with the PDF Service in Mendix Cloud for all deployment types except for on-premises, and for the [Private PDF Document Generation Service](/appstore/services/private-document-generation-service/).{{% /alert %}}
@@ -57,7 +57,7 @@ The Document Generation module uses the PDF document generation service running 
 
 When using **Run locally** in Studio Pro, a local service is used to run the headless browser next to your app. The service and browser run only at the moment of generating a document, and are terminated when the document is finished.
 
-When running on Mendix Cloud, the PDF document generation service on Mendix Public Platform (EU instance) is used, which is developed and maintained by Mendix. The cloud service opens the page in a headless browser and sends the resulting PDF back to the module. The diagram below illustrates this process.
+When running on Mendix Cloud, the PDF document generation service on Mendix Public Platform (EU instance) is used, which is developed and maintained by Mendix. The cloud service opens the page in a headless browser and sends the resulting PDF back to the module. The following diagram illustrates this process.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/document-generation/request-flow.png"  alt="architecture-overview-diagram" >}}
 

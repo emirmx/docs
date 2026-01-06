@@ -30,7 +30,7 @@ weight: 3
 
     4. Fill in the **File name** property. The Java action will append **.pdf** to the generated documents.
 
-    5. Use **$currentUser** for the **Generate as user** property. This will generate the document in the context and using the access rights of the user which runs the microflow. To generate the document in a system context, see the section [Generating Documents as a System Task](#system-task) below.
+    5. Use **$currentUser** for the **Generate as user** property. This will generate the document in the context and using the access rights of the user which runs the microflow. To generate the document in a system context, refer to the [Generating Documents as a System Task](#system-task) section.
 
     6. Set the value for the **Wait for result** property. If you set it to *false*, the result object will be available instantly, while the content will be added at a later stage. Set the **Wait for result** property to *true* only for direct user actions. Do not set the value to *true* for batch processing.
 
@@ -55,7 +55,7 @@ For scenarios where you want to generate documents as a system task (for example
 
    {{% alert color="info" %}}Do not use regular user accounts for the **Generate as user** parameter, since this could have side effects, for example, changes in the last login date, or failures when multiple sessions are disabled and the applicable user logs in at the same time.{{% /alert %}}
 
-4. Run the app and create a new local user as the service user. Give the service user the user role that you created above and use a strong password. The service user will be used to generate documents.
+4. Run the app and create a new local user as the service user. Give the service user the user role that you have just created, and use a strong password. The service user will be used to generate documents.
 
    {{% alert color="info" %}}
    When starting with a blank app, you can use the **Administration.Account_Overview** page from the [Administration module](/appstore/modules/administration/) to manage and create new users.
@@ -113,13 +113,13 @@ The following **Container** widget related design properties are available in th
 
 ### Applying Custom Fonts {#applying-custom-fonts}
 
-For extended font support, Mendix recommends using custom fonts. To apply a custom font, follow the steps below:
+For extended font support, Mendix recommends using custom fonts. To apply a custom font, follow these steps:
 
 The procedure uses the `Noto Sans SC` font as an example. You can visit [Google fonts](https://fonts.google.com) for more font options or use a font of your choice.
 
 1. Download the font [Noto Sans SC](https://fonts.google.com/noto/specimen/Noto+Sans+SC).
 2. Copy the font file *NotoSansSC-Regular.ttf* from the *static* folder of the downloaded font package into the *theme\web\fonts* folder of the app.
-3. In Studio Pro, go to **Styling** > **Web** > **main.scss** in **App Explorer**, and add the lines below to the *main.scss* file in the built-in styling editor:
+3. In Studio Pro, go to **Styling** > **Web** > **main.scss** in **App Explorer**, and add the following lines to the *main.scss* file in the built-in styling editor:
 
     ```css
     @font-face {

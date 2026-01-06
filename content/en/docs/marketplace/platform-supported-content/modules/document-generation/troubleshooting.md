@@ -7,7 +7,7 @@ weight: 4
 
 ## App Environment Registration Issues
 
-If you encounter any issues while [registering your app environment](#register-app), refer to the table below for more details and suggestions on how to resolve them.
+If you encounter any issues while registering your app environment, refer to the following table for more details and suggestions on how to resolve them.
 
 | Error | Error message | Description | Suggestion |
 |-------|------------------|-------------|------------|
@@ -30,11 +30,11 @@ In general, we recommend that you perform the following steps if you get any iss
 
 {{% alert color="info" %}}For module version 1.8.0 and above, errors that occur during the document generation process in the cloud and local service are now sent back to the module. If any error is received, this will cause the module to throw Document Generation specific exceptions.{{% /alert %}}
 
-The sections below contain the exceptions that can possibly occur during the document generation process and the suggested steps to verify the reason.
+The following sections contain the exceptions that can possibly occur during the document generation process and the suggested steps to verify the reason.
 
 #### Wait for Content Exception
 
-If you encounter a `DocGenWaitForContentException` exception with error code `DOCGEN_WAIT_FOR_CONTENT_ERROR` while generating a document, refer to the table below for more details and suggestions on how to resolve them.
+If you encounter a `DocGenWaitForContentException` exception with error code `DOCGEN_WAIT_FOR_CONTENT_ERROR` while generating a document, refer to the following table for more details and suggestions on how to resolve them.
 
 | Error message                            | Potential reasons                                            |
 | ---------------------------------------- | ------------------------------------------------------------ |
@@ -42,7 +42,7 @@ If you encounter a `DocGenWaitForContentException` exception with error code `DO
 
 #### Navigation Exception
 
-If you encounter a `DocGenNavigationException` exception with error code `DOCGEN_NAVIGATION_ERROR` while generating a document, refer to the table below for more details and suggestions on how to resolve them.
+If you encounter a `DocGenNavigationException` exception with error code `DOCGEN_NAVIGATION_ERROR` while generating a document, refer to the following table for more details and suggestions on how to resolve them.
 
 | Error message                                                | Potential reasons                                            |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -54,7 +54,7 @@ If you encounter a `DocGenNavigationException` exception with error code `DOCGEN
 
 #### Runtime Exception
 
-If you encounter a `DocGenRuntimeException` exception with error code `DOCGEN_RUNTIME_ERROR` while generating a document, refer to the table below for more details and suggestions on how to resolve them.
+If you encounter a `DocGenRuntimeException` exception with error code `DOCGEN_RUNTIME_ERROR` while generating a document, refer to the following table for more details and suggestions on how to resolve them.
 
 | Error message                                                | Potential reasons                                            |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -80,7 +80,7 @@ If the resulting PDF document only contains a part of the expected content, veri
 If the resulting PDF document contains an additional blank page at the end of the document, try to wrap the content in a layout grid.
 
 {{% alert color="warning" %}}
-When testing the PDF Document Generation module locally using Chrome or Chromium version 117 or 118, the scaling of your PDF document might be different compared to the document generated from the PDF document generation service in Mendix Cloud. This issue has been fixed in Chrome version 119, we recommend that you update your Chrome version to the latest release if you run into this issue. To guarantee the same result locally as when using our PDF document generation service, we advise using the Chromium version cited in the [Chromium](#chromium) section above.
+When testing the PDF Document Generation module locally using Chrome or Chromium version 117 or 118, the scaling of your PDF document might be different compared to the document generated from the PDF document generation service in Mendix Cloud. This issue has been fixed in Chrome version 119, we recommend that you update your Chrome version to the latest release if you run into this issue. To guarantee the same result locally as when using our PDF document generation service, we advise using the Chromium version cited in the [Chromium](/appstore/modules/document-generation/installation-configuration/#chromium) section in *PDF Document Generation Installation and Configuration*.
 {{% /alert %}}
 
 ### Local Service Errors
