@@ -4,7 +4,13 @@ linktitle: "Configuring and Using Private Connectivity"
 url: /control-center/configure-private-connectivity/
 description: "Describes the configuration steps of Private Connectivity in the Mendix Control Center."
 weight: 1
+beta: true
 ---
+
+{{% alert color="warning" %}}
+This feature is in Public Beta. For more information, refer to [Release Status](/releasenotes/release-status/).
+{{% /alert %}}
+
 ## Introduction
 
 To connect from a Mendix app to a resource on your internal network, you need to follow these steps:
