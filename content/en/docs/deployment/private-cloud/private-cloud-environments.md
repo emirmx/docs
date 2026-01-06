@@ -24,9 +24,9 @@ In addition, you need a runtime license for your app, in the same way as you wou
 
 See [Licensing Mendix on Kubernetes](/developerportal/deploy/private-cloud/#licensing) for more information on this subject.
 
-### Environment Limitation
+### Environment Number Limitations
 
-Please note that assigning a single standard or global Operator to manage 350 or more environments may lead to reduced performance.
+Assigning a single standard or global Operator to manage 350 or more environments may lead to reduced performance.
 
 ## Production Environments
 
