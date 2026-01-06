@@ -45,8 +45,8 @@ This document takes you through a use case of creating logic using the Teamcente
    3. Enable **BOM Window properties**. This allows you to configure the BOM window properties at design time. The Teamcenter extension will generate a microflow to retrieve `Structures` with the selected properties.     
       If the option is disabled, the Teamcenter extension will generate a microflow to retrieve structures with the `TcConnector.BOMWindowPropFlagMap` object as input parameter. This is a HashMap used in the Teamcenter Java SOA API when creating BOM windows, and it controls various display and behavior settings for BOM windows.  
 
-    For details on BOM Window properties, refer to the Teamcenter Documentation. 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/get-structure/import-mapping-2.png">}}
+        For details on BOM Window properties, refer to the Teamcenter Documentation. 
+        {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/get-structure/import-mapping-2.png">}}
   
    4. Click **Close** to close the stucture configuration panel.
 
@@ -86,7 +86,6 @@ This document takes you through a use case of creating logic using the Teamcente
     * `Last Saved Date`
     * `Maturity`
     
-
 14. Click **Close** to close the panel.
 {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-extension/get-structure/object-mapping-result.png">}}
 

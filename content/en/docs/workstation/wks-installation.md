@@ -238,6 +238,7 @@ All members except for the Workspace owner can leave a workspace.
 Developer mode can be configured on a **Station** page by toggling **Enable Developer Mode**. 
 
 *Developer Mode* is enabled by default for each station. This allows users of the Workstation Client to 
+
 * quit the program from the start menu, 
 * unlink the Workstation Client so that it can be registered to another station,
 * gives access to debug level live logs displayed in the **Logs** pane of the Workstation Client even if the workspace's log level is set to a different level,
