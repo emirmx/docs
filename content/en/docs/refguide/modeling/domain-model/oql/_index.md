@@ -30,11 +30,11 @@ You can try your OQL example online in the [OQL Playground](https://service.mend
 
 ## Syntax basics
 
-An OQL statement is made of [keywords](#reserved-oql-words), identifiers, [value literals](#oql-literals) and [operators](#oql-operators).
+An OQL statement consists of [keywords](#reserved-oql-words), identifiers, [value literals](/refguide/oql-expression-syntax/#oql-literals) and [operators](/refguide/oql-expression-syntax/#oql-operators).
 
-Identifiers are used for module, entity, attribute, association, alias names and parts of names in paths. Identifier parts are only allowed to contain latin characters (`a-Z`), underscores (`_`) and numbers (`0-9`). Numbers can not be used as for the first character of an identifier. Identifiers can be wrapped in double quotes `" "` to also allow special characters `.`, `/`, `@`.
+Identifiers are used for module, entity, attribute, association, and alias names and parts of names in paths. Identifiers are only allowed to contain latin characters (`a-Z`), underscores (`_`) and numbers (`0-9`). Numbers can not be used as for the first character of an identifier. Identifiers can be wrapped in double quotes `" "` to allow special characters `.`, `/`, and `@`.
 
-Multiple identifiers can be composed into a path, separated by special characters `.` and `/`. The `.` special character can be used to indicate the module an entity in the form `Module.Entity`. The `/` special character can be used to indicate the attribute of an entity in the form `Module.Entity/Attribute` and it can be used for separating associations in long paths. Examples of paths can be seen in the [OQL clauses](#longpath) page.
+Multiple identifiers can be composed into a path, separated by special characters `.` and `/`. The `.` special character can be used to indicate the module and entity in the form `Module.Entity`. The `/` special character can be used to indicate the attribute of an entity in the form `Module.Entity/Attribute` and it can be used for separating associations in long paths. Examples of paths can be seen in the [Select from Multiple Tables using JOIN](/refguide/oql-clauses/#join) section of *OQL Clauses*.
 
 ### Reserved Words {#reserved-oql-words}
 
