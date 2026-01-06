@@ -137,58 +137,58 @@ In the broadcast pattern, one context sends a messages to all other contexts tha
 
 1. Copy the following code into `src/main/index.ts`:
 
-```typescript
-import { IComponent, getStudioProApi } from "@mendix/extensions-api";
+    ```typescript
+    import { IComponent, getStudioProApi } from "@mendix/extensions-api";
 
-export const component: IComponent = {
-    async loaded(componentContext) {
-        const studioPro = getStudioProApi(componentContext);
+    export const component: IComponent = {
+        async loaded(componentContext) {
+            const studioPro = getStudioProApi(componentContext);
 
-        const paneHandle = await studioPro.ui.panes.register(
-            {
-                title: "Message Passing Pane",
-                initialPosition: "right"
-            },
-            {
-                componentName: "extension/message-passing",
-                uiEntrypoint: "pane"
-            }
-        );
-
-        // Add a menu item to the Extensions menu
-        await studioPro.ui.extensionsMenu.add({
-            menuId: "message-passing.MainMenu",
-            caption: "Message Passing",
-            subMenus: [
+            const paneHandle = await studioPro.ui.panes.register(
                 {
-                    menuId: "message-passing.ShowTab",
-                    caption: "Show tab",
-                    action: async () => {
-                        await studioPro.ui.tabs.open(
-                            {
-                                title: "MyExtension Tab"
-                            },
-                            {
-                                componentName: "extension/message-passing",
-                                uiEntrypoint: "tab"
-                            }
-                        );
-                    }
+                    title: "Message Passing Pane",
+                    initialPosition: "right"
                 },
                 {
-                    menuId: "message-passing.ShowPane",
-                    caption: "Show pane",
-                    action: async () => {
-                        await studioPro.ui.panes.open(paneHandle);
-                    }
+                    componentName: "extension/message-passing",
+                    uiEntrypoint: "pane"
                 }
-            ]
-        });
-    }
-};
-```
+            );
 
-1. Rename `src/ui/index.tsx` to `src/ui/tab.tsx` and paste the following code into it:
+            // Add a menu item to the Extensions menu
+            await studioPro.ui.extensionsMenu.add({
+                menuId: "message-passing.MainMenu",
+                caption: "Message Passing",
+                subMenus: [
+                    {
+                        menuId: "message-passing.ShowTab",
+                        caption: "Show tab",
+                        action: async () => {
+                            await studioPro.ui.tabs.open(
+                                {
+                                    title: "MyExtension Tab"
+                                },
+                                {
+                                    componentName: "extension/message-passing",
+                                    uiEntrypoint: "tab"
+                                }
+                            );
+                        }
+                    },
+                    {
+                        menuId: "message-passing.ShowPane",
+                        caption: "Show pane",
+                        action: async () => {
+                            await studioPro.ui.panes.open(paneHandle);
+                        }
+                    }
+                ]
+            });
+        }
+    };
+    ```
+
+2. Rename `src/ui/index.tsx` to `src/ui/tab.tsx` and paste the following code into it:
 
     ```typescript {hl_lines=["13-15"]}
     import React, { StrictMode, useCallback, useEffect, useState } from "react";
@@ -222,10 +222,10 @@ export const component: IComponent = {
                 </StrictMode>
             );
         }
-    }
+    };
     ```
 
-2. Create a new file `src/ui/pane.tsx` and paste the following code into it:
+3. Create a new file `src/ui/pane.tsx` and paste the following code into it:
 
     ```typescript {hl_lines=["14-19"]}
     import React, { StrictMode, useCallback, useEffect, useState } from "react";
@@ -267,7 +267,7 @@ export const component: IComponent = {
     }
     ```
 
-3. Update `build-extension.mjs` by replacing the `entryPoints` array with:
+4. Update `build-extension.mjs` by replacing the `entryPoints` array with:
 
     ```javascript
     const entryPoints = [
@@ -288,7 +288,7 @@ export const component: IComponent = {
     })
     ```
 
-4. Replace the contents of `manifest.json` with:
+5. Replace the contents of `manifest.json` with:
 
     ```
     {
