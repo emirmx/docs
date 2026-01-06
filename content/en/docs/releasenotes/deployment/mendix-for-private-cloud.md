@@ -17,8 +17,8 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 #### Portal Improvements
 
 * We have resolved some issues causing inconsistent commit times on the Team Server.
-* We have fixed the environment start issue in the private cloud pipeline for the start steps.
-* We have fixed email invitation issue for cluster and namespaces.
+* We have fixed the environment start issue for the Start steps in the Private Cloud pipeline.
+* We have fixed an issue with the invitation emails for clusters and namespaces.
 
 ## 2025
 
