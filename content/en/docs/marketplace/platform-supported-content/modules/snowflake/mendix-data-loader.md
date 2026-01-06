@@ -45,9 +45,9 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
 {{% alert color="warning" %}}This must be the root URL, that is, it must end in `/v1/` or `/v2/` Adding anything to the root URL (such as a resource path) will prevent the Mendix Data Loader from working.
 If you want to use specific resources, you should instead expose a new endpoint that only contains the resources that you require. This is because it is only possible to use every resource that is exposed in the OData endpoint, and impossible to exclude certain resources.{{% /alert %}}
 
-    4. Use the **Use Delta Ingestion** check box to specify if you want to ingest all exposed data with every ingestion, or if you want to ingest only data that was newly created or changed since the last ingestion for this data source.
-    5. Click **Save**.
-    6. Grant the application **CREATE DATABASE** and **EXECUTE TASK** privileges. This step is necessary for the application to create the staging database for data ingestion and to execute tasks.
+    3. Use the **Use Delta Ingestion** check box to specify if you want to ingest all exposed data with every ingestion, or if you want to ingest only data that was newly created or changed since the last ingestion for this data source.
+    4. Click **Save**.
+    5. Grant the application **CREATE DATABASE** and **EXECUTE TASK** privileges. This step is necessary for the application to create the staging database for data ingestion and to execute tasks.
 5. To view the status of your data source, check the **Details**.
 6. To view the configuration status, click the **Authentication Configuration** tab.
 7. To set up authentication, click **Edit**, and then provide the required information based on the selected authentication type:
