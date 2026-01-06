@@ -101,7 +101,7 @@ Configure the path to the *chrome.exe* executable in the **CustomChromePath** co
 
 To allow the module to send and receive document generation requests on your Mendix Cloud environments, you need to perform the following steps:
 
-1. If your app is deployed on Mendix Cloud or Mendix Cloud Dedicated, [enable the DocGen request handler.]{#enable-docgen}
+1. If your app is deployed on Mendix Cloud or Mendix Cloud Dedicated, [enable the DocGen request handler](#enable-docgen).
 
    {{% alert color="info" %}}This step is required only for licensed apps on Mendix Cloud or Mendix Cloud Dedicated. If your app is deployed on [Mendix on Kubernetes Connected](/developerportal/deploy/private-cloud/), skip this step and make sure that the */docgen/* path is accessible.{{% /alert %}}
 
