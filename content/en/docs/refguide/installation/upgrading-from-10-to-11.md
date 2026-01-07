@@ -169,14 +169,17 @@ You can resolve the error by enabling entity access for the microflow that calls
 
 ### Amazon S3 SDK Upgrade
 
-With Mendix 11.6 we upgraded AWS SDK used for accessing S3 storage from version 1 to version 2. SDK version 2 has some [differences](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/migration-s3.html) which affects our S3 storage implementation.
+In Mendix 11.6.0 we upgraded the AWS SDK used for accessing S3 storage from version 1 to version 2. SDK version 2 has some [differences](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/migration-s3.html) which affects our S3 storage implementation.
 
-#### com.mendix.storage.s3.Region / com.mendix.storage.s3.EndPoint Settings
+#### `com.mendix.storage.s3.Region` / `com.mendix.storage.s3.EndPoint` Settings
 
-SDK version 2 is stricter with these settings. The `com.mendix.storage.s3.Region` setting should be always set to the region matching the region of the bucket.
-The `com.mendix.storage.s3.EndPoint` setting should be either not set or set to an endpoint matching the region, for example: `s3.eu-west-1.amazonaws.com`.
+SDK version 2 is stricter with these settings.
 
-When the region is not specified or there is incompatibility between above settings, error logs will contain entries similar to following:
+The `com.mendix.storage.s3.Region` setting must always be set to the region matching the region of the bucket.
+
+The `com.mendix.storage.s3.EndPoint` setting must either not be set or set to an endpoint matching the region, for example: `s3.eu-west-1.amazonaws.com`.
+
+When the region is not specified or there is an incompatibility between the two settings above, error logs will contain entries similar to following:
 
 ```
 - Unable to load region from any of the providers in the chain.
@@ -184,17 +187,17 @@ When the region is not specified or there is incompatibility between above setti
 - The authorization header is malformed; the region 'us-east-1' is wrong.
 ```
 
-#### AWS Signature V2 Support (com.mendix.storage.s3.UseV2Auth Setting)
+#### AWS Signature V2 Support (`com.mendix.storage.s3.UseV2Auth` Setting)
 
 SDK version 2 does not support AWS Signature v2 which is enabled by `UseV2Auth` setting. This signature type is deprecated, and is not supported by new regions. For more information, see [AWS's Documentation](https://docs.aws.amazon.com/AmazonS3/latest/API/specify-signature-version.html).
 
-We do not expect this to have any effect when using Amazon S3. This will prevent use of S3 compatible solutions which only support the v2 signature type. In situations like that, you need to switch to either Amazon S3 or a compatible solution that supports newer signature types.  
+We do not expect this to have any effect when using Amazon S3. It will, however, prevent use of S3 compatible solutions which only support the v2 signature type. In situations like that, you need to switch to either Amazon S3 or a compatible solution that supports newer signature types.  
 
 #### Client Side Encryption Changes
 
-Client side encryption can be enabled by `com.mendix.storage.s3.EncryptionKeys` setting. Previously any encryption algorithm supported by JDK could be used. With the new SDK only AES is supported.
+Client side encryption can be enabled using the `com.mendix.storage.s3.EncryptionKeys` setting. Previously, any encryption algorithm supported by the JDK could be used. With the new SDK only AES is supported.
 
-The following error will be printed in logs when an algorithm other than AES is used: 
+An error similar to the following will be printed in logs when an algorithm other than AES is used: 
 
 ```
 - Unsupported algorithm: DES
