@@ -82,6 +82,10 @@ replacements = "github.com/FortAwesome/Font-Awesome -> ., github.com/twbs/bootst
 [sitemap]
     priority = 0.5
 
+# Olu - Minification configuration
+[minify]
+    minifyOutput = true
+
 # Everything below this are Site Params
 # ======================================
 # These are mainly (all?) Docsy settings
