@@ -32,37 +32,11 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 * Duplicate application prevention during import - We have resolved a bug that caused applications to be duplicated when importing stations. Now, when importing stations that reference an application, the system checks for existing applications with the same identifying properties (like URL and Public Key). If an application already exists, it is reused, preventing unnecessary duplicates and ensuring a cleaner application registry.
 * Input validation for station creation - We have fixed an issue in the station creation process where clicking **Continue** with an empty input field could lead to an error. The process is now more robust.
 
-#### Known Bugs and Limitations
-
-No new known bugs or limitations have been reported for this release.
-
 ### Workstation Client
-
-#### New Features
-
-No new features have been included in this release.
 
 #### Fixes
 
 * File name emission for the file connector - We have resolved an issue where the file connector was not returning the changed file name when subscribing to file changes. Now, when you subscribe to a file path, the file connector correctly emits the specific file names on file change events, providing more precise information.
-
-#### Known Bugs and Limitations
-
-No new known bugs or limitations have been reported for this release.
-
-### Workstation Connector
-
-#### New Features
-
-No new features have been included in this release.
-
-#### Fixes
-
-No new fixes have been made for this release.
-
-#### Known Bugs and Limitations
-
-No new known bugs or limitations have been reported for this release.
 
 ## 3.2.0
 
