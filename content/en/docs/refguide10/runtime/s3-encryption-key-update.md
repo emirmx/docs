@@ -1,6 +1,6 @@
 ---
 title: "Updating Encryption Keys for S3 File Storage"
-url: /refguide10/runtime/s3-encryption-key-update/
+url: /refguide10/s3-encryption-key-update/
 description: "Describes how to add a new encryption key and re-encrypt all existing files on S3 storage."
 ---
 
