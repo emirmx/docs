@@ -203,6 +203,8 @@ For deployments to Mendix Cloud, SAP BTP, and Mendix on Kubernetes, these settin
 
 ## Microsoft Azure SQL {#azure-sql}
 
+{{% todo %}}Update after reviewing Mx11 version{{% /todo %}}
+
 These settings can be changed to use a Microsoft Azure SQL database for your Mendix application.
 
 {{% alert color="warning" %}}

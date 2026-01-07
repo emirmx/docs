@@ -151,6 +151,8 @@ Before the data copying process starts, the main database structure will be gene
 
 ## S3 Storage Service Settings {#amazon-s3-storage-service-settings}
 
+{{% todo %}}Update after reviewing Mx11 version{{% /todo %}}
+
 The settings described below influence the behavior of the Amazon S3 Storage Service module. This module can be used for both Amazon S3 Storage and IBM Cloud Object Storage.
 
 {{% alert color="warning" %}}

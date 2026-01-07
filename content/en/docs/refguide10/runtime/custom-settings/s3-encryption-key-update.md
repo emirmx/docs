@@ -6,10 +6,15 @@ description: "Describes how to add a new encryption key and re-encrypt all exist
 
 ## Introduction
 
-Client side encryption for S3 can be enabled by specifying encryption keys with the `com.mendix.storage.s3.EncryptionKeys` setting. This setting allows specifying multiple keys. 
+Client side encryption for S3 can be enabled by specifying encryption keys with the `com.mendix.storage.s3.EncryptionKeys` setting. This setting allows you to specify multiple keys. 
 The last encryption key will be used for encrypting new files. When retrieving a file the correct encryption key will be used from the list of encryption keys.
 
-### Implementing Key Rotation
+{{% alert color="warning" %}}
+For deployments to Mendix Cloud, SAP BTP, and Mendix on Kubernetes, these encryption keys are managed for you and cannot be changed.
+{{% /alert %}}
+
+## Implementing Key Rotation
+
 When a new key is added, that key will be used for newly encrypted files but existing files will *not* be automatically re-encrypted. For this you need to implement re-encryption inside your application.
 This can be done by adding a new encryption key and then re-uploading all existing files.
 
@@ -18,10 +23,10 @@ The following is a Java action that demonstrates re-uploading a list of files:
 ```java
 public class JA_RefreshFileContents extends UserAction<java.lang.Void>
 {
-  ...
+  …
   private final java.util.List<IMendixObject> __files;
 
-  ...
+  …
   public java.lang.Void executeAction() throws Exception
   {
     // BEGIN USER CODE
@@ -34,12 +39,12 @@ public class JA_RefreshFileContents extends UserAction<java.lang.Void>
     // END USER CODE
   }
 
-  ...
+  …
 }
 ```
 
-This Java action can be repeatedly called from a microflow that reads `System.FileDocument`'s in batches like the following:
+This Java action can be repeatedly called from a microflow that reads objects of type `System.FileDocument`' in batches. For example, see the following microflow:
 
-{{< figure src="/attachments/refguide9/runtime/batch-file-update-microflow.png" class="no-border" >}}
+{{< figure src="/attachments/refguide9/runtime/custom-settings/batch-file-update-microflow.png" class="no-border" alt="Microflow which contains a loop which retrieves a list of FileDocument objects and rewrites them to rotate the encryption key." >}}
 
-Here a batch of files is retrieved, e.g. 100, ordered by `FileID` attribute, and passed to the `JA_RefreshFileContents` Java action. This is repeated until all the files are processed. We store last processed file's `FileID` attribute in case the process gets interrupted. This microflow can be executed in a task queue.
+Here a list of FileDocument objects is retrieved, for example 100, ordered by the `FileID` attribute, and passed to the `JA_RefreshFileContents` Java action. This is repeated until all the files are processed. We store the last processed file's `FileID` attribute in case the process gets interrupted. This microflow can be executed in a task queue.
