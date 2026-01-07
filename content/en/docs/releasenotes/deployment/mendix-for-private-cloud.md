@@ -20,6 +20,10 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 * We have fixed the environment start issue for the Start steps in the Private Cloud pipeline.
 * We have fixed an issue with the invitation emails for clusters and namespaces.
 
+#### Known Issues
+
+* We are currently investigating and working to resolve issues affecting the conversion of existing namespaces and the addition of multiple managed namespaces under the Global Operator installations.
+
 ## 2025
 
 ### December 15, 2025
