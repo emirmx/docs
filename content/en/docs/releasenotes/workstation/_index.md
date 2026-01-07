@@ -10,6 +10,60 @@ cascade:
 
 These release notes cover changes made to the [Mendix Workstation](/mendix-workstation/).
 
+## 3.3.0
+
+### Release date: January 8, 2026
+
+### Workstation Management
+
+#### New Features
+
+* Automatic suffixing for duplicate workstations - To make managing your workstations even smoother, we have implemented automatic suffixing for imported workstations that have duplicate names. This helps prevent naming conflicts and keeps your environment tidy.
+* Feedback module replaced by the new Forum Space - We have removed the Feedback function in the Workstation Management. Don't worry, your voice is still incredibly important to us! Please share your questions, ideas, and feedback in the new dedicated [Mendix Forum Space for Mendix Workstation Client](https://community.mendix.com/link/spaces/mendix-workstation-client). This change will help us centralize discussions and provide better support.
+* Special characters in Workspace names - You can now use special characters in your Workspace names, giving you more flexibility and personalization.
+* Unique auto-accepted computer names - We have added a uniqueness validation to the **Auto-Accepted Computer Name** field used for bulk registration. This ensures that each computer name is distinct, preventing potential conflicts during the registration process.
+
+#### Fixes
+
+* Enhanced eport and import experience - We have revised the UI for the import and export process for a better user experience.
+    * The **Select individual stations** dropdown has been reworked for better usability.
+    * The **Import summary** now provides clearer insights into your import operations.
+* Runtime error prevention - We have addressed and fixed several issues that were causing runtime errors, leading to a more stable experience.
+* Duplicate application prevention during import - We have resolved a bug that caused applications to be duplicated when importing stations. Now, when importing stations that reference an application, the system checks for existing applications with the same identifying properties (like URL and Public Key). If an application already exists, it is reused, preventing unnecessary duplicates and ensuring a cleaner application registry.
+* Input validation for station creation - We have fixed an issue in the station creation process where clicking **Continue** with an empty input field could lead to an error. The process is now more robust.
+
+#### Known Bugs and Limitations
+
+No new known bugs or limitations have been reported for this release.
+
+### Workstation Client
+
+#### New Features
+
+No new features have been included in this release.
+
+#### Fixes
+
+* File name emission for the file connector - We have resolved an issue where the file connector was not returning the changed file name when subscribing to file changes. Now, when you subscribe to a file path, the file connector correctly emits the specific file names on file change events, providing more precise information.
+
+#### Known Bugs and Limitations
+
+No new known bugs or limitations have been reported for this release.
+
+### Workstation Connector
+
+#### New Features
+
+No new features have been included in this release.
+
+#### Fixes
+
+No new fixes have been made for this release.
+
+#### Known Bugs and Limitations
+
+No new known bugs or limitations have been reported for this release.
+
 ## 3.2.0
 
 ### Release date: December 4, 2025
