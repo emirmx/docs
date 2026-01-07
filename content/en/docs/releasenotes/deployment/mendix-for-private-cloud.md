@@ -22,7 +22,7 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 #### Known Issues
 
-* We are currently investigating and working to resolve issues affecting the conversion of existing namespaces and the addition of multiple managed namespaces under the Global Operator installations.
+* We are currently working to resolve issues affecting the conversion of existing namespaces and the addition of multiple managed namespaces under the Global Operator installations.
 
 ## 2025
 
