@@ -93,15 +93,15 @@ If the app is still running, you have to stop it by clicking **Stop Application*
 
 ## Restoring After a Backup Fails{#restore-after-fail}
 
-If a backup restore fails, the failure is logged in your app's **Backup Activity** log, which you can view on the **Backups** page when you open your app in [Apps](https://sprintr.home.mendix.com/). If this happens, only data that was restored until the point of failure will be present in your database, leaving the database only partially restored.
+If a backup restore fails, the failure is logged in your app's **Backup Activity** log, which you can view on the **Backups** page when you open your [app](https://sprintr.home.mendix.com/). If this happens, only the data restored up to the point of failure will be present in your database, leaving it partially restored.
 
-Your database must be large enough to hold the decompressed size of the database as stored in your backup file's [db folder](#db-folder), plus additional free space for overhead during the restoration process. For example, if you run your app in an S21 Cloud Resource Pack, then your database size is 10 GB. To restore a backup, the size of your decompressed database in the **db** folder must not exceed 7.75 GB to allow for 2.25 GB of overhead. 
+To ensure a successful restore, Mendix recommends that your database is large enough to hold the decompressed size of the database as stored in your backup file's [db folder](#db-folder), plus additional free space substantially exceeding this decompressed size to allow for overhead during the restoration process.
 
-While a minimum of 2.25 GB is often sufficient for smaller backups, the actual required free space varies significantly based on the backup's size. To ensure a successful restore, Mendix recommends that your database has free space substantially exceeding the decompressed backup size to accommodate the restoration process. For more information on the resource pack sizes Mendix offers, see [Cloud Resource Packs](/developerportal/deploy/mendix-cloud-deploy/#resource-pack). 
+For example, when restoring any app running in any of the available Mendix [Cloud Resource Packs](/developerportal/deploy/mendix-cloud-deploy/#resource-pack), the decompressed database in the **db** folder should not exceed 70% of the database size, reserving approximately 30% for overhead during restore.
 
-In the event that a backup restore fails in this way, you will need to retry the backup restore. Before you retry, ensure your database meets the size requirements detailed above.
+If a backup restore fails, you will need to retry the restore. Before retrying, make sure your database meets the size requirements detailed above.
 
-Contact [Mendix Support](https://support.mendix.com/) if you need further assistance with this issue.
+Contact [Mendix Support](https://support.mendix.com/) if you need further assistance.
 
 ## Format of a Backup File{#format-of-backup-file}
 
