@@ -9,6 +9,23 @@ description: "Describes how to add a new encryption key and re-encrypt all exist
 Client side encryption for S3 can be enabled by specifying encryption keys with the `com.mendix.storage.s3.EncryptionKeys` setting. This setting allows you to specify multiple keys. 
 The last encryption key will be used for encrypting new files. When retrieving a file the correct encryption key will be used from the list of encryption keys.
 
+A sample value for the setting would be:
+
+```json
+[
+  {
+    "keyID": "first",
+    "algorithm": "AES",
+    "key": "IauTCIvTCZ4iy4jm4rzjmYXBLlFgP3hCVKxjXIcBX0Q="
+  },
+  {
+    "keyID": "first",
+    "algorithm": "AES",
+    "key": "Eu9O519OaDgtiSSpNoXM51eDjc0UIHHxBfXukR5Cyqw="
+  }
+]
+```
+
 {{% alert color="warning" %}}
 For deployments to Mendix Cloud, SAP BTP, and Mendix on Kubernetes, these encryption keys are managed for you and cannot be changed.
 {{% /alert %}}
