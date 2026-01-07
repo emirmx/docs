@@ -463,3 +463,14 @@ To disable a connection, follow these steps:
 <!-- ## Activities
 
 On the **Activities** tab, you can view a log of activities performed on your Private Connectivity assets. -->
+
+## Private Connectivity Routing
+
+The Mendix internal systems operate on the following subnets:
+
+* 10.10.0.0/16
+* 10.11.0.0/16
+* 172.20.0.0/16
+
+As such, when you expose a subnet or a single IP address, it must not conflict with our private IP ranges.     
+If you absolutely must use the subnets on which Mendix operates, please configure [Network address translation (NAT)](https://en.wikipedia.org/wiki/Network_address_translation) on your infrastructure.
