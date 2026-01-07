@@ -47,4 +47,6 @@ This Java action can be repeatedly called from a microflow that reads objects of
 
 {{< figure src="/attachments/refguide9/runtime/custom-settings/batch-file-update-microflow.png" class="no-border" alt="Microflow which contains a loop which retrieves a list of FileDocument objects and rewrites them to rotate the encryption key." >}}
 
-Here a list of FileDocument objects is retrieved, for example 100, ordered by the `FileID` attribute, and passed to the `JA_RefreshFileContents` Java action. This is repeated until all the files are processed. We store the last processed file's `FileID` attribute in case the process gets interrupted. This microflow can be executed in a task queue.
+Here, a list of FileDocument objects is retrieved, for example 100, ordered by the `FileID` attribute, and passed to the `JA_RefreshFileContents` Java action. This is repeated until all the batches of files are processed. The microflow logs and stores the `FileID` attribute of the last processed file in each batch in case the process gets interrupted.
+
+This microflow can be executed in a task queue.
