@@ -12,6 +12,7 @@ These release notes cover changes to the app management functionality and other 
 
 Click the link corresponding to the year for which you want to read release notes:
 
+* [2026](/releasenotes/control-center/2026/)
 * [2025](/releasenotes/control-center/2025/)
 * [2024](/releasenotes/control-center/2024/)
 * [2023](/releasenotes/control-center/2023/)
