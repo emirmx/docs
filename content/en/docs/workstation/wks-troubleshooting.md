@@ -56,7 +56,7 @@ Ensure you copied and pasted the token exactly as displayed in Workstation Manag
 
 ### Registration Token Denied by Workstation Management
 
-The Client shows an error like the following: *Register token denied by Workstation Management. Please use another token*. 
+The Client shows an error like the following: *Registration token denied by Workstation Management. Please use another token*. 
 
 #### Cause 
 
@@ -69,18 +69,6 @@ The registration token is no longer valid. This can occur if:
 #### Solution
 
 If the station status in Workstation Management is still *No computer registered*, regenerate the token and try again. Otherwise, verify the correct computer and Client are registered to that station and unregister if not. 
-
-### Access Denied by Workstation Management
-
-The Client shows an error like the following: *Station could not be synchronized with Management. Error invoking remote method 'refresh-station-config': Error: Access denied by Workstation Management. Please deregister your computer and restart the registration process!*. 
-
-#### Cause
-
-This error occurs when the credentials provided by the Workstation Client are no longer valid, such as when it was deregistered in Workstation Management or the API key has expired.
-
-#### Solution
-
-You can continue using the Workstation Client with the current configuration, but it will no longer receive updates. To resolve this, click **Unlink** in the Workstation Client, then re-register the workstation.
 
 ### HTTPError: Request failed with status code 503 Service Temporarily Unavailable
 
