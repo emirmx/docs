@@ -1,6 +1,6 @@
 ---
-title: "Configuring the Connection to Teamcenter 2506.0.0 and Below"
-linktitle: "Connecting to Teamcenter 2506.0.0 and Below"
+title: "Configuring the Connection to Teamcenter with Teamcenter Connector 2506.0.0 and Below"
+linktitle: "Connecting with Teamcenter Connector 2506.0.0 and Below"
 url: /appstore/modules/siemens-plm/configuring-connection-2506/
 weight: 2
 description: "Describes the steps to configure the connection to your Teamcenter instance using Teamcenter Connector 2506.0.0 and below."
