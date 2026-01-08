@@ -10,6 +10,20 @@ These release notes cover changes to deployment to [Mendix on Kubernetes](/devel
 
 For information on the current status of deployment to Mendix on Kubernetes and any planned releases, see [Mendix Status](https://status.mendix.com/).
 
+## 2026
+
+### January 8, 2026
+
+#### Portal Improvements
+
+* We have resolved some issues causing inconsistent commit times on the Team Server.
+* We have fixed the environment start issue for the Start steps in the Private Cloud pipeline.
+* We have fixed an issue with the invitation emails for clusters and namespaces.
+
+#### Known Issues
+
+* We are currently working to resolve issues affecting the conversion of existing namespaces and the addition of multiple managed namespaces under the Global Operator installations.
+
 ## 2025
 
 ### December 15, 2025
