@@ -214,7 +214,9 @@ The User was created but was unable to login to Teamcenter.`
 Make sure your SSO setup on your local machine works first before working on a deployed version. If the local set up works, but it does not work on your hosted environment, the section below provides guidance on what to check when you are unable to login via SSO.
 
 #### Unable to reach a page after login
-The SSO setup of the Teamcenter Connector uses deep links to access the Mendix application. We use `/rest` and `/url prefix` (by default `/p`). 
+The SSO setup of the Teamcenter Connector uses deep links to access the Mendix application. We use the following paths:
+* `/rest`
+* `/{url_prefix}`, where the default value for `{url_prefix}` is	`/p`.
 
 If the url prefix is changed from `/p`, make sure `CONST_Deeplink_Url_Prefix` matches this url prefix.
 
