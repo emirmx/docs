@@ -50,7 +50,7 @@ Follow these steps to connect your Mendix app to Teamcenter:
 
 4. Click **Save**.
 
-### Testing the Connection
+### Testing the Connection {#test-the-connection}
 
 Depending on the connection type, you can test your access to Teamcenter from the Mendix app using the following approaches.
 
@@ -188,7 +188,7 @@ To register your Mendix app, perform the following steps:
 
 Now you are ready to set up your configuration in Mendix. If you encounter any issues with the SSO registration of your app, please contact your Teamcenter security expert.
 
-### Registering your App for Teamcenter X SSO
+### Registering your App for Teamcenter X SSO {#register-your-app-for-teamcenterx-sso}
 
 Please work with your CApS representative to register your app for Teamcenter X SSO. You need your CApS representative to provide you with all the relevant information to configure your Teamcenter X SSO settings in Mendix.
 
@@ -199,7 +199,7 @@ Please work with your CApS representative to register your app for Teamcenter X 
 Setting up SSO can be a complex procedure. Please check the following if you are unable to log in via SSO:
 
 * Ensure all the fields in your Teamcenter configuration are set correctly.
-* Set up SSO on your local machine first before working on a deployed version. To do so, you need to register for local development ([Teamcenter SSO](#register-your-application-for-teamcenter-sso) or [Teamcenter X SSO](#register-your-application-for-teamcenter-x-sso)).    
+* Set up SSO on your local machine first before working on a deployed version. To do so, you need to register for local development ([Teamcenter SSO](#register-your-app-for-teamcenter-sso) or [Teamcenter X SSO](#register-your-app-for-teamcenterx-sso)).    
     If your setup works locally, but not on your hosted environment, follow the necessary steps again.    
     If that does not solve the issue, refer to [here](#troubleshooting-sso-on-hosted-environments) for specific deployment issues.
 * Open the app in an incognito browser window to make sure you are not logged in to a different instance.
