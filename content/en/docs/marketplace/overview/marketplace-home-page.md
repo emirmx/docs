@@ -93,7 +93,6 @@ Click the contextual **Actions** menu to access options for managing your conten
 * **Deprecate Component** – Deprecate the component, and select alternatives.    
     For details on deprecating components, refer to [Deprecating Marketplace Content](/appstore/deprecate-content/).
 
-
 A **Private** label on a component means the component is your company's private Marketplace content. For details on how this is configured, refer to the [Adding New Marketplace Content](/appstore/submit-content/#adding) section of *Uploading to the Marketplace*. This content can be shared with [guests](#guests).
 
 A component assigned as [group content](#group-content) will have a label for the [content group](#content-groups) to which it is assigned.
@@ -200,4 +199,3 @@ Download the latest version of [Studio Pro](/releasenotes/studio-pro/).
 Share new Marketplace content that you have developed.
 
 For details, refer to [Uploading Content to the Marketplace](/appstore/submit-content/).
-

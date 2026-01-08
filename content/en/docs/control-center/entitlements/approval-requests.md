@@ -8,7 +8,7 @@ beta: true
 ---
 
 {{% alert color="warning" %}}
-This feature is in Public Beta. For more information, see [Release Status](/releasenotes/release-status/).
+This feature is in Public Beta. For more information, refer to [Release Status](/releasenotes/release-status/).
 {{% /alert %}}
 
 ## Introduction

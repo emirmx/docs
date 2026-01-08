@@ -2,7 +2,7 @@
 <div>{{ partial "mx-dock.html" . }}</div>
 
 <!-- Add analytics as defined by Marketing -->
-{{- if eq hugo.Environment "production" -}}<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-QJG4"
+{{- if and (eq hugo.Environment "production") (not .Params.disable_usercentrics) -}}<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-QJG4"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -31,6 +31,8 @@
 </script>
 
 <!-- Olu: Added analytics as defined by Marketing/Legal. Read more here: https://github.com/mendix-web/mendix-analytics-package. You need access from the Mendix Web team -->
+{{ if not .Params.disable_usercentrics }}
 <script src='{{ "js/analytics-packages/datalayer-tracking.js" | relURL }}'></script>
 <script src='{{ "js/analytics-packages/usercentrics-consent.js" | relURL }}'></script>
+{{ end }}
 

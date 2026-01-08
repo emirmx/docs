@@ -153,7 +153,7 @@ if trim($User/Name) = '' then '' else $User/Name + "@mendix.com"
 
 In Studio Pro 11.6.0, **React.js** was updated to version 19.0.0. This change affects both web and mobile applications. All platform supported widgets have been made compatible with React 19.0.0. Please upgrade all installed widgets to the latest published versions. 
 
-React 19 features a few breaking changes to its APIs. Notably, the previously deprecated `findDOMNode` API is now removed. Please refer to React's [Removed deprecated React DOM APIs ](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-deprecated-react-dom-apis) documentation to ensure the widgets you are developing are compatible with **Studio Pro 11.6.0** and **React 19.0.0**.
+React 19 features a few breaking changes to its APIs. Notably, the previously deprecated `findDOMNode` API is now removed. Please refer to React's [Removed deprecated React DOM APIs](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-deprecated-react-dom-apis) documentation to ensure the widgets you are developing are compatible with **Studio Pro 11.6.0** and **React 19.0.0**.
 
 Keep in mind that incompatibility with React 19.0.0 will neither prevent your pluggable widget from compiling, nor your React client application from bundling. To check your widget's compatibility, check the source code and test the widget in the browser or in the mobile app.
 
