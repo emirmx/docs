@@ -20,6 +20,8 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 ### Known issues:
 
 * Fields such as **Infrastructure Redundancy** and **Custom CA Certificates** do not have translations available yet.
+* Custom CA certificates cannot be enabled during cluster initialisation setup and must be added after initialisation.
+* Custom CA certificates cannot be removed once added. This issue will be fixed in a future release.
 
 ### Release date: November 27, 2025
 
