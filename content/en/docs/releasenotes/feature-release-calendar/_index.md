@@ -113,9 +113,9 @@ General Availability means that a feature is available for all users. This type 
 | Capability or Feature | Expected Release |
 | --- | --- |
 | Private Connectivity for Mendix Cloud | Public Beta: Mx 11.6 |
-| Mendix Cloud: Runtime Patching | General Availability: Mx 11.9 |
-| Mendix Cloud: Self Service App Upgrades<br/>and Cloud Resource Pack Recommender | Public Beta: Mx 11.9 |
-| Operations Home | General Availability: Mx 11.6 |
+| Mendix Cloud: Runtime Patching | General Availability: Mx 11.12 |
+| Mendix Cloud: Self Service App Upgrades<br/>and Cloud Resource Pack Recommender | Public Beta: Mx 11.12 |
+| Operations Home | General Availability: Mx 11.12 |
 | Mendix on Azure | General Availability: Mx 11.4 |
 | Workstation Client | General Availability: Mx 11.3 + Mx 10.24 |
 

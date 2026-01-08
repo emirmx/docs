@@ -348,6 +348,24 @@ Add client certificates (in the PKCS12 format) or certificate authorities (in th
 
 On the **Connectivity** tab, you can manage the elements described below.
 
+### Connections {#connections}
+
+You can connect from your applications on Mendix Cloud to resources on your own infrastructure using Mendix Cloud Private Connectivity.
+
+The **Connections** tab contains the following information:
+
+* **Resource** – The name of the connected service
+* **Network** – The name of the network associated with the connection
+* **Status** – The connection's current state, such as **Pending Approval**, **Approved** or **Rejected**
+
+You can perform the following actions for connections:
+
+* **Add** a new connection
+* **Cancel** a connection request
+* **Delete** a connection
+
+For more information, refer to [Connecting to External Resources](/developerportal/deploy/connecting-to-external-resource/).
+
 ### Outgoing Connections Safelisting (Mendix Cloud Dedicated) {#connection-safelist}
 
 If you are deploying your apps to [Mendix Cloud Dedicated](/deployment/#mendix-cloud-dedicated), all outgoing IP addresses are allowed by default.

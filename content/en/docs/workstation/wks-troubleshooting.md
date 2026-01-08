@@ -38,6 +38,7 @@ Log files are also available by day in the Client's app data folder. On Windows,
 On Linux, the *Mendix Workstation/logs* folder is located at either `$XDG_CONFIG_HOME` or `~/.config`.
 
 **Live logs** are available in two ways:
+
 * Start the Workstation Client. Click the three-dot icon in the top tight, then click **Logs**. Debug level logs are only available in *Developer Mode*
 * Start the Workstation Client from PowerShell: `start "C:\Program Files\Mendix Workstation\Mendix Workstation.exe" -ArgumentList "--log-level=debug" -wait`.
 

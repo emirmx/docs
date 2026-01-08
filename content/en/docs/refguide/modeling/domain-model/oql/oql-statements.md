@@ -225,5 +225,3 @@ WHERE ID IN (
         INNER JOIN Module.Customer ON Module.Customer/CustomerID = Module.Order/CustomerID
         WHERE Module.Customer/Name = 'Mary' )
 ```
-
-
