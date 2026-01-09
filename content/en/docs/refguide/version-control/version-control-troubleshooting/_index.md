@@ -123,10 +123,9 @@ Sometimes it is impossible to create a package from a certain revision. See belo
 
 #### Missing Metadata
 
-##### Issue
+##### Cause
 
-When you commit (and push) changes to the repository, Studio Pro adds an additional commit with so called metadata to a special refspec `.git/refs/notes/mx_metadata`. Making it a refspec means that you will not see this commit in your commits history.
-This metadata contains the information needed to create a deployment package (for instance the version of Studio Pro that was used to create this revision).
+When you commit (and push) changes to the repository, Studio Pro adds an additional commit with so called metadata to a special refspec `.git/refs/notes/mx_metadata`. Making it a refspec means that you will not see this commit in your commits history. This metadata contains the information needed to create a deployment package (for instance the version of Studio Pro that was used to create this revision).
 
 To create a deployment package, Studio Pro downloads the specific revision into a temporary folder and then creates the package from there. Studio Pro checks the Mendix version of the selected revision to confirm that it is compatible with the version of Studio Pro. 
 
@@ -163,12 +162,18 @@ Other tools on your machine that use the Git configuration, such as a traditiona
 
 To fix the issue, ensure that responsible users change their Git configuration in [Preferences](/refguide/preferences-dialog/#name). Changing historical commits is not possible within Studio Pro. 
 
-### Unable to saving conflicting mprs (mine version)
+### Unable to Save Conflicting Files
 
-Sometimes, while performing operations such as rebase, merge, cherry-pick, revert, or merging a feature branch, you might encounter an error stating that access to a certain path is denied, or see a popup saying "Saving the conflicting mpr files failed, please abort and try again."
-This typically happens when Studio Pro is unable to save changes to the project files due to file locks or conflicts.
+When performing operations such as rebase, merge, cherry-pick, revert, or merging a feature branch, you may encounter an error stating that access to a certain path is denied, or see a a message like the following: *Saving the conflicting mpr files failed, please abort and try again.*
 
-Recommended steps:
+#### Cause
+
+Studio Pro is unable to save changes to the project files due to file locks or conflicts.
+
+#### Solution
+
+To solve this issue, perform the following steps:
+
 1. Close the error dialog.
 2. Abort the current operation in Studio Pro.
 3. Retry the operation. 
