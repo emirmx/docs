@@ -162,3 +162,13 @@ In case of a configuration error, an unknown author may appear in the commit his
 Other tools on your machine that use the Git configuration, such as a traditional IDE, are typically also capable of changing this Git configuration. If you have chosen a name and email for a hobby project in another IDE, that information may also appear in commits made from Studio Pro.
 
 To fix the issue, ensure that responsible users change their Git configuration in [Preferences](/refguide/preferences-dialog/#name). Changing historical commits is not possible within Studio Pro. 
+
+### Unable to saving conflicting mprs (mine version)
+
+Sometimes, while performing operations such as rebase, merge, cherry-pick, revert, or merging a feature branch, you might encounter an error stating that access to a certain path is denied, or see a popup saying "Saving the conflicting mpr files failed, please abort and try again."
+This typically happens when Studio Pro is unable to save changes to the project files due to file locks or conflicts.
+
+Recommended steps:
+1. Close the error dialog.
+2. Abort the current operation in Studio Pro.
+3. Retry the operation. 
