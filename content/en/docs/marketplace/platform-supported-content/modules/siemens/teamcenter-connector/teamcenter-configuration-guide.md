@@ -93,9 +93,8 @@ To find out how to register an app or how to find the information needed to conf
 
 The following settings need to be provided for a successful connection:
 
-* **SSO Login Server URL** – The endpoint where your authentication request is sent. This acts as the main entry point for users trying to log in using SSO. This URL is typically associated with the Identity Provider (IdP), and is responsible for handling login requests and for directing users through the authentication process.
-
-  Enter the Login Service URL and append it with `/weblogin/login_redirect`. Your final URL should look similar to the following example: `https://example.com:123/tcssol/weblogin/login_redirect`.
+* **SSO Login Server URL** – The endpoint where your authentication request is sent. This acts as the main entry point for users trying to log in using SSO. This URL is typically associated with the Identity Provider (IdP), and is responsible for handling login requests and for directing users through the authentication process.    
+    In this field, enter the Login Service URL, followed by `/weblogin/login_redirect`. Your final URL should look similar to the following example: `https://example.com:123/tcssol/weblogin/login_redirect`.
 * **SSO Identity server** – The URL of the Identity Server where the Mendix app should be registered.
 * **Teamcenter Application Id** – The existing Teamcenter Application ID obtained from the Teamcenter Security Services Identity Service configuration.
 * **Mendix Application Id** – The `APPLICATIONID` of the Mendix app's registration with the Identity Server.
