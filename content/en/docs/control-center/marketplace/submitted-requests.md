@@ -20,11 +20,11 @@ The **Submitted Requests** page gives you the governance capabilities to approve
 
 The **Submitted Requests** page contains the following tabs: 
 
-* [Pending Approvals](#approval-requests)
+* [Pending Approvals](#pending-approvals)
 * [Approval Settings](#approval-settings)
 * [Approval History](#approval-history)
 
-## Pending Approvals {#approval-requests}
+## Pending Approvals {#pending-approvals}
 
 On the **Pending Approvals** tab, you can manage all pending requests.
 

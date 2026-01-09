@@ -20,7 +20,7 @@ The **Company-Approved** page provides governance capabilities within the Mendix
 The **Company-Approved** page contains the following tabs:
 
 * [Components](#marketplace-content-list)
-* [Settings](#curation-settings).
+* [Settings](#curation-settings)
 
 ## Components {#marketplace-content-list}
 
