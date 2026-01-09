@@ -13,13 +13,6 @@ Here is an example of a Selection Helper widget in a Gallery:
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/data-widgets/selection-helper/example-selection-helper.png" alt="Example of Selection Helper in a Gallery widget" width="400" class="no-border" >}}
 
-Use the Selection Helper widget when you need to provide users with efficient bulk selection capabilities in your data widgets. This is particularly useful for:
-
-- **Gallery bulk operations**: Enable users to select multiple items in gallery layouts for batch processing like delete, update, or export operations
-- **Data Grid 2 bulk operations**: Provide similar functionality for tabular data presentations
-- **Data management workflows**: Streamline processes where users need to work with multiple records simultaneously
-- **Administrative interfaces**: Provide power users with quick selection tools for managing large datasets
-
 ## Prerequisites
 
 Before using the Selection Helper widget, ensure:

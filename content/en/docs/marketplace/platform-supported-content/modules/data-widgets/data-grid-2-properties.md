@@ -31,7 +31,8 @@ This property controls row selection capabilities. Selection is turned off by de
 - The **Multi** type support selecting several rows at the time
 
 {{% alert color="info" %}}
-Data grid currently supports only in-memory selection. This implies some limitation which allows selecting only visible rows. If you change a data grid page or reload the browser window, then selection will be cleared.{{% /alert %}}
+Data grid currently supports in-memory selection. When the **Keep Selection** property is disabled, selection is limited to visible rows and will be cleared when you change a data grid page or reload the browser window. When **Keep Selection** is enabled, selections persist across page navigation, data refreshes, filter operations, and sorting changes.
+{{% /alert %}}
 
 #### Selection Method
 
@@ -69,7 +70,11 @@ This section contains properties related to selection behavior when **Selection*
 This property is available only when **Selection** is set to **Single** or **Multi**.
 {{% /alert %}}
 
-When set to **Yes**, selected items persist across page navigation, data refreshes, filter operations, and sorting changes. By default, this property is set to **No**, which clears the selection whenever the datasource changes. When enabled, selections remain active until manually cleared by the user or through a nanoflow or microflow action.
+When set to **Yes**, selected items persist across page navigation, data refreshes, filter operations, and sorting changes. By default, this property is set to **No**, which clears the selection when the items are not in the current set of datasource items. When enabled, selections remain active until manually cleared by the user or through a nanoflow action.
+
+{{% alert color="warning" %}}
+Keep Selection cannot be used with non-persistent entities (NPEs) or view entities, as their IDs change on refresh.
+{{% /alert %}}
 
 ### Columns Tab {#columns}
 

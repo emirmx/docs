@@ -135,7 +135,7 @@ The Drop-Down Sort widget has two options you can set:
 
 Enabling selection allows users to select gallery items by clicking on them. Selection is disabled by default and can be activated by changing the **Selection** setting from **None** to either **Single** or **Multi**.
 
-The Gallery widget keeps selected items in memory and supports selection persistence across page navigation when the **Keep selection** option is enabled. This allows users to maintain their selections while browsing through paginated data or navigating between different pages in your application.
+The Gallery widget keeps selected items in memory and supports selection persistence across page navigation when the **Keep selection** option is enabled. This allows users to maintain their selections while browsing through paginated data or navigating between different pages in your application. See [Keep Selection](#keep-selection) for more information about managing selection persistence and its limitations.
 
 ### Selection Property
 
@@ -209,7 +209,11 @@ Use the **On selection change** action to trigger custom logic when selection ch
 
 ### Keep Selection
 
-If this setting is enabled, then selected items persist across page navigation, data refreshes, filtering, and sorting operations. By default, Keep selection is disabled and the selection is cleared when the datasource changes. When enabled, selected items remain selected until manually cleared by the user.
+If this setting is enabled, then selected items persist across page navigation, data refreshes, filtering, and sorting operations. By default, Keep selection is disabled and the selection is cleared when the items are not in the current set of datasource items. When enabled, selected items remain selected until manually cleared by the user or through a nanoflow action.
+
+{{% alert color="warning" %}}
+Keep Selection cannot be used with non-persistent entities (NPEs) or view entities, as their IDs change on refresh.
+{{% /alert %}}
 
 ## Keyboard Navigation and Selection
 
