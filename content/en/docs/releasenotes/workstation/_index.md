@@ -1,8 +1,8 @@
 ---
-title: "Mendix Workstation Client Release Notes"
-linktitle: Mendix Workstation Client
+title: "Mendix Workstation Release Notes"
+linktitle: Mendix Workstation
 url: /releasenotes/workstation/
-description: "Release notes for updates to the Mendix Workstation Client"
+description: "Release notes for updates to the Mendix Workstation"
 weight: 40
 cascade:
     - numberless_headings: true
@@ -19,7 +19,7 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 #### New Features
 
 * Automatic suffixing for duplicate workstations - To make managing your workstations even smoother, we have implemented automatic suffixing for imported workstations that have duplicate names. This helps prevent naming conflicts and keeps your environment tidy.
-* Feedback module replaced by the new Forum Space - We have removed the Feedback function in the Workstation Management. Don't worry, your voice is still incredibly important to us! Please share your questions, ideas, and feedback in the new dedicated [Mendix Forum Space for Mendix Workstation Client](https://community.mendix.com/link/spaces/mendix-workstation-client). This change will help us centralize discussions and provide better support.
+* Feedback module replaced by the new Forum Space - We have removed the Feedback function in the Workstation Management. Don't worry, your voice is still incredibly important to us! Please share your questions, ideas, and feedback in the new dedicated [Mendix Forum Space for Mendix Workstation](https://community.mendix.com/link/spaces/mendix-workstation-client). This change will help us centralize discussions and provide better support.
 * Special characters in Workspace names - You can now use special characters in your Workspace names, giving you more flexibility and personalization.
 * Unique auto-accepted computer names - We have added a uniqueness validation to the **Auto-Accepted Computer Name** field used for bulk registration. This ensures that each computer name is distinct, preventing potential conflicts during the registration process.
 
@@ -51,7 +51,7 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 You can now export the configurations of a list of stations from a workspace to a file and import them into the same or a different workspace. This feature includes options to export all stations, with or without applications and devices.
 
 {{% alert color="info" %}}
-This feature is available only for accounts which have a license for Mendix Workstation Client.
+This feature is available only for accounts which have a license for Mendix Workstation.
 {{% /alert %}}
 
 ##### Remote Workstation Client Refresh
@@ -135,11 +135,11 @@ You can now copy the station configuration to the clipboard, or download it to a
 ### Release date: September 25, 2025
 
 {{% alert color="info" %}}
-This is a Limited Availability release of the Mendix Workstation Client.
+This is a Limited Availability release of Mendix Workstation.
 
-Mendix Workstation Client is available for all Mendix users for development use. 
+Mendix Workstation is available for all Mendix users for development use. 
 
-Mendix Workstation Client is [Limited Availability](https://docs.mendix.com/releasenotes/release-status/#limited-availability) for production use. Support is provided according to your Mendix SLA if you purchased a Workstation license. If you want to take the Mendix Workstation Client into production, contact your CSM to see what arrangements are possible. Without a license you can use the Mendix Workstation Client for development, but workspaces are individual and cannot be shared.
+Mendix Workstation is [Limited Availability](https://docs.mendix.com/releasenotes/release-status/#limited-availability) for production use. Support is provided according to your Mendix SLA if you purchased a Workstation license. If you want to take Mendix Workstation into production, contact your CSM to see what arrangements are possible. Without a license you can use the Mendix Workstation for development, but workspaces are individual and cannot be shared.
 {{% /alert %}}
 
 ### Improvements
@@ -167,7 +167,7 @@ When editing a device, device settings are edited in a side panel. It makes devi
 ### Release date: September 12, 2025
 
 {{% alert color="info" %}}
-The fourth pre-release of the Mendix Workstation Client is available under the conditions of the Mendix Workstation Client Pre-Release Program. Support is available only to members of the program. To become a program member, contact Mendix Sales.
+The fourth pre-release of Mendix Workstation is available under the conditions of the Mendix Workstation Pre-Release Program. Support is available only to members of the program. To become a program member, contact Mendix Sales.
 {{% /alert %}}
 
 ### New Features
@@ -177,7 +177,7 @@ The fourth pre-release of the Mendix Workstation Client is available under the c
 Mendix Workstation Management is now available for all Mendix users.
 
 {{% alert color="info" %}}
-Users from companies which does not have a Mendix Workstation Client license cannot add members to a workspace that they own.
+Users from companies which does not have a Mendix Workstation license cannot add members to a workspace that they own.
 
 The Workstation Client and all other related Mendix Marketplace items are only available for members of the pre-release program.
 {{% /alert %}}
@@ -194,7 +194,7 @@ It is recommended to disable developer mode for clients used in a production env
 
 #### Workstation Sample App
 
-The Mendix Workstation Client Sample App showcases how to build applications interacting with multiple peripheral devices.
+The Mendix Workstation Sample App showcases how to build applications interacting with multiple peripheral devices.
 
 The app includes reusable peripheral modules for:
 
@@ -232,7 +232,7 @@ The Sample App is available in the Mendix Marketplace.
 ### Release date: August 20, 2025
 
 {{% alert color="info" %}}
-The third pre-release of the Mendix Workstation Client is available under the conditions of the Mendix Workstation Client Pre-Release Program. Support is available only to members of the program. To become a program member, contact Mendix Sales.
+The third pre-release of Mendix Workstation is available under the conditions of the Mendix Workstation Pre-Release Program. Support is available only to members of the program. To become a program member, contact Mendix Sales.
 {{% /alert %}}
 
 ### New Features
@@ -324,7 +324,7 @@ To upgrade from a previous version, perform the following steps:
 ### Release date: June 13, 2025
 
 {{% alert color="info" %}}
-The second pre-release of the Mendix Workstation Client is available under the conditions of the Mendix Workstation Client Pre-Release Program. 
+The second pre-release of Mendix Workstation is available under the conditions of the Mendix Workstation Pre-Release Program. 
 {{% /alert %}}
 
 ### New Features
@@ -454,7 +454,7 @@ To upgrade your app from a previous version, perform the following steps:
 ### Release date: March 14, 2025
 
 {{% alert color="info" %}}
-The first pre-release of the Mendix Workstation Client is available under the conditions of the Mendix Workstation Client Pre-Release Program. 
+The first pre-release of Mendix Workstation is available under the conditions of the Mendix Workstation Pre-Release Program. 
 {{% /alert %}}
 
 ### New Features
