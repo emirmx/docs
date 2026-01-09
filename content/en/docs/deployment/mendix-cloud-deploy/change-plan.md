@@ -72,6 +72,7 @@ Changing plan consumes [Mendix Cloud Tokens](/control-center/cloud-tokens/#cloud
 ### Plan Change Request Status {#plan-change-status}
 
 This diagram illustrates the lifecycle of a plan change request, from its submission to its final resolution (rejected, completed, or failed).
+<!-- Diagram created with draw.io. Source file: /attachments/deployment/mendix-cloud-deploy/change-plan/change-plan-status.draw.io. Instructions: https://mendix.atlassian.net/wiki/spaces/RNDHB/pages/2510061889/Images+Icons+and+Videos#Draw.io  -->
 
 {{< figure src="/attachments/deployment/mendix-cloud-deploy/change-plan/change-plan-status.png" >}}
 
@@ -121,7 +122,7 @@ In the **Request Details** page, depending on the request's [status](#plan-chang
 * **Pending approval** – Click **Cancel Request** to cancel the entire request.
 * **Pending schedule** – Click **Cancel Request** to cancel the entire request, or click **Schedule Change** to set execution timing for when the approved plan will be applied. For more details on how to schedule a plan change, see [Scheduling a Plan Change](#scheduling-a-plan-change).
 * **Scheduled** – Click **Cancel Request** to cancel the entire request, or click **Execute Now** to apply the new plan immediately.
-* **Ineligible** – Click **Re-Schedule** to schedule the plan change again after addressing the validation issues.
+* **Ineligible** – Click **Re-Schedule Change** to schedule the plan change again after addressing the validation issues.
 
 {{% alert color="warning" %}}
 If the Technical Contact cancels a request, the plan change process is canceled entirely. To proceed with a plan change, the Technical Contact must start over and submit a new request.
