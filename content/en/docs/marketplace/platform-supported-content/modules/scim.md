@@ -201,6 +201,17 @@ For reference, the table below gives an overview of attribute mapping when using
 | emails| Email | `john.doe@companyA.com` | `johndoe@companyA.com` |
 | userName| FullName | `johndoe@companyA.com` | `johndoe@companyA.com` |
 | active| Active | true | true |
+| middleName| MiddleName  | William | William  |
+| honorificPrefix | HonorificPrefix  | Mr. | Mr. |
+| honorificSuffix| HonorificSuffix | Jr. | Jr. |
+| nickName| NickName | Johny | Johny |
+| profileUrl| ProfileUrl | www.companyA.com | www.companyA.com |
+| title| Tile | Mr. | Mr. |
+| preferredLanguage| PreferredLanguage | English | English |
+| timeZone| TimeZone | CET | CET |
+| userType| UserType | External | External |
+| locale | Locale | en-US | en-US |
+
 
 {{% alert color="info" %}}
 The SCIM module only supports the IdP attributes (claims) listed in the table above. Any other claims in the SCIM payload will be ignored.
