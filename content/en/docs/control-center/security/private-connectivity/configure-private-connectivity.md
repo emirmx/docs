@@ -367,7 +367,7 @@ tailscale up --auth-key=<AUTH_KEY> --advertise-routes=<IP_RANGE>
 
 To expose subnet routes for an agent on a Linux server, follow these steps:
 
-1. [Enable IP forwarding](https://tailscale.com/kb/1019/subnets?tab=linux#enable-ip-forwarding)
+1. **Important**: Make sure you [enable IP forwarding](https://tailscale.com/kb/1019/subnets?tab=linux#enable-ip-forwarding). Not enabling IP forwarding means you will not be able to connect to your resources.
 2. Run the following script on the machine where the agent is installed, and replace `IP_RANGE` with the IP ranges you want to expose:
 
    ```shell Linux
