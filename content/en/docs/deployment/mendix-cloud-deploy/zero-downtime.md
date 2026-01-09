@@ -29,16 +29,17 @@ No special setup is required to enable ZDT. When your application and deployment
 
 ## How Zero-Downtime Deployment Works
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/zero-downtime/zdt-process.png" alt="Sequence diagram illustrating the Zero-Downtime Deployment process, showing user initiating deployment, Mendix Cloud starting a new app version in the background while the current version serves users, the new version preparing configuration and reporting ready, Mendix Cloud gracefully stopping the old version, and finally directing traffic to the new version without user interruption." >}}
+<!-- Diagram provided by the deployment team. Contact the team for updates or questions  -->
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/zero-downtime/zdt-process-success-flow.png" alt="Sequence diagram illustrating the Zero-Downtime Deployment process, showing the Technical Contact initiating deployment, Mendix Cloud starting a new app version in the background while the current version serves users, the new version preparing configuration and reporting ready, Mendix Cloud gracefully stopping the old version, and finally directing traffic to the new version without user interruption." >}}
 
 When an eligible configuration change is deployed with ZDT enabled, Mendix Cloud orchestrates the following steps:
 
-1. **Initiate deployment** – A user or automated process triggers a deployment in Mendix Cloud.
+1. **Initiate deployment** – The Technical Contact triggers deployment with **Deploy without Downtime** enabled in Mendix Cloud.
 2. **Current version active** – The existing application version continues to serve all user traffic without interruption.
-3. **New version spin-up** – Mendix Cloud starts a new instance of your application, adding the updated configuration, in the background. This new version prepares its configuration.
+3. **New version spin-up** – A new instance of your application starts, adding the updated configuration, in the background. This new version prepares its configuration.
 4. **Health check & readiness** – Once the new instance is fully operational and passes all internal health checks, it reports its readiness to Mendix Cloud.
-5. **Graceful shutdown of old version** – Mendix Cloud then gracefully stops the old application version, ensuring any ongoing processes or sessions are handled appropriately.
-6. **Traffic reroute** – Mendix Cloud directs all incoming user traffic to the newly deployed, healthy application version.
+5. **Graceful shutdown of old version** – The old application version gracefully stops, ensuring any ongoing processes or sessions are handled appropriately.
+6. **Traffic reroute** – All incoming user traffic are directed to the newly deployed healthy application version.
 7. **Continuous user experience** – The end-user experiences no downtime or interruption, as they are continuously served by a running instance of the application throughout the entire deployment process.
 
 ## Managing Zero-Downtime Deployment
@@ -47,7 +48,9 @@ By default, this option is off. In this state, your app will use the standard re
 
 Technical Contacts can decide whether to attempt a zero-downtime deployment by selecting the **Deploy without downtime** option on the **Other Options** tab when [deploying a package](/developerportal/deploy/environments/#deploy-wizard). If you enable this option, Mendix Cloud will attempt a zero-downtime deployment, if your environment meets eligibility criteria.
 
-When a technical contact enables ZDT, the Cloud Portal displays a reminder to review any custom **before-shutdown** or **after-startup** microflows. This is crucial to confirm they won't cause issues during the period when two versions of your application might be running concurrently.
+{{% alert color="info" %}}
+When a Technical Contact enables ZDT, the Cloud Portal displays a reminder to review any custom **before-shutdown** or **after-startup** microflows. This is crucial to ensure these microflows won’t cause conflicts during periods when two versions of your application might be running concurrently.
+{{% /alert %}}
 
 ### When ZDT Applies {#zdt-application}
 
@@ -105,7 +108,11 @@ When you deploy an application on Mendix Runtime 10.24 or higher for the very fi
 
 {{< figure src="/attachments/deployment/mendix-cloud-deploy/zero-downtime/zdt-error.png" >}}
 
-If a zero-downtime deployment fails, an error message appears in the **Deploy Wizard**. The application itself remains running and available, because the previous version of the app continues to serve traffic.
+If a zero-downtime deployment fails, an error message appears in the **Deploy Wizard**. 
+
+<!-- Diagram provided by the deployment team. Contact the team for updates or questions  -->
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/zero-downtime/zdt-process-failure-flow.png" alt="Sequence diagram illustrating the Zero-Downtime Deployment process in a failure scenario" >}}
+The application itself remains running and available, because the previous version of the app continues to serve traffic.
 You can review the error details in the wizard and re-deploy once the issue is resolved.
 
 ## Summary
