@@ -1,16 +1,16 @@
 ---
-title: "Security Best Practices for Mendix Workstation Client"
+title: "Security Best Practices for Mendix Workstation"
 linktitle: "Security Best Practices"
 url: /mendix-workstation/security/
-description: "Provides information about best-practice security configuration for the Mendix Workstation Client."
+description: "Provides information about best-practice security configuration for Mendix Workstation."
 weight: 15
 ---
 
 ## Introduction
 
-Security is one of the most important aspects of a deployment, because misconfiguration or failing security can have large consequences. The Mendix Workstation Client gives many configuration options for permissions that can have an impact on the security of your deployment.
+Security is one of the most important aspects of a deployment, because misconfiguration or failing security can have large consequences. Mendix Workstation gives many configuration options for permissions that can have an impact on the security of your deployment.
 
-This document describes the security aspects you should consider when deploying the Mendix Workstation Client in production.
+This document describes the security aspects you should consider when deploying Mendix Workstation in production.
 
 ## Assignment of Workspace Roles {#workspace-roles}
 

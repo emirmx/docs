@@ -1,8 +1,8 @@
 ---
-title: "Building an App for Mendix Workstation Client"
+title: "Building an App for Mendix Workstation"
 linktitle: "Building an App"
 url: /mendix-workstation/build-app/
-description: "Describes how to install the Workstation Connector and build an app to work with Mendix Workstation Client."
+description: "Describes how to install the Workstation Connector and build an app to work with Mendix Workstation."
 weight: 30
 ---
 
@@ -22,7 +22,7 @@ The Workstation Connector connects with Workstation Client using a local WebSock
 
 ## Prerequisites
 
-* Mendix Workstation Client 3.0.0
+* Mendix Workstation 3.0.0
 * Mendix Studio Pro 9.24.11 or newer
 
 ## Installing and Configuring the Workstation Connector
@@ -71,7 +71,7 @@ To change a user's role or remove them from the workspace, click the three-dot i
 
 ## Getting Started with Custom Logic for Device Interaction
 
-Now that you are ready to start using Mendix Workstation Client, you can implement your own custom logic for interacting with devices. The following nanoflows and Java actions are essential for establishing connections, sending or receiving messages, and managing device interactions:
+Now that you are ready to start using Mendix Workstation, you can implement your own custom logic for interacting with devices. The following nanoflows and Java actions are essential for establishing connections, sending or receiving messages, and managing device interactions:
 
 * **GetStation** - Retrieves the computer information connected to the Client.
 * **SendMessage** - Sends data or commands to the connected device. For more information about the supported message syntax, see [Message Syntax for File, Smart Card, and Bluetooth Devices](/mendix-workstation/device-syntax/).
@@ -135,4 +135,4 @@ Call `UnsubscribeByContext` to end all subscriptions related to a context object
 
 ## Error Logs
 
-Logs for the Workstation Management, Client, and Connector are available in case of issues. For more information about accessing the logs, see [Troubleshooting Mendix Workstation Client](/mendix-workstation/troubleshooting/).
+Logs for the Workstation Management, Client, and Connector are available in case of issues. For more information about accessing the logs, see [Troubleshooting Mendix Workstation](/mendix-workstation/troubleshooting/).

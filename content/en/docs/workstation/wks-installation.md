@@ -1,18 +1,18 @@
 ---
-title: "Installing and Configuring Mendix Workstation Client"
+title: "Installing and Configuring Mendix Workstation"
 linktitle: "Installation and Configuration"
 url: /mendix-workstation/installation/
-description: "Quick start and advanced guide for installing and configuring the Mendix Workstation Client, including setting up workspaces, stations, and devices for initial testing from the Workstation Management."
+description: "Quick start and advanced guide for installing and configuring Mendix Workstation, including setting up workspaces, stations, and devices for initial testing from the Workstation Management."
 weight: 20
 ---
 
 ## Introduction
 
-This document outlines the installation and basic configuration of the Mendix Workstation Client. It provides a quick-start guide for initial setup, followed by detailed instructions on advanced configurations for workspaces and stations.
+This document outlines the installation and basic configuration of Mendix Workstation. It provides a quick-start guide for initial setup, followed by detailed instructions on advanced configurations for workspaces and stations.
 
 ## Quick Start Guide 
 
-This guide helps you configure and test a minimum working version of the Mendix Workstation Client. By following these steps, you will complete the following:
+This guide helps you configure and test a minimum working version of Mendix Workstation. By following these steps, you will complete the following:
 
 * Create a basic configuration within Workstation Management.
 * Set up a pair of virtual TCP/IP Client and Server devices for testing.
