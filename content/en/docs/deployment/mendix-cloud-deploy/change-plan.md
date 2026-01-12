@@ -72,8 +72,9 @@ Changing plan consumes [Mendix Cloud Tokens](/control-center/cloud-tokens/#cloud
 ### Plan Change Request Status {#plan-change-status}
 
 This diagram illustrates the lifecycle of a plan change request, from its submission to its final resolution (rejected, completed, or failed).
+<!-- Diagram created with draw.io. Source file: /attachments/deployment/mendix-cloud-deploy/change-plan/change-plan-status.draw.io. Instructions: https://mendix.atlassian.net/wiki/spaces/RNDHB/pages/2510061889/Images+Icons+and+Videos#Draw.io  -->
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/plan-change-status.png" >}}
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/change-plan/change-plan-status.png" >}}
 
 A Technical Contact initiates the process by submitting a plan change request.
 
@@ -83,8 +84,9 @@ A Technical Contact initiates the process by submitting a plan change request.
 2. **Pending Schedule** – The plan change application is awaiting scheduling by the Technical Contact.
 3. **Scheduled** – Plan change is scheduled for the next maintenance window.
 4. **In Progress** – The plan change is actively being applied to the environment.
-5. **Completed** – Plan change was successfully applied to the environment
-6. **Failed** – The plan change did not complete successfully.
+5. **Ineligible** – The plan change did not execute because it failed the necessary validations.
+6. **Completed** – Plan change was successfully applied to the environment
+7. **Failed** – The plan change did not complete successfully.
 
 ## Managing Plan Requests {#manage-plan-requests}
 
@@ -120,6 +122,7 @@ In the **Request Details** page, depending on the request's [status](#plan-chang
 * **Pending approval** – Click **Cancel Request** to cancel the entire request.
 * **Pending schedule** – Click **Cancel Request** to cancel the entire request, or click **Schedule Change** to set execution timing for when the approved plan will be applied. For more details on how to schedule a plan change, see [Scheduling a Plan Change](#scheduling-a-plan-change).
 * **Scheduled** – Click **Cancel Request** to cancel the entire request, or click **Execute Now** to apply the new plan immediately.
+* **Ineligible** – Click **Re-Schedule Change** to schedule the plan change again after addressing the validation issues.
 
 {{% alert color="warning" %}}
 If the Technical Contact cancels a request, the plan change process is canceled entirely. To proceed with a plan change, the Technical Contact must start over and submit a new request.
@@ -151,7 +154,9 @@ Applications will be unavailable for up to 45 minutes while the plan change is b
 After scheduling, once the plan change process starts:
 
 1. The status changes to **In Progress**.
-2. Next, the status progresses to either **Completed** (if successful) or **Failed** (if an error occurs).
+2. If the request fails required validations, the status changes to **Ineligible**.
+3. If the request passes all required validations, the status progresses to **Completed** (if successful) or **Failed** (if an execution error occurs).
+ 
 
 {{% alert color="info" %}}
 After a plan change is applied, you cannot change to a new plan for the same environment for the next 6 hours.
