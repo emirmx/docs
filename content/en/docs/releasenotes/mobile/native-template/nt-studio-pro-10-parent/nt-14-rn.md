@@ -5,6 +5,14 @@ weight: 6
 description: "Native Template 14"
 ---
 
+## 14.1.11 {#1421}
+
+**Release date: January 12, 2026**
+
+### Improvements
+
+* We updated `@mendix/native to v9.2.2`, enabling session cookie persistence and restoration on iOS.
+
 ## 14.1.10 {#1420}
 
 **Release date: December 18, 2025**

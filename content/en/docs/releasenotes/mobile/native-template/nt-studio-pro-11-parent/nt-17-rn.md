@@ -5,6 +5,22 @@ weight: 8
 description: "Native Template 17"
 ---
 
+## 17.0.2 {#1702}
+
+**Release date: January 12, 2026**
+
+### Improvements
+
+* We updated `mendix-native` to v0.3.1, enabling session cookie persistence and restoration on iOS.
+
+## 17.0.1 {#1701}
+
+**Release date: December 24, 2025**
+
+### Improvements
+
+* We changed `NSAppTransportSecurity` in **production** versions of projects to false. For **dev** testing, we added **Info-dev.plist**.
+
 ## 17.0.0 {#1700}
 
 **Release date: December 22, 2025**
