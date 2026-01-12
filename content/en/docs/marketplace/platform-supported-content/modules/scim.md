@@ -61,7 +61,7 @@ If you are using the SCIM module in combination with Entra ID and OIDC SSO, you 
 * Each application within your organization using the SCIM module must undergo a separate configuration. This allows the selection of the right target group of users for each app.
 * Synchronization of users from multiple SCIM clients is currently in beta.
 * The module supports deployment-time configuration using constants, eliminating a need for runtime configuration by a local admin user.
-* The module allows to delete all users provisioned by an IdP using **Delete All Users** option. After you delete the all associated users, you can delete the IdP using **Delete** option.
+* The module allows to delete all users provisioned by an IdP using **Delete All Users** option. After you delete all associated users, you can delete the IdP using **Delete** option.
 
 ### Limitations
 
