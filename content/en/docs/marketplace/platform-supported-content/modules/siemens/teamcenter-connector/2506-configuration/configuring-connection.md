@@ -47,7 +47,7 @@ The Teamcenter Sample Application has a microflow called **MyAdminLogin** that u
 
 ## Configuring the Connection to Teamcenter with SSO {#teamcenter-sso}
 
-To configure the connection to Teamcenter with SSO, you must setup the Teamcenter connection, and update Mendix settings.
+To configure the connection to Teamcenter with SSO, you must set up the Teamcenter connection, and update Mendix settings.
 
 1. In the navigation, update the Default home page and the **Home** menu item to connect to the **ExecuteAdminLogin** microflow.
 
@@ -71,11 +71,11 @@ To configure the connection to Teamcenter with SSO, you must setup the Teamcente
 
     * **SSO Login Server URL**    
       Specify the SSO Login Server URL in this format: `https://<hostname:portname>/<login-service>/weblogin/login_redirect`    
-      Example: `https://your-teamcenter-url/ssol/weblogin/login_redirect`
+      Example: `https://<your-teamcenter-url>/ssol/weblogin/login_redirect`
 
     * **SSO Identity Server URL**    
-      Specify the SSO Identity Server URL in this format: `https://<hostname:portname/<identity-service>`    
-      Example: `https://your-teamcenter-url/ssoi`
+      Specify the SSO Identity Server URL in this format: `https://<hostname:portname>/<identity-service>`    
+      Example: `https://<your-teamcenter-url>/ssoi`
 
     * **Teamcenter Application ID**    
       Provide the existing Teamcenter Application ID from the Teamcenter Security Services Identity Service configuration.
