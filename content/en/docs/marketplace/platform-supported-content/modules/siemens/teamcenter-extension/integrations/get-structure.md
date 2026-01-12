@@ -11,6 +11,17 @@ The **Get Structure** integration allows you to generate the domain model and mi
 
 This document takes you through a use case of creating logic using the Teamcenter Extension to display a simple **BOM structure** with options to configure it according to our needs. 
 
+This feature is designed specifically for generating microflows and domain models to retrieve and display simple BOM structures (unconfigured or configured). For other scenarios, consider alternative solutions. See the table below:
+
+| Scenario                                                 | Suggested Solution             |
+| -------------------------------------------------------- | ------------------------------ |
+| Work with large or complex BOM structures                | Use Active Workspace           |
+| Have performance concerns                                | Use Active Workspace           |
+| Transfer an entire BOM from Teamcenter to another system | Use Active Integration Gateway |
+| Compare BOMs from different systems                      | Use Active Integration Gateway |
+| Author BOMs                                              | Use Active Workspace           |
+| Create BOM configurations                                | Use Active Workspace           |
+
 ## Step-by-Step Guide {#step-by-step-guide}
 
 1. Make sure you have set up your credentials in the **Settings tab** before following these instructions. For more instructions on how to configure your settings, follow the steps in the [Settings Tab](/appstore/modules/siemens-plm/teamcenter-extension/create-an-integration/#settings-tab) section of *Teamcenter Extension*.
