@@ -248,7 +248,7 @@ With this widget, you can use the following filtering settings:
 
 * Show assembly level PMI
 
-For details on how this widget behaves in an application, refer to the [Setting Preferences](#set-preferences) section in *3D Viewer Usage*.
+For details on how this widget behaves in an application, refer to the [Setting Preferences](/partners/siemens/3d-viewer/usage/#set-preferences) section in *3D Viewer Usage*.
 
 #### Toolbar Widgets
 
