@@ -16,6 +16,19 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2026
 
+### January 11, 2026
+
+#### Improvements
+
+* During [deployment package creation](/developerportal/deploy/environments/#create-package-wizard), **App highest tag** and **Branch highest tag** on the **Options** tab have been renamed to **App latest tag** and **Branch latest tag** respectively to ensure consistency with other Mendix applications.
+* A new **Ineligible** status has been added to the [Plan Change Requests statuses](/developerportal/deploy/change-plan/#plan-change-status).
+* The warning banner about APM tools for Kubernetes applications has been removed from the custom environment variable configuration dialog, as APM tools are now fully supported.
+
+#### Bug Fixes
+
+* We fixed an issue on the [Permissions tab](/developerportal/deploy/environments/#permissions-tab) where the environment selection dropdown did not correctly display the selected environment name. (Ticket 264653)
+* We fixed the banner shown when free app deployment is blocked so that it now links to the correct **Control Center** page.
+
 ### January 5, 2026
 
 #### New Features
