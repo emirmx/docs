@@ -27,7 +27,7 @@ General Availability means that a feature is available for all users. This type 
 | Maia: Text to OQL                                            | Public Beta: Q2 2025 <br/>General Availability: Q4 2025 |
 | Maia: Generate test data                                     | Private Beta: 2026   |
 | Maia for Workflows                                           | General Availability: Mx 11.0  |
-| Maia for Microflows                                          | Private Beta: Mx 11.6 |
+| Maia for Microflows                                          | Private Beta: Mx 11.6 <br/>General Availability: Mx 11.9 |
 | Maia Feedback Story Creation (App Insights)                  | General Availability: Mx 11.0 |
 | Maia Feedback Grouping (App Insights)                        | General Availability: Mx 11.6 |
 | Maia for Pipeline Logs                                       | General Availability: Mx 11.9  |
@@ -84,7 +84,7 @@ General Availability means that a feature is available for all users. This type 
 | Workflow Groups | General Availability: Mx 11.6 |
 | Dynamic Case Management | Private Beta: Mx 11.3 + Mx 10.24 |
 | Global Inbox | Public Beta: Mx 11.9 |
-| Workflow Event Subprocesses | Public Beta: Mx 11.6 |
+| Workflow Event Subprocesses | Public Beta: Mx 11.8 |
 | Workflow Message Events | General Availability Mx 11.9 |
 
 ## Governance
