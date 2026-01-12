@@ -98,13 +98,13 @@ General Availability means that a feature is available for all users. This type 
 | Self-Service resizing of environments | Limited Availability: Mx 11.0 |
 | End-users dashboard | Public Beta: Mx 11.6 |
 | Software Composition Findings | General Availability: Mx 11.0 |
-| Software Composition: Mendix Vulnerability Visibility | General Availability: Mx 11.6 |
-| Software Composition: Finding Fix Guidance | General Availability: Mx 11.9 |
+| Software Composition: Mendix Vulnerability Visibility | General Availability: Mx 11.12 |
+| Software Composition: Finding Fix Guidance | General Availability: Mx 11.12 |
 | Pipelines for Mendix on Azure<br/>and Mendix on Kubernetes | General Availability: Mx 11.2 |
 | Pipelines: POST & GET Requests | General Availability: Mx 11.9 |
 | Central Certificate Management | General Availability: Mx 11.6 |
 | Project Categorization | General Availability: Mx 11.4 |
-| Policies | Public Beta: Mx 11.9 |
+| Policies | Public Beta: Mx 11.12 |
 | Central Audit Logs | General Availability: Mx 11.6 |
 | Mendix Cloud on AWS European Sovereign Cloud | General Availability: Mx 11.6 |
 
