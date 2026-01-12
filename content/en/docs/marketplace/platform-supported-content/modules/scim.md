@@ -139,6 +139,7 @@ When upgrading to version 4.0.0 of the SCIM module, ensure you are also using ve
 
 | Mendix Version | SCIM Module Version | UserCommons Version | SCIM Information|
 | --- | --- | --- | --- |
+| 10.24.0 and above | 4.0.1 | 2.2.0 | SCIM provisioning offers enhanced multi-IdP support for automatic user deletion, expanded attribute support, and deploy-time named-user identifier population for consistent metering. |
 | 10.12.10 and above | 4.0.0 | 2.0.0 | SCIM module is ready for the React client. |
 | 9.24.2 and above | 3.0.0 | 1.0.2 | – |
 
@@ -201,12 +202,13 @@ For reference, the table below gives an overview of attribute mapping when using
 | emails| Email | `john.doe@companyA.com` | `johndoe@companyA.com` |
 | userName| FullName | `johndoe@companyA.com` | `johndoe@companyA.com` |
 | active| Active | true | true |
+| displayName| DisplayName | John | John |
 | middleName| MiddleName  | William | William  |
 | honorificPrefix | HonorificPrefix  | Mr. | Mr. |
 | honorificSuffix| HonorificSuffix | Jr. | Jr. |
 | nickName| NickName | Johny | Johny |
 | profileUrl| ProfileUrl | www.companyA.com | www.companyA.com |
-| title| Tile | Mr. | Mr. |
+| title| Title | Mr. | Mr. |
 | preferredLanguage| PreferredLanguage | English | English |
 | timeZone| TimeZone | CET | CET |
 | userType| UserType | External | External |
@@ -331,6 +333,7 @@ The table below lists all supported constants. Mandatory constants must be set a
 | `Default_UserType` | sets the mapping entity attribute to the Identity provider attribute | Optional | `Internal` |
 | `DisableMxAdmin` | deactivates Mx admin | Optional | `True` |
 | `RefreshCustomModule` | synchronizes the specified module | Optional | |
+| `Default_NamedUserIdentifier` | a user identifier added to the IdP configuration and used by the metering sidecar | Optional | Email |
 
 {{% alert color="info" %}}
 You may have a requirement that users log in to your application only via SSO. However, when you deploy your app on the Mendix Cloud, the platform may still create an MxAdmin user with a local password. From version 2.1.0 of the UserCommons module, if the flag for the `DisableMxAdmin` constant is set to `True`, the MxAdmin user will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
