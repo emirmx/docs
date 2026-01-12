@@ -294,7 +294,7 @@ In the **Provisioning** section of the SCIM server configuration, you need to co
 
     * Select the identifier in the **User Metering Named Identifier** field to be used for metering.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/scim/user-commons.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/scim/usercommons.png" >}}
 
 Save this configuration. Double-click on the **Alias** name and you will be able to copy the generated **API Key**.
 
