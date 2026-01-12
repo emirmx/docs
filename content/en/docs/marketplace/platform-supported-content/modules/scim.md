@@ -61,6 +61,7 @@ If you are using the SCIM module in combination with Entra ID and OIDC SSO, you 
 * Each application within your organization using the SCIM module must undergo a separate configuration. This allows the selection of the right target group of users for each app.
 * Synchronization of users from multiple SCIM clients is currently in beta.
 * The module supports deployment-time configuration using constants, eliminating a need for runtime configuration by a local admin user.
+* The module allows to delete all users provisioned by an IdP using **Delete All Users** option. After you delete the all associated users, you can delete the IdP using **Delete** option.
 
 ### Limitations
 
@@ -139,9 +140,8 @@ When upgrading to version 4.0.0 of the SCIM module, ensure you are also using ve
 
 | Mendix Version | SCIM Module Version | UserCommons Version | SCIM Information|
 | --- | --- | --- | --- |
-| 10.24.0 and above | 4.0.1 | 2.2.0 | SCIM provisioning offers enhanced multi-IdP support for automatic user deletion, expanded attribute support, and deploy-time named-user identifier population for consistent metering. |
-| 10.12.10 and above | 4.0.0 | 2.0.0 | SCIM module is ready for the React client. |
-| 9.24.2 and above | 3.0.0 | 1.0.2 | – |
+| 10.24 LTS and above | 4.0.1 | 2.2.0 | Compatible with 11.6 MTS. SCIM module is ready for the React client. |
+| 9.24 LTS and above | 3.0.0 | 1.0.2 | – |
 
 ## Configuration
 
@@ -199,17 +199,17 @@ For reference, the table below gives an overview of attribute mapping when using
 | externalID | Name | 00ctc4pufr85d7 | ObjectID (configured, non-default) For example, `550e8400-e29b-41d4-a716-446655440000` |
 | familyName| lastname | Doe | Doe John |
 | givenName| firstname | John |  |
-| emails| Email | `john.doe@companyA.com` | `johndoe@companyA.com` |
-| userName| FullName | `johndoe@companyA.com` | `johndoe@companyA.com` |
+| emails| Email | `john.doe@company.com` | `johndoe@company.com` |
+| userName| FullName | `johndoe@company.com` | `johndoe@company.com` |
 | active| Active | true | true |
 | displayName| DisplayName | John | John |
 | middleName| MiddleName  | William | William  |
 | honorificPrefix | HonorificPrefix  | Mr. | Mr. |
 | honorificSuffix| HonorificSuffix | Jr. | Jr. |
-| nickName| NickName | Johny | Johny |
-| profileUrl| ProfileUrl | www.companyA.com | www.companyA.com |
+| nickName| NickName | Johnny | Johnny |
+| profileUrl| ProfileUrl | https://www.linkedin.com/in/john-doe-12345678/ | https://www.linkedin.com/in/john-doe-12345678/ |
 | title| Title | Mr. | Mr. |
-| preferredLanguage| PreferredLanguage | English | English |
+| preferredLanguage| PreferredLanguage | en-US | en-US |
 | timeZone| TimeZone | CET | CET |
 | userType| UserType | External | External |
 | locale | Locale | en-US | en-US |
@@ -333,7 +333,7 @@ The table below lists all supported constants. Mandatory constants must be set a
 | `Default_UserType` | sets the mapping entity attribute to the Identity provider attribute | Optional | `Internal` |
 | `DisableMxAdmin` | deactivates Mx admin | Optional | `True` |
 | `RefreshCustomModule` | synchronizes the specified module | Optional | |
-| `Default_NamedUserIdentifier` | a user identifier added to the IdP configuration and used by the metering sidecar | Optional | Email |
+| `Default_NamedUserIdentifier` | a user identifier added to the IdP configuration so the Mendix platform can identify multi-app users | Optional | Email |
 
 {{% alert color="info" %}}
 You may have a requirement that users log in to your application only via SSO. However, when you deploy your app on the Mendix Cloud, the platform may still create an MxAdmin user with a local password. From version 2.1.0 of the UserCommons module, if the flag for the `DisableMxAdmin` constant is set to `True`, the MxAdmin user will be deactivated via the startup microflow `ASU_UserCommons_StartUp`.
