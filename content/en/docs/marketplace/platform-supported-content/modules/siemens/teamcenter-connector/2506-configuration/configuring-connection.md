@@ -47,7 +47,7 @@ The Teamcenter Sample Application has a microflow called **MyAdminLogin** that u
 
 ## Configuring the Connection to Teamcenter with SSO {#teamcenter-sso}
 
-To configure the connection to Teamcenter with SSO, you must setup the Teamcenter connection, update Mendix settings, and specify proxy details in the host file.
+To configure the connection to Teamcenter with SSO, you must set up the Teamcenter connection, and update Mendix settings.
 
 1. In the navigation, update the Default home page and the **Home** menu item to connect to the **ExecuteAdminLogin** microflow.
 
@@ -59,27 +59,23 @@ To configure the connection to Teamcenter with SSO, you must setup the Teamcente
 
 3. Add any Teamcenter SSL certificates to the **Certificates** tab.
 
-4. Specify the proxy host details in the host file.
-
-    {{< figure src="/attachments/partners/siemens/teamcenter/proxy-host-details.png" alt="" class="no-border" >}}
-
-5. Run your project. The browser displays the AdminHomePage.
+4. Run your project. The browser displays the AdminHomePage.
 
     {{< figure src="/attachments/partners/siemens/teamcenter/image006.png" alt="" class="no-border" >}}
 
-6. Click the **TEAMCENTER CONFIGURATIONS** tile.
+5. Click the **TEAMCENTER CONFIGURATIONS** tile.
 
-7. Click **New** in the Teamcenter Environment Configuration page.
+6. Click **New** in the Teamcenter Environment Configuration page.
 
-8. In the **Add Teamcenter Configuration** dialog box, specify the required fields:
+7. In the **Add Teamcenter Configuration** dialog box, specify the required fields:
 
     * **SSO Login Server URL**    
-      Specify the SSO Login Server URL in this format: `http://<hostname:portname>/login-service/weblogin/login_redirect`    
-      Example: `http://10.134.57.23/ssol/weblogin/login_redirect`
+      Specify the SSO Login Server URL in this format: `https://<hostname:portname>/<login-service>/weblogin/login_redirect`    
+      Example: `https://<your-teamcenter-url>/ssol/weblogin/login_redirect`
 
     * **SSO Identity Server URL**    
-      Specify the SSO Identity Server URL in this format: `http://<hostname:portname/identity-service>`    
-      Example: `http://10.134.57.23/ssoi`
+      Specify the SSO Identity Server URL in this format: `https://<hostname:portname>/<identity-service>`    
+      Example: `https://<your-teamcenter-url>/ssoi`
 
     * **Teamcenter Application ID**    
       Provide the existing Teamcenter Application ID from the Teamcenter Security Services Identity Service configuration.
