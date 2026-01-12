@@ -11,7 +11,7 @@ The **Get Structure** integration allows you to generate the domain model and mi
 
 This document takes you through a use case of creating logic using the Teamcenter Extension to display a simple **BOM structure** with options to configure it according to our needs. 
 
-This feature is designed specifically for generating microflows and domain models to retrieve and display simple BOM structures (unconfigured or configured). For other scenarios, consider alternative solutions. See the table below:
+This feature is designed specifically for generating microflows and domain models to retrieve and display simple BOM structures, be they configured on unconfigured. For other scenarios, consider alternative solutions. Refer to the following table:
 
 | Scenario                                                 | Suggested Solution             |
 | -------------------------------------------------------- | ------------------------------ |
