@@ -75,16 +75,8 @@ If your contract is not renewed by the expiry date, your account transitions to 
 #### 1 Day After Contract Expiry{#1-day-after-contract-expiry}
 
 * **Mendix Platform banner** – All Mendix Platform users see a banner clearly stating that the contract has expired
-* **Restricted access** – Account access is downgraded to **Unlicensed** mode
-* **Feature limitations** – Access to Mendix Platform features like **Control Center** is revoked
-* **Deployment restrictions** – You can no longer deploy new versions of your applications on Mendix Cloud
+* **Restricted access** –  Account access is downgraded and apps are transitioned to **Unlicensed** mode
 * **Deployment restrictions** – Application data is available for download for the next 60 days
-
-#### 30 Days After Contract Expiry{#30-days-after-contract-expiry}
-
-* **Access revoked**:
-    * Customer applications are no longer accessible
-    * No end-user access
 
 #### 60 Days After Contract Expiry{#60-days-after-contract-expiry}
 
@@ -99,8 +91,7 @@ Application data deletion is irreversible. Make sure to download all necessary a
 | **Days After Expiry** | **Key Actions** | **Status** |
 |------------------------|-----------------|------------|
 | **0 days (Expired)** | Contract expires | Expired |
-| **+1 day** | Limited access, no deployments | Expired |
-| **+30 days** | Apps inaccessible to end users | Expired |
+| **+1 day** | Limited access | Expired |
 | **+60 days** | Data permanently deleted | Expired |
 
 ## Steps to Guarantee Continuous Service{#steps-to-guarantee-continuous-service}
