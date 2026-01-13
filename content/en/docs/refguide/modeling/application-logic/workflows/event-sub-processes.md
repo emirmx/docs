@@ -1,0 +1,189 @@
+---
+title: "Event Sub-Processes"
+url: /refguide/workflow-event-sub-processes/
+weight: 20
+---
+
+## Introduction
+
+An Event Sub-process is a specialized type of sub-process that is not part of the normal sequence flow of its workflow. Instead, it lives inside the workflow and "listens" for a specific trigger.
+It is crucial to understand that an Event Sub-process is part of the same workflow instance. It is not a "separate" workflow; rather, a single workflow instance can contain multiple concurrent processes.
+
+Below is an example of what an Event Sub-process looks like:
+
+{{< figure src="/attachments/refguide/modeling/application-logic/workflows/event-sub-processes/event-sub-process-example.png" alt="Event Sub-process example" width="400" >}}
+
+### When to Use Event Sub-Processes
+
+Choosing between a Boundary Event and an Event Sub-process is a common architectural crossroads.
+
+#### Ideal Use Cases
+
+- **Global Exception Handling** – Handling errors or cancellations that could occur at any point during the workflow execution.
+- **Isolated Logic** – Complex steps triggered by a specific event (e.g., "Change of Address") without cluttering the main flow.
+- **Inline Updates** – Updating data in a long-running process without interrupting the primary state of the workflow.
+
+#### When NOT to Use
+
+- **Sequential Logic** – If the logic must happen after a specific task, use a standard sequence flow.
+- **Direct Interaction** – If you need to "pause" a specific task and resume it, a Boundary Event (Interrupting) is often more appropriate.
+
+### How Event Sub-Processes Work
+
+#### Lifecycle
+
+The Event Sub-process is initialized as soon as the main process starts and remains in a waiting state until a notification is received.
+
+{{% alert color="info" %}}
+**What keeps a workflow In Progress?** A workflow instance remains in the **In Progress** state as long as **at least one** of the following is true:
+  - The Main Process path has not yet reached its End Event.
+  - Any Event Sub-process that was triggered is still executing.
+{{% /alert %}}
+
+The workflow will **not** complete until all active execution paths,both the main flow and any triggered event sub-processes, have reached their respective End Events.
+
+#### Triggers and Notifications
+
+Event Sub-processes are triggered by a **Notify Workflow** microflow action. When the trigger is received, the sub-process becomes **In Progress**.
+
+#### Interrupting vs. Non-Interrupting
+
+- **Interrupting (Solid line)** – Immediately cancels the main process flow.
+- **Non-Interrupting (Dashed line)** – Runs in parallel with the main flow.
+
+{{% alert color="warning" %}}
+Currently, Mendix only supports the Non-interrupting variant of Event Sub-processes. Support for Interrupting Event Sub-processes is planned for a future release.
+{{% /alert %}}
+
+#### Concurrency Limitation
+
+Mendix Workflows currently support a **single concurrent instance** for an Event Sub-process. If a non-interrupting Event Sub-process is already active, subsequent attempts to trigger it via the **Notify Workflow** action will return false. No new instances will be created while one is In Progress. A new instance can only be initiated once the active sub-process has completed its execution path.
+
+## Getting started
+
+### Adding Event Sub-Processes
+
+To add an Event Sub-process to a workflow, follow these steps:
+
+* Select an Event Sub-process from the **Sub-processes** section in the workflow **Toolbox**.
+
+* Drag it onto a dashed drop zone adjacent to the main workflow process.
+
+{{< figure src="/attachments/refguide/modeling/application-logic/workflows/event-sub-processes/drag-and-drop.png" alt="Add Event Sub-process example" width="500" >}}
+
+* The sub-process flow will be contained within a dashed rectangle. This dashed border around the sub-process start event indicates that it is a non-interrupting sub-process.
+
+* The flow can contain the same types of activities as the main process flow (e.g., **User Task**, **Call Microflow**, **Decision**).
+
+* It must start with a **Start Event** (triggered by a notification) and end with at least one **End Event**.
+
+## Execution
+
+To start an Event Sub-process create a **Notify Workflow** microflow action and point it to the Event Sub-process start event.
+
+{{< figure src="/attachments/refguide/modeling/application-logic/workflows/event-sub-processes/notify-workflow.png" alt="Notify workflow example" width="400" >}}
+
+### Execution Behavior via Notify Action
+
+This section describes how the workflow engine responds when an Event Sub-process is triggered using the **Notify Workflow** microflow action. Because the engine supports only one active instance of a sub-process at a time, the current state of the workflow determines whether the trigger succeeds or is ignored.
+
+| Workflow/Sub-process State              | Action Result | System Behavior                                                                                                                     |
+|-----------------------------------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| Aborted or Completed                    | Error         | The action fails. An error is logged indicating the workflow is no longer in an active state and cannot be notified.                |
+| Paused, Failed, or Incompatible         | True          | The notification is accepted. Execution of the Event Sub-process will begin automatically once the workflow is resumed or resolved. |
+| Inactive (Completed or never triggered) | True          | The Event Sub-process is triggered immediately and its execution path begins.                                                       |
+| In Progress (Already triggered)         | False         | The notification is rejected because a sub-process instance is already running. No new instance is created.                         |
+
+### Operational Lifecycle Management
+
+An Event Sub-process is bound to the lifecycle of its parent workflow instance. Administrative actions and system-level events (such as errors or version conflicts) directly impact the execution state of active sub-processes.
+
+The following table outlines how top-level workflow operations and system states affect any Event Sub-process currently In Progress:
+
+| Event or Operation        | Effect on Event Sub-process | System Behavior                                                                                                                                          |
+|---------------------------|-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Abort Workflow            | Aborted                     | The sub-process is permanently stopped and cannot be re-notified.                                                                                        |
+| Restart Workflow          | Aborted & Reset             | The active sub-process instance is aborted. It returns to a waiting state and can be notified again.                                                     |
+| Pause Workflow            | Execution Halted            | Execution of the sub-process halts immediately. Logic resumes from the same point once the workflow is Unpaused.                                         |
+| Workflow Incompatible     | Execution Halted            | The sub-process is "frozen" due to a version conflict. Execution resumes from the current point once the conflict is Resolved.                           |
+| Error Inside Sub-process  | Failed                      | The sub-process activity enters a Failed state. After the issue is fixed and the workflow is Retried, the sub-process resumes from the failed activity.  |
+| Error Outside Sub-process | Execution Halted            | If a failure occurs elsewhere in the workflow, the healthy sub-process stops processing. It resumes once the error is fixed and the workflow is Retried. |
+
+## Jump Rules
+
+Event Sub-processes have specific restrictions regarding [Jump activity](/refguide/jump-activity/) and [Jump to](/refguide/jump-to/):
+
+* **Between Processes**: It is not possible to jump into a sub-process from the main process (or vice versa), nor between different sub-processes.
+* **Within a Sub-process**: Jumps within the same sub-process are permitted.
+  * **Jump to Start Event**: Aborts the current sub-process instance and returns it to a waiting state.
+  * **Jump to End Event**: Completes the sub-process instance immediately.
+
+## Domain Model Structure
+
+To provide comprehensive monitoring, management, and auditing capabilities, the Mendix Workflow engine utilizes specific system entities and associations. These ensure that every Event Sub-process instance is traceable back to its definition and correctly linked to the overall workflow lifecycle.
+
+### WorkflowSubProcessDefinition
+
+The `WorkflowSubProcessDefinition` entity represents the metadata of a Sub-process as defined in the workflow model.
+
+{{< figure src="/attachments/refguide/modeling/application-logic/workflows/event-sub-processes/domain-model/workflow-sub-process-definition.png" class="no-border" >}}
+
+#### Attributes
+
+| Attribute    | Type    | Description                                                                   |
+|--------------|---------|-------------------------------------------------------------------------------|
+| `Caption`    | String  | The display name of the sub-process.                                          |
+| `IsObsolete` | Boolean | Set to `true` if the sub-process has been deleted from the application model. |
+
+#### Associations
+
+| Association                                               | Parent Entity                  | Description                                                             |
+|-----------------------------------------------------------|--------------------------------|-------------------------------------------------------------------------|
+| `WorkflowSubProcessDefinition_WorkflowDefinition`         | `WorkflowSubProcessDefinition` | Link to the parent workflow definition.                                 |
+| `WorkflowUserTaskDefinition_WorkflowSubProcessDefinition` | `WorkflowUserTaskDefinition`   | Links user task definitions to their containing sub-process definition. |
+| `WorkflowActivityRecord_WorkflowSubProcessDefinition`     | `WorkflowActivityRecord`       | Links historical activity records to the sub-process definition.        |
+
+### WorkflowSubProcess
+
+The `WorkflowSubProcess` entity represents a specific runtime instance of an Event Sub-process.
+
+{{< figure src="/attachments/refguide/modeling/application-logic/workflows/event-sub-processes/domain-model/workflow-sub-process.png" class="no-border" >}}
+
+#### Attributes
+
+| Attribute   | Type               | Description                                                                                                                    |
+|-------------|--------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| `Caption`   | String             | The display name of the sub-process instance.                                                                                  |
+| `StartTime` | DateTime           | The timestamp when execution began. This is set by the engine and is read-only.                                                |
+| `EndTime`   | DateTime           | The timestamp when execution ended (either through completion or failure). This is set by the engine and is read-only.         |
+| `State`     | Enumeration        | The current lifecycle state of the sub-process instance (see [WorkflowSubProcessState](#workflowsubprocessstate-enumeration)). |
+| `Reason`    | String (Unlimited) | A technical description providing context for the current state (e.g., error details).                                         |
+
+#### Associations
+
+| Association                                       | Parent Entity             | Description                                                                                                      |
+|---------------------------------------------------|---------------------------|------------------------------------------------------------------------------------------------------------------|
+| `WorkflowSubProcess_WorkflowSubProcessDefinition` | `WorkflowSubProcess`      | The association to the underlying definition for this instance.                                                  |
+| `WorkflowSubProcess_Workflow`                     | `WorkflowSubProcess`      | The association to the parent workflow instance.                                                                 |
+| `WorkflowUserTask_WorkflowSubProcess`             | `WorkflowUserTask`        | The association to active user tasks within this sub-process instance.                                           |
+| `WorkflowEndedUserTask_WorkflowSubProcess`        | `WorkflowEndedUserTask`   | The association to completed or ended user tasks within this instance.                                           |
+| `WorkflowActivityRecord_WorkflowSubProcess`       | `WorkflowActivityRecord`  | The association to the historical execution records for this instance.                                           |
+| `WorkflowCurrentActivity_WorkflowSubProcess`      | `WorkflowCurrentActivity` | The association to the activity currently being executed in this sub-process (see [Jump to](/refguide/jump-to/). |
+
+### WorkflowSubProcessState (Enumeration)
+
+The `WorkflowSubProcessState` enumeration defines the possible lifecycle phases of a sub-process instance:
+
+| Caption     | Name         | Description                                                                                               |
+|-------------|--------------|-----------------------------------------------------------------------------------------------------------|
+| In progress | `InProgress` | The sub-process has been triggered and is currently executing logic.                                      |
+| Aborted     | `Aborted`    | Execution was terminated, either because the parent workflow was aborted or due to an interrupting event. |
+| Failed      | `Failed`     | Execution ended unsuccessfully because an activity within the sub-process encountered an error.           |
+| Completed   | `Completed`  | The sub-process reached its end event and finished successfully.                                          |
+
+## Read more
+
+* [Notify Workflow](/refguide/notify-workflow/)
+* [Workflow Versioning and Conflict Mitigation](/refguide/workflow-versioning/)
+* [Jump activity](/refguide/jump-activity/)
+* [Jump to](/refguide/jump-to/)
