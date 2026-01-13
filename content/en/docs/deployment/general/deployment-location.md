@@ -68,6 +68,8 @@ In this case, the Mendix runtime must be explicitly informed that end-users are 
 * For Mendix versions 10.18 and later, setting the [ApplicationRootUrl](/refguide/custom-settings/#applicationrooturl-section) runtime setting to an `http://` URL will take precedence over the `X-Forwarded-Proto` and `X-Forwarded-Schema` headers.
 {{% /alert %}}
 
+* For Mendix versions 10.24 and later, `X-Forwarded-Proto` and `X-Forwarded-Schema` headers will take precedence over [ApplicationRootUrl](/refguide/custom-settings/#applicationrooturl-section). We advise to rely on the [ApplicationRootUrl](/refguide/custom-settings/#applicationrooturl-section) setting as the default approach and only set `X-Forwarded-Proto` and `X-Forwarded-Schema` headers if needed. 
+
 ## Main Domain Name
 
 Do not deploy your app directly at the apex domain (`https://domain/`).
