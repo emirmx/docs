@@ -468,7 +468,7 @@ This section addresses common problems you might encounter during the Atlas 4 mi
 
 ### Issue: CSS Variables Not Recognized
 
-**Symptoms:** — Browser developer tools show `var(--variable-name)` as an invalid property value.
+**Symptoms** — Browser developer tools show `var(--variable-name)` as an invalid property value.
 
 **Possible Causes & Solutions:**
 
@@ -483,37 +483,39 @@ This section addresses common problems you might encounter during the Atlas 4 mi
 
 ### Issue: Colors Look Different After Migration
 
-**Symptoms:** Colors don't match your previous Atlas 3 theme.
+**Symptoms ** — Colors don't match your previous Atlas 3 theme.
 
 **Possible Causes & Solutions:**
 
-* **SASS function conversion issues:**
-   * **Solution:** SASS functions like `darken()` and `lighten()` don't translate 1:1 to CSS `color-mix()`. You may need to adjust percentages. Test and tweak values.
+* SASS function conversion issues:
+   * Solution: SASS functions like `darken()` and `lighten()` don't translate 1:1 to CSS `color-mix()`. You may need to adjust percentages. Test and tweak values.
 
-* **Color space differences:**
-   * **Solution:** `color-mix()` uses color spaces like `srgb`. Different color spaces can produce slightly different results than SASS functions.
+* Color space differences:
+   * Solution: `color-mix()` uses color spaces like `srgb`. Different color spaces can produce slightly different results than SASS functions.
 
-* **Fallback to Atlas defaults:**
-   * **Solution:** If you removed too many variables from `custom-variables.scss`, some might be falling back to Atlas defaults. Re-add any custom values you want to preserve.
+* Fallback to Atlas defaults:
+   * Solution: If you removed too many variables from `custom-variables.scss`, some might be falling back to Atlas defaults. Re-add any custom values you want to preserve.
 
 ### Issue: Module Styling Inconsistent
 
-**Symptoms:** Some pages or widgets look correct, others use default styling.
+**Symptoms** — Some pages or widgets look correct, others use default styling.
 
 **Possible Causes & Solutions:**
 
-* **Module hasn't been migrated**
-   * **Solution:** Check if the module's SCSS files still use SASS variables. Follow the steps in [Part 3](#part-3-ensuring-module-compatibility-with-atlas-4) to update the module.
+* Module has not been migrated:
+   * Solution: Check if the module's SCSS files still use SASS variables. Follow the steps in [Part 3](#part-3-ensuring-module-compatibility-with-atlas-4) to update the module.
 
-* **Marketplace module not Atlas 4 compatible**
-   * **Solution:** Check for updates to the module in the Mendix Marketplace. If unavailable, consider overriding styles in your main theme or contacting the module maintainer.
+* Marketplace module not Atlas 4 compatible:
+   * Solution: Check for updates to the module in the Mendix Marketplace. If unavailable, consider overriding styles in your main theme or contacting the module maintainer.
 
-* **Missing module variable mappings**
-   * **Solution:** The module may use custom SASS variables not covered by Atlas. You'll need to convert these manually.
+* Missing module variable mappings:
+   * Solution: The module may use custom SASS variables not covered by Atlas. You'll need to convert these manually.
 
 ## Part 5: Quick Reference
 
 ### SASS Function to CSS Function Conversion
+
+For information on SASS functions and their CSS equivalents, see the table below:
 
 | SASS Function | CSS Equivalent | Example |
 |--------------|----------------|---------|
@@ -526,7 +528,7 @@ This section addresses common problems you might encounter during the Atlas 4 mi
 
 ### Useful Regex Patterns for Migration
 
-Use these regex patterns in your code editor's find/replace function:
+Use these regex patterns in your code editor's **find/replace** function:
 
 | Purpose | Regex Pattern | Replacement |
 |---------|--------------|-------------|
