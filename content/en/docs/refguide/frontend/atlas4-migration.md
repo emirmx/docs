@@ -73,9 +73,9 @@ This distinction is crucial because it unlocks powerful capabilities:
 CSS variables are supported in all modern browsers (Chrome, Firefox, Safari, Edge). Internet Explorer 11 does not support CSS variables. If you need to support IE11, you must maintain a separate fallback stylesheet or consider an alternate approach.
 {{% /alert %}}
 
-## Part 1: Understanding the Shift from SASS to CSS Variables
+## Part 1: Going from SASS to CSS Variables
 
-### 1.1 SASS Variables vs. CSS Variables: The Core Difference
+### 1.1 The Core Difference
 
 Imagine you have a specific shade of blue you use throughout your app. Perhaps its key to your company's theme.
 
@@ -249,10 +249,10 @@ Atlas 4 has backward compatibility which helps modules using SASS variables stil
 
 How you should use this information:
 
-*   **For your custom theme and modules, the goal is to directly use the CSS variables defined in `_theme-default.scss`.** These are the modern, runtime-interpretable variables. The Blank app in Studio Pro 11 comes with a `custom_variables.scss` (**App Directory**  > **Theme** > **Web** > **customer_variables.scss**) which already contains a commented out copy of the Atlas variables to make it easy to understand which variables can be used, as well as to see which values are overriding Atlas and which are using Atlas defaults.
-*   The `_css-variables-mappings.scss` file can be a helpful **reference** to understand which old SASS variables correspond to which new CSS variables when transitioning your own design system. For example, `$brand-primary` should become `var(--brand-primary)`.
+* **For your custom theme and modules, the goal is to directly use the CSS variables defined in `_theme-default.scss`.** These are the modern, runtime-interpretable variables. The Blank app in Studio Pro 11 comes with a `custom_variables.scss` (**App Directory**  > **Theme** > **Web** > **customer_variables.scss**) which already contains a commented out copy of the Atlas variables to make it easy to understand which variables can be used, as well as to see which values are overriding Atlas and which are using Atlas defaults.
+* The `_css-variables-mappings.scss` file can be a helpful **reference** to understand which old SASS variables correspond to which new CSS variables when transitioning your own design system. For example, `$brand-primary` should become `var(--brand-primary)`.
 
-## Part 2: Step-by-Step Migration Guide for Your Application
+## Part 2: Migrating Your Application
 
 This section outlines the process to convert your existing Mendix application theme from Atlas 3 (SASS variables) to Atlas 4 (CSS variables).
 
@@ -262,17 +262,17 @@ This section outlines the process to convert your existing Mendix application th
 Before making any changes, create a complete backup of your Mendix project. Consider committing your current state to version control so you can easily revert if needed.
 {{% /alert %}}
 
-This section will teach you how to prepare your app before migration:
+Do the following steps before your migration begins:
 
-1.  **Backup Your Project** — Create a full backup of your Mendix project or commit to version control.
-2.  **Upgrade Mendix Studio Pro** — Ensure you are using Mendix Studio Pro 11 or later.
-3.  **Update Atlas UI Module**  — In your Mendix project, update the Atlas UI module to its latest Atlas 4 compatible version via the Marketplace. Also, ensure you update all other Marketplace modules, especially `Atlas Web Content` if used, as they may also require Atlas 4 compatibility.
+1.  Create a full backup of your Mendix project or commit to version control.
+2.  Ensure you are using Mendix Studio Pro 11 or later.
+3.  In your Mendix project, update the Atlas UI module to its latest Atlas 4 compatible version via the Marketplace. Also, ensure you update all other Marketplace modules, especially `Atlas Web Content` if used, as they may also require Atlas 4 compatibility.
 
 ### 2.2 Converting `theme/web/custom-variables.scss`
 
 This section, where you convert `theme/web/custom-variables.scss`, is critical for your global theme variables:
 
-1.  **Enable CSS Variables** — Add the following line at the top of your `theme/web/custom-variables.scss` file to explicitly enable CSS variable usage:
+1. Add the following line at the top of your `theme/web/custom-variables.scss` file to explicitly enable CSS variable usage:
 
     ```scss
     $use-css-variables: true;
@@ -282,28 +282,29 @@ This section, where you convert `theme/web/custom-variables.scss`, is critical f
     This declaration tells the Atlas UI compiler to generate CSS variables instead of traditional SASS compilation.
     {{% /alert %}}
     
-2.  **Declare CSS Variables:**
+2. Declare CSS Variables:
     *   Wrap all your SASS variable declarations within a `:root { ... }` block.
     *   Change the SASS variable syntax (`$variable-name: value;`) to CSS variable syntax (`--variable-name: value;`).
     *   **Important Note on Unchanged Variables:** With CSS variables, you only need to declare variables in `custom-variables.scss` if you are *overriding* their default values from Atlas. Any Atlas variables that you are not changing from their default can be safely removed from your `custom-variables.scss` file, reducing clutter and improving clarity. For SASS, it was technically necessary to include them even if unchanged, but this is no longer the case.
         
-        **Example Conversion:**
-        ```diff
-        // Before (Atlas 3 - custom-variables.scss)
-        - $brand-primary: #264ae5;
-        - $font-size-default: 14px;
-        - $bg-color: #f8f8f8;
-        
-        // After (Atlas 4 - custom-variables.scss)
-        + $use-css-variables: true;
-        + 
-        + :root {
-        +   --brand-primary: #264ae5;
-        +   --font-size-default: 14px;
-        +   --bg-color: #f8f8f8;
-        + }
-        ```
-3.  **Handle Imports (if any)** — If your `custom-variables.scss` previously imported other SASS files that defined variables (for example `@import 'my-design-system/_colors.scss';`), those imported files also need to be updated to declare CSS variables within a `:root` block.
+    Here is an example conversion:
+
+      ```diff
+      // Before (Atlas 3 - custom-variables.scss)
+      - $brand-primary: #264ae5;
+      - $font-size-default: 14px;
+      - $bg-color: #f8f8f8;
+      
+      // After (Atlas 4 - custom-variables.scss)
+      + $use-css-variables: true;
+      + 
+      + :root {
+      +   --brand-primary: #264ae5;
+      +   --font-size-default: 14px;
+      +   --bg-color: #f8f8f8;
+      + }
+      ```
+3.  Handle Imports (if any) — If your `custom-variables.scss` previously imported other SASS files that defined variables (for example `@import 'my-design-system/_colors.scss';`), those imported files also need to be updated to declare CSS variables within a `:root` block.
 
 ### 2.3 Updating SASS Variable Usage in Your SCSS Files
 
@@ -351,9 +352,9 @@ After making these changes, do the following:
 Use your browser's developer tools to inspect CSS variables. In the **Elements** panel, you can see computed CSS variable values and even modify them temporarily to test different values.
 {{% /alert %}}
 
-## Part 3: Ensuring Module Compatibility with Atlas 4
+## Part 3: Ensuring Module Compatibility 
 
-Custom modules, or even Marketplace modules, might still contain SASS variables in their styling. Ensuring these modules are Atlas 4 compatible is crucial for a consistent theme.
+Custom modules, or even Marketplace modules, may contain SASS variables in their styling. You must ensure these modules are Atlas 4 compatible to achieve a consistent theme.
 
 ### 3.1 The Challenge
 
@@ -361,24 +362,23 @@ UI modules can have custom styling files inside `themesource/{modulename}/`. If 
 
 ### 3.2 How to Identify SASS Variable Usage in Modules
 
-You will need to search through your module's styling files:
+To identify SASS variables, you will need to search through your module's styling files:
 
-1.  **Module Folder Structure:** Navigate to your module's `themesource/{modulename}/` directory (e.g., `themesource/MyModule/`).
-2.  **Search for SASS Variables:** Use your code editor's search function to look for Regex patterns like `\$([a-zA-Z0-9_-]+)` within all `.scss` files in the module.
+1. Navigate to your module's `themesource/{modulename}/` directory (e.g., `themesource/MyModule/`).
+1. Use your code editor's search function to look for Regex patterns like `\$([a-zA-Z0-9_-]+)` within all `.scss` files in the module.
 
 ### 3.3 Strategies for Module Compatibility
 
-There are a few approaches, depending on whether it is your own module or a Marketplace module.
+There are 3 approaches for achieving module compatibility, depending on if the module is your own or from the Marketplace.
 
 #### Option A: Update the Module (Recommended for Your Own Modules)
 
 If you own the module, this is the cleanest approach and ensures the module is truly Atlas 4 ready.
 
-1.  Open the module's `.scss` files where SASS variables are used:
+1.  Open the module's **.scss** files where SASS variables are used:
     * If the module uses Atlas 3 SASS variables (for example, `$brand-primary`), replace them with the corresponding Atlas 4 CSS variables as defined in `themesource/atlas_core/web/themes/_theme-default.scss` (for example, `var(--brand-primary)`). Use the mapping table in Section 4.3 as a reference.
-    * If the module defines its own custom SASS variables, convert them to CSS variables within a `:root` block in a dedicated module `_variables.scss` file, and then update their usage throughout the module.
+    * If the module defines its own custom SASS variables, convert them to CSS variables within a `:root` block in a dedicated module `_variables.scss` file, and then update their usage throughout the module:
 
-    **Example:**
     ```diff
     // In themesource/MyCustomModule/web/sass/components/_my-component.scss
     - .my-component-header {
@@ -395,8 +395,9 @@ If you own the module, this is the cleanest approach and ensures the module is t
 
 If you cannot directly modify a Marketplace module (because updates would overwrite your changes), you might need to override its styles in your main theme. This is less ideal as it creates more maintenance overhead and can be brittle if the module's internal structure changes.
 
-1.  **Identify Module Class Names:** Use browser developer tools to find the specific CSS class names or selectors used by the module's elements.
-2.  **Override in Your Theme:** In your main theme's SCSS files (e.g., a new file imported by `main.scss` in your theme), write override rules.
+1.  Use browser developer tools to find the specific CSS class names or selectors used by the module's elements.
+2.  In your main theme's SCSS files (e.g., a new file imported by `main.scss` in your theme), write override rules.
+
     ```scss
     // In theme/web/sass/custom/_overrides.scss (or similar)
     // Overriding a Marketplace module's style
@@ -405,6 +406,7 @@ If you cannot directly modify a Marketplace module (because updates would overwr
       background-color: var(--bg-color-secondary); /* Use an Atlas 4 core variable */
     }
     ```
+    
     This approach requires careful use of CSS specificity to ensure your overrides take precedence.
 
 #### Option C: Wait for Module Updates
