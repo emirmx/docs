@@ -12,11 +12,11 @@ Atlas UI 4 marks a significant evolution in Mendix theming, bringing modern web 
 
 ### Who Should Use This Guide
 
-This guide is intended for:
+This guide is intended for the following use cases:
 
-* Developers: choosing to migrate their custom themes from Atlas UI 3 to Atlas UI 4
-* Module creators: making their custom UI modules compatible with Atlas UI 4
-* Teams: adopting the latest Atlas UI features and theming standards
+* Developers who are choosing to migrate their custom themes from Atlas UI 3 to Atlas UI 4
+* Module creators who are making their custom UI modules compatible with Atlas UI 4
+* Teams who are adopting the latest Atlas UI features and theming standards
 
 ### When to Use This Guide
 
@@ -79,7 +79,7 @@ CSS variables are supported in all modern browsers (Chrome, Firefox, Safari, Edg
 
 Imagine you have a specific shade of blue you use throughout your app. Perhaps its key to your company's theme.
 
-In SASS (Atlas 3 and earlier), you define it like this:
+In SASS (Atlas 3 and lower), you define it like this:
 
 ```scss
 // Define the SASS variable
@@ -230,9 +230,9 @@ The Atlas core theme (`themesource/atlas_core/web/themes/_theme-default.scss`) u
 
 Atlas 4 has backward compatibility which helps modules using SASS variables still function. However, there are some limitations due to how the two technologies work (pre-processor versus runtime interpretation):
 
-*   **`_theme-default.scss` (Atlas variables with default values):** This file, located at `themesource/atlas_core/web/themes/_theme-default.scss`, defines the **official Atlas 4 CSS variables**. These are the variables your custom theme should aim to use. You will notice that many of these variables share names with their SASS predecessors (e.g., `--brand-primary`, `--font-size-default`), but are now true CSS variables.
+*   **`_theme-default.scss` (Atlas variables with default values)** — This file, located at `themesource/atlas_core/web/themes/_theme-default.scss`, defines the **official Atlas 4 CSS variables**. These are the variables your custom theme should aim to use. You will notice that many of these variables share names with their SASS predecessors (for example, `--brand-primary`, `--font-size-default`), but are now true CSS variables.
 
-*   **`_css-variables-mappings.scss` (Compatibility file):** This file, located at `themesource/atlas_core/web/_css-variables-mappings.scss`, defines a mixin `legacy-variables()`. When this mixin is included (which Atlas does internally), it creates **CSS variables with the same names as many of the old Atlas SASS variables**, and assigns them the **compiled value of those SASS variables** using SASS interpolation (`#{$variable}`).
+*   **`_css-variables-mappings.scss` (Compatibility file)** — This file, located at `themesource/atlas_core/web/_css-variables-mappings.scss`, defines a mixin `legacy-variables()`. When this mixin is included (which Atlas does internally), it creates **CSS variables with the same names as many of the old Atlas SASS variables**, and assigns them the **compiled value of those SASS variables** using SASS interpolation (`#{$variable}`).
 
     **Example from `_css-variables-mappings.scss`:**
 
@@ -249,7 +249,7 @@ Atlas 4 has backward compatibility which helps modules using SASS variables stil
 
 How you should use this information:
 
-* **For your custom theme and modules, the goal is to directly use the CSS variables defined in `_theme-default.scss`.** These are the modern, runtime-interpretable variables. The Blank app in Studio Pro 11 comes with a `custom_variables.scss` (**App Directory**  > **Theme** > **Web** > **customer_variables.scss**) which already contains a commented out copy of the Atlas variables to make it easy to understand which variables can be used, as well as to see which values are overriding Atlas and which are using Atlas defaults.
+* For your custom theme and modules, the goal is to directly use the CSS variables defined in `_theme-default.scss`. These are the modern, runtime-interpretable variables. The Blank app in Studio Pro 11 comes with a `custom_variables.scss` (**App Directory**  > **Theme** > **Web** > **customer_variables.scss**) which already contains a commented out copy of the Atlas variables to make it easy to understand which variables can be used, as well as to see which values are overriding Atlas and which are using Atlas defaults.
 * The `_css-variables-mappings.scss` file can be a helpful **reference** to understand which old SASS variables correspond to which new CSS variables when transitioning your own design system. For example, `$brand-primary` should become `var(--brand-primary)`.
 
 ## Part 2: Migrating Your Application
@@ -265,8 +265,8 @@ Before making any changes, create a complete backup of your Mendix project. Cons
 Do the following steps before your migration begins:
 
 1.  Create a full backup of your Mendix project or commit to version control.
-2.  Ensure you are using Mendix Studio Pro 11 or later.
-3.  In your Mendix project, update the Atlas UI module to its latest Atlas 4 compatible version via the Marketplace. Also, ensure you update all other Marketplace modules, especially `Atlas Web Content` if used, as they may also require Atlas 4 compatibility.
+1.  Ensure you are using Mendix Studio Pro 11 or later.
+1.  In your Mendix project, update the Atlas UI module to its latest Atlas 4 compatible version via the Marketplace. Also, ensure you update all other Marketplace modules, especially `Atlas Web Content` if used, as they may also require Atlas 4 compatibility.
 
 ### 2.2 Converting `theme/web/custom-variables.scss`
 
@@ -282,7 +282,7 @@ This section, where you convert `theme/web/custom-variables.scss`, is critical f
     This declaration tells the Atlas UI compiler to generate CSS variables instead of traditional SASS compilation.
     {{% /alert %}}
     
-2. Declare CSS Variables:
+1. Declare CSS Variables:
     *   Wrap all your SASS variable declarations within a `:root { ... }` block.
     *   Change the SASS variable syntax (`$variable-name: value;`) to CSS variable syntax (`--variable-name: value;`).
     *   **Important Note on Unchanged Variables:** With CSS variables, you only need to declare variables in `custom-variables.scss` if you are *overriding* their default values from Atlas. Any Atlas variables that you are not changing from their default can be safely removed from your `custom-variables.scss` file, reducing clutter and improving clarity. For SASS, it was technically necessary to include them even if unchanged, but this is no longer the case.
@@ -304,7 +304,7 @@ This section, where you convert `theme/web/custom-variables.scss`, is critical f
       +   --bg-color: #f8f8f8;
       + }
       ```
-3.  Handle Imports (if any) — If your `custom-variables.scss` previously imported other SASS files that defined variables (for example `@import 'my-design-system/_colors.scss';`), those imported files also need to be updated to declare CSS variables within a `:root` block.
+1.  Handle Imports (if any) — If your `custom-variables.scss` previously imported other SASS files that defined variables (for example `@import 'my-design-system/_colors.scss';`), those imported files also need to be updated to declare CSS variables within a `:root` block.
 
 ### 2.3 Updating SASS Variable Usage in Your SCSS Files
 
@@ -316,7 +316,7 @@ Now that your variables are declared as CSS variables, you need to update everyw
     Use a regex pattern like `\$([a-zA-Z0-9_-]+)` to identify SASS variable names. Most code editors support regex in their find/replace functions.
     {{% /alert %}}
     
-2. For each instance, replace `$variable-name` with `var(--variable-name)`:
+1. For each instance, replace `$variable-name` with `var(--variable-name)`:
     *   **Example Conversion:**
         ```diff
         // Before (Atlas 3 - in a custom UI module's SCSS file)
@@ -333,7 +333,7 @@ Now that your variables are declared as CSS variables, you need to update everyw
         +   font-family: var(--font-family-base);
         + }
         ```
-3. For guidance on converting SASS functions like `mix()`, `darken()`, and `lighten()` to their CSS equivalents, please refer to [Section 1.3: SASS Functions vs. CSS Functions](#13-sass-functions-vs-css-functions).
+1. For guidance on converting SASS functions like `mix()`, `darken()`, and `lighten()` to their CSS equivalents, please refer to [Section 1.3: SASS Functions vs. CSS Functions](#13-sass-functions-vs-css-functions).
 
 {{% alert color="info" %}}
 Test your changes incrementally. After updating variables in one section or module, run your application to verify the styling before proceeding to the next section.
@@ -344,9 +344,9 @@ Test your changes incrementally. After updating variables in one section or modu
 After making these changes, do the following:
 
 1. Deploy and run your Mendix application.
-2. Thoroughly check all pages and components for any visual regressions or unexpected styling.
-3. Verify that your styles work correctly across different browsers.
-4. Open browser developer tools and check for any CSS-related errors or warnings.
+1. Thoroughly check all pages and components for any visual regressions or unexpected styling.
+1. Verify that your styles work correctly across different browsers.
+1. Open browser developer tools and check for any CSS-related errors or warnings.
 
 {{% alert color="info" %}}
 Use your browser's developer tools to inspect CSS variables. In the **Elements** panel, you can see computed CSS variable values and even modify them temporarily to test different values.
@@ -483,7 +483,7 @@ This section addresses common problems you might encounter during the Atlas 4 mi
 
 ### Issue: Colors Look Different After Migration
 
-**Symptoms ** — Colors don't match your previous Atlas 3 theme.
+**Symptoms** — Colors do not match your previous Atlas 3 theme.
 
 **Possible Causes & Solutions:**
 
