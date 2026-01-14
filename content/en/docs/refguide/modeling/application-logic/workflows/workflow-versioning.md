@@ -152,7 +152,9 @@ You can do one of the following:
 
 #### Current Activity Moved out of Path
 
-When an app developer moves activities out of a **Parallel Split** path or a non-interrupting boundary event path, currently running workflow instances that are executing the moved activity cannot complete the **Parallel Split** or the non-interrupting boundary event. Similarly, if an activity is moved from the parent path into a boundary event path, the currently running workflow instances may not be able to complete properly.
+A conflict occurs when an activity is moved outside of its original execution scope. This applies to activities moved between the main path, parallel split paths, boundary event paths, or sub-processes.
+If a currently running workflow instance is executing an activity that is moved out of its scope, it may lose its connection to necessary synchronization points. For example, the instance may be unable to merge a Parallel Split, complete a non-interrupting boundary event, or finish a sub-process execution.
+Conversely, moving an activity from a parent path into a nested scope, such as a boundary event path or a sub-process, can also prevent the workflow from progressing. In these scenarios, the workflow engine cannot guarantee the integrity of the execution flow. This can result in the workflow instance remaining stuck in the In Progress state indefinitely, preventing it from ever reaching a completed state.
 
 You can do one of the following:
 
