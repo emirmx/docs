@@ -61,7 +61,7 @@ If you are using the SCIM module in combination with Entra ID and OIDC SSO, you 
 * Each application within your organization using the SCIM module must undergo a separate configuration. This allows the selection of the right target group of users for each app.
 * Synchronization of users from multiple SCIM clients is currently in beta.
 * The module supports deployment-time configuration using constants, eliminating a need for runtime configuration by a local admin user.
-* Deletion of (test) users provisioned by a SCIM (test) client when that client is deleted.
+* The SCIM module simplifies the deletion of all (test) users provisioned by a SCIM (test) client, and then the IdP SCIM test client itself.
 
 ### Limitations
 
@@ -300,7 +300,9 @@ Save this configuration. Double-click on the **Alias** name and you will be able
 
 #### Deleting Users and Clients
 
-The SCIM Module supports deleting all users provisioned by an IdP using the **Delete All Users** button in the IdP Configuration. After you have deleted all the associated users, you can delete the IdP using the **Delete** button. This is particularly convenient when you are moving your app to production and want to delete all test users created during development and testing, without loosing other data in your application.
+The SCIM Module supports deleting all users provisioned by an IdP using the **Delete All Users** button in the **IdP Configuration**. After you have deleted all the associated users, you can delete the IdP using the **Delete** button. This is particularly convenient when you are moving your app to production and want to delete all test users created during development and testing, without loosing other data in your application.
+
+{{< figure src="/attachments/appstore/platform-supported-content/modules/scim/delete-test-users.png" >}}
 
 ### Deploy-time Configuration {#deploy-time}
 
