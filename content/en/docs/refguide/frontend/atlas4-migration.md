@@ -10,15 +10,11 @@ tags: ["atlas", "atlas ui", "theming", "css", "css variables", "sass", "migratio
 
 Atlas UI 4 marks a significant evolution in Mendix theming, bringing modern web standards and enhanced flexibility to your application's design. The most significant change to custom styling in Atlas 4 is the shift from **SASS variables** to **native CSS variables**.
 
-### Who Should Use This Guide
-
 This guide is intended for the following use cases:
 
 * Developers who are choosing to migrate their custom themes from Atlas UI 3 to Atlas UI 4
 * Module creators who are making their custom UI modules compatible with Atlas UI 4
 * Teams who are adopting the latest Atlas UI features and theming standards
-
-### When to Use This Guide
 
 Use this guide when:
 
@@ -316,23 +312,24 @@ Now that your variables are declared as CSS variables, you need to update everyw
     Use a regex pattern like `\$([a-zA-Z0-9_-]+)` to identify SASS variable names. Most code editors support regex in their find/replace functions.
     {{% /alert %}}
     
-1. For each instance, replace `$variable-name` with `var(--variable-name)`:
-    *   **Example Conversion:**
-        ```diff
-        // Before (Atlas 3 - in a custom UI module's SCSS file)
-        - .my-custom-card {
-        -   background-color: $bg-color;
-        -   padding: $spacing-small;
-        -   font-family: $font-family-base;
-        - }
-        
-        // After (Atlas 4 - in a custom UI module's SCSS file)
-        + .my-custom-card {
-        +   background-color: var(--bg-color);
-        +   padding: var(--spacing-small);
-        +   font-family: var(--font-family-base);
-        + }
-        ```
+1. For each instance, replace `$variable-name` with `var(--variable-name)` (see example below):
+
+      ```diff
+      // Before (Atlas 3 - in a custom UI module's SCSS file)
+      - .my-custom-card {
+      -   background-color: $bg-color;
+      -   padding: $spacing-small;
+      -   font-family: $font-family-base;
+      - }
+      
+      // After (Atlas 4 - in a custom UI module's SCSS file)
+      + .my-custom-card {
+      +   background-color: var(--bg-color);
+      +   padding: var(--spacing-small);
+      +   font-family: var(--font-family-base);
+      + }
+      ```
+      
 1. For guidance on converting SASS functions like `mix()`, `darken()`, and `lighten()` to their CSS equivalents, please refer to [Section 1.3: SASS Functions vs. CSS Functions](#13-sass-functions-vs-css-functions).
 
 {{% alert color="info" %}}
