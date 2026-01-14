@@ -420,7 +420,7 @@ For popular Marketplace modules, the module developers will likely release Atlas
 When creating new custom modules for Atlas 4, employ these best practices:
 
 *  Define and use CSS variables for all your module's styling.
-*  For common styling (colors, spacing, fonts), use Atlas 4's core CSS variables (e.g., `--brand-primary`, `--spacing-medium`). This ensures consistency with the main theme.
+*  For common styling (colors, spacing, fonts), use Atlas 4's core CSS variables (for example, `--brand-primary`, `--spacing-medium`). This ensures consistency with the main theme.
 *  If your module has specific configurable styles, consider defining them as CSS variables within the module. This allows users to easily customize your module from their `custom-variables.scss` without modifying the module's core files:
 
     ```css
@@ -449,37 +449,37 @@ When creating new custom modules for Atlas 4, employ these best practices:
 This section addresses common problems you might encounter during the Atlas 4 migration. For common complaints and their solutions, look below.
 
 ### Issue: Styles Not Applying After Migration
-'
+
 **Symptoms** — Your application looks unstyled, or uses default colors instead of your custom theme's.
 
 **Possible Causes & Solutions:**
 
-* **Missing `$use-css-variables: true;` declaration**
-   * **Solution:** Ensure this line is at the top of your `theme/web/custom-variables.scss` file.
+* Missing `$use-css-variables: true;` declaration:
+   * Solution: Ensure this line is at the top of your `theme/web/custom-variables.scss` file.
 
-* **CSS variables not wrapped in `:root` block**
-   * **Solution:** All CSS variable declarations must be inside a `:root { }` block.
+* CSS variables not wrapped in `:root` block:
+   * Solution: All CSS variable declarations must be inside a `:root { }` block.
 
-* **Browser caching old compiled CSS**
-   * **Solution:** Perform a hard refresh in your browser (Cmd+Shift+R on macOS, Ctrl+Shift+R on Windows/Linux) or clear your browser cache.
+* Browser caching old compiled CSS:
+   * Solution: Perform a hard refresh in your browser (<kbd>Cmd</kbd>+Shift<kbd>Shift</kbd>+<kbd>R</kbd> on macOS, Ctrl+Shift+R on Windows/Linux) or clear your browser cache.
 
-* **SASS compilation errors**
-   * **Solution:** Check the Studio Pro console for SASS compilation errors. Fix any syntax errors in your SCSS files.
+* SASS compilation errors:
+   * Solution: Check the Studio Pro console for SASS compilation errors. Fix any syntax errors in your SCSS files.
 
 ### Issue: CSS Variables Not Recognized
 
-**Symptoms:** Browser developer tools show `var(--variable-name)` as an invalid property value.
+**Symptoms:** — Browser developer tools show `var(--variable-name)` as an invalid property value.
 
 **Possible Causes & Solutions:**
 
-1. **Variable not defined**
-   * **Solution:** Ensure the CSS variable is declared in a `:root` block in your `custom-variables.scss` or is available from Atlas core variables.
+* Variable not defined:
+   * Solution: Ensure the CSS variable is declared in a `:root` block in your `custom-variables.scss` or is available from Atlas core variables.
 
-2. **Typo in variable name**
-   * **Solution:** CSS variable names are case-sensitive. Check for typos like `--brand-Primary` vs `--brand-primary`.
+* Typo in variable name:
+   * Solution: CSS variable names are case-sensitive. Check for typos like `--brand-Primary` vs `--brand-primary`.
 
-3. **Scope issues**
-   * **Solution:** CSS variables defined outside `:root` have limited scope. Use `:root` for global variables.
+* Scope issues:
+   * Solution: CSS variables defined outside `:root` have limited scope. Use `:root` for global variables.
 
 ### Issue: Colors Look Different After Migration
 
@@ -487,13 +487,13 @@ This section addresses common problems you might encounter during the Atlas 4 mi
 
 **Possible Causes & Solutions:**
 
-1. **SASS function conversion issues**
+* **SASS function conversion issues:**
    * **Solution:** SASS functions like `darken()` and `lighten()` don't translate 1:1 to CSS `color-mix()`. You may need to adjust percentages. Test and tweak values.
 
-2. **Color space differences**
+* **Color space differences:**
    * **Solution:** `color-mix()` uses color spaces like `srgb`. Different color spaces can produce slightly different results than SASS functions.
 
-3. **Fallback to Atlas defaults**
+* **Fallback to Atlas defaults:**
    * **Solution:** If you removed too many variables from `custom-variables.scss`, some might be falling back to Atlas defaults. Re-add any custom values you want to preserve.
 
 ### Issue: Module Styling Inconsistent
@@ -502,13 +502,13 @@ This section addresses common problems you might encounter during the Atlas 4 mi
 
 **Possible Causes & Solutions:**
 
-1. **Module hasn't been migrated**
+* **Module hasn't been migrated**
    * **Solution:** Check if the module's SCSS files still use SASS variables. Follow the steps in [Part 3](#part-3-ensuring-module-compatibility-with-atlas-4) to update the module.
 
-2. **Marketplace module not Atlas 4 compatible**
+* **Marketplace module not Atlas 4 compatible**
    * **Solution:** Check for updates to the module in the Mendix Marketplace. If unavailable, consider overriding styles in your main theme or contacting the module maintainer.
 
-3. **Missing module variable mappings**
+* **Missing module variable mappings**
    * **Solution:** The module may use custom SASS variables not covered by Atlas. You'll need to convert these manually.
 
 ## Part 5: Quick Reference
@@ -536,7 +536,7 @@ Use these regex patterns in your code editor's find/replace function:
 | Find lighten() usage | `lighten\(\$([a-zA-Z0-9_-]+),\s*(\d+)%\)` | Manual conversion needed |
 
 {{% alert color="info" %}}
-**Tip:** Always review regex replacements carefully before applying them. Complex SASS usage may require manual conversion.
+Always review regex replacements carefully before applying them. Complex SASS usage may require manual conversion.
 {{% /alert %}}
 
 ## Read More
