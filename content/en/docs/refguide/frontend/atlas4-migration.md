@@ -393,10 +393,12 @@ If you own the module, this is the cleanest approach and ensures the module is t
 
 #### Option B: Override in Your Main Theme (For Marketplace Modules)
 
-If you cannot directly modify a Marketplace module (because updates would overwrite your changes), you might need to override its styles in your main theme. This is less ideal as it creates more maintenance overhead and can be brittle if the module's internal structure changes.
+If you cannot directly modify a Marketplace module (because updates would overwrite your changes), you need to override its styles in your main theme. This is less ideal than modifying directly, as it creates more maintenance overhead and can be brittle if the module's internal structure changes.
+
+To override its styles in your main theme, do the following:
 
 1.  Use browser developer tools to find the specific CSS class names or selectors used by the module's elements.
-2.  In your main theme's SCSS files (e.g., a new file imported by `main.scss` in your theme), write override rules.
+1.  In your main theme's SCSS files (for example, a new file imported by `main.scss` in your theme), write override rules.
 
     ```scss
     // In theme/web/sass/custom/_overrides.scss (or similar)
@@ -406,7 +408,7 @@ If you cannot directly modify a Marketplace module (because updates would overwr
       background-color: var(--bg-color-secondary); /* Use an Atlas 4 core variable */
     }
     ```
-    
+
     This approach requires careful use of CSS specificity to ensure your overrides take precedence.
 
 #### Option C: Wait for Module Updates
@@ -415,11 +417,12 @@ For popular Marketplace modules, the module developers will likely release Atlas
 
 ### 3.4 Best Practices for Developing New Modules (Atlas 4 Ready)
 
-When creating new custom modules for Atlas 4:
+When creating new custom modules for Atlas 4, employ these best practices:
 
-*   **Always Use CSS Variables:** Define and use CSS variables for all your module's styling.
-*   **Reference Atlas 4 Core Variables:** For common styling (colors, spacing, fonts), use Atlas 4's core CSS variables (e.g., `--brand-primary`, `--spacing-medium`). This ensures consistency with the main theme.
-*   **Expose Module Variables:** If your module has specific configurable styles, consider defining them as CSS variables within the module. This allows users to easily customize your module from their `custom-variables.scss` without modifying the module's core files.
+*  Define and use CSS variables for all your module's styling.
+*  For common styling (colors, spacing, fonts), use Atlas 4's core CSS variables (e.g., `--brand-primary`, `--spacing-medium`). This ensures consistency with the main theme.
+*  If your module has specific configurable styles, consider defining them as CSS variables within the module. This allows users to easily customize your module from their `custom-variables.scss` without modifying the module's core files:
+
     ```css
     // In themesource/MyNewModule/web/sass/_variables.scss
     :root {
@@ -443,24 +446,24 @@ When creating new custom modules for Atlas 4:
 
 ## Part 4: Troubleshooting Common Issues
 
-This section addresses common problems you might encounter during the Atlas 4 migration.
+This section addresses common problems you might encounter during the Atlas 4 migration. For common complaints and their solutions, look below.
 
 ### Issue: Styles Not Applying After Migration
-
-**Symptoms:** Your application looks unstyled or uses default colors instead of your custom theme.
+'
+**Symptoms** — Your application looks unstyled, or uses default colors instead of your custom theme's.
 
 **Possible Causes & Solutions:**
 
-1. **Missing `$use-css-variables: true;` declaration**
+* **Missing `$use-css-variables: true;` declaration**
    * **Solution:** Ensure this line is at the top of your `theme/web/custom-variables.scss` file.
 
-2. **CSS variables not wrapped in `:root` block**
+* **CSS variables not wrapped in `:root` block**
    * **Solution:** All CSS variable declarations must be inside a `:root { }` block.
 
-3. **Browser caching old compiled CSS**
+* **Browser caching old compiled CSS**
    * **Solution:** Perform a hard refresh in your browser (Cmd+Shift+R on macOS, Ctrl+Shift+R on Windows/Linux) or clear your browser cache.
 
-4. **SASS compilation errors**
+* **SASS compilation errors**
    * **Solution:** Check the Studio Pro console for SASS compilation errors. Fix any syntax errors in your SCSS files.
 
 ### Issue: CSS Variables Not Recognized
