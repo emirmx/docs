@@ -12,6 +12,14 @@ aliases:
 
 These release notes cover changes made to the [Catalog](/catalog/).
 
+## 2026
+
+### January 15, 2026
+
+#### Fixes
+
+* Fixed an issue where a CloudEvent containing a consumed OData service without a specified constant failed to register in the catalog.
+  
 ## 2025
 
 ### November 6, 2025
