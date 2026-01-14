@@ -14,9 +14,9 @@ Atlas UI 4 marks a significant evolution in Mendix theming, bringing modern web 
 
 This guide is intended for:
 
-* **Developers** choosing to migrate their custom themes from Atlas UI 3 to Atlas UI 4
-* **Module creators** making their custom UI modules compatible with Atlas UI 4
-* **Teams** adopting the latest Atlas UI features and theming standards
+* Developers: choosing to migrate their custom themes from Atlas UI 3 to Atlas UI 4
+* Module creators: making their custom UI modules compatible with Atlas UI 4
+* Teams: adopting the latest Atlas UI features and theming standards
 
 ### When to Use This Guide
 
@@ -27,8 +27,8 @@ Use this guide when:
 * Converting existing SASS-based themes so they use CSS variables
 * Implementing dynamic theming, or white-labeling features
 
-{{% alert color="warning" %}}
-**Migration is Optional.** You do not need to migrate to Atlas UI 4 when upgrading to Studio Pro 11 or above. Your existing Atlas UI 3 theme will continue to work. Only proceed with this migration if you want to use Atlas 4's new capabilities.
+{{% alert color="info" %}}
+You do not need to migrate to Atlas UI 4 when upgrading to Studio Pro 11 or above. Your existing Atlas UI 3 theme will continue to work. Only proceed with this migration if you want to use Atlas 4's new capabilities.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -59,8 +59,8 @@ Always create a full backup of your Mendix project before beginning this migrati
 
 To understand the major change between v3 and v4, it is important to grasp the difference between SASS and CSS variables:
 
-*   **SASS (Syntactically Awesome Style Sheets)**: SASS is a **pre-processor**. This means your SASS code, including its variables, is processed and compiled into standard CSS **before** your application is deployed and run in a web browser. SASS variables are essentially placeholders that get replaced with their final values during this compilation step. The browser never "sees" a SASS variable.
-*   **CSS Custom Properties (CSS Variables)**: CSS variables are a native feature of web browsers. They are **interpreted at runtime**, meaning the browser understands and can directly work with them as your application is running.
+* **SASS (Syntactically Awesome Style Sheets)** — SASS is a **pre-processor**. This means your SASS code, including its variables, is processed and compiled into standard CSS **before** your application is deployed and run in a web browser. SASS variables are essentially placeholders that get replaced with their final values during this compilation step. The browser never "sees" a SASS variable.
+* **CSS Custom Properties (CSS Variables)** — CSS variables are a native feature of web browsers. They are **interpreted at runtime**, meaning the browser understands and can directly work with them as your application is running.
 
 This distinction is crucial because it unlocks powerful capabilities:
 
