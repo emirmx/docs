@@ -18,7 +18,7 @@ These release notes cover changes made to the [Catalog](/catalog/).
 
 #### Fixes
 
-* Fixed an issue where a CloudEvent containing a consumed OData service without a specified constant failed to register in the catalog.
+* We fixed an issue where a CloudEvent containing a consumed OData service without a specified constant failed to register in the Catalog.
   
 ## 2025
 
