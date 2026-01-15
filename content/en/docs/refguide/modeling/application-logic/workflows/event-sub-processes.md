@@ -6,7 +6,7 @@ weight: 20
 
 ## Introduction
 
-An Event Sub-process is a specialized type of sub-process that is not part of the normal sequence flow of its workflow. Instead, it lives inside the workflow and "listens" for a specific trigger.
+An Event Sub-process is a separate execution flow that is not part of the normal sequence flow of its workflow. It resides inside the workflow and starts executing upon receiving a specific trigger.
 It is crucial to understand that an Event Sub-process is part of the same workflow instance. It is not a "separate" workflow; rather, a single workflow instance can contain multiple concurrent processes.
 
 Below is an example of what an Event Sub-process looks like:
