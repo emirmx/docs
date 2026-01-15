@@ -10,8 +10,8 @@ These release notes cover changes to the [Extensibility API for Web Developers](
 
 ## Version 11.7.0
 
-* We added the ability to be able to select a Custom Blob document by using its registered name in our Element Selector Api.
-* We fixed an issue where using the `New` button in the selector dialog shown when using the Element Selector Api would throw an error. The button has now been removed.
+* We added functionality to select a **Custom Blob** document by using its registered name in our [Element Selector](/apidocs-mxsdk/apidocs/web-extensibility-api-11/element-selector-api/) API.
+* We fixed an issue where using the **New** button in the selector dialog shown when using the Element Selector API would throw an error. The button has now been removed.
 
 ## Version 11.6.0
 
