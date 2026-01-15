@@ -12,10 +12,10 @@ The Mendix on Kubernetes Operator uses a [recreate](https://kubernetes.io/docs/c
 
 Starting from version 2.25.0, the Operator will automatically perform a Rolling update for any environment that meets the [prerequisite](#prerequisites-2.25.0):
 
-* The configuration update does not modify the app source code (MDA or container image).
+* The configuration update does not modify the app model (source code, MDA or container image).
 
 {{% alert color="info" %}}
-Versions 2.20.0 to 2.23.1 of the Operator had an option to manually enable a **PreferRolling** strategy. That is, the Operator tried to perform a rolling update whenever possible. If the Operator detected that a database schema update was needed, it switched to a Recreate strategy to perform a full restart. If the new version of the app had model changes, deploying it required a schema update. In that case, the Mendix on Kubernetes Operator automatically stopped all replicas of the app, causing downtime.
+Versions 2.20.0 to 2.23.1 of the Operator had an option to manually enable a **PreferRolling** strategy. That is, the Operator tried to perform a rolling update whenever possible. If the Operator detected that a database schema update was needed, it switched to a Recreate strategy to perform a full restart. If the new version of the app had model (source code) changes, deploying it required a schema update. In that case, the Mendix on Kubernetes Operator automatically stopped all replicas of the app, causing downtime.
 {{% /alert %}}
 
 In addition Operator version 2.25.0 will automatically assign a PodDisruptionBudget to environments with 1 or more replicas:
@@ -35,7 +35,7 @@ If you have manually created PodDisruptionBudgets for an app, delete it and inst
 
 The Operator automatically performs a Rolling update for any environment that meets the following condition:
 
-* The configuration update does not modify the app source code (MDA or container image).
+* The configuration update does not modify the app model (source code, MDA or container image).
 
 {{% alert color="warning" %}}
 Mendix Operator versions 2.20.0 to 2.23.1 had an experimental feature that also performed database schema upgrades with a Rolling strategy. This feature was removed in Operator 2.24.0, as it does not work well with the latest Mendix Runtime security features.
@@ -46,7 +46,7 @@ Mendix Operator versions 2.20.0 to 2.23.1 had an experimental feature that also 
 The Operator automatically performs a Rolling update for any environment that meets the following conditions:
 
 * The environment has two or more replicas.
-* The configuration update does not modify the app source code (MDA or container image).
+* The configuration update does not modify the app model (source code, MDA or container image).
 
 {{% alert color="warning" %}}
 Mendix Operator versions 2.20.0 to 2.23.1 had an experimental feature that also performed database schema upgrades with a Rolling strategy. This feature was removed in Operator 2.24.0, as it does not work well with the latest Mendix Runtime security features.
