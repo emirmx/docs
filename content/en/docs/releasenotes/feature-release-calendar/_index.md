@@ -123,9 +123,9 @@ General Availability means that a feature is available for all users. This type 
 
 | Capability or Feature | Expected Release |
 | --- | --- |
+| Private Mendix Platform: Compliance with NIST-800, FIPS, FEDRAMP and DoD IL 4/5/6 | Limited Availability: Mx 11.0 + Mx 10.24 |
 | Secret Manager support for AWS, Azure, and Hashicorp | General Availability: PMP 1.24.3 LTS (November 2025) |
 | Dynamic Role Management | General Availability: PMP 2.0 (December 2025) |
-| Private Mendix Platform: Compliance with NIST-800, FIPS, FEDRAMP and DoD IL 4/5/6 | Limited Availability: Mx 11.0 + Mx 10.24 |
 | Private Mendix Platform for Mx 11 | General Availability: Private Mendix Platform 2.4 (January 2026) |
 | Deployment Health Dashboard | General Availability: Private Mendix Platform 2.4 (January 2026) |
 | Software Composition Insights | General Availability: Private Mendix Platform 2.4 (January 2026) |
