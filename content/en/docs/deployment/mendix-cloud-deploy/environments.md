@@ -129,8 +129,9 @@ The **Create a Package** wizard walks you through creating deployment packages. 
 1. On the [Deployment Packages](#deployment-packages-tab) tab, click **Create a Package**. This launches the **Create Package** wizard.
 2. On the **Select Branch** tab, select the branch on which to base the build.
 3. On the **Select Revision** tab, select the branch revision on which to base the package.
-4. On the **Choose a Tag** tab, specify the version tag. This includes the major, minor, and patch version numbers.
-5. Click **Build this revision**.
+4. On the **Other Options** tab, add the version tag. This tag should include the major and minor version numbers, patch, and revision.
+5. Add a tag description.
+6. Click **Build this revision**.
 
 #### Uploading a Package {#upload-package}
 
