@@ -14,12 +14,12 @@ The [Snowflake REST SQL connector](https://marketplace.mendix.com/link/component
 
 The Snowflake REST SQL connector supports the following:
 
-1. **Authentication:**
+* Authentication:
 
     * Key-pair authentication (using PKCS #8 standard RSA keys)
     * OAuth authentication
 
-2. **Functionality:** Execute SQL statements on Snowflake via REST calls from your Mendix application. These statements allow you to perform the following tasks:
+* Functionality: Execute SQL statements on Snowflake via REST calls from your Mendix application. These statements allow you to perform the following tasks:
 
     * Read data from Snowflake.
     * Write data to Snowflake.
