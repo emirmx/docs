@@ -75,7 +75,7 @@ Open your app in Studio Pro 11 and allow Studio Pro to update and convert your a
 
 Upgrading from Atlas 3 to Atlas 4 in Mendix 11 is an optional process, with the main structural change being the transition from SASS to CSS variables. The new system is backwards compatible with apps using SASS variables, and includes a mapping mechanism to ensure old SASS variables are mapped to CSS variable usages. 
 
-For a comprehensive, step-by-step guide on migrating your custom theme and ensuring module compatibility, please refer to our detailed documentation: [Migrating Your Mendix App to Atlas UI 4](/refguide/front-end/atlas4-migration)
+For a comprehensive, step-by-step guide on migrating your custom theme and ensuring module compatibility, please refer to our detailed documentation: [Migrating Your Mendix App to Atlas UI 4](/refguide/frontend/atlas4-migration)
 
 If you wish to opt-in, start by downloading the Atlas 4 module from the Marketplace into your app.
 
@@ -115,7 +115,7 @@ Below is an example of a check that might lead to unexpected behavior.
 $NewEntity/Attribute = ''
 ```
 
-If you used this expression to check if an attribute of an object was not filled in, we recommend using the [trim](https://docs.mendix.com/refguide/string-function-calls/#trim) function. Trim will automatically convert `empty` to `''` and remove all surrounding whitespace in a string.
+If you used this expression to check if an attribute of an object was not filled in, we recommend using the [trim](/refguide/string-function-calls/#trim) function. Trim will automatically convert `empty` to `''` and remove all surrounding whitespace in a string.
 
 ```
 trim($NewEntity/Attribute) = ''

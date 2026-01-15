@@ -349,7 +349,7 @@ After making these changes, do the following:
 Use your browser's developer tools to inspect CSS variables. In the **Elements** panel, you can see computed CSS variable values and even modify them temporarily to test different values.
 {{% /alert %}}
 
-## Part 3: Ensuring Module Compatibility 
+## Part 3: Ensuring Module Compatibility {#ensuring-module-compatibility}
 
 Custom modules, or even Marketplace modules, may contain SASS variables in their styling. You must ensure these modules are Atlas 4 compatible to achieve a consistent theme.
 
@@ -500,7 +500,7 @@ This section addresses common problems you might encounter during the Atlas 4 mi
 **Possible Causes & Solutions:**
 
 * Module has not been migrated:
-   * Solution: Check if the module's SCSS files still use SASS variables. Follow the steps in [Part 3](#part-3-ensuring-module-compatibility-with-atlas-4) to update the module.
+   * Solution: Check if the module's SCSS files still use SASS variables. Follow the steps in [Part 3](#ensuring-module-compatibility) to update the module.
 
 * Marketplace module not Atlas 4 compatible:
    * Solution: Check for updates to the module in the Mendix Marketplace. If unavailable, consider overriding styles in your main theme or contacting the module maintainer.
@@ -540,7 +540,7 @@ Always review regex replacements carefully before applying them. Complex SASS us
 
 ## Read More
 
-* [Atlas UI Design](/how-to/front-end/atlas-ui/)
+* [Atlas UI Kit for Figma](/howto/front-end/figma-ui-kit/)
 * [Customize Styling](/howto/front-end/customize-styling-new/)
 * [Design Properties](/apidocs-mxsdk/apidocs/design-properties/)
 * [Atlas UI Reference App](https://atlasdesignsystem.mendixcloud.com/)
