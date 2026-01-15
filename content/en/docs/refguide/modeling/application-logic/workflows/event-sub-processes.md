@@ -87,17 +87,6 @@ To start an Event Sub-process create a **Notify Workflow** microflow action and 
 
 {{< figure src="/attachments/refguide/modeling/application-logic/workflows/event-sub-processes/notify-workflow.png" alt="Notify workflow example" width="400" >}}
 
-### Execution Behavior via Notify Action
-
-This section describes how the workflow engine responds when an Event Sub-process is triggered using the **Notify Workflow** microflow action. Because the engine supports only one active instance of a sub-process at a time, the current state of the workflow determines whether the trigger succeeds or is ignored.
-
-| Workflow/Sub-process State              | Action Result | System Behavior                                                                                                                     |
-|-----------------------------------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| Aborted or Completed                    | Error         | The action fails. An error is logged indicating the workflow is no longer in an active state and cannot be notified.                |
-| Paused, Failed, or Incompatible         | True          | The notification is accepted. Execution of the Event Sub-process will begin automatically once the workflow is resumed or resolved. |
-| Inactive (Completed or never triggered) | True          | The Event Sub-process is triggered immediately and its execution path begins.                                                       |
-| In Progress (Already triggered)         | False         | The notification is rejected because a sub-process instance is already running. No new instance is created.                         |
-
 ### Operational Lifecycle Management
 
 An Event Sub-process is bound to the lifecycle of its parent workflow instance. Administrative actions and system-level events (such as errors or version conflicts) directly impact the execution state of active sub-processes.
