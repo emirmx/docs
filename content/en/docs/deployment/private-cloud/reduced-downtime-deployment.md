@@ -10,7 +10,7 @@ Kubernetes allows you to update an app without downtime by [performing a rolling
 
 The Mendix on Kubernetes Operator uses a [recreate](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#recreate-deployment) strategy by default. That is, the current version (configuration) of an app stops, and then the new version starts.
 
-Starting from version 2.25.0, the Operator will automatically perform a Rolling update for any environment that meets the [prerequisite](#prerequisites-2.25.0):
+Starting from version 2.25.0, the Operator will automatically perform a Rolling update for any environment that meets the [prerequisites](#prerequisites-2.25.0):
 
 * The configuration update does not modify the app model (source code, MDA or container image).
 
@@ -20,8 +20,8 @@ Versions 2.20.0 to 2.23.1 of the Operator had an option to manually enable a **P
 
 In addition Operator version 2.25.0 will automatically assign a PodDisruptionBudget to environments with 1 or more replicas:
 
-* Any environment with two or more replicas will be configured with a PodDisruptionBudget that ensures that no more than 1 replicas are stopped by Kubernetes when scaling down a cluster node or preparing an OS upgrade.
-* Any environment with one replica will be configured with a PodDisruptionBudget that ensures that at least 1 replicas is available when scaling down a cluster node or preparing an OS upgrade. This might cause some Kubernetes updates to be postponed, to prevent app downtime.
+* Any environment with two or more replicas will be configured with a PodDisruptionBudget that ensures that no more than 1 replica is stopped by Kubernetes when scaling down a cluster node or preparing an OS upgrade.
+* Any environment with one replica will be configured with a PodDisruptionBudget that ensures that at least 1 replica is available when scaling down a cluster node or preparing an OS upgrade. This might cause some Kubernetes updates to be postponed, to prevent app downtime.
 
 {{% alert color="info" %}}
 Previous versions of the Operator did not manage PodDisruptionBudgets. Instead, any manually created PodDisruptionBudget would apply to a Mendix app.
