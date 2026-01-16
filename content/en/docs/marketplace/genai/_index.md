@@ -71,9 +71,9 @@ Mendix connectors offer direct support for the following models:
 
 | Architecture | Models | Category | Input | Output | Additional capabilities |
 | -------------- | --------------------- | --------------------- | ------------------- | ----------- | ----------------------- |
-| Mendix Cloud GenAI | Anthropic Claude 3.5 Sonnet, Anthropic Claude 3.7 Sonnet, Anthropic Claude 4.0 Sonnet | Chat Completions | text, image, document | text | Function calling |
-| | Cohere Embed English, Cohere Embed Multilingual | Embeddings | text | embeddings | |
-| Azure / OpenAI | gpt-4, gpt-4-turbo, gpt-4o, gpt-4o mini, gpt-4.1, gpt-4.1-mini, gpt-4.1-nano, gpt-5.0, gpt-5.0-mini, gpt-5.0-nano | Chat completions | text, image, document (OpenAI only) | text | Function calling |
+| Mendix Cloud GenAI | Anthropic Claude 3.5 Sonnet, Anthropic Claude 3.7 Sonnet, Anthropic Claude 4.0 Sonnet, Anthropic Claude 4.5 Sonnet | Chat Completions | text, image, document | text | Function calling |
+| | Cohere Embed v3 English and multilangual, Cohere Embed v4 | Embeddings | text | embeddings | |
+| Azure / OpenAI | gpt-4, gpt-4-turbo, gpt-4o, gpt-4o mini, gpt-4.1, gpt-4.1-mini, gpt-4.1-nano, gpt-5.0, gpt-5.0-mini, gpt-5.0-nano,  gpt-5.1,  gpt-5.2, o1, o1-mini, o3, o3-mini, o4-mini | Chat completions | text, image, document (OpenAI only) | text | Function calling |
 | | DALL·E 2, DALL·E 3, gpt-image-1 | Image generation | text | image | |
 | | text-embedding-ada-002, text-embedding-3-small, text-embedding-3-large | Embeddings | text | embeddings | |
 | Mistral | Mistral Large 3, Mistral Medium 3.1, Mistral Small 3.2, Ministral 3 (3B, 8B, 14B), Magistral (Small, Medium) | Chat Completions | text, image | text | Function calling |
@@ -85,8 +85,7 @@ Mendix connectors offer direct support for the following models:
 | | Amazon Nova Pro, Amazon Nova Lite | Chat Completions | text, image, document | text | Function calling |
 | | Amazon Titan Image Generator G1 | Image generation | text | image | |
 | | Amazon Titan Embeddings Text v2 | Embeddings | text | embeddings | |
-| | Anthropic Claude 2.0, Anthropic Claude 2.1 | Chat Completions | text, document | text | |
-| | Anthropic Claude 3 Sonnet, Anthropic Claude 3.5 Sonnet, Anthropic Claude 3.5 Sonnet v2, Anthropic Claude 3 Haiku, Anthropic Claude 3 Opus, Anthropic Claude 3.5 Haiku, Anthropic Claude 3.7 Sonnet, Anthropic Claude 4 Sonnet | Chat Completions | text, image, document | text | Function calling |
+| | Anthropic Claude 3 Sonnet, Anthropic Claude 3.5 Sonnet, Anthropic Claude 3.5 Sonnet v2, Anthropic Claude 3 Haiku, Anthropic Claude 3 Opus, Anthropic Claude 3.5 Haiku, Anthropic Claude 3.7 Sonnet, Anthropic Claude 4.5 Sonnet, Anthropic Claude 4.5 Haiku, Anthropic Claude 4.5 Opus | Chat Completions | text, image, document | text | Function calling |
 | | Cohere Command | Chat Completions | text, document | text | |
 | | Cohere Command Light | Chat Completions | text | text | |
 | | Cohere Command R, Cohere Command R+ | Chat Completions | text, document | text | Function calling |
