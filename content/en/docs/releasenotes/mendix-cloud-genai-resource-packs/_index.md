@@ -73,4 +73,5 @@ You can access them through the [Mendix Cloud GenAI Portal](https://genai.home.m
 
 #### Fixes
 
+* We fixed an issue where GenAI resource transactions were not displayed in the **Cloud Tokens** overview of the Control Center **Entitlements**.
 * We fixed an issue where the retrieval of users during new resource provisioning via self-service did not work as expected.
