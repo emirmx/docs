@@ -478,9 +478,9 @@ when you set **ClientAuthenticationMethod** as `private_key_jwt`, you do not nee
 
     Example: `OIDC.Default_SAM_TokenProcessing_CustomATP`
 
-* **CustomATPTokenType**: an optional deploy-time constant — when **CustomATP** is enabled, optionally, **CustomATPTokenType** can be set to `ID_TOKEN`. Default is `ACCESS_TOKEN`.
+* **CustomATPTokenType**: an optional deploy-time constant — when **CustomATP** is enabled, optionally, **CustomATPTokenType** can be set to `ID-TOKEN`. Default is `ACCESS-TOKEN`.
 
-    Example: `ID_TOKEN`
+    Example: `ID-TOKEN`
     
 * **CustomCallbackURL** – the custom callback URL
 
@@ -874,7 +874,7 @@ This section is only relevant if you are a Mendix partner and you want to integr
 {{% /alert %}}
 
 {{% alert color="info" %}}
-From version 4.2.1 of the OIDC SSO module, optionally, you can select `ID-TOKEN` as a **Custom ATP Token Type** for all custom access token parsing. Default is `ACCESS_TOKEN`.
+From version 4.x.x of the OIDC SSO module, optionally, you can select `ID-TOKEN` as a **Custom ATP Token Type** for all custom access token parsing. Default is `ACCESS-TOKEN`.
 {{% /alert %}}
 
 To parse of SAM access tokens you need to do the following when performing [Runtime Configuration of Your IdP at Your App](#runtime-idp-app):
