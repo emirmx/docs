@@ -64,3 +64,13 @@ You can access them through the [Mendix Cloud GenAI Portal](https://genai.home.m
 #### Fixes
 
 * We fixed an issue that prevented the consumption page from loading in some cases.
+
+### January 15, 2026
+
+#### New Features
+
+* It is now possible to upgrade the plan of a GenAI resource directly through self-service in the Control Center.
+
+#### Fixes
+
+* We fixed an issue where the retrieval of users during new resource provisioning via self-service did not work as expected.
