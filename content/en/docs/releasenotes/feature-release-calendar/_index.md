@@ -57,11 +57,11 @@ General Availability means that a feature is available for all users. This type 
 | Easy comparison of revisions (textual diffing) | Public Beta: Mx 11.9 |
 | Searchable commit history | Public Beta: Mx 11.4 <br/>General Availability: Mx 11.6 |
 | Merge Requests (aka Pull requests) | Public Beta: H2 2026 |
-| OpenTelemetry Tracing | General Availability: Mx 11.6 |
+| OpenTelemetry Tracing | General Availability: Mx 11.12 |
 | Atlas 4 UI Framework | General Availability: Mx 11.0 |
-| Progressive Web Apps Store Publishing | Public Beta: Mx 11.9 |
+| Progressive Web Apps Store Publishing | Public Beta: Mx 11.12 |
 | Access data in offline apps while syncing | General Availability: Mx 11.6 |
-| Mendix to Mendix UI Integration as web component | Public Beta: Mx 11.9 |
+| Embed a Mendix application into another Mendix application as a web component | Public Beta: 2027 |
 | Theme Customizer | General Availability: Mx 11.9 |
 | Menditect UI testing | Public Beta: Q2 2025<br/>General Availability: H2 2025 |
 | Bulk DML | General Availability: Mx 11.7 |
