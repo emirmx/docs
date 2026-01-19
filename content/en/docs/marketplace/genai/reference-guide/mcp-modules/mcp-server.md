@@ -62,10 +62,10 @@ The `User` returned in the microflow is used for all subsequent prompt and tool 
 
 #### Protocol Version
 
-When creating an MCP server, you need to specify a `ProtocolVersion`. On the official MCP documentation, you can review the differences between the protocol versions in the [changelog](https://modelcontextprotocol.io/specification/2025-03-26/changelog). The latest version of MCP Server module currently only supports `v2025-03-26` and the Streamable HTTP transport. MCP Clients, that need to connect to a Mendix MCP server, should support the same version. Note that Mendix follows the offered capabilities of the MCP Java SDK.
+When creating an MCP server, you need to specify a `ProtocolVersion`. On the official MCP documentation, you can review the differences between the protocol versions in the [changelog](https://modelcontextprotocol.io/specification/2025-03-26/changelog). The latest version of the MCP Server module currently only supports `v2025-03-26` and the Streamable HTTP transport. MCP Clients that need to connect to a Mendix MCP server should support the same version. Note that Mendix follows the offered capabilities of the MCP Java SDK.
 
 {{% alert color="info" %}}
-Since version 4.0.0 of the module the protocol version `v2024-11-05` was replaced by `v2025-03-26` which changed the transport from HTTP + SSE to Streamable HTTP because HTTP + SSE is officially deprecated. Most clients already support the new transport, such as the Mendix [MCP Client](/appstore/modules/genai/mcp-modules/mcp-client/) module.
+Since version 4.0.0 of the module, the protocol version `v2024-11-05` was replaced by `v2025-03-26`, which changed the transport from HTTP + SSE to Streamable HTTP because HTTP + SSE is officially deprecated. Most clients already support the new transport, such as the Mendix [MCP Client](/appstore/modules/genai/mcp-modules/mcp-client/) module.
 {{% /alert %}}
 
 ### Add Tools
@@ -74,7 +74,7 @@ After the [Create MCP Server](#create-server) action, you can add one or multipl
 
 The selected microflow must adhere to the following principles:
 
-* Input needs to be the same as described in the `Schema` attribute (only primitives and/or an object of type `MCPServer.Tool` are supported). If no Schema is passed in the `Add tool` action, it will be automatically created based on the microflow's input parameters, setting all of them as required.
+* Input needs to be the same as described in the `Schema` attribute (only primitives and/or an object of type `MCPServer.Tool` are supported). If no Schema is passed in the `Add tool` action, it will be automatically created based on the microflow's input parameters, by setting all of them as required.
 * The return value must be either of type `String` or `TextContent`. You can create a `TextContent` object within the microflow to return the relevant information to the model based on the outcome of the microflow.
 
 For an example, see the `Example Implementations` folder inside of the module.
