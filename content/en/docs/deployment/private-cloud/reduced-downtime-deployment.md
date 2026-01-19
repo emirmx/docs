@@ -18,15 +18,15 @@ Starting from version 2.25.0, the Operator will automatically perform a Rolling 
 Versions 2.20.0 to 2.23.1 of the Operator had an option to manually enable a **PreferRolling** strategy. That is, the Operator tried to perform a rolling update whenever possible. If the Operator detected that a database schema update was needed, it switched to a Recreate strategy to perform a full restart. If the new version of the app had model (source code) changes, deploying it required a schema update. In that case, the Mendix on Kubernetes Operator automatically stopped all replicas of the app, causing downtime.
 {{% /alert %}}
 
-In addition Operator version 2.25.0 will automatically assign a PodDisruptionBudget to environments with 1 or more replicas:
+In addition Operator version 2.25.0 will automatically assign a `PodDisruptionBudget` to environments with 1 or more replicas:
 
-* Any environment with two or more replicas will be configured with a PodDisruptionBudget that ensures that no more than 1 replica is stopped by Kubernetes when scaling down a cluster node or preparing an OS upgrade.
-* Any environment with one replica will be configured with a PodDisruptionBudget that ensures that at least 1 replica is available when scaling down a cluster node or preparing an OS upgrade. This might cause some Kubernetes updates to be postponed, to prevent app downtime.
+* Any environment with two or more replicas will be configured with a `PodDisruptionBudget` to ensure that no more than 1 replica is stopped by Kubernetes when scaling down a cluster node or preparing an OS upgrade.
+* Any environment with one replica will be configured with a `PodDisruptionBudget` to ensure that at least 1 replica is available when scaling down a cluster node or preparing an OS upgrade. This might cause some Kubernetes updates to be postponed, to prevent app downtime.
 
 {{% alert color="info" %}}
-Previous versions of the Operator did not manage PodDisruptionBudgets. Instead, any manually created PodDisruptionBudget would apply to a Mendix app.
+Previous versions of the Operator did not manage `PodDisruptionBudgets`. Instead, any manually created `PodDisruptionBudget` would apply to a Mendix app.
 
-If you have manually created PodDisruptionBudgets for an app, delete it and instead specify the PodDisruptionBudget parameters [in the MendixApp CR](#pod-disruption-budget-in-standalone).
+If you have manually created a `PodDisruptionBudget` for an app, delete it and instead specify the `PodDisruptionBudget` parameters [in the MendixApp CR](#pod-disruption-budget-in-standalone).
 {{% /alert %}}
 
 ## Prerequisites
