@@ -437,7 +437,7 @@ In this configuration, you have several options to customize the Identity Provid
 
 In this non-default configuration method, users have the flexibility to introduce your own constants by creating custom IdP configurations.
 
-##### Deploy-Time IdP Configuration for SSO and API Security
+##### Deploy-Time IdP Configuration for SSO and API Security {#deploy-time-idps-for-sso-and-api-security-configuration}
 
 {{% alert color="info" %}}
 **IdPs for SSO and API security** configuration supports both Authorization code and Client Credential grant type.
