@@ -151,32 +151,28 @@ You can specify the following options:
 Kubernetes doesn't allow specifying values for both `maxUnavailable` and `minAvailable`, and specifying values for both of them will [result in an error](https://kubernetes.io/docs/tasks/run-application/configure-pdb/#specifying-a-poddisruptionbudget).
 {{% /alert %}}
 
-## Allowing downtime with Operator 2.25.0 and higher versions {#allow-downtime-2.25}
+## Allowing Downtime with Operator 2.25.0 and Newer {#allow-downtime-2.25}
 
 By default, Mendix Operator 2.25.0 and higher versions will try to prevent downtime whenever possible, including apps with single replicas.
 
-In some situations (for example, Kubernetes cluster autoscaling or node upgrades), single-replica apps would be disrupted.
-The default Pod Disruption Budget prevents this from happening until a developer manually restarts an app (or scales it to two or more replicas).
+In some situations (for example, Kubernetes cluster autoscaling or node upgrades), single-replica apps would be disrupted. The default Pod Disruption Budget prevents this from happening until a developer manually restarts an app or scales it to two or more replicas.
 
-To prevent downtime when updating an app with one replica, the Operator needs to _temporarily_ run two or more replicas of an app.
-If the cluster doesn't have enough capacity to start an additional replica, this would block the app update (as this is the only way to process updates without downtime).
+To prevent downtime when updating an app with one replica, the Operator needs to temporarily run two or more replicas of an app. If the cluster does not have enough capacity to start an additional replica, this would block the app update (as this is the only way to process updates without downtime).
 
-If your app or cluster changes are blocked by this policy, you need to scale the app to 2 (or more) replicas, or manually allow the changes to be processed with downtime.
+If your app or cluster changes are blocked by this policy, you must scale the app to 2 (or more) replicas, or manually allow the changes to be processed with downtime. The easiest option to do this is to manually stop the app, and then start it again.
 
-The easiest option to do this is to manually stop the app, and then start it again.
+Alternatively, you can set custom **Reduced Downtime Options** in the Cloud Portal:
 
-Alternatively, you can set custom Reduced Downtime Options in the Cloud Portal:
-
-* In the **Deployment Strategy Options**, set
-  * **Max Surge** to **0%**
-  * **Max Unavailable** to **100%**
-* In the **Pod disruption budget options**, set
-  * **Min Available** to **0%**
-  * **Max Unavailable** to **100%**
+* In the **Deployment Strategy Options**, set the following values:
+    * **Max Surge** - set to **0%**
+    * **Max Unavailable** - set to **100%**
+* In the **Pod disruption budget options**, set the following values:
+    * **Min Available** - set to **0%**
+    * **Max Unavailable** - set to **100%**
 
 {{< figure src="/attachments/deployment/private-cloud/allow-single-replica-downtime.png" alt="Allowing downtime in single-replica apps" class="no-border" >}}
 
-For Standalone environments, this can be specified in the MendixApp CR YAML:
+For Standalone environments, specify the following in the MendixApp CR YAML:
 
 ```yaml
 apiVersion: privatecloud.mendix.com/v1alpha1
