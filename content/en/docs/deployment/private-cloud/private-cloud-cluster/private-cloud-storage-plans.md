@@ -930,18 +930,15 @@ Although we offer additional flexibility and provide other options, Mendix recom
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-In Studio Pro version 11.6, the AWS S3 library was updated from version 1 to version 2.
-This new AWS library version can no longer automatically detect an S3 bucket's region from its endpoint address, and needs the bucket endpoint to be specified manually.
+In Studio Pro version 11.6, the AWS S3 library was updated from version 1 to version 2. This new AWS library version can no longer automatically detect an S3 bucket's region from its endpoint address. You must specify the bucket endpoint manually.
 
 Mendix Operator 2.25 (or later versions) will automatically recognise an S3 bucket's region from its endpoint address:
-if the bucket endpoint has a `<subdomains>.<region>.amazonaws.com` format (or `<subdomains>.<region>.amazonaws.com.<suffix>` format for AWS China regions),
+
+* If the bucket endpoint has a `<subdomains>.<region>.amazonaws.com` format (or `<subdomains>.<region>.amazonaws.com.<suffix>` format for AWS China regions),
 the Operator will use the `<region>` part.
+* If the S3 bucket endpoint does not match this format, the Mendix Operator will use a default `us-east-1` region, as this works with most S3-compatible buckets like [Minio](#blob-minio) and [Google Cloud Storage](#blob-gcp-storage-bucket).
 
-If the S3 bucket endpoint doesn't match this format, the Mendix Operator will use a default `us-east-1` region, as this works with most S3-compatible buckets like [Minio](#blob-minio) and [Google Cloud Storage](#blob-gcp-storage-bucket).
-
-In some scenarios (legacy or custom S3 endpoints), this autodetection might not work correctly.
-In this case, you can manually specify the S3 bucket region by setting the [com.mendix.storage.s3.Region](/refguide/custom-settings/#commendixstorages3Region) Custom Runtime Setting.
-A manually specified `com.mendix.storage.s3.Region` will override the autodetected bucket region.
+In some scenarios (legacy or custom S3 endpoints), this autodetection might not work correctly. In this case, you can manually specify the S3 bucket region by setting the [com.mendix.storage.s3.Region](/refguide/custom-settings/#commendixstorages3Region) Custom Runtime Setting. A manually specified `com.mendix.storage.s3.Region` will override the autodetected bucket region.
 {{% /alert %}}.
 
 #### Create Account with Existing Policy {#s3-create-account-existing-policy}
