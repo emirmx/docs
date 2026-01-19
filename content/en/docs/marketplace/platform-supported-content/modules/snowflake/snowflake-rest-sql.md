@@ -218,14 +218,14 @@ This table maps Mendix attribute types to Snowflake data types, along with commo
 
 ## Proxy Usage
 
-Making your REST calls via a proxy is now supported by the Snowflake REST SQL Connector. To make it easy to do so we have introduced the **ProxySettings** entity. To use a proxy do the following: 
+Since version 3.1.0, the Snowflake REST SQL Connector supports using a proxy to make your REST calls. You can use the new `ProxySettings` entity to enable a proxy by performing the following steps: 
 
-1. Create a **ProxySettings** object
-2. Set the `Host` and `Port` attributes to the host of the proxy and the Port the proxy is listening on
-3. Optional: Set the `User` and `Password` to authenticate against your proxy
-4. Associate the **ProxySettings** to your **ConnectionDetails** object when using the **POST_v1_ExecuteStatement** operation or the **CortexConnection** when using the **CortexAnalyst** operation
+1. Create a **ProxySettings** object.
+2. Set the `Host` and `Port` attributes to the host of the proxy and the port on which the proxy is listening.
+3. Optional: Set the `User` and `Password` to authenticate against your proxy.
+4. Associate the **ProxySettings** to your **ConnectionDetails** object (when using the **POST_v1_ExecuteStatement** operation), or the **CortexConnection** object (when using the **CortexAnalyst** operation).
 
-Once configured, the connector automatically detects the **ProxySettings** object and routes REST requests through the specified proxy.
+Once configured, the connector automatically detects the `ProxySettings` object and routes REST requests through the specified proxy.
 
  {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/ProxyExample.png" >}}
 
