@@ -344,6 +344,8 @@ In this case, the OIDC client is the app you are making.
             * Key Pair Expiration Days: (default 90)
             * JWT (Signing Algorithm): (default RS256)
 
+            {{% alert color="info" %}}X. 509 Certificate supports only the RS256 Signing Algorithm. {{% /alert %}}
+
             {{% alert color="info" %}}If you regenerate the key pair for your existing configuration, make sure to download the updated certificate from the configuration edit page and upload it to the Azure portal to ensure successful authentication. {{% /alert %}}
 
     {{% alert color="info" %}}After a key renewal, some SSO requests may fail if your IdP does not immediately refresh its key cache. {{% /alert %}}
