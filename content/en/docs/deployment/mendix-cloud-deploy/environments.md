@@ -192,7 +192,7 @@ If you click **Cloud Settings** ({{< icon name="settings-slider-1" >}}) from any
 
 ### Custom Domains
 
-On the **Custom Domains** tab, you can manage your custom domain certificates at the application level. You can also see an overview of linked custom domains.
+On the **Custom Domains** tab, the Technical Contact can manage custom domain certificates either centrally or at the application level. They can also access an overview of all the linked custom domains.
 
 When you need your Mendix app to be accessible via your own URL (for example, `https://myapp.mycompany.com/`), you must provide a custom SSL/TLS certificate for your domain. This ensures a secure connection to your Mendix app. For more information, refer to [Custom Domains](/developerportal/deploy/custom-domains/).
 
