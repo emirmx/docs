@@ -129,8 +129,9 @@ The **Create a Package** wizard walks you through creating deployment packages. 
 1. On the [Deployment Packages](#deployment-packages-tab) tab, click **Create a Package**. This launches the **Create Package** wizard.
 2. On the **Select Branch** tab, select the branch on which to base the build.
 3. On the **Select Revision** tab, select the branch revision on which to base the package.
-4. On the **Choose a Tag** tab, specify the version tag. This includes the major, minor, and patch version numbers.
-5. Click **Build this revision**.
+4. On the **Other Options** tab, add the version tag. This tag should include the major and minor version numbers, patch, and revision.
+5. Add a tag description.
+6. Click **Build this revision**.
 
 #### Uploading a Package {#upload-package}
 
@@ -191,7 +192,7 @@ If you click **Cloud Settings** ({{< icon name="settings-slider-1" >}}) from any
 
 ### Custom Domains
 
-On the **Custom Domains** tab, you can manage your custom domain certificates at the application level. You can also see an overview of linked custom domains.
+On the **Custom Domains** tab, the Technical Contact can manage custom domain certificates either centrally or at the application level. They can also access an overview of all the linked custom domains.
 
 When you need your Mendix app to be accessible via your own URL (for example, `https://myapp.mycompany.com/`), you must provide a custom SSL/TLS certificate for your domain. This ensures a secure connection to your Mendix app. For more information, refer to [Custom Domains](/developerportal/deploy/custom-domains/).
 

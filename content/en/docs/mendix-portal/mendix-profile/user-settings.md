@@ -186,7 +186,7 @@ For more information, refer to the following:
 
 ### Personal Access Tokens {#pat}
 
-On the **Personal Access Tokens** section of the [Developer Settings](https://user-settings.mendix.com/link/developersettings) page, you can view, create, and manage your PATs.
+In the **Personal Access Tokens** section of the [Developer Settings](https://user-settings.mendix.com/link/developersettings) page, you can view, create, and manage your PATs.
 
 Some platform APIs use personal access tokens (PATs) rather than API keys. This section explains the concept of PATs, how you can obtain one, and how you can use this security token to give an application access to Mendix Platform services on your behalf.
 
@@ -273,7 +273,10 @@ To ensure robust security, Mendix recommends checking the policy your company ha
 
 ## Personal Data
 
-On the [Personal Data](https://user-settings.mendix.com/link/notifications) page, you can view and download your personal data. The Mendix Platform stores certain personal information about you. You can view this information on the page or download it by clicking  **Download Personal Data**.
+On the [Personal Data](https://user-settings.mendix.com/link/notifications) page, you can view and download your personal data.     
+The Mendix Platform stores certain personal information about you, which you can see on the page, or download by clicking  **Download Personal Data**. 
+
+The information on this page consists of the data you have entered on the [Profile](#profile) page, along with your **OpenID**. The **OpenID** is your unique user identification code, which you can copy and provide if needed in specific support scenarios.
 
 {{% alert color="info" %}}
 Mendix has been tracking these data changes since November 2018.

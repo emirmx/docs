@@ -255,7 +255,7 @@ To configure the EKS service account, perform the following steps:
     metadata:
         name: pmp-deployment
         annotations:
-            eks.amazonaws.com/role-arn: arn:aws:iam::<your-account-id>:role/pmp-secret-access
+            eks.amazonaws.com/role-arn: arn:aws:iam::<your-account-id>:role/PMP-SecretsManager-Role
     spec:
         template:
             spec:
