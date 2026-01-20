@@ -175,7 +175,7 @@ To add a parameter to the **Task name** or the **Task description**, do the foll
    {{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-elements/user-task/parameter-example.jpg" alt="Parameter Example" class="no-border" >}}
 
    {{% alert color="info" %}}
-   Make sure that the attribute you use in the expression is of the **String** type. If your attribute is a different type, you must convert it using a build-in function:
+   Make sure that the attribute you use in the expression is of the **String** type. If your attribute is of a different data type, you must convert it using a build-in function:
    
    * For **Date and time** attributes, use the `formatDateTime()` function to define the desired display format.
    * For all other types (such as **Integer**, **Decimal**, or **Boolean**), use the `toString()` function.
