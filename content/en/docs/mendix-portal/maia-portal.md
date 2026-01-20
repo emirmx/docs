@@ -65,36 +65,36 @@ Maia Chat only keeps track of a conversation history within a session on a page 
 
 Maia can normally provide a good answer to any question you pose. However, it may sometimes not give you the information you are looking for. You may get a better answer if you consider the following best practices.
 
-### Ask Questions in English
+### Asking Questions in English
 
 Maia is trained on data which is primarily in English. Although Maia can cope with questions in other languages, the imprecision of (particularly machine-) translation means there is more chance of Maia misunderstanding or giving a less precise answer.
 
-### Ask Direct Questions
+### Asking Direct Questions
 
 Maia is trained on the Mendix documentation and the Mendix Community. The documentation is addressed to you, the reader, and questions to the Community are usually asked directly by the person who is asking. Maia therefore gives better answers if you put yourself in the position of asking the question.
 
 So, for example, ask "How can I do something" rather than "How can my colleague do something" or "How does Mendix do something".
 
-### Give Relevant Information
+### Giving Relevant Information
 
 Maia needs to know as much as possible about what you are doing. However, it can be sidetracked if you include information which is not directly relevant to what you are asking. So ensure that you do not include irrelevant information.
 
 However, do include enough information for context. For example, if you ask "How do I sign in to Mendix" it will not necessarily be clear whether you are talking about the Mendix Portal, Studio Pro, or perhaps even your deployed Mendix App, so give Maia the complete context to ensure the answer is relevant. 
 
-### Use Mendix Terminology
+### Using Mendix Terminology
 
 Maia will provide better answers if you use Mendix terminology which it can recognize from the documentation and Community. If you use different terms, Maia may struggle to find the right answer, and is more likely to get confused about the subject of your question.
 
 For example, use "Studio Pro" rather than "the IDE" when talking about working on a Mendix model. If you have a question about a Marketplace module, make sure you give the exact name of the module.
 
-### Use Follow Up Questions
+### Using Follow Up Questions
 
 If Maia does not give a response which clearly answers your question, try following up to ensure that it has understood the context and terminology you are using.
 
-### Separate Different Questions
+### Separating Different Questions
 
 If you are asking a second, unrelated, question, start a new interaction with Maia. If you continue in the same chat with Maia, it will remember what you asked before and the answers it gave. This may lead to it using the information from the previous interactions as input to your new question. See [Asking Follow-Up Questions](#follow-up) to see when Maia keeps track of conversation history.
 
-### Look at the Source Material
+### Looking at the Source Material
 
 Maia will give references to the source of the information. The reference titles can indicate whether the information is relevant to your case, and following the links may give additional help.
