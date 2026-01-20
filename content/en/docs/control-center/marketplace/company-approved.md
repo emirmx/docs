@@ -26,7 +26,7 @@ The **Company-Approved** page contains the following tabs:
 
 {{< figure src="/attachments/control-center/marketplace/company-approved/company-approved.png" max-width=100% alt=''displaying-company-approved-mp-content'' >}}
 
-The **Components** tab lists all Marketplace content, be it public or private. It includes information about whether a component carries the company-approved badge, and if so, it shows the source of the badge. These are the details displayed in the list:
+The **Components** tab lists all company-approved Marketplace content, be it public or private. These are the details displayed in the list:
 
 * **Component Name** – The name of the component.
 * **Support Type** – The support type of the component.
@@ -43,14 +43,14 @@ The **Components** tab lists all Marketplace content, be it public or private. I
 {{< figure src="/attachments/control-center/marketplace/company-approved/manage-company-approved.png" max-width=70% alt=''displaying-company-approved-mp-content'' >}}
 
 For components that are not company-approved based on your [curation settings](#curation-settings), you can manually add the company-approved badge.    
-The **Manage Company-Approved Badge** page allows you to manually add and remove the company-approved badge for your company's components. To access it, click **Add Company-Approved Badge** in the top right of the component list.
+The **Manage Company-Approved Badge** page allows you to manually add and remove the company-approved badge for your company's components. To access it, click **Manage Company-Approved Badge** in the top right of the component list.
 
 The **Manage Company-Approved Badge** page includes the same fields as the component list, with the additional **Company Approval** field, which shows whether the component has been marked as company-approved or not. 
 
 You can click the contextual actions menu next to each component to change its company approval status.     
 Additionally, you can select multiple components to change their company approval status simultaneously.
 
-{{% alert color="info" %}}If you manually add a company-approved badge to a Marketplace component, this Marketplace component will always keep the badge, even if the curation settings get changed later. However, if you manually remove a company-approved badge from a Marketplace component, then the badge will automatically appear again if the curation settings get changed later, and the Marketplace component meets the new requirements. {{% /alert %}}
+{{% alert color="info" %}}If you manually add a company-approved badge to a Marketplace component, this Marketplace component will always keep the badge, even if the curation settings get changed later. The same thing is true if you manually remove a company-approved badge from a Marketplace component: it will not be added back even if the curation settings get changed later, and the Marketplace component meets the new requirements. {{% /alert %}}
 
 ## Settings {#curation-settings}
 
