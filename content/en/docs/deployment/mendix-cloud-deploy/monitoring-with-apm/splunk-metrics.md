@@ -9,7 +9,7 @@ description: "How to configure Mendix Cloud to send your runtime application log
 
 ## Introduction
 
-[Splunk Cloud Platform](https://www.splunk.com/en_us/products/splunk-cloud-platform.html) is a monitoring and analysis tool for cloud applications. This document explains how to configure your Mendix Cloud app to send the runtime application logs and metrics to Splunk Cloud Platform to provide additional search, analysis, and visualization of your runtime application logs and metrics.
+[Splunk Cloud Platform](https://www.splunk.com/en_us/products/splunk-cloud-platform.html) is a monitoring and analysis tool for cloud applications. This document explains how to configure your Mendix Cloud application to send runtime application logs and metrics to Splunk Cloud Platform to provide additional search, analysis, and visualization of your runtime application logs and metrics.
 
 Mendix provides integration with Splunk Cloud Platform; it does not currently integrate with other Splunk monitoring products.
 
@@ -32,9 +32,9 @@ To use the Splunk Cloud Platform and send data to Splunk Cloud Platform from you
 To send your runtime information to Splunk Cloud Platform, you need to set it up using environment variables in the Mendix Portal.
 
 1. From [Apps](https://sprintr.home.mendix.com), go to the **Environments** page of your app.
-1. Click **Details** on the environment you wish to monitor with Splunk Cloud Platform.
-1. Switch to the [**Runtime** tab](/developerportal/deploy/environments-details/#runtime-tab).
-1. Add the following **Custom Environment Variables**.
+2. Click **Details** on the environment you wish to monitor with Splunk Cloud Platform.
+3. Switch to the [**Runtime** tab](/developerportal/deploy/environments-details/#runtime-tab).
+4. Add the following **Custom Environment Variables**.
 
     | Variable                       | Description                                                                                                                                                                                                                                                                                                                            | Default |
     |--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
@@ -46,11 +46,11 @@ To send your runtime information to Splunk Cloud Platform, you need to set it up
     | `FLUENTBIT_LOGS_MEM_BUF_LIMIT` | Defines the maximum total memory an input plugin can use for buffering log records before they are processed or flushed to storage/output. Limits memory which can be consumed by the Fluentbit agent                                                                                                                                  | `50MB`  |
     | `SPLUNK_ENABLE_METRICS`        | Sends application metrics to Splunk when it's set to `true`. Disabled by default.                                                                                                                                                                                                                                                       | `false` |
 
-1. Return to the **Environments** page for your app and **Deploy** or **Transport** your app into the selected environment.
+5. Return to the **Environments** page for your app and **Deploy** or **Transport** your app into the selected environment.
 
     {{% alert color="warning" %}}The first time you set up the Splunk Cloud Platform integration, you must redeploy your app and then restart it. Just restarting the app is not sufficient because additional dependencies need to be included.{{% /alert %}}
 
-### Metadata for logs
+### Metadata for Logs
 
 In addition to the runtime application logs, the following JSON-formatted metadata is automatically sent to the Splunk Cloud Platform:
 
@@ -64,7 +64,7 @@ In addition to the runtime application logs, the following JSON-formatted metada
 
 You can filter the data by these fields.
 
-### Metadata for metrics
+### Metadata for Metrics
 
 In addition to the runtime application logs, the following JSON-formatted metadata is automatically sent to the Splunk Cloud Platform:
 
@@ -73,7 +73,7 @@ In addition to the runtime application logs, the following JSON-formatted metada
 
 You can filter the data by these fields.
 
-### Custom tags
+### Custom Tags
 
 You can also set up custom tags in the format `key:value`. Mendix recommends adding the following custom tags:
 
