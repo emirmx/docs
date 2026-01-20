@@ -12,6 +12,15 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2026
 
+### January 22, 2026
+
+#### Portal Improvements
+
+* We have fixed missing dropdown option for setting Studio pro default for new project apps.
+* Added improved tooltip for namespace selection in new environment creation flow.
+* Fixed selection issue while slecting processing state environment in backup page for MxOnAzure environments.
+* We fixed the namespace configuration issues which are created using API in global operator mode. 
+
 ### January 8, 2026
 
 #### Portal Improvements

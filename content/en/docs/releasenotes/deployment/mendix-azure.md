@@ -10,6 +10,12 @@ These release notes cover changes to deployment to [Mendix on Azure](/developerp
 
 For information on the current status of Mendix deployment, see [Mendix Status](https://status.mendix.com/).
 
+### Release date: January 22, 2026
+
+* We have fixed Custom CA certificates adding issue while new cluster initialisation.
+* We have fixed Custom CA certificates removal issue after its added in new and existing clusters.
+* Improved validation error message when PostgresSQL not available in preflight checks.
+
 ### Release date: January 8, 2026
 
 * We have added an option to upload and enable custom CA certificates in the Mendix on Azure portal.
