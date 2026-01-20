@@ -182,6 +182,7 @@ When you push a model change to the [Git Team Server](/developerportal/repositor
       "id": "4b76061182bf183281b5107cd753c6071ed00040",
       "mendixVersion": "9.20.2.1234",
       "message": "Commit the changes",
+      "userId": "b1234df1-1234-1234-1234-12aa345c12e1",
       "relatedStories": [
         {
           "id": "MS-1234"
