@@ -12,7 +12,7 @@ aliases:
 
 The [Mendix Community](https://community.mendix.com/) is where Mendix community members come together to help each other with questions and answers, exchange information, and propose ideas for improving the Mendix Platform.
 
-The Mendix Community is closely integrated with the [Mendix Profile](/mendix-profile/). That way, Mendix community members can see all the interesting and useful information about who is participating in the Mendix Community. If someone clicks your name anywhere in the Mendix Community, your profile opens, so make sure to [make your Mendix Profile public](/mendix-profile/user-settings/#profile).
+The Mendix Community is closely integrated with the [Mendix Profile](/mendix-profile/). That way, Mendix community members can see all the interesting and useful information about who is participating in the Mendix Community. If someone clicks your name anywhere in the Mendix Community, your profile opens, so make sure to [make your Mendix Profile public](/portal/user-settings/#profile).
 
 Click **Create a Post** to ask a question, start an exchange with the community, or share an idea.
 
