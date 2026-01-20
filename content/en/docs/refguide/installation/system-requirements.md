@@ -52,7 +52,7 @@ The following frameworks are required. They will be installed automatically by t
 
 When you are running Studio Pro on a Parallels virtual machine on an ARM64 device (for example, an M1 Mac), you need the following dependencies in addition to the x64 version listed above:
 
-* .NET Desktop Runtime (arm64)
+* .NET Desktop Runtime (ARM64)
 
     | Studio Pro 11.0.0 - 11.6.2 | Studio Pro 11.6.3 and above |
     | --- | --- |
