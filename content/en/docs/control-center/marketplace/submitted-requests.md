@@ -26,6 +26,8 @@ The **Submitted Requests** page contains the following tabs:
 
 ## Pending Approvals {#pending-approvals}
 
+{{< figure src="/attachments/control-center/marketplace/submitted-requests/submitted-requests-pending-approvals.png" max-width=100% alt=''displaying-company-approved-mp-content'' >}}
+
 On the **Pending Approvals** tab, you can manage all pending requests.
 
 The **Pending Approvals** list shows all the submission requests that need to be approved or rejected, with the following details:
@@ -44,7 +46,7 @@ If you click the component name of a request in the **Pending Approvals** list, 
 At the top of the page, you can find following buttons:
 
 * **Approve** – Click this button to approve the request. After you approve the request, the submitter receives a notification, and the component is published on your company's Marketplace.    
-    From the approval confirmation window, you can add the company-approved label to the approved component.
+    From the approval confirmation window, you can add the company-approved badge to the approved component.
 * **Decline** – Click this button to reject the request. You can also add a reason. After you decline the request, the submitter receives a notification.
 * **Download** – Click this button to download the *.mpk* file of the component.
 
@@ -61,6 +63,8 @@ The request details page also includes the following tabs:
 * **Capabilities** – This tab shows additional information about content types such as **Solution** and **Industry Template**. 
 
 ## Approval Settings {#approval-settings}
+
+{{< figure src="/attachments/control-center/marketplace/submitted-requests/submitted-requests-approval-settings.png" max-width=50% alt=''displaying-company-approved-mp-content'' >}}
 
 The **Approval Settings** tab allows you to configure settings for the following governance capabilities:
 
@@ -85,6 +89,8 @@ The **Approval Settings** tab allows you to configure settings for the following
   {{% alert color="info" %}}This setting only affects your notifications, not the notifications of other Mendix Admins in your organization.{{% /alert %}}
 
 ## Approval History {#approval-history}
+
+{{< figure src="/attachments/control-center/marketplace/submitted-requests/submitted-requests-approval-history.png" max-width=100% alt=''displaying-company-approved-mp-content'' >}}
 
 The **Approval History** tab lists all the requests that were approved or declined in the history.
 
