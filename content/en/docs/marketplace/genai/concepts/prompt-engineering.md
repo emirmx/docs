@@ -256,5 +256,5 @@ Check out the [GenAI](https://marketplace.mendix.com/link/component/220475) show
 
 * [OpenAI](https://platform.openai.com/docs/guides/prompt-engineering)
     * [Examples](https://platform.openai.com/docs/examples)
-* [Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/prompt-engineering)
+* [Microsoft Foundry](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/prompt-engineering)
 * [Prompt Engineering Guide](https://www.promptingguide.ai/)

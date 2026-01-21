@@ -21,7 +21,7 @@ OpenAI provides market-leading LLM capabilities with GPT-4:
 * Creativity – Generate, edit, and iterate with end-users on creative and technical writing tasks, such as composing songs, writing screenplays, or learning an end-user’s writing style.
 * Longer context – GPT-4 can handle over 25,000 words of text, allowing for use cases like long-form content creation, extended conversations, and document search and analysis. 
 
-Mendix provides support for [OpenAI](https://platform.openai.com/) and [Microsoft Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-ai-foundry) (formerly known as Azure OpenAI or Cognitive Services). Microsoft Foundry is Microsoft's unified AI platform that provides access to OpenAI models.
+Mendix provides support for [OpenAI](https://platform.openai.com/) and [Microsoft Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-ai-foundry) (formerly known as Azure OpenAI or Cognitive Services). Microsoft Foundry is Microsoft's unified AI platform that streamlines the creation and management of AI agents and models, including the OpenAI models.
 
 With the current version, Mendix supports the Chat Completions API for [text generation](https://platform.openai.com/docs/guides/text-generation), the Image Generations API for [images](https://platform.openai.com/docs/guides/images), the Embeddings API for [vector embeddings](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings), and indexes via [Azure AI Search](https://learn.microsoft.com/en-us/azure/search/) for knowledge base retrieval.
 
@@ -60,7 +60,7 @@ After you install the OpenAI Connector, you can find it in the **App Explorer**,
 
 1. Add the module role **OpenAIConnector.Administrator** to your Administrator user role in the security settings of your app. 
 2. Add the **Configuration_Overview** page (**USE_ME > Configuration**) to your navigation, or add the **Snippet_Configurations** to a page that is already part of your navigation. 
-3. Continue setting up your OpenAI configuration at runtime. Follow the instructions in either [OpenAI Configuration](#openai-configuration) or [Azure OpenAI Configuration](#azure-openai-configuration), depending on which platform you are using.
+3. Continue setting up your OpenAI configuration at runtime. Follow the instructions in either [OpenAI Configuration](#openai-configuration) or [Microsoft Foundry Configuration](#azure-openai-configuration), depending on which platform you are using.
 4. Configure the models you need to use for your use case.
 
 #### OpenAI Configuration {#openai-configuration} 
@@ -81,7 +81,7 @@ The following inputs are required for the Microsoft Foundry configuration:
 | Parameter      | Value                                                        |
 | -------------- | ------------------------------------------------------------ |
 | Display name | This is the name identifier of a configuration (for example, *MyConfiguration*). |
-| API type | Select `AzureOpenAI` for both Azure OpenAI and Microsoft Foundry deployments. |
+| API type | Select `AzureOpenAI` for Microsoft Foundry deployments. |
 | Endpoint | This is the API endpoint (for example, `https://your-resource-name.openai.azure.com/openai/deployments/`).<br />For details on how to obtain `your-resource-name`, see the [Obtaining Resource Name](#azure-resource-name) section below. |
 | Azure key type | This is the type of token that is entered in the API key field. For Azure OpenAI, two types of keys are currently supported: Microsoft Entra token and API key. <br />For details on how to generate a Microsoft Entra access token, see [How to Configure Azure OpenAI Service with Managed Identities](https://learn.microsoft.com/en-gb/azure/ai-services/openai/how-to/managed-identity). Alternatively, if your organization allows it, you could use the Azure `api-key` authentication mechanism. For details on how to obtain an API key, see the [Obtaining Azure OpenAI API keys](#azure-api-keys) section below. For more information, see the [Technical Reference](#technical-reference) section. |
 | Token / API key | This is the access token to authorize your API call. |
@@ -90,7 +90,7 @@ The following inputs are required for the Microsoft Foundry configuration:
 
 1. Go to the [Microsoft Foundry portal](https://ai.azure.com/) and sign in.
 2. Select the right resource in the upper right corner.
-3. The home page should show `Resource configuration` where you can find the `Azure OpenAI endpoint`
+3. The home page should show `Resource configuration` where you can find the `Microsoft Foundry endpoint`
 4. Use the copy icon ({{% icon name="copy" %}}) and use it as your resource name in the endpoint URL.
 
 ##### Obtaining API Keys {#azure-api-keys}
@@ -194,10 +194,10 @@ Use the two OpenAI-specific microflow actions from the toolbox [Files: Initializ
 {{% alert color="info" %}}
 OpenAI and Microsoft Foundry do not necessarily provide feature parity across all models when it comes to combining functionalities. In other words, Microsoft Foundry does not support the use of JSON mode and function calling in combination with image (vision) input for certain models, so make sure to check the [Azure Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models).
 
-When you use Azure OpenAI, it is recommended to set the optional `MaxTokens` input parameter; otherwise, the return output may be cut off.
+When you use Azure OpenAI, it is recommended to set the optional `MaxTokens` input parameter; otherwise, the response may be cut off.
 {{% /alert %}}
 
-For more information on vision, see [OpenAI](https://platform.openai.com/docs/guides/vision) and [Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/gpt-with-vision) documentation.
+For more information on vision, see [OpenAI](https://platform.openai.com/docs/guides/vision) and [Microsoft Foundry](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/gpt-with-vision) documentation.
 
 #### Document Chat {#chatcompletions-document}
 
@@ -325,7 +325,7 @@ Microsoft Foundry does not support the use of JSON mode and function calling in 
 
 ### Chat Completions with Vision Response is Cut Off (Microsoft Foundry)
 
-When you use Microsoft Foundry, it is recommended to set the optional `MaxTokens` input parameter; otherwise, the response may be cut off. For more details, see the [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/gpt-with-vision?tabs=rest%2Csystem-assigned%2Cresource#call-the-chat-completion-apis).
+When you use Microsoft Foundry, it is recommended to set the optional `MaxTokens` input parameter; otherwise, the response may be cut off. For more details, see the [Microsoft Foundry Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/gpt-with-vision?tabs=rest%2Csystem-assigned%2Cresource#call-the-chat-completion-apis).
 
 ### Attribute or Reference Required Error Message After Upgrade 
 
