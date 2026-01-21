@@ -79,5 +79,5 @@ For technical support or questions, contact partnerfinder@mendix.com.
 
 ## Read More
 
-* [Mendix Profile](/mendix-profile/)
+* [Mendix Profile](/portal/mendix-profile/)
 * [Mendix Community](/community-tools/mendix-community/)

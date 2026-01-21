@@ -10,7 +10,7 @@ aliases:
 
 ## Introduction {#settings}
 
-On the [User Settings](https://user-settings.mendix.com/link/profile) page, you can edit your [Mendix profile](/mendix-profile/).
+On the [User Settings](https://user-settings.mendix.com/link/profile) page, you can edit your [Mendix profile](/portal/mendix-profile/).
 
 ## Profile {#profile}
 
