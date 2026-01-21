@@ -20,7 +20,7 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 * We have fixed an issue that prevented selecting environments in a processing state on the **Backups** page for Mendix on Azure environments.
 * We have fixed an issue where the full list of managed namespaces was not being retrieved when using the Global Operator through APIs (Ticket 267150)
 * We have improved the tooltip message for the namespace selection dropdown during environment creation. This change is intended to reduce confusion and explain the purpose of this selection.
-* We have added the activity logs when reduced downtime options are edited in Cluster overview page.
+* Editing reduced downtime options on the **Cluster Overview** page is now recorded in the activity logs.
 
 ### January 19, 2026
 
