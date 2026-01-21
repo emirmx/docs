@@ -119,19 +119,17 @@ See [CloudEvents](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#requir
 
 For HTTP Bridges, specific headers are required for authentication.
 
-**Required Header:**
+##### Required Header
 
-* **Authorization** – Must be set as a Bearer token using the Personal Access Token (PAT) generated during bridge configuration.
-  
-  Example: `Authorization: Bearer <your-personal-access-token>`
+* **Authorization** – must be set as a Bearer token using the Personal Access Token (PAT) generated during bridge configuration; for example: `Authorization: Bearer <your-personal-access-token>`
   
   For details on how to obtain your Bearer token, see [Using the HTTP Bridge](#using-the-http-bridge).
 
-**Optional Headers:**
+##### Optional Headers
 
 You can include additional HTTP headers in your request to provide event metadata, such as:
 
-* `ce_time` – Sets the published time of the event (example: `2025-06-13T15:36:52.148542+02:00`)
+* `ce_time` – sets the published time of the event; for example: `2025-06-13T15:36:52.148542+02:00`
 
 All custom HTTP headers will be forwarded as Kafka headers by default.
 
@@ -145,21 +143,21 @@ Technical Contacts with a license to the Mendix Event Broker can manage this fea
 
 2. Select one of the following bridge types:
 
-    * **AWS SQS** – Bidirectional bridge using the [Amazon Simple Queue Service](https://aws.amazon.com/sqs/) to send and receive events.
-    * **HTTP** – One-way bridge that uses HTTP requests to send events from external systems to the Mendix Event Broker.
-    * **Azure Blob Storage** – One-way bridge that receives events via Azure object storage.
-    * **AWS S3** – One-way bridge that receives events via AWS object storage.
+    * **AWS SQS** – bidirectional bridge using the [Amazon Simple Queue Service](https://aws.amazon.com/sqs/) to send and receive events
+    * **HTTP** – one-way bridge that uses HTTP requests to send events from external systems to the Mendix Event Broker
+    * **Azure Blob Storage** – one-way bridge that receives events via Azure object storage
+    * **AWS S3** – one-way bridge that receives events via AWS object storage
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/ebb_general_bridge_create.png" class="no-border" >}}
 
-3. Click **Next** to continue with creating your bridge.
+1. Click **Next** to continue creating your bridge.
 
     * For instructions on configuring AWS SQS, see [Configuring a Bridge with AWS SQS](#bridge-with-aws-sqs).
     * For instructions on configuring HTTP, see [Configuring a Bridge with HTTP](#bridge-with-http).
     * For instructions on configuring Azure Blob Storage, see [Configuring a Bridge with Azure Blob Storage](#bridge-with-azure-blob-storage).
     * For instructions on configuring AWS S3, see [Configuring a Bridge with AWS S3](#bridge-with-aws-s3).
 
-4. After configuring the service and connecting events (as described in the bridge-specific sections above), click **Start** on the confirmation screen to deploy the bridge.
+2. After configuring the service and connecting events (as described in the bridge-specific sections above), click **Start** on the confirmation screen to deploy the bridge.
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/ebb_general_bridge_start.png" class="no-border" >}}
 
@@ -167,19 +165,19 @@ Once the bridge has been successfully deployed, its configuration and status can
 
 ### Configuring a Bridge with AWS SQS {#bridge-with-aws-sqs}
 
-The creation process for AWS SQS bridges includes two further steps on the Mendix side and policies that need to be implemented on the AWS side.
+The creation process for AWS SQS bridges includes two additional steps on the Mendix side and policies that need to be implemented on the AWS side.
 
 #### Configure Service
 
-Configure the service by filling out the following:
+1. Configure the service by filling out the following:
 
 * **Event Broker Space** – the space where the bridge will operate
-* **Bridge Name** – the name you want to call the bridge
-* **AWS Region** – the AWS region where your bridge operates
+* **Name** – the name you want to call the bridge
+* **AWS region** – the AWS region where your bridge operates
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-sqs/ebb_aws_sqs_configure.png" class="no-border" width="400" >}}
+  {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-sqs/ebb_aws_sqs_configure.png" class="no-border" width="400" >}}
 
-Click **Next** to continue the configuration.
+2. Click **Next** to continue the configuration.
 
 #### Connect Events
 
@@ -188,11 +186,11 @@ Select the business events to integrate with AWS SQS:
 1. Click **Add Business Events** to open a dialog displaying all events managed by the Event Broker, including Mendix app-defined events and uploaded AsyncAPI events. 
 2. Select the checkbox for the event(s) you want to add, then click **Select**.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-sqs/ebb_aws_sqs_choose_events.png" class="no-border" width="400" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-sqs/ebb_aws_sqs_choose_events.png" class="no-border" width="400" >}}
 
 3. Configure each event with its own SQS URL for each direction the event will be integrated.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-sqs/ebb_aws_sqs_connect_events.png" class="no-border" width="400" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-sqs/ebb_aws_sqs_connect_events.png" class="no-border" width="400" >}}
 
 4. Click **Next** to continue.
 
@@ -214,7 +212,7 @@ You need to configure AWS access policies for both sending and receiving message
 
 ##### Sending Messages to Mendix
 
-Add this object to the Access Policy of your AWS SQS queue if it is sending messages to Mendix.
+Add the object below to the Access Policy of your AWS SQS queue if it is sending messages to Mendix.
 
 ```
 {
@@ -234,7 +232,7 @@ Add this object to the Access Policy of your AWS SQS queue if it is sending mess
 
 ##### Receiving Messages from Mendix
 
-Add this object to your Access Policy of the AWS SQS queue if it is receiving messages from Mendix.
+Add the object below to your Access Policy of the AWS SQS queue if it is receiving messages from Mendix.
 
 ```
 {
@@ -258,15 +256,15 @@ Add this object to your Access Policy of the AWS SQS queue if it is receiving me
 
 #### Configure Service
 
-Configure the service by filling out the following:
+1. Configure the service by filling out the following:
 
 * **Event Broker Space** – the space where the bridge will operate
-* **Bridge Name** – the name you want to call the bridge
-* **AWS Region** – the AWS region where your bridge operates
+* **Name** – the name you want to call the bridge
+* **AWS region** – the AWS region where your bridge operates
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/http/ebb_http_configure.png" class="no-border" width="400" >}}
+  {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/http/ebb_http_configure.png" class="no-border" width="400" >}}
 
-Click **Next** to connect events to your bridge.
+2. Click **Next** to connect events to your bridge.
 
 #### Connect Events
 
@@ -275,7 +273,7 @@ Select the business events to integrate with the HTTP Bridge:
 1. Click **Add Business Events** to open a dialog displaying all events managed by the Event Broker, including Mendix app-defined events and uploaded AsyncAPI events. Only events capable of subscribing are shown, as this bridge operates in one direction.
 2. Select the event(s) to integrate. Once selected, the URL for the HTTP connection is automatically generated.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/http/ebb_http_connect_events.png" class="no-border" width="400" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/http/ebb_http_connect_events.png" class="no-border" width="400" >}}
 
 3. Click **Next** to proceed to the confirmation screen.
 
@@ -289,24 +287,24 @@ Once the Mendix Event Broker Bridge has been successfully deployed, its configur
 
 To run the HTTP bridge from your client, include a Bearer token in the request header.
 
-1. Open the HTTP bridge details using **Options** ({{% icon name="three-dots-menu-horizontal" %}}) menu on the Overview page.
+1. Open the HTTP bridge details using the **Options** ({{% icon name="three-dots-menu-horizontal" %}}) menu on the **Overview** page.
 2. Add the **Bearer token**.
 
 ### Configuring a Bridge with Azure Blob Storage {#bridge-with-azure-blob-storage}
 
 #### Configure Service
 
-Configure the service by filling out the following:
+1. Configure the service by filling out the following:
 
 * **Event Broker Space** – the space where the bridge will operate
-* **Bridge Name** – the name you want to call the bridge
+* **Name** – the name you want to call the bridge
 * **Storage Account** – the storage account to access
 * **Storage SAS Token** – the storage SAS Token
 * **Container Path** – the path of the container where the messages will be stored
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/azure-blob-storage/ebb_azure_blob_configure.png" class="no-border" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/azure-blob-storage/ebb_azure_blob_configure.png" class="no-border" >}}
 
-Click **Next** to connect events to your bridge.
+2. Click **Next** to connect events to your bridge.
 
 #### Connect Events
 
@@ -315,7 +313,7 @@ Select the business events to integrate with Azure Blob Storage:
 1. Click **Add Business Events** to open a dialog displaying all events managed by the Event Broker, including Mendix app-defined events and uploaded AsyncAPI events. Only events capable of publishing are shown, as this bridge operates in one direction.
 2. Select the event(s) to integrate and specify the prefix path for event storage.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/azure-blob-storage/ebb_azure_blob_connect_events.png" class="no-border" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/azure-blob-storage/ebb_azure_blob_connect_events.png" class="no-border" >}}
 
 3. Click **Next** to proceed to the confirmation screen.
 
@@ -330,14 +328,14 @@ Once the Mendix Event Broker Bridge has been successfully deployed, its configur
 
 #### Configure Service
 
-Configure the service by filling out the following:
+1. Configure the service by filling out the following:
 
 * **Event Broker Space** – the space where the bridge will operate
-* **Bridge Name** – the name you want to call the bridge
+* **Name** – the name you want to call the bridge
 * **Bucket** – the path of the container where the messages will be stored
 * **AWS Region for Bucket** – the AWS region where your S3 bucket is located
-* **AWS Role to Assume** – the Amazon Resource Name (ARN) of the IAM role that the Event Broker Bridge will assume to access your S3 bucket. This role must be configured with appropriate permissions and a trust policy allowing the Event Broker to assume it.
-* **AWS Role's External ID** – a unique identifier that provides additional security when the Event Broker assumes your AWS role. This shared secret ensures that only authorized Mendix Event Broker instances can assume the role.
+* **AWS Role (to Assume)** – the Amazon Resource Name (ARN) of the IAM role that the Event Broker Bridge will assume to access your S3 bucket; this role must be configured with appropriate permissions and a trust policy allowing the Event Broker to assume it
+* **AWS Role's External Id** – a unique identifier that provides additional security when the Event Broker assumes your AWS role; this shared secret ensures that only authorized Mendix Event Broker instances can assume the role
 
 {{% alert color="info" %}}
 For detailed instructions on how to create the IAM role and obtain these values, see [Configure AWS Authentication for S3 Bridge](#configure-aws-s3-authentication).
@@ -345,7 +343,7 @@ For detailed instructions on how to create the IAM role and obtain these values,
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-s3/ebb_aws_s3_configure.png" class="no-border" >}}
 
-Click **Next** to connect events to your bridge.
+2. Click **Next** to connect events to your bridge.
 
 #### Connect Events
 
@@ -354,7 +352,7 @@ Select the business events to integrate with AWS S3:
 1. Click **Add Business Events** to open a dialog displaying all events managed by the Event Broker, including Mendix app-defined events and uploaded AsyncAPI events. Only events capable of publishing are shown, as this bridge operates in one direction.
 2. Select the event(s) to integrate and specify the prefix path for event storage.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-s3/ebb_aws_s3_connect_events.png" class="no-border" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-s3/ebb_aws_s3_connect_events.png" class="no-border" >}}
 
 3. Click **Next** to proceed to the confirmation screen.
 
@@ -375,7 +373,7 @@ The Mendix Event Broker runs in AWS and uses cross-account authentication to sec
 * An S3 bucket where business events will be stored
 * The Mendix Event Broker AWS account ID: `044806572671`
 
-##### Step 1: Create an IAM Role with a Trust Policy
+##### Create an IAM Role with a Trust Policy
 
 The trust policy defines which AWS accounts can assume the role.
 
@@ -388,13 +386,12 @@ The trust policy defines which AWS accounts can assume the role.
 7. Click **Next**.
 
 {{% alert color="info" %}}
-The external ID acts as a shared secret between Mendix and your AWS account, preventing the confused deputy problem and ensuring that only authorized Event Broker instances can assume your role.
+The external ID acts as a shared secret between Mendix and your AWS account. This prevents the confused deputy problem and ensures that only authorized Event Broker instances can assume your role.
 {{% /alert %}}
 
+    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-s3/create-a-cross-account-role-in-AWS.png" class="no-border" width="400" >}}
 
-  {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-s3/create-a-cross-account-role-in-AWS.png" class="no-border" width="400" >}}
-
-##### Step 2: Attach Permissions Policy to the Role
+##### Attach Permissions Policy to the Role
 
 The permissions policy defines what actions the Event Broker can perform once the role is assumed.
 
@@ -434,15 +431,15 @@ The permissions policy defines what actions the Event Broker can perform once th
 The policy above grants the minimum required permissions for the Event Broker to write business events to your S3 bucket. Adjust the permissions as needed based on your security requirements.
 {{% /alert %}}
 
-##### Step 3: Complete Role Creation
+##### Complete Role Creation
 
 1. Provide a name for your role (for example, `EventBrokerS3AccessRole`).
 2. Review the role configuration and click **Create role**.
-3. Once created, open the role and copy the **Role ARN** (it will look like `arn:aws:iam::YOUR_ACCOUNT_ID:role/EventBrokerS3AccessRole`).
+3. Once created, open the role and copy the **Role ARN** (it will look like this: `arn:aws:iam::YOUR_ACCOUNT_ID:role/EventBrokerS3AccessRole`).
 
-##### Step 4: Configure the Bridge
+##### Configure the Bridge
 
-Use the Role ARN and External ID when configuring your AWS S3 bridge in the Event Broker Manager:
+Use the Role ARN and External ID when configuring your AWS S3 bridge in the Event Broker Manager.
 
 
 ### Managing Bridges
@@ -455,11 +452,11 @@ You can edit HTTP, Azure Blob Storage, and AWS S3 bridges to modify their config
 
 {{% alert color="info" %}}You can only edit a bridge when its status is **Running**.{{% /alert %}}
 
-**What You Can Edit:**
+You can edit:
 
-* **HTTP Bridge** – Add or remove business events
-* **Azure Blob Storage Bridge** – Add or remove business events, update Storage Account, Storage SAS Token, Container Path, or Prefix Path
-* **AWS S3 Bridge** – Add or remove business events, update Bucket, AWS Region for Bucket, or Prefix Path
+* **HTTP Bridge** – add or remove business events
+* **Azure Blob Storage Bridge** – add or remove business events, update Storage Account, Storage SAS Token, Container Path, or Prefix Path
+* **AWS S3 Bridge** – add or remove business events, update Bucket, AWS Region for Bucket, or Prefix Path
 
 To edit a bridge:
 
@@ -479,12 +476,12 @@ To edit a bridge:
           1. Navigate to the event you want to remove and click **Remove**. Removed events will display a **Removed** badge, and their name and metadata will appear grayed out.
           2. Re-add a removed event by clicking **Add** before applying changes.
 
-        {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/edit-bridge/http_edit_mode.png" class="no-border" >}}
+           {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/edit-bridge/http_edit_mode.png" class="no-border" >}}
       
       * **Update Service Configuration** (Azure Blob Storage and AWS S3 only):
       
-          * **Azure Blob Storage** – Update the Storage Account, Storage SAS Token, Container Path, or Prefix Path as needed.
-          * **AWS S3** – Update the Bucket, AWS Region for Bucket, or Prefix Path as needed.
+          * **Azure Blob Storage** – update the Storage Account, Storage SAS Token, Container Path, or Prefix Path as needed
+          * **AWS S3** – update the Bucket, AWS Region for Bucket, or Prefix Path as needed
 
 **HTTP** 
     {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/edit-bridge/ebb_http_edit_mode.png" class="no-border" >}}
