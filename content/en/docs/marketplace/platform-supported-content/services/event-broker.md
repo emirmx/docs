@@ -148,7 +148,7 @@ Technical Contacts with a license to the Mendix Event Broker can manage this fea
     * **Azure Blob Storage** – one-way bridge that receives events via Azure object storage
     * **AWS S3** – one-way bridge that receives events via AWS object storage
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/ebb_general_bridge_create.png" class="no-border" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/ebb_general_bridge_create.png" class="no-border" >}}
 
 1. Click **Next** to continue creating your bridge.
 
@@ -159,7 +159,7 @@ Technical Contacts with a license to the Mendix Event Broker can manage this fea
 
 2. After configuring the service and connecting events (as described in the bridge-specific sections above), click **Start** on the confirmation screen to deploy the bridge.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/ebb_general_bridge_start.png" class="no-border" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/ebb_general_bridge_start.png" class="no-border" >}}
 
 Once the bridge has been successfully deployed, its configuration and status can be viewed on the **Overview** page.
 
@@ -389,7 +389,7 @@ The trust policy defines which AWS accounts can assume the role.
 The external ID acts as a shared secret between Mendix and your AWS account. This prevents the confused deputy problem and ensures that only authorized Event Broker instances can assume your role.
 {{% /alert %}}
 
-    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-s3/create-a-cross-account-role-in-AWS.png" class="no-border" width="400" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-s3/ebb_aws_s3_create_a_cross_account_role_in_aws.png" class="no-border" width="400" >}}
 
 ##### Attach Permissions Policy to the Role
 
