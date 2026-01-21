@@ -16,7 +16,7 @@ The following decision flow diagram shows how to choose the correct identifier-m
 
 ## Scenarios
 
-### Scenario 1: Aligning OIDC and SCIM Identifiers to Update Existing Users
+### Scenario 1: Aligning OIDC and SCIM Identifiers To Update Existing Users
 
 This scenario applies when users have already authenticated to the Mendix application using OIDC and the customer subsequently enables SCIM for user provisioning. When a user first logs in via OIDC, the Identity Provider (IdP) provides a unique identifier, such as the `sub` claim (for example, `00u12abcD3XYZpqRs5d6`).
 
@@ -49,7 +49,7 @@ In Identity Providers such as Microsoft Entra ID, the SCIM provisioning flow doe
 
 To allow SCIM to correctly identify and update existing users, configure the SCIM configuration as follows:
 
-* In Attribute Mapping, map `userName` claim to `FullName` of Mendix custom entity attribute and map `externalID` claim to `System.User.Name`. 
+* In Attribute Mapping, map the `userName` claim to the `FullName` of the Mendix custom entity attribute and map the `externalID` claim to the `System.User.Name`. 
 * Set `customuserentity.FullName` as the Principal attribute.
 
 With this configuration, Mendix matches SCIM users to existing OIDC-provisioned users using the shared `preferred_username` value and updates the existing user records instead of creating duplicates.
@@ -57,7 +57,7 @@ With this configuration, Mendix matches SCIM users to existing OIDC-provisioned 
 {{% alert color="info" %}}
 Note the following:
 
-* Only map IdP claims to `System.User.Name` in SCIM when it is used as the principal attribute for user matching; otherwise, duplicates may be created.
+* Only map IdP claims to the `System.User.Name` in SCIM when it is used as the principal attribute for user matching; otherwise, duplicates may be created.
 * To prevent duplicate users, map identifiers to an attribute that does not change over time, such as `objectId`. For more information, see [Configuring oid Claim in the OIDC SSO](/appstore/modules/oidc/#configuring-oid-claim-in-the-oidc-sso).
 
 {{% /alert %}}
@@ -76,12 +76,12 @@ If the organization decides to standardize on `oid` as the long-term unique iden
     * Add `oid` as a custom claim in the attribute mapping.
     * Update the OIDC attribute mapping from `sub` to `oid`, changing `System.User.Name` to map from `oid` instead of `sub`.
 
-    If you are using `sub` already and have never used `oid`, it can be mapped to System.User.name. Otherwise,
+    If you are using `sub` already and have never used `oid` before, it can be mapped to `System.User.Name`. Otherwise, ensure that existing users are aligned with the `oid` value to avoid duplicate user creation.
 
 2. SCIM configuration
 
     * Change the SCIM principal attribute from `customuserentity.FullName` to `Name`.
-    * Ensure SCIM provisioning uses `externalId` maped to `System.User.Name` (containing the `oid` value).
+    * Ensure SCIM provisioning uses the `externalId` mapped to the `System.User.Name` (containing the `oid` value).
 
 This alignment ensures that both authentication (OIDC) and provisioning (SCIM) consistently reference the same Mendix user based on a single, stable identifier.
 
@@ -89,7 +89,7 @@ This alignment ensures that both authentication (OIDC) and provisioning (SCIM) c
     
 This scenario applies when a Mendix application has already provisioned users through the OIDC SSO module, but no identifier suitable for SCIM correlation exists in the Mendix user data.
 
-In the existing configuration, users authenticate via OIDC and the `sub` claim (for example, `00u12abcD3XYZpqRs5d6`) is mapped to `System.User.Name` and configured as the OIDC principal attribute. No secondary identifiers—such as `preferred_username` or `email`, were mapped during the OIDC login process. As a result, the Mendix database contains only the `sub` value as the user identifier.
+In the existing configuration, users authenticate via OIDC, and the `sub` claim (for example, `00u12abcD3XYZpqRs5d6`) is mapped to `System.User.Name` and configured as the OIDC principal attribute. No secondary identifiers—such as `preferred_username` or `email` were mapped during the OIDC login process. As a result, the Mendix database contains only the `sub` value as the user identifier.
 
 Because SCIM provisioning does not support the OIDC `sub` claim, SCIM cannot use this identifier to locate existing users. To enable consistent user matching across OIDC and SCIM, a new stable identifier must be introduced and stored in the Mendix user entity. To resolve this limitation, OIDC must be updated to send an additional unique attribute, such as `preferred_username`, which can be shared with SCIM and used for user correlation. This new identifier must be mapped to a Mendix user attribute (for example, `customuserentity.FullName`). Existing users must then log in at least once after the mapping change to ensure the new identifier is populated in the Mendix database.
 
@@ -97,9 +97,16 @@ To implement this scenario, do the following:
 
 1. Update OIDC attribute mapping:
 Map a stable, unique claim from the IdP, for example, map `preferred_username`  to the `customuserentity.FullName` (custom Entity attribute).
+
 2. Propagate the new identifier:
 Require existing users to log in via OIDC after the mapping is applied, so the new attribute is stored in Mendix.
-3. Align SCIM configuration
+
+3. Align SCIM configuration:
 Configure SCIM to use the newly populated attribute for user matching and follow the same SCIM principal attribute and mapping approach described in the [Scenario 2: OIDC Unique Identifier Not Supported by the SCIM — Using an Alternative Stable Attribute](#alternative-stable-attribute) section above.
 
 By introducing a shared, stable identifier and ensuring it is populated for all existing users, Mendix can reliably correlate SCIM provisioning requests with OIDC-authenticated users and update existing records instead of creating duplicates.
+
+## Read More
+
+* [SCIM](/appstore/modules/scim/)
+* [OIDC SSO](/appstore/modules/oidc/)
