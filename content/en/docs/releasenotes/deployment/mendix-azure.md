@@ -12,9 +12,9 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 
 ### Release date: January 22, 2026
 
-* Fixed an issue that prevented Custom CA certificates from being added during new cluster initialization.
-* Fixed an issue that prevented the removal of Custom CA certificates after they were added to clusters (new and existing).
-* Improvement in the preflight validation error shown when PostgreSQL cannot be reached has been improved, making the cause clearer and easier to troubleshoot.
+* We have fixed an issue that prevented custom CA certificates from being added during new cluster initialisation.
+* We have fixed an issue that prevented the removal of custom CA certificates after they were added to clusters (new and existing).
+* We have improved the preflight validation error that is displayed when PostgresSQL cannot be reached, making the cause clearer and easier to troubleshoot.
 
 ### Release date: January 8, 2026
 
