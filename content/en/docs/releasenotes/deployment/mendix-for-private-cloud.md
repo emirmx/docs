@@ -16,10 +16,11 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 #### Portal Improvements
 
-* We have fixed a missing drop-down option to set Studio Pro as the default in new project app creation.
-* We have fixed an issue which occurred while selecting the processing state environment on the **Backups** page for Mendix on Azure environments.
-* We fixed some configuration issues which occurred with managed namespaces created through the API while operating in Global Operator mode. (Ticket 7250)
+* We have fixed an issue where the option to set Studio Pro as the default was missing when creating a new project app. (Tickets 268532, 269338)
+* We have fixed an issue that prevented selecting environments in a processing state on the **Backups** page for Mendix on Azure environments.
+* We have fixed an issue where the full list of managed namespaces was not being retrieved when using the Global Operator through APIs (Ticket 267150)
 * We have improved the tooltip message for the namespace selection dropdown during environment creation. This change is intended to reduce confusion and explain the purpose of this selection.
+* We have added the activity logs when reduced downtime options are edited in Cluster overview page.
 
 ### January 19, 2026
 
