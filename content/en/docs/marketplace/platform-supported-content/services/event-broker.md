@@ -196,7 +196,7 @@ Select the business events to integrate with AWS SQS:
 
 5. Confirm the configuration with the AWS Access Policy.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/ebb_aws_sqs_approve_policy.png" class="no-border" width="400" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-sqs/ebb_aws_sqs_approve_policy.png" class="no-border" width="400" >}}
 
 6. After all events have been configured, click **Start** to start the Mendix Event Broker Bridge. This process will take several minutes to complete.
 
@@ -476,7 +476,7 @@ To edit a bridge:
           1. Navigate to the event you want to remove and click **Remove**. Removed events will display a **Removed** badge, and their name and metadata will appear grayed out.
           2. Re-add a removed event by clicking **Add** before applying changes.
 
-           {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/edit-bridge/http_edit_mode.png" class="no-border" >}}
+           {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/edit-bridge/ebb_http_edit_mode.png" class="no-border" >}}
       
       * **Update Service Configuration** (Azure Blob Storage and AWS S3 only):
       
