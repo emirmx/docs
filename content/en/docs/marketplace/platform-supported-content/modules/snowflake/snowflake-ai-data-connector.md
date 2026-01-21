@@ -78,6 +78,8 @@ To use the capabilities of Snowflake in a Mendix app with the Snowflake AI data 
 
 To find out how configure the OAUTH Authentication method, see [Role-based Access Control](/appstore/modules/snowflake/snowflake-rbac/).
 
+When using an OAuth token to authenticate REST calls, use the **JWT_GetCreate** microflow from the Utils folder to get or create a JWT object and set your OAuth token and expiration date on the Token and ExpirationDate attributes of the returned JWT object. In the **POST_v1_ExecuteStatement** and **CortexAnalyst** operations the JWT will be retrieved from the ConnectionDetails and used for authentication. Be aware that **GET_v1_RetrievePartition** should be edited when using OAuth for authentication. Further instructions on what to change is annotated in the microflow.
+
 #### Configuring Key-Pair Authentication in Snowflake {#setup-key-pair-snowflake}
 
 To configure RSA key-pair authentication for your account in Snowflake, perform the following steps:
@@ -303,7 +305,7 @@ Snowflake Cortex Analyst is currently in open preview. For more information, ref
 To configure your Mendix app for Snowflake Cortex Analyst, perform the following steps:
 
 1. Create a microflow and retrieve your **ConnectionDetails** object.
-2. When using KEYPAIR_JWT as your authentication type use the **ConnectionDetails_GenerateJWT** microflow to generate a JWT object. When using OAuth as authentication type please use the **JWT_GetCreate** microflow to create a JWT object and set your OAuth token and expiration date on that object.
+2. When using KEYPAIR_JWT as your authentication type use the **Generate JWT** action from the **Toolbox** to generate a JWT object. When using OAuth as authentication type please use the **Get or Create JWT** action from the **Toolbox** to create a JWT object and set your OAuth token and expiration date on that object.
 3. Add the **Cortex Analyst: Create Request** action from the **Toolbox**, and then configure the **Request** to contain the path to the Snowflake semantic model file and your question/prompt for the model.
 4. Add the **Snowflake Cortex Analyst** action from the Toolbox and provide the following information:
     * **ConnectionDetails** – The connection details that you configured
