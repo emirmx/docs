@@ -56,7 +56,7 @@ Click **Provision Resource** to finalize the process. You are taken back to the 
 
 ## Deprovisioning GenAI Resources
 
-If you want to deprovision the resource, click the three dots icon ({{% icon name="three-dots-menu-horizontal" %}}) next to the selected resource and select **Deprovision Resource**. 
+If you want to deprovision the resource, click the ellipsis icon ({{% icon name="three-dots-menu-horizontal" %}}) next to the selected resource and select **Deprovision Resource**. 
 A confirmation pop-up appears, displaying a message and the details of the selected resource, as shown in the example below.
 
 {{< figure src="/attachments/control-center/genai-resources/deprovisioning.png" >}}
@@ -66,3 +66,28 @@ Click **Deprovision** to proceed. After confirmation, the resource status update
 {{% alert color="info" %}}
 Your subscription plan operates on a monthly bundle cycle. When you deprovision a resource, the actual deprovisioning will occur at the end of the current subscription month. Until that date, you can still use the resource, and the scheduled deprovisioning date will appear in the resource's **Status**. 
 {{% /alert %}}
+
+## Adjusting GenAI Resource Plan Size
+
+You can change the plan size of an already provisioned GenAI resource (text or embedding models) to better match your actual token demand. You can adjust the GenAI resource plan size through self-service capability of the Control Center.
+
+To adjust a resource plan size, do the following:
+
+1. Log in to the Control Center as a Company Admin.
+2. On the **GenAI Resources** page, click ellipsis icon ({{% icon name="three-dots-menu-horizontal" %}}) icon next to the selected resource and select **Adjust Plan Size**. 
+3. Choose the desired plan and review the **Resource Specification** on the **Adjust Plan Size GenAI Resource** page. Click **Adjust Plan** to submit the change. 
+
+{{< figure src="/attachments/control-center/genai-resources/adjust-plan-size.png" >}}
+
+### Upgrading GenAI Resource Plan Size
+
+To upgrade, select a larger plan that matches your expected demand. Upgrades take effect immediately. Your account must have sufficient unutilized cloud tokens to cover the additional tokens required by the new plan. For example, upgrading from a 30-token (Small) plan to a 60-token (Medium) plan requires at least 30 unutilized cloud tokens in your account. If your account lacks the required tokens, you will receive an error message and the upgrade will be prevented.
+
+### Downgrading GenAI Resource Plan Size 
+
+To downgrade, select a smaller plan. Downgrades are not immediate. The current plan remains active until the end of the current subscription month, and the downgrade takes effect at the start of the next subscription month. For example, if a Medium plan started on 12, February and you schedule a downgrade on 20, February to Small, the actual downgrade will occur on 12, March. The cloud tokens returned to your account as a result of the downgrade become available only after the scheduled downgrade takes effect. 
+
+#### Cancelling a Scheduled Downgrade
+
+You can cancel a scheduled downgrade at any time before it takes effect. When a downgrade is scheduled, the resource status changes to **PLAN DOWNGRADE SCHEDULED**. To cancel it, click ellipsis icon ({{% icon name="three-dots-menu-horizontal" %}}) icon next to the selected resource and select **Cancel Plan Downgrade**.
+the action takes effect immediately and cancels the sceduled downgrade.
