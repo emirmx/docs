@@ -1,8 +1,10 @@
 ---
 title: "Maia in Mendix Portal"
-url: /maia-mx-portal/
+url: /portal/maia/
 description: "Provides information on Maia options in Mendix Portal."
 weight: 4
+aliases:
+    - /maia-mx-portal/
 ---
 
 ## Introduction
@@ -45,13 +47,13 @@ Maia Chat is also available in Studio Pro 10.12.0 and above. See [Maia Chat](/re
 
 For information on Mendix data storage policies and practices for Maia, see [Maia Privacy Policy](https://www.mendix.com/legal/privacy/maia/).
 
-#### Using Maia Chat
+### Using Maia Chat
 
 You can access Maia Chat in Mendix Portal by clicking the **Maia** ({{% icon name="sparkles" %}}) icon to the right of the top bar.
 
 The chat interface appears at the right side of your browser window. You can start using Maia Chat either by clicking one of the demo questions or by asking your own question in the chatbox. 
 
-#### Asking Follow-Up Questions
+### Asking Follow-Up Questions
 
 Maia Chat supports asking follow-up questions based on your previous question and the answer you have received. For example, you can ask it to summarize the latest answer you received by typing *Can you summarize that?*.
 
