@@ -78,19 +78,19 @@ The following inputs are required for the OpenAI configuration:
 
 The following inputs are required for the Microsoft Foundry configuration: 
 
-| Parameter      | Value                                                        |
+| Parameter | Value |
 | -------------- | ------------------------------------------------------------ |
 | Display name | This is the name identifier of a configuration (for example, *MyConfiguration*). |
 | API type | Select `AzureOpenAI` for Microsoft Foundry deployments. |
 | Endpoint | This is the API endpoint (for example, `https://your-resource-name.openai.azure.com/openai/deployments/`).<br />For details on how to obtain `your-resource-name`, see the [Obtaining Resource Name](#azure-resource-name) section below. |
-| Azure key type | This is the type of token that is entered in the API key field. For Azure OpenAI, two types of keys are currently supported: Microsoft Entra token and API key. <br />For details on how to generate a Microsoft Entra access token, see [How to Configure Azure OpenAI Service with Managed Identities](https://learn.microsoft.com/en-gb/azure/ai-services/openai/how-to/managed-identity). Alternatively, if your organization allows it, you could use the Azure `api-key` authentication mechanism. For details on how to obtain an API key, see the [Obtaining Azure OpenAI API keys](#azure-api-keys) section below. For more information, see the [Technical Reference](#technical-reference) section. |
+| Azure key type | This is the type of token that is entered in the API key field. For Azure OpenAI, two types of keys are currently supported: Microsoft Entra token and API key. <br />For details on how to generate a Microsoft Entra access token, see [How to Configure Azure OpenAI Service with Managed Identities](https://learn.microsoft.com/en-gb/azure/ai-services/openai/how-to/managed-identity). Alternatively, if your organization allows it, you could use the Azure `api-key` authentication mechanism. For details on how to obtain an API key, see the [Obtaining API keys](#azure-api-keys) section below. For more information, see the [Technical Reference](#technical-reference) section. |
 | Token / API key | This is the access token to authorize your API call. |
 
 ##### Obtaining the Resource Name {#azure-resource-name}
 
 1. Go to the [Microsoft Foundry portal](https://ai.azure.com/) and sign in.
 2. Select the right resource in the upper right corner.
-3. The home page should show `Resource configuration` where you can find the `Microsoft Foundry endpoint`
+3. The home page should show **Resource configuration** where you can find the **Microsoft Foundry endpoint**.
 4. Use the copy icon ({{% icon name="copy" %}}) and use it as your resource name in the endpoint URL.
 
 ##### Obtaining API Keys {#azure-api-keys}
@@ -100,7 +100,7 @@ The following inputs are required for the Microsoft Foundry configuration:
 
 ##### Adding Azure AI Search Resources {#azure-ai-search}  
 
-| Parameter      | Value                                                        |
+| Parameter | Value |
 | -------------- | ------------------------------------------------------------ |
 | Display name | This is the name identifier of a Azure AI Search Resource (for example, *MySearchResource*). |
 | Endpoint URL | This is the API endpoint (for example, `https://your-resource-name.search.windows.net`).<br />For details on how to obtain `your-resource-name`, see [Azure AI Search service in the Azure portal](https://learn.microsoft.com/en-us/azure/search/search-create-service-portal). |
@@ -115,18 +115,18 @@ Currently, the only supported authorization method for Azure AI Search resources
 
 #### Configuring the OpenAI Deployed Models
 
-A [Deployed Model](/appstore/modules/genai/genai-for-mx/commons/#deployed-model) represents a GenAI model instance that can be used by the app to generate text, embeddings, or images. For every model you want to invoke from your app, you need to create a `OpenAIDeployedModel` record, a specialization of `DeployedModel`. In addition to the model display name and a technical name/identifier, an OpenAI deployed model contains a reference to the additional connection details as configured in the previous step. For OpenAI, a set of common models can be created automatically using the designated button. If you want to use additional models that are made available by OpenAI you need to configure additional OpenAI deployed models in your Mendix app. For Microsoft Foundry the model names can be different. The technical model names depend on the deployment names that were chosen while deploying the models in the [Microsoft Foundry portal](https://ai.azure.com/). Therefore in this case you always need to configure the deployed models manually in your Mendix app.
+A [Deployed Model](/appstore/modules/genai/genai-for-mx/commons/#deployed-model) represents a GenAI model instance that can be used by the app to generate text, embeddings, or images. For every model you want to invoke from your app, you need to create a `OpenAIDeployedModel` record, a specialization of `DeployedModel`. In addition to the model display name and a technical name/identifier, an OpenAI deployed model contains a reference to the additional connection details as configured in the previous step. For OpenAI, a set of common models can be created automatically using the designated button. If you want to use additional models that are made available by OpenAI you need to configure additional OpenAI deployed models in your Mendix app. For Microsoft Foundry, the model names can be different. The technical model names depend on the deployment names that were chosen while deploying the models in the [Microsoft Foundry portal](https://ai.azure.com/). Therefore in this case you always need to configure the deployed models manually in your Mendix app.
 
-1. If needed, click the three dots for an OpenAI configuration to open the "Manage Deployed Models" pop-up.
+1. If needed, click the three dots ({{% icon name="three-dots-menu-horizontal" %}}) icon for an OpenAI configuration to open the **Manage Deployed Models** pop-up.
 2. For every additional model, add a record. The following fields are required:
 
-    | Field      | Description                                                        |
+    | Field | Description |
     | -------------- | ------------------------------------------------------------ |
     | Display name | This is the reference to the model for app users in case they have to select which one is to be used. |
     | Deployment name / Model name | This is the technical reference for the model. For OpenAI this is equal to the [model aliases](https://platform.openai.com/docs/models#current-model-aliases). For Microsoft Foundry this is the deployment name from the [Microsoft Foundry portal](https://ai.azure.com/).
-    | Output modality| Describes what the output of the model is. This connector currently supports Text, Embedding, and Image.
-    | Input modality| Describes what input modalities are accepted by the model. This connector currently supports Text and Image.
-    | Azure API version    | Azure OpenAI only. This is the API version to use for this operation. It follows the `yyyy-MM-dd` format. For supported versions, see [Azure OpenAI documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference). The supported versions can vary depending on the type of model, so make sure to look for the right section (such as Chat Completions, Image Generation, or Embeddings) on that page. |
+    | Output modality | Describes what the output of the model is. This connector currently supports Text, Embedding, and Image.
+    | Input modality | Describes what input modalities are accepted by the model. This connector currently supports Text and Image.
+    | Azure API version | Azure OpenAI only. This is the API version to use for this operation. It follows the `yyyy-MM-dd` format. For supported versions, see [Azure OpenAI documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference). The supported versions can vary depending on the type of model, so make sure to look for the right section (such as Chat Completions, Image Generation, or Embeddings) on that page. |
 
 3. Close the popup and test the configuration with the newly created deployed models.
 
