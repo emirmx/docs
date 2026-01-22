@@ -16,7 +16,11 @@ By following this guide, you will:
 
 * Learn how to **create, run, and deploy** a native mobile application.
 * Use **nanoflows** to build logic.
+<<<<<<< Updated upstream
 * Start with an **online-first** native mobile app (default in Mendix 11), with the option to later explore **offline-first** development and **data synchronization** if needed.
+=======
+* Start with an **online-first** native mobile app (default in Mendix 11), with the option to later explore **offline-first** and **data synchronization** if needed.
+>>>>>>> Stashed changes
 * Test your native app using the **Make it Native app**
 
 ## 2. Mobile development essentials
