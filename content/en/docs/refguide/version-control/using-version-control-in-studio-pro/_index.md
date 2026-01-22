@@ -2,7 +2,7 @@
 title: "Using Version Control in Studio Pro"
 url: /refguide/using-version-control-in-studio-pro/
 linktitle: "Using Version Control"
-weight: 10
+weight: 50
 description: "Describes how to work with version control and how to resolve some issues which may arise."
 # Renamed from version-control-scenarios
 ---
@@ -12,33 +12,6 @@ description: "Describes how to work with version control and how to resolve some
 This document describes how to use version control in Mendix Studio Pro. 
 
 For more information on related concepts and the theory behind how version control works in Mendix, see [Version Control](/refguide/version-control/).
-
-## Starting an App with Version Control
-
-To start a new app with version control, do the following:
-
-1. Open Studio Pro.
-2. In the **Select App** dialog box, click **Create New App**. 
-3. Select the starting point – an app template.
-4. In the **App Settings** dialog box, make sure that **Enable online services** is set to *Yes*. This option creates a remote (Team Server) repository and an app in [Apps](https://sprintr.home.mendix.com/) of the Mendix Portal.
-5. Optionally, change the default **App directory** set by Studio Pro.
-6. Click **Create app**.
-
-The app is created on the Team Server, and a working copy is created in the **App directory**. This is opened in Studio Pro so that you can start working immediately.
-
-{{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/app-settings.png" class="no-border" >}}
-
-## Joining an App
-
-If there is already a Team Server-enabled app, you can be invited to join it (see [Team](/developerportal/general/team/)).
-
-Once you are a team member, provided that you have been given a role with sufficient rights, you can work on the app by doing the following:
-
-1. Choose **Open App** in Studio Pro.
-2. Choose your app from the list of the **Open App** dialog box.
-3. Click **Open in Studio Pro**.
-
-The app will be downloaded from the Team Server and opened in Studio Pro.
 
 ## Day-to-Day Development
 

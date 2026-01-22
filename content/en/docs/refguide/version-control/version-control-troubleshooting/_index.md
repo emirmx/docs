@@ -2,7 +2,7 @@
 title: "Troubleshooting Version Control"
 url: /refguide/troubleshoot-version-control-issues/
 linktitle: "Troubleshoot Version Control"
-weight: 20
+weight: 90
 description: "Presents a list of problems and fixes for version control issues."
 aliases:
     - /howto/collaboration-requirements-management/troubleshoot-version-control-issues/

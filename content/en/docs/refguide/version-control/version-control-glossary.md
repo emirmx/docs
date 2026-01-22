@@ -1,6 +1,6 @@
 ---
 title: "Version Control Glossary"
-url: /refguide/version-control-glossary/
+url: /refguide/version-control/glossary/
 weight: 100
 description: "Presents and explains several concepts related to version control."
 ---
