@@ -90,7 +90,7 @@ Follow the steps below to configure OpenAI for your application. For more inform
      * **API Type**: Choose between **OpenAI** or **Azure OpenAI**.
      * **Endpoint**: Enter the endpoint URL for your selected API type.
      * **API key**: Provide the API key for authentication.
-         * If using Microsoft Foundry, add the **Azure key type** by choosing between **OpenAI** or **Azure OpenAI***.
+         * If using Microsoft Foundry, add the **Azure key type** by choosing between **OpenAI** or **Azure OpenAI**.
 
      * After saving the changes, a new pop-up will appear to add the deployment models. Select **Add deployed model** and provide the following details (optional for the OpenAI API Type):
          * **Display name**: A reference name for the deployed model (e.g., "GPT-4 Conversational").
