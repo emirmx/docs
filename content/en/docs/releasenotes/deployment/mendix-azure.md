@@ -18,7 +18,7 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 
 ### Known issues:
 
-* Custom CA certificates cannot be removed once added. This issue will be fixed in a future infra release.
+* Custom CA certificates cannot be removed once added. This issue will be fixed in a future release.
 
 ### Release date: January 8, 2026
 
