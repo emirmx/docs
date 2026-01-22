@@ -39,7 +39,7 @@ By mapping the SCIM `externalId` to the `System.User.Name` attribute and configu
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/scim/using-with-oidc/scim-principal-attribute.png" >}}
 
-### Scenario 2: No Unique Identifier — Using an Alternative Stable Attribute {#alternative-stable-attribute}
+### Scenario 2: SSO Unique Identifier Not Supported by the SCIM — Using an Alternative Stable Attribute {#alternative-stable-attribute}
 
 This scenario applies when a Mendix application has already provisioned users through the OIDC SSO module, but the principal IdP attribute (for example, `sub`) in the OIDC used for authentication is not available in the SCIM provisioning payload.
 
@@ -64,10 +64,10 @@ Note the following:
 
 {{% /alert %}}
 
-| Protocol | Identifier | Value | Principal attribute |
-| --- | --- | --- | --- |
-| OIDC | preferred_username | johndoe@company.com | preferred_username |
-| SCIM | userName | johndoe@company.com | userName |
+| Protocol | Identifier | Value | Principal attribute | Explaination |
+| --- | --- | --- | --- | --- |
+| OIDC | `sub` (primary), `preferred_username` (secondary) | `sub`: `00u12abcD3XYZpqRs5d6`, `preferred_username`: `johndoe@company.com` | `System.User.Name` | `sub` is the primary authentication identifier. `preferred_username` is stored in the `customuserentity.FullName` for SCIM correlation. |
+| SCIM | userName (same as OIDC `preferred_username`) | johndoe@company.com | `customuserentity.FullName` (because in the OIDC, it is stored in this attribute) | `sub` is not available in the SCIM payload; SCIM uses `userName` to match existing users. |
 
 #### Transitioning to a Long-Term Standard Identifier (`oid`)
 
@@ -104,7 +104,7 @@ Map a stable, unique claim from the IdP, for example, map `preferred_username`  
 Require existing users to log in via OIDC after the mapping is applied, so the new attribute is stored in Mendix.
 
 3. Align SCIM configuration:
-Configure SCIM to use the newly populated attribute for user matching and follow the same SCIM principal attribute and mapping approach described in the [Scenario 2: No Unique Identifier — Using an Alternative Stable Attribute ](#alternative-stable-attribute) section above.
+Configure SCIM to use the newly populated attribute for user matching and follow the same SCIM principal attribute and mapping approach described in the [SSO Unique Identifier Not Supported by the SCIM — Using an Alternative Stable Attribute](#alternative-stable-attribute) section above.
 
 By introducing a shared, stable identifier and ensuring it is populated for all existing users, Mendix can reliably correlate SCIM provisioning requests with OIDC-authenticated users and update existing records instead of creating duplicates.
 
