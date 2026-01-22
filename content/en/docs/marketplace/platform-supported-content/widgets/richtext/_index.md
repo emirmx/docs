@@ -69,7 +69,7 @@ To configure this widget, follow these steps:
 * **Editable** – determines when user can edit content in the editor and when it is read-only.
     * **Read-only style** - determines the style of the rich text when set to read-only.
     For more information, see the [Editability Section](/refguide/common-widget-properties/#editability) in *Properties Common in the Page Editor*.
-    * **Form orientation** - configures the form orientation used in the widget's modal dialog, such as insert image, insert video, insert link, and view code modal.
+    * **Form orientation** - configures the form orientation used in the widget's modal dialog window, such as in **insert image**, **insert video**, **insert link**, and **view code modal**.
 
 * **Visible** – determines if the widget is visible on the page.
     For more information, see the [Visibility Section](/refguide/common-widget-properties/#visibility-properties) in *Properties Common in the Page Editor*.
