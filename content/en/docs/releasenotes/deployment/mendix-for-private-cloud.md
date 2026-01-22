@@ -12,6 +12,13 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2026
 
+### January 22, 2026
+
+#### Mendix Operator v2.25.1 {#2.25.1}
+
+* We've implemented an enhancement to improve how our system parses S3 endpoint URLs by addressing configurations where the S3 endpoint is provided as a hostname without a preceding schema (e.g., my-s3-endpoint.com instead of https://my-s3-endpoint.com).
+
+
 ### January 19, 2026
 
 #### Mendix Operator v2.25.0 {#2.25.0}
