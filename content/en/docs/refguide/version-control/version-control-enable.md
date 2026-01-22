@@ -7,7 +7,7 @@ description: "Learn how you can start or join an app that uses version control."
 
 ## Introduction {#intro}
 
-To use version control for your Mendix application, you can either start a new app, or join an existing app with version control already enabled.
+Version control is automatically enabled for every new Mendix application that you create. [TBD]
 
 ## Starting an App with Version Control
 
@@ -16,7 +16,7 @@ To start a new app with version control, do the following:
 1. Open Studio Pro.
 2. In the **Select App** dialog box, click **Create New App**. 
 3. Select the starting point – an app template.
-4. In the **App Settings** dialog box, make sure that **Enable online services** is set to *Yes*. This option creates a remote (Team Server) repository and an app in [Apps](https://sprintr.home.mendix.com/) of the Mendix Portal.
+4. In the **App Settings** dialog box, make sure that **Enable online services** is set to **Yes**. This option creates a remote (Team Server) repository and an app in [Apps](https://sprintr.home.mendix.com/) of the Mendix Portal.
 5. Optionally, change the default **App directory** set by Studio Pro.
 6. Click **Create app**.
 
@@ -35,3 +35,7 @@ Once you are a team member, provided that you have been given a role with suffic
 3. Click **Open in Studio Pro**.
 
 The app will be downloaded from the Team Server and opened in Studio Pro.
+
+## Enabling Version Control for an Existing App
+
+[add info: https://docs.mendix.com/refguide/upload-to-version-control-dialog/]
