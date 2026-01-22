@@ -90,3 +90,5 @@ To downgrade, select a smaller plan. Downgrades are not immediate. The current p
 #### Cancelling a Scheduled Downgrade
 
 You can cancel a scheduled downgrade at any time before it takes effect. When a downgrade is scheduled, the resource status changes to **PLAN DOWNGRADE SCHEDULED**. To cancel it, click the three-dot ({{% icon name="three-dots-menu-horizontal-filled" %}}) icon next to the selected resource and select **Cancel Plan Downgrade**. The action takes effect immediately and cancels the scheduled downgrade.
+
+{{< figure src="/attachments/control-center/genai-resources/cancel-plan-downgrade.png" >}}
