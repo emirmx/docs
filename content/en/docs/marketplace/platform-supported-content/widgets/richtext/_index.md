@@ -284,3 +284,13 @@ export async function selectImage(fileGuid) {
 ```
 
 This code will trigger a new event called **imageSelected** and bubble up the event back to Rich Text widget to continue the flow. The user then can use the **image id** instead of **base64 string** as the image source.
+
+## Limitation
+
+Rich text version 4 still have limitations that we will continue improving in the future.
+Current notable limitations are:
+
+- Tables only support basic formatting. The following are not yet supported:
+    - Nested tables
+    - Table header
+    - Table caption
