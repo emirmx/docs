@@ -56,7 +56,7 @@ Click **Provision Resource** to finalize the process. You are taken back to the 
 
 ## Deprovisioning GenAI Resources
 
-If you want to deprovision the resource, click the ellipsis icon ({{% icon name="three-dots-menu-horizontal" %}}) next to the selected resource and select **Deprovision Resource**. 
+If you want to deprovision the resource, click the the three-dot icon ({{% icon name="three-dots-menu-horizontal" %}}) next to the selected resource and select **Deprovision Resource**. 
 A confirmation pop-up appears, displaying a message and the details of the selected resource, as shown in the example below.
 
 {{< figure src="/attachments/control-center/genai-resources/deprovisioning.png" >}}
