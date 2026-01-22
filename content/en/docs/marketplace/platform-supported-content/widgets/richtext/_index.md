@@ -127,15 +127,15 @@ To configure this widget, follow these steps:
 ### Advanced Tab
 
 * **Enable spell checking** – configures to use the browser’s native spell checker.
-* **Default font family** – configures initial selection of font family shown in the dropdown toolbar if no fonts are set. This configuration is only to adjust the font toolbar display with page's default font-family. No value being set to the editor's text directly. Value sets should be the same with selected `font-name-value` in `data-value` variable of fonts.
-* **Default font size** – configures initial font size to be shown in the dropdown of font size in the toolbar if no font sizes are set. This configuration is only to adjust the font size toolbar with the page's default font size. No font size value being set to the editor's text directly. Value set should be available in the font size toolbar selections.
+* **Default font family** – configures initial selection of the font family shown in the dropdown toolbar if no fonts are set. This configuration is only to adjust the font toolbar display with page's default font-family. No value is being set to the editor's text directly. The value set should be the same with selected `font-name-value` in `data-value` variable of fonts.
+* **Default font size** – configures initial font size to be shown in the dropdown of font size in the toolbar if no font sizes are set. This configuration only adjusts the font size toolbar with the page's default font size. No font size value is being set to the editor's text directly. The value set should be available in the font size toolbar selections.
 * **Custom fonts** – configures extra fonts selection for the font family.
 * **Selectable images** – configures image entity source to allow rich text to use images from entity instead of base64 string.
 * **Enable default upload** – if enabled, it will keep the current image upload method using base64 string, otherwise it is hidden (default value: **true**).
-* **Status bar content** - configures counter display on the status bar
-    * **Word count** – display number of word in the status bar
-    * **Character count (text only)** – display the number of character displayed in the editor.
-    * **Character count (includeing HTML)** – display the number of character saved into the attribute value. This is include the HTML tag inserted for the formatting of rich text.
+* **Status bar content** - configures counter display on the status bar:
+    * **Word count** – displays the number of words in the status bar.
+    * **Character count (text only)** – displays the number of characters displayed in the editor.
+    * **Character count (includeing HTML)** – displays the number of characters saved into the attribute value. This includes the HTML tag inserted for the formatting of rich text.
 
 ### Common Tab
 
@@ -285,12 +285,11 @@ export async function selectImage(fileGuid) {
 
 This code will trigger a new event called **imageSelected** and bubble up the event back to Rich Text widget to continue the flow. The user then can use the **image id** instead of **base64 string** as the image source.
 
-## Limitation
+## Limitations
 
-Rich text version 4 still have limitations that we will continue improving in the future.
-Current notable limitations are:
+Rich Text version 4 still has limitations that we will continue improving in the future. Current notable limitations are as follows:
 
-- Tables only support basic formatting. The following are not yet supported:
+- Tables only support basic formatting. The following formatting options are not yet supported:
     - Nested tables
     - Table header
     - Table caption
