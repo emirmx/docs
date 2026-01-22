@@ -12,6 +12,20 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2026
 
+### January 22, 2026
+
+#### Portal Improvements
+
+* We have fixed an issue where the option to set Studio Pro as the default was missing when creating a new project app. (Tickets 268532, 269338)
+* We have fixed an issue that prevented selecting environments in a processing state on the **Backups** page for Mendix on Azure environments.
+* We have fixed an issue where the full list of managed namespaces was not being retrieved when using the Global Operator through APIs (Ticket 267150)
+* We have improved the tooltip message for the namespace selection dropdown during environment creation. This change is intended to reduce confusion and explain the purpose of this selection.
+* Editing reduced downtime options on the **Cluster Overview** page is now recorded in the activity logs.
+
+#### Mendix Operator v2.25.1 {#2.25.1}
+
+* We have implemented an enhancement to improve how our system parses S3 endpoint URLs by addressing configurations where the S3 endpoint is provided as a host name without a preceding schema (for example, `my-s3-endpoint.com` instead of `https://my-s3-endpoint.com`).
+
 ### January 19, 2026
 
 #### Mendix Operator v2.25.0 {#2.25.0}
