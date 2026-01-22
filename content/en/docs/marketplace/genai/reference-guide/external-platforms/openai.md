@@ -194,7 +194,7 @@ Use the two OpenAI-specific microflow actions from the toolbox [Files: Initializ
 {{% alert color="info" %}}
 OpenAI and Microsoft Foundry do not necessarily provide feature parity across all models when it comes to combining functionalities. In other words, Microsoft Foundry does not support the use of JSON mode and function calling in combination with image (vision) input for certain models, so make sure to check the [Azure Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models).
 
-When you use Azure OpenAI, it is recommended to set the optional `MaxTokens` input parameter; otherwise, the response may be cut off.
+When you use Microsoft Foundry, it is recommended to set the optional `MaxTokens` input parameter; otherwise, the response may be cut off.
 {{% /alert %}}
 
 For more information on vision, see [OpenAI](https://platform.openai.com/docs/guides/vision) and [Microsoft Foundry](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/gpt-with-vision) documentation.
