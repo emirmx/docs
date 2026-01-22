@@ -92,21 +92,17 @@ Certificates are applied to a single app. Therefore, Mendix recommends that you 
 
 To create a CSR and an RSA (Rivest–Shamir–Adleman) encryption key, follow these steps:
 
-1. Click **New Certificate** in the **Custom Domains** tab.
+1. Click **Request Certificate** in the **Custom Domains** tab.
+2. In the **Request Certificate** wizard:
+    1. Review the information in **General Info**, then click **Next**.
+    2. Complete the required fields in **Generate**, then click **Next**.
+    3. In **PEM Format**, an SSL/TLS private key and a certificate request are generated and displayed in PEM (Privacy-Enhanced Mail) format.
 
-2. Click **Create a Certificate Request**.
-
-3. Fill in the required fields.
-
-4. Click **Generate**.
-
-    An SSL/TLS private key and a certificate request is generated. The certificate request will be shown in PEM (Privacy-Enhanced Mail) format.
-
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/custom-domains/new-pem-format.png" >}}
+    {{< figure src="/attachments/deployment/mendix-cloud-deploy/custom-domains/pem-format.png" >}}
 
     {{% alert color="info" %}}The SSL/TLS private key will be hidden after you upload it. To keep the key secure, it will be stored in Mendix Cloud's secure keystore; it will not be available for download, and it cannot be obtained by Mendix Support.{{% /alert %}}
 
-On successful CSR generation, your CSR name appears in the table on the **Custom Domain** tabs. In the **Description** column, the name you provided during creation is followed by **Pending Customer Feedback**. This suffix remains as long as the CSR is open and not yet signed with a certificate.
+After the CSR is generated successfully, the CSR name appears in the table on the **Custom Domains** tab. In the **Certificate Description** column, the name you provided during creation is followed by **Pending Customer Feedback**. This suffix remains until the CSR is signed with a certificate. The **Local/Central** column also indicates whether the generated certificate is managed locally at the app level or centrally.
 
 You can now go to your certificate authority to get a signed SSL/TLS certificate.
 
@@ -156,21 +152,16 @@ To upload a custom domain certificate, you need to have the following things pre
 
 To upload the custom domain certificate, follow these steps:
 
-1. Click **New Certificate** in the **Custom Domains** tab.
+1. Click **Upload Certificate** in the **Custom Domains** tab.
+2. In the **Upload Certificate** wizard:
+    1. Review the information in **General Info**, then click **Next**.
+    2. Complete the required fields in **Upload**:
+        * Add a **Description** for the certificate.
+        * Paste the signed **TLS Certificate**.
+        * Paste an **Intermediate Certificate Chain**. While optional for modern browsers, it is mandatory for programmatic access and service consumption (like [OData services](/refguide/consumed-odata-services/)). The intermediate certificate chain is provided by your certificate authority.
+        * Paste the **TLS Private Key**.
 
-2. Click **Upload Certificate**.
-
-3. Type a **Description** for the certificate.
-
-4. Paste the signed **TLS Certificate**.
-
-5. Paste the **TLS Private Key**.
-
-6. Paste an **Intermediate Certificate Chain**. While optional for modern browsers, it is mandatory for programmatic access and service consumption (like [OData services](/refguide/consumed-odata-services/)). The intermediate certificate chain is provided by your certificate authority.
-
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/custom-domains/new-certificate.png" width=60% class="no-border" >}}
-
-7. Click **Save** to save your new custom domain certificate. It will be uploaded to Mendix Cloud automatically.
+3. Click **Save** to upload your new custom domain certificate to Mendix Cloud automatically.
 
     {{% alert color="info" %}}The SSL/TLS private key will be hidden after you upload it. To keep the key secure, it will be stored in Mendix Cloud's secure keystore; it will not be available for download, and it cannot be obtained by Mendix Support.{{% /alert %}}
 

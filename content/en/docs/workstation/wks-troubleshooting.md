@@ -1,8 +1,8 @@
 ---
-title: "Troubleshooting Mendix Workstation Client"
+title: "Troubleshooting Mendix Workstation"
 linktitle: "Troubleshooting"
 url: /mendix-workstation/troubleshooting/
-description: "Describes how to solve potential issues with Mendix Workstation Client."
+description: "Describes how to solve potential issues with Mendix Workstation."
 weight: 40
 ---
 
@@ -38,6 +38,7 @@ Log files are also available by day in the Client's app data folder. On Windows,
 On Linux, the *Mendix Workstation/logs* folder is located at either `$XDG_CONFIG_HOME` or `~/.config`.
 
 **Live logs** are available in two ways:
+
 * Start the Workstation Client. Click the three-dot icon in the top tight, then click **Logs**. Debug level logs are only available in *Developer Mode*
 * Start the Workstation Client from PowerShell: `start "C:\Program Files\Mendix Workstation\Mendix Workstation.exe" -ArgumentList "--log-level=debug" -wait`.
 
@@ -55,7 +56,7 @@ Ensure you copied and pasted the token exactly as displayed in Workstation Manag
 
 ### Registration Token Denied by Workstation Management
 
-The Client shows an error like the following: *Register token denied by Workstation Management. Please use another token*. 
+The Client shows an error like the following: *Registration token denied by Workstation Management. Please use another token*. 
 
 #### Cause 
 
@@ -68,18 +69,6 @@ The registration token is no longer valid. This can occur if:
 #### Solution
 
 If the station status in Workstation Management is still *No computer registered*, regenerate the token and try again. Otherwise, verify the correct computer and Client are registered to that station and unregister if not. 
-
-### Access Denied by Workstation Management
-
-The Client shows an error like the following: *Station could not be synchronized with Management. Error invoking remote method 'refresh-station-config': Error: Access denied by Workstation Management. Please deregister your computer and restart the registration process!*. 
-
-#### Cause
-
-This error occurs when the credentials provided by the Workstation Client are no longer valid, such as when it was deregistered in Workstation Management or the API key has expired.
-
-#### Solution
-
-You can continue using the Workstation Client with the current configuration, but it will no longer receive updates. To resolve this, click **Unlink** in the Workstation Client, then re-register the workstation.
 
 ### HTTPError: Request failed with status code 503 Service Temporarily Unavailable
 

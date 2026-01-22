@@ -1,7 +1,7 @@
 ---
 title: "Setting Up an SSO (BYOIDP)"
 url: /control-center/security/set-up-sso-byoidp/
-weight: 30
+weight: 40
 description: "Describes how you can use your company IdP to authenticate to Mendix."
 aliases:
     - /developerportal/control-center/set-up-sso-byoidp/
@@ -181,7 +181,7 @@ Entra ID (formerly Microsoft Azure AD) is one of the most used IdPs, and it supp
 
     {{< figure src="/attachments/control-center/security/set-up-sso-byoidp/azure-app-registration-overview.png" class="no-border" >}}
 
-3. Enter a name for your configuration, and select the preferred account type. Under **Redirect URI**, paste the callback URL you were shown when setting up the IdP in the Mendix Portal.
+3. Enter a name for your configuration, and select the preferred account type. Under **Redirect URI**, click the dropdown next to **Select a platform**, choose **Web**, and paste the callback URL you were shown when setting up the IdP in the Mendix Portal.
 4. Click **Register** to save the registration.
 
     {{< figure src="/attachments/control-center/security/set-up-sso-byoidp/azure-app-registration-step-1.png" class="no-border" >}}
@@ -213,7 +213,10 @@ Entra ID (formerly Microsoft Azure AD) is one of the most used IdPs, and it supp
 
     {{< figure src="/attachments/control-center/security/set-up-sso-byoidp/azure-app-registration-step-6.png" class="no-border" >}}
 
-That's it! You are now ready to resume your IdP setup in the Mendix Portal.
+13. Click **Token configuration** in the left-hand menu bar.
+14. Add optional claims for the ID token: `family_name` and `given_name`.
+
+You are now ready to resume your IdP setup in the Mendix Portal.
 
 For more information on setting up a federation with a Microsoft Entra ID IdP, see [Quickstart: Register an application with the Microsoft identity platform](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) in the Microsoft documentation.
 

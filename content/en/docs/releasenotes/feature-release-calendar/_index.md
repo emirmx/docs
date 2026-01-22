@@ -27,7 +27,7 @@ General Availability means that a feature is available for all users. This type 
 | Maia: Text to OQL                                            | Public Beta: Q2 2025 <br/>General Availability: Q4 2025 |
 | Maia: Generate test data                                     | Private Beta: 2026   |
 | Maia for Workflows                                           | General Availability: Mx 11.0  |
-| Maia for Microflows                                          | Private Beta: Mx 11.6 |
+| Maia for Microflows                                          | Private Beta: Mx 11.6 <br/>General Availability: Mx 11.9 |
 | Maia Feedback Story Creation (App Insights)                  | General Availability: Mx 11.0 |
 | Maia Feedback Grouping (App Insights)                        | General Availability: Mx 11.6 |
 | Maia for Pipeline Logs                                       | General Availability: Mx 11.9  |
@@ -57,11 +57,11 @@ General Availability means that a feature is available for all users. This type 
 | Easy comparison of revisions (textual diffing) | Public Beta: Mx 11.9 |
 | Searchable commit history | Public Beta: Mx 11.4 <br/>General Availability: Mx 11.6 |
 | Merge Requests (aka Pull requests) | Public Beta: H2 2026 |
-| OpenTelemetry Tracing | General Availability: Mx 11.6 |
+| OpenTelemetry Tracing | General Availability: Mx 11.12 |
 | Atlas 4 UI Framework | General Availability: Mx 11.0 |
-| Progressive Web Apps Store Publishing | Public Beta: Mx 11.6 |
+| Progressive Web Apps Store Publishing | Public Beta: Mx 11.12 |
 | Access data in offline apps while syncing | General Availability: Mx 11.6 |
-| Mendix to Mendix UI Integration as web component | Public Beta: Mx 11.6 |
+| Embed a Mendix application into another Mendix application as a web component | Public Beta: 2027 |
 | Theme Customizer | General Availability: Mx 11.9 |
 | Menditect UI testing | Public Beta: Q2 2025<br/>General Availability: H2 2025 |
 | Bulk DML | General Availability: Mx 11.7 |
@@ -84,7 +84,7 @@ General Availability means that a feature is available for all users. This type 
 | Workflow Groups | General Availability: Mx 11.6 |
 | Dynamic Case Management | Private Beta: Mx 11.3 + Mx 10.24 |
 | Global Inbox | Public Beta: Mx 11.9 |
-| Workflow Event Subprocesses | Public Beta: Mx 11.6 |
+| Workflow Event Subprocesses | Public Beta: Mx 11.8 |
 | Workflow Message Events | General Availability Mx 11.9 |
 
 ## Governance
@@ -98,13 +98,13 @@ General Availability means that a feature is available for all users. This type 
 | Self-Service resizing of environments | Limited Availability: Mx 11.0 |
 | End-users dashboard | Public Beta: Mx 11.6 |
 | Software Composition Findings | General Availability: Mx 11.0 |
-| Software Composition: Mendix Vulnerability Visibility | General Availability: Mx 11.6 |
-| Software Composition: Finding Fix Guidance | General Availability: Mx 11.9 |
+| Software Composition: Mendix Vulnerability Visibility | General Availability: Mx 11.12 |
+| Software Composition: Finding Fix Guidance | General Availability: Mx 11.12 |
 | Pipelines for Mendix on Azure<br/>and Mendix on Kubernetes | General Availability: Mx 11.2 |
-| Pipelines: POST & GET Requests | General Availability: Mx 11.9 |
+| Pipelines: POST & GET Requests | General Availability: Mx 11.12 |
 | Central Certificate Management | General Availability: Mx 11.6 |
 | Project Categorization | General Availability: Mx 11.4 |
-| Policies | Public Beta: Mx 11.9 |
+| Policies | Public Beta: Mx 11.12 |
 | Central Audit Logs | General Availability: Mx 11.6 |
 | Mendix Cloud on AWS European Sovereign Cloud | General Availability: Mx 11.6 |
 
@@ -113,9 +113,9 @@ General Availability means that a feature is available for all users. This type 
 | Capability or Feature | Expected Release |
 | --- | --- |
 | Private Connectivity for Mendix Cloud | Public Beta: Mx 11.6 |
-| Mendix Cloud: Runtime Patching | General Availability: Mx 11.9 |
-| Mendix Cloud: Self Service App Upgrades<br/>and Cloud Resource Pack Recommender | Public Beta: Mx 11.9 |
-| Operations Home | General Availability: Mx 11.6 |
+| Mendix Cloud: Runtime Patching | General Availability: Mx 11.12 |
+| Mendix Cloud: Self Service App Upgrades<br/>and Cloud Resource Pack Recommender | Public Beta: Mx 11.12 |
+| Operations Home | General Availability: Mx 11.12 |
 | Mendix on Azure | General Availability: Mx 11.4 |
 | Workstation Client | General Availability: Mx 11.3 + Mx 10.24 |
 
@@ -123,6 +123,12 @@ General Availability means that a feature is available for all users. This type 
 
 | Capability or Feature | Expected Release |
 | --- | --- |
-| Private Mendix Platform:<br/>Compliance with NIST-800, FIPS, FEDRAMP and DoD IL 4/5/6 | Limited Availability: Mx 11.0 + Mx 10.24 |
-| Private Mendix Platform for Mx 11 | General Availability: Mx 11.7 |
-| Maia with BYO-LLM on Private Mendix Platform | General Availability: Mx 11.7 |
+| Private Mendix Platform: Compliance with NIST-800, FIPS, FEDRAMP and DoD IL 4/5/6 | General Availability: June 2025 |
+| Secret Manager support for AWS, Azure, and Hashicorp | General Availability: Private Mendix Platform 1.24.3 LTS (November 2025) |
+| Dynamic Role Management | General Availability: Private Mendix Platform 2.0 (December 2025) |
+| Private Mendix Platform for Mx 11 | General Availability: Private Mendix Platform 2.4 (January 2026) |
+| Deployment Health Dashboard | General Availability: Private Mendix Platform 2.4 (January 2026) |
+| Software Composition Insights | General Availability: Private Mendix Platform 2.4 (January 2026) |
+| Maia with BYO-LLM on Private Mendix Platform | General Availability: Private Mendix Platform 2.6 MTS (February 2026) |
+| Unified Deployment Experience with Agent-Interactor support | General Availability: Private Mendix Platform 2.6 MTS (February 2026) |
+| Download Portal Improvements and APIs | General Availability: March 2026 |

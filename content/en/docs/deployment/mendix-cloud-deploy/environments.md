@@ -129,8 +129,9 @@ The **Create a Package** wizard walks you through creating deployment packages. 
 1. On the [Deployment Packages](#deployment-packages-tab) tab, click **Create a Package**. This launches the **Create Package** wizard.
 2. On the **Select Branch** tab, select the branch on which to base the build.
 3. On the **Select Revision** tab, select the branch revision on which to base the package.
-4. On the **Choose a Tag** tab, specify the version tag. This includes the major, minor, and patch version numbers.
-5. Click **Build this revision**.
+4. On the **Other Options** tab, add the version tag. This tag should include the major and minor version numbers, patch, and revision.
+5. Add a tag description.
+6. Click **Build this revision**.
 
 #### Uploading a Package {#upload-package}
 
@@ -175,14 +176,12 @@ If you are the [Technical Contact](/developerportal/general/app-roles/#technical
 
 ### Change Requests Tab {#change-requests}
 
-On the **Change Requests** tab, the Technical Contact can view details of all past and current [Change Plan](/developerportal/deploy/change-plan/) requests and perform certain actions based on the current request status.
+On the **Change Requests** tab, the Technical Contact can view details of all past and current [Plan](/developerportal/deploy/change-plan/) and [Connection](/developerportal/deploy/connecting-to-external-resource/) requests and perform actions based on each request's current status.
 
 For each submitted request, the following information is available:
 
 * **Request Type** – Type of change requested
-* **Environment** – The environment the plan change was requested for (such as, acceptance or production)
-* **Current Plan** – The environment's existing plan
-* **Requested Plan** – The plan requested for change
+* **Environment** – The environment the change was requested for (such as, acceptance or production)
 * **Submitted on** – Request submission date
 * **Status** – Current request state
 * **Action** – Shows more details of each request and provides options based on the request status
@@ -193,7 +192,7 @@ If you click **Cloud Settings** ({{< icon name="settings-slider-1" >}}) from any
 
 ### Custom Domains
 
-On the **Custom Domains** tab, you can manage your custom domain certificates at the application level. You can also see an overview of linked custom domains.
+On the **Custom Domains** tab, the Technical Contact can manage custom domain certificates either centrally or at the application level. They can also access an overview of all the linked custom domains.
 
 When you need your Mendix app to be accessible via your own URL (for example, `https://myapp.mycompany.com/`), you must provide a custom SSL/TLS certificate for your domain. This ensures a secure connection to your Mendix app. For more information, refer to [Custom Domains](/developerportal/deploy/custom-domains/).
 

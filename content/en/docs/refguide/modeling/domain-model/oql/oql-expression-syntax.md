@@ -42,7 +42,7 @@ OQL supports a set of data types that differ slightly from [Mendix data types](/
 | `LONG`     | Integer/Long     | 5                     | 64 bit width integer data                  |
 | `STRING`   | String           | 'my_string'           | Textual data                               |
 
-## Literals
+## Literals {#oql-literals}
 
 Literals represent values that are constant and are part of the query itself. The supported literals are detailed below:
 
@@ -120,7 +120,7 @@ FROM
 	Sales.Person
 ```
 
-## Operators
+## Operators {#oql-operators}
 
 Operators perform common operations and, unlike functions, do not put their parameters in parentheses. They take `expression` as input, which can be other operator results, functions, columns and literals.
 

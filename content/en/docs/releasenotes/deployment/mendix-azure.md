@@ -10,6 +10,19 @@ These release notes cover changes to deployment to [Mendix on Azure](/developerp
 
 For information on the current status of Mendix deployment, see [Mendix Status](https://status.mendix.com/).
 
+### Release date: January 8, 2026
+
+* We have added an option to upload and enable custom CA certificates in the Mendix on Azure portal.
+* A video guiding you through the next steps after cluster initialization, is now available on the **Cluster Overview** page in the Mendix on Azure portal.
+* We have fixed an issue where the preflight check of the Platform account would fail. This fix prevents the creation of unnecessary support tickets.
+* We have fixed an issue that sometimes prevented cluster managers from viewing the clusters which they had initialized.
+
+### Known issues:
+
+* Fields such as **Infrastructure Redundancy** and **Custom CA Certificates** do not have translations available yet.
+* Custom CA certificates cannot be enabled during cluster initialisation setup and must be added after initialisation.
+* Custom CA certificates cannot be removed once added. This issue will be fixed in a future release.
+
 ### Release date: November 27, 2025
 
 * Operator, Agent, Build, Sidecars, and NGINX logs are now directly accessible within Grafana for monitoring and troubleshooting.

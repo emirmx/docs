@@ -1,18 +1,18 @@
 ---
-title: "Installing and Configuring Mendix Workstation Client"
+title: "Installing and Configuring Mendix Workstation"
 linktitle: "Installation and Configuration"
 url: /mendix-workstation/installation/
-description: "Quick start and advanced guide for installing and configuring the Mendix Workstation Client, including setting up workspaces, stations, and devices for initial testing from the Workstation Management."
+description: "Quick start and advanced guide for installing and configuring Mendix Workstation, including setting up workspaces, stations, and devices for initial testing from the Workstation Management."
 weight: 20
 ---
 
 ## Introduction
 
-This document outlines the installation and basic configuration of the Mendix Workstation Client. It provides a quick-start guide for initial setup, followed by detailed instructions on advanced configurations for workspaces and stations.
+This document outlines the installation and basic configuration of Mendix Workstation. It provides a quick-start guide for initial setup, followed by detailed instructions on advanced configurations for workspaces and stations.
 
 ## Quick Start Guide 
 
-This guide helps you configure and test a minimum working version of the Mendix Workstation Client. By following these steps, you will complete the following:
+This guide helps you configure and test a minimum working version of Mendix Workstation. By following these steps, you will complete the following:
 
 * Create a basic configuration within Workstation Management.
 * Set up a pair of virtual TCP/IP Client and Server devices for testing.
@@ -190,15 +190,44 @@ By default, the Workstation Management is pre-configured as an allowed app to co
 
 ### Workspace Team and Collaboration {#collaboration}
 
-Note: Collaborating with other users in a workspace requires a Workstation license. 
+{{% alert color="info" %}}
+Collaborating with other users in a workspace requires a Workstation license.
+{{% /alert %}}
 
 Invite and manage members of a Workspace on the Team page. Only users who have signed into Workstation Management can be invited via email. One of the following roles can be assigned:
 
-* Owner - The owner has full rights to manage the workspace. They can read and edit configurations, manage the team, register computers, and manage workspace settings. They can also delete a workspace or transfer ownership to a new owner. By default, the user who created a workspace is assigned the owner role. Contact Mendix Support if a Workspace owner has left the company to transfer the ownership.
+* Owner - The owner has full rights to manage the workspace. They can perform the following tasks:
+
+    * Reading and editing configurations
+    * Managing the team
+    * Registering computers
+    * Managing workspace settings
+    * Deleting a workspace or transfering ownership to a new owner
+    
+        By default, the user who created a workspace is assigned the owner role. Contact Mendix Support if a Workspace owner has left the company to transfer the ownership. 
+    
+    * Exporting and importing stations (single and in bulk)
+    * Linking imported stations to existing workspace apps
+    * Creating apps during station import.
+
 * Workspace admin - The workspace admin can manage the workspace in the same way as the owner, but they cannot delete the workspace or change its ownership.
-* Station admin - Station admins can view and edit station configurations. They can also register computers to stations. They cannot manage any other settings.
-* Computer admin - Computer admins can view configurations without editing them. They can also register computers to stations.
-* View only - This role grants access to viewing the configuration but cannot perform any actions.
+* Station admin - Station admins can perform the following tasks:
+
+    * Viewing and editing station configurations
+    * Registering computers to stations
+    * Exporting and importing stations (single and in bulk)
+    * Linking imported stations to existing workspace apps. 
+
+* Computer admin - Computer admins can perform the following tasks:
+
+    * Viewing configurations without editing them
+    * Registering computers to stations
+    * Exporting stations (single and in bulk).
+
+* View only - This role can perform the following tasks:
+
+    * Viewing configurations without editing them
+    * Exporting stations (single and in bulk).
 
 All members except for the Workspace owner can leave a workspace. 
 
@@ -209,6 +238,7 @@ All members except for the Workspace owner can leave a workspace.
 Developer mode can be configured on a **Station** page by toggling **Enable Developer Mode**. 
 
 *Developer Mode* is enabled by default for each station. This allows users of the Workstation Client to 
+
 * quit the program from the start menu, 
 * unlink the Workstation Client so that it can be registered to another station,
 * gives access to debug level live logs displayed in the **Logs** pane of the Workstation Client even if the workspace's log level is set to a different level,

@@ -1542,6 +1542,10 @@ If Global Operator is configured with [Private Cloud License Manager](/developer
 
 ## Current Limitations
 
+### Environment Number Limitations
+
+Configuring a standard or global Operator to manage more than 350 app environments may lead to performance issues, and is not supported. Mendix recommends deploying additional Operator-Agent combinations when the number of environments that need to be managed exceeds 350.
+
 ### Storage Provisioning
 
 If the Operator fails to provision or deprovision storage (a database or file storage), it will not retry the operation. If there is a failed `*-database` or `*-file` pod, you'll need to do the following:

@@ -10,6 +10,31 @@ These release notes cover changes to deployment to [Mendix on Kubernetes](/devel
 
 For information on the current status of deployment to Mendix on Kubernetes and any planned releases, see [Mendix Status](https://status.mendix.com/).
 
+## 2026
+
+### January 19, 2026
+
+#### Mendix Operator v2.25.0 {#2.25.0}
+
+* We have extended the Reduced Downtime deployment feature to support apps running 1 replica.
+    This feature is enabled by default, and works by running two replicas of the app during updates. For more information, see [Reduced Downtime Deployment](/developerportal/deploy/private-cloud-reduced-downtime/).
+* We have added autodetection for AWS S3 bucket regions, which is required by the AWS SDK update in updated LTS Studio Pro versions.
+    Version 2 of the AWS S3 library removed built-in autodetection of an S3 bucket's region. This is now handled by the Mendix Operator. In some situations, it might be necessary to manually specify the S3 bucket region by setting the [com.mendix.storage.s3.Region](/refguide/custom-settings/#commendixstorages3Region) Custom Runtime Setting.
+* We have updated Azure authentication code to improve compatibility with Azure Government and Azure in China.
+* We have extended the [S3 IRSA Mode](/developerportal/deploy/private-cloud-storage-plans/#s3-irsa-mode) provisioner options, allowing to specify a path prefix and permissions boundary for IAM roles. Documentation on using this feature is available upon request.
+
+### January 8, 2026
+
+#### Portal Improvements
+
+* We have resolved some issues causing inconsistent commit times on the Team Server.
+* We have fixed the environment start issue for the Start steps in the Private Cloud pipeline.
+* We have fixed an issue with the invitation emails for clusters and namespaces.
+
+#### Known Issues
+
+* We are currently working to resolve issues affecting the conversion of existing namespaces and the addition of multiple managed namespaces under the Global Operator installations.
+
 ## 2025
 
 ### December 15, 2025

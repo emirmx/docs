@@ -15,7 +15,7 @@ Before configuring AWS Secrets Manager integration, prepare the following:
 
 * An AWS account with appropriate permissions to create and manage secrets
 * IAM permissions to create roles and policies for AWS Secrets Manager access
-* Access to the PPrivate Mendix Platform project admin panel with administrative privileges
+* Access to the Private Mendix Platform project admin panel with administrative privileges
 * Basic knowledge of AWS services, IAM roles, and Kubernetes (if using EKS deployment)
 * An existing EKS cluster (if your PMP deployment runs on Kubernetes)
 
@@ -255,7 +255,7 @@ To configure the EKS service account, perform the following steps:
     metadata:
         name: pmp-deployment
         annotations:
-            eks.amazonaws.com/role-arn: arn:aws:iam::<your-account-id>:role/pmp-secret-access
+            eks.amazonaws.com/role-arn: arn:aws:iam::<your-account-id>:role/PMP-SecretsManager-Role
     spec:
         template:
             spec:

@@ -93,10 +93,13 @@ Click the contextual **Actions** menu to access options for managing your conten
 * **Deprecate Component** – Deprecate the component, and select alternatives.    
     For details on deprecating components, refer to [Deprecating Marketplace Content](/appstore/deprecate-content/).
 
-
 A **Private** label on a component means the component is your company's private Marketplace content. For details on how this is configured, refer to the [Adding New Marketplace Content](/appstore/submit-content/#adding) section of *Uploading to the Marketplace*. This content can be shared with [guests](#guests).
 
 A component assigned as [group content](#group-content) will have a label for the [content group](#content-groups) to which it is assigned.
+
+### Shared with Me {#shared-with-me}
+
+This page contains private content shared with you by other companies who have marked you as a [guest](#guests).
 
 ### Saved {#saved-components}
 
@@ -169,6 +172,8 @@ A guest is a Mendix Platform user from outside your organization who can downloa
 
 To add a guest, enter their email address in the box and click **Add Guest**. They will receive an email notifying them of access to the private content. 
 
+The guest can then see all the private Marketplace content shared with them on their [Shared with Me](#shared-with-me) page.
+
 {{% alert color="info" %}}
 The guest must be a registered Mendix Platform user. Otherwise, they will not be able to access the shared content.
 {{% /alert %}}
@@ -194,4 +199,3 @@ Download the latest version of [Studio Pro](/releasenotes/studio-pro/).
 Share new Marketplace content that you have developed.
 
 For details, refer to [Uploading Content to the Marketplace](/appstore/submit-content/).
-
