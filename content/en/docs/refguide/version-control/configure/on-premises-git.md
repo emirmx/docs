@@ -1,6 +1,5 @@
 ---
-title: "Working with Git On-Premises Version Control Server"
-linktitle: "Git On-Premises Version Control Server"
+title: "Optional: Working with Private Git"
 url: /refguide/on-premises-git/
 weight: 60
 description: "Introduces how to work with Git on-premises version control server."
