@@ -16,7 +16,7 @@ These pages cover modules that integrate with generative AI tools. For running p
 
 ### Typical Use Cases
 
-Mendix supports a variety of generative AI tasks by integrating with tools such as Amazon Bedrock or Azure OpenAI. Typical use cases include the following:
+Mendix supports a variety of generative AI tasks by integrating with tools such as Amazon Bedrock or Microsoft Foundry. Typical use cases include the following:
 
 * Create conversational UIs for AI-powered chatbots and integrate those UIs into your Mendix applications.
 * Connect any model through our GenAI connectors, or by integrating your connector into our GenAI commons interface.
@@ -58,9 +58,9 @@ Supercharge your applications with Mendix's Agents Kit. This powerful set of com
 | [MCP Server](/appstore/modules/genai/mcp-modules/mcp-server/) | Make your Mendix business logic available to any agent in your enterprise landscape with the Mendix MCP Server module. Expose reusable prompts, including the ability to use prompt parameters. List and run actions implemented in the application as a tool. | Module | 10.24 |
 | [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/) | Connect to Mendix Cloud and utilize Mendix Cloud GenAI resource packs directly within your Mendix application. | Connector Module | 10.24 |
 | [Mistral Connector](/appstore/modules/genai/reference-guide/external-connectors/mistral/) | Connect to Mistral AI. | Connector Module | 10.24 |
-| [OpenAI Connector](/appstore/modules/genai/openai/) | Connect to (Azure) OpenAI. | Connector Module | 10.24 |
+| [OpenAI Connector](/appstore/modules/genai/openai/) | Connect to OpenAI and Microsoft Foundry. | Connector Module | 10.24 |
 | [PgVector Knowledge Base](/appstore/modules/genai/pgvector/) | Manage and interact with a PostgreSQL *pgvector* Knowledge Base. | Connector Module | 10.24 |
-| [RFP Assistant Starter App / Questionnaire Assistant Starter App](https://marketplace.mendix.com/link/component/235917) | The RFP Assistant Starter App and the Questionnaire Assistant Starter App leverage historical question-answer pairs (RFPs) and a continuously updated knowledge base to generate and assist in editing responses to RFPs. This offers a time-saving alternative to manually finding similar responses and enhancing the knowledge management process.  | Starter App | 10.24 |
+| [RFP Assistant Starter App / Questionnaire Assistant Starter App](https://marketplace.mendix.com/link/component/235917) | The RFP Assistant Starter App and the Questionnaire Assistant Starter App leverage historical question-answer pairs (RFPs) and a continuously updated knowledge base to generate and assist in editing responses to RFPs. This offers a time-saving alternative to manually finding similar responses and enhancing the knowledge management process. | Starter App | 10.24 |
 | [Snowflake Showcase App](https://marketplace.mendix.com/link/component/225845) | Learn how to implement the Cortex functionalities in your app. | Showcase App | 10.24 |
 
 Older versions of the marketplace modules and GenAI Showcase App are available in Studio Pro 9.24.2.
@@ -73,7 +73,7 @@ Mendix connectors offer direct support for the following models:
 | -------------- | --------------------- | --------------------- | ------------------- | ----------- | ----------------------- |
 | Mendix Cloud GenAI | Anthropic Claude 3.5 Sonnet, Anthropic Claude 3.7 Sonnet, Anthropic Claude 4.0 Sonnet, Anthropic Claude 4.5 Sonnet | Chat Completions | text, image, document | text | Function calling |
 | | Cohere Embed v3 English and multilangual, Cohere Embed v4 | Embeddings | text | embeddings | |
-| Azure / OpenAI | gpt-4, gpt-4-turbo, gpt-4o, gpt-4o mini, gpt-4.1, gpt-4.1-mini, gpt-4.1-nano, gpt-5.0, gpt-5.0-mini, gpt-5.0-nano, gpt-5.1, gpt-5.2, o1, o1-mini, o3, o3-mini, o4-mini | Chat completions | text, image, document (OpenAI only) | text | Function calling |
+| Microsoft Foundry (OpenAI) / OpenAI | gpt-4, gpt-4-turbo, gpt-4o, gpt-4o mini, gpt-4.1, gpt-4.1-mini, gpt-4.1-nano, gpt-5.0, gpt-5.0-mini, gpt-5.0-nano, gpt-5.1, gpt-5.2, o1, o1-mini, o3, o3-mini, o4-mini | Chat completions | text, image, document (OpenAI only) | text | Function calling |
 | | DALL·E 2, DALL·E 3, gpt-image-1 | Image generation | text | image | |
 | | text-embedding-ada-002, text-embedding-3-small, text-embedding-3-large | Embeddings | text | embeddings | |
 | Mistral | Mistral Large 3, Mistral Medium 3.1, Mistral Small 3.2, Ministral 3 (3B, 8B, 14B), Magistral (Small, Medium) | Chat Completions | text, image | text | Function calling |
