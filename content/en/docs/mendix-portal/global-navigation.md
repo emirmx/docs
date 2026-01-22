@@ -5,6 +5,7 @@ description: "Describes the global navigation and top bar that is available thro
 weight: 3
 aliases: 
     - /developerportal/global-navigation/
+    - /global-navigation/
 ---
 
 ## Introduction

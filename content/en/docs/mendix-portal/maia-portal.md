@@ -3,6 +3,8 @@ title: "Maia in Mendix Portal"
 url: /portal/maia/
 description: "Provides information on Maia options in Mendix Portal."
 weight: 4
+aliases:
+    - /maia-mx-portal/
 ---
 
 ## Introduction

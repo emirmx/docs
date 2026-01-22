@@ -6,6 +6,7 @@ description: "Describes the user settings for the Mendix Portal."
 aliases:
     - /developerportal/community-tools/portal/user-settings/
     - /community-tools/portal/user-settings/
+    - /mendix-profile/user-settings/
 ---
 
 ## Introduction {#settings}
