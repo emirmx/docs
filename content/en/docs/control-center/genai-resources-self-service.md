@@ -11,9 +11,9 @@ The **GenAI Resources** section provides a detailed overview of all Mendix GenAI
 
 ## Prerequisites
 
-Self-service provisioning of GenAI resources using Mendix Cloud Tokens is available only if the users meets the following conditions:
+Self-service provisioning of GenAI resources using Mendix Cloud Tokens is available only if the users meet the following conditions:
 
-1. Sufficient token entitlements – The user should have an adequate number of available Mendix Cloud Token to allocate for GenAI resource provisioning.
+1. Sufficient token entitlements – The user should have an adequate number of available Mendix Cloud Tokens to allocate for GenAI resource provisioning.
 2. Valid subscription plan – The user's Mendix subscription must be based on the FY21 price list or newer. Older subscription plans are not eligible for provisioning.
 3. Single account ownership – The user should have a single account. Owning multiple accounts is not supported for self-service GenAI provisioning.
 4. Enterprise platform subscription – The user should have a single active enterprise platform subscription. If no active subscription is found, the system will display a warning message with this text: "We couldn't retrieve your correct platform account, which is required to access available tokens and create resources. Please contact Mendix Support for assistance."
@@ -50,7 +50,7 @@ When provisioning a new resource, enter the following information:
 * **User** – The name of the user for whom the provisioning was initially created.
 * **Email** – The user's email address.
 
-After filling in the required fields, you can review all entered details in the **Resource Specification**. To learn more, refer to [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/).
+After filling in the required fields, you can review all the entered details in the **Resource Specification**. To learn more, refer to [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/mx-cloud-genai/resource-packs/).
 
 Click **Provision Resource** to finalize the process. You are taken back to the **GenAI Resources** page, where the newly created resource is displayed in the list. Selecting the newly provisioned resource opens its details directly in the Mendix Cloud GenAI Portal in a new tab.
 
