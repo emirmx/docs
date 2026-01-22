@@ -1,7 +1,7 @@
 ---
 title: "Optional: Working with Private Git"
 url: /refguide/on-premises-git/
-weight: 60
+weight: 80
 description: "Introduces how to work with Git on-premises version control server."
 aliases:
     - /howto/collaboration-requirements-management/on-premises-git-howto/
