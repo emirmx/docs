@@ -32,7 +32,7 @@ Backups cannot be created while the environment is in any of these states:
 * Creation in progress
 * Creation failed
 * Deployment package is being deployed
-* Environment is in transition state (runtime processing)
+
     {{% /alert %}}
 
 1. Click **Create Backup**.

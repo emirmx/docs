@@ -66,10 +66,10 @@ General Availability means that a feature is available for all users. This type 
 | Menditect UI testing | Public Beta: Q2 2025<br/>General Availability: H2 2025 |
 | Bulk DML | General Availability: Mx 11.7 |
 | Increased decimal precision | General Availability: Mx 11.6 |
-| Consumed OpenAPI and API discovery | Public Beta: Q2 2025 <br/>General Availability: Q4 2025 |
+| Consumed OpenAPI and API discovery | Public Beta: Q2 2025<br/>General Availability: H2 2026 |
 | Visual query editor for view entities | General Availability: Mx 11.6 |
 | Event broker HTTP Bridge | General Availability: Mx 11.4 |
-| JSON Transformations | General Availability: Mx 11.9 |
+| JSON Transformations | Private Preview: Mx 11.9 |
 | Stream data events to the event broker,<br/>then to data lake for analytics | Public Beta: Mx 11.6 |
 | OpenType and optional parameters support<br/>for OData actions | General Availability: Mx 11.6 |
 | New Contributor Flow in Marketplace | General Availability: Mx 11.4 |

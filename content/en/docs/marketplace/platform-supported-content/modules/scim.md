@@ -197,23 +197,22 @@ For reference, the table below gives an overview of attribute mapping when using
 | **SCIM payload** (IdP Attribute) | **Configured Entity Attribute** | **Typical value with Okta** (IdP Attribute) | **Typical value with EntraID** (IdP Attribute) |
 | --- | --- | --- | --- |
 | externalID | Name | 00ctc4pufr85d7 | ObjectID (configured, non-default) For example, `550e8400-e29b-41d4-a716-446655440000` |
-| familyName| lastname | Doe | Doe John |
-| givenName| firstname | John |  |
-| emails| Email | `john.doe@company.com` | `johndoe@company.com` |
-| userName| FullName | `johndoe@company.com` | `johndoe@company.com` |
-| active| Active | true | true |
-| displayName| DisplayName | John | John |
-| middleName| MiddleName  | William | William  |
-| honorificPrefix | HonorificPrefix  | Mr. | Mr. |
-| honorificSuffix| HonorificSuffix | Jr. | Jr. |
-| nickName| NickName | Johnny | Johnny |
-| profileUrl| ProfileUrl | https://www.linkedin.com/in/john-doe-12345678/ | https://www.linkedin.com/in/john-doe-12345678/ |
-| title| Title | Mr. | Mr. |
-| preferredLanguage| PreferredLanguage | en-US | en-US |
-| timeZone| TimeZone | CET | CET |
-| userType| UserType | External | External |
+| familyName | lastname | Doe | Doe |
+| givenName | firstname | John | John |
+| emails | Email | `john.doe@company.com` | `johndoe@company.com` |
+| userName | FullName | `johndoe@company.com` | `johndoe@company.com` |
+| active | Active | true | true |
+| displayName | DisplayName | John Doe | John Doe |
+| middleName | MiddleName | William | William |
+| honorificPrefix | HonorificPrefix | Mr. | Mr. |
+| honorificSuffix | HonorificSuffix | Jr. | Jr. |
+| nickName | NickName | Johnny | Johnny |
+| profileUrl | ProfileUrl | https://www.linkedin.com/in/john-doe-12345678/ | https://www.linkedin.com/in/john-doe-12345678/ |
+| title | Title | Mr. | Mr. |
+| preferredLanguage | PreferredLanguage | en-US | en-US |
+| timeZone | TimeZone | CET | CET |
+| userType | UserType | External | External |
 | locale | Locale | en-US | en-US |
-
 
 {{% alert color="info" %}}
 The SCIM module only supports the IdP attributes (claims) listed in the table above. Any other claims in the SCIM payload will be ignored.
