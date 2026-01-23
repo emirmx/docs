@@ -138,14 +138,6 @@ Use the exact key names specified by Private Mendix Platform, with dots (`.`) as
     * `CIAdmin.AzureBlobStorageToken`
     * `CIAdmin.AzureAwsS3SK`
 
-* **Cluster Manager**
-
-    * `ClusterManager.KubernetesApiToken`
-    * `ClusterSettings.KubernetesAdminPassword`
-    * `ClusterSettings.GrafanaAPIKey`
-    * `ClusterSettings.MDAAWSS3AccessKey`
-    * `ClusterSettings.OCIRegistryPassword`
-
 * **Marketplace**
 
     * `Marketplace.ImportCDNPassword`
