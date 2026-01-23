@@ -12,6 +12,12 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2026
 
+### January 23, 2026
+
+#### Hotfix Release
+
+* We have resolved an issue that was preventing applications from deploying through Studio Pro and the **Autodeploy** feature of the Mendix on Kubernetes portal.
+
 ### January 22, 2026
 
 #### Portal Improvements
