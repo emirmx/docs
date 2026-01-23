@@ -86,25 +86,6 @@ Make sure you have configured a CNAME record for your custom domain with your do
 
 ## Frequently Asked Questions
 
-### Can You Create a `*.mycompany.com` Wildcard Certificate? {#wildcard}
-
-Yes. For application-level certificates, a wildcard certificate can only be used within the environments of a single app. This is because the private key is stored securely and cannot be accessed outside the app.
-
-To reuse a wildcard certificate across multiple apps or environments, Mendix Admins can create a central certificate in [Certificate Management](/control-center/certificate-management/). Central certificates can then be selected by Technical Contacts across different apps and environments.
-
-Technical Contacts can select the same wildcard certificate for different environments of the same app by using it with different subdomains. For example, `test.mycompany.com`, `accp.mycompany.com`, and `app.mycompany.com`.
-
-### How Do You Construct an Intermediate Certificate Chain Properly?
-
-Your certificate is signed by a certificate authority (CA) using the CA's intermediate certificate. The intermediate certificate is signed with the CA’s root certificate.
-
-To reach the root certificate, you must link your certificate through the intermediate certificate chain, usually just one intermediate certificate. Occasionally, a CA requires multiple intermediate certificates.
-
-* For application-level certificates, you provide the intermediate certificate chain when uploading the certificate at the application level
-* For central certificates, the chain is uploaded by the Mendix Admin
-
-You do not need to provide the root certificate, because every web browser has it in its trusted keystore.
-
 ### How Do You Get my SAML Metadata or CommunityCommons.GetApplicationUrl to Use the Custom URL? {#use-custom-url}
 
 For certain use cases, it is important for the Mendix runtime to know the public URL of your applications. This is most commonly needed when your app generates links back to itself.

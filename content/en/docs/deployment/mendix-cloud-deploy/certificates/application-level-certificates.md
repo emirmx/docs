@@ -61,7 +61,7 @@ A private SSL/TLS key and a CSR tied to that key can be created in Mendix Cloud 
 ### Generating a Certificate Request {#Generating}
 
 {{% alert color="info" %}}
-When you generate a certificate request at the application level, the resulting certificate is managed locally and applies only to that application. Therefore, Mendix recommends that you do not use a wildcard (`*`) in the domain for which you are requesting a certificate. See [Can You Create a `*.mycompany.com` Wildcard Certificate?](#wildcard), below, for more information.
+When you generate a certificate request at the application level, the resulting certificate is managed locally and applies only to that application. Therefore, Mendix recommends that you do not use a wildcard (`*`) in the domain for which you are requesting a certificate. See [Can You Create a `*.mycompany.com` Wildcard Certificate?](/developerportal/deploy/certificates/#wildcard), for more information.
 {{% /alert %}}
 
 To create a CSR and an RSA (Rivest–Shamir–Adleman) encryption key, follow these steps:

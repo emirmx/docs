@@ -96,6 +96,27 @@ To upload a certificate authority, follow these steps:
 
 1. Upload a certificate authority in the PEM format.
 
+## Frequently Asked Questions
+
+### Can You Create a `*.mycompany.com` Wildcard Certificate? {#wildcard}
+
+Yes. For [application-level certificates](/developerportal/deploy/application-level-certificates/), a wildcard certificate can only be used within the environments of a single app. This is because the private key is stored securely and cannot be accessed outside the app.
+
+To reuse a wildcard certificate across multiple apps or environments, Mendix Admins can create a central certificate in [Certificate Management](/control-center/certificate-management/). Central certificates can then be selected by Technical Contacts across different apps and environments.
+
+Technical Contacts can select the same wildcard certificate for different environments of the same app by using it with different subdomains. For example, `test.mycompany.com`, `accp.mycompany.com`, and `app.mycompany.com`.
+
+### How Do You Construct an Intermediate Certificate Chain Properly?
+
+Your certificate is signed by a certificate authority (CA) using the CA's intermediate certificate. The intermediate certificate is signed with the CA’s root certificate.
+
+To reach the root certificate, you must link your certificate through the intermediate certificate chain, usually just one intermediate certificate. Occasionally, a CA requires multiple intermediate certificates.
+
+* For application-level certificates, you provide the intermediate certificate chain when uploading the certificate at the application level
+* For central certificates, the chain is uploaded by the Mendix Admin
+
+You do not need to provide the root certificate, because every web browser has it in its trusted keystore.
+
 ## Read More
 
 * [Transport Layer Security](https://en.wikipedia.org/wiki/Transport_Layer_Security)
