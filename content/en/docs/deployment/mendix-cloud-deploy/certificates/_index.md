@@ -11,7 +11,9 @@ aliases:
 
 ## Introduction
 
-Certificates are used to authenticate users to apps. They can be used on both incoming and outgoing connections.
+Certificates are used to authenticate users to apps and secure communication. In Mendix Cloud, certificates can be used for both incoming and outgoing connections.
+
+Incoming connection certificates can be managed either at the [application level](/developerportal/deploy/application-level-certificates/) by Technical Contacts, or centrally by Mendix Admins via [Certificate Management](/control-center/certificate-management/). Outgoing connection certificates are solely managed at the application level.
 
 {{% alert color="info" %}}
 Custom certificates cannot be configured for Free Apps.
