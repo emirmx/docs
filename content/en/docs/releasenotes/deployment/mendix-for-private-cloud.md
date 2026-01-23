@@ -12,6 +12,16 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2026
 
+### January 23, 2026
+
+#### Hot Fix Release
+
+* We've resolved an issue that was preventing applications from deploying via the Mendix on Kubernetes portal Autodeploy feature and Studio Pro.
+
+#### License Manage CLI v0.10.7
+
+* To enhance security, we now automatically disable API credential automounting for PCLM deployments, significantly limiting unnecessary access to the Kubernetes API.
+
 ### January 22, 2026
 
 #### Portal Improvements
