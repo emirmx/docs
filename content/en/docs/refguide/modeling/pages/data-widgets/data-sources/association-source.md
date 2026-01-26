@@ -9,7 +9,7 @@ weight: 60
 The **Association** source is a data source available to nested [data grids](/refguide/data-grid/), [template grids](/refguide/template-grid/), and [list views](/refguide/list-view/). 
 
 {{% alert color="warning" %}}
-The **Association** source retrieves objects from memory, not from the database. 
+If objects are already in memory, the **Association** source retrieves them from memory, not from the database. 
 {{% /alert %}}
 
 An **Association** data source fills the widget with objects linked to another object by an association. To provide the context, the data container needs to be nested within another data container.
