@@ -29,7 +29,7 @@ The Mendix Platform consists of:
 Make sure you are using the [latest version of Studio Pro](https://marketplace.mendix.com/link/studiopro/) when following this guide.
 
 {{% alert type="info" %}}
-When you create an app in Mendix, a [free app environment](https://docs.mendix.com/developerportal/deploy/mendix-cloud-deploy/#free-app) is automatically set up for you in the Mendix Cloud (public cloud service). You can run and test your app right away - no additional configuration or infrastructure setup is required to get started.
+When you create an app in Mendix, a [free app environment](/developerportal/deploy/mendix-cloud-deploy/#free-app) is automatically set up for you in the Mendix Cloud (public cloud service). You can run and test your app right away - no additional configuration or infrastructure setup is required to get started.
 {{% /alert %}}
 
 ## Prerequisites
@@ -37,7 +37,7 @@ When you create an app in Mendix, a [free app environment](https://docs.mendix.c
 Before you begin, complete the following steps:
 
 * Create your free [Mendix Account](https://signup.mendix.com/link/signup).
-* [Download](https://marketplace.mendix.com/link/studiopro) and [install](https://docs.mendix.com/refguide/install/) Studio Pro.
+* [Download](https://marketplace.mendix.com/link/studiopro) and [install](/refguide/install/) Studio Pro.
 * Open Studio Pro and sign in with your Mendix Account details (click **Go to Web Sign In**).
 
  {{< figure src="/attachments/quickstarts/part1/3. login.png" width="450px" alt="Sign in to Studio Pro">}}
@@ -81,7 +81,7 @@ The top bar includes several key elements:
 * Quick-access buttons to do the following:
 
     * Publish, run locally, and view your app
-    * Access the [Community](https://community.mendix.com/index3.html), [Marketplace](https://marketplace.mendix.com/link/contenttype/102), and [Maia](https://docs.mendix.com/refguide/mendix-ai-assistance/#maia-capabilities-in-mendix-studio-pro)
+    * Access the [Community](https://community.mendix.com/index3.html), [Marketplace](https://marketplace.mendix.com/link/contenttype/102), and [Maia](/refguide/mendix-ai-assistance/#maia-capabilities-in-mendix-studio-pro)
 
 ### Working Area 
 
@@ -90,9 +90,9 @@ The top bar includes several key elements:
 {{% alert type="info" %}}
 When you launch **Studio Pro** for the first time, you’ll see the **Welcom** tab. From here, you can access:
 
-* [Maia Learn](https://docs.mendix.com/refguide/maia-learn/) – learning materials to help you get started
+* [Maia Learn](/refguide/maia-learn/) – learning materials to help you get started
 
-* [Maia Chat](https://docs.mendix.com/refguide/maia-chat/) – an AI-powered assistant for quick support and guidance
+* [Maia Chat](/refguide/maia-chat/) – an AI-powered assistant for quick support and guidance
 
 We recommend watching the introduction videos to get familiar with the basic concepts of Mendix development before you start building your app.
 {{% /alert %}}
@@ -107,7 +107,7 @@ On the **right** and **bottom** of the screen are **dockable panes** that displa
 
 ## Modules
 
-Before you start building your app, it's essential to understand the concept of **modules**, which is a way to split the functionality of your Mendix application into separate parts. Learn more about modules and different module types [here](https://docs.mendix.com/refguide/modules/).
+Before you start building your app, it's essential to understand the concept of **modules**, which is a way to split the functionality of your Mendix application into separate parts. Learn more about modules and different module types [here](/refguide/modules/).
 
 Each module has its own security and access settings, which you can configure to accommodate different users and use cases. Modules can access data, logic, and pages from other modules. 
 
@@ -115,10 +115,10 @@ When your app is deployed locally or in a cloud environment, all modules are bun
 
 ## Create a Domain Model
 
-After getting familiar with the Studio Pro interface, you can begin building your app, starting with the data model. In Mendix, the data structure of your app is defined using the [domain model](https://docs.mendix.com/refguide/domain-model/). Each module has a domain model that describes the data used within that [module](https://docs.mendix.com/refguide/modules/). 
+After getting familiar with the Studio Pro interface, you can begin building your app, starting with the data model. In Mendix, the data structure of your app is defined using the [domain model](/refguide/domain-model/). Each module has a domain model that describes the data used within that [module](/refguide/modules/). 
 
 {{% alert type="info" %}}
-Domain models are comprised of [entities](https://docs.mendix.com/refguide/entities/) (similar to a table in traditional SQL). Entities have [attributes](https://docs.mendix.com/refguide/attributes/) (similar to fields). [Properties](https://docs.mendix.com/refguide10/entities/#properties) define the names of the entities. Entities can relate to each other as one-to-one, one-to-many, or many-to-many. The relations between entities are called [associations](https://docs.mendix.com/refguide/associations/). Entities can inherit their properties and attributes from other entities by creating a [Generalization](https://docs.mendix.com/refguide/generalization-and-association/#generalization-specialization-and-inheritance) of an entity.
+Domain models are comprised of [entities](/refguide/entities/) (similar to a table in traditional SQL). Entities have [attributes](/refguide/attributes/) (similar to fields). [Properties](/refguide/entities/#properties) define the names of the entities. Entities can relate to each other as one-to-one, one-to-many, or many-to-many. The relations between entities are called [associations](/refguide/associations/). Entities can inherit their properties and attributes from other entities by creating a [Generalization](/refguide/generalization-and-association/#generalization-specialization-and-inheritance) of an entity.
 {{% /alert %}}
 
 
@@ -146,7 +146,7 @@ You have created a new persistable entity called **Employee**. This means the en
 {{< figure src="/attachments/quickstarts/part1/7.2 CreateAttributes.png" width="450px" alt="Create attributes on an entity">}}
 
 {{% alert type="info" %}}
-You can create a domain model by simply describing your application using [Maia for Domain Model](https://docs.mendix.com/refguide/maia-for-domain-model/) an AI-powered tool that generates domain models based on your input.
+You can create a domain model by simply describing your application using [Maia for Domain Model](/refguide/maia-for-domain-model/) an AI-powered tool that generates domain models based on your input.
 
 To use it, **click Maia for Domain Model** in the **Working Area**, then describe your application in the chat box on the right.
 
@@ -253,7 +253,7 @@ Your app is ready to deploy! Click the **green run** button in the top bar menu 
 To deploy your app to a cloud environment, you can hit **publish** to deploy your app to the Mendix Free cloud. The Mendix Free cloud is a free testing environment that every app has access to. The environment is automatically created the first time you publish your app, and there is no configuration required to set it up.
 
 {{% alert type="info" %}}
-To deploy your app to the Mendix Cloud (Paid), there are multiple options for hosting. Please refer to this guide on [our hosting options](https://docs.mendix.com/developerportal/deploy/mendix-cloud-deploy/) for more information on which plan is best for your project.
+To deploy your app to the Mendix Cloud (Paid), there are multiple options for hosting. Please refer to this guide on [our hosting options](/developerportal/deploy/mendix-cloud-deploy/) for more information on which plan is best for your project.
 {{% /alert %}}
 
 ## 11. Finished!

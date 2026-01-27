@@ -27,9 +27,9 @@ The Mendix Platform enables you to build apps of many different kinds, including
 
 * **Online-first development**: As of Mendix 11, native mobile apps are created in online-first mode by default. This means your app communicates directly with the server whenever it has a connection. For many use cases, this is the simplest and fastest way to get started.
 
-* (Optional) [Offline-first development](https://docs.mendix.com/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/): If your app needs to work without a stable internet connection, you can enable offline-first mode. In this approach, data is stored in a local database on the mobile device and synchronized with the server when possible.
+* (Optional) [Offline-first development](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/): If your app needs to work without a stable internet connection, you can enable offline-first mode. In this approach, data is stored in a local database on the mobile device and synchronized with the server when possible.
 
-* (Optional) [Data synchronization](https://docs.mendix.com/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/synchronization/): To support offline-first apps, you can configure synchronization. Synchronization is triggered using the synchronize action in nanoflows and the synchronize to device action in microflows. You can also configure it to only update the data needed for each specific user to minimize data use and load times.
+* (Optional) [Data synchronization](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/synchronization/): To support offline-first apps, you can configure synchronization. Synchronization is triggered using the synchronize action in nanoflows and the synchronize to device action in microflows. You can also configure it to only update the data needed for each specific user to minimize data use and load times.
 
 ## Prerequisites
 
@@ -148,9 +148,9 @@ Nanoflows are similar to microflows, as they allow you to build complex logic fo
 
 ## Deploying Your App
 
-In order to easily test your application on a device, run your application in Studio Pro and then open the **Make it Native app** on your mobile device. Once your app is running, click the **dropdown arrow** next to **View App** and choose **View on a Device**. Locate the **QR code** used to view your native mobile app, and then scan it using the Make it Native app (If you are using [Parallels](https://docs.mendix.com/refguide/using-mendix-studio-pro-on-a-mac/), you may need some special configurations).
+In order to easily test your application on a device, run your application in Studio Pro and then open the **Make it Native app** on your mobile device. Once your app is running, click the **dropdown arrow** next to **View App** and choose **View on a Device**. Locate the **QR code** used to view your native mobile app, and then scan it using the Make it Native app (If you are using [Parallels](/refguide/using-mendix-studio-pro-on-a-mac/), you may need some special configurations).
 
-Once you scan the **QR code** using **Make it Native**, the app should load, and you will be able to test your application. In order to deploy your application to the app stores (Apple and Android), you will need to create a signed build of your application. Mendix recommends using [Bitrise](https://docs.mendix.com/refguide/mobile/distributing-mobile-apps/building-native-apps/bitrise/) to package your app for distribution.
+Once you scan the **QR code** using **Make it Native**, the app should load, and you will be able to test your application. In order to deploy your application to the app stores (Apple and Android), you will need to create a signed build of your application. Mendix recommends using [Bitrise](/refguide/mobile/distributing-mobile-apps/building-native-apps/bitrise/) to package your app for distribution.
 
 > **Optional (Offline-first)**: If you want your app to work offline, update the synchronization mode for the entities you are using. By default, synchronization is set to **Online**. To enable offline-first, configure the entities to use **All Objects** mode so that data is stored locally and synchronized periodically with the server.
 
