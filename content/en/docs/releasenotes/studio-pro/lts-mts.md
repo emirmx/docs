@@ -127,9 +127,9 @@ A monthly release is a non-MTS/LTS minor release that only receives patches for 
 
 ### Support Duration
 
-Monthly release versions do not enjoy regular patch releases like MTS and LTS versions do. Bugs found in monthly release versions are directly resolved in the subsequent monthly release. 
+Monthly release versions do not enjoy regular patch releases like MTS and LTS versions do. Most bugs found in monthly release versions are resolved in the subsequent monthly release. However, high impact bugs which are found before the next minor (monthly) release may lead to a patch release.
 
-For example, if a bug is found in version 10.1, it will only be fixed in the next monthly release, which would be version 10.2.
+For example, if a bug is found in version 10.1.0 before version 10.2.0 is released, it will usually only be fixed in the next monthly release, that is version 10.2.0. If the bug is judged to have a high impact and can be fixed quickly, then a patched version 10.1.1 may be released. 
 
 ### Release Cycle
 
@@ -139,7 +139,7 @@ This is a monthly release that includes new features as well as security patches
 
 A monthly release only receives patches for critical/security issues if they can be released earlier and faster than the next minor version release. Otherwise, bugs found in a monthly release will only be fixed rolling forward to the next minor version. 
 
-For example, if you are using version 10.1 after 10.2 has been released and you find a critical issue in 10.1, that fix will only be released in the next monthly release, which would be 10.3.
+For example, if you are using version 10.1.0 after 10.2.0 has been released and you find a critical issue in 10.1.0, that fix will only be released in the next monthly release, which would be 10.3.0.
 
 If a bug is found in a monthly-release version for an older major version, it will only be fixed as a patch on the existing LTS (for example, a bug found in 10.16 will only be fixed for a patch release on the LTS version 10.24). 
 
