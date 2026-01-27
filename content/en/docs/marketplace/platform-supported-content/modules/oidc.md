@@ -337,6 +337,8 @@ In this case, the OIDC client is the app you are making.
     * `private_key_jwt`: This method, introduced in version 4.1.0, uses asymmetric key cryptography (algorithm) for authentication. This is the best option for security. When you select the `private key` option, you can configure the following fields:
         * **Key Pair Expiration Days**: (default `90`)
         * **JWT ALG(Signing Algorithm)**: (default `RS256`)
+
+        {{% alert color="info" %}}`private_key_jwt` is not yet supported with Entra ID due to the specific way of Microsoft's implementation, which requires enhancements to the OIDC SSO module.{{% /alert %}}
  
     Once you **Save** the configuration, a key pair is automatically generated. Before you set up the private key authentication in your Mendix App, complete the JWKS configuration at your IdP. Check the documentation of your IdP for details. If you are using Okta, you can refer to the [Configuring JWKS at Your IdP (Okta)](#jwks-okta) section. 
 
@@ -615,6 +617,17 @@ You may need a different or custom attribute mapping, for example, if you are co
 
 In this case, you can modify the default attribute mapping.
 To do so, change the default **IdP Attribute** or the **Configured Entity Attribute**, by editing the mapping in the **Attribute Mapping** section within the **UserProvisioning** tab. 
+
+##### Creating IdP Attribute Manually
+
+IdP attributes will be automatically created from the list of `claims_supported` at the well-known endpoint. The module also allows manual creation of IdP attributes through the following steps:
+
+1. In the **Attribute Mapping** of the **UserProvisioning** tab, click **New** to add a new mapping.
+2. In the **Edit Claim Map** dialog, click **Search**.
+3. Under the **Claims for claim entity attribute**, click **New** to create a new claim.
+4. In the **IdP Attribute**, select the newly created claim from the dropdown, and click **Save**.
+
+Select the required attribute to use it in your mapping.
 
 ##### User Provisioning Using Your Custom User Entity{#custom_user_entity}
 

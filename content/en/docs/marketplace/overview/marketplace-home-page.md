@@ -29,7 +29,7 @@ The search box at the top of the page allows you to explore the Mendix Marketpla
 You can refine search results using the following filters:
 
 * **Support** – Select between the available support categories. For details, see the [Marketplace Content Support](/appstore/marketplace-content-support/).
-* **Visibility** – Choose whether you want to display [public](/appstore/submit-content/#public) or [private](/appstore/submit-content/#private) content.
+* **Visibility** – Choose whether you want to display [public or private](/appstore/submit-content/#support-licensing) content.
 * **Content Types** – Choose the type of content to display. For details, see the [Types of Marketplace Components](/appstore/#components-type) section in *Marketplace*.
 * **Category** – Select specific domains in which components or services share characteristics, functions, or purposes.
 * **Industry** – Select specific sectors or business domains in which components or services are used.
@@ -44,7 +44,7 @@ For details on finding and installing Marketplace content in Studio Pro, see the
 
 Share new Marketplace content you have developed.
 
-For details, see [Upload to the Marketplace](/appstore/submit-content/).
+For details, see [Uploading Content to the Marketplace](/appstore/submit-content/).
 
 ## Get Studio Pro
 
@@ -133,7 +133,7 @@ On this page, you can see all the content your company has published to the Mark
 
 Click the name of the component to access its [details page](/appstore/component-details/).
 
-Click the context menu to access options for managing this content:
+Click the context menu to access options for managing this content.
 
 {{< figure src="/attachments/appstore/marketplace-home-page/company-content.png"  width="400"  class="no-border" >}}
 
@@ -157,7 +157,7 @@ This table breaks down the roles and permissions for content groups:
 
 #### Content Tab {#group-content}
 
-On this tab, you can assign content that can only be managed by members of this group. To assign a component to a content group, click **Assign Content**, and select a Marketplace component from the dialog box:
+On this tab, you can assign content that can only be managed by members of this group. To assign a component to a content group, click **Assign Content**, and select a Marketplace component from the dialog box.
 
 {{< figure src="/attachments/appstore/marketplace-home-page/group-content.png"  width="400"  class="no-border" >}}
 
@@ -165,7 +165,7 @@ On this tab, you can assign content that can only be managed by members of this 
 A component can only be assigned to one content group at a time. If a component is already assigned to another content group, it will not be displayed in this dialog box.
 {{% /alert %}}
 
-Click the context menu to access options for managing this content:
+Click the context menu to access options for managing this content.
 
 {{< figure src="/attachments/appstore/marketplace-home-page/group-content-context.png" width="400" class="no-border" >}}
 
