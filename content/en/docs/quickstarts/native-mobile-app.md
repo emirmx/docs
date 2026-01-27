@@ -9,31 +9,16 @@ aliases:
     - /refguide9/quickstart-part2/
 ---
 
-## 1. Introduction 
-This guide is a continuation of part one, and in it, you will recreate the web application you created in part one as a native mobile application. The guide aims to get you started with Mendix Native Mobile and walks you through the steps on how to develop your first native app using the Studio Pro IDE.
-<<<<<<< Updated upstream
 ## Introduction 
 
 This guide is a continuation of part one, and in it, you will recreate the web application you created in part one as a native mobile application.  The guide aims to get you started with Mendix Native Mobile and walks you through the steps on how to develop your first native app using the Studio Pro IDE.
-=======
->>>>>>> Stashed changes
 
 By following this guide, you will:
 
 * Learn how to **create, run, and deploy** a native mobile application.
 * Use **nanoflows** to build logic.
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 * Start with an **online-first** native mobile app (default in Mendix 11), with the option to later explore **offline-first** development and **data synchronization** if needed.
-=======
-* Start with an **online-first** native mobile app (default in Mendix 11), with the option to later explore **offline-first** and **data synchronization** if needed.
->>>>>>> Stashed changes
 * Learn how to **create, run, and deploy** a native mobile application
-* Use **nanoflows** to build logic
-* Learn about **offline-first** development and **data synchronization**
-=======
-* Start with an **online-first** native mobile app (default in Mendix 11), with the option to later explore **offline-first** and **data synchronization** if needed.
->>>>>>> Stashed changes
 * Test your native app using the **Make it Native app**
 
 ## Mobile Development Essentials
@@ -43,32 +28,16 @@ The Mendix Platform enables you to build apps of many different kinds, including
 * **Online-first development**: As of Mendix 11, native mobile apps are created in online-first mode by default. This means your app communicates directly with the server whenever it has a connection. For many use cases, this is the simplest and fastest way to get started.
 
 * (Optional) [Offline-first development](https://docs.mendix.com/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/): If your app needs to work without a stable internet connection, you can enable offline-first mode. In this approach, data is stored in a local database on the mobile device and synchronized with the server when possible.
-<<<<<<< Updated upstream
-=======
-
-* (Optional) [Data synchronization](https://docs.mendix.com/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/synchronization/): To support offline-first apps, you can configure synchronization. Synchronization is triggered using the synchronize action in nanoflows and the synchronize to device action in microflows. You can also configure it to only update the data needed for each specific user to minimize data use and load times.
->>>>>>> Stashed changes
 
 * (Optional) [Data synchronization](https://docs.mendix.com/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/synchronization/): To support offline-first apps, you can configure synchronization. Synchronization is triggered using the synchronize action in nanoflows and the synchronize to device action in microflows. You can also configure it to only update the data needed for each specific user to minimize data use and load times.
 
-<<<<<<< Updated upstream
 ## Prerequisites
-=======
-Before you begin, we advise completing part one of this guide. You will also need to:
-
-* **Download** and **install** the [Make it Native App](https://docs.mendix.com/refguide/mobile/getting-started-with-mobile/prerequisites/#get-min-app) on your mobile device to test your app on a device.
-* Check that your Mendix version is compatible with the Make It Native app. See the [minimum supported version requirements](https://docs.mendix.com/refguide/mobile/getting-started-with-mobile/prerequisites/#get-min-app).
->>>>>>> Stashed changes
 
 Before you begin, we advise completing part one of this guide. You will also need to:
-Before starting this tutorial, make sure you have completed the following prerequisites:
 
 * Download and install the [Make It Native](/refguide/getting-the-make-it-native-app/) app on your mobile device, and confirm that the Mendix version you are using is [compatible](/refguide/mobile/getting-started-with-mobile/prerequisites/#get-min-app) with your Make It Native app version
 * Complete part one of this guide series, [Building a Responsive Web App](/quickstarts/responsive-web-app/)
 * If you are working on a Mac, complete [Configuring Parallels](/refguide/using-mendix-studio-pro-on-a-mac/) to install Studio Pro on your Mac
-
-* **Download** and **install** the [Make it Native App](https://docs.mendix.com/refguide/mobile/getting-started-with-mobile/prerequisites/#get-min-app) on your mobile device to test your app on a device.
-* Check that your Mendix version is compatible with the Make It Native app. See the [minimum supported version requirements](https://docs.mendix.com/refguide/mobile/getting-started-with-mobile/prerequisites/#get-min-app).
 
 ## Creating the App
 
@@ -139,27 +108,18 @@ Nanoflows are similar to microflows, as they allow you to build complex logic fo
 {{% /alert %}}
 
 1. Open the **properties** of the **save button**.
-
-2. Under **on-click** action, select **Call a Nanoflow**.
-
-3. In the window that appears, click New to create a new nanoflow.
-
-4. **Name** the new nanoflow ACT_Employe_NewEdit
-
-5. In the newly created nanoflow, look for an **orange Decision** in the toolbox and drag it onto the flow.
-
-6. **Double-click** the decision to open its **properties**.
-
-7. Enter the caption Has Firstname?
-
-8. Under **Expression**, add 'trim($Employee/FirstName)!= empty'. This will remove any whitespace from the string and then check to ensure there are characters in the string attribute.
-
-9. As the expression above results in a true and false result, we need to **create a branching path** from the decision - a path for each possible result. Select the **decision**, then from a corner **click and drag away** to create the new alternative path. Ensure to define which path is for the true result and the false result by **right-clicking** them both and under condition value choosing **true** and **false**.
-
-10. On the **false** path, add a **validation feedback action**. Double click to open its **properties**, enter the following details, and click **OK**:
 1. Under **on-click** action, select **Call a Nanoflow**.
-1. In the window that appears, click New to create a new nanoflow.
-1. **Name** the new nanoflow ACT_Employe_NewEdit
+1. In the window that appears, click **New** to create a new nanoflow.
+1. **Name** the new nanoflow `ACT_Employe_NewEdit`.
+1. In the newly created nanoflow, look for an **orange Decision** in the toolbox and drag it onto the flow.
+1. **Double-click** the decision to open its **properties**.
+1. Enter the caption `Has Firstname?`.
+1. Under **Expression**, add 'trim($Employee/FirstName)!= empty'. This will remove any whitespace from the string and then check to ensure there are characters in the string attribute.
+1. As the expression above results in a true and false result, we need to **create a branching path** from the decision - a path for each possible result. Select the **decision**, then from a corner **click and drag away** to create the new alternative path. Ensure to define which path is for the true result and the false result by **right-clicking** them both and under condition value choosing **true** and **false**.
+1. On the **false** path, add a **validation feedback action**. Double click to open its **properties**, enter the following details, and click **OK**:
+1. Under **on-click** action, select **Call a Nanoflow**.
+1. In the window that appears, click **New** to create a new nanoflow.
+1. **Name** the new nanoflow `ACT_Employe_NewEdit`.
 1. In the newly created nanoflow, look for an **orange Decision** in the toolbox and drag it onto the flow.
 1. **Double-click** the decision to open its **properties**.
 1. Enter the caption Has Firstname?
@@ -174,12 +134,12 @@ Nanoflows are similar to microflows, as they allow you to build complex logic fo
 1. Now on the **true path**, repeat this step for the **LastName** and **JobRole** attributes as well.
     * You can copy and paste the decision and validation feedback action to save time (But don’t forget to update the actions for each attribute)
 
-12. At the end of the flow on the true path, add a **commit action**. Open its **properties** by double-clicking the action and ensure **Employee** is selected for **Object or List**, and change **refresh in client** to **Yes**. Click **OK** to close to window.
+1. At the end of the flow on the true path, add a **commit action**. Open its **properties** by double-clicking the action and ensure **Employee** is selected for **Object or List**, and change **refresh in client** to **Yes**. Click **OK** to close to window.
 
-13. Add a **synchronize action** after the commit action and choose to synchronize only unsynchronized objects.  
+1. Add a **synchronize action** after the commit action and choose to synchronize only unsynchronized objects.  
    Note: This step is only needed if you configure your app to work offline. For online-first apps, changes are sent directly to the server without extra configuration.
 
-14. Add a **close page action** after the synchronize action.
+1. Add a **close page action** after the synchronize action.
 1. At the end of the flow on the true path, add a **commit action**. Open its **properties** by double-clicking the action and ensure **Employee** is selected for **Object or List**, and change **refresh in client** to **Yes**. Click **OK** to close to window.
 1. Add a **synchronize action** after the commit action and choose to synchronize only unsynchronized objects.
 1. Add a **close page action** after the synchronize action.
@@ -194,11 +154,7 @@ Once you scan the **QR code** using **Make it Native**, the app should load, and
 
 > **Optional (Offline-first)**: If you want your app to work offline, update the synchronization mode for the entities you are using. By default, synchronization is set to **Online**. To enable offline-first, configure the entities to use **All Objects** mode so that data is stored locally and synchronized periodically with the server.
 
-<<<<<<< Updated upstream
 ## Finished!
-=======
-## 9. Finished
->>>>>>> Stashed changes
 
 Congratulations on completing and deploying your very first Native Mobile App! Next, head over to the [Academy](https://academy.mendix.com/link/home) and get started with our **Crash Course** learning plan, or continue learning here in our docs pages by searching for topics you are interested in. For videos on the latest news and updates, head to our [YouTube page](https://www.youtube.com/c/MendixCommunity). Or see what our awesome community is up to on our [Medium publication](https://medium.com/mendix). 
 
