@@ -210,6 +210,7 @@ The table below introduces you to several key updates when you upgrade the SAML 
 | Admin Screen Restructuring | The **Mapping** tab has been removed. Equivalent configurations can now be completed on the **User Provisioning configuration** tab. <br> `evaluateMultipleUserMatches` microflow is now moved to the **User Commons**. |
 | User Commons Module Integration | 1. From versions 4.0.0 and above, SAML2.0 is compatible with the UserCommons v2.0.0. <br> 2. The SAML module now integrates with the User Commons module, offering a more uniform experience with the OIDC SSO module. <br> 3. A new method for creating custom user provisioning microflows using User Commons simplifies development and allows you to automatically set the user-type for users <br> 4. Deprecated: SAML 3.x provisioning flows will be unsupported in future versions. It’s recommended to create new provisioning flows using User Commons after upgrading.<br> 5. From UserCommons 2.0.0, new users without IdP-specified time zone or language will use default App settings; existing users retain their previously set values.|
 | InCommon Federation Support | Pre-configured support for InCommon Federation has been removed. You now need to create custom user provisioning microflows in version 4.0.0 |
+| MxModuleReflection | In the **MxObjects_Overview** page, the MxModuleReflection module refresh is no longer required. It is handled automatically in the **SAML20.Startup**. |
 
 ## Configuring SAML Module{#config}
 
@@ -362,7 +363,7 @@ Deploy your application and log in with the application Admin account. Click **S
 
 #### Configuring Steps
 
-1. Navigate to the **Model Reflection**, select the required module from the left navigation pane, and select **Click to refresh** to synchronize entities and microflows.
+1. Navigate to the **Model Reflection**, select the required module from the left navigation pane, and select **Click to refresh** to synchronize entities and microflows. In version 4.x, refreshing the module is no longer required.
 2. In the **SP Configuration** tab, provide the necessary values and click **Save**. You need to complete this step before proceeding with IdP Configuration.
 3. In the IdP Configuration tab, click **New** and provide the necessary details. For more information on IdP configuration tabs, see the [Reference Guide for SAML IdP Configuration](/appstore/modules/saml/idp-attributes/) document.
 4. From version 4.0.0 of the SAML module, you have the option to download the SP Metadata from the **Encryption Settings** tab, **Identity Provider Metadata** tab, and at the end of the configuration process.
