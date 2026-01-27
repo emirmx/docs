@@ -108,10 +108,10 @@ For readers with more knowledge of the OAuth and OIDC protocol:
 
 The OIDC SSO module does not yet support the following:
 
-* Requesting claims via the 'claims' query parameter, as per OIDC specs
-* Delegating authorization using OAuth-scopes; this currently requires a custom microflow for parsing of Access Tokens
-* Mobile apps
-* Controlling the configuration using constants requires an app restart
+* Requesting claims via the 'claims' query parameter, as per OIDC specs.
+* Delegating authorization using OAuth-scopes; this currently requires a custom microflow for parsing of Access Tokens.
+* Mobile apps.
+* Controlling the configuration using constants requires an app restart.
 
 The OIDC SSO module also has the following limitations:
 
