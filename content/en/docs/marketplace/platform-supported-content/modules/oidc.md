@@ -108,10 +108,10 @@ For readers with more knowledge of the OAuth and OIDC protocol:
 
 The OIDC SSO module does not yet support the following:
 
-* Requesting claims via the 'claims' query parameter, as per OIDC specs
-* Delegating authorization using OAuth-scopes; this currently requires a custom microflow for parsing of Access Tokens
-* Mobile apps
-* Controlling the configuration using constants requires an app restart
+* Requesting claims via the 'claims' query parameter, as per OIDC specs.
+* Delegating authorization using OAuth-scopes; this currently requires a custom microflow for parsing of Access Tokens.
+* Mobile apps.
+* Controlling the configuration using constants requires an app restart.
 
 The OIDC SSO module also has the following limitations:
 
@@ -130,7 +130,6 @@ It requires the following Marketplace modules to be included in your app:
 * [Encryption](https://marketplace.mendix.com/link/component/1011) – see [Encryption](/appstore/modules/encryption/) documentation.
 * [Community Commons](https://marketplace.mendix.com/link/component/170) – see [Community Commons](/appstore/modules/community-commons-function-library/) documentation.
 * [Nanoflow Commons](https://marketplace.mendix.com/link/component/109515) – see [Nanoflow Commons](/appstore/modules/nanoflow-commons/) documentation.
-* [Mx Model reflection](https://marketplace.mendix.com/link/component/69) – see [Mx Model Reflection](/appstore/modules/model-reflection/) documentation (deprecated from version 4.0.0 of the module).
 * [User Commons](https://marketplace.mendix.com/link/component/223053) (for version 3.0.0 and above)
 
     {{% alert color="warning" %}}
@@ -205,6 +204,7 @@ This section provides an overview of updates for the OIDC SSO module across diff
 
 | Mendix Version | OIDC SSO Module Version | Important Migration Changes | Additional Information|
 | --- | --- | --- | --- |
+| 10.24.0 and above | 4.2.1 | In version 4.2.1, automatic migration of the UserCommons has been removed. | Since migration steps were removed in 4.2.1, you must upgrade to OIDC SSO version 4.2.0 first to prevent data loss. This applies to the UserCommons, if you are migrating from any version below 3.0.0, always upgrade to 4.2.0 first, then move to the latest v4.2.1. |
 | 10.21.01 and above | 4.2.0 | In version 4.2.0, the module no longer automatically executes the UserCommons migration in the startup microflow. The migration step has been moved to a dedicated microflow, which you can trigger via a widget. | The `ASU_STARTUP` microflow has been moved under the **USE_ME** folder. |
 | 10.12.10 and above | 4.0.0 | Set `OIDC.ASU_OIDC_Startup` microflow as part of the after-startup microflow | From UserCommons 2.0.0, new users without IdP-specified time zone or language will use default App settings; existing users retain their previously set values. |
 | | | For module version 4.0.0 and above, use User Commons module version 2.0.0 and above, and vice versa. | Deprecated Mx Model Reflection module; maintained for compatibility but will be removed in future versions. |
@@ -550,6 +550,7 @@ You can set up custom user provisioning by setting the following constants. You 
 | `CustomUserEntity` | a custom user entity | in the form `modulename.entityname` – a specialization of `System.User` | `Administration.Account` |
 | `PrincipalEntityAttribute` | the attribute holding the unique identifier of an authenticated user | | `Name` |
 | `PrincipalIdPAttribute` | the IdP claim which is the unique identifier of an authenticated user | | `sub` |
+| `NamedUserIdentifier` | a user identifier added to the IdP configuration and used by the metering sidecar | | `email` |
 | `AllowcreateUsers` | allows to create users in the application | *optional* | `True` |
 | `Userrole` | the role that will be assigned to newly created users | *optional* - Default Userrole is assigned only at user creation <br> - User updates do not change the default role <br> - No bulk update for existing users when the default userrole changes | `User` |
 | `UserType` | assigns user type to the created user | *optional* | `Internal` |
