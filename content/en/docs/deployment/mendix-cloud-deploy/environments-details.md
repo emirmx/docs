@@ -16,7 +16,7 @@ To open the **Environment Details** page, go to [Apps](https://sprintr.home.mend
 
 {{% alert color="info" %}}You must have permissions for **Transport Rights** to view the **Environment Details** page. For details on configuring permissions, see [Node Permissions](/developerportal/deploy/node-permissions/).{{% /alert %}}
 
-The **Environment Details** page shows information about the selected environment and includes eight tabs: **General**, **Model Options**, **Network**, **Log Levels**, **Runtime**, **Maintenance**, **Tags**, and **Services**. You can also use this page to manage and debug several aspects of the environment.
+The **Environment Details** page shows information about the selected environment and includes nine tabs: **General**, **Model Options**, **Network**, **Connectivity**, **Log Levels**, **Runtime**, **Maintenance**, **Tags**, and **Services**. You can also use this page to manage and debug several aspects of the environment.
 
 ## Actions {#actions}
 
