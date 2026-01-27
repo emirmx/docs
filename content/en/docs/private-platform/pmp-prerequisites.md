@@ -40,12 +40,16 @@ For performance reasons, Mendix recommends at least the following minimum hardwa
 | Grafana | 12.2.1 |
 | Prometheus | 2.41.0 |
 
+{{% alert color="info" %}}
+Currently, Private Mendix Platform only supports Grafana configurations with a single Loki and a single Prometheus data source. Configurations using a central Grafana instance with multiple Loki or Prometheus datasources are not supported.
+{{% /alert %}}
+
 #### Grafana Endpoints
 
 Private Mendix Platform uses the following Grafana endpoints:
 
 * [GET /api/health](https://grafana.com/docs/grafana/latest/developers/http_api/other/#returns-health-information-about-grafana) - This endpoint is used to check the health and status of the Grafana instance itself. It allows Private Mendix Platform to get the Grafana version and verify that Grafana is running before saving the logging and monitoring configuration.
-* [GET /api/datasourcesData](https://grafana.com/docs/grafana/latest/developers/http_api/data_source/) - This endpoint is used to fetch the unique identifiers (IDs) of datasources, like Loki (logs) and Prometheus (metrics). These IDs are required for subsequent queries.
+* [GET /api/datasources](https://grafana.com/docs/grafana/latest/developers/http_api/data_source/) - This endpoint is used to fetch the unique identifiers (IDs) of datasources, like Loki (logs) and Prometheus (metrics). These IDs are required for subsequent queries.
 * `GET /api/datasources/proxy/uid/:uid/*` - This endpoint acts as a proxy for calls to the data source identified by the specified UID. Private Mendix Platform uses this to call Loki and Prometheus APIs to query logs and labels.
 * [GET /loki/api/v1/query_range](https://grafana.com/docs/enterprise-logs/latest/reference/loki-http-api/#query-logs-within-a-range-of-time) - This is the primary endpoint for fetching log data. Private Mendix Platform uses this Loki API to query application logs over a specific time range. The results of this query are used for real-time monitoring, and displayed within the Private Mendix Platform interface.
 * [GET /api/v1/labels](https://prometheus.io/docs/prometheus/latest/querying/api/#getting-label-names) (Prometheus API via Grafana) - This endpoint queries the available labels from Prometheus. Private Mendix Platform uses this to check if a specific label (for ezample, a namespace) exists in Prometheus.
