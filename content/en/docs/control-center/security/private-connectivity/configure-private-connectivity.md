@@ -246,7 +246,7 @@ tailscale up --auth-key=<AUTH_KEY>
 
 ### Uninstalling an Agent from your Infrastructure {#private-connectivity-agents-uninstall}
 
-After [deleting an agent](#private-connectivity-agents-delete), you can uninstall it from your infrastructure. Uninstalling an agent is typically done by your internal IT department, Infra department, or Network team.
+Uninstalling an agent is typically done by your internal IT department, Infra department, or Network team.
 
 #### Uninstalling an Agent on a Windows server {#private-connectivity-agents-uninstall-windows}
 
