@@ -11,14 +11,18 @@ aliases:
 
 ## 1. Introduction 
 This guide is a continuation of part one, and in it, you will recreate the web application you created in part one as a native mobile application. The guide aims to get you started with Mendix Native Mobile and walks you through the steps on how to develop your first native app using the Studio Pro IDE.
+<<<<<<< Updated upstream
 ## Introduction 
 
 This guide is a continuation of part one, and in it, you will recreate the web application you created in part one as a native mobile application.  The guide aims to get you started with Mendix Native Mobile and walks you through the steps on how to develop your first native app using the Studio Pro IDE.
+=======
+>>>>>>> Stashed changes
 
 By following this guide, you will:
 
 * Learn how to **create, run, and deploy** a native mobile application.
 * Use **nanoflows** to build logic.
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 * Start with an **online-first** native mobile app (default in Mendix 11), with the option to later explore **offline-first** development and **data synchronization** if needed.
 =======
@@ -27,6 +31,9 @@ By following this guide, you will:
 * Learn how to **create, run, and deploy** a native mobile application
 * Use **nanoflows** to build logic
 * Learn about **offline-first** development and **data synchronization**
+=======
+* Start with an **online-first** native mobile app (default in Mendix 11), with the option to later explore **offline-first** and **data synchronization** if needed.
+>>>>>>> Stashed changes
 * Test your native app using the **Make it Native app**
 
 ## Mobile Development Essentials
@@ -36,10 +43,22 @@ The Mendix Platform enables you to build apps of many different kinds, including
 * **Online-first development**: As of Mendix 11, native mobile apps are created in online-first mode by default. This means your app communicates directly with the server whenever it has a connection. For many use cases, this is the simplest and fastest way to get started.
 
 * (Optional) [Offline-first development](https://docs.mendix.com/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/): If your app needs to work without a stable internet connection, you can enable offline-first mode. In this approach, data is stored in a local database on the mobile device and synchronized with the server when possible.
+<<<<<<< Updated upstream
+=======
+
+* (Optional) [Data synchronization](https://docs.mendix.com/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/synchronization/): To support offline-first apps, you can configure synchronization. Synchronization is triggered using the synchronize action in nanoflows and the synchronize to device action in microflows. You can also configure it to only update the data needed for each specific user to minimize data use and load times.
+>>>>>>> Stashed changes
 
 * (Optional) [Data synchronization](https://docs.mendix.com/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/synchronization/): To support offline-first apps, you can configure synchronization. Synchronization is triggered using the synchronize action in nanoflows and the synchronize to device action in microflows. You can also configure it to only update the data needed for each specific user to minimize data use and load times.
 
+<<<<<<< Updated upstream
 ## Prerequisites
+=======
+Before you begin, we advise completing part one of this guide. You will also need to:
+
+* **Download** and **install** the [Make it Native App](https://docs.mendix.com/refguide/mobile/getting-started-with-mobile/prerequisites/#get-min-app) on your mobile device to test your app on a device.
+* Check that your Mendix version is compatible with the Make It Native app. See the [minimum supported version requirements](https://docs.mendix.com/refguide/mobile/getting-started-with-mobile/prerequisites/#get-min-app).
+>>>>>>> Stashed changes
 
 Before you begin, we advise completing part one of this guide. You will also need to:
 Before starting this tutorial, make sure you have completed the following prerequisites:
@@ -175,7 +194,11 @@ Once you scan the **QR code** using **Make it Native**, the app should load, and
 
 > **Optional (Offline-first)**: If you want your app to work offline, update the synchronization mode for the entities you are using. By default, synchronization is set to **Online**. To enable offline-first, configure the entities to use **All Objects** mode so that data is stored locally and synchronized periodically with the server.
 
+<<<<<<< Updated upstream
 ## Finished!
+=======
+## 9. Finished
+>>>>>>> Stashed changes
 
 Congratulations on completing and deploying your very first Native Mobile App! Next, head over to the [Academy](https://academy.mendix.com/link/home) and get started with our **Crash Course** learning plan, or continue learning here in our docs pages by searching for topics you are interested in. For videos on the latest news and updates, head to our [YouTube page](https://www.youtube.com/c/MendixCommunity). Or see what our awesome community is up to on our [Medium publication](https://medium.com/mendix). 
 
