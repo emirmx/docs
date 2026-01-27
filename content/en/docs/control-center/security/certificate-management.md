@@ -52,7 +52,7 @@ Each configured certificate is shown in a table with the following fields:
     {{% alert color="info" %}}You cannot delete a certificate that is currently in use.
     {{% /alert %}}
 
-For detailed information about how Mendix Admins can use the **Certificate Management** page to upload, configure and manage centralized certificates, refer to [Managing Centralized Certificates](/developerportal/deploy/certificates/centralized-certificates/).
+For detailed information about how Mendix Admins can use the **Certificate Management** page to upload, configure and manage centralized certificates, refer to [Centralized Certificates](/developerportal/deploy/certificates/centralized-certificates/).
 
 ## Read More
 

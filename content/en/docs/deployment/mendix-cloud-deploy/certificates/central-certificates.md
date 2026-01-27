@@ -105,7 +105,7 @@ Replacing a certificate allows you to renew it without downtime.
 All custom domains previously using the old certificate are automatically updated to use the new certificate.
 
 {{% alert color="info" %}}
-The replacement certificate must have the same common name as the certificate it replaces.
+Every hostname covered by the existing certificate must be included in the Subject Alternative Names (SANs) of the replacement certificate.
 {{% /alert %}}
 
 ## Read More
