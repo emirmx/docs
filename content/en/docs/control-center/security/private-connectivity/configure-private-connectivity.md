@@ -19,7 +19,7 @@ To connect from a Mendix app to a resource on your internal network, you need to
 2. Add an agent. This is done on the Mendix platform.
 3. Install an agent. This is done on your internal infrastructure.
 4. Run the agent. This is done on your internal infrastructure.
-5. Expose resources. This is done on the Mendix platform.
+5. Expose resources. This is done on your internal infrastructure.
 6. Enable resources. This is done on the Mendix platform.
 7. Request a connection. This is done on the Mendix platform.
 8. Approve the connection. This is done on the Mendix platform.
@@ -151,7 +151,7 @@ On the **Agents** tab of the **Private Connectivity** page, you can see all the 
 * **Status (Last seen)** – The status of the agent, or the last time it was connected to the network:
 
     * **Connected** – The agent is currently connected to the network.
-    * Date and time – The last time the agent was connected to the network. The agent is not connected at this time.
+    * Date and time – The last time the agent was connected to the network. 
 
 ### Adding an Agent {#private-connectivity-agents-add}
 
@@ -165,11 +165,8 @@ To add a new agent to a network, follow these steps:
     * On the **Agents** tab, click **Add Agent**.
 
 2. On the **Add Agent** tab, select the network to which you want to add the agent.
-3. Provide a descriptive and recognizable name for the agent.
-4. Select the infrastructure type for your agent.
-5. Click **Create**.
-
-Your agent is now added. You can continue with [installing the agent](#private-connectivity-agents-install) in your own infrastructure.
+3. Select the infrastructure type for your agent.
+4. Continue with [installing the agent](#private-connectivity-agents-install) in your own infrastructure.
 
 ### Viewing and Editing Agents {#private-connectivity-agents-details}
 
@@ -180,8 +177,6 @@ To view and edit an existing agent, follow these steps:
 
     * **Agent Name** – The name you gave to the agent. This field is editable.
     * **Agent ID** – The internal ID of your agent. You can copy this if, for example, you want to provide it in a support ticket for any issues with the agent.
-    * **Agent Key** – The authentication key of your agent. You can copy this authentication key for use when [starting an agent](#private-connectivity-agents-run).     
-	  This key should be treated as confidential.
     * **Network** – The network to which the agent is connected.
     * **Status (Last seen)** – The status of the agent, or the last time it was connected to the network:
 
@@ -189,11 +184,11 @@ To view and edit an existing agent, follow these steps:
         * Date and time – The last time the agent was connected to the network. The agent is not connected at this time.
 
     * **Resource Details** – A list of the resources exposed via the agent.
-    * **DERP Details** – Information on the preferred Tailscale [Designated Encrypted Relay for Packets (DERP) server](https://tailscale.com/kb/1232/derp-servers).
+    <!-- * **DERP Details** – Information on the preferred Tailscale [Designated Encrypted Relay for Packets (DERP) server](https://tailscale.com/kb/1232/derp-servers). -->
 
 3. Click **Save** to save any changes you have made.
 
-### Deleting an Agent {#private-connectivity-agents-delete}
+<!-- ### Deleting an Agent {#private-connectivity-agents-delete}
 
 To delete an existing agent, follow these steps:
 
@@ -210,7 +205,7 @@ When you delete an agent, the following actions occur automatically:
 {{% alert color="warning" %}}
 Deleting an agent does not uninstall the agent from your own infrastructure.    
 Refer to the instructions for [uninstalling an agent](#private-connectivity-agents-uninstall). 
-{{% /alert %}}
+{{% /alert %}} -->
 
 ### Installing an Agent on your Infrastructure {#private-connectivity-agents-install}
 
@@ -240,18 +235,18 @@ Continue with [starting the agent](#private-connectivity-agents-run).
 
 ### Starting an Agent on your Infrastructure {#private-connectivity-agents-run}
 
-Once you have installed your agent, you can start the agent and connect to your network. To do this, you need an authentication key, which was created when you [added the agent](#private-connectivity-agents-add). You can find and copy the authentication key for your agent on [the agent details page](#private-connectivity-agents-details).
+Once you have installed your agent, you can start the agent and connect to your network. To do this, you need an authentication key, which was created when you [added the agent](#private-connectivity-agents-add). 
 
 To start an agent and to connect it to your network, run the following script on the machine where the agent is installed.    
 You need to replace `AUTH_KEY` with the authentication key of your agent.
 
-```
+```You can expose a single IP range
 tailscale up --auth-key=<AUTH_KEY>
 ```
 
 ### Uninstalling an Agent from your Infrastructure {#private-connectivity-agents-uninstall}
 
-After [deleting an agent](#private-connectivity-agents-delete), you can uninstall it from your infrastructure. Uninstalling an agent is typically done by your internal IT department, Infra department, or Network team.
+Uninstalling an agent is typically done by your internal IT department, Infra department, or Network team.
 
 #### Uninstalling an Agent on a Windows server {#private-connectivity-agents-uninstall-windows}
 
@@ -345,7 +340,11 @@ To view and edit a resource, follow these steps:
 
 Before you can connect to resources running on your own infrastructure, you have to expose these resources through an agent. This requires you to install an agent on the machine running the resource, or on a machine that has access to the resource.
 
-Mendix Cloud Private Connectivity currently supports exposing physical [subnet routes](https://tailscale.com/kb/1019/subnets) to your network via an agent. You can expose a single IP range, such as `192.0.2.0/24`, or multiple IP ranges separated by a colon, such as `192.0.2.0/24,198.51.100.0/24`.
+Mendix Cloud Private Connectivity currently supports exposing physical [subnet routes](https://tailscale.com/kb/1019/subnets) to your network via an agent. This is what you can expose:
+
+* A single IP range, such as `192.0.2.0/24` 
+* Multiple IP ranges separated by a colon, such as `192.0.2.0/24,198.51.100.0/24`
+* A single IP address, such as `10.100.0.5/32`
 
 #### Exposing Subnet Routes on a Windows Server {#private-connectivity-resources-expose-routes-windows}
 
