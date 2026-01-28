@@ -26,7 +26,7 @@ You can find the build number in path of your Mendix installation (for example, 
 
 Any public version of Studio Pro in this [Studio Pro Releases List](https://marketplace.mendix.com/link/studiopro/) will allow you to download MxBuild files. If you experience trouble downloading files, make sure your build is listed there.
 
-Starting with version 11.5.0, Mendix introduces a change in the versioning schema by dropping the fourth element, known as the build number. Versions now follow a SemVer pattern major.minor.patch with the occasional pre-release suffix (for example, `11.5.0` or `11.6.0-beta.1` for planned pre-releases).
+As of Studio Pro 11.5.0, Mendix introduced a change in the versioning schema by dropping the fourth element, known as the build number. Versions now follow a SemVer pattern `major.minor.patch` with the occasional pre-release suffix (for example, `11.5.0` or `11.6.0-beta.1` for planned pre-releases).
 
 {{% /alert %}}
 
