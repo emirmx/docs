@@ -15,6 +15,7 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 
 * Removed unnecessary popup confirming Azure sign-in shown to the user.
 * Added Azure Resource Group name to cluster list on Mendix on Azure Portal.
+* Fixed preflight check issue where user was getting stuck on checking step.  
 
 ### Release date: January 22, 2026
 
