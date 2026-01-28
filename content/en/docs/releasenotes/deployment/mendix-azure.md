@@ -10,6 +10,12 @@ These release notes cover changes to deployment to [Mendix on Azure](/developerp
 
 For information on the current status of Mendix deployment, see [Mendix Status](https://status.mendix.com/).
 
+
+### Release date: January 29, 2026
+
+* Removed unnecessary popup confirming Azure sign-in shown to the user.
+* Added Azure Resource Group name to cluster list on Mendix on Azure Portal.
+
 ### Release date: January 22, 2026
 
 * We have fixed an issue that prevented custom CA certificates from being added during new cluster initialisation.

@@ -14,6 +14,12 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ### January 26, 2026
 
+#### Hotfix Release
+
+* Fixed an issue where an incorrect time was displayed while creating a deployment package on the Mendix on Kubernetes portal.
+
+### January 26, 2026
+
 #### License Manager CLI v0.10.7 {#0.10.7}
 
 * To enhance security, we now automatically disable API credential automounting for PCLM deployments, significantly limiting unnecessary access to the Kubernetes API.
