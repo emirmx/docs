@@ -394,9 +394,52 @@ Install the Private Mendix Platform by doing the following steps:
 
 {{< figure src="/attachments/private-platform/pmp-install10.png" class="no-border" >}}
 
-### Adding Additional Components After Installing the Private Mendix Platform
+### Installing Maia for the Private Mendix Platform
 
-To ensure that components such as svix and PCLM work correctly, you should install them before you install the Private Mendix Platform itself. If you want to add a component after the Platform installation (for example, if you want to install svix because you decided to enable webhooks), you must perform the following steps:
+[Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/) refers to Mendix Platform capabilities that leverage [artificial intelligence (AI)](https://www.mendix.com/glossary/artificial-intelligence-ai/) and [machine learning (ML)](https://www.mendix.com/glossary/machine-learning/) to assist developers in application development. Private Mendix Platform currently offers support for Maia-assisted app creation. Other Maia capabilities, such as Maia Chat, will be made available in future releases.
+
+{{% alert color="info" %}}
+This feature is available as a beta release, available to selected customers. For more information about beta releases, see [Release Status](/releasenotes/release-status/).
+{{% /alert %}}
+
+To enable Maia for Private Mendix Platform, perform the following steps:
+
+1. Ensure that you fulfill the following prerequisites:
+
+    * Prepare the Amazon Bedrock LLM API key.
+    * Make sure that you can expose the Maia service. The installer currently only support the Ingress method. If you are using other methods (for example, Openshift route, HAPROXY, or others), contact the Private Mendix Platform team for assistance.
+    * Make sure that you know the Private Mendix Platform URL.
+
+2. Download the *maia-appgen-pmp.zip* file from your Private Mendix Platform download portal.
+3. Unzip the *maia-appgen-pmp.zip* file.
+4. Copy the *maia-appgen-pmp* directory the *images* sub-directory of the installer by running the following command: `cp -r maia-appgen-pmp <your installer>/pmp-binary-linux/images`
+5. Upload the Maia directory to your private registry by using the `installer init` command.
+6. Run the following command:  `./installer component -n=<Private Mendix Platform namespace>`. Maia must be installed at the same namespace as Private Mendix Platform.
+7. In the **Components at PMP ns** section, select **Maia**.
+8. Configure the following settings:
+
+    * **Image Prefix** - The registry and namespace (if it exists) where the *maia-appgen-pmp* image is located
+    * **Image Name** - The image name, for example, *maia-appgen-pmp* 
+    * **Image Tag** - The image tag of the AppGen image
+    * **Enable Ingress** - Enable or disable Nginx ingress
+    * **MXASSIST_COPILOT_AWS_SERVICE_REGION** - The Copilot AWS service region
+    * **MXASSIST_COPILOT_AWS_BEDROCK_REGION** - The Copilot AWS Bedrock region
+    * **Amazon_Bedrock_API_KEY** - An AWS Bedrock API key
+    * **MXASSIST_COPILOT_MXID3_URL** - The OIDC URL of Private Mendix Platform, in the following format: `<your Private Mendix Platform URL>/oidc/`
+
+9. After installing Maia, perform the following steps to connect to it from Studio Pro:
+
+    1. Download the patch file for Studio Pro 11.6 from the Private Mendix Platform download portal.
+    2. Manually set the `MaiaAppGenServiceBaseUrlP` key to the exposed URL of your *maia-appgen-pmp*.
+    3. Add the following key: `<add key="MaiaAppGenServiceBaseUrlP" value="" />`.
+
+#### Uninstalling Maia
+
+If you want to uninstall Maia, you must do it manually, by running the following command: `helm unstall maia-appgen  -n=< maia namespace>`.
+
+### Adding the Svix and PCLM Components After Installing the Private Mendix Platform
+
+To ensure that the svix and PCLM components work correctly, you should install them before you install the Private Mendix Platform itself. If you want to add a component after the Platform installation (for example, if you want to install svix because you decided to enable webhooks), you must perform the following steps:
 
 1. Install the component as described in [Installing Private Cloud License Manager](#install-pclm) and [Installing the Svix Component](#install-svix).
 2. Run the command `./installer platform -n=<namespace name>`, where `-n` is the same namespace as the one where you installed Svix and PCLM.
@@ -428,7 +471,7 @@ If you have installed Private Mendix Platform before, you can upgrade it by doin
     {{< figure src="/attachments/private-platform/pmp-upgrade2.png" class="no-border" >}}
 
 {{% alert color="info" %}}
-To upgrade the PCLM component, select the option **Upgrade PCLM** in the upgrade wizard. For the Svix component, you can use the Svix panel to upgrade directly.
+To upgrade the PCLM or Maia components, select the relevant option in the upgrade wizard. For the Svix component, you can use the Svix panel to upgrade directly.
 {{% /alert %}}
 
 ## Running the Private Platform Configuration Wizard {#wizard}
