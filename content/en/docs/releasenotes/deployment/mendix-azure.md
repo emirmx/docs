@@ -13,9 +13,9 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 
 ### Release date: January 29, 2026
 
-* To improve your sign-in experience, we've eliminated an unnecessary pop-up that previously appeared after successfully signing into Azure.
+* To improve your sign-in experience, we have eliminated an unnecessary pop-up that previously appeared after successfully signing into Azure.
 * You can now view the Azure Resource Group name for a cluster directly on the Cluster Overview page.
-* Resolved an issue that caused users to get stuck on the Preflight check (Platform accounts) when initializing clusters.  
+* We have resolved an issue that caused users to get stuck on the preflight check for Platform accounts when initializing clusters.  
 
 ### Release date: January 22, 2026
 
