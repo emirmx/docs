@@ -1,9 +1,8 @@
 ---
-title: "SAML User Provisioning"
+title: "Just-In-Time User Provisioning via SAML"
 url: /appstore/modules/saml/user-provisioning/
-linktitle: "SAML User Provisioning"
+linktitle: "User Provisioning via SAML"
 description: "Describes the configuration of the user provisioning in the SAML module."
-#If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## User Provisioning{#user-provisioning}
