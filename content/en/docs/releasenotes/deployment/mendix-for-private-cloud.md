@@ -14,7 +14,7 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ### January 29, 2026
 
-* Fixed an issue where an incorrect time was displayed while creating a deployment package on the Mendix on Kubernetes portal.
+* We have fixed an issue where an incorrect time was displayed while creating a deployment package in the Mendix on Kubernetes portal.
 
 ### January 26, 2026
 
