@@ -138,6 +138,10 @@ You can install and run the Mendix Operator in either Global or Standard mode. I
 * [Running the Mendix Operator in Global Mode](/developerportal/deploy/global-operator/)
 * [Running the Mendix Operator in Standard Mode](/developerportal/deploy/standard-operator/)
 
+{{% alert color="warning" %}}
+For Mendix version 11.5.0 and above, you will need to install Mendix Operator version 2.24 or above.
+{{% /alert %}}
+
 ### Licensing the Application with Private Cloud License Manager
 
 You can license the Operator and Runtime of your application by configuring the Operator configuration with License Manager details. In order to start using Private Cloud License Manager, you need to first download the PCLM executable available in the Installation page. For more information, see [Private Cloud License Manager](/developerportal/deploy/private-cloud/private-cloud-license-manager/). The PCLM executable is available for download from this page.
