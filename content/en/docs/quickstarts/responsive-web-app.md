@@ -38,28 +38,29 @@ Before you begin, complete the following steps:
 
 * Create your free [Mendix Account](https://signup.mendix.com/link/signup).
 * [Download](https://marketplace.mendix.com/link/studiopro) and [install](/refguide/install/) Studio Pro.
-* Open Studio Pro and sign in with your Mendix Account details (click **Go to Web Sign In**).
+* Open Studio Pro and sign in with your Mendix Account details (click **Go to Web Sign In**):
 
- {{< figure src="/attachments/quickstarts/part1/3. login.png" width="450px" alt="Sign in to Studio Pro">}}
+    {{< figure src="/attachments/quickstarts/part1/3. login.png" width="450px" alt="Sign in to Studio Pro">}}
 
 ## Create the App
 
 You can start building your first app directly in Studio Pro by clicking **Create New App**. Next, select **Create a new app in the Mendix Portal** (unless you're working offline, in which case you can only create a blank template locally). 
+
 {{< figure src="/attachments/quickstarts/part1/4.1 CreateNewApp.png" width="450px" alt="Sign in to Studio Pro">}}
 
 Open a page to **choose your starting point**.
 
 You can find a wide variety of Starter Apps to choose from in the [Mendix Marketplace](https://marketplace.mendix.com/link/contenttype/102). From web and native mobile, to GenAI and augmented reality, there are dozens of platform-supported templates to start from and many more templates created by our amazing community.
 
-Select the **blank web app template**, and on the next screen, click **Use This Starting Point.**
+Select the **blank web app template**, and on the next screen, click **Use This Starting Point**:
 
-{{< figure src="/attachments/quickstarts/part1/4.2 UseThisStartingPoint" width="450px" alt="se the Blank web app template as a starting point">}}
+{{< figure src="/attachments/quickstarts/part1/4.2 UseThisStartingPoint.png" width="450px" alt="se the Blank web app template as a starting point">}}
 
-Next, a window will appear to enter a name for your app, whether or not to enable online services, as well as choose the file path for the project, and the default language for the app. **Enter a name for the app** and leave everything else as **default**.
+Next, a window will appear to enter a name for your app, whether or not to enable online services, as well as choose the file path for the project, and the default language for the app. **Enter a name for the app** and leave everything else as **default**:
 
 {{< figure src="/attachments/quickstarts/part1/4.3 ConfirmCreateApp.png" width="450px" alt="Confirm your choice by clicking create app.">}}
 
- Confirm by clicking **Create App**. 
+Confirm by clicking **Create App**. 
 
 {{% alert type="info" %}}
 A starter app is a ready-to-use app template that gives you a basic structure, like navigation, layout, and common components, so you don’t have to start from scratch. It helps you get up and running faster while still giving you full control to customize your app as needed.
@@ -68,7 +69,7 @@ A starter app is a ready-to-use app template that gives you a basic structure, l
 
 ## Explore Studio Pro Interface
 
-You should see the app open in **Studio Pro**, with the **welcome page** open. Before we continue, let's take a quick tour of the main interface.
+You should see the app open in **Studio Pro**, with the **welcome page** open. Before we continue, let's take a quick tour of the main interface:
 
 {{< figure src="/attachments/quickstarts/part1/5. StudioProInterface.png" width="450px" alt="Have a look around the Studio Pro Interface">}}
 
@@ -129,21 +130,21 @@ To create an entity, follow these steps:
 1. In the **App Explorer** (on the left), double-click **Domain Model** under **MyFirstModule**.
 1. From the **Toolbox** (on the right), drag and drop the entity (blue box) into the central **Working Area**.
 1. Double-click the newly added entity in the **Working Area** to open its **properties** dialog box.
-1. Name the entity **Employee**
+1. Name the entity **Employee**:
 
-{{< figure src="/attachments/quickstarts/part1/7.1 EntityPropertiesWindow.png" width="450px" alt="The properties window of the Employee Entity">}}
+    {{< figure src="/attachments/quickstarts/part1/7.1 EntityPropertiesWindow.png" width="450px" alt="The properties window of the Employee Entity">}}
 
 ### Create Attributes
 
-You have created a new persistable entity called **Employee**. This means the entity and its attributes will be stored in the Database when it is committed.  Next, you have to add attributes. You only have to add fields for the employee's name, job role, and employee ID.
+You have created a new persistable entity called **Employee**. This means the entity and its attributes will be stored in the Database when it is committed.  Next, you have to add attributes. You only have to add fields for the employee's name, job role, and employee ID:
 
 1. In the properties dialog box, click **New** under **Attributes**.
 1. Name your attribute **FirstName**, leave all the other settings default, then click **OK**.
 1. Repeat the steps above to create two additional **string** attributes, called **LastName** and **JobRole**.
 1. Add a final attribute called **EmployeeID**, as an **Autonumber** (an automatically generated number).
-1. Click OK to close the properties dialog box. 
+1. Click OK to close the properties dialog box:
 
-{{< figure src="/attachments/quickstarts/part1/7.2 CreateAttributes.png" width="450px" alt="Create attributes on an entity">}}
+    {{< figure src="/attachments/quickstarts/part1/7.2 CreateAttributes.png" width="450px" alt="Create attributes on an entity">}}
 
 {{% alert type="info" %}}
 You can create a domain model by simply describing your application using [Maia for Domain Model](/refguide/maia-for-domain-model/) an AI-powered tool that generates domain models based on your input.
@@ -155,15 +156,15 @@ In our case, you can ask Maia: “Create a domain model that stores employee inf
 
 ### Add an Association
 
-An employee will be required to complete and upload important documents and contracts connected to their role. We need to adapt our domain model to store these documents. To do this, we can create a new entity, called Document, and connect it to the Employee entity using an association. Associations define how entities relate to each other. Associations can either be one-to-many, one-to-one, or many-to-many.
+An employee will be required to complete and upload important documents and contracts connected to their role. We need to adapt our domain model to store these documents. To do this, we can create a new entity, called Document, and connect it to the Employee entity using an association. Associations define how entities relate to each other. Associations can either be one-to-many, one-to-one, or many-to-many:
 
 1. Add a new entity and name it Document.
 1. Next to Generalization, click **Select**.
 1. Search for **FileDocument**, and select it.
 1. Click **OK** to confirm your choices.
-1. Click the new Document entity to select it. Then, once it is selected, **click and drag** from its border towards the Employee entity. A line should appear and connect to the employee entity. This is the association, created as a one-to-many (1 employee can upload many documents)
+1. Click the new Document entity to select it. Then, once it is selected, **click and drag** from its border towards the Employee entity. A line should appear and connect to the employee entity. This is the association, created as a one-to-many (1 employee can upload many documents):
 
-{{< figure src="/attachments/quickstarts/part1/7.3 CreateAssociation.png" width="450px" alt="Create an Association between the two entities">}}
+    {{< figure src="/attachments/quickstarts/part1/7.3 CreateAssociation.png" width="450px" alt="Create an Association between the two entities">}}
 
 {{% alert type="info" %}}
 **Generalizations** allow an entity to inherit properties from another. When an entity is a generalization of another, it inherits all the attributes of the original. In this case, Document is a generalization of FileDocument, which will allow it to store anything you might consider a file (this includes images, PDFs, Microsoft Office documents, and more).
@@ -185,9 +186,9 @@ Now that you have created your domain model, you can develop the front-end of yo
 1. Under **Data source**, click **edit**, then ensure **Database** is selected for **Type**.
 1. On the **General tab**, next to **Entity**, select the **Employee entity** that you’ve created and Click **OK**.
 1. When Studio Pro prompts you to select the columns, leave everything selected and click **Generate**.
-1. Click **OK** to close the properties Window.
+1. Click **OK** to close the properties Window:
 
-{{< figure src="/attachments/quickstarts/part1/8.1 DataGrid2.png" width="450px" alt="A data grid 2 connected to the Employee Entity">}}
+    {{< figure src="/attachments/quickstarts/part1/8.1 DataGrid2.png" width="450px" alt="A data grid 2 connected to the Employee Entity">}}
 
 {{% alert type="info" %}}
 A Data Grid is a Context Widget. To display data from the domain model using a widget, the widget needs to be within the context widget (Data view, Data grid, Template grid, and List view are examples of context widgets)
@@ -200,17 +201,17 @@ Next, we need to modify some of the elements on the page.
 1. On the **Data Grid 2**, you should have a button captioned **New Employee**. It will have a red notification next to it indicating there is no page connected to the button. Right-click the button and choose **Generate on click page**.
 1. In the dialog window, **enter a name** for the new page as Employee_NewEdit.
 1. Under Navigation layout, click the dropdown and select **PopupLayout(Atlas_Core)**.
-1. Select the **Form Vertical layout** for the page and click **OK**.
+1. Select the **Form Vertical layout** for the page and click **OK**:
 
-{{< figure src="/attachments/quickstarts/part1/8.2a AddNewPage.png" width="450px" alt="Add a New Page called Employee_NewEdit">}}
+    {{< figure src="/attachments/quickstarts/part1/8.2a AddNewPage.png" width="450px" alt="Add a New Page called Employee_NewEdit">}}
 
 1. In the **Data Grid 2**, there is another button with the image of a pencil. This button needs to be connected to the same page we just created as well, so that users may edit the details of the employees. **Right-click** the button, choose **Select on click page**, then select the **Employee_NewEdit** page we just created.
 1. Next, **open** the **Employee_NewEdit** page.
 1. **Add** a **Data grid 2** from the toolbox onto the page below the Employee ID field. **Double-click** it to open its properties.
 1. Next to **Data source**, click **Select**.
-1. Search for the **Document entity** (But via the page parameter “Employee”), and click select.
+1. Search for the **Document entity** (But via the page parameter “Employee”), and click select:
 
-{{< figure src="/attachments/quickstarts/part1/8.2b DataOverAssociation.png" width="450px" alt="Display Data connected over association in the new datagrid 2">}}
+    {{< figure src="/attachments/quickstarts/part1/8.2b DataOverAssociation.png" width="450px" alt="Display Data connected over association in the new datagrid 2">}}
 
 1. The new data grid 2 will have new and edit buttons, which will expect a new page to be connected. Once again, **right-click** either button and choose to **generate page**.
 1. **Name** the page **Document_NewEdit**, select the **Pop-up layout** under Navigation Layout, and choose the **Form Vertical template**.
@@ -242,9 +243,9 @@ Now that we have created a basic front end for your app, we can add some logic. 
  a. You can copy and paste the decision and validation feedback action to save time (But don’t forget to update the actions for each attribute)
 
 1. At the end of the flow on the true path, add a **commit action**. Open its properties by double-clicking the action and ensure **Employee** is selected for Object or List, and change **refresh in client** to **Yes**. Click **OK** to close to window.
-1. Add a **close page action** after the commit action.
+1. Add a **close page action** after the commit action:
 
-{{< figure src="/attachments/quickstarts/part1/9. Microflow.png" width="450px" alt="The completed validation microflow">}}
+    {{< figure src="/attachments/quickstarts/part1/9. Microflow.png" width="450px" alt="The completed validation microflow">}}
 
 ## Deploy App
 
