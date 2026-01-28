@@ -36,7 +36,7 @@ The Mendix Platform enables you to build apps of many different kinds, including
 Before you begin, we advise completing part one of this guide. You will also need to:
 
 * Download and install the [Make It Native](/refguide/getting-the-make-it-native-app/) app on your mobile device, and confirm that the Mendix version you are using is [compatible](/refguide/mobile/getting-started-with-mobile/prerequisites/#get-min-app) with your Make It Native app version
-* Complete part one of this guide series, [Building a Responsive Web App](/quickstarts/responsive-web-app/)
+* Complete part one of this guide series, [Building a Responsive Web App](/quickstarts/part1/)
 * If you are working on a Mac, complete [Configuring Parallels](/refguide/using-mendix-studio-pro-on-a-mac/) to install Studio Pro on your Mac
 
 ## Creating the App
@@ -97,7 +97,7 @@ With the domain model finished, it’s time to start creating a user interface f
 1. In the pop-up window that appears, click to create a **New page**.
 1. In the next window, enter the name for the new page as Employee_NewEdit. Leave the layout as is and select the **Edit With Dataview template** before clicking **OK** to confirm your choices.
 
-## Application Logic
+## Creating Application Logic {#creating-application-logic}
 
 Now that we have finished with the domain model and user interface, we can continue to create logic using nanoflows. Let’s create a nanoflow to replace the default save button for the Employee_NewEdit page. This nanoflow will validate that the details have been entered correctly, and then commit the changes and synchronize with the server.
 
