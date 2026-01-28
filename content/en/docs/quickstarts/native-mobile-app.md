@@ -64,9 +64,9 @@ Just as in part one, we will need to create the entity to store employee data. I
     * LastName as String
     * JobRole as String
 
-1. Click **OK** to confirm your changes.
+1. Click **OK** to confirm your changes:
 
-{{< figure src="/attachments/quickstarts/part2/5. Creating The Domain Model.png" width="450px" alt="Create the Domain Model">}}
+    {{< figure src="/attachments/quickstarts/part2/5. Creating The Domain Model.png" width="450px" alt="Create the Domain Model">}}
 
 ## Creating the User Interface
 
@@ -78,20 +78,20 @@ With the domain model finished, it’s time to start creating a user interface f
 1. In the **properties window**, go to the **Data source tab**, ensure **Database** is selected next to **Type**.
 1. Under entity, click the **Select** button.
 1. Choose the **Employee** entity we created earlier and click **Select**.
-1. Click **OK** to confirm your choices.
+1. Click **OK** to confirm your choices:
 
-{{< figure src="/attachments/quickstarts/part2/6.a Creating the UI.png" width="450px" alt="The User Interface">}}
+    {{< figure src="/attachments/quickstarts/part2/6.a Creating the UI.png" width="450px" alt="The User Interface">}}
 
 1. When asked if you would like to automatically fill in the content, select **Yes**.
 1. Delete all the content except for the attributes we created (**FirstName, LastName, JobRole**).
-1. Add a **Layout Grid** to the page (4x4x4), then move each of the remaining labels into their **own cells** in the layout grid.
+1. Add a **Layout Grid** to the page (4x4x4), then move each of the remaining labels into their **own cells** in the layout grid:
 
 {{< figure src="/attachments/quickstarts/part2/6.b Layout Grid.png" width="450px" alt="add the layout grid">}}
 
 1. Add a **Create** button from the toolbox in the empty header section of the page.
-1. After adding the button to the page, a window will appear for you to select the entity that will be created when the button is clicked. Select the **Employee** entity and click **Select**.
+1. After adding the button to the page, a window will appear for you to select the entity that will be created when the button is clicked. Select the **Employee** entity and click **Select**:
 
-{{< figure src="/attachments/quickstarts/part2/6.c Select Entity.png" width="450px" alt="Select entity to display">}}
+    {{< figure src="/attachments/quickstarts/part2/6.c Select Entity.png" width="450px" alt="Select entity to display">}}
 
 1. Next we must select the on-click page that will be displayed when the button is clicked. In the properties for the button, in the events section, next to **on-click** page, click **Select**.
 1. In the pop-up window that appears, click to create a **New page**.
@@ -142,9 +142,9 @@ Nanoflows are similar to microflows, as they allow you to build complex logic fo
 1. Add a **close page action** after the synchronize action.
 1. At the end of the flow on the true path, add a **commit action**. Open its **properties** by double-clicking the action and ensure **Employee** is selected for **Object or List**, and change **refresh in client** to **Yes**. Click **OK** to close to window.
 1. Add a **synchronize action** after the commit action and choose to synchronize only unsynchronized objects.
-1. Add a **close page action** after the synchronize action.
+1. Add a **close page action** after the synchronize action:
 
-{{< figure src="/attachments/quickstarts/part2/7. Completed Nanoflow.png" width="450px" alt="Completed nanoflow">}}
+    {{< figure src="/attachments/quickstarts/part2/7. Completed Nanoflow.png" width="450px" alt="Completed nanoflow">}}
 
 ## Deploying Your App
 
@@ -160,7 +160,7 @@ Congratulations on completing and deploying your very first Native Mobile App! N
 
 Looking to get in touch with us or the community? Join our [Slack community workspace](https://join.slack.com/t/mendixcommunity/shared_invite/zt-39m9sfzsl-so7j70WRyj_4gJ33gaVXOw) and get involved.
 
-## 10 Read More
+## Read More
 
 * [Studio Pro Overview](/refguide/studio-pro-overview/) – describes Studio Pro tabs, menus, and shortcut keys
 * [Mendix Best Practices for Development](/refguide/dev-best-practices/) – a reference for adopting consistent naming and modeling conventions while developing your Mendix apps

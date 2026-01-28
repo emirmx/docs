@@ -18,7 +18,7 @@ By following this guide, you will:
 * Explore the platform's key features
 * Find resources and learning materials to deepen your knowledge
 
-## Getting to know Mendix
+## Getting to Know Mendix
 
 The Mendix Platform consists of:
 
@@ -174,7 +174,7 @@ An employee will be required to complete and upload important documents and cont
 
 Now that you have created your domain model, you can develop the front-end of your application. Your page is pre-filled with some elements you can add to, edit, or delete. At the top of the page, the label **Home**, along with some welcome text below it, can be seen. 
 
-## 8.1. Add Page Element
+### Add Page Element
 
 1. Double click on **Home_Web** under **MyFirstModule** in App Explorer
 1. Select the **Home label** and start typing to update the caption to Employee Overview.
@@ -256,13 +256,13 @@ To deploy your app to a cloud environment, you can hit **publish** to deploy you
 To deploy your app to the Mendix Cloud (Paid), there are multiple options for hosting. Please refer to this guide on [our hosting options](/developerportal/deploy/mendix-cloud-deploy/) for more information on which plan is best for your project.
 {{% /alert %}}
 
-## 11. Finished!
+## Finished!
 
 Congratulations on completing and deploying your very first Mendix App! Next, head over to the [Academy](https://academy.mendix.com/link/home) and get started with our **Crash Course** learning plan, or continue learning here in our docs pages by continuing onto part two. For videos on the latest news and updates, head to our [YouTube page](https://www.youtube.com/c/MendixCommunity). Or see what our awesome community is up to on our [Medium publication](https://medium.com/mendix). 
 
 Looking to get in touch with us or the community? Join our [Slack community workspace](https://join.slack.com/t/mendixcommunity/shared_invite/zt-39m9sfzsl-so7j70WRyj_4gJ33gaVXOw) and get involved.
 
-## 12 Read More
+## Read More
 
 * [Studio Pro Overview](/refguide/studio-pro-overview/) – describes Studio Pro tabs, menus, and shortcut keys
 * [Mendix Best Practices for Development](/refguide/dev-best-practices/) – a reference for adopting consistent naming and modeling conventions while developing your Mendix apps
