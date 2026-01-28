@@ -177,7 +177,7 @@ The creation process for AWS SQS bridges includes two additional steps on the Me
 
   {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-sqs/ebb_aws_sqs_configure.png" width="400" >}}
 
-1. Click **Next** to continue the configuration.
+2. Click **Next** to continue the configuration.
 
 #### Connect Events
 
@@ -264,7 +264,7 @@ Add the object below to your Access Policy of the AWS SQS queue if it is receivi
 
   {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/http/ebb_http_configure.png" width="400" >}}
 
-1. Click **Next** to connect events to your bridge.
+2. Click **Next** to connect events to your bridge.
 
 #### Connect Events
 
@@ -304,7 +304,7 @@ To run the HTTP bridge from your client, include a Bearer token in the request h
 
     {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/azure-blob-storage/ebb_azure_blob_configure.png" >}}
 
-1. Click **Next** to connect events to your bridge.
+2. Click **Next** to connect events to your bridge.
 
 #### Connect Events
 
@@ -343,7 +343,7 @@ For detailed instructions on how to create the IAM role and obtain these values,
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-s3/ebb_aws_s3_configure.png"  >}}
 
-1. Click **Next** to connect events to your bridge.
+2. Click **Next** to connect events to your bridge.
 
 #### Connect Events
 
