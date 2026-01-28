@@ -69,9 +69,17 @@ You can access them through the [Mendix Cloud GenAI Portal](https://genai.home.m
 
 #### New Features
 
-* It is now possible to upgrade the plan of a GenAI resource directly through self-service in the Control Center.
+* It is now possible to upgrade the plan of a GenAI resource directly through self-service in the Control Center. For more information, see [Upgrading GenAI Resource Plan Size](/control-center/genai-resources-self-service/#upgrading-genai-resource-plan-size) section of *GenAI Resources*.
 
 #### Fixes
 
 * We fixed an issue where GenAI resource transaction entries in the **Cloud Resource Pack** column were not displayed in the **Cloud Tokens** overview of the Control Center **Entitlements**.
 * We fixed an issue where the retrieval of users during new resource provisioning via self-service did not work as expected.
+
+### January 22, 2026
+
+#### New Features
+
+* It is now possible to downgrade the plan of a GenAI resource directly through self-service in the Control Center. For more information, see [Downgrading GenAI Resource Plan Size](/control-center/genai-resources-self-service/#downgrading-genai-resource-plan-size) section of *GenAI Resources*.
+
+#### Fixes
