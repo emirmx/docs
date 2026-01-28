@@ -10,7 +10,6 @@ These release notes cover changes to deployment to [Mendix on Azure](/developerp
 
 For information on the current status of Mendix deployment, see [Mendix Status](https://status.mendix.com/).
 
-
 ### Release date: January 29, 2026
 
 * To improve your sign-in experience, we have eliminated an unnecessary pop-up that previously appeared after successfully signing into Azure.
