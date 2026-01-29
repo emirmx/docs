@@ -431,7 +431,6 @@ To enable Maia for Private Mendix Platform, perform the following steps:
 
     1. Download the patch file for Studio Pro 11.6 from the Private Mendix Platform download portal.
     2. Manually set the `MaiaAppGenServiceBaseUrlP` key to the exposed URL of your *maia-appgen-pmp*.
-    3. Add the following key: `<add key="MaiaAppGenServiceBaseUrlP" value="" />`.
 
 #### Uninstalling Maia
 
