@@ -15,7 +15,7 @@ Using a practical example of employee attrition prediction, you will learn how t
 
 This real-world use case demonstrates the complete workflow from data exploration to production deployment.
 
-{{< figure src="/attachments/partners/altair/mendix-altair-integration-flow.png" >}}
+{{< figure src="/attachments/refguide/modeling/integration/rapidminer/ai-studio-hub/mendix-altair-integration-flow.png" >}}
 
 In this document, you will:
 
@@ -110,7 +110,7 @@ The following steps provide specific guidance for working with the Employee Attr
    * **CanDoBetter** - Not a part of this use case. The data represents textual feedback written by the employees.
 6. Keep all other relevant features selected, as they provide valuable predictive information. Traffic lights below the **Status** and the **Quality** column indicate how well the attributes fit for a prediction of employee attrition.
 
-   {{< figure src="/attachments/partners/altair/select-inputs-example.png" >}}
+   {{< figure src="/attachments/refguide/modeling/integration/rapidminer/ai-studio-hub/select-inputs-example.png" >}}
 
 7. Click **Next** to navigate to the **Model Types** page. You can choose which models should be run for a later comparison. Keep the default settings and click **Run** to navigate to the results.
 8. Auto Model runs various algorithms, including:
@@ -171,7 +171,7 @@ This final step on the RapidMiner side transforms your trained models into calla
 
 4. Click **Add Endpoint Configuration** and select the right process you want to deploy. In this case, the Gradient Boosted Trees performed the best. Select the `score_set.rmp` document, which you can review in the AI Studio as a visual process. This process accepts input data, applies preprocessing, and predicts the **Status** attribute of an employee.
 
-   {{< figure src="/attachments/partners/altair/endpoint-setup.png" >}}
+   {{< figure src="/attachments/refguide/modeling/integration/rapidminer/ai-studio-hub/endpoint-setup.png" >}}
 
 5. In this example, no query parameters need to be mapped, so you can skip **Parameter mapping**. There might be cases where you need additional information in the query parameters to make your process work.
 6. In the last step, **Dependencies**, you need to select every item from the project that the *score_set* depends on by navigating to the designated model folder and selecting the whole folder.
@@ -220,7 +220,7 @@ For a complete implementation example, refer to the [Altair RapidMiner Showcase 
 
 ### Preparing Your Mendix Domain Model
 
-{{< figure src="/attachments/partners/altair/domain-model.png" >}}
+{{< figure src="/attachments/refguide/modeling/integration/rapidminer/ai-studio-hub/domain-model.png" >}}
 
 Before consuming the AI Hub endpoint, ensure your Mendix application contains the proper data structures:
 
