@@ -31,6 +31,8 @@ These are the tasks you can achieve with Maia in Mendix Portal:
     * On the [Board](/developerportal/project-management/epics/board/) page
     * On the [Planning](/developerportal/project-management/epics/planning/) page
 
+* **Maia for Feedback** – An AI-assisted tools that help you organize unsorted feedback into groups and themes. This is available on the [Feedback](/developerportal/app-insights/feedback/#organizing-feedback-with-maia) page.
+
 ## Maia Chat {#maia-chat}
 
 {{% alert color="info" %}}
