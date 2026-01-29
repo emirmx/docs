@@ -15,8 +15,8 @@ The table below can help you find the correct MxBuild. Copy a URL from the corre
 
 | Operating System | Mendix Version               | URL                                                          |
 | ---------------- | ---------------------------- | ------------------------------------------------------------ |
-| Linux (x64)      | All versions                 | `https://cdn.mendix.com/runtime/mxbuild-{mxversion}.tar.gz`  |
-| Windows (x64)    | All version of Studio Pro 11 | `https://cdn.mendix.com/runtime/win-mxbuild-{mxversion}.tar.gz` |
+| Linux (x64)      | All                          | `https://cdn.mendix.com/runtime/mxbuild-{mxversion}.tar.gz`  |
+| Windows (x64)    | 11                           | `https://cdn.mendix.com/runtime/win-mxbuild-{mxversion}.tar.gz` |
 
 {{% alert color="info" %}}
 In Mendix version 11.5.0 and above, `{mxversion}` follows a SemVer pattern `major.minor.patch` with the occasional pre-release suffix (for example, `11.5.0` or `11.6.0-beta.1` for planned pre-releases).
