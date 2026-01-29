@@ -12,6 +12,10 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2026
 
+### January 29, 2026
+
+* We have fixed an issue where an incorrect time was displayed while creating a deployment package in the Mendix on Kubernetes portal.
+
 ### January 26, 2026
 
 #### License Manager CLI v0.10.7 {#0.10.7}
