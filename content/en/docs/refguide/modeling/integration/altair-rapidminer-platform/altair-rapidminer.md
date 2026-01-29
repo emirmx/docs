@@ -15,7 +15,7 @@ Using a practical example of employee attrition prediction, you will learn how t
 
 This real-world use case demonstrates the complete workflow from data exploration to production deployment.
 
-{{< figure src="/attachments/refguide/modeling/integration/rapidminer/ai-studio-hub/mendix-altair-integration-flow.png" >}}
+{{< figure src="/attachments/refguide/modeling/integration/rapidminer/ai-studio-hub/mendix-rapidminer-integration-flow.png" >}}
 
 In this document, you will:
 
