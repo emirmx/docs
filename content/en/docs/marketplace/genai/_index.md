@@ -59,6 +59,7 @@ Supercharge your applications with Mendix's Agents Kit. This powerful set of com
 | [Mendix Cloud GenAI Connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/) | Connect to Mendix Cloud and utilize Mendix Cloud GenAI resource packs directly within your Mendix application. | Connector Module | 10.24 |
 | [Mistral Connector](/appstore/modules/genai/reference-guide/external-connectors/mistral/) | Connect to Mistral AI. | Connector Module | 10.24 |
 | [OpenAI Connector](/appstore/modules/genai/openai/) | Connect to OpenAI and Microsoft Foundry. | Connector Module | 10.24 |
+| [Google Gemini Connector](/appstore/modules/genai/reference-guide/external-connectors/gemini/) | Connect to Google Gemini. | Connector Module | 10.24 |
 | [PgVector Knowledge Base](/appstore/modules/genai/pgvector/) | Manage and interact with a PostgreSQL *pgvector* Knowledge Base. | Connector Module | 10.24 |
 | [RFP Assistant Starter App / Questionnaire Assistant Starter App](https://marketplace.mendix.com/link/component/235917) | The RFP Assistant Starter App and the Questionnaire Assistant Starter App leverage historical question-answer pairs (RFPs) and a continuously updated knowledge base to generate and assist in editing responses to RFPs. This offers a time-saving alternative to manually finding similar responses and enhancing the knowledge management process. | Starter App | 10.24 |
 | [Snowflake Showcase App](https://marketplace.mendix.com/link/component/225845) | Learn how to implement the Cortex functionalities in your app. | Showcase App | 10.24 |
