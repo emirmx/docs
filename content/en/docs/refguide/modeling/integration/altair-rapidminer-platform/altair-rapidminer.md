@@ -1,15 +1,15 @@
 ---
-title: "Integrating Mendix with Altair RapidMiner AI Studio and AI Hub"
-url: /refguide/altair-ai-studio-ai-hub
-linktitle: "Altair RapidMiner"
+title: "Integrating Mendix with RapidMiner AI Studio and AI Hub"
+url: /refguide/ai-studio-ai-hub
+linktitle: "RapidMiner AI Studio and AI Hub"
 weight: 20
 aliases: /partners/altair/integrate-mendix-altair
-description: "Learn how to build and deploy machine learning models using Altair AI Studio and AI Hub, and integrate them with your Mendix applications."
+description: "Learn how to build and deploy machine learning models using RapidMiner AI Studio and AI Hub, and integrate them with your Mendix applications."
 ---
 
 ## Introduction
 
-Altair RapidMiner lets you create machine learning models using Altair RapidMiner AI Studio and deploy them through AI Hub, enabling smooth integration with your Mendix applications. 
+RapidMiner lets you create machine learning models using RapidMiner AI Studio and deploy them through AI Hub, enabling smooth integration with your Mendix applications. 
 
 Using a practical example of employee attrition prediction, you will learn how to build predictive models, manage them in a centralized repository, and create endpoints for seamless integration. You can build a model that predicts whether an employee will leave the company based on various factors such as demographics, job satisfaction, and compensation details. While HR managers often have intuitive feelings about which employees might be at risk of leaving, machine learning provides significant advantages by enabling data-driven decisions and uncovering patterns that human intuition might miss. Even though the model may not have access to comprehensive data about employees (such as daily working hours, recent reviews, or real-time performance metrics), this model still provides valuable insights into the likelihood of employees staying with the company, allowing HR teams to proactively prevent churn. The dataset is a sample available in AI Studio.
 
@@ -42,15 +42,15 @@ Before implementing this integration, ensure you meet the following requirements
 While you can explore AI Studio and build models without AI Hub, you will need AI Hub access to create deployable endpoints for Mendix integration. If you are just getting started with AI Studio, you can skip the AI Hub sections initially and focus on model building.
 {{% /alert %}}
 
-## Altair RapidMiner Products
+## RapidMiner Products
 
-Altair RapidMiner offers two key components for machine learning integration with Mendix:
+RapidMiner offers two key components for machine learning integration with Mendix:
 
-* [Altair AI Studio](https://docs.rapidminer.com/latest/studio/): Your development environment where you build, train, and test machine learning models. AI Studio provides a visual, drag-and-drop interface that makes machine learning accessible without requiring extensive programming knowledge. You can insert Python code into your processes, similar to Java in Mendix.
+* [RapidMiner AI Studio](https://docs.rapidminer.com/latest/studio/): Your development environment where you build, train, and test machine learning models. AI Studio provides a visual, drag-and-drop interface that makes machine learning accessible without requiring extensive programming knowledge. You can insert Python code into your processes, similar to Java in Mendix.
 
-* [Altair AI Hub](https://docs.rapidminer.com/latest/hub/): Your production platform where you deploy and manage models. AI Hub is essential for creating web service endpoints that external applications (like Mendix) can consume. AI Hub is also used to collaborate with your team on the same projects.
+* [RapidMiner AI Hub](https://docs.rapidminer.com/latest/hub/): Your production platform where you deploy and manage models. AI Hub is essential for creating web service endpoints that external applications (like Mendix) can consume. AI Hub is also used to collaborate with your team on the same projects.
 
-While Altair offers a range of products for various data science and engineering needs, this integration guide primarily focuses on these two platforms.
+While RapidMiner offers a range of products for various data science and engineering needs, this integration guide primarily focuses on these two platforms.
 
 ## Setting Up Your AI Hub Project {#ai-hub-project}
 
@@ -58,7 +58,7 @@ If you plan to integrate your models with Mendix applications, you will need to 
 
 ### Installing AI Hub
 
-[AI Hub](https://docs.rapidminer.com/latest/hub/index.html) is Altair's centralized platform for collaboration and model deployment. AI Hub needs to be hosted on your own infrastructure, and the installation process depends on your specific requirements. This tutorial assumes you have access to a running AI Hub instance. For installation details, follow the official [Install AI Hub](https://docs.rapidminer.com/latest/hub/install/index.html) documentation.
+[AI Hub](https://docs.rapidminer.com/latest/hub/index.html) is RapidMiner's centralized platform for collaboration and model deployment. AI Hub needs to be hosted on your own infrastructure, and the installation process depends on your specific requirements. This tutorial assumes you have access to a running AI Hub instance. For installation details, follow the official [Install AI Hub](https://docs.rapidminer.com/latest/hub/install/index.html) documentation.
 
 ### Creating a New Project
 
