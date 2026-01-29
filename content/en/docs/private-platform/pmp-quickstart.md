@@ -436,6 +436,32 @@ To enable Maia for Private Mendix Platform, perform the following steps:
 
 If you want to uninstall Maia, you must do it manually, by running the following command: `helm unstall maia-appgen  -n=< maia namespace>`.
 
+### Installing PDF Document Generation for the Private Mendix Platform
+
+The PDF Document Generation module allows you to generate pixel-perfect PDF documents based on regular pages in your app.
+
+To enable PDF Document Generation for Private Mendix Platform, perform the following steps:
+
+1. Download the *document-generation-service.zip* file from your Private Mendix Platform download portal.
+2. Unzip the *document-generation-service.zip* file.
+3. Copy the *document-generation-service.zip* directory the *images* sub-directory of the installer by running the following command: `cp -r maia-appgen-pmp <your installer>/pmp-binary-linux/images`
+4. Upload the directory to your private registry by using the `installer init` command.
+5. Run the following command:  `./installer component -n=<Private Mendix Platform namespace>`. PDF Document Generation can be installed at the same namespace as Private Mendix Platform, or at any other namespace.
+6. In the **Components at PMP ns** section, select **PDF Gen**.
+7. Configure the following settings:
+
+    * **Namespace** - The namespace where PDF Document Generation will installed
+    * **Image Prefix** - The registry and namespace (if it exists) where the *document-generation-service* image is located
+    * **Image Name** - The image name, for example, *document-generation-service* 
+    * **Image Tag** - The image tag of the AppGen image, for example, *1.0.2*
+
+#### Uninstalling PDF Document Generation
+
+If you want to uninstall PDF Document Generation, perform the following steps:
+
+1. Unstall PDF Document Generation from its namespace by running the following command: `helm uninstall mx-private-document-generation  -n=<PDF Document Generation namespace>`.
+2. Remove the PDF data from the `pmp-component-config` configmap in your Private Mendix Platform namespace by running the following command: `kubectl edit configmap/pmp-component-config -n=<Private Mendix Platform namespace>`.
+
 ### Adding the Svix and PCLM Components After Installing the Private Mendix Platform
 
 To ensure that the svix and PCLM components work correctly, you should install them before you install the Private Mendix Platform itself. If you want to add a component after the Platform installation (for example, if you want to install svix because you decided to enable webhooks), you must perform the following steps:
