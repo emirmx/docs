@@ -83,3 +83,5 @@ You can access them through the [Mendix Cloud GenAI Portal](https://genai.home.m
 * It is now possible to downgrade the plan of a GenAI resource directly through self-service in the Control Center. For more information, see [Downgrading GenAI Resource Plan Size](/control-center/genai-resources-self-service/#downgrading-genai-resource-plan-size) section of *GenAI Resources*.
 
 #### Fixes
+
+* We fixed an issue where the active menu item in the left navigation of the [Mendix Cloud GenAI portal](https://genai.home.mendix.com/) was not highlighted in gray when selected.
