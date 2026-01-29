@@ -2,28 +2,28 @@
 title: "Gemini"
 url: /appstore/modules/genai/reference-guide/external-connectors/gemini/
 linktitle: "Gemini"
-description: "Describes the configuration and usage of the Gemini Connector, which allows you to integrate generative AI into your Mendix app."
+description: "Describes the configuration and usage of the Google Gemini Connector, which allows you to integrate generative AI into your Mendix app."
 weight: 20
 
 ---
 
 ## Introduction
 
-The [Gemini Connector](https://marketplace.mendix.com/link/component/248276) allows you to integrate generative AI capabilities into your Mendix application. Since the Gemini API is compatible with [OpenAI API](https://platform.openai.com/), this module mainly focuses on Gemini specific UI while reusing the operations inside of the OpenAI connector. 
+The [Google Gemini Connector](https://marketplace.mendix.com/link/component/248276) allows you to integrate generative AI capabilities into your Mendix application. Since the Gemini API is compatible with [OpenAI API](https://platform.openai.com/), this module mainly focuses on Gemini specific UI while reusing the operations inside of the OpenAI connector. 
 
 ### Features {#features}
 
-The Gemini Connector is commonly used for text generation based on the [Chat Completions API](https://ai.google.dev/gemini-api/docs/openai). Typical use cases for generative AI are described in the [Typical LLM Use Cases](/appstore/modules/genai/get-started/#llm-use-cases).
+The Google Gemini Connector is commonly used for text generation based on the [Chat Completions API](https://ai.google.dev/gemini-api/docs/openai). Typical use cases for generative AI are described in the [Typical LLM Use Cases](/appstore/modules/genai/get-started/#llm-use-cases).
 
 For more information about the models, see [Gemini models](https://ai.google.dev/gemini-api/docs/models).
 
 #### Image Generation {#use-cases-images}
 
-The Gemini connector does not currently offer image generation functionality.
+The Google Gemini connector does not currently offer image generation functionality.
 
 #### Knowledge Base
 
-The Gemini connector supports Knowledge bases from providers such as pgVector, Mendix Cloud, Amazon Bedrock, and Azure AI Search to be added to a conversation.
+The Google Gemini connector supports Knowledge bases from providers such as pgVector, Mendix Cloud, Amazon Bedrock, and Azure AI Search to be added to a conversation.
 
 ### Prerequisites
 
@@ -41,16 +41,16 @@ To use this connector, you need to sign up for a Google AI Studio account and cr
 
 Install all required modules from the Mendix Marketplace as listed in the [Dependencies](#dependencies) section above.
 
-To import the [Gemini Connector](https://marketplace.mendix.com/link/component/248276) and the other modules into your app, follow the instructions in [How to Use Marketplace Content](/appstore/use-content/).
+To import the [Google Gemini Connector](https://marketplace.mendix.com/link/component/248276) and the other modules into your app, follow the instructions in [How to Use Marketplace Content](/appstore/use-content/).
 
 ## Configuration {#configuration}
 
-After you install the Gemini and OpenAI connector, you can find them in the **Marketplace Modules** section of the **App Explorer**. The Gemini connector provides a domain model and several pages. You can reuse all activities to connect your app to Gemini from the OpenAI connector. To implement an activity, use it in a microflow. Configure the [Encryption module](/appstore/modules/encryption/#configuration) to ensure the connection of your app to Gemini is secure.
+After you install the Gemini and OpenAI connector, you can find them in the **Marketplace Modules** section of the **App Explorer**. The Google Gemini connector provides a domain model and several pages. You can reuse all activities to connect your app to Gemini from the OpenAI connector. To implement an activity, use it in a microflow. Configure the [Encryption module](/appstore/modules/encryption/#configuration) to ensure the connection of your app to Gemini is secure.
 
 ### General Configuration {#general-configuration}
 
 1. Add the module roles `OpenAIConnector.Administrator` and `Gemini.Administrator` to your Administrator **User roles** in the **Security** settings of your app. 
-2. Add the **GeminiConfiguration_Overview** page from the Gemini connector module (**USE_ME > GeminiConfiguration**) to your navigation, or add the `Snippet_GeminiConfigurations` to a page that is already part of your navigation. 
+2. Add the **GeminiConfiguration_Overview** page from the Google Gemini connector module (**USE_ME > GeminiConfiguration**) to your navigation, or add the `Snippet_GeminiConfigurations` to a page that is already part of your navigation. 
 3. Continue setting up your Gemini configuration at runtime. For more information, follow the instructions in the [Gemini Configuration](#gemini-configuration) section below.
 4. Configure the models you need for your use case.
 
@@ -93,7 +93,7 @@ The `GeminiDeployedModel` is compatible with the two [Chat Completions operation
 
 #### JSON Mode {#chatcompletions-json-mode}
 
-When JSON mode is used, the model is programmatically instructed to return valid JSON. For Gemini connector, you have to explicitly mention the necessity of a JSON structure in a message in the conversation, e.g. the system prompt. Additionally, after creating the request, but before passing it to the chat completions operation, use the toolbox action `Set Response Format` to set the required response format to JSON. 
+When JSON mode is used, the model is programmatically instructed to return valid JSON. For the Google Gemini connector, you have to explicitly mention the necessity of a JSON structure in a message in the conversation, e.g. the system prompt. Additionally, after creating the request, but before passing it to the chat completions operation, use the toolbox action `Set Response Format` to set the required response format to JSON. 
 
 #### Function Calling {#chatcompletions-functioncalling}
 
@@ -125,7 +125,7 @@ Note that the retrieval process is independent of the model provider and can be 
 
 #### Vision {#chatcompletions-vision}
 
-Vision enables models to interpret and analyze images, allowing them to answer questions and perform tasks related to visual content. This integration of computer vision and language processing enhances the model's comprehension and makes it valuable for tasks involving visual information. To make use of vision with Gemini connector, an optional [FileCollection](/appstore/modules/genai/genai-for-mx/commons/#filecollection) containing one or multiple images must be sent along with a single message.
+Vision enables models to interpret and analyze images, allowing them to answer questions and perform tasks related to visual content. This integration of computer vision and language processing enhances the model's comprehension and makes it valuable for tasks involving visual information. To make use of vision with the Google Gemini connector, an optional [FileCollection](/appstore/modules/genai/genai-for-mx/commons/#filecollection) containing one or multiple images must be sent along with a single message.
 
 For `Chat Completions without History`, `FileCollection` is an optional input parameter. 
 
@@ -137,15 +137,15 @@ For more information on vision, see [Gemini documentation](https://ai.google.dev
 
 #### Document Chat {#chatcompletions-document}
 
-Document chat is currently not supported by the Gemini connector.
+Document chat is currently not supported by the Google Gemini connector.
 
 #### Image Generations {#image-generations-configuration}
 
-Image generation is currently not supported by the Gemini connector. 
+Image generation is currently not supported by the Google Gemini connector. 
 
 #### Embeddings Generation {#embeddings-configuration}
 
-Embeddings generation is currently not supported by the Gemini connector. 
+Embeddings generation is currently not supported by the Google Gemini connector. 
 
 ### Exposed Microflow Actions for OpenAI-compatible APIs {#exposed-microflows}
 
@@ -157,15 +157,15 @@ This microflow changes the `ResponseFormat` of the `OpenAIRequest_Extension` obj
 
 #### Files: Initialize Collection with OpenAI Image {#initialize-filecollection}
 
-This operation is currently not relevant for Gemini connector.
+This operation is currently not relevant for Google Gemini connector.
 
 #### Files: Add OpenAI Image to Collection {#add-file}
 
-This operation is currently not relevant for Gemini connector.
+This operation is currently not relevant for Google Gemini connector.
 
 #### Image Generation: Set ImageOptions Extension {#set-imageoptions-extension}
 
-This operation is currently not relevant for Gemini connector.
+This operation is currently not relevant for Google Gemini connector.
 
 ## Technical Reference {#technical-reference}
 
@@ -187,6 +187,14 @@ Gemini supports the following [tool choice types](/appstore/modules/genai/genai-
 | auto                   | auto    |
 | any                    | any     |
 | none                   | none    |
+
+### List Models {#list-models}
+
+This microflow retrieves a list of available models for a specific Gemini configuration. It takes a `GeminiConfiguration` object as input and returns a list of `GeminiModel` objects that are available through the configured API endpoint. This operation is useful for dynamically discovering which models are available for your Gemini configuration.
+
+{{% alert color="info" %}}
+This action is currently not used during the creation of usable models in the connector because there is not enough information about the models' capabilities and not all retrieved models are supported with the connector.
+{{% /alert %}}
 
 ## GenAI Showcase Application {#showcase-application}
 
