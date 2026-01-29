@@ -5,9 +5,9 @@ weight: 30
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
-## Languages Tab {#languages-tab}
+## Introduction
 
-For more information about using different languages in your app, see [Language Menu](/refguide/translatable-texts/).
+Select the language you want to use in your app. For more information about using different languages, see [Language Menu](/refguide/translatable-texts/).
 
 ### Default Language
 

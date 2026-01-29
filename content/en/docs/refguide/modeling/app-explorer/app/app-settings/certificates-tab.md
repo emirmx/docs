@@ -5,9 +5,13 @@ weight: 40
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
-## Certificates Tab
+## Introduction
 
-Certificates are used to connect to web services over HTTPS when the following requirements are met:
+Certificates are used to connect to web services over HTTPS.
+
+## Certificates Tab 
+
+Certificates are used when the following requirements are met:
 
 * The server uses a self-signed certificate authority, and/or
 * A client certificate (certificate with a private key) is required

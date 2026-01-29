@@ -5,9 +5,9 @@ weight: 70
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
-## Dependencies Tab {#deployment}
+## Introduction
 
-This tab can be used to view the managed dependencies in your app in one place and to manage the dependencies in the userlib directory. It contains three tabbed sections.
+This tab can be used to view the managed dependencies in your app in one place and to manage the dependencies in the userlib directory.
 
 ### Overview
 

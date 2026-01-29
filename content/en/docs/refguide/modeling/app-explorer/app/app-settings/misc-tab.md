@@ -5,7 +5,7 @@ weight: 90
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
-## Miscellaneous Tab {#miscellaneous}
+## Introduction
 
 These settings determine the behavior of Studio Pro for this app. The settings apply to everyone that is working on this app.
 

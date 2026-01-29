@@ -5,9 +5,7 @@ weight: 50
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
-## Theme Tab
-
-### UI Resources Package
+## Introduction
 
 The look and feel of a Mendix application is governed by the [UI resources package](/refguide/ui-resources-package/). This package supplies the app with all the required theme information accompanied by matching page templates and building blocks. The module which is designated as the UI resources package is governed by the **UI resources package** setting. Generally, this is automatically updated when a new UI resources package is imported. However, with this setting, the desired module can also be set manually.
 

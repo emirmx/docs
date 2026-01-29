@@ -5,7 +5,7 @@ weight: 20
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
-## Runtime Tab
+## Introduction
 
 These settings influence the behavior of the Runtime when running your application.
 

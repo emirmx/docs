@@ -5,6 +5,8 @@ weight: 10
 description: "Settings which apply to the app as a whole."
 aliases:
     - /refguide/project-settings/
+no_list: false
+description_list: true
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -18,4 +20,6 @@ In the **App Settings** dialog box, you can alter the settings that are applicab
 
 {{< figure src="/attachments/refguide/modeling/app-explorer/app/app-settings/app-settings-configuration.png" width="400" >}}
 
-The categories described below are available.
+## Categories
+
+The App Settings tabs are described in the documents below:
