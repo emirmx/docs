@@ -138,7 +138,7 @@ You can install and run the Mendix Operator in either Global or Standard mode. I
 * [Running the Mendix Operator in Global Mode](/developerportal/deploy/global-operator/)
 * [Running the Mendix Operator in Standard Mode](/developerportal/deploy/standard-operator/)
 
-{{% alert color="warning" %}}
+{{% alert color="info" %}}
 For Mendix version 11.5.0 and above, you will need to install Mendix Operator version 2.24 or above.
 {{% /alert %}}
 

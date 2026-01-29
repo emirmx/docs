@@ -13,7 +13,7 @@ When running the Mendix Operator in Standard mode, you must install it separatel
 It is essential to ensure that each namespace is exclusively managed by a single Operator. The deployment of two Operators, particularly with distinct versions, to manage the same namespace, may lead to conflicts, resulting in the cancellation and rollback of each operator's modifications.
 {{% /alert %}}
 
-{{% alert color="warning" %}}
+{{% alert color="info" %}}
 For Mendix version 11.5.0 and above, you will need to install Mendix Operator version 2.24 or above.
 {{% /alert %}}
 

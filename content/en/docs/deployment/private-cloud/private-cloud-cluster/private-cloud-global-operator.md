@@ -15,7 +15,7 @@ It is essential to ensure that each namespace is exclusively managed by a single
 
 Global Operator installation is supported officially from Operator version v2.20.0 and above.
 
-{{% alert color="warning" %}}
+{{% alert color="info" %}}
 For Mendix version 11.5.0 and above, you will need to install Mendix Operator version 2.24 or above.
 {{% /alert %}}
 
