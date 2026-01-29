@@ -1,22 +1,22 @@
 ---
-title: "Integrating Mendix with Altair Graph Studio"
-linktitle: "Altair Graph Studio"
-url: /refguide/altair-graph-studio
+title: "Integrating Mendix with RapidMiner Graph Studio"
+linktitle: "RapidMiner Graph Studio"
+url: /refguide/graph-studio
 weight: 90
-description: "Describes how to use graph data from Altair Graph Studio in your Mendix application."
+description: "Describes how to use graph data from Graph Studio in your Mendix application."
 ---
 
 ## Introduction
 
-Altair Graph Studio (AGS) provides a highly scalable graph database suitable for analytical queries, offering access to data from different backend systems. It is an extremely powerful tool to unify data from multiple backend systems and link it from different sources into one unified data model. Graph Studio provides both virtualized and replicated access to data, with powerful data ingestion facilities to ingest, transform, clean, and correlate data from different sources. 
+RapidMiner Graph Studio provides a highly scalable graph database suitable for analytical queries, offering access to data from different backend systems. It is an extremely powerful tool to unify data from multiple backend systems and link it from different sources into one unified data model. Graph Studio provides both virtualized and replicated access to data, with powerful data ingestion facilities to ingest, transform, clean, and correlate data from different sources. 
 
-This guide helps you understand the process of creating a graphmart in the Altair Graph Studio, loading data, and querying that data from a Mendix application using OData REST endpoints and SPARQL queries.
+This guide helps you understand the process of creating a graphmart in the RapidMiner Graph Studio, loading data, and querying that data from a Mendix application using OData REST endpoints and SPARQL queries.
 
 ## Prerequisites
 
 Before you begin, make sure you have:
 
-* Access to an Altair Graph Studio instance
+* Access to an RapidMiner Graph Studio instance
 * A Mendix Studio Pro development environment (Mx9 or Mx10 recommended)
 * Sample JSON data to import (or use the example data provided)
 * Basic understanding of REST APIs and microflows in Mendix
@@ -26,7 +26,7 @@ Before you begin, make sure you have:
 
 ### Creating a New Graphmart
 
-A graphmart in Altair Graph Studio is a logical container for your data and ontologies. It provides a unified view of data from one or more sources.
+A graphmart in RapidMiner Graph Studio is a logical container for your data and ontologies. It provides a unified view of data from one or more sources.
    
 ### Adding a Source Layer
 
@@ -91,19 +91,19 @@ ORDER BY ?customerName
 
 Replace `YOUR_SOURCE_ID` with your actual source layer ID. You can find this ID in Graph Studio by navigating to your source layer and copying the ID from the URL or source layer details.
 
-You now have a graph ontology in Altair Graph Studio with data and a SPARQL query that returns customers.
+You now have a graph ontology in RapidMiner Graph Studio with data and a SPARQL query that returns customers.
 
-Altair Graph Studio allows you to do much more, such as ingesting data from data lakes or APIs and linking siloed data into one unified ontology, but for now, you can focus on this basic graph.
+RapidMiner Graph Studio allows you to do much more, such as ingesting data from data lakes or APIs and linking siloed data into one unified ontology, but for now, you can focus on this basic graph.
 
 ## Exposing Graph Data in the Mendix Application
 
-Altair Graph Studio allows you to store and retrieve graph data structures. Using either OData REST endpoints or SPARQL queries via the SPARQL API endpoint, you can retrieve this data into your Mendix application.
+RapidMiner Graph Studio allows you to store and retrieve graph data structures. Using either OData REST endpoints or SPARQL queries via the SPARQL API endpoint, you can retrieve this data into your Mendix application.
 
 The [OData](#odata-rest-endpoint) approach provides the easiest integration with automatic entity mapping and association handling, while the [SPARQL](#query-sparql) approach offers more control for complex graph queries. Both methods enable you to build powerful applications that leverage the scalability and flexibility of graph databases. 
 
 ### Exposing the Data via an OData REST Endpoint {#odata-rest-endpoint}
 
-The simplest way to use graph data in a Mendix application is by using an OData endpoint. In Altair Graph Studio, you can export an entire graph via OData. This will create an OData endpoint allowing flexible OData queries on the data in your graph database.
+The simplest way to use graph data in a Mendix application is by using an OData endpoint. In RapidMiner Graph Studio, you can export an entire graph via OData. This will create an OData endpoint allowing flexible OData queries on the data in your graph database.
 
 #### Creating an OData API in Graph Studio
 
@@ -139,9 +139,9 @@ In the consumed OData service document, you can provide configuration for the en
 
 #### Creating External Entities for Datasets from the OData Endpoint
 
-The [Integration pane](/refguide/integration-pane/) in the right column displays all the graph classes exposed via the OData REST API. You can see the attributes (properties) of these classes and the associations. The Integration pane also shows the capabilities of the data provided by the endpoint. In this example, all the data is read-only, as the Altair Graph Database only provides read-only access to the data.
+The [Integration pane](/refguide/integration-pane/) in the right column displays all the graph classes exposed via the OData REST API. You can see the attributes (properties) of these classes and the associations. The Integration pane also shows the capabilities of the data provided by the endpoint. In this example, all the data is read-only, as the Graph Database only provides read-only access to the data.
 
-Select which classes you need for your application and drag and drop them into a domain model. Here, they will be displayed as purple external entities. This indicates that the data is available to your application but is retrieved from an external service (in this case, the Altair Graph Database).
+Select which classes you need for your application and drag and drop them into a domain model. Here, they will be displayed as purple external entities. This indicates that the data is available to your application but is retrieved from an external service (in this case, the Graph Database).
 
 {{< figure src="/attachments/refguide/modeling/integration/altair/create-external-entities.png" >}}
 
@@ -161,7 +161,7 @@ Filtering, sorting, and pagination are automatically done server-side by your gr
 
 #### Lazy-Loaded Tree Widget
 
-Altair Graph Studio automatically provides associations for linked entities in your graph. These graph associations are part of the OData endpoint and part of your external entities. When you drag your OData datasets into your domain model, the resulting external entities will show associations from the OData endpoint.
+RapidMiner Graph Studio automatically provides associations for linked entities in your graph. These graph associations are part of the OData endpoint and part of your external entities. When you drag your OData datasets into your domain model, the resulting external entities will show associations from the OData endpoint.
 
 {{< figure src="/attachments/refguide/modeling/integration/altair/tree-widget.png" >}}
 
@@ -177,7 +177,7 @@ If you need full control over your graph queries, you can use [consumed REST ser
 
 #### Configuring the REST Call
 
-Run SPARQL queries from Mendix by using the SPARQL API in Altair Graph Studio. To do this, follow the steps below.
+Run SPARQL queries from Mendix by using the SPARQL API in RapidMiner Graph Studio. To do this, follow the steps below.
 
 1. Create a new consumed REST service document and paste the query in the request body.
 
