@@ -79,6 +79,8 @@ Mendix connectors offer direct support for the following models:
 | Mistral | Mistral Large 3, Mistral Medium 3.1, Mistral Small 3.2, Ministral 3 (3B, 8B, 14B), Magistral (Small, Medium) | Chat Completions | text, image | text | Function calling |
 | | Codestral, Devstral (Small, Medium), Open Mistral 7B, Mistral Nemo 12B | Chat Completions | text | text | Function calling |
 | | Mistral Embed, Codestral Embed | Embeddings | text | embeddings | |
+| Google Gemini | Gemini 2.5 Flash (+ Preview Sep 2025), Gemini 2.5 Flash-Lite (+ Preview Sep 2025), Gemini 2.5 Pro, Gemini Flash Latest, Gemini Flash-Lite Latest, Gemini Pro Latest| Chat Completions | text, image | text | Function calling |
+| | Gemini 3 Flash Preview, Gemini 3 Pro Preview | Chat Completions | text, image | text | |
 | Amazon Bedrock | Amazon Titan Text G1 - Express, Amazon Titan Text G1 - Lite, Amazon Titan Text G1 - Premier | Chat Completions | text, document (except Titan Premier) | text | |
 | | AI21 Jamba-Instruct | Chat Completions | text | text | |
 | | AI21 Labs Jurassic-2 (Text) | Chat Completions | text | text | |
