@@ -1,9 +1,9 @@
 ---
 title: "Integrating Mendix with RapidMiner AI Studio and AI Hub"
-url: /refguide/ai-studio-ai-hub
+url: /refguide/ai-studio-ai-hub/
 linktitle: "RapidMiner AI Studio and AI Hub"
 weight: 20
-aliases: /partners/altair/integrate-mendix-altair
+aliases: /partners/altair/integrate-mendix-altair/
 description: "Learn how to build and deploy machine learning models using RapidMiner AI Studio and AI Hub, and integrate them with your Mendix applications."
 ---
 

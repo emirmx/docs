@@ -153,7 +153,7 @@ You can use these external entities in your pages and microflows similarly to pe
 
 #### Running the Application and Test
 
-You can now start the application and test the results. Whenever you open a page using external entities from the Integration pane, the data will automatically be retrieved from Altair Graph Studio via an OData REST call.
+You can now start the application and test the results. Whenever you open a page using external entities from the Integration pane, the data will automatically be retrieved from RapidMiner Graph Studio via an OData REST call.
 
 {{< figure src="/attachments/refguide/modeling/integration/altair/testing.png" >}}
 
