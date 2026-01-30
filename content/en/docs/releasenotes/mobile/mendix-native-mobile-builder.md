@@ -31,13 +31,13 @@ To fix this issue, do the following:
 
 **Release date: January 28, 2026**
 
-### Changes
+### iOS Location Permission Change
 
-- We changed the default requirement criteria for location permission on iOS. It used to be required, but now can be opted in/out from the Native Permissions screen.
+- We changed the criterion for location permissions on iOS. It used to be required by default, but can now be opted in or out of from the **Native Permissions** screen.
 
 ### Features
 
-- We added support for MEDIA permissions on Android targeting OS 13+. The permissions are now shown in the Native Builder. Subsequently, this also fixes cases of these permissions not working correctly on these devices.
+- We added support for `MEDIA` permissions on Android targeting OS 13+. The permissions are now shown in the Native Builder. Subsequently, this also fixes cases of these permissions not working correctly on these devices.
 
 ## Release 1.0.144 {#10143}
 
