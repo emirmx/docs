@@ -1,13 +1,15 @@
 ---
 title: "Business Events Configuration"
-url: /appstore/services/business-events/
+url: /appstore/services/business-events-configuration/
 description: "Describes the configuration and usage of the Mendix Business Events service."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
-## Configuration
+## Introduction
 
 To work with business events, import the [Mendix Business Events](https://marketplace.mendix.com/link/component/202649) service into your app. See the [Installing Marketplace Content](/appstore/use-content/#install) section in *Using Marketplace Content* for more details.
+
+## Configuration
 
 ### Configuring Local Deployments {#config-local-deployment}
 
@@ -115,4 +117,9 @@ To publish a business event service, you need to use it in a microflow.
 
 When you click **Add** to add the events from the document into your service, Studio Pro will automatically create a persistable consumed entity within your domain model and an [Event Handler](/refguide/event-handlers/) microflow (**Handle_BE**) to manage the flow of the event after delivery. The **Event Handler** microflow is created in the same directory as your service.
 
-Currently, Mendix does not support multiple subscribers to the same business event within the same app
+Currently, Mendix does not support multiple subscribers to the same business event within the same app.
+
+## Read More
+
+* [Deploy a Business Event](/appstore/services/business-events-deployment/)
+* [Mendix Event Broker](/appstore/services/event-broker/)
