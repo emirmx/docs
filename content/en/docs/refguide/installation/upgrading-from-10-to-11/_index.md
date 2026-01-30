@@ -105,7 +105,11 @@ In Mendix 11.0.0, we have made this behavior consistent. Now, strings are handle
 
 We understand that this change might cause unexpected changes in existing applications migrated from older versions of Mendix. 
 
-We recommend carefully analyzing all expressions that are comparing strings against `''` or `empty` and doing extensive testing after the migration. 
+In Mendix 11.6.3 we have introduced [an option](https://docs.mendix.com/refguide/app-settings/#new-string-behavior) to toggle between the old and the new client-side String attribute behaviors. Projects migrating from Mendix 10 to 11 will retain the old String behavior unless you manually switch to the new one.
+
+We recommend to migrate your pre-existing projects to use the new behavior as soon as possible. The new behavior will improve consistency between nanoflows and microflows, which will lead to less bugs in your applications.
+
+Please make sure to carefully analyze all expressions that are comparing strings against `''` or `empty` and do extensive testing after the migration. 
 
 #### Example 1
 
