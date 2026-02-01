@@ -178,7 +178,7 @@ Following is the operation mapping file for createWorkflow SOA call:
 
 Mendix Domain Model entities are mapped to Teamcenter service operation data structures based on naming conventions. The Teamcenter structure element names (keys in JSON document) map one-to-one to the entity member (attributes or associations) names, with the following caveats:
 
-* The entity member name is prefixed with an underscore '_', for example '_type'. In this case the '_' is ignored, thus matching the Teamcenter name of 'type'.
+* The entity member name is prefixed with an underscore '_', for example '*type'. In this case the '*' is ignored, thus matching the Teamcenter name of 'type'.
 * The entity member name is suffixed with '__XXX', for example, 'phone__Home'. In this case the '__Home' is ignored, thus matching the Teamcenter name of 'phone'.
 
 When traversing entities across associations, the entity names are not used. Only the associations between entities must match or be mappable.
