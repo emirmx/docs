@@ -5,9 +5,11 @@ description: "Describes modeling and deployment of the Mendix Business Events se
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
-## Modeling with Business Events (All Supported Studio Pro Versions) {#be-modelling}
+## Introduction
 
-Once you have created a service in [Studio Pro 9.24 and above](#two-way-be), you can start modeling with them in your app.
+Once you have created a service in [Studio Pro 9.24 and above](/appstore/services/business-events-configuration/#two-way-be), you can start modeling with them in your app and deploy your Business Event.
+
+## Modeling with Business Events (All Supported Studio Pro Versions) {#be-modelling}
 
 Business events are defined using entities specializing the **PublishedBusinessEvent** entity that is included in the Mendix Business Events service.
 
