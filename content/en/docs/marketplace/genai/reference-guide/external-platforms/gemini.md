@@ -149,7 +149,7 @@ Embeddings generation is currently not supported by the Google Gemini connector.
 
 ### Exposed Microflow Actions for OpenAI-compatible APIs {#exposed-microflows}
 
-The exposed microflow actions used to construct requests via drag-and-drop specifically for OpenAI-compatible APIs are listed below. You can find these microflows in the **Toolbox** of Studio Pro. Note that these flows are only required if you need to add specific options to your requests. For generic functionality, can use the GenAI Commons toolbox actions to [create the required Request](/appstore/modules/genai/genai-for-mx/commons/#genai-request-building) and [handle the Response](/appstore/modules/genai/genai-for-mx/commons/#genai-response-handling). These actions are available under the **GenAI (Request Building)** and **GenAI (Response Handling)** categories in the Toolbox.
+The exposed microflow actions used to construct requests via drag and drop specifically for OpenAI-compatible APIs are listed below. You can find these microflows in the **Toolbox** of Studio Pro. Note that these flows are only required if you need to add specific options to your requests. For generic functionality, you can use the GenAI Commons toolbox actions to [create the required Request](/appstore/modules/genai/genai-for-mx/commons/#genai-request-building) and [handle the Response](/appstore/modules/genai/genai-for-mx/commons/#genai-response-handling). These actions are available under the **GenAI (Request Building)** and **GenAI (Response Handling)** categories in the Toolbox.
 
 #### Set Response Format {#set-responseformat-chat}
 
@@ -183,10 +183,10 @@ The **Documentation** pane displays the documentation for the currently selected
 Gemini supports the following [tool choice types](/appstore/modules/genai/genai-for-mx/commons/#enum-toolchoice) of GenAI Commons for the [Tools: Set Tool Choice](/appstore/modules/genai/genai-for-mx/commons/#set-toolchoice) action are supported. For API mapping reference, see the table below:
 
 | GenAI Commons (Mendix) | Gemini |
-| -----------------------| ------- |
-| auto                   | auto    |
-| any                    | any     |
-| none                   | none    |
+| ----------------------- | ------- |
+| auto | auto |
+| any | any |
+| none | none |
 
 ### List Models {#list-models}
 
@@ -206,7 +206,7 @@ Some examples demonstrate knowledge base interaction and require a connection to
 
 ## Troubleshooting {#troubleshooting}
 
-### Attribute or Reference Required Error Message After Upgrade 
+### Attribute or Reference Required After Upgrade 
 
 If you encounter an error stating that an attribute or a reference is required after an upgrade, first upgrade all modules by right-clicking the error, then upgrade Data Widgets. 
 
