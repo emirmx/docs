@@ -131,7 +131,7 @@ For `Chat Completions without History`, `FileCollection` is an optional input pa
 
 For `Chat Completions with History`, you can optionally add `FileCollection` to individual user messages using [Chat: Add Message to Request](/appstore/modules/genai/genai-for-mx/commons/#chat-add-message-to-request).
 
-Use the two microflow actions from the OpenAI specific toolbox [Files: Initialize Collection with OpenAI File](#initialize-filecollection) and [Files: Add OpenAIFile to Collection](#add-file) to construct the input with either `FileDocuments` (for vision, it must be of type `Image`) or `URLs`. There are similar file operations exposed by the GenAI commons module that you can use for vision requests with the OpenAIConnector for Gemini. However, these generic operations do not support the optional OpenAI API-specific `Detail` attribute.
+Use the two microflow actions from the OpenAI specific toolbox `Files: Initialize Collection with OpenAI File` and `Files: Add OpenAIFile to Collection` to construct the input with either `FileDocuments` (for vision, it must be of type `Image`) or `URLs`. The GenAI commons module exposes similar file operations that you can use for vision requests with the OpenAIConnector for Gemini. However, these generic operations do not support the optional OpenAI API-specific `Detail` attribute.
 
 For more information on vision, see [Gemini documentation](https://ai.google.dev/gemini-api/docs/openai#image-understanding).
 
