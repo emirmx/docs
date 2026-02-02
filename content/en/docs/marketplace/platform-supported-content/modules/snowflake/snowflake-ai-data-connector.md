@@ -45,6 +45,7 @@ The current version of the connector supports the following:
 * Execution of single SQL statements
 * Synchronous execution of calls
 * Execution of a Cortex Analyst query
+* Querying your Corstex Search services
 
 ### Prerequisites {#prerequisites}
 
@@ -318,6 +319,30 @@ To configure your Mendix app for Snowflake Cortex Analyst, perform the following
     * **Request_ID** – The returned *RequestId*
    
  {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/CortexAnalystRequestExample.png" >}}
+
+ ## Configuring Snowflake Cortex Search {#cortex-search}
+
+Snowflake Cortex Search is a fully-managed, ML-powered Snowflake Cortex feature that helps you retrieve data relevant to a prompt to help an LLM generate informed answers (Retrieval Augmented Generation).
+
+### Prerequisites
+
+* Make sure that you have access to Cortex Search. For more information, refer to the [Snowflake Cortex Search documentation](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-search/cortex-search-overview).
+* Create the Cortex Search service. For more information, refer to [Creating Snowflake Cortex Search service](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-search/cortex-search-overview#create-the-service) in the Snowflake Cortex Search documentation.
+* Set up one of the following supported authentication methods for Cortex Analyst:
+    * OAUTH
+    * KEYPAIR_JWT
+
+### Configuration 
+
+To configure your Mendix app for Snowflake Cortex Search, perform the following steps:
+
+1. Create a microflow and retrieve your **ConnectionDetails** object.
+2. When using KEYPAIR_JWT as your authentication type use the **Generate JWT** action from the **Toolbox** to generate a JWT object. When using OAuth as authentication type please use the **Get or Create JWT** action from the **Toolbox** to create a JWT object and set your OAuth token and expiration date on that object.
+3. Create a **CortexSearchRequest** object, and then configure the **Request** to contain the path to the Snowflake Cortex Search service, your query/prompt for the model and what indexed columns the Cortex Search service should return.
+4. Add the **Snowflake Cortex Search** action from the Toolbox and provide the following information:
+    * **ConnectionDetails** – The connection details that you configured
+    * **Request** – The request that you configured for the **Cortex Search** action
+5. Make the Cortex Search results available to your LLM.
 
 ### Example Implementation
 
