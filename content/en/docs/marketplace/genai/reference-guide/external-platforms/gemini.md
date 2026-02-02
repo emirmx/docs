@@ -84,7 +84,7 @@ The internal chat completion logic supports [JSON mode](#chatcompletions-json-mo
 
 #### Chat Completions
 
-Operations for chat completions focus on the generation of text based on a certain input. In this context, system prompts and user prompts are two key components that help guide the language model in generating relevant and contextually appropriate responses. For more information on the type of prompts and message roles, see the [ENUM_MessageRole](/appstore/modules/genai/genai-for-mx/commons/#enum-messagerole) enumeration. To learn more about how to create the right prompts for your use case, see the [Read More](#read-more) section below.
+Operations for chat completions focus on the generation of text based on a certain input. In this context, system prompts and user prompts are two key components that help guide the language model in generating relevant and contextually appropriate responses. For more information on the type of prompts and message roles, see the [ENUM_MessageRole](/appstore/modules/genai/genai-for-mx/commons/#enum-messagerole) enumeration.
 
 The `GeminiDeployedModel` is compatible with the two chat completions operations from GenAI Commons. While developing your custom microflow, you can drag and drop the following operations from the toolbox in Studio Pro. See category [GenAI (Generate)](/appstore/modules/genai/genai-for-mx/commons/#genai-generate): 
 
