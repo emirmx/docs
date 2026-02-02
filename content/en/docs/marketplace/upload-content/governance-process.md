@@ -20,11 +20,7 @@ Mendix checks the following:
 * The licenses used in the uploaded *.mpk* files, using the [Fossology](https://fossology.osuosl.org/repo/) tool .   
   There should be no use of GPL, LGPL, or MPL licenses.    
   For more details, refer to [Open-Source Software Licenses](/appstore/submit-content/#license).
-* For malware in the *.mpk* files, using the [VirusTotal](https://www.virustotal.com/gui/home/upload) tool.
 * For third-party vulnerabilities, using QSM. If critical or high vulnerabilities are found, the component is rejected.
-* That the component can be used without errors in a specific Studio Pro version, if the component is a widget, a module, a connector, or an industry template.
-* That the documentation mentions all the details per the template, for example, dependencies, configuration, and how to use the component.
-* That the grammar, alignment, and spelling for the component's description and documentation are correct.
 * That the logo is related to the component's functionality.
 * That the screenshots are related to the configuration required to use the component in the end-user's app.
 
