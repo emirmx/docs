@@ -16,10 +16,10 @@ These release notes cover changes made to the [Catalog](/catalog/).
 
 Click the link corresponding to the year for which you want to read release notes:
 
-* [2026]
-* [2025]
-* [2024]
-* [2023]
-* [2022]
-* [2021]
-* [2020]
+* [2026](/releasenotes/catalog/2026/)
+* [2025](/releasenotes/catalog/2025/)
+* [2024](/releasenotes/catalog/2024/)
+* [2023](/releasenotes/catalog/2023/)
+* [2022](/releasenotes/catalog/2022/)
+* [2021](/releasenotes/catalog/2021/)
+* [2020](/releasenotes/catalog/2020/)
