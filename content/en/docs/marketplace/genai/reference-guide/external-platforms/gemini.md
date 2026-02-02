@@ -155,18 +155,6 @@ The exposed microflow actions used to construct requests via drag and drop speci
 
 This microflow changes the `ResponseFormat` of the `OpenAIRequest_Extension` object, which will be created for a `Request` if not already present. This describes the format that the chat completions model must output. By default, models compatible with the OpenAI API return `Text`. To enable JSON mode, you must set the input value as *JSONObject*.
 
-#### Files: Initialize Collection with OpenAI Image {#initialize-filecollection}
-
-This operation is currently not relevant for Google Gemini connector.
-
-#### Files: Add OpenAI Image to Collection {#add-file}
-
-This operation is currently not relevant for Google Gemini connector.
-
-#### Image Generation: Set ImageOptions Extension {#set-imageoptions-extension}
-
-This operation is currently not relevant for Google Gemini connector.
-
 ## Technical Reference {#technical-reference}
 
 The module includes technical reference documentation for the available entities, enumerations, activities, and other items that you can use in your application. You can view the information about each object in context by using the **Documentation** pane in Studio Pro.
