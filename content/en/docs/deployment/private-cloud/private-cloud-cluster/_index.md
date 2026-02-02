@@ -57,7 +57,7 @@ All services listed in the table below use the HTTPS protocol (port 443).
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/image4.png" class="no-border" >}}
 
-4. Open the [Global Navigation menu](/global-navigation/) and select **Deployment**.
+4. Open the [Global Navigation menu](/portal/global-navigation/) and select **Deployment**.
 5. Select **Mendix for Private Cloud** from the top menu bar in the Mendix Portal.
 
     {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/cluster-manager.png" class="no-border" >}}
@@ -137,6 +137,10 @@ You can install and run the Mendix Operator in either Global or Standard mode. I
 
 * [Running the Mendix Operator in Global Mode](/developerportal/deploy/global-operator/)
 * [Running the Mendix Operator in Standard Mode](/developerportal/deploy/standard-operator/)
+
+{{% alert color="info" %}}
+For Mendix version 11.5.0 and above, you will need to install Mendix Operator version 2.24 or above.
+{{% /alert %}}
 
 ### Licensing the Application with Private Cloud License Manager
 

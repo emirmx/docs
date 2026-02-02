@@ -169,7 +169,7 @@ After the upgrade, your app may report the following new error: `A microflow tha
 
 You can resolve the error by enabling entity access for the microflow that calls the **ShowHomePage** microflow. However, this may not always align with your intended access control strategy. Alternatively, you can create a custom microflow that includes the [Show home page](/refguide/show-home-page/) activity without enabling entity access. You can then call this new microflow instead of the one in the **System** module. Another approach is to call the **Show home page** activity directly within your microflow.
 
-### Amazon S3 SDK Upgrade
+### Amazon S3 SDK Upgrade {#amazon-s3-sdk-upgrade}
 
 In Mendix 11.6.0 we upgraded the AWS SDK used for accessing S3 storage from version 1 to version 2. SDK version 2 has some [differences](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/migration-s3.html) which affects our S3 storage implementation.
 

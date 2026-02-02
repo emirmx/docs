@@ -125,14 +125,6 @@ When creating a property to use as a key for external secret storage, use the fo
         * **CIAdmin.AzureBlobStorageToken** - SAS token for the Azure Blob Storage
         * **CIAdmin.AzureAwsS3SK** - Name of the Azure DevOps organization
 
-    * Cluster Manager
-
-        * **ClusterManager.KubernetesApiToken** - Token for the Kubernetes admin user
-        * **ClusterSettings.KubernetesAdminPassword** - Password for the Kubernetes admin user
-        * **ClusterSettings.GrafanaAPIKey** - Password for the Grafana admin user
-        * **ClusterSettings.MDAAWSS3AccessKey** - Password for the Prometheus admin user
-        * **ClusterSettings.OCIRegistryPassword** - Password for the Prometheus admin user
-
     * Marketplace
 
         * **Marketplace.ImportCDNPassword** - Personal access token for the Marketplace admin
