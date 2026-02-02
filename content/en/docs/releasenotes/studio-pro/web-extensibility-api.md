@@ -10,7 +10,7 @@ These release notes cover changes to the [Extensibility API for Web Developers](
 
 ## Version 11.8.0
 
-* We introduced a change in the porgress dialog api, so when the progress dialog only has one step, we now only show the progress bar.
+* We introduced a change in the progress dialog api, so when the progress dialog only has one step, we now only show the progress bar.
 
 ## Version 11.7.0
 
