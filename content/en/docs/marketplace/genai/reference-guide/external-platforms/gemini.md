@@ -9,7 +9,7 @@ weight: 20
 
 ## Introduction
 
-The [Google Gemini Connector](https://marketplace.mendix.com/link/component/254741) allows you to integrate generative AI capabilities into your Mendix application. Since the Gemini API is compatible with [OpenAI API](https://platform.openai.com/), this module mainly focuses on Gemini specific UI while reusing the operations inside of the OpenAI connector. 
+The [Google Gemini Connector](https://marketplace.mendix.com/link/component/254741) allows you to integrate generative AI capabilities into your Mendix application. Since the Gemini API is compatible with the [OpenAI API](https://platform.openai.com/), this module mainly focuses on Gemini specific UI while reusing the operations inside the OpenAI connector. 
 
 ### Features {#features}
 
@@ -41,11 +41,11 @@ To use this connector, you need to sign up for a Google AI Studio account and cr
 
 Install all required modules from the Mendix Marketplace as listed in the [Dependencies](#dependencies) section above.
 
-To import the [Google Gemini Connector](https://marketplace.mendix.com/link/component/248276), and the other modules into your app, follow the instructions in [How to Use Marketplace Content](/appstore/use-content/).
+To import the [Google Gemini Connector](https://marketplace.mendix.com/link/component/248276) and the other modules into your app, follow the instructions in [How to Use Marketplace Content](/appstore/use-content/).
 
 ## Configuration {#configuration}
 
-After you install the Gemini and OpenAI connector, you can find them in the **Marketplace Modules** section of the **App Explorer**. The Google Gemini connector provides a domain model and several pages. You can reuse all activities to connect your app to Gemini from the OpenAI connector. To implement an activity, use it in a microflow. Configure the [Encryption module](/appstore/modules/encryption/#configuration) to ensure the connection of your app to Gemini is secure.
+After you install the Gemini and OpenAI connectors, you can find them in the **Marketplace Modules** section of the **App Explorer**. The Google Gemini connector provides a domain model and several pages. You can reuse all activities to connect your app to Gemini from the OpenAI connector. To implement an activity, use it in a microflow. Configure the [Encryption module](/appstore/modules/encryption/#configuration) to ensure a secure connection between your app and Gemini.
 
 ### General Configuration {#general-configuration}
 
@@ -66,27 +66,27 @@ The following inputs are required for the Gemini configuration:
 
 #### Configuring the Gemini Deployed Models
 
-A [Deployed Model](/appstore/modules/genai/genai-for-mx/commons/#deployed-model) represents a GenAI model instance that can be used by the app to generate text, embeddings, or images. For every model you want to invoke from your app, you need to create a `GeminiDeployedModel` record, a specialization of `DeployedModel` (and also a specialization of `OpenAIDeployedModel`). In addition to the model display name and a technical name or identifier, a Gemini deployed model contains a reference to the additional connection details as configured in the previous step. Currently only specific models for text generation are supported by the Google Gemini connector.
+A [Deployed Model](/appstore/modules/genai/genai-for-mx/commons/#deployed-model) represents a GenAI model instance that can be used by the app to generate text, embeddings, or images. For every model you want to invoke from your app, you need to create a `GeminiDeployedModel` record, a specialization of `DeployedModel` (and also a specialization of `OpenAIDeployedModel`). In addition to the model display name and a technical name or identifier, a Gemini-deployed model contains a reference to the additional connection details as configured in the previous step. Currently, only specific models for text generation are supported by the Google Gemini connector.
 
 1. Click the three-dots ({{% icon name="three-dots-menu-horizontal-filled" %}}) icon for a Gemini configuration and open **Manage Deployed Models**. It is possible to use a predefined generation method, where available models are created according to their capabilities. 
     
-2. Close the **Manage Deployed Models** popup and test the configuration with the newly created deployed models.
+2. Close the **Manage Deployed Models** pop-up and test the configuration with the newly created deployed models.
 
 ### Using GenAI Commons Operations {#genai-commons-operations} 
 
-After following the general setup above, you are all set to use the text generation related microflow actions under the **GenAI (Generate)** category from the toolbox. These operations are part of GenAI Commons. Since OpenAI (and therefor Gemini) is compatible with the principles of GenAI Commons, you can pass a `GeminiDeployedModel` to all GenAI Commons operations that expect the generalization of `DeployedModel`. All actions under **GenAI (Generate)** will take care of executing the right provider-specific logic, based on the type of specialization passed, in this case, Gemini. From an implementation perspective, no extra work is required to the inner workings of this operation. The input, output, and behavior are described in the [GenAICommons](/appstore/modules/genai/genai-for-mx/commons/#microflows) documentation. Applicable operations and some Gemini-specific aspects are listed in the sections below.
+After following the general setup above, you are all set to use the text generation related microflow actions under the **GenAI (Generate)** category from the toolbox. These operations are part of GenAI Commons. Since OpenAI (and therefore Gemini) is compatible with the principles of GenAI Commons, you can pass a `GeminiDeployedModel` to all GenAI Commons operations that expect the generalization of `DeployedModel`. All actions under **GenAI (Generate)** will take care of executing the right provider-specific logic, based on the type of specialization passed, in this case, Gemini. From an implementation perspective, no extra work is required for the inner workings of this operation. The input, output, and behavior are described in the [GenAICommons](/appstore/modules/genai/genai-for-mx/commons/#microflows) documentation. Applicable operations and some Gemini-specific aspects are listed in the sections below.
 
-For more inspiration or guidance on how to use the microflow actions in your logic, Mendix recommends downloading [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of examples that cover all the operations mentioned.
+For more inspiration or guidance on how to use the microflow actions in your logic, Mendix recommends downloading the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of examples that cover all the operations mentioned.
 
 You can use the GenAI Commons toolbox actions to [create the required Request](/appstore/modules/genai/genai-for-mx/commons/#genai-request-building) and [handle the Response](/appstore/modules/genai/genai-for-mx/commons/#genai-response-handling) for your use case. 
 
-The internal chat completion logic supports [JSON mode](#chatcompletions-json-mode), [Function Calling](#chatcompletions-functioncalling), and [Vision](#chatcompletions-vision) for Gemini. Make sure to check the actual compatibility of the available models with these functionalities, as this changes over time. The following sections list toolbox actions for OpenAI compatible APIs (especially Gemini).
+The internal chat completion logic supports [JSON mode](#chatcompletions-json-mode), [Function Calling](#chatcompletions-functioncalling), and [Vision](#chatcompletions-vision) for Gemini. Make sure to check the actual compatibility of the available models with these functionalities, as this changes over time. The following sections list toolbox actions for OpenAI-compatible APIs (especially Gemini).
 
 #### Chat Completions
 
 Operations for chat completions focus on the generation of text based on a certain input. In this context, system prompts and user prompts are two key components that help guide the language model in generating relevant and contextually appropriate responses. For more information on the type of prompts and message roles, see the [ENUM_MessageRole](/appstore/modules/genai/genai-for-mx/commons/#enum-messagerole) enumeration.
 
-The `GeminiDeployedModel` is compatible with the two chat completions operations from GenAI Commons. While developing your custom microflow, you can drag and drop the following operations from the toolbox in Studio Pro. See category [GenAI (Generate)](/appstore/modules/genai/genai-for-mx/commons/#genai-generate): 
+The `GeminiDeployedModel` is compatible with the two chat completion operations from GenAI Commons. While developing your custom microflow, you can drag and drop the following operations from the toolbox in Studio Pro. See category [GenAI (Generate)](/appstore/modules/genai/genai-for-mx/commons/#genai-generate): 
 
 * Chat Completions (with history) 
 * Chat Completions (without history)
@@ -101,7 +101,7 @@ Function calling enables LLMs to connect with external tools to gather informati
 
 Gemini does not call the function. The model returns a tool called JSON structure that is used to build the input of the function (or functions) so that they can be executed as part of the chat completions operation. Functions in Mendix are essentially microflows that can be registered within the request to the LLM​. The OpenAI connector takes care of handling the tool call response as well as executing the function microflows until the API returns the assistant's final response for Gemini. 
 
-This is all part of the implementation that is executed by the GenAI Commons chat completions operations. As a developer, make the system aware of your functions and what is done by registering the functions to the request. This is done using the GenAI Commons operation [Tools: Add Function to Request](/appstore/modules/genai/genai-for-mx/commons/#add-function-to-request) once per function before passing the request to the chat completions operation.
+This is all part of the implementation that is executed by the GenAI Commons chat completions operations. As a developer, make the system aware of your functions and what is done by registering the functions with the request. This is done using the GenAI Commons operation [Tools: Add Function to Request](/appstore/modules/genai/genai-for-mx/commons/#add-function-to-request) once per function before passing the request to the chat completions operation.
 
 Function microflows can have none, a single, or multiple primitive input parameters such as Boolean, Datetime, Decimal, Enumeration, Integer, or String. Additionally, they may accept the [Request](/appstore/modules/genai/genai-for-mx/commons/#request) or [Tool](/appstore/modules/genai/genai-for-mx/commons/#tool) objects as inputs. The function microflow must return a String value.
 
@@ -115,7 +115,7 @@ For more information, see [Function Calling](/appstore/modules/genai/function-ca
 
 #### Adding Knowledge Bases {#chatcompletions-add-knowledge-base}
 
-Adding knowledge bases to a call enables LLMs to retrieve information when a related topics are mentioned. Including knowledge bases in the request object along with a name and description, enables the model to intelligently decide when to let the Mendix app call one or more predefined knowledge bases. This allows the assistant to include the additional information in its response.
+Adding knowledge bases to a call enables LLMs to retrieve information when related topics are mentioned. Including knowledge bases in the request object, along with a name and description, enables the model to intelligently decide when to let the Mendix app call one or more predefined knowledge bases. This allows the assistant to include the additional information in its response.
 
 Gemini does not directly connect to the knowledge resources. The model returns a tool call JSON structure that is used to build the input of the retrievals so that they can be executed as part of the chat completions operation. The OpenAI connector takes care of handling the tool call response for Gemini as well as executing the function microflows until the API returns the assistant's final response.
 
@@ -125,7 +125,7 @@ Note that the retrieval process is independent of the model provider and can be 
 
 #### Vision {#chatcompletions-vision}
 
-Vision enables models to interpret and analyze images, allowing them to answer questions, and perform tasks related to visual content. This integration of computer vision and language processing enhances the model's comprehension and makes it valuable for tasks involving visual information. To make use of vision with the Google Gemini connector, send an optional [FileCollection](/appstore/modules/genai/genai-for-mx/commons/#filecollection) containing one or multiple images along with a single message.
+Vision enables models to interpret and analyze images, allowing them to answer questions and perform tasks related to visual content. This integration of computer vision and language processing enhances the model's comprehension and makes it valuable for tasks involving visual information. To make use of vision with the Google Gemini connector, send an optional [FileCollection](/appstore/modules/genai/genai-for-mx/commons/#filecollection) containing one or multiple images along with a single message.
 
 For `Chat Completions without History`, `FileCollection` is an optional input parameter. 
 
@@ -153,7 +153,7 @@ The exposed microflow actions used to construct requests via drag and drop speci
 
 #### Set Response Format {#set-responseformat-chat}
 
-This microflow changes the `ResponseFormat` of the `OpenAIRequest_Extension` object, which will be created for a `Request` if not already present. This describes the format that the chat completions model must output. By default, models compatible with the OpenAI API return `Text`. To enable JSON mode, you must set the input value as *JSONObject*.
+This microflow changes the `ResponseFormat` of the `OpenAIRequest_Extension` object, which will be created for a `Request` if not already present. This describes the format that the chat completions model must output. By default, models compatible with the OpenAI API return `Text`. To enable JSON mode, you must set the input value as a *JSONObject*.
 
 ## Technical Reference {#technical-reference}
 
@@ -168,7 +168,7 @@ The **Documentation** pane displays the documentation for the currently selected
 
 ### Tool Choice
 
-Gemini supports the following [tool choice types](/appstore/modules/genai/genai-for-mx/commons/#enum-toolchoice) of GenAI Commons for the [Tools: Set Tool Choice](/appstore/modules/genai/genai-for-mx/commons/#set-toolchoice) action are supported. For API mapping reference, see the table below:
+Gemini supports the following [tool choice types](/appstore/modules/genai/genai-for-mx/commons/#enum-toolchoice) of GenAI Commons for the [Tools: Set Tool Choice](/appstore/modules/genai/genai-for-mx/commons/#set-toolchoice) action is supported. For API mapping reference, see the table below:
 
 | GenAI Commons (Mendix) | Gemini |
 | ----------------------- | ------- |
@@ -181,7 +181,7 @@ Gemini supports the following [tool choice types](/appstore/modules/genai/genai-
 This microflow retrieves a list of available models for a specific Gemini configuration. It takes a `GeminiConfiguration` object as input and returns a list of `GeminiModel` objects that are available through the configured API endpoint. This operation is useful for dynamically discovering which models are available for your Gemini configuration.
 
 {{% alert color="info" %}}
-This action is currently not used during the creation of usable models in the connector because there is not enough information about the models' capabilities and not all retrieved models are supported with the connector.
+This action is currently not used during the creation of usable models in the connector because there is not enough information about the models' capabilities, and not all retrieved models are supported with the connector.
 {{% /alert %}}
 
 ## GenAI Showcase Application {#showcase-application}
