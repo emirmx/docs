@@ -121,3 +121,21 @@ Private Mendix Platform must connect to services within your premises. Mandatory
 ## Infrastructure Requirements
 
 For information about the infrastructure requirements, see [Supported Providers](/developerportal/deploy/private-cloud-supported-environments/).
+
+## LLM Providers for Maia
+
+[Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/) has been standardized on Claude Sonnet 3.7, but Private Mendix Platform supports connectivity to a broad set of models.
+
+Starting in Private Mendix Platform 2.6, you can connect to the following Large Language Models:
+
+* Anthropic
+  * Claude Sonnet 3.7
+* [AWS Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/models-regions.html)
+  * Claude Sonnet 3.7
+  * Claude Sonnet 4.0
+  * Claude Sonnet 4.5
+  * GPT-OSS-120B
+* [Azure](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-models/concepts/models-sold-directly-by-azure)
+  * 03-mini
+* OpenAI
+  * GPT-5-Mini
