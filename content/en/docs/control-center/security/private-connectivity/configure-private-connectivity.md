@@ -447,17 +447,19 @@ Once a connection is requested, it must be approved before the app environment c
 
 To approve a connection, follow these steps:
 
-1. On the **Connections** tab, find the connection you want to enable.
-2. Click **Approve**.
+1. In **Control Center**, access the **Entitlements** section, then go to the **Approval Requests** page.
+2. On the **Active Requests** tab, identify the connection you want to approve.
+3. Click **Approve**.
 
 {{% alert color="warning" %}}
-If this is the first connection that is approved for an app environment, the Technical Contact must [redeploy](/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/) the environment to be able to use the connection. 
+Approval of a connection does not automatically activate it. For every approved connection, the Technical Contact must [redeploy the environment](/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/) for it to become active and usable. 
 {{% /alert %}}
 
 To disable a connection, follow these steps:
 
-1. On the **Connections** tab, find the connection you want to disable.
-2. Click **Reject**.
+1. In **Control Center**, access the **Entitlements** section, then go to the **Approval Requests** page.
+2. On the **Active Requests** tab, identify the connection you want to reject.
+3. Click **Reject**.
 
 <!-- ## Activities
 
