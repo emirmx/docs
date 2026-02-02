@@ -23,7 +23,7 @@ This scenario applies when users have already authenticated to the Mendix applic
 The typical example of this scenario includes Okta as an IdP and using `sub` as a unique identifier. In the OIDC **Attribute Mapping** configuration, the unique IdP claim `sub` is stored in the `System.User.Name` attribute of the Mendix user entity, and the `Name` attribute is configured as the OIDC principal attribute. This establishes the `sub` value as the authoritative identifier for the user in Mendix.
 
 {{% alert color="info" %}}
-This scenario also applies if you are using Entra ID as IdP. The unique IdP claim `oid` is stored in the `System.User.Name` attribute of the Mendix user entity, the `Name` attribute is configured as the OIDC principal attribute. By mapping the SCIM `externalId` to the `System.User.Name` attribute and configuring `Name` as the SCIM principal attribute enable Mendix to correctly correlate SCIM provisioning.
+This scenario also applies if you are using Entra ID as IdP and you have mapped the unique IdP claim `oid` to `System.User.Name` attribute of the Mendix user entity. The `Name` attribute is configured as the OIDC principal attribute. By mapping the SCIM `externalId` to the `System.User.Name` attribute and configuring `Name` as the SCIM principal attribute enable Mendix to correctly correlate existing users.
 {{% /alert %}}
 
 To ensure that SCIM provisions and updates the same user rather than creating a duplicate record, the SCIM configuration must reference the same identifier. In IdPs such as Okta, the SCIM `externalId` attribute contains the same value as the OIDC `sub` claim.
@@ -71,7 +71,7 @@ Note the following:
 
 #### Transitioning to a Long-Term Standard Identifier (`oid`)
 
-If the organization decides to standardize on `oid` as the long-term unique identifier across both OIDC and SCIM, both configurations must be updated to use this identifier consistently. To implement this change, follow scenario 2 and do the following:
+If the organization decides to standardize on `oid` as the long-term unique identifier across both OIDC and SCIM, both configurations must be updated to use this identifier consistently. This is applicable when you use Entra ID as an identity provider. To implement this change, follow scenario 2 and do the following:
 
 1. OIDC configuration
 
