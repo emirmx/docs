@@ -404,3 +404,8 @@ Attempting to edit or delete the default deploy-time configuration at runtime wi
 #### SCIM User Deactivation Due to Missing `active` Attribute in the `PUT` Request
 
 The issue occurs when the `active` attribute is missing in the first `PUT` request, causing the user to become inactive (`"active": false`). Once the user is inactive, any further `PUT` updates fail with a **500 Internal Server Error**. To prevent this, always include `"active": true` in the PUT requests to keep the user active. 
+
+## Read More
+
+* [OIDC SSO](/appstore/modules/oidc/)
+* [Preventing Duplicate Users When Enabling SCIM with the OIDC SSO Module](/appstore/modules/scim/with-oidc/)
