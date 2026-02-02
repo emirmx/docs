@@ -31,6 +31,12 @@ To create a backup archive of a licensed app, follow these steps:
 
     {{< figure src="/attachments/deployment/mendix-cloud-deploy/backups/create-backup/backupoptions.png" class="no-border" >}}
 
+   If the backup creation collides with the RDS backup or maintenance windows then it can result in an immediate failure of the backup.
+   The comment section of the failed backup will give more information regarding it.
+
+   {{< figure src="/attachments/deployment/mendix-cloud-deploy/backups/create-backup/backup-rds-window-failure.png" class="no-border" >}}
+
+
 Once you have created a backup archive, you can download it by clicking **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) then selecting **Download**. For more information, see [Downloading a Backup](/developerportal/operate/download-backup/).
 
 {{% alert color="info" %}}
