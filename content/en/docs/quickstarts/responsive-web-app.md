@@ -66,7 +66,6 @@ Confirm by clicking **Create App**.
 A starter app is a ready-to-use app template that gives you a basic structure, like navigation, layout, and common components, so you don’t have to start from scratch. It helps you get up and running faster while still giving you full control to customize your app as needed.
 {{% /alert %}}
 
-
 ## Explore Studio Pro Interface
 
 You should see the app open in **Studio Pro**, with the **welcome page** open. Before we continue, let's take a quick tour of the main interface:
@@ -122,7 +121,6 @@ After getting familiar with the Studio Pro interface, you can begin building you
 Domain models are comprised of [entities](/refguide/entities/) (similar to a table in traditional SQL). Entities have [attributes](/refguide/attributes/) (similar to fields). [Properties](/refguide/entities/#properties) define the names of the entities. Entities can relate to each other as one-to-one, one-to-many, or many-to-many. The relations between entities are called [associations](/refguide/associations/). Entities can inherit their properties and attributes from other entities by creating a [Generalization](/refguide/generalization-and-association/#generalization-specialization-and-inheritance) of an entity.
 {{% /alert %}}
 
-
 ### Create an Entity 
 
 To create an entity, follow these steps:
@@ -169,7 +167,6 @@ An employee will be required to complete and upload important documents and cont
 {{% alert type="info" %}}
 **Generalizations** allow an entity to inherit properties from another. When an entity is a generalization of another, it inherits all the attributes of the original. In this case, Document is a generalization of FileDocument, which will allow it to store anything you might consider a file (this includes images, PDFs, Microsoft Office documents, and more).
 {{% /alert %}}
-
 
 ## Create User Interface
 
@@ -234,9 +231,9 @@ Now that we have created a basic front end for your app, we can add some logic. 
 1. As the expression above results in a **true** and **false** result, we need to create a **branching path** from the decision - a path for each possible result. **Select** the decision, then from a corner **click and drag** away to create the new alternative path. Ensure to **define** which path is for the true result and the false result by **right-clicking** them both and under **condition value** choosing true and false.
 1. On the **false path**, add a **validation feedback action**. Double click to open its **properties**, enter the following details, and click **OK**:
 
- 1. Variable → Employee
- 1. Member → FirstName
- 1. Template → Please enter a Firstname for the employee
+1. Variable → Employee
+1. Member → FirstName
+1. Template → Please enter a Firstname for the employee
 
 1. Now on the **true path**, repeat this step for the **LastName** and **JobRole** attributes as well.
 
