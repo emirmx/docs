@@ -57,11 +57,11 @@ In some situations, it can be beneficial to designate a single machine for build
 
 The Make It Native app allows developers to preview, test, and debug native mobile apps in conjunction with Mendix Studio Pro. This app is available for both Android and iOS devices.
 
-Depending on the Mendix version used to build your app, you have to use a different version of Make It Native. The following list explains which version to use:
+Depending on your app's Mendix version, you must use a different version of the Make It Native app:
 
-* **11.7.0 to 11.x.x** - Latest version of Make It Native ([Android](https://play.google.com/apps/testing/com.mendix.developerapp.mx10), [iOS](https://testflight.apple.com/join/bQfLf27w))
-* **11.6.x** - Store version of Make It Native ([Android](https://play.google.com/store/apps/details?id=com.mendix.developerapp.mx10), [iOS](https://apps.apple.com/app/make-it-native-10/id6450037464))
-* **Older** - These versions are no longer supported by Make It Native. Please create your own [custom Make It Native app](/refguide/mobile/distributing-mobile-apps/use-min-older-sp/) or create a [Custom Developer App](/refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/).
+* **11.7.0 - 11.x.x** — Use the latest version of Make It Native ([Android](https://play.google.com/apps/testing/com.mendix.developerapp.mx10), [iOS](https://testflight.apple.com/join/bQfLf27w))
+* **11.6.x** — Use the store version of Make It Native ([Android](https://play.google.com/store/apps/details?id=com.mendix.developerapp.mx10), [iOS](https://apps.apple.com/app/make-it-native-10/id6450037464))
+* **Older** — These versions are no longer supported by Make It Native. Please create your own [custom Make It Native app](/refguide/mobile/distributing-mobile-apps/use-min-older-sp/) or create a [Custom Developer App](/refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/).
 
 For information on which mobile operating systems are supported by the Mendix native mobile apps, see the [Mobile Operating Systems](/refguide/system-requirements/#mobile) section of *System Requirements*.
 
