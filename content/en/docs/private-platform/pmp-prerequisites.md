@@ -128,8 +128,6 @@ For information about the infrastructure requirements, see [Supported Providers]
 
 Starting in Private Mendix Platform 2.6, you can connect to the following Large Language Models:
 
-* Anthropic
-  * Claude Sonnet 3.7
 * [AWS Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/models-regions.html)
   * Claude Sonnet 3.7
   * Claude Sonnet 4.0
@@ -137,5 +135,3 @@ Starting in Private Mendix Platform 2.6, you can connect to the following Large 
   * GPT-OSS-120B
 * [Azure](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-models/concepts/models-sold-directly-by-azure)
   * 03-mini
-* OpenAI
-  * GPT-5-Mini
