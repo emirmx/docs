@@ -338,11 +338,13 @@ Mendix automatically creates a webhook on your behalf to trigger Mendix Pipeline
 
 ### Known Issues and Limitations
 
-Mendix Pipeline runs are not picked up and executed if the Mendix Pipelines functionality is undergoing maintenance.
+* **Mendix Pipelines maintenance behavior** – Mendix Pipeline runs are not picked up and executed if the Mendix Pipelines functionality is undergoing maintenance.
 
-It is not currently possible to add the same Mendix Pipeline step more than once in a Mendix Pipeline. This will be improved in the future.
+* **Duplicate pipeline steps not supported** – It is not currently possible to add the same Mendix Pipeline step more than once in a Mendix Pipeline. This will be improved in the future.
 
-In case of a system outage, Mendix Pipelines triggered during that time are not executed.
+* **System outages prevent pipeline execution** – In case of a system outage, Mendix Pipelines triggered during that time are not executed.
+
+* **Pipelines continue to run after app offboarding** – If an app is offboarded while pipelines are still configured, they will continue to run on their automated schedules and generate failure notifications. To prevent this, active pipelines must be deactivated during the app offboarding process, before the app is removed.
 
 ## Read More
 
