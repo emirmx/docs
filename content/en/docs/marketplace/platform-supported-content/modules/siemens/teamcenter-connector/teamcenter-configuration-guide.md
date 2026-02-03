@@ -31,9 +31,9 @@ Follow these steps to connect your Mendix app to Teamcenter:
 1. Log in to your Mendix app with the **Administrator** user role.
 2. Use the **NAV_AdminHomePage** button to navigate to the overview page of all Teamcenter configurations.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-connector/configuration/teamcenter-new-configuration.png">}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-connector/configuration/teamcenter-new-configuration.png">}}
 
-1. Click **+ New configuration** to create a new configuration.    
+3. Click **+ New configuration** to create a new configuration.    
     All configurations require the following fields:
 
     * **Configuration Name** – A unique identifier for the configuration. This can be used in a subsequent microflow to identify which environment to connect to.
@@ -48,7 +48,7 @@ Follow these steps to connect your Mendix app to Teamcenter:
 
     If your Teamcenter instance is using SSO, additional steps are required. Follow the steps in the [Teamcenter SSO](#teamcenter-sso) and [Teamcenter X SSO](#teamcenter-x-sso) sections before continuing.
 
-2. Click **Save**.
+4. Click **Save**.
 
 ### Testing the Connection {#test-the-connection}
 
