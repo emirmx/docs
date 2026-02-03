@@ -62,7 +62,7 @@ In version 10.22 and newer, the Platform supports native mobile builds, includin
 ## Getting the Make It Native App {#get-min-app}
 
 {{% alert color="warning" %}}
-Make It Native is no longer supported for Mendix 10. Please create a [custom Make It Native app](/refguide/mobile/distributing-mobile-apps/use-min-older-sp/) or a [custom developer app](/refguide9/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/) instead.
+The Make It Native app is no longer supported for Mendix 10. Please create a [custom Make It Native app](/refguide/mobile/distributing-mobile-apps/use-min-older-sp/) using or a [custom developer app](/refguide9/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/) instead.
 {{% /alert %}}
 
 ### Recommendations
