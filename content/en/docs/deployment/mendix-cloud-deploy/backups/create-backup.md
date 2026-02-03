@@ -30,9 +30,7 @@ To create a backup archive of a licensed app, follow these steps:
 4. Click **Create Backup**.
 
     {{< figure src="/attachments/deployment/mendix-cloud-deploy/backups/create-backup/backupoptions.png" class="no-border" >}}
-
-   If the backup creation collides with the RDS backup or maintenance windows then it can result in an immediate failure of the backup.
-   The comment section of the failed backup will give more information regarding it.
+    If backup creation overlaps with an RDS backup or maintenance window, the backup may fail immediately. The **Comment** column for the failed backup provides additional details.
 
    {{< figure src="/attachments/deployment/mendix-cloud-deploy/backups/create-backup/backup-rds-window-failure.png" class="no-border" >}}
 
