@@ -349,7 +349,7 @@ The following properties are specific for this event:
 
 ### Cancel Synchronization {#cancel-synchronization}
 
-The **Cancel synchronization** event cancels a running synchronization. You can start synchronization again later.
+The **Cancel synchronization** event cancels a running synchronization. You can trigger another synchronization later.
 
 ## Read More
 
