@@ -17,15 +17,13 @@ Mendix strongly recommends performing the following checks before you submit you
 
 Mendix checks the following:
 
-* The licenses used in the uploaded *.mpk* files, using the [Fossology](https://fossology.osuosl.org/repo/) tool .   
+* The licenses used in the uploaded *.mpk* files, using QSM.   
   There should be no use of GPL, LGPL, or MPL licenses.    
   For more details, refer to [Open-Source Software Licenses](/appstore/submit-content/#license).
-* For third-party vulnerabilities, using QSM.         
+* Any third-party vulnerabilities, using QSM.         
     Every new public component and every new version of a component packaged as an MPK file is automatically scanned by QSM.     
     If no vulnerabilities are detected, the component is uploaded automatically.    
     If vulnerabilities are identified, the upload is rejected, and the component remains in **My Drafts** with a **Declined** status. Developers can open the context menu for the declined component and navigate to the **Scan Overview** page to review the detected vulnerabilities.
-* That the logo is related to the component's functionality.
-* That the screenshots are related to the configuration required to use the component in the end-user's app.
 
 It may sometimes take a few iterations for a component to be approved, depending on the issues identified. To avoid a high number of necessary iterations, make sure you have followed the [Guidelines for Content Creators](/appstore/guidelines-content-creators/) and have performed the checks above before you submit a component for approval.
 
