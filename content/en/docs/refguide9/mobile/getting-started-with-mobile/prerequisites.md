@@ -59,7 +59,7 @@ Building native mobile apps is not supported on the [Private Mendix Platform](/p
 ## Getting the Make It Native App {#get-min-app}
 
 {{% alert color="warning" %}}
-Make It Native is no longer supported for Mendix 9. Please create a [custom developer app](/refguide9/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/) instead.
+The Make It Native app is no longer supported for Mendix 9. Please create a [custom developer app](/refguide9/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/) instead.
 {{% /alert %}}
 
 ## Troubleshooting Common Mobile Issues {#troubleshooting}
