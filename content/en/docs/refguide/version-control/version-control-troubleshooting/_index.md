@@ -109,25 +109,24 @@ When filing a Git support issue with Mendix Support, attach the log files by doi
 The properties described below might contain personal information. We advise you to make sure that all the private information is removed before sharing them. 
 {{% /alert %}}
 
-There are properties of the Git repository that provide you with information useful for troubleshooting different issues. Execute the following using the command line in the app’s folder.
+Several properties of the Git repository can provide you with information useful for troubleshooting different [general](#general-properties) and [configuration](#config-properties) issues. You can view them by executing the commands from the command line in the app's folder.
 
-#### General
+#### General {#general-properties}
 
-`git status -b` — provides information on the current state of the repository
+The following properties provide general information about the repository status and remotes.
 
-`git remote -v` — lists the remotes specified for the repository
+* `git status -b` - Provides information on the current state of the repository.
+* `git remote -v` - Lists the remotes specified for the repository.
 
-#### Configuration
+#### Configuration {#config-properties}
 
 Git stores configuration at several levels:
 
-* System: affects the entire Git installation
-* Global: affects the current user
-* Local: affects a specific repository
+* System - Affects the entire Git installation.
+* Global - Affects the current user.
+* Local - Affects a specific repository.
 
-More specific configuration overrides more generic configuration (for example, local overrides global).
-
-You can inspect the full effective configuration and see where each value is defined using:
+More specific configuration overrides more generic configuration (for example, local overrides global). You can inspect the configuration and see where each value is defined by using the following command:
 
 `git config --list --show-origin --show-scope`
 
