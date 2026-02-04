@@ -28,6 +28,8 @@ Mendix checks the following:
 It may sometimes take a few iterations for a component to be approved, depending on the issues identified. To avoid a high number of necessary iterations, make sure you have followed the [Guidelines for Content Creators](/appstore/guidelines-content-creators/) and have performed the checks above before you submit a component for approval.
 
 {{% alert color="info" %}}
+Components with the `.mxmodule` extension are not scanned by QSM, but are approved manually.
+
 All subsequently uploaded versions of a public component must be scanned and approved by Mendix.
 
 Private Marketplace content does not require any review or approval.
