@@ -109,13 +109,29 @@ When filing a Git support issue with Mendix Support, attach the log files by doi
 The properties described below might contain personal information. We advise you to make sure that all the private information is removed before sharing them. 
 {{% /alert %}}
 
-There are properties of the Git repository that provide you with information useful for troubleshooting different issues. Execute the following using the command line in the app’s folder:
+There are properties of the Git repository that provide you with information useful for troubleshooting different issues. Execute the following using the command line in the app’s folder.
+
+#### General
 
 `git status -b` — provides information on the current state of the repository
 
 `git remote -v` — lists the remotes specified for the repository
 
-`git config --list --show-origin --show-scope` — provides information on user's Git config
+#### Configuration
+
+Git stores configuration at several levels:
+
+* System: affects the entire Git installation
+* Global: affects the current user
+* Local: affects a specific repository
+
+More specific configuration overrides more generic configuration (for example, local overrides global).
+
+You can inspect the full effective configuration and see where each value is defined using:
+
+`git config --list --show-origin --show-scope`
+
+This command shows all active configuration values along with the file and scope they come from.
 
 ### Cannot Create Package from a Revision{#cannot-create-package}
 
