@@ -18,7 +18,7 @@ With ZDT, Mendix Cloud intelligently manages the deployment process, ensuring yo
 
 To leverage the benefits of zero-downtime deployment, your Mendix application and deployment environment must meet the following criteria:
 
-* **Mendix runtime version** – Must be running on Mendix Runtime version 10.24 or higher.
+* **Mendix runtime version** – Must be running on Mendix Runtime version 10.24 or above.
 * **Application instances** – The application must be configured to run with a single runtime instance.
 * **Change type** – The deployment must involve only [configuration-level changes](/developerportal/deploy/zero-downtime/#zdt-application).
 * **Deployment platform** – Must be deployed on Mendix Cloud(Kubernetes).
@@ -70,15 +70,14 @@ During these types of updates, Mendix Cloud performs the deployment in a way tha
 
 Zero-downtime deployment will not apply under the following conditions:
 
-* Mendix Runtime version is less than 10.24
+* Mendix Runtime versions below 10.24
 * Application runs with more than one runtime instance
 * Upgrading to a new Mendix Runtime version
 * Deploying a new MDA (application model update)
 * Changes involve database structure updates
     {{< figure src="/attachments/deployment/mendix-cloud-deploy/zero-downtime/zdt-scaling-process.png" >}}
 
-For these scenarios, the Cloud Portal will display the standard restart message before deployment:
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/zero-downtime/zdt-scaling-messages.png" >}}
+For these scenarios, the Cloud Portal will display the standard restart message before deployment.
 
 ## Expected ZDT Behavior
 
@@ -102,7 +101,7 @@ For eligible environments, the **Deploy Wizard** clearly indicates that the upco
 
 ### First Deployment
 
-When you deploy an application on Mendix Runtime 10.24 or higher for the very first time, the environment is automatically prepared for future zero-downtime deployments. This initial deployment behaves like a regular one, but from the next deployment onward, eligible configuration changes can be applied without downtime.
+When you deploy an application on Mendix Runtime 10.24 or above for the very first time, the environment is automatically prepared for future zero-downtime deployments. This initial deployment behaves like a regular one, but from the next deployment onward, eligible configuration changes can be applied without downtime.
 
 ### During a Zero-Downtime Deployment Failure
 
