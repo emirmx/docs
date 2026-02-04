@@ -32,12 +32,12 @@ To use Mendix Business Events, you will need the following:
 
 * The [Mendix Business Events](https://marketplace.mendix.com/link/component/202649) service from the Mendix Marketplace
 * Studio Pro [9.24](/releasenotes/studio-pro/9.24/) and above
-* An event broker; this can be a licensed [Mendix Event Broker](#mendix-event-broker) for apps running in Mendix Cloud or the [local testing](#local-testing) broker (see [Deployment](#deployment))
+* An event broker; this can be a licensed [Mendix Event Broker](/appstore/services/event-broker/) for apps running in Mendix Cloud or the [local testing](/appstore/services/business-events-deployment/#local-testing) broker (see [Deployment](/appstore/services/business-events-deployment/#deployment))
 * [Docker](https://www.docker.com/) for local deployment
 
 ## Licensing {#licensing}
 
-The Mendix Business Events service itself does not require a license, but it depends on an event broker to deploy to production environments. You can purchase a [Mendix Event Broker License](/appstore/services/event-broker/#event-broker-license) for a broker to be set up for you. See the [Mendix Event Broker](https://marketplace.mendix.com/link/component/202907) platform service page for more details. You can also run business events on [your own Kafka cluster](#byok).
+The Mendix Business Events service itself does not require a license, but it depends on an event broker to deploy to production environments. You can purchase a [Mendix Event Broker License](/appstore/services/event-broker/#event-broker-license) for a broker to be set up for you. See the [Mendix Event Broker](https://marketplace.mendix.com/link/component/202907) platform service page for more details. You can also run business events on [your own Kafka cluster](/appstore/services/business-events-deployment/#byok).
 
 ## Frequently Asked Questions
 
@@ -47,7 +47,7 @@ The Mendix Business Events service itself does not require a license, but it dep
 
 2. Can I publish my own events from other software directly to a Kafka topic?
 
-    No, that is currently not supported when using Mendix Cloud Event Broker. This can be achieved on [your own Kafka cluster](#byok).
+    No, that is currently not supported when using Mendix Cloud Event Broker. This can be achieved on [your own Kafka cluster](/appstore/services/business-events-deployment/#byok).
 
 3. Can I send related or associated objects as a single business event?
 
@@ -59,7 +59,7 @@ The Mendix Business Events service itself does not require a license, but it dep
 
 5. Are business events guaranteed to be delivered only once?
 
-    The [Outbox](#be-entities) will publish each business event only once. This does not prevent business logic from sending duplicate messages to the Outbox.
+    The [Outbox](/appstore/services/business-events-deployment/#be-entities) will publish each business event only once. This does not prevent business logic from sending duplicate messages to the Outbox.
 
 6. Are business events guaranteed to be delivered in the original sequence?
 
@@ -71,7 +71,7 @@ The Mendix Business Events service itself does not require a license, but it dep
 
 8. How do I configure which Kafka cluster to use?
 
-    During modeling, you can use the **Constants** described in the [Configuring Local Deployments](#config-local-deployment) section to configure to a local or other Kafka. This does not transfer through to runtime.
+    During modeling, you can use the **Constants** described in the [Configuring Local Deployments](/appstore/services/business-events-configuration/#config-local-deployment) section to configure to a local or other Kafka. This does not transfer through to runtime.
 
 9. How do I delete or clean up events and tasks?
 
@@ -79,13 +79,13 @@ The Mendix Business Events service itself does not require a license, but it dep
 
 10. How do I know the event was successfully published?
 
-    Messages are first queued within the **Outbox** for successful delivery as a business event, after which they are deleted. You can match the unique `Event Id` to your business event. Monitoring the **Outbox** entity will allow the developer to determine if there are unpublished business event entities. See the [Business Event Entities](#be-entities) for more information on the **Outbox**.
+    Messages are first queued within the **Outbox** for successful delivery as a business event, after which they are deleted. You can match the unique `Event Id` to your business event. Monitoring the **Outbox** entity will allow the developer to determine if there are unpublished business event entities. See the [Business Event Entities](/appstore/services/business-events-deployment/#be-entities) for more information on the **Outbox**.
 
 11. How do I know events are consumed successfully?
 
-    The flow of events are controlled by the persistence of the event to the **Consumed Business Event** entity (see [Business Event Entities](#be-entities)).  The flow will not continue in the case of such a failure. They only cause for such failure would be database-related and is unlikely to occur.
+    The flow of events are controlled by the persistence of the event to the **Consumed Business Event** entity (see [Business Event Entities](/appstore/services/business-events-deployment/#be-entities)).  The flow will not continue in the case of such a failure. They only cause for such failure would be database-related and is unlikely to occur.
 
-    On the microflow, a log message action can be added after the start action in order to track the movement. Refer to the [Dead Letter Queue for Failed Messages](#dead-letter-queue) section for more information.
+    On the microflow, a log message action can be added after the start action in order to track the movement. Refer to the [Dead Letter Queue for Failed Messages](/appstore/services/business-events-deployment/#dead-letter-queue) section for more information.
 
 ## Read More
 
