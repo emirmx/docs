@@ -46,7 +46,7 @@ When an eligible configuration change is deployed with ZDT, Mendix Cloud orchest
 
 By default, this option is off. In this state, your app will use the standard restart process during deployment. This default setting ensures stability and compatibility with existing application behavior.
 
-Technical Contacts can decide whether to attempt a zero-downtime deployment by selecting the **Deploy without downtime** option on the **Other Options** tab when [deploying a package](/developerportal/deploy/environments/#deploy-wizard). If you select this option, Mendix Cloud will attempt a zero-downtime deployment, if your environment meets eligibility criteria.
+Technical Contacts can decide whether to attempt a zero-downtime deployment by selecting the **Deploy without downtime** option on the **Other Options** tab when [deploying a package](/developerportal/deploy/environments/#deploy-wizard). If you select this option, Mendix Cloud will attempt a zero-downtime deployment.
 
 {{% alert color="info" %}}
 When a Technical Contact selects ZDT, the Cloud Portal displays a reminder to review any custom **before-shutdown** or **after-startup** microflows. This is crucial to ensure these microflows won’t cause conflicts during periods when two versions of your application might be running concurrently.
