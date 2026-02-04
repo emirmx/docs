@@ -17,7 +17,7 @@ Mendix strongly recommends performing the following checks before you submit you
 
 Mendix checks the following:
 
-* The licenses used in the uploaded *.mpk* files, using QSM.   
+* The licenses used in the uploaded *.mpk* files, using [QSM](/appstore/partner-solutions/qsm/).   
   There should be no use of GPL, LGPL, or MPL licenses.    
   For more details, refer to [Open-Source Software Licenses](/appstore/submit-content/#license).
 * Any third-party vulnerabilities, using QSM.         
