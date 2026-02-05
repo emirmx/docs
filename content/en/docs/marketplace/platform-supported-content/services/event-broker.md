@@ -170,12 +170,10 @@ The creation process for AWS SQS bridges includes two additional steps on the Me
 #### Configure Service
 
 1. Configure the service by filling out the following:
-
-* **Event Broker Space** – the space where the bridge will operate
-* **Name** – the name you want to call the bridge
-* **AWS region** – the AWS region where your bridge operates
-
-  {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-sqs/ebb_aws_sqs_configure.png" width="400" >}}
+    * **Event Broker Space** – the space where the bridge will operate
+    * **Name** – the name you want to call the bridge
+    * **AWS region** – the AWS region where your bridge operates
+    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-sqs/ebb_aws_sqs_configure.png" width="400" >}}
 
 2. Click **Next** to continue the configuration.
 
@@ -258,11 +256,11 @@ Add the object below to your Access Policy of the AWS SQS queue if it is receivi
 
 1. Configure the service by filling out the following:
 
-* **Event Broker Space** – the space where the bridge will operate
-* **Name** – the name you want to call the bridge
-* **AWS region** – the AWS region where your bridge operates
+    * **Event Broker Space** – the space where the bridge will operate
+    * **Name** – the name you want to call the bridge
+    * **AWS region** – the AWS region where your bridge operates
 
-  {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/http/ebb_http_configure.png" width="400" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/http/ebb_http_configure.png" width="400" >}}
 
 2. Click **Next** to connect events to your bridge.
 
@@ -296,11 +294,11 @@ To run the HTTP bridge from your client, include a Bearer token in the request h
 
 1. Configure the service by filling out the following:
 
-* **Event Broker Space** – the space where the bridge will operate
-* **Name** – the name you want to call the bridge
-* **Storage Account** – the storage account to access
-* **Storage SAS Token** – the storage SAS Token
-* **Container Path** – the path of the container where the messages will be stored
+    * **Event Broker Space** – the space where the bridge will operate
+    * **Name** – the name you want to call the bridge
+    * **Storage Account** – the storage account to access
+    * **Storage SAS Token** – the storage SAS Token
+    * **Container Path** – the path of the container where the messages will be stored
 
     {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/azure-blob-storage/ebb_azure_blob_configure.png" >}}
 
@@ -323,25 +321,22 @@ Once the Mendix Event Broker Bridge has been successfully deployed, its configur
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/azure-blob-storage/ebb_azure_blob_overview.png" class="no-border" >}}
 
-
 ### Configuring a Bridge with AWS S3 {#bridge-with-aws-s3}
 
 #### Configure Service
 
 1. Configure the service by filling out the following:
 
-* **Event Broker Space** – the space where the bridge will operate
-* **Name** – the name you want to call the bridge
-* **Bucket** – the path of the container where the messages will be stored
-* **AWS Region for Bucket** – the AWS region where your S3 bucket is located
-* **AWS Role (to Assume)** – the Amazon Resource Name (ARN) of the IAM role that the Event Broker Bridge will assume to access your S3 bucket; this role must be configured with appropriate permissions and a trust policy allowing the Event Broker to assume it
-* **AWS Role's External Id** – a unique identifier that provides additional security when the Event Broker assumes your AWS role; this shared secret ensures that only authorized Mendix Event Broker instances can assume the role
+    * **Event Broker Space** – the space where the bridge will operate
+    * **Name** – the name you want to call the bridge
+    * **Bucket** – the path of the container where the messages will be stored
+    * **AWS Region for Bucket** – the AWS region where your S3 bucket is located
+    * **AWS Role (to Assume)** – the Amazon Resource Name (ARN) of the IAM role that the Event Broker Bridge will assume to access your S3 bucket; this role must be configured with appropriate permissions and a trust policy allowing the Event Broker to assume it
+    * **AWS Role's External Id** – a unique identifier that provides additional security when the Event Broker assumes your AWS role; this shared secret ensures that only authorized Mendix Event Broker instances can assume the role
 
-{{% alert color="info" %}}
-For detailed instructions on how to create the IAM role and obtain these values, see [Configure AWS Authentication for S3 Bridge](#configure-aws-s3-authentication).
-{{% /alert %}}
+        {{% alert color="info" %}}For detailed instructions on how to create the IAM role and obtain these values, see [Configure AWS Authentication for S3 Bridge](#configure-aws-s3-authentication).{{% /alert %}}
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-s3/ebb_aws_s3_configure.png"  >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-s3/ebb_aws_s3_configure.png"  >}}
 
 2. Click **Next** to connect events to your bridge.
 
@@ -361,7 +356,6 @@ Select the business events to integrate with AWS S3:
 Once the Mendix Event Broker Bridge has been successfully deployed, its configuration and status can be viewed on the **Overview** page.
 
 {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/aws-s3/ebb_aws_s3_overview.png" class="no-border" >}}
-
 
 #### Configure AWS Authentication for S3 Bridge {#configure-aws-s3-authentication}
 
@@ -441,7 +435,6 @@ The policy above grants the minimum required permissions for the Event Broker to
 
 Use the Role ARN and External ID when configuring your AWS S3 bridge in the Event Broker Manager.
 
-
 ### Managing Bridges
 
 After creating a bridge, you can modify and manage its configuration through the Event Broker Manager.
@@ -491,7 +484,6 @@ To edit a bridge:
 
 **AWS S3** 
     {{< figure src="/attachments/appstore/platform-supported-content/services/event-broker/bridges/edit-bridge/ebb_aws_s3_edit_mode.png" class="no-border" >}}
-
 
 4. Once you have made your changes, you can:
    * Click **Apply** to save and apply the changes. A confirmation message will indicate if the changes were successful. Changes to the event configuration take effect when applied. After applying changes, the bridge status will change to **Reconfiguring** and will return to **Running** once the reconfiguration is complete.
