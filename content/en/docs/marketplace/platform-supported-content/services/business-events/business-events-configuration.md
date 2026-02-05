@@ -46,13 +46,13 @@ In your defining app, you can create a new service by doing the following:
 
 The business event service document is open in Studio Pro:
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/business-events/new-business-event-service.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/business-events/business-events-config/new-business-event-service.png" class="no-border" >}}
 
 ### Adding Event Definitions {#add-be-definitions}
 
 To define what information is included in your events and what the service will implement, click **Add** in the open service document:
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/business-events/add-event-definition.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/business-events/business-events-config/add-event-definition.png" class="no-border" >}}
 
 1. Define what information is included in this event.
 
@@ -60,7 +60,7 @@ To define what information is included in your events and what the service will 
     * In the **Attributes** field, click **Add** to define attributes. 
         * Changes you make here later could lead to breaking changes if the entity the attribute belongs to is consumed. Related entities will be updated automatically.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/services/business-events/wizard-step-1.png" class="no-border" width="400" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/services/business-events/business-events-config/wizard-step-1.png" class="no-border" width="400" >}}
 
 2. Decide what other apps can do and what service this will implement.
 

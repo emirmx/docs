@@ -20,7 +20,7 @@ The base values for your entity are taken from the **PublishedBusinessEvent**, a
 
 The text with the blue background above the entity tells you it is a specialized entity based on the **PublishedBusinessEvent** entity in the **BusinessEvents** service:
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/business-events/specialized-entity.png" class="no-border" width="200" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/business-events/deploy-a-business-event/specialized-entity.png" class="no-border" width="200" >}}
 
 ### Using the Publish Business Event Activity
 
@@ -48,7 +48,7 @@ The **Publish Business Event** activity will commit all event objects at the sta
 
 The **PublishedBusinessEvent** and **ConsumedBusinessEvent** entities are necessary to include in your domain model to publish business events. The **DeadLetterQueue** and **Outbox** are part of the Mendix Business Events service.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/business-events/four-entities-in-domain-model.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/business-events/deploy-a-business-event/four-entities-in-domain-model.png" class="no-border" >}}
 
 * **PublishedBusinessEvent** – This non-persistable entity has the fields settings that every published event will include. Every published business event will inherit from this entity. The three fields can be set from the Java Action. This is used to define what your published business events look like.
 * **ConsumedBusinessEvent** – This entity has the fields that every consumed event will include. Every consumed business event will inherit from this entity. These fields will be set from the service, as will any additional fields that match with the payload of the event. This defines what you want to receive from the business events you subscribe to.
@@ -184,7 +184,7 @@ Start your docker cluster using the command `docker-compose up`. This will downl
 
 You can configure the app running in Studio Pro to use the Postgres database created using Docker. Remember to use a different database name for every app.
 
-{{< figure src="/attachments/appstore/platform-supported-content/services/business-events/postgres.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/services/business-events/deploy-a-business-event/postgres.png" class="no-border" >}}
 
 Below is an example of a Postgres service that you can add to your `docker-compose.yml` file.
 
