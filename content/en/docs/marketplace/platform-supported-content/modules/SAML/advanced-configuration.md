@@ -2,7 +2,7 @@
 title: "Advanced SAML Configuration and Troubleshooting"
 url: /appstore/modules/saml/advanced-configuration
 linktitle: "Advanced Configuration and Troubleshooting"
-weight: 30
+weight: 50
 description: "Describes the advanced configuration and troubleshooting for the SAML module."
 ---
 
