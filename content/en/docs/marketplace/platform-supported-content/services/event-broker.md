@@ -18,7 +18,7 @@ There is a single Kafka broker for Free Apps that your company Free Apps can con
 
 Purchase a license to the Mendix Event Broker to deploy unlimited apps on production environments in Mendix Cloud. Ask your Customer Success Manager or Account Manager to reach out to purchase a license. See the [Mendix Event Broker](https://marketplace.mendix.com/link/component/202907) platform service page for more details.
 
-A license for the Mendix Event Broker is available for any Mendix region, but once selected, you can only run on a single region (no multi-region support). This license is available for all customers. You can also run business events on [your own Kafka cluster](/appstore/services/business-events/#byok).
+A license for the Mendix Event Broker is available for any Mendix region, but once selected, you can only run on a single region (no multi-region support). This license is available for all customers. You can also run business events on [your own Kafka cluster](/appstore/services/business-events-deployment/#byok).
 
 ### Enabling the Mendix Event Broker Service {#enable-mx-event-broker}
 
@@ -88,7 +88,7 @@ From the main overview page, an administrator can assign the default application
 
 From here, you can manage the default access settings:
 
-* **An app can access events defined in it** – enabling this setting allows newly-deployed applications to always have access to any events defined within that application (see [Creating a New Business Event Service](/appstore/services/business-events/#two-way-be-create) for more information)
+* **An app can access events defined in it** – enabling this setting allows newly-deployed applications to always have access to any events defined within that application (see [Creating a New Business Event Service](/appstore/services/business-events-configuration/#two-way-be-create) for more information)
 * **For other events, in all environments, the app can:**
 
     * **Publish events it implements**
