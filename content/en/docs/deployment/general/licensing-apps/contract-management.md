@@ -35,7 +35,7 @@ These milestones provide ample opportunity to discuss renewal options and take n
 * **Action required** – Contact your (Partner) Account Team to discuss renewal options and next steps. Early engagement allows for a smoother process
 
 {{% alert color="info" %}}
-Your contract number is included in the contract renewal email sent to the email address associated with your contract. Use this contract number when contacting your (Partner) Account Team regarding renewal or expiry.
+The contract renewal email is sent to your primary contacts (Customer License Contact, Payer/Reseller Contact, and Platform Owner) and provides details of the expiring contract, the contract number, and the relevant Mendix (Partner) Account Team contact for renewal assistance. Always reference this contract number when contacting your (Partner) Account Team regarding renewal or expiry. 
 {{% /alert %}}
 
 #### 30 Days Before Contract Expiry{#30-days-before-contract-expiry}
