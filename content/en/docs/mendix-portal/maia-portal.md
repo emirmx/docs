@@ -71,9 +71,13 @@ Maia is trained on data which is primarily in English. Although Maia can cope wi
 
 ### Asking Direct Questions
 
-Maia is trained on the Mendix documentation and the Mendix Community. The documentation is addressed to you, the reader, and questions to the Community are usually asked directly by the person who is asking. Maia therefore gives better answers if you put yourself in the position of asking the question.
+Maia uses the Mendix documentation and the Mendix Community when producing an answer. The documentation is addressed to you, the reader, and questions to the Community are usually asked directly by the person who is asking. Maia therefore gives better answers if you put yourself in the position of asking the question.
 
 So, for example, ask "How can I do something" rather than "How can my colleague do something" or "How does Mendix do something".
+
+### Asking Specific Questions
+
+Try to make your question as specific as possible. If your question is too vague or is very general Maia can find it difficult to get the right context. 
 
 ### Giving Relevant Information
 
