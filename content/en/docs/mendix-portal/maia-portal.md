@@ -83,17 +83,21 @@ Try to make your question as specific as possible. If your question is too vague
 
 Maia needs to know as much as possible about what you are doing. However, it can be sidetracked if you include information which is not directly relevant to what you are asking. So ensure that you do not include irrelevant information.
 
-However, do include enough information for context. For example, if you ask "How do I sign in to Mendix" it will not necessarily be clear whether you are talking about the Mendix Portal, Studio Pro, or perhaps even your deployed Mendix App, so give Maia the complete context to ensure the answer is relevant. 
+However, do include enough information for context. For questions about errors, specific code behavior, or complex configurations, include concrete examples if possible, remembering to redact any sensitive information.
+
+For example, if you ask "How do I sign in to Mendix" it will not necessarily be clear whether you are talking about the Mendix Portal, Studio Pro, or perhaps even your deployed Mendix App, so give Maia the complete context to ensure the answer is relevant. 
 
 ### Using Mendix Terminology
 
-Maia will provide better answers if you use Mendix terminology which it can recognize from the documentation and Community. If you use different terms, Maia may struggle to find the right answer, and is more likely to get confused about the subject of your question.
+Maia will provide better answers if you use Mendix terminology which it can recognize from the documentation and Community. If you use different terms, Maia may struggle to find the right answer, and is more likely to get confused about the subject of your question. 
+
+In addition, some terms in Mendix might have slightly different meanings depending on the context. If you suspect your term might be ambiguous, try to add a small clarifying detail.
 
 For example, use "Studio Pro" rather than "the IDE" when talking about working on a Mendix model. If you have a question about a Marketplace module, make sure you give the exact name of the module.
 
 ### Using Follow Up Questions
 
-If Maia does not give a response which clearly answers your question, try following up to ensure that it has understood the context and terminology you are using.
+If Maia does not give a response which clearly answers your question, try following up to ensure that it has understood the context and terminology you are using. Try rephrasing your question, adding more details, or focusing on a different aspect of your query.
 
 ### Separating Different Questions
 
@@ -101,4 +105,4 @@ If you are asking a second, unrelated, question, start a new interaction with Ma
 
 ### Looking at the Source Material
 
-Maia will give references to the source of the information. The reference titles can indicate whether the information is relevant to your case, and following the links may give additional help.
+Remember that Maia is an AI and can make mistakes. Maia will give references to the source of the information. The reference titles can indicate whether the information is relevant to your case, and following the links may give additional help.
