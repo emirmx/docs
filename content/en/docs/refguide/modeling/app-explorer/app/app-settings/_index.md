@@ -40,6 +40,18 @@ The available configuration options are as follows:
 * **Yes**: Use the React client (default). In this mode, you will get consistency errors for incompatible widgets.
 * **Migration mode**: Use the React client and ignore incompatible widgets. Placeholders are displayed in the case of incompatible widgets. Recommended when trying out the new client.
 
+### Use New String Behavior {#new-string-behavior}
+
+{{% alert type="info" %}}
+This setting was introduced in Mendix 11.6.3. 
+{{% /alert %}} 
+
+If this option is enabled, Web (both React and Dojo) and Native Mobile clients will be able to handle both `empty` and empty string `''` values for `String` attributes. <br>
+
+If this options is disabled, `String` attribute values on the client-side will always contain only the `''` value to represent empty state. `empty` values will be automatically converted to `''` when transfered to the client-side. 
+
+For a detailed explanation, see the *Empty Strings Handling* section of [Upgrading from Mendix Studio Pro 10 to 11](/refguide/upgrading-from-10-to-11/#empty-strings-handling).
+
 ### Static Resources from Disk
 
 If this option is enabled, the static resources for your mobile application are downloaded as soon as you open your application rather than bit by bit as you navigate through the app. This can drastically cut down the number of network requests, as the files can be retrieved from the disk rather than from the server.
