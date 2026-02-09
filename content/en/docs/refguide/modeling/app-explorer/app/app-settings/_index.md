@@ -40,12 +40,6 @@ The available configuration options are as follows:
 * **Yes**: Use the React client (default). In this mode, you will get consistency errors for incompatible widgets.
 * **Migration mode**: Use the React client and ignore incompatible widgets. Placeholders are displayed in the case of incompatible widgets. Recommended when trying out the new client.
 
-### Static Resources from Disk
-
-If this option is enabled, the static resources for your mobile application are downloaded as soon as you open your application rather than bit by bit as you navigate through the app. This can drastically cut down the number of network requests, as the files can be retrieved from the disk rather than from the server.
-
-The resources are downloaded to the device once for each deployment and are reused for subsequent runs of your app. This affects a number of files, including your theme, the JavaScript client, CSS files, and pages.
-
 ### Optimize Network Calls {#optimize-network-calls}
 
 If this option is enabled (**yes** by default), Mendix analyzes every microflow that can be triggered from the client to minimize the number of objects required to be sent. This speeds up your app significantly.
@@ -158,15 +152,15 @@ MD5 and SHA256 are only provided for backwards compatibility. They should not be
 
 Mendix believes both algorithms are secure enough to store passwords within Mendix. The main difference between **BCrypt** and **SSHA256** is that the BCrypt algorithm has been configured so it is relatively slow on purpose, since it was designed specifically to stop brute force attacks. That is why this results in a slight performance difference with the SSHA256 algorithm.
 
-#### BCrypt Cost {#bcrypt-cost}
+##### BCrypt Cost {#bcrypt-cost}
 
 **BCrypt cost** is used to specify the cost of the BCrypt algorithm. The default value is 12, and can go up to 30. The higher the value is, the slower the process of hashing values. For more information, see the subsections below.
 
-#### Performance
+##### Performance
 
 If the BCrypt cost is low, the performance difference is hardly noticeable to a single user when signing in (meaning, the password you enter when signing in is hashed using the selected algorithm). This means performance alone is not a reason to choose **SSHA256** over **BCrypt**. The situation can change when dealing with high concurrency of hashing operations, for example, published web services exposing operations that compute quickly, like short-running microflows.
 
-#### Performance Tests
+##### Performance Tests
 
 A (web service) user will sign in to run a web service operation, wait for the operation to finish, and get the result back (if any).
 
@@ -214,13 +208,9 @@ The table below presents the results of rounding the input to one digit with the
 | -2.5 | -3 | -2 |
 | -5.5 | -6 | -6 |
 
-### OQL version 2 {#oql-version-2}
+### Digits After Decimal Point
 
-If this option is set to **Yes**, your app will use version 2 of the OQL syntax. This setting must be enabled to use [view entities](/refguide/view-entities/). Make sure your app is ready to use the new syntax before making the switch. 
-
-For more information about the differences, see [OQL Version 2 Features](/refguide/oql-v2/).
-
-Default: *No*
+Set the number of digits that appear after the decimal point for your entire app. This setting affects both new and existing decimal attributes.
 
 ### Multiple Sessions per User {#multiple-sessions}
 
@@ -237,6 +227,24 @@ To force a query to the runtime, use microflows. For example, create a microflow
 {{% /alert %}}
 
 Default: *Yes*
+
+### Optimistic Locking (beta) 
+
+{{% alert color="info" %}}
+This is a beta feature starting with [Mendix 11.5.0.](/releasenotes/studio-pro/11.5/).
+{{% /alert %}}
+
+If this option is set to **Yes**, Mendix will use a strategy to prevent lost updates when multiple users or processes try to modify the same piece of data at the same time.
+
+For more information, see [Optimistic Locking](/refguide/optimistic-locking/).
+
+### OQL version 2 {#oql-version-2}
+
+If this option is set to **Yes**, your app will use version 2 of the OQL syntax. This setting must be enabled to use [view entities](/refguide/view-entities/). Make sure your app is ready to use the new syntax before making the switch. 
+
+For more information about the differences, see [OQL Version 2 Features](/refguide/oql-v2/).
+
+Default: *No*
 
 ### Foreign Key Constraints {#database-fkc}
 
