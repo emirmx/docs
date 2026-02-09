@@ -231,7 +231,7 @@ Default: *Yes*
 ### Optimistic Locking (beta) 
 
 {{% alert color="info" %}}
-This is a beta feature starting with [Mendix 11.5.0.](/releasenotes/studio-pro/11.5/).
+This is a beta feature introduced in [Mendix 11.5.0.](/releasenotes/studio-pro/11.5/).
 {{% /alert %}}
 
 If this option is set to **Yes**, Mendix will use a strategy to prevent lost updates when multiple users or processes try to modify the same piece of data at the same time.
