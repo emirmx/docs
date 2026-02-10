@@ -151,11 +151,11 @@ Mendix believes both algorithms are secure enough to store passwords within Mend
 
 **BCrypt cost** is used to specify the cost of the BCrypt algorithm. The default value is 12, and can go up to 30. The higher the value is, the slower the process of hashing values. For more information, see the subsections below.
 
-#### Performance
+##### Performance
 
 If the BCrypt cost is low, the performance difference is hardly noticeable to a single user when signing in (meaning, the password you enter when signing in is hashed using the selected algorithm). This means performance alone is not a reason to choose **SSHA256** over **BCrypt**. The situation can change when dealing with high concurrency of hashing operations, for example, published web services exposing operations that compute quickly, like short-running microflows.
 
-#### Performance Tests
+##### Performance Tests
 
 A (web service) user will sign in to execute a web service operation, wait for the operation to finish, and finally get the result back (if any).
 
@@ -203,14 +203,6 @@ This table presents the results of rounding the input to one digit with the give
 | -2.5 | -3 | -2 |
 | -5.5 | -6 | -6 |
 
-### OQL version 2 {#oql-version-2}
-
-If this option is set to **Yes**, your app will use version 2 of the OQL syntax. This setting must be enabled to use [view entities](/refguide10/view-entities/). Make sure your app is ready to use the new syntax before making the switch. 
-
-For more information about the differences, see [OQL Version 2 Features](/refguide10/oql-v2/).
-
-Default: *No*
-
 ### Multiple Sessions per User {#multiple-sessions}
 
 If this option is enabled, users can sign in multiple times through different clients (for example, desktop browser and tablet). Otherwise, an existing session for a user is signed out when the user signs in somewhere else.
@@ -226,6 +218,14 @@ To force a query to the runtime, use microflows. For example, create a microflow
 {{% /alert %}}
 
 Default: *Yes*
+
+### OQL version 2 {#oql-version-2}
+
+If this option is set to **Yes**, your app will use version 2 of the OQL syntax. This setting must be enabled to use [view entities](/refguide10/view-entities/). Make sure your app is ready to use the new syntax before making the switch. 
+
+For more information about the differences, see [OQL Version 2 Features](/refguide10/oql-v2/).
+
+Default: *No*
 
 ### Foreign Key Constraints {#database-fkc}
 
