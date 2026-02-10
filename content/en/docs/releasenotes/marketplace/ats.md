@@ -7,6 +7,15 @@ weight: 45
 numberless_headings: true
 ---
 
+## 3.0.3
+
+**Release date: February 9, 2026**
+
+### Fixes
+
+* We fixed an issue that caused executions logs to not be deleted
+
+
 ## 3.0.2
 
 **Release date: May 13, 2025**
