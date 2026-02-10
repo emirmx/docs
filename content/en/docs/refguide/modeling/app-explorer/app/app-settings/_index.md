@@ -222,6 +222,10 @@ The table below presents the results of rounding the input to one digit with the
 
 ### Digits After Decimal Point
 
+{{% alert color="info" %}}
+This setting was introduced in Mendix 11.6.
+{{% /alert %}}
+
 Set the number of digits that appear after the decimal point for your entire app. This setting affects both new and existing decimal attributes.
 
 ### Multiple Sessions per User {#multiple-sessions}
