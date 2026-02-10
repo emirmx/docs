@@ -13,7 +13,7 @@ Mendix AI Assistance (Maia) refers to Mendix Platform capabilities that leverage
 
 Mendix developers can use Maia to get guidance by asking questions, get recommendation and assistance for certain development tasks, and even generate part of their app. 
 
-For information on Mendix data storage policies and practices for Maia, see [Maia Privacy Policy](https://www.mendix.com/legal/privacy/maia/). 
+Maia does not use any project, customer, company, or user-entered data for model training. Maia operates on pre-trained, off-the-shelf large language models (LLMs). For more information on Mendix data storage policies and practices for Maia, see [Maia Privacy Policy](https://www.mendix.com/legal/privacy/maia/). 
 
 {{% alert color="info" %}}
 You can use the **Usage Data** setting on the **Advanced** tab of the Studio Pro **Preferences** dialog to prevent Studio Pro from sending usage data to Mendix, including prompts entered when using Maia features in Studio Pro. When this setting is set to **No**, prompts entered are not stored by Mendix and are not used for analytics. Disabling this setting may affect the behavior of some features in Studio Pro. For more information, see the [Usage Data](/refguide/preferences-dialog/#usage-data) section in *Preferences*. 
