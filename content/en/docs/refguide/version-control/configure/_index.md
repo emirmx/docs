@@ -1,7 +1,6 @@
 ---
 title: "Configuring Version Control"
 url: /refguide/uversion-control/configure/
-linktitle: "Using Version Control"
 weight: 30
 description: "Describes how to configure version control for your Mendix application."
 ---
