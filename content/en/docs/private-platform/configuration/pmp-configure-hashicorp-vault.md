@@ -138,6 +138,15 @@ Use the exact key names specified by Private Mendix Platform, with dots (`.`) as
     * `CIAdmin.AzureBlobStorageToken`
     * `CIAdmin.AzureAwsS3SK`
 
+* **Cluster Manager**
+        
+    * `ClusterManager.OCIRegistryAWSSK` - OCI Registry: AWS secret access key for the OCI registry
+    * `serverClusterManager.OCIBasicAuthPassword` - OCI Registry: Password for the OCI registry
+    * `serverClusterManager.MDAAWSSK` - MDA Storage: AWS secret access key for the MDA file
+    * `serverClusterManager.MDAFileBasicAuthPassword` - MDA Storage: Password for the MDA file
+    * `serverClusterManager.KubernetesApiToken` - Kubernetes API: Token for accessing the Kubernetes API
+    * `serverClusterManager.GrafanaAPIKey` - Grafana: API key for accessing the Grafana server
+
 * **Marketplace**
 
     * `Marketplace.ImportCDNPassword`

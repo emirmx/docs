@@ -125,6 +125,15 @@ When creating a property to use as a key for external secret storage, use the fo
         * **CIAdmin.AzureBlobStorageToken** - SAS token for the Azure Blob Storage
         * **CIAdmin.AzureAwsS3SK** - Name of the Azure DevOps organization
 
+    * Cluster Manager
+        
+        * **ClusterManager.OCIRegistryAWSSK** - OCI Registry: AWS secret access key for the OCI registry
+        * **serverClusterManager.OCIBasicAuthPassword** - OCI Registry: Password for the OCI registry
+        * **serverClusterManager.MDAAWSSK** - MDA Storage: AWS secret access key for the MDA file
+        * **serverClusterManager.MDAFileBasicAuthPassword** - MDA Storage: Password for the MDA file
+        * **serverClusterManager.KubernetesApiToken** - Kubernetes API: Token for accessing the Kubernetes API
+        * **serverClusterManager.GrafanaAPIKey** - Grafana: API key for accessing the Grafana server
+
     * Marketplace
 
         * **Marketplace.ImportCDNPassword** - Personal access token for the Marketplace admin
