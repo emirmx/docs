@@ -13,8 +13,7 @@ numberless_headings: true
 
 ### Fixes
 
-* We fixed an issue that caused executions logs to not be deleted
-
+* We have fixed an issue that prevented execution logs from being deleted.
 
 ## 3.0.2
 
