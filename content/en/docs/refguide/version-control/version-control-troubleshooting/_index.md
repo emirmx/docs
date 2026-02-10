@@ -1,7 +1,6 @@
 ---
 title: "Troubleshooting Version Control"
 url: /refguide/troubleshoot-version-control-issues/
-linktitle: "Troubleshoot Version Control"
 weight: 90
 description: "Presents a list of problems and fixes for version control issues."
 aliases:
@@ -20,6 +19,10 @@ For more information and general help on version control, see the following docu
 * [Using Version Control in Studio Pro](/refguide/using-version-control-in-studio-pro/)
 
 ## Troubleshooting {#troubleshooting}
+
+### Team Server Connectivity Issues
+
+Mendix Studio Pro needs to connect to the Team Server, where all your apps are stored. If you are having issues connecting to the Team Server, see [Troubleshooting Team Server Issues](/refguide/troubleshoot-team-server-issues/).
 
 ### Getting an Unexpected Error: `The project contains changes that have not been committed yet. Please commit first before attempting to merge again.` {#css-error}
 
@@ -162,3 +165,13 @@ In case of a configuration error, an unknown author may appear in the commit his
 Other tools on your machine that use the Git configuration, such as a traditional IDE, are typically also capable of changing this Git configuration. If you have chosen a name and email for a hobby project in another IDE, that information may also appear in commits made from Studio Pro.
 
 To fix the issue, ensure that responsible users change their Git configuration in [Preferences](/refguide/preferences-dialog/#name). Changing historical commits is not possible within Studio Pro. 
+
+### Retrieve and Commit + Push Actions Are Getting Slower
+
+This may be caused by the way the storage format of Git interacts with the way the Mendix model stores changes, which can accumulate substantial disk space over time. Studio Pro periodically optimizes your repository if [automatic repository optimization](/refguide/preferences-dialog/#optimization) is enabled.
+
+You can run `git gc` in the command line to manually optimize the repository. `git gc` runs a number of housekeeping tasks, but primarily pack files are created. Pack files store just the changes to the files, which reduces the amount of data which needs to be stored. 
+
+### Cloning my Project Takes a Long Time
+
+Cloning or downloading your app consists of several steps. First the required data is downloaded from the server and then a local unpacking process is executed. The duration of the clone process depends on your repository size, internet connection and computer performance. In case cloning is taking a very long time, consider changing the [clone type](/refguide/clone-type/), or follow the steps described in [Troubleshooting Repository Size](/refguide/troubleshoot-repository-size/).

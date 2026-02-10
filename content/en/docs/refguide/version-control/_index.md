@@ -22,8 +22,6 @@ Version control in Mendix is built on top [Git](https://git-scm.com). The concep
 
 [Mendix Team Server](/developerportal/repository/team-server/) is the Mendix-hosted environment that stores all Mendix apps. It facilitates versioning your apps by integrating them into a version control system. Mendix Studio Pro integrates with the Team Server allowing you to create and update apps, commit changes, and merge model versions with one click.
 
-## Frequently Asked Questions
-
 ### What Version Control System Is Team Server Built On? {#which-team-server}
 
 Mendix Team Server is based on proven technology. Initially it was based only on top of Subversion (SVN), also called Team Server SVN. The Team Server only supports storing apps using Git technology, referred to as Team Server Git. 
@@ -35,16 +33,6 @@ Storage space is unlimited for apps connected to a commercial license. 1 GB of f
 ### What Happens with My Valuable and Confidential Data?
 
 Mendix adheres to strict security standards and considers you the sole owner of your data. Only Mendix Cloud Infrastructure Engineers can access data and will only do so for troubleshooting. Your data is backed up for one year, and the backups are retained for one year after app deletion. You can get a backup of your data at any time by using default Git tools, or, if your app was deleted, by filing a [Mendix Support](https://support.mendix.com/) ticket.
-
-### Retrieve and Commit + Push Actions Are Getting Slower
-
-This may be caused by the way the storage format of Git interacts with the way the Mendix model stores changes, which can accumulate substantial disk space over time. Studio Pro periodically optimizes your repository if [automatic repository optimization](/refguide/preferences-dialog/#optimization) is enabled.
-
-You can run `git gc` in the command line to manually optimize the repository. `git gc` runs a number of housekeeping tasks, but primarily pack files are created. Pack files store just the changes to the files, which reduces the amount of data which needs to be stored. 
-
-## Cloning my Project Takes a Long Time
-
-Cloning or downloading your app consists of several steps. First the required data is downloaded from the server and then a local unpacking process is executed. The duration of the clone process depends on your repository size, internet connection and computer performance. In case cloning is taking a very long time, consider changing the [Clone type](/refguide/clone-type/) or [troubleshoot repository size](/refguide/troubleshoot-repository-size/).
 
 ## Can I Use the Subversion Version of the Team Server?
 

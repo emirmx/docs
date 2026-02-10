@@ -1,5 +1,5 @@
 ---
-title: "Automatic Fetching"
+title: "Enabling Automatic Fetching"
 url: /refguide/auto-fetch/
 weight: 20
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
