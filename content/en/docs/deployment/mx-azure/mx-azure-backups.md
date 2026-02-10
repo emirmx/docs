@@ -65,6 +65,10 @@ To delete a backup snapshot, perform the following steps:
 
 ## Restoring a Backup Snapshot {#restore-backup}
 
+{{% alert color="warning" %}} 
+Restore backup is only supported within the same namespace. For the workaround to restore across namespaces, see [Known Limitations](#known-limitations).
+{{% /alert %}}
+
 {{% alert color="info" %}} 
 Restore requires **Manage Apps Backups** and **Stop Apps** permissions on the namespace. 
 {{% /alert %}}
@@ -135,8 +139,14 @@ Automatic backups only run when the app is deployed.
 
 If the first nightly backup occurs after the first Sunday, no monthly backup will be retained that month. Download a nightly or weekly backup to extend retention.
 
-## Known Limitations
+## Known Limitations{#known-limitations}
 
 * Partial data restoration may occur if a restore process fails.
 * No API support exists currently for backup and restore.
-* Although the portal UI suggests cross-namespace restores, only restores within the same namespace are supported.
+* Although the portal UI suggests cross-namespace restores, only restores within the **same namespace** are supported.
+
+Below is the supported workaround to restore across namespaces:
+1. Retrieve Snapshot: Download the desired backup snapshot from your source environment to your local machine.
+2. Transfer Snapshot: Upload the downloaded backup snapshot from your local machine to the target environment.
+3. Initiate Restoration: Begin the restore process within the target environment using the newly uploaded backup snapshot.
+
