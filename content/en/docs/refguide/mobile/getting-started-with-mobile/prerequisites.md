@@ -64,7 +64,10 @@ Depending on your app's Mendix version, you must use a different version of the 
     * **11.6.x** - MTS version of Make It Native ([Android](https://play.google.com/store/apps/details?id=com.mendix.developerapp.mx10), [iOS](https://apps.apple.com/us/app/make-it-native/id6450037464))
 
 * Mendix 10:
-    * **10.24.x** - Make It Native LTS is part of Github releases and Testflight (previous) builds ([Android](https://github.com/mendix/make-it-native/releases), [iOS](https://testflight.apple.com/join/bQfLf27w))
+    * **10.24.x** - Make It Native LTS is part of Github releases and Testflight (previous) builds ([Android](https://github.com/mendix/make-it-native/releases), [iOS](https://testflight.apple.com/join/bQfLf27w)).  
+      Previous Builds on Testflight are found as in the screenshot below:
+  <img width="1024" height="782" alt="image" src="https://github.com/user-attachments/assets/e4984b9e-eb81-4c99-989a-392582027353" />
+
     * **Other** – [Creating a Custom Developer App](/refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/) or [Building Your Own Make It Native App](https://github.com/mendix/make-it-native)
 
 For information on which mobile operating systems are supported by the Mendix native mobile apps, see the [Mobile Operating Systems](/refguide/system-requirements/#mobile) section of *System Requirements*.
