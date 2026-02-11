@@ -52,9 +52,9 @@ Here are some frequently used providers:
 
 Many users of free apps use the settings of their own Gmail account for convenience. There are many more email providers, most of which have SMTP compatibility.
 
-{{% alert color="info" %}}
+{{% alert color="warning" %}}
 
-Note that you cannot send email from Mendix Cloud over port 25. Although this port is open, it is heavily rate-limited by the infrastructure provider, so you will experience issues. This configuration cannot be changed.
+Note that you cannot send email from Mendix Cloud over port 25. Although this port is open now, we will close it in the near future. Using port 25 can result in blocking sending of emails for all customers in the same cluster, which is in violation of our Terms and Conditions. This configuration cannot be changed.
 
 Your SMTP provider needs to expose a secure port like 587, which is a best practice that most modern providers offer out of the box.
 
