@@ -184,13 +184,12 @@ The following is a JSON template. Copy this template into your secret, and set t
     "AzureAwsS3SK": ""
   },
   "ClusterManager": {
-    "KubernetesApiToken": ""
-  },
-  "ClusterSettings": {
-    "KubernetesAdminPassword": "",
-    "GrafanaAPIKey": "",
-    "MDAAWSS3AccessKey": "",
-    "OCIRegistryPassword": ""
+    "KubernetesApiToken": "",
+    "GrafanaAPIKey":"",
+    "MDAFileBasicAuthPassword": "",
+    "MDAAWSSK": "",
+    "OCIBasicAuthPassword": "",
+    "OCIRegistryAWSSK": ""
   },
   "Marketplace": {
     "ImportCDNPassword": ""
