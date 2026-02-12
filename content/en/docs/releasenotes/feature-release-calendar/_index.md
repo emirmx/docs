@@ -105,7 +105,7 @@ General Availability means that a feature is available for all users. This type 
 | Central Certificate Management | General Availability: Mx 11.6 |
 | Project Categorization | General Availability: Mx 11.4 |
 | Policies | Public Beta: Mx 11.12 |
-| Central Audit Logs | General Availability: Mx 11.6 |
+| Central Audit Logs | General Availability: Mx 11.10 |
 | Mendix Cloud on AWS European Sovereign Cloud | General Availability: Mx 11.6 |
 
 ## Deployment
