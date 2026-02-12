@@ -25,7 +25,7 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
     * Reopenable registration token - You can now reopen and copy the registration token if you need to access it again after initial generation.
     * Token expiration banner - A clear banner now displays if your registration token has expired, helping you stay informed and avoid registration issues.
 
-* Advanced station import options - We have enhanced the station import process by providing more robust options for handling duplicate stations. When importing, you can now specify how to you want to manage existing named stations. The following options are available:
+* Advanced station import options - We have enhanced the station import process by providing more robust options for handling duplicate stations. When importing, you can now specify how you want to manage existing named stations. The following options are available:
  
     * **Ignore** - Existing stations will not be updated or imported.
     * **Duplicate** - A new station will be created with a suffix number.
