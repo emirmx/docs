@@ -46,7 +46,7 @@ These release notes cover changes made to the [Mendix Workstation](/mendix-works
 
 #### New Features
 
-* Automatic client reset on deregistration - To ensure a clean slate and seamless management, the client now automatically resets itself when it is deregistered from Workstation Management.
+* Automatic client reset on deregistration - To ensure a clean state and seamless management, the client now automatically resets itself when it is deregistered from Workstation Management.
 * Improved handling of unknown computer status - When a computer is not matched to an available station, the client now displays a **Waiting** message, indicating that the system is awaiting configuration.
 
 #### Fixes
