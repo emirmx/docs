@@ -54,7 +54,7 @@ Many users of free apps use the settings of their own Gmail account for convenie
 
 {{% alert color="warning" %}}
 
-Note that you cannot send email from Mendix Cloud over port 25. Although this port is open now, we will close it in the near future. Using port 25 can result in blocking sending of emails for all customers in the same cluster, which is in violation of our Terms and Conditions. This configuration cannot be changed.
+You cannot send email from Mendix Cloud over port 25. Although the port is currently open, we will close it soon. Using port 25 may block email sending for all customers in the same cluster and violates Mendix Terms and Conditions. You cannot change this configuration.
 
 Your SMTP provider needs to expose a secure port like 587, which is a best practice that most modern providers offer out of the box.
 
