@@ -69,7 +69,7 @@ When an event is triggered, you can choose what action is triggered. Possible op
 * [Show user task page](#show-user-task-page)
 * [Show workflow admin page](#show-workflow-page)
 * [Complete user task](#complete-task)
-* [Cancel Synchronization](#cancel-synchronization)
+* [Cancel synchronization](#cancel-synchronization)
 
 ### Do Nothing {#do-nothing}
 
