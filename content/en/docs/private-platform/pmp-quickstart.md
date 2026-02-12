@@ -17,6 +17,27 @@ Private Mendix Platform supports using secret storage. If required, you can stor
 Using a secret storage incorrectly may reduce the security of your app. Consult your secrets store provider to ensure that it is set up securely for your production environment.  
 {{% /alert %}}
 
+### Overview
+
+Before you start the installation process, review the following considerations:
+
+#### Installation Order
+
+Start the process by installing the Mendix Operator before you install the components. Some components are dependent on the Operator. Because of that, if you try to install a component without installing the Operator, the installation process fails and displays an error message.
+
+#### Installing Components
+
+Only the Private Cloud License Manager (PCLM) component is required. All other components are optional.
+
+The following components must be installed in the same namespace as Private Mendix Platform:
+
+* PCLM
+* Svix
+* Maia
+* Any Mendix on Kubernetes components
+
+Other components, such as the Build agent and PDF DocGen module, can be installed in any namespace.
+
 ### Prerequisites {#prerequisites}
 
 Private Mendix Platform depends on Mendix on Kubernetes for the installation and deployment of Mendix apps.
