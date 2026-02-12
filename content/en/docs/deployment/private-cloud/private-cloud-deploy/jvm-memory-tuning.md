@@ -23,7 +23,9 @@ For a comprehensive guide explaining how the HotSpot VM performs garbage collect
 In most cases, Mendix on Kubernetes doesn't need advanced memory tuning.
 Starting with Operator version 2.26, the default memory settings have been aligned with Mendix Cloud and are based on typical Mendix app usage patterns.
 
+{{% alert color="warning" %}}
 Manual adjusting JVM memory usage is only needed in some cases - when the default memory settings leave unused memory.
+{{% /alert %}}
 
 ### Types of memory
 
