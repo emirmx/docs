@@ -42,19 +42,38 @@ Maia has been standardized on Claude Sonnet 3.7, but Private Mendix Platform sup
 
 Starting in Private Mendix Platform 2.6, you can connect to the following Large Language Models:
 
+* Anthropic
+  * Small text model - Claude Haiku 4.5
+  * Large text model - Claude Opus 4.6
 * [AWS Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/models-regions.html)
-  * Claude Sonnet 3.7
-  * Claude Sonnet 4.0
-  * Claude Sonnet 4.5
-  * GPT-OSS-120B
+  * Claude Haiku 4.5
 * [Azure](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-models/concepts/models-sold-directly-by-azure)
-  * 03-mini
+  * o3-mini
+* OpenAI
+  * GPT-5-Mini
 
-### Example Configuration for Supported AWS Bedrock Claude Models
+### Feature Comparison
+
+The following table shows which Maia capabilities are supported by various models.
+
+| Maia Capability | AWS Bedrock | Anthropic | Azure | OpenAI |
+| --- | --- | --- | --- | --- |
+| **Maia for Pages** | Full support | Full support | Simple requests only | Simple requests only |
+| **Maia for Domain Model** | Full support | Full support | Full support | Full support |
+| **Maia for Workflows** | Full support | Full support | Simple requests only | Does not support workflow creation |
+| **Start with Maia** | Full support | Full support | Full support | Full support |
+| **Best Practice Recommender** | Full support | Full support | Full support | Full support |
+| **UI Recommender** | Full support | Full support | Full support | Full support |
+| **Workflow Recommender** | Full support | Full support | Full support | Full support |
+| **Validation Assist** | Full support | Full support | Full support | Full support |
+
+In summary, Maia on AWS Bedrock and Anthropic modules can handle complex requests with high accuracy and reliability. For Azure and OpenAI models, the output quality for some request types may be low or inconsistent.
+
+### Example Configuration for AWS Bedrock Claude Models
 
 ```text
 {
-  "api_key": "sk-your-global-api-key",
+  "api_key": "<your API key>",
   "bedrock_region": "eu-central-1",
   "models": {
     "small_text": "bedrock/eu.anthropic.claude-haiku-4-5-20251001-v1:0",
@@ -65,11 +84,23 @@ Starting in Private Mendix Platform 2.6, you can connect to the following Large 
 }
 ```
 
-### Example Configuration for Supported Azure Models
+### Example Configuration for Anthropic Models
+
+```text
+"models": {
+  "small_text": "anthropic/claude-haiku-4-5-20251001",
+  "small_files": "anthropic/claude-haiku-4-5-20251001",
+  "large_text": "anthropic/claude-opus-4-6",
+  "large_files": "anthropic/claude-opus-4-6",
+  "fallback": "anthropic/claude-opus-4-6"
+}
+```
+
+### Example Configuration for Azure Models
 
 ```text
 {
-  "api_key": "...",
+  "api_key": "<your API key>",
   "azure_api_version": "2025-01-01-preview",
   "azure_api_base": "https://<your-id>.cognitiveservices.azure.com/",
   "models": {
@@ -79,4 +110,16 @@ Starting in Private Mendix Platform 2.6, you can connect to the following Large 
     "large_files": "azure/o3-mini",
     "fallback": "azure/o3-mini"
   }
+  ```
+
+  ### Example Configuration for OpenAI Models
+
+```text
+"models": {
+  "small_text": "openai/gpt-5-mini-2025-08-07",
+  "small_files": "openai/gpt-5-mini-2025-08-07",
+  "large_text": "openai/gpt-5-mini-2025-08-07",
+  "large_files": "openai/gpt-5-mini-2025-08-07",
+  "fallback": "openai/gpt-5-mini-2025-08-07"
+}
   ```
