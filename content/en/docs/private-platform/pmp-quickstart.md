@@ -455,6 +455,10 @@ To enable PDF Document Generation for Private Mendix Platform, perform the follo
     * **Image Name** - The image name, for example, *document-generation-service* 
     * **Image Tag** - The image tag of the AppGen image, for example, *1.0.2*
 
+{{% alert color="info" %}}
+PDF Document Generation requires additional configuration for your Mendix apps to use the private service. For more information, see [Private PDF Document Generation Service: Configuring your Mendix Apps](/appstore/services/private-document-generation-service/#configuring-your-mendix-apps).
+{{% /alert %}}
+
 #### Uninstalling PDF Document Generation
 
 If you want to uninstall PDF Document Generation, perform the following steps:
