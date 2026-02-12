@@ -135,3 +135,5 @@ Starting in Private Mendix Platform 2.6, you can connect to the following Large 
   * GPT-OSS-120B
 * [Azure](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-models/concepts/models-sold-directly-by-azure)
   * 03-mini
+
+  For configuration examples, see [Maia in Private Mendix Platform](/private-mendix-platform/maia/).

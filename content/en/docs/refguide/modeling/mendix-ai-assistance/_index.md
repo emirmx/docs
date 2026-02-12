@@ -66,6 +66,10 @@ Generators:
 
 Various Maia features are available in Mendix Portal. For more information, refer to [Maia in Mendix Portal](/portal/maia/).
 
+## Maia in Private Mendix Platform
+
+Various Maia features are available in Private Mendix Platform. For more information, refer to [Maia in Private Mendix Platform](/private-mendix-platform/maia/).
+
 ## Maia Third-Party Services {#maia-third-party-services}
 
 The table below presents all the third-party services each Maia capability uses and what data are sent to the third-party services.
