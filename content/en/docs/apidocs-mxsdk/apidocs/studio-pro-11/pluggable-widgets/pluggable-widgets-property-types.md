@@ -26,6 +26,16 @@ The common structure of a property definition is as follows:
 
 This defines the prop `key` in the client component props which are supplied to the widget client component. Each property must have a unique `key` which can contain letters of all cases, digits, or underscores. However, a `key` attribute cannot *start* with a digit.
 
+#### AllowUpload (Optional) {#allow-upload}
+
+This optional attribute is only applicable for properties of type [file](#file) and [image](#image) and has a default value of `false`. By setting this attribute to `true` a user can use the upload capabilities by passing  `EditableFileValue<FileValue>` and `EditableImageValue<ImageValue>` as props to a client component. Using `false` is used for legacy `DynamicValue<File>` and `DynamicValue<ImageValue>`.
+
+{{% alert color="warning" %}}
+Optional attribute `allowUpload` will be deprecated as of Mx 12. After Mx 12 such `file` and `image` will have by default editing capabilities and users will not be able to use the legacy behavior.
+
+After Mx 12, the attribute won't be taken into account during the property evaluation, and legasy functionality won't be available.
+{{% /alert %}}
+
 #### Type (required)
 
 This defines a property's type. A `type` must be one of the following: 
@@ -257,26 +267,29 @@ Then the Studio Pro UI for the component appears like this:
 
 ### Image {#image}
 
-Image allows a user to configure a static image from an [image collection](/refguide/image-collection/). It also allows a user to configure an image from an object that is a specialization of **System.Image**. It is passed as an `DynamicValue<ImageValue>` prop to a client component (for more information, see the [ImageValue](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#imagevalue) section of *Client APIs Available to Pluggable Widgets*). See the [Images Reference Guide](/refguide/images/) for more information about supported image formats.
+Image allows a user to configure an image from an object that is a specialization of **System.Image**. It is passed as an [`EditableImageValue<ImageValue>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#editable-image-value) prop to a client component. See the [Images Reference Guide](/refguide/images/) for more information about supported image formats.
+
+The user can use the optional attribute [`allowUpload`](#allow-upload) with default value `false` to use the legasy [`Dynamic<FileValue>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#filevalue) prop. Beware of behavioral differences based on the `allowUpload` attribute.
 
 {{% alert color="warning" %}}
-GIF images are not supported in native mobile apps on Android devices.
+Optional attribute `allowUpload` will be deprecated as of Mx 12. After Mx 12 such `image` will have by default editing capabilities and users will not be able to use the legacy behavior.
 {{% /alert %}}
 
 #### XML Attributes
 
-| Attribute  | Required | Attribute Type | Description                                                           |
-|------------|----------|----------------|-----------------------------------------------------------------------|
-| `type`     | Yes      | String         | Must be `image`                                                       |
-| `key`      | Yes      | String         | See [key](#key)                                                       |
-| `required` | No       | Boolean        | Whether the property must be specified by the user, `true` by default |
+| Attribute  	| Required | Attribute Type | Description                                                           |
+|---------------|----------|----------------|-----------------------------------------------------------------------|
+| `type`     	| Yes      | String         | Must be `image`                                                       |
+| `key`      	| Yes      | String         | See [key](#key)                                                       |
+| `required` 	| No       | Boolean        | Whether the property must be specified by the user, `true` by default |
+| `allowUpload` | No       | Boolean        | See [allowUpload](#allow-upload)                                      |
 
 #### Studio Pro UI
 
 When the component is defined as follows:
 
 ```xml
-<property key="bgImage" type="image" required="false">
+<property key="bgImage" type="image" required="false" allowUpload="true" >
 	<caption>Background Image</caption>
 	<description>Image shown blurred in a background</description>
 </property>
@@ -699,14 +712,21 @@ Then the Studio Pro UI for the property appears like this:
 
 ### File {#file}
 
-The file property type allows a user to configure a file from an object that is a specialization of **System.File**. It is passed as a [`DynamicValue<FileValue>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#filevalue) prop to a client component.
+The file property type allows a user to configure and edit a file from and to an object that is a specialization of **System.File**. It is passed as a [`EditableFileValue<FileValue>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#editable-file-value) prop to a client component.
+
+The user can use the optional attribute [`allowUpload`](#allow-upload) with default value `false` to use the legasy [`Dynamic<FileValue>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#filevalue) prop. Beware of behavioral differences based on the `allowUpload` attribute.
+
+{{% alert color="warning" %}}
+Optional attribute `allowUpload` will be deprecated as of Mx 12. After Mx 12 such `file` will have by default editing capabilities and users will not be able to use the legacy behavior.
+{{% /alert %}}
 
 #### XML Attributes
 
-| Attribute | Required | Attribute Type | Description     |
-|-----------|----------|----------------|-----------------|
-| `type`    | Yes      | String         | Must be `file`  |
-| `key`     | Yes      | String         | See [key](#key) |
+| Attribute     | Required | Attribute Type | Description                      |
+|---------------|----------|----------------|----------------------------------|
+| `type`        | Yes      | String         | Must be `file`                   |
+| `key`         | Yes      | String         | See [key](#key)                  |
+| `allowUpload` | No       | Boolean        | See [allowUpload](#allow-upload) |
 
 #### Studio Pro UI
 
@@ -714,7 +734,7 @@ When the property is defined as follows:
 
 ```xml
 
-<property key="file" type="file" required="false">
+<property key="file" type="file" required="false" allowUpload="true">
 	<caption>File</caption>
 	<description>Sample text file</description>
 </property>
