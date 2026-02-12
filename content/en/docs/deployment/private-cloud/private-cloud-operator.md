@@ -151,7 +151,7 @@ spec:
     # All custom Mendix Runtime parameters go here, in JSON format; validated and applied by the mx-m2ee-sidecar container
     customConfiguration: |-
       {
-        "ApplicationRootUrl": "https://myapp1-dev.mendix.example.com"
+        "ApplicationRootUrl": "https://myapp1-dev.mendix.example.com/"
       }
   runtimeMetricsConfiguration: # Optional, can be omitted : set Runtime metrics configuration
     mode: native # Metrics collection mode : native or compatibility
@@ -384,7 +384,7 @@ All names beginning **openshift-** are reserved for use by OpenShift if you are 
 
 In some cases, your Mendix app will need to know its own URL – for example when using SSO or sending emails.
 
-For this to work properly, you need to set the [ApplicationRootUrl variable](/refguide/custom-settings/#general) in `customConfiguration` to the app's URL. For example:
+For this to work properly, you need to set the [ApplicationRootUrl variable](/refguide/custom-settings/#applicationrooturl-section) in `customConfiguration` to the app's URL. For example:
 
 ```yaml
 apiVersion: privatecloud.mendix.com/v1alpha1
@@ -396,7 +396,7 @@ spec:
     # Add the ApplicationRootUrl value here
     customConfiguration: |-
       {
-        "ApplicationRootUrl": "https://myapp1-dev.mendix.example.com"
+        "ApplicationRootUrl": "https://myapp1-dev.mendix.example.com/"
       }
 ```
 
