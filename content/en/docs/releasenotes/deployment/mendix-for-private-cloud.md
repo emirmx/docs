@@ -19,7 +19,7 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 * We have enabled the license fallback mechanism for Operator versions 2.24.0 and newer. This prevents environments from switching to trial mode when the license server is unreachable.
 * We have reenabled single-replica support for Mendix deployments on Azure, allowing the creation or scaling to one replica, consistent with non-Azure environments.
 
-### January 29, 2026h
+### January 29, 2026
 
 #### Portal Improvements
 
