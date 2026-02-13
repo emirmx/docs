@@ -66,7 +66,7 @@ To delete a backup snapshot, perform the following steps:
 ## Restoring a Backup Snapshot {#restore-backup}
 
 {{% alert color="warning" %}} 
-Restore backup is only supported within the same cluster. For the workaround to restore across clusters, see [Known Limitations](#known-limitations).
+Restoring a backup is only supported within the same cluster. For the workaround to restore backups across clusters, see [Known Limitations](#known-limitations).
 {{% /alert %}}
 
 {{% alert color="info" %}} 
@@ -139,7 +139,7 @@ Automatic backups only run when the app is deployed.
 
 If the first nightly backup occurs after the first Sunday, no monthly backup will be retained that month. Download a nightly or weekly backup to extend retention.
 
-## Known Limitations{#known-limitations}
+## Known Limitations {#known-limitations}
 
 * Partial data restoration may occur if a restore process fails.
 * No API support exists currently for backup and restore.
