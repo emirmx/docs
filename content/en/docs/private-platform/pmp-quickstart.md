@@ -555,7 +555,7 @@ Install the Private Mendix Platform by doing the following steps:
 
 {{< figure src="/attachments/private-platform/pmp-install10.png" class="no-border" >}}
 
-## Installing Maia for the Private Mendix Platform
+## Installing Maia for the Private Mendix Platform {#maia}
 
 [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/) refers to Mendix Platform capabilities that leverage [artificial intelligence (AI)](https://www.mendix.com/glossary/artificial-intelligence-ai/) and [machine learning (ML)](https://www.mendix.com/glossary/machine-learning/) to assist developers in application development. Private Mendix Platform currently offers support for Maia-assisted app creation. Other Maia capabilities, such as Maia Chat, will be made available in future releases.
 
@@ -567,7 +567,7 @@ To enable [Maia for Private Mendix Platform](/private-mendix-platform/maia/), pe
 4. Upload the Maia directory to your private registry by using the `installer init migrate` command.
 5. Run the following command:  `./installer component -n=<Private Mendix Platform namespace>`. Maia must be installed at the same namespace as Private Mendix Platform.
 6. In the **Components at PMP ns** section, select **Maia**.
-8. Configure the following settings:
+7. Configure the following settings:
 
     * **Image Prefix** - The registry and namespace (if it exists) where the *maia-appgen-pmp* image is located
     * **Image Name** - The image name, for example, *maia-appgen-pmp* 
@@ -581,7 +581,7 @@ If you want to uninstall Maia, run the following command: `helm unistall maia-ap
 
 ## Installing PDF Document Generation for the Private Mendix Platform
 
-The PDF Document Generation module allows you to generate pixel-perfect PDF documents based on regular pages in your app.
+The [PDF Document Generation module](/appstore/services/private-document-generation-service/) allows you to generate pixel-perfect PDF documents based on regular pages in your app.
 
 To enable PDF Document Generation for Private Mendix Platform, perform the following steps:
 
@@ -598,7 +598,11 @@ To enable PDF Document Generation for Private Mendix Platform, perform the follo
     * **Image Name** - The image name, for example, *document-generation-service* 
     * **Image Tag** - The image tag of the AppGen image, for example, *1.0.2*
 
-### Uninstalling PDF Document Generation
+{{% alert color="info" %}}
+PDF Document Generation requires additional configuration for your Mendix apps to use the private service. For more information, see [Private PDF Document Generation Service: Configuring your Mendix Apps](/appstore/services/private-document-generation-service/#configuring-your-mendix-apps).
+{{% /alert %}}
+
+#### Uninstalling PDF Document Generation
 
 If you want to uninstall PDF Document Generation, perform the following steps:
 
