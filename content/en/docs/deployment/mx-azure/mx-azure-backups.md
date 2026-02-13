@@ -143,10 +143,11 @@ If the first nightly backup occurs after the first Sunday, no monthly backup wil
 
 * Partial data restoration may occur if a restore process fails.
 * No API support exists currently for backup and restore.
-* Although the portal UI suggests cross-cluster restores, only restores within the **same cluster** are supported.
+* Although the portal UI suggests that cross-cluster backup restorations are, only restorations within the same cluster are actually supported.
 
-Below is the supported workaround to restore across cluster:
-1. Retrieve Snapshot: Download the desired backup snapshot from your source environment to your local machine.
-2. Transfer Snapshot: Upload the downloaded backup snapshot from your local machine to the target environment.
-3. Initiate Restoration: Begin the restore process within the target environment using the newly uploaded backup snapshot.
+As a workaround, you can restore a backup across clusters by performing the following steps:
+
+1. Download the backup snapshot from your source environment to your local machine.
+2. Upload the downloaded backup snapshot from your local machine to the target environment.
+3. Begin the restore process within the target environment using the newly uploaded backup snapshot.
 
