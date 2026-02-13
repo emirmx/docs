@@ -434,7 +434,7 @@ If you want to uninstall Maia, you must do it manually, by running the following
 
 ### Installing PDF Document Generation for the Private Mendix Platform
 
-The PDF Document Generation module allows you to generate pixel-perfect PDF documents based on regular pages in your app.
+The [PDF Document Generation module](/appstore/services/private-document-generation-service/) allows you to generate pixel-perfect PDF documents based on regular pages in your app.
 
 To enable PDF Document Generation for Private Mendix Platform, perform the following steps:
 
@@ -450,6 +450,10 @@ To enable PDF Document Generation for Private Mendix Platform, perform the follo
     * **Image Prefix** - The registry and namespace (if it exists) where the *document-generation-service* image is located
     * **Image Name** - The image name, for example, *document-generation-service* 
     * **Image Tag** - The image tag of the AppGen image, for example, *1.0.2*
+
+{{% alert color="info" %}}
+PDF Document Generation requires additional configuration for your Mendix apps to use the private service. For more information, see [Private PDF Document Generation Service: Configuring your Mendix Apps](/appstore/services/private-document-generation-service/#configuring-your-mendix-apps).
+{{% /alert %}}
 
 #### Uninstalling PDF Document Generation
 
