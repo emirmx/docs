@@ -151,7 +151,7 @@ spec:
     # All custom Mendix Runtime parameters go here, in JSON format; validated and applied by the mx-m2ee-sidecar container
     customConfiguration: |-
       {
-        "ApplicationRootUrl": "https://myapp1-dev.mendix.example.com/"
+        "ApplicationRootUrl": "https://myapp1-dev.mendix.example.com"
       }
   runtimeMetricsConfiguration: # Optional, can be omitted : set Runtime metrics configuration
     mode: native # Metrics collection mode : native or compatibility
@@ -396,7 +396,7 @@ spec:
     # Add the ApplicationRootUrl value here
     customConfiguration: |-
       {
-        "ApplicationRootUrl": "https://myapp1-dev.mendix.example.com/"
+        "ApplicationRootUrl": "https://myapp1-dev.mendix.example.com"
       }
 ```
 

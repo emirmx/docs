@@ -46,7 +46,7 @@ The following custom settings can be configured:
 
 | Name | Description | Default Value |
 | --- | --- | --- |
-| <a id="ApplicationRootUrl" href="#ApplicationRootUrl">ApplicationRootUrl</a> | see [ApplicationRootUrl](#applicationrooturl-section), below | In Mendix Cloud, https://\[domain\].<wbr>mendixcloud.<wbr>com/ |
+| <a id="ApplicationRootUrl" href="#ApplicationRootUrl">ApplicationRootUrl</a> | see [ApplicationRootUrl](#applicationrooturl-section), below | In Mendix Cloud, https://\[domain\].<wbr>mendixcloud.<wbr>com |
 | <a id="CACertificates" href="#CACertificates">CACertificates</a> | A comma-separated list of paths to CA certificates. Example: `D:\App\CA1.pem, D:\App\CA2.pem, D:\App\CA3.pem, D:\App\CA4.pem` |   |
 | <a id="ClientCertificatePasswords" href="#ClientCertificatePasswords">ClientCertificatePasswords</a> | Comma-separated list of passwords for Client Certificates (should match the **ClientCertificates** order). Example: `pwd1, pwd2, pwd3, pwd4` |   |
 | <a id="ClientCertificates" href="#ClientCertificates">ClientCertificates</a> | Comma-separated list of paths to Client Certificates. Example: `D:\App\Mx1.pfx, D:\App\Mx2.pfx, D:\App\Mx3.pfx, D:\App\Mx4.pfx` |   |
@@ -101,7 +101,7 @@ There are two main ways that you might use to host multiple applications.
 * Routing based on a (sub)domain
 * Routing based on a subpath
 
-Say we are hosting two apps, App1 and App2. In domain-based routing, every app gets its own domain (for example. `app1.domain.com` and `app2.domain.com`). In subpath-based routing, this would be on a subpath, for example `domain.com/app1/` and `domain.com/app2/`.
+Say we are hosting two apps, App1 and App2. In domain-based routing, every app gets its own domain (for example. `app1.domain.com` and `app2.domain.com`). In subpath-based routing, this would be on a subpath, for example `domain.com/app1` and `domain.com/app2`.
 
 When setting up either routing variant, most content is correctly served automatically as it is relative to the path in which it is being served. Exceptions to this include:
 
