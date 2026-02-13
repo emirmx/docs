@@ -1,4 +1,4 @@
-openapi: 3.0.4
+openapi: 3.0.3
 info:
   title: Pipeline Service v1
   description: "The Pipeline API is for managing the Pipeline resources. The Pipeline can be used to build app package and deploy app package image into a specific environment. \r\n"
