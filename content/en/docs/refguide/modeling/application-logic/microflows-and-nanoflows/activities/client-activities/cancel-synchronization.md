@@ -1,5 +1,5 @@
 ---
-title: "Cancel synchronization"
+title: "Cancel Synchronization"
 url: /refguide/cancel-synchronization/
 weight: 70
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
@@ -17,7 +17,7 @@ The **Cancel synchronization** activity cancels a running synchronization. You c
 
 There are two sets of properties for this activity, those in the dialog box on the left, and those in the properties pane on the right:
 
-{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/client-activities/cancel-synchronization/cancel-synchronization-properties.png" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/client-activities/cancel-synchronization/cancel-synchronization-properties.png" >}}
 
 The **Cancel synchronization** properties pane consists of the following sections:
 
