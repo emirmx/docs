@@ -36,17 +36,17 @@ Generators:
 * **Maia for Workflows** – helps you generate a [Workflow](/refguide/workflows/). By providing a use case via text input or an image, Maia can help you start creating your workflows. For more information, see [Maia for Workflows](/refguide/maia-for-workflows/).
 * **Validation Assist** – helps you build validation microflows in a more automated way using pre-built expressions. For more information, see [Validation Assist](/refguide/validation-assist/).
 
-## LLM Providers for Maia
+## Changing the LLM Provider for Maia
 
-Maia has been standardized on Claude Sonnet 3.7, but Private Mendix Platform supports connectivity to a broad set of models.
-
-Starting in Private Mendix Platform 2.6, you can connect to the following Large Language Models:
+Starting in Private Mendix Platform 2.6, instead of usign the default Large Language Model, you can connect Maia to several different models of your choice. Currently this includes the following LLMs:
 
 * Anthropic
   * Small text model - Claude Haiku 4.5
   * Large text model - Claude Opus 4.6
 * [AWS Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/models-regions.html)
-  * Claude Haiku 4.5
+  * Small text model - Claude Haiku 4.5
+  * Large text model - Claude Sonnet 4.5
+  * Fallback model - Claude Sonnet 4
 * [Azure](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-models/concepts/models-sold-directly-by-azure)
   * o3-mini
 * OpenAI
@@ -69,57 +69,54 @@ The following table shows which Maia capabilities are supported by various model
 
 In summary, Maia on AWS Bedrock and Anthropic modules can handle complex requests with high accuracy and reliability. For Azure and OpenAI models, the output quality for some request types may be low or inconsistent.
 
-### Example Configuration for AWS Bedrock Claude Models
+### Configuring a Custom LLM for Maia
 
-```text
-{
-  "api_key": "<your API key>",
-  "bedrock_region": "eu-central-1",
-  "models": {
-    "small_text": "bedrock/eu.anthropic.claude-haiku-4-5-20251001-v1:0",
-    "small_files": "bedrock/eu.anthropic.claude-haiku-4-5-20251001-v1:0",
-    "large_text": "bedrock/eu.anthropic.claude-sonnet-4-5-20250929-v1:0",
-    "large_files": "bedrock/eu.anthropic.claude-sonnet-4-5-20250929-v1:0",
-    "fallback": "bedrock/eu.anthropic.claude-sonnet-4-20250514-v1:0"
-}
-```
+To configure Maia to use your own Large Language Model, perform the following steps:
 
-### Example Configuration for Anthropic Models
+1. Log in to Private Mendix Platform as a user with [Company Administrator](/private-mendix-platform/reference-guide/admin/company/) access rights.
+2. Switch to Admin Mode by clicking the profile picture in the top right corner of the screen and selecting **Switch to Admin Mode**.
+3. In the left navigation menu, open the **Manage** section.
+4. Fill out the following information:
 
-```text
-"models": {
-  "small_text": "anthropic/claude-haiku-4-5-20251001",
-  "small_files": "anthropic/claude-haiku-4-5-20251001",
-  "large_text": "anthropic/claude-opus-4-6",
-  "large_files": "anthropic/claude-opus-4-6",
-  "fallback": "anthropic/claude-opus-4-6"
-}
-```
+    * **Maia Appgen URL** - Enter the URL where Maia is installed. For more information, see [Private Mendix Platform Quick Start Guide: Installing Maia](/private-mendix-platform/quickstart/#maia).
+    * **LLM Provider** - Select your LLM provider.
+    * **Small Text Model** - Enter one of the following models, depending on your chosen LLM:
 
-### Example Configuration for Azure Models
+        * For AWS Bedrock Claude models, enter `<your regional model ID>.anthropic.claude-haiku-4-5-20251001-v1:0`
+        * For Anthropic models, enter `claude-haiku-4-5-20251001`
+        * For Azure models, enter `o3-mini`
+        * For OpenAI models, enter `gpt-5-mini-2025-08-07`
 
-```text
-{
-  "api_key": "<your API key>",
-  "azure_api_version": "2025-01-01-preview",
-  "azure_api_base": "https://<your-id>.cognitiveservices.azure.com/",
-  "models": {
-    "small_text": "azure/o3-mini",
-    "small_files": "azure/o3-mini",
-    "large_text": "azure/o3-mini",
-    "large_files": "azure/o3-mini",
-    "fallback": "azure/o3-mini"
-  }
-  ```
+    * **Small Files Model** - Enter one of the following models, depending on your chosen LLM:
 
-  ### Example Configuration for OpenAI Models
+        * For AWS Bedrock Claude models, enter `<your regional model ID>.anthropic.claude-haiku-4-5-20251001-v1:0`
+        * For Anthropic models, enter `claude-haiku-4-5-20251001`
+        * For Azure models, enter `o3-mini`
+        * For OpenAI models, enter `gpt-5-mini-2025-08-07`
 
-```text
-"models": {
-  "small_text": "openai/gpt-5-mini-2025-08-07",
-  "small_files": "openai/gpt-5-mini-2025-08-07",
-  "large_text": "openai/gpt-5-mini-2025-08-07",
-  "large_files": "openai/gpt-5-mini-2025-08-07",
-  "fallback": "openai/gpt-5-mini-2025-08-07"
-}
-  ```
+    * **Large Text Model** - Enter one of the following models, depending on your chosen LLM:
+
+        * For AWS Bedrock Claude models, enter `<your regional model ID>.anthropic.claude-sonnet-4-5-20250929-v1:0`
+        * For Anthropic models, enter `claude-opus-4-6`
+        * For Azure models, enter `o3-mini`
+        * For OpenAI models, enter `gpt-5-mini-2025-08-07`     
+
+    * **Large Files Model** - Enter one of the following models, depending on your chosen LLM:
+
+        * For AWS Bedrock Claude models, enter `<your regional model ID>.anthropic.claude-sonnet-4-5-20250929-v1:0`
+        * For Anthropic models, enter `claude-opus-4-6`
+        * For Azure models, enter `o3-mini`
+        * For OpenAI models, enter `gpt-5-mini-2025-08-07`  
+
+    * **Fallback Model** - Enter one of the following models, depending on your chosen LLM:
+
+        * For AWS Bedrock Claude models, enter `<your regional model ID>.anthropic.claude-sonnet-4-20250514-v1:0`
+        * For Anthropic models, enter `claude-opus-4-6`
+        * For Azure models, enter `o3-mini`
+        * For OpenAI models, enter `gpt-5-mini-2025-08-07`
+
+    * **API Key** - Specify your secret source.
+
+{{% alert color="info" %}}
+For AWS Bedrock Claude models, the regional model ID is the same as for inference models, for example, `eu`.
+{{% /alert %}}
