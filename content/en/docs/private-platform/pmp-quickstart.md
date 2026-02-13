@@ -559,7 +559,7 @@ Install the Private Mendix Platform by doing the following steps:
 
 [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/) refers to Mendix Platform capabilities that leverage [artificial intelligence (AI)](https://www.mendix.com/glossary/artificial-intelligence-ai/) and [machine learning (ML)](https://www.mendix.com/glossary/machine-learning/) to assist developers in application development. Private Mendix Platform currently offers support for Maia-assisted app creation. Other Maia capabilities, such as Maia Chat, will be made available in future releases.
 
-To enable Maia for Private Mendix Platform, perform the following steps:
+To enable [Maia for Private Mendix Platform](/private-mendix-platform/maia/), perform the following steps:
 
 1. Download the *maia-appgen-pmp.zip* file from your Private Mendix Platform download portal.
 2. Unzip the *maia-appgen-pmp.zip* file.
