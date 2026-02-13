@@ -378,28 +378,28 @@ To enable connected mode, you must create the database Authenticator and Collect
 * For the Authenticator, run the following commands:
 
     ```text
-    CREATE Database authenticator; 
-    // granted with permissions to Login the DB and CRUD tables , extentions installation
-    CREATE ROLE authuser WITH LOGIN;
-    ALTER ROLE authuser WITH PASSWORD 'def';
-    ALTER ROLE authuser VALID UNTIL 'infinity';
-    GRANT ALL PRIVILEGES  ON DATABASE authenticator to authuser;
-    \c authenticator  
-    GRANT ALL ON SCHEMA public to authuser;
+    CREATE Database <your database name, for example, authenticator>; 
+    // granted with Login permissions to the DB and CRUD tables, extends installation
+    CREATE ROLE <your user name, for example, authuser> WITH LOGIN;
+    ALTER ROLE <your user name> WITH PASSWORD '<your password>';
+    ALTER ROLE <your user name> VALID UNTIL 'infinity';
+    GRANT ALL PRIVILEGES  ON DATABASE <your database name> to <your user name>;
+    \c <your database name>  
+    GRANT ALL ON SCHEMA public to <your user name>;
     ```
 
 * For the Collector, run the following commands:
 
     ```text
     //preare the database for collector services; 
-    Create database collector; 
-    //prepare the roles, the role need has permission to the db 
-    CREATE ROLE colluser WITH LOGIN;
-    ALTER ROLE colluser WITH PASSWORD 'abc';
-    ALTER ROLE colluser VALID UNTIL 'infinity';
-    GRANT ALL PRIVILEGES ON DATABASE collector to colluser;
-    \c collector;  
-    GRANT ALL ON SCHEMA public to colluser;
+    Create database <your database name, for example, collector>; 
+    //prepare the roles, the role need has permission to the database 
+    CREATE ROLE <your user name, for example, colluser> WITH LOGIN;
+    ALTER ROLE <your user name> WITH PASSWORD '<your password>';
+    ALTER ROLE <your user name> VALID UNTIL 'infinity';
+    GRANT ALL PRIVILEGES ON DATABASE <your database name> to <your user name>;
+    \c <your database name>;  
+    GRANT ALL ON SCHEMA public to <your user name>;
     ```
 
 * To install NATS at your cluster, run the following commands:
@@ -422,7 +422,7 @@ To install the Private Cloud components, perform the following steps:
 1. Download the *mx-private-cloud.zip* file from your Private Mendix Platform download portal.
 2. Unzip the *mx-private-cloud.zip* file.
 3. Copy the *images* from the *mx-private-cloud* directory to the *images* sub-directory of the installer by running the following command: `cp -r mx-private-cloud/images/* <your installer>/pmp-binary-linux/images`
-4. Upload the directory to your private registry by using the `installer init` command. All the images must be in the same registry.
+4. Upload the directory to your private registry by using the `installer init migrate` command. All the images must be in the same registry.
 5. Run the following command:  `./installer component -n=<Private Mendix Platform namespace>`.
 6. Click **Install Private Cloud**.
 7. Configure the **General Options**:
@@ -469,7 +469,7 @@ The Build agent is required if you want to be able to build packages without hav
 1. Download the *mxplatform-kube-agent.zip* file from your Private Mendix Platform download portal.
 2. Unzip the *mxplatform-kube-agent.zip* file.
 3. Copy the *images* from the *mxplatform-kube-agent* directory to the *images* sub-directory of the installer by running the following command: `cp -r mxplatform-kube-agent/images/* <your installer>/pmp-binary-linux/images`
-4. Upload the directory to your private registry by using the `installer init` command.
+4. Upload the directory to your private registry by using the `installer init migrate` command.
 5. Run the following command:  `./installer component -n=<Private Mendix Platform namespace>`.
 6. In the **Components at any ns** section, select **Build Agent**.
 7. Configure the following settings:
@@ -564,7 +564,7 @@ To enable Maia for Private Mendix Platform, perform the following steps:
 1. Download the *maia-appgen-pmp.zip* file from your Private Mendix Platform download portal.
 2. Unzip the *maia-appgen-pmp.zip* file.
 3. Copy the *maia-appgen-pmp* directory to the *images* sub-directory of the installer by running the following command: `cp -r maia-appgen-pmp/images/* <your installer>/pmp-binary-linux/images`
-4. Upload the Maia directory to your private registry by using the `installer init` command.
+4. Upload the Maia directory to your private registry by using the `installer init migrate` command.
 5. Run the following command:  `./installer component -n=<Private Mendix Platform namespace>`. Maia must be installed at the same namespace as Private Mendix Platform.
 6. In the **Components at PMP ns** section, select **Maia**.
 8. Configure the following settings:
@@ -588,7 +588,7 @@ To enable PDF Document Generation for Private Mendix Platform, perform the follo
 1. Download the *document-generation-service.zip* file from your Private Mendix Platform download portal.
 2. Unzip the *document-generation-service.zip* file.
 3. Copy the *document-generation-service* directory to the *images* sub-directory of the installer by running the following command: `cp -r document-generation-service <your installer>/pmp-binary-linux/images`
-4. Upload the directory to your private registry by using the `installer init` command.
+4. Upload the directory to your private registry by using the `installer init migrate` command.
 5. Run the following command:  `./installer component -n=<Private Mendix Platform namespace>`. PDF Document Generation can be installed at the same namespace as Private Mendix Platform, or at any other namespace.
 6. In the **Components at PMP ns** section, select **PDF Gen**.
 7. Configure the following settings:
