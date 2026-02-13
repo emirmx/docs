@@ -124,15 +124,15 @@ For information about the infrastructure requirements, see [Supported Providers]
 
 ## LLM Providers for Maia
 
-[Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/) has been standardized on Claude Sonnet 3.7, but Private Mendix Platform supports connectivity to a broad set of models.
-
-Starting in Private Mendix Platform 2.6, you can connect to the following Large Language Models:
+Starting in Private Mendix Platform 2.6, instead of usign the default Large Language Model, you can connect [Mendix AI Assistance (Maia)](/refguide/mendix-ai-assistance/) to several different models of your choice. Currently this includes the following LLMs:
 
 * Anthropic
   * Small text model - Claude Haiku 4.5
   * Large text model - Claude Opus 4.6
 * [AWS Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/models-regions.html)
-  * Claude Haiku 4.5
+  * Small text model - Claude Haiku 4.5
+  * Large text model - Claude Sonnet 4.5
+  * Fallback model - Claude Sonnet 4
 * [Azure](https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-models/concepts/models-sold-directly-by-azure)
   * o3-mini
 * OpenAI
