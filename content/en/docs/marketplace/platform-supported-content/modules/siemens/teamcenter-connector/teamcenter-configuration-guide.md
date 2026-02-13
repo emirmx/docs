@@ -180,7 +180,7 @@ To register your Mendix app, perform the following steps:
   
     * Teamcenter Extension example:
         * `APPLICATIONID: tce`
-        * `APPLICATIONROOTURL: http://localhost:12345'
+        * `APPLICATIONROOTURL: http://localhost:12345`
         * `LDAP_USERNAME: uid`
   {{< figure src="/attachments/appstore/platform-supported-content/modules/siemens/teamcenter-connector/configuration/teamcenter-application-registry.png">}}
 
