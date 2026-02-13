@@ -687,6 +687,7 @@ These are the currently supported functions:
 * COALESCE
 * DATEDIFF
 * DATEPART
+* DATETRUNC
 * LENGTH
 * LOWER
 * RANGEBEGIN
@@ -875,7 +876,7 @@ DATEDIFF ( unit , startdate_expression, enddate_expression [, timezone ] )
 * `MINUTE`,
 * `SECOND`
 * `MILLISECOND`.
-        
+
 For more information on `DATETIME` values, see the [example section under *DATEPART*](#oql-datepart-example), below.
 
 ##### startdate_expression
@@ -888,7 +889,11 @@ For more information on `DATETIME` values, see the [example section under *DATEP
 
 ##### timezone
 
-`timezone` specifies the time zone to use for the retrieval. This parameter is optional and defaults to the local time zone. It should be a string literal containing an [IANA time zone](https://www.iana.org/time-zones). GMT offset time zones are not supported.
+`timezone` specifies the time zone to use for the retrieval. This parameter is optional and defaults to the user time zone. It should be a string literal containing an [IANA time zone](https://www.iana.org/time-zones). GMT offset time zones are not supported.
+
+{{% alert color="info" %}}
+The user time zone is usually different from UTC. To get the result in the UTC time zone, explicitly specify `'UTC'` in this parameter. For details on time zone handling in Mendix Runtime, see [Date and Time Handling](/refguide/date-and-time-handling/).
+{{% /alert %}}
 
 #### Examples
 
@@ -953,7 +958,11 @@ DATEPART ( datepart , date_expression [, timezone ] )
 
 ##### timezone
 
-`timezone` specifies the time zone to use for the retrieval. This parameter is optional and defaults to the local time zone. It should be a string literal containing an IANA time zone. GMT offset time zones are not supported.
+`timezone` specifies the time zone to use for the retrieval. This parameter is optional and defaults to the user time zone. It should be a string literal containing an IANA time zone. GMT offset time zones are not supported.
+
+{{% alert color="info" %}}
+The user time zone is usually different from UTC. To get the result in the UTC time zone, explicitly specify `'UTC'` in this parameter. For details on time zone handling in Mendix Runtime, see [Date and Time Handling](/refguide/date-and-time-handling/).
+{{% /alert %}}
 
 #### Examples{#oql-datepart-example}
 
@@ -980,6 +989,74 @@ SELECT End FROM Sales.Period WHERE DATEPART(YEAR, End) = 2025
 |  End                |
 |---------------------|
 | 2025-07-05 00:00:00 |
+
+### DATETRUNC {#datetrunc-function}
+
+The `DATETRUNC` function truncates a `DATETIME` value to a specified datepart. The return type is `DATETIME`.
+
+This function was introduced in Mendix version 11.9.0
+
+#### Syntax
+
+The syntax is as follows:
+
+```sql
+DATETRUNC ( datepart , date_expression [, timezone ] )
+```
+
+##### datepart
+
+`datepart` specifies the part to which the `DATETIME` value is truncated. For possible values, see the [Example](#oql-datetrunc-example) below.
+
+##### date_expression
+
+`date_expression` specifies the date to retrieve an element from. The expression should resolve to a `DATETIME` value. String representations of `DATETIME` are accepted.
+
+##### timezone
+
+`timezone` specifies the time zone to use for truncation. This parameter is optional and defaults to the user time zone. It should be a string literal containing an IANA time zone. GMT offset time zones are not supported.
+
+{{% alert color="info" %}}
+The user time zone is usually different from UTC. To get the result in the UTC time zone, explicitly specify `'UTC'` in this parameter. For details on time zone handling in Mendix Runtime, see [Date and Time Handling](/refguide/date-and-time-handling/).
+{{% /alert %}}
+
+#### Examples{#oql-datetrunc-example}
+
+| datepart     | Truncation result for `2005-09-03T16:34:20.356` |
+|--------------|-------------------------------------------------|
+| `YEAR`       | `2005-01-01T00:00:00.000`                       |
+| `QUARTER`    | `2005-07-01T00:00:00.000`                       |
+| `MONTH`      | `2005-09-01T00:00:00.000`                       |
+| `DAY`        | `2005-09-03T00:00:00.000`                       |
+| `WEEK`*      | `2005-07-29T00:00:00.000`                       |
+| `HOUR`       | `2005-09-03T16:00:00.000`                       |
+| `MINUTE`     | `2005-09-03T16:34:00.000`                       |
+| `SECOND`     | `2005-09-03T16:34:20.000`                       |
+
+{{% alert color="info" %}}
+Date part types `DAYOFYEAR`, `WEEKDAY` and `MILLISECOND` are not supported by the `DATETRUNC` function
+{{% /alert %}}
+
+{{% alert color="info" %}}
+For the date part type `WEEK`, the result of the `DATETRUNC` function depends on the database configuration. For example, by default, the first day of the week in MS SQL Server is Sunday, which means that dates are truncated to previous Sunday if date part type `WEEK` is used.
+{{% /alert %}}
+
+`DATETRUNC` function can be used to group data by time periods:
+
+```sql
+SELECT
+	DATETRUNC(QUARTER, End) AS PeriodEndQuarter,
+	SUM(Revenue) AS QuarterPeriodRevenue
+FROM
+	Sales.Period
+GROUP BY
+	DATETRUNC(QUARTER, End)
+```
+
+|  PeriodEndQuarter   | QuarterPeriodRevenue |
+|---------------------|----------------------|
+| 2024-04-01 00:00:00 | 10                   |
+| 2025-07-01 00:00:00 | 28                   |
 
 ### LENGTH {#length-function}
 
