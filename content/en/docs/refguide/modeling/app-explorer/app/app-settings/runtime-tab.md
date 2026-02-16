@@ -19,11 +19,17 @@ The available configuration options are as follows:
 * **Yes**: Use the React client (default). In this mode, you will get consistency errors for incompatible widgets.
 * **Migration mode**: Use the React client and ignore incompatible widgets. Placeholders are displayed in the case of incompatible widgets. Recommended when trying out the new client.
 
-### Static Resources from Disk
+### Use New String Behavior {#new-string-behavior}
 
-If this option is enabled, the static resources for your mobile application are downloaded as soon as you open your application rather than bit by bit as you navigate through the app. This can drastically cut down the number of network requests, as the files can be retrieved from the disk rather than from the server.
+{{% alert type="info" %}}
+This setting was introduced in Mendix 11.6.3. 
+{{% /alert %}} 
 
-The resources are downloaded to the device once for each deployment and are reused for subsequent runs of your app. This affects a number of files, including your theme, the JavaScript client, CSS files, and pages.
+If this option is enabled, Web (both React and Dojo) and Native Mobile clients will be able to handle both `empty` and empty string `''` values for `String` attributes. <br>
+
+If this options is disabled, `String` attribute values on the client-side will always contain only the `''` value to represent empty state. `empty` values will be automatically converted to `''` when transfered to the client-side. 
+
+For a detailed explanation, see the *Empty Strings Handling* section of [Upgrading from Mendix Studio Pro 10 to 11](/refguide/upgrading-from-10-to-11/#empty-strings-handling).
 
 ### Optimize Network Calls {#optimize-network-calls}
 
@@ -193,13 +199,13 @@ The table below presents the results of rounding the input to one digit with the
 | -2.5 | -3 | -2 |
 | -5.5 | -6 | -6 |
 
-### OQL version 2 {#oql-version-2}
+### Digits After Decimal Point
 
-If this option is set to **Yes**, your app will use version 2 of the OQL syntax. This setting must be enabled to use [view entities](/refguide/view-entities/). Make sure your app is ready to use the new syntax before making the switch. 
+{{% alert color="info" %}}
+This setting was introduced in Mendix 11.6.
+{{% /alert %}}
 
-For more information about the differences, see [OQL Version 2 Features](/refguide/oql-v2/).
-
-Default: *No*
+Set the number of digits that appear after the decimal point for your entire app. This setting affects both new and existing decimal attributes.
 
 ### Multiple Sessions per User {#multiple-sessions}
 
@@ -216,6 +222,24 @@ To force a query to the runtime, use microflows. For example, create a microflow
 {{% /alert %}}
 
 Default: *Yes*
+
+### Optimistic Locking (beta) 
+
+{{% alert color="info" %}}
+This is a beta feature introduced in [Mendix 11.5.0.](/releasenotes/studio-pro/11.5/).
+{{% /alert %}}
+
+If this option is set to **Yes**, Mendix will use a strategy to prevent lost updates when multiple users or processes try to modify the same piece of data at the same time.
+
+For more information, see [Optimistic Locking](/refguide/optimistic-locking/).
+
+### OQL version 2 {#oql-version-2}
+
+If this option is set to **Yes**, your app will use version 2 of the OQL syntax. This setting must be enabled to use [view entities](/refguide/view-entities/). Make sure your app is ready to use the new syntax before making the switch. 
+
+For more information about the differences, see [OQL Version 2 Features](/refguide/oql-v2/).
+
+Default: *No*
 
 ### Foreign Key Constraints {#database-fkc}
 
