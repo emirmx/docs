@@ -65,8 +65,8 @@ Depending on your app's Mendix version, you must use a different version of the 
 
 * Mendix 10:
     * **10.24.x** - Make It Native LTS is part of Github releases and Testflight (previous) builds ([Android](https://github.com/mendix/make-it-native/releases), [iOS](https://testflight.apple.com/join/bQfLf27w)).  
-      Previous Builds on Testflight are found as in the screenshot below:
-  <img width="1024" height="782" alt="image" src="https://github.com/user-attachments/assets/e4984b9e-eb81-4c99-989a-392582027353" />
+        * **Previous Builds** on Testflight can be found here:
+            {{< figure src="/attachments/refguide/mobile/native-mobile/getting-the-make-it-native-app/min-testflight.png" alt="Previous Builds on Testflight MIN" class="no-border" >}}
 
     * **Other** – [Creating a Custom Developer App](/refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/) or [Building Your Own Make It Native App](https://github.com/mendix/make-it-native)
 
