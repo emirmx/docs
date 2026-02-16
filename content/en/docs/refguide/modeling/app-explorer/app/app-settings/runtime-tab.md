@@ -41,7 +41,7 @@ If you experience an issue while running your app in which objects seem to be lo
 
 You have the option to change the default URL prefix for all pages and microflows in your application. The default prefix value is `/p/`.
 
-{{< figure src="/attachments/refguide/modeling/app-explorer/app/app-settings/url-prefix.png" width="300px" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/app-explorer/app/app-settings/runtime-tab/url-prefix.png" width="300px" class="no-border" >}}
 
 The URL prefix must be alphanumeric. It cannot be empty, contain whitespace, or contain any of the following values: 
 

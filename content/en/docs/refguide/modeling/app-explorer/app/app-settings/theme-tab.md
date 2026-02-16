@@ -33,7 +33,7 @@ To switch from a ZIP file to a UI resources package, follow the steps below:
 
 Modules that contain theme styling should be marked as UI resources modules. To do so, right-click the **Module {name}** in the App Explorer, then click **Mark as UI resources module**. This will give the modules a green icon, which makes it easy to distinguish theme modules from other modules, and also influences the order in which styling will be applied from those modules:
 
-{{< figure src="/attachments/refguide/modeling/app-explorer/app/app-settings/green-module.png" alt="green module" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/app-explorer/app/app-settings/theme-tab/green-module.png" alt="green module" class="no-border" >}}
 
 ### Ordering UI Resource Modules
 
@@ -41,4 +41,4 @@ When a module contains styling (SCSS/CSS), be sure it is added to the compiled C
 
 You can set an explicit order in the theme settings (**App Settings** > **Theme**). This contains a list of all modules that are marked as UI resource modules, and allows you to set the explicit order in which they are added to the CSS file. Note that the lower a module is ordered in the list, the higher its precedence. For example, an app that uses a company theme module could be ordered as follows:
 
-{{< figure src="/attachments/refguide/modeling/app-explorer/app/app-settings/app-theme-settings.png" alt="app theme settings" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/app-explorer/app/app-settings/theme-tab/app-theme-settings.png" alt="app theme settings" class="no-border" >}}
