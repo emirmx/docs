@@ -40,8 +40,8 @@ On the **Networks** tab of the **Private Connectivity** page, you can see all th
 
     * **Details**    
     <!-- * **Add DNS** -->
-	* **Add Agent**
-	<!-- * **Edit**
+    * **Add Agent**
+    <!-- * **Edit**
 	* **Delete** -->
 
 ### Adding a Network {#private-connectivity-networks-add}
@@ -71,7 +71,7 @@ To view and edit an existing network, follow these steps:
     * **Network** – The name you gave to the network. This field is editable.
     * **Network ID** – The internal ID of your network. You can copy this if, for example, you want to provide it in a support ticket for any issues with the network.
     * **External Agents** – A list of all external agents that run on your own internal infrastructure, and that have access to the network.    
-	  This field also displays the status of each agent.
+      This field also displays the status of each agent.
     <!-- * **DNS Details** – A list of domains for which you have [configured DNS](#private-connectivity-networks-dns). -->
     * **Environment Details** – A list of app environments that are using the network to connect to a resource, as well as the environment's status.
     <!-- * **Show Logs** – This allows you to see [the flow logs](https://tailscale.com/kb/1219/network-flow-logs) for your network. They can help you troubleshoot issues with connectivity on your network. -->
@@ -306,7 +306,7 @@ The page displays the following information for each resource:
 * **Status** – The status of the resource. This can be one of the following:
 
     * Enabled – Technical Contacts can request connections to the resource.
-	* Disabled – Technical Contacts cannot request connections to the resource.
+    * Disabled – Technical Contacts cannot request connections to the resource.
 
 * **Environments** – The number of app environments on Mendix Cloud that have an approved connection to the resource.
 
@@ -329,8 +329,8 @@ To view and edit a resource, follow these steps:
     * **Network** – The name of the network to which the agent exposing the resource is connected.
     * **Status** – The status of the resource. This can be one of the following:
 
-	    * **Enabled** – Users can request connections to the resource.
-	    * **Disabled** – Users cannot request connections to the resource.
+        * **Enabled** – Users can request connections to the resource.
+        * **Disabled** – Users cannot request connections to the resource.
 
     * **Environment Details** – A list of app environments that have an approved connection to the resource.
 
@@ -408,8 +408,8 @@ On the **Connections** tab of the **Private Connectivity** page, you can see all
 * **Status** – The status of the connection. This can be one of the following:
 
     * **Pending** – The connection was requested, but not yet approved. The app environment cannot connect to the resource using this connection.
-	* **Approved** – The connection is approved. The app environment can connect to the resource using this connection.
-	* **Rejected** – The connection is rejected. The app environment cannot connect to the resource using this connection.
+    * **Approved** – The connection is approved. The app environment can connect to the resource using this connection.
+    * **Rejected** – The connection is rejected. The app environment cannot connect to the resource using this connection.
 
     For details on how Technical Contacts request connections for a specific environment, refer to [Connecting to External Resources](/developerportal/deploy/connecting-to-external-resource/).
 
@@ -422,14 +422,14 @@ To view an existing connection, follow these steps:
 
     * **Request Details** – The details of the connections request:
 
-	    * **Name** – The name of the user that requested this connection.
-	    * **Status** – The status of the connection request. This can be one of the following:
+        * **Name** – The name of the user that requested this connection.
+        * **Status** – The status of the connection request. This can be one of the following:
 
-		    * **Pending** – The connection was requested, but not yet approved. The app environment cannot connect to the resource using this connection.
-		    * **Approved** – The connection is approved. The app environment can connect to the resource using this connection.
-		    * **Rejected** – The connection is rejected. The app environment cannot connect to the resource using this connection.
+            * **Pending** – The connection was requested, but not yet approved. The app environment cannot connect to the resource using this connection.
+            * **Approved** – The connection is approved. The app environment can connect to the resource using this connection.
+            * **Rejected** – The connection is rejected. The app environment cannot connect to the resource using this connection.
 
-	    * **Date** – The date and time when the connection was requested.
+        * **Date** – The date and time when the connection was requested.
 
     * **App** – The name of the app for the connection.
     * **Environment** – The name of the environment for the connection.
@@ -447,17 +447,19 @@ Once a connection is requested, it must be approved before the app environment c
 
 To approve a connection, follow these steps:
 
-1. On the **Connections** tab, find the connection you want to enable.
-2. Click **Approve**.
+1. In **Control Center**, access the **Entitlements** section, then go to the **Approval Requests** page.
+2. On the **Active Requests** tab, identify the connection you want to approve.
+3. Click **Approve**.
 
 {{% alert color="warning" %}}
-If this is the first connection that is approved for an app environment, the Technical Contact must [redeploy](/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/) the environment to be able to use the connection. 
+Approval of a connection does not automatically activate it. For every approved connection, the Technical Contact must [redeploy the environment](/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/) for it to become active and usable. 
 {{% /alert %}}
 
 To disable a connection, follow these steps:
 
-1. On the **Connections** tab, find the connection you want to disable.
-2. Click **Reject**.
+1. In **Control Center**, access the **Entitlements** section, then go to the **Approval Requests** page.
+2. On the **Active Requests** tab, identify the connection you want to reject.
+3. Click **Reject**.
 
 <!-- ## Activities
 

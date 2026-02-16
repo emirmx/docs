@@ -364,8 +364,13 @@ Deploy your application and log in with the application Admin account. Click **S
 #### Configuring Steps
 
 1. Navigate to the **Model Reflection**, select the required module from the left navigation pane, and select **Click to refresh** to synchronize entities and microflows. In version 4.x, refreshing the module is no longer required.
-2. In the **SP Configuration** tab, provide the necessary values and click **Save**. You need to complete this step before proceeding with IdP Configuration.
+2. In the **SP Configuration** tab, provide the necessary values and click **Save**. Complete this step before proceeding with IdP Configuration.
 3. In the IdP Configuration tab, click **New** and provide the necessary details. For more information on IdP configuration tabs, see the [Reference Guide for SAML IdP Configuration](/appstore/modules/saml/idp-attributes/) document.
+
+    {{% alert color="info" %}}
+The `SAML20.DefaultEntity` constant is used at runtime to prefill the default user provisioning entity when creating a new SAML IdP configuration, with `Administration.Account` set as the default value.
+{{% /alert %}}
+
 4. From version 4.0.0 of the SAML module, you have the option to download the SP Metadata from the **Encryption Settings** tab, **Identity Provider Metadata** tab, and at the end of the configuration process.
 
 #### Downloading and Uploading SP Metadata Manually
@@ -499,7 +504,8 @@ It is possible to customize this microflow to determine the correct user. Whiche
 #### CustomUserProvisioning {#customuserprovisioning}
 
 {{% alert color="info" %}}
-Starting from version 4.0.0 of the SAML module, the `CustomUserProvisioning` microflow is deprecated.
+Starting from version 4.0.0 of the SAML module, the `CustomUserProvisioning` microflow is deprecated. To show custom user-facing error messages, call `SAML20.ThrowSAMLFeedbackException` from a custom microflow (`UC_CustomProvisioning`) configured in the **Custom UserProvisioning** field of the **UserProvisioning** tab. For more information, refer to the [Custom User Provisioning at Runtime](/appstore/modules/saml/#custom-provisioning-rt) section above.
+
 {{% /alert %}}
 
 When selecting in the SSO configuration to run the `customUserProvisioning` action (previously known as `CustomLoginLogic`), you can update the new or retrieved user with additional information from the assertion. All the assertions are passed into the microflow in the parameter `AssertionAttributeList`, and these can be transformed and stored in the user record. Also, additional roles can be granted to the users based on the assertion attributes.

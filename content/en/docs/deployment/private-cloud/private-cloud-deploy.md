@@ -138,9 +138,9 @@ All environments are defined as production environments, which means that [secur
 
     There are three pre-defined sets of resources, **Small**, **Medium**, and **Large**. Choosing these will set the **CPU** and **Memory** values automatically.
 
-    | **Name** | **CPU cores**: Limit | **Memory (GB)**: Limit |  **Ephemeral Storage (GB)**: Limit | **CPU cores**: Request | **Memory (GB)**: Request | **Ephemeral Storage (GB)**: Request |
+    | **Name** | **CPU cores**: Limit | **Memory (GB)**: Limit | **Ephemeral Storage (GB)**: Limit | **CPU cores**: Request | **Memory (GB)**: Request | **Ephemeral Storage (GB)**: Request |
     | --- | --- | --- | --- | --- | --- | --- |
-    | Small | 1 | 0.5 | 1 | 0.1 |0.5 | 1 |
+    | Small | 1 | 0.5 | 1 | 0.1 | 0.5 | 1 |
     | Medium | 2 | 2 | 1 | 1 | 1 | 1 |
     | Large | 4 | 4 | 1 | 2 | 2 | 1 |
     | Custom | own choice | own choice | own choice | own choice | own choice | own choice |
@@ -545,7 +545,7 @@ If any of these garbage collection steps fail, you will no longer see the enviro
 
 ##### Deployment Strategy 
 
-Starting from Operator 2.20.0 onwards, it is now also possible to set the deployment strategy for an environment on the cluster details page. This stategy can be enabled by the cluster manager. This feature allows to update an app with reduced downtime by performing a rolling update. By default, it is set to Recreate strategy.
+Starting from Operator 2.20.0 onwards, it is now also possible to set the deployment strategy for an environment on the cluster details page. This strategy can be enabled by the cluster manager. This feature allows to update an app with reduced downtime by performing a rolling update. By default, it is set to Recreate strategy.
 
 ##### License Mendix{#license-mendix}
 
@@ -765,7 +765,7 @@ This workaround is only required for Mendix Operator versions below 1.10.0. Mend
 
 In some cases, your Mendix app will need to know its own URL – for example when using SSO or sending emails.
 
-For this to work properly, you need to set the [ApplicationRootUrl](/refguide/custom-settings/#general) **Custom Runtime Setting** in the **Runtime** tab to the app's URL.
+For this to work properly, you need to set the [ApplicationRootUrl](/refguide/custom-settings/#applicationrooturl-section) **Custom Runtime Setting** in the **Runtime** tab to the app's URL.
 
 To add this setting:
 
