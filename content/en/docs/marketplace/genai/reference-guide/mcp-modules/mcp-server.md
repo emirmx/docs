@@ -10,9 +10,9 @@ aliases:
 
 ## Introduction
 
-The [MCP Server](https://marketplace.mendix.com/link/component/240380) module provides easy low-code capability to set up MCP ([Model Context Protocol](/appstore/modules/genai/mcp/)) server within a Mendix app. An MCP server can seamlessly expose resources (such as tools or prompts) to other external AI applications that support MCP. The Mendix MCP Server module builds a bridge between Mendix and MCP client applications such as Claude Desktop, through the [MCP Java SDK](https://github.com/modelcontextprotocol/java-sdk). With the current implementation, it is possible to:
+The [MCP Server](https://marketplace.mendix.com/link/component/240380) module provides easy low-code capability to set up an MCP ([Model Context Protocol](/appstore/modules/genai/mcp/)) server within a Mendix app. An MCP server can seamlessly expose resources (such as tools or prompts) to other external AI applications that support MCP. The Mendix MCP Server module builds a bridge between Mendix and MCP client applications, such as Claude Desktop, through the [MCP Java SDK](https://github.com/modelcontextprotocol/java-sdk). With the current implementation, it is possible to:
 
-* Expose reusable prompts including the ability to use prompt parameters
+* Expose reusable prompts, including the ability to use prompt parameters
 * List and execute microflow implemented in the application as tools
 
 To use function calling within the same Mendix application and integrating to an LLM, consider [function calling](/appstore/modules/genai/function-calling/).
@@ -21,12 +21,12 @@ To use function calling within the same Mendix application and integrating to an
 
 The current version has the following limitations:
 
-* Tools can only return String values, either directly as String type or using the `TextContent` entity.
+* Tools can only return String values, either directly as a String type or using the `TextContent` entity.
 * Prompts can only return a single message.
 * Running an MCP Server is currently only supported on single-instance environments.
 
 {{% alert color="info" %}}
-Note that the MCP Server module is still in its early version and latest versions may include breaking changes. Since both the open-source protocol and the Java SDK are still evolving and regularly updated, these changes may also affect this module.
+Note that the MCP Server module is still in its early version, and the latest version may include breaking changes. Since both the open-source protocol and the Java SDK are still evolving and regularly updated, these changes may also affect this module.
 {{% /alert %}}
 
 ## Installation
@@ -39,7 +39,7 @@ If you start from a standard Mendix blank app, or have an existing project, you 
 
 ### Create MCP Server {#create-server}
 
-The `Create MCP Server` action initializes an MCP server in the Mendix runtime, creates and returns the `MCPServer` object. You can use the created `MCPServer` to add tools or prompts. The `Path` attribute determines how external systems can reach the MCP server, that means this value needs to be known to the the MCP Client (usually set in a configuration file). After the action gets triggered, the server becomes available for external clients to connect. Note that the path cannot be `mcp` and cannot end on `/mcp`, because those are reserved endpoints. 
+The `Create MCP Server` action initializes an MCP server in the Mendix runtime, creates and returns the `MCPServer` object. You can use the created `MCPServer` to add tools or prompts. The `Path` attribute determines how external systems can reach the MCP server, that means this value needs to be known to the MCP Client (usually set in a configuration file). After the action gets triggered, the server becomes available for external clients to connect. Note that the path cannot be `mcp` and cannot end on `/mcp`, because those are reserved endpoints. 
 
 Based on your use case, this action can be triggered manually by an admin if wrapped around a microflow accessible in the UI, via an after start-up microflow, or by any other microflow such as a scheduled event.
 
