@@ -38,7 +38,7 @@ The **Due date** section properties are described in the table below:
 
 ### Event Handlers {#event-handlers}
 
-**Event Handlers** section allows you to override the app-wide event handlers in the **App Settings** and to set workflow-specific event handlers that will be triggered when the workflow or its activities go through the transitions which warrant those workflow events. For more information on app-wide event handlers, see the [Events Handlers](/refguide/app-settings/#event-handlers) section in *App Settings*.
+**Event Handlers** section allows you to override the app-wide event handlers in the **App Settings** and to set workflow-specific event handlers that will be triggered when the workflow or its activities go through the transitions which warrant those workflow events. For more information on app-wide event handlers, see the [Events Handlers](/refguide/workflow-tab/#event-handlers) section in *App Settings*.
 
 An event handler has the following configuration:
 

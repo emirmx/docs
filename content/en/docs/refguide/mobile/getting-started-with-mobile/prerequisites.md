@@ -116,7 +116,7 @@ To troubleshoot issues related to the Make it Native app, see the sections below
 
 #### Port Issues
 
-Mendix recommends keeping the **Runtime port** in your [configuration](/refguide/configuration/#server) on **8080**. If you change it, do not change it to **8083**, because that is designated for app packaging.
+Mendix recommends keeping the **Runtime port** in your [configuration](/refguide/configurations-tab/#server) on **8080**. If you change it, do not change it to **8083**, because that is designated for app packaging.
 
 #### Wifi Network Settings
 
