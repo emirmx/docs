@@ -649,3 +649,27 @@ This configuration will produce logs similar to these:
 This will write logs to standard output in simple text format.
 
 [//]: # (<!-- markdownlint-enable no-duplicate-heading -->)
+
+### Request to Create New Log Subscriber in Open Telemetry Format
+
+```json
+{
+  "action": "create_log_subscriber",
+  "params": {
+    "type": "opentelemetry",
+    "name": "OpenTelemetrySubscriber",
+    "autosubscribe": "INFO"
+  }
+}
+```
+
+### Example Response
+
+```json
+{
+  "feedback": {},
+  "result": 0
+}
+```
+
+This will send logs to the registered OpenTelemetry collector. See [Tracing](/refguide/tracing-in-runtime/) for a guide on how to enable OpenTelemetry.

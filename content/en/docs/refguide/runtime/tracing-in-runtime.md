@@ -150,5 +150,5 @@ To use the OpenTelemetry Collector with Datadog, follow these steps:
 
 You can also collect metrics data (CPU load, memory, etc.) and logs with OpenTelemetry.
 
-* Please see [Metrics](https://docs.mendix.com/refguide/metrics/#opentelemetry) for a guide on how to setup Metrics with OpenTelemetry.
-* Please see [Monitoring Mendix Runtime](https://docs.mendix.com/refguide/monitoring-mendix-runtime/#request-to-create-new-log-subscriber-in-otel-format) for a guide on how to setup Logs with OpenTelemetry.
+* Please see [Metrics](/refguide/metrics/#opentelemetry) for a guide on how to setup Metrics with OpenTelemetry.
+* Please see [Monitoring Mendix Runtime](/refguide/monitoring-mendix-runtime/#request-to-create-new-log-subscriber-in-open-telemetry-format) for a guide on how to setup Logs with OpenTelemetry.
