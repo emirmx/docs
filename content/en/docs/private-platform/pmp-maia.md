@@ -80,37 +80,37 @@ To configure Maia to use your own Large Language Model, perform the following st
 
     * **Maia Appgen URL** - Enter the URL where Maia is installed. For more information, see [Private Mendix Platform Quick Start Guide: Installing Maia](/private-mendix-platform/quickstart/#maia).
     * **LLM Provider** - Select your LLM provider.
-    * **Small Text Model** - Enter one of the following models, depending on your chosen LLM:
+    * **Small Text Model** - Enter one of the following model IDs, depending on your chosen LLM:
 
-        * For AWS Bedrock Claude models, enter `<your regional model ID>.anthropic.claude-haiku-4-5-20251001-v1:0`
+        * For AWS Bedrock Claude models, enter `<your region prefix>.anthropic.claude-haiku-4-5-20251001-v1:0`
         * For Anthropic models, enter `claude-haiku-4-5-20251001`
         * For Azure models, enter `o3-mini`
         * For OpenAI models, enter `gpt-5-mini-2025-08-07`
 
-    * **Small Files Model** - Enter one of the following models, depending on your chosen LLM:
+    * **Small Files Model** - Enter one of the following model IDs, depending on your chosen LLM:
 
-        * For AWS Bedrock Claude models, enter `<your regional model ID>.anthropic.claude-haiku-4-5-20251001-v1:0`
+        * For AWS Bedrock Claude models, enter `<your region prefix>.anthropic.claude-haiku-4-5-20251001-v1:0`
         * For Anthropic models, enter `claude-haiku-4-5-20251001`
         * For Azure models, enter `o3-mini`
         * For OpenAI models, enter `gpt-5-mini-2025-08-07`
 
-    * **Large Text Model** - Enter one of the following models, depending on your chosen LLM:
+    * **Large Text Model** - Enter one of the following model IDs, depending on your chosen LLM:
 
-        * For AWS Bedrock Claude models, enter `<your regional model ID>.anthropic.claude-sonnet-4-5-20250929-v1:0`
+        * For AWS Bedrock Claude models, enter `<your region prefix>.anthropic.claude-sonnet-4-5-20250929-v1:0`
         * For Anthropic models, enter `claude-opus-4-6`
         * For Azure models, enter `o3-mini`
         * For OpenAI models, enter `gpt-5-mini-2025-08-07`     
 
-    * **Large Files Model** - Enter one of the following models, depending on your chosen LLM:
+    * **Large Files Model** - Enter one of the following model IDs, depending on your chosen LLM:
 
-        * For AWS Bedrock Claude models, enter `<your regional model ID>.anthropic.claude-sonnet-4-5-20250929-v1:0`
+        * For AWS Bedrock Claude models, enter `<your region prefix>.anthropic.claude-sonnet-4-5-20250929-v1:0`
         * For Anthropic models, enter `claude-opus-4-6`
         * For Azure models, enter `o3-mini`
         * For OpenAI models, enter `gpt-5-mini-2025-08-07`  
 
-    * **Fallback Model** - Enter one of the following models, depending on your chosen LLM:
+    * **Fallback Model** - Enter one of the following model IDs, depending on your chosen LLM:
 
-        * For AWS Bedrock Claude models, enter `<your regional model ID>.anthropic.claude-sonnet-4-20250514-v1:0`
+        * For AWS Bedrock Claude models, enter `<your region prefix>.anthropic.claude-sonnet-4-20250514-v1:0`
         * For Anthropic models, enter `claude-opus-4-6`
         * For Azure models, enter `o3-mini`
         * For OpenAI models, enter `gpt-5-mini-2025-08-07`
@@ -118,5 +118,5 @@ To configure Maia to use your own Large Language Model, perform the following st
     * **API Key** - Specify your secret source.
 
 {{% alert color="info" %}}
-For AWS Bedrock Claude models, the regional model ID is the same as for inference models, for example, `eu`.
+For AWS Bedrock Claude models, the region prefix is the same as for inference profile IDs, for example, `eu`.
 {{% /alert %}}
