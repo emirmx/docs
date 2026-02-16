@@ -176,7 +176,7 @@ Every end-user that is known in **Admin** module also needs to be known in the O
     1. **Edit** the **Administrator** module role.
     1. Give **Read** **Access rights** to the **AccountDetail_Account** association.
 1. Open the **Runtime** tab of the app's **Settings**.
-1. Add the **OpenIDConnectProvider.ASU_Start_All** microflow as an [After Startup](/refguide/runtime-tab/) microflow.
+1. Add the **OpenIDConnectProvider.ASU_Start_All** microflow as an [After Startup](/refguide/runtime-tab/#after-startup) microflow.
 1. Finally, ensure that your app has the following Administration navigation items:
 
     | Caption | Action | User Roles |
