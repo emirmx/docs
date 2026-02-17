@@ -234,6 +234,8 @@ Ensure that you have allocated the following user roles to the OIDC module and U
 | Anonymous | OIDC.Anonymous (optional) |
 | User | OIDC.User |
 
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/user-roles.png" >}}
+
 ### Allowing Anonymous User Role 
 
 #### User Roles for Single IdP
@@ -244,7 +246,7 @@ If a single Identity Provider (IdP) is configured in the OIDC SSO module, end-us
 
 The OIDC module supports multiple OIDC/OAuth-compatible IdPs. Optionally, if you allow your end-users to choose from multiple IdPs, or to have the option to log back into the app after they have logged out, you will need to give them access to the app before they have signed in to the app. Therefore, you need to give anonymous users access to your app.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/user-roles.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/user-roles-anonymous.png" class="no-border" >}}
 
 In the **Anonymous** tab of the app security settings, do the following:
 
