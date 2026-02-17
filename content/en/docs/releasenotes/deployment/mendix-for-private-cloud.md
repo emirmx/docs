@@ -15,15 +15,17 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 ### February 19, 2026
 
 #### Portal Improvements
-* Integrated business events in Portunus to synchronize technical contacts with Sprintr and the Private Cloud Portal.
-* Added support for customers to rotate cluster credentials.
-* Added an option to enable leaderless mode, available with Mendix 10.24 or later support.
-* Fixed an issue where logs were missing for new Custom Core Resource Plan creation and deletion in Portunus and audit logs.
-* Improve "core resources" configuration experience
-* Added automated deletion of activity log records older than one year.
+
+* Integrated business events in Portunus now synchronize technical contacts with Apps and the Private Cloud Portal.
+* We have added support for customers to rotate cluster credentials.
+* We have added an option to enable leaderless mode. This option is supported for Studio Pro 10.24 and newer.
+* We have fixed an issue where creating and deleting custom core resource plans was not logged in Portunus and audit logs.
+* We have improved the user experience for core resources configuration.
+* We have added the option to automatically delete activity log records older than one year.
 
 ### Deploy API
-* Added capability to retrieve all environments within a namespace.
+
+* We have added the capability to retrieve all environments within a namespace.
 
 ### February 5, 2026
 
