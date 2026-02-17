@@ -20,7 +20,7 @@ For brevity we will call these time zones user time, UTC and server time.
 
 ## Changes
 
-The server needs to know the time zone of each user. Unfortunately, the web browser cannot report this information. It only reports the current offset to UTC. This is not enough to determine the exact time zone and properly deal with daylight saving time of future and past dates. For this reason web applications often offer you the option of setting your time zone and we have now built this option into Mendix, too. You can explicitly set a time zone for each user and this time zone is then used for server operations.
+The server needs to know the time zone of each user. On startup, the browser reports both the current offset to UTC and, when available, a time zone identifier (for example, `Europe/Amsterdam`) from the underlying platform. The runtime prefers the identifier to properly handle daylight saving time for future and past dates; if no identifier is available, it falls back to the offset. You can explicitly set a time zone for each user, and that configured value takes precedence for server operations.
 
 The entity TimeZone has been added to the System module along with an association between User and TimeZone. The TimeZone entity has three attributes: a code (based on the Olson database), a description suitable for showing to the user ("(GMT-05:00) New York") and a raw offset that is using for sorting the list of time zones.
 
@@ -34,7 +34,7 @@ To make use of the new date/time handling you have to take some action after con
 
 ### Single Time Zone App
 
-If you do nothing in a single time zone app where the server is also in that time zone the situation for server operations is actually slightly worse than before. Users will not have a time zone and if that is the case the server uses the current offset from UTC sent by the web browser. This offset is not enough to determine the exact time zone and this means that daylight saving time (DST) will not be taken into account. In practice this means that dates and times in the future and past - past DST changes - are one hour off.
+If you do nothing in a single time zone app where the server is also in that time zone the situation for server operations depends on what the browser can report. Users will not have a time zone and the server will use the time zone identifier reported by the browser when available, or otherwise the current offset from UTC. When only the offset is available, daylight saving time (DST) will not be taken into account. In practice this means that dates and times in the future and past - past DST changes - are one hour off.
 
 To make sure that all users have their time zone set, you have to set the default time zone in the app settings in Studio Pro. When the application is started again all existing users will get this default time zone. Also, when new users are created they will also get this default time zone automatically.
 
@@ -42,11 +42,11 @@ In summary, in a single time zone app all you have to do is to set the default t
 
 ### Multiple Time Zone App
 
-If you do nothing in a multiple time zone app the situation for server operations improves automatically. Before, the server time zone would be used for operations like generating Excel exports and other documents. This meant that if a user in China generated a report and the server was in the United States dates and times would be way off. The server will at least use the browser's UTC offset. Only daylight saving time will not be handled properly yet. To get proper DST handling as well, the time zone of users needs to be set.
+If you do nothing in a multiple time zone app the situation for server operations improves automatically. Before, the server time zone would be used for operations like generating Excel exports and other documents. This meant that if a user in China generated a report and the server was in the United States dates and times would be way off. The server will use the time zone identifier reported by the browser when available, or otherwise the current UTC offset. When only the offset is available, daylight saving time will not be handled properly yet. To get proper DST handling in all cases, the time zone of users needs to be set.
 
 There are several things you can do in a multiple time zone app:
 
-* Nothing. If you do nothing server operations will use the user's current UTC offset and this is a reasonable approximation of actually setting the time zone. Only DST will not be handled properly.
+* Nothing. If you do nothing server operations will use the browser's reported time zone identifier when available, or otherwise the current UTC offset. Only when the offset is used will DST not be handled properly.
 * Allow the users to set their own time zone. Add the time zone reference selector to the page with which users can manage their own account, by default MyAccount in Administration. When doing this, take note that a time zone will only effectively be updated after a user logged out and back in.
 * The administrator sets the time zone. Add the time zone reference selector to the page with which the administrator manages accounts, by default Account_NewEdit in Administration. If the application does not have too many users this is a viable solution.
 * Automatically set the time zone by using a microflow. If your application is used in few time zones and you can automatically determine which users should which time zone you can write an after startup microflow to set the time zones. For example, if the application is used in the United States and in the Netherlands and all users in the United States have their language set to American English and all users in the Netherlands have their language set to Dutch a microflow can loop through all users and set the time zone based on the language code of the user.
@@ -57,7 +57,7 @@ Do NOT use the default time zone setting in Studio Pro for multiple time zone ap
 
 ## Anonymous users
 
-If your application is accessible without signing in, those anonymous users will get the default time zone that is set in Studio Pro. If no time zone is set in Studio Pro they will use the offset reported by the browser. Only DST for dates in the future and past will not be handled properly.
+If your application is accessible without signing in, those anonymous users will get the default time zone that is set in Studio Pro. If no time zone is set in Studio Pro they will use the time zone identifier reported by the browser when available, or otherwise the offset. Only when the offset is used will DST for dates in the future and past not be handled properly.
 
 ## To Localize or Not to Localize
 
