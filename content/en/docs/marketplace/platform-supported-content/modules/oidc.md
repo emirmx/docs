@@ -231,18 +231,20 @@ Ensure that you have allocated the following user roles to the OIDC module and U
 | User Role | OIDC Module Role |
 | --- | --- |
 | Administrator | OIDC.Administrator, UserCommons.Administrator |
-| Anonymous | OIDC.Anonymous (for multiple IdPs only) |
+| Anonymous | OIDC.Anonymous (optional) |
 | User | OIDC.User |
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/user-roles.png" class="no-border" >}}
+### Allowing Anonymous User Role 
 
-### User Roles for Single IdP
+#### User Roles for Single IdP
 
 If a single Identity Provider (IdP) is configured in the OIDC SSO module, end-users can be authenticated via the URL `https://<your-app-url>/oauth/v2/login` This means you do not need to configure the *Anonymous* user role for a single IdP.
 
-### Allowing Anonymous Users for Multiple IdPs (Optional)
+#### Allowing Anonymous Users for Multiple IdPs (Optional)
 
 The OIDC module supports multiple OIDC/OAuth-compatible IdPs. Optionally, if you allow your end-users to choose from multiple IdPs, or to have the option to log back into the app after they have logged out, you will need to give them access to the app before they have signed in to the app. Therefore, you need to give anonymous users access to your app.
+
+{{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/user-roles.png" class="no-border" >}}
 
 In the **Anonymous** tab of the app security settings, do the following:
 
@@ -251,13 +253,13 @@ In the **Anonymous** tab of the app security settings, do the following:
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/anonymous-user.png" class="no-border" >}}
 
-{{% alert color="info" %}}
-For multiple IdPs, you may have to add the *Anonymous* user role if it does not exist already.
-{{% /alert %}}
-
 {{% alert color="warning" %}}
 Enabling anonymous users introduces a broader attack surface. If you choose this option, follow Mendix guidelines for [setting up anonymous user security](/howto/security/set-up-anonymous-user-security/) to mitigate potential risks.
 {{% /alert %}}
+
+### Excluding Anonymous User Role
+
+If you do not want to enable anonymous user, you can use single or multiple IdPs using the login endpoint `oauth/v2/login`, and you will be landed on the IdP's login page.
 
 ### Configuring Navigation{#configure-nav}
 
