@@ -54,7 +54,7 @@ You can test the tracing using [Jaeger](https://www.jaegertracing.io/) or [Grafa
 
 For Jaeger, you can use the all-in-one binary or Docker image. Jaeger will listen to endpoint `http://localhost:4318/v1/traces` by default.
 
-For Grafana, you can use the all-in-one Docker image `grafana/otel-lgtm`. After starting it with below command it will listen to the endpoint `http://localhost:4318/v1/traces`.
+For Grafana, you can use the all-in-one Docker image `grafana/otel-lgtm`. After starting it with the following command, it will listen to the endpoint `http://localhost:4318/v1/traces`.
 
 ```
 docker run --name otel-grafana -d -p 3000:3000 -p 4317:4317 -p 4318:4318 grafana/otel-lgtm
@@ -69,7 +69,7 @@ The following settings are supported by the Mendix runtime. See [Configure the S
 You can configure the Java Agent through system properties which can be added to the **Extra JVM parameters** field (for example, `-Dotel.exporter.otlp.traces.endpoint`), or set through environment variables. 
 
 | Name | Description | Default |
-|------|-------------|---------|
+| ---- | ----------- | ------- |
 | `otel.service.name` | The name of the service. | `runtimelauncher` |
 | `otel.resource.attributes` | Extra resource attributes to include in every span. Example: `attribute1=value1,attribute2=value2` | |
 | `otel.traces.exporter` | Comma-separated list of span exporters. Supported values are: `otlp`, `console`, `logging-otlp`, and `none`. | `otlp` |
@@ -148,7 +148,7 @@ To use the OpenTelemetry Collector with Datadog, follow these steps:
 
 ## Include Metrics and Logs in OpenTelemetry
 
-You can also collect metrics data (CPU load, memory, etc.) and logs with OpenTelemetry.
+You can also collect metrics data (CPU load, memory, etc.) and logs using OpenTelemetry.
 
-* Please see [Metrics](/refguide/metrics/#opentelemetry) for a guide on how to setup Metrics with OpenTelemetry.
-* Please see [Monitoring Mendix Runtime](/refguide/monitoring-mendix-runtime/#request-to-create-new-log-subscriber-in-open-telemetry-format) for a guide on how to setup Logs with OpenTelemetry.
+* See the [OpenTelemetry](/refguide/metrics/#opentelemetry) section of *Metrics* for a guide on how to setup Metrics with OpenTelemetry.
+* See [Request to Create New Log Subscriber in Open Telemetry Format](/refguide/monitoring-mendix-runtime/#new-log-sub-opentelemetry) in *Monitoring Mendix Runtime* for a guide on how to setup Logs with OpenTelemetry.
