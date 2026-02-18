@@ -28,15 +28,13 @@ This defines the prop `key` in the client component props which are supplied to 
 
 #### AllowUpload (Optional) {#allow-upload}
 
-This optional attribute is only applicable for properties of type [file](#file) and [image](#image) and has a default value of `false`. By setting this attribute to `true` a user can use the upload capabilities by passing  `EditableFileValue<FileValue>` and `EditableImageValue<ImageValue>` as props to a client component. Using `false` is used for legacy `DynamicValue<File>` and `DynamicValue<ImageValue>`.
+This optional attribute is only applicable for properties of type [file](#file) and [image](#image), and has a default value of `false`. By setting this attribute to `true`, a user can use the upload capabilities by passing  `EditableFileValue<FileValue>` and `EditableImageValue<ImageValue>` as props to a client component. Using `false` is used for legacy `DynamicValue<File>` and `DynamicValue<ImageValue>`.
 
 {{% alert color="warning" %}}
-Optional attribute `allowUpload` will be deprecated as of Mx 12. After Mx 12 such `file` and `image` will have by default editing capabilities and users will not be able to use the legacy behavior.
-
-After Mx 12, the attribute won't be taken into account during the property evaluation, and legasy functionality won't be available.
+The optional attribute `allowUpload` will be deprecated as of Mx 12. After Mx 12, `file` and `image` will have by default editing capabilities, and users will not be able to use the legacy behavior.
 {{% /alert %}}
 
-#### Type (required)
+#### Type (Required)
 
 This defines a property's type. A `type` must be one of the following: 
 
@@ -267,12 +265,12 @@ Then the Studio Pro UI for the component appears like this:
 
 ### Image {#image}
 
-Image allows a user to configure an image from an object that is a specialization of **System.Image**. It is passed as an [`EditableImageValue<ImageValue>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#editable-image-value) prop to a client component. See the [Images Reference Guide](/refguide/images/) for more information about supported image formats.
+Image allows a user to configure an image from an object that is a specialization of **System.Image**. It is passed as an [`EditableImageValue<ImageValue>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#editable-image-value) prop to a client component. For more information about supported image formats, see the [Images Reference Guide](/refguide/images/).
 
-The user can use the optional attribute [`allowUpload`](#allow-upload) with default value `false` to use the legasy [`Dynamic<FileValue>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#filevalue) prop. Beware of behavioral differences based on the `allowUpload` attribute.
+The user can use the optional attribute [`allowUpload`](#allow-upload) with default value `false` to use the legacy [`Dynamic<FileValue>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#filevalue) prop. Beware of behavioral differences based on the `allowUpload` attribute.
 
 {{% alert color="warning" %}}
-Optional attribute `allowUpload` will be deprecated as of Mx 12. After Mx 12 such `image` will have by default editing capabilities and users will not be able to use the legacy behavior.
+The optional attribute `allowUpload` will be deprecated as of Mx 12. After Mx 12, `image` will have by default editing capabilities and users will not be able to use the legacy behavior.
 {{% /alert %}}
 
 #### XML Attributes
@@ -714,10 +712,10 @@ Then the Studio Pro UI for the property appears like this:
 
 The file property type allows a user to configure and edit a file from and to an object that is a specialization of **System.File**. It is passed as a [`EditableFileValue<FileValue>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#editable-file-value) prop to a client component.
 
-The user can use the optional attribute [`allowUpload`](#allow-upload) with default value `false` to use the legasy [`Dynamic<FileValue>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#filevalue) prop. Beware of behavioral differences based on the `allowUpload` attribute.
+The user can use the optional attribute [`allowUpload`](#allow-upload) with default value `false` to use the legacy [`Dynamic<FileValue>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#filevalue) prop. Beware of behavioral differences based on the `allowUpload` attribute.
 
 {{% alert color="warning" %}}
-Optional attribute `allowUpload` will be deprecated as of Mx 12. After Mx 12 such `file` will have by default editing capabilities and users will not be able to use the legacy behavior.
+The optional attribute `allowUpload` will be deprecated as of Mx 12. After Mx 12, `file` will have by default editing capabilities and users will not be able to use the legacy behavior.
 {{% /alert %}}
 
 #### XML Attributes
