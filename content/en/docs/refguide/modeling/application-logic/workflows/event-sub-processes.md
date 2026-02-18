@@ -171,12 +171,13 @@ The `WorkflowSubProcess` entity represents a specific runtime instance of an eve
 
 The `WorkflowSubProcessState` enumeration defines the possible lifecycle phases of a sub-process instance:
 
-| Caption | Name | Description |
-| --- | --- | --- |
-| In progress | `InProgress` | The sub-process has been triggered and is currently executing. |
-| Aborted | `Aborted` | Execution was terminated, either because the parent workflow was aborted or due to an interrupting event. |
-| Failed | `Failed` | Execution ended unsuccessfully because an activity within the sub-process encountered an error. |
-| Completed | `Completed` | The sub-process reached its end event and finished successfully. |
+| Caption     | Name         | Description                                                                                               |
+|-------------|--------------|-----------------------------------------------------------------------------------------------------------|
+| In progress | `InProgress` | The sub-process has been triggered and is currently executing.                                            |
+| Aborted     | `Aborted`    | Execution was terminated, either because the parent workflow was aborted or due to an interrupting event. |
+| Failed      | `Failed`     | Execution ended unsuccessfully because an activity within the sub-process encountered an error.           |
+| Completed   | `Completed`  | The sub-process reached its end event and finished successfully.                                          |
+| Paused      | `Paused`     | The sub-process was paused because the parent workflow was paused.                                        |
 
 ## Read more
 
