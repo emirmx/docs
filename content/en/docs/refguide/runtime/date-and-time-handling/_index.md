@@ -6,14 +6,14 @@ description: "Describes date and time handling for a Mendix application."
 
 ## Introduction
 
-The Mendix Server operations use the time zone of the end-user instead of the server time zone, where possible. This ensures that operations like generating documents, exporting to Excel/CSV, and date computations in microflows/OQL do not contain unexpected results.
+The Mendix Server operations use the time zone of the end-user instead of the server time zone, where possible. This ensures that operations like generating documents, exporting to Excel/CSV, and date computations in microflows/OQL do not produce unexpected results.
 
 ## Relevant Time Zones
 
 There are three time zones that come into play in a Mendix application:
 
 1. User/client – The time zone where the client is running. This is used for presenting dates and times to the end-user. The time zone is now (optionally) stored with each end-user to properly deal with daylight saving time (DST). If the time zone is not set, DST is not applied.
-2. Coordinated Universal Time (UTC) – The platform stores all dates in UTC. This is a time standard that is often used in servers to provide an unambiguous date format. It does not change with DST. Every time a date or time is presented to the end-user it is localized to the time zone of the client unless specified differently.
+2. Coordinated Universal Time (UTC) – The platform stores all dates in UTC. This is a time standard that is often used in servers to provide an unambiguous date format. It does not change with DST, nor with where you are in the world. Every time a date or time is presented to the end-user it is localized to the time zone of the client unless specified differently.
 3. Server – The time zone that the server is running in is only used for scheduling the time at which scheduled events run. When defining a scheduled event you can choose whether you want to use server time or UTC time. For everything else, the server time is irrelevant.
 
 For brevity we will call these time zones user time, UTC, and server time.
@@ -28,13 +28,13 @@ In the `Administration` module, the `Account_NewEdit` page adds a time zone sele
 
 Studio Pro adds a setting to the **App Settings** dialog box. On the **Runtime** tab you can specify a **Default time zone**. This time zone is used for new end-users, but it is also applied to all end-users that do not have a time zone yet when starting your application.
 
-## Existing App
+## Configuring Your App
 
-To make use of the date/time handling you have to take some action after converting your existing app. Those actions depend on the type of the app: single time zone or multiple time zone. In a single time zone app all end-users are in the time zone or they are at least willing to use the same time zone. The time zone of the server is not important, so an app is still single time zone if all end-users are in the Netherlands but the server is in England. Multiple time zone apps have end-users in different time zones. Let us see what you need to do in each case.
+To make use of the date/time handling you have to take some action when configuring your app. Those actions depend on the type of the app: single time zone or multiple time zone. In a single time zone app all end-users are in the time zone or they are at least willing to use the same time zone. The time zone of the server is not important, so an app is still single time zone if all end-users are in the Netherlands but the server is in England. Multiple time zone apps have end-users in different time zones. Let us see what you need to do in each case.
 
 ### Single Time Zone App
 
-If you do nothing in a single time zone app where the server is also in that time zone the date and time used for server operations depends on what the browser can report. End-users will not have a time zone and the server will use the time zone identifier reported by the browser when available, or otherwise the current offset from UTC. When only the offset is available, DST will not be taken into account. In practice this means that dates and times during daylight savings, including past and future dates, are one hour off.
+If you do nothing in a single time zone app where the server is also in that time zone the date and time used for server operations depends on what the browser can report. The server will use the time zone identifier reported by the end-user's browser when available, or otherwise the current offset from UTC. When only the offset is available, DST will not be taken into account. In practice this means that dates and times during daylight savings, including past and future dates, are one hour off.
 
 To make sure that all end-users have their time zone set, set the default time zone in the app settings in Studio Pro. When the application is restarted all existing end-users will get this default time zone. When new end-users are created they also get this default time zone.
 
