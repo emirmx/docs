@@ -17,7 +17,7 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 #### Portal Improvements
 
 * Integrated business events in Portunus now synchronize technical contacts with Apps and the Private Cloud Portal.
-* We have added support for customers to rotate cluster credentials.
+* We have added support for customers to easily rotate cluster credentials (that is, replace the Agent secret with a new one).
 * We have added an option to enable leaderless mode. This option is supported for Studio Pro 10.24 and newer.
 * We have fixed an issue where creating and deleting custom core resource plans was not logged in Portunus and audit logs.
 * We have improved the user experience for core resources configuration.
