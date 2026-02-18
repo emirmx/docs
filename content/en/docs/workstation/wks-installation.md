@@ -201,7 +201,7 @@ Invite and manage members of a Workspace on the Team page. Only users who have s
     * Reading and editing configurations
     * Managing the team
     * (De-)Registering computers to stations
-    * Refreshing computers
+    * Refreshing computer configurations
     * Managing bulk registration tokens
     * Managing workspace settings
     * Deleting a workspace or transfering ownership to a new owner
@@ -217,7 +217,7 @@ Invite and manage members of a Workspace on the Team page. Only users who have s
 
     * Viewing and editing station configurations
     * (De-)Registering computers to stations
-    * Refreshing computers
+    * Refreshing computer configurations
     * Managing bulk registration tokens
     * Exporting and importing stations (single and in bulk)
     * Linking imported stations to existing workspace apps. 
@@ -226,7 +226,7 @@ Invite and manage members of a Workspace on the Team page. Only users who have s
 
     * Viewing configurations without editing them
     * (De-)Registering computers to stations
-    * Refreshing computers
+    * Refreshing computer configurations
     * Viewing bulk registration tokens
     * Exporting stations (single and in bulk).
 
