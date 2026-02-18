@@ -73,6 +73,7 @@ Follow these steps to have Maia plan and generate an app for you:
     You can remove stories by hovering over them, then clicking the trash can icon.    
     You can click the card itself to see the entire list of stories for an epic in the right side panel. For each story, click the context menu to edit or remove the story.
 
+7. Once you are happy with Maia's suggested project plan, click **Open in Studio Pro** in the top right of the page. The new app opens in Studio Pro, allowing you to work on the specifics. 
 
 ### Creating an App from a Starter App Template
 
