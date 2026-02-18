@@ -39,6 +39,6 @@ Each user role should correspond to only one module role per module. In other wo
 
 Always store secret information in a safe place. A safe place is the database. Use the [Encryption](https://marketplace.mendix.com/link/component/1011) module to encrypt, store, retrieve, and decrypt the information.
 
-You can also store [private constants](/refguide/configuration/#constants) in configurations. These are encrypted and stored on your local machine so will not be shared with others.
+You can also store [private constants](/refguide/configurations-tab/#constants) in configurations. These are encrypted and stored on your local machine so will not be shared with others.
 
 Using either the default value of a constant or the project's shared configuration settings is unsafe. Both these places are readable by others and visible in the version management copies. 
