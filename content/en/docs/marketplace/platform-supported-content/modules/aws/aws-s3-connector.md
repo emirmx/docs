@@ -43,6 +43,10 @@ Follow the instructions in [How to Use Marketplace Content](/appstore/use-conten
 
 After you install the connector, you can find it in the **App Explorer**, in the **AmazonS3Connector** section. The connector provides a [domain model and several activities](#technical-reference) that you can use to connect your app to Amazon S3. Each activity can be implemented by using it in a microflow. To ensure that your app can connect to the AWS service, you must also configure AWS authentication for the connector.
 
+{{% alert color="info" %}}
+If you are using [Outgoing Connections Safelisting](/developerportal/deploy/environments-details/#connection-safelist) on Mendix Cloud Dedicated, make sure to safelist AWS S3 IPs.
+{{% /alert %}}
+
 ### Configuring AWS Authentication
 
 In order to use the Amazon S3 service, you must authenticate with AWS. To do so, you must set up a configuration profile in your Mendix app. After you set up the configuration profile, the connector module handles the authentication internally.
@@ -121,12 +125,12 @@ For additional reference, the available activities are listed below.
 The Amazon S3 connector contains the following activities:
 
 * `CreateBucket` - Create a new S3 Bucket. 
-* `PutObject` - Put an object into a specified S3 bucket.
+* `PutObject` - Put an object into a specified S3 bucket. Optional: You can attach `PutObjectClientsideEncryptionConfig` to the call if you want to encrypt your file.
 * `DeleteObject` - Delete an object from a specified S3 bucket.
 * `ListBuckets` - Retrieve a list of all buckets in your Amazon S3 environment.
 * `ListObjects` - Retrieve a list of the metadata of the objects for a specified bucket in your Amazon S3 environment.
 * `DeleteBucket` - Delete a bucket.
-* `GetObject` - Get an object from the s3 simple storage service. 
+* `GetObject` - Get an object from the s3 simple storage service. Optional: You can attach `GetObjectClientsideEncryptionConfig` to the call if you want to decrypt your file.
 * `CopyObject` - Copy an s3 object placed within a bucket or prefix to an other bucket or prefix.
 * `MoveObject` - Move an s3 object between buckets or prefixes.
 * `GeneratePresignedUrl` - Presign a request and generates and returns the presigned url.

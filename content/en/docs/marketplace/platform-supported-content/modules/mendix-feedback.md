@@ -12,7 +12,7 @@ This document is for the Mendix Feedback module which is compatible with Studio 
 
 If you are using the deprecated Mendix Feedback widget (compatible with Studio Pro 8.6.0 and above), see the [Legacy Feedback Widget Docs](#legacy-feedback-docs) sections below.
 
-All [Mendix Feedback](https://marketplace.mendix.com/link/component/199/) widgets with versions lower than 8.4.0 are disabled as of October 1, 2022. If you are using one of these versions, [upgrade your current Mendix Feedback widget with the latest version of this module](#upgrade).
+All Mendix Feedback widgets with versions lower than 8.4.0 are disabled as of October 1, 2022. If you are using one of these versions, [upgrade your current Mendix Feedback widget with the latest version of this module](#upgrade).
 
 Mendix recommends using the newer Mendix Feedback module, as the deprecated Feedback widget will no longer receive regular updates.
 {{% /alert %}}
@@ -50,7 +50,7 @@ Typically, feedback module usage has the following flow:
 
 * This module is compatible with Studio Pro 9.18.6 or higher.
 * [Atlas Core](https://marketplace.mendix.com/link/component/117187) is required to apply the styling.
-* In native mobile apps, some of the feedback metadata such as username, email address, and document name will be hard-coded, as they cannot be retrieved dynamically (to address this you can use the [Native Feedback widget](/appstore/modules/native-mobile-resources/) instead, located in [Native Mobile Resources](https://marketplace.mendix.com/link/component/109513)).
+* In native mobile apps, some of the feedback metadata, such as username, email address, and document name, will be hard-coded, as it cannot be retrieved dynamically.
 
 ## Installation
 
@@ -78,15 +78,17 @@ To configure the Feedback widget, double-click it to open the **Edit Feedback** 
 
 * **Configuration** tab
     * **Model pop-up type** – This controls what happens once you click the **Feedback** button. By default, it opens the **Share Feedback** page. If you select **Custom**, you can select a different **On click** action.
-    * **App ID** – This is the unique identifier of your app. You can find it under **Project ID** in your app’s [General Settings](/developerportal/collaborate/general-settings/) in Apps.
+    * **App ID** – This is the unique identifier of your app. You can find it under **Project ID** in your app’s [Settings](/developerportal/general-settings/) in Apps.
     
         {{% alert color="info" %}}The original value of **App ID** is *1*, but this value should automatically change to your correct app ID. If it does not change automatically, see [Updating App ID](#update-app-id) below.
         {{% /alert %}}
         
-    * **Show advanced settings** – The advanced settings control html2canvas, a backup screen capture tool the Mendix Feedback widget uses when the default browser screenshot tool fails. By default, this is set to **No**. If you select **Yes**, the following items appear:
+    * **Show advanced settings** – These advanced settings allow you to customize where the widget renders and how screenshots are captured when the default behavior does not work as expected. By default, this is set to **No**. If you select **Yes**, the following items are displayed:
       
+        * **Target container selector** – This allows you to manually choose where the feedback widget is displayed within the app. To do that, add a CSS selector here to specify the location.    
+            By default, this field is set to `.mx-scrollcontainer-center`.
         * **Enable object rendering** – By default, this is set to **No**. Only select **Yes**, when you experience problems with creating screenshots. Then it will enable the `foreignObjectRendering` method which helps rendering complex HTML, including styles, SVGs, and embedded elements.
-        * **CSS scrollable area**– If your app does not use the default scrolling behavior in Studio Pro, the screenshot feature may not work correctly. You can add a CSS selector here to specify which element on your page scrolls the content.
+        * **CSS scrollable area** – If your app does not use the default scrolling behavior in Studio Pro, the screenshot feature may not work correctly. You can add a CSS selector here to specify which element on your page scrolls the content.
 * **Customize Button** tab
     * **Feedback and screenshot button labels** – These are the labels for the buttons on the feedback form. You can change the captions for those button here.
     * **Feedback Button Styling** – This controls how the **Feedback** button is rendered. There are three options:
@@ -143,7 +145,7 @@ If you are using MendixSSO3 for authentication, after upgrading to the module yo
 
 The value of the **App ID** on the **Project** tab will be changed to your correct app ID automatically from the original value 1. 
 
-If it did not change to your app ID because of an unexpected error, you can update the app ID manually. You can find the app ID in your app's [Settings](/developerportal/collaborate/general-settings/) in [Apps](https://sprintr.home.mendix.com/).
+If it did not change to your app ID because of an unexpected error, you can update the app ID manually. You can find the app ID in your app's [Settings](/developerportal/general-settings/) in [Apps](https://sprintr.home.mendix.com/).
 
 ### Feedback Item Does Not Show in Apps
 
@@ -180,13 +182,13 @@ To show the Feedback button, do as follows:
 2. In your **Apps** [navigation pane](/developerportal/#navigation-pane), go to **Environments**.
 3. Go to the environment where you want to fix this issue and click **Details** ({{% icon name="notes-paper-edit" %}}) by the environment you want to view.
 4. Go to the **Network** tab.
-5. Under **HTTP Headers**, select **Content-Secutiry-Policy** and click **Edit**.
-6. Add the following code: `img-src: blob:;`.
+5. Under **HTTP Headers**, select **Content-Security-Policy** and click **Edit**.
+6. Add the following code: `img-src 'self' data: blob:;`.
 
 ## Legacy Feedback Widget Docs {#legacy-feedback-docs}
 
 {{% alert color="warning" %}}
-**All Mendix Feedback widgets with versions lower than 8.4.0 are disabled as of October 1, 2022. If you are using one of these versions, download and replace your current [Mendix Feedback](https://marketplace.mendix.com/link/component/199/) widget with version 8.4.0 or higher.**
+**All Mendix Feedback widgets with versions lower than 8.4.0 are disabled as of October 1, 2022. If you are using one of these versions, download and replace your current Mendix Feedback widget with version 8.4.0 or higher.**
 
 The feedback provided via a widget version lower than 8.4.0 is no longer sent to the [Feedback](/developerportal/app-insights/feedback/) page for your app in [Apps](https://sprintr.home.mendix.com/), but your app will keep working as usual.
 
@@ -195,7 +197,7 @@ If you are using the [Native Mobile Resources](/appstore/modules/native-mobile-r
 
 ### Introduction
 
-The [Mendix Feedback](https://marketplace.mendix.com/link/component/199/) widget allows end-users of your application to directly submit feedback into your app. The feedback widget is fully integrated with the [Feedback](/developerportal/app-insights/feedback/) page in [Apps](https://sprintr.home.mendix.com/), where you can review feedback and convert it into [user stories](/developerportal/project-management/epics/planning/) to improve your app.
+The Mendix Feedback widget allows end-users of your application to directly submit feedback into your app. The feedback widget is fully integrated with the [Feedback](/developerportal/app-insights/feedback/) page in [Apps](https://sprintr.home.mendix.com/), where you can review feedback and convert it into [user stories](/developerportal/project-management/epics/planning/) to improve your app.
 
 {{< figure src="/attachments/appstore/platform-supported-content/widgets/mendix-feedback/feedback-in-app.png" width="350px" class="no-border" >}}
 
@@ -220,7 +222,7 @@ The Mendix Feedback widget is easy to set up and automatically attaches addition
 You can configure the widget for certain actions in your app. All the configuration properties are explained on the various tabs of the properties dialog box for the widget. The feedback feature requires the following properties to be set:
 
 * **Project** tab
-    * **App ID** – the unique identifier of your app, which you can find under **Project ID** in your app’s [Settings](/developerportal/collaborate/general-settings/) in [Apps](https://sprintr.home.mendix.com/)l
+    * **App ID** – the unique identifier of your app, which you can find under **Project ID** in your app’s [Settings](/developerportal/general-settings/) in [Apps](https://sprintr.home.mendix.com/)l
 
         {{% alert color="info" %}}The original value of **App ID** is 1, but this value should automatically change to your correct app ID. If it does not change automatically, see [Updating App ID](#legacy-update-app-id) below.
         {{% /alert %}}
@@ -295,7 +297,7 @@ When this happens, right-click the error message, and choose **Update widget** o
 
 The value of the **App ID** on the **Project** tab will be changed to your correct app ID automatically from the original value 1. 
 
-If it did not change to your app ID because of an unexpected error, you can update the app ID manually. You can find the app ID in your app's [Settings](/developerportal/collaborate/general-settings/) in [Apps](https://sprintr.home.mendix.com/).
+If it did not change to your app ID because of an unexpected error, you can update the app ID manually. You can find the app ID in your app's [Settings](/developerportal/general-settings/) in [Apps](https://sprintr.home.mendix.com/).
 
 #### Page Does Not Scroll in the Screenshot Image
 

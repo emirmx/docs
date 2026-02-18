@@ -11,7 +11,7 @@ The [Community Commons](https://marketplace.mendix.com/link/component/170/) modu
 
 ## Usage
 
-All the functions in this package can be invoked using a [Java action call](/refguide/java-action-call/) in a microflow or from your own Java code by calling `communitycommons.<Action Folder>.<Action name>;` (for example, `communitycommons.StringUtils.hash("Mendix", 20);`).
+All the functions in this package can be invoked using a [Call Java action](/refguide/call-java-action/) in a microflow or from your own Java code by calling `communitycommons.<Action Folder>.<Action name>;` (for example, `communitycommons.StringUtils.hash("Mendix", 20);`).
 
 The module contains one constant: `CommunityCommons.MergeMultiplePdfs_MaxAtOnce`. This is used in the `MergeMultiplePdfs` Java action to restrict the number of PDFs processed at the same time. The default restriction is 10 files at once for Mendix Cloud compatibility. If you need to merge more than 10 files, increase the number here. Setting the value to `<= 0` means unlimited.
 
@@ -95,6 +95,7 @@ The module contains one constant: `CommunityCommons.MergeMultiplePdfs_MaxAtOnce`
 * `commitWithoutEvents` – This commits an object but without events.
 * `copyAttributes` – This copies all common primitive attributes from source to target, which are not necessarily of the same type. This is useful to, for example, translate database object into view objects.
 * <a id="deepclone"></a>`DeepClone` – This clones the objects, their associations, and their referred objects. For more information, see the [Limitations](#limitations) section below.
+* `encryptMemberIfChanged` – This automatically encrypts the attributes of an object during, for example, a before commit.
 * `EndTransaction` – This commits the transaction. It will end this transaction or remove a save point from the queue if the transaction is nested.
 * `getCreatedByUser` – This returns the user who created an object.
 * `getGUID` – This returns the global unique identifier (GUID) or the ID of an object.
@@ -107,8 +108,6 @@ The module contains one constant: `CommunityCommons.MergeMultiplePdfs_MaxAtOnce`
 * `refreshClass` – This refreshes a certain domain object in the client. This is useful for enforcing a data grid to refresh, for example.
 * `refreshClassByObject` – This refreshes a certain class via the domain object type in the client. This is useful for enforcing a data grid to refresh, for example.
 * `StartTransaction` – This starts a transaction. If a transaction is already started for this context, a savepoint will be added.
-* `encryptMemberIfChanged` – This automatically encrypts the attributes of an object during, for example, a before commit.
-* `EndTransaction` – This commits the transaction, which will end the transaction or remove a save point from the queue if the transaction is nested.
 
 ### Regexes
 

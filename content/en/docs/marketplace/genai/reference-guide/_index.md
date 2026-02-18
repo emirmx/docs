@@ -2,9 +2,11 @@
 title: "Reference Guide"
 url: /appstore/modules/genai/reference-guide/
 linktitle: "Reference Guide"
-weight: 40
+weight: 20
 description: "Provides references of Mendix's GenAI Modules and Tools."
 no_list: false
+aliases:
+   - /appstore/modules/genai/genai-for-mx/
 ---
 
 ## Introduction {#introduction}

@@ -10,10 +10,6 @@ cascade:
     - mendix_version: 10
 ---
 
-{{% alert color="info" %}}
-The Mendix Portal is the online platform of Mendix. It includes [Apps](/developerportal/), [Control Center](/control-center/), [Community](/community-tools/), Marketplace, [Catalog](/catalog/), and [Mendix Support](/support/).
-{{% /alert %}}
-
 ## Introduction
 
 Mendix Studio Pro includes many core out-of-the-box widgets, such as data grids and snippets. You can, however, extend your application with more features, widgets, and modules, such as the [Forgot Password module](https://marketplace.mendix.com/link/component/1296/)), simple charts, an [Excel importer](https://marketplace.mendix.com/link/component/1296/), thus making your development even faster. You can do this by using content from the [Mendix Marketplace](https://marketplace.mendix.com/). The Mendix Marketplace is a robust platform for the rapid development of apps, which contains many useful and reusable widgets and modules created by Mendix, as well as by our partners and community. It includes complete sample apps that can be used right away, as well as various components, such as connectors, modules, and widgets, that can be used to build your apps more quickly. In the Mendix Marketplace, you can browse all the content, get what you need, and share the content you have created.

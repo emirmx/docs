@@ -42,10 +42,14 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
 4. Click **Create** to create a new data source.
     1. Enter a **Name** for your data source within the Data Loader.
     2. Enter an **API endpoint** – that is, the base endpoint for the OData resource in your Mendix application, for example, `https://yourmendixapp.mendixcloud.com/odata/snowflakedata/v1/`.
+
+{{% alert color="warning" %}}This must be the root URL, that is, it must end in `/v1/` or `/v2/` Adding anything to the root URL (such as a resource path) will prevent the Mendix Data Loader from working.
+
+If you want to use specific resources, you should instead expose a new endpoint that only contains the resources that you require. This is because it is only possible to use every resource that is exposed in the OData endpoint, and impossible to exclude certain resources.{{% /alert %}}
+
     3. Use the **Use Delta Ingestion** check box to specify if you want to ingest all exposed data with every ingestion, or if you want to ingest only data that was newly created or changed since the last ingestion for this data source.
     4. Click **Save**.
     5. Grant the application **CREATE DATABASE** and **EXECUTE TASK** privileges. This step is necessary for the application to create the staging database for data ingestion and to execute tasks.
-
 5. To view the status of your data source, check the **Details**.
 6. To view the configuration status, click the **Authentication Configuration** tab.
 7. To set up authentication, click **Edit**, and then provide the required information based on the selected authentication type:
@@ -70,12 +74,15 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
 13. Click the **Data Ingestion** tab, where you can start your data ingestion or set up a schedule.
 14. Click **Ingest Now** to start a data ingestion.
 15. Click **New Task** to create a CRON job for scheduled data ingestions.
+
     * To schedule the data ingestion, specify the following parameters:
         * **Ingestion Task Schedule** – Choose from custom CRON expression, every day at 00:00 AM UTC, every Monday at 00:00 AM UTC, or every first day of the month at 00:00 AM UTC.
         * **Custom CRON Expression** – Use this field only when specifying a custom CRON expression.
         * **Timeout** – Optional setting to specify when a timeout exception should occur.
         * **Number of Retry Attempts** – Number of retries for failed ingestion jobs.
         * **Suspend Task After Failures** – Number of consecutive failures allowed before suspending the task.
+        * **Use Specific Warehouse** - Select this option if you want the task to use a specific warehouse. If selected, you need to run the provided script.
+        * **Warehouse** - Use this field to enter the name of the warehouse you want to use. This only applies when **Use Specific Warehouse** is selected.
 
 16. Click **Schedule Ingestion Task**.
 17. To view the created task, go to the **Task Management** tab, where you can monitor performed ingestion jobs, suspend or enable the task, or drop it. Currently, only one ingestion task can exist at a time.
@@ -84,6 +91,27 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
 19. To view the ingested data, access the schema specified in the target database within your Snowflake environment.
 
 The ingested data is stored in the target schema of the specified target database, created by the Mendix Data Loader application. This target schema serves as a staging area. After each ingestion, copy the tables from the target schema to the desired database and schema that you want to use to store the ingested data.
+
+### Pagination Base URL Resolution for Published OData Services
+
+Starting with Mendix 10, changes in how the Mendix runtime resolves the application base URL can affect the pagination URLs (`@odata.nextLink`) returned by published OData services.
+
+When the Mendix Data Loader consumes a published OData service, the URL used for pagination is determined by the Mendix runtime and may differ from the base URL that was originally used by the caller. You may see this behavior when upgrading an application from Mendix 9 to Mendix 10.
+
+In scenarios where a Mendix application is accessible through multiple URLs (for example, the default Mendix Cloud URL and a custom domain), the next page URL returned by the OData service may use a different base URL than the one configured in the Mendix Data Loader.
+
+The base URL for pagination links is resolved using the following algorithm:
+
+1. **ApplicationRootURL**, if it is configured in the Mendix application  
+2. **`X-Forwarded-*` headers**, if present (for example, when running behind a reverse proxy or load balancer)  
+3. The **`Host` header** of the incoming request  
+
+As a result, after upgrading to Mendix 10, if the Mendix Data Loader is configured to use one base URL (for example, the default Mendix Cloud URL), but the OData service generates pagination links using another base URL (for example, a custom domain), pagination requests may fail if the returned URL is not reachable or allowed by the Snowflake network configuration.
+
+To avoid pagination issues after upgrading to Mendix 10.x, make sure to fulfill the following prerequisites:
+
+* The configured API endpoint must match the URL that the Mendix runtime resolves for pagination.
+* Alternatively, the relevant base URL must be consistently configured using **ApplicationRootURL** or appropriate **`X-Forwarded-*` headers**.
 
 ## Exposing Associations in OData
 

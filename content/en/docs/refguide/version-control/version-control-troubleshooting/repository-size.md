@@ -30,12 +30,11 @@ Other places where you might encounter performance issues or timeouts are the fo
 
 * Retrieving a list of branches
 * Cloning on the command line or in a CI/CD pipeline
-* [Team Server](/developerportal/general/team-server/) page in **Apps** in the Mendix Portal, if you are using Team Server as your Git server
+* [Team Server](/developerportal/repository/team-server/) page in **Apps** in the Mendix Portal, if you are using Team Server as your Git server
 
 ## Preventing and Mitigating a Large Repository Size
 
 ### MPR Storage Format {#mpr-format}
-
 
 In Studio Pro 11, apps are automatically converted to the MPRv2 storage format. For more information of the effects of the MPRv1 storage format, please see the [MPR Storage Format](/refguide10/troubleshoot-repository-size/#mpr-format) section in *Troubleshooting Repository Size* in *Studio Pro 10 Guide*.
 
@@ -46,7 +45,7 @@ This means that when you change one document, for example, a page, only a small 
 
 To decrease the overall file size of your app, consider doing the following:
 
-* Remove [excluded and unused documents](/refguide/dev-best-practices/#excluded-and-unused-documents) – If you have a large number of unnecessary documents in your app model, this can significantly increase the size of the MPR file.
+* Remove [excluded and unused documents](/refguide/general-best-practices/#excluded-and-unused-documents) – If you have a large number of unnecessary documents in your app model, this can significantly increase the size of the MPR file.
 * Decrease duplication in pages – If you have a number of pages featuring the same content, such as an advanced datagrid, consider extracting this piece of logic to a widget. Reusing a widget on multiple pages prevents the data from being saved several times and can have a large impact on the size of the MPR file.
 * You can use [analyze-mpr](/refguide/mx-command-line-tool/analyze-mpr/) of the [mx Command-Line Tool](/refguide/mx-command-line-tool/) to analyze how your MPR file builds up. The output shows how many documents of a certain type (for example, the number of pages) exist and how much disk space they represent within the MPR file. Mendix recommends starting with a quick scan to see whether there is an unexpected number of occurrences (for example, 1500 pages) or a large number of bytes (over 50 000 000 bytes) for a unit type.
 

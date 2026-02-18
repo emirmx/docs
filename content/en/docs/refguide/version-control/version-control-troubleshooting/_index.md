@@ -109,13 +109,28 @@ When filing a Git support issue with Mendix Support, attach the log files by doi
 The properties described below might contain personal information. We advise you to make sure that all the private information is removed before sharing them. 
 {{% /alert %}}
 
-There are properties of the Git repository that provide you with information useful for troubleshooting different issues. Execute the following using the command line in the app’s folder:
+Several properties of the Git repository can provide you with information useful for troubleshooting different [general](#general-properties) and [configuration](#config-properties) issues. You can view them by executing the commands from the command line in the app's folder.
 
-`git status -b` — provides information on the current state of the repository
+#### General {#general-properties}
 
-`git remote -v` — lists the remotes specified for the repository
+The following properties provide general information about the repository status and remotes.
 
-`git config --list --show-origin --show-scope` — provides information on user's Git config
+* `git status -b` - Provides information on the current state of the repository.
+* `git remote -v` - Lists the remotes specified for the repository.
+
+#### Configuration {#config-properties}
+
+Git stores configuration at several levels:
+
+* System - Affects the entire Git installation.
+* Global - Affects the current user.
+* Local - Affects a specific repository.
+
+More specific configuration overrides more generic configuration (for example, local overrides global). You can inspect the configuration and see where each value is defined by using the following command:
+
+`git config --list --show-origin --show-scope`
+
+This command shows all active configuration values along with the file and scope they come from.
 
 ### Cannot Create Package from a Revision{#cannot-create-package}
 
@@ -123,10 +138,9 @@ Sometimes it is impossible to create a package from a certain revision. See belo
 
 #### Missing Metadata
 
-##### Issue
+##### Cause
 
-When you commit (and push) changes to the repository, Studio Pro adds an additional commit with so called metadata to a special refspec `.git/refs/notes/mx_metadata`. Making it a refspec means that you will not see this commit in your commits history.
-This metadata contains the information needed to create a deployment package (for instance the version of Studio Pro that was used to create this revision).
+When you commit (and push) changes to the repository, Studio Pro adds an additional commit with so called metadata to a special refspec `.git/refs/notes/mx_metadata`. Making it a refspec means that you will not see this commit in your commits history. This metadata contains the information needed to create a deployment package (for instance the version of Studio Pro that was used to create this revision).
 
 To create a deployment package, Studio Pro downloads the specific revision into a temporary folder and then creates the package from there. Studio Pro checks the Mendix version of the selected revision to confirm that it is compatible with the version of Studio Pro. 
 
@@ -162,3 +176,19 @@ In case of a configuration error, an unknown author may appear in the commit his
 Other tools on your machine that use the Git configuration, such as a traditional IDE, are typically also capable of changing this Git configuration. If you have chosen a name and email for a hobby project in another IDE, that information may also appear in commits made from Studio Pro.
 
 To fix the issue, ensure that responsible users change their Git configuration in [Preferences](/refguide/preferences-dialog/#name). Changing historical commits is not possible within Studio Pro. 
+
+### Unable to Save Conflicting Files
+
+When performing operations such as rebase, merge, cherry-pick, revert, or merging a feature branch, you may encounter an error stating that access to a certain path is denied, or see a a message like the following: *Saving the conflicting mpr files failed, please abort and try again.*
+
+#### Cause
+
+Studio Pro is unable to save changes to the project files due to file locks or conflicts.
+
+#### Solution
+
+To solve this issue, perform the following steps:
+
+1. Close the error dialog.
+2. Abort the current operation in Studio Pro.
+3. Retry the operation. 
