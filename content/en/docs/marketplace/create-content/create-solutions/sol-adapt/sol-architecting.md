@@ -146,7 +146,7 @@ For example, a solution contains a module like the [Excel Importer](/appstore/mo
 
 ### Clean Coding
 
-Mendix recommends adhering to the [Mendix Best Practices for Development](/refguide/dev-best-practices/) and having clear coding conventions. 
+Mendix recommends adhering to [development best practices](/refguide/dev-best-practices/) and having clear coding conventions. 
 
 {{% alert color="warning" %}}
 This is even more important for solutions that will be adapted at the model level.

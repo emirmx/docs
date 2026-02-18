@@ -1,6 +1,6 @@
 ---
-title: "Mendix Best Practices for Development"
-linktitle: "Best Practices for Development"
+title: "Development Best Practices"
+linktitle: "Development Best Practices"
 url: /refguide/dev-best-practices/
 weight: 9
 description: "Guides which explain best modelling, naming, and development practices when making Mendix apps."

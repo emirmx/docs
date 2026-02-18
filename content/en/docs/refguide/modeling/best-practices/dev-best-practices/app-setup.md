@@ -1,7 +1,7 @@
 ---
-title: "App Setup"
+title: "App Setup Best Practices"
 linktitle: "App Setup Best Practices"
-url: /refguide/app-setup/
+url: /refguide/app-setup-best-practices/
 description: "Explains best practices to use when setting up Mendix apps."
 no_list: false
 description_list: true
@@ -13,7 +13,7 @@ There are a few key things to consider when setting up your app. The subsections
 
 ## App Development Language
 
-You first decision will be choosing your application development language. The language that will be used to develop the app should be determined upfront. This way you have one language for modules, entities, microflows, pages, and any other elements. The typically preferred language for development is English.
+Your first decision will be choosing your application development language. The language that will be used to develop the app should be determined upfront. This way you have one language for modules, entities, microflows, pages, and any other elements. The typically preferred language for development is English.
 
 There are some reasons, however, why certain parts of an application may use another language. The main reason to make an exception would be within the domain model of an integration module. For example, when the source data model is in another language already.
 

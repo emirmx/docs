@@ -1,7 +1,7 @@
 ---
-title: "Naming Conventions"
-linktitle: "Naming Conventions Best Practices"
-url: /refguide/naming-conventions/
+title: "Naming Convention Best Practices"
+linktitle: "Naming Convention Best Practices"
+url: /refguide/naming-convention-best-practices/
 description: "Explains best practices to use when naming Mendix apps and their constituent parts."
 no_list: false
 description_list: true
