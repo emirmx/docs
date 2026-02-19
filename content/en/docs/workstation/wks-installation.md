@@ -200,7 +200,7 @@ Invite and manage members of a Workspace on the Team page. Only users who have s
 
     * Reading and editing configurations
     * Managing the team
-    * (De-)Registering computers to stations
+    * Registering and deregistering computers to and from stations
     * Refreshing computer configurations
     * Managing bulk registration tokens
     * Managing workspace settings
