@@ -176,7 +176,7 @@ Every end-user that is known in **Admin** module also needs to be known in the O
     1. **Edit** the **Administrator** module role.
     1. Give **Read** **Access rights** to the **AccountDetail_Account** association.
 1. Open the **Runtime** tab of the app's **Settings**.
-1. Add the **OpenIDConnectProvider.ASU_Start_All** microflow as an [After Startup](/refguide/app-settings/#after-startup) microflow.
+1. Add the **OpenIDConnectProvider.ASU_Start_All** microflow as an [After Startup](/refguide/runtime-tab/#after-startup) microflow.
 1. Finally, ensure that your app has the following Administration navigation items:
 
     | Caption | Action | User Roles |
@@ -453,7 +453,7 @@ You need to configure the OIDC SSO module in your app which is using the IAM bro
 1. Create an app containing the OIDC SSO module as described in [OIDC SSO](/appstore/modules/oidc/).
 
     {{% alert color="info" %}}If you are testing locally, you will need to run your OIDC client in a separate copy of Studio Pro and on a different port from the IAM broker.
-    In the [Server](/refguide/configuration/#server) tab of the active configuration of your client app, change the **Runtime port** and **Admin port** to be different from those of your IAM broker app. For example, if your IAM broker is running using `8080` and `8090`, you could use `8081` and `8091` respectively.
+    In the [Server](/refguide/configurations-tab/#server) tab of the active configuration of your client app, change the **Runtime port** and **Admin port** to be different from those of your IAM broker app. For example, if your IAM broker is running using `8080` and `8090`, you could use `8081` and `8091` respectively.
     {{% /alert %}}
 
     1. When you get to [IdP Configuration](/appstore/modules/oidc/#idpconfiguration), you already have the values from the previous section.
