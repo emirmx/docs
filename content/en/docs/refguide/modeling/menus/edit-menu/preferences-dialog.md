@@ -327,6 +327,10 @@ This option allows you to use the web version of the system texts editor. It is 
 
 If Translation Generator is also enabled, you can use it in this editor as well. For more information, see the [Generating Translation for System Texts](/refguide/translation-generator/#translate-system-text) section in *Translation Generator*.
 
+### Workflow
+
+Select this option to allow adding [event sub-processes](/refguide/workflow-event-sub-processes/) to your workflow in the workflow editor.
+
 ## Read More
 
 * [Upload to Version Control Server](/refguide/upload-to-version-control-dialog/)
