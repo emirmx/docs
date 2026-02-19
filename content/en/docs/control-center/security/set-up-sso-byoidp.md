@@ -213,6 +213,9 @@ Entra ID (formerly Microsoft Azure AD) is one of the most used IdPs, and it supp
 
     {{< figure src="/attachments/control-center/security/set-up-sso-byoidp/azure-app-registration-step-6.png" class="no-border" >}}
 
+13. Click **Token configuration** in the left-hand menu bar.
+14. Add optional claims for the ID token: `family_name` and `given_name`.
+
 You are now ready to resume your IdP setup in the Mendix Portal.
 
 For more information on setting up a federation with a Microsoft Entra ID IdP, see [Quickstart: Register an application with the Microsoft identity platform](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) in the Microsoft documentation.
@@ -238,7 +241,7 @@ Existing users of the Mendix Portal can continue to use their accounts, but they
 
 ### BYOIDP and Team Server {#team-server}
 
-Once BYOIDP is activated, direct access to the Team Server is no longer possible. To access code repositories from a pipeline, you need to use a [PAT](/mendix-profile/user-settings/#pat).
+Once BYOIDP is activated, direct access to the Team Server is no longer possible. To access code repositories from a pipeline, you need to use a [PAT](/portal/user-settings/#pat).
 
 Before activating BYOIDP, your developers should set up PATs for direct access to repos (for example, from CI/CD pipelines and/or Tortoise SVN) instead of using usernames and passwords.
 

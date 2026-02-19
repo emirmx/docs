@@ -12,6 +12,71 @@ For information on the current status of deployment to Mendix on Kubernetes and 
 
 ## 2026
 
+### February 19, 2026
+
+#### Portal Improvements
+
+* Integrated business events in Portunus now synchronize technical contacts with Apps and the Private Cloud Portal.
+* We have added support for customers to easily rotate cluster credentials (that is, replace the Agent secret with a new one).
+* We have added an option to enable leaderless mode. This option is supported for Studio Pro 10.24 and newer.
+* We have fixed an issue where creating and deleting custom core resource plans was not logged in Portunus and audit logs.
+* We have improved the user experience for core resources configuration.
+* We have added the option to automatically delete activity log records older than one year.
+
+### Deploy API
+
+* We have added the capability to retrieve all environments within a namespace.
+
+### February 5, 2026
+
+#### Portal Improvements
+
+* We have enabled the license fallback mechanism for Operator versions 2.24.0 and newer. This prevents environments from switching to trial mode when the license server is unreachable.
+* We have reenabled single-replica support for Mendix deployments on Azure, allowing the creation or scaling to one replica, consistent with non-Azure environments.
+
+### January 29, 2026
+
+#### Portal Improvements
+
+* We have fixed an issue where an incorrect time was displayed while creating a deployment package in the Mendix on Kubernetes portal.
+
+### January 26, 2026
+
+#### License Manager CLI v0.10.7 {#0.10.7}
+
+* To enhance security, we now automatically disable API credential automounting for PCLM deployments, significantly limiting unnecessary access to the Kubernetes API.
+
+### January 23, 2026
+
+#### Hotfix Release
+
+* We have resolved an issue that was preventing applications from deploying through Studio Pro and the **Autodeploy** feature of the Mendix on Kubernetes portal.
+
+### January 22, 2026
+
+#### Portal Improvements
+
+* We have fixed an issue where the option to set Studio Pro as the default was missing when creating a new project app. (Tickets 268532, 269338)
+* We have fixed an issue that prevented selecting environments in a processing state on the **Backups** page for Mendix on Azure environments.
+* We have fixed an issue where the full list of managed namespaces was not being retrieved when using the Global Operator through APIs (Ticket 267150)
+* We have improved the tooltip message for the namespace selection dropdown during environment creation. This change is intended to reduce confusion and explain the purpose of this selection.
+* Editing reduced downtime options on the **Cluster Overview** page is now recorded in the activity logs.
+
+#### Mendix Operator v2.25.1 {#2.25.1}
+
+* We have implemented an enhancement to improve how our system parses S3 endpoint URLs by addressing configurations where the S3 endpoint is provided as a host name without a preceding schema (for example, `my-s3-endpoint.com` instead of `https://my-s3-endpoint.com`).
+
+### January 19, 2026
+
+#### Mendix Operator v2.25.0 {#2.25.0}
+
+* We have extended the Reduced Downtime deployment feature to support apps running 1 replica.
+    This feature is enabled by default, and works by running two replicas of the app during updates. For more information, see [Reduced Downtime Deployment](/developerportal/deploy/private-cloud-reduced-downtime/).
+* We have added autodetection for AWS S3 bucket regions, which is required by the AWS SDK update in updated LTS Studio Pro versions.
+    Version 2 of the AWS S3 library removed built-in autodetection of an S3 bucket's region. This is now handled by the Mendix Operator. In some situations, it might be necessary to manually specify the S3 bucket region by setting the [com.mendix.storage.s3.Region](/refguide/custom-settings/#commendixstorages3Region) Custom Runtime Setting.
+* We have updated Azure authentication code to improve compatibility with Azure Government and Azure in China.
+* We have extended the [S3 IRSA Mode](/developerportal/deploy/private-cloud-storage-plans/#s3-irsa-mode) provisioner options, allowing to specify a path prefix and permissions boundary for IAM roles. Documentation on using this feature is available upon request.
+
 ### January 8, 2026
 
 #### Portal Improvements
