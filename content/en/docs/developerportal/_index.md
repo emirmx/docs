@@ -53,14 +53,14 @@ Follow these steps to have Maia plan and generate an app for you:
         You can edit this description.
     * **Success Criteria** – A list of criteria by which to measure the success of the app.     
         You can remove criteria by hovering over them, then clicking the trash can icon.    
-        You can add new criteria by clicking **+ Add New Success Criteria**.
+        You can add new criteria by clicking **+Add New Success Criteria**.
     * **Target Users** – Cards corresponding to the app's target users, along with each user's goal.    
         You can remove users or their goals by hovering over them, then clicking the trash can icon.    
-        You can add users by clicking **+ Add New User**.    
-        You can add user goals by clicking **+ Add New User Goal**.
+        You can add users by clicking **+Add New User**.    
+        You can add user goals by clicking **+Add New User Goal**.
     * **Requirements** – The features that the app must have.     
         You can remove features by hovering over them, then clicking the trash can icon.    
-        You can add new features by clicking **+ Add New Requirement**.
+        You can add new features by clicking **+Add New Requirement**.
 
     You can use the pane on the right to chat with Maia about your requirements for the new app.
 
@@ -73,7 +73,7 @@ Follow these steps to have Maia plan and generate an app for you:
     You can remove stories by hovering over them, then clicking the trash can icon.    
     You can click the card itself to see the entire list of stories for an epic in the right side panel. For each story, click the context menu to edit or remove the story.
 
-7. Once you are happy with Maia's suggested project plan, click **Open in Studio Pro** in the top right of the page. The new app opens in Studio Pro, allowing you to work on the specifics. 
+7. Once you are happy with Maia's suggested project plan, click **Open in Studio Pro** in the top right of the page. This opens Studio Pro, where you can continue working on the new app. For details, refer to [link to Maia Make in Studio Pro](...).
 
 ### Creating an App from a Starter App Template
 
