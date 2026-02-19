@@ -1524,7 +1524,7 @@ The selected product type will be applied to all environments within this namesp
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-cluster/Customization.png" class="no-border" >}}
 
-#### PCLM Statistics {pclm-statistics}
+#### PCLM Statistics {#pclm-statistics}
 
 This tab shows information about claimed licenses, operator licenses and runtime licenses.
 

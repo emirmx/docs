@@ -605,13 +605,13 @@ For security reasons, root CAs can only be enabled in custom [TLS section](/deve
 
 ### Runtime Tab {#runtime-tab}
 
-On the **Runtime** tab, you can add [Custom Runtime Settings](#custom-environment-variables) and [Custom Environment Variables](#custom-environment-variables). You can also use it to enable [leaderless mode](leaderless-mode) for the environment.
+On the **Runtime** tab, you can add [Custom Runtime Settings](#custom-environment-variables) and [Custom Environment Variables](#custom-environment-variables). You can also use it to enable [leaderless mode](#leaderless-mode) for the environment.
 
 {{% alert color="info" %}}
 When you use some settings on the Runtime tab for Mendix on Kubernetes they may work differently from how they work in Mendix Cloud.
 {{% /alert %}}
 
-### Leaderless Mode {leaderless-mode}
+### Leaderless Mode {#leaderless-mode}
 
 In leaderless mode, the leader node is selected dynamically. To enable it for your environment, set the **Enable Leaderless Mode** to **On**.
 
