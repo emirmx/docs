@@ -216,7 +216,7 @@ Invite and manage members of a Workspace on the Team page. Only users who have s
 * Station admin - Station admins can perform the following tasks:
 
     * Viewing and editing station configurations
-    * (De-)Registering computers to stations
+    * Registering and deregistering computers to and from stations
     * Refreshing computer configurations
     * Managing bulk registration tokens
     * Exporting and importing stations (single and in bulk)
@@ -225,7 +225,7 @@ Invite and manage members of a Workspace on the Team page. Only users who have s
 * Computer admin - Computer admins can perform the following tasks:
 
     * Viewing configurations without editing them
-    * (De-)Registering computers to stations
+    * Registering and deregistering computers to and from stations
     * Refreshing computer configurations
     * Viewing bulk registration tokens
     * Exporting stations (single and in bulk).
