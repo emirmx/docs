@@ -7,7 +7,7 @@ weight: 80
 
 ## Introduction
 
-Settings on the **Solution** tab allow you to configure application distribution as an [adaptable solution](/appstore/creating-content/sol-solutions-guide/). 
+Settings on this tab allow you to configure application distribution as an [adaptable solution](/appstore/creating-content/sol-solutions-guide/). 
 
 ## Adaptive Solution
 
