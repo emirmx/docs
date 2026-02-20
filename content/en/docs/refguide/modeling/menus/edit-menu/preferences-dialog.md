@@ -108,9 +108,7 @@ You can specify which repositories to use for Gradle. The content of this field 
 
 ### Generative AI
 
-* **Enable Maia** - When enabled, you can access all Maia capabilities in Studio Pro. It is enabled by default.
-
-In Studio Pro 11.7 and below, the **Generative AI** section contains the following settings:
+The **Generative AI** section contains the following settings:
 
 * **Enable Start with Maia** – When enabled, you can use the **Start with Maia** starting point in Studio Pro to help you create an app. For more information on how to use this feature, see [Start with Maia](/refguide/start-with-maia/). It is enabled by default.
 * **Enable Maia Explain** – When enabled, you can use it to explain a microflow or a nanoflow in the logic editors. For more information on how to use this feature, see [Maia Explain](/refguide/maia-explain/). It is enabled by default.
