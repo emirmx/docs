@@ -26,7 +26,7 @@ Maia Make is enabled by default. It is possible to disable it in Studio Pro **Pr
 
 In Studio Pro 11.7 and below, Maia for Domain Model is enabled by default. You can find it in the the toolbar of a domain model:
 
-{{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/maia-for-domain-model/maia-for-domain-model.png" max-width=80% >}}
+{{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/maia-make/maia-for-domain-model/maia-for-domain-model.png" max-width=80% >}}
 
 If you want to disable this feature, go to **Edit** > **Preferences** > the **Maia** tab and clear the **Enable Maia for Domain Model** checkbox.
 

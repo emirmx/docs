@@ -28,7 +28,7 @@ In Studio Pro 11.7 and below, to enable Maia for Pages, go to **Edit** > **Prefe
 
 Once enabled, you can find it in the the toolbar of a page:
 
-{{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/maia-for-pages/maia-for-pages.png" max-width=80% >}}
+{{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/maia-make/maia-for-pages/maia-for-pages.png" max-width=80% >}}
 
 {{% alert color="info" %}}
 Maia for Pages is available in both the **Structure mode** and **Design mode**.
