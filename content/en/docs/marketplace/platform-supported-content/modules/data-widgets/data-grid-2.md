@@ -497,9 +497,9 @@ There cannot be more than one filter of the same type in the data grid header. F
 
 ## Export to Excel
 
-The Data Grid 2 widget ships with built-in functionality to export data from the data source you configured in the settings. The export is done via the _Export_To_Excel_ JavaScript action that is distributed as part of the [Data Widgets](/appstore/modules/data-widgets/) module.
+The Data Grid 2 widget ships with built-in functionality to export data from the data source you configured in the settings. The export is done via the **Export_To_Excel** JavaScript action that is distributed as part of the [Data Widgets](/appstore/modules/data-widgets/) module.
 
-To export data from the data grid, create a new nanoflow that calls _Export_To_Excel_. The _Export_To_Excel_ action has a set of inputs:
+To export data from the data grid, create a new nanoflow that calls **Export_To_Excel**. The **Export_To_Excel** action has a set of inputs:
 
 - **Datagrid name**: the name of the data grid from which data should be exported (the name can be found and copied from the data grid's settings (**Properties** > **Common** > **Name**))
 - **File name**: the file name to use for the exported document (does not require an appended file extension)
@@ -570,7 +570,9 @@ If this setting is enabled, then the data grid widget shows a checkbox at the he
 
 ### Keep Selection
 
-If this setting is enabled, then selected items persist across page navigation, data refreshes, filtering, and sorting operations. By default, Keep selection is disabled and the selection is cleared when the datasource changes. When enabled, selected items remain selected until manually cleared by the user.
+If this setting is enabled, then selected items persist across page navigation, data refreshes, filtering, and sorting operations. 
+
+By default, **Keep selection** is disabled and the selection is cleared when the data source changes. When enabled, selected items remain selected until manually cleared by the user.
 
 ### Selection and Row Click Action
 

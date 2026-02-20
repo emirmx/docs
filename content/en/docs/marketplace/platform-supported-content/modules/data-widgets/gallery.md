@@ -133,7 +133,7 @@ The Drop-Down Sort widget has two options you can set:
 
 ## Selection
 
-Enabling selection allows users to select gallery items by clicking on them. Selection is disabled by default and can be activated by changing the **Selection** setting from **None** to either **Single** or **Multi**.
+Enabling **Selection** allows users to select gallery items via clicking. Selection is disabled by default and can be activated by changing the **Selection** setting from **None** to either **Single** or **Multi**.
 
 The Gallery widget keeps selected items in memory and supports selection persistence across page navigation when the **Keep selection** option is enabled. This allows users to maintain their selections while browsing through paginated data or navigating between different pages in your application. See [Keep Selection](#keep-selection) for more information about managing selection persistence and its limitations.
 
@@ -145,7 +145,7 @@ The **Selection** property determines what type of selection is available to use
 - **Single**: Users can select only one item at a time. Selecting a new item automatically deselects the previously selected item.
 - **Multi**: Users can select multiple items simultaneously using various interaction methods.
 
-When selection is enabled, the Gallery automatically provides visual feedback to indicate selected items and supports keyboard navigation for accessibility.
+When **Selection** is enabled, the Gallery automatically provides visual feedback to indicate selected items and supports keyboard navigation for accessibility.
 
 ### Selection and Click Actions Constraint
 
@@ -159,7 +159,7 @@ It is not possible to use both selection and onClick actions simultaneously when
 | -------------- | ---------------- | ---------------- | --------------------------------------------- | --------- |
 | None           | Single click     | N/A              | ✓ Click triggers action                       | ✓ Yes     |
 | None           | Double click     | N/A              | ✓ Double-click triggers action                | ✓ Yes     |
-| Single/Multi   | Single click     | Item click       | ✗ Ambiguous interaction                       | ✗ **No**  |
+| Single/Multi   | Single click     | Item click       | ✗ Ambiguous interaction                       | ✗ No  |
 | Single/Multi   | Double click     | Item click       | ✓ Click selects, double-click triggers action | ✓ Yes     |
 
 #### Error Prevention
@@ -172,9 +172,9 @@ If you attempt to configure both selection (Single or Multi) and an onClick acti
 
 For galleries that need both selection and click actions:
 
-1. Set **On click trigger** to **Double click**
-2. Configure your desired selection mode (Single or Multi)
-3. Users can then select items with single clicks and trigger actions with double clicks
+1. Set **On click trigger** to **Double click**.
+1. Configure your desired selection mode (**Single** or **Multi**).
+1. Users can then select items with single clicks and trigger actions with double clicks.
 
 ### Selection with Action Buttons in Header
 

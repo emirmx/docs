@@ -67,13 +67,15 @@ This section contains properties related to selection behavior when **Selection*
 #### Keep Selection
 
 {{% alert color="info" %}}
-This property is available only when **Selection** is set to **Single** or **Multi**.
+This property is only available when **Selection** is set to **Single** or **Multi**.
 {{% /alert %}}
 
-When set to **Yes**, selected items persist across page navigation, data refreshes, filter operations, and sorting changes. By default, this property is set to **No**, which clears the selection when the items are not in the current set of datasource items. When enabled, selections remain active until manually cleared by the user or through a nanoflow action.
+By default, this property is set to **No**, which clears the selection when the items are not in the current set of datasource items. 
+
+When set to **Yes**, selected items persist across page navigation, data refreshes, filter operations, and sorting changes. When enabled, selections remain active until manually cleared by the user or through a nanoflow action.
 
 {{% alert color="warning" %}}
-Keep Selection cannot be used with non-persistent entities (NPEs) or view entities, as their IDs change on refresh.
+**Keep Selection** cannot be used with non-persistent entities (NPEs) or view entities, as their IDs change on refresh.
 {{% /alert %}}
 
 ### Columns Tab {#columns}
