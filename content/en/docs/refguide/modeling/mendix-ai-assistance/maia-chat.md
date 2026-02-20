@@ -17,9 +17,7 @@ Maia Chat is also available in the Mendix Portal. For more information, refer to
 
 {{% alert color="info" %}}
 To use Maia Chat, an internet connection and signing in to Studio Pro are required.
-{{% /alert %}}
 
-{{% alert color="info" %}}
 Maia Chat does not use any project, customer, or company information. It only uses the data that you have entered in the Chat to fulfill the user request. Please do not enter any personal or sensitive data!
 {{% /alert %}}
  
@@ -36,7 +34,13 @@ See below a list of Maia Chat's data sources:
  
 ## Using Maia Chat in Studio Pro
 
-There are two ways to access Maia Chat in Studio Pro:
+{{% alert color="info" %}}
+In Studio Pro 11.8 and above, Maia Chat is incorporated into the unified [Maia Make](/refguide/maia-make/) interface. There is no dedicated interface only for Maia Chat. With Maia Make, you can ask questions, ask Maia to explain your logic and pages, and let it generate development artifacts such as data structures, overview pages, and microflows for you.
+
+Maia Make is enabled by default. It is possible to disable it in Studio Pro **Preferences**, via the **Maia** tab.
+{{% /alert %}}
+
+In Studio Pro 11.7 and below, there are two ways to access Maia Chat in Studio Pro:
 
 * Click the **Maia** ({{% icon name="sparkles" %}}) icon to the right of the top bar.
 * Go to the **View** menu and click **Maia**.
@@ -49,7 +53,7 @@ You can start using Maia Chat by clicking one of the demo questions. Alternative
 
 For more information on Maia Chat features in Studio Pro, see the sub-sections below.
 
-If Maia is not giving you a good answer, check the [best practices](/portal/maia/#best-practices) in *Maia in Mendix Portal*. If you still can't get a good answer, please see [Giving Feedback](#feedback), below for information on how to let Mendix know.
+If Maia is not giving you a good answer, check the [best practices](/portal/maia/#best-practices) in *Maia in Mendix Portal*. If you still can not get a good answer, please see [Giving Feedback](#feedback), below for information on how to let Mendix know.
 
 ### Maia Chat Features in Studio Pro
 

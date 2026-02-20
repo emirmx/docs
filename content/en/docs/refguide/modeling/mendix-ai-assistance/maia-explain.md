@@ -12,9 +12,15 @@ description: "Describes the features in Maia Explain."
 To use Maia Explain, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
+{{% alert color="info" %}}
+In Studio Pro 11.8 and above, Maia Explain is incorporated into the unified [Maia Make](/refguide/maia-make/) interface. There is no dedicated interface only for Maia Explain. With Maia Make, you can ask questions, ask Maia to explain your logic and pages, and let it generate development artifacts such as data structures, overview pages, and microflows for you.
+
+Maia Make is enabled by default. It is possible to disable it in Studio Pro **Preferences**, via the **Maia** tab.
+{{% /alert %}}
+
 Maia Explain helps you easily understand a microflow or a nanoflow. It explains the general purpose of the logic and highlights specific technical details to help you understand the logic further.
 
-## Using Maia Explain
+## Using Maia Explain in Studio Pro 11.7 and Below
 
 Maia Explain is enabled by default. If you want to disable this feature, go to **Edit** > **Preferences** > the **Maia** tab and clear the **Enable Maia Explain** checkbox.
 
