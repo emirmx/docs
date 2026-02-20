@@ -7,7 +7,9 @@ weight: 30
 
 ## Introduction
 
-Installed on each local workstation, the Workstation Client acts as a bridge between the Mendix app and local hardware. The Workstation Client is installed on a computer in order to establish a connection with the Workstation Connector, and through it, your Mendix app. 
+Installed on each local workstation, the Mendix Workstation Client acts as a bridge between the Mendix app and local hardware. The goal of the Workstation Client is to establish a secure and reliable connection between the Mendix Application Client and the hardware, peripherals, or local data sources attached to that workstation. This connection is facilitated by the Workstation Connector and the Workstation Client.
+
+The registration process is a necessary first step when enabling this crucial functionality. It onboards your local Workstation Client installation into your Mendix Workstation Management environment. This onboarding allows for centralized management, configuration deployment, and monitoring of your clients, ensuring they are properly set up to bridge your Mendix applications with the physical world.
 
 Mendix Workstation supports both individual registration of local Workstation clients, and bulk rollouts for large production environments.
 
@@ -17,12 +19,16 @@ If you are developing or testing Workstation configurations, you can register a 
 
 1. Navigate to the **Workspaces** page in [Workstation Management](https://workstation.home.mendix.com/).
 2. Click **Create Workspace**, or select an existing workspace from the overview.
-3. Click **Create Station**.
-4. Enter a name for the station and optionally select or create a group to categorize it, such as *Assembly*.
-5. Add devices in the **Devices** section.
-6. Click **Register Computer** to register your computer.
-7. Click **Download** to navigate to the Workstation Client listing in the Marketplace, download the Client installer for Windows, install it, and launch it.
-8. Copy the registration token and paste it into the [Workstation Client](/mendix-workstation/installation/) registration field.
+3. Click **Create Station**, or select an existing station for which no computer is yet registered.
+4. In the top right corner of the banner, click **Register Computer** to register your computer.
+5. Click **Download** to navigate to the Workstation Client listing in the Marketplace, download the Client installer for Windows, install it, and launch it. You can find the listing at the following links:
+
+    * [Windows](https://marketplace.mendix.com/link/component/247448)
+    * [Windows (portable version)](https://marketplace.mendix.com/link/component/247456)
+    * [Linux ARM64](https://marketplace.mendix.com/link/component/247459)
+    * [MacOS](https://marketplace.mendix.com/link/component/253905)
+
+6. Copy the registration token and paste it into the [Workstation Client](/mendix-workstation/installation/) registration field.
 
 ## Bulk-Registering Workstation Clients
 
@@ -41,14 +47,18 @@ To bulk-register Workstation Clients, perform the following steps:
     The **Create Bulk Registration Token** dialog opens. You can use it to activate a time-limited token which can then be entered into the registration field of multiple Workstation Clients.
 
 4. Specify the timeframe during which the token is valid.
-5. Copy the token to a clipboard and save it in a secure location. For security reasons, the token is only displayed once.
-6. Click **Activate Token**. The **Stations** page displays the timeframe during which the bulk registration is scheduled.
-7. Use an automated script to distribute the token to client computers during the allowed timeframe. For example, on Windows machines, you can use the following script: `Start-Process -FilePath {path where the Workstation Client is installed} -ArgumentList "--registration-token {bulk registration token}" -Wait`
+5. Click **Activate Token**. The **Stations** page displays the timeframe during which the bulk registration is scheduled.
+6. To distribute the token to client computers during the allowed timeframe, you can use an automated script. For example, on Windows machines, you can use the following script: `Start-Process -FilePath {path where the Workstation Client is installed} -ArgumentList "--registration-token {bulk registration token}" -Wait`
 
-    After the command runs, the Workstation Clients display the status **Waiting for station assignment**. This indicates that the clients are registered, but not yet associated with a specific station. On the **Stations** page in Workstation Management, you can now see placeholder stations also named **Waiting for station assignment**. These stations correspond to computers which were registered during bulk import.
+    After the command runs or the token is entered manually, the Workstation Clients display the status **Waiting for station assignment**. This indicates that the clients are registered, but not yet associated with a specific station. 
+    
+    To view these newly registered clients, refresh the Stations page in Workstation Management. You will find them listed under a separate section as **unassigned computers**.
 
-8. On the **Stations** page, click **View** by a placeholder **Waiting for station assignment** station.
-9. Review the configuration and click **Assign to station** to reassign the computer to an existing station, or **Accept** to create a new station.
+7. Review the configuration of the unassigned computers and perform one of the following actions:
+
+    * **Accept Computer** - Create an empty station.
+    * **Assign Computer** - Assign the computer to an already configured station.
+    * **Reject Computer** - Disconnect and deregister the computer.
 
 ### Automatically Assigning Computers to Stations
 
@@ -57,5 +67,10 @@ Instead of reassigning computers to stations manually after the bulk import, you
 1. On the **Stations** page, click the three-dot menu by the station where you want to automatically register a computer.
 2. Click **Edit Station**.
 3. In the **Auto-Accepted Computer Name** field, enter a computer name.
+
+{{% alert color="info" %}}
+You can also specify this name during station creation.
+{{% /alert %}}
+
 
 Computers with this name are automatically assigned to the station during the bulk import.
