@@ -31,7 +31,7 @@ This defines the prop `key` in the client component props which are supplied to 
 This optional attribute is only applicable for properties of type [file](#file) and [image](#image), and has a default value of `false`. By setting this attribute to `true`, a user can use the upload capabilities by passing  `EditableFileValue<FileValue>` and `EditableImageValue<ImageValue>` as props to a client component. Using `false` is used for legacy `DynamicValue<File>` and `DynamicValue<ImageValue>`.
 
 {{% alert color="warning" %}}
-The optional attribute `allowUpload` will be deprecated as of Mx 12. After Mx 12, `file` and `image` will have by default editing capabilities, and users will not be able to use the legacy behavior.
+The optional 'allowUpload' attribute on Image and File properties, which enables editing, will be deprecated starting with Mendix 12. After Mendix 12, such properties will have editing capabilities by default. Be aware of behavioral differences based on the 'allowUpload' attribute.
 {{% /alert %}}
 
 #### Type (Required)
@@ -270,7 +270,7 @@ Image allows a user to configure an image from an object that is a specializatio
 The user can use the optional attribute [`allowUpload`](#allow-upload) with default value `false` to use the legacy [`Dynamic<FileValue>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#filevalue) prop. Beware of behavioral differences based on the `allowUpload` attribute.
 
 {{% alert color="warning" %}}
-The optional attribute `allowUpload` will be deprecated as of Mx 12. After Mx 12, `image` will have by default editing capabilities and users will not be able to use the legacy behavior.
+The optional 'allowUpload' attribute on Image and File properties, which enables editing, will be deprecated starting with Mendix 12. After Mendix 12, such properties will have editing capabilities by default. Be aware of behavioral differences based on the 'allowUpload' attribute.
 {{% /alert %}}
 
 #### XML Attributes
@@ -715,7 +715,7 @@ The file property type allows a user to configure and edit a file from and to an
 The user can use the optional attribute [`allowUpload`](#allow-upload) with default value `false` to use the legacy [`Dynamic<FileValue>`](/apidocs-mxsdk/apidocs/pluggable-widgets-client-apis/#filevalue) prop. Beware of behavioral differences based on the `allowUpload` attribute.
 
 {{% alert color="warning" %}}
-The optional attribute `allowUpload` will be deprecated as of Mx 12. After Mx 12, `file` will have by default editing capabilities and users will not be able to use the legacy behavior.
+The optional 'allowUpload' attribute on Image and File properties, which enables editing, will be deprecated starting with Mendix 12. After Mendix 12, such properties will have editing capabilities by default. Be aware of behavioral differences based on the 'allowUpload' attribute.
 {{% /alert %}}
 
 #### XML Attributes
