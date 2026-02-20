@@ -48,7 +48,11 @@ To bulk-register Workstation Clients, perform the following steps:
 
 4. Specify the timeframe during which the token is valid.
 5. Click **Activate Token**. The **Stations** page displays the timeframe during which the bulk registration is scheduled.
-6. To distribute the token to client computers during the allowed timeframe, you can use an automated script. For example, on Windows machines, you can use the following script: `Start-Process -FilePath {path where the Workstation Client is installed} -ArgumentList "--registration-token {bulk registration token}" -Wait`
+6. To distribute the token to client computers during the allowed timeframe, you can use an automated script. 
+
+    For example, on Windows machines, you can use the following script: `& {path where the Workstation Client is installed} --registration-token {bulk registration token}`.
+
+    On Linux machines, you can use the following script: `mendix-workstation --registration-token {bulk registration token}`.
 
     After the command runs or the token is entered manually, the Workstation Clients display the status **Waiting for station assignment**. This indicates that the clients are registered, but not yet associated with a specific station. 
     
