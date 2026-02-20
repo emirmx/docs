@@ -8,7 +8,7 @@ weight: 45
 
 ## Introduction
 
-With the release of Mendix 11, you can look forward to more new and exciting features in upcoming versions of Mendix 11. This document contains the calendar of expected release dates for these features.    
+With the release of Mendix 11, you can look forward to more new and exciting features in upcoming versions of Mendix 11. This document contains the calendar of expected release dates for these features. 
 The new features were divided into major themes, which are described in the sections below.
 
 This document is for informational purposes only, and may not be incorporated into a contract. Future developments, products, platforms, directions, and functionality may be changed by Mendix at any time and for any reason, without notice.
@@ -17,18 +17,18 @@ This document is for informational purposes only, and may not be incorporated in
 General Availability means that a feature is available for all users. This type of release is different from a beta or experimental release. For more information, see [Release Status](/releasenotes/release-status/).
 {{% /alert %}}
 
-## Agentic Apps & Orchestration
+## Agentic Apps and Orchestration
 
 | Capability or Feature | Expected Release |
 | --- | --- |
-| Mendix Agents Kit                             | General Availability: Mx 11.0 + Mx 10.24 |
-| MCP Server                                    | General Availability: Mx 11.0 + Mx 10.24 |
-| MCP Client                                    | General Availability: Mx 11.2 + Mx 10.24 |
-| Mendix Cloud GenAI Resource Packs             | General Availability: Mx 11.2 + Mx 10.24 |
-| Mendix Cloud GenAI Resource Packs Guardrails  | Private Beta: Mx 11.15 |
-| Agent Editor in Studio Pro<sup>1</sup>        | General Availability: Mx 11.9 |
-| Agent Observability                           | General Availability: Mx 11.5 + Mx 10.24 |
-| Model Mendix Agents as part of your Workflow  | General Availability: Mx 11.9 |
+| Mendix Agents Kit | General Availability: Mx 11.0 + Mx 10.24 |
+| MCP Server | General Availability: Mx 11.0 + Mx 10.24 |
+| MCP Client | General Availability: Mx 11.2 + Mx 10.24 |
+| Mendix Cloud GenAI Resource Packs | General Availability: Mx 11.2 + Mx 10.24 |
+| Mendix Cloud GenAI Resource Packs Guardrails | Private Beta: Mx 11.15 |
+| Agent Editor in Studio Pro<sup>1</sup> | General Availability: Mx 11.9 |
+| Agent Observability | General Availability: Mx 11.5 + Mx 10.24 |
+| Model Mendix Agents as part of your Workflow | General Availability: Mx 11.9 |
 
 {{% alert color="info" %}}
  ¹Limitations: Initially only Mendix Cloud GenAI Resources as provider, and only design-time modification of prompts & other agent settings. Incrementally, we will remove these limitations.
@@ -38,40 +38,40 @@ General Availability means that a feature is available for all users. This type 
 
 | Capability or Feature | Expected Release |
 | --- | --- |
-| Maia Plan <ul><li>Starter app support</li><li>Marketplace recommendations</li></ul> | Public Beta: Mx 11.8 <br/>General Availability: Mx 11.9  |
-| Maia Plan <ul><li>Versioning, iterations and multi-user collaboration</li><li>Jira integration</li></ul> | General Availability: Mx 11.12  |
-| Maia: Text to OQL                                            | Public Beta: Q2 2025 <br/>General Availability: Q4 2025 |
-| Maia: Generate test data                                     | Private Beta: 2026   |
-| Maia: Convert Feedback to story                              | General Availability: Mx 11.9  |
-| Maia for Pipeline Logs                                       | General Availability: Mx 11.9  |
-| Maia Learn                                                   | General Availability: Mx 11.12 |
-| Maia Make (see breakdown for capabilities)                   | General Availability: Mx 11.8 |
+| Maia Plan <ul><li>Starter app support</li><li>Marketplace recommendations</li></ul> | Public Beta: Mx 11.8 <br/>General Availability: Mx 11.9 |
+| Maia Plan <ul><li>Versioning, iterations and multi-user collaboration</li><li>Jira integration</li></ul> | General Availability: Mx 11.12 |
+| Maia: Text to OQL | Public Beta: Q2 2025 <br/>General Availability: Q4 2025 |
+| Maia: Generate test data | Private Beta: 2026 |
+| Maia: Convert Feedback to story | General Availability: Mx 11.9 |
+| Maia for Pipeline Logs | General Availability: Mx 11.9 |
+| Maia Learn | General Availability: Mx 11.12 |
+| Maia Make (see separate table for capabilities) | General Availability: Mx 11.8 |
 
-### Maia Make Breakdown
+### Maia Make
 
 | Capability or Feature | Expected Release |
 | --- | --- |
-| Maia Make                                     | General Availability: Mx 11.8 |
-| Maia Make: Domain Models                      | General Availability: Mx 11.8 |
-| Maia Make: Microflows                         | General Availability: Mx 11.8 |
-| Maia Make: Nanoflows                          | General Availability: Mx 11.15 |
-| Maia Make: Overview Pages                     | General Availability: Mx 11.8 |
-| Maia Make: Enumerations                       | General Availability: Mx 11.8 |
-| Maia Make: Pages                              | General Availability: Mx 11.9 |
-| Maia Make: Styling                            | General Availability: Mx 11.10 |
-| Maia Make: Workflows                          | General Availability: Mx 11.9 |
-| Maia Make: MCP Client                         | General Availability: Mx 11.8 |
-| Maia Make: MCP Server                         | General Availability: Mx 11.12 |
-| Maia Make: Modules                            | General Availability: Mx 11.12 |
+| Maia Make | General Availability: Mx 11.8 |
+| Maia Make: Domain Models | General Availability: Mx 11.8 |
+| Maia Make: Microflows | General Availability: Mx 11.8 |
+| Maia Make: Nanoflows | General Availability: Mx 11.15 |
+| Maia Make: Overview Pages | General Availability: Mx 11.8 |
+| Maia Make: Enumerations | General Availability: Mx 11.8 |
+| Maia Make: Pages | General Availability: Mx 11.9 |
+| Maia Make: Styling | General Availability: Mx 11.10 |
+| Maia Make: Workflows | General Availability: Mx 11.9 |
+| Maia Make: MCP Client | General Availability: Mx 11.8 |
+| Maia Make: MCP Server | General Availability: Mx 11.12 |
+| Maia Make: Modules | General Availability: Mx 11.12 |
 | Maia Make: editing/work with existing Microflows and Workflows | General Availability: Mx 11.9 |
-| Maia Make: Integrations                       | General Availability: Mx 11.24 |
+| Maia Make: Integrations | General Availability: Mx 11.24 |
 
-## Enterprise-grade platform
+## Enterprise-Grade Platform
 
 ### Experience 
 
 | Capability or Feature | Expected Release |
-| ---| ---|
+| --- | --- |
 | Studio Pro Enhancements | Included in monthly releases.<br/>Refer to release blogs. |
 | Multilingual Studio Pro and Platform: Chinese, Japanese, Korean | General Availability: Mx 11.0 |
 | Multilingual Studio Pro and Platform: Portuguese | Public Beta: Mx 11.0 |
@@ -128,7 +128,7 @@ General Availability means that a feature is available for all users. This type 
 | Central Audit Logs | General Availability: Mx 11.10 |
 | Extended People/Learning Insights Dashboard (course completion and new learning paths) | Public Beta: Q3 2026 |
 | Partner profiles extended with validated skills and projects | General Availability: Q3 2026 |
-| Teams: Multi-resource access  | Public Beta: Q4 2026 |
+| Teams: Multi-resource access | Public Beta: Q4 2026 |
 
 ### Flexible Deployment
 
