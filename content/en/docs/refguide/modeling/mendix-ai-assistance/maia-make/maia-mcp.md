@@ -2,7 +2,7 @@
 title: "Maia MCP Client"
 linktitle: "MCP Client"
 url: /refguide/maia-mcp/
-weight: 8
+weight: 80
 description: "Describes the features in Maia MCP Client."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
