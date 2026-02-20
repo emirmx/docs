@@ -18,9 +18,13 @@ Maia for Domain Model helps you generate new [domain model](/refguide/domain-mod
 
 ## Using Maia for Domain Model
 
-Maia for Domain Model is enabled by default.
+{{% alert color="info" %}}
+In Studio Pro 11.8 and above, Maia for Domain Model is incorporated into the unified [Maia Make](/refguide/maia-make/) interface. There is no dedicated interface only for Maia for Domain Model. With Maia Make, you can ask questions, ask Maia to explain your logic and pages, and let it generate development artifacts such as data structures, overview pages, and microflows for you.
 
-You can find it in the the toolbar of a domain model:
+Maia Make is enabled by default. It is possible to disable it in Studio Pro **Preferences**, via the **Maia** tab.
+{{% /alert %}}
+
+In Studio Pro 11.7 and below, Maia for Domain Model is enabled by default. You can find it in the the toolbar of a domain model:
 
 {{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/maia-for-domain-model/maia-for-domain-model.png" max-width=80% >}}
 
