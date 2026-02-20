@@ -7,32 +7,32 @@ description: "Describes the configuration and usage of the Selection Helper widg
 
 ## Introduction
 
-The [Selection Helper](https://marketplace.mendix.com/link/component/116540) widget provides bulk-selection controls for data widgets, enabling users to quickly select all or clear all items when multi-selection is enabled. While primarily used for **Gallery** widgets, it also supports Data Grid 2 applications.
+The [Selection Helper](https://marketplace.mendix.com/link/component/116540) widget provides bulk-selection controls for data widgets, enabling users to quickly select all or clear all items when multi-selection is enabled. While primarily used for Gallery widgets, it also supports Data Grid 2 applications.
 
-Here is an example of a **Selection Helper** widget in a **Gallery**:
+Here is an example of a Selection Helper widget in a Gallery:
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/data-widgets/selection-helper/example-selection-helper.png" alt="Example of Selection Helper in a Gallery widget" width="400" class="no-border" >}}
 
 ## Prerequisites
 
-Before using the **Selection Helper** widget, ensure the following:
+Before using the Selection Helper widget, ensure the following:
 
-- **For Gallery** — Gallery widget is configured with **Selection** set to **Multi**.
-- **For Data Grid 2** — Data Grid 2 is configured with **Selection** set to **Multi**.
+- **For Gallery** — Gallery widget is configured with Selection set to Multi.
+- **For Data Grid 2** — Data Grid 2 is configured with Selection set to Multi.
 
-The **Selection Helper** must be placed inside the data widget's header content area. For specific guidance, see the subsections below.
+The Selection Helper must be placed inside the data widget's header content area. For specific guidance, see the subsections below.
 
 ### For Gallery Widgets
 
-1. Go to your **Gallery** widget.
-1. In the Header section, add the **Selection Helper** widget to the header content area.
-1. Configure the **Selection Helper** properties as needed.
+1. Go to your Gallery widget.
+1. In the Header section, add the Selection Helper widget to the header content area.
+1. Configure the Selection Helper properties as needed.
 
 ### For Data Grid 2 Widgets
 
 1. Go to your Data Grid 2 widget.
-1. In the **Header** section, add the **Selection Helper** widget to the header content area.
-1. Configure the **Selection Helper** properties as needed.
+1. In the **Header** section, add the Selection Helper widget to the header content area.
+1. Configure the Selection Helper properties as needed.
 
 ## Properties
 
@@ -73,10 +73,10 @@ Provides an optional text label displayed next to the checkbox. Use this to prov
 
 ### State Synchronization
 
-The **Selection Helper** maintains real-time synchronization with the parent data widget:
+The Selection Helper maintains real-time synchronization with the parent data widget:
 
-- Changes made through the **Selection Helper** immediately reflect in individual row and item selections
-- Individual row and item selection changes update the **Selection Helper** state accordingly
+- Changes made through the Selection Helper immediately reflect in individual row and item selections
+- Individual row and item selection changes update the Selection Helper state accordingly
 - Selection state persists across pagination when **Keep selection** is enabled in the data widget
 
 ## Integration with Data Widgets
@@ -85,22 +85,22 @@ The **Selection Helper** maintains real-time synchronization with the parent dat
 
 The **Selection Helper** works with both **Gallery** and **Data Grid 2** selection methods:
 
-- **Gallery**: Users can select via item clicks and the **Selection Helper**
-- **Data Grid 2**: Users can select via both individual checkboxes and row clicks, and the **Selection Helper**
+- **Gallery**: Users can select via item clicks and the Selection Helper
+- **Data Grid 2**: Users can select via both individual checkboxes and row clicks, and the Selection Helper
 
 ## Common Use Cases
 
 ### Gallery Bulk Selection
 
-Place a **Selection Helper** with default checkbox style in the Gallery header for simple select-all functionality in grid or list layouts.
+Place a Selection Helper with default checkbox style in the Gallery header for simple select-all functionality in grid or list layouts.
 
 ### Data Grid 2 Bulk Selection
 
-Use the **Selection Helper** in **Data Grid 2** headers for tabular data bulk operations.
+Use the Selection Helper in Data Grid 2 headers for tabular data bulk operations.
 
 ### Custom Bulk Operations Interface
 
-Use custom style to integrate with your app's design system across both **Gallery** and **Data Grid 2**.
+Use custom style to integrate with your app's design system across both Gallery and Data Grid 2.
 
 ### Administrative Data Management
 

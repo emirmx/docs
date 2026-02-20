@@ -9,7 +9,7 @@ description: "Describes the configuration and usage of the Data Grid 2 widget, w
 
 [Data Grid 2](https://marketplace.mendix.com/link/component/116540) is the successor to the standard data grid widget for displaying content in a tabular form. It comes with many powerful new features and settings like support for widgets, row and cell coloring, responsive layout, accessibility, and paging options like virtual scrolling. The Data Grid 2 widget offers personalization support so that end-users can show, hide, and re-order columns. Personalizations can be persisted in the database for flexibility and control.
 
-This document focusing on explaining module features. For precise details on data grid 2 widget properties, see [Data Grid 2 Properties](/appstore/modules/data-grid-2-properties/).
+This document focusing on explaining module features. For precise details on Data Grid 2 widget properties, see [Data Grid 2 Properties](/appstore/modules/data-grid-2-properties/).
 
 The data source determines which objects will be shown in a Data Grid 2 widget. In v2.3.0 and above, selecting the entity of the data source will automatically fill the contents, create columns with filters, and create buttons. You can also select which columns to use for the content generation.
 
@@ -144,7 +144,7 @@ Here is an example of column properties:
 
 ### Custom Content
 
-**Custom Content** allows users to drop widgets into the data grid and use the column attribute value to show custom content. After selecting this option you will be given dropzones in which to drop your widgets.
+**Custom Content** allows users to drop widgets into the data grid and use the column attribute value to show custom content. After selecting this option you will be given drop-zones in which to drop your widgets.
 
 Here is an example of custom content using new Badge widget in **Structure mode**:
 
@@ -223,7 +223,7 @@ This section defines options for the rows of the grid.
 
 ### Empty List Message
 
-The **Empty List Message** option defines what users can see when the data grid does not have a value to be presented or when a filter is applied without results. When this option is defined as custom you can place widgets right above the rows in a dropzone. Here is an example:
+The **Empty List Message** option defines what users can see when the data grid does not have a value to be presented or when a filter is applied without results. When this option is defined as custom you can place widgets right above the rows in a drop-zone. Here is an example:
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/data-widgets/data-grid-2/empty-list-message.png" alt="Example of empty list message placeholder in Structure mode" class="no-border" >}}
 
@@ -632,7 +632,7 @@ The name of the filter or data grid can be found at **Properties** > **Common** 
 
 **Error**:
 
-> "The filter widget must be placed inside the column or header of the Data grid 2.0 or inside header of the Gallery widget."
+> "The filter widget must be placed inside the column or header of the Data Grid 2.0 or inside header of the Gallery widget."
 
 - Widget placement is incorrect.
 
