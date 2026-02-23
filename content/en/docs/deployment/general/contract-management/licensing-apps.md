@@ -31,6 +31,25 @@ For each environment for which you want to remove the restrictions placed on an 
 
 The app checks for a license each time it is started. If the license expires while the app is running, it will continue to run until the next time it is started, when the license will be checked again.
 
+## User Types and Definitions
+
+Mendix licenses follow user-based pricing plans. This means customers pay based on how many users need access and what type of access they require for their Mendix applications.
+Customers can purchase user licenses in the following categories:
+
+### Multi-App Internal User
+
+These are internal users (employee or contractor of the customer or affiliated company or group) who can access any number of applications, and are licensed under the  Multi-app internal user pack. Each internal user is counted as one unique user, regardless of how many apps they access.
+
+### Single-App Internal User
+
+An internal user (employee or contractor) licensed for only one specific application and counted as one user limited to a single designated app. They are licensed under the Single-app internal user pack.
+
+### External User
+
+A user who is not an employee or contractor of the customer or its affiliates, and is explicitly marked “External” within your Mendix application data. This is one unique user across all apps designated for external use and licensed under the External user pack.
+
+For more information on legal definitions, refer to [Order Form Definitions](https://www.mendix.com/legal/platform-usage/order-form-definitions/).
+
 ## Obtaining a Mendix License{#get-license}
 
 {{% alert color="info" %}}
