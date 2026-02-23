@@ -19,7 +19,7 @@ For information on the current limitations, see the [Limitations](#limitations) 
 
 ## Using MCP Client {#using-mcp-client}
 
-To open the MCP Client panel, click the **Configure MCP Connections** ({{% icon name="plug" %}}) icon in the **Maia** toolbar.
+To open the MCP Client panel, click the **Configure MCP Connections** ({{% icon name="plug" %}}) icon under the **Maia Chat** tab.
 
 ### Adding an MCP Server {#adding-server}
 
