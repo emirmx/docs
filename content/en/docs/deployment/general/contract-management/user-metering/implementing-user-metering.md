@@ -77,3 +77,22 @@ In situations where there is ambiguity about the user classification, Mendix con
 Classification by the platform is not supported by using your email domains, nor any other logic. Your app logic is responsible for classification. For more information, refer to [Custom Classification](/developerportal/deploy/populate-user-type/#custom-classification).
 
 ## (De)Activation of users
+
+`system.user.active` attribute controls active or inactive users in your application. Users with an ‘active’ state can log in to your app and are counted for user metering purposes, while non-active users cannot login are not counted for user metering.
+
+You can provision the user records (for example, created, updated, or deleted) using proprietary logic or via one of the following platforms supported modules: 
+
+* SAML and OIDC SSO modules can create users with active state. By nature of the SSO protocols, these modules do not deactivate or delete any user records in your application.
+* The SCIM module allows your app to be integrated with your IdP to create, update, or delete user records. Depending on the (configured) business logic in your IdP, users may be created, deactivated, or deleted
+
+    * as a result of the Joiner/Mover/Leaver processes.
+    * as result of license optimization, users who haven’t logged in to a certain application for a certain period may be removed from the access group in the IdP, and therefore, the IdP may deactivate or remove users from your SCIM-enabled application.
+
+* The LDAP module allows you to synchronize users and their status (active=false/true) from your on-premises Active Directory to your application. This is a similar module to SCIM but using a different protocol.
+
+If you are considering deactivating or removing user records for optimization of user cost, you are advised to consider the following:  
+
+* Users cannot log in when in the deactivated (active=false) state. The primary purpose of the active state is to control which users can log in. When SSO is used, the user may be successfully logged in at the IdP; however, the Mendix application fails to grant access if the active state is not updated.
+* Actual logins, frequency of login, or system.user.lastlogin is also not relevant for metering. A user is counted as an active user if the state was active on any day of the calendar month.
+* If you choose to remove user records, associated data may be deleted depending on your domain model.
+* The SAML and OIDC SSO modules are capable of (re)creating any user that was deleted. This can be described as just-in-time user provisioning, also known as on-the-fly user onboarding or real-time user creation.
