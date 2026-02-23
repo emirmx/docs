@@ -99,8 +99,6 @@ spec:
 
 Removing the `jvmMemorySettings` section will switch to the [default memory allocation](#default-memory-allocation) settings.
 
-<!-- TODO: show how to adjust memory in Portunus when DES-7177 is merged -->
-
 Starting with Operator version 2.26, the JVM heap size should be adjusted as documented in this section.
 If you have an environment using any of the following custom JVM options, they _will not be applied_ to the app configuration (will be removed):
 
