@@ -33,7 +33,7 @@ The key capabilities of the Maia Make are as follows:
 
 ## Using Maia Make
 
-Maia Make is enabled by default. It is possible to disable it in Studio Pro **Preferences**, via the **Maia** tab.
+Maia Make is enabled by default. You can disable it in Studio Pro **Preferences**, via the **Maia** tab.
 
 To access it, in the upper-right corner of Studio Pro, click the **Maia** pane:
 
