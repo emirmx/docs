@@ -250,12 +250,12 @@ These fields cannot be edited while updating a component:
 
 ## Releasing Security Fixes {#security-fixes}
 
-You can highlight releases that include security fixes. This allows component users to see which older version are not safe, as well as which version they need to upgrade to in order to solve security issues.
+You can highlight releases that include security fixes. This allows component users to see which older versions are not safe, as well as which version they need to update to in order to solve security issues.
 
 This option is only available in the following scenarios:
 
-* While updating a component 
-* For components that allow uploading a component source
+* While adding a new component version 
+* For components that allow uploading a component source file
 
 Follow these steps to release a version that includes security fixes:
 
