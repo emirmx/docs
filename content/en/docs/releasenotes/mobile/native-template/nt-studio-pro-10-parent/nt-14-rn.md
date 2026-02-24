@@ -9,9 +9,14 @@ description: "Native Template 14"
 
 **Release date: Feb 24, 2026**
 
-- We fixed an iOS crash in encrypted storage by correcting native error handling, so Keychain failures no longer trigger an unrecognized selector abort.
-- We changed iOS Keychain item accessibility to After First Unlock for encrypted storage and persisted session cookies.
-- We added a required one-time Keychain migration to update existing stored items; for compatibility, this Native Template version still works with older Studio Pro 10.24.x, but migration support requires Studio Pro 10.24.16 or newer plus a new iOS app build and rollout. Without migration, the original Keychain accessibility issue can still occur, although improved error handling reduces crash impact.
+### Improvements
+
+- We changed iOS Keychain item accessibility to **After First Unlock** for encrypted storage and persisted session cookies.
+  
+### Fixes
+
+- We fixed an iOS crash in encrypted storage by correcting native error handling. Now Keychain failures no longer trigger an unrecognized selector abort.
+- We added a mandatory, one-time Keychain migration to update existing stored items. For compatibility, this Native Template version still works with older Studio Pro 10.24.x, but migration support requires a version of Studio Pro 10.24.16 or newer, as well as a new iOS app build and rollout. Without migration, the original Keychain accessibility issue can still occur, although improved error handling reduces crash severity.
 
 ## 14.1.11 {#1421}
 
