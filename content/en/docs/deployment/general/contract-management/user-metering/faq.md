@@ -9,3 +9,100 @@ description: "This document contains a list of frequently asked questions on use
 ## Introduction
 
 This document answers common questions about user metering, outlining user classification and users.
+
+## General Questions
+
+### Is User Metering Automatically Enabled?
+
+User metering is automatically enabled for all Mendix Cloud and Mendix Cloud Dedicated applications without requiring any configuration or setup for usage data collection. Data collection begins as soon as your application is deployed to a production environment. 
+
+### Where Can I View My User Consumption Data?
+
+Navigate to the **Control Center** > **Entitlements** > **End-Users** > **Usage Report**.
+For more information, refer to the Usage Report Tab section of *End-Users*. <!-- Link from the Control Center doc -->
+
+### When Can I See My Monthly Usage Data?
+
+User pack utilization is extracted regularly from the apps and available as a daily snapshot on the Control Center. 
+The daily snapshots are processed and deduplicated across all your apps at the end of each month and become available on the 1st of the following month as monthly usage data. Monthly reports show aggregated license usage over the month.
+
+### What Happens if I Exceed My Entitlement?
+
+If you exceed your licensed entitlements:
+
+* No immediate service disruption: Your applications continue to run normally.
+* Alert displayed: A warning icon appears in the end-of-month Usage Report on the Control Center.
+* Compliance discussion: Your Customer Success Manager (CSM) will contact you to discuss:
+
+    * Purchasing additional user packs
+    * Optimizing user classification
+    * Adjusting your license agreement
+
+Mendix recommends that you monitor your usage regularly and purchase additional capacity before reaching your limit.
+
+### Can I View Usage Data From Previous Months?
+
+Apps across Mendix Cloud began collecting user metering data starting in November 2025. Based on when your app was onboarded on user metering, you may have access to historical usage data. Navigate to the **Usage Report** and select the desired month to see the usage data.
+
+## Questions on User Classification
+
+### How Are Users Classified If I Do Not Configure User Classification?
+
+If no action is taken, all users are classified as Multi-App Internal Users by default.
+This means all users in your apps are aggregated together and classified as multi-app internal users. 
+
+### I Have External Users in My Applications. How Do I Ensure They Are Counted Correctly?
+
+Explicitly mark users as `External` in your application to ensure they are counted correctly under your External User pack. If you do not have an External User pack, these users will be classified as `Internal`, even if they are marked as `External` users.
+
+For more information, refer to [User Classification](/developerportal/deploy/implementing-user-metering/#user-classification).
+
+### I Purchased a Single-App User Pack for My Application. How Do I Set It Up?
+
+Assign the Single-App User Pack to your application in the Control Center. For more information, refer to Assigning Single-App Internal User Packs. <!-- Link from the Control Center doc -->
+
+### How Do I Assign Single-App User Packs to Multiple Applications With Unique User Bases?
+
+You must purchase a separate Single-App User Pack for each application and assign them individually. Contact your CSM or account team to purchase additional packs.
+
+## User-Specific Questions
+
+### How Are Users Counted If They Log In Only Once Per Year?
+
+Users are counted based on their active status, not login frequency. If they are marked as `Active` in your application, they are counted every month, regardless of whether they log in.
+
+Note that if the user has active status during any moment in a month, they are counted as active user for that calendar month.
+
+### What Is the Best Practice for Deactivating Users Who Left the Organization?
+
+Deactivate users as soon as they no longer need access. This ensures that they are not counted in future usage reports and helps maintain security. Deactivate leavers before month-end to optimize license consumption.
+
+### Should I Delete or Deactivate Users To Save on License Costs?
+
+Technically, you can deactivate or remove users to optimize license costs.
+
+To optimise license cost, you may choose to delete records in the `system.user` object, while maintaining data in custom user objects.
+
+{{% alert color="info" %}}
+Check your organization's data retention policies before purging any user data. Deactivation usually satisfies both license optimization and compliance requirements.
+{{% /alert %}}
+
+### Are Anonymous Users Counted in User Metering?
+
+Anonymous Users are users who access your application without logging in or authenticating. Anonymous Users are not counted in user metering. Only Named Users (users with unique login credentials) are counted.
+
+### Are API Users and Service Accounts Counted in User Metering?
+
+API Users (also called Service Accounts or System Users) are non-human accounts used for:
+
+* System-to-system integrations
+* Automated processes
+* Background jobs
+* External system access via web services
+
+API users with authentication count as Named Users and are included in user metering.
+
+## Read More
+
+* [User Metering](/developerportal/deploy/user-metering/)
+* [Implementing User Metering](/developerportal/deploy/implementing-user-metering/)

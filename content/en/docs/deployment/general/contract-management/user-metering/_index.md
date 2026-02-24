@@ -7,10 +7,10 @@ description: "This document describes how user metering works."
 
 ## Introduction
 
-End-user metering is the process Mendix uses to determine the number and type of users accessing applications in accordance with license agreements. Proper user classification ensures accurate reporting, optimal licensing costs, and transparency for both customers and Mendix. Customers can access usage reports through the Control Center application on the Mendix Platform.
+End-user metering is the process Mendix uses to determine the number and type of users accessing applications in accordance with license agreements. Proper user classification ensures accurate reporting, optimal licensing costs, and transparency for both customers and Mendix. Customers can access Usage Report through the Control Center application on the Mendix Platform. <!-- Link Usage Report from the Control Center doc -->
 
 {{% alert color="info" %}}
-End-user metering is currently available for applications deployed to Mendix Cloud and Mendix Cloud dedicated environments.
+End-user metering is currently available for applications deployed to Mendix Cloud and Mendix Cloud Dedicated environments.
 {{% /alert %}}
 
 Mendix licenses include user-based pricing plans. With user-based pricing, customers purchase licenses based on the number of users who need access to their Mendix applications. Customers can purchase user licenses in the following categories:
@@ -35,11 +35,11 @@ User metering in the Mendix cloud operates through a three-stage automated proce
 
 ### Data Collection
 
-Once users are classified as `internal` or `external`, all applications on the Mendix cloud and Mendix cloud dedicated automatically send user data back to the Mendix platform. The data is collected throughout the month only from the production environment. PII information (username and other user identifiers) is hashed at source before transmission to ensure data privacy.
+Once users are classified as `internal` or `external`, all applications on the Mendix Cloud and Mendix Cloud Dedicated automatically send user data back to the Mendix platform. The data is collected throughout the month only from the production environment. PII information (username and other user identifiers) is hashed at source before transmission to ensure data privacy.
 
 ### Data Aggregation and Deduplication
 
-At the end of each month, the Mendix Platform aggregates the collected data. Users are counted and rolled up to the app portfolio level. This process is detailed in the [User Aggregation and Deduplication]() section below.
+At the end of each month, the Mendix Platform aggregates the collected data. Users are counted and rolled up to the app portfolio level. This process is detailed in the [User Aggregation and Deduplication](/developerportal/deploy/user-metering/#how-user-aggregation-and-deduplication-work) section below.
 
 ### User Classification and Reporting
 
@@ -64,7 +64,7 @@ The first step is to determine whether a user is an external user:
 
 Then the User is classified as an External User.
 
-Once classified, the user is licensed under the External User Pack and excluded from further classification steps. For more information, see the [User classification]() section of *Implementing Metering*.
+Once classified, the user is licensed under the External User Pack and excluded from further classification steps. For more information, see the [User classification](/developerportal/deploy/implementing-user-metering/#user-classification) section of *Implementing Metering*.
 
 All remaining users are classified as internal Users and further classified as described in the sections below.
 

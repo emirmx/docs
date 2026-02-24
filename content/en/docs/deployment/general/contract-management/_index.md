@@ -16,7 +16,7 @@ This document provides detailed information about the status of your Mendix appl
 Your Mendix subscription is categorized into three main statuses: Active, Expiring, and Expired, based on your contract's expiry date.
 
 | Account Status | Timeline | Impact |
-|---------------|----------|--------------------|
+| --------------- | ---------- | -------------------- |
 | **Active (Green)** | Until 30 days before contract expiry | Your account is fully active, with all services available and application runtimes functioning normally. This is the optimal state for uninterrupted Mendix usage. |
 | **Expiring (Orange)** | From 30 days before contract expiry until contract end date | All services continue to function normally. You receive email reminders, notifications, and banner alerts on Mendix Platform about your upcoming renewal. |
 | **Expired (Red)** | From the day after contract expiry up to 60 days | Your account and applications are downgraded to **Unlicensed** mode. You can manually restart apps, but they will automatically shut down after 2-4 hours and are limited to 6 concurrent users. Platform features are not disabled.|
@@ -68,7 +68,7 @@ This is your final opportunity to renew your contract and avoid service disrupti
 #### Pre-Expiry Timeline Summary{#pre-expiry-timeline-summary}
 
 | **Days Before Expiry** | **Key Actions** | **Status** |
-|------------------------|-----------------|------------|
+| ------------------------ | ----------------- | ------------ |
 | **90 days** | Contact Account Team for renewal | Active |
 | **30 days** | Finalize renewal discussions | Expiring |
 | **15 days** | Download data if not renewing | Expiring |
@@ -95,7 +95,7 @@ Application data deletion is irreversible. Make sure to download all necessary a
 #### Post-Expiry Timeline Summary{#post-expiry-timeline-summary}
 
 | **Days After Expiry** | **Key Actions** | **Status** |
-|------------------------|-----------------|------------|
+| ------------------------ | ----------------- | ------------ |
 | **0 days (Expired)** | Contract expires | Expired |
 | **+1 day** | Limited access | Expired |
 | **+60 days** | Data permanently deleted | Expired |
