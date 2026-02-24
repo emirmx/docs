@@ -1028,7 +1028,7 @@ The user time zone is usually different from UTC. To get the result in the UTC t
 | `QUARTER`    | `2005-07-01T00:00:00.000`                       |
 | `MONTH`      | `2005-09-01T00:00:00.000`                       |
 | `DAY`        | `2005-09-03T00:00:00.000`                       |
-| `WEEK`*      | `2005-07-29T00:00:00.000`                       |
+| `WEEK`*      | `2005-08-29T00:00:00.000`                       |
 | `HOUR`       | `2005-09-03T16:00:00.000`                       |
 | `MINUTE`     | `2005-09-03T16:34:00.000`                       |
 | `SECOND`     | `2005-09-03T16:34:20.000`                       |
