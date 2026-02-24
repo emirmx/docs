@@ -35,11 +35,9 @@ The key capabilities of the Maia Make are as follows:
 
 Maia Make is enabled by default. You can disable it in Studio Pro **Preferences**, via the **Maia** tab.
 
-To access it, in the upper-right corner of Studio Pro, click the **Maia** pane:
+To access the conversational interface, in the upper-right corner of Studio Pro, click the **Maia** pane:
 
 {{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/maia-make/maia-make-interface.png" max-width=40% alt="Maia Make interface" >}}
-
-{{% todo %}}Update the screenshot when the latest build is available{{% /todo %}}
 
 Alternatively, you can also click **View** at the Studio Pro top bar and select **Maia** to open the interface.
 
@@ -52,9 +50,9 @@ Under the **Maia** pane, there is also the **Learn** tab. It is a separate Maia 
 The Maia Make conversational interface includes the following options:
 
 * **New chat** - It allows you to clear the messages and start a new conversation which does not reference your current chat.
-* **Configure MCP Connections** ({{% icon name="plug" %}}) icon - It allows you to connect external [MCP](https://modelcontextprotocol.io/introduction) servers to Maia, giving it access to third-party tools during chat. For more information on how to configure MCP connections, see [Maia MCP Client](/refguide/maia-mcp/).
-* **Add** attachments (Image, Story, PDF) - With this option, you can attach images, PDFs, or user stories to help Maia understand your requirements better.
-* **Add to Maia Context** - It allows you to add certain logic or pages to Maia as context. You can also access this option by right-clicking the documents (microflows or pages) in the **App Explorer** and it appears in the context menu.
+* **Configure MCP Connections** ({{% icon name="plug" %}} icon) - It allows you to connect external [MCP](https://modelcontextprotocol.io/introduction) servers to Maia, giving it access to third-party tools during chat. For more information on how to configure MCP connections, see [Maia MCP Client](/refguide/maia-mcp/).
+* **{{% icon name="paperclip" %}} Add** (Image, Story, PDF) - With this option, you can attach images, PDFs, or user stories to help Maia understand your requirements better.
+* **Add file to Maia Chat** (@ icon) - It allows you to add certain logic or pages to Maia as context. You can also access this option by right-clicking the documents (microflows or pages) in the **App Explorer** and it appears in the context menu.
 
 For more information on how some of Maia key capabilities work, refer to the following documents:
 
