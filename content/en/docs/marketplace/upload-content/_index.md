@@ -67,7 +67,8 @@ Some fields only apply to specific component types, so follow the on-screen prom
 5. Select the purpose of this release:
 
     * **Regular Release** – If you select this option, continue with the next steps.
-    * **Security Fix Release** – Select this option if your upload includes security fixes, then continue with the steps in the [Releasing Security Fixes](#security-fixes) section.
+    * **Security Fix Release** – Select this option if your upload includes security fixes, then continue with the steps in the [Releasing Security Fixes](#security-fixes) section.     
+        Note that this option is only displayed when uploading a new component version.
 
 6. Select the **Studio Pro Version** on which you built the content.    
 
