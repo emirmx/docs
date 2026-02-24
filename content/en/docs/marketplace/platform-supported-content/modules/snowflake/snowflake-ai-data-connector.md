@@ -1,18 +1,18 @@
 ---
 title: "Snowflake AI Data Connector"
 url: /appstore/connectors/snowflake/snowflake-ai-data-connector/
-description: "Describes the configuration and usage of the Mendix-Snowflake AI Data connector from the Mendix Marketplace." 
+description: "Describes the configuration and usage of the Mendix-Snowflake AI Data Connector from the Mendix Marketplace." 
 weight: 20
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details. 
 ---
 
 ## Introduction
 
-The [Snowflake AI Data connector](https://marketplace.mendix.com/link/component/225717) allows you to use data from Snowflake in your Mendix application and enrich your app with the AI capabilities that Snowflake provides.
+The [Snowflake AI Data Connector](https://marketplace.mendix.com/link/component/225717) allows you to use data from Snowflake in your Mendix application and enrich your app with the AI capabilities that Snowflake provides.
 
 ### Typical Use Cases
 
-The Snowflake AI Data connector supports the following:
+The Snowflake AI Data Connector supports the following:
 
 1. **Authentication:**
 
@@ -49,13 +49,13 @@ The current version of the connector supports the following:
 
 ### Prerequisites {#prerequisites}
 
-The Snowflake AI data connector requires Mendix Studio Pro version 9.18.0 or above.
+The Snowflake AI Data Connector requires Mendix Studio Pro version 9.18.0 or above.
 
-To use the Snowflake AI data connector, you must also install and configure the following modules from the Mendix marketplace:
+To use the Snowflake AI Data Connector, you must also install and configure the following modules from the Mendix marketplace:
 
-* [Community Commons](https://marketplace.mendix.com/link/component/170) – This module is a required dependency for the Snowflake AI data connector.
-* [Encryption](https://marketplace.mendix.com/link/component/1011) – This module is a required dependency for the Snowflake AI data connector. The EncryptionKey constant must be set up in your application settings.
-* From version 4.0.0 and up the Snowflake AI data connector is no longer dependend on the [GenAI Commons](https://marketplace.mendix.com/link/component/227931) module.
+* [Community Commons](https://marketplace.mendix.com/link/component/170) – This module is a required dependency for the Snowflake AI Data Connector.
+* [Encryption](https://marketplace.mendix.com/link/component/1011) – This module is a required dependency for the Snowflake AI Data Connector. The EncryptionKey constant must be set up in your application settings.
+* From version 4.0.0 and up the Snowflake AI Data Connector is no longer dependend on the [GenAI Commons](https://marketplace.mendix.com/link/component/227931) module.
 
 ### Licensing and Cost
 
@@ -65,7 +65,7 @@ Depending on your use case, your deployment environment, and the type of app tha
 
 ## Installation
 
-Follow the instructions in [How to Use Marketplace Content in Studio Pro](/appstore/general/app-store-content/) to import the Snowflake AI data connector into your app.
+Follow the instructions in [How to Use Marketplace Content in Studio Pro](/appstore/general/app-store-content/) to import the Snowflake AI Data Connector into your app.
 
 ## Configuration
 
@@ -73,7 +73,7 @@ After you install the connector, you can find it in the **App Explorer**, in the
 
 ### Configuring Snowflake Authentication
 
-To use the capabilities of Snowflake in a Mendix app with the Snowflake AI data connector, you must use either OAUTH authentication or RSA key-pair authentication.
+To use the capabilities of Snowflake in a Mendix app with the Snowflake AI Data Connector, you must use either OAUTH authentication or RSA key-pair authentication.
 
 #### Configuring OAUTH Authentication {#setup-OAUTH-snowflake}
 
@@ -93,7 +93,7 @@ For more details about each step, refer to the official [Snowflake documentation
 
 #### Setting up the Key-Pair Authentication in a Mendix App {#setup-key-pair-mendix}
 
-To make it easier for users to configure the key-pair authentication in a Mendix app, the Snowflake AI data connector includes pages and microflows that you can simply drag and drop them into your own modules.
+To make it easier for users to configure the key-pair authentication in a Mendix app, the Snowflake AI Data Connector includes pages and microflows that you can simply drag and drop them into your own modules.
 
 To configure the authentication, perform the following steps:
 
@@ -121,7 +121,7 @@ To configure the authentication, perform the following steps:
 
 ### Configuring a Microflow for the Service
 
-After you configure the authentication for Snowflake, you can implement the functions of the connector by using the provided activities in microflows. An extended microflow has been implemented and added to the Snowflake AI data connector as an example for users that would like to retrieve a list of objects from an existing table in Snowflake. In the **SnowflakeAIDataConnector** module, see the **EXAMPLE_ExecuteStatement** microflow and the **ExampleObject** domain model entity to learn how the [**TransformResponsesToMxObjects** operation](#transform-response-to-mx-object) can be used to easily convert the data received in **HttpResponse** objects into Mendix objects. 
+After you configure the authentication for Snowflake, you can implement the functions of the connector by using the provided activities in microflows. An extended microflow has been implemented and added to the Snowflake AI Data Connector as an example for users that would like to retrieve a list of objects from an existing table in Snowflake. In the **SnowflakeAIDataConnector** module, see the **EXAMPLE_ExecuteStatement** microflow and the **ExampleObject** domain model entity to learn how the [**TransformResponsesToMxObjects** operation](#transform-response-to-mx-object) can be used to easily convert the data received in **HttpResponse** objects into Mendix objects. 
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/example_implementation.png" >}}
 
@@ -144,9 +144,9 @@ This approach allows you to achieve asynchronous behavior while leveraging the S
 
 #### Programmatic Triggering of Ingestion Jobs
 
-The Snowflake AI data connector can be used to trigger data ingestion jobs with an SQL statement. For more information, see [Mendix Data Loader: Programmatically Triggering an Ingestion Job From a Mendix App](/appstore/modules/snowflake/mendix-data-loader/#trigering-jobs).
+The Snowflake AI Data Connector can be used to trigger data ingestion jobs with an SQL statement. For more information, see [Mendix Data Loader: Programmatically Triggering an Ingestion Job From a Mendix App](/appstore/modules/snowflake/mendix-data-loader/#trigering-jobs).
 
-## Binding Variables in Snowflake using the Snowflake AI data Connector
+## Binding Variables in Snowflake using the Snowflake AI Data Connector
 
 When executing SQL statements from Mendix into Snowflake, *binding variables* is a critical concept that improves security, performance, and maintainability of your database interactions.
 
@@ -230,7 +230,7 @@ Once configured, the connector automatically detects the `ProxySettings` object 
 
 ## Technical Reference
 
-To help you work with the Snowflake AI data connector, the following sections of this document list the available activities that you can use in your application.
+To help you work with the Snowflake AI Data Connector, the following sections of this document list the available activities that you can use in your application.
 
 ### Activities {#activities}
 
