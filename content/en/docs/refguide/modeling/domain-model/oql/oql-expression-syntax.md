@@ -950,7 +950,7 @@ DATEPART ( datepart , date_expression [, timezone ] )
 
 ##### datepart
 
-`datepart` specifies the part of the `DATETIME` value to retrieve. For possible values, see the [Example](#oql-datepart-example) below.
+`datepart` specifies the part of the `DATETIME` value to retrieve. For possible values, see [Examples](#oql-datepart-example), below.
 
 ##### date_expression
 
@@ -1006,7 +1006,7 @@ DATETRUNC ( datepart , date_expression [, timezone ] )
 
 ##### datepart
 
-`datepart` specifies the part to which the `DATETIME` value is truncated. For possible values, see the [Example](#oql-datetrunc-example) below.
+`datepart` specifies the part to which the `DATETIME` value is truncated. For possible values, see [Examples](#oql-datetrunc-example), below.
 
 ##### date_expression
 
@@ -1041,7 +1041,7 @@ Date part types `DAYOFYEAR`, `WEEKDAY` and `MILLISECOND` are not supported by th
 For the date part type `WEEK`, the result of the `DATETRUNC` function depends on the database configuration. For example, by default, the first day of the week in MS SQL Server is Sunday, which means that dates are truncated to previous Sunday if date part type `WEEK` is used.
 {{% /alert %}}
 
-`DATETRUNC` function can be used to group data by time periods:
+The `DATETRUNC` function can be used to group data by time periods:
 
 ```sql
 SELECT
