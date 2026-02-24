@@ -45,7 +45,7 @@ The current version of the connector supports the following:
 * Execution of single SQL statements
 * Synchronous execution of calls
 * Execution of a Cortex Analyst query
-* Querying your Corstex Search services
+* Querying your Cortex Search services
 
 ### Prerequisites {#prerequisites}
 
