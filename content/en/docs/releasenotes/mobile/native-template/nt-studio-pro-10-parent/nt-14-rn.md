@@ -5,9 +5,9 @@ weight: 6
 description: "Native Template 14"
 ---
 
-## 14.1.13
+## 14.1.13 {#1422}
 
-**Release date: Feb 24, 2026**
+**Release date: February 24, 2026**
 
 ### Improvements
 
