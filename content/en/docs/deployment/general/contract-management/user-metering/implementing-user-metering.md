@@ -1,7 +1,7 @@
 ---
 title: "Implementing User Metering"
 url: /developerportal/deploy/implementing-user-metering/
-weight: 40
+weight: 30
 description: "This document describes how to implement user metering."
 ---
 

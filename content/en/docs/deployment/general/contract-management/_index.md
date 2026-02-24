@@ -1,7 +1,7 @@
 ---
 title: "Contract Management"
 url: /developerportal/deploy/contract-management/
-weight: 20
+weight: 10
 description: "Understand your Mendix subscription lifecycle, contract statuses, renewal timelines, and critical actions to ensure continuous service and prevent data loss."
 ---
 
