@@ -12,7 +12,7 @@ For information on the current status of Mendix deployment, see [Mendix Status](
 
 ### Release date: February 26, 2026
 
-* Improved handling for PostgreSQL HA unavailability in certain Azure regions to prevent failed Spacelift Stack runs when infrastructure redundancy is enabled.
+* We have improved the handling of PostgreSQL HA unavailability issues in certain Azure regions to prevent failed Spacelift Stack runs when infrastructure redundancy is enabled.
 
 ### Release date: January 29, 2026
 
