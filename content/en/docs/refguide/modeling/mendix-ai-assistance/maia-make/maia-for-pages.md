@@ -19,7 +19,7 @@ Maia for Pages helps you generate a [page](/refguide/page/) by adding and config
 ## Using Maia for Pages
 
 {{% alert color="info" %}}
-In Studio Pro 11.8 and above, Maia for Pages is incorporated into the unified Maia Make capabilities. There is no dedicated interface only for Maia for Pages. For more information, see [Maia Make Capabilities](/refguide/maia-make/).
+In Studio Pro 11.8 and above, Maia for Pages is incorporated into the unified Maia Make capabilities, which are enabled by default. There is no dedicated interface only for Maia for Pages. For more information, see [Maia Make Capabilities](/refguide/maia-make/).
 {{% /alert %}}
 
 In Studio Pro 11.7 and below, to enable Maia for Pages, go to **Edit** > **Preferences** > the **Maia** tab and select **Enable Maia for Pages**.

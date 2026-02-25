@@ -14,7 +14,7 @@ To use Maia Explain, an internet connection and signing in to Studio Pro are req
 
 ## Using Maia Explain in Studio Pro 11.8 and Above
 
-In Studio Pro 11.8 and above, Maia Explain is incorporated into the unified Maia Make capabilities. There is no dedicated interface only for Maia Explain. For more information, see [Maia Make Capabilities](/refguide/maia-make/).
+In Studio Pro 11.8 and above, Maia Explain is incorporated into the unified Maia Make capabilities, which are enabled by default. There is no dedicated interface only for Maia Explain. For more information, see [Maia Make Capabilities](/refguide/maia-make/).
 
 There are two ways to use Maia Explain:
 

@@ -37,7 +37,7 @@ See below a list of Maia Chat's data sources:
 ## Using Maia Chat in Studio Pro
 
 {{% alert color="info" %}}
-In Studio Pro 11.8 and above, Maia Chat is incorporated into the unified Maia Make capabilities. There is no dedicated interface only for Maia Chat. For more information, see [Maia Make Capabilities](/refguide/maia-make/).
+In Studio Pro 11.8 and above, Maia Chat is incorporated into the unified Maia Make capabilities, which are enabled by default. There is no dedicated interface only for Maia Chat. For more information, see [Maia Make Capabilities](/refguide/maia-make/).
 {{% /alert %}}
 
 In Studio Pro 11.7 and below, there are two ways to access Maia Chat in Studio Pro:
