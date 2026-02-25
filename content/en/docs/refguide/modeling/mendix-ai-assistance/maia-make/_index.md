@@ -60,7 +60,7 @@ The conversational interface includes the following options:
 * **{{% icon name="paperclip" %}} Add** (Image, Story, PDF) - With this option, you can attach images, PDFs, or user stories to help Maia understand your requirements better.
 * **Add file to Maia Chat** (@ icon) - It allows you to add certain logic or pages to Maia as context. You can also access this option by right-clicking the documents (microflows or pages) in the **App Explorer** and it appears in the context menu.
 
-For more information on how some of Maia key capabilities work, refer to the following documents:
+For more information on how each Maia Make capability work, refer to the following documents:
 
 * [Maia Chat](/refguide/maia-chat/)
 * [Maia Explain](/refguide/maia-explain/)
