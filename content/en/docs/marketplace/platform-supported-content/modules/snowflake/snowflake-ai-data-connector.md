@@ -127,7 +127,7 @@ After you configure the authentication for Snowflake, you can implement the func
 
 #### Asynchronous Query Execution
 
-At present, the Snowflake REST SQL Connector does not provide any out of the box operation microflows for making asynchronous calls. However, you can still configure asynchronous calls manually using the connector.
+At present, the Snowflake Snowflake AI Data Connector does not provide any out of the box operation microflows for making asynchronous calls. However, you can still configure asynchronous calls manually using the connector.
 
 To set this up:
 
@@ -217,7 +217,7 @@ This table maps Mendix attribute types to Snowflake data types, along with commo
 
 ## Proxy Usage
 
-Since version 3.1.0, the Snowflake REST SQL Connector supports using a proxy to make your REST calls. You can use the new `ProxySettings` entity to enable a proxy by performing the following steps: 
+Since version 3.1.0, the Snowflake AI Data Connector supports using a proxy to make your REST calls. You can use the new `ProxySettings` entity to enable a proxy by performing the following steps: 
 
 1. Create a **ProxySettings** object.
 2. Set the `Host` and `Port` attributes to the host of the proxy and the port on which the proxy is listening.
